@@ -6,7 +6,7 @@ extern void *gSceneExports;
 typedef struct { u8 unk00[0x158]; f32 component158; u8 unk15C[0x39]; u8 active; u8 unk196[2]; s32 remaining; f32 direction; f32 amplitude; } CameraShakeState;
 extern f32 D_cam_004048D4, D_cam_004048D8;
 /*__SEEDEXTERNS__*/
-typedef struct { char pad[0xC]; void (*unkC)(Mtx4F *); } UvFMtxExp_00403A9C;
+typedef struct { char pad[0xC]; void (*copyMatrix)(Mtx4F *, Mtx4F *); } UvFMtxExp_00403A9C;
 extern UvFMtxExp_00403A9C *gUvFmtxExports;
 extern void *D_cam_00404E28;
 extern f32 D_cam_00404958;
@@ -31,7 +31,7 @@ typedef struct {
     /* 0x1C */ u32 unknownCallback1CAddress;
     /* 0x20 */ u32 unknownCallback20Address;
     /* 0x24 */ u32 unknownCallback24Address;
-    /* 0x28 */ u32 unknownMatrixCallback28Address;
+    /* 0x28 */ u32 copyMatrixAt1A8Address;
     /* 0x2C */ u32 unknownCallback2CAddress;
     /* 0x30 */ u32 sharedPointerAddress;
     /* 0x34 */ u32 sharedScalarAddress;
@@ -49,7 +49,7 @@ void func_cam_00400128(void);
 void camReleaseChannelHandle(s16 *channelHandle);
 void camSyncPendingSceneRecords(CameraSceneSyncState *state);
 void camRememberCameraAndRenderChannel(void *camera);
-void func_cam_00403A9C(char *arg0);
+void camCopyMatrixIntoRecordOffset1A8(char *camera, Mtx4F *sourceMatrix);
 extern u8 func_cam_00400190[];
 extern u8 func_cam_00400E80[];
 extern u8 func_cam_0040116C[];
@@ -59,17 +59,17 @@ extern u8 func_cam_00403ACC[];
 
 #line 60 "src/modules/cam.c"
 /* Register twelve original camera callback addresses and two shared-data
- * addresses in their original interleaved order. Set the shared scalar to
- * one and camera count to zero, load font file three and the cara module,
- * then create the two original profiler entries and retain their IDs.
- * RE_UNKNOWN: callbacks 0x04/0C/10/1C/20/24/28/2C, shared pointer/scalar roles,
+ * addresses in their original interleaved order; slot0x28 copies the incoming
+ * matrix into camera offset0x1A8. Set shared scalar1/count0, load font file3 and
+ * cara, then create the two original profiler entries and retain their IDs.
+ * RE_UNKNOWN: callbacks 0x04/0C/10/1C/20/24/2C, shared pointer/scalar roles,
  * dependency ownership and safe initialization/reload require original target
  * bodies, data consumers and loader callers. Preserve unchecked dependency
  * loads and profiler results; changing failure handling needs caller evidence. */
 void __entrypoint_func_camInitializeModuleState(CameraExportAddresses *exports) {
     uvUpdateFileAllocPtr(exports);
     exports->emptyCallbackAddress = (u32) func_cam_00400128;
-    exports->unknownMatrixCallback28Address = (u32) func_cam_00403A9C;
+    exports->copyMatrixAt1A8Address = (u32) camCopyMatrixIntoRecordOffset1A8;
     exports->unknownCallback04Address = (u32) func_cam_00400190;
     exports->unknownCallback2CAddress = (u32) func_cam_00403ACC;
     exports->releaseChannelHandleAddress = (u32) camReleaseChannelHandle;
@@ -268,13 +268,16 @@ void camRememberCameraAndRenderChannel(void *camera) {
 
 /* Advances a Mtx4F pointer by 0x1A8 bytes into a camera struct and calls the UvFMtx export at offset 0xC */
 #line 135 "src/modules/cam.c"
-/* Pass camera offset 0x1A8 to matrix export slot 0x0C.
- * RE_UNKNOWN: intended callback operation and argument ABI. The existing
- * one-argument local declaration differs from the shared two-argument matrix
- * copy declaration; original assembly/caller evidence is needed before repair. */
-void func_cam_00403A9C(char *arg0) {
-    gUvFmtxExports->unkC((Mtx4F *)(arg0 + 0x1A8));
+/* Copy sixteen floats from the incoming source into camera offset 0x1A8.
+ * Original wrapper forwards A1 unchanged; actual FMTX slot0C consumes that
+ * source pointer. RE_UNKNOWN: matrix frame/role, camera layout and valid source
+ * lifetime/aliasing; trace original callback callers before generalizing. */
+#line 139 "src/modules/cam.c"
+
+void camCopyMatrixIntoRecordOffset1A8(char *camera, Mtx4F *sourceMatrix) {
+    gUvFmtxExports->copyMatrix((Mtx4F *)(camera + 0x1A8), sourceMatrix);
 }
+#line 142 "src/modules/cam.c"
 #line 138 "src/modules/cam.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/cam/func_cam_00403ACC.s")

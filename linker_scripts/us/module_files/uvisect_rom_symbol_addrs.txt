@@ -296,3 +296,4 @@ uvIsectInitializeScalarAndVectorQueryState = 0x0040318C; // type:func
 uvIsectPackedTriangleTextureByteMatches = 0x00403E24; // type:func
 uvIsectQueryFilteredSharedRecords = 0x00404D74; // type:func
 uvIsectFlipRecordVectorTowardPoint = 0x00403F38; // type:func
+uvIsectGetRecordByte10 = 0x00403E8C; // type:func

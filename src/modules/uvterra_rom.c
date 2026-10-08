@@ -711,11 +711,38 @@ s32 func_uvterra_rom_00407A80(s32 arg0, s32 arg1, s32 arg2) {
     return 0;
 }
 
+#line 480 "src/modules/uvterra_rom.c"
+/* Apply the shared inverse translation to the matrix pointer at object
+ * byte28, load that view with native flags3, invoke the original model-draw
+ * helper, then pop the view. Preserve all four calls and their original order.
+ *
+ * RE_UNKNOWN: object byte28 matrix provenance/frame and lifetime, complete
+ * callback declaration and the forwarded context word's meaning. Original
+ * helpers consume the existing modelId/matrix/flag fields; they only home the
+ * first word. Trace the original object producer, callback registrations and
+ * helper callers before giving that word channel or ownership semantics.
+ * The byte28 pointer is an observed access within an existing opaque region;
+ * do not infer a complete historical object declaration from this wrapper. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00407A94.s")
+#line 481 "src/modules/uvterra_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00407B0C.s")
 
+#line 484 "src/modules/uvterra_rom.c"
+/* Apply the shared inverse translation to the matrix pointer at object
+ * byte28, load that view with native flags3, invoke the original model-draw
+ * helper, then pop the view. Preserve all four calls and their original order.
+ * The second helper temporarily rewrites native fixed-matrix XY entries
+ * using object words20/24/30 and restores those entries before returning.
+ * RE_UNKNOWN: object byte28 matrix provenance/frame and lifetime, complete
+ * callback declaration and the forwarded context word's meaning. Original
+ * helpers consume the existing modelId/matrix/flag fields; they only home the
+ * first word. Trace the original object producer, callback registrations and
+ * helper callers before giving that word channel or ownership semantics.
+ * The byte28 pointer is an observed access within an existing opaque region;
+ * do not infer a complete historical object declaration from this wrapper. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00407E5C.s")
+#line 485 "src/modules/uvterra_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00407ED4.s")
 

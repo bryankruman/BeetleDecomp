@@ -1671,7 +1671,23 @@ s32 uvDynTryAcceptAttachmentRecord(DynCandidateCallbacks *attachment, void *outp
 }
 #line 525 "src/modules/uvdyn_rom.c"
 
+#line 526 "src/modules/uvdyn_rom.c"
+/* RE_ORIGINAL_QUIRK: two original FVEC copies initialize the 12-byte values
+ * at SP4C/SP58 before the first ISCT slot 0xA8 call, but the adjacent SP64
+ * word is not assigned on that path. The provider 0x4048DC directly reads
+ * input+0x18 for flag bits 8/1. Flag bit 2 calls 0x4014FC, which also reads
+ * input+0x18 and forwards the word to 0x401558. The second query explicitly
+ * stores zero at SP64. These are observed original reads/stores, not proof
+ * of a missing historical C initializer or a confirmed player-visible bug.
+ * RE_UNKNOWN: caller flags, scratch provenance and reachable helper paths.
+ * Trace original flag writers/callers and each invoked query helper before
+ * changing storage, adding a default or assigning gameplay consequences.
+ * RE_UNKNOWN: endpoint-selector domain. Native low16 zero/nonzero selects
+ * the first vector at offsets 0x5C/0x68, but the second source uses the full
+ * low16 value times 12. Trace callers and vector-bank allocation bounds
+ * before assuming the selector is restricted to zero or one. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040B838.s")
+#line 527 "src/modules/uvdyn_rom.c"
 
 #line 528 "src/modules/uvdyn_rom.c"
 /* Bind the shared scalar address and clear both original dynamics

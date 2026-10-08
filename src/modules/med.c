@@ -30,8 +30,8 @@ void func_med_00402C7C();
 void medStoreSharedNodeByte23();
 void func_med_00404FE0();
 void medRefreshMatchedControlText();
-void medForwardFirstSharedAddressProperty();
-void medForwardSecondSharedAddressProperty();
+void medWriteFirstSharedRgbaCommand();
+void medWriteSecondSharedRgbaCommand();
 void func_med_004051A8();
 void func_med_00405338();
 void func_med_004053B4();
@@ -285,13 +285,13 @@ extern UvGuiExp_0040505C *gUvGuiExports;
 #line 226 "src/modules/med.c"
 
 #line 227 "src/modules/med.c"
-/* Find the control in the original16-entry table, derive three indices,
- * obtain a source-address word and pass it to original GUI C4's30-byte text
- * copier, then retain the existing follow-up callback.
- * RE_UNKNOWN: the provider at D_med_004080A0 slot0x0C still has its old word
- * return view; its actual dependency/target must settle the intended source
- * prototype, allocation and readable extent. No30-byte source-array claim is
- * made here, and no runtime overread is proved without that original storage. */
+/* Find the control in the original 16-entry table and derive lookup selectors.
+ * Actual DLED slot 0x0C returns a mapped original combiner-source label word;
+ * pass that address to GUI C4, then preserve the existing DLED follow-up.
+ * Original DLED ignores the first lookup word and uses unchecked signed indices.
+ * Slot 0x14 packs the observed 16-word shared window into the supplied FC command.
+ * RE_UNKNOWN: index validity, label's 30-byte source window, shared backing extent,
+ * alias/lifetime and historical source declarations require original producers/callers. */
 void medRefreshMatchedControlText(void *control)
 {
   void **entry;
@@ -317,19 +317,25 @@ void medRefreshMatchedControlText(void *control)
 #line 248 "src/modules/med.c"
 
 #line 249 "src/modules/med.c"
-/* Forward shared address D_med_00407FB0 with property 0xFA; ignore unused.
- * RE_UNKNOWN: slot 0x10 registration semantics, extent/lifetime; inspect original provider and callers. */
-void medForwardFirstSharedAddressProperty(s32 unused) {
+/* Pack four shared RGBA floats at D_med_00407FB0 into the selected 0xFA command; preserve unused.
+ * RE_UNKNOWN: command address/lifetime, shared backing extent and scalar domains require original writers/callers; actual DLED slot 0x10 truncates scaled channels without clamps and skips a null command. */
+#line 251 "src/modules/med.c"
+
+void medWriteFirstSharedRgbaCommand(s32 unused) {
     (*(void (**)(s32, u8*, s32))((u8*)D_med_004080A0 + 0x10))(D_med_00407F64, &D_med_00407FB0, 0xFA);
 }
+#line 254 "src/modules/med.c"
 #line 252 "src/modules/med.c"
 
 #line 253 "src/modules/med.c"
-/* Forward shared address D_med_00407FC0 with property 0xFB; ignore unused.
- * RE_UNKNOWN: slot 0x10 registration semantics, extent/lifetime; inspect original provider and callers. */
-void medForwardSecondSharedAddressProperty(s32 unused) {
+/* Pack four shared RGBA floats at D_med_00407FC0 into the selected 0xFB command; preserve unused.
+ * RE_UNKNOWN: command address/lifetime, shared backing extent and scalar domains require original writers/callers; actual DLED slot 0x10 truncates scaled channels without clamps and skips a null command. */
+#line 255 "src/modules/med.c"
+
+void medWriteSecondSharedRgbaCommand(s32 unused) {
     (*(void (**)(s32, u8*, s32))((u8*)D_med_004080A0 + 0x10))(D_med_00407F68, &D_med_00407FC0, 0xFB);
 }
+#line 258 "src/modules/med.c"
 #line 256 "src/modules/med.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_004051A8.s")

@@ -507,9 +507,16 @@ void uvIsectSetRecordByte10(void *record, s8 value) {
 }
 #line 164 "src/modules/uvisect_rom.c"
 
-s32 func_uvisect_rom_00403E8C(void *arg0) {
-    return *(u8 *)((u8 *)arg0 + 0x10);
+#line 165 "src/modules/uvisect_rom.c"
+
+/* Read record byte0x10 as unsigned and return its value in the existing
+ * signed-word ABI. RE_UNKNOWN: byte meaning and valid record lifetime;
+ * trace the setter, original producers and consumers before naming flag bits.
+ * Preserve the unchecked record access and the setter's low-byte storage. */
+s32 uvIsectGetRecordByte10(void *record) {
+    return *(u8 *)((u8 *)record + 0x10);
 }
+#line 168 "src/modules/uvisect_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00403E94.s")
 
