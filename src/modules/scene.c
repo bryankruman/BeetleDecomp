@@ -298,6 +298,21 @@ void func_scene_00400EC0(void) {
 }
 #line 210 "src/modules/scene.c"
 
+/* func_scene_00400EC8 builds the scene text list and track, weather and
+ * environment scalar rows through the original GUI and MISC slots. Preserve
+ * all dependency reloads, flag/bound words, direct callbacks and word setters.
+ * RE_ORIGINAL_QUIRK: the weather row receives the track callback word before
+ * its weather callback word; both original stores and reloads are retained.
+ * RE_UNKNOWN: complete bound-storage types/extents, row and callback/table
+ * declarations, allocation-failure domains and readable 30-byte label windows
+ * need original storage producers, GUI consumers and caller lifecycle evidence.
+ * Native fourth arguments carry IEEE-754 words 0 and 0x41200000; the MISC
+ * provider consumes f32 bits, but historical caller formal types remain unknown.
+ * Readable C is parked: the 908-byte raw-word draft retains all effects and
+ * the full 60-record relocation multiset, with eleven stack/frame immediates
+ * and eight zero-word instruction encodings still different. Historical local
+ * and argument declarations need new source evidence; do not invent padding. */
+#line 211 "src/modules/scene.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/scene/func_scene_00400EC8.s")
 
 #line 213 "src/modules/scene.c"
@@ -361,6 +376,17 @@ void sceneApplySelectedTrack(SceneTrackChoice *choice) {
 #line 248 "src/modules/scene.c"
 #line 241 "src/modules/scene.c"
 
+/* func_scene_00401324 truncates row float 0x24, stores the word at settings
+ * offset 0xC8, formats CLEAR/SNOW/RAIN/NOT SUPPORTED for selectors 0..3, then
+ * passes original stack address SP+0x20 to the GUI upper-text byte copier.
+ * RE_ORIGINAL_QUIRK: other selectors reach that call without formatting the
+ * scratch source; the original GUI C4 copier reads exactly 30 source bytes.
+ * RE_UNKNOWN: selection/conversion domains, historical scratch-object extent
+ * and the complete readable 30-byte source window require original row
+ * producers, callers and stack storage evidence. The longest observed format
+ * needs 14 bytes including NUL; that does not prove the historical capacity
+ * or reachable failure. Preserve original ASM and its unchecked dataflow. */
+#line 242 "src/modules/scene.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/scene/func_scene_00401324.s")
 
 #line 244 "src/modules/scene.c"

@@ -2593,10 +2593,19 @@ Totals: 358 further recoveries after the 225 upstream ordinary imports, plus 132
 Frozen wave `2115-motion-collision-readable-recovery-2115` and `accepted-motion-collision-readable-recovery-2115` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 358 further readable functions
+## Historical accepted checkpoint — 358 further readable functions
 
 Clarify dynamic geometry descriptor storage, display-list heads, polygon range and batching roles. Preserve raw forwarded words, minimum-count rejection, original descriptor initialization, vertex commands, repeated cursor reloads and original range overrides. Preserve all 860 instruction bytes and 34 complete ordered relocation records. Correct the inaccurate callback-export type label and document original signed vertex append limit/count behavior without a repair or reachable-overrun claim. Retain inherited outer prefix/pad roles as unknown and preserve all executable logical source coordinates, including explicit resumes181/196/397. Count two new older C cleanups, with the grid already counted in historical562. No new recovery, storage/ABI changes or readonly migration. Require original packed modules, fresh original ROM, all frozen sources and uncertainty-index freshness before acceptance.
 
 Totals: 358 further recoveries after the 225 upstream ordinary imports, plus 1327 existing C semantic cleanups. Current ledger: 842 assembly references = 799 ordinary + 43 entrypoints; 749,720 known remaining instruction bytes; zero unknown sizes; 301 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `2129-older-geometry-readable-contracts-2129` and `accepted-older-geometry-readable-contracts-2129` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 358 further readable functions
+
+Clarify original banked and wide-grid dimension, closure, vertex cursor and command-index roles. Preserve every expression, declaration type/order, unused local, inherited pad, backslash continuation and display-list reload. Keep the original full-word dimension comparison, signed-halfword and byte narrowing, full-valued extra row-pair input and signed modulo/index behavior. Two new older C cleanups; no new recovery or type/readonly changes. Add three separately approved pure native-ASM notes for audio handle matching and Scene row/weather callback contracts. Preserve whole-source byte inverse and all executable logical coordinates, with grid resumes208/299. Require original packed GEOM/Audio/Scene modules, fresh original ROM, all frozen sources and uncertainty-index freshness before acceptance.
+
+Totals: 358 further recoveries after the 225 upstream ordinary imports, plus 1329 existing C semantic cleanups. Current ledger: 842 assembly references = 799 ordinary + 43 entrypoints; 749,720 known remaining instruction bytes; zero unknown sizes; 301 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `2140-older-grid-readable-contracts-2140` and `accepted-older-grid-readable-contracts-2140` verify real translation-unit instructions/full relocations, 3 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

@@ -129,6 +129,19 @@ void carAudioReleaseHandle(UnkStruct_004005C8 *handle) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_00402070.s")
 
+/* Check the first enabled matching low-byte ID in banks 0x41DC/0x41E8
+ * then 0x41D8/0x41E4. Release and initialize its stride-eight sound handle,
+ * reload sound exports between calls, then clear its flag and store ID 0xFF.
+ * RE_ORIGINAL_QUIRK: explicit initialize follows release even though release
+ * initializes a current identity; first-bank success skips the second bank.
+ * RE_UNKNOWN: caller slot bounds, stored-ID meanings, table extents and
+ * provider/handle lifetime guarantees need original producers and callers.
+ * Historical formal/local storage remains unproved: the byte-formal draft
+ * has 15 stack/frame-only differences (304 bytes, all ordered records exact).
+ * The explicit word-to-byte draft has 75 differences (300/304 bytes) and
+ * differing relocation sites; no omitted callback effect was identified.
+ * Retain original assembly until complete instructions/records match. */
+#line 95 "src/modules/caraudio.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_0040218C.s")
 
 /* Resolve all four CARANIM material records before sequential signed16 code

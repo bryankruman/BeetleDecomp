@@ -147,168 +147,186 @@ void uvEndTmesh(s32 arg0, s32 arg1, UvGeom_Rom_0040019C *arg2, Gfx **arg3) {
     uvGeomFinishOwnedDisplayList((s32) sp20, arg3);
 }
 
-void uvEndGridWide(s16 arg0, s16 arg1, u8 arg2, u8 arg3, s32 arg4, s32 arg5, UvGeom_Rom_0040019C *arg6,
-                   Gfx **gdl) {
-    s32 temp_a2;
-    s32 temp_v1;
-    s32 var_t2;
-    s32 j;
-    Vtx *var_s0;
-    Vtx *var_s1;
-    Vtx *var_s6;
-    s32 i;
-    s32 var_t3;
-    s32 var_t1;
-    s32 var_t0;
-    s32 sp40;
+/* Emit alternating vertices from adjacent rows through the original modulo-16
+ * slots, retaining each cursor reload and optional first-column repetition.
+ * The third byte is tested for nonzero; the fourth byte adds its full value to
+ * the row-pair bound, so preserve that addition rather than normalizing it.
+ * RE_UNKNOWN: valid signed dimensions/closure values, vertex-address spans,
+ * output capacity and alias/lifetime domains require original range/parameter
+ * producers, drawing callers and display-list consumers. */
+#line 137 "src/modules/uvgeom_rom.c"
+void uvEndGridWide(s16 rowVertexCount, s16 rowCount, u8 columnClosureValue, u8 extraRowPairCount, s32 descriptorHalfwordInput, s32 vertexAddressWord, UvGeom_Rom_0040019C *mesh,
+                   Gfx **displayListHead) {
+    s32 earlierSlot;
+    s32 unusedWord;
+    s32 emittedVertexCount;
+    s32 interleavedVertexIndex;
+    Vtx *nextRow;
+    Vtx *currentRow;
+    Vtx *firstRow;
+    s32 rowPairIndex;
+    s32 useCurrentRow;
+    s32 previousSlot;
+    s32 currentSlot;
+    s32 displayListMode;
 
-    var_t0 = 0;
-    var_t1 = 0;
-    var_t2 = 0;
-    sp40 = uvGeomInitializeMeshDescriptor(arg4, arg5, arg6, gdl);
-    var_s6 = var_s1 = arg6->unk0;
+    currentSlot = 0;
+    previousSlot = 0;
+    emittedVertexCount = 0;
+    displayListMode = uvGeomInitializeMeshDescriptor(descriptorHalfwordInput, vertexAddressWord, mesh, displayListHead);
+    firstRow = currentRow = mesh->unk0;
 
-    for (i = 0; i < (arg1 + arg3) - 1; i++) {
-        var_t3 = 1;
-        if (arg1 == i + 1) {
-            var_s0 = var_s6;
+    for (rowPairIndex = 0; rowPairIndex < (rowCount + extraRowPairCount) - 1; rowPairIndex++) {
+        useCurrentRow = 1;
+        if (rowCount == rowPairIndex + 1) {
+            nextRow = firstRow;
         } else {
-            var_s0 = arg0 + var_s1;
+            nextRow = rowVertexCount + currentRow;
         }
 
-        for (j = 0; j < arg0 * 2; j++) {
-            if (var_t3) {
-                temp_a2 = var_t1;
-                var_t1 = var_t0;
-                var_t0 = var_t2 % 16;
+        for (interleavedVertexIndex = 0; interleavedVertexIndex < rowVertexCount * 2; interleavedVertexIndex++) {
+            if (useCurrentRow) {
+                earlierSlot = previousSlot;
+                previousSlot = currentSlot;
+                currentSlot = emittedVertexCount % 16;
 
-                gSPVertex(gdl[0]++, (j / 2) + (Vtx *) OS_PHYSICAL_TO_K0(var_s1), 1, var_t0);
-                var_t2++;
-                if (j >= 2) {
-                    gSP1Triangle(gdl[0]++, temp_a2, var_t1, var_t0, 0);
+                gSPVertex(displayListHead[0]++, (interleavedVertexIndex / 2) + (Vtx *) OS_PHYSICAL_TO_K0(currentRow), 1, currentSlot);
+                emittedVertexCount++;
+                if (interleavedVertexIndex >= 2) {
+                    gSP1Triangle(displayListHead[0]++, earlierSlot, previousSlot, currentSlot, 0);
                 }
             } else {
-                temp_a2 = var_t1;
-                var_t1 = var_t0;
-                var_t0 = var_t2 % 16;
-                gSPVertex(gdl[0]++, (j / 2) + (Vtx *) OS_PHYSICAL_TO_K0(var_s0), 1, var_t0);
-                var_t2++;
-                if (j >= 2) {
-                    gSP1Triangle(gdl[0]++, temp_a2, var_t0, var_t1, 0);
+                earlierSlot = previousSlot;
+                previousSlot = currentSlot;
+                currentSlot = emittedVertexCount % 16;
+                gSPVertex(displayListHead[0]++, (interleavedVertexIndex / 2) + (Vtx *) OS_PHYSICAL_TO_K0(nextRow), 1, currentSlot);
+                emittedVertexCount++;
+                if (interleavedVertexIndex >= 2) {
+                    gSP1Triangle(displayListHead[0]++, earlierSlot, currentSlot, previousSlot, 0);
                 }
             }
-            var_t3 ^= 1;
+            useCurrentRow ^= 1;
         }
-        if (arg2) {
-            temp_a2 = var_t1;
-            var_t1 = var_t0;
-            var_t0 = var_t2 % 16;
-            gSPVertex(gdl[0]++, OS_PHYSICAL_TO_K0(var_s1), 1, var_t0);
-            var_t2++;
-            gSP1Triangle(gdl[0]++, temp_a2, var_t1, var_t0, 0);
+        if (columnClosureValue) {
+            earlierSlot = previousSlot;
+            previousSlot = currentSlot;
+            currentSlot = emittedVertexCount % 16;
+            gSPVertex(displayListHead[0]++, OS_PHYSICAL_TO_K0(currentRow), 1, currentSlot);
+            emittedVertexCount++;
+            gSP1Triangle(displayListHead[0]++, earlierSlot, previousSlot, currentSlot, 0);
 
-            temp_a2 = var_t1;
-            var_t1 = var_t0;
-            var_t0 = var_t2 % 16;
-            gSPVertex(gdl[0]++, OS_PHYSICAL_TO_K0(var_s0), 1, var_t0);
-            var_t2++;
-            gSP1Triangle(gdl[0]++, temp_a2, var_t0, var_t1, 0);
+            earlierSlot = previousSlot;
+            previousSlot = currentSlot;
+            currentSlot = emittedVertexCount % 16;
+            gSPVertex(displayListHead[0]++, OS_PHYSICAL_TO_K0(nextRow), 1, currentSlot);
+            emittedVertexCount++;
+            gSP1Triangle(displayListHead[0]++, earlierSlot, currentSlot, previousSlot, 0);
         }
-        var_s1 += arg0;
+        currentRow += rowVertexCount;
     }
-    uvGeomFinishOwnedDisplayList(sp40, gdl);
+    uvGeomFinishOwnedDisplayList(displayListMode, displayListHead);
 }
+#line 208 "src/modules/uvgeom_rom.c"
 
-void uvEndGrid(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, UvGeom_Rom_0040019C *arg6,
-               Gfx **gdl) {
-    s32 spCC;
-    s32 spC8;
-    s16 spC6;
-    s16 spC7;
-    s16 spC5;
-    s16 spC4;
-    s16 spC3;
-    Vtx *var_s1;
-    Vtx *var_s6;
-    s16 spBC[2];
-    s16 sp40;
+/* Select dimensions using the original full-word comparison, then preserve
+ * the signed-halfword narrowing, vertex-bank alternation and closure tests.
+ * The wide path narrows the forwarded closure values to bytes; keep both
+ * representations and the original unused local storage.
+ * RE_UNKNOWN: valid dimensions/closure values, inherited pad role, vertex
+ * spans and output capacity/alias/lifetime guarantees require original grid
+ * callers, local-layout evidence and display-list consumers. */
+#line 209 "src/modules/uvgeom_rom.c"
+void uvEndGrid(s32 dimension0, s32 dimension1, s32 dimension0ClosureWord, s32 dimension1ClosureWord, s32 descriptorHalfwordInput, s32 vertexAddressWord, UvGeom_Rom_0040019C *mesh,
+               Gfx **displayListHead) {
+    s32 rowIndex;
+    s32 columnIndex;
+    s16 rowCount;
+    s16 rowVertexCount;
+    s16 columnClosureValue;
+    s16 rowClosureValue;
+    s16 activeVertexBank;
+    Vtx *firstRow;
+    Vtx *currentRow;
+    s16 vertexBankStarts[2];
+    s16 displayListMode;
     s32 pad;
 
     // clang-format off
-    if (arg1 < arg0) {
-        spC7 = arg1;\
-        spC6 = arg0;\
-        spC5 = arg3;\
-        spC4 = arg2;
+    if (dimension1 < dimension0) {
+        rowVertexCount = dimension1;\
+        rowCount = dimension0;\
+        columnClosureValue = dimension1ClosureWord;\
+        rowClosureValue = dimension0ClosureWord;
     } else {
-        spC7 = arg0;\
-        spC6 = arg1;\
-        spC5 = arg2;\
-        spC4 = arg3;
+        rowVertexCount = dimension0;\
+        rowCount = dimension1;\
+        columnClosureValue = dimension0ClosureWord;\
+        rowClosureValue = dimension1ClosureWord;
     }
     // clang-format on
 
-    if (spC7 >= 9) {
-        uvEndGridWide(spC7, spC6, spC4, spC5, arg4, arg5, arg6, gdl);
+    if (rowVertexCount >= 9) {
+        uvEndGridWide(rowVertexCount, rowCount, rowClosureValue, columnClosureValue, descriptorHalfwordInput, vertexAddressWord, mesh, displayListHead);
         return;
     }
 
-    if (spC6 < 2) {
+    if (rowCount < 2) {
         return;
     }
 
-    sp40 = uvGeomInitializeMeshDescriptor(arg4, arg5, arg6, gdl);
-    var_s1 = arg6->unk0;
-    spBC[0] = 0;
-    spBC[1] = spC7;
+    displayListMode = uvGeomInitializeMeshDescriptor(descriptorHalfwordInput, vertexAddressWord, mesh, displayListHead);
+    firstRow = mesh->unk0;
+    vertexBankStarts[0] = 0;
+    vertexBankStarts[1] = rowVertexCount;
 
-    gSPVertex(gdl[0]++, OS_PHYSICAL_TO_K0(var_s1), spC7, spBC[0]);
+    gSPVertex(displayListHead[0]++, OS_PHYSICAL_TO_K0(firstRow), rowVertexCount, vertexBankStarts[0]);
 
-    var_s6 = (Vtx *) var_s1 + spC7;
+    currentRow = (Vtx *) firstRow + rowVertexCount;
 
-    spC3 = 1;
-    for (spCC = 1; spCC < spC6; spCC++) {
-        gSPVertex(gdl[0]++, OS_PHYSICAL_TO_K0(var_s6), spC7, spBC[spC3]);
+    activeVertexBank = 1;
+    for (rowIndex = 1; rowIndex < rowCount; rowIndex++) {
+        gSPVertex(displayListHead[0]++, OS_PHYSICAL_TO_K0(currentRow), rowVertexCount, vertexBankStarts[activeVertexBank]);
 
-        if (spC3) {
-            for (spC8 = 0; spC8 < spC7 - 1; spC8++) {
-                gSP1Triangle(gdl[0]++, spC8, spC8 + spC7, spC8 + spC7 + 1, 0);
-                gSP1Triangle(gdl[0]++, spC8, spC8 + spC7 + 1, spC8 + 1, 0);
+        if (activeVertexBank) {
+            for (columnIndex = 0; columnIndex < rowVertexCount - 1; columnIndex++) {
+                gSP1Triangle(displayListHead[0]++, columnIndex, columnIndex + rowVertexCount, columnIndex + rowVertexCount + 1, 0);
+                gSP1Triangle(displayListHead[0]++, columnIndex, columnIndex + rowVertexCount + 1, columnIndex + 1, 0);
             }
 
-            if (spC5) {
-                gSP1Triangle(gdl[0]++, spC8, spC8 + spC7, spC7, 0);
-                gSP1Triangle(gdl[0]++, spC8, spC7, 0, 0);
+            if (columnClosureValue) {
+                gSP1Triangle(displayListHead[0]++, columnIndex, columnIndex + rowVertexCount, rowVertexCount, 0);
+                gSP1Triangle(displayListHead[0]++, columnIndex, rowVertexCount, 0, 0);
             }
         } else {
-            for (spC8 = 0; spC8 < spC7 - 1; spC8++) {
-                gSP1Triangle(gdl[0]++, spC8 + spC7, spC8, spC8 + 1, 0);
-                gSP1Triangle(gdl[0]++, spC8 + spC7, spC8 + 1, spC8 + spC7 + 1, 0);
+            for (columnIndex = 0; columnIndex < rowVertexCount - 1; columnIndex++) {
+                gSP1Triangle(displayListHead[0]++, columnIndex + rowVertexCount, columnIndex, columnIndex + 1, 0);
+                gSP1Triangle(displayListHead[0]++, columnIndex + rowVertexCount, columnIndex + 1, columnIndex + rowVertexCount + 1, 0);
             }
-            if (spC5) {
-                gSP1Triangle(gdl[0]++, spC8 + spC7, 0, spC7, 0);
-                gSP1Triangle(gdl[0]++, spC8 + spC7, spC8, 0, 0);
+            if (columnClosureValue) {
+                gSP1Triangle(displayListHead[0]++, columnIndex + rowVertexCount, 0, rowVertexCount, 0);
+                gSP1Triangle(displayListHead[0]++, columnIndex + rowVertexCount, columnIndex, 0, 0);
             }
         }
-        var_s6 += spC7;
-        spC3 ^= 1;
+        currentRow += rowVertexCount;
+        activeVertexBank ^= 1;
     }
 
-    if (spC4) {
-        gSPVertex(gdl[0]++, OS_PHYSICAL_TO_K0(var_s1), spC7, spBC[0]);
+    if (rowClosureValue) {
+        gSPVertex(displayListHead[0]++, OS_PHYSICAL_TO_K0(firstRow), rowVertexCount, vertexBankStarts[0]);
 
-        for (spC8 = 0; spC8 < spC7 - 1; spC8++) {
-            gSP1Triangle(gdl[0]++, spC8 + spC7, spC8, spC8 + 1, 0);
-            gSP1Triangle(gdl[0]++, spC8 + spC7, spC8 + 1, spC8 + spC7 + 1, 0);
+        for (columnIndex = 0; columnIndex < rowVertexCount - 1; columnIndex++) {
+            gSP1Triangle(displayListHead[0]++, columnIndex + rowVertexCount, columnIndex, columnIndex + 1, 0);
+            gSP1Triangle(displayListHead[0]++, columnIndex + rowVertexCount, columnIndex + 1, columnIndex + rowVertexCount + 1, 0);
         }
 
-        if (spC5) {
-            gSP1Triangle(gdl[0]++, spC8 + spC7, 0, spC7, 0);
-            gSP1Triangle(gdl[0]++, spC8 + spC7, spC8, 0, 0);
+        if (columnClosureValue) {
+            gSP1Triangle(displayListHead[0]++, columnIndex + rowVertexCount, 0, rowVertexCount, 0);
+            gSP1Triangle(displayListHead[0]++, columnIndex + rowVertexCount, columnIndex, 0, 0);
         }
     }
-    uvGeomFinishOwnedDisplayList(sp40, gdl);
+    uvGeomFinishOwnedDisplayList(displayListMode, displayListHead);
 }
+#line 299 "src/modules/uvgeom_rom.c"
 
 void uvSetFillColor(f32 red, f32 green, f32 blue, f32 alpha) {
     Gfx **gdl;

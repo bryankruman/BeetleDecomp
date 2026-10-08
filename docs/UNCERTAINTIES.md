@@ -17,8 +17,8 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 729 |
-| Preserved RE_ORIGINAL_QUIRK notes | 189 |
+| Explicit RE_UNKNOWN notes | 734 |
+| Preserved RE_ORIGINAL_QUIRK notes | 192 |
 | Older comments with uncertainty language | 88 |
 | Documented original-behavior audits | 28 |
 | Assembly-backed functions or data | 844 |
@@ -27,8 +27,8 @@ For every future source wave, regenerate and check this index after code and str
 | Offset-based fields or neutral typed fields | 1434 |
 | Layout padding to preserve | 264 |
 | Unresolved type names | 282 |
-| Explicit unused ABI, storage or local identifiers | 119 |
-| Decompiler parameter/local names | 882 |
+| Explicit unused ABI, storage or local identifiers | 120 |
+| Decompiler parameter/local names | 866 |
 | Fake, unresolved or TODO draft markers | 28 |
 | Data-dependent conditional draft guards | 4 |
 
@@ -1722,23 +1722,23 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_caraudio_004027A8` | function `func_caraudio_004027A8` | [31](../src/modules/caraudio.c#L31) |
 | address_function | `func_caraudio_004029F8` | function `func_caraudio_004029F8` | [32](../src/modules/caraudio.c#L32) |
 | address_function | `func_caraudio_00402B20` | function `carAudioUpdateSharedScalarAndEmitters`, function `func_caraudio_00402B20` | [33](../src/modules/caraudio.c#L33), [83](../src/modules/caraudio.c#L83) |
-| address_function | `func_caraudio_00402C08` | function `func_caraudio_00402C08` | [185](../src/modules/caraudio.c#L185) |
+| address_function | `func_caraudio_00402C08` | function `func_caraudio_00402C08` | [198](../src/modules/caraudio.c#L198) |
 | address_function | `func_caraudio_00402CA4` | function `func_caraudio_00402CA4` | [35](../src/modules/caraudio.c#L35) |
 | address_function | `func_caraudio_00402E00` | function `func_caraudio_00402E00` | [36](../src/modules/caraudio.c#L36) |
 | address_function | `func_caraudio_004031E0` | function `func_caraudio_004031E0` | [38](../src/modules/caraudio.c#L38) |
 | address_function | `func_caraudio_0040336C` | function `func_caraudio_0040336C` | [39](../src/modules/caraudio.c#L39) |
 | address_function | `func_caraudio_0040397C` | function `func_caraudio_0040397C` | [40](../src/modules/caraudio.c#L40) |
-| address_function | `func_caraudio_00403A2C` | function `func_caraudio_00403A2C` | [282](../src/modules/caraudio.c#L282) |
-| address_global | `D_caraudio_00403EF4` | function `carAudioUpdateDualEmitterVolume`, global `D_caraudio_00403EF4` | [5](../src/modules/caraudio.c#L5), [194](../src/modules/caraudio.c#L194) |
-| address_global | `D_caraudio_00403F00` | function `carAudioStartFixedPositionSound`, global `D_caraudio_00403F00` | [224](../src/modules/caraudio.c#L224), [236](../src/modules/caraudio.c#L236) |
-| address_global | `D_caraudio_00403F04` | function `carAudioStartFixedPositionSound`, global `D_caraudio_00403F04` | [225](../src/modules/caraudio.c#L225), [237](../src/modules/caraudio.c#L237) |
-| address_global | `D_caraudio_00403F08` | function `carAudioStartFixedPositionSound`, global `D_caraudio_00403F08` | [226](../src/modules/caraudio.c#L226), [243](../src/modules/caraudio.c#L243) |
+| address_function | `func_caraudio_00403A2C` | function `func_caraudio_00403A2C` | [295](../src/modules/caraudio.c#L295) |
+| address_global | `D_caraudio_00403EF4` | function `carAudioUpdateDualEmitterVolume`, global `D_caraudio_00403EF4` | [5](../src/modules/caraudio.c#L5), [207](../src/modules/caraudio.c#L207) |
+| address_global | `D_caraudio_00403F00` | function `carAudioStartFixedPositionSound`, global `D_caraudio_00403F00` | [237](../src/modules/caraudio.c#L237), [249](../src/modules/caraudio.c#L249) |
+| address_global | `D_caraudio_00403F04` | function `carAudioStartFixedPositionSound`, global `D_caraudio_00403F04` | [238](../src/modules/caraudio.c#L238), [250](../src/modules/caraudio.c#L250) |
+| address_global | `D_caraudio_00403F08` | function `carAudioStartFixedPositionSound`, global `D_caraudio_00403F08` | [239](../src/modules/caraudio.c#L239), [256](../src/modules/caraudio.c#L256) |
 | address_global | `D_caraudio_004040C0` | function `carAudioUpdateSharedScalarAndEmitters`, global `D_caraudio_004040C0` | [12](../src/modules/caraudio.c#L12), [82](../src/modules/caraudio.c#L82) |
-| address_global | `D_caraudio_004041E0` | function `carAudioClearSlotFlag`, global `D_caraudio_004041E0` | [41](../src/modules/caraudio.c#L41), [207](../src/modules/caraudio.c#L207) |
-| address_global | `D_caraudio_00404228` | function `carAudioPrependCommand`, global `D_caraudio_00404228` | [251](../src/modules/caraudio.c#L251), [268](../src/modules/caraudio.c#L268), [269](../src/modules/caraudio.c#L269) |
-| address_global | `D_caraudio_00404230` | function `func_caraudio_00403A2C`, global `D_caraudio_00404230` | [280](../src/modules/caraudio.c#L280), [289](../src/modules/caraudio.c#L289) |
-| address_global | `D_caraudio_00404254` | function `carAudioUpdateDualEmitterVolume`, function `carAudioUpdateSharedScalarAndEmitters`, global `D_caraudio_00404254` | [13](../src/modules/caraudio.c#L13), [82](../src/modules/caraudio.c#L82), [194](../src/modules/caraudio.c#L194) |
-| address_global | `D_caraudio_00404300` | function `carAudioStartFixedPositionSound`, global `D_caraudio_00404300` | [227](../src/modules/caraudio.c#L227), [239](../src/modules/caraudio.c#L239), [241](../src/modules/caraudio.c#L241), [242](../src/modules/caraudio.c#L242), [243](../src/modules/caraudio.c#L243), [244](../src/modules/caraudio.c#L244), [245](../src/modules/caraudio.c#L245) |
+| address_global | `D_caraudio_004041E0` | function `carAudioClearSlotFlag`, global `D_caraudio_004041E0` | [41](../src/modules/caraudio.c#L41), [220](../src/modules/caraudio.c#L220) |
+| address_global | `D_caraudio_00404228` | function `carAudioPrependCommand`, global `D_caraudio_00404228` | [264](../src/modules/caraudio.c#L264), [281](../src/modules/caraudio.c#L281), [282](../src/modules/caraudio.c#L282) |
+| address_global | `D_caraudio_00404230` | function `func_caraudio_00403A2C`, global `D_caraudio_00404230` | [293](../src/modules/caraudio.c#L293), [302](../src/modules/caraudio.c#L302) |
+| address_global | `D_caraudio_00404254` | function `carAudioUpdateDualEmitterVolume`, function `carAudioUpdateSharedScalarAndEmitters`, global `D_caraudio_00404254` | [13](../src/modules/caraudio.c#L13), [82](../src/modules/caraudio.c#L82), [207](../src/modules/caraudio.c#L207) |
+| address_global | `D_caraudio_00404300` | function `carAudioStartFixedPositionSound`, global `D_caraudio_00404300` | [240](../src/modules/caraudio.c#L240), [252](../src/modules/caraudio.c#L252), [254](../src/modules/caraudio.c#L254), [255](../src/modules/caraudio.c#L255), [256](../src/modules/caraudio.c#L256), [257](../src/modules/caraudio.c#L257), [258](../src/modules/caraudio.c#L258) |
 | assembly | `__entrypoint_func_caraudio_400000` | — | [43](../src/modules/caraudio.c#L43) |
 | assembly | `func_caraudio_004003B0` | — | [73](../src/modules/caraudio.c#L73) |
 | assembly | `func_caraudio_00400550` | — | [75](../src/modules/caraudio.c#L75) |
@@ -1752,35 +1752,37 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_caraudio_00401A08` | — | [102](../src/modules/caraudio.c#L102) |
 | assembly | `func_caraudio_00401F24` | — | [104](../src/modules/caraudio.c#L104) |
 | assembly | `func_caraudio_00402070` | — | [130](../src/modules/caraudio.c#L130) |
-| assembly | `func_caraudio_0040218C` | — | [132](../src/modules/caraudio.c#L132) |
-| assembly | `func_caraudio_004022BC` | — | [148](../src/modules/caraudio.c#L148) |
-| assembly | `func_caraudio_004027A8` | — | [150](../src/modules/caraudio.c#L150) |
-| assembly | `func_caraudio_004029F8` | — | [176](../src/modules/caraudio.c#L176) |
-| assembly | `func_caraudio_00402B20` | — | [178](../src/modules/caraudio.c#L178) |
-| assembly | `func_caraudio_00402CA4` | — | [201](../src/modules/caraudio.c#L201) |
-| assembly | `func_caraudio_00402E00` | — | [218](../src/modules/caraudio.c#L218) |
-| assembly | `func_caraudio_004031E0` | — | [274](../src/modules/caraudio.c#L274) |
-| assembly | `func_caraudio_0040336C` | — | [276](../src/modules/caraudio.c#L276) |
-| assembly | `func_caraudio_0040397C` | — | [278](../src/modules/caraudio.c#L278) |
-| decompiler_local | `arg0` | function `carAudioStartFixedPositionSound`, function `func_caraudio_00403A2C` | [37](../src/modules/caraudio.c#L37), [282](../src/modules/caraudio.c#L282), [290](../src/modules/caraudio.c#L290), [292](../src/modules/caraudio.c#L292) |
-| decompiler_local | `arg1` | function `func_caraudio_00403A2C` | [282](../src/modules/caraudio.c#L282), [287](../src/modules/caraudio.c#L287), [289](../src/modules/caraudio.c#L289), [291](../src/modules/caraudio.c#L291) |
+| assembly | `func_caraudio_0040218C` | — | [145](../src/modules/caraudio.c#L145) |
+| assembly | `func_caraudio_004022BC` | — | [161](../src/modules/caraudio.c#L161) |
+| assembly | `func_caraudio_004027A8` | — | [163](../src/modules/caraudio.c#L163) |
+| assembly | `func_caraudio_004029F8` | — | [189](../src/modules/caraudio.c#L189) |
+| assembly | `func_caraudio_00402B20` | — | [191](../src/modules/caraudio.c#L191) |
+| assembly | `func_caraudio_00402CA4` | — | [214](../src/modules/caraudio.c#L214) |
+| assembly | `func_caraudio_00402E00` | — | [231](../src/modules/caraudio.c#L231) |
+| assembly | `func_caraudio_004031E0` | — | [287](../src/modules/caraudio.c#L287) |
+| assembly | `func_caraudio_0040336C` | — | [289](../src/modules/caraudio.c#L289) |
+| assembly | `func_caraudio_0040397C` | — | [291](../src/modules/caraudio.c#L291) |
+| decompiler_local | `arg0` | function `carAudioStartFixedPositionSound`, function `func_caraudio_00403A2C` | [37](../src/modules/caraudio.c#L37), [295](../src/modules/caraudio.c#L295), [303](../src/modules/caraudio.c#L303), [305](../src/modules/caraudio.c#L305) |
+| decompiler_local | `arg1` | function `func_caraudio_00403A2C` | [295](../src/modules/caraudio.c#L295), [300](../src/modules/caraudio.c#L300), [302](../src/modules/caraudio.c#L302), [304](../src/modules/caraudio.c#L304) |
 | explicit_unknown | `Allocate 0x50 bytes; initialize matrix at 0x10 and store sourceRecordAddress at 0xC. * handleSlotIndex selects stride-8 handles. RE_UNKNOWN: source extent/lifetime and index * b...` | function `carAudioAllocateState` | [55](../src/modules/caraudio.c#L55) |
-| explicit_unknown | `Clear the flag byte using the supplied signed slot without a range check. * RE_UNKNOWN: valid slot domain and flag-table extent need original callers and data layout.` | function `carAudioClearSlotFlag` | [204](../src/modules/caraudio.c#L204) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_caraudio_00402C08` | [181](../src/modules/caraudio.c#L181) |
-| explicit_unknown | `Prepare sound selector 0x1D at fixed XYZ; reject returned managed-slot byte 0xFF. * Sound slot 0x80 copies matrix translation; the local matrix is not retained. * RE_UNKNOWN: ga...` | global `D_caraudio_00403F00` | [221](../src/modules/caraudio.c#L221) |
-| explicit_unknown | `Prepend kind zero; soundHandlingEnabled gates soundId/volume (SND 0x6C/0x84). * Original loader zeroes the head in fresh caud-image BSS before entry. RE_UNKNOWN: * value4/valueC...` | function `carAudioPrependCommand` | [255](../src/modules/caraudio.c#L255) |
-| explicit_unknown | `Resolve all four CARANIM material records before sequential signed16 code * tests. Priority is 4, then 5/6 (5 on track 7, otherwise 2), followed by * 12, 3, 2, 8, 9, 7, 10, 11, ...` | assembly `func_caraudio_004022BC` | [134](../src/modules/caraudio.c#L134) |
-| explicit_unknown | `Test four source words at 0x2D0..0x2DC; return one on first nonzero, else zero. * Preserve the original unchecked state/source dereferences and short-circuit order. * RE_UNKNOWN...` | function `carAudioHasAnySourceSlot` | [153](../src/modules/caraudio.c#L153) |
+| explicit_unknown | `Check the first enabled matching low-byte ID in banks 0x41DC/0x41E8 * then 0x41D8/0x41E4. Release and initialize its stride-eight sound handle, * reload sound exports between ca...` | assembly `func_caraudio_0040218C` | [132](../src/modules/caraudio.c#L132) |
+| explicit_unknown | `Clear the flag byte using the supplied signed slot without a range check. * RE_UNKNOWN: valid slot domain and flag-table extent need original callers and data layout.` | function `carAudioClearSlotFlag` | [217](../src/modules/caraudio.c#L217) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_caraudio_00402C08` | [194](../src/modules/caraudio.c#L194) |
+| explicit_unknown | `Prepare sound selector 0x1D at fixed XYZ; reject returned managed-slot byte 0xFF. * Sound slot 0x80 copies matrix translation; the local matrix is not retained. * RE_UNKNOWN: ga...` | global `D_caraudio_00403F00` | [234](../src/modules/caraudio.c#L234) |
+| explicit_unknown | `Prepend kind zero; soundHandlingEnabled gates soundId/volume (SND 0x6C/0x84). * Original loader zeroes the head in fresh caud-image BSS before entry. RE_UNKNOWN: * value4/valueC...` | function `carAudioPrependCommand` | [268](../src/modules/caraudio.c#L268) |
+| explicit_unknown | `Resolve all four CARANIM material records before sequential signed16 code * tests. Priority is 4, then 5/6 (5 on track 7, otherwise 2), followed by * 12, 3, 2, 8, 9, 7, 10, 11, ...` | assembly `func_caraudio_004022BC` | [147](../src/modules/caraudio.c#L147) |
+| explicit_unknown | `Test four source words at 0x2D0..0x2DC; return one on first nonzero, else zero. * Preserve the original unchecked state/source dereferences and short-circuit order. * RE_UNKNOWN...` | function `carAudioHasAnySourceSlot` | [166](../src/modules/caraudio.c#L166) |
 | explicit_unknown | `Use source-record word 0x1EC as the unchecked shared-scalar index, * then run the original audio update and dual-emitter scalar update. * RE_UNKNOWN: index bounds, source extent...` | function `carAudioUpdateSharedScalarAndEmitters` | [78](../src/modules/caraudio.c#L78) |
-| layout_padding | `gap11` | type `CarAudioCommand` | [252](../src/modules/caraudio.c#L252) |
+| layout_padding | `gap11` | type `CarAudioCommand` | [265](../src/modules/caraudio.c#L265) |
 | offset_field | `unk00` | type `CarAudioDualVoice`, type `CarAudioVoiceIds` | [3](../src/modules/caraudio.c#L3), [4](../src/modules/caraudio.c#L4) |
 | offset_field | `unk02` | type `CarAudioVoiceIds` | [3](../src/modules/caraudio.c#L3) |
-| offset_field | `value4` | function `carAudioPrependCommand`, type `CarAudioCommand` | [252](../src/modules/caraudio.c#L252), [260](../src/modules/caraudio.c#L260), [263](../src/modules/caraudio.c#L263) |
-| offset_field | `valueC` | function `carAudioPrependCommand`, type `CarAudioCommand` | [252](../src/modules/caraudio.c#L252), [260](../src/modules/caraudio.c#L260), [265](../src/modules/caraudio.c#L265) |
-| opaque_type | `UnkStruct_004005C8` | function `carAudioReleaseHandle`, function `carAudioSetHandlePositionAndPitch`, function `carAudioSetHandlePositionAndPitch`, global `D_caraudio_00404300` | [26](../src/modules/caraudio.c#L26), [110](../src/modules/caraudio.c#L110), [123](../src/modules/caraudio.c#L123), [227](../src/modules/caraudio.c#L227) |
-| opaque_type | `UnkStruct_uvemitter_rom_004008CC` | function `carAudioSetHandlePositionAndPitch`, function `carAudioSetHandlePositionAndPitch`, function `carAudioStartFixedPositionSound` | [26](../src/modules/caraudio.c#L26), [110](../src/modules/caraudio.c#L110), [242](../src/modules/caraudio.c#L242) |
-| original_quirk | `Resolve all four CARANIM material records before sequential signed16 code * tests. Priority is 4, then 5/6 (5 on track 7, otherwise 2), followed by * 12, 3, 2, 8, 9, 7, 10, 11, ...` | assembly `func_caraudio_004022BC` | [134](../src/modules/caraudio.c#L134) |
-| unused_identifier | `unused` | function `carAudioStartFixedPositionSound` | [231](../src/modules/caraudio.c#L231) |
+| offset_field | `value4` | function `carAudioPrependCommand`, type `CarAudioCommand` | [265](../src/modules/caraudio.c#L265), [273](../src/modules/caraudio.c#L273), [276](../src/modules/caraudio.c#L276) |
+| offset_field | `valueC` | function `carAudioPrependCommand`, type `CarAudioCommand` | [265](../src/modules/caraudio.c#L265), [273](../src/modules/caraudio.c#L273), [278](../src/modules/caraudio.c#L278) |
+| opaque_type | `UnkStruct_004005C8` | function `carAudioReleaseHandle`, function `carAudioSetHandlePositionAndPitch`, function `carAudioSetHandlePositionAndPitch`, global `D_caraudio_00404300` | [26](../src/modules/caraudio.c#L26), [110](../src/modules/caraudio.c#L110), [123](../src/modules/caraudio.c#L123), [240](../src/modules/caraudio.c#L240) |
+| opaque_type | `UnkStruct_uvemitter_rom_004008CC` | function `carAudioSetHandlePositionAndPitch`, function `carAudioSetHandlePositionAndPitch`, function `carAudioStartFixedPositionSound` | [26](../src/modules/caraudio.c#L26), [110](../src/modules/caraudio.c#L110), [255](../src/modules/caraudio.c#L255) |
+| original_quirk | `Check the first enabled matching low-byte ID in banks 0x41DC/0x41E8 * then 0x41D8/0x41E4. Release and initialize its stride-eight sound handle, * reload sound exports between ca...` | assembly `func_caraudio_0040218C` | [132](../src/modules/caraudio.c#L132) |
+| original_quirk | `Resolve all four CARANIM material records before sequential signed16 code * tests. Priority is 4, then 5/6 (5 on track 7, otherwise 2), followed by * 12, 3, 2, 8, 9, 7, 10, 11, ...` | assembly `func_caraudio_004022BC` | [147](../src/modules/caraudio.c#L147) |
+| unused_identifier | `unused` | function `carAudioStartFixedPositionSound` | [244](../src/modules/caraudio.c#L244) |
 
 ## src/modules/cbars.c
 
@@ -3657,7 +3659,7 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_scene_00400CB8` | function `func_scene_00400CB8` | [89](../src/modules/scene.c#L89) |
 | address_function | `func_scene_00400EC0` | function `__entrypoint_func_sceneInitializeModuleExports`, function `func_scene_00400EC0`, function `func_scene_00400EC0` | [266](../src/modules/scene.c#L266), [277](../src/modules/scene.c#L277), [297](../src/modules/scene.c#L297) |
 | address_function | `func_scene_00400EC8` | function `__entrypoint_func_sceneInitializeModuleExports`, function `func_scene_00400EC8` | [90](../src/modules/scene.c#L90), [286](../src/modules/scene.c#L286) |
-| address_function | `func_scene_004012B0` | function `func_scene_004012B0` | [339](../src/modules/scene.c#L339) |
+| address_function | `func_scene_004012B0` | function `func_scene_004012B0` | [354](../src/modules/scene.c#L354) |
 | address_function | `func_scene_00401324` | function `func_scene_00401324` | [93](../src/modules/scene.c#L93) |
 | address_global | `D_8002CB8C` | global `D_8002CB8C` | [20](../src/modules/scene.c#L20) |
 | address_global | `D_8002CC64` | global `D_8002CC64` | [21](../src/modules/scene.c#L21) |
@@ -3687,7 +3689,7 @@ For every future source wave, regenerate and check this index after code and str
 | address_global | `D_scene_0040182C` | global `D_scene_0040182C` | [17](../src/modules/scene.c#L17) |
 | address_global | `D_scene_00401830` | global `D_scene_00401830` | [18](../src/modules/scene.c#L18) |
 | address_global | `D_scene_00401834` | global `D_scene_00401834` | [19](../src/modules/scene.c#L19) |
-| address_global | `D_scene_00401840` | function `sceneApplySelectedTrack`, global `D_scene_00401840` | [45](../src/modules/scene.c#L45), [358](../src/modules/scene.c#L358) |
+| address_global | `D_scene_00401840` | function `sceneApplySelectedTrack`, global `D_scene_00401840` | [45](../src/modules/scene.c#L45), [373](../src/modules/scene.c#L373) |
 | address_global | `D_scene_00401D3C` | global `D_scene_00401D3C` | [46](../src/modules/scene.c#L46) |
 | address_global | `D_scene_00402CF0` | global `D_scene_00402CF0` | [47](../src/modules/scene.c#L47) |
 | address_global | `D_scene_00402CF8` | function `sceneFindHandleSlot`, function `sceneGetClampedSixEntryValue`, global `D_scene_00402CF8` | [76](../src/modules/scene.c#L76), [105](../src/modules/scene.c#L105), [129](../src/modules/scene.c#L129) |
@@ -3715,30 +3717,34 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_scene_00400188` | — | [172](../src/modules/scene.c#L172) |
 | assembly | `func_scene_004003F4` | — | [229](../src/modules/scene.c#L229) |
 | assembly | `func_scene_00400CB8` | — | [257](../src/modules/scene.c#L257) |
-| assembly | `func_scene_00400EC8` | — | [301](../src/modules/scene.c#L301) |
-| assembly | `func_scene_00401324` | — | [364](../src/modules/scene.c#L364) |
+| assembly | `func_scene_00400EC8` | — | [316](../src/modules/scene.c#L316) |
+| assembly | `func_scene_00401324` | — | [390](../src/modules/scene.c#L390) |
 | decompiler_local | `arg0` | function `sceneMarkScreenRecords` | [91](../src/modules/scene.c#L91) |
 | explicit_unknown | `Invoke the model refresh helper for the three contiguous words beginning * at D_scene_00402D34, stopping before D_scene_00402D40. Preserve the original * grouped loop shape and ...` | function `sceneRefreshThreeListedModels` | [175](../src/modules/scene.c#L175) |
 | explicit_unknown | `Original GUI C4 is an upper-text byte copier, not a selection setter. * RE_UNKNOWN: the complete export table and historical caller declaration.` | type `SceneGuiTextExports` | [6](../src/modules/scene.c#L6) |
 | explicit_unknown | `Original address storage only. Assembly-only labels declared below are * opaque code addresses, never data objects or inferred callable interfaces. * RE_UNKNOWN: remaining callb...` | type `SceneModuleAddressStorage` | [261](../src/modules/scene.c#L261) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_scene_00400C58`, function `func_scene_00400EC0`, function `func_scene_004012B0` | [232](../src/modules/scene.c#L232), [293](../src/modules/scene.c#L293), [335](../src/modules/scene.c#L335) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_scene_00400C58`, function `func_scene_00400EC0`, function `func_scene_004012B0` | [232](../src/modules/scene.c#L232), [293](../src/modules/scene.c#L293), [350](../src/modules/scene.c#L350) |
 | explicit_unknown | `Register original scene export addresses in observed store order, after * updating the file allocation pointer. Preserve separate empty callbacks. The * blend slot at 0x28 is st...` | function `__entrypoint_func_sceneInitializeModuleExports` | [268](../src/modules/scene.c#L268) |
 | explicit_unknown | `Search the original nine-word scene table, returning the first matching * slot. A miss returns zero, which also identifies slot zero; preserve the * original four-at-a-time comp...` | function `sceneFindNineEntryValueSlot` | [136](../src/modules/scene.c#L136) |
-| explicit_unknown | `Set each record word at offset 0x21C to one in the screen-export array. * Reload the shared array and signed count after each store, preserving the * callback parameter home and...` | function `sceneMarkScreenRecords` | [304](../src/modules/scene.c#L304) |
-| explicit_unknown | `Truncate the floating selection into the current track, then use the stored * track to select its original 0x9C-byte record. GUI C4 consumes record word 0x08 * as the source add...` | function `sceneApplySelectedTrack` | [346](../src/modules/scene.c#L346) |
+| explicit_unknown | `Set each record word at offset 0x21C to one in the screen-export array. * Reload the shared array and signed count after each store, preserving the * callback parameter home and...` | function `sceneMarkScreenRecords` | [319](../src/modules/scene.c#L319) |
+| explicit_unknown | `Truncate the floating selection into the current track, then use the stored * track to select its original 0x9C-byte record. GUI C4 consumes record word 0x08 * as the source add...` | function `sceneApplySelectedTrack` | [361](../src/modules/scene.c#L361) |
+| explicit_unknown | `func_scene_00400EC8 builds the scene text list and track, weather and * environment scalar rows through the original GUI and MISC slots. Preserve * all dependency reloads, flag/...` | assembly `func_scene_00400EC8` | [301](../src/modules/scene.c#L301) |
+| explicit_unknown | `func_scene_00401324 truncates row float 0x24, stores the word at settings * offset 0xC8, formats CLEAR/SNOW/RAIN/NOT SUPPORTED for selectors 0..3, then * passes original stack a...` | assembly `func_scene_00401324` | [379](../src/modules/scene.c#L379) |
 | offset_field | `unk00` | type `SceneTrackChoice`, type `SceneTrackRecord` | [4](../src/modules/scene.c#L4), [5](../src/modules/scene.c#L5) |
 | offset_field | `unk0C` | type `SceneTrackRecord` | [5](../src/modules/scene.c#L5) |
-| offset_field | `value04` | function `sceneBlendEightWordRecord`, type `SceneBlendRecord` | [3](../src/modules/scene.c#L3), [398](../src/modules/scene.c#L398) |
-| offset_field | `value08` | function `sceneApplySelectedTrack`, function `sceneBlendEightWordRecord`, type `SceneBlendRecord`, type `SceneTrackRecord` | [3](../src/modules/scene.c#L3), [5](../src/modules/scene.c#L5), [359](../src/modules/scene.c#L359), [399](../src/modules/scene.c#L399) |
-| offset_field | `value0C` | function `sceneBlendEightWordRecord`, type `SceneBlendRecord` | [3](../src/modules/scene.c#L3), [400](../src/modules/scene.c#L400) |
-| offset_field | `value10` | function `sceneBlendEightWordRecord`, type `SceneBlendRecord` | [3](../src/modules/scene.c#L3), [401](../src/modules/scene.c#L401), [405](../src/modules/scene.c#L405) |
-| offset_field | `value14` | function `sceneBlendEightWordRecord`, type `SceneBlendRecord` | [3](../src/modules/scene.c#L3), [402](../src/modules/scene.c#L402) |
-| offset_field | `value18` | function `sceneBlendEightWordRecord`, type `SceneBlendRecord` | [3](../src/modules/scene.c#L3), [403](../src/modules/scene.c#L403) |
-| offset_field | `value1C` | function `sceneBlendEightWordRecord`, type `SceneBlendRecord` | [3](../src/modules/scene.c#L3), [404](../src/modules/scene.c#L404) |
+| offset_field | `value04` | function `sceneBlendEightWordRecord`, type `SceneBlendRecord` | [3](../src/modules/scene.c#L3), [424](../src/modules/scene.c#L424) |
+| offset_field | `value08` | function `sceneApplySelectedTrack`, function `sceneBlendEightWordRecord`, type `SceneBlendRecord`, type `SceneTrackRecord` | [3](../src/modules/scene.c#L3), [5](../src/modules/scene.c#L5), [374](../src/modules/scene.c#L374), [425](../src/modules/scene.c#L425) |
+| offset_field | `value0C` | function `sceneBlendEightWordRecord`, type `SceneBlendRecord` | [3](../src/modules/scene.c#L3), [426](../src/modules/scene.c#L426) |
+| offset_field | `value10` | function `sceneBlendEightWordRecord`, type `SceneBlendRecord` | [3](../src/modules/scene.c#L3), [427](../src/modules/scene.c#L427), [431](../src/modules/scene.c#L431) |
+| offset_field | `value14` | function `sceneBlendEightWordRecord`, type `SceneBlendRecord` | [3](../src/modules/scene.c#L3), [428](../src/modules/scene.c#L428) |
+| offset_field | `value18` | function `sceneBlendEightWordRecord`, type `SceneBlendRecord` | [3](../src/modules/scene.c#L3), [429](../src/modules/scene.c#L429) |
+| offset_field | `value1C` | function `sceneBlendEightWordRecord`, type `SceneBlendRecord` | [3](../src/modules/scene.c#L3), [430](../src/modules/scene.c#L430) |
 | original_quirk | `Search the original nine-word scene table, returning the first matching * slot. A miss returns zero, which also identifies slot zero; preserve the * original four-at-a-time comp...` | function `sceneFindNineEntryValueSlot` | [136](../src/modules/scene.c#L136) |
-| original_quirk | `Set each record word at offset 0x21C to one in the screen-export array. * Reload the shared array and signed count after each store, preserving the * callback parameter home and...` | function `sceneMarkScreenRecords` | [304](../src/modules/scene.c#L304) |
+| original_quirk | `Set each record word at offset 0x21C to one in the screen-export array. * Reload the shared array and signed count after each store, preserving the * callback parameter home and...` | function `sceneMarkScreenRecords` | [319](../src/modules/scene.c#L319) |
+| original_quirk | `func_scene_00400EC8 builds the scene text list and track, weather and * environment scalar rows through the original GUI and MISC slots. Preserve * all dependency reloads, flag/...` | assembly `func_scene_00400EC8` | [301](../src/modules/scene.c#L301) |
+| original_quirk | `func_scene_00401324 truncates row float 0x24, stores the word at settings * offset 0xC8, formats CLEAR/SNOW/RAIN/NOT SUPPORTED for selectors 0..3, then * passes original stack a...` | assembly `func_scene_00401324` | [379](../src/modules/scene.c#L379) |
 | unused_identifier | `unused00` | type `SceneGuiTextExports` | [8](../src/modules/scene.c#L8) |
-| unused_identifier | `unusedCallbackValue` | function `sceneMarkScreenRecords` | [309](../src/modules/scene.c#L309), [315](../src/modules/scene.c#L315) |
+| unused_identifier | `unusedCallbackValue` | function `sceneMarkScreenRecords` | [324](../src/modules/scene.c#L324), [330](../src/modules/scene.c#L330) |
 
 ## src/modules/scrn.c
 
@@ -6366,45 +6372,32 @@ For every future source wave, regenerate and check this index after code and str
 | address_global | `D_uvgeom_rom_00401740` | — | [31](../src/modules/uvgeom_rom.c#L31) |
 | address_global | `D_uvgeom_rom_00401750` | function `__entrypoint_func_uvgeom_rom_400000`, global `D_uvgeom_rom_00401750` | [24](../src/modules/uvgeom_rom.c#L24), [45](../src/modules/uvgeom_rom.c#L45), [49](../src/modules/uvgeom_rom.c#L49), [51](../src/modules/uvgeom_rom.c#L51), [56](../src/modules/uvgeom_rom.c#L56) |
 | address_global | `D_uvgeom_rom_00401754` | function `__entrypoint_func_uvgeom_rom_400000`, function `uvGeomModuleCleanup`, global `D_uvgeom_rom_00401754` | [25](../src/modules/uvgeom_rom.c#L25), [46](../src/modules/uvgeom_rom.c#L46), [53](../src/modules/uvgeom_rom.c#L53), [55](../src/modules/uvgeom_rom.c#L55), [56](../src/modules/uvgeom_rom.c#L56), [59](../src/modules/uvgeom_rom.c#L59), [69](../src/modules/uvgeom_rom.c#L69) |
-| address_global | `D_uvgeom_rom_00401758` | function `__entrypoint_func_uvgeom_rom_400000`, function `uvSetFillColor`, function `uvVtxRect`, global `D_uvgeom_rom_00401758` | [26](../src/modules/uvgeom_rom.c#L26), [60](../src/modules/uvgeom_rom.c#L60), [324](../src/modules/uvgeom_rom.c#L324), [333](../src/modules/uvgeom_rom.c#L333), [334](../src/modules/uvgeom_rom.c#L334), [335](../src/modules/uvgeom_rom.c#L335), [338](../src/modules/uvgeom_rom.c#L338), [339](../src/modules/uvgeom_rom.c#L339) (+6 in JSON) |
+| address_global | `D_uvgeom_rom_00401758` | function `__entrypoint_func_uvgeom_rom_400000`, function `uvSetFillColor`, function `uvVtxRect`, global `D_uvgeom_rom_00401758` | [26](../src/modules/uvgeom_rom.c#L26), [60](../src/modules/uvgeom_rom.c#L60), [342](../src/modules/uvgeom_rom.c#L342), [351](../src/modules/uvgeom_rom.c#L351), [352](../src/modules/uvgeom_rom.c#L352), [353](../src/modules/uvgeom_rom.c#L353), [356](../src/modules/uvgeom_rom.c#L356), [357](../src/modules/uvgeom_rom.c#L357) (+6 in JSON) |
 | address_global | `D_uvgeom_rom_0040175C` | function `__entrypoint_func_uvgeom_rom_400000`, function `uvGeomFinishOwnedDisplayList`, function `uvGeomInitializeMeshDescriptor`, global `D_uvgeom_rom_0040175C` | [27](../src/modules/uvgeom_rom.c#L27), [59](../src/modules/uvgeom_rom.c#L59), [80](../src/modules/uvgeom_rom.c#L80), [93](../src/modules/uvgeom_rom.c#L93) |
 | address_global | `D_uvgeom_rom_00401760` | function `__entrypoint_func_uvgeom_rom_400000`, function `uvGeomModuleCleanup`, global `D_uvgeom_rom_00401760` | [28](../src/modules/uvgeom_rom.c#L28), [57](../src/modules/uvgeom_rom.c#L57), [68](../src/modules/uvgeom_rom.c#L68) |
-| decompiler_local | `arg0` | function `uvEndGrid`, function `uvEndGrid`, function `uvEndGridWide`, function `uvEndGridWide`, function `uvEndTmesh`, function `uvEndTmesh`, function `uvGeomFinishOwnedDisplayList`, function `uvGeomInitializeMeshDescriptor`, function `uvVtxEndPolyInternal`, function `uvVtxRect`, function `uvVtxRect` | [12](../src/modules/uvgeom_rom.c#L12), [13](../src/modules/uvgeom_rom.c#L13), [14](../src/modules/uvgeom_rom.c#L14), [15](../src/modules/uvgeom_rom.c#L15), [17](../src/modules/uvgeom_rom.c#L17), [20](../src/modules/uvgeom_rom.c#L20), [21](../src/modules/uvgeom_rom.c#L21), [109](../src/modules/uvgeom_rom.c#L109) (+20 in JSON) |
-| decompiler_local | `arg1` | function `uvEndGrid`, function `uvEndGrid`, function `uvEndGridWide`, function `uvEndGridWide`, function `uvEndTmesh`, function `uvEndTmesh`, function `uvGeomInitializeMeshDescriptor`, function `uvVtxEndPolyInternal`, function `uvVtxRect`, function `uvVtxRect` | [13](../src/modules/uvgeom_rom.c#L13), [14](../src/modules/uvgeom_rom.c#L14), [15](../src/modules/uvgeom_rom.c#L15), [17](../src/modules/uvgeom_rom.c#L17), [20](../src/modules/uvgeom_rom.c#L20), [21](../src/modules/uvgeom_rom.c#L21), [109](../src/modules/uvgeom_rom.c#L109), [121](../src/modules/uvgeom_rom.c#L121) (+14 in JSON) |
-| decompiler_local | `arg2` | function `uvEndGrid`, function `uvEndGrid`, function `uvEndGridWide`, function `uvEndGridWide`, function `uvEndTmesh`, function `uvEndTmesh`, function `uvGeomInitializeMeshDescriptor`, function `uvVtxEndPolyInternal`, function `uvVtxRect`, function `uvVtxRect` | [13](../src/modules/uvgeom_rom.c#L13), [14](../src/modules/uvgeom_rom.c#L14), [15](../src/modules/uvgeom_rom.c#L15), [17](../src/modules/uvgeom_rom.c#L17), [20](../src/modules/uvgeom_rom.c#L20), [21](../src/modules/uvgeom_rom.c#L21), [109](../src/modules/uvgeom_rom.c#L109), [121](../src/modules/uvgeom_rom.c#L121) (+14 in JSON) |
-| decompiler_local | `arg3` | function `uvEndGrid`, function `uvEndGrid`, function `uvEndGridWide`, function `uvEndGridWide`, function `uvEndTmesh`, function `uvEndTmesh`, function `uvGeomInitializeMeshDescriptor`, function `uvVtxRect`, function `uvVtxRect` | [13](../src/modules/uvgeom_rom.c#L13), [14](../src/modules/uvgeom_rom.c#L14), [15](../src/modules/uvgeom_rom.c#L15), [17](../src/modules/uvgeom_rom.c#L17), [20](../src/modules/uvgeom_rom.c#L20), [109](../src/modules/uvgeom_rom.c#L109), [121](../src/modules/uvgeom_rom.c#L121), [132](../src/modules/uvgeom_rom.c#L132) (+15 in JSON) |
-| decompiler_local | `arg4` | function `uvEndGrid`, function `uvEndGrid`, function `uvEndGridWide`, function `uvEndGridWide` | [15](../src/modules/uvgeom_rom.c#L15), [17](../src/modules/uvgeom_rom.c#L17), [150](../src/modules/uvgeom_rom.c#L150), [168](../src/modules/uvgeom_rom.c#L168), [222](../src/modules/uvgeom_rom.c#L222), [252](../src/modules/uvgeom_rom.c#L252), [260](../src/modules/uvgeom_rom.c#L260) |
-| decompiler_local | `arg5` | function `uvEndGrid`, function `uvEndGrid`, function `uvEndGridWide`, function `uvEndGridWide` | [15](../src/modules/uvgeom_rom.c#L15), [17](../src/modules/uvgeom_rom.c#L17), [150](../src/modules/uvgeom_rom.c#L150), [168](../src/modules/uvgeom_rom.c#L168), [222](../src/modules/uvgeom_rom.c#L222), [252](../src/modules/uvgeom_rom.c#L252), [260](../src/modules/uvgeom_rom.c#L260) |
-| decompiler_local | `arg6` | function `uvEndGrid`, function `uvEndGrid`, function `uvEndGridWide`, function `uvEndGridWide` | [15](../src/modules/uvgeom_rom.c#L15), [17](../src/modules/uvgeom_rom.c#L17), [150](../src/modules/uvgeom_rom.c#L150), [168](../src/modules/uvgeom_rom.c#L168), [169](../src/modules/uvgeom_rom.c#L169), [222](../src/modules/uvgeom_rom.c#L222), [252](../src/modules/uvgeom_rom.c#L252), [260](../src/modules/uvgeom_rom.c#L260) (+1 in JSON) |
+| decompiler_local | `arg0` | function `uvEndGrid`, function `uvEndGridWide`, function `uvEndTmesh`, function `uvEndTmesh`, function `uvGeomFinishOwnedDisplayList`, function `uvGeomInitializeMeshDescriptor`, function `uvVtxEndPolyInternal`, function `uvVtxRect`, function `uvVtxRect` | [12](../src/modules/uvgeom_rom.c#L12), [13](../src/modules/uvgeom_rom.c#L13), [14](../src/modules/uvgeom_rom.c#L14), [15](../src/modules/uvgeom_rom.c#L15), [17](../src/modules/uvgeom_rom.c#L17), [20](../src/modules/uvgeom_rom.c#L20), [21](../src/modules/uvgeom_rom.c#L21), [109](../src/modules/uvgeom_rom.c#L109) (+12 in JSON) |
+| decompiler_local | `arg1` | function `uvEndGrid`, function `uvEndGridWide`, function `uvEndTmesh`, function `uvEndTmesh`, function `uvGeomInitializeMeshDescriptor`, function `uvVtxEndPolyInternal`, function `uvVtxRect`, function `uvVtxRect` | [13](../src/modules/uvgeom_rom.c#L13), [14](../src/modules/uvgeom_rom.c#L14), [15](../src/modules/uvgeom_rom.c#L15), [17](../src/modules/uvgeom_rom.c#L17), [20](../src/modules/uvgeom_rom.c#L20), [21](../src/modules/uvgeom_rom.c#L21), [109](../src/modules/uvgeom_rom.c#L109), [121](../src/modules/uvgeom_rom.c#L121) (+7 in JSON) |
+| decompiler_local | `arg2` | function `uvEndGrid`, function `uvEndGridWide`, function `uvEndTmesh`, function `uvEndTmesh`, function `uvGeomInitializeMeshDescriptor`, function `uvVtxEndPolyInternal`, function `uvVtxRect`, function `uvVtxRect` | [13](../src/modules/uvgeom_rom.c#L13), [14](../src/modules/uvgeom_rom.c#L14), [15](../src/modules/uvgeom_rom.c#L15), [17](../src/modules/uvgeom_rom.c#L17), [20](../src/modules/uvgeom_rom.c#L20), [21](../src/modules/uvgeom_rom.c#L21), [109](../src/modules/uvgeom_rom.c#L109), [121](../src/modules/uvgeom_rom.c#L121) (+9 in JSON) |
+| decompiler_local | `arg3` | function `uvEndGrid`, function `uvEndGridWide`, function `uvEndTmesh`, function `uvEndTmesh`, function `uvGeomInitializeMeshDescriptor`, function `uvVtxRect`, function `uvVtxRect` | [13](../src/modules/uvgeom_rom.c#L13), [14](../src/modules/uvgeom_rom.c#L14), [15](../src/modules/uvgeom_rom.c#L15), [17](../src/modules/uvgeom_rom.c#L17), [20](../src/modules/uvgeom_rom.c#L20), [109](../src/modules/uvgeom_rom.c#L109), [121](../src/modules/uvgeom_rom.c#L121), [132](../src/modules/uvgeom_rom.c#L132) (+10 in JSON) |
+| decompiler_local | `arg4` | function `uvEndGrid`, function `uvEndGridWide` | [15](../src/modules/uvgeom_rom.c#L15), [17](../src/modules/uvgeom_rom.c#L17) |
+| decompiler_local | `arg5` | function `uvEndGrid`, function `uvEndGridWide` | [15](../src/modules/uvgeom_rom.c#L15), [17](../src/modules/uvgeom_rom.c#L17) |
+| decompiler_local | `arg6` | function `uvEndGrid`, function `uvEndGridWide` | [15](../src/modules/uvgeom_rom.c#L15), [17](../src/modules/uvgeom_rom.c#L17) |
 | decompiler_local | `sp20` | function `uvEndTmesh` | [113](../src/modules/uvgeom_rom.c#L113), [121](../src/modules/uvgeom_rom.c#L121), [147](../src/modules/uvgeom_rom.c#L147) |
-| decompiler_local | `sp40` | function `uvEndGrid`, function `uvEndGridWide` | [163](../src/modules/uvgeom_rom.c#L163), [168](../src/modules/uvgeom_rom.c#L168), [219](../src/modules/uvgeom_rom.c#L219), [234](../src/modules/uvgeom_rom.c#L234), [260](../src/modules/uvgeom_rom.c#L260), [310](../src/modules/uvgeom_rom.c#L310) |
-| decompiler_local | `spBC` | function `uvEndGrid` | [233](../src/modules/uvgeom_rom.c#L233), [262](../src/modules/uvgeom_rom.c#L262), [263](../src/modules/uvgeom_rom.c#L263), [265](../src/modules/uvgeom_rom.c#L265), [271](../src/modules/uvgeom_rom.c#L271), [298](../src/modules/uvgeom_rom.c#L298) |
-| decompiler_local | `spC3` | function `uvEndGrid` | [230](../src/modules/uvgeom_rom.c#L230), [269](../src/modules/uvgeom_rom.c#L269), [271](../src/modules/uvgeom_rom.c#L271), [273](../src/modules/uvgeom_rom.c#L273), [294](../src/modules/uvgeom_rom.c#L294) |
-| decompiler_local | `spC4` | function `uvEndGrid` | [229](../src/modules/uvgeom_rom.c#L229), [242](../src/modules/uvgeom_rom.c#L242), [247](../src/modules/uvgeom_rom.c#L247), [252](../src/modules/uvgeom_rom.c#L252), [297](../src/modules/uvgeom_rom.c#L297) |
-| decompiler_local | `spC5` | function `uvEndGrid` | [228](../src/modules/uvgeom_rom.c#L228), [241](../src/modules/uvgeom_rom.c#L241), [246](../src/modules/uvgeom_rom.c#L246), [252](../src/modules/uvgeom_rom.c#L252), [279](../src/modules/uvgeom_rom.c#L279), [288](../src/modules/uvgeom_rom.c#L288), [305](../src/modules/uvgeom_rom.c#L305) |
-| decompiler_local | `spC6` | function `uvEndGrid` | [226](../src/modules/uvgeom_rom.c#L226), [240](../src/modules/uvgeom_rom.c#L240), [245](../src/modules/uvgeom_rom.c#L245), [252](../src/modules/uvgeom_rom.c#L252), [256](../src/modules/uvgeom_rom.c#L256), [270](../src/modules/uvgeom_rom.c#L270) |
-| decompiler_local | `spC7` | function `uvEndGrid` | [227](../src/modules/uvgeom_rom.c#L227), [239](../src/modules/uvgeom_rom.c#L239), [244](../src/modules/uvgeom_rom.c#L244), [251](../src/modules/uvgeom_rom.c#L251), [252](../src/modules/uvgeom_rom.c#L252), [263](../src/modules/uvgeom_rom.c#L263), [265](../src/modules/uvgeom_rom.c#L265), [267](../src/modules/uvgeom_rom.c#L267) (+18 in JSON) |
-| decompiler_local | `spC8` | function `uvEndGrid` | [225](../src/modules/uvgeom_rom.c#L225), [274](../src/modules/uvgeom_rom.c#L274), [275](../src/modules/uvgeom_rom.c#L275), [276](../src/modules/uvgeom_rom.c#L276), [280](../src/modules/uvgeom_rom.c#L280), [281](../src/modules/uvgeom_rom.c#L281), [284](../src/modules/uvgeom_rom.c#L284), [285](../src/modules/uvgeom_rom.c#L285) (+8 in JSON) |
-| decompiler_local | `spCC` | function `uvEndGrid` | [224](../src/modules/uvgeom_rom.c#L224), [270](../src/modules/uvgeom_rom.c#L270) |
-| decompiler_local | `temp_a2` | function `uvEndGridWide` | [152](../src/modules/uvgeom_rom.c#L152), [181](../src/modules/uvgeom_rom.c#L181), [188](../src/modules/uvgeom_rom.c#L188), [191](../src/modules/uvgeom_rom.c#L191), [197](../src/modules/uvgeom_rom.c#L197), [203](../src/modules/uvgeom_rom.c#L203), [208](../src/modules/uvgeom_rom.c#L208), [210](../src/modules/uvgeom_rom.c#L210) (+1 in JSON) |
-| decompiler_local | `temp_v1` | function `uvEndGridWide` | [153](../src/modules/uvgeom_rom.c#L153) |
 | decompiler_local | `var_a2` | function `uvEndTmesh` | [110](../src/modules/uvgeom_rom.c#L110), [125](../src/modules/uvgeom_rom.c#L125), [127](../src/modules/uvgeom_rom.c#L127), [130](../src/modules/uvgeom_rom.c#L130), [132](../src/modules/uvgeom_rom.c#L132), [133](../src/modules/uvgeom_rom.c#L133), [134](../src/modules/uvgeom_rom.c#L134), [135](../src/modules/uvgeom_rom.c#L135) (+1 in JSON) |
-| decompiler_local | `var_s0` | function `uvEndGridWide` | [156](../src/modules/uvgeom_rom.c#L156), [174](../src/modules/uvgeom_rom.c#L174), [176](../src/modules/uvgeom_rom.c#L176), [194](../src/modules/uvgeom_rom.c#L194), [213](../src/modules/uvgeom_rom.c#L213) |
-| decompiler_local | `var_s1` | function `uvEndGrid`, function `uvEndGridWide` | [157](../src/modules/uvgeom_rom.c#L157), [169](../src/modules/uvgeom_rom.c#L169), [176](../src/modules/uvgeom_rom.c#L176), [185](../src/modules/uvgeom_rom.c#L185), [206](../src/modules/uvgeom_rom.c#L206), [217](../src/modules/uvgeom_rom.c#L217), [231](../src/modules/uvgeom_rom.c#L231), [261](../src/modules/uvgeom_rom.c#L261) (+3 in JSON) |
-| decompiler_local | `var_s6` | function `uvEndGrid`, function `uvEndGridWide` | [158](../src/modules/uvgeom_rom.c#L158), [169](../src/modules/uvgeom_rom.c#L169), [174](../src/modules/uvgeom_rom.c#L174), [232](../src/modules/uvgeom_rom.c#L232), [267](../src/modules/uvgeom_rom.c#L267), [271](../src/modules/uvgeom_rom.c#L271), [293](../src/modules/uvgeom_rom.c#L293) |
-| decompiler_local | `var_t0` | function `uvEndGridWide`, function `uvEndTmesh` | [112](../src/modules/uvgeom_rom.c#L112), [120](../src/modules/uvgeom_rom.c#L120), [139](../src/modules/uvgeom_rom.c#L139), [144](../src/modules/uvgeom_rom.c#L144), [162](../src/modules/uvgeom_rom.c#L162), [165](../src/modules/uvgeom_rom.c#L165), [182](../src/modules/uvgeom_rom.c#L182), [183](../src/modules/uvgeom_rom.c#L183) (+14 in JSON) |
-| decompiler_local | `var_t1` | function `uvEndGridWide` | [161](../src/modules/uvgeom_rom.c#L161), [166](../src/modules/uvgeom_rom.c#L166), [181](../src/modules/uvgeom_rom.c#L181), [182](../src/modules/uvgeom_rom.c#L182), [188](../src/modules/uvgeom_rom.c#L188), [191](../src/modules/uvgeom_rom.c#L191), [192](../src/modules/uvgeom_rom.c#L192), [197](../src/modules/uvgeom_rom.c#L197) (+6 in JSON) |
-| decompiler_local | `var_t2` | function `uvEndGridWide`, function `uvEndTmesh` | [114](../src/modules/uvgeom_rom.c#L114), [122](../src/modules/uvgeom_rom.c#L122), [132](../src/modules/uvgeom_rom.c#L132), [135](../src/modules/uvgeom_rom.c#L135), [154](../src/modules/uvgeom_rom.c#L154), [167](../src/modules/uvgeom_rom.c#L167), [183](../src/modules/uvgeom_rom.c#L183), [186](../src/modules/uvgeom_rom.c#L186) (+6 in JSON) |
-| decompiler_local | `var_t3` | function `uvEndGridWide` | [160](../src/modules/uvgeom_rom.c#L160), [172](../src/modules/uvgeom_rom.c#L172), [180](../src/modules/uvgeom_rom.c#L180), [200](../src/modules/uvgeom_rom.c#L200) |
-| explicit_unknown | `Emit polygon triangles in the original batches, retaining the first-batch * and later-batch vertex commands and repeated display-list-head reloads. * Count < 3 returns before de...` | function `uvVtxEndPolyInternal` | [367](../src/modules/uvgeom_rom.c#L367) |
-| layout_padding | `pad` | function `uvEndGrid` | [235](../src/modules/uvgeom_rom.c#L235) |
-| offset_field | `unk0` | function `__entrypoint_func_uvgeom_rom_400000`, function `uvEndGrid`, function `uvEndGridWide`, function `uvEndTmesh`, function `uvGeomInitializeMeshDescriptor`, function `uvVtxEndPolyInternal`, type `GeometrySettings` | [6](../src/modules/uvgeom_rom.c#L6), [48](../src/modules/uvgeom_rom.c#L48), [49](../src/modules/uvgeom_rom.c#L49), [103](../src/modules/uvgeom_rom.c#L103), [122](../src/modules/uvgeom_rom.c#L122), [169](../src/modules/uvgeom_rom.c#L169), [261](../src/modules/uvgeom_rom.c#L261), [388](../src/modules/uvgeom_rom.c#L388) |
+| decompiler_local | `var_t0` | function `uvEndTmesh` | [112](../src/modules/uvgeom_rom.c#L112), [120](../src/modules/uvgeom_rom.c#L120), [139](../src/modules/uvgeom_rom.c#L139), [144](../src/modules/uvgeom_rom.c#L144) |
+| decompiler_local | `var_t2` | function `uvEndTmesh` | [114](../src/modules/uvgeom_rom.c#L114), [122](../src/modules/uvgeom_rom.c#L122), [132](../src/modules/uvgeom_rom.c#L132), [135](../src/modules/uvgeom_rom.c#L135) |
+| explicit_unknown | `Emit alternating vertices from adjacent rows through the original modulo-16 * slots, retaining each cursor reload and optional first-column repetition. * The third byte is teste...` | function `uvEndGridWide` | [150](../src/modules/uvgeom_rom.c#L150) |
+| explicit_unknown | `Emit polygon triangles in the original batches, retaining the first-batch * and later-batch vertex commands and repeated display-list-head reloads. * Count < 3 returns before de...` | function `uvVtxEndPolyInternal` | [385](../src/modules/uvgeom_rom.c#L385) |
+| explicit_unknown | `Select dimensions using the original full-word comparison, then preserve * the signed-halfword narrowing, vertex-bank alternation and closure tests. * The wide path narrows the ...` | function `uvEndGrid` | [231](../src/modules/uvgeom_rom.c#L231) |
+| layout_padding | `pad` | function `uvEndGrid` | [252](../src/modules/uvgeom_rom.c#L252) |
+| offset_field | `unk0` | function `__entrypoint_func_uvgeom_rom_400000`, function `uvEndGrid`, function `uvEndGridWide`, function `uvEndTmesh`, function `uvGeomInitializeMeshDescriptor`, function `uvVtxEndPolyInternal`, type `GeometrySettings` | [6](../src/modules/uvgeom_rom.c#L6), [48](../src/modules/uvgeom_rom.c#L48), [49](../src/modules/uvgeom_rom.c#L49), [103](../src/modules/uvgeom_rom.c#L103), [122](../src/modules/uvgeom_rom.c#L122), [177](../src/modules/uvgeom_rom.c#L177), [278](../src/modules/uvgeom_rom.c#L278), [406](../src/modules/uvgeom_rom.c#L406) |
 | offset_field | `unk10` | function `uvEndTmesh`, function `uvGeomInitializeMeshDescriptor` | [99](../src/modules/uvgeom_rom.c#L99), [130](../src/modules/uvgeom_rom.c#L130) |
 | offset_field | `unk12` | function `uvEndTmesh`, function `uvGeomInitializeMeshDescriptor` | [100](../src/modules/uvgeom_rom.c#L100), [138](../src/modules/uvgeom_rom.c#L138) |
 | offset_field | `unk4` | function `__entrypoint_func_uvgeom_rom_400000`, function `uvGeomInitializeMeshDescriptor`, type `GeometrySettings` | [7](../src/modules/uvgeom_rom.c#L7), [53](../src/modules/uvgeom_rom.c#L53), [98](../src/modules/uvgeom_rom.c#L98) |
 | offset_field | `unk8` | function `uvGeomInitializeMeshDescriptor` | [104](../src/modules/uvgeom_rom.c#L104) |
 | offset_field | `unkC` | function `uvGeomInitializeMeshDescriptor` | [101](../src/modules/uvgeom_rom.c#L101) |
 | offset_field | `unkE` | function `uvGeomInitializeMeshDescriptor` | [102](../src/modules/uvgeom_rom.c#L102) |
+| unused_identifier | `unusedWord` | function `uvEndGridWide` | [161](../src/modules/uvgeom_rom.c#L161) |
 
 ## src/modules/uvgfxmgr_rom.c
 

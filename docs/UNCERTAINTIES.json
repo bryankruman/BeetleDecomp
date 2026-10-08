@@ -199,7 +199,7 @@
     "src/modules/bubble.c": "8a3c733b7f0370b5b2e51cc123470d44edcf1bf2a2ca8fe481170fd858f9c904",
     "src/modules/cam.c": "95d22d3a7536150c4e84fd508381b424b67a127129ab9b7e2d99da3dfa2addcc",
     "src/modules/caranim.c": "649683b571cd247da0f98e863c6329dd3c815c3f80fe5131eb21ee32c752b94b",
-    "src/modules/caraudio.c": "1f137f271fded4ea856d1350464abf33ad12da898687144517ae52dcde053d7b",
+    "src/modules/caraudio.c": "a317733a6dc98419ed2877ca5f2e47909b26b6786063310288e52a9468bd9469",
     "src/modules/cbars.c": "a7d8817dc1873793aa3e2ef6cafcd98c4a92d2fe91251b54ed8e2b09bbb9becb",
     "src/modules/demo.c": "8e19de1cafc6a5ebde83a3020c92b2b17b3de91fc4abe245a5c53d96de69065f",
     "src/modules/dledit.c": "a2a3807d331e3196eb00bbc5dbfca4a4161a989e8eadbfa7678a2cb49ff51490",
@@ -242,7 +242,7 @@
     "src/modules/results.c": "8f9e9ae069b05eb8795188f1bcddc1cd5df6ccfeb9d4eacf58f08831853d2878",
     "src/modules/ripple.c": "bdd60e5f9d8f7f66e2ccfd3674c471ad1f6fdc87029c4fda4314b6fc9cfa15d1",
     "src/modules/rumble.c": "88f3c10749b25988a2186cebe9bee3e409df9f8f8dd0a5f24d95592f705298a0",
-    "src/modules/scene.c": "610c8f18ff52286cc4a1416aec008a4e48ecf4f29f3c129b34d7a9743f8f25c0",
+    "src/modules/scene.c": "011ec1fe1f45e3c138b6851de19371c116ba483109bd79bbbc73e2614b7a6754",
     "src/modules/scrn.c": "664328a6dec742e1b51d5dd7e6c0dc5fd4de9132c1604053f0e5f3d7d4aca412",
     "src/modules/selection.c": "e8ee27747ad0c622d729a60e9718f2acf3ee0691333e7195589d94a62d3f0271",
     "src/modules/shadow.c": "88396120a38816a4a31db9ced202e9d704b3928429b4e12b8ecb338df93f715b",
@@ -288,7 +288,7 @@
     "src/modules/uvfontld_rom.c": "81262e86812be50e51fbe741f6e4b0475b58c71b4d822a50ae83c16602fd4733",
     "src/modules/uvfvec_rom.c": "c0d542dc9473cb90630fe609a22adc6b982d02725e71082d42b1dc4d9ef66893",
     "src/modules/uvfx_rom.c": "ea9e30b63484a3d999463727ce7bf9198e21261cb72a88e1c9865da3af27c5e8",
-    "src/modules/uvgeom_rom.c": "71716c329bd982cccfa34787cb14638629b2ab5fc06c6cc2737bfaf419f552c1",
+    "src/modules/uvgeom_rom.c": "6b559ab46545d7bf802250954eea923b6b111bec6f940e9a1f07f15b8cfb8207",
     "src/modules/uvgfxmgr_rom.c": "c21151fb9c51017919699a7834a7a76ff06a565f7d6cb1b9c462a43f288971b9",
     "src/modules/uvgfxstate_rom.c": "f2ac7bdad30243e6bec45faa1438be25934cece6413a0e6016fe445d9fbd4b36",
     "src/modules/uvgrph_rom.c": "4b8f89334bd11814bb28529111c3bb273f7c0c82b0048216032b299b1db81d72",
@@ -329,8 +329,8 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "0390fc460a8d87c1e17487686a70a97ba81cbbabb04ac6427e917c37c798a59d",
-    "docs/VALIDATION_20261006.md": "93a4ed6d4badbd08a24094bf66b7f426ab3a04048a832b58d14167e8b0fabe81"
+    "docs/STRATEGY_V4.md": "62536e313f73e0f4526e1d249c1734e483d516b2b194434ea3492e3d12572df2",
+    "docs/VALIDATION_20261006.md": "5267ec116a25205b9cf89cc2dc3f81ed9bd4f96bf566fee5c40042a56954b3d0"
   },
   "counts": {
     "address_function": 983,
@@ -338,15 +338,15 @@
     "assembly": 844,
     "audit_debt": 28,
     "conditional_draft": 4,
-    "decompiler_local": 882,
+    "decompiler_local": 866,
     "draft_marker": 28,
-    "explicit_unknown": 729,
+    "explicit_unknown": 734,
     "layout_padding": 264,
     "offset_field": 1434,
     "opaque_type": 282,
-    "original_quirk": 189,
+    "original_quirk": 192,
     "uncertainty_note": 88,
-    "unused_identifier": 119
+    "unused_identifier": 120
   },
   "items": [
     {
@@ -3921,15 +3921,15 @@
       "path": "src/modules/caraudio.c",
       "symbol": "func_caraudio_00402C08",
       "lines": [
-        185
+        198
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_caraudio_00402C08",
-          "declaration_line": 185,
+          "declaration_line": 198,
           "lines": [
-            185
+            198
           ]
         }
       ]
@@ -4035,15 +4035,15 @@
       "path": "src/modules/caraudio.c",
       "symbol": "func_caraudio_00403A2C",
       "lines": [
-        282
+        295
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_caraudio_00403A2C",
-          "declaration_line": 282,
+          "declaration_line": 295,
           "lines": [
-            282
+            295
           ]
         }
       ]
@@ -10856,15 +10856,15 @@
       "path": "src/modules/scene.c",
       "symbol": "func_scene_004012B0",
       "lines": [
-        339
+        354
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_scene_004012B0",
-          "declaration_line": 339,
+          "declaration_line": 354,
           "lines": [
-            339
+            354
           ]
         }
       ]
@@ -27529,15 +27529,15 @@
       "symbol": "D_caraudio_00403EF4",
       "lines": [
         5,
-        194
+        207
       ],
       "owners": [
         {
           "kind": "function",
           "name": "carAudioUpdateDualEmitterVolume",
-          "declaration_line": 193,
+          "declaration_line": 206,
           "lines": [
-            194
+            207
           ]
         },
         {
@@ -27556,24 +27556,24 @@
       "path": "src/modules/caraudio.c",
       "symbol": "D_caraudio_00403F00",
       "lines": [
-        224,
-        236
+        237,
+        249
       ],
       "owners": [
         {
           "kind": "function",
           "name": "carAudioStartFixedPositionSound",
-          "declaration_line": 231,
+          "declaration_line": 244,
           "lines": [
-            236
+            249
           ]
         },
         {
           "kind": "global",
           "name": "D_caraudio_00403F00",
-          "declaration_line": 224,
+          "declaration_line": 237,
           "lines": [
-            224
+            237
           ]
         }
       ]
@@ -27584,24 +27584,24 @@
       "path": "src/modules/caraudio.c",
       "symbol": "D_caraudio_00403F04",
       "lines": [
-        225,
-        237
+        238,
+        250
       ],
       "owners": [
         {
           "kind": "function",
           "name": "carAudioStartFixedPositionSound",
-          "declaration_line": 231,
+          "declaration_line": 244,
           "lines": [
-            237
+            250
           ]
         },
         {
           "kind": "global",
           "name": "D_caraudio_00403F04",
-          "declaration_line": 225,
+          "declaration_line": 238,
           "lines": [
-            225
+            238
           ]
         }
       ]
@@ -27612,24 +27612,24 @@
       "path": "src/modules/caraudio.c",
       "symbol": "D_caraudio_00403F08",
       "lines": [
-        226,
-        243
+        239,
+        256
       ],
       "owners": [
         {
           "kind": "function",
           "name": "carAudioStartFixedPositionSound",
-          "declaration_line": 231,
+          "declaration_line": 244,
           "lines": [
-            243
+            256
           ]
         },
         {
           "kind": "global",
           "name": "D_caraudio_00403F08",
-          "declaration_line": 226,
+          "declaration_line": 239,
           "lines": [
-            226
+            239
           ]
         }
       ]
@@ -27669,15 +27669,15 @@
       "symbol": "D_caraudio_004041E0",
       "lines": [
         41,
-        207
+        220
       ],
       "owners": [
         {
           "kind": "function",
           "name": "carAudioClearSlotFlag",
-          "declaration_line": 206,
+          "declaration_line": 219,
           "lines": [
-            207
+            220
           ]
         },
         {
@@ -27696,26 +27696,26 @@
       "path": "src/modules/caraudio.c",
       "symbol": "D_caraudio_00404228",
       "lines": [
-        251,
-        268,
-        269
+        264,
+        281,
+        282
       ],
       "owners": [
         {
           "kind": "function",
           "name": "carAudioPrependCommand",
-          "declaration_line": 260,
+          "declaration_line": 273,
           "lines": [
-            268,
-            269
+            281,
+            282
           ]
         },
         {
           "kind": "global",
           "name": "D_caraudio_00404228",
-          "declaration_line": 251,
+          "declaration_line": 264,
           "lines": [
-            251
+            264
           ]
         }
       ]
@@ -27726,24 +27726,24 @@
       "path": "src/modules/caraudio.c",
       "symbol": "D_caraudio_00404230",
       "lines": [
-        280,
-        289
+        293,
+        302
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_caraudio_00403A2C",
-          "declaration_line": 282,
+          "declaration_line": 295,
           "lines": [
-            289
+            302
           ]
         },
         {
           "kind": "global",
           "name": "D_caraudio_00404230",
-          "declaration_line": 280,
+          "declaration_line": 293,
           "lines": [
-            280
+            293
           ]
         }
       ]
@@ -27756,15 +27756,15 @@
       "lines": [
         13,
         82,
-        194
+        207
       ],
       "owners": [
         {
           "kind": "function",
           "name": "carAudioUpdateDualEmitterVolume",
-          "declaration_line": 193,
+          "declaration_line": 206,
           "lines": [
-            194
+            207
           ]
         },
         {
@@ -27791,34 +27791,34 @@
       "path": "src/modules/caraudio.c",
       "symbol": "D_caraudio_00404300",
       "lines": [
-        227,
-        239,
-        241,
-        242,
-        243,
-        244,
-        245
+        240,
+        252,
+        254,
+        255,
+        256,
+        257,
+        258
       ],
       "owners": [
         {
           "kind": "function",
           "name": "carAudioStartFixedPositionSound",
-          "declaration_line": 231,
+          "declaration_line": 244,
           "lines": [
-            239,
-            241,
-            242,
-            243,
-            244,
-            245
+            252,
+            254,
+            255,
+            256,
+            257,
+            258
           ]
         },
         {
           "kind": "global",
           "name": "D_caraudio_00404300",
-          "declaration_line": 227,
+          "declaration_line": 240,
           "lines": [
-            227
+            240
           ]
         }
       ]
@@ -38343,15 +38343,15 @@
       "symbol": "D_scene_00401840",
       "lines": [
         45,
-        358
+        373
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sceneApplySelectedTrack",
-          "declaration_line": 354,
+          "declaration_line": 369,
           "lines": [
-            358
+            373
           ]
         },
         {
@@ -58231,18 +58231,18 @@
       "lines": [
         26,
         60,
-        324,
-        333,
-        334,
-        335,
-        338,
-        339,
-        343,
-        344,
-        348,
-        349,
+        342,
+        351,
+        352,
         353,
-        354
+        356,
+        357,
+        361,
+        362,
+        366,
+        367,
+        371,
+        372
       ],
       "owners": [
         {
@@ -58256,27 +58256,27 @@
         {
           "kind": "function",
           "name": "uvSetFillColor",
-          "declaration_line": 313,
+          "declaration_line": 331,
           "lines": [
-            324
+            342
           ]
         },
         {
           "kind": "function",
           "name": "uvVtxRect",
-          "declaration_line": 330,
+          "declaration_line": 348,
           "lines": [
-            333,
-            334,
-            335,
-            338,
-            339,
-            343,
-            344,
-            348,
-            349,
+            351,
+            352,
             353,
-            354
+            356,
+            357,
+            361,
+            362,
+            366,
+            367,
+            371,
+            372
           ]
         },
         {
@@ -75297,7 +75297,7 @@
       "path": "src/modules/caraudio.c",
       "symbol": "func_caraudio_0040218C",
       "lines": [
-        132
+        145
       ],
       "evidence": "asm/us/nonmatchings/modules/caraudio/func_caraudio_0040218C.s"
     },
@@ -75307,7 +75307,7 @@
       "path": "src/modules/caraudio.c",
       "symbol": "func_caraudio_004022BC",
       "lines": [
-        148
+        161
       ],
       "evidence": "asm/us/nonmatchings/modules/caraudio/func_caraudio_004022BC.s"
     },
@@ -75317,7 +75317,7 @@
       "path": "src/modules/caraudio.c",
       "symbol": "func_caraudio_004027A8",
       "lines": [
-        150
+        163
       ],
       "evidence": "asm/us/nonmatchings/modules/caraudio/func_caraudio_004027A8.s"
     },
@@ -75327,7 +75327,7 @@
       "path": "src/modules/caraudio.c",
       "symbol": "func_caraudio_004029F8",
       "lines": [
-        176
+        189
       ],
       "evidence": "asm/us/nonmatchings/modules/caraudio/func_caraudio_004029F8.s"
     },
@@ -75337,7 +75337,7 @@
       "path": "src/modules/caraudio.c",
       "symbol": "func_caraudio_00402B20",
       "lines": [
-        178
+        191
       ],
       "evidence": "asm/us/nonmatchings/modules/caraudio/func_caraudio_00402B20.s"
     },
@@ -75347,7 +75347,7 @@
       "path": "src/modules/caraudio.c",
       "symbol": "func_caraudio_00402CA4",
       "lines": [
-        201
+        214
       ],
       "evidence": "asm/us/nonmatchings/modules/caraudio/func_caraudio_00402CA4.s"
     },
@@ -75357,7 +75357,7 @@
       "path": "src/modules/caraudio.c",
       "symbol": "func_caraudio_00402E00",
       "lines": [
-        218
+        231
       ],
       "evidence": "asm/us/nonmatchings/modules/caraudio/func_caraudio_00402E00.s"
     },
@@ -75367,7 +75367,7 @@
       "path": "src/modules/caraudio.c",
       "symbol": "func_caraudio_004031E0",
       "lines": [
-        274
+        287
       ],
       "evidence": "asm/us/nonmatchings/modules/caraudio/func_caraudio_004031E0.s"
     },
@@ -75377,7 +75377,7 @@
       "path": "src/modules/caraudio.c",
       "symbol": "func_caraudio_0040336C",
       "lines": [
-        276
+        289
       ],
       "evidence": "asm/us/nonmatchings/modules/caraudio/func_caraudio_0040336C.s"
     },
@@ -75387,7 +75387,7 @@
       "path": "src/modules/caraudio.c",
       "symbol": "func_caraudio_0040397C",
       "lines": [
-        278
+        291
       ],
       "evidence": "asm/us/nonmatchings/modules/caraudio/func_caraudio_0040397C.s"
     },
@@ -77927,7 +77927,7 @@
       "path": "src/modules/scene.c",
       "symbol": "func_scene_00400EC8",
       "lines": [
-        301
+        316
       ],
       "evidence": "asm/us/nonmatchings/modules/scene/func_scene_00400EC8.s"
     },
@@ -77937,7 +77937,7 @@
       "path": "src/modules/scene.c",
       "symbol": "func_scene_00401324",
       "lines": [
-        364
+        390
       ],
       "evidence": "asm/us/nonmatchings/modules/scene/func_scene_00401324.s"
     },
@@ -83147,9 +83147,9 @@
       "symbol": "arg0",
       "lines": [
         37,
-        282,
-        290,
-        292
+        295,
+        303,
+        305
       ],
       "owners": [
         {
@@ -83163,11 +83163,11 @@
         {
           "kind": "function",
           "name": "func_caraudio_00403A2C",
-          "declaration_line": 282,
+          "declaration_line": 295,
           "lines": [
-            282,
-            290,
-            292
+            295,
+            303,
+            305
           ]
         }
       ]
@@ -83178,21 +83178,21 @@
       "path": "src/modules/caraudio.c",
       "symbol": "arg1",
       "lines": [
-        282,
-        287,
-        289,
-        291
+        295,
+        300,
+        302,
+        304
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_caraudio_00403A2C",
-          "declaration_line": 282,
+          "declaration_line": 295,
           "lines": [
-            282,
-            287,
-            289,
-            291
+            295,
+            300,
+            302,
+            304
           ]
         }
       ]
@@ -103823,20 +103823,12 @@
         124,
         125,
         134,
-        150,
-        176,
-        179,
-        217,
-        222,
-        238,
-        240,
-        244,
-        330,
-        336,
-        337,
-        338,
-        339,
-        360
+        348,
+        354,
+        355,
+        356,
+        357,
+        378
       ],
       "owners": [
         {
@@ -103849,32 +103841,10 @@
         },
         {
           "kind": "function",
-          "name": "uvEndGrid",
-          "declaration_line": 222,
-          "lines": [
-            222,
-            238,
-            240,
-            244
-          ]
-        },
-        {
-          "kind": "function",
           "name": "uvEndGridWide",
           "declaration_line": 15,
           "lines": [
             15
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvEndGridWide",
-          "declaration_line": 150,
-          "lines": [
-            150,
-            176,
-            179,
-            217
           ]
         },
         {
@@ -103934,14 +103904,14 @@
         {
           "kind": "function",
           "name": "uvVtxRect",
-          "declaration_line": 330,
+          "declaration_line": 348,
           "lines": [
-            330,
-            336,
-            337,
-            338,
-            339,
-            360
+            348,
+            354,
+            355,
+            356,
+            357,
+            378
           ]
         }
       ]
@@ -103960,20 +103930,13 @@
         21,
         109,
         121,
-        150,
-        171,
-        173,
-        222,
-        238,
-        239,
-        245,
-        330,
-        335,
-        351,
-        352,
+        348,
         353,
-        354,
-        360
+        369,
+        370,
+        371,
+        372,
+        378
       ],
       "owners": [
         {
@@ -103986,31 +103949,10 @@
         },
         {
           "kind": "function",
-          "name": "uvEndGrid",
-          "declaration_line": 222,
-          "lines": [
-            222,
-            238,
-            239,
-            245
-          ]
-        },
-        {
-          "kind": "function",
           "name": "uvEndGridWide",
           "declaration_line": 15,
           "lines": [
             15
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvEndGridWide",
-          "declaration_line": 150,
-          "lines": [
-            150,
-            171,
-            173
           ]
         },
         {
@@ -104057,15 +103999,15 @@
         {
           "kind": "function",
           "name": "uvVtxRect",
-          "declaration_line": 330,
+          "declaration_line": 348,
           "lines": [
-            330,
-            335,
-            351,
-            352,
+            348,
             353,
-            354,
-            360
+            369,
+            370,
+            371,
+            372,
+            378
           ]
         }
       ]
@@ -104087,17 +104029,12 @@
         122,
         130,
         138,
-        150,
-        202,
-        222,
-        242,
-        246,
-        330,
-        341,
-        342,
-        343,
-        344,
-        360
+        348,
+        359,
+        360,
+        361,
+        362,
+        378
       ],
       "owners": [
         {
@@ -104110,29 +104047,10 @@
         },
         {
           "kind": "function",
-          "name": "uvEndGrid",
-          "declaration_line": 222,
-          "lines": [
-            222,
-            242,
-            246
-          ]
-        },
-        {
-          "kind": "function",
           "name": "uvEndGridWide",
           "declaration_line": 15,
           "lines": [
             15
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvEndGridWide",
-          "declaration_line": 150,
-          "lines": [
-            150,
-            202
           ]
         },
         {
@@ -104182,14 +104100,14 @@
         {
           "kind": "function",
           "name": "uvVtxRect",
-          "declaration_line": 330,
+          "declaration_line": 348,
           "lines": [
-            330,
-            341,
-            342,
-            343,
-            344,
-            360
+            348,
+            359,
+            360,
+            361,
+            362,
+            378
           ]
         }
       ]
@@ -104211,18 +104129,13 @@
         140,
         142,
         147,
-        150,
-        171,
-        222,
-        241,
-        247,
-        330,
-        334,
-        346,
-        347,
         348,
-        349,
-        360
+        352,
+        364,
+        365,
+        366,
+        367,
+        378
       ],
       "owners": [
         {
@@ -104235,29 +104148,10 @@
         },
         {
           "kind": "function",
-          "name": "uvEndGrid",
-          "declaration_line": 222,
-          "lines": [
-            222,
-            241,
-            247
-          ]
-        },
-        {
-          "kind": "function",
           "name": "uvEndGridWide",
           "declaration_line": 15,
           "lines": [
             15
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvEndGridWide",
-          "declaration_line": 150,
-          "lines": [
-            150,
-            171
           ]
         },
         {
@@ -104300,15 +104194,15 @@
         {
           "kind": "function",
           "name": "uvVtxRect",
-          "declaration_line": 330,
+          "declaration_line": 348,
           "lines": [
-            330,
-            334,
-            346,
-            347,
             348,
-            349,
-            360
+            352,
+            364,
+            365,
+            366,
+            367,
+            378
           ]
         }
       ]
@@ -104320,12 +104214,7 @@
       "symbol": "arg4",
       "lines": [
         15,
-        17,
-        150,
-        168,
-        222,
-        252,
-        260
+        17
       ],
       "owners": [
         {
@@ -104338,29 +104227,10 @@
         },
         {
           "kind": "function",
-          "name": "uvEndGrid",
-          "declaration_line": 222,
-          "lines": [
-            222,
-            252,
-            260
-          ]
-        },
-        {
-          "kind": "function",
           "name": "uvEndGridWide",
           "declaration_line": 15,
           "lines": [
             15
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvEndGridWide",
-          "declaration_line": 150,
-          "lines": [
-            150,
-            168
           ]
         }
       ]
@@ -104372,12 +104242,7 @@
       "symbol": "arg5",
       "lines": [
         15,
-        17,
-        150,
-        168,
-        222,
-        252,
-        260
+        17
       ],
       "owners": [
         {
@@ -104390,29 +104255,10 @@
         },
         {
           "kind": "function",
-          "name": "uvEndGrid",
-          "declaration_line": 222,
-          "lines": [
-            222,
-            252,
-            260
-          ]
-        },
-        {
-          "kind": "function",
           "name": "uvEndGridWide",
           "declaration_line": 15,
           "lines": [
             15
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvEndGridWide",
-          "declaration_line": 150,
-          "lines": [
-            150,
-            168
           ]
         }
       ]
@@ -104424,14 +104270,7 @@
       "symbol": "arg6",
       "lines": [
         15,
-        17,
-        150,
-        168,
-        169,
-        222,
-        252,
-        260,
-        261
+        17
       ],
       "owners": [
         {
@@ -104444,31 +104283,10 @@
         },
         {
           "kind": "function",
-          "name": "uvEndGrid",
-          "declaration_line": 222,
-          "lines": [
-            222,
-            252,
-            260,
-            261
-          ]
-        },
-        {
-          "kind": "function",
           "name": "uvEndGridWide",
           "declaration_line": 15,
           "lines": [
             15
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvEndGridWide",
-          "declaration_line": 150,
-          "lines": [
-            150,
-            168,
-            169
           ]
         }
       ]
@@ -104492,378 +104310,6 @@
             113,
             121,
             147
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-a44d0ba90204",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvgeom_rom.c",
-      "symbol": "sp40",
-      "lines": [
-        163,
-        168,
-        219,
-        234,
-        260,
-        310
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvEndGrid",
-          "declaration_line": 222,
-          "lines": [
-            234,
-            260,
-            310
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvEndGridWide",
-          "declaration_line": 150,
-          "lines": [
-            163,
-            168,
-            219
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-56b4d2e92bb4",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvgeom_rom.c",
-      "symbol": "spBC",
-      "lines": [
-        233,
-        262,
-        263,
-        265,
-        271,
-        298
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvEndGrid",
-          "declaration_line": 222,
-          "lines": [
-            233,
-            262,
-            263,
-            265,
-            271,
-            298
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-7e00c2e7db55",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvgeom_rom.c",
-      "symbol": "spC3",
-      "lines": [
-        230,
-        269,
-        271,
-        273,
-        294
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvEndGrid",
-          "declaration_line": 222,
-          "lines": [
-            230,
-            269,
-            271,
-            273,
-            294
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-3fcec0e6dcce",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvgeom_rom.c",
-      "symbol": "spC4",
-      "lines": [
-        229,
-        242,
-        247,
-        252,
-        297
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvEndGrid",
-          "declaration_line": 222,
-          "lines": [
-            229,
-            242,
-            247,
-            252,
-            297
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-6e19a160f023",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvgeom_rom.c",
-      "symbol": "spC5",
-      "lines": [
-        228,
-        241,
-        246,
-        252,
-        279,
-        288,
-        305
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvEndGrid",
-          "declaration_line": 222,
-          "lines": [
-            228,
-            241,
-            246,
-            252,
-            279,
-            288,
-            305
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-273590a6d044",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvgeom_rom.c",
-      "symbol": "spC6",
-      "lines": [
-        226,
-        240,
-        245,
-        252,
-        256,
-        270
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvEndGrid",
-          "declaration_line": 222,
-          "lines": [
-            226,
-            240,
-            245,
-            252,
-            256,
-            270
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-d92323e4df9e",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvgeom_rom.c",
-      "symbol": "spC7",
-      "lines": [
-        227,
-        239,
-        244,
-        251,
-        252,
-        263,
-        265,
-        267,
-        271,
-        274,
-        275,
-        276,
-        280,
-        281,
-        284,
-        285,
-        286,
-        289,
-        290,
-        293,
-        298,
-        300,
-        301,
-        302,
-        306,
-        307
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvEndGrid",
-          "declaration_line": 222,
-          "lines": [
-            227,
-            239,
-            244,
-            251,
-            252,
-            263,
-            265,
-            267,
-            271,
-            274,
-            275,
-            276,
-            280,
-            281,
-            284,
-            285,
-            286,
-            289,
-            290,
-            293,
-            298,
-            300,
-            301,
-            302,
-            306,
-            307
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-0ea76fb3958b",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvgeom_rom.c",
-      "symbol": "spC8",
-      "lines": [
-        225,
-        274,
-        275,
-        276,
-        280,
-        281,
-        284,
-        285,
-        286,
-        289,
-        290,
-        300,
-        301,
-        302,
-        306,
-        307
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvEndGrid",
-          "declaration_line": 222,
-          "lines": [
-            225,
-            274,
-            275,
-            276,
-            280,
-            281,
-            284,
-            285,
-            286,
-            289,
-            290,
-            300,
-            301,
-            302,
-            306,
-            307
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-16c6e19523b4",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvgeom_rom.c",
-      "symbol": "spCC",
-      "lines": [
-        224,
-        270
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvEndGrid",
-          "declaration_line": 222,
-          "lines": [
-            224,
-            270
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-4376e73c5453",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvgeom_rom.c",
-      "symbol": "temp_a2",
-      "lines": [
-        152,
-        181,
-        188,
-        191,
-        197,
-        203,
-        208,
-        210,
-        215
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvEndGridWide",
-          "declaration_line": 150,
-          "lines": [
-            152,
-            181,
-            188,
-            191,
-            197,
-            203,
-            208,
-            210,
-            215
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-382921f8cce5",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvgeom_rom.c",
-      "symbol": "temp_v1",
-      "lines": [
-        153
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvEndGridWide",
-          "declaration_line": 150,
-          "lines": [
-            153
           ]
         }
       ]
@@ -104904,117 +104350,6 @@
       ]
     },
     {
-      "id": "Q-512e3b16af5a",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvgeom_rom.c",
-      "symbol": "var_s0",
-      "lines": [
-        156,
-        174,
-        176,
-        194,
-        213
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvEndGridWide",
-          "declaration_line": 150,
-          "lines": [
-            156,
-            174,
-            176,
-            194,
-            213
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-b64ea9d18cb4",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvgeom_rom.c",
-      "symbol": "var_s1",
-      "lines": [
-        157,
-        169,
-        176,
-        185,
-        206,
-        217,
-        231,
-        261,
-        265,
-        267,
-        298
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvEndGrid",
-          "declaration_line": 222,
-          "lines": [
-            231,
-            261,
-            265,
-            267,
-            298
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvEndGridWide",
-          "declaration_line": 150,
-          "lines": [
-            157,
-            169,
-            176,
-            185,
-            206,
-            217
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-766c7645e01c",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvgeom_rom.c",
-      "symbol": "var_s6",
-      "lines": [
-        158,
-        169,
-        174,
-        232,
-        267,
-        271,
-        293
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvEndGrid",
-          "declaration_line": 222,
-          "lines": [
-            232,
-            267,
-            271,
-            293
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvEndGridWide",
-          "declaration_line": 150,
-          "lines": [
-            158,
-            169,
-            174
-          ]
-        }
-      ]
-    },
-    {
       "id": "Q-b85e573670fa",
       "kind": "decompiler_local",
       "path": "src/modules/uvgeom_rom.c",
@@ -105023,52 +104358,9 @@
         112,
         120,
         139,
-        144,
-        162,
-        165,
-        182,
-        183,
-        185,
-        188,
-        192,
-        193,
-        194,
-        197,
-        204,
-        205,
-        206,
-        208,
-        211,
-        212,
-        213,
-        215
+        144
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "uvEndGridWide",
-          "declaration_line": 150,
-          "lines": [
-            162,
-            165,
-            182,
-            183,
-            185,
-            188,
-            192,
-            193,
-            194,
-            197,
-            204,
-            205,
-            206,
-            208,
-            211,
-            212,
-            213,
-            215
-          ]
-        },
         {
           "kind": "function",
           "name": "uvEndTmesh",
@@ -105083,51 +104375,6 @@
       ]
     },
     {
-      "id": "Q-25deb546e7e6",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvgeom_rom.c",
-      "symbol": "var_t1",
-      "lines": [
-        161,
-        166,
-        181,
-        182,
-        188,
-        191,
-        192,
-        197,
-        203,
-        204,
-        208,
-        210,
-        211,
-        215
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvEndGridWide",
-          "declaration_line": 150,
-          "lines": [
-            161,
-            166,
-            181,
-            182,
-            188,
-            191,
-            192,
-            197,
-            203,
-            204,
-            208,
-            210,
-            211,
-            215
-          ]
-        }
-      ]
-    },
-    {
       "id": "Q-9df3b7af4cab",
       "kind": "decompiler_local",
       "path": "src/modules/uvgeom_rom.c",
@@ -105136,36 +104383,9 @@
         114,
         122,
         132,
-        135,
-        154,
-        167,
-        183,
-        186,
-        193,
-        195,
-        205,
-        207,
-        212,
-        214
+        135
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "uvEndGridWide",
-          "declaration_line": 150,
-          "lines": [
-            154,
-            167,
-            183,
-            186,
-            193,
-            195,
-            205,
-            207,
-            212,
-            214
-          ]
-        },
         {
           "kind": "function",
           "name": "uvEndTmesh",
@@ -105175,31 +104395,6 @@
             122,
             132,
             135
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-bf030ff46d51",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvgeom_rom.c",
-      "symbol": "var_t3",
-      "lines": [
-        160,
-        172,
-        180,
-        200
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvEndGridWide",
-          "declaration_line": 150,
-          "lines": [
-            160,
-            172,
-            180,
-            200
           ]
         }
       ]
@@ -125447,21 +124642,41 @@
       ]
     },
     {
+      "id": "Q-ad3e26d1b571",
+      "kind": "explicit_unknown",
+      "path": "src/modules/caraudio.c",
+      "symbol": "Check the first enabled matching low-byte ID in banks 0x41DC/0x41E8 * then 0x41D8/0x41E4. Release and initialize its stride-eight sound handle, * reload sound exports between calls, then clear its flag and store ID 0xFF. * RE_ORIGINAL_QUIRK: explicit initialize follows release even though release * initializes a current identity; first-bank success skips the second bank. * RE_UNKNOWN: caller slot bounds, stored-ID meanings, table extents and * provider/handle lifetime guarantees need original producers and callers. * Historical formal/local storage remains unproved: the byte-formal draft * has 15 stack/frame-only differences (304 bytes, all ordered records exact). * The explicit word-to-byte draft has 75 differences (300/304 bytes) and * differing relocation sites; no omitted callback effect was identified. * Retain original assembly until complete instructions/records match.",
+      "lines": [
+        132
+      ],
+      "evidence": "Check the first enabled matching low-byte ID in banks 0x41DC/0x41E8 * then 0x41D8/0x41E4. Release and initialize its stride-eight sound handle, * reload sound exports between calls, then clear its flag and store ID 0xFF. * RE_ORIGINAL_QUIRK: explicit initialize follows release even though release * initializes a current identity; first-bank success skips the second bank. * RE_UNKNOWN: caller slot bounds, stored-ID meanings, table extents and * provider/handle lifetime guarantees need original producers and callers. * Historical formal/local storage remains unproved: the byte-formal draft * has 15 stack/frame-only differences (304 bytes, all ordered records exact). * The explicit word-to-byte draft has 75 differences (300/304 bytes) and * differing relocation sites; no omitted callback effect was identified. * Retain original assembly until complete instructions/records match.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_caraudio_0040218C",
+          "declaration_line": 145,
+          "lines": [
+            132
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-888a6f68c68e",
       "kind": "explicit_unknown",
       "path": "src/modules/caraudio.c",
       "symbol": "Clear the flag byte using the supplied signed slot without a range check. * RE_UNKNOWN: valid slot domain and flag-table extent need original callers and data layout.",
       "lines": [
-        204
+        217
       ],
       "evidence": "Clear the flag byte using the supplied signed slot without a range check. * RE_UNKNOWN: valid slot domain and flag-table extent need original callers and data layout.",
       "owners": [
         {
           "kind": "function",
           "name": "carAudioClearSlotFlag",
-          "declaration_line": 206,
+          "declaration_line": 219,
           "lines": [
-            204
+            217
           ]
         }
       ]
@@ -125472,16 +124687,16 @@
       "path": "src/modules/caraudio.c",
       "symbol": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "lines": [
-        181
+        194
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "owners": [
         {
           "kind": "function",
           "name": "func_caraudio_00402C08",
-          "declaration_line": 185,
+          "declaration_line": 198,
           "lines": [
-            181
+            194
           ]
         }
       ]
@@ -125492,16 +124707,16 @@
       "path": "src/modules/caraudio.c",
       "symbol": "Prepare sound selector 0x1D at fixed XYZ; reject returned managed-slot byte 0xFF. * Sound slot 0x80 copies matrix translation; the local matrix is not retained. * RE_UNKNOWN: gameplay identity and shared-handle setup need assets/callers.",
       "lines": [
-        221
+        234
       ],
       "evidence": "Prepare sound selector 0x1D at fixed XYZ; reject returned managed-slot byte 0xFF. * Sound slot 0x80 copies matrix translation; the local matrix is not retained. * RE_UNKNOWN: gameplay identity and shared-handle setup need assets/callers.",
       "owners": [
         {
           "kind": "global",
           "name": "D_caraudio_00403F00",
-          "declaration_line": 224,
+          "declaration_line": 237,
           "lines": [
-            221
+            234
           ]
         }
       ]
@@ -125512,16 +124727,16 @@
       "path": "src/modules/caraudio.c",
       "symbol": "Prepend kind zero; soundHandlingEnabled gates soundId/volume (SND 0x6C/0x84). * Original loader zeroes the head in fresh caud-image BSS before entry. RE_UNKNOWN: * value4/valueC roles, caller capacity and reset/freeing; trace callers and VOLT 0x0C.",
       "lines": [
-        255
+        268
       ],
       "evidence": "Prepend kind zero; soundHandlingEnabled gates soundId/volume (SND 0x6C/0x84). * Original loader zeroes the head in fresh caud-image BSS before entry. RE_UNKNOWN: * value4/valueC roles, caller capacity and reset/freeing; trace callers and VOLT 0x0C.",
       "owners": [
         {
           "kind": "function",
           "name": "carAudioPrependCommand",
-          "declaration_line": 260,
+          "declaration_line": 273,
           "lines": [
-            255
+            268
           ]
         }
       ]
@@ -125532,16 +124747,16 @@
       "path": "src/modules/caraudio.c",
       "symbol": "Resolve all four CARANIM material records before sequential signed16 code * tests. Priority is 4, then 5/6 (5 on track 7, otherwise 2), followed by * 12, 3, 2, 8, 9, 7, 10, 11, 1, then zero. CARANIM slot2C remaps * sentinel/shared-gate IDs to zero, then returns base + index * 0x1C. * RE_ORIGINAL_QUIRK: the first record's code-5 test appears twice in native. * RE_UNKNOWN: actual caller ID/record extent guarantees, material/code meanings, * record ownership/lifetime and historical local organization need original * material producers/callers. Drafts are 1252/1256 versus 1260 native bytes; * both have 162 differing words. Common-code registers, equality operand * order and branch/return lowering differ. All 17 record sites/identities * agree; downstream getter symbol values move with the shorter draft. * No supported missing callback, code width or priority effect was found. * Retain original assembly until complete instructions/records match.",
       "lines": [
-        134
+        147
       ],
       "evidence": "Resolve all four CARANIM material records before sequential signed16 code * tests. Priority is 4, then 5/6 (5 on track 7, otherwise 2), followed by * 12, 3, 2, 8, 9, 7, 10, 11, 1, then zero. CARANIM slot2C remaps * sentinel/shared-gate IDs to zero, then returns base + index * 0x1C. * RE_ORIGINAL_QUIRK: the first record's code-5 test appears twice in native. * RE_UNKNOWN: actual caller ID/record extent guarantees, material/code meanings, * record ownership/lifetime and historical local organization need original * material producers/callers. Drafts are 1252/1256 versus 1260 native bytes; * both have 162 differing words. Common-code registers, equality operand * order and branch/return lowering differ. All 17 record sites/identities * agree; downstream getter symbol values move with the shorter draft. * No supported missing callback, code width or priority effect was found. * Retain original assembly until complete instructions/records match.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_caraudio_004022BC",
-          "declaration_line": 148,
+          "declaration_line": 161,
           "lines": [
-            134
+            147
           ]
         }
       ]
@@ -125552,16 +124767,16 @@
       "path": "src/modules/caraudio.c",
       "symbol": "Test four source words at 0x2D0..0x2DC; return one on first nonzero, else zero. * Preserve the original unchecked state/source dereferences and short-circuit order. * RE_UNKNOWN: valid state/source extent/lifetime and word meanings need original producers/callers.",
       "lines": [
-        153
+        166
       ],
       "evidence": "Test four source words at 0x2D0..0x2DC; return one on first nonzero, else zero. * Preserve the original unchecked state/source dereferences and short-circuit order. * RE_UNKNOWN: valid state/source extent/lifetime and word meanings need original producers/callers.",
       "owners": [
         {
           "kind": "function",
           "name": "carAudioHasAnySourceSlot",
-          "declaration_line": 156,
+          "declaration_line": 169,
           "lines": [
-            153
+            166
           ]
         }
       ]
@@ -130450,7 +129665,7 @@
       "lines": [
         232,
         293,
-        335
+        350
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "owners": [
@@ -130473,9 +129688,9 @@
         {
           "kind": "function",
           "name": "func_scene_004012B0",
-          "declaration_line": 339,
+          "declaration_line": 354,
           "lines": [
-            335
+            350
           ]
         }
       ]
@@ -130526,16 +129741,16 @@
       "path": "src/modules/scene.c",
       "symbol": "Set each record word at offset 0x21C to one in the screen-export array. * Reload the shared array and signed count after each store, preserving the * callback parameter home and original traversal. * RE_UNKNOWN: meaning of the marker and the complete screen record layout. * RE_ORIGINAL_QUIRK: record pointers and signed count are not validated.",
       "lines": [
-        304
+        319
       ],
       "evidence": "Set each record word at offset 0x21C to one in the screen-export array. * Reload the shared array and signed count after each store, preserving the * callback parameter home and original traversal. * RE_UNKNOWN: meaning of the marker and the complete screen record layout. * RE_ORIGINAL_QUIRK: record pointers and signed count are not validated.",
       "owners": [
         {
           "kind": "function",
           "name": "sceneMarkScreenRecords",
-          "declaration_line": 309,
+          "declaration_line": 324,
           "lines": [
-            304
+            319
           ]
         }
       ]
@@ -130546,16 +129761,56 @@
       "path": "src/modules/scene.c",
       "symbol": "Truncate the floating selection into the current track, then use the stored * track to select its original 0x9C-byte record. GUI C4 consumes record word 0x08 * as the source address for the upper-text copier; this call does not set a * selection. Preserve all original unchecked indexing and word representation. * RE_UNKNOWN: record word 0x08's original pointer storage/relocation, readable * text extent and the complete choice-object layout. Inspect original record * data/relocations and creation paths before renaming word 0x08 or claiming a * 30-byte array or reachable buffer fault.",
       "lines": [
-        346
+        361
       ],
       "evidence": "Truncate the floating selection into the current track, then use the stored * track to select its original 0x9C-byte record. GUI C4 consumes record word 0x08 * as the source address for the upper-text copier; this call does not set a * selection. Preserve all original unchecked indexing and word representation. * RE_UNKNOWN: record word 0x08's original pointer storage/relocation, readable * text extent and the complete choice-object layout. Inspect original record * data/relocations and creation paths before renaming word 0x08 or claiming a * 30-byte array or reachable buffer fault.",
       "owners": [
         {
           "kind": "function",
           "name": "sceneApplySelectedTrack",
-          "declaration_line": 354,
+          "declaration_line": 369,
           "lines": [
-            346
+            361
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-f9b3be9c7015",
+      "kind": "explicit_unknown",
+      "path": "src/modules/scene.c",
+      "symbol": "func_scene_00400EC8 builds the scene text list and track, weather and * environment scalar rows through the original GUI and MISC slots. Preserve * all dependency reloads, flag/bound words, direct callbacks and word setters. * RE_ORIGINAL_QUIRK: the weather row receives the track callback word before * its weather callback word; both original stores and reloads are retained. * RE_UNKNOWN: complete bound-storage types/extents, row and callback/table * declarations, allocation-failure domains and readable 30-byte label windows * need original storage producers, GUI consumers and caller lifecycle evidence. * Native fourth arguments carry IEEE-754 words 0 and 0x41200000; the MISC * provider consumes f32 bits, but historical caller formal types remain unknown. * Readable C is parked: the 908-byte raw-word draft retains all effects and * the full 60-record relocation multiset, with eleven stack/frame immediates * and eight zero-word instruction encodings still different. Historical local * and argument declarations need new source evidence; do not invent padding.",
+      "lines": [
+        301
+      ],
+      "evidence": "func_scene_00400EC8 builds the scene text list and track, weather and * environment scalar rows through the original GUI and MISC slots. Preserve * all dependency reloads, flag/bound words, direct callbacks and word setters. * RE_ORIGINAL_QUIRK: the weather row receives the track callback word before * its weather callback word; both original stores and reloads are retained. * RE_UNKNOWN: complete bound-storage types/extents, row and callback/table * declarations, allocation-failure domains and readable 30-byte label windows * need original storage producers, GUI consumers and caller lifecycle evidence. * Native fourth arguments carry IEEE-754 words 0 and 0x41200000; the MISC * provider consumes f32 bits, but historical caller formal types remain unknown. * Readable C is parked: the 908-byte raw-word draft retains all effects and * the full 60-record relocation multiset, with eleven stack/frame immediates * and eight zero-word instruction encodings still different. Historical local * and argument declarations need new source evidence; do not invent padding.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_scene_00400EC8",
+          "declaration_line": 316,
+          "lines": [
+            301
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-160c2dbb97dc",
+      "kind": "explicit_unknown",
+      "path": "src/modules/scene.c",
+      "symbol": "func_scene_00401324 truncates row float 0x24, stores the word at settings * offset 0xC8, formats CLEAR/SNOW/RAIN/NOT SUPPORTED for selectors 0..3, then * passes original stack address SP+0x20 to the GUI upper-text byte copier. * RE_ORIGINAL_QUIRK: other selectors reach that call without formatting the * scratch source; the original GUI C4 copier reads exactly 30 source bytes. * RE_UNKNOWN: selection/conversion domains, historical scratch-object extent * and the complete readable 30-byte source window require original row * producers, callers and stack storage evidence. The longest observed format * needs 14 bytes including NUL; that does not prove the historical capacity * or reachable failure. Preserve original ASM and its unchecked dataflow.",
+      "lines": [
+        379
+      ],
+      "evidence": "func_scene_00401324 truncates row float 0x24, stores the word at settings * offset 0xC8, formats CLEAR/SNOW/RAIN/NOT SUPPORTED for selectors 0..3, then * passes original stack address SP+0x20 to the GUI upper-text byte copier. * RE_ORIGINAL_QUIRK: other selectors reach that call without formatting the * scratch source; the original GUI C4 copier reads exactly 30 source bytes. * RE_UNKNOWN: selection/conversion domains, historical scratch-object extent * and the complete readable 30-byte source window require original row * producers, callers and stack storage evidence. The longest observed format * needs 14 bytes including NUL; that does not prove the historical capacity * or reachable failure. Preserve original ASM and its unchecked dataflow.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_scene_00401324",
+          "declaration_line": 390,
+          "lines": [
+            379
           ]
         }
       ]
@@ -134411,21 +133666,61 @@
       ]
     },
     {
+      "id": "Q-65aabc71f0fe",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvgeom_rom.c",
+      "symbol": "Emit alternating vertices from adjacent rows through the original modulo-16 * slots, retaining each cursor reload and optional first-column repetition. * The third byte is tested for nonzero; the fourth byte adds its full value to * the row-pair bound, so preserve that addition rather than normalizing it. * RE_UNKNOWN: valid signed dimensions/closure values, vertex-address spans, * output capacity and alias/lifetime domains require original range/parameter * producers, drawing callers and display-list consumers.",
+      "lines": [
+        150
+      ],
+      "evidence": "Emit alternating vertices from adjacent rows through the original modulo-16 * slots, retaining each cursor reload and optional first-column repetition. * The third byte is tested for nonzero; the fourth byte adds its full value to * the row-pair bound, so preserve that addition rather than normalizing it. * RE_UNKNOWN: valid signed dimensions/closure values, vertex-address spans, * output capacity and alias/lifetime domains require original range/parameter * producers, drawing callers and display-list consumers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvEndGridWide",
+          "declaration_line": 158,
+          "lines": [
+            150
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-9a1c2af5e873",
       "kind": "explicit_unknown",
       "path": "src/modules/uvgeom_rom.c",
       "symbol": "Emit polygon triangles in the original batches, retaining the first-batch * and later-batch vertex commands and repeated display-list-head reloads. * Count < 3 returns before descriptor use; otherwise the native initializer * fills the inner 20-byte descriptor before its vertex-address read. * RE_UNKNOWN: valid vertex-address/count spans, output capacity, alias/lifetime * domains and the historical source declaration of the forwarded 32-bit word * require original range producers, drawing callers and descriptor consumers.",
       "lines": [
-        367
+        385
       ],
       "evidence": "Emit polygon triangles in the original batches, retaining the first-batch * and later-batch vertex commands and repeated display-list-head reloads. * Count < 3 returns before descriptor use; otherwise the native initializer * fills the inner 20-byte descriptor before its vertex-address read. * RE_UNKNOWN: valid vertex-address/count spans, output capacity, alias/lifetime * domains and the historical source declaration of the forwarded 32-bit word * require original range producers, drawing callers and descriptor consumers.",
       "owners": [
         {
           "kind": "function",
           "name": "uvVtxEndPolyInternal",
-          "declaration_line": 375,
+          "declaration_line": 393,
           "lines": [
-            367
+            385
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-98cc36a8334a",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvgeom_rom.c",
+      "symbol": "Select dimensions using the original full-word comparison, then preserve * the signed-halfword narrowing, vertex-bank alternation and closure tests. * The wide path narrows the forwarded closure values to bytes; keep both * representations and the original unused local storage. * RE_UNKNOWN: valid dimensions/closure values, inherited pad role, vertex * spans and output capacity/alias/lifetime guarantees require original grid * callers, local-layout evidence and display-list consumers.",
+      "lines": [
+        231
+      ],
+      "evidence": "Select dimensions using the original full-word comparison, then preserve * the signed-halfword narrowing, vertex-bank alternation and closure tests. * The wide path narrows the forwarded closure values to bytes; keep both * representations and the original unused local storage. * RE_UNKNOWN: valid dimensions/closure values, inherited pad role, vertex * spans and output capacity/alias/lifetime guarantees require original grid * callers, local-layout evidence and display-list consumers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvEndGrid",
+          "declaration_line": 239,
+          "lines": [
+            231
           ]
         }
       ]
@@ -140755,15 +140050,15 @@
       "path": "src/modules/caraudio.c",
       "symbol": "gap11",
       "lines": [
-        252
+        265
       ],
       "owners": [
         {
           "kind": "type",
           "name": "CarAudioCommand",
-          "declaration_line": 252,
+          "declaration_line": 265,
           "lines": [
-            252
+            265
           ]
         }
       ]
@@ -144458,15 +143753,15 @@
       "path": "src/modules/uvgeom_rom.c",
       "symbol": "pad",
       "lines": [
-        235
+        252
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvEndGrid",
-          "declaration_line": 222,
+          "declaration_line": 239,
           "lines": [
-            235
+            252
           ]
         }
       ]
@@ -155731,26 +155026,26 @@
       "path": "src/modules/caraudio.c",
       "symbol": "value4",
       "lines": [
-        252,
-        260,
-        263
+        265,
+        273,
+        276
       ],
       "owners": [
         {
           "kind": "function",
           "name": "carAudioPrependCommand",
-          "declaration_line": 260,
+          "declaration_line": 273,
           "lines": [
-            260,
-            263
+            273,
+            276
           ]
         },
         {
           "kind": "type",
           "name": "CarAudioCommand",
-          "declaration_line": 252,
+          "declaration_line": 265,
           "lines": [
-            252
+            265
           ]
         }
       ]
@@ -155761,26 +155056,26 @@
       "path": "src/modules/caraudio.c",
       "symbol": "valueC",
       "lines": [
-        252,
-        260,
-        265
+        265,
+        273,
+        278
       ],
       "owners": [
         {
           "kind": "function",
           "name": "carAudioPrependCommand",
-          "declaration_line": 260,
+          "declaration_line": 273,
           "lines": [
-            260,
-            265
+            273,
+            278
           ]
         },
         {
           "kind": "type",
           "name": "CarAudioCommand",
-          "declaration_line": 252,
+          "declaration_line": 265,
           "lines": [
-            252
+            265
           ]
         }
       ]
@@ -164526,15 +163821,15 @@
       "symbol": "value04",
       "lines": [
         3,
-        398
+        424
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sceneBlendEightWordRecord",
-          "declaration_line": 385,
+          "declaration_line": 411,
           "lines": [
-            398
+            424
           ]
         },
         {
@@ -164555,24 +163850,24 @@
       "lines": [
         3,
         5,
-        359,
-        399
+        374,
+        425
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sceneApplySelectedTrack",
-          "declaration_line": 354,
+          "declaration_line": 369,
           "lines": [
-            359
+            374
           ]
         },
         {
           "kind": "function",
           "name": "sceneBlendEightWordRecord",
-          "declaration_line": 385,
+          "declaration_line": 411,
           "lines": [
-            399
+            425
           ]
         },
         {
@@ -164600,15 +163895,15 @@
       "symbol": "value0C",
       "lines": [
         3,
-        400
+        426
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sceneBlendEightWordRecord",
-          "declaration_line": 385,
+          "declaration_line": 411,
           "lines": [
-            400
+            426
           ]
         },
         {
@@ -164628,17 +163923,17 @@
       "symbol": "value10",
       "lines": [
         3,
-        401,
-        405
+        427,
+        431
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sceneBlendEightWordRecord",
-          "declaration_line": 385,
+          "declaration_line": 411,
           "lines": [
-            401,
-            405
+            427,
+            431
           ]
         },
         {
@@ -164658,15 +163953,15 @@
       "symbol": "value14",
       "lines": [
         3,
-        402
+        428
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sceneBlendEightWordRecord",
-          "declaration_line": 385,
+          "declaration_line": 411,
           "lines": [
-            402
+            428
           ]
         },
         {
@@ -164686,15 +163981,15 @@
       "symbol": "value18",
       "lines": [
         3,
-        403
+        429
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sceneBlendEightWordRecord",
-          "declaration_line": 385,
+          "declaration_line": 411,
           "lines": [
-            403
+            429
           ]
         },
         {
@@ -164714,15 +164009,15 @@
       "symbol": "value1C",
       "lines": [
         3,
-        404
+        430
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sceneBlendEightWordRecord",
-          "declaration_line": 385,
+          "declaration_line": 411,
           "lines": [
-            404
+            430
           ]
         },
         {
@@ -184994,9 +184289,9 @@
         49,
         103,
         122,
-        169,
-        261,
-        388
+        177,
+        278,
+        406
       ],
       "owners": [
         {
@@ -185011,17 +184306,17 @@
         {
           "kind": "function",
           "name": "uvEndGrid",
-          "declaration_line": 222,
+          "declaration_line": 239,
           "lines": [
-            261
+            278
           ]
         },
         {
           "kind": "function",
           "name": "uvEndGridWide",
-          "declaration_line": 150,
+          "declaration_line": 158,
           "lines": [
-            169
+            177
           ]
         },
         {
@@ -185043,9 +184338,9 @@
         {
           "kind": "function",
           "name": "uvVtxEndPolyInternal",
-          "declaration_line": 375,
+          "declaration_line": 393,
           "lines": [
-            388
+            406
           ]
         },
         {
@@ -198729,7 +198024,7 @@
         26,
         110,
         123,
-        227
+        240
       ],
       "owners": [
         {
@@ -198759,9 +198054,9 @@
         {
           "kind": "global",
           "name": "D_caraudio_00404300",
-          "declaration_line": 227,
+          "declaration_line": 240,
           "lines": [
-            227
+            240
           ]
         }
       ]
@@ -198774,7 +198069,7 @@
       "lines": [
         26,
         110,
-        242
+        255
       ],
       "owners": [
         {
@@ -198796,9 +198091,9 @@
         {
           "kind": "function",
           "name": "carAudioStartFixedPositionSound",
-          "declaration_line": 231,
+          "declaration_line": 244,
           "lines": [
-            242
+            255
           ]
         }
       ]
@@ -205855,21 +205150,41 @@
       ]
     },
     {
+      "id": "Q-7c0537ee5b30",
+      "kind": "original_quirk",
+      "path": "src/modules/caraudio.c",
+      "symbol": "Check the first enabled matching low-byte ID in banks 0x41DC/0x41E8 * then 0x41D8/0x41E4. Release and initialize its stride-eight sound handle, * reload sound exports between calls, then clear its flag and store ID 0xFF. * RE_ORIGINAL_QUIRK: explicit initialize follows release even though release * initializes a current identity; first-bank success skips the second bank. * RE_UNKNOWN: caller slot bounds, stored-ID meanings, table extents and * provider/handle lifetime guarantees need original producers and callers. * Historical formal/local storage remains unproved: the byte-formal draft * has 15 stack/frame-only differences (304 bytes, all ordered records exact). * The explicit word-to-byte draft has 75 differences (300/304 bytes) and * differing relocation sites; no omitted callback effect was identified. * Retain original assembly until complete instructions/records match.",
+      "lines": [
+        132
+      ],
+      "evidence": "Check the first enabled matching low-byte ID in banks 0x41DC/0x41E8 * then 0x41D8/0x41E4. Release and initialize its stride-eight sound handle, * reload sound exports between calls, then clear its flag and store ID 0xFF. * RE_ORIGINAL_QUIRK: explicit initialize follows release even though release * initializes a current identity; first-bank success skips the second bank. * RE_UNKNOWN: caller slot bounds, stored-ID meanings, table extents and * provider/handle lifetime guarantees need original producers and callers. * Historical formal/local storage remains unproved: the byte-formal draft * has 15 stack/frame-only differences (304 bytes, all ordered records exact). * The explicit word-to-byte draft has 75 differences (300/304 bytes) and * differing relocation sites; no omitted callback effect was identified. * Retain original assembly until complete instructions/records match.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_caraudio_0040218C",
+          "declaration_line": 145,
+          "lines": [
+            132
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-659d9a7a94ac",
       "kind": "original_quirk",
       "path": "src/modules/caraudio.c",
       "symbol": "Resolve all four CARANIM material records before sequential signed16 code * tests. Priority is 4, then 5/6 (5 on track 7, otherwise 2), followed by * 12, 3, 2, 8, 9, 7, 10, 11, 1, then zero. CARANIM slot2C remaps * sentinel/shared-gate IDs to zero, then returns base + index * 0x1C. * RE_ORIGINAL_QUIRK: the first record's code-5 test appears twice in native. * RE_UNKNOWN: actual caller ID/record extent guarantees, material/code meanings, * record ownership/lifetime and historical local organization need original * material producers/callers. Drafts are 1252/1256 versus 1260 native bytes; * both have 162 differing words. Common-code registers, equality operand * order and branch/return lowering differ. All 17 record sites/identities * agree; downstream getter symbol values move with the shorter draft. * No supported missing callback, code width or priority effect was found. * Retain original assembly until complete instructions/records match.",
       "lines": [
-        134
+        147
       ],
       "evidence": "Resolve all four CARANIM material records before sequential signed16 code * tests. Priority is 4, then 5/6 (5 on track 7, otherwise 2), followed by * 12, 3, 2, 8, 9, 7, 10, 11, 1, then zero. CARANIM slot2C remaps * sentinel/shared-gate IDs to zero, then returns base + index * 0x1C. * RE_ORIGINAL_QUIRK: the first record's code-5 test appears twice in native. * RE_UNKNOWN: actual caller ID/record extent guarantees, material/code meanings, * record ownership/lifetime and historical local organization need original * material producers/callers. Drafts are 1252/1256 versus 1260 native bytes; * both have 162 differing words. Common-code registers, equality operand * order and branch/return lowering differ. All 17 record sites/identities * agree; downstream getter symbol values move with the shorter draft. * No supported missing callback, code width or priority effect was found. * Retain original assembly until complete instructions/records match.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_caraudio_004022BC",
-          "declaration_line": 148,
+          "declaration_line": 161,
           "lines": [
-            134
+            147
           ]
         }
       ]
@@ -206600,16 +205915,56 @@
       "path": "src/modules/scene.c",
       "symbol": "Set each record word at offset 0x21C to one in the screen-export array. * Reload the shared array and signed count after each store, preserving the * callback parameter home and original traversal. * RE_UNKNOWN: meaning of the marker and the complete screen record layout. * RE_ORIGINAL_QUIRK: record pointers and signed count are not validated.",
       "lines": [
-        304
+        319
       ],
       "evidence": "Set each record word at offset 0x21C to one in the screen-export array. * Reload the shared array and signed count after each store, preserving the * callback parameter home and original traversal. * RE_UNKNOWN: meaning of the marker and the complete screen record layout. * RE_ORIGINAL_QUIRK: record pointers and signed count are not validated.",
       "owners": [
         {
           "kind": "function",
           "name": "sceneMarkScreenRecords",
-          "declaration_line": 309,
+          "declaration_line": 324,
           "lines": [
-            304
+            319
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-3bcdae06d7ac",
+      "kind": "original_quirk",
+      "path": "src/modules/scene.c",
+      "symbol": "func_scene_00400EC8 builds the scene text list and track, weather and * environment scalar rows through the original GUI and MISC slots. Preserve * all dependency reloads, flag/bound words, direct callbacks and word setters. * RE_ORIGINAL_QUIRK: the weather row receives the track callback word before * its weather callback word; both original stores and reloads are retained. * RE_UNKNOWN: complete bound-storage types/extents, row and callback/table * declarations, allocation-failure domains and readable 30-byte label windows * need original storage producers, GUI consumers and caller lifecycle evidence. * Native fourth arguments carry IEEE-754 words 0 and 0x41200000; the MISC * provider consumes f32 bits, but historical caller formal types remain unknown. * Readable C is parked: the 908-byte raw-word draft retains all effects and * the full 60-record relocation multiset, with eleven stack/frame immediates * and eight zero-word instruction encodings still different. Historical local * and argument declarations need new source evidence; do not invent padding.",
+      "lines": [
+        301
+      ],
+      "evidence": "func_scene_00400EC8 builds the scene text list and track, weather and * environment scalar rows through the original GUI and MISC slots. Preserve * all dependency reloads, flag/bound words, direct callbacks and word setters. * RE_ORIGINAL_QUIRK: the weather row receives the track callback word before * its weather callback word; both original stores and reloads are retained. * RE_UNKNOWN: complete bound-storage types/extents, row and callback/table * declarations, allocation-failure domains and readable 30-byte label windows * need original storage producers, GUI consumers and caller lifecycle evidence. * Native fourth arguments carry IEEE-754 words 0 and 0x41200000; the MISC * provider consumes f32 bits, but historical caller formal types remain unknown. * Readable C is parked: the 908-byte raw-word draft retains all effects and * the full 60-record relocation multiset, with eleven stack/frame immediates * and eight zero-word instruction encodings still different. Historical local * and argument declarations need new source evidence; do not invent padding.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_scene_00400EC8",
+          "declaration_line": 316,
+          "lines": [
+            301
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-b0f7cd3815ea",
+      "kind": "original_quirk",
+      "path": "src/modules/scene.c",
+      "symbol": "func_scene_00401324 truncates row float 0x24, stores the word at settings * offset 0xC8, formats CLEAR/SNOW/RAIN/NOT SUPPORTED for selectors 0..3, then * passes original stack address SP+0x20 to the GUI upper-text byte copier. * RE_ORIGINAL_QUIRK: other selectors reach that call without formatting the * scratch source; the original GUI C4 copier reads exactly 30 source bytes. * RE_UNKNOWN: selection/conversion domains, historical scratch-object extent * and the complete readable 30-byte source window require original row * producers, callers and stack storage evidence. The longest observed format * needs 14 bytes including NUL; that does not prove the historical capacity * or reachable failure. Preserve original ASM and its unchecked dataflow.",
+      "lines": [
+        379
+      ],
+      "evidence": "func_scene_00401324 truncates row float 0x24, stores the word at settings * offset 0xC8, formats CLEAR/SNOW/RAIN/NOT SUPPORTED for selectors 0..3, then * passes original stack address SP+0x20 to the GUI upper-text byte copier. * RE_ORIGINAL_QUIRK: other selectors reach that call without formatting the * scratch source; the original GUI C4 copier reads exactly 30 source bytes. * RE_UNKNOWN: selection/conversion domains, historical scratch-object extent * and the complete readable 30-byte source window require original row * producers, callers and stack storage evidence. The longest observed format * needs 14 bytes including NUL; that does not prove the historical capacity * or reachable failure. Preserve original ASM and its unchecked dataflow.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_scene_00401324",
+          "declaration_line": 390,
+          "lines": [
+            379
           ]
         }
       ]
@@ -211044,15 +210399,15 @@
       "path": "src/modules/caraudio.c",
       "symbol": "unused",
       "lines": [
-        231
+        244
       ],
       "owners": [
         {
           "kind": "function",
           "name": "carAudioStartFixedPositionSound",
-          "declaration_line": 231,
+          "declaration_line": 244,
           "lines": [
-            231
+            244
           ]
         }
       ]
@@ -212025,17 +211380,17 @@
       "path": "src/modules/scene.c",
       "symbol": "unusedCallbackValue",
       "lines": [
-        309,
-        315
+        324,
+        330
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sceneMarkScreenRecords",
-          "declaration_line": 309,
+          "declaration_line": 324,
           "lines": [
-            309,
-            315
+            324,
+            330
           ]
         }
       ]
@@ -212980,6 +212335,25 @@
           "declaration_line": 274,
           "lines": [
             274
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-c3aec81d6d15",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvgeom_rom.c",
+      "symbol": "unusedWord",
+      "lines": [
+        161
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvEndGridWide",
+          "declaration_line": 158,
+          "lines": [
+            161
           ]
         }
       ]
