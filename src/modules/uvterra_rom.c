@@ -13,7 +13,7 @@ typedef struct { u8 prefix[4]; void (*get)(s32, ...); } TerrainChannelListExport
 extern void *D_uvterra_rom_0040F760;
 void func_uvterra_rom_0040078C(s32);
 void func_uvterra_rom_0040AC9C(s32);
-void func_uvterra_rom_0040AE4C(s32);
+void uvTerraRefreshProjectionAndDrawQueuedTiles(s32);
 #include "module.h"
 extern UvFMtx_Rom_Exports *D_uvterra_rom_0040F744;
 extern s32 D_uvterra_rom_0040FBD8, D_uvterra_rom_0040FBDC;
@@ -30,6 +30,32 @@ extern s32 D_uvterra_rom_0040FBF4;
 extern u8 D_uvterra_rom_0040F7A0[];
 #include "module.h"
 #include "uvasset_types.h"
+/* Original draw queue uses 16-byte records. This view names only observed
+ * consumers; RE_UNKNOWN: byte 0x05 and word 0x0C meanings and the complete
+ * historical record declaration. Trace the original 0x40078C queue producer. */
+typedef struct {
+    /* 0x00 */ uvUnkTileStruct *tile;
+    /* 0x04 */ u8 secondMask;
+    /* 0x05 */ u8 unknown5;
+    /* 0x06 */ u16 firstMask;
+    /* 0x08 */ f32 comparisonValue;
+    /* 0x0C */ u32 unknownC;
+} TerrainTileDrawRecord;
+extern TerrainTileDrawRecord *D_uvterra_rom_0040FBE8;
+extern f32 D_uvterra_rom_0040FBA8;
+extern f32 D_uvterra_rom_0040D710;
+void uvTerraDrawTileGeometry(s32, uvUnkTileStruct *, u16, u16);
+#include "uvgfxmgr_rom.h"
+#include "uvchannel_rom.h"
+extern UvGfxState_Rom_Exports *D_uvterra_rom_0040F750;
+extern UvGfxMgr_Exports *D_uvterra_rom_0040F754;
+extern s32 D_uvterra_rom_0040FBC4;
+extern f32 D_uvterra_rom_0040FBAC;
+extern f32 D_uvterra_rom_0040FBB0;
+extern f32 D_uvterra_rom_0040FBB4;
+extern f32 D_uvterra_rom_0040FBB8;
+extern f32 D_uvterra_rom_0040FBBC;
+extern f32 D_uvterra_rom_0040FBC0;
 UnkSobjDraw *uvTerraGetStaticObject(s32 handle);
 #line 8 "src/modules/uvterra_rom.c"
 extern f32 D_uvterra_rom_0040D6E4;
@@ -107,7 +133,7 @@ void uvTerraRegisterChannelCallbacks(s32 channel) {
     ((TerrainChannelListExports *)D_uvterra_rom_0040F760)->get(channel, 6, &callbacks, 0);
     D_uvterra_rom_0040F764->uvAddCallback(callbacks, func_uvterra_rom_0040078C, NULL, 0x28);
     D_uvterra_rom_0040F764->uvAddCallback(callbacks, func_uvterra_rom_0040AC9C, NULL, 0x2D);
-    D_uvterra_rom_0040F764->uvAddCallback(callbacks, func_uvterra_rom_0040AE4C, NULL, 0x64);
+    D_uvterra_rom_0040F764->uvAddCallback(callbacks, uvTerraRefreshProjectionAndDrawQueuedTiles, NULL, 0x64);
 }
 #line 73 "src/modules/uvterra_rom.c"
 
@@ -835,15 +861,71 @@ UnkSobjDraw *uvTerraGetStaticObject(s32 handle) {
 #line 537 "src/modules/uvterra_rom.c"
 
 #line 538 "src/modules/uvterra_rom.c"
-/* Return the caller-indexed terrain channel byte without new validation. */
-u8 uvTerraGetChannelByte(s32 channel) {
-    return D_uvterra_rom_0040F7A0[channel];
+#line 538 "src/modules/uvterra_rom.c"
+
+/* Return the indexed byte also updated by the queued-tile draw callback.
+ * RE_UNKNOWN: the public export's caller index domain and byte meaning.
+ * Original 0x40AC9C writes this array by tile-pointer difference, so a channel
+ * interpretation is not established. Trace original TERR export 0xA8 callers
+ * and all array writers before assigning channel or visibility semantics. */
+u8 uvTerraGetIndexedDrawByte(s32 index) {
+    return D_uvterra_rom_0040F7A0[index];
 }
+#line 542 "src/modules/uvterra_rom.c"
 #line 541 "src/modules/uvterra_rom.c"
 
+#line 542 "src/modules/uvterra_rom.c"
+/* Registered channel callback at priority45: reset the shared threshold,
+ * visit 16-byte queued tile records, clear the tile-indexed byte when the
+ * record value is below threshold, otherwise draw with its two stored masks
+ * and set the byte to one. Store threshold minus terrain field0x24 afterward.
+ * RE_UNKNOWN: comparison/threshold units, mask/byte meanings and queue ordering,
+ * extent and tile-array membership. Channel/resource lifetime must also be
+ * traced: the original loaded-terrain result is used without a null guard.
+ * Resolve through original 0x40078C queue construction, shared-threshold writers,
+ * TERR export0xA8 consumers and channel callback registration/teardown. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040AC9C.s")
+#line 543 "src/modules/uvterra_rom.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040AE4C.s")
+#line 544 "src/modules/uvterra_rom.c"
+
+/* When requested, disable fog, restore default render state, clear the
+ * depth viewport, install the six stored channel-frustum values and load
+ * the channel's property-one matrix through the projection interface.
+ * Then visit queued tiles, skipping only threshold <= comparisonValue;
+ * preserve the original unordered-value draw path and queue reloads.
+ * RE_UNKNOWN: why this callback restores projection, the shared threshold's
+ * units/order, mask meanings and valid channel/matrix-output guarantees.
+ * Trace original refresh-flag/frustum writers, queue construction and the
+ * registered callback order before assigning camera or visibility intent. */
+void uvTerraRefreshProjectionAndDrawQueuedTiles(s32 channel) {
+    s32 queueIndex;
+    TerrainTileDrawRecord *record;
+    Mtx4F projection;
+
+    if (D_uvterra_rom_0040FBC4 != 0) {
+        D_uvterra_rom_0040F750->func_uvgfxstate_rom_00401F54(0.0f, 0.0f);
+        D_uvterra_rom_0040F750->uvGfxResetDefaultRenderState();
+        D_uvterra_rom_0040F754->uvGfxClearDepthImageViewport();
+        ((UvChannel_Exports *)D_uvterra_rom_0040F760)->uvChannelSetFrustum(channel,
+            D_uvterra_rom_0040FBAC, D_uvterra_rom_0040FBB0,
+            D_uvterra_rom_0040FBB4, D_uvterra_rom_0040FBB8,
+            D_uvterra_rom_0040FBBC, D_uvterra_rom_0040FBC0);
+        ((UvChannel_Exports *)D_uvterra_rom_0040F760)->uvChannelGetProperties(
+            channel, 1, &projection, 0);
+        D_uvterra_rom_0040F744->uvGfxMtxProjPushF(&projection);
+        D_uvterra_rom_0040FBC4 = 0;
+    }
+    for (queueIndex = 0; queueIndex < D_uvterra_rom_0040F740; queueIndex++) {
+        record = &D_uvterra_rom_0040FBE8[queueIndex];
+        if (D_uvterra_rom_0040FBA8 <= record->comparisonValue) {
+            continue;
+        }
+        uvTerraDrawTileGeometry(channel, record->tile, record->firstMask,
+            record->secondMask);
+    }
+}
+#line 545 "src/modules/uvterra_rom.c"
 
 #line 546 "src/modules/uvterra_rom.c"
 /* Apply FMTX's shared negative translation to the tile matrix and load it
@@ -853,20 +935,23 @@ u8 uvTerraGetChannelByte(s32 channel) {
  * RE_UNKNOWN: which coordinate origin the shared FMTX translation represents
  * at this call. Trace FMTX export 0x04 setters and their render ordering. */
 #line 551 "src/modules/uvterra_rom.c"
-void uvTerraDrawTileGeometry(s32 terrainId, uvUnkTileStruct *tile, u16 firstMask, u16 secondMask) {
+#line 551 "src/modules/uvterra_rom.c"
+
+void uvTerraDrawTileGeometry(s32 channel, uvUnkTileStruct *tile, u16 firstMask, u16 secondMask) {
     Mtx4F matrix;
     if (tile->unk40 != NULL) {
         D_uvterra_rom_0040F744->uvMat4ApplySharedInverseTranslation(&matrix, &tile->unk0);
         D_uvterra_rom_0040F744->uvGfxMtxViewLoad(&matrix, 1);
         if (D_uvterra_rom_0040FBDC == 0) {
-            func_uvterra_rom_004072EC(terrainId, firstMask, tile, tile->unk40->unk8, tile->unk40->unkC);
+            func_uvterra_rom_004072EC(channel, firstMask, tile, tile->unk40->unk8, tile->unk40->unkC);
         }
         if (D_uvterra_rom_0040FBD8 == 0) {
-            func_uvterra_rom_004076A8(terrainId, tile, firstMask, secondMask, tile->unk40->unk10, tile->unk40->unk14);
+            func_uvterra_rom_004076A8(channel, tile, firstMask, secondMask, tile->unk40->unk10, tile->unk40->unk14);
         }
         D_uvterra_rom_0040F744->uvGfxMtxFViewPop();
     }
 }
+#line 565 "src/modules/uvterra_rom.c"
 #line 547 "src/modules/uvterra_rom.c"
 
 #line 548 "src/modules/uvterra_rom.c"

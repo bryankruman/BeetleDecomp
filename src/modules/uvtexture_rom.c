@@ -342,9 +342,9 @@ void uvGfxTextureDL(Gfx **gdl, s32 textureId, s32 xparam) {
 }
 
 #line 314 "src/modules/uvtexture_rom.c"
-/* Toggle the texture buffer, reset its count and binding sentinel,
- * and fill the optional 0x1000-byte lookup table with 0xFF. The callback
- * context is unused. */
+/* XOR the active counter index with one, clear D10[index], and reset binding state.
+ * Original TEXT places D10/D14 in adjacent four-byte BSS words; loaded-texture emissions increment the selected word.
+ * Fill existing shared 0x1000-byte scratch with 0xFF; callback context is unused. */
 void uvTextureBeginBuffer(s32 context) {
     D_uvtexture_rom_00400D08 = D_uvtexture_rom_00400D08 ^ 1;
     D_uvtexture_rom_00400D10[D_uvtexture_rom_00400D08] = 0;
@@ -364,9 +364,9 @@ void uvTextureInvalidateBinding(void) {
 #line 327 "src/modules/uvtexture_rom.c"
 
 #line 328 "src/modules/uvtexture_rom.c"
-/* For mode zero, return the original adjacent-state value selected by
- * the negated buffer index. Preserve this expression until the contiguous
- * global layout is audited; other modes return zero. */
+/* Mode zero reads the opposite counter: D14 for index zero, D10 for index one; other modes return zero.
+ * BSS-zero initialization is visible in accepted uvLoadModule source, not this TEXT entrypoint; preserve original cross-array indexing.
+ * RE_UNKNOWN: C array bounds, indirect alias writes and reload domains; audit original loader/alias callers before stronger invariants. */
 s32 uvTextureGetOtherBufferValue(s32 mode) {
     if (mode == 0) {
         return D_uvtexture_rom_00400D14[0 - D_uvtexture_rom_00400D08];

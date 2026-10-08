@@ -57,7 +57,7 @@ void spraySetActivationState(SprayEffectState *state, u8 enabled) {
 #line 38 "src/modules/spray.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/spray/func_spray_004002A8.s")
-
+/* RE_UNKNOWN: complete spray record layout, byte D1/state C0 meaning, initialization, storage bounds, callback/resource lifetime and historical local storage. Original callback saves/restores fog around a fixed-stride pointer walk ending at the adjacent sound-state label; trace original initializer, record writers, registration and drawing helper before strengthening semantic names, bounds or safety guarantees. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/spray/func_spray_0040055C.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/spray/func_spray_0040064C.s")

@@ -228,7 +228,7 @@ void medSetNormalizedColor(s32 rgba) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_00401C10.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_00401EF8.s")
-
+/* RE_UNKNOWN: selected texture-sequence validity, shared color/property-four scalar domains and units, file-load success and callback/resource lifetime guarantees require original control/sequence producers, resource inventory and callers; the pre-property loaded-file snapshot is intentional, and CARA slot28 only homes the forwarded word, leaving its historical source type unresolved. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_004021A0.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_004023E0.s")
@@ -363,7 +363,7 @@ void medSetEnvironmentBlendFromNode(Node_4052C8 *node)
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_004053B4.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_00405488.s")
-
+/* RE_ORIGINAL_QUIRK: unbounded load retry and unchecked object-create result. RE_UNKNOWN: scalar domain, overlapping word-table bounds/lifetime, label extent/trailing bytes and failure reachability; trace original control/table producers, stack objects, resource inventory and callers before changing retry, traversal or failure behavior. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_004057A8.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_004059E8.s")

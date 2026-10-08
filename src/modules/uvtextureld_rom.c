@@ -9,11 +9,11 @@ typedef struct UnkTexture_Exports_s {
     /* 0x28 */ char pad28[4];
 } UnkTexture_Exports;                               /* size = 0x2C */
 
-void __entrypoint_func_uvtextureld_rom_400000(UvTextureLd_Exports *arg0);
+void __entrypoint_func_uvtextureld_rom_400000(UvTextureLd_Exports *exports);
 void uvTextureLoaderCleanup(void);
 ParsedUVTX* uvParseUVTX(u8 *data);
 ParsedUVTX *uvTextureLoadImageBytes(u8 *arg0);
-void *_uvExpandTexture(u8 *arg0);
+void *_uvExpandTexture(u8 *inputCursor);
 void uvTextureFreeResource(UnkStruct_uvtextureld_rom_00400A40 *parsedUvTexture);
 
 // .data
@@ -27,18 +27,20 @@ static UvtSeqLd_Rom_Exports* sUvTextureSequenceLdExports;
 u16 D_uvtextureld_rom_00400B70;
 u16 D_uvtextureld_rom_00400B72;
 
-void __entrypoint_func_uvtextureld_rom_400000(UvTextureLd_Exports* arg0) {
-    u16* temp_v0;
+#line 30 "src/modules/uvtextureld_rom.c"
 
-    uvUpdateFileAllocPtr(arg0);
-    arg0->uvParseUVTX = uvParseUVTX;
-    arg0->uvTextureLoaderCleanup = uvTextureLoaderCleanup;
-    arg0->uvTextureFreeResource = uvTextureFreeResource;
-    temp_v0 = uvGetSystemProp(0x12);
-    if (temp_v0 == NULL) {
+void __entrypoint_func_uvtextureld_rom_400000(UvTextureLd_Exports* exports) {
+    u16* imageCountLimitProperty;
+
+    uvUpdateFileAllocPtr(exports);
+    exports->uvParseUVTX = uvParseUVTX;
+    exports->uvTextureLoaderCleanup = uvTextureLoaderCleanup;
+    exports->uvTextureFreeResource = uvTextureFreeResource;
+    imageCountLimitProperty = uvGetSystemProp(0x12);
+    if (imageCountLimitProperty == NULL) {
         D_uvtextureld_rom_00400B72 = 0x2710;
     } else {
-        D_uvtextureld_rom_00400B72 = *temp_v0;
+        D_uvtextureld_rom_00400B72 = *imageCountLimitProperty;
     }
     sUvGfxMgrExports = uvLoadModule('GMGR');
     sUvTextureExports = uvLoadModule('TEXT');
@@ -46,6 +48,7 @@ void __entrypoint_func_uvtextureld_rom_400000(UvTextureLd_Exports* arg0) {
     sUvTextureSequenceLdExports = uvLoadModule('UVTS');
     D_uvtextureld_rom_00400B70 = 0;
 }
+#line 49 "src/modules/uvtextureld_rom.c"
 
 #line 50 "src/modules/uvtextureld_rom.c"
 /* Unload graphics, texture, sequence and sequence-loader dependencies
@@ -86,13 +89,13 @@ ParsedUVTX* uvParseUVTX(u8* data) {
 }
 
 #line 84 "src/modules/uvtextureld_rom.c"
-/* Read the original image prefix, clamp image bytes to 4096 and copy
- * into a new eight-byte-aligned buffer while below the configured limit.
- * At the limit return the texture module shared scratch buffer.
- * RE_UNKNOWN: the shared fallback's intended image contents and lifetime.
- * That branch does not copy this file's image payload; destruction recognizes
- * the current scratch pointer and excludes it from frees/count decrements. Trace fallback-producing loads,
- * scratch writes and render timing to establish reuse/lifetime intent. */
+/* Clamp image bytes to 4096 and copy into a private eight-byte-aligned buffer below the allocation-count limit.
+ * At the limit, call TEXT's lazy 4096-byte scratch allocator; that path copies no asset pixels.
+ * Its reset callback fills existing scratch with 0xFF when invoked through uvGfxBegin's list-one dispatch.
+ * Texture destruction recognizes the current scratch pointer and skips its free/count decrement.
+ * TEXT's module cleanup contains no scratch free.
+ * RE_UNKNOWN: initial contents before a subsequent reset, other writers and intended reuse/teardown lifetime;
+ * trace original fallback loads, shared-pointer aliases and module reload paths before stronger claims. */
 ParsedUVTX* uvTextureLoadImageBytes(u8* data) {
     void* image;
     u16 displayListCount;
@@ -124,24 +127,26 @@ ParsedUVTX* uvTextureLoadImageBytes(u8* data) {
 }
 #line 113 "src/modules/uvtextureld_rom.c"
 
-void* _uvExpandTexture(u8* arg0) {
-    u32 temp_t0;
-    Gfx* sp178;
+#line 114 "src/modules/uvtextureld_rom.c"
+
+void* _uvExpandTexture(u8* inputCursor) {
+    u32 imageAddress;
+    Gfx* displayList;
     s32 fileCount;
-    s32 temp_v0_7;
+    s32 frameCount;
     s32 pad;
     s32 var_a3;
-    s32 var_a2;
+    s32 setImageCommandIndex;
     u16 pad_sp162;
-    u16 sp160;
-    u16 sp15E;
+    u16 displayListCount;
+    u16 imageByteCount;
     u16 pad_sp15C;
-    UnkUVTX_1C* sp158;
-    UnkUVTX_1C* sp154;
+    UnkUVTX_1C* firstAnimation;
+    UnkUVTX_1C* secondAnimation;
     f32 sp150;
     f32 sp14C;
     s32 i;
-    u8* sp144 = arg0;
+    u8* originalInput = inputCursor;
     f32 sp140;
     f32 sp13C;
     s32 sp138;
@@ -150,149 +155,150 @@ void* _uvExpandTexture(u8* arg0) {
     s32 j;
     s32 k;
     s32 pad2;
-    ParsedUVTX* temp_v0;
+    ParsedUVTX* texture;
     s32 pad3[4];
     u16 sp54[6][16];
-    s32 sp50;
-    ParsedUVTX* var_v1;
+    s32 sequenceFound;
+    ParsedUVTX* referencedTexture;
 
-    uvConsumeBytes(&sp15E, &arg0, 2);
-    if (sp15E > 0x1000) {
-        sp15E = 0x1000;
+    uvConsumeBytes(&imageByteCount, &inputCursor, 2);
+    if (imageByteCount > 0x1000) {
+        imageByteCount = 0x1000;
     }
-    uvConsumeBytes(&sp160, &arg0, 2);
-    uvConsumeBytes(&sp150, &arg0, 4);
-    uvConsumeBytes(&sp14C, &arg0, 4);
+    uvConsumeBytes(&displayListCount, &inputCursor, 2);
+    uvConsumeBytes(&sp150, &inputCursor, 4);
+    uvConsumeBytes(&sp14C, &inputCursor, 4);
     if ((sp150 != 0.0f) || (sp14C != 0.0f)) {
-        sp158 = _uvMemAllocAlign8(0x1C);
-        sp158->unk0 = 1.0f;
-        sp158->unk4 = 1.0f;
-        sp158->unk8 = sp150;
-        sp158->unkC = sp14C;
-        sp158->unk18 = 0;
-        sp158->unk19 = 0;
-        sp158->unk1A = 1;
-        sp158->unk10 = 0.0f;
-        sp158->unk14 = 0.0f;
+        firstAnimation = _uvMemAllocAlign8(0x1C);
+        firstAnimation->unk0 = 1.0f;
+        firstAnimation->unk4 = 1.0f;
+        firstAnimation->unk8 = sp150;
+        firstAnimation->unkC = sp14C;
+        firstAnimation->unk18 = 0;
+        firstAnimation->unk19 = 0;
+        firstAnimation->unk1A = 1;
+        firstAnimation->unk10 = 0.0f;
+        firstAnimation->unk14 = 0.0f;
     } else {
-        sp158 = NULL;
+        firstAnimation = NULL;
     }
-    uvConsumeBytes(&sp150, &arg0, 4);
-    uvConsumeBytes(&sp14C, &arg0, 4);
-    uvConsumeBytes(&sp140, &arg0, 4);
-    uvConsumeBytes(&sp13C, &arg0, 4);
+    uvConsumeBytes(&sp150, &inputCursor, 4);
+    uvConsumeBytes(&sp14C, &inputCursor, 4);
+    uvConsumeBytes(&sp140, &inputCursor, 4);
+    uvConsumeBytes(&sp13C, &inputCursor, 4);
     if ((sp150 != 0.0f) || (sp14C != 0.0f) || (sp140 != 0.0f) || (sp13C != 0.0f)) {
-        sp154 = _uvMemAllocAlign8(0x1C);
-        sp154->unk0 = 1.0f;
-        sp154->unk4 = 1.0f;
-        sp154->unk8 = sp150;
-        sp154->unkC = sp14C;
-        sp154->unk10 = sp140;
-        sp154->unk14 = sp13C;
-        sp154->unk18 = 0;
-        sp154->unk19 = 0;
-        sp154->unk1A = 1;
+        secondAnimation = _uvMemAllocAlign8(0x1C);
+        secondAnimation->unk0 = 1.0f;
+        secondAnimation->unk4 = 1.0f;
+        secondAnimation->unk8 = sp150;
+        secondAnimation->unkC = sp14C;
+        secondAnimation->unk10 = sp140;
+        secondAnimation->unk14 = sp13C;
+        secondAnimation->unk18 = 0;
+        secondAnimation->unk19 = 0;
+        secondAnimation->unk1A = 1;
     } else {
-        sp154 = NULL;
+        secondAnimation = NULL;
     }
-    arg0 += sp15E;
-    sp178 = _uvMemAlloc(sp160 * 8, 8);
-    uvConsumeBytes(sp178, &arg0, sp160 * 8);
-    temp_v0 = _uvMemAllocAlign8(0x28);
-    uvConsumeBytes(&temp_v0->width, &arg0, 2);
-    uvConsumeBytes(&temp_v0->height, &arg0, 2);
-    uvConsumeBytes(&temp_v0->unk24, &arg0, 1);
-    uvConsumeBytes(&temp_v0->unk25, &arg0, 1);
-    uvConsumeBytes(&temp_v0->unk26, &arg0, 1);
-    uvConsumeBytes(&temp_v0->unk14, &arg0, 4);
-    uvConsumeBytes(&temp_v0->pad18, &arg0, 2);
-    uvConsumeBytes(&sp136, &arg0, 2);
-    temp_v0->unk27 =  sp136;
-    uvConsumeBytes(&temp_v0->unk21, &arg0, 1);
-    uvConsumeBytes(&sp135, &arg0, 1);
-    uvConsumeBytes(&sp135, &arg0, 1);
-    uvConsumeBytes(&sp135, &arg0, 1);
-    uvConsumeBytes(&sp135, &arg0, 1);
-    uvConsumeBytes(&sp138, &arg0, 4);
-    uvConsumeBytes(&temp_v0->unk23, &arg0, 1);
-    uvConsumeBytes(&temp_v0->unk22, &arg0, 1);
-    temp_v0->unk20 = 0xFF;
-    if (temp_v0->unk14 & 0x80000) {
-        sp50 = FALSE;
-        temp_v0->unk20 = sUvTextureSequenceExports->uvTexSeqFindFree();
-        if (temp_v0->unk20 != 0xFF) {
+    inputCursor += imageByteCount;
+    displayList = _uvMemAlloc(displayListCount * 8, 8);
+    uvConsumeBytes(displayList, &inputCursor, displayListCount * 8);
+    texture = _uvMemAllocAlign8(0x28);
+    uvConsumeBytes(&texture->width, &inputCursor, 2);
+    uvConsumeBytes(&texture->height, &inputCursor, 2);
+    uvConsumeBytes(&texture->unk24, &inputCursor, 1);
+    uvConsumeBytes(&texture->unk25, &inputCursor, 1);
+    uvConsumeBytes(&texture->unk26, &inputCursor, 1);
+    uvConsumeBytes(&texture->unk14, &inputCursor, 4);
+    uvConsumeBytes(&texture->pad18, &inputCursor, 2);
+    uvConsumeBytes(&sp136, &inputCursor, 2);
+    texture->unk27 =  sp136;
+    uvConsumeBytes(&texture->unk21, &inputCursor, 1);
+    uvConsumeBytes(&sp135, &inputCursor, 1);
+    uvConsumeBytes(&sp135, &inputCursor, 1);
+    uvConsumeBytes(&sp135, &inputCursor, 1);
+    uvConsumeBytes(&sp135, &inputCursor, 1);
+    uvConsumeBytes(&sp138, &inputCursor, 4);
+    uvConsumeBytes(&texture->unk23, &inputCursor, 1);
+    uvConsumeBytes(&texture->unk22, &inputCursor, 1);
+    texture->unk20 = 0xFF;
+    if (texture->unk14 & 0x80000) {
+        sequenceFound = FALSE;
+        texture->unk20 = sUvTextureSequenceExports->uvTexSeqFindFree();
+        if (texture->unk20 != 0xFF) {
             fileCount = uvGetFilesCount('UVTS');
             for (i = 0; i < fileCount; i++) {
-                if (sUvTextureSequenceLdExports->uvGetFirstFrameTexture(i) == (temp_v0->unk14 & 0xFFF)) {
-                    sp50 = TRUE;
+                if (sUvTextureSequenceLdExports->uvGetFirstFrameTexture(i) == (texture->unk14 & 0xFFF)) {
+                    sequenceFound = TRUE;
                     uvLoadFile('UVTS', i);
-                    sUvTextureSequenceExports->uvTexSeqModel((s32) temp_v0->unk20, i);
-                    temp_v0_7 = sUvTextureSequenceExports->uvTexSeqGetFrameCount((s32) temp_v0->unk20);
-                    for (j = 1; j < temp_v0_7; j++) {
-                        uvLoadFile('UVTX', sUvTextureSequenceExports->uvTexSeqGetFrameTexture(temp_v0->unk20, j));
+                    sUvTextureSequenceExports->uvTexSeqModel((s32) texture->unk20, i);
+                    frameCount = sUvTextureSequenceExports->uvTexSeqGetFrameCount((s32) texture->unk20);
+                    for (j = 1; j < frameCount; j++) {
+                        uvLoadFile('UVTX', sUvTextureSequenceExports->uvTexSeqGetFrameTexture(texture->unk20, j));
                     }
                     break;
                 }
             }
         }
-        if (!sp50) {
-            temp_v0->unk14 &= ~0x80000;
-            if (temp_v0->unk20 != 0xFF) {
-                sUvTextureSequenceExports->uvTexSeqFree(temp_v0->unk20);
+        if (!sequenceFound) {
+            texture->unk14 &= ~0x80000;
+            if (texture->unk20 != 0xFF) {
+                sUvTextureSequenceExports->uvTexSeqFree(texture->unk20);
             }
-            temp_v0->unk20 = 0xFF;
+            texture->unk20 = 0xFF;
         }
     }
-    if (temp_v0->unk21 == 0) {
-        for (i = 0; i < temp_v0->unk22; i++)  {
-            uvConsumeBytes(&sp54[i], &arg0, 0x20);
+    if (texture->unk21 == 0) {
+        for (i = 0; i < texture->unk22; i++)  {
+            uvConsumeBytes(&sp54[i], &inputCursor, 0x20);
         }
     }
-    temp_v0->unk1A = sp15E;
-    temp_t0 = uvTextureLoadImageBytes(sp144);
-    temp_v0->unk0 = sp178;
-    temp_v0->data.pointer = temp_t0;
-    temp_v0->unk4 = (void*)sp158; // TODO
-    temp_v0->size.as_s32 = sp154;
-    var_a2 = 0;
-    for (i = 0; i < sp160; i++) {
-        Gfx* gfxCmd = &sp178[i];
-        u32* v0;
+    texture->unk1A = imageByteCount;
+    imageAddress = uvTextureLoadImageBytes(originalInput);
+    texture->unk0 = displayList;
+    texture->data.pointer = imageAddress;
+    texture->unk4 = (void*)firstAnimation; // TODO
+    texture->size.as_s32 = secondAnimation;
+    setImageCommandIndex = 0;
+    for (i = 0; i < displayListCount; i++) {
+        Gfx* gfxCmd = &displayList[i];
+        u32* imageAddressWord;
         u8 cmd = gfxCmd->setimg.cmd;
         if (cmd != 0xFD) {
             continue;
         }
-        if (var_a2 == 0) {
-            gfxCmd->setimg.dram |= (u32)OS_PHYSICAL_TO_K0(temp_t0);
+        if (setImageCommandIndex == 0) {
+            gfxCmd->setimg.dram |= (u32)OS_PHYSICAL_TO_K0(imageAddress);
         } else {
-            if (temp_v0->pad18 == (temp_v0->unk14 & 0xFFF)) {
-                var_v1 = temp_v0;
+            if (texture->pad18 == (texture->unk14 & 0xFFF)) {
+                referencedTexture = texture;
             } else {
-                var_v1 = uvLoadFile('UVTX', temp_v0->pad18);
+                referencedTexture = uvLoadFile('UVTX', texture->pad18);
             }
-            v0 = (u32*)&gfxCmd->setimg.dram;
-            if (var_v1 == NULL) {
+            imageAddressWord = (u32*)&gfxCmd->setimg.dram;
+            if (referencedTexture == NULL) {
             }  else {
-                *v0 |= (u32)OS_PHYSICAL_TO_K0(var_v1->data.pointer);
+                *imageAddressWord |= (u32)OS_PHYSICAL_TO_K0(referencedTexture->data.pointer);
             }
         }
-        var_a2++;
+        setImageCommandIndex++;
     }
-    if (temp_v0->unk21 == 0) {
-        temp_v0->unk10 = _uvMemAlloc(temp_v0->unk22 * 0x80, 0x10);
-        for (j = 0; j < temp_v0->unk22; j++) {
+    if (texture->unk21 == 0) {
+        texture->unk10 = _uvMemAlloc(texture->unk22 * 0x80, 0x10);
+        for (j = 0; j < texture->unk22; j++) {
             for (i = 0; i < 0x10; i++) {
-                temp_v0->unk10[(j * 0x40) + 0x0 + i] =
-                    temp_v0->unk10[(j * 0x40) + 0x10 + i] =
-                        temp_v0->unk10[(j * 0x40) + 0x20 + i] = 
-                            temp_v0->unk10[(j * 0x40) + 0x30 + i] = sp54[j][i];
+                texture->unk10[(j * 0x40) + 0x0 + i] =
+                    texture->unk10[(j * 0x40) + 0x10 + i] =
+                        texture->unk10[(j * 0x40) + 0x20 + i] =
+                            texture->unk10[(j * 0x40) + 0x30 + i] = sp54[j][i];
             }
         }
     } else {
-        temp_v0->unk10 = NULL;
+        texture->unk10 = NULL;
     }
-    return temp_v0;
+    return texture;
 }
+#line 283 "src/modules/uvtextureld_rom.c"
 
 #line 284 "src/modules/uvtextureld_rom.c"
 /* Release the secondary texture and sequence handle, optional animation

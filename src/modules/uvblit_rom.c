@@ -44,107 +44,110 @@ ParsedUVBT* uvParseBlit(u8 *ptr) {
     return parsedBlit;
 }
 
-ParsedUVBT *_uvParseUVBT(u8 *arg0) {
-    s32 var_a1; // pointer?
-    u16 sp9A;
-    u16 sp98;
-    u16 sp96;
+#line 47 "src/modules/uvblit_rom.c"
+
+ParsedUVBT *_uvParseUVBT(u8 *inputCursor) {
+    s32 bitmapDataAddress; // pointer?
+    u16 bitmapFormat;
+    u16 bitDepth;
+    u16 imageWidth;
     u16 sp94;
-    u16 sp92;
-    u16 sp90;
-    u16 sp8E;
-    s8 remainder2; // var_s3
-    s8 remainder1; // var_s4
-    s32 j;
-    u64 sp80;
-    s32 i;
-    ParsedUVBT *ret;
-    s32 sp74;
-    s32 sp70;
-    Bitmap *temp_v0_3;
+    u16 imageHeight;
+    u16 bitmapWidth;
+    u16 bitmapHeight;
+    s8 partialLastRow; // var_s3
+    s8 partialLastColumn; // var_s4
+    s32 bitmapColumn;
+    u64 headerWordScratch;
+    s32 bitmapRow;
+    ParsedUVBT *parsedBitmap;
+    s32 bitmapColumns;
+    s32 bitmapRows;
+    Bitmap *bitmap;
     s32 temp;
 
-    remainder2 = 0;
-    remainder1 = 0;
+    partialLastRow = 0;
+    partialLastColumn = 0;
 
-    _uvMediaCopy(&sp80, arg0, 4);
-    sp80 >>= 32;
-    sp9A = (sp80 & 0xFFFF0000) >> 16;
-    sp98 = sp80;
-    arg0 += 4;
+    _uvMediaCopy(&headerWordScratch, inputCursor, 4);
+    headerWordScratch >>= 32;
+    bitmapFormat = (headerWordScratch & 0xFFFF0000) >> 16;
+    bitDepth = headerWordScratch;
+    inputCursor += 4;
 
-    _uvMediaCopy(&sp80, arg0, 4);
-    sp80 >>= 32;
-    sp96 = (sp80 & 0xFFFF0000) >> 16;
-    sp94 = sp80;
-    arg0 += 4;
+    _uvMediaCopy(&headerWordScratch, inputCursor, 4);
+    headerWordScratch >>= 32;
+    imageWidth = (headerWordScratch & 0xFFFF0000) >> 16;
+    sp94 = headerWordScratch;
+    inputCursor += 4;
 
-    _uvMediaCopy(&sp80, arg0, 4);
-    sp80 >>= 32;
-    sp92 = (sp80 & 0xFFFF0000) >> 16;
-    sp90 = sp80;
-    arg0 += 4;
+    _uvMediaCopy(&headerWordScratch, inputCursor, 4);
+    headerWordScratch >>= 32;
+    imageHeight = (headerWordScratch & 0xFFFF0000) >> 16;
+    bitmapWidth = headerWordScratch;
+    inputCursor += 4;
 
-    _uvMediaCopy(&sp80, arg0, 4);
-    sp80 >>= 32;
-    temp = ((sp80 & 0xFFFF0000) >> 16) & 0xFFFF;
-    sp8E = temp & 0xFFFF;
-    arg0 += 2;
-    if (sp92 < sp8E) {
-        sp8E = sp92;
+    _uvMediaCopy(&headerWordScratch, inputCursor, 4);
+    headerWordScratch >>= 32;
+    temp = ((headerWordScratch & 0xFFFF0000) >> 16) & 0xFFFF;
+    bitmapHeight = temp & 0xFFFF;
+    inputCursor += 2;
+    if (imageHeight < bitmapHeight) {
+        bitmapHeight = imageHeight;
     }
 
-    ret = _uvMemAllocAlign8(sizeof(ParsedUVBT));
-    ret->bmfmt = sp9A;
-    ret->bitdepth = sp98;
-    ret->width = sp96;
-    ret->height = sp92;
-    ret->unkA = sp90;
-    ret->texelHeight = sp8E;
+    parsedBitmap = _uvMemAllocAlign8(sizeof(ParsedUVBT));
+    parsedBitmap->bmfmt = bitmapFormat;
+    parsedBitmap->bitdepth = bitDepth;
+    parsedBitmap->width = imageWidth;
+    parsedBitmap->height = imageHeight;
+    parsedBitmap->unkA = bitmapWidth;
+    parsedBitmap->texelHeight = bitmapHeight;
 
-    temp = (sp94 * sp92 * sp98) / 8;
-    ret->buf = _uvMemAlloc(temp, 8);
-    uvConsumeBytes((void *) ret->buf, &arg0, temp);
+    temp = (sp94 * imageHeight * bitDepth) / 8;
+    parsedBitmap->buf = _uvMemAlloc(temp, 8);
+    uvConsumeBytes((void *) parsedBitmap->buf, &inputCursor, temp);
 
-    sp74 = sp96 / sp90;
-    sp70 = sp92 / sp8E;
-    if (sp96 % sp90) {
-        sp74++;
-        remainder1 = 1;
+    bitmapColumns = imageWidth / bitmapWidth;
+    bitmapRows = imageHeight / bitmapHeight;
+    if (imageWidth % bitmapWidth) {
+        bitmapColumns++;
+        partialLastColumn = 1;
     }
-    if (sp92 % sp8E) {
-        sp70++;
-        remainder2 = 1;
+    if (imageHeight % bitmapHeight) {
+        bitmapRows++;
+        partialLastRow = 1;
     }
-    ret->nbitmaps = sp74 * sp70;
-    ret->bitmap = _uvMemAllocAlign8(ret->nbitmaps * sizeof(Bitmap));
+    parsedBitmap->nbitmaps = bitmapColumns * bitmapRows;
+    parsedBitmap->bitmap = _uvMemAllocAlign8(parsedBitmap->nbitmaps * sizeof(Bitmap));
 
-    var_a1 = ret->buf;
-    for (i = 0; i < sp70; i++) {
-        for (j = 0; j < sp74; j++) {
-            temp_v0_3 = &ret->bitmap[j + i * sp74];
-            temp = i + 1;
-            if (remainder2 && sp70 == temp) {
-                temp_v0_3->actualHeight = sp92 % sp8E;
+    bitmapDataAddress = parsedBitmap->buf;
+    for (bitmapRow = 0; bitmapRow < bitmapRows; bitmapRow++) {
+        for (bitmapColumn = 0; bitmapColumn < bitmapColumns; bitmapColumn++) {
+            bitmap = &parsedBitmap->bitmap[bitmapColumn + bitmapRow * bitmapColumns];
+            temp = bitmapRow + 1;
+            if (partialLastRow && bitmapRows == temp) {
+                bitmap->actualHeight = imageHeight % bitmapHeight;
             } else {
-                temp_v0_3->actualHeight = sp8E;
+                bitmap->actualHeight = bitmapHeight;
             }
-            temp = j + 1;
-            if (remainder1 && sp74 == temp) {
-                temp_v0_3->width = sp96 - (sp90 * (sp74 - 1));
+            temp = bitmapColumn + 1;
+            if (partialLastColumn && bitmapColumns == temp) {
+                bitmap->width = imageWidth - (bitmapWidth * (bitmapColumns - 1));
             } else {
-                temp_v0_3->width = sp90;
+                bitmap->width = bitmapWidth;
             }
-            temp_v0_3->LUToffset = 0;
-            temp_v0_3->t = temp_v0_3->LUToffset;
-            temp_v0_3->s = temp_v0_3->LUToffset;
-            temp_v0_3->width_img = sp90;
-            temp_v0_3->buf = var_a1;
-            var_a1 += (temp_v0_3->actualHeight * sp90 * sp98) / 8;
+            bitmap->LUToffset = 0;
+            bitmap->t = bitmap->LUToffset;
+            bitmap->s = bitmap->LUToffset;
+            bitmap->width_img = bitmapWidth;
+            bitmap->buf = bitmapDataAddress;
+            bitmapDataAddress += (bitmap->actualHeight * bitmapWidth * bitDepth) / 8;
         }
     }
-    return ret;
+    return parsedBitmap;
 }
+#line 148 "src/modules/uvblit_rom.c"
 
 void uvFreeBlit(ParsedUVBT *uvbt) {
     _uvMemFree(uvbt->buf);
