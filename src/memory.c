@@ -1,64 +1,80 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
 
-void _uvMediaCopy(void* vAddr, void* devAddr, u32 nbytes) {
-    s32 i;
-    u8 *alignCeil;
-    s32 alignDiff;
-    u8 *src;
-    u8 buf[16];
-    u8 *dst;
-    s32 temp_a2;
-    s32 temp_v0;
+/*
+ * Copy bytes directly when the source has address bit 31 set. Otherwise keep
+ * the original 4,096-byte device-transfer chunks, alignment checks, leading-word
+ * reads and DMA-before-leading-copy ordering. Names describe actual cursors,
+ * counts and low source-address bits; no transfer or failure behavior changes.
+ * RE_ORIGINAL_QUIRK: an odd device address, destination address or byte count
+ * stores zero bytes at addresses 1 and 2 and returns. The unaligned-destination remainder
+ * check tests equality, retaining its unsigned subtraction even when the requested
+ * count is smaller than the leading-byte count. Do not silently change either path.
+ * RE_UNKNOWN: original fault intent, valid device regions and transfer/count
+ * domains, source/destination capacities and overlap, caller reachability and DMA
+ * failure/lifetime guarantees. Trace original callers and the actual DMA/device
+ * providers before replacing checks, adding bounds, initializing or moving data.
+ */
+#line 4 "src/memory.c"
+void _uvMediaCopy(void* destination, void* sourceAddress, u32 byteCount) {
+    s32 byteIndex;
+    u8 *alignedDestination;
+    s32 leadingByteCount;
+    u8 *sourceCursor;
+    u8 leadingBytes[16];
+    u8 *destinationCursor;
+    s32 sourceWordOffset;
+    s32 wordAlignedSourceAddress;
 
-    dst = vAddr;
-    src = devAddr;
-    if ((u32)src & 0x80000000) {
-        for (i = 0; (u32)i < nbytes; i++) {
-            dst[i] = src[i];
+    destinationCursor = destination;
+    sourceCursor = sourceAddress;
+    if ((u32)sourceCursor & 0x80000000) {
+        for (byteIndex = 0; (u32)byteIndex < byteCount; byteIndex++) {
+            destinationCursor[byteIndex] = sourceCursor[byteIndex];
         }
         return;
     }
 
-    while (nbytes > 0x1000) {
-        _uvMediaCopy(dst, src, 0x1000);
-        nbytes -= 0x1000;
-        dst += 0x1000;
-        src += 0x1000;
+    while (byteCount > 0x1000) {
+        _uvMediaCopy(destinationCursor, sourceCursor, 0x1000);
+        byteCount -= 0x1000;
+        destinationCursor += 0x1000;
+        sourceCursor += 0x1000;
     }
 
-    if (nbytes != 0) {
-        if (((s32)src | (s32) dst | nbytes) & 1) {
-            // it appears the devs intended to cause a fault by storing to an unaligned address,
-            // but IDO outsmarted them and broke this into two `sb` instructions
-            // Debug Print removed..
+    if (byteCount != 0) {
+        if (((s32)sourceCursor | (s32) destinationCursor | byteCount) & 1) {
+            // RE_ORIGINAL_QUIRK: odd device-transfer inputs zero addresses 1 and 2.
+            // RE_UNKNOWN: original fault intent and reachable callers need evidence.
+            // Preserve the actual stores and return without inventing an error API.
             *(u16*)(1) = 0;
             return;
         }
-        if ((s32)dst & 7) {
-            alignCeil = (u8*)((s32)(dst + 7) & ~7);
-            alignDiff = alignCeil - dst;
-            temp_a2 = (u32)src & 2;
+        if ((s32)destinationCursor & 7) {
+            alignedDestination = (u8*)((s32)(destinationCursor + 7) & ~7);
+            leadingByteCount = alignedDestination - destinationCursor;
+            sourceWordOffset = (u32)sourceCursor & 2;
 
-            if ((nbytes != (u32)alignDiff) != 0) {
-                _uvDMA(alignCeil, src + alignDiff, nbytes - alignDiff);
+            if ((byteCount != (u32)leadingByteCount) != 0) {
+                _uvDMA(alignedDestination, sourceCursor + leadingByteCount, byteCount - leadingByteCount);
             }
-            temp_v0 = src - temp_a2;
+            wordAlignedSourceAddress = sourceCursor - sourceWordOffset;
 
-            osPiReadIo(temp_v0, (u32*)&buf[0]);
-            osPiReadIo(temp_v0 + 4, (u32*)&buf[4]);
-            if (temp_a2) {
-                osPiReadIo(temp_v0 + 8, (u32*)&buf[8]);
+            osPiReadIo(wordAlignedSourceAddress, (u32*)&leadingBytes[0]);
+            osPiReadIo(wordAlignedSourceAddress + 4, (u32*)&leadingBytes[4]);
+            if (sourceWordOffset) {
+                osPiReadIo(wordAlignedSourceAddress + 8, (u32*)&leadingBytes[8]);
             }
-            for (i = 0; i < alignDiff && i < nbytes; i++) {
-                dst[i] = buf[i + temp_a2];
+            for (byteIndex = 0; byteIndex < leadingByteCount && byteIndex < byteCount; byteIndex++) {
+                destinationCursor[byteIndex] = leadingBytes[byteIndex + sourceWordOffset];
             }
 
         } else {
-            _uvDMA(dst, src, nbytes);
+            _uvDMA(destinationCursor, sourceCursor, byteCount);
         }
     }
 }
+#line 62 "src/memory.c"
 
 void uvMemSet(void* vAddr, u8 value, u32 nbytes) {
     u32 count;
@@ -74,32 +90,47 @@ void uvMemSet(void* vAddr, u8 value, u32 nbytes) {
     }
 }
 
-u64 uvMemRead(void* vAddr, u32 nbytes) {
-    u64 out;
-    u64 temp1;
-    s64 sp28;
-    u8* src;
+/*
+ * Read 1, 2, 4 or 8 bytes in the original big-endian assembly order; unsupported
+ * sizes return zero. Preserve all original shifts, promotions and byte reads.
+ * The device-address path first calls the existing transfer helper into its
+ * original signed 64-bit scratch, then recursively uses the direct-address path.
+ * RE_ORIGINAL_QUIRK: the 8-byte case sign-extends the 32-bit contribution from
+ * byte 4 shifted left by 24 before ORing it into the 64-bit value. Preserve that
+ * actual native high-word effect rather than silently adding unsigned promotion.
+ * RE_UNKNOWN: caller capacities/address domains, intended read/promotion contract,
+ * device transfer initialization/failure and reachable odd-count paths.
+ * Audit original callers and transfer/device consumers before changing widths,
+ * signed arithmetic, scratch initialization, validation or failure handling.
+ */
+#line 77 "src/memory.c"
+u64 uvMemRead(void* sourceAddress, u32 byteCount) {
+    u64 value;
+    u64 shiftedBytes;
+    s64 deviceReadScratch;
+    u8* sourceBytes;
 
-    src = vAddr;
-    if ((nbytes != 1) && (nbytes != 2) && (nbytes != 4) && (nbytes != 8)) {
-        out = 0;
-    } else if ((s32) vAddr & 0x80000000) {
-        out = src[0];
-        if (nbytes >= 2U) {
-            temp1 = out << 8;
-            out = temp1 | src[1];
+    sourceBytes = sourceAddress;
+    if ((byteCount != 1) && (byteCount != 2) && (byteCount != 4) && (byteCount != 8)) {
+        value = 0;
+    } else if ((s32) sourceAddress & 0x80000000) {
+        value = sourceBytes[0];
+        if (byteCount >= 2U) {
+            shiftedBytes = value << 8;
+            value = shiftedBytes | sourceBytes[1];
         }
-        if (nbytes >= 3U) {
-            temp1 = out << 16;
-            out = temp1 | (src[2] << 8) | src[3];
+        if (byteCount >= 3U) {
+            shiftedBytes = value << 16;
+            value = shiftedBytes | (sourceBytes[2] << 8) | sourceBytes[3];
         }
-        if (nbytes >= 5U) {
-            temp1 = out << 32;
-            out = temp1 | (src[4] << 0x18) | (src[5] << 0x10) | (src[6] << 8) | src[7];
+        if (byteCount >= 5U) {
+            shiftedBytes = value << 32;
+            value = shiftedBytes | (sourceBytes[4] << 0x18) | (sourceBytes[5] << 0x10) | (sourceBytes[6] << 8) | sourceBytes[7];
         }
     } else {
-        _uvMediaCopy(&sp28, vAddr, nbytes);
-        out = uvMemRead(&sp28, nbytes);
+        _uvMediaCopy(&deviceReadScratch, sourceAddress, byteCount);
+        value = uvMemRead(&deviceReadScratch, byteCount);
     }
-    return out;
+    return value;
 }
+#line 106 "src/memory.c"

@@ -36,24 +36,34 @@ void uvClkUpdate(void) {
     sCpuLastCount = currentCount;
 }
 
-f64 uvClkGetSec(s32 clk_id) {
-    uvClockState_t *clock;
-    f64 var_fv1;
-    f64 var_fa0;
+/*
+ * Look up the selected clock, update the shared counter and add the original
+ * wrap-count and current-counter contributions using the unchanged constants.
+ * A null clock still returns zero and keeps its optional debug-print branch.
+ * RE_UNKNOWN: valid caller clock indices, update-frequency guarantees and the
+ * historical calibration source. Trace clock allocation/reset/update callers and
+ * original constant producers before changing bounds or elapsed-time semantics.
+ */
+#line 39 "src/clocks.c"
+f64 uvClkGetSec(s32 clockId) {
+    uvClockState_t *clockState;
+    f64 wrapContribution;
+    f64 counterContribution;
 
-    clock = uvGetClk(clk_id);
-    if (clock == NULL) {
+    clockState = uvGetClk(clockId);
+    if (clockState == NULL) {
 #ifdef _ISPRINT
-        _uvDebugPrintf("uvClkGetSec: unknown clock %d\n", clk_id);
+        _uvDebugPrintf("uvClkGetSec: unknown clock %d\n", clockId);
 #endif
         return 0.0;
     }
     uvClkUpdate();
-    var_fv1 = sWrapCount - clock->prevWrapCount;
-    var_fv1 *= D_80021030[0];
-    var_fa0 = ((f64) sCpuLastCount - clock->prevLastCount) / sCpuClockSpeed[0];
-    return var_fv1 + var_fa0;
+    wrapContribution = sWrapCount - clockState->prevWrapCount;
+    wrapContribution *= D_80021030[0];
+    counterContribution = ((f64) sCpuLastCount - clockState->prevLastCount) / sCpuClockSpeed[0];
+    return wrapContribution + counterContribution;
 }
+#line 57 "src/clocks.c"
 
 void uvClkReset(s32 clk_id) {
     uvClockState_t *clock;

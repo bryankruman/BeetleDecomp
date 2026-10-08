@@ -2503,10 +2503,19 @@ Totals: 356 further recoveries after the 225 upstream ordinary imports, plus 131
 Frozen wave `1993-ted-native-readonly-groups` and `accepted-ted-native-readonly-groups` verify real translation-unit instructions/full relocations, 3 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 356 further readable functions
+## Historical accepted checkpoint — 356 further readable functions
 
 Document original pending query refresh, filtered model selection and mode-dependent scalar blending beside their retained assembly. Flag conditional unassigned storage, callback-dependent object flag restoration, cached flag-4 reuse, low-16-bit retry/iteration, unchecked capacities and divisor domains. Compiler frame, register and relocation differences remain isolated diagnostics; no draft types or bodies are accepted. Preserve every executable token and logical coordinate, exact complete-source inverse, original packed modules and a fresh original ROM build. No C recovery or older C cleanup count is added; require all frozen source hashes and uncertainty index.
 
 Totals: 356 further recoveries after the 225 upstream ordinary imports, plus 1314 existing C semantic cleanups. Current ledger: 844 assembly references = 801 ordinary + 43 entrypoints; 750,072 known remaining instruction bytes; zero unknown sizes; 303 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `2012-query-and-motion-contracts` and `accepted-query-and-motion-contracts` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 356 further readable functions
+
+Clarify three older kernel functions without changing their public names, types, expressions, layout or behavior. Name the actual source/destination byte cursors, transfer alignment, integer-read scratch and clock contributions. Preserve all 1,056 instruction bytes and complete ordered relocation records. Replace speculative device-fault prose with the actual original stores to addresses 1 and 2; flag the equality-only leading-count subtraction, signed high-word byte promotion and unresolved caller/device/overlap/calibration domains. Attach the reviewed selector-reset contract and original 30-byte label-copy uncertainty before retained TED assembly. Keep its nonmatching C draft isolated and do not count an assembly recovery. Preserve complete source inverses and every executable logical source coordinate. Require original packed TED, a fresh full kernel/ROM build, all frozen sources and uncertainty-index freshness before acceptance.
+
+Totals: 356 further recoveries after the 225 upstream ordinary imports, plus 1317 existing C semantic cleanups. Current ledger: 844 assembly references = 801 ordinary + 43 entrypoints; 750,072 known remaining instruction bytes; zero unknown sizes; 303 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `2024-older-memory-clock-contracts` and `accepted-older-memory-clock-contracts` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

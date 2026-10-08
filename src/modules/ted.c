@@ -325,7 +325,31 @@ void tedResetPoolWithChkPtLabel(void) {
  */
 #line 164 "src/modules/ted.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_004038B8.s")
-
+/*
+ * Reset the shared selector's scalar/word defaults and selected index before
+ * dispatching. Selectors 1, 2, 3, 4, 7 and 8 choose the original literal label
+ * and count; selectors 5, 6 and out-of-range values retain the old active count
+ * and skip the formatter, bound update, shared helper and label copy.
+ * GUI slot 0xD4 receives bounds -1 and count-minus-one plus the selected value
+ * and its signed-word binding. Preserve state reads after formatting, provider
+ * reloads and the raw supplied word to the direct helper; that helper homes
+ * its incoming word without consuming it, leaving its historical formal unknown.
+ * RE_ORIGINAL_QUIRK: formatting initializes at most 12 bytes, then GUI slot
+ * 0xC4 reads 30 bytes without stopping at NUL and writes 30 destination bytes.
+ * This does not establish the historical scratch extent or valid tail contents.
+ * RE_UNKNOWN: state/scratch/destination capacities, physical scalar meanings,
+ * selector/count lifecycle and reachable bounds, callback mutations, aliases,
+ * allocation ownership and historical declarations. Trace original writers,
+ * widget flags, allocations, callers and consumers before changing validation,
+ * defaults, storage views, names, initialization or argument contracts.
+ * Readable C is parked: 456 native bytes versus 496 draft bytes, with expanded
+ * shared-state addressing and different scratch storage. Original effects and
+ * supplied argument widths were reviewed; no missing operation was identified.
+ * The native selector table is still retained in the existing readonly suffix.
+ * Resolve natural storage/lifetime evidence and compiler table ownership, then
+ * prove all instructions, complete relocations, packed providers and ROM.
+ */
+#line 166 "src/modules/ted.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00403A58.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00403C20.s")
