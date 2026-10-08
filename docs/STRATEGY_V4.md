@@ -2782,10 +2782,19 @@ Totals: 396 further recoveries after the 225 upstream ordinary imports, plus 133
 Frozen wave `2379-motion-older-identity-and-dispatch-notes-2379` and `accepted-motion-older-identity-and-dispatch-notes-2379` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 396 further readable functions
+## Historical accepted checkpoint — 396 further readable functions
 
 One older568-byte query routine cleanup gives seven local roles descriptive names, preserves vector member selectors, strict f32 comparisons, the inherited UV_OLD block, every interleaved component load/store and pointer/count reload, and final exact2.0f trailing trimming. Observational comments replace loose selection-sort wording; count/array/scalar caller contracts remain explicit unknowns. One separate pure cleanup comment stops asserting external override ownership merely because cleanup does not release that pointer; it adds no cleanup credit. Exact whole-source binding-aware inverse, all executable logical coordinates and complete142 words/14 ordered relocation records are independently checked before writes. No new recovery, canonical name, type, ABI, algorithm, allocation or readonly change. Existing unrelated pointer-view warnings remain unchanged. Normal extraction, original packed QUERY/fresh ROM, all frozen source hashes, complete unchanged remaining/address/data ledger and uncertainty index are required.
 
 Totals: 396 further recoveries after the 225 upstream ordinary imports, plus 1340 existing C semantic cleanups. Current ledger: 804 assembly references = 762 ordinary + 42 entrypoints; 721,664 known remaining instruction bytes; zero unknown sizes; 299 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `2386-older-query-parallel-array-contracts-2386` and `accepted-older-query-parallel-array-contracts-2386` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 396 further readable functions
+
+Two existing-C SPRT cleanups name display-list cursor and output roles and replace inaccurate alpha-write wording with the actual alpha-comparison effect. Preserve exact macros, shared attribute rereads, command/global access order and final cursor publication. Complete120 words and14 ordered relocation records match; four compile logs are empty. Two zero-credit Selection103CC/Motion77A8 notes preserve original ASM and document observed contracts, declaration debt and exact remaining evidence. No failed C bodies, externs, types, prototypes, runtime, aliases or readonly changes are accepted. Three whole-source byte inverses and all normalized executable logical rows pass before writes. Normal extraction, three original packed modules, fresh original ROM, all frozen source hashes, complete unchanged remaining/address/data ledger and uncertainty index are mandatory.
+
+Totals: 396 further recoveries after the 225 upstream ordinary imports, plus 1342 existing C semantic cleanups. Current ledger: 804 assembly references = 762 ordinary + 42 entrypoints; 721,664 known remaining instruction bytes; zero unknown sizes; 299 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `2407-older-sprite-and-native-contract-notes-2407` and `accepted-older-sprite-and-native-contract-notes-2407` verify real translation-unit instructions/full relocations, 3 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

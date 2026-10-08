@@ -677,29 +677,29 @@ void uvDrawBitmap(Gfx **gdl, Sprite *s, Bitmap *b, s32 x, s32 y, s32 xx, s32 yy,
     *gdl = gdlh;
 }
 
-void uvSpriteDrawInit(Gfx **gdl) {
-    Gfx *gdlh;
+void uvSpriteDrawInit(Gfx **outDisplayList) {
+    Gfx *displayListCursor;
 
-    gdlh = *gdl;
+    displayListCursor = *outDisplayList;
     sSpriteAttribute = 0;
     sScissorXmin = 0;
     sScissorYmin = 0;
     sScissorXmax = SCREEN_WIDTH;
     sScissorYmax = SCREEN_HEIGHT;
-    // Turn on texturing
-    gDPPipeSync(gdlh++);
-    gDPSetCycleType(gdlh++, G_CYC_1CYCLE);
-    gSPTexture(gdlh++, 0x8000, 0x8000, 0, G_TX_RENDERTILE, G_ON);
-    gDPSetAlphaCompare(gdlh++, G_AC_NONE);
-    gDPSetTexturePersp(gdlh++, G_TP_NONE);
-    gDPSetTextureFilter(gdlh++, G_TF_BILERP);
-    gDPSetTextureConvert(gdlh++, G_TC_FILT);
-    gDPSetTextureDetail(gdlh++, G_TD_CLAMP);
-    gDPSetTextureLOD(gdlh++, G_TL_TILE);
-    gDPSetTextureLUT(gdlh++, G_TT_NONE);
+    // RE_UNKNOWN: display-list capacity, aliasing, resource lifetime and shared-state call ordering need caller proof.
+    gDPPipeSync(displayListCursor++);
+    gDPSetCycleType(displayListCursor++, G_CYC_1CYCLE);
+    gSPTexture(displayListCursor++, 0x8000, 0x8000, 0, G_TX_RENDERTILE, G_ON);
+    gDPSetAlphaCompare(displayListCursor++, G_AC_NONE);
+    gDPSetTexturePersp(displayListCursor++, G_TP_NONE);
+    gDPSetTextureFilter(displayListCursor++, G_TF_BILERP);
+    gDPSetTextureConvert(displayListCursor++, G_TC_FILT);
+    gDPSetTextureDetail(displayListCursor++, G_TD_CLAMP);
+    gDPSetTextureLOD(displayListCursor++, G_TL_TILE);
+    gDPSetTextureLUT(displayListCursor++, G_TT_NONE);
 
-    gDPSetRenderMode(gdlh++, SPRITE_SURF, SPRITE_SURF2);
-    *gdl = gdlh;
+    gDPSetRenderMode(displayListCursor++, SPRITE_SURF, SPRITE_SURF2);
+    *outDisplayList = displayListCursor;
 }
 
 Gfx* uvSpriteDraw(Sprite* sp) {
@@ -983,26 +983,26 @@ Gfx* uvSpriteDraw(Sprite* sp) {
     return (dl_start);
 }
 
-void uvSpriteDrawFinish(Gfx **glistp) {
-    Gfx *gdlh;
+void uvSpriteDrawFinish(Gfx **outDisplayList) {
+    Gfx *displayListCursor;
 
-    gdlh = *glistp;
+    displayListCursor = *outDisplayList;
 
-    // Turn off texturing
-    gSPTexture(gdlh++, 0x8000, 0x8000, 0, G_TX_RENDERTILE, G_OFF);
-    gDPSetCombineMode(gdlh++, G_CC_SHADE, G_CC_SHADE);
+    // RE_UNKNOWN: display-list capacity, aliasing, resource lifetime and shared-state call ordering need caller proof.
+    gSPTexture(displayListCursor++, 0x8000, 0x8000, 0, G_TX_RENDERTILE, G_OFF);
+    gDPSetCombineMode(displayListCursor++, G_CC_SHADE, G_CC_SHADE);
 
     if (sSpriteAttribute & SP_TRANSPARENT) {
-        // Turn off transparency
-        gDPSetRenderMode(gdlh++, G_RM_OPA_SURF, G_RM_OPA_SURF2);
+        // Select opaque surface rendering when the current attribute requests it.
+        gDPSetRenderMode(displayListCursor++, G_RM_OPA_SURF, G_RM_OPA_SURF2);
     }
 
     if (sSpriteAttribute & SP_CUTOUT) {
-        // Turn off Alpha write enable
-        gDPSetAlphaCompare(gdlh++, G_AC_NONE);
+        // Disable alpha comparison when the current cutout attribute is set.
+        gDPSetAlphaCompare(displayListCursor++, G_AC_NONE);
     }
 
-    gSPEndDisplayList(gdlh++);
+    gSPEndDisplayList(displayListCursor++);
 
-    *glistp = gdlh;
+    *outDisplayList = displayListCursor;
 }

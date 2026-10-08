@@ -854,6 +854,30 @@ void motionBuildBasisAndCallScalarHelper(MotionBasisDrawInput *input)
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00406C30.s")
 
+/* Dispatch original record kinds 1/2/4/8/24, then apply indexed/dot gates.
+ * Native table entries and providers establish the callback arguments, not
+ * physical meanings. Entry record and initial context remain captured; the
+ * final SMACK callback reloads context, and its key store reloads record+0C.
+ * Kind 2 stores flag70C=1 and returns when that reloaded halfword is zero.
+ * Tail index >=0 and <4 guards the 0x130-stride halfword; count10E2>=3 and
+ * count10E0<3 gate FVEC18's three-float dot and ordered threshold comparison.
+ * RE_UNKNOWN: full allocations, reachable kind/index/key/count domains,
+ * flag/scalar/vector purposes and units, aliases, pointer replacement and
+ * module lifetimes need original producers, callers and callback evidence.
+ * Readable C remains parked: 924 native versus 900 draft bytes, with 204
+ * differing positions. Native frame80 becomes88; draft retains entry in S2
+ * instead of its argument home, changing reloads, local homes and epilogue.
+ * Context/output/key/SMACK homes SP+52/56/68/72 become SP+64/68/80/84.
+ * Native shared branch/flag-clear lowering differs from draft early returns.
+ * The complete 40/31 relocation lists differ: nine native PC16 label records
+ * resolve locally in C, the table uses .rodata, and sites/downstream helper
+ * values shift. All 31 non-PC16 type/target roles remain represented.
+ * Existing direct154B8/14BB0/98B8 calls lack full source prototypes; their
+ * historical declarations require original callers/consumption evidence.
+ * Full review supports no omitted effect, width, precision, ABI or reload
+ * correction. Historical declarations/storage/lowering remain unproved;
+ * require exact instructions and original packed-module/fresh ROM proof. */
+#line 199 "src/modules/motion.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_004077A8.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00407B44.s")

@@ -2443,6 +2443,33 @@ void func_selection_0040F6E0(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040FDB4.s")
 
+/* Snapshot the source-row address from the signed shared index at
+ * base 0x8002CD98 + 0x284 + index * 36 before the original file loads.
+ * Load UVBT file 0x57 and UVTX files 0x5B6/0x5B7, clear the two DATA
+ * halfwords, allocate a sprite, and forward property words 9, 0x57, 0.
+ * Fresh width/height calls supply signed dimensions divided by two;
+ * forward position words 160 - width/2 and 120 - height/2, then 3, 1, 0.
+ * The property parser applies its own vertical transformation. Property 9
+ * delegates its word to a helper; no additional physical purpose is proven.
+ * Map nine consecutive source words through the thirteen-entry lookup,
+ * reloading the signed shared row index after each call for stores at
+ * destination base + index * 44 + word offset. Only nine words are written.
+ * RE_ORIGINAL_QUIRK: allocation -1 is truncated to a signed halfword and
+ * passed to upper-only index guards without a failure check; lookup -1 is
+ * stored unchanged. Exhaustion and invalid-index reachability are unproved.
+ * RE_UNKNOWN: full historical callback/export and row declarations,
+ * source/destination capacity and ownership, shared-index writer domains,
+ * resource availability, initialization/reset ordering and provider/state
+ * lifetimes. Trace original callers, row/index producers, pool configuration
+ * and resource initialization before strengthening these contracts.
+ * Recovery remains deferred: 432 native bytes versus 424 draft bytes,
+ * 99 differing words and changed relocation sites. All observed effects
+ * remain represented. Native stride arithmetic uses shifts/adds; the draft
+ * retains constants 36/44 and uses multiplication, saves another register
+ * and holds its source pointer differently, within the same 64-byte frame.
+ * Resolve historical source/dataflow evidence before another attempt;
+ * retain original ASM without guessed row types or compiler-shape changes. */
+#line 1504 "src/modules/selection.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004103CC.s")
 
 /* Teardown: flush GFX, stop tex-anim, unload files, clear sprite sheet. */
