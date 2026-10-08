@@ -231,7 +231,7 @@
     "src/modules/mult7.c": "c181165430bada1cf08b7b88acc78e1915bf833be3911c91df20c23f0c5d71b6",
     "src/modules/mult8.c": "725beb028fd020125135705dcf5b938546243e8360fa0d46ced260b4d93d1b1a",
     "src/modules/mult9.c": "d9d8a40d49ee946a1636d807275e472d3b7d08390db4b6b99bb49cd0911f954b",
-    "src/modules/pause.c": "cba9df9b421cc55078b6e397758ad1466ca5046de1ed456f60280af55e81478b",
+    "src/modules/pause.c": "84cca3d1ec25c7c04512c09204837d1908f196fad7a319d8a4b83ed812e4a6e9",
     "src/modules/piece.c": "4e584848296c0f3dae0dcf7df078295f32e9e8ebf9ea5b11084b60dabc51bce8",
     "src/modules/plyr.c": "80fc30d1c8269e971eae346e5c2a083cfcb3572659650d93ed8e1f0deb78adea",
     "src/modules/powerup.c": "b01918a9f9daf9ccb5e551c3920e16a76036dac54c07ef12712b4277dc7393f2",
@@ -287,7 +287,7 @@
     "src/modules/uvfont_rom.c": "8258e79cdd73a33d97a9123275bab15644dc79c51ad18f0e42d60b8b7a5ffe71",
     "src/modules/uvfontld_rom.c": "81262e86812be50e51fbe741f6e4b0475b58c71b4d822a50ae83c16602fd4733",
     "src/modules/uvfvec_rom.c": "c0d542dc9473cb90630fe609a22adc6b982d02725e71082d42b1dc4d9ef66893",
-    "src/modules/uvfx_rom.c": "72ef5f64397767ef651c02aeab353b9f75f0fe123e4b7c3747df588e8de25877",
+    "src/modules/uvfx_rom.c": "ea9e30b63484a3d999463727ce7bf9198e21261cb72a88e1c9865da3af27c5e8",
     "src/modules/uvgeom_rom.c": "05929d722be8edaf27ba47320176cc2edcba19b0b9e10ce74c72902406c79fdd",
     "src/modules/uvgfxmgr_rom.c": "c21151fb9c51017919699a7834a7a76ff06a565f7d6cb1b9c462a43f288971b9",
     "src/modules/uvgfxstate_rom.c": "f2ac7bdad30243e6bec45faa1438be25934cece6413a0e6016fe445d9fbd4b36",
@@ -329,22 +329,22 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "409c3affa40c471312efbeb4f8270b322e1c1659c8364dc6d5b9dfd8c7155a83",
-    "docs/VALIDATION_20261006.md": "c8eb7af719befd39ebec07a01e9f2108e0b958e2994b55dfcfb3ff43f21f1648"
+    "docs/STRATEGY_V4.md": "edae92594ed4d354906b39327f97429761c22273db9c647fe34b348a0820d759",
+    "docs/VALIDATION_20261006.md": "5761dd659f5a9e6277b39c1f485de9750dbd66c9ee6ac67c13a12b504244231b"
   },
   "counts": {
-    "address_function": 987,
-    "address_global": 1356,
-    "assembly": 846,
+    "address_function": 986,
+    "address_global": 1357,
+    "assembly": 845,
     "audit_debt": 28,
     "conditional_draft": 4,
-    "decompiler_local": 898,
+    "decompiler_local": 894,
     "draft_marker": 29,
-    "explicit_unknown": 713,
+    "explicit_unknown": 716,
     "layout_padding": 263,
     "offset_field": 1432,
     "opaque_type": 282,
-    "original_quirk": 184,
+    "original_quirk": 185,
     "uncertainty_note": 88,
     "unused_identifier": 119
   },
@@ -8936,15 +8936,15 @@
       "path": "src/modules/pause.c",
       "symbol": "func_pause_00400C6C",
       "lines": [
-        336
+        337
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_pause_00400C6C",
-          "declaration_line": 336,
+          "declaration_line": 337,
           "lines": [
-            336
+            337
           ]
         }
       ]
@@ -9051,7 +9051,7 @@
       "symbol": "func_pause_004023A4",
       "lines": [
         106,
-        494
+        495
       ],
       "owners": [
         {
@@ -9065,9 +9065,9 @@
         {
           "kind": "function",
           "name": "func_pause_004023A4",
-          "declaration_line": 494,
+          "declaration_line": 495,
           "lines": [
-            494
+            495
           ]
         }
       ]
@@ -9078,43 +9078,15 @@
       "path": "src/modules/pause.c",
       "symbol": "func_pause_00402548",
       "lines": [
-        553
+        554
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_pause_00402548",
-          "declaration_line": 553,
+          "declaration_line": 554,
           "lines": [
-            553
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-8bdb99dfc438",
-      "kind": "address_function",
-      "path": "src/modules/pause.c",
-      "symbol": "func_pause_00402854",
-      "lines": [
-        117,
-        505
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_pause_00402854",
-          "declaration_line": 117,
-          "lines": [
-            117
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "pauseAdjustMapOptionSkippingTwoPlayerModeOne",
-          "declaration_line": 503,
-          "lines": [
-            505
+            554
           ]
         }
       ]
@@ -9125,24 +9097,24 @@
       "path": "src/modules/pause.c",
       "symbol": "func_pause_00402904",
       "lines": [
-        118,
-        684
+        119,
+        725
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_pause_00402904",
-          "declaration_line": 118,
+          "declaration_line": 119,
           "lines": [
-            118
+            119
           ]
         },
         {
           "kind": "function",
           "name": "func_pause_00402904",
-          "declaration_line": 684,
+          "declaration_line": 725,
           "lines": [
-            684
+            725
           ]
         }
       ]
@@ -9153,15 +9125,15 @@
       "path": "src/modules/pause.c",
       "symbol": "func_pause_00402914",
       "lines": [
-        119
+        120
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_pause_00402914",
-          "declaration_line": 119,
+          "declaration_line": 120,
           "lines": [
-            119
+            120
           ]
         }
       ]
@@ -9172,15 +9144,15 @@
       "path": "src/modules/pause.c",
       "symbol": "func_pause_00402D78",
       "lines": [
-        120
+        121
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_pause_00402D78",
-          "declaration_line": 120,
+          "declaration_line": 121,
           "lines": [
-            120
+            121
           ]
         }
       ]
@@ -9191,15 +9163,15 @@
       "path": "src/modules/pause.c",
       "symbol": "func_pause_0040423C",
       "lines": [
-        126
+        127
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_pause_0040423C",
-          "declaration_line": 126,
+          "declaration_line": 127,
           "lines": [
-            126
+            127
           ]
         }
       ]
@@ -20666,15 +20638,15 @@
       "path": "src/modules/uvfx_rom.c",
       "symbol": "func_uvchannel_rom_004014E8",
       "lines": [
-        403
+        424
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvFxUpdateAndQueueVisible",
-          "declaration_line": 369,
+          "declaration_line": 390,
           "lines": [
-            403
+            424
           ]
         }
       ]
@@ -20686,8 +20658,8 @@
       "symbol": "func_uvfx_rom_00400E90",
       "lines": [
         56,
-        407,
-        414
+        428,
+        435
       ],
       "owners": [
         {
@@ -20701,17 +20673,17 @@
         {
           "kind": "function",
           "name": "func_uvfx_rom_00400E90",
-          "declaration_line": 414,
+          "declaration_line": 435,
           "lines": [
-            414
+            435
           ]
         },
         {
           "kind": "function",
           "name": "uvFxUpdateAndQueueVisible",
-          "declaration_line": 369,
+          "declaration_line": 390,
           "lines": [
-            407
+            428
           ]
         }
       ]
@@ -33415,15 +33387,15 @@
       "symbol": "D_80025D76",
       "lines": [
         77,
-        345
+        346
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pauseStoreSharedZeroTestInReplayByte",
-          "declaration_line": 344,
+          "declaration_line": 345,
           "lines": [
-            345
+            346
           ]
         },
         {
@@ -33443,15 +33415,15 @@
       "symbol": "D_80025E6A",
       "lines": [
         78,
-        495
+        496
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_pause_004023A4",
-          "declaration_line": 494,
+          "declaration_line": 495,
           "lines": [
-            495
+            496
           ]
         },
         {
@@ -33471,33 +33443,33 @@
       "symbol": "D_8002CC88",
       "lines": [
         75,
-        685,
-        702,
-        780
+        726,
+        743,
+        821
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_pause_00402904",
-          "declaration_line": 684,
+          "declaration_line": 725,
           "lines": [
-            685
+            726
           ]
         },
         {
           "kind": "function",
           "name": "pausePreparePeripheralMenu",
-          "declaration_line": 698,
+          "declaration_line": 739,
           "lines": [
-            702
+            743
           ]
         },
         {
           "kind": "function",
           "name": "pauseStoreSharedActionEight",
-          "declaration_line": 779,
+          "declaration_line": 820,
           "lines": [
-            780
+            821
           ]
         },
         {
@@ -33517,15 +33489,15 @@
       "symbol": "D_8002CC8A",
       "lines": [
         22,
-        703
+        744
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pausePreparePeripheralMenu",
-          "declaration_line": 698,
+          "declaration_line": 739,
           "lines": [
-            703
+            744
           ]
         },
         {
@@ -33545,27 +33517,27 @@
       "symbol": "D_8002CD98",
       "lines": [
         76,
-        577,
         578,
         579,
         580,
         581,
         582,
-        583
+        583,
+        584
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pauseCopyOptionsToSaveData",
-          "declaration_line": 576,
+          "declaration_line": 577,
           "lines": [
-            577,
             578,
             579,
             580,
             581,
             582,
-            583
+            583,
+            584
           ]
         },
         {
@@ -33585,27 +33557,27 @@
       "symbol": "D_pause_004054B4",
       "lines": [
         41,
-        413,
         414,
-        416,
-        419,
-        422,
+        415,
+        417,
+        420,
         423,
-        424
+        424,
+        425
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pauseConfigurePlayerDependentMenuFields",
-          "declaration_line": 411,
+          "declaration_line": 412,
           "lines": [
-            413,
             414,
-            416,
-            419,
-            422,
+            415,
+            417,
+            420,
             423,
-            424
+            424,
+            425
           ]
         },
         {
@@ -33625,15 +33597,15 @@
       "symbol": "D_pause_004055BC",
       "lines": [
         59,
-        377
+        378
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pauseOpenQuitConfirmation",
-          "declaration_line": 375,
+          "declaration_line": 376,
           "lines": [
-            377
+            378
           ]
         },
         {
@@ -33653,15 +33625,15 @@
       "symbol": "D_pause_00405618",
       "lines": [
         56,
-        355
+        356
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pauseOpenRestartConfirmation",
-          "declaration_line": 353,
+          "declaration_line": 354,
           "lines": [
-            355
+            356
           ]
         },
         {
@@ -33681,15 +33653,15 @@
       "symbol": "D_pause_00405674",
       "lines": [
         57,
-        623
+        624
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pauseOpenConfirmationWithCancelSoundSuppressed",
-          "declaration_line": 619,
+          "declaration_line": 620,
           "lines": [
-            623
+            624
           ]
         },
         {
@@ -33709,15 +33681,15 @@
       "symbol": "D_pause_00405950",
       "lines": [
         60,
-        592
+        593
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pauseOpenNewTrackConfirmation",
-          "declaration_line": 590,
+          "declaration_line": 591,
           "lines": [
-            592
+            593
           ]
         },
         {
@@ -33737,15 +33709,15 @@
       "symbol": "D_pause_00405AA0",
       "lines": [
         58,
-        366
+        367
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pauseOpenContinueConfirmation",
-          "declaration_line": 364,
+          "declaration_line": 365,
           "lines": [
-            366
+            367
           ]
         },
         {
@@ -33765,15 +33737,15 @@
       "symbol": "D_pause_00405BEC",
       "lines": [
         46,
-        151
+        152
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pauseActivateIndexedMenu",
-          "declaration_line": 148,
+          "declaration_line": 149,
           "lines": [
-            151
+            152
           ]
         },
         {
@@ -33793,15 +33765,15 @@
       "symbol": "D_pause_00405D34",
       "lines": [
         44,
-        324
+        325
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pausePrepareNavigationAudio",
-          "declaration_line": 320,
+          "declaration_line": 321,
           "lines": [
-            324
+            325
           ]
         },
         {
@@ -33821,15 +33793,15 @@
       "symbol": "D_pause_00405D38",
       "lines": [
         45,
-        325
+        326
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pausePrepareNavigationAudio",
-          "declaration_line": 320,
+          "declaration_line": 321,
           "lines": [
-            325
+            326
           ]
         },
         {
@@ -33849,26 +33821,26 @@
       "symbol": "D_pause_00405D3C",
       "lines": [
         42,
-        390,
-        712,
-        714
+        391,
+        753,
+        755
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pausePlayPendingSoundD7",
-          "declaration_line": 711,
+          "declaration_line": 752,
           "lines": [
-            712,
-            714
+            753,
+            755
           ]
         },
         {
           "kind": "function",
           "name": "pauseRequestLoadedRaceOrBattleState",
-          "declaration_line": 387,
+          "declaration_line": 388,
           "lines": [
-            390
+            391
           ]
         },
         {
@@ -33888,34 +33860,34 @@
       "symbol": "D_pause_00405D40",
       "lines": [
         43,
-        391,
-        748,
-        752,
-        756,
-        760,
-        764,
-        768
+        392,
+        789,
+        793,
+        797,
+        801,
+        805,
+        809
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pausePlayPendingRandomSound",
-          "declaration_line": 741,
+          "declaration_line": 782,
           "lines": [
-            748,
-            752,
-            756,
-            760,
-            764,
-            768
+            789,
+            793,
+            797,
+            801,
+            805,
+            809
           ]
         },
         {
           "kind": "function",
           "name": "pauseRequestLoadedRaceOrBattleState",
-          "declaration_line": 387,
+          "declaration_line": 388,
           "lines": [
-            391
+            392
           ]
         },
         {
@@ -33935,17 +33907,17 @@
       "symbol": "D_pause_00405D44",
       "lines": [
         39,
-        723,
-        725
+        764,
+        766
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pausePlayPendingSoundF6",
-          "declaration_line": 722,
+          "declaration_line": 763,
           "lines": [
-            723,
-            725
+            764,
+            766
           ]
         },
         {
@@ -33965,35 +33937,35 @@
       "symbol": "D_pause_00405D48",
       "lines": [
         38,
-        188,
-        253,
-        256,
-        806
+        189,
+        254,
+        257,
+        847
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pauseDispatchActionEightOnce",
-          "declaration_line": 801,
+          "declaration_line": 842,
           "lines": [
-            806
+            847
           ]
         },
         {
           "kind": "function",
           "name": "pauseDrawCurrentMenuAndFontList",
-          "declaration_line": 187,
+          "declaration_line": 188,
           "lines": [
-            188
+            189
           ]
         },
         {
           "kind": "function",
           "name": "pauseNavigateToLinkedNode",
-          "declaration_line": 248,
+          "declaration_line": 249,
           "lines": [
-            253,
-            256
+            254,
+            257
           ]
         },
         {
@@ -34013,17 +33985,17 @@
       "symbol": "D_pause_00405DF4",
       "lines": [
         16,
-        205,
-        213
+        206,
+        214
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pauseToggleByteOnNewMenuAction",
-          "declaration_line": 198,
+          "declaration_line": 199,
           "lines": [
-            205,
-            213
+            206,
+            214
           ]
         },
         {
@@ -34037,95 +34009,134 @@
       ]
     },
     {
+      "id": "Q-0bc94ef9237b",
+      "kind": "address_global",
+      "path": "src/modules/pause.c",
+      "symbol": "D_pause_00405E14",
+      "lines": [
+        117,
+        702,
+        719
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "pauseCycleByteOnNewHorizontalAction",
+          "declaration_line": 696,
+          "lines": [
+            702,
+            719
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_pause_00405E14",
+          "declaration_line": 117,
+          "lines": [
+            117
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-27a167a96930",
       "kind": "address_global",
       "path": "src/modules/pause.c",
       "symbol": "D_pause_00405E44",
       "lines": [
         62,
-        134,
-        136,
-        189,
-        204,
-        257,
-        455,
-        463,
-        471,
-        530,
-        802
+        135,
+        137,
+        190,
+        205,
+        258,
+        456,
+        464,
+        472,
+        531,
+        700,
+        843
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pauseAdjustMusicVolume",
-          "declaration_line": 470,
+          "declaration_line": 471,
           "lines": [
-            471
+            472
           ]
         },
         {
           "kind": "function",
           "name": "pauseAdjustSfxVolume",
-          "declaration_line": 462,
+          "declaration_line": 463,
           "lines": [
-            463
+            464
           ]
         },
         {
           "kind": "function",
           "name": "pauseAdjustSpeechVolume",
-          "declaration_line": 454,
+          "declaration_line": 455,
           "lines": [
-            455
+            456
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "pauseCycleByteOnNewHorizontalAction",
+          "declaration_line": 696,
+          "lines": [
+            700
           ]
         },
         {
           "kind": "function",
           "name": "pauseCycleLanguage",
-          "declaration_line": 529,
+          "declaration_line": 530,
           "lines": [
-            530
+            531
           ]
         },
         {
           "kind": "function",
           "name": "pauseDispatchActionEightOnce",
-          "declaration_line": 801,
+          "declaration_line": 842,
           "lines": [
-            802
+            843
           ]
         },
         {
           "kind": "function",
           "name": "pauseDrawCurrentMenuAndFontList",
-          "declaration_line": 187,
+          "declaration_line": 188,
           "lines": [
-            189
+            190
           ]
         },
         {
           "kind": "function",
           "name": "pauseNavigateToLinkedNode",
-          "declaration_line": 248,
+          "declaration_line": 249,
           "lines": [
-            257
+            258
           ]
         },
         {
           "kind": "function",
           "name": "pauseReleaseMenuAndSoundHandles",
-          "declaration_line": 133,
+          "declaration_line": 134,
           "lines": [
-            134,
-            136
+            135,
+            137
           ]
         },
         {
           "kind": "function",
           "name": "pauseToggleByteOnNewMenuAction",
-          "declaration_line": 198,
+          "declaration_line": 199,
           "lines": [
-            204
+            205
           ]
         },
         {
@@ -34145,15 +34156,15 @@
       "symbol": "D_pause_00405E48",
       "lines": [
         64,
-        792
+        833
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pauseClearSettingsHalfwordsAndForwardEight",
-          "declaration_line": 789,
+          "declaration_line": 830,
           "lines": [
-            792
+            833
           ]
         },
         {
@@ -34173,15 +34184,15 @@
       "symbol": "D_pause_00405E4C",
       "lines": [
         47,
-        152
+        153
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pauseActivateIndexedMenu",
-          "declaration_line": 148,
+          "declaration_line": 149,
           "lines": [
-            152
+            153
           ]
         },
         {
@@ -34201,181 +34212,190 @@
       "symbol": "D_pause_00405E50",
       "lines": [
         55,
-        153,
-        188,
+        154,
         189,
-        204,
-        251,
-        253,
-        255,
-        257,
-        354,
+        190,
+        205,
+        252,
+        254,
+        256,
+        258,
         355,
         356,
         357,
-        365,
+        358,
         366,
         367,
         368,
-        376,
+        369,
         377,
         378,
         379,
-        455,
-        463,
-        471,
-        530,
-        591,
+        380,
+        456,
+        464,
+        472,
+        531,
         592,
         593,
         594,
-        622,
+        595,
         623,
         624,
         625,
-        704,
-        803,
-        807
+        626,
+        701,
+        745,
+        844,
+        848
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pauseActivateIndexedMenu",
-          "declaration_line": 148,
+          "declaration_line": 149,
           "lines": [
-            153
+            154
           ]
         },
         {
           "kind": "function",
           "name": "pauseAdjustMusicVolume",
-          "declaration_line": 470,
+          "declaration_line": 471,
           "lines": [
-            471
+            472
           ]
         },
         {
           "kind": "function",
           "name": "pauseAdjustSfxVolume",
-          "declaration_line": 462,
+          "declaration_line": 463,
           "lines": [
-            463
+            464
           ]
         },
         {
           "kind": "function",
           "name": "pauseAdjustSpeechVolume",
-          "declaration_line": 454,
+          "declaration_line": 455,
           "lines": [
-            455
+            456
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "pauseCycleByteOnNewHorizontalAction",
+          "declaration_line": 696,
+          "lines": [
+            701
           ]
         },
         {
           "kind": "function",
           "name": "pauseCycleLanguage",
-          "declaration_line": 529,
+          "declaration_line": 530,
           "lines": [
-            530
+            531
           ]
         },
         {
           "kind": "function",
           "name": "pauseDispatchActionEightOnce",
-          "declaration_line": 801,
+          "declaration_line": 842,
           "lines": [
-            803,
-            807
+            844,
+            848
           ]
         },
         {
           "kind": "function",
           "name": "pauseDrawCurrentMenuAndFontList",
-          "declaration_line": 187,
+          "declaration_line": 188,
           "lines": [
-            188,
-            189
+            189,
+            190
           ]
         },
         {
           "kind": "function",
           "name": "pauseNavigateToLinkedNode",
-          "declaration_line": 248,
+          "declaration_line": 249,
           "lines": [
-            251,
-            253,
-            255,
-            257
+            252,
+            254,
+            256,
+            258
           ]
         },
         {
           "kind": "function",
           "name": "pauseOpenConfirmationWithCancelSoundSuppressed",
-          "declaration_line": 619,
+          "declaration_line": 620,
           "lines": [
-            622,
             623,
             624,
-            625
+            625,
+            626
           ]
         },
         {
           "kind": "function",
           "name": "pauseOpenContinueConfirmation",
-          "declaration_line": 364,
+          "declaration_line": 365,
           "lines": [
-            365,
             366,
             367,
-            368
+            368,
+            369
           ]
         },
         {
           "kind": "function",
           "name": "pauseOpenNewTrackConfirmation",
-          "declaration_line": 590,
+          "declaration_line": 591,
           "lines": [
-            591,
             592,
             593,
-            594
+            594,
+            595
           ]
         },
         {
           "kind": "function",
           "name": "pauseOpenQuitConfirmation",
-          "declaration_line": 375,
+          "declaration_line": 376,
           "lines": [
-            376,
             377,
             378,
-            379
+            379,
+            380
           ]
         },
         {
           "kind": "function",
           "name": "pauseOpenRestartConfirmation",
-          "declaration_line": 353,
+          "declaration_line": 354,
           "lines": [
-            354,
             355,
             356,
-            357
+            357,
+            358
           ]
         },
         {
           "kind": "function",
           "name": "pausePreparePeripheralMenu",
-          "declaration_line": 698,
+          "declaration_line": 739,
           "lines": [
-            704
+            745
           ]
         },
         {
           "kind": "function",
           "name": "pauseToggleByteOnNewMenuAction",
-          "declaration_line": 198,
+          "declaration_line": 199,
           "lines": [
-            204
+            205
           ]
         },
         {
@@ -34395,57 +34415,57 @@
       "symbol": "D_pause_00405E58",
       "lines": [
         48,
-        156,
         157,
         158,
         159,
         160,
         161,
-        532,
+        162,
         533,
-        537,
-        539,
+        534,
+        538,
         540,
-        544,
-        804,
-        805,
-        810
+        541,
+        545,
+        845,
+        846,
+        851
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pauseActivateIndexedMenu",
-          "declaration_line": 148,
+          "declaration_line": 149,
           "lines": [
-            156,
             157,
             158,
             159,
             160,
-            161
+            161,
+            162
           ]
         },
         {
           "kind": "function",
           "name": "pauseCycleLanguage",
-          "declaration_line": 529,
+          "declaration_line": 530,
           "lines": [
-            532,
             533,
-            537,
-            539,
+            534,
+            538,
             540,
-            544
+            541,
+            545
           ]
         },
         {
           "kind": "function",
           "name": "pauseDispatchActionEightOnce",
-          "declaration_line": 801,
+          "declaration_line": 842,
           "lines": [
-            804,
-            805,
-            810
+            845,
+            846,
+            851
           ]
         },
         {
@@ -34465,24 +34485,24 @@
       "symbol": "D_pause_00405E60",
       "lines": [
         49,
-        138,
-        713
+        139,
+        754
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pausePlayPendingSoundD7",
-          "declaration_line": 711,
+          "declaration_line": 752,
           "lines": [
-            713
+            754
           ]
         },
         {
           "kind": "function",
           "name": "pauseReleaseMenuAndSoundHandles",
-          "declaration_line": 133,
+          "declaration_line": 134,
           "lines": [
-            138
+            139
           ]
         },
         {
@@ -34502,28 +34522,28 @@
       "symbol": "D_pause_00405E68",
       "lines": [
         50,
-        139,
-        751,
-        759,
-        767
+        140,
+        792,
+        800,
+        808
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pausePlayPendingRandomSound",
-          "declaration_line": 741,
+          "declaration_line": 782,
           "lines": [
-            751,
-            759,
-            767
+            792,
+            800,
+            808
           ]
         },
         {
           "kind": "function",
           "name": "pauseReleaseMenuAndSoundHandles",
-          "declaration_line": 133,
+          "declaration_line": 134,
           "lines": [
-            139
+            140
           ]
         },
         {
@@ -34543,24 +34563,24 @@
       "symbol": "D_pause_00405E70",
       "lines": [
         51,
-        140,
-        724
+        141,
+        765
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pausePlayPendingSoundF6",
-          "declaration_line": 722,
+          "declaration_line": 763,
           "lines": [
-            724
+            765
           ]
         },
         {
           "kind": "function",
           "name": "pauseReleaseMenuAndSoundHandles",
-          "declaration_line": 133,
+          "declaration_line": 134,
           "lines": [
-            140
+            141
           ]
         },
         {
@@ -58043,12 +58063,12 @@
         157,
         158,
         169,
-        185,
-        242,
-        297,
-        381,
-        457,
-        469
+        194,
+        262,
+        318,
+        402,
+        478,
+        490
       ],
       "owners": [
         {
@@ -58062,25 +58082,25 @@
         {
           "kind": "function",
           "name": "func_uvfx_rom_00400E90",
-          "declaration_line": 414,
+          "declaration_line": 435,
           "lines": [
-            457
+            478
           ]
         },
         {
           "kind": "function",
           "name": "uvFxDrawTexturedQuad",
-          "declaration_line": 288,
+          "declaration_line": 309,
           "lines": [
-            297
+            318
           ]
         },
         {
           "kind": "function",
           "name": "uvFxFindFreeSlot",
-          "declaration_line": 465,
+          "declaration_line": 486,
           "lines": [
-            469
+            490
           ]
         },
         {
@@ -58095,17 +58115,17 @@
         {
           "kind": "function",
           "name": "uvFxModel",
-          "declaration_line": 236,
+          "declaration_line": 256,
           "lines": [
-            242
+            262
           ]
         },
         {
           "kind": "function",
           "name": "uvFxProps",
-          "declaration_line": 174,
+          "declaration_line": 183,
           "lines": [
-            185
+            194
           ]
         },
         {
@@ -58129,9 +58149,9 @@
         {
           "kind": "function",
           "name": "uvFxUpdateAndQueueVisible",
-          "declaration_line": 369,
+          "declaration_line": 390,
           "lines": [
-            381
+            402
           ]
         },
         {
@@ -58152,8 +58172,8 @@
       "lines": [
         64,
         108,
-        227,
-        389
+        236,
+        410
       ],
       "owners": [
         {
@@ -58167,17 +58187,17 @@
         {
           "kind": "function",
           "name": "uvFxProps",
-          "declaration_line": 174,
+          "declaration_line": 183,
           "lines": [
-            227
+            236
           ]
         },
         {
           "kind": "function",
           "name": "uvFxUpdateAndQueueVisible",
-          "declaration_line": 369,
+          "declaration_line": 390,
           "lines": [
-            389
+            410
           ]
         },
         {
@@ -77052,7 +77072,7 @@
       "path": "src/modules/pause.c",
       "symbol": "__entrypoint_func_pause_400000",
       "lines": [
-        128
+        129
       ],
       "evidence": "asm/us/nonmatchings/modules/pause/__entrypoint_func_pause_400000.s"
     },
@@ -77062,7 +77082,7 @@
       "path": "src/modules/pause.c",
       "symbol": "func_pause_00400258",
       "lines": [
-        181
+        182
       ],
       "evidence": "asm/us/nonmatchings/modules/pause/func_pause_00400258.s"
     },
@@ -77072,7 +77092,7 @@
       "path": "src/modules/pause.c",
       "symbol": "func_pause_00400544",
       "lines": [
-        281
+        282
       ],
       "evidence": "asm/us/nonmatchings/modules/pause/func_pause_00400544.s"
     },
@@ -77082,7 +77102,7 @@
       "path": "src/modules/pause.c",
       "symbol": "func_pause_00400750",
       "lines": [
-        314
+        315
       ],
       "evidence": "asm/us/nonmatchings/modules/pause/func_pause_00400750.s"
     },
@@ -77092,7 +77112,7 @@
       "path": "src/modules/pause.c",
       "symbol": "func_pause_0040098C",
       "lines": [
-        329
+        330
       ],
       "evidence": "asm/us/nonmatchings/modules/pause/func_pause_0040098C.s"
     },
@@ -77102,7 +77122,7 @@
       "path": "src/modules/pause.c",
       "symbol": "func_pause_00400DB8",
       "lines": [
-        405
+        406
       ],
       "evidence": "asm/us/nonmatchings/modules/pause/func_pause_00400DB8.s"
     },
@@ -77112,7 +77132,7 @@
       "path": "src/modules/pause.c",
       "symbol": "func_pause_00400EEC",
       "lines": [
-        428
+        429
       ],
       "evidence": "asm/us/nonmatchings/modules/pause/func_pause_00400EEC.s"
     },
@@ -77122,7 +77142,7 @@
       "path": "src/modules/pause.c",
       "symbol": "func_pause_0040197C",
       "lines": [
-        430
+        431
       ],
       "evidence": "asm/us/nonmatchings/modules/pause/func_pause_0040197C.s"
     },
@@ -77132,7 +77152,7 @@
       "path": "src/modules/pause.c",
       "symbol": "func_pause_004020F0",
       "lines": [
-        432
+        433
       ],
       "evidence": "asm/us/nonmatchings/modules/pause/func_pause_004020F0.s"
     },
@@ -77142,19 +77162,9 @@
       "path": "src/modules/pause.c",
       "symbol": "func_pause_004021BC",
       "lines": [
-        449
+        450
       ],
       "evidence": "asm/us/nonmatchings/modules/pause/func_pause_004021BC.s"
-    },
-    {
-      "id": "Q-045592416080",
-      "kind": "assembly",
-      "path": "src/modules/pause.c",
-      "symbol": "func_pause_00402854",
-      "lines": [
-        680
-      ],
-      "evidence": "asm/us/nonmatchings/modules/pause/func_pause_00402854.s"
     },
     {
       "id": "Q-ce35cb4e38f4",
@@ -77162,7 +77172,7 @@
       "path": "src/modules/pause.c",
       "symbol": "func_pause_00402914",
       "lines": [
-        689
+        730
       ],
       "evidence": "asm/us/nonmatchings/modules/pause/func_pause_00402914.s"
     },
@@ -77172,7 +77182,7 @@
       "path": "src/modules/pause.c",
       "symbol": "func_pause_00402D78",
       "lines": [
-        691
+        732
       ],
       "evidence": "asm/us/nonmatchings/modules/pause/func_pause_00402D78.s"
     },
@@ -77182,7 +77192,7 @@
       "path": "src/modules/pause.c",
       "symbol": "func_pause_0040423C",
       "lines": [
-        815
+        856
       ],
       "evidence": "asm/us/nonmatchings/modules/pause/func_pause_0040423C.s"
     },
@@ -103610,15 +103620,8 @@
         55,
         56,
         57,
-        174,
-        181,
-        185,
-        186,
-        236,
-        239,
-        242,
-        414,
-        426
+        435,
+        447
       ],
       "owners": [
         {
@@ -103632,10 +103635,10 @@
         {
           "kind": "function",
           "name": "func_uvfx_rom_00400E90",
-          "declaration_line": 414,
+          "declaration_line": 435,
           "lines": [
-            414,
-            426
+            435,
+            447
           ]
         },
         {
@@ -103680,31 +103683,10 @@
         },
         {
           "kind": "function",
-          "name": "uvFxModel",
-          "declaration_line": 236,
-          "lines": [
-            236,
-            239,
-            242
-          ]
-        },
-        {
-          "kind": "function",
           "name": "uvFxProps",
           "declaration_line": 52,
           "lines": [
             52
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvFxProps",
-          "declaration_line": 174,
-          "lines": [
-            174,
-            181,
-            185,
-            186
           ]
         },
         {
@@ -103742,27 +103724,23 @@
         51,
         53,
         56,
-        236,
-        244,
-        245,
-        269,
-        414,
-        427,
-        428,
-        429,
-        443,
-        444,
-        445,
-        446,
-        447,
+        435,
         448,
         449,
         450,
-        451,
-        452,
-        453,
-        456,
-        457
+        464,
+        465,
+        466,
+        467,
+        468,
+        469,
+        470,
+        471,
+        472,
+        473,
+        474,
+        477,
+        478
       ],
       "owners": [
         {
@@ -103776,25 +103754,25 @@
         {
           "kind": "function",
           "name": "func_uvfx_rom_00400E90",
-          "declaration_line": 414,
+          "declaration_line": 435,
           "lines": [
-            414,
-            427,
-            428,
-            429,
-            443,
-            444,
-            445,
-            446,
-            447,
+            435,
             448,
             449,
             450,
-            451,
-            452,
-            453,
-            456,
-            457
+            464,
+            465,
+            466,
+            467,
+            468,
+            469,
+            470,
+            471,
+            472,
+            473,
+            474,
+            477,
+            478
           ]
         },
         {
@@ -103803,17 +103781,6 @@
           "declaration_line": 53,
           "lines": [
             53
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvFxModel",
-          "declaration_line": 236,
-          "lines": [
-            236,
-            244,
-            245,
-            269
           ]
         },
         {
@@ -103832,98 +103799,23 @@
       "path": "src/modules/uvfx_rom.c",
       "symbol": "sp28",
       "lines": [
-        421,
-        426,
-        428,
-        429,
-        453
+        442,
+        447,
+        449,
+        450,
+        474
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvfx_rom_00400E90",
-          "declaration_line": 414,
+          "declaration_line": 435,
           "lines": [
-            421,
-            426,
-            428,
-            429,
-            453
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-c1d997eb84b9",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvfx_rom.c",
-      "symbol": "temp_a3",
-      "lines": [
-        237,
-        242,
-        243,
-        244,
-        248,
-        249,
-        250,
-        251,
-        252,
-        253,
-        254,
-        255,
-        256,
-        257,
-        258,
-        259,
-        260,
-        261,
-        262,
-        263,
-        264,
-        265,
-        266,
-        267,
-        268,
-        271,
-        272,
-        275,
-        276
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvFxModel",
-          "declaration_line": 236,
-          "lines": [
-            237,
-            242,
-            243,
-            244,
-            248,
-            249,
-            250,
-            251,
-            252,
-            253,
-            254,
-            255,
-            256,
-            257,
-            258,
-            259,
-            260,
-            261,
-            262,
-            263,
-            264,
-            265,
-            266,
-            267,
-            268,
-            271,
-            272,
-            275,
-            276
+            442,
+            447,
+            449,
+            450,
+            474
           ]
         }
       ]
@@ -103934,25 +103826,25 @@
       "path": "src/modules/uvfx_rom.c",
       "symbol": "temp_fa1",
       "lines": [
-        416,
-        429,
-        430,
-        436,
-        443,
-        447
+        437,
+        450,
+        451,
+        457,
+        464,
+        468
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvfx_rom_00400E90",
-          "declaration_line": 414,
+          "declaration_line": 435,
           "lines": [
-            416,
-            429,
-            430,
-            436,
-            443,
-            447
+            437,
+            450,
+            451,
+            457,
+            464,
+            468
           ]
         }
       ]
@@ -103963,21 +103855,21 @@
       "path": "src/modules/uvfx_rom.c",
       "symbol": "temp_fv0",
       "lines": [
-        417,
-        430,
-        431,
-        432
+        438,
+        451,
+        452,
+        453
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvfx_rom_00400E90",
-          "declaration_line": 414,
+          "declaration_line": 435,
           "lines": [
-            417,
-            430,
-            431,
-            432
+            438,
+            451,
+            452,
+            453
           ]
         }
       ]
@@ -103988,107 +103880,25 @@
       "path": "src/modules/uvfx_rom.c",
       "symbol": "temp_fv1",
       "lines": [
-        415,
-        428,
-        430,
-        437,
-        444,
-        446
+        436,
+        449,
+        451,
+        458,
+        465,
+        467
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvfx_rom_00400E90",
-          "declaration_line": 414,
+          "declaration_line": 435,
           "lines": [
-            415,
-            428,
-            430,
-            437,
-            444,
-            446
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-d11d8c0b6e90",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvfx_rom.c",
-      "symbol": "temp_v0",
-      "lines": [
-        177,
-        188,
-        189
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvFxProps",
-          "declaration_line": 174,
-          "lines": [
-            177,
-            188,
-            189
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-a3418e1c238b",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvfx_rom.c",
-      "symbol": "var_a2",
-      "lines": [
-        178,
-        185,
-        191,
-        194,
-        197,
-        198,
-        199,
-        200,
-        205,
-        206,
-        207,
-        208,
-        209,
-        210,
-        211,
-        212,
-        214,
-        216,
-        217,
-        221,
-        224
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvFxProps",
-          "declaration_line": 174,
-          "lines": [
-            178,
-            185,
-            191,
-            194,
-            197,
-            198,
-            199,
-            200,
-            205,
-            206,
-            207,
-            208,
-            209,
-            210,
-            211,
-            212,
-            214,
-            216,
-            217,
-            221,
-            224
+            436,
+            449,
+            451,
+            458,
+            465,
+            467
           ]
         }
       ]
@@ -104099,65 +103909,23 @@
       "path": "src/modules/uvfx_rom.c",
       "symbol": "var_fa0",
       "lines": [
-        175,
-        217,
-        219,
-        221,
-        418,
-        432,
-        434,
-        436,
-        437
+        439,
+        453,
+        455,
+        457,
+        458
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvfx_rom_00400E90",
-          "declaration_line": 414,
+          "declaration_line": 435,
           "lines": [
-            418,
-            432,
-            434,
-            436,
-            437
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvFxProps",
-          "declaration_line": 174,
-          "lines": [
-            175,
-            217,
-            219,
-            221
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-be4ad23fd305",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvfx_rom.c",
-      "symbol": "var_fv1",
-      "lines": [
-        176,
-        212,
-        214,
-        216,
-        219
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvFxProps",
-          "declaration_line": 174,
-          "lines": [
-            176,
-            212,
-            214,
-            216,
-            219
+            439,
+            453,
+            455,
+            457,
+            458
           ]
         }
       ]
@@ -123835,16 +123603,16 @@
       "path": "src/modules/uvfx_rom.c",
       "symbol": "FAKE",
       "lines": [
-        439
+        460
       ],
       "evidence": "FAKE",
       "owners": [
         {
           "kind": "function",
           "name": "func_uvfx_rom_00400E90",
-          "declaration_line": 414,
+          "declaration_line": 435,
           "lines": [
-            439
+            460
           ]
         }
       ]
@@ -129736,16 +129504,16 @@
       "path": "src/modules/pause.c",
       "symbol": "* Invoke the current node's indexed callback, select both menus' first entries, * then scan the live player count through CONT slot0x08's presence-bit test. * For an absent controller, state5 clears the first selection and replaces a * zero index via MENU slot0x18's first-selected-entry lookup (or -1); state6 * clears the second selection and changes its zero index to1. Either state * stops the scan. Preserve pointer/count reloads across callbacks and SH16. * RE_UNKNOWN: physical menu roles, callback-table signatures, valid player/ * count/index domains, full record extents and storage/lifetime guarantees. * Resolve through original menu definitions, registrations, settings writers * and entry callers; observed access prefixes establish no capacity. * Readable C remains parked:352 original/candidate bytes, two reversed BNE * operands after the bounded native-order retry. Complete relocation records * agree as a multiset. Require exact instructions, packed PAUSE and ROM proof * before replacing ASM; no padding, alternate storage or bug claim inferred.",
       "lines": [
-        164
+        165
       ],
       "evidence": "* Invoke the current node's indexed callback, select both menus' first entries, * then scan the live player count through CONT slot0x08's presence-bit test. * For an absent controller, state5 clears the first selection and replaces a * zero index via MENU slot0x18's first-selected-entry lookup (or -1); state6 * clears the second selection and changes its zero index to1. Either state * stops the scan. Preserve pointer/count reloads across callbacks and SH16. * RE_UNKNOWN: physical menu roles, callback-table signatures, valid player/ * count/index domains, full record extents and storage/lifetime guarantees. * Resolve through original menu definitions, registrations, settings writers * and entry callers; observed access prefixes establish no capacity. * Readable C remains parked:352 original/candidate bytes, two reversed BNE * operands after the bounded native-order retry. Complete relocation records * agree as a multiset. Require exact instructions, packed PAUSE and ROM proof * before replacing ASM; no padding, alternate storage or bug claim inferred.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_pause_00400258",
-          "declaration_line": 181,
+          "declaration_line": 182,
           "lines": [
-            164
+            165
           ]
         }
       ]
@@ -129756,16 +129524,16 @@
       "path": "src/modules/pause.c",
       "symbol": "* Original pending-word path subtracts shared f32 D_80025D70 from the pending * scalar; otherwise MENU slots0x04/08 update selection and query actions0/7/8. * Preserve latch bytes1/0 and the saved action7 result. Fresh action8 with * selection0 snapshots the signed shared counter before setting pending1, * then decrements only a positive snapshot; nonzero selection invokes the * FIXED second entry callback at entries+0x18, not the selected entry. * Reload pending/scalar after callbacks. Strict ordered scalar<zero clears * D_8002CC58 and invokes the FIXED first entry callback at entries+4; preserve * the current-node read before that clear and following record/table reloads. * RE_ORIGINAL_QUIRK: no scalar initialization or pending-word clear occurs * here, and callback indices are unchecked. RE_UNKNOWN: units, shared-counter * and word roles, complete table extents, alias/lifetime and pending/latch * lifecycle, plus historical callback arguments/returns. Resolve through * original state producers, menu definitions, registrations and all invoked * callbacks/callers; repeated expiry or invalid bounds are not proven bugs. * Readable C parked:476 original/candidate bytes,69 differing words and * unequal relocation records. No missing operation/provider-ABI gap found * in bounded review; require exact natural instructions and packed-module/ * ROM proof, without invented storage or register-allocation scaffolding.",
       "lines": [
-        292
+        293
       ],
       "evidence": "* Original pending-word path subtracts shared f32 D_80025D70 from the pending * scalar; otherwise MENU slots0x04/08 update selection and query actions0/7/8. * Preserve latch bytes1/0 and the saved action7 result. Fresh action8 with * selection0 snapshots the signed shared counter before setting pending1, * then decrements only a positive snapshot; nonzero selection invokes the * FIXED second entry callback at entries+0x18, not the selected entry. * Reload pending/scalar after callbacks. Strict ordered scalar<zero clears * D_8002CC58 and invokes the FIXED first entry callback at entries+4; preserve * the current-node read before that clear and following record/table reloads. * RE_ORIGINAL_QUIRK: no scalar initialization or pending-word clear occurs * here, and callback indices are unchecked. RE_UNKNOWN: units, shared-counter * and word roles, complete table extents, alias/lifetime and pending/latch * lifecycle, plus historical callback arguments/returns. Resolve through * original state producers, menu definitions, registrations and all invoked * callbacks/callers; repeated expiry or invalid bounds are not proven bugs. * Readable C parked:476 original/candidate bytes,69 differing words and * unequal relocation records. No missing operation/provider-ABI gap found * in bounded review; require exact natural instructions and packed-module/ * ROM proof, without invented storage or register-allocation scaffolding.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_pause_00400750",
-          "declaration_line": 314,
+          "declaration_line": 315,
           "lines": [
-            292
+            293
           ]
         }
       ]
@@ -129776,16 +129544,36 @@
       "path": "src/modules/pause.c",
       "symbol": "* Original updates MENU selection through slot0x04, then queries actions0/7/8 * through slot0x08 and dispatches callback words using latch bytes1/0. Preserve * current-menu reloads after callbacks, the saved action7 result and the * node-specific SND slot0xE0 byte suppression for index0xAB (not a handle). * RE_ORIGINAL_QUIRK: entry gate short0 is read before selectedIndex==-1; * the later action8 path indexes the 20-byte entry table without that test. * RE_UNKNOWN: valid index/callback-table domains, complete backing extents, * gate/action physical roles, callback historical arguments/returns and * alias/mutation/lifetime guarantees. Resolve through original node/menu * setup, index writers, callback registrations and all callback bodies. * Invalid-index reachability remains unproved; no player fault is claimed. * Readable C is parked:416 native versus424 candidate bytes,99 differing * words and unequal relocation records. Review found no omitted provider * operation; latch-base rematerialization, callback-address read scheduling * and equivalent signed16 sentinel strength reduction still need exact * natural-source and packed-module/ROM proof before replacing this ASM.",
       "lines": [
-        262
+        263
       ],
       "evidence": "* Original updates MENU selection through slot0x04, then queries actions0/7/8 * through slot0x08 and dispatches callback words using latch bytes1/0. Preserve * current-menu reloads after callbacks, the saved action7 result and the * node-specific SND slot0xE0 byte suppression for index0xAB (not a handle). * RE_ORIGINAL_QUIRK: entry gate short0 is read before selectedIndex==-1; * the later action8 path indexes the 20-byte entry table without that test. * RE_UNKNOWN: valid index/callback-table domains, complete backing extents, * gate/action physical roles, callback historical arguments/returns and * alias/mutation/lifetime guarantees. Resolve through original node/menu * setup, index writers, callback registrations and all callback bodies. * Invalid-index reachability remains unproved; no player fault is claimed. * Readable C is parked:416 native versus424 candidate bytes,99 differing * words and unequal relocation records. Review found no omitted provider * operation; latch-base rematerialization, callback-address read scheduling * and equivalent signed16 sentinel strength reduction still need exact * natural-source and packed-module/ROM proof before replacing this ASM.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_pause_00400544",
-          "declaration_line": 281,
+          "declaration_line": 282,
           "lines": [
-            262
+            263
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-4afff7220af8",
+      "kind": "explicit_unknown",
+      "path": "src/modules/pause.c",
+      "symbol": "* Query controller zero's original MENU horizontal action for the current node. * When the previous action word is zero, action 1 decrements the option byte, * wrapping from an exact minimum match to the maximum; action 2 increments it, * wrapping any value at or above the signed maximum to the minimum. Always * store the new action word, including zero and actions that do not change the byte. * Preserve unsigned byte loads, full-word signed bounds and low-byte stores. * The shipped DATA initializer sets the action word to zero. * RE_UNKNOWN: historical formal types/return contract, the complete menu-node * layout and lifetime, option storage aliases, valid bound domains and the shared * action word's reset/reload lifecycle. Trace original callers, menu-node * producers and all action-word writers before narrowing bounds or adding checks; * the observed byte access does not establish a complete caller-owned object.",
+      "lines": [
+        682
+      ],
+      "evidence": "* Query controller zero's original MENU horizontal action for the current node. * When the previous action word is zero, action 1 decrements the option byte, * wrapping from an exact minimum match to the maximum; action 2 increments it, * wrapping any value at or above the signed maximum to the minimum. Always * store the new action word, including zero and actions that do not change the byte. * Preserve unsigned byte loads, full-word signed bounds and low-byte stores. * The shipped DATA initializer sets the action word to zero. * RE_UNKNOWN: historical formal types/return contract, the complete menu-node * layout and lifetime, option storage aliases, valid bound domains and the shared * action word's reset/reload lifecycle. Trace original callers, menu-node * producers and all action-word writers before narrowing bounds or adding checks; * the observed byte access does not establish a complete caller-owned object.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "pauseCycleByteOnNewHorizontalAction",
+          "declaration_line": 696,
+          "lines": [
+            682
           ]
         }
       ]
@@ -129796,16 +129584,16 @@
       "path": "src/modules/pause.c",
       "symbol": "* Select original node D_pause_004057A4 and refresh its 12-byte descriptors: * MENU slot0x18 returns the first entry whose signed flag equals1, or -1; * store the low16 result at descriptor+4. Preserve the global node/descriptor * reload AFTER the callback and the second node/count reload AFTER the store. * The node count is signed16 at0 and its descriptor pointer is at8. * RE_UNKNOWN: full historical node/descriptor declarations and backing * extents, valid count/index domains, selected-flag meaning and mutation/ * alias/lifetime guarantees. Resolve original node/menu producers, flag * writers and every caller; no complete object or capacity is established. * Readable C parked:172 original/candidate bytes,10 differing words and * unequal relocation records. Bounded review found no omitted operation or * actual provider-ABI gap; the initial address-low scheduling/register choices * differ. Exact natural instructions plus packed-module/ROM proof are needed.",
       "lines": [
-        433
+        434
       ],
       "evidence": "* Select original node D_pause_004057A4 and refresh its 12-byte descriptors: * MENU slot0x18 returns the first entry whose signed flag equals1, or -1; * store the low16 result at descriptor+4. Preserve the global node/descriptor * reload AFTER the callback and the second node/count reload AFTER the store. * The node count is signed16 at0 and its descriptor pointer is at8. * RE_UNKNOWN: full historical node/descriptor declarations and backing * extents, valid count/index domains, selected-flag meaning and mutation/ * alias/lifetime guarantees. Resolve original node/menu producers, flag * writers and every caller; no complete object or capacity is established. * Readable C parked:172 original/candidate bytes,10 differing words and * unequal relocation records. Bounded review found no omitted operation or * actual provider-ABI gap; the initial address-low scheduling/register choices * differ. Exact natural instructions plus packed-module/ROM proof are needed.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_pause_004021BC",
-          "declaration_line": 449,
+          "declaration_line": 450,
           "lines": [
-            433
+            434
           ]
         }
       ]
@@ -129816,16 +129604,16 @@
       "path": "src/modules/pause.c",
       "symbol": "Advance the original random-float generator, truncate its value times three, * then play D8/D9/DA only when the shared pending word is nonzero. Keep each * case's flag read, scale query, reloaded sound table and final clear in order. * The scale provider returns 1.0f; playback receives priority 0x7FFF and the * original pitch 0.5f. RE_ORIGINAL_QUIRK: the playback result is ignored * and the pending word is cleared even when playback reports failure. * RE_UNKNOWN: sound-ID meanings, pending/RNG/handle lifecycles and complete * handle storage need original sound metadata, pending-word producers and * entry callers; do not infer a historical object extent from its address.",
       "lines": [
-        732
+        773
       ],
       "evidence": "Advance the original random-float generator, truncate its value times three, * then play D8/D9/DA only when the shared pending word is nonzero. Keep each * case's flag read, scale query, reloaded sound table and final clear in order. * The scale provider returns 1.0f; playback receives priority 0x7FFF and the * original pitch 0.5f. RE_ORIGINAL_QUIRK: the playback result is ignored * and the pending word is cleared even when playback reports failure. * RE_UNKNOWN: sound-ID meanings, pending/RNG/handle lifecycles and complete * handle storage need original sound metadata, pending-word producers and * entry callers; do not infer a historical object extent from its address.",
       "owners": [
         {
           "kind": "function",
           "name": "pausePlayPendingRandomSound",
-          "declaration_line": 741,
+          "declaration_line": 782,
           "lines": [
-            732
+            773
           ]
         }
       ]
@@ -129836,16 +129624,16 @@
       "path": "src/modules/pause.c",
       "symbol": "Clear settings halfwords 0x6F98 and 0x6F96 in original order, then pass eight to the stored export at offset 0x08. RE_UNKNOWN: these fields and callback action need producer/callee evidence.",
       "lines": [
-        788
+        829
       ],
       "evidence": "Clear settings halfwords 0x6F98 and 0x6F96 in original order, then pass eight to the stored export at offset 0x08. RE_UNKNOWN: these fields and callback action need producer/callee evidence.",
       "owners": [
         {
           "kind": "function",
           "name": "pauseClearSettingsHalfwordsAndForwardEight",
-          "declaration_line": 789,
+          "declaration_line": 830,
           "lines": [
-            788
+            829
           ]
         }
       ]
@@ -129856,16 +129644,16 @@
       "path": "src/modules/pause.c",
       "symbol": "Copy settings word 0x44 (currentTrack in the shared type) into byte 0x17E, * retaining low-byte truncation, and request state 0xE through settings word * 0x08. Preserve the existing C statements; the native stores state before * the byte in the return delay slot. RE_UNKNOWN: saved-byte * consumer/lifecycle and the original state-0xE dispatch contract. Trace * original settings consumers and the game dispatcher before assigning a * broader menu action or changing either effect.",
       "lines": [
-        633
+        634
       ],
       "evidence": "Copy settings word 0x44 (currentTrack in the shared type) into byte 0x17E, * retaining low-byte truncation, and request state 0xE through settings word * 0x08. Preserve the existing C statements; the native stores state before * the byte in the return delay slot. RE_UNKNOWN: saved-byte * consumer/lifecycle and the original state-0xE dispatch contract. Trace * original settings consumers and the game dispatcher before assigning a * broader menu action or changing either effect.",
       "owners": [
         {
           "kind": "function",
           "name": "pauseCopyTrackToByte17EAndRequestStateFourteen",
-          "declaration_line": 640,
+          "declaration_line": 641,
           "lines": [
-            633
+            634
           ]
         }
       ]
@@ -129876,16 +129664,16 @@
       "path": "src/modules/pause.c",
       "symbol": "Copy settings word 0x44 (currentTrack in the shared type) into byte 0x17F, * retaining low-byte truncation, and request state 0xE through settings word * 0x08. Preserve the existing C statements; the native stores state before * the byte in the return delay slot. RE_UNKNOWN: saved-byte * consumer/lifecycle and the original state-0xE dispatch contract. Trace * original settings consumers and the game dispatcher before assigning a * broader menu action or changing either effect.",
       "lines": [
-        601
+        602
       ],
       "evidence": "Copy settings word 0x44 (currentTrack in the shared type) into byte 0x17F, * retaining low-byte truncation, and request state 0xE through settings word * 0x08. Preserve the existing C statements; the native stores state before * the byte in the return delay slot. RE_UNKNOWN: saved-byte * consumer/lifecycle and the original state-0xE dispatch contract. Trace * original settings consumers and the game dispatcher before assigning a * broader menu action or changing either effect.",
       "owners": [
         {
           "kind": "function",
           "name": "pauseCopyTrackToByte17FAndRequestStateFourteen",
-          "declaration_line": 608,
+          "declaration_line": 609,
           "lines": [
-            601
+            602
           ]
         }
       ]
@@ -129916,16 +129704,16 @@
       "path": "src/modules/pause.c",
       "symbol": "Observed node/selection prefixes only. RE_UNKNOWN: complete layouts, callback signatures and linked-node lifetimes need original definitions, registrations and lifecycle callers.",
       "lines": [
-        217
+        218
       ],
       "evidence": "Observed node/selection prefixes only. RE_UNKNOWN: complete layouts, callback signatures and linked-node lifetimes need original definitions, registrations and lifecycle callers.",
       "owners": [
         {
           "kind": "type",
           "name": "PauseExtNode_0040048C",
-          "declaration_line": 218,
+          "declaration_line": 219,
           "lines": [
-            217
+            218
           ]
         }
       ]
@@ -129936,25 +129724,25 @@
       "path": "src/modules/pause.c",
       "symbol": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "lines": [
-        332,
-        549
+        333,
+        550
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "owners": [
         {
           "kind": "function",
           "name": "func_pause_00400C6C",
-          "declaration_line": 336,
+          "declaration_line": 337,
           "lines": [
-            332
+            333
           ]
         },
         {
           "kind": "function",
           "name": "func_pause_00402548",
-          "declaration_line": 553,
+          "declaration_line": 554,
           "lines": [
-            549
+            550
           ]
         }
       ]
@@ -129965,7 +129753,7 @@
       "path": "src/modules/pause.c",
       "symbol": "RE_UNKNOWN: menu slot0x14 action and node/owner storage lifetime require the original MENU provider and draw/lifecycle callers; observed calls are described below.",
       "lines": [
-        183
+        184
       ],
       "evidence": "RE_UNKNOWN: menu slot0x14 action and node/owner storage lifetime require the original MENU provider and draw/lifecycle callers; observed calls are described below."
     },
@@ -129975,16 +129763,16 @@
       "path": "src/modules/pause.c",
       "symbol": "RE_UNKNOWN: shared selector0x6EAE and counted signed-short banks0x6EC0/0x6ED0 have unresolved table meanings, count bounds, complete backing extent and update lifetime; trace original settings/count writers and callers. Original SCENE04 clamps the signed selector to0..5; this wrapper stores its table value then requests state5. Readable C preserves the operations but base-address reuse/register selection still differs; historical typed access/source declarations or new compiler evidence is needed.",
       "lines": [
-        404
+        405
       ],
       "evidence": "RE_UNKNOWN: shared selector0x6EAE and counted signed-short banks0x6EC0/0x6ED0 have unresolved table meanings, count bounds, complete backing extent and update lifetime; trace original settings/count writers and callers. Original SCENE04 clamps the signed selector to0..5; this wrapper stores its table value then requests state5. Readable C preserves the operations but base-address reuse/register selection still differs; historical typed access/source declarations or new compiler evidence is needed.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_pause_00400DB8",
-          "declaration_line": 405,
+          "declaration_line": 406,
           "lines": [
-            404
+            405
           ]
         }
       ]
@@ -129995,16 +129783,16 @@
       "path": "src/modules/pause.c",
       "symbol": "Select the indexed pause-menu descriptor and its node, update the * player-dependent options and sound state, then set six menu-refresh bytes. * RE_UNKNOWN: descriptor index/table validity need original producers and callers.",
       "lines": [
-        145
+        146
       ],
       "evidence": "Select the indexed pause-menu descriptor and its node, update the * player-dependent options and sound state, then set six menu-refresh bytes. * RE_UNKNOWN: descriptor index/table validity need original producers and callers.",
       "owners": [
         {
           "kind": "function",
           "name": "pauseActivateIndexedMenu",
-          "declaration_line": 148,
+          "declaration_line": 149,
           "lines": [
-            145
+            146
           ]
         }
       ]
@@ -130015,16 +129803,16 @@
       "path": "src/modules/pause.c",
       "symbol": "Store (signed shared halfword D_80025D76 == 0) through REPLAY export 0x0C, the low-byte setter for D_replay_00401B7C. RE_UNKNOWN: both shared values' gameplay meaning and lifetime require original writers/readers and callback caller/domain evidence.",
       "lines": [
-        343
+        344
       ],
       "evidence": "Store (signed shared halfword D_80025D76 == 0) through REPLAY export 0x0C, the low-byte setter for D_replay_00401B7C. RE_UNKNOWN: both shared values' gameplay meaning and lifetime require original writers/readers and callback caller/domain evidence.",
       "owners": [
         {
           "kind": "function",
           "name": "pauseStoreSharedZeroTestInReplayByte",
-          "declaration_line": 344,
+          "declaration_line": 345,
           "lines": [
-            343
+            344
           ]
         }
       ]
@@ -130035,16 +129823,16 @@
       "path": "src/modules/pause.c",
       "symbol": "Store eight in the shared halfword used by pause-menu actions. RE_UNKNOWN: the action code meaning requires the consumer of D_8002CC88; the numeric value is preserved.",
       "lines": [
-        778
+        819
       ],
       "evidence": "Store eight in the shared halfword used by pause-menu actions. RE_UNKNOWN: the action code meaning requires the consumer of D_8002CC88; the numeric value is preserved.",
       "owners": [
         {
           "kind": "function",
           "name": "pauseStoreSharedActionEight",
-          "declaration_line": 779,
+          "declaration_line": 820,
           "lines": [
-            778
+            819
           ]
         }
       ]
@@ -130055,16 +129843,16 @@
       "path": "src/modules/pause.c",
       "symbol": "Store one in the shared halfword used by pause-menu actions. RE_UNKNOWN: the action code meaning requires the consumer of D_8002CC88; the numeric value is preserved.",
       "lines": [
-        683
+        724
       ],
       "evidence": "Store one in the shared halfword used by pause-menu actions. RE_UNKNOWN: the action code meaning requires the consumer of D_8002CC88; the numeric value is preserved.",
       "owners": [
         {
           "kind": "function",
           "name": "func_pause_00402904",
-          "declaration_line": 684,
+          "declaration_line": 725,
           "lines": [
-            683
+            724
           ]
         }
       ]
@@ -130075,16 +129863,16 @@
       "path": "src/modules/pause.c",
       "symbol": "Toggle settings byte 0x17A through the existing latched menu-action helper. RE_UNKNOWN: this option meaning requires menu-label or consumer evidence; it is not the stereo byte at 0x178.",
       "lines": [
-        493
+        494
       ],
       "evidence": "Toggle settings byte 0x17A through the existing latched menu-action helper. RE_UNKNOWN: this option meaning requires menu-label or consumer evidence; it is not the stereo byte at 0x178.",
       "owners": [
         {
           "kind": "function",
           "name": "func_pause_004023A4",
-          "declaration_line": 494,
+          "declaration_line": 495,
           "lines": [
-            493
+            494
           ]
         }
       ]
@@ -130095,16 +129883,16 @@
       "path": "src/modules/pause.c",
       "symbol": "Toggle the shared speed-option byte through the latched pause-menu * action helper. RE_UNKNOWN: the speed-option unit meaning remains unproven.",
       "lines": [
-        485
+        486
       ],
       "evidence": "Toggle the shared speed-option byte through the latched pause-menu * action helper. RE_UNKNOWN: the speed-option unit meaning remains unproven.",
       "owners": [
         {
           "kind": "function",
           "name": "pauseToggleSpeedOption",
-          "declaration_line": 487,
+          "declaration_line": 488,
           "lines": [
-            485
+            486
           ]
         }
       ]
@@ -130115,16 +129903,16 @@
       "path": "src/modules/pause.c",
       "symbol": "With a linked node, invoke exit, wait if requested, select the link and * invoke entry; then store the first selected menu-entry index (or -1). * RE_UNKNOWN: node/entry bounds, callback lifetimes and historical caller ABI need original producers/callers.",
       "lines": [
-        245
+        246
       ],
       "evidence": "With a linked node, invoke exit, wait if requested, select the link and * invoke entry; then store the first selected menu-entry index (or -1). * RE_UNKNOWN: node/entry bounds, callback lifetimes and historical caller ABI need original producers/callers.",
       "owners": [
         {
           "kind": "function",
           "name": "pauseNavigateToLinkedNode",
-          "declaration_line": 248,
+          "declaration_line": 249,
           "lines": [
-            245
+            246
           ]
         }
       ]
@@ -134957,6 +134745,26 @@
       ]
     },
     {
+      "id": "Q-f99e978a8df0",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvfx_rom.c",
+      "symbol": "Apply signed low-16 property selectors to the effect record. Zero or an * unsupported selector stops processing. Preserve promoted-double inputs, * narrowed word/byte writes, texture fallback and ordered float comparisons. * RE_UNKNOWN: valid non-sentinel slot indices, selector payload/termination * guarantees and field units require original effect callers and consumers; * the texture lookup establishes current presence, not future asset lifetime.",
+      "lines": [
+        176
+      ],
+      "evidence": "Apply signed low-16 property selectors to the effect record. Zero or an * unsupported selector stops processing. Preserve promoted-double inputs, * narrowed word/byte writes, texture fallback and ordered float comparisons. * RE_UNKNOWN: valid non-sentinel slot indices, selector payload/termination * guarantees and field units require original effect callers and consumers; * the texture lookup establishes current presence, not future asset lifetime.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvFxProps",
+          "declaration_line": 183,
+          "lines": [
+            176
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-b60826d7bf18",
       "kind": "explicit_unknown",
       "path": "src/modules/uvfx_rom.c",
@@ -134972,6 +134780,26 @@
           "declaration_line": 167,
           "lines": [
             165
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-faff20bf2eed",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvfx_rom.c",
+      "symbol": "Reset the selected 0x94-byte effect record, store the kind byte, then apply * defaults and the kind-6/kind-7 settings. Sentinel index 255 returns zero; * sentinel kind 255 returns one after resetting and storing that byte. * RE_ORIGINAL_QUIRK: unsupported kinds return zero after modifying the record * and invoking the matrix callback. No unchanged-on-failure contract is implied. * RE_UNKNOWN: other index/kind domains, field units and caller handling of the * modified record on failure require original effect producers and callers.",
+      "lines": [
+        248
+      ],
+      "evidence": "Reset the selected 0x94-byte effect record, store the kind byte, then apply * defaults and the kind-6/kind-7 settings. Sentinel index 255 returns zero; * sentinel kind 255 returns one after resetting and storing that byte. * RE_ORIGINAL_QUIRK: unsupported kinds return zero after modifying the record * and invoking the matrix callback. No unchanged-on-failure contract is implied. * RE_UNKNOWN: other index/kind domains, field units and caller handling of the * modified record on failure require original effect producers and callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvFxModel",
+          "declaration_line": 256,
+          "lines": [
+            248
           ]
         }
       ]
@@ -142527,27 +142355,27 @@
         61,
         65,
         67,
-        229,
-        233,
-        237,
-        649,
-        654
+        230,
+        234,
+        238,
+        650,
+        655
       ],
       "owners": [
         {
           "kind": "type",
           "name": "PauseLinkedSelectionExports",
-          "declaration_line": 228,
+          "declaration_line": 229,
           "lines": [
-            229
+            230
           ]
         },
         {
           "kind": "type",
           "name": "PauseLinkedSelectionIndexView",
-          "declaration_line": 232,
+          "declaration_line": 233,
           "lines": [
-            233
+            234
           ]
         },
         {
@@ -142577,25 +142405,25 @@
         {
           "kind": "type",
           "name": "UvGfxMgrExp_0040048C",
-          "declaration_line": 236,
+          "declaration_line": 237,
           "lines": [
-            237
+            238
           ]
         },
         {
           "kind": "type",
           "name": "UvGfxStateExp_004026C4",
-          "declaration_line": 653,
+          "declaration_line": 654,
           "lines": [
-            654
+            655
           ]
         },
         {
           "kind": "type",
           "name": "UvTextureExp_004026C4",
-          "declaration_line": 648,
+          "declaration_line": 649,
           "lines": [
-            649
+            650
           ]
         }
       ]
@@ -142606,15 +142434,15 @@
       "path": "src/modules/pause.c",
       "symbol": "pad18",
       "lines": [
-        656
+        657
       ],
       "owners": [
         {
           "kind": "type",
           "name": "UvGfxStateExp_004026C4",
-          "declaration_line": 653,
+          "declaration_line": 654,
           "lines": [
-            656
+            657
           ]
         }
       ]
@@ -144830,15 +144658,15 @@
       "path": "src/modules/uvfx_rom.c",
       "symbol": "pad",
       "lines": [
-        420
+        441
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvfx_rom_00400E90",
-          "declaration_line": 414,
+          "declaration_line": 435,
           "lines": [
-            420
+            441
           ]
         }
       ]
@@ -161882,7 +161710,7 @@
       "lines": [
         53,
         63,
-        219
+        220
       ],
       "owners": [
         {
@@ -161896,9 +161724,9 @@
         {
           "kind": "type",
           "name": "PauseExtNode_0040048C",
-          "declaration_line": 218,
+          "declaration_line": 219,
           "lines": [
-            219
+            220
           ]
         },
         {
@@ -161945,15 +161773,15 @@
       "path": "src/modules/pause.c",
       "symbol": "unk10",
       "lines": [
-        223
+        224
       ],
       "owners": [
         {
           "kind": "type",
           "name": "PauseExtNode_0040048C",
-          "declaration_line": 218,
+          "declaration_line": 219,
           "lines": [
-            223
+            224
           ]
         }
       ]
@@ -161964,15 +161792,15 @@
       "path": "src/modules/pause.c",
       "symbol": "unk12",
       "lines": [
-        224
+        225
       ],
       "owners": [
         {
           "kind": "type",
           "name": "PauseExtNode_0040048C",
-          "declaration_line": 218,
+          "declaration_line": 219,
           "lines": [
-            224
+            225
           ]
         }
       ]
@@ -161983,44 +161811,44 @@
       "path": "src/modules/pause.c",
       "symbol": "unk14",
       "lines": [
-        225,
-        256,
-        655,
-        670,
-        673
+        226,
+        257,
+        656,
+        671,
+        674
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pauseDrawTexturedFractionBar",
-          "declaration_line": 665,
+          "declaration_line": 666,
           "lines": [
-            670,
-            673
+            671,
+            674
           ]
         },
         {
           "kind": "function",
           "name": "pauseNavigateToLinkedNode",
-          "declaration_line": 248,
+          "declaration_line": 249,
           "lines": [
-            256
+            257
           ]
         },
         {
           "kind": "type",
           "name": "PauseExtNode_0040048C",
-          "declaration_line": 218,
+          "declaration_line": 219,
           "lines": [
-            225
+            226
           ]
         },
         {
           "kind": "type",
           "name": "UvGfxStateExp_004026C4",
-          "declaration_line": 653,
+          "declaration_line": 654,
           "lines": [
-            655
+            656
           ]
         }
       ]
@@ -162031,24 +161859,24 @@
       "path": "src/modules/pause.c",
       "symbol": "unk16",
       "lines": [
-        226,
-        253
+        227,
+        254
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pauseNavigateToLinkedNode",
-          "declaration_line": 248,
+          "declaration_line": 249,
           "lines": [
-            253
+            254
           ]
         },
         {
           "kind": "type",
           "name": "PauseExtNode_0040048C",
-          "declaration_line": 218,
+          "declaration_line": 219,
           "lines": [
-            226
+            227
           ]
         }
       ]
@@ -162059,26 +161887,26 @@
       "path": "src/modules/pause.c",
       "symbol": "unk1C",
       "lines": [
-        650,
-        671,
-        674
+        651,
+        672,
+        675
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pauseDrawTexturedFractionBar",
-          "declaration_line": 665,
+          "declaration_line": 666,
           "lines": [
-            671,
-            674
+            672,
+            675
           ]
         },
         {
           "kind": "type",
           "name": "UvTextureExp_004026C4",
-          "declaration_line": 648,
+          "declaration_line": 649,
           "lines": [
-            650
+            651
           ]
         }
       ]
@@ -162090,15 +161918,15 @@
       "symbol": "unk20",
       "lines": [
         20,
-        704
+        745
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pausePreparePeripheralMenu",
-          "declaration_line": 698,
+          "declaration_line": 739,
           "lines": [
-            704
+            745
           ]
         },
         {
@@ -162118,15 +161946,15 @@
       "symbol": "unk2C",
       "lines": [
         19,
-        703
+        744
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pausePreparePeripheralMenu",
-          "declaration_line": 698,
+          "declaration_line": 739,
           "lines": [
-            703
+            744
           ]
         },
         {
@@ -162146,33 +161974,33 @@
       "symbol": "unk34",
       "lines": [
         61,
-        455,
-        463,
-        471
+        456,
+        464,
+        472
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pauseAdjustMusicVolume",
-          "declaration_line": 470,
+          "declaration_line": 471,
           "lines": [
-            471
+            472
           ]
         },
         {
           "kind": "function",
           "name": "pauseAdjustSfxVolume",
-          "declaration_line": 462,
+          "declaration_line": 463,
           "lines": [
-            463
+            464
           ]
         },
         {
           "kind": "function",
           "name": "pauseAdjustSpeechVolume",
-          "declaration_line": 454,
+          "declaration_line": 455,
           "lines": [
-            455
+            456
           ]
         },
         {
@@ -162193,63 +162021,63 @@
       "lines": [
         53,
         63,
-        220,
-        251,
-        255,
-        356,
-        367,
-        378,
-        593,
-        624
+        221,
+        252,
+        256,
+        357,
+        368,
+        379,
+        594,
+        625
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pauseNavigateToLinkedNode",
-          "declaration_line": 248,
+          "declaration_line": 249,
           "lines": [
-            251,
-            255
+            252,
+            256
           ]
         },
         {
           "kind": "function",
           "name": "pauseOpenConfirmationWithCancelSoundSuppressed",
-          "declaration_line": 619,
+          "declaration_line": 620,
           "lines": [
-            624
+            625
           ]
         },
         {
           "kind": "function",
           "name": "pauseOpenContinueConfirmation",
-          "declaration_line": 364,
+          "declaration_line": 365,
           "lines": [
-            367
+            368
           ]
         },
         {
           "kind": "function",
           "name": "pauseOpenNewTrackConfirmation",
-          "declaration_line": 590,
+          "declaration_line": 591,
           "lines": [
-            593
+            594
           ]
         },
         {
           "kind": "function",
           "name": "pauseOpenQuitConfirmation",
-          "declaration_line": 375,
+          "declaration_line": 376,
           "lines": [
-            378
+            379
           ]
         },
         {
           "kind": "function",
           "name": "pauseOpenRestartConfirmation",
-          "declaration_line": 353,
+          "declaration_line": 354,
           "lines": [
-            356
+            357
           ]
         },
         {
@@ -162263,9 +162091,9 @@
         {
           "kind": "type",
           "name": "PauseExtNode_0040048C",
-          "declaration_line": 218,
+          "declaration_line": 219,
           "lines": [
-            220
+            221
           ]
         },
         {
@@ -162284,26 +162112,26 @@
       "path": "src/modules/pause.c",
       "symbol": "unk5C",
       "lines": [
-        657,
-        672,
-        676
+        658,
+        673,
+        677
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pauseDrawTexturedFractionBar",
-          "declaration_line": 665,
+          "declaration_line": 666,
           "lines": [
-            672,
-            676
+            673,
+            677
           ]
         },
         {
           "kind": "type",
           "name": "UvGfxStateExp_004026C4",
-          "declaration_line": 653,
+          "declaration_line": 654,
           "lines": [
-            657
+            658
           ]
         }
       ]
@@ -162314,24 +162142,24 @@
       "path": "src/modules/pause.c",
       "symbol": "unk74",
       "lines": [
-        238,
-        254
+        239,
+        255
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pauseNavigateToLinkedNode",
-          "declaration_line": 248,
+          "declaration_line": 249,
           "lines": [
-            254
+            255
           ]
         },
         {
           "kind": "type",
           "name": "UvGfxMgrExp_0040048C",
-          "declaration_line": 236,
+          "declaration_line": 237,
           "lines": [
-            238
+            239
           ]
         }
       ]
@@ -162344,70 +162172,70 @@
       "lines": [
         53,
         63,
-        221,
-        257,
-        357,
-        368,
-        379,
-        594,
-        625,
-        792
+        222,
+        258,
+        358,
+        369,
+        380,
+        595,
+        626,
+        833
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pauseClearSettingsHalfwordsAndForwardEight",
-          "declaration_line": 789,
+          "declaration_line": 830,
           "lines": [
-            792
+            833
           ]
         },
         {
           "kind": "function",
           "name": "pauseNavigateToLinkedNode",
-          "declaration_line": 248,
+          "declaration_line": 249,
           "lines": [
-            257
+            258
           ]
         },
         {
           "kind": "function",
           "name": "pauseOpenConfirmationWithCancelSoundSuppressed",
-          "declaration_line": 619,
+          "declaration_line": 620,
           "lines": [
-            625
+            626
           ]
         },
         {
           "kind": "function",
           "name": "pauseOpenContinueConfirmation",
-          "declaration_line": 364,
+          "declaration_line": 365,
           "lines": [
-            368
+            369
           ]
         },
         {
           "kind": "function",
           "name": "pauseOpenNewTrackConfirmation",
-          "declaration_line": 590,
+          "declaration_line": 591,
           "lines": [
-            594
+            595
           ]
         },
         {
           "kind": "function",
           "name": "pauseOpenQuitConfirmation",
-          "declaration_line": 375,
+          "declaration_line": 376,
           "lines": [
-            379
+            380
           ]
         },
         {
           "kind": "function",
           "name": "pauseOpenRestartConfirmation",
-          "declaration_line": 353,
+          "declaration_line": 354,
           "lines": [
-            357
+            358
           ]
         },
         {
@@ -162421,9 +162249,9 @@
         {
           "kind": "type",
           "name": "PauseExtNode_0040048C",
-          "declaration_line": 218,
+          "declaration_line": 219,
           "lines": [
-            221
+            222
           ]
         },
         {
@@ -162442,15 +162270,15 @@
       "path": "src/modules/pause.c",
       "symbol": "unkC",
       "lines": [
-        222
+        223
       ],
       "owners": [
         {
           "kind": "type",
           "name": "PauseExtNode_0040048C",
-          "declaration_line": 218,
+          "declaration_line": 219,
           "lines": [
-            222
+            223
           ]
         }
       ]
@@ -162462,15 +162290,15 @@
       "symbol": "unkDC",
       "lines": [
         18,
-        700
+        741
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pausePreparePeripheralMenu",
-          "declaration_line": 698,
+          "declaration_line": 739,
           "lines": [
-            700
+            741
           ]
         },
         {
@@ -162490,24 +162318,24 @@
       "symbol": "unkE0",
       "lines": [
         18,
-        621,
-        701
+        622,
+        742
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pauseOpenConfirmationWithCancelSoundSuppressed",
-          "declaration_line": 619,
+          "declaration_line": 620,
           "lines": [
-            621
+            622
           ]
         },
         {
           "kind": "function",
           "name": "pausePreparePeripheralMenu",
-          "declaration_line": 698,
+          "declaration_line": 739,
           "lines": [
-            701
+            742
           ]
         },
         {
@@ -162527,15 +162355,15 @@
       "symbol": "unkF4",
       "lines": [
         65,
-        480
+        481
       ],
       "owners": [
         {
           "kind": "function",
           "name": "pauseApplyStereoMonoOption",
-          "declaration_line": 478,
+          "declaration_line": 479,
           "lines": [
-            480
+            481
           ]
         },
         {
@@ -184184,28 +184012,28 @@
       "symbol": "unk0",
       "lines": [
         9,
-        271,
-        275,
-        427,
-        452
+        291,
+        295,
+        448,
+        473
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvfx_rom_00400E90",
-          "declaration_line": 414,
+          "declaration_line": 435,
           "lines": [
-            427,
-            452
+            448,
+            473
           ]
         },
         {
           "kind": "function",
           "name": "uvFxModel",
-          "declaration_line": 236,
+          "declaration_line": 256,
           "lines": [
-            271,
-            275
+            291,
+            295
           ]
         },
         {
@@ -184226,17 +184054,17 @@
       "lines": [
         10,
         158,
-        244,
-        385,
-        456
+        264,
+        406,
+        477
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvfx_rom_00400E90",
-          "declaration_line": 414,
+          "declaration_line": 435,
           "lines": [
-            456
+            477
           ]
         },
         {
@@ -184250,17 +184078,17 @@
         {
           "kind": "function",
           "name": "uvFxModel",
-          "declaration_line": 236,
+          "declaration_line": 256,
           "lines": [
-            244
+            264
           ]
         },
         {
           "kind": "function",
           "name": "uvFxUpdateAndQueueVisible",
-          "declaration_line": 369,
+          "declaration_line": 390,
           "lines": [
-            385
+            406
           ]
         },
         {
@@ -184280,17 +184108,17 @@
       "symbol": "unk10",
       "lines": [
         15,
-        393,
-        395
+        414,
+        416
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvFxUpdateAndQueueVisible",
-          "declaration_line": 369,
+          "declaration_line": 390,
           "lines": [
-            393,
-            395
+            414,
+            416
           ]
         },
         {
@@ -184310,37 +184138,37 @@
       "symbol": "unk14",
       "lines": [
         16,
-        206,
-        264,
-        336,
-        337,
-        338
+        215,
+        284,
+        357,
+        358,
+        359
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvFxDrawTexturedQuad",
-          "declaration_line": 288,
+          "declaration_line": 309,
           "lines": [
-            336,
-            337,
-            338
+            357,
+            358,
+            359
           ]
         },
         {
           "kind": "function",
           "name": "uvFxModel",
-          "declaration_line": 236,
+          "declaration_line": 256,
           "lines": [
-            264
+            284
           ]
         },
         {
           "kind": "function",
           "name": "uvFxProps",
-          "declaration_line": 174,
+          "declaration_line": 183,
           "lines": [
-            206
+            215
           ]
         },
         {
@@ -184360,24 +184188,24 @@
       "symbol": "unk18",
       "lines": [
         17,
-        208,
-        265
+        217,
+        285
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvFxModel",
-          "declaration_line": 236,
+          "declaration_line": 256,
           "lines": [
-            265
+            285
           ]
         },
         {
           "kind": "function",
           "name": "uvFxProps",
-          "declaration_line": 174,
+          "declaration_line": 183,
           "lines": [
-            208
+            217
           ]
         },
         {
@@ -184397,37 +184225,37 @@
       "symbol": "unk1C",
       "lines": [
         18,
-        210,
-        266,
-        339,
-        340,
-        341
+        219,
+        286,
+        360,
+        361,
+        362
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvFxDrawTexturedQuad",
-          "declaration_line": 288,
+          "declaration_line": 309,
           "lines": [
-            339,
-            340,
-            341
+            360,
+            361,
+            362
           ]
         },
         {
           "kind": "function",
           "name": "uvFxModel",
-          "declaration_line": 236,
+          "declaration_line": 256,
           "lines": [
-            266
+            286
           ]
         },
         {
           "kind": "function",
           "name": "uvFxProps",
-          "declaration_line": 174,
+          "declaration_line": 183,
           "lines": [
-            210
+            219
           ]
         },
         {
@@ -184447,26 +184275,26 @@
       "symbol": "unk2",
       "lines": [
         11,
-        252,
-        298,
-        299
+        272,
+        319,
+        320
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvFxDrawTexturedQuad",
-          "declaration_line": 288,
+          "declaration_line": 309,
           "lines": [
-            298,
-            299
+            319,
+            320
           ]
         },
         {
           "kind": "function",
           "name": "uvFxModel",
-          "declaration_line": 236,
+          "declaration_line": 256,
           "lines": [
-            252
+            272
           ]
         },
         {
@@ -184486,30 +184314,30 @@
       "symbol": "unk24",
       "lines": [
         20,
-        205,
-        206,
-        211,
-        212,
-        256
+        214,
+        215,
+        220,
+        221,
+        276
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvFxModel",
-          "declaration_line": 236,
+          "declaration_line": 256,
           "lines": [
-            256
+            276
           ]
         },
         {
           "kind": "function",
           "name": "uvFxProps",
-          "declaration_line": 174,
+          "declaration_line": 183,
           "lines": [
-            205,
-            206,
-            211,
-            212
+            214,
+            215,
+            220,
+            221
           ]
         },
         {
@@ -184529,30 +184357,30 @@
       "symbol": "unk28",
       "lines": [
         21,
-        207,
-        208,
-        211,
-        214,
-        257
+        216,
+        217,
+        220,
+        223,
+        277
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvFxModel",
-          "declaration_line": 236,
+          "declaration_line": 256,
           "lines": [
-            257
+            277
           ]
         },
         {
           "kind": "function",
           "name": "uvFxProps",
-          "declaration_line": 174,
+          "declaration_line": 183,
           "lines": [
-            207,
-            208,
-            211,
-            214
+            216,
+            217,
+            220,
+            223
           ]
         },
         {
@@ -184572,30 +184400,30 @@
       "symbol": "unk2C",
       "lines": [
         22,
-        209,
-        210,
-        216,
-        217,
-        258
+        218,
+        219,
+        225,
+        226,
+        278
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvFxModel",
-          "declaration_line": 236,
+          "declaration_line": 256,
           "lines": [
-            258
+            278
           ]
         },
         {
           "kind": "function",
           "name": "uvFxProps",
-          "declaration_line": 174,
+          "declaration_line": 183,
           "lines": [
-            209,
-            210,
-            216,
-            217
+            218,
+            219,
+            225,
+            226
           ]
         },
         {
@@ -184615,15 +184443,15 @@
       "symbol": "unk30",
       "lines": [
         23,
-        259
+        279
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvFxModel",
-          "declaration_line": 236,
+          "declaration_line": 256,
           "lines": [
-            259
+            279
           ]
         },
         {
@@ -184643,15 +184471,15 @@
       "symbol": "unk34",
       "lines": [
         24,
-        260
+        280
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvFxModel",
-          "declaration_line": 236,
+          "declaration_line": 256,
           "lines": [
-            260
+            280
           ]
         },
         {
@@ -184671,15 +184499,15 @@
       "symbol": "unk38",
       "lines": [
         25,
-        261
+        281
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvFxModel",
-          "declaration_line": 236,
+          "declaration_line": 256,
           "lines": [
-            261
+            281
           ]
         },
         {
@@ -184699,33 +184527,33 @@
       "symbol": "unk3C",
       "lines": [
         26,
-        194,
-        263,
-        343
+        203,
+        283,
+        364
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvFxDrawTexturedQuad",
-          "declaration_line": 288,
+          "declaration_line": 309,
           "lines": [
-            343
+            364
           ]
         },
         {
           "kind": "function",
           "name": "uvFxModel",
-          "declaration_line": 236,
+          "declaration_line": 256,
           "lines": [
-            263
+            283
           ]
         },
         {
           "kind": "function",
           "name": "uvFxProps",
-          "declaration_line": 174,
+          "declaration_line": 183,
           "lines": [
-            194
+            203
           ]
         },
         {
@@ -184745,37 +184573,37 @@
       "symbol": "unk4",
       "lines": [
         12,
-        191,
-        255,
-        272,
-        276,
-        395
+        200,
+        275,
+        292,
+        296,
+        416
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvFxModel",
-          "declaration_line": 236,
+          "declaration_line": 256,
           "lines": [
-            255,
-            272,
-            276
+            275,
+            292,
+            296
           ]
         },
         {
           "kind": "function",
           "name": "uvFxProps",
-          "declaration_line": 174,
+          "declaration_line": 183,
           "lines": [
-            191
+            200
           ]
         },
         {
           "kind": "function",
           "name": "uvFxUpdateAndQueueVisible",
-          "declaration_line": 369,
+          "declaration_line": 390,
           "lines": [
-            395
+            416
           ]
         },
         {
@@ -184795,41 +184623,41 @@
       "symbol": "unk40",
       "lines": [
         27,
-        197,
-        198,
-        199,
-        200,
-        253,
-        301,
-        302
+        206,
+        207,
+        208,
+        209,
+        273,
+        322,
+        323
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvFxDrawTexturedQuad",
-          "declaration_line": 288,
+          "declaration_line": 309,
           "lines": [
-            301,
-            302
+            322,
+            323
           ]
         },
         {
           "kind": "function",
           "name": "uvFxModel",
-          "declaration_line": 236,
+          "declaration_line": 256,
           "lines": [
-            253
+            273
           ]
         },
         {
           "kind": "function",
           "name": "uvFxProps",
-          "declaration_line": 174,
+          "declaration_line": 183,
           "lines": [
-            197,
-            198,
-            199,
-            200
+            206,
+            207,
+            208,
+            209
           ]
         },
         {
@@ -184849,30 +184677,30 @@
       "symbol": "unk42",
       "lines": [
         28,
-        248,
-        350,
-        353,
-        355,
-        357
+        268,
+        371,
+        374,
+        376,
+        378
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvFxDrawTexturedQuad",
-          "declaration_line": 288,
+          "declaration_line": 309,
           "lines": [
-            350,
-            353,
-            355,
-            357
+            371,
+            374,
+            376,
+            378
           ]
         },
         {
           "kind": "function",
           "name": "uvFxModel",
-          "declaration_line": 236,
+          "declaration_line": 256,
           "lines": [
-            248
+            268
           ]
         },
         {
@@ -184892,30 +184720,30 @@
       "symbol": "unk43",
       "lines": [
         29,
-        249,
-        351,
-        353,
-        355,
-        357
+        269,
+        372,
+        374,
+        376,
+        378
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvFxDrawTexturedQuad",
-          "declaration_line": 288,
+          "declaration_line": 309,
           "lines": [
-            351,
-            353,
-            355,
-            357
+            372,
+            374,
+            376,
+            378
           ]
         },
         {
           "kind": "function",
           "name": "uvFxModel",
-          "declaration_line": 236,
+          "declaration_line": 256,
           "lines": [
-            249
+            269
           ]
         },
         {
@@ -184935,30 +184763,30 @@
       "symbol": "unk44",
       "lines": [
         30,
-        250,
-        351,
-        354,
-        356,
-        358
+        270,
+        372,
+        375,
+        377,
+        379
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvFxDrawTexturedQuad",
-          "declaration_line": 288,
+          "declaration_line": 309,
           "lines": [
-            351,
-            354,
-            356,
-            358
+            372,
+            375,
+            377,
+            379
           ]
         },
         {
           "kind": "function",
           "name": "uvFxModel",
-          "declaration_line": 236,
+          "declaration_line": 256,
           "lines": [
-            250
+            270
           ]
         },
         {
@@ -184978,24 +184806,24 @@
       "symbol": "unk45",
       "lines": [
         31,
-        251,
-        343
+        271,
+        364
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvFxDrawTexturedQuad",
-          "declaration_line": 288,
+          "declaration_line": 309,
           "lines": [
-            343
+            364
           ]
         },
         {
           "kind": "function",
           "name": "uvFxModel",
-          "declaration_line": 236,
+          "declaration_line": 256,
           "lines": [
-            251
+            271
           ]
         },
         {
@@ -185016,59 +184844,59 @@
       "lines": [
         33,
         169,
-        268,
-        335,
-        400,
-        401,
-        402,
-        407,
+        288,
+        356,
+        421,
+        422,
+        423,
         428,
-        429,
-        443,
-        444,
-        445,
-        446,
-        447,
-        448,
         449,
         450,
-        451,
-        453
+        464,
+        465,
+        466,
+        467,
+        468,
+        469,
+        470,
+        471,
+        472,
+        474
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvfx_rom_00400E90",
-          "declaration_line": 414,
+          "declaration_line": 435,
           "lines": [
-            428,
-            429,
-            443,
-            444,
-            445,
-            446,
-            447,
-            448,
             449,
             450,
-            451,
-            453
+            464,
+            465,
+            466,
+            467,
+            468,
+            469,
+            470,
+            471,
+            472,
+            474
           ]
         },
         {
           "kind": "function",
           "name": "uvFxDrawTexturedQuad",
-          "declaration_line": 288,
+          "declaration_line": 309,
           "lines": [
-            335
+            356
           ]
         },
         {
           "kind": "function",
           "name": "uvFxModel",
-          "declaration_line": 236,
+          "declaration_line": 256,
           "lines": [
-            268
+            288
           ]
         },
         {
@@ -185082,12 +184910,12 @@
         {
           "kind": "function",
           "name": "uvFxUpdateAndQueueVisible",
-          "declaration_line": 369,
+          "declaration_line": 390,
           "lines": [
-            400,
-            401,
-            402,
-            407
+            421,
+            422,
+            423,
+            428
           ]
         },
         {
@@ -185107,33 +184935,33 @@
       "symbol": "unk8",
       "lines": [
         13,
-        221,
-        267,
-        404
+        230,
+        287,
+        425
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvFxModel",
-          "declaration_line": 236,
+          "declaration_line": 256,
           "lines": [
-            267
+            287
           ]
         },
         {
           "kind": "function",
           "name": "uvFxProps",
-          "declaration_line": 174,
+          "declaration_line": 183,
           "lines": [
-            221
+            230
           ]
         },
         {
           "kind": "function",
           "name": "uvFxUpdateAndQueueVisible",
-          "declaration_line": 369,
+          "declaration_line": 390,
           "lines": [
-            404
+            425
           ]
         },
         {
@@ -185182,19 +185010,19 @@
       "lines": [
         35,
         148,
-        347,
-        348,
-        350
+        368,
+        369,
+        371
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvFxDrawTexturedQuad",
-          "declaration_line": 288,
+          "declaration_line": 309,
           "lines": [
-            347,
-            348,
-            350
+            368,
+            369,
+            371
           ]
         },
         {
@@ -185224,11 +185052,11 @@
         36,
         104,
         157,
-        224,
-        254,
-        382,
-        396,
-        469
+        233,
+        274,
+        403,
+        417,
+        490
       ],
       "owners": [
         {
@@ -185242,9 +185070,9 @@
         {
           "kind": "function",
           "name": "uvFxFindFreeSlot",
-          "declaration_line": 465,
+          "declaration_line": 486,
           "lines": [
-            469
+            490
           ]
         },
         {
@@ -185258,26 +185086,26 @@
         {
           "kind": "function",
           "name": "uvFxModel",
-          "declaration_line": 236,
+          "declaration_line": 256,
           "lines": [
-            254
+            274
           ]
         },
         {
           "kind": "function",
           "name": "uvFxProps",
-          "declaration_line": 174,
+          "declaration_line": 183,
           "lines": [
-            224
+            233
           ]
         },
         {
           "kind": "function",
           "name": "uvFxUpdateAndQueueVisible",
-          "declaration_line": 369,
+          "declaration_line": 390,
           "lines": [
-            382,
-            396
+            403,
+            417
           ]
         },
         {
@@ -185298,8 +185126,8 @@
       "lines": [
         37,
         146,
-        389,
-        391
+        410,
+        412
       ],
       "owners": [
         {
@@ -185313,10 +185141,10 @@
         {
           "kind": "function",
           "name": "uvFxUpdateAndQueueVisible",
-          "declaration_line": 369,
+          "declaration_line": 390,
           "lines": [
-            389,
-            391
+            410,
+            412
           ]
         },
         {
@@ -185336,15 +185164,15 @@
       "symbol": "unkAC",
       "lines": [
         43,
-        406
+        427
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvFxUpdateAndQueueVisible",
-          "declaration_line": 369,
+          "declaration_line": 390,
           "lines": [
-            406
+            427
           ]
         },
         {
@@ -185364,15 +185192,15 @@
       "symbol": "unkC",
       "lines": [
         14,
-        262
+        282
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvFxModel",
-          "declaration_line": 236,
+          "declaration_line": 256,
           "lines": [
-            262
+            282
           ]
         },
         {
@@ -203151,11 +202979,11 @@
         43,
         56,
         63,
-        178,
-        237,
-        292,
-        370,
-        414
+        187,
+        257,
+        313,
+        391,
+        435
       ],
       "owners": [
         {
@@ -203169,41 +202997,41 @@
         {
           "kind": "function",
           "name": "func_uvfx_rom_00400E90",
-          "declaration_line": 414,
+          "declaration_line": 435,
           "lines": [
-            414
+            435
           ]
         },
         {
           "kind": "function",
           "name": "uvFxDrawTexturedQuad",
-          "declaration_line": 288,
+          "declaration_line": 309,
           "lines": [
-            292
+            313
           ]
         },
         {
           "kind": "function",
           "name": "uvFxModel",
-          "declaration_line": 236,
+          "declaration_line": 256,
           "lines": [
-            237
+            257
           ]
         },
         {
           "kind": "function",
           "name": "uvFxProps",
-          "declaration_line": 174,
+          "declaration_line": 183,
           "lines": [
-            178
+            187
           ]
         },
         {
           "kind": "function",
           "name": "uvFxUpdateAndQueueVisible",
-          "declaration_line": 369,
+          "declaration_line": 390,
           "lines": [
-            370
+            391
           ]
         },
         {
@@ -206802,16 +206630,16 @@
       "path": "src/modules/pause.c",
       "symbol": "* Original pending-word path subtracts shared f32 D_80025D70 from the pending * scalar; otherwise MENU slots0x04/08 update selection and query actions0/7/8. * Preserve latch bytes1/0 and the saved action7 result. Fresh action8 with * selection0 snapshots the signed shared counter before setting pending1, * then decrements only a positive snapshot; nonzero selection invokes the * FIXED second entry callback at entries+0x18, not the selected entry. * Reload pending/scalar after callbacks. Strict ordered scalar<zero clears * D_8002CC58 and invokes the FIXED first entry callback at entries+4; preserve * the current-node read before that clear and following record/table reloads. * RE_ORIGINAL_QUIRK: no scalar initialization or pending-word clear occurs * here, and callback indices are unchecked. RE_UNKNOWN: units, shared-counter * and word roles, complete table extents, alias/lifetime and pending/latch * lifecycle, plus historical callback arguments/returns. Resolve through * original state producers, menu definitions, registrations and all invoked * callbacks/callers; repeated expiry or invalid bounds are not proven bugs. * Readable C parked:476 original/candidate bytes,69 differing words and * unequal relocation records. No missing operation/provider-ABI gap found * in bounded review; require exact natural instructions and packed-module/ * ROM proof, without invented storage or register-allocation scaffolding.",
       "lines": [
-        292
+        293
       ],
       "evidence": "* Original pending-word path subtracts shared f32 D_80025D70 from the pending * scalar; otherwise MENU slots0x04/08 update selection and query actions0/7/8. * Preserve latch bytes1/0 and the saved action7 result. Fresh action8 with * selection0 snapshots the signed shared counter before setting pending1, * then decrements only a positive snapshot; nonzero selection invokes the * FIXED second entry callback at entries+0x18, not the selected entry. * Reload pending/scalar after callbacks. Strict ordered scalar<zero clears * D_8002CC58 and invokes the FIXED first entry callback at entries+4; preserve * the current-node read before that clear and following record/table reloads. * RE_ORIGINAL_QUIRK: no scalar initialization or pending-word clear occurs * here, and callback indices are unchecked. RE_UNKNOWN: units, shared-counter * and word roles, complete table extents, alias/lifetime and pending/latch * lifecycle, plus historical callback arguments/returns. Resolve through * original state producers, menu definitions, registrations and all invoked * callbacks/callers; repeated expiry or invalid bounds are not proven bugs. * Readable C parked:476 original/candidate bytes,69 differing words and * unequal relocation records. No missing operation/provider-ABI gap found * in bounded review; require exact natural instructions and packed-module/ * ROM proof, without invented storage or register-allocation scaffolding.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_pause_00400750",
-          "declaration_line": 314,
+          "declaration_line": 315,
           "lines": [
-            292
+            293
           ]
         }
       ]
@@ -206822,16 +206650,16 @@
       "path": "src/modules/pause.c",
       "symbol": "* Original updates MENU selection through slot0x04, then queries actions0/7/8 * through slot0x08 and dispatches callback words using latch bytes1/0. Preserve * current-menu reloads after callbacks, the saved action7 result and the * node-specific SND slot0xE0 byte suppression for index0xAB (not a handle). * RE_ORIGINAL_QUIRK: entry gate short0 is read before selectedIndex==-1; * the later action8 path indexes the 20-byte entry table without that test. * RE_UNKNOWN: valid index/callback-table domains, complete backing extents, * gate/action physical roles, callback historical arguments/returns and * alias/mutation/lifetime guarantees. Resolve through original node/menu * setup, index writers, callback registrations and all callback bodies. * Invalid-index reachability remains unproved; no player fault is claimed. * Readable C is parked:416 native versus424 candidate bytes,99 differing * words and unequal relocation records. Review found no omitted provider * operation; latch-base rematerialization, callback-address read scheduling * and equivalent signed16 sentinel strength reduction still need exact * natural-source and packed-module/ROM proof before replacing this ASM.",
       "lines": [
-        262
+        263
       ],
       "evidence": "* Original updates MENU selection through slot0x04, then queries actions0/7/8 * through slot0x08 and dispatches callback words using latch bytes1/0. Preserve * current-menu reloads after callbacks, the saved action7 result and the * node-specific SND slot0xE0 byte suppression for index0xAB (not a handle). * RE_ORIGINAL_QUIRK: entry gate short0 is read before selectedIndex==-1; * the later action8 path indexes the 20-byte entry table without that test. * RE_UNKNOWN: valid index/callback-table domains, complete backing extents, * gate/action physical roles, callback historical arguments/returns and * alias/mutation/lifetime guarantees. Resolve through original node/menu * setup, index writers, callback registrations and all callback bodies. * Invalid-index reachability remains unproved; no player fault is claimed. * Readable C is parked:416 native versus424 candidate bytes,99 differing * words and unequal relocation records. Review found no omitted provider * operation; latch-base rematerialization, callback-address read scheduling * and equivalent signed16 sentinel strength reduction still need exact * natural-source and packed-module/ROM proof before replacing this ASM.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_pause_00400544",
-          "declaration_line": 281,
+          "declaration_line": 282,
           "lines": [
-            262
+            263
           ]
         }
       ]
@@ -206842,16 +206670,16 @@
       "path": "src/modules/pause.c",
       "symbol": "Advance the original random-float generator, truncate its value times three, * then play D8/D9/DA only when the shared pending word is nonzero. Keep each * case's flag read, scale query, reloaded sound table and final clear in order. * The scale provider returns 1.0f; playback receives priority 0x7FFF and the * original pitch 0.5f. RE_ORIGINAL_QUIRK: the playback result is ignored * and the pending word is cleared even when playback reports failure. * RE_UNKNOWN: sound-ID meanings, pending/RNG/handle lifecycles and complete * handle storage need original sound metadata, pending-word producers and * entry callers; do not infer a historical object extent from its address.",
       "lines": [
-        732
+        773
       ],
       "evidence": "Advance the original random-float generator, truncate its value times three, * then play D8/D9/DA only when the shared pending word is nonzero. Keep each * case's flag read, scale query, reloaded sound table and final clear in order. * The scale provider returns 1.0f; playback receives priority 0x7FFF and the * original pitch 0.5f. RE_ORIGINAL_QUIRK: the playback result is ignored * and the pending word is cleared even when playback reports failure. * RE_UNKNOWN: sound-ID meanings, pending/RNG/handle lifecycles and complete * handle storage need original sound metadata, pending-word producers and * entry callers; do not infer a historical object extent from its address.",
       "owners": [
         {
           "kind": "function",
           "name": "pausePlayPendingRandomSound",
-          "declaration_line": 741,
+          "declaration_line": 782,
           "lines": [
-            732
+            773
           ]
         }
       ]
@@ -208081,6 +207909,26 @@
           "declaration_line": 169,
           "lines": [
             166
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-89d068ac4319",
+      "kind": "original_quirk",
+      "path": "src/modules/uvfx_rom.c",
+      "symbol": "Reset the selected 0x94-byte effect record, store the kind byte, then apply * defaults and the kind-6/kind-7 settings. Sentinel index 255 returns zero; * sentinel kind 255 returns one after resetting and storing that byte. * RE_ORIGINAL_QUIRK: unsupported kinds return zero after modifying the record * and invoking the matrix callback. No unchanged-on-failure contract is implied. * RE_UNKNOWN: other index/kind domains, field units and caller handling of the * modified record on failure require original effect producers and callers.",
+      "lines": [
+        248
+      ],
+      "evidence": "Reset the selected 0x94-byte effect record, store the kind byte, then apply * defaults and the kind-6/kind-7 settings. Sentinel index 255 returns zero; * sentinel kind 255 returns one after resetting and storing that byte. * RE_ORIGINAL_QUIRK: unsupported kinds return zero after modifying the record * and invoking the matrix callback. No unchanged-on-failure contract is implied. * RE_UNKNOWN: other index/kind domains, field units and caller handling of the * modified record on failure require original effect producers and callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvFxModel",
+          "declaration_line": 256,
+          "lines": [
+            248
           ]
         }
       ]

@@ -2370,10 +2370,19 @@ Totals: 356 further recoveries after the 225 upstream ordinary imports, plus 132
 Frozen wave `2086-native-query-record-notes-2086` and `accepted-native-query-record-notes-2086` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 356 further readable functions
+## Historical accepted checkpoint — 356 further readable functions
 
 Add two reviewed original-assembly contract notes for car-audio material classification and model COMM parsing. Preserve original material-code priority and duplicate tests, observed parser storage and header-copy behavior, provider word consumption and unresolved caller, count, capacity, allocation, alias and resource lifetimes. Leave failed C drafts outside accepted source. Preserve every executable logical coordinate and exact source inverse. Counts stay 356 recoveries and 1320 older cleanups. Require both packed original modules, a fresh original ROM, all 1031 frozen source hashes and uncertainty-index freshness before acceptance.
 
 Totals: 356 further recoveries after the 225 upstream ordinary imports, plus 1320 existing C semantic cleanups. Current ledger: 844 assembly references = 801 ordinary + 43 entrypoints; 750,072 known remaining instruction bytes; zero unknown sizes; 302 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `2093-native-audio-model-contract-notes-2093` and `accepted-native-audio-model-contract-notes-2093` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 357 further readable functions
+
+Recover pauseCycleByteOnNewHorizontalAction from the actual original MENU callback and loader chain, preserving unsigned byte loads, signed full-word bounds, low-byte writes and the common action-word store. Preserve all eight complete relocation records and prove native serialization through existing unchanged offset-order metadata. Name genuine parameter/local roles in uvFxProps and uvFxModel while retaining all 1128 instruction bytes, complete ordered records, physical source widths, selectors, NaN-sensitive comparisons and modification-on-failure behavior. Preserve exact source inverses and existing FX logical coordinates. Require full original PAUSE/MENUSLCT/UVFX packed equality, a fresh full original ROM, all frozen source hashes and uncertainty-index freshness before acceptance. No padding, guessed layouts, source-shape variants or readonly ownership changes.
+
+Totals: 357 further recoveries after the 225 upstream ordinary imports, plus 1322 existing C semantic cleanups. Current ledger: 843 assembly references = 800 ordinary + 43 entrypoints; 749,896 known remaining instruction bytes; zero unknown sizes; 302 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `2100-pause-fx-readable-contracts-2100` and `accepted-pause-fx-readable-contracts-2100` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

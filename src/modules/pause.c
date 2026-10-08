@@ -114,7 +114,8 @@ void pauseCopyTrackToByte17FAndRequestStateFourteen();
 void pauseOpenConfirmationWithCancelSoundSuppressed(void);
 void pauseCopyTrackToByte17EAndRequestStateFourteen();
 void pauseDrawTexturedFractionBar();
-void func_pause_00402854();
+extern s32 D_pause_00405E14;
+void pauseCycleByteOnNewHorizontalAction(u8 *optionByte, s32 minimum, s32 maximum);
 void func_pause_00402904();
 void func_pause_00402914();
 void func_pause_00402D78();
@@ -502,7 +503,7 @@ void func_pause_004023A4(void) {
  * to zero. Retain the previous-value test and the original helper call. */
 void pauseAdjustMapOptionSkippingTwoPlayerModeOne(void) {
     s32 previousMapMode = *(u8 *)((u8 *)gGameSettings + 0x17B);
-    func_pause_00402854(&gOptionsMap, 0, 2);
+    pauseCycleByteOnNewHorizontalAction(&gOptionsMap, 0, 2);
     if (*(s32 *)((u8 *)gGameSettings + 0x24) == 2 &&
         *(u8 *)((u8 *)gGameSettings + 0x17B) == 1) {
         if (previousMapMode == 0) {
@@ -677,7 +678,47 @@ void pauseDrawTexturedFractionBar(s32 value, s32 maximum, s32 left, s32 bottom)
 }
 #line 387 "src/modules/pause.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_00402854.s")
+#line 388 "src/modules/pause.c"
+/*
+ * Query controller zero's original MENU horizontal action for the current node.
+ * When the previous action word is zero, action 1 decrements the option byte,
+ * wrapping from an exact minimum match to the maximum; action 2 increments it,
+ * wrapping any value at or above the signed maximum to the minimum. Always
+ * store the new action word, including zero and actions that do not change the byte.
+ * Preserve unsigned byte loads, full-word signed bounds and low-byte stores.
+ * The shipped DATA initializer sets the action word to zero.
+ * RE_UNKNOWN: historical formal types/return contract, the complete menu-node
+ * layout and lifetime, option storage aliases, valid bound domains and the shared
+ * action word's reset/reload lifecycle. Trace original callers, menu-node
+ * producers and all action-word writers before narrowing bounds or adding checks;
+ * the observed byte access does not establish a complete caller-owned object.
+ */
+void pauseCycleByteOnNewHorizontalAction(u8 *optionByte, s32 minimum, s32 maximum) {
+    s32 action;
+    s32 previousValue;
+
+    action = ((PauseLanguageInputExports *)D_pause_00405E44)->get(
+        0, D_pause_00405E50);
+    if (D_pause_00405E14 == 0) {
+        if (action == 1) {
+            previousValue = *optionByte;
+            if (minimum == previousValue) {
+                *optionByte = maximum;
+            } else {
+                *optionByte = previousValue - 1;
+            }
+        } else if (action == 2) {
+            previousValue = *optionByte;
+            if (previousValue >= maximum) {
+                *optionByte = minimum;
+            } else {
+                *optionByte = previousValue + 1;
+            }
+        }
+    }
+    D_pause_00405E14 = action;
+}
+#line 389 "src/modules/pause.c"
 
 #line 390 "src/modules/pause.c"
 /* Store one in the shared halfword used by pause-menu actions. RE_UNKNOWN: the action code meaning requires the consumer of D_8002CC88; the numeric value is preserved. */

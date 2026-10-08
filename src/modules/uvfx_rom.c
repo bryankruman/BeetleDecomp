@@ -171,57 +171,66 @@ void uvFxSetMatrix(s32 index, Mtx4F *matrix) {
 }
 #line 154 "src/modules/uvfx_rom.c"
 
-void uvFxProps(s32 arg0, ...) {
-    f32 var_fa0;
-    f32 var_fv1;
-    s16 temp_v0;
-    UnkStruct_uvfx_rom_00401120 *var_a2;
+#line 155 "src/modules/uvfx_rom.c"
+
+/* Apply signed low-16 property selectors to the effect record. Zero or an
+ * unsupported selector stops processing. Preserve promoted-double inputs,
+ * narrowed word/byte writes, texture fallback and ordered float comparisons.
+ * RE_UNKNOWN: valid non-sentinel slot indices, selector payload/termination
+ * guarantees and field units require original effect callers and consumers;
+ * the texture lookup establishes current presence, not future asset lifetime. */
+#line 155 "src/modules/uvfx_rom.c"
+void uvFxProps(s32 index, ...) {
+    f32 selectedTripleValue;
+    f32 selectedPairValue;
+    s16 selector;
+    UnkStruct_uvfx_rom_00401120 *effect;
     va_list args;
 
-    if (arg0 == 0xFF) {
+    if (index == 0xFF) {
         return;
     }
 
-    var_a2 = &D_uvfx_rom_00401120[arg0];
-    va_start(args, arg0);
+    effect = &D_uvfx_rom_00401120[index];
+    va_start(args, index);
     while (TRUE) {
-        temp_v0 = (s16)va_arg(args, s32);
-        switch (temp_v0) {
+        selector = (s16)va_arg(args, s32);
+        switch (selector) {
             case 1:
-                var_a2->unk4 = va_arg(args, f64);
+                effect->unk4 = va_arg(args, f64);
                 break;
             case 7:
-                var_a2->unk3C = va_arg(args, f64);
+                effect->unk3C = va_arg(args, f64);
                 break;
             case 8:
-                var_a2->unk40 = va_arg(args, s32);
-                if (var_a2->unk40 != 0xFFF) {
-                    if (uvGetLoadedFile('UVTX', var_a2->unk40) == NULL) {
-                        var_a2->unk40 = 0xFFF;
+                effect->unk40 = va_arg(args, s32);
+                if (effect->unk40 != 0xFFF) {
+                    if (uvGetLoadedFile('UVTX', effect->unk40) == NULL) {
+                        effect->unk40 = 0xFFF;
                     }
                 }
                 break;
             case 3:
-                var_a2->unk24 = va_arg(args, f64);
-                var_a2->unk14 = var_a2->unk24 * 0.005f;
-                var_a2->unk28 = va_arg(args, f64);
-                var_a2->unk18 = var_a2->unk28 * 0.005f;
-                var_a2->unk2C = va_arg(args, f64);
-                var_a2->unk1C = var_a2->unk2C * 0.005f;
-                if (var_a2->unk28 <  var_a2->unk24) {
-                    var_fv1 =  var_a2->unk24;
+                effect->unk24 = va_arg(args, f64);
+                effect->unk14 = effect->unk24 * 0.005f;
+                effect->unk28 = va_arg(args, f64);
+                effect->unk18 = effect->unk28 * 0.005f;
+                effect->unk2C = va_arg(args, f64);
+                effect->unk1C = effect->unk2C * 0.005f;
+                if (effect->unk28 <  effect->unk24) {
+                    selectedPairValue =  effect->unk24;
                 } else {
-                    var_fv1 = var_a2->unk28;
+                    selectedPairValue = effect->unk28;
                 }
-                if (var_fv1 < var_a2->unk2C) {
-                    var_fa0 = var_a2->unk2C;
+                if (selectedPairValue < effect->unk2C) {
+                    selectedTripleValue = effect->unk2C;
                 } else {
-                    var_fa0 = var_fv1;
+                    selectedTripleValue = selectedPairValue;
                 }
-                var_a2->unk8 = var_fa0;
+                effect->unk8 = selectedTripleValue;
                 break;
             case 11:
-                var_a2->unk8E = va_arg(args, s32);
+                effect->unk8E = va_arg(args, s32);
                 break;
             case 21:
                 D_uvfx_rom_004016E8 = va_arg(args, s32);
@@ -232,54 +241,66 @@ void uvFxProps(s32 arg0, ...) {
         }
     }
 }
+#line 216 "src/modules/uvfx_rom.c"
 
-s32 uvFxModel(s32 arg0, s32 arg1) {
-    UnkStruct_uvfx_rom_00401120 *temp_a3;
+#line 217 "src/modules/uvfx_rom.c"
 
-    if (arg0 == 0xFF) {
+/* Reset the selected 0x94-byte effect record, store the kind byte, then apply
+ * defaults and the kind-6/kind-7 settings. Sentinel index 255 returns zero;
+ * sentinel kind 255 returns one after resetting and storing that byte.
+ * RE_ORIGINAL_QUIRK: unsupported kinds return zero after modifying the record
+ * and invoking the matrix callback. No unchanged-on-failure contract is implied.
+ * RE_UNKNOWN: other index/kind domains, field units and caller handling of the
+ * modified record on failure require original effect producers and callers. */
+#line 217 "src/modules/uvfx_rom.c"
+s32 uvFxModel(s32 index, s32 kind) {
+    UnkStruct_uvfx_rom_00401120 *effect;
+
+    if (index == 0xFF) {
         return 0;
     }
-    temp_a3 = &D_uvfx_rom_00401120[arg0];
-    uvMemSet(temp_a3, 0U, 0x94U);
-    temp_a3->unk1 = (s8) arg1;
-    if (arg1 == 0xFF) {
+    effect = &D_uvfx_rom_00401120[index];
+    uvMemSet(effect, 0U, 0x94U);
+    effect->unk1 = (s8) kind;
+    if (kind == 0xFF) {
         return 1;
     }
-    temp_a3->unk42 = 0xFF;
-    temp_a3->unk43 = 0xFF;
-    temp_a3->unk44 = 0xFF;
-    temp_a3->unk45 = 0xFF;
-    temp_a3->unk2 = 0xFF;
-    temp_a3->unk40 = 0xFFF;
-    temp_a3->unk8E = 1;
-    temp_a3->unk4 = 1.0f;
-    temp_a3->unk24 = 1.0f;
-    temp_a3->unk28 = 1.0f;
-    temp_a3->unk2C = 1.0f;
-    temp_a3->unk30 = 1.0f;
-    temp_a3->unk34 = 1.0f;
-    temp_a3->unk38 = 1.0f;
-    temp_a3->unkC = 1.0f;
-    temp_a3->unk3C = 1.0f;
-    temp_a3->unk14 = 0.005f;
-    temp_a3->unk18 = 0.005f;
-    temp_a3->unk1C = 0.005f;
-    temp_a3->unk8 = 0.5f;
-    sUvFMtxExports->uvMat4SetIdentity(&temp_a3->unk48);
-    switch (arg1) {
+    effect->unk42 = 0xFF;
+    effect->unk43 = 0xFF;
+    effect->unk44 = 0xFF;
+    effect->unk45 = 0xFF;
+    effect->unk2 = 0xFF;
+    effect->unk40 = 0xFFF;
+    effect->unk8E = 1;
+    effect->unk4 = 1.0f;
+    effect->unk24 = 1.0f;
+    effect->unk28 = 1.0f;
+    effect->unk2C = 1.0f;
+    effect->unk30 = 1.0f;
+    effect->unk34 = 1.0f;
+    effect->unk38 = 1.0f;
+    effect->unkC = 1.0f;
+    effect->unk3C = 1.0f;
+    effect->unk14 = 0.005f;
+    effect->unk18 = 0.005f;
+    effect->unk1C = 0.005f;
+    effect->unk8 = 0.5f;
+    sUvFMtxExports->uvMat4SetIdentity(&effect->unk48);
+    switch (kind) {
         case 6:
-            temp_a3->unk0 = 2;
-            temp_a3->unk4 = 100000000000000000000.0f;
+            effect->unk0 = 2;
+            effect->unk4 = 100000000000000000000.0f;
             break;
         case 7:
-            temp_a3->unk0 = 3;
-            temp_a3->unk4 = 100000000000000000000.0f;
+            effect->unk0 = 3;
+            effect->unk4 = 100000000000000000000.0f;
             break;
         default:
             return 0;
     }
     return 1;
 }
+#line 264 "src/modules/uvfx_rom.c"
 
 #line 265 "src/modules/uvfx_rom.c"
 /* Resolve the sequence/current texture, build original quad UVs, apply
