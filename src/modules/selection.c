@@ -1,5 +1,24 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+/* Observed offsets only; RE_UNKNOWN: complete historical node/export declarations need producer/caller evidence. */
+typedef struct {
+    u8 opaque00[0x12];
+    s16 drawCallbackIndex12;
+} SelectionDrawNodeView;
+
+typedef struct {
+    u8 opaque00[0x14];
+    void (*drawNode)(void *node, s32 highlightWord);
+    u8 opaque18[0xC];
+    void (*drawRectangle)(s32 word0, s32 word1, s32 word2, s32 word3,
+                          s32 word4, s32 word5, s32 word6, s32 word7);
+} SelectionDrawMenuExports;
+
+/* Address comparisons only; these declarations do not establish object extent. */
+extern s32 D_selection_00420160;
+extern s32 D_selection_004202E4;
+void selectionRenderSharedSpritePair(void);
+#line 3 "src/modules/selection.c"
 /* Minimum original call/access views; these declare no backing storage.
  * MENU slot 0x08 consumes a word controller index and a record pointer.
  * RE_UNKNOWN: complete historical declarations and node/latch lifetimes
@@ -498,7 +517,7 @@ extern s32 gCheatHornSfxId;
 extern s32 gCheatTrackMusic;
 extern s32 gCheatHandbreakPower;
 void func_selection_004000E4();
-void func_selection_004003DC();
+void selectionDrawCurrentMenuAndConditionalOverlay();
 void func_selection_00400580();
 void func_selection_004008B0();
 void selectionRegisterChannelCallback(s32 channel);
@@ -727,7 +746,66 @@ void func_selection_004000DC(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004000E4.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004003DC.s")
+#line 708 "src/modules/selection.c"
+/* Draw the current node through its signed callback-table index at offset
+ * 0x12, then pass the freshly loaded node and highlight word 1 to MENU slot
+ * 0x14. Preserve the original seven address exclusions and conditional direct
+ * drawing helpers, reloading the shared node after each effectful call at the
+ * same points as the native routine. Flush queued FONT text even when the
+ * initial node is null. If the original unsigned byte is nonzero, call MENU
+ * slot 0x24 with words 0, 240, 320, 0, 0, 0, 0 and the signed shared halfword.
+ * RE_UNKNOWN: complete node/export declarations, callback-table extent and
+ * valid signed index; callback and provider effects, ownership, aliasing,
+ * initialization/reset ordering and pointer lifetimes; physical meanings of
+ * the address classes and overlay controls. Trace original node/table/control
+ * producers, callbacks and all callers before strengthening these contracts.
+ * The focused node view proves only the halfword access at offset 0x12.
+ * RE_ORIGINAL_QUIRK: callback indexing is unchecked and the node is used after
+ * callbacks without another null test. Retained drawing helpers also assume
+ * handled shared mode/selector domains before reading their local scratch.
+ * Invalid-domain and failure reachability remain unproved; no runtime fix or
+ * confirmed player fault is claimed. */
+void selectionDrawCurrentMenuAndConditionalOverlay(void) {
+    void *currentNode;
+
+    if (D_selection_00421D1C != NULL) {
+        D_selection_00420F18[
+            ((SelectionDrawNodeView *)D_selection_00421D1C)->drawCallbackIndex12]();
+        ((SelectionDrawMenuExports *)D_selection_00421B90)->drawNode(
+            D_selection_00421D1C, 1);
+        currentNode = D_selection_00421D1C;
+        if (currentNode != &D_selection_0041F770 &&
+            currentNode != &D_selection_0041F5B4 &&
+            currentNode != &D_selection_0041F728 &&
+            currentNode != &D_selection_00420160 &&
+            currentNode != &D_selection_004201BC &&
+            currentNode != &D_selection_00420218 &&
+            currentNode != &D_selection_004202E4) {
+            func_selection_00416ABC();
+            if (D_selection_00421D1C != &D_selection_00420260) {
+                func_selection_00413FC4();
+                currentNode = D_selection_00421D1C;
+            } else {
+                func_selection_0041A244();
+                currentNode = D_selection_00421D1C;
+            }
+        }
+        if (currentNode == &D_selection_0041FE60) {
+            func_selection_0041844C();
+            currentNode = D_selection_00421D1C;
+        }
+        if (currentNode == &D_selection_0041FDBC ||
+            currentNode == &D_selection_0041FE04) {
+            selectionRenderSharedSpritePair();
+        }
+    }
+    ((UvFontExp_00411038 *)gUvFontExports)->unk28();
+    if (*(u8 *)&D_selection_00420DE8 != 0) {
+        ((SelectionDrawMenuExports *)D_selection_00421B90)->drawRectangle(
+            0, 240, 320, 0, 0, 0, 0, D_selection_00420DEC);
+    }
+}
+#line 709 "src/modules/selection.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00400580.s")
 
@@ -748,6 +826,26 @@ void selectionRegisterChannelCallback(s32 channel) {
 }
 #line 649 "src/modules/selection.c"
 
+/* Dispatch on the original unsigned halfword selector: 0 does no work,
+ * 4 calls the shared sprite/state helper, 3 fills with RGB words 255, 255,
+ * 255, and 2 binds texture word 4 then reloads STAT before the rectangle
+ * call with integer words 0, 320, 0, 240 and f32 words 0, 1, 0, 1.
+ * Selector 1 and values outside 0 through 4 fill with RGB words 0, 0, 0.
+ * Five original readonly words and their TEXT relocations prove this map.
+ * The incoming callback word is homed but otherwise unused.
+ * RE_UNKNOWN: complete historical callback/export declarations, selector
+ * meaning and writer domain, resource availability and shared-pointer/state
+ * initialization, reset and lifetime contracts. Trace original writers,
+ * callback registration/invocation and provider initialization to resolve.
+ * The original calls do not test provider/resource failure; invalid-domain
+ * reachability is unproved. No reachable fault or runtime fix is claimed.
+ * Recovery remains deferred: native 248 bytes versus draft 244 bytes,
+ * with 44 differing words and changed relocation sites. All observed call
+ * effects remain represented; the compiler uses comparisons instead of the
+ * original five-entry jump table and hoists provider address construction.
+ * Historical source/lowering evidence is needed before another attempt;
+ * retain original ASM and readonly ownership without shape variants. */
+#line 650 "src/modules/selection.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004015D4.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004016CC.s")
@@ -806,7 +904,7 @@ void selectionAdjustWrappedMenuValue(s32 *value, s32 minimum, s32 maximum) {
 #line 669 "src/modules/selection.c"
 /* Adjust a signed 16-bit menu value when its previous horizontal action is zero.
  * Store/narrow each step before comparing inclusive limits, then cache the action.
- * Controller indices and representable, ordered limits remain caller-owned. */
+ * RE_UNKNOWN: valid controller/index and representable ordered limits need original caller/producer evidence. */
 void selectionAdjustWrappedMenuShort(s16 *value, s32 minimum, s32 maximum) {
     s32 action = ((SelectionValueInputExports *)D_selection_00421B90)->get(D_selection_00420DF0, D_selection_00421D1C);
     if (D_selection_004213F8[D_selection_00420DF0] == 0) {
@@ -825,7 +923,7 @@ void selectionAdjustWrappedMenuShort(s16 *value, s32 minimum, s32 maximum) {
 #line 671 "src/modules/selection.c"
 /* Adjust a byte menu value on a newly active horizontal action. Decrement
  * wraps at the minimum; increment narrows to a byte before checking maximum.
- * Cache every action and preserve caller-owned controller indices and limits. */
+ * Cache every action. RE_UNKNOWN: controller/index/limit and pointed-byte storage domains need original callers/producers. */
 void selectionAdjustWrappedMenuByte(u8 *value, s32 minimum, s32 maximum) {
     s32 action = ((SelectionValueInputExports *)D_selection_00421B90)->get(D_selection_00420DF0, D_selection_00421D1C);
     s32 current;
@@ -942,9 +1040,9 @@ void selectionRunCurrentMenuExitCallback(void) {
 
 // Activate the menu node, suppress cancel/directional sounds for the special root node, then call its entry callback.
 #line 708 "src/modules/selection.c"
-/* Save an existing current menu as the previous menu, then activate
- * the supplied node and run its entry callback. The special root node
- * first suppresses cancel and directional-menu sounds; retain the post-call reload. */
+/* Save the previous menu, activate the supplied node and run its entry callback.
+ * Retain root sound suppression and the post-call reload. RE_UNKNOWN: complete node layout,
+ * callback index/domain and mixed-view caller storage require original producer/caller proof. */
 void selectionActivateMenuNode(SelectionState2E98 *node) {
     SelectionState2E98 *activeNode;
 
@@ -2756,6 +2854,15 @@ void func_selection_00413FBC(void) {
 }
 #line 1795 "src/modules/selection.c"
 
+/* Draw through the original shared mode and unsigned selector dispatch.
+ * RE_ORIGINAL_QUIRK: a mode outside 0, 1, and 2, or a selector at least 16,
+ * can bypass writes to scratch words at original SP+0x34, +0x38, and +0x3C,
+ * then reach their reads at 0x41454C, 0x414590, and 0x414568 respectively.
+ * RE_UNKNOWN: actual mode/selector writer domains, initialization/reset
+ * order and caller reachability. Trace all original producers and dispatch
+ * callers before deciding whether any unwritten-scratch path is reachable.
+ * Preserve original ASM; no reachable player fault or runtime fix is claimed. */
+#line 1796 "src/modules/selection.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00413FC4.s")
 
 #line 1798 "src/modules/selection.c"
@@ -3308,6 +3415,15 @@ void func_selection_0041A210(void) {
     selectionActivateMenuNode(&D_selection_00420260);
 }
 
+/* Draw the original mode-dependent rows and update the shared scalar.
+ * RE_ORIGINAL_QUIRK: a shared mode outside 0, 1, and 2 can bypass writes to
+ * scratch words at original SP+0x30, +0x34, and +0x3C before their first
+ * drawing-call reads at 0x41A3F0, 0x41A3F4, and 0x41A3EC respectively.
+ * RE_UNKNOWN: actual shared-mode producer domain, initialization/reset
+ * order and caller reachability. Trace original writers and all dispatch
+ * callers before deciding whether this unwritten-scratch path is reachable.
+ * Preserve original ASM; no reachable player fault or runtime fix is claimed. */
+#line 2094 "src/modules/selection.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0041A244.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0041A5BC.s")

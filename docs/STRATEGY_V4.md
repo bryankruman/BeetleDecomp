@@ -34,8 +34,8 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **805** assembly references:
-**763** ordinary functions and **42** entrypoints, with **722,084** known instruction bytes
+matching C are preserved with `#line`. The current ledger has **804** assembly references:
+**762** ordinary functions and **42** entrypoints, with **721,664** known instruction bytes
 and no unknown sizes. The broader name audit still finds **299** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
@@ -2755,10 +2755,19 @@ Totals: 395 further recoveries after the 225 upstream ordinary imports, plus 133
 Frozen wave `2344-gui-semantic-contracts-2344` and `accepted-gui-semantic-contracts-2344` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 395 further readable functions
+## Historical accepted checkpoint — 395 further readable functions
 
 Correct one older matching C wrapper from discarded void result to its observed f32 return; rename the canonical symbol to miscEvaluateVectorDotThroughClampedHelper at original0x00403CA4. Native FVEC18 result flows into BF0 and returned F0 is consumed by original Motion66E4. Historical declarations, normalized input guarantees and result units remain explicitly unknown. Exact whole-definition/source inverse, unchanged member selectors and physical/logical coordinates, all13 instructions/3ordered records and empty compiler logs are verified before writes. Existing canonical symbol/map references are renamed in place; do not add duplicate extraction aliases or apply the older2331 pure-comment fallback. Zero recoveries, one older cleanup; all remaining ASM/data/address-name counts and native sizes unchanged. Normal extraction, original packed MISC, fresh original-ROM build, all frozen manifest files, complete ledger and uncertainty index are mandatory before acceptance.
 
 Totals: 395 further recoveries after the 225 upstream ordinary imports, plus 1338 existing C semantic cleanups. Current ledger: 805 assembly references = 763 ordinary + 42 entrypoints; 722,084 known remaining instruction bytes; zero unknown sizes; 299 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `2348-misc-vector-dot-return-contract-2350` and `accepted-misc-vector-dot-return-contract-2350` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 396 further readable functions
+
+Recover Selection03DC as selectionDrawCurrentMenuAndConditionalOverlay with all420 native bytes/105 instructions exact. Preserve all53 original and candidate ELF dictionaries; actual native serialization contains51 module records plus two separately resolved FONT kernel records. Existing native order metadata and all23 signed HI/LO pairs plus5 JAL targets are unchanged. Exact node snapshots immediately after each effectful helper preserve callback-sensitive reads. Add five reviewed scratch/older-caller notes and the separate15D4 parked-contract note; no note receives cleanup/recovery credit and no parked C draft, type view or readonly ownership is accepted. Prewrite whole-source/map inverses, exact semantic alias append removal and logical coordinates are verified. Existing compiler warnings remain tracked. Normal extraction must regenerate old-name ASM callers. Checked converter source is not proof of the running binary; full original packed Selection, fixed FONT instructions, fresh original ROM, all1034 frozen hashes, complete remaining/data/address-C ledger and uncertainty index are mandatory before guarded landing.
+
+Totals: 396 further recoveries after the 225 upstream ordinary imports, plus 1338 existing C semantic cleanups. Current ledger: 804 assembly references = 762 ordinary + 42 entrypoints; 721,664 known remaining instruction bytes; zero unknown sizes; 299 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `2376-selection-current-menu-contracts-2376` and `accepted-selection-current-menu-contracts-2376` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
