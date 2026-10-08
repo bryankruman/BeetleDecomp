@@ -24,8 +24,8 @@ void __entrypoint_func_mult4_400000(Mult4_Exports* arg0) {
 }
 
 #line 13 "src/modules/mult4.c"
-/* Unload letter, powerup and weapon modules in order, then clear their
- * export pointers. Preserve the shared-module ownership convention. */
+/* Unload letter, powerup and weapon, then clear their export pointers.
+ * RE_UNKNOWN: shared ownership/lifetime need original loader/reload/teardown callers. */
 void mult4ReleaseItemModules(void) {
     uvUnloadModule('lttr');
     uvUnloadModule('pwup');

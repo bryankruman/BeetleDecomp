@@ -648,7 +648,7 @@ void uvJanimWriteJointMatrices(s32 objectId, UnkStruct_uvjanim_rom_00401704 *pos
 
     rotations = pose->unk0;
     jointIds = pose->unkC;
-    pose->unk10 = D_uvjanim_rom_00401768->uvDobjWriteJointMatricesFromQuaternions(objectId, rotations, jointIds);
+    pose->unk10 = D_uvjanim_rom_00401768->uvDobjExtractJointQuaternionsFromMatrices(objectId, rotations, jointIds);
 }
 #line 614 "src/modules/uvjanim_rom.c"
 

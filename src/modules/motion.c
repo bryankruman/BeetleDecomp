@@ -267,8 +267,8 @@ void motionRecordHistoryAndUpdateTrack(MotionHistoryState *state) {
 #line 141 "src/modules/motion.c"
 /* Find the primary record for a key and optionally query the AI module.
  * Clear output halfword 0xA when this state is flagged and either lookup
- * succeeds, or when the primary referenced state is flagged. Preserve the
- * original nonnull returned-record contract and signed lookup sentinels. */
+ * succeeds, or when the primary referenced state is flagged; retain signed sentinels.
+ * RE_UNKNOWN: returned-record/state validity and lifetime need original providers/callers. */
 void motionClearValueForFlaggedLookup(MotionFlagState *state, MotionFlagOutput *output, s32 key) {
     s32 second, first;
     first = D_motion_00416A88->find(key);
@@ -479,8 +479,8 @@ void motionUpdateSharedState(void) {
 
 #line 215 "src/modules/motion.c"
 /* Select one of the original 0x1C-byte point records, compute angular
- * cross offset plus linear velocity, then transform by matrix 0x5E8. The
- * selector flag chooses offset 0x728 or 0x71C; callers own index bounds. */
+ * cross offset plus linear velocity, then transform by matrix 0x5E8.
+ * RE_UNKNOWN: index bounds for tables at 0x728/0x71C need original state/selector producers. */
 void motionTransformSelectedPointVelocity(MotionVelocityState *state, Vec3F *output, MotionPointSelector *selector) {
     Vec3F velocity;
     if (selector->alternate != 0) {

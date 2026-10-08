@@ -204,10 +204,10 @@ void uvGuiSetSharedShort(s16 value) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00401BC8.s")
 
 #line 170 "src/modules/uvgui_rom.c"
-/* Claim the first inactive slot in the 120-entry, 0x34-byte GUI pool.
- * Preserve the original exhaustion behavior: it returns the capacity and writes
- * one slot beyond the pool when every entry is active. Callers must avoid exhaustion.
- * The widget purpose remains unknown; the name identifies the verified layout. */
+/* Claim the first inactive 0x34-byte slot among 120 scanned entries.
+ * RE_ORIGINAL_QUIRK: if all scanned entries are active, mark entry 120 active
+ * and return 120. RE_UNKNOWN: backing extent, exhaustion reachability and
+ * widget role need original pool layout, slot users and allocation callers. */
 s16 uvGuiAllocatePool34Slot(void) {
     GuiPoolSlot34 *slot;
     s32 index;
@@ -224,7 +224,7 @@ s16 uvGuiAllocatePool34Slot(void) {
 
 #line 172 "src/modules/uvgui_rom.c"
 /* Return the signed-index slot in the original 0x34-byte CompactText pool.
- * This accessor does not check bounds or allocation state; callers own both. */
+ * RE_UNKNOWN: valid index/allocation/lifetime domains need pool writers and callers; no local guard. */
 void *uvGuiGetCompactTextSlot(s16 index) {
     return (index * 0x34) + &D_uvgui_rom_00407238;
 }
@@ -358,7 +358,7 @@ s16 uvGuiAllocatePool5CSlot(void) {
 
 #line 245 "src/modules/uvgui_rom.c"
 /* Return the signed-index slot in the original 0x5C-byte ChildGroup pool.
- * This accessor does not check bounds or allocation state; callers own both. */
+ * RE_UNKNOWN: valid index/allocation/lifetime domains need pool writers and callers; no local guard. */
 void *uvGuiGetChildGroupSlot(s16 index) {
     return (index * 0x5C) + &D_uvgui_rom_00408A98;
 }
@@ -447,10 +447,10 @@ void uvGuiDrawPanelOrTextLists(void *panel) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00402B00.s")
 
 #line 314 "src/modules/uvgui_rom.c"
-/* Claim the first inactive slot in the 50-entry, 0x170-byte GUI pool.
- * Preserve the original exhaustion behavior: it returns the capacity and writes
- * one slot beyond the pool when every entry is active. Callers must avoid exhaustion.
- * The widget purpose remains unknown; the name identifies the verified layout. */
+/* Claim the first inactive 0x170-byte slot among 50 scanned entries.
+ * RE_ORIGINAL_QUIRK: if all scanned entries are active, mark entry 50 active
+ * and return 50. RE_UNKNOWN: backing extent, exhaustion reachability and
+ * widget role need original pool layout, slot users and allocation callers. */
 s16 uvGuiAllocatePool170Slot(void) {
     GuiPoolSlot170 *slot;
     s32 index;
@@ -467,7 +467,7 @@ s16 uvGuiAllocatePool170Slot(void) {
 
 #line 316 "src/modules/uvgui_rom.c"
 /* Return the signed-index slot in the original 0x170-byte TextList pool.
- * This accessor does not check bounds or allocation state; callers own both. */
+ * RE_UNKNOWN: valid index/allocation/lifetime domains need pool writers and callers; no local guard. */
 void *uvGuiGetTextListSlot(s16 index) {
     return (index * 0x170) + &D_uvgui_rom_00408D78;
 }
@@ -558,10 +558,10 @@ void uvGuiAppendCompactTextRow(void *panel, s32 text)
 #line 386 "src/modules/uvgui_rom.c"
 
 #line 387 "src/modules/uvgui_rom.c"
-/* Draw the text-list panel in states 1 and 2. State 1 uses a translucent
- * background and hides children; state 2 draws each caller-owned child.
- * Re-read state and the signed child count after drawing callbacks, as the
- * original does. Child references are four-byte entries with no bounds check. */
+/* Draw the text-list panel in states 1 and 2; state 1 hides children.
+ * State 2 visits child references; re-read state/count after drawing callbacks.
+ * Four-byte child entries have no local bound. RE_UNKNOWN: child ownership,
+ * lifetime and count-backed extent need original writers, callers and teardown. */
 void uvGuiDrawTextList(GuiDrawTextList *widget) {
     s32 alpha;
     s32 red;
@@ -657,10 +657,10 @@ s32 uvGuiUpdateTextListHitState(GuiDrawTextList *widget, u8 inputByte,
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_0040300C.s")
 
 #line 393 "src/modules/uvgui_rom.c"
-/* Claim the first inactive slot in the 135-entry, 0x48-byte GUI pool.
- * Preserve the original exhaustion behavior: it returns the capacity and writes
- * one slot beyond the pool when every entry is active. Callers must avoid exhaustion.
- * The widget purpose remains unknown; the name identifies the verified layout. */
+/* Claim the first inactive 0x48-byte slot among 135 scanned entries.
+ * RE_ORIGINAL_QUIRK: if all scanned entries are active, mark entry 135 active
+ * and return 135. RE_UNKNOWN: backing extent, exhaustion reachability and
+ * widget role need original pool layout, slot users and allocation callers. */
 s16 uvGuiAllocatePool48Slot(void) {
     GuiPoolSlot48 *slot;
     s32 index;
@@ -687,7 +687,7 @@ void uvGuiClearUpperTextSlotState(short index)
 
 #line 401 "src/modules/uvgui_rom.c"
 /* Return the signed-index slot in the original 0x48-byte UpperText pool.
- * This accessor does not check bounds or allocation state; callers own both. */
+ * RE_UNKNOWN: valid index/allocation/lifetime domains need pool writers and callers; no local guard. */
 void *uvGuiGetUpperTextSlot(s16 index) {
     return (index * 0x48) + &D_uvgui_rom_0040D558;
 }
@@ -780,10 +780,10 @@ void uvGuiSetWord44(void *element, s32 value) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00403CAC.s")
 
 #line 462 "src/modules/uvgui_rom.c"
-/* Claim the first inactive slot in the 20-entry, 0x90-byte GUI pool.
- * Preserve the original exhaustion behavior: it returns the capacity and writes
- * one slot beyond the pool when every entry is active. Callers must avoid exhaustion.
- * The widget purpose remains unknown; the name identifies the verified layout. */
+/* Claim the first inactive 0x90-byte slot among 20 scanned entries.
+ * RE_ORIGINAL_QUIRK: if all scanned entries are active, mark entry 20 active
+ * and return 20. RE_UNKNOWN: backing extent, exhaustion reachability and
+ * widget role need original pool layout, slot users and allocation callers. */
 s16 uvGuiAllocatePool90Slot(void) {
     GuiPoolSlot90 *slot;
     s32 index;
@@ -819,7 +819,7 @@ void uvGuiClearValueWidgetSlotState(s32 indexWord)
 
 #line 475 "src/modules/uvgui_rom.c"
 /* Return the signed-index slot in the original 0x90-byte ValueWidget pool.
- * This accessor does not check bounds or allocation state; callers own both. */
+ * RE_UNKNOWN: valid index/allocation/lifetime domains need pool writers and callers; no local guard. */
 void *uvGuiGetValueWidgetSlot(s16 index) {
     return (index * 0x90) + &D_uvgui_rom_0040FB50;
 }
@@ -839,9 +839,9 @@ void uvGuiSetValueWidgetBounds(void *widget, s16 left, s16 right, s16 top, s16 b
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00403F2C.s")
 
 #line 488 "src/modules/uvgui_rom.c"
-/* Store the value-widget identifier, two scalar parameters and optional
- * source pointer. Initialize current value from that source when present,
- * otherwise from the fallback; the source remains caller-owned. */
+/* Store the identifier, scalar parameters and optional source address.
+ * Read that source when present, otherwise use the fallback. RE_UNKNOWN:
+ * source/widget extents, ownership and lifetime need setup, users and teardown. */
 void uvGuiConfigureValueWidget(void *widget, s32 identifier, f32 first, f32 second, f32 fallback, f32 *source) {
     (*(s32 *)((u8 *)widget + 0x0)) = identifier;
     (*(f32 *)((u8 *)widget + 0x6C)) = first;
@@ -903,10 +903,10 @@ void uvGuiSetField62Props(GuiField62Target *target, ...) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgui_rom/func_uvgui_rom_00405D78.s")
 
 #line 519 "src/modules/uvgui_rom.c"
-/* Claim the first inactive slot in the 10-entry, 0x4C-byte GUI pool.
- * Preserve the original exhaustion behavior: it returns the capacity and writes
- * one slot beyond the pool when every entry is active. Callers must avoid exhaustion.
- * The widget purpose remains unknown; the name identifies the verified layout. */
+/* Claim the first inactive 0x4C-byte slot among 10 scanned entries.
+ * RE_ORIGINAL_QUIRK: if all scanned entries are active, mark entry 10 active
+ * and return 10. RE_UNKNOWN: backing extent, exhaustion reachability and
+ * widget role need original pool layout, slot users and allocation callers. */
 s16 uvGuiAllocatePool4CSlot(void) {
     GuiPoolSlot4C *slot;
     s32 index;
@@ -935,7 +935,7 @@ void uvGuiClearLowerTextSlotState(s32 index)
 
 #line 529 "src/modules/uvgui_rom.c"
 /* Return the signed-index slot in the original 0x4C-byte LowerText pool.
- * This accessor does not check bounds or allocation state; callers own both. */
+ * RE_UNKNOWN: valid index/allocation/lifetime domains need pool writers and callers; no local guard. */
 void *uvGuiGetLowerTextSlot(s16 index) {
     return (index * 0x4C) + &D_uvgui_rom_00406F20;
 }

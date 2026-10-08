@@ -589,10 +589,10 @@ void uvDynComposeRelativeTransform(Mtx4F *output, Mtx4F *first, Mtx4F *second) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040232C.s")
 
 #line 321 "src/modules/uvdyn_rom.c"
-/* Apply the recorded row permutation and forward substitution, skipping the
- * initial zero right-hand side, then solve the upper triangular factor backward.
- * Matrix rows and permutation indices are zero-based. The caller supplies a
- * valid factorization with nonzero diagonal entries; values is overwritten. */
+/* Apply the recorded row permutation, forward substitution and backward
+ * triangular solve in place, preserving zero-based indices and overwrite order.
+ * RE_UNKNOWN: permutation bounds and nonzero factor diagonals; trace original
+ * factorization producers and callers before asserting valid-input guarantees. */
 void uvDynSolveFactoredSystemInPlace(f32 **matrix, s32 count, s32 *permutation, f32 *values) {
     s32 row, column, pivot, first = 0;
     f32 sum;
@@ -1246,10 +1246,10 @@ s32 uvDynGetFirstParameterCount(DynResetState *state) {
 #line 344 "src/modules/uvdyn_rom.c"
 
 #line 345 "src/modules/uvdyn_rom.c"
-/* Copy the indexed first-bank key/value, unsigned kind and vector into the
- * caller's outputs. Null state or index at/above the live count leaves every
- * output unchanged. Valid entries require the original four-slot count contract;
- * key/value/kind gameplay meanings remain unresolved. */
+/* Copy the indexed first-bank key/value, unsigned kind and vector outputs.
+ * Null state or index at/above the live count leaves every output unchanged.
+ * RE_UNKNOWN: count validity for the four observed slots and key/value/kind
+ * meanings; trace bank producers and original callers before assuming bounds. */
 void uvDynGetFirstParameterEntry(DynParameterBanks *state, u16 index, u32 *key, u32 *value, u16 *kind, Vec3F *vector) {
     if (state == NULL) {
         return;
@@ -1309,10 +1309,10 @@ s32 uvDynGetSecondParameterCount(DynParameterBanks *state) {
 #line 361 "src/modules/uvdyn_rom.c"
 
 #line 362 "src/modules/uvdyn_rom.c"
-/* Copy the indexed second-bank key/value/kind and payload vector/words.
- * Null state or index at/above the live count leaves outputs unchanged. Preserve
- * the original payload reloads after the vector callback; payload validity and
- * the four-slot count contract remain the caller's responsibility. */
+/* Copy the second-bank key/value/kind and payload vector/words. Null state
+ * or index at/above count leaves outputs unchanged; preserve payload reloads.
+ * RE_UNKNOWN: four-slot count validity and payload lifetime/aliasing; trace
+ * bank producers and callers before treating those input guarantees as proven. */
 void uvDynGetSecondParameterEntry(DynParameterBanks *state, u16 index, u32 *key, u32 *value, u16 *kind, Vec3F *vector, u32 *payloadValue08, u32 *payloadValue0C) {
     if (state == NULL) {
         return;

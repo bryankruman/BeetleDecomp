@@ -690,8 +690,8 @@ s32 uvTerraGetSharedWordBF4(void) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_004074EC.s")
 
 #line 462 "src/modules/uvterra_rom.c"
-/* Store the reciprocal in the caller-indexed terrain scalar array.
- * Original index and nonzero-divisor requirements remain caller-owned. */
+/* Store 1.0f / value in the indexed terrain array without input checks.
+ * RE_UNKNOWN: index bounds and divisor domain; trace original callers/storage. */
 void uvTerraSetReciprocalByIndex(s32 index, f32 value)
 {
   s32 unusedBase = D_uvterra_rom_0040FBA4;
@@ -832,10 +832,10 @@ u16 uvTerraGetStaticObjectModelId(s32 handle) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040A79C.s")
 
 #line 517 "src/modules/uvterra_rom.c"
-/* Read static-object properties through the original variadic list: one
- * writes the flag word, four writes the model ID, and zero terminates.
- * Unknown properties return immediately; absent objects consume no outputs.
- * The caller supplies valid output pointers and a terminating property. */
+/* Read static-object properties: one writes flags, four writes model ID,
+ * and zero terminates. Unknown properties return; absent objects read no outputs.
+ * RE_UNKNOWN: output-pointer validity and variadic-list termination/type domain;
+ * trace original export callers before claiming that all arguments are valid. */
 void uvTerraGetStaticObjectProperties(s32 handle, ...) {
     va_list args;
     UnkSobjDraw *object;

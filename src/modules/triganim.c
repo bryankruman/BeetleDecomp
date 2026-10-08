@@ -120,11 +120,11 @@ void func_triganim_0040154C(u8 a0) {
 #line 33 "src/modules/triganim.c"
 
 #line 34 "src/modules/triganim.c"
-/* Allocate and prepend the original 0x94-byte transform node, copy both
- * matrices and attach its model/object. Modes zero/two set object flags three;
- * mode one clears them. Scalar 0x80 and mode meanings are not otherwise guessed.
- * Preserve the original negative-only allocation failure check: the object
- * allocator actually returns 0xFFFF on exhaustion, so callers must avoid it. */
+/* Allocate/prepend the original 0x94-byte node, copy both matrices and attach
+ * its model/object. Modes zero/two set object flags three; mode one clears them.
+ * Scalar 0x80 and mode meanings remain unresolved.
+ * RE_ORIGINAL_QUIRK: negative-only object failure test does not reject provider's 0xFFFF.
+ * RE_UNKNOWN: exhaustion reachability, node allocation/lifetime need original callers/allocator. */
 TriganimTransformNode *triganimCreateTransformNode(Mtx4F *first, Mtx4F *second, f32 rate, s32 modelId, s32 mode) {
     TriganimTransformNode *node;
     s32 objectId;

@@ -763,6 +763,15 @@ loop:
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00406400.s")
 
+/* func_ai_004068A8 transforms vector 0xE8 into 0x100 through FMTX slots 0x40/0xB0, then
+ * TDATA slot 0x08 refreshes query 0xC8 and slot 0x5C consumes its four-byte signed-halfword key.
+ * Preserve positive-test magnitude and float grouping; ordered threshold calls helper 0x3448,
+ * and distinct then/else paths call helper 0x6400 with the same state.
+ * RE_UNKNOWN: query domains, returned-record validity, scalar units and state/export
+ * lifetime need original track producers, callers and teardown evidence.
+ * Clean C matches all 292-byte instruction positions except six frame/local-home
+ * words; all 11 complete ordered relocations match. Retain original assembly. */
+#line 262 "src/modules/ai.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_004068A8.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_004069CC.s")
@@ -788,9 +797,9 @@ void aiSetRecordShortClearEnabled(s32 enabled) {
 #line 277 "src/modules/ai.c"
 
 #line 278 "src/modules/ai.c"
-/* Count links at offset 0xC before the first null predecessor, storing
- * and returning the shared count. The input node itself is not counted
- * and must be nonnull under the original caller contract. */
+/* Count predecessor links at offset 0xC; store and return the shared count.
+ * The input node itself is not counted and is dereferenced before any null check.
+ * RE_UNKNOWN: valid node/link lifetime and null termination need original producers/callers. */
 s32 aiCountPreviousLinks(void *node) {
     D_ai_00408E48 = 0;
     if (*(s32 *)((u8 *)node + 0xC) != 0) {

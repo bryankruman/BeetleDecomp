@@ -125,7 +125,7 @@ void scrnSubmitGeometryRectangles(ScrnGeomList *list) {
 /* Select the original 0x46-byte screen geometry record, set its fill
  * color with alpha one and append a full-screen viewport. Submit the base
  * geometry when selected halfword 0x4 is nonzero, then submit the selected
- * record. Preserve the shared selection and geometry capacity contracts. */
+ * record. RE_UNKNOWN: selection/table/list-count bounds need original writers/callers. */
 void scrnDrawSelectedGeometry(void) {
     ScrnGeomList *selected;
     s32 height;

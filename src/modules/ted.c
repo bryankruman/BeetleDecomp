@@ -302,9 +302,9 @@ void tedWriteVersionThreeFile(s32 unused) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_004040B4.s")
 
 #line 176 "src/modules/ted.c"
-/* Write the original one-byte header followed by count8C records of 0x2C
- * bytes. Re-read the shared count/base after each callback; file write errors
- * and record bounds retain their original unchecked caller contracts. */
+/* Write the one-byte header followed by count8C records of 0x2C bytes.
+ * Reload shared count/base after each callback; write statuses are ignored.
+ * RE_UNKNOWN: record/count bounds and status handling need original producers/callers. */
 void tedWriteSelectedRecords(s32 file) {
     s32 index;
     s32 offset;
@@ -467,8 +467,8 @@ void tedWriteSecondaryRecords(s32 file) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_0040561C.s")
 
 #line 206 "src/modules/ted.c"
-/* Store the editor byte in selected 0x2C-byte record offset one when
- * the selection is nonnegative. Upper bounds remain caller-owned. */
+/* If selection>=0, store the editor byte at selected 0x2C record offset one.
+ * RE_UNKNOWN: upper index/storage bounds need original selection producers and callers. */
 void tedStoreSelectedRecordByte(s32 unused) {
     s32 index = D_ted_004071C0.unk84;
     if (index >= 0) {
@@ -546,8 +546,8 @@ void tedStoreSelectedRecordByte(s32 unused) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00406B04.s")
 
 #line 243 "src/modules/ted.c"
-/* Reset and clear all 80 record pointers, then reset count and selection.
- * A null pool is ignored; resetting records preserves their existing ownership. */
+/* Reset and clear 80 record pointers, then count/selection; ignore a null pool.
+ * RE_UNKNOWN: node/GUI ownership/lifetime need original producers and teardown callers. */
 void tedResetRecordPool(TedRecordPool *pool) {
     s32 index;
     if (pool != NULL) {

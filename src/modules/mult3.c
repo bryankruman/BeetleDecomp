@@ -24,8 +24,8 @@ void __entrypoint_func_mult3_400000(Mult3_Exports* arg0) {
 }
 
 #line 13 "src/modules/mult3.c"
-/* Unload letter, powerup and weapon modules in order, then clear their
- * export pointers. Preserve the shared-module ownership convention. */
+/* Unload letter, powerup and weapon, then clear their export pointers.
+ * RE_UNKNOWN: shared ownership/lifetime need original loader/reload/teardown callers. */
 void mult3ReleaseItemModules(void) {
     uvUnloadModule('lttr');
     uvUnloadModule('pwup');

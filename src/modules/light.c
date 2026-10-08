@@ -66,9 +66,9 @@ void func_light_00400090(void) {
 #line 15 "src/modules/light.c"
 
 #line 14 "src/modules/light.c"
-/* Allocate a light handle and initialize the original scalar defaults.
- * Preserve the original signed-16-bit handle comparison against 65535: it does
- * not catch allocator failure -1. Capacity/caller reachability needs auditing. */
+/* Allocate the light handle and retain the original scalar defaults.
+ * RE_ORIGINAL_QUIRK: signed-16 handle comparison with 65535 cannot reject -1.
+ * RE_UNKNOWN: exhaustion/reachable handle values need original allocator/callers. */
 void lightInitializeState(LightInitializationState *state, s32 parameter) {
     state->handle = gUvLightExports->uvLightAllocateDirectionalSet();
     if (state->handle != 0xFFFF) {

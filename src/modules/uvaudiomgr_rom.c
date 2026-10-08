@@ -617,7 +617,7 @@ void *uvAudioMgrGetFrameCallbackList(s32 listId) {
 #line 600 "src/modules/uvaudiomgr_rom.c"
 
 #line 601 "src/modules/uvaudiomgr_rom.c"
-/* Store the shared effects-volume scalar; callers own its range. */
+/* Store shared effects volume. RE_UNKNOWN: accepted range/units need original callers and audio consumers. */
 void uvAudioMgrSetEffectsVolume(f32 volume) {
     D_uvaudiomgr_rom_00405734 = volume;
 }
@@ -631,7 +631,7 @@ void uvAudioMgrGetEffectsVolume(f32 *volume) {
 #line 608 "src/modules/uvaudiomgr_rom.c"
 
 #line 609 "src/modules/uvaudiomgr_rom.c"
-/* Store the shared sequence-volume scalar; callers own its range. */
+/* Store shared sequence volume. RE_UNKNOWN: accepted range/units need original callers and audio consumers. */
 void uvAudioMgrSetSequenceVolume(f32 volume) {
     D_uvaudiomgr_rom_00405738 = volume;
 }

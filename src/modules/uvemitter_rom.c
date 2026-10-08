@@ -492,8 +492,8 @@ void uvEmitterSetPan(u8 emitterId, f32 pan) {
 #line 445 "src/modules/uvemitter_rom.c"
 
 #line 446 "src/modules/uvemitter_rom.c"
-/* Return manual pan. The caller must supply a valid emitter index;
- * unlike the corresponding setter, this getter has no bounds check. */
+/* Return manual pan using the unchecked byte emitter index. RE_UNKNOWN:
+ * valid index/backing extent need original emitter allocation and callers. */
 f32 uvEmitterGetPan(u8 emitterId) {
     return D_uvemitter_rom_00402B94[emitterId].unk6C;
 }
@@ -518,7 +518,7 @@ void uvEmitterSetPitch(u8 emitterId, f32 pitch) {
 #line 463 "src/modules/uvemitter_rom.c"
 
 #line 464 "src/modules/uvemitter_rom.c"
-/* Return the stored pitch factor without checking the caller-owned index. */
+/* Return stored pitch using the unchecked index. RE_UNKNOWN: index/backing extent need allocation and callers. */
 f32 uvEmitterGetPitch(u8 emitterId) {
     return D_uvemitter_rom_00402B94[emitterId].unk68;
 }
@@ -1068,9 +1068,9 @@ void _uvaStopVoice(Emitter *arg0) {
 }
 
 #line 969 "src/modules/uvemitter_rom.c"
-/* Read UVSX .CTL/.TBL blocks, copy and relocate the control bank, select
- * its first instrument and allocate sound-player voices. The original valid
- * bank/tag/allocation assumptions are caller-owned. */
+/* Read UVSX .CTL/.TBL, relocate the copied bank, select the first instrument
+ * and allocate player voices. RE_UNKNOWN: file/tag/bank extents, allocation
+ * success and data lifetime need original assets, loader contracts and callers. */
 void uvEmitterLoadSoundBank(s32 fileId) {
     void *controlData;
     void *tableData;
@@ -1153,8 +1153,8 @@ s32 uvEmitterGetPlaybackRequest(u8 emitterId) {
 #line 1036 "src/modules/uvemitter_rom.c"
 
 #line 1037 "src/modules/uvemitter_rom.c"
-/* Copy active voice-list sound IDs and playback volumes to optional outputs,
- * then return their count. Output capacity and voice-map validity are caller-owned. */
+/* Copy voice-list sound IDs/playback volumes to non-null outputs; return count.
+ * RE_UNKNOWN: count/voice-map bounds and output extents need producers and callers. */
 s32 uvEmitterGetPlayingSoundsAndVolumes(s32 *soundIds, s32 *volumes) {
     Emitter *emitter;
     s32 i;
@@ -1221,8 +1221,8 @@ void uvEmitterReservedCallback(void) {
 #line 1087 "src/modules/uvemitter_rom.c"
 
 #line 1088 "src/modules/uvemitter_rom.c"
-/* Store the caller-owned 0xFF-terminated list whose sounds use playback
- * volume three. Lifetime and sentinel termination remain caller-owned. */
+/* Store the address used for the 0xFF-terminated low-volume sound list.
+ * RE_UNKNOWN: ownership, lifetime and termination need list producers/users and teardown. */
 void uvEmitterSetQuietSoundList(u8 *soundIds) {
     D_uvemitter_rom_00403008 = soundIds;
 }

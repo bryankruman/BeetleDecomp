@@ -28,8 +28,8 @@ rom:0xCC reloc:MIPS_HI16 symbol:func_uvdobj_rom_00402870
 rom:0xF4 reloc:MIPS_LO16 symbol:func_uvdobj_rom_00402870
 rom:0xD0 reloc:MIPS_HI16 symbol:uvDobjSetFlagBits
 rom:0xF8 reloc:MIPS_LO16 symbol:uvDobjSetFlagBits
-rom:0xD4 reloc:MIPS_HI16 symbol:uvDobjWriteJointMatricesFromQuaternions
-rom:0xFC reloc:MIPS_LO16 symbol:uvDobjWriteJointMatricesFromQuaternions
+rom:0xD4 reloc:MIPS_HI16 symbol:uvDobjExtractJointQuaternionsFromMatrices
+rom:0xFC reloc:MIPS_LO16 symbol:uvDobjExtractJointQuaternionsFromMatrices
 rom:0x128 reloc:MIPS_HI16 symbol:uvDobjGetFlags
 rom:0x150 reloc:MIPS_LO16 symbol:uvDobjGetFlags
 rom:0x12C reloc:MIPS_HI16 symbol:uvDobjReplaceLightColorRecord

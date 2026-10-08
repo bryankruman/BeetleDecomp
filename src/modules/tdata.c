@@ -249,9 +249,9 @@ void func_tdata_00401344(s32 a0, s32 a1, s32 a2) {
 #line 120 "src/modules/tdata.c"
 
 #line 121 "src/modules/tdata.c"
-/* Convert the lower, center and upper linear indices to handles after
- * clamping the original window against zero and the last record. Return
- * upper minus lower; preserve integer division and caller-owned outputs. */
+/* Adjust only lower<=0 to zero and upper>=count-1 to count-1; center is unchanged.
+ * Return upper-lower after handle conversion. RE_UNKNOWN: valid index/count/width
+ * and output/alias domains need original callers, count producers and converters. */
 s32 tdataGetClampedHandleWindow(TdataHandle *lowerOutput, TdataHandle *centerOutput, TdataHandle *upperOutput, s32 centerIndex, s32 width)
 {
   s32 lower;
@@ -318,9 +318,9 @@ TdataRecord *tdataBuildMatrixFromQuery(void *query, Mtx4F *matrix) {
 #line 148 "src/modules/tdata.c"
 
 #line 149 "src/modules/tdata.c"
-/* Convert the group/index handle to a linear index and read its float value,
- * returning zero above the stored count. The original routine has no negative
- * index check; valid handles remain the caller's responsibility. */
+/* Convert the handle; read the float at index when index<count, else return zero.
+ * RE_UNKNOWN: negative-index exclusion and readable array/count domains need
+ * original handle converters, storage producers and every caller; no lower guard. */
 f32 tdataGetLinearRecordValue(TdataHandle handle) {
     s32 index = func_tdata_00401904(handle);
     if (index < D_tdata_004029E0) {

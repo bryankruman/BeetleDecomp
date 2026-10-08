@@ -156,8 +156,8 @@ typedef struct {
 extern void *D_rain_004016C0;
 
 #line 77 "src/modules/rain.c"
-/* Allocate and prepend a kind-one rain command. Scalar meanings remain
- * offset-named; preserve the original slot order and allocation contract. */
+/* Allocate/prepend the kind-one rain command in original field order; scalar meanings stay unresolved.
+ * RE_UNKNOWN: allocation-result validity and list lifetime need original allocator/caller/teardown evidence. */
 void rainPrependKindOneCommand(s32 count, f32 valueC, f32 value14, f32 value8, f32 value10) {
     AutoS_00401404_temp_v0 *node;
 

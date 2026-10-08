@@ -69,7 +69,7 @@ s32 func_uvdobj_rom_00402870(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f
 s16 func_uvdobj_rom_00402D68(f32 arg0, f32 arg1, f32 arg2, f32 arg3, DObj *arg4);
 s16 func_uvdobj_rom_00403054(f32 arg0, f32 arg1, f32 arg2, DObj *arg3);
 s16 func_uvdobj_rom_004032DC(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, DObj *arg6);
-s32 uvDobjWriteJointMatricesFromQuaternions(s32 arg0, Quat *arg1, u8 *arg2);
+s32 uvDobjExtractJointQuaternionsFromMatrices(s32 arg0, Quat *arg1, u8 *arg2);
 void uvDobjClearFixedDepthImageRectangle(void);
 void uvDobjReplaceLightColorRecord(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
 u16 uvDobjGetQueryArray(s32 **arg0);
@@ -134,7 +134,7 @@ void __entrypoint_func_uvdobj_rom_400000(UvDobj_Exports *exports) {
     exports->uvDobjSetFlags = uvDobjSetFlags;
     exports->func_uvdobj_rom_00402870 = func_uvdobj_rom_00402870;
     exports->uvDobjSetFlagBits = uvDobjSetFlagBits;
-    exports->uvDobjWriteJointMatricesFromQuaternions = uvDobjWriteJointMatricesFromQuaternions;
+    exports->uvDobjExtractJointQuaternionsFromMatrices = uvDobjExtractJointQuaternionsFromMatrices;
     exports->uvDobjGetFlags = uvDobjGetFlags;
     exports->uvDobjReplaceLightColorRecord = uvDobjReplaceLightColorRecord;
     exports->uvDobjClearFlagBits = uvDobjClearFlagBits;
@@ -266,8 +266,8 @@ void uvDobjModuleCleanup(void) {
 
 #line 255 "src/modules/uvdobj_rom.c"
 /* For a nonnegative object index and nonsentinel model ID, update the
- * model only when it differs and is already loaded. Preserve the original
- * caller-owned upper object bound. */
+ * model only when it differs and is loaded. The upper index is unchecked.
+ * RE_UNKNOWN: valid object-index domain; trace original callers and allocation. */
 void uvDobjSetLoadedModel(s32 objectId, s32 modelId) {
     DObj *object;
 
@@ -721,8 +721,8 @@ void uvDobjQueueVisibleChannelObjects(s32 channel, s32 unusedMode) {
 #line 676 "src/modules/uvdobj_rom.c"
 
 #line 677 "src/modules/uvdobj_rom.c"
-/* Store the reciprocal of the supplied scalar in the object-indexed
- * array. Original zero, floating and index contracts are unchanged. */
+/* Store 1.0f / scalar in the object-indexed array without input checks.
+ * RE_UNKNOWN: index bounds and divisor domain; trace original callers/storage. */
 void uvDobjSetReciprocalScalar(s32 objectId, f32 scalar) {
     D_uvdobj_rom_004039E8[objectId] = 1.0f / scalar;
 }
@@ -1475,10 +1475,10 @@ s16 func_uvdobj_rom_004032DC(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f
 }
 
 #line 1417 "src/modules/uvdobj_rom.c"
-/* Convert each nonroot model quaternion into its corresponding object
- * matrix and write one-based joint indices. Return the model joint count
- * minus its root, clamped to zero. Callers supply loaded models and outputs. */
-s32 uvDobjWriteJointMatricesFromQuaternions(s32 objectId, Quat *quaternions, u8 *jointIndices) {
+/* Extract quaternions from nonroot object matrices and write one-based joint
+ * indices. Return max(model joint count - 1, 0). RE_UNKNOWN: object/model validity
+ * and output capacity/lifetime; trace original constructors and callers. */
+s32 uvDobjExtractJointQuaternionsFromMatrices(s32 objectId, Quat *quaternions, u8 *jointIndices) {
     DObj *object;
     s32 count;
     s32 i;

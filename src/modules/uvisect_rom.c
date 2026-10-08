@@ -258,8 +258,8 @@ void uvIsectGetTransformProperty(IsectTransformPrefix *record, s32 property, Mtx
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00400A40.s")
 
 #line 73 "src/modules/uvisect_rom.c"
-/* Read the original 32-bit word at offset 0x18. Its full meaning is not yet
- * established; preserve the original non-null caller contract. */
+/* Read the original 32-bit word at offset 0x18 without a null check.
+ * RE_UNKNOWN: word meaning and valid record lifetime; trace original callers. */
 s32 uvIsectGetWord18(void *record) {
     return *(s32 *)((u8 *)record + 0x18);
 }
@@ -502,8 +502,37 @@ void uvIsectInitializeScalarAndVectorQueryState(void *record, s32 word08, s32 wo
 #line 112 "src/modules/uvisect_rom.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00403208.s")
 
+/* Append accepted TERR query candidates using the actual export at 0x90.
+ * Preserve the cached source pointer/scalar, f32 square and f32 subtraction
+ * before the square-root wrapper. Reload the shared fraction after native
+ * helper 0x404A7C for scaling, then again after vector callbacks for the record
+ * initializer. Capture the auxiliary element address before those callbacks
+ * and read its word after the initializer; reload owner count before increment.
+ * RE_ORIGINAL_QUIRK: every append also initializes the next 0x58-stride record,
+ * including after the final accepted result. A negative provider count still
+ * invokes the auxiliary-array getter before skipping the loop.
+ * RE_UNKNOWN: source scalar units, vector coordinate space, result-word
+ * meanings, record capacity and shared-buffer lifetime/aliasing guarantees.
+ * Trace owner allocation, actual TERR query producers and result consumers to
+ * resolve these contracts. Retain original assembly until clean C reproduces
+ * complete native instructions, buffer read timing and relocation records. */
+#line 114 "src/modules/uvisect_rom.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_0040344C.s")
 
+/* Query actual TERR slot 0x20, skip auxiliary bit 2 and exclude registered
+ * low-12-bit texture IDs obtained through actual TERR slot 0x1C. Preserve the
+ * count snapshot after the texture callback, f32 square/subtraction and shared
+ * fraction reloads after the owner filter and vector callbacks. Read the
+ * auxiliary word again after the kind-1 record initializer, then reload and
+ * increment the owner count before preparing the next record.
+ * RE_ORIGINAL_QUIRK: the next 0x58-stride record is prepared even after the
+ * final accepted result. Negative query counts still call the auxiliary-array
+ * getter. Texture value 0xFFF receives the ordinary registered-ID test.
+ * RE_UNKNOWN: auxiliary bit 2 and ID-list policy, scalar units, vector frame,
+ * packed-word meanings, record capacity and shared-buffer lifetime/aliasing.
+ * Trace actual query producers, ID-list setters, owner allocation and callers.
+ * Keep original assembly until clean C matches native code and full relocations. */
+#line 116 "src/modules/uvisect_rom.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004036A8.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_0040397C.s")

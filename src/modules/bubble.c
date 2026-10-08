@@ -43,7 +43,7 @@ void bubbleSetPrimitiveColor(BubbleState *state) {
 /* Expire the bubble after its start-plus-duration deadline. Otherwise use
  * normalized age for scale, switch to model 0xE after the original threshold,
  * update fade alpha, and submit a translated uniform-scale matrix.
- * Valid positive duration and object ownership remain caller contracts. */
+ * RE_UNKNOWN: duration domain and handle lifetime need original initializers/callers. */
 void bubbleUpdateLifetimeAndTransform(BubbleObjectState *state) {
     f32 fraction;
     Mtx4F matrix;

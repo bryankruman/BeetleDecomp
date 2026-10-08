@@ -2538,8 +2538,8 @@ void selectionDrawFormattedLocalizedLabel(void) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00411F40.s")
 
 #line 1710 "src/modules/selection.c"
-/* Store the 16-bit value and mark this 0x34-byte selection record active.
- * Preserve the unused callback context and unchecked index contract. */
+/* Store the 16-bit value and active flag in the indexed 0x34-byte record.
+ * RE_UNKNOWN: index/table extent need original producers/callers; context is unused. */
 void selectionSetRecordValueAndActivate(s32 index, s32 context, u16 value) {
     SelectionValueRecord *record = &((SelectionValueRecord *)&D_selection_00421BA0)[index];
     record->value = value;
@@ -3133,9 +3133,9 @@ void func_selection_00419020(void) {
 }
 
 #line 2012 "src/modules/selection.c"
-/* Mark the shared selection state, clear words at 0x16/0x2A and reset the
- * current nested state word only when it is 1 or 2. Preserve the original
- * non-null pointer contract and explicitly unknown word meanings. */
+/* Mark shared state, clear words 0x16/0x2A and reset the nested word if 1 or 2.
+ * RE_UNKNOWN: required non-null nested chain, allocation/lifetime and word meanings
+ * need original state producers and callers; preserve the observed stores. */
 void selectionResetTransientWords(void) {
     SelectionResetWords *flags = (SelectionResetWords *)&D_selection_0041F794;
     InnerObj_0041B19C *record;

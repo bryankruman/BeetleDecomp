@@ -1142,8 +1142,8 @@ s32 sndGetSoundMetadataWord04(s32 soundId) {
 #line 976 "src/modules/snd.c"
 
 #line 977 "src/modules/snd.c"
-/* Map the selected sound metadata to its stored sample-rate field.
- * Sound-table validity and index bounds remain caller-owned. */
+/* Read the stored sample-rate field at the supplied soundId.
+ * RE_UNKNOWN: metadata-table/index validity need original table producers and callers. */
 s32 sndGetSoundSampleRate(s32 soundId) {
     return D_snd_00406198[soundId].sampleRate;
 }

@@ -143,8 +143,8 @@ void pauseReleaseMenuAndSoundHandles(void) {
 
 #line 128 "src/modules/pause.c"
 /* Select the indexed pause-menu descriptor and its node, update the
- * player-dependent options and sound state, then set all six original
- * menu-refresh bytes. The caller owns the descriptor index bounds. */
+ * player-dependent options and sound state, then set six menu-refresh bytes.
+ * RE_UNKNOWN: descriptor index/table validity need original producers and callers. */
 void pauseActivateIndexedMenu(s32 menuIndex) {
     void *menuDescriptor;
 

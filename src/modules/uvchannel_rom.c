@@ -129,9 +129,9 @@ void uvChannelModuleCleanup(void) {
 #line 114 "src/modules/uvchannel_rom.c"
 
 #line 115 "src/modules/uvchannel_rom.c"
-/* Read zero-terminated property/output pairs from a valid channel.
- * Copy matrices/vectors or expose original vector arrays and callback list.
- * Unknown tags consume no output; callers provide matching argument types. */
+/* Read property/output pairs until zero, after the original channel-range guard.
+ * Copy scalar/matrix/vector data or expose the four vector-array addresses.
+ * RE_UNKNOWN: output extents/types, termination and array lifetime need callers/producers. */
 void uvChannelGetProperties(s32 channel, ...) {
     UnkStruct_uvchannel_rom_00401CD0 *state;
     int property;

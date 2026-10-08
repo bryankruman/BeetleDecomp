@@ -183,7 +183,7 @@ void battleUpdateMatchingNodes(int key) {
 /* Copy a vector into one of two original battle tables and increment
  * the matching count. Kind one deliberately indexes by shared word C2D8
  * while incrementing the separate count at 0x2258; retain that distinction.
- * Unsupported kinds do nothing and callers own table capacities. */
+ * RE_UNKNOWN: table capacities and count/index domains need original writers/callers. */
 void battleStoreVectorByKind(s32 kind, Vec3F *value) {
     switch (kind) {
         case 0:
@@ -437,7 +437,7 @@ void battleSetPalettePrimitiveColor(BattlePaletteSelector *selector) {
 #line 325 "src/modules/battle.c"
 /* Build an identity matrix with the indexed battle-table translation,
  * assign it to object matrix slot zero, select mode two and clear flag bit one.
- * The original caller owns the translation index and object handle bounds. */
+ * RE_UNKNOWN: translation index and handle validity/lifetime need original producers/callers. */
 void battleApplyIndexedObjectTranslation(BattleTranslatedObject *object) {
     Mtx4F matrix;
     gUvFmtxExports->uvMat4SetIdentity(&matrix);
@@ -557,8 +557,8 @@ void battleEnableIndexedModelAndInitializeSounds(Node_00407F30 *node) {
 /* Set the primitive color from an indexed record, preserving raw-word arguments. */
 #line 412 "src/modules/battle.c"
 /* Read the indexed twelve-byte color record and call the primitive
- * color export. Preserve the legacy declaration: the last record channel
- * and alpha 0.5 are passed as raw words. The caller owns the index bounds. */
+ * color export; last channel and alpha 0.5 keep their original raw-word ABI.
+ * RE_UNKNOWN: input/index validity and table extent need original producers/callers. */
 void battleSetIndexedPrimitiveColor(int *colorIndex) {
     BattleViewEntry_004090F0 *color;
 

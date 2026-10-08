@@ -121,7 +121,7 @@
     "include/uvcontourld_rom.h": "f630974a171942423836357d87858a81d0c1426666a57ce26fe032f614d2a34a",
     "include/uvdbg_rom.h": "cf5fb3554e44623877f3af39a5f3623c26138c830030216824039e8c8d9b6dbc",
     "include/uvdgeom_rom.h": "f113c9d0ef5f6388cd7b3f024e6d42cf5c3a78f22f80fb3b1ddbd5a6c039d258",
-    "include/uvdobj_rom.h": "672ff9fb22dfeefbafdf49181b3f34c624e2b340517bab589535fb4ba86f1209",
+    "include/uvdobj_rom.h": "4dc399717c82172dbb4670ba2b8ddd662d442a6fed150126f24776b638bc54e8",
     "include/uvdsetld_rom.h": "a64fb5dc84a022dc8f2c4a7e971f4e80c41245317151d74bcbfe48b857396fb5",
     "include/uvear_rom.h": "6c7210173ff07e91eb83ffb3a24078f528dbf83715f7686db955ee80645df6ec",
     "include/uvemitter_rom.h": "2702bbf88a0390811325664b45510f4b9452fc3738981d0330f1beaa9a3c80c0",
@@ -192,11 +192,11 @@
     "src/mem_block.c": "b6e363010c6efbe986f1574e9bca20d849b80fbab803c44ce872ef258e3bdf7c",
     "src/memory.c": "12193127efd16283ab437abff693502560521b2899525757cb8997d3a26b70c5",
     "src/module.c": "38ad8e8ad2ad2ae43eb16b089dd9b9c8e56e71cdc9f38d6885cffb4b10515cc2",
-    "src/modules/ai.c": "f98701611b087213969976441bc331c716d6b3961ba6d695cd3bf921e1f378b7",
+    "src/modules/ai.c": "9f381d5f373f22347e498b52609851bd2769ca5b74d59594c1611e7ffc60887b",
     "src/modules/aiedit.c": "1cd4bd3cfe12abd4393b00506ecd6c734413212333dc24ae6faeb2f9af9f56d4",
     "src/modules/airec.c": "8a6f864feb619fdf9fb677a704d09ed6fca688ddb6ec3f5fd2b73c370b3f6eb6",
-    "src/modules/battle.c": "041dc956dcabde3f061ac1772083965393cc91bae83fe166626d8521e54d7583",
-    "src/modules/bubble.c": "f7e7441ce6ecb3bcf78a9380bf34825faa8d2fb1aac39bb5ce6db86ece134501",
+    "src/modules/battle.c": "60d28ad02b2f7b6acc392799c84eaaf321cb87f8c199f7003b75c8b7373a6de6",
+    "src/modules/bubble.c": "8a3c733b7f0370b5b2e51cc123470d44edcf1bf2a2ca8fe481170fd858f9c904",
     "src/modules/cam.c": "95d22d3a7536150c4e84fd508381b424b67a127129ab9b7e2d99da3dfa2addcc",
     "src/modules/caranim.c": "029560fe11c835e97ec3bc7eee25909f255bb303a6e27592252cc38b34ed56bf",
     "src/modules/caraudio.c": "664386ceccb29dbddbd3ae2f9a86307118345ab4f594fc696c76752bc7098bbb",
@@ -216,44 +216,44 @@
     "src/modules/intro.c": "1e37724db4a00b702fd3482ac3edd83cceefbe193c6d3e1047cb6b7725388d3c",
     "src/modules/letter.c": "64d4dbf2d12b2917d0d8d756242cf77e64f4d1b0d0bdc86d82d62434764259c3",
     "src/modules/level1.c": "a6d12da751d98423918c6a81d403a21dfe0a21eaf085534f1dd90d33a4d75bed",
-    "src/modules/light.c": "1a98486e23cf77f235ae5bc8e34f08ba97f834324944a9abf34d94587ac658b3",
+    "src/modules/light.c": "573502e318205e23633c85fbb4206c7ee4645cc0ccc0af9c1cd285358b4da440",
     "src/modules/logo.c": "98b52c4dd4100cf937d10d704a5b1720b9ff63a628099b7215f9fbc57d364619",
     "src/modules/med.c": "75883b1c720e6ddf29668d9d2ea81496621a5d3338ee77817ea0bf953a4abc11",
     "src/modules/menuslct.c": "6c5d9188d9d0fbbc20982a1327e21430ed180418332a9f13ec96803877adac15",
     "src/modules/misc.c": "22da7a9f99cbdc10794c70a226808b1319b3239cb76f9233d3285ca3efc43c5f",
-    "src/modules/motion.c": "fd49d787156e25164eeed6c0efe7ae68e69d1a7c3afd1ed011e6a2760b8d6ad5",
-    "src/modules/mult1.c": "8dc4651cbdcdbb8cc596773b9f9ea3e42d22c5def4cb9868cc002ff19be35e1e",
-    "src/modules/mult2.c": "38663c00f33b29492847a0c43d529ed98ac7952458eab5a1b8208d204f24cc69",
-    "src/modules/mult3.c": "a9fa6288a8af859319d98b660843a5195024c23d3b02de640d84e329c31e4096",
-    "src/modules/mult4.c": "db59d2b49dbae4ff10b8dc49347eea2e9ecf097175ceb658a29798da2dadb20a",
+    "src/modules/motion.c": "b7187deb0c60ca84a0dc1ee1a6d053631ed9e94911842eacb3e8d9c182911774",
+    "src/modules/mult1.c": "fcd148eabbeb9db35e3da555b6e77e8b47903ced46b4e915dad1c4e132781ff7",
+    "src/modules/mult2.c": "ad25b8e93a8307ad21fc18221aa4ab3559721814689e9a500aa5105b3e820663",
+    "src/modules/mult3.c": "379be2535d6acd8e5818d04f5e6175105d6a77eb40738488d31dd0efad16f05b",
+    "src/modules/mult4.c": "b65fef1997e172802b027d26077bc8e34a7f90b49540a7590aa72936707ae2ac",
     "src/modules/mult5.c": "8712e2a338acdf8e9ec3d59aa827a9024d888aa18fd9f920911188a7a0b6bf59",
     "src/modules/mult6.c": "4bb9ea1bd5065d8bb709158085e2475fa8ead1e25e5f6ed6e6256e1846b3ee43",
     "src/modules/mult7.c": "c181165430bada1cf08b7b88acc78e1915bf833be3911c91df20c23f0c5d71b6",
     "src/modules/mult8.c": "725beb028fd020125135705dcf5b938546243e8360fa0d46ced260b4d93d1b1a",
     "src/modules/mult9.c": "d9d8a40d49ee946a1636d807275e472d3b7d08390db4b6b99bb49cd0911f954b",
-    "src/modules/pause.c": "0a759c36ed0c16d87ff5cf26b119ae7ce67c91a15c8923067266e8936e73fec0",
+    "src/modules/pause.c": "cba9df9b421cc55078b6e397758ad1466ca5046de1ed456f60280af55e81478b",
     "src/modules/piece.c": "4e584848296c0f3dae0dcf7df078295f32e9e8ebf9ea5b11084b60dabc51bce8",
     "src/modules/plyr.c": "80fc30d1c8269e971eae346e5c2a083cfcb3572659650d93ed8e1f0deb78adea",
     "src/modules/powerup.c": "b01918a9f9daf9ccb5e551c3920e16a76036dac54c07ef12712b4277dc7393f2",
     "src/modules/profgame.c": "f0bab4b01065b563cede5b28bf4464e65280fd971e9035487b8d4fde81a228ea",
     "src/modules/race.c": "6e76c2a83545e12cb363816c27c5348976c29bc9932cf645783853183dccc23b",
-    "src/modules/rain.c": "a249fa1ecf6a0fe9ca1cd987cd27870605570c72d145710f5426a3ff9dfe5e25",
+    "src/modules/rain.c": "8a5c8ebebd3df2400a2c4cfcc8d0aab8a9f4bd5abb27bc3e3ceaf82d138639da",
     "src/modules/replay.c": "baf160c09aaa1cf61d130f4f2ef84ed21d8249f16f8386a0f5f54240907880dd",
     "src/modules/results.c": "5df2bd0b4ec518b4119d405e999f695a4c0203648a82fdb8a81ba307531ef48f",
     "src/modules/ripple.c": "bdd60e5f9d8f7f66e2ccfd3674c471ad1f6fdc87029c4fda4314b6fc9cfa15d1",
     "src/modules/rumble.c": "88f3c10749b25988a2186cebe9bee3e409df9f8f8dd0a5f24d95592f705298a0",
     "src/modules/scene.c": "610c8f18ff52286cc4a1416aec008a4e48ecf4f29f3c129b34d7a9743f8f25c0",
-    "src/modules/scrn.c": "a81669fa77fb8d8ceef70b9ca3330feea0ae3cf52611b037d1107ef2ccfe9aad",
-    "src/modules/selection.c": "031379ee0d1dd44f98879b0766f8ccb0206002b1005658be3d3537bec944dfef",
+    "src/modules/scrn.c": "664328a6dec742e1b51d5dd7e6c0dc5fd4de9132c1604053f0e5f3d7d4aca412",
+    "src/modules/selection.c": "e8ee27747ad0c622d729a60e9718f2acf3ee0691333e7195589d94a62d3f0271",
     "src/modules/shadow.c": "88396120a38816a4a31db9ced202e9d704b3928429b4e12b8ecb338df93f715b",
     "src/modules/skid.c": "981393e4b967d8c5a37b9a02f5a33eec049981cda90ea9821e7870fe17f8e211",
     "src/modules/smack.c": "451a7a7c8df88f8c880e4b09b2ac72b7bf7cb5e06f871f453b3ff69b1ab211b9",
-    "src/modules/snd.c": "8aafa18a279df9ccccefbe11a1813a4ae3bc34c91980fe2ada77faf3d58db49b",
+    "src/modules/snd.c": "aaec954f2097e23dc6899dd104788b662c4b40441ca99233288bb67a17efdfe2",
     "src/modules/sparks.c": "99ddff1be3676f6f2e0fe66f2a12d8bc53a18048c422884f52516c876430e024",
     "src/modules/splash.c": "cb236edd1d5e78c972b7ec7e0f56d93a81544f089caa6419ca74fe5dd4881c22",
     "src/modules/spray.c": "ac12da17a797736336a995b57f6d4c2cf5b6b954480e18c7faad1bd7647eea83",
-    "src/modules/tdata.c": "9c6d65e68652884ef460ff9ce729e0ca9a888b4f48a9d5e204556b01d9806e1e",
-    "src/modules/ted.c": "944e90adc1d68c3a5a5c5bd68974d8372994965f9b4240f03c3826492e5319ca",
+    "src/modules/tdata.c": "886abfba1cee3de3e036e3d4bfada95a8b971d720de8f65083a1b3c22e6c343a",
+    "src/modules/ted.c": "5817e99b602f1476812ad3fa07fd0113bc6d514659e33dc78d85fb2a47bff563",
     "src/modules/track1.c": "0556fb4aabcd27b156ca9f36a0e285d6da22fd54a581c1a113e6bd0c7d841378",
     "src/modules/track2.c": "cc484d92c7b2699434f673c268e92d060474552e04aa70fab1b45939c406ebc3",
     "src/modules/track3.c": "d791b6616a5ec2413ef8e2c636e0a255b1a97751fb3f0528c42f715615bcb218",
@@ -261,26 +261,26 @@
     "src/modules/track5.c": "83782cb3f6c8b1a6066e0a9f96f397b48f5034fc05b06ce8b6918b77241a7751",
     "src/modules/track6.c": "72566c34ce04d37b2ec1ba30b6eb3be5c096375bae76cbdd96a864a86db0d735",
     "src/modules/track7.c": "7472b0f86c66c63c2c6f400aa1eb338a21788612dc071be8c809153e9c64c50d",
-    "src/modules/triganim.c": "36c00f58f9378de9cbcf3a23173d3746def5c0e349429774ba627f0b5d80d3f5",
+    "src/modules/triganim.c": "9d4802809e0ecd582d732a31505e9fd6a70e2dcfe30261e025a9c384ab59decc",
     "src/modules/txtview.c": "fca073e21c685bf5131ebbb5f06383146a55a9d51d05214a8f855e40193ad831",
     "src/modules/ufo.c": "2165d432b44ec3455fea1108e6085e9a63349a706cc2d2a0eec1ef342231980d",
     "src/modules/ufogame.c": "607e9c04b757e9af7e22e26c02d46e554a04f5e7d37563c2c8a8f7f88c475fda",
-    "src/modules/uvaudiomgr_rom.c": "164b1a0ddfbce3b00a29c5e27cfc9d4d34818cbc95894e3e40a00977f3c9b1c4",
+    "src/modules/uvaudiomgr_rom.c": "dd7a4355c0cd2b056faeb4061e582070a17659288ff05becda8167d3a61fce8a",
     "src/modules/uvbill_rom.c": "d04559a6d33cbea25a52e5251f98f6563d32e0cd9c0a4b8ccfecbcec43135289",
     "src/modules/uvblit_rom.c": "f437f580274c31de0cdcb94d429207f68e556600036f676a849b2958251cf5c0",
     "src/modules/uvcback_rom.c": "2145f0cb78ec702ad72eb11360bb0a73a067583ba738fc7dd33428bca296d26f",
-    "src/modules/uvchannel_rom.c": "fe757adef9eabe5f3172d026ce7f793ca089286d2ef2590bd0e4c984742b2bf8",
+    "src/modules/uvchannel_rom.c": "347b41ea66f152fb135c76bfdfbe3f77af9b0cd734d64995ac9a36c3e27656d4",
     "src/modules/uvcmidi_rom.c": "fb2eea79301c0a78e4e1521ebe0ca0c1c9b5f3bc96ccfb2f200546a5233ffe22",
     "src/modules/uvcolor_rom.c": "f5d5fe7883be4cf747d95911339e084b69c2374ed09635c70d58528dcca374ef",
     "src/modules/uvcont_rom.c": "00f1e990ede92f66c62fd5a52e377dacfe3959f1323c6591794d42a2ff92e1b8",
     "src/modules/uvcontourld_rom.c": "6f4f936c720d68fc9db392f2abf781b8cc55d1b5bada6c8f9b423ceefc3d18a3",
     "src/modules/uvdbg_rom.c": "1a4d0d21bd42ef8738c9c52615c1918a01786573997ca643197c5fa40393db0e",
     "src/modules/uvdgeom_rom.c": "a65e7ecadd7ed7a849c21137f6daa3f1f5b7ce7b91ca581ffc2b0cbdb28f9746",
-    "src/modules/uvdobj_rom.c": "4295111be6f45ec4a7a71238326592015a0463acf7d778169e53b4a4c43dbfc1",
+    "src/modules/uvdobj_rom.c": "db5802ff34929f78b905138517a5ac568cf8009402ce7e086c3e18b3b6f03343",
     "src/modules/uvdsetld_rom.c": "d47a6a7b0f216665e23b58a234a20f22a40567349a5bb45ce46a49082b82831a",
-    "src/modules/uvdyn_rom.c": "882f3fb925462f7914354f9fbaf4159f798447507c57fbf42cf64d47ae587825",
+    "src/modules/uvdyn_rom.c": "856137065dc190dd648558ae3c9c6121d1e4ca7ed1189ad6686d46742278b655",
     "src/modules/uvear_rom.c": "c01016ba592ee81490aa25fc6d34a00fd835438c525ba1ec218c9c22124d581f",
-    "src/modules/uvemitter_rom.c": "843f88b0511264ef128ac33ee2911ec9c9164ef69a855b35a403f220c33c2a3f",
+    "src/modules/uvemitter_rom.c": "e07261da01e8e6f6a7f12200d084114f960314d2afe12ea1da88d428d112ea46",
     "src/modules/uvenv_rom.c": "ee1e5e8ff8a5e833483fbbb2a1a9275a48e30cc4976a9822cf62c67993892b57",
     "src/modules/uvenvld_rom.c": "ca96c6f0fc2296bc498d87dcb7372865f5ca95ca1559e83a10238bb25cce08b3",
     "src/modules/uvfmtx_rom.c": "19a01422ff852426df8ce9649ddb7f11514cf0ae47c48b8e469ffa7ee5b4f408",
@@ -292,11 +292,11 @@
     "src/modules/uvgfxmgr_rom.c": "5244b5d15cf5c573c283127098668b4cca4adecac687df1a2b8a23da8f872e54",
     "src/modules/uvgfxstate_rom.c": "efd85a694d12f59522b0d38c53ed15f9c2734173d0dd1f7947c1e1d71b5082f6",
     "src/modules/uvgrph_rom.c": "7e8fac7bf1da9b448302d15692bdf1d55d65c1d37f74fb66fc84c777500ce121",
-    "src/modules/uvgui_rom.c": "c991995250a4e84d86b70bc1a2dd118d27976685fb55860f9fb3d0a622a08d96",
+    "src/modules/uvgui_rom.c": "5cac5828929aa4db5bfd42b40a5a5547c077e87e084af2d04c7000a454a3b679",
     "src/modules/uvimtx_rom.c": "95ef1be4d43a90236fdd05e873bce5aa9054ae9cdd4b46dc61ce16c739e12c24",
     "src/modules/uvintersect_rom.c": "8fe7e116b2c3061d60128a794272d0c1b9cfc133f2c2b7319d650cc302fa6082",
-    "src/modules/uvisect_rom.c": "a29b4a58c09e336ca111cce3bd334ac7bc01d7be3ed8ca1f6fc61ff383ccc6e0",
-    "src/modules/uvjanim_rom.c": "b54e15719d79f4e165f4ff367fe8dee623f567f669fb5e5eddcee5c79b3f2603",
+    "src/modules/uvisect_rom.c": "5fe68a2b37f1a22b60e8c0a1ccd958bffc28691b6563d9e62debc679f0323bd8",
+    "src/modules/uvjanim_rom.c": "7f64c9fb290086fbdc996a0a3b28e99eda85f292f4219e5deb3fc7e15d601a27",
     "src/modules/uvjanimld_rom.c": "57ad2c95299146e0868deca476c5994d28a7d564fef31c9ebbd648cb67395419",
     "src/modules/uvled_rom.c": "32125120859b9bdc683f451f09f4d465720799c314071109dc7fb1d8ed8929e4",
     "src/modules/uvlight_rom.c": "0e2ca76636a9f858763bb46e618ad24113fec2fb18f52fd027623fa70877d3f6",
@@ -310,7 +310,7 @@
     "src/modules/uvsort_rom.c": "6586a894355bb250fdbbefb351b4950d67115b581e1b450d066abc1ae52b06cc",
     "src/modules/uvsprt_rom.c": "c2a97d053dad8ab1ba5aa739bc1eb7b80caef313a2822948431a81a671d5231d",
     "src/modules/uvstring_rom.c": "94b9208341f1faf5aee2e8bd9e6e2c6336878522d977776684d4d7ffa5473720",
-    "src/modules/uvterra_rom.c": "15d7163b720c0d27cd0e164a4ec3c5c05de0e3e493b190dcef6b47c7cd46fae7",
+    "src/modules/uvterra_rom.c": "914c9db5482d7db4b8f3aa7f1718dba32f414df0d558f714c35c8fc980884214",
     "src/modules/uvterrald_rom.c": "4f51d82aed1fc59eefc7e9d161b1d29601c1af7be11b928c5265f14d489d2596",
     "src/modules/uvtexanim_rom.c": "8b77ae8843529d841945f563836072e32c2250faed791948a482b7c34bf61bd5",
     "src/modules/uvtexture_rom.c": "0f5e743d08e8523ecbee7d1a3c7331db9046775d81d2b7457eb025f11cbcfb2c",
@@ -323,14 +323,14 @@
     "src/modules/uvvattr_rom.c": "c9ff1372fd4a3c7686ca29fab9091f468bf172e842c84565ba1b19fd52960604",
     "src/modules/uvvolumeld_rom.c": "ad807fbc68a77a6b5dcc0a7f73393ef93661d6c12b1348132a672704b877d751",
     "src/modules/victory.c": "4bb3ff42b6b1ad90d40c2f18e986a8fc842c89641daee93e0447e531a384a6b1",
-    "src/modules/voltest.c": "3849a9a0b35968f78dfd3df33c877e3c073bb9e47b21b5a2e8d931f6a22c49c5",
+    "src/modules/voltest.c": "6fdea67f4d5d682f15ec873881d8e390e14852c2cdb7d0e71ad613c3aaa7a651",
     "src/modules/weapon.c": "bfde9233aa5a33bdb20c3b1fe4af98345329de47a0936784484c512f18032214",
     "src/profiler.c": "8fe9ef148de0aad3a8fb4b791a9acb652952176c3babd3d0cd5c5b59c9615b0d",
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "bbff4e2e722e8d6120ed2544279892dcf9ada596c0304cee4119400578937a00",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "9cc6424a621037232dd875d848bf7ace0a996dd16b64f07791a723f9f329218e",
-    "docs/VALIDATION_20261006.md": "c6512fa0725e9dab88b9a379bd6603239105d606b1ee6793bd7ca326cee288e7"
+    "docs/STRATEGY_V4.md": "8f10f877c47cc682f5ae2ff15baa78499dca191fc86bdb066e51a7c87d8e3125",
+    "docs/VALIDATION_20261006.md": "d544430ac6255cb0b7fc07dad1793b62fc1bbd9c2091074712a992b16e4e7b07"
   },
   "counts": {
     "address_function": 992,
@@ -340,12 +340,12 @@
     "conditional_draft": 4,
     "decompiler_local": 918,
     "draft_marker": 29,
-    "explicit_unknown": 530,
+    "explicit_unknown": 587,
     "layout_padding": 258,
     "offset_field": 1430,
     "opaque_type": 282,
-    "original_quirk": 106,
-    "uncertainty_note": 99,
+    "original_quirk": 115,
+    "uncertainty_note": 90,
     "unused_identifier": 116
   },
   "items": [
@@ -2384,15 +2384,15 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00407718",
       "lines": [
-        810
+        819
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_ai_00407718",
-          "declaration_line": 810,
+          "declaration_line": 819,
           "lines": [
-            810
+            819
           ]
         }
       ]
@@ -21844,7 +21844,7 @@
       "symbol": "func_uvisect_rom_004024AC",
       "lines": [
         47,
-        776
+        805
       ],
       "owners": [
         {
@@ -21858,9 +21858,9 @@
         {
           "kind": "function",
           "name": "uvIsectQueryMinimumValueRecord",
-          "declaration_line": 763,
+          "declaration_line": 792,
           "lines": [
-            776
+            805
           ]
         }
       ]
@@ -21872,7 +21872,7 @@
       "symbol": "func_uvisect_rom_00402B5C",
       "lines": [
         49,
-        782
+        811
       ],
       "owners": [
         {
@@ -21886,9 +21886,9 @@
         {
           "kind": "function",
           "name": "uvIsectQueryMinimumValueRecord",
-          "declaration_line": 763,
+          "declaration_line": 792,
           "lines": [
-            782
+            811
           ]
         }
       ]
@@ -21900,7 +21900,7 @@
       "symbol": "func_uvisect_rom_00403054",
       "lines": [
         51,
-        788
+        817
       ],
       "owners": [
         {
@@ -21914,9 +21914,9 @@
         {
           "kind": "function",
           "name": "uvIsectQueryMinimumValueRecord",
-          "declaration_line": 763,
+          "declaration_line": 792,
           "lines": [
-            788
+            817
           ]
         }
       ]
@@ -21928,7 +21928,7 @@
       "symbol": "func_uvisect_rom_00405124",
       "lines": [
         86,
-        845
+        874
       ],
       "owners": [
         {
@@ -21942,9 +21942,9 @@
         {
           "kind": "function",
           "name": "uvIsectQueryFilteredSharedRecords",
-          "declaration_line": 830,
+          "declaration_line": 859,
           "lines": [
-            845
+            874
           ]
         }
       ]
@@ -25200,7 +25200,7 @@
       "lines": [
         200,
         563,
-        786
+        795
       ],
       "owners": [
         {
@@ -25214,9 +25214,9 @@
         {
           "kind": "function",
           "name": "aiSetRecordShortClearEnabled",
-          "declaration_line": 785,
+          "declaration_line": 794,
           "lines": [
-            786
+            795
           ]
         },
         {
@@ -25236,15 +25236,15 @@
       "symbol": "D_ai_00408000",
       "lines": [
         201,
-        811
+        820
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_ai_00407718",
-          "declaration_line": 810,
+          "declaration_line": 819,
           "lines": [
-            811
+            820
           ]
         },
         {
@@ -25265,7 +25265,7 @@
       "lines": [
         139,
         689,
-        821
+        830
       ],
       "owners": [
         {
@@ -25279,9 +25279,9 @@
         {
           "kind": "function",
           "name": "aiGetActiveRecordValue9C",
-          "declaration_line": 818,
+          "declaration_line": 827,
           "lines": [
-            821
+            830
           ]
         },
         {
@@ -25400,7 +25400,7 @@
         667,
         703,
         744,
-        778
+        787
       ],
       "owners": [
         {
@@ -25414,9 +25414,9 @@
         {
           "kind": "function",
           "name": "aiGetLinkedRecordTailAddress",
-          "declaration_line": 777,
+          "declaration_line": 786,
           "lines": [
-            778
+            787
           ]
         },
         {
@@ -25463,9 +25463,9 @@
         615,
         616,
         617,
-        795,
-        798,
-        802
+        804,
+        807,
+        811
       ],
       "owners": [
         {
@@ -25481,11 +25481,11 @@
         {
           "kind": "function",
           "name": "aiCountPreviousLinks",
-          "declaration_line": 794,
+          "declaration_line": 803,
           "lines": [
-            795,
-            798,
-            802
+            804,
+            807,
+            811
           ]
         },
         {
@@ -25506,7 +25506,7 @@
       "lines": [
         138,
         688,
-        820
+        829
       ],
       "owners": [
         {
@@ -25520,9 +25520,9 @@
         {
           "kind": "function",
           "name": "aiGetActiveRecordValue9C",
-          "declaration_line": 818,
+          "declaration_line": 827,
           "lines": [
-            820
+            829
           ]
         },
         {
@@ -61551,15 +61551,15 @@
       "symbol": "D_uvisect_rom_004076C4",
       "lines": [
         76,
-        702
+        731
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectFlipRecordVectorTowardPoint",
-          "declaration_line": 669,
+          "declaration_line": 698,
           "lines": [
-            702
+            731
           ]
         },
         {
@@ -61579,15 +61579,15 @@
       "symbol": "D_uvisect_rom_004076DC",
       "lines": [
         55,
-        768
+        797
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueryMinimumValueRecord",
-          "declaration_line": 763,
+          "declaration_line": 792,
           "lines": [
-            768
+            797
           ]
         },
         {
@@ -61607,24 +61607,24 @@
       "symbol": "D_uvisect_rom_004077B8",
       "lines": [
         119,
-        605,
-        616
+        634,
+        645
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectGetSharedScalar",
-          "declaration_line": 604,
+          "declaration_line": 633,
           "lines": [
-            605
+            634
           ]
         },
         {
           "kind": "function",
           "name": "uvIsectSetSharedScalar",
-          "declaration_line": 615,
+          "declaration_line": 644,
           "lines": [
-            616
+            645
           ]
         },
         {
@@ -61644,15 +61644,15 @@
       "symbol": "D_uvisect_rom_004077BC",
       "lines": [
         121,
-        526
+        555
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectSetSharedWordPair",
-          "declaration_line": 522,
+          "declaration_line": 551,
           "lines": [
-            526
+            555
           ]
         },
         {
@@ -61706,15 +61706,15 @@
       "symbol": "D_uvisect_rom_004077D0",
       "lines": [
         97,
-        934
+        963
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectCreateValueRecord",
-          "declaration_line": 930,
+          "declaration_line": 959,
           "lines": [
-            934
+            963
           ]
         },
         {
@@ -61734,28 +61734,28 @@
       "symbol": "D_uvisect_rom_00407820",
       "lines": [
         120,
-        922,
-        934,
-        935,
-        936
+        951,
+        963,
+        964,
+        965
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectCreateValueRecord",
-          "declaration_line": 930,
+          "declaration_line": 959,
           "lines": [
-            934,
-            935,
-            936
+            963,
+            964,
+            965
           ]
         },
         {
           "kind": "function",
           "name": "uvIsectResetValueRecordRegistryCount",
-          "declaration_line": 921,
+          "declaration_line": 950,
           "lines": [
-            922
+            951
           ]
         },
         {
@@ -61836,38 +61836,38 @@
       "lines": [
         117,
         449,
-        536,
-        539,
-        540,
-        550,
-        563,
-        574
+        565,
+        568,
+        569,
+        579,
+        592,
+        603
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectAppendUniqueValue",
-          "declaration_line": 534,
+          "declaration_line": 563,
           "lines": [
-            536,
-            539,
-            540
+            565,
+            568,
+            569
           ]
         },
         {
           "kind": "function",
           "name": "uvIsectGetRegisteredValueAtIndex",
-          "declaration_line": 562,
+          "declaration_line": 591,
           "lines": [
-            563
+            592
           ]
         },
         {
           "kind": "function",
           "name": "uvIsectGetRegisteredValueCount",
-          "declaration_line": 573,
+          "declaration_line": 602,
           "lines": [
-            574
+            603
           ]
         },
         {
@@ -61881,9 +61881,9 @@
         {
           "kind": "function",
           "name": "uvIsectScanRegisteredValues",
-          "declaration_line": 548,
+          "declaration_line": 577,
           "lines": [
-            550
+            579
           ]
         },
         {
@@ -61904,27 +61904,27 @@
       "lines": [
         116,
         449,
-        537,
-        539,
-        551,
-        566
+        566,
+        568,
+        580,
+        595
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectAppendUniqueValue",
-          "declaration_line": 534,
+          "declaration_line": 563,
           "lines": [
-            537,
-            539
+            566,
+            568
           ]
         },
         {
           "kind": "function",
           "name": "uvIsectGetRegisteredValueAtIndex",
-          "declaration_line": 562,
+          "declaration_line": 591,
           "lines": [
-            566
+            595
           ]
         },
         {
@@ -61938,9 +61938,9 @@
         {
           "kind": "function",
           "name": "uvIsectScanRegisteredValues",
-          "declaration_line": 548,
+          "declaration_line": 577,
           "lines": [
-            551
+            580
           ]
         },
         {
@@ -61960,24 +61960,24 @@
       "symbol": "D_uvisect_rom_00407894",
       "lines": [
         118,
-        583,
-        595
+        612,
+        624
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectGetIndexedQueryPair",
-          "declaration_line": 582,
+          "declaration_line": 611,
           "lines": [
-            583
+            612
           ]
         },
         {
           "kind": "function",
           "name": "uvIsectGetIndexedQueryPairLimit",
-          "declaration_line": 594,
+          "declaration_line": 623,
           "lines": [
-            595
+            624
           ]
         },
         {
@@ -61997,15 +61997,15 @@
       "symbol": "D_uvisect_rom_00407898",
       "lines": [
         107,
-        584
+        613
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectGetIndexedQueryPair",
-          "declaration_line": 582,
+          "declaration_line": 611,
           "lines": [
-            584
+            613
           ]
         },
         {
@@ -62025,15 +62025,15 @@
       "symbol": "D_uvisect_rom_004078B0",
       "lines": [
         101,
-        585
+        614
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectGetIndexedQueryPair",
-          "declaration_line": 582,
+          "declaration_line": 611,
           "lines": [
-            585
+            614
           ]
         },
         {
@@ -62053,15 +62053,15 @@
       "symbol": "D_uvisect_rom_004078C4",
       "lines": [
         122,
-        527
+        556
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectSetSharedWordPair",
-          "declaration_line": 522,
+          "declaration_line": 551,
           "lines": [
-            527
+            556
           ]
         },
         {
@@ -62306,15 +62306,15 @@
       "lines": [
         112,
         295,
-        843
+        872
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueryFilteredSharedRecords",
-          "declaration_line": 830,
+          "declaration_line": 859,
           "lines": [
-            843
+            872
           ]
         },
         {
@@ -62343,15 +62343,15 @@
       "lines": [
         113,
         296,
-        839
+        868
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueryFilteredSharedRecords",
-          "declaration_line": 830,
+          "declaration_line": 859,
           "lines": [
-            839
+            868
           ]
         },
         {
@@ -62380,15 +62380,15 @@
       "lines": [
         114,
         297,
-        841
+        870
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueryFilteredSharedRecords",
-          "declaration_line": 830,
+          "declaration_line": 859,
           "lines": [
-            841
+            870
           ]
         },
         {
@@ -62417,15 +62417,15 @@
       "lines": [
         115,
         298,
-        840
+        869
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueryFilteredSharedRecords",
-          "declaration_line": 830,
+          "declaration_line": 859,
           "lines": [
-            840
+            869
           ]
         },
         {
@@ -62453,15 +62453,15 @@
       "symbol": "D_uvisect_rom_004078F0",
       "lines": [
         81,
-        854
+        883
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueryFilteredSharedRecords",
-          "declaration_line": 830,
+          "declaration_line": 859,
           "lines": [
-            854
+            883
           ]
         },
         {
@@ -62481,15 +62481,15 @@
       "symbol": "D_uvisect_rom_00407A70",
       "lines": [
         82,
-        857
+        886
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueryFilteredSharedRecords",
-          "declaration_line": 830,
+          "declaration_line": 859,
           "lines": [
-            857
+            886
           ]
         },
         {
@@ -62509,15 +62509,15 @@
       "symbol": "D_uvisect_rom_00407EF0",
       "lines": [
         83,
-        860
+        889
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueryFilteredSharedRecords",
-          "declaration_line": 830,
+          "declaration_line": 859,
           "lines": [
-            860
+            889
           ]
         },
         {
@@ -62537,15 +62537,15 @@
       "symbol": "D_uvisect_rom_00408070",
       "lines": [
         84,
-        863
+        892
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueryFilteredSharedRecords",
-          "declaration_line": 830,
+          "declaration_line": 859,
           "lines": [
-            863
+            892
           ]
         },
         {
@@ -62565,15 +62565,15 @@
       "symbol": "D_uvisect_rom_00408130",
       "lines": [
         85,
-        866
+        895
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueryFilteredSharedRecords",
-          "declaration_line": 830,
+          "declaration_line": 859,
           "lines": [
-            866
+            895
           ]
         },
         {
@@ -62634,19 +62634,19 @@
         223,
         481,
         482,
-        701,
-        705,
-        1061,
-        1064
+        730,
+        734,
+        1090,
+        1093
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectFlipRecordVectorTowardPoint",
-          "declaration_line": 669,
+          "declaration_line": 698,
           "lines": [
-            701,
-            705
+            730,
+            734
           ]
         },
         {
@@ -62669,10 +62669,10 @@
         {
           "kind": "function",
           "name": "uvIsectSetIndexedVector",
-          "declaration_line": 1057,
+          "declaration_line": 1086,
           "lines": [
-            1061,
-            1064
+            1090,
+            1093
           ]
         },
         {
@@ -62700,24 +62700,24 @@
       "symbol": "D_uvisect_rom_00408200",
       "lines": [
         15,
-        630,
-        678
+        659,
+        707
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectFlipRecordVectorTowardPoint",
-          "declaration_line": 669,
+          "declaration_line": 698,
           "lines": [
-            678
+            707
           ]
         },
         {
           "kind": "function",
           "name": "uvIsectPackedTriangleTextureByteMatches",
-          "declaration_line": 627,
+          "declaration_line": 656,
           "lines": [
-            630
+            659
           ]
         },
         {
@@ -62738,7 +62738,7 @@
       "lines": [
         6,
         447,
-        631
+        660
       ],
       "owners": [
         {
@@ -62752,9 +62752,9 @@
         {
           "kind": "function",
           "name": "uvIsectPackedTriangleTextureByteMatches",
-          "declaration_line": 627,
+          "declaration_line": 656,
           "lines": [
-            631
+            660
           ]
         },
         {
@@ -73642,7 +73642,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004068A8",
       "lines": [
-        766
+        775
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004068A8.s"
     },
@@ -73652,7 +73652,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004069CC",
       "lines": [
-        768
+        777
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004069CC.s"
     },
@@ -73662,7 +73662,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00406D84",
       "lines": [
-        770
+        779
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00406D84.s"
     },
@@ -73672,7 +73672,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00407054",
       "lines": [
-        772
+        781
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00407054.s"
     },
@@ -73682,7 +73682,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004075B8",
       "lines": [
-        806
+        815
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004075B8.s"
     },
@@ -80842,7 +80842,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_0040344C",
       "lines": [
-        505
+        520
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_0040344C.s"
     },
@@ -80852,7 +80852,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_004036A8",
       "lines": [
-        507
+        536
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004036A8.s"
     },
@@ -80862,7 +80862,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_0040397C",
       "lines": [
-        509
+        538
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_0040397C.s"
     },
@@ -80872,7 +80872,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00403AB4",
       "lines": [
-        511
+        540
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00403AB4.s"
     },
@@ -80882,7 +80882,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00403E94",
       "lines": [
-        656
+        685
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00403E94.s"
     },
@@ -80892,7 +80892,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00404100",
       "lines": [
-        719
+        748
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00404100.s"
     },
@@ -80902,7 +80902,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_0040423C",
       "lines": [
-        729
+        758
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_0040423C.s"
     },
@@ -80912,7 +80912,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_004045A8",
       "lines": [
-        743
+        772
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004045A8.s"
     },
@@ -80922,7 +80922,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00404A7C",
       "lines": [
-        817
+        846
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00404A7C.s"
     },
@@ -80932,7 +80932,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00404ED4",
       "lines": [
-        873
+        902
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00404ED4.s"
     },
@@ -80942,7 +80942,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00405124",
       "lines": [
-        875
+        904
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00405124.s"
     },
@@ -80952,7 +80952,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_004054F4",
       "lines": [
-        877
+        906
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004054F4.s"
     },
@@ -80962,7 +80962,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00405698",
       "lines": [
-        910
+        939
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00405698.s"
     },
@@ -80972,7 +80972,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00405794",
       "lines": [
-        912
+        941
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00405794.s"
     },
@@ -80982,7 +80982,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00405C8C",
       "lines": [
-        914
+        943
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00405C8C.s"
     },
@@ -80992,7 +80992,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00405EDC",
       "lines": [
-        916
+        945
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00405EDC.s"
     },
@@ -81002,7 +81002,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00407250",
       "lines": [
-        941
+        970
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00407250.s"
     },
@@ -81012,7 +81012,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00407554",
       "lines": [
-        1050
+        1079
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00407554.s"
     },
@@ -94711,6 +94711,14 @@
         },
         {
           "kind": "function",
+          "name": "uvDobjExtractJointQuaternionsFromMatrices",
+          "declaration_line": 72,
+          "lines": [
+            72
+          ]
+        },
+        {
+          "kind": "function",
           "name": "uvDobjFindObjectContainingWorldPoint",
           "declaration_line": 62,
           "lines": [
@@ -94851,14 +94859,6 @@
           "declaration_line": 40,
           "lines": [
             40
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvDobjWriteJointMatricesFromQuaternions",
-          "declaration_line": 72,
-          "lines": [
-            72
           ]
         },
         {
@@ -95157,6 +95157,14 @@
         },
         {
           "kind": "function",
+          "name": "uvDobjExtractJointQuaternionsFromMatrices",
+          "declaration_line": 72,
+          "lines": [
+            72
+          ]
+        },
+        {
+          "kind": "function",
           "name": "uvDobjFindObjectContainingWorldPoint",
           "declaration_line": 62,
           "lines": [
@@ -95252,14 +95260,6 @@
           "declaration_line": 40,
           "lines": [
             40
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvDobjWriteJointMatricesFromQuaternions",
-          "declaration_line": 72,
-          "lines": [
-            72
           ]
         }
       ]
@@ -95428,6 +95428,14 @@
         },
         {
           "kind": "function",
+          "name": "uvDobjExtractJointQuaternionsFromMatrices",
+          "declaration_line": 72,
+          "lines": [
+            72
+          ]
+        },
+        {
+          "kind": "function",
           "name": "uvDobjFindObjectContainingWorldPoint",
           "declaration_line": 62,
           "lines": [
@@ -95456,14 +95464,6 @@
           "declaration_line": 74,
           "lines": [
             74
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvDobjWriteJointMatricesFromQuaternions",
-          "declaration_line": 72,
-          "lines": [
-            72
           ]
         }
       ]
@@ -124737,6 +124737,26 @@
       ]
     },
     {
+      "id": "Q-ce476545b009",
+      "kind": "explicit_unknown",
+      "path": "src/modules/ai.c",
+      "symbol": "Count predecessor links at offset 0xC; store and return the shared count. * The input node itself is not counted and is dereferenced before any null check. * RE_UNKNOWN: valid node/link lifetime and null termination need original producers/callers.",
+      "lines": [
+        800
+      ],
+      "evidence": "Count predecessor links at offset 0xC; store and return the shared count. * The input node itself is not counted and is dereferenced before any null check. * RE_UNKNOWN: valid node/link lifetime and null termination need original producers/callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "aiCountPreviousLinks",
+          "declaration_line": 803,
+          "lines": [
+            800
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-11ab87384baf",
       "kind": "explicit_unknown",
       "path": "src/modules/ai.c",
@@ -124856,16 +124876,16 @@
       "path": "src/modules/ai.c",
       "symbol": "Return the shared linked-record tail word; retain the existing s32 address ABI. * RE_UNKNOWN: ownership/lifetime guarantees need original callers and list teardown evidence.",
       "lines": [
-        775
+        784
       ],
       "evidence": "Return the shared linked-record tail word; retain the existing s32 address ABI. * RE_UNKNOWN: ownership/lifetime guarantees need original callers and list teardown evidence.",
       "owners": [
         {
           "kind": "function",
           "name": "aiGetLinkedRecordTailAddress",
-          "declaration_line": 777,
+          "declaration_line": 786,
           "lines": [
-            775
+            784
           ]
         }
       ]
@@ -124936,16 +124956,16 @@
       "path": "src/modules/ai.c",
       "symbol": "Store the caller word without boolean normalization. Original func_ai_00402028 uses nonzero to bypass both difference bounds and choose adjustment 9 instead of 4.5. RE_UNKNOWN: shared-word ownership, lifetime and other consumers require caller/export evidence.",
       "lines": [
-        809
+        818
       ],
       "evidence": "Store the caller word without boolean normalization. Original func_ai_00402028 uses nonzero to bypass both difference bounds and choose adjustment 9 instead of 4.5. RE_UNKNOWN: shared-word ownership, lifetime and other consumers require caller/export evidence.",
       "owners": [
         {
           "kind": "function",
           "name": "func_ai_00407718",
-          "declaration_line": 810,
+          "declaration_line": 819,
           "lines": [
-            809
+            818
           ]
         }
       ]
@@ -125036,16 +125056,16 @@
       "path": "src/modules/ai.c",
       "symbol": "aiGetActiveRecordValue9C: return active field 0x9C or -1; compare low-u16 index with signed count. * RE_UNKNOWN: count-backed array extent and index domains need allocation/count writers and callers.",
       "lines": [
-        816
+        825
       ],
       "evidence": "aiGetActiveRecordValue9C: return active field 0x9C or -1; compare low-u16 index with signed count. * RE_UNKNOWN: count-backed array extent and index domains need allocation/count writers and callers.",
       "owners": [
         {
           "kind": "function",
           "name": "aiGetActiveRecordValue9C",
-          "declaration_line": 818,
+          "declaration_line": 827,
           "lines": [
-            816
+            825
           ]
         }
       ]
@@ -125106,6 +125126,26 @@
           "declaration_line": 732,
           "lines": [
             725
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-10586ed0e75a",
+      "kind": "explicit_unknown",
+      "path": "src/modules/ai.c",
+      "symbol": "func_ai_004068A8 transforms vector 0xE8 into 0x100 through FMTX slots 0x40/0xB0, then * TDATA slot 0x08 refreshes query 0xC8 and slot 0x5C consumes its four-byte signed-halfword key. * Preserve positive-test magnitude and float grouping; ordered threshold calls helper 0x3448, * and distinct then/else paths call helper 0x6400 with the same state. * RE_UNKNOWN: query domains, returned-record validity, scalar units and state/export * lifetime need original track producers, callers and teardown evidence. * Clean C matches all 292-byte instruction positions except six frame/local-home * words; all 11 complete ordered relocations match. Retain original assembly.",
+      "lines": [
+        766
+      ],
+      "evidence": "func_ai_004068A8 transforms vector 0xE8 into 0x100 through FMTX slots 0x40/0xB0, then * TDATA slot 0x08 refreshes query 0xC8 and slot 0x5C consumes its four-byte signed-halfword key. * Preserve positive-test magnitude and float grouping; ordered threshold calls helper 0x3448, * and distinct then/else paths call helper 0x6400 with the same state. * RE_UNKNOWN: query domains, returned-record validity, scalar units and state/export * lifetime need original track producers, callers and teardown evidence. * Clean C matches all 292-byte instruction positions except six frame/local-home * words; all 11 complete ordered relocations match. Retain original assembly.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_ai_004068A8",
+          "declaration_line": 775,
+          "lines": [
+            766
           ]
         }
       ]
@@ -125309,6 +125349,26 @@
       ]
     },
     {
+      "id": "Q-ee8ccea5326e",
+      "kind": "explicit_unknown",
+      "path": "src/modules/battle.c",
+      "symbol": "Build an identity matrix with the indexed battle-table translation, * assign it to object matrix slot zero, select mode two and clear flag bit one. * RE_UNKNOWN: translation index and handle validity/lifetime need original producers/callers.",
+      "lines": [
+        438
+      ],
+      "evidence": "Build an identity matrix with the indexed battle-table translation, * assign it to object matrix slot zero, select mode two and clear flag bit one. * RE_UNKNOWN: translation index and handle validity/lifetime need original producers/callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "battleApplyIndexedObjectTranslation",
+          "declaration_line": 441,
+          "lines": [
+            438
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-d856819f56f4",
       "kind": "explicit_unknown",
       "path": "src/modules/battle.c",
@@ -125349,6 +125409,26 @@
       ]
     },
     {
+      "id": "Q-449383f6a4a8",
+      "kind": "explicit_unknown",
+      "path": "src/modules/battle.c",
+      "symbol": "Copy a vector into one of two original battle tables and increment * the matching count. Kind one deliberately indexes by shared word C2D8 * while incrementing the separate count at 0x2258; retain that distinction. * RE_UNKNOWN: table capacities and count/index domains need original writers/callers.",
+      "lines": [
+        183
+      ],
+      "evidence": "Copy a vector into one of two original battle tables and increment * the matching count. Kind one deliberately indexes by shared word C2D8 * while incrementing the separate count at 0x2258; retain that distinction. * RE_UNKNOWN: table capacities and count/index domains need original writers/callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "battleStoreVectorByKind",
+          "declaration_line": 187,
+          "lines": [
+            183
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-74d8aa8fefaa",
       "kind": "explicit_unknown",
       "path": "src/modules/battle.c",
@@ -125377,6 +125457,26 @@
         292
       ],
       "evidence": "RE_UNKNOWN: linked field 0x1C supplies a camera scalar; its physical meaning and units require caller/callee evidence."
+    },
+    {
+      "id": "Q-645b93b4af0e",
+      "kind": "explicit_unknown",
+      "path": "src/modules/battle.c",
+      "symbol": "Read the indexed twelve-byte color record and call the primitive * color export; last channel and alpha 0.5 keep their original raw-word ABI. * RE_UNKNOWN: input/index validity and table extent need original producers/callers.",
+      "lines": [
+        559
+      ],
+      "evidence": "Read the indexed twelve-byte color record and call the primitive * color export; last channel and alpha 0.5 keep their original raw-word ABI. * RE_UNKNOWN: input/index validity and table extent need original producers/callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "battleSetIndexedPrimitiveColor",
+          "declaration_line": 562,
+          "lines": [
+            559
+          ]
+        }
+      ]
     },
     {
       "id": "Q-782e3392aca0",
@@ -125414,6 +125514,26 @@
           "declaration_line": 250,
           "lines": [
             243
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-7893c524d959",
+      "kind": "explicit_unknown",
+      "path": "src/modules/bubble.c",
+      "symbol": "Expire the bubble after its start-plus-duration deadline. Otherwise use * normalized age for scale, switch to model 0xE after the original threshold, * update fade alpha, and submit a translated uniform-scale matrix. * RE_UNKNOWN: duration domain and handle lifetime need original initializers/callers.",
+      "lines": [
+        43
+      ],
+      "evidence": "Expire the bubble after its start-plus-duration deadline. Otherwise use * normalized age for scale, switch to model 0xE after the original threshold, * update fade alpha, and submit a translated uniform-scale matrix. * RE_UNKNOWN: duration domain and handle lifetime need original initializers/callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "bubbleUpdateLifetimeAndTransform",
+          "declaration_line": 47,
+          "lines": [
+            43
           ]
         }
       ]
@@ -127414,6 +127534,26 @@
       ]
     },
     {
+      "id": "Q-f4901b4fdb71",
+      "kind": "explicit_unknown",
+      "path": "src/modules/light.c",
+      "symbol": "Allocate the light handle and retain the original scalar defaults. * RE_ORIGINAL_QUIRK: signed-16 handle comparison with 65535 cannot reject -1. * RE_UNKNOWN: exhaustion/reachable handle values need original allocator/callers.",
+      "lines": [
+        69
+      ],
+      "evidence": "Allocate the light handle and retain the original scalar defaults. * RE_ORIGINAL_QUIRK: signed-16 handle comparison with 65535 cannot reject -1. * RE_UNKNOWN: exhaustion/reachable handle values need original allocator/callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "lightInitializeState",
+          "declaration_line": 72,
+          "lines": [
+            69
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-f046aca37346",
       "kind": "explicit_unknown",
       "path": "src/modules/light.c",
@@ -128492,6 +128632,26 @@
       ]
     },
     {
+      "id": "Q-1ed9169a93ea",
+      "kind": "explicit_unknown",
+      "path": "src/modules/motion.c",
+      "symbol": "Find the primary record for a key and optionally query the AI module. * Clear output halfword 0xA when this state is flagged and either lookup * succeeds, or when the primary referenced state is flagged; retain signed sentinels. * RE_UNKNOWN: returned-record/state validity and lifetime need original providers/callers.",
+      "lines": [
+        268
+      ],
+      "evidence": "Find the primary record for a key and optionally query the AI module. * Clear output halfword 0xA when this state is flagged and either lookup * succeeds, or when the primary referenced state is flagged; retain signed sentinels. * RE_UNKNOWN: returned-record/state validity and lifetime need original providers/callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "motionClearValueForFlaggedLookup",
+          "declaration_line": 272,
+          "lines": [
+            268
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-664857950258",
       "kind": "explicit_unknown",
       "path": "src/modules/motion.c",
@@ -128648,6 +128808,26 @@
       ]
     },
     {
+      "id": "Q-19e7a2ccf59f",
+      "kind": "explicit_unknown",
+      "path": "src/modules/motion.c",
+      "symbol": "Select one of the original 0x1C-byte point records, compute angular * cross offset plus linear velocity, then transform by matrix 0x5E8. * RE_UNKNOWN: index bounds for tables at 0x728/0x71C need original state/selector producers.",
+      "lines": [
+        481
+      ],
+      "evidence": "Select one of the original 0x1C-byte point records, compute angular * cross offset plus linear velocity, then transform by matrix 0x5E8. * RE_UNKNOWN: index bounds for tables at 0x728/0x71C need original state/selector producers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "motionTransformSelectedPointVelocity",
+          "declaration_line": 484,
+          "lines": [
+            481
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-4ecb1d59cd8d",
       "kind": "explicit_unknown",
       "path": "src/modules/motion.c",
@@ -128768,6 +128948,26 @@
       ]
     },
     {
+      "id": "Q-db8a883e9db2",
+      "kind": "explicit_unknown",
+      "path": "src/modules/mult1.c",
+      "symbol": "Unload letter, powerup and weapon, then clear their export pointers. * RE_UNKNOWN: shared ownership/lifetime need original loader/reload/teardown callers.",
+      "lines": [
+        28
+      ],
+      "evidence": "Unload letter, powerup and weapon, then clear their export pointers. * RE_UNKNOWN: shared ownership/lifetime need original loader/reload/teardown callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "mult1ReleaseItemModules",
+          "declaration_line": 30,
+          "lines": [
+            28
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-3bfe189de5ae",
       "kind": "explicit_unknown",
       "path": "src/modules/mult2.c",
@@ -128783,6 +128983,26 @@
           "declaration_line": 46,
           "lines": [
             41
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-62a20a521270",
+      "kind": "explicit_unknown",
+      "path": "src/modules/mult2.c",
+      "symbol": "Unload letter, powerup and weapon, then clear their export pointers. * RE_UNKNOWN: shared ownership/lifetime need original loader/reload/teardown callers.",
+      "lines": [
+        28
+      ],
+      "evidence": "Unload letter, powerup and weapon, then clear their export pointers. * RE_UNKNOWN: shared ownership/lifetime need original loader/reload/teardown callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "mult2ReleaseItemModules",
+          "declaration_line": 30,
+          "lines": [
+            28
           ]
         }
       ]
@@ -128808,6 +129028,26 @@
       ]
     },
     {
+      "id": "Q-059ff4a45f18",
+      "kind": "explicit_unknown",
+      "path": "src/modules/mult3.c",
+      "symbol": "Unload letter, powerup and weapon, then clear their export pointers. * RE_UNKNOWN: shared ownership/lifetime need original loader/reload/teardown callers.",
+      "lines": [
+        27
+      ],
+      "evidence": "Unload letter, powerup and weapon, then clear their export pointers. * RE_UNKNOWN: shared ownership/lifetime need original loader/reload/teardown callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "mult3ReleaseItemModules",
+          "declaration_line": 29,
+          "lines": [
+            27
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-0285008cad57",
       "kind": "explicit_unknown",
       "path": "src/modules/mult4.c",
@@ -128823,6 +129063,26 @@
           "declaration_line": 45,
           "lines": [
             40
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-7899c1c12d32",
+      "kind": "explicit_unknown",
+      "path": "src/modules/mult4.c",
+      "symbol": "Unload letter, powerup and weapon, then clear their export pointers. * RE_UNKNOWN: shared ownership/lifetime need original loader/reload/teardown callers.",
+      "lines": [
+        27
+      ],
+      "evidence": "Unload letter, powerup and weapon, then clear their export pointers. * RE_UNKNOWN: shared ownership/lifetime need original loader/reload/teardown callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "mult4ReleaseItemModules",
+          "declaration_line": 29,
+          "lines": [
+            27
           ]
         }
       ]
@@ -129282,6 +129542,26 @@
           "declaration_line": 405,
           "lines": [
             404
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-4b1ebf4227aa",
+      "kind": "explicit_unknown",
+      "path": "src/modules/pause.c",
+      "symbol": "Select the indexed pause-menu descriptor and its node, update the * player-dependent options and sound state, then set six menu-refresh bytes. * RE_UNKNOWN: descriptor index/table validity need original producers and callers.",
+      "lines": [
+        145
+      ],
+      "evidence": "Select the indexed pause-menu descriptor and its node, update the * player-dependent options and sound state, then set six menu-refresh bytes. * RE_UNKNOWN: descriptor index/table validity need original producers and callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "pauseActivateIndexedMenu",
+          "declaration_line": 148,
+          "lines": [
+            145
           ]
         }
       ]
@@ -129831,6 +130111,26 @@
           "declaration_line": 142,
           "lines": [
             133
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-3cf5f9a21720",
+      "kind": "explicit_unknown",
+      "path": "src/modules/rain.c",
+      "symbol": "Allocate/prepend the kind-one rain command in original field order; scalar meanings stay unresolved. * RE_UNKNOWN: allocation-result validity and list lifetime need original allocator/caller/teardown evidence.",
+      "lines": [
+        159
+      ],
+      "evidence": "Allocate/prepend the kind-one rain command in original field order; scalar meanings stay unresolved. * RE_UNKNOWN: allocation-result validity and list lifetime need original allocator/caller/teardown evidence.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "rainPrependKindOneCommand",
+          "declaration_line": 161,
+          "lines": [
+            159
           ]
         }
       ]
@@ -130593,6 +130893,26 @@
       ]
     },
     {
+      "id": "Q-04804cabf7cb",
+      "kind": "explicit_unknown",
+      "path": "src/modules/scrn.c",
+      "symbol": "Select the original 0x46-byte screen geometry record, set its fill * color with alpha one and append a full-screen viewport. Submit the base * geometry when selected halfword 0x4 is nonzero, then submit the selected * record. RE_UNKNOWN: selection/table/list-count bounds need original writers/callers.",
+      "lines": [
+        125
+      ],
+      "evidence": "Select the original 0x46-byte screen geometry record, set its fill * color with alpha one and append a full-screen viewport. Submit the base * geometry when selected halfword 0x4 is nonzero, then submit the selected * record. RE_UNKNOWN: selection/table/list-count bounds need original writers/callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "scrnDrawSelectedGeometry",
+          "declaration_line": 129,
+          "lines": [
+            125
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-bce0be5acb27",
       "kind": "explicit_unknown",
       "path": "src/modules/scrn.c",
@@ -130748,6 +131068,26 @@
           "declaration_line": 2791,
           "lines": [
             2787
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-c2adba0c2b33",
+      "kind": "explicit_unknown",
+      "path": "src/modules/selection.c",
+      "symbol": "Mark shared state, clear words 0x16/0x2A and reset the nested word if 1 or 2. * RE_UNKNOWN: required non-null nested chain, allocation/lifetime and word meanings * need original state producers and callers; preserve the observed stores.",
+      "lines": [
+        3136
+      ],
+      "evidence": "Mark shared state, clear words 0x16/0x2A and reset the nested word if 1 or 2. * RE_UNKNOWN: required non-null nested chain, allocation/lifetime and word meanings * need original state producers and callers; preserve the observed stores.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "selectionResetTransientWords",
+          "declaration_line": 3139,
+          "lines": [
+            3136
           ]
         }
       ]
@@ -131031,6 +131371,26 @@
       ]
     },
     {
+      "id": "Q-8d6e6c2c3d2e",
+      "kind": "explicit_unknown",
+      "path": "src/modules/selection.c",
+      "symbol": "Store the 16-bit value and active flag in the indexed 0x34-byte record. * RE_UNKNOWN: index/table extent need original producers/callers; context is unused.",
+      "lines": [
+        2541
+      ],
+      "evidence": "Store the 16-bit value and active flag in the indexed 0x34-byte record. * RE_UNKNOWN: index/table extent need original producers/callers; context is unused.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "selectionSetRecordValueAndActivate",
+          "declaration_line": 2543,
+          "lines": [
+            2541
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-2e6cec2f7888",
       "kind": "explicit_unknown",
       "path": "src/modules/selection.c",
@@ -131212,6 +131572,26 @@
       ]
     },
     {
+      "id": "Q-ef757a09bcdf",
+      "kind": "explicit_unknown",
+      "path": "src/modules/snd.c",
+      "symbol": "Read the stored sample-rate field at the supplied soundId. * RE_UNKNOWN: metadata-table/index validity need original table producers and callers.",
+      "lines": [
+        1145
+      ],
+      "evidence": "Read the stored sample-rate field at the supplied soundId. * RE_UNKNOWN: metadata-table/index validity need original table producers and callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "sndGetSoundSampleRate",
+          "declaration_line": 1147,
+          "lines": [
+            1145
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-63117867396a",
       "kind": "explicit_unknown",
       "path": "src/modules/sparks.c",
@@ -131252,6 +131632,26 @@
       ]
     },
     {
+      "id": "Q-a770d90e8e5f",
+      "kind": "explicit_unknown",
+      "path": "src/modules/tdata.c",
+      "symbol": "Adjust only lower<=0 to zero and upper>=count-1 to count-1; center is unchanged. * Return upper-lower after handle conversion. RE_UNKNOWN: valid index/count/width * and output/alias domains need original callers, count producers and converters.",
+      "lines": [
+        252
+      ],
+      "evidence": "Adjust only lower<=0 to zero and upper>=count-1 to count-1; center is unchanged. * Return upper-lower after handle conversion. RE_UNKNOWN: valid index/count/width * and output/alias domains need original callers, count producers and converters.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "tdataGetClampedHandleWindow",
+          "declaration_line": 255,
+          "lines": [
+            252
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-64f735bb3c89",
       "kind": "explicit_unknown",
       "path": "src/modules/tdata.c",
@@ -131267,6 +131667,26 @@
           "declaration_line": 438,
           "lines": [
             425
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-d5cefeae1817",
+      "kind": "explicit_unknown",
+      "path": "src/modules/tdata.c",
+      "symbol": "Convert the handle; read the float at index when index<count, else return zero. * RE_UNKNOWN: negative-index exclusion and readable array/count domains need * original handle converters, storage producers and every caller; no lower guard.",
+      "lines": [
+        321
+      ],
+      "evidence": "Convert the handle; read the float at index when index<count, else return zero. * RE_UNKNOWN: negative-index exclusion and readable array/count domains need * original handle converters, storage producers and every caller; no lower guard.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "tdataGetLinearRecordValue",
+          "declaration_line": 324,
+          "lines": [
+            321
           ]
         }
       ]
@@ -131598,6 +132018,26 @@
       ]
     },
     {
+      "id": "Q-c8dad470606f",
+      "kind": "explicit_unknown",
+      "path": "src/modules/ted.c",
+      "symbol": "If selection>=0, store the editor byte at selected 0x2C record offset one. * RE_UNKNOWN: upper index/storage bounds need original selection producers and callers.",
+      "lines": [
+        470
+      ],
+      "evidence": "If selection>=0, store the editor byte at selected 0x2C record offset one. * RE_UNKNOWN: upper index/storage bounds need original selection producers and callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "tedStoreSelectedRecordByte",
+          "declaration_line": 472,
+          "lines": [
+            470
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-4eee4455607f",
       "kind": "explicit_unknown",
       "path": "src/modules/ted.c",
@@ -131698,6 +132138,26 @@
       ]
     },
     {
+      "id": "Q-21af2966c8dd",
+      "kind": "explicit_unknown",
+      "path": "src/modules/ted.c",
+      "symbol": "Reset and clear 80 record pointers, then count/selection; ignore a null pool. * RE_UNKNOWN: node/GUI ownership/lifetime need original producers and teardown callers.",
+      "lines": [
+        549
+      ],
+      "evidence": "Reset and clear 80 record pointers, then count/selection; ignore a null pool. * RE_UNKNOWN: node/GUI ownership/lifetime need original producers and teardown callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "tedResetRecordPool",
+          "declaration_line": 551,
+          "lines": [
+            549
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-e549fd6e2406",
       "kind": "explicit_unknown",
       "path": "src/modules/ted.c",
@@ -131733,6 +132193,26 @@
           "declaration_line": 210,
           "lines": [
             207
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-25a919aa1ee9",
+      "kind": "explicit_unknown",
+      "path": "src/modules/ted.c",
+      "symbol": "Write the one-byte header followed by count8C records of 0x2C bytes. * Reload shared count/base after each callback; write statuses are ignored. * RE_UNKNOWN: record/count bounds and status handling need original producers/callers.",
+      "lines": [
+        305
+      ],
+      "evidence": "Write the one-byte header followed by count8C records of 0x2C bytes. * Reload shared count/base after each callback; write statuses are ignored. * RE_UNKNOWN: record/count bounds and status handling need original producers/callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "tedWriteSelectedRecords",
+          "declaration_line": 308,
+          "lines": [
+            305
           ]
         }
       ]
@@ -131873,6 +132353,26 @@
           "declaration_line": 42,
           "lines": [
             37
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-2d3c8f89b417",
+      "kind": "explicit_unknown",
+      "path": "src/modules/triganim.c",
+      "symbol": "Allocate/prepend the original 0x94-byte node, copy both matrices and attach * its model/object. Modes zero/two set object flags three; mode one clears them. * Scalar 0x80 and mode meanings remain unresolved. * RE_ORIGINAL_QUIRK: negative-only object failure test does not reject provider's 0xFFFF. * RE_UNKNOWN: exhaustion reachability, node allocation/lifetime need original callers/allocator.",
+      "lines": [
+        123
+      ],
+      "evidence": "Allocate/prepend the original 0x94-byte node, copy both matrices and attach * its model/object. Modes zero/two set object flags three; mode one clears them. * Scalar 0x80 and mode meanings remain unresolved. * RE_ORIGINAL_QUIRK: negative-only object failure test does not reject provider's 0xFFFF. * RE_UNKNOWN: exhaustion reachability, node allocation/lifetime need original callers/allocator.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "triganimCreateTransformNode",
+          "declaration_line": 128,
+          "lines": [
+            123
           ]
         }
       ]
@@ -132154,6 +132654,46 @@
       ]
     },
     {
+      "id": "Q-0605e016f2e8",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvaudiomgr_rom.c",
+      "symbol": "Store shared effects volume. RE_UNKNOWN: accepted range/units need original callers and audio consumers.",
+      "lines": [
+        620
+      ],
+      "evidence": "Store shared effects volume. RE_UNKNOWN: accepted range/units need original callers and audio consumers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvAudioMgrSetEffectsVolume",
+          "declaration_line": 621,
+          "lines": [
+            620
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-cba003bd64a1",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvaudiomgr_rom.c",
+      "symbol": "Store shared sequence volume. RE_UNKNOWN: accepted range/units need original callers and audio consumers.",
+      "lines": [
+        634
+      ],
+      "evidence": "Store shared sequence volume. RE_UNKNOWN: accepted range/units need original callers and audio consumers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvAudioMgrSetSequenceVolume",
+          "declaration_line": 635,
+          "lines": [
+            634
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-c2193f21b0fb",
       "kind": "explicit_unknown",
       "path": "src/modules/uvblit_rom.c",
@@ -132169,6 +132709,26 @@
           "declaration_line": 51,
           "lines": [
             56
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-de67a7431f15",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvchannel_rom.c",
+      "symbol": "Read property/output pairs until zero, after the original channel-range guard. * Copy scalar/matrix/vector data or expose the four vector-array addresses. * RE_UNKNOWN: output extents/types, termination and array lifetime need callers/producers.",
+      "lines": [
+        132
+      ],
+      "evidence": "Read property/output pairs until zero, after the original channel-range guard. * Copy scalar/matrix/vector data or expose the four vector-array addresses. * RE_UNKNOWN: output extents/types, termination and array lifetime need callers/producers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvChannelGetProperties",
+          "declaration_line": 135,
+          "lines": [
+            132
           ]
         }
       ]
@@ -132394,6 +132954,66 @@
       ]
     },
     {
+      "id": "Q-26d9b998bee6",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdobj_rom.c",
+      "symbol": "Extract quaternions from nonroot object matrices and write one-based joint * indices. Return max(model joint count - 1, 0). RE_UNKNOWN: object/model validity * and output capacity/lifetime; trace original constructors and callers.",
+      "lines": [
+        1478
+      ],
+      "evidence": "Extract quaternions from nonroot object matrices and write one-based joint * indices. Return max(model joint count - 1, 0). RE_UNKNOWN: object/model validity * and output capacity/lifetime; trace original constructors and callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDobjExtractJointQuaternionsFromMatrices",
+          "declaration_line": 1481,
+          "lines": [
+            1478
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-d3b85ef34e35",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdobj_rom.c",
+      "symbol": "For a nonnegative object index and nonsentinel model ID, update the * model only when it differs and is loaded. The upper index is unchecked. * RE_UNKNOWN: valid object-index domain; trace original callers and allocation.",
+      "lines": [
+        268
+      ],
+      "evidence": "For a nonnegative object index and nonsentinel model ID, update the * model only when it differs and is loaded. The upper index is unchecked. * RE_UNKNOWN: valid object-index domain; trace original callers and allocation.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDobjSetLoadedModel",
+          "declaration_line": 271,
+          "lines": [
+            268
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-5e1e46cca303",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdobj_rom.c",
+      "symbol": "Store 1.0f / scalar in the object-indexed array without input checks. * RE_UNKNOWN: index bounds and divisor domain; trace original callers/storage.",
+      "lines": [
+        724
+      ],
+      "evidence": "Store 1.0f / scalar in the object-indexed array without input checks. * RE_UNKNOWN: index bounds and divisor domain; trace original callers/storage.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDobjSetReciprocalScalar",
+          "declaration_line": 726,
+          "lines": [
+            724
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-5d3f25a17b37",
       "kind": "explicit_unknown",
       "path": "src/modules/uvdyn_rom.c",
@@ -132409,6 +133029,26 @@
           "declaration_line": 1642,
           "lines": [
             1622
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-109dbc6253eb",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdyn_rom.c",
+      "symbol": "Apply the recorded row permutation, forward substitution and backward * triangular solve in place, preserving zero-based indices and overwrite order. * RE_UNKNOWN: permutation bounds and nonzero factor diagonals; trace original * factorization producers and callers before asserting valid-input guarantees.",
+      "lines": [
+        592
+      ],
+      "evidence": "Apply the recorded row permutation, forward substitution and backward * triangular solve in place, preserving zero-based indices and overwrite order. * RE_UNKNOWN: permutation bounds and nonzero factor diagonals; trace original * factorization producers and callers before asserting valid-input guarantees.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDynSolveFactoredSystemInPlace",
+          "declaration_line": 596,
+          "lines": [
+            592
           ]
         }
       ]
@@ -132434,6 +133074,26 @@
       ]
     },
     {
+      "id": "Q-c927424a7e0b",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdyn_rom.c",
+      "symbol": "Copy the indexed first-bank key/value, unsigned kind and vector outputs. * Null state or index at/above the live count leaves every output unchanged. * RE_UNKNOWN: count validity for the four observed slots and key/value/kind * meanings; trace bank producers and original callers before assuming bounds.",
+      "lines": [
+        1249
+      ],
+      "evidence": "Copy the indexed first-bank key/value, unsigned kind and vector outputs. * Null state or index at/above the live count leaves every output unchanged. * RE_UNKNOWN: count validity for the four observed slots and key/value/kind * meanings; trace bank producers and original callers before assuming bounds.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDynGetFirstParameterEntry",
+          "declaration_line": 1253,
+          "lines": [
+            1249
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-659d7e8573a1",
       "kind": "explicit_unknown",
       "path": "src/modules/uvdyn_rom.c",
@@ -132449,6 +133109,26 @@
           "declaration_line": 904,
           "lines": [
             897
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-da017c1d3b72",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdyn_rom.c",
+      "symbol": "Copy the second-bank key/value/kind and payload vector/words. Null state * or index at/above count leaves outputs unchanged; preserve payload reloads. * RE_UNKNOWN: four-slot count validity and payload lifetime/aliasing; trace * bank producers and callers before treating those input guarantees as proven.",
+      "lines": [
+        1312
+      ],
+      "evidence": "Copy the second-bank key/value/kind and payload vector/words. Null state * or index at/above count leaves outputs unchanged; preserve payload reloads. * RE_UNKNOWN: four-slot count validity and payload lifetime/aliasing; trace * bank producers and callers before treating those input guarantees as proven.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDynGetSecondParameterEntry",
+          "declaration_line": 1316,
+          "lines": [
+            1312
           ]
         }
       ]
@@ -132854,6 +133534,106 @@
       ]
     },
     {
+      "id": "Q-9fb724914b4b",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvemitter_rom.c",
+      "symbol": "Copy voice-list sound IDs/playback volumes to non-null outputs; return count. * RE_UNKNOWN: count/voice-map bounds and output extents need producers and callers.",
+      "lines": [
+        1156
+      ],
+      "evidence": "Copy voice-list sound IDs/playback volumes to non-null outputs; return count. * RE_UNKNOWN: count/voice-map bounds and output extents need producers and callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvEmitterGetPlayingSoundsAndVolumes",
+          "declaration_line": 1158,
+          "lines": [
+            1156
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-dfe2f848092a",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvemitter_rom.c",
+      "symbol": "Read UVSX .CTL/.TBL, relocate the copied bank, select the first instrument * and allocate player voices. RE_UNKNOWN: file/tag/bank extents, allocation * success and data lifetime need original assets, loader contracts and callers.",
+      "lines": [
+        1071
+      ],
+      "evidence": "Read UVSX .CTL/.TBL, relocate the copied bank, select the first instrument * and allocate player voices. RE_UNKNOWN: file/tag/bank extents, allocation * success and data lifetime need original assets, loader contracts and callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvEmitterLoadSoundBank",
+          "declaration_line": 1074,
+          "lines": [
+            1071
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-601698038101",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvemitter_rom.c",
+      "symbol": "Return manual pan using the unchecked byte emitter index. RE_UNKNOWN: * valid index/backing extent need original emitter allocation and callers.",
+      "lines": [
+        495
+      ],
+      "evidence": "Return manual pan using the unchecked byte emitter index. RE_UNKNOWN: * valid index/backing extent need original emitter allocation and callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvEmitterGetPan",
+          "declaration_line": 497,
+          "lines": [
+            495
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-f1de3caa7b39",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvemitter_rom.c",
+      "symbol": "Return stored pitch using the unchecked index. RE_UNKNOWN: index/backing extent need allocation and callers.",
+      "lines": [
+        521
+      ],
+      "evidence": "Return stored pitch using the unchecked index. RE_UNKNOWN: index/backing extent need allocation and callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvEmitterGetPitch",
+          "declaration_line": 522,
+          "lines": [
+            521
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-bc5522f9d4ab",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvemitter_rom.c",
+      "symbol": "Store the address used for the 0xFF-terminated low-volume sound list. * RE_UNKNOWN: ownership, lifetime and termination need list producers/users and teardown.",
+      "lines": [
+        1224
+      ],
+      "evidence": "Store the address used for the 0xFF-terminated low-volume sound list. * RE_UNKNOWN: ownership, lifetime and termination need list producers/users and teardown.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvEmitterSetQuietSoundList",
+          "declaration_line": 1226,
+          "lines": [
+            1224
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-1b77db6e93d7",
       "kind": "explicit_unknown",
       "path": "src/modules/uvenv_rom.c",
@@ -133154,6 +133934,106 @@
       ]
     },
     {
+      "id": "Q-2af4cd032849",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvgui_rom.c",
+      "symbol": "Claim the first inactive 0x170-byte slot among 50 scanned entries. * RE_ORIGINAL_QUIRK: if all scanned entries are active, mark entry 50 active * and return 50. RE_UNKNOWN: backing extent, exhaustion reachability and * widget role need original pool layout, slot users and allocation callers.",
+      "lines": [
+        450
+      ],
+      "evidence": "Claim the first inactive 0x170-byte slot among 50 scanned entries. * RE_ORIGINAL_QUIRK: if all scanned entries are active, mark entry 50 active * and return 50. RE_UNKNOWN: backing extent, exhaustion reachability and * widget role need original pool layout, slot users and allocation callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvGuiAllocatePool170Slot",
+          "declaration_line": 454,
+          "lines": [
+            450
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-c94aad97bab1",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvgui_rom.c",
+      "symbol": "Claim the first inactive 0x34-byte slot among 120 scanned entries. * RE_ORIGINAL_QUIRK: if all scanned entries are active, mark entry 120 active * and return 120. RE_UNKNOWN: backing extent, exhaustion reachability and * widget role need original pool layout, slot users and allocation callers.",
+      "lines": [
+        207
+      ],
+      "evidence": "Claim the first inactive 0x34-byte slot among 120 scanned entries. * RE_ORIGINAL_QUIRK: if all scanned entries are active, mark entry 120 active * and return 120. RE_UNKNOWN: backing extent, exhaustion reachability and * widget role need original pool layout, slot users and allocation callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvGuiAllocatePool34Slot",
+          "declaration_line": 211,
+          "lines": [
+            207
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-da415d21aed7",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvgui_rom.c",
+      "symbol": "Claim the first inactive 0x48-byte slot among 135 scanned entries. * RE_ORIGINAL_QUIRK: if all scanned entries are active, mark entry 135 active * and return 135. RE_UNKNOWN: backing extent, exhaustion reachability and * widget role need original pool layout, slot users and allocation callers.",
+      "lines": [
+        660
+      ],
+      "evidence": "Claim the first inactive 0x48-byte slot among 135 scanned entries. * RE_ORIGINAL_QUIRK: if all scanned entries are active, mark entry 135 active * and return 135. RE_UNKNOWN: backing extent, exhaustion reachability and * widget role need original pool layout, slot users and allocation callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvGuiAllocatePool48Slot",
+          "declaration_line": 664,
+          "lines": [
+            660
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-9a5dbe1f7830",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvgui_rom.c",
+      "symbol": "Claim the first inactive 0x4C-byte slot among 10 scanned entries. * RE_ORIGINAL_QUIRK: if all scanned entries are active, mark entry 10 active * and return 10. RE_UNKNOWN: backing extent, exhaustion reachability and * widget role need original pool layout, slot users and allocation callers.",
+      "lines": [
+        906
+      ],
+      "evidence": "Claim the first inactive 0x4C-byte slot among 10 scanned entries. * RE_ORIGINAL_QUIRK: if all scanned entries are active, mark entry 10 active * and return 10. RE_UNKNOWN: backing extent, exhaustion reachability and * widget role need original pool layout, slot users and allocation callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvGuiAllocatePool4CSlot",
+          "declaration_line": 910,
+          "lines": [
+            906
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-169f2064b37c",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvgui_rom.c",
+      "symbol": "Claim the first inactive 0x90-byte slot among 20 scanned entries. * RE_ORIGINAL_QUIRK: if all scanned entries are active, mark entry 20 active * and return 20. RE_UNKNOWN: backing extent, exhaustion reachability and * widget role need original pool layout, slot users and allocation callers.",
+      "lines": [
+        783
+      ],
+      "evidence": "Claim the first inactive 0x90-byte slot among 20 scanned entries. * RE_ORIGINAL_QUIRK: if all scanned entries are active, mark entry 20 active * and return 20. RE_UNKNOWN: backing extent, exhaustion reachability and * widget role need original pool layout, slot users and allocation callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvGuiAllocatePool90Slot",
+          "declaration_line": 787,
+          "lines": [
+            783
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-528d34797e84",
       "kind": "explicit_unknown",
       "path": "src/modules/uvgui_rom.c",
@@ -133194,6 +134074,26 @@
       ]
     },
     {
+      "id": "Q-78f5392cf18f",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvgui_rom.c",
+      "symbol": "Draw the text-list panel in states 1 and 2; state 1 hides children. * State 2 visits child references; re-read state/count after drawing callbacks. * Four-byte child entries have no local bound. RE_UNKNOWN: child ownership, * lifetime and count-backed extent need original writers, callers and teardown.",
+      "lines": [
+        561
+      ],
+      "evidence": "Draw the text-list panel in states 1 and 2; state 1 hides children. * State 2 visits child references; re-read state/count after drawing callbacks. * Four-byte child entries have no local bound. RE_UNKNOWN: child ownership, * lifetime and count-backed extent need original writers, callers and teardown.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvGuiDrawTextList",
+          "declaration_line": 565,
+          "lines": [
+            561
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-751f91c38137",
       "kind": "explicit_unknown",
       "path": "src/modules/uvgui_rom.c",
@@ -133209,6 +134109,146 @@
           "declaration_line": 610,
           "lines": [
             619
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-a3f44b81b48c",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvgui_rom.c",
+      "symbol": "Return the signed-index slot in the original 0x170-byte TextList pool. * RE_UNKNOWN: valid index/allocation/lifetime domains need pool writers and callers; no local guard.",
+      "lines": [
+        469
+      ],
+      "evidence": "Return the signed-index slot in the original 0x170-byte TextList pool. * RE_UNKNOWN: valid index/allocation/lifetime domains need pool writers and callers; no local guard.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvGuiGetTextListSlot",
+          "declaration_line": 471,
+          "lines": [
+            469
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-60dfa6a223e9",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvgui_rom.c",
+      "symbol": "Return the signed-index slot in the original 0x34-byte CompactText pool. * RE_UNKNOWN: valid index/allocation/lifetime domains need pool writers and callers; no local guard.",
+      "lines": [
+        226
+      ],
+      "evidence": "Return the signed-index slot in the original 0x34-byte CompactText pool. * RE_UNKNOWN: valid index/allocation/lifetime domains need pool writers and callers; no local guard.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvGuiGetCompactTextSlot",
+          "declaration_line": 228,
+          "lines": [
+            226
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-a65515403b3f",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvgui_rom.c",
+      "symbol": "Return the signed-index slot in the original 0x48-byte UpperText pool. * RE_UNKNOWN: valid index/allocation/lifetime domains need pool writers and callers; no local guard.",
+      "lines": [
+        689
+      ],
+      "evidence": "Return the signed-index slot in the original 0x48-byte UpperText pool. * RE_UNKNOWN: valid index/allocation/lifetime domains need pool writers and callers; no local guard.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvGuiGetUpperTextSlot",
+          "declaration_line": 691,
+          "lines": [
+            689
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-71c41f06e345",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvgui_rom.c",
+      "symbol": "Return the signed-index slot in the original 0x4C-byte LowerText pool. * RE_UNKNOWN: valid index/allocation/lifetime domains need pool writers and callers; no local guard.",
+      "lines": [
+        937
+      ],
+      "evidence": "Return the signed-index slot in the original 0x4C-byte LowerText pool. * RE_UNKNOWN: valid index/allocation/lifetime domains need pool writers and callers; no local guard.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvGuiGetLowerTextSlot",
+          "declaration_line": 939,
+          "lines": [
+            937
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-2da5530393f9",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvgui_rom.c",
+      "symbol": "Return the signed-index slot in the original 0x5C-byte ChildGroup pool. * RE_UNKNOWN: valid index/allocation/lifetime domains need pool writers and callers; no local guard.",
+      "lines": [
+        360
+      ],
+      "evidence": "Return the signed-index slot in the original 0x5C-byte ChildGroup pool. * RE_UNKNOWN: valid index/allocation/lifetime domains need pool writers and callers; no local guard.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvGuiGetChildGroupSlot",
+          "declaration_line": 362,
+          "lines": [
+            360
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-6bd67ad3a29e",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvgui_rom.c",
+      "symbol": "Return the signed-index slot in the original 0x90-byte ValueWidget pool. * RE_UNKNOWN: valid index/allocation/lifetime domains need pool writers and callers; no local guard.",
+      "lines": [
+        821
+      ],
+      "evidence": "Return the signed-index slot in the original 0x90-byte ValueWidget pool. * RE_UNKNOWN: valid index/allocation/lifetime domains need pool writers and callers; no local guard.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvGuiGetValueWidgetSlot",
+          "declaration_line": 823,
+          "lines": [
+            821
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-fcbdba2e49be",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvgui_rom.c",
+      "symbol": "Store the identifier, scalar parameters and optional source address. * Read that source when present, otherwise use the fallback. RE_UNKNOWN: * source/widget extents, ownership and lifetime need setup, users and teardown.",
+      "lines": [
+        842
+      ],
+      "evidence": "Store the identifier, scalar parameters and optional source address. * Read that source when present, otherwise use the fallback. RE_UNKNOWN: * source/widget extents, ownership and lifetime need setup, users and teardown.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvGuiConfigureValueWidget",
+          "declaration_line": 845,
+          "lines": [
+            842
           ]
         }
       ]
@@ -133374,6 +134414,26 @@
       ]
     },
     {
+      "id": "Q-f0d9df9ed10e",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvisect_rom.c",
+      "symbol": "Append accepted TERR query candidates using the actual export at 0x90. * Preserve the cached source pointer/scalar, f32 square and f32 subtraction * before the square-root wrapper. Reload the shared fraction after native * helper 0x404A7C for scaling, then again after vector callbacks for the record * initializer. Capture the auxiliary element address before those callbacks * and read its word after the initializer; reload owner count before increment. * RE_ORIGINAL_QUIRK: every append also initializes the next 0x58-stride record, * including after the final accepted result. A negative provider count still * invokes the auxiliary-array getter before skipping the loop. * RE_UNKNOWN: source scalar units, vector coordinate space, result-word * meanings, record capacity and shared-buffer lifetime/aliasing guarantees. * Trace owner allocation, actual TERR query producers and result consumers to * resolve these contracts. Retain original assembly until clean C reproduces * complete native instructions, buffer read timing and relocation records.",
+      "lines": [
+        505
+      ],
+      "evidence": "Append accepted TERR query candidates using the actual export at 0x90. * Preserve the cached source pointer/scalar, f32 square and f32 subtraction * before the square-root wrapper. Reload the shared fraction after native * helper 0x404A7C for scaling, then again after vector callbacks for the record * initializer. Capture the auxiliary element address before those callbacks * and read its word after the initializer; reload owner count before increment. * RE_ORIGINAL_QUIRK: every append also initializes the next 0x58-stride record, * including after the final accepted result. A negative provider count still * invokes the auxiliary-array getter before skipping the loop. * RE_UNKNOWN: source scalar units, vector coordinate space, result-word * meanings, record capacity and shared-buffer lifetime/aliasing guarantees. * Trace owner allocation, actual TERR query producers and result consumers to * resolve these contracts. Retain original assembly until clean C reproduces * complete native instructions, buffer read timing and relocation records.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_uvisect_rom_0040344C",
+          "declaration_line": 520,
+          "lines": [
+            505
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-b68268082dc8",
       "kind": "explicit_unknown",
       "path": "src/modules/uvisect_rom.c",
@@ -133399,16 +134459,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Flip the stored vector when its dot with point14-reference is positive. * Kind 1 rejects packed terrain-texture bits 20/19. Kinds 2/8 require mode04 * zero, linked-record flag bit 0 and clear record flag 0x20; other kinds return * zero. Reject displacement length below the original f32 threshold first. * A flip negates vector34 and also value2C when mode04 is one; return one only * when the flip occurs. Keep original comparisons, including unordered cases. * RE_UNKNOWN: kind/flag roles, linked-record lifetime, coordinate units and * value2C's meaning; trace record constructors and callers before assigning a * normal/distance interpretation or strengthening pointer/input checks.",
       "lines": [
-        660
+        689
       ],
       "evidence": "Flip the stored vector when its dot with point14-reference is positive. * Kind 1 rejects packed terrain-texture bits 20/19. Kinds 2/8 require mode04 * zero, linked-record flag bit 0 and clear record flag 0x20; other kinds return * zero. Reject displacement length below the original f32 threshold first. * A flip negates vector34 and also value2C when mode04 is one; return one only * when the flip occurs. Keep original comparisons, including unordered cases. * RE_UNKNOWN: kind/flag roles, linked-record lifetime, coordinate units and * value2C's meaning; trace record constructors and callers before assigning a * normal/distance interpretation or strengthening pointer/input checks.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectFlipRecordVectorTowardPoint",
-          "declaration_line": 669,
+          "declaration_line": 698,
           "lines": [
-            660
+            689
           ]
         }
       ]
@@ -133419,16 +134479,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Get the packed triangle texture word through TERR slot 0x1C, mask its * low 12 bits, and compare TEXT slot 0x04's loaded texture byte 0x27 with the * low 16 bits of the caller's expected value. Return one on equality, else zero. * RE_UNKNOWN: metadata-byte meaning and caller policy for missing/sentinel * textures. The existing getter returns zero for those cases, so expected zero * can match; preserve that original behavior without adding a rejection.",
       "lines": [
-        621
+        650
       ],
       "evidence": "Get the packed triangle texture word through TERR slot 0x1C, mask its * low 12 bits, and compare TEXT slot 0x04's loaded texture byte 0x27 with the * low 16 bits of the caller's expected value. Return one on equality, else zero. * RE_UNKNOWN: metadata-byte meaning and caller policy for missing/sentinel * textures. The existing getter returns zero for those cases, so expected zero * can match; preserve that original behavior without adding a rejection.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectPackedTriangleTextureByteMatches",
-          "declaration_line": 627,
+          "declaration_line": 656,
           "lines": [
-            621
+            650
           ]
         }
       ]
@@ -133514,6 +134574,26 @@
       ]
     },
     {
+      "id": "Q-0db67c9cd1c8",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvisect_rom.c",
+      "symbol": "Query actual TERR slot 0x20, skip auxiliary bit 2 and exclude registered * low-12-bit texture IDs obtained through actual TERR slot 0x1C. Preserve the * count snapshot after the texture callback, f32 square/subtraction and shared * fraction reloads after the owner filter and vector callbacks. Read the * auxiliary word again after the kind-1 record initializer, then reload and * increment the owner count before preparing the next record. * RE_ORIGINAL_QUIRK: the next 0x58-stride record is prepared even after the * final accepted result. Negative query counts still call the auxiliary-array * getter. Texture value 0xFFF receives the ordinary registered-ID test. * RE_UNKNOWN: auxiliary bit 2 and ID-list policy, scalar units, vector frame, * packed-word meanings, record capacity and shared-buffer lifetime/aliasing. * Trace actual query producers, ID-list setters, owner allocation and callers. * Keep original assembly until clean C matches native code and full relocations.",
+      "lines": [
+        522
+      ],
+      "evidence": "Query actual TERR slot 0x20, skip auxiliary bit 2 and exclude registered * low-12-bit texture IDs obtained through actual TERR slot 0x1C. Preserve the * count snapshot after the texture callback, f32 square/subtraction and shared * fraction reloads after the owner filter and vector callbacks. Read the * auxiliary word again after the kind-1 record initializer, then reload and * increment the owner count before preparing the next record. * RE_ORIGINAL_QUIRK: the next 0x58-stride record is prepared even after the * final accepted result. Negative query counts still call the auxiliary-array * getter. Texture value 0xFFF receives the ordinary registered-ID test. * RE_UNKNOWN: auxiliary bit 2 and ID-list policy, scalar units, vector frame, * packed-word meanings, record capacity and shared-buffer lifetime/aliasing. * Trace actual query producers, ID-list setters, owner allocation and callers. * Keep original assembly until clean C matches native code and full relocations.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_uvisect_rom_004036A8",
+          "declaration_line": 536,
+          "lines": [
+            522
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-e26eb1506f23",
       "kind": "explicit_unknown",
       "path": "src/modules/uvisect_rom.c",
@@ -133559,16 +134639,36 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Read record byte0x10 as unsigned and return its value in the existing * signed-word ABI. RE_UNKNOWN: byte meaning and valid record lifetime; * trace the setter, original producers and consumers before naming flag bits. * Preserve the unchecked record access and the setter's low-byte storage.",
       "lines": [
-        647
+        676
       ],
       "evidence": "Read record byte0x10 as unsigned and return its value in the existing * signed-word ABI. RE_UNKNOWN: byte meaning and valid record lifetime; * trace the setter, original producers and consumers before naming flag bits. * Preserve the unchecked record access and the setter's low-byte storage.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectGetRecordByte10",
-          "declaration_line": 651,
+          "declaration_line": 680,
           "lines": [
-            647
+            676
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-57fe9deede88",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvisect_rom.c",
+      "symbol": "Read the original 32-bit word at offset 0x18 without a null check. * RE_UNKNOWN: word meaning and valid record lifetime; trace original callers.",
+      "lines": [
+        261
+      ],
+      "evidence": "Read the original 32-bit word at offset 0x18 without a null check. * RE_UNKNOWN: word meaning and valid record lifetime; trace original callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvIsectGetWord18",
+          "declaration_line": 263,
+          "lines": [
+            261
           ]
         }
       ]
@@ -133579,16 +134679,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Read the shared float written by ISCT slot 0x80. * RE_UNKNOWN: its physical units and full caller protocol; trace native * D_uvisect_rom_004077B8 consumers and original slot-0x80 callers.",
       "lines": [
-        601
+        630
       ],
       "evidence": "Read the shared float written by ISCT slot 0x80. * RE_UNKNOWN: its physical units and full caller protocol; trace native * D_uvisect_rom_004077B8 consumers and original slot-0x80 callers.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectGetSharedScalar",
-          "declaration_line": 604,
+          "declaration_line": 633,
           "lines": [
-            601
+            630
           ]
         }
       ]
@@ -133639,16 +134739,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Return the shared limit checked by the indexed query-pair getter. * RE_UNKNOWN: whether callers treat this value as count or final valid * index is unproven; the existing getter permits equality.",
       "lines": [
-        591
+        620
       ],
       "evidence": "Return the shared limit checked by the indexed query-pair getter. * RE_UNKNOWN: whether callers treat this value as count or final valid * index is unproven; the existing getter permits equality.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectGetIndexedQueryPairLimit",
-          "declaration_line": 594,
+          "declaration_line": 623,
           "lines": [
-            591
+            620
           ]
         }
       ]
@@ -133659,16 +134759,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Run the selected original queries in flag order 2, 8, 1, 4, keeping the * successful 88-byte candidate with a strictly smaller value at offset 0x2C. * Equal values retain the earlier candidate; unordered comparisons do not win. * Accept only a final minimum <=1, then clear output word at0x04 before replacing * output word at0x00 with the input address. Failed queries leave output intact * except for any earlier successful minimum update, as in the native code. * RE_UNKNOWN: complete query-input layout, vector frame, flag/forwarded-word * meanings and valid input domains. Trace original callers and direct helper * bodies before assigning physical meanings or strengthening validation. * RE_ORIGINAL_QUIRK: the flag-4 helper 0x403054 retains its separately indexed * fraction-assignment observation. Helper success is the sole candidate-copy gate; * do not initialize candidate fields or alter those original helper semantics. * Flag 2 also forwards input word 0x18 through helper 0x4014FC.",
       "lines": [
-        748
+        777
       ],
       "evidence": "Run the selected original queries in flag order 2, 8, 1, 4, keeping the * successful 88-byte candidate with a strictly smaller value at offset 0x2C. * Equal values retain the earlier candidate; unordered comparisons do not win. * Accept only a final minimum <=1, then clear output word at0x04 before replacing * output word at0x00 with the input address. Failed queries leave output intact * except for any earlier successful minimum update, as in the native code. * RE_UNKNOWN: complete query-input layout, vector frame, flag/forwarded-word * meanings and valid input domains. Trace original callers and direct helper * bodies before assigning physical meanings or strengthening validation. * RE_ORIGINAL_QUIRK: the flag-4 helper 0x403054 retains its separately indexed * fraction-assignment observation. Helper success is the sole candidate-copy gate; * do not initialize candidate fields or alter those original helper semantics. * Flag 2 also forwards input word 0x18 through helper 0x4014FC.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueryMinimumValueRecord",
-          "declaration_line": 763,
+          "declaration_line": 792,
           "lines": [
-            748
+            777
           ]
         }
       ]
@@ -133679,16 +134779,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Scan kind-zero records using their count-prefixed value list and original * 16-bit index updates. Null/other-kind records are ignored. The original scan * performs no state update. RE_UNKNOWN: caller-observed return; trace export callers.",
       "lines": [
-        985
+        1014
       ],
       "evidence": "Scan kind-zero records using their count-prefixed value list and original * 16-bit index updates. Null/other-kind records are ignored. The original scan * performs no state update. RE_UNKNOWN: caller-observed return; trace export callers.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectScanRecordValues",
-          "declaration_line": 988,
+          "declaration_line": 1017,
           "lines": [
-            985
+            1014
           ]
         }
       ]
@@ -133699,16 +134799,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Scan the registered value array until a match or the original count limit. * Preserve 16-bit index updates. This original helper performs no state update; * RE_UNKNOWN: caller-observed export return value; audit original callers.",
       "lines": [
-        545
+        574
       ],
       "evidence": "Scan the registered value array until a match or the original count limit. * Preserve 16-bit index updates. This original helper performs no state update; * RE_UNKNOWN: caller-observed export return value; audit original callers.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectScanRegisteredValues",
-          "declaration_line": 548,
+          "declaration_line": 577,
           "lines": [
-            545
+            574
           ]
         }
       ]
@@ -133719,16 +134819,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Scan the shared 0x78-byte records whose parallel filter word intersects mask. * The original helper appends results for the two input vectors. Expose shared * buffers only when at least one result exists; preserve optional-output store * order even when caller output pointers alias. * RE_ORIGINAL_QUIRK: the iteration index wraps to 16 bits, and the signed record * bound is reloaded only after a matching record invokes the helper. * RE_UNKNOWN: record kinds, vector coordinate space, result-word meanings and * valid shared-buffer capacity/lifetime. Trace shared-query setter callers and * helper 0x405124/result consumers before strengthening these contracts.",
       "lines": [
-        821
+        850
       ],
       "evidence": "Scan the shared 0x78-byte records whose parallel filter word intersects mask. * The original helper appends results for the two input vectors. Expose shared * buffers only when at least one result exists; preserve optional-output store * order even when caller output pointers alias. * RE_ORIGINAL_QUIRK: the iteration index wraps to 16 bits, and the signed record * bound is reloaded only after a matching record invokes the helper. * RE_UNKNOWN: record kinds, vector coordinate space, result-word meanings and * valid shared-buffer capacity/lifetime. Trace shared-query setter callers and * helper 0x405124/result consumers before strengthening these contracts.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueryFilteredSharedRecords",
-          "declaration_line": 830,
+          "declaration_line": 859,
           "lines": [
-            821
+            850
           ]
         }
       ]
@@ -133739,16 +134839,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Select the side with the smallest signed XY face margin: +1/+2 select * maximum X/Y and -1/-2 minimum X/Y. Equal margins keep the first side. * RE_UNKNOWN: whether callers guarantee the point is inside the bounds. The * helper takes no absolute values and performs no containment check, so this * is not a general nearest-face calculation for outside points. Trace original * callers before relying on an inside-point precondition.",
       "lines": [
-        880
+        909
       ],
       "evidence": "Select the side with the smallest signed XY face margin: +1/+2 select * maximum X/Y and -1/-2 minimum X/Y. Equal margins keep the first side. * RE_UNKNOWN: whether callers guarantee the point is inside the bounds. The * helper takes no absolute values and performs no containment check, so this * is not a general nearest-face calculation for outside points. Trace original * callers before relying on an inside-point precondition.",
       "owners": [
         {
           "kind": "type",
           "name": "IsectBounds",
-          "declaration_line": 887,
+          "declaration_line": 916,
           "lines": [
-            880
+            909
           ]
         }
       ]
@@ -133819,16 +134919,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Store the first incoming word masked to its low 16 bits in the first * shared word, then store the complete second word. The original also homes * the first incoming word. Retain the existing address-taken argument and * source-width prototype; this does not prove the historical C declaration. * RE_UNKNOWN: both shared words' meanings, caller domains and update * lifecycle. Trace original callers and readers before assigning flags/IDs * or narrowing either formal parameter.",
       "lines": [
-        515
+        544
       ],
       "evidence": "Store the first incoming word masked to its low 16 bits in the first * shared word, then store the complete second word. The original also homes * the first incoming word. Retain the existing address-taken argument and * source-width prototype; this does not prove the historical C declaration. * RE_UNKNOWN: both shared words' meanings, caller domains and update * lifecycle. Trace original callers and readers before assigning flags/IDs * or narrowing either formal parameter.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectSetSharedWordPair",
-          "declaration_line": 522,
+          "declaration_line": 551,
           "lines": [
-            515
+            544
           ]
         }
       ]
@@ -133839,16 +134939,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Store the shared float exposed by original ISCT slot 0x80. Dynamics * update7C98 writes vector14BC length and later -1 through this exact slot. * RE_UNKNOWN: complete physical meaning, valid domain and cross-call * protocol; trace native D_uvisect_rom_004077B8 consumers and other callers.",
       "lines": [
-        611
+        640
       ],
       "evidence": "Store the shared float exposed by original ISCT slot 0x80. Dynamics * update7C98 writes vector14BC length and later -1 through this exact slot. * RE_UNKNOWN: complete physical meaning, valid domain and cross-call * protocol; trace native D_uvisect_rom_004077B8 consumers and other callers.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectSetSharedScalar",
-          "declaration_line": 615,
+          "declaration_line": 644,
           "lines": [
-            611
+            640
           ]
         }
       ]
@@ -133899,16 +134999,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "TERR slot28 supplies the low-byte triangle-list count at point XY; * slot14 samples a scalar/vector for each triangle. Mode0 selects the greatest * scalar <= pointZ, mode1 the least scalar >= pointZ; mode2 retains the native * signed-subtraction/negation comparisons, choosing mode1 on equal differences. * Preserve native sentinels and ordered predicates. Missing mode0 output writes * vector Y0/X0/Z1 then scalar0, leaving the handle; other failure paths leave * outputs unchanged. Successful outputs store handle, scalar, then vector XYZ. * RE_UNKNOWN: physical meaning/frame of scalar and vector, valid mode/domain, * triangle-list lifetime and provider output guarantees for invalid triangles * or zero normal Z. Trace original callers and the actual TERR slot14/28 * providers/assets before generalizing the query or adding fallback behavior.",
       "lines": [
-        732
+        761
       ],
       "evidence": "TERR slot28 supplies the low-byte triangle-list count at point XY; * slot14 samples a scalar/vector for each triangle. Mode0 selects the greatest * scalar <= pointZ, mode1 the least scalar >= pointZ; mode2 retains the native * signed-subtraction/negation comparisons, choosing mode1 on equal differences. * Preserve native sentinels and ordered predicates. Missing mode0 output writes * vector Y0/X0/Z1 then scalar0, leaving the handle; other failure paths leave * outputs unchanged. Successful outputs store handle, scalar, then vector XYZ. * RE_UNKNOWN: physical meaning/frame of scalar and vector, valid mode/domain, * triangle-list lifetime and provider output guarantees for invalid triangles * or zero normal Z. Trace original callers and the actual TERR slot14/28 * providers/assets before generalizing the query or adding fallback behavior.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvisect_rom_004045A8",
-          "declaration_line": 743,
+          "declaration_line": 772,
           "lines": [
-            732
+            761
           ]
         }
       ]
@@ -134744,6 +135844,26 @@
       ]
     },
     {
+      "id": "Q-58b0e0f820b2",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvterra_rom.c",
+      "symbol": "Read static-object properties: one writes flags, four writes model ID, * and zero terminates. Unknown properties return; absent objects read no outputs. * RE_UNKNOWN: output-pointer validity and variadic-list termination/type domain; * trace original export callers before claiming that all arguments are valid.",
+      "lines": [
+        835
+      ],
+      "evidence": "Read static-object properties: one writes flags, four writes model ID, * and zero terminates. Unknown properties return; absent objects read no outputs. * RE_UNKNOWN: output-pointer validity and variadic-list termination/type domain; * trace original export callers before claiming that all arguments are valid.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvTerraGetStaticObjectProperties",
+          "declaration_line": 839,
+          "lines": [
+            835
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-24405bdec3fe",
       "kind": "explicit_unknown",
       "path": "src/modules/uvterra_rom.c",
@@ -134859,6 +135979,26 @@
           "declaration_line": 579,
           "lines": [
             572
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-e4e489e6b3a6",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvterra_rom.c",
+      "symbol": "Store 1.0f / value in the indexed terrain array without input checks. * RE_UNKNOWN: index bounds and divisor domain; trace original callers/storage.",
+      "lines": [
+        693
+      ],
+      "evidence": "Store 1.0f / value in the indexed terrain array without input checks. * RE_UNKNOWN: index bounds and divisor domain; trace original callers/storage.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvTerraSetReciprocalByIndex",
+          "declaration_line": 695,
+          "lines": [
+            693
           ]
         }
       ]
@@ -135064,14 +136204,14 @@
       ]
     },
     {
-      "id": "Q-1f506341c5cc",
+      "id": "Q-1bbca664529f",
       "kind": "explicit_unknown",
       "path": "src/modules/voltest.c",
-      "symbol": "Refresh the first per-screen signed-byte cache using screen data at 0x1D8. * Preserve the original invalid-index writes; no local index clamp is added. * RE_UNKNOWN: index/count bounds; inspect original screen getter and callers.",
+      "symbol": "Refresh the first screen cache using data at 0x1D8 and loaded testData. * Keep invalid-index writes. RE_UNKNOWN: index/count and loaded data extent/lifetime * need original assets, screen getter and callers; no complete data type inferred.",
       "lines": [
         69
       ],
-      "evidence": "Refresh the first per-screen signed-byte cache using screen data at 0x1D8. * Preserve the original invalid-index writes; no local index clamp is added. * RE_UNKNOWN: index/count bounds; inspect original screen getter and callers.",
+      "evidence": "Refresh the first screen cache using data at 0x1D8 and loaded testData. * Keep invalid-index writes. RE_UNKNOWN: index/count and loaded data extent/lifetime * need original assets, screen getter and callers; no complete data type inferred.",
       "owners": [
         {
           "kind": "function",
@@ -135084,14 +136224,14 @@
       ]
     },
     {
-      "id": "Q-f86559a2a24c",
+      "id": "Q-f42b3867f0c0",
       "kind": "explicit_unknown",
       "path": "src/modules/voltest.c",
-      "symbol": "Refresh the object-position cache; preserve the original invalid-index writes. * RE_UNKNOWN: index/count bounds; inspect original object-list getter and callers.",
+      "symbol": "Refresh the object-position cache; preserve the original invalid-index writes. * RE_UNKNOWN: index/count and testData extent/lifetime need original assets/getter/callers.",
       "lines": [
         95
       ],
-      "evidence": "Refresh the object-position cache; preserve the original invalid-index writes. * RE_UNKNOWN: index/count bounds; inspect original object-list getter and callers.",
+      "evidence": "Refresh the object-position cache; preserve the original invalid-index writes. * RE_UNKNOWN: index/count and testData extent/lifetime need original assets/getter/callers.",
       "owners": [
         {
           "kind": "function",
@@ -135104,14 +136244,14 @@
       ]
     },
     {
-      "id": "Q-2d0c837fb61f",
+      "id": "Q-a8218bc89e7d",
       "kind": "explicit_unknown",
       "path": "src/modules/voltest.c",
-      "symbol": "Refresh the second per-screen signed-byte cache using screen data at 0x184. * Preserve the original invalid-index writes; no local index clamp is added. * RE_UNKNOWN: index/count bounds; inspect original screen getter and callers.",
+      "symbol": "Refresh the second screen cache using data at 0x184 and loaded testData. * Keep invalid-index writes. RE_UNKNOWN: index/count and loaded data extent/lifetime * need original assets, screen getter and callers; no complete data type inferred.",
       "lines": [
         82
       ],
-      "evidence": "Refresh the second per-screen signed-byte cache using screen data at 0x184. * Preserve the original invalid-index writes; no local index clamp is added. * RE_UNKNOWN: index/count bounds; inspect original screen getter and callers.",
+      "evidence": "Refresh the second screen cache using data at 0x184 and loaded testData. * Keep invalid-index writes. RE_UNKNOWN: index/count and loaded data extent/lifetime * need original assets, screen getter and callers; no complete data type inferred.",
       "owners": [
         {
           "kind": "function",
@@ -172403,6 +173543,14 @@
         },
         {
           "kind": "function",
+          "name": "uvDobjExtractJointQuaternionsFromMatrices",
+          "declaration_line": 1481,
+          "lines": [
+            1495
+          ]
+        },
+        {
+          "kind": "function",
           "name": "uvDobjFindObjectContainingWorldPoint",
           "declaration_line": 964,
           "lines": [
@@ -172465,14 +173613,6 @@
             680,
             681,
             682
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvDobjWriteJointMatricesFromQuaternions",
-          "declaration_line": 1481,
-          "lines": [
-            1495
           ]
         },
         {
@@ -173088,6 +174228,15 @@
         },
         {
           "kind": "function",
+          "name": "uvDobjExtractJointQuaternionsFromMatrices",
+          "declaration_line": 1481,
+          "lines": [
+            1489,
+            1490
+          ]
+        },
+        {
+          "kind": "function",
           "name": "uvDobjModel",
           "declaration_line": 287,
           "lines": [
@@ -173101,15 +174250,6 @@
           "declaration_line": 638,
           "lines": [
             714
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvDobjWriteJointMatricesFromQuaternions",
-          "declaration_line": 1481,
-          "lines": [
-            1489,
-            1490
           ]
         },
         {
@@ -183498,15 +184638,15 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "unk0",
       "lines": [
-        1041
+        1070
       ],
       "owners": [
         {
           "kind": "type",
           "name": "UvIntersectionPayload",
-          "declaration_line": 1041,
+          "declaration_line": 1070,
           "lines": [
-            1041
+            1070
           ]
         }
       ]
@@ -183523,17 +184663,17 @@
         96,
         398,
         399,
-        794,
-        795,
-        935
+        823,
+        824,
+        964
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectCreateValueRecord",
-          "declaration_line": 930,
+          "declaration_line": 959,
           "lines": [
-            935
+            964
           ]
         },
         {
@@ -183548,10 +184688,10 @@
         {
           "kind": "function",
           "name": "uvIsectQueryMinimumValueRecord",
-          "declaration_line": 763,
+          "declaration_line": 792,
           "lines": [
-            794,
-            795
+            823,
+            824
           ]
         },
         {
@@ -183764,26 +184904,26 @@
       "lines": [
         28,
         72,
-        711,
-        808,
-        809
+        740,
+        837,
+        838
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectFlipRecordVectorTowardPoint",
-          "declaration_line": 669,
+          "declaration_line": 698,
           "lines": [
-            711
+            740
           ]
         },
         {
           "kind": "function",
           "name": "uvIsectUpdateMinimumValueRecord",
-          "declaration_line": 807,
+          "declaration_line": 836,
           "lines": [
-            808,
-            809
+            837,
+            838
           ]
         },
         {
@@ -183811,21 +184951,21 @@
       "symbol": "vector34",
       "lines": [
         74,
-        705,
-        707,
-        708,
-        709
+        734,
+        736,
+        737,
+        738
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectFlipRecordVectorTowardPoint",
-          "declaration_line": 669,
+          "declaration_line": 698,
           "lines": [
-            705,
-            707,
-            708,
-            709
+            734,
+            736,
+            737,
+            738
           ]
         },
         {
@@ -183925,8 +185065,8 @@
       "lines": [
         36,
         401,
-        777,
-        783
+        806,
+        812
       ],
       "owners": [
         {
@@ -183940,10 +185080,10 @@
         {
           "kind": "function",
           "name": "uvIsectQueryMinimumValueRecord",
-          "declaration_line": 763,
+          "declaration_line": 792,
           "lines": [
-            777,
-            783
+            806,
+            812
           ]
         },
         {
@@ -193068,37 +194208,9 @@
         3,
         4,
         5,
-        7,
-        10,
-        76,
-        89,
-        104
+        7
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "voltestRefreshFirstScreenSlot",
-          "declaration_line": 72,
-          "lines": [
-            76
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "voltestRefreshObjectPositionSlot",
-          "declaration_line": 97,
-          "lines": [
-            104
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "voltestRefreshSecondScreenSlot",
-          "declaration_line": 85,
-          "lines": [
-            89
-          ]
-        },
         {
           "kind": "type",
           "name": "VoltestDobjExports",
@@ -193121,14 +194233,6 @@
           "declaration_line": 4,
           "lines": [
             4
-          ]
-        },
-        {
-          "kind": "type",
-          "name": "VoltestRecord",
-          "declaration_line": 10,
-          "lines": [
-            10
           ]
         },
         {
@@ -202537,6 +203641,26 @@
       ]
     },
     {
+      "id": "Q-8d5d00b7c243",
+      "kind": "original_quirk",
+      "path": "src/modules/light.c",
+      "symbol": "Allocate the light handle and retain the original scalar defaults. * RE_ORIGINAL_QUIRK: signed-16 handle comparison with 65535 cannot reject -1. * RE_UNKNOWN: exhaustion/reachable handle values need original allocator/callers.",
+      "lines": [
+        69
+      ],
+      "evidence": "Allocate the light handle and retain the original scalar defaults. * RE_ORIGINAL_QUIRK: signed-16 handle comparison with 65535 cannot reject -1. * RE_UNKNOWN: exhaustion/reachable handle values need original allocator/callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "lightInitializeState",
+          "declaration_line": 72,
+          "lines": [
+            69
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-bceb42081498",
       "kind": "original_quirk",
       "path": "src/modules/med.c",
@@ -203137,6 +204261,26 @@
       ]
     },
     {
+      "id": "Q-834fa12da3a7",
+      "kind": "original_quirk",
+      "path": "src/modules/triganim.c",
+      "symbol": "Allocate/prepend the original 0x94-byte node, copy both matrices and attach * its model/object. Modes zero/two set object flags three; mode one clears them. * Scalar 0x80 and mode meanings remain unresolved. * RE_ORIGINAL_QUIRK: negative-only object failure test does not reject provider's 0xFFFF. * RE_UNKNOWN: exhaustion reachability, node allocation/lifetime need original callers/allocator.",
+      "lines": [
+        123
+      ],
+      "evidence": "Allocate/prepend the original 0x94-byte node, copy both matrices and attach * its model/object. Modes zero/two set object flags three; mode one clears them. * Scalar 0x80 and mode meanings remain unresolved. * RE_ORIGINAL_QUIRK: negative-only object failure test does not reject provider's 0xFFFF. * RE_UNKNOWN: exhaustion reachability, node allocation/lifetime need original callers/allocator.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "triganimCreateTransformNode",
+          "declaration_line": 128,
+          "lines": [
+            123
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-6a186645e492",
       "kind": "original_quirk",
       "path": "src/modules/ufo.c",
@@ -203726,6 +204870,106 @@
       ]
     },
     {
+      "id": "Q-309340626e58",
+      "kind": "original_quirk",
+      "path": "src/modules/uvgui_rom.c",
+      "symbol": "Claim the first inactive 0x170-byte slot among 50 scanned entries. * RE_ORIGINAL_QUIRK: if all scanned entries are active, mark entry 50 active * and return 50. RE_UNKNOWN: backing extent, exhaustion reachability and * widget role need original pool layout, slot users and allocation callers.",
+      "lines": [
+        450
+      ],
+      "evidence": "Claim the first inactive 0x170-byte slot among 50 scanned entries. * RE_ORIGINAL_QUIRK: if all scanned entries are active, mark entry 50 active * and return 50. RE_UNKNOWN: backing extent, exhaustion reachability and * widget role need original pool layout, slot users and allocation callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvGuiAllocatePool170Slot",
+          "declaration_line": 454,
+          "lines": [
+            450
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-8de3122cbf23",
+      "kind": "original_quirk",
+      "path": "src/modules/uvgui_rom.c",
+      "symbol": "Claim the first inactive 0x34-byte slot among 120 scanned entries. * RE_ORIGINAL_QUIRK: if all scanned entries are active, mark entry 120 active * and return 120. RE_UNKNOWN: backing extent, exhaustion reachability and * widget role need original pool layout, slot users and allocation callers.",
+      "lines": [
+        207
+      ],
+      "evidence": "Claim the first inactive 0x34-byte slot among 120 scanned entries. * RE_ORIGINAL_QUIRK: if all scanned entries are active, mark entry 120 active * and return 120. RE_UNKNOWN: backing extent, exhaustion reachability and * widget role need original pool layout, slot users and allocation callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvGuiAllocatePool34Slot",
+          "declaration_line": 211,
+          "lines": [
+            207
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-e4965ffc5c73",
+      "kind": "original_quirk",
+      "path": "src/modules/uvgui_rom.c",
+      "symbol": "Claim the first inactive 0x48-byte slot among 135 scanned entries. * RE_ORIGINAL_QUIRK: if all scanned entries are active, mark entry 135 active * and return 135. RE_UNKNOWN: backing extent, exhaustion reachability and * widget role need original pool layout, slot users and allocation callers.",
+      "lines": [
+        660
+      ],
+      "evidence": "Claim the first inactive 0x48-byte slot among 135 scanned entries. * RE_ORIGINAL_QUIRK: if all scanned entries are active, mark entry 135 active * and return 135. RE_UNKNOWN: backing extent, exhaustion reachability and * widget role need original pool layout, slot users and allocation callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvGuiAllocatePool48Slot",
+          "declaration_line": 664,
+          "lines": [
+            660
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-f4e7aee415f3",
+      "kind": "original_quirk",
+      "path": "src/modules/uvgui_rom.c",
+      "symbol": "Claim the first inactive 0x4C-byte slot among 10 scanned entries. * RE_ORIGINAL_QUIRK: if all scanned entries are active, mark entry 10 active * and return 10. RE_UNKNOWN: backing extent, exhaustion reachability and * widget role need original pool layout, slot users and allocation callers.",
+      "lines": [
+        906
+      ],
+      "evidence": "Claim the first inactive 0x4C-byte slot among 10 scanned entries. * RE_ORIGINAL_QUIRK: if all scanned entries are active, mark entry 10 active * and return 10. RE_UNKNOWN: backing extent, exhaustion reachability and * widget role need original pool layout, slot users and allocation callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvGuiAllocatePool4CSlot",
+          "declaration_line": 910,
+          "lines": [
+            906
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-93d729d2277e",
+      "kind": "original_quirk",
+      "path": "src/modules/uvgui_rom.c",
+      "symbol": "Claim the first inactive 0x90-byte slot among 20 scanned entries. * RE_ORIGINAL_QUIRK: if all scanned entries are active, mark entry 20 active * and return 20. RE_UNKNOWN: backing extent, exhaustion reachability and * widget role need original pool layout, slot users and allocation callers.",
+      "lines": [
+        783
+      ],
+      "evidence": "Claim the first inactive 0x90-byte slot among 20 scanned entries. * RE_ORIGINAL_QUIRK: if all scanned entries are active, mark entry 20 active * and return 20. RE_UNKNOWN: backing extent, exhaustion reachability and * widget role need original pool layout, slot users and allocation callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvGuiAllocatePool90Slot",
+          "declaration_line": 787,
+          "lines": [
+            783
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-908aeb15b9f8",
       "kind": "original_quirk",
       "path": "src/modules/uvgui_rom.c",
@@ -203886,6 +205130,26 @@
       ]
     },
     {
+      "id": "Q-e9c9816673b8",
+      "kind": "original_quirk",
+      "path": "src/modules/uvisect_rom.c",
+      "symbol": "Append accepted TERR query candidates using the actual export at 0x90. * Preserve the cached source pointer/scalar, f32 square and f32 subtraction * before the square-root wrapper. Reload the shared fraction after native * helper 0x404A7C for scaling, then again after vector callbacks for the record * initializer. Capture the auxiliary element address before those callbacks * and read its word after the initializer; reload owner count before increment. * RE_ORIGINAL_QUIRK: every append also initializes the next 0x58-stride record, * including after the final accepted result. A negative provider count still * invokes the auxiliary-array getter before skipping the loop. * RE_UNKNOWN: source scalar units, vector coordinate space, result-word * meanings, record capacity and shared-buffer lifetime/aliasing guarantees. * Trace owner allocation, actual TERR query producers and result consumers to * resolve these contracts. Retain original assembly until clean C reproduces * complete native instructions, buffer read timing and relocation records.",
+      "lines": [
+        505
+      ],
+      "evidence": "Append accepted TERR query candidates using the actual export at 0x90. * Preserve the cached source pointer/scalar, f32 square and f32 subtraction * before the square-root wrapper. Reload the shared fraction after native * helper 0x404A7C for scaling, then again after vector callbacks for the record * initializer. Capture the auxiliary element address before those callbacks * and read its word after the initializer; reload owner count before increment. * RE_ORIGINAL_QUIRK: every append also initializes the next 0x58-stride record, * including after the final accepted result. A negative provider count still * invokes the auxiliary-array getter before skipping the loop. * RE_UNKNOWN: source scalar units, vector coordinate space, result-word * meanings, record capacity and shared-buffer lifetime/aliasing guarantees. * Trace owner allocation, actual TERR query producers and result consumers to * resolve these contracts. Retain original assembly until clean C reproduces * complete native instructions, buffer read timing and relocation records.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_uvisect_rom_0040344C",
+          "declaration_line": 520,
+          "lines": [
+            505
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-edd52017df00",
       "kind": "original_quirk",
       "path": "src/modules/uvisect_rom.c",
@@ -203901,6 +205165,26 @@
           "declaration_line": 383,
           "lines": [
             367
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-a58b3cb3e5b9",
+      "kind": "original_quirk",
+      "path": "src/modules/uvisect_rom.c",
+      "symbol": "Query actual TERR slot 0x20, skip auxiliary bit 2 and exclude registered * low-12-bit texture IDs obtained through actual TERR slot 0x1C. Preserve the * count snapshot after the texture callback, f32 square/subtraction and shared * fraction reloads after the owner filter and vector callbacks. Read the * auxiliary word again after the kind-1 record initializer, then reload and * increment the owner count before preparing the next record. * RE_ORIGINAL_QUIRK: the next 0x58-stride record is prepared even after the * final accepted result. Negative query counts still call the auxiliary-array * getter. Texture value 0xFFF receives the ordinary registered-ID test. * RE_UNKNOWN: auxiliary bit 2 and ID-list policy, scalar units, vector frame, * packed-word meanings, record capacity and shared-buffer lifetime/aliasing. * Trace actual query producers, ID-list setters, owner allocation and callers. * Keep original assembly until clean C matches native code and full relocations.",
+      "lines": [
+        522
+      ],
+      "evidence": "Query actual TERR slot 0x20, skip auxiliary bit 2 and exclude registered * low-12-bit texture IDs obtained through actual TERR slot 0x1C. Preserve the * count snapshot after the texture callback, f32 square/subtraction and shared * fraction reloads after the owner filter and vector callbacks. Read the * auxiliary word again after the kind-1 record initializer, then reload and * increment the owner count before preparing the next record. * RE_ORIGINAL_QUIRK: the next 0x58-stride record is prepared even after the * final accepted result. Negative query counts still call the auxiliary-array * getter. Texture value 0xFFF receives the ordinary registered-ID test. * RE_UNKNOWN: auxiliary bit 2 and ID-list policy, scalar units, vector frame, * packed-word meanings, record capacity and shared-buffer lifetime/aliasing. * Trace actual query producers, ID-list setters, owner allocation and callers. * Keep original assembly until clean C matches native code and full relocations.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_uvisect_rom_004036A8",
+          "declaration_line": 536,
+          "lines": [
+            522
           ]
         }
       ]
@@ -203931,16 +205215,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Return a registered value under the original upper-bound test. * RE_ORIGINAL_QUIRK: the test accepts index equal to count and negative * indices; preserve this matching behavior and the caller index contract.",
       "lines": [
-        559
+        588
       ],
       "evidence": "Return a registered value under the original upper-bound test. * RE_ORIGINAL_QUIRK: the test accepts index equal to count and negative * indices; preserve this matching behavior and the caller index contract.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectGetRegisteredValueAtIndex",
-          "declaration_line": 562,
+          "declaration_line": 591,
           "lines": [
-            559
+            588
           ]
         }
       ]
@@ -203951,16 +205235,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Run the selected original queries in flag order 2, 8, 1, 4, keeping the * successful 88-byte candidate with a strictly smaller value at offset 0x2C. * Equal values retain the earlier candidate; unordered comparisons do not win. * Accept only a final minimum <=1, then clear output word at0x04 before replacing * output word at0x00 with the input address. Failed queries leave output intact * except for any earlier successful minimum update, as in the native code. * RE_UNKNOWN: complete query-input layout, vector frame, flag/forwarded-word * meanings and valid input domains. Trace original callers and direct helper * bodies before assigning physical meanings or strengthening validation. * RE_ORIGINAL_QUIRK: the flag-4 helper 0x403054 retains its separately indexed * fraction-assignment observation. Helper success is the sole candidate-copy gate; * do not initialize candidate fields or alter those original helper semantics. * Flag 2 also forwards input word 0x18 through helper 0x4014FC.",
       "lines": [
-        748
+        777
       ],
       "evidence": "Run the selected original queries in flag order 2, 8, 1, 4, keeping the * successful 88-byte candidate with a strictly smaller value at offset 0x2C. * Equal values retain the earlier candidate; unordered comparisons do not win. * Accept only a final minimum <=1, then clear output word at0x04 before replacing * output word at0x00 with the input address. Failed queries leave output intact * except for any earlier successful minimum update, as in the native code. * RE_UNKNOWN: complete query-input layout, vector frame, flag/forwarded-word * meanings and valid input domains. Trace original callers and direct helper * bodies before assigning physical meanings or strengthening validation. * RE_ORIGINAL_QUIRK: the flag-4 helper 0x403054 retains its separately indexed * fraction-assignment observation. Helper success is the sole candidate-copy gate; * do not initialize candidate fields or alter those original helper semantics. * Flag 2 also forwards input word 0x18 through helper 0x4014FC.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueryMinimumValueRecord",
-          "declaration_line": 763,
+          "declaration_line": 792,
           "lines": [
-            748
+            777
           ]
         }
       ]
@@ -203971,16 +205255,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Scan the shared 0x78-byte records whose parallel filter word intersects mask. * The original helper appends results for the two input vectors. Expose shared * buffers only when at least one result exists; preserve optional-output store * order even when caller output pointers alias. * RE_ORIGINAL_QUIRK: the iteration index wraps to 16 bits, and the signed record * bound is reloaded only after a matching record invokes the helper. * RE_UNKNOWN: record kinds, vector coordinate space, result-word meanings and * valid shared-buffer capacity/lifetime. Trace shared-query setter callers and * helper 0x405124/result consumers before strengthening these contracts.",
       "lines": [
-        821
+        850
       ],
       "evidence": "Scan the shared 0x78-byte records whose parallel filter word intersects mask. * The original helper appends results for the two input vectors. Expose shared * buffers only when at least one result exists; preserve optional-output store * order even when caller output pointers alias. * RE_ORIGINAL_QUIRK: the iteration index wraps to 16 bits, and the signed record * bound is reloaded only after a matching record invokes the helper. * RE_UNKNOWN: record kinds, vector coordinate space, result-word meanings and * valid shared-buffer capacity/lifetime. Trace shared-query setter callers and * helper 0x405124/result consumers before strengthening these contracts.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueryFilteredSharedRecords",
-          "declaration_line": 830,
+          "declaration_line": 859,
           "lines": [
-            821
+            850
           ]
         }
       ]
@@ -204776,26 +206060,6 @@
       ]
     },
     {
-      "id": "Q-c973fd95ff8e",
-      "kind": "uncertainty_note",
-      "path": "src/modules/selection.c",
-      "symbol": "Mark the shared selection state, clear words at 0x16/0x2A and reset the * current nested state word only when it is 1 or 2. Preserve the original * non-null pointer contract and explicitly unknown word meanings.",
-      "lines": [
-        3136
-      ],
-      "evidence": "Mark the shared selection state, clear words at 0x16/0x2A and reset the * current nested state word only when it is 1 or 2. Preserve the original * non-null pointer contract and explicitly unknown word meanings.",
-      "owners": [
-        {
-          "kind": "function",
-          "name": "selectionResetTransientWords",
-          "declaration_line": 3139,
-          "lines": [
-            3136
-          ]
-        }
-      ]
-    },
-    {
       "id": "Q-e9d625c7c445",
       "kind": "uncertainty_note",
       "path": "src/modules/selection.c",
@@ -205046,26 +206310,6 @@
       ]
     },
     {
-      "id": "Q-6d48170a5857",
-      "kind": "uncertainty_note",
-      "path": "src/modules/uvchannel_rom.c",
-      "symbol": "Read zero-terminated property/output pairs from a valid channel. * Copy matrices/vectors or expose original vector arrays and callback list. * Unknown tags consume no output; callers provide matching argument types.",
-      "lines": [
-        132
-      ],
-      "evidence": "Read zero-terminated property/output pairs from a valid channel. * Copy matrices/vectors or expose original vector arrays and callback list. * Unknown tags consume no output; callers provide matching argument types.",
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvChannelGetProperties",
-          "declaration_line": 135,
-          "lines": [
-            132
-          ]
-        }
-      ]
-    },
-    {
       "id": "Q-e9dc5bd3b85f",
       "kind": "uncertainty_note",
       "path": "src/modules/uvdsetld_rom.c",
@@ -205101,26 +206345,6 @@
           "declaration_line": 2200,
           "lines": [
             2197
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-29ba0a7b8df9",
-      "kind": "uncertainty_note",
-      "path": "src/modules/uvdyn_rom.c",
-      "symbol": "Copy the indexed first-bank key/value, unsigned kind and vector into the * caller's outputs. Null state or index at/above the live count leaves every * output unchanged. Valid entries require the original four-slot count contract; * key/value/kind gameplay meanings remain unresolved.",
-      "lines": [
-        1249
-      ],
-      "evidence": "Copy the indexed first-bank key/value, unsigned kind and vector into the * caller's outputs. Null state or index at/above the live count leaves every * output unchanged. Valid entries require the original four-slot count contract; * key/value/kind gameplay meanings remain unresolved.",
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvDynGetFirstParameterEntry",
-          "declaration_line": 1253,
-          "lines": [
-            1249
           ]
         }
       ]
@@ -205786,106 +207010,6 @@
       ]
     },
     {
-      "id": "Q-ca868bedfa54",
-      "kind": "uncertainty_note",
-      "path": "src/modules/uvgui_rom.c",
-      "symbol": "Claim the first inactive slot in the 10-entry, 0x4C-byte GUI pool. * Preserve the original exhaustion behavior: it returns the capacity and writes * one slot beyond the pool when every entry is active. Callers must avoid exhaustion. * The widget purpose remains unknown; the name identifies the verified layout.",
-      "lines": [
-        906
-      ],
-      "evidence": "Claim the first inactive slot in the 10-entry, 0x4C-byte GUI pool. * Preserve the original exhaustion behavior: it returns the capacity and writes * one slot beyond the pool when every entry is active. Callers must avoid exhaustion. * The widget purpose remains unknown; the name identifies the verified layout.",
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvGuiAllocatePool4CSlot",
-          "declaration_line": 910,
-          "lines": [
-            906
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-475402fdcb91",
-      "kind": "uncertainty_note",
-      "path": "src/modules/uvgui_rom.c",
-      "symbol": "Claim the first inactive slot in the 120-entry, 0x34-byte GUI pool. * Preserve the original exhaustion behavior: it returns the capacity and writes * one slot beyond the pool when every entry is active. Callers must avoid exhaustion. * The widget purpose remains unknown; the name identifies the verified layout.",
-      "lines": [
-        207
-      ],
-      "evidence": "Claim the first inactive slot in the 120-entry, 0x34-byte GUI pool. * Preserve the original exhaustion behavior: it returns the capacity and writes * one slot beyond the pool when every entry is active. Callers must avoid exhaustion. * The widget purpose remains unknown; the name identifies the verified layout.",
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvGuiAllocatePool34Slot",
-          "declaration_line": 211,
-          "lines": [
-            207
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-526bed31d5b1",
-      "kind": "uncertainty_note",
-      "path": "src/modules/uvgui_rom.c",
-      "symbol": "Claim the first inactive slot in the 135-entry, 0x48-byte GUI pool. * Preserve the original exhaustion behavior: it returns the capacity and writes * one slot beyond the pool when every entry is active. Callers must avoid exhaustion. * The widget purpose remains unknown; the name identifies the verified layout.",
-      "lines": [
-        660
-      ],
-      "evidence": "Claim the first inactive slot in the 135-entry, 0x48-byte GUI pool. * Preserve the original exhaustion behavior: it returns the capacity and writes * one slot beyond the pool when every entry is active. Callers must avoid exhaustion. * The widget purpose remains unknown; the name identifies the verified layout.",
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvGuiAllocatePool48Slot",
-          "declaration_line": 664,
-          "lines": [
-            660
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-7e6b00d35a2b",
-      "kind": "uncertainty_note",
-      "path": "src/modules/uvgui_rom.c",
-      "symbol": "Claim the first inactive slot in the 20-entry, 0x90-byte GUI pool. * Preserve the original exhaustion behavior: it returns the capacity and writes * one slot beyond the pool when every entry is active. Callers must avoid exhaustion. * The widget purpose remains unknown; the name identifies the verified layout.",
-      "lines": [
-        783
-      ],
-      "evidence": "Claim the first inactive slot in the 20-entry, 0x90-byte GUI pool. * Preserve the original exhaustion behavior: it returns the capacity and writes * one slot beyond the pool when every entry is active. Callers must avoid exhaustion. * The widget purpose remains unknown; the name identifies the verified layout.",
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvGuiAllocatePool90Slot",
-          "declaration_line": 787,
-          "lines": [
-            783
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-0fe237850468",
-      "kind": "uncertainty_note",
-      "path": "src/modules/uvgui_rom.c",
-      "symbol": "Claim the first inactive slot in the 50-entry, 0x170-byte GUI pool. * Preserve the original exhaustion behavior: it returns the capacity and writes * one slot beyond the pool when every entry is active. Callers must avoid exhaustion. * The widget purpose remains unknown; the name identifies the verified layout.",
-      "lines": [
-        450
-      ],
-      "evidence": "Claim the first inactive slot in the 50-entry, 0x170-byte GUI pool. * Preserve the original exhaustion behavior: it returns the capacity and writes * one slot beyond the pool when every entry is active. Callers must avoid exhaustion. * The widget purpose remains unknown; the name identifies the verified layout.",
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvGuiAllocatePool170Slot",
-          "declaration_line": 454,
-          "lines": [
-            450
-          ]
-        }
-      ]
-    },
-    {
       "id": "Q-b23f0014bc87",
       "kind": "uncertainty_note",
       "path": "src/modules/uvgui_rom.c",
@@ -206011,7 +207135,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Copy the complete 88-byte intersection record, including opaque fields.",
       "lines": [
-        722
+        751
       ],
       "evidence": "Copy the complete 88-byte intersection record, including opaque fields."
     },
@@ -206021,16 +207145,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Replace the 88-byte record only when its value at offset 0x2C is smaller * than the running minimum. The value meaning is unknown; equal values keep * the existing record and NaNs follow the original floating-point comparison.",
       "lines": [
-        804
+        833
       ],
       "evidence": "Replace the 88-byte record only when its value at offset 0x2C is smaller * than the running minimum. The value meaning is unknown; equal values keep * the existing record and NaNs follow the original floating-point comparison.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectUpdateMinimumValueRecord",
-          "declaration_line": 807,
+          "declaration_line": 836,
           "lines": [
-            804
+            833
           ]
         }
       ]
@@ -206041,16 +207165,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Return the indexed integer/float query pair when the original inclusive * upper-bound check permits it. Outputs are unchanged on rejection. The query * parameter meaning and whether the bound is a count or last index are unknown.",
       "lines": [
-        579
+        608
       ],
       "evidence": "Return the indexed integer/float query pair when the original inclusive * upper-bound check permits it. Outputs are unchanged on rejection. The query * parameter meaning and whether the bound is a count or last index are unknown.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectGetIndexedQueryPair",
-          "declaration_line": 582,
+          "declaration_line": 611,
           "lines": [
-            579
+            608
           ]
         }
       ]
@@ -206061,16 +207185,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Store the attribute at offset 0x28C for a kind-zero record. Preserve the * original inclusive count check and lack of a negative-index check. The array * capacity is not established; callers must supply a valid index.",
       "lines": [
-        1003
+        1032
       ],
       "evidence": "Store the attribute at offset 0x28C for a kind-zero record. Preserve the * original inclusive count check and lack of a negative-index check. The array * capacity is not established; callers must supply a valid index.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectSetValueAttribute",
-          "declaration_line": 1006,
+          "declaration_line": 1035,
           "lines": [
-            1003
+            1032
           ]
         }
       ]
@@ -206231,26 +207355,6 @@
           "declaration_line": 766,
           "lines": [
             762
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-1becfcb88d8b",
-      "kind": "uncertainty_note",
-      "path": "src/modules/uvterra_rom.c",
-      "symbol": "Read static-object properties through the original variadic list: one * writes the flag word, four writes the model ID, and zero terminates. * Unknown properties return immediately; absent objects consume no outputs. * The caller supplies valid output pointers and a terminating property.",
-      "lines": [
-        835
-      ],
-      "evidence": "Read static-object properties through the original variadic list: one * writes the flag word, four writes the model ID, and zero terminates. * Unknown properties return immediately; absent objects consume no outputs. * The caller supplies valid output pointers and a terminating property.",
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvTerraGetStaticObjectProperties",
-          "declaration_line": 839,
-          "lines": [
-            835
           ]
         }
       ]

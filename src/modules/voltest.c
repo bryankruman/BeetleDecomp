@@ -6,8 +6,8 @@ typedef struct { u8 unk00[0x28]; void (*getPosm)(s32, s32, Mtx4F *); } VoltestDo
 extern void *D_voltest_00400598, *gUvDobjExports;
 typedef struct { u8 unk00[0x14]; s32 (*getScreens)(void **); } VoltestScreenExports;
 extern VoltestScreenExports *gScrnExports;
-s32 func_voltest_0040044C(s32, void *);
-typedef struct VoltestRecord { s32 unk00; s8 first[4]; s8 second[4]; s8 third[8]; struct VoltestRecord *next; } VoltestRecord;
+s32 func_voltest_0040044C(void *, void *);
+typedef struct VoltestRecord { void *testData; s8 first[4]; s8 second[4]; s8 third[8]; struct VoltestRecord *next; } VoltestRecord;
 extern VoltestRecord *D_voltest_00400594;
 void voltestRefreshFirstScreenSlot(VoltestRecord *, s32);
 void voltestRefreshSecondScreenSlot(VoltestRecord *, s32);
@@ -66,34 +66,34 @@ s32 voltestGetCachedResult(VoltestRecord *record, s32 kind, s32 index) {
 #line 15 "src/modules/voltest.c"
 
 #line 16 "src/modules/voltest.c"
-/* Refresh the first per-screen signed-byte cache using screen data at 0x1D8.
- * Preserve the original invalid-index writes; no local index clamp is added.
- * RE_UNKNOWN: index/count bounds; inspect original screen getter and callers. */
+/* Refresh the first screen cache using data at 0x1D8 and loaded testData.
+ * Keep invalid-index writes. RE_UNKNOWN: index/count and loaded data extent/lifetime
+ * need original assets, screen getter and callers; no complete data type inferred. */
 void voltestRefreshFirstScreenSlot(VoltestRecord *record, s32 index) {
     void *screens[4];
     s32 count = gScrnExports->getScreens(screens);
     if (index < 0 || index >= count) record->first[index] = 0;
-    else if (func_voltest_0040044C(record->unk00, (u8 *)screens[index] + 0x1D8) != 0) record->first[index] = 1;
+    else if (func_voltest_0040044C(record->testData, (u8 *)screens[index] + 0x1D8) != 0) record->first[index] = 1;
     else record->first[index] = 0;
 }
 #line 17 "src/modules/voltest.c"
 
 #line 18 "src/modules/voltest.c"
-/* Refresh the second per-screen signed-byte cache using screen data at 0x184.
- * Preserve the original invalid-index writes; no local index clamp is added.
- * RE_UNKNOWN: index/count bounds; inspect original screen getter and callers. */
+/* Refresh the second screen cache using data at 0x184 and loaded testData.
+ * Keep invalid-index writes. RE_UNKNOWN: index/count and loaded data extent/lifetime
+ * need original assets, screen getter and callers; no complete data type inferred. */
 void voltestRefreshSecondScreenSlot(VoltestRecord *record, s32 index) {
     void *screens[4];
     s32 count = gScrnExports->getScreens(screens);
     if (index < 0 || index >= count) record->second[index] = 0;
-    else if (func_voltest_0040044C(record->unk00, (u8 *)screens[index] + 0x184) != 0) record->second[index] = 1;
+    else if (func_voltest_0040044C(record->testData, (u8 *)screens[index] + 0x184) != 0) record->second[index] = 1;
     else record->second[index] = 0;
 }
 #line 19 "src/modules/voltest.c"
 
 #line 20 "src/modules/voltest.c"
 /* Refresh the object-position cache; preserve the original invalid-index writes.
- * RE_UNKNOWN: index/count bounds; inspect original object-list getter and callers. */
+ * RE_UNKNOWN: index/count and testData extent/lifetime need original assets/getter/callers. */
 void voltestRefreshObjectPositionSlot(VoltestRecord *record, s32 index) {
     VoltestObject *objects[8];
     Mtx4F matrix;
@@ -101,7 +101,7 @@ void voltestRefreshObjectPositionSlot(VoltestRecord *record, s32 index) {
     if (index < 0 || index >= count) record->third[index] = 0;
     else {
         ((VoltestDobjExports *)gUvDobjExports)->getPosm(objects[index]->objectId, 0, &matrix);
-        if (func_voltest_0040044C(record->unk00, &matrix.m[3][0]) != 0) record->third[index] = 1;
+        if (func_voltest_0040044C(record->testData, &matrix.m[3][0]) != 0) record->third[index] = 1;
         else record->third[index] = 0;
     }
 }

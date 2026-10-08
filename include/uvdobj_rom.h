@@ -25,7 +25,7 @@ typedef struct UvDobj_Exports_s {
                                                Vec3F **); /* inferred */
     /* 0x54 */ s32 (*func_uvdobj_rom_00402870)(f32, f32, f32, f32, f32, f32, s32 **, f32 **,
                                                Vec3F **);            /* inferred */
-    /* 0x58 */ s32 (*uvDobjWriteJointMatricesFromQuaternions)(s32, Quat *, u8 *);   /* inferred */
+    /* 0x58 */ s32 (*uvDobjExtractJointQuaternionsFromMatrices)(s32, Quat *, u8 *);   /* inferred */
     /* 0x5C */ void (*uvDobjReplaceLightColorRecord)(s32, s32, s32, s32); /* inferred */
     /* 0x60 */ u16 (*uvDobjGetQueryArray)(s32 **);              /* inferred */
     /* 0x64 */ s32 *D_uvdobj_rom_004039B0;                           /* inferred */
