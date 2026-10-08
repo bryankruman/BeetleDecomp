@@ -150,6 +150,24 @@ void caranimInitializeState(void *state) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00400B08.s")
 
+/* Apply a variadic property list using signed-low-half tags 0..30; zero or an
+ * invalid tag ends processing. Doubles narrow to f32, vectors copy component
+ * by component, and tag 15 copies a matrix before optional local translation.
+ * A changed byte23D transitions four skid/spray/particle slots and clears each
+ * stored reference after its provider returns; these are not proved frees.
+ * RE_ORIGINAL_QUIRK: tag 3 clears word10 according to the old flag; tag 7 stores
+ * the shadow acquisition result, including null. Preserve callback reloads.
+ * RE_UNKNOWN: property/flag policies, units, variadic argument/source extents,
+ * valid handle/context chains and resource ownership/lifetimes need original
+ * callers, writers, pool consumers and teardown. Native handler order is known;
+ * historical source declarations and lexical organization remain unproved.
+ * Two readable drafts retain all observed effects but do not match: both are
+ * 1940 bytes, with 409 then 232 differing words. The observed-block-order draft
+ * still changes temporary registers/loop-zero scheduling, resolves two PC16
+ * branches locally and uses a synthesized table instead of the original label.
+ * Complete 20/18 relocation records fail equality; retain original assembly
+ * until instructions and every original dispatch-table target are proved. */
+#line 72 "src/modules/caranim.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00400C8C.s")
 
 /* When unsigned byte 0x240 is nonzero, scan four pointer slots at 0x2C0

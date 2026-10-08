@@ -1005,7 +1005,22 @@ s32 uvIsectFindMinimumSignedBoxMarginSide(IsectBounds *bounds, f32 *point) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00405698.s")
 
+/* Query transformed endpoints, then derive and orient the selector-dependent
+ * output axis through the original FMTX and FVEC providers. Preserve the 1.1f
+ * fallback write at 0x2C before failure gates, ordered scalar tests, helper
+ * argument order, component-store order and the final input-divisor snapshot.
+ * RE_ORIGINAL_QUIRK: an unsupported selector leaves vector 0x40 unchanged
+ * before normalization; both normalization return values are ignored. Whether
+ * that path is reached depends on the direct helper and input/alias contracts.
+ * RE_UNKNOWN: historical declarations/local storage, vector frames, divisor
+ * validity, record extent/aliases and selector/output initialization. Trace
+ * original callers, input producers and helper 0x405EDC/0x405C8C success paths.
+ * The 32 native selector-table entries remain assembly-owned. Resolve the
+ * instruction/local-storage differences before any readonly ownership change;
+ * a readable draft has not matched the complete original instructions. */
+#line 199 "src/modules/uvisect_rom.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00405794.s")
+#line 200 "src/modules/uvisect_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00405C8C.s")
 

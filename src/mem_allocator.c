@@ -146,7 +146,31 @@ void uvInsertFreeBlockCoalesced(MemBlock* releasedBlock) {
     }
 }
 #line 128 "src/mem_allocator.c"
-
+/*
+ * Reserve the incoming address interval in the allocator free list. Round the
+ * size to four bytes, preserve original node/header/output store ordering, and
+ * optionally clear the original unrounded byte count. The two word outputs
+ * report leading/trailing bytes absorbed without retaining a free-list node;
+ * return zero on success or -1 on the original interval-check failure paths.
+ * RE_ORIGINAL_QUIRK: after an empty-list traversal the original still reads the
+ * node size. Split tests distinguish gaps greater than eight and less than
+ * eight; exactly eight reaches the fallback. Removing the head in that fallback
+ * writes NULL instead of the removed node's next link. These are original
+ * operations, not established reachable faults; preserve them pending evidence.
+ * RE_UNKNOWN: allowed addresses, size/overflow/alignment limits, list ordering,
+ * empty-list reachability, writable output extents and aliases, counter meaning,
+ * and clear-control lifecycle. The observed graphics initializer calls ignore
+ * both outputs and the return, so they do not establish these guarantees.
+ * Resolve original heap setup, every caller, output consumers and reset/fill
+ * lifecycles before changing the checks, split boundaries or removal behavior.
+ * Readable C remains parked: 476 native bytes versus 484 draft bytes differ in
+ * 93 instruction words and relocation offsets. The cached-next traversal now
+ * matches, but eager arithmetic, register allocation and 64-byte versus 40-byte
+ * frames remain different. Recover original storage/lifetime evidence and prove
+ * exact instructions, relocation records and ROM; frame size alone does not
+ * justify padding, extra locals, alignment or a historical array extent.
+ */
+#line 129 "src/mem_allocator.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/mem_allocator/uvMemAllocAt.s")
 
 // called at start of every GameState transition during gameplay
