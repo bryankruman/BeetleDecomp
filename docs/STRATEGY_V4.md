@@ -2764,10 +2764,19 @@ Totals: 395 further recoveries after the 225 upstream ordinary imports, plus 133
 Frozen wave `2348-misc-vector-dot-return-contract-2350` and `accepted-misc-vector-dot-return-contract-2350` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 396 further readable functions
+## Historical accepted checkpoint — 396 further readable functions
 
 Recover Selection03DC as selectionDrawCurrentMenuAndConditionalOverlay with all420 native bytes/105 instructions exact. Preserve all53 original and candidate ELF dictionaries; actual native serialization contains51 module records plus two separately resolved FONT kernel records. Existing native order metadata and all23 signed HI/LO pairs plus5 JAL targets are unchanged. Exact node snapshots immediately after each effectful helper preserve callback-sensitive reads. Add five reviewed scratch/older-caller notes and the separate15D4 parked-contract note; no note receives cleanup/recovery credit and no parked C draft, type view or readonly ownership is accepted. Prewrite whole-source/map inverses, exact semantic alias append removal and logical coordinates are verified. Existing compiler warnings remain tracked. Normal extraction must regenerate old-name ASM callers. Checked converter source is not proof of the running binary; full original packed Selection, fixed FONT instructions, fresh original ROM, all1034 frozen hashes, complete remaining/data/address-C ledger and uncertainty index are mandatory before guarded landing.
 
 Totals: 396 further recoveries after the 225 upstream ordinary imports, plus 1338 existing C semantic cleanups. Current ledger: 804 assembly references = 762 ordinary + 42 entrypoints; 721,664 known remaining instruction bytes; zero unknown sizes; 299 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `2376-selection-current-menu-contracts-2376` and `accepted-selection-current-menu-contracts-2376` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 396 further readable functions
+
+One older104-byte C cleanup renames the stored word by actual BATTLE identity comparison and names its unused incoming argument without altering types/expressions or canonical symbol. Remove unsupported handle/phase claims. Retain original66E4/7C10/7FC0 assembly with precise original-provider contracts, searchable unresolved caller/allocation/domain/lifetime/storage evidence and honest complete trial mismatch facts. No trial views/prototypes/ABI/body or recovery credit. Whole-source inverse, ordered members and all original executable/pragma logical coordinates are verified before writes. Normal extraction, original packed Motion, fresh original ROM, all frozen manifest files, complete unchanged remaining ledger and uncertainty index remain mandatory.
+
+Totals: 396 further recoveries after the 225 upstream ordinary imports, plus 1339 existing C semantic cleanups. Current ledger: 804 assembly references = 762 ordinary + 42 entrypoints; 721,664 known remaining instruction bytes; zero unknown sizes; 299 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `2379-motion-older-identity-and-dispatch-notes-2379` and `accepted-motion-older-identity-and-dispatch-notes-2379` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

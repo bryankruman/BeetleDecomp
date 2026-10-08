@@ -65,7 +65,7 @@ void motionComputePlanarRecordAngleResponse(MotionPlanarAngleRecord *record);
 void motionComputePlanarRecordVector(MotionPlanarState *, MotionPlanarRecord *, Vec3F *);
 typedef struct { u8 unk00[0x690]; f32 value690; u8 unk694[0x2F4]; f32 value988; u8 unk98C[0x14]; f32 value9A0; } MotionCorrectionState;
 extern f32 D_motion_00416080, D_motion_00416084, D_motion_00416088, D_motion_00416090;
-typedef struct { u8 unk00[0x126C]; s32 battleHandle; } MotionBattleState;
+typedef struct { u8 unk00[0x126C]; s32 battleIdentityWord; } MotionBattleState;
 typedef struct { u8 unk00[0xC]; void (*notify)(s32); } MotionBattleExports;
 extern MotionBattleExports *gBattleExports;
 #include "uvfvec_rom.h"
@@ -153,7 +153,7 @@ void motionTransformSelectedPointVelocity(MotionVelocityState *state, Vec3F *out
 void func_motion_00408FD4();
 void func_motion_00409734();
 void func_motion_004098B8();
-void motionRunBattleAndHotLavaUpdate(MotionBattleState *state, s32 context);
+void motionRunBattleAndHotLavaUpdate(MotionBattleState *state, s32 unusedIncomingWord);
 extern s32 gCurrentGameState;
 void func_motion_00409B3C();
 void func_motion_00409C68();
@@ -825,6 +825,29 @@ void motionBuildBasisAndCallScalarHelper(MotionBasisDrawInput *input)
 }
 #line 192 "src/modules/motion.c"
 
+/* Query between matrix translations and retain the original drawing calls.
+ * Original matrix-row aliases, three single-precision component divisions,
+ * MISC110 returned scalar, query arguments and export reloads are established
+ * by native providers. Positive results select the first flag; any nonzero
+ * result reaches the downstream basis helper. Preserve this distinction.
+ * RE_ORIGINAL_QUIRK: the local query record is uninitialized before isct54
+ * reads its first two words; no caller initialization guarantee is established.
+ * RE_UNKNOWN: original state/input allocations, zero-length/finite domains,
+ * result-prefix initialization, vector/scalar meanings and units, query flags,
+ * pointer aliases and module/resource lifetimes need original callers/producers.
+ * The observed 88-byte query and 64-byte draw access views share local storage;
+ * they do not prove complete historical object declarations or allocations.
+ * Readable C remains parked: the first draft has 880 versus 884 native bytes
+ * and 73 differing positions. Preserving native zero-before-test flag flow
+ * gives 884/884 bytes and all 30 complete relocation records match by site;
+ * only the initial three HI/LO pair groups differ in record enumeration.
+ * Seven instruction words still differ: native positive/other flag registers
+ * V1/A1 become V0/V1, including their shared halfword stores. All 214 other
+ * words, frame and local homes match. No further effect/type correction is
+ * supported; historical declarations and flag lifetimes remain unproved.
+ * Require exact instructions and original packed-module/fresh ROM proof
+ * before replacing ASM; no dummy storage or register forcing is justified. */
+#line 193 "src/modules/motion.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_004066E4.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00406A58.s")
@@ -835,8 +858,48 @@ void motionBuildBasisAndCallScalarHelper(MotionBasisDrawInput *input)
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00407B44.s")
 
+/* Dispatch record kinds and process a selected three-float output.
+ * Native SMACK10/14 return record pointers; SMACK0C consumes the output and
+ * a fresh state+126C pointer. Earlier context/record pointers stay captured;
+ * the final stored key is read again after the callback. Category20 is
+ * tested before the later u16 narrowing. Signed selectors and ordered
+ * single-precision open scalar intervals are preserved in the parked C.
+ * RE_ORIGINAL_QUIRK: the indexed selector halfword read has no bound test;
+ * the later signed index < 4 test has no nonnegative check. These operations
+ * do not establish that any caller supplies an out-of-range index.
+ * RE_UNKNOWN: complete state/entry/record allocations, index/key/category
+ * domains, pointer aliases and replacement lifetimes, module availability,
+ * flag/vector/scalar purposes and units need original callers and producers.
+ * Readable C remains parked: 944 native versus 964 draft bytes, with 225
+ * differing positions. The native retains state in S0 and entry in S1;
+ * the draft homes state at SP+84 and retains entry in S0, adding reloads.
+ * Both use an 80-byte frame. All 34 relocation symbol/type identities keep
+ * their order, but sites and downstream helper values shift with the real
+ * 20-byte growth; complete relocation equality fails. No missing effect,
+ * width, precision, argument or callback reload is supported by full review.
+ * Historical declarations/storage remain unproved; require exact code and
+ * original packed-module/fresh ROM proof before replacing retained ASM. */
+#line 203 "src/modules/motion.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00407C10.s")
 
+/* Dispatch record kinds and transform state+984 through matrix+5E8.
+ * Native FMTXB0 writes three floats for SMACK0C, which receives a fresh
+ * state+126C pointer. Earlier context/record pointers remain captured, and
+ * the final stored key is read again after the callback. Category20 is
+ * tested before the later u16 narrowing; the same-key case returns early.
+ * RE_UNKNOWN: complete allocations, key/category domains, pointer aliases
+ * and replacement lifetimes, module availability, flag/vector purposes and
+ * historical declarations need original callers, producers and lifetimes.
+ * Readable C remains parked at 660/660 bytes. Thirteen instruction words
+ * move genuine local homes by four bytes: native SMACK pointer SP+72, key
+ * SP+68, context SP+52 and output SP+56 become SP+76/72/56/60. One BNE swaps
+ * its symmetric equality operands. All other 151 words and all 23 complete
+ * ordered relocation records match; the 80-byte frame is unchanged.
+ * Full review supports no missing effect, width, argument, precision or
+ * callback reload correction. Historical local storage remains unproved;
+ * require exact instructions and original packed-module/fresh ROM proof
+ * before replacing ASM; no padding or register forcing is justified. */
+#line 205 "src/modules/motion.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00407FC0.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00408254.s")
@@ -909,12 +972,12 @@ void motionTransformSelectedPointVelocity(MotionVelocityState *state, Vec3F *out
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_004098B8.s")
 
 #line 223 "src/modules/motion.c"
-/* In game state six, notify battle with the stored handle. Always update
- * the explosion phase with the full state and position vector at 0x618, then
- * try Hot Lava speech. The original callback context is ignored. */
-void motionRunBattleAndHotLavaUpdate(MotionBattleState *state, s32 context) {
+/* In game state six, forward the stored word to BATTLE's identity scan.
+ * Always call helper130E4(state, state+618, 1), then the voice helper.
+ * RE_UNKNOWN: identity/phase roles and lifetimes need producers/callers; the second incoming word is unused. */
+void motionRunBattleAndHotLavaUpdate(MotionBattleState *state, s32 unusedIncomingWord) {
     if (gCurrentGameState == 6) {
-        gBattleExports->notify(state->battleHandle);
+        gBattleExports->notify(state->battleIdentityWord);
     }
     func_motion_004130E4(state, (u8 *)state + 0x618, 1);
     motionTryPlayHotLavaVoice();
