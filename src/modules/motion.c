@@ -196,7 +196,7 @@ void motionUnloadModulesAndStopEmitters(void) {
  * divisor local. Denominators are unchecked; ordered clamps retain NaNs.
  * RE_UNKNOWN: reachable selector and denominator domains, scalar units,
  * historical storage aliases, record lifetime and caller guarantees require
- * original setting writers, field producers and callers. DATA values remain
+ * original setting writers, field producers and callers. Global values remain
  * runtime reads, not hardcoded constants inferred from shipped bytes.
  * A readable draft is 476 versus 480 native bytes, with 116 differing words.
  * Native reference-scalar stack snapshot/reload becomes a register value;
@@ -213,6 +213,25 @@ void motionUnloadModulesAndStopEmitters(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_004013B0.s")
 
+/* Query four 0x130-stride sample views after stores at 0x12A/0x12E/0x12C.
+ * ISCT 0xA4 mode 2 outputs key/scalar/XYZ; misses or loaded texture flag 4
+ * trigger ISCT 0xA0 mask 0xFE, with a prepared elevated retry when key 4 remains.
+ * Select greatest scalar independently of least normal Z, preserve first
+ * ties/NaNs, update matrix Z, rebuild its linear rows through MISC 0x18,
+ * reset four sample Z values and halfwords, and initialize matrix 0x62C.
+ * RE_ORIGINAL_QUIRK: fallback return values are ignored; its no-result
+ * path writes key 4/scalar 0/normal(0,0,1). Elevated XYZ is copied before
+ * the first query. Configuration reloads and arithmetic grouping matter.
+ * RE_UNKNOWN: context/key/flag/mode domains, scalar units, validity,
+ * allocation/aliasing and callback lifetimes need producers/callers;
+ * strided partial views do not establish a complete array/allocation.
+ * Clean trial is 920 versus 912 bytes; frame 216 versus 208, count spills,
+ * local homes and persistent export-base lowering differ. The 18/14 full
+ * relocation lists differ. Coordinate ADD operand allocation also differs;
+ * exact NaN payload/exception identity is unproved. Native's initial dead
+ * stack read does not justify invented scratch storage or padding.
+ * Retain original ASM until complete instructions/relocations match. */
+#line 108 "src/modules/motion.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_004017E4.s")
 
 #line 110 "src/modules/motion.c"

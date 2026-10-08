@@ -2539,10 +2539,19 @@ Totals: 356 further recoveries after the 225 upstream ordinary imports, plus 132
 Frozen wave `2037-system-property-native-contracts` and `accepted-system-property-native-contracts` verify real translation-unit instructions/full relocations, 4 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 356 further readable functions
+## Historical accepted checkpoint — 356 further readable functions
 
 Add five reviewed native-contract and uncertainty notes beside retained original assembly: particle COMMON setup, the Dynamics secondary selector, Motion acquisition callbacks and two task-editor record/query routines. Record observed callback order, mutable count and pointer reloads, original count/sentinel/read-status behavior, unresolved stack provenance, field meanings, storage and lifetimes, with evidence needed to resolve each. Keep unmatched readable reconstructions outside accepted source; document complete trial differences without invented local padding or initialized defaults. Preserve whole-source byte inverses and every executable logical coordinate. Counts remain 356 recoveries and 1320 older cleanups. Require all four affected original packed modules, a fresh full original ROM, every frozen source hash and uncertainty-index freshness.
 
 Totals: 356 further recoveries after the 225 upstream ordinary imports, plus 1320 existing C semantic cleanups. Current ledger: 844 assembly references = 801 ordinary + 43 entrypoints; 750,072 known remaining instruction bytes; zero unknown sizes; 302 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `2062-native-contract-notes-2062` and `accepted-native-contract-notes-2062` verify real translation-unit instructions/full relocations, 4 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 356 further readable functions
+
+Add two reviewed original-assembly contract notes for Motion sample queries and the task-editor second record loader, plus a precise correction of a prior false DATA section claim to Global values. Record actual operation order, count/sentinel/read-status behavior and unresolved storage, alias, callback, resource and lifetime contracts. Preserve every executable logical coordinate and whole-source byte inverse. Unmatched readable C stays diagnostic. Counts remain 356 recoveries and 1320 older cleanups. Require both affected packed original modules, a fresh full original ROM, all 1031 frozen source hashes and uncertainty-index freshness before acceptance.
+
+Totals: 356 further recoveries after the 225 upstream ordinary imports, plus 1320 existing C semantic cleanups. Current ledger: 844 assembly references = 801 ordinary + 43 entrypoints; 750,072 known remaining instruction bytes; zero unknown sizes; 302 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `2086-native-query-record-notes-2086` and `accepted-native-query-record-notes-2086` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

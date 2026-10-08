@@ -732,7 +732,30 @@ void tedStoreSelectedRecordByte(s32 unused) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00406178.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00406280.s")
-
+/*
+ * Reset 20 object-list slots, then read a byte count and 16-byte records.
+ * Keep attempted reads separate from retained-record and object-list indices;
+ * only a stored creation result unequal to full-word -1 advances the latter.
+ * Preserve ignored read statuses, count/provider/list reloads across callbacks,
+ * the direct record helper and the property-4 callback/index installation.
+ * The initializer requests 320 record bytes and 80 object-list bytes. The
+ * helper reads record word 0 and f32 members 4, 8 and 12; its later offset-0x10
+ * read uses a separate LETTER result, not a neighboring file-record member.
+ * RE_ORIGINAL_QUIRK: the byte count is not locally capped at 20. Creation
+ * exhaustion returns zero-extended 0xFFFF, while this caller tests full-word -1.
+ * RE_UNKNOWN: reachable file counts, partial-read contents, pool replacement
+ * and capacity, physical record meanings, callback aliases/mutations, resource
+ * bounds and LETTER-result extent/lifetime. Trace original writers, allocations,
+ * callback/resource consumers and exhaustion callers before adding validation.
+ * Readable C is parked: minimum-record and typed-slot reset drafts each contain
+ * 472 native/draft bytes with 16 register-allocation differences. The final
+ * draft's 17 complete relocation records agree as a multiset; serialization
+ * order differs. The typed reset did not resolve the second-loop register
+ * assignment. No missing operation or ABI effect was identified. Recover
+ * original source/lifetime evidence before another draft, then prove complete
+ * instructions, records, packed providers and ROM without invented storage.
+ */
+#line 231 "src/modules/ted.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00406330.s")
 /*
  * RE_UNKNOWN: second-list backing capacities, count/selection validity, alias and
