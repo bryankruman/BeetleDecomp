@@ -309,7 +309,7 @@
     "src/modules/uvquat_rom.c": "8df8e2779afce701f5662f8eff65918ca6b5a707b60c3be90d300d009411065d",
     "src/modules/uvquery_rom.c": "5af6f38d546de67c02228242a6578a86925d0c0792c0a330437b3cd35e19b586",
     "src/modules/uvsort_rom.c": "a8d25d7f0e6e33288f39c1de9589270ba1d5b77fbcd2f9c370749e386904b727",
-    "src/modules/uvsprt_rom.c": "c3423e3d495c41090b2c501527275458ccf0e3dee1ae009054776c5cfc007173",
+    "src/modules/uvsprt_rom.c": "612e86b41399a9401a50b0d6cdd87464098df042e326a4dc1027d7adab095d86",
     "src/modules/uvstring_rom.c": "94b9208341f1faf5aee2e8bd9e6e2c6336878522d977776684d4d7ffa5473720",
     "src/modules/uvterra_rom.c": "212d749a78b4a0059eec21fdaa6774e93f94f0d853dffa73e48c5fddac79121e",
     "src/modules/uvterrald_rom.c": "4f51d82aed1fc59eefc7e9d161b1d29601c1af7be11b928c5265f14d489d2596",
@@ -330,8 +330,8 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "2d69ae01951b237a1cf06f8a46670ee0ca06e4251562185544ae1247a6c865eb",
-    "docs/VALIDATION_20261006.md": "ea66bb36114ee88c318ebac513e923f905e9723bbb63658c89e6c4d393edf3f0"
+    "docs/STRATEGY_V4.md": "bf3ea2abab72e7a378e1f0fe1a01c3df2f195a6b631778dae700237c8f7b66ca",
+    "docs/VALIDATION_20261006.md": "a5a94fec93cfcf2a126e5209c618e56eaf230da4d17413345054863e59a5ac24"
   },
   "counts": {
     "address_function": 943,
@@ -341,11 +341,11 @@
     "conditional_draft": 4,
     "decompiler_local": 932,
     "draft_marker": 27,
-    "explicit_unknown": 848,
+    "explicit_unknown": 852,
     "layout_padding": 274,
     "offset_field": 1584,
     "opaque_type": 282,
-    "original_quirk": 221,
+    "original_quirk": 222,
     "uncertainty_note": 91,
     "unused_identifier": 123
   },
@@ -141810,6 +141810,46 @@
       ]
     },
     {
+      "id": "Q-3667db3dc81b",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvsprt_rom.c",
+      "symbol": "Clip endpoints and adjust texture coordinates. RE_UNKNOWN: valid signed ranges and packed truncation intent need original callers/assets and command-format evidence.",
+      "lines": [
+        489
+      ],
+      "evidence": "Clip endpoints and adjust texture coordinates. RE_UNKNOWN: valid signed ranges and packed truncation intent need original callers/assets and command-format evidence.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDrawBitmap",
+          "declaration_line": 472,
+          "lines": [
+            489
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-5fa958b6299f",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvsprt_rom.c",
+      "symbol": "Preserve native split-load addressing and inclusive row loop. RE_UNKNOWN: split-data layout and readable extent need original resource producers.",
+      "lines": [
+        580
+      ],
+      "evidence": "Preserve native split-load addressing and inclusive row loop. RE_UNKNOWN: split-data layout and readable extent need original resource producers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDrawBitmap",
+          "declaration_line": 472,
+          "lines": [
+            580
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-a9c382ce60b8",
       "kind": "explicit_unknown",
       "path": "src/modules/uvsprt_rom.c",
@@ -141845,6 +141885,26 @@
           "declaration_line": 277,
           "lines": [
             282
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-dca8f5799e47",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvsprt_rom.c",
+      "symbol": "RE_UNKNOWN: buffer-address cache validity across data/format changes needs original resource lifetimes and render-order proof.",
+      "lines": [
+        654
+      ],
+      "evidence": "RE_UNKNOWN: buffer-address cache validity across data/format changes needs original resource lifetimes and render-order proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDrawBitmap",
+          "declaration_line": 472,
+          "lines": [
+            654
           ]
         }
       ]
@@ -142034,6 +142094,26 @@
           "declaration_line": 277,
           "lines": [
             324
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-14e79f267700",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvsprt_rom.c",
+      "symbol": "RE_UNKNOWN: writable command capacity, backing extents, aliases and lifetimes need original allocators/producers and full caller contracts; macro overhead estimates are not bounds.",
+      "lines": [
+        488
+      ],
+      "evidence": "RE_UNKNOWN: writable command capacity, backing extents, aliases and lifetimes need original allocators/producers and full caller contracts; macro overhead estimates are not bounds.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDrawBitmap",
+          "declaration_line": 472,
+          "lines": [
+            488
           ]
         }
       ]
@@ -220837,6 +220917,26 @@
           "declaration_line": 70,
           "lines": [
             72
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-2e118f59c689",
+      "kind": "original_quirk",
+      "path": "src/modules/uvsprt_rom.c",
+      "symbol": "RE_ORIGINAL_QUIRK: native publishes buf to the cache even when bmsiz is outside 0..3 and no load case runs; caller reachability remains unknown.",
+      "lines": [
+        651
+      ],
+      "evidence": "RE_ORIGINAL_QUIRK: native publishes buf to the cache even when bmsiz is outside 0..3 and no load case runs; caller reachability remains unknown.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDrawBitmap",
+          "declaration_line": 472,
+          "lines": [
+            651
           ]
         }
       ]

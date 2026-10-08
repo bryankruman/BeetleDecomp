@@ -17,8 +17,8 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 848 |
-| Preserved RE_ORIGINAL_QUIRK notes | 221 |
+| Explicit RE_UNKNOWN notes | 852 |
+| Preserved RE_ORIGINAL_QUIRK notes | 222 |
 | Older comments with uncertainty language | 91 |
 | Documented original-behavior audits | 30 |
 | Assembly-backed functions or data | 804 |
@@ -7928,8 +7928,11 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `arg0` | function `uvGetSpriteHeight`, function `uvGetSpriteWidth`, function `uvSpriteClearStateBytes`, function `uvSpriteRender`, function `uvSpriteRender`, function `uvSprtProps` | [39](../src/modules/uvsprt_rom.c#L39), [43](../src/modules/uvsprt_rom.c#L43), [45](../src/modules/uvsprt_rom.c#L45), [46](../src/modules/uvsprt_rom.c#L46), [47](../src/modules/uvsprt_rom.c#L47), [260](../src/modules/uvsprt_rom.c#L260), [264](../src/modules/uvsprt_rom.c#L264), [265](../src/modules/uvsprt_rom.c#L265) |
 | decompiler_local | `temp_a1` | function `uvSpriteDrawAll` | [239](../src/modules/uvsprt_rom.c#L239), [244](../src/modules/uvsprt_rom.c#L244), [245](../src/modules/uvsprt_rom.c#L245), [247](../src/modules/uvsprt_rom.c#L247), [250](../src/modules/uvsprt_rom.c#L250) |
 | explicit_unknown | `Clear both leading bytes in the selected sprite. RE_UNKNOWN: sprite * index/backing validity need original pool, ID producers and callers.` | function `uvSpriteClearStateBytes` | [168](../src/modules/uvsprt_rom.c#L168) |
+| explicit_unknown | `Clip endpoints and adjust texture coordinates. RE_UNKNOWN: valid signed ranges and packed truncation intent need original callers/assets and command-format evidence.` | function `uvDrawBitmap` | [489](../src/modules/uvsprt_rom.c#L489) |
+| explicit_unknown | `Preserve native split-load addressing and inclusive row loop. RE_UNKNOWN: split-data layout and readable extent need original resource producers.` | function `uvDrawBitmap` | [580](../src/modules/uvsprt_rom.c#L580) |
 | explicit_unknown | `RE_ORIGINAL_QUIRK: allocator result is used without a local null check. RE_UNKNOWN: allocation success, backing, aliases and lifetimes need original allocator, producer and call...` | function `uvSpriteFromBitmap` | [72](../src/modules/uvsprt_rom.c#L72) |
 | explicit_unknown | `RE_UNKNOWN: asset extents, aliasing, ownership and historical declarations need original producer/caller proof.` | function `uvSpriteSetBlit` | [282](../src/modules/uvsprt_rom.c#L282) |
+| explicit_unknown | `RE_UNKNOWN: buffer-address cache validity across data/format changes needs original resource lifetimes and render-order proof.` | function `uvDrawBitmap` | [654](../src/modules/uvsprt_rom.c#L654) |
 | explicit_unknown | `RE_UNKNOWN: copied texture-data extent, ownership and lifetime need original producer/consumer proof.` | function `uvSpriteFromBitmap` | [85](../src/modules/uvsprt_rom.c#L85) |
 | explicit_unknown | `RE_UNKNOWN: count domain, allocation/module success and pool lifetime need original property producers, allocators and callers.` | function `__entrypoint_func_uvsprt_rom_400298` | [184](../src/modules/uvsprt_rom.c#L184) |
 | explicit_unknown | `RE_UNKNOWN: cursor/sprite backing, writable capacity, aliases and lifetimes need original caller/producer proof.` | function `uvSpriteDisplayList` | [225](../src/modules/uvsprt_rom.c#L225) |
@@ -7939,6 +7942,7 @@ For every future source wave, regenerate and check this index after code and str
 | explicit_unknown | `RE_UNKNOWN: native reads two f32 words; original variadic declarations and caller packing need proof.` | function `uvSprtProps` | [405](../src/modules/uvsprt_rom.c#L405) |
 | explicit_unknown | `RE_UNKNOWN: sprite/bitmap backing, display-list capacity, aliases, numeric domains and shared-state lifetimes need original producers/callers and runtime-format proof.` | function `uvSpriteDraw` | [720](../src/modules/uvsprt_rom.c#L720) |
 | explicit_unknown | `RE_UNKNOWN: unsupported formats retain attributes; asset validity and resource lifetime need producer proof.` | function `uvSpriteSetBlit` | [324](../src/modules/uvsprt_rom.c#L324) |
+| explicit_unknown | `RE_UNKNOWN: writable command capacity, backing extents, aliases and lifetimes need original allocators/producers and full caller contracts; macro overhead estimates are not bounds.` | function `uvDrawBitmap` | [488](../src/modules/uvsprt_rom.c#L488) |
 | layout_padding | `pad` | type `UnkStruct_uvsprt_rom_004033CC` | [31](../src/modules/uvsprt_rom.c#L31) |
 | offset_field | `unk0` | function `__entrypoint_func_uvsprt_rom_400298`, function `uvSpriteClearStateBytes`, function `uvSpriteDrawAll`, function `uvSprtProps`, type `uvSprite_t` | [18](../src/modules/uvsprt_rom.c#L18), [171](../src/modules/uvsprt_rom.c#L171), [214](../src/modules/uvsprt_rom.c#L214), [245](../src/modules/uvsprt_rom.c#L245), [425](../src/modules/uvsprt_rom.c#L425) |
 | offset_field | `unk1` | function `__entrypoint_func_uvsprt_rom_400298`, function `uvSpriteAllocateFirstFree`, function `uvSpriteClearStateBytes`, type `uvSprite_t` | [19](../src/modules/uvsprt_rom.c#L19), [157](../src/modules/uvsprt_rom.c#L157), [158](../src/modules/uvsprt_rom.c#L158), [172](../src/modules/uvsprt_rom.c#L172), [215](../src/modules/uvsprt_rom.c#L215) |
@@ -7950,6 +7954,7 @@ For every future source wave, regenerate and check this index after code and str
 | opaque_type | `UnkStruct_uvsprt_rom_004033CC` | global `sUvGfxStateExports_uvsprt`, type `UnkStruct_uvsprt_rom_004033CC` | [33](../src/modules/uvsprt_rom.c#L33), [66](../src/modules/uvsprt_rom.c#L66) |
 | opaque_type | `UnkStruct_uvsprt_rom_004033CC_s` | type `UnkStruct_uvsprt_rom_004033CC` | [30](../src/modules/uvsprt_rom.c#L30) |
 | original_quirk | `RE_ORIGINAL_QUIRK: allocator result is used without a local null check. RE_UNKNOWN: allocation success, backing, aliases and lifetimes need original allocator, producer and call...` | function `uvSpriteFromBitmap` | [72](../src/modules/uvsprt_rom.c#L72) |
+| original_quirk | `RE_ORIGINAL_QUIRK: native publishes buf to the cache even when bmsiz is outside 0..3 and no load case runs; caller reachability remains unknown.` | function `uvDrawBitmap` | [651](../src/modules/uvsprt_rom.c#L651) |
 | uncertainty_note | `Select opaque surface rendering when the current attribute requests it.` | function `uvSpriteDrawFinish` | [996](../src/modules/uvsprt_rom.c#L996) |
 | unused_identifier | `unusedHalfwordA` | function `uvSpriteSetBlit` | [280](../src/modules/uvsprt_rom.c#L280) |
 | unused_identifier | `unusedHalfwordB` | function `uvSpriteSetBlit` | [281](../src/modules/uvsprt_rom.c#L281) |

@@ -469,74 +469,74 @@ void uvSprtProps(s32 spriteId, ...) {
     }
 }
 
-void uvDrawBitmap(Gfx **gdl, Sprite *s, Bitmap *b, s32 x, s32 y, s32 xx, s32 yy, s32 fs,
-                              s32 ft, s32 sx, s32 sy) {
-    s32 rs, rt;
-    s32 rxh, ryh;
-    s32 rxl, ryl;
-    Gfx *gdlh;
-    s32 tex_width, tex_height;
-    Gtexrect gt, *g;
+void uvDrawBitmap(Gfx **outDisplayList, Sprite *spriteState, Bitmap *bitmapState, s32 startX, s32 startY, s32 endX, s32 endY, s32 textureOffsetS,
+                              s32 textureOffsetT, s32 textureStepS, s32 textureStepT) {
+    s32 clippedS, clippedT;
+    s32 rectangleXh, rectangleYh;
+    s32 rectangleXl, rectangleYl;
+    Gfx *displayListCursor;
+    s32 textureWidth, textureHeight;
+    Gtexrect rectangleFields, *rectangleFieldView;
     s32 s_clamp, t_clamp, s_mask, t_mask, s_lod, t_lod;
 
-    g = &gt;
+    rectangleFieldView = &rectangleFields;
 
-    tex_width = b->width_img;
-    tex_height = s->bmHreal;
+    textureWidth = bitmapState->width_img;
+    textureHeight = spriteState->bmHreal;
 
-    gdlh = *gdl;
-
-    /* Scissoring */
-    if ((x >= sScissorXmax) || (y >= sScissorYmax)) {
+    displayListCursor = *outDisplayList;
+    /* RE_UNKNOWN: writable command capacity, backing extents, aliases and lifetimes need original allocators/producers and full caller contracts; macro overhead estimates are not bounds. */
+    /* Clip endpoints and adjust texture coordinates. RE_UNKNOWN: valid signed ranges and packed truncation intent need original callers/assets and command-format evidence. */
+    if ((startX >= sScissorXmax) || (startY >= sScissorYmax)) {
         return;
     }
 
-    if ((xx < sScissorXmin) || (yy < sScissorYmin)) {
+    if ((endX < sScissorXmin) || (endY < sScissorYmin)) {
         return;
     }
 
-    if (x < sScissorXmin) {
-        rxh = sScissorXmin * 4;
-        rs = (b->s << 5) + fs + (((sScissorXmin - x) * sx) >> 5);
+    if (startX < sScissorXmin) {
+        rectangleXh = sScissorXmin * 4;
+        clippedS = (bitmapState->s << 5) + textureOffsetS + (((sScissorXmin - startX) * textureStepS) >> 5);
 #ifdef DEBUG_SCISSOR
-        emPrintf("Sprite Scissoring: Left Edge (%d) not in range (%d,%d)\n", x, sScissorXmin,
+        emPrintf("Sprite Scissoring: Left Edge (%d) not in range (%d,%d)\n", startX, sScissorXmin,
                  sScissorXmax);
 #endif
     } else {
-        rxh = x * 4;
-        rs = (b->s << 5) + fs;
+        rectangleXh = startX * 4;
+        clippedS = (bitmapState->s << 5) + textureOffsetS;
     };
 
-    if (y < sScissorYmin) {
-        ryh = sScissorYmin * 4;
-        rt = (b->t << 5) + ft + (((sScissorYmin - y) * sy) >> 5);
+    if (startY < sScissorYmin) {
+        rectangleYh = sScissorYmin * 4;
+        clippedT = (bitmapState->t << 5) + textureOffsetT + (((sScissorYmin - startY) * textureStepT) >> 5);
 #ifdef DEBUG_SCISSOR
-        emPrintf("Sprite Scissoring: Top Edge (%d) not in range (%d,%d)\n", y, sScissorYmin,
+        emPrintf("Sprite Scissoring: Top Edge (%d) not in range (%d,%d)\n", startY, sScissorYmin,
                  sScissorYmax);
 #endif
     } else {
-        ryh = y * 4;
-        rt = (b->t << 5) + ft;
+        rectangleYh = startY * 4;
+        clippedT = (bitmapState->t << 5) + textureOffsetT;
     }
 
-    if (xx >= sScissorXmax) {
-        rxl = sScissorXmax * 4;
+    if (endX >= sScissorXmax) {
+        rectangleXl = sScissorXmax * 4;
 #ifdef DEBUG_SCISSOR
-        emPrintf("Sprite Scissoring: Right Edge (%d) not in range (%d,%d)\n", xx, sScissorXmin,
+        emPrintf("Sprite Scissoring: Right Edge (%d) not in range (%d,%d)\n", endX, sScissorXmin,
                  sScissorXmax);
 #endif
     } else {
-        rxl = xx * 4;
+        rectangleXl = endX * 4;
     };
 
-    if (yy >= sScissorYmax) {
-        ryl = sScissorYmax * 4;
+    if (endY >= sScissorYmax) {
+        rectangleYl = sScissorYmax * 4;
 #ifdef DEBUG_SCISSOR
-        emPrintf("Sprite Scissoring: Bottom Edge (%d) not in range (%d,%d)\n", yy, sScissorYmin,
+        emPrintf("Sprite Scissoring: Bottom Edge (%d) not in range (%d,%d)\n", endY, sScissorYmin,
                  sScissorYmax);
 #endif
     } else {
-        ryl = yy * 4;
+        rectangleYl = endY * 4;
     };
 
     s_clamp = G_TX_CLAMP;
@@ -549,132 +549,132 @@ void uvDrawBitmap(Gfx **gdl, Sprite *s, Bitmap *b, s32 x, s32 y, s32 xx, s32 yy,
 #define LOAD_TEX
 
 #ifdef LOAD_TEX
-    if (b->buf != sPrevBitmapBuf) {
-        switch (s->bmsiz) {
+    if (bitmapState->buf != sPrevBitmapBuf) {
+        switch (spriteState->bmsiz) {
             case G_IM_SIZ_4b:
-                if (s->attr & SP_TEXSHUF) {
-                    gDPLoadTextureBlock_4bS(gdlh++, b->buf, s->bmfmt, tex_width, tex_height, 0, s_clamp,
+                if (spriteState->attr & SP_TEXSHUF) {
+                    gDPLoadTextureBlock_4bS(displayListCursor++, bitmapState->buf, spriteState->bmfmt, textureWidth, textureHeight, 0, s_clamp,
                                             t_clamp, s_mask, t_mask, s_lod, t_lod);
                 } else {
-                    gDPLoadTextureBlock_4b(gdlh++, b->buf, s->bmfmt, tex_width, tex_height, 0, s_clamp,
+                    gDPLoadTextureBlock_4b(displayListCursor++, bitmapState->buf, spriteState->bmfmt, textureWidth, textureHeight, 0, s_clamp,
                                            t_clamp, s_mask, t_mask, s_lod, t_lod);
                 };
                 break;
 
             case G_IM_SIZ_8b:
-                if (s->attr & SP_TEXSHUF) {
-                    gDPLoadTextureBlockS(gdlh++, b->buf, s->bmfmt, G_IM_SIZ_8b, tex_width, tex_height, 0,
+                if (spriteState->attr & SP_TEXSHUF) {
+                    gDPLoadTextureBlockS(displayListCursor++, bitmapState->buf, spriteState->bmfmt, G_IM_SIZ_8b, textureWidth, textureHeight, 0,
                                          s_clamp, t_clamp, s_mask, t_mask, s_lod, t_lod);
                 } else {
-                    gDPLoadTextureBlock(gdlh++, b->buf, s->bmfmt, G_IM_SIZ_8b, tex_width, tex_height, 0,
+                    gDPLoadTextureBlock(displayListCursor++, bitmapState->buf, spriteState->bmfmt, G_IM_SIZ_8b, textureWidth, textureHeight, 0,
                                         s_clamp, t_clamp, s_mask, t_mask, s_lod, t_lod);
                 };
                 break;
             case G_IM_SIZ_16b:
-                if (s->bmfmt == G_IM_FMT_YUV) {
-                    if (s->attr & SP_TEXSHUF) {
-                        gDPLoadTextureBlockYuvS(gdlh++, b->buf, s->bmfmt, G_IM_SIZ_16b, tex_width,
-                                                tex_height, 0, s_clamp, t_clamp, s_mask, t_mask, s_lod,
+                if (spriteState->bmfmt == G_IM_FMT_YUV) {
+                    if (spriteState->attr & SP_TEXSHUF) {
+                        gDPLoadTextureBlockYuvS(displayListCursor++, bitmapState->buf, spriteState->bmfmt, G_IM_SIZ_16b, textureWidth,
+                                                textureHeight, 0, s_clamp, t_clamp, s_mask, t_mask, s_lod,
                                                 t_lod);
                     } else {
-                        if (b->LUToffset != 0) { /* Split Y and UV areas */
-                            unsigned char *uv, *addr;
-                            int j;
-                            s32 tmem, siz;
+                        if (bitmapState->LUToffset != 0) { /* Preserve native split-load addressing and inclusive row loop. RE_UNKNOWN: split-data layout and readable extent need original resource producers. */
+                            unsigned char *splitDataBase, *rowDataAddress;
+                            int rowIndex;
+                            s32 tileMemoryOffset, loadCount;
 
-                            gDPSetTextureImage(gdlh++, G_IM_FMT_I, G_IM_SIZ_8b, 1, b->buf);
-                            gDPSetTile(gdlh++, G_IM_FMT_I, G_IM_SIZ_8b, 0, 256, G_TX_LOADTILE, 0, t_clamp,
+                            gDPSetTextureImage(displayListCursor++, G_IM_FMT_I, G_IM_SIZ_8b, 1, bitmapState->buf);
+                            gDPSetTile(displayListCursor++, G_IM_FMT_I, G_IM_SIZ_8b, 0, 256, G_TX_LOADTILE, 0, t_clamp,
                                        t_mask, t_lod, s_clamp, s_mask, s_lod);
-                            gDPLoadSync(gdlh++);
-                            gDPLoadBlock(gdlh++, G_TX_LOADTILE, 0, 0, tex_width * tex_height - 1,
-                                         CALC_DXT(tex_width, 1));
-                            gDPLoadSync(gdlh++);
+                            gDPLoadSync(displayListCursor++);
+                            gDPLoadBlock(displayListCursor++, G_TX_LOADTILE, 0, 0, textureWidth * textureHeight - 1,
+                                         CALC_DXT(textureWidth, 1));
+                            gDPLoadSync(displayListCursor++);
 
-                            uv = ((unsigned char *) b->buf)
-                                 + ((tex_width * tex_height) / 2) * b->LUToffset;
+                            splitDataBase = ((unsigned char *) bitmapState->buf)
+                                 + ((textureWidth * textureHeight) / 2) * bitmapState->LUToffset;
 
-                            for (j = 0; j <= (tex_height / 2); j++) {
-                                addr = uv + ((tex_height / 2) - 2 - j) * tex_width;
-                                siz = 3 * tex_width;
-                                tmem = (tex_width / 8) * (tex_height - 2 - 2 * j);
-                                if (tmem < 0) {
-                                    addr += (-tmem) * 8;
-                                    siz -= (-tmem) * 8;
-                                    tmem = 0;
+                            for (rowIndex = 0; rowIndex <= (textureHeight / 2); rowIndex++) {
+                                rowDataAddress = splitDataBase + ((textureHeight / 2) - 2 - rowIndex) * textureWidth;
+                                loadCount = 3 * textureWidth;
+                                tileMemoryOffset = (textureWidth / 8) * (textureHeight - 2 - 2 * rowIndex);
+                                if (tileMemoryOffset < 0) {
+                                    rowDataAddress += (-tileMemoryOffset) * 8;
+                                    loadCount -= (-tileMemoryOffset) * 8;
+                                    tileMemoryOffset = 0;
                                 };
-                                if (j == 0)
-                                    siz = 2 * tex_width;
+                                if (rowIndex == 0)
+                                    loadCount = 2 * textureWidth;
 
-                                gDPSetTextureImage(gdlh++, G_IM_FMT_I, G_IM_SIZ_8b, 1, addr);
-                                gDPSetTile(gdlh++, G_IM_FMT_I, G_IM_SIZ_8b, 0, tmem, G_TX_LOADTILE, 0,
+                                gDPSetTextureImage(displayListCursor++, G_IM_FMT_I, G_IM_SIZ_8b, 1, rowDataAddress);
+                                gDPSetTile(displayListCursor++, G_IM_FMT_I, G_IM_SIZ_8b, 0, tileMemoryOffset, G_TX_LOADTILE, 0,
                                            t_clamp, t_mask, t_lod, s_clamp, s_mask, s_lod);
-                                gDPLoadSync(gdlh++);
-                                gDPLoadBlock(gdlh++, G_TX_LOADTILE, 0, 0, siz - 1,
-                                             CALC_DXT(tex_width, 1));
-                                gDPLoadSync(gdlh++);
+                                gDPLoadSync(displayListCursor++);
+                                gDPLoadBlock(displayListCursor++, G_TX_LOADTILE, 0, 0, loadCount - 1,
+                                             CALC_DXT(textureWidth, 1));
+                                gDPLoadSync(displayListCursor++);
                             };
 
-                            gDPSetTile(gdlh++, s->bmfmt, G_IM_SIZ_16b, (((tex_width) * 1) + 7) >> 3, 0,
+                            gDPSetTile(displayListCursor++, spriteState->bmfmt, G_IM_SIZ_16b, (((textureWidth) * 1) + 7) >> 3, 0,
                                        G_TX_RENDERTILE, 0, t_clamp, t_mask, t_lod, s_clamp, s_mask,
                                        s_lod);
-                            gDPSetTileSize(gdlh++, G_TX_RENDERTILE, 0, 0,
-                                           ((tex_width) -1) << G_TEXTURE_IMAGE_FRAC,
-                                           ((tex_height) -1) << G_TEXTURE_IMAGE_FRAC);
+                            gDPSetTileSize(displayListCursor++, G_TX_RENDERTILE, 0, 0,
+                                           ((textureWidth) -1) << G_TEXTURE_IMAGE_FRAC,
+                                           ((textureHeight) -1) << G_TEXTURE_IMAGE_FRAC);
 
                         } else {
-                            gDPLoadTextureBlockYuv(gdlh++, b->buf, s->bmfmt, G_IM_SIZ_16b, tex_width,
-                                                   tex_height, 0, s_clamp, t_clamp, s_mask, t_mask,
+                            gDPLoadTextureBlockYuv(displayListCursor++, bitmapState->buf, spriteState->bmfmt, G_IM_SIZ_16b, textureWidth,
+                                                   textureHeight, 0, s_clamp, t_clamp, s_mask, t_mask,
                                                    s_lod, t_lod);
                         };
                     };
                 } else {
-                    if (s->attr & SP_TEXSHUF) {
-                        gDPLoadTextureBlockS(gdlh++, b->buf, s->bmfmt, G_IM_SIZ_16b, tex_width,
-                                             tex_height, 0, s_clamp, t_clamp, s_mask, t_mask, s_lod,
+                    if (spriteState->attr & SP_TEXSHUF) {
+                        gDPLoadTextureBlockS(displayListCursor++, bitmapState->buf, spriteState->bmfmt, G_IM_SIZ_16b, textureWidth,
+                                             textureHeight, 0, s_clamp, t_clamp, s_mask, t_mask, s_lod,
                                              t_lod);
                     } else {
-                        gDPLoadTextureBlock(gdlh++, b->buf, s->bmfmt, G_IM_SIZ_16b, tex_width, tex_height,
+                        gDPLoadTextureBlock(displayListCursor++, bitmapState->buf, spriteState->bmfmt, G_IM_SIZ_16b, textureWidth, textureHeight,
                                             0, s_clamp, t_clamp, s_mask, t_mask, s_lod, t_lod);
                     };
                 };
                 break;
             case G_IM_SIZ_32b:
-                if (s->attr & SP_TEXSHUF) {
-                    gDPLoadTextureBlockS(gdlh++, b->buf, s->bmfmt, G_IM_SIZ_32b, tex_width, tex_height, 0,
+                if (spriteState->attr & SP_TEXSHUF) {
+                    gDPLoadTextureBlockS(displayListCursor++, bitmapState->buf, spriteState->bmfmt, G_IM_SIZ_32b, textureWidth, textureHeight, 0,
                                          s_clamp, t_clamp, s_mask, t_mask, s_lod, t_lod);
                 } else {
-                    gDPLoadTextureBlock(gdlh++, b->buf, s->bmfmt, G_IM_SIZ_32b, tex_width, tex_height, 0,
+                    gDPLoadTextureBlock(displayListCursor++, bitmapState->buf, spriteState->bmfmt, G_IM_SIZ_32b, textureWidth, textureHeight, 0,
                                         s_clamp, t_clamp, s_mask, t_mask, s_lod, t_lod);
                 };
                 break;
         }
-        sPrevBitmapBuf = b->buf;
+        sPrevBitmapBuf = bitmapState->buf; /* RE_ORIGINAL_QUIRK: native publishes buf to the cache even when bmsiz is outside 0..3 and no load case runs; caller reachability remains unknown. */
     }
 #endif /* LOAD_TEX */
+    /* RE_UNKNOWN: buffer-address cache validity across data/format changes needs original resource lifetimes and render-order proof. */
+    rectangleFieldView->cmd = G_TEXRECT;
+    rectangleFieldView->tile = 0;
 
-    g->cmd = G_TEXRECT;
-    g->tile = 0;
+    rectangleFieldView->xh = rectangleXh;
+    rectangleFieldView->xl = rectangleXl;
+    rectangleFieldView->yh = rectangleYh;
+    rectangleFieldView->yl = rectangleYl;
 
-    g->xh = rxh;
-    g->xl = rxl;
-    g->yh = ryh;
-    g->yl = ryl;
+    rectangleFieldView->s = clippedS;
+    rectangleFieldView->t = clippedT;
 
-    g->s = rs;
-    g->t = rt;
-
-    if ((s->attr & SP_FASTCOPY) && (s->bmfmt != G_IM_FMT_YUV))
-        g->dsdx = sx * 4;
+    if ((spriteState->attr & SP_FASTCOPY) && (spriteState->bmfmt != G_IM_FMT_YUV))
+        rectangleFieldView->dsdx = textureStepS * 4;
     else
-        g->dsdx = sx;
+        rectangleFieldView->dsdx = textureStepS;
 
-    g->dtdy = sy;
+    rectangleFieldView->dtdy = textureStepT;
 
-    gSPTextureRectangle(gdlh++, g->xh, g->yh, g->xl, g->yl, g->tile, g->s, g->t, g->dsdx, g->dtdy);
+    gSPTextureRectangle(displayListCursor++, rectangleFieldView->xh, rectangleFieldView->yh, rectangleFieldView->xl, rectangleFieldView->yl, rectangleFieldView->tile, rectangleFieldView->s, rectangleFieldView->t, rectangleFieldView->dsdx, rectangleFieldView->dtdy);
 
-    gDPPipeSync(gdlh++);
+    gDPPipeSync(displayListCursor++);
 
-    *gdl = gdlh;
+    *outDisplayList = displayListCursor;
 }
 
 void uvSpriteDrawInit(Gfx **outDisplayList) {
