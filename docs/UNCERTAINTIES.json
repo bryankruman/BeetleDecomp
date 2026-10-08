@@ -214,14 +214,14 @@
     "src/modules/gamegui.c": "fef0d68606078cb9ffd6433509504e41d4cd45ca51bc471106f11133065010a1",
     "src/modules/glare.c": "5deea24cbe00920ce22d007ca5b365148d74d21e6590918ea93fa3dd76daaea5",
     "src/modules/intro.c": "1e37724db4a00b702fd3482ac3edd83cceefbe193c6d3e1047cb6b7725388d3c",
-    "src/modules/letter.c": "d4b3454a1087817332e02127c41a4cc14256c5759495cfa9e0e469fd386c70f4",
+    "src/modules/letter.c": "64d4dbf2d12b2917d0d8d756242cf77e64f4d1b0d0bdc86d82d62434764259c3",
     "src/modules/level1.c": "a6d12da751d98423918c6a81d403a21dfe0a21eaf085534f1dd90d33a4d75bed",
     "src/modules/light.c": "1a98486e23cf77f235ae5bc8e34f08ba97f834324944a9abf34d94587ac658b3",
     "src/modules/logo.c": "98b52c4dd4100cf937d10d704a5b1720b9ff63a628099b7215f9fbc57d364619",
     "src/modules/med.c": "75883b1c720e6ddf29668d9d2ea81496621a5d3338ee77817ea0bf953a4abc11",
     "src/modules/menuslct.c": "40cca456720770fe92cb7f90ab85b54db5d0de789eb87256c8e9a892d88ec021",
     "src/modules/misc.c": "22da7a9f99cbdc10794c70a226808b1319b3239cb76f9233d3285ca3efc43c5f",
-    "src/modules/motion.c": "20b52504eaea86d801af2967c81890b2e0e09a3a309c3c738b0f7e0a5d02c183",
+    "src/modules/motion.c": "7064aa25399ae74c40feae1d1b145408c97c08c536488085ed1023fc74f51c38",
     "src/modules/mult1.c": "8dc4651cbdcdbb8cc596773b9f9ea3e42d22c5def4cb9868cc002ff19be35e1e",
     "src/modules/mult2.c": "38663c00f33b29492847a0c43d529ed98ac7952458eab5a1b8208d204f24cc69",
     "src/modules/mult3.c": "a9fa6288a8af859319d98b660843a5195024c23d3b02de640d84e329c31e4096",
@@ -278,7 +278,7 @@
     "src/modules/uvdgeom_rom.c": "a65e7ecadd7ed7a849c21137f6daa3f1f5b7ce7b91ca581ffc2b0cbdb28f9746",
     "src/modules/uvdobj_rom.c": "4295111be6f45ec4a7a71238326592015a0463acf7d778169e53b4a4c43dbfc1",
     "src/modules/uvdsetld_rom.c": "d47a6a7b0f216665e23b58a234a20f22a40567349a5bb45ce46a49082b82831a",
-    "src/modules/uvdyn_rom.c": "1732598cf1aedeed725f7d272a719f462d4a336d58aac3873e295a76ee8bd952",
+    "src/modules/uvdyn_rom.c": "b66d8246a4d29780b7b5ab769b060ee50136f858b54feecfedb0c6cc46ee11b7",
     "src/modules/uvear_rom.c": "c01016ba592ee81490aa25fc6d34a00fd835438c525ba1ec218c9c22124d581f",
     "src/modules/uvemitter_rom.c": "73b56e1f3b5f4e26feb141c2d8a81cd3bd749342c4820849e11583d94dccc0db",
     "src/modules/uvenv_rom.c": "ee1e5e8ff8a5e833483fbbb2a1a9275a48e30cc4976a9822cf62c67993892b57",
@@ -329,8 +329,8 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "bbff4e2e722e8d6120ed2544279892dcf9ada596c0304cee4119400578937a00",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "8d30485e18580f93db37297aa306ed07484c485a59206ed9ef6778580fb2d4ca",
-    "docs/VALIDATION_20261006.md": "7208f53debd048ae3e1d51219ea1738436ca78ce1dc62e9b3488fa8508e82329"
+    "docs/STRATEGY_V4.md": "48ed82dc939f17b5e0fce18bfa7e4abf0533acfd8d3b96767237a6f5906ed184",
+    "docs/VALIDATION_20261006.md": "c82c5504963a3b880b70050c4d76f23e8e7899456a7bd4a25213afec3600ca55"
   },
   "counts": {
     "address_function": 996,
@@ -340,11 +340,11 @@
     "conditional_draft": 4,
     "decompiler_local": 920,
     "draft_marker": 29,
-    "explicit_unknown": 474,
+    "explicit_unknown": 476,
     "layout_padding": 258,
-    "offset_field": 1446,
+    "offset_field": 1441,
     "opaque_type": 282,
-    "original_quirk": 86,
+    "original_quirk": 87,
     "uncertainty_note": 100,
     "unused_identifier": 113
   },
@@ -7406,15 +7406,15 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00405E5C",
       "lines": [
-        393
+        401
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_motion_00405E5C",
-          "declaration_line": 393,
+          "declaration_line": 401,
           "lines": [
-            393
+            401
           ]
         }
       ]
@@ -7483,7 +7483,7 @@
       "symbol": "func_motion_004066E4",
       "lines": [
         115,
-        411
+        419
       ],
       "owners": [
         {
@@ -7497,9 +7497,9 @@
         {
           "kind": "function",
           "name": "motionUpdateSharedState",
-          "declaration_line": 401,
+          "declaration_line": 409,
           "lines": [
-            411
+            419
           ]
         }
       ]
@@ -7511,7 +7511,7 @@
       "symbol": "func_motion_00406A58",
       "lines": [
         116,
-        406
+        414
       ],
       "owners": [
         {
@@ -7525,9 +7525,9 @@
         {
           "kind": "function",
           "name": "motionUpdateSharedState",
-          "declaration_line": 401,
+          "declaration_line": 409,
           "lines": [
-            406
+            414
           ]
         }
       ]
@@ -8034,7 +8034,7 @@
       "lines": [
         150,
         170,
-        625
+        633
       ],
       "owners": [
         {
@@ -8056,9 +8056,9 @@
         {
           "kind": "function",
           "name": "motionForwardStateMatrix",
-          "declaration_line": 624,
+          "declaration_line": 632,
           "lines": [
-            625
+            633
           ]
         }
       ]
@@ -8165,7 +8165,7 @@
       "symbol": "func_motion_004130E4",
       "lines": [
         156,
-        473
+        481
       ],
       "owners": [
         {
@@ -8179,9 +8179,9 @@
         {
           "kind": "function",
           "name": "motionRunBattleAndHotLavaUpdate",
-          "declaration_line": 469,
+          "declaration_line": 477,
           "lines": [
-            473
+            481
           ]
         }
       ]
@@ -8249,15 +8249,15 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0041475C",
       "lines": [
-        660
+        668
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_motion_0041475C",
-          "declaration_line": 660,
+          "declaration_line": 668,
           "lines": [
-            660
+            668
           ]
         }
       ]
@@ -8268,15 +8268,15 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00414764",
       "lines": [
-        669
+        677
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_motion_00414764",
-          "declaration_line": 669,
+          "declaration_line": 677,
           "lines": [
-            669
+            677
           ]
         }
       ]
@@ -8287,15 +8287,15 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0041476C",
       "lines": [
-        678
+        686
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_motion_0041476C",
-          "declaration_line": 678,
+          "declaration_line": 686,
           "lines": [
-            678
+            686
           ]
         }
       ]
@@ -8325,15 +8325,15 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00414A68",
       "lines": [
-        698
+        706
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_motion_00414A68",
-          "declaration_line": 698,
+          "declaration_line": 706,
           "lines": [
-            698
+            706
           ]
         }
       ]
@@ -8439,15 +8439,15 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00415870",
       "lines": [
-        728
+        736
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_motion_00415870",
-          "declaration_line": 728,
+          "declaration_line": 736,
           "lines": [
-            728
+            736
           ]
         }
       ]
@@ -19302,7 +19302,7 @@
       "symbol": "func_uvdyn_rom_00400A14",
       "lines": [
         357,
-        2540
+        2565
       ],
       "owners": [
         {
@@ -19316,9 +19316,9 @@
         {
           "kind": "function",
           "name": "uvDynUpdateSecondaryStateOnce",
-          "declaration_line": 2536,
+          "declaration_line": 2561,
           "lines": [
-            2540
+            2565
           ]
         }
       ]
@@ -19922,15 +19922,15 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00409A40",
       "lines": [
-        1589
+        1614
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdyn_rom_00409A40",
-          "declaration_line": 1589,
+          "declaration_line": 1614,
           "lines": [
-            1589
+            1614
           ]
         }
       ]
@@ -19941,15 +19941,15 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00409BC0",
       "lines": [
-        1657
+        1682
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdyn_rom_00409BC0",
-          "declaration_line": 1657,
+          "declaration_line": 1682,
           "lines": [
-            1657
+            1682
           ]
         }
       ]
@@ -19961,8 +19961,8 @@
       "symbol": "func_uvdyn_rom_00409E18",
       "lines": [
         426,
-        1627,
-        1640
+        1652,
+        1665
       ],
       "owners": [
         {
@@ -19976,17 +19976,17 @@
         {
           "kind": "function",
           "name": "uvDynCreateAttachment",
-          "declaration_line": 1620,
+          "declaration_line": 1645,
           "lines": [
-            1627
+            1652
           ]
         },
         {
           "kind": "function",
           "name": "uvDynUnregisterAttachment",
-          "declaration_line": 1636,
+          "declaration_line": 1661,
           "lines": [
-            1640
+            1665
           ]
         }
       ]
@@ -20055,9 +20055,9 @@
       "symbol": "func_uvdyn_rom_0040BD14",
       "lines": [
         441,
-        1908,
-        1909,
-        1923
+        1933,
+        1934,
+        1948
       ],
       "owners": [
         {
@@ -20071,18 +20071,18 @@
         {
           "kind": "function",
           "name": "uvDynCreateCollection",
-          "declaration_line": 1901,
+          "declaration_line": 1926,
           "lines": [
-            1908,
-            1909
+            1933,
+            1934
           ]
         },
         {
           "kind": "function",
           "name": "uvDynDestroyCollection",
-          "declaration_line": 1919,
+          "declaration_line": 1944,
           "lines": [
-            1923
+            1948
           ]
         }
       ]
@@ -20094,7 +20094,7 @@
       "symbol": "func_uvdyn_rom_0040C570",
       "lines": [
         450,
-        1964
+        1989
       ],
       "owners": [
         {
@@ -20108,9 +20108,9 @@
         {
           "kind": "function",
           "name": "uvDynUpdateCollection",
-          "declaration_line": 1962,
+          "declaration_line": 1987,
           "lines": [
-            1964
+            1989
           ]
         }
       ]
@@ -20293,7 +20293,7 @@
       "symbol": "func_uvdyn_rom_00411644",
       "lines": [
         471,
-        2431
+        2456
       ],
       "owners": [
         {
@@ -20307,9 +20307,9 @@
         {
           "kind": "function",
           "name": "func_uvdyn_rom_00411644",
-          "declaration_line": 2431,
+          "declaration_line": 2456,
           "lines": [
-            2431
+            2456
           ]
         }
       ]
@@ -31111,7 +31111,7 @@
         42,
         120,
         122,
-        134
+        136
       ],
       "owners": [
         {
@@ -31126,9 +31126,9 @@
         {
           "kind": "function",
           "name": "letterSetDescriptorPrimitiveColor",
-          "declaration_line": 131,
+          "declaration_line": 133,
           "lines": [
-            134
+            136
           ]
         },
         {
@@ -32753,15 +32753,15 @@
       "symbol": "D_80025D70",
       "lines": [
         37,
-        600
+        608
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionApplyGatedModeResponse",
-          "declaration_line": 572,
+          "declaration_line": 580,
           "lines": [
-            600
+            608
           ]
         },
         {
@@ -32781,15 +32781,15 @@
       "symbol": "D_motion_00415DE4",
       "lines": [
         18,
-        336
+        344
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionComputePlanarRecordAngleResponse",
-          "declaration_line": 329,
+          "declaration_line": 337,
           "lines": [
-            336
+            344
           ]
         }
       ]
@@ -32801,15 +32801,15 @@
       "symbol": "D_motion_00415DE8",
       "lines": [
         18,
-        342
+        350
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionComputePlanarRecordAngleResponse",
-          "declaration_line": 329,
+          "declaration_line": 337,
           "lines": [
-            342
+            350
           ]
         }
       ]
@@ -32821,15 +32821,15 @@
       "symbol": "D_motion_00415DEC",
       "lines": [
         18,
-        343
+        351
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionComputePlanarRecordAngleResponse",
-          "declaration_line": 329,
+          "declaration_line": 337,
           "lines": [
-            343
+            351
           ]
         }
       ]
@@ -32841,15 +32841,15 @@
       "symbol": "D_motion_00415DF0",
       "lines": [
         19,
-        345
+        353
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionComputePlanarRecordAngleResponse",
-          "declaration_line": 329,
+          "declaration_line": 337,
           "lines": [
-            345
+            353
           ]
         }
       ]
@@ -32861,15 +32861,15 @@
       "symbol": "D_motion_00415DF4",
       "lines": [
         19,
-        345
+        353
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionComputePlanarRecordAngleResponse",
-          "declaration_line": 329,
+          "declaration_line": 337,
           "lines": [
-            345
+            353
           ]
         }
       ]
@@ -32881,15 +32881,15 @@
       "symbol": "D_motion_00415F84",
       "lines": [
         33,
-        548
+        556
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionAccumulateTransformedConfiguredVector",
-          "declaration_line": 540,
+          "declaration_line": 548,
           "lines": [
-            548
+            556
           ]
         }
       ]
@@ -32901,15 +32901,15 @@
       "symbol": "D_motion_00415F88",
       "lines": [
         33,
-        550
+        558
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionAccumulateTransformedConfiguredVector",
-          "declaration_line": 540,
+          "declaration_line": 548,
           "lines": [
-            550
+            558
           ]
         }
       ]
@@ -32921,15 +32921,15 @@
       "symbol": "D_motion_00415F8C",
       "lines": [
         36,
-        592
+        600
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionApplyGatedModeResponse",
-          "declaration_line": 572,
+          "declaration_line": 580,
           "lines": [
-            592
+            600
           ]
         },
         {
@@ -32948,24 +32948,24 @@
       "path": "src/modules/motion.c",
       "symbol": "D_motion_0041607C",
       "lines": [
-        756,
-        767
+        764,
+        775
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionTryPlayExplosionVoice",
-          "declaration_line": 760,
+          "declaration_line": 768,
           "lines": [
-            767
+            775
           ]
         },
         {
           "kind": "global",
           "name": "D_motion_0041607C",
-          "declaration_line": 756,
+          "declaration_line": 764,
           "lines": [
-            756
+            764
           ]
         }
       ]
@@ -32977,15 +32977,15 @@
       "symbol": "D_motion_00416080",
       "lines": [
         67,
-        526
+        534
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionApplyConditionalCorrection",
-          "declaration_line": 521,
+          "declaration_line": 529,
           "lines": [
-            526
+            534
           ]
         }
       ]
@@ -32997,19 +32997,19 @@
       "symbol": "D_motion_00416084",
       "lines": [
         67,
-        524,
-        525,
-        526
+        532,
+        533,
+        534
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionApplyConditionalCorrection",
-          "declaration_line": 521,
+          "declaration_line": 529,
           "lines": [
-            524,
-            525,
-            526
+            532,
+            533,
+            534
           ]
         }
       ]
@@ -33021,15 +33021,15 @@
       "symbol": "D_motion_00416088",
       "lines": [
         67,
-        523
+        531
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionApplyConditionalCorrection",
-          "declaration_line": 521,
+          "declaration_line": 529,
           "lines": [
-            523
+            531
           ]
         }
       ]
@@ -33041,15 +33041,15 @@
       "symbol": "D_motion_00416090",
       "lines": [
         67,
-        523
+        531
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionApplyConditionalCorrection",
-          "declaration_line": 521,
+          "declaration_line": 529,
           "lines": [
-            523
+            531
           ]
         }
       ]
@@ -33060,26 +33060,26 @@
       "path": "src/modules/motion.c",
       "symbol": "D_motion_004160A0",
       "lines": [
-        736,
-        745,
-        747
+        744,
+        753,
+        755
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionTryPlayHotLavaVoice",
-          "declaration_line": 739,
+          "declaration_line": 747,
           "lines": [
-            745,
-            747
+            753,
+            755
           ]
         },
         {
           "kind": "global",
           "name": "D_motion_004160A0",
-          "declaration_line": 736,
+          "declaration_line": 744,
           "lines": [
-            736
+            744
           ]
         }
       ]
@@ -33090,26 +33090,26 @@
       "path": "src/modules/motion.c",
       "symbol": "D_motion_004160A4",
       "lines": [
-        757,
-        766,
-        768
+        765,
+        774,
+        776
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionTryPlayExplosionVoice",
-          "declaration_line": 760,
+          "declaration_line": 768,
           "lines": [
-            766,
-            768
+            774,
+            776
           ]
         },
         {
           "kind": "global",
           "name": "D_motion_004160A4",
-          "declaration_line": 757,
+          "declaration_line": 765,
           "lines": [
-            757
+            765
           ]
         }
       ]
@@ -33121,15 +33121,15 @@
       "symbol": "D_motion_004163A8",
       "lines": [
         77,
-        718
+        726
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionEvaluateSelectedGraph",
-          "declaration_line": 715,
+          "declaration_line": 723,
           "lines": [
-            718
+            726
           ]
         },
         {
@@ -33149,15 +33149,15 @@
       "symbol": "D_motion_0041644C",
       "lines": [
         78,
-        720
+        728
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionEvaluateSelectedGraph",
-          "declaration_line": 715,
+          "declaration_line": 723,
           "lines": [
-            720
+            728
           ]
         },
         {
@@ -33207,15 +33207,15 @@
       "symbol": "D_motion_00416AB8",
       "lines": [
         82,
-        408
+        416
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionUpdateSharedState",
-          "declaration_line": 401,
+          "declaration_line": 409,
           "lines": [
-            408
+            416
           ]
         },
         {
@@ -33236,15 +33236,15 @@
       "lines": [
         178,
         183,
-        746
+        754
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionTryPlayHotLavaVoice",
-          "declaration_line": 739,
+          "declaration_line": 747,
           "lines": [
-            746
+            754
           ]
         },
         {
@@ -33273,15 +33273,15 @@
       "lines": [
         179,
         184,
-        767
+        775
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionTryPlayExplosionVoice",
-          "declaration_line": 760,
+          "declaration_line": 768,
           "lines": [
-            767
+            775
           ]
         },
         {
@@ -33309,21 +33309,21 @@
       "symbol": "D_motion_00416B10",
       "lines": [
         81,
-        402,
-        405,
-        406,
-        411
+        410,
+        413,
+        414,
+        419
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionUpdateSharedState",
-          "declaration_line": 401,
+          "declaration_line": 409,
           "lines": [
-            402,
-            405,
-            406,
-            411
+            410,
+            413,
+            414,
+            419
           ]
         },
         {
@@ -53505,15 +53505,15 @@
       "symbol": "D_uvdyn_rom_00411D00",
       "lines": [
         197,
-        1684
+        1709
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynUpdateAttachmentDelta",
-          "declaration_line": 1674,
+          "declaration_line": 1699,
           "lines": [
-            1684
+            1709
           ]
         },
         {
@@ -53533,15 +53533,15 @@
       "symbol": "D_uvdyn_rom_00411D38",
       "lines": [
         222,
-        2341
+        2366
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynSetSecondaryVectorProperty",
-          "declaration_line": 2327,
+          "declaration_line": 2352,
           "lines": [
-            2341
+            2366
           ]
         },
         {
@@ -53561,15 +53561,15 @@
       "symbol": "D_uvdyn_rom_00411D40",
       "lines": [
         223,
-        2341
+        2366
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynSetSecondaryVectorProperty",
-          "declaration_line": 2327,
+          "declaration_line": 2352,
           "lines": [
-            2341
+            2366
           ]
         },
         {
@@ -53608,15 +53608,15 @@
       "symbol": "D_uvdyn_rom_00411D68",
       "lines": [
         224,
-        2404
+        2429
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynSetSecondaryMatrixProperty",
-          "declaration_line": 2396,
+          "declaration_line": 2421,
           "lines": [
-            2404
+            2429
           ]
         },
         {
@@ -53636,15 +53636,15 @@
       "symbol": "D_uvdyn_rom_00411D70",
       "lines": [
         225,
-        2404
+        2429
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynSetSecondaryMatrixProperty",
-          "declaration_line": 2396,
+          "declaration_line": 2421,
           "lines": [
-            2404
+            2429
           ]
         },
         {
@@ -53664,15 +53664,15 @@
       "symbol": "D_uvdyn_rom_00411D78",
       "lines": [
         226,
-        2418
+        2443
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynSetSecondaryMatrixProperty",
-          "declaration_line": 2396,
+          "declaration_line": 2421,
           "lines": [
-            2418
+            2443
           ]
         },
         {
@@ -53692,15 +53692,15 @@
       "symbol": "D_uvdyn_rom_00411D80",
       "lines": [
         227,
-        2418
+        2443
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynSetSecondaryMatrixProperty",
-          "declaration_line": 2396,
+          "declaration_line": 2421,
           "lines": [
-            2418
+            2443
           ]
         },
         {
@@ -53767,25 +53767,25 @@
       "lines": [
         342,
         644,
-        1891,
-        2097,
-        2210
+        1916,
+        2122,
+        2235
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynBindGlobalScalarAndClearFlag",
-          "declaration_line": 2209,
+          "declaration_line": 2234,
           "lines": [
-            2210
+            2235
           ]
         },
         {
           "kind": "function",
           "name": "uvDynBindGlobalScalarAndResetCounts",
-          "declaration_line": 1890,
+          "declaration_line": 1915,
           "lines": [
-            1891
+            1916
           ]
         },
         {
@@ -53799,9 +53799,9 @@
         {
           "kind": "function",
           "name": "uvDynUpdateCollectionMemberTransforms",
-          "declaration_line": 2085,
+          "declaration_line": 2110,
           "lines": [
-            2097
+            2122
           ]
         },
         {
@@ -53934,37 +53934,37 @@
       "symbol": "D_uvdyn_rom_00411DF0",
       "lines": [
         350,
-        2223,
-        2245,
-        2252,
-        2253,
-        2265
+        2248,
+        2270,
+        2277,
+        2278,
+        2290
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynCopyRegisteredSecondaryCompanions",
-          "declaration_line": 2262,
+          "declaration_line": 2287,
           "lines": [
-            2265
+            2290
           ]
         },
         {
           "kind": "function",
           "name": "uvDynCreateSecondaryState",
-          "declaration_line": 2219,
+          "declaration_line": 2244,
           "lines": [
-            2223
+            2248
           ]
         },
         {
           "kind": "function",
           "name": "uvDynUnregisterSecondaryState",
-          "declaration_line": 2238,
+          "declaration_line": 2263,
           "lines": [
-            2245,
-            2252,
-            2253
+            2270,
+            2277,
+            2278
           ]
         },
         {
@@ -53984,50 +53984,50 @@
       "symbol": "D_uvdyn_rom_00411E68",
       "lines": [
         349,
-        2211,
-        2223,
-        2224,
-        2225,
-        2243,
+        2236,
+        2248,
+        2249,
         2250,
-        2251,
-        2264
+        2268,
+        2275,
+        2276,
+        2289
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynBindGlobalScalarAndClearFlag",
-          "declaration_line": 2209,
+          "declaration_line": 2234,
           "lines": [
-            2211
+            2236
           ]
         },
         {
           "kind": "function",
           "name": "uvDynCopyRegisteredSecondaryCompanions",
-          "declaration_line": 2262,
+          "declaration_line": 2287,
           "lines": [
-            2264
+            2289
           ]
         },
         {
           "kind": "function",
           "name": "uvDynCreateSecondaryState",
-          "declaration_line": 2219,
+          "declaration_line": 2244,
           "lines": [
-            2223,
-            2224,
-            2225
+            2248,
+            2249,
+            2250
           ]
         },
         {
           "kind": "function",
           "name": "uvDynUnregisterSecondaryState",
-          "declaration_line": 2238,
+          "declaration_line": 2263,
           "lines": [
-            2243,
-            2250,
-            2251
+            2268,
+            2275,
+            2276
           ]
         },
         {
@@ -54047,28 +54047,28 @@
       "symbol": "D_uvdyn_rom_00411E70",
       "lines": [
         479,
-        1624,
-        1643,
-        1650,
-        1651
+        1649,
+        1668,
+        1675,
+        1676
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynCreateAttachment",
-          "declaration_line": 1620,
+          "declaration_line": 1645,
           "lines": [
-            1624
+            1649
           ]
         },
         {
           "kind": "function",
           "name": "uvDynUnregisterAttachment",
-          "declaration_line": 1636,
+          "declaration_line": 1661,
           "lines": [
-            1643,
-            1650,
-            1651
+            1668,
+            1675,
+            1676
           ]
         },
         {
@@ -54088,41 +54088,41 @@
       "symbol": "D_uvdyn_rom_00411EC0",
       "lines": [
         478,
-        1611,
-        1624,
-        1625,
-        1626,
-        1641,
-        1648,
-        1649
+        1636,
+        1649,
+        1650,
+        1651,
+        1666,
+        1673,
+        1674
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynClearSharedPairCounters",
-          "declaration_line": 1610,
+          "declaration_line": 1635,
           "lines": [
-            1611
+            1636
           ]
         },
         {
           "kind": "function",
           "name": "uvDynCreateAttachment",
-          "declaration_line": 1620,
+          "declaration_line": 1645,
           "lines": [
-            1624,
-            1625,
-            1626
+            1649,
+            1650,
+            1651
           ]
         },
         {
           "kind": "function",
           "name": "uvDynUnregisterAttachment",
-          "declaration_line": 1636,
+          "declaration_line": 1661,
           "lines": [
-            1641,
-            1648,
-            1649
+            1666,
+            1673,
+            1674
           ]
         },
         {
@@ -54142,15 +54142,15 @@
       "symbol": "D_uvdyn_rom_00411EC2",
       "lines": [
         480,
-        1612
+        1637
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynClearSharedPairCounters",
-          "declaration_line": 1610,
+          "declaration_line": 1635,
           "lines": [
-            1612
+            1637
           ]
         },
         {
@@ -54171,10 +54171,10 @@
       "lines": [
         345,
         506,
-        1905,
-        1926,
-        1934,
-        1935
+        1930,
+        1951,
+        1959,
+        1960
       ],
       "owners": [
         {
@@ -54188,19 +54188,19 @@
         {
           "kind": "function",
           "name": "uvDynCreateCollection",
-          "declaration_line": 1901,
+          "declaration_line": 1926,
           "lines": [
-            1905
+            1930
           ]
         },
         {
           "kind": "function",
           "name": "uvDynDestroyCollection",
-          "declaration_line": 1919,
+          "declaration_line": 1944,
           "lines": [
-            1926,
-            1934,
-            1935
+            1951,
+            1959,
+            1960
           ]
         },
         {
@@ -54249,13 +54249,13 @@
       "lines": [
         344,
         505,
-        1892,
-        1905,
-        1906,
-        1907,
-        1924,
+        1917,
+        1930,
+        1931,
         1932,
-        1933
+        1949,
+        1957,
+        1958
       ],
       "owners": [
         {
@@ -54269,29 +54269,29 @@
         {
           "kind": "function",
           "name": "uvDynBindGlobalScalarAndResetCounts",
-          "declaration_line": 1890,
+          "declaration_line": 1915,
           "lines": [
-            1892
+            1917
           ]
         },
         {
           "kind": "function",
           "name": "uvDynCreateCollection",
-          "declaration_line": 1901,
+          "declaration_line": 1926,
           "lines": [
-            1905,
-            1906,
-            1907
+            1930,
+            1931,
+            1932
           ]
         },
         {
           "kind": "function",
           "name": "uvDynDestroyCollection",
-          "declaration_line": 1919,
+          "declaration_line": 1944,
           "lines": [
-            1924,
-            1932,
-            1933
+            1949,
+            1957,
+            1958
           ]
         },
         {
@@ -54312,15 +54312,15 @@
       "lines": [
         348,
         516,
-        1893
+        1918
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynBindGlobalScalarAndResetCounts",
-          "declaration_line": 1890,
+          "declaration_line": 1915,
           "lines": [
-            1893
+            1918
           ]
         },
         {
@@ -54371,33 +54371,33 @@
         966,
         1328,
         1472,
-        1550,
-        1551,
-        2226,
-        2227,
-        2276,
-        2335,
-        2342,
-        2403,
-        2405,
-        2411,
-        2415,
-        2416,
-        2417,
-        2419,
-        2459,
-        2462,
-        2465,
-        2559
+        1575,
+        1576,
+        2251,
+        2252,
+        2301,
+        2360,
+        2367,
+        2428,
+        2430,
+        2436,
+        2440,
+        2441,
+        2442,
+        2444,
+        2484,
+        2487,
+        2490,
+        2584
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynApplyTranslatedDobjTransform",
-          "declaration_line": 1548,
+          "declaration_line": 1573,
           "lines": [
-            1550,
-            1551
+            1575,
+            1576
           ]
         },
         {
@@ -54412,9 +54412,9 @@
         {
           "kind": "function",
           "name": "uvDynCopySecondaryCompanionFields",
-          "declaration_line": 2274,
+          "declaration_line": 2299,
           "lines": [
-            2276
+            2301
           ]
         },
         {
@@ -54430,10 +54430,10 @@
         {
           "kind": "function",
           "name": "uvDynCreateSecondaryState",
-          "declaration_line": 2219,
+          "declaration_line": 2244,
           "lines": [
-            2226,
-            2227
+            2251,
+            2252
           ]
         },
         {
@@ -54459,11 +54459,11 @@
         {
           "kind": "function",
           "name": "uvDynGetSecondaryMatrixProperty",
-          "declaration_line": 2455,
+          "declaration_line": 2480,
           "lines": [
-            2459,
-            2462,
-            2465
+            2484,
+            2487,
+            2490
           ]
         },
         {
@@ -54485,9 +54485,9 @@
         {
           "kind": "function",
           "name": "uvDynResetSecondaryState",
-          "declaration_line": 2554,
+          "declaration_line": 2579,
           "lines": [
-            2559
+            2584
           ]
         },
         {
@@ -54509,24 +54509,24 @@
         {
           "kind": "function",
           "name": "uvDynSetSecondaryMatrixProperty",
-          "declaration_line": 2396,
+          "declaration_line": 2421,
           "lines": [
-            2403,
-            2405,
-            2411,
-            2415,
-            2416,
-            2417,
-            2419
+            2428,
+            2430,
+            2436,
+            2440,
+            2441,
+            2442,
+            2444
           ]
         },
         {
           "kind": "function",
           "name": "uvDynSetSecondaryVectorProperty",
-          "declaration_line": 2327,
+          "declaration_line": 2352,
           "lines": [
-            2335,
-            2342
+            2360,
+            2367
           ]
         },
         {
@@ -54579,28 +54579,28 @@
         1324,
         1329,
         1474,
-        1681,
-        1683,
-        1685,
-        1709,
+        1706,
+        1708,
         1710,
-        1714,
-        2275,
-        2277,
-        2278,
-        2279,
-        2333,
-        2334,
-        2344,
-        2350,
-        2355,
-        2374,
-        2382,
-        2385,
-        2556,
-        2557,
-        2558,
-        2560
+        1734,
+        1735,
+        1739,
+        2300,
+        2302,
+        2303,
+        2304,
+        2358,
+        2359,
+        2369,
+        2375,
+        2380,
+        2399,
+        2407,
+        2410,
+        2581,
+        2582,
+        2583,
+        2585
       ],
       "owners": [
         {
@@ -54617,12 +54617,12 @@
         {
           "kind": "function",
           "name": "uvDynCopySecondaryCompanionFields",
-          "declaration_line": 2274,
+          "declaration_line": 2299,
           "lines": [
-            2275,
-            2277,
-            2278,
-            2279
+            2300,
+            2302,
+            2303,
+            2304
           ]
         },
         {
@@ -54660,11 +54660,11 @@
         {
           "kind": "function",
           "name": "uvDynGetSecondaryVectorProperty",
-          "declaration_line": 2368,
+          "declaration_line": 2393,
           "lines": [
-            2374,
-            2382,
-            2385
+            2399,
+            2407,
+            2410
           ]
         },
         {
@@ -54696,11 +54696,11 @@
         {
           "kind": "function",
           "name": "uvDynRefreshAttachmentVectors",
-          "declaration_line": 1700,
+          "declaration_line": 1725,
           "lines": [
-            1709,
-            1710,
-            1714
+            1734,
+            1735,
+            1739
           ]
         },
         {
@@ -54716,24 +54716,24 @@
         {
           "kind": "function",
           "name": "uvDynResetSecondaryState",
-          "declaration_line": 2554,
+          "declaration_line": 2579,
           "lines": [
-            2556,
-            2557,
-            2558,
-            2560
+            2581,
+            2582,
+            2583,
+            2585
           ]
         },
         {
           "kind": "function",
           "name": "uvDynSetSecondaryVectorProperty",
-          "declaration_line": 2327,
+          "declaration_line": 2352,
           "lines": [
-            2333,
-            2334,
-            2344,
-            2350,
-            2355
+            2358,
+            2359,
+            2369,
+            2375,
+            2380
           ]
         },
         {
@@ -54747,11 +54747,11 @@
         {
           "kind": "function",
           "name": "uvDynUpdateAttachmentDelta",
-          "declaration_line": 1674,
+          "declaration_line": 1699,
           "lines": [
-            1681,
-            1683,
-            1685
+            1706,
+            1708,
+            1710
           ]
         },
         {
@@ -54783,12 +54783,12 @@
         1046,
         1126,
         1326,
-        1582,
-        1678,
-        1754,
-        1756,
-        1850,
-        2183
+        1607,
+        1703,
+        1779,
+        1781,
+        1875,
+        2208
       ],
       "owners": [
         {
@@ -54818,10 +54818,10 @@
         {
           "kind": "function",
           "name": "uvDynSetAttachmentIntersection",
-          "declaration_line": 1748,
+          "declaration_line": 1773,
           "lines": [
-            1754,
-            1756
+            1779,
+            1781
           ]
         },
         {
@@ -54835,33 +54835,33 @@
         {
           "kind": "function",
           "name": "uvDynSetIndexedQueryRecordBank",
-          "declaration_line": 2182,
+          "declaration_line": 2207,
           "lines": [
-            2183
+            2208
           ]
         },
         {
           "kind": "function",
           "name": "uvDynTryAcceptAttachmentRecord",
-          "declaration_line": 1832,
+          "declaration_line": 1857,
           "lines": [
-            1850
+            1875
           ]
         },
         {
           "kind": "function",
           "name": "uvDynTryAcceptLowerPositiveRecord",
-          "declaration_line": 1566,
+          "declaration_line": 1591,
           "lines": [
-            1582
+            1607
           ]
         },
         {
           "kind": "function",
           "name": "uvDynUpdateAttachmentDelta",
-          "declaration_line": 1674,
+          "declaration_line": 1699,
           "lines": [
-            1678
+            1703
           ]
         },
         {
@@ -54881,17 +54881,17 @@
       "symbol": "D_uvdyn_rom_00411F80",
       "lines": [
         70,
-        2516,
-        2517
+        2541,
+        2542
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynSetSecondaryModelLod",
-          "declaration_line": 2506,
+          "declaration_line": 2531,
           "lines": [
-            2516,
-            2517
+            2541,
+            2542
           ]
         },
         {
@@ -54912,16 +54912,16 @@
       "lines": [
         71,
         1121,
-        1553,
-        2513
+        1578,
+        2538
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynApplyTranslatedDobjTransform",
-          "declaration_line": 1548,
+          "declaration_line": 1573,
           "lines": [
-            1553
+            1578
           ]
         },
         {
@@ -54935,9 +54935,9 @@
         {
           "kind": "function",
           "name": "uvDynSetSecondaryModelLod",
-          "declaration_line": 2506,
+          "declaration_line": 2531,
           "lines": [
-            2513
+            2538
           ]
         },
         {
@@ -76132,7 +76132,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040456C",
       "lines": [
-        291
+        299
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_0040456C.s"
     },
@@ -76142,7 +76142,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00404868",
       "lines": [
-        293
+        301
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00404868.s"
     },
@@ -76152,7 +76152,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00404C24",
       "lines": [
-        302
+        310
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00404C24.s"
     },
@@ -76162,7 +76162,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_004057E4",
       "lines": [
-        382
+        390
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_004057E4.s"
     },
@@ -76172,7 +76172,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00405B44",
       "lines": [
-        384
+        392
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00405B44.s"
     },
@@ -76182,7 +76182,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00405D7C",
       "lines": [
-        386
+        394
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00405D7C.s"
     },
@@ -76192,7 +76192,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00405EBC",
       "lines": [
-        415
+        423
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00405EBC.s"
     },
@@ -76202,7 +76202,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_004061FC",
       "lines": [
-        417
+        425
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_004061FC.s"
     },
@@ -76212,7 +76212,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00406478",
       "lines": [
-        419
+        427
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00406478.s"
     },
@@ -76222,7 +76222,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_004066E4",
       "lines": [
-        421
+        429
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_004066E4.s"
     },
@@ -76232,7 +76232,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00406A58",
       "lines": [
-        423
+        431
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00406A58.s"
     },
@@ -76242,7 +76242,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00406C30",
       "lines": [
-        425
+        433
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00406C30.s"
     },
@@ -76252,7 +76252,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_004077A8",
       "lines": [
-        427
+        435
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_004077A8.s"
     },
@@ -76262,7 +76262,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00407B44",
       "lines": [
-        429
+        437
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00407B44.s"
     },
@@ -76272,7 +76272,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00407C10",
       "lines": [
-        431
+        439
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00407C10.s"
     },
@@ -76282,7 +76282,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00407FC0",
       "lines": [
-        433
+        441
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00407FC0.s"
     },
@@ -76292,7 +76292,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00408254",
       "lines": [
-        435
+        443
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00408254.s"
     },
@@ -76302,7 +76302,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_004087DC",
       "lines": [
-        437
+        445
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_004087DC.s"
     },
@@ -76312,7 +76312,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00408940",
       "lines": [
-        439
+        447
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00408940.s"
     },
@@ -76322,7 +76322,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00408A84",
       "lines": [
-        441
+        449
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00408A84.s"
     },
@@ -76332,7 +76332,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00408FD4",
       "lines": [
-        459
+        467
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00408FD4.s"
     },
@@ -76342,7 +76342,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00409734",
       "lines": [
-        461
+        469
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00409734.s"
     },
@@ -76352,7 +76352,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_004098B8",
       "lines": [
-        463
+        471
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_004098B8.s"
     },
@@ -76362,7 +76362,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00409B3C",
       "lines": [
-        478
+        486
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00409B3C.s"
     },
@@ -76372,7 +76372,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00409C68",
       "lines": [
-        480
+        488
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00409C68.s"
     },
@@ -76382,7 +76382,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040A3CC",
       "lines": [
-        482
+        490
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_0040A3CC.s"
     },
@@ -76392,7 +76392,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040B4EC",
       "lines": [
-        484
+        492
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_0040B4EC.s"
     },
@@ -76402,7 +76402,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040B7B8",
       "lines": [
-        486
+        494
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_0040B7B8.s"
     },
@@ -76412,7 +76412,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040BBE0",
       "lines": [
-        488
+        496
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_0040BBE0.s"
     },
@@ -76422,7 +76422,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040BFE0",
       "lines": [
-        490
+        498
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_0040BFE0.s"
     },
@@ -76432,7 +76432,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040C7DC",
       "lines": [
-        492
+        500
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_0040C7DC.s"
     },
@@ -76442,7 +76442,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040C8A0",
       "lines": [
-        494
+        502
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_0040C8A0.s"
     },
@@ -76452,7 +76452,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040E7BC",
       "lines": [
-        496
+        504
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_0040E7BC.s"
     },
@@ -76462,7 +76462,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040F2EC",
       "lines": [
-        515
+        523
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_0040F2EC.s"
     },
@@ -76472,7 +76472,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040F694",
       "lines": [
-        613
+        621
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_0040F694.s"
     },
@@ -76482,7 +76482,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040FE84",
       "lines": [
-        615
+        623
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_0040FE84.s"
     },
@@ -76492,7 +76492,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00411BB4",
       "lines": [
-        617
+        625
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00411BB4.s"
     },
@@ -76502,7 +76502,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00411C64",
       "lines": [
-        619
+        627
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00411C64.s"
     },
@@ -76512,7 +76512,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00412770",
       "lines": [
-        629
+        637
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00412770.s"
     },
@@ -76522,7 +76522,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00412B14",
       "lines": [
-        631
+        639
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00412B14.s"
     },
@@ -76532,7 +76532,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00412CF0",
       "lines": [
-        633
+        641
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00412CF0.s"
     },
@@ -76542,7 +76542,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00412E44",
       "lines": [
-        635
+        643
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00412E44.s"
     },
@@ -76552,7 +76552,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00412F38",
       "lines": [
-        637
+        645
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00412F38.s"
     },
@@ -76562,7 +76562,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_004130E4",
       "lines": [
-        639
+        647
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_004130E4.s"
     },
@@ -76572,7 +76572,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00413284",
       "lines": [
-        649
+        657
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00413284.s"
     },
@@ -76582,7 +76582,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00413568",
       "lines": [
-        651
+        659
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00413568.s"
     },
@@ -76592,7 +76592,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00414430",
       "lines": [
-        653
+        661
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00414430.s"
     },
@@ -76602,7 +76602,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00414774",
       "lines": [
-        691
+        699
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00414774.s"
     },
@@ -76612,7 +76612,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00414A70",
       "lines": [
-        702
+        710
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00414A70.s"
     },
@@ -76622,7 +76622,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00414BB0",
       "lines": [
-        704
+        712
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00414BB0.s"
     },
@@ -76632,7 +76632,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_004151CC",
       "lines": [
-        706
+        714
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_004151CC.s"
     },
@@ -76642,7 +76642,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_004154B8",
       "lines": [
-        708
+        716
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_004154B8.s"
     },
@@ -76652,7 +76652,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00415724",
       "lines": [
-        710
+        718
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00415724.s"
     },
@@ -76662,7 +76662,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00415A3C",
       "lines": [
-        774
+        782
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00415A3C.s"
     },
@@ -80142,7 +80142,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00408ACC",
       "lines": [
-        1498
+        1523
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00408ACC.s"
     },
@@ -80152,7 +80152,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00408DC8",
       "lines": [
-        1500
+        1525
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00408DC8.s"
     },
@@ -80162,7 +80162,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00409010",
       "lines": [
-        1522
+        1547
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00409010.s"
     },
@@ -80172,7 +80172,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00409318",
       "lines": [
-        1542
+        1567
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00409318.s"
     },
@@ -80182,7 +80182,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_0040954C",
       "lines": [
-        1557
+        1582
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040954C.s"
     },
@@ -80192,7 +80192,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_0040981C",
       "lines": [
-        1559
+        1584
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040981C.s"
     },
@@ -80202,7 +80202,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00409E18",
       "lines": [
-        1720
+        1745
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00409E18.s"
     },
@@ -80212,7 +80212,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_0040A188",
       "lines": [
-        1771
+        1796
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040A188.s"
     },
@@ -80222,7 +80222,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_0040B08C",
       "lines": [
-        1825
+        1850
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040B08C.s"
     },
@@ -80232,7 +80232,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_0040B838",
       "lines": [
-        1884
+        1909
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040B838.s"
     },
@@ -80242,7 +80242,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_0040BD14",
       "lines": [
-        1969
+        1994
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040BD14.s"
     },
@@ -80252,7 +80252,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_0040C570",
       "lines": [
-        2146
+        2171
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040C570.s"
     },
@@ -80262,7 +80262,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_0040E4E8",
       "lines": [
-        2148
+        2173
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040E4E8.s"
     },
@@ -80272,7 +80272,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_0040E8E8",
       "lines": [
-        2150
+        2175
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040E8E8.s"
     },
@@ -80282,7 +80282,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_0040F78C",
       "lines": [
-        2152
+        2177
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040F78C.s"
     },
@@ -80292,7 +80292,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_0040FC88",
       "lines": [
-        2154
+        2179
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040FC88.s"
     },
@@ -80302,7 +80302,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00410250",
       "lines": [
-        2156
+        2181
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00410250.s"
     },
@@ -80312,7 +80312,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_004107FC",
       "lines": [
-        2176
+        2201
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_004107FC.s"
     },
@@ -80322,7 +80322,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00410AEC",
       "lines": [
-        2203
+        2228
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00410AEC.s"
     },
@@ -80332,7 +80332,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00410C40",
       "lines": [
-        2205
+        2230
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00410C40.s"
     },
@@ -80342,7 +80342,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "func_uvdyn_rom_00411300",
       "lines": [
-        2362
+        2387
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00411300.s"
     },
@@ -98714,15 +98714,15 @@
         932,
         935,
         1162,
-        1589,
-        1590,
-        1657,
-        1658,
-        2431,
-        2434,
-        2439,
-        2442,
-        2445
+        1614,
+        1615,
+        1682,
+        1683,
+        2456,
+        2459,
+        2464,
+        2467,
+        2470
       ],
       "owners": [
         {
@@ -98764,19 +98764,19 @@
         {
           "kind": "function",
           "name": "func_uvdyn_rom_00409A40",
-          "declaration_line": 1589,
+          "declaration_line": 1614,
           "lines": [
-            1589,
-            1590
+            1614,
+            1615
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdyn_rom_00409BC0",
-          "declaration_line": 1657,
+          "declaration_line": 1682,
           "lines": [
-            1657,
-            1658
+            1682,
+            1683
           ]
         },
         {
@@ -98790,13 +98790,13 @@
         {
           "kind": "function",
           "name": "func_uvdyn_rom_00411644",
-          "declaration_line": 2431,
+          "declaration_line": 2456,
           "lines": [
-            2431,
-            2434,
-            2439,
-            2442,
-            2445
+            2456,
+            2459,
+            2464,
+            2467,
+            2470
           ]
         }
       ]
@@ -98813,8 +98813,8 @@
         921,
         927,
         1162,
-        2431,
-        2437
+        2456,
+        2462
       ],
       "owners": [
         {
@@ -98861,10 +98861,10 @@
         {
           "kind": "function",
           "name": "func_uvdyn_rom_00411644",
-          "declaration_line": 2431,
+          "declaration_line": 2456,
           "lines": [
-            2431,
-            2437
+            2456,
+            2462
           ]
         }
       ]
@@ -98936,11 +98936,11 @@
         932,
         935,
         938,
-        2432,
-        2439,
-        2442,
-        2445,
-        2448
+        2457,
+        2464,
+        2467,
+        2470,
+        2473
       ],
       "owners": [
         {
@@ -98958,13 +98958,13 @@
         {
           "kind": "function",
           "name": "func_uvdyn_rom_00411644",
-          "declaration_line": 2431,
+          "declaration_line": 2456,
           "lines": [
-            2432,
-            2439,
-            2442,
-            2445,
-            2448
+            2457,
+            2464,
+            2467,
+            2470,
+            2473
           ]
         }
       ]
@@ -127059,16 +127059,16 @@
       "path": "src/modules/letter.c",
       "symbol": "Select the twenty-byte descriptor using the object byte index and * set its RGB components with the object alpha through graphics export 0x3C. * RE_UNKNOWN: index bound; trace original index producers and descriptor extent.",
       "lines": [
-        128
+        130
       ],
       "evidence": "Select the twenty-byte descriptor using the object byte index and * set its RGB components with the object alpha through graphics export 0x3C. * RE_UNKNOWN: index bound; trace original index producers and descriptor extent.",
       "owners": [
         {
           "kind": "function",
           "name": "letterSetDescriptorPrimitiveColor",
-          "declaration_line": 131,
+          "declaration_line": 133,
           "lines": [
-            128
+            130
           ]
         }
       ]
@@ -128067,16 +128067,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Attempt pending Hot Lava speech on random choice 3 with priority 0x7FFF; playback value is 0x7A120. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: playback-value units need consumers.",
       "lines": [
-        734
+        742
       ],
       "evidence": "Attempt pending Hot Lava speech on random choice 3 with priority 0x7FFF; playback value is 0x7A120. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: playback-value units need consumers.",
       "owners": [
         {
           "kind": "global",
           "name": "D_motion_004160A0",
-          "declaration_line": 736,
+          "declaration_line": 744,
           "lines": [
-            734
+            742
           ]
         }
       ]
@@ -128087,16 +128087,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Attempt pending explosion speech on random choice 3 with its scale; priority 0x7FFF, playback value 0x1F4. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: playback-value units need consumers.",
       "lines": [
-        754
+        762
       ],
       "evidence": "Attempt pending explosion speech on random choice 3 with its scale; priority 0x7FFF, playback value 0x1F4. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: playback-value units need consumers.",
       "owners": [
         {
           "kind": "global",
           "name": "D_motion_0041607C",
-          "declaration_line": 756,
+          "declaration_line": 764,
           "lines": [
-            754
+            762
           ]
         }
       ]
@@ -128107,16 +128107,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Draw background, graph-derived red/green bars, direct-value blue bar and * a white marker from saved input 0x6D4. Preserve single arithmetic grouping, * truncating signed coordinates and input reads between draw callbacks. * Original UVGRPH 0x04 is linear evaluation; UVGEOM 0x0C/0x10 consume four * singles for color / four signed words for rectangle coordinates. * RE_UNKNOWN: scalar meanings/units, reachable input/coordinate ranges and * graphics-state ownership need original producers/callers. Clean C remains * unmatched; retain assembly pending complete byte/relocation proof.",
       "lines": [
-        682
+        690
       ],
       "evidence": "Draw background, graph-derived red/green bars, direct-value blue bar and * a white marker from saved input 0x6D4. Preserve single arithmetic grouping, * truncating signed coordinates and input reads between draw callbacks. * Original UVGRPH 0x04 is linear evaluation; UVGEOM 0x0C/0x10 consume four * singles for color / four signed words for rectangle coordinates. * RE_UNKNOWN: scalar meanings/units, reachable input/coordinate ranges and * graphics-state ownership need original producers/callers. Clean C remains * unmatched; retain assembly pending complete byte/relocation proof.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_motion_00414774",
-          "declaration_line": 691,
+          "declaration_line": 699,
           "lines": [
-            682
+            690
           ]
         }
       ]
@@ -128127,16 +128127,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Forward state, 1, embedded matrix 0x5E8 and 0 to the original helper. * RE_UNKNOWN: helper retention and mode meanings require its body and callers.",
       "lines": [
-        622
+        630
       ],
       "evidence": "Forward state, 1, embedded matrix 0x5E8 and 0 to the original helper. * RE_UNKNOWN: helper retention and mode meanings require its body and callers.",
       "owners": [
         {
           "kind": "function",
           "name": "motionForwardStateMatrix",
-          "declaration_line": 624,
+          "declaration_line": 632,
           "lines": [
-            622
+            630
           ]
         }
       ]
@@ -128147,16 +128147,16 @@
       "path": "src/modules/motion.c",
       "symbol": "From the planar record's X/Y pair, compute a normalized pair angle, * apply the shared angle scale and fold degrees through the misc exports. * Below the first ordered Y-magnitude threshold store zero; below the second, * multiply the folded result by the original (magnitude-offset)/span factor. * Preserve positive-test magnitude semantics for zero/NaN and reload the * stored response before attenuation. RE_UNKNOWN: constant units/ranges and * the response's consumer meaning require original writers/callers.",
       "lines": [
-        322
+        330
       ],
       "evidence": "From the planar record's X/Y pair, compute a normalized pair angle, * apply the shared angle scale and fold degrees through the misc exports. * Below the first ordered Y-magnitude threshold store zero; below the second, * multiply the folded result by the original (magnitude-offset)/span factor. * Preserve positive-test magnitude semantics for zero/NaN and reload the * stored response before attenuation. RE_UNKNOWN: constant units/ranges and * the response's consumer meaning require original writers/callers.",
       "owners": [
         {
           "kind": "function",
           "name": "motionComputePlanarRecordAngleResponse",
-          "declaration_line": 329,
+          "declaration_line": 337,
           "lines": [
-            322
+            330
           ]
         }
       ]
@@ -128167,16 +128167,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Original cross/add/transform and dot products update phase 0x8D4 and * component 0x998; 0x988/0x998 overlap vector 0x984.y / vector 0x990.z. * RE_ORIGINAL_QUIRK: caller passes 1-dot*dot directly; the bound sqrt export * returns zero for ordered-negative input. Keep phase reloads and NaN tests. * RE_UNKNOWN: vector frames/units, normalized-input/phase domains and linked * record lifetime need original producers/callers. Clean C remains unmatched; * retain original assembly pending complete instruction/relocation proof.",
       "lines": [
-        641
+        649
       ],
       "evidence": "Original cross/add/transform and dot products update phase 0x8D4 and * component 0x998; 0x988/0x998 overlap vector 0x984.y / vector 0x990.z. * RE_ORIGINAL_QUIRK: caller passes 1-dot*dot directly; the bound sqrt export * returns zero for ordered-negative input. Keep phase reloads and NaN tests. * RE_UNKNOWN: vector frames/units, normalized-input/phase domains and linked * record lifetime need original producers/callers. Clean C remains unmatched; * retain original assembly pending complete instruction/relocation proof.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_motion_00413284",
-          "declaration_line": 649,
+          "declaration_line": 657,
           "lines": [
-            641
+            649
           ]
         }
       ]
@@ -128187,52 +128187,52 @@
       "path": "src/modules/motion.c",
       "symbol": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "lines": [
-        389,
-        656,
-        665,
-        674,
-        694
+        397,
+        664,
+        673,
+        682,
+        702
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "owners": [
         {
           "kind": "function",
           "name": "func_motion_00405E5C",
-          "declaration_line": 393,
+          "declaration_line": 401,
           "lines": [
-            389
+            397
           ]
         },
         {
           "kind": "function",
           "name": "func_motion_0041475C",
-          "declaration_line": 660,
+          "declaration_line": 668,
           "lines": [
-            656
+            664
           ]
         },
         {
           "kind": "function",
           "name": "func_motion_00414764",
-          "declaration_line": 669,
+          "declaration_line": 677,
           "lines": [
-            665
+            673
           ]
         },
         {
           "kind": "function",
           "name": "func_motion_0041476C",
-          "declaration_line": 678,
+          "declaration_line": 686,
           "lines": [
-            674
+            682
           ]
         },
         {
           "kind": "function",
           "name": "func_motion_00414A68",
-          "declaration_line": 698,
+          "declaration_line": 706,
           "lines": [
-            694
+            702
           ]
         }
       ]
@@ -128243,16 +128243,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Read the unsigned halfword at state offset 0x70C without modifying the caller object. RE_UNKNOWN: the field role requires its writers and consumers; no status or identifier meaning is assumed.",
       "lines": [
-        727
+        735
       ],
       "evidence": "Read the unsigned halfword at state offset 0x70C without modifying the caller object. RE_UNKNOWN: the field role requires its writers and consumers; no status or identifier meaning is assumed.",
       "owners": [
         {
           "kind": "function",
           "name": "func_motion_00415870",
-          "declaration_line": 728,
+          "declaration_line": 736,
           "lines": [
-            727
+            735
           ]
         }
       ]
@@ -128283,16 +128283,36 @@
       "path": "src/modules/motion.c",
       "symbol": "Transform a configured local Z vector through the state's linear matrix * and add it to the existing accumulated vector. Kind two selects the first * constant; other kinds select the alternate. Recheck kind after the helper. * For kind one, halve transformed Y in double precision only when value674 * is strictly negative or positive; zeros and NaNs leave Y unchanged. * RE_UNKNOWN: kind/value ownership, constant units and the accumulated * vector's physical interpretation require original producers/callers.",
       "lines": [
-        533
+        541
       ],
       "evidence": "Transform a configured local Z vector through the state's linear matrix * and add it to the existing accumulated vector. Kind two selects the first * constant; other kinds select the alternate. Recheck kind after the helper. * For kind one, halve transformed Y in double precision only when value674 * is strictly negative or positive; zeros and NaNs leave Y unchanged. * RE_UNKNOWN: kind/value ownership, constant units and the accumulated * vector's physical interpretation require original producers/callers.",
       "owners": [
         {
           "kind": "function",
           "name": "motionAccumulateTransformedConfiguredVector",
-          "declaration_line": 540,
+          "declaration_line": 548,
           "lines": [
-            533
+            541
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-9ef86a3ee1ee",
+      "kind": "explicit_unknown",
+      "path": "src/modules/motion.c",
+      "symbol": "Update scalar 0x684, signed counter 0x688 and configuration scale 0x6AC * through enable/gate/sign tests. Original MISC 0x54 clamps value to ordered * upper/lower singles; its leaf has no calls or nonstack writes. Keep the * original response/config read timing and double quarter-scale conversion. * RE_UNKNOWN: physical scalar/flag/mode meanings, counter schedule and * state/config lifetime need original producers/callers. Clean C remains * unmatched; retain assembly pending complete byte/relocation proof.",
+      "lines": [
+        291
+      ],
+      "evidence": "Update scalar 0x684, signed counter 0x688 and configuration scale 0x6AC * through enable/gate/sign tests. Original MISC 0x54 clamps value to ordered * upper/lower singles; its leaf has no calls or nonstack writes. Keep the * original response/config read timing and double quarter-scale conversion. * RE_UNKNOWN: physical scalar/flag/mode meanings, counter schedule and * state/config lifetime need original producers/callers. Clean C remains * unmatched; retain assembly pending complete byte/relocation proof.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_motion_0040456C",
+          "declaration_line": 299,
+          "lines": [
+            291
           ]
         }
       ]
@@ -131499,16 +131519,16 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Append attachment query-index/kind/pointer entries, then collect each * newly appended attachment's DOBJ sphere query into shared workspace. * Original imports bind QERY slots 0x28/0x30 to the selector parser and * array override, and DOBJ slots 0x04/0x50 to the shared index-pair setter * and four-float sphere query with three output pointers. * RE_ORIGINAL_QUIRK: native 0x4090F8 stores the newly appended entry count * as a word at SP+0x7C, and 0x4092E8 returns its low16 via LHU SP+0x7E. * The separately initialized/incremented u16 at SP+0x6E is not the return * source. Preserve the actual return; no uninitialized-return claim is valid. * RE_UNKNOWN: starting counter and caller allocation bounds. Native entry * count at work+0xF744 stops only at equality with 30; hit count at +0xF746 * sets remaining capacity as 120-count. Trace work allocation/reset writers * and attachmentCount producers before changing limits or assuming safety. * RE_UNKNOWN: entry-kind 3 and query-index word meanings, shared query-state * ownership/reentrancy and output storage aliases. Original cleanup installs * fixed NULL/zero override, selector-1 value zero and DOBJ pair -1/-1 rather * than restoring saved values. Trace original call/configuration lifetimes. * RE_UNKNOWN: historical independent loop-local declarations and source * organization. Readable C remains unmatched; retain original assembly.",
       "lines": [
-        1502
+        1527
       ],
       "evidence": "Append attachment query-index/kind/pointer entries, then collect each * newly appended attachment's DOBJ sphere query into shared workspace. * Original imports bind QERY slots 0x28/0x30 to the selector parser and * array override, and DOBJ slots 0x04/0x50 to the shared index-pair setter * and four-float sphere query with three output pointers. * RE_ORIGINAL_QUIRK: native 0x4090F8 stores the newly appended entry count * as a word at SP+0x7C, and 0x4092E8 returns its low16 via LHU SP+0x7E. * The separately initialized/incremented u16 at SP+0x6E is not the return * source. Preserve the actual return; no uninitialized-return claim is valid. * RE_UNKNOWN: starting counter and caller allocation bounds. Native entry * count at work+0xF744 stops only at equality with 30; hit count at +0xF746 * sets remaining capacity as 120-count. Trace work allocation/reset writers * and attachmentCount producers before changing limits or assuming safety. * RE_UNKNOWN: entry-kind 3 and query-index word meanings, shared query-state * ownership/reentrancy and output storage aliases. Original cleanup installs * fixed NULL/zero override, selector-1 value zero and DOBJ pair -1/-1 rather * than restoring saved values. Trace original call/configuration lifetimes. * RE_UNKNOWN: historical independent loop-local declarations and source * organization. Readable C remains unmatched; retain original assembly.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvdyn_rom_00409010",
-          "declaration_line": 1522,
+          "declaration_line": 1547,
           "lines": [
-            1502
+            1527
           ]
         }
       ]
@@ -131569,6 +131589,26 @@
           "declaration_line": 1162,
           "lines": [
             1158
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-2749d7e1d966",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdyn_rom.c",
+      "symbol": "Original node vector-pair query followed by a record-vector offset update. * Native F78C uses the pair at 0x146C/0x1478 and range halfwords in the order * 0x12D2/0x12DA/0x12D0/0x12D8. When value04 is -1, query flag 8 runs only * after a zero initial result, then flag 1 runs inside that sentinel gate. * Kind 4, or kind 1 with texture byte 4, stores kind 4 and scalar 0x148C=1, * copies point14 to vector 0x149C, then invokes callback 0x1560. Otherwise, * a successful flag-1 query forces the retained result to 1. A nonzero * retained result invokes callback 0x156C with the output address as its word. * Native 10AEC rebinds ranges before the final zero-result return. A nonzero * result runs isct slot 0x94, then optional aliased cross/cross/normalize * operations under halfword 0x12B6. FVEC subtract/scale/add forms point14 * minus the first query vector plus 0.1f times vector34, then adds that result * to the matrix vector at 0x131C before the first query vector at 0x146C. * RE_ORIGINAL_QUIRK: retained results narrow to u16; the flag-1 return gates * record handling without replacing that result directly. Facing and * normalization returns are ignored. Preserve range reset and alias order. * RE_UNKNOWN: sentinel/kind/result meanings, vector frames/units, scalar and * 0.1-factor roles, valid ranges, complete output storage/aliasing, callback * effects and historical input declarations. Trace original callers, query * producers and callback registrations before assigning physical roles or * adding validation. The clean recovery remains unaccepted: its stack/result * homes and final return organization differ, shifting instruction and * relocation positions. Recover genuine source-local lifetimes/control flow; * do not invent padding or force temporary registers.",
+      "lines": [
+        1498
+      ],
+      "evidence": "Original node vector-pair query followed by a record-vector offset update. * Native F78C uses the pair at 0x146C/0x1478 and range halfwords in the order * 0x12D2/0x12DA/0x12D0/0x12D8. When value04 is -1, query flag 8 runs only * after a zero initial result, then flag 1 runs inside that sentinel gate. * Kind 4, or kind 1 with texture byte 4, stores kind 4 and scalar 0x148C=1, * copies point14 to vector 0x149C, then invokes callback 0x1560. Otherwise, * a successful flag-1 query forces the retained result to 1. A nonzero * retained result invokes callback 0x156C with the output address as its word. * Native 10AEC rebinds ranges before the final zero-result return. A nonzero * result runs isct slot 0x94, then optional aliased cross/cross/normalize * operations under halfword 0x12B6. FVEC subtract/scale/add forms point14 * minus the first query vector plus 0.1f times vector34, then adds that result * to the matrix vector at 0x131C before the first query vector at 0x146C. * RE_ORIGINAL_QUIRK: retained results narrow to u16; the flag-1 return gates * record handling without replacing that result directly. Facing and * normalization returns are ignored. Preserve range reset and alias order. * RE_UNKNOWN: sentinel/kind/result meanings, vector frames/units, scalar and * 0.1-factor roles, valid ranges, complete output storage/aliasing, callback * effects and historical input declarations. Trace original callers, query * producers and callback registrations before assigning physical roles or * adding validation. The clean recovery remains unaccepted: its stack/result * homes and final return organization differ, shifting instruction and * relocation positions. Recover genuine source-local lifetimes/control flow; * do not invent padding or force temporary registers.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_uvdyn_rom_00408ACC",
+          "declaration_line": 1523,
+          "lines": [
+            1498
           ]
         }
       ]
@@ -131679,16 +131719,16 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Original terrain sphere-query append wrapper. Record and secondary counts * are unsigned halfwords at 0xF73C/0xF73E. Install QERY overrides at the current * 120-byte/40-byte record slots, call TERR slot 0x44 with flags 6 and the four * sphere floats, then add QERY's secondary count before any record-word copy. * TERR returns four array addresses; only the first and fourth are copied, * in that order. Reload the original record count after both copies, publish * it through D_uvdyn_rom_00411FA0, reset the overrides and selector 1 to fixed * values, then publish or clear lowercase isct slot 0x40's four shared words. * RE_ORIGINAL_QUIRK: neither starting count is checked. A negative signed * remaining capacity (220 minus record count) can narrow to u16 for copying; * the secondary count also wraps through its original halfword store. * RE_UNKNOWN: caller count/allocation guarantees, selector-1 meaning, sphere * frame/units, output-array aliasing/lifetime and shared-count global role. * Trace workspace producers, TERR/QERY consumers and original callers before * changing bounds or ownership. The clean draft remains unaccepted: native * local organization yields different frame homes and copy-count scheduling. * Recover matching historical C organization without padding or dummy locals.",
       "lines": [
-        2158
+        2183
       ],
       "evidence": "Original terrain sphere-query append wrapper. Record and secondary counts * are unsigned halfwords at 0xF73C/0xF73E. Install QERY overrides at the current * 120-byte/40-byte record slots, call TERR slot 0x44 with flags 6 and the four * sphere floats, then add QERY's secondary count before any record-word copy. * TERR returns four array addresses; only the first and fourth are copied, * in that order. Reload the original record count after both copies, publish * it through D_uvdyn_rom_00411FA0, reset the overrides and selector 1 to fixed * values, then publish or clear lowercase isct slot 0x40's four shared words. * RE_ORIGINAL_QUIRK: neither starting count is checked. A negative signed * remaining capacity (220 minus record count) can narrow to u16 for copying; * the secondary count also wraps through its original halfword store. * RE_UNKNOWN: caller count/allocation guarantees, selector-1 meaning, sphere * frame/units, output-array aliasing/lifetime and shared-count global role. * Trace workspace producers, TERR/QERY consumers and original callers before * changing bounds or ownership. The clean draft remains unaccepted: native * local organization yields different frame homes and copy-count scheduling. * Recover matching historical C organization without padding or dummy locals.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvdyn_rom_004107FC",
-          "declaration_line": 2176,
+          "declaration_line": 2201,
           "lines": [
-            2158
+            2183
           ]
         }
       ]
@@ -131699,16 +131739,16 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Original transform/vector update wrapper. Count at 0x18 is tested only * against zero, so negative counts enter. FVEC slot 0x0C computes the length * of vector 0x14BC for ISCT slot 0x80; native 50EC receives the original four * forwarded 32-bit words, scalar and trailing mode 1. Its result is narrowed * at 0x12B4; the shared scalar is reset to -1 before that result is reloaded. * Result 2 copies the supplied matrix and two vectors, refreshes the linear * matrix pair and DOBJ transform, then calls native 7C98 with mode 0. * Every path clears the original halfword at 0x151C. * RE_UNKNOWN: result-code meanings, vector frames/units, scalar units, * forwarded-word interpretation, and input/state aliases and lifetimes. * Trace native 50EC/7C98 callers, result checks and state producers before * assigning physical roles or strengthening the exact-zero input guard. * RE_UNKNOWN: historical C declarations and local organization. The bounded * draft matches every operation, register and call/branch position but uses * an 80-byte frame versus the original 72, shifting argument homes and three * saved pointer slots. Preserve assembly until original source/ABI evidence * supports a matching recovery; do not invent stack padding or unused locals.",
       "lines": [
-        1524
+        1549
       ],
       "evidence": "Original transform/vector update wrapper. Count at 0x18 is tested only * against zero, so negative counts enter. FVEC slot 0x0C computes the length * of vector 0x14BC for ISCT slot 0x80; native 50EC receives the original four * forwarded 32-bit words, scalar and trailing mode 1. Its result is narrowed * at 0x12B4; the shared scalar is reset to -1 before that result is reloaded. * Result 2 copies the supplied matrix and two vectors, refreshes the linear * matrix pair and DOBJ transform, then calls native 7C98 with mode 0. * Every path clears the original halfword at 0x151C. * RE_UNKNOWN: result-code meanings, vector frames/units, scalar units, * forwarded-word interpretation, and input/state aliases and lifetimes. * Trace native 50EC/7C98 callers, result checks and state producers before * assigning physical roles or strengthening the exact-zero input guard. * RE_UNKNOWN: historical C declarations and local organization. The bounded * draft matches every operation, register and call/branch position but uses * an 80-byte frame versus the original 72, shifting argument homes and three * saved pointer slots. Preserve assembly until original source/ABI evidence * supports a matching recovery; do not invent stack padding or unused locals.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvdyn_rom_00409318",
-          "declaration_line": 1542,
+          "declaration_line": 1567,
           "lines": [
-            1524
+            1549
           ]
         }
       ]
@@ -131719,16 +131759,16 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Publish ranges through lowercase-isct slot0x44, the original parameter-bank * setter at0x400BC4. First table0x72A6 uses buffers0x730C/0xB95C; second * table0xBC2A uses buffers0xBD1C/0xF55C. Start index zero selects zero; * otherwise load table[start], with end from table[start+count]. * Nonempty first range selects mode1. Nonempty second selects mode2 when * the first exists, else mode1; both empty publish the empty first range. * RE_UNKNOWN: native table producers/valid index-count domains, complete * allocation, buffer ownership and bank protocol. All four incoming words * are consumed through low16 views; fullword homes do not prove the complete * historical C prototype. Trace original callers and table writers before * changing bounds, arithmetic organization, storage lifetime or units. * RE_UNKNOWN: historical parameter-home/pointer organization. The readable * draft agrees on provider, effects and widths but caches firstCount across * the first call and combines index/count offsets differently. Keep original * assembly until a grounded source contract resolves instruction differences.",
       "lines": [
-        2187
+        2212
       ],
       "evidence": "Publish ranges through lowercase-isct slot0x44, the original parameter-bank * setter at0x400BC4. First table0x72A6 uses buffers0x730C/0xB95C; second * table0xBC2A uses buffers0xBD1C/0xF55C. Start index zero selects zero; * otherwise load table[start], with end from table[start+count]. * Nonempty first range selects mode1. Nonempty second selects mode2 when * the first exists, else mode1; both empty publish the empty first range. * RE_UNKNOWN: native table producers/valid index-count domains, complete * allocation, buffer ownership and bank protocol. All four incoming words * are consumed through low16 views; fullword homes do not prove the complete * historical C prototype. Trace original callers and table writers before * changing bounds, arithmetic organization, storage lifetime or units. * RE_UNKNOWN: historical parameter-home/pointer organization. The readable * draft agrees on provider, effects and widths but caches firstCount across * the first call and combines index/count offsets differently. Keep original * assembly until a grounded source contract resolves instruction differences.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvdyn_rom_00410AEC",
-          "declaration_line": 2203,
+          "declaration_line": 2228,
           "lines": [
-            2187
+            2212
           ]
         }
       ]
@@ -131739,16 +131779,16 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "RE_ORIGINAL_QUIRK: two original FVEC copies initialize the 12-byte values * at SP+0x4C/SP+0x58 before the first ISCT slot 0xA8 call, but this caller * does not assign the adjacent SP+0x64 input word. The actual provider * 0x4048DC directly reads input+0x18 for flag bits 8/1; flag bit 2 invokes * 0x4014FC, which forwards that word to 0x401558. Only the fallback query * assigns zero. This proves original read/store timing, not a missing * historical C initializer or a confirmed player-visible bug. * RE_UNKNOWN: caller flags, prior scratch provenance and downstream paths. * Trace original flag writers, attachment producers and each invoked helper * before changing initialization or assigning gameplay consequences. * RE_UNKNOWN: valid pair/endpoint domains and vector-bank capacity. The fifth * argument is read as u16: zero/nonzero selects source offsets 0x5C/0x68, * whereas cached indexing uses the full u16 times 12 after pairIndex*0x18. * Trace original callers and allocations before adding bounds checks. * RE_ORIGINAL_QUIRK: a successful fallback stores output+0x2C times twice * the seventh f32 argument before the strict comparison against that argument * plus native f32 0x411D14 (bits 0x3727C5AC). A rejected comparison therefore * can still update the scalar output pointer; preserve that store timing. * RE_UNKNOWN: vector frames/units, projection normalization and output storage * lifetimes/aliasing. Successful ISCT A8 also stores its input address into * output word0; here the input is local SP+0x4C storage. Trace actual callers' * output retention/dereferences before relying on that address after return. * Readable C remains unmatched: native 616 bytes versus compiled 572. * Provider slots, operation order and observed argument widths agree; exact * historical local/parameter declarations remain unresolved.",
       "lines": [
-        1858
+        1883
       ],
       "evidence": "RE_ORIGINAL_QUIRK: two original FVEC copies initialize the 12-byte values * at SP+0x4C/SP+0x58 before the first ISCT slot 0xA8 call, but this caller * does not assign the adjacent SP+0x64 input word. The actual provider * 0x4048DC directly reads input+0x18 for flag bits 8/1; flag bit 2 invokes * 0x4014FC, which forwards that word to 0x401558. Only the fallback query * assigns zero. This proves original read/store timing, not a missing * historical C initializer or a confirmed player-visible bug. * RE_UNKNOWN: caller flags, prior scratch provenance and downstream paths. * Trace original flag writers, attachment producers and each invoked helper * before changing initialization or assigning gameplay consequences. * RE_UNKNOWN: valid pair/endpoint domains and vector-bank capacity. The fifth * argument is read as u16: zero/nonzero selects source offsets 0x5C/0x68, * whereas cached indexing uses the full u16 times 12 after pairIndex*0x18. * Trace original callers and allocations before adding bounds checks. * RE_ORIGINAL_QUIRK: a successful fallback stores output+0x2C times twice * the seventh f32 argument before the strict comparison against that argument * plus native f32 0x411D14 (bits 0x3727C5AC). A rejected comparison therefore * can still update the scalar output pointer; preserve that store timing. * RE_UNKNOWN: vector frames/units, projection normalization and output storage * lifetimes/aliasing. Successful ISCT A8 also stores its input address into * output word0; here the input is local SP+0x4C storage. Trace actual callers' * output retention/dereferences before relying on that address after return. * Readable C remains unmatched: native 616 bytes versus compiled 572. * Provider slots, operation order and observed argument widths agree; exact * historical local/parameter declarations remain unresolved.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvdyn_rom_0040B838",
-          "declaration_line": 1884,
+          "declaration_line": 1909,
           "lines": [
-            1858
+            1883
           ]
         }
       ]
@@ -137370,7 +137410,7 @@
       "owners": [
         {
           "kind": "type",
-          "name": "UvGfxMgrExp_00400420",
+          "name": "LetterPrimitiveColorExports",
           "declaration_line": 24,
           "lines": [
             25
@@ -154811,141 +154851,18 @@
       "owners": [
         {
           "kind": "type",
-          "name": "LetterObj_00400420",
-          "declaration_line": 36,
-          "lines": [
-            37
-          ]
-        },
-        {
-          "kind": "type",
-          "name": "TableEntry_00400420",
+          "name": "LetterPrimitiveColorDescriptor",
           "declaration_line": 29,
           "lines": [
             30
           ]
-        }
-      ]
-    },
-    {
-      "id": "Q-d696a53dc76f",
-      "kind": "offset_field",
-      "path": "src/modules/letter.c",
-      "symbol": "unk10",
-      "lines": [
-        33,
-        135
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "letterSetDescriptorPrimitiveColor",
-          "declaration_line": 131,
-          "lines": [
-            135
-          ]
         },
         {
           "kind": "type",
-          "name": "TableEntry_00400420",
-          "declaration_line": 29,
-          "lines": [
-            33
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-568d561ced3b",
-      "kind": "offset_field",
-      "path": "src/modules/letter.c",
-      "symbol": "unk20",
-      "lines": [
-        40,
-        135
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "letterSetDescriptorPrimitiveColor",
-          "declaration_line": 131,
-          "lines": [
-            135
-          ]
-        },
-        {
-          "kind": "type",
-          "name": "LetterObj_00400420",
+          "name": "LetterPrimitiveColorObjectView",
           "declaration_line": 36,
           "lines": [
-            40
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-49f98e52b86f",
-      "kind": "offset_field",
-      "path": "src/modules/letter.c",
-      "symbol": "unk3C",
-      "lines": [
-        26,
-        135
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "letterSetDescriptorPrimitiveColor",
-          "declaration_line": 131,
-          "lines": [
-            135
-          ]
-        },
-        {
-          "kind": "type",
-          "name": "UvGfxMgrExp_00400420",
-          "declaration_line": 24,
-          "lines": [
-            26
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-504ac90c0047",
-      "kind": "offset_field",
-      "path": "src/modules/letter.c",
-      "symbol": "unk8",
-      "lines": [
-        31,
-        38,
-        134,
-        135
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "letterSetDescriptorPrimitiveColor",
-          "declaration_line": 131,
-          "lines": [
-            134,
-            135
-          ]
-        },
-        {
-          "kind": "type",
-          "name": "LetterObj_00400420",
-          "declaration_line": 36,
-          "lines": [
-            38
-          ]
-        },
-        {
-          "kind": "type",
-          "name": "TableEntry_00400420",
-          "declaration_line": 29,
-          "lines": [
-            31
+            37
           ]
         }
       ]
@@ -154961,38 +154878,10 @@
       "owners": [
         {
           "kind": "type",
-          "name": "LetterObj_00400420",
+          "name": "LetterPrimitiveColorObjectView",
           "declaration_line": 36,
           "lines": [
             39
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-e94a0763662b",
-      "kind": "offset_field",
-      "path": "src/modules/letter.c",
-      "symbol": "unkC",
-      "lines": [
-        32,
-        135
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "letterSetDescriptorPrimitiveColor",
-          "declaration_line": 131,
-          "lines": [
-            135
-          ]
-        },
-        {
-          "kind": "type",
-          "name": "TableEntry_00400420",
-          "declaration_line": 29,
-          "lines": [
-            32
           ]
         }
       ]
@@ -157249,15 +157138,15 @@
       "symbol": "value674",
       "lines": [
         25,
-        555
+        563
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionAccumulateTransformedConfiguredVector",
-          "declaration_line": 540,
+          "declaration_line": 548,
           "lines": [
-            555
+            563
           ]
         },
         {
@@ -157277,15 +157166,15 @@
       "symbol": "value690",
       "lines": [
         66,
-        523
+        531
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionApplyConditionalCorrection",
-          "declaration_line": 521,
+          "declaration_line": 529,
           "lines": [
-            523
+            531
           ]
         },
         {
@@ -157306,30 +157195,30 @@
       "lines": [
         35,
         66,
-        524,
-        601,
-        602,
-        604,
-        605
+        532,
+        609,
+        610,
+        612,
+        613
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionApplyConditionalCorrection",
-          "declaration_line": 521,
+          "declaration_line": 529,
           "lines": [
-            524
+            532
           ]
         },
         {
           "kind": "function",
           "name": "motionApplyGatedModeResponse",
-          "declaration_line": 572,
+          "declaration_line": 580,
           "lines": [
-            601,
-            602,
-            604,
-            605
+            609,
+            610,
+            612,
+            613
           ]
         },
         {
@@ -157357,15 +157246,15 @@
       "symbol": "value9A0",
       "lines": [
         66,
-        526
+        534
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionApplyConditionalCorrection",
-          "declaration_line": 521,
+          "declaration_line": 529,
           "lines": [
-            526
+            534
           ]
         },
         {
@@ -172971,15 +172860,15 @@
       "symbol": "callback244",
       "lines": [
         190,
-        1777
+        1802
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynInvokeAttachmentCallback244",
-          "declaration_line": 1776,
+          "declaration_line": 1801,
           "lines": [
-            1777
+            1802
           ]
         },
         {
@@ -172999,15 +172888,15 @@
       "symbol": "callback248",
       "lines": [
         191,
-        1788
+        1813
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynInvokeAttachmentValueCallback248",
-          "declaration_line": 1787,
+          "declaration_line": 1812,
           "lines": [
-            1788
+            1813
           ]
         },
         {
@@ -173167,15 +173056,15 @@
       "symbol": "context25C",
       "lines": [
         193,
-        1779
+        1804
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynInvokeAttachmentCallback244",
-          "declaration_line": 1776,
+          "declaration_line": 1801,
           "lines": [
-            1779
+            1804
           ]
         },
         {
@@ -173195,15 +173084,15 @@
       "symbol": "context260",
       "lines": [
         194,
-        1790
+        1815
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynInvokeAttachmentValueCallback248",
-          "declaration_line": 1787,
+          "declaration_line": 1812,
           "lines": [
-            1790
+            1815
           ]
         },
         {
@@ -173297,15 +173186,15 @@
       "symbol": "flag1A0",
       "lines": [
         256,
-        2280
+        2305
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynCopySecondaryCompanionFields",
-          "declaration_line": 2274,
+          "declaration_line": 2299,
           "lines": [
-            2280
+            2305
           ]
         },
         {
@@ -173338,26 +173227,26 @@
         1328,
         1472,
         1474,
-        1550,
-        1678,
-        2091,
-        2134
+        1575,
+        1703,
+        2116,
+        2159
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynApplyTranslatedDobjTransform",
-          "declaration_line": 1548,
+          "declaration_line": 1573,
           "lines": [
-            1550
+            1575
           ]
         },
         {
           "kind": "function",
           "name": "uvDynBuildCollectionMemberSpheres",
-          "declaration_line": 2123,
+          "declaration_line": 2148,
           "lines": [
-            2134
+            2159
           ]
         },
         {
@@ -173416,17 +173305,17 @@
         {
           "kind": "function",
           "name": "uvDynUpdateAttachmentDelta",
-          "declaration_line": 1674,
+          "declaration_line": 1699,
           "lines": [
-            1678
+            1703
           ]
         },
         {
           "kind": "function",
           "name": "uvDynUpdateCollectionMemberTransforms",
-          "declaration_line": 2085,
+          "declaration_line": 2110,
           "lines": [
-            2091
+            2116
           ]
         },
         {
@@ -173459,16 +173348,16 @@
         902,
         963,
         1328,
-        2091,
-        2134
+        2116,
+        2159
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynBuildCollectionMemberSpheres",
-          "declaration_line": 2123,
+          "declaration_line": 2148,
           "lines": [
-            2134
+            2159
           ]
         },
         {
@@ -173506,9 +173395,9 @@
         {
           "kind": "function",
           "name": "uvDynUpdateCollectionMemberTransforms",
-          "declaration_line": 2085,
+          "declaration_line": 2110,
           "lines": [
-            2091
+            2116
           ]
         },
         {
@@ -173530,7 +173419,7 @@
         103,
         902,
         966,
-        2091
+        2116
       ],
       "owners": [
         {
@@ -173552,9 +173441,9 @@
         {
           "kind": "function",
           "name": "uvDynUpdateCollectionMemberTransforms",
-          "declaration_line": 2085,
+          "declaration_line": 2110,
           "lines": [
-            2091
+            2116
           ]
         },
         {
@@ -173686,128 +173575,128 @@
       "symbol": "matrix18",
       "lines": [
         239,
-        2096,
-        2141,
-        2226,
-        2276,
-        2335,
-        2338,
-        2339,
-        2340,
-        2342,
-        2377,
-        2378,
-        2379,
+        2121,
+        2166,
+        2251,
+        2301,
+        2360,
+        2363,
+        2364,
+        2365,
+        2367,
+        2402,
         2403,
-        2405,
-        2407,
-        2408,
-        2409,
-        2411,
-        2417,
-        2419,
-        2421,
-        2422,
-        2423,
-        2459,
-        2540,
-        2559
+        2404,
+        2428,
+        2430,
+        2432,
+        2433,
+        2434,
+        2436,
+        2442,
+        2444,
+        2446,
+        2447,
+        2448,
+        2484,
+        2565,
+        2584
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynBuildCollectionMemberSpheres",
-          "declaration_line": 2123,
+          "declaration_line": 2148,
           "lines": [
-            2141
+            2166
           ]
         },
         {
           "kind": "function",
           "name": "uvDynCopySecondaryCompanionFields",
-          "declaration_line": 2274,
+          "declaration_line": 2299,
           "lines": [
-            2276
+            2301
           ]
         },
         {
           "kind": "function",
           "name": "uvDynCreateSecondaryState",
-          "declaration_line": 2219,
+          "declaration_line": 2244,
           "lines": [
-            2226
+            2251
           ]
         },
         {
           "kind": "function",
           "name": "uvDynGetSecondaryMatrixProperty",
-          "declaration_line": 2455,
+          "declaration_line": 2480,
           "lines": [
-            2459
+            2484
           ]
         },
         {
           "kind": "function",
           "name": "uvDynGetSecondaryVectorProperty",
-          "declaration_line": 2368,
+          "declaration_line": 2393,
           "lines": [
-            2377,
-            2378,
-            2379
+            2402,
+            2403,
+            2404
           ]
         },
         {
           "kind": "function",
           "name": "uvDynResetSecondaryState",
-          "declaration_line": 2554,
+          "declaration_line": 2579,
           "lines": [
-            2559
+            2584
           ]
         },
         {
           "kind": "function",
           "name": "uvDynSetSecondaryMatrixProperty",
-          "declaration_line": 2396,
+          "declaration_line": 2421,
           "lines": [
-            2403,
-            2405,
-            2407,
-            2408,
-            2409,
-            2411,
-            2417,
-            2419,
-            2421,
-            2422,
-            2423
+            2428,
+            2430,
+            2432,
+            2433,
+            2434,
+            2436,
+            2442,
+            2444,
+            2446,
+            2447,
+            2448
           ]
         },
         {
           "kind": "function",
           "name": "uvDynSetSecondaryVectorProperty",
-          "declaration_line": 2327,
+          "declaration_line": 2352,
           "lines": [
-            2335,
-            2338,
-            2339,
-            2340,
-            2342
+            2360,
+            2363,
+            2364,
+            2365,
+            2367
           ]
         },
         {
           "kind": "function",
           "name": "uvDynUpdateCollectionMemberTransforms",
-          "declaration_line": 2085,
+          "declaration_line": 2110,
           "lines": [
-            2096
+            2121
           ]
         },
         {
           "kind": "function",
           "name": "uvDynUpdateSecondaryStateOnce",
-          "declaration_line": 2536,
+          "declaration_line": 2561,
           "lines": [
-            2540
+            2565
           ]
         },
         {
@@ -173827,51 +173716,51 @@
       "symbol": "matrix58",
       "lines": [
         240,
-        2096,
-        2141,
-        2276,
-        2540,
-        2559
+        2121,
+        2166,
+        2301,
+        2565,
+        2584
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynBuildCollectionMemberSpheres",
-          "declaration_line": 2123,
+          "declaration_line": 2148,
           "lines": [
-            2141
+            2166
           ]
         },
         {
           "kind": "function",
           "name": "uvDynCopySecondaryCompanionFields",
-          "declaration_line": 2274,
+          "declaration_line": 2299,
           "lines": [
-            2276
+            2301
           ]
         },
         {
           "kind": "function",
           "name": "uvDynResetSecondaryState",
-          "declaration_line": 2554,
+          "declaration_line": 2579,
           "lines": [
-            2559
+            2584
           ]
         },
         {
           "kind": "function",
           "name": "uvDynUpdateCollectionMemberTransforms",
-          "declaration_line": 2085,
+          "declaration_line": 2110,
           "lines": [
-            2096
+            2121
           ]
         },
         {
           "kind": "function",
           "name": "uvDynUpdateSecondaryStateOnce",
-          "declaration_line": 2536,
+          "declaration_line": 2561,
           "lines": [
-            2540
+            2565
           ]
         },
         {
@@ -173891,24 +173780,24 @@
       "symbol": "matrix98",
       "lines": [
         241,
-        2096,
-        2465
+        2121,
+        2490
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynGetSecondaryMatrixProperty",
-          "declaration_line": 2455,
+          "declaration_line": 2480,
           "lines": [
-            2465
+            2490
           ]
         },
         {
           "kind": "function",
           "name": "uvDynUpdateCollectionMemberTransforms",
-          "declaration_line": 2085,
+          "declaration_line": 2110,
           "lines": [
-            2096
+            2121
           ]
         },
         {
@@ -173928,37 +173817,37 @@
       "symbol": "matrixD8",
       "lines": [
         242,
-        2227,
-        2411,
-        2415,
-        2416,
-        2462
+        2252,
+        2436,
+        2440,
+        2441,
+        2487
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynCreateSecondaryState",
-          "declaration_line": 2219,
+          "declaration_line": 2244,
           "lines": [
-            2227
+            2252
           ]
         },
         {
           "kind": "function",
           "name": "uvDynGetSecondaryMatrixProperty",
-          "declaration_line": 2455,
+          "declaration_line": 2480,
           "lines": [
-            2462
+            2487
           ]
         },
         {
           "kind": "function",
           "name": "uvDynSetSecondaryMatrixProperty",
-          "declaration_line": 2396,
+          "declaration_line": 2421,
           "lines": [
-            2411,
-            2415,
-            2416
+            2436,
+            2440,
+            2441
           ]
         },
         {
@@ -173977,17 +173866,17 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unk0",
       "lines": [
-        2515,
-        2516
+        2540,
+        2541
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynSetSecondaryModelLod",
-          "declaration_line": 2506,
+          "declaration_line": 2531,
           "lines": [
-            2515,
-            2516
+            2540,
+            2541
           ]
         }
       ]
@@ -174329,15 +174218,15 @@
         179,
         289,
         313,
-        2517
+        2542
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynSetSecondaryModelLod",
-          "declaration_line": 2506,
+          "declaration_line": 2531,
           "lines": [
-            2517
+            2542
           ]
         },
         {
@@ -174524,15 +174413,15 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unk14",
       "lines": [
-        2517
+        2542
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynSetSecondaryModelLod",
-          "declaration_line": 2506,
+          "declaration_line": 2531,
           "lines": [
-            2517
+            2542
           ]
         }
       ]
@@ -174970,15 +174859,15 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unk4",
       "lines": [
-        2516
+        2541
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynSetSecondaryModelLod",
-          "declaration_line": 2506,
+          "declaration_line": 2531,
           "lines": [
-            2516
+            2541
           ]
         }
       ]
@@ -175008,17 +174897,17 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unk8",
       "lines": [
-        2515,
-        2516
+        2540,
+        2541
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynSetSecondaryModelLod",
-          "declaration_line": 2506,
+          "declaration_line": 2531,
           "lines": [
-            2515,
-            2516
+            2540,
+            2541
           ]
         }
       ]
@@ -175029,15 +174918,15 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unkC",
       "lines": [
-        2517
+        2542
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynSetSecondaryModelLod",
-          "declaration_line": 2506,
+          "declaration_line": 2531,
           "lines": [
-            2517
+            2542
           ]
         }
       ]
@@ -175090,18 +174979,18 @@
         87,
         678,
         808,
-        2003,
-        2135,
-        2136
+        2028,
+        2160,
+        2161
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynBuildCollectionMemberSpheres",
-          "declaration_line": 2123,
+          "declaration_line": 2148,
           "lines": [
-            2135,
-            2136
+            2160,
+            2161
           ]
         },
         {
@@ -175123,9 +175012,9 @@
         {
           "kind": "function",
           "name": "uvDynInsertUniqueLinkedNode",
-          "declaration_line": 1995,
+          "declaration_line": 2020,
           "lines": [
-            2003
+            2028
           ]
         },
         {
@@ -175156,9 +175045,9 @@
         287,
         434,
         1256,
-        1575,
-        1832,
-        1842
+        1600,
+        1857,
+        1867
       ],
       "owners": [
         {
@@ -175180,18 +175069,18 @@
         {
           "kind": "function",
           "name": "uvDynTryAcceptAttachmentRecord",
-          "declaration_line": 1832,
+          "declaration_line": 1857,
           "lines": [
-            1832,
-            1842
+            1857,
+            1867
           ]
         },
         {
           "kind": "function",
           "name": "uvDynTryAcceptLowerPositiveRecord",
-          "declaration_line": 1566,
+          "declaration_line": 1591,
           "lines": [
-            1575
+            1600
           ]
         },
         {
@@ -175221,8 +175110,8 @@
         236,
         288,
         1257,
-        2292,
-        2312
+        2317,
+        2337
       ],
       "owners": [
         {
@@ -175236,17 +175125,17 @@
         {
           "kind": "function",
           "name": "uvDynGetSecondaryScalarProperty",
-          "declaration_line": 2306,
+          "declaration_line": 2331,
           "lines": [
-            2312
+            2337
           ]
         },
         {
           "kind": "function",
           "name": "uvDynSetSecondaryScalarProperty",
-          "declaration_line": 2288,
+          "declaration_line": 2313,
           "lines": [
-            2292
+            2317
           ]
         },
         {
@@ -175274,17 +175163,17 @@
       "symbol": "value10",
       "lines": [
         81,
-        1754,
-        1759
+        1779,
+        1784
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynSetAttachmentIntersection",
-          "declaration_line": 1748,
+          "declaration_line": 1773,
           "lines": [
-            1754,
-            1759
+            1779,
+            1784
           ]
         },
         {
@@ -175406,37 +175295,37 @@
       "symbol": "value134",
       "lines": [
         246,
-        2228,
-        2334,
-        2341,
-        2404,
-        2418
+        2253,
+        2359,
+        2366,
+        2429,
+        2443
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynCreateSecondaryState",
-          "declaration_line": 2219,
+          "declaration_line": 2244,
           "lines": [
-            2228
+            2253
           ]
         },
         {
           "kind": "function",
           "name": "uvDynSetSecondaryMatrixProperty",
-          "declaration_line": 2396,
+          "declaration_line": 2421,
           "lines": [
-            2404,
-            2418
+            2429,
+            2443
           ]
         },
         {
           "kind": "function",
           "name": "uvDynSetSecondaryVectorProperty",
-          "declaration_line": 2327,
+          "declaration_line": 2352,
           "lines": [
-            2334,
-            2341
+            2359,
+            2366
           ]
         },
         {
@@ -175456,15 +175345,15 @@
       "symbol": "value14",
       "lines": [
         82,
-        1734
+        1759
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynGetAttachmentScalarProperty",
-          "declaration_line": 1726,
+          "declaration_line": 1751,
           "lines": [
-            1734
+            1759
           ]
         },
         {
@@ -175589,19 +175478,19 @@
         804,
         1121,
         1122,
-        2130,
-        2131,
-        2132
+        2155,
+        2156,
+        2157
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynBuildCollectionMemberSpheres",
-          "declaration_line": 2123,
+          "declaration_line": 2148,
           "lines": [
-            2130,
-            2131,
-            2132
+            2155,
+            2156,
+            2157
           ]
         },
         {
@@ -175639,17 +175528,17 @@
       "lines": [
         116,
         1122,
-        2129,
-        2130
+        2154,
+        2155
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynBuildCollectionMemberSpheres",
-          "declaration_line": 2123,
+          "declaration_line": 2148,
           "lines": [
-            2129,
-            2130
+            2154,
+            2155
           ]
         },
         {
@@ -175677,21 +175566,21 @@
       "symbol": "value14B4",
       "lines": [
         117,
-        2129,
-        2131,
-        2132,
-        2134
+        2154,
+        2156,
+        2157,
+        2159
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynBuildCollectionMemberSpheres",
-          "declaration_line": 2123,
+          "declaration_line": 2148,
           "lines": [
-            2129,
-            2131,
-            2132,
-            2134
+            2154,
+            2156,
+            2157,
+            2159
           ]
         },
         {
@@ -175748,15 +175637,15 @@
       "symbol": "value18",
       "lines": [
         83,
-        1736
+        1761
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynGetAttachmentScalarProperty",
-          "declaration_line": 1726,
+          "declaration_line": 1751,
           "lines": [
-            1736
+            1761
           ]
         },
         {
@@ -175813,15 +175702,15 @@
       "symbol": "valueF79E",
       "lines": [
         52,
-        1983
+        2008
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynGetCollectionScalarProperty",
-          "declaration_line": 1975,
+          "declaration_line": 2000,
           "lines": [
-            1983
+            2008
           ]
         },
         {
@@ -175841,60 +175730,60 @@
       "symbol": "vector118",
       "lines": [
         243,
-        2275,
-        2335,
-        2342,
-        2344,
-        2405,
-        2407,
-        2408,
-        2409,
-        2419,
-        2421,
-        2422,
-        2423,
-        2560
+        2300,
+        2360,
+        2367,
+        2369,
+        2430,
+        2432,
+        2433,
+        2434,
+        2444,
+        2446,
+        2447,
+        2448,
+        2585
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynCopySecondaryCompanionFields",
-          "declaration_line": 2274,
+          "declaration_line": 2299,
           "lines": [
-            2275
+            2300
           ]
         },
         {
           "kind": "function",
           "name": "uvDynResetSecondaryState",
-          "declaration_line": 2554,
+          "declaration_line": 2579,
           "lines": [
-            2560
+            2585
           ]
         },
         {
           "kind": "function",
           "name": "uvDynSetSecondaryMatrixProperty",
-          "declaration_line": 2396,
+          "declaration_line": 2421,
           "lines": [
-            2405,
-            2407,
-            2408,
-            2409,
-            2419,
-            2421,
-            2422,
-            2423
+            2430,
+            2432,
+            2433,
+            2434,
+            2444,
+            2446,
+            2447,
+            2448
           ]
         },
         {
           "kind": "function",
           "name": "uvDynSetSecondaryVectorProperty",
-          "declaration_line": 2327,
+          "declaration_line": 2352,
           "lines": [
-            2335,
-            2342,
-            2344
+            2360,
+            2367,
+            2369
           ]
         },
         {
@@ -175914,24 +175803,24 @@
       "symbol": "vector124",
       "lines": [
         244,
-        2275,
-        2560
+        2300,
+        2585
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynCopySecondaryCompanionFields",
-          "declaration_line": 2274,
+          "declaration_line": 2299,
           "lines": [
-            2275
+            2300
           ]
         },
         {
           "kind": "function",
           "name": "uvDynResetSecondaryState",
-          "declaration_line": 2554,
+          "declaration_line": 2579,
           "lines": [
-            2560
+            2585
           ]
         },
         {
@@ -176177,51 +176066,51 @@
       "symbol": "vector14C",
       "lines": [
         249,
-        2277,
-        2350,
-        2382,
-        2541,
-        2557
+        2302,
+        2375,
+        2407,
+        2566,
+        2582
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynCopySecondaryCompanionFields",
-          "declaration_line": 2274,
+          "declaration_line": 2299,
           "lines": [
-            2277
+            2302
           ]
         },
         {
           "kind": "function",
           "name": "uvDynGetSecondaryVectorProperty",
-          "declaration_line": 2368,
+          "declaration_line": 2393,
           "lines": [
-            2382
+            2407
           ]
         },
         {
           "kind": "function",
           "name": "uvDynResetSecondaryState",
-          "declaration_line": 2554,
+          "declaration_line": 2579,
           "lines": [
-            2557
+            2582
           ]
         },
         {
           "kind": "function",
           "name": "uvDynSetSecondaryVectorProperty",
-          "declaration_line": 2327,
+          "declaration_line": 2352,
           "lines": [
-            2350
+            2375
           ]
         },
         {
           "kind": "function",
           "name": "uvDynUpdateSecondaryStateOnce",
-          "declaration_line": 2536,
+          "declaration_line": 2561,
           "lines": [
-            2541
+            2566
           ]
         },
         {
@@ -176444,24 +176333,24 @@
       "symbol": "vector158",
       "lines": [
         250,
-        2277,
-        2557
+        2302,
+        2582
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynCopySecondaryCompanionFields",
-          "declaration_line": 2274,
+          "declaration_line": 2299,
           "lines": [
-            2277
+            2302
           ]
         },
         {
           "kind": "function",
           "name": "uvDynResetSecondaryState",
-          "declaration_line": 2554,
+          "declaration_line": 2579,
           "lines": [
-            2557
+            2582
           ]
         },
         {
@@ -176481,33 +176370,33 @@
       "symbol": "vector164",
       "lines": [
         251,
-        2278,
-        2541,
-        2558
+        2303,
+        2566,
+        2583
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynCopySecondaryCompanionFields",
-          "declaration_line": 2274,
+          "declaration_line": 2299,
           "lines": [
-            2278
+            2303
           ]
         },
         {
           "kind": "function",
           "name": "uvDynResetSecondaryState",
-          "declaration_line": 2554,
+          "declaration_line": 2579,
           "lines": [
-            2558
+            2583
           ]
         },
         {
           "kind": "function",
           "name": "uvDynUpdateSecondaryStateOnce",
-          "declaration_line": 2536,
+          "declaration_line": 2561,
           "lines": [
-            2541
+            2566
           ]
         },
         {
@@ -176527,33 +176416,33 @@
       "symbol": "vector170",
       "lines": [
         252,
-        2278,
-        2542,
-        2558
+        2303,
+        2567,
+        2583
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynCopySecondaryCompanionFields",
-          "declaration_line": 2274,
+          "declaration_line": 2299,
           "lines": [
-            2278
+            2303
           ]
         },
         {
           "kind": "function",
           "name": "uvDynResetSecondaryState",
-          "declaration_line": 2554,
+          "declaration_line": 2579,
           "lines": [
-            2558
+            2583
           ]
         },
         {
           "kind": "function",
           "name": "uvDynUpdateSecondaryStateOnce",
-          "declaration_line": 2536,
+          "declaration_line": 2561,
           "lines": [
-            2542
+            2567
           ]
         },
         {
@@ -176573,51 +176462,51 @@
       "symbol": "vector17C",
       "lines": [
         253,
-        2279,
-        2355,
-        2385,
-        2541,
-        2556
+        2304,
+        2380,
+        2410,
+        2566,
+        2581
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynCopySecondaryCompanionFields",
-          "declaration_line": 2274,
+          "declaration_line": 2299,
           "lines": [
-            2279
+            2304
           ]
         },
         {
           "kind": "function",
           "name": "uvDynGetSecondaryVectorProperty",
-          "declaration_line": 2368,
+          "declaration_line": 2393,
           "lines": [
-            2385
+            2410
           ]
         },
         {
           "kind": "function",
           "name": "uvDynResetSecondaryState",
-          "declaration_line": 2554,
+          "declaration_line": 2579,
           "lines": [
-            2556
+            2581
           ]
         },
         {
           "kind": "function",
           "name": "uvDynSetSecondaryVectorProperty",
-          "declaration_line": 2327,
+          "declaration_line": 2352,
           "lines": [
-            2355
+            2380
           ]
         },
         {
           "kind": "function",
           "name": "uvDynUpdateSecondaryStateOnce",
-          "declaration_line": 2536,
+          "declaration_line": 2561,
           "lines": [
-            2541
+            2566
           ]
         },
         {
@@ -176637,24 +176526,24 @@
       "symbol": "vector18",
       "lines": [
         172,
-        1681,
-        1714
+        1706,
+        1739
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynRefreshAttachmentVectors",
-          "declaration_line": 1700,
+          "declaration_line": 1725,
           "lines": [
-            1714
+            1739
           ]
         },
         {
           "kind": "function",
           "name": "uvDynUpdateAttachmentDelta",
-          "declaration_line": 1674,
+          "declaration_line": 1699,
           "lines": [
-            1681
+            1706
           ]
         },
         {
@@ -176674,33 +176563,33 @@
       "symbol": "vector188",
       "lines": [
         254,
-        2279,
-        2542,
-        2556
+        2304,
+        2567,
+        2581
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynCopySecondaryCompanionFields",
-          "declaration_line": 2274,
+          "declaration_line": 2299,
           "lines": [
-            2279
+            2304
           ]
         },
         {
           "kind": "function",
           "name": "uvDynResetSecondaryState",
-          "declaration_line": 2554,
+          "declaration_line": 2579,
           "lines": [
-            2556
+            2581
           ]
         },
         {
           "kind": "function",
           "name": "uvDynUpdateSecondaryStateOnce",
-          "declaration_line": 2536,
+          "declaration_line": 2561,
           "lines": [
-            2542
+            2567
           ]
         },
         {
@@ -176720,41 +176609,41 @@
       "symbol": "vector194",
       "lines": [
         255,
-        2333,
-        2334,
-        2335,
-        2342,
-        2374,
-        2405,
-        2419
+        2358,
+        2359,
+        2360,
+        2367,
+        2399,
+        2430,
+        2444
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynGetSecondaryVectorProperty",
-          "declaration_line": 2368,
+          "declaration_line": 2393,
           "lines": [
-            2374
+            2399
           ]
         },
         {
           "kind": "function",
           "name": "uvDynSetSecondaryMatrixProperty",
-          "declaration_line": 2396,
+          "declaration_line": 2421,
           "lines": [
-            2405,
-            2419
+            2430,
+            2444
           ]
         },
         {
           "kind": "function",
           "name": "uvDynSetSecondaryVectorProperty",
-          "declaration_line": 2327,
+          "declaration_line": 2352,
           "lines": [
-            2333,
-            2334,
-            2335,
-            2342
+            2358,
+            2359,
+            2360,
+            2367
           ]
         },
         {
@@ -202018,16 +201907,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Attempt pending Hot Lava speech on random choice 3 with priority 0x7FFF; playback value is 0x7A120. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: playback-value units need consumers.",
       "lines": [
-        734
+        742
       ],
       "evidence": "Attempt pending Hot Lava speech on random choice 3 with priority 0x7FFF; playback value is 0x7A120. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: playback-value units need consumers.",
       "owners": [
         {
           "kind": "global",
           "name": "D_motion_004160A0",
-          "declaration_line": 736,
+          "declaration_line": 744,
           "lines": [
-            734
+            742
           ]
         }
       ]
@@ -202038,16 +201927,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Attempt pending explosion speech on random choice 3 with its scale; priority 0x7FFF, playback value 0x1F4. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: playback-value units need consumers.",
       "lines": [
-        754
+        762
       ],
       "evidence": "Attempt pending explosion speech on random choice 3 with its scale; priority 0x7FFF, playback value 0x1F4. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: playback-value units need consumers.",
       "owners": [
         {
           "kind": "global",
           "name": "D_motion_0041607C",
-          "declaration_line": 756,
+          "declaration_line": 764,
           "lines": [
-            754
+            762
           ]
         }
       ]
@@ -202058,16 +201947,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Original cross/add/transform and dot products update phase 0x8D4 and * component 0x998; 0x988/0x998 overlap vector 0x984.y / vector 0x990.z. * RE_ORIGINAL_QUIRK: caller passes 1-dot*dot directly; the bound sqrt export * returns zero for ordered-negative input. Keep phase reloads and NaN tests. * RE_UNKNOWN: vector frames/units, normalized-input/phase domains and linked * record lifetime need original producers/callers. Clean C remains unmatched; * retain original assembly pending complete instruction/relocation proof.",
       "lines": [
-        641
+        649
       ],
       "evidence": "Original cross/add/transform and dot products update phase 0x8D4 and * component 0x998; 0x988/0x998 overlap vector 0x984.y / vector 0x990.z. * RE_ORIGINAL_QUIRK: caller passes 1-dot*dot directly; the bound sqrt export * returns zero for ordered-negative input. Keep phase reloads and NaN tests. * RE_UNKNOWN: vector frames/units, normalized-input/phase domains and linked * record lifetime need original producers/callers. Clean C remains unmatched; * retain original assembly pending complete instruction/relocation proof.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_motion_00413284",
-          "declaration_line": 649,
+          "declaration_line": 657,
           "lines": [
-            641
+            649
           ]
         }
       ]
@@ -202508,16 +202397,36 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Append attachment query-index/kind/pointer entries, then collect each * newly appended attachment's DOBJ sphere query into shared workspace. * Original imports bind QERY slots 0x28/0x30 to the selector parser and * array override, and DOBJ slots 0x04/0x50 to the shared index-pair setter * and four-float sphere query with three output pointers. * RE_ORIGINAL_QUIRK: native 0x4090F8 stores the newly appended entry count * as a word at SP+0x7C, and 0x4092E8 returns its low16 via LHU SP+0x7E. * The separately initialized/incremented u16 at SP+0x6E is not the return * source. Preserve the actual return; no uninitialized-return claim is valid. * RE_UNKNOWN: starting counter and caller allocation bounds. Native entry * count at work+0xF744 stops only at equality with 30; hit count at +0xF746 * sets remaining capacity as 120-count. Trace work allocation/reset writers * and attachmentCount producers before changing limits or assuming safety. * RE_UNKNOWN: entry-kind 3 and query-index word meanings, shared query-state * ownership/reentrancy and output storage aliases. Original cleanup installs * fixed NULL/zero override, selector-1 value zero and DOBJ pair -1/-1 rather * than restoring saved values. Trace original call/configuration lifetimes. * RE_UNKNOWN: historical independent loop-local declarations and source * organization. Readable C remains unmatched; retain original assembly.",
       "lines": [
-        1502
+        1527
       ],
       "evidence": "Append attachment query-index/kind/pointer entries, then collect each * newly appended attachment's DOBJ sphere query into shared workspace. * Original imports bind QERY slots 0x28/0x30 to the selector parser and * array override, and DOBJ slots 0x04/0x50 to the shared index-pair setter * and four-float sphere query with three output pointers. * RE_ORIGINAL_QUIRK: native 0x4090F8 stores the newly appended entry count * as a word at SP+0x7C, and 0x4092E8 returns its low16 via LHU SP+0x7E. * The separately initialized/incremented u16 at SP+0x6E is not the return * source. Preserve the actual return; no uninitialized-return claim is valid. * RE_UNKNOWN: starting counter and caller allocation bounds. Native entry * count at work+0xF744 stops only at equality with 30; hit count at +0xF746 * sets remaining capacity as 120-count. Trace work allocation/reset writers * and attachmentCount producers before changing limits or assuming safety. * RE_UNKNOWN: entry-kind 3 and query-index word meanings, shared query-state * ownership/reentrancy and output storage aliases. Original cleanup installs * fixed NULL/zero override, selector-1 value zero and DOBJ pair -1/-1 rather * than restoring saved values. Trace original call/configuration lifetimes. * RE_UNKNOWN: historical independent loop-local declarations and source * organization. Readable C remains unmatched; retain original assembly.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvdyn_rom_00409010",
-          "declaration_line": 1522,
+          "declaration_line": 1547,
           "lines": [
-            1502
+            1527
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-868d526bc52d",
+      "kind": "original_quirk",
+      "path": "src/modules/uvdyn_rom.c",
+      "symbol": "Original node vector-pair query followed by a record-vector offset update. * Native F78C uses the pair at 0x146C/0x1478 and range halfwords in the order * 0x12D2/0x12DA/0x12D0/0x12D8. When value04 is -1, query flag 8 runs only * after a zero initial result, then flag 1 runs inside that sentinel gate. * Kind 4, or kind 1 with texture byte 4, stores kind 4 and scalar 0x148C=1, * copies point14 to vector 0x149C, then invokes callback 0x1560. Otherwise, * a successful flag-1 query forces the retained result to 1. A nonzero * retained result invokes callback 0x156C with the output address as its word. * Native 10AEC rebinds ranges before the final zero-result return. A nonzero * result runs isct slot 0x94, then optional aliased cross/cross/normalize * operations under halfword 0x12B6. FVEC subtract/scale/add forms point14 * minus the first query vector plus 0.1f times vector34, then adds that result * to the matrix vector at 0x131C before the first query vector at 0x146C. * RE_ORIGINAL_QUIRK: retained results narrow to u16; the flag-1 return gates * record handling without replacing that result directly. Facing and * normalization returns are ignored. Preserve range reset and alias order. * RE_UNKNOWN: sentinel/kind/result meanings, vector frames/units, scalar and * 0.1-factor roles, valid ranges, complete output storage/aliasing, callback * effects and historical input declarations. Trace original callers, query * producers and callback registrations before assigning physical roles or * adding validation. The clean recovery remains unaccepted: its stack/result * homes and final return organization differ, shifting instruction and * relocation positions. Recover genuine source-local lifetimes/control flow; * do not invent padding or force temporary registers.",
+      "lines": [
+        1498
+      ],
+      "evidence": "Original node vector-pair query followed by a record-vector offset update. * Native F78C uses the pair at 0x146C/0x1478 and range halfwords in the order * 0x12D2/0x12DA/0x12D0/0x12D8. When value04 is -1, query flag 8 runs only * after a zero initial result, then flag 1 runs inside that sentinel gate. * Kind 4, or kind 1 with texture byte 4, stores kind 4 and scalar 0x148C=1, * copies point14 to vector 0x149C, then invokes callback 0x1560. Otherwise, * a successful flag-1 query forces the retained result to 1. A nonzero * retained result invokes callback 0x156C with the output address as its word. * Native 10AEC rebinds ranges before the final zero-result return. A nonzero * result runs isct slot 0x94, then optional aliased cross/cross/normalize * operations under halfword 0x12B6. FVEC subtract/scale/add forms point14 * minus the first query vector plus 0.1f times vector34, then adds that result * to the matrix vector at 0x131C before the first query vector at 0x146C. * RE_ORIGINAL_QUIRK: retained results narrow to u16; the flag-1 return gates * record handling without replacing that result directly. Facing and * normalization returns are ignored. Preserve range reset and alias order. * RE_UNKNOWN: sentinel/kind/result meanings, vector frames/units, scalar and * 0.1-factor roles, valid ranges, complete output storage/aliasing, callback * effects and historical input declarations. Trace original callers, query * producers and callback registrations before assigning physical roles or * adding validation. The clean recovery remains unaccepted: its stack/result * homes and final return organization differ, shifting instruction and * relocation positions. Recover genuine source-local lifetimes/control flow; * do not invent padding or force temporary registers.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_uvdyn_rom_00408ACC",
+          "declaration_line": 1523,
+          "lines": [
+            1498
           ]
         }
       ]
@@ -202568,16 +202477,16 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Original terrain sphere-query append wrapper. Record and secondary counts * are unsigned halfwords at 0xF73C/0xF73E. Install QERY overrides at the current * 120-byte/40-byte record slots, call TERR slot 0x44 with flags 6 and the four * sphere floats, then add QERY's secondary count before any record-word copy. * TERR returns four array addresses; only the first and fourth are copied, * in that order. Reload the original record count after both copies, publish * it through D_uvdyn_rom_00411FA0, reset the overrides and selector 1 to fixed * values, then publish or clear lowercase isct slot 0x40's four shared words. * RE_ORIGINAL_QUIRK: neither starting count is checked. A negative signed * remaining capacity (220 minus record count) can narrow to u16 for copying; * the secondary count also wraps through its original halfword store. * RE_UNKNOWN: caller count/allocation guarantees, selector-1 meaning, sphere * frame/units, output-array aliasing/lifetime and shared-count global role. * Trace workspace producers, TERR/QERY consumers and original callers before * changing bounds or ownership. The clean draft remains unaccepted: native * local organization yields different frame homes and copy-count scheduling. * Recover matching historical C organization without padding or dummy locals.",
       "lines": [
-        2158
+        2183
       ],
       "evidence": "Original terrain sphere-query append wrapper. Record and secondary counts * are unsigned halfwords at 0xF73C/0xF73E. Install QERY overrides at the current * 120-byte/40-byte record slots, call TERR slot 0x44 with flags 6 and the four * sphere floats, then add QERY's secondary count before any record-word copy. * TERR returns four array addresses; only the first and fourth are copied, * in that order. Reload the original record count after both copies, publish * it through D_uvdyn_rom_00411FA0, reset the overrides and selector 1 to fixed * values, then publish or clear lowercase isct slot 0x40's four shared words. * RE_ORIGINAL_QUIRK: neither starting count is checked. A negative signed * remaining capacity (220 minus record count) can narrow to u16 for copying; * the secondary count also wraps through its original halfword store. * RE_UNKNOWN: caller count/allocation guarantees, selector-1 meaning, sphere * frame/units, output-array aliasing/lifetime and shared-count global role. * Trace workspace producers, TERR/QERY consumers and original callers before * changing bounds or ownership. The clean draft remains unaccepted: native * local organization yields different frame homes and copy-count scheduling. * Recover matching historical C organization without padding or dummy locals.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvdyn_rom_004107FC",
-          "declaration_line": 2176,
+          "declaration_line": 2201,
           "lines": [
-            2158
+            2183
           ]
         }
       ]
@@ -202588,16 +202497,16 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "RE_ORIGINAL_QUIRK: two original FVEC copies initialize the 12-byte values * at SP+0x4C/SP+0x58 before the first ISCT slot 0xA8 call, but this caller * does not assign the adjacent SP+0x64 input word. The actual provider * 0x4048DC directly reads input+0x18 for flag bits 8/1; flag bit 2 invokes * 0x4014FC, which forwards that word to 0x401558. Only the fallback query * assigns zero. This proves original read/store timing, not a missing * historical C initializer or a confirmed player-visible bug. * RE_UNKNOWN: caller flags, prior scratch provenance and downstream paths. * Trace original flag writers, attachment producers and each invoked helper * before changing initialization or assigning gameplay consequences. * RE_UNKNOWN: valid pair/endpoint domains and vector-bank capacity. The fifth * argument is read as u16: zero/nonzero selects source offsets 0x5C/0x68, * whereas cached indexing uses the full u16 times 12 after pairIndex*0x18. * Trace original callers and allocations before adding bounds checks. * RE_ORIGINAL_QUIRK: a successful fallback stores output+0x2C times twice * the seventh f32 argument before the strict comparison against that argument * plus native f32 0x411D14 (bits 0x3727C5AC). A rejected comparison therefore * can still update the scalar output pointer; preserve that store timing. * RE_UNKNOWN: vector frames/units, projection normalization and output storage * lifetimes/aliasing. Successful ISCT A8 also stores its input address into * output word0; here the input is local SP+0x4C storage. Trace actual callers' * output retention/dereferences before relying on that address after return. * Readable C remains unmatched: native 616 bytes versus compiled 572. * Provider slots, operation order and observed argument widths agree; exact * historical local/parameter declarations remain unresolved.",
       "lines": [
-        1858
+        1883
       ],
       "evidence": "RE_ORIGINAL_QUIRK: two original FVEC copies initialize the 12-byte values * at SP+0x4C/SP+0x58 before the first ISCT slot 0xA8 call, but this caller * does not assign the adjacent SP+0x64 input word. The actual provider * 0x4048DC directly reads input+0x18 for flag bits 8/1; flag bit 2 invokes * 0x4014FC, which forwards that word to 0x401558. Only the fallback query * assigns zero. This proves original read/store timing, not a missing * historical C initializer or a confirmed player-visible bug. * RE_UNKNOWN: caller flags, prior scratch provenance and downstream paths. * Trace original flag writers, attachment producers and each invoked helper * before changing initialization or assigning gameplay consequences. * RE_UNKNOWN: valid pair/endpoint domains and vector-bank capacity. The fifth * argument is read as u16: zero/nonzero selects source offsets 0x5C/0x68, * whereas cached indexing uses the full u16 times 12 after pairIndex*0x18. * Trace original callers and allocations before adding bounds checks. * RE_ORIGINAL_QUIRK: a successful fallback stores output+0x2C times twice * the seventh f32 argument before the strict comparison against that argument * plus native f32 0x411D14 (bits 0x3727C5AC). A rejected comparison therefore * can still update the scalar output pointer; preserve that store timing. * RE_UNKNOWN: vector frames/units, projection normalization and output storage * lifetimes/aliasing. Successful ISCT A8 also stores its input address into * output word0; here the input is local SP+0x4C storage. Trace actual callers' * output retention/dereferences before relying on that address after return. * Readable C remains unmatched: native 616 bytes versus compiled 572. * Provider slots, operation order and observed argument widths agree; exact * historical local/parameter declarations remain unresolved.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvdyn_rom_0040B838",
-          "declaration_line": 1884,
+          "declaration_line": 1909,
           "lines": [
-            1858
+            1883
           ]
         }
       ]
@@ -203537,16 +203446,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Accumulate two weighted three-component basis combinations. The first * uses one shared scale; the second uses per-component scales. Preserve * Z/X/Y product order, sequential stores and original aliased-input behavior. * Physical units are unproven; first/second identify the observed field groups.",
       "lines": [
-        499
+        507
       ],
       "evidence": "Accumulate two weighted three-component basis combinations. The first * uses one shared scale; the second uses per-component scales. Preserve * Z/X/Y product order, sequential stores and original aliased-input behavior. * Physical units are unproven; first/second identify the observed field groups.",
       "owners": [
         {
           "kind": "function",
           "name": "motionAccumulateScaledBasisVectors",
-          "declaration_line": 503,
+          "declaration_line": 511,
           "lines": [
-            499
+            507
           ]
         }
       ]
@@ -203557,16 +203466,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Apply the original scaled correction only above the 0x690 threshold and * below the positive 0x988 limit. Preserve floating evaluation order; the * full physical meaning of these three offset-named fields remains unknown.",
       "lines": [
-        518
+        526
       ],
       "evidence": "Apply the original scaled correction only above the 0x690 threshold and * below the positive 0x988 limit. Preserve floating evaluation order; the * full physical meaning of these three offset-named fields remains unknown.",
       "owners": [
         {
           "kind": "function",
           "name": "motionApplyConditionalCorrection",
-          "declaration_line": 521,
+          "declaration_line": 529,
           "lines": [
-            518
+            526
           ]
         }
       ]
@@ -203577,16 +203486,16 @@
       "path": "src/modules/motion.c",
       "symbol": "For enabled input with magnitude at least 0.5, gate on field 0x6C4 * magnitude at most five and mode zero/two. Smooth response 0x998 toward * the signed mode target and enforce the original mode-dependent 0x988 bound. * Field units remain unproven; preserve strict comparisons and NaN paths.",
       "lines": [
-        568
+        576
       ],
       "evidence": "For enabled input with magnitude at least 0.5, gate on field 0x6C4 * magnitude at most five and mode zero/two. Smooth response 0x998 toward * the signed mode target and enforce the original mode-dependent 0x988 bound. * Field units remain unproven; preserve strict comparisons and NaN paths.",
       "owners": [
         {
           "kind": "function",
           "name": "motionApplyGatedModeResponse",
-          "declaration_line": 572,
+          "declaration_line": 580,
           "lines": [
-            568
+            576
           ]
         }
       ]
@@ -204067,16 +203976,16 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Append a unique opaque secondary value unless the count equals twenty. * Preserve the original 16-bit scan and equality-only capacity guard; the * surrounding object's full size and the values' gameplay meaning are unknown.",
       "lines": [
-        2039
+        2064
       ],
       "evidence": "Append a unique opaque secondary value unless the count equals twenty. * Preserve the original 16-bit scan and equality-only capacity guard; the * surrounding object's full size and the values' gameplay meaning are unknown.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDynAppendUniqueSecondaryValue",
-          "declaration_line": 2042,
+          "declaration_line": 2067,
           "lines": [
-            2039
+            2064
           ]
         }
       ]
@@ -204147,16 +204056,16 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "If installed, invoke the attachment callback with the indexed intersection * word and unsigned kind in the original request layout, plus its opaque context * word. Preserve the cached callback and original unchecked index/data contract; * no narrower gameplay meaning is established for the request values.",
       "lines": [
-        1796
+        1821
       ],
       "evidence": "If installed, invoke the attachment callback with the indexed intersection * word and unsigned kind in the original request layout, plus its opaque context * word. Preserve the cached callback and original unchecked index/data contract; * no narrower gameplay meaning is established for the request values.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDynInvokeAttachmentValueCallback",
-          "declaration_line": 1800,
+          "declaration_line": 1825,
           "lines": [
-            1796
+            1821
           ]
         }
       ]
@@ -204167,16 +204076,16 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Insert a unique node before the first member whose value04 is not -1, * or append if none qualifies. Preserve member order while shifting the tail. * value04's gameplay meaning is unknown. This helper has no capacity check; * the association setter rejects a destination count of ten.",
       "lines": [
-        1991
+        2016
       ],
       "evidence": "Insert a unique node before the first member whose value04 is not -1, * or append if none qualifies. Preserve member order while shifting the tail. * value04's gameplay meaning is unknown. This helper has no capacity check; * the association setter rejects a destination count of ten.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDynInsertUniqueLinkedNode",
-          "declaration_line": 1995,
+          "declaration_line": 2020,
           "lines": [
-            1991
+            2016
           ]
         }
       ]
@@ -204187,16 +204096,16 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Invoke attachment callback slot 0x248 with the supplied opaque value and * its paired context at 0x260. Keep this distinct from the pointer callback ABI.",
       "lines": [
-        1785
+        1810
       ],
       "evidence": "Invoke attachment callback slot 0x248 with the supplied opaque value and * its paired context at 0x260. Keep this distinct from the pointer callback ABI.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDynInvokeAttachmentValueCallback248",
-          "declaration_line": 1787,
+          "declaration_line": 1812,
           "lines": [
-            1785
+            1810
           ]
         }
       ]
@@ -204407,16 +204316,16 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Property zero converts the signed value at 0x0C to float; property nine * converts the unsigned 16-bit kind. Null or unsupported properties return -1. * More specific meanings of the value and kind remain unresolved.",
       "lines": [
-        2303
+        2328
       ],
       "evidence": "Property zero converts the signed value at 0x0C to float; property nine * converts the unsigned 16-bit kind. Null or unsupported properties return -1. * More specific meanings of the value and kind remain unresolved.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDynGetSecondaryScalarProperty",
-          "declaration_line": 2306,
+          "declaration_line": 2331,
           "lines": [
-            2303
+            2328
           ]
         }
       ]
@@ -204427,16 +204336,16 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Rebuild each linked node's matrix at 0x136C and run its original follow-up * update. Then rebuild each secondary member's matrix at 0x98 and pass the * shared scalar to its update routine. Preserve 16-bit indices and count reloads; * the follow-up routines' broader gameplay meanings remain unresolved.",
       "lines": [
-        2081
+        2106
       ],
       "evidence": "Rebuild each linked node's matrix at 0x136C and run its original follow-up * update. Then rebuild each secondary member's matrix at 0x98 and pass the * shared scalar to its update routine. Preserve 16-bit indices and count reloads; * the follow-up routines' broader gameplay meanings remain unresolved.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDynUpdateCollectionMemberTransforms",
-          "declaration_line": 2085,
+          "declaration_line": 2110,
           "lines": [
-            2081
+            2106
           ]
         }
       ]
@@ -204447,16 +204356,16 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Replace the attachment's intersection link and refresh field 0x10 through * the original intersection export. For an owner in mode zero, propagate its * DOBJ handle. Null clears the cached word; an unchanged nonnull link is skipped. * The cached word's meaning remains unresolved.",
       "lines": [
-        1744
+        1769
       ],
       "evidence": "Replace the attachment's intersection link and refresh field 0x10 through * the original intersection export. For an owner in mode zero, propagate its * DOBJ handle. Null clears the cached word; an unchanged nonnull link is skipped. * The cached word's meaning remains unresolved.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDynSetAttachmentIntersection",
-          "declaration_line": 1748,
+          "declaration_line": 1773,
           "lines": [
-            1744
+            1769
           ]
         }
       ]
@@ -204487,16 +204396,16 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Return the attachment's unsigned kind or scalar fields 0x14/0x18. * Their gameplay meanings remain unresolved. Null attachments or unsupported * properties return -1; preserve the original unsigned kind conversion.",
       "lines": [
-        1723
+        1748
       ],
       "evidence": "Return the attachment's unsigned kind or scalar fields 0x14/0x18. * Their gameplay meanings remain unresolved. Null attachments or unsupported * properties return -1; preserve the original unsigned kind conversion.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDynGetAttachmentScalarProperty",
-          "declaration_line": 1726,
+          "declaration_line": 1751,
           "lines": [
-            1723
+            1748
           ]
         }
       ]
@@ -204527,16 +204436,16 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Scalar property zero converts to the opaque signed value at 0x0C; * property nine converts through the original unsigned-word/signed-halfword * sequence into the 16-bit kind. Null and unsupported properties do nothing.",
       "lines": [
-        2285
+        2310
       ],
       "evidence": "Scalar property zero converts to the opaque signed value at 0x0C; * property nine converts through the original unsigned-word/signed-halfword * sequence into the 16-bit kind. Null and unsupported properties do nothing.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDynSetSecondaryScalarProperty",
-          "declaration_line": 2288,
+          "declaration_line": 2313,
           "lines": [
-            2285
+            2310
           ]
         }
       ]
@@ -204547,16 +204456,16 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Select the indexed opaque 120-byte intersection record and corresponding * word outputs through the lowercase isct module's query-bank setter. Pass the * opaque 16-bit value unchanged; the original does not check index or pointers.",
       "lines": [
-        2179
+        2204
       ],
       "evidence": "Select the indexed opaque 120-byte intersection record and corresponding * word outputs through the lowercase isct module's query-bank setter. Pass the * opaque 16-bit value unchanged; the original does not check index or pointers.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDynSetIndexedQueryRecordBank",
-          "declaration_line": 2182,
+          "declaration_line": 2207,
           "lines": [
-            2179
+            2204
           ]
         }
       ]
@@ -204567,16 +204476,16 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Skip an already updated state. When the copy flag is set and kind is one, * run the original matrix/vector update with the supplied scalar. Mark the * state updated even when that call is skipped; reset clears the flag. * The kind and update scalar's broader gameplay meanings remain unresolved.",
       "lines": [
-        2532
+        2557
       ],
       "evidence": "Skip an already updated state. When the copy flag is set and kind is one, * run the original matrix/vector update with the supplied scalar. Mark the * state updated even when that call is skipped; reset clears the flag. * The kind and update scalar's broader gameplay meanings remain unresolved.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDynUpdateSecondaryStateOnce",
-          "declaration_line": 2536,
+          "declaration_line": 2561,
           "lines": [
-            2532
+            2557
           ]
         }
       ]
@@ -204667,16 +204576,16 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "When the copy flag is set, copy the original four vector pairs and matrix * into their companion fields in the observed order. Clear both 16-bit flags * afterward. More specific gameplay meanings are not yet established.",
       "lines": [
-        2551
+        2576
       ],
       "evidence": "When the copy flag is set, copy the original four vector pairs and matrix * into their companion fields in the observed order. Clear both 16-bit flags * afterward. More specific gameplay meanings are not yet established.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDynResetSecondaryState",
-          "declaration_line": 2554,
+          "declaration_line": 2579,
           "lines": [
-            2551
+            2576
           ]
         }
       ]

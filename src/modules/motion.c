@@ -288,6 +288,14 @@ void motionClearValueForFlaggedLookup(MotionFlagState *state, MotionFlagOutput *
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_0040441C.s")
 
+/* Update scalar 0x684, signed counter 0x688 and configuration scale 0x6AC
+ * through enable/gate/sign tests. Original MISC 0x54 clamps value to ordered
+ * upper/lower singles; its leaf has no calls or nonstack writes. Keep the
+ * original response/config read timing and double quarter-scale conversion.
+ * RE_UNKNOWN: physical scalar/flag/mode meanings, counter schedule and
+ * state/config lifetime need original producers/callers. Clean C remains
+ * unmatched; retain assembly pending complete byte/relocation proof. */
+#line 149 "src/modules/motion.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_0040456C.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00404868.s")

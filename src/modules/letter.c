@@ -23,22 +23,22 @@ extern UvDobj_Exports *gUvDobjExports;
 extern void *D_letter_00400504;
 typedef struct {
     /* 0x00 */ char pad[0x3C];
-    /* 0x3C */ void (*unk3C)(f32, f32, f32, f32);
-} UvGfxMgrExp_00400420;
-extern UvGfxMgrExp_00400420 *gUvGfxMgrExports;
+    /* 0x3C */ void (*setPrimitiveColor)(f32, f32, f32, f32);
+} LetterPrimitiveColorExports;
+extern LetterPrimitiveColorExports *gUvGfxMgrExports;
 typedef struct {
     /* 0x00 */ char unk0[0x8];
-    /* 0x08 */ f32 unk8;
-    /* 0x0C */ f32 unkC;
-    /* 0x10 */ f32 unk10;
-} TableEntry_00400420; /* stride 0x14 */
+    /* 0x08 */ f32 red;
+    /* 0x0C */ f32 green;
+    /* 0x10 */ f32 blue;
+} LetterPrimitiveColorDescriptor; /* stride 0x14 */
 
 typedef struct {
     /* 0x00 */ char unk0[0x8];
-    /* 0x08 */ u8 unk8;
+    /* 0x08 */ u8 descriptorIndex;
     /* 0x09 */ char unk9[0x17];
-    /* 0x20 */ f32 unk20;
-} LetterObj_00400420;
+    /* 0x20 */ f32 alpha;
+} LetterPrimitiveColorObjectView;
 extern char D_letter_00400480[];
 void func_letter_00400230(s32 descriptorIndex, Vec3F *position);
 void *letterGetDescriptorOrDefault(s32 index);
@@ -125,14 +125,17 @@ void *letterGetDescriptorOrDefault(s32 index) {
 
 /* Forward the indexed descriptor scalars and object alpha through graphics slot 0x3C. */
 #line 65 "src/modules/letter.c"
+#line 65 "src/modules/letter.c"
+
 /* Select the twenty-byte descriptor using the object byte index and
  * set its RGB components with the object alpha through graphics export 0x3C.
  * RE_UNKNOWN: index bound; trace original index producers and descriptor extent. */
-void letterSetDescriptorPrimitiveColor(LetterObj_00400420 *object) {
-    TableEntry_00400420 *descriptor;
+void letterSetDescriptorPrimitiveColor(LetterPrimitiveColorObjectView *object) {
+    LetterPrimitiveColorDescriptor *descriptor;
 
-    descriptor = (TableEntry_00400420 *)(D_letter_00400480 + object->unk8 * 0x14);
-    gUvGfxMgrExports->unk3C(descriptor->unk8, descriptor->unkC, descriptor->unk10, object->unk20);
+    descriptor = (LetterPrimitiveColorDescriptor *)(D_letter_00400480 + object->descriptorIndex * 0x14);
+    gUvGfxMgrExports->setPrimitiveColor(descriptor->red, descriptor->green, descriptor->blue, object->alpha);
 }
+#line 74 "src/modules/letter.c"
 #line 71 "src/modules/letter.c"
 

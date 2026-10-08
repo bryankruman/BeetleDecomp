@@ -1495,6 +1495,31 @@ void uvDynUpdateNodeTranslationVector(DynResetState *state) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_004088EC.s")
 
+/* Original node vector-pair query followed by a record-vector offset update.
+ * Native F78C uses the pair at 0x146C/0x1478 and range halfwords in the order
+ * 0x12D2/0x12DA/0x12D0/0x12D8. When value04 is -1, query flag 8 runs only
+ * after a zero initial result, then flag 1 runs inside that sentinel gate.
+ * Kind 4, or kind 1 with texture byte 4, stores kind 4 and scalar 0x148C=1,
+ * copies point14 to vector 0x149C, then invokes callback 0x1560. Otherwise,
+ * a successful flag-1 query forces the retained result to 1. A nonzero
+ * retained result invokes callback 0x156C with the output address as its word.
+ * Native 10AEC rebinds ranges before the final zero-result return. A nonzero
+ * result runs isct slot 0x94, then optional aliased cross/cross/normalize
+ * operations under halfword 0x12B6. FVEC subtract/scale/add forms point14
+ * minus the first query vector plus 0.1f times vector34, then adds that result
+ * to the matrix vector at 0x131C before the first query vector at 0x146C.
+ * RE_ORIGINAL_QUIRK: retained results narrow to u16; the flag-1 return gates
+ * record handling without replacing that result directly. Facing and
+ * normalization returns are ignored. Preserve range reset and alias order.
+ * RE_UNKNOWN: sentinel/kind/result meanings, vector frames/units, scalar and
+ * 0.1-factor roles, valid ranges, complete output storage/aliasing, callback
+ * effects and historical input declarations. Trace original callers, query
+ * producers and callback registrations before assigning physical roles or
+ * adding validation. The clean recovery remains unaccepted: its stack/result
+ * homes and final return organization differ, shifting instruction and
+ * relocation positions. Recover genuine source-local lifetimes/control flow;
+ * do not invent padding or force temporary registers. */
+#line 434 "src/modules/uvdyn_rom.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00408ACC.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00408DC8.s")
