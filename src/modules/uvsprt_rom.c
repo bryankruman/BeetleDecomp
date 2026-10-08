@@ -220,16 +220,16 @@ void __entrypoint_func_uvsprt_rom_400298(UvSprt_Rom_Exports* exports) {
     }
 }
 
-void uvSpriteDisplayList(Gfx **gdlh, uvSprite_t *sp) {
-    Sprite *sprite = &sp->sprite;
-
-    sprite->rsp_dl = *gdlh;
-    sprite->attr &= 0xFFDF;
-    sprite->rsp_dl_next = NULL;
-
-    if (uvSpriteDraw(sprite) != NULL) {
-        *gdlh = sprite->rsp_dl_next;
-        *gdlh = *gdlh - 1;
+void uvSpriteDisplayList(Gfx **displayListCursor, uvSprite_t *spriteRecord) {
+    Sprite *spriteState = &spriteRecord->sprite;
+    /* RE_UNKNOWN: cursor/sprite backing, writable capacity, aliases and lifetimes need original caller/producer proof. */
+    spriteState->rsp_dl = *displayListCursor;
+    spriteState->attr &= 0xFFDF;
+    spriteState->rsp_dl_next = NULL;
+    /* Preserve both cursor assignments when the drawing provider returns a nonzero start pointer. */
+    if (uvSpriteDraw(spriteState) != NULL) {
+        *displayListCursor = spriteState->rsp_dl_next;
+        *displayListCursor = *displayListCursor - 1;
     }
 }
 

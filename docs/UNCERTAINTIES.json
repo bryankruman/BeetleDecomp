@@ -309,7 +309,7 @@
     "src/modules/uvquat_rom.c": "8df8e2779afce701f5662f8eff65918ca6b5a707b60c3be90d300d009411065d",
     "src/modules/uvquery_rom.c": "5af6f38d546de67c02228242a6578a86925d0c0792c0a330437b3cd35e19b586",
     "src/modules/uvsort_rom.c": "a8d25d7f0e6e33288f39c1de9589270ba1d5b77fbcd2f9c370749e386904b727",
-    "src/modules/uvsprt_rom.c": "0a5c932e569f1de9ccc16dfac60de35b3930628d92307b0ec367319e8afbab6d",
+    "src/modules/uvsprt_rom.c": "62d711145d931806dcdfbb3f6344efa846e230ff8dc1fe970f854db4332ff407",
     "src/modules/uvstring_rom.c": "94b9208341f1faf5aee2e8bd9e6e2c6336878522d977776684d4d7ffa5473720",
     "src/modules/uvterra_rom.c": "212d749a78b4a0059eec21fdaa6774e93f94f0d853dffa73e48c5fddac79121e",
     "src/modules/uvterrald_rom.c": "4f51d82aed1fc59eefc7e9d161b1d29601c1af7be11b928c5265f14d489d2596",
@@ -330,8 +330,8 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "9c68b8e5091b9a6ee96cfdec9dce33da26cd9ba685540f57f50b099879ff86b2",
-    "docs/VALIDATION_20261006.md": "684157129cce5a93174636edab6e429baa24335ebd77c8f13037a7f5e37087f5"
+    "docs/STRATEGY_V4.md": "1f26395ad047c00f8d58a08889b3b20ef75b07699fedbbd5aba5f0159c26d599",
+    "docs/VALIDATION_20261006.md": "141c16dee642bfa7a1d433e3ff9fff1f0b85cf1859eb60e85ac2ecf659be81d1"
   },
   "counts": {
     "address_function": 943,
@@ -341,7 +341,7 @@
     "conditional_draft": 4,
     "decompiler_local": 932,
     "draft_marker": 27,
-    "explicit_unknown": 837,
+    "explicit_unknown": 838,
     "layout_padding": 274,
     "offset_field": 1582,
     "opaque_type": 282,
@@ -141745,6 +141745,26 @@
           "declaration_line": 70,
           "lines": [
             85
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-cac9869910b1",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvsprt_rom.c",
+      "symbol": "RE_UNKNOWN: cursor/sprite backing, writable capacity, aliases and lifetimes need original caller/producer proof.",
+      "lines": [
+        225
+      ],
+      "evidence": "RE_UNKNOWN: cursor/sprite backing, writable capacity, aliases and lifetimes need original caller/producer proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvSpriteDisplayList",
+          "declaration_line": 223,
+          "lines": [
+            225
           ]
         }
       ]

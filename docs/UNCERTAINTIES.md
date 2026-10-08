@@ -17,7 +17,7 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 837 |
+| Explicit RE_UNKNOWN notes | 838 |
 | Preserved RE_ORIGINAL_QUIRK notes | 217 |
 | Older comments with uncertainty language | 91 |
 | Documented original-behavior audits | 30 |
@@ -7915,6 +7915,7 @@ For every future source wave, regenerate and check this index after code and str
 | explicit_unknown | `Clear both leading bytes in the selected sprite. RE_UNKNOWN: sprite * index/backing validity need original pool, ID producers and callers.` | function `uvSpriteClearStateBytes` | [168](../src/modules/uvsprt_rom.c#L168) |
 | explicit_unknown | `RE_UNKNOWN: asset extents, aliasing, ownership and historical declarations need original producer/caller proof.` | function `uvSpriteSetBlit` | [282](../src/modules/uvsprt_rom.c#L282) |
 | explicit_unknown | `RE_UNKNOWN: copied texture-data extent, ownership and lifetime need original producer/consumer proof.` | function `uvSpriteFromBitmap` | [85](../src/modules/uvsprt_rom.c#L85) |
+| explicit_unknown | `RE_UNKNOWN: cursor/sprite backing, writable capacity, aliases and lifetimes need original caller/producer proof.` | function `uvSpriteDisplayList` | [225](../src/modules/uvsprt_rom.c#L225) |
 | explicit_unknown | `RE_UNKNOWN: display-list capacity, aliasing, resource lifetime and shared-state call ordering need caller proof.` | function `uvSpriteDrawFinish`, function `uvSpriteDrawInit` | [689](../src/modules/uvsprt_rom.c#L689), [991](../src/modules/uvsprt_rom.c#L991) |
 | explicit_unknown | `RE_UNKNOWN: lower index bound, argument-stream extents, asset validity and lifetimes need original caller/producer proof.` | function `uvSprtProps` | [366](../src/modules/uvsprt_rom.c#L366) |
 | explicit_unknown | `RE_UNKNOWN: native reads two f32 words; original variadic declarations and caller packing need proof.` | function `uvSprtProps` | [405](../src/modules/uvsprt_rom.c#L405) |
