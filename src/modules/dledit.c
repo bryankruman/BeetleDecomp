@@ -46,8 +46,8 @@ void func_dledit_00400090(void) {
 
 #line 19 "src/modules/dledit.c"
 /* Scan eight-byte display-list commands for the requested opcode.
- * Preserve the original defective end test: sign-extending the command byte
- * can never equal positive 0xDF, so callers must contain the target opcode. */
+ * RE_ORIGINAL_QUIRK: the sign-extended command byte cannot equal positive 0xDF.
+ * RE_UNKNOWN: target presence, readable command span and reachable failure require original UVTX streams and callers; the nominal terminator does not establish a bound. */
 u8 *dleditFindOpcodeWithOriginalEndTest(u8 *commands, s32 opcode) {
     s32 commandByte;
 
@@ -65,8 +65,8 @@ loop:
 #line 33 "src/modules/dledit.c"
 
 #line 34 "src/modules/dledit.c"
-/* Find command 0xFD and replace its address word with the supplied value
- * plus 0x80000000. Preserve the scanner end-test hazard and unsigned wrap. */
+/* Find command 0xFD and replace its address word with the supplied value plus 0x80000000, preserving unsigned wrap.
+ * RE_ORIGINAL_QUIRK: the scanner cannot stop at positive 0xDF. RE_UNKNOWN: required FD presence, address representation and command backing extent/lifetime require original UVTX producers and callers. */
 void dleditPatchTextureImageAddress(u8 *commands, s32 address) {
     u8 *command;
 
@@ -78,9 +78,9 @@ void dleditPatchTextureImageAddress(u8 *commands, s32 address) {
 #line 42 "src/modules/dledit.c"
 
 #line 41 "src/modules/dledit.c"
-/* Select an index from the original direct, eight-column or nine-column
- * lookup tables, then return the mapped 32-bit word. Preserve the unused
- * context and unchecked signed row/column contracts. */
+/* Return an original combiner-source label address through the direct, eight-column or nine-column index table.
+ * Preserve the unused context word and unchecked signed alternate/row/column selectors.
+ * RE_UNKNOWN: valid selector domains, historical source prototype and each label's readable extent require original selection writers, table consumers and callers; a mapped label does not prove GUI C4's full 30-byte source window. */
 s32 dleditLookupMappedWord(s32 context, s32 alternate, s32 row, s32 column) {
     s32 index;
     if (column >= 9) index = ((s32 *)&D_dledit_004006C4)[column];
@@ -89,14 +89,14 @@ s32 dleditLookupMappedWord(s32 context, s32 alternate, s32 row, s32 column) {
     return ((s32 *)&D_dledit_00400600)[index];
 }
 #line 42 "src/modules/dledit.c"
-
+/* RE_UNKNOWN: original RGBA packing truncates channel*255 with byte wrapping, no clamps, and stores opcode word before reading channels; historical channel domains (including nonfinite/out-of-range inputs), command/color backing extent and alias/lifetime guarantees require original color producers, UVTX assets and callers. Preserve operand order and null-command behavior. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/dledit/func_dledit_00400174.s")
-
+/* RE_UNKNOWN: original FC packing reads a 16-word selection window, preserves masks/shifts, and stores word0 before second-stage source reads; selector domains, complete source/command backing layout, alias/lifetime and historical declarations require original selection writers, command consumers and callers. Preserve that store boundary and null-command behavior. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/dledit/func_dledit_004001F8.s")
 
 #line 47 "src/modules/dledit.c"
-/* Normalize each byte of display-list word one to RGBA floats in byte order.
- * A null command leaves the output unchanged; output validity is caller-owned. */
+/* Normalize display-list word one's four bytes to RGBA floats in byte order; a null command leaves output untouched.
+ * RE_UNKNOWN: complete command/output backing extent, alias and lifetime guarantees require original command and color-window producers/callers; four observed float stores do not establish ownership. */
 void dleditUnpackRgba(DleditCommand *command, DleditRgba *rgba) {
     u32 packed;
     if (command != NULL) {
@@ -108,14 +108,14 @@ void dleditUnpackRgba(DleditCommand *command, DleditRgba *rgba) {
     }
 }
 #line 48 "src/modules/dledit.c"
-
+/* RE_UNKNOWN: original combiner decoding snapshots both command words before 16 output stores, then caps only selectors0/1/2 and8/9/10 at8/8/16 even for null input, preserving negative existing values; output capacity, alias/lifetime and UI selector meanings require original shared-window writers/readers and callers. Preserve snapshot/store/clamp order. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/dledit/func_dledit_004003D4.s")
 
 #line 51 "src/modules/dledit.c"
 /* Scan eight-byte display-list commands for the requested first word.
- * Preserve the original defective end test: sign-extending the opcode byte
- * cannot equal positive 0xDF, so the command stream must contain the target.
- * RE_ORIGINAL_QUIRK: The sign-extended opcode cannot equal positive 0xDF; target absence does not terminate at that opcode. */
+ * RE_ORIGINAL_QUIRK: the sign-extended opcode cannot equal positive 0xDF;
+ * target absence does not terminate at that opcode.
+ * RE_UNKNOWN: target presence, readable command span and reachable failure require original command streams and callers; the nominal terminator does not establish a bound. */
 s32 *dleditFindCommandWordWithOriginalEndTest(s32 *commands, s32 targetWord) {
     s32 opcode;
     s32 word;

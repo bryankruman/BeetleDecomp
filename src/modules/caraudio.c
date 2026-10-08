@@ -229,23 +229,26 @@ void carAudioStartFixedPositionSound(s32 unused) {
 #line 142 "src/modules/caraudio.c"
 
 extern void *D_caraudio_00404228;
-typedef struct CarAudioCommand { s32 kind, value4, value8, valueC; u8 flag; u8 gap11[3]; f32 scalar; struct CarAudioCommand *next; } CarAudioCommand;
+typedef struct CarAudioCommand { s32 kind, value4, soundHandlingEnabled, valueC; u8 soundId; u8 gap11[3]; f32 volume; struct CarAudioCommand *next; } CarAudioCommand;
 
 #line 146 "src/modules/caraudio.c"
-/* Allocate and prepend the original 0x1C-byte kind-zero audio command.
- * Preserve the three opaque words, flag, scalar and linked-list order.
- * The typed layout replaces artificial padding, comma and XOR no-ops. */
-void carAudioPrependCommand(s32 value4, s32 value8, s32 valueC, u8 flag, f32 scalar) {
+/* Prepend kind zero; consumer 0x336C gates sound handling with soundHandlingEnabled and
+ * passes soundId/volume to SND slots 0x6C/0x84. RE_UNKNOWN: value4/valueC roles,
+ * caller capacity and reset lifetime; trace VOLT 0x0C, routing and audio callers. */
+#line 149 "src/modules/caraudio.c"
+
+void carAudioPrependCommand(s32 value4, s32 soundHandlingEnabled, s32 valueC, u8 soundId, f32 volume) {
     CarAudioCommand *node = _uvMemAllocAlign8(sizeof(CarAudioCommand));
     node->kind = 0;
     node->value4 = value4;
-    node->value8 = value8;
+    node->soundHandlingEnabled = soundHandlingEnabled;
     node->valueC = valueC;
-    node->flag = flag;
-    node->scalar = scalar;
+    node->soundId = soundId;
+    node->volume = volume;
     node->next = D_caraudio_00404228;
     D_caraudio_00404228 = node;
 }
+#line 160 "src/modules/caraudio.c"
 #line 159 "src/modules/caraudio.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_004031E0.s")

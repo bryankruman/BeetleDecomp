@@ -373,7 +373,7 @@ void medSetEnvironmentBlendFromNode(Node_4052C8 *node)
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_00405338.s")
 /* RE_UNKNOWN: original GUI C4 reads 30 bytes from the formatted NO PALETTE/decimal label address, but historical local-object extent and trailing-byte state remain unresolved; truncated control domain, UVTP resource bounds/load success and selected-table lifetime require original stack/source, control callers and asset/load-unload evidence. Preserve the saved pre-callback selection and 0xFFFF clear sentinel without adding clamps or assuming a reachable fault. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_004053B4.s")
-
+/* RE_ORIGINAL_QUIRK: DLED opcode scans cannot stop at positive 0xDF after sign extension. RE_UNKNOWN: selected-index/count domains, required command presence, scratch allocation success, shared/control backing extent/alias/lifetime and the GUI label's 30-byte read window/trailing state require original control/storage writers, UVTX assets, allocation paths and callers; preserve restore/search/scratch/FC/FA/FB order and do not assume target-absent fallbacks or a reachable player fault. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_00405488.s")
 /* RE_ORIGINAL_QUIRK: unbounded load retry and unchecked object-create result. RE_UNKNOWN: scalar domain, overlapping word-table bounds/lifetime, label extent/trailing bytes and failure reachability; trace original control/table producers, stack objects, resource inventory and callers before changing retry, traversal or failure behavior. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_004057A8.s")

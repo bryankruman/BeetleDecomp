@@ -25,6 +25,36 @@ void uvIsectSetPropertyWord08(void *record, s32 property);
 #include "uvfvec_rom.h"
 #include "uvfmtx_rom.h"
 
+typedef struct { u32 unk00[11]; f32 value2C; u32 unk30[10]; } IsectCopyRecord88;
+
+/* Accessed prefix only: the two original 12-byte vectors are followed by a
+ * 32-bit flag word consumed by the direct query helpers. RE_UNKNOWN: complete
+ * allocation layout, vector coordinate space and remaining flag meanings. */
+typedef struct {
+    Vec3F first;
+    Vec3F second;
+    u32 flags18;
+} IsectQueryInputPrefix;
+
+/* Observed argument views preserve native 32-bit words and output addresses.
+ * RE_UNKNOWN: complete historical declarations and the forwarded word roles.
+ * The two six-argument helpers consume the final word's low16 bits; this
+ * wrapper passes zero and does not establish a wider caller-domain contract. */
+s32 uvIsectQueryInputVectorsIntoRecord(IsectQueryInputPrefix *input, s32 queryFlags,
+    s32 contextWord, s32 queryWord, IsectCopyRecord88 *output);
+s32 func_uvisect_rom_00401558(Vec3F *first, Vec3F *second, u32 inputFlags,
+    s32 queryFlags, s32 contextWord, s32 queryWord, IsectCopyRecord88 *output);
+s32 func_uvisect_rom_004024AC(Vec3F *first, Vec3F *second, u32 inputFlags,
+    s32 queryWord, IsectCopyRecord88 *output, s32 modeWord);
+s32 func_uvisect_rom_00402B5C(Vec3F *first, Vec3F *second, u32 inputFlags,
+    s32 queryWord, IsectCopyRecord88 *output, s32 modeWord);
+s32 func_uvisect_rom_00403054(Vec3F *first, Vec3F *second,
+    IsectCopyRecord88 *output);
+s32 uvIsectUpdateMinimumValueRecord(IsectCopyRecord88 *destination,
+    f32 *minimumValue, IsectCopyRecord88 *candidate);
+extern f32 D_uvisect_rom_004076DC;
+
+
 /* Prefix views of original bytes actually accessed by 0x403F38; neither view
  * claims the allocation size or the meanings of the retained raw words. */
 typedef struct {
@@ -321,7 +351,25 @@ s32 uvIsectQueuePendingRecord(void *owner, IsectOwnerResult *result, IsectPendin
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004013F0.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004014FC.s")
+#line 94 "src/modules/uvisect_rom.c"
+
+/* Store input/zero at output byte offsets0x00/0x04, then delegate
+ * using input vectors 0/0x0C and the raw word at 0x18. Preserve the original
+ * second-vector/first-vector argument order and the helper return value.
+ * The forwarded context/query words and query flags retain all native32 bits.
+ * RE_UNKNOWN: complete input/record allocations, vector frame, flag and word
+ * meanings, output lifetime and aliasing domain. Trace original callers and
+ * helper 0x401558 before assigning ownership or adding validation/defaults.
+ * The two prefix stores occur even when the delegated query fails; this
+ * wrapper does not initialize the remaining output fields. */
+s32 uvIsectQueryInputVectorsIntoRecord(IsectQueryInputPrefix *input, s32 queryFlags,
+    s32 contextWord, s32 queryWord, IsectCopyRecord88 *output) {
+    output->unk00[0] = (u32)input;
+    output->unk00[1] = 0;
+    return func_uvisect_rom_00401558(&input->second, &input->first,
+        input->flags18, queryFlags, contextWord, queryWord, output);
+}
+#line 95 "src/modules/uvisect_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00401558.s")
 
@@ -585,7 +633,7 @@ s32 uvIsectFlipRecordVectorTowardPoint(IsectFacingRecordPrefix *record,
 
 #line 175 "src/modules/uvisect_rom.c"
 /* Copy the complete 88-byte intersection record, including opaque fields. */
-typedef struct { u32 unk00[11]; f32 value2C; u32 unk30[10]; } IsectCopyRecord88;
+
 void uvIsectCopyRecord(IsectCopyRecord88 *destination, IsectCopyRecord88 *source) {
     *destination = *source;
 }
@@ -608,7 +656,59 @@ void uvIsectCopyRecord(IsectCopyRecord88 *destination, IsectCopyRecord88 *source
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004045A8.s")
 #line 180 "src/modules/uvisect_rom.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004048DC.s")
+#line 181 "src/modules/uvisect_rom.c"
+
+/* Run the selected original queries in flag order 2, 8, 1, 4, keeping the
+ * successful 88-byte candidate with a strictly smaller value at offset 0x2C.
+ * Equal values retain the earlier candidate; unordered comparisons do not win.
+ * Accept only a final minimum <=1, then clear output word at0x04 before replacing
+ * output word at0x00 with the input address. Failed queries leave output intact
+ * except for any earlier successful minimum update, as in the native code.
+ * RE_UNKNOWN: complete query-input layout, vector frame, flag/forwarded-word
+ * meanings and valid input domains. Trace original callers and direct helper
+ * bodies before assigning physical meanings or strengthening validation.
+ * RE_ORIGINAL_QUIRK: the flag-4 helper 0x403054 retains its separately indexed
+ * fraction-assignment observation. Helper success is the sole candidate-copy gate;
+ * do not initialize candidate fields or alter those original helper semantics.
+ * Flag 2 also forwards input word 0x18 through helper 0x4014FC. */
+s32 uvIsectQueryMinimumValueRecord(IsectQueryInputPrefix *input, u32 queryFlags,
+    s32 queryWord, s32 contextWord, IsectCopyRecord88 *output) {
+    f32 minimumValue;
+    IsectCopyRecord88 candidate;
+
+    minimumValue = D_uvisect_rom_004076DC;
+    if (queryFlags & 2) {
+        if (uvIsectQueryInputVectorsIntoRecord(input, 2, contextWord, queryWord,
+                &candidate)) {
+            uvIsectUpdateMinimumValueRecord(output, &minimumValue, &candidate);
+        }
+    }
+    if (queryFlags & 8) {
+        if (func_uvisect_rom_004024AC(&input->second, &input->first,
+                input->flags18, queryWord, &candidate, 0)) {
+            uvIsectUpdateMinimumValueRecord(output, &minimumValue, &candidate);
+        }
+    }
+    if (queryFlags & 1) {
+        if (func_uvisect_rom_00402B5C(&input->second, &input->first,
+                input->flags18, queryWord, &candidate, 0)) {
+            uvIsectUpdateMinimumValueRecord(output, &minimumValue, &candidate);
+        }
+    }
+    if (queryFlags & 4) {
+        if (func_uvisect_rom_00403054(&input->second, &input->first,
+                &candidate)) {
+            uvIsectUpdateMinimumValueRecord(output, &minimumValue, &candidate);
+        }
+    }
+    if (minimumValue <= 1.0f) {
+        output->unk00[1] = 0;
+        output->unk00[0] = (u32)input;
+        return 1;
+    }
+    return 0;
+}
+#line 182 "src/modules/uvisect_rom.c"
 
 #line 183 "src/modules/uvisect_rom.c"
 /* Replace the 88-byte record only when its value at offset 0x2C is smaller
