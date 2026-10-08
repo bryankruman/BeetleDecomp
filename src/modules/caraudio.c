@@ -131,6 +131,20 @@ void carAudioReleaseHandle(UnkStruct_004005C8 *handle) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_0040218C.s")
 
+/* Resolve all four CARANIM material records before sequential signed16 code
+ * tests. Priority is 4, then 5/6 (5 on track 7, otherwise 2), followed by
+ * 12, 3, 2, 8, 9, 7, 10, 11, 1, then zero. CARANIM slot2C remaps
+ * sentinel/shared-gate IDs to zero, then returns base + index * 0x1C.
+ * RE_ORIGINAL_QUIRK: the first record's code-5 test appears twice in native.
+ * RE_UNKNOWN: actual caller ID/record extent guarantees, material/code meanings,
+ * record ownership/lifetime and historical local organization need original
+ * material producers/callers. Drafts are 1252/1256 versus 1260 native bytes;
+ * both have 162 differing words. Common-code registers, equality operand
+ * order and branch/return lowering differ. All 17 record sites/identities
+ * agree; downstream getter symbol values move with the shorter draft.
+ * No supported missing callback, code width or priority effect was found.
+ * Retain original assembly until complete instructions/records match. */
+#line 97 "src/modules/caraudio.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_004022BC.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_004027A8.s")

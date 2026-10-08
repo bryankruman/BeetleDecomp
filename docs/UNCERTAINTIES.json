@@ -199,7 +199,7 @@
     "src/modules/bubble.c": "8a3c733b7f0370b5b2e51cc123470d44edcf1bf2a2ca8fe481170fd858f9c904",
     "src/modules/cam.c": "95d22d3a7536150c4e84fd508381b424b67a127129ab9b7e2d99da3dfa2addcc",
     "src/modules/caranim.c": "649683b571cd247da0f98e863c6329dd3c815c3f80fe5131eb21ee32c752b94b",
-    "src/modules/caraudio.c": "664386ceccb29dbddbd3ae2f9a86307118345ab4f594fc696c76752bc7098bbb",
+    "src/modules/caraudio.c": "1f137f271fded4ea856d1350464abf33ad12da898687144517ae52dcde053d7b",
     "src/modules/cbars.c": "a7d8817dc1873793aa3e2ef6cafcd98c4a92d2fe91251b54ed8e2b09bbb9becb",
     "src/modules/demo.c": "8e19de1cafc6a5ebde83a3020c92b2b17b3de91fc4abe245a5c53d96de69065f",
     "src/modules/dledit.c": "a2a3807d331e3196eb00bbc5dbfca4a4161a989e8eadbfa7678a2cb49ff51490",
@@ -302,7 +302,7 @@
     "src/modules/uvlight_rom.c": "07a8d19263d87652138d20d202bb4416e62fa6ee1571816afa874b4f84dd7fc0",
     "src/modules/uvmath_rom.c": "7d87dec9087dbbcb5e15901b2d3fd9b1f9ed337bab1d77a39ca8a9c9e4ae728a",
     "src/modules/uvmodel_rom.c": "87cf4b46de8effb644bf4bbb8ef0d420a985eadb08a0a7cc51870798eec95649",
-    "src/modules/uvmodelld_rom.c": "2e436007e0b4841436e3daccbd7ecac029a795b0385aa5b2b8a716f824c49ef4",
+    "src/modules/uvmodelld_rom.c": "39667b44820e1aba5d5b6c7371d10d973e08ce44987262dd6e330d00e047ec89",
     "src/modules/uvpfx_rom.c": "fac7b189d953497596ae631d1a9b1d83f9b5ed3ef092b700ae193f2a7478ec4e",
     "src/modules/uvpfxld_rom.c": "3d9acef0a9067b0e12023267a4581db2658028e07ca07ef58d9f82c0baec1bc9",
     "src/modules/uvquat_rom.c": "2ec039f1ac1ed6b66509230677cc88d8a8f82d04ef9b2c5ee34a3213d95b78d1",
@@ -329,8 +329,8 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "c388c904411c2075ab347dd34ab5e11d03d012d1e87248cf246e2cb283c30c8e",
-    "docs/VALIDATION_20261006.md": "b294be42db5106b79a0d8e3b912a22a611e9d6852f58a2c8256b2251d831d0a5"
+    "docs/STRATEGY_V4.md": "409c3affa40c471312efbeb4f8270b322e1c1659c8364dc6d5b9dfd8c7155a83",
+    "docs/VALIDATION_20261006.md": "c8eb7af719befd39ebec07a01e9f2108e0b958e2994b55dfcfb3ff43f21f1648"
   },
   "counts": {
     "address_function": 987,
@@ -340,11 +340,11 @@
     "conditional_draft": 4,
     "decompiler_local": 898,
     "draft_marker": 29,
-    "explicit_unknown": 711,
+    "explicit_unknown": 713,
     "layout_padding": 263,
     "offset_field": 1432,
     "opaque_type": 282,
-    "original_quirk": 182,
+    "original_quirk": 184,
     "uncertainty_note": 88,
     "unused_identifier": 119
   },
@@ -3940,15 +3940,15 @@
       "path": "src/modules/caraudio.c",
       "symbol": "func_caraudio_00402C08",
       "lines": [
-        171
+        185
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_caraudio_00402C08",
-          "declaration_line": 171,
+          "declaration_line": 185,
           "lines": [
-            171
+            185
           ]
         }
       ]
@@ -4054,15 +4054,15 @@
       "path": "src/modules/caraudio.c",
       "symbol": "func_caraudio_00403A2C",
       "lines": [
-        268
+        282
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_caraudio_00403A2C",
-          "declaration_line": 268,
+          "declaration_line": 282,
           "lines": [
-            268
+            282
           ]
         }
       ]
@@ -27632,15 +27632,15 @@
       "symbol": "D_caraudio_00403EF4",
       "lines": [
         5,
-        180
+        194
       ],
       "owners": [
         {
           "kind": "function",
           "name": "carAudioUpdateDualEmitterVolume",
-          "declaration_line": 179,
+          "declaration_line": 193,
           "lines": [
-            180
+            194
           ]
         },
         {
@@ -27659,24 +27659,24 @@
       "path": "src/modules/caraudio.c",
       "symbol": "D_caraudio_00403F00",
       "lines": [
-        210,
-        222
+        224,
+        236
       ],
       "owners": [
         {
           "kind": "function",
           "name": "carAudioStartFixedPositionSound",
-          "declaration_line": 217,
+          "declaration_line": 231,
           "lines": [
-            222
+            236
           ]
         },
         {
           "kind": "global",
           "name": "D_caraudio_00403F00",
-          "declaration_line": 210,
+          "declaration_line": 224,
           "lines": [
-            210
+            224
           ]
         }
       ]
@@ -27687,24 +27687,24 @@
       "path": "src/modules/caraudio.c",
       "symbol": "D_caraudio_00403F04",
       "lines": [
-        211,
-        223
+        225,
+        237
       ],
       "owners": [
         {
           "kind": "function",
           "name": "carAudioStartFixedPositionSound",
-          "declaration_line": 217,
+          "declaration_line": 231,
           "lines": [
-            223
+            237
           ]
         },
         {
           "kind": "global",
           "name": "D_caraudio_00403F04",
-          "declaration_line": 211,
+          "declaration_line": 225,
           "lines": [
-            211
+            225
           ]
         }
       ]
@@ -27715,24 +27715,24 @@
       "path": "src/modules/caraudio.c",
       "symbol": "D_caraudio_00403F08",
       "lines": [
-        212,
-        229
+        226,
+        243
       ],
       "owners": [
         {
           "kind": "function",
           "name": "carAudioStartFixedPositionSound",
-          "declaration_line": 217,
+          "declaration_line": 231,
           "lines": [
-            229
+            243
           ]
         },
         {
           "kind": "global",
           "name": "D_caraudio_00403F08",
-          "declaration_line": 212,
+          "declaration_line": 226,
           "lines": [
-            212
+            226
           ]
         }
       ]
@@ -27772,15 +27772,15 @@
       "symbol": "D_caraudio_004041E0",
       "lines": [
         41,
-        193
+        207
       ],
       "owners": [
         {
           "kind": "function",
           "name": "carAudioClearSlotFlag",
-          "declaration_line": 192,
+          "declaration_line": 206,
           "lines": [
-            193
+            207
           ]
         },
         {
@@ -27799,26 +27799,26 @@
       "path": "src/modules/caraudio.c",
       "symbol": "D_caraudio_00404228",
       "lines": [
-        237,
-        254,
-        255
+        251,
+        268,
+        269
       ],
       "owners": [
         {
           "kind": "function",
           "name": "carAudioPrependCommand",
-          "declaration_line": 246,
+          "declaration_line": 260,
           "lines": [
-            254,
-            255
+            268,
+            269
           ]
         },
         {
           "kind": "global",
           "name": "D_caraudio_00404228",
-          "declaration_line": 237,
+          "declaration_line": 251,
           "lines": [
-            237
+            251
           ]
         }
       ]
@@ -27829,24 +27829,24 @@
       "path": "src/modules/caraudio.c",
       "symbol": "D_caraudio_00404230",
       "lines": [
-        266,
-        275
+        280,
+        289
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_caraudio_00403A2C",
-          "declaration_line": 268,
+          "declaration_line": 282,
           "lines": [
-            275
+            289
           ]
         },
         {
           "kind": "global",
           "name": "D_caraudio_00404230",
-          "declaration_line": 266,
+          "declaration_line": 280,
           "lines": [
-            266
+            280
           ]
         }
       ]
@@ -27859,15 +27859,15 @@
       "lines": [
         13,
         82,
-        180
+        194
       ],
       "owners": [
         {
           "kind": "function",
           "name": "carAudioUpdateDualEmitterVolume",
-          "declaration_line": 179,
+          "declaration_line": 193,
           "lines": [
-            180
+            194
           ]
         },
         {
@@ -27894,34 +27894,34 @@
       "path": "src/modules/caraudio.c",
       "symbol": "D_caraudio_00404300",
       "lines": [
-        213,
-        225,
         227,
-        228,
-        229,
-        230,
-        231
+        239,
+        241,
+        242,
+        243,
+        244,
+        245
       ],
       "owners": [
         {
           "kind": "function",
           "name": "carAudioStartFixedPositionSound",
-          "declaration_line": 217,
+          "declaration_line": 231,
           "lines": [
-            225,
-            227,
-            228,
-            229,
-            230,
-            231
+            239,
+            241,
+            242,
+            243,
+            244,
+            245
           ]
         },
         {
           "kind": "global",
           "name": "D_caraudio_00404300",
-          "declaration_line": 213,
+          "declaration_line": 227,
           "lines": [
-            213
+            227
           ]
         }
       ]
@@ -75362,7 +75362,7 @@
       "path": "src/modules/caraudio.c",
       "symbol": "func_caraudio_004022BC",
       "lines": [
-        134
+        148
       ],
       "evidence": "asm/us/nonmatchings/modules/caraudio/func_caraudio_004022BC.s"
     },
@@ -75372,7 +75372,7 @@
       "path": "src/modules/caraudio.c",
       "symbol": "func_caraudio_004027A8",
       "lines": [
-        136
+        150
       ],
       "evidence": "asm/us/nonmatchings/modules/caraudio/func_caraudio_004027A8.s"
     },
@@ -75382,7 +75382,7 @@
       "path": "src/modules/caraudio.c",
       "symbol": "func_caraudio_004029F8",
       "lines": [
-        162
+        176
       ],
       "evidence": "asm/us/nonmatchings/modules/caraudio/func_caraudio_004029F8.s"
     },
@@ -75392,7 +75392,7 @@
       "path": "src/modules/caraudio.c",
       "symbol": "func_caraudio_00402B20",
       "lines": [
-        164
+        178
       ],
       "evidence": "asm/us/nonmatchings/modules/caraudio/func_caraudio_00402B20.s"
     },
@@ -75402,7 +75402,7 @@
       "path": "src/modules/caraudio.c",
       "symbol": "func_caraudio_00402CA4",
       "lines": [
-        187
+        201
       ],
       "evidence": "asm/us/nonmatchings/modules/caraudio/func_caraudio_00402CA4.s"
     },
@@ -75412,7 +75412,7 @@
       "path": "src/modules/caraudio.c",
       "symbol": "func_caraudio_00402E00",
       "lines": [
-        204
+        218
       ],
       "evidence": "asm/us/nonmatchings/modules/caraudio/func_caraudio_00402E00.s"
     },
@@ -75422,7 +75422,7 @@
       "path": "src/modules/caraudio.c",
       "symbol": "func_caraudio_004031E0",
       "lines": [
-        260
+        274
       ],
       "evidence": "asm/us/nonmatchings/modules/caraudio/func_caraudio_004031E0.s"
     },
@@ -75432,7 +75432,7 @@
       "path": "src/modules/caraudio.c",
       "symbol": "func_caraudio_0040336C",
       "lines": [
-        262
+        276
       ],
       "evidence": "asm/us/nonmatchings/modules/caraudio/func_caraudio_0040336C.s"
     },
@@ -75442,7 +75442,7 @@
       "path": "src/modules/caraudio.c",
       "symbol": "func_caraudio_0040397C",
       "lines": [
-        264
+        278
       ],
       "evidence": "asm/us/nonmatchings/modules/caraudio/func_caraudio_0040397C.s"
     },
@@ -81392,7 +81392,7 @@
       "path": "src/modules/uvmodelld_rom.c",
       "symbol": "func_uvmodelld_rom_00400258",
       "lines": [
-        78
+        101
       ],
       "evidence": "asm/us/nonmatchings/modules/uvmodelld_rom/func_uvmodelld_rom_00400258.s"
     },
@@ -81402,7 +81402,7 @@
       "path": "src/modules/uvmodelld_rom.c",
       "symbol": "func_uvmodelld_rom_00400D38",
       "lines": [
-        80
+        104
       ],
       "evidence": "asm/us/nonmatchings/modules/uvmodelld_rom/func_uvmodelld_rom_00400D38.s"
     },
@@ -83222,9 +83222,9 @@
       "symbol": "arg0",
       "lines": [
         37,
-        268,
-        276,
-        278
+        282,
+        290,
+        292
       ],
       "owners": [
         {
@@ -83238,11 +83238,11 @@
         {
           "kind": "function",
           "name": "func_caraudio_00403A2C",
-          "declaration_line": 268,
+          "declaration_line": 282,
           "lines": [
-            268,
-            276,
-            278
+            282,
+            290,
+            292
           ]
         }
       ]
@@ -83253,21 +83253,21 @@
       "path": "src/modules/caraudio.c",
       "symbol": "arg1",
       "lines": [
-        268,
-        273,
-        275,
-        277
+        282,
+        287,
+        289,
+        291
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_caraudio_00403A2C",
-          "declaration_line": 268,
+          "declaration_line": 282,
           "lines": [
-            268,
-            273,
-            275,
-            277
+            282,
+            287,
+            289,
+            291
           ]
         }
       ]
@@ -126247,16 +126247,16 @@
       "path": "src/modules/caraudio.c",
       "symbol": "Clear the flag byte using the supplied signed slot without a range check. * RE_UNKNOWN: valid slot domain and flag-table extent need original callers and data layout.",
       "lines": [
-        190
+        204
       ],
       "evidence": "Clear the flag byte using the supplied signed slot without a range check. * RE_UNKNOWN: valid slot domain and flag-table extent need original callers and data layout.",
       "owners": [
         {
           "kind": "function",
           "name": "carAudioClearSlotFlag",
-          "declaration_line": 192,
+          "declaration_line": 206,
           "lines": [
-            190
+            204
           ]
         }
       ]
@@ -126267,16 +126267,16 @@
       "path": "src/modules/caraudio.c",
       "symbol": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "lines": [
-        167
+        181
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "owners": [
         {
           "kind": "function",
           "name": "func_caraudio_00402C08",
-          "declaration_line": 171,
+          "declaration_line": 185,
           "lines": [
-            167
+            181
           ]
         }
       ]
@@ -126287,16 +126287,16 @@
       "path": "src/modules/caraudio.c",
       "symbol": "Prepare sound selector 0x1D at fixed XYZ; reject returned managed-slot byte 0xFF. * Sound slot 0x80 copies matrix translation; the local matrix is not retained. * RE_UNKNOWN: gameplay identity and shared-handle setup need assets/callers.",
       "lines": [
-        207
+        221
       ],
       "evidence": "Prepare sound selector 0x1D at fixed XYZ; reject returned managed-slot byte 0xFF. * Sound slot 0x80 copies matrix translation; the local matrix is not retained. * RE_UNKNOWN: gameplay identity and shared-handle setup need assets/callers.",
       "owners": [
         {
           "kind": "global",
           "name": "D_caraudio_00403F00",
-          "declaration_line": 210,
+          "declaration_line": 224,
           "lines": [
-            207
+            221
           ]
         }
       ]
@@ -126307,16 +126307,36 @@
       "path": "src/modules/caraudio.c",
       "symbol": "Prepend kind zero; soundHandlingEnabled gates soundId/volume (SND 0x6C/0x84). * Original loader zeroes the head in fresh caud-image BSS before entry. RE_UNKNOWN: * value4/valueC roles, caller capacity and reset/freeing; trace callers and VOLT 0x0C.",
       "lines": [
-        241
+        255
       ],
       "evidence": "Prepend kind zero; soundHandlingEnabled gates soundId/volume (SND 0x6C/0x84). * Original loader zeroes the head in fresh caud-image BSS before entry. RE_UNKNOWN: * value4/valueC roles, caller capacity and reset/freeing; trace callers and VOLT 0x0C.",
       "owners": [
         {
           "kind": "function",
           "name": "carAudioPrependCommand",
-          "declaration_line": 246,
+          "declaration_line": 260,
           "lines": [
-            241
+            255
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-02f5052a4869",
+      "kind": "explicit_unknown",
+      "path": "src/modules/caraudio.c",
+      "symbol": "Resolve all four CARANIM material records before sequential signed16 code * tests. Priority is 4, then 5/6 (5 on track 7, otherwise 2), followed by * 12, 3, 2, 8, 9, 7, 10, 11, 1, then zero. CARANIM slot2C remaps * sentinel/shared-gate IDs to zero, then returns base + index * 0x1C. * RE_ORIGINAL_QUIRK: the first record's code-5 test appears twice in native. * RE_UNKNOWN: actual caller ID/record extent guarantees, material/code meanings, * record ownership/lifetime and historical local organization need original * material producers/callers. Drafts are 1252/1256 versus 1260 native bytes; * both have 162 differing words. Common-code registers, equality operand * order and branch/return lowering differ. All 17 record sites/identities * agree; downstream getter symbol values move with the shorter draft. * No supported missing callback, code width or priority effect was found. * Retain original assembly until complete instructions/records match.",
+      "lines": [
+        134
+      ],
+      "evidence": "Resolve all four CARANIM material records before sequential signed16 code * tests. Priority is 4, then 5/6 (5 on track 7, otherwise 2), followed by * 12, 3, 2, 8, 9, 7, 10, 11, 1, then zero. CARANIM slot2C remaps * sentinel/shared-gate IDs to zero, then returns base + index * 0x1C. * RE_ORIGINAL_QUIRK: the first record's code-5 test appears twice in native. * RE_UNKNOWN: actual caller ID/record extent guarantees, material/code meanings, * record ownership/lifetime and historical local organization need original * material producers/callers. Drafts are 1252/1256 versus 1260 native bytes; * both have 162 differing words. Common-code registers, equality operand * order and branch/return lowering differ. All 17 record sites/identities * agree; downstream getter symbol values move with the shorter draft. * No supported missing callback, code width or priority effect was found. * Retain original assembly until complete instructions/records match.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_caraudio_004022BC",
+          "declaration_line": 148,
+          "lines": [
+            134
           ]
         }
       ]
@@ -126327,16 +126347,16 @@
       "path": "src/modules/caraudio.c",
       "symbol": "Test four source words at 0x2D0..0x2DC; return one on first nonzero, else zero. * Preserve the original unchecked state/source dereferences and short-circuit order. * RE_UNKNOWN: valid state/source extent/lifetime and word meanings need original producers/callers.",
       "lines": [
-        139
+        153
       ],
       "evidence": "Test four source words at 0x2D0..0x2DC; return one on first nonzero, else zero. * Preserve the original unchecked state/source dereferences and short-circuit order. * RE_UNKNOWN: valid state/source extent/lifetime and word meanings need original producers/callers.",
       "owners": [
         {
           "kind": "function",
           "name": "carAudioHasAnySourceSlot",
-          "declaration_line": 142,
+          "declaration_line": 156,
           "lines": [
-            139
+            153
           ]
         }
       ]
@@ -136757,6 +136777,26 @@
       ]
     },
     {
+      "id": "Q-f0bc91a12f4b",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvmodelld_rom.c",
+      "symbol": "Original COMM parser: read model totals and an optional 60-byte record, * allocate the combined vertex/state/command/part/LOD/matrix storage, then parse * the nested records. Preserve signed per-state vertex counts, pointer/count * reloads, paired color tokens and the final display-list terminators. The * original LGHT slot 0x28 consumes only the three supplied color words. * RE_ORIGINAL_QUIRK: the complete 36-byte stack header is copied before its * runtime table pointers are assigned. Some copied words and alignment bytes * have no preceding assignment here; the optional record also receives only * a byte at offset 0x28 before its next word at 0x2C. No zero-filled storage or * reachable use of the untouched bytes is established. * RE_UNKNOWN: valid header/per-part/per-LOD count relationships, command and * vertex capacities, block length and allocation-failure guarantees. Establish * the UVMD asset format and original caller domain before changing bounds or * allocation arithmetic. Optional-field meanings/units and recursive * UVMD/UVPX/UVTX/light ownership and cleanup remain unresolved; trace original * consumers and resource-release paths. * RE_UNKNOWN: exact source pointer lifetimes and permitted aliasing needed to * recover native field-pointer walks and floating load/store timing. The draft * is parked at 2592 bytes versus native 2784, with different full relocation * offsets. Preserve the original assembly until those contracts and complete * instruction/relocation identity are proved; matching helper counts alone * do not establish equivalent effects.",
+      "lines": [
+        78
+      ],
+      "evidence": "Original COMM parser: read model totals and an optional 60-byte record, * allocate the combined vertex/state/command/part/LOD/matrix storage, then parse * the nested records. Preserve signed per-state vertex counts, pointer/count * reloads, paired color tokens and the final display-list terminators. The * original LGHT slot 0x28 consumes only the three supplied color words. * RE_ORIGINAL_QUIRK: the complete 36-byte stack header is copied before its * runtime table pointers are assigned. Some copied words and alignment bytes * have no preceding assignment here; the optional record also receives only * a byte at offset 0x28 before its next word at 0x2C. No zero-filled storage or * reachable use of the untouched bytes is established. * RE_UNKNOWN: valid header/per-part/per-LOD count relationships, command and * vertex capacities, block length and allocation-failure guarantees. Establish * the UVMD asset format and original caller domain before changing bounds or * allocation arithmetic. Optional-field meanings/units and recursive * UVMD/UVPX/UVTX/light ownership and cleanup remain unresolved; trace original * consumers and resource-release paths. * RE_UNKNOWN: exact source pointer lifetimes and permitted aliasing needed to * recover native field-pointer walks and floating load/store timing. The draft * is parked at 2592 bytes versus native 2784, with different full relocation * offsets. Preserve the original assembly until those contracts and complete * instruction/relocation identity are proved; matching helper counts alone * do not establish equivalent effects.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_uvmodelld_rom_00400258",
+          "declaration_line": 101,
+          "lines": [
+            78
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-af1920b8499e",
       "kind": "explicit_unknown",
       "path": "src/modules/uvmodelld_rom.c",
@@ -141201,15 +141241,15 @@
       "path": "src/modules/caraudio.c",
       "symbol": "gap11",
       "lines": [
-        238
+        252
       ],
       "owners": [
         {
           "kind": "type",
           "name": "CarAudioCommand",
-          "declaration_line": 238,
+          "declaration_line": 252,
           "lines": [
-            238
+            252
           ]
         }
       ]
@@ -156158,26 +156198,26 @@
       "path": "src/modules/caraudio.c",
       "symbol": "value4",
       "lines": [
-        238,
-        246,
-        249
+        252,
+        260,
+        263
       ],
       "owners": [
         {
           "kind": "function",
           "name": "carAudioPrependCommand",
-          "declaration_line": 246,
+          "declaration_line": 260,
           "lines": [
-            246,
-            249
+            260,
+            263
           ]
         },
         {
           "kind": "type",
           "name": "CarAudioCommand",
-          "declaration_line": 238,
+          "declaration_line": 252,
           "lines": [
-            238
+            252
           ]
         }
       ]
@@ -156188,26 +156228,26 @@
       "path": "src/modules/caraudio.c",
       "symbol": "valueC",
       "lines": [
-        238,
-        246,
-        251
+        252,
+        260,
+        265
       ],
       "owners": [
         {
           "kind": "function",
           "name": "carAudioPrependCommand",
-          "declaration_line": 246,
+          "declaration_line": 260,
           "lines": [
-            246,
-            251
+            260,
+            265
           ]
         },
         {
           "kind": "type",
           "name": "CarAudioCommand",
-          "declaration_line": 238,
+          "declaration_line": 252,
           "lines": [
-            238
+            252
           ]
         }
       ]
@@ -199091,7 +199131,7 @@
         26,
         110,
         123,
-        213
+        227
       ],
       "owners": [
         {
@@ -199121,9 +199161,9 @@
         {
           "kind": "global",
           "name": "D_caraudio_00404300",
-          "declaration_line": 213,
+          "declaration_line": 227,
           "lines": [
-            213
+            227
           ]
         }
       ]
@@ -199136,7 +199176,7 @@
       "lines": [
         26,
         110,
-        228
+        242
       ],
       "owners": [
         {
@@ -199158,9 +199198,9 @@
         {
           "kind": "function",
           "name": "carAudioStartFixedPositionSound",
-          "declaration_line": 217,
+          "declaration_line": 231,
           "lines": [
-            228
+            242
           ]
         }
       ]
@@ -206197,6 +206237,26 @@
       ]
     },
     {
+      "id": "Q-659d9a7a94ac",
+      "kind": "original_quirk",
+      "path": "src/modules/caraudio.c",
+      "symbol": "Resolve all four CARANIM material records before sequential signed16 code * tests. Priority is 4, then 5/6 (5 on track 7, otherwise 2), followed by * 12, 3, 2, 8, 9, 7, 10, 11, 1, then zero. CARANIM slot2C remaps * sentinel/shared-gate IDs to zero, then returns base + index * 0x1C. * RE_ORIGINAL_QUIRK: the first record's code-5 test appears twice in native. * RE_UNKNOWN: actual caller ID/record extent guarantees, material/code meanings, * record ownership/lifetime and historical local organization need original * material producers/callers. Drafts are 1252/1256 versus 1260 native bytes; * both have 162 differing words. Common-code registers, equality operand * order and branch/return lowering differ. All 17 record sites/identities * agree; downstream getter symbol values move with the shorter draft. * No supported missing callback, code width or priority effect was found. * Retain original assembly until complete instructions/records match.",
+      "lines": [
+        134
+      ],
+      "evidence": "Resolve all four CARANIM material records before sequential signed16 code * tests. Priority is 4, then 5/6 (5 on track 7, otherwise 2), followed by * 12, 3, 2, 8, 9, 7, 10, 11, 1, then zero. CARANIM slot2C remaps * sentinel/shared-gate IDs to zero, then returns base + index * 0x1C. * RE_ORIGINAL_QUIRK: the first record's code-5 test appears twice in native. * RE_UNKNOWN: actual caller ID/record extent guarantees, material/code meanings, * record ownership/lifetime and historical local organization need original * material producers/callers. Drafts are 1252/1256 versus 1260 native bytes; * both have 162 differing words. Common-code registers, equality operand * order and branch/return lowering differ. All 17 record sites/identities * agree; downstream getter symbol values move with the shorter draft. * No supported missing callback, code width or priority effect was found. * Retain original assembly until complete instructions/records match.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_caraudio_004022BC",
+          "declaration_line": 148,
+          "lines": [
+            134
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-3fee2403e1bd",
       "kind": "original_quirk",
       "path": "src/modules/demo.c",
@@ -208766,6 +208826,26 @@
       ]
     },
     {
+      "id": "Q-28cca329f683",
+      "kind": "original_quirk",
+      "path": "src/modules/uvmodelld_rom.c",
+      "symbol": "Original COMM parser: read model totals and an optional 60-byte record, * allocate the combined vertex/state/command/part/LOD/matrix storage, then parse * the nested records. Preserve signed per-state vertex counts, pointer/count * reloads, paired color tokens and the final display-list terminators. The * original LGHT slot 0x28 consumes only the three supplied color words. * RE_ORIGINAL_QUIRK: the complete 36-byte stack header is copied before its * runtime table pointers are assigned. Some copied words and alignment bytes * have no preceding assignment here; the optional record also receives only * a byte at offset 0x28 before its next word at 0x2C. No zero-filled storage or * reachable use of the untouched bytes is established. * RE_UNKNOWN: valid header/per-part/per-LOD count relationships, command and * vertex capacities, block length and allocation-failure guarantees. Establish * the UVMD asset format and original caller domain before changing bounds or * allocation arithmetic. Optional-field meanings/units and recursive * UVMD/UVPX/UVTX/light ownership and cleanup remain unresolved; trace original * consumers and resource-release paths. * RE_UNKNOWN: exact source pointer lifetimes and permitted aliasing needed to * recover native field-pointer walks and floating load/store timing. The draft * is parked at 2592 bytes versus native 2784, with different full relocation * offsets. Preserve the original assembly until those contracts and complete * instruction/relocation identity are proved; matching helper counts alone * do not establish equivalent effects.",
+      "lines": [
+        78
+      ],
+      "evidence": "Original COMM parser: read model totals and an optional 60-byte record, * allocate the combined vertex/state/command/part/LOD/matrix storage, then parse * the nested records. Preserve signed per-state vertex counts, pointer/count * reloads, paired color tokens and the final display-list terminators. The * original LGHT slot 0x28 consumes only the three supplied color words. * RE_ORIGINAL_QUIRK: the complete 36-byte stack header is copied before its * runtime table pointers are assigned. Some copied words and alignment bytes * have no preceding assignment here; the optional record also receives only * a byte at offset 0x28 before its next word at 0x2C. No zero-filled storage or * reachable use of the untouched bytes is established. * RE_UNKNOWN: valid header/per-part/per-LOD count relationships, command and * vertex capacities, block length and allocation-failure guarantees. Establish * the UVMD asset format and original caller domain before changing bounds or * allocation arithmetic. Optional-field meanings/units and recursive * UVMD/UVPX/UVTX/light ownership and cleanup remain unresolved; trace original * consumers and resource-release paths. * RE_UNKNOWN: exact source pointer lifetimes and permitted aliasing needed to * recover native field-pointer walks and floating load/store timing. The draft * is parked at 2592 bytes versus native 2784, with different full relocation * offsets. Preserve the original assembly until those contracts and complete * instruction/relocation identity are proved; matching helper counts alone * do not establish equivalent effects.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_uvmodelld_rom_00400258",
+          "declaration_line": 101,
+          "lines": [
+            78
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-59aeca2d4c87",
       "kind": "original_quirk",
       "path": "src/modules/uvpfxld_rom.c",
@@ -211266,15 +211346,15 @@
       "path": "src/modules/caraudio.c",
       "symbol": "unused",
       "lines": [
-        217
+        231
       ],
       "owners": [
         {
           "kind": "function",
           "name": "carAudioStartFixedPositionSound",
-          "declaration_line": 217,
+          "declaration_line": 231,
           "lines": [
-            217
+            231
           ]
         }
       ]

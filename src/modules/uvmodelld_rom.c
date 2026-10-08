@@ -75,6 +75,30 @@ void uvModelLoaderPackColorCommandWords(s32 *commandWords, u16 firstColor, u16 s
 }
 #line 61 "src/modules/uvmodelld_rom.c"
 
+/* Original COMM parser: read model totals and an optional 60-byte record,
+ * allocate the combined vertex/state/command/part/LOD/matrix storage, then parse
+ * the nested records. Preserve signed per-state vertex counts, pointer/count
+ * reloads, paired color tokens and the final display-list terminators. The
+ * original LGHT slot 0x28 consumes only the three supplied color words.
+ * RE_ORIGINAL_QUIRK: the complete 36-byte stack header is copied before its
+ * runtime table pointers are assigned. Some copied words and alignment bytes
+ * have no preceding assignment here; the optional record also receives only
+ * a byte at offset 0x28 before its next word at 0x2C. No zero-filled storage or
+ * reachable use of the untouched bytes is established.
+ * RE_UNKNOWN: valid header/per-part/per-LOD count relationships, command and
+ * vertex capacities, block length and allocation-failure guarantees. Establish
+ * the UVMD asset format and original caller domain before changing bounds or
+ * allocation arithmetic. Optional-field meanings/units and recursive
+ * UVMD/UVPX/UVTX/light ownership and cleanup remain unresolved; trace original
+ * consumers and resource-release paths.
+ * RE_UNKNOWN: exact source pointer lifetimes and permitted aliasing needed to
+ * recover native field-pointer walks and floating load/store timing. The draft
+ * is parked at 2592 bytes versus native 2784, with different full relocation
+ * offsets. Preserve the original assembly until those contracts and complete
+ * instruction/relocation identity are proved; matching helper counts alone
+ * do not establish equivalent effects. */
+#line 62 "src/modules/uvmodelld_rom.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvmodelld_rom/func_uvmodelld_rom_00400258.s")
+#line 63 "src/modules/uvmodelld_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvmodelld_rom/func_uvmodelld_rom_00400D38.s")
