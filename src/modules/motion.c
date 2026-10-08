@@ -312,6 +312,20 @@ void motionClearValueForFlaggedLookup(MotionFlagState *state, MotionFlagOutput *
 #line 143 "src/modules/motion.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00403E74.s")
 
+/* Select a material-row scalar unless shared game state is 6, then evaluate
+ * two curves with the input field reloaded before each call. Store the
+ * selected scalar at 704 before curve calls. Output 148/278 uses curve A and
+ * config E0; output 3A8/4D8 uses curve B and config E4, with config reloaded.
+ * RE_UNKNOWN: material/input domains, curve/scalar units, game-state meaning,
+ * allocation, aliasing and callback lifetimes require original producers
+ * and callers; four observed stores do not establish a complete array.
+ * Native constant slot-branch arms remain unexplained source organization.
+ * A readable loop draft is 304 versus 464 native bytes, with 116 differing
+ * words and frame 56 versus 40. The compiler shares a scalar*curveA multiply
+ * that native repeats, so exceptional floating-point effects are unproved.
+ * The two 12-record relocation lists differ in offsets/order. Retain original
+ * assembly until complete instruction and relocation identity is recovered. */
+#line 145 "src/modules/motion.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_0040424C.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_0040441C.s")

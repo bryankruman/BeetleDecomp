@@ -249,6 +249,20 @@ void func_ai_0040179C(void) {
 }
 #line 96 "src/modules/ai.c"
 
+/* Snapshot vector 13C before optional object-matrix update, normalize its
+ * displacement from current position, and map the cross/dot response 150.
+ * Each result is stored before the next call; the graph bound clamps the
+ * reloaded response, then a scale and optional override precede 7054.
+ * RE_ORIGINAL_QUIRK: zero-vector normalization failure is ignored; ordered
+ * clamp comparisons retain NaNs, and a NaN override passes != zero.
+ * RE_UNKNOWN: basis/scalar units, object and selected-index domains, graph
+ * bound sign, allocation, aliases, lifetimes and override purpose require
+ * original producers/callers; this prefix does not establish a full record.
+ * Readable C has the same 584 bytes and 29 relocation records, but 18 words
+ * differ only in frame 144/152 and matrix/vector stack offsets. Records are
+ * identical as a multiset, with incidental emission order different.
+ * Retain original assembly until complete instruction identity is recovered. */
+#line 97 "src/modules/ai.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_004017A4.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_004019EC.s")

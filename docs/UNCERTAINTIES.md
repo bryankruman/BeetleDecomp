@@ -17,8 +17,8 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 698 |
-| Preserved RE_ORIGINAL_QUIRK notes | 172 |
+| Explicit RE_UNKNOWN notes | 704 |
+| Preserved RE_ORIGINAL_QUIRK notes | 175 |
 | Older comments with uncertainty language | 88 |
 | Documented original-behavior audits | 28 |
 | Assembly-backed functions or data | 846 |
@@ -1089,38 +1089,38 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_ai_00400FF0` | function `func_ai_00400FF0` | [146](../src/modules/ai.c#L146) |
 | address_function | `func_ai_0040179C` | function `func_ai_0040179C` | [248](../src/modules/ai.c#L248) |
 | address_function | `func_ai_004017A4` | function `func_ai_004017A4` | [147](../src/modules/ai.c#L147) |
-| address_function | `func_ai_004019EC` | function `aiSnapshotAndUpdateDecisionState`, function `func_ai_004019EC` | [148](../src/modules/ai.c#L148), [428](../src/modules/ai.c#L428) |
+| address_function | `func_ai_004019EC` | function `aiSnapshotAndUpdateDecisionState`, function `func_ai_004019EC` | [148](../src/modules/ai.c#L148), [442](../src/modules/ai.c#L442) |
 | address_function | `func_ai_00401C84` | function `func_ai_00401C84` | [149](../src/modules/ai.c#L149) |
 | address_function | `func_ai_00401EF0` | function `func_ai_00401EF0` | [150](../src/modules/ai.c#L150) |
 | address_function | `func_ai_00402028` | function `func_ai_00402028` | [151](../src/modules/ai.c#L151) |
-| address_function | `func_ai_004021D8` | function `func_ai_004021D8` | [267](../src/modules/ai.c#L267) |
+| address_function | `func_ai_004021D8` | function `func_ai_004021D8` | [281](../src/modules/ai.c#L281) |
 | address_function | `func_ai_004021E0` | function `func_ai_004021E0` | [152](../src/modules/ai.c#L152) |
 | address_function | `func_ai_004022A4` | function `func_ai_004022A4` | [153](../src/modules/ai.c#L153) |
-| address_function | `func_ai_00402858` | function `aiSnapshotAndUpdateDecisionState`, function `func_ai_00402858` | [154](../src/modules/ai.c#L154), [424](../src/modules/ai.c#L424) |
-| address_function | `func_ai_00402974` | function `aiSnapshotAndUpdateDecisionState`, function `func_ai_00402974` | [155](../src/modules/ai.c#L155), [427](../src/modules/ai.c#L427) |
-| address_function | `func_ai_00402AE0` | function `aiSnapshotAndUpdateDecisionState`, function `func_ai_00402AE0` | [157](../src/modules/ai.c#L157), [402](../src/modules/ai.c#L402) |
+| address_function | `func_ai_00402858` | function `aiSnapshotAndUpdateDecisionState`, function `func_ai_00402858` | [154](../src/modules/ai.c#L154), [438](../src/modules/ai.c#L438) |
+| address_function | `func_ai_00402974` | function `aiSnapshotAndUpdateDecisionState`, function `func_ai_00402974` | [155](../src/modules/ai.c#L155), [441](../src/modules/ai.c#L441) |
+| address_function | `func_ai_00402AE0` | function `aiSnapshotAndUpdateDecisionState`, function `func_ai_00402AE0` | [157](../src/modules/ai.c#L157), [416](../src/modules/ai.c#L416) |
 | address_function | `func_ai_00402C2C` | function `func_ai_00402C2C` | [158](../src/modules/ai.c#L158) |
 | address_function | `func_ai_00402E4C` | function `func_ai_00402E4C` | [159](../src/modules/ai.c#L159) |
 | address_function | `func_ai_00403448` | function `func_ai_00403448` | [162](../src/modules/ai.c#L162) |
 | address_function | `func_ai_004037B4` | function `func_ai_004037B4` | [163](../src/modules/ai.c#L163) |
 | address_function | `func_ai_00403994` | function `func_ai_00403994` | [164](../src/modules/ai.c#L164) |
 | address_function | `func_ai_00403C80` | function `func_ai_00403C80` | [165](../src/modules/ai.c#L165) |
-| address_function | `func_ai_00403F44` | function `func_ai_00403F44` | [448](../src/modules/ai.c#L448) |
-| address_function | `func_ai_00403F4C` | function `func_ai_00403F4C`, function `func_ai_00403F4C` | [166](../src/modules/ai.c#L166), [457](../src/modules/ai.c#L457) |
+| address_function | `func_ai_00403F44` | function `func_ai_00403F44` | [462](../src/modules/ai.c#L462) |
+| address_function | `func_ai_00403F4C` | function `func_ai_00403F4C`, function `func_ai_00403F4C` | [166](../src/modules/ai.c#L166), [471](../src/modules/ai.c#L471) |
 | address_function | `func_ai_00403F54` | function `func_ai_00403F54` | [167](../src/modules/ai.c#L167) |
 | address_function | `func_ai_00404064` | function `func_ai_00404064` | [168](../src/modules/ai.c#L168) |
 | address_function | `func_ai_00404194` | function `func_ai_00404194` | [170](../src/modules/ai.c#L170) |
 | address_function | `func_ai_004042A4` | function `func_ai_004042A4` | [172](../src/modules/ai.c#L172) |
-| address_function | `func_ai_0040462C` | function `aiTestBoundsContainmentEitherOrder`, function `func_ai_0040462C` | [174](../src/modules/ai.c#L174), [532](../src/modules/ai.c#L532) |
-| address_function | `func_ai_00404904` | function `func_ai_00404904` | [544](../src/modules/ai.c#L544) |
+| address_function | `func_ai_0040462C` | function `aiTestBoundsContainmentEitherOrder`, function `func_ai_0040462C` | [174](../src/modules/ai.c#L174), [546](../src/modules/ai.c#L546) |
+| address_function | `func_ai_00404904` | function `func_ai_00404904` | [558](../src/modules/ai.c#L558) |
 | address_function | `func_ai_0040490C` | function `func_ai_0040490C` | [176](../src/modules/ai.c#L176) |
-| address_function | `func_ai_00404DE8` | function `func_ai_00404DE8` | [555](../src/modules/ai.c#L555) |
+| address_function | `func_ai_00404DE8` | function `func_ai_00404DE8` | [569](../src/modules/ai.c#L569) |
 | address_function | `func_ai_00404E10` | function `func_ai_00404E10` | [177](../src/modules/ai.c#L177) |
 | address_function | `func_ai_004051A4` | function `func_ai_004051A4` | [178](../src/modules/ai.c#L178) |
 | address_function | `func_ai_00405324` | function `func_ai_00405324` | [179](../src/modules/ai.c#L179) |
 | address_function | `func_ai_004053A8` | function `func_ai_004053A8` | [180](../src/modules/ai.c#L180) |
 | address_function | `func_ai_004057C0` | function `func_ai_004057C0` | [181](../src/modules/ai.c#L181) |
-| address_function | `func_ai_00405B4C` | function `aiAllocateLinkedRecord`, function `func_ai_00405B4C` | [183](../src/modules/ai.c#L183), [632](../src/modules/ai.c#L632) |
+| address_function | `func_ai_00405B4C` | function `aiAllocateLinkedRecord`, function `func_ai_00405B4C` | [183](../src/modules/ai.c#L183), [646](../src/modules/ai.c#L646) |
 | address_function | `func_ai_00405D50` | function `func_ai_00405D50` | [186](../src/modules/ai.c#L186) |
 | address_function | `func_ai_00405EF4` | function `func_ai_00405EF4` | [188](../src/modules/ai.c#L188) |
 | address_function | `func_ai_0040617C` | function `func_ai_0040617C` | [190](../src/modules/ai.c#L190) |
@@ -1130,24 +1130,24 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_ai_00406D84` | function `func_ai_00406D84` | [194](../src/modules/ai.c#L194) |
 | address_function | `func_ai_00407054` | function `func_ai_00407054` | [195](../src/modules/ai.c#L195) |
 | address_function | `func_ai_004075B8` | function `func_ai_004075B8` | [197](../src/modules/ai.c#L197) |
-| address_function | `func_ai_00407718` | function `func_ai_00407718` | [828](../src/modules/ai.c#L828) |
-| address_global | `D_80025D70` | function `aiSnapshotAndUpdateDecisionState`, function `aiUpdateExplosionEffectAndRestoreDelay`, global `D_80025D70`, global `D_80025D70` | [78](../src/modules/ai.c#L78), [116](../src/modules/ai.c#L116), [373](../src/modules/ai.c#L373), [406](../src/modules/ai.c#L406) |
-| address_global | `D_80025DDC` | function `aiSnapshotAndUpdateDecisionState`, global `D_80025DDC` | [79](../src/modules/ai.c#L79), [412](../src/modules/ai.c#L412), [413](../src/modules/ai.c#L413) |
-| address_global | `D_ai_00407858` | function `aiSnapPositionToTargetWhenRequired` | [41](../src/modules/ai.c#L41), [515](../src/modules/ai.c#L515) |
-| address_global | `D_ai_00407E8C` | function `aiSnapPositionToTargetWhenRequired` | [41](../src/modules/ai.c#L41), [515](../src/modules/ai.c#L515) |
-| address_global | `D_ai_00407EA0` | function `aiCopySelectedRecordScalarPair`, global `D_ai_00407EA0` | [134](../src/modules/ai.c#L134), [472](../src/modules/ai.c#L472) |
-| address_global | `D_ai_00407FF4` | function `aiSelectFirstUnmarkedPreviousRecord`, function `aiSnapPositionToTargetWhenRequired`, function `aiUpdateTargetManhattanDistance`, global `D_ai_00407FF4`, global `D_ai_00407FF4` | [40](../src/modules/ai.c#L40), [136](../src/modules/ai.c#L136), [293](../src/modules/ai.c#L293), [294](../src/modules/ai.c#L294), [510](../src/modules/ai.c#L510), [512](../src/modules/ai.c#L512), [516](../src/modules/ai.c#L516), [517](../src/modules/ai.c#L517) (+2 in JSON) |
-| address_global | `D_ai_00407FFC` | function `aiClearRecordShortWhenEnabled`, function `aiSetRecordShortClearEnabled`, global `D_ai_00407FFC` | [200](../src/modules/ai.c#L200), [563](../src/modules/ai.c#L563), [804](../src/modules/ai.c#L804) |
-| address_global | `D_ai_00408000` | function `func_ai_00407718`, global `D_ai_00408000` | [201](../src/modules/ai.c#L201), [829](../src/modules/ai.c#L829) |
-| address_global | `D_ai_00408008` | function `aiFindActiveRecordByKey`, function `aiGetActiveRecordValue9C`, global `D_ai_00408008` | [139](../src/modules/ai.c#L139), [698](../src/modules/ai.c#L698), [839](../src/modules/ai.c#L839) |
-| address_global | `D_ai_0040810C` | function `aiCopySelectedRecordScalarPair`, global `D_ai_0040810C` | [133](../src/modules/ai.c#L133), [474](../src/modules/ai.c#L474) |
-| address_global | `D_ai_00408D60` | function `aiAllocateLinkedRecord`, global `D_ai_00408D60` | [125](../src/modules/ai.c#L125), [625](../src/modules/ai.c#L625) |
-| address_global | `D_ai_00408E40` | function `aiInsertRecordBetweenNeighbors`, function `aiUnlinkRecord`, global `D_ai_00408E40` | [135](../src/modules/ai.c#L135), [653](../src/modules/ai.c#L653), [656](../src/modules/ai.c#L656), [671](../src/modules/ai.c#L671) |
-| address_global | `D_ai_00408E44` | function `aiGetEligibleListRank`, function `aiGetLinkedRecordTailAddress`, function `aiInsertRecordBetweenNeighbors`, function `aiSelectFirstUnmarkedPreviousRecord`, function `aiUnlinkRecord`, global `D_ai_00408E44` | [199](../src/modules/ai.c#L199), [657](../src/modules/ai.c#L657), [676](../src/modules/ai.c#L676), [712](../src/modules/ai.c#L712), [753](../src/modules/ai.c#L753), [796](../src/modules/ai.c#L796) |
-| address_global | `D_ai_00408E48` | function `aiAllocateLinkedRecord`, function `aiCountPreviousLinks`, global `D_ai_00408E48` | [137](../src/modules/ai.c#L137), [624](../src/modules/ai.c#L624), [625](../src/modules/ai.c#L625), [626](../src/modules/ai.c#L626), [813](../src/modules/ai.c#L813), [816](../src/modules/ai.c#L816), [820](../src/modules/ai.c#L820) |
-| address_global | `D_ai_00408E4C` | function `aiFindActiveRecordByKey`, function `aiGetActiveRecordValue9C`, global `D_ai_00408E4C` | [138](../src/modules/ai.c#L138), [697](../src/modules/ai.c#L697), [838](../src/modules/ai.c#L838) |
-| address_global | `D_ai_00408E58` | function `aiApplyCarAnimationStateFields`, function `aiUpdateExplosionEffectAndRestoreDelay`, global `D_ai_00408E58`, global `D_ai_00408E58` | [119](../src/modules/ai.c#L119), [354](../src/modules/ai.c#L354), [361](../src/modules/ai.c#L361), [586](../src/modules/ai.c#L586), [599](../src/modules/ai.c#L599), [602](../src/modules/ai.c#L602) |
-| address_global | `D_ai_00408EA0` | function `aiUpdateExplosionEffectAndRestoreDelay`, global `D_ai_00408EA0` | [115](../src/modules/ai.c#L115), [352](../src/modules/ai.c#L352), [358](../src/modules/ai.c#L358) |
+| address_function | `func_ai_00407718` | function `func_ai_00407718` | [842](../src/modules/ai.c#L842) |
+| address_global | `D_80025D70` | function `aiSnapshotAndUpdateDecisionState`, function `aiUpdateExplosionEffectAndRestoreDelay`, global `D_80025D70`, global `D_80025D70` | [78](../src/modules/ai.c#L78), [116](../src/modules/ai.c#L116), [387](../src/modules/ai.c#L387), [420](../src/modules/ai.c#L420) |
+| address_global | `D_80025DDC` | function `aiSnapshotAndUpdateDecisionState`, global `D_80025DDC` | [79](../src/modules/ai.c#L79), [426](../src/modules/ai.c#L426), [427](../src/modules/ai.c#L427) |
+| address_global | `D_ai_00407858` | function `aiSnapPositionToTargetWhenRequired` | [41](../src/modules/ai.c#L41), [529](../src/modules/ai.c#L529) |
+| address_global | `D_ai_00407E8C` | function `aiSnapPositionToTargetWhenRequired` | [41](../src/modules/ai.c#L41), [529](../src/modules/ai.c#L529) |
+| address_global | `D_ai_00407EA0` | function `aiCopySelectedRecordScalarPair`, global `D_ai_00407EA0` | [134](../src/modules/ai.c#L134), [486](../src/modules/ai.c#L486) |
+| address_global | `D_ai_00407FF4` | function `aiSelectFirstUnmarkedPreviousRecord`, function `aiSnapPositionToTargetWhenRequired`, function `aiUpdateTargetManhattanDistance`, global `D_ai_00407FF4`, global `D_ai_00407FF4` | [40](../src/modules/ai.c#L40), [136](../src/modules/ai.c#L136), [307](../src/modules/ai.c#L307), [308](../src/modules/ai.c#L308), [524](../src/modules/ai.c#L524), [526](../src/modules/ai.c#L526), [530](../src/modules/ai.c#L530), [531](../src/modules/ai.c#L531) (+2 in JSON) |
+| address_global | `D_ai_00407FFC` | function `aiClearRecordShortWhenEnabled`, function `aiSetRecordShortClearEnabled`, global `D_ai_00407FFC` | [200](../src/modules/ai.c#L200), [577](../src/modules/ai.c#L577), [818](../src/modules/ai.c#L818) |
+| address_global | `D_ai_00408000` | function `func_ai_00407718`, global `D_ai_00408000` | [201](../src/modules/ai.c#L201), [843](../src/modules/ai.c#L843) |
+| address_global | `D_ai_00408008` | function `aiFindActiveRecordByKey`, function `aiGetActiveRecordValue9C`, global `D_ai_00408008` | [139](../src/modules/ai.c#L139), [712](../src/modules/ai.c#L712), [853](../src/modules/ai.c#L853) |
+| address_global | `D_ai_0040810C` | function `aiCopySelectedRecordScalarPair`, global `D_ai_0040810C` | [133](../src/modules/ai.c#L133), [488](../src/modules/ai.c#L488) |
+| address_global | `D_ai_00408D60` | function `aiAllocateLinkedRecord`, global `D_ai_00408D60` | [125](../src/modules/ai.c#L125), [639](../src/modules/ai.c#L639) |
+| address_global | `D_ai_00408E40` | function `aiInsertRecordBetweenNeighbors`, function `aiUnlinkRecord`, global `D_ai_00408E40` | [135](../src/modules/ai.c#L135), [667](../src/modules/ai.c#L667), [670](../src/modules/ai.c#L670), [685](../src/modules/ai.c#L685) |
+| address_global | `D_ai_00408E44` | function `aiGetEligibleListRank`, function `aiGetLinkedRecordTailAddress`, function `aiInsertRecordBetweenNeighbors`, function `aiSelectFirstUnmarkedPreviousRecord`, function `aiUnlinkRecord`, global `D_ai_00408E44` | [199](../src/modules/ai.c#L199), [671](../src/modules/ai.c#L671), [690](../src/modules/ai.c#L690), [726](../src/modules/ai.c#L726), [767](../src/modules/ai.c#L767), [810](../src/modules/ai.c#L810) |
+| address_global | `D_ai_00408E48` | function `aiAllocateLinkedRecord`, function `aiCountPreviousLinks`, global `D_ai_00408E48` | [137](../src/modules/ai.c#L137), [638](../src/modules/ai.c#L638), [639](../src/modules/ai.c#L639), [640](../src/modules/ai.c#L640), [827](../src/modules/ai.c#L827), [830](../src/modules/ai.c#L830), [834](../src/modules/ai.c#L834) |
+| address_global | `D_ai_00408E4C` | function `aiFindActiveRecordByKey`, function `aiGetActiveRecordValue9C`, global `D_ai_00408E4C` | [138](../src/modules/ai.c#L138), [711](../src/modules/ai.c#L711), [852](../src/modules/ai.c#L852) |
+| address_global | `D_ai_00408E58` | function `aiApplyCarAnimationStateFields`, function `aiUpdateExplosionEffectAndRestoreDelay`, global `D_ai_00408E58`, global `D_ai_00408E58` | [119](../src/modules/ai.c#L119), [368](../src/modules/ai.c#L368), [375](../src/modules/ai.c#L375), [600](../src/modules/ai.c#L600), [613](../src/modules/ai.c#L613), [616](../src/modules/ai.c#L616) |
+| address_global | `D_ai_00408EA0` | function `aiUpdateExplosionEffectAndRestoreDelay`, global `D_ai_00408EA0` | [115](../src/modules/ai.c#L115), [366](../src/modules/ai.c#L366), [372](../src/modules/ai.c#L372) |
 | assembly | `__entrypoint_func_ai_400bbc` | — | [210](../src/modules/ai.c#L210) |
 | assembly | `func_ai_00400000` | — | [202](../src/modules/ai.c#L202) |
 | assembly | `func_ai_0040019C` | — | [204](../src/modules/ai.c#L204) |
@@ -1155,75 +1155,76 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_ai_00400A24` | — | [208](../src/modules/ai.c#L208) |
 | assembly | `func_ai_00400F18` | — | [239](../src/modules/ai.c#L239) |
 | assembly | `func_ai_00400FF0` | — | [241](../src/modules/ai.c#L241) |
-| assembly | `func_ai_004017A4` | — | [252](../src/modules/ai.c#L252) |
-| assembly | `func_ai_004019EC` | — | [254](../src/modules/ai.c#L254) |
-| assembly | `func_ai_00401C84` | — | [256](../src/modules/ai.c#L256) |
-| assembly | `func_ai_00401EF0` | — | [258](../src/modules/ai.c#L258) |
-| assembly | `func_ai_00402028` | — | [260](../src/modules/ai.c#L260) |
-| assembly | `func_ai_004021E0` | — | [271](../src/modules/ai.c#L271) |
-| assembly | `func_ai_004022A4` | — | [273](../src/modules/ai.c#L273) |
-| assembly | `func_ai_00402858` | — | [275](../src/modules/ai.c#L275) |
-| assembly | `func_ai_00402974` | — | [277](../src/modules/ai.c#L277) |
-| assembly | `func_ai_00402AE0` | — | [309](../src/modules/ai.c#L309) |
-| assembly | `func_ai_00402C2C` | — | [320](../src/modules/ai.c#L320) |
-| assembly | `func_ai_00402E4C` | — | [336](../src/modules/ai.c#L336) |
-| assembly | `func_ai_00403448` | — | [435](../src/modules/ai.c#L435) |
-| assembly | `func_ai_004037B4` | — | [437](../src/modules/ai.c#L437) |
-| assembly | `func_ai_00403994` | — | [439](../src/modules/ai.c#L439) |
-| assembly | `func_ai_00403C80` | — | [441](../src/modules/ai.c#L441) |
-| assembly | `func_ai_00403F54` | — | [462](../src/modules/ai.c#L462) |
-| assembly | `func_ai_00404064` | — | [464](../src/modules/ai.c#L464) |
-| assembly | `func_ai_00404194` | — | [480](../src/modules/ai.c#L480) |
-| assembly | `func_ai_004042A4` | — | [492](../src/modules/ai.c#L492) |
-| assembly | `func_ai_0040462C` | — | [526](../src/modules/ai.c#L526) |
-| assembly | `func_ai_0040490C` | — | [548](../src/modules/ai.c#L548) |
-| assembly | `func_ai_00404E10` | — | [569](../src/modules/ai.c#L569) |
-| assembly | `func_ai_004051A4` | — | [580](../src/modules/ai.c#L580) |
-| assembly | `func_ai_00405324` | — | [582](../src/modules/ai.c#L582) |
-| assembly | `func_ai_004053A8` | — | [584](../src/modules/ai.c#L584) |
-| assembly | `func_ai_004057C0` | — | [616](../src/modules/ai.c#L616) |
-| assembly | `func_ai_00405B4C` | — | [646](../src/modules/ai.c#L646) |
-| assembly | `func_ai_00405D50` | — | [683](../src/modules/ai.c#L683) |
-| assembly | `func_ai_00405EF4` | — | [705](../src/modules/ai.c#L705) |
-| assembly | `func_ai_0040617C` | — | [741](../src/modules/ai.c#L741) |
-| assembly | `func_ai_00406400` | — | [773](../src/modules/ai.c#L773) |
-| assembly | `func_ai_004068A8` | — | [784](../src/modules/ai.c#L784) |
-| assembly | `func_ai_004069CC` | — | [786](../src/modules/ai.c#L786) |
-| assembly | `func_ai_00406D84` | — | [788](../src/modules/ai.c#L788) |
-| assembly | `func_ai_00407054` | — | [790](../src/modules/ai.c#L790) |
-| assembly | `func_ai_004075B8` | — | [824](../src/modules/ai.c#L824) |
-| decompiler_local | `arg0` | function `aiCopySelectedRecordScalarPair`, function `func_ai_00403F4C`, function `func_ai_00403F4C` | [166](../src/modules/ai.c#L166), [169](../src/modules/ai.c#L169), [457](../src/modules/ai.c#L457) |
+| assembly | `func_ai_004017A4` | — | [266](../src/modules/ai.c#L266) |
+| assembly | `func_ai_004019EC` | — | [268](../src/modules/ai.c#L268) |
+| assembly | `func_ai_00401C84` | — | [270](../src/modules/ai.c#L270) |
+| assembly | `func_ai_00401EF0` | — | [272](../src/modules/ai.c#L272) |
+| assembly | `func_ai_00402028` | — | [274](../src/modules/ai.c#L274) |
+| assembly | `func_ai_004021E0` | — | [285](../src/modules/ai.c#L285) |
+| assembly | `func_ai_004022A4` | — | [287](../src/modules/ai.c#L287) |
+| assembly | `func_ai_00402858` | — | [289](../src/modules/ai.c#L289) |
+| assembly | `func_ai_00402974` | — | [291](../src/modules/ai.c#L291) |
+| assembly | `func_ai_00402AE0` | — | [323](../src/modules/ai.c#L323) |
+| assembly | `func_ai_00402C2C` | — | [334](../src/modules/ai.c#L334) |
+| assembly | `func_ai_00402E4C` | — | [350](../src/modules/ai.c#L350) |
+| assembly | `func_ai_00403448` | — | [449](../src/modules/ai.c#L449) |
+| assembly | `func_ai_004037B4` | — | [451](../src/modules/ai.c#L451) |
+| assembly | `func_ai_00403994` | — | [453](../src/modules/ai.c#L453) |
+| assembly | `func_ai_00403C80` | — | [455](../src/modules/ai.c#L455) |
+| assembly | `func_ai_00403F54` | — | [476](../src/modules/ai.c#L476) |
+| assembly | `func_ai_00404064` | — | [478](../src/modules/ai.c#L478) |
+| assembly | `func_ai_00404194` | — | [494](../src/modules/ai.c#L494) |
+| assembly | `func_ai_004042A4` | — | [506](../src/modules/ai.c#L506) |
+| assembly | `func_ai_0040462C` | — | [540](../src/modules/ai.c#L540) |
+| assembly | `func_ai_0040490C` | — | [562](../src/modules/ai.c#L562) |
+| assembly | `func_ai_00404E10` | — | [583](../src/modules/ai.c#L583) |
+| assembly | `func_ai_004051A4` | — | [594](../src/modules/ai.c#L594) |
+| assembly | `func_ai_00405324` | — | [596](../src/modules/ai.c#L596) |
+| assembly | `func_ai_004053A8` | — | [598](../src/modules/ai.c#L598) |
+| assembly | `func_ai_004057C0` | — | [630](../src/modules/ai.c#L630) |
+| assembly | `func_ai_00405B4C` | — | [660](../src/modules/ai.c#L660) |
+| assembly | `func_ai_00405D50` | — | [697](../src/modules/ai.c#L697) |
+| assembly | `func_ai_00405EF4` | — | [719](../src/modules/ai.c#L719) |
+| assembly | `func_ai_0040617C` | — | [755](../src/modules/ai.c#L755) |
+| assembly | `func_ai_00406400` | — | [787](../src/modules/ai.c#L787) |
+| assembly | `func_ai_004068A8` | — | [798](../src/modules/ai.c#L798) |
+| assembly | `func_ai_004069CC` | — | [800](../src/modules/ai.c#L800) |
+| assembly | `func_ai_00406D84` | — | [802](../src/modules/ai.c#L802) |
+| assembly | `func_ai_00407054` | — | [804](../src/modules/ai.c#L804) |
+| assembly | `func_ai_004075B8` | — | [838](../src/modules/ai.c#L838) |
+| decompiler_local | `arg0` | function `aiCopySelectedRecordScalarPair`, function `func_ai_00403F4C`, function `func_ai_00403F4C` | [166](../src/modules/ai.c#L166), [169](../src/modules/ai.c#L169), [471](../src/modules/ai.c#L471) |
 | decompiler_local | `arg1` | function `aiCopySelectedRecordScalarPair` | [169](../src/modules/ai.c#L169) |
-| explicit_unknown | `A positive phase creates the piece effect and car-explosion sound, clears * object flag mask 0x01, then starts the original two-unit restore countdown. * Phase -1 advances that ...` | function `aiUpdateExplosionEffectAndRestoreDelay` | [339](../src/modules/ai.c#L339) |
+| explicit_unknown | `A positive phase creates the piece effect and car-explosion sound, clears * object flag mask 0x01, then starts the original two-unit restore countdown. * Phase -1 advances that ...` | function `aiUpdateExplosionEffectAndRestoreDelay` | [353](../src/modules/ai.c#L353) |
 | explicit_unknown | `Access prefix only: original AI loads the pointer at 0x1DC and forwards * the existing vector at 0x100 plus its scalar at 0x104. RE_UNKNOWN: complete * allocation, vector units ...` | type `AiCarAnimationFields` | [4](../src/modules/ai.c#L4) |
-| explicit_unknown | `After elapsed >1, scan active 0x1E8-byte records for the smallest value * strictly below the initial threshold; equal values keep the first match. * Update/start managed sound w...` | assembly `func_ai_004057C0` | [606](../src/modules/ai.c#L606) |
-| explicit_unknown | `CARANIM slot0x38 at0x6334 reads label ID from *(actor+0x1DC)+0x404 and stores its result in output+0xC. RE_UNKNOWN: label-word domain and pointed-record validity/lifetime need o...` | — | [732](../src/modules/ai.c#L732) |
-| explicit_unknown | `Copy AI floats at 0x100/0x104/0x108 to car-animation fields * 0x3B8/0x3BC/0x3C0 through tag 0x11; tag 0xE separately copies float * 0x104 to field 0x3A8 after the original varia...` | function `aiApplyCarAnimationStateFields` | [589](../src/modules/ai.c#L589) |
-| explicit_unknown | `Count predecessor links at offset 0xC; store and return the shared count. * The input node itself is not counted and is dereferenced before any null check. * RE_UNKNOWN: valid n...` | function `aiCountPreviousLinks` | [809](../src/modules/ai.c#L809) |
-| explicit_unknown | `Evaluate the dot callback and compare target separation against the * squared product threshold unless settings force a snap. On success copy * target coordinates and set zero p...` | function `aiSnapPositionToTargetWhenRequired` | [495](../src/modules/ai.c#L495) |
+| explicit_unknown | `After elapsed >1, scan active 0x1E8-byte records for the smallest value * strictly below the initial threshold; equal values keep the first match. * Update/start managed sound w...` | assembly `func_ai_004057C0` | [620](../src/modules/ai.c#L620) |
+| explicit_unknown | `CARANIM slot0x38 at0x6334 reads label ID from *(actor+0x1DC)+0x404 and stores its result in output+0xC. RE_UNKNOWN: label-word domain and pointed-record validity/lifetime need o...` | — | [746](../src/modules/ai.c#L746) |
+| explicit_unknown | `Copy AI floats at 0x100/0x104/0x108 to car-animation fields * 0x3B8/0x3BC/0x3C0 through tag 0x11; tag 0xE separately copies float * 0x104 to field 0x3A8 after the original varia...` | function `aiApplyCarAnimationStateFields` | [603](../src/modules/ai.c#L603) |
+| explicit_unknown | `Count predecessor links at offset 0xC; store and return the shared count. * The input node itself is not counted and is dereferenced before any null check. * RE_UNKNOWN: valid n...` | function `aiCountPreviousLinks` | [823](../src/modules/ai.c#L823) |
+| explicit_unknown | `Evaluate the dot callback and compare target separation against the * squared product threshold unless settings force a snap. On success copy * target coordinates and set zero p...` | function `aiSnapPositionToTargetWhenRequired` | [509](../src/modules/ai.c#L509) |
 | explicit_unknown | `Original cara initializer: slot10=00400B08, slot14=00400C8C. Target10 * dereferences its state; target14 consumes a signed-low16 tagged vararg list. * Table D_caranim_004066C0: ...` | type `AiCarAnimationFieldExports` | [13](../src/modules/ai.c#L13) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_ai_00400E38`, function `func_ai_0040179C`, function `func_ai_004021D8`, function `func_ai_00403F44`, function `func_ai_00403F4C`, function `func_ai_00404904`, function `func_ai_00404DE8` | [213](../src/modules/ai.c#L213), [244](../src/modules/ai.c#L244), [263](../src/modules/ai.c#L263), [444](../src/modules/ai.c#L444), [453](../src/modules/ai.c#L453), [540](../src/modules/ai.c#L540), [551](../src/modules/ai.c#L551) |
-| explicit_unknown | `Return the shared linked-record tail word; retain the existing s32 address ABI. * RE_UNKNOWN: ownership/lifetime guarantees need original callers and list teardown evidence.` | function `aiGetLinkedRecordTailAddress` | [793](../src/modules/ai.c#L793) |
-| explicit_unknown | `Select an original eight-record slot, clear links/scalars, then run helper 05B4C. * RE_UNKNOWN: shared index D_ai_00408E48 also resets/recounts in aiCountPreviousLinks; occupanc...` | function `aiAllocateLinkedRecord` | [619](../src/modules/ai.c#L619) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_ai_00400E38`, function `func_ai_0040179C`, function `func_ai_004021D8`, function `func_ai_00403F44`, function `func_ai_00403F4C`, function `func_ai_00404904`, function `func_ai_00404DE8` | [213](../src/modules/ai.c#L213), [244](../src/modules/ai.c#L244), [277](../src/modules/ai.c#L277), [458](../src/modules/ai.c#L458), [467](../src/modules/ai.c#L467), [554](../src/modules/ai.c#L554), [565](../src/modules/ai.c#L565) |
+| explicit_unknown | `Return the shared linked-record tail word; retain the existing s32 address ABI. * RE_UNKNOWN: ownership/lifetime guarantees need original callers and list teardown evidence.` | function `aiGetLinkedRecordTailAddress` | [807](../src/modules/ai.c#L807) |
+| explicit_unknown | `Select an original eight-record slot, clear links/scalars, then run helper 05B4C. * RE_UNKNOWN: shared index D_ai_00408E48 also resets/recounts in aiCountPreviousLinks; occupanc...` | function `aiAllocateLinkedRecord` | [633](../src/modules/ai.c#L633) |
 | explicit_unknown | `Set X from direction, cross existing Y to rebuild Z/Y, then normalize; zero-length normalization leaves output unchanged. * RE_UNKNOWN: audit callers' nonzero/nonparallel direct...` | function `aiBuildOrthonormalBasisFromX` | [222](../src/modules/ai.c#L222) |
-| explicit_unknown | `Snapshot list head and scalar 0xCC before optional state-1 callbacks; * those callbacks detach the associated pointer, clear object mask 1 and * write CARANIM tag 27 value 0, th...` | assembly `func_ai_00402E4C` | [322](../src/modules/ai.c#L322) |
-| explicit_unknown | `Store the caller word without boolean normalization. Original func_ai_00402028 uses nonzero to bypass both difference bounds and choose adjustment 9 instead of 4.5. RE_UNKNOWN: ...` | function `func_ai_00407718` | [827](../src/modules/ai.c#L827) |
-| explicit_unknown | `Walk backward from the shared list tail while record word eight is * nonzero. Store the first unmarked record and return its one-based position; * a null tail or traversal past ...` | function `aiSelectFirstUnmarkedPreviousRecord` | [745](../src/modules/ai.c#L745) |
-| explicit_unknown | `When a shared record is selected, copy its scalar from the original * 0x1E8-byte record array and set the second output to zero. A selection of * -1 leaves both outputs untouche...` | function `aiCopySelectedRecordScalarPair` | [467](../src/modules/ai.c#L467) |
-| explicit_unknown | `With track data available, snapshot the transform and three vectors, * update camera/distance tests, decrement a positive remaining value and * clear the original per-update fie...` | function `aiSnapshotAndUpdateDecisionState` | [384](../src/modules/ai.c#L384) |
-| explicit_unknown | `aiFindActiveRecordByKey: first active match or -1. RE_ORIGINAL_QUIRK: loop index wraps to u16. * RE_UNKNOWN: full signed count/array extent and termination need original allocat...` | type `AiLookupRecord` | [686](../src/modules/ai.c#L686) |
-| explicit_unknown | `aiGetActiveRecordValue9C: return active field 0x9C or -1; compare low-u16 index with signed count. * RE_UNKNOWN: count-backed array extent and index domains need allocation/coun...` | function `aiGetActiveRecordValue9C` | [834](../src/modules/ai.c#L834) |
-| explicit_unknown | `func_ai_00402C2C queries objects between state vectors 0x70/0x30 after * temporarily clearing object 0x9C flags; the leaf setter only stores byte 4. * Restore flags before mappi...` | assembly `func_ai_00402C2C` | [311](../src/modules/ai.c#L311) |
-| explicit_unknown | `func_ai_004051A4 updates active records through DYN vector 17/18 and matrix 6, * transforms vector 100 into E8, then calls 53A8/5754 before refreshing linked scalars. * Preserve...` | assembly `func_ai_004051A4` | [571](../src/modules/ai.c#L571) |
-| explicit_unknown | `func_ai_00405B4C snapshots source+4, conditionally adjusts record+0x18, * writes the input/source, unlinks, then reinserts by that scalar. Native head * comparison uses <= and i...` | assembly `func_ai_00405B4C` | [637](../src/modules/ai.c#L637) |
-| explicit_unknown | `func_ai_0040617C swaps linked-record positions using scalar 0x18; * exact zero stops sorting, then all records serialize into 16-byte summaries. * Count only values >0; output b...` | assembly `func_ai_0040617C` | [734](../src/modules/ai.c#L734) |
-| explicit_unknown | `func_ai_004068A8 transforms vector 0xE8 into 0x100 through FMTX slots 0x40/0xB0, then * TDATA slot 0x08 refreshes query 0xC8 and slot 0x5C consumes its four-byte signed-halfword...` | assembly `func_ai_004068A8` | [775](../src/modules/ai.c#L775) |
-| layout_padding | `pad0` | type `AiLookupRecord` | [689](../src/modules/ai.c#L689) |
-| layout_padding | `pad6FA4` | function `aiSnapPositionToTargetWhenRequired` | [507](../src/modules/ai.c#L507) |
-| layout_padding | `padA0` | type `AiLookupRecord` | [691](../src/modules/ai.c#L691) |
-| layout_padding | `padB6` | type `AiLookupRecord` | [693](../src/modules/ai.c#L693) |
-| offset_field | `byteC2` | function `aiSnapshotAndUpdateDecisionState`, type `AiDecisionUpdateState` | [58](../src/modules/ai.c#L58), [418](../src/modules/ai.c#L418) |
-| offset_field | `byteC3` | function `aiSnapshotAndUpdateDecisionState`, function `aiUpdateExplosionEffectAndRestoreDelay`, type `AiDecisionUpdateState`, type `AiEffectDelayState` | [59](../src/modules/ai.c#L59), [92](../src/modules/ai.c#L92), [365](../src/modules/ai.c#L365), [408](../src/modules/ai.c#L408) |
+| explicit_unknown | `Snapshot list head and scalar 0xCC before optional state-1 callbacks; * those callbacks detach the associated pointer, clear object mask 1 and * write CARANIM tag 27 value 0, th...` | assembly `func_ai_00402E4C` | [336](../src/modules/ai.c#L336) |
+| explicit_unknown | `Snapshot vector 13C before optional object-matrix update, normalize its * displacement from current position, and map the cross/dot response 150. * Each result is stored before ...` | assembly `func_ai_004017A4` | [252](../src/modules/ai.c#L252) |
+| explicit_unknown | `Store the caller word without boolean normalization. Original func_ai_00402028 uses nonzero to bypass both difference bounds and choose adjustment 9 instead of 4.5. RE_UNKNOWN: ...` | function `func_ai_00407718` | [841](../src/modules/ai.c#L841) |
+| explicit_unknown | `Walk backward from the shared list tail while record word eight is * nonzero. Store the first unmarked record and return its one-based position; * a null tail or traversal past ...` | function `aiSelectFirstUnmarkedPreviousRecord` | [759](../src/modules/ai.c#L759) |
+| explicit_unknown | `When a shared record is selected, copy its scalar from the original * 0x1E8-byte record array and set the second output to zero. A selection of * -1 leaves both outputs untouche...` | function `aiCopySelectedRecordScalarPair` | [481](../src/modules/ai.c#L481) |
+| explicit_unknown | `With track data available, snapshot the transform and three vectors, * update camera/distance tests, decrement a positive remaining value and * clear the original per-update fie...` | function `aiSnapshotAndUpdateDecisionState` | [398](../src/modules/ai.c#L398) |
+| explicit_unknown | `aiFindActiveRecordByKey: first active match or -1. RE_ORIGINAL_QUIRK: loop index wraps to u16. * RE_UNKNOWN: full signed count/array extent and termination need original allocat...` | type `AiLookupRecord` | [700](../src/modules/ai.c#L700) |
+| explicit_unknown | `aiGetActiveRecordValue9C: return active field 0x9C or -1; compare low-u16 index with signed count. * RE_UNKNOWN: count-backed array extent and index domains need allocation/coun...` | function `aiGetActiveRecordValue9C` | [848](../src/modules/ai.c#L848) |
+| explicit_unknown | `func_ai_00402C2C queries objects between state vectors 0x70/0x30 after * temporarily clearing object 0x9C flags; the leaf setter only stores byte 4. * Restore flags before mappi...` | assembly `func_ai_00402C2C` | [325](../src/modules/ai.c#L325) |
+| explicit_unknown | `func_ai_004051A4 updates active records through DYN vector 17/18 and matrix 6, * transforms vector 100 into E8, then calls 53A8/5754 before refreshing linked scalars. * Preserve...` | assembly `func_ai_004051A4` | [585](../src/modules/ai.c#L585) |
+| explicit_unknown | `func_ai_00405B4C snapshots source+4, conditionally adjusts record+0x18, * writes the input/source, unlinks, then reinserts by that scalar. Native head * comparison uses <= and i...` | assembly `func_ai_00405B4C` | [651](../src/modules/ai.c#L651) |
+| explicit_unknown | `func_ai_0040617C swaps linked-record positions using scalar 0x18; * exact zero stops sorting, then all records serialize into 16-byte summaries. * Count only values >0; output b...` | assembly `func_ai_0040617C` | [748](../src/modules/ai.c#L748) |
+| explicit_unknown | `func_ai_004068A8 transforms vector 0xE8 into 0x100 through FMTX slots 0x40/0xB0, then * TDATA slot 0x08 refreshes query 0xC8 and slot 0x5C consumes its four-byte signed-halfword...` | assembly `func_ai_004068A8` | [789](../src/modules/ai.c#L789) |
+| layout_padding | `pad0` | type `AiLookupRecord` | [703](../src/modules/ai.c#L703) |
+| layout_padding | `pad6FA4` | function `aiSnapPositionToTargetWhenRequired` | [521](../src/modules/ai.c#L521) |
+| layout_padding | `padA0` | type `AiLookupRecord` | [705](../src/modules/ai.c#L705) |
+| layout_padding | `padB6` | type `AiLookupRecord` | [707](../src/modules/ai.c#L707) |
+| offset_field | `byteC2` | function `aiSnapshotAndUpdateDecisionState`, type `AiDecisionUpdateState` | [58](../src/modules/ai.c#L58), [432](../src/modules/ai.c#L432) |
+| offset_field | `byteC3` | function `aiSnapshotAndUpdateDecisionState`, function `aiUpdateExplosionEffectAndRestoreDelay`, type `AiDecisionUpdateState`, type `AiEffectDelayState` | [59](../src/modules/ai.c#L59), [92](../src/modules/ai.c#L92), [379](../src/modules/ai.c#L379), [422](../src/modules/ai.c#L422) |
 | offset_field | `opaque00` | type `AiCarAnimationFieldExports`, type `AiCarAnimationFields`, type `AiEffectCallExports`, type `AiEffectDelayState`, type `AiPieceCallExports`, type `AiTargetSnapLink`, type `AiTargetSnapState`, type `AiTargetSnapTarget` | [8](../src/modules/ai.c#L8), [19](../src/modules/ai.c#L19), [26](../src/modules/ai.c#L26), [34](../src/modules/ai.c#L34), [39](../src/modules/ai.c#L39), [84](../src/modules/ai.c#L84), [103](../src/modules/ai.c#L103), [107](../src/modules/ai.c#L107) |
 | offset_field | `opaque10C` | type `AiCarAnimationFields` | [10](../src/modules/ai.c#L10) |
 | offset_field | `opaque13C` | type `AiDecisionUpdateState` | [72](../src/modules/ai.c#L72) |
@@ -1242,26 +1243,27 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk00` | type `AiDistanceLink`, type `AiDistanceState`, type `AiDistanceTarget`, type `AiIndexedRecord`, type `AiLinkedRecord`, type `AiRankActor`, type `AiRankNode` | [121](../src/modules/ai.c#L121), [122](../src/modules/ai.c#L122), [123](../src/modules/ai.c#L123), [124](../src/modules/ai.c#L124), [126](../src/modules/ai.c#L126), [127](../src/modules/ai.c#L127), [129](../src/modules/ai.c#L129) |
 | offset_field | `unk10` | type `AiRankNode` | [129](../src/modules/ai.c#L129) |
 | offset_field | `unk3C` | type `AiDistanceState` | [121](../src/modules/ai.c#L121) |
-| offset_field | `unk6F74` | function `aiSnapPositionToTargetWhenRequired` | [508](../src/modules/ai.c#L508) |
+| offset_field | `unk6F74` | function `aiSnapPositionToTargetWhenRequired` | [522](../src/modules/ai.c#L522) |
 | offset_field | `unkA0` | type `AiIndexedRecord` | [126](../src/modules/ai.c#L126) |
 | offset_field | `unkB6` | type `AiIndexedRecord` | [126](../src/modules/ai.c#L126) |
-| offset_field | `value18` | function `aiAllocateLinkedRecord`, type `AiLinkedRecord` | [124](../src/modules/ai.c#L124), [631](../src/modules/ai.c#L631) |
-| offset_field | `value84` | function `aiSnapshotAndUpdateDecisionState`, type `AiDecisionUpdateState` | [50](../src/modules/ai.c#L50), [419](../src/modules/ai.c#L419) |
-| offset_field | `valueBA` | function `aiSnapshotAndUpdateDecisionState`, type `AiDecisionUpdateState` | [54](../src/modules/ai.c#L54), [423](../src/modules/ai.c#L423) |
-| offset_field | `valueBC` | function `aiSnapshotAndUpdateDecisionState`, function `aiUpdateExplosionEffectAndRestoreDelay`, type `AiDecisionUpdateState`, type `AiEffectDelayState` | [55](../src/modules/ai.c#L55), [89](../src/modules/ai.c#L89), [377](../src/modules/ai.c#L377), [422](../src/modules/ai.c#L422) |
-| offset_field | `valueCC` | function `aiSnapshotAndUpdateDecisionState`, type `AiDecisionUpdateState` | [61](../src/modules/ai.c#L61), [412](../src/modules/ai.c#L412), [413](../src/modules/ai.c#L413) |
-| offset_field | `valueE0` | function `aiUpdateExplosionEffectAndRestoreDelay`, type `AiEffectDelayState` | [95](../src/modules/ai.c#L95), [369](../src/modules/ai.c#L369) |
-| offset_field | `valueE4` | function `aiUpdateExplosionEffectAndRestoreDelay`, type `AiEffectDelayState` | [96](../src/modules/ai.c#L96), [368](../src/modules/ai.c#L368) |
-| offset_field | `vector100` | function `aiApplyCarAnimationStateFields`, function `aiSnapshotAndUpdateDecisionState`, type `AiCarAnimationFields`, type `AiDecisionUpdateState` | [9](../src/modules/ai.c#L9), [67](../src/modules/ai.c#L67), [400](../src/modules/ai.c#L400), [600](../src/modules/ai.c#L600), [601](../src/modules/ai.c#L601) |
-| offset_field | `vector118` | function `aiSnapshotAndUpdateDecisionState`, type `AiDecisionUpdateState` | [69](../src/modules/ai.c#L69), [401](../src/modules/ai.c#L401) |
-| offset_field | `vectorE8` | function `aiSnapshotAndUpdateDecisionState`, type `AiDecisionUpdateState` | [65](../src/modules/ai.c#L65), [399](../src/modules/ai.c#L399) |
-| offset_field | `word08` | function `aiAllocateLinkedRecord`, type `AiLinkedRecord` | [124](../src/modules/ai.c#L124), [629](../src/modules/ai.c#L629) |
+| offset_field | `value18` | function `aiAllocateLinkedRecord`, type `AiLinkedRecord` | [124](../src/modules/ai.c#L124), [645](../src/modules/ai.c#L645) |
+| offset_field | `value84` | function `aiSnapshotAndUpdateDecisionState`, type `AiDecisionUpdateState` | [50](../src/modules/ai.c#L50), [433](../src/modules/ai.c#L433) |
+| offset_field | `valueBA` | function `aiSnapshotAndUpdateDecisionState`, type `AiDecisionUpdateState` | [54](../src/modules/ai.c#L54), [437](../src/modules/ai.c#L437) |
+| offset_field | `valueBC` | function `aiSnapshotAndUpdateDecisionState`, function `aiUpdateExplosionEffectAndRestoreDelay`, type `AiDecisionUpdateState`, type `AiEffectDelayState` | [55](../src/modules/ai.c#L55), [89](../src/modules/ai.c#L89), [391](../src/modules/ai.c#L391), [436](../src/modules/ai.c#L436) |
+| offset_field | `valueCC` | function `aiSnapshotAndUpdateDecisionState`, type `AiDecisionUpdateState` | [61](../src/modules/ai.c#L61), [426](../src/modules/ai.c#L426), [427](../src/modules/ai.c#L427) |
+| offset_field | `valueE0` | function `aiUpdateExplosionEffectAndRestoreDelay`, type `AiEffectDelayState` | [95](../src/modules/ai.c#L95), [383](../src/modules/ai.c#L383) |
+| offset_field | `valueE4` | function `aiUpdateExplosionEffectAndRestoreDelay`, type `AiEffectDelayState` | [96](../src/modules/ai.c#L96), [382](../src/modules/ai.c#L382) |
+| offset_field | `vector100` | function `aiApplyCarAnimationStateFields`, function `aiSnapshotAndUpdateDecisionState`, type `AiCarAnimationFields`, type `AiDecisionUpdateState` | [9](../src/modules/ai.c#L9), [67](../src/modules/ai.c#L67), [414](../src/modules/ai.c#L414), [614](../src/modules/ai.c#L614), [615](../src/modules/ai.c#L615) |
+| offset_field | `vector118` | function `aiSnapshotAndUpdateDecisionState`, type `AiDecisionUpdateState` | [69](../src/modules/ai.c#L69), [415](../src/modules/ai.c#L415) |
+| offset_field | `vectorE8` | function `aiSnapshotAndUpdateDecisionState`, type `AiDecisionUpdateState` | [65](../src/modules/ai.c#L65), [413](../src/modules/ai.c#L413) |
+| offset_field | `word08` | function `aiAllocateLinkedRecord`, type `AiLinkedRecord` | [124](../src/modules/ai.c#L124), [643](../src/modules/ai.c#L643) |
 | opaque_type | `UnkStruct_004005C8` | global `D_ai_00408EA0` | [115](../src/modules/ai.c#L115) |
-| opaque_type | `UnkStruct_uvemitter_rom_004008CC` | function `aiUpdateExplosionEffectAndRestoreDelay` | [360](../src/modules/ai.c#L360) |
-| original_quirk | `After elapsed >1, scan active 0x1E8-byte records for the smallest value * strictly below the initial threshold; equal values keep the first match. * Update/start managed sound w...` | assembly `func_ai_004057C0` | [606](../src/modules/ai.c#L606) |
-| original_quirk | `aiFindActiveRecordByKey: first active match or -1. RE_ORIGINAL_QUIRK: loop index wraps to u16. * RE_UNKNOWN: full signed count/array extent and termination need original allocat...` | type `AiLookupRecord` | [686](../src/modules/ai.c#L686) |
-| uncertainty_note | `Set record byte 0xC2 to one and clear floating fields 0x84 and 0xB0 * in their observed order. Their physical meanings remain unresolved.` | function `aiSetFlagAndClearScalarPair` | [483](../src/modules/ai.c#L483) |
-| unused_identifier | `unused` | function `aiClearRecordShortWhenEnabled` | [562](../src/modules/ai.c#L562) |
+| opaque_type | `UnkStruct_uvemitter_rom_004008CC` | function `aiUpdateExplosionEffectAndRestoreDelay` | [374](../src/modules/ai.c#L374) |
+| original_quirk | `After elapsed >1, scan active 0x1E8-byte records for the smallest value * strictly below the initial threshold; equal values keep the first match. * Update/start managed sound w...` | assembly `func_ai_004057C0` | [620](../src/modules/ai.c#L620) |
+| original_quirk | `Snapshot vector 13C before optional object-matrix update, normalize its * displacement from current position, and map the cross/dot response 150. * Each result is stored before ...` | assembly `func_ai_004017A4` | [252](../src/modules/ai.c#L252) |
+| original_quirk | `aiFindActiveRecordByKey: first active match or -1. RE_ORIGINAL_QUIRK: loop index wraps to u16. * RE_UNKNOWN: full signed count/array extent and termination need original allocat...` | type `AiLookupRecord` | [700](../src/modules/ai.c#L700) |
+| uncertainty_note | `Set record byte 0xC2 to one and clear floating fields 0x84 and 0xB0 * in their observed order. Their physical meanings remain unresolved.` | function `aiSetFlagAndClearScalarPair` | [497](../src/modules/ai.c#L497) |
+| unused_identifier | `unused` | function `aiClearRecordShortWhenEnabled` | [576](../src/modules/ai.c#L576) |
 
 ## src/modules/aiedit.c
 
@@ -2723,12 +2725,12 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_motion_004057E4` | function `func_motion_004057E4` | [108](../src/modules/motion.c#L108) |
 | address_function | `func_motion_00405B44` | function `func_motion_00405B44` | [109](../src/modules/motion.c#L109) |
 | address_function | `func_motion_00405D7C` | function `func_motion_00405D7C` | [110](../src/modules/motion.c#L110) |
-| address_function | `func_motion_00405E5C` | function `func_motion_00405E5C` | [446](../src/modules/motion.c#L446) |
+| address_function | `func_motion_00405E5C` | function `func_motion_00405E5C` | [460](../src/modules/motion.c#L460) |
 | address_function | `func_motion_00405EBC` | function `func_motion_00405EBC` | [112](../src/modules/motion.c#L112) |
 | address_function | `func_motion_004061FC` | function `func_motion_004061FC` | [113](../src/modules/motion.c#L113) |
 | address_function | `func_motion_00406478` | function `func_motion_00406478` | [114](../src/modules/motion.c#L114) |
-| address_function | `func_motion_004066E4` | function `func_motion_004066E4`, function `motionUpdateSharedState` | [115](../src/modules/motion.c#L115), [464](../src/modules/motion.c#L464) |
-| address_function | `func_motion_00406A58` | function `func_motion_00406A58`, function `motionUpdateSharedState` | [116](../src/modules/motion.c#L116), [459](../src/modules/motion.c#L459) |
+| address_function | `func_motion_004066E4` | function `func_motion_004066E4`, function `motionUpdateSharedState` | [115](../src/modules/motion.c#L115), [478](../src/modules/motion.c#L478) |
+| address_function | `func_motion_00406A58` | function `func_motion_00406A58`, function `motionUpdateSharedState` | [116](../src/modules/motion.c#L116), [473](../src/modules/motion.c#L473) |
 | address_function | `func_motion_00406C30` | function `func_motion_00406C30` | [117](../src/modules/motion.c#L117) |
 | address_function | `func_motion_004077A8` | function `func_motion_004077A8` | [118](../src/modules/motion.c#L118) |
 | address_function | `func_motion_00407B44` | function `func_motion_00407B44` | [119](../src/modules/motion.c#L119) |
@@ -2755,51 +2757,51 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_motion_0040F694` | function `func_motion_0040F694` | [147](../src/modules/motion.c#L147) |
 | address_function | `func_motion_0040FE84` | function `func_motion_0040FE84` | [148](../src/modules/motion.c#L148) |
 | address_function | `func_motion_00411BB4` | function `func_motion_00411BB4` | [149](../src/modules/motion.c#L149) |
-| address_function | `func_motion_00411C64` | function `func_motion_00411C64`, function `func_motion_00411C64`, function `motionForwardStateMatrix` | [150](../src/modules/motion.c#L150), [170](../src/modules/motion.c#L170), [678](../src/modules/motion.c#L678) |
+| address_function | `func_motion_00411C64` | function `func_motion_00411C64`, function `func_motion_00411C64`, function `motionForwardStateMatrix` | [150](../src/modules/motion.c#L150), [170](../src/modules/motion.c#L170), [692](../src/modules/motion.c#L692) |
 | address_function | `func_motion_00412770` | function `func_motion_00412770` | [151](../src/modules/motion.c#L151) |
 | address_function | `func_motion_00412B14` | function `func_motion_00412B14` | [152](../src/modules/motion.c#L152) |
 | address_function | `func_motion_00412CF0` | function `func_motion_00412CF0` | [153](../src/modules/motion.c#L153) |
 | address_function | `func_motion_00412E44` | function `func_motion_00412E44` | [154](../src/modules/motion.c#L154) |
 | address_function | `func_motion_00412F38` | function `func_motion_00412F38` | [155](../src/modules/motion.c#L155) |
-| address_function | `func_motion_004130E4` | function `func_motion_004130E4`, function `motionRunBattleAndHotLavaUpdate` | [156](../src/modules/motion.c#L156), [526](../src/modules/motion.c#L526) |
+| address_function | `func_motion_004130E4` | function `func_motion_004130E4`, function `motionRunBattleAndHotLavaUpdate` | [156](../src/modules/motion.c#L156), [540](../src/modules/motion.c#L540) |
 | address_function | `func_motion_00413284` | function `func_motion_00413284` | [157](../src/modules/motion.c#L157) |
 | address_function | `func_motion_00413568` | function `func_motion_00413568` | [158](../src/modules/motion.c#L158) |
 | address_function | `func_motion_00414430` | function `func_motion_00414430` | [159](../src/modules/motion.c#L159) |
-| address_function | `func_motion_0041475C` | function `func_motion_0041475C` | [732](../src/modules/motion.c#L732) |
-| address_function | `func_motion_00414764` | function `func_motion_00414764` | [741](../src/modules/motion.c#L741) |
-| address_function | `func_motion_0041476C` | function `func_motion_0041476C` | [750](../src/modules/motion.c#L750) |
+| address_function | `func_motion_0041475C` | function `func_motion_0041475C` | [746](../src/modules/motion.c#L746) |
+| address_function | `func_motion_00414764` | function `func_motion_00414764` | [755](../src/modules/motion.c#L755) |
+| address_function | `func_motion_0041476C` | function `func_motion_0041476C` | [764](../src/modules/motion.c#L764) |
 | address_function | `func_motion_00414774` | function `func_motion_00414774` | [160](../src/modules/motion.c#L160) |
-| address_function | `func_motion_00414A68` | function `func_motion_00414A68` | [770](../src/modules/motion.c#L770) |
+| address_function | `func_motion_00414A68` | function `func_motion_00414A68` | [784](../src/modules/motion.c#L784) |
 | address_function | `func_motion_00414A70` | function `func_motion_00414A70` | [161](../src/modules/motion.c#L161) |
 | address_function | `func_motion_00414BB0` | function `func_motion_00414BB0` | [162](../src/modules/motion.c#L162) |
 | address_function | `func_motion_004151CC` | function `func_motion_004151CC` | [163](../src/modules/motion.c#L163) |
 | address_function | `func_motion_004154B8` | function `func_motion_004154B8` | [164](../src/modules/motion.c#L164) |
 | address_function | `func_motion_00415724` | function `func_motion_00415724` | [165](../src/modules/motion.c#L165) |
-| address_function | `func_motion_00415870` | function `func_motion_00415870` | [800](../src/modules/motion.c#L800) |
+| address_function | `func_motion_00415870` | function `func_motion_00415870` | [814](../src/modules/motion.c#L814) |
 | address_function | `func_motion_00415A3C` | function `func_motion_00415A3C` | [169](../src/modules/motion.c#L169) |
-| address_global | `D_80025D70` | function `motionApplyGatedModeResponse`, global `D_80025D70` | [37](../src/modules/motion.c#L37), [653](../src/modules/motion.c#L653) |
-| address_global | `D_motion_00415DE4` | function `motionComputePlanarRecordAngleResponse` | [18](../src/modules/motion.c#L18), [380](../src/modules/motion.c#L380) |
-| address_global | `D_motion_00415DE8` | function `motionComputePlanarRecordAngleResponse` | [18](../src/modules/motion.c#L18), [386](../src/modules/motion.c#L386) |
-| address_global | `D_motion_00415DEC` | function `motionComputePlanarRecordAngleResponse` | [18](../src/modules/motion.c#L18), [387](../src/modules/motion.c#L387) |
-| address_global | `D_motion_00415DF0` | function `motionComputePlanarRecordAngleResponse` | [19](../src/modules/motion.c#L19), [389](../src/modules/motion.c#L389) |
-| address_global | `D_motion_00415DF4` | function `motionComputePlanarRecordAngleResponse` | [19](../src/modules/motion.c#L19), [389](../src/modules/motion.c#L389) |
-| address_global | `D_motion_00415F84` | function `motionAccumulateTransformedConfiguredVector` | [33](../src/modules/motion.c#L33), [601](../src/modules/motion.c#L601) |
-| address_global | `D_motion_00415F88` | function `motionAccumulateTransformedConfiguredVector` | [33](../src/modules/motion.c#L33), [603](../src/modules/motion.c#L603) |
-| address_global | `D_motion_00415F8C` | function `motionApplyGatedModeResponse`, global `D_motion_00415F8C` | [36](../src/modules/motion.c#L36), [645](../src/modules/motion.c#L645) |
-| address_global | `D_motion_0041607C` | function `motionTryPlayExplosionVoice`, global `D_motion_0041607C` | [828](../src/modules/motion.c#L828), [839](../src/modules/motion.c#L839) |
-| address_global | `D_motion_00416080` | function `motionApplyConditionalCorrection` | [67](../src/modules/motion.c#L67), [579](../src/modules/motion.c#L579) |
-| address_global | `D_motion_00416084` | function `motionApplyConditionalCorrection` | [67](../src/modules/motion.c#L67), [577](../src/modules/motion.c#L577), [578](../src/modules/motion.c#L578), [579](../src/modules/motion.c#L579) |
-| address_global | `D_motion_00416088` | function `motionApplyConditionalCorrection` | [67](../src/modules/motion.c#L67), [576](../src/modules/motion.c#L576) |
-| address_global | `D_motion_00416090` | function `motionApplyConditionalCorrection` | [67](../src/modules/motion.c#L67), [576](../src/modules/motion.c#L576) |
-| address_global | `D_motion_004160A0` | function `motionTryPlayHotLavaVoice`, global `D_motion_004160A0` | [808](../src/modules/motion.c#L808), [817](../src/modules/motion.c#L817), [819](../src/modules/motion.c#L819) |
-| address_global | `D_motion_004160A4` | function `motionTryPlayExplosionVoice`, global `D_motion_004160A4` | [829](../src/modules/motion.c#L829), [838](../src/modules/motion.c#L838), [840](../src/modules/motion.c#L840) |
-| address_global | `D_motion_004163A8` | function `motionEvaluateSelectedGraph`, global `D_motion_004163A8` | [77](../src/modules/motion.c#L77), [790](../src/modules/motion.c#L790) |
-| address_global | `D_motion_0041644C` | function `motionEvaluateSelectedGraph`, global `D_motion_0041644C` | [78](../src/modules/motion.c#L78), [792](../src/modules/motion.c#L792) |
+| address_global | `D_80025D70` | function `motionApplyGatedModeResponse`, global `D_80025D70` | [37](../src/modules/motion.c#L37), [667](../src/modules/motion.c#L667) |
+| address_global | `D_motion_00415DE4` | function `motionComputePlanarRecordAngleResponse` | [18](../src/modules/motion.c#L18), [394](../src/modules/motion.c#L394) |
+| address_global | `D_motion_00415DE8` | function `motionComputePlanarRecordAngleResponse` | [18](../src/modules/motion.c#L18), [400](../src/modules/motion.c#L400) |
+| address_global | `D_motion_00415DEC` | function `motionComputePlanarRecordAngleResponse` | [18](../src/modules/motion.c#L18), [401](../src/modules/motion.c#L401) |
+| address_global | `D_motion_00415DF0` | function `motionComputePlanarRecordAngleResponse` | [19](../src/modules/motion.c#L19), [403](../src/modules/motion.c#L403) |
+| address_global | `D_motion_00415DF4` | function `motionComputePlanarRecordAngleResponse` | [19](../src/modules/motion.c#L19), [403](../src/modules/motion.c#L403) |
+| address_global | `D_motion_00415F84` | function `motionAccumulateTransformedConfiguredVector` | [33](../src/modules/motion.c#L33), [615](../src/modules/motion.c#L615) |
+| address_global | `D_motion_00415F88` | function `motionAccumulateTransformedConfiguredVector` | [33](../src/modules/motion.c#L33), [617](../src/modules/motion.c#L617) |
+| address_global | `D_motion_00415F8C` | function `motionApplyGatedModeResponse`, global `D_motion_00415F8C` | [36](../src/modules/motion.c#L36), [659](../src/modules/motion.c#L659) |
+| address_global | `D_motion_0041607C` | function `motionTryPlayExplosionVoice`, global `D_motion_0041607C` | [842](../src/modules/motion.c#L842), [853](../src/modules/motion.c#L853) |
+| address_global | `D_motion_00416080` | function `motionApplyConditionalCorrection` | [67](../src/modules/motion.c#L67), [593](../src/modules/motion.c#L593) |
+| address_global | `D_motion_00416084` | function `motionApplyConditionalCorrection` | [67](../src/modules/motion.c#L67), [591](../src/modules/motion.c#L591), [592](../src/modules/motion.c#L592), [593](../src/modules/motion.c#L593) |
+| address_global | `D_motion_00416088` | function `motionApplyConditionalCorrection` | [67](../src/modules/motion.c#L67), [590](../src/modules/motion.c#L590) |
+| address_global | `D_motion_00416090` | function `motionApplyConditionalCorrection` | [67](../src/modules/motion.c#L67), [590](../src/modules/motion.c#L590) |
+| address_global | `D_motion_004160A0` | function `motionTryPlayHotLavaVoice`, global `D_motion_004160A0` | [822](../src/modules/motion.c#L822), [831](../src/modules/motion.c#L831), [833](../src/modules/motion.c#L833) |
+| address_global | `D_motion_004160A4` | function `motionTryPlayExplosionVoice`, global `D_motion_004160A4` | [843](../src/modules/motion.c#L843), [852](../src/modules/motion.c#L852), [854](../src/modules/motion.c#L854) |
+| address_global | `D_motion_004163A8` | function `motionEvaluateSelectedGraph`, global `D_motion_004163A8` | [77](../src/modules/motion.c#L77), [804](../src/modules/motion.c#L804) |
+| address_global | `D_motion_0041644C` | function `motionEvaluateSelectedGraph`, global `D_motion_0041644C` | [78](../src/modules/motion.c#L78), [806](../src/modules/motion.c#L806) |
 | address_global | `D_motion_00416A88` | function `motionClearValueForFlaggedLookup`, global `D_motion_00416A88` | [50](../src/modules/motion.c#L50), [290](../src/modules/motion.c#L290), [297](../src/modules/motion.c#L297) |
-| address_global | `D_motion_00416AB8` | function `motionUpdateSharedState`, global `D_motion_00416AB8` | [82](../src/modules/motion.c#L82), [461](../src/modules/motion.c#L461) |
-| address_global | `D_motion_00416AF0` | function `motionTryPlayHotLavaVoice`, function `motionUnloadModulesAndStopEmitters`, global `D_motion_00416AF0` | [178](../src/modules/motion.c#L178), [183](../src/modules/motion.c#L183), [818](../src/modules/motion.c#L818) |
-| address_global | `D_motion_00416AF1` | function `motionTryPlayExplosionVoice`, function `motionUnloadModulesAndStopEmitters`, global `D_motion_00416AF1` | [179](../src/modules/motion.c#L179), [184](../src/modules/motion.c#L184), [839](../src/modules/motion.c#L839) |
-| address_global | `D_motion_00416B10` | function `motionUpdateSharedState`, global `D_motion_00416B10` | [81](../src/modules/motion.c#L81), [455](../src/modules/motion.c#L455), [458](../src/modules/motion.c#L458), [459](../src/modules/motion.c#L459), [464](../src/modules/motion.c#L464) |
+| address_global | `D_motion_00416AB8` | function `motionUpdateSharedState`, global `D_motion_00416AB8` | [82](../src/modules/motion.c#L82), [475](../src/modules/motion.c#L475) |
+| address_global | `D_motion_00416AF0` | function `motionTryPlayHotLavaVoice`, function `motionUnloadModulesAndStopEmitters`, global `D_motion_00416AF0` | [178](../src/modules/motion.c#L178), [183](../src/modules/motion.c#L183), [832](../src/modules/motion.c#L832) |
+| address_global | `D_motion_00416AF1` | function `motionTryPlayExplosionVoice`, function `motionUnloadModulesAndStopEmitters`, global `D_motion_00416AF1` | [179](../src/modules/motion.c#L179), [184](../src/modules/motion.c#L184), [853](../src/modules/motion.c#L853) |
+| address_global | `D_motion_00416B10` | function `motionUpdateSharedState`, global `D_motion_00416B10` | [81](../src/modules/motion.c#L81), [469](../src/modules/motion.c#L469), [472](../src/modules/motion.c#L472), [473](../src/modules/motion.c#L473), [478](../src/modules/motion.c#L478) |
 | assembly | `__entrypoint_func_motion_400000` | — | [171](../src/modules/motion.c#L171) |
 | assembly | `func_motion_004002EC` | — | [188](../src/modules/motion.c#L188) |
 | assembly | `func_motion_00400748` | — | [190](../src/modules/motion.c#L190) |
@@ -2812,81 +2814,82 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_motion_004039BC` | — | [279](../src/modules/motion.c#L279) |
 | assembly | `func_motion_00403C04` | — | [281](../src/modules/motion.c#L281) |
 | assembly | `func_motion_00403E74` | — | [313](../src/modules/motion.c#L313) |
-| assembly | `func_motion_0040424C` | — | [315](../src/modules/motion.c#L315) |
-| assembly | `func_motion_0040441C` | — | [317](../src/modules/motion.c#L317) |
-| assembly | `func_motion_0040456C` | — | [327](../src/modules/motion.c#L327) |
-| assembly | `func_motion_00404868` | — | [337](../src/modules/motion.c#L337) |
-| assembly | `func_motion_00404C24` | — | [346](../src/modules/motion.c#L346) |
-| assembly | `func_motion_004057E4` | — | [435](../src/modules/motion.c#L435) |
-| assembly | `func_motion_00405B44` | — | [437](../src/modules/motion.c#L437) |
-| assembly | `func_motion_00405D7C` | — | [439](../src/modules/motion.c#L439) |
-| assembly | `func_motion_00405EBC` | — | [468](../src/modules/motion.c#L468) |
-| assembly | `func_motion_004061FC` | — | [470](../src/modules/motion.c#L470) |
-| assembly | `func_motion_00406478` | — | [472](../src/modules/motion.c#L472) |
-| assembly | `func_motion_004066E4` | — | [474](../src/modules/motion.c#L474) |
-| assembly | `func_motion_00406A58` | — | [476](../src/modules/motion.c#L476) |
-| assembly | `func_motion_00406C30` | — | [478](../src/modules/motion.c#L478) |
-| assembly | `func_motion_004077A8` | — | [480](../src/modules/motion.c#L480) |
-| assembly | `func_motion_00407B44` | — | [482](../src/modules/motion.c#L482) |
-| assembly | `func_motion_00407C10` | — | [484](../src/modules/motion.c#L484) |
-| assembly | `func_motion_00407FC0` | — | [486](../src/modules/motion.c#L486) |
-| assembly | `func_motion_00408254` | — | [488](../src/modules/motion.c#L488) |
-| assembly | `func_motion_004087DC` | — | [490](../src/modules/motion.c#L490) |
-| assembly | `func_motion_00408940` | — | [492](../src/modules/motion.c#L492) |
-| assembly | `func_motion_00408A84` | — | [494](../src/modules/motion.c#L494) |
-| assembly | `func_motion_00408FD4` | — | [512](../src/modules/motion.c#L512) |
-| assembly | `func_motion_00409734` | — | [514](../src/modules/motion.c#L514) |
-| assembly | `func_motion_004098B8` | — | [516](../src/modules/motion.c#L516) |
-| assembly | `func_motion_00409B3C` | — | [531](../src/modules/motion.c#L531) |
-| assembly | `func_motion_00409C68` | — | [533](../src/modules/motion.c#L533) |
-| assembly | `func_motion_0040A3CC` | — | [535](../src/modules/motion.c#L535) |
-| assembly | `func_motion_0040B4EC` | — | [537](../src/modules/motion.c#L537) |
-| assembly | `func_motion_0040B7B8` | — | [539](../src/modules/motion.c#L539) |
-| assembly | `func_motion_0040BBE0` | — | [541](../src/modules/motion.c#L541) |
-| assembly | `func_motion_0040BFE0` | — | [543](../src/modules/motion.c#L543) |
-| assembly | `func_motion_0040C7DC` | — | [545](../src/modules/motion.c#L545) |
-| assembly | `func_motion_0040C8A0` | — | [547](../src/modules/motion.c#L547) |
-| assembly | `func_motion_0040E7BC` | — | [549](../src/modules/motion.c#L549) |
-| assembly | `func_motion_0040F2EC` | — | [568](../src/modules/motion.c#L568) |
-| assembly | `func_motion_0040F694` | — | [666](../src/modules/motion.c#L666) |
-| assembly | `func_motion_0040FE84` | — | [668](../src/modules/motion.c#L668) |
-| assembly | `func_motion_00411BB4` | — | [670](../src/modules/motion.c#L670) |
-| assembly | `func_motion_00411C64` | — | [672](../src/modules/motion.c#L672) |
-| assembly | `func_motion_00412770` | — | [692](../src/modules/motion.c#L692) |
-| assembly | `func_motion_00412B14` | — | [694](../src/modules/motion.c#L694) |
-| assembly | `func_motion_00412CF0` | — | [696](../src/modules/motion.c#L696) |
-| assembly | `func_motion_00412E44` | — | [698](../src/modules/motion.c#L698) |
-| assembly | `func_motion_00412F38` | — | [700](../src/modules/motion.c#L700) |
-| assembly | `func_motion_004130E4` | — | [702](../src/modules/motion.c#L702) |
-| assembly | `func_motion_00413284` | — | [712](../src/modules/motion.c#L712) |
-| assembly | `func_motion_00413568` | — | [714](../src/modules/motion.c#L714) |
-| assembly | `func_motion_00414430` | — | [725](../src/modules/motion.c#L725) |
-| assembly | `func_motion_00414774` | — | [763](../src/modules/motion.c#L763) |
-| assembly | `func_motion_00414A70` | — | [774](../src/modules/motion.c#L774) |
-| assembly | `func_motion_00414BB0` | — | [776](../src/modules/motion.c#L776) |
-| assembly | `func_motion_004151CC` | — | [778](../src/modules/motion.c#L778) |
-| assembly | `func_motion_004154B8` | — | [780](../src/modules/motion.c#L780) |
-| assembly | `func_motion_00415724` | — | [782](../src/modules/motion.c#L782) |
-| assembly | `func_motion_00415A3C` | — | [846](../src/modules/motion.c#L846) |
+| assembly | `func_motion_0040424C` | — | [329](../src/modules/motion.c#L329) |
+| assembly | `func_motion_0040441C` | — | [331](../src/modules/motion.c#L331) |
+| assembly | `func_motion_0040456C` | — | [341](../src/modules/motion.c#L341) |
+| assembly | `func_motion_00404868` | — | [351](../src/modules/motion.c#L351) |
+| assembly | `func_motion_00404C24` | — | [360](../src/modules/motion.c#L360) |
+| assembly | `func_motion_004057E4` | — | [449](../src/modules/motion.c#L449) |
+| assembly | `func_motion_00405B44` | — | [451](../src/modules/motion.c#L451) |
+| assembly | `func_motion_00405D7C` | — | [453](../src/modules/motion.c#L453) |
+| assembly | `func_motion_00405EBC` | — | [482](../src/modules/motion.c#L482) |
+| assembly | `func_motion_004061FC` | — | [484](../src/modules/motion.c#L484) |
+| assembly | `func_motion_00406478` | — | [486](../src/modules/motion.c#L486) |
+| assembly | `func_motion_004066E4` | — | [488](../src/modules/motion.c#L488) |
+| assembly | `func_motion_00406A58` | — | [490](../src/modules/motion.c#L490) |
+| assembly | `func_motion_00406C30` | — | [492](../src/modules/motion.c#L492) |
+| assembly | `func_motion_004077A8` | — | [494](../src/modules/motion.c#L494) |
+| assembly | `func_motion_00407B44` | — | [496](../src/modules/motion.c#L496) |
+| assembly | `func_motion_00407C10` | — | [498](../src/modules/motion.c#L498) |
+| assembly | `func_motion_00407FC0` | — | [500](../src/modules/motion.c#L500) |
+| assembly | `func_motion_00408254` | — | [502](../src/modules/motion.c#L502) |
+| assembly | `func_motion_004087DC` | — | [504](../src/modules/motion.c#L504) |
+| assembly | `func_motion_00408940` | — | [506](../src/modules/motion.c#L506) |
+| assembly | `func_motion_00408A84` | — | [508](../src/modules/motion.c#L508) |
+| assembly | `func_motion_00408FD4` | — | [526](../src/modules/motion.c#L526) |
+| assembly | `func_motion_00409734` | — | [528](../src/modules/motion.c#L528) |
+| assembly | `func_motion_004098B8` | — | [530](../src/modules/motion.c#L530) |
+| assembly | `func_motion_00409B3C` | — | [545](../src/modules/motion.c#L545) |
+| assembly | `func_motion_00409C68` | — | [547](../src/modules/motion.c#L547) |
+| assembly | `func_motion_0040A3CC` | — | [549](../src/modules/motion.c#L549) |
+| assembly | `func_motion_0040B4EC` | — | [551](../src/modules/motion.c#L551) |
+| assembly | `func_motion_0040B7B8` | — | [553](../src/modules/motion.c#L553) |
+| assembly | `func_motion_0040BBE0` | — | [555](../src/modules/motion.c#L555) |
+| assembly | `func_motion_0040BFE0` | — | [557](../src/modules/motion.c#L557) |
+| assembly | `func_motion_0040C7DC` | — | [559](../src/modules/motion.c#L559) |
+| assembly | `func_motion_0040C8A0` | — | [561](../src/modules/motion.c#L561) |
+| assembly | `func_motion_0040E7BC` | — | [563](../src/modules/motion.c#L563) |
+| assembly | `func_motion_0040F2EC` | — | [582](../src/modules/motion.c#L582) |
+| assembly | `func_motion_0040F694` | — | [680](../src/modules/motion.c#L680) |
+| assembly | `func_motion_0040FE84` | — | [682](../src/modules/motion.c#L682) |
+| assembly | `func_motion_00411BB4` | — | [684](../src/modules/motion.c#L684) |
+| assembly | `func_motion_00411C64` | — | [686](../src/modules/motion.c#L686) |
+| assembly | `func_motion_00412770` | — | [706](../src/modules/motion.c#L706) |
+| assembly | `func_motion_00412B14` | — | [708](../src/modules/motion.c#L708) |
+| assembly | `func_motion_00412CF0` | — | [710](../src/modules/motion.c#L710) |
+| assembly | `func_motion_00412E44` | — | [712](../src/modules/motion.c#L712) |
+| assembly | `func_motion_00412F38` | — | [714](../src/modules/motion.c#L714) |
+| assembly | `func_motion_004130E4` | — | [716](../src/modules/motion.c#L716) |
+| assembly | `func_motion_00413284` | — | [726](../src/modules/motion.c#L726) |
+| assembly | `func_motion_00413568` | — | [728](../src/modules/motion.c#L728) |
+| assembly | `func_motion_00414430` | — | [739](../src/modules/motion.c#L739) |
+| assembly | `func_motion_00414774` | — | [777](../src/modules/motion.c#L777) |
+| assembly | `func_motion_00414A70` | — | [788](../src/modules/motion.c#L788) |
+| assembly | `func_motion_00414BB0` | — | [790](../src/modules/motion.c#L790) |
+| assembly | `func_motion_004151CC` | — | [792](../src/modules/motion.c#L792) |
+| assembly | `func_motion_004154B8` | — | [794](../src/modules/motion.c#L794) |
+| assembly | `func_motion_00415724` | — | [796](../src/modules/motion.c#L796) |
+| assembly | `func_motion_00415A3C` | — | [860](../src/modules/motion.c#L860) |
 | explicit_unknown | `Advance scalar 0x694 toward the graph-derived target; optional debug * assist preserves separate ordered magnitude/sign gates. Native averaging * starts with positive float zero...` | assembly `func_motion_00403E74` | [301](../src/modules/motion.c#L301) |
-| explicit_unknown | `Attempt pending Hot Lava speech on random choice 3 with priority 0x7FFF; playback value is 0x7A120. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: ...` | global `D_motion_004160A0` | [806](../src/modules/motion.c#L806) |
-| explicit_unknown | `Attempt pending explosion speech on random choice 3 with its scale; priority 0x7FFF, playback value 0x1F4. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UN...` | global `D_motion_0041607C` | [826](../src/modules/motion.c#L826) |
+| explicit_unknown | `Attempt pending Hot Lava speech on random choice 3 with priority 0x7FFF; playback value is 0x7A120. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: ...` | global `D_motion_004160A0` | [820](../src/modules/motion.c#L820) |
+| explicit_unknown | `Attempt pending explosion speech on random choice 3 with its scale; priority 0x7FFF, playback value 0x1F4. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UN...` | global `D_motion_0041607C` | [840](../src/modules/motion.c#L840) |
 | explicit_unknown | `Blend raw scalar fields using a snapshotted player-two handicap selector. * Mode 4 leaves the fields unchanged; mode 3 uses the computed limit directly. * The original loads the...` | assembly `func_motion_00400D74` | [192](../src/modules/motion.c#L192) |
-| explicit_unknown | `Bound selected paired scalars, then advance them through the original * sqrt, cosine, sine and MISC 0xDC factor callbacks in that order. Full-word * selectors stride 0x10; recor...` | assembly `func_motion_00412770` | [682](../src/modules/motion.c#L682) |
-| explicit_unknown | `Draw background, graph-derived red/green bars, direct-value blue bar and * a white marker from saved input 0x6D4. Preserve single arithmetic grouping, * truncating signed coordi...` | assembly `func_motion_00414774` | [754](../src/modules/motion.c#L754) |
+| explicit_unknown | `Bound selected paired scalars, then advance them through the original * sqrt, cosine, sine and MISC 0xDC factor callbacks in that order. Full-word * selectors stride 0x10; recor...` | assembly `func_motion_00412770` | [696](../src/modules/motion.c#L696) |
+| explicit_unknown | `Draw background, graph-derived red/green bars, direct-value blue bar and * a white marker from saved input 0x6D4. Preserve single arithmetic grouping, * truncating signed coordi...` | assembly `func_motion_00414774` | [768](../src/modules/motion.c#L768) |
 | explicit_unknown | `Find the primary record for a key and optionally query the AI module. * Clear output halfword 0xA when this state is flagged and either lookup * succeeds, or when the primary re...` | function `motionClearValueForFlaggedLookup` | [284](../src/modules/motion.c#L284) |
-| explicit_unknown | `Forward state, 1, embedded matrix 0x5E8 and 0 to the original helper. * RE_UNKNOWN: helper retention and mode meanings require its body and callers.` | function `motionForwardStateMatrix` | [675](../src/modules/motion.c#L675) |
-| explicit_unknown | `From the planar record's X/Y pair, compute a normalized pair angle, * apply the shared angle scale and fold degrees through the misc exports. * Below the first ordered Y-magnitu...` | function `motionComputePlanarRecordAngleResponse` | [366](../src/modules/motion.c#L366) |
-| explicit_unknown | `Gate scaling of scalar 0x988 by count 0x10E0, mode 0xA3C, vector dots * and signed kinds 0xA40/0xA68. Original UVFV 0x18 is a three-single dot * leaf; preserve repeated calls an...` | assembly `func_motion_00414430` | [716](../src/modules/motion.c#L716) |
-| explicit_unknown | `Original cross/add/transform and dot products update phase 0x8D4 and * component 0x998; 0x988/0x998 overlap vector 0x984.y / vector 0x990.z. * RE_ORIGINAL_QUIRK: caller passes 1...` | assembly `func_motion_00413284` | [704](../src/modules/motion.c#L704) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_motion_00405E5C`, function `func_motion_0041475C`, function `func_motion_00414764`, function `func_motion_0041476C`, function `func_motion_00414A68` | [442](../src/modules/motion.c#L442), [728](../src/modules/motion.c#L728), [737](../src/modules/motion.c#L737), [746](../src/modules/motion.c#L746), [766](../src/modules/motion.c#L766) |
-| explicit_unknown | `Read the unsigned halfword at state offset 0x70C without modifying the caller object. RE_UNKNOWN: the field role requires its writers and consumers; no status or identifier mean...` | function `func_motion_00415870` | [799](../src/modules/motion.c#L799) |
-| explicit_unknown | `Select one of the original 0x1C-byte point records, compute angular * cross offset plus linear velocity, then transform by matrix 0x5E8. * RE_UNKNOWN: index bounds for tables at...` | function `motionTransformSelectedPointVelocity` | [497](../src/modules/motion.c#L497) |
+| explicit_unknown | `Forward state, 1, embedded matrix 0x5E8 and 0 to the original helper. * RE_UNKNOWN: helper retention and mode meanings require its body and callers.` | function `motionForwardStateMatrix` | [689](../src/modules/motion.c#L689) |
+| explicit_unknown | `From the planar record's X/Y pair, compute a normalized pair angle, * apply the shared angle scale and fold degrees through the misc exports. * Below the first ordered Y-magnitu...` | function `motionComputePlanarRecordAngleResponse` | [380](../src/modules/motion.c#L380) |
+| explicit_unknown | `Gate scaling of scalar 0x988 by count 0x10E0, mode 0xA3C, vector dots * and signed kinds 0xA40/0xA68. Original UVFV 0x18 is a three-single dot * leaf; preserve repeated calls an...` | assembly `func_motion_00414430` | [730](../src/modules/motion.c#L730) |
+| explicit_unknown | `Original cross/add/transform and dot products update phase 0x8D4 and * component 0x998; 0x988/0x998 overlap vector 0x984.y / vector 0x990.z. * RE_ORIGINAL_QUIRK: caller passes 1...` | assembly `func_motion_00413284` | [718](../src/modules/motion.c#L718) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_motion_00405E5C`, function `func_motion_0041475C`, function `func_motion_00414764`, function `func_motion_0041476C`, function `func_motion_00414A68` | [456](../src/modules/motion.c#L456), [742](../src/modules/motion.c#L742), [751](../src/modules/motion.c#L751), [760](../src/modules/motion.c#L760), [780](../src/modules/motion.c#L780) |
+| explicit_unknown | `Read the unsigned halfword at state offset 0x70C without modifying the caller object. RE_UNKNOWN: the field role requires its writers and consumers; no status or identifier mean...` | function `func_motion_00415870` | [813](../src/modules/motion.c#L813) |
+| explicit_unknown | `Select a material-row scalar unless shared game state is 6, then evaluate * two curves with the input field reloaded before each call. Store the * selected scalar at 704 before ...` | assembly `func_motion_0040424C` | [315](../src/modules/motion.c#L315) |
+| explicit_unknown | `Select one of the original 0x1C-byte point records, compute angular * cross offset plus linear velocity, then transform by matrix 0x5E8. * RE_UNKNOWN: index bounds for tables at...` | function `motionTransformSelectedPointVelocity` | [511](../src/modules/motion.c#L511) |
 | explicit_unknown | `Subtract shared delta; a negative result advances one ten-slot history entry and adds one to remaining. * RE_ORIGINAL_QUIRK: no catch-up loop runs even if remaining stays negati...` | function `motionRecordHistoryAndUpdateTrack` | [253](../src/modules/motion.c#L253) |
-| explicit_unknown | `Transform a configured local Z vector through the state's linear matrix * and add it to the existing accumulated vector. Kind two selects the first * constant; other kinds selec...` | function `motionAccumulateTransformedConfiguredVector` | [586](../src/modules/motion.c#L586) |
-| explicit_unknown | `Update scalar 0x680 through level 0x6C4, signed mode 0xA3C and * ordered sign/magnitude gates, including sample 0x3A4 and both incoming * word gates. Every path joins original M...` | assembly `func_motion_00404868` | [329](../src/modules/motion.c#L329) |
-| explicit_unknown | `Update scalar 0x684, signed counter 0x688 and configuration scale 0x6AC * through enable/gate/sign tests. Original MISC 0x54 clamps value to ordered * upper/lower singles; its l...` | assembly `func_motion_0040456C` | [319](../src/modules/motion.c#L319) |
-| explicit_unknown | `Update three selected-record scalars with the original pre-gate ratio, * promoted-double gate, signed samples, MISC 0x58 degree fold and GRPH 0x04 * curve. Selector halfwords st...` | assembly `func_motion_004057E4` | [426](../src/modules/motion.c#L426) |
+| explicit_unknown | `Transform a configured local Z vector through the state's linear matrix * and add it to the existing accumulated vector. Kind two selects the first * constant; other kinds selec...` | function `motionAccumulateTransformedConfiguredVector` | [600](../src/modules/motion.c#L600) |
+| explicit_unknown | `Update scalar 0x680 through level 0x6C4, signed mode 0xA3C and * ordered sign/magnitude gates, including sample 0x3A4 and both incoming * word gates. Every path joins original M...` | assembly `func_motion_00404868` | [343](../src/modules/motion.c#L343) |
+| explicit_unknown | `Update scalar 0x684, signed counter 0x688 and configuration scale 0x6AC * through enable/gate/sign tests. Original MISC 0x54 clamps value to ordered * upper/lower singles; its l...` | assembly `func_motion_0040456C` | [333](../src/modules/motion.c#L333) |
+| explicit_unknown | `Update three selected-record scalars with the original pre-gate ratio, * promoted-double gate, signed samples, MISC 0x58 degree fold and GRPH 0x04 * curve. Selector halfwords st...` | assembly `func_motion_004057E4` | [440](../src/modules/motion.c#L440) |
 | layout_padding | `gap` | type `MotionProjectionRecord` | [56](../src/modules/motion.c#L56) |
 | layout_padding | `gap1132` | type `MotionDirectionState` | [57](../src/modules/motion.c#L57) |
 | layout_padding | `gap1144` | type `MotionDirectionState` | [57](../src/modules/motion.c#L57) |
@@ -2921,19 +2924,19 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk80` | function `motionRecordHistoryAndUpdateTrack` | [260](../src/modules/motion.c#L260) |
 | offset_field | `unk98C` | type `MotionCorrectionState`, type `MotionPlanarState` | [62](../src/modules/motion.c#L62), [66](../src/modules/motion.c#L66) |
 | offset_field | `value0` | type `MotionPointSelector` | [58](../src/modules/motion.c#L58) |
-| offset_field | `value674` | function `motionAccumulateTransformedConfiguredVector`, type `MotionConfiguredVectorState` | [25](../src/modules/motion.c#L25), [608](../src/modules/motion.c#L608) |
-| offset_field | `value690` | function `motionApplyConditionalCorrection`, type `MotionCorrectionState` | [66](../src/modules/motion.c#L66), [576](../src/modules/motion.c#L576) |
-| offset_field | `value988` | function `motionApplyConditionalCorrection`, function `motionApplyGatedModeResponse`, type `MotionCorrectionState`, type `MotionModeResponseState` | [35](../src/modules/motion.c#L35), [66](../src/modules/motion.c#L66), [577](../src/modules/motion.c#L577), [654](../src/modules/motion.c#L654), [655](../src/modules/motion.c#L655), [657](../src/modules/motion.c#L657), [658](../src/modules/motion.c#L658) |
-| offset_field | `value9A0` | function `motionApplyConditionalCorrection`, type `MotionCorrectionState` | [66](../src/modules/motion.c#L66), [579](../src/modules/motion.c#L579) |
-| original_quirk | `Attempt pending Hot Lava speech on random choice 3 with priority 0x7FFF; playback value is 0x7A120. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: ...` | global `D_motion_004160A0` | [806](../src/modules/motion.c#L806) |
-| original_quirk | `Attempt pending explosion speech on random choice 3 with its scale; priority 0x7FFF, playback value 0x1F4. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UN...` | global `D_motion_0041607C` | [826](../src/modules/motion.c#L826) |
+| offset_field | `value674` | function `motionAccumulateTransformedConfiguredVector`, type `MotionConfiguredVectorState` | [25](../src/modules/motion.c#L25), [622](../src/modules/motion.c#L622) |
+| offset_field | `value690` | function `motionApplyConditionalCorrection`, type `MotionCorrectionState` | [66](../src/modules/motion.c#L66), [590](../src/modules/motion.c#L590) |
+| offset_field | `value988` | function `motionApplyConditionalCorrection`, function `motionApplyGatedModeResponse`, type `MotionCorrectionState`, type `MotionModeResponseState` | [35](../src/modules/motion.c#L35), [66](../src/modules/motion.c#L66), [591](../src/modules/motion.c#L591), [668](../src/modules/motion.c#L668), [669](../src/modules/motion.c#L669), [671](../src/modules/motion.c#L671), [672](../src/modules/motion.c#L672) |
+| offset_field | `value9A0` | function `motionApplyConditionalCorrection`, type `MotionCorrectionState` | [66](../src/modules/motion.c#L66), [593](../src/modules/motion.c#L593) |
+| original_quirk | `Attempt pending Hot Lava speech on random choice 3 with priority 0x7FFF; playback value is 0x7A120. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: ...` | global `D_motion_004160A0` | [820](../src/modules/motion.c#L820) |
+| original_quirk | `Attempt pending explosion speech on random choice 3 with its scale; priority 0x7FFF, playback value 0x1F4. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UN...` | global `D_motion_0041607C` | [840](../src/modules/motion.c#L840) |
 | original_quirk | `Blend raw scalar fields using a snapshotted player-two handicap selector. * Mode 4 leaves the fields unchanged; mode 3 uses the computed limit directly. * The original loads the...` | assembly `func_motion_00400D74` | [192](../src/modules/motion.c#L192) |
-| original_quirk | `Gate scaling of scalar 0x988 by count 0x10E0, mode 0xA3C, vector dots * and signed kinds 0xA40/0xA68. Original UVFV 0x18 is a three-single dot * leaf; preserve repeated calls an...` | assembly `func_motion_00414430` | [716](../src/modules/motion.c#L716) |
-| original_quirk | `Original cross/add/transform and dot products update phase 0x8D4 and * component 0x998; 0x988/0x998 overlap vector 0x984.y / vector 0x990.z. * RE_ORIGINAL_QUIRK: caller passes 1...` | assembly `func_motion_00413284` | [704](../src/modules/motion.c#L704) |
+| original_quirk | `Gate scaling of scalar 0x988 by count 0x10E0, mode 0xA3C, vector dots * and signed kinds 0xA40/0xA68. Original UVFV 0x18 is a three-single dot * leaf; preserve repeated calls an...` | assembly `func_motion_00414430` | [730](../src/modules/motion.c#L730) |
+| original_quirk | `Original cross/add/transform and dot products update phase 0x8D4 and * component 0x998; 0x988/0x998 overlap vector 0x984.y / vector 0x990.z. * RE_ORIGINAL_QUIRK: caller passes 1...` | assembly `func_motion_00413284` | [718](../src/modules/motion.c#L718) |
 | original_quirk | `Subtract shared delta; a negative result advances one ten-slot history entry and adds one to remaining. * RE_ORIGINAL_QUIRK: no catch-up loop runs even if remaining stays negati...` | function `motionRecordHistoryAndUpdateTrack` | [253](../src/modules/motion.c#L253) |
-| uncertainty_note | `Accumulate two weighted three-component basis combinations. The first * uses one shared scale; the second uses per-component scales. Preserve * Z/X/Y product order, sequential s...` | function `motionAccumulateScaledBasisVectors` | [552](../src/modules/motion.c#L552) |
-| uncertainty_note | `Apply the original scaled correction only above the 0x690 threshold and * below the positive 0x988 limit. Preserve floating evaluation order; the * full physical meaning of thes...` | function `motionApplyConditionalCorrection` | [571](../src/modules/motion.c#L571) |
-| uncertainty_note | `For enabled input with magnitude at least 0.5, gate on field 0x6C4 * magnitude at most five and mode zero/two. Smooth response 0x998 toward * the signed mode target and enforce ...` | function `motionApplyGatedModeResponse` | [621](../src/modules/motion.c#L621) |
+| uncertainty_note | `Accumulate two weighted three-component basis combinations. The first * uses one shared scale; the second uses per-component scales. Preserve * Z/X/Y product order, sequential s...` | function `motionAccumulateScaledBasisVectors` | [566](../src/modules/motion.c#L566) |
+| uncertainty_note | `Apply the original scaled correction only above the 0x690 threshold and * below the positive 0x988 limit. Preserve floating evaluation order; the * full physical meaning of thes...` | function `motionApplyConditionalCorrection` | [585](../src/modules/motion.c#L585) |
+| uncertainty_note | `For enabled input with magnitude at least 0.5, gate on field 0x6C4 * magnitude at most five and mode zero/two. Smooth response 0x998 toward * the signed mode target and enforce ...` | function `motionApplyGatedModeResponse` | [635](../src/modules/motion.c#L635) |
 | unused_identifier | `unused00` | type `MotionPlanarAngleMiscExports` | [12](../src/modules/motion.c#L12) |
 | unused_identifier | `unused5C` | type `MotionPlanarAngleMiscExports` | [14](../src/modules/motion.c#L14) |
 
@@ -3307,30 +3310,30 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_race_00402CE0` | function `func_race_00402CE0` | [69](../src/modules/race.c#L69) |
 | address_function | `func_race_00402E98` | function `func_race_00402E98` | [70](../src/modules/race.c#L70) |
 | address_function | `func_race_004030D0` | function `func_race_004030D0` | [71](../src/modules/race.c#L71) |
-| address_function | `func_race_00403350` | function `func_race_00403350` | [176](../src/modules/race.c#L176) |
+| address_function | `func_race_00403350` | function `func_race_00403350` | [191](../src/modules/race.c#L191) |
 | address_function | `func_race_00403358` | function `func_race_00403358` | [73](../src/modules/race.c#L73) |
 | address_function | `func_race_004035C8` | function `func_race_004035C8` | [76](../src/modules/race.c#L76) |
 | address_function | `func_race_00403734` | function `func_race_00403734` | [80](../src/modules/race.c#L80) |
-| address_function | `func_race_004037DC` | function `func_race_004037DC`, function `raceLoadModelAndRegisterCallback` | [81](../src/modules/race.c#L81), [227](../src/modules/race.c#L227) |
+| address_function | `func_race_004037DC` | function `func_race_004037DC`, function `raceLoadModelAndRegisterCallback` | [81](../src/modules/race.c#L81), [242](../src/modules/race.c#L242) |
 | address_function | `func_race_004038B0` | function `func_race_004038B0` | [82](../src/modules/race.c#L82) |
 | address_function | `func_race_00403B6C` | function `func_race_00403B6C` | [83](../src/modules/race.c#L83) |
 | address_global | `D_80025D88` | function `raceReleaseManagedSoundsAndClearBytes` | [17](../src/modules/race.c#L17), [107](../src/modules/race.c#L107) |
 | address_global | `D_80025D89` | function `raceReleaseManagedSoundsAndClearBytes` | [17](../src/modules/race.c#L17), [108](../src/modules/race.c#L108) |
 | address_global | `D_80025D8A` | function `raceReleaseManagedSoundsAndClearBytes` | [17](../src/modules/race.c#L17), [109](../src/modules/race.c#L109) |
 | address_global | `D_80025D8B` | function `raceReleaseManagedSoundsAndClearBytes` | [17](../src/modules/race.c#L17), [110](../src/modules/race.c#L110) |
-| address_global | `D_race_00404710` | function `raceDrawStatusFields`, global `D_race_00404710` | [42](../src/modules/race.c#L42), [160](../src/modules/race.c#L160) |
-| address_global | `D_race_00404718` | function `raceDrawStatusFields`, global `D_race_00404718` | [43](../src/modules/race.c#L43), [161](../src/modules/race.c#L161) |
-| address_global | `D_race_00404724` | function `raceDrawStatusFields`, global `D_race_00404724` | [44](../src/modules/race.c#L44), [162](../src/modules/race.c#L162) |
-| address_global | `D_race_00404730` | function `raceDrawStatusFields`, global `D_race_00404730` | [45](../src/modules/race.c#L45), [163](../src/modules/race.c#L163) |
-| address_global | `D_race_00404740` | function `raceDrawStatusFields`, global `D_race_00404740` | [46](../src/modules/race.c#L46), [164](../src/modules/race.c#L164) |
-| address_global | `D_race_0040474C` | function `raceCreateModuleGui`, global `D_race_0040474C` | [36](../src/modules/race.c#L36), [211](../src/modules/race.c#L211) |
-| address_global | `D_race_00404888` | function `racePlayPendingSoundByKind`, global `D_race_00404888` | [20](../src/modules/race.c#L20), [272](../src/modules/race.c#L272), [274](../src/modules/race.c#L274), [278](../src/modules/race.c#L278), [280](../src/modules/race.c#L280), [284](../src/modules/race.c#L284), [286](../src/modules/race.c#L286) |
-| address_global | `D_race_004049C4` | function `raceMarkMatchingEntries`, global `D_race_004049C4` | [55](../src/modules/race.c#L55), [251](../src/modules/race.c#L251) |
-| address_global | `D_race_004049E4` | function `raceMarkMatchingEntries`, function `raceSetEntryTable`, global `D_race_004049E4` | [52](../src/modules/race.c#L52), [238](../src/modules/race.c#L238), [249](../src/modules/race.c#L249) |
-| address_global | `D_race_004049E8` | function `raceMarkMatchingEntries`, function `raceSetEntryTable`, global `D_race_004049E8` | [53](../src/modules/race.c#L53), [239](../src/modules/race.c#L239), [250](../src/modules/race.c#L250) |
-| address_global | `D_race_004049EC` | function `raceSetEntryTable`, global `D_race_004049EC` | [54](../src/modules/race.c#L54), [240](../src/modules/race.c#L240) |
-| address_global | `D_race_004049F0` | function `raceGetIndexedValue`, function `raceReleaseFirstPlayerSoundHandle`, global `D_race_004049F0` | [56](../src/modules/race.c#L56), [186](../src/modules/race.c#L186), [189](../src/modules/race.c#L189), [299](../src/modules/race.c#L299) |
-| address_global | `D_race_00404A04` | function `raceCreateModuleGui`, function `raceReleaseFirstPlayerSoundHandle`, global `D_race_00404A04` | [57](../src/modules/race.c#L57), [215](../src/modules/race.c#L215), [299](../src/modules/race.c#L299) |
+| address_global | `D_race_00404710` | function `raceDrawStatusFields`, global `D_race_00404710` | [42](../src/modules/race.c#L42), [175](../src/modules/race.c#L175) |
+| address_global | `D_race_00404718` | function `raceDrawStatusFields`, global `D_race_00404718` | [43](../src/modules/race.c#L43), [176](../src/modules/race.c#L176) |
+| address_global | `D_race_00404724` | function `raceDrawStatusFields`, global `D_race_00404724` | [44](../src/modules/race.c#L44), [177](../src/modules/race.c#L177) |
+| address_global | `D_race_00404730` | function `raceDrawStatusFields`, global `D_race_00404730` | [45](../src/modules/race.c#L45), [178](../src/modules/race.c#L178) |
+| address_global | `D_race_00404740` | function `raceDrawStatusFields`, global `D_race_00404740` | [46](../src/modules/race.c#L46), [179](../src/modules/race.c#L179) |
+| address_global | `D_race_0040474C` | function `raceCreateModuleGui`, global `D_race_0040474C` | [36](../src/modules/race.c#L36), [226](../src/modules/race.c#L226) |
+| address_global | `D_race_00404888` | function `racePlayPendingSoundByKind`, global `D_race_00404888` | [20](../src/modules/race.c#L20), [287](../src/modules/race.c#L287), [289](../src/modules/race.c#L289), [293](../src/modules/race.c#L293), [295](../src/modules/race.c#L295), [299](../src/modules/race.c#L299), [301](../src/modules/race.c#L301) |
+| address_global | `D_race_004049C4` | function `raceMarkMatchingEntries`, global `D_race_004049C4` | [55](../src/modules/race.c#L55), [266](../src/modules/race.c#L266) |
+| address_global | `D_race_004049E4` | function `raceMarkMatchingEntries`, function `raceSetEntryTable`, global `D_race_004049E4` | [52](../src/modules/race.c#L52), [253](../src/modules/race.c#L253), [264](../src/modules/race.c#L264) |
+| address_global | `D_race_004049E8` | function `raceMarkMatchingEntries`, function `raceSetEntryTable`, global `D_race_004049E8` | [53](../src/modules/race.c#L53), [254](../src/modules/race.c#L254), [265](../src/modules/race.c#L265) |
+| address_global | `D_race_004049EC` | function `raceSetEntryTable`, global `D_race_004049EC` | [54](../src/modules/race.c#L54), [255](../src/modules/race.c#L255) |
+| address_global | `D_race_004049F0` | function `raceGetIndexedValue`, function `raceReleaseFirstPlayerSoundHandle`, global `D_race_004049F0` | [56](../src/modules/race.c#L56), [201](../src/modules/race.c#L201), [204](../src/modules/race.c#L204), [314](../src/modules/race.c#L314) |
+| address_global | `D_race_00404A04` | function `raceCreateModuleGui`, function `raceReleaseFirstPlayerSoundHandle`, global `D_race_00404A04` | [57](../src/modules/race.c#L57), [230](../src/modules/race.c#L230), [314](../src/modules/race.c#L314) |
 | address_global | `D_race_00404A30` | function `raceReleaseManagedSoundsAndClearBytes`, global `D_race_00404A30` | [4](../src/modules/race.c#L4), [93](../src/modules/race.c#L93) |
 | address_global | `D_race_00404A38` | function `raceReleaseManagedSoundsAndClearBytes`, global `D_race_00404A38` | [5](../src/modules/race.c#L5), [94](../src/modules/race.c#L94) |
 | address_global | `D_race_00404A40` | function `raceReleaseManagedSoundsAndClearBytes`, global `D_race_00404A40` | [6](../src/modules/race.c#L6), [95](../src/modules/race.c#L95) |
@@ -3343,13 +3346,13 @@ For every future source wave, regenerate and check this index after code and str
 | address_global | `D_race_00404A78` | function `raceReleaseManagedSoundsAndClearBytes`, global `D_race_00404A78` | [13](../src/modules/race.c#L13), [102](../src/modules/race.c#L102) |
 | address_global | `D_race_00404A80` | function `raceReleaseManagedSoundsAndClearBytes`, global `D_race_00404A80` | [14](../src/modules/race.c#L14), [103](../src/modules/race.c#L103) |
 | address_global | `D_race_00404A88` | function `raceReleaseManagedSoundsAndClearBytes`, global `D_race_00404A88` | [15](../src/modules/race.c#L15), [104](../src/modules/race.c#L104) |
-| address_global | `D_race_00404A90` | function `racePlayPendingSoundByKind`, function `raceReleaseManagedSoundsAndClearBytes`, global `D_race_00404A90` | [21](../src/modules/race.c#L21), [105](../src/modules/race.c#L105), [273](../src/modules/race.c#L273), [279](../src/modules/race.c#L279), [285](../src/modules/race.c#L285) |
+| address_global | `D_race_00404A90` | function `racePlayPendingSoundByKind`, function `raceReleaseManagedSoundsAndClearBytes`, global `D_race_00404A90` | [21](../src/modules/race.c#L21), [105](../src/modules/race.c#L105), [288](../src/modules/race.c#L288), [294](../src/modules/race.c#L294), [300](../src/modules/race.c#L300) |
 | address_global | `D_race_00404A98` | function `raceReleaseManagedSoundsAndClearBytes`, global `D_race_00404A98` | [16](../src/modules/race.c#L16), [106](../src/modules/race.c#L106) |
-| address_global | `D_race_00404AA0` | function `raceDrawStatusFields`, global `D_race_00404AA0` | [47](../src/modules/race.c#L47), [160](../src/modules/race.c#L160) |
-| address_global | `D_race_00404AA4` | function `raceDrawStatusFields`, global `D_race_00404AA4` | [48](../src/modules/race.c#L48), [161](../src/modules/race.c#L161) |
-| address_global | `D_race_00404AA8` | function `raceDrawStatusFields`, global `D_race_00404AA8` | [49](../src/modules/race.c#L49), [162](../src/modules/race.c#L162) |
-| address_global | `D_race_00404AAC` | function `raceDrawStatusFields`, global `D_race_00404AAC` | [50](../src/modules/race.c#L50), [163](../src/modules/race.c#L163) |
-| address_global | `D_race_00404AB0` | function `raceDrawStatusFields`, global `D_race_00404AB0` | [51](../src/modules/race.c#L51), [164](../src/modules/race.c#L164) |
+| address_global | `D_race_00404AA0` | function `raceDrawStatusFields`, global `D_race_00404AA0` | [47](../src/modules/race.c#L47), [175](../src/modules/race.c#L175) |
+| address_global | `D_race_00404AA4` | function `raceDrawStatusFields`, global `D_race_00404AA4` | [48](../src/modules/race.c#L48), [176](../src/modules/race.c#L176) |
+| address_global | `D_race_00404AA8` | function `raceDrawStatusFields`, global `D_race_00404AA8` | [49](../src/modules/race.c#L49), [177](../src/modules/race.c#L177) |
+| address_global | `D_race_00404AAC` | function `raceDrawStatusFields`, global `D_race_00404AAC` | [50](../src/modules/race.c#L50), [178](../src/modules/race.c#L178) |
+| address_global | `D_race_00404AB0` | function `raceDrawStatusFields`, global `D_race_00404AB0` | [51](../src/modules/race.c#L51), [179](../src/modules/race.c#L179) |
 | assembly | `__entrypoint_func_race_400000` | — | [86](../src/modules/race.c#L86) |
 | assembly | `func_race_00400AB4` | — | [114](../src/modules/race.c#L114) |
 | assembly | `func_race_00400CC0` | — | [123](../src/modules/race.c#L123) |
@@ -3362,26 +3365,28 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_race_00402864` | — | [146](../src/modules/race.c#L146) |
 | assembly | `func_race_00402AAC` | — | [148](../src/modules/race.c#L148) |
 | assembly | `func_race_00402CE0` | — | [150](../src/modules/race.c#L150) |
-| assembly | `func_race_00402E98` | — | [152](../src/modules/race.c#L152) |
-| assembly | `func_race_004030D0` | — | [154](../src/modules/race.c#L154) |
-| assembly | `func_race_00403358` | — | [180](../src/modules/race.c#L180) |
-| assembly | `func_race_004035C8` | — | [220](../src/modules/race.c#L220) |
-| assembly | `func_race_00403734` | — | [257](../src/modules/race.c#L257) |
-| assembly | `func_race_004037DC` | — | [259](../src/modules/race.c#L259) |
-| assembly | `func_race_004038B0` | — | [261](../src/modules/race.c#L261) |
-| assembly | `func_race_00403B6C` | — | [263](../src/modules/race.c#L263) |
+| assembly | `func_race_00402E98` | — | [167](../src/modules/race.c#L167) |
+| assembly | `func_race_004030D0` | — | [169](../src/modules/race.c#L169) |
+| assembly | `func_race_00403358` | — | [195](../src/modules/race.c#L195) |
+| assembly | `func_race_004035C8` | — | [235](../src/modules/race.c#L235) |
+| assembly | `func_race_00403734` | — | [272](../src/modules/race.c#L272) |
+| assembly | `func_race_004037DC` | — | [274](../src/modules/race.c#L274) |
+| assembly | `func_race_004038B0` | — | [276](../src/modules/race.c#L276) |
+| assembly | `func_race_00403B6C` | — | [278](../src/modules/race.c#L278) |
 | explicit_unknown | `Original GAMEGUI slot 0x14 configures the shared widget when settings word 0x18C * is nonzero; original GAMEGUI slot 0x28 exports the debug-byte address. The widget * used below...` | type `RaceGameGuiExports` | [22](../src/modules/race.c#L22) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_race_00403350` | [172](../src/modules/race.c#L172) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_race_00403350` | [187](../src/modules/race.c#L187) |
 | explicit_unknown | `Original pause pass checks signed settings halfwords 0x9C/0x86/0x88 and * player gates 0x58/0x1D; REPLAY 0x0C stores a shared byte, not pauseFlag. * While paused, PAUS 0x08 disp...` | assembly `func_race_00400CC0` | [116](../src/modules/race.c#L116) |
-| explicit_unknown | `Pass the first stored player to PLYR 0x20, releasing its word-0x14 indexed sound handle. * RE_UNKNOWN: nonnull player, valid handle index and lifetime need original callers/PLYR...` | function `raceReleaseFirstPlayerSoundHandle` | [294](../src/modules/race.c#L294) |
-| explicit_unknown | `Select the shared GAMEGUI widget at debug-byte address+0x10 before the * original GAMEGUI14 initialization call, then allocate and label a child * group and attach it. Forward t...` | function `raceCreateModuleGui` | [196](../src/modules/race.c#L196) |
-| explicit_unknown | `Store the shared entry count, value-array address and opaque third * parameter used by the race module. * RE_UNKNOWN: ownership/lifetime of the retained value array. Trace origi...` | function `raceSetEntryTable` | [232](../src/modules/race.c#L232) |
+| explicit_unknown | `Pass the first stored player to PLYR 0x20, releasing its word-0x14 indexed sound handle. * RE_UNKNOWN: nonnull player, valid handle index and lifetime need original callers/PLYR...` | function `raceReleaseFirstPlayerSoundHandle` | [309](../src/modules/race.c#L309) |
+| explicit_unknown | `Select the shared GAMEGUI widget at debug-byte address+0x10 before the * original GAMEGUI14 initialization call, then allocate and label a child * group and attach it. Forward t...` | function `raceCreateModuleGui` | [211](../src/modules/race.c#L211) |
+| explicit_unknown | `Store the shared entry count, value-array address and opaque third * parameter used by the race module. * RE_UNKNOWN: ownership/lifetime of the retained value array. Trace origi...` | function `raceSetEntryTable` | [247](../src/modules/race.c#L247) |
+| explicit_unknown | `Update parallel player-gate bytes and count word-5C and byte-1D gates. * Word5C calls CARAUDIO34, PLYR20 and SND E4 before reloading player/count. * Byte1D uses a mode snapshot,...` | assembly `func_race_00402E98` | [152](../src/modules/race.c#L152) |
 | explicit_unknown | `Update shared scalars, then run CARANIM 0x08 on each entry's word-4 * pointer; reload entry, its word-0x0C state pointer and state word 0x140. * AI 0x28 consumes no arguments. R...` | assembly `func_race_004024D0` | [133](../src/modules/race.c#L133) |
 | layout_padding | `gap0C` | type `RaceGuiExports` | [29](../src/modules/race.c#L29) |
 | layout_padding | `gap18` | type `RaceGameGuiExports` | [28](../src/modules/race.c#L28) |
 | layout_padding | `prefix` | type `RaceAiGuiExports`, type `RaceCameraGuiExports`, type `RaceGameGuiExports`, type `RaceGuiExports`, type `RaceTrackGuiExports` | [28](../src/modules/race.c#L28), [29](../src/modules/race.c#L29), [30](../src/modules/race.c#L30), [31](../src/modules/race.c#L31), [32](../src/modules/race.c#L32) |
 | opaque_type | `UnkStruct_004005C8` | global `D_race_00404A30`, global `D_race_00404A38`, global `D_race_00404A40`, global `D_race_00404A48`, global `D_race_00404A50`, global `D_race_00404A58`, global `D_race_00404A60`, global `D_race_00404A68`, global `D_race_00404A70`, global `D_race_00404A78`, global `D_race_00404A80`, global `D_race_00404A88`, global `D_race_00404A90`, global `D_race_00404A98` | [4](../src/modules/race.c#L4), [5](../src/modules/race.c#L5), [6](../src/modules/race.c#L6), [7](../src/modules/race.c#L7), [8](../src/modules/race.c#L8), [9](../src/modules/race.c#L9), [10](../src/modules/race.c#L10), [11](../src/modules/race.c#L11) (+6 in JSON) |
-| uncertainty_note | `Consume the pending race sound request for kinds 0, 1 and 2. * Select the original sound IDs and shared sound level; other kinds leave * the pending flag unchanged. The specific...` | function `racePlayPendingSoundByKind` | [266](../src/modules/race.c#L266) |
+| original_quirk | `Update parallel player-gate bytes and count word-5C and byte-1D gates. * Word5C calls CARAUDIO34, PLYR20 and SND E4 before reloading player/count. * Byte1D uses a mode snapshot,...` | assembly `func_race_00402E98` | [152](../src/modules/race.c#L152) |
+| uncertainty_note | `Consume the pending race sound request for kinds 0, 1 and 2. * Select the original sound IDs and shared sound level; other kinds leave * the pending flag unchanged. The specific...` | function `racePlayPendingSoundByKind` | [281](../src/modules/race.c#L281) |
 
 ## src/modules/rain.c
 
@@ -6796,8 +6801,8 @@ For every future source wave, regenerate and check this index after code and str
 | address_global | `D_uvisect_rom_004077B8` | function `uvIsectGetSharedScalar`, function `uvIsectSetSharedScalar`, global `D_uvisect_rom_004077B8` | [149](../src/modules/uvisect_rom.c#L149), [809](../src/modules/uvisect_rom.c#L809), [820](../src/modules/uvisect_rom.c#L820) |
 | address_global | `D_uvisect_rom_004077BC` | function `uvIsectSetSharedWordPair`, global `D_uvisect_rom_004077BC` | [151](../src/modules/uvisect_rom.c#L151), [730](../src/modules/uvisect_rom.c#L730) |
 | address_global | `D_uvisect_rom_004077C0` | function `uvIsectSetQueryParameterBank`, global `D_uvisect_rom_004077C0` | [136](../src/modules/uvisect_rom.c#L136), [338](../src/modules/uvisect_rom.c#L338), [339](../src/modules/uvisect_rom.c#L339), [340](../src/modules/uvisect_rom.c#L340), [341](../src/modules/uvisect_rom.c#L341) |
-| address_global | `D_uvisect_rom_004077D0` | function `uvIsectCreateValueRecord`, global `D_uvisect_rom_004077D0` | [127](../src/modules/uvisect_rom.c#L127), [1206](../src/modules/uvisect_rom.c#L1206) |
-| address_global | `D_uvisect_rom_00407820` | function `uvIsectCreateValueRecord`, function `uvIsectResetValueRecordRegistryCount`, global `D_uvisect_rom_00407820` | [150](../src/modules/uvisect_rom.c#L150), [1194](../src/modules/uvisect_rom.c#L1194), [1206](../src/modules/uvisect_rom.c#L1206), [1207](../src/modules/uvisect_rom.c#L1207), [1208](../src/modules/uvisect_rom.c#L1208) |
+| address_global | `D_uvisect_rom_004077D0` | function `uvIsectCreateValueRecord`, global `D_uvisect_rom_004077D0` | [127](../src/modules/uvisect_rom.c#L127), [1222](../src/modules/uvisect_rom.c#L1222) |
+| address_global | `D_uvisect_rom_00407820` | function `uvIsectCreateValueRecord`, function `uvIsectResetValueRecordRegistryCount`, global `D_uvisect_rom_00407820` | [150](../src/modules/uvisect_rom.c#L150), [1210](../src/modules/uvisect_rom.c#L1210), [1222](../src/modules/uvisect_rom.c#L1222), [1223](../src/modules/uvisect_rom.c#L1223), [1224](../src/modules/uvisect_rom.c#L1224) |
 | address_global | `D_uvisect_rom_00407828` | function `uvIsectCreateLargeRecord`, global `D_uvisect_rom_00407828` | [21](../src/modules/uvisect_rom.c#L21), [182](../src/modules/uvisect_rom.c#L182) |
 | address_global | `D_uvisect_rom_00407878` | function `uvIsectCreateLargeRecord`, global `D_uvisect_rom_00407878` | [22](../src/modules/uvisect_rom.c#L22), [182](../src/modules/uvisect_rom.c#L182), [183](../src/modules/uvisect_rom.c#L183), [184](../src/modules/uvisect_rom.c#L184) |
 | address_global | `D_uvisect_rom_0040787C` | function `uvIsectAppendUniqueValue`, function `uvIsectGetRegisteredValueAtIndex`, function `uvIsectGetRegisteredValueCount`, function `uvIsectMatchesTextureByteOrIdList`, function `uvIsectScanRegisteredValues`, global `D_uvisect_rom_0040787C` | [147](../src/modules/uvisect_rom.c#L147), [610](../src/modules/uvisect_rom.c#L610), [740](../src/modules/uvisect_rom.c#L740), [743](../src/modules/uvisect_rom.c#L743), [744](../src/modules/uvisect_rom.c#L744), [754](../src/modules/uvisect_rom.c#L754), [767](../src/modules/uvisect_rom.c#L767), [778](../src/modules/uvisect_rom.c#L778) |
@@ -6824,7 +6829,7 @@ For every future source wave, regenerate and check this index after code and str
 | address_global | `D_uvisect_rom_00408070` | function `uvIsectQueryFilteredSharedRecords`, global `D_uvisect_rom_00408070` | [84](../src/modules/uvisect_rom.c#L84), [1091](../src/modules/uvisect_rom.c#L1091) |
 | address_global | `D_uvisect_rom_00408130` | function `uvIsectQueryFilteredSharedRecords`, global `D_uvisect_rom_00408130` | [85](../src/modules/uvisect_rom.c#L85), [1094](../src/modules/uvisect_rom.c#L1094) |
 | address_global | `D_uvisect_rom_004081F0` | function `uvIsectGetTransformProperty`, function `uvIsectSetTransformProperty`, global `D_uvisect_rom_004081F0` | [90](../src/modules/uvisect_rom.c#L90), [264](../src/modules/uvisect_rom.c#L264), [283](../src/modules/uvisect_rom.c#L283) |
-| address_global | `D_uvisect_rom_004081F4` | function `uvIsectFlipRecordVectorTowardPoint`, function `uvIsectGetVectorProperty`, function `uvIsectInitializeScalarAndVectorQueryState`, function `uvIsectSetIndexedVector`, function `uvIsectSetVectorProperty`, global `D_uvisect_rom_004081F4` | [91](../src/modules/uvisect_rom.c#L91), [227](../src/modules/uvisect_rom.c#L227), [253](../src/modules/uvisect_rom.c#L253), [656](../src/modules/uvisect_rom.c#L656), [657](../src/modules/uvisect_rom.c#L657), [905](../src/modules/uvisect_rom.c#L905), [909](../src/modules/uvisect_rom.c#L909), [1333](../src/modules/uvisect_rom.c#L1333) (+1 in JSON) |
+| address_global | `D_uvisect_rom_004081F4` | function `uvIsectFlipRecordVectorTowardPoint`, function `uvIsectGetVectorProperty`, function `uvIsectInitializeScalarAndVectorQueryState`, function `uvIsectSetIndexedVector`, function `uvIsectSetVectorProperty`, global `D_uvisect_rom_004081F4` | [91](../src/modules/uvisect_rom.c#L91), [227](../src/modules/uvisect_rom.c#L227), [253](../src/modules/uvisect_rom.c#L253), [656](../src/modules/uvisect_rom.c#L656), [657](../src/modules/uvisect_rom.c#L657), [905](../src/modules/uvisect_rom.c#L905), [909](../src/modules/uvisect_rom.c#L909), [1349](../src/modules/uvisect_rom.c#L1349) (+1 in JSON) |
 | address_global | `D_uvisect_rom_004081FC` | function `uvIsectCollectRequestedProviderLists`, global `D_uvisect_rom_004081FC` | [120](../src/modules/uvisect_rom.c#L120), [533](../src/modules/uvisect_rom.c#L533), [535](../src/modules/uvisect_rom.c#L535), [538](../src/modules/uvisect_rom.c#L538), [542](../src/modules/uvisect_rom.c#L542) |
 | address_global | `D_uvisect_rom_00408200` | function `uvIsectCollectRequestedProviderLists`, function `uvIsectFlipRecordVectorTowardPoint`, function `uvIsectPackedTriangleTextureByteMatches`, global `D_uvisect_rom_00408200` | [15](../src/modules/uvisect_rom.c#L15), [495](../src/modules/uvisect_rom.c#L495), [506](../src/modules/uvisect_rom.c#L506), [513](../src/modules/uvisect_rom.c#L513), [834](../src/modules/uvisect_rom.c#L834), [882](../src/modules/uvisect_rom.c#L882) |
 | address_global | `D_uvisect_rom_00408204` | function `uvIsectMatchesTextureByteOrIdList`, function `uvIsectPackedTriangleTextureByteMatches`, global `D_uvisect_rom_00408204` | [6](../src/modules/uvisect_rom.c#L6), [608](../src/modules/uvisect_rom.c#L608), [835](../src/modules/uvisect_rom.c#L835) |
@@ -6858,13 +6863,14 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_uvisect_rom_00405698` | — | [1167](../src/modules/uvisect_rom.c#L1167) |
 | assembly | `func_uvisect_rom_00405794` | — | [1183](../src/modules/uvisect_rom.c#L1183) |
 | assembly | `func_uvisect_rom_00405C8C` | — | [1186](../src/modules/uvisect_rom.c#L1186) |
-| assembly | `func_uvisect_rom_00405EDC` | — | [1188](../src/modules/uvisect_rom.c#L1188) |
-| assembly | `func_uvisect_rom_00407250` | — | [1213](../src/modules/uvisect_rom.c#L1213) |
-| assembly | `func_uvisect_rom_00407554` | — | [1322](../src/modules/uvisect_rom.c#L1322) |
+| assembly | `func_uvisect_rom_00405EDC` | — | [1203](../src/modules/uvisect_rom.c#L1203) |
+| assembly | `func_uvisect_rom_00407250` | — | [1229](../src/modules/uvisect_rom.c#L1229) |
+| assembly | `func_uvisect_rom_00407554` | — | [1338](../src/modules/uvisect_rom.c#L1338) |
 | explicit_unknown | `Accessed prefix only: two 12-byte vectors and raw word 0x18. RE_UNKNOWN: * layout, frame and mode-specific word meaning: low-bit-tested by 24AC/2B5C, * dereferenced by 1DA4. Tra...` | type `IsectQueryInputPrefix` | [30](../src/modules/uvisect_rom.c#L30) |
 | explicit_unknown | `Append accepted DOBJ query candidates to the supplied intersection records. * DOBJ slot 0x50 supplies parallel words, fractions and Vec3F values; QERY slot * 0x1C supplies auxil...` | assembly `func_uvisect_rom_00403208` | [662](../src/modules/uvisect_rom.c#L662) |
 | explicit_unknown | `Append accepted TERR query candidates using the actual export at 0x90. * Preserve the cached source pointer/scalar, f32 square and f32 subtraction * before the square-root wrapp...` | assembly `func_uvisect_rom_0040344C` | [680](../src/modules/uvisect_rom.c#L680) |
 | explicit_unknown | `Append triangle or transformed-bounds intersections to shared result arrays. * Original ISCT here is uvintersect: slot 0x40 consumes the supplied normal and * may write the frac...` | assembly `func_uvisect_rom_00405124` | [1103](../src/modules/uvisect_rom.c#L1103) |
+| explicit_unknown | `Build a plane with the actual FVEC cross/normalize/dot providers, select * twelve box edges from ordered direction signs, then test strict interior * crossings in the original e...` | assembly `func_uvisect_rom_00405EDC` | [1188](../src/modules/uvisect_rom.c#L1188) |
 | explicit_unknown | `Combine requested provider lists in the original shared buffers, then * publish only the output addresses requested by the caller. * RE_ORIGINAL_QUIRK: In the flag-1 path, IDs a...` | function `uvIsectCollectRequestedProviderLists` | [470](../src/modules/uvisect_rom.c#L470) |
 | explicit_unknown | `Convert property 3 (unsigned field 0x12), property 2 (unsigned field 0x14) * or property 5 (signed field 0x0C) to float. Return -1 for null records or * unsupported properties. ...` | function `uvIsectGetScalarProperty` | [199](../src/modules/uvisect_rom.c#L199) |
 | explicit_unknown | `Copy the input point twice, subtract the supplied span from the first Z, * and explicitly zero the local query word 0x18. Run flag-2, flag-8 and scalar * queries in that order, ...` | assembly `func_uvisect_rom_0040423C` | [933](../src/modules/uvisect_rom.c#L933) |
@@ -6888,7 +6894,7 @@ For every future source wave, regenerate and check this index after code and str
 | explicit_unknown | `Return one when loaded texture byte 0x27 equals 0x0A, 0x11 or 0x1D, * or when the texture ID occurs in the registered integer list. The original * caller leaves its incoming A0 ...` | function `uvIsectMatchesTextureByteOrIdList` | [596](../src/modules/uvisect_rom.c#L596) |
 | explicit_unknown | `Return the shared limit checked by the indexed query-pair getter. * RE_UNKNOWN: whether callers treat this value as count or final valid * index is unproven; the existing getter...` | function `uvIsectGetIndexedQueryPairLimit` | [795](../src/modules/uvisect_rom.c#L795) |
 | explicit_unknown | `Run the selected original queries in flag order 2, 8, 1, 4, keeping the * successful 88-byte candidate with a strictly smaller value at offset 0x2C. * Equal values retain the ea...` | function `uvIsectQueryMinimumValueRecord` | [965](../src/modules/uvisect_rom.c#L965) |
-| explicit_unknown | `Scan kind-zero records using their count-prefixed value list and original * 16-bit index updates. Null/other-kind records are ignored. The original scan * performs no state upda...` | function `uvIsectScanRecordValues` | [1257](../src/modules/uvisect_rom.c#L1257) |
+| explicit_unknown | `Scan kind-zero records using their count-prefixed value list and original * 16-bit index updates. Null/other-kind records are ignored. The original scan * performs no state upda...` | function `uvIsectScanRecordValues` | [1273](../src/modules/uvisect_rom.c#L1273) |
 | explicit_unknown | `Scan the registered value array until a match or the original count limit. * Preserve 16-bit index updates. This original helper performs no state update; * RE_UNKNOWN: caller-o...` | function `uvIsectScanRegisteredValues` | [749](../src/modules/uvisect_rom.c#L749) |
 | explicit_unknown | `Scan the shared 0x78-byte records whose parallel filter word intersects mask. * The original helper appends results for the two input vectors. Expose shared * buffers only when ...` | function `uvIsectQueryFilteredSharedRecords` | [1049](../src/modules/uvisect_rom.c#L1049) |
 | explicit_unknown | `Select a scalar query result from shared mask-4 records or TERR slot 0x2C. * Preserve low-bit provider selection, low-16 mode consumption, ordered * tolerance/dot tests, texture...` | assembly `func_uvisect_rom_00402B5C` | [619](../src/modules/uvisect_rom.c#L619) |
@@ -6903,7 +6909,7 @@ For every future source wave, regenerate and check this index after code and str
 | explicit_unknown | `Store the supplied pointer at result offset 0x00 and clear word 0x04, * then append the entry address when fewer than 40 are pending. Return one on * insertion and zero when ful...` | function `uvIsectQueuePendingRecord` | [393](../src/modules/uvisect_rom.c#L393) |
 | explicit_unknown | `Store words at 0x08/0x0C and the floating-point fraction at 0x2C. Copy the * supplied direction into 0x34 and point into 0x14, then clear 16-bit state 0x4C. * RE_UNKNOWN: word m...` | function `uvIsectInitializeScalarAndVectorQueryState` | [647](../src/modules/uvisect_rom.c#L647) |
 | explicit_unknown | `TERR slot28 supplies the low-byte triangle-list count at point XY; * slot14 samples a scalar/vector for each triangle. Mode0 selects the greatest * scalar <= pointZ, mode1 the l...` | assembly `func_uvisect_rom_004045A8` | [949](../src/modules/uvisect_rom.c#L949) |
-| offset_field | `unk0` | type `UvIntersectionPayload` | [1313](../src/modules/uvisect_rom.c#L1313) |
+| offset_field | `unk0` | type `UvIntersectionPayload` | [1329](../src/modules/uvisect_rom.c#L1329) |
 | offset_field | `unk00` | function `uvIsectCreateValueRecord`, function `uvIsectQueryInputVectorsIntoRecord`, function `uvIsectQueryMinimumValueRecord`, type `IsectCopyRecord88`, type `IsectScalarPrefix`, type `IsectTransformPrefix`, type `IsectValueRecord` | [18](../src/modules/uvisect_rom.c#L18), [28](../src/modules/uvisect_rom.c#L28), [89](../src/modules/uvisect_rom.c#L89), [126](../src/modules/uvisect_rom.c#L126), [443](../src/modules/uvisect_rom.c#L443), [444](../src/modules/uvisect_rom.c#L444), [1011](../src/modules/uvisect_rom.c#L1011), [1012](../src/modules/uvisect_rom.c#L1012) (+1 in JSON) |
 | offset_field | `unk04` | function `uvIsectQueuePendingRecord`, type `IsectLargeRecord`, type `IsectOwnerResult`, type `IsectPendingRecords` | [20](../src/modules/uvisect_rom.c#L20), [128](../src/modules/uvisect_rom.c#L128), [129](../src/modules/uvisect_rom.c#L129), [401](../src/modules/uvisect_rom.c#L401) |
 | offset_field | `unk10` | type `IsectScalarPrefix` | [18](../src/modules/uvisect_rom.c#L18) |
@@ -6921,6 +6927,7 @@ For every future source wave, regenerate and check this index after code and str
 | original_quirk | `Append accepted DOBJ query candidates to the supplied intersection records. * DOBJ slot 0x50 supplies parallel words, fractions and Vec3F values; QERY slot * 0x1C supplies auxil...` | assembly `func_uvisect_rom_00403208` | [662](../src/modules/uvisect_rom.c#L662) |
 | original_quirk | `Append accepted TERR query candidates using the actual export at 0x90. * Preserve the cached source pointer/scalar, f32 square and f32 subtraction * before the square-root wrapp...` | assembly `func_uvisect_rom_0040344C` | [680](../src/modules/uvisect_rom.c#L680) |
 | original_quirk | `Append triangle or transformed-bounds intersections to shared result arrays. * Original ISCT here is uvintersect: slot 0x40 consumes the supplied normal and * may write the frac...` | assembly `func_uvisect_rom_00405124` | [1103](../src/modules/uvisect_rom.c#L1103) |
+| original_quirk | `Build a plane with the actual FVEC cross/normalize/dot providers, select * twelve box edges from ordered direction signs, then test strict interior * crossings in the original e...` | assembly `func_uvisect_rom_00405EDC` | [1188](../src/modules/uvisect_rom.c#L1188) |
 | original_quirk | `Combine requested provider lists in the original shared buffers, then * publish only the output addresses requested by the caller. * RE_ORIGINAL_QUIRK: In the flag-1 path, IDs a...` | function `uvIsectCollectRequestedProviderLists` | [470](../src/modules/uvisect_rom.c#L470) |
 | original_quirk | `Copy the input point twice, subtract the supplied span from the first Z, * and explicitly zero the local query word 0x18. Run flag-2, flag-8 and scalar * queries in that order, ...` | assembly `func_uvisect_rom_0040423C` | [933](../src/modules/uvisect_rom.c#L933) |
 | original_quirk | `Filter against existing 0x58-stride owner records and compact selected * records, preserving live owner-count reloads and original u16 induction. * RE_ORIGINAL_QUIRK: selection ...` | assembly `func_uvisect_rom_00404A7C` | [1034](../src/modules/uvisect_rom.c#L1034) |
@@ -6940,7 +6947,7 @@ For every future source wave, regenerate and check this index after code and str
 | uncertainty_note | `Copy the complete 88-byte intersection record, including opaque fields.` | — | [926](../src/modules/uvisect_rom.c#L926) |
 | uncertainty_note | `Replace the 88-byte record only when its value at offset 0x2C is smaller * than the running minimum. The value meaning is unknown; equal values keep * the existing record and Na...` | function `uvIsectUpdateMinimumValueRecord` | [1021](../src/modules/uvisect_rom.c#L1021) |
 | uncertainty_note | `Return the indexed integer/float query pair when the original inclusive * upper-bound check permits it. Outputs are unchanged on rejection. The query * parameter meaning and whe...` | function `uvIsectGetIndexedQueryPair` | [783](../src/modules/uvisect_rom.c#L783) |
-| uncertainty_note | `Store the attribute at offset 0x28C for a kind-zero record. Preserve the * original inclusive count check and lack of a negative-index check. The array * capacity is not establi...` | function `uvIsectSetValueAttribute` | [1275](../src/modules/uvisect_rom.c#L1275) |
+| uncertainty_note | `Store the attribute at offset 0x28C for a kind-zero record. Preserve the * original inclusive count check and lack of a negative-index check. The array * capacity is not establi...` | function `uvIsectSetValueAttribute` | [1291](../src/modules/uvisect_rom.c#L1291) |
 | uncertainty_note | `The original TERR export table has seven actual 32-bit function-address * entries before slot 0x1C. Keep those unused addresses opaque rather than * inventing callable signature...` | type `IsectTerrainTextureExports` | [8](../src/modules/uvisect_rom.c#L8) |
 
 ## src/modules/uvjanim_rom.c
@@ -8297,6 +8304,13 @@ For every future source wave, regenerate and check this index after code and str
 | opaque_type | `UnkStruct_8022B6CC` | type `UnkStruct_8022B6CC_t` | [6](../src/sched.c#L6) |
 | opaque_type | `UnkStruct_8022B6CC_t` | type `UnkStruct_8022B6CC_t` | [9](../src/sched.c#L9) |
 | uncertainty_note | `_uvDebugPrintf("unknown sched interrupt mesg: 0x%x\n", msg);` | function `_uvScMain` | [304](../src/sched.c#L304) |
+
+## src/sys_props.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| explicit_unknown | `* Return the existing stored word at property-ID-minus-one through the original * pointer return declaration. The accessor does not validate the ID locally. * RE_UNKNOWN: intend...` | function `uvGetSystemProp` | [36](../src/sys_props.c#L36) |
+| explicit_unknown | `* Store the supplied promoted 32-bit value at property-ID-minus-one, then read * the next signed property ID from the same argument list. Zero terminates; IDs * 23 or greater st...` | function `uvSystemProps` | [8](../src/sys_props.c#L8) |
 
 ## src/unused.c
 

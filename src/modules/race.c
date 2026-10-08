@@ -149,6 +149,21 @@ void raceReleaseManagedSoundsAndClearBytes(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/race/func_race_00402CE0.s")
 
+/* Update parallel player-gate bytes and count word-5C and byte-1D gates.
+ * Word5C calls CARAUDIO34, PLYR20 and SND E4 before reloading player/count.
+ * Byte1D uses a mode snapshot, reloaded only after the mode3 byte write.
+ * Actual resu loader binds RESULTS08, which dispatches shared result state;
+ * REPLAY14 clears a shared byte and ignores the prepared count argument.
+ * RE_ORIGINAL_QUIRK: zero count can satisfy both post-loop equality tests.
+ * RE_UNKNOWN: gate/mode/state meanings, reachable count/index domains, list
+ * extent, nullable inputs, aliases and callback lifetimes need original
+ * producers/callers. No complete array or race-end policy is established.
+ * A readable draft is 572 versus 568 native bytes, with 105 differing words.
+ * Both frames are 64 bytes; retained settings/export bases become repeated
+ * global-address materializations, constant3 is kept in a saved register,
+ * and the state5 store/settings-read schedule differs. The complete 31-
+ * versus 43-record relocation lists differ. Retain original assembly. */
+#line 106 "src/modules/race.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/race/func_race_00402E98.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/race/func_race_004030D0.s")

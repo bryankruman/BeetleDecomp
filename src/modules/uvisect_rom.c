@@ -1185,7 +1185,23 @@ s32 uvIsectFindMinimumSignedBoxMarginSide(IsectBounds *bounds, f32 *point) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00405C8C.s")
 
+/* Build a plane with the actual FVEC cross/normalize/dot providers, select
+ * twelve box edges from ordered direction signs, then test strict interior
+ * crossings in the original edge order. Nonzero low-16 mode ORs selector bits;
+ * mode zero calls native 0x405C8C and replaces the selector after each success.
+ * Preserve repeated bound reads, coordinate-store order and floating grouping.
+ * RE_ORIGINAL_QUIRK: endpoints are excluded, normalization's return is ignored,
+ * and mode zero tests the existing output scalar at 0x2C even when no edge
+ * helper succeeds. These observations do not establish invalid reachable input.
+ * RE_UNKNOWN: historical fourteen-argument/local-storage declarations, frames
+ * and units, bounds/divisor/length validity, output initialization and aliases.
+ * Trace original callers and 0x405C8C producers before strengthening contracts;
+ * the native low-16 mode reloads after helper calls also need source evidence.
+ * The readable draft differs in complete instructions/relocation positions;
+ * retain the original assembly and existing readonly constant ownership. */
+#line 203 "src/modules/uvisect_rom.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00405EDC.s")
+#line 204 "src/modules/uvisect_rom.c"
 
 #line 205 "src/modules/uvisect_rom.c"
 /* Clear the value-record registry count without freeing registered
