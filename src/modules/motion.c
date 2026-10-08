@@ -424,6 +424,28 @@ void motionRecordHistoryAndUpdateTrack(MotionHistoryState *state) {
 }
 #line 136 "src/modules/motion.c"
 
+/* Preserve the captured context126C across the optional TDATA query path or
+ * indexed-history path, then CARANIM property10, byte111/value114 stores,
+ * optional AI4C word store, direct helpers, both camera calls and value714.
+ * Actual TDATA0C writes one word and three floats; TDATA44 writes two floats.
+ * The first scalar and vector feed F54; the other outputs retain native
+ * provider writes. Each callback/global/context-member reload stays ordered.
+ * RE_ORIGINAL_QUIRK: only marked index -1 selects the cycling path, whose
+ * increment is reset at >=10. Other signed marked values directly select
+ * a 24-byte row without a local range check. Do not infer caller validity.
+ * RE_UNKNOWN: complete state/index and output-storage contracts, scalar and
+ * property meanings/units, aliasing, captured-context and module lifetimes
+ * need original producers, entry callers and callback replacement evidence.
+ * Readable C remains parked: both trials give 584 native/draft bytes and
+ * all 24 complete ordered relocation records match. The first has 29 word
+ * differences; the sole output-declaration refinement has 34. Native frame
+ * 72/context SP68 become 80/SP76 in both. Native word/vector/scalar homes
+ * SP40/56/52/48 become SP68/56/52/48 first and SP48/60/56/52 in the refinement.
+ * Cycling register choices and the marked-index store/move order also differ.
+ * No supported omitted effect, width or callback ABI correction was found.
+ * Historical local declarations and lowering remain unproved; require exact
+ * instructions plus original packed-module/fresh ROM proof before recovery. */
+#line 137 "src/modules/motion.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_004039BC.s")
 
 /* Preserve the positive value714 copy/reset group and the byte111 gate.

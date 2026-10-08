@@ -261,10 +261,10 @@ void diffSection(ModuleFileHeader* targetHeader, ModuleFileHeader* currentHeader
             compareDataSection(&targetSection, &currentSection, ".rodata");
             break;
         case MODULE_SECTION_DATA:
-            targetSection.size = targetHeader->commInfo.rodataSize;
-            currentSection.size = currentHeader->commInfo.rodataSize;
-            int32_t currentDataStart = currentHeader->commInfo.textSize + currentHeader->commInfo.dataSize + MODULE_TEXT_START;
-            int32_t targetDataStart = targetHeader->commInfo.textSize + targetHeader->commInfo.dataSize + MODULE_TEXT_START;
+            targetSection.size = targetHeader->commInfo.dataSize;
+            currentSection.size = currentHeader->commInfo.dataSize;
+            int32_t currentDataStart = currentHeader->commInfo.textSize + currentHeader->commInfo.rodataSize + MODULE_TEXT_START;
+            int32_t targetDataStart = targetHeader->commInfo.textSize + targetHeader->commInfo.rodataSize + MODULE_TEXT_START;
 
             targetSection.start = &targetBuf[targetDataStart];
             currentSection.start = &currentBuf[currentDataStart];

@@ -245,6 +245,31 @@ void medSetNormalizedColor(s32 rgba) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_004023E0.s")
 
+/* When the shared GAMEGUI state word at offset 0x0C equals 2, draw four
+ * mapped control-label rows with prefixes C1, A1, C2 and A2. Preserve the
+ * original graphics-state push/pop, font setup and rectangle arguments.
+ * Each row copies its current text before reading four table entries; each
+ * entry follows pointer offset 0x28, truncates f32 offset 0x24 to a word,
+ * and calls DLED slot 0x0C. Reload STRG after that callback before appending
+ * its returned address word through the original "%s%s " format. Draw and
+ * flush each completed row, then subtract the signed font-height step.
+ * RE_UNKNOWN: complete state/node declarations, table producers and lifetime,
+ * scalar meaning/conversion domain, label validity, callback alias/failure
+ * behavior and historical source ABI. Resolve through original table/node
+ * writers, DLED label tables and every setup/callback caller. Original scratch
+ * starts at SP+136 and SP+216 in a 296-byte frame; the 80-byte intervals do not
+ * prove historical array capacities or formatting bounds. Original producers
+ * and all possible label lengths are needed before claiming a safe capacity.
+ * RE_ORIGINAL_QUIRK: no local pointer, label or formatter-capacity checks;
+ * formatter accepts no capacity argument. Invalid-domain/failure reachability
+ * remains unproved; no reachable player fault is asserted.
+ * Readable C is parked: 860 native versus 876 draft bytes, 105 differing words.
+ * All 40 relocation targets/types/values agree only after omitting sites;
+ * 14 complete records move, so full records are not equal. Format-address
+ * retention, group spills and register scheduling remain unresolved. Require
+ * exact instructions, complete records and packed-module/ROM proof before
+ * replacing ASM; do not invent storage or retry compiler-only shapes. */
+#line 189 "src/modules/med.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_00402920.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_00402C7C.s")
