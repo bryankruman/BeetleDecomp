@@ -161,7 +161,23 @@ void pauseActivateIndexedMenu(s32 menuIndex) {
     *(u8 *)((u8 *)&D_pause_00405E58 + 5) = 1;
 }
 #line 143 "src/modules/pause.c"
-
+/*
+ * Invoke the current node's indexed callback, select both menus' first entries,
+ * then scan the live player count through CONT slot0x08's presence-bit test.
+ * For an absent controller, state5 clears the first selection and replaces a
+ * zero index via MENU slot0x18's first-selected-entry lookup (or -1); state6
+ * clears the second selection and changes its zero index to1. Either state
+ * stops the scan. Preserve pointer/count reloads across callbacks and SH16.
+ * RE_UNKNOWN: physical menu roles, callback-table signatures, valid player/
+ * count/index domains, full record extents and storage/lifetime guarantees.
+ * Resolve through original menu definitions, registrations, settings writers
+ * and entry callers; observed access prefixes establish no capacity.
+ * Readable C remains parked:352 original/candidate bytes, two reversed BNE
+ * operands after the bounded native-order retry. Complete relocation records
+ * agree as a multiset. Require exact instructions, packed PAUSE and ROM proof
+ * before replacing ASM; no padding, alternate storage or bug claim inferred.
+ */
+#line 144 "src/modules/pause.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_00400258.s")
 
 /* RE_UNKNOWN: menu slot0x14 action and node/owner storage lifetime require the original MENU provider and draw/lifecycle callers; observed calls are described below. */
@@ -198,7 +214,7 @@ void pauseToggleByteOnNewMenuAction(void *optionByte)
 }
 #line 170 "src/modules/pause.c"
 
-/* Observed node/owner prefixes only. RE_UNKNOWN: complete layouts, callback roles and linked-node ownership require original MENU accessors, registrations and lifecycle callers. */
+/* Observed node/selection prefixes only. RE_UNKNOWN: complete layouts, callback signatures and linked-node lifetimes need original definitions, registrations and lifecycle callers. */
 typedef struct PauseExtNode_0040048C_s {
     /* 0x00 */ s32 unk0;
     /* 0x04 */ struct PauseExtNode_0040048C_s *unk4;
@@ -209,14 +225,14 @@ typedef struct PauseExtNode_0040048C_s {
     /* 0x14 */ s16 unk14;
     /* 0x16 */ s16 unk16;
 } PauseExtNode_0040048C;
-typedef struct PauseOwnerExt_0040048C_s {
+typedef struct PauseLinkedSelectionExports_s {
     /* 0x00 */ char pad0[0x18];
-    /* 0x18 */ s16 (*unk18)(void *);
-} PauseOwnerExt_0040048C;
-typedef struct PauseOwnerTarget_0040048C_s {
+    /* 0x18 */ s32 (*findFirstSelectedEntry)(void *);
+} PauseLinkedSelectionExports;
+typedef struct PauseLinkedSelectionIndexView_s {
     /* 0x00 */ char pad0[0x4];
-    /* 0x04 */ s16 unk4;
-} PauseOwnerTarget_0040048C;
+    /* 0x04 */ s16 selectedIndex;
+} PauseLinkedSelectionIndexView;
 typedef struct UvGfxMgrExp_0040048C_s {
     /* 0x00 */ char pad0[0x74];
     /* 0x74 */ void (*unk74)(void);
@@ -224,9 +240,11 @@ typedef struct UvGfxMgrExp_0040048C_s {
 extern UvGfxMgrExp_0040048C *gUvGfxMgrExports;
 
 #line 196 "src/modules/pause.c"
-/* When the current node has a link, run its exit callback, wait for
- * graphics, select the linked node and run its entry callback. Then
- * refresh the linked node owner through the original callback ABI. */
+#line 196 "src/modules/pause.c"
+
+/* With a linked node, invoke exit, wait if requested, select the link and
+ * invoke entry; then store the first selected menu-entry index (or -1).
+ * RE_UNKNOWN: node/entry bounds, callback lifetimes and historical caller ABI need original producers/callers. */
 void pauseNavigateToLinkedNode(void)
 {
   PauseExtNode_0040048C *linkedNode;
@@ -236,9 +254,10 @@ void pauseNavigateToLinkedNode(void)
     gUvGfxMgrExports->unk74();
     linkedNode = (D_pause_00405E50 = ((PauseExtNode_0040048C *) D_pause_00405E50)->unk4);
     (*((void (**)(void)) (((u8 *) (&D_pause_00405D48)) + ((linkedNode->unk14 << 1) << 1))))();
-    ((PauseOwnerTarget_0040048C *) ((PauseExtNode_0040048C *) D_pause_00405E50)->unk8)->unk4 = ((PauseOwnerExt_0040048C *) D_pause_00405E44)->unk18(((PauseExtNode_0040048C *) D_pause_00405E50)->unk8);
+    ((PauseLinkedSelectionIndexView *) ((PauseExtNode_0040048C *) D_pause_00405E50)->unk8)->selectedIndex = ((PauseLinkedSelectionExports *) D_pause_00405E44)->findFirstSelectedEntry(((PauseExtNode_0040048C *) D_pause_00405E50)->unk8);
   }
 }
+#line 211 "src/modules/pause.c"
 #line 208 "src/modules/pause.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_00400544.s")

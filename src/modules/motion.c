@@ -298,6 +298,14 @@ void motionClearValueForFlaggedLookup(MotionFlagState *state, MotionFlagOutput *
 #line 149 "src/modules/motion.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_0040456C.s")
 
+/* Update scalar 0x680 through level 0x6C4, signed mode 0xA3C and
+ * ordered sign/magnitude gates, including sample 0x3A4 and both incoming
+ * word gates. Every path joins original MISC 0x54 ordered single clamp;
+ * reload the stored result before possible scalar-0x998 accumulation.
+ * RE_UNKNOWN: scalar units, mode/gate domains, tuning constants and state
+ * lifetime need original producers/callers. Clean C differs in branches,
+ * reloads and operand order; retain ASM pending full byte/relocation proof. */
+#line 151 "src/modules/motion.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00404868.s")
 
 #line 153 "src/modules/motion.c"
@@ -387,6 +395,15 @@ void motionProjectPointVelocity(MotionVelocityState *state, MotionProjectionReco
 }
 #line 164 "src/modules/motion.c"
 
+/* Update three selected-record scalars with the original pre-gate ratio,
+ * promoted-double gate, signed samples, MISC 0x58 degree fold and GRPH 0x04
+ * curve. Selector halfwords stride 0x10; records begin at 0x128, stride 0x130.
+ * Preserve the live count at 0x1130, u16 traversal and ordered zero/NaN gates.
+ * RE_UNKNOWN: physical units, selector/record capacities, divisor/curve
+ * domains, alternate-mode meaning and alias/lifetime need original producers.
+ * Clean C differs in reloads, branches, frame and operand order; retain ASM
+ * pending complete instruction and relocation proof. */
+#line 165 "src/modules/motion.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_004057E4.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00405B44.s")

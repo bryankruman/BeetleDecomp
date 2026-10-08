@@ -15,11 +15,11 @@ typedef struct {
     /* 0x00 */ int unk0;
     /* 0x04 */ int unk4;
     /* 0x08 */ char pad8[0xC];
-    /* 0x14 */ void *unk14;
+    /* 0x14 */ void *objectHandle;
     /* 0x18 */ char pad18[0x10];
     /* 0x28 */ int unk28;
 } Node_00407F30;
-typedef struct { char pad0[0x14]; void (*unk14)(void *, void *); char pad18[0x18]; void (*unk30)(void *, int); } UvDobjExp_00407F30;
+typedef struct { char pad0[0x14]; void (*unk14)(void *, void *); char pad18[0x18]; void (*setFlagBits)(void *, int); } UvDobjExp_00407F30;
 typedef struct { char pad0[0xCC]; void (*unkCC)(void *); } SndExp_00407F30;
 extern void *D_battle_00409EF8[];
 typedef struct { char pad[0xFC]; void (*unkFC)(void *, int, int); } MiscExp_00401A68;
@@ -388,28 +388,31 @@ typedef struct {
 } BattleState_00406784;
 typedef struct {
     /* 0x00 */ char pad0[0x38];
-    /* 0x38 */ void (*unk38)(void *, int, void *);
+    /* 0x38 */ void (*clearFlagBits)(void *, int, void *);
 } DobjExp3_00406784;
 typedef struct {
     /* 0x00 */ char  pad0[0x4];
     /* 0x04 */ int   unk4;
     /* 0x08 */ int   unk8;
     /* 0x0C */ float unkC;
-    /* 0x10 */ void *unk10;
+    /* 0x10 */ void *objectHandle;
 } Node_00406784;
 
 #line 308 "src/modules/battle.c"
 /* Clear node fields 0x8 and 0x4, copy the shared scalar at 0x1A34,
  * and increment its associated count at 0x1A30. Clear object flag bits
- * two and one in order. The legacy third call argument remains preserved. */
+ * masks 2 then 1; retain the legacy extra argument. RE_UNKNOWN: object-handle bounds/lifetime need original callers. */
+#line 311 "src/modules/battle.c"
+
 void battleResetNodeAndIncrementFirstCount(Node_00406784 *node) {
     node->unk8 = 0;
     node->unkC = ((BattleState_00406784 *)((char *)D_battle_0040A080))->unk1A34;
     node->unk4 = 0;
     ((BattleState_00406784 *)((char *)D_battle_0040A080))->unk1A30 = ((BattleState_00406784 *)((char *)D_battle_0040A080))->unk1A30 + 1;
-    ((DobjExp3_00406784 *)gUvDobjExports)->unk38(node->unk10, 2, node);
-    ((DobjExp3_00406784 *)gUvDobjExports)->unk38(node->unk10, 1, node);
+    ((DobjExp3_00406784 *)gUvDobjExports)->clearFlagBits(node->objectHandle, 2, node);
+    ((DobjExp3_00406784 *)gUvDobjExports)->clearFlagBits(node->objectHandle, 1, node);
 }
+#line 319 "src/modules/battle.c"
 #line 318 "src/modules/battle.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00406804.s")
@@ -455,7 +458,7 @@ typedef struct {
 } BattleData_40733C;
 typedef struct {
     /* 0x00 */ char pad0[0x38];
-    /* 0x38 */ void (*unk38)(void *, int, void *);
+    /* 0x38 */ void (*clearFlagBits)(void *, int, void *);
 } UvDobjExp_40733C;
 typedef struct {
     /* 0x00 */ char  pad0[0x4];
@@ -463,21 +466,24 @@ typedef struct {
     /* 0x08 */ int   unk8;
     /* 0x0C */ float unkC;
     /* 0x10 */ char  pad10[4];
-    /* 0x14 */ void *unk14;
+    /* 0x14 */ void *objectHandle;
 } BattleNode_40733C;
 
 #line 346 "src/modules/battle.c"
 /* Clear node fields 0x8 and 0x4, copy the shared scalar at 0x1D70,
  * and increment its associated count at 0x1D6C. Clear object flag bits
- * two and one in order. The legacy third call argument remains preserved. */
+ * masks 2 then 1; retain the legacy extra argument. RE_UNKNOWN: object-handle bounds/lifetime need original callers. */
+#line 349 "src/modules/battle.c"
+
 void battleResetNodeAndIncrementSecondCount(BattleNode_40733C *node) {
     node->unk8 = 0;
     node->unkC = ((BattleData_40733C *)(&D_battle_0040A080))->unk1D70;
     node->unk4 = 0;
     ((BattleData_40733C *)(&D_battle_0040A080))->unk1D6C = ((BattleData_40733C *)(&D_battle_0040A080))->unk1D6C + 1;
-    ((UvDobjExp_40733C *)gUvDobjExports)->unk38(node->unk14, 2, node);
-    ((UvDobjExp_40733C *)gUvDobjExports)->unk38(node->unk14, 1, node);
+    ((UvDobjExp_40733C *)gUvDobjExports)->clearFlagBits(node->objectHandle, 2, node);
+    ((UvDobjExp_40733C *)gUvDobjExports)->clearFlagBits(node->objectHandle, 1, node);
 }
+#line 357 "src/modules/battle.c"
 #line 355 "src/modules/battle.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_004073BC.s")
@@ -517,16 +523,19 @@ void battleClearObjectEffectsAndInitializeSounds(BattleObj_407E78 *node) {
 #line 385 "src/modules/battle.c"
 /* Set the node activity word, assign its indexed object model and
  * invalidate its particle handle. Set object flag bits two and one,
- * then initialize both embedded sound handles; this does not start sound loops. */
+ * then initialize both sound handles. RE_UNKNOWN: object-handle bounds/lifetime need original callers; sound loops are not started here. */
+#line 388 "src/modules/battle.c"
+
 void battleEnableIndexedModelAndInitializeSounds(Node_00407F30 *node) {
     node->unk4 = 1;
-    ((UvDobjExp_00407F30 *)gUvDobjExports)->unk14(node->unk14, D_battle_00409EF8[node->unk0]);
+    ((UvDobjExp_00407F30 *)gUvDobjExports)->unk14(node->objectHandle, D_battle_00409EF8[node->unk0]);
     node->unk28 = -1;
-    ((UvDobjExp_00407F30 *)gUvDobjExports)->unk30(node->unk14, 2);
-    ((UvDobjExp_00407F30 *)gUvDobjExports)->unk30(node->unk14, 1);
+    ((UvDobjExp_00407F30 *)gUvDobjExports)->setFlagBits(node->objectHandle, 2);
+    ((UvDobjExp_00407F30 *)gUvDobjExports)->setFlagBits(node->objectHandle, 1);
     ((SndExp_00407F30 *)gSndExports)->unkCC((void *)((char *)node + 0x2C));
     ((SndExp_00407F30 *)gSndExports)->unkCC((void *)((char *)node + 0x34));
 }
+#line 397 "src/modules/battle.c"
 #line 394 "src/modules/battle.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00407FF4.s")

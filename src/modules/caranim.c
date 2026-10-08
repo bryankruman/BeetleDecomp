@@ -32,7 +32,7 @@ extern UvFVec_Rom_Exports *gUvFvecExports;
 #include "uvdobj_rom.h"
 extern UvDobj_Exports *gUvDobjExports;
 typedef struct { u8 unk00[0x404]; s32 colorIndex; } CarAnimColorContext;
-typedef struct { u8 unk00[8]; s32 key; u8 unk0C[0x230]; u8 flag23C; } CarAnimRegisteredState; /* Focused view of the constructor's 0x45C-byte allocation; not a complete layout. */
+typedef struct { u8 unk00[8]; s32 objectHandle; u8 unk0C[0x230]; u8 flag23C; } CarAnimRegisteredState; /* Focused view of the constructor's 0x45C-byte allocation; not a complete layout. */
 /*__SEEDEXTERNS__*/
 extern void *gUvChanExports;
 extern void *gUvCbckExports;
@@ -83,7 +83,7 @@ void func_caranim_00405910();
 void func_caranim_00405B7C();
 void func_caranim_00405DE4();
 s32 caranimGetLocalizedLabel(s32 arg0);
-s32 caranimFindRegisteredStateByKey(s32 key);
+s32 caranimFindRegisteredStateByObjectHandle(s32 objectHandle);
 s32 func_caranim_00406094();
 void caranimApplyColorAndCallback(s32 objectId, CarAnimColorContext *state);
 extern s32 D_caranim_00407368;
@@ -450,17 +450,20 @@ s32 caranimGetLocalizedLabel(s32 labelId) {
 #line 208 "src/modules/caranim.c"
 
 #line 209 "src/modules/caranim.c"
-/* Find the first registered key with unsigned 16-bit traversal. RE_ORIGINAL_QUIRK: constructor0x003AC increments count even when all eight slots are full.
+/* Find the first registered state for this DOBJ handle with unsigned 16-bit traversal. RE_ORIGINAL_QUIRK: constructor0x003AC increments count even when all eight slots are full.
  * RE_UNKNOWN: caller bounds/lifetime must keep the searched prefix in range and nonnull; resolve original creation/lifecycle call sites. */
-s32 caranimFindRegisteredStateByKey(s32 key) {
+#line 211 "src/modules/caranim.c"
+
+s32 caranimFindRegisteredStateByObjectHandle(s32 objectHandle) {
     u16 index;
     for (index = 0; index < D_caranim_00407368; index++) {
-        if (D_caranim_00407348[index]->key == key) {
+        if (D_caranim_00407348[index]->objectHandle == objectHandle) {
             return index;
         }
     }
     return -1;
 }
+#line 220 "src/modules/caranim.c"
 #line 210 "src/modules/caranim.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00406094.s")

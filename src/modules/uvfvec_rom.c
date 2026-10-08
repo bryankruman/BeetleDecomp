@@ -15,8 +15,8 @@ f32 uvVec2FDot(Vec2F *va, Vec2F *vb);
 f32 uvVec2FDot(Vec2F *va, Vec2F *vb);
 s32 uvVec2FIsZero(Vec2F *v);
 f32 uvVec2FLen(Vec2F *v);
-f32 uvVec2FLenghtSquared(Vec2F *v);
-f32 uvVec2FLenghtSquared(Vec2F *arg0);
+f32 uvVec2FLengthSquared(Vec2F *v);
+f32 uvVec2FLengthSquared(Vec2F *arg0);
 void uvVec2FNegate(Vec2F *vdst, Vec2F *vsrc);
 s32 uvVec2FNormalize(Vec2F *va, Vec2F *vb);
 void uvVec2FReflect(Vec2F *va, Vec2F *vb, Vec2F *vc, f32 factor);
@@ -38,8 +38,8 @@ f32 uvVec3FDistance(Vec3F *arg0, Vec3F *arg1);
 f32 uvVec3FDot(Vec3F *va, Vec3F *vb);
 s32 uvVec3FIsZero(Vec3F *v);
 f32 uvVec3FLen(Vec3F *v);
-f32 uvVec3FLenghtSquared(Vec3F *v);
-f32 uvVec3FLenghtSquared(Vec3F *vec);
+f32 uvVec3FLengthSquared(Vec3F *v);
+f32 uvVec3FLengthSquared(Vec3F *vec);
 void uvVec3FMult(Vec3F *vdst, Vec3F *va, Vec3F *vb);
 void uvVec3FMult(Vec3F *vdst, Vec3F *va, Vec3F *vb);
 void uvVec3FNegate(Vec3F *va, Vec3F *vb);
@@ -65,7 +65,7 @@ void __entrypoint_func_uvfvec_rom_400000(UvFVec_Rom_Exports* exports) {
     exports->uvVec3FSet = uvVec3FSet;
     exports->uvVec3FNormalize = uvVec3FNormalize;
     exports->uvVec3FLen = uvVec3FLen;
-    exports->uvVec3FLenSquared = uvVec3FLenghtSquared;
+    exports->uvVec3FLenSquared = uvVec3FLengthSquared;
     exports->uvVec3FDistance = uvVec3FDistance;
     exports->uvVec3FDot = uvVec3FDot;
     exports->uvVec3FCopy = uvVec3FCopy;
@@ -79,7 +79,7 @@ void __entrypoint_func_uvfvec_rom_400000(UvFVec_Rom_Exports* exports) {
     exports->uvVec2FLen = uvVec2FLen;
     exports->uvVec3FAddScaled = uvVec3FAddScaled;
     exports->uvVec2FNegate = uvVec2FNegate;
-    exports->uvVec2FLenSquared = uvVec2FLenghtSquared;
+    exports->uvVec2FLenSquared = uvVec2FLengthSquared;
     exports->uvVec3FSub = uvVec3FSub;
     exports->uvVec2FReflect = uvVec2FReflect;
     exports->uvVec2FDot = uvVec2FDot;
@@ -135,18 +135,21 @@ s32 uvVec3FNormalize(Vec3F* destination, Vec3F* source) {
 #line 131 "src/modules/uvfvec_rom.c"
 
 f32 uvVec3FLen(Vec3F *v) {
-    return sUvMathRomExports->uvSqrtf(uvVec3FLenghtSquared(v));
+    return sUvMathRomExports->uvSqrtf(uvVec3FLengthSquared(v));
 }
 
-f32 uvVec3FLenghtSquared(Vec3F* v) {
-    return SQ(v->x) + SQ(v->y) + SQ(v->z);
+#line 136 "src/modules/uvfvec_rom.c"
+
+f32 uvVec3FLengthSquared(Vec3F* vector) {
+    return SQ(vector->x) + SQ(vector->y) + SQ(vector->z);
 }
+#line 139 "src/modules/uvfvec_rom.c"
 
 f32 uvVec3FDistance(Vec3F *va, Vec3F *vb) {
     Vec3F v;
 
     uvVec3FSub(&v, va, vb);
-    return sUvMathRomExports->uvSqrtf(uvVec3FLenghtSquared(&v));
+    return sUvMathRomExports->uvSqrtf(uvVec3FLengthSquared(&v));
 }
 
 f32 uvVec3FDot(Vec3F* va, Vec3F* vb) {
@@ -327,12 +330,15 @@ s32 uvVec2FNormalize(Vec2F* destination, Vec2F* source) {
 #line 295 "src/modules/uvfvec_rom.c"
 
 f32 uvVec2FLen(Vec2F *v) {
-    return sUvMathRomExports->uvSqrtf(uvVec2FLenghtSquared(v));
+    return sUvMathRomExports->uvSqrtf(uvVec2FLengthSquared(v));
 }
 
-f32 uvVec2FLenghtSquared(Vec2F *v) {
-    return SQ(v->x) + SQ(v->y);
+#line 300 "src/modules/uvfvec_rom.c"
+
+f32 uvVec2FLengthSquared(Vec2F *vector) {
+    return SQ(vector->x) + SQ(vector->y);
 }
+#line 303 "src/modules/uvfvec_rom.c"
 
 f32 uvVec2FDot(Vec2F *va, Vec2F *vb) {
     return (va->x * vb->x) + (va->y * vb->y);

@@ -4,8 +4,8 @@ rom:0x68 reloc:MIPS_HI16 symbol:uvVec3FNormalize
 rom:0x74 reloc:MIPS_LO16 symbol:uvVec3FNormalize
 rom:0x6C reloc:MIPS_HI16 symbol:uvVec3FLen
 rom:0x78 reloc:MIPS_LO16 symbol:uvVec3FLen
-rom:0x88 reloc:MIPS_HI16 symbol:uvVec3FLenghtSquared
-rom:0xB0 reloc:MIPS_LO16 symbol:uvVec3FLenghtSquared
+rom:0x88 reloc:MIPS_HI16 symbol:uvVec3FLengthSquared
+rom:0xB0 reloc:MIPS_LO16 symbol:uvVec3FLengthSquared
 rom:0x8C reloc:MIPS_HI16 symbol:uvVec3FDistance
 rom:0xB4 reloc:MIPS_LO16 symbol:uvVec3FDistance
 rom:0x90 reloc:MIPS_HI16 symbol:uvVec3FDot
@@ -32,8 +32,8 @@ rom:0x108 reloc:MIPS_HI16 symbol:uvVec3FAddScaled
 rom:0x130 reloc:MIPS_LO16 symbol:uvVec3FAddScaled
 rom:0x10C reloc:MIPS_HI16 symbol:uvVec2FNegate
 rom:0x134 reloc:MIPS_LO16 symbol:uvVec2FNegate
-rom:0x110 reloc:MIPS_HI16 symbol:uvVec2FLenghtSquared
-rom:0x138 reloc:MIPS_LO16 symbol:uvVec2FLenghtSquared
+rom:0x110 reloc:MIPS_HI16 symbol:uvVec2FLengthSquared
+rom:0x138 reloc:MIPS_LO16 symbol:uvVec2FLengthSquared
 rom:0x114 reloc:MIPS_HI16 symbol:uvVec3FSub
 rom:0x13C reloc:MIPS_LO16 symbol:uvVec3FSub
 rom:0x118 reloc:MIPS_HI16 symbol:uvVec2FReflect

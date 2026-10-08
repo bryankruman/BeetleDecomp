@@ -621,8 +621,50 @@ void uvDynSolveFactoredSystemInPlace(f32 **matrix, s32 count, s32 *permutation, 
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00402E38.s")
 
+/* Original two-sphere update: compute center distance through MATH slot 0x04
+ * and return zero when incomingRadius + distance <= targetRadius. Otherwise
+ * freeze (targetRadius + incomingRadius + distance) * 0.5f, subtract centers
+ * through FVEC slot 0x34, and obtain the offset length through slot 0x0C.
+ * If native readonly scalar 0x411ADC is strictly less than that length, scale
+ * the offset in place by (frozenRadius - currentTargetRadius) / length and
+ * add it to the target center. Always store the frozen radius and return one
+ * on this path. Keep separate provider calls and original aliases/read timing.
+ * RE_ORIGINAL_QUIRK: there is only the incoming-inside-target containment test;
+ * the opposite containment direction has no special branch. The half-sum
+ * formula must not be replaced by a guaranteed general sphere-union routine.
+ * RE_UNKNOWN: coordinate/radius units, finite/nonnegative input guarantees,
+ * relative-containment restrictions and permitted pointer aliases. Trace
+ * original callers and sphere producers before claiming complete bounds or
+ * changing the strict small-distance gate. The readable recovery remains
+ * parked: all arithmetic, vector offsets, calls, branches and twelve complete
+ * ordered relocations match, but eight stack-immediate words differ (frame
+ * 72 versus 80 bytes, incoming home 72 versus 80, radius home 64 versus 60).
+ * Original source-local declaration/lifetime evidence is needed; do not add
+ * artificial padding, initialize extra scratch or force register placement. */
+#line 325 "src/modules/uvdyn_rom.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00403294.s")
 
+/* Original scalar endpoint-pair test. Cache the second input's center and
+ * squared radius, then compare each consecutive three-float point at offsets
+ * 0x00 and 0x0C against that center. Each distance sum is left-associated f32
+ * arithmetic; a strict squaredRadius < squaredDistance comparison returns
+ * zero immediately. Return one only after both failure tests are bypassed.
+ * RE_ORIGINAL_QUIRK: equality passes, unordered comparisons bypass failure,
+ * and the radius is squared without checking its sign. Preserve these exact
+ * predicates rather than asserting containment for invalid/nonfinite inputs.
+ * RE_UNKNOWN: the first input's complete record extent/ownership, coordinate
+ * units, valid caller domains and permitted pointer aliases. Trace original
+ * callers and sphere/point producers before assigning a physical role or
+ * strengthening validation. The readable recovery is parked: native 212
+ * bytes versus draft 192, with 53 different instruction words. Both have no
+ * calls or relocations and the same per-point mathematical operations and
+ * strict branches, but native center.z/difference.y/difference.z stack homes
+ * and register lifetimes differ from the draft's radius spills and float
+ * allocation (native frame 32 bytes versus 40). No omitted operation or
+ * additional source contract is supported by the original evidence. Retain
+ * native instructions until genuine declaration/lifetime evidence resolves
+ * the code generation; do not add padding, scratch stores or forced registers. */
+#line 327 "src/modules/uvdyn_rom.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_004033F4.s")
 
 #line 329 "src/modules/uvdyn_rom.c"
