@@ -570,8 +570,8 @@ rom:0x3C94 reloc:MIPS_HI16 symbol:D_med_00408088
 rom:0x3C98 reloc:MIPS_LO16 symbol:D_med_00408088
 rom:0x3CBC reloc:MIPS_HI16 symbol:D_med_004067A4
 rom:0x3CC0 reloc:MIPS_LO16 symbol:D_med_004067A4
-rom:0x3D00 reloc:MIPS_HI16 symbol:medSetEnvironmentBlendFromNode
-rom:0x3D04 reloc:MIPS_LO16 symbol:medSetEnvironmentBlendFromNode
+rom:0x3D00 reloc:MIPS_HI16 symbol:medForwardEnvironmentScalarPairFromNode
+rom:0x3D04 reloc:MIPS_LO16 symbol:medForwardEnvironmentScalarPairFromNode
 rom:0x3D64 reloc:MIPS_HI16 symbol:D_med_004067B0
 rom:0x3D6C reloc:MIPS_LO16 symbol:D_med_004067B0
 rom:0x3D80 reloc:MIPS_HI16 symbol:func_med_004063CC

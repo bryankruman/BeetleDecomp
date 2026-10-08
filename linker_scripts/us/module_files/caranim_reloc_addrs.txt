@@ -449,8 +449,8 @@ rom:0x6130 reloc:MIPS_HI16 symbol:D_caranim_00407368
 rom:0x6138 reloc:MIPS_LO16 symbol:D_caranim_00407368
 rom:0x61C4 reloc:MIPS_HI16 symbol:D_caranim_00407178
 rom:0x61D4 reloc:MIPS_LO16 symbol:D_caranim_00407178
-rom:0x61F0 reloc:MIPS_HI16 symbol:caranimSelectCameraLight
-rom:0x61F8 reloc:MIPS_LO16 symbol:caranimSelectCameraLight
+rom:0x61F0 reloc:MIPS_HI16 symbol:caranimSelectCameraLightBufferSlot
+rom:0x61F8 reloc:MIPS_LO16 symbol:caranimSelectCameraLightBufferSlot
 rom:0x6898 reloc:MIPS_32 symbol:D_caranim_004061D0
 rom:0x68B4 reloc:MIPS_32 symbol:D_caranim_004061D8
 rom:0x68D0 reloc:MIPS_32 symbol:D_caranim_004061E0

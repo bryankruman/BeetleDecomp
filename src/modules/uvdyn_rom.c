@@ -562,7 +562,23 @@ void uvDynComposeRelativeTransform(Mtx4F *output, Mtx4F *first, Mtx4F *second) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00400A14.s")
 
+/* Original ranked-vector wrapper: sum/normalize the second vector bank,
+ * use (0,0,1) only for reported normalization failure, then rank scalar/dot
+ * inputs through direct0x400E40 before delegating to direct0x401014.
+ * Original scratch comprises two f32[3] banks and two Vec3F-pointer[3] banks,
+ * not four copied vectors: E40's capacity is3-startIndex and this caller
+ * supplies startIndex0/count0. Only the selected prefix is initialized.
+ * Each native zero/nonzero-dot branch reads its scalar after the FP compare;
+ * an exact zero uses priority1, while unordered dots take native division.
+ * RE_UNKNOWN: vector frame, scalar units, matrix alias/input domains and
+ * complete historical source declarations. Trace original caller buffers
+ * and helper0x401014 consumers before assigning physical/ownership names.
+ * RE_UNKNOWN: original local organization and constant lifetimes. Typed C
+ * retains the observed operations and helper argument bits, but still differs
+ * in frame/spill layout and scheduling after the bounded native-read trial;
+ * original declarations or new contract evidence is needed for matching. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00400C08.s")
+#line 312 "src/modules/uvdyn_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00400E40.s")
 
@@ -1326,7 +1342,26 @@ void uvDynInvokeValueCallback1570(DynStateCallbacks *state, s32 value) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00407594.s")
 
+/* Original positive-projection displacement wrapper: ISCT slot 0x94 may flip
+ * record.vector34 using state.vector1478 and the attachment's signed terrain
+ * index. Only ordered positive dot products continue to the vector-pair query.
+ * The native query input is 28 bytes with word18=1; its output copy is 88 bytes.
+ * Success scales by output.value2C, updates both translation/vector storage,
+ * calls 0x408DC8, and propagates the explicit integer result from 0x408ACC.
+ * Failure uses the separate 0.1f fallback and returns 1; other projections
+ * return 0. Native readonly multipliers remain original external objects.
+ * RE_UNKNOWN: vector frame/units, record-vector normalization, word18's full
+ * mode-dependent representation, and supported record-kind/query combinations.
+ * Trace original record/input producers and ISCT query-mode setters to resolve
+ * these; word18 has other observed word/pointer uses in the query providers.
+ * RE_UNKNOWN: complete attachment/storage ownership and allowed alias domains.
+ * Trace original attachment and state producers before adding ownership claims.
+ * RE_UNKNOWN: original local declarations and expression lifetimes. The bounded
+ * typed trial retains call/branch positions and relocation targets but differs
+ * in 17 stack-local addresses and one floating-add operand order. New original
+ * declaration/dataflow evidence is needed; do not replace this ASM with draft C. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040771C.s")
+#line 423 "src/modules/uvdyn_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_004079B8.s")
 

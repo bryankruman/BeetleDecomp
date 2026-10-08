@@ -152,7 +152,7 @@ void pauseActivateIndexedMenu(s32 menuIndex) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_00400258.s")
 
-// Dispatch the current pause-state's update function, then call the owner's unk14 and flush the font display list.
+/* RE_UNKNOWN: menu slot0x14 action and node/owner storage lifetime require the original MENU provider and draw/lifecycle callers; observed calls are described below. */
 #line 147 "src/modules/pause.c"
 /* Call the current node draw callback, render that node in mode one,
  * and generate the font display list in the original order. */
@@ -186,7 +186,7 @@ void pauseToggleByteOnNewMenuAction(void *optionByte)
 }
 #line 170 "src/modules/pause.c"
 
-/* Advance the pause-state linked list: dispatch exit for current node, swap to next, dispatch enter, then update unk8->unk4. */
+/* Observed node/owner prefixes only. RE_UNKNOWN: complete layouts, callback roles and linked-node ownership require original MENU accessors, registrations and lifecycle callers. */
 typedef struct PauseExtNode_0040048C_s {
     /* 0x00 */ s32 unk0;
     /* 0x04 */ struct PauseExtNode_0040048C_s *unk4;
@@ -328,7 +328,7 @@ void pauseRequestSelectionState(void) {
     gGameStateFlag = 0xE;
 }
 #line 252 "src/modules/pause.c"
-
+/* RE_UNKNOWN: shared selector0x6EAE and counted signed-short banks0x6EC0/0x6ED0 have unresolved table meanings, count bounds, complete backing extent and update lifetime; trace original settings/count writers and callers. Original SCENE04 clamps the signed selector to0..5; this wrapper stores its table value then requests state5. Readable C preserves the operations but base-address reuse/register selection still differs; historical typed access/source declarations or new compiler evidence is needed. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_00400DB8.s")
 
 #line 255 "src/modules/pause.c"

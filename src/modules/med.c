@@ -355,7 +355,7 @@ void medWriteSecondSharedRgbaCommand(s32 unused) {
 /* Environment export call (single float pair) when D_med_00407FD4 != -1 */
 typedef struct {
     char pad0[0x8];
-    void (*unk8)(s32, s32, f64, f64, s32);
+    void (*setTaggedProperties)(s32, ...);
 } UvEnvExp_4052C8;
 extern UvEnvExp_4052C8 *gUvEnvExports;
 typedef struct {
@@ -365,21 +365,24 @@ typedef struct {
 extern s32 D_med_00407FD4;
 
 #line 271 "src/modules/med.c"
-/* Set environment property three from node scalar 0x24 with rate one
- * when the environment handle is valid. Preserve double promotions. */
-void medSetEnvironmentBlendFromNode(Node_4052C8 *node)
+#line 271 "src/modules/med.c"
+
+/* If the cached environment word differs from -1, forward tag 3 with node scalar 0x24 and 1.0f, preserving both double promotions and tag 0.
+ * RE_UNKNOWN: scalar meanings/units, node backing and valid file-ID domains require original UVEN record readers, control/storage writers and callers; ENV checks the first scalar and may reject the pair. */
+void medForwardEnvironmentScalarPairFromNode(Node_4052C8 *node)
 {
-  s32 environment;
-  float rate;
-  s32 savedEnvironment;
-  environment = D_med_00407FD4;
-  savedEnvironment = environment;
-  if (environment != (-1))
+  s32 environmentId;
+  float unitScalar;
+  s32 savedEnvironmentId;
+  environmentId = D_med_00407FD4;
+  savedEnvironmentId = environmentId;
+  if (environmentId != (-1))
   {
-    rate = 1.0f;
-    gUvEnvExports->unk8(savedEnvironment, 3, (f64) node->unk24, (f64) rate, 0);
+    unitScalar = 1.0f;
+    gUvEnvExports->setTaggedProperties(savedEnvironmentId, 3, (f64) node->unk24, (f64) unitScalar, 0);
   }
 }
+#line 286 "src/modules/med.c"
 #line 284 "src/modules/med.c"
 /* RE_UNKNOWN: physical meaning/units, valid environment/control domains and camera object bounds/lifetime require original UVEN/CAM field readers, assets and create/use callers; original ENV7 consumes one promoted double into record+0x48, CAM7 marks object+0x10 and stores float+0x24, and the same once-promoted control value is saved across both calls without a validity guard. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_00405338.s")
@@ -424,30 +427,33 @@ void medSetSelectedObjectLightScalarTriple(s32 unused) {
 #line 313 "src/modules/med.c"
 
 #line 314 "src/modules/med.c"
-/* Query five RGB property triplets, two blend values and one scalar from
- * the selected environment. The original editor routine discards the results
- * and shares one output for both blend rates. Preserve the unused argument
- * and skip the call when the environment handle is -1. */
+#line 314 "src/modules/med.c"
+
+/* Query five normalized-byte triples, two scalar pairs and property 7, discarding the results; preserve the unused argument and cached-ID != -1 gate.
+ * Tags 2/3 share their second-output address; retain all query tags, pointer identities and original write order.
+ * RE_UNKNOWN: physical property meanings/units and the cached-file-loaded guarantee require original UVEN readers, storage writers and lifecycle callers.
+ * RE_ORIGINAL_QUIRK: ENV query writes through null if the file is absent; preserve this original panic path without claiming caller reachability. */
 void medQuerySelectedEnvironmentProperties(s32 unused) {
-    f32 color8R, color8G, color8B;
-    f32 color9R, color9G, color9B;
-    f32 color5R, color5G, color5B;
-    f32 color10R, color10G, color10B;
-    f32 blend2, blend3, scalar7;
-    f32 color4R, color4G, color4B;
-    f32 sharedBlendRate;
+    f32 property8First, property8Second, property8Third;
+    f32 property9First, property9Second, property9Third;
+    f32 property5First, property5Second, property5Third;
+    f32 property10First, property10Second, property10Third;
+    f32 property2First, property3First, property7;
+    f32 property4First, property4Second, property4Third;
+    f32 sharedPairSecond;
     if (D_med_00407FD4 != -1) {
         ((UvEnv_Exports *)gUvEnvExports)->uvEnvGetProps(D_med_00407FD4,
-            8, &color8R, &color8G, &color8B,
-            9, &color9R, &color9G, &color9B,
-            5, &color5R, &color5G, &color5B,
-            4, &color4R, &color4G, &color4B,
-            10, &color10R, &color10G, &color10B,
-            2, &blend2, &sharedBlendRate,
-            3, &blend3, &sharedBlendRate,
-            7, &scalar7, 0);
+            8, &property8First, &property8Second, &property8Third,
+            9, &property9First, &property9Second, &property9Third,
+            5, &property5First, &property5Second, &property5Third,
+            4, &property4First, &property4Second, &property4Third,
+            10, &property10First, &property10Second, &property10Third,
+            2, &property2First, &sharedPairSecond,
+            3, &property3First, &sharedPairSecond,
+            7, &property7, 0);
     }
 }
+#line 338 "src/modules/med.c"
 #line 315 "src/modules/med.c"
 
 #line 316 "src/modules/med.c"

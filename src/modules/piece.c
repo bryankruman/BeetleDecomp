@@ -5,7 +5,15 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/piece/func_piece_004001F4.s")
 
+/* Original five-slot walk at stride0x20: re-read each byte0x10 and call
+ * helper0x401F4 on that indexed record only when the byte is nonzero.
+ * RE_UNKNOWN: byte meaning, complete record layout/extent, ownership and
+ * helper update lifetime require original creation/field writers and callers.
+ * RE_UNKNOWN: historical source access views; the readable draft preserves
+ * the observed loop, loads, call and argument but compiler base-address
+ * reuse/scheduling still differs. Retain native assembly until grounded. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/piece/func_piece_00400670.s")
+#line 9 "src/modules/piece.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/piece/func_piece_004006E0.s")
 

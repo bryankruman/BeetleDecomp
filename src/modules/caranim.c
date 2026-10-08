@@ -466,10 +466,12 @@ extern void *gCamExports;
 extern void *gUvLightExports;
 
 #line 220 "src/modules/caranim.c"
-/* Select the state light handle at 0x248 when the current camera word
- * 0x220 is nonnegative, otherwise select sentinel -1. Preserve the shared
- * camera indirection and original light-export contract. */
-void caranimSelectCameraLight(void *state)
+/* Select the state light-buffer slot at 0x248 when camera word 0x220 is nonnegative.
+ * Otherwise select -1, suppressing emission through UVLIGHT 0x20. RE_UNKNOWN: camera-word
+ * meaning, caller slot validity and record lifetime; trace camera/animation producers. */
+#line 223 "src/modules/caranim.c"
+
+void caranimSelectCameraLightBufferSlot(void *state)
 {
   s32 *temp;
   if ((*((s32 *) ((*((s32 *) (*((s32 **) (((u8 *) gCamExports) + 0x30))))) + 0x220))) >= 0)
@@ -481,6 +483,7 @@ void caranimSelectCameraLight(void *state)
     (*((void (**)(s32)) (((u8 *) gUvLightExports) + 0x20)))(-1);
   }
 }
+#line 235 "src/modules/caranim.c"
 #line 232 "src/modules/caranim.c"
 
 #line 233 "src/modules/caranim.c"
@@ -490,7 +493,7 @@ void caranimApplyColorAndCallback(s32 objectId, CarAnimColorContext *state) {
     s32 index = state->colorIndex;
     s32 color = ((s32 *)&D_caranim_00407178)[index];
     gUvDobjExports->uvDobjReplaceLightColorRecord(objectId, color, color, 0);
-    gUvDobjExports->uvDobjProps(objectId, 4, caranimSelectCameraLight, state, 0);
+    gUvDobjExports->uvDobjProps(objectId, 4, caranimSelectCameraLightBufferSlot, state, 0);
 }
 #line 234 "src/modules/caranim.c"
 
