@@ -2478,10 +2478,19 @@ Totals: 362 further recoveries after the 225 upstream ordinary imports, plus 133
 Frozen wave `2206-motion-mode-property-recovery-2206` and `accepted-motion-mode-property-recovery-2206` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 362 further readable functions
+## Historical accepted checkpoint — 362 further readable functions
 
 Rename only matrix-wrapper parameters and locals; preserve by-value64-byte fixed matrices, low16flags, shared-matrix operation order and ignored rejection returns. Actual FMTX/IMTX initializers and complete providers establish bindings without assuming valid input ranges, indices/capacity, aliases/lifetimes, historical flags or error expectations. Keep TED selected-record refresh in original ASM; document observed index/read/default/callback behavior, unknown caller domains and unresolved instruction/readonly differences. Two older cleanups, zero recoveries and one pure note; no alias/ABI/type/readonly changes. Raw whole-source inverse and all executable logical coordinates pass before writes. Require both original packed modules, fresh original ROM,1031source hashes and uncertainty index before acceptance.
 
 Totals: 362 further recoveries after the 225 upstream ordinary imports, plus 1335 existing C semantic cleanups. Current ledger: 838 assembly references = 795 ordinary + 43 entrypoints; 748,524 known remaining instruction bytes; zero unknown sizes; 299 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `2210-older-matrix-forwarding-contracts-2210` and `accepted-older-matrix-forwarding-contracts-2210` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 363 further readable functions
+
+Recover Motion12F38 as motionApplyPropertyAndRumbleSequence: preserve all 107 original instruction words and all 20 ordered object relocation records, six original serialized relocations and existing order rows. Preserve captured-context versus later context reload, native callback widths, three rumble merges, CAM/CAR tagged inputs and the DATA vector/PIECE handoff. Keep historical source types, IDs, units, module availability, allocation and lifetime unknowns explicit. Include only the reviewed pure PAUSE Continue/Joker native-contract note; its original ASM remains. All untouched executable and pragma logical coordinates are preserved. Regenerate extraction before full build. Require original packed Motion and PAUSE, fresh original ROM, all frozen source hashes, uncertainty index and complete worker ledger with exactly 837 ordered remaining identities and 748096 positive known bytes. No local missing-ASM sizes are used.
+
+Totals: 363 further recoveries after the 225 upstream ordinary imports, plus 1335 existing C semantic cleanups. Current ledger: 837 assembly references = 794 ordinary + 43 entrypoints; 748,096 known remaining instruction bytes; zero unknown sizes; 299 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `2223-motion-property-sequence-recovery-2223` and `accepted-motion-property-sequence-recovery-2223` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

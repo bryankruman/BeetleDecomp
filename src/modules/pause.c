@@ -327,6 +327,31 @@ void pausePrepareNavigationAudio(void) {
 }
 #line 226 "src/modules/pause.c"
 
+/* Draw the localized Continue/Joker label and shared signed count, then
+ * the localized question beneath the current menu node. Copy three question
+ * pointers before callbacks; retain both measurements of the combined text,
+ * signed division by two and the original language/count/node/export reloads.
+ * Actual FONT measurement returns, STRG formatting arguments and all nine
+ * MENU text words are verified against their original providers and bindings.
+ * RE_UNKNOWN: shared-count lifecycle, language-index bounds, complete node/
+ * descriptor/settings storage, pointer aliases/lifetimes and font/resource
+ * guarantees. Trace original settings writers, menu setup, callbacks and all
+ * entry callers before tightening these contracts or claiming invalid access.
+ * The native format destination is SP+84; the next observed live scalar is
+ * SP+148. This 64-byte interval does not prove a historical array declaration,
+ * object capacity or safe formatting bound. Historical callback arguments,
+ * return and scratch declarations remain unresolved; no incoming word is read.
+ * RE_ORIGINAL_QUIRK: no local language bounds, font-load failure or formatter
+ * capacity checks occur. The actual formatter has no capacity argument, and
+ * failed font selection can leave the shared font pointer null. Reachability
+ * of invalid indices, missing fonts or excessive output is not established.
+ * Readable C is parked: 736 native versus 740 draft bytes, 116 differing words
+ * and 28 versus 36 complete relocation records. The settings base is retained
+ * natively but rematerialized in the draft; question/scalar stack homes and
+ * scheduling also differ. No missing provider effect was found. Require exact
+ * instructions, full relocation and packed-module/ROM proof before replacing
+ * ASM; no invented storage or further source-shape variants without evidence. */
+#line 227 "src/modules/pause.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_0040098C.s")
 
 #line 229 "src/modules/pause.c"

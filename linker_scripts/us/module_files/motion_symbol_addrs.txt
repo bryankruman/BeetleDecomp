@@ -465,3 +465,4 @@ motionAccumulateTransformedConfiguredVector = 0x0040F424; // type:func
 motionComputePlanarRecordAngleResponse = 0x004055BC; // type:func
 motionQueryHasNonExcludedKind = 0x00411BB4; // type:func
 motionUpdateModeGatedProperties = 0x00412CF0; // type:func
+motionApplyPropertyAndRumbleSequence = 0x00412F38; // type:func

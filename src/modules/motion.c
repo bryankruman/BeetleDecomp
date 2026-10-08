@@ -223,7 +223,65 @@ extern f32 D_80025D6C;
 void motionUpdateModeGatedProperties(MotionModePropertyState *);
 #line 184 "src/modules/motion.c"
 void func_motion_00412E44();
-void func_motion_00412F38();
+/* Focused observed offsets and consumed callback inputs only. These views
+ * establish neither complete historical allocations nor pointer ownership. */
+#include "uvfvec_rom.h"
+typedef struct MotionPropertySequenceCamera {
+    u8 opaque00[0x15C];
+    f32 value15C;
+} MotionPropertySequenceCamera;
+typedef struct MotionPropertySequenceContext {
+    u8 opaque00[4];
+    void *animationState;
+    u8 opaque08[4];
+    MotionPropertySequenceCamera *cameraRecord;
+    u8 opaque10[4];
+    s32 rumbleIndex;
+    s32 objectHandle;
+} MotionPropertySequenceContext;
+typedef struct MotionPropertySequenceState {
+    u8 opaque00[0x918];
+    void *dynamicRecord;
+    u8 opaque91C[0x950];
+    MotionPropertySequenceContext *context;
+} MotionPropertySequenceState;
+typedef struct MotionPropertySequenceDynamicExports {
+    u8 opaque00[0x70];
+    void (*setReference)(void *, void *);
+} MotionPropertySequenceDynamicExports;
+typedef struct MotionPropertySequenceObjectExports {
+    u8 opaque00[0x38];
+    void (*clearFlags)(s32, u32);
+} MotionPropertySequenceObjectExports;
+typedef struct MotionPropertySequenceCarExports {
+    u8 opaque00[0x14];
+    void (*setProperties)(void *, s32, ...);
+    u8 opaque18[0x30];
+    void (*configureObject)(s32, void *);
+} MotionPropertySequenceCarExports;
+typedef struct MotionPropertySequenceRumbleExports {
+    u8 opaque00[4];
+    void (*mergePatternValues)(s32, f32, f32, f32);
+} MotionPropertySequenceRumbleExports;
+typedef struct MotionPropertySequenceCameraExports {
+    u8 opaque00[0x20];
+    void (*setProperties)(void *, s32, ...);
+} MotionPropertySequenceCameraExports;
+typedef struct MotionPropertySequencePieceExports {
+    u8 opaque00[8];
+    s32 (*createFromObject)(s32, s32, Vec3F *, f32, f32, s32);
+} MotionPropertySequencePieceExports;
+extern void *gUvDynExports;
+extern void *gUvDobjExports;
+extern void *D_motion_00416A84;
+extern void *gRumbleExports;
+extern void *gCamExports;
+extern void *gPieceExports;
+/* Original DATA+9E4 supplies exactly three copied words; the original PIECE
+ * helper forwards them to the proven FVEC1C three-float copy. No units inferred. */
+extern Vec3F D_motion_00416A64;
+void motionApplyPropertyAndRumbleSequence(MotionPropertySequenceState *);
+#line 186 "src/modules/motion.c"
 void func_motion_004130E4(void *, void *, s32);
 void func_motion_00413284();
 void func_motion_00413568();
@@ -892,7 +950,44 @@ void motionUpdateModeGatedProperties(MotionModePropertyState *state)
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00412E44.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00412F38.s")
+#line 275 "src/modules/motion.c"
+/* Preserve the original callback inputs, captured context and later context reload. */
+/* Apply the original dynamic/object flags, CARANIM properties and three
+ * rumble merges, then forward CAM tag18 and configure the returned PIECE object.
+ * RE_ORIGINAL_QUIRK: the PIECE source handle reloads state->context after
+ * callbacks, while the final CARANIM call uses the initially captured context.
+ * RE_UNKNOWN: property/value roles and physical units, caller ID domains,
+ * module availability, record allocations, aliases and retained pointer
+ * lifetimes require original producers/callers. Keep the original read order
+ * and callback results without adding null/default handling. */
+void motionApplyPropertyAndRumbleSequence(MotionPropertySequenceState *state)
+{
+    MotionPropertySequenceContext *context;
+    Vec3F pieceVector;
+    s32 pieceHandle;
+
+    context = state->context;
+    ((MotionPropertySequenceDynamicExports *)gUvDynExports)->setReference(
+        state->dynamicRecord, 0);
+    ((MotionPropertySequenceObjectExports *)gUvDobjExports)->clearFlags(
+        context->objectHandle, 1);
+    ((MotionPropertySequenceCarExports *)D_motion_00416A84)->setProperties(
+        context->animationState, 27, 0, 10, 0, 0);
+    ((MotionPropertySequenceRumbleExports *)gRumbleExports)->mergePatternValues(
+        context->rumbleIndex, 1.0f, 0.5f, 0.0f);
+    ((MotionPropertySequenceRumbleExports *)gRumbleExports)->mergePatternValues(
+        context->rumbleIndex, 0.7f, 0.5f, 0.5f);
+    ((MotionPropertySequenceRumbleExports *)gRumbleExports)->mergePatternValues(
+        context->rumbleIndex, 0.4f, 0.5f, 1.0f);
+    ((MotionPropertySequenceCameraExports *)gCamExports)->setProperties(
+        context->cameraRecord, 18, 3, (f64)context->cameraRecord->value15C, 0);
+    pieceVector = D_motion_00416A64;
+    pieceHandle = ((MotionPropertySequencePieceExports *)gPieceExports)->createFromObject(
+        state->context->objectHandle, 99, &pieceVector, 8.0f, 2.0f, -1);
+    ((MotionPropertySequenceCarExports *)D_motion_00416A84)->configureObject(
+        pieceHandle, context->animationState);
+}
+#line 276 "src/modules/motion.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_004130E4.s")
 
