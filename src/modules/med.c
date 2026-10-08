@@ -254,7 +254,7 @@ void medStoreSharedNodeByte23(s32 unused) {
     }
 }
 #line 200 "src/modules/med.c"
-
+/* RE_UNKNOWN: shared word-window and referenced-record extents/ownership, four interleaved scalar-pair meanings and historical unused-argument type require original D_med_00407F28 producers, record readers and source/caller declarations; preserve the initial reference gate, two-pointer snapshot, four-byte source step and separate original load/store order without assuming complete object layouts. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_00404FE0.s")
 
 typedef struct {
@@ -363,9 +363,9 @@ void medSetEnvironmentBlendFromNode(Node_4052C8 *node)
   }
 }
 #line 284 "src/modules/med.c"
-
+/* RE_UNKNOWN: physical meaning/units, valid environment/control domains and camera object bounds/lifetime require original UVEN/CAM field readers, assets and create/use callers; original ENV7 consumes one promoted double into record+0x48, CAM7 marks object+0x10 and stores float+0x24, and the same once-promoted control value is saved across both calls without a validity guard. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_00405338.s")
-
+/* RE_UNKNOWN: original GUI C4 reads 30 bytes from the formatted NO PALETTE/decimal label address, but historical local-object extent and trailing-byte state remain unresolved; truncated control domain, UVTP resource bounds/load success and selected-table lifetime require original stack/source, control callers and asset/load-unload evidence. Preserve the saved pre-callback selection and 0xFFFF clear sentinel without adding clamps or assuming a reachable fault. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_004053B4.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_00405488.s")

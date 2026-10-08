@@ -104,7 +104,7 @@
     "include/system_props.h": "ef77d6bddf548f45ff4908198f229103ed7c425632586f1040f082627f4c10a8",
     "include/track7.h": "f2c90e3181c60d1da9ff395ff848972f82fa2476cdb9f8cf955f0bb4aa1a2775",
     "include/uv_clocks.h": "8e8f9f6abea6e428464d0930a4eb47276b39a3e9dbb1fd3417dd8d7e6831fc21",
-    "include/uv_filesystem.h": "8606c660b174bf3dd9ce1af23f5275b9e460bf22821aa4ad01be79d2a81343e2",
+    "include/uv_filesystem.h": "e22ee4110b3ee5d5467f942acfac5878988ea59eb5d95140ec4d408617999c78",
     "include/uv_main.h": "3d06fb82a8d8fd9ffe4bc28f7aec2dc527e94481634c58bcb3c9d0c7c6d625ab",
     "include/uv_memory.h": "28048e899684a72e2c171c6c13e99822f1571589b84fa2435d99a6a04b15d05b",
     "include/uv_module.h": "1410ecb97640ede94c7f96a1657de6cb56d6bcbd109458afc1888903e2f03188",
@@ -164,7 +164,7 @@
     "include/weapon.h": "1144bab7321fe6c83d740bea9a102b2ab82c6b765dd4b4a1ba4c27de719845d0",
     "src/clocks.c": "37208d44aaa1fa37ee38a06261e7ebb32f73ff8b6e1f5b57f391a91728ea3aa6",
     "src/crash_screen.c": "7e78df2fb86123fd4f921d55d25a459dd6bdd2e1dd9f7372ac91bc98294ab36e",
-    "src/file_manager.c": "f5dc7e65114aec01fab8610e0425500f54454ae24ac1aa40cac344f5a57cf54c",
+    "src/file_manager.c": "c149060309cad8a6ca82ed0af045e03c574ad254c50d180d3bed718a393ea286",
     "src/filesystem.c": "2453d692177347f67a06138a06abdb49aef8e4bd0c40d5273d5c8e142d2e36a9",
     "src/game_init.c": "6944f62f0433701411476dac29f9bc72d997309d6be0919a55c7e7a3b8b6e20b",
     "src/isprint.c": "0a772034f3731b8677ddd0d15e2977f08f7ef6882db5055abfbd6dd09a7df3ca",
@@ -218,7 +218,7 @@
     "src/modules/level1.c": "a6d12da751d98423918c6a81d403a21dfe0a21eaf085534f1dd90d33a4d75bed",
     "src/modules/light.c": "1a98486e23cf77f235ae5bc8e34f08ba97f834324944a9abf34d94587ac658b3",
     "src/modules/logo.c": "98b52c4dd4100cf937d10d704a5b1720b9ff63a628099b7215f9fbc57d364619",
-    "src/modules/med.c": "644c0b24fb129a219d2371c5d300caf2074aecf7a2dd1bc84221b0f4e3bbac03",
+    "src/modules/med.c": "9f7eb50736ec0b136e4af2b297712277c7b356c4fdec70c5e1cc121369a3f2fe",
     "src/modules/menuslct.c": "40cca456720770fe92cb7f90ab85b54db5d0de789eb87256c8e9a892d88ec021",
     "src/modules/misc.c": "22da7a9f99cbdc10794c70a226808b1319b3239cb76f9233d3285ca3efc43c5f",
     "src/modules/motion.c": "be5a4b3ce306c78a46f506f7e74a11b3ec34e0e2977e9c3feca5ba27f7bdc624",
@@ -310,7 +310,7 @@
     "src/modules/uvsort_rom.c": "6586a894355bb250fdbbefb351b4950d67115b581e1b450d066abc1ae52b06cc",
     "src/modules/uvsprt_rom.c": "c2a97d053dad8ab1ba5aa739bc1eb7b80caef313a2822948431a81a671d5231d",
     "src/modules/uvstring_rom.c": "94b9208341f1faf5aee2e8bd9e6e2c6336878522d977776684d4d7ffa5473720",
-    "src/modules/uvterra_rom.c": "57b2818a50a89df2a05eedd4057d5a6596be9a0bfb874945652e34a66f6c5920",
+    "src/modules/uvterra_rom.c": "1e71ee937b9259c559b3341b1e3a60b47d9b53c6174c14964855c81d0d155fc8",
     "src/modules/uvterrald_rom.c": "4f51d82aed1fc59eefc7e9d161b1d29601c1af7be11b928c5265f14d489d2596",
     "src/modules/uvtexanim_rom.c": "8b77ae8843529d841945f563836072e32c2250faed791948a482b7c34bf61bd5",
     "src/modules/uvtexture_rom.c": "0f5e743d08e8523ecbee7d1a3c7331db9046775d81d2b7457eb025f11cbcfb2c",
@@ -319,7 +319,7 @@
     "src/modules/uvtrackld_rom.c": "0f7419fee6956a5165b1f1a33316e9abaedfea222e489a0042a104b37159109b",
     "src/modules/uvtseq_rom.c": "32df3a5e8ee37276a8e7334f0ef3f3d870ab827c8c76906c69e1d1b1e5358c94",
     "src/modules/uvtseqld_rom.c": "810c3b613397cb498e462e6976949626161e3232ebd6bcddbc47396dfa8772d2",
-    "src/modules/uvufileld_rom.c": "8cda955247faee89d09c49f8810722ce2ed0c470a336d50e071a1435e40050e2",
+    "src/modules/uvufileld_rom.c": "1182bdc9529006a8b15c12c92fb85ff91140eb6b74c6bedb19874cfc57a264cd",
     "src/modules/uvvattr_rom.c": "c9ff1372fd4a3c7686ca29fab9091f468bf172e842c84565ba1b19fd52960604",
     "src/modules/uvvolumeld_rom.c": "ad807fbc68a77a6b5dcc0a7f73393ef93661d6c12b1348132a672704b877d751",
     "src/modules/victory.c": "4bb3ff42b6b1ad90d40c2f18e986a8fc842c89641daee93e0447e531a384a6b1",
@@ -329,8 +329,8 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "bbff4e2e722e8d6120ed2544279892dcf9ada596c0304cee4119400578937a00",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "4eff73b27a88dc2da45b0af3ccf72789c801eed5cb7b3fd3a1299491d29467f3",
-    "docs/VALIDATION_20261006.md": "0e66631b8e39e83c5025deb91a165e965af4cad28f54e0aa9b74c2f2c09c2317"
+    "docs/STRATEGY_V4.md": "9dc5d23de17ff4d2d8fb4de8b88f0f7406e450a5fa6b12d0222a6259aa47f79c",
+    "docs/VALIDATION_20261006.md": "6d1a47137aaf54295ab7eee3d92bb385771db56cd7ab9f1d265b5dd32c720209"
   },
   "counts": {
     "address_function": 1018,
@@ -340,11 +340,11 @@
     "conditional_draft": 4,
     "decompiler_local": 967,
     "draft_marker": 30,
-    "explicit_unknown": 377,
+    "explicit_unknown": 382,
     "layout_padding": 258,
     "offset_field": 1431,
     "opaque_type": 279,
-    "original_quirk": 58,
+    "original_quirk": 59,
     "uncertainty_note": 100,
     "unused_identifier": 110
   },
@@ -23754,7 +23754,7 @@
       "symbol": "func_uvterra_rom_0040CF98",
       "lines": [
         3,
-        1130
+        1147
       ],
       "owners": [
         {
@@ -23768,9 +23768,9 @@
         {
           "kind": "function",
           "name": "uvTerraTestPackedAngularLevelThreshold",
-          "declaration_line": 1121,
+          "declaration_line": 1138,
           "lines": [
-            1130
+            1147
           ]
         }
       ]
@@ -69009,15 +69009,15 @@
       "symbol": "D_uvterra_rom_0040D704",
       "lines": [
         4,
-        1132
+        1149
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraTestPackedAngularLevelThreshold",
-          "declaration_line": 1121,
+          "declaration_line": 1138,
           "lines": [
-            1132
+            1149
           ]
         },
         {
@@ -69037,15 +69037,15 @@
       "symbol": "D_uvterra_rom_0040D708",
       "lines": [
         5,
-        1133
+        1150
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraTestPackedAngularLevelThreshold",
-          "declaration_line": 1121,
+          "declaration_line": 1138,
           "lines": [
-            1133
+            1150
           ]
         },
         {
@@ -69283,7 +69283,7 @@
       "lines": [
         101,
         353,
-        1131
+        1148
       ],
       "owners": [
         {
@@ -69297,9 +69297,9 @@
         {
           "kind": "function",
           "name": "uvTerraTestPackedAngularLevelThreshold",
-          "declaration_line": 1121,
+          "declaration_line": 1138,
           "lines": [
-            1131
+            1148
           ]
         },
         {
@@ -69459,25 +69459,25 @@
       "symbol": "D_uvterra_rom_0040F770",
       "lines": [
         7,
-        1171,
-        1172,
-        1173,
-        1174,
-        1175,
-        1176
+        1188,
+        1189,
+        1190,
+        1191,
+        1192,
+        1193
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraInitializeSortGroups",
-          "declaration_line": 1170,
+          "declaration_line": 1187,
           "lines": [
-            1171,
-            1172,
-            1173,
-            1174,
-            1175,
-            1176
+            1188,
+            1189,
+            1190,
+            1191,
+            1192,
+            1193
           ]
         },
         {
@@ -69902,15 +69902,15 @@
       "symbol": "D_uvterra_rom_0040FBC8",
       "lines": [
         9,
-        1172
+        1189
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraInitializeSortGroups",
-          "declaration_line": 1170,
+          "declaration_line": 1187,
           "lines": [
-            1172
+            1189
           ]
         },
         {
@@ -69930,17 +69930,17 @@
       "symbol": "D_uvterra_rom_0040FBCC",
       "lines": [
         8,
-        1171,
-        1175
+        1188,
+        1192
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraInitializeSortGroups",
-          "declaration_line": 1170,
+          "declaration_line": 1187,
           "lines": [
-            1171,
-            1175
+            1188,
+            1192
           ]
         },
         {
@@ -69960,15 +69960,15 @@
       "symbol": "D_uvterra_rom_0040FBD0",
       "lines": [
         11,
-        1174
+        1191
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraInitializeSortGroups",
-          "declaration_line": 1170,
+          "declaration_line": 1187,
           "lines": [
-            1174
+            1191
           ]
         },
         {
@@ -69988,17 +69988,17 @@
       "symbol": "D_uvterra_rom_0040FBD4",
       "lines": [
         10,
-        1173,
-        1176
+        1190,
+        1193
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraInitializeSortGroups",
-          "declaration_line": 1170,
+          "declaration_line": 1187,
           "lines": [
-            1173,
-            1176
+            1190,
+            1193
           ]
         },
         {
@@ -81564,7 +81564,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040CA64",
       "lines": [
-        1108
+        1124
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040CA64.s"
     },
@@ -81574,7 +81574,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040CF98",
       "lines": [
-        1154
+        1171
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040CF98.s"
     },
@@ -81584,7 +81584,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040D128",
       "lines": [
-        1193
+        1210
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040D128.s"
     },
@@ -128674,6 +128674,46 @@
       ]
     },
     {
+      "id": "Q-03f5a2e5f927",
+      "kind": "explicit_unknown",
+      "path": "src/modules/med.c",
+      "symbol": "RE_UNKNOWN: original GUI C4 reads 30 bytes from the formatted NO PALETTE/decimal label address, but historical local-object extent and trailing-byte state remain unresolved; truncated control domain, UVTP resource bounds/load success and selected-table lifetime require original stack/source, control callers and asset/load-unload evidence. Preserve the saved pre-callback selection and 0xFFFF clear sentinel without adding clamps or assuming a reachable fault.",
+      "lines": [
+        368
+      ],
+      "evidence": "RE_UNKNOWN: original GUI C4 reads 30 bytes from the formatted NO PALETTE/decimal label address, but historical local-object extent and trailing-byte state remain unresolved; truncated control domain, UVTP resource bounds/load success and selected-table lifetime require original stack/source, control callers and asset/load-unload evidence. Preserve the saved pre-callback selection and 0xFFFF clear sentinel without adding clamps or assuming a reachable fault.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_med_004053B4",
+          "declaration_line": 369,
+          "lines": [
+            368
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-284aa36f8923",
+      "kind": "explicit_unknown",
+      "path": "src/modules/med.c",
+      "symbol": "RE_UNKNOWN: physical meaning/units, valid environment/control domains and camera object bounds/lifetime require original UVEN/CAM field readers, assets and create/use callers; original ENV7 consumes one promoted double into record+0x48, CAM7 marks object+0x10 and stores float+0x24, and the same once-promoted control value is saved across both calls without a validity guard.",
+      "lines": [
+        366
+      ],
+      "evidence": "RE_UNKNOWN: physical meaning/units, valid environment/control domains and camera object bounds/lifetime require original UVEN/CAM field readers, assets and create/use callers; original ENV7 consumes one promoted double into record+0x48, CAM7 marks object+0x10 and stores float+0x24, and the same once-promoted control value is saved across both calls without a validity guard.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_med_00405338",
+          "declaration_line": 367,
+          "lines": [
+            366
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-2c2e3b696a4b",
       "kind": "explicit_unknown",
       "path": "src/modules/med.c",
@@ -128689,6 +128729,26 @@
           "declaration_line": 238,
           "lines": [
             237
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-08a51e4f845f",
+      "kind": "explicit_unknown",
+      "path": "src/modules/med.c",
+      "symbol": "RE_UNKNOWN: shared word-window and referenced-record extents/ownership, four interleaved scalar-pair meanings and historical unused-argument type require original D_med_00407F28 producers, record readers and source/caller declarations; preserve the initial reference gate, two-pointer snapshot, four-byte source step and separate original load/store order without assuming complete object layouts.",
+      "lines": [
+        257
+      ],
+      "evidence": "RE_UNKNOWN: shared word-window and referenced-record extents/ownership, four interleaved scalar-pair meanings and historical unused-argument type require original D_med_00407F28 producers, record readers and source/caller declarations; preserve the initial reference gate, two-pointer snapshot, four-byte source step and separate original load/store order without assuming complete object layouts.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_med_00404FE0",
+          "declaration_line": 258,
+          "lines": [
+            257
           ]
         }
       ]
@@ -133131,16 +133191,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Choose one of four initialized SORT groups from a channel's terrain * tile byte (or the shared threshold when no tile exists), then append the * callback/context/key through the actual SORT export0x10. * RE_ORIGINAL_QUIRK: subtract each XY origin, truncate the differences and * cell sizes to signed integers, then divide; do not replace with floating * division before truncation. Upper XY bounds are excluded. * RE_UNKNOWN: point/key coordinate units, valid finite conversion/nonzero * truncated-cell domain, tile-array extent and meanings of the shared byte, * threshold sentinel-1 and alternate group selection. Trace original callers, * terrain asset builders and AC9C/AE4C queue/threshold writers. Callback words * use the existing SORT API type; complete historical callback contracts * require their producers and eventual invocation paths.",
       "lines": [
-        1181
+        1198
       ],
       "evidence": "Choose one of four initialized SORT groups from a channel's terrain * tile byte (or the shared threshold when no tile exists), then append the * callback/context/key through the actual SORT export0x10. * RE_ORIGINAL_QUIRK: subtract each XY origin, truncate the differences and * cell sizes to signed integers, then divide; do not replace with floating * division before truncation. Upper XY bounds are excluded. * RE_UNKNOWN: point/key coordinate units, valid finite conversion/nonzero * truncated-cell domain, tile-array extent and meanings of the shared byte, * threshold sentinel-1 and alternate group selection. Trace original callers, * terrain asset builders and AC9C/AE4C queue/threshold writers. Callback words * use the existing SORT API type; complete historical callback contracts * require their producers and eventual invocation paths.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvterra_rom_0040D128",
-          "declaration_line": 1193,
+          "declaration_line": 1210,
           "lines": [
-            1181
+            1198
           ]
         }
       ]
@@ -133231,16 +133291,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Create SORT groups for tags 80, 85, 110, 115 and enable option 1 on the first * and third returned handles, preserving original creation/call/store order. * Original TERR initializer at 0x004002C0 calls this just after importing SORT. * RE_ORIGINAL_QUIRK: both actual SORT slot0x14 calls pass only handle,1,1, * without the zero option terminator read by original target 0x00400B24. * On valid-handle/normal-return paths the first setter leaves a3 holding its * group-table-global address. No intervening instruction changes a3; the second * setter receives that nonzero unsupplied tag and scans following words for zero. * RE_UNKNOWN: allocation/error paths, first-call residual a3, following stack * values, live initialization paths and observable impact. Trace callers and * runtime before a separate recomp correction; keep original arguments here.",
       "lines": [
-        1159
+        1176
       ],
       "evidence": "Create SORT groups for tags 80, 85, 110, 115 and enable option 1 on the first * and third returned handles, preserving original creation/call/store order. * Original TERR initializer at 0x004002C0 calls this just after importing SORT. * RE_ORIGINAL_QUIRK: both actual SORT slot0x14 calls pass only handle,1,1, * without the zero option terminator read by original target 0x00400B24. * On valid-handle/normal-return paths the first setter leaves a3 holding its * group-table-global address. No intervening instruction changes a3; the second * setter receives that nonzero unsupplied tag and scans following words for zero. * RE_UNKNOWN: allocation/error paths, first-call residual a3, following stack * values, live initialization paths and observable impact. Trace callers and * runtime before a separate recomp correction; keep original arguments here.",
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraInitializeSortGroups",
-          "declaration_line": 1170,
+          "declaration_line": 1187,
           "lines": [
-            1159
+            1176
           ]
         }
       ]
@@ -133296,6 +133356,26 @@
       ]
     },
     {
+      "id": "Q-17654098417d",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvterra_rom.c",
+      "symbol": "Order point pointers using the minimum-X seed and repeated least normalized * XY direction dot product; stop on returning to the initial pointer, then * write the pointer list and byte count. Preserve the prior best index when * no candidate direction improves the native threshold. * RE_ORIGINAL_QUIRK: even input count zero seeds points[0] and output count one. * RE_UNKNOWN: intended geometric guarantee, valid count/capacity and * coincident/nonfinite-point caller domain. Native scratch holds five entries; * C218 supplies five. Trace original callers and CHAN point producers before * claiming a general polygon algorithm or adding degenerate-input behavior. * RE_UNKNOWN: historical declarations of native DATA initializers F718/F72C. * The routine copies their observed 20-byte pointer and 12-byte vector * prefixes. F72C's retained label also contains trailing module/footer words; * preserve their storage and resolve object boundaries before migrating DATA. * FVEC's original import/export bindings establish normalization at slot 08 * and the two-coordinate dot product at slot 5C.",
+      "lines": [
+        1109
+      ],
+      "evidence": "Order point pointers using the minimum-X seed and repeated least normalized * XY direction dot product; stop on returning to the initial pointer, then * write the pointer list and byte count. Preserve the prior best index when * no candidate direction improves the native threshold. * RE_ORIGINAL_QUIRK: even input count zero seeds points[0] and output count one. * RE_UNKNOWN: intended geometric guarantee, valid count/capacity and * coincident/nonfinite-point caller domain. Native scratch holds five entries; * C218 supplies five. Trace original callers and CHAN point producers before * claiming a general polygon algorithm or adding degenerate-input behavior. * RE_UNKNOWN: historical declarations of native DATA initializers F718/F72C. * The routine copies their observed 20-byte pointer and 12-byte vector * prefixes. F72C's retained label also contains trailing module/footer words; * preserve their storage and resolve object boundaries before migrating DATA. * FVEC's original import/export bindings establish normalization at slot 08 * and the two-coordinate dot product at slot 5C.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_uvterra_rom_0040CA64",
+          "declaration_line": 1124,
+          "lines": [
+            1109
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-6e4d2a71f9fe",
       "kind": "explicit_unknown",
       "path": "src/modules/uvterra_rom.c",
@@ -133341,16 +133421,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Read five most-significant-bit-first packed bits at the caller index. * Original offset=index*5 uses signed division/remainder by 8; a straddling value * combines two zero-extended bytes. No bounds check appears in this reader. * RE_UNKNOWN: table extent, valid nonnegative index range and guarantees for * second-byte reads. Trace original allocators/writers and uvTerraTestPackedAngularLevelThreshold and other callers * before changing signed arithmetic, wrapping indices or adding validation.",
       "lines": [
-        1148
+        1165
       ],
       "evidence": "Read five most-significant-bit-first packed bits at the caller index. * Original offset=index*5 uses signed division/remainder by 8; a straddling value * combines two zero-extended bytes. No bounds check appears in this reader. * RE_UNKNOWN: table extent, valid nonnegative index range and guarantees for * second-byte reads. Trace original allocators/writers and uvTerraTestPackedAngularLevelThreshold and other callers * before changing signed arithmetic, wrapping indices or adding validation.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvterra_rom_0040CF98",
-          "declaration_line": 1154,
+          "declaration_line": 1171,
           "lines": [
-            1148
+            1165
           ]
         }
       ]
@@ -133441,16 +133521,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Test a packed five-bit level selected by the original atan2 quantization. * A null table returns one. Otherwise preserve native angle bias/scale, * division by 5.625, signed-16 index narrowing, and the separate 15.625 level * quantization. Levels at least 32 require the packed value to equal 31; * lower levels use the original signed comparison and inverted boolean. * RE_UNKNOWN: table extent/angle wrap, sample frame/units and levelInput's * valid nonzero/finite conversion domain. The same input divides both atan2 * operands and determines the threshold. Trace original table builders/callers * before assigning physical range semantics or adding normalization/clamps.",
       "lines": [
-        1112
+        1129
       ],
       "evidence": "Test a packed five-bit level selected by the original atan2 quantization. * A null table returns one. Otherwise preserve native angle bias/scale, * division by 5.625, signed-16 index narrowing, and the separate 15.625 level * quantization. Levels at least 32 require the packed value to equal 31; * lower levels use the original signed comparison and inverted boolean. * RE_UNKNOWN: table extent/angle wrap, sample frame/units and levelInput's * valid nonzero/finite conversion domain. The same input divides both atan2 * operands and determines the threshold. Trace original table builders/callers * before assigning physical range semantics or adding normalization/clamps.",
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraTestPackedAngularLevelThreshold",
-          "declaration_line": 1121,
+          "declaration_line": 1138,
           "lines": [
-            1112
+            1129
           ]
         }
       ]
@@ -133531,6 +133611,26 @@
           "declaration_line": 132,
           "lines": [
             160
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-690f53d250d7",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvufileld_rom.c",
+      "symbol": "Header type, not FORM0 category. RE_UNKNOWN: runtime IDs reaching this COMM branch; docs/evidence/us-block-header-boundary.json.",
+      "lines": [
+        32
+      ],
+      "evidence": "Header type, not FORM0 category. RE_UNKNOWN: runtime IDs reaching this COMM branch; docs/evidence/us-block-header-boundary.json.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvFileCopy",
+          "declaration_line": 25,
+          "lines": [
+            32
           ]
         }
       ]
@@ -201989,16 +202089,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Choose one of four initialized SORT groups from a channel's terrain * tile byte (or the shared threshold when no tile exists), then append the * callback/context/key through the actual SORT export0x10. * RE_ORIGINAL_QUIRK: subtract each XY origin, truncate the differences and * cell sizes to signed integers, then divide; do not replace with floating * division before truncation. Upper XY bounds are excluded. * RE_UNKNOWN: point/key coordinate units, valid finite conversion/nonzero * truncated-cell domain, tile-array extent and meanings of the shared byte, * threshold sentinel-1 and alternate group selection. Trace original callers, * terrain asset builders and AC9C/AE4C queue/threshold writers. Callback words * use the existing SORT API type; complete historical callback contracts * require their producers and eventual invocation paths.",
       "lines": [
-        1181
+        1198
       ],
       "evidence": "Choose one of four initialized SORT groups from a channel's terrain * tile byte (or the shared threshold when no tile exists), then append the * callback/context/key through the actual SORT export0x10. * RE_ORIGINAL_QUIRK: subtract each XY origin, truncate the differences and * cell sizes to signed integers, then divide; do not replace with floating * division before truncation. Upper XY bounds are excluded. * RE_UNKNOWN: point/key coordinate units, valid finite conversion/nonzero * truncated-cell domain, tile-array extent and meanings of the shared byte, * threshold sentinel-1 and alternate group selection. Trace original callers, * terrain asset builders and AC9C/AE4C queue/threshold writers. Callback words * use the existing SORT API type; complete historical callback contracts * require their producers and eventual invocation paths.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvterra_rom_0040D128",
-          "declaration_line": 1193,
+          "declaration_line": 1210,
           "lines": [
-            1181
+            1198
           ]
         }
       ]
@@ -202029,16 +202129,36 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Create SORT groups for tags 80, 85, 110, 115 and enable option 1 on the first * and third returned handles, preserving original creation/call/store order. * Original TERR initializer at 0x004002C0 calls this just after importing SORT. * RE_ORIGINAL_QUIRK: both actual SORT slot0x14 calls pass only handle,1,1, * without the zero option terminator read by original target 0x00400B24. * On valid-handle/normal-return paths the first setter leaves a3 holding its * group-table-global address. No intervening instruction changes a3; the second * setter receives that nonzero unsupplied tag and scans following words for zero. * RE_UNKNOWN: allocation/error paths, first-call residual a3, following stack * values, live initialization paths and observable impact. Trace callers and * runtime before a separate recomp correction; keep original arguments here.",
       "lines": [
-        1159
+        1176
       ],
       "evidence": "Create SORT groups for tags 80, 85, 110, 115 and enable option 1 on the first * and third returned handles, preserving original creation/call/store order. * Original TERR initializer at 0x004002C0 calls this just after importing SORT. * RE_ORIGINAL_QUIRK: both actual SORT slot0x14 calls pass only handle,1,1, * without the zero option terminator read by original target 0x00400B24. * On valid-handle/normal-return paths the first setter leaves a3 holding its * group-table-global address. No intervening instruction changes a3; the second * setter receives that nonzero unsupplied tag and scans following words for zero. * RE_UNKNOWN: allocation/error paths, first-call residual a3, following stack * values, live initialization paths and observable impact. Trace callers and * runtime before a separate recomp correction; keep original arguments here.",
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraInitializeSortGroups",
-          "declaration_line": 1170,
+          "declaration_line": 1187,
           "lines": [
-            1159
+            1176
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-9ce43a344b3a",
+      "kind": "original_quirk",
+      "path": "src/modules/uvterra_rom.c",
+      "symbol": "Order point pointers using the minimum-X seed and repeated least normalized * XY direction dot product; stop on returning to the initial pointer, then * write the pointer list and byte count. Preserve the prior best index when * no candidate direction improves the native threshold. * RE_ORIGINAL_QUIRK: even input count zero seeds points[0] and output count one. * RE_UNKNOWN: intended geometric guarantee, valid count/capacity and * coincident/nonfinite-point caller domain. Native scratch holds five entries; * C218 supplies five. Trace original callers and CHAN point producers before * claiming a general polygon algorithm or adding degenerate-input behavior. * RE_UNKNOWN: historical declarations of native DATA initializers F718/F72C. * The routine copies their observed 20-byte pointer and 12-byte vector * prefixes. F72C's retained label also contains trailing module/footer words; * preserve their storage and resolve object boundaries before migrating DATA. * FVEC's original import/export bindings establish normalization at slot 08 * and the two-coordinate dot product at slot 5C.",
+      "lines": [
+        1109
+      ],
+      "evidence": "Order point pointers using the minimum-X seed and repeated least normalized * XY direction dot product; stop on returning to the initial pointer, then * write the pointer list and byte count. Preserve the prior best index when * no candidate direction improves the native threshold. * RE_ORIGINAL_QUIRK: even input count zero seeds points[0] and output count one. * RE_UNKNOWN: intended geometric guarantee, valid count/capacity and * coincident/nonfinite-point caller domain. Native scratch holds five entries; * C218 supplies five. Trace original callers and CHAN point producers before * claiming a general polygon algorithm or adding degenerate-input behavior. * RE_UNKNOWN: historical declarations of native DATA initializers F718/F72C. * The routine copies their observed 20-byte pointer and 12-byte vector * prefixes. F72C's retained label also contains trailing module/footer words; * preserve their storage and resolve object boundaries before migrating DATA. * FVEC's original import/export bindings establish normalization at slot 08 * and the two-coordinate dot product at slot 5C.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_uvterra_rom_0040CA64",
+          "declaration_line": 1124,
+          "lines": [
+            1109
           ]
         }
       ]

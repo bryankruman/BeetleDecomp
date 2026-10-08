@@ -29,7 +29,7 @@ u8 *uvFileCopy(u8 *data) {
     fileId = uvFileReadHeader(data);
     fileSize = uvFileGetSize(fileId);
 
-    if (uvFileGetPadType(fileId) == 'UVRW') { // Unused game format?
+    if (uvFileGetPadType(fileId) == 'UVRW') { /* Header type, not FORM0 category. RE_UNKNOWN: runtime IDs reaching this COMM branch; docs/evidence/us-block-header-boundary.json. */
         uvFileSearchTag(fileId, (u32 *) &fileSize, (void **) &data, 'COMM', 0);
     }
 

@@ -338,7 +338,7 @@ u32 uvFileReadBlock(s32 fileId, u32 *sizeOut, void **data, s32 decodeFlag) {
             _uvMemFree(allocPtr);
             *data = dst;
         }
-        *sizeOut = size; /* GZIP reports its decoded length even when flag 0x2 retains the encoded wrapper/data; the returned tag is the inner tag. */
+        *sizeOut = size; /* GZIP reports its wrapper-advertised decoded length even when flag 0x2 retains the encoded wrapper/data; the returned tag is the inner tag. */
     }
     return tag;
 }

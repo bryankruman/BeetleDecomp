@@ -1105,7 +1105,24 @@ void uvTerraProjectEndpointToZPlane(Vec3F *origin, f32 planeZ, Vec3F *endpoint) 
 }
 #line 571 "src/modules/uvterra_rom.c"
 
+#line 572 "src/modules/uvterra_rom.c"
+/* Order point pointers using the minimum-X seed and repeated least normalized
+ * XY direction dot product; stop on returning to the initial pointer, then
+ * write the pointer list and byte count. Preserve the prior best index when
+ * no candidate direction improves the native threshold.
+ * RE_ORIGINAL_QUIRK: even input count zero seeds points[0] and output count one.
+ * RE_UNKNOWN: intended geometric guarantee, valid count/capacity and
+ * coincident/nonfinite-point caller domain. Native scratch holds five entries;
+ * C218 supplies five. Trace original callers and CHAN point producers before
+ * claiming a general polygon algorithm or adding degenerate-input behavior.
+ * RE_UNKNOWN: historical declarations of native DATA initializers F718/F72C.
+ * The routine copies their observed 20-byte pointer and 12-byte vector
+ * prefixes. F72C's retained label also contains trailing module/footer words;
+ * preserve their storage and resolve object boundaries before migrating DATA.
+ * FVEC's original import/export bindings establish normalization at slot 08
+ * and the two-coordinate dot product at slot 5C. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040CA64.s")
+#line 573 "src/modules/uvterra_rom.c"
 
 #line 574 "src/modules/uvterra_rom.c"
 

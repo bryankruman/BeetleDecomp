@@ -1,0 +1,404 @@
+{
+  "original_rom_sha1": "e5ab4d226c08d22f68a2edcc48870203e67454b8",
+  "original_ufil_module_sha256": "4f5f11cc7788689c0ea547e6801c300b8b0afc28b5acd229ddfcfb1541e5975d",
+  "original_UVRW_lookup_sha256": "f802af68fd1b74fc6b2c6a515c88f03e1244b6de4676b23b87dd0c91477fecd5",
+  "receipt_sha256": {
+    "original-uvrw-boundary-1232.json": "d4c2c6dd95f7fcc06c2dee65d09cb943580276e04cfdae1d0f7524f0b9d58b6c",
+    "original-uvrw-callers-1238.json": "2b0eb044ecd73416cb977891a1445cfa39617e7b9a87b6234da8514f694ace62",
+    "original-block-length-inventory-classified-1240.json": "7e8f9798fbcd1afafbcc9f6447b49c83385bfbb71a97d031c7232dab359207c8"
+  },
+  "original_table": {
+    "category": "UVRW",
+    "count": 37,
+    "all_manifest_starts_match": true,
+    "null_entries": 0,
+    "FORM_VMSK": 14,
+    "non_FORM": 23,
+    "shortest_declared_span_bytes": 6,
+    "zero_declared_spans": 0,
+    "shared_starts": 0
+  },
+  "original_provider": {
+    "module": "uvufileld_rom",
+    "nameTag_offset": "0x3C",
+    "nameTag": "UVRW",
+    "slot0x4": "uvFileCopy",
+    "slot0xC": "uvSetCopyFileDataFlag"
+  },
+  "original_call_review": [
+    {
+      "module": "filerom",
+      "addresses": [
+        "400414",
+        "400418",
+        "40041C",
+        "400424"
+      ],
+      "behavior": "Load UVRW module; load export slot0xC and invoke it with1."
+    },
+    {
+      "module": "filerom",
+      "addresses": [
+        "400438",
+        "40043C",
+        "40044C",
+        "400450"
+      ],
+      "behavior": "uvLoadFile(UVRW,dynamically mapped id), then uvUnloadModule(UVRW). No direct raw-getter path established."
+    },
+    {
+      "module": "game",
+      "addresses": [
+        "400A34",
+        "400A38"
+      ],
+      "behavior": "uvLoadModule(UVRW)."
+    },
+    {
+      "module": "race",
+      "addresses": [
+        "400B40",
+        "400B44"
+      ],
+      "behavior": "uvUnloadModule(UVRW)."
+    },
+    {
+      "module": "uvterrald_rom",
+      "addresses": [
+        "4003C8",
+        "4003CC",
+        "4003E8",
+        "4003EC",
+        "4003F4"
+      ],
+      "behavior": "Keep UVRW argument live over conditional count check, uvLoadFile with record+0x2E unsigned-halfword id; parse returned header and COMM."
+    },
+    {
+      "module": "uvufileld_rom",
+      "addresses": [
+        "400088",
+        "40008C",
+        "400090"
+      ],
+      "behavior": "Construct comparison value in AT. Test file-header type against UVRW, independently of FORM0 lookup category."
+    }
+  ],
+  "proof_boundary": "Manual register/control review of7 literal-tag candidates across133 original module code regions plus native code. Heuristic scan is not exhaustive; memory-loaded/indirect tags remain outside scan. No raw direct-getter caller was established. Declared next-start spans are not proven logical resource extents.",
+  "remaining_unknowns": [
+    {
+      "id": "UVRW_RAW_ROUTING",
+      "owner": "uvFileCopy / func_filerom_00400364 / func_uvterrald_rom_00400120",
+      "question": "Which runtime file IDs, if any, select the23 non-FORM UVRW spans, and which callers interpret their bytes?",
+      "resolution": "Trace original dynamic filename-to-ID table and terrain IDs/callers; compare actual IDs to the original FORM0 table. Retain as explicit backlog; do not infer corruption, safety or unusedness."
+    },
+    {
+      "id": "UVRW_COMM_BRANCH",
+      "owner": "uvFileCopy",
+      "question": "Which input header types actually reach the UVRW COMM-search branch?",
+      "resolution": "Original shipped FORM-type census shows14VMSK resources in UVRW; resolve other runtime/modified inputs and indirect callers separately."
+    }
+  ],
+  "original_header_inventory": {
+    "manifest_entries": 2519,
+    "null_entries": 41,
+    "non_null_entries": 2478,
+    "FORM_resources": 2455,
+    "non_FORM_UVRW_resources": 23,
+    "gzip_blocks": 2011,
+    "opaque_FORM_codecs": 0,
+    "wrapper_vs_MIO0_length_mismatches": 0,
+    "invalid_MIO0_headers": 0,
+    "parse_errors": 0,
+    "all_manifest_resources_accounted_for": true,
+    "complete_FORM_header_inventory": true,
+    "complete_all_resource_format_and_routing_proof": false,
+    "non_FORM_metadata": [
+      {
+        "asset": "UVRW_1",
+        "rom_start": 8278352,
+        "span_bytes": 1246,
+        "declared_span_sha256": "2304047572addbb73aa3948a97f811dad835f1bb114cc4d49fbc9156d2a99f13",
+        "available_leading_words": 3,
+        "shorter_than_FORM_header": false
+      },
+      {
+        "asset": "UVRW_2",
+        "rom_start": 8279598,
+        "span_bytes": 1942,
+        "declared_span_sha256": "0b5c8ad34ec8ceb4d11e763e202a4f3e8a45fc605bb7314ba7077c04045a4c84",
+        "available_leading_words": 3,
+        "shorter_than_FORM_header": false
+      },
+      {
+        "asset": "UVRW_3",
+        "rom_start": 8281540,
+        "span_bytes": 1038,
+        "declared_span_sha256": "1cbfbd9b5d88ed0101fd13dff8f25f56102977346b142591a9e143951b35525b",
+        "available_leading_words": 3,
+        "shorter_than_FORM_header": false
+      },
+      {
+        "asset": "UVRW_4",
+        "rom_start": 8282578,
+        "span_bytes": 1150,
+        "declared_span_sha256": "60f6eed05914428aace1a1bef2c32345e18264c290a6213db0a1d688b030f9bb",
+        "available_leading_words": 3,
+        "shorter_than_FORM_header": false
+      },
+      {
+        "asset": "UVRW_5",
+        "rom_start": 8283728,
+        "span_bytes": 3596,
+        "declared_span_sha256": "10dcd6120052a680c33dc63d4a4f77d62f192878852d8f4af7bf6037ea045b93",
+        "available_leading_words": 3,
+        "shorter_than_FORM_header": false
+      },
+      {
+        "asset": "UVRW_6",
+        "rom_start": 8287324,
+        "span_bytes": 1590,
+        "declared_span_sha256": "ee96914753d7213e5909f1b49d8def22e9fe88856f2eb3892e4fbfb34382561d",
+        "available_leading_words": 3,
+        "shorter_than_FORM_header": false
+      },
+      {
+        "asset": "UVRW_7",
+        "rom_start": 8288914,
+        "span_bytes": 1498,
+        "declared_span_sha256": "b463f4c440898d1062218e765efd21ae3121d8f0cc4c33a2e5b9d8b21ad7b208",
+        "available_leading_words": 3,
+        "shorter_than_FORM_header": false
+      },
+      {
+        "asset": "UVRW_8",
+        "rom_start": 8290412,
+        "span_bytes": 1590,
+        "declared_span_sha256": "76adba5b4f33172567be19cbebb804b904a8ae33660ae0eb7be74fed32661d5c",
+        "available_leading_words": 3,
+        "shorter_than_FORM_header": false
+      },
+      {
+        "asset": "UVRW_9",
+        "rom_start": 8292002,
+        "span_bytes": 422,
+        "declared_span_sha256": "df490711da52cc36d4a5126db381f4cf93c56ce065944f708ee15f4e5bbce142",
+        "available_leading_words": 3,
+        "shorter_than_FORM_header": false
+      },
+      {
+        "asset": "UVRW_10",
+        "rom_start": 8292424,
+        "span_bytes": 406,
+        "declared_span_sha256": "a6787f6629a677e87c91aa396729cf236464270584f94ec146d5401729ec7815",
+        "available_leading_words": 3,
+        "shorter_than_FORM_header": false
+      },
+      {
+        "asset": "UVRW_11",
+        "rom_start": 8292830,
+        "span_bytes": 390,
+        "declared_span_sha256": "d06725cd40db29ace6dd445a3d0e5fcbcf2f4e699fa833f63aaa874dc53a8a8a",
+        "available_leading_words": 3,
+        "shorter_than_FORM_header": false
+      },
+      {
+        "asset": "UVRW_12",
+        "rom_start": 8293220,
+        "span_bytes": 262,
+        "declared_span_sha256": "fb10d81684749a3c33888519cf83c2df39ec7f1e610867b3ded831f46a31c2fe",
+        "available_leading_words": 3,
+        "shorter_than_FORM_header": false
+      },
+      {
+        "asset": "UVRW_13",
+        "rom_start": 8293482,
+        "span_bytes": 422,
+        "declared_span_sha256": "588a30971019b9f4c4ab1723db79dff66122809d36b7e64893202cfa28a6b335",
+        "available_leading_words": 3,
+        "shorter_than_FORM_header": false
+      },
+      {
+        "asset": "UVRW_14",
+        "rom_start": 8293904,
+        "span_bytes": 358,
+        "declared_span_sha256": "c23d866bf14fa97ebd3d351b24c1a97c00518bbdec76f945ded546a9ef8cd97c",
+        "available_leading_words": 3,
+        "shorter_than_FORM_header": false
+      },
+      {
+        "asset": "UVRW_15",
+        "rom_start": 8294262,
+        "span_bytes": 406,
+        "declared_span_sha256": "1a2dbf56117f8aca6293c39ff36a34002a68b06dbe87f6fc187b258c58520c0f",
+        "available_leading_words": 3,
+        "shorter_than_FORM_header": false
+      },
+      {
+        "asset": "UVRW_16",
+        "rom_start": 8294668,
+        "span_bytes": 294,
+        "declared_span_sha256": "2ebb1e95e06f911b12f4570e9b97b0528c79bc270260f678f9d223857a8f1d80",
+        "available_leading_words": 3,
+        "shorter_than_FORM_header": false
+      },
+      {
+        "asset": "UVRW_17",
+        "rom_start": 8294962,
+        "span_bytes": 358,
+        "declared_span_sha256": "78c6303fbb69697ee9b4ceb138092ada4684c85190d25a1d0e10bc75dbffbfc6",
+        "available_leading_words": 3,
+        "shorter_than_FORM_header": false
+      },
+      {
+        "asset": "UVRW_18",
+        "rom_start": 8295320,
+        "span_bytes": 996,
+        "declared_span_sha256": "12308d0d88b814788167f7ceb57c4ddc7d98ff450781f4a95cc5f7af5a83a170",
+        "available_leading_words": 3,
+        "shorter_than_FORM_header": false
+      },
+      {
+        "asset": "UVRW_19",
+        "rom_start": 8296316,
+        "span_bytes": 1370,
+        "declared_span_sha256": "016913c48bed8260190a07bdcb127d07eb78044d310f903bd8d203fc6c20f7dd",
+        "available_leading_words": 3,
+        "shorter_than_FORM_header": false
+      },
+      {
+        "asset": "UVRW_20",
+        "rom_start": 8297686,
+        "span_bytes": 6,
+        "declared_span_sha256": "287a3387a6a65e0b5483d02992ed2649ef4a9f48d79c7c1d3484acfaec7367d3",
+        "available_leading_words": 1,
+        "shorter_than_FORM_header": true
+      },
+      {
+        "asset": "UVRW_21",
+        "rom_start": 8297692,
+        "span_bytes": 1854,
+        "declared_span_sha256": "5122e4730425ed3792cbd0dbbcd56fe3ce951f6d9b81853b38e27a37ceca076d",
+        "available_leading_words": 3,
+        "shorter_than_FORM_header": false
+      },
+      {
+        "asset": "UVRW_23",
+        "rom_start": 8340274,
+        "span_bytes": 644,
+        "declared_span_sha256": "91762a35f82902aeb1c5e14e5795a389bd3c9955e45712bbd279227dd90b7e31",
+        "available_leading_words": 3,
+        "shorter_than_FORM_header": false
+      },
+      {
+        "asset": "UVRW_24",
+        "rom_start": 8340918,
+        "span_bytes": 1188,
+        "declared_span_sha256": "d1333fdb45ef8e8726e30e759e3c4be67bdf689b4720c2226aaf92576abb8692",
+        "available_leading_words": 3,
+        "shorter_than_FORM_header": false
+      }
+    ],
+    "class_counts": {
+      "UVMO": {
+        "manifest_entries": 133,
+        "real_assets": 133,
+        "null_entries": 0
+      },
+      "UVTX": {
+        "manifest_entries": 1464,
+        "real_assets": 1432,
+        "null_entries": 32
+      },
+      "UVTR": {
+        "manifest_entries": 40,
+        "real_assets": 40,
+        "null_entries": 0
+      },
+      "UVCT": {
+        "manifest_entries": 154,
+        "real_assets": 154,
+        "null_entries": 0
+      },
+      "UVVL": {
+        "manifest_entries": 40,
+        "real_assets": 40,
+        "null_entries": 0
+      },
+      "UVMD": {
+        "manifest_entries": 423,
+        "real_assets": 414,
+        "null_entries": 9
+      },
+      "UVAN": {
+        "manifest_entries": 31,
+        "real_assets": 31,
+        "null_entries": 0
+      },
+      "UVEN": {
+        "manifest_entries": 25,
+        "real_assets": 25,
+        "null_entries": 0
+      },
+      "UVRW": {
+        "manifest_entries": 37,
+        "real_assets": 37,
+        "null_entries": 0
+      },
+      "UVPX": {
+        "manifest_entries": 17,
+        "real_assets": 17,
+        "null_entries": 0
+      },
+      "UVBT": {
+        "manifest_entries": 100,
+        "real_assets": 100,
+        "null_entries": 0
+      },
+      "UVFT": {
+        "manifest_entries": 13,
+        "real_assets": 13,
+        "null_entries": 0
+      },
+      "UVSX": {
+        "manifest_entries": 1,
+        "real_assets": 1,
+        "null_entries": 0
+      },
+      "UVMS": {
+        "manifest_entries": 1,
+        "real_assets": 1,
+        "null_entries": 0
+      },
+      "UVMB": {
+        "manifest_entries": 1,
+        "real_assets": 1,
+        "null_entries": 0
+      },
+      "UVTS": {
+        "manifest_entries": 26,
+        "real_assets": 26,
+        "null_entries": 0
+      },
+      "UVTT": {
+        "manifest_entries": 6,
+        "real_assets": 6,
+        "null_entries": 0
+      },
+      "UVDS": {
+        "manifest_entries": 7,
+        "real_assets": 7,
+        "null_entries": 0
+      }
+    },
+    "config_sha256": "c2397f8f9ca1d37b1506c544d39430263376dbbde62c11f69a7944a53b3a230a",
+    "manifest_sha256": "fd00eb708e0c1c0e31a221a20091f422c43cf452ad06f0ca4287ad2a5eec72ac"
+  },
+  "reproduction": {
+    "analysis_script": "worker_inventory_original_block_lengths_1240.py",
+    "script_sha256": "68102d813604ff259cbde5798efdd93ab0a8df8e95272e675113d691364304a3",
+    "behavior": "Read-only original-ROM/header inventory; no source, build, network or ROM payload/image output. Worker-specific root/hostname guard remains in analysis helper.",
+    "checks": "Original US ROM, original decoder+block-reader byte regions, original UVRW lookup table and exact known non-FORM span metadata.",
+    "limitation": "Header relationships only; this all-class scan does not decode entire compressed streams or prove raw routing."
+  },
+  "sizeOut_precision": "Original uvFileReadBlock reports wrapper-advertised decoded length from GZIP wrapper+4, including keep-encoded mode. Original MIO0 decoder independently reads its own output length; agreement is observed for all2011 shippedFORM wrappers, not enforced by the reader."
+}
