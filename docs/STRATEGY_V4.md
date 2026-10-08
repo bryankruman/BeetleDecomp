@@ -34,8 +34,8 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **841** assembly references:
-**798** ordinary functions and **43** entrypoints, with **749,444** known instruction bytes
+matching C are preserved with `#line`. The current ledger has **839** assembly references:
+**796** ordinary functions and **43** entrypoints, with **748,864** known instruction bytes
 and no unknown sizes. The broader name audit still finds **301** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
@@ -2620,10 +2620,19 @@ Totals: 359 further recoveries after the 225 upstream ordinary imports, plus 132
 Frozen wave `2146-battle-vertex-readable-recovery-2146` and `accepted-battle-vertex-readable-recovery-2146` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 359 further readable functions
+## Historical accepted checkpoint — 359 further readable functions
 
 Clarify original triangle-strip batching, retained two-vertex overlap, phased signed-halfword batch count and triangle order alternation across batches. Preserve every body operation, type/order and cursor/descriptor access. Replace the incorrectly attributed graphics-manager export-pointer declaration at native1754 with the observed Gfx buffer-base view; actual GMGR imports remain at1758. Preserve the raw settings word and original cast/allocation/free behavior, with historical source type and caller-supplied capacity/lifetime explicitly unresolved. Keep the approved SceneCB8 original assembly and precise native provider/unknown-domain note. One older cleanup, one declaration correction(count0), one pure note; no recovery, public ABI, layout or readonly migration. Preserve raw inverse and executable logical coordinates with strip resume136. Require complete original packed GEOM/Scene, fresh original ROM, all frozen sources and uncertainty index before acceptance.
 
 Totals: 359 further recoveries after the 225 upstream ordinary imports, plus 1330 existing C semantic cleanups. Current ledger: 841 assembly references = 798 ordinary + 43 entrypoints; 749,444 known remaining instruction bytes; zero unknown sizes; 301 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `2156-older-geometry-strip-buffer-contracts-2156` and `accepted-older-geometry-strip-buffer-contracts-2156` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 361 further readable functions
+
+Recover Battle4438 as battleInitializeNodeAndCollectVertexHandles and Battle6804 as battleResetNodePlaySoundAndClearObjectFlags. The original node initializer resets observed fields and both sound handles, clears thirty words, calls the accepted vertex collector, then reloads the current model. The sound reset preserves shared save/count/scalar effects, matrix query, returned sound volume, sound request and flag clears. All 145 original instructions and complete ordered object records match. Keep focused layouts neutral and searchable RE_UNKNOWN caller/allocation/alias/lifetime notes. Existing relocation metadata stays unchanged; regenerate extraction before build so original ASM references use canonical names. Require complete original packed Battle equality, fresh original ROM, frozen source hashes and uncertainty index before acceptance. Counts361 recoveries/1330 existing cleanups; remaining known code748864 bytes.
+
+Totals: 361 further recoveries after the 225 upstream ordinary imports, plus 1330 existing C semantic cleanups. Current ledger: 839 assembly references = 796 ordinary + 43 entrypoints; 748,864 known remaining instruction bytes; zero unknown sizes; 301 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `2168-battle-reset-initializer-recoveries-2168` and `accepted-battle-reset-initializer-recoveries-2168` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

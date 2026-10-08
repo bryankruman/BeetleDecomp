@@ -125,6 +125,68 @@ extern Node_400D38 D_battle_0040A080[];
 extern int D_battle_0040C2B4;
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+
+/* Three words are copied without numerical conversion in the original;
+ * their physical interpretation remains unproved. */
+typedef struct { u32 words[3]; } BattleInitWordTriple;
+typedef struct {
+    u8 prefix[0x618];
+    BattleInitWordTriple copiedWords;
+    u8 unknown624[0x4C];
+    f32 scalar670;
+    u8 unknown674[0x50];
+    f32 scalar6C4;
+} BattleInitSource;
+typedef struct {
+    BattleInitSource *source;
+    u8 unknown4[0x14];
+    s32 objectHandle;
+} BattleInitLink;
+/* Observed offsets only; the final store establishes a required access
+ * through 0x5B7, not a complete historical allocation or lifetime contract. */
+typedef struct {
+    BattleInitLink *link;
+    s32 word4, word8, wordC;
+    f32 scalar10, scalar14;
+    s32 words18[30];
+    s32 word90, word94, word98, word9C, wordA0;
+    f32 scalarA4, scalarA8, scalarAC, scalarB0, scalarB4;
+    BattleInitWordTriple copiedWordsB8;
+    u8 firstSoundHandle[8];
+    u8 unknownCC[0x4BC];
+    u8 secondSoundHandle[8];
+    u8 unknown590[4];
+    f32 scalar594, scalar598;
+    s32 modelId;
+    f32 scalar5A0, scalar5A4;
+    s32 word5A8;
+    f32 scalar5AC;
+    s32 word5B0, word5B4;
+} BattleInitializedNode;
+typedef struct { u8 prefix[0x18]; u16 (*getModelId)(s32); } BattleGetModelExports;
+#include "uvfvec_rom.h"
+
+/* Focused views of observed node/shared offsets and consumed export inputs;
+ * these do not establish complete historical allocations or ownership. */
+typedef struct {
+    s32 word0, word4, word8;
+    f32 scalarC;
+    s32 objectHandle;
+    u8 soundHandle[8];
+} BattleResetSoundNode;
+typedef struct {
+    u8 prefix[0x1A34];
+    f32 scalar;
+    s32 count;
+    u8 unknown1A3C[8];
+    s32 savedNodeWord;
+} BattleResetSoundSharedState;
+typedef struct {
+    u8 prefix[4];
+    void (*playSpatialSound)(void *, s16, s32, f32, f32, f32, Mtx4F *);
+    u8 unknown8[0x40];
+    f32 (*getVolumeScale)(void);
+} BattleResetSoundExports;
 #include "uvvattr_rom.h"
 /* The request capacity and observed offsets separate two 150-word regions;
  * this focused view does not prove the complete historical allocation. */
@@ -136,6 +198,7 @@ typedef struct {
     u8 unknown584[4];
     u8 soundHandle[8];
 } BattleVertexQueryState;
+void battleCollectModelVertexHandlesAndScaledZ(BattleVertexQueryState *);
 extern UvVAttr_Exports *D_battle_0040A054;
 extern f32 D_battle_00409C10[];
 #include "uvfvec_rom.h"
@@ -274,7 +337,57 @@ void battleRunFrameCallbacks(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_0040425C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00404438.s")
+#line 212 "src/modules/battle.c"
+/* RE_ORIGINAL_QUIRK: initialize the sound handle at node +0x588 here;
+ * the vertex collector initializes that same handle again after its vertex
+ * callbacks. Preserve both calls and intervening reloads; the effects of
+ * repeated initialization across those callbacks remain unproved. */
+/* Initialize observed node fields, snapshot linked source values,
+ * initialize two sound handles and clear the thirty-word region at 0x18.
+ * Collect model vertex handles/scaled coordinates, then reload the node link
+ * and record its current object model ID after the callbacks.
+ * RE_UNKNOWN: node/source field meanings and units, allocation extents,
+ * aliases, valid object-handle domains and callback/asset lifetimes need
+ * original callers/producers. The model getter indexes an unchecked pool;
+ * this routine adds no validation. The three copied words remain neutral. */
+void battleInitializeNodeAndCollectVertexHandles(BattleInitializedNode *node)
+{
+    BattleInitLink *link;
+    s32 index;
+
+    link = node->link;
+    node->word8 = 0;
+    node->wordC = 0;
+    node->wordA0 = 0;
+    node->scalar10 = 0.0f;
+    node->scalar14 = 0.0f;
+    node->scalarAC = 0.0f;
+    node->scalarA4 = 1.0f;
+    node->scalarA8 = 0.75f;
+    node->scalarB0 = link->source->scalar670;
+    node->scalarB4 = link->source->scalar6C4;
+    node->copiedWordsB8 = link->source->copiedWords;
+    node->word90 = 0;
+    node->word94 = 0;
+    node->word98 = 0;
+    node->word9C = 0;
+    node->word5B4 = 0;
+    node->word5B0 = 0;
+    node->word5A8 = 0;
+    node->scalar594 = 0.0f;
+    node->scalar598 = 0.0f;
+    node->scalar5A0 = 0.0f;
+    node->scalar5A4 = 0.0f;
+    node->scalar5AC = 0.0f;
+    gSndExports->unkCC(node->firstSoundHandle);
+    gSndExports->unkCC(node->secondSoundHandle);
+    for (index = 0; index < 30; index += 1) {
+        node->words18[index] = 0;
+    }
+    battleCollectModelVertexHandlesAndScaledZ((BattleVertexQueryState *)node);
+    node->modelId = ((BattleGetModelExports *)gUvDobjExports)->getModelId(node->link->objectHandle);
+}
+#line 213 "src/modules/battle.c"
 
 #line 214 "src/modules/battle.c"
 
@@ -459,7 +572,35 @@ void battleResetNodeAndIncrementFirstCount(Node_00406784 *node) {
 #line 319 "src/modules/battle.c"
 #line 318 "src/modules/battle.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00406804.s")
+#line 319 "src/modules/battle.c"
+
+/* Save and clear node word 0x8, set word 0x4 to two, copy the shared
+ * scalar and decrement the shared count. Read object matrix slot zero,
+ * request sound 0x84 using the returned volume scale and that matrix,
+ * then clear object flag bits two and one with fresh callback/handle reads.
+ * RE_UNKNOWN: node/shared field purpose and units, handle and count domains,
+ * shared aliases, asset lifetimes and matrix availability require original
+ * callers/producers. DOBJ 0x28 can return without writing the matrix on
+ * invalid/unloaded inputs; preserve the original uninitialized local rather
+ * than inventing a default. No reachable failure is established here. */
+void battleResetNodePlaySoundAndClearObjectFlags(BattleResetSoundNode *node)
+{
+    Mtx4F matrix;
+    f32 volumeScale;
+
+    ((BattleResetSoundSharedState *)D_battle_0040A080)->savedNodeWord = node->word8;
+    node->word8 = 0;
+    node->scalarC = ((BattleResetSoundSharedState *)D_battle_0040A080)->scalar;
+    node->word4 = 2;
+    ((BattleResetSoundSharedState *)D_battle_0040A080)->count -= 1;
+    ((BattleReadMatrixExports *)gUvDobjExports)->getMatrix(node->objectHandle, 0, &matrix);
+    volumeScale = ((BattleResetSoundExports *)gSndExports)->getVolumeScale();
+    ((BattleResetSoundExports *)gSndExports)->playSpatialSound(
+        node->soundHandle, 0x84, 0x7FFA, volumeScale, 1.0f, 0.0f, &matrix);
+    gUvDobjExports->unk38(node->objectHandle, 2);
+    gUvDobjExports->unk38(node->objectHandle, 1);
+}
+#line 320 "src/modules/battle.c"
 
 #line 315 "src/modules/battle.c"
 /* Set the primitive RGB color from the indexed palette, with alpha 1.0.

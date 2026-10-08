@@ -335,3 +335,5 @@ battleClearObjectEffectsAndInitializeSounds = 0x00407E78; // type:func
 battleEnableIndexedModelAndInitializeSounds = 0x00407F30; // type:func
 battleSetIndexedPrimitiveColor = 0x004090F0; // type:func
 battleCollectModelVertexHandlesAndScaledZ = 0x00404580; // type:func
+battleResetNodePlaySoundAndClearObjectFlags = 0x00406804; // type:func
+battleInitializeNodeAndCollectVertexHandles = 0x00404438; // type:func
