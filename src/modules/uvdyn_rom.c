@@ -1842,6 +1842,22 @@ void uvDynRefreshAttachmentVectors(DynAttachmentPrefix *attachment) {
 }
 #line 485 "src/modules/uvdyn_rom.c"
 
+/* Attachment scalar-property setter: property 0 converts the incoming f32
+ * through unsigned conversion and narrows to u16 before storing kind at 0x04;
+ * properties 1/2 store the unchanged f32 at 0x14/0x18. Null or other selectors
+ * return without writes. Only old-kind 0/new-kind 1 appends to the second
+ * shared pointer list; old-kind 1/new-kind 0 removes its first matching entry.
+ * RE_ORIGINAL_QUIRK: other transitions do not reconcile list membership.
+ * Append capacity is unchecked; list counters/indices narrow to u16, removal
+ * preserves order and the trailing stale word. The native scan bound and
+ * separately retained shared count are cached before writes. For old kind
+ * zero when the first narrowed result is not one, conversion runs again;
+ * each conversion restores the floating control word.
+ * RE_UNKNOWN: kind/property meanings, scalar units, valid conversion domain,
+ * complete list capacity and caller membership/alias guarantees. Direct
+ * creation/removal callers pass property 0 with 1.0f/0.0f respectively; trace
+ * original indirect export 0xFC callers and list consumers for other inputs. */
+#line 486 "src/modules/uvdyn_rom.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00409E18.s")
 
 #line 488 "src/modules/uvdyn_rom.c"

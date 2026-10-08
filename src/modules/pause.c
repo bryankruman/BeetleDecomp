@@ -259,7 +259,25 @@ void pauseNavigateToLinkedNode(void)
 }
 #line 211 "src/modules/pause.c"
 #line 208 "src/modules/pause.c"
-
+/*
+ * Original updates MENU selection through slot0x04, then queries actions0/7/8
+ * through slot0x08 and dispatches callback words using latch bytes1/0. Preserve
+ * current-menu reloads after callbacks, the saved action7 result and the
+ * node-specific SND slot0xE0 byte suppression for index0xAB (not a handle).
+ * RE_ORIGINAL_QUIRK: entry gate short0 is read before selectedIndex==-1;
+ * the later action8 path indexes the 20-byte entry table without that test.
+ * RE_UNKNOWN: valid index/callback-table domains, complete backing extents,
+ * gate/action physical roles, callback historical arguments/returns and
+ * alias/mutation/lifetime guarantees. Resolve through original node/menu
+ * setup, index writers, callback registrations and all callback bodies.
+ * Invalid-index reachability remains unproved; no player fault is claimed.
+ * Readable C is parked:416 native versus424 candidate bytes,99 differing
+ * words and unequal relocation records. Review found no omitted provider
+ * operation; latch-base rematerialization, callback-address read scheduling
+ * and equivalent signed16 sentinel strength reduction still need exact
+ * natural-source and packed-module/ROM proof before replacing this ASM.
+ */
+#line 209 "src/modules/pause.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_00400544.s")
 
 #line 211 "src/modules/pause.c"

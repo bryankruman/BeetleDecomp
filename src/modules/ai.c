@@ -319,6 +319,20 @@ s32 aiUpdateTargetManhattanDistance(AiDistanceState *state) {
 #line 122 "src/modules/ai.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00402C2C.s")
 
+/* Snapshot list head and scalar 0xCC before optional state-1 callbacks;
+ * those callbacks detach the associated pointer, clear object mask 1 and
+ * write CARANIM tag 27 value 0, then signed state 0xBC becomes -1.
+ * Traverse source scalars with the original subtraction/negation: block
+ * below 150 for a null actor, or below 30 for another actor in state 0.
+ * If allowed, associate D_80025D80, set object mask 1, write tag 27 value 1,
+ * initialize scalars/vectors and query a matrix from state+0xC8. Copy the
+ * matrix/vector, transform direction, set state 0, call 0x89C and reload
+ * the dynamic-state pointer for its final refresh callback.
+ * RE_UNKNOWN: scalar units, state/query meanings, list/source validity,
+ * complete allocations and association ownership/lifetime need producers.
+ * Clean C differs in stack/register allocation and load scheduling;
+ * retain ASM pending complete instruction and relocation proof. */
+#line 124 "src/modules/ai.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00402E4C.s")
 
 #line 126 "src/modules/ai.c"

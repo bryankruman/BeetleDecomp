@@ -1149,48 +1149,59 @@ void uvModelPopMatrix(void) {
 #line 1079 "src/modules/uvmodel_rom.c"
 
 #line 1080 "src/modules/uvmodel_rom.c"
+#line 1080 "src/modules/uvmodel_rom.c"
+
 /* Visit every model group, LOD and graphics state, replacing matching texture IDs. */
-void uvModelReplaceTextureId(ParsedUVMD* uvmd, s32 oldTextureId, s32 newTextureId) {
-    s32 i;
-    s32 j;
-    s32 k;
-    uvModelLOD* modelLod;
+#line 1081 "src/modules/uvmodel_rom.c"
+void uvModelReplaceTextureId(ParsedUVMD* model, s32 oldTextureId, s32 newTextureId) {
+    s32 groupIndex;
+    s32 lodIndex;
+    s32 stateIndex;
+    uvModelLOD* lod;
     ParsedUVMD_1* group;
     s32 pad;
 
-    for (i = 0; i < uvmd->unk4; i++) {
-        group = &uvmd->unk0[i];
-        for (j = 0; j < group->unk8; j++) {
-            modelLod = &group->unk0[j];
-            for (k = 0; k < modelLod->unk4; k++) {
-                sUvGfxStateExports->uvGfxStateReplaceTextureId(&modelLod->stateTable[k], oldTextureId, newTextureId);
+    for (groupIndex = 0; groupIndex < model->unk4; groupIndex++) {
+        group = &model->unk0[groupIndex];
+        for (lodIndex = 0; lodIndex < group->unk8; lodIndex++) {
+            lod = &group->unk0[lodIndex];
+            for (stateIndex = 0; stateIndex < lod->unk4; stateIndex++) {
+                sUvGfxStateExports->uvGfxStateReplaceTextureId(&lod->stateTable[stateIndex], oldTextureId, newTextureId);
             }
         }
     }
 }
+#line 1099 "src/modules/uvmodel_rom.c"
 #line 1098 "src/modules/uvmodel_rom.c"
 
 #line 1099 "src/modules/uvmodel_rom.c"
-/* Append every graphics state matching the texture ID and return the count.
- * Output capacity remains the original caller responsibility. */
-s32 uvModelCollectStatesByTextureId(ParsedUVMD* uvmd, uvGfxState** stateTable, s32 textureId) {
-    s32 i;
-    s32 j;
-    s32 k;
+#line 1099 "src/modules/uvmodel_rom.c"
+
+/* Append pointers to graphics states matching the texture ID and return
+ * the number written, preserving group/LOD/state traversal and write order.
+ * RE_ORIGINAL_QUIRK: this routine has no output-capacity argument or check.
+ * RE_UNKNOWN: whether callers provide enough output entries for every match.
+ * Trace original callers and loaded-model state counts before assuming that
+ * the supplied output pointer array has sufficient storage. */
+#line 1101 "src/modules/uvmodel_rom.c"
+s32 uvModelCollectStatesByTextureId(ParsedUVMD* model, uvGfxState** outStates, s32 textureId) {
+    s32 groupIndex;
+    s32 lodIndex;
+    s32 stateIndex;
     s32 stateCount;
     ParsedUVMD_1* group;
     uvGfxState* state;
-    uvModelLOD* modelLod;
+    uvModelLOD* lod;
 
     stateCount = 0;
-    for (i = 0; i < uvmd->unk4; i++) {
-        group = &uvmd->unk0[i];
-        for (j = 0; j < group->unk8; j++) {
-            modelLod = &group->unk0[j];
-            for (k = 0; k < modelLod->unk4; k++) {
-                state = &modelLod->stateTable[k];
+    for (groupIndex = 0; groupIndex < model->unk4; groupIndex++) {
+        group = &model->unk0[groupIndex];
+        for (lodIndex = 0; lodIndex < group->unk8; lodIndex++) {
+            lod = &group->unk0[lodIndex];
+            for (stateIndex = 0; stateIndex < lod->unk4; stateIndex++) {
+                state = &lod->stateTable[stateIndex];
                 if (sUvGfxStateExports->uvGfxStateHasTextureId(state, textureId) != 0) {
-                    stateTable[stateCount++] = state;
+                    outStates[stateCount++] = state;
                 }
             }
         }
@@ -1198,6 +1209,7 @@ s32 uvModelCollectStatesByTextureId(ParsedUVMD* uvmd, uvGfxState** stateTable, s
 
     return stateCount;
 }
+#line 1126 "src/modules/uvmodel_rom.c"
 #line 1124 "src/modules/uvmodel_rom.c"
 
 #line 1125 "src/modules/uvmodel_rom.c"
