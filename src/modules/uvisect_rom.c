@@ -755,6 +755,19 @@ void uvIsectCopyRecord(IsectCopyRecord88 *destination, IsectCopyRecord88 *source
 }
 #line 176 "src/modules/uvisect_rom.c"
 
+/* Copy the input point twice, subtract the supplied span from the first Z,
+ * and explicitly zero the local query word 0x18. Run flag-2, flag-8 and scalar
+ * queries in that order, retaining native ordered comparisons of value 0x2C.
+ * RE_ORIGINAL_QUIRK: scalar-only success returns with the scalar helper's
+ * outputs. General success writes the adjusted scalar before the selected
+ * handle, calls 0x403F38, then copies vector 0x34 through actual FVEC slot 0x1C.
+ * No selection writes handle 4, scalar 0 and vector (0, 0, 1).
+ * RE_UNKNOWN: historical return declaration, vector frame, scalar/span units,
+ * nonzero-span caller guarantee, pointer alias/lifetime, successful-helper
+ * output validity and original scratch declarations. Trace original slot-0xA0
+ * callers, record producers and original build declarations before changing
+ * these contracts or replacing the native assembly. */
+#line 177 "src/modules/uvisect_rom.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_0040423C.s")
 
 #line 179 "src/modules/uvisect_rom.c"

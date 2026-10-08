@@ -134,7 +134,23 @@ void resultsCallMenuCallbackWith100(void) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/results/func_results_00405E18.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/results/func_results_00405ED8.s")
-
+/*
+ * Map the current full-word track handle through SCENE slot0x0C (first of six
+ * matches, or ambiguous0), then scan five floats backward in a 100-byte record.
+ * Preserve ordered comparisons, backward float/name shifts and the original
+ * final four-read/four-write name groups; final settings-base traversal ends
+ * at the distinct D_80025D00 address marker, reading name bytes at +0x150.
+ * Return insertion slot0..5; five performs no insertion. Equality and NaN do
+ * not select a slot. No external sort invariant or physical units are proved.
+ * RE_UNKNOWN: complete record/settings/marker declarations, storage allocation,
+ * persistence, alias domains and valid table lifecycle. Resolve original record
+ * producers, name/track writers and every persistence/result caller.
+ * Readable C parked:348 native bytes versus516,100 differing words and unequal
+ * full relocation records. The native endpoint is restored, but the compiler
+ * expands the explicit grouped copy into remainder/unrolled loops; natural
+ * instruction equivalence and full packed-module/ROM proof are still required.
+ */
+#line 118 "src/modules/results.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/results/func_results_00405F94.s")
 
 /* Find the rank position of arg0 against 5 threshold floats in the track's time table at D_8002CD98. */

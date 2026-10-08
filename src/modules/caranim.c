@@ -150,9 +150,9 @@ void caranimSetStateByte25(void *state, s32 value) {
 
 #line 84 "src/modules/caranim.c"
 /* Walk at most eight registry entries, stopping at the first null, and clear
- * byte0x23C: callback0x054B4 skips helper0x05304 while this byte is nonzero.
+ * byte0x23C: callback0x054B4 skips light/shadow helper0x05304 while nonzero.
  * Constructor0x003AC clears it; callback sets it after that helper returns.
- * RE_UNKNOWN: helper role, reset cadence, pointer lifetime/capacity and incoming
+ * RE_UNKNOWN: flag policy, reset cadence, pointer lifetime/capacity and incoming
  * argument type; trace callers. Preserve the homed incoming A0 word. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_004014A4.s")
 #line 85 "src/modules/caranim.c"
@@ -425,6 +425,16 @@ void caranimBuildOrientationBasis(CarAnimBasisState *state) {
 }
 #line 182 "src/modules/caranim.c"
 
+/* func_caranim_00405304 applies light records using the object's saved position
+ * or a query word, then conditionally updates shadow state and three scene records.
+ * Snapshot matrix row 0x30 before LIGHT18; reread byte243 and callback-dependent
+ * scene/state pointers afterward. Halfword3F2 values zero/one select -1.
+ * RE_ORIGINAL_QUIRK: reads the row even when DOBJ rejects a handle without output.
+ * RE_UNKNOWN: valid object/query/selector domains, flag policy and storage lifetimes
+ * need original constructors, scene writers and callback callers; rejection
+ * reachability is unproved. Clean C has 25 register/branch words and complete
+ * relocation differences at the same 432-byte extent; retain original assembly. */
+#line 183 "src/modules/caranim.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00405304.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_004054B4.s")
