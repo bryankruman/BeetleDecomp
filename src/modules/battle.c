@@ -536,7 +536,7 @@ void battleSetScaledCameraScalarOnce(BattleObj_00405034 *node, float value) {
 /* Clear the linked motion-state flag, copy node position and two
  * scalars, and record shared time. Read the object matrix, pass its translation
  * row to motion export 0x3C with mode zero, then update the battle node. The
- * motion callee uses three arguments; the fourth register is not an input. */
+ * motion callee uses three arguments; the fourth register is not an input. RE_UNKNOWN: caller parameter mode carries an optional-pointer word at 5ADC; historical type, domain and pointed storage need original producers. */
 void battleCopyNodeStateAndUpdateMotion(BattleResetNode *node, s32 mode) {
     BattleMotionSource *source;
     Mtx4F matrix;
@@ -552,6 +552,28 @@ void battleCopyNodeStateAndUpdateMotion(BattleResetNode *node, s32 mode) {
 }
 #line 272 "src/modules/battle.c"
 
+/* Original Battle5ADC returns for an ordered-positive scalar at 0xA8;
+ * otherwise it resets fields AC/5B4/A4/A8, sends linked word 0x14 and
+ * scalars 1/.7/0 to RUMBLE04, sets CAR property 9 to 12, then invokes
+ * SND70 on the embedded handle. Preserve fresh link and export reads.
+ * It increments word 8; a nonzero second word is dereferenced at +0xC,
+ * incremented and forwarded to 5D34 before linked-node removal.
+ * RE_ORIGINAL_QUIRK: count != 0 selects one removal, including for a
+ * negative count. The captured slot is cleared after the first-count helper;
+ * the current count is reloaded before subtraction. A nonnull pointer at
+ * 0x90 then selects the second-count helper after clearing word 0x94.
+ * RE_UNKNOWN: the existing int declaration and caller parameter named mode
+ * carry an optional-pointer word, not a proved integer mode. Historical
+ * formal types, pointer/list/count domains, linked pattern-index bounds,
+ * scalar units, aliases and callback replacement lifetimes require original
+ * callers and producers. No cooldown unit, capacity or ownership is proved.
+ * Readable trial2515 produced 348 versus 352 bytes and 31 differing words;
+ * frame40 remains, but boolean-join and slot-address lowering differ. The
+ * two nine-record relocation lists differ at later sites and downstream
+ * symbol values. No missing callback/width/reload was identified in full
+ * comparison2516; historical source/compiler organization remains unknown.
+ * Retain original assembly. Neutral sound-view bridge2510 is unaccepted. */
+#line 273 "src/modules/battle.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00405ADC.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00405C3C.s")
@@ -664,6 +686,26 @@ void battleSetPalettePrimitiveColor(BattlePaletteSelector *selector) {
 }
 #line 316 "src/modules/battle.c"
 
+/* Original Battle6954 scans active 28-byte records using a reloaded
+ * signed count, requests DOBJ property 7, then reloads the record index and
+ * reads the input/table triples. It evaluates the grouped squared difference
+ * through MATH04 and keeps the last index strictly below the mean of the
+ * input and queried scalars; it returns -1 when no index passes.
+ * RE_ORIGINAL_QUIRK: DOBJ7 only writes the float output when its signed
+ * upper-bound test accepts the handle. The original query scratch has no
+ * initialization here; caller evidence must establish any valid-output domain.
+ * RE_UNKNOWN: count/index/handle bounds, output validity, aliases, physical
+ * units, object lifetimes and historical declarations need original callers
+ * and producers. Ordered NaN comparisons reject the test; no guard is added.
+ * Trial2515 retained 380 bytes but changed 70 instruction words. Native
+ * DIV.S by 2 became MUL.S by .5 despite the draft's /2.0f expression; exact
+ * floating effects and historical precision/source organization are unproved.
+ * Record-index scaling changed from shifts/subtraction to MULTU by 12;
+ * stack scratch/result homes, base retention and scheduling also differ.
+ * The two ten-record relocation lists differ in sites/enumeration. Full
+ * comparison2516 found no omitted provider call, state reload or ABI input.
+ * Retain original assembly; no clean draft or focused declarations accepted. */
+#line 317 "src/modules/battle.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00406954.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00406AD0.s")

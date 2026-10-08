@@ -1787,8 +1787,15 @@ void func_selection_00406114(void) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040611C.s")
 
 #line 1108 "src/modules/selection.c"
-/* Save graphics state, set mask 0x4800000 and clear mask 0x600000,
- * render the shared selection sprite, then restore the graphics state. */
+/* Request a graphics-state push, set bits 0x04800000 and clear bits
+ * 0x00600000, render the shared signed sprite index, then request a pop.
+ * RE_UNKNOWN: paired restoration requires a caller entry-depth invariant.
+ * The original push skips saving at depth 31, while pop still consumes a
+ * nonempty stack. Original callers and stack initialization must establish
+ * the valid depth domain. The sprite provider has only a signed upper-bound
+ * check; allocation and caller evidence must establish eligible indices.
+ * No arbitrary-depth restoration or reachable fault is established here. */
+#line 1110 "src/modules/selection.c"
 void selectionRenderSharedSpriteWithState(void) {
     gUvGfxStateExports->unk50();
     gUvGfxStateExports->unk0C(0x4800000);
@@ -3501,6 +3508,34 @@ void func_selection_00419B9C(void) {
     selectionActivateMenuNode(&D_selection_0041F5B4);
 }
 
+/* Request a graphics-state push, set bits 0x04800000 and clear bits
+ * 0x00600000, render the shared signed sprite index, then request a pop.
+ * Reload each provider between calls. When the freshly read shared scalar
+ * is positive, select font 1, measure the language-selected Start prompt,
+ * then draw at (270 - width, 23), RGBA (251, 204, 30, 255), shadow word 1.
+ * Reload language and text after measuring. The original final path loads
+ * the scalar again before subtracting the shared f32 delta and storing it.
+ * RE_ORIGINAL_QUIRK: only a scalar below -0.25f resets to +0.25f; this is
+ * not a full clamp. NaN skips reset and text drawing but still reaches the
+ * final subtraction. The sprite provider rejects only the signed upper
+ * bound. Push skips saving at depth 31 while pop consumes a nonempty stack.
+ * RE_UNKNOWN: scalar purpose, units, producer/reset lifecycle and observed
+ * reload contract; caller stack-depth invariant and sprite allocation/index
+ * eligibility; language index and complete prompt-table bounds, mutable text
+ * ownership, font resource availability and callback effects. Actual callers,
+ * writers, stack/resource initialization and reset paths must resolve these
+ * domains; the nine-word DATA inspection window proves no historical array
+ * capacity. No arbitrary-depth restoration or reachable fault is established.
+ * The readable draft remains unaccepted: 396 native bytes versus 400 draft
+ * bytes, 98 differing words, 38 versus 36 ELF relocation records. Same 48-byte
+ * frame; the compiler retains the initial scalar address, combines its reset
+ * reference, changes FPR roles and reuses the scalar test value on the path
+ * without text drawing. Original load/store addressing and unconditional
+ * final scalar reload are retained here. Historical declaration, access
+ * qualification and expression lowering require evidence; no speculative
+ * qualifier, storage padding or source-shape search is justified. The focused
+ * draft call views and externs were not added to this retained-ASM source. */
+#line 2053 "src/modules/selection.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00419BC8.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00419D54.s")

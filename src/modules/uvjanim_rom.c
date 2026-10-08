@@ -72,9 +72,9 @@ void uvJanimModuleCleanup(void) {
 #line 59 "src/modules/uvjanim_rom.c"
 
 #line 60 "src/modules/uvjanim_rom.c"
-/* Copy enabled quaternion/translation/scale channels and joint IDs
- * when destination capacity covers the source count. Preserve original
- * optional-buffer checks and final channel/count stores. */
+/* Copy enabled channels and IDs when the u16 member at 0x12 covers the
+ * u8 count at 0x10. RE_UNKNOWN: writable extents, aliases and lifetimes
+ * need original allocation/resource producers and full caller contracts. */
 void uvJanimCopyPose(UnkStruct_UvJanim_rom_00400144 *destination,
                                UnkStruct_UvJanim_rom_00400144 *source) {
     if (destination->unk12 >= source->unk10) {
@@ -98,16 +98,16 @@ void uvJanimCopyPose(UnkStruct_UvJanim_rom_00400144 *destination,
                 _uvMediaCopy(destination->unkC, source->unkC, (u32) source->unk10);
             }
         }
-        destination->unk11 = source->unk11;
+        destination->unk11 = source->unk11; /* RE_ORIGINAL_QUIRK: native publishes source flags/count even when an optional copy was skipped. RE_UNKNOWN: caller reachability needs proof. */
         destination->unk10 = source->unk10;
     }
 }
 #line 87 "src/modules/uvjanim_rom.c"
 
 #line 88 "src/modules/uvjanim_rom.c"
-/* Read each model joint matrix, apply enabled pose rotation, translation
- * and scale, then submit it to the dynamic object. Preserve joint order
- * and optional-buffer behavior. */
+/* Apply enabled pose channels in joint order; the vector at pose offset
+ * 0x08 feeds native FMTX slot 0x30 matrix scaling. RE_UNKNOWN: joint
+ * validity, channel extents, aliases/lifetimes and conventions need callers. */
 void uvJanimApplyPose(s32 objectId, UnkStruct_UvJanim_rom_00400144 *pose) {
     Mtx4F matrix;
     s32 i; // s4
