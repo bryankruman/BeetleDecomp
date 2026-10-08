@@ -372,7 +372,22 @@ void uvIsectSetQueryParameterBank(s32 mode, u16 firstRecordIndex, u16 endRecordI
 #line 86 "src/modules/uvisect_rom.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00400C8C.s")
 
+/* Refresh the record's pending query list from payload kind 0 endpoint groups
+ * or kind 1 provider callbacks. Preserve low-16-bit group iteration, query
+ * flag reloads, cached result addresses and the original callback sequence.
+ * RE_ORIGINAL_QUIRK: in cached-result mode, flag 4 can reuse the same result
+ * after successful flag 2/8 queries; successful flag 1 instead skips flag 4.
+ * A failed queue append returns before the normal object-flag restoration.
+ * RE_UNKNOWN: complete payload/group layouts, capacities, aliases, callback
+ * stability and historical declarations/local storage. The normal tail reloads
+ * the object word; if callbacks change an initial 0xFFFF word, the saved flag
+ * byte may not have been assigned. Trace payload producers and callback/caller
+ * paths before changing these assumptions; player reachability is unproved.
+ * A readable draft preserves the observed effects but differs in complete
+ * instructions and relocation records; retain the original assembly. */
+#line 88 "src/modules/uvisect_rom.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00400DC0.s")
+#line 89 "src/modules/uvisect_rom.c"
 
 #line 90 "src/modules/uvisect_rom.c"
 /* Store the supplied pointer at result offset 0x00 and clear word 0x04,
@@ -552,7 +567,24 @@ s32 uvIsectCollectRequestedProviderLists(Vec3F *first, Vec3F *second, s32 queryF
 }
 #line 99 "src/modules/uvisect_rom.c"
 
+/* Select provider scalar/vector pairs and check the loaded UVMD model's
+ * unknown link at 0x20 against the shared threshold. Record at most five
+ * distinct removed word/scalar pairs and overwrite their provider scalar with
+ * the original 1.1f/-0.1f exclusion value before retrying. Mode 0 uses DOBJ;
+ * mode 2 appends a second original 0x404ED4 bank to the first.
+ * RE_ORIGINAL_QUIRK: scans and the optional mean use the full signed count,
+ * but retries/return use its low 16 bits. If no ordered comparison selects an
+ * entry, native selected-word/vector/index storage can be read without an
+ * assignment in that invocation. Caller/provider reachability is unproved.
+ * RE_UNKNOWN: historical prototypes/local storage, scalar domains/units, model
+ * link validity/meaning, loaded-file availability, shared capacity/lifetime and
+ * aliases. Trace native callers and the actual DOBJ/0x404ED4 producers before
+ * revising these contracts. Preserve global-mode reloads and result writes.
+ * A readable draft retains the observed operations but differs in complete
+ * instructions and relocations; keep the original assembly. */
+#line 100 "src/modules/uvisect_rom.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00401DA4.s")
+#line 101 "src/modules/uvisect_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004024AC.s")
 

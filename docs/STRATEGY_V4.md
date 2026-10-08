@@ -2494,10 +2494,19 @@ Totals: 355 further recoveries after the 225 upstream ordinary imports, plus 131
 Frozen wave `1991-particle-lifetime-contracts` and `accepted-particle-lifetime-contracts` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 356 further readable functions
+## Historical accepted checkpoint — 356 further readable functions
 
 Recover tedCreateTaskEditorGroupsAndDispatchSelector as readable commented C using the actual original GAME→GAMEGUI→GUI loader bindings, signed-low16 pool indices, shared pointer stores/reloads and original dispatch order. Preserve all480 resolved original instruction bytes and the original928-byte readonly section using the unchanged validated V1 ownership framework:788 retained prefix bytes,32 compiler switch-table bytes and108 retained suffix bytes attached to the real1716-byte following assembly routine. The original PC16 branch resolves to the same native destination; table ownership differs from raw isolated object records and is not described as serialization-only. Preserve all eight original RELA-backed table targets. Keep exact pool/title/selector/alias/lifecycle unknowns explicit. Full acceptance requires actual repeated extraction with identical generated outputs, original TED/GUI/GAMEGUI packed modules, a fresh four-job original full-ROM build, all frozen source hashes and the regenerated uncertainty index. No padding, manual table masking, invented host or C body shape change.
 
 Totals: 356 further recoveries after the 225 upstream ordinary imports, plus 1314 existing C semantic cleanups. Current ledger: 844 assembly references = 801 ordinary + 43 entrypoints; 750,072 known remaining instruction bytes; zero unknown sizes; 303 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `1993-ted-native-readonly-groups` and `accepted-ted-native-readonly-groups` verify real translation-unit instructions/full relocations, 3 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 356 further readable functions
+
+Document original pending query refresh, filtered model selection and mode-dependent scalar blending beside their retained assembly. Flag conditional unassigned storage, callback-dependent object flag restoration, cached flag-4 reuse, low-16-bit retry/iteration, unchecked capacities and divisor domains. Compiler frame, register and relocation differences remain isolated diagnostics; no draft types or bodies are accepted. Preserve every executable token and logical coordinate, exact complete-source inverse, original packed modules and a fresh original ROM build. No C recovery or older C cleanup count is added; require all frozen source hashes and uncertainty index.
+
+Totals: 356 further recoveries after the 225 upstream ordinary imports, plus 1314 existing C semantic cleanups. Current ledger: 844 assembly references = 801 ordinary + 43 entrypoints; 750,072 known remaining instruction bytes; zero unknown sizes; 303 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `2012-query-and-motion-contracts` and `accepted-query-and-motion-contracts` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

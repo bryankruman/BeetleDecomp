@@ -189,6 +189,22 @@ void motionUnloadModulesAndStopEmitters(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00400748.s")
 
+/* Blend raw scalar fields using a snapshotted player-two handicap selector.
+ * Mode 4 leaves the fields unchanged; mode 3 uses the computed limit directly.
+ * The original loads the record pointer even on the mode-4 return path.
+ * RE_ORIGINAL_QUIRK: selector values outside 0..4 can consume an untouched
+ * divisor local. Denominators are unchecked; ordered clamps retain NaNs.
+ * RE_UNKNOWN: reachable selector and denominator domains, scalar units,
+ * historical storage aliases, record lifetime and caller guarantees require
+ * original setting writers, field producers and callers. DATA values remain
+ * runtime reads, not hardcoded constants inferred from shipped bytes.
+ * A readable draft is 476 versus 480 native bytes, with 116 differing words.
+ * Native reference-scalar stack snapshot/reload becomes a register value;
+ * draft spills the blended100 value, uses a 40- versus 32-byte frame, and
+ * schedules scalar/global loads differently. The two 22-record relocation
+ * lists differ in offsets. No supported omitted operation or call was found.
+ * Retain original assembly until complete instructions and records match. */
+#line 100 "src/modules/motion.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00400D74.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00400F54.s")
