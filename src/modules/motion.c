@@ -651,6 +651,16 @@ void motionForwardStateMatrix(void *state) {
 }
 #line 266 "src/modules/motion.c"
 
+/* Bound selected paired scalars, then advance them through the original
+ * sqrt, cosine, sine and MISC 0xDC factor callbacks in that order. Full-word
+ * selectors stride 0x10; records start at 0x128, stride 0x130. Mirror the
+ * stored scalar through each record's u16 slot and preserve live u16 count.
+ * Forward state, 1, state+0x5E8, 0 to helper 0x11C64 when count is nonzero.
+ * RE_UNKNOWN: physical units, selector/slot capacities, coefficient/divisor
+ * domains, flag meaning and allocation/alias/lifetime need original producers.
+ * Clean C differs in address reuse, branches, allocation and scheduling;
+ * retain ASM pending complete instruction and relocation proof. */
+#line 267 "src/modules/motion.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00412770.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00412B14.s")

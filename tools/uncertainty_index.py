@@ -151,12 +151,35 @@ def declaration_owners(code):
     return owners
 
 
+def definition_location_wrapper(code,text,end,owner):
+    """Recognize the paired #line wrapper used when banking an old definition.
+
+    Its one blank line is generated inside the wrapper, after an immediately
+    leading note. Ordinary detached notes, prototypes, assembly pragmas and
+    arbitrary location directives do not qualify. Keep physical offsets.
+    """
+    if owner['kind']!='function':return False
+    declaration=code[owner['start']:owner['end']]
+    if not declaration.rstrip().endswith('}'):return False
+    filename=r'"(?:[^"\\\r\n]|\\[^\r\n])*"'
+    gap=text[end:owner['start']]
+    opening=re.fullmatch(r'\r?\n[ \t]*#[ \t]*line[ \t]+[0-9]+[ \t]+('+filename+r')[ \t]*\r?\n[ \t]*\r?\n[ \t]*',gap)
+    if not opening:return False
+    # A quoted example or macro continuation is never a real wrapper.
+    directive=gap.find('#');offset=end+directive
+    if not re.match(r'#[ \t]*line\b',code[offset:owner['start']]):return False
+    closing=re.match(r'[ \t]*\r?\n[ \t]*#[ \t]*line[ \t]+[0-9]+[ \t]+('+filename+r')[ \t]*(?:\r?\n|$)',text[owner['end']:])
+    if not closing or closing[1]!=opening[1]:return False
+    close_offset=owner['end']+closing[0].find('#')
+    return bool(re.match(r'#[ \t]*line\b',code[close_offset:close_offset+len(closing[0])]))
+
+
 def owner_at(owners,code,text,start,end=None):
     """Use enclosure first, then an immediately leading standalone comment.
 
     A same-line trailing comment is never attached to the following declaration.
-    Blank lines after a comment deliberately break leading ownership; file-wide
-    notes therefore stay unowned unless actually inside a definition.
+    Blank lines after a comment deliberately break leading ownership, except
+    for one generated blank inside a paired definition-location wrapper.
     """
     for owner in owners:
         if owner['start']<=start<owner['end']:return owner
@@ -165,6 +188,7 @@ def owner_at(owners,code,text,start,end=None):
     if code[line_start:start].strip():return None
     for owner in owners:
         if owner['start']>=end:
+            if definition_location_wrapper(code,text,end,owner):return owner
             gap=code[end:owner['start']]
             # A complete physical #line directive restores logical locations;
             # it does not detach a leading note. Keep all other gap text and

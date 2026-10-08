@@ -75,9 +75,9 @@ void *carAudioAllocateState(s32 sourceRecordAddress, s32 handleSlotIndex)
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_00400550.s")
 
 #line 65 "src/modules/caraudio.c"
-/* Select the shared scalar through the source record word at 0x1EC,
+/* Use source-record word 0x1EC as the unchecked shared-scalar index,
  * then run the original audio update and dual-emitter scalar update.
- * Source selection bounds and meanings remain caller-owned. */
+ * RE_UNKNOWN: index bounds, source extent/lifetime and selector meaning need original writers/callers. */
 void carAudioUpdateSharedScalarAndEmitters(void *state) {
     D_caraudio_00404254 = D_caraudio_004040C0[*(s32 *)(*(s32 *)((u8 *)state + 0xC) + 0x1EC)];
     func_caraudio_00402B20(*(s32 *)((u8 *)state + 0x14), state);
@@ -187,8 +187,8 @@ void carAudioUpdateDualEmitterVolume(CarAudioDualVoice *state) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_00402CA4.s")
 
 #line 131 "src/modules/caraudio.c"
-/* Clear the original per-slot flag byte. Slot bounds remain owned by
- * the caller; no new range conversion is introduced. */
+/* Clear the flag byte using the supplied signed slot without a range check.
+ * RE_UNKNOWN: valid slot domain and flag-table extent need original callers and data layout. */
 void carAudioClearSlotFlag(s32 slot) {
     D_caraudio_004041E0[slot] = 0;
 }

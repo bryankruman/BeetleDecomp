@@ -232,6 +232,45 @@ class DeclarationContextTests(unittest.TestCase):
                 self.assertEqual(self.names(self.note(index,'detached location')),[])
                 self.assertNotIn('explicit_unknown',self.query('func_actual_00400000'))
 
+    def test_banked_definition_wrapper_keeps_leading_notes_searchable(self):
+        source=('#line 209 "src/example.c"\n'
+                '/* RE_UNKNOWN: registered prefix bounds.\n'
+                ' * RE_ORIGINAL_QUIRK: full table increments count. */\n'
+                '#line 211 "src/example.c"\n\n'
+                'int findRegisteredState(int objectHandle) {\n return objectHandle;\n}\n'
+                '#line 220 "src/example.c"\n')
+        index=self.source(source);item=self.note(index,'registered prefix')
+        self.assertEqual(self.names(item),[('function','findRegisteredState')])
+        self.assertEqual(item['lines'],[2])
+        self.assertEqual(item['owners'][0]['declaration_line'],6)
+        self.assertIn('explicit_unknown [findRegisteredState]',self.query('findRegisteredState'))
+        self.assertIn('original_quirk [findRegisteredState]',self.query('findRegisteredState'))
+
+    def test_definition_wrapper_is_narrow_and_keeps_detached_notes_unowned(self):
+        for gap,footer in [('\n\n#line 10 "x.c"\n\n','\n#line 20 "x.c"\n'),
+                           ('\n#line 10 "x.c"\n\n\n','\n#line 20 "x.c"\n'),
+                           ('\n#line 10 "x.c"\n\n','\n'),
+                           ('\n#line 10 "x.c"\n\n','\n#line 20 "other.c"\n'),
+                           ('\n#line 10\n\n','\n#line 20\n'),
+                           ('\n#line 10 "x.c"\n\n','\n/* unrelated */\n#line 20 "x.c"\n')]:
+            with self.subTest(gap=gap,footer=footer):
+                index=self.source('/* RE_UNKNOWN: detached wrapper. */'+gap+'void actual(void) {}'+footer)
+                self.assertEqual(self.names(self.note(index,'detached wrapper')),[])
+
+    def test_definition_wrapper_does_not_attach_prototypes_or_assembly(self):
+        for declaration in ['void actual(void);', '#pragma GLOBAL_ASM("asm/func_actual_00400000.s")']:
+            with self.subTest(declaration=declaration):
+                index=self.source('/* RE_UNKNOWN: detached declaration. */\n#line 10 "x.c"\n\n'+declaration+'\n#line 20 "x.c"\n')
+                self.assertEqual(self.names(self.note(index,'detached declaration')),[])
+
+    def test_definition_wrapper_retains_group_ids_and_physical_offsets(self):
+        note='RE_UNKNOWN: stable banked note.'
+        first=self.note(self.source('/* '+note+' */\nvoid actual(void) {}\n'),'stable banked')
+        second=self.note(self.source('/* '+note+' */\n#line 10 "x.c"\n\nvoid actual(void) {}\n#line 20 "x.c"\n'),'stable banked')
+        self.assertEqual(first['id'],second['id']);self.assertEqual(first['lines'],second['lines'])
+        self.assertEqual(self.names(first),self.names(second))
+        self.assertEqual(second['owners'][0]['declaration_line'],4)
+
     def test_location_directives_do_not_hide_macros_or_real_code(self):
         for blocker in ['#define AUDIT_GATE 1\n', '#if AUDIT_GATE\n',
                         '#pragma unrelated\n', ';\n', '#define CONTINUED \\\n#line 42\n']:

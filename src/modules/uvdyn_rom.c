@@ -1194,6 +1194,18 @@ s32 uvDynGetValue2C(DynResetState *state) {
 }
 #line 332 "src/modules/uvdyn_rom.c"
 
+/* Store the incoming raw words in order at node+0x1550+4*index and
+ * node+0x1578+4*index. Only when index is 5 and the previous first word is
+ * zero, first set bit 0x2 on the node and its kind-zero attachment children.
+ * RE_ORIGINAL_QUIRK: the signed index has no range check; both list indices
+ * wrap to u16. The original checks the attachment and its intersection
+ * pointer, but not the subsequent value or child pointers. Preserve signed
+ * count comparisons and count reloads after potentially aliasing child writes.
+ * RE_UNKNOWN: callback signatures, slot/bit meanings, valid index/count
+ * bounds, complete list capacities and caller alias/reachability guarantees.
+ * Trace original table consumers, list producers and callers before adding
+ * validation or replacing these raw words with callable declarations. */
+#line 333 "src/modules/uvdyn_rom.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00404834.s")
 
 #line 335 "src/modules/uvdyn_rom.c"

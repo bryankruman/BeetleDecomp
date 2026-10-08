@@ -82,18 +82,21 @@ void replayPrependSpatialRecord(f32 x, f32 y, f32 z, f32 radius, f32 secondX, f3
 #line 50 "src/modules/replay.c"
 
 #line 51 "src/modules/replay.c"
-/* Allocate and prepend a 20-byte record: vector export slot 4 writes the
- * first three words, followed by radius squared and the previous list head.
- * RE_UNKNOWN: point/list consumer roles and whether the third parameter
- * should be typed as a float; preserve its current raw-word s32 ABI.
- * RE_ORIGINAL_QUIRK: allocation is unchecked. */
-void replayPrependPointRadiusRecord(f32 x, f32 y, s32 rawZWord, f32 radius) {
+#line 51 "src/modules/replay.c"
+
+/* Allocate and prepend 20 bytes: actual FVEC slot0x04 copies three f32
+ * components; then store the fourth scalar squared and the previous list head.
+ * RE_UNKNOWN: roles/units, lifetime and historical formal types need original
+ * callers/consumers. Preserve word locations and bit copies, no numeric conversion.
+ * RE_ORIGINAL_QUIRK: allocation is unchecked; failure reachability is unknown. */
+void replayPrependVectorSquaredScalarRecord(f32 x, f32 y, f32 z, f32 scalar) {
     void *record = _uvMemAllocAlign8(0x14);
-    ((void (*)(void *, f32, f32, s32))(*(s32 *)((u8 *)gUvFvecExports + 0x4)))(record, x, y, rawZWord);
-    *(f32 *)((u8 *)record + 0xC) = radius * radius;
+    ((UvFVec_Rom_Exports *)gUvFvecExports)->uvVec3FSet(record, x, y, z);
+    *(f32 *)((u8 *)record + 0xC) = scalar * scalar;
     *(s32 *)((u8 *)record + 0x10) = (s32)D_replay_00401B64;
     D_replay_00401B64 = record;
 }
+#line 63 "src/modules/replay.c"
 #line 58 "src/modules/replay.c"
 
 #line 59 "src/modules/replay.c"

@@ -822,8 +822,12 @@ s16 func_uvmodel_rom_0040199C(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, 
 }
 
 #line 798 "src/modules/uvmodel_rom.c"
-/* Reject absent bounds or an uninvertible transform, transform the point
- * into local space and return zero inside the inclusive LOD bounds, else -1. */
+/* Reject the original absent-bounds sentinel or a failed matrix inverse,
+ * transform the point to local space and delegate to the bounds predicate.
+ * RE_UNKNOWN: whether original callers guarantee finite points/transforms
+ * and finite ordered asset bounds. The helper's strict rejection comparisons
+ * do not prove containment for NaNs; trace callers and asset validation. */
+#line 800 "src/modules/uvmodel_rom.c"
 s16 uvModelTestWorldPointInLodBounds(f32 x, f32 y, f32 z, Mtx4F *transform, uvModelLOD *lod) {
     Mtx4F inverse;
     Vec3F point;
@@ -848,7 +852,13 @@ s16 uvModelTestWorldPointInLodBounds(f32 x, f32 y, f32 z, Mtx4F *transform, uvMo
 #line 819 "src/modules/uvmodel_rom.c"
 
 #line 820 "src/modules/uvmodel_rom.c"
-/* Test all three coordinates against inclusive local bounds in original order. */
+/* Reject the point on the first strict comparison outside a bound, in the
+ * original X/Y/Z order. Equality passes for finite ordered bounds.
+ * RE_ORIGINAL_QUIRK: a NaN coordinate takes neither rejection for its axis;
+ * preserve these comparisons rather than replacing them with positive tests.
+ * RE_UNKNOWN: finite-coordinate and ordered-bound caller/asset guarantees.
+ * Trace original bound producers and callers before asserting containment. */
+#line 821 "src/modules/uvmodel_rom.c"
 s32 uvModelContainsLocalPoint(f32 x, f32 y, f32 z, uvModelLOD_inner *bounds) {
     if (x < bounds->unk0) {
         return FALSE;
@@ -1095,15 +1105,24 @@ void uvModelResetMatrixStack(void) {
 #line 1054 "src/modules/uvmodel_rom.c"
 
 #line 1055 "src/modules/uvmodel_rom.c"
-/* Return the matrix at the current stack index. Validity is caller-owned. */
+/* Return the address selected by the current matrix-stack index directly.
+ * RE_UNKNOWN: whether callers ensure the index is within allocated storage.
+ * Reset sets -1 and an over-capacity push retains its increment; trace stack
+ * setup and balanced push/pop/get callers before assuming a valid matrix. */
+#line 1056 "src/modules/uvmodel_rom.c"
 Mtx4F* uvModelGetCurrentMatrix(void) {
     return &D_uvmodel_rom_00403160[D_uvmodel_rom_00403130];
 }
 #line 1058 "src/modules/uvmodel_rom.c"
 
 #line 1059 "src/modules/uvmodel_rom.c"
-/* Advance the matrix-stack index, copying at level zero or composing
- * with the preceding matrix. Preserve the original overflow index behavior. */
+/* Advance the matrix-stack index, copying at level zero or composing with
+ * the preceding matrix below capacity.
+ * RE_ORIGINAL_QUIRK: a rejected push retains the incremented index.
+ * RE_UNKNOWN: original caller guarantees for balanced stack operations and
+ * capacity; trace initialization and push/pop/get sequences before treating
+ * a later getter as valid or changing this preserved overflow behavior. */
+#line 1061 "src/modules/uvmodel_rom.c"
 void uvModelPushMatrix(Mtx4F* src) {
     Mtx4F* destination;
 

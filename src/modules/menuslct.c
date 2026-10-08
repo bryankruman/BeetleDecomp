@@ -116,7 +116,25 @@ void __entrypoint_func_menuslctInitializeModuleExports(MenuSlctExportAddresses *
 void func_menuslct_004000F0(void) {
 }
 #line 43 "src/modules/menuslct.c"
-
+/*
+ * Original MENU slot0x04 updates the signed-short selection with wrapping,
+ * skips entry values 0/2 and maintains direction latches at bytes2/3 of each
+ * 8-byte player record. Preserve the GUI gate, both ordered replay scalar
+ * queries, short-circuit new-flag tests, direction priority and action3/4
+ * return even when held; menu entries have the observed 20-byte stride.
+ * RE_UNKNOWN: complete entry-state meanings, scalar units, valid signed-low16
+ * player/count/index domains, historical argument declarations, alias and
+ * backing-storage/lifetime guarantees. Resolve through original menu/input
+ * setup, callback registrations and all replay/menu record writers/callers.
+ * RE_ORIGINAL_QUIRK: wrapped searches have no bound or empty-menu fallback;
+ * all-skipped/invalid-count reachability needs original setup/caller proof.
+ * Readable C remains parked:568 original/candidate bytes, 23 temporary-register
+ * instruction differences; all 14 ordered relocation records agree exactly.
+ * No missing operation or provider-ABI discrepancy was found in the bounded
+ * native review. Require exact instructions, packed MENU and ROM proof before
+ * replacing ASM; no storage, capacity or physical input meaning inferred.
+ */
+#line 44 "src/modules/menuslct.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/menuslct/func_menuslct_004000F8.s")
 
 #line 46 "src/modules/menuslct.c"
