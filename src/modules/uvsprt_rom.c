@@ -702,13 +702,13 @@ void uvSpriteDrawInit(Gfx **outDisplayList) {
     *outDisplayList = displayListCursor;
 }
 
-Gfx* uvSpriteDraw(Sprite* sp) {
-    int i;
+Gfx* uvSpriteDraw(Sprite* inputSprite) {
+    int bitmapIndex;
     s32 x, y;
-    float sx, sy;
-    Bitmap* bitmap;
-    Gfx* gdlh;
-    Gfx* dl_start;
+    float scaleX, scaleY;
+    Bitmap* bitmapCursor;
+    Gfx* displayListCursor;
+    Gfx* displayListStart;
     s32 isx, isy;
     s32 tx, ty;
     s32 tx2, ty2;
@@ -716,195 +716,195 @@ Gfx* uvSpriteDraw(Sprite* sp) {
     float ftx, fty;
     s32 fs, ft;
     s32 ex, ey;
-    Sprite* s = sp;
-
-    if (s->attr & SP_HIDDEN) {
+    Sprite* spriteState = inputSprite;
+    /* RE_UNKNOWN: sprite/bitmap backing, display-list capacity, aliases, numeric domains and shared-state lifetimes need original producers/callers and runtime-format proof. */
+    if (spriteState->attr & SP_HIDDEN) {
         return NULL;
     }
 
     sPrevBitmapBuf = NULL;
 
-    gdlh = s->rsp_dl_next;
-    if (gdlh == NULL) {
-        gdlh = s->rsp_dl;
+    displayListCursor = spriteState->rsp_dl_next;
+    if (displayListCursor == NULL) {
+        displayListCursor = spriteState->rsp_dl;
     }
-    dl_start = gdlh;
+    displayListStart = displayListCursor;
 
-    bitmap = s->bitmap;
+    bitmapCursor = spriteState->bitmap;
     ex = 0;
     ey = 0;
 
     if (sSpriteAttribute & SP_EXTERN) { /* previous attr was extern? */
-        sSpriteAttribute = ~s->attr;  /* Assume previous modes are all different from new ones */
+        sSpriteAttribute = ~spriteState->attr;  /* Assume previous modes are all different from new ones */
     }
 
 
-    if (s->attr & SP_EXTERN) { /* current attr is extern? */
-        sSpriteAttribute = s->attr;   /* Assume all settings should remain the same */
+    if (spriteState->attr & SP_EXTERN) { /* current attr is extern? */
+        sSpriteAttribute = spriteState->attr;   /* Assume all settings should remain the same */
     }
 
-    if (s->attr != sSpriteAttribute) {
-        if ((s->attr & SP_TRANSPARENT) && !(sSpriteAttribute & SP_TRANSPARENT)) {
-            gDPSetRenderMode(gdlh++, G_RM_XLU_SURF, G_RM_XLU_SURF2);
-        } else if (!(s->attr & SP_TRANSPARENT) && (sSpriteAttribute & SP_TRANSPARENT)) {
-            gDPSetRenderMode(gdlh++, SPRITE_SURF, SPRITE_SURF2);
+    if (spriteState->attr != sSpriteAttribute) {
+        if ((spriteState->attr & SP_TRANSPARENT) && !(sSpriteAttribute & SP_TRANSPARENT)) {
+            gDPSetRenderMode(displayListCursor++, G_RM_XLU_SURF, G_RM_XLU_SURF2);
+        } else if (!(spriteState->attr & SP_TRANSPARENT) && (sSpriteAttribute & SP_TRANSPARENT)) {
+            gDPSetRenderMode(displayListCursor++, SPRITE_SURF, SPRITE_SURF2);
         }
 
-        if ((s->attr & SP_CUTOUT) && !(sSpriteAttribute & SP_CUTOUT)) {
-            gDPSetBlendColor(gdlh++, 0xff, 0xff, 0xff, 0x01);
-            gDPSetAlphaCompare(gdlh++, G_AC_THRESHOLD);
-        } else if (!(s->attr & SP_CUTOUT) && (sSpriteAttribute & SP_CUTOUT)) {
-            gDPSetAlphaCompare(gdlh++, G_AC_NONE);
+        if ((spriteState->attr & SP_CUTOUT) && !(sSpriteAttribute & SP_CUTOUT)) {
+            gDPSetBlendColor(displayListCursor++, 0xff, 0xff, 0xff, 0x01);
+            gDPSetAlphaCompare(displayListCursor++, G_AC_THRESHOLD);
+        } else if (!(spriteState->attr & SP_CUTOUT) && (sSpriteAttribute & SP_CUTOUT)) {
+            gDPSetAlphaCompare(displayListCursor++, G_AC_NONE);
         }
 
-        if ((s->attr & SP_TEXSHIFT) && !(sSpriteAttribute & SP_TEXSHIFT)) {
-            gDPSetTextureFilter(gdlh++, G_TF_AVERAGE);
-        } else if (!(s->attr & SP_TEXSHIFT) && (sSpriteAttribute & SP_TEXSHIFT)) {
-            gDPSetTextureFilter(gdlh++, G_TF_BILERP);
+        if ((spriteState->attr & SP_TEXSHIFT) && !(sSpriteAttribute & SP_TEXSHIFT)) {
+            gDPSetTextureFilter(displayListCursor++, G_TF_AVERAGE);
+        } else if (!(spriteState->attr & SP_TEXSHIFT) && (sSpriteAttribute & SP_TEXSHIFT)) {
+            gDPSetTextureFilter(displayListCursor++, G_TF_BILERP);
         }
     }
 
-    sSpriteAttribute = s->attr;
+    sSpriteAttribute = spriteState->attr;
 
     if (sSpriteAttribute & SP_Z) {
-        gDPSetPrimDepth(gdlh++, s->zdepth, 0);
+        gDPSetPrimDepth(displayListCursor++, spriteState->zdepth, 0);
     };
 
-    gDPSetPrimColor(gdlh++, 0, 0, s->red, s->green, s->blue, s->alpha);
+    gDPSetPrimColor(displayListCursor++, 0, 0, spriteState->red, spriteState->green, spriteState->blue, spriteState->alpha);
 
-    if (s->bmfmt == G_IM_FMT_IA) {
-        if (s->alpha == 0xFF) {
-            gDPSetCombineMode(gdlh++, G_CC_MODULATEIA_PRIM, G_CC_MODULATEIA_PRIM);
+    if (spriteState->bmfmt == G_IM_FMT_IA) { /* RE_UNKNOWN: duplicated IA combine arms retain current C; historical source intent needs original source/compiler proof. */
+        if (spriteState->alpha == 0xFF) {
+            gDPSetCombineMode(displayListCursor++, G_CC_MODULATEIA_PRIM, G_CC_MODULATEIA_PRIM);
         } else {
-            gDPSetCombineMode(gdlh++, G_CC_MODULATEIA_PRIM, G_CC_MODULATEIA_PRIM);
+            gDPSetCombineMode(displayListCursor++, G_CC_MODULATEIA_PRIM, G_CC_MODULATEIA_PRIM);
         }
-    } else if (s->bmfmt == G_IM_FMT_I) { // @diff to PW64
-        gDPSetCombineMode(gdlh++, G_CC_MODULATEI_PRIM, G_CC_MODULATEI_PRIM);
+    } else if (spriteState->bmfmt == G_IM_FMT_I) { // @diff to PW64
+        gDPSetCombineMode(displayListCursor++, G_CC_MODULATEI_PRIM, G_CC_MODULATEI_PRIM);
     } else {
-        if (s->alpha == 0xFF) {
-            gDPSetCombineMode(gdlh++, G_CC_MODULATEIDECALA_PRIM, G_CC_MODULATEIDECALA_PRIM);
+        if (spriteState->alpha == 0xFF) {
+            gDPSetCombineMode(displayListCursor++, G_CC_MODULATEIDECALA_PRIM, G_CC_MODULATEIDECALA_PRIM);
         } else {
-            gDPSetCombineMode(gdlh++, G_CC_MODULATEIA_PRIM, G_CC_MODULATEIA_PRIM);
+            gDPSetCombineMode(displayListCursor++, G_CC_MODULATEIA_PRIM, G_CC_MODULATEIA_PRIM);
         }
     }
 
-    if (s->bmfmt == G_IM_FMT_CI) {
-        gDPSetTextureLUT(gdlh++, G_TT_RGBA16);
-        gDPLoadTLUT(gdlh++, s->nTLUT, 256 + s->startTLUT, s->LUT);
-        gDPLoadSync(gdlh++);
+    if (spriteState->bmfmt == G_IM_FMT_CI) {
+        gDPSetTextureLUT(displayListCursor++, G_TT_RGBA16);
+        gDPLoadTLUT(displayListCursor++, spriteState->nTLUT, 256 + spriteState->startTLUT, spriteState->LUT);
+        gDPLoadSync(displayListCursor++);
     };
 
 
-    if ((s->bmfmt == G_IM_FMT_YUV) && (s->attr & SP_FASTCOPY)) {
-        gDPSetTextureConvert(gdlh++, G_TC_CONV);
-        gDPSetTextureFilter(gdlh++, G_TF_POINT);
-        gDPSetCombineMode(gdlh++, G_CC_1CYUV2RGB, G_CC_1CYUV2RGB);
-        gDPSetConvert(gdlh++, MY_K0, MY_K1, MY_K2, MY_K3, MY_K4, MY_K5);
-    } else if (s->bmfmt == G_IM_FMT_YUV) {
-        gDPSetCycleType(gdlh++, G_CYC_2CYCLE);
-        gDPSetTextureFilter(gdlh++, G_TF_BILERP);
-        gDPSetTextureConvert(gdlh++, G_TC_FILTCONV);
-        gDPSetConvert(gdlh++, MY_K0, MY_K1, MY_K2, MY_K3, MY_K4, MY_K5);
-        gDPSetCombineMode(gdlh++, G_CC_YUV2RGB, G_CC_PASS2);
+    if ((spriteState->bmfmt == G_IM_FMT_YUV) && (spriteState->attr & SP_FASTCOPY)) {
+        gDPSetTextureConvert(displayListCursor++, G_TC_CONV);
+        gDPSetTextureFilter(displayListCursor++, G_TF_POINT);
+        gDPSetCombineMode(displayListCursor++, G_CC_1CYUV2RGB, G_CC_1CYUV2RGB);
+        gDPSetConvert(displayListCursor++, MY_K0, MY_K1, MY_K2, MY_K3, MY_K4, MY_K5);
+    } else if (spriteState->bmfmt == G_IM_FMT_YUV) {
+        gDPSetCycleType(displayListCursor++, G_CYC_2CYCLE);
+        gDPSetTextureFilter(displayListCursor++, G_TF_BILERP);
+        gDPSetTextureConvert(displayListCursor++, G_TC_FILTCONV);
+        gDPSetConvert(displayListCursor++, MY_K0, MY_K1, MY_K2, MY_K3, MY_K4, MY_K5);
+        gDPSetCombineMode(displayListCursor++, G_CC_YUV2RGB, G_CC_PASS2);
     }
 
-    if (s->attr & SP_SCALE) {
-        sx = s->scalex;
-        sy = s->scaley;
+    if (spriteState->attr & SP_SCALE) {
+        scaleX = spriteState->scalex;
+        scaleY = spriteState->scaley;
     } else {
-        sx = 1.0F;
-        sy = 1.0F;
+        scaleX = 1.0F;
+        scaleY = 1.0F;
     }
 
-    isx = (int)((1 << 10) / sx + 0.5F);
-    isy = (int)((1 << 10) / sy + 0.5F);
+    isx = (int)((1 << 10) / scaleX + 0.5F);
+    isy = (int)((1 << 10) / scaleY + 0.5F);
 
-    if (bitmap) {
-        if ((s->attr & SP_FASTCOPY) && (s->bmfmt != G_IM_FMT_YUV))
-            gDPSetCycleType(gdlh++, G_CYC_COPY);
+    if (bitmapCursor) {
+        if ((spriteState->attr & SP_FASTCOPY) && (spriteState->bmfmt != G_IM_FMT_YUV))
+            gDPSetCycleType(displayListCursor++, G_CYC_COPY);
 
         x = 0.0F;
         y = 0.0F;
 
-        fty = s->y + y * sy;
+        fty = spriteState->y + y * scaleY;
         ty = (int)(fty + 0.99999F);
         ft = (int)(isy * (ty - fty));
         ft = (ft + 16) >> 5;
-        if (s->attr & SP_TEXSHIFT)
+        if (spriteState->attr & SP_TEXSHIFT)
             ft += 16; /* 1/2 Texel for AntiAliasing */
 
-        if (s->attr & SP_FRACPOS)
-            ft += s->frac_t; /* Micro-positioning */
+        if (spriteState->attr & SP_FRACPOS)
+            ft += spriteState->frac_t; /* Micro-positioning */
 
-        y2 = y + s->bmheight;
-        ty2 = (int)(s->y + y2 * sy + 0.99999F);
+        y2 = y + spriteState->bmheight;
+        ty2 = (int)(spriteState->y + y2 * scaleY + 0.99999F);
 
-        if ((s->attr & SP_FASTCOPY) && (s->bmfmt != G_IM_FMT_YUV))
+        if ((spriteState->attr & SP_FASTCOPY) && (spriteState->bmfmt != G_IM_FMT_YUV))
             ty2--;
 
         //rmonPrintf("\tiscale=(%d,%d), %d bitmaps, sprite_size=(%d,%d)\n", isx, isy, s->nbitmaps, s->width, s->height);
 
-        for (i = 0; (i < s->nbitmaps) && (bitmap->width > 0); i++, bitmap++) {
-            if ((x + bitmap->width) > s->width) { /* Next bitmap hits edge? */
+        for (bitmapIndex = 0; (bitmapIndex < spriteState->nbitmaps) && (bitmapCursor->width > 0); bitmapIndex++, bitmapCursor++) {
+            if ((x + bitmapCursor->width) > spriteState->width) { /* Next bitmap hits edge? */
                 int bh;
 
                 x = 0;
                 fs = 0;
                 ex = 0;
-                ey += s->expy;
-                y += s->bmheight;     /* Wrap to next line */
-                y2 = y + s->bmheight; /* Wrap to next line */
+                ey += spriteState->expy;
+                y += spriteState->bmheight;     /* Wrap to next line */
+                y2 = y + spriteState->bmheight; /* Wrap to next line */
 
-                fty = s->y + y * sy;
+                fty = spriteState->y + y * scaleY;
                 ty = (int)(fty + 0.9999F);
                 ft = (int)(isy * (ty - fty));
                 ft = (ft + 16) >> 5;
-                if (s->attr & SP_TEXSHIFT)
+                if (spriteState->attr & SP_TEXSHIFT)
                     ft += 16; /* 1/2 Texel for AntiAliasing */
 
-                if (s->attr & SP_FRACPOS)
-                    ft += s->frac_t; /* Micro-positioning */
+                if (spriteState->attr & SP_FRACPOS)
+                    ft += spriteState->frac_t; /* Micro-positioning */
 
-                ty2 = (int)(s->y + y2 * sy + 0.9999F);
+                ty2 = (int)(spriteState->y + y2 * scaleY + 0.9999F);
 
                 ty += ey;
                 ty2 += ey;
 
-                if ((s->attr & SP_FASTCOPY) && (s->bmfmt != G_IM_FMT_YUV))
+                if ((spriteState->attr & SP_FASTCOPY) && (spriteState->bmfmt != G_IM_FMT_YUV))
                     ty2--;
 
                 /* Fill out to rect. bdy? */
 
-                if ((bitmap->actualHeight != 0))
-                    bh = bitmap->actualHeight;
+                if ((bitmapCursor->actualHeight != 0))
+                    bh = bitmapCursor->actualHeight;
                 else
-                    bh = s->bmheight;
+                    bh = spriteState->bmheight;
 
-                if ((y + bh) > s->height) /* Can't wrap any more? */
+                if ((y + bh) > spriteState->height) /* Can't wrap any more? */
                     break;
             };
 
             //rmonPrintf("bm# %d, x,y=(%d,%d) width=%d \n", i, x, y, bitmap->width);
 
-            ftx = s->x + x * sx;
+            ftx = spriteState->x + x * scaleX;
             tx = (s32)(ftx + 0.9999F);
             fs = (s32)(isx * (tx - ftx));
             fs = (fs + 16) >> 5;
-            if (s->attr & SP_TEXSHIFT)
+            if (spriteState->attr & SP_TEXSHIFT)
                 fs += 16; /* 1/2 Texel for AntiAliasing */
 
-            if (s->attr & SP_FRACPOS)
-                fs += s->frac_s; /* Micro-positioning */
+            if (spriteState->attr & SP_FRACPOS)
+                fs += spriteState->frac_s; /* Micro-positioning */
 
-            x2 = x + bitmap->width;
-            tx2 = (int)(s->x + x2 * sx + 0.9999F);
+            x2 = x + bitmapCursor->width;
+            tx2 = (int)(spriteState->x + x2 * scaleX + 0.9999F);
 
-            if ((bitmap->actualHeight != 0)) {
-                y2 = y + bitmap->actualHeight;
-                ty2 = (s32)(s->y + y2 * sy + 0.9999F);
+            if ((bitmapCursor->actualHeight != 0)) {
+                y2 = y + bitmapCursor->actualHeight;
+                ty2 = (s32)(spriteState->y + y2 * scaleY + 0.9999F);
                 ty2 += ey;
 
-                if ((s->attr & SP_FASTCOPY) && (s->bmfmt != G_IM_FMT_YUV))
+                if ((spriteState->attr & SP_FASTCOPY) && (spriteState->bmfmt != G_IM_FMT_YUV))
                     ty2--;
             }
 
@@ -912,33 +912,33 @@ Gfx* uvSpriteDraw(Sprite* sp) {
 
             tx += ex;
             tx2 += ex;
-            if ((s->attr & SP_FASTCOPY) && (s->bmfmt != G_IM_FMT_YUV))
+            if ((spriteState->attr & SP_FASTCOPY) && (spriteState->bmfmt != G_IM_FMT_YUV))
                 tx2--;
 
-            if (bitmap->buf != NULL) { /* Skip over null bitmaps (blanks) */
-                uvDrawBitmap(&gdlh, s, bitmap, tx, ty, tx2, ty2, fs, ft, isx, isy);
+            if (bitmapCursor->buf != NULL) { /* Skip over null bitmaps (blanks) */
+                uvDrawBitmap(&displayListCursor, spriteState, bitmapCursor, tx, ty, tx2, ty2, fs, ft, isx, isy);
             }
 
-            x += bitmap->width;
-            ex += s->expx;
+            x += bitmapCursor->width;
+            ex += spriteState->expx;
         }
 
-        if (s->attr & SP_FASTCOPY)
-            gDPSetCycleType(gdlh++, G_CYC_1CYCLE);
+        if (spriteState->attr & SP_FASTCOPY)
+            gDPSetCycleType(displayListCursor++, G_CYC_1CYCLE);
 
-        if (s->bmfmt == G_IM_FMT_YUV) {
-            gDPSetCycleType(gdlh++, G_CYC_1CYCLE);
-            gDPSetTextureFilter(gdlh++, G_TF_BILERP);
-            gDPSetTextureConvert(gdlh++, G_TC_FILT);
+        if (spriteState->bmfmt == G_IM_FMT_YUV) {
+            gDPSetCycleType(displayListCursor++, G_CYC_1CYCLE);
+            gDPSetTextureFilter(displayListCursor++, G_TF_BILERP);
+            gDPSetTextureConvert(displayListCursor++, G_TC_FILT);
         };
 
     } else {
         int rgba;
 
-        x = (s32)s->x;
-        y = (s32)s->y;
-        x2 = s->x + (s->width * sx) - 1;
-        y2 = s->y + (s->height * sy) - 1;
+        x = (s32)spriteState->x;
+        y = (s32)spriteState->y;
+        x2 = spriteState->x + (spriteState->width * scaleX) - 1;
+        y2 = spriteState->y + (spriteState->height * scaleY) - 1;
 
         if ((x >= sScissorXmax) || (y >= sScissorYmax)) {
             //emPrintf("Sprite Scissoring: FILL Upper Left corner (%d,%d) beyond range (%d,%d)\n", x, y, scissor_xmax, scissor_ymax);
@@ -961,26 +961,26 @@ Gfx* uvSpriteDraw(Sprite* sp) {
                 y2 = sScissorYmax - 1;
             }
 
-            rgba = GPACK_RGBA5551((s->red), (s->green), (s->blue), (s->alpha >> 7));
+            rgba = GPACK_RGBA5551((spriteState->red), (spriteState->green), (spriteState->blue), (spriteState->alpha >> 7));
 
-            gSPTexture(gdlh++, 0x8000, 0x8000, 0, G_TX_RENDERTILE, G_OFF);
-            gDPSetCycleType(gdlh++, G_CYC_FILL);
-            gDPSetFillColor(gdlh++, (rgba << 16) | (rgba));
+            gSPTexture(displayListCursor++, 0x8000, 0x8000, 0, G_TX_RENDERTILE, G_OFF);
+            gDPSetCycleType(displayListCursor++, G_CYC_FILL);
+            gDPSetFillColor(displayListCursor++, (rgba << 16) | (rgba));
 
-            gDPFillRectangle(gdlh++, x, y, x2, y2);
-            gDPSetCycleType(gdlh++, G_CYC_1CYCLE);
-            gSPTexture(gdlh++, 0x8000, 0x8000, 0, G_TX_RENDERTILE, G_ON);
+            gDPFillRectangle(displayListCursor++, x, y, x2, y2);
+            gDPSetCycleType(displayListCursor++, G_CYC_1CYCLE);
+            gSPTexture(displayListCursor++, 0x8000, 0x8000, 0, G_TX_RENDERTILE, G_ON);
         }
     }
 
-    if (s->bmfmt == G_IM_FMT_CI) {
-        gDPSetTextureLUT(gdlh++, G_TT_NONE);
+    if (spriteState->bmfmt == G_IM_FMT_CI) {
+        gDPSetTextureLUT(displayListCursor++, G_TT_NONE);
     };
 
-    gSPEndDisplayList(gdlh++);
+    gSPEndDisplayList(displayListCursor++);
 
-    s->rsp_dl_next = gdlh;
-    return (dl_start);
+    spriteState->rsp_dl_next = displayListCursor;
+    return (displayListStart);
 }
 
 void uvSpriteDrawFinish(Gfx **outDisplayList) {

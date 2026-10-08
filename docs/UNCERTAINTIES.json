@@ -309,7 +309,7 @@
     "src/modules/uvquat_rom.c": "8df8e2779afce701f5662f8eff65918ca6b5a707b60c3be90d300d009411065d",
     "src/modules/uvquery_rom.c": "5af6f38d546de67c02228242a6578a86925d0c0792c0a330437b3cd35e19b586",
     "src/modules/uvsort_rom.c": "a8d25d7f0e6e33288f39c1de9589270ba1d5b77fbcd2f9c370749e386904b727",
-    "src/modules/uvsprt_rom.c": "89444d104b1554b49cb0f0842aa9aadda017fd8a0eefc597647cac40e51efac2",
+    "src/modules/uvsprt_rom.c": "c3423e3d495c41090b2c501527275458ccf0e3dee1ae009054776c5cfc007173",
     "src/modules/uvstring_rom.c": "94b9208341f1faf5aee2e8bd9e6e2c6336878522d977776684d4d7ffa5473720",
     "src/modules/uvterra_rom.c": "212d749a78b4a0059eec21fdaa6774e93f94f0d853dffa73e48c5fddac79121e",
     "src/modules/uvterrald_rom.c": "4f51d82aed1fc59eefc7e9d161b1d29601c1af7be11b928c5265f14d489d2596",
@@ -330,8 +330,8 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "eea8d3c8a7787cd80724626a1aa2fef11c64dc15656d1e71369960bf8d25d895",
-    "docs/VALIDATION_20261006.md": "e590ffccd20e9c303366b93463e5a728c0fc1665dc26b57ab91a49c30bc4d79d"
+    "docs/STRATEGY_V4.md": "8394b9d85da9b8eed36693c64f8e969b850f4d5801427bfc4b680fa0d1649bd8",
+    "docs/VALIDATION_20261006.md": "5bda945918257501115e853b033e2f51039482562cddf4df683459f936dd9831"
   },
   "counts": {
     "address_function": 943,
@@ -341,7 +341,7 @@
     "conditional_draft": 4,
     "decompiler_local": 932,
     "draft_marker": 27,
-    "explicit_unknown": 844,
+    "explicit_unknown": 846,
     "layout_padding": 274,
     "offset_field": 1582,
     "opaque_type": 282,
@@ -141909,6 +141909,26 @@
       ]
     },
     {
+      "id": "Q-138350d25aa3",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvsprt_rom.c",
+      "symbol": "RE_UNKNOWN: duplicated IA combine arms retain current C; historical source intent needs original source/compiler proof.",
+      "lines": [
+        775
+      ],
+      "evidence": "RE_UNKNOWN: duplicated IA combine arms retain current C; historical source intent needs original source/compiler proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvSpriteDraw",
+          "declaration_line": 705,
+          "lines": [
+            775
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-63305cf21748",
       "kind": "explicit_unknown",
       "path": "src/modules/uvsprt_rom.c",
@@ -141944,6 +141964,26 @@
           "declaration_line": 358,
           "lines": [
             405
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-be78bc1bedf4",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvsprt_rom.c",
+      "symbol": "RE_UNKNOWN: sprite/bitmap backing, display-list capacity, aliases, numeric domains and shared-state lifetimes need original producers/callers and runtime-format proof.",
+      "lines": [
+        720
+      ],
+      "evidence": "RE_UNKNOWN: sprite/bitmap backing, display-list capacity, aliases, numeric domains and shared-state lifetimes need original producers/callers and runtime-format proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvSpriteDraw",
+          "declaration_line": 705,
+          "lines": [
+            720
           ]
         }
       ]

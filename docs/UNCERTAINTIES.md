@@ -17,7 +17,7 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 844 |
+| Explicit RE_UNKNOWN notes | 846 |
 | Preserved RE_ORIGINAL_QUIRK notes | 220 |
 | Older comments with uncertainty language | 91 |
 | Documented original-behavior audits | 30 |
@@ -7930,8 +7930,10 @@ For every future source wave, regenerate and check this index after code and str
 | explicit_unknown | `RE_UNKNOWN: count domain, allocation/module success and pool lifetime need original property producers, allocators and callers.` | function `__entrypoint_func_uvsprt_rom_400298` | [184](../src/modules/uvsprt_rom.c#L184) |
 | explicit_unknown | `RE_UNKNOWN: cursor/sprite backing, writable capacity, aliases and lifetimes need original caller/producer proof.` | function `uvSpriteDisplayList` | [225](../src/modules/uvsprt_rom.c#L225) |
 | explicit_unknown | `RE_UNKNOWN: display-list capacity, aliasing, resource lifetime and shared-state call ordering need caller proof.` | function `uvSpriteDrawFinish`, function `uvSpriteDrawInit` | [689](../src/modules/uvsprt_rom.c#L689), [991](../src/modules/uvsprt_rom.c#L991) |
+| explicit_unknown | `RE_UNKNOWN: duplicated IA combine arms retain current C; historical source intent needs original source/compiler proof.` | function `uvSpriteDraw` | [775](../src/modules/uvsprt_rom.c#L775) |
 | explicit_unknown | `RE_UNKNOWN: lower index bound, argument-stream extents, asset validity and lifetimes need original caller/producer proof.` | function `uvSprtProps` | [366](../src/modules/uvsprt_rom.c#L366) |
 | explicit_unknown | `RE_UNKNOWN: native reads two f32 words; original variadic declarations and caller packing need proof.` | function `uvSprtProps` | [405](../src/modules/uvsprt_rom.c#L405) |
+| explicit_unknown | `RE_UNKNOWN: sprite/bitmap backing, display-list capacity, aliases, numeric domains and shared-state lifetimes need original producers/callers and runtime-format proof.` | function `uvSpriteDraw` | [720](../src/modules/uvsprt_rom.c#L720) |
 | explicit_unknown | `RE_UNKNOWN: unsupported formats retain attributes; asset validity and resource lifetime need producer proof.` | function `uvSpriteSetBlit` | [324](../src/modules/uvsprt_rom.c#L324) |
 | layout_padding | `pad` | type `UnkStruct_uvsprt_rom_004033CC` | [31](../src/modules/uvsprt_rom.c#L31) |
 | offset_field | `unk0` | function `__entrypoint_func_uvsprt_rom_400298`, function `uvSpriteClearStateBytes`, function `uvSpriteDrawAll`, function `uvSprtProps`, type `uvSprite_t` | [18](../src/modules/uvsprt_rom.c#L18), [171](../src/modules/uvsprt_rom.c#L171), [214](../src/modules/uvsprt_rom.c#L214), [245](../src/modules/uvsprt_rom.c#L245), [425](../src/modules/uvsprt_rom.c#L425) |
