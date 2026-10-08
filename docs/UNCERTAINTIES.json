@@ -242,7 +242,7 @@
     "src/modules/results.c": "8f9e9ae069b05eb8795188f1bcddc1cd5df6ccfeb9d4eacf58f08831853d2878",
     "src/modules/ripple.c": "bdd60e5f9d8f7f66e2ccfd3674c471ad1f6fdc87029c4fda4314b6fc9cfa15d1",
     "src/modules/rumble.c": "88f3c10749b25988a2186cebe9bee3e409df9f8f8dd0a5f24d95592f705298a0",
-    "src/modules/scene.c": "011ec1fe1f45e3c138b6851de19371c116ba483109bd79bbbc73e2614b7a6754",
+    "src/modules/scene.c": "3ff752ffb9c21ea1ae8c2358b5317bc31160f28ced003fc7975847ef66b798b3",
     "src/modules/scrn.c": "664328a6dec742e1b51d5dd7e6c0dc5fd4de9132c1604053f0e5f3d7d4aca412",
     "src/modules/selection.c": "e8ee27747ad0c622d729a60e9718f2acf3ee0691333e7195589d94a62d3f0271",
     "src/modules/shadow.c": "88396120a38816a4a31db9ced202e9d704b3928429b4e12b8ecb338df93f715b",
@@ -288,7 +288,7 @@
     "src/modules/uvfontld_rom.c": "81262e86812be50e51fbe741f6e4b0475b58c71b4d822a50ae83c16602fd4733",
     "src/modules/uvfvec_rom.c": "c0d542dc9473cb90630fe609a22adc6b982d02725e71082d42b1dc4d9ef66893",
     "src/modules/uvfx_rom.c": "ea9e30b63484a3d999463727ce7bf9198e21261cb72a88e1c9865da3af27c5e8",
-    "src/modules/uvgeom_rom.c": "6b559ab46545d7bf802250954eea923b6b111bec6f940e9a1f07f15b8cfb8207",
+    "src/modules/uvgeom_rom.c": "cf126079c057789b99c96b2b251fbafc242b9bd76a59295601c091272e2fd28f",
     "src/modules/uvgfxmgr_rom.c": "c21151fb9c51017919699a7834a7a76ff06a565f7d6cb1b9c462a43f288971b9",
     "src/modules/uvgfxstate_rom.c": "f2ac7bdad30243e6bec45faa1438be25934cece6413a0e6016fe445d9fbd4b36",
     "src/modules/uvgrph_rom.c": "4b8f89334bd11814bb28529111c3bb273f7c0c82b0048216032b299b1db81d72",
@@ -329,8 +329,8 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "078866d5417f9c4e045c3ed879b728605b6337b6a61e1af029d699988fffa51f",
-    "docs/VALIDATION_20261006.md": "98fed4a225af740a401cddbe090cc8f3a41a8d33b7b536e709af397ee13676a1"
+    "docs/STRATEGY_V4.md": "feb2c2f480a975fe86d7cc1d0360e920fbc7a7fc1cd11ee747a9ae3e1b4c6113",
+    "docs/VALIDATION_20261006.md": "5e7f100687251d67b0cc96dc0889a48493adf1cc11325a2820691e8db8e8753a"
   },
   "counts": {
     "address_function": 984,
@@ -338,13 +338,13 @@
     "assembly": 843,
     "audit_debt": 28,
     "conditional_draft": 4,
-    "decompiler_local": 866,
+    "decompiler_local": 862,
     "draft_marker": 28,
-    "explicit_unknown": 735,
+    "explicit_unknown": 738,
     "layout_padding": 264,
     "offset_field": 1435,
     "opaque_type": 282,
-    "original_quirk": 193,
+    "original_quirk": 194,
     "uncertainty_note": 88,
     "unused_identifier": 120
   },
@@ -10736,15 +10736,15 @@
       "symbol": "func_scene_004003F4",
       "lines": [
         87,
-        283
+        303
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_sceneInitializeModuleExports",
-          "declaration_line": 275,
+          "declaration_line": 295,
           "lines": [
-            283
+            303
           ]
         },
         {
@@ -10764,15 +10764,15 @@
       "symbol": "func_scene_00400C58",
       "lines": [
         236,
-        284
+        304
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_sceneInitializeModuleExports",
-          "declaration_line": 275,
+          "declaration_line": 295,
           "lines": [
-            284
+            304
           ]
         },
         {
@@ -10810,33 +10810,33 @@
       "path": "src/modules/scene.c",
       "symbol": "func_scene_00400EC0",
       "lines": [
-        266,
-        277,
-        297
+        286,
+        297,
+        317
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_sceneInitializeModuleExports",
-          "declaration_line": 275,
-          "lines": [
-            277
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_scene_00400EC0",
-          "declaration_line": 266,
-          "lines": [
-            266
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_scene_00400EC0",
-          "declaration_line": 297,
+          "declaration_line": 295,
           "lines": [
             297
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "func_scene_00400EC0",
+          "declaration_line": 286,
+          "lines": [
+            286
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "func_scene_00400EC0",
+          "declaration_line": 317,
+          "lines": [
+            317
           ]
         }
       ]
@@ -10848,15 +10848,15 @@
       "symbol": "func_scene_00400EC8",
       "lines": [
         90,
-        286
+        306
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_sceneInitializeModuleExports",
-          "declaration_line": 275,
+          "declaration_line": 295,
           "lines": [
-            286
+            306
           ]
         },
         {
@@ -10875,15 +10875,15 @@
       "path": "src/modules/scene.c",
       "symbol": "func_scene_004012B0",
       "lines": [
-        354
+        374
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_scene_004012B0",
-          "declaration_line": 354,
+          "declaration_line": 374,
           "lines": [
-            354
+            374
           ]
         }
       ]
@@ -38420,15 +38420,15 @@
       "symbol": "D_scene_00401840",
       "lines": [
         45,
-        373
+        393
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sceneApplySelectedTrack",
-          "declaration_line": 369,
+          "declaration_line": 389,
           "lines": [
-            373
+            393
           ]
         },
         {
@@ -38723,15 +38723,15 @@
         250,
         251,
         252,
-        288
+        308
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_sceneInitializeModuleExports",
-          "declaration_line": 275,
+          "declaration_line": 295,
           "lines": [
-            288
+            308
           ]
         },
         {
@@ -58308,18 +58308,18 @@
       "lines": [
         26,
         60,
-        342,
-        351,
         352,
-        353,
-        356,
-        357,
         361,
         362,
+        363,
         366,
         367,
         371,
-        372
+        372,
+        376,
+        377,
+        381,
+        382
       ],
       "owners": [
         {
@@ -58333,27 +58333,27 @@
         {
           "kind": "function",
           "name": "uvSetFillColor",
-          "declaration_line": 331,
+          "declaration_line": 341,
           "lines": [
-            342
+            352
           ]
         },
         {
           "kind": "function",
           "name": "uvVtxRect",
-          "declaration_line": 348,
+          "declaration_line": 358,
           "lines": [
-            351,
-            352,
-            353,
-            356,
-            357,
             361,
             362,
+            363,
             366,
             367,
             371,
-            372
+            372,
+            376,
+            377,
+            381,
+            382
           ]
         },
         {
@@ -77984,7 +77984,7 @@
       "path": "src/modules/scene.c",
       "symbol": "func_scene_00400CB8",
       "lines": [
-        257
+        277
       ],
       "evidence": "asm/us/nonmatchings/modules/scene/func_scene_00400CB8.s"
     },
@@ -77994,7 +77994,7 @@
       "path": "src/modules/scene.c",
       "symbol": "func_scene_00400EC8",
       "lines": [
-        316
+        336
       ],
       "evidence": "asm/us/nonmatchings/modules/scene/func_scene_00400EC8.s"
     },
@@ -78004,7 +78004,7 @@
       "path": "src/modules/scene.c",
       "symbol": "func_scene_00401324",
       "lines": [
-        390
+        410
       ],
       "evidence": "asm/us/nonmatchings/modules/scene/func_scene_00401324.s"
     },
@@ -103883,19 +103883,12 @@
         17,
         20,
         21,
-        109,
-        116,
-        121,
-        123,
-        124,
-        125,
-        134,
-        348,
-        354,
-        355,
-        356,
-        357,
-        378
+        358,
+        364,
+        365,
+        366,
+        367,
+        388
       ],
       "owners": [
         {
@@ -103920,20 +103913,6 @@
           "declaration_line": 14,
           "lines": [
             14
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvEndTmesh",
-          "declaration_line": 109,
-          "lines": [
-            109,
-            116,
-            121,
-            123,
-            124,
-            125,
-            134
           ]
         },
         {
@@ -103971,14 +103950,14 @@
         {
           "kind": "function",
           "name": "uvVtxRect",
-          "declaration_line": 348,
+          "declaration_line": 358,
           "lines": [
-            348,
-            354,
-            355,
-            356,
-            357,
-            378
+            358,
+            364,
+            365,
+            366,
+            367,
+            388
           ]
         }
       ]
@@ -103995,15 +103974,13 @@
         17,
         20,
         21,
-        109,
-        121,
-        348,
-        353,
-        369,
-        370,
-        371,
-        372,
-        378
+        358,
+        363,
+        379,
+        380,
+        381,
+        382,
+        388
       ],
       "owners": [
         {
@@ -104028,15 +104005,6 @@
           "declaration_line": 14,
           "lines": [
             14
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvEndTmesh",
-          "declaration_line": 109,
-          "lines": [
-            109,
-            121
           ]
         },
         {
@@ -104066,15 +104034,15 @@
         {
           "kind": "function",
           "name": "uvVtxRect",
-          "declaration_line": 348,
+          "declaration_line": 358,
           "lines": [
-            348,
-            353,
-            369,
-            370,
-            371,
-            372,
-            378
+            358,
+            363,
+            379,
+            380,
+            381,
+            382,
+            388
           ]
         }
       ]
@@ -104091,17 +104059,12 @@
         17,
         20,
         21,
-        109,
-        121,
-        122,
-        130,
-        138,
-        348,
-        359,
-        360,
-        361,
-        362,
-        378
+        358,
+        369,
+        370,
+        371,
+        372,
+        388
       ],
       "owners": [
         {
@@ -104126,18 +104089,6 @@
           "declaration_line": 14,
           "lines": [
             14
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvEndTmesh",
-          "declaration_line": 109,
-          "lines": [
-            109,
-            121,
-            122,
-            130,
-            138
           ]
         },
         {
@@ -104167,14 +104118,14 @@
         {
           "kind": "function",
           "name": "uvVtxRect",
-          "declaration_line": 348,
+          "declaration_line": 358,
           "lines": [
-            348,
-            359,
-            360,
-            361,
-            362,
-            378
+            358,
+            369,
+            370,
+            371,
+            372,
+            388
           ]
         }
       ]
@@ -104190,19 +104141,13 @@
         15,
         17,
         20,
-        109,
-        121,
-        132,
-        140,
-        142,
-        147,
-        348,
-        352,
-        364,
-        365,
-        366,
-        367,
-        378
+        358,
+        362,
+        374,
+        375,
+        376,
+        377,
+        388
       ],
       "owners": [
         {
@@ -104231,19 +104176,6 @@
         },
         {
           "kind": "function",
-          "name": "uvEndTmesh",
-          "declaration_line": 109,
-          "lines": [
-            109,
-            121,
-            132,
-            140,
-            142,
-            147
-          ]
-        },
-        {
-          "kind": "function",
           "name": "uvGeomInitializeMeshDescriptor",
           "declaration_line": 13,
           "lines": [
@@ -104261,15 +104193,15 @@
         {
           "kind": "function",
           "name": "uvVtxRect",
-          "declaration_line": 348,
+          "declaration_line": 358,
           "lines": [
-            348,
-            352,
-            364,
-            365,
-            366,
-            367,
-            378
+            358,
+            362,
+            374,
+            375,
+            376,
+            377,
+            388
           ]
         }
       ]
@@ -104354,114 +104286,6 @@
           "declaration_line": 15,
           "lines": [
             15
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-1ecadec8712b",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvgeom_rom.c",
-      "symbol": "sp20",
-      "lines": [
-        113,
-        121,
-        147
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvEndTmesh",
-          "declaration_line": 109,
-          "lines": [
-            113,
-            121,
-            147
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-19f08288d9f0",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvgeom_rom.c",
-      "symbol": "var_a2",
-      "lines": [
-        110,
-        125,
-        127,
-        130,
-        132,
-        133,
-        134,
-        135,
-        137
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvEndTmesh",
-          "declaration_line": 109,
-          "lines": [
-            110,
-            125,
-            127,
-            130,
-            132,
-            133,
-            134,
-            135,
-            137
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-b85e573670fa",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvgeom_rom.c",
-      "symbol": "var_t0",
-      "lines": [
-        112,
-        120,
-        139,
-        144
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvEndTmesh",
-          "declaration_line": 109,
-          "lines": [
-            112,
-            120,
-            139,
-            144
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-9df3b7af4cab",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvgeom_rom.c",
-      "symbol": "var_t2",
-      "lines": [
-        114,
-        122,
-        132,
-        135
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvEndTmesh",
-          "declaration_line": 109,
-          "lines": [
-            114,
-            122,
-            132,
-            135
           ]
         }
       ]
@@ -129730,16 +129554,16 @@
       "path": "src/modules/scene.c",
       "symbol": "Original address storage only. Assembly-only labels declared below are * opaque code addresses, never data objects or inferred callable interfaces. * RE_UNKNOWN: remaining callback prototypes and export storage capacity/lifetime. * Recover implementations and actual slot consumers before assigning interfaces.",
       "lines": [
-        261
+        281
       ],
       "evidence": "Original address storage only. Assembly-only labels declared below are * opaque code addresses, never data objects or inferred callable interfaces. * RE_UNKNOWN: remaining callback prototypes and export storage capacity/lifetime. * Recover implementations and actual slot consumers before assigning interfaces.",
       "owners": [
         {
           "kind": "type",
           "name": "SceneModuleAddressStorage",
-          "declaration_line": 265,
+          "declaration_line": 285,
           "lines": [
-            261
+            281
           ]
         }
       ]
@@ -129751,8 +129575,8 @@
       "symbol": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "lines": [
         232,
-        293,
-        350
+        313,
+        370
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "owners": [
@@ -129767,17 +129591,17 @@
         {
           "kind": "function",
           "name": "func_scene_00400EC0",
-          "declaration_line": 297,
+          "declaration_line": 317,
           "lines": [
-            293
+            313
           ]
         },
         {
           "kind": "function",
           "name": "func_scene_004012B0",
-          "declaration_line": 354,
+          "declaration_line": 374,
           "lines": [
-            350
+            370
           ]
         }
       ]
@@ -129788,16 +129612,16 @@
       "path": "src/modules/scene.c",
       "symbol": "Register original scene export addresses in observed store order, after * updating the file allocation pointer. Preserve separate empty callbacks. The * blend slot at 0x28 is stored before slots 0x04 through 0x24; slot 0x2C * exports a shared data address rather than another callback. * RE_UNKNOWN: original full export type, remaining callback contracts and * shared data meanings/lifetime. Resolve each implementation and slot consumer * before replacing address-only storage with callable interfaces.",
       "lines": [
-        268
+        288
       ],
       "evidence": "Register original scene export addresses in observed store order, after * updating the file allocation pointer. Preserve separate empty callbacks. The * blend slot at 0x28 is stored before slots 0x04 through 0x24; slot 0x2C * exports a shared data address rather than another callback. * RE_UNKNOWN: original full export type, remaining callback contracts and * shared data meanings/lifetime. Resolve each implementation and slot consumer * before replacing address-only storage with callable interfaces.",
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_sceneInitializeModuleExports",
-          "declaration_line": 275,
+          "declaration_line": 295,
           "lines": [
-            268
+            288
           ]
         }
       ]
@@ -129828,16 +129652,16 @@
       "path": "src/modules/scene.c",
       "symbol": "Set each record word at offset 0x21C to one in the screen-export array. * Reload the shared array and signed count after each store, preserving the * callback parameter home and original traversal. * RE_UNKNOWN: meaning of the marker and the complete screen record layout. * RE_ORIGINAL_QUIRK: record pointers and signed count are not validated.",
       "lines": [
-        319
+        339
       ],
       "evidence": "Set each record word at offset 0x21C to one in the screen-export array. * Reload the shared array and signed count after each store, preserving the * callback parameter home and original traversal. * RE_UNKNOWN: meaning of the marker and the complete screen record layout. * RE_ORIGINAL_QUIRK: record pointers and signed count are not validated.",
       "owners": [
         {
           "kind": "function",
           "name": "sceneMarkScreenRecords",
-          "declaration_line": 324,
+          "declaration_line": 344,
           "lines": [
-            319
+            339
           ]
         }
       ]
@@ -129848,16 +129672,36 @@
       "path": "src/modules/scene.c",
       "symbol": "Truncate the floating selection into the current track, then use the stored * track to select its original 0x9C-byte record. GUI C4 consumes record word 0x08 * as the source address for the upper-text copier; this call does not set a * selection. Preserve all original unchecked indexing and word representation. * RE_UNKNOWN: record word 0x08's original pointer storage/relocation, readable * text extent and the complete choice-object layout. Inspect original record * data/relocations and creation paths before renaming word 0x08 or claiming a * 30-byte array or reachable buffer fault.",
       "lines": [
-        361
+        381
       ],
       "evidence": "Truncate the floating selection into the current track, then use the stored * track to select its original 0x9C-byte record. GUI C4 consumes record word 0x08 * as the source address for the upper-text copier; this call does not set a * selection. Preserve all original unchecked indexing and word representation. * RE_UNKNOWN: record word 0x08's original pointer storage/relocation, readable * text extent and the complete choice-object layout. Inspect original record * data/relocations and creation paths before renaming word 0x08 or claiming a * 30-byte array or reachable buffer fault.",
       "owners": [
         {
           "kind": "function",
           "name": "sceneApplySelectedTrack",
-          "declaration_line": 369,
+          "declaration_line": 389,
           "lines": [
-            361
+            381
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-baabd9748e64",
+      "kind": "explicit_unknown",
+      "path": "src/modules/scene.c",
+      "symbol": "func_scene_00400CB8 forwards direction and scalar triples from ENV * properties 6, 8 and 9 to UVLIGHT slot 0x18, retaining the signed-ID -1 gate * and original defaults. LIGHT slot 0x04 initializes one record with parameter * 0, then three records with parameter 1 and a 44-byte stride; reload the * provider after each call and retain the D_scene_00402ED0 endpoint. * RE_ORIGINAL_QUIRK: the called LIGHT initializer compares its signed-halfword * handle to 65535, which cannot reject -1. Allocation exhaustion reachability * and resulting handle use still need original allocator and caller evidence. * RE_UNKNOWN: historical local/formal types, complete record/storage extents, * aliases and callback lifetimes, physical scalar/parameter meanings and units, * valid environment/handle domains and failed ENV output behavior. Resolve * original environment/record producers, allocations and all property/callback * consumers before changing defaults, bounds or ABI. A provider write through * offset 0x28 and the 44-byte traversal do not prove a complete historical type. * Readable C is parked: 340 native/draft bytes retain all observed effects and * all nine scalar homes, but six zero-FPR encodings and two cursor/end address * loads differ. The two LO16 records also exchange instruction sites; complete * relocation equality is unproved. New original declaration/lifetime evidence * is needed before another trial; do not invent padding or extra storage.",
+      "lines": [
+        257
+      ],
+      "evidence": "func_scene_00400CB8 forwards direction and scalar triples from ENV * properties 6, 8 and 9 to UVLIGHT slot 0x18, retaining the signed-ID -1 gate * and original defaults. LIGHT slot 0x04 initializes one record with parameter * 0, then three records with parameter 1 and a 44-byte stride; reload the * provider after each call and retain the D_scene_00402ED0 endpoint. * RE_ORIGINAL_QUIRK: the called LIGHT initializer compares its signed-halfword * handle to 65535, which cannot reject -1. Allocation exhaustion reachability * and resulting handle use still need original allocator and caller evidence. * RE_UNKNOWN: historical local/formal types, complete record/storage extents, * aliases and callback lifetimes, physical scalar/parameter meanings and units, * valid environment/handle domains and failed ENV output behavior. Resolve * original environment/record producers, allocations and all property/callback * consumers before changing defaults, bounds or ABI. A provider write through * offset 0x28 and the 44-byte traversal do not prove a complete historical type. * Readable C is parked: 340 native/draft bytes retain all observed effects and * all nine scalar homes, but six zero-FPR encodings and two cursor/end address * loads differ. The two LO16 records also exchange instruction sites; complete * relocation equality is unproved. New original declaration/lifetime evidence * is needed before another trial; do not invent padding or extra storage.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_scene_00400CB8",
+          "declaration_line": 277,
+          "lines": [
+            257
           ]
         }
       ]
@@ -129868,16 +129712,16 @@
       "path": "src/modules/scene.c",
       "symbol": "func_scene_00400EC8 builds the scene text list and track, weather and * environment scalar rows through the original GUI and MISC slots. Preserve * all dependency reloads, flag/bound words, direct callbacks and word setters. * RE_ORIGINAL_QUIRK: the weather row receives the track callback word before * its weather callback word; both original stores and reloads are retained. * RE_UNKNOWN: complete bound-storage types/extents, row and callback/table * declarations, allocation-failure domains and readable 30-byte label windows * need original storage producers, GUI consumers and caller lifecycle evidence. * Native fourth arguments carry IEEE-754 words 0 and 0x41200000; the MISC * provider consumes f32 bits, but historical caller formal types remain unknown. * Readable C is parked: the 908-byte raw-word draft retains all effects and * the full 60-record relocation multiset, with eleven stack/frame immediates * and eight zero-word instruction encodings still different. Historical local * and argument declarations need new source evidence; do not invent padding.",
       "lines": [
-        301
+        321
       ],
       "evidence": "func_scene_00400EC8 builds the scene text list and track, weather and * environment scalar rows through the original GUI and MISC slots. Preserve * all dependency reloads, flag/bound words, direct callbacks and word setters. * RE_ORIGINAL_QUIRK: the weather row receives the track callback word before * its weather callback word; both original stores and reloads are retained. * RE_UNKNOWN: complete bound-storage types/extents, row and callback/table * declarations, allocation-failure domains and readable 30-byte label windows * need original storage producers, GUI consumers and caller lifecycle evidence. * Native fourth arguments carry IEEE-754 words 0 and 0x41200000; the MISC * provider consumes f32 bits, but historical caller formal types remain unknown. * Readable C is parked: the 908-byte raw-word draft retains all effects and * the full 60-record relocation multiset, with eleven stack/frame immediates * and eight zero-word instruction encodings still different. Historical local * and argument declarations need new source evidence; do not invent padding.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_scene_00400EC8",
-          "declaration_line": 316,
+          "declaration_line": 336,
           "lines": [
-            301
+            321
           ]
         }
       ]
@@ -129888,16 +129732,16 @@
       "path": "src/modules/scene.c",
       "symbol": "func_scene_00401324 truncates row float 0x24, stores the word at settings * offset 0xC8, formats CLEAR/SNOW/RAIN/NOT SUPPORTED for selectors 0..3, then * passes original stack address SP+0x20 to the GUI upper-text byte copier. * RE_ORIGINAL_QUIRK: other selectors reach that call without formatting the * scratch source; the original GUI C4 copier reads exactly 30 source bytes. * RE_UNKNOWN: selection/conversion domains, historical scratch-object extent * and the complete readable 30-byte source window require original row * producers, callers and stack storage evidence. The longest observed format * needs 14 bytes including NUL; that does not prove the historical capacity * or reachable failure. Preserve original ASM and its unchecked dataflow.",
       "lines": [
-        379
+        399
       ],
       "evidence": "func_scene_00401324 truncates row float 0x24, stores the word at settings * offset 0xC8, formats CLEAR/SNOW/RAIN/NOT SUPPORTED for selectors 0..3, then * passes original stack address SP+0x20 to the GUI upper-text byte copier. * RE_ORIGINAL_QUIRK: other selectors reach that call without formatting the * scratch source; the original GUI C4 copier reads exactly 30 source bytes. * RE_UNKNOWN: selection/conversion domains, historical scratch-object extent * and the complete readable 30-byte source window require original row * producers, callers and stack storage evidence. The longest observed format * needs 14 bytes including NUL; that does not prove the historical capacity * or reachable failure. Preserve original ASM and its unchecked dataflow.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_scene_00401324",
-          "declaration_line": 390,
+          "declaration_line": 410,
           "lines": [
-            379
+            399
           ]
         }
       ]
@@ -133758,16 +133602,16 @@
       "path": "src/modules/uvgeom_rom.c",
       "symbol": "Emit alternating vertices from adjacent rows through the original modulo-16 * slots, retaining each cursor reload and optional first-column repetition. * The third byte is tested for nonzero; the fourth byte adds its full value to * the row-pair bound, so preserve that addition rather than normalizing it. * RE_UNKNOWN: valid signed dimensions/closure values, vertex-address spans, * output capacity and alias/lifetime domains require original range/parameter * producers, drawing callers and display-list consumers.",
       "lines": [
-        150
+        160
       ],
       "evidence": "Emit alternating vertices from adjacent rows through the original modulo-16 * slots, retaining each cursor reload and optional first-column repetition. * The third byte is tested for nonzero; the fourth byte adds its full value to * the row-pair bound, so preserve that addition rather than normalizing it. * RE_UNKNOWN: valid signed dimensions/closure values, vertex-address spans, * output capacity and alias/lifetime domains require original range/parameter * producers, drawing callers and display-list consumers.",
       "owners": [
         {
           "kind": "function",
           "name": "uvEndGridWide",
-          "declaration_line": 158,
+          "declaration_line": 168,
           "lines": [
-            150
+            160
           ]
         }
       ]
@@ -133778,19 +133622,49 @@
       "path": "src/modules/uvgeom_rom.c",
       "symbol": "Emit polygon triangles in the original batches, retaining the first-batch * and later-batch vertex commands and repeated display-list-head reloads. * Count < 3 returns before descriptor use; otherwise the native initializer * fills the inner 20-byte descriptor before its vertex-address read. * RE_UNKNOWN: valid vertex-address/count spans, output capacity, alias/lifetime * domains and the historical source declaration of the forwarded 32-bit word * require original range producers, drawing callers and descriptor consumers.",
       "lines": [
-        385
+        395
       ],
       "evidence": "Emit polygon triangles in the original batches, retaining the first-batch * and later-batch vertex commands and repeated display-list-head reloads. * Count < 3 returns before descriptor use; otherwise the native initializer * fills the inner 20-byte descriptor before its vertex-address read. * RE_UNKNOWN: valid vertex-address/count spans, output capacity, alias/lifetime * domains and the historical source declaration of the forwarded 32-bit word * require original range producers, drawing callers and descriptor consumers.",
       "owners": [
         {
           "kind": "function",
           "name": "uvVtxEndPolyInternal",
-          "declaration_line": 393,
+          "declaration_line": 403,
           "lines": [
-            385
+            395
           ]
         }
       ]
+    },
+    {
+      "id": "Q-606738f7488c",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvgeom_rom.c",
+      "symbol": "Emit vertex batches of at most 16, advancing past each batch minus its two * overlapping vertices. The signed-halfword batchCount holds the load count * before subtracting two, then the triangle/advance count. Preserve triangle * order alternation across batches, descriptor writes and cursor reloads. * Count < 3 returns before descriptor initialization. * RE_UNKNOWN: valid vertex/count spans, historical descriptor-field meanings * and display-list capacity/alias/lifetime domains require original producers, * drawing callers and display-list consumers.",
+      "lines": [
+        109
+      ],
+      "evidence": "Emit vertex batches of at most 16, advancing past each batch minus its two * overlapping vertices. The signed-halfword batchCount holds the load count * before subtracting two, then the triangle/advance count. Preserve triangle * order alternation across batches, descriptor writes and cursor reloads. * Count < 3 returns before descriptor initialization. * RE_UNKNOWN: valid vertex/count spans, historical descriptor-field meanings * and display-list capacity/alias/lifetime domains require original producers, * drawing callers and display-list consumers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvEndTmesh",
+          "declaration_line": 118,
+          "lines": [
+            109
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-3eea73c2120c",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvgeom_rom.c",
+      "symbol": "Native display-list buffer base; RE_UNKNOWN: historical declaration and caller-supplied capacity/lifetime need settings producers and drawing callers.",
+      "lines": [
+        25
+      ],
+      "evidence": "Native display-list buffer base; RE_UNKNOWN: historical declaration and caller-supplied capacity/lifetime need settings producers and drawing callers."
     },
     {
       "id": "Q-98cc36a8334a",
@@ -133798,16 +133672,16 @@
       "path": "src/modules/uvgeom_rom.c",
       "symbol": "Select dimensions using the original full-word comparison, then preserve * the signed-halfword narrowing, vertex-bank alternation and closure tests. * The wide path narrows the forwarded closure values to bytes; keep both * representations and the original unused local storage. * RE_UNKNOWN: valid dimensions/closure values, inherited pad role, vertex * spans and output capacity/alias/lifetime guarantees require original grid * callers, local-layout evidence and display-list consumers.",
       "lines": [
-        231
+        241
       ],
       "evidence": "Select dimensions using the original full-word comparison, then preserve * the signed-halfword narrowing, vertex-bank alternation and closure tests. * The wide path narrows the forwarded closure values to bytes; keep both * representations and the original unused local storage. * RE_UNKNOWN: valid dimensions/closure values, inherited pad role, vertex * spans and output capacity/alias/lifetime guarantees require original grid * callers, local-layout evidence and display-list consumers.",
       "owners": [
         {
           "kind": "function",
           "name": "uvEndGrid",
-          "declaration_line": 239,
+          "declaration_line": 249,
           "lines": [
-            231
+            241
           ]
         }
       ]
@@ -143849,15 +143723,15 @@
       "path": "src/modules/uvgeom_rom.c",
       "symbol": "pad",
       "lines": [
-        252
+        262
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvEndGrid",
-          "declaration_line": 239,
+          "declaration_line": 249,
           "lines": [
-            252
+            262
           ]
         }
       ]
@@ -163945,15 +163819,15 @@
       "symbol": "value04",
       "lines": [
         3,
-        424
+        444
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sceneBlendEightWordRecord",
-          "declaration_line": 411,
+          "declaration_line": 431,
           "lines": [
-            424
+            444
           ]
         },
         {
@@ -163974,24 +163848,24 @@
       "lines": [
         3,
         5,
-        374,
-        425
+        394,
+        445
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sceneApplySelectedTrack",
-          "declaration_line": 369,
+          "declaration_line": 389,
           "lines": [
-            374
+            394
           ]
         },
         {
           "kind": "function",
           "name": "sceneBlendEightWordRecord",
-          "declaration_line": 411,
+          "declaration_line": 431,
           "lines": [
-            425
+            445
           ]
         },
         {
@@ -164019,15 +163893,15 @@
       "symbol": "value0C",
       "lines": [
         3,
-        426
+        446
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sceneBlendEightWordRecord",
-          "declaration_line": 411,
+          "declaration_line": 431,
           "lines": [
-            426
+            446
           ]
         },
         {
@@ -164047,17 +163921,17 @@
       "symbol": "value10",
       "lines": [
         3,
-        427,
-        431
+        447,
+        451
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sceneBlendEightWordRecord",
-          "declaration_line": 411,
+          "declaration_line": 431,
           "lines": [
-            427,
-            431
+            447,
+            451
           ]
         },
         {
@@ -164077,15 +163951,15 @@
       "symbol": "value14",
       "lines": [
         3,
-        428
+        448
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sceneBlendEightWordRecord",
-          "declaration_line": 411,
+          "declaration_line": 431,
           "lines": [
-            428
+            448
           ]
         },
         {
@@ -164105,15 +163979,15 @@
       "symbol": "value18",
       "lines": [
         3,
-        429
+        449
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sceneBlendEightWordRecord",
-          "declaration_line": 411,
+          "declaration_line": 431,
           "lines": [
-            429
+            449
           ]
         },
         {
@@ -164133,15 +164007,15 @@
       "symbol": "value1C",
       "lines": [
         3,
-        430
+        450
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sceneBlendEightWordRecord",
-          "declaration_line": 411,
+          "declaration_line": 431,
           "lines": [
-            430
+            450
           ]
         },
         {
@@ -184412,10 +184286,10 @@
         48,
         49,
         103,
-        122,
-        177,
-        278,
-        406
+        131,
+        187,
+        288,
+        416
       ],
       "owners": [
         {
@@ -184430,25 +184304,25 @@
         {
           "kind": "function",
           "name": "uvEndGrid",
-          "declaration_line": 239,
+          "declaration_line": 249,
           "lines": [
-            278
+            288
           ]
         },
         {
           "kind": "function",
           "name": "uvEndGridWide",
-          "declaration_line": 158,
+          "declaration_line": 168,
           "lines": [
-            177
+            187
           ]
         },
         {
           "kind": "function",
           "name": "uvEndTmesh",
-          "declaration_line": 109,
+          "declaration_line": 118,
           "lines": [
-            122
+            131
           ]
         },
         {
@@ -184462,9 +184336,9 @@
         {
           "kind": "function",
           "name": "uvVtxEndPolyInternal",
-          "declaration_line": 393,
+          "declaration_line": 403,
           "lines": [
-            406
+            416
           ]
         },
         {
@@ -184484,15 +184358,15 @@
       "symbol": "unk10",
       "lines": [
         99,
-        130
+        139
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvEndTmesh",
-          "declaration_line": 109,
+          "declaration_line": 118,
           "lines": [
-            130
+            139
           ]
         },
         {
@@ -184512,15 +184386,15 @@
       "symbol": "unk12",
       "lines": [
         100,
-        138
+        147
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvEndTmesh",
-          "declaration_line": 109,
+          "declaration_line": 118,
           "lines": [
-            138
+            147
           ]
         },
         {
@@ -206059,16 +205933,36 @@
       "path": "src/modules/scene.c",
       "symbol": "Set each record word at offset 0x21C to one in the screen-export array. * Reload the shared array and signed count after each store, preserving the * callback parameter home and original traversal. * RE_UNKNOWN: meaning of the marker and the complete screen record layout. * RE_ORIGINAL_QUIRK: record pointers and signed count are not validated.",
       "lines": [
-        319
+        339
       ],
       "evidence": "Set each record word at offset 0x21C to one in the screen-export array. * Reload the shared array and signed count after each store, preserving the * callback parameter home and original traversal. * RE_UNKNOWN: meaning of the marker and the complete screen record layout. * RE_ORIGINAL_QUIRK: record pointers and signed count are not validated.",
       "owners": [
         {
           "kind": "function",
           "name": "sceneMarkScreenRecords",
-          "declaration_line": 324,
+          "declaration_line": 344,
           "lines": [
-            319
+            339
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-033d6301ed31",
+      "kind": "original_quirk",
+      "path": "src/modules/scene.c",
+      "symbol": "func_scene_00400CB8 forwards direction and scalar triples from ENV * properties 6, 8 and 9 to UVLIGHT slot 0x18, retaining the signed-ID -1 gate * and original defaults. LIGHT slot 0x04 initializes one record with parameter * 0, then three records with parameter 1 and a 44-byte stride; reload the * provider after each call and retain the D_scene_00402ED0 endpoint. * RE_ORIGINAL_QUIRK: the called LIGHT initializer compares its signed-halfword * handle to 65535, which cannot reject -1. Allocation exhaustion reachability * and resulting handle use still need original allocator and caller evidence. * RE_UNKNOWN: historical local/formal types, complete record/storage extents, * aliases and callback lifetimes, physical scalar/parameter meanings and units, * valid environment/handle domains and failed ENV output behavior. Resolve * original environment/record producers, allocations and all property/callback * consumers before changing defaults, bounds or ABI. A provider write through * offset 0x28 and the 44-byte traversal do not prove a complete historical type. * Readable C is parked: 340 native/draft bytes retain all observed effects and * all nine scalar homes, but six zero-FPR encodings and two cursor/end address * loads differ. The two LO16 records also exchange instruction sites; complete * relocation equality is unproved. New original declaration/lifetime evidence * is needed before another trial; do not invent padding or extra storage.",
+      "lines": [
+        257
+      ],
+      "evidence": "func_scene_00400CB8 forwards direction and scalar triples from ENV * properties 6, 8 and 9 to UVLIGHT slot 0x18, retaining the signed-ID -1 gate * and original defaults. LIGHT slot 0x04 initializes one record with parameter * 0, then three records with parameter 1 and a 44-byte stride; reload the * provider after each call and retain the D_scene_00402ED0 endpoint. * RE_ORIGINAL_QUIRK: the called LIGHT initializer compares its signed-halfword * handle to 65535, which cannot reject -1. Allocation exhaustion reachability * and resulting handle use still need original allocator and caller evidence. * RE_UNKNOWN: historical local/formal types, complete record/storage extents, * aliases and callback lifetimes, physical scalar/parameter meanings and units, * valid environment/handle domains and failed ENV output behavior. Resolve * original environment/record producers, allocations and all property/callback * consumers before changing defaults, bounds or ABI. A provider write through * offset 0x28 and the 44-byte traversal do not prove a complete historical type. * Readable C is parked: 340 native/draft bytes retain all observed effects and * all nine scalar homes, but six zero-FPR encodings and two cursor/end address * loads differ. The two LO16 records also exchange instruction sites; complete * relocation equality is unproved. New original declaration/lifetime evidence * is needed before another trial; do not invent padding or extra storage.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_scene_00400CB8",
+          "declaration_line": 277,
+          "lines": [
+            257
           ]
         }
       ]
@@ -206079,16 +205973,16 @@
       "path": "src/modules/scene.c",
       "symbol": "func_scene_00400EC8 builds the scene text list and track, weather and * environment scalar rows through the original GUI and MISC slots. Preserve * all dependency reloads, flag/bound words, direct callbacks and word setters. * RE_ORIGINAL_QUIRK: the weather row receives the track callback word before * its weather callback word; both original stores and reloads are retained. * RE_UNKNOWN: complete bound-storage types/extents, row and callback/table * declarations, allocation-failure domains and readable 30-byte label windows * need original storage producers, GUI consumers and caller lifecycle evidence. * Native fourth arguments carry IEEE-754 words 0 and 0x41200000; the MISC * provider consumes f32 bits, but historical caller formal types remain unknown. * Readable C is parked: the 908-byte raw-word draft retains all effects and * the full 60-record relocation multiset, with eleven stack/frame immediates * and eight zero-word instruction encodings still different. Historical local * and argument declarations need new source evidence; do not invent padding.",
       "lines": [
-        301
+        321
       ],
       "evidence": "func_scene_00400EC8 builds the scene text list and track, weather and * environment scalar rows through the original GUI and MISC slots. Preserve * all dependency reloads, flag/bound words, direct callbacks and word setters. * RE_ORIGINAL_QUIRK: the weather row receives the track callback word before * its weather callback word; both original stores and reloads are retained. * RE_UNKNOWN: complete bound-storage types/extents, row and callback/table * declarations, allocation-failure domains and readable 30-byte label windows * need original storage producers, GUI consumers and caller lifecycle evidence. * Native fourth arguments carry IEEE-754 words 0 and 0x41200000; the MISC * provider consumes f32 bits, but historical caller formal types remain unknown. * Readable C is parked: the 908-byte raw-word draft retains all effects and * the full 60-record relocation multiset, with eleven stack/frame immediates * and eight zero-word instruction encodings still different. Historical local * and argument declarations need new source evidence; do not invent padding.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_scene_00400EC8",
-          "declaration_line": 316,
+          "declaration_line": 336,
           "lines": [
-            301
+            321
           ]
         }
       ]
@@ -206099,16 +205993,16 @@
       "path": "src/modules/scene.c",
       "symbol": "func_scene_00401324 truncates row float 0x24, stores the word at settings * offset 0xC8, formats CLEAR/SNOW/RAIN/NOT SUPPORTED for selectors 0..3, then * passes original stack address SP+0x20 to the GUI upper-text byte copier. * RE_ORIGINAL_QUIRK: other selectors reach that call without formatting the * scratch source; the original GUI C4 copier reads exactly 30 source bytes. * RE_UNKNOWN: selection/conversion domains, historical scratch-object extent * and the complete readable 30-byte source window require original row * producers, callers and stack storage evidence. The longest observed format * needs 14 bytes including NUL; that does not prove the historical capacity * or reachable failure. Preserve original ASM and its unchecked dataflow.",
       "lines": [
-        379
+        399
       ],
       "evidence": "func_scene_00401324 truncates row float 0x24, stores the word at settings * offset 0xC8, formats CLEAR/SNOW/RAIN/NOT SUPPORTED for selectors 0..3, then * passes original stack address SP+0x20 to the GUI upper-text byte copier. * RE_ORIGINAL_QUIRK: other selectors reach that call without formatting the * scratch source; the original GUI C4 copier reads exactly 30 source bytes. * RE_UNKNOWN: selection/conversion domains, historical scratch-object extent * and the complete readable 30-byte source window require original row * producers, callers and stack storage evidence. The longest observed format * needs 14 bytes including NUL; that does not prove the historical capacity * or reachable failure. Preserve original ASM and its unchecked dataflow.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_scene_00401324",
-          "declaration_line": 390,
+          "declaration_line": 410,
           "lines": [
-            379
+            399
           ]
         }
       ]
@@ -211524,17 +211418,17 @@
       "path": "src/modules/scene.c",
       "symbol": "unusedCallbackValue",
       "lines": [
-        324,
-        330
+        344,
+        350
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sceneMarkScreenRecords",
-          "declaration_line": 324,
+          "declaration_line": 344,
           "lines": [
-            324,
-            330
+            344,
+            350
           ]
         }
       ]
@@ -212489,15 +212383,15 @@
       "path": "src/modules/uvgeom_rom.c",
       "symbol": "unusedWord",
       "lines": [
-        161
+        171
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvEndGridWide",
-          "declaration_line": 158,
+          "declaration_line": 168,
           "lines": [
-            161
+            171
           ]
         }
       ]

@@ -22,7 +22,7 @@ void uvVtxEndPolyInternal(s32 arg0, s32 arg1, UvGeom_Rom_0040019C *arg2, Gfx **g
 
 // .bss
 s32 D_uvgeom_rom_00401750;
-UvGfxMgr_Exports *D_uvgeom_rom_00401754;
+Gfx *D_uvgeom_rom_00401754; /* Native display-list buffer base; RE_UNKNOWN: historical declaration and caller-supplied capacity/lifetime need settings producers and drawing callers. */
 UvGfxMgr_Exports *D_uvgeom_rom_00401758;
 Gfx *D_uvgeom_rom_0040175C;
 u16 D_uvgeom_rom_00401760;
@@ -106,46 +106,56 @@ s32 uvGeomInitializeMeshDescriptor(s32 kind, s32 value, UvGeom_Rom_0040019C *mes
 }
 #line 95 "src/modules/uvgeom_rom.c"
 
-void uvEndTmesh(s32 arg0, s32 arg1, UvGeom_Rom_0040019C *arg2, Gfx **arg3) {
-    s16 var_a2;
-    s16 i;
-    s16 var_t0;
-    s16 sp20;
-    Vtx *var_t2;
+/* Emit vertex batches of at most 16, advancing past each batch minus its two
+ * overlapping vertices. The signed-halfword batchCount holds the load count
+ * before subtracting two, then the triangle/advance count. Preserve triangle
+ * order alternation across batches, descriptor writes and cursor reloads.
+ * Count < 3 returns before descriptor initialization.
+ * RE_UNKNOWN: valid vertex/count spans, historical descriptor-field meanings
+ * and display-list capacity/alias/lifetime domains require original producers,
+ * drawing callers and display-list consumers. */
+#line 96 "src/modules/uvgeom_rom.c"
+void uvEndTmesh(s32 remainingVertices, s32 vertexAddressWord, UvGeom_Rom_0040019C *mesh, Gfx **displayListHead) {
+    s16 batchCount;
+    s16 triangleIndex;
+    s16 reverseTriangleOrder;
+    s16 displayListMode;
+    Vtx *vertices;
 
-    if (arg0 < 3) {
+    if (remainingVertices < 3) {
         return;
     }
 
-    var_t0 = FALSE;
-    sp20 = uvGeomInitializeMeshDescriptor(arg0, arg1, arg2, arg3);
-    var_t2 = arg2->unk0;
-    while (arg0 >= 3) {
-        if (arg0 < 16) {
-            var_a2 = arg0;
+    reverseTriangleOrder = FALSE;
+    displayListMode = uvGeomInitializeMeshDescriptor(remainingVertices, vertexAddressWord, mesh, displayListHead);
+    vertices = mesh->unk0;
+    while (remainingVertices >= 3) {
+        if (remainingVertices < 16) {
+            batchCount = remainingVertices;
         } else {
-            var_a2 = 16;
+            batchCount = 16;
         }
 
-        arg2->unk10 += var_a2;
+        mesh->unk10 += batchCount;
 
-        gSPVertex(arg3[0]++, OS_PHYSICAL_TO_K0(var_t2), var_a2, 0);
-        var_a2 -= 2;
-        arg0 -= var_a2;
-        var_t2 += var_a2;
+        gSPVertex(displayListHead[0]++, OS_PHYSICAL_TO_K0(vertices), batchCount, 0);
+        batchCount -= 2;
+        remainingVertices -= batchCount;
+        vertices += batchCount;
 
-        for (i = 0; i < var_a2; i++) {
-            arg2->unk12++;
-            if (var_t0) {
-                gSP1Triangle(arg3[0]++, i, i + 2, i + 1, 0);
+        for (triangleIndex = 0; triangleIndex < batchCount; triangleIndex++) {
+            mesh->unk12++;
+            if (reverseTriangleOrder) {
+                gSP1Triangle(displayListHead[0]++, triangleIndex, triangleIndex + 2, triangleIndex + 1, 0);
             } else {
-                gSP1Triangle(arg3[0]++, i, i + 1, i + 2, 0);
+                gSP1Triangle(displayListHead[0]++, triangleIndex, triangleIndex + 1, triangleIndex + 2, 0);
             }
-            var_t0 ^= TRUE;
+            reverseTriangleOrder ^= TRUE;
         }
     }
-    uvGeomFinishOwnedDisplayList((s32) sp20, arg3);
+    uvGeomFinishOwnedDisplayList((s32) displayListMode, displayListHead);
 }
+#line 136 "src/modules/uvgeom_rom.c"
 
 /* Emit alternating vertices from adjacent rows through the original modulo-16
  * slots, retaining each cursor reload and optional first-column repetition.

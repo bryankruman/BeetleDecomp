@@ -17,8 +17,8 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 735 |
-| Preserved RE_ORIGINAL_QUIRK notes | 193 |
+| Explicit RE_UNKNOWN notes | 738 |
+| Preserved RE_ORIGINAL_QUIRK notes | 194 |
 | Older comments with uncertainty language | 88 |
 | Documented original-behavior audits | 28 |
 | Assembly-backed functions or data | 843 |
@@ -28,7 +28,7 @@ For every future source wave, regenerate and check this index after code and str
 | Layout padding to preserve | 264 |
 | Unresolved type names | 282 |
 | Explicit unused ABI, storage or local identifiers | 120 |
-| Decompiler parameter/local names | 866 |
+| Decompiler parameter/local names | 862 |
 | Fake, unresolved or TODO draft markers | 28 |
 | Data-dependent conditional draft guards | 4 |
 
@@ -3659,12 +3659,12 @@ For every future source wave, regenerate and check this index after code and str
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
 | address_function | `func_scene_00400188` | function `func_scene_00400188`, function `sceneRefreshLoadedModelsWithData`, function `sceneRefreshLoadedModelsWithFlags`, function `sceneRefreshThreeListedModels` | [83](../src/modules/scene.c#L83), [181](../src/modules/scene.c#L181), [199](../src/modules/scene.c#L199), [221](../src/modules/scene.c#L221) |
-| address_function | `func_scene_004003F4` | function `__entrypoint_func_sceneInitializeModuleExports`, function `func_scene_004003F4` | [87](../src/modules/scene.c#L87), [283](../src/modules/scene.c#L283) |
-| address_function | `func_scene_00400C58` | function `__entrypoint_func_sceneInitializeModuleExports`, function `func_scene_00400C58` | [236](../src/modules/scene.c#L236), [284](../src/modules/scene.c#L284) |
+| address_function | `func_scene_004003F4` | function `__entrypoint_func_sceneInitializeModuleExports`, function `func_scene_004003F4` | [87](../src/modules/scene.c#L87), [303](../src/modules/scene.c#L303) |
+| address_function | `func_scene_00400C58` | function `__entrypoint_func_sceneInitializeModuleExports`, function `func_scene_00400C58` | [236](../src/modules/scene.c#L236), [304](../src/modules/scene.c#L304) |
 | address_function | `func_scene_00400CB8` | function `func_scene_00400CB8` | [89](../src/modules/scene.c#L89) |
-| address_function | `func_scene_00400EC0` | function `__entrypoint_func_sceneInitializeModuleExports`, function `func_scene_00400EC0`, function `func_scene_00400EC0` | [266](../src/modules/scene.c#L266), [277](../src/modules/scene.c#L277), [297](../src/modules/scene.c#L297) |
-| address_function | `func_scene_00400EC8` | function `__entrypoint_func_sceneInitializeModuleExports`, function `func_scene_00400EC8` | [90](../src/modules/scene.c#L90), [286](../src/modules/scene.c#L286) |
-| address_function | `func_scene_004012B0` | function `func_scene_004012B0` | [354](../src/modules/scene.c#L354) |
+| address_function | `func_scene_00400EC0` | function `__entrypoint_func_sceneInitializeModuleExports`, function `func_scene_00400EC0`, function `func_scene_00400EC0` | [286](../src/modules/scene.c#L286), [297](../src/modules/scene.c#L297), [317](../src/modules/scene.c#L317) |
+| address_function | `func_scene_00400EC8` | function `__entrypoint_func_sceneInitializeModuleExports`, function `func_scene_00400EC8` | [90](../src/modules/scene.c#L90), [306](../src/modules/scene.c#L306) |
+| address_function | `func_scene_004012B0` | function `func_scene_004012B0` | [374](../src/modules/scene.c#L374) |
 | address_function | `func_scene_00401324` | function `func_scene_00401324` | [93](../src/modules/scene.c#L93) |
 | address_global | `D_8002CB8C` | global `D_8002CB8C` | [20](../src/modules/scene.c#L20) |
 | address_global | `D_8002CC64` | global `D_8002CC64` | [21](../src/modules/scene.c#L21) |
@@ -3694,7 +3694,7 @@ For every future source wave, regenerate and check this index after code and str
 | address_global | `D_scene_0040182C` | global `D_scene_0040182C` | [17](../src/modules/scene.c#L17) |
 | address_global | `D_scene_00401830` | global `D_scene_00401830` | [18](../src/modules/scene.c#L18) |
 | address_global | `D_scene_00401834` | global `D_scene_00401834` | [19](../src/modules/scene.c#L19) |
-| address_global | `D_scene_00401840` | function `sceneApplySelectedTrack`, global `D_scene_00401840` | [45](../src/modules/scene.c#L45), [373](../src/modules/scene.c#L373) |
+| address_global | `D_scene_00401840` | function `sceneApplySelectedTrack`, global `D_scene_00401840` | [45](../src/modules/scene.c#L45), [393](../src/modules/scene.c#L393) |
 | address_global | `D_scene_00401D3C` | global `D_scene_00401D3C` | [46](../src/modules/scene.c#L46) |
 | address_global | `D_scene_00402CF0` | global `D_scene_00402CF0` | [47](../src/modules/scene.c#L47) |
 | address_global | `D_scene_00402CF8` | function `sceneFindHandleSlot`, function `sceneGetClampedSixEntryValue`, global `D_scene_00402CF8` | [76](../src/modules/scene.c#L76), [105](../src/modules/scene.c#L105), [129](../src/modules/scene.c#L129) |
@@ -3706,7 +3706,7 @@ For every future source wave, regenerate and check this index after code and str
 | address_global | `D_scene_00402DA0` | global `D_scene_00402DA0` | [24](../src/modules/scene.c#L24) |
 | address_global | `D_scene_00402DB8` | global `D_scene_00402DB8` | [25](../src/modules/scene.c#L25) |
 | address_global | `D_scene_00402DD8` | global `D_scene_00402DD8` | [48](../src/modules/scene.c#L48) |
-| address_global | `D_scene_00402DF8` | function `__entrypoint_func_sceneInitializeModuleExports`, function `sceneUpdateSharedEffectState`, global `D_scene_00402DF8` | [49](../src/modules/scene.c#L49), [250](../src/modules/scene.c#L250), [251](../src/modules/scene.c#L251), [252](../src/modules/scene.c#L252), [288](../src/modules/scene.c#L288) |
+| address_global | `D_scene_00402DF8` | function `__entrypoint_func_sceneInitializeModuleExports`, function `sceneUpdateSharedEffectState`, global `D_scene_00402DF8` | [49](../src/modules/scene.c#L49), [250](../src/modules/scene.c#L250), [251](../src/modules/scene.c#L251), [252](../src/modules/scene.c#L252), [308](../src/modules/scene.c#L308) |
 | address_global | `D_scene_00402E00` | global `D_scene_00402E00` | [27](../src/modules/scene.c#L27) |
 | address_global | `D_scene_00402E01` | global `D_scene_00402E01` | [28](../src/modules/scene.c#L28) |
 | address_global | `D_scene_00402E20` | global `D_scene_00402E20` | [50](../src/modules/scene.c#L50) |
@@ -3721,35 +3721,37 @@ For every future source wave, regenerate and check this index after code and str
 | address_global | `D_scene_00402EF0` | function `sceneUpdateSharedEffectState`, global `D_scene_00402EF0` | [62](../src/modules/scene.c#L62), [246](../src/modules/scene.c#L246) |
 | assembly | `func_scene_00400188` | — | [172](../src/modules/scene.c#L172) |
 | assembly | `func_scene_004003F4` | — | [229](../src/modules/scene.c#L229) |
-| assembly | `func_scene_00400CB8` | — | [257](../src/modules/scene.c#L257) |
-| assembly | `func_scene_00400EC8` | — | [316](../src/modules/scene.c#L316) |
-| assembly | `func_scene_00401324` | — | [390](../src/modules/scene.c#L390) |
+| assembly | `func_scene_00400CB8` | — | [277](../src/modules/scene.c#L277) |
+| assembly | `func_scene_00400EC8` | — | [336](../src/modules/scene.c#L336) |
+| assembly | `func_scene_00401324` | — | [410](../src/modules/scene.c#L410) |
 | decompiler_local | `arg0` | function `sceneMarkScreenRecords` | [91](../src/modules/scene.c#L91) |
 | explicit_unknown | `Invoke the model refresh helper for the three contiguous words beginning * at D_scene_00402D34, stopping before D_scene_00402D40. Preserve the original * grouped loop shape and ...` | function `sceneRefreshThreeListedModels` | [175](../src/modules/scene.c#L175) |
 | explicit_unknown | `Original GUI C4 is an upper-text byte copier, not a selection setter. * RE_UNKNOWN: the complete export table and historical caller declaration.` | type `SceneGuiTextExports` | [6](../src/modules/scene.c#L6) |
-| explicit_unknown | `Original address storage only. Assembly-only labels declared below are * opaque code addresses, never data objects or inferred callable interfaces. * RE_UNKNOWN: remaining callb...` | type `SceneModuleAddressStorage` | [261](../src/modules/scene.c#L261) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_scene_00400C58`, function `func_scene_00400EC0`, function `func_scene_004012B0` | [232](../src/modules/scene.c#L232), [293](../src/modules/scene.c#L293), [350](../src/modules/scene.c#L350) |
-| explicit_unknown | `Register original scene export addresses in observed store order, after * updating the file allocation pointer. Preserve separate empty callbacks. The * blend slot at 0x28 is st...` | function `__entrypoint_func_sceneInitializeModuleExports` | [268](../src/modules/scene.c#L268) |
+| explicit_unknown | `Original address storage only. Assembly-only labels declared below are * opaque code addresses, never data objects or inferred callable interfaces. * RE_UNKNOWN: remaining callb...` | type `SceneModuleAddressStorage` | [281](../src/modules/scene.c#L281) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_scene_00400C58`, function `func_scene_00400EC0`, function `func_scene_004012B0` | [232](../src/modules/scene.c#L232), [313](../src/modules/scene.c#L313), [370](../src/modules/scene.c#L370) |
+| explicit_unknown | `Register original scene export addresses in observed store order, after * updating the file allocation pointer. Preserve separate empty callbacks. The * blend slot at 0x28 is st...` | function `__entrypoint_func_sceneInitializeModuleExports` | [288](../src/modules/scene.c#L288) |
 | explicit_unknown | `Search the original nine-word scene table, returning the first matching * slot. A miss returns zero, which also identifies slot zero; preserve the * original four-at-a-time comp...` | function `sceneFindNineEntryValueSlot` | [136](../src/modules/scene.c#L136) |
-| explicit_unknown | `Set each record word at offset 0x21C to one in the screen-export array. * Reload the shared array and signed count after each store, preserving the * callback parameter home and...` | function `sceneMarkScreenRecords` | [319](../src/modules/scene.c#L319) |
-| explicit_unknown | `Truncate the floating selection into the current track, then use the stored * track to select its original 0x9C-byte record. GUI C4 consumes record word 0x08 * as the source add...` | function `sceneApplySelectedTrack` | [361](../src/modules/scene.c#L361) |
-| explicit_unknown | `func_scene_00400EC8 builds the scene text list and track, weather and * environment scalar rows through the original GUI and MISC slots. Preserve * all dependency reloads, flag/...` | assembly `func_scene_00400EC8` | [301](../src/modules/scene.c#L301) |
-| explicit_unknown | `func_scene_00401324 truncates row float 0x24, stores the word at settings * offset 0xC8, formats CLEAR/SNOW/RAIN/NOT SUPPORTED for selectors 0..3, then * passes original stack a...` | assembly `func_scene_00401324` | [379](../src/modules/scene.c#L379) |
+| explicit_unknown | `Set each record word at offset 0x21C to one in the screen-export array. * Reload the shared array and signed count after each store, preserving the * callback parameter home and...` | function `sceneMarkScreenRecords` | [339](../src/modules/scene.c#L339) |
+| explicit_unknown | `Truncate the floating selection into the current track, then use the stored * track to select its original 0x9C-byte record. GUI C4 consumes record word 0x08 * as the source add...` | function `sceneApplySelectedTrack` | [381](../src/modules/scene.c#L381) |
+| explicit_unknown | `func_scene_00400CB8 forwards direction and scalar triples from ENV * properties 6, 8 and 9 to UVLIGHT slot 0x18, retaining the signed-ID -1 gate * and original defaults. LIGHT s...` | assembly `func_scene_00400CB8` | [257](../src/modules/scene.c#L257) |
+| explicit_unknown | `func_scene_00400EC8 builds the scene text list and track, weather and * environment scalar rows through the original GUI and MISC slots. Preserve * all dependency reloads, flag/...` | assembly `func_scene_00400EC8` | [321](../src/modules/scene.c#L321) |
+| explicit_unknown | `func_scene_00401324 truncates row float 0x24, stores the word at settings * offset 0xC8, formats CLEAR/SNOW/RAIN/NOT SUPPORTED for selectors 0..3, then * passes original stack a...` | assembly `func_scene_00401324` | [399](../src/modules/scene.c#L399) |
 | offset_field | `unk00` | type `SceneTrackChoice`, type `SceneTrackRecord` | [4](../src/modules/scene.c#L4), [5](../src/modules/scene.c#L5) |
 | offset_field | `unk0C` | type `SceneTrackRecord` | [5](../src/modules/scene.c#L5) |
-| offset_field | `value04` | function `sceneBlendEightWordRecord`, type `SceneBlendRecord` | [3](../src/modules/scene.c#L3), [424](../src/modules/scene.c#L424) |
-| offset_field | `value08` | function `sceneApplySelectedTrack`, function `sceneBlendEightWordRecord`, type `SceneBlendRecord`, type `SceneTrackRecord` | [3](../src/modules/scene.c#L3), [5](../src/modules/scene.c#L5), [374](../src/modules/scene.c#L374), [425](../src/modules/scene.c#L425) |
-| offset_field | `value0C` | function `sceneBlendEightWordRecord`, type `SceneBlendRecord` | [3](../src/modules/scene.c#L3), [426](../src/modules/scene.c#L426) |
-| offset_field | `value10` | function `sceneBlendEightWordRecord`, type `SceneBlendRecord` | [3](../src/modules/scene.c#L3), [427](../src/modules/scene.c#L427), [431](../src/modules/scene.c#L431) |
-| offset_field | `value14` | function `sceneBlendEightWordRecord`, type `SceneBlendRecord` | [3](../src/modules/scene.c#L3), [428](../src/modules/scene.c#L428) |
-| offset_field | `value18` | function `sceneBlendEightWordRecord`, type `SceneBlendRecord` | [3](../src/modules/scene.c#L3), [429](../src/modules/scene.c#L429) |
-| offset_field | `value1C` | function `sceneBlendEightWordRecord`, type `SceneBlendRecord` | [3](../src/modules/scene.c#L3), [430](../src/modules/scene.c#L430) |
+| offset_field | `value04` | function `sceneBlendEightWordRecord`, type `SceneBlendRecord` | [3](../src/modules/scene.c#L3), [444](../src/modules/scene.c#L444) |
+| offset_field | `value08` | function `sceneApplySelectedTrack`, function `sceneBlendEightWordRecord`, type `SceneBlendRecord`, type `SceneTrackRecord` | [3](../src/modules/scene.c#L3), [5](../src/modules/scene.c#L5), [394](../src/modules/scene.c#L394), [445](../src/modules/scene.c#L445) |
+| offset_field | `value0C` | function `sceneBlendEightWordRecord`, type `SceneBlendRecord` | [3](../src/modules/scene.c#L3), [446](../src/modules/scene.c#L446) |
+| offset_field | `value10` | function `sceneBlendEightWordRecord`, type `SceneBlendRecord` | [3](../src/modules/scene.c#L3), [447](../src/modules/scene.c#L447), [451](../src/modules/scene.c#L451) |
+| offset_field | `value14` | function `sceneBlendEightWordRecord`, type `SceneBlendRecord` | [3](../src/modules/scene.c#L3), [448](../src/modules/scene.c#L448) |
+| offset_field | `value18` | function `sceneBlendEightWordRecord`, type `SceneBlendRecord` | [3](../src/modules/scene.c#L3), [449](../src/modules/scene.c#L449) |
+| offset_field | `value1C` | function `sceneBlendEightWordRecord`, type `SceneBlendRecord` | [3](../src/modules/scene.c#L3), [450](../src/modules/scene.c#L450) |
 | original_quirk | `Search the original nine-word scene table, returning the first matching * slot. A miss returns zero, which also identifies slot zero; preserve the * original four-at-a-time comp...` | function `sceneFindNineEntryValueSlot` | [136](../src/modules/scene.c#L136) |
-| original_quirk | `Set each record word at offset 0x21C to one in the screen-export array. * Reload the shared array and signed count after each store, preserving the * callback parameter home and...` | function `sceneMarkScreenRecords` | [319](../src/modules/scene.c#L319) |
-| original_quirk | `func_scene_00400EC8 builds the scene text list and track, weather and * environment scalar rows through the original GUI and MISC slots. Preserve * all dependency reloads, flag/...` | assembly `func_scene_00400EC8` | [301](../src/modules/scene.c#L301) |
-| original_quirk | `func_scene_00401324 truncates row float 0x24, stores the word at settings * offset 0xC8, formats CLEAR/SNOW/RAIN/NOT SUPPORTED for selectors 0..3, then * passes original stack a...` | assembly `func_scene_00401324` | [379](../src/modules/scene.c#L379) |
+| original_quirk | `Set each record word at offset 0x21C to one in the screen-export array. * Reload the shared array and signed count after each store, preserving the * callback parameter home and...` | function `sceneMarkScreenRecords` | [339](../src/modules/scene.c#L339) |
+| original_quirk | `func_scene_00400CB8 forwards direction and scalar triples from ENV * properties 6, 8 and 9 to UVLIGHT slot 0x18, retaining the signed-ID -1 gate * and original defaults. LIGHT s...` | assembly `func_scene_00400CB8` | [257](../src/modules/scene.c#L257) |
+| original_quirk | `func_scene_00400EC8 builds the scene text list and track, weather and * environment scalar rows through the original GUI and MISC slots. Preserve * all dependency reloads, flag/...` | assembly `func_scene_00400EC8` | [321](../src/modules/scene.c#L321) |
+| original_quirk | `func_scene_00401324 truncates row float 0x24, stores the word at settings * offset 0xC8, formats CLEAR/SNOW/RAIN/NOT SUPPORTED for selectors 0..3, then * passes original stack a...` | assembly `func_scene_00401324` | [399](../src/modules/scene.c#L399) |
 | unused_identifier | `unused00` | type `SceneGuiTextExports` | [8](../src/modules/scene.c#L8) |
-| unused_identifier | `unusedCallbackValue` | function `sceneMarkScreenRecords` | [324](../src/modules/scene.c#L324), [330](../src/modules/scene.c#L330) |
+| unused_identifier | `unusedCallbackValue` | function `sceneMarkScreenRecords` | [344](../src/modules/scene.c#L344), [350](../src/modules/scene.c#L350) |
 
 ## src/modules/scrn.c
 
@@ -6377,32 +6379,30 @@ For every future source wave, regenerate and check this index after code and str
 | address_global | `D_uvgeom_rom_00401740` | — | [31](../src/modules/uvgeom_rom.c#L31) |
 | address_global | `D_uvgeom_rom_00401750` | function `__entrypoint_func_uvgeom_rom_400000`, global `D_uvgeom_rom_00401750` | [24](../src/modules/uvgeom_rom.c#L24), [45](../src/modules/uvgeom_rom.c#L45), [49](../src/modules/uvgeom_rom.c#L49), [51](../src/modules/uvgeom_rom.c#L51), [56](../src/modules/uvgeom_rom.c#L56) |
 | address_global | `D_uvgeom_rom_00401754` | function `__entrypoint_func_uvgeom_rom_400000`, function `uvGeomModuleCleanup`, global `D_uvgeom_rom_00401754` | [25](../src/modules/uvgeom_rom.c#L25), [46](../src/modules/uvgeom_rom.c#L46), [53](../src/modules/uvgeom_rom.c#L53), [55](../src/modules/uvgeom_rom.c#L55), [56](../src/modules/uvgeom_rom.c#L56), [59](../src/modules/uvgeom_rom.c#L59), [69](../src/modules/uvgeom_rom.c#L69) |
-| address_global | `D_uvgeom_rom_00401758` | function `__entrypoint_func_uvgeom_rom_400000`, function `uvSetFillColor`, function `uvVtxRect`, global `D_uvgeom_rom_00401758` | [26](../src/modules/uvgeom_rom.c#L26), [60](../src/modules/uvgeom_rom.c#L60), [342](../src/modules/uvgeom_rom.c#L342), [351](../src/modules/uvgeom_rom.c#L351), [352](../src/modules/uvgeom_rom.c#L352), [353](../src/modules/uvgeom_rom.c#L353), [356](../src/modules/uvgeom_rom.c#L356), [357](../src/modules/uvgeom_rom.c#L357) (+6 in JSON) |
+| address_global | `D_uvgeom_rom_00401758` | function `__entrypoint_func_uvgeom_rom_400000`, function `uvSetFillColor`, function `uvVtxRect`, global `D_uvgeom_rom_00401758` | [26](../src/modules/uvgeom_rom.c#L26), [60](../src/modules/uvgeom_rom.c#L60), [352](../src/modules/uvgeom_rom.c#L352), [361](../src/modules/uvgeom_rom.c#L361), [362](../src/modules/uvgeom_rom.c#L362), [363](../src/modules/uvgeom_rom.c#L363), [366](../src/modules/uvgeom_rom.c#L366), [367](../src/modules/uvgeom_rom.c#L367) (+6 in JSON) |
 | address_global | `D_uvgeom_rom_0040175C` | function `__entrypoint_func_uvgeom_rom_400000`, function `uvGeomFinishOwnedDisplayList`, function `uvGeomInitializeMeshDescriptor`, global `D_uvgeom_rom_0040175C` | [27](../src/modules/uvgeom_rom.c#L27), [59](../src/modules/uvgeom_rom.c#L59), [80](../src/modules/uvgeom_rom.c#L80), [93](../src/modules/uvgeom_rom.c#L93) |
 | address_global | `D_uvgeom_rom_00401760` | function `__entrypoint_func_uvgeom_rom_400000`, function `uvGeomModuleCleanup`, global `D_uvgeom_rom_00401760` | [28](../src/modules/uvgeom_rom.c#L28), [57](../src/modules/uvgeom_rom.c#L57), [68](../src/modules/uvgeom_rom.c#L68) |
-| decompiler_local | `arg0` | function `uvEndGrid`, function `uvEndGridWide`, function `uvEndTmesh`, function `uvEndTmesh`, function `uvGeomFinishOwnedDisplayList`, function `uvGeomInitializeMeshDescriptor`, function `uvVtxEndPolyInternal`, function `uvVtxRect`, function `uvVtxRect` | [12](../src/modules/uvgeom_rom.c#L12), [13](../src/modules/uvgeom_rom.c#L13), [14](../src/modules/uvgeom_rom.c#L14), [15](../src/modules/uvgeom_rom.c#L15), [17](../src/modules/uvgeom_rom.c#L17), [20](../src/modules/uvgeom_rom.c#L20), [21](../src/modules/uvgeom_rom.c#L21), [109](../src/modules/uvgeom_rom.c#L109) (+12 in JSON) |
-| decompiler_local | `arg1` | function `uvEndGrid`, function `uvEndGridWide`, function `uvEndTmesh`, function `uvEndTmesh`, function `uvGeomInitializeMeshDescriptor`, function `uvVtxEndPolyInternal`, function `uvVtxRect`, function `uvVtxRect` | [13](../src/modules/uvgeom_rom.c#L13), [14](../src/modules/uvgeom_rom.c#L14), [15](../src/modules/uvgeom_rom.c#L15), [17](../src/modules/uvgeom_rom.c#L17), [20](../src/modules/uvgeom_rom.c#L20), [21](../src/modules/uvgeom_rom.c#L21), [109](../src/modules/uvgeom_rom.c#L109), [121](../src/modules/uvgeom_rom.c#L121) (+7 in JSON) |
-| decompiler_local | `arg2` | function `uvEndGrid`, function `uvEndGridWide`, function `uvEndTmesh`, function `uvEndTmesh`, function `uvGeomInitializeMeshDescriptor`, function `uvVtxEndPolyInternal`, function `uvVtxRect`, function `uvVtxRect` | [13](../src/modules/uvgeom_rom.c#L13), [14](../src/modules/uvgeom_rom.c#L14), [15](../src/modules/uvgeom_rom.c#L15), [17](../src/modules/uvgeom_rom.c#L17), [20](../src/modules/uvgeom_rom.c#L20), [21](../src/modules/uvgeom_rom.c#L21), [109](../src/modules/uvgeom_rom.c#L109), [121](../src/modules/uvgeom_rom.c#L121) (+9 in JSON) |
-| decompiler_local | `arg3` | function `uvEndGrid`, function `uvEndGridWide`, function `uvEndTmesh`, function `uvEndTmesh`, function `uvGeomInitializeMeshDescriptor`, function `uvVtxRect`, function `uvVtxRect` | [13](../src/modules/uvgeom_rom.c#L13), [14](../src/modules/uvgeom_rom.c#L14), [15](../src/modules/uvgeom_rom.c#L15), [17](../src/modules/uvgeom_rom.c#L17), [20](../src/modules/uvgeom_rom.c#L20), [109](../src/modules/uvgeom_rom.c#L109), [121](../src/modules/uvgeom_rom.c#L121), [132](../src/modules/uvgeom_rom.c#L132) (+10 in JSON) |
+| decompiler_local | `arg0` | function `uvEndGrid`, function `uvEndGridWide`, function `uvEndTmesh`, function `uvGeomFinishOwnedDisplayList`, function `uvGeomInitializeMeshDescriptor`, function `uvVtxEndPolyInternal`, function `uvVtxRect`, function `uvVtxRect` | [12](../src/modules/uvgeom_rom.c#L12), [13](../src/modules/uvgeom_rom.c#L13), [14](../src/modules/uvgeom_rom.c#L14), [15](../src/modules/uvgeom_rom.c#L15), [17](../src/modules/uvgeom_rom.c#L17), [20](../src/modules/uvgeom_rom.c#L20), [21](../src/modules/uvgeom_rom.c#L21), [358](../src/modules/uvgeom_rom.c#L358) (+5 in JSON) |
+| decompiler_local | `arg1` | function `uvEndGrid`, function `uvEndGridWide`, function `uvEndTmesh`, function `uvGeomInitializeMeshDescriptor`, function `uvVtxEndPolyInternal`, function `uvVtxRect`, function `uvVtxRect` | [13](../src/modules/uvgeom_rom.c#L13), [14](../src/modules/uvgeom_rom.c#L14), [15](../src/modules/uvgeom_rom.c#L15), [17](../src/modules/uvgeom_rom.c#L17), [20](../src/modules/uvgeom_rom.c#L20), [21](../src/modules/uvgeom_rom.c#L21), [358](../src/modules/uvgeom_rom.c#L358), [363](../src/modules/uvgeom_rom.c#L363) (+5 in JSON) |
+| decompiler_local | `arg2` | function `uvEndGrid`, function `uvEndGridWide`, function `uvEndTmesh`, function `uvGeomInitializeMeshDescriptor`, function `uvVtxEndPolyInternal`, function `uvVtxRect`, function `uvVtxRect` | [13](../src/modules/uvgeom_rom.c#L13), [14](../src/modules/uvgeom_rom.c#L14), [15](../src/modules/uvgeom_rom.c#L15), [17](../src/modules/uvgeom_rom.c#L17), [20](../src/modules/uvgeom_rom.c#L20), [21](../src/modules/uvgeom_rom.c#L21), [358](../src/modules/uvgeom_rom.c#L358), [369](../src/modules/uvgeom_rom.c#L369) (+4 in JSON) |
+| decompiler_local | `arg3` | function `uvEndGrid`, function `uvEndGridWide`, function `uvEndTmesh`, function `uvGeomInitializeMeshDescriptor`, function `uvVtxRect`, function `uvVtxRect` | [13](../src/modules/uvgeom_rom.c#L13), [14](../src/modules/uvgeom_rom.c#L14), [15](../src/modules/uvgeom_rom.c#L15), [17](../src/modules/uvgeom_rom.c#L17), [20](../src/modules/uvgeom_rom.c#L20), [358](../src/modules/uvgeom_rom.c#L358), [362](../src/modules/uvgeom_rom.c#L362), [374](../src/modules/uvgeom_rom.c#L374) (+4 in JSON) |
 | decompiler_local | `arg4` | function `uvEndGrid`, function `uvEndGridWide` | [15](../src/modules/uvgeom_rom.c#L15), [17](../src/modules/uvgeom_rom.c#L17) |
 | decompiler_local | `arg5` | function `uvEndGrid`, function `uvEndGridWide` | [15](../src/modules/uvgeom_rom.c#L15), [17](../src/modules/uvgeom_rom.c#L17) |
 | decompiler_local | `arg6` | function `uvEndGrid`, function `uvEndGridWide` | [15](../src/modules/uvgeom_rom.c#L15), [17](../src/modules/uvgeom_rom.c#L17) |
-| decompiler_local | `sp20` | function `uvEndTmesh` | [113](../src/modules/uvgeom_rom.c#L113), [121](../src/modules/uvgeom_rom.c#L121), [147](../src/modules/uvgeom_rom.c#L147) |
-| decompiler_local | `var_a2` | function `uvEndTmesh` | [110](../src/modules/uvgeom_rom.c#L110), [125](../src/modules/uvgeom_rom.c#L125), [127](../src/modules/uvgeom_rom.c#L127), [130](../src/modules/uvgeom_rom.c#L130), [132](../src/modules/uvgeom_rom.c#L132), [133](../src/modules/uvgeom_rom.c#L133), [134](../src/modules/uvgeom_rom.c#L134), [135](../src/modules/uvgeom_rom.c#L135) (+1 in JSON) |
-| decompiler_local | `var_t0` | function `uvEndTmesh` | [112](../src/modules/uvgeom_rom.c#L112), [120](../src/modules/uvgeom_rom.c#L120), [139](../src/modules/uvgeom_rom.c#L139), [144](../src/modules/uvgeom_rom.c#L144) |
-| decompiler_local | `var_t2` | function `uvEndTmesh` | [114](../src/modules/uvgeom_rom.c#L114), [122](../src/modules/uvgeom_rom.c#L122), [132](../src/modules/uvgeom_rom.c#L132), [135](../src/modules/uvgeom_rom.c#L135) |
-| explicit_unknown | `Emit alternating vertices from adjacent rows through the original modulo-16 * slots, retaining each cursor reload and optional first-column repetition. * The third byte is teste...` | function `uvEndGridWide` | [150](../src/modules/uvgeom_rom.c#L150) |
-| explicit_unknown | `Emit polygon triangles in the original batches, retaining the first-batch * and later-batch vertex commands and repeated display-list-head reloads. * Count < 3 returns before de...` | function `uvVtxEndPolyInternal` | [385](../src/modules/uvgeom_rom.c#L385) |
-| explicit_unknown | `Select dimensions using the original full-word comparison, then preserve * the signed-halfword narrowing, vertex-bank alternation and closure tests. * The wide path narrows the ...` | function `uvEndGrid` | [231](../src/modules/uvgeom_rom.c#L231) |
-| layout_padding | `pad` | function `uvEndGrid` | [252](../src/modules/uvgeom_rom.c#L252) |
-| offset_field | `unk0` | function `__entrypoint_func_uvgeom_rom_400000`, function `uvEndGrid`, function `uvEndGridWide`, function `uvEndTmesh`, function `uvGeomInitializeMeshDescriptor`, function `uvVtxEndPolyInternal`, type `GeometrySettings` | [6](../src/modules/uvgeom_rom.c#L6), [48](../src/modules/uvgeom_rom.c#L48), [49](../src/modules/uvgeom_rom.c#L49), [103](../src/modules/uvgeom_rom.c#L103), [122](../src/modules/uvgeom_rom.c#L122), [177](../src/modules/uvgeom_rom.c#L177), [278](../src/modules/uvgeom_rom.c#L278), [406](../src/modules/uvgeom_rom.c#L406) |
-| offset_field | `unk10` | function `uvEndTmesh`, function `uvGeomInitializeMeshDescriptor` | [99](../src/modules/uvgeom_rom.c#L99), [130](../src/modules/uvgeom_rom.c#L130) |
-| offset_field | `unk12` | function `uvEndTmesh`, function `uvGeomInitializeMeshDescriptor` | [100](../src/modules/uvgeom_rom.c#L100), [138](../src/modules/uvgeom_rom.c#L138) |
+| explicit_unknown | `Emit alternating vertices from adjacent rows through the original modulo-16 * slots, retaining each cursor reload and optional first-column repetition. * The third byte is teste...` | function `uvEndGridWide` | [160](../src/modules/uvgeom_rom.c#L160) |
+| explicit_unknown | `Emit polygon triangles in the original batches, retaining the first-batch * and later-batch vertex commands and repeated display-list-head reloads. * Count < 3 returns before de...` | function `uvVtxEndPolyInternal` | [395](../src/modules/uvgeom_rom.c#L395) |
+| explicit_unknown | `Emit vertex batches of at most 16, advancing past each batch minus its two * overlapping vertices. The signed-halfword batchCount holds the load count * before subtracting two, ...` | function `uvEndTmesh` | [109](../src/modules/uvgeom_rom.c#L109) |
+| explicit_unknown | `Native display-list buffer base; RE_UNKNOWN: historical declaration and caller-supplied capacity/lifetime need settings producers and drawing callers.` | — | [25](../src/modules/uvgeom_rom.c#L25) |
+| explicit_unknown | `Select dimensions using the original full-word comparison, then preserve * the signed-halfword narrowing, vertex-bank alternation and closure tests. * The wide path narrows the ...` | function `uvEndGrid` | [241](../src/modules/uvgeom_rom.c#L241) |
+| layout_padding | `pad` | function `uvEndGrid` | [262](../src/modules/uvgeom_rom.c#L262) |
+| offset_field | `unk0` | function `__entrypoint_func_uvgeom_rom_400000`, function `uvEndGrid`, function `uvEndGridWide`, function `uvEndTmesh`, function `uvGeomInitializeMeshDescriptor`, function `uvVtxEndPolyInternal`, type `GeometrySettings` | [6](../src/modules/uvgeom_rom.c#L6), [48](../src/modules/uvgeom_rom.c#L48), [49](../src/modules/uvgeom_rom.c#L49), [103](../src/modules/uvgeom_rom.c#L103), [131](../src/modules/uvgeom_rom.c#L131), [187](../src/modules/uvgeom_rom.c#L187), [288](../src/modules/uvgeom_rom.c#L288), [416](../src/modules/uvgeom_rom.c#L416) |
+| offset_field | `unk10` | function `uvEndTmesh`, function `uvGeomInitializeMeshDescriptor` | [99](../src/modules/uvgeom_rom.c#L99), [139](../src/modules/uvgeom_rom.c#L139) |
+| offset_field | `unk12` | function `uvEndTmesh`, function `uvGeomInitializeMeshDescriptor` | [100](../src/modules/uvgeom_rom.c#L100), [147](../src/modules/uvgeom_rom.c#L147) |
 | offset_field | `unk4` | function `__entrypoint_func_uvgeom_rom_400000`, function `uvGeomInitializeMeshDescriptor`, type `GeometrySettings` | [7](../src/modules/uvgeom_rom.c#L7), [53](../src/modules/uvgeom_rom.c#L53), [98](../src/modules/uvgeom_rom.c#L98) |
 | offset_field | `unk8` | function `uvGeomInitializeMeshDescriptor` | [104](../src/modules/uvgeom_rom.c#L104) |
 | offset_field | `unkC` | function `uvGeomInitializeMeshDescriptor` | [101](../src/modules/uvgeom_rom.c#L101) |
 | offset_field | `unkE` | function `uvGeomInitializeMeshDescriptor` | [102](../src/modules/uvgeom_rom.c#L102) |
-| unused_identifier | `unusedWord` | function `uvEndGridWide` | [161](../src/modules/uvgeom_rom.c#L161) |
+| unused_identifier | `unusedWord` | function `uvEndGridWide` | [171](../src/modules/uvgeom_rom.c#L171) |
 
 ## src/modules/uvgfxmgr_rom.c
 

@@ -254,6 +254,26 @@ void sceneUpdateSharedEffectState(void) {
 }
 #line 203 "src/modules/scene.c"
 
+/* func_scene_00400CB8 forwards direction and scalar triples from ENV
+ * properties 6, 8 and 9 to UVLIGHT slot 0x18, retaining the signed-ID -1 gate
+ * and original defaults. LIGHT slot 0x04 initializes one record with parameter
+ * 0, then three records with parameter 1 and a 44-byte stride; reload the
+ * provider after each call and retain the D_scene_00402ED0 endpoint.
+ * RE_ORIGINAL_QUIRK: the called LIGHT initializer compares its signed-halfword
+ * handle to 65535, which cannot reject -1. Allocation exhaustion reachability
+ * and resulting handle use still need original allocator and caller evidence.
+ * RE_UNKNOWN: historical local/formal types, complete record/storage extents,
+ * aliases and callback lifetimes, physical scalar/parameter meanings and units,
+ * valid environment/handle domains and failed ENV output behavior. Resolve
+ * original environment/record producers, allocations and all property/callback
+ * consumers before changing defaults, bounds or ABI. A provider write through
+ * offset 0x28 and the 44-byte traversal do not prove a complete historical type.
+ * Readable C is parked: 340 native/draft bytes retain all observed effects and
+ * all nine scalar homes, but six zero-FPR encodings and two cursor/end address
+ * loads differ. The two LO16 records also exchange instruction sites; complete
+ * relocation equality is unproved. New original declaration/lifetime evidence
+ * is needed before another trial; do not invent padding or extra storage. */
+#line 204 "src/modules/scene.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/scene/func_scene_00400CB8.s")
 
 #include "common.h"

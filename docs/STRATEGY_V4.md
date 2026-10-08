@@ -2611,10 +2611,19 @@ Totals: 358 further recoveries after the 225 upstream ordinary imports, plus 132
 Frozen wave `2140-older-grid-readable-contracts-2140` and `accepted-older-grid-readable-contracts-2140` verify real translation-unit instructions/full relocations, 3 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 359 further readable functions
+## Historical accepted checkpoint — 359 further readable functions
 
 Recover Battle4580 as battleCollectModelVertexHandlesAndScaledZ from original VATR and SND bindings and actual native providers. Preserve double promotion consumed as 32-bit tuples, selected signed third-coordinate division by 100, query saturation and all callback/global/count reloads. One reversal of two genuine locals reproduces all 69 original instructions. All six full object records match; the two local pairs exchange enumeration order but existing four native serialized site-order rows already specify the original order. Regenerate extraction before the full build so ASM callers use the canonical name. No packaging metadata edits. Require complete original packed Battle equality, fresh original ROM, frozen source hashes and current uncertainty index before acceptance. Counts359 recoveries/1329 existing cleanups; remaining known code749444 bytes.
 
 Totals: 359 further recoveries after the 225 upstream ordinary imports, plus 1329 existing C semantic cleanups. Current ledger: 841 assembly references = 798 ordinary + 43 entrypoints; 749,444 known remaining instruction bytes; zero unknown sizes; 301 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `2146-battle-vertex-readable-recovery-2146` and `accepted-battle-vertex-readable-recovery-2146` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 359 further readable functions
+
+Clarify original triangle-strip batching, retained two-vertex overlap, phased signed-halfword batch count and triangle order alternation across batches. Preserve every body operation, type/order and cursor/descriptor access. Replace the incorrectly attributed graphics-manager export-pointer declaration at native1754 with the observed Gfx buffer-base view; actual GMGR imports remain at1758. Preserve the raw settings word and original cast/allocation/free behavior, with historical source type and caller-supplied capacity/lifetime explicitly unresolved. Keep the approved SceneCB8 original assembly and precise native provider/unknown-domain note. One older cleanup, one declaration correction(count0), one pure note; no recovery, public ABI, layout or readonly migration. Preserve raw inverse and executable logical coordinates with strip resume136. Require complete original packed GEOM/Scene, fresh original ROM, all frozen sources and uncertainty index before acceptance.
+
+Totals: 359 further recoveries after the 225 upstream ordinary imports, plus 1330 existing C semantic cleanups. Current ledger: 841 assembly references = 798 ordinary + 43 entrypoints; 749,444 known remaining instruction bytes; zero unknown sizes; 301 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `2156-older-geometry-strip-buffer-contracts-2156` and `accepted-older-geometry-strip-buffer-contracts-2156` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
