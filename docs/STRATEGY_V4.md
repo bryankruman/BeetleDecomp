@@ -36,7 +36,7 @@ packed-module checks and original full ROM check after symbol extraction:
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
 matching C are preserved with `#line`. The current ledger has **837** assembly references:
 **794** ordinary functions and **43** entrypoints, with **748,096** known instruction bytes
-and no unknown sizes. The broader name audit still finds **299** address-named C definitions.
+and no unknown sizes. The broader name audit still finds **298** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
 Two further accepted waves recover nine functions. Commit `06bf51c` implements
@@ -2674,10 +2674,19 @@ Totals: 362 further recoveries after the 225 upstream ordinary imports, plus 133
 Frozen wave `2210-older-matrix-forwarding-contracts-2210` and `accepted-older-matrix-forwarding-contracts-2210` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 363 further readable functions
+## Historical accepted checkpoint — 363 further readable functions
 
 Recover Motion12F38 as motionApplyPropertyAndRumbleSequence: preserve all 107 original instruction words and all 20 ordered object relocation records, six original serialized relocations and existing order rows. Preserve captured-context versus later context reload, native callback widths, three rumble merges, CAM/CAR tagged inputs and the DATA vector/PIECE handoff. Keep historical source types, IDs, units, module availability, allocation and lifetime unknowns explicit. Include only the reviewed pure PAUSE Continue/Joker native-contract note; its original ASM remains. All untouched executable and pragma logical coordinates are preserved. Regenerate extraction before full build. Require original packed Motion and PAUSE, fresh original ROM, all frozen source hashes, uncertainty index and complete worker ledger with exactly 837 ordered remaining identities and 748096 positive known bytes. No local missing-ASM sizes are used.
 
 Totals: 363 further recoveries after the 225 upstream ordinary imports, plus 1335 existing C semantic cleanups. Current ledger: 837 assembly references = 794 ordinary + 43 entrypoints; 748,096 known remaining instruction bytes; zero unknown sizes; 299 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `2223-motion-property-sequence-recovery-2223` and `accepted-motion-property-sequence-recovery-2223` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 363 further readable functions
+
+Name one existing C function uvIntersectCopySignedMatrixRowVector and clarify only its parameter/local roles. Preserve signed low 16-bit selectors, negative-row negation, no-write selectors, interleaved component loads/stores and inherited FAKE scaffold. Keep unknown caller domains, spans, aliases/lifetimes and coordinate conventions explicit. Rename all source/header/linker references and add the exact native alias at 0x004020A0. Correct the FontMessage size comment to native 124-byte stride; separately document original source[49] truncation/count 50, terminator/font-pointer write overlap and unresolved input/caller/queue/consumer contracts without inventing a reachable bug. One older cleanup, zero recoveries, two pure notes; no ABI/types/operations/readonly ownership change. All six raw inverses, member selectors and executable logical coordinates pass before writes. Native sizes come only from the accepted worker after all 837 ordered identities match; local missing ASM sizes remain null. Regenerate extraction, then require all three original packed modules, fresh original ROM, 1031 source hashes, full ledger and uncertainty index before acceptance.
+
+Totals: 363 further recoveries after the 225 upstream ordinary imports, plus 1336 existing C semantic cleanups. Current ledger: 837 assembly references = 794 ordinary + 43 entrypoints; 748,096 known remaining instruction bytes; zero unknown sizes; 298 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `2230-older-intersection-font-contracts-2230` and `accepted-older-intersection-font-contracts-2230` verify real translation-unit instructions/full relocations, 3 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

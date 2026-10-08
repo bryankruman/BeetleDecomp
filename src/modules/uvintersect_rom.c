@@ -21,7 +21,7 @@ s32 uvIntersectSegmentScaledTriangle(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32
 s32 uvIntersectSegmentBoundsOverlapRectangle(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6, f32 arg7);
 void uvIntersectClipSegmentToRectangleBounds(f32 *arg0, f32 *arg1, f32 *arg2, f32 *arg3, f32 arg4, f32 arg5, f32 arg6, f32 arg7);
 void uvIntersectClipSegmentDepthToRectangleBounds(f32 *arg0, f32 *arg1, f32 *arg2, f32 *arg3, f32 *arg4, f32 *arg5, f32 arg6, f32 arg7, f32 arg8, f32 arg9);
-void func_uvintersect_rom_004020A0(Mtx4F *arg0, s16 arg1, Vec3F *arg2);
+void uvIntersectCopySignedMatrixRowVector(Mtx4F *arg0, s16 arg1, Vec3F *arg2);
 s32 uvIntersectSegmentTriangleWithNormal(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6, f32 arg7, f32 arg8, f32 arg9, f32 arg10, f32 arg11, f32 arg12, f32 arg13, f32 arg14, f32 *arg15, Vec3F *arg16);
 
 s32 D_uvintersect_rom_00402660[] = {0x00440000, __entrypoint_func_uvintersect_rom_400000, 0, 0};
@@ -39,7 +39,7 @@ void __entrypoint_func_uvintersect_rom_400000(UvIntersect_Exports* exports) {
     exports->func_uvintersect_rom_00400530 = func_uvintersect_rom_00400530;
     exports->uvIntersectClipSegmentDepthToRectangleBounds = uvIntersectClipSegmentDepthToRectangleBounds;
     exports->uvIntersectGetSegmentSphereNormal = uvIntersectGetSegmentSphereNormal;
-    exports->func_uvintersect_rom_004020A0 = func_uvintersect_rom_004020A0;
+    exports->uvIntersectCopySignedMatrixRowVector = uvIntersectCopySignedMatrixRowVector;
     exports->uvIntersectGetScaledTriangleNormal = uvIntersectGetScaledTriangleNormal;
     exports->uvIntersectSegmentTriangleWithNormal = uvIntersectSegmentTriangleWithNormal;
     exports->uvIntersectClassifySphereTriangleContact = uvIntersectClassifySphereTriangleContact;
@@ -868,51 +868,63 @@ void uvIntersectClipSegmentDepthToRectangleBounds(f32* startX, f32* startY, f32*
 }
 #line 790 "src/modules/uvintersect_rom.c"
 
-void func_uvintersect_rom_004020A0(Mtx4F *arg0, s16 arg1, Vec3F *arg2) {
-    s32 c = (s32) arg1;
-    switch (c) {
+#line 791 "src/modules/uvintersect_rom.c"
+
+/* Select matrix rows 0, 1 or 2 with signed selectors 1, 2 or 3;
+ * negative selectors negate each component. Other selectors leave the
+ * output untouched. Preserve interleaved component loads and stores.
+ * RE_UNKNOWN: matrix/vector spans, caller selector domains, storage
+ * aliases/lifetimes and coordinate conventions require original callers,
+ * parameter producers and allocations. The inherited selector increment/
+ * decrement scaffold has unresolved historical-source justification;
+ * trace earlier recovery/compiler evidence before removing it. */
+#line 791 "src/modules/uvintersect_rom.c"
+void uvIntersectCopySignedMatrixRowVector(Mtx4F *matrix, s16 signedRow, Vec3F *outVector) {
+    s32 rowSelector = (s32) signedRow;
+    switch (rowSelector) {
         case -1:
-            arg2->x = -arg0->m[0][0];
-            arg2->y = -arg0->m[0][1];
-            arg2->z = -arg0->m[0][2];
+            outVector->x = -matrix->m[0][0];
+            outVector->y = -matrix->m[0][1];
+            outVector->z = -matrix->m[0][2];
             break;
 
         case 1:
-            arg2->x = arg0->m[0][0];
-            arg2->y = arg0->m[0][1];
-            arg2->z = arg0->m[0][2];
+            outVector->x = matrix->m[0][0];
+            outVector->y = matrix->m[0][1];
+            outVector->z = matrix->m[0][2];
             break;
 
         case -2:
-            arg1++; // FAKE
-            arg1--;
-            arg2->x = -arg0->m[1][0];
-            arg2->y = -arg0->m[1][1];
-            arg2->z = -arg0->m[1][2];
+            signedRow++; // FAKE
+            signedRow--;
+            outVector->x = -matrix->m[1][0];
+            outVector->y = -matrix->m[1][1];
+            outVector->z = -matrix->m[1][2];
             break;
 
         case 2:
-            arg2->x = arg0->m[1][0];
-            arg2->y = arg0->m[1][1];
-            arg2->z = arg0->m[1][2];
+            outVector->x = matrix->m[1][0];
+            outVector->y = matrix->m[1][1];
+            outVector->z = matrix->m[1][2];
             break;
 
         case -3:
-            arg2->x = -arg0->m[2][0];
-            arg2->y = -arg0->m[2][1];
-            arg2->z = -arg0->m[2][2];
+            outVector->x = -matrix->m[2][0];
+            outVector->y = -matrix->m[2][1];
+            outVector->z = -matrix->m[2][2];
             break;
 
         case 3:
-            arg2->x = arg0->m[2][0];
-            arg2->y = arg0->m[2][1];
-            arg2->z = arg0->m[2][2];
+            outVector->x = matrix->m[2][0];
+            outVector->y = matrix->m[2][1];
+            outVector->z = matrix->m[2][2];
             break;
 
         default:
             break;
     }
 }
+#line 836 "src/modules/uvintersect_rom.c"
 
 #line 837 "src/modules/uvintersect_rom.c"
 /* Reject separated segment/triangle bounds, intersect the segment

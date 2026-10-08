@@ -13,7 +13,7 @@ typedef struct FontMessage_s {
     u8 a;
     s16 str16[50];
     ParsedUVFT *font;
-} FontMessage; // size = 0x70
+} FontMessage; // size = 0x7C; original queue stride
 
 
 extern ParsedUVFT *sParsedFont;
@@ -205,6 +205,16 @@ void uvFontPrintStr(s32 x, s32 y, char *str) {
     }
 }
 #else
+/* Queue a message using the original 124-byte stride and font word at +120.
+ * RE_ORIGINAL_QUIRK: when the source length exceeds 50, write source[49] = 0
+ * but retain a glyph count of 50. The terminator halfword then writes offset
+ * +120, and the following font-pointer store overwrites that same offset.
+ * Preserve this original order; this note changes no text or queue behavior.
+ * RE_UNKNOWN: mutable-input and caller-length guarantees, actual queue
+ * capacity and the glyph consumer's termination contract. Resolve through
+ * all print callers, queue allocation/reset writers and glyph consumers;
+ * the observed writes alone establish no reachable overflow or player fault. */
+#line 186 "src/modules/uvfont_rom.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvfont_rom/uvFontPrintStr.s")
 #endif
 

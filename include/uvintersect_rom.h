@@ -18,7 +18,7 @@ typedef struct UvIntersect_Exports_s {
     /* 0x30 */ s32 (*uvIntersectSegmentBoundsOverlapRectangle)(f32, f32, f32, f32, f32, f32, f32, f32); /* inferred */
     /* 0x34 */ void (*uvIntersectClipSegmentToRectangleBounds)(f32 *, f32 *, f32 *, f32 *, f32, f32, f32, f32); /* inferred */
     /* 0x38 */ void (*uvIntersectClipSegmentDepthToRectangleBounds)(f32 *, f32 *, f32 *, f32 *, f32 *, f32 *, f32, f32, f32, f32); /* inferred */
-    /* 0x3C */ void (*func_uvintersect_rom_004020A0)(Mtx4F *, s16, Vec3F *); /* inferred */
+    /* 0x3C */ void (*uvIntersectCopySignedMatrixRowVector)(Mtx4F *, s16, Vec3F *); /* inferred */
     /* 0x40 */ s32 (*uvIntersectSegmentTriangleWithNormal)(f32, f32, f32, f32, f32, f32, f32, f32, f32, f32, f32, f32, f32, f32, f32, f32 *, Vec3F *); /* inferred */
 } UvIntersect_Exports;                              /* size = 0x44 */
 

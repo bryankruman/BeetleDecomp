@@ -540,7 +540,7 @@ s16 func_uvmodel_rom_004006B4(f32 arg0, f32 arg1, f32 arg2, f32 arg3, Mtx4F *arg
                 var_fs0 = sp17C;
                 spB4 = -3;
             }
-            sUvIntersectExports->func_uvintersect_rom_004020A0(arg4, spB4, temp_s0_5);
+            sUvIntersectExports->uvIntersectCopySignedMatrixRowVector(arg4, spB4, temp_s0_5);
             temp_fv0_7 = (-var_fs0) / var_fs1;
             // clang-format off
             if (temp_fv0_7 < 1.0) { D_uvmodel_rom_00403144[*D_uvmodel_rom_00403158] = temp_fv0_7; } else { temp_fv0_7 = 1.0; D_uvmodel_rom_00403144[*D_uvmodel_rom_00403158] = temp_fv0_7;
@@ -726,7 +726,7 @@ s16 func_uvmodel_rom_0040199C(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, 
         }
     }
     if (!(arg8->unk5 & 4)) {
-        sUvIntersectExports->func_uvintersect_rom_004020A0(
+        sUvIntersectExports->uvIntersectCopySignedMatrixRowVector(
             arg6, sp148, &D_uvmodel_rom_00403150[*D_uvmodel_rom_00403158]);
         sUvFvecExports->uvVec3FScale(&D_uvmodel_rom_00403150[*D_uvmodel_rom_00403158],
                                      &D_uvmodel_rom_00403150[*D_uvmodel_rom_00403158], arg8->unk10);
@@ -737,7 +737,7 @@ s16 func_uvmodel_rom_0040199C(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, 
             D_uvmodel_rom_00403144[*D_uvmodel_rom_00403158] = sp154;
             *D_uvmodel_rom_00403158 += 1;
             D_uvmodel_rom_00403148[*D_uvmodel_rom_00403158] = *D_uvmodel_rom_00403154;
-            sUvIntersectExports->func_uvintersect_rom_004020A0(
+            sUvIntersectExports->uvIntersectCopySignedMatrixRowVector(
                 arg6, sp146, &D_uvmodel_rom_00403150[*D_uvmodel_rom_00403158]);
             sUvFvecExports->uvVec3FScale(&D_uvmodel_rom_00403150[*D_uvmodel_rom_00403158],
                                          &D_uvmodel_rom_00403150[*D_uvmodel_rom_00403158], arg8->unk10);

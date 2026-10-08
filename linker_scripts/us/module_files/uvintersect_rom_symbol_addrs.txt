@@ -35,3 +35,4 @@ uvIntersectSegmentBoundsOverlapRectangle = 0x0040191C; // type:func
 uvIntersectClipSegmentToRectangleBounds = 0x00401A2C; // type:func
 uvIntersectClipSegmentDepthToRectangleBounds = 0x00401CB0; // type:func
 uvIntersectSegmentTriangleWithNormal = 0x004021A0; // type:func
+uvIntersectCopySignedMatrixRowVector = 0x004020A0; // type:func
