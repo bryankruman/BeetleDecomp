@@ -240,7 +240,26 @@ void gameGuiAddRaceAndBattleControls(s32 parentWord) {
 #line 96 "src/modules/gamegui.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/gamegui/func_gamegui_00400370.s")
-
+/*
+ * Append a text-list panel and its thirteen state-action rows in original order.
+ * Reuse the first two rows' code-address property word and retain their returned
+ * addresses in the original shared words. Reload provider tables after calls.
+ * Original GUI exports 0x84, 0x94, 0x98 and 0x9C establish append, signed-index
+ * allocation/access, and an exact 30-byte copy that continues after NUL.
+ * MISC export 0x10C forwards the unchanged third word to GUI property 3.
+ * RE_ORIGINAL_QUIRK: the allocator uses index 50 after scanning 50 active
+ * entries; this caller does not check exhaustion. Reachability is unresolved.
+ * RE_UNKNOWN: historical parent/shared-word types, complete label and pool
+ * extents, occupancy/alias/lifetime guarantees, and property 3's action-dispatch
+ * ABI. Resolve original allocations, label boundaries, teardown and all property
+ * readers before changing bounds, ownership or code-address declarations.
+ * Readable C is parked: all 592 native/draft bytes have only two stack-offset
+ * differences for the reused action local (36 versus 32); all 60 complete
+ * relocation records match as a multiset, with only serialization order changed.
+ * Recover original storage/lifetime evidence and prove packed modules and ROM;
+ * a local's stack offset alone does not justify extra storage or padding.
+ */
+#line 99 "src/modules/gamegui.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/gamegui/func_gamegui_004014F8.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/gamegui/func_gamegui_00401748.s")
