@@ -4,7 +4,7 @@
 
 #define VERTEX_COUNT_DEFAULT 100
 
-// uvcback_rom exports
+// GEOM descriptor storage view; RE_UNKNOWN: historical outer prefix role.
 typedef struct UnkStruct_DGeom_s {
     s32 unk0;
     UvGeom_Rom_0040019C unk4;
@@ -101,6 +101,13 @@ void uvDgeomModuleCleanup(void) {
 }
 #line 100 "src/modules/uvdgeom_rom.c"
 
+/* Preserve the original signed limit < count rejection: equality reaches
+ * the indexed stores, with repeated count/base reloads and 16-bit count update.
+ * RE_ORIGINAL_QUIRK: there is no equality or negative-count rejection here.
+ * RE_UNKNOWN: allocated extent and caller prevention of limit/negative/wrapped
+ * counts require original allocation/settings and append/reset callers;
+ * no reachable overrun or intended limit convention has been established. */
+#line 101 "src/modules/uvdgeom_rom.c"
 s16 uvVtx(s32 x, s32 y, s32 z, s32 s, s32 t, s32 r, s32 g, s32 b, s32 a) {
     if (sMaxVertexCount < sVertexCount) {
         return sVertexCount;
@@ -173,43 +180,66 @@ void uvDgeomEndTriangleMesh(void) {
 #line 163 "src/modules/uvdgeom_rom.c"
 
 #line 164 "src/modules/uvdgeom_rom.c"
-/* Submit the current grid vertex range and supplied grid parameters,
- * honoring the original optional override and shared cursor. */
+#line 164 "src/modules/uvdgeom_rom.c"
+
+/* Submit the current grid range and four supplied words, honoring the override.
+ * Original GEOM slot 0x08 initializes the inner 20-byte descriptor before its
+ * own reads, or returns at its minimum-dimension gate without reading it.
+ * RE_UNKNOWN: the inherited outer prefix and pad roles, valid grid/range
+ * domains, vertex extent and display-list capacity/alias/lifetime guarantees
+ * need original local-storage evidence, range producers and drawing callers. */
+#line 166 "src/modules/uvdgeom_rom.c"
 void uvDgeomEndGrid(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
-    s32 pad[1]; // unused members from UvGeom_Rom_0040019C?
-    UnkStruct_DGeom sp38;
-    Gfx **gdl;
+    s32 pad[1]; // RE_UNKNOWN: inherited local storage role; retain until original layout is proved.
+    UnkStruct_DGeom descriptorStorage;
+    Gfx **displayListHead;
     s16 endVertex;
 
-    gdl = sGfxMgrExports->uvGetDisplayListHead();
+    displayListHead = sGfxMgrExports->uvGetDisplayListHead();
     endVertex = sVertexCount;
     if (D_uvdgeom_rom_00400796 != -1) {
         sFirstGrid = D_uvdgeom_rom_00400796;
         endVertex = D_uvdgeom_rom_00400798;
     }
     D_uvdgeom_rom_004007B0->uvEndGrid(arg0, arg1, arg2, arg3, endVertex - sFirstGrid,
-                                 &sVertexArray[sFirstGrid], &sp38.unk4, gdl);
+                                 &sVertexArray[sFirstGrid], &descriptorStorage.unk4, displayListHead);
 }
+#line 181 "src/modules/uvdgeom_rom.c"
 #line 179 "src/modules/uvdgeom_rom.c"
 
-// TODO: Temporal fix
-void uvVtxEndPoly(void) {
-    s32 pad[1]; // unused members from UvGeom_Rom_0040019C?
-    UnkStruct_DGeom sp28;
-    Gfx **gdl;
-    s16 vtxCount;
+#line 180 "src/modules/uvdgeom_rom.c"
 
-    gdl = sGfxMgrExports->uvGetDisplayListHead();
-    vtxCount = sVertexCount;
+/* Submit the current polygon range, honoring the stored range override.
+ * Original GEOM slot 0x14 returns for count < 3 without reading the descriptor;
+ * otherwise it initializes the inner 20 bytes before its descriptor read.
+ * RE_UNKNOWN: the inherited outer prefix and pad roles, valid vertex ranges
+ * and display-list capacity/alias/lifetime guarantees need original local
+ * storage evidence, range producers and drawing callers. */
+#line 181 "src/modules/uvdgeom_rom.c"
+void uvVtxEndPoly(void) {
+    s32 pad[1]; // RE_UNKNOWN: inherited local storage role; retain until original layout is proved.
+    UnkStruct_DGeom descriptorStorage;
+    Gfx **displayListHead;
+    s16 endVertex;
+
+    displayListHead = sGfxMgrExports->uvGetDisplayListHead();
+    endVertex = sVertexCount;
     if (D_uvdgeom_rom_00400796 != -1) {
         sFirstPoly = D_uvdgeom_rom_00400796;
-        vtxCount = D_uvdgeom_rom_00400798;
+        endVertex = D_uvdgeom_rom_00400798;
     }
-    D_uvdgeom_rom_004007B0->uvVtxEndPolyInternal(vtxCount - sFirstPoly,
-                                  &sVertexArray[sFirstPoly], &sp28.unk4, gdl);
+    D_uvdgeom_rom_004007B0->uvVtxEndPolyInternal(endVertex - sFirstPoly,
+                                  &sVertexArray[sFirstPoly], &descriptorStorage.unk4, displayListHead);
 }
+#line 196 "src/modules/uvdgeom_rom.c"
 
-// uvVtx duplicate?
+/* The native instruction bytes match uvVtx. Preserve the original signed limit < count rejection: equality reaches
+ * the indexed stores, with repeated count/base reloads and 16-bit count update.
+ * RE_ORIGINAL_QUIRK: there is no equality or negative-count rejection here.
+ * RE_UNKNOWN: allocated extent and caller prevention of limit/negative/wrapped
+ * counts require original allocation/settings and append/reset callers;
+ * no reachable overrun or intended limit convention has been established. */
+#line 198 "src/modules/uvdgeom_rom.c"
 s16 uvVtxDup(s32 x, s32 y, s32 z, s32 s, s32 t, s32 r, s32 g, s32 b, s32 a) {
     if (sMaxVertexCount < sVertexCount) {
         return sVertexCount;

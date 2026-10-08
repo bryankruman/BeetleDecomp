@@ -362,48 +362,59 @@ void uvVtxRect(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
     gDPSetCycleType(gdl[0]++, G_CYC_2CYCLE);
 }
 
-void uvVtxEndPolyInternal(s32 arg0, s32 arg1, UvGeom_Rom_0040019C *arg2, Gfx **gdl) {
-    s16 var_a2;
-    s16 sp34;
-    s16 var_v0;
-    s16 i;
-    s16 var_ra;
-    Vtx *var_t2;
+#line 352 "src/modules/uvgeom_rom.c"
 
-    var_ra = TRUE;
-    if (arg0 < 3) {
+/* Emit polygon triangles in the original batches, retaining the first-batch
+ * and later-batch vertex commands and repeated display-list-head reloads.
+ * Count < 3 returns before descriptor use; otherwise the native initializer
+ * fills the inner 20-byte descriptor before its vertex-address read.
+ * RE_UNKNOWN: valid vertex-address/count spans, output capacity, alias/lifetime
+ * domains and the historical source declaration of the forwarded 32-bit word
+ * require original range producers, drawing callers and descriptor consumers. */
+#line 352 "src/modules/uvgeom_rom.c"
+void uvVtxEndPolyInternal(s32 remainingVertices, s32 vertexAddressWord, UvGeom_Rom_0040019C *mesh, Gfx **displayListHead) {
+    s16 triangleCount;
+    s16 displayListMode;
+    s16 batchVertexCount;
+    s16 triangleIndex;
+    s16 firstBatch;
+    Vtx *vertices;
+
+    firstBatch = TRUE;
+    if (remainingVertices < 3) {
         return;
     }
-    sp34 = uvGeomInitializeMeshDescriptor(arg0, arg1, arg2, gdl);
-    var_t2 = arg2->unk0;
-    while (arg0 > 0) {
-        if (var_ra) {
-            var_ra = FALSE;
-            if (arg0 < 16) {
-                var_v0 = arg0;
+    displayListMode = uvGeomInitializeMeshDescriptor(remainingVertices, vertexAddressWord, mesh, displayListHead);
+    vertices = mesh->unk0;
+    while (remainingVertices > 0) {
+        if (firstBatch) {
+            firstBatch = FALSE;
+            if (remainingVertices < 16) {
+                batchVertexCount = remainingVertices;
             } else {
-                var_v0 = 16;
+                batchVertexCount = 16;
             }
-            gSPVertex(gdl[0]++, OS_PHYSICAL_TO_K0(var_t2), var_v0, 0);
-            var_a2 = var_v0 - 2;
+            gSPVertex(displayListHead[0]++, OS_PHYSICAL_TO_K0(vertices), batchVertexCount, 0);
+            triangleCount = batchVertexCount - 2;
         } else {
-            if (arg0 >= 15) {
-                var_v0 = 15;
-                gSPVertex(gdl[0]++, OS_PHYSICAL_TO_K0(var_t2), 14, 1);
-                gSP1Triangle(gdl[0]++, 0, 15, 1, 0);
-                gSPVertex(gdl[0]++, (((u32) (var_t2) + 0x80000000)) + 14 * sizeof(Vtx), 1, 15);
+            if (remainingVertices >= 15) {
+                batchVertexCount = 15;
+                gSPVertex(displayListHead[0]++, OS_PHYSICAL_TO_K0(vertices), 14, 1);
+                gSP1Triangle(displayListHead[0]++, 0, 15, 1, 0);
+                gSPVertex(displayListHead[0]++, (((u32) (vertices) + 0x80000000)) + 14 * sizeof(Vtx), 1, 15);
             } else {
-                var_v0 = arg0;
-                gSPVertex(gdl[0]++, OS_PHYSICAL_TO_K0(var_t2), var_v0, 1);
-                gSP1Triangle(gdl[0]++, 0, 15, 1, 0);
+                batchVertexCount = remainingVertices;
+                gSPVertex(displayListHead[0]++, OS_PHYSICAL_TO_K0(vertices), batchVertexCount, 1);
+                gSP1Triangle(displayListHead[0]++, 0, 15, 1, 0);
             }
-            var_a2 = var_v0 - 1;
+            triangleCount = batchVertexCount - 1;
         }
-        var_t2 += var_v0;
-        arg0 -= var_v0;
-        for (i = 0; i < var_a2; i++) {
-            gSP1Triangle(gdl[0]++, 0, i + 1, i + 2, 0);
+        vertices += batchVertexCount;
+        remainingVertices -= batchVertexCount;
+        for (triangleIndex = 0; triangleIndex < triangleCount; triangleIndex++) {
+            gSP1Triangle(displayListHead[0]++, 0, triangleIndex + 1, triangleIndex + 2, 0);
         }
     }
-    uvGeomFinishOwnedDisplayList((s32) sp34, gdl);
+    uvGeomFinishOwnedDisplayList((s32) displayListMode, displayListHead);
 }
+#line 397 "src/modules/uvgeom_rom.c"

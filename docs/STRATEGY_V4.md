@@ -2584,10 +2584,19 @@ Totals: 357 further recoveries after the 225 upstream ordinary imports, plus 132
 Frozen wave `2108-texture-ai-readable-contracts-2108` and `accepted-texture-ai-readable-contracts-2108` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 358 further readable functions
+## Historical accepted checkpoint — 358 further readable functions
 
 Recover Motion11BB4 as motionQueryHasNonExcludedKind using original lowercase isct and scen loader bindings and actual query/texture provider instructions. Ground the 88-byte result span in original copier4200 rather than unused stack space. Preserve signed scene byte promotion, second callback provider/global reloads, kind reclassification and u16 return flag. One reversal of the two real local declarations matches every original instruction; historical lexical declaration order remains unknown. Object relocation enumeration swaps two complete kernel-global HI/LO pairs, but all eight full records/sites match, actual native target serialized RELA and existing order metadata are empty in this range, and no packaging metadata is changed. Require full original packed Motion equality, fresh original ROM, all frozen source hashes and uncertainty-index freshness before acceptance. Counts358 recoveries/1325 existing cleanups; remaining known code749720bytes.
 
 Totals: 358 further recoveries after the 225 upstream ordinary imports, plus 1325 existing C semantic cleanups. Current ledger: 842 assembly references = 799 ordinary + 43 entrypoints; 749,720 known remaining instruction bytes; zero unknown sizes; 301 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `2115-motion-collision-readable-recovery-2115` and `accepted-motion-collision-readable-recovery-2115` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 358 further readable functions
+
+Clarify dynamic geometry descriptor storage, display-list heads, polygon range and batching roles. Preserve raw forwarded words, minimum-count rejection, original descriptor initialization, vertex commands, repeated cursor reloads and original range overrides. Preserve all 860 instruction bytes and 34 complete ordered relocation records. Correct the inaccurate callback-export type label and document original signed vertex append limit/count behavior without a repair or reachable-overrun claim. Retain inherited outer prefix/pad roles as unknown and preserve all executable logical source coordinates, including explicit resumes181/196/397. Count two new older C cleanups, with the grid already counted in historical562. No new recovery, storage/ABI changes or readonly migration. Require original packed modules, fresh original ROM, all frozen sources and uncertainty-index freshness before acceptance.
+
+Totals: 358 further recoveries after the 225 upstream ordinary imports, plus 1327 existing C semantic cleanups. Current ledger: 842 assembly references = 799 ordinary + 43 entrypoints; 749,720 known remaining instruction bytes; zero unknown sizes; 301 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `2129-older-geometry-readable-contracts-2129` and `accepted-older-geometry-readable-contracts-2129` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

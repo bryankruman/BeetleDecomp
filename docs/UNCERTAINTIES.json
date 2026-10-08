@@ -275,7 +275,7 @@
     "src/modules/uvcont_rom.c": "353b91ed7beb73cb8a8a77db2514ea18a4d44afb0297d68e6999fb5a33be7b58",
     "src/modules/uvcontourld_rom.c": "41ea663b547c85255087cbba8cedc39bb964795476f0d682e11dafc61ae2d97a",
     "src/modules/uvdbg_rom.c": "20dbff47ebe571eb2b5462d238cd16c53f00157a154f22f8c051f64b8f1dce0b",
-    "src/modules/uvdgeom_rom.c": "c49d09373b57acd2f392c59c96ffa306dc26b7e576f3dc8f86c143607e49b4cf",
+    "src/modules/uvdgeom_rom.c": "6fb52252f88afc60e053a4213e19fdebd44296f68d23ef8116e80f6460503ace",
     "src/modules/uvdobj_rom.c": "89b433fd4e7be414aa2748b948ab64853856a33b64ccdc4eb98854498def697f",
     "src/modules/uvdsetld_rom.c": "274d09695ac5beb2913e83e67baba614f43b5f52001c6d62c18a22bee027edf4",
     "src/modules/uvdyn_rom.c": "75452ccfc5179ee2ef080780960447ba028968464c3d3adf902fe7db4d2b15ac",
@@ -288,7 +288,7 @@
     "src/modules/uvfontld_rom.c": "81262e86812be50e51fbe741f6e4b0475b58c71b4d822a50ae83c16602fd4733",
     "src/modules/uvfvec_rom.c": "c0d542dc9473cb90630fe609a22adc6b982d02725e71082d42b1dc4d9ef66893",
     "src/modules/uvfx_rom.c": "ea9e30b63484a3d999463727ce7bf9198e21261cb72a88e1c9865da3af27c5e8",
-    "src/modules/uvgeom_rom.c": "05929d722be8edaf27ba47320176cc2edcba19b0b9e10ce74c72902406c79fdd",
+    "src/modules/uvgeom_rom.c": "71716c329bd982cccfa34787cb14638629b2ab5fc06c6cc2737bfaf419f552c1",
     "src/modules/uvgfxmgr_rom.c": "c21151fb9c51017919699a7834a7a76ff06a565f7d6cb1b9c462a43f288971b9",
     "src/modules/uvgfxstate_rom.c": "f2ac7bdad30243e6bec45faa1438be25934cece6413a0e6016fe445d9fbd4b36",
     "src/modules/uvgrph_rom.c": "4b8f89334bd11814bb28529111c3bb273f7c0c82b0048216032b299b1db81d72",
@@ -329,8 +329,8 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "9fe5828f32c3159db6111bab48406cb32404372e74eb98bf748879b9b7872d2d",
-    "docs/VALIDATION_20261006.md": "82b092e572b14b7fb717372f88e07046281351622513080c83f1705d4b86cf9b"
+    "docs/STRATEGY_V4.md": "0390fc460a8d87c1e17487686a70a97ba81cbbabb04ac6427e917c37c798a59d",
+    "docs/VALIDATION_20261006.md": "93a4ed6d4badbd08a24094bf66b7f426ab3a04048a832b58d14167e8b0fabe81"
   },
   "counts": {
     "address_function": 983,
@@ -338,13 +338,13 @@
     "assembly": 844,
     "audit_debt": 28,
     "conditional_draft": 4,
-    "decompiler_local": 887,
-    "draft_marker": 29,
-    "explicit_unknown": 722,
+    "decompiler_local": 882,
+    "draft_marker": 28,
+    "explicit_unknown": 729,
     "layout_padding": 264,
     "offset_field": 1434,
     "opaque_type": 282,
-    "original_quirk": 187,
+    "original_quirk": 189,
     "uncertainty_note": 88,
     "unused_identifier": 119
   },
@@ -52408,15 +52408,15 @@
       "lines": [
         18,
         83,
-        118,
-        138,
-        166,
-        167,
-        186,
-        187,
-        204,
-        205,
-        227
+        125,
+        145,
+        173,
+        174,
+        200,
+        201,
+        227,
+        228,
+        257
       ],
       "owners": [
         {
@@ -52430,52 +52430,52 @@
         {
           "kind": "function",
           "name": "uvDgeomEndGrid",
-          "declaration_line": 178,
+          "declaration_line": 192,
           "lines": [
-            186,
-            187
+            200,
+            201
           ]
         },
         {
           "kind": "function",
           "name": "uvDgeomEndTriangleMesh",
-          "declaration_line": 158,
+          "declaration_line": 165,
           "lines": [
-            166,
-            167
+            173,
+            174
           ]
         },
         {
           "kind": "function",
           "name": "uvDgeomSetVertexRange",
-          "declaration_line": 137,
+          "declaration_line": 144,
           "lines": [
-            138
+            145
           ]
         },
         {
           "kind": "function",
           "name": "uvVtx",
-          "declaration_line": 104,
+          "declaration_line": 111,
           "lines": [
-            118
+            125
           ]
         },
         {
           "kind": "function",
           "name": "uvVtxDup",
-          "declaration_line": 213,
+          "declaration_line": 243,
           "lines": [
-            227
+            257
           ]
         },
         {
           "kind": "function",
           "name": "uvVtxEndPoly",
-          "declaration_line": 196,
+          "declaration_line": 219,
           "lines": [
-            204,
-            205
+            227,
+            228
           ]
         },
         {
@@ -52497,10 +52497,10 @@
         21,
         82,
         83,
-        139,
-        168,
-        188,
-        206
+        146,
+        175,
+        202,
+        229
       ],
       "owners": [
         {
@@ -52515,33 +52515,33 @@
         {
           "kind": "function",
           "name": "uvDgeomEndGrid",
-          "declaration_line": 178,
+          "declaration_line": 192,
           "lines": [
-            188
+            202
           ]
         },
         {
           "kind": "function",
           "name": "uvDgeomEndTriangleMesh",
-          "declaration_line": 158,
+          "declaration_line": 165,
           "lines": [
-            168
+            175
           ]
         },
         {
           "kind": "function",
           "name": "uvDgeomSetVertexRange",
-          "declaration_line": 137,
+          "declaration_line": 144,
           "lines": [
-            139
+            146
           ]
         },
         {
           "kind": "function",
           "name": "uvVtxEndPoly",
-          "declaration_line": 196,
+          "declaration_line": 219,
           "lines": [
-            206
+            229
           ]
         },
         {
@@ -52676,9 +52676,9 @@
       "lines": [
         26,
         87,
-        170,
-        190,
-        208
+        177,
+        204,
+        231
       ],
       "owners": [
         {
@@ -52692,25 +52692,25 @@
         {
           "kind": "function",
           "name": "uvDgeomEndGrid",
-          "declaration_line": 178,
+          "declaration_line": 192,
           "lines": [
-            190
+            204
           ]
         },
         {
           "kind": "function",
           "name": "uvDgeomEndTriangleMesh",
-          "declaration_line": 158,
+          "declaration_line": 165,
           "lines": [
-            170
+            177
           ]
         },
         {
           "kind": "function",
           "name": "uvVtxEndPoly",
-          "declaration_line": 196,
+          "declaration_line": 219,
           "lines": [
-            208
+            231
           ]
         },
         {
@@ -94124,9 +94124,9 @@
         31,
         32,
         37,
-        130,
-        178,
-        190
+        137,
+        192,
+        204
       ],
       "owners": [
         {
@@ -94140,10 +94140,10 @@
         {
           "kind": "function",
           "name": "uvDgeomEndGrid",
-          "declaration_line": 178,
+          "declaration_line": 192,
           "lines": [
-            178,
-            190
+            192,
+            204
           ]
         },
         {
@@ -94165,9 +94165,9 @@
         {
           "kind": "function",
           "name": "uvFlipVtx",
-          "declaration_line": 130,
+          "declaration_line": 137,
           "lines": [
-            130
+            137
           ]
         }
       ]
@@ -94180,8 +94180,8 @@
       "lines": [
         32,
         37,
-        178,
-        190
+        192,
+        204
       ],
       "owners": [
         {
@@ -94195,10 +94195,10 @@
         {
           "kind": "function",
           "name": "uvDgeomEndGrid",
-          "declaration_line": 178,
+          "declaration_line": 192,
           "lines": [
-            178,
-            190
+            192,
+            204
           ]
         },
         {
@@ -94218,8 +94218,8 @@
       "symbol": "arg2",
       "lines": [
         37,
-        178,
-        190
+        192,
+        204
       ],
       "owners": [
         {
@@ -94233,10 +94233,10 @@
         {
           "kind": "function",
           "name": "uvDgeomEndGrid",
-          "declaration_line": 178,
+          "declaration_line": 192,
           "lines": [
-            178,
-            190
+            192,
+            204
           ]
         }
       ]
@@ -94248,8 +94248,8 @@
       "symbol": "arg3",
       "lines": [
         37,
-        178,
-        190
+        192,
+        204
       ],
       "owners": [
         {
@@ -94263,52 +94263,10 @@
         {
           "kind": "function",
           "name": "uvDgeomEndGrid",
-          "declaration_line": 178,
+          "declaration_line": 192,
           "lines": [
-            178,
-            190
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-0b16e0491305",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvdgeom_rom.c",
-      "symbol": "sp28",
-      "lines": [
-        198,
-        209
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvVtxEndPoly",
-          "declaration_line": 196,
-          "lines": [
-            198,
-            209
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-93d0c0c5a4fe",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvdgeom_rom.c",
-      "symbol": "sp38",
-      "lines": [
-        180,
-        191
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvDgeomEndGrid",
-          "declaration_line": 178,
-          "lines": [
-            180,
-            191
+            192,
+            204
           ]
         }
       ]
@@ -103878,16 +103836,7 @@
         337,
         338,
         339,
-        360,
-        365,
-        374,
-        377,
-        379,
-        382,
-        383,
-        390,
-        396,
-        403
+        360
       ],
       "owners": [
         {
@@ -103976,22 +103925,6 @@
         },
         {
           "kind": "function",
-          "name": "uvVtxEndPolyInternal",
-          "declaration_line": 365,
-          "lines": [
-            365,
-            374,
-            377,
-            379,
-            382,
-            383,
-            390,
-            396,
-            403
-          ]
-        },
-        {
-          "kind": "function",
           "name": "uvVtxRect",
           "declaration_line": 20,
           "lines": [
@@ -104040,9 +103973,7 @@
         352,
         353,
         354,
-        360,
-        365,
-        377
+        360
       ],
       "owners": [
         {
@@ -104117,15 +104048,6 @@
         },
         {
           "kind": "function",
-          "name": "uvVtxEndPolyInternal",
-          "declaration_line": 365,
-          "lines": [
-            365,
-            377
-          ]
-        },
-        {
-          "kind": "function",
           "name": "uvVtxRect",
           "declaration_line": 20,
           "lines": [
@@ -104175,10 +104097,7 @@
         342,
         343,
         344,
-        360,
-        365,
-        377,
-        378
+        360
       ],
       "owners": [
         {
@@ -104250,16 +104169,6 @@
           "declaration_line": 21,
           "lines": [
             21
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvVtxEndPolyInternal",
-          "declaration_line": 365,
-          "lines": [
-            365,
-            377,
-            378
           ]
         },
         {
@@ -104583,29 +104492,6 @@
             113,
             121,
             147
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-b08f77e349ea",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvgeom_rom.c",
-      "symbol": "sp34",
-      "lines": [
-        367,
-        377,
-        408
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvVtxEndPolyInternal",
-          "declaration_line": 365,
-          "lines": [
-            367,
-            377,
-            408
           ]
         }
       ]
@@ -104996,11 +104882,7 @@
         133,
         134,
         135,
-        137,
-        366,
-        388,
-        400,
-        404
+        137
       ],
       "owners": [
         {
@@ -105017,42 +104899,6 @@
             134,
             135,
             137
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvVtxEndPolyInternal",
-          "declaration_line": 365,
-          "lines": [
-            366,
-            388,
-            400,
-            404
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-92056d5fb496",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvgeom_rom.c",
-      "symbol": "var_ra",
-      "lines": [
-        370,
-        373,
-        380,
-        381
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvVtxEndPolyInternal",
-          "declaration_line": 365,
-          "lines": [
-            370,
-            373,
-            380,
-            381
           ]
         }
       ]
@@ -105300,14 +105146,7 @@
         205,
         207,
         212,
-        214,
-        371,
-        378,
-        387,
-        392,
-        394,
-        397,
-        402
+        214
       ],
       "owners": [
         {
@@ -105337,20 +105176,6 @@
             132,
             135
           ]
-        },
-        {
-          "kind": "function",
-          "name": "uvVtxEndPolyInternal",
-          "declaration_line": 365,
-          "lines": [
-            371,
-            378,
-            387,
-            392,
-            394,
-            397,
-            402
-          ]
         }
       ]
     },
@@ -105375,45 +105200,6 @@
             172,
             180,
             200
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-c700d0a8df55",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvgeom_rom.c",
-      "symbol": "var_v0",
-      "lines": [
-        368,
-        383,
-        385,
-        387,
-        388,
-        391,
-        396,
-        397,
-        400,
-        402,
-        403
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvVtxEndPolyInternal",
-          "declaration_line": 365,
-          "lines": [
-            368,
-            383,
-            385,
-            387,
-            388,
-            391,
-            396,
-            397,
-            400,
-            402,
-            403
           ]
         }
       ]
@@ -123160,26 +122946,6 @@
       ]
     },
     {
-      "id": "Q-9e86a10d8e0c",
-      "kind": "draft_marker",
-      "path": "src/modules/uvdgeom_rom.c",
-      "symbol": "TODO",
-      "lines": [
-        195
-      ],
-      "evidence": "TODO: Temporal fix",
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvVtxEndPoly",
-          "declaration_line": 196,
-          "lines": [
-            195
-          ]
-        }
-      ]
-    },
-    {
       "id": "Q-959033c300f0",
       "kind": "draft_marker",
       "path": "src/modules/uvdobj_rom.c",
@@ -133376,21 +133142,150 @@
       ]
     },
     {
+      "id": "Q-f96a824130ef",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdgeom_rom.c",
+      "symbol": "GEOM descriptor storage view; RE_UNKNOWN: historical outer prefix role.",
+      "lines": [
+        7
+      ],
+      "evidence": "GEOM descriptor storage view; RE_UNKNOWN: historical outer prefix role.",
+      "owners": [
+        {
+          "kind": "type",
+          "name": "UnkStruct_DGeom",
+          "declaration_line": 8,
+          "lines": [
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-5a2f2311f0eb",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdgeom_rom.c",
+      "symbol": "Preserve the original signed limit < count rejection: equality reaches * the indexed stores, with repeated count/base reloads and 16-bit count update. * RE_ORIGINAL_QUIRK: there is no equality or negative-count rejection here. * RE_UNKNOWN: allocated extent and caller prevention of limit/negative/wrapped * counts require original allocation/settings and append/reset callers; * no reachable overrun or intended limit convention has been established.",
+      "lines": [
+        104
+      ],
+      "evidence": "Preserve the original signed limit < count rejection: equality reaches * the indexed stores, with repeated count/base reloads and 16-bit count update. * RE_ORIGINAL_QUIRK: there is no equality or negative-count rejection here. * RE_UNKNOWN: allocated extent and caller prevention of limit/negative/wrapped * counts require original allocation/settings and append/reset callers; * no reachable overrun or intended limit convention has been established.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvVtx",
+          "declaration_line": 111,
+          "lines": [
+            104
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-5d8784fa591c",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdgeom_rom.c",
+      "symbol": "RE_UNKNOWN: inherited local storage role; retain until original layout is proved.",
+      "lines": [
+        193,
+        220
+      ],
+      "evidence": "RE_UNKNOWN: inherited local storage role; retain until original layout is proved.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDgeomEndGrid",
+          "declaration_line": 192,
+          "lines": [
+            193
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvVtxEndPoly",
+          "declaration_line": 219,
+          "lines": [
+            220
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-821e31a33066",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdgeom_rom.c",
+      "symbol": "Submit the current grid range and four supplied words, honoring the override. * Original GEOM slot 0x08 initializes the inner 20-byte descriptor before its * own reads, or returns at its minimum-dimension gate without reading it. * RE_UNKNOWN: the inherited outer prefix and pad roles, valid grid/range * domains, vertex extent and display-list capacity/alias/lifetime guarantees * need original local-storage evidence, range producers and drawing callers.",
+      "lines": [
+        185
+      ],
+      "evidence": "Submit the current grid range and four supplied words, honoring the override. * Original GEOM slot 0x08 initializes the inner 20-byte descriptor before its * own reads, or returns at its minimum-dimension gate without reading it. * RE_UNKNOWN: the inherited outer prefix and pad roles, valid grid/range * domains, vertex extent and display-list capacity/alias/lifetime guarantees * need original local-storage evidence, range producers and drawing callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDgeomEndGrid",
+          "declaration_line": 192,
+          "lines": [
+            185
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-5939350e871d",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdgeom_rom.c",
+      "symbol": "Submit the current polygon range, honoring the stored range override. * Original GEOM slot 0x14 returns for count < 3 without reading the descriptor; * otherwise it initializes the inner 20 bytes before its descriptor read. * RE_UNKNOWN: the inherited outer prefix and pad roles, valid vertex ranges * and display-list capacity/alias/lifetime guarantees need original local * storage evidence, range producers and drawing callers.",
+      "lines": [
+        212
+      ],
+      "evidence": "Submit the current polygon range, honoring the stored range override. * Original GEOM slot 0x14 returns for count < 3 without reading the descriptor; * otherwise it initializes the inner 20 bytes before its descriptor read. * RE_UNKNOWN: the inherited outer prefix and pad roles, valid vertex ranges * and display-list capacity/alias/lifetime guarantees need original local * storage evidence, range producers and drawing callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvVtxEndPoly",
+          "declaration_line": 219,
+          "lines": [
+            212
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-360aa293cfd4",
       "kind": "explicit_unknown",
       "path": "src/modules/uvdgeom_rom.c",
       "symbol": "Submit the current triangle-mesh vertex range, honoring the stored override. RE_UNKNOWN: * first/end indices, vertex/descriptor extent and cursor lifetime need original producers/callers.",
       "lines": [
-        156
+        163
       ],
       "evidence": "Submit the current triangle-mesh vertex range, honoring the stored override. RE_UNKNOWN: * first/end indices, vertex/descriptor extent and cursor lifetime need original producers/callers.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDgeomEndTriangleMesh",
-          "declaration_line": 158,
+          "declaration_line": 165,
           "lines": [
-            156
+            163
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-fc9335384cf8",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdgeom_rom.c",
+      "symbol": "The native instruction bytes match uvVtx. Preserve the original signed limit < count rejection: equality reaches * the indexed stores, with repeated count/base reloads and 16-bit count update. * RE_ORIGINAL_QUIRK: there is no equality or negative-count rejection here. * RE_UNKNOWN: allocated extent and caller prevention of limit/negative/wrapped * counts require original allocation/settings and append/reset callers; * no reachable overrun or intended limit convention has been established.",
+      "lines": [
+        236
+      ],
+      "evidence": "The native instruction bytes match uvVtx. Preserve the original signed limit < count rejection: equality reaches * the indexed stores, with repeated count/base reloads and 16-bit count update. * RE_ORIGINAL_QUIRK: there is no equality or negative-count rejection here. * RE_UNKNOWN: allocated extent and caller prevention of limit/negative/wrapped * counts require original allocation/settings and append/reset callers; * no reachable overrun or intended limit convention has been established.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvVtxDup",
+          "declaration_line": 243,
+          "lines": [
+            236
           ]
         }
       ]
@@ -134511,6 +134406,26 @@
           "declaration_line": 256,
           "lines": [
             248
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-9a1c2af5e873",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvgeom_rom.c",
+      "symbol": "Emit polygon triangles in the original batches, retaining the first-batch * and later-batch vertex commands and repeated display-list-head reloads. * Count < 3 returns before descriptor use; otherwise the native initializer * fills the inner 20-byte descriptor before its vertex-address read. * RE_UNKNOWN: valid vertex-address/count spans, output capacity, alias/lifetime * domains and the historical source declaration of the forwarded 32-bit word * require original range producers, drawing callers and descriptor consumers.",
+      "lines": [
+        367
+      ],
+      "evidence": "Emit polygon triangles in the original batches, retaining the first-batch * and later-batch vertex commands and repeated display-list-head reloads. * Count < 3 returns before descriptor use; otherwise the native initializer * fills the inner 20-byte descriptor before its vertex-address read. * RE_UNKNOWN: valid vertex-address/count spans, output capacity, alias/lifetime * domains and the historical source declaration of the forwarded 32-bit word * require original range producers, drawing callers and descriptor consumers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvVtxEndPolyInternal",
+          "declaration_line": 375,
+          "lines": [
+            367
           ]
         }
       ]
@@ -144120,33 +144035,33 @@
       "path": "src/modules/uvdgeom_rom.c",
       "symbol": "pad",
       "lines": [
-        159,
-        179,
-        197
+        166,
+        193,
+        220
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDgeomEndGrid",
-          "declaration_line": 178,
+          "declaration_line": 192,
           "lines": [
-            179
+            193
           ]
         },
         {
           "kind": "function",
           "name": "uvDgeomEndTriangleMesh",
-          "declaration_line": 158,
+          "declaration_line": 165,
           "lines": [
-            159
+            166
           ]
         },
         {
           "kind": "function",
           "name": "uvVtxEndPoly",
-          "declaration_line": 196,
+          "declaration_line": 219,
           "lines": [
-            197
+            220
           ]
         }
       ]
@@ -175003,24 +174918,24 @@
       "symbol": "unk4",
       "lines": [
         10,
-        191,
-        209
+        205,
+        232
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDgeomEndGrid",
-          "declaration_line": 178,
+          "declaration_line": 192,
           "lines": [
-            191
+            205
           ]
         },
         {
           "kind": "function",
           "name": "uvVtxEndPoly",
-          "declaration_line": 196,
+          "declaration_line": 219,
           "lines": [
-            209
+            232
           ]
         },
         {
@@ -185081,7 +184996,7 @@
         122,
         169,
         261,
-        378
+        388
       ],
       "owners": [
         {
@@ -185128,9 +185043,9 @@
         {
           "kind": "function",
           "name": "uvVtxEndPolyInternal",
-          "declaration_line": 365,
+          "declaration_line": 375,
           "lines": [
-            378
+            388
           ]
         },
         {
@@ -202460,24 +202375,24 @@
       "symbol": "UnkStruct_DGeom",
       "lines": [
         11,
-        180,
-        198
+        194,
+        221
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDgeomEndGrid",
-          "declaration_line": 178,
+          "declaration_line": 192,
           "lines": [
-            180
+            194
           ]
         },
         {
           "kind": "function",
           "name": "uvVtxEndPoly",
-          "declaration_line": 196,
+          "declaration_line": 219,
           "lines": [
-            198
+            221
           ]
         },
         {
@@ -207315,6 +207230,46 @@
           "declaration_line": 958,
           "lines": [
             955
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-d229ebc39b63",
+      "kind": "original_quirk",
+      "path": "src/modules/uvdgeom_rom.c",
+      "symbol": "Preserve the original signed limit < count rejection: equality reaches * the indexed stores, with repeated count/base reloads and 16-bit count update. * RE_ORIGINAL_QUIRK: there is no equality or negative-count rejection here. * RE_UNKNOWN: allocated extent and caller prevention of limit/negative/wrapped * counts require original allocation/settings and append/reset callers; * no reachable overrun or intended limit convention has been established.",
+      "lines": [
+        104
+      ],
+      "evidence": "Preserve the original signed limit < count rejection: equality reaches * the indexed stores, with repeated count/base reloads and 16-bit count update. * RE_ORIGINAL_QUIRK: there is no equality or negative-count rejection here. * RE_UNKNOWN: allocated extent and caller prevention of limit/negative/wrapped * counts require original allocation/settings and append/reset callers; * no reachable overrun or intended limit convention has been established.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvVtx",
+          "declaration_line": 111,
+          "lines": [
+            104
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-6cf285d45817",
+      "kind": "original_quirk",
+      "path": "src/modules/uvdgeom_rom.c",
+      "symbol": "The native instruction bytes match uvVtx. Preserve the original signed limit < count rejection: equality reaches * the indexed stores, with repeated count/base reloads and 16-bit count update. * RE_ORIGINAL_QUIRK: there is no equality or negative-count rejection here. * RE_UNKNOWN: allocated extent and caller prevention of limit/negative/wrapped * counts require original allocation/settings and append/reset callers; * no reachable overrun or intended limit convention has been established.",
+      "lines": [
+        236
+      ],
+      "evidence": "The native instruction bytes match uvVtx. Preserve the original signed limit < count rejection: equality reaches * the indexed stores, with repeated count/base reloads and 16-bit count update. * RE_ORIGINAL_QUIRK: there is no equality or negative-count rejection here. * RE_UNKNOWN: allocated extent and caller prevention of limit/negative/wrapped * counts require original allocation/settings and append/reset callers; * no reachable overrun or intended limit convention has been established.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvVtxDup",
+          "declaration_line": 243,
+          "lines": [
+            236
           ]
         }
       ]
