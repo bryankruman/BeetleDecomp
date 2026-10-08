@@ -32,7 +32,7 @@ extern UvFVec_Rom_Exports *gUvFvecExports;
 #include "uvdobj_rom.h"
 extern UvDobj_Exports *gUvDobjExports;
 typedef struct { u8 unk00[0x404]; s32 colorIndex; } CarAnimColorContext;
-typedef struct { u8 unk00[8]; s32 key; u8 unk0C[0x230]; u8 flag23C; } CarAnimRegisteredState;
+typedef struct { u8 unk00[8]; s32 key; u8 unk0C[0x230]; u8 flag23C; } CarAnimRegisteredState; /* Focused view of the constructor's 0x45C-byte allocation; not a complete layout. */
 /*__SEEDEXTERNS__*/
 extern void *gUvChanExports;
 extern void *gUvCbckExports;
@@ -70,7 +70,7 @@ void func_caranim_0040371C();
 void func_caranim_00403A80();
 void func_caranim_00403BDC();
 void func_caranim_00404074();
-f32 caranimGetMaterialScalarOffset(s32 materialId, f32 *value, s16 alternate);
+f32 caranimAdjustScalarAndGetMaterialOffset(s32 materialId, f32 *value, s16 alternate);
 void func_caranim_004042C4();
 void func_caranim_00404568();
 void func_caranim_00404A40();
@@ -139,10 +139,10 @@ void caranimSetStateByte25(void *state, s32 value) {
 
 #line 84 "src/modules/caranim.c"
 /* Walk at most eight registry entries, stopping at the first null, and clear
- * byte0x23C in each populated entry. Preserve the homed incoming A0 word.
- * RE_UNKNOWN: cleared-byte meaning, registry population/lifetime and historical
- * incoming argument type. Resolve original byte writers/readers, registration
- * and callback callers; a populated-prefix loop does not prove all slots live. */
+ * byte0x23C: callback0x054B4 skips helper0x05304 while this byte is nonzero.
+ * Constructor0x003AC clears it; callback sets it after that helper returns.
+ * RE_UNKNOWN: helper role, reset cadence, pointer lifetime/capacity and incoming
+ * argument type; trace callers. Preserve the homed incoming A0 word. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_004014A4.s")
 #line 85 "src/modules/caranim.c"
 
@@ -175,9 +175,9 @@ void caranimDrawLoadedTextureOverlay(s32 unused) {
 #line 108 "src/modules/caranim.c"
 
 #line 109 "src/modules/caranim.c"
-/* Return the 0x1C-byte material record. Sentinel 0xFFF and the debug
- * default-material override select record zero; other bounds retain the
- * original caller contract. */
+/* Return an address in the module's 0x1C-stride table without allocating.
+ * Sentinel 0xFFF and the debug override select record zero. RE_UNKNOWN: caller
+ * index bounds and mutation rights; an address alone establishes no ownership. */
 void *caranimGetMaterialRecord(s32 materialId) {
     if (materialId == 0xFFF) {
         materialId = 0;
@@ -328,25 +328,28 @@ void caranimAcquireParticleEffectAndReadProperties(s32 kind, f32 *firstOutput, f
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00404074.s")
 
 #line 150 "src/modules/caranim.c"
-/* Return 0.125 for material kinds two/three, plus 0.5 for the
- * original special material when alternate is zero. The special case also
- * clamps the supplied scalar upward to ten. Sentinel 0xFFF selects zero;
- * other material bounds remain the original caller contract. */
-f32 caranimGetMaterialScalarOffset(s32 materialId, f32 *value, s16 alternate) {
-    f32 offset;
-    s16 kind;
-    CarAnimMaterialOffset *material;
-    offset = 0.0f;
+/* Compute the material offset and conditionally update the caller's scalar.
+ * Kinds two/three add 0.125; the special record adds 0.5 when suppressSpecialCase
+ * is zero, raising only values less than ten (NaN preserved). 0xFFF selects zero.
+ * RE_UNKNOWN: scalar/offset units and caller index bounds; trace material callers. */
+#line 154 "src/modules/caranim.c"
+
+f32 caranimAdjustScalarAndGetMaterialOffset(s32 materialId, f32 *scalar, s16 suppressSpecialCase) {
+    f32 scalarOffset;
+    s16 materialKind;
+    CarAnimMaterialOffset *materialRecord;
+    scalarOffset = 0.0f;
     if (materialId == 0xFFF) materialId = 0;
-    material = (CarAnimMaterialOffset *)((u8 *)&D_caranim_00406830 + materialId * 0x1C);
-    kind = material->kind;
-    if (kind == 2 || kind == 3) offset += 0.125f;
-    if (material == (CarAnimMaterialOffset *)&D_caranim_00406A28 && alternate == 0) {
-        if (*value < 10.0f) *value = 10.0f;
-        offset += 0.5f;
+    materialRecord = (CarAnimMaterialOffset *)((u8 *)&D_caranim_00406830 + materialId * 0x1C);
+    materialKind = materialRecord->kind;
+    if (materialKind == 2 || materialKind == 3) scalarOffset += 0.125f;
+    if (materialRecord == (CarAnimMaterialOffset *)&D_caranim_00406A28 && suppressSpecialCase == 0) {
+        if (*scalar < 10.0f) *scalar = 10.0f;
+        scalarOffset += 0.5f;
     }
-    return offset;
+    return scalarOffset;
 }
+#line 169 "src/modules/caranim.c"
 #line 151 "src/modules/caranim.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_004042C4.s")
@@ -437,8 +440,8 @@ s32 caranimGetLocalizedLabel(s32 labelId) {
 #line 208 "src/modules/caranim.c"
 
 #line 209 "src/modules/caranim.c"
-/* Find the first matching registered key, retaining unsigned 16-bit traversal.
- * RE_UNKNOWN: an in-range count and nonnull searched prefix require registry writer/remover proof. */
+/* Find the first registered key with unsigned 16-bit traversal. RE_ORIGINAL_QUIRK: constructor0x003AC increments count even when all eight slots are full.
+ * RE_UNKNOWN: caller bounds/lifetime must keep the searched prefix in range and nonnull; resolve original creation/lifecycle call sites. */
 s32 caranimFindRegisteredStateByKey(s32 key) {
     u16 index;
     for (index = 0; index < D_caranim_00407368; index++) {
@@ -453,7 +456,7 @@ s32 caranimFindRegisteredStateByKey(s32 key) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00406094.s")
 
 #line 213 "src/modules/caranim.c"
-/* Return the number of registered animation states. */
+/* Return the constructor-maintained registry counter; no recount or slot validation. */
 s32 caranimGetRegisteredStateCount(void) {
     return D_caranim_00407368;
 }

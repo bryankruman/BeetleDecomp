@@ -375,7 +375,7 @@ void medSetEnvironmentBlendFromNode(Node_4052C8 *node)
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_004059E8.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_00405DC4.s")
-
+/* RE_UNKNOWN: control-selection domain/lifecycle, color-property/resource interpretation and shared label extent/trailing-byte state require original control and selector producers, resource readers and backing-storage/source evidence; preserve the checked ten-case label/selector mapping, default -1, original pre-callback input snapshot, GUI C4 30-byte read and cache store after the color-query callback. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_00405FEC.s")
 
 #line 299 "src/modules/med.c"

@@ -768,7 +768,18 @@ u16 uvTerraGetStaticObjectModelId(s32 handle) {
 }
 #line 502 "src/modules/uvterra_rom.c"
 
+#line 503 "src/modules/uvterra_rom.c"
+/* Replace a static object's model ID only when the requested UVMD is loaded;
+ * 65535 writes the native cleared-model sentinel without a model lookup.
+ * RE_ORIGINAL_QUIRK: after looking up the current model, native code tests the
+ * already validated requested-model pointer again and ignores the old lookup's
+ * result. Preserve both lookups and that test rather than substituting the
+ * old-model result or adding an ownership/release operation.
+ * RE_UNKNOWN: purpose of the second lookup and caller guarantees for model
+ * IDs/lifetimes. Trace original callers and the asset lookup provider before
+ * changing this preserved sequence or inferring missing-model player impact. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040880C.s")
+#line 504 "src/modules/uvterra_rom.c"
 
 #line 505 "src/modules/uvterra_rom.c"
 

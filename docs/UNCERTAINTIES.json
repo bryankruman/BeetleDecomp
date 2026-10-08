@@ -198,7 +198,7 @@
     "src/modules/battle.c": "8c20f43d93583667a95317d6ea29070a473ab2065d57745afe1725288fd8e4a1",
     "src/modules/bubble.c": "f7e7441ce6ecb3bcf78a9380bf34825faa8d2fb1aac39bb5ce6db86ece134501",
     "src/modules/cam.c": "f9aa792229671eccdcdbad514a19ea42ac85d8510d4ec6d858cc31d6762dbbce",
-    "src/modules/caranim.c": "ff9f7faf60afc07fe6a94ba5b6a94b840ba8cbcccaa7ad06ac3e7e6ba027186e",
+    "src/modules/caranim.c": "87bccc631f8b917df4e4032e8ade4d2ed591cbb4b50db1fe5845d8a555f00958",
     "src/modules/caraudio.c": "bd7c7264af43610347d809141bd1e1ba15c385e3aa0f96c86682b7e41098a818",
     "src/modules/cbars.c": "a7d8817dc1873793aa3e2ef6cafcd98c4a92d2fe91251b54ed8e2b09bbb9becb",
     "src/modules/demo.c": "5a73b9ad1c4e6d8f0fdcc7b9097f50943988fa6abccd10b178bfc14486903e3c",
@@ -218,7 +218,7 @@
     "src/modules/level1.c": "a6d12da751d98423918c6a81d403a21dfe0a21eaf085534f1dd90d33a4d75bed",
     "src/modules/light.c": "1a98486e23cf77f235ae5bc8e34f08ba97f834324944a9abf34d94587ac658b3",
     "src/modules/logo.c": "98b52c4dd4100cf937d10d704a5b1720b9ff63a628099b7215f9fbc57d364619",
-    "src/modules/med.c": "9f7eb50736ec0b136e4af2b297712277c7b356c4fdec70c5e1cc121369a3f2fe",
+    "src/modules/med.c": "5e75625ea2c4cab562b7b95cc10b93988f95b3c3622039b195da9f3e2a0c0756",
     "src/modules/menuslct.c": "40cca456720770fe92cb7f90ab85b54db5d0de789eb87256c8e9a892d88ec021",
     "src/modules/misc.c": "22da7a9f99cbdc10794c70a226808b1319b3239cb76f9233d3285ca3efc43c5f",
     "src/modules/motion.c": "be5a4b3ce306c78a46f506f7e74a11b3ec34e0e2977e9c3feca5ba27f7bdc624",
@@ -295,7 +295,7 @@
     "src/modules/uvgui_rom.c": "c991995250a4e84d86b70bc1a2dd118d27976685fb55860f9fb3d0a622a08d96",
     "src/modules/uvimtx_rom.c": "6adbb5e9ad4253027dafc7d77c866330fbf6c170065db1907f95e3c724184c33",
     "src/modules/uvintersect_rom.c": "8fe7e116b2c3061d60128a794272d0c1b9cfc133f2c2b7319d650cc302fa6082",
-    "src/modules/uvisect_rom.c": "cf8c31eb16d6482c2b7849d3df7b23d5daee2e6a105aaaf7c9005fe99ad1c045",
+    "src/modules/uvisect_rom.c": "970e8c0d6aa332323fc52042e0fcaa8b2f39ffcfa93a4fe2916c4daa7ed916fa",
     "src/modules/uvjanim_rom.c": "b54e15719d79f4e165f4ff367fe8dee623f567f669fb5e5eddcee5c79b3f2603",
     "src/modules/uvjanimld_rom.c": "57ad2c95299146e0868deca476c5994d28a7d564fef31c9ebbd648cb67395419",
     "src/modules/uvled_rom.c": "32125120859b9bdc683f451f09f4d465720799c314071109dc7fb1d8ed8929e4",
@@ -310,7 +310,7 @@
     "src/modules/uvsort_rom.c": "6586a894355bb250fdbbefb351b4950d67115b581e1b450d066abc1ae52b06cc",
     "src/modules/uvsprt_rom.c": "c2a97d053dad8ab1ba5aa739bc1eb7b80caef313a2822948431a81a671d5231d",
     "src/modules/uvstring_rom.c": "94b9208341f1faf5aee2e8bd9e6e2c6336878522d977776684d4d7ffa5473720",
-    "src/modules/uvterra_rom.c": "1e71ee937b9259c559b3341b1e3a60b47d9b53c6174c14964855c81d0d155fc8",
+    "src/modules/uvterra_rom.c": "5dd616d732bbbb6733743c79cb28c5b92683a3ee0438a7893adcd1240b17b129",
     "src/modules/uvterrald_rom.c": "4f51d82aed1fc59eefc7e9d161b1d29601c1af7be11b928c5265f14d489d2596",
     "src/modules/uvtexanim_rom.c": "8b77ae8843529d841945f563836072e32c2250faed791948a482b7c34bf61bd5",
     "src/modules/uvtexture_rom.c": "0f5e743d08e8523ecbee7d1a3c7331db9046775d81d2b7457eb025f11cbcfb2c",
@@ -329,8 +329,8 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "bbff4e2e722e8d6120ed2544279892dcf9ada596c0304cee4119400578937a00",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "9dc5d23de17ff4d2d8fb4de8b88f0f7406e450a5fa6b12d0222a6259aa47f79c",
-    "docs/VALIDATION_20261006.md": "6d1a47137aaf54295ab7eee3d92bb385771db56cd7ab9f1d265b5dd32c720209"
+    "docs/STRATEGY_V4.md": "358729e6c8bc3da65ac531b0a3abe2e3935b00300a92fb1414109803be57273b",
+    "docs/VALIDATION_20261006.md": "4aa3ed20adc030c2a6a620a40b7e2e92b58a41de256c8b24bacdf47d00512dbf"
   },
   "counts": {
     "address_function": 1018,
@@ -340,11 +340,11 @@
     "conditional_draft": 4,
     "decompiler_local": 967,
     "draft_marker": 30,
-    "explicit_unknown": 382,
+    "explicit_unknown": 387,
     "layout_padding": 258,
     "offset_field": 1431,
     "opaque_type": 279,
-    "original_quirk": 59,
+    "original_quirk": 61,
     "uncertainty_note": 100,
     "unused_identifier": 110
   },
@@ -3591,15 +3591,15 @@
       "symbol": "func_caranim_00404CA0",
       "lines": [
         78,
-        376
+        379
       ],
       "owners": [
         {
           "kind": "function",
           "name": "caranimRefreshChangedSelection",
-          "declaration_line": 370,
+          "declaration_line": 373,
           "lines": [
-            376
+            379
           ]
         },
         {
@@ -3677,15 +3677,15 @@
       "lines": [
         39,
         83,
-        419
+        422
       ],
       "owners": [
         {
           "kind": "function",
           "name": "caranimRegisterChannelCallback",
-          "declaration_line": 413,
+          "declaration_line": 416,
           "lines": [
-            419
+            422
           ]
         },
         {
@@ -22538,7 +22538,7 @@
       "symbol": "func_uvisect_rom_00405124",
       "lines": [
         56,
-        635
+        648
       ],
       "owners": [
         {
@@ -22552,9 +22552,9 @@
         {
           "kind": "function",
           "name": "uvIsectQueryFilteredSharedRecords",
-          "declaration_line": 620,
+          "declaration_line": 633,
           "lines": [
-            635
+            648
           ]
         }
       ]
@@ -23539,7 +23539,7 @@
       "symbol": "func_uvterra_rom_004072EC",
       "lines": [
         20,
-        946
+        957
       ],
       "owners": [
         {
@@ -23553,9 +23553,9 @@
         {
           "kind": "function",
           "name": "uvTerraDrawTileGeometry",
-          "declaration_line": 940,
+          "declaration_line": 951,
           "lines": [
-            946
+            957
           ]
         }
       ]
@@ -23567,7 +23567,7 @@
       "symbol": "func_uvterra_rom_004076A8",
       "lines": [
         21,
-        949
+        960
       ],
       "owners": [
         {
@@ -23581,9 +23581,9 @@
         {
           "kind": "function",
           "name": "uvTerraDrawTileGeometry",
-          "declaration_line": 940,
+          "declaration_line": 951,
           "lines": [
-            949
+            960
           ]
         }
       ]
@@ -23754,7 +23754,7 @@
       "symbol": "func_uvterra_rom_0040CF98",
       "lines": [
         3,
-        1147
+        1158
       ],
       "owners": [
         {
@@ -23768,9 +23768,9 @@
         {
           "kind": "function",
           "name": "uvTerraTestPackedAngularLevelThreshold",
-          "declaration_line": 1138,
+          "declaration_line": 1149,
           "lines": [
-            1147
+            1158
           ]
         }
       ]
@@ -27708,15 +27708,15 @@
       "symbol": "D_caranim_004066A0",
       "lines": [
         43,
-        433
+        436
       ],
       "owners": [
         {
           "kind": "function",
           "name": "caranimGetLocalizedLabel",
-          "declaration_line": 431,
+          "declaration_line": 434,
           "lines": [
-            433
+            436
           ]
         },
         {
@@ -27797,23 +27797,23 @@
       "lines": [
         47,
         188,
-        341
+        343
       ],
       "owners": [
+        {
+          "kind": "function",
+          "name": "caranimAdjustScalarAndGetMaterialOffset",
+          "declaration_line": 337,
+          "lines": [
+            343
+          ]
+        },
         {
           "kind": "function",
           "name": "caranimGetMaterialRecord",
           "declaration_line": 181,
           "lines": [
             188
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "caranimGetMaterialScalarOffset",
-          "declaration_line": 335,
-          "lines": [
-            341
           ]
         },
         {
@@ -27833,15 +27833,15 @@
       "symbol": "D_caranim_00406A28",
       "lines": [
         24,
-        344
+        346
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "caranimGetMaterialScalarOffset",
-          "declaration_line": 335,
+          "name": "caranimAdjustScalarAndGetMaterialOffset",
+          "declaration_line": 337,
           "lines": [
-            344
+            346
           ]
         },
         {
@@ -27918,24 +27918,24 @@
       "path": "src/modules/caranim.c",
       "symbol": "D_caranim_00406BF8",
       "lines": [
-        363,
-        379
+        366,
+        382
       ],
       "owners": [
         {
           "kind": "function",
           "name": "caranimRefreshChangedSelection",
-          "declaration_line": 370,
+          "declaration_line": 373,
           "lines": [
-            379
+            382
           ]
         },
         {
           "kind": "global",
           "name": "D_caranim_00406BF8",
-          "declaration_line": 363,
+          "declaration_line": 366,
           "lines": [
-            363
+            366
           ]
         }
       ]
@@ -27947,15 +27947,15 @@
       "symbol": "D_caranim_00407178",
       "lines": [
         48,
-        488
+        491
       ],
       "owners": [
         {
           "kind": "function",
           "name": "caranimApplyColorAndCallback",
-          "declaration_line": 486,
+          "declaration_line": 489,
           "lines": [
-            488
+            491
           ]
         },
         {
@@ -28003,15 +28003,15 @@
       "symbol": "D_caranim_00407228",
       "lines": [
         44,
-        435
+        438
       ],
       "owners": [
         {
           "kind": "function",
           "name": "caranimGetLocalizedLabel",
-          "declaration_line": 431,
+          "declaration_line": 434,
           "lines": [
-            435
+            438
           ]
         },
         {
@@ -28030,30 +28030,30 @@
       "path": "src/modules/caranim.c",
       "symbol": "D_caranim_00407334",
       "lines": [
-        362,
-        372,
+        365,
         375,
-        376,
-        379
+        378,
+        379,
+        382
       ],
       "owners": [
         {
           "kind": "function",
           "name": "caranimRefreshChangedSelection",
-          "declaration_line": 370,
+          "declaration_line": 373,
           "lines": [
-            372,
             375,
-            376,
-            379
+            378,
+            379,
+            382
           ]
         },
         {
           "kind": "global",
           "name": "D_caranim_00407334",
-          "declaration_line": 362,
+          "declaration_line": 365,
           "lines": [
-            362
+            365
           ]
         }
       ]
@@ -28065,15 +28065,15 @@
       "symbol": "D_caranim_00407348",
       "lines": [
         46,
-        445
+        448
       ],
       "owners": [
         {
           "kind": "function",
           "name": "caranimFindRegisteredStateByKey",
-          "declaration_line": 442,
+          "declaration_line": 445,
           "lines": [
-            445
+            448
           ]
         },
         {
@@ -28093,24 +28093,24 @@
       "symbol": "D_caranim_00407368",
       "lines": [
         89,
-        444,
-        458
+        447,
+        461
       ],
       "owners": [
         {
           "kind": "function",
           "name": "caranimFindRegisteredStateByKey",
-          "declaration_line": 442,
+          "declaration_line": 445,
           "lines": [
-            444
+            447
           ]
         },
         {
           "kind": "function",
           "name": "caranimGetRegisteredStateCount",
-          "declaration_line": 457,
+          "declaration_line": 460,
           "lines": [
-            458
+            461
           ]
         },
         {
@@ -61854,15 +61854,15 @@
       "symbol": "D_uvisect_rom_004077D0",
       "lines": [
         67,
-        724
+        737
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectCreateValueRecord",
-          "declaration_line": 720,
+          "declaration_line": 733,
           "lines": [
-            724
+            737
           ]
         },
         {
@@ -61882,28 +61882,28 @@
       "symbol": "D_uvisect_rom_00407820",
       "lines": [
         90,
-        712,
-        724,
         725,
-        726
+        737,
+        738,
+        739
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectCreateValueRecord",
-          "declaration_line": 720,
+          "declaration_line": 733,
           "lines": [
-            724,
-            725,
-            726
+            737,
+            738,
+            739
           ]
         },
         {
           "kind": "function",
           "name": "uvIsectResetValueRecordRegistryCount",
-          "declaration_line": 711,
+          "declaration_line": 724,
           "lines": [
-            712
+            725
           ]
         },
         {
@@ -62454,15 +62454,15 @@
       "lines": [
         82,
         265,
-        633
+        646
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueryFilteredSharedRecords",
-          "declaration_line": 620,
+          "declaration_line": 633,
           "lines": [
-            633
+            646
           ]
         },
         {
@@ -62491,15 +62491,15 @@
       "lines": [
         83,
         266,
-        629
+        642
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueryFilteredSharedRecords",
-          "declaration_line": 620,
+          "declaration_line": 633,
           "lines": [
-            629
+            642
           ]
         },
         {
@@ -62528,15 +62528,15 @@
       "lines": [
         84,
         267,
-        631
+        644
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueryFilteredSharedRecords",
-          "declaration_line": 620,
+          "declaration_line": 633,
           "lines": [
-            631
+            644
           ]
         },
         {
@@ -62565,15 +62565,15 @@
       "lines": [
         85,
         268,
-        630
+        643
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueryFilteredSharedRecords",
-          "declaration_line": 620,
+          "declaration_line": 633,
           "lines": [
-            630
+            643
           ]
         },
         {
@@ -62601,15 +62601,15 @@
       "symbol": "D_uvisect_rom_004078F0",
       "lines": [
         51,
-        644
+        657
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueryFilteredSharedRecords",
-          "declaration_line": 620,
+          "declaration_line": 633,
           "lines": [
-            644
+            657
           ]
         },
         {
@@ -62629,15 +62629,15 @@
       "symbol": "D_uvisect_rom_00407A70",
       "lines": [
         52,
-        647
+        660
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueryFilteredSharedRecords",
-          "declaration_line": 620,
+          "declaration_line": 633,
           "lines": [
-            647
+            660
           ]
         },
         {
@@ -62657,15 +62657,15 @@
       "symbol": "D_uvisect_rom_00407EF0",
       "lines": [
         53,
-        650
+        663
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueryFilteredSharedRecords",
-          "declaration_line": 620,
+          "declaration_line": 633,
           "lines": [
-            650
+            663
           ]
         },
         {
@@ -62685,15 +62685,15 @@
       "symbol": "D_uvisect_rom_00408070",
       "lines": [
         54,
-        653
+        666
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueryFilteredSharedRecords",
-          "declaration_line": 620,
+          "declaration_line": 633,
           "lines": [
-            653
+            666
           ]
         },
         {
@@ -62713,15 +62713,15 @@
       "symbol": "D_uvisect_rom_00408130",
       "lines": [
         55,
-        656
+        669
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueryFilteredSharedRecords",
-          "declaration_line": 620,
+          "declaration_line": 633,
           "lines": [
-            656
+            669
           ]
         },
         {
@@ -62784,8 +62784,8 @@
         386,
         559,
         563,
-        851,
-        854
+        864,
+        867
       ],
       "owners": [
         {
@@ -62817,10 +62817,10 @@
         {
           "kind": "function",
           "name": "uvIsectSetIndexedVector",
-          "declaration_line": 847,
+          "declaration_line": 860,
           "lines": [
-            851,
-            854
+            864,
+            867
           ]
         },
         {
@@ -68981,15 +68981,15 @@
       "symbol": "D_uvterra_rom_0040D6F8",
       "lines": [
         27,
-        1059
+        1070
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraSelectLowestZCandidate",
-          "declaration_line": 1058,
+          "declaration_line": 1069,
           "lines": [
-            1059
+            1070
           ]
         },
         {
@@ -69009,15 +69009,15 @@
       "symbol": "D_uvterra_rom_0040D704",
       "lines": [
         4,
-        1149
+        1160
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraTestPackedAngularLevelThreshold",
-          "declaration_line": 1138,
+          "declaration_line": 1149,
           "lines": [
-            1149
+            1160
           ]
         },
         {
@@ -69037,15 +69037,15 @@
       "symbol": "D_uvterra_rom_0040D708",
       "lines": [
         5,
-        1150
+        1161
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraTestPackedAngularLevelThreshold",
-          "declaration_line": 1138,
+          "declaration_line": 1149,
           "lines": [
-            1150
+            1161
           ]
         },
         {
@@ -69084,17 +69084,17 @@
       "symbol": "D_uvterra_rom_0040D718",
       "lines": [
         63,
-        987,
-        1005
+        998,
+        1016
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraLookupAdjustedWrappedIndexPair",
-          "declaration_line": 967,
+          "declaration_line": 978,
           "lines": [
-            987,
-            1005
+            998,
+            1016
           ]
         },
         {
@@ -69117,7 +69117,7 @@
         213,
         346,
         354,
-        919
+        930
       ],
       "owners": [
         {
@@ -69133,9 +69133,9 @@
         {
           "kind": "function",
           "name": "uvTerraRefreshProjectionAndDrawQueuedTiles",
-          "declaration_line": 901,
+          "declaration_line": 912,
           "lines": [
-            919
+            930
           ]
         },
         {
@@ -69155,28 +69155,28 @@
       "symbol": "D_uvterra_rom_0040F744",
       "lines": [
         18,
-        916,
-        943,
-        944,
-        951
+        927,
+        954,
+        955,
+        962
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraDrawTileGeometry",
-          "declaration_line": 940,
+          "declaration_line": 951,
           "lines": [
-            943,
-            944,
-            951
+            954,
+            955,
+            962
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraRefreshProjectionAndDrawQueuedTiles",
-          "declaration_line": 901,
+          "declaration_line": 912,
           "lines": [
-            916
+            927
           ]
         },
         {
@@ -69196,15 +69196,15 @@
       "symbol": "D_uvterra_rom_0040F748",
       "lines": [
         26,
-        1100
+        1111
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraProjectEndpointToZPlane",
-          "declaration_line": 1093,
+          "declaration_line": 1104,
           "lines": [
-            1100
+            1111
           ]
         },
         {
@@ -69224,17 +69224,17 @@
       "symbol": "D_uvterra_rom_0040F750",
       "lines": [
         50,
-        907,
-        908
+        918,
+        919
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraRefreshProjectionAndDrawQueuedTiles",
-          "declaration_line": 901,
+          "declaration_line": 912,
           "lines": [
-            907,
-            908
+            918,
+            919
           ]
         },
         {
@@ -69254,15 +69254,15 @@
       "symbol": "D_uvterra_rom_0040F754",
       "lines": [
         51,
-        909
+        920
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraRefreshProjectionAndDrawQueuedTiles",
-          "declaration_line": 901,
+          "declaration_line": 912,
           "lines": [
-            909
+            920
           ]
         },
         {
@@ -69283,7 +69283,7 @@
       "lines": [
         101,
         353,
-        1148
+        1159
       ],
       "owners": [
         {
@@ -69297,9 +69297,9 @@
         {
           "kind": "function",
           "name": "uvTerraTestPackedAngularLevelThreshold",
-          "declaration_line": 1138,
+          "declaration_line": 1149,
           "lines": [
-            1148
+            1159
           ]
         },
         {
@@ -69323,8 +69323,8 @@
         283,
         284,
         311,
-        910,
-        914
+        921,
+        925
       ],
       "owners": [
         {
@@ -69340,10 +69340,10 @@
         {
           "kind": "function",
           "name": "uvTerraRefreshProjectionAndDrawQueuedTiles",
-          "declaration_line": 901,
+          "declaration_line": 912,
           "lines": [
-            910,
-            914
+            921,
+            925
           ]
         },
         {
@@ -69459,25 +69459,25 @@
       "symbol": "D_uvterra_rom_0040F770",
       "lines": [
         7,
-        1188,
-        1189,
-        1190,
-        1191,
-        1192,
-        1193
+        1199,
+        1200,
+        1201,
+        1202,
+        1203,
+        1204
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraInitializeSortGroups",
-          "declaration_line": 1187,
+          "declaration_line": 1198,
           "lines": [
-            1188,
-            1189,
-            1190,
-            1191,
-            1192,
-            1193
+            1199,
+            1200,
+            1201,
+            1202,
+            1203,
+            1204
           ]
         },
         {
@@ -69498,8 +69498,8 @@
       "lines": [
         23,
         212,
-        1033,
-        1034
+        1044,
+        1045
       ],
       "owners": [
         {
@@ -69513,10 +69513,10 @@
         {
           "kind": "function",
           "name": "uvTerraAllocateRecordBuffer",
-          "declaration_line": 1032,
+          "declaration_line": 1043,
           "lines": [
-            1033,
-            1034
+            1044,
+            1045
           ]
         },
         {
@@ -69536,17 +69536,17 @@
       "symbol": "D_uvterra_rom_0040F778",
       "lines": [
         24,
-        1033,
-        1034
+        1044,
+        1045
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraAllocateRecordBuffer",
-          "declaration_line": 1032,
+          "declaration_line": 1043,
           "lines": [
-            1033,
-            1034
+            1044,
+            1045
           ]
         },
         {
@@ -69618,15 +69618,15 @@
       "symbol": "D_uvterra_rom_0040F7A0",
       "lines": [
         30,
-        872
+        883
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraGetIndexedDrawByte",
-          "declaration_line": 871,
+          "declaration_line": 882,
           "lines": [
-            872
+            883
           ]
         },
         {
@@ -69676,15 +69676,15 @@
       "symbol": "D_uvterra_rom_0040FBA8",
       "lines": [
         45,
-        921
+        932
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraRefreshProjectionAndDrawQueuedTiles",
-          "declaration_line": 901,
+          "declaration_line": 912,
           "lines": [
-            921
+            932
           ]
         },
         {
@@ -69704,15 +69704,15 @@
       "symbol": "D_uvterra_rom_0040FBAC",
       "lines": [
         53,
-        911
+        922
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraRefreshProjectionAndDrawQueuedTiles",
-          "declaration_line": 901,
+          "declaration_line": 912,
           "lines": [
-            911
+            922
           ]
         },
         {
@@ -69732,15 +69732,15 @@
       "symbol": "D_uvterra_rom_0040FBB0",
       "lines": [
         54,
-        911
+        922
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraRefreshProjectionAndDrawQueuedTiles",
-          "declaration_line": 901,
+          "declaration_line": 912,
           "lines": [
-            911
+            922
           ]
         },
         {
@@ -69760,15 +69760,15 @@
       "symbol": "D_uvterra_rom_0040FBB4",
       "lines": [
         55,
-        912
+        923
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraRefreshProjectionAndDrawQueuedTiles",
-          "declaration_line": 901,
+          "declaration_line": 912,
           "lines": [
-            912
+            923
           ]
         },
         {
@@ -69788,15 +69788,15 @@
       "symbol": "D_uvterra_rom_0040FBB8",
       "lines": [
         56,
-        912
+        923
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraRefreshProjectionAndDrawQueuedTiles",
-          "declaration_line": 901,
+          "declaration_line": 912,
           "lines": [
-            912
+            923
           ]
         },
         {
@@ -69816,15 +69816,15 @@
       "symbol": "D_uvterra_rom_0040FBBC",
       "lines": [
         57,
-        913
+        924
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraRefreshProjectionAndDrawQueuedTiles",
-          "declaration_line": 901,
+          "declaration_line": 912,
           "lines": [
-            913
+            924
           ]
         },
         {
@@ -69844,15 +69844,15 @@
       "symbol": "D_uvterra_rom_0040FBC0",
       "lines": [
         58,
-        913
+        924
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraRefreshProjectionAndDrawQueuedTiles",
-          "declaration_line": 901,
+          "declaration_line": 912,
           "lines": [
-            913
+            924
           ]
         },
         {
@@ -69872,17 +69872,17 @@
       "symbol": "D_uvterra_rom_0040FBC4",
       "lines": [
         52,
-        906,
-        917
+        917,
+        928
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraRefreshProjectionAndDrawQueuedTiles",
-          "declaration_line": 901,
+          "declaration_line": 912,
           "lines": [
-            906,
-            917
+            917,
+            928
           ]
         },
         {
@@ -69902,15 +69902,15 @@
       "symbol": "D_uvterra_rom_0040FBC8",
       "lines": [
         9,
-        1189
+        1200
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraInitializeSortGroups",
-          "declaration_line": 1187,
+          "declaration_line": 1198,
           "lines": [
-            1189
+            1200
           ]
         },
         {
@@ -69930,17 +69930,17 @@
       "symbol": "D_uvterra_rom_0040FBCC",
       "lines": [
         8,
-        1188,
-        1192
+        1199,
+        1203
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraInitializeSortGroups",
-          "declaration_line": 1187,
+          "declaration_line": 1198,
           "lines": [
-            1188,
-            1192
+            1199,
+            1203
           ]
         },
         {
@@ -69960,15 +69960,15 @@
       "symbol": "D_uvterra_rom_0040FBD0",
       "lines": [
         11,
-        1191
+        1202
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraInitializeSortGroups",
-          "declaration_line": 1187,
+          "declaration_line": 1198,
           "lines": [
-            1191
+            1202
           ]
         },
         {
@@ -69988,17 +69988,17 @@
       "symbol": "D_uvterra_rom_0040FBD4",
       "lines": [
         10,
-        1190,
-        1193
+        1201,
+        1204
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraInitializeSortGroups",
-          "declaration_line": 1187,
+          "declaration_line": 1198,
           "lines": [
-            1190,
-            1193
+            1201,
+            1204
           ]
         },
         {
@@ -70018,15 +70018,15 @@
       "symbol": "D_uvterra_rom_0040FBD8",
       "lines": [
         19,
-        948
+        959
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraDrawTileGeometry",
-          "declaration_line": 940,
+          "declaration_line": 951,
           "lines": [
-            948
+            959
           ]
         }
       ]
@@ -70038,15 +70038,15 @@
       "symbol": "D_uvterra_rom_0040FBDC",
       "lines": [
         19,
-        945
+        956
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraDrawTileGeometry",
-          "declaration_line": 940,
+          "declaration_line": 951,
           "lines": [
-            945
+            956
           ]
         }
       ]
@@ -70059,7 +70059,7 @@
       "lines": [
         44,
         346,
-        920
+        931
       ],
       "owners": [
         {
@@ -70073,9 +70073,9 @@
         {
           "kind": "function",
           "name": "uvTerraRefreshProjectionAndDrawQueuedTiles",
-          "declaration_line": 901,
+          "declaration_line": 912,
           "lines": [
-            920
+            931
           ]
         },
         {
@@ -74644,7 +74644,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_004042C4",
       "lines": [
-        352
+        355
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_004042C4.s"
     },
@@ -74654,7 +74654,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00404568",
       "lines": [
-        354
+        357
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00404568.s"
     },
@@ -74664,7 +74664,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00404A40",
       "lines": [
-        356
+        359
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00404A40.s"
     },
@@ -74674,7 +74674,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00404ACC",
       "lines": [
-        358
+        361
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00404ACC.s"
     },
@@ -74684,7 +74684,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00404CA0",
       "lines": [
-        360
+        363
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00404CA0.s"
     },
@@ -74694,7 +74694,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00405304",
       "lines": [
-        404
+        407
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00405304.s"
     },
@@ -74704,7 +74704,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_004054B4",
       "lines": [
-        406
+        409
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_004054B4.s"
     },
@@ -74714,7 +74714,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00405910",
       "lines": [
-        408
+        411
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00405910.s"
     },
@@ -74724,7 +74724,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00405B7C",
       "lines": [
-        423
+        426
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00405B7C.s"
     },
@@ -74734,7 +74734,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00405DE4",
       "lines": [
-        425
+        428
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00405DE4.s"
     },
@@ -74744,7 +74744,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00406094",
       "lines": [
-        453
+        456
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00406094.s"
     },
@@ -80874,7 +80874,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_004045A8",
       "lines": [
-        589
+        601
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004045A8.s"
     },
@@ -80884,7 +80884,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_004048DC",
       "lines": [
-        591
+        604
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004048DC.s"
     },
@@ -80894,7 +80894,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00404A7C",
       "lines": [
-        607
+        620
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00404A7C.s"
     },
@@ -80904,7 +80904,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00404ED4",
       "lines": [
-        663
+        676
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00404ED4.s"
     },
@@ -80914,7 +80914,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00405124",
       "lines": [
-        665
+        678
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00405124.s"
     },
@@ -80924,7 +80924,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_004054F4",
       "lines": [
-        667
+        680
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004054F4.s"
     },
@@ -80934,7 +80934,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00405698",
       "lines": [
-        700
+        713
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00405698.s"
     },
@@ -80944,7 +80944,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00405794",
       "lines": [
-        702
+        715
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00405794.s"
     },
@@ -80954,7 +80954,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00405C8C",
       "lines": [
-        704
+        717
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00405C8C.s"
     },
@@ -80964,7 +80964,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00405EDC",
       "lines": [
-        706
+        719
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00405EDC.s"
     },
@@ -80974,7 +80974,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00407250",
       "lines": [
-        731
+        744
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00407250.s"
     },
@@ -80984,7 +80984,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00407554",
       "lines": [
-        840
+        853
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00407554.s"
     },
@@ -81404,7 +81404,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040880C",
       "lines": [
-        771
+        781
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040880C.s"
     },
@@ -81414,7 +81414,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040888C",
       "lines": [
-        783
+        794
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040888C.s"
     },
@@ -81424,7 +81424,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00408AD8",
       "lines": [
-        786
+        797
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00408AD8.s"
     },
@@ -81434,7 +81434,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_00409394",
       "lines": [
-        788
+        799
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00409394.s"
     },
@@ -81444,7 +81444,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040A08C",
       "lines": [
-        790
+        801
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040A08C.s"
     },
@@ -81454,7 +81454,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040A43C",
       "lines": [
-        792
+        803
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040A43C.s"
     },
@@ -81464,7 +81464,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040A79C",
       "lines": [
-        794
+        805
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040A79C.s"
     },
@@ -81474,7 +81474,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040AC9C",
       "lines": [
-        887
+        898
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040AC9C.s"
     },
@@ -81484,7 +81484,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040B26C",
       "lines": [
-        1010
+        1021
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040B26C.s"
     },
@@ -81494,7 +81494,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040B8C0",
       "lines": [
-        1012
+        1023
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040B8C0.s"
     },
@@ -81504,7 +81504,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040BBC0",
       "lines": [
-        1014
+        1025
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040BBC0.s"
     },
@@ -81514,7 +81514,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040BD38",
       "lines": [
-        1024
+        1035
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040BD38.s"
     },
@@ -81524,7 +81524,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040BF74",
       "lines": [
-        1027
+        1038
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040BF74.s"
     },
@@ -81534,7 +81534,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040C0F8",
       "lines": [
-        1038
+        1049
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040C0F8.s"
     },
@@ -81544,7 +81544,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040C218",
       "lines": [
-        1051
+        1062
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040C218.s"
     },
@@ -81554,7 +81554,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040C50C",
       "lines": [
-        1084
+        1095
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040C50C.s"
     },
@@ -81564,7 +81564,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040CA64",
       "lines": [
-        1124
+        1135
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040CA64.s"
     },
@@ -81574,7 +81574,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040CF98",
       "lines": [
-        1171
+        1182
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040CF98.s"
     },
@@ -81584,7 +81584,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "func_uvterra_rom_0040D128",
       "lines": [
-        1210
+        1221
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040D128.s"
     },
@@ -127086,16 +127086,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "Apply color and register property-four callback; the object retains state. * RE_UNKNOWN: color-index bounds and retained-state lifetime need producers/teardown.",
       "lines": [
-        484
+        487
       ],
       "evidence": "Apply color and register property-four callback; the object retains state. * RE_UNKNOWN: color-index bounds and retained-state lifetime need producers/teardown.",
       "owners": [
         {
           "kind": "function",
           "name": "caranimApplyColorAndCallback",
-          "declaration_line": 486,
+          "declaration_line": 489,
           "lines": [
-            484
+            487
           ]
         }
       ]
@@ -127106,36 +127106,46 @@
       "path": "src/modules/caranim.c",
       "symbol": "Build Y from direction, X from Y cross Z, then Z from X cross Y. * RE_ORIGINAL_QUIRK: a nonzero Y parallel to identity Z produces zero X/Z. * RE_UNKNOWN: producer direction constraints need audit before assuming a full-rank basis.",
       "lines": [
-        386
+        389
       ],
       "evidence": "Build Y from direction, X from Y cross Z, then Z from X cross Y. * RE_ORIGINAL_QUIRK: a nonzero Y parallel to identity Z produces zero X/Z. * RE_UNKNOWN: producer direction constraints need audit before assuming a full-rank basis.",
       "owners": [
         {
           "kind": "function",
           "name": "caranimBuildOrientationBasis",
-          "declaration_line": 389,
+          "declaration_line": 392,
           "lines": [
-            386
+            389
           ]
         }
       ]
     },
     {
-      "id": "Q-1ff1f89609db",
+      "id": "Q-472c15491336",
       "kind": "explicit_unknown",
       "path": "src/modules/caranim.c",
-      "symbol": "Find the first matching registered key, retaining unsigned 16-bit traversal. * RE_UNKNOWN: an in-range count and nonnull searched prefix require registry writer/remover proof.",
+      "symbol": "Compute the material offset and conditionally update the caller's scalar. * Kinds two/three add 0.125; the special record adds 0.5 when suppressSpecialCase * is zero, raising only values less than ten (NaN preserved). 0xFFF selects zero. * RE_UNKNOWN: scalar/offset units and caller index bounds; trace material callers.",
       "lines": [
-        440
+        331
       ],
-      "evidence": "Find the first matching registered key, retaining unsigned 16-bit traversal. * RE_UNKNOWN: an in-range count and nonnull searched prefix require registry writer/remover proof.",
+      "evidence": "Compute the material offset and conditionally update the caller's scalar. * Kinds two/three add 0.125; the special record adds 0.5 when suppressSpecialCase * is zero, raising only values less than ten (NaN preserved). 0xFFF selects zero. * RE_UNKNOWN: scalar/offset units and caller index bounds; trace material callers."
+    },
+    {
+      "id": "Q-b4aa00d217c9",
+      "kind": "explicit_unknown",
+      "path": "src/modules/caranim.c",
+      "symbol": "Find the first registered key with unsigned 16-bit traversal. RE_ORIGINAL_QUIRK: constructor0x003AC increments count even when all eight slots are full. * RE_UNKNOWN: caller bounds/lifetime must keep the searched prefix in range and nonnull; resolve original creation/lifecycle call sites.",
+      "lines": [
+        443
+      ],
+      "evidence": "Find the first registered key with unsigned 16-bit traversal. RE_ORIGINAL_QUIRK: constructor0x003AC increments count even when all eight slots are full. * RE_UNKNOWN: caller bounds/lifetime must keep the searched prefix in range and nonnull; resolve original creation/lifecycle call sites.",
       "owners": [
         {
           "kind": "function",
           "name": "caranimFindRegisteredStateByKey",
-          "declaration_line": 442,
+          "declaration_line": 445,
           "lines": [
-            440
+            443
           ]
         }
       ]
@@ -127166,16 +127176,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "On selection change, update, reread selection and copy 30 bytes via its text pointer. * GUI slot 0xC4 uppercases bytes >= 97 without NUL-scanning or retaining source. * RE_UNKNOWN: audit source extent, widget capacity and selection bounds.",
       "lines": [
-        367
+        370
       ],
       "evidence": "On selection change, update, reread selection and copy 30 bytes via its text pointer. * GUI slot 0xC4 uppercases bytes >= 97 without NUL-scanning or retaining source. * RE_UNKNOWN: audit source extent, widget capacity and selection bounds.",
       "owners": [
         {
           "kind": "function",
           "name": "caranimRefreshChangedSelection",
-          "declaration_line": 370,
+          "declaration_line": 373,
           "lines": [
-            367
+            370
           ]
         }
       ]
@@ -127186,16 +127196,36 @@
       "path": "src/modules/caranim.c",
       "symbol": "Register the animation callback at priority 0x14; zero means no insert-before callback. * RE_UNKNOWN: caller channel/list validity and ignored failure need caller/pool audit.",
       "lines": [
-        411
+        414
       ],
       "evidence": "Register the animation callback at priority 0x14; zero means no insert-before callback. * RE_UNKNOWN: caller channel/list validity and ignored failure need caller/pool audit.",
       "owners": [
         {
           "kind": "function",
           "name": "caranimRegisterChannelCallback",
-          "declaration_line": 413,
+          "declaration_line": 416,
           "lines": [
-            411
+            414
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-adcfc8e9b824",
+      "kind": "explicit_unknown",
+      "path": "src/modules/caranim.c",
+      "symbol": "Return an address in the module's 0x1C-stride table without allocating. * Sentinel 0xFFF and the debug override select record zero. RE_UNKNOWN: caller * index bounds and mutation rights; an address alone establishes no ownership.",
+      "lines": [
+        178
+      ],
+      "evidence": "Return an address in the module's 0x1C-stride table without allocating. * Sentinel 0xFFF and the debug override select record zero. RE_UNKNOWN: caller * index bounds and mutation rights; an address alone establishes no ownership.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "caranimGetMaterialRecord",
+          "declaration_line": 181,
+          "lines": [
+            178
           ]
         }
       ]
@@ -127206,29 +127236,29 @@
       "path": "src/modules/caranim.c",
       "symbol": "Return language-indexed labels for IDs -1 through 20, otherwise fallback. * RE_ORIGINAL_QUIRK: ID -1 reads one word before that language's base. * RE_UNKNOWN: language domain and prefix-table validity need language/table producers.",
       "lines": [
-        428
+        431
       ],
       "evidence": "Return language-indexed labels for IDs -1 through 20, otherwise fallback. * RE_ORIGINAL_QUIRK: ID -1 reads one word before that language's base. * RE_UNKNOWN: language domain and prefix-table validity need language/table producers.",
       "owners": [
         {
           "kind": "function",
           "name": "caranimGetLocalizedLabel",
-          "declaration_line": 431,
+          "declaration_line": 434,
           "lines": [
-            428
+            431
           ]
         }
       ]
     },
     {
-      "id": "Q-73097485cbc2",
+      "id": "Q-bb6fcb889275",
       "kind": "explicit_unknown",
       "path": "src/modules/caranim.c",
-      "symbol": "Walk at most eight registry entries, stopping at the first null, and clear * byte0x23C in each populated entry. Preserve the homed incoming A0 word. * RE_UNKNOWN: cleared-byte meaning, registry population/lifetime and historical * incoming argument type. Resolve original byte writers/readers, registration * and callback callers; a populated-prefix loop does not prove all slots live.",
+      "symbol": "Walk at most eight registry entries, stopping at the first null, and clear * byte0x23C: callback0x054B4 skips helper0x05304 while this byte is nonzero. * Constructor0x003AC clears it; callback sets it after that helper returns. * RE_UNKNOWN: helper role, reset cadence, pointer lifetime/capacity and incoming * argument type; trace callers. Preserve the homed incoming A0 word.",
       "lines": [
         141
       ],
-      "evidence": "Walk at most eight registry entries, stopping at the first null, and clear * byte0x23C in each populated entry. Preserve the homed incoming A0 word. * RE_UNKNOWN: cleared-byte meaning, registry population/lifetime and historical * incoming argument type. Resolve original byte writers/readers, registration * and callback callers; a populated-prefix loop does not prove all slots live.",
+      "evidence": "Walk at most eight registry entries, stopping at the first null, and clear * byte0x23C: callback0x054B4 skips helper0x05304 while this byte is nonzero. * Constructor0x003AC clears it; callback sets it after that helper returns. * RE_UNKNOWN: helper role, reset cadence, pointer lifetime/capacity and incoming * argument type; trace callers. Preserve the homed incoming A0 word.",
       "owners": [
         {
           "kind": "assembly",
@@ -128629,6 +128659,26 @@
           "declaration_line": 373,
           "lines": [
             372
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-2d741bbb2ed6",
+      "kind": "explicit_unknown",
+      "path": "src/modules/med.c",
+      "symbol": "RE_UNKNOWN: control-selection domain/lifecycle, color-property/resource interpretation and shared label extent/trailing-byte state require original control and selector producers, resource readers and backing-storage/source evidence; preserve the checked ten-case label/selector mapping, default -1, original pre-callback input snapshot, GUI C4 30-byte read and cache store after the color-query callback.",
+      "lines": [
+        378
+      ],
+      "evidence": "RE_UNKNOWN: control-selection domain/lifecycle, color-property/resource interpretation and shared label extent/trailing-byte state require original control and selector producers, resource readers and backing-storage/source evidence; preserve the checked ten-case label/selector mapping, default -1, original pre-callback input snapshot, GUI C4 30-byte read and cache store after the color-query callback.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_med_00405FEC",
+          "declaration_line": 379,
+          "lines": [
+            378
           ]
         }
       ]
@@ -132681,16 +132731,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Scan kind-zero records using their count-prefixed value list and original * 16-bit index updates. Null/other-kind records are ignored. The original scan * performs no state update. RE_UNKNOWN: caller-observed return; trace export callers.",
       "lines": [
-        775
+        788
       ],
       "evidence": "Scan kind-zero records using their count-prefixed value list and original * 16-bit index updates. Null/other-kind records are ignored. The original scan * performs no state update. RE_UNKNOWN: caller-observed return; trace export callers.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectScanRecordValues",
-          "declaration_line": 778,
+          "declaration_line": 791,
           "lines": [
-            775
+            788
           ]
         }
       ]
@@ -132721,16 +132771,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Scan the shared 0x78-byte records whose parallel filter word intersects mask. * The original helper appends results for the two input vectors. Expose shared * buffers only when at least one result exists; preserve optional-output store * order even when caller output pointers alias. * RE_ORIGINAL_QUIRK: the iteration index wraps to 16 bits, and the signed record * bound is reloaded only after a matching record invokes the helper. * RE_UNKNOWN: record kinds, vector coordinate space, result-word meanings and * valid shared-buffer capacity/lifetime. Trace shared-query setter callers and * helper 0x405124/result consumers before strengthening these contracts.",
       "lines": [
-        611
+        624
       ],
       "evidence": "Scan the shared 0x78-byte records whose parallel filter word intersects mask. * The original helper appends results for the two input vectors. Expose shared * buffers only when at least one result exists; preserve optional-output store * order even when caller output pointers alias. * RE_ORIGINAL_QUIRK: the iteration index wraps to 16 bits, and the signed record * bound is reloaded only after a matching record invokes the helper. * RE_UNKNOWN: record kinds, vector coordinate space, result-word meanings and * valid shared-buffer capacity/lifetime. Trace shared-query setter callers and * helper 0x405124/result consumers before strengthening these contracts.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueryFilteredSharedRecords",
-          "declaration_line": 620,
+          "declaration_line": 633,
           "lines": [
-            611
+            624
           ]
         }
       ]
@@ -132741,7 +132791,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Select the side with the smallest signed XY face margin: +1/+2 select * maximum X/Y and -1/-2 minimum X/Y. Equal margins keep the first side. * RE_UNKNOWN: whether callers guarantee the point is inside the bounds. The * helper takes no absolute values and performs no containment check, so this * is not a general nearest-face calculation for outside points. Trace original * callers before relying on an inside-point precondition.",
       "lines": [
-        670
+        683
       ],
       "evidence": "Select the side with the smallest signed XY face margin: +1/+2 select * maximum X/Y and -1/-2 minimum X/Y. Equal margins keep the first side. * RE_UNKNOWN: whether callers guarantee the point is inside the bounds. The * helper takes no absolute values and performs no containment check, so this * is not a general nearest-face calculation for outside points. Trace original * callers before relying on an inside-point precondition."
     },
@@ -132811,6 +132861,26 @@
           "declaration_line": 380,
           "lines": [
             376
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-959d03e29f53",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvisect_rom.c",
+      "symbol": "TERR slot28 supplies the low-byte triangle-list count at point XY; * slot14 samples a scalar/vector for each triangle. Mode0 selects the greatest * scalar <= pointZ, mode1 the least scalar >= pointZ; mode2 retains the native * signed-subtraction/negation comparisons, choosing mode1 on equal differences. * Preserve native sentinels and ordered predicates. Missing mode0 output writes * vector Y0/X0/Z1 then scalar0, leaving the handle; other failure paths leave * outputs unchanged. Successful outputs store handle, scalar, then vector XYZ. * RE_UNKNOWN: physical meaning/frame of scalar and vector, valid mode/domain, * triangle-list lifetime and provider output guarantees for invalid triangles * or zero normal Z. Trace original callers and the actual TERR slot14/28 * providers/assets before generalizing the query or adding fallback behavior.",
+      "lines": [
+        590
+      ],
+      "evidence": "TERR slot28 supplies the low-byte triangle-list count at point XY; * slot14 samples a scalar/vector for each triangle. Mode0 selects the greatest * scalar <= pointZ, mode1 the least scalar >= pointZ; mode2 retains the native * signed-subtraction/negation comparisons, choosing mode1 on equal differences. * Preserve native sentinels and ordered predicates. Missing mode0 output writes * vector Y0/X0/Z1 then scalar0, leaving the handle; other failure paths leave * outputs unchanged. Successful outputs store handle, scalar, then vector XYZ. * RE_UNKNOWN: physical meaning/frame of scalar and vector, valid mode/domain, * triangle-list lifetime and provider output guarantees for invalid triangles * or zero normal Z. Trace original callers and the actual TERR slot14/28 * providers/assets before generalizing the query or adding fallback behavior.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_uvisect_rom_004045A8",
+          "declaration_line": 601,
+          "lines": [
+            590
           ]
         }
       ]
@@ -133121,16 +133191,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Adjust a signed index pair by one, apply one 64-entry wrap correction to * each index, then read the original DATA-backed 64 by 64 u16 table. * A nonzero low mode byte increments first/decrements second; zero reverses * those adjustments and transposes the lookup. Preserve signed-16 narrowing * and the branch-specific differences that return 0xFFFF before the lookup. * RE_UNKNOWN: the table value meanings, mode convention and valid caller index * domain. One correction is not general modulo: trace original callers and * table construction before assigning geometry meanings or changing bounds.",
       "lines": [
-        959
+        970
       ],
       "evidence": "Adjust a signed index pair by one, apply one 64-entry wrap correction to * each index, then read the original DATA-backed 64 by 64 u16 table. * A nonzero low mode byte increments first/decrements second; zero reverses * those adjustments and transposes the lookup. Preserve signed-16 narrowing * and the branch-specific differences that return 0xFFFF before the lookup. * RE_UNKNOWN: the table value meanings, mode convention and valid caller index * domain. One correction is not general modulo: trace original callers and * table construction before assigning geometry meanings or changing bounds.",
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraLookupAdjustedWrappedIndexPair",
-          "declaration_line": 967,
+          "declaration_line": 978,
           "lines": [
-            959
+            970
           ]
         }
       ]
@@ -133141,7 +133211,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Apply FMTX's shared negative translation to the tile matrix and load it * as view matrix one. Dispatch each geometry list unless its shared disable * flag is set, preserving the two 16-bit masks and list counts, then pop the * view matrix. Tiles without geometry do nothing. * RE_UNKNOWN: which coordinate origin the shared FMTX translation represents * at this call. Trace FMTX export 0x04 setters and their render ordering.",
       "lines": [
-        931
+        942
       ],
       "evidence": "Apply FMTX's shared negative translation to the tile matrix and load it * as view matrix one. Dispatch each geometry list unless its shared disable * flag is set, preserving the two 16-bit masks and list counts, then pop the * view matrix. Tiles without geometry do nothing. * RE_UNKNOWN: which coordinate origin the shared FMTX translation represents * at this call. Trace FMTX export 0x04 setters and their render ordering."
     },
@@ -133171,16 +133241,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Build channel record X/Y slots at 12-byte strides and count byte0x48 * within the original100-byte record stride. CHAN property10 supplies six * shared points; property2 supplies a matrix. Depending on matrix float0x18, * select three points using the proven0..3 lowest-Z result, or pass five * point pointers through C50C's in-place Z-plane adjustment and CA64's * pointer-list reordering. Preserve shared-point writes and untouched record Z. * RE_UNKNOWN: matrix/point frame, complete historical record layout/capacity, * valid channel/resource lifetimes and caller guarantees for C50C's unchecked * projection arithmetic. Resolve through CHAN producers, C50C/C998/CA64, * record-buffer allocation and original record consumers.",
       "lines": [
-        1041
+        1052
       ],
       "evidence": "Build channel record X/Y slots at 12-byte strides and count byte0x48 * within the original100-byte record stride. CHAN property10 supplies six * shared points; property2 supplies a matrix. Depending on matrix float0x18, * select three points using the proven0..3 lowest-Z result, or pass five * point pointers through C50C's in-place Z-plane adjustment and CA64's * pointer-list reordering. Preserve shared-point writes and untouched record Z. * RE_UNKNOWN: matrix/point frame, complete historical record layout/capacity, * valid channel/resource lifetimes and caller guarantees for C50C's unchecked * projection arithmetic. Resolve through CHAN producers, C50C/C998/CA64, * record-buffer allocation and original record consumers.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvterra_rom_0040C218",
-          "declaration_line": 1051,
+          "declaration_line": 1062,
           "lines": [
-            1041
+            1052
           ]
         }
       ]
@@ -133191,16 +133261,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Choose one of four initialized SORT groups from a channel's terrain * tile byte (or the shared threshold when no tile exists), then append the * callback/context/key through the actual SORT export0x10. * RE_ORIGINAL_QUIRK: subtract each XY origin, truncate the differences and * cell sizes to signed integers, then divide; do not replace with floating * division before truncation. Upper XY bounds are excluded. * RE_UNKNOWN: point/key coordinate units, valid finite conversion/nonzero * truncated-cell domain, tile-array extent and meanings of the shared byte, * threshold sentinel-1 and alternate group selection. Trace original callers, * terrain asset builders and AC9C/AE4C queue/threshold writers. Callback words * use the existing SORT API type; complete historical callback contracts * require their producers and eventual invocation paths.",
       "lines": [
-        1198
+        1209
       ],
       "evidence": "Choose one of four initialized SORT groups from a channel's terrain * tile byte (or the shared threshold when no tile exists), then append the * callback/context/key through the actual SORT export0x10. * RE_ORIGINAL_QUIRK: subtract each XY origin, truncate the differences and * cell sizes to signed integers, then divide; do not replace with floating * division before truncation. Upper XY bounds are excluded. * RE_UNKNOWN: point/key coordinate units, valid finite conversion/nonzero * truncated-cell domain, tile-array extent and meanings of the shared byte, * threshold sentinel-1 and alternate group selection. Trace original callers, * terrain asset builders and AC9C/AE4C queue/threshold writers. Callback words * use the existing SORT API type; complete historical callback contracts * require their producers and eventual invocation paths.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvterra_rom_0040D128",
-          "declaration_line": 1210,
+          "declaration_line": 1221,
           "lines": [
-            1198
+            1209
           ]
         }
       ]
@@ -133211,16 +133281,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Classify four endpoint Z values against the terrain's two Z bounds, * then conditionally project endpoints from the shared origin onto a bound. * Preserve native all-four/side-count early returns and ordered comparisons; * each unordered comparison stays false. * Each projection can mutate shared endpoints. Reread subsequent endpoint Z * fields after calls while retaining the original bound snapshots. * RE_UNKNOWN: point/terrain coordinate convention, valid bound ordering and * origin/endpoint domain for the callee's unchecked normalization/division. * Resolve through original C218/CHAN point producers and terrain assets before * assigning physical clipping semantics or adding degenerate-point handling.",
       "lines": [
-        1074
+        1085
       ],
       "evidence": "Classify four endpoint Z values against the terrain's two Z bounds, * then conditionally project endpoints from the shared origin onto a bound. * Preserve native all-four/side-count early returns and ordered comparisons; * each unordered comparison stays false. * Each projection can mutate shared endpoints. Reread subsequent endpoint Z * fields after calls while retaining the original bound snapshots. * RE_UNKNOWN: point/terrain coordinate convention, valid bound ordering and * origin/endpoint domain for the callee's unchecked normalization/division. * Resolve through original C218/CHAN point producers and terrain assets before * assigning physical clipping semantics or adding degenerate-point handling.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvterra_rom_0040C50C",
-          "declaration_line": 1084,
+          "declaration_line": 1095,
           "lines": [
-            1074
+            1085
           ]
         }
       ]
@@ -133271,16 +133341,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Compose two four-sample bound masks with the BF74 centered-span mask. * The native loops use quarter-span steps and floating limits; equal first * coordinates select native scalar D6E8 instead of dividing. * RE_UNKNOWN: coordinate frame/units, valid bound/span domain, equal-coordinate * scalar convention and complete center owner (BF74 reads floats0x30/0x34). * Resolve through original callers and BF74/B26C consumers before normalizing * zero/negative spans, unordered inputs or changing the native scalar.",
       "lines": [
-        1017
+        1028
       ],
       "evidence": "Compose two four-sample bound masks with the BF74 centered-span mask. * The native loops use quarter-span steps and floating limits; equal first * coordinates select native scalar D6E8 instead of dividing. * RE_UNKNOWN: coordinate frame/units, valid bound/span domain, equal-coordinate * scalar convention and complete center owner (BF74 reads floats0x30/0x34). * Resolve through original callers and BF74/B26C consumers before normalizing * zero/negative spans, unordered inputs or changing the native scalar.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvterra_rom_0040BD38",
-          "declaration_line": 1024,
+          "declaration_line": 1035,
           "lines": [
-            1017
+            1028
           ]
         }
       ]
@@ -133291,16 +133361,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Create SORT groups for tags 80, 85, 110, 115 and enable option 1 on the first * and third returned handles, preserving original creation/call/store order. * Original TERR initializer at 0x004002C0 calls this just after importing SORT. * RE_ORIGINAL_QUIRK: both actual SORT slot0x14 calls pass only handle,1,1, * without the zero option terminator read by original target 0x00400B24. * On valid-handle/normal-return paths the first setter leaves a3 holding its * group-table-global address. No intervening instruction changes a3; the second * setter receives that nonzero unsupplied tag and scans following words for zero. * RE_UNKNOWN: allocation/error paths, first-call residual a3, following stack * values, live initialization paths and observable impact. Trace callers and * runtime before a separate recomp correction; keep original arguments here.",
       "lines": [
-        1176
+        1187
       ],
       "evidence": "Create SORT groups for tags 80, 85, 110, 115 and enable option 1 on the first * and third returned handles, preserving original creation/call/store order. * Original TERR initializer at 0x004002C0 calls this just after importing SORT. * RE_ORIGINAL_QUIRK: both actual SORT slot0x14 calls pass only handle,1,1, * without the zero option terminator read by original target 0x00400B24. * On valid-handle/normal-return paths the first setter leaves a3 holding its * group-table-global address. No intervening instruction changes a3; the second * setter receives that nonzero unsupplied tag and scans following words for zero. * RE_UNKNOWN: allocation/error paths, first-call residual a3, following stack * values, live initialization paths and observable impact. Trace callers and * runtime before a separate recomp correction; keep original arguments here.",
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraInitializeSortGroups",
-          "declaration_line": 1187,
+          "declaration_line": 1198,
           "lines": [
-            1176
+            1187
           ]
         }
       ]
@@ -133321,16 +133391,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Find the first eligible/mask-selected static object passing the original * ISCT sphere test and, for model flag0x02, the nonnegative detail-helper test. * The original sphere radius is a float read at object byte0x14. * RE_UNKNOWN: shared header currently represents those bytes as two u16 fields; * verify original UVCT record writers before changing the shared layout. * Position frame/units, locator input domain, flag/detail-result convention, * list/resource lifetime and query-handle consumers also require original * caller/loader/provider tracing before collision or ownership claims.",
       "lines": [
-        775
+        786
       ],
       "evidence": "Find the first eligible/mask-selected static object passing the original * ISCT sphere test and, for model flag0x02, the nonnegative detail-helper test. * The original sphere radius is a float read at object byte0x14. * RE_UNKNOWN: shared header currently represents those bytes as two u16 fields; * verify original UVCT record writers before changing the shared layout. * Position frame/units, locator input domain, flag/detail-result convention, * list/resource lifetime and query-handle consumers also require original * caller/loader/provider tracing before collision or ownership claims.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvterra_rom_0040888C",
-          "declaration_line": 783,
+          "declaration_line": 794,
           "lines": [
-            775
+            786
           ]
         }
       ]
@@ -133341,16 +133411,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Normalize endpoint-minus-origin, then move the endpoint along that direction * to the requested Z plane using the original floating-point expression order. * RE_UNKNOWN: coordinate-space convention and caller guarantees for nonzero * direction.z. Preserve the ignored normalization result, unchecked pointers and * sequential endpoint writes; no zero-direction fallback or final Z override.",
       "lines": [
-        1088
+        1099
       ],
       "evidence": "Normalize endpoint-minus-origin, then move the endpoint along that direction * to the requested Z plane using the original floating-point expression order. * RE_UNKNOWN: coordinate-space convention and caller guarantees for nonzero * direction.z. Preserve the ignored normalization result, unchecked pointers and * sequential endpoint writes; no zero-direction fallback or final Z override.",
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraProjectEndpointToZPlane",
-          "declaration_line": 1093,
+          "declaration_line": 1104,
           "lines": [
-            1088
+            1099
           ]
         }
       ]
@@ -133361,16 +133431,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Order point pointers using the minimum-X seed and repeated least normalized * XY direction dot product; stop on returning to the initial pointer, then * write the pointer list and byte count. Preserve the prior best index when * no candidate direction improves the native threshold. * RE_ORIGINAL_QUIRK: even input count zero seeds points[0] and output count one. * RE_UNKNOWN: intended geometric guarantee, valid count/capacity and * coincident/nonfinite-point caller domain. Native scratch holds five entries; * C218 supplies five. Trace original callers and CHAN point producers before * claiming a general polygon algorithm or adding degenerate-input behavior. * RE_UNKNOWN: historical declarations of native DATA initializers F718/F72C. * The routine copies their observed 20-byte pointer and 12-byte vector * prefixes. F72C's retained label also contains trailing module/footer words; * preserve their storage and resolve object boundaries before migrating DATA. * FVEC's original import/export bindings establish normalization at slot 08 * and the two-coordinate dot product at slot 5C.",
       "lines": [
-        1109
+        1120
       ],
       "evidence": "Order point pointers using the minimum-X seed and repeated least normalized * XY direction dot product; stop on returning to the initial pointer, then * write the pointer list and byte count. Preserve the prior best index when * no candidate direction improves the native threshold. * RE_ORIGINAL_QUIRK: even input count zero seeds points[0] and output count one. * RE_UNKNOWN: intended geometric guarantee, valid count/capacity and * coincident/nonfinite-point caller domain. Native scratch holds five entries; * C218 supplies five. Trace original callers and CHAN point producers before * claiming a general polygon algorithm or adding degenerate-input behavior. * RE_UNKNOWN: historical declarations of native DATA initializers F718/F72C. * The routine copies their observed 20-byte pointer and 12-byte vector * prefixes. F72C's retained label also contains trailing module/footer words; * preserve their storage and resolve object boundaries before migrating DATA. * FVEC's original import/export bindings establish normalization at slot 08 * and the two-coordinate dot product at slot 5C.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvterra_rom_0040CA64",
-          "declaration_line": 1124,
+          "declaration_line": 1135,
           "lines": [
-            1109
+            1120
           ]
         }
       ]
@@ -133421,16 +133491,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Read five most-significant-bit-first packed bits at the caller index. * Original offset=index*5 uses signed division/remainder by 8; a straddling value * combines two zero-extended bytes. No bounds check appears in this reader. * RE_UNKNOWN: table extent, valid nonnegative index range and guarantees for * second-byte reads. Trace original allocators/writers and uvTerraTestPackedAngularLevelThreshold and other callers * before changing signed arithmetic, wrapping indices or adding validation.",
       "lines": [
-        1165
+        1176
       ],
       "evidence": "Read five most-significant-bit-first packed bits at the caller index. * Original offset=index*5 uses signed division/remainder by 8; a straddling value * combines two zero-extended bytes. No bounds check appears in this reader. * RE_UNKNOWN: table extent, valid nonnegative index range and guarantees for * second-byte reads. Trace original allocators/writers and uvTerraTestPackedAngularLevelThreshold and other callers * before changing signed arithmetic, wrapping indices or adding validation.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvterra_rom_0040CF98",
-          "declaration_line": 1171,
+          "declaration_line": 1182,
           "lines": [
-            1165
+            1176
           ]
         }
       ]
@@ -133441,16 +133511,36 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Registered channel callback at priority45: reset the shared threshold, * visit 16-byte queued tile records, clear the tile-indexed byte when the * record value is below threshold, otherwise draw with its two stored masks * and set the byte to one. Store threshold minus terrain field0x24 afterward. * RE_UNKNOWN: comparison/threshold units, mask/byte meanings and queue ordering, * extent and tile-array membership. Channel/resource lifetime must also be * traced: the original loaded-terrain result is used without a null guard. * Resolve through original 0x40078C queue construction, shared-threshold writers, * TERR export0xA8 consumers and channel callback registration/teardown.",
       "lines": [
-        878
+        889
       ],
       "evidence": "Registered channel callback at priority45: reset the shared threshold, * visit 16-byte queued tile records, clear the tile-indexed byte when the * record value is below threshold, otherwise draw with its two stored masks * and set the byte to one. Store threshold minus terrain field0x24 afterward. * RE_UNKNOWN: comparison/threshold units, mask/byte meanings and queue ordering, * extent and tile-array membership. Channel/resource lifetime must also be * traced: the original loaded-terrain result is used without a null guard. * Resolve through original 0x40078C queue construction, shared-threshold writers, * TERR export0xA8 consumers and channel callback registration/teardown.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvterra_rom_0040AC9C",
-          "declaration_line": 887,
+          "declaration_line": 898,
           "lines": [
-            878
+            889
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-d1d360b13bd4",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvterra_rom.c",
+      "symbol": "Replace a static object's model ID only when the requested UVMD is loaded; * 65535 writes the native cleared-model sentinel without a model lookup. * RE_ORIGINAL_QUIRK: after looking up the current model, native code tests the * already validated requested-model pointer again and ignores the old lookup's * result. Preserve both lookups and that test rather than substituting the * old-model result or adding an ownership/release operation. * RE_UNKNOWN: purpose of the second lookup and caller guarantees for model * IDs/lifetimes. Trace original callers and the asset lookup provider before * changing this preserved sequence or inferring missing-model player impact.",
+      "lines": [
+        772
+      ],
+      "evidence": "Replace a static object's model ID only when the requested UVMD is loaded; * 65535 writes the native cleared-model sentinel without a model lookup. * RE_ORIGINAL_QUIRK: after looking up the current model, native code tests the * already validated requested-model pointer again and ignores the old lookup's * result. Preserve both lookups and that test rather than substituting the * old-model result or adding an ownership/release operation. * RE_UNKNOWN: purpose of the second lookup and caller guarantees for model * IDs/lifetimes. Trace original callers and the asset lookup provider before * changing this preserved sequence or inferring missing-model player impact.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_uvterra_rom_0040880C",
+          "declaration_line": 781,
+          "lines": [
+            772
           ]
         }
       ]
@@ -133461,7 +133551,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Resolve a packed contour/object handle: bits 12..23 select UVCT and * bits 0..11 select its static object; bits 24..31 are ignored. Return an address * inside the loaded UVCT object array, preserving the original null checks. * RE_UNKNOWN: object-index limits and coordination with resource unloading. * This helper allocates no object and acquires no visible resource reference; * trace UVCT loaders/releases and handle consumers before assigning ownership.",
       "lines": [
-        845
+        856
       ],
       "evidence": "Resolve a packed contour/object handle: bits 12..23 select UVCT and * bits 0..11 select its static object; bits 24..31 are ignored. Return an address * inside the loaded UVCT object array, preserving the original null checks. * RE_UNKNOWN: object-index limits and coordination with resource unloading. * This helper allocates no object and acquires no visible resource reference; * trace UVCT loaders/releases and handle consumers before assigning ownership."
     },
@@ -133471,16 +133561,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Return the indexed byte also updated by the queued-tile draw callback. * RE_UNKNOWN: the public export's caller index domain and byte meaning. * Original 0x40AC9C writes this array by tile-pointer difference, so a channel * interpretation is not established. Trace original TERR export 0xA8 callers * and all array writers before assigning channel or visibility semantics.",
       "lines": [
-        866
+        877
       ],
       "evidence": "Return the indexed byte also updated by the queued-tile draw callback. * RE_UNKNOWN: the public export's caller index domain and byte meaning. * Original 0x40AC9C writes this array by tile-pointer difference, so a channel * interpretation is not established. Trace original TERR export 0xA8 callers * and all array writers before assigning channel or visibility semantics.",
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraGetIndexedDrawByte",
-          "declaration_line": 871,
+          "declaration_line": 882,
           "lines": [
-            866
+            877
           ]
         }
       ]
@@ -133521,16 +133611,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Test a packed five-bit level selected by the original atan2 quantization. * A null table returns one. Otherwise preserve native angle bias/scale, * division by 5.625, signed-16 index narrowing, and the separate 15.625 level * quantization. Levels at least 32 require the packed value to equal 31; * lower levels use the original signed comparison and inverted boolean. * RE_UNKNOWN: table extent/angle wrap, sample frame/units and levelInput's * valid nonzero/finite conversion domain. The same input divides both atan2 * operands and determines the threshold. Trace original table builders/callers * before assigning physical range semantics or adding normalization/clamps.",
       "lines": [
-        1129
+        1140
       ],
       "evidence": "Test a packed five-bit level selected by the original atan2 quantization. * A null table returns one. Otherwise preserve native angle bias/scale, * division by 5.625, signed-16 index narrowing, and the separate 15.625 level * quantization. Levels at least 32 require the packed value to equal 31; * lower levels use the original signed comparison and inverted boolean. * RE_UNKNOWN: table extent/angle wrap, sample frame/units and levelInput's * valid nonzero/finite conversion domain. The same input divides both atan2 * operands and determines the threshold. Trace original table builders/callers * before assigning physical range semantics or adding normalization/clamps.",
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraTestPackedAngularLevelThreshold",
-          "declaration_line": 1138,
+          "declaration_line": 1149,
           "lines": [
-            1129
+            1140
           ]
         }
       ]
@@ -133541,16 +133631,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "When requested, disable fog, restore default render state, clear the * depth viewport, install the six stored channel-frustum values and load * the channel's property-one matrix through the projection interface. * Then visit queued tiles, skipping only threshold <= comparisonValue; * preserve the original unordered-value draw path and queue reloads. * RE_UNKNOWN: why this callback restores projection, the shared threshold's * units/order, mask meanings and valid channel/matrix-output guarantees. * Trace original refresh-flag/frustum writers, queue construction and the * registered callback order before assigning camera or visibility intent.",
       "lines": [
-        892
+        903
       ],
       "evidence": "When requested, disable fog, restore default render state, clear the * depth viewport, install the six stored channel-frustum values and load * the channel's property-one matrix through the projection interface. * Then visit queued tiles, skipping only threshold <= comparisonValue; * preserve the original unordered-value draw path and queue reloads. * RE_UNKNOWN: why this callback restores projection, the shared threshold's * units/order, mask meanings and valid channel/matrix-output guarantees. * Trace original refresh-flag/frustum writers, queue construction and the * registered callback order before assigning camera or visibility intent.",
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraRefreshProjectionAndDrawQueuedTiles",
-          "declaration_line": 901,
+          "declaration_line": 912,
           "lines": [
-            892
+            903
           ]
         }
       ]
@@ -140716,15 +140806,15 @@
       "symbol": "pad0",
       "lines": [
         66,
-        831
+        842
       ],
       "owners": [
         {
           "kind": "type",
           "name": "AutoS_0040ABE0_temp_v0",
-          "declaration_line": 830,
+          "declaration_line": 841,
           "lines": [
-            831
+            842
           ]
         },
         {
@@ -182611,15 +182701,15 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "unk0",
       "lines": [
-        831
+        844
       ],
       "owners": [
         {
           "kind": "type",
           "name": "UvIntersectionPayload",
-          "declaration_line": 831,
+          "declaration_line": 844,
           "lines": [
-            831
+            844
           ]
         }
       ]
@@ -182634,15 +182724,15 @@
         59,
         66,
         581,
-        725
+        738
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectCreateValueRecord",
-          "declaration_line": 720,
+          "declaration_line": 733,
           "lines": [
-            725
+            738
           ]
         },
         {
@@ -182856,8 +182946,8 @@
         42,
         569,
         581,
-        598,
-        599
+        611,
+        612
       ],
       "owners": [
         {
@@ -182871,10 +182961,10 @@
         {
           "kind": "function",
           "name": "uvIsectUpdateMinimumValueRecord",
-          "declaration_line": 597,
+          "declaration_line": 610,
           "lines": [
-            598,
-            599
+            611,
+            612
           ]
         },
         {
@@ -188759,7 +188849,7 @@
         604,
         627,
         628,
-        943
+        954
       ],
       "owners": [
         {
@@ -188783,9 +188873,9 @@
         {
           "kind": "function",
           "name": "uvTerraDrawTileGeometry",
-          "declaration_line": 940,
+          "declaration_line": 951,
           "lines": [
-            943
+            954
           ]
         },
         {
@@ -188847,8 +188937,8 @@
       "symbol": "unk10",
       "lines": [
         230,
-        857,
-        949
+        868,
+        960
       ],
       "owners": [
         {
@@ -188862,17 +188952,17 @@
         {
           "kind": "function",
           "name": "uvTerraDrawTileGeometry",
-          "declaration_line": 940,
+          "declaration_line": 951,
           "lines": [
-            949
+            960
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetStaticObject",
-          "declaration_line": 852,
+          "declaration_line": 863,
           "lines": [
-            857
+            868
           ]
         }
       ]
@@ -188883,15 +188973,15 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "unk14",
       "lines": [
-        949
+        960
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraDrawTileGeometry",
-          "declaration_line": 940,
+          "declaration_line": 951,
           "lines": [
-            949
+            960
           ]
         }
       ]
@@ -189019,7 +189109,7 @@
         749,
         750,
         751,
-        812
+        823
       ],
       "owners": [
         {
@@ -189034,9 +189124,9 @@
         {
           "kind": "function",
           "name": "uvTerraGetStaticObjectProperties",
-          "declaration_line": 801,
+          "declaration_line": 812,
           "lines": [
-            812
+            823
           ]
         },
         {
@@ -189466,12 +189556,12 @@
         449,
         491,
         551,
-        826,
-        832,
-        840,
-        942,
-        946,
-        949
+        837,
+        843,
+        851,
+        953,
+        957,
+        960
       ],
       "owners": [
         {
@@ -189489,11 +189579,11 @@
         {
           "kind": "function",
           "name": "uvTerraDrawTileGeometry",
-          "declaration_line": 940,
+          "declaration_line": 951,
           "lines": [
-            942,
-            946,
-            949
+            953,
+            957,
+            960
           ]
         },
         {
@@ -189537,25 +189627,25 @@
         {
           "kind": "function",
           "name": "uvTerraGetStaticObjectValue",
-          "declaration_line": 837,
+          "declaration_line": 848,
           "lines": [
-            840
+            851
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraSetStaticObjectValue",
-          "declaration_line": 824,
+          "declaration_line": 835,
           "lines": [
-            826
+            837
           ]
         },
         {
           "kind": "type",
           "name": "AutoS_0040ABE0_temp_v0",
-          "declaration_line": 830,
+          "declaration_line": 841,
           "lines": [
-            832
+            843
           ]
         }
       ]
@@ -189613,7 +189703,7 @@
         450,
         495,
         556,
-        946
+        957
       ],
       "owners": [
         {
@@ -189627,9 +189717,9 @@
         {
           "kind": "function",
           "name": "uvTerraDrawTileGeometry",
-          "declaration_line": 940,
+          "declaration_line": 951,
           "lines": [
-            946
+            957
           ]
         },
         {
@@ -189674,7 +189764,7 @@
       "lines": [
         228,
         350,
-        946
+        957
       ],
       "owners": [
         {
@@ -189689,9 +189779,9 @@
         {
           "kind": "function",
           "name": "uvTerraDrawTileGeometry",
-          "declaration_line": 940,
+          "declaration_line": 951,
           "lines": [
-            946
+            957
           ]
         }
       ]
@@ -200259,11 +200349,11 @@
         59,
         741,
         765,
-        803,
-        825,
-        838,
-        852,
-        854
+        814,
+        836,
+        849,
+        863,
+        865
       ],
       "owners": [
         {
@@ -200277,10 +200367,10 @@
         {
           "kind": "function",
           "name": "uvTerraGetStaticObject",
-          "declaration_line": 852,
+          "declaration_line": 863,
           "lines": [
-            852,
-            854
+            863,
+            865
           ]
         },
         {
@@ -200294,17 +200384,17 @@
         {
           "kind": "function",
           "name": "uvTerraGetStaticObjectProperties",
-          "declaration_line": 801,
+          "declaration_line": 812,
           "lines": [
-            803
+            814
           ]
         },
         {
           "kind": "function",
           "name": "uvTerraGetStaticObjectValue",
-          "declaration_line": 837,
+          "declaration_line": 848,
           "lines": [
-            838
+            849
           ]
         },
         {
@@ -200318,9 +200408,9 @@
         {
           "kind": "function",
           "name": "uvTerraSetStaticObjectValue",
-          "declaration_line": 824,
+          "declaration_line": 835,
           "lines": [
-            825
+            836
           ]
         }
       ]
@@ -201110,16 +201200,36 @@
       "path": "src/modules/caranim.c",
       "symbol": "Build Y from direction, X from Y cross Z, then Z from X cross Y. * RE_ORIGINAL_QUIRK: a nonzero Y parallel to identity Z produces zero X/Z. * RE_UNKNOWN: producer direction constraints need audit before assuming a full-rank basis.",
       "lines": [
-        386
+        389
       ],
       "evidence": "Build Y from direction, X from Y cross Z, then Z from X cross Y. * RE_ORIGINAL_QUIRK: a nonzero Y parallel to identity Z produces zero X/Z. * RE_UNKNOWN: producer direction constraints need audit before assuming a full-rank basis.",
       "owners": [
         {
           "kind": "function",
           "name": "caranimBuildOrientationBasis",
-          "declaration_line": 389,
+          "declaration_line": 392,
           "lines": [
-            386
+            389
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-58a5a884ffa1",
+      "kind": "original_quirk",
+      "path": "src/modules/caranim.c",
+      "symbol": "Find the first registered key with unsigned 16-bit traversal. RE_ORIGINAL_QUIRK: constructor0x003AC increments count even when all eight slots are full. * RE_UNKNOWN: caller bounds/lifetime must keep the searched prefix in range and nonnull; resolve original creation/lifecycle call sites.",
+      "lines": [
+        443
+      ],
+      "evidence": "Find the first registered key with unsigned 16-bit traversal. RE_ORIGINAL_QUIRK: constructor0x003AC increments count even when all eight slots are full. * RE_UNKNOWN: caller bounds/lifetime must keep the searched prefix in range and nonnull; resolve original creation/lifecycle call sites.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "caranimFindRegisteredStateByKey",
+          "declaration_line": 445,
+          "lines": [
+            443
           ]
         }
       ]
@@ -201130,16 +201240,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "Return language-indexed labels for IDs -1 through 20, otherwise fallback. * RE_ORIGINAL_QUIRK: ID -1 reads one word before that language's base. * RE_UNKNOWN: language domain and prefix-table validity need language/table producers.",
       "lines": [
-        428
+        431
       ],
       "evidence": "Return language-indexed labels for IDs -1 through 20, otherwise fallback. * RE_ORIGINAL_QUIRK: ID -1 reads one word before that language's base. * RE_UNKNOWN: language domain and prefix-table validity need language/table producers.",
       "owners": [
         {
           "kind": "function",
           "name": "caranimGetLocalizedLabel",
-          "declaration_line": 431,
+          "declaration_line": 434,
           "lines": [
-            428
+            431
           ]
         }
       ]
@@ -201939,16 +202049,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Scan the shared 0x78-byte records whose parallel filter word intersects mask. * The original helper appends results for the two input vectors. Expose shared * buffers only when at least one result exists; preserve optional-output store * order even when caller output pointers alias. * RE_ORIGINAL_QUIRK: the iteration index wraps to 16 bits, and the signed record * bound is reloaded only after a matching record invokes the helper. * RE_UNKNOWN: record kinds, vector coordinate space, result-word meanings and * valid shared-buffer capacity/lifetime. Trace shared-query setter callers and * helper 0x405124/result consumers before strengthening these contracts.",
       "lines": [
-        611
+        624
       ],
       "evidence": "Scan the shared 0x78-byte records whose parallel filter word intersects mask. * The original helper appends results for the two input vectors. Expose shared * buffers only when at least one result exists; preserve optional-output store * order even when caller output pointers alias. * RE_ORIGINAL_QUIRK: the iteration index wraps to 16 bits, and the signed record * bound is reloaded only after a matching record invokes the helper. * RE_UNKNOWN: record kinds, vector coordinate space, result-word meanings and * valid shared-buffer capacity/lifetime. Trace shared-query setter callers and * helper 0x405124/result consumers before strengthening these contracts.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectQueryFilteredSharedRecords",
-          "declaration_line": 620,
+          "declaration_line": 633,
           "lines": [
-            611
+            624
           ]
         }
       ]
@@ -202089,16 +202199,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Choose one of four initialized SORT groups from a channel's terrain * tile byte (or the shared threshold when no tile exists), then append the * callback/context/key through the actual SORT export0x10. * RE_ORIGINAL_QUIRK: subtract each XY origin, truncate the differences and * cell sizes to signed integers, then divide; do not replace with floating * division before truncation. Upper XY bounds are excluded. * RE_UNKNOWN: point/key coordinate units, valid finite conversion/nonzero * truncated-cell domain, tile-array extent and meanings of the shared byte, * threshold sentinel-1 and alternate group selection. Trace original callers, * terrain asset builders and AC9C/AE4C queue/threshold writers. Callback words * use the existing SORT API type; complete historical callback contracts * require their producers and eventual invocation paths.",
       "lines": [
-        1198
+        1209
       ],
       "evidence": "Choose one of four initialized SORT groups from a channel's terrain * tile byte (or the shared threshold when no tile exists), then append the * callback/context/key through the actual SORT export0x10. * RE_ORIGINAL_QUIRK: subtract each XY origin, truncate the differences and * cell sizes to signed integers, then divide; do not replace with floating * division before truncation. Upper XY bounds are excluded. * RE_UNKNOWN: point/key coordinate units, valid finite conversion/nonzero * truncated-cell domain, tile-array extent and meanings of the shared byte, * threshold sentinel-1 and alternate group selection. Trace original callers, * terrain asset builders and AC9C/AE4C queue/threshold writers. Callback words * use the existing SORT API type; complete historical callback contracts * require their producers and eventual invocation paths.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvterra_rom_0040D128",
-          "declaration_line": 1210,
+          "declaration_line": 1221,
           "lines": [
-            1198
+            1209
           ]
         }
       ]
@@ -202129,16 +202239,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Create SORT groups for tags 80, 85, 110, 115 and enable option 1 on the first * and third returned handles, preserving original creation/call/store order. * Original TERR initializer at 0x004002C0 calls this just after importing SORT. * RE_ORIGINAL_QUIRK: both actual SORT slot0x14 calls pass only handle,1,1, * without the zero option terminator read by original target 0x00400B24. * On valid-handle/normal-return paths the first setter leaves a3 holding its * group-table-global address. No intervening instruction changes a3; the second * setter receives that nonzero unsupplied tag and scans following words for zero. * RE_UNKNOWN: allocation/error paths, first-call residual a3, following stack * values, live initialization paths and observable impact. Trace callers and * runtime before a separate recomp correction; keep original arguments here.",
       "lines": [
-        1176
+        1187
       ],
       "evidence": "Create SORT groups for tags 80, 85, 110, 115 and enable option 1 on the first * and third returned handles, preserving original creation/call/store order. * Original TERR initializer at 0x004002C0 calls this just after importing SORT. * RE_ORIGINAL_QUIRK: both actual SORT slot0x14 calls pass only handle,1,1, * without the zero option terminator read by original target 0x00400B24. * On valid-handle/normal-return paths the first setter leaves a3 holding its * group-table-global address. No intervening instruction changes a3; the second * setter receives that nonzero unsupplied tag and scans following words for zero. * RE_UNKNOWN: allocation/error paths, first-call residual a3, following stack * values, live initialization paths and observable impact. Trace callers and * runtime before a separate recomp correction; keep original arguments here.",
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraInitializeSortGroups",
-          "declaration_line": 1187,
+          "declaration_line": 1198,
           "lines": [
-            1176
+            1187
           ]
         }
       ]
@@ -202149,16 +202259,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Order point pointers using the minimum-X seed and repeated least normalized * XY direction dot product; stop on returning to the initial pointer, then * write the pointer list and byte count. Preserve the prior best index when * no candidate direction improves the native threshold. * RE_ORIGINAL_QUIRK: even input count zero seeds points[0] and output count one. * RE_UNKNOWN: intended geometric guarantee, valid count/capacity and * coincident/nonfinite-point caller domain. Native scratch holds five entries; * C218 supplies five. Trace original callers and CHAN point producers before * claiming a general polygon algorithm or adding degenerate-input behavior. * RE_UNKNOWN: historical declarations of native DATA initializers F718/F72C. * The routine copies their observed 20-byte pointer and 12-byte vector * prefixes. F72C's retained label also contains trailing module/footer words; * preserve their storage and resolve object boundaries before migrating DATA. * FVEC's original import/export bindings establish normalization at slot 08 * and the two-coordinate dot product at slot 5C.",
       "lines": [
-        1109
+        1120
       ],
       "evidence": "Order point pointers using the minimum-X seed and repeated least normalized * XY direction dot product; stop on returning to the initial pointer, then * write the pointer list and byte count. Preserve the prior best index when * no candidate direction improves the native threshold. * RE_ORIGINAL_QUIRK: even input count zero seeds points[0] and output count one. * RE_UNKNOWN: intended geometric guarantee, valid count/capacity and * coincident/nonfinite-point caller domain. Native scratch holds five entries; * C218 supplies five. Trace original callers and CHAN point producers before * claiming a general polygon algorithm or adding degenerate-input behavior. * RE_UNKNOWN: historical declarations of native DATA initializers F718/F72C. * The routine copies their observed 20-byte pointer and 12-byte vector * prefixes. F72C's retained label also contains trailing module/footer words; * preserve their storage and resolve object boundaries before migrating DATA. * FVEC's original import/export bindings establish normalization at slot 08 * and the two-coordinate dot product at slot 5C.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_uvterra_rom_0040CA64",
-          "declaration_line": 1124,
+          "declaration_line": 1135,
           "lines": [
-            1109
+            1120
           ]
         }
       ]
@@ -202179,6 +202289,26 @@
           "declaration_line": 657,
           "lines": [
             649
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-30569737b38b",
+      "kind": "original_quirk",
+      "path": "src/modules/uvterra_rom.c",
+      "symbol": "Replace a static object's model ID only when the requested UVMD is loaded; * 65535 writes the native cleared-model sentinel without a model lookup. * RE_ORIGINAL_QUIRK: after looking up the current model, native code tests the * already validated requested-model pointer again and ignores the old lookup's * result. Preserve both lookups and that test rather than substituting the * old-model result or adding an ownership/release operation. * RE_UNKNOWN: purpose of the second lookup and caller guarantees for model * IDs/lifetimes. Trace original callers and the asset lookup provider before * changing this preserved sequence or inferring missing-model player impact.",
+      "lines": [
+        772
+      ],
+      "evidence": "Replace a static object's model ID only when the requested UVMD is loaded; * 65535 writes the native cleared-model sentinel without a model lookup. * RE_ORIGINAL_QUIRK: after looking up the current model, native code tests the * already validated requested-model pointer again and ignores the old lookup's * result. Preserve both lookups and that test rather than substituting the * old-model result or adding an ownership/release operation. * RE_UNKNOWN: purpose of the second lookup and caller guarantees for model * IDs/lifetimes. Trace original callers and the asset lookup provider before * changing this preserved sequence or inferring missing-model player impact.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_uvterra_rom_0040880C",
+          "declaration_line": 781,
+          "lines": [
+            772
           ]
         }
       ]
@@ -203939,16 +204069,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Replace the 88-byte record only when its value at offset 0x2C is smaller * than the running minimum. The value meaning is unknown; equal values keep * the existing record and NaNs follow the original floating-point comparison.",
       "lines": [
-        594
+        607
       ],
       "evidence": "Replace the 88-byte record only when its value at offset 0x2C is smaller * than the running minimum. The value meaning is unknown; equal values keep * the existing record and NaNs follow the original floating-point comparison.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectUpdateMinimumValueRecord",
-          "declaration_line": 597,
+          "declaration_line": 610,
           "lines": [
-            594
+            607
           ]
         }
       ]
@@ -203979,16 +204109,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Store the attribute at offset 0x28C for a kind-zero record. Preserve the * original inclusive count check and lack of a negative-index check. The array * capacity is not established; callers must supply a valid index.",
       "lines": [
-        793
+        806
       ],
       "evidence": "Store the attribute at offset 0x28C for a kind-zero record. Preserve the * original inclusive count check and lack of a negative-index check. The array * capacity is not established; callers must supply a valid index.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectSetValueAttribute",
-          "declaration_line": 796,
+          "declaration_line": 809,
           "lines": [
-            793
+            806
           ]
         }
       ]
@@ -204139,16 +204269,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Read static-object properties through the original variadic list: one * writes the flag word, four writes the model ID, and zero terminates. * Unknown properties return immediately; absent objects consume no outputs. * The caller supplies valid output pointers and a terminating property.",
       "lines": [
-        797
+        808
       ],
       "evidence": "Read static-object properties through the original variadic list: one * writes the flag word, four writes the model ID, and zero terminates. * Unknown properties return immediately; absent objects consume no outputs. * The caller supplies valid output pointers and a terminating property.",
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraGetStaticObjectProperties",
-          "declaration_line": 801,
+          "declaration_line": 812,
           "lines": [
-            797
+            808
           ]
         }
       ]
@@ -204159,16 +204289,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Read the opaque value at offset 0x40, or zero when its contour is absent.",
       "lines": [
-        836
+        847
       ],
       "evidence": "Read the opaque value at offset 0x40, or zero when its contour is absent.",
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraGetStaticObjectValue",
-          "declaration_line": 837,
+          "declaration_line": 848,
           "lines": [
-            836
+            847
           ]
         }
       ]
@@ -204179,16 +204309,16 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "Set the static object's opaque value at offset 0x40 when its contour exists.",
       "lines": [
-        823
+        834
       ],
       "evidence": "Set the static object's opaque value at offset 0x40 when its contour exists.",
       "owners": [
         {
           "kind": "function",
           "name": "uvTerraSetStaticObjectValue",
-          "declaration_line": 824,
+          "declaration_line": 835,
           "lines": [
-            823
+            834
           ]
         }
       ]

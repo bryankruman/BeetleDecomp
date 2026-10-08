@@ -586,7 +586,20 @@ void uvIsectCopyRecord(IsectCopyRecord88 *destination, IsectCopyRecord88 *source
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_0040423C.s")
 
+#line 179 "src/modules/uvisect_rom.c"
+/* TERR slot28 supplies the low-byte triangle-list count at point XY;
+ * slot14 samples a scalar/vector for each triangle. Mode0 selects the greatest
+ * scalar <= pointZ, mode1 the least scalar >= pointZ; mode2 retains the native
+ * signed-subtraction/negation comparisons, choosing mode1 on equal differences.
+ * Preserve native sentinels and ordered predicates. Missing mode0 output writes
+ * vector Y0/X0/Z1 then scalar0, leaving the handle; other failure paths leave
+ * outputs unchanged. Successful outputs store handle, scalar, then vector XYZ.
+ * RE_UNKNOWN: physical meaning/frame of scalar and vector, valid mode/domain,
+ * triangle-list lifetime and provider output guarantees for invalid triangles
+ * or zero normal Z. Trace original callers and the actual TERR slot14/28
+ * providers/assets before generalizing the query or adding fallback behavior. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004045A8.s")
+#line 180 "src/modules/uvisect_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004048DC.s")
 
