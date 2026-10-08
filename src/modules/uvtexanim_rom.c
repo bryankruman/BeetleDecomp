@@ -8,7 +8,7 @@ void uvTexAnimModuleCleanup(void);
 void uvTexAnimCollectLoadedAnimationRecords(void);
 void uvTexAnimReleaseSharedArray(void);
 void uvTexAnimAdvanceLoadedAnimationCoordinates(s32 arg0);
-void func_uvtexanim_rom_00400640(UnkUVTX_1C *arg0, ...);
+void uvTexAnimSetTaggedProperties(UnkUVTX_1C *arg0, ...);
 
 UvGfxMgr_Exports* D_uvtexanim_rom_00400980;
 UvCback_Exports* D_uvtexanim_rom_00400984;
@@ -24,7 +24,7 @@ void __entrypoint_func_uvtexanim_rom_400000(UvTexAnim_Exports* exports) {
     exports->uvTexAnimModuleCleanup = uvTexAnimModuleCleanup;
     exports->uvTexAnimCollectLoadedAnimationRecords = uvTexAnimCollectLoadedAnimationRecords;
     exports->uvTexAnimReleaseSharedArray = uvTexAnimReleaseSharedArray;
-    exports->func_uvtexanim_rom_00400640 = func_uvtexanim_rom_00400640;
+    exports->uvTexAnimSetTaggedProperties = uvTexAnimSetTaggedProperties;
 #ifdef __sgi
     #line 24
 #endif
@@ -205,64 +205,75 @@ void uvTexAnimAdvanceLoadedAnimationCoordinates(s32 unusedUpdateValue) {
 #line 187 "src/modules/uvtexanim_rom.c"
 #line 184 "src/modules/uvtexanim_rom.c"
 
-void func_uvtexanim_rom_00400640(UnkUVTX_1C *arg0, ...) {
-    s32 var_a2;
-    s16 temp_a0;
-    va_list args;
-    UnkUVTX_1C* v0;
+#line 185 "src/modules/uvtexanim_rom.c"
 
-    v0 = arg0;
+/* Apply a variadic sequence of texture-animation property tags. Tags update
+ * the shared pause byte or record float/byte fields; tag 5 clamps both stored
+ * coordinates with the original ordered comparisons and write sequence.
+ * RE_UNKNOWN: historical selector argument type (the existing C reads u16*),
+ * complete record/argument domains, coordinate units and caller termination.
+ * Preserve the observed signed low-16 tag decoding and double-to-float values;
+ * trace native callers before changing argument types or field meanings. */
+#line 185 "src/modules/uvtexanim_rom.c"
+void uvTexAnimSetTaggedProperties(UnkUVTX_1C *inputAnimation, ...) {
+    s32 coordinatesClamped;
+    s16 propertyTag;
+    va_list arguments;
+    UnkUVTX_1C* animation;
 
-    va_start(args, arg0);
+    animation = inputAnimation;
+
+    va_start(arguments, inputAnimation);
     while (TRUE) {
-        temp_a0 = va_arg(args, u16*);
-        switch (temp_a0) {
+        propertyTag = va_arg(arguments, u16*);
+        switch (propertyTag) {
             default:
                 return;
             case 1:
-                D_uvtexanim_rom_00400994 = (s16)va_arg(args, s32);
+                D_uvtexanim_rom_00400994 = (s16)va_arg(arguments, s32);
                 break;
             case 2:
-                v0->unk0 = va_arg(args, f64);
-                v0->unk4 = va_arg(args, f64);
+                animation->unk0 = va_arg(arguments, f64);
+                animation->unk4 = va_arg(arguments, f64);
                 break;
             case 3:
-                v0->unk8 = va_arg(args, f64);
-                v0->unkC = va_arg(args, f64);
+                animation->unk8 = va_arg(arguments, f64);
+                animation->unkC = va_arg(arguments, f64);
                 break;
             case 5:
-                var_a2 = FALSE;
-                v0->unk10 = va_arg(args, f64);
-                v0->unk14 = va_arg(args, f64);
-                if (v0->unk10 > 1.0f) {
-                    v0->unk10 = 1.0f;
-                    var_a2 = TRUE;
+                coordinatesClamped = FALSE;
+                animation->unk10 = va_arg(arguments, f64);
+                animation->unk14 = va_arg(arguments, f64);
+                if (animation->unk10 > 1.0f) {
+                    animation->unk10 = 1.0f;
+                    coordinatesClamped = TRUE;
                 }
-                if (v0->unk10 < 0.0f) {
-                    var_a2 = TRUE;
-                    v0->unk10 = 0.0f;
+                if (animation->unk10 < 0.0f) {
+                    coordinatesClamped = TRUE;
+                    animation->unk10 = 0.0f;
                 }
-                if (v0->unk14 > 1.0f) {
-                    v0->unk14 = 1.0f;
-                    var_a2 = TRUE;
+                if (animation->unk14 > 1.0f) {
+                    animation->unk14 = 1.0f;
+                    coordinatesClamped = TRUE;
                 }
-                if (v0->unk14 < 0.0f) {
-                    var_a2 = TRUE;
-                    v0->unk14 = 0.0f;
+                if (animation->unk14 < 0.0f) {
+                    coordinatesClamped = TRUE;
+                    animation->unk14 = 0.0f;
                 }
-                if (var_a2) {
+                if (coordinatesClamped) {
                     break;
                 }
                 break;
             case 4:
-                v0->unk1A = va_arg(args, s32);
+                animation->unk1A = va_arg(arguments, s32);
                 break;
             case 6:
-                v0->unk18 = va_arg(args, s32);
-                v0->unk19 = va_arg(args, s32);
+                animation->unk18 = va_arg(arguments, s32);
+                animation->unk19 = va_arg(arguments, s32);
                 break;
             case 0:
                 return;
         }
     }
 }
+#line 246 "src/modules/uvtexanim_rom.c"

@@ -36,7 +36,7 @@ packed-module checks and original full ROM check after symbol extraction:
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
 matching C are preserved with `#line`. The current ledger has **844** assembly references:
 **801** ordinary functions and **43** entrypoints, with **750,072** known instruction bytes
-and no unknown sizes. The broader name audit still finds **303** address-named C definitions.
+and no unknown sizes. The broader name audit still finds **302** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
 Two further accepted waves recover nine functions. Commit `06bf51c` implements
@@ -2512,10 +2512,19 @@ Totals: 356 further recoveries after the 225 upstream ordinary imports, plus 131
 Frozen wave `2012-query-and-motion-contracts` and `accepted-query-and-motion-contracts` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 356 further readable functions
+## Historical accepted checkpoint — 356 further readable functions
 
 Clarify three older kernel functions without changing their public names, types, expressions, layout or behavior. Name the actual source/destination byte cursors, transfer alignment, integer-read scratch and clock contributions. Preserve all 1,056 instruction bytes and complete ordered relocation records. Replace speculative device-fault prose with the actual original stores to addresses 1 and 2; flag the equality-only leading-count subtraction, signed high-word byte promotion and unresolved caller/device/overlap/calibration domains. Attach the reviewed selector-reset contract and original 30-byte label-copy uncertainty before retained TED assembly. Keep its nonmatching C draft isolated and do not count an assembly recovery. Preserve complete source inverses and every executable logical source coordinate. Require original packed TED, a fresh full kernel/ROM build, all frozen sources and uncertainty-index freshness before acceptance.
 
 Totals: 356 further recoveries after the 225 upstream ordinary imports, plus 1317 existing C semantic cleanups. Current ledger: 844 assembly references = 801 ordinary + 43 entrypoints; 750,072 known remaining instruction bytes; zero unknown sizes; 303 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `2024-older-memory-clock-contracts` and `accepted-older-memory-clock-contracts` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 356 further readable functions
+
+Clarify one existing texture-animation variadic property function. Rename generated parameter/local roles and expose uvTexAnimSetTaggedProperties consistently in its source, public export member, initializer references and linker metadata. Preserve all 764 original instruction bytes, all four complete ordered relocation records, the existing 48-byte readonly section and seven native tag targets. Keep the original pointer-typed selector read and public variadic ABI, ordered floating comparisons, double-to-float conversions, byte truncation and write sequence; flag historical selector type, record/argument domains, coordinate units and caller termination as unresolved. The module already owns text/data/rodata/bss in C, so extraction and readonly ownership configuration stay unchanged. Require fresh extraction, original packed module equality, full original ROM, complete frozen source hashes and regenerated uncertainty index before acceptance.
+
+Totals: 356 further recoveries after the 225 upstream ordinary imports, plus 1318 existing C semantic cleanups. Current ledger: 844 assembly references = 801 ordinary + 43 entrypoints; 750,072 known remaining instruction bytes; zero unknown sizes; 302 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `2030-texanim-tagged-readability` and `accepted-texanim-tagged-readability` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

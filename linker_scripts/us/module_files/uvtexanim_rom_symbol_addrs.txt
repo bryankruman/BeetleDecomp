@@ -26,3 +26,4 @@ uvTexAnimModuleCleanup = 0x004000DC; // type:func
 uvTexAnimReleaseSharedArray = 0x004002A0; // type:func
 uvTexAnimCollectLoadedAnimationRecords = 0x00400118; // type:func
 uvTexAnimAdvanceLoadedAnimationCoordinates = 0x004002DC; // type:func
+uvTexAnimSetTaggedProperties = 0x00400640; // type:func

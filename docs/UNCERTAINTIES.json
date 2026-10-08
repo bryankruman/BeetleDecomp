@@ -150,7 +150,7 @@
     "include/uvsort_rom.h": "4d16d601b989706077b05b3e8f77c32c5fe561c353eb172531f2fa9723ac4ce8",
     "include/uvsprt_rom.h": "4ee036e740dd71c752c1b11d188e839a0f423b3ec10550177beefc971f7517ce",
     "include/uvstring_rom.h": "57a773242802e80be6f4032aeaa92ddce574db026fa81d9fb2fc1b2dcdcfda4f",
-    "include/uvtexanim_rom.h": "14e31cb210378078ab82d958f3330f5276b937f6507b0ef995593dd15e9e9667",
+    "include/uvtexanim_rom.h": "e762adb13c8926991cdb7d2d4d764ae85295a1492e8b62cf99922b94132ff6a1",
     "include/uvtexture_rom.h": "4c92bef46d42cf8560309e8996a2486a570babbe10c7ae457003ecb5971e4101",
     "include/uvtextureld_rom.h": "fb2178e71b5de2831a060b1d01055cb85b47714185c8147d58a47d97eb3919b5",
     "include/uvtexturexref_rom.h": "cfc6ada7c5c4dfc6d3c3fef35f74380321b608751b11ea859bb9e24f17d13d5d",
@@ -312,7 +312,7 @@
     "src/modules/uvstring_rom.c": "94b9208341f1faf5aee2e8bd9e6e2c6336878522d977776684d4d7ffa5473720",
     "src/modules/uvterra_rom.c": "212d749a78b4a0059eec21fdaa6774e93f94f0d853dffa73e48c5fddac79121e",
     "src/modules/uvterrald_rom.c": "4f51d82aed1fc59eefc7e9d161b1d29601c1af7be11b928c5265f14d489d2596",
-    "src/modules/uvtexanim_rom.c": "8b77ae8843529d841945f563836072e32c2250faed791948a482b7c34bf61bd5",
+    "src/modules/uvtexanim_rom.c": "050515d6a1536e1a1392b6d9d154dd4680dd117d7e8604d4a36a70e866ff60e1",
     "src/modules/uvtexture_rom.c": "2769db124460fed70f0d2dd839008f34794d3a0cb4b97bf0d7f3b88d0479cd52",
     "src/modules/uvtextureld_rom.c": "331b3e88ab93dfb2b0b1a651e319e0b33c6baf43592b3f6fc0d78e478a75a5d4",
     "src/modules/uvtexturexref_rom.c": "577aab3dd5d687ae34a45e8a597bbe52f7cb8865940f96c94bfb8215534d25d9",
@@ -329,18 +329,18 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "bbff4e2e722e8d6120ed2544279892dcf9ada596c0304cee4119400578937a00",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "df88ea614571f3ee9db7ff3e3a1a0463389589c5b58f35e5790ff718e00fdf7e",
-    "docs/VALIDATION_20261006.md": "37504551f66b6608c846dc5473345e281ea1fadd6cf0d46a2aa5cfdcabc03e85"
+    "docs/STRATEGY_V4.md": "7ad6328c32042eab167014ab218c7aa0a783100f52c6c59333f847e685630224",
+    "docs/VALIDATION_20261006.md": "0096b72c61a2a478fd3ae32c55afbdcf261e3e210122c4383d0fd84452e8d629"
   },
   "counts": {
-    "address_function": 989,
+    "address_function": 987,
     "address_global": 1356,
     "assembly": 846,
     "audit_debt": 28,
     "conditional_draft": 4,
-    "decompiler_local": 900,
+    "decompiler_local": 898,
     "draft_marker": 29,
-    "explicit_unknown": 697,
+    "explicit_unknown": 698,
     "layout_padding": 263,
     "offset_field": 1432,
     "opaque_type": 282,
@@ -1209,25 +1209,6 @@
           "declaration_line": 98,
           "lines": [
             105
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-243e22cb6173",
-      "kind": "address_function",
-      "path": "include/uvtexanim_rom.h",
-      "symbol": "func_uvtexanim_rom_00400640",
-      "lines": [
-        9
-      ],
-      "owners": [
-        {
-          "kind": "type",
-          "name": "UvTexAnim_Exports",
-          "declaration_line": 5,
-          "lines": [
-            9
           ]
         }
       ]
@@ -23181,43 +23162,6 @@
           "declaration_line": 22,
           "lines": [
             22
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-5649909c0edb",
-      "kind": "address_function",
-      "path": "src/modules/uvtexanim_rom.c",
-      "symbol": "func_uvtexanim_rom_00400640",
-      "lines": [
-        11,
-        27,
-        208
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "__entrypoint_func_uvtexanim_rom_400000",
-          "declaration_line": 22,
-          "lines": [
-            27
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvtexanim_rom_00400640",
-          "declaration_line": 11,
-          "lines": [
-            11
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvtexanim_rom_00400640",
-          "declaration_line": 208,
-          "lines": [
-            208
           ]
         }
       ]
@@ -70988,17 +70932,9 @@
         18,
         101,
         130,
-        223
+        233
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvtexanim_rom_00400640",
-          "declaration_line": 208,
-          "lines": [
-            223
-          ]
-        },
         {
           "kind": "function",
           "name": "uvTexAnimAdvanceLoadedAnimationCoordinates",
@@ -71013,6 +70949,14 @@
           "declaration_line": 54,
           "lines": [
             101
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTexAnimSetTaggedProperties",
+          "declaration_line": 218,
+          "lines": [
+            233
           ]
         },
         {
@@ -121408,30 +121352,9 @@
       "symbol": "arg0",
       "lines": [
         10,
-        11,
-        208,
-        214,
-        216
+        11
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvtexanim_rom_00400640",
-          "declaration_line": 11,
-          "lines": [
-            11
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvtexanim_rom_00400640",
-          "declaration_line": 208,
-          "lines": [
-            208,
-            214,
-            216
-          ]
-        },
         {
           "kind": "function",
           "name": "uvTexAnimAdvanceLoadedAnimationCoordinates",
@@ -121439,59 +121362,13 @@
           "lines": [
             10
           ]
-        }
-      ]
-    },
-    {
-      "id": "Q-603b043eec40",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvtexanim_rom.c",
-      "symbol": "temp_a0",
-      "lines": [
-        210,
-        218,
-        219
-      ],
-      "owners": [
+        },
         {
           "kind": "function",
-          "name": "func_uvtexanim_rom_00400640",
-          "declaration_line": 208,
+          "name": "uvTexAnimSetTaggedProperties",
+          "declaration_line": 11,
           "lines": [
-            210,
-            218,
-            219
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-f12c6d6a6566",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvtexanim_rom.c",
-      "symbol": "var_a2",
-      "lines": [
-        209,
-        234,
-        239,
-        242,
-        247,
-        250,
-        253
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvtexanim_rom_00400640",
-          "declaration_line": 208,
-          "lines": [
-            209,
-            234,
-            239,
-            242,
-            247,
-            250,
-            253
+            11
           ]
         }
       ]
@@ -137905,6 +137782,26 @@
           "declaration_line": 1088,
           "lines": [
             1079
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-a3613f00c39d",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvtexanim_rom.c",
+      "symbol": "Apply a variadic sequence of texture-animation property tags. Tags update * the shared pause byte or record float/byte fields; tag 5 clamps both stored * coordinates with the original ordered comparisons and write sequence. * RE_UNKNOWN: historical selector argument type (the existing C reads u16*), * complete record/argument domains, coordinate units and caller termination. * Preserve the observed signed low-16 tag decoding and double-to-float values; * trace native callers before changing argument types or field meanings.",
+      "lines": [
+        210
+      ],
+      "evidence": "Apply a variadic sequence of texture-animation property tags. Tags update * the shared pause byte or record float/byte fields; tag 5 clamps both stored * coordinates with the original ordered comparisons and write sequence. * RE_UNKNOWN: historical selector argument type (the existing C reads u16*), * complete record/argument domains, coordinate units and caller termination. * Preserve the observed signed low-16 tag decoding and double-to-float values; * trace native callers before changing argument types or field meanings.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvTexAnimSetTaggedProperties",
+          "declaration_line": 218,
+          "lines": [
+            210
           ]
         }
       ]
@@ -194363,15 +194260,15 @@
       "path": "src/modules/uvtexanim_rom.c",
       "symbol": "unk0",
       "lines": [
-        226
+        236
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvtexanim_rom_00400640",
-          "declaration_line": 208,
+          "name": "uvTexAnimSetTaggedProperties",
+          "declaration_line": 218,
           "lines": [
-            226
+            236
           ]
         }
       ]
@@ -194395,25 +194292,13 @@
         163,
         166,
         167,
-        235,
-        237,
-        238,
-        241,
-        243
+        245,
+        247,
+        248,
+        251,
+        253
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvtexanim_rom_00400640",
-          "declaration_line": 208,
-          "lines": [
-            235,
-            237,
-            238,
-            241,
-            243
-          ]
-        },
         {
           "kind": "function",
           "name": "uvTexAnimAdvanceLoadedAnimationCoordinates",
@@ -194432,6 +194317,18 @@
             163,
             166,
             167
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTexAnimSetTaggedProperties",
+          "declaration_line": 218,
+          "lines": [
+            245,
+            247,
+            248,
+            251,
+            253
           ]
         }
       ]
@@ -194455,25 +194352,13 @@
         195,
         198,
         199,
-        236,
-        245,
         246,
-        249,
-        251
+        255,
+        256,
+        259,
+        261
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvtexanim_rom_00400640",
-          "declaration_line": 208,
-          "lines": [
-            236,
-            245,
-            246,
-            249,
-            251
-          ]
-        },
         {
           "kind": "function",
           "name": "uvTexAnimAdvanceLoadedAnimationCoordinates",
@@ -194493,6 +194378,18 @@
             198,
             199
           ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTexAnimSetTaggedProperties",
+          "declaration_line": 218,
+          "lines": [
+            246,
+            255,
+            256,
+            259,
+            261
+          ]
         }
       ]
     },
@@ -194506,17 +194403,9 @@
         142,
         153,
         161,
-        261
+        271
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvtexanim_rom_00400640",
-          "declaration_line": 208,
-          "lines": [
-            261
-          ]
-        },
         {
           "kind": "function",
           "name": "uvTexAnimAdvanceLoadedAnimationCoordinates",
@@ -194526,6 +194415,14 @@
             142,
             153,
             161
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTexAnimSetTaggedProperties",
+          "declaration_line": 218,
+          "lines": [
+            271
           ]
         }
       ]
@@ -194540,17 +194437,9 @@
         174,
         185,
         193,
-        262
+        272
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvtexanim_rom_00400640",
-          "declaration_line": 208,
-          "lines": [
-            262
-          ]
-        },
         {
           "kind": "function",
           "name": "uvTexAnimAdvanceLoadedAnimationCoordinates",
@@ -194560,6 +194449,14 @@
             174,
             185,
             193
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTexAnimSetTaggedProperties",
+          "declaration_line": 218,
+          "lines": [
+            272
           ]
         }
       ]
@@ -194575,17 +194472,9 @@
         168,
         196,
         200,
-        258
+        268
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvtexanim_rom_00400640",
-          "declaration_line": 208,
-          "lines": [
-            258
-          ]
-        },
         {
           "kind": "function",
           "name": "uvTexAnimAdvanceLoadedAnimationCoordinates",
@@ -194596,6 +194485,14 @@
             168,
             196,
             200
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTexAnimSetTaggedProperties",
+          "declaration_line": 218,
+          "lines": [
+            268
           ]
         }
       ]
@@ -194609,17 +194506,9 @@
         69,
         89,
         91,
-        227
+        237
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvtexanim_rom_00400640",
-          "declaration_line": 208,
-          "lines": [
-            227
-          ]
-        },
         {
           "kind": "function",
           "name": "uvTexAnimCollectLoadedAnimationRecords",
@@ -194628,6 +194517,14 @@
             69,
             89,
             91
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTexAnimSetTaggedProperties",
+          "declaration_line": 218,
+          "lines": [
+            237
           ]
         }
       ]
@@ -194645,17 +194542,9 @@
         159,
         162,
         166,
-        230
+        240
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvtexanim_rom_00400640",
-          "declaration_line": 208,
-          "lines": [
-            230
-          ]
-        },
         {
           "kind": "function",
           "name": "uvTexAnimAdvanceLoadedAnimationCoordinates",
@@ -194668,6 +194557,14 @@
             159,
             162,
             166
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTexAnimSetTaggedProperties",
+          "declaration_line": 218,
+          "lines": [
+            240
           ]
         }
       ]
@@ -194685,17 +194582,9 @@
         191,
         194,
         198,
-        231
+        241
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvtexanim_rom_00400640",
-          "declaration_line": 208,
-          "lines": [
-            231
-          ]
-        },
         {
           "kind": "function",
           "name": "uvTexAnimAdvanceLoadedAnimationCoordinates",
@@ -194708,6 +194597,14 @@
             191,
             194,
             198
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTexAnimSetTaggedProperties",
+          "declaration_line": 218,
+          "lines": [
+            241
           ]
         }
       ]
@@ -204862,13 +204759,21 @@
         11,
         16,
         127,
-        208,
-        212
+        218,
+        222
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvtexanim_rom_00400640",
+          "name": "uvTexAnimAdvanceLoadedAnimationCoordinates",
+          "declaration_line": 124,
+          "lines": [
+            127
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTexAnimSetTaggedProperties",
           "declaration_line": 11,
           "lines": [
             11
@@ -204876,19 +204781,11 @@
         },
         {
           "kind": "function",
-          "name": "func_uvtexanim_rom_00400640",
-          "declaration_line": 208,
+          "name": "uvTexAnimSetTaggedProperties",
+          "declaration_line": 218,
           "lines": [
-            208,
-            212
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvTexAnimAdvanceLoadedAnimationCoordinates",
-          "declaration_line": 124,
-          "lines": [
-            127
+            218,
+            222
           ]
         },
         {
