@@ -483,6 +483,21 @@ void caranimBuildOrientationBasis(CarAnimBasisState *state) {
 #line 185 "src/modules/caranim.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_004054B4.s")
 
+/* Disable light-buffer selection with -1 before checking state selection 0x410.
+ * Snapshot selected record words 0x14/0x10 as old/new texture IDs, query the
+ * object's model and walk its 12/44/24-byte nested records with unsigned-byte
+ * counts. GFXSTATE 0x24 compares the low twelve bits and ORs the unmasked new ID.
+ * Preserve pointer/count/export reloads after callbacks. If bytes 0x6B84/0x6B88
+ * are zero afterward, reread selection/handle and update the object's loaded model.
+ * RE_ORIGINAL_QUIRK: the loaded-model pointer is used without a null check;
+ * selection -1 still disables the light buffer before returning.
+ * RE_UNKNOWN: selection/handle/texture domains, loaded-model availability,
+ * nested-table validity, restore-gate policy and shared asset mutation/lifetimes
+ * need original callers, writers, acquisition and teardown evidence. Clean C
+ * remains 536 versus 532 bytes with 43 word and full relocation differences:
+ * frame/homes, scratch-store order and final table/argument-address scheduling.
+ * Retain assembly pending complete proof; no trial types or ABI edits accepted. */
+#line 187 "src/modules/caranim.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00405910.s")
 
 #line 189 "src/modules/caranim.c"
@@ -498,6 +513,22 @@ void caranimRegisterChannelCallback(s32 channelId) {
 }
 #line 197 "src/modules/caranim.c"
 
+/* Native callback consumes channel A0. When the default state and UVTX0x436
+ * are available, reread the state and set texture selectors u2/v2 from its
+ * scaled float 0x3A8: first value + value, then the saved value. Update main
+ * object mask 0x2 from words 0x30/0x34 and the optional signed channel reference.
+ * Retain the selected table address; reread table word 0x58 and state byte 0x24
+ * after the main callback, then update four auxiliary handles and call 0x4ACC
+ * only on the gated set path. Reload each handle/export after earlier calls.
+ * RE_ORIGINAL_QUIRK: first null state or selection -1 terminates the registry
+ * prefix; the final address is &D_caranim_00407368, not its counter value.
+ * RE_UNKNOWN: flag/auxiliary policy, texture units, caller channel/table/handle
+ * domains, registry validity and callback/storage lifetimes need original
+ * writers, dispatch callers, table/pool setup and teardown evidence. Clean C
+ * is 604 versus 616 bytes with 100 word and full relocation differences: frame,
+ * channel home, shared loop bound, auxiliary cursor and end-address scheduling.
+ * Retain assembly pending complete proof; no trial types or ABI edits accepted. */
+#line 198 "src/modules/caranim.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00405B7C.s")
 
 /* Select a model from the record indexed by state word 0x410, using the

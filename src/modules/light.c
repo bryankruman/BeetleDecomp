@@ -134,6 +134,29 @@ void lightPrependParameterRecord(s32 key, f32 first, f32 second, f32 third, f32 
 #line 19 "src/modules/light.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/light/func_light_00400950.s")
-
+/*
+ * Get float triples from ENV properties 6, 8, and 9, then pass promoted
+ * doubles through the LIGHT property parser to the scene record at offset
+ * 0x28. Set three 44-byte records starting at offset 0x54 to the original
+ * defaults; reload the scene base after every callback.
+ * ENV property 6 copies floats at offsets 0x4C, 0x50, and 0x54. Properties
+ * 8 and 9 normalize byte triples at offsets 0x06..0x08 and 0x09..0x0B.
+ * LIGHT properties 1 and 2 store triples at offsets 0x04..0x0C and
+ * 0x1C..0x24; property 3 stores offset 0x28; property 4 stores 0x10..0x18.
+ * RE_ORIGINAL_QUIRK: property 4 skips value consumption when the signed
+ * halfword at record offset 0x02 is nonzero. This caller still supplies the
+ * full triple; the reachable lifecycle of that path remains unknown.
+ * RE_UNKNOWN: historical formal and scratch types, physical property
+ * meanings, coordinate frames and units, complete scene allocation and
+ * ownership, valid resource and parameter domains, callback replacement and
+ * aliases, and output initialization after a failed ENV lookup. Resolve the
+ * original scene, environment, and light producers and all callback callers.
+ * Readable C remains parked: 476 native/draft bytes, 18 differing instruction
+ * words for frame and scratch storage, despite all six ordered relocation
+ * records matching. The observed property-6 triple grouping changes four
+ * storage instructions without resolving the frame difference. Equivalent C
+ * and complete packed-module and ROM validation are still required.
+ */
+#line 22 "src/modules/light.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/light/func_light_00400BA8.s")
 

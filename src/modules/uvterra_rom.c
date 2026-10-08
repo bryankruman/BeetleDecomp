@@ -519,7 +519,22 @@ void *uvTerraGetLoadedTerrain(s32 terrainId) {
 }
 #line 413 "src/modules/uvterra_rom.c"
 
+/* Native 992-byte triangle-list query: locate the tile, scale local coordinates,
+ * filter live group/triangle masks and signed vertex bounds, and call the
+ * positive-winding triangle test before storing packed handles in QERY storage.
+ * RE_ORIGINAL_QUIRK: store a handle before checking capacity with an unsigned
+ * count comparison; reaching capacity stops only the current group's loop.
+ * Later groups remain eligible. This does not prove a reachable overflow.
+ * RE_UNKNOWN: coordinate frame/units, valid nonzero truncated cell divisors,
+ * loaded terrain and asset/index guarantees, mask meanings, and shared-buffer
+ * capacity, lifetime and maximum hits across groups. Trace UVTR/UVCT producers,
+ * QERY allocation/overrides and actual TERR export 0x28 callers before changing
+ * limits or assigning ownership. Draft1849 preserves observed effects but
+ * differs in frame/local homes, register lifetimes and the post-test branch;
+ * recover original source dataflow before replacing this assembly. */
+#line 414 "src/modules/uvterra_rom.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00401E64.s")
+#line 415 "src/modules/uvterra_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00402244.s")
 
@@ -778,7 +793,25 @@ s32 func_uvterra_rom_00407A80(s32 arg0, s32 arg1, s32 arg2) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00407A94.s")
 #line 481 "src/modules/uvterra_rom.c"
 
+/* Native 848-byte model-node renderer: submit the record's fixed matrices,
+ * optionally convert the first matrix by value and adjust tile translation,
+ * draw node state records, and preserve depth-driven matrix-pop accounting.
+ * Selected-band and tile reads precede shared status writes; node counts,
+ * state-table pointers and the post-draw node-table base are read live.
+ * RE_ORIGINAL_QUIRK: a skipped node with flag 0x02 reads the following node's
+ * depth byte before testing for the last node. A historical terminal record
+ * may exist; this observation does not prove an invalid read or player fault.
+ * RE_UNKNOWN: complete record and asset-table extents, terminal-node rules,
+ * loaded-model/band validity, aliases and matrix/resource lifetime, plus
+ * flag/depth/status meanings. Trace original model/UVCT writers and draw
+ * callers before adding validation or changing traversal. Draft1827 preserves
+ * actual provider bindings and observed reloads but fails exact instructions:
+ * native 320-byte frame versus 312, explicit low-five-bit shift normalization,
+ * local/register lifetimes and branch forms differ. Recover original source
+ * dataflow before replacing this assembly; no runtime correction is implied. */
+#line 482 "src/modules/uvterra_rom.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00407B0C.s")
+#line 483 "src/modules/uvterra_rom.c"
 
 #line 484 "src/modules/uvterra_rom.c"
 /* Apply the shared inverse translation to the matrix pointer at object
@@ -879,7 +912,21 @@ u16 uvTerraGetStaticObjectModelId(s32 handle) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040A08C.s")
 
+/* RE_ORIGINAL_QUIRK: native 0x40A680 stores the tested-node result to
+ * stack byte offset 0x104 only when the node is selected. At 0x40A684 the
+ * function reads that signed halfword even when the node is not selected
+ * and flag 0x02 is clear, after preparing its matrix. On the first such
+ * path there is no earlier store to this slot in this function; after a
+ * previously tested node, this path can reuse that stored result. The read
+ * controls an immediate nonnegative return or further hierarchy traversal.
+ * RE_UNKNOWN: whether original asset masks/node flags allow that path,
+ * and the intended result lifetime and caller domain. Trace model/UVCT
+ * producers and actual TERR export callers before assigning an initial
+ * value, changing skipped-node traversal or asserting a reachable fault.
+ * Original instructions remain authoritative; no C default is fabricated. */
+#line 513 "src/modules/uvterra_rom.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040A43C.s")
+#line 514 "src/modules/uvterra_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040A79C.s")
 
