@@ -82,7 +82,7 @@ void uvSpriteFromBitmap(uvSprite_t *sprite, ParsedUVTX *uvtx) {
     sprite->bitmap->width_img = (s16) uvtx->width;
     sprite->bitmap->s = 0;
     sprite->bitmap->t = 0;
-    sprite->bitmap->buf = uvtx->data.pointer; // TODO: What's happening here?
+    sprite->bitmap->buf = uvtx->data.pointer; // RE_UNKNOWN: copied texture-data extent, ownership and lifetime need original producer/consumer proof.
     sprite->bitmap->actualHeight = (s16) uvtx->height;
     sprite->bitmap->LUToffset = 0;
 }
@@ -274,70 +274,70 @@ void uvSpriteRender(s32 arg0) {
     }
 }
 
-void uvSpriteSetBlit(uvSprite_t *sprite, s32 blitId) {
-    ParsedUVBT *uvbt;
-    Sprite *sp = &sprite->sprite;
-    s16 temp_v1;
-    s16 temp_v1_2;
-
-    uvbt = uvGetLoadedFile('UVBT', (uvSprite_t *) blitId);
-    if ((uvbt != NULL) || (uvbt = uvLoadFile('UVBT', blitId), (uvbt != NULL))) {
-        sprite->sprite.bitmap = uvbt->bitmap;
-        sprite->textureId = -1;
-        sprite->sprite.width = uvbt->width;
-        sprite->sprite.height = uvbt->height;
-        sprite->sprite.bitmap = uvbt->bitmap;
-        sprite->sprite.nbitmaps = uvbt->nbitmaps;
-        sprite->sprite.ndisplist = (uvbt->nbitmaps * 0xC) + 0x18;
-        sprite->sprite.bmheight = uvbt->texelHeight;
-        sprite->sprite.bmHreal = uvbt->texelHeight;
-        sprite->sprite.bmfmt = (u8) uvbt->bmfmt;
-        switch (uvbt->bitdepth) { /* irregular */
+void uvSpriteSetBlit(uvSprite_t *spriteRecord, s32 bitmapResourceId) {
+    ParsedUVBT *bitmapConfig;
+    Sprite *spriteState = &spriteRecord->sprite;
+    s16 unusedHalfwordA;
+    s16 unusedHalfwordB;
+    // RE_UNKNOWN: asset extents, aliasing, ownership and historical declarations need original producer/caller proof.
+    bitmapConfig = uvGetLoadedFile('UVBT', bitmapResourceId);
+    if ((bitmapConfig != NULL) || (bitmapConfig = uvLoadFile('UVBT', bitmapResourceId), (bitmapConfig != NULL))) {
+        spriteRecord->sprite.bitmap = bitmapConfig->bitmap;
+        spriteRecord->textureId = -1;
+        spriteRecord->sprite.width = bitmapConfig->width;
+        spriteRecord->sprite.height = bitmapConfig->height;
+        spriteRecord->sprite.bitmap = bitmapConfig->bitmap;
+        spriteRecord->sprite.nbitmaps = bitmapConfig->nbitmaps;
+        spriteRecord->sprite.ndisplist = (bitmapConfig->nbitmaps * 0xC) + 0x18;
+        spriteRecord->sprite.bmheight = bitmapConfig->texelHeight;
+        spriteRecord->sprite.bmHreal = bitmapConfig->texelHeight;
+        spriteRecord->sprite.bmfmt = (u8) bitmapConfig->bmfmt;
+        switch (bitmapConfig->bitdepth) { /* Other bit depths retain bmsiz. */
             case 4:
-                sprite->sprite.bmsiz = 0;
+                spriteRecord->sprite.bmsiz = 0;
                 break;
             case 8:
-                sprite->sprite.bmsiz = 1;
+                spriteRecord->sprite.bmsiz = 1;
                 break;
             case 16:
-                sprite->sprite.bmsiz = 2;
+                spriteRecord->sprite.bmsiz = 2;
                 break;
             case 32:
-                sprite->sprite.bmsiz = 3;
+                spriteRecord->sprite.bmsiz = 3;
                 break;
         }
-        sprite->sprite.istart = 0;
-        sprite->sprite.istep = 1;
-        switch (uvbt->bmfmt) {
+        spriteRecord->sprite.istart = 0;
+        spriteRecord->sprite.istep = 1;
+        switch (bitmapConfig->bmfmt) {
             case G_IM_FMT_RGBA:
-                if (uvbt->bitdepth == 16) {
-                    sp->attr = SP_TEXSHUF;
+                if (bitmapConfig->bitdepth == 16) {
+                    spriteState->attr = SP_TEXSHUF;
                 } else {
-                    sp->attr = 0; // maybe SP_TEXSHIFT?
+                    spriteState->attr = 0; // Preserve zero attributes for other RGBA bit depths.
                 }
                 break;
             case G_IM_FMT_IA:
             case G_IM_FMT_I:
-                sp->attr = SP_TEXSHUF;
+                spriteState->attr = SP_TEXSHUF;
                 break;
             default:
-                //_uvDebugPrintf("Sprite Format %d is not supported.\n", uvbt->bmfmt);
+                // RE_UNKNOWN: unsupported formats retain attributes; asset validity and resource lifetime need producer proof.
                 break;
         }
-        sp->expx = 0;
-        sp->expy = 0;
-        sp->zdepth = 0x1234;
-        sp->red = 0xFF;
-        sp->green = 0xFF;
-        sp->blue = 0xFF;
-        sp->alpha = 0xFF;
-        sp->startTLUT = 0;
-        sp->nTLUT = 0;
-        sp->LUT = NULL;
-        sp->frac_s = 0;
-        sp->frac_t = 0;
-        sp->scalex = 1.0f;
-        sp->scaley = 1.0f;
+        spriteState->expx = 0;
+        spriteState->expy = 0;
+        spriteState->zdepth = 0x1234;
+        spriteState->red = 0xFF;
+        spriteState->green = 0xFF;
+        spriteState->blue = 0xFF;
+        spriteState->alpha = 0xFF;
+        spriteState->startTLUT = 0;
+        spriteState->nTLUT = 0;
+        spriteState->LUT = NULL;
+        spriteState->frac_s = 0;
+        spriteState->frac_t = 0;
+        spriteState->scalex = 1.0f;
+        spriteState->scaley = 1.0f;
     }
 }
 
@@ -356,111 +356,111 @@ s16 uvGetSpriteHeight(s32 spriteId) {
 }
 
 void uvSprtProps(s32 spriteId, ...) {
-    ParsedUVTX* uvVtx;
-    Sprite* sprite;
-    s32 scaleY;
-    s32 scaleX;
-    s32 prop;
-    uvSprite_t* uvSprite;
-    va_list args;
-
+    ParsedUVTX* textureConfig;
+    Sprite* spriteState;
+    s32 requestedHeight;
+    s32 requestedWidth;
+    s32 propertyCode;
+    uvSprite_t* spriteRecord;
+    va_list propertyArgs;
+    // RE_UNKNOWN: lower index bound, argument-stream extents, asset validity and lifetimes need original caller/producer proof.
     if (spriteId >= sMaxSprites) {
         return;
     }
 
-    va_start(args, spriteId);
+    va_start(propertyArgs, spriteId);
 
-    uvSprite = &sSprites[spriteId];
-    sprite = &uvSprite->sprite;
+    spriteRecord = &sSprites[spriteId];
+    spriteState = &spriteRecord->sprite;
 
     while (TRUE) {
-        prop = va_arg(args, s32);
-        switch (prop) {
+        propertyCode = va_arg(propertyArgs, s32);
+        switch (propertyCode) {
             case 0:
                 return;
             case 1:
-                scaleX = va_arg(args, s32);
-                if (scaleX <= 0) {
-                    scaleX = 1;
+                requestedWidth = va_arg(propertyArgs, s32);
+                if (requestedWidth <= 0) {
+                    requestedWidth = 1;
                 }
 
-                scaleY = va_arg(args, s32);
-                if (scaleY <= 0) {
-                    scaleY = 1;
+                requestedHeight = va_arg(propertyArgs, s32);
+                if (requestedHeight <= 0) {
+                    requestedHeight = 1;
                 }
 
-                if (sprite->width > 0) {
-                    sprite->scalex = scaleX / (f32)sprite->width;
+                if (spriteState->width > 0) {
+                    spriteState->scalex = requestedWidth / (f32)spriteState->width;
                 }
 
-                if (sprite->height > 0) {
-                    sprite->scaley = scaleY / (f32)sprite->height;
+                if (spriteState->height > 0) {
+                    spriteState->scaley = requestedHeight / (f32)spriteState->height;
                 }
-                if ((sprite->scalex == 1.0f) && (sprite->scaley == 1.0f)) {
-                    sprite->attr &= ~SP_SCALE;
+                if ((spriteState->scalex == 1.0f) && (spriteState->scaley == 1.0f)) {
+                    spriteState->attr &= ~SP_SCALE;
                 } else {
-                    sprite->attr |= SP_SCALE;
+                    spriteState->attr |= SP_SCALE;
                 }
                 break;
-            case 13:
-                sprite->scalex = va_arg(args, f32);
-                sprite->scaley = va_arg(args, f32);
-                if ((sprite->scalex == 1.0f) && (sprite->scaley == 1.0f)) {
-                    sprite->attr &= ~SP_SCALE;
+            case 13: // RE_UNKNOWN: native reads two f32 words; original variadic declarations and caller packing need proof.
+                spriteState->scalex = va_arg(propertyArgs, f32);
+                spriteState->scaley = va_arg(propertyArgs, f32);
+                if ((spriteState->scalex == 1.0f) && (spriteState->scaley == 1.0f)) {
+                    spriteState->attr &= ~SP_SCALE;
                 } else {
-                    sprite->attr |= SP_SCALE;
+                    spriteState->attr |= SP_SCALE;
                 }
                 break;
             case 2:
-                sprite->x = va_arg(args, s32);
-                sprite->y = (sUvGfxMgrExports_uvsprt->uvGetScreenHeight() - va_arg(args, s32)) - sprite->height;
+                spriteState->x = va_arg(propertyArgs, s32);
+                spriteState->y = (sUvGfxMgrExports_uvsprt->uvGetScreenHeight() - va_arg(propertyArgs, s32)) - spriteState->height;
                 break;
             case 7:
-                sprite->red = va_arg(args, s32);
-                sprite->green = va_arg(args, s32);
-                sprite->blue = va_arg(args, s32);
-                sprite->alpha = va_arg(args, s32);
+                spriteState->red = va_arg(propertyArgs, s32);
+                spriteState->green = va_arg(propertyArgs, s32);
+                spriteState->blue = va_arg(propertyArgs, s32);
+                spriteState->alpha = va_arg(propertyArgs, s32);
                 break;
             case 3:
-                uvSprite->unk0 = va_arg(args, s32);
+                spriteRecord->unk0 = va_arg(propertyArgs, s32);
                 break;
             case 6:
-                uvSprite->unk2 = va_arg(args, s32);
+                spriteRecord->unk2 = va_arg(propertyArgs, s32);
                 break;
             case 9:
-                uvSpriteSetBlit(uvSprite, va_arg(args, s32));
+                uvSpriteSetBlit(spriteRecord, va_arg(propertyArgs, s32));
                 break;
             case 10:
-                uvSprite->textureId = va_arg(args, s32);
-                if (uvSprite->textureId != 0xFFF) {
-                    uvVtx = uvGetLoadedFile('UVTX', uvSprite->textureId);
-                    if (uvVtx == NULL) {
-                        uvSprite->textureId = 0xFFF;
+                spriteRecord->textureId = va_arg(propertyArgs, s32);
+                if (spriteRecord->textureId != 0xFFF) {
+                    textureConfig = uvGetLoadedFile('UVTX', spriteRecord->textureId);
+                    if (textureConfig == NULL) {
+                        spriteRecord->textureId = 0xFFF;
                     } else {
-                        uvSpriteFromBitmap(uvSprite, uvVtx);
-                        uvSpriteInitializeFromTextureOrDefaults(uvSprite, uvVtx);
+                        uvSpriteFromBitmap(spriteRecord, textureConfig);
+                        uvSpriteInitializeFromTextureOrDefaults(spriteRecord, textureConfig);
                     }
                 }
                 break;
             case 11:
-                if (va_arg(args, s32) == 0) {
-                    sprite->attr &= ~SP_TRANSPARENT;
+                if (va_arg(propertyArgs, s32) == 0) {
+                    spriteState->attr &= ~SP_TRANSPARENT;
                 } else {
-                    sprite->attr |= SP_TRANSPARENT;
+                    spriteState->attr |= SP_TRANSPARENT;
                 }
                 break;
             case 12:
-                if (va_arg(args, s32) == 0) {
-                    sprite->attr &= ~SP_CUTOUT;
+                if (va_arg(propertyArgs, s32) == 0) {
+                    spriteState->attr &= ~SP_CUTOUT;
                 } else {
-                    sprite->attr |= SP_CUTOUT;
+                    spriteState->attr |= SP_CUTOUT;
                 }
                 break;
             case 14:
-                if (va_arg(args, s32) == 0) {
-                    sprite->attr &= ~SP_EXTERN;
+                if (va_arg(propertyArgs, s32) == 0) {
+                    spriteState->attr &= ~SP_EXTERN;
                 } else {
-                    sprite->attr |= SP_EXTERN;
+                    spriteState->attr |= SP_EXTERN;
                 }
                 break;
             default:

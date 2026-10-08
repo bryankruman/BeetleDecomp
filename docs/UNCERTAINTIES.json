@@ -309,7 +309,7 @@
     "src/modules/uvquat_rom.c": "8df8e2779afce701f5662f8eff65918ca6b5a707b60c3be90d300d009411065d",
     "src/modules/uvquery_rom.c": "5af6f38d546de67c02228242a6578a86925d0c0792c0a330437b3cd35e19b586",
     "src/modules/uvsort_rom.c": "a8d25d7f0e6e33288f39c1de9589270ba1d5b77fbcd2f9c370749e386904b727",
-    "src/modules/uvsprt_rom.c": "06a840aa3a6789d4c2668eb8c72dfc5d8013be62deacde0d913407b978143823",
+    "src/modules/uvsprt_rom.c": "0a5c932e569f1de9ccc16dfac60de35b3930628d92307b0ec367319e8afbab6d",
     "src/modules/uvstring_rom.c": "94b9208341f1faf5aee2e8bd9e6e2c6336878522d977776684d4d7ffa5473720",
     "src/modules/uvterra_rom.c": "212d749a78b4a0059eec21fdaa6774e93f94f0d853dffa73e48c5fddac79121e",
     "src/modules/uvterrald_rom.c": "4f51d82aed1fc59eefc7e9d161b1d29601c1af7be11b928c5265f14d489d2596",
@@ -330,8 +330,8 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "be91e54770007ced4383fe1a7f941be61eeed9b8cb5208f18befa5cd17f75069",
-    "docs/VALIDATION_20261006.md": "d1dce591362ada7ab08823594b7b0c9a08b86d5c34b1c79155cd2e6a1814e9df"
+    "docs/STRATEGY_V4.md": "be7355ce64170e2e925ad8674598a55606d9b4ea3d88b89bd8d2bed22729b1e7",
+    "docs/VALIDATION_20261006.md": "4800026569f2d52df1b985e72433df993484cbeeb5c9e52b311c59b5a6481fb8"
   },
   "counts": {
     "address_function": 944,
@@ -339,15 +339,15 @@
     "assembly": 806,
     "audit_debt": 30,
     "conditional_draft": 4,
-    "decompiler_local": 934,
-    "draft_marker": 28,
-    "explicit_unknown": 830,
+    "decompiler_local": 932,
+    "draft_marker": 27,
+    "explicit_unknown": 835,
     "layout_padding": 274,
     "offset_field": 1582,
     "opaque_type": 282,
     "original_quirk": 217,
     "uncertainty_note": 91,
-    "unused_identifier": 121
+    "unused_identifier": 123
   },
   "items": [
     {
@@ -122088,44 +122088,6 @@
       ]
     },
     {
-      "id": "Q-298431091b45",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvsprt_rom.c",
-      "symbol": "temp_v1",
-      "lines": [
-        280
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvSpriteSetBlit",
-          "declaration_line": 277,
-          "lines": [
-            280
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-217614e9b7e5",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvsprt_rom.c",
-      "symbol": "temp_v1_2",
-      "lines": [
-        281
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvSpriteSetBlit",
-          "declaration_line": 277,
-          "lines": [
-            281
-          ]
-        }
-      ]
-    },
-    {
       "id": "Q-709fb4f02a38",
       "kind": "decompiler_local",
       "path": "src/modules/uvterra_rom.c",
@@ -126346,26 +126308,6 @@
           "declaration_line": 67,
           "lines": [
             101
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-8e049d8f6036",
-      "kind": "draft_marker",
-      "path": "src/modules/uvsprt_rom.c",
-      "symbol": "TODO",
-      "lines": [
-        85
-      ],
-      "evidence": "TODO: What's happening here?",
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvSpriteFromBitmap",
-          "declaration_line": 70,
-          "lines": [
-            85
           ]
         }
       ]
@@ -141656,6 +141598,46 @@
       ]
     },
     {
+      "id": "Q-1145eb8c0d83",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvsprt_rom.c",
+      "symbol": "RE_UNKNOWN: asset extents, aliasing, ownership and historical declarations need original producer/caller proof.",
+      "lines": [
+        282
+      ],
+      "evidence": "RE_UNKNOWN: asset extents, aliasing, ownership and historical declarations need original producer/caller proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvSpriteSetBlit",
+          "declaration_line": 277,
+          "lines": [
+            282
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-5e7693dd948f",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvsprt_rom.c",
+      "symbol": "RE_UNKNOWN: copied texture-data extent, ownership and lifetime need original producer/consumer proof.",
+      "lines": [
+        85
+      ],
+      "evidence": "RE_UNKNOWN: copied texture-data extent, ownership and lifetime need original producer/consumer proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvSpriteFromBitmap",
+          "declaration_line": 70,
+          "lines": [
+            85
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-bcd28cf3fedf",
       "kind": "explicit_unknown",
       "path": "src/modules/uvsprt_rom.c",
@@ -141680,6 +141662,66 @@
           "declaration_line": 680,
           "lines": [
             689
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-63305cf21748",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvsprt_rom.c",
+      "symbol": "RE_UNKNOWN: lower index bound, argument-stream extents, asset validity and lifetimes need original caller/producer proof.",
+      "lines": [
+        366
+      ],
+      "evidence": "RE_UNKNOWN: lower index bound, argument-stream extents, asset validity and lifetimes need original caller/producer proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvSprtProps",
+          "declaration_line": 358,
+          "lines": [
+            366
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-2f242b2fe81a",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvsprt_rom.c",
+      "symbol": "RE_UNKNOWN: native reads two f32 words; original variadic declarations and caller packing need proof.",
+      "lines": [
+        405
+      ],
+      "evidence": "RE_UNKNOWN: native reads two f32 words; original variadic declarations and caller packing need proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvSprtProps",
+          "declaration_line": 358,
+          "lines": [
+            405
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-06e68d07489d",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvsprt_rom.c",
+      "symbol": "RE_UNKNOWN: unsupported formats retain attributes; asset validity and resource lifetime need producer proof.",
+      "lines": [
+        324
+      ],
+      "evidence": "RE_UNKNOWN: unsupported formats retain attributes; asset validity and resource lifetime need producer proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvSpriteSetBlit",
+          "declaration_line": 277,
+          "lines": [
+            324
           ]
         }
       ]
@@ -225363,6 +225405,44 @@
       "symbol": "unused",
       "lines": [
         195
+      ]
+    },
+    {
+      "id": "Q-7a2521c30eaf",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvsprt_rom.c",
+      "symbol": "unusedHalfwordA",
+      "lines": [
+        280
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvSpriteSetBlit",
+          "declaration_line": 277,
+          "lines": [
+            280
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-094d60e13716",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvsprt_rom.c",
+      "symbol": "unusedHalfwordB",
+      "lines": [
+        281
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvSpriteSetBlit",
+          "declaration_line": 277,
+          "lines": [
+            281
+          ]
+        }
       ]
     },
     {

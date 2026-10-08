@@ -17,7 +17,7 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 830 |
+| Explicit RE_UNKNOWN notes | 835 |
 | Preserved RE_ORIGINAL_QUIRK notes | 217 |
 | Older comments with uncertainty language | 91 |
 | Documented original-behavior audits | 30 |
@@ -27,9 +27,9 @@ For every future source wave, regenerate and check this index after code and str
 | Offset-based fields or neutral typed fields | 1582 |
 | Layout padding to preserve | 274 |
 | Unresolved type names | 282 |
-| Explicit unused ABI, storage or local identifiers | 121 |
-| Decompiler parameter/local names | 934 |
-| Fake, unresolved or TODO draft markers | 28 |
+| Explicit unused ABI, storage or local identifiers | 123 |
+| Decompiler parameter/local names | 932 |
+| Fake, unresolved or TODO draft markers | 27 |
 | Data-dependent conditional draft guards | 4 |
 
 ## docs/STRATEGY_V4.md
@@ -7912,11 +7912,13 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `__entrypoint_func_uvsprt_rom_400298` | function `__entrypoint_func_uvsprt_rom_400298`, function `__entrypoint_func_uvsprt_rom_400298` | [35](../src/modules/uvsprt_rom.c#L35), [58](../src/modules/uvsprt_rom.c#L58), [180](../src/modules/uvsprt_rom.c#L180) |
 | decompiler_local | `arg0` | function `uvGetSpriteHeight`, function `uvGetSpriteWidth`, function `uvSpriteClearStateBytes`, function `uvSpriteRender`, function `uvSpriteRender`, function `uvSprtProps` | [39](../src/modules/uvsprt_rom.c#L39), [43](../src/modules/uvsprt_rom.c#L43), [45](../src/modules/uvsprt_rom.c#L45), [46](../src/modules/uvsprt_rom.c#L46), [47](../src/modules/uvsprt_rom.c#L47), [260](../src/modules/uvsprt_rom.c#L260), [264](../src/modules/uvsprt_rom.c#L264), [265](../src/modules/uvsprt_rom.c#L265) |
 | decompiler_local | `temp_a1` | function `uvSpriteDrawAll` | [239](../src/modules/uvsprt_rom.c#L239), [244](../src/modules/uvsprt_rom.c#L244), [245](../src/modules/uvsprt_rom.c#L245), [247](../src/modules/uvsprt_rom.c#L247), [250](../src/modules/uvsprt_rom.c#L250) |
-| decompiler_local | `temp_v1` | function `uvSpriteSetBlit` | [280](../src/modules/uvsprt_rom.c#L280) |
-| decompiler_local | `temp_v1_2` | function `uvSpriteSetBlit` | [281](../src/modules/uvsprt_rom.c#L281) |
-| draft_marker | `TODO` | function `uvSpriteFromBitmap` | [85](../src/modules/uvsprt_rom.c#L85) |
 | explicit_unknown | `Clear both leading bytes in the selected sprite. RE_UNKNOWN: sprite * index/backing validity need original pool, ID producers and callers.` | function `uvSpriteClearStateBytes` | [168](../src/modules/uvsprt_rom.c#L168) |
+| explicit_unknown | `RE_UNKNOWN: asset extents, aliasing, ownership and historical declarations need original producer/caller proof.` | function `uvSpriteSetBlit` | [282](../src/modules/uvsprt_rom.c#L282) |
+| explicit_unknown | `RE_UNKNOWN: copied texture-data extent, ownership and lifetime need original producer/consumer proof.` | function `uvSpriteFromBitmap` | [85](../src/modules/uvsprt_rom.c#L85) |
 | explicit_unknown | `RE_UNKNOWN: display-list capacity, aliasing, resource lifetime and shared-state call ordering need caller proof.` | function `uvSpriteDrawFinish`, function `uvSpriteDrawInit` | [689](../src/modules/uvsprt_rom.c#L689), [991](../src/modules/uvsprt_rom.c#L991) |
+| explicit_unknown | `RE_UNKNOWN: lower index bound, argument-stream extents, asset validity and lifetimes need original caller/producer proof.` | function `uvSprtProps` | [366](../src/modules/uvsprt_rom.c#L366) |
+| explicit_unknown | `RE_UNKNOWN: native reads two f32 words; original variadic declarations and caller packing need proof.` | function `uvSprtProps` | [405](../src/modules/uvsprt_rom.c#L405) |
+| explicit_unknown | `RE_UNKNOWN: unsupported formats retain attributes; asset validity and resource lifetime need producer proof.` | function `uvSpriteSetBlit` | [324](../src/modules/uvsprt_rom.c#L324) |
 | layout_padding | `pad` | type `UnkStruct_uvsprt_rom_004033CC` | [31](../src/modules/uvsprt_rom.c#L31) |
 | offset_field | `unk0` | function `__entrypoint_func_uvsprt_rom_400298`, function `uvSpriteClearStateBytes`, function `uvSpriteDrawAll`, function `uvSprtProps`, type `uvSprite_t` | [18](../src/modules/uvsprt_rom.c#L18), [171](../src/modules/uvsprt_rom.c#L171), [214](../src/modules/uvsprt_rom.c#L214), [245](../src/modules/uvsprt_rom.c#L245), [425](../src/modules/uvsprt_rom.c#L425) |
 | offset_field | `unk1` | function `__entrypoint_func_uvsprt_rom_400298`, function `uvSpriteAllocateFirstFree`, function `uvSpriteClearStateBytes`, type `uvSprite_t` | [19](../src/modules/uvsprt_rom.c#L19), [157](../src/modules/uvsprt_rom.c#L157), [158](../src/modules/uvsprt_rom.c#L158), [172](../src/modules/uvsprt_rom.c#L172), [215](../src/modules/uvsprt_rom.c#L215) |
@@ -7928,6 +7930,8 @@ For every future source wave, regenerate and check this index after code and str
 | opaque_type | `UnkStruct_uvsprt_rom_004033CC` | global `sUvGfxStateExports_uvsprt`, type `UnkStruct_uvsprt_rom_004033CC` | [33](../src/modules/uvsprt_rom.c#L33), [66](../src/modules/uvsprt_rom.c#L66) |
 | opaque_type | `UnkStruct_uvsprt_rom_004033CC_s` | type `UnkStruct_uvsprt_rom_004033CC` | [30](../src/modules/uvsprt_rom.c#L30) |
 | uncertainty_note | `Select opaque surface rendering when the current attribute requests it.` | function `uvSpriteDrawFinish` | [996](../src/modules/uvsprt_rom.c#L996) |
+| unused_identifier | `unusedHalfwordA` | function `uvSpriteSetBlit` | [280](../src/modules/uvsprt_rom.c#L280) |
+| unused_identifier | `unusedHalfwordB` | function `uvSpriteSetBlit` | [281](../src/modules/uvsprt_rom.c#L281) |
 
 ## src/modules/uvstring_rom.c
 
