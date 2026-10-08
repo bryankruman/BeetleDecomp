@@ -910,7 +910,24 @@ u16 uvTerraGetStaticObjectModelId(s32 handle) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00409394.s")
 
+/* Native 944-byte point/scalar node query: cache the first model band's node
+ * count, convert fixed matrices by value, apply first-node reciprocal scales,
+ * and preserve live node reads, selection flags and depth-driven matrix pops.
+ * RE_ORIGINAL_QUIRK: initialize the signed 16-bit accumulated result to -1,
+ * publish the selected node index in the shared QERY word's high byte, and wrap
+ * each model-query contribution to 16 bits. Reaching the shared hit limit calls
+ * the capacity getter again and returns immediately without the remaining pops.
+ * RE_UNKNOWN: point/scalar frame and units, nonzero reciprocal divisors, loaded
+ * model/node/matrix extents, flag/depth meanings, aliases and shared-query / matrix
+ * stack lifetime. Trace original UVMD/UVCT producers and actual caller paths
+ * before interpreting negative results or changing limit-exit cleanup.
+ * Draft1865 preserves observed providers and effects but fails exact instructions:
+ * matrix/result/count homes, register lifetimes, shift normalization and cleanup
+ * counter allocation differ. Recover the original source dataflow before
+ * replacing this retained assembly. */
+#line 511 "src/modules/uvterra_rom.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040A08C.s")
+#line 512 "src/modules/uvterra_rom.c"
 
 /* RE_ORIGINAL_QUIRK: native 0x40A680 stores the tested-node result to
  * stack byte offset 0x104 only when the node is selected. At 0x40A684 the
@@ -928,7 +945,22 @@ u16 uvTerraGetStaticObjectModelId(s32 handle) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040A43C.s")
 #line 514 "src/modules/uvterra_rom.c"
 
+/* Native 888-byte two-point node query: cache the first model band's node
+ * count, convert fixed matrices by value, apply first-node reciprocal scales,
+ * and preserve selection flags, live node-table reads and depth-driven pops.
+ * RE_ORIGINAL_QUIRK: update the shared QERY word's high byte with each selected
+ * node index, ignore its model-query return and return -1 on every exit.
+ * RE_UNKNOWN: coordinate frame/units, nonzero reciprocal divisors, loaded model
+ * and node/matrix extents, mask/flag/depth meanings, aliases and matrix-stack /
+ * shared-query lifetime. Trace original UVMD/UVCT producers and actual callers
+ * before interpreting the result, adding validation or changing traversal.
+ * Draft1859 preserves actual provider arguments and observed effects but fails
+ * exact instructions: frame/local homes, first-band register lifetime, explicit
+ * low-five-bit shift normalization and branch/counter allocation differ.
+ * Recover original source dataflow before replacing this retained assembly. */
+#line 515 "src/modules/uvterra_rom.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040A79C.s")
+#line 516 "src/modules/uvterra_rom.c"
 
 #line 517 "src/modules/uvterra_rom.c"
 /* Read static-object properties: one writes flags, four writes model ID,
@@ -1146,7 +1178,24 @@ u16 uvTerraLookupAdjustedWrappedIndexPair(s16 firstIndex, s16 secondIndex, u8 mo
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040B26C.s")
 
+/* Native 768-byte grid locator: write the supplied X/Y/Z outputs before
+ * reading terrain origins/cell sizes, then publish the wrapped cell index and
+ * centered coordinates. Reload output X after writing output Y; preserve aliases.
+ * RE_ORIGINAL_QUIRK: truncate coordinates and divisors before signed integer
+ * division, wrap cell coordinates to 16 bits, and decrement axes via mode bits
+ * 0/1. Coarse-grid failure returns 0 with both indices unwritten; centered bounds
+ * failure writes mask 0 and returns 1. Native bounds use signed comparisons while
+ * centered calculations use unsigned-to-float conversions; retain ordered FP tests.
+ * RE_UNKNOWN: coordinate units, valid finite/truncatable inputs, nonzero truncated
+ * divisors, signed-division overflow reachability and output/terrain aliases.
+ * Trace original UVTR producers and actual callers before adding validation.
+ * Draft1878 preserves observed effects and signed bounds but fails exact source
+ * recovery: frame/origin/half-size homes, boolean materialization, shift lowering
+ * and instruction scheduling differ. Retain assembly until original dataflow is
+ * recovered; no valid-domain or caller-alias guarantee is inferred. */
+#line 552 "src/modules/uvterra_rom.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040B8C0.s")
+#line 553 "src/modules/uvterra_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040BBC0.s")
 

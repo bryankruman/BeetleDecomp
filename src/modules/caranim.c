@@ -412,6 +412,21 @@ f32 caranimAdjustScalarAndGetMaterialOffset(s32 materialId, f32 *scalar, s16 sup
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00404ACC.s")
 
+/* Snapshot selections 0x410/0x408 before waiting on graphics and releasing
+ * texture-animation storage. Copy saved matrices into the old object, load the
+ * requested models/textures, replace the model and update nested state words.
+ * Rebuild animation storage, apply a table bit index, clear auxiliary masks,
+ * retrieve matrices and finally reread the requested selection for 0x410.
+ * RE_ORIGINAL_QUIRK: release uses old texture word 0x14 but new word 0x10;
+ * nested graphics-state writes retain pointer/word reloads and a final bit clear.
+ * RE_UNKNOWN: table/index/handle domains, resource success, model storage,
+ * flag policy and shared mutation/ownership/lifetimes need callers/producers.
+ * The target consumes A0; original caranimRefreshChangedSelection prepares
+ * A0/A1/A2. Historical source declaration remains unresolved. Clean target C
+ * is 1164 versus 1268 bytes with frame/record-address/loop scheduling and full
+ * relocation differences. The scoped caller view also changes direct JAL to
+ * HI/LO plus JALR. Retain original assembly and caller pending complete proof. */
+#line 160 "src/modules/caranim.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00404CA0.s")
 
 extern void *D_caranim_00407334;

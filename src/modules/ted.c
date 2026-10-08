@@ -533,7 +533,28 @@ void tedStoreSelectedRecordByte(s32 unused) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00405B94.s")
 /* RE_UNKNOWN: first-list selection/count invariants, backing capacity, record word/vector roles and callback mutation domains; inspect original list creators, ID/record writers and callback targets before changing compaction, alias handling or count wraparound. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00405C9C.s")
-
+/*
+ * Copy the first selected editor record's position twice, subtract 100 from
+ * the second Z, and query the segment with flags 255. On success, copy the
+ * query scalar at offset 0x1C into the retained record's Z, build a translation
+ * matrix, update the current object, and invoke the original editor follow-up.
+ * Preserve selection and handle reloads after callbacks and negative gates.
+ * RE_ORIGINAL_QUIRK: this caller does not initialize the query scratch record;
+ * the original query reads its words at offsets 0x00 and 0x04 before delegation.
+ * Dependent helper use and reachable caller domains remain unresolved; this
+ * observation alone does not establish a player-visible fault.
+ * RE_UNKNOWN: historical scratch and callback declarations, complete record
+ * and handle capacities, aliases and callback lifetimes, the coordinate frame
+ * and 100-unit meaning, scene byte 0x08, and successful query-field validity.
+ * The proven 88-byte query copy span does not establish a historical local or
+ * complete object extent. Resolve original pool producers, query modes/helpers,
+ * and all callback callers before changing initialization, layout, or bounds.
+ * Readable C remains parked: 404 native/draft bytes differ in 15 stack-address
+ * instruction words. All 31 complete relocation records match as a multiset;
+ * only pair serialization differs. Natural exact C and complete packed-module
+ * and ROM validation are still required; no scratch padding is inferred.
+ */
+#line 223 "src/modules/ted.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00405EE8.s")
 /*
  * RE_ORIGINAL_QUIRK: when unsigned D_ted_0040727C is outside 0..4,
@@ -573,7 +594,26 @@ void tedStoreSelectedRecordByte(s32 unused) {
  * count<20 test does not establish every caller's bounds. */
 #line 235 "src/modules/ted.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00406610.s")
-
+/*
+ * Apply the segment-query update to the second selected editor pool: retain
+ * its 16-byte record, copy position twice, subtract 100 from the second Z,
+ * and use flags 255. On success, copy query scalar 0x1C to record Z, update
+ * the current object's translation, and invoke the original editor follow-up.
+ * Reload selection and parallel handles after callbacks; preserve negative
+ * gates. The initializer allocates and clears 20 second-pool records and
+ * handles, versus 30 in the first pool. This caller has no upper-index gate.
+ * RE_ORIGINAL_QUIRK: query scratch words 0x00 and 0x04 are not initialized
+ * here before the original query reads them. Reachable query-helper use and
+ * caller domains remain unresolved; no player-visible fault is established.
+ * RE_UNKNOWN: historical scratch/callback declarations, complete pool bounds
+ * over its lifetime, aliases and callback replacement, scene byte 0x08,
+ * coordinate frame and 100-unit meaning, and successful query-field validity.
+ * The proven 88-byte query copy span is not a complete historical local or
+ * object extent. Trace original pool setters, selection producers, query
+ * modes/helpers, and all callbacks before changing layout or validation.
+ * Original assembly is retained; no second-pool C recovery is claimed.
+ */
+#line 237 "src/modules/ted.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_0040685C.s")
 /*
  * RE_ORIGINAL_QUIRK: when unsigned D_ted_00407284 is outside 0..5,

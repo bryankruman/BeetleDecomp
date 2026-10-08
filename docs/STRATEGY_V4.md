@@ -2395,10 +2395,19 @@ Totals: 354 further recoveries after the 225 upstream ordinary imports, plus 130
 Frozen wave `1836-original-contract-followups` and `accepted-original-contract-followups` verify real translation-unit instructions/full relocations, 3 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 354 further readable functions
+## Historical accepted checkpoint — 354 further readable functions
 
 Record six original-backed contract and uncertainty notes beside retained terrain, lighting and vehicle assembly. Document triangle-buffer store-before-capacity and inner-only stopping, hierarchy depth traversal and the conditional signed-halfword result read without inventing a default. Record actual environment triples and tagged lighting consumption, vehicle registry prefix exits, nested texture replacement and callback reload timing. Complete original/provider/draft instruction and reference audits found no supported further operation or ABI correction after the single grounded vehicle count/initialization refinement. All failed C drafts, types and prototype edits stay isolated. These observations do not establish reachable player faults. Recovery and older-body cleanup totals remain unchanged. Preserve executable tokens and every logical source coordinate, prove whole-source inverses, then require all three original packed modules, a fresh four-job original ROM, every frozen source hash and the regenerated uncertainty index before acceptance.
 
 Totals: 354 further recoveries after the 225 upstream ordinary imports, plus 1306 existing C semantic cleanups. Current ledger: 846 assembly references = 803 ordinary + 43 entrypoints; 752,036 known remaining instruction bytes; zero unknown sizes; 303 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `1858-terrain-light-vehicle-contracts` and `accepted-terrain-light-vehicle-contracts` verify real translation-unit instructions/full relocations, 3 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 354 further readable functions
+
+Record six original-backed contract and uncertainty notes beside retained terrain, editor and vehicle assembly. Document two-point and point-scalar model-node queries, grid output and callback ordering, editor selected-segment query input uncertainty, and vehicle model-transition argument, resource and state reload contracts. Complete original/provider/draft instruction and reference audits preserve unresolved compile and calling-convention debt without inventing defaults, types or player-fault claims. Failed C drafts and prototype/caller edits remain isolated. Recovery and older-body cleanup totals remain unchanged. Preserve executable tokens and every logical source coordinate, prove whole-source inverses, then require all three original packed modules, a fresh four-job original ROM, every frozen source hash and the regenerated uncertainty index before acceptance.
+
+Totals: 354 further recoveries after the 225 upstream ordinary imports, plus 1306 existing C semantic cleanups. Current ledger: 846 assembly references = 803 ordinary + 43 entrypoints; 752,036 known remaining instruction bytes; zero unknown sizes; 303 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `1884-terrain-editor-transition-contracts` and `accepted-terrain-editor-transition-contracts` verify real translation-unit instructions/full relocations, 3 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
