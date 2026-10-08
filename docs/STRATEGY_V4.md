@@ -2476,10 +2476,19 @@ Totals: 354 further recoveries after the 225 upstream ordinary imports, plus 131
 Frozen wave `1966-reservation-property-axis-contracts` and `accepted-reservation-property-axis-contracts` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 355 further readable functions
+## Historical accepted checkpoint — 355 further readable functions
 
 Recover uvIsectCollectRequestedProviderLists as readable commented C. Preserve 1484 original instruction bytes and all 34 complete relocation records; only enumeration of intact HI/LO pairs differs. Preserve flag1/8/2 provider order, optional word/scalar/vector copies, full-word object sentinel, byte snapshot and restoration, nonpositive count accumulation and final publication order. Bind focused export views to actual original provider initializers. Flag shared-ID dependency, output initialization, caller domains, capacities, aliases, lifetimes and reentrancy beside code. No invented storage or complete historical prototype claims. Require original ISCT, TERR and DOBJ packed modules, fresh four-job original ROM, all frozen source hashes and regenerated uncertainty index before acceptance.
 
 Totals: 355 further recoveries after the 225 upstream ordinary imports, plus 1314 existing C semantic cleanups. Current ledger: 845 assembly references = 802 ordinary + 43 entrypoints; 750,552 known remaining instruction bytes; zero unknown sizes; 303 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `1982-collected-provider-lists` and `accepted-collected-provider-lists` verify real translation-unit instructions/full relocations, 3 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 355 further readable functions
+
+Record original four-slot animation effects and particle record acquisition beside retained assembly, and correct the older activation comment. The sound flag requests setup on next acquisition; the enabled byte is a nonzero gate while C0 is compared with2. Flag unresolved descriptor/source domains, original uninitialized fallback/style storage, unchecked matrix/normalization behavior, deliberate output aliasing, callback mutation and record/sound lifetimes. Compiler-local layout differences remain isolated diagnostics. No new C recovery or substantive older C cleanup is counted. Preserve all executable tokens/logical coordinates and exact complete-source inverse. Require both original packed modules, fresh four-job original ROM, all frozen source hashes and uncertainty index.
+
+Totals: 355 further recoveries after the 225 upstream ordinary imports, plus 1314 existing C semantic cleanups. Current ledger: 845 assembly references = 802 ordinary + 43 entrypoints; 750,552 known remaining instruction bytes; zero unknown sizes; 303 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `1991-particle-lifetime-contracts` and `accepted-particle-lifetime-contracts` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

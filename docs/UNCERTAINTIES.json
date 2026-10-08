@@ -198,7 +198,7 @@
     "src/modules/battle.c": "60d28ad02b2f7b6acc392799c84eaaf321cb87f8c199f7003b75c8b7373a6de6",
     "src/modules/bubble.c": "8a3c733b7f0370b5b2e51cc123470d44edcf1bf2a2ca8fe481170fd858f9c904",
     "src/modules/cam.c": "95d22d3a7536150c4e84fd508381b424b67a127129ab9b7e2d99da3dfa2addcc",
-    "src/modules/caranim.c": "1760cf7a6ccdf6adfb1a948bd5d899069fe56cbe3b8aa3b81f98d959ef42bf89",
+    "src/modules/caranim.c": "649683b571cd247da0f98e863c6329dd3c815c3f80fe5131eb21ee32c752b94b",
     "src/modules/caraudio.c": "664386ceccb29dbddbd3ae2f9a86307118345ab4f594fc696c76752bc7098bbb",
     "src/modules/cbars.c": "a7d8817dc1873793aa3e2ef6cafcd98c4a92d2fe91251b54ed8e2b09bbb9becb",
     "src/modules/demo.c": "8e19de1cafc6a5ebde83a3020c92b2b17b3de91fc4abe245a5c53d96de69065f",
@@ -251,7 +251,7 @@
     "src/modules/snd.c": "aaec954f2097e23dc6899dd104788b662c4b40441ca99233288bb67a17efdfe2",
     "src/modules/sparks.c": "99ddff1be3676f6f2e0fe66f2a12d8bc53a18048c422884f52516c876430e024",
     "src/modules/splash.c": "cb236edd1d5e78c972b7ec7e0f56d93a81544f089caa6419ca74fe5dd4881c22",
-    "src/modules/spray.c": "ac12da17a797736336a995b57f6d4c2cf5b6b954480e18c7faad1bd7647eea83",
+    "src/modules/spray.c": "3a6a7bc4a0e1ce4845a751557b3d1802799b878be200aeced8a2fe09d0221a1f",
     "src/modules/tdata.c": "101fe5628ca156a57fb08248f1a567862ee709e59fce2e1f2dc3115d18185c30",
     "src/modules/ted.c": "6d11b741ce6276187c498e3fc3e044939ffcc0bd4707c7430018981f5b6a5825",
     "src/modules/track1.c": "0556fb4aabcd27b156ca9f36a0e285d6da22fd54a581c1a113e6bd0c7d841378",
@@ -329,8 +329,8 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "bbff4e2e722e8d6120ed2544279892dcf9ada596c0304cee4119400578937a00",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "8d57a8773aef52a9e9c7417f8cec5a9a222bd16c3e0212a966f7bbd702e1d56b",
-    "docs/VALIDATION_20261006.md": "b72eb2d34619a987776ab2eb5afafa0bad882a055e0f3ff931aec04c6276bb87"
+    "docs/STRATEGY_V4.md": "a91ef888d8deaf1b6d97153a461d5a945694abb2d3ced7b9c784a3963f29d9e3",
+    "docs/VALIDATION_20261006.md": "f2e8d9670f5cebd4a7b948c02ef54d5533e6a04e1e2baed0eed4dac65caca8f0"
   },
   "counts": {
     "address_function": 990,
@@ -340,11 +340,11 @@
     "conditional_draft": 4,
     "decompiler_local": 905,
     "draft_marker": 29,
-    "explicit_unknown": 684,
+    "explicit_unknown": 687,
     "layout_padding": 258,
     "offset_field": 1432,
     "opaque_type": 282,
-    "original_quirk": 163,
+    "original_quirk": 164,
     "uncertainty_note": 88,
     "unused_identifier": 119
   },
@@ -3265,21 +3265,21 @@
       "lines": [
         12,
         69,
-        353,
-        356,
-        359,
-        362
+        374,
+        377,
+        380,
+        383
       ],
       "owners": [
         {
           "kind": "function",
           "name": "caranimAcquireConfiguredParticleEffect",
-          "declaration_line": 339,
+          "declaration_line": 360,
           "lines": [
-            353,
-            356,
-            359,
-            362
+            374,
+            377,
+            380,
+            383
           ]
         },
         {
@@ -3440,15 +3440,15 @@
       "symbol": "func_caranim_00404CA0",
       "lines": [
         78,
-        519
+        540
       ],
       "owners": [
         {
           "kind": "function",
           "name": "caranimRefreshChangedSelection",
-          "declaration_line": 513,
+          "declaration_line": 534,
           "lines": [
-            519
+            540
           ]
         },
         {
@@ -3526,15 +3526,15 @@
       "lines": [
         39,
         83,
-        600
+        621
       ],
       "owners": [
         {
           "kind": "function",
           "name": "caranimRegisterChannelCallback",
-          "declaration_line": 594,
+          "declaration_line": 615,
           "lines": [
-            600
+            621
           ]
         },
         {
@@ -3599,15 +3599,15 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_uvpfx_rom_004004D0",
       "lines": [
-        349
+        370
       ],
       "owners": [
         {
           "kind": "function",
           "name": "caranimAcquireConfiguredParticleEffect",
-          "declaration_line": 339,
+          "declaration_line": 360,
           "lines": [
-            349
+            370
           ]
         }
       ]
@@ -27016,15 +27016,15 @@
       "symbol": "D_caranim_004066A0",
       "lines": [
         43,
-        644
+        665
       ],
       "owners": [
         {
           "kind": "function",
           "name": "caranimGetLocalizedLabel",
-          "declaration_line": 642,
+          "declaration_line": 663,
           "lines": [
-            644
+            665
           ]
         },
         {
@@ -27105,15 +27105,15 @@
       "lines": [
         47,
         262,
-        454
+        475
       ],
       "owners": [
         {
           "kind": "function",
           "name": "caranimAdjustScalarAndGetMaterialOffset",
-          "declaration_line": 448,
+          "declaration_line": 469,
           "lines": [
-            454
+            475
           ]
         },
         {
@@ -27141,15 +27141,15 @@
       "symbol": "D_caranim_00406A28",
       "lines": [
         24,
-        457
+        478
       ],
       "owners": [
         {
           "kind": "function",
           "name": "caranimAdjustScalarAndGetMaterialOffset",
-          "declaration_line": 448,
+          "declaration_line": 469,
           "lines": [
-            457
+            478
           ]
         },
         {
@@ -27226,24 +27226,24 @@
       "path": "src/modules/caranim.c",
       "symbol": "D_caranim_00406BF8",
       "lines": [
-        506,
-        522
+        527,
+        543
       ],
       "owners": [
         {
           "kind": "function",
           "name": "caranimRefreshChangedSelection",
-          "declaration_line": 513,
+          "declaration_line": 534,
           "lines": [
-            522
+            543
           ]
         },
         {
           "kind": "global",
           "name": "D_caranim_00406BF8",
-          "declaration_line": 506,
+          "declaration_line": 527,
           "lines": [
-            506
+            527
           ]
         }
       ]
@@ -27255,15 +27255,15 @@
       "symbol": "D_caranim_00407178",
       "lines": [
         48,
-        705
+        726
       ],
       "owners": [
         {
           "kind": "function",
           "name": "caranimApplyColorAndCallback",
-          "declaration_line": 703,
+          "declaration_line": 724,
           "lines": [
-            705
+            726
           ]
         },
         {
@@ -27283,15 +27283,15 @@
       "symbol": "D_caranim_004071FC",
       "lines": [
         7,
-        348
+        369
       ],
       "owners": [
         {
           "kind": "function",
           "name": "caranimAcquireConfiguredParticleEffect",
-          "declaration_line": 339,
+          "declaration_line": 360,
           "lines": [
-            348
+            369
           ]
         },
         {
@@ -27311,15 +27311,15 @@
       "symbol": "D_caranim_00407228",
       "lines": [
         44,
-        646
+        667
       ],
       "owners": [
         {
           "kind": "function",
           "name": "caranimGetLocalizedLabel",
-          "declaration_line": 642,
+          "declaration_line": 663,
           "lines": [
-            646
+            667
           ]
         },
         {
@@ -27338,30 +27338,30 @@
       "path": "src/modules/caranim.c",
       "symbol": "D_caranim_00407334",
       "lines": [
-        505,
-        515,
-        518,
-        519,
-        522
+        526,
+        536,
+        539,
+        540,
+        543
       ],
       "owners": [
         {
           "kind": "function",
           "name": "caranimRefreshChangedSelection",
-          "declaration_line": 513,
+          "declaration_line": 534,
           "lines": [
-            515,
-            518,
-            519,
-            522
+            536,
+            539,
+            540,
+            543
           ]
         },
         {
           "kind": "global",
           "name": "D_caranim_00407334",
-          "declaration_line": 505,
+          "declaration_line": 526,
           "lines": [
-            505
+            526
           ]
         }
       ]
@@ -27373,15 +27373,15 @@
       "symbol": "D_caranim_00407348",
       "lines": [
         46,
-        658
+        679
       ],
       "owners": [
         {
           "kind": "function",
           "name": "caranimFindRegisteredStateByObjectHandle",
-          "declaration_line": 655,
+          "declaration_line": 676,
           "lines": [
-            658
+            679
           ]
         },
         {
@@ -27401,24 +27401,24 @@
       "symbol": "D_caranim_00407368",
       "lines": [
         89,
-        657,
-        672
+        678,
+        693
       ],
       "owners": [
         {
           "kind": "function",
           "name": "caranimFindRegisteredStateByObjectHandle",
-          "declaration_line": 655,
+          "declaration_line": 676,
           "lines": [
-            657
+            678
           ]
         },
         {
           "kind": "function",
           "name": "caranimGetRegisteredStateCount",
-          "declaration_line": 671,
+          "declaration_line": 692,
           "lines": [
-            672
+            693
           ]
         },
         {
@@ -27438,15 +27438,15 @@
       "symbol": "D_caranim_00407398",
       "lines": [
         8,
-        353
+        374
       ],
       "owners": [
         {
           "kind": "function",
           "name": "caranimAcquireConfiguredParticleEffect",
-          "declaration_line": 339,
+          "declaration_line": 360,
           "lines": [
-            353
+            374
           ]
         },
         {
@@ -27466,15 +27466,15 @@
       "symbol": "D_caranim_004073A8",
       "lines": [
         8,
-        353
+        374
       ],
       "owners": [
         {
           "kind": "function",
           "name": "caranimAcquireConfiguredParticleEffect",
-          "declaration_line": 339,
+          "declaration_line": 360,
           "lines": [
-            353
+            374
           ]
         },
         {
@@ -27494,15 +27494,15 @@
       "symbol": "D_caranim_004073B8",
       "lines": [
         9,
-        356
+        377
       ],
       "owners": [
         {
           "kind": "function",
           "name": "caranimAcquireConfiguredParticleEffect",
-          "declaration_line": 339,
+          "declaration_line": 360,
           "lines": [
-            356
+            377
           ]
         },
         {
@@ -27522,15 +27522,15 @@
       "symbol": "D_caranim_004073C8",
       "lines": [
         9,
-        356
+        377
       ],
       "owners": [
         {
           "kind": "function",
           "name": "caranimAcquireConfiguredParticleEffect",
-          "declaration_line": 339,
+          "declaration_line": 360,
           "lines": [
-            356
+            377
           ]
         },
         {
@@ -27550,15 +27550,15 @@
       "symbol": "D_caranim_004073D8",
       "lines": [
         10,
-        359
+        380
       ],
       "owners": [
         {
           "kind": "function",
           "name": "caranimAcquireConfiguredParticleEffect",
-          "declaration_line": 339,
+          "declaration_line": 360,
           "lines": [
-            359
+            380
           ]
         },
         {
@@ -27578,15 +27578,15 @@
       "symbol": "D_caranim_004073E8",
       "lines": [
         10,
-        359
+        380
       ],
       "owners": [
         {
           "kind": "function",
           "name": "caranimAcquireConfiguredParticleEffect",
-          "declaration_line": 339,
+          "declaration_line": 360,
           "lines": [
-            359
+            380
           ]
         },
         {
@@ -27606,15 +27606,15 @@
       "symbol": "D_caranim_004073F8",
       "lines": [
         11,
-        362
+        383
       ],
       "owners": [
         {
           "kind": "function",
           "name": "caranimAcquireConfiguredParticleEffect",
-          "declaration_line": 339,
+          "declaration_line": 360,
           "lines": [
-            362
+            383
           ]
         },
         {
@@ -27634,15 +27634,15 @@
       "symbol": "D_caranim_00407408",
       "lines": [
         11,
-        362
+        383
       ],
       "owners": [
         {
           "kind": "function",
           "name": "caranimAcquireConfiguredParticleEffect",
-          "declaration_line": 339,
+          "declaration_line": 360,
           "lines": [
-            362
+            383
           ]
         },
         {
@@ -45383,15 +45383,15 @@
       "symbol": "D_80025D6C",
       "lines": [
         5,
-        50
+        67
       ],
       "owners": [
         {
           "kind": "function",
           "name": "spraySetActivationState",
-          "declaration_line": 48,
+          "declaration_line": 65,
           "lines": [
-            50
+            67
           ]
         },
         {
@@ -45411,15 +45411,15 @@
       "symbol": "D_spray_004010B0",
       "lines": [
         8,
-        55
+        72
       ],
       "owners": [
         {
           "kind": "function",
           "name": "spraySetActivationState",
-          "declaration_line": 48,
+          "declaration_line": 65,
           "lines": [
-            55
+            72
           ]
         },
         {
@@ -45439,15 +45439,15 @@
       "symbol": "D_spray_00401768",
       "lines": [
         7,
-        54
+        71
       ],
       "owners": [
         {
           "kind": "function",
           "name": "spraySetActivationState",
-          "declaration_line": 48,
+          "declaration_line": 65,
           "lines": [
-            54
+            71
           ]
         },
         {
@@ -74963,7 +74963,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00401D6C",
       "lines": [
-        309
+        330
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00401D6C.s"
     },
@@ -74973,7 +74973,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00402FD4",
       "lines": [
-        325
+        346
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00402FD4.s"
     },
@@ -74983,7 +74983,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_004033F4",
       "lines": [
-        327
+        348
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_004033F4.s"
     },
@@ -74993,7 +74993,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_0040371C",
       "lines": [
-        381
+        402
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_0040371C.s"
     },
@@ -75003,7 +75003,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00403A80",
       "lines": [
-        422
+        443
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00403A80.s"
     },
@@ -75013,7 +75013,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00403BDC",
       "lines": [
-        437
+        458
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00403BDC.s"
     },
@@ -75023,7 +75023,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00404074",
       "lines": [
-        439
+        460
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00404074.s"
     },
@@ -75033,7 +75033,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_004042C4",
       "lines": [
-        466
+        487
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_004042C4.s"
     },
@@ -75043,7 +75043,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00404568",
       "lines": [
-        482
+        503
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00404568.s"
     },
@@ -75053,7 +75053,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00404A40",
       "lines": [
-        484
+        505
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00404A40.s"
     },
@@ -75063,7 +75063,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00404ACC",
       "lines": [
-        486
+        507
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00404ACC.s"
     },
@@ -75073,7 +75073,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00404CA0",
       "lines": [
-        503
+        524
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00404CA0.s"
     },
@@ -75083,7 +75083,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00405304",
       "lines": [
-        557
+        578
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00405304.s"
     },
@@ -75093,7 +75093,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_004054B4",
       "lines": [
-        572
+        593
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_004054B4.s"
     },
@@ -75103,7 +75103,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00405910",
       "lines": [
-        589
+        610
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00405910.s"
     },
@@ -75113,7 +75113,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00405B7C",
       "lines": [
-        620
+        641
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00405B7C.s"
     },
@@ -75123,7 +75123,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00405DE4",
       "lines": [
-        636
+        657
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00405DE4.s"
     },
@@ -75133,7 +75133,7 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00406094",
       "lines": [
-        667
+        688
       ],
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00406094.s"
     },
@@ -79263,7 +79263,7 @@
       "path": "src/modules/spray.c",
       "symbol": "func_spray_00400138",
       "lines": [
-        42
+        59
       ],
       "evidence": "asm/us/nonmatchings/modules/spray/func_spray_00400138.s"
     },
@@ -79273,7 +79273,7 @@
       "path": "src/modules/spray.c",
       "symbol": "func_spray_004002A8",
       "lines": [
-        59
+        76
       ],
       "evidence": "asm/us/nonmatchings/modules/spray/func_spray_004002A8.s"
     },
@@ -79283,7 +79283,7 @@
       "path": "src/modules/spray.c",
       "symbol": "func_spray_0040055C",
       "lines": [
-        61
+        78
       ],
       "evidence": "asm/us/nonmatchings/modules/spray/func_spray_0040055C.s"
     },
@@ -79293,7 +79293,7 @@
       "path": "src/modules/spray.c",
       "symbol": "func_spray_0040064C",
       "lines": [
-        63
+        80
       ],
       "evidence": "asm/us/nonmatchings/modules/spray/func_spray_0040064C.s"
     },
@@ -125660,16 +125660,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "Acquire an inactive particle effect of the requested kind, configure it, * then restart it. The shared-data address and requested count ten go through * export 0x3C; the scalar is promoted to double for property 0x1007 at 0x14. * Kinds 10, 11, 13 and 14 select the original palette pairs and consume four * caller bytes through the color helper. Preserve both failure returns and * the original switch, property-list and call order. * RE_UNKNOWN: gameplay kind identities, scalar units and shared definition * data ownership require the callers and particle assets. Other nonnegative * kinds keep the original configuration path without a new range check.",
       "lines": [
-        330
+        351
       ],
       "evidence": "Acquire an inactive particle effect of the requested kind, configure it, * then restart it. The shared-data address and requested count ten go through * export 0x3C; the scalar is promoted to double for property 0x1007 at 0x14. * Kinds 10, 11, 13 and 14 select the original palette pairs and consume four * caller bytes through the color helper. Preserve both failure returns and * the original switch, property-list and call order. * RE_UNKNOWN: gameplay kind identities, scalar units and shared definition * data ownership require the callers and particle assets. Other nonnegative * kinds keep the original configuration path without a new range check.",
       "owners": [
         {
           "kind": "function",
           "name": "caranimAcquireConfiguredParticleEffect",
-          "declaration_line": 339,
+          "declaration_line": 360,
           "lines": [
-            330
+            351
           ]
         }
       ]
@@ -125680,16 +125680,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "Acquire an inactive particle effect of the requested kind, then read * properties 0x1005 and 0x4026 into two four-float output regions. * The actual getter at export 0x18 writes definition shorts 0x16..0x1C * divided by 255 for 0x1005. For 0x4026 it writes extension shorts * 0x0E..0x14 divided by 255 when definition kind is one, or four ones. * RE_ORIGINAL_QUIRK: the acquired handle is used without checking for -1. * RE_UNKNOWN: acquisition-failure reachability, output-region lifetime and * broader component meanings. Trace original wrapper callers and effect-pool * setup before asserting valid capacities, ownership or channel semantics.",
       "lines": [
-        399
+        420
       ],
       "evidence": "Acquire an inactive particle effect of the requested kind, then read * properties 0x1005 and 0x4026 into two four-float output regions. * The actual getter at export 0x18 writes definition shorts 0x16..0x1C * divided by 255 for 0x1005. For 0x4026 it writes extension shorts * 0x0E..0x14 divided by 255 when definition kind is one, or four ones. * RE_ORIGINAL_QUIRK: the acquired handle is used without checking for -1. * RE_UNKNOWN: acquisition-failure reachability, output-region lifetime and * broader component meanings. Trace original wrapper callers and effect-pool * setup before asserting valid capacities, ownership or channel semantics.",
       "owners": [
         {
           "kind": "function",
           "name": "caranimAcquireParticleEffectAndReadProperties",
-          "declaration_line": 408,
+          "declaration_line": 429,
           "lines": [
-            399
+            420
           ]
         }
       ]
@@ -125700,16 +125700,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "Add byte-derived offsets to both palettes' first three components and clamp * with ordered comparisons; both fourth components use the same byte/255 value. * Original setup queries four pairs of runtime buffers for kinds 11/13/10/14. * The UVPFX call passes four doubles for 0x1005 and four for 0x4026. Its original * consumer writes the latter extension only for kind 1; kind 2 returns before * that property handler, while other kinds skip its four double arguments. * RE_UNKNOWN: component/channel roles and caller buffer/handle validity or * lifetime beyond this setup need original effect producers/render consumers. * Clean C remains unmatched; retain assembly until full byte/relocation proof.",
       "lines": [
-        371
+        392
       ],
       "evidence": "Add byte-derived offsets to both palettes' first three components and clamp * with ordered comparisons; both fourth components use the same byte/255 value. * Original setup queries four pairs of runtime buffers for kinds 11/13/10/14. * The UVPFX call passes four doubles for 0x1005 and four for 0x4026. Its original * consumer writes the latter extension only for kind 1; kind 2 returns before * that property handler, while other kinds skip its four double arguments. * RE_UNKNOWN: component/channel roles and caller buffer/handle validity or * lifetime beyond this setup need original effect producers/render consumers. * Clean C remains unmatched; retain assembly until full byte/relocation proof.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_caranim_0040371C",
-          "declaration_line": 381,
+          "declaration_line": 402,
           "lines": [
-            371
+            392
           ]
         }
       ]
@@ -125740,16 +125740,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "Apply color and register property-four callback; the object retains state. * RE_UNKNOWN: color-index bounds and retained-state lifetime need producers/teardown.",
       "lines": [
-        701
+        722
       ],
       "evidence": "Apply color and register property-four callback; the object retains state. * RE_UNKNOWN: color-index bounds and retained-state lifetime need producers/teardown.",
       "owners": [
         {
           "kind": "function",
           "name": "caranimApplyColorAndCallback",
-          "declaration_line": 703,
+          "declaration_line": 724,
           "lines": [
-            701
+            722
           ]
         }
       ]
@@ -125780,16 +125780,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "Approach two bounded state scalars, then apply X/Y matrix operations and * publish selected object matrices. The disabled path copies/publishes only. * Preserve double-precision target products before narrowing, ordered sign * clamps, two separate random draws and all state/export reloads after calls. * RE_ORIGINAL_QUIRK: an unused three-word translation copy is made from the * initialized original matrix; unordered comparisons keep the original paths. * RE_UNKNOWN: scalar units/policy, state/context and output validity, selected * index domains and callback ownership/lifetimes need original callers, * writers and teardown. D6BEC/D6BD8/D6B9C are distinct field-address aliases * with stride0x6C; their offsets alone do not prove a complete owned C array. * Clean C is 1232 versus 1240 bytes: frame208/216 and sign-clamp lowering differ; * 238 words and full relocations fail, including draft alias normalization. * Retain original assembly until every instruction and relocation matches.",
       "lines": [
-        468
+        489
       ],
       "evidence": "Approach two bounded state scalars, then apply X/Y matrix operations and * publish selected object matrices. The disabled path copies/publishes only. * Preserve double-precision target products before narrowing, ordered sign * clamps, two separate random draws and all state/export reloads after calls. * RE_ORIGINAL_QUIRK: an unused three-word translation copy is made from the * initialized original matrix; unordered comparisons keep the original paths. * RE_UNKNOWN: scalar units/policy, state/context and output validity, selected * index domains and callback ownership/lifetimes need original callers, * writers and teardown. D6BEC/D6BD8/D6B9C are distinct field-address aliases * with stride0x6C; their offsets alone do not prove a complete owned C array. * Clean C is 1232 versus 1240 bytes: frame208/216 and sign-clamp lowering differ; * 238 words and full relocations fail, including draft alias normalization. * Retain original assembly until every instruction and relocation matches.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_caranim_00404568",
-          "declaration_line": 482,
+          "declaration_line": 503,
           "lines": [
-            468
+            489
           ]
         }
       ]
@@ -125800,16 +125800,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "Build Y from direction, X from Y cross Z, then Z from X cross Y. * RE_ORIGINAL_QUIRK: a nonzero Y parallel to identity Z produces zero X/Z. * RE_UNKNOWN: producer direction constraints need audit before assuming a full-rank basis.",
       "lines": [
-        529
+        550
       ],
       "evidence": "Build Y from direction, X from Y cross Z, then Z from X cross Y. * RE_ORIGINAL_QUIRK: a nonzero Y parallel to identity Z produces zero X/Z. * RE_UNKNOWN: producer direction constraints need audit before assuming a full-rank basis.",
       "owners": [
         {
           "kind": "function",
           "name": "caranimBuildOrientationBasis",
-          "declaration_line": 532,
+          "declaration_line": 553,
           "lines": [
-            529
+            550
           ]
         }
       ]
@@ -125820,16 +125820,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "Compute the material offset and conditionally update the caller's scalar. * Kinds two/three add 0.125; the special record adds 0.5 when suppressSpecialCase * is zero, raising only values less than ten (NaN preserved). 0xFFF selects zero. * RE_UNKNOWN: scalar/offset units and caller index bounds; trace material callers.",
       "lines": [
-        442
+        463
       ],
       "evidence": "Compute the material offset and conditionally update the caller's scalar. * Kinds two/three add 0.125; the special record adds 0.5 when suppressSpecialCase * is zero, raising only values less than ten (NaN preserved). 0xFFF selects zero. * RE_UNKNOWN: scalar/offset units and caller index bounds; trace material callers.",
       "owners": [
         {
           "kind": "function",
           "name": "caranimAdjustScalarAndGetMaterialOffset",
-          "declaration_line": 448,
+          "declaration_line": 469,
           "lines": [
-            442
+            463
           ]
         }
       ]
@@ -125860,16 +125860,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "Disable light-buffer selection with -1 before checking state selection 0x410. * Snapshot selected record words 0x14/0x10 as old/new texture IDs, query the * object's model and walk its 12/44/24-byte nested records with unsigned-byte * counts. GFXSTATE 0x24 compares the low twelve bits and ORs the unmasked new ID. * Preserve pointer/count/export reloads after callbacks. If bytes 0x6B84/0x6B88 * are zero afterward, reread selection/handle and update the object's loaded model. * RE_ORIGINAL_QUIRK: the loaded-model pointer is used without a null check; * selection -1 still disables the light buffer before returning. * RE_UNKNOWN: selection/handle/texture domains, loaded-model availability, * nested-table validity, restore-gate policy and shared asset mutation/lifetimes * need original callers, writers, acquisition and teardown evidence. Clean C * remains 536 versus 532 bytes with 43 word and full relocation differences: * frame/homes, scratch-store order and final table/argument-address scheduling. * Retain assembly pending complete proof; no trial types or ABI edits accepted.",
       "lines": [
-        574
+        595
       ],
       "evidence": "Disable light-buffer selection with -1 before checking state selection 0x410. * Snapshot selected record words 0x14/0x10 as old/new texture IDs, query the * object's model and walk its 12/44/24-byte nested records with unsigned-byte * counts. GFXSTATE 0x24 compares the low twelve bits and ORs the unmasked new ID. * Preserve pointer/count/export reloads after callbacks. If bytes 0x6B84/0x6B88 * are zero afterward, reread selection/handle and update the object's loaded model. * RE_ORIGINAL_QUIRK: the loaded-model pointer is used without a null check; * selection -1 still disables the light buffer before returning. * RE_UNKNOWN: selection/handle/texture domains, loaded-model availability, * nested-table validity, restore-gate policy and shared asset mutation/lifetimes * need original callers, writers, acquisition and teardown evidence. Clean C * remains 536 versus 532 bytes with 43 word and full relocation differences: * frame/homes, scratch-store order and final table/argument-address scheduling. * Retain assembly pending complete proof; no trial types or ABI edits accepted.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_caranim_00405910",
-          "declaration_line": 589,
+          "declaration_line": 610,
           "lines": [
-            574
+            595
           ]
         }
       ]
@@ -125880,16 +125880,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "Find the first registered state for this DOBJ handle with unsigned 16-bit traversal. RE_ORIGINAL_QUIRK: constructor0x003AC increments count even when all eight slots are full. * RE_UNKNOWN: caller bounds/lifetime must keep the searched prefix in range and nonnull; resolve original creation/lifecycle call sites.",
       "lines": [
-        651
+        672
       ],
       "evidence": "Find the first registered state for this DOBJ handle with unsigned 16-bit traversal. RE_ORIGINAL_QUIRK: constructor0x003AC increments count even when all eight slots are full. * RE_UNKNOWN: caller bounds/lifetime must keep the searched prefix in range and nonnull; resolve original creation/lifecycle call sites.",
       "owners": [
         {
           "kind": "function",
           "name": "caranimFindRegisteredStateByObjectHandle",
-          "declaration_line": 655,
+          "declaration_line": 676,
           "lines": [
-            651
+            672
           ]
         }
       ]
@@ -125920,16 +125920,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "Native callback consumes channel A0. When the default state and UVTX0x436 * are available, reread the state and set texture selectors u2/v2 from its * scaled float 0x3A8: first value + value, then the saved value. Update main * object mask 0x2 from words 0x30/0x34 and the optional signed channel reference. * Retain the selected table address; reread table word 0x58 and state byte 0x24 * after the main callback, then update four auxiliary handles and call 0x4ACC * only on the gated set path. Reload each handle/export after earlier calls. * RE_ORIGINAL_QUIRK: first null state or selection -1 terminates the registry * prefix; the final address is &D_caranim_00407368, not its counter value. * RE_UNKNOWN: flag/auxiliary policy, texture units, caller channel/table/handle * domains, registry validity and callback/storage lifetimes need original * writers, dispatch callers, table/pool setup and teardown evidence. Clean C * is 604 versus 616 bytes with 100 word and full relocation differences: frame, * channel home, shared loop bound, auxiliary cursor and end-address scheduling. * Retain assembly pending complete proof; no trial types or ABI edits accepted.",
       "lines": [
-        604
+        625
       ],
       "evidence": "Native callback consumes channel A0. When the default state and UVTX0x436 * are available, reread the state and set texture selectors u2/v2 from its * scaled float 0x3A8: first value + value, then the saved value. Update main * object mask 0x2 from words 0x30/0x34 and the optional signed channel reference. * Retain the selected table address; reread table word 0x58 and state byte 0x24 * after the main callback, then update four auxiliary handles and call 0x4ACC * only on the gated set path. Reload each handle/export after earlier calls. * RE_ORIGINAL_QUIRK: first null state or selection -1 terminates the registry * prefix; the final address is &D_caranim_00407368, not its counter value. * RE_UNKNOWN: flag/auxiliary policy, texture units, caller channel/table/handle * domains, registry validity and callback/storage lifetimes need original * writers, dispatch callers, table/pool setup and teardown evidence. Clean C * is 604 versus 616 bytes with 100 word and full relocation differences: frame, * channel home, shared loop bound, auxiliary cursor and end-address scheduling. * Retain assembly pending complete proof; no trial types or ABI edits accepted.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_caranim_00405B7C",
-          "declaration_line": 620,
+          "declaration_line": 641,
           "lines": [
-            604
+            625
           ]
         }
       ]
@@ -125940,16 +125940,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "On selection change, update, reread selection and copy 30 bytes via its text pointer. * GUI slot 0xC4 uppercases bytes >= 97 without NUL-scanning or retaining source. * RE_UNKNOWN: audit source extent, widget capacity and selection bounds.",
       "lines": [
-        510
+        531
       ],
       "evidence": "On selection change, update, reread selection and copy 30 bytes via its text pointer. * GUI slot 0xC4 uppercases bytes >= 97 without NUL-scanning or retaining source. * RE_UNKNOWN: audit source extent, widget capacity and selection bounds.",
       "owners": [
         {
           "kind": "function",
           "name": "caranimRefreshChangedSelection",
-          "declaration_line": 513,
+          "declaration_line": 534,
           "lines": [
-            510
+            531
           ]
         }
       ]
@@ -125960,16 +125960,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "Read camera pointer cell CAM0x30; its signed word0x220 selects state light slot0x248 * when nonnegative, otherwise -1. RE_UNKNOWN: camera/state pointer lifetime, slot bounds * and camera-word policy need original producers/callers. No pointer guard is added.",
       "lines": [
-        680
+        701
       ],
       "evidence": "Read camera pointer cell CAM0x30; its signed word0x220 selects state light slot0x248 * when nonnegative, otherwise -1. RE_UNKNOWN: camera/state pointer lifetime, slot bounds * and camera-word policy need original producers/callers. No pointer guard is added.",
       "owners": [
         {
           "kind": "function",
           "name": "caranimSelectCameraLightBufferSlot",
-          "declaration_line": 685,
+          "declaration_line": 706,
           "lines": [
-            680
+            701
           ]
         }
       ]
@@ -125980,16 +125980,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "Register the animation callback at priority 0x14; zero means no insert-before callback. * RE_UNKNOWN: caller channel/list validity and ignored failure need caller/pool audit.",
       "lines": [
-        592
+        613
       ],
       "evidence": "Register the animation callback at priority 0x14; zero means no insert-before callback. * RE_UNKNOWN: caller channel/list validity and ignored failure need caller/pool audit.",
       "owners": [
         {
           "kind": "function",
           "name": "caranimRegisterChannelCallback",
-          "declaration_line": 594,
+          "declaration_line": 615,
           "lines": [
-            592
+            613
           ]
         }
       ]
@@ -126020,16 +126020,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "Select a model from the record indexed by state word 0x410, using the * channel vector's projections onto queried object matrix rows. Preserve * ordered ratio tests, positive-copy/otherwise-negate magnitude and zero's * second-alternate branch. Reread alternate model words and the object handle * after provider calls; the record address and initial model are snapshots. * RE_ORIGINAL_QUIRK: local matrix/vector outputs are consumed without testing * whether object/channel getters rejected their inputs before writing outputs. * RE_UNKNOWN: vector role/units, table/model/handle domains, rejection * reachability and callback/storage lifetimes need original producers, callers, * pool/table extents, model setup and teardown evidence. Clean C is 508 versus * 516 bytes with 57 word and full relocation differences: frame/local homes, * zero-register reuse and address scheduling. Retain original assembly until * complete matching proof; no caller-validity or floating-effect claim.",
       "lines": [
-        622
+        643
       ],
       "evidence": "Select a model from the record indexed by state word 0x410, using the * channel vector's projections onto queried object matrix rows. Preserve * ordered ratio tests, positive-copy/otherwise-negate magnitude and zero's * second-alternate branch. Reread alternate model words and the object handle * after provider calls; the record address and initial model are snapshots. * RE_ORIGINAL_QUIRK: local matrix/vector outputs are consumed without testing * whether object/channel getters rejected their inputs before writing outputs. * RE_UNKNOWN: vector role/units, table/model/handle domains, rejection * reachability and callback/storage lifetimes need original producers, callers, * pool/table extents, model setup and teardown evidence. Clean C is 508 versus * 516 bytes with 57 word and full relocation differences: frame/local homes, * zero-register reuse and address scheduling. Retain original assembly until * complete matching proof; no caller-validity or floating-effect claim.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_caranim_00405DE4",
-          "declaration_line": 636,
+          "declaration_line": 657,
           "lines": [
-            622
+            643
           ]
         }
       ]
@@ -126040,16 +126040,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "Snapshot selections 0x410/0x408 before waiting on graphics and releasing * texture-animation storage. Copy saved matrices into the old object, load the * requested models/textures, replace the model and update nested state words. * Rebuild animation storage, apply a table bit index, clear auxiliary masks, * retrieve matrices and finally reread the requested selection for 0x410. * RE_ORIGINAL_QUIRK: release uses old texture word 0x14 but new word 0x10; * nested graphics-state writes retain pointer/word reloads and a final bit clear. * RE_UNKNOWN: table/index/handle domains, resource success, model storage, * flag policy and shared mutation/ownership/lifetimes need callers/producers. * The target consumes A0; original caranimRefreshChangedSelection prepares * A0/A1/A2. Historical source declaration remains unresolved. Clean target C * is 1164 versus 1268 bytes with frame/record-address/loop scheduling and full * relocation differences. The scoped caller view also changes direct JAL to * HI/LO plus JALR. Retain original assembly and caller pending complete proof.",
       "lines": [
-        488
+        509
       ],
       "evidence": "Snapshot selections 0x410/0x408 before waiting on graphics and releasing * texture-animation storage. Copy saved matrices into the old object, load the * requested models/textures, replace the model and update nested state words. * Rebuild animation storage, apply a table bit index, clear auxiliary masks, * retrieve matrices and finally reread the requested selection for 0x410. * RE_ORIGINAL_QUIRK: release uses old texture word 0x14 but new word 0x10; * nested graphics-state writes retain pointer/word reloads and a final bit clear. * RE_UNKNOWN: table/index/handle domains, resource success, model storage, * flag policy and shared mutation/ownership/lifetimes need callers/producers. * The target consumes A0; original caranimRefreshChangedSelection prepares * A0/A1/A2. Historical source declaration remains unresolved. Clean target C * is 1164 versus 1268 bytes with frame/record-address/loop scheduling and full * relocation differences. The scoped caller view also changes direct JAL to * HI/LO plus JALR. Retain original assembly and caller pending complete proof.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_caranim_00404CA0",
-          "declaration_line": 503,
+          "declaration_line": 524,
           "lines": [
-            488
+            509
           ]
         }
       ]
@@ -126060,16 +126060,36 @@
       "path": "src/modules/caranim.c",
       "symbol": "Stored rows 0..2 each hold 21 label addresses; IDs outside -1..20 return \"INVALID\". * RE_ORIGINAL_QUIRK: ID -1 yields 0x01020000 for row0, or the preceding row's last label. * RE_UNKNOWN: runtime language domain and -1 caller reachability; trace setters/callers.",
       "lines": [
-        639
+        660
       ],
       "evidence": "Stored rows 0..2 each hold 21 label addresses; IDs outside -1..20 return \"INVALID\". * RE_ORIGINAL_QUIRK: ID -1 yields 0x01020000 for row0, or the preceding row's last label. * RE_UNKNOWN: runtime language domain and -1 caller reachability; trace setters/callers.",
       "owners": [
         {
           "kind": "function",
           "name": "caranimGetLocalizedLabel",
-          "declaration_line": 642,
+          "declaration_line": 663,
           "lines": [
-            639
+            660
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-f391429ea779",
+      "kind": "explicit_unknown",
+      "path": "src/modules/caranim.c",
+      "symbol": "Update four descriptor-driven effect slots from transformed local points. * Snapshot the optional source pointer, selector word and selected scalar; * preserve callback-dependent reference/state reloads and final ID stores. * SKID/SPRAY transitions and PFX final-interval calls precede clearing stored * references; those operations do not establish resource deallocation. * RE_ORIGINAL_QUIRK: mode-skipped slots retain their effect state. Descriptor * branches do not always initialize the style halfword; fallback paths leave * byte3 of the four-byte SKID input uninitialized. Matrix/normalize failures * are unchecked, and the first three TERRA54 output pointers intentionally * alias. Preserve native behavior without inventing default values. * RE_UNKNOWN: reachable descriptor/source domains, valid handles and matrix/ * basis guarantees, setting/table extents, units, callback mutation and record * lifetimes need original producers, callers, pool consumers and teardown. * No wheel identity or complete historical array ownership is established. * A readable draft is 4640 versus 4712 native bytes, with 1149 differing words. * Both use a 424-byte frame, but local homes, saved pointers, loop organization * and branch lowering differ. The original direct D6838 halfword alias becomes * a D6830+8 field access; three named dispatch tables become synthesized data. * The two 101-record relocation lists differ. Retain original * assembly until instructions, table targets and historical aliases match.",
+      "lines": [
+        309
+      ],
+      "evidence": "Update four descriptor-driven effect slots from transformed local points. * Snapshot the optional source pointer, selector word and selected scalar; * preserve callback-dependent reference/state reloads and final ID stores. * SKID/SPRAY transitions and PFX final-interval calls precede clearing stored * references; those operations do not establish resource deallocation. * RE_ORIGINAL_QUIRK: mode-skipped slots retain their effect state. Descriptor * branches do not always initialize the style halfword; fallback paths leave * byte3 of the four-byte SKID input uninitialized. Matrix/normalize failures * are unchecked, and the first three TERRA54 output pointers intentionally * alias. Preserve native behavior without inventing default values. * RE_UNKNOWN: reachable descriptor/source domains, valid handles and matrix/ * basis guarantees, setting/table extents, units, callback mutation and record * lifetimes need original producers, callers, pool consumers and teardown. * No wheel identity or complete historical array ownership is established. * A readable draft is 4640 versus 4712 native bytes, with 1149 differing words. * Both use a 424-byte frame, but local homes, saved pointers, loop organization * and branch lowering differ. The original direct D6838 halfword alias becomes * a D6830+8 field access; three named dispatch tables become synthesized data. * The two 101-record relocation lists differ. Retain original * assembly until instructions, table targets and historical aliases match.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_caranim_00401D6C",
+          "declaration_line": 330,
+          "lines": [
+            309
           ]
         }
       ]
@@ -126080,16 +126100,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "Update two configured particle positions using selected object matrices. * Ordered scalar >= 3 clears object flag mask 0x02, begins final intervals * for existing effects, then invalidates both handles after those calls. * Active updates preserve mode/handle/export reloads and property 0x1010's * three promoted doubles, including a single-precision Z + 0.5f operation. * RE_ORIGINAL_QUIRK: unordered scalar comparison follows the active path; * an unused three-word transformed-point copy is retained in original storage. * RE_UNKNOWN: scalar units/mode policy, selection/handle/storage domains, * matrix-output validity and callback ownership/lifetimes need original * callers, producers and teardown. Final-interval updates do not free effects. * Clean C is 1056 bytes with 46 identical ordered relocation records; 48 words * differ in frame/local homes, registers and argument/store scheduling. * Retain original assembly pending complete instruction equivalence.",
       "lines": [
-        311
+        332
       ],
       "evidence": "Update two configured particle positions using selected object matrices. * Ordered scalar >= 3 clears object flag mask 0x02, begins final intervals * for existing effects, then invalidates both handles after those calls. * Active updates preserve mode/handle/export reloads and property 0x1010's * three promoted doubles, including a single-precision Z + 0.5f operation. * RE_ORIGINAL_QUIRK: unordered scalar comparison follows the active path; * an unused three-word transformed-point copy is retained in original storage. * RE_UNKNOWN: scalar units/mode policy, selection/handle/storage domains, * matrix-output validity and callback ownership/lifetimes need original * callers, producers and teardown. Final-interval updates do not free effects. * Clean C is 1056 bytes with 46 identical ordered relocation records; 48 words * differ in frame/local homes, registers and argument/store scheduling. * Retain original assembly pending complete instruction equivalence.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_caranim_00402FD4",
-          "declaration_line": 325,
+          "declaration_line": 346,
           "lines": [
-            311
+            332
           ]
         }
       ]
@@ -126100,16 +126120,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "Update two scalar accumulators and three configured object matrices after * matching the selected record's model words. Preserve single/double arithmetic, * scalar folds, ordered zero gates and owner/handle/index reloads around calls. * RE_ORIGINAL_QUIRK: only the first matrix index gates all three operations. * Secondary context is captured only for an initially nonnull owner; later * matrix iterations reread the owner before using that saved context. * RE_UNKNOWN: caller/producer guarantees for selection, handles, record/matrix * storage and captured-context lifetime, plus scalar units and flag policy, * need original callers, writers and teardown evidence. No default is invented. * Clean C is 1156 versus 1176 bytes: frame/local homes, table-address reuse, * floating operand scheduling and full relocation records differ. Retain * original assembly pending complete instruction and relocation proof.",
       "lines": [
-        424
+        445
       ],
       "evidence": "Update two scalar accumulators and three configured object matrices after * matching the selected record's model words. Preserve single/double arithmetic, * scalar folds, ordered zero gates and owner/handle/index reloads around calls. * RE_ORIGINAL_QUIRK: only the first matrix index gates all three operations. * Secondary context is captured only for an initially nonnull owner; later * matrix iterations reread the owner before using that saved context. * RE_UNKNOWN: caller/producer guarantees for selection, handles, record/matrix * storage and captured-context lifetime, plus scalar units and flag policy, * need original callers, writers and teardown evidence. No default is invented. * Clean C is 1156 versus 1176 bytes: frame/local homes, table-address reuse, * floating operand scheduling and full relocation records differ. Retain * original assembly pending complete instruction and relocation proof.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_caranim_00403BDC",
-          "declaration_line": 437,
+          "declaration_line": 458,
           "lines": [
-            424
+            445
           ]
         }
       ]
@@ -126180,16 +126200,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00405304 applies light records using the object's saved position * or a query word, then conditionally updates shadow state and three scene records. * Snapshot matrix row 0x30 before LIGHT18; reread byte243 and callback-dependent * scene/state pointers afterward. Halfword3F2 values zero/one select -1. * RE_ORIGINAL_QUIRK: reads the row even when DOBJ rejects a handle without output. * RE_UNKNOWN: valid object/query/selector domains, flag policy and storage lifetimes * need original constructors, scene writers and callback callers; rejection * reachability is unproved. Clean C has 25 register/branch words and complete * relocation differences at the same 432-byte extent; retain original assembly.",
       "lines": [
-        547
+        568
       ],
       "evidence": "func_caranim_00405304 applies light records using the object's saved position * or a query word, then conditionally updates shadow state and three scene records. * Snapshot matrix row 0x30 before LIGHT18; reread byte243 and callback-dependent * scene/state pointers afterward. Halfword3F2 values zero/one select -1. * RE_ORIGINAL_QUIRK: reads the row even when DOBJ rejects a handle without output. * RE_UNKNOWN: valid object/query/selector domains, flag policy and storage lifetimes * need original constructors, scene writers and callback callers; rejection * reachability is unproved. Clean C has 25 register/branch words and complete * relocation differences at the same 432-byte extent; retain original assembly.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_caranim_00405304",
-          "declaration_line": 557,
+          "declaration_line": 578,
           "lines": [
-            547
+            568
           ]
         }
       ]
@@ -126200,16 +126220,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_004054B4 gates helper5304 by camera query220 and byte23C, * selects a UVLIGHT buffer, optionally draws shadow state, then emits conversion * coefficients from an ordered scalar factor. The slct load and signed global * halfword override it to one. Shared byte gates precede helper5DE4; selection410 * chooses the direction of a matching texture-ID replacement across model states. * Reread callback-dependent camera/flags/model pointers and byte counts. * RE_UNKNOWN: flag/scalar meanings and units, valid camera/state/table/model * domains, shared mutation rights and storage/callback lifetimes need original * writers, model producers and callers. RE_ORIGINAL_QUIRK: model/nested pointers * are consumed without added null/bounds guards; invalid-input reachability is * unproved. Clean C is 1072 versus 1116 bytes with 219 word and full relocation * differences; retain original assembly pending complete matching proof.",
       "lines": [
-        559
+        580
       ],
       "evidence": "func_caranim_004054B4 gates helper5304 by camera query220 and byte23C, * selects a UVLIGHT buffer, optionally draws shadow state, then emits conversion * coefficients from an ordered scalar factor. The slct load and signed global * halfword override it to one. Shared byte gates precede helper5DE4; selection410 * chooses the direction of a matching texture-ID replacement across model states. * Reread callback-dependent camera/flags/model pointers and byte counts. * RE_UNKNOWN: flag/scalar meanings and units, valid camera/state/table/model * domains, shared mutation rights and storage/callback lifetimes need original * writers, model producers and callers. RE_ORIGINAL_QUIRK: model/nested pointers * are consumed without added null/bounds guards; invalid-input reachability is * unproved. Clean C is 1072 versus 1116 bytes with 219 word and full relocation * differences; retain original assembly pending complete matching proof.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_caranim_004054B4",
-          "declaration_line": 572,
+          "declaration_line": 593,
           "lines": [
-            559
+            580
           ]
         }
       ]
@@ -131968,21 +131988,61 @@
       ]
     },
     {
+      "id": "Q-1c2d0b2aefdb",
+      "kind": "explicit_unknown",
+      "path": "src/modules/spray.c",
+      "symbol": "A nonzero enabled byte and C0 >= 2 capture the shared clock; else clear D1. * Release the shared sound handle and request its next acquisition-time setup. * RE_UNKNOWN: C0/D1 policy and record/handle lifetimes need original producers.",
+      "lines": [
+        62
+      ],
+      "evidence": "A nonzero enabled byte and C0 >= 2 capture the shared clock; else clear D1. * Release the shared sound handle and request its next acquisition-time setup. * RE_UNKNOWN: C0/D1 policy and record/handle lifetimes need original producers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "spraySetActivationState",
+          "declaration_line": 65,
+          "lines": [
+            62
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-2586f66821dd",
+      "kind": "explicit_unknown",
+      "path": "src/modules/spray.c",
+      "symbol": "Acquire the first zero-D1 record in the native eight-step, 0xD4-stride walk; * return null at the adjacent shared sound-state label. Reset the original * fields, store the selector low byte, then optionally initialize that sound * handle, read SND48's scalar and call SND08 with sound44, priority7FFF, * the returned scalar times D1050 and pitch0.5. Clear the setup request after * that callback returns, regardless of its result; retain record identity. * RE_UNKNOWN: selector/field policies, record/shared-handle reuse, ownership, * callback mutation and lifetime guarantees need original writers, consumers * and teardown. The fixed native walk does not establish all caller domains. * A readable draft is 252 versus 264 native bytes, with 65 differing words. * Frame 48 becomes 40 and the preserved record home moves 32 to 36; the compiler * reuses the endpoint address for the first handle call instead of reloading * its original label. All observed field resets, call inputs/order and flag * store remain represented, but 22/18 complete relocation records differ. * Historical source declarations/local organization remain unknown; keep * original assembly until every instruction and relocation matches.",
+      "lines": [
+        42
+      ],
+      "evidence": "Acquire the first zero-D1 record in the native eight-step, 0xD4-stride walk; * return null at the adjacent shared sound-state label. Reset the original * fields, store the selector low byte, then optionally initialize that sound * handle, read SND48's scalar and call SND08 with sound44, priority7FFF, * the returned scalar times D1050 and pitch0.5. Clear the setup request after * that callback returns, regardless of its result; retain record identity. * RE_UNKNOWN: selector/field policies, record/shared-handle reuse, ownership, * callback mutation and lifetime guarantees need original writers, consumers * and teardown. The fixed native walk does not establish all caller domains. * A readable draft is 252 versus 264 native bytes, with 65 differing words. * Frame 48 becomes 40 and the preserved record home moves 32 to 36; the compiler * reuses the endpoint address for the first handle call instead of reloading * its original label. All observed field resets, call inputs/order and flag * store remain represented, but 22/18 complete relocation records differ. * Historical source declarations/local organization remain unknown; keep * original assembly until every instruction and relocation matches.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_spray_00400138",
+          "declaration_line": 59,
+          "lines": [
+            42
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-9b566a55808f",
       "kind": "explicit_unknown",
       "path": "src/modules/spray.c",
       "symbol": "RE_UNKNOWN: complete spray record layout, byte D1/state C0 meaning, initialization, storage bounds, callback/resource lifetime and historical local storage. Original callback saves/restores fog around a fixed-stride pointer walk ending at the adjacent sound-state label; trace original initializer, record writers, registration and drawing helper before strengthening semantic names, bounds or safety guarantees.",
       "lines": [
-        60
+        77
       ],
       "evidence": "RE_UNKNOWN: complete spray record layout, byte D1/state C0 meaning, initialization, storage bounds, callback/resource lifetime and historical local storage. Original callback saves/restores fog around a fixed-stride pointer walk ending at the adjacent sound-state label; trace original initializer, record writers, registration and drawing helper before strengthening semantic names, bounds or safety guarantees.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_spray_0040055C",
-          "declaration_line": 61,
+          "declaration_line": 78,
           "lines": [
-            60
+            77
           ]
         }
       ]
@@ -169141,15 +169201,15 @@
       "symbol": "flagD1",
       "lines": [
         4,
-        52
+        69
       ],
       "owners": [
         {
           "kind": "function",
           "name": "spraySetActivationState",
-          "declaration_line": 48,
+          "declaration_line": 65,
           "lines": [
-            52
+            69
           ]
         },
         {
@@ -205211,16 +205271,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "Acquire an inactive particle effect of the requested kind, then read * properties 0x1005 and 0x4026 into two four-float output regions. * The actual getter at export 0x18 writes definition shorts 0x16..0x1C * divided by 255 for 0x1005. For 0x4026 it writes extension shorts * 0x0E..0x14 divided by 255 when definition kind is one, or four ones. * RE_ORIGINAL_QUIRK: the acquired handle is used without checking for -1. * RE_UNKNOWN: acquisition-failure reachability, output-region lifetime and * broader component meanings. Trace original wrapper callers and effect-pool * setup before asserting valid capacities, ownership or channel semantics.",
       "lines": [
-        399
+        420
       ],
       "evidence": "Acquire an inactive particle effect of the requested kind, then read * properties 0x1005 and 0x4026 into two four-float output regions. * The actual getter at export 0x18 writes definition shorts 0x16..0x1C * divided by 255 for 0x1005. For 0x4026 it writes extension shorts * 0x0E..0x14 divided by 255 when definition kind is one, or four ones. * RE_ORIGINAL_QUIRK: the acquired handle is used without checking for -1. * RE_UNKNOWN: acquisition-failure reachability, output-region lifetime and * broader component meanings. Trace original wrapper callers and effect-pool * setup before asserting valid capacities, ownership or channel semantics.",
       "owners": [
         {
           "kind": "function",
           "name": "caranimAcquireParticleEffectAndReadProperties",
-          "declaration_line": 408,
+          "declaration_line": 429,
           "lines": [
-            399
+            420
           ]
         }
       ]
@@ -205271,16 +205331,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "Approach two bounded state scalars, then apply X/Y matrix operations and * publish selected object matrices. The disabled path copies/publishes only. * Preserve double-precision target products before narrowing, ordered sign * clamps, two separate random draws and all state/export reloads after calls. * RE_ORIGINAL_QUIRK: an unused three-word translation copy is made from the * initialized original matrix; unordered comparisons keep the original paths. * RE_UNKNOWN: scalar units/policy, state/context and output validity, selected * index domains and callback ownership/lifetimes need original callers, * writers and teardown. D6BEC/D6BD8/D6B9C are distinct field-address aliases * with stride0x6C; their offsets alone do not prove a complete owned C array. * Clean C is 1232 versus 1240 bytes: frame208/216 and sign-clamp lowering differ; * 238 words and full relocations fail, including draft alias normalization. * Retain original assembly until every instruction and relocation matches.",
       "lines": [
-        468
+        489
       ],
       "evidence": "Approach two bounded state scalars, then apply X/Y matrix operations and * publish selected object matrices. The disabled path copies/publishes only. * Preserve double-precision target products before narrowing, ordered sign * clamps, two separate random draws and all state/export reloads after calls. * RE_ORIGINAL_QUIRK: an unused three-word translation copy is made from the * initialized original matrix; unordered comparisons keep the original paths. * RE_UNKNOWN: scalar units/policy, state/context and output validity, selected * index domains and callback ownership/lifetimes need original callers, * writers and teardown. D6BEC/D6BD8/D6B9C are distinct field-address aliases * with stride0x6C; their offsets alone do not prove a complete owned C array. * Clean C is 1232 versus 1240 bytes: frame208/216 and sign-clamp lowering differ; * 238 words and full relocations fail, including draft alias normalization. * Retain original assembly until every instruction and relocation matches.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_caranim_00404568",
-          "declaration_line": 482,
+          "declaration_line": 503,
           "lines": [
-            468
+            489
           ]
         }
       ]
@@ -205291,16 +205351,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "Build Y from direction, X from Y cross Z, then Z from X cross Y. * RE_ORIGINAL_QUIRK: a nonzero Y parallel to identity Z produces zero X/Z. * RE_UNKNOWN: producer direction constraints need audit before assuming a full-rank basis.",
       "lines": [
-        529
+        550
       ],
       "evidence": "Build Y from direction, X from Y cross Z, then Z from X cross Y. * RE_ORIGINAL_QUIRK: a nonzero Y parallel to identity Z produces zero X/Z. * RE_UNKNOWN: producer direction constraints need audit before assuming a full-rank basis.",
       "owners": [
         {
           "kind": "function",
           "name": "caranimBuildOrientationBasis",
-          "declaration_line": 532,
+          "declaration_line": 553,
           "lines": [
-            529
+            550
           ]
         }
       ]
@@ -205331,16 +205391,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "Disable light-buffer selection with -1 before checking state selection 0x410. * Snapshot selected record words 0x14/0x10 as old/new texture IDs, query the * object's model and walk its 12/44/24-byte nested records with unsigned-byte * counts. GFXSTATE 0x24 compares the low twelve bits and ORs the unmasked new ID. * Preserve pointer/count/export reloads after callbacks. If bytes 0x6B84/0x6B88 * are zero afterward, reread selection/handle and update the object's loaded model. * RE_ORIGINAL_QUIRK: the loaded-model pointer is used without a null check; * selection -1 still disables the light buffer before returning. * RE_UNKNOWN: selection/handle/texture domains, loaded-model availability, * nested-table validity, restore-gate policy and shared asset mutation/lifetimes * need original callers, writers, acquisition and teardown evidence. Clean C * remains 536 versus 532 bytes with 43 word and full relocation differences: * frame/homes, scratch-store order and final table/argument-address scheduling. * Retain assembly pending complete proof; no trial types or ABI edits accepted.",
       "lines": [
-        574
+        595
       ],
       "evidence": "Disable light-buffer selection with -1 before checking state selection 0x410. * Snapshot selected record words 0x14/0x10 as old/new texture IDs, query the * object's model and walk its 12/44/24-byte nested records with unsigned-byte * counts. GFXSTATE 0x24 compares the low twelve bits and ORs the unmasked new ID. * Preserve pointer/count/export reloads after callbacks. If bytes 0x6B84/0x6B88 * are zero afterward, reread selection/handle and update the object's loaded model. * RE_ORIGINAL_QUIRK: the loaded-model pointer is used without a null check; * selection -1 still disables the light buffer before returning. * RE_UNKNOWN: selection/handle/texture domains, loaded-model availability, * nested-table validity, restore-gate policy and shared asset mutation/lifetimes * need original callers, writers, acquisition and teardown evidence. Clean C * remains 536 versus 532 bytes with 43 word and full relocation differences: * frame/homes, scratch-store order and final table/argument-address scheduling. * Retain assembly pending complete proof; no trial types or ABI edits accepted.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_caranim_00405910",
-          "declaration_line": 589,
+          "declaration_line": 610,
           "lines": [
-            574
+            595
           ]
         }
       ]
@@ -205351,16 +205411,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "Find the first registered state for this DOBJ handle with unsigned 16-bit traversal. RE_ORIGINAL_QUIRK: constructor0x003AC increments count even when all eight slots are full. * RE_UNKNOWN: caller bounds/lifetime must keep the searched prefix in range and nonnull; resolve original creation/lifecycle call sites.",
       "lines": [
-        651
+        672
       ],
       "evidence": "Find the first registered state for this DOBJ handle with unsigned 16-bit traversal. RE_ORIGINAL_QUIRK: constructor0x003AC increments count even when all eight slots are full. * RE_UNKNOWN: caller bounds/lifetime must keep the searched prefix in range and nonnull; resolve original creation/lifecycle call sites.",
       "owners": [
         {
           "kind": "function",
           "name": "caranimFindRegisteredStateByObjectHandle",
-          "declaration_line": 655,
+          "declaration_line": 676,
           "lines": [
-            651
+            672
           ]
         }
       ]
@@ -205391,16 +205451,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "Native callback consumes channel A0. When the default state and UVTX0x436 * are available, reread the state and set texture selectors u2/v2 from its * scaled float 0x3A8: first value + value, then the saved value. Update main * object mask 0x2 from words 0x30/0x34 and the optional signed channel reference. * Retain the selected table address; reread table word 0x58 and state byte 0x24 * after the main callback, then update four auxiliary handles and call 0x4ACC * only on the gated set path. Reload each handle/export after earlier calls. * RE_ORIGINAL_QUIRK: first null state or selection -1 terminates the registry * prefix; the final address is &D_caranim_00407368, not its counter value. * RE_UNKNOWN: flag/auxiliary policy, texture units, caller channel/table/handle * domains, registry validity and callback/storage lifetimes need original * writers, dispatch callers, table/pool setup and teardown evidence. Clean C * is 604 versus 616 bytes with 100 word and full relocation differences: frame, * channel home, shared loop bound, auxiliary cursor and end-address scheduling. * Retain assembly pending complete proof; no trial types or ABI edits accepted.",
       "lines": [
-        604
+        625
       ],
       "evidence": "Native callback consumes channel A0. When the default state and UVTX0x436 * are available, reread the state and set texture selectors u2/v2 from its * scaled float 0x3A8: first value + value, then the saved value. Update main * object mask 0x2 from words 0x30/0x34 and the optional signed channel reference. * Retain the selected table address; reread table word 0x58 and state byte 0x24 * after the main callback, then update four auxiliary handles and call 0x4ACC * only on the gated set path. Reload each handle/export after earlier calls. * RE_ORIGINAL_QUIRK: first null state or selection -1 terminates the registry * prefix; the final address is &D_caranim_00407368, not its counter value. * RE_UNKNOWN: flag/auxiliary policy, texture units, caller channel/table/handle * domains, registry validity and callback/storage lifetimes need original * writers, dispatch callers, table/pool setup and teardown evidence. Clean C * is 604 versus 616 bytes with 100 word and full relocation differences: frame, * channel home, shared loop bound, auxiliary cursor and end-address scheduling. * Retain assembly pending complete proof; no trial types or ABI edits accepted.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_caranim_00405B7C",
-          "declaration_line": 620,
+          "declaration_line": 641,
           "lines": [
-            604
+            625
           ]
         }
       ]
@@ -205411,16 +205471,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "Select a model from the record indexed by state word 0x410, using the * channel vector's projections onto queried object matrix rows. Preserve * ordered ratio tests, positive-copy/otherwise-negate magnitude and zero's * second-alternate branch. Reread alternate model words and the object handle * after provider calls; the record address and initial model are snapshots. * RE_ORIGINAL_QUIRK: local matrix/vector outputs are consumed without testing * whether object/channel getters rejected their inputs before writing outputs. * RE_UNKNOWN: vector role/units, table/model/handle domains, rejection * reachability and callback/storage lifetimes need original producers, callers, * pool/table extents, model setup and teardown evidence. Clean C is 508 versus * 516 bytes with 57 word and full relocation differences: frame/local homes, * zero-register reuse and address scheduling. Retain original assembly until * complete matching proof; no caller-validity or floating-effect claim.",
       "lines": [
-        622
+        643
       ],
       "evidence": "Select a model from the record indexed by state word 0x410, using the * channel vector's projections onto queried object matrix rows. Preserve * ordered ratio tests, positive-copy/otherwise-negate magnitude and zero's * second-alternate branch. Reread alternate model words and the object handle * after provider calls; the record address and initial model are snapshots. * RE_ORIGINAL_QUIRK: local matrix/vector outputs are consumed without testing * whether object/channel getters rejected their inputs before writing outputs. * RE_UNKNOWN: vector role/units, table/model/handle domains, rejection * reachability and callback/storage lifetimes need original producers, callers, * pool/table extents, model setup and teardown evidence. Clean C is 508 versus * 516 bytes with 57 word and full relocation differences: frame/local homes, * zero-register reuse and address scheduling. Retain original assembly until * complete matching proof; no caller-validity or floating-effect claim.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_caranim_00405DE4",
-          "declaration_line": 636,
+          "declaration_line": 657,
           "lines": [
-            622
+            643
           ]
         }
       ]
@@ -205431,16 +205491,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "Snapshot selections 0x410/0x408 before waiting on graphics and releasing * texture-animation storage. Copy saved matrices into the old object, load the * requested models/textures, replace the model and update nested state words. * Rebuild animation storage, apply a table bit index, clear auxiliary masks, * retrieve matrices and finally reread the requested selection for 0x410. * RE_ORIGINAL_QUIRK: release uses old texture word 0x14 but new word 0x10; * nested graphics-state writes retain pointer/word reloads and a final bit clear. * RE_UNKNOWN: table/index/handle domains, resource success, model storage, * flag policy and shared mutation/ownership/lifetimes need callers/producers. * The target consumes A0; original caranimRefreshChangedSelection prepares * A0/A1/A2. Historical source declaration remains unresolved. Clean target C * is 1164 versus 1268 bytes with frame/record-address/loop scheduling and full * relocation differences. The scoped caller view also changes direct JAL to * HI/LO plus JALR. Retain original assembly and caller pending complete proof.",
       "lines": [
-        488
+        509
       ],
       "evidence": "Snapshot selections 0x410/0x408 before waiting on graphics and releasing * texture-animation storage. Copy saved matrices into the old object, load the * requested models/textures, replace the model and update nested state words. * Rebuild animation storage, apply a table bit index, clear auxiliary masks, * retrieve matrices and finally reread the requested selection for 0x410. * RE_ORIGINAL_QUIRK: release uses old texture word 0x14 but new word 0x10; * nested graphics-state writes retain pointer/word reloads and a final bit clear. * RE_UNKNOWN: table/index/handle domains, resource success, model storage, * flag policy and shared mutation/ownership/lifetimes need callers/producers. * The target consumes A0; original caranimRefreshChangedSelection prepares * A0/A1/A2. Historical source declaration remains unresolved. Clean target C * is 1164 versus 1268 bytes with frame/record-address/loop scheduling and full * relocation differences. The scoped caller view also changes direct JAL to * HI/LO plus JALR. Retain original assembly and caller pending complete proof.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_caranim_00404CA0",
-          "declaration_line": 503,
+          "declaration_line": 524,
           "lines": [
-            488
+            509
           ]
         }
       ]
@@ -205451,16 +205511,36 @@
       "path": "src/modules/caranim.c",
       "symbol": "Stored rows 0..2 each hold 21 label addresses; IDs outside -1..20 return \"INVALID\". * RE_ORIGINAL_QUIRK: ID -1 yields 0x01020000 for row0, or the preceding row's last label. * RE_UNKNOWN: runtime language domain and -1 caller reachability; trace setters/callers.",
       "lines": [
-        639
+        660
       ],
       "evidence": "Stored rows 0..2 each hold 21 label addresses; IDs outside -1..20 return \"INVALID\". * RE_ORIGINAL_QUIRK: ID -1 yields 0x01020000 for row0, or the preceding row's last label. * RE_UNKNOWN: runtime language domain and -1 caller reachability; trace setters/callers.",
       "owners": [
         {
           "kind": "function",
           "name": "caranimGetLocalizedLabel",
-          "declaration_line": 642,
+          "declaration_line": 663,
           "lines": [
-            639
+            660
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-1671985a88c4",
+      "kind": "original_quirk",
+      "path": "src/modules/caranim.c",
+      "symbol": "Update four descriptor-driven effect slots from transformed local points. * Snapshot the optional source pointer, selector word and selected scalar; * preserve callback-dependent reference/state reloads and final ID stores. * SKID/SPRAY transitions and PFX final-interval calls precede clearing stored * references; those operations do not establish resource deallocation. * RE_ORIGINAL_QUIRK: mode-skipped slots retain their effect state. Descriptor * branches do not always initialize the style halfword; fallback paths leave * byte3 of the four-byte SKID input uninitialized. Matrix/normalize failures * are unchecked, and the first three TERRA54 output pointers intentionally * alias. Preserve native behavior without inventing default values. * RE_UNKNOWN: reachable descriptor/source domains, valid handles and matrix/ * basis guarantees, setting/table extents, units, callback mutation and record * lifetimes need original producers, callers, pool consumers and teardown. * No wheel identity or complete historical array ownership is established. * A readable draft is 4640 versus 4712 native bytes, with 1149 differing words. * Both use a 424-byte frame, but local homes, saved pointers, loop organization * and branch lowering differ. The original direct D6838 halfword alias becomes * a D6830+8 field access; three named dispatch tables become synthesized data. * The two 101-record relocation lists differ. Retain original * assembly until instructions, table targets and historical aliases match.",
+      "lines": [
+        309
+      ],
+      "evidence": "Update four descriptor-driven effect slots from transformed local points. * Snapshot the optional source pointer, selector word and selected scalar; * preserve callback-dependent reference/state reloads and final ID stores. * SKID/SPRAY transitions and PFX final-interval calls precede clearing stored * references; those operations do not establish resource deallocation. * RE_ORIGINAL_QUIRK: mode-skipped slots retain their effect state. Descriptor * branches do not always initialize the style halfword; fallback paths leave * byte3 of the four-byte SKID input uninitialized. Matrix/normalize failures * are unchecked, and the first three TERRA54 output pointers intentionally * alias. Preserve native behavior without inventing default values. * RE_UNKNOWN: reachable descriptor/source domains, valid handles and matrix/ * basis guarantees, setting/table extents, units, callback mutation and record * lifetimes need original producers, callers, pool consumers and teardown. * No wheel identity or complete historical array ownership is established. * A readable draft is 4640 versus 4712 native bytes, with 1149 differing words. * Both use a 424-byte frame, but local homes, saved pointers, loop organization * and branch lowering differ. The original direct D6838 halfword alias becomes * a D6830+8 field access; three named dispatch tables become synthesized data. * The two 101-record relocation lists differ. Retain original * assembly until instructions, table targets and historical aliases match.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_caranim_00401D6C",
+          "declaration_line": 330,
+          "lines": [
+            309
           ]
         }
       ]
@@ -205471,16 +205551,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "Update two configured particle positions using selected object matrices. * Ordered scalar >= 3 clears object flag mask 0x02, begins final intervals * for existing effects, then invalidates both handles after those calls. * Active updates preserve mode/handle/export reloads and property 0x1010's * three promoted doubles, including a single-precision Z + 0.5f operation. * RE_ORIGINAL_QUIRK: unordered scalar comparison follows the active path; * an unused three-word transformed-point copy is retained in original storage. * RE_UNKNOWN: scalar units/mode policy, selection/handle/storage domains, * matrix-output validity and callback ownership/lifetimes need original * callers, producers and teardown. Final-interval updates do not free effects. * Clean C is 1056 bytes with 46 identical ordered relocation records; 48 words * differ in frame/local homes, registers and argument/store scheduling. * Retain original assembly pending complete instruction equivalence.",
       "lines": [
-        311
+        332
       ],
       "evidence": "Update two configured particle positions using selected object matrices. * Ordered scalar >= 3 clears object flag mask 0x02, begins final intervals * for existing effects, then invalidates both handles after those calls. * Active updates preserve mode/handle/export reloads and property 0x1010's * three promoted doubles, including a single-precision Z + 0.5f operation. * RE_ORIGINAL_QUIRK: unordered scalar comparison follows the active path; * an unused three-word transformed-point copy is retained in original storage. * RE_UNKNOWN: scalar units/mode policy, selection/handle/storage domains, * matrix-output validity and callback ownership/lifetimes need original * callers, producers and teardown. Final-interval updates do not free effects. * Clean C is 1056 bytes with 46 identical ordered relocation records; 48 words * differ in frame/local homes, registers and argument/store scheduling. * Retain original assembly pending complete instruction equivalence.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_caranim_00402FD4",
-          "declaration_line": 325,
+          "declaration_line": 346,
           "lines": [
-            311
+            332
           ]
         }
       ]
@@ -205491,16 +205571,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "Update two scalar accumulators and three configured object matrices after * matching the selected record's model words. Preserve single/double arithmetic, * scalar folds, ordered zero gates and owner/handle/index reloads around calls. * RE_ORIGINAL_QUIRK: only the first matrix index gates all three operations. * Secondary context is captured only for an initially nonnull owner; later * matrix iterations reread the owner before using that saved context. * RE_UNKNOWN: caller/producer guarantees for selection, handles, record/matrix * storage and captured-context lifetime, plus scalar units and flag policy, * need original callers, writers and teardown evidence. No default is invented. * Clean C is 1156 versus 1176 bytes: frame/local homes, table-address reuse, * floating operand scheduling and full relocation records differ. Retain * original assembly pending complete instruction and relocation proof.",
       "lines": [
-        424
+        445
       ],
       "evidence": "Update two scalar accumulators and three configured object matrices after * matching the selected record's model words. Preserve single/double arithmetic, * scalar folds, ordered zero gates and owner/handle/index reloads around calls. * RE_ORIGINAL_QUIRK: only the first matrix index gates all three operations. * Secondary context is captured only for an initially nonnull owner; later * matrix iterations reread the owner before using that saved context. * RE_UNKNOWN: caller/producer guarantees for selection, handles, record/matrix * storage and captured-context lifetime, plus scalar units and flag policy, * need original callers, writers and teardown evidence. No default is invented. * Clean C is 1156 versus 1176 bytes: frame/local homes, table-address reuse, * floating operand scheduling and full relocation records differ. Retain * original assembly pending complete instruction and relocation proof.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_caranim_00403BDC",
-          "declaration_line": 437,
+          "declaration_line": 458,
           "lines": [
-            424
+            445
           ]
         }
       ]
@@ -205531,16 +205611,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_00405304 applies light records using the object's saved position * or a query word, then conditionally updates shadow state and three scene records. * Snapshot matrix row 0x30 before LIGHT18; reread byte243 and callback-dependent * scene/state pointers afterward. Halfword3F2 values zero/one select -1. * RE_ORIGINAL_QUIRK: reads the row even when DOBJ rejects a handle without output. * RE_UNKNOWN: valid object/query/selector domains, flag policy and storage lifetimes * need original constructors, scene writers and callback callers; rejection * reachability is unproved. Clean C has 25 register/branch words and complete * relocation differences at the same 432-byte extent; retain original assembly.",
       "lines": [
-        547
+        568
       ],
       "evidence": "func_caranim_00405304 applies light records using the object's saved position * or a query word, then conditionally updates shadow state and three scene records. * Snapshot matrix row 0x30 before LIGHT18; reread byte243 and callback-dependent * scene/state pointers afterward. Halfword3F2 values zero/one select -1. * RE_ORIGINAL_QUIRK: reads the row even when DOBJ rejects a handle without output. * RE_UNKNOWN: valid object/query/selector domains, flag policy and storage lifetimes * need original constructors, scene writers and callback callers; rejection * reachability is unproved. Clean C has 25 register/branch words and complete * relocation differences at the same 432-byte extent; retain original assembly.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_caranim_00405304",
-          "declaration_line": 557,
+          "declaration_line": 578,
           "lines": [
-            547
+            568
           ]
         }
       ]
@@ -205551,16 +205631,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "func_caranim_004054B4 gates helper5304 by camera query220 and byte23C, * selects a UVLIGHT buffer, optionally draws shadow state, then emits conversion * coefficients from an ordered scalar factor. The slct load and signed global * halfword override it to one. Shared byte gates precede helper5DE4; selection410 * chooses the direction of a matching texture-ID replacement across model states. * Reread callback-dependent camera/flags/model pointers and byte counts. * RE_UNKNOWN: flag/scalar meanings and units, valid camera/state/table/model * domains, shared mutation rights and storage/callback lifetimes need original * writers, model producers and callers. RE_ORIGINAL_QUIRK: model/nested pointers * are consumed without added null/bounds guards; invalid-input reachability is * unproved. Clean C is 1072 versus 1116 bytes with 219 word and full relocation * differences; retain original assembly pending complete matching proof.",
       "lines": [
-        559
+        580
       ],
       "evidence": "func_caranim_004054B4 gates helper5304 by camera query220 and byte23C, * selects a UVLIGHT buffer, optionally draws shadow state, then emits conversion * coefficients from an ordered scalar factor. The slct load and signed global * halfword override it to one. Shared byte gates precede helper5DE4; selection410 * chooses the direction of a matching texture-ID replacement across model states. * Reread callback-dependent camera/flags/model pointers and byte counts. * RE_UNKNOWN: flag/scalar meanings and units, valid camera/state/table/model * domains, shared mutation rights and storage/callback lifetimes need original * writers, model producers and callers. RE_ORIGINAL_QUIRK: model/nested pointers * are consumed without added null/bounds guards; invalid-input reachability is * unproved. Clean C is 1072 versus 1116 bytes with 219 word and full relocation * differences; retain original assembly pending complete matching proof.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_caranim_004054B4",
-          "declaration_line": 572,
+          "declaration_line": 593,
           "lines": [
-            559
+            580
           ]
         }
       ]

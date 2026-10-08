@@ -39,12 +39,29 @@ void sprayRegisterChannelCallback(s32 channel) {
 }
 #line 34 "src/modules/spray.c"
 
+/* Acquire the first zero-D1 record in the native eight-step, 0xD4-stride walk;
+ * return null at the adjacent shared sound-state label. Reset the original
+ * fields, store the selector low byte, then optionally initialize that sound
+ * handle, read SND48's scalar and call SND08 with sound44, priority7FFF,
+ * the returned scalar times D1050 and pitch0.5. Clear the setup request after
+ * that callback returns, regardless of its result; retain record identity.
+ * RE_UNKNOWN: selector/field policies, record/shared-handle reuse, ownership,
+ * callback mutation and lifetime guarantees need original writers, consumers
+ * and teardown. The fixed native walk does not establish all caller domains.
+ * A readable draft is 252 versus 264 native bytes, with 65 differing words.
+ * Frame 48 becomes 40 and the preserved record home moves 32 to 36; the compiler
+ * reuses the endpoint address for the first handle call instead of reloading
+ * its original label. All observed field resets, call inputs/order and flag
+ * store remain represented, but 22/18 complete relocation records differ.
+ * Historical source declarations/local organization remain unknown; keep
+ * original assembly until every instruction and relocation matches. */
+#line 35 "src/modules/spray.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/spray/func_spray_00400138.s")
 
 #line 37 "src/modules/spray.c"
-/* Preserve the original activation branch: enabled states >= 2 capture
- * the shared clock; otherwise clear byte D1. Stop the shared sound and mark
- * the module active. The full C0/D1 field meanings remain unestablished. */
+/* A nonzero enabled byte and C0 >= 2 capture the shared clock; else clear D1.
+ * Release the shared sound handle and request its next acquisition-time setup.
+ * RE_UNKNOWN: C0/D1 policy and record/handle lifetimes need original producers. */
 void spraySetActivationState(SprayEffectState *state, u8 enabled) {
     if (enabled && state->phase >= 2U) {
         state->time = D_80025D6C;

@@ -306,6 +306,27 @@ void caranimScaleObjectAxisForCheat(CarAnimAxisScaleState *state) {
 }
 #line 122 "src/modules/caranim.c"
 
+/* Update four descriptor-driven effect slots from transformed local points.
+ * Snapshot the optional source pointer, selector word and selected scalar;
+ * preserve callback-dependent reference/state reloads and final ID stores.
+ * SKID/SPRAY transitions and PFX final-interval calls precede clearing stored
+ * references; those operations do not establish resource deallocation.
+ * RE_ORIGINAL_QUIRK: mode-skipped slots retain their effect state. Descriptor
+ * branches do not always initialize the style halfword; fallback paths leave
+ * byte3 of the four-byte SKID input uninitialized. Matrix/normalize failures
+ * are unchecked, and the first three TERRA54 output pointers intentionally
+ * alias. Preserve native behavior without inventing default values.
+ * RE_UNKNOWN: reachable descriptor/source domains, valid handles and matrix/
+ * basis guarantees, setting/table extents, units, callback mutation and record
+ * lifetimes need original producers, callers, pool consumers and teardown.
+ * No wheel identity or complete historical array ownership is established.
+ * A readable draft is 4640 versus 4712 native bytes, with 1149 differing words.
+ * Both use a 424-byte frame, but local homes, saved pointers, loop organization
+ * and branch lowering differ. The original direct D6838 halfword alias becomes
+ * a D6830+8 field access; three named dispatch tables become synthesized data.
+ * The two 101-record relocation lists differ. Retain original
+ * assembly until instructions, table targets and historical aliases match. */
+#line 123 "src/modules/caranim.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00401D6C.s")
 
 /* Update two configured particle positions using selected object matrices.
