@@ -34,8 +34,8 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **803** assembly references:
-**761** ordinary functions and **42** entrypoints, with **721,388** known instruction bytes
+matching C are preserved with `#line`. The current ledger has **802** assembly references:
+**760** ordinary functions and **42** entrypoints, with **721,064** known instruction bytes
 and no unknown sizes. The broader name audit still finds **299** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
@@ -2845,10 +2845,19 @@ Totals: 397 further recoveries after the 225 upstream ordinary imports, plus 134
 Frozen wave `2459-older-sprite-storage-pool-contracts-2459` and `accepted-older-sprite-storage-pool-contracts-2459` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 397 further readable functions
+## Historical accepted checkpoint — 397 further readable functions
 
 One existing sprite drawing routine gains eight scoped parameter/local names: input/state pointers, bitmap cursor/index, display-list cursor/start and X/Y scales. Two same-line RE_UNKNOWN comments preserve inherited backing/capacity/alias/numeric/shared-state uncertainties and duplicate IA combine-arm source intent. All types, macros, constants, repeated reads, conversion/branch/call order, duplicate arms, public ABI and readonly ownership retained. Complete856+856 instruction views and25+25 ordered five-field records independently read and exactly equal; both complete logs empty. Member-aware body/full-source inverses preserve all838 executable source rows; drawing body logical690..969. Native2438 context is inverted exactly through only accepted DisplayList/storage-pool changes; original packed bytes remain sole instruction proof. One older cleanup, no recovery/new alias/type/algorithm/ownership change. Normal extraction, original packed SPRT/freshROM/allsource hashes, complete unchanged803 remaining/2 data/299 address-name dictionaries and uncertainty index required.
 
 Totals: 397 further recoveries after the 225 upstream ordinary imports, plus 1348 existing C semantic cleanups. Current ledger: 803 assembly references = 761 ordinary + 42 entrypoints; 721,388 known remaining instruction bytes; zero unknown sizes; 299 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `2472-older-sprite-drawing-core-contracts-2472` and `accepted-older-sprite-drawing-core-contracts-2472` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 398 further readable functions
+
+Recover Battle9910 as battlePlayRandomThreeSoundVariant: all324 body bytes/81 instructions and14 complete ordered records match. Preserve signed LCG-times-three truncation, distinct callback paths and returned scalar, handle at owner34 and exact three IDs. Keep searchable caller/handle/module/historical-type unknowns. Original object336 includes a separate12-byte zero tail of unproved historical purpose; full packed Battle must preserve it and TEXT39520. Add only a pure note beside unchanged5D34 assembly documenting captured count, original aliases/cursor/append reloads, helper quirks and both unmatched drafts; no5D34 C/types/prototypes/credit. Existing relocation ordering unchanged. Regenerate extraction after canonical alias. Mandatory fresh original packed module/ROM, full frozen manifest, positive complete worker ledger and uncertainty index gates.
+
+Totals: 398 further recoveries after the 225 upstream ordinary imports, plus 1348 existing C semantic cleanups. Current ledger: 802 assembly references = 760 ordinary + 42 entrypoints; 721,064 known remaining instruction bytes; zero unknown sizes; 299 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `2482-battle-three-sound-recovery-and-identifier-contract-2482` and `accepted-battle-three-sound-recovery-and-identifier-contract-2482` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

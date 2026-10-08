@@ -174,6 +174,18 @@ typedef struct {
     s32 objectHandle;
     u8 soundHandle[8];
 } BattleResetSoundNode;
+
+#include "uvmath_rom.h"
+extern UvMath_Exports *gUvMathExports;
+/* Consumed slots only; no complete historical module ABI is asserted. */
+typedef struct {
+    u8 opaque00[8];
+    s16 (*setupHandle)(void *, s16, s32, f32, f32);
+    u8 opaque0C[0x40];
+    f32 (*getScalar)(void);
+} BattleThreeSoundExports;
+void battlePlayRandomThreeSoundVariant(BattleObj_407E78 *);
+#line 177 "src/modules/battle.c"
 typedef struct {
     u8 prefix[0x1A34];
     f32 scalar;
@@ -544,6 +556,27 @@ void battleCopyNodeStateAndUpdateMotion(BattleResetNode *node, s32 mode) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00405C3C.s")
 
+/* Original Battle5D34 scans thirty 28-byte slots, probing the first flag
+ * through D_battle_0040B764 and later slots through D_battle_0040A080.
+ * It calls 652C then the accepted sound/flag reset before reloading the
+ * identifier limit. Owner+0xA0 is captured once before the identifier loop;
+ * the inner scan walks owner-relative pointer words at +0x18 using an
+ * unsigned cursor/end comparison. Append reloads the count, stores the
+ * selected node pointer, then reloads and increments the count again.
+ * RE_ORIGINAL_QUIRK: exhausting the identifier scan does not undo either
+ * preceding helper's effects; 652C also resamples without a proved retry
+ * bound. These observations do not establish reachable failure or safety.
+ * RE_UNKNOWN: caller/list capacity, count/identifier domains, pointer
+ * arithmetic overflow, aliases and node/helper lifetimes require actual
+ * original producers and callers. Native 308-byte assembly is retained.
+ * Readable trials produced 408 bytes/94 differing words (10/6 relocation
+ * records), then 296 bytes/61 differing words (10/10 records). The native
+ * alias and unsigned cursor refinement still changes frame 48 to 64,
+ * node/owner homes, registers, signed-bound lowering and relocation sites.
+ * Historical types/declarations and exact compiler organization remain
+ * unproved; neither draft, focused type/prototype nor extra storage is
+ * accepted. Full evidence: comparisons 2466 and 2479. */
+#line 277 "src/modules/battle.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00405D34.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00405E68.s")
@@ -802,5 +835,38 @@ void battleSetIndexedPrimitiveColor(int *colorIndex) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00409838.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00409910.s")
+#line 429 "src/modules/battle.c"
+/* Original 324-byte body and all fourteen ordered object records match. */
+/* The original MATH34 provider returns a 15-bit LCG value divided by
+ * 32768.0f. Preserve signed truncation of that result times 3.0f, and the
+ * three distinct callback paths. SND4C returns 1.0f, which is passed as the
+ * fourth SND08 input; the fifth input is 0.5f. Reload SND after that callback.
+ * The existing eight-byte field at owner+0x34 is passed as a sound handle,
+ * with IDs 175/176/177 and third input 0x7FEB.
+ * RE_UNKNOWN: caller validity, handle lifetime, module replacement domains
+ * and historical formal type require original callers/producers. Native
+ * body extent is 324 bytes; the final object also has a separate 12-byte
+ * zero tail at original TEXT end, whose historical purpose is unproved. */
+void battlePlayRandomThreeSoundVariant(BattleObj_407E78 *owner)
+{
+    s32 selection;
+    f32 scalar;
+
+    selection = (s32)(gUvMathExports->uvRandFLcg() * 3.0f);
+    switch (selection) {
+    case 0:
+        scalar = ((BattleThreeSoundExports *)gSndExports)->getScalar();
+        ((BattleThreeSoundExports *)gSndExports)->setupHandle(owner->unk34, 175, 0x7FEB, scalar, 0.5f);
+        break;
+    case 1:
+        scalar = ((BattleThreeSoundExports *)gSndExports)->getScalar();
+        ((BattleThreeSoundExports *)gSndExports)->setupHandle(owner->unk34, 176, 0x7FEB, scalar, 0.5f);
+        break;
+    case 2:
+        scalar = ((BattleThreeSoundExports *)gSndExports)->getScalar();
+        ((BattleThreeSoundExports *)gSndExports)->setupHandle(owner->unk34, 177, 0x7FEB, scalar, 0.5f);
+        break;
+    }
+}
+#line 430 "src/modules/battle.c"
 
