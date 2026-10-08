@@ -972,10 +972,10 @@ void uvTerraProjectEndpointToZPlane(Vec3F *origin, f32 planeZ, Vec3F *endpoint) 
  * values, live initialization paths and observable impact. Trace callers and
  * runtime before a separate recomp correction; keep original arguments here. */
 void uvTerraInitializeSortGroups(void) {
-    D_uvterra_rom_0040FBCC = D_uvterra_rom_0040F770->func_uvsort_rom_00400308(80);
-    D_uvterra_rom_0040FBC8 = D_uvterra_rom_0040F770->func_uvsort_rom_00400308(85);
-    D_uvterra_rom_0040FBD4 = D_uvterra_rom_0040F770->func_uvsort_rom_00400308(110);
-    D_uvterra_rom_0040FBD0 = D_uvterra_rom_0040F770->func_uvsort_rom_00400308(115);
+    D_uvterra_rom_0040FBCC = D_uvterra_rom_0040F770->uvSortAllocateGroupForTag(80);
+    D_uvterra_rom_0040FBC8 = D_uvterra_rom_0040F770->uvSortAllocateGroupForTag(85);
+    D_uvterra_rom_0040FBD4 = D_uvterra_rom_0040F770->uvSortAllocateGroupForTag(110);
+    D_uvterra_rom_0040FBD0 = D_uvterra_rom_0040F770->uvSortAllocateGroupForTag(115);
     D_uvterra_rom_0040F770->uvSortSetGroupOptions(D_uvterra_rom_0040FBCC, 1, 1);
     D_uvterra_rom_0040F770->uvSortSetGroupOptions(D_uvterra_rom_0040FBD4, 1, 1);
 }

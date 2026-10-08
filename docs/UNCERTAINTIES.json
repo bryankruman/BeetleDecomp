@@ -147,7 +147,7 @@
     "include/uvpfx_rom.h": "cb6622cdc9185ccd5794a62fb8ef405371eada8ceec9de284478f68963e34605",
     "include/uvquat_rom.h": "07cd4812764f8ad6a72b262534093b4fff51aa22bbb0ccc5f798e0e89c6c93ac",
     "include/uvquery_rom.h": "232821ac5ea6beabdc1059fbfc57f86bb3ede2721142412d6be762a0c6b27ba9",
-    "include/uvsort_rom.h": "34401804730a24294d04e3d8ed766179f767b8e9c0b7698caa395ee6e93129ea",
+    "include/uvsort_rom.h": "4d16d601b989706077b05b3e8f77c32c5fe561c353eb172531f2fa9723ac4ce8",
     "include/uvsprt_rom.h": "4ee036e740dd71c752c1b11d188e839a0f423b3ec10550177beefc971f7517ce",
     "include/uvstring_rom.h": "57a773242802e80be6f4032aeaa92ddce574db026fa81d9fb2fc1b2dcdcfda4f",
     "include/uvtexanim_rom.h": "14e31cb210378078ab82d958f3330f5276b937f6507b0ef995593dd15e9e9667",
@@ -211,7 +211,7 @@
     "src/modules/filmroll.c": "e6c5ffe0d3dd6f75f2c3d7f963de95ea6b0133907ab234051b0cf1887fe35088",
     "src/modules/flag.c": "ce4b4b4a1586f2f53ca7981aec47f7bdd9e6f012dd66db584f4cb9c2bd527c8d",
     "src/modules/game.c": "c7647e281415f900dad1128df7eb53fee746886198a6d176ad9833484f342b5b",
-    "src/modules/gamegui.c": "8efc0627dfc00c9c085aef1e366c7fcf47b7c3cdf74cb0f83c59e7faa92d74f0",
+    "src/modules/gamegui.c": "5e416689ab400dd31850d3660742a3f6af88c9b11acbb8b64071e2d1d41e93ea",
     "src/modules/glare.c": "5deea24cbe00920ce22d007ca5b365148d74d21e6590918ea93fa3dd76daaea5",
     "src/modules/intro.c": "1e37724db4a00b702fd3482ac3edd83cceefbe193c6d3e1047cb6b7725388d3c",
     "src/modules/letter.c": "d4b3454a1087817332e02127c41a4cc14256c5759495cfa9e0e469fd386c70f4",
@@ -233,12 +233,12 @@
     "src/modules/mult9.c": "d9d8a40d49ee946a1636d807275e472d3b7d08390db4b6b99bb49cd0911f954b",
     "src/modules/pause.c": "636749501d9b98fd2722acc98baa575892880041a26a8d0e27e310b6873b34c9",
     "src/modules/piece.c": "f01bb64b88f4e318a94a1b480b1c90cf40fa37af25ddc753b2a0cfa958b469fe",
-    "src/modules/plyr.c": "8265095568773c901d3797d3bb8f1de4f9ba88688c57faff6647050e04eecded",
+    "src/modules/plyr.c": "80fc30d1c8269e971eae346e5c2a083cfcb3572659650d93ed8e1f0deb78adea",
     "src/modules/powerup.c": "b01918a9f9daf9ccb5e551c3920e16a76036dac54c07ef12712b4277dc7393f2",
     "src/modules/profgame.c": "37ebc7660d3a13ece4d765fe56c290e664ba0cebbbeabc4690d92407f4f53230",
     "src/modules/race.c": "e51d675ed09870d52c10114f534caca67831db90c4cbcc986cef641089dd7aa5",
     "src/modules/rain.c": "a249fa1ecf6a0fe9ca1cd987cd27870605570c72d145710f5426a3ff9dfe5e25",
-    "src/modules/replay.c": "7eb28565cbb85e535a5520e591d0387306d6065afffd4e1ada08fbf0698c9f31",
+    "src/modules/replay.c": "07a6d02c14f5a88ebbd06a2c2f8e560f542e30a48c3152f177a8f0f0db3eac63",
     "src/modules/results.c": "03435b26cfb04d768da5e9d9343817ffa3c177564de1ee29c2b8f222c7623f41",
     "src/modules/ripple.c": "bdd60e5f9d8f7f66e2ccfd3674c471ad1f6fdc87029c4fda4314b6fc9cfa15d1",
     "src/modules/rumble.c": "4757964e2d45cc442e6effa705c3374fe34aaf275a6c57c5484a764be685561d",
@@ -307,10 +307,10 @@
     "src/modules/uvpfxld_rom.c": "6d4dba8383e0fc1df6ac901adf86cdb38ac3b3ae856685d29c532ba19435abe4",
     "src/modules/uvquat_rom.c": "7959cde0d2a965e2bbbc5d24f3410474cb782b56d17ae35e644cae43e366dc4a",
     "src/modules/uvquery_rom.c": "6e310371f60efc528b4a0e199531fc8bae844774389a9c5a271216ecf3626caf",
-    "src/modules/uvsort_rom.c": "306a5a2871146c70770bbd419c264101a2f457c12665945700d7c1eda1961ad6",
+    "src/modules/uvsort_rom.c": "6586a894355bb250fdbbefb351b4950d67115b581e1b450d066abc1ae52b06cc",
     "src/modules/uvsprt_rom.c": "c2a97d053dad8ab1ba5aa739bc1eb7b80caef313a2822948431a81a671d5231d",
     "src/modules/uvstring_rom.c": "94b9208341f1faf5aee2e8bd9e6e2c6336878522d977776684d4d7ffa5473720",
-    "src/modules/uvterra_rom.c": "f9a16d8d3864382038dce7edf26b6685e5e3b94436388862f4898d43022fb8a1",
+    "src/modules/uvterra_rom.c": "615dbfbb88786dc044d7a82cfc4782a7f5f12ca1c2816dcc7802a3d621188494",
     "src/modules/uvterrald_rom.c": "4f51d82aed1fc59eefc7e9d161b1d29601c1af7be11b928c5265f14d489d2596",
     "src/modules/uvtexanim_rom.c": "b09a7aa1b6ccfffd1a2ffe64c60ad102c9d1adb4b2b5c0ff9dde25aabf84c7a7",
     "src/modules/uvtexture_rom.c": "483f38b3d2578471ab4a9f3eb1a215da2bdebdd21a45fd7aaf54aac70ac19d78",
@@ -329,23 +329,23 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "bbff4e2e722e8d6120ed2544279892dcf9ada596c0304cee4119400578937a00",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "2e0881126f512d88b3daaea1d74f1b686dca6fe4620e70dee7597eaa36765ac7",
-    "docs/VALIDATION_20261006.md": "ba415d15b9f36680f175c4300cbf035ecaf35d83816d4408fb3c1c3d7f965c8e"
+    "docs/STRATEGY_V4.md": "2d2c51a1704983c19f44c52c5a7726ea42df2cfcc9e28c7736c90ba47c70a6a8",
+    "docs/VALIDATION_20261006.md": "b584bb0f0d479365eda52019d0f92113f6c25ca5d6be0a787de1aeefbfb86c56"
   },
   "counts": {
-    "address_function": 1040,
+    "address_function": 1027,
     "address_global": 1309,
     "assembly": 862,
     "audit_debt": 28,
     "conditional_draft": 5,
-    "decompiler_local": 1002,
+    "decompiler_local": 1000,
     "draft_marker": 30,
-    "explicit_unknown": 333,
+    "explicit_unknown": 336,
     "layout_padding": 258,
     "offset_field": 1429,
     "opaque_type": 279,
-    "original_quirk": 51,
-    "uncertainty_note": 99,
+    "original_quirk": 52,
+    "uncertainty_note": 100,
     "unused_identifier": 110
   },
   "items": [
@@ -1285,25 +1285,6 @@
           "declaration_line": 98,
           "lines": [
             105
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-4cfefe7257cc",
-      "kind": "address_function",
-      "path": "include/uvsort_rom.h",
-      "symbol": "func_uvsort_rom_00400308",
-      "lines": [
-        7
-      ],
-      "owners": [
-        {
-          "kind": "type",
-          "name": "UvSort_Exports",
-          "declaration_line": 5,
-          "lines": [
-            7
           ]
         }
       ]
@@ -5713,253 +5694,20 @@
       ]
     },
     {
-      "id": "Q-528d0e095177",
-      "kind": "address_function",
-      "path": "src/modules/gamegui.c",
-      "symbol": "func_gamegui_00402030",
-      "lines": [
-        78,
-        134,
-        336
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "__entrypoint_func_gameGuiInitializeModuleExports",
-          "declaration_line": 125,
-          "lines": [
-            134
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_gamegui_00402030",
-          "declaration_line": 78,
-          "lines": [
-            78
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_gamegui_00402030",
-          "declaration_line": 336,
-          "lines": [
-            336
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-51e05e7c2624",
-      "kind": "address_function",
-      "path": "src/modules/gamegui.c",
-      "symbol": "func_gamegui_00402074",
-      "lines": [
-        80,
-        354
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_gamegui_00402074",
-          "declaration_line": 80,
-          "lines": [
-            80
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_gamegui_00402074",
-          "declaration_line": 354,
-          "lines": [
-            354
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-089532968015",
-      "kind": "address_function",
-      "path": "src/modules/gamegui.c",
-      "symbol": "func_gamegui_00402088",
-      "lines": [
-        81,
-        358
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_gamegui_00402088",
-          "declaration_line": 81,
-          "lines": [
-            81
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_gamegui_00402088",
-          "declaration_line": 358,
-          "lines": [
-            358
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-e70df9239d93",
-      "kind": "address_function",
-      "path": "src/modules/gamegui.c",
-      "symbol": "func_gamegui_00402130",
-      "lines": [
-        86,
-        399
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_gamegui_00402130",
-          "declaration_line": 86,
-          "lines": [
-            86
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_gamegui_00402130",
-          "declaration_line": 399,
-          "lines": [
-            399
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-0257303e4238",
-      "kind": "address_function",
-      "path": "src/modules/gamegui.c",
-      "symbol": "func_gamegui_00402144",
-      "lines": [
-        87,
-        403
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_gamegui_00402144",
-          "declaration_line": 87,
-          "lines": [
-            87
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_gamegui_00402144",
-          "declaration_line": 403,
-          "lines": [
-            403
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-b49bcaee229b",
-      "kind": "address_function",
-      "path": "src/modules/gamegui.c",
-      "symbol": "func_gamegui_00402158",
-      "lines": [
-        88,
-        407
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_gamegui_00402158",
-          "declaration_line": 88,
-          "lines": [
-            88
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_gamegui_00402158",
-          "declaration_line": 407,
-          "lines": [
-            407
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-202d6925bb7f",
-      "kind": "address_function",
-      "path": "src/modules/gamegui.c",
-      "symbol": "func_gamegui_0040216C",
-      "lines": [
-        89,
-        411
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_gamegui_0040216C",
-          "declaration_line": 89,
-          "lines": [
-            89
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_gamegui_0040216C",
-          "declaration_line": 411,
-          "lines": [
-            411
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-bfd4d4d1369b",
-      "kind": "address_function",
-      "path": "src/modules/gamegui.c",
-      "symbol": "func_gamegui_00402180",
-      "lines": [
-        90,
-        415
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_gamegui_00402180",
-          "declaration_line": 90,
-          "lines": [
-            90
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_gamegui_00402180",
-          "declaration_line": 415,
-          "lines": [
-            415
-          ]
-        }
-      ]
-    },
-    {
       "id": "Q-e5dc858180d9",
       "kind": "address_function",
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_00402194",
       "lines": [
-        424
+        448
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_gamegui_00402194",
-          "declaration_line": 424,
+          "declaration_line": 448,
           "lines": [
-            424
+            448
           ]
         }
       ]
@@ -5970,15 +5718,15 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_004021D4",
       "lines": [
-        446
+        470
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_gamegui_004021D4",
-          "declaration_line": 446,
+          "declaration_line": 470,
           "lines": [
-            446
+            470
           ]
         }
       ]
@@ -5990,7 +5738,7 @@
       "symbol": "func_gamegui_004021DC",
       "lines": [
         92,
-        458
+        482
       ],
       "owners": [
         {
@@ -6004,9 +5752,9 @@
         {
           "kind": "function",
           "name": "gameGuiRegisterChannelCallback",
-          "declaration_line": 455,
+          "declaration_line": 479,
           "lines": [
-            458
+            482
           ]
         }
       ]
@@ -6018,7 +5766,7 @@
       "symbol": "func_gamegui_004023BC",
       "lines": [
         13,
-        471
+        495
       ],
       "owners": [
         {
@@ -6032,9 +5780,9 @@
         {
           "kind": "function",
           "name": "func_gamegui_004023BC",
-          "declaration_line": 471,
+          "declaration_line": 495,
           "lines": [
-            471
+            495
           ]
         }
       ]
@@ -10151,32 +9899,13 @@
       ]
     },
     {
-      "id": "Q-50822c3f94ad",
-      "kind": "address_function",
-      "path": "src/modules/plyr.c",
-      "symbol": "func_plyr_004022CC",
-      "lines": [
-        123
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_plyr_004022CC",
-          "declaration_line": 123,
-          "lines": [
-            123
-          ]
-        }
-      ]
-    },
-    {
       "id": "Q-a47f81bcd3a0",
       "kind": "address_function",
       "path": "src/modules/plyr.c",
       "symbol": "func_plyr_004022E0",
       "lines": [
         50,
-        127
+        130
       ],
       "owners": [
         {
@@ -10190,9 +9919,9 @@
         {
           "kind": "function",
           "name": "func_plyr_004022E0",
-          "declaration_line": 127,
+          "declaration_line": 130,
           "lines": [
-            127
+            130
           ]
         }
       ]
@@ -10203,15 +9932,15 @@
       "path": "src/modules/plyr.c",
       "symbol": "func_plyr_00402338",
       "lines": [
-        146
+        149
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_plyr_00402338",
-          "declaration_line": 146,
+          "declaration_line": 149,
           "lines": [
-            146
+            149
           ]
         }
       ]
@@ -10403,7 +10132,7 @@
       "symbol": "func_plyr_00405688",
       "lines": [
         62,
-        205
+        208
       ],
       "owners": [
         {
@@ -10417,9 +10146,9 @@
         {
           "kind": "function",
           "name": "plyrDispatchDebugHudPasses",
-          "declaration_line": 200,
+          "declaration_line": 203,
           "lines": [
-            205
+            208
           ]
         }
       ]
@@ -10431,7 +10160,7 @@
       "symbol": "func_plyr_00405C1C",
       "lines": [
         63,
-        209
+        212
       ],
       "owners": [
         {
@@ -10445,9 +10174,9 @@
         {
           "kind": "function",
           "name": "plyrDispatchDebugHudPasses",
-          "declaration_line": 200,
+          "declaration_line": 203,
           "lines": [
-            209
+            212
           ]
         }
       ]
@@ -11139,25 +10868,6 @@
           "declaration_line": 65,
           "lines": [
             65
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-27cc7b0501f9",
-      "kind": "address_function",
-      "path": "src/modules/replay.c",
-      "symbol": "func_replay_004002A8",
-      "lines": [
-        102
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_replay_004002A8",
-          "declaration_line": 102,
-          "lines": [
-            102
           ]
         }
       ]
@@ -23988,43 +23698,6 @@
       ]
     },
     {
-      "id": "Q-e5eddf4fff59",
-      "kind": "address_function",
-      "path": "src/modules/uvsort_rom.c",
-      "symbol": "func_uvsort_rom_00400308",
-      "lines": [
-        44,
-        75,
-        143
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "__entrypoint_func_uvsort_rom_400000",
-          "declaration_line": 67,
-          "lines": [
-            75
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvsort_rom_00400308",
-          "declaration_line": 44,
-          "lines": [
-            44
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvsort_rom_00400308",
-          "declaration_line": 143,
-          "lines": [
-            143
-          ]
-        }
-      ]
-    },
-    {
       "id": "Q-8a0326c9024c",
       "kind": "address_function",
       "path": "src/modules/uvsprt_rom.c",
@@ -24049,31 +23722,6 @@
           "declaration_line": 180,
           "lines": [
             180
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-d43a30cb25b3",
-      "kind": "address_function",
-      "path": "src/modules/uvterra_rom.c",
-      "symbol": "func_uvsort_rom_00400308",
-      "lines": [
-        975,
-        976,
-        977,
-        978
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvTerraInitializeSortGroups",
-          "declaration_line": 974,
-          "lines": [
-            975,
-            976,
-            977,
-            978
           ]
         }
       ]
@@ -31140,7 +30788,7 @@
         190,
         202,
         314,
-        467
+        491
       ],
       "owners": [
         {
@@ -31154,9 +30802,9 @@
         {
           "kind": "function",
           "name": "gameGuiGetDebugByte",
-          "declaration_line": 466,
+          "declaration_line": 490,
           "lines": [
-            467
+            491
           ]
         },
         {
@@ -31283,15 +30931,15 @@
       "symbol": "D_gamegui_00402D04",
       "lines": [
         60,
-        337
+        339
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_gamegui_00402030",
-          "declaration_line": 336,
+          "name": "gameGuiSetSharedWord",
+          "declaration_line": 338,
           "lines": [
-            337
+            339
           ]
         },
         {
@@ -31367,15 +31015,15 @@
       "symbol": "D_gamegui_00402D28",
       "lines": [
         62,
-        345
+        348
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiRequestStateNineWithChoiceFlag",
-          "declaration_line": 344,
+          "declaration_line": 347,
           "lines": [
-            345
+            348
           ]
         },
         {
@@ -35478,17 +35126,17 @@
       "lines": [
         23,
         115,
-        130,
-        135
+        133,
+        138
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_plyr_004022E0",
-          "declaration_line": 127,
+          "declaration_line": 130,
           "lines": [
-            130,
-            135
+            133,
+            138
           ]
         },
         {
@@ -35581,24 +35229,24 @@
       "symbol": "D_plyr_00406B28",
       "lines": [
         65,
-        124,
-        130
+        126,
+        133
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_plyr_004022CC",
-          "declaration_line": 123,
+          "name": "func_plyr_004022E0",
+          "declaration_line": 130,
           "lines": [
-            124
+            133
           ]
         },
         {
           "kind": "function",
-          "name": "func_plyr_004022E0",
-          "declaration_line": 127,
+          "name": "plyrGetIndexedEntryWord",
+          "declaration_line": 125,
           "lines": [
-            130
+            126
           ]
         },
         {
@@ -35618,15 +35266,15 @@
       "symbol": "D_plyr_00406B48",
       "lines": [
         42,
-        227
+        230
       ],
       "owners": [
         {
           "kind": "function",
           "name": "plyrReleaseIndexedSoundHandle",
-          "declaration_line": 226,
+          "declaration_line": 229,
           "lines": [
-            227
+            230
           ]
         },
         {
@@ -37159,17 +36807,17 @@
       "symbol": "D_replay_00401AC0",
       "lines": [
         21,
-        282,
-        292
+        285,
+        295
       ],
       "owners": [
         {
           "kind": "function",
           "name": "replayCreateThreeRangeControls",
-          "declaration_line": 260,
+          "declaration_line": 263,
           "lines": [
-            282,
-            292
+            285,
+            295
           ]
         },
         {
@@ -37189,17 +36837,17 @@
       "symbol": "D_replay_00401AC8",
       "lines": [
         22,
-        283,
-        294
+        286,
+        297
       ],
       "owners": [
         {
           "kind": "function",
           "name": "replayCreateThreeRangeControls",
-          "declaration_line": 260,
+          "declaration_line": 263,
           "lines": [
-            283,
-            294
+            286,
+            297
           ]
         },
         {
@@ -37219,17 +36867,17 @@
       "symbol": "D_replay_00401AD4",
       "lines": [
         23,
-        284,
-        295
+        287,
+        298
       ],
       "owners": [
         {
           "kind": "function",
           "name": "replayCreateThreeRangeControls",
-          "declaration_line": 260,
+          "declaration_line": 263,
           "lines": [
-            284,
-            295
+            287,
+            298
           ]
         },
         {
@@ -37249,17 +36897,17 @@
       "symbol": "D_replay_00401ADC",
       "lines": [
         24,
-        285,
-        296
+        288,
+        299
       ],
       "owners": [
         {
           "kind": "function",
           "name": "replayCreateThreeRangeControls",
-          "declaration_line": 260,
+          "declaration_line": 263,
           "lines": [
-            285,
-            296
+            288,
+            299
           ]
         },
         {
@@ -37279,15 +36927,15 @@
       "symbol": "D_replay_00401AE4",
       "lines": [
         9,
-        321
+        324
       ],
       "owners": [
         {
           "kind": "function",
           "name": "replayWriteVersionTwoFile",
-          "declaration_line": 314,
+          "declaration_line": 317,
           "lines": [
-            321
+            324
           ]
         },
         {
@@ -37307,15 +36955,15 @@
       "symbol": "D_replay_00401AF4",
       "lines": [
         9,
-        321
+        324
       ],
       "owners": [
         {
           "kind": "function",
           "name": "replayWriteVersionTwoFile",
-          "declaration_line": 314,
+          "declaration_line": 317,
           "lines": [
-            321
+            324
           ]
         },
         {
@@ -37335,17 +36983,17 @@
       "symbol": "D_replay_00401B50",
       "lines": [
         25,
-        286,
-        295
+        289,
+        298
       ],
       "owners": [
         {
           "kind": "function",
           "name": "replayCreateThreeRangeControls",
-          "declaration_line": 260,
+          "declaration_line": 263,
           "lines": [
-            286,
-            295
+            289,
+            298
           ]
         },
         {
@@ -37365,17 +37013,17 @@
       "symbol": "D_replay_00401B54",
       "lines": [
         26,
-        287,
-        296
+        290,
+        299
       ],
       "owners": [
         {
           "kind": "function",
           "name": "replayCreateThreeRangeControls",
-          "declaration_line": 260,
+          "declaration_line": 263,
           "lines": [
-            287,
-            296
+            290,
+            299
           ]
         },
         {
@@ -37395,17 +37043,17 @@
       "symbol": "D_replay_00401B58",
       "lines": [
         27,
-        288,
-        294
+        291,
+        297
       ],
       "owners": [
         {
           "kind": "function",
           "name": "replayCreateThreeRangeControls",
-          "declaration_line": 260,
+          "declaration_line": 263,
           "lines": [
-            288,
-            294
+            291,
+            297
           ]
         },
         {
@@ -37427,15 +37075,15 @@
         13,
         79,
         80,
-        204
+        207
       ],
       "owners": [
         {
           "kind": "function",
           "name": "replayFindDirectedSpatialRecord",
-          "declaration_line": 199,
+          "declaration_line": 202,
           "lines": [
-            204
+            207
           ]
         },
         {
@@ -37466,15 +37114,15 @@
         29,
         94,
         95,
-        235
+        238
       ],
       "owners": [
         {
           "kind": "function",
           "name": "replayIsPointInsideAnyRegion",
-          "declaration_line": 231,
+          "declaration_line": 234,
           "lines": [
-            235
+            238
           ]
         },
         {
@@ -37503,24 +37151,24 @@
       "symbol": "D_replay_00401B78",
       "lines": [
         46,
-        117,
-        124
+        120,
+        127
       ],
       "owners": [
         {
           "kind": "function",
           "name": "replayClearActiveFlag",
-          "declaration_line": 123,
+          "declaration_line": 126,
           "lines": [
-            124
+            127
           ]
         },
         {
           "kind": "function",
           "name": "replayResetStateAndRandomSeeds",
-          "declaration_line": 111,
+          "declaration_line": 114,
           "lines": [
-            117
+            120
           ]
         },
         {
@@ -37540,15 +37188,15 @@
       "symbol": "D_replay_00401B7C",
       "lines": [
         45,
-        103
+        105
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_replay_004002A8",
-          "declaration_line": 102,
+          "name": "replaySetSharedByte",
+          "declaration_line": 104,
           "lines": [
-            103
+            105
           ]
         },
         {
@@ -37568,33 +37216,33 @@
       "symbol": "D_replay_00401B98",
       "lines": [
         47,
-        143,
-        155,
-        172
+        146,
+        158,
+        175
       ],
       "owners": [
         {
           "kind": "function",
           "name": "replayGetRecordFlags",
-          "declaration_line": 154,
+          "declaration_line": 157,
           "lines": [
-            155
+            158
           ]
         },
         {
           "kind": "function",
           "name": "replayHasNewRecordFlags",
-          "declaration_line": 142,
+          "declaration_line": 145,
           "lines": [
-            143
+            146
           ]
         },
         {
           "kind": "function",
           "name": "replayHasRecordFlags",
-          "declaration_line": 170,
+          "declaration_line": 173,
           "lines": [
-            172
+            175
           ]
         },
         {
@@ -37614,15 +37262,15 @@
       "symbol": "D_replay_00401B9C",
       "lines": [
         48,
-        163
+        166
       ],
       "owners": [
         {
           "kind": "function",
           "name": "replayGetPreviousRecordFlags",
-          "declaration_line": 162,
+          "declaration_line": 165,
           "lines": [
-            163
+            166
           ]
         },
         {
@@ -37642,15 +37290,15 @@
       "symbol": "D_replay_00401BA0",
       "lines": [
         30,
-        185
+        188
       ],
       "owners": [
         {
           "kind": "function",
           "name": "replayGetRecordScalar",
-          "declaration_line": 184,
+          "declaration_line": 187,
           "lines": [
-            185
+            188
           ]
         },
         {
@@ -69024,28 +68672,28 @@
       "symbol": "D_uvsort_rom_00400BF0",
       "lines": [
         64,
-        230,
-        248,
-        249,
-        256
+        241,
+        259,
+        260,
+        267
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvSortResetCallbackCounts",
-          "declaration_line": 227,
+          "declaration_line": 238,
           "lines": [
-            230
+            241
           ]
         },
         {
           "kind": "function",
           "name": "uvSortRunCurrentGroupCallbacks",
-          "declaration_line": 241,
+          "declaration_line": 252,
           "lines": [
-            248,
-            249,
-            256
+            259,
+            260,
+            267
           ]
         },
         {
@@ -69068,11 +68716,11 @@
         81,
         112,
         137,
-        184,
-        187,
-        211,
-        214,
-        217
+        194,
+        197,
+        222,
+        225,
+        228
       ],
       "owners": [
         {
@@ -69086,21 +68734,21 @@
         },
         {
           "kind": "function",
-          "name": "func_uvsort_rom_00400308",
-          "declaration_line": 143,
+          "name": "uvSortAllocateGroupForTag",
+          "declaration_line": 153,
           "lines": [
-            184,
-            187
+            194,
+            197
           ]
         },
         {
           "kind": "function",
           "name": "uvSortAttachChannelCallbacks",
-          "declaration_line": 205,
+          "declaration_line": 216,
           "lines": [
-            211,
-            214,
-            217
+            222,
+            225,
+            228
           ]
         },
         {
@@ -69131,8 +68779,8 @@
         79,
         111,
         135,
-        183,
-        210
+        193,
+        221
       ],
       "owners": [
         {
@@ -69146,18 +68794,18 @@
         },
         {
           "kind": "function",
-          "name": "func_uvsort_rom_00400308",
-          "declaration_line": 143,
+          "name": "uvSortAllocateGroupForTag",
+          "declaration_line": 153,
           "lines": [
-            183
+            193
           ]
         },
         {
           "kind": "function",
           "name": "uvSortAttachChannelCallbacks",
-          "declaration_line": 205,
+          "declaration_line": 216,
           "lines": [
-            210
+            221
           ]
         },
         {
@@ -69229,7 +68877,7 @@
         97,
         101,
         106,
-        271
+        282
       ],
       "owners": [
         {
@@ -69247,9 +68895,9 @@
         {
           "kind": "function",
           "name": "uvSortAppendCallback",
-          "declaration_line": 265,
+          "declaration_line": 276,
           "lines": [
-            271
+            282
           ]
         },
         {
@@ -69275,11 +68923,11 @@
         93,
         105,
         130,
-        151,
-        170,
-        173,
-        212,
-        231
+        161,
+        180,
+        183,
+        223,
+        242
       ],
       "owners": [
         {
@@ -69296,20 +68944,20 @@
         },
         {
           "kind": "function",
-          "name": "func_uvsort_rom_00400308",
-          "declaration_line": 143,
+          "name": "uvSortAllocateGroupForTag",
+          "declaration_line": 153,
           "lines": [
-            151,
-            170,
-            173
+            161,
+            180,
+            183
           ]
         },
         {
           "kind": "function",
           "name": "uvSortAttachChannelCallbacks",
-          "declaration_line": 205,
+          "declaration_line": 216,
           "lines": [
-            212
+            223
           ]
         },
         {
@@ -69323,9 +68971,9 @@
         {
           "kind": "function",
           "name": "uvSortResetCallbackCounts",
-          "declaration_line": 227,
+          "declaration_line": 238,
           "lines": [
-            231
+            242
           ]
         },
         {
@@ -69351,25 +68999,25 @@
         108,
         131,
         133,
-        152,
-        153,
-        154,
-        155,
-        156,
-        157,
         162,
-        171,
+        163,
+        164,
+        165,
+        166,
+        167,
         172,
-        174,
-        176,
-        213,
-        214,
-        217,
-        232,
-        249,
-        269,
-        347,
-        349
+        181,
+        182,
+        184,
+        186,
+        224,
+        225,
+        228,
+        243,
+        260,
+        280,
+        358,
+        360
       ],
       "owners": [
         {
@@ -69385,38 +69033,38 @@
         },
         {
           "kind": "function",
-          "name": "func_uvsort_rom_00400308",
-          "declaration_line": 143,
+          "name": "uvSortAllocateGroupForTag",
+          "declaration_line": 153,
           "lines": [
-            152,
-            153,
-            154,
-            155,
-            156,
-            157,
             162,
-            171,
+            163,
+            164,
+            165,
+            166,
+            167,
             172,
-            174,
-            176
+            181,
+            182,
+            184,
+            186
           ]
         },
         {
           "kind": "function",
           "name": "uvSortAppendCallback",
-          "declaration_line": 265,
+          "declaration_line": 276,
           "lines": [
-            269
+            280
           ]
         },
         {
           "kind": "function",
           "name": "uvSortAttachChannelCallbacks",
-          "declaration_line": 205,
+          "declaration_line": 216,
           "lines": [
-            213,
-            214,
-            217
+            224,
+            225,
+            228
           ]
         },
         {
@@ -69431,26 +69079,26 @@
         {
           "kind": "function",
           "name": "uvSortResetCallbackCounts",
-          "declaration_line": 227,
+          "declaration_line": 238,
           "lines": [
-            232
+            243
           ]
         },
         {
           "kind": "function",
           "name": "uvSortRunCurrentGroupCallbacks",
-          "declaration_line": 241,
+          "declaration_line": 252,
           "lines": [
-            249
+            260
           ]
         },
         {
           "kind": "function",
           "name": "uvSortSetGroupOptions",
-          "declaration_line": 334,
+          "declaration_line": 345,
           "lines": [
-            347,
-            349
+            358,
+            360
           ]
         },
         {
@@ -69470,24 +69118,24 @@
       "symbol": "D_uvsort_rom_00400C18",
       "lines": [
         62,
-        182,
-        220
+        192,
+        231
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvsort_rom_00400308",
-          "declaration_line": 143,
+          "name": "uvSortAllocateGroupForTag",
+          "declaration_line": 153,
           "lines": [
-            182
+            192
           ]
         },
         {
           "kind": "function",
           "name": "uvSortAttachChannelCallbacks",
-          "declaration_line": 205,
+          "declaration_line": 216,
           "lines": [
-            220
+            231
           ]
         },
         {
@@ -69508,7 +69156,7 @@
       "lines": [
         63,
         111,
-        181
+        191
       ],
       "owners": [
         {
@@ -69521,10 +69169,10 @@
         },
         {
           "kind": "function",
-          "name": "func_uvsort_rom_00400308",
-          "declaration_line": 143,
+          "name": "uvSortAllocateGroupForTag",
+          "declaration_line": 153,
           "lines": [
-            181
+            191
           ]
         },
         {
@@ -75510,7 +75158,7 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_004021DC",
       "lines": [
-        450
+        474
       ],
       "evidence": "asm/us/nonmatchings/modules/gamegui/func_gamegui_004021DC.s"
     },
@@ -77090,7 +76738,7 @@
       "path": "src/modules/plyr.c",
       "symbol": "func_plyr_00402340",
       "lines": [
-        150
+        153
       ],
       "evidence": "asm/us/nonmatchings/modules/plyr/func_plyr_00402340.s"
     },
@@ -77100,7 +76748,7 @@
       "path": "src/modules/plyr.c",
       "symbol": "func_plyr_00402B90",
       "lines": [
-        152
+        155
       ],
       "evidence": "asm/us/nonmatchings/modules/plyr/func_plyr_00402B90.s"
     },
@@ -77110,7 +76758,7 @@
       "path": "src/modules/plyr.c",
       "symbol": "func_plyr_00402F14",
       "lines": [
-        154
+        157
       ],
       "evidence": "asm/us/nonmatchings/modules/plyr/func_plyr_00402F14.s"
     },
@@ -77120,7 +76768,7 @@
       "path": "src/modules/plyr.c",
       "symbol": "func_plyr_0040397C",
       "lines": [
-        156
+        159
       ],
       "evidence": "asm/us/nonmatchings/modules/plyr/func_plyr_0040397C.s"
     },
@@ -77130,7 +76778,7 @@
       "path": "src/modules/plyr.c",
       "symbol": "func_plyr_00403B40",
       "lines": [
-        158
+        161
       ],
       "evidence": "asm/us/nonmatchings/modules/plyr/func_plyr_00403B40.s"
     },
@@ -77140,7 +76788,7 @@
       "path": "src/modules/plyr.c",
       "symbol": "func_plyr_00404088",
       "lines": [
-        160
+        163
       ],
       "evidence": "asm/us/nonmatchings/modules/plyr/func_plyr_00404088.s"
     },
@@ -77150,7 +76798,7 @@
       "path": "src/modules/plyr.c",
       "symbol": "func_plyr_004047C8",
       "lines": [
-        191
+        194
       ],
       "evidence": "asm/us/nonmatchings/modules/plyr/func_plyr_004047C8.s"
     },
@@ -77160,7 +76808,7 @@
       "path": "src/modules/plyr.c",
       "symbol": "func_plyr_00404CE0",
       "lines": [
-        193
+        196
       ],
       "evidence": "asm/us/nonmatchings/modules/plyr/func_plyr_00404CE0.s"
     },
@@ -77170,7 +76818,7 @@
       "path": "src/modules/plyr.c",
       "symbol": "func_plyr_004050AC",
       "lines": [
-        195
+        198
       ],
       "evidence": "asm/us/nonmatchings/modules/plyr/func_plyr_004050AC.s"
     },
@@ -77180,7 +76828,7 @@
       "path": "src/modules/plyr.c",
       "symbol": "func_plyr_00405688",
       "lines": [
-        214
+        217
       ],
       "evidence": "asm/us/nonmatchings/modules/plyr/func_plyr_00405688.s"
     },
@@ -77190,7 +76838,7 @@
       "path": "src/modules/plyr.c",
       "symbol": "func_plyr_00405C1C",
       "lines": [
-        216
+        219
       ],
       "evidence": "asm/us/nonmatchings/modules/plyr/func_plyr_00405C1C.s"
     },
@@ -77530,7 +77178,7 @@
       "path": "src/modules/replay.c",
       "symbol": "func_replay_00400328",
       "lines": [
-        128
+        131
       ],
       "evidence": "asm/us/nonmatchings/modules/replay/func_replay_00400328.s"
     },
@@ -77540,7 +77188,7 @@
       "path": "src/modules/replay.c",
       "symbol": "func_replay_00400748",
       "lines": [
-        130
+        133
       ],
       "evidence": "asm/us/nonmatchings/modules/replay/func_replay_00400748.s"
     },
@@ -77550,7 +77198,7 @@
       "path": "src/modules/replay.c",
       "symbol": "func_replay_0040097C",
       "lines": [
-        132
+        135
       ],
       "evidence": "asm/us/nonmatchings/modules/replay/func_replay_0040097C.s"
     },
@@ -77560,7 +77208,7 @@
       "path": "src/modules/replay.c",
       "symbol": "func_replay_00400C50",
       "lines": [
-        134
+        137
       ],
       "evidence": "asm/us/nonmatchings/modules/replay/func_replay_00400C50.s"
     },
@@ -77570,7 +77218,7 @@
       "path": "src/modules/replay.c",
       "symbol": "func_replay_00400D84",
       "lines": [
-        136
+        139
       ],
       "evidence": "asm/us/nonmatchings/modules/replay/func_replay_00400D84.s"
     },
@@ -77580,7 +77228,7 @@
       "path": "src/modules/replay.c",
       "symbol": "func_replay_0040100C",
       "lines": [
-        189
+        192
       ],
       "evidence": "asm/us/nonmatchings/modules/replay/func_replay_0040100C.s"
     },
@@ -77590,7 +77238,7 @@
       "path": "src/modules/replay.c",
       "symbol": "func_replay_00401968",
       "lines": [
-        335
+        338
       ],
       "evidence": "asm/us/nonmatchings/modules/replay/func_replay_00401968.s"
     },
@@ -84735,89 +84383,15 @@
       "path": "src/modules/gamegui.c",
       "symbol": "arg0",
       "lines": [
-        336,
-        337,
-        354,
-        358,
-        399,
-        403,
-        407,
-        411,
-        415,
-        471
+        495
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_gamegui_00402030",
-          "declaration_line": 336,
-          "lines": [
-            336,
-            337
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_gamegui_00402074",
-          "declaration_line": 354,
-          "lines": [
-            354
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_gamegui_00402088",
-          "declaration_line": 358,
-          "lines": [
-            358
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_gamegui_00402130",
-          "declaration_line": 399,
-          "lines": [
-            399
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_gamegui_00402144",
-          "declaration_line": 403,
-          "lines": [
-            403
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_gamegui_00402158",
-          "declaration_line": 407,
-          "lines": [
-            407
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_gamegui_0040216C",
-          "declaration_line": 411,
-          "lines": [
-            411
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_gamegui_00402180",
-          "declaration_line": 415,
-          "lines": [
-            415
-          ]
-        },
-        {
-          "kind": "function",
           "name": "func_gamegui_004023BC",
-          "declaration_line": 471,
+          "declaration_line": 495,
           "lines": [
-            471
+            495
           ]
         }
       ]
@@ -84828,21 +84402,21 @@
       "path": "src/modules/gamegui.c",
       "symbol": "temp_s3",
       "lines": [
-        475,
-        479,
-        481,
-        493
+        499,
+        503,
+        505,
+        517
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_gamegui_004023BC",
-          "declaration_line": 471,
+          "declaration_line": 495,
           "lines": [
-            475,
-            479,
-            481,
-            493
+            499,
+            503,
+            505,
+            517
           ]
         }
       ]
@@ -84853,19 +84427,19 @@
       "path": "src/modules/gamegui.c",
       "symbol": "temp_v0",
       "lines": [
-        477,
-        487,
-        488
+        501,
+        511,
+        512
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_gamegui_004023BC",
-          "declaration_line": 471,
+          "declaration_line": 495,
           "lines": [
-            477,
-            487,
-            488
+            501,
+            511,
+            512
           ]
         }
       ]
@@ -84876,25 +84450,25 @@
       "path": "src/modules/gamegui.c",
       "symbol": "var_s0",
       "lines": [
-        474,
-        480,
-        485,
-        487,
-        491,
-        493
+        498,
+        504,
+        509,
+        511,
+        515,
+        517
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_gamegui_004023BC",
-          "declaration_line": 471,
+          "declaration_line": 495,
           "lines": [
-            474,
-            480,
-            485,
-            487,
-            491,
-            493
+            498,
+            504,
+            509,
+            511,
+            515,
+            517
           ]
         }
       ]
@@ -84905,19 +84479,19 @@
       "path": "src/modules/gamegui.c",
       "symbol": "var_s1",
       "lines": [
-        476,
-        478,
-        489
+        500,
+        502,
+        513
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_gamegui_004023BC",
-          "declaration_line": 471,
+          "declaration_line": 495,
           "lines": [
-            476,
-            478,
-            489
+            500,
+            502,
+            513
           ]
         }
       ]
@@ -85668,9 +85242,9 @@
       "symbol": "arg0",
       "lines": [
         50,
-        127,
         130,
-        136
+        133,
+        139
       ],
       "owners": [
         {
@@ -85684,11 +85258,11 @@
         {
           "kind": "function",
           "name": "func_plyr_004022E0",
-          "declaration_line": 127,
+          "declaration_line": 130,
           "lines": [
-            127,
             130,
-            136
+            133,
+            139
           ]
         }
       ]
@@ -85699,23 +85273,23 @@
       "path": "src/modules/plyr.c",
       "symbol": "var_v1",
       "lines": [
-        129,
-        130,
-        131,
+        132,
         133,
-        135
+        134,
+        136,
+        138
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_plyr_004022E0",
-          "declaration_line": 127,
+          "declaration_line": 130,
           "lines": [
-            129,
-            130,
-            131,
+            132,
             133,
-            135
+            134,
+            136,
+            138
           ]
         }
       ]
@@ -122264,34 +121838,15 @@
         48,
         49,
         50,
-        51,
-        143,
-        154,
-        162,
-        172,
-        184,
-        187
+        51
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvsort_rom_00400308",
+          "name": "uvSortAllocateGroupForTag",
           "declaration_line": 44,
           "lines": [
             44
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvsort_rom_00400308",
-          "declaration_line": 143,
-          "lines": [
-            143,
-            154,
-            162,
-            172,
-            184,
-            187
           ]
         },
         {
@@ -122418,31 +121973,6 @@
       ]
     },
     {
-      "id": "Q-420932693414",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvsort_rom.c",
-      "symbol": "sp50",
-      "lines": [
-        148,
-        183,
-        184,
-        187
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvsort_rom_00400308",
-          "declaration_line": 143,
-          "lines": [
-            148,
-            183,
-            184,
-            187
-          ]
-        }
-      ]
-    },
-    {
       "id": "Q-905ac580b2a8",
       "kind": "decompiler_local",
       "path": "src/modules/uvsort_rom.c",
@@ -122455,7 +121985,7 @@
         89,
         94,
         95,
-        208
+        219
       ],
       "owners": [
         {
@@ -122475,32 +122005,9 @@
         {
           "kind": "function",
           "name": "uvSortAttachChannelCallbacks",
-          "declaration_line": 205,
+          "declaration_line": 216,
           "lines": [
-            208
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-96ae6b05636b",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvsort_rom.c",
-      "symbol": "temp_v1",
-      "lines": [
-        146,
-        171,
-        172
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvsort_rom_00400308",
-          "declaration_line": 143,
-          "lines": [
-            146,
-            171,
-            172
+            219
           ]
         }
       ]
@@ -122595,15 +122102,15 @@
       "path": "src/modules/uvsort_rom.c",
       "symbol": "var_v0",
       "lines": [
-        337
+        348
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvSortSetGroupOptions",
-          "declaration_line": 334,
+          "declaration_line": 345,
           "lines": [
-            337
+            348
           ]
         }
       ]
@@ -129983,8 +129490,8 @@
       "symbol": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "lines": [
         142,
-        420,
-        442
+        444,
+        466
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "owners": [
@@ -129999,17 +129506,17 @@
         {
           "kind": "function",
           "name": "func_gamegui_00402194",
-          "declaration_line": 424,
+          "declaration_line": 448,
           "lines": [
-            420
+            444
           ]
         },
         {
           "kind": "function",
           "name": "func_gamegui_004021D4",
-          "declaration_line": 446,
+          "declaration_line": 470,
           "lines": [
-            442
+            466
           ]
         }
       ]
@@ -130050,6 +129557,26 @@
           "declaration_line": 226,
           "lines": [
             221
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-b240daf164b7",
+      "kind": "explicit_unknown",
+      "path": "src/modules/gamegui.c",
+      "symbol": "Store the supplied word in D_gamegui_00402D04. RE_UNKNOWN: shared word role and use as callback/context data require original readers and initializer consumers.",
+      "lines": [
+        338
+      ],
+      "evidence": "Store the supplied word in D_gamegui_00402D04. RE_UNKNOWN: shared word role and use as callback/context data require original readers and initializer consumers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiSetSharedWord",
+          "declaration_line": 338,
+          "lines": [
+            338
           ]
         }
       ]
@@ -131493,16 +131020,16 @@
       "path": "src/modules/plyr.c",
       "symbol": "Draw the red arrow and translucent black shadow using current screen dimensions. * Apply local-Y displacement -14 directly to the caller's matrix; popping graphics state does not restore its translation row. * RE_UNKNOWN: caller matrix reuse and coordinate units require original callsites and input-matrix construction; preserve the original stack operations.",
       "lines": [
-        163
+        166
       ],
       "evidence": "Draw the red arrow and translucent black shadow using current screen dimensions. * Apply local-Y displacement -14 directly to the caller's matrix; popping graphics state does not restore its translation row. * RE_UNKNOWN: caller matrix reuse and coordinate units require original callsites and input-matrix construction; preserve the original stack operations.",
       "owners": [
         {
           "kind": "function",
           "name": "plyrDrawRedArrowWithShadow",
-          "declaration_line": 166,
+          "declaration_line": 169,
           "lines": [
-            163
+            166
           ]
         }
       ]
@@ -131573,16 +131100,16 @@
       "path": "src/modules/plyr.c",
       "symbol": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "lines": [
-        142
+        145
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "owners": [
         {
           "kind": "function",
           "name": "func_plyr_00402338",
-          "declaration_line": 146,
+          "declaration_line": 149,
           "lines": [
-            142
+            145
           ]
         }
       ]
@@ -131613,9 +131140,29 @@
       "path": "src/modules/plyr.c",
       "symbol": "Release the sound handle selected by the caller record word at 0x14 * from shared storage D_plyr_00406B48, using the original eight-byte stride. * RE_UNKNOWN: shared handle-array extent, index validity and handle lifetime. * The wrapper does not establish caller ownership of that global array. * Trace original array initialization, index writers and release paths before * assigning an ownership contract or proving the unchecked index bound.",
       "lines": [
-        219
+        222
       ],
       "evidence": "Release the sound handle selected by the caller record word at 0x14 * from shared storage D_plyr_00406B48, using the original eight-byte stride. * RE_UNKNOWN: shared handle-array extent, index validity and handle lifetime. * The wrapper does not establish caller ownership of that global array. * Trace original array initialization, index writers and release paths before * assigning an ownership contract or proving the unchecked index bound."
+    },
+    {
+      "id": "Q-f742a146287e",
+      "kind": "explicit_unknown",
+      "path": "src/modules/plyr.c",
+      "symbol": "Return the caller-indexed word from D_plyr_00406B28. RE_UNKNOWN: entry meaning and valid index domain require original table producers and callers; preserve its s32 result ABI.",
+      "lines": [
+        125
+      ],
+      "evidence": "Return the caller-indexed word from D_plyr_00406B28. RE_UNKNOWN: entry meaning and valid index domain require original table producers and callers; preserve its s32 result ABI.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "plyrGetIndexedEntryWord",
+          "declaration_line": 125,
+          "lines": [
+            125
+          ]
+        }
+      ]
     },
     {
       "id": "Q-8ded195ce357",
@@ -131832,16 +131379,16 @@
       "path": "src/modules/replay.c",
       "symbol": "Create and attach a text-list row, then create three bound scalar rows * through original MISC104: 0..100 and two -50..50 ranges. Each call supplies * its existing shared value address and requests no widget-output pointer; * the helper's returned row address is intentionally discarded here. * RE_UNKNOWN: the three bound values' original storage types/alignment and * allocation extents, the label buffers' readable extents and the historical * caller typedefs. Inspect original data/relocations and all value writers * before strengthening the current byte-symbol declarations or units.",
       "lines": [
-        252
+        255
       ],
       "evidence": "Create and attach a text-list row, then create three bound scalar rows * through original MISC104: 0..100 and two -50..50 ranges. Each call supplies * its existing shared value address and requests no widget-output pointer; * the helper's returned row address is intentionally discarded here. * RE_UNKNOWN: the three bound values' original storage types/alignment and * allocation extents, the label buffers' readable extents and the historical * caller typedefs. Inspect original data/relocations and all value writers * before strengthening the current byte-symbol declarations or units.",
       "owners": [
         {
           "kind": "function",
           "name": "replayCreateThreeRangeControls",
-          "declaration_line": 260,
+          "declaration_line": 263,
           "lines": [
-            252
+            255
           ]
         }
       ]
@@ -131852,7 +131399,7 @@
       "path": "src/modules/replay.c",
       "symbol": "Find the first replay record whose strict radius and mapped direction-dot * tests contain the supplied position. Return that record and write normalized * displacement plus distance; zero distance retains its zero displacement. * Outputs are untouched on failure. * RE_UNKNOWN: record vector and threshold units. Trace original record writers, * loaded data and their gameplay consumers before assigning physical units.",
       "lines": [
-        192
+        195
       ],
       "evidence": "Find the first replay record whose strict radius and mapped direction-dot * tests contain the supplied position. Return that record and write normalized * displacement plus distance; zero distance retains its zero displacement. * Outputs are untouched on failure. * RE_UNKNOWN: record vector and threshold units. Trace original record writers, * loaded data and their gameplay consumers before assigning physical units."
     },
@@ -131893,17 +131440,7 @@
       "lines": [
         100
       ],
-      "evidence": "Store the low eight bits of the argument in D_replay_00401B7C. * RE_UNKNOWN: shared byte purpose and caller/export contract.",
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_replay_004002A8",
-          "declaration_line": 102,
-          "lines": [
-            100
-          ]
-        }
-      ]
+      "evidence": "Store the low eight bits of the argument in D_replay_00401B7C. * RE_UNKNOWN: shared byte purpose and caller/export contract."
     },
     {
       "id": "Q-f6fca41b0430",
@@ -131911,16 +131448,16 @@
       "path": "src/modules/replay.c",
       "symbol": "The original getter consumes a signed low16 index and returns an address; * allocation returns a sign-extended index. RE_UNKNOWN: historical caller * declarations. Exact caller proof is required for this target-based view.",
       "lines": [
-        261
+        264
       ],
       "evidence": "The original getter consumes a signed low16 index and returns an address; * allocation returns a sign-extended index. RE_UNKNOWN: historical caller * declarations. Exact caller proof is required for this target-based view.",
       "owners": [
         {
           "kind": "function",
           "name": "replayCreateThreeRangeControls",
-          "declaration_line": 260,
+          "declaration_line": 263,
           "lines": [
-            261
+            264
           ]
         }
       ]
@@ -131931,7 +131468,7 @@
       "path": "src/modules/replay.c",
       "symbol": "Write version 2, header words 0x4/0xC, then blocks at offsets 0x10, * 0xE20 and 0x4660 with lengths frameCount, 4*frameCount and eventBytes. * Original recorder code stores stick-X/stick-Y/button snapshots at 0xE20; * the separately scaled byte values are stored at 0x4660, not at 0xE20. * Build the filename with the original format, prefix and scene-name + 4. * Ignore write/close status as originally implemented; failed open skips writes. * RE_UNKNOWN: the complete version-two layout, meanings of the legacy * frameCount/eventBytes field names, two-controller stream serialization and * filename format/scene-name extent. Inspect original writer/reader callers, * playback, recording setup and D_replay_00401AE4 data before treating these * counts as elapsed frames, changing block sizes or claiming a fixed name length.",
       "lines": [
-        302
+        305
       ],
       "evidence": "Write version 2, header words 0x4/0xC, then blocks at offsets 0x10, * 0xE20 and 0x4660 with lengths frameCount, 4*frameCount and eventBytes. * Original recorder code stores stick-X/stick-Y/button snapshots at 0xE20; * the separately scaled byte values are stored at 0x4660, not at 0xE20. * Build the filename with the original format, prefix and scene-name + 4. * Ignore write/close status as originally implemented; failed open skips writes. * RE_UNKNOWN: the complete version-two layout, meanings of the legacy * frameCount/eventBytes field names, two-controller stream serialization and * filename format/scene-name extent. Inspect original writer/reader callers, * playback, recording setup and D_replay_00401AE4 data before treating these * counts as elapsed frames, changing block sizes or claiming a fixed name length."
     },
@@ -134350,6 +133887,26 @@
           "declaration_line": 865,
           "lines": [
             859
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-6f5ef219cf95",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvsort_rom.c",
+      "symbol": "Allocate the first unused SORT group, record its byte tag, insert its * index into tag order and attach original callbacks for tracked channels. * Return -1 on an encountered existing tag or when no group is available. * RE_ORIGINAL_QUIRK: the scan stops at the first unused entry, before checking * later entries for the same tag; this is not a complete uniqueness search. * RE_UNKNOWN: caller tag uniqueness, group/callback capacity and channel-bit * domain. Trace original group allocators and callback consumers before adding * validation, changing failure behavior or describing tags as unique IDs.",
+      "lines": [
+        145
+      ],
+      "evidence": "Allocate the first unused SORT group, record its byte tag, insert its * index into tag order and attach original callbacks for tracked channels. * Return -1 on an encountered existing tag or when no group is available. * RE_ORIGINAL_QUIRK: the scan stops at the first unused entry, before checking * later entries for the same tag; this is not a complete uniqueness search. * RE_UNKNOWN: caller tag uniqueness, group/callback capacity and channel-bit * domain. Trace original group allocators and callback consumers before adding * validation, changing failure behavior or describing tags as unique IDs.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvSortAllocateGroupForTag",
+          "declaration_line": 153,
+          "lines": [
+            145
           ]
         }
       ]
@@ -137852,17 +137409,17 @@
       "path": "src/modules/gamegui.c",
       "symbol": "padE0",
       "lines": [
-        346,
-        348
+        349,
+        351
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiRequestStateNineWithChoiceFlag",
-          "declaration_line": 344,
+          "declaration_line": 347,
           "lines": [
-            346,
-            348
+            349,
+            351
           ]
         }
       ]
@@ -154316,9 +153873,9 @@
       "lines": [
         55,
         191,
-        366,
-        374,
-        386
+        375,
+        383,
+        395
       ],
       "owners": [
         {
@@ -154332,25 +153889,25 @@
         {
           "kind": "function",
           "name": "gameGuiRequestInitialIntroTrack",
-          "declaration_line": 382,
+          "declaration_line": 391,
           "lines": [
-            386
+            395
           ]
         },
         {
           "kind": "function",
           "name": "gameGuiRequestStateFour",
-          "declaration_line": 372,
+          "declaration_line": 381,
           "lines": [
-            374
+            383
           ]
         },
         {
           "kind": "function",
           "name": "gameGuiRequestStateThree",
-          "declaration_line": 364,
+          "declaration_line": 373,
           "lines": [
-            366
+            375
           ]
         },
         {
@@ -159248,15 +158805,15 @@
       "symbol": "unk70",
       "lines": [
         38,
-        227
+        230
       ],
       "owners": [
         {
           "kind": "function",
           "name": "plyrReleaseIndexedSoundHandle",
-          "declaration_line": 226,
+          "declaration_line": 229,
           "lines": [
-            227
+            230
           ]
         },
         {
@@ -160623,15 +160180,15 @@
       "path": "src/modules/replay.c",
       "symbol": "unk7C",
       "lines": [
-        114
+        117
       ],
       "owners": [
         {
           "kind": "function",
           "name": "replayResetStateAndRandomSeeds",
-          "declaration_line": 111,
+          "declaration_line": 114,
           "lines": [
-            114
+            117
           ]
         }
       ]
@@ -160681,15 +160238,15 @@
       "symbol": "word190",
       "lines": [
         18,
-        112
+        115
       ],
       "owners": [
         {
           "kind": "function",
           "name": "replayResetStateAndRandomSeeds",
-          "declaration_line": 111,
+          "declaration_line": 114,
           "lines": [
-            112
+            115
           ]
         },
         {
@@ -160709,15 +160266,15 @@
       "symbol": "word198",
       "lines": [
         18,
-        113
+        116
       ],
       "owners": [
         {
           "kind": "function",
           "name": "replayResetStateAndRandomSeeds",
-          "declaration_line": 111,
+          "declaration_line": 114,
           "lines": [
-            113
+            116
           ]
         },
         {
@@ -188901,33 +188458,33 @@
       "lines": [
         7,
         14,
-        155,
-        254,
-        272
+        165,
+        265,
+        283
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvsort_rom_00400308",
-          "declaration_line": 143,
+          "name": "uvSortAllocateGroupForTag",
+          "declaration_line": 153,
           "lines": [
-            155
+            165
           ]
         },
         {
           "kind": "function",
           "name": "uvSortAppendCallback",
-          "declaration_line": 265,
+          "declaration_line": 276,
           "lines": [
-            272
+            283
           ]
         },
         {
           "kind": "function",
           "name": "uvSortRunCurrentGroupCallbacks",
-          "declaration_line": 241,
+          "declaration_line": 252,
           "lines": [
-            254
+            265
           ]
         },
         {
@@ -188958,15 +188515,15 @@
         31,
         37,
         112,
-        187,
-        211,
-        217,
-        232,
-        252,
-        270,
-        271,
-        276,
-        294
+        197,
+        222,
+        228,
+        243,
+        263,
+        281,
+        282,
+        287,
+        305
       ],
       "owners": [
         {
@@ -188979,53 +188536,53 @@
         },
         {
           "kind": "function",
-          "name": "func_uvsort_rom_00400308",
-          "declaration_line": 143,
+          "name": "uvSortAllocateGroupForTag",
+          "declaration_line": 153,
           "lines": [
-            187
+            197
           ]
         },
         {
           "kind": "function",
           "name": "uvSortAppendCallback",
-          "declaration_line": 265,
+          "declaration_line": 276,
           "lines": [
-            270,
-            271,
-            276
+            281,
+            282,
+            287
           ]
         },
         {
           "kind": "function",
           "name": "uvSortAttachChannelCallbacks",
-          "declaration_line": 205,
+          "declaration_line": 216,
           "lines": [
-            211,
-            217
+            222,
+            228
           ]
         },
         {
           "kind": "function",
           "name": "uvSortBuildCallbackOrder",
-          "declaration_line": 286,
+          "declaration_line": 297,
           "lines": [
-            294
+            305
           ]
         },
         {
           "kind": "function",
           "name": "uvSortResetCallbackCounts",
-          "declaration_line": 227,
+          "declaration_line": 238,
           "lines": [
-            232
+            243
           ]
         },
         {
           "kind": "function",
           "name": "uvSortRunCurrentGroupCallbacks",
-          "declaration_line": 241,
+          "declaration_line": 252,
           "lines": [
-            252
+            263
           ]
         },
         {
@@ -189061,24 +188618,24 @@
       "symbol": "unk18",
       "lines": [
         39,
-        184,
-        214
+        194,
+        225
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvsort_rom_00400308",
-          "declaration_line": 143,
+          "name": "uvSortAllocateGroupForTag",
+          "declaration_line": 153,
           "lines": [
-            184
+            194
           ]
         },
         {
           "kind": "function",
           "name": "uvSortAttachChannelCallbacks",
-          "declaration_line": 205,
+          "declaration_line": 216,
           "lines": [
-            214
+            225
           ]
         },
         {
@@ -189101,11 +188658,11 @@
         15,
         26,
         111,
-        156,
-        183,
-        210,
-        254,
-        273
+        166,
+        193,
+        221,
+        265,
+        284
       ],
       "owners": [
         {
@@ -189118,35 +188675,35 @@
         },
         {
           "kind": "function",
-          "name": "func_uvsort_rom_00400308",
-          "declaration_line": 143,
+          "name": "uvSortAllocateGroupForTag",
+          "declaration_line": 153,
           "lines": [
-            156,
-            183
+            166,
+            193
           ]
         },
         {
           "kind": "function",
           "name": "uvSortAppendCallback",
-          "declaration_line": 265,
+          "declaration_line": 276,
           "lines": [
-            273
+            284
           ]
         },
         {
           "kind": "function",
           "name": "uvSortAttachChannelCallbacks",
-          "declaration_line": 205,
+          "declaration_line": 216,
           "lines": [
-            210
+            221
           ]
         },
         {
           "kind": "function",
           "name": "uvSortRunCurrentGroupCallbacks",
-          "declaration_line": 241,
+          "declaration_line": 252,
           "lines": [
-            254
+            265
           ]
         },
         {
@@ -189183,56 +188740,56 @@
       "lines": [
         9,
         16,
-        154,
-        162,
+        164,
         172,
-        214,
-        217,
-        274,
-        311,
-        313,
-        316,
-        320,
-        322
+        182,
+        225,
+        228,
+        285,
+        322,
+        324,
+        327,
+        331,
+        333
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvsort_rom_00400308",
-          "declaration_line": 143,
+          "name": "uvSortAllocateGroupForTag",
+          "declaration_line": 153,
           "lines": [
-            154,
-            162,
-            172
+            164,
+            172,
+            182
           ]
         },
         {
           "kind": "function",
           "name": "uvSortAppendCallback",
-          "declaration_line": 265,
+          "declaration_line": 276,
           "lines": [
-            274
+            285
           ]
         },
         {
           "kind": "function",
           "name": "uvSortAttachChannelCallbacks",
-          "declaration_line": 205,
+          "declaration_line": 216,
           "lines": [
-            214,
-            217
+            225,
+            228
           ]
         },
         {
           "kind": "function",
           "name": "uvSortBuildCallbackOrder",
-          "declaration_line": 286,
+          "declaration_line": 297,
           "lines": [
-            311,
-            313,
-            316,
-            320,
-            322
+            322,
+            324,
+            327,
+            331,
+            333
           ]
         },
         {
@@ -189261,9 +188818,9 @@
       "lines": [
         17,
         107,
-        152,
-        153,
-        213
+        162,
+        163,
+        224
       ],
       "owners": [
         {
@@ -189276,19 +188833,19 @@
         },
         {
           "kind": "function",
-          "name": "func_uvsort_rom_00400308",
-          "declaration_line": 143,
+          "name": "uvSortAllocateGroupForTag",
+          "declaration_line": 153,
           "lines": [
-            152,
-            153
+            162,
+            163
           ]
         },
         {
           "kind": "function",
           "name": "uvSortAttachChannelCallbacks",
-          "declaration_line": 205,
+          "declaration_line": 216,
           "lines": [
-            213
+            224
           ]
         },
         {
@@ -189308,50 +188865,50 @@
       "symbol": "unkA",
       "lines": [
         18,
-        157,
-        275,
-        296,
-        300,
-        304,
-        326,
-        347,
-        349
+        167,
+        286,
+        307,
+        311,
+        315,
+        337,
+        358,
+        360
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvsort_rom_00400308",
-          "declaration_line": 143,
+          "name": "uvSortAllocateGroupForTag",
+          "declaration_line": 153,
           "lines": [
-            157
+            167
           ]
         },
         {
           "kind": "function",
           "name": "uvSortAppendCallback",
-          "declaration_line": 265,
+          "declaration_line": 276,
           "lines": [
-            275
+            286
           ]
         },
         {
           "kind": "function",
           "name": "uvSortBuildCallbackOrder",
-          "declaration_line": 286,
+          "declaration_line": 297,
           "lines": [
-            296,
-            300,
-            304,
-            326
+            307,
+            311,
+            315,
+            337
           ]
         },
         {
           "kind": "function",
           "name": "uvSortSetGroupOptions",
-          "declaration_line": 334,
+          "declaration_line": 345,
           "lines": [
-            347,
-            349
+            358,
+            360
           ]
         },
         {
@@ -189372,10 +188929,10 @@
       "lines": [
         19,
         108,
-        171,
-        174,
-        176,
-        249
+        181,
+        184,
+        186,
+        260
       ],
       "owners": [
         {
@@ -189388,20 +188945,20 @@
         },
         {
           "kind": "function",
-          "name": "func_uvsort_rom_00400308",
-          "declaration_line": 143,
+          "name": "uvSortAllocateGroupForTag",
+          "declaration_line": 153,
           "lines": [
-            171,
-            174,
-            176
+            181,
+            184,
+            186
           ]
         },
         {
           "kind": "function",
           "name": "uvSortRunCurrentGroupCallbacks",
-          "declaration_line": 241,
+          "declaration_line": 252,
           "lines": [
-            249
+            260
           ]
         },
         {
@@ -189424,13 +188981,13 @@
         20,
         106,
         131,
-        251,
-        253,
-        270,
-        293,
-        302,
-        312,
-        316
+        262,
+        264,
+        281,
+        304,
+        313,
+        323,
+        327
       ],
       "owners": [
         {
@@ -189444,20 +189001,20 @@
         {
           "kind": "function",
           "name": "uvSortAppendCallback",
-          "declaration_line": 265,
+          "declaration_line": 276,
           "lines": [
-            270
+            281
           ]
         },
         {
           "kind": "function",
           "name": "uvSortBuildCallbackOrder",
-          "declaration_line": 286,
+          "declaration_line": 297,
           "lines": [
-            293,
-            302,
-            312,
-            316
+            304,
+            313,
+            323,
+            327
           ]
         },
         {
@@ -189471,10 +189028,10 @@
         {
           "kind": "function",
           "name": "uvSortRunCurrentGroupCallbacks",
-          "declaration_line": 241,
+          "declaration_line": 252,
           "lines": [
-            251,
-            253
+            262,
+            264
           ]
         },
         {
@@ -200920,26 +200477,26 @@
         22,
         50,
         61,
-        208,
-        242,
-        266,
-        286
+        219,
+        253,
+        277,
+        297
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvSortAppendCallback",
-          "declaration_line": 265,
+          "declaration_line": 276,
           "lines": [
-            266
+            277
           ]
         },
         {
           "kind": "function",
           "name": "uvSortAttachChannelCallbacks",
-          "declaration_line": 205,
+          "declaration_line": 216,
           "lines": [
-            208
+            219
           ]
         },
         {
@@ -200953,17 +200510,17 @@
         {
           "kind": "function",
           "name": "uvSortBuildCallbackOrder",
-          "declaration_line": 286,
+          "declaration_line": 297,
           "lines": [
-            286
+            297
           ]
         },
         {
           "kind": "function",
           "name": "uvSortRunCurrentGroupCallbacks",
-          "declaration_line": 241,
+          "declaration_line": 252,
           "lines": [
-            242
+            253
           ]
         },
         {
@@ -200992,37 +200549,37 @@
       "lines": [
         11,
         20,
-        243,
-        244,
-        245,
-        267,
-        291
+        254,
+        255,
+        256,
+        278,
+        302
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvSortAppendCallback",
-          "declaration_line": 265,
+          "declaration_line": 276,
           "lines": [
-            267
+            278
           ]
         },
         {
           "kind": "function",
           "name": "uvSortBuildCallbackOrder",
-          "declaration_line": 286,
+          "declaration_line": 297,
           "lines": [
-            291
+            302
           ]
         },
         {
           "kind": "function",
           "name": "uvSortRunCurrentGroupCallbacks",
-          "declaration_line": 241,
+          "declaration_line": 252,
           "lines": [
-            243,
-            244,
-            245
+            254,
+            255,
+            256
           ]
         },
         {
@@ -202905,6 +202462,26 @@
       ]
     },
     {
+      "id": "Q-ee8871f30d8c",
+      "kind": "original_quirk",
+      "path": "src/modules/uvsort_rom.c",
+      "symbol": "Allocate the first unused SORT group, record its byte tag, insert its * index into tag order and attach original callbacks for tracked channels. * Return -1 on an encountered existing tag or when no group is available. * RE_ORIGINAL_QUIRK: the scan stops at the first unused entry, before checking * later entries for the same tag; this is not a complete uniqueness search. * RE_UNKNOWN: caller tag uniqueness, group/callback capacity and channel-bit * domain. Trace original group allocators and callback consumers before adding * validation, changing failure behavior or describing tags as unique IDs.",
+      "lines": [
+        145
+      ],
+      "evidence": "Allocate the first unused SORT group, record its byte tag, insert its * index into tag order and attach original callbacks for tracked channels. * Return -1 on an encountered existing tag or when no group is available. * RE_ORIGINAL_QUIRK: the scan stops at the first unused entry, before checking * later entries for the same tag; this is not a complete uniqueness search. * RE_UNKNOWN: caller tag uniqueness, group/callback capacity and channel-bit * domain. Trace original group allocators and callback consumers before adding * validation, changing failure behavior or describing tags as unique IDs.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvSortAllocateGroupForTag",
+          "declaration_line": 153,
+          "lines": [
+            145
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-b5c1c8a3dd7b",
       "kind": "original_quirk",
       "path": "src/modules/uvstring_rom.c",
@@ -203380,16 +202957,36 @@
       "path": "src/modules/replay.c",
       "symbol": "Clear the original replay settings words/timer, seed both random number * generators with 12345 and mark replay active. The two settings words remain * offset-named because their full meaning is not yet established.",
       "lines": [
-        108
+        111
       ],
       "evidence": "Clear the original replay settings words/timer, seed both random number * generators with 12345 and mark replay active. The two settings words remain * offset-named because their full meaning is not yet established.",
       "owners": [
         {
           "kind": "function",
           "name": "replayResetStateAndRandomSeeds",
-          "declaration_line": 111,
+          "declaration_line": 114,
           "lines": [
-            108
+            111
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-9dfd8ffb90df",
+      "kind": "uncertainty_note",
+      "path": "src/modules/replay.c",
+      "symbol": "Store the low eight bits in the shared replay byte; retain the adjacent unknown-purpose contract.",
+      "lines": [
+        104
+      ],
+      "evidence": "Store the low eight bits in the shared replay byte; retain the adjacent unknown-purpose contract.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "replaySetSharedByte",
+          "declaration_line": 104,
+          "lines": [
+            104
           ]
         }
       ]
@@ -204890,16 +204487,16 @@
       "path": "src/modules/uvsort_rom.c",
       "symbol": "Consume zero-terminated option/value pairs. Option one controls * insertion-order mode; unknown option tags consume no value. Callers * must provide the original valid option stream and group index.",
       "lines": [
-        331
+        342
       ],
       "evidence": "Consume zero-terminated option/value pairs. Option one controls * insertion-order mode; unknown option tags consume no value. Callers * must provide the original valid option stream and group index.",
       "owners": [
         {
           "kind": "function",
           "name": "uvSortSetGroupOptions",
-          "declaration_line": 334,
+          "declaration_line": 345,
           "lines": [
-            331
+            342
           ]
         }
       ]
@@ -206018,17 +205615,17 @@
       "path": "src/modules/replay.c",
       "symbol": "unused00",
       "lines": [
-        265,
-        276
+        268,
+        279
       ],
       "owners": [
         {
           "kind": "function",
           "name": "replayCreateThreeRangeControls",
-          "declaration_line": 260,
+          "declaration_line": 263,
           "lines": [
-            265,
-            276
+            268,
+            279
           ]
         }
       ]
@@ -206039,15 +205636,15 @@
       "path": "src/modules/replay.c",
       "symbol": "unused88",
       "lines": [
-        267
+        270
       ],
       "owners": [
         {
           "kind": "function",
           "name": "replayCreateThreeRangeControls",
-          "declaration_line": 260,
+          "declaration_line": 263,
           "lines": [
-            267
+            270
           ]
         }
       ]

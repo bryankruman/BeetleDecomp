@@ -4,7 +4,7 @@
 
 typedef struct UvSort_Exports_s {
     /* 0x00 */ void (*uvSortModuleCleanup)();                      /* inferred */
-    /* 0x04 */ s32 (*func_uvsort_rom_00400308)(u8);                     /* inferred */
+    /* 0x04 */ s32 (*uvSortAllocateGroupForTag)(u8);                     /* inferred */
     /* 0x08 */ void (*uvSortGroupCallbackStub)(s32);                   /* inferred */
     /* 0x0C */ void (*uvSortAttachChannelCallbacks)(s32);                   /* inferred */
     /* 0x10 */ void (*uvSortAppendCallback)(s32, void *(*)(s32, s32), s32, f32); /* inferred */

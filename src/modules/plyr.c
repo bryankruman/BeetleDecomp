@@ -120,9 +120,12 @@ void plyrUpdateMotionAndConditionallyDispatch(void) {
 }
 #line 88 "src/modules/plyr.c"
 
-s32 func_plyr_004022CC(s32 a0) {
-    return D_plyr_00406B28[a0];
+#line 89 "src/modules/plyr.c"
+
+s32 plyrGetIndexedEntryWord(s32 index) { /* Return the caller-indexed word from D_plyr_00406B28. RE_UNKNOWN: entry meaning and valid index domain require original table producers and callers; preserve its s32 result ABI. */
+    return D_plyr_00406B28[index];
 }
+#line 92 "src/modules/plyr.c"
 
 s32 func_plyr_004022E0(s32 arg0)
 {

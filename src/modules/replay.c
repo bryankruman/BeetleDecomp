@@ -99,9 +99,12 @@ void replayPrependPointRadiusRecord(f32 x, f32 y, s32 rawZWord, f32 radius) {
 #line 59 "src/modules/replay.c"
 /* Store the low eight bits of the argument in D_replay_00401B7C.
  * RE_UNKNOWN: shared byte purpose and caller/export contract. */
-void func_replay_004002A8(s32 a0) {
-    D_replay_00401B7C = (u8)a0;
+#line 61 "src/modules/replay.c"
+
+void replaySetSharedByte(s32 value) { /* Store the low eight bits in the shared replay byte; retain the adjacent unknown-purpose contract. */
+    D_replay_00401B7C = (u8)value;
 }
+#line 64 "src/modules/replay.c"
 #line 62 "src/modules/replay.c"
 
 #line 60 "src/modules/replay.c"

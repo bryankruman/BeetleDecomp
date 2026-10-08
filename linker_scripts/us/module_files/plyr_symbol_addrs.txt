@@ -278,3 +278,4 @@ plyrReleaseSharedSoundHandles = 0x00400590; // type:func
 plyrReleaseIndexedSoundHandle = 0x00406604; // type:func
 plyrInvokeMotionNoopAndCarAudioCallback = 0x00402220; // type:func
 plyrUpdateMotionAndConditionallyDispatch = 0x00402268; // type:func
+plyrGetIndexedEntryWord = 0x004022CC; // type:func

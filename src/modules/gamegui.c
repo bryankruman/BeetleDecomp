@@ -75,19 +75,19 @@ void gameGuiRequestStateFiveWithoutMultiplayerAi();
 void gameGuiRequestStateSixAtLeastTwoPlayers();
 void gameGuiInitializeSharedWidgetWhenEnabled(void);
 void gameGuiLoadPaletteThreeAndSelectDebugFont();
-void func_gamegui_00402030();
+void gameGuiSetSharedWord();
 void gameGuiRequestStateNineWithChoiceFlag();
-void func_gamegui_00402074();
-void func_gamegui_00402088();
+void gameGuiRequestStateEight();
+void gameGuiRequestStateEleven();
 void gameGuiRequestStateThree();
 void gameGuiRequestStateFour();
 void gameGuiRequestInitialIntroTrack();
 void gameGuiRequestStateSevenTrack33();
-void func_gamegui_00402130();
-void func_gamegui_00402144();
-void func_gamegui_00402158();
-void func_gamegui_0040216C();
-void func_gamegui_00402180();
+void gameGuiRequestStateTen();
+void gameGuiRequestStateTwelve();
+void gameGuiRequestStateThirteen();
+void gameGuiRequestStateFourteen();
+void gameGuiRequestStateFifteen();
 void gameGuiToggleReplayAndRestartCurrentState();
 void func_gamegui_004021DC();
 void gameGuiRegisterChannelCallback(s32 context);
@@ -131,7 +131,7 @@ void __entrypoint_func_gameGuiInitializeModuleExports(GameGuiExportAddresses *ex
     exports->setDebugByteAddress = (u32) gameGuiSetDebugByteWhenEnabled;
     exports->initializeSharedWidgetAddress = (u32) gameGuiInitializeSharedWidgetWhenEnabled;
     exports->loadPaletteAndSelectFontAddress = (u32) gameGuiLoadPaletteThreeAndSelectDebugFont;
-    exports->storeSharedWordAddress = (u32) func_gamegui_00402030;
+    exports->storeSharedWordAddress = (u32) gameGuiSetSharedWord;
     exports->registerChannelCallbackAddress = (u32) gameGuiRegisterChannelCallback;
     exports->getDebugByteAddress = (u32) gameGuiGetDebugByte;
     exports->debugByteAddress = (u32) &D_gamegui_00402C68;
@@ -333,9 +333,12 @@ void gameGuiLoadPaletteThreeAndSelectDebugFont(void) {
 #line 174 "src/modules/gamegui.c"
 #line 173 "src/modules/gamegui.c"
 
-void func_gamegui_00402030(s32 arg0) {
-    D_gamegui_00402D04 = arg0;
+#line 174 "src/modules/gamegui.c"
+
+void gameGuiSetSharedWord(s32 value) { /* Store the supplied word in D_gamegui_00402D04. RE_UNKNOWN: shared word role and use as callback/context data require original readers and initializer consumers. */
+    D_gamegui_00402D04 = value;
 }
+#line 177 "src/modules/gamegui.c"
 
 #line 178 "src/modules/gamegui.c"
 /* Set the shared choice word to one only when the callback value
@@ -351,13 +354,19 @@ void gameGuiRequestStateNineWithChoiceFlag(s32 choice) {
 }
 #line 186 "src/modules/gamegui.c"
 
-void func_gamegui_00402074(s32 arg0) {
+#line 187 "src/modules/gamegui.c"
+
+void gameGuiRequestStateEight(s32 callbackValue) { /* Request new game state 8; retain the unused s32 callback argument. */
     gGameSettings[0].newGameState = 8;
 }
+#line 190 "src/modules/gamegui.c"
 
-void func_gamegui_00402088(s32 arg0) {
+#line 191 "src/modules/gamegui.c"
+
+void gameGuiRequestStateEleven(s32 callbackValue) { /* Request new game state 11; retain the unused s32 callback argument. */
     gGameSettings[0].newGameState = 0xB;
 }
+#line 194 "src/modules/gamegui.c"
 
 #line 195 "src/modules/gamegui.c"
 /* Request game state three and set shared mode word 0xC to two. */
@@ -396,25 +405,40 @@ void gameGuiRequestStateSevenTrack33(s32 callbackValue) {
 }
 #line 217 "src/modules/gamegui.c"
 
-void func_gamegui_00402130(s32 arg0) {
+#line 218 "src/modules/gamegui.c"
+
+void gameGuiRequestStateTen(s32 callbackValue) { /* Request new game state 10; retain the unused s32 callback argument. */
     gGameSettings[0].newGameState = 0xA;
 }
+#line 221 "src/modules/gamegui.c"
 
-void func_gamegui_00402144(s32 arg0) {
+#line 222 "src/modules/gamegui.c"
+
+void gameGuiRequestStateTwelve(s32 callbackValue) { /* Request new game state 12; retain the unused s32 callback argument. */
     gGameSettings[0].newGameState = 0xC;
 }
+#line 225 "src/modules/gamegui.c"
 
-void func_gamegui_00402158(s32 arg0) {
+#line 226 "src/modules/gamegui.c"
+
+void gameGuiRequestStateThirteen(s32 callbackValue) { /* Request new game state 13; retain the unused s32 callback argument. */
     gGameSettings[0].newGameState = 0xD;
 }
+#line 229 "src/modules/gamegui.c"
 
-void func_gamegui_0040216C(s32 arg0) {
+#line 230 "src/modules/gamegui.c"
+
+void gameGuiRequestStateFourteen(s32 callbackValue) { /* Request new game state 14; retain the unused s32 callback argument. */
     gGameSettings[0].newGameState = 0xE;
 }
+#line 233 "src/modules/gamegui.c"
 
-void func_gamegui_00402180(s32 arg0) {
+#line 234 "src/modules/gamegui.c"
+
+void gameGuiRequestStateFifteen(s32 callbackValue) { /* Request new game state 15; retain the unused s32 callback argument. */
     gGameSettings[0].newGameState = 0xF;
 }
+#line 237 "src/modules/gamegui.c"
 
 #line 238 "src/modules/gamegui.c"
 /* Original empty function; preserve its separate identity and argument ABI.

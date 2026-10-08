@@ -41,7 +41,7 @@ typedef struct UnkStruct_00400C00_s {
 
 void uvSortGraphicsCallbackStub(s32 arg0);
 void uvSortModuleCleanup(void);
-s32 func_uvsort_rom_00400308(u8 arg0);
+s32 uvSortAllocateGroupForTag(u8 arg0);
 void uvSortGroupCallbackStub(s32 arg0);
 void uvSortAttachChannelCallbacks(s32 arg0);
 void uvSortResetCallbackCounts(s32 arg0);
@@ -72,7 +72,7 @@ void __entrypoint_func_uvsort_rom_400000(UvSort_Exports *exports) {
     uvUpdateFileAllocPtr(exports);
     exports->uvSortSetGroupOptions = uvSortSetGroupOptions;
     exports->uvSortModuleCleanup = uvSortModuleCleanup;
-    exports->func_uvsort_rom_00400308 = func_uvsort_rom_00400308;
+    exports->uvSortAllocateGroupForTag = uvSortAllocateGroupForTag;
     exports->uvSortGroupCallbackStub = uvSortGroupCallbackStub;
     exports->uvSortAttachChannelCallbacks = uvSortAttachChannelCallbacks;
     // clang-format off
@@ -140,56 +140,67 @@ void uvSortModuleCleanup(void) {
 }
 #line 134 "src/modules/uvsort_rom.c"
 
-s32 func_uvsort_rom_00400308(u8 arg0) {
-    s32 i;
-    u8 ret;
-    u8 temp_v1;
-    s32 j;
-    s32 sp50;
+#line 135 "src/modules/uvsort_rom.c"
 
-    ret = 0xFF;
-    for (i = 0; i < D_uvsort_rom_00400C10; i++) {
-        if (D_uvsort_rom_00400C14[i].unk9 == 0) {
-            D_uvsort_rom_00400C14[i].unk9 = 1;
-            D_uvsort_rom_00400C14[i].unk8 = arg0;
-            D_uvsort_rom_00400C14[i].unk0 = 0.0f;
-            D_uvsort_rom_00400C14[i].unk4 = 0.0f;
-            D_uvsort_rom_00400C14[i].unkA = 0;
-            ret = i;
+/* Allocate the first unused SORT group, record its byte tag, insert its
+ * index into tag order and attach original callbacks for tracked channels.
+ * Return -1 on an encountered existing tag or when no group is available.
+ * RE_ORIGINAL_QUIRK: the scan stops at the first unused entry, before checking
+ * later entries for the same tag; this is not a complete uniqueness search.
+ * RE_UNKNOWN: caller tag uniqueness, group/callback capacity and channel-bit
+ * domain. Trace original group allocators and callback consumers before adding
+ * validation, changing failure behavior or describing tags as unique IDs. */
+s32 uvSortAllocateGroupForTag(u8 tag) {
+    s32 scanIndex;
+    u8 allocatedGroupIndex;
+    u8 orderedGroupIndex;
+    s32 shiftIndex;
+    s32 channelPropertyValue;
+
+    allocatedGroupIndex = 0xFF;
+    for (scanIndex = 0; scanIndex < D_uvsort_rom_00400C10; scanIndex++) {
+        if (D_uvsort_rom_00400C14[scanIndex].unk9 == 0) {
+            D_uvsort_rom_00400C14[scanIndex].unk9 = 1;
+            D_uvsort_rom_00400C14[scanIndex].unk8 = tag;
+            D_uvsort_rom_00400C14[scanIndex].unk0 = 0.0f;
+            D_uvsort_rom_00400C14[scanIndex].unk4 = 0.0f;
+            D_uvsort_rom_00400C14[scanIndex].unkA = 0;
+            allocatedGroupIndex = scanIndex;
             break;
         }
 
-        if (arg0 == D_uvsort_rom_00400C14[i].unk8) {
+        if (tag == D_uvsort_rom_00400C14[scanIndex].unk8) {
             return -1;
         }
     }
 
-    if (ret == 0xFF) {
+    if (allocatedGroupIndex == 0xFF) {
         return -1;
     }
-    for (i = 0; i < D_uvsort_rom_00400C10; i++) {
-        temp_v1 = D_uvsort_rom_00400C14[i].unkB;
-        if ((temp_v1 == 0xFF) || (arg0 < D_uvsort_rom_00400C14[temp_v1].unk8)) {
-            for (j = D_uvsort_rom_00400C10 - 2; j >= i; j--) {
-                D_uvsort_rom_00400C14[j + 1].unkB = D_uvsort_rom_00400C14[j].unkB;
+    for (scanIndex = 0; scanIndex < D_uvsort_rom_00400C10; scanIndex++) {
+        orderedGroupIndex = D_uvsort_rom_00400C14[scanIndex].unkB;
+        if ((orderedGroupIndex == 0xFF) || (tag < D_uvsort_rom_00400C14[orderedGroupIndex].unk8)) {
+            for (shiftIndex = D_uvsort_rom_00400C10 - 2; shiftIndex >= scanIndex; shiftIndex--) {
+                D_uvsort_rom_00400C14[shiftIndex + 1].unkB = D_uvsort_rom_00400C14[shiftIndex].unkB;
             }
-            D_uvsort_rom_00400C14[i].unkB = ret;
+            D_uvsort_rom_00400C14[scanIndex].unkB = allocatedGroupIndex;
             break;
         }
     }
 
-    for (i = 0; i < D_uvsort_rom_00400C1C; i++) {
-        if ((D_uvsort_rom_00400C18 << i) & 1) {
-            D_uvsort_rom_00400C04->unk4(i, 6, &sp50, 0);
-            if (D_uvsort_rom_00400C00->unk18(sp50, uvSortRunCurrentGroupCallbacks, arg0) != 0) {
+    for (scanIndex = 0; scanIndex < D_uvsort_rom_00400C1C; scanIndex++) {
+        if ((D_uvsort_rom_00400C18 << scanIndex) & 1) {
+            D_uvsort_rom_00400C04->unk4(scanIndex, 6, &channelPropertyValue, 0);
+            if (D_uvsort_rom_00400C00->unk18(channelPropertyValue, uvSortRunCurrentGroupCallbacks, tag) != 0) {
                 continue;
             }
-            D_uvsort_rom_00400C00->unk10(sp50, uvSortRunCurrentGroupCallbacks, 0, arg0);
+            D_uvsort_rom_00400C00->unk10(channelPropertyValue, uvSortRunCurrentGroupCallbacks, 0, tag);
         }
     }
 
-    return ret;
+    return allocatedGroupIndex;
 }
+#line 185 "src/modules/uvsort_rom.c"
 
 #line 186 "src/modules/uvsort_rom.c"
 /* Original empty exported group callback. Preserve its unused

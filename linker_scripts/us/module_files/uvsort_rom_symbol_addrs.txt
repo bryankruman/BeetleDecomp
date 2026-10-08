@@ -58,3 +58,4 @@ uvSortBuildCallbackOrder = 0x00400898; // type:func
 uvSortSetGroupOptions = 0x00400B24; // type:func
 uvSortGraphicsCallbackStub = 0x00400238; // type:func
 uvSortGroupCallbackStub = 0x00400594; // type:func
+uvSortAllocateGroupForTag = 0x00400308; // type:func
