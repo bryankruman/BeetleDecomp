@@ -241,35 +241,38 @@ void uvMat4CopyLinear3x3(Mtx4F *dst, Mtx4F *src) {
  * final copy-back; preserve this redundant alias path and the by-value ABI.
  * RE_UNKNOWN: no named active C caller was found; remaining assembly or
  * opaque module-export callers have not been audited for runtime impact. */
-void uvMat4CopyL2F(Mtx4F *dst, Mtx src) {
-    Mtx4F *dst2 = dst;
+#line 225 "src/modules/uvfmtx_rom.c"
+
+void uvMat4CopyL2F(Mtx4F *destination, Mtx source) {
+    Mtx4F *writeTarget = destination;
     s32 pad;
-    Mtx4F sp18;
+    Mtx4F temporaryMatrix;
 
-    if (dst2 == (Mtx4F *) &src) {
-        dst2 = &sp18;
+    if (writeTarget == (Mtx4F *) &source) {
+        writeTarget = &temporaryMatrix;
     }
-    dst2->m[0][0] = L2F(src, 0, 0);
-    dst2->m[0][1] = L2F(src, 0, 1);
-    dst2->m[0][2] = L2F(src, 0, 2);
-    dst2->m[0][3] = L2F(src, 0, 3);
-    dst2->m[1][0] = L2F(src, 1, 0);
-    dst2->m[1][1] = L2F(src, 1, 1);
-    dst2->m[1][2] = L2F(src, 1, 2);
-    dst2->m[1][3] = L2F(src, 1, 3);
-    dst2->m[2][0] = L2F(src, 2, 0);
-    dst2->m[2][1] = L2F(src, 2, 1);
-    dst2->m[2][2] = L2F(src, 2, 2);
-    dst2->m[2][3] = L2F(src, 2, 3);
-    dst2->m[3][0] = L2F(src, 3, 0);
-    dst2->m[3][1] = L2F(src, 3, 1);
-    dst2->m[3][2] = L2F(src, 3, 2);
-    dst2->m[3][3] = L2F(src, 3, 3);
+    writeTarget->m[0][0] = L2F(source, 0, 0);
+    writeTarget->m[0][1] = L2F(source, 0, 1);
+    writeTarget->m[0][2] = L2F(source, 0, 2);
+    writeTarget->m[0][3] = L2F(source, 0, 3);
+    writeTarget->m[1][0] = L2F(source, 1, 0);
+    writeTarget->m[1][1] = L2F(source, 1, 1);
+    writeTarget->m[1][2] = L2F(source, 1, 2);
+    writeTarget->m[1][3] = L2F(source, 1, 3);
+    writeTarget->m[2][0] = L2F(source, 2, 0);
+    writeTarget->m[2][1] = L2F(source, 2, 1);
+    writeTarget->m[2][2] = L2F(source, 2, 2);
+    writeTarget->m[2][3] = L2F(source, 2, 3);
+    writeTarget->m[3][0] = L2F(source, 3, 0);
+    writeTarget->m[3][1] = L2F(source, 3, 1);
+    writeTarget->m[3][2] = L2F(source, 3, 2);
+    writeTarget->m[3][3] = L2F(source, 3, 3);
 
-    if (dst2 == (Mtx4F *) &src) {
-        uvMat4FCopy(dst, &sp18);
+    if (writeTarget == (Mtx4F *) &source) {
+        uvMat4FCopy(destination, &temporaryMatrix);
     }
 }
+#line 254 "src/modules/uvfmtx_rom.c"
 #line 247 "src/modules/uvfmtx_rom.c"
 
 #line 248 "src/modules/uvfmtx_rom.c"
@@ -280,9 +283,11 @@ void uvMat4CopyL2F(Mtx4F *dst, Mtx src) {
  * and leaves caller storage unchanged. Preserve this original behavior.
  * RE_UNKNOWN: the four observed active C callers use separate storage;
  * remaining assembly and opaque export callers may have other contracts. */
-void uvMat4CopyF2L(Mtx *dst, Mtx4F *src) {
-    Mtx_u *dst2;
-    Mtx spA0;
+#line 255 "src/modules/uvfmtx_rom.c"
+
+void uvMat4CopyF2L(Mtx *destination, Mtx4F *source) {
+    Mtx_u *writeTarget;
+    Mtx temporaryMatrix;
     s32 xx;
     s32 yx;
     s32 zx;
@@ -300,110 +305,111 @@ void uvMat4CopyF2L(Mtx *dst, Mtx4F *src) {
     s32 zw;
     s32 ww;
 
-    dst2 = (Mtx_u *) dst;
-    if ((Mtx4F *) dst2 == src) {
-        dst2 = (Mtx_u *) &spA0;
+    writeTarget = (Mtx_u *) destination;
+    if ((Mtx4F *) writeTarget == source) {
+        writeTarget = (Mtx_u *) &temporaryMatrix;
     }
-    xx = (s32) ((src->m[0][0] * 65536.0f) + 0.5f);
-    dst2->i[0][0] = xx >> 0x10;
-    dst2->f[0][0] = xx & 0xFFFF;
-    yx = (s32) ((src->m[0][1] * 65536.0f) + 0.5f);
-    dst2->i[0][1] = yx >> 0x10;
-    dst2->f[0][1] = yx & 0xFFFF;
-    zx = (s32) ((src->m[0][2] * 65536.0f) + 0.5f);
-    dst2->i[0][2] = zx >> 0x10;
-    dst2->f[0][2] = zx & 0xFFFF;
-    wx = (s32) ((src->m[0][3] * 65536.0f) + 0.5f);
-    dst2->i[0][3] = wx >> 0x10;
-    dst2->f[0][3] = wx & 0xFFFF;
-    xy = (s32) ((src->m[1][0] * 65536.0f) + 0.5f);
-    dst2->i[1][0] = xy >> 0x10;
-    dst2->f[1][0] = xy & 0xFFFF;
-    yy = (s32) ((src->m[1][1] * 65536.0f) + 0.5f);
-    dst2->i[1][1] = yy >> 0x10;
-    dst2->f[1][1] = yy & 0xFFFF;
-    zy = (s32) ((src->m[1][2] * 65536.0f) + 0.5f);
-    dst2->i[1][2] = zy >> 0x10;
-    dst2->f[1][2] = zy & 0xFFFF;
-    wy = (s32) ((src->m[1][3] * 65536.0f) + 0.5f);
-    dst2->i[1][3] = wy >> 0x10;
-    dst2->f[1][3] = wy & 0xFFFF;
-    xz = (s32) ((src->m[2][0] * 65536.0f) + 0.5f);
-    dst2->i[2][0] = xz >> 0x10;
-    dst2->f[2][0] = xz & 0xFFFF;
-    yz = (s32) ((src->m[2][1] * 65536.0f) + 0.5f);
-    dst2->i[2][1] = yz >> 0x10;
-    dst2->f[2][1] = yz & 0xFFFF;
-    zz = (s32) ((src->m[2][2] * 65536.0f) + 0.5f);
-    dst2->i[2][2] = zz >> 0x10;
-    dst2->f[2][2] = zz & 0xFFFF;
-    wz = (s32) ((src->m[2][3] * 65536.0f) + 0.5f);
-    dst2->i[2][3] = wz >> 0x10;
-    dst2->f[2][3] = wz & 0xFFFF;
+    xx = (s32) ((source->m[0][0] * 65536.0f) + 0.5f);
+    writeTarget->i[0][0] = xx >> 0x10;
+    writeTarget->f[0][0] = xx & 0xFFFF;
+    yx = (s32) ((source->m[0][1] * 65536.0f) + 0.5f);
+    writeTarget->i[0][1] = yx >> 0x10;
+    writeTarget->f[0][1] = yx & 0xFFFF;
+    zx = (s32) ((source->m[0][2] * 65536.0f) + 0.5f);
+    writeTarget->i[0][2] = zx >> 0x10;
+    writeTarget->f[0][2] = zx & 0xFFFF;
+    wx = (s32) ((source->m[0][3] * 65536.0f) + 0.5f);
+    writeTarget->i[0][3] = wx >> 0x10;
+    writeTarget->f[0][3] = wx & 0xFFFF;
+    xy = (s32) ((source->m[1][0] * 65536.0f) + 0.5f);
+    writeTarget->i[1][0] = xy >> 0x10;
+    writeTarget->f[1][0] = xy & 0xFFFF;
+    yy = (s32) ((source->m[1][1] * 65536.0f) + 0.5f);
+    writeTarget->i[1][1] = yy >> 0x10;
+    writeTarget->f[1][1] = yy & 0xFFFF;
+    zy = (s32) ((source->m[1][2] * 65536.0f) + 0.5f);
+    writeTarget->i[1][2] = zy >> 0x10;
+    writeTarget->f[1][2] = zy & 0xFFFF;
+    wy = (s32) ((source->m[1][3] * 65536.0f) + 0.5f);
+    writeTarget->i[1][3] = wy >> 0x10;
+    writeTarget->f[1][3] = wy & 0xFFFF;
+    xz = (s32) ((source->m[2][0] * 65536.0f) + 0.5f);
+    writeTarget->i[2][0] = xz >> 0x10;
+    writeTarget->f[2][0] = xz & 0xFFFF;
+    yz = (s32) ((source->m[2][1] * 65536.0f) + 0.5f);
+    writeTarget->i[2][1] = yz >> 0x10;
+    writeTarget->f[2][1] = yz & 0xFFFF;
+    zz = (s32) ((source->m[2][2] * 65536.0f) + 0.5f);
+    writeTarget->i[2][2] = zz >> 0x10;
+    writeTarget->f[2][2] = zz & 0xFFFF;
+    wz = (s32) ((source->m[2][3] * 65536.0f) + 0.5f);
+    writeTarget->i[2][3] = wz >> 0x10;
+    writeTarget->f[2][3] = wz & 0xFFFF;
 
     // Debug code from PilotWings 64
 #ifdef UV_DEBUG
-    if (src->m[3][0] > 32767.0f) {
-        dst2->i[3][0] = 0x7FFF;
-        _uvDebugPrintf("s+12 overfow: %f\n", src->m[3][0]);
+    if (source->m[3][0] > 32767.0f) {
+        writeTarget->i[3][0] = 0x7FFF;
+        _uvDebugPrintf("s+12 overfow: %f\n", source->m[3][0]);
         *(s16 *) 1 = 0;
-    } else if (src->m[3][0] < -32767.0f) {
-        *(s16 *) &dst2->i[3][0] = -0x8000;
-        _uvDebugPrintf("s+12 overfow: %f\n", src->m[3][0]);
+    } else if (source->m[3][0] < -32767.0f) {
+        *(s16 *) &writeTarget->i[3][0] = -0x8000;
+        _uvDebugPrintf("s+12 overfow: %f\n", source->m[3][0]);
         *(s16 *) 1 = 0;
     } else {
-        xw = (s32) ((src->m[3][0] * 65536.0f) + 0.5f);
-        dst2->i[3][0] = xw >> 0x10;
-        dst2->f[3][0] = xw & 0xFFFF;
+        xw = (s32) ((source->m[3][0] * 65536.0f) + 0.5f);
+        writeTarget->i[3][0] = xw >> 0x10;
+        writeTarget->f[3][0] = xw & 0xFFFF;
     }
 
-    if (src->m[3][1] > 32767.0f) {
-        dst2->i[3][1] = 0x7FFF;
-        _uvDebugPrintf("s+13 overfow: %f\n", src->m[3][1]);
+    if (source->m[3][1] > 32767.0f) {
+        writeTarget->i[3][1] = 0x7FFF;
+        _uvDebugPrintf("s+13 overfow: %f\n", source->m[3][1]);
         *(s16 *) 1 = 0;
-    } else if (src->m[3][1] < -32767.0f) {
-        *(s16 *) &dst2->i[3][1] = -0x8000;
-        _uvDebugPrintf("s+13 overfow: %f\n", src->m[3][1]);
+    } else if (source->m[3][1] < -32767.0f) {
+        *(s16 *) &writeTarget->i[3][1] = -0x8000;
+        _uvDebugPrintf("s+13 overfow: %f\n", source->m[3][1]);
         *(s16 *) 1 = 0;
     } else {
-        yw = (s32) ((src->m[3][1] * 65536.0f) + 0.5f);
-        dst2->i[3][1] = yw >> 0x10;
-        dst2->f[3][1] = yw & 0xFFFF;
+        yw = (s32) ((source->m[3][1] * 65536.0f) + 0.5f);
+        writeTarget->i[3][1] = yw >> 0x10;
+        writeTarget->f[3][1] = yw & 0xFFFF;
     }
 
-    if (src->m[3][2] > 32767.0f) {
-        dst2->i[3][2] = 0x7FFF;
-        _uvDebugPrintf("s+14 overfow: %f\n", src->m[3][2]);
+    if (source->m[3][2] > 32767.0f) {
+        writeTarget->i[3][2] = 0x7FFF;
+        _uvDebugPrintf("s+14 overfow: %f\n", source->m[3][2]);
         *(s16 *) 1 = 0;
-    } else if (src->m[3][2] < -32767.0f) {
-        *(s16 *) &dst2->i[3][2] = -0x8000;
-        _uvDebugPrintf("s+14 overfow: %f\n", src->m[3][2]);
+    } else if (source->m[3][2] < -32767.0f) {
+        *(s16 *) &writeTarget->i[3][2] = -0x8000;
+        _uvDebugPrintf("s+14 overfow: %f\n", source->m[3][2]);
         *(s16 *) 1 = 0;
     } else {
-        zw = (s32) ((src->m[3][2] * 65536.0f) + 0.5f);
-        dst2->i[3][2] = zw >> 0x10;
-        dst2->f[3][2] = zw & 0xFFFF;
+        zw = (s32) ((source->m[3][2] * 65536.0f) + 0.5f);
+        writeTarget->i[3][2] = zw >> 0x10;
+        writeTarget->f[3][2] = zw & 0xFFFF;
     }
 #else
-    xw = (s32) ((src->m[3][0] * 65536.0f) + 0.5f);
-    dst2->i[3][0] = xw >> 0x10;
-    dst2->f[3][0] = xw & 0xFFFF;
+    xw = (s32) ((source->m[3][0] * 65536.0f) + 0.5f);
+    writeTarget->i[3][0] = xw >> 0x10;
+    writeTarget->f[3][0] = xw & 0xFFFF;
 
-    yw = (s32) ((src->m[3][1] * 65536.0f) + 0.5f);
-    dst2->i[3][1] = yw >> 0x10;
-    dst2->f[3][1] = yw & 0xFFFF;
+    yw = (s32) ((source->m[3][1] * 65536.0f) + 0.5f);
+    writeTarget->i[3][1] = yw >> 0x10;
+    writeTarget->f[3][1] = yw & 0xFFFF;
 
-    zw = (s32) ((src->m[3][2] * 65536.0f) + 0.5f);
-    dst2->i[3][2] = zw >> 0x10;
-    dst2->f[3][2] = zw & 0xFFFF;
+    zw = (s32) ((source->m[3][2] * 65536.0f) + 0.5f);
+    writeTarget->i[3][2] = zw >> 0x10;
+    writeTarget->f[3][2] = zw & 0xFFFF;
 #endif
-    ww = (s32) ((src->m[3][3] * 65536.0f) + 0.5f);
-    dst2->i[3][3] = ww >> 0x10;
-    dst2->f[3][3] = ww & 0xFFFF;
-    if ((Mtx4F *) dst2 == src) {
-        sUvImtxExports->uvIMtxCopy(dst, spA0);
+    ww = (s32) ((source->m[3][3] * 65536.0f) + 0.5f);
+    writeTarget->i[3][3] = ww >> 0x10;
+    writeTarget->f[3][3] = ww & 0xFFFF;
+    if ((Mtx4F *) writeTarget == source) {
+        sUvImtxExports->uvIMtxCopy(destination, temporaryMatrix);
     }
 }
+#line 379 "src/modules/uvfmtx_rom.c"
 #line 372 "src/modules/uvfmtx_rom.c"
 
 void uvMat4SetIdentity(Mtx4F *dst) {
@@ -877,26 +883,29 @@ void uvMat4BuildOrthographicProjection(Mtx4F *destination, f32 left, f32 right, 
 }
 #line 784 "src/modules/uvfmtx_rom.c"
 
-void uvMat4SetOrtho(Mtx4F *arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4) {
-    arg0->m[0][0] = 2.0f / (arg2 - arg1);
-    arg0->m[1][1] = 2.0f / (arg4 - arg3);
-    arg0->m[2][2] = -1.0f;
-    arg0->m[3][0] = -(arg2 + arg1) / (arg2 - arg1);
-    arg0->m[3][1] = -(arg4 + arg3) / (arg4 - arg3);
+#line 785 "src/modules/uvfmtx_rom.c"
 
-    arg0->m[0][1] = 0.0f;
-    arg0->m[0][2] = 0.0f;
-    arg0->m[0][3] = 0.0f;
-    arg0->m[1][0] = 0.0f;
-    arg0->m[1][2] = 0.0f;
-    arg0->m[1][3] = 0.0f;
-    arg0->m[2][0] = 0.0f;
-    arg0->m[2][1] = 0.0f;
-    arg0->m[2][3] = 0.0f;
-    arg0->m[3][2] = 0.0f;
-    arg0->m[3][3] = 1.0f;
-    uvMat4RotateAxis(arg0, 1.5707963f, 0x78);
+void uvMat4SetOrtho(Mtx4F *matrix, f32 firstXBound, f32 secondXBound, f32 firstYBound, f32 secondYBound) {
+    matrix->m[0][0] = 2.0f / (secondXBound - firstXBound);
+    matrix->m[1][1] = 2.0f / (secondYBound - firstYBound);
+    matrix->m[2][2] = -1.0f;
+    matrix->m[3][0] = -(secondXBound + firstXBound) / (secondXBound - firstXBound);
+    matrix->m[3][1] = -(secondYBound + firstYBound) / (secondYBound - firstYBound);
+
+    matrix->m[0][1] = 0.0f;
+    matrix->m[0][2] = 0.0f;
+    matrix->m[0][3] = 0.0f;
+    matrix->m[1][0] = 0.0f;
+    matrix->m[1][2] = 0.0f;
+    matrix->m[1][3] = 0.0f;
+    matrix->m[2][0] = 0.0f;
+    matrix->m[2][1] = 0.0f;
+    matrix->m[2][3] = 0.0f;
+    matrix->m[3][2] = 0.0f;
+    matrix->m[3][3] = 1.0f;
+    uvMat4RotateAxis(matrix, 1.5707963f, 0x78);
 }
+#line 805 "src/modules/uvfmtx_rom.c"
 
 #line 806 "src/modules/uvfmtx_rom.c"
 /* Build a look-at transform from eye, target and up-vector coordinates.
@@ -1202,19 +1211,22 @@ void uvMat4GetDirectionAngles(Mtx4F *matrix, f32 *first, f32 *second, f32 *third
 #line 1052 "src/modules/uvfmtx_rom.c"
 /* Extract the original three direction angles and translation vector.
  * Keep its square-sum order, which differs from the scalar-output accessor. */
+#line 1054 "src/modules/uvfmtx_rom.c"
+
 void uvMat4GetTranslationAndDirectionAngles(Mtx4F *matrix, Vec3F *translation, Vec3F *angles) {
-    f32 temp_fa1;
-    f32 temp_fv1;
+    f32 rowOneY;
+    f32 rowOneX;
 
     angles->x = sUvMathExports->uvAtan2F(-matrix->m[1][0], matrix->m[1][1]);
-    temp_fv1 = matrix->m[1][0];
-    temp_fa1 = matrix->m[1][1];
-    angles->y = sUvMathExports->uvAtan2F(matrix->m[1][2], sUvMathExports->uvSqrtf(SQ(temp_fa1) + SQ(temp_fv1)));
+    rowOneX = matrix->m[1][0];
+    rowOneY = matrix->m[1][1];
+    angles->y = sUvMathExports->uvAtan2F(matrix->m[1][2], sUvMathExports->uvSqrtf(SQ(rowOneY) + SQ(rowOneX)));
     angles->z = sUvMathExports->uvAtan2F(-matrix->m[0][2], matrix->m[2][2]);
     translation->x = matrix->m[3][0];
     translation->y = matrix->m[3][1];
     translation->z = matrix->m[3][2];
 }
+#line 1067 "src/modules/uvfmtx_rom.c"
 #line 1065 "src/modules/uvfmtx_rom.c"
 
 #line 1066 "src/modules/uvfmtx_rom.c"

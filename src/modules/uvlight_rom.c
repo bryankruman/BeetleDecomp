@@ -184,17 +184,20 @@ void uvLightResetSelectionCache(s32 unusedContext) {
 }
 #line 80 "src/modules/uvlight_rom.c"
 
-void uvLightSwapBuffers(s32 arg0) {
-    s32 temp_t6;
-    s32 temp_t7;
+#line 81 "src/modules/uvlight_rom.c"
 
-    temp_t6 = D_uvlight_rom_00401738;
+void uvLightSwapBuffers(s32 unusedContext) {
+    s32 firstBufferAddress;
+    s32 secondBufferAddress;
+
+    firstBufferAddress = D_uvlight_rom_00401738;
     D_uvlight_rom_00401738 = D_uvlight_rom_0040173C;
-    temp_t7 = D_uvlight_rom_00401740;
-    D_uvlight_rom_0040173C = temp_t6;
+    secondBufferAddress = D_uvlight_rom_00401740;
+    D_uvlight_rom_0040173C = firstBufferAddress;
     D_uvlight_rom_00401740 = D_uvlight_rom_00401744;
-    D_uvlight_rom_00401744 = temp_t7;
+    D_uvlight_rom_00401744 = secondBufferAddress;
 }
+#line 92 "src/modules/uvlight_rom.c"
 
 void uvSetLightColor(s32 n, u32 packedColor) {
     Gfx **gdl;
@@ -327,16 +330,18 @@ s32 uvLightAllocateDirectionalSet(void) {
 /* For a valid channel, update ambient colors of referenced records
  * from each record baseline plus its component scales times the supplied
  * triple. Preserve original arithmetic order and record ownership. */
+#line 214 "src/modules/uvlight_rom.c"
+
 void uvLightUpdateChannelAmbient(s32 channel, f32 red, f32 green, f32 blue) {
     s32 i;
-    s32 temp_s1;
+    s32 recordCountSnapshot;
     UnkStruct_uvlight_rom_00401758 *record;
 
     if ((channel < 0) || (channel >= D_uvlight_rom_00401748)) {
         return;
     }
 
-    temp_s1 = D_uvlight_rom_00401794;
+    recordCountSnapshot = D_uvlight_rom_00401794;
     for (i = 0; i < D_uvlight_rom_00401794; i++) {
         record = &D_uvlight_rom_00401758[i];
         if (record->refCount == 0) {
@@ -349,6 +354,7 @@ void uvLightUpdateChannelAmbient(s32 channel, f32 red, f32 green, f32 blue) {
                                   record->unk0[2] + (blue * record->unk20));
     }
 }
+#line 236 "src/modules/uvlight_rom.c"
 #line 233 "src/modules/uvlight_rom.c"
 
 #line 234 "src/modules/uvlight_rom.c"

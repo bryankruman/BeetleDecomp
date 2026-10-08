@@ -10,7 +10,7 @@ extern u8 func_airec_00400110[];
 /* Original helper consumes one writable table address; result is unused. */
 void func_airec_00400000(void *);
 extern s32 D_airec_00400B6C;
-typedef struct { s32 count; struct { u32 value; f32 ratio; } pairs[20]; } AirecPairBuffer;
+typedef struct { s32 count; struct { f32 value; f32 ratio; } pairs[20]; } AirecPairBuffer;
 typedef struct { u8 unk00[0x18]; void (*set)(s32, s32); } AirecTdataExports;
 extern void *gTdataExports;
 extern s32 D_airec_00400868, D_airec_00400968, D_airec_00400A68, D_airec_004007F0, D_airec_004007FC, D_airec_00400808, D_airec_00400B68, D_airec_00400B64;
@@ -51,7 +51,17 @@ void func_airec_00400108(void) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/airec/func_airec_00400110.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/airec/func_airec_0040046C.s")
-
+/*
+ * RE_UNKNOWN: recorded f32 key/ratio units, source/output backing capacities,
+ * count/alias/lifetime guarantees and discarded-result purpose; trace original
+ * table/count writers, every caller and consumers before changing the original
+ * count-at-8 reloads, 12-byte input/8-byte output strides or copying bound.
+ * Preserve the f32 key bit-copy and ordered positive-denominator test: NaN and
+ * nonpositive denominators yield +0.0f. The existing 20-pair caller view is not
+ * a general capacity guarantee. Readable recovery remains parked because its
+ * cursor register differs; require full original instruction equivalence.
+ */
+#line 20 "src/modules/airec.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/airec/func_airec_00400524.s")
 
 #line 22 "src/modules/airec.c"

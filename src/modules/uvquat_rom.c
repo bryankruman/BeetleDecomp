@@ -97,38 +97,41 @@ void uvQuatFromRotationMatrix(Quat* quat, Mtx4F* matrix) {
 }
 #line 63 "src/modules/uvquat_rom.c"
 
+#line 64 "src/modules/uvquat_rom.c"
+
 void uvQuatFromEuler(Quat *quat, f32 x, f32 y, f32 z) {
-    f32 temp_ft4;
-    f32 sp58;
-    f32 temp_fa1;
-    f32 temp_fs0;
-    f32 sp4C;
-    f32 sp48;
-    f32 temp_fs1;
-    f32 temp_fv0;
-    f32 temp_fv1;
+    f32 cosYTimesSinZ;
+    f32 cosAdjustedY;
+    f32 cosYTimesCosZ;
+    f32 xTerm; /* Adjusted x half-angle, then its cosine. */
+    f32 sinAdjustedY;
+    f32 sinAdjustedZ;
+    f32 sinAdjustedX;
+    f32 cosAdjustedZ;
+    f32 sinYTimesSinZ;
     f32 pad;
-    f32 temp_fa0;
+    f32 yTerm; /* Negative y half-angle, then sinAdjustedY*cosAdjustedZ. */
 
-    temp_fs0 = (x + 1.5707963f) * 0.5f;
-    temp_fs1 = D_uvquat_rom_00400B50->uvSinF(temp_fs0);
-    temp_fs0 = D_uvquat_rom_00400B50->uvCosF(temp_fs0);
-    temp_fa0 = -y * 0.5f;
-    sp4C = D_uvquat_rom_00400B50->uvSinF(temp_fa0);
-    sp58 = D_uvquat_rom_00400B50->uvCosF(temp_fa0);
+    xTerm = (x + 1.5707963f) * 0.5f;
+    sinAdjustedX = D_uvquat_rom_00400B50->uvSinF(xTerm);
+    xTerm = D_uvquat_rom_00400B50->uvCosF(xTerm);
+    yTerm = -y * 0.5f;
+    sinAdjustedY = D_uvquat_rom_00400B50->uvSinF(yTerm);
+    cosAdjustedY = D_uvquat_rom_00400B50->uvCosF(yTerm);
 
-    sp48 = D_uvquat_rom_00400B50->uvSinF(((z - 3.1415927f) * 0.5f));
-    temp_fv0 = D_uvquat_rom_00400B50->uvCosF(((z - 3.1415927f) * 0.5f));
-    temp_fv1 = sp4C * sp48;
-    temp_fa0 = sp4C * temp_fv0;
-    temp_fa1 = sp58 * temp_fv0;
-    temp_ft4 = sp58 * sp48;
+    sinAdjustedZ = D_uvquat_rom_00400B50->uvSinF(((z - 3.1415927f) * 0.5f));
+    cosAdjustedZ = D_uvquat_rom_00400B50->uvCosF(((z - 3.1415927f) * 0.5f));
+    sinYTimesSinZ = sinAdjustedY * sinAdjustedZ;
+    yTerm = sinAdjustedY * cosAdjustedZ;
+    cosYTimesCosZ = cosAdjustedY * cosAdjustedZ;
+    cosYTimesSinZ = cosAdjustedY * sinAdjustedZ;
 
-    quat->x = (temp_fs0 * temp_fa1) + (temp_fs1 * temp_fv1);
-    quat->y = (temp_fs0 * temp_ft4) - (temp_fs1 * temp_fa0);
-    quat->z = (temp_fs0 * temp_fa0) + (temp_fs1 * temp_ft4);
-    quat->w = (-temp_fs0 * temp_fv1) + (temp_fs1 * temp_fa1);
+    quat->x = (xTerm * cosYTimesCosZ) + (sinAdjustedX * sinYTimesSinZ);
+    quat->y = (xTerm * cosYTimesSinZ) - (sinAdjustedX * yTerm);
+    quat->z = (xTerm * yTerm) + (sinAdjustedX * cosYTimesSinZ);
+    quat->w = (-xTerm * sinYTimesSinZ) + (sinAdjustedX * cosYTimesCosZ);
 }
+#line 96 "src/modules/uvquat_rom.c"
 
 #line 97 "src/modules/uvquat_rom.c"
 #line 97 "src/modules/uvquat_rom.c"

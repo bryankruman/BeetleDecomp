@@ -617,14 +617,16 @@ void uvGfxClearScreen(void) {
     gDPSetFillColor(sGfxDisplayListHead++, 0x10001);
 }
 
-void uvGfxClipRect(uvGfxViewport *vp, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
-    s32 var_a2;
-    s32 var_a3;
+#line 393 "src/modules/uvgfxmgr_rom.c"
 
-    vp->x0 = arg1;
-    vp->x1 = arg2;
-    vp->y0 = arg3;
-    vp->y1 = arg4;
+void uvGfxClipRect(uvGfxViewport *vp, s32 firstXBound, s32 secondXBound, s32 firstYBound, s32 secondYBound) {
+    s32 horizontalSpan;
+    s32 verticalSpan;
+
+    vp->x0 = firstXBound;
+    vp->x1 = secondXBound;
+    vp->y0 = firstYBound;
+    vp->y1 = secondYBound;
     if (vp->x0 < 0) {
         vp->x0 = 0;
     } else if (vp->x0 > sScreenWidth) {
@@ -666,15 +668,15 @@ void uvGfxClipRect(uvGfxViewport *vp, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
         vp->unk6 = sScreenHeight - 1;
     }
 
-    var_a2 = vp->unk2 - vp->unk0;
-    var_a3 = vp->unk6 - vp->unk4;
+    horizontalSpan = vp->unk2 - vp->unk0;
+    verticalSpan = vp->unk6 - vp->unk4;
 
-    vp->vp.vp.vscale[0] = (var_a2 << 1);
-    vp->vp.vp.vscale[1] = (var_a3 << 1);
+    vp->vp.vp.vscale[0] = (horizontalSpan << 1);
+    vp->vp.vp.vscale[1] = (verticalSpan << 1);
     vp->vp.vp.vscale[2] = 0x1FF;
     vp->vp.vp.vscale[3] = 0;
-    vp->vp.vp.vtrans[0] = (u16) ((vp->unk0 + (var_a2 >> 1)) & 0xFFFF) << 2;
-    vp->vp.vp.vtrans[1] = (u16) (((sScreenHeight - vp->unk4) - (var_a3 >> 1)) & 0xFFFF) << 2;
+    vp->vp.vp.vtrans[0] = (u16) ((vp->unk0 + (horizontalSpan >> 1)) & 0xFFFF) << 2;
+    vp->vp.vp.vtrans[1] = (u16) (((sScreenHeight - vp->unk4) - (verticalSpan >> 1)) & 0xFFFF) << 2;
     vp->vp.vp.vtrans[2] = 0x1FF;
     vp->vp.vp.vtrans[3] = 0;
     sGfxClipX0 = vp->x0;
@@ -682,6 +684,7 @@ void uvGfxClipRect(uvGfxViewport *vp, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
     sGfxClipY1 = vp->y0;
     sGfxClipY2 = vp->y1;
 }
+#line 458 "src/modules/uvgfxmgr_rom.c"
 
 #line 459 "src/modules/uvgfxmgr_rom.c"
 /* Configure and emit the next viewport, then advance the viewport cursor.

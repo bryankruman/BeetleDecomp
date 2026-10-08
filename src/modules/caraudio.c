@@ -115,7 +115,7 @@ void carAudioSetHandlePositionAndPitch(UnkStruct_004005C8 *handle, UnkStruct_uve
 #line 92 "src/modules/caraudio.c"
 #line 87 "src/modules/caraudio.c"
 
-/* Forward the caller's emitter to sound export slot 0x70. */
+/* Forward the caller's managed sound handle unchanged to SND export 0x70. */
 #line 89 "src/modules/caraudio.c"
 #line 89 "src/modules/caraudio.c"
 /* Release the managed sound handle through original sound export 0x70.
@@ -136,9 +136,9 @@ void carAudioReleaseHandle(UnkStruct_004005C8 *handle) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_004027A8.s")
 
 #line 101 "src/modules/caraudio.c"
-/* Return one when any of the four source-record words at 0x2D0 is
- * nonzero, otherwise return zero. Preserve the original nonnull source
- * record contract and short-circuit order. */
+/* Test four source words at 0x2D0..0x2DC; return one on first nonzero, else zero.
+ * Preserve the original unchecked state/source dereferences and short-circuit order.
+ * RE_UNKNOWN: valid state/source extent/lifetime and word meanings need original producers/callers. */
 s32 carAudioHasAnySourceSlot(void *state) {
     s32 *slots;
 

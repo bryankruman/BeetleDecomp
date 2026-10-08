@@ -466,18 +466,21 @@ void func_uvgfxstate_rom_00400C68(LookAt* arg0, Hilite* arg1, f32 arg2, f32 arg3
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvgfxstate_rom/func_uvgfxstate_rom_00400C68.s")
 #endif
 
-void uvGfxStateSetFlags(s32 arg0) {
-    s32 temp_v1;
+#line 450 "src/modules/uvgfxstate_rom.c"
 
-    temp_v1 = arg0 | D_uvgfxstate_rom_00402C48;
-    if (temp_v1 != D_uvgfxstate_rom_00402C48) {
-        uvGfxState sp1C;
-        sp1C.state = temp_v1;
-        sp1C.unkC = -1;
-        sp1C.displayList = 0;
-        uvGfxStateDraw(&sp1C);
+void uvGfxStateSetFlags(s32 flagsToSet) {
+    s32 requestedState;
+
+    requestedState = flagsToSet | D_uvgfxstate_rom_00402C48;
+    if (requestedState != D_uvgfxstate_rom_00402C48) {
+        uvGfxState stateUpdate;
+        stateUpdate.state = requestedState;
+        stateUpdate.unkC = -1;
+        stateUpdate.displayList = 0;
+        uvGfxStateDraw(&stateUpdate);
     }
 }
+#line 462 "src/modules/uvgfxstate_rom.c"
 
 #line 463 "src/modules/uvgfxstate_rom.c"
 /* Draw a state update only when clearing the requested bits changes
@@ -496,14 +499,17 @@ void uvGfxClearCurrentStateBits(s32 mask) {
 }
 #line 475 "src/modules/uvgfxstate_rom.c"
 
-void uvGfxStateBindTexture(s32 arg0) {
-    uvGfxState sp18;
+#line 476 "src/modules/uvgfxstate_rom.c"
 
-    sp18.displayList = NULL;
-    sp18.unkC = -1;
-    sp18.state = (D_uvgfxstate_rom_00402C48 & ~0xFFF) | arg0;
-    uvGfxStateDraw(&sp18);
+void uvGfxStateBindTexture(s32 textureStateBits) {
+    uvGfxState stateUpdate;
+
+    stateUpdate.displayList = NULL;
+    stateUpdate.unkC = -1;
+    stateUpdate.state = (D_uvgfxstate_rom_00402C48 & ~0xFFF) | textureStateBits;
+    uvGfxStateDraw(&stateUpdate);
 }
+#line 484 "src/modules/uvgfxstate_rom.c"
 
 #line 485 "src/modules/uvgfxstate_rom.c"
 /* Clear the requested state bits. */
@@ -898,19 +904,22 @@ void uvGfxStatePush(void) {
 }
 
 // uvGfxStatePop
+#line 828 "src/modules/uvgfxstate_rom.c"
+
 void uvGfxStatePop(void) {
     u32 newState;
-    uvGfxState sp1C;
+    uvGfxState stateUpdate;
 
     if (D_uvgfxstate_rom_00402DE8 != 0) {
         D_uvgfxstate_rom_00402DE8--;
         newState = D_uvgfxstate_rom_00402D68[D_uvgfxstate_rom_00402DE8];
-        sp1C.unkC = -1;
-        sp1C.displayList = NULL;
-        sp1C.state = newState;
-        uvGfxStateDraw(&sp1C);
+        stateUpdate.unkC = -1;
+        stateUpdate.displayList = NULL;
+        stateUpdate.state = newState;
+        uvGfxStateDraw(&stateUpdate);
     }
 }
+#line 841 "src/modules/uvgfxstate_rom.c"
 
 #line 842 "src/modules/uvgfxstate_rom.c"
 /* Restore two-cycle shade/pass combination, mark texture sentinel 0xFFF

@@ -187,9 +187,11 @@ void uvModelGetPosm(s32 modelId, s32 partIndex, Mtx4F *posm) {
     posm->m[3][2] /= uvmd->unk10;
 }
 
+#line 171 "src/modules/uvmodel_rom.c"
+
 void uvModelGetProps(s32 modelId, ...) {
-    s32 temp_lo;
-    u8 var_a0;
+    s32 lodIndex;
+    u8 hasStateFlag;
     u32 prop;
     uvModelLOD *modelLod;
     ParsedUVMD *uvmd;
@@ -213,15 +215,15 @@ void uvModelGetProps(s32 modelId, ...) {
             case 5:
                 modelLod = uvmd->unk0->unk0;
                 if (modelLod->unk4 == 0) {
-                    var_a0 = FALSE;
+                    hasStateFlag = FALSE;
                 } else {
                     if (modelLod->stateTable->state & 0x02000000) {
-                        var_a0 = TRUE;
+                        hasStateFlag = TRUE;
                     } else {
-                        var_a0 = FALSE;
+                        hasStateFlag = FALSE;
                     }
                 }
-                *va_arg(args, u8 *) = var_a0;
+                *va_arg(args, u8 *) = hasStateFlag;
                 break;
             case 4:
                 *va_arg(args, s32 *) = uvmd->unk0->unk8;
@@ -236,8 +238,8 @@ void uvModelGetProps(s32 modelId, ...) {
                 *va_arg(args, s32 *) = uvmd->unk5;
                 break;
             case 7:
-                temp_lo = va_arg(args, s32);
-                *va_arg(args, s32 *) = uvmd->unk0->unk0[temp_lo].unk6;
+                lodIndex = va_arg(args, s32);
+                *va_arg(args, s32 *) = uvmd->unk0->unk0[lodIndex].unk6;
                 break;
             case 0:
                 return;
@@ -246,6 +248,7 @@ void uvModelGetProps(s32 modelId, ...) {
         }
     }
 }
+#line 230 "src/modules/uvmodel_rom.c"
 
 #line 231 "src/modules/uvmodel_rom.c"
 /* Scan model thresholds backward, returning the first strict-lower band;
