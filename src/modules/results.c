@@ -3,15 +3,15 @@
 /*__SEEDEXTERNS__*/
 typedef struct {
     /* 0x00 */ char pad0[0x08];
-    /* 0x08 */ void (*unk8)(void *, s16, s32, f32, f32);
+    /* 0x08 */ void (*playManagedSound)(void *, s16, s32, f32, f32);
     /* 0x0C */ void (*unkC)(s16, s32, f32, s32);
     /* 0x10 */ char pad10[0x34];
     /* 0x44 */ void (*unk44)(s32);
     /* 0x48 */ char pad48[0x04];
-    /* 0x4C */ f32 (*unk4C)(void);
+    /* 0x4C */ f32 (*getSpeechVolumeScale)(void);
     /* 0x50 */ char pad50[0x7C];
     /* 0xCC */ void (*unkCC)(void *);
-} SndExp_0040659C;
+} SndExp_0040659C; /* Observed slots; managed-playback status is discarded. RE_UNKNOWN: complete historical export/storage declarations need original registrations and producers. */
 extern f32 D_80025D6C;
 extern f32 D_results_004072AC;
 extern f32 D_results_004076F0;
@@ -300,11 +300,13 @@ s32 resultsGetMappedWordOrFallback(s32 row, s32 column) {
 }
 #line 259 "src/modules/results.c"
 
-/* Space pending results voices by two seconds; use the speech-volume scale and fixed pan rather than deriving either from the timer. */
+#line 260 "src/modules/results.c"
+
+/* Use the original 2.0f spacing and speech-volume scale; immediate playback receives fixed pitch 0.5f. */
 #line 261 "src/modules/results.c"
-/* With speech enabled and a nonzero pending flag, play the requested
- * voice immediately after the two-second spacing window or schedule
- * its remaining delay. Advance the shared voice time and clear the pending flag. */
+/* With speech enabled and pending nonzero, play after the original 2.0f
+ * interval or schedule its converted remaining delay; update time and clear pending.
+ * RE_UNKNOWN: clock/delay units and handle/flag lifetimes need original producers/callers. */
 void resultsPlayPendingVoiceWithSpacing(s16 soundId, s32 *pending) {
     s64 soundHandle;
     f32 delay;
@@ -318,14 +320,15 @@ void resultsPlayPendingVoiceWithSpacing(s16 soundId, s32 *pending) {
     if (*pending != 0) {
         if (delay < 0.0f) {
             delay = 0.0f;
-            ((SndExp_0040659C *)gSndExports)->unk8(&soundHandle, soundId, 0x7FFF, ((SndExp_0040659C *)gSndExports)->unk4C(), 0.5f);
+            ((SndExp_0040659C *)gSndExports)->playManagedSound(&soundHandle, soundId, 0x7FFF, ((SndExp_0040659C *)gSndExports)->getSpeechVolumeScale(), 0.5f);
         } else {
-            ((SndExp_0040659C *)gSndExports)->unkC(soundId, 0x7FFF, ((SndExp_0040659C *)gSndExports)->unk4C(), (s32) (delay * D_results_004072AC));
+            ((SndExp_0040659C *)gSndExports)->unkC(soundId, 0x7FFF, ((SndExp_0040659C *)gSndExports)->getSpeechVolumeScale(), (s32) (delay * D_results_004072AC));
         }
         D_results_004076F0 = D_80025D6C + delay;
         *pending = 0;
     }
 }
+#line 285 "src/modules/results.c"
 #line 282 "src/modules/results.c"
 
 #line 283 "src/modules/results.c"

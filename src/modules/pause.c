@@ -1,5 +1,17 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+#include "uvmath_rom.h"
+extern UvMath_Exports *gUvMathExports;
+/* Observed SND slots only. RE_UNKNOWN: the complete historical caller export
+ * declaration and shared-handle extent/lifetime need original registrations
+ * and every pending-word producer. This is not a complete object layout. */
+typedef struct {
+    u8 opaque00[8];
+    s16 (*playManagedSound)(void *, s16, s32, f32, f32);
+    u8 opaque0C[0x40];
+    f32 (*getSpeechVolumeScale)(void);
+} PauseRandomSoundExports;
+#line 3 "src/modules/pause.c"
 typedef struct { u8 unk00[4]; u8 left, right; } PauseLanguageLatch;
 extern s16 D_pause_00405DF4;
 /*__SEEDEXTERNS__*/
@@ -107,7 +119,7 @@ void func_pause_00402904();
 void func_pause_00402914();
 void func_pause_00402D78();
 void pausePlayPendingSoundF6();
-void func_pause_00403FD0();
+void pausePlayPendingRandomSound(void);
 void pauseStoreSharedActionEight();
 void pauseClearSettingsHalfwordsAndForwardEight();
 void pauseDispatchActionEightOnce();
@@ -642,7 +654,50 @@ void pausePlayPendingSoundF6(void) {
 }
 #line 421 "src/modules/pause.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/pause/func_pause_00403FD0.s")
+#line 422 "src/modules/pause.c"
+
+/* Advance the original random-float generator, truncate its value times three,
+ * then play D8/D9/DA only when the shared pending word is nonzero. Keep each
+ * case's flag read, scale query, reloaded sound table and final clear in order.
+ * The scale provider returns 1.0f; playback receives priority 0x7FFF and the
+ * original pitch 0.5f. RE_ORIGINAL_QUIRK: the playback result is ignored
+ * and the pending word is cleared even when playback reports failure.
+ * RE_UNKNOWN: sound-ID meanings, pending/RNG/handle lifecycles and complete
+ * handle storage need original sound metadata, pending-word producers and
+ * entry callers; do not infer a historical object extent from its address. */
+void pausePlayPendingRandomSound(void) {
+    s32 soundChoice;
+    f32 volumeScale;
+
+    soundChoice = (s32)(gUvMathExports->uvRandFLcg() * 3.0f);
+    switch (soundChoice) {
+        case 0:
+            if (D_pause_00405D40 != 0) {
+                volumeScale = ((PauseRandomSoundExports *)gSndExports)->getSpeechVolumeScale();
+                ((PauseRandomSoundExports *)gSndExports)->playManagedSound(
+                    &D_pause_00405E68, 0xD8, 0x7FFF, volumeScale, 0.5f);
+                D_pause_00405D40 = 0;
+            }
+            break;
+        case 1:
+            if (D_pause_00405D40 != 0) {
+                volumeScale = ((PauseRandomSoundExports *)gSndExports)->getSpeechVolumeScale();
+                ((PauseRandomSoundExports *)gSndExports)->playManagedSound(
+                    &D_pause_00405E68, 0xD9, 0x7FFF, volumeScale, 0.5f);
+                D_pause_00405D40 = 0;
+            }
+            break;
+        case 2:
+            if (D_pause_00405D40 != 0) {
+                volumeScale = ((PauseRandomSoundExports *)gSndExports)->getSpeechVolumeScale();
+                ((PauseRandomSoundExports *)gSndExports)->playManagedSound(
+                    &D_pause_00405E68, 0xDA, 0x7FFF, volumeScale, 0.5f);
+                D_pause_00405D40 = 0;
+            }
+            break;
+    }
+}
+#line 423 "src/modules/pause.c"
 
 #line 424 "src/modules/pause.c"
 #line 424 "src/modules/pause.c"

@@ -130,6 +130,15 @@ void raceReleaseManagedSoundsAndClearBytes(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/race/func_race_00401E04.s")
 
+/* Update shared scalars, then run CARANIM 0x08 on each entry's word-4
+ * pointer; reload entry, its word-0x0C state pointer and state word 0x140.
+ * AI 0x28 consumes no arguments. REPLAY masks 0/0x9000 and 1/0x9000 flank
+ * a saved-count/live-count comparison; success stores gate/state 3, calls
+ * REPLAY 0x10, then writes scalar 5. Preserve those calls and reloads.
+ * RE_UNKNOWN: scalar units, gate/state meanings, count domain/capacity and
+ * state/table ownership/scheduling need original producers/callers. Clean C
+ * remains unmatched; retain assembly pending full byte/relocation proof. */
+#line 96 "src/modules/race.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/race/func_race_004024D0.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/race/func_race_004026D0.s")

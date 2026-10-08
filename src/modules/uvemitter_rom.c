@@ -35,7 +35,7 @@ typedef struct Emitter_s {
     /* 0x83 */ u8 unk83;
     /* 0x84 */ s32 unk84; /* inferred */
     /* 0x88 */ u8 active; // Active
-} Emitter; /* size = 0x8C */
+} Emitter; /* N64 size = 0x90, matching the original array stride. */
 
 typedef struct EmitterSettings_s {
     /* 0x00 */ u16 unk0; /* inferred */

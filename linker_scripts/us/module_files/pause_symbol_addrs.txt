@@ -658,3 +658,4 @@ pauseCopyTrackToByte17FAndRequestStateFourteen = 0x00402630; // type:func
 pauseCopyTrackToByte17EAndRequestStateFourteen = 0x004026A8; // type:func
 pauseStoreSharedActionEight = 0x00404150; // type:func
 pauseClearSettingsHalfwordsAndForwardEight = 0x00404160; // type:func
+pausePlayPendingRandomSound = 0x00403FD0; // type:func

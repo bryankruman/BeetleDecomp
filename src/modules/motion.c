@@ -658,6 +658,15 @@ void motionForwardStateMatrix(void *state) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00413568.s")
 
+/* Gate scaling of scalar 0x988 by count 0x10E0, mode 0xA3C, vector dots
+ * and signed kinds 0xA40/0xA68. Original UVFV 0x18 is a three-single dot
+ * leaf; preserve repeated calls and postcall field reloads. Mode 1 returns
+ * after a successful vector gate even when the input/kind test rejects it.
+ * RE_ORIGINAL_QUIRK: mode-2 kinds 4/6 accept input >= 0; 7/5 require > 0.
+ * RE_UNKNOWN: vector frames/normalization, scalar units, kind/count domains
+ * and state/config lifetime need original producers/callers. Clean C remains
+ * unmatched; retain assembly pending complete byte/relocation proof. */
+#line 283 "src/modules/motion.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00414430.s")
 
 #line 285 "src/modules/motion.c"

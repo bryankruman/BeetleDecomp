@@ -1493,6 +1493,30 @@ void uvDynUpdateNodeTranslationVector(DynResetState *state) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00407DF0.s")
 
+/* Original sphere/query-range refresh. Native 03294 receives the incoming
+ * sphere and node sphere at 0x12DC; it returns zero when the first fits inside
+ * the second, otherwise enlarges/recenters the second and returns one. A
+ * nonzero result rebuilds the stored ranges at 0x12CC..0x12DA: value04 == -1
+ * uses native 10250, FC88 and 107FC; other values conditionally use 9010 and
+ * zero the remaining counts. The zero result first rebinds the existing query
+ * record range through uvDynSetIndexedQueryRecordBank, then optionally
+ * refreshes only the indexed range. Native 10AEC rebinds the parameter/indexed
+ * ranges on every exit path. Count snapshots remain ordered around calls.
+ * RE_ORIGINAL_QUIRK: workspace counts use the pointer saved before 03294,
+ * while later helper arguments reload node offset 0x14. The third incoming
+ * word is homed as 32 bits, but only its low byte controls optional refresh.
+ * Preserve these observed views rather than assuming pointer stability or
+ * replacing the gate with a test of the complete incoming word.
+ * RE_UNKNOWN: value04's enum, vector frames at 0x135C/0x131C, the scalar at
+ * 0x14B4, complete workspace ownership/capacity, attachment validity and the
+ * historical input prototype. Trace original callers, workspace/attachment
+ * producers and range consumers before assigning units or bounds. The clean
+ * draft has all original calls, branch positions and nine complete ordered
+ * relocations, but differs in twelve stack-immediate words: original frame
+ * 48 bytes versus 56, sphere home 40 versus 44, workspace home 44 versus 52
+ * and incoming word home 56 versus 64. Genuine source declaration/lifetime
+ * evidence is needed; do not invent padding or force registers. */
+#line 432 "src/modules/uvdyn_rom.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_004088EC.s")
 
 /* Original node vector-pair query followed by a record-vector offset update.
