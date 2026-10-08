@@ -477,9 +477,23 @@ void tedStoreSelectedRecordByte(s32 unused) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00406280.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00406330.s")
-
+/*
+ * RE_UNKNOWN: second-list backing capacities, count/selection validity, alias and
+ * callback-mutation domains, record word/triple roles and helper effects; verify
+ * allocators, every writer/caller and DOBJ callback lifecycle before rewriting.
+ * RE_ORIGINAL_QUIRK: original DOBJ create returns zero-extended 0xFFFF on pool
+ * exhaustion, but this caller rejects only the full word -1. Exhausted-pool
+ * reachability is unknown; inspect original pool sizing and actual call states.
+ */
+#line 233 "src/modules/ted.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00406508.s")
-
+/* RE_UNKNOWN: second-list backing capacity, selection/count/alias
+ * invariants, word/triple roles and callback mutation lifecycle; verify
+ * allocators, all callers and DOBJ callbacks before changing 16-byte
+ * compaction or the D_ted_00407280 count reload. RE_ORIGINAL_QUIRK: only
+ * negative selection is guarded and byte decrement wraps; producer 6508's
+ * count<20 test does not establish every caller's bounds. */
+#line 235 "src/modules/ted.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00406610.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_0040685C.s")

@@ -1,7 +1,7 @@
 rom:0x64 reloc:MIPS_HI16 symbol:D_game_00402120
 rom:0x78 reloc:MIPS_LO16 symbol:D_game_00402120
-rom:0x68 reloc:MIPS_HI16 symbol:func_game_004001DC
-rom:0x7C reloc:MIPS_LO16 symbol:func_game_004001DC
+rom:0x68 reloc:MIPS_HI16 symbol:gameNoOpModuleCleanup
+rom:0x7C reloc:MIPS_LO16 symbol:gameNoOpModuleCleanup
 rom:0x6C reloc:MIPS_HI16 symbol:func_game_00400DB0
 rom:0x80 reloc:MIPS_LO16 symbol:func_game_00400DB0
 rom:0x70 reloc:MIPS_HI16 symbol:func_game_00401338

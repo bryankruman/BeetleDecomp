@@ -1780,19 +1780,31 @@ s32 uvDynTryAcceptAttachmentRecord(DynCandidateCallbacks *attachment, void *outp
 
 #line 526 "src/modules/uvdyn_rom.c"
 /* RE_ORIGINAL_QUIRK: two original FVEC copies initialize the 12-byte values
- * at SP4C/SP58 before the first ISCT slot 0xA8 call, but the adjacent SP64
- * word is not assigned on that path. The provider 0x4048DC directly reads
- * input+0x18 for flag bits 8/1. Flag bit 2 calls 0x4014FC, which also reads
- * input+0x18 and forwards the word to 0x401558. The second query explicitly
- * stores zero at SP64. These are observed original reads/stores, not proof
- * of a missing historical C initializer or a confirmed player-visible bug.
- * RE_UNKNOWN: caller flags, scratch provenance and reachable helper paths.
- * Trace original flag writers/callers and each invoked query helper before
- * changing storage, adding a default or assigning gameplay consequences.
- * RE_UNKNOWN: endpoint-selector domain. Native low16 zero/nonzero selects
- * the first vector at offsets 0x5C/0x68, but the second source uses the full
- * low16 value times 12. Trace callers and vector-bank allocation bounds
- * before assuming the selector is restricted to zero or one. */
+ * at SP+0x4C/SP+0x58 before the first ISCT slot 0xA8 call, but this caller
+ * does not assign the adjacent SP+0x64 input word. The actual provider
+ * 0x4048DC directly reads input+0x18 for flag bits 8/1; flag bit 2 invokes
+ * 0x4014FC, which forwards that word to 0x401558. Only the fallback query
+ * assigns zero. This proves original read/store timing, not a missing
+ * historical C initializer or a confirmed player-visible bug.
+ * RE_UNKNOWN: caller flags, prior scratch provenance and downstream paths.
+ * Trace original flag writers, attachment producers and each invoked helper
+ * before changing initialization or assigning gameplay consequences.
+ * RE_UNKNOWN: valid pair/endpoint domains and vector-bank capacity. The fifth
+ * argument is read as u16: zero/nonzero selects source offsets 0x5C/0x68,
+ * whereas cached indexing uses the full u16 times 12 after pairIndex*0x18.
+ * Trace original callers and allocations before adding bounds checks.
+ * RE_ORIGINAL_QUIRK: a successful fallback stores output+0x2C times twice
+ * the seventh f32 argument before the strict comparison against that argument
+ * plus native f32 0x411D14 (bits 0x3727C5AC). A rejected comparison therefore
+ * can still update the scalar output pointer; preserve that store timing.
+ * RE_UNKNOWN: vector frames/units, projection normalization and output storage
+ * lifetimes/aliasing. Successful ISCT A8 also stores its input address into
+ * output word0; here the input is local SP+0x4C storage. Trace actual callers'
+ * output retention/dereferences before relying on that address after return.
+ * Readable C remains unmatched: native 616 bytes versus compiled 572.
+ * Provider slots, operation order and observed argument widths agree; exact
+ * historical local/parameter declarations remain unresolved. */
+#line 540 "src/modules/uvdyn_rom.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040B838.s")
 #line 527 "src/modules/uvdyn_rom.c"
 

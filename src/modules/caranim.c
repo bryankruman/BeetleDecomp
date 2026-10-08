@@ -280,6 +280,16 @@ s32 caranimAcquireConfiguredParticleEffect(s32 kind, f32 scalar, u8 *colorInputs
 }
 #line 130 "src/modules/caranim.c"
 
+/* Add byte-derived offsets to both palettes' first three components and clamp
+ * with ordered comparisons; both fourth components use the same byte/255 value.
+ * Original setup queries four pairs of runtime buffers for kinds 11/13/10/14.
+ * The UVPFX call passes four doubles for 0x1005 and four for 0x4026. Its original
+ * consumer writes the latter extension only for kind 1; kind 2 returns before
+ * that property handler, while other kinds skip its four double arguments.
+ * RE_UNKNOWN: component/channel roles and caller buffer/handle validity or
+ * lifetime beyond this setup need original effect producers/render consumers.
+ * Clean C remains unmatched; retain assembly until full byte/relocation proof. */
+#line 131 "src/modules/caranim.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_0040371C.s")
 
 #line 133 "src/modules/caranim.c"

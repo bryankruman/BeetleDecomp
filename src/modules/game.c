@@ -14,7 +14,7 @@ typedef struct {
     /* 0x10 */ u32 sharedStateWordAddress;
 } GameExportAddresses;
 extern u8 func_game_00400DB0[], func_game_00401338[];
-void func_game_004001DC(void);
+void gameNoOpModuleCleanup(void);
 void gameUnloadIndexedModuleCompletely(s32 index);
 extern s32 D_game_00402120;
 extern s32 D_game_004020F4[];
@@ -72,7 +72,7 @@ extern s32 D_game_0040220C;
  * this initializer does not establish successful allocation or general bounds. */
 void __entrypoint_func_gameInitializeModuleState(GameExportAddresses *exports) {
     uvUpdateFileAllocPtr(exports);
-    exports->emptyCallbackAddress = (u32) func_game_004001DC;
+    exports->emptyCallbackAddress = (u32) gameNoOpModuleCleanup;
     exports->unknownCallback04Address = (u32) func_game_00400DB0;
     exports->unknownCallback08Address = (u32) func_game_00401338;
     exports->unloadIndexedModuleCompletelyAddress = (u32) gameUnloadIndexedModuleCompletely;
@@ -105,12 +105,15 @@ void __entrypoint_func_gameInitializeModuleState(GameExportAddresses *exports) {
 #line 62 "src/modules/game.c"
 
 #line 7 "src/modules/game.c"
-/* Original empty function; preserve its separate identity and argument ABI.
- * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability
- * remain unresolved. An empty body alone does not establish that callers can
- * safely omit this function or that it represents missing implementation. */
-void func_game_004001DC(void) {
+/* Original no-op GAME module-cleanup callback, registered at export offset 0.
+ * Native UVMO disposal invokes that export before freeing the export storage.
+ * RE_UNKNOWN: broader GAME teardown ownership and other callers need lifecycle
+ * evidence; retain this distinct void(void) callback and empty implementation. */
+#line 11 "src/modules/game.c"
+
+void gameNoOpModuleCleanup(void) {
 }
+#line 13 "src/modules/game.c"
 #line 9 "src/modules/game.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/game/func_game_004001E4.s")

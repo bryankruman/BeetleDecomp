@@ -49,7 +49,12 @@ void func_envsnd_0040005C(s32 arg0, UnkStruct_envsnd_0040005C *arg1) {
     D_envsnd_00400478 = arg0;
     D_envsnd_00400474 = arg1;
 
-    // FAKE
+    /* RE_UNKNOWN: this matching-only empty count test affects IDO register
+     * allocation. A natural loop preserves the observed effects but fails
+     * instruction matching; recover the original count-read source structure.
+     * Count/table producers must also establish the 94-handle capacity and
+     * valid lifetime, aliases and finite representable squared radii. */
+#line 46 "src/modules/envsnd.c"
     if (D_envsnd_00400478) {
     }
     for (i = 0; i < D_envsnd_00400478; i++) {
