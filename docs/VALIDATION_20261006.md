@@ -1936,10 +1936,19 @@ Totals: 345 further recoveries after the 225 upstream ordinary imports, plus 124
 Frozen wave `1346-vector-readonly-contracts-fixed` and `accepted-vector-readonly-contracts-fixed` verify real translation-unit instructions/full relocations, 6 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 345 further readable functions
+## Historical accepted checkpoint — 345 further readable functions
 
 Name gameNoOpModuleCleanup using original GAME export registration and native UVMO disposal dispatch; preserve empty body, ABI, identity and unresolved broader ownership. Expose the existing ENVSND matching-only empty count condition as explicit unresolved source debt. Retain unmatched TED second-list producer/compactor and CARANIM particle-palette assembly with precise original provider, bounds, callback and lifetime notes. Refine the existing Dynamics endpoint-query note with conditional unwritten input-word consumers, full u16 indexing, original fallback scalar-store timing and local query-address lifetime uncertainty. No unmatched draft or speculative runtime correction is accepted; preserve all original executable logical coordinates and standalone assembly directives. Gate on exact cleanup instructions/relocations, five original packed modules, fresh full ROM and complete source/index hashes.
 
 Totals: 345 further recoveries after the 225 upstream ordinary imports, plus 1246 existing C semantic cleanups. Current ledger: 855 assembly references = 812 ordinary + 43 entrypoints; 755,564 known remaining instruction bytes; zero unknown sizes; 318 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `1362-endpoint-editor-uncertainties` and `accepted-endpoint-editor-uncertainties` verify real translation-unit instructions/full relocations, 5 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 345 further readable functions
+
+Name camAssignEnvironmentFileWithOptionalCopy from actual environment export18/1C bindings and original provider bodies. Native camera A1 remains the incoming sourceFileId at the optional copy call; explicitly pass that second integer argument while preserving exact original instructions. Then assign the destination file to the signed-short camera slot, preserving reloads after the callback. Leave camera layout, caller domains, ownership and lifetimes unresolved. Retain unmatched TED selected-record loader and Dynamics attachment-query assembly with precise original input-bound, callback, failure-sentinel, query-state and return-count notes. The Dynamics low16 returned count is explicitly traced to its initialized word; no uninitialized-return claim is made. Gate on original packed modules, fresh complete ROM and complete source/index hashes.
+
+Totals: 345 further recoveries after the 225 upstream ordinary imports, plus 1247 existing C semantic cleanups. Current ledger: 855 assembly references = 812 ordinary + 43 entrypoints; 755,564 known remaining instruction bytes; zero unknown sizes; 317 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `1372-camera-query-contracts` and `accepted-camera-query-contracts` verify real translation-unit instructions/full relocations, 3 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

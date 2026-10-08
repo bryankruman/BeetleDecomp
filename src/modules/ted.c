@@ -311,7 +311,17 @@ void tedWriteSelectedRecords(s32 file) {
     }
 }
 #line 177 "src/modules/ted.c"
-
+/*
+ * RE_UNKNOWN: valid file counts, backing replacements, allocation failures,
+ * record meanings and callback alias/mutation lifecycle; verify original file
+ * producers, every count/base writer and actual callback/pool states before
+ * changing 44-byte reads or the success-only record/ID cursor advances.
+ * RE_ORIGINAL_QUIRK: read results are ignored and the file byte count is not
+ * bounded by the original 50-slot allocation requests. DOBJ create returns
+ * zero-extended 0xFFFF on exhaustion, but this caller rejects only full-word
+ * -1. Malformed-file and exhausted-pool caller reachability remain unknown.
+ */
+#line 178 "src/modules/ted.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00404468.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_0040465C.s")

@@ -101,20 +101,24 @@ void func_cam_00400128(void) {
 #line 22 "src/modules/cam.c"
 
 #line 23 "src/modules/cam.c"
-/* Dispatch camera record fields to environment exports 0x1C and 0x18; the
- * first call is skipped when the second parameter is -1.
- * RE_UNKNOWN: lifecycle operations and callback argument ABI. The existing
- * one-argument cast at slot 0x1C differs from its shared two-argument type;
- * original assembly and callers must establish the contract before repair. */
-void func_cam_00400130(void *arg0, s32 arg1) {
-    void *temp_a2;
+/* Unless sourceFileId is -1, copy that loaded UVEN record into the file ID
+ * at camera+0x220. Then assign that destination file to the signed-short slot
+ * at camera+0, reloading both camera fields after the optional copy callback.
+ * Native A1 retains sourceFileId at slot0x1C; both original providers take two
+ * integer arguments. RE_UNKNOWN: camera layout, valid IDs/slots, ownership,
+ * aliasing and callback lifecycle need original producers and callers. */
+#line 29 "src/modules/cam.c"
 
-    temp_a2 = arg0;
-    if (arg1 != -1) {
-        (*(void (**)(s32))((u8 *)gUvEnvExports + 0x1C))(*(s32 *)((u8 *)arg0 + 0x220));
+void camAssignEnvironmentFileWithOptionalCopy(void *camera, s32 sourceFileId) {
+    void *savedCamera;
+
+    savedCamera = camera;
+    if (sourceFileId != -1) {
+        (*(void (**)(s32, s32))((u8 *)gUvEnvExports + 0x1C))(*(s32 *)((u8 *)camera + 0x220), sourceFileId);
     }
-    (*(void (**)(s32, s32))((u8 *)gUvEnvExports + 0x18))(*(s16 *)((u8 *)temp_a2 + 0x0), *(s32 *)((u8 *)temp_a2 + 0x220));
+    (*(void (**)(s32, s32))((u8 *)gUvEnvExports + 0x18))(*(s16 *)((u8 *)savedCamera + 0x0), *(s32 *)((u8 *)savedCamera + 0x220));
 }
+#line 38 "src/modules/cam.c"
 #line 32 "src/modules/cam.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/cam/func_cam_00400190.s")

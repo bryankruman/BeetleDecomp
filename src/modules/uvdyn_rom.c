@@ -1461,6 +1461,26 @@ void uvDynUpdateNodeTranslationVector(DynResetState *state) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00408DC8.s")
 
+/* Append attachment query-index/kind/pointer entries, then collect each
+ * newly appended attachment's DOBJ sphere query into shared workspace.
+ * Original imports bind QERY slots 0x28/0x30 to the selector parser and
+ * array override, and DOBJ slots 0x04/0x50 to the shared index-pair setter
+ * and four-float sphere query with three output pointers.
+ * RE_ORIGINAL_QUIRK: native 0x4090F8 stores the newly appended entry count
+ * as a word at SP+0x7C, and 0x4092E8 returns its low16 via LHU SP+0x7E.
+ * The separately initialized/incremented u16 at SP+0x6E is not the return
+ * source. Preserve the actual return; no uninitialized-return claim is valid.
+ * RE_UNKNOWN: starting counter and caller allocation bounds. Native entry
+ * count at work+0xF744 stops only at equality with 30; hit count at +0xF746
+ * sets remaining capacity as 120-count. Trace work allocation/reset writers
+ * and attachmentCount producers before changing limits or assuming safety.
+ * RE_UNKNOWN: entry-kind 3 and query-index word meanings, shared query-state
+ * ownership/reentrancy and output storage aliases. Original cleanup installs
+ * fixed NULL/zero override, selector-1 value zero and DOBJ pair -1/-1 rather
+ * than restoring saved values. Trace original call/configuration lifetimes.
+ * RE_UNKNOWN: historical independent loop-local declarations and source
+ * organization. Readable C remains unmatched; retain original assembly. */
+#line 438 "src/modules/uvdyn_rom.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00409010.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00409318.s")
