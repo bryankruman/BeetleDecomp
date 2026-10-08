@@ -6,8 +6,8 @@ rom:0x74 reloc:MIPS_HI16 symbol:uvTextureGetLoadedSubrecord
 rom:0xA0 reloc:MIPS_LO16 symbol:uvTextureGetLoadedSubrecord
 rom:0x78 reloc:MIPS_HI16 symbol:uvTextureEmitDisplayListAndAnimatedTileSizes
 rom:0xA4 reloc:MIPS_LO16 symbol:uvTextureEmitDisplayListAndAnimatedTileSizes
-rom:0x7C reloc:MIPS_HI16 symbol:func_uvtexture_rom_00400500
-rom:0xA8 reloc:MIPS_LO16 symbol:func_uvtexture_rom_00400500
+rom:0x7C reloc:MIPS_HI16 symbol:uvTextureApplyPackedState
+rom:0xA8 reloc:MIPS_LO16 symbol:uvTextureApplyPackedState
 rom:0x80 reloc:MIPS_HI16 symbol:uvTextureInvalidateBinding
 rom:0xAC reloc:MIPS_LO16 symbol:uvTextureInvalidateBinding
 rom:0x84 reloc:MIPS_HI16 symbol:uvTextureGetOtherBufferValue

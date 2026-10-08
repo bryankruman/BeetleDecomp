@@ -35,7 +35,7 @@ void uvTextureModuleCleanup(void);
 u8 uvTextureGetLoadedFlag27(s32 arg0);
 void *uvTextureGetLoadedSubrecord(s32 arg0, f32 *arg1, f32 *arg2);
 void uvTextureEmitDisplayListAndAnimatedTileSizes(s32 arg0);
-s32 func_uvtexture_rom_00400500(s32 arg0);
+s32 uvTextureApplyPackedState(s32 arg0);
 void uvGfxTextureDL(Gfx **gdl, s32 textureId, s32 xparam);
 void uvTextureBeginBuffer(s32 arg0);
 void uvTextureInvalidateBinding(void);
@@ -78,7 +78,7 @@ void __entrypoint_func_uvtexture_rom_400000(UvTexture_Exports *exports) {
     exports->uvTextureGetLoadedFlag27 = uvTextureGetLoadedFlag27;
     exports->uvTextureGetLoadedSubrecord = uvTextureGetLoadedSubrecord;
     exports->uvTextureEmitDisplayListAndAnimatedTileSizes = uvTextureEmitDisplayListAndAnimatedTileSizes;
-    exports->func_uvtexture_rom_00400500 = func_uvtexture_rom_00400500;
+    exports->uvTextureApplyPackedState = uvTextureApplyPackedState;
     exports->uvTextureInvalidateBinding = uvTextureInvalidateBinding;
     exports->uvTextureGetOtherBufferValue = uvTextureGetOtherBufferValue;
     exports->uvTextureGetProps = uvTextureGetProps;
@@ -205,141 +205,162 @@ void uvTextureEmitDisplayListAndAnimatedTileSizes(s32 textureId) {
 }
 #line 177 "src/modules/uvtexture_rom.c"
 
-s32 func_uvtexture_rom_00400500(s32 arg0) {
-    Gfx **gdl;
-    s32 var_a3;
-    s32 var_a2;
-    s32 var_a1;
-    u8 alpha;
-    s32 var_s2;
-    s32 i;
-    UnkStruct_uvtexture_rom_00400244 *var_s1;
+#line 178 "src/modules/uvtexture_rom.c"
 
-    gdl = sUvGfxMgrExports->uvGetDisplayListHead();
-    var_a3 = arg0 & 0xFFF;
-    if (var_a3 == 0xFFE) {
-        var_a3++;
+/* Apply the packed texture input to texture selection, display-list commands,
+ * alpha/palette state and the cached output word. Preserve the two cache stores.
+ * RE_ORIGINAL_QUIRK: the original OR with 0x40000 makes the nonzero test true
+ * for every 32-bit state word, clearing the combine selector; keep that OR.
+ * The first loaded record is read at offset 0x14 before the later null check.
+ * RE_UNKNOWN: caller/asset guarantees for that first read, texture/sequence ID
+ * bounds, asset lifetime and display-list/palette capacity require original
+ * UVTX parsers, TSEQ providers and renderer callers; flag intent is incomplete. */
+#line 178 "src/modules/uvtexture_rom.c"
+s32 uvTextureApplyPackedState(s32 inputStateWord) {
+    Gfx **displayListHead;
+    s32 textureId;
+    s32 textureParameter;
+    s32 combineRequested;
+    u8 alpha;
+    s32 textureStateWord;
+    s32 paletteIndex;
+    UnkStruct_uvtexture_rom_00400244 *texture;
+
+    displayListHead = sUvGfxMgrExports->uvGetDisplayListHead();
+    textureId = inputStateWord & 0xFFF;
+    if (textureId == 0xFFE) {
+        textureId++;
     }
-    if (var_a3 >= 0xFFF) {
-        var_s2 = 0xFFF;
-        var_s1 = NULL;
+    if (textureId >= 0xFFF) {
+        textureStateWord = 0xFFF;
+        texture = NULL;
     } else {
-        var_s1 = gFormFiles[sTextureFormFileId].fileEntry[var_a3].allocPtr;
-        var_s2 = (var_s1->unk14 & ~0xFFF) | var_a3;
-        if (var_s2 & 0x80000) {
-            var_a3 = sUvTextureSequenceExport->uvTexSeqGetCurFrameTexture(var_s1->unk20);
-            var_s1 = gFormFiles[sTextureFormFileId].fileEntry[var_a3].allocPtr;
+        texture = gFormFiles[sTextureFormFileId].fileEntry[textureId].allocPtr;
+        textureStateWord = (texture->unk14 & ~0xFFF) | textureId;
+        if (textureStateWord & 0x80000) {
+            textureId = sUvTextureSequenceExport->uvTexSeqGetCurFrameTexture(texture->unk20);
+            texture = gFormFiles[sTextureFormFileId].fileEntry[textureId].allocPtr;
         }
-        if (var_s1 == NULL) {
+        if (texture == NULL) {
             return 0xFFF;
         }
-        var_s2 = (var_s1->unk14 & ~0xFFF) | var_a3;
+        textureStateWord = (texture->unk14 & ~0xFFF) | textureId;
     }
 
-    if (arg0 & 0x01000000) {
-        var_s2 |= 0x2000;
+    if (inputStateWord & 0x01000000) {
+        textureStateWord |= 0x2000;
     }
 
-    var_a1 = (arg0 & 0x80000000) && (arg0 & 0x800000);
-    if ((var_s2 | 0x40000) != 0) {
-        var_a1 = 0;
+    combineRequested = (inputStateWord & 0x80000000) && (inputStateWord & 0x800000);
+    if ((textureStateWord | 0x40000) != 0) {
+        combineRequested = 0;
     }
-    if (((var_a3 != (D_uvtexture_rom_00400D24 & 0xFFF))
+    if (((textureId != (D_uvtexture_rom_00400D24 & 0xFFF))
          && ((D_uvtexture_rom_00400D00 == 0) || (D_uvtexture_rom_00400D04 == 0)))
         || (D_uvtexture_rom_00400D00 == 1)) {
-        if ((var_a3 >= 0xFFE) || (D_uvtexture_rom_00400D00 == 3)) {
-            gSPDisplayList(gdl[0]++, D_uvtexture_rom_00400CC0);
-            if (var_a1 != 0) {
-                gDPSetCombineLERP(gdl[0]++, 0, 0, 0, SHADE, 0, 0, 0, 1, 0, 0, 0, COMBINED, 0, 0, 0,
+        if ((textureId >= 0xFFE) || (D_uvtexture_rom_00400D00 == 3)) {
+            gSPDisplayList(displayListHead[0]++, D_uvtexture_rom_00400CC0);
+            if (combineRequested != 0) {
+                gDPSetCombineLERP(displayListHead[0]++, 0, 0, 0, SHADE, 0, 0, 0, 1, 0, 0, 0, COMBINED, 0, 0, 0,
                                   COMBINED);
             }
         } else {
             D_uvtexture_rom_00400D04 = 1;
-            uvTextureEmitDisplayListAndAnimatedTileSizes(var_a3);
-            if ((var_a1 != 0) && !(var_s2 & 0x1000)) {
-                if (var_s1->unk22 >= 2) {
-                    gDPSetCombineLERP(gdl[0]++, TEXEL1, TEXEL0, LOD_FRACTION, TEXEL0, TEXEL1, TEXEL0,
+            uvTextureEmitDisplayListAndAnimatedTileSizes(textureId);
+            if ((combineRequested != 0) && !(textureStateWord & 0x1000)) {
+                if (texture->unk22 >= 2) {
+                    gDPSetCombineLERP(displayListHead[0]++, TEXEL1, TEXEL0, LOD_FRACTION, TEXEL0, TEXEL1, TEXEL0,
                                       LOD_FRACTION, TEXEL0, COMBINED, 0, SHADE, 0, 0, 0, 0, COMBINED);
                 } else {
-                    gDPSetCombineMode(gdl[0]++, G_CC_MODULATEIDECALA, G_CC_PASS2);
+                    gDPSetCombineMode(displayListHead[0]++, G_CC_MODULATEIDECALA, G_CC_PASS2);
                 }
             }
         }
     }
-    if (var_s1 != NULL) {
-        alpha = var_s1->colorAlpha;
+    if (texture != NULL) {
+        alpha = texture->colorAlpha;
     } else {
         alpha = 0xFF;
     }
     if (alpha != sPrevAlphaColor) {
         if (alpha == 0xFF) {
-            gDPSetAlphaCompare(gdl[0]++, G_AC_NONE);
+            gDPSetAlphaCompare(displayListHead[0]++, G_AC_NONE);
 
         } else {
-            gDPSetAlphaCompare(gdl[0]++, G_AC_THRESHOLD);
+            gDPSetAlphaCompare(displayListHead[0]++, G_AC_THRESHOLD);
 
-            gDPSetBlendColor(gdl[0]++, 255, 255, 255, alpha);
+            gDPSetBlendColor(displayListHead[0]++, 255, 255, 255, alpha);
         }
         sPrevAlphaColor = alpha;
     }
     if (sPrevAlphaColor != 0xFF) {
-        var_s2 |= 0x10000;
+        textureStateWord |= 0x10000;
     }
-    if (var_s2 & 0x2000) {
-        var_a2 = 0x10;
+    if (textureStateWord & 0x2000) {
+        textureParameter = 0x10;
     } else {
-        var_a2 = 0;
+        textureParameter = 0;
     }
-    uvGfxTextureDL(gdl, var_a3, var_a2);
-    if ((var_s1 != NULL) && (var_s1->unk21 == 0)) {
-        for (i = 0; i < var_s1->unk22; i++) {
-            gDPLoadTLUT_pal16(gdl[0]++, i + 1, (u8 *) (var_s1->unk10 + i * 0x40) + 0x80000000);
+    uvGfxTextureDL(displayListHead, textureId, textureParameter);
+    if ((texture != NULL) && (texture->unk21 == 0)) {
+        for (paletteIndex = 0; paletteIndex < texture->unk22; paletteIndex++) {
+            gDPLoadTLUT_pal16(displayListHead[0]++, paletteIndex + 1, (u8 *) (texture->unk10 + paletteIndex * 0x40) + 0x80000000);
         }
-        var_s2 |= 0x20000;
+        textureStateWord |= 0x20000;
     } else {
-        gDPSetTextureLUT(gdl[0]++, G_TT_NONE);
-        var_s2 &= ~0x20000;
+        gDPSetTextureLUT(displayListHead[0]++, G_TT_NONE);
+        textureStateWord &= ~0x20000;
     }
-    D_uvtexture_rom_00400D24 = var_s2;
-    if ((var_s1 != NULL) && (var_s1->unk21 == 1)) {
-        var_s2 |= 0x4000;
+    D_uvtexture_rom_00400D24 = textureStateWord;
+    if ((texture != NULL) && (texture->unk21 == 1)) {
+        textureStateWord |= 0x4000;
     } else {
-        var_s2 &= ~0x4000;
+        textureStateWord &= ~0x4000;
     }
-    D_uvtexture_rom_00400D24 = var_s2;
-    return var_s2;
+    D_uvtexture_rom_00400D24 = textureStateWord;
+    return textureStateWord;
 }
+#line 282 "src/modules/uvtexture_rom.c"
 
-void uvGfxTextureDL(Gfx **gdl, s32 textureId, s32 xparam) {
-    s32 var_v0;
+#line 283 "src/modules/uvtexture_rom.c"
+
+/* Emit texture-off state for sentinel 0xFFF, or copy the loaded first command
+ * while replacing its parameter byte. Preserve repeated output-head reloads.
+ * RE_UNKNOWN: the reference parameter's update contract, valid non-sentinel
+ * IDs and asset/output-buffer lifetime, capacity and alias domains require
+ * original state producers, UVTX parsers and display-list consumers. */
+#line 283 "src/modules/uvtexture_rom.c"
+void uvGfxTextureDL(Gfx **displayListHead, s32 textureId, s32 textureParameter) {
+    s32 parameterDiffers;
     Gfx **textureDisplayList;
 
-    if (xparam != D_uvtexture_rom_00400CEC) {
-        var_v0 = 1;
+    if (textureParameter != D_uvtexture_rom_00400CEC) {
+        parameterDiffers = 1;
     } else {
-        var_v0 = 0;
+        parameterDiffers = 0;
     }
 
     if (textureId == 0xFFF) {
-        u32 t1 = D_uvtexture_rom_00400D24 & 0xFFF;
-        if (t1 == 0xFFF) {
-            if (!var_v0) {
+        u32 cachedTextureId = D_uvtexture_rom_00400D24 & 0xFFF;
+        if (cachedTextureId == 0xFFF) {
+            if (!parameterDiffers) {
                 return;
             }
         }
 
-        gSPTextureL(gdl[0]++, 0, 0, 0, xparam, G_TX_RENDERTILE, G_OFF);
+        gSPTextureL(displayListHead[0]++, 0, 0, 0, textureParameter, G_TX_RENDERTILE, G_OFF);
         return;
     }
     textureDisplayList = gFormFiles[sTextureFormFileId].fileEntry[textureId].allocPtr;
-    if (xparam) {
-        GFX_PATCH_DL(gdl[0], textureDisplayList[0], xparam);
-        gdl[0]++;
-    } else if (var_v0 != 0) {
-        GFX_PATCH_DL(gdl[0], textureDisplayList[0], 0);
-        gdl[0]++;
+    if (textureParameter) {
+        GFX_PATCH_DL(displayListHead[0], textureDisplayList[0], textureParameter);
+        displayListHead[0]++;
+    } else if (parameterDiffers != 0) {
+        GFX_PATCH_DL(displayListHead[0], textureDisplayList[0], 0);
+        displayListHead[0]++;
     }
 }
+#line 313 "src/modules/uvtexture_rom.c"
 
 #line 314 "src/modules/uvtexture_rom.c"
 /* XOR the active counter index with one, clear D10[index], and reset binding state.
@@ -375,32 +396,41 @@ s32 uvTextureGetOtherBufferValue(s32 mode) {
 }
 #line 334 "src/modules/uvtexture_rom.c"
 
+#line 335 "src/modules/uvtexture_rom.c"
+
+/* Selector 1 copies record halfwords at 0x1C and 0x1E into two word outputs,
+ * in that order. Zero or another selector ends the argument stream; sentinel
+ * 0xFFF or a missing record returns without output writes.
+ * RE_UNKNOWN: ID bounds, selector payload/termination guarantees, output
+ * validity and field meanings require original callers and UVTX parsers. */
+#line 335 "src/modules/uvtexture_rom.c"
 void uvTextureGetProps(s32 textureId, ...) {
     va_list args;
-    s32 prop;
-    UnkStruct_uvtexture_rom_00400244 *temp_v0;
+    s32 selector;
+    UnkStruct_uvtexture_rom_00400244 *texture;
 
     if (textureId == 0xFFF) {
         return;
     }
 
-    temp_v0 = gFormFiles[sTextureFormFileId].fileEntry[textureId].allocPtr;
+    texture = gFormFiles[sTextureFormFileId].fileEntry[textureId].allocPtr;
     va_start(args, textureId);
-    
-    if (temp_v0 == NULL) {
+
+    if (texture == NULL) {
         return;
     }
 
     while (TRUE) {
-        prop = va_arg(args, s32);
-        if ((prop == 0) || (prop != 1)) {
+        selector = va_arg(args, s32);
+        if ((selector == 0) || (selector != 1)) {
             break;
         }
 
-        *va_arg(args, s32*) = temp_v0->unk1C;
-        *va_arg(args, s32*) = temp_v0->unk1E;
+        *va_arg(args, s32*) = texture->unk1C;
+        *va_arg(args, s32*) = texture->unk1E;
     }
 }
+#line 361 "src/modules/uvtexture_rom.c"
 
 #line 362 "src/modules/uvtexture_rom.c"
 /* Lazily allocate the shared 4096-byte, eight-byte-aligned texture scratch

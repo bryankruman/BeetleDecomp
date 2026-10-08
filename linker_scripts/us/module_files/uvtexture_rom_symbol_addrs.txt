@@ -51,3 +51,4 @@ uvTextureBeginBuffer = 0x00400B10; // type:func
 uvTextureInvalidateBinding = 0x00400B7C; // type:func
 uvTextureGetOtherBufferValue = 0x00400B8C; // type:func
 uvTextureEmitDisplayListAndAnimatedTileSizes = 0x00400244; // type:func
+uvTextureApplyPackedState = 0x00400500; // type:func

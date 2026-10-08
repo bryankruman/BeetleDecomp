@@ -6,7 +6,7 @@ typedef struct UvTexture_Exports_s {
     /* 0x04 */ u8 (*uvTextureGetLoadedFlag27)(s32);                  /* inferred */
     /* 0x08 */ void *(*uvTextureGetLoadedSubrecord)(s32, f32 *, f32 *); /* inferred */
     /* 0x0C */ void (*uvTextureEmitDisplayListAndAnimatedTileSizes)(s32);                /* inferred */
-    /* 0x10 */ s32 (*func_uvtexture_rom_00400500)(s32);                 /* inferred */
+    /* 0x10 */ s32 (*uvTextureApplyPackedState)(s32);                 /* inferred */
     /* 0x14 */ void (*uvTextureInvalidateBinding)(void);               /* inferred */
     /* 0x18 */ s32 (*uvTextureGetOtherBufferValue)(s32);                 /* inferred */
     /* 0x1C */ void (*uvTextureGetProps)(s32, ...);           /* inferred */

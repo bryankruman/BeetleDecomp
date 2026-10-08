@@ -801,6 +801,17 @@ loop:
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00406D84.s")
 
+/* func_ai_00407054 combines original MATH sine/cosine/square-root and MISC
+ * ratio results, updates scalars 0x100/0x104/0x120, then transforms 0x100 to
+ * 0xE8 through FMTX slot 0xB0. RE_ORIGINAL_QUIRK: retain ordered sign/zero
+ * branches, signed-word gate quantization and the mixed-double correction.
+ * RE_UNKNOWN: physical units, factor/context meanings, valid divisors and
+ * float-to-word domains, plus state/context alias/lifetimes need producers
+ * and callers. Clean C is 1232 vs 1296 bytes (317 differing words); frame
+ * 152 vs 136, zero/conversion lowering and FP allocation differ. Both
+ * relocation lists differ in instruction sites/order; retain original ASM
+ * until complete instruction/relocation proof, without guessed storage. */
+#line 268 "src/modules/ai.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00407054.s")
 
 #line 270 "src/modules/ai.c"

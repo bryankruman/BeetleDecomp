@@ -151,7 +151,7 @@
     "include/uvsprt_rom.h": "4ee036e740dd71c752c1b11d188e839a0f423b3ec10550177beefc971f7517ce",
     "include/uvstring_rom.h": "57a773242802e80be6f4032aeaa92ddce574db026fa81d9fb2fc1b2dcdcfda4f",
     "include/uvtexanim_rom.h": "e762adb13c8926991cdb7d2d4d764ae85295a1492e8b62cf99922b94132ff6a1",
-    "include/uvtexture_rom.h": "4c92bef46d42cf8560309e8996a2486a570babbe10c7ae457003ecb5971e4101",
+    "include/uvtexture_rom.h": "857ca8f36ea96ef0c3341f5278141f4626c062b90b2ae86bff41746320bded8c",
     "include/uvtextureld_rom.h": "fb2178e71b5de2831a060b1d01055cb85b47714185c8147d58a47d97eb3919b5",
     "include/uvtexturexref_rom.h": "cfc6ada7c5c4dfc6d3c3fef35f74380321b608751b11ea859bb9e24f17d13d5d",
     "include/uvtrackld_rom.h": "d0379d4af4dcd880a88b75b3330dfb2446f0e9340f6850e2d75f85abe3348570",
@@ -192,7 +192,7 @@
     "src/mem_block.c": "b6e363010c6efbe986f1574e9bca20d849b80fbab803c44ce872ef258e3bdf7c",
     "src/memory.c": "ba32d6e4f4bc044fc7233a90a017099c3d69a98ca9543f2896fa8778e98d1ae2",
     "src/module.c": "5ba7eb9645ad9347a96527e105f1d60a413ed3c051b28fa8d8b38a2d123eb01e",
-    "src/modules/ai.c": "92ce4a8db1dcfa7d0647133bf0b5624e2ca487872acc6c849f9456c867e82409",
+    "src/modules/ai.c": "777cc28944f0bdc739d92738d0f699939d0aab6e5f8c8b379048cb73011b91b9",
     "src/modules/aiedit.c": "1cd4bd3cfe12abd4393b00506ecd6c734413212333dc24ae6faeb2f9af9f56d4",
     "src/modules/airec.c": "8a6f864feb619fdf9fb677a704d09ed6fca688ddb6ec3f5fd2b73c370b3f6eb6",
     "src/modules/battle.c": "60d28ad02b2f7b6acc392799c84eaaf321cb87f8c199f7003b75c8b7373a6de6",
@@ -313,7 +313,7 @@
     "src/modules/uvterra_rom.c": "212d749a78b4a0059eec21fdaa6774e93f94f0d853dffa73e48c5fddac79121e",
     "src/modules/uvterrald_rom.c": "4f51d82aed1fc59eefc7e9d161b1d29601c1af7be11b928c5265f14d489d2596",
     "src/modules/uvtexanim_rom.c": "050515d6a1536e1a1392b6d9d154dd4680dd117d7e8604d4a36a70e866ff60e1",
-    "src/modules/uvtexture_rom.c": "2769db124460fed70f0d2dd839008f34794d3a0cb4b97bf0d7f3b88d0479cd52",
+    "src/modules/uvtexture_rom.c": "e600dd22c777fdd2a08ef8c7e5c0ee1a76e244356c4e279f4ea1006b0868f2b8",
     "src/modules/uvtextureld_rom.c": "331b3e88ab93dfb2b0b1a651e319e0b33c6baf43592b3f6fc0d78e478a75a5d4",
     "src/modules/uvtexturexref_rom.c": "577aab3dd5d687ae34a45e8a597bbe52f7cb8865940f96c94bfb8215534d25d9",
     "src/modules/uvtrackld_rom.c": "0f7419fee6956a5165b1f1a33316e9abaedfea222e489a0042a104b37159109b",
@@ -329,22 +329,22 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "edae92594ed4d354906b39327f97429761c22273db9c647fe34b348a0820d759",
-    "docs/VALIDATION_20261006.md": "5761dd659f5a9e6277b39c1f485de9750dbd66c9ee6ac67c13a12b504244231b"
+    "docs/STRATEGY_V4.md": "5f64cdf13c4b0a41efc443378cb295e4f80fa0108ff73490b1de5962499efc07",
+    "docs/VALIDATION_20261006.md": "504f3cebc60a390dfa1be483406eec5a9a809da2e200d4f7f3cfa0ab76e5877c"
   },
   "counts": {
-    "address_function": 986,
+    "address_function": 984,
     "address_global": 1357,
     "assembly": 845,
     "audit_debt": 28,
     "conditional_draft": 4,
-    "decompiler_local": 894,
+    "decompiler_local": 887,
     "draft_marker": 29,
-    "explicit_unknown": 716,
+    "explicit_unknown": 720,
     "layout_padding": 263,
     "offset_field": 1432,
     "opaque_type": 282,
-    "original_quirk": 185,
+    "original_quirk": 187,
     "uncertainty_note": 88,
     "unused_identifier": 119
   },
@@ -1209,25 +1209,6 @@
           "declaration_line": 98,
           "lines": [
             105
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-ceecf0726b15",
-      "kind": "address_function",
-      "path": "include/uvtexture_rom.h",
-      "symbol": "func_uvtexture_rom_00400500",
-      "lines": [
-        9
-      ],
-      "owners": [
-        {
-          "kind": "type",
-          "name": "UvTexture_Exports",
-          "declaration_line": 4,
-          "lines": [
-            9
           ]
         }
       ]
@@ -2365,15 +2346,15 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00407718",
       "lines": [
-        842
+        853
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_ai_00407718",
-          "declaration_line": 842,
+          "declaration_line": 853,
           "lines": [
-            842
+            853
           ]
         }
       ]
@@ -23168,43 +23149,6 @@
       ]
     },
     {
-      "id": "Q-dfe883a2394a",
-      "kind": "address_function",
-      "path": "src/modules/uvtexture_rom.c",
-      "symbol": "func_uvtexture_rom_00400500",
-      "lines": [
-        38,
-        81,
-        208
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "__entrypoint_func_uvtexture_rom_400000",
-          "declaration_line": 75,
-          "lines": [
-            81
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvtexture_rom_00400500",
-          "declaration_line": 38,
-          "lines": [
-            38
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvtexture_rom_00400500",
-          "declaration_line": 208,
-          "lines": [
-            208
-          ]
-        }
-      ]
-    },
-    {
       "id": "Q-81f6961ea629",
       "kind": "address_function",
       "path": "src/modules/uvtextureld_rom.c",
@@ -25077,7 +25021,7 @@
       "lines": [
         200,
         577,
-        818
+        829
       ],
       "owners": [
         {
@@ -25091,9 +25035,9 @@
         {
           "kind": "function",
           "name": "aiSetRecordShortClearEnabled",
-          "declaration_line": 817,
+          "declaration_line": 828,
           "lines": [
-            818
+            829
           ]
         },
         {
@@ -25113,15 +25057,15 @@
       "symbol": "D_ai_00408000",
       "lines": [
         201,
-        843
+        854
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_ai_00407718",
-          "declaration_line": 842,
+          "declaration_line": 853,
           "lines": [
-            843
+            854
           ]
         },
         {
@@ -25142,7 +25086,7 @@
       "lines": [
         139,
         712,
-        853
+        864
       ],
       "owners": [
         {
@@ -25156,9 +25100,9 @@
         {
           "kind": "function",
           "name": "aiGetActiveRecordValue9C",
-          "declaration_line": 850,
+          "declaration_line": 861,
           "lines": [
-            853
+            864
           ]
         },
         {
@@ -25277,7 +25221,7 @@
         690,
         726,
         767,
-        810
+        821
       ],
       "owners": [
         {
@@ -25291,9 +25235,9 @@
         {
           "kind": "function",
           "name": "aiGetLinkedRecordTailAddress",
-          "declaration_line": 809,
+          "declaration_line": 820,
           "lines": [
-            810
+            821
           ]
         },
         {
@@ -25340,9 +25284,9 @@
         638,
         639,
         640,
-        827,
-        830,
-        834
+        838,
+        841,
+        845
       ],
       "owners": [
         {
@@ -25358,11 +25302,11 @@
         {
           "kind": "function",
           "name": "aiCountPreviousLinks",
-          "declaration_line": 826,
+          "declaration_line": 837,
           "lines": [
-            827,
-            830,
-            834
+            838,
+            841,
+            845
           ]
         },
         {
@@ -25383,7 +25327,7 @@
       "lines": [
         138,
         711,
-        852
+        863
       ],
       "owners": [
         {
@@ -25397,9 +25341,9 @@
         {
           "kind": "function",
           "name": "aiGetActiveRecordValue9C",
-          "declaration_line": 850,
+          "declaration_line": 861,
           "lines": [
-            852
+            863
           ]
         },
         {
@@ -70996,15 +70940,15 @@
       "symbol": "D_uvtexture_rom_00400CC0",
       "lines": [
         49,
-        251
+        262
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvtexture_rom_00400500",
-          "declaration_line": 208,
+          "name": "uvTextureApplyPackedState",
+          "declaration_line": 219,
           "lines": [
-            251
+            262
           ]
         }
       ]
@@ -71016,15 +70960,15 @@
       "symbol": "D_uvtexture_rom_00400CEC",
       "lines": [
         57,
-        317
+        337
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxTextureDL",
-          "declaration_line": 313,
+          "declaration_line": 333,
           "lines": [
-            317
+            337
           ]
         },
         {
@@ -71054,9 +70998,9 @@
       "lines": [
         62,
         87,
-        248,
-        249,
-        250
+        259,
+        260,
+        261
       ],
       "owners": [
         {
@@ -71069,12 +71013,12 @@
         },
         {
           "kind": "function",
-          "name": "func_uvtexture_rom_00400500",
-          "declaration_line": 208,
+          "name": "uvTextureApplyPackedState",
+          "declaration_line": 219,
           "lines": [
-            248,
-            249,
-            250
+            259,
+            260,
+            261
           ]
         },
         {
@@ -71094,26 +71038,26 @@
       "symbol": "D_uvtexture_rom_00400D04",
       "lines": [
         63,
-        248,
-        257,
-        352
+        259,
+        268,
+        373
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvtexture_rom_00400500",
-          "declaration_line": 208,
+          "name": "uvTextureApplyPackedState",
+          "declaration_line": 219,
           "lines": [
-            248,
-            257
+            259,
+            268
           ]
         },
         {
           "kind": "function",
           "name": "uvTextureBeginBuffer",
-          "declaration_line": 348,
+          "declaration_line": 369,
           "lines": [
-            352
+            373
           ]
         },
         {
@@ -71134,18 +71078,18 @@
       "lines": [
         64,
         172,
-        349,
-        350,
-        372
+        370,
+        371,
+        393
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTextureBeginBuffer",
-          "declaration_line": 348,
+          "declaration_line": 369,
           "lines": [
-            349,
-            350
+            370,
+            371
           ]
         },
         {
@@ -71159,9 +71103,9 @@
         {
           "kind": "function",
           "name": "uvTextureGetOtherBufferValue",
-          "declaration_line": 370,
+          "declaration_line": 391,
           "lines": [
-            372
+            393
           ]
         },
         {
@@ -71201,15 +71145,15 @@
       "lines": [
         66,
         172,
-        350
+        371
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTextureBeginBuffer",
-          "declaration_line": 348,
+          "declaration_line": 369,
           "lines": [
-            350
+            371
           ]
         },
         {
@@ -71237,15 +71181,15 @@
       "symbol": "D_uvtexture_rom_00400D14",
       "lines": [
         67,
-        372
+        393
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTextureGetOtherBufferValue",
-          "declaration_line": 370,
+          "declaration_line": 391,
           "lines": [
-            372
+            393
           ]
         },
         {
@@ -71265,46 +71209,46 @@
       "symbol": "D_uvtexture_rom_00400D24",
       "lines": [
         71,
-        247,
-        303,
-        309,
-        324,
-        351,
-        362
+        258,
+        314,
+        320,
+        344,
+        372,
+        383
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvtexture_rom_00400500",
-          "declaration_line": 208,
+          "name": "uvGfxTextureDL",
+          "declaration_line": 333,
           "lines": [
-            247,
-            303,
-            309
+            344
           ]
         },
         {
           "kind": "function",
-          "name": "uvGfxTextureDL",
-          "declaration_line": 313,
+          "name": "uvTextureApplyPackedState",
+          "declaration_line": 219,
           "lines": [
-            324
+            258,
+            314,
+            320
           ]
         },
         {
           "kind": "function",
           "name": "uvTextureBeginBuffer",
-          "declaration_line": 348,
+          "declaration_line": 369,
           "lines": [
-            351
+            372
           ]
         },
         {
           "kind": "function",
           "name": "uvTextureInvalidateBinding",
-          "declaration_line": 361,
+          "declaration_line": 382,
           "lines": [
-            362
+            383
           ]
         },
         {
@@ -71324,39 +71268,39 @@
       "symbol": "D_uvtexture_rom_00400D28",
       "lines": [
         72,
-        353,
-        354,
-        409,
-        410,
-        412,
-        419
+        374,
+        375,
+        439,
+        440,
+        442,
+        449
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTextureBeginBuffer",
-          "declaration_line": 348,
+          "declaration_line": 369,
           "lines": [
-            353,
-            354
+            374,
+            375
           ]
         },
         {
           "kind": "function",
           "name": "uvTextureGetOrAllocateScratch",
-          "declaration_line": 408,
+          "declaration_line": 438,
           "lines": [
-            409,
-            410,
-            412
+            439,
+            440,
+            442
           ]
         },
         {
           "kind": "function",
           "name": "uvTextureGetScratch",
-          "declaration_line": 418,
+          "declaration_line": 448,
           "lines": [
-            419
+            449
           ]
         },
         {
@@ -74052,7 +73996,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00407054",
       "lines": [
-        804
+        815
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00407054.s"
     },
@@ -74062,7 +74006,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004075B8",
       "lines": [
-        838
+        849
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004075B8.s"
     },
@@ -121153,30 +121097,15 @@
         38,
         40,
         42,
-        43,
-        208,
-        219,
-        239,
-        243
+        43
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvtexture_rom_00400500",
+          "name": "uvTextureApplyPackedState",
           "declaration_line": 38,
           "lines": [
             38
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvtexture_rom_00400500",
-          "declaration_line": 208,
-          "lines": [
-            208,
-            219,
-            239,
-            243
           ]
         },
         {
@@ -121263,255 +121192,6 @@
           "declaration_line": 36,
           "lines": [
             36
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-5d8dc194e502",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvtexture_rom.c",
-      "symbol": "temp_v0",
-      "lines": [
-        381,
-        387,
-        390,
-        400,
-        401
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvTextureGetProps",
-          "declaration_line": 378,
-          "lines": [
-            381,
-            387,
-            390,
-            400,
-            401
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-cea5c204b678",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvtexture_rom.c",
-      "symbol": "var_a1",
-      "lines": [
-        212,
-        243,
-        245,
-        252,
-        259
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvtexture_rom_00400500",
-          "declaration_line": 208,
-          "lines": [
-            212,
-            243,
-            245,
-            252,
-            259
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-baa01a86208f",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvtexture_rom.c",
-      "symbol": "var_a2",
-      "lines": [
-        211,
-        289,
-        291,
-        293
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvtexture_rom_00400500",
-          "declaration_line": 208,
-          "lines": [
-            211,
-            289,
-            291,
-            293
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-7ad1fcea28c6",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvtexture_rom.c",
-      "symbol": "var_a3",
-      "lines": [
-        210,
-        219,
-        220,
-        221,
-        223,
-        227,
-        228,
-        230,
-        231,
-        236,
-        247,
-        250,
-        258,
-        293
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvtexture_rom_00400500",
-          "declaration_line": 208,
-          "lines": [
-            210,
-            219,
-            220,
-            221,
-            223,
-            227,
-            228,
-            230,
-            231,
-            236,
-            247,
-            250,
-            258,
-            293
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-a4d9168fbde7",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvtexture_rom.c",
-      "symbol": "var_s1",
-      "lines": [
-        216,
-        225,
-        227,
-        228,
-        230,
-        231,
-        233,
-        236,
-        260,
-        269,
-        270,
-        294,
-        295,
-        296,
-        304
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvtexture_rom_00400500",
-          "declaration_line": 208,
-          "lines": [
-            216,
-            225,
-            227,
-            228,
-            230,
-            231,
-            233,
-            236,
-            260,
-            269,
-            270,
-            294,
-            295,
-            296,
-            304
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-0239ef5195cb",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvtexture_rom.c",
-      "symbol": "var_s2",
-      "lines": [
-        214,
-        224,
-        228,
-        229,
-        236,
-        240,
-        244,
-        259,
-        286,
-        288,
-        298,
-        301,
-        303,
-        305,
-        307,
-        309,
-        310
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvtexture_rom_00400500",
-          "declaration_line": 208,
-          "lines": [
-            214,
-            224,
-            228,
-            229,
-            236,
-            240,
-            244,
-            259,
-            286,
-            288,
-            298,
-            301,
-            303,
-            305,
-            307,
-            309,
-            310
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-867c78ce9fae",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvtexture_rom.c",
-      "symbol": "var_v0",
-      "lines": [
-        314,
-        318,
-        320,
-        326,
-        338
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvGfxTextureDL",
-          "declaration_line": 313,
-          "lines": [
-            314,
-            318,
-            320,
-            326,
-            338
           ]
         }
       ]
@@ -124373,16 +124053,16 @@
       "path": "src/modules/ai.c",
       "symbol": "Count predecessor links at offset 0xC; store and return the shared count. * The input node itself is not counted and is dereferenced before any null check. * RE_UNKNOWN: valid node/link lifetime and null termination need original producers/callers.",
       "lines": [
-        823
+        834
       ],
       "evidence": "Count predecessor links at offset 0xC; store and return the shared count. * The input node itself is not counted and is dereferenced before any null check. * RE_UNKNOWN: valid node/link lifetime and null termination need original producers/callers.",
       "owners": [
         {
           "kind": "function",
           "name": "aiCountPreviousLinks",
-          "declaration_line": 826,
+          "declaration_line": 837,
           "lines": [
-            823
+            834
           ]
         }
       ]
@@ -124507,16 +124187,16 @@
       "path": "src/modules/ai.c",
       "symbol": "Return the shared linked-record tail word; retain the existing s32 address ABI. * RE_UNKNOWN: ownership/lifetime guarantees need original callers and list teardown evidence.",
       "lines": [
-        807
+        818
       ],
       "evidence": "Return the shared linked-record tail word; retain the existing s32 address ABI. * RE_UNKNOWN: ownership/lifetime guarantees need original callers and list teardown evidence.",
       "owners": [
         {
           "kind": "function",
           "name": "aiGetLinkedRecordTailAddress",
-          "declaration_line": 809,
+          "declaration_line": 820,
           "lines": [
-            807
+            818
           ]
         }
       ]
@@ -124607,16 +124287,16 @@
       "path": "src/modules/ai.c",
       "symbol": "Store the caller word without boolean normalization. Original func_ai_00402028 uses nonzero to bypass both difference bounds and choose adjustment 9 instead of 4.5. RE_UNKNOWN: shared-word ownership, lifetime and other consumers require caller/export evidence.",
       "lines": [
-        841
+        852
       ],
       "evidence": "Store the caller word without boolean normalization. Original func_ai_00402028 uses nonzero to bypass both difference bounds and choose adjustment 9 instead of 4.5. RE_UNKNOWN: shared-word ownership, lifetime and other consumers require caller/export evidence.",
       "owners": [
         {
           "kind": "function",
           "name": "func_ai_00407718",
-          "declaration_line": 842,
+          "declaration_line": 853,
           "lines": [
-            841
+            852
           ]
         }
       ]
@@ -124707,16 +124387,16 @@
       "path": "src/modules/ai.c",
       "symbol": "aiGetActiveRecordValue9C: return active field 0x9C or -1; compare low-u16 index with signed count. * RE_UNKNOWN: count-backed array extent and index domains need allocation/count writers and callers.",
       "lines": [
-        848
+        859
       ],
       "evidence": "aiGetActiveRecordValue9C: return active field 0x9C or -1; compare low-u16 index with signed count. * RE_UNKNOWN: count-backed array extent and index domains need allocation/count writers and callers.",
       "owners": [
         {
           "kind": "function",
           "name": "aiGetActiveRecordValue9C",
-          "declaration_line": 850,
+          "declaration_line": 861,
           "lines": [
-            848
+            859
           ]
         }
       ]
@@ -124817,6 +124497,26 @@
           "declaration_line": 798,
           "lines": [
             789
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-9f9f6f205fb9",
+      "kind": "explicit_unknown",
+      "path": "src/modules/ai.c",
+      "symbol": "func_ai_00407054 combines original MATH sine/cosine/square-root and MISC * ratio results, updates scalars 0x100/0x104/0x120, then transforms 0x100 to * 0xE8 through FMTX slot 0xB0. RE_ORIGINAL_QUIRK: retain ordered sign/zero * branches, signed-word gate quantization and the mixed-double correction. * RE_UNKNOWN: physical units, factor/context meanings, valid divisors and * float-to-word domains, plus state/context alias/lifetimes need producers * and callers. Clean C is 1232 vs 1296 bytes (317 differing words); frame * 152 vs 136, zero/conversion lowering and FP allocation differ. Both * relocation lists differ in instruction sites/order; retain original ASM * until complete instruction/relocation proof, without guessed storage.",
+      "lines": [
+        804
+      ],
+      "evidence": "func_ai_00407054 combines original MATH sine/cosine/square-root and MISC * ratio results, updates scalars 0x100/0x104/0x120, then transforms 0x100 to * 0xE8 through FMTX slot 0xB0. RE_ORIGINAL_QUIRK: retain ordered sign/zero * branches, signed-word gate quantization and the mixed-double correction. * RE_UNKNOWN: physical units, factor/context meanings, valid divisors and * float-to-word domains, plus state/context alias/lifetimes need producers * and callers. Clean C is 1232 vs 1296 bytes (317 differing words); frame * 152 vs 136, zero/conversion lowering and FP allocation differ. Both * relocation lists differ in instruction sites/order; retain original ASM * until complete instruction/relocation proof, without guessed storage.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_ai_00407054",
+          "declaration_line": 815,
+          "lines": [
+            804
           ]
         }
       ]
@@ -137895,21 +137595,61 @@
       ]
     },
     {
+      "id": "Q-74359db3e26d",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvtexture_rom.c",
+      "symbol": "Apply the packed texture input to texture selection, display-list commands, * alpha/palette state and the cached output word. Preserve the two cache stores. * RE_ORIGINAL_QUIRK: the original OR with 0x40000 makes the nonzero test true * for every 32-bit state word, clearing the combine selector; keep that OR. * The first loaded record is read at offset 0x14 before the later null check. * RE_UNKNOWN: caller/asset guarantees for that first read, texture/sequence ID * bounds, asset lifetime and display-list/palette capacity require original * UVTX parsers, TSEQ providers and renderer callers; flag intent is incomplete.",
+      "lines": [
+        210
+      ],
+      "evidence": "Apply the packed texture input to texture selection, display-list commands, * alpha/palette state and the cached output word. Preserve the two cache stores. * RE_ORIGINAL_QUIRK: the original OR with 0x40000 makes the nonzero test true * for every 32-bit state word, clearing the combine selector; keep that OR. * The first loaded record is read at offset 0x14 before the later null check. * RE_UNKNOWN: caller/asset guarantees for that first read, texture/sequence ID * bounds, asset lifetime and display-list/palette capacity require original * UVTX parsers, TSEQ providers and renderer callers; flag intent is incomplete.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvTextureApplyPackedState",
+          "declaration_line": 219,
+          "lines": [
+            210
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-87248563910e",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvtexture_rom.c",
+      "symbol": "Emit texture-off state for sentinel 0xFFF, or copy the loaded first command * while replacing its parameter byte. Preserve repeated output-head reloads. * RE_UNKNOWN: the reference parameter's update contract, valid non-sentinel * IDs and asset/output-buffer lifetime, capacity and alias domains require * original state producers, UVTX parsers and display-list consumers.",
+      "lines": [
+        327
+      ],
+      "evidence": "Emit texture-off state for sentinel 0xFFF, or copy the loaded first command * while replacing its parameter byte. Preserve repeated output-head reloads. * RE_UNKNOWN: the reference parameter's update contract, valid non-sentinel * IDs and asset/output-buffer lifetime, capacity and alias domains require * original state producers, UVTX parsers and display-list consumers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvGfxTextureDL",
+          "declaration_line": 333,
+          "lines": [
+            327
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-310a4f598a8b",
       "kind": "explicit_unknown",
       "path": "src/modules/uvtexture_rom.c",
       "symbol": "Mode zero reads the opposite counter: D14 for index zero, D10 for index one; other modes return zero. * BSS-zero initialization is visible in accepted uvLoadModule source, not this TEXT entrypoint; preserve original cross-array indexing. * RE_UNKNOWN: C array bounds, indirect alias writes and reload domains; audit original loader/alias callers before stronger invariants.",
       "lines": [
-        367
+        388
       ],
       "evidence": "Mode zero reads the opposite counter: D14 for index zero, D10 for index one; other modes return zero. * BSS-zero initialization is visible in accepted uvLoadModule source, not this TEXT entrypoint; preserve original cross-array indexing. * RE_UNKNOWN: C array bounds, indirect alias writes and reload domains; audit original loader/alias callers before stronger invariants.",
       "owners": [
         {
           "kind": "function",
           "name": "uvTextureGetOtherBufferValue",
-          "declaration_line": 370,
+          "declaration_line": 391,
           "lines": [
-            367
+            388
           ]
         }
       ]
@@ -137930,6 +137670,26 @@
           "declaration_line": 110,
           "lines": [
             108
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-1f3ae9321dc2",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvtexture_rom.c",
+      "symbol": "Selector 1 copies record halfwords at 0x1C and 0x1E into two word outputs, * in that order. Zero or another selector ends the argument stream; sentinel * 0xFFF or a missing record returns without output writes. * RE_UNKNOWN: ID bounds, selector payload/termination guarantees, output * validity and field meanings require original callers and UVTX parsers.",
+      "lines": [
+        401
+      ],
+      "evidence": "Selector 1 copies record halfwords at 0x1C and 0x1E into two word outputs, * in that order. Zero or another selector ends the argument stream; sentinel * 0xFFF or a missing record returns without output writes. * RE_UNKNOWN: ID bounds, selector payload/termination guarantees, output * validity and field meanings require original callers and UVTX parsers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvTextureGetProps",
+          "declaration_line": 407,
+          "lines": [
+            401
           ]
         }
       ]
@@ -194775,15 +194535,15 @@
         21,
         180,
         198,
-        296
+        307
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvtexture_rom_00400500",
-          "declaration_line": 208,
+          "name": "uvTextureApplyPackedState",
+          "declaration_line": 219,
           "lines": [
-            296
+            307
           ]
         },
         {
@@ -194823,17 +194583,17 @@
         22,
         181,
         199,
-        228,
-        236
+        239,
+        247
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvtexture_rom_00400500",
-          "declaration_line": 208,
+          "name": "uvTextureApplyPackedState",
+          "declaration_line": 219,
           "lines": [
-            228,
-            236
+            239,
+            247
           ]
         },
         {
@@ -194931,7 +194691,7 @@
         177,
         182,
         195,
-        400
+        429
       ],
       "owners": [
         {
@@ -194947,9 +194707,9 @@
         {
           "kind": "function",
           "name": "uvTextureGetProps",
-          "declaration_line": 378,
+          "declaration_line": 407,
           "lines": [
-            400
+            429
           ]
         },
         {
@@ -194972,7 +194732,7 @@
         178,
         183,
         196,
-        401
+        430
       ],
       "owners": [
         {
@@ -194988,9 +194748,9 @@
         {
           "kind": "function",
           "name": "uvTextureGetProps",
-          "declaration_line": 378,
+          "declaration_line": 407,
           "lines": [
-            401
+            430
           ]
         },
         {
@@ -195010,15 +194770,15 @@
       "symbol": "unk20",
       "lines": [
         27,
-        230
+        241
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvtexture_rom_00400500",
-          "declaration_line": 208,
+          "name": "uvTextureApplyPackedState",
+          "declaration_line": 219,
           "lines": [
-            230
+            241
           ]
         },
         {
@@ -195038,17 +194798,17 @@
       "symbol": "unk21",
       "lines": [
         28,
-        294,
-        304
+        305,
+        315
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvtexture_rom_00400500",
-          "declaration_line": 208,
+          "name": "uvTextureApplyPackedState",
+          "declaration_line": 219,
           "lines": [
-            294,
-            304
+            305,
+            315
           ]
         },
         {
@@ -195069,17 +194829,17 @@
       "lines": [
         29,
         179,
-        260,
-        295
+        271,
+        306
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvtexture_rom_00400500",
-          "declaration_line": 208,
+          "name": "uvTextureApplyPackedState",
+          "declaration_line": 219,
           "lines": [
-            260,
-            295
+            271,
+            306
           ]
         },
         {
@@ -204936,16 +204696,16 @@
         129,
         157,
         158,
-        216,
-        381
+        227,
+        410
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvtexture_rom_00400500",
-          "declaration_line": 208,
+          "name": "uvTextureApplyPackedState",
+          "declaration_line": 219,
           "lines": [
-            216
+            227
           ]
         },
         {
@@ -204968,9 +204728,9 @@
         {
           "kind": "function",
           "name": "uvTextureGetProps",
-          "declaration_line": 378,
+          "declaration_line": 407,
           "lines": [
-            381
+            410
           ]
         },
         {
@@ -205660,6 +205420,26 @@
           "declaration_line": 702,
           "lines": [
             700
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-247f2656781c",
+      "kind": "original_quirk",
+      "path": "src/modules/ai.c",
+      "symbol": "func_ai_00407054 combines original MATH sine/cosine/square-root and MISC * ratio results, updates scalars 0x100/0x104/0x120, then transforms 0x100 to * 0xE8 through FMTX slot 0xB0. RE_ORIGINAL_QUIRK: retain ordered sign/zero * branches, signed-word gate quantization and the mixed-double correction. * RE_UNKNOWN: physical units, factor/context meanings, valid divisors and * float-to-word domains, plus state/context alias/lifetimes need producers * and callers. Clean C is 1232 vs 1296 bytes (317 differing words); frame * 152 vs 136, zero/conversion lowering and FP allocation differ. Both * relocation lists differ in instruction sites/order; retain original ASM * until complete instruction/relocation proof, without guessed storage.",
+      "lines": [
+        804
+      ],
+      "evidence": "func_ai_00407054 combines original MATH sine/cosine/square-root and MISC * ratio results, updates scalars 0x100/0x104/0x120, then transforms 0x100 to * 0xE8 through FMTX slot 0xB0. RE_ORIGINAL_QUIRK: retain ordered sign/zero * branches, signed-word gate quantization and the mixed-double correction. * RE_UNKNOWN: physical units, factor/context meanings, valid divisors and * float-to-word domains, plus state/context alias/lifetimes need producers * and callers. Clean C is 1232 vs 1296 bytes (317 differing words); frame * 152 vs 136, zero/conversion lowering and FP allocation differ. Both * relocation lists differ in instruction sites/order; retain original ASM * until complete instruction/relocation proof, without guessed storage.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_ai_00407054",
+          "declaration_line": 815,
+          "lines": [
+            804
           ]
         }
       ]
@@ -209159,6 +208939,26 @@
           "declaration_line": 601,
           "lines": [
             594
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-c5f7a9f2e5cc",
+      "kind": "original_quirk",
+      "path": "src/modules/uvtexture_rom.c",
+      "symbol": "Apply the packed texture input to texture selection, display-list commands, * alpha/palette state and the cached output word. Preserve the two cache stores. * RE_ORIGINAL_QUIRK: the original OR with 0x40000 makes the nonzero test true * for every 32-bit state word, clearing the combine selector; keep that OR. * The first loaded record is read at offset 0x14 before the later null check. * RE_UNKNOWN: caller/asset guarantees for that first read, texture/sequence ID * bounds, asset lifetime and display-list/palette capacity require original * UVTX parsers, TSEQ providers and renderer callers; flag intent is incomplete.",
+      "lines": [
+        210
+      ],
+      "evidence": "Apply the packed texture input to texture selection, display-list commands, * alpha/palette state and the cached output word. Preserve the two cache stores. * RE_ORIGINAL_QUIRK: the original OR with 0x40000 makes the nonzero test true * for every 32-bit state word, clearing the combine selector; keep that OR. * The first loaded record is read at offset 0x14 before the later null check. * RE_UNKNOWN: caller/asset guarantees for that first read, texture/sequence ID * bounds, asset lifetime and display-list/palette capacity require original * UVTX parsers, TSEQ providers and renderer callers; flag intent is incomplete.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvTextureApplyPackedState",
+          "declaration_line": 219,
+          "lines": [
+            210
           ]
         }
       ]
