@@ -238,7 +238,7 @@
     "src/modules/profgame.c": "f0bab4b01065b563cede5b28bf4464e65280fd971e9035487b8d4fde81a228ea",
     "src/modules/race.c": "6e76c2a83545e12cb363816c27c5348976c29bc9932cf645783853183dccc23b",
     "src/modules/rain.c": "a249fa1ecf6a0fe9ca1cd987cd27870605570c72d145710f5426a3ff9dfe5e25",
-    "src/modules/replay.c": "757e27733880336fcfd0814c91f9ea83654777b7ab27dead356f56e3d564eab9",
+    "src/modules/replay.c": "baf160c09aaa1cf61d130f4f2ef84ed21d8249f16f8386a0f5f54240907880dd",
     "src/modules/results.c": "5df2bd0b4ec518b4119d405e999f695a4c0203648a82fdb8a81ba307531ef48f",
     "src/modules/ripple.c": "bdd60e5f9d8f7f66e2ccfd3674c471ad1f6fdc87029c4fda4314b6fc9cfa15d1",
     "src/modules/rumble.c": "88f3c10749b25988a2186cebe9bee3e409df9f8f8dd0a5f24d95592f705298a0",
@@ -329,22 +329,22 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "bbff4e2e722e8d6120ed2544279892dcf9ada596c0304cee4119400578937a00",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "6449f80d2edae5dc2fbab389e9c26867b0b60994709c85c7baaf5e17b45858d9",
-    "docs/VALIDATION_20261006.md": "37452c8838215681aa1fa89cc05d8371e42ecd14d49ae1f83432d8939cb4b5fe"
+    "docs/STRATEGY_V4.md": "ecd86a5e1199ae842c6f2e1a6e1469b63a9fa446a2e726c0fc0f0acc4a182c21",
+    "docs/VALIDATION_20261006.md": "6811d361f4fe0d3ccd0ca1c3704aee7cba94cdea0af18af6a665f9a7a6b80853"
   },
   "counts": {
-    "address_function": 994,
-    "address_global": 1340,
-    "assembly": 850,
+    "address_function": 993,
+    "address_global": 1342,
+    "assembly": 849,
     "audit_debt": 28,
     "conditional_draft": 4,
     "decompiler_local": 920,
     "draft_marker": 29,
-    "explicit_unknown": 524,
+    "explicit_unknown": 525,
     "layout_padding": 258,
     "offset_field": 1430,
     "opaque_type": 282,
-    "original_quirk": 104,
+    "original_quirk": 105,
     "uncertainty_note": 99,
     "unused_identifier": 113
   },
@@ -10362,15 +10362,15 @@
       "path": "src/modules/replay.c",
       "symbol": "func_replay_0040017C",
       "lines": [
-        56
+        58
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_replay_0040017C",
-          "declaration_line": 56,
+          "declaration_line": 58,
           "lines": [
-            56
+            58
           ]
         }
       ]
@@ -10381,15 +10381,15 @@
       "path": "src/modules/replay.c",
       "symbol": "func_replay_00400184",
       "lines": [
-        65
+        67
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_replay_00400184",
-          "declaration_line": 65,
+          "declaration_line": 67,
           "lines": [
-            65
+            67
           ]
         }
       ]
@@ -10504,25 +10504,6 @@
           "declaration_line": 41,
           "lines": [
             41
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-1f85535bce63",
-      "kind": "address_function",
-      "path": "src/modules/replay.c",
-      "symbol": "func_replay_00401968",
-      "lines": [
-        44
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_replay_00401968",
-          "declaration_line": 44,
-          "lines": [
-            44
           ]
         }
       ]
@@ -36329,17 +36310,17 @@
       "symbol": "D_replay_00401AC0",
       "lines": [
         21,
-        288,
-        298
+        290,
+        300
       ],
       "owners": [
         {
           "kind": "function",
           "name": "replayCreateThreeRangeControls",
-          "declaration_line": 266,
+          "declaration_line": 268,
           "lines": [
-            288,
-            298
+            290,
+            300
           ]
         },
         {
@@ -36359,17 +36340,17 @@
       "symbol": "D_replay_00401AC8",
       "lines": [
         22,
-        289,
-        300
+        291,
+        302
       ],
       "owners": [
         {
           "kind": "function",
           "name": "replayCreateThreeRangeControls",
-          "declaration_line": 266,
+          "declaration_line": 268,
           "lines": [
-            289,
-            300
+            291,
+            302
           ]
         },
         {
@@ -36389,17 +36370,17 @@
       "symbol": "D_replay_00401AD4",
       "lines": [
         23,
-        290,
-        301
+        292,
+        303
       ],
       "owners": [
         {
           "kind": "function",
           "name": "replayCreateThreeRangeControls",
-          "declaration_line": 266,
+          "declaration_line": 268,
           "lines": [
-            290,
-            301
+            292,
+            303
           ]
         },
         {
@@ -36419,17 +36400,17 @@
       "symbol": "D_replay_00401ADC",
       "lines": [
         24,
-        291,
-        302
+        293,
+        304
       ],
       "owners": [
         {
           "kind": "function",
           "name": "replayCreateThreeRangeControls",
-          "declaration_line": 266,
+          "declaration_line": 268,
           "lines": [
-            291,
-            302
+            293,
+            304
           ]
         },
         {
@@ -36449,15 +36430,15 @@
       "symbol": "D_replay_00401AE4",
       "lines": [
         9,
-        327
+        329
       ],
       "owners": [
         {
           "kind": "function",
           "name": "replayWriteVersionTwoFile",
-          "declaration_line": 320,
+          "declaration_line": 322,
           "lines": [
-            327
+            329
           ]
         },
         {
@@ -36477,15 +36458,15 @@
       "symbol": "D_replay_00401AF4",
       "lines": [
         9,
-        327
+        329
       ],
       "owners": [
         {
           "kind": "function",
           "name": "replayWriteVersionTwoFile",
-          "declaration_line": 320,
+          "declaration_line": 322,
           "lines": [
-            327
+            329
           ]
         },
         {
@@ -36499,23 +36480,79 @@
       ]
     },
     {
+      "id": "Q-e83529065ab7",
+      "kind": "address_global",
+      "path": "src/modules/replay.c",
+      "symbol": "D_replay_00401B14",
+      "lines": [
+        44,
+        365
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "replayReadVersionTwoFile",
+          "declaration_line": 358,
+          "lines": [
+            365
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_replay_00401B14",
+          "declaration_line": 44,
+          "lines": [
+            44
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-ef1fd02bffbc",
+      "kind": "address_global",
+      "path": "src/modules/replay.c",
+      "symbol": "D_replay_00401B24",
+      "lines": [
+        44,
+        365
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "replayReadVersionTwoFile",
+          "declaration_line": 358,
+          "lines": [
+            365
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_replay_00401B14",
+          "declaration_line": 44,
+          "lines": [
+            44
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-08cedf22df21",
       "kind": "address_global",
       "path": "src/modules/replay.c",
       "symbol": "D_replay_00401B50",
       "lines": [
         25,
-        292,
-        301
+        294,
+        303
       ],
       "owners": [
         {
           "kind": "function",
           "name": "replayCreateThreeRangeControls",
-          "declaration_line": 266,
+          "declaration_line": 268,
           "lines": [
-            292,
-            301
+            294,
+            303
           ]
         },
         {
@@ -36535,17 +36572,17 @@
       "symbol": "D_replay_00401B54",
       "lines": [
         26,
-        293,
-        302
+        295,
+        304
       ],
       "owners": [
         {
           "kind": "function",
           "name": "replayCreateThreeRangeControls",
-          "declaration_line": 266,
+          "declaration_line": 268,
           "lines": [
-            293,
-            302
+            295,
+            304
           ]
         },
         {
@@ -36565,17 +36602,17 @@
       "symbol": "D_replay_00401B58",
       "lines": [
         27,
-        294,
-        300
+        296,
+        302
       ],
       "owners": [
         {
           "kind": "function",
           "name": "replayCreateThreeRangeControls",
-          "declaration_line": 266,
+          "declaration_line": 268,
           "lines": [
-            294,
-            300
+            296,
+            302
           ]
         },
         {
@@ -36595,26 +36632,26 @@
       "symbol": "D_replay_00401B60",
       "lines": [
         13,
-        79,
-        80,
-        210
+        81,
+        82,
+        212
       ],
       "owners": [
         {
           "kind": "function",
           "name": "replayFindDirectedSpatialRecord",
-          "declaration_line": 205,
+          "declaration_line": 207,
           "lines": [
-            210
+            212
           ]
         },
         {
           "kind": "function",
           "name": "replayPrependSpatialRecord",
-          "declaration_line": 73,
+          "declaration_line": 75,
           "lines": [
-            79,
-            80
+            81,
+            82
           ]
         },
         {
@@ -36634,26 +36671,26 @@
       "symbol": "D_replay_00401B64",
       "lines": [
         29,
-        96,
-        97,
-        241
+        98,
+        99,
+        243
       ],
       "owners": [
         {
           "kind": "function",
           "name": "replayIsPointInsideAnyRegion",
-          "declaration_line": 237,
+          "declaration_line": 239,
           "lines": [
-            241
+            243
           ]
         },
         {
           "kind": "function",
           "name": "replayPrependVectorSquaredScalarRecord",
-          "declaration_line": 92,
+          "declaration_line": 94,
           "lines": [
-            96,
-            97
+            98,
+            99
           ]
         },
         {
@@ -36672,33 +36709,33 @@
       "path": "src/modules/replay.c",
       "symbol": "D_replay_00401B78",
       "lines": [
-        46,
-        123,
-        130
+        48,
+        125,
+        132
       ],
       "owners": [
         {
           "kind": "function",
           "name": "replayClearActiveFlag",
-          "declaration_line": 129,
+          "declaration_line": 131,
           "lines": [
-            130
+            132
           ]
         },
         {
           "kind": "function",
           "name": "replayResetStateAndRandomSeeds",
-          "declaration_line": 117,
+          "declaration_line": 119,
           "lines": [
-            123
+            125
           ]
         },
         {
           "kind": "global",
           "name": "D_replay_00401B78",
-          "declaration_line": 46,
+          "declaration_line": 48,
           "lines": [
-            46
+            48
           ]
         }
       ]
@@ -36709,24 +36746,24 @@
       "path": "src/modules/replay.c",
       "symbol": "D_replay_00401B7C",
       "lines": [
-        45,
-        108
+        47,
+        110
       ],
       "owners": [
         {
           "kind": "function",
           "name": "replaySetSharedByte",
-          "declaration_line": 107,
+          "declaration_line": 109,
           "lines": [
-            108
+            110
           ]
         },
         {
           "kind": "global",
           "name": "D_replay_00401B7C",
-          "declaration_line": 45,
+          "declaration_line": 47,
           "lines": [
-            45
+            47
           ]
         }
       ]
@@ -36737,42 +36774,42 @@
       "path": "src/modules/replay.c",
       "symbol": "D_replay_00401B98",
       "lines": [
-        47,
-        149,
-        161,
-        178
+        49,
+        151,
+        163,
+        180
       ],
       "owners": [
         {
           "kind": "function",
           "name": "replayGetRecordFlags",
-          "declaration_line": 160,
+          "declaration_line": 162,
           "lines": [
-            161
+            163
           ]
         },
         {
           "kind": "function",
           "name": "replayHasNewRecordFlags",
-          "declaration_line": 148,
+          "declaration_line": 150,
           "lines": [
-            149
+            151
           ]
         },
         {
           "kind": "function",
           "name": "replayHasRecordFlags",
-          "declaration_line": 176,
+          "declaration_line": 178,
           "lines": [
-            178
+            180
           ]
         },
         {
           "kind": "global",
           "name": "D_replay_00401B98",
-          "declaration_line": 47,
+          "declaration_line": 49,
           "lines": [
-            47
+            49
           ]
         }
       ]
@@ -36783,24 +36820,24 @@
       "path": "src/modules/replay.c",
       "symbol": "D_replay_00401B9C",
       "lines": [
-        48,
-        169
+        50,
+        171
       ],
       "owners": [
         {
           "kind": "function",
           "name": "replayGetPreviousRecordFlags",
-          "declaration_line": 168,
+          "declaration_line": 170,
           "lines": [
-            169
+            171
           ]
         },
         {
           "kind": "global",
           "name": "D_replay_00401B9C",
-          "declaration_line": 48,
+          "declaration_line": 50,
           "lines": [
-            48
+            50
           ]
         }
       ]
@@ -36812,15 +36849,15 @@
       "symbol": "D_replay_00401BA0",
       "lines": [
         30,
-        191
+        193
       ],
       "owners": [
         {
           "kind": "function",
           "name": "replayGetRecordScalar",
-          "declaration_line": 190,
+          "declaration_line": 192,
           "lines": [
-            191
+            193
           ]
         },
         {
@@ -77412,7 +77449,7 @@
       "path": "src/modules/replay.c",
       "symbol": "__entrypoint_func_replay_400000",
       "lines": [
-        49
+        51
       ],
       "evidence": "asm/us/nonmatchings/modules/replay/__entrypoint_func_replay_400000.s"
     },
@@ -77422,7 +77459,7 @@
       "path": "src/modules/replay.c",
       "symbol": "func_replay_00400328",
       "lines": [
-        134
+        136
       ],
       "evidence": "asm/us/nonmatchings/modules/replay/func_replay_00400328.s"
     },
@@ -77432,7 +77469,7 @@
       "path": "src/modules/replay.c",
       "symbol": "func_replay_00400748",
       "lines": [
-        136
+        138
       ],
       "evidence": "asm/us/nonmatchings/modules/replay/func_replay_00400748.s"
     },
@@ -77442,7 +77479,7 @@
       "path": "src/modules/replay.c",
       "symbol": "func_replay_0040097C",
       "lines": [
-        138
+        140
       ],
       "evidence": "asm/us/nonmatchings/modules/replay/func_replay_0040097C.s"
     },
@@ -77452,7 +77489,7 @@
       "path": "src/modules/replay.c",
       "symbol": "func_replay_00400C50",
       "lines": [
-        140
+        142
       ],
       "evidence": "asm/us/nonmatchings/modules/replay/func_replay_00400C50.s"
     },
@@ -77462,7 +77499,7 @@
       "path": "src/modules/replay.c",
       "symbol": "func_replay_00400D84",
       "lines": [
-        142
+        144
       ],
       "evidence": "asm/us/nonmatchings/modules/replay/func_replay_00400D84.s"
     },
@@ -77472,19 +77509,9 @@
       "path": "src/modules/replay.c",
       "symbol": "func_replay_0040100C",
       "lines": [
-        195
+        197
       ],
       "evidence": "asm/us/nonmatchings/modules/replay/func_replay_0040100C.s"
-    },
-    {
-      "id": "Q-2c9ca202de13",
-      "kind": "assembly",
-      "path": "src/modules/replay.c",
-      "symbol": "func_replay_00401968",
-      "lines": [
-        341
-      ],
-      "evidence": "asm/us/nonmatchings/modules/replay/func_replay_00401968.s"
     },
     {
       "id": "Q-41ec0f3dc69c",
@@ -129911,16 +129938,16 @@
       "path": "src/modules/replay.c",
       "symbol": "Allocate and prepend 20 bytes: actual FVEC slot0x04 copies three f32 * components; then store the fourth scalar squared and the previous list head. * RE_UNKNOWN: roles/units, lifetime and historical formal types need original * callers/consumers. Preserve word locations and bit copies, no numeric conversion. * RE_ORIGINAL_QUIRK: allocation is unchecked; failure reachability is unknown.",
       "lines": [
-        87
+        89
       ],
       "evidence": "Allocate and prepend 20 bytes: actual FVEC slot0x04 copies three f32 * components; then store the fourth scalar squared and the previous list head. * RE_UNKNOWN: roles/units, lifetime and historical formal types need original * callers/consumers. Preserve word locations and bit copies, no numeric conversion. * RE_ORIGINAL_QUIRK: allocation is unchecked; failure reachability is unknown.",
       "owners": [
         {
           "kind": "function",
           "name": "replayPrependVectorSquaredScalarRecord",
-          "declaration_line": 92,
+          "declaration_line": 94,
           "lines": [
-            87
+            89
           ]
         }
       ]
@@ -129931,16 +129958,16 @@
       "path": "src/modules/replay.c",
       "symbol": "Create and attach a text-list row, then create three bound scalar rows * through original MISC104: 0..100 and two -50..50 ranges. Each call supplies * its existing shared value address and requests no widget-output pointer; * the helper's returned row address is intentionally discarded here. * RE_UNKNOWN: the three bound values' original storage types/alignment and * allocation extents, the label buffers' readable extents and the historical * caller typedefs. Inspect original data/relocations and all value writers * before strengthening the current byte-symbol declarations or units.",
       "lines": [
-        258
+        260
       ],
       "evidence": "Create and attach a text-list row, then create three bound scalar rows * through original MISC104: 0..100 and two -50..50 ranges. Each call supplies * its existing shared value address and requests no widget-output pointer; * the helper's returned row address is intentionally discarded here. * RE_UNKNOWN: the three bound values' original storage types/alignment and * allocation extents, the label buffers' readable extents and the historical * caller typedefs. Inspect original data/relocations and all value writers * before strengthening the current byte-symbol declarations or units.",
       "owners": [
         {
           "kind": "function",
           "name": "replayCreateThreeRangeControls",
-          "declaration_line": 266,
+          "declaration_line": 268,
           "lines": [
-            258
+            260
           ]
         }
       ]
@@ -129951,16 +129978,16 @@
       "path": "src/modules/replay.c",
       "symbol": "Find the first replay record whose strict radius and mapped direction-dot * tests contain the supplied position. Return that record and write normalized * displacement plus distance; zero distance retains its zero displacement. * Outputs are untouched on failure. * RE_UNKNOWN: record vector and threshold units. Trace original record writers, * loaded data and their gameplay consumers before assigning physical units.",
       "lines": [
-        198
+        200
       ],
       "evidence": "Find the first replay record whose strict radius and mapped direction-dot * tests contain the supplied position. Return that record and write normalized * displacement plus distance; zero distance retains its zero displacement. * Outputs are untouched on failure. * RE_UNKNOWN: record vector and threshold units. Trace original record writers, * loaded data and their gameplay consumers before assigning physical units.",
       "owners": [
         {
           "kind": "function",
           "name": "replayFindDirectedSpatialRecord",
-          "declaration_line": 205,
+          "declaration_line": 207,
           "lines": [
-            198
+            200
           ]
         }
       ]
@@ -129971,25 +129998,25 @@
       "path": "src/modules/replay.c",
       "symbol": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "lines": [
-        52,
-        61
+        54,
+        63
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "owners": [
         {
           "kind": "function",
           "name": "func_replay_0040017C",
-          "declaration_line": 56,
+          "declaration_line": 58,
           "lines": [
-            52
+            54
           ]
         },
         {
           "kind": "function",
           "name": "func_replay_00400184",
-          "declaration_line": 65,
+          "declaration_line": 67,
           "lines": [
-            61
+            63
           ]
         }
       ]
@@ -130000,16 +130027,36 @@
       "path": "src/modules/replay.c",
       "symbol": "Read f32 at index*20+component*4 from the shared scalar base. RE_UNKNOWN: * both index domains/extent/units need original record writers/callers.",
       "lines": [
-        188
+        190
       ],
       "evidence": "Read f32 at index*20+component*4 from the shared scalar base. RE_UNKNOWN: * both index domains/extent/units need original record writers/callers.",
       "owners": [
         {
           "kind": "function",
           "name": "replayGetRecordScalar",
-          "declaration_line": 190,
+          "declaration_line": 192,
           "lines": [
-            188
+            190
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-4a71fa0e46e3",
+      "kind": "explicit_unknown",
+      "path": "src/modules/replay.c",
+      "symbol": "Read version-two replay blocks using the original filename format and * shared SCENE address+4; reject other versions after closing the file. * On version2 clear words0/8, read counts at4/0xC, then read blocks at * 0x10,0xE20 and0x4660 with counts word4, four times word4 and word0xC. * Reload each count after preceding callbacks; retain their full32-bit values. * RE_ORIGINAL_QUIRK: read/close statuses are ignored and the version byte is * not initialized before its read. Whether an unwritten version can be used * on an original execution path is RE_UNKNOWN, requiring asset/error traces. * RE_UNKNOWN: full state allocation, count/capacity domains, field roles and * stream layout and shared-state alias/lifetimes need original callers, setup and playback. * The128-byte filename scratch view follows the observed stack window and * paired writer; historical declared capacity is unresolved. The actual * literal format needs42 bytes including NUL, not evidence of array extent.",
+      "lines": [
+        345
+      ],
+      "evidence": "Read version-two replay blocks using the original filename format and * shared SCENE address+4; reject other versions after closing the file. * On version2 clear words0/8, read counts at4/0xC, then read blocks at * 0x10,0xE20 and0x4660 with counts word4, four times word4 and word0xC. * Reload each count after preceding callbacks; retain their full32-bit values. * RE_ORIGINAL_QUIRK: read/close statuses are ignored and the version byte is * not initialized before its read. Whether an unwritten version can be used * on an original execution path is RE_UNKNOWN, requiring asset/error traces. * RE_UNKNOWN: full state allocation, count/capacity domains, field roles and * stream layout and shared-state alias/lifetimes need original callers, setup and playback. * The128-byte filename scratch view follows the observed stack window and * paired writer; historical declared capacity is unresolved. The actual * literal format needs42 bytes including NUL, not evidence of array extent.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "replayReadVersionTwoFile",
+          "declaration_line": 358,
+          "lines": [
+            345
           ]
         }
       ]
@@ -130020,16 +130067,16 @@
       "path": "src/modules/replay.c",
       "symbol": "Return the shared current word at the original 20-byte stride. RE_UNKNOWN: * index/storage bounds and lifetime need original record writers/callers.",
       "lines": [
-        158
+        160
       ],
       "evidence": "Return the shared current word at the original 20-byte stride. RE_UNKNOWN: * index/storage bounds and lifetime need original record writers/callers.",
       "owners": [
         {
           "kind": "function",
           "name": "replayGetRecordFlags",
-          "declaration_line": 160,
+          "declaration_line": 162,
           "lines": [
-            158
+            160
           ]
         }
       ]
@@ -130040,16 +130087,16 @@
       "path": "src/modules/replay.c",
       "symbol": "Return the shared previous word at the original 20-byte stride. RE_UNKNOWN: * index/storage bounds and lifetime need original record writers/callers.",
       "lines": [
-        166
+        168
       ],
       "evidence": "Return the shared previous word at the original 20-byte stride. RE_UNKNOWN: * index/storage bounds and lifetime need original record writers/callers.",
       "owners": [
         {
           "kind": "function",
           "name": "replayGetPreviousRecordFlags",
-          "declaration_line": 168,
+          "declaration_line": 170,
           "lines": [
-            166
+            168
           ]
         }
       ]
@@ -130060,16 +130107,16 @@
       "path": "src/modules/replay.c",
       "symbol": "Store the low eight bits of the argument in D_replay_00401B7C. * RE_UNKNOWN: shared byte purpose and caller/export contract.",
       "lines": [
-        103
+        105
       ],
       "evidence": "Store the low eight bits of the argument in D_replay_00401B7C. * RE_UNKNOWN: shared byte purpose and caller/export contract.",
       "owners": [
         {
           "kind": "function",
           "name": "replaySetSharedByte",
-          "declaration_line": 107,
+          "declaration_line": 109,
           "lines": [
-            103
+            105
           ]
         }
       ]
@@ -130080,16 +130127,16 @@
       "path": "src/modules/replay.c",
       "symbol": "Test any requested bit; zero masks yield zero. RE_UNKNOWN: index/storage bounds * and lifetime require original record allocation/writers and all callers.",
       "lines": [
-        174
+        176
       ],
       "evidence": "Test any requested bit; zero masks yield zero. RE_UNKNOWN: index/storage bounds * and lifetime require original record allocation/writers and all callers.",
       "owners": [
         {
           "kind": "function",
           "name": "replayHasRecordFlags",
-          "declaration_line": 176,
+          "declaration_line": 178,
           "lines": [
-            174
+            176
           ]
         }
       ]
@@ -130100,16 +130147,16 @@
       "path": "src/modules/replay.c",
       "symbol": "Test requested bits in current/previous words at the 20-byte record stride. * Preserve original any-bit tests. RE_UNKNOWN: valid index/storage/alias * domains need original record allocation/writers and all caller evidence.",
       "lines": [
-        145
+        147
       ],
       "evidence": "Test requested bits in current/previous words at the 20-byte record stride. * Preserve original any-bit tests. RE_UNKNOWN: valid index/storage/alias * domains need original record allocation/writers and all caller evidence.",
       "owners": [
         {
           "kind": "function",
           "name": "replayHasNewRecordFlags",
-          "declaration_line": 148,
+          "declaration_line": 150,
           "lines": [
-            145
+            147
           ]
         }
       ]
@@ -130120,16 +130167,16 @@
       "path": "src/modules/replay.c",
       "symbol": "The original getter consumes a signed low16 index and returns an address; * allocation returns a sign-extended index. RE_UNKNOWN: historical caller * declarations. Exact caller proof is required for this target-based view.",
       "lines": [
-        267
+        269
       ],
       "evidence": "The original getter consumes a signed low16 index and returns an address; * allocation returns a sign-extended index. RE_UNKNOWN: historical caller * declarations. Exact caller proof is required for this target-based view.",
       "owners": [
         {
           "kind": "function",
           "name": "replayCreateThreeRangeControls",
-          "declaration_line": 266,
+          "declaration_line": 268,
           "lines": [
-            267
+            269
           ]
         }
       ]
@@ -130140,16 +130187,16 @@
       "path": "src/modules/replay.c",
       "symbol": "Write version 2, header words 0x4/0xC, then blocks at offsets 0x10, * 0xE20 and 0x4660 with lengths frameCount, 4*frameCount and eventBytes. * Original recorder code stores stick-X/stick-Y/button snapshots at 0xE20; * the separately scaled byte values are stored at 0x4660, not at 0xE20. * Build the filename with the original format, prefix and scene-name + 4. * Ignore write/close status as originally implemented; failed open skips writes. * RE_UNKNOWN: the complete version-two layout, meanings of the legacy * frameCount/eventBytes field names, two-controller stream serialization and * filename format/scene-name extent. Inspect original writer/reader callers, * playback, recording setup and D_replay_00401AE4 data before treating these * counts as elapsed frames, changing block sizes or claiming a fixed name length.",
       "lines": [
-        308
+        310
       ],
       "evidence": "Write version 2, header words 0x4/0xC, then blocks at offsets 0x10, * 0xE20 and 0x4660 with lengths frameCount, 4*frameCount and eventBytes. * Original recorder code stores stick-X/stick-Y/button snapshots at 0xE20; * the separately scaled byte values are stored at 0x4660, not at 0xE20. * Build the filename with the original format, prefix and scene-name + 4. * Ignore write/close status as originally implemented; failed open skips writes. * RE_UNKNOWN: the complete version-two layout, meanings of the legacy * frameCount/eventBytes field names, two-controller stream serialization and * filename format/scene-name extent. Inspect original writer/reader callers, * playback, recording setup and D_replay_00401AE4 data before treating these * counts as elapsed frames, changing block sizes or claiming a fixed name length.",
       "owners": [
         {
           "kind": "function",
           "name": "replayWriteVersionTwoFile",
-          "declaration_line": 320,
+          "declaration_line": 322,
           "lines": [
-            308
+            310
           ]
         }
       ]
@@ -160585,15 +160632,15 @@
       "path": "src/modules/replay.c",
       "symbol": "unk7C",
       "lines": [
-        120
+        122
       ],
       "owners": [
         {
           "kind": "function",
           "name": "replayResetStateAndRandomSeeds",
-          "declaration_line": 117,
+          "declaration_line": 119,
           "lines": [
-            120
+            122
           ]
         }
       ]
@@ -160604,9 +160651,18 @@
       "path": "src/modules/replay.c",
       "symbol": "value0",
       "lines": [
-        7
+        7,
+        373
       ],
       "owners": [
+        {
+          "kind": "function",
+          "name": "replayReadVersionTwoFile",
+          "declaration_line": 358,
+          "lines": [
+            373
+          ]
+        },
         {
           "kind": "type",
           "name": "ReplayWriteHeader",
@@ -160623,9 +160679,18 @@
       "path": "src/modules/replay.c",
       "symbol": "value8",
       "lines": [
-        7
+        7,
+        374
       ],
       "owners": [
+        {
+          "kind": "function",
+          "name": "replayReadVersionTwoFile",
+          "declaration_line": 358,
+          "lines": [
+            374
+          ]
+        },
         {
           "kind": "type",
           "name": "ReplayWriteHeader",
@@ -160643,15 +160708,15 @@
       "symbol": "word190",
       "lines": [
         18,
-        118
+        120
       ],
       "owners": [
         {
           "kind": "function",
           "name": "replayResetStateAndRandomSeeds",
-          "declaration_line": 117,
+          "declaration_line": 119,
           "lines": [
-            118
+            120
           ]
         },
         {
@@ -160671,15 +160736,15 @@
       "symbol": "word198",
       "lines": [
         18,
-        119
+        121
       ],
       "owners": [
         {
           "kind": "function",
           "name": "replayResetStateAndRandomSeeds",
-          "declaration_line": 117,
+          "declaration_line": 119,
           "lines": [
-            119
+            121
           ]
         },
         {
@@ -202823,16 +202888,36 @@
       "path": "src/modules/replay.c",
       "symbol": "Allocate and prepend 20 bytes: actual FVEC slot0x04 copies three f32 * components; then store the fourth scalar squared and the previous list head. * RE_UNKNOWN: roles/units, lifetime and historical formal types need original * callers/consumers. Preserve word locations and bit copies, no numeric conversion. * RE_ORIGINAL_QUIRK: allocation is unchecked; failure reachability is unknown.",
       "lines": [
-        87
+        89
       ],
       "evidence": "Allocate and prepend 20 bytes: actual FVEC slot0x04 copies three f32 * components; then store the fourth scalar squared and the previous list head. * RE_UNKNOWN: roles/units, lifetime and historical formal types need original * callers/consumers. Preserve word locations and bit copies, no numeric conversion. * RE_ORIGINAL_QUIRK: allocation is unchecked; failure reachability is unknown.",
       "owners": [
         {
           "kind": "function",
           "name": "replayPrependVectorSquaredScalarRecord",
-          "declaration_line": 92,
+          "declaration_line": 94,
           "lines": [
-            87
+            89
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-fcafa3c389d5",
+      "kind": "original_quirk",
+      "path": "src/modules/replay.c",
+      "symbol": "Read version-two replay blocks using the original filename format and * shared SCENE address+4; reject other versions after closing the file. * On version2 clear words0/8, read counts at4/0xC, then read blocks at * 0x10,0xE20 and0x4660 with counts word4, four times word4 and word0xC. * Reload each count after preceding callbacks; retain their full32-bit values. * RE_ORIGINAL_QUIRK: read/close statuses are ignored and the version byte is * not initialized before its read. Whether an unwritten version can be used * on an original execution path is RE_UNKNOWN, requiring asset/error traces. * RE_UNKNOWN: full state allocation, count/capacity domains, field roles and * stream layout and shared-state alias/lifetimes need original callers, setup and playback. * The128-byte filename scratch view follows the observed stack window and * paired writer; historical declared capacity is unresolved. The actual * literal format needs42 bytes including NUL, not evidence of array extent.",
+      "lines": [
+        345
+      ],
+      "evidence": "Read version-two replay blocks using the original filename format and * shared SCENE address+4; reject other versions after closing the file. * On version2 clear words0/8, read counts at4/0xC, then read blocks at * 0x10,0xE20 and0x4660 with counts word4, four times word4 and word0xC. * Reload each count after preceding callbacks; retain their full32-bit values. * RE_ORIGINAL_QUIRK: read/close statuses are ignored and the version byte is * not initialized before its read. Whether an unwritten version can be used * on an original execution path is RE_UNKNOWN, requiring asset/error traces. * RE_UNKNOWN: full state allocation, count/capacity domains, field roles and * stream layout and shared-state alias/lifetimes need original callers, setup and playback. * The128-byte filename scratch view follows the observed stack window and * paired writer; historical declared capacity is unresolved. The actual * literal format needs42 bytes including NUL, not evidence of array extent.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "replayReadVersionTwoFile",
+          "declaration_line": 358,
+          "lines": [
+            345
           ]
         }
       ]
@@ -204602,16 +204687,16 @@
       "path": "src/modules/replay.c",
       "symbol": "Allocate and prepend a 36-byte replay record containing two vectors, an * opaque scalar and the fourth parameter squared. Preserve call/store order * and the original allocation contract; vector roles remain unspecified.",
       "lines": [
-        70
+        72
       ],
       "evidence": "Allocate and prepend a 36-byte replay record containing two vectors, an * opaque scalar and the fourth parameter squared. Preserve call/store order * and the original allocation contract; vector roles remain unspecified.",
       "owners": [
         {
           "kind": "function",
           "name": "replayPrependSpatialRecord",
-          "declaration_line": 73,
+          "declaration_line": 75,
           "lines": [
-            70
+            72
           ]
         }
       ]
@@ -204622,16 +204707,16 @@
       "path": "src/modules/replay.c",
       "symbol": "Clear the original replay settings words/timer, seed both random number * generators with 12345 and mark replay active. The two settings words remain * offset-named because their full meaning is not yet established.",
       "lines": [
-        114
+        116
       ],
       "evidence": "Clear the original replay settings words/timer, seed both random number * generators with 12345 and mark replay active. The two settings words remain * offset-named because their full meaning is not yet established.",
       "owners": [
         {
           "kind": "function",
           "name": "replayResetStateAndRandomSeeds",
-          "declaration_line": 117,
+          "declaration_line": 119,
           "lines": [
-            114
+            116
           ]
         }
       ]
@@ -204642,16 +204727,16 @@
       "path": "src/modules/replay.c",
       "symbol": "Store the low eight bits in the shared replay byte; retain the adjacent unknown-purpose contract.",
       "lines": [
-        107
+        109
       ],
       "evidence": "Store the low eight bits in the shared replay byte; retain the adjacent unknown-purpose contract.",
       "owners": [
         {
           "kind": "function",
           "name": "replaySetSharedByte",
-          "declaration_line": 107,
+          "declaration_line": 109,
           "lines": [
-            107
+            109
           ]
         }
       ]
@@ -207288,17 +207373,17 @@
       "path": "src/modules/replay.c",
       "symbol": "unused00",
       "lines": [
-        271,
-        282
+        273,
+        284
       ],
       "owners": [
         {
           "kind": "function",
           "name": "replayCreateThreeRangeControls",
-          "declaration_line": 266,
+          "declaration_line": 268,
           "lines": [
-            271,
-            282
+            273,
+            284
           ]
         }
       ]
@@ -207309,15 +207394,15 @@
       "path": "src/modules/replay.c",
       "symbol": "unused88",
       "lines": [
-        273
+        275
       ],
       "owners": [
         {
           "kind": "function",
           "name": "replayCreateThreeRangeControls",
-          "declaration_line": 266,
+          "declaration_line": 268,
           "lines": [
-            273
+            275
           ]
         }
       ]

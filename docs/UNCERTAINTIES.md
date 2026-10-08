@@ -17,13 +17,13 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 524 |
-| Preserved RE_ORIGINAL_QUIRK notes | 104 |
+| Explicit RE_UNKNOWN notes | 525 |
+| Preserved RE_ORIGINAL_QUIRK notes | 105 |
 | Older comments with uncertainty language | 99 |
 | Documented original-behavior audits | 28 |
-| Assembly-backed functions or data | 850 |
-| Address-based function identifiers | 994 |
-| Address-based global identifiers | 1340 |
+| Assembly-backed functions or data | 849 |
+| Address-based function identifiers | 993 |
+| Address-based global identifiers | 1342 |
 | Offset-based fields or neutral typed fields | 1430 |
 | Layout padding to preserve | 258 |
 | Unresolved type names | 282 |
@@ -3366,68 +3366,70 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
-| address_function | `func_replay_0040017C` | function `func_replay_0040017C` | [56](../src/modules/replay.c#L56) |
-| address_function | `func_replay_00400184` | function `func_replay_00400184` | [65](../src/modules/replay.c#L65) |
+| address_function | `func_replay_0040017C` | function `func_replay_0040017C` | [58](../src/modules/replay.c#L58) |
+| address_function | `func_replay_00400184` | function `func_replay_00400184` | [67](../src/modules/replay.c#L67) |
 | address_function | `func_replay_00400328` | function `func_replay_00400328` | [33](../src/modules/replay.c#L33) |
 | address_function | `func_replay_00400748` | function `func_replay_00400748` | [34](../src/modules/replay.c#L34) |
 | address_function | `func_replay_0040097C` | function `func_replay_0040097C` | [35](../src/modules/replay.c#L35) |
 | address_function | `func_replay_00400C50` | function `func_replay_00400C50` | [36](../src/modules/replay.c#L36) |
 | address_function | `func_replay_00400D84` | function `func_replay_00400D84` | [37](../src/modules/replay.c#L37) |
 | address_function | `func_replay_0040100C` | function `func_replay_0040100C` | [41](../src/modules/replay.c#L41) |
-| address_function | `func_replay_00401968` | function `func_replay_00401968` | [44](../src/modules/replay.c#L44) |
-| address_global | `D_replay_00401AC0` | function `replayCreateThreeRangeControls`, global `D_replay_00401AC0` | [21](../src/modules/replay.c#L21), [288](../src/modules/replay.c#L288), [298](../src/modules/replay.c#L298) |
-| address_global | `D_replay_00401AC8` | function `replayCreateThreeRangeControls`, global `D_replay_00401AC8` | [22](../src/modules/replay.c#L22), [289](../src/modules/replay.c#L289), [300](../src/modules/replay.c#L300) |
-| address_global | `D_replay_00401AD4` | function `replayCreateThreeRangeControls`, global `D_replay_00401AD4` | [23](../src/modules/replay.c#L23), [290](../src/modules/replay.c#L290), [301](../src/modules/replay.c#L301) |
-| address_global | `D_replay_00401ADC` | function `replayCreateThreeRangeControls`, global `D_replay_00401ADC` | [24](../src/modules/replay.c#L24), [291](../src/modules/replay.c#L291), [302](../src/modules/replay.c#L302) |
-| address_global | `D_replay_00401AE4` | function `replayWriteVersionTwoFile`, global `D_replay_00401AE4` | [9](../src/modules/replay.c#L9), [327](../src/modules/replay.c#L327) |
-| address_global | `D_replay_00401AF4` | function `replayWriteVersionTwoFile`, global `D_replay_00401AE4` | [9](../src/modules/replay.c#L9), [327](../src/modules/replay.c#L327) |
-| address_global | `D_replay_00401B50` | function `replayCreateThreeRangeControls`, global `D_replay_00401B50` | [25](../src/modules/replay.c#L25), [292](../src/modules/replay.c#L292), [301](../src/modules/replay.c#L301) |
-| address_global | `D_replay_00401B54` | function `replayCreateThreeRangeControls`, global `D_replay_00401B54` | [26](../src/modules/replay.c#L26), [293](../src/modules/replay.c#L293), [302](../src/modules/replay.c#L302) |
-| address_global | `D_replay_00401B58` | function `replayCreateThreeRangeControls`, global `D_replay_00401B58` | [27](../src/modules/replay.c#L27), [294](../src/modules/replay.c#L294), [300](../src/modules/replay.c#L300) |
-| address_global | `D_replay_00401B60` | function `replayFindDirectedSpatialRecord`, function `replayPrependSpatialRecord`, global `D_replay_00401B60` | [13](../src/modules/replay.c#L13), [79](../src/modules/replay.c#L79), [80](../src/modules/replay.c#L80), [210](../src/modules/replay.c#L210) |
-| address_global | `D_replay_00401B64` | function `replayIsPointInsideAnyRegion`, function `replayPrependVectorSquaredScalarRecord`, global `D_replay_00401B64` | [29](../src/modules/replay.c#L29), [96](../src/modules/replay.c#L96), [97](../src/modules/replay.c#L97), [241](../src/modules/replay.c#L241) |
-| address_global | `D_replay_00401B78` | function `replayClearActiveFlag`, function `replayResetStateAndRandomSeeds`, global `D_replay_00401B78` | [46](../src/modules/replay.c#L46), [123](../src/modules/replay.c#L123), [130](../src/modules/replay.c#L130) |
-| address_global | `D_replay_00401B7C` | function `replaySetSharedByte`, global `D_replay_00401B7C` | [45](../src/modules/replay.c#L45), [108](../src/modules/replay.c#L108) |
-| address_global | `D_replay_00401B98` | function `replayGetRecordFlags`, function `replayHasNewRecordFlags`, function `replayHasRecordFlags`, global `D_replay_00401B98` | [47](../src/modules/replay.c#L47), [149](../src/modules/replay.c#L149), [161](../src/modules/replay.c#L161), [178](../src/modules/replay.c#L178) |
-| address_global | `D_replay_00401B9C` | function `replayGetPreviousRecordFlags`, global `D_replay_00401B9C` | [48](../src/modules/replay.c#L48), [169](../src/modules/replay.c#L169) |
-| address_global | `D_replay_00401BA0` | function `replayGetRecordScalar`, global `D_replay_00401BA0` | [30](../src/modules/replay.c#L30), [191](../src/modules/replay.c#L191) |
-| assembly | `__entrypoint_func_replay_400000` | — | [49](../src/modules/replay.c#L49) |
-| assembly | `func_replay_00400328` | — | [134](../src/modules/replay.c#L134) |
-| assembly | `func_replay_00400748` | — | [136](../src/modules/replay.c#L136) |
-| assembly | `func_replay_0040097C` | — | [138](../src/modules/replay.c#L138) |
-| assembly | `func_replay_00400C50` | — | [140](../src/modules/replay.c#L140) |
-| assembly | `func_replay_00400D84` | — | [142](../src/modules/replay.c#L142) |
-| assembly | `func_replay_0040100C` | — | [195](../src/modules/replay.c#L195) |
-| assembly | `func_replay_00401968` | — | [341](../src/modules/replay.c#L341) |
+| address_global | `D_replay_00401AC0` | function `replayCreateThreeRangeControls`, global `D_replay_00401AC0` | [21](../src/modules/replay.c#L21), [290](../src/modules/replay.c#L290), [300](../src/modules/replay.c#L300) |
+| address_global | `D_replay_00401AC8` | function `replayCreateThreeRangeControls`, global `D_replay_00401AC8` | [22](../src/modules/replay.c#L22), [291](../src/modules/replay.c#L291), [302](../src/modules/replay.c#L302) |
+| address_global | `D_replay_00401AD4` | function `replayCreateThreeRangeControls`, global `D_replay_00401AD4` | [23](../src/modules/replay.c#L23), [292](../src/modules/replay.c#L292), [303](../src/modules/replay.c#L303) |
+| address_global | `D_replay_00401ADC` | function `replayCreateThreeRangeControls`, global `D_replay_00401ADC` | [24](../src/modules/replay.c#L24), [293](../src/modules/replay.c#L293), [304](../src/modules/replay.c#L304) |
+| address_global | `D_replay_00401AE4` | function `replayWriteVersionTwoFile`, global `D_replay_00401AE4` | [9](../src/modules/replay.c#L9), [329](../src/modules/replay.c#L329) |
+| address_global | `D_replay_00401AF4` | function `replayWriteVersionTwoFile`, global `D_replay_00401AE4` | [9](../src/modules/replay.c#L9), [329](../src/modules/replay.c#L329) |
+| address_global | `D_replay_00401B14` | function `replayReadVersionTwoFile`, global `D_replay_00401B14` | [44](../src/modules/replay.c#L44), [365](../src/modules/replay.c#L365) |
+| address_global | `D_replay_00401B24` | function `replayReadVersionTwoFile`, global `D_replay_00401B14` | [44](../src/modules/replay.c#L44), [365](../src/modules/replay.c#L365) |
+| address_global | `D_replay_00401B50` | function `replayCreateThreeRangeControls`, global `D_replay_00401B50` | [25](../src/modules/replay.c#L25), [294](../src/modules/replay.c#L294), [303](../src/modules/replay.c#L303) |
+| address_global | `D_replay_00401B54` | function `replayCreateThreeRangeControls`, global `D_replay_00401B54` | [26](../src/modules/replay.c#L26), [295](../src/modules/replay.c#L295), [304](../src/modules/replay.c#L304) |
+| address_global | `D_replay_00401B58` | function `replayCreateThreeRangeControls`, global `D_replay_00401B58` | [27](../src/modules/replay.c#L27), [296](../src/modules/replay.c#L296), [302](../src/modules/replay.c#L302) |
+| address_global | `D_replay_00401B60` | function `replayFindDirectedSpatialRecord`, function `replayPrependSpatialRecord`, global `D_replay_00401B60` | [13](../src/modules/replay.c#L13), [81](../src/modules/replay.c#L81), [82](../src/modules/replay.c#L82), [212](../src/modules/replay.c#L212) |
+| address_global | `D_replay_00401B64` | function `replayIsPointInsideAnyRegion`, function `replayPrependVectorSquaredScalarRecord`, global `D_replay_00401B64` | [29](../src/modules/replay.c#L29), [98](../src/modules/replay.c#L98), [99](../src/modules/replay.c#L99), [243](../src/modules/replay.c#L243) |
+| address_global | `D_replay_00401B78` | function `replayClearActiveFlag`, function `replayResetStateAndRandomSeeds`, global `D_replay_00401B78` | [48](../src/modules/replay.c#L48), [125](../src/modules/replay.c#L125), [132](../src/modules/replay.c#L132) |
+| address_global | `D_replay_00401B7C` | function `replaySetSharedByte`, global `D_replay_00401B7C` | [47](../src/modules/replay.c#L47), [110](../src/modules/replay.c#L110) |
+| address_global | `D_replay_00401B98` | function `replayGetRecordFlags`, function `replayHasNewRecordFlags`, function `replayHasRecordFlags`, global `D_replay_00401B98` | [49](../src/modules/replay.c#L49), [151](../src/modules/replay.c#L151), [163](../src/modules/replay.c#L163), [180](../src/modules/replay.c#L180) |
+| address_global | `D_replay_00401B9C` | function `replayGetPreviousRecordFlags`, global `D_replay_00401B9C` | [50](../src/modules/replay.c#L50), [171](../src/modules/replay.c#L171) |
+| address_global | `D_replay_00401BA0` | function `replayGetRecordScalar`, global `D_replay_00401BA0` | [30](../src/modules/replay.c#L30), [193](../src/modules/replay.c#L193) |
+| assembly | `__entrypoint_func_replay_400000` | — | [51](../src/modules/replay.c#L51) |
+| assembly | `func_replay_00400328` | — | [136](../src/modules/replay.c#L136) |
+| assembly | `func_replay_00400748` | — | [138](../src/modules/replay.c#L138) |
+| assembly | `func_replay_0040097C` | — | [140](../src/modules/replay.c#L140) |
+| assembly | `func_replay_00400C50` | — | [142](../src/modules/replay.c#L142) |
+| assembly | `func_replay_00400D84` | — | [144](../src/modules/replay.c#L144) |
+| assembly | `func_replay_0040100C` | — | [197](../src/modules/replay.c#L197) |
 | decompiler_local | `arg0` | function `replayGetRecordScalar` | [40](../src/modules/replay.c#L40) |
 | decompiler_local | `arg1` | function `replayGetRecordScalar` | [40](../src/modules/replay.c#L40) |
-| explicit_unknown | `Allocate and prepend 20 bytes: actual FVEC slot0x04 copies three f32 * components; then store the fourth scalar squared and the previous list head. * RE_UNKNOWN: roles/units, li...` | function `replayPrependVectorSquaredScalarRecord` | [87](../src/modules/replay.c#L87) |
-| explicit_unknown | `Create and attach a text-list row, then create three bound scalar rows * through original MISC104: 0..100 and two -50..50 ranges. Each call supplies * its existing shared value ...` | function `replayCreateThreeRangeControls` | [258](../src/modules/replay.c#L258) |
-| explicit_unknown | `Find the first replay record whose strict radius and mapped direction-dot * tests contain the supplied position. Return that record and write normalized * displacement plus dist...` | function `replayFindDirectedSpatialRecord` | [198](../src/modules/replay.c#L198) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_replay_0040017C`, function `func_replay_00400184` | [52](../src/modules/replay.c#L52), [61](../src/modules/replay.c#L61) |
-| explicit_unknown | `Read f32 at index*20+component*4 from the shared scalar base. RE_UNKNOWN: * both index domains/extent/units need original record writers/callers.` | function `replayGetRecordScalar` | [188](../src/modules/replay.c#L188) |
-| explicit_unknown | `Return the shared current word at the original 20-byte stride. RE_UNKNOWN: * index/storage bounds and lifetime need original record writers/callers.` | function `replayGetRecordFlags` | [158](../src/modules/replay.c#L158) |
-| explicit_unknown | `Return the shared previous word at the original 20-byte stride. RE_UNKNOWN: * index/storage bounds and lifetime need original record writers/callers.` | function `replayGetPreviousRecordFlags` | [166](../src/modules/replay.c#L166) |
-| explicit_unknown | `Store the low eight bits of the argument in D_replay_00401B7C. * RE_UNKNOWN: shared byte purpose and caller/export contract.` | function `replaySetSharedByte` | [103](../src/modules/replay.c#L103) |
-| explicit_unknown | `Test any requested bit; zero masks yield zero. RE_UNKNOWN: index/storage bounds * and lifetime require original record allocation/writers and all callers.` | function `replayHasRecordFlags` | [174](../src/modules/replay.c#L174) |
-| explicit_unknown | `Test requested bits in current/previous words at the 20-byte record stride. * Preserve original any-bit tests. RE_UNKNOWN: valid index/storage/alias * domains need original reco...` | function `replayHasNewRecordFlags` | [145](../src/modules/replay.c#L145) |
-| explicit_unknown | `The original getter consumes a signed low16 index and returns an address; * allocation returns a sign-extended index. RE_UNKNOWN: historical caller * declarations. Exact caller ...` | function `replayCreateThreeRangeControls` | [267](../src/modules/replay.c#L267) |
-| explicit_unknown | `Write version 2, header words 0x4/0xC, then blocks at offsets 0x10, * 0xE20 and 0x4660 with lengths frameCount, 4*frameCount and eventBytes. * Original recorder code stores stic...` | function `replayWriteVersionTwoFile` | [308](../src/modules/replay.c#L308) |
+| explicit_unknown | `Allocate and prepend 20 bytes: actual FVEC slot0x04 copies three f32 * components; then store the fourth scalar squared and the previous list head. * RE_UNKNOWN: roles/units, li...` | function `replayPrependVectorSquaredScalarRecord` | [89](../src/modules/replay.c#L89) |
+| explicit_unknown | `Create and attach a text-list row, then create three bound scalar rows * through original MISC104: 0..100 and two -50..50 ranges. Each call supplies * its existing shared value ...` | function `replayCreateThreeRangeControls` | [260](../src/modules/replay.c#L260) |
+| explicit_unknown | `Find the first replay record whose strict radius and mapped direction-dot * tests contain the supplied position. Return that record and write normalized * displacement plus dist...` | function `replayFindDirectedSpatialRecord` | [200](../src/modules/replay.c#L200) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_replay_0040017C`, function `func_replay_00400184` | [54](../src/modules/replay.c#L54), [63](../src/modules/replay.c#L63) |
+| explicit_unknown | `Read f32 at index*20+component*4 from the shared scalar base. RE_UNKNOWN: * both index domains/extent/units need original record writers/callers.` | function `replayGetRecordScalar` | [190](../src/modules/replay.c#L190) |
+| explicit_unknown | `Read version-two replay blocks using the original filename format and * shared SCENE address+4; reject other versions after closing the file. * On version2 clear words0/8, read ...` | function `replayReadVersionTwoFile` | [345](../src/modules/replay.c#L345) |
+| explicit_unknown | `Return the shared current word at the original 20-byte stride. RE_UNKNOWN: * index/storage bounds and lifetime need original record writers/callers.` | function `replayGetRecordFlags` | [160](../src/modules/replay.c#L160) |
+| explicit_unknown | `Return the shared previous word at the original 20-byte stride. RE_UNKNOWN: * index/storage bounds and lifetime need original record writers/callers.` | function `replayGetPreviousRecordFlags` | [168](../src/modules/replay.c#L168) |
+| explicit_unknown | `Store the low eight bits of the argument in D_replay_00401B7C. * RE_UNKNOWN: shared byte purpose and caller/export contract.` | function `replaySetSharedByte` | [105](../src/modules/replay.c#L105) |
+| explicit_unknown | `Test any requested bit; zero masks yield zero. RE_UNKNOWN: index/storage bounds * and lifetime require original record allocation/writers and all callers.` | function `replayHasRecordFlags` | [176](../src/modules/replay.c#L176) |
+| explicit_unknown | `Test requested bits in current/previous words at the 20-byte record stride. * Preserve original any-bit tests. RE_UNKNOWN: valid index/storage/alias * domains need original reco...` | function `replayHasNewRecordFlags` | [147](../src/modules/replay.c#L147) |
+| explicit_unknown | `The original getter consumes a signed low16 index and returns an address; * allocation returns a sign-extended index. RE_UNKNOWN: historical caller * declarations. Exact caller ...` | function `replayCreateThreeRangeControls` | [269](../src/modules/replay.c#L269) |
+| explicit_unknown | `Write version 2, header words 0x4/0xC, then blocks at offsets 0x10, * 0xE20 and 0x4660 with lengths frameCount, 4*frameCount and eventBytes. * Original recorder code stores stic...` | function `replayWriteVersionTwoFile` | [310](../src/modules/replay.c#L310) |
 | layout_padding | `prefix` | type `ReplayDotExports`, type `ReplayFileModuleExports`, type `ReplaySceneNameExports` | [3](../src/modules/replay.c#L3), [5](../src/modules/replay.c#L5), [6](../src/modules/replay.c#L6) |
 | offset_field | `unk00` | type `ReplayMiscSeedExports`, type `ReplaySettingsView` | [17](../src/modules/replay.c#L17), [18](../src/modules/replay.c#L18) |
 | offset_field | `unk04` | type `ReplayFlagRecord` | [19](../src/modules/replay.c#L19) |
 | offset_field | `unk194` | type `ReplaySettingsView` | [18](../src/modules/replay.c#L18) |
-| offset_field | `unk7C` | function `replayResetStateAndRandomSeeds` | [120](../src/modules/replay.c#L120) |
-| offset_field | `value0` | type `ReplayWriteHeader` | [7](../src/modules/replay.c#L7) |
-| offset_field | `value8` | type `ReplayWriteHeader` | [7](../src/modules/replay.c#L7) |
-| offset_field | `word190` | function `replayResetStateAndRandomSeeds`, type `ReplaySettingsView` | [18](../src/modules/replay.c#L18), [118](../src/modules/replay.c#L118) |
-| offset_field | `word198` | function `replayResetStateAndRandomSeeds`, type `ReplaySettingsView` | [18](../src/modules/replay.c#L18), [119](../src/modules/replay.c#L119) |
-| original_quirk | `Allocate and prepend 20 bytes: actual FVEC slot0x04 copies three f32 * components; then store the fourth scalar squared and the previous list head. * RE_UNKNOWN: roles/units, li...` | function `replayPrependVectorSquaredScalarRecord` | [87](../src/modules/replay.c#L87) |
-| uncertainty_note | `Allocate and prepend a 36-byte replay record containing two vectors, an * opaque scalar and the fourth parameter squared. Preserve call/store order * and the original allocation...` | function `replayPrependSpatialRecord` | [70](../src/modules/replay.c#L70) |
-| uncertainty_note | `Clear the original replay settings words/timer, seed both random number * generators with 12345 and mark replay active. The two settings words remain * offset-named because thei...` | function `replayResetStateAndRandomSeeds` | [114](../src/modules/replay.c#L114) |
-| uncertainty_note | `Store the low eight bits in the shared replay byte; retain the adjacent unknown-purpose contract.` | function `replaySetSharedByte` | [107](../src/modules/replay.c#L107) |
-| unused_identifier | `unused00` | function `replayCreateThreeRangeControls` | [271](../src/modules/replay.c#L271), [282](../src/modules/replay.c#L282) |
-| unused_identifier | `unused88` | function `replayCreateThreeRangeControls` | [273](../src/modules/replay.c#L273) |
+| offset_field | `unk7C` | function `replayResetStateAndRandomSeeds` | [122](../src/modules/replay.c#L122) |
+| offset_field | `value0` | function `replayReadVersionTwoFile`, type `ReplayWriteHeader` | [7](../src/modules/replay.c#L7), [373](../src/modules/replay.c#L373) |
+| offset_field | `value8` | function `replayReadVersionTwoFile`, type `ReplayWriteHeader` | [7](../src/modules/replay.c#L7), [374](../src/modules/replay.c#L374) |
+| offset_field | `word190` | function `replayResetStateAndRandomSeeds`, type `ReplaySettingsView` | [18](../src/modules/replay.c#L18), [120](../src/modules/replay.c#L120) |
+| offset_field | `word198` | function `replayResetStateAndRandomSeeds`, type `ReplaySettingsView` | [18](../src/modules/replay.c#L18), [121](../src/modules/replay.c#L121) |
+| original_quirk | `Allocate and prepend 20 bytes: actual FVEC slot0x04 copies three f32 * components; then store the fourth scalar squared and the previous list head. * RE_UNKNOWN: roles/units, li...` | function `replayPrependVectorSquaredScalarRecord` | [89](../src/modules/replay.c#L89) |
+| original_quirk | `Read version-two replay blocks using the original filename format and * shared SCENE address+4; reject other versions after closing the file. * On version2 clear words0/8, read ...` | function `replayReadVersionTwoFile` | [345](../src/modules/replay.c#L345) |
+| uncertainty_note | `Allocate and prepend a 36-byte replay record containing two vectors, an * opaque scalar and the fourth parameter squared. Preserve call/store order * and the original allocation...` | function `replayPrependSpatialRecord` | [72](../src/modules/replay.c#L72) |
+| uncertainty_note | `Clear the original replay settings words/timer, seed both random number * generators with 12345 and mark replay active. The two settings words remain * offset-named because thei...` | function `replayResetStateAndRandomSeeds` | [116](../src/modules/replay.c#L116) |
+| uncertainty_note | `Store the low eight bits in the shared replay byte; retain the adjacent unknown-purpose contract.` | function `replaySetSharedByte` | [109](../src/modules/replay.c#L109) |
+| unused_identifier | `unused00` | function `replayCreateThreeRangeControls` | [273](../src/modules/replay.c#L273), [284](../src/modules/replay.c#L284) |
+| unused_identifier | `unused88` | function `replayCreateThreeRangeControls` | [275](../src/modules/replay.c#L275) |
 
 ## src/modules/results.c
 

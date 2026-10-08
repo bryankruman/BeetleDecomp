@@ -22,8 +22,8 @@ rom:0xC4 reloc:MIPS_HI16 symbol:replayWriteVersionTwoFile
 rom:0xF0 reloc:MIPS_LO16 symbol:replayWriteVersionTwoFile
 rom:0xC8 reloc:MIPS_HI16 symbol:replayClearActiveFlag
 rom:0xF4 reloc:MIPS_LO16 symbol:replayClearActiveFlag
-rom:0xCC reloc:MIPS_HI16 symbol:func_replay_00401968
-rom:0xF8 reloc:MIPS_LO16 symbol:func_replay_00401968
+rom:0xCC reloc:MIPS_HI16 symbol:replayReadVersionTwoFile
+rom:0xF8 reloc:MIPS_LO16 symbol:replayReadVersionTwoFile
 rom:0xD0 reloc:MIPS_HI16 symbol:func_replay_00400328
 rom:0xFC reloc:MIPS_LO16 symbol:func_replay_00400328
 rom:0xD4 reloc:MIPS_HI16 symbol:replayHasNewRecordFlags

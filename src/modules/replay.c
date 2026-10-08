@@ -41,7 +41,9 @@ f32 replayGetRecordScalar(s32 arg0, s32 arg1);
 void func_replay_0040100C();
 ReplaySpatialRecord *replayFindDirectedSpatialRecord(Vec3F *position, Vec3F *direction, f32 *distance);
 void replayWriteVersionTwoFile(ReplayWriteHeader *state);
-void func_replay_00401968();
+extern char D_replay_00401B14[], D_replay_00401B24[];
+void replayReadVersionTwoFile(ReplayWriteHeader *state);
+#line 45 "src/modules/replay.c"
 extern u8 D_replay_00401B7C;
 extern u8 D_replay_00401B78;
 extern s32 D_replay_00401B98;
@@ -338,5 +340,45 @@ void replayWriteVersionTwoFile(ReplayWriteHeader *state) {
 }
 #line 147 "src/modules/replay.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/replay/func_replay_00401968.s")
+#line 148 "src/modules/replay.c"
+
+/* Read version-two replay blocks using the original filename format and
+ * shared SCENE address+4; reject other versions after closing the file.
+ * On version2 clear words0/8, read counts at4/0xC, then read blocks at
+ * 0x10,0xE20 and0x4660 with counts word4, four times word4 and word0xC.
+ * Reload each count after preceding callbacks; retain their full32-bit values.
+ * RE_ORIGINAL_QUIRK: read/close statuses are ignored and the version byte is
+ * not initialized before its read. Whether an unwritten version can be used
+ * on an original execution path is RE_UNKNOWN, requiring asset/error traces.
+ * RE_UNKNOWN: full state allocation, count/capacity domains, field roles and
+ * stream layout and shared-state alias/lifetimes need original callers, setup and playback.
+ * The128-byte filename scratch view follows the observed stack window and
+ * paired writer; historical declared capacity is unresolved. The actual
+ * literal format needs42 bytes including NUL, not evidence of array extent. */
+void replayReadVersionTwoFile(ReplayWriteHeader *state) {
+    FileUx_Exports *exports;
+    u8 version;
+    char filename[128];
+    s32 file;
+
+    exports = ((ReplayFileModuleExports *)gMiscExports)->loadFileModule();
+    sprintf(filename, D_replay_00401B14, D_replay_00401B24, gSceneExports->nameRecord + 4);
+    file = exports->fileuxOpen(filename, 0, 0x1B6);
+    if (file >= 0) {
+        exports->fileuxRead(file, &version, 1);
+        if (version != 2) {
+            exports->fileuxClose(file);
+            return;
+        }
+        state->value0 = 0;
+        state->value8 = 0;
+        exports->fileuxRead(file, (u8 *)&state->frameCount, 4);
+        exports->fileuxRead(file, (u8 *)&state->eventBytes, 4);
+        exports->fileuxRead(file, (u8 *)state + 0x10, state->frameCount);
+        exports->fileuxRead(file, (u8 *)state + 0xE20, (s32)((u32)state->frameCount << 2));
+        exports->fileuxRead(file, (u8 *)state + 0x4660, state->eventBytes);
+        exports->fileuxClose(file);
+    }
+}
+#line 149 "src/modules/replay.c"
 

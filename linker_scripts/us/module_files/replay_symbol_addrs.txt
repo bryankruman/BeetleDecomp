@@ -78,3 +78,4 @@ replayFindDirectedSpatialRecord = 0x0040148C; // type:func
 replayCreateThreeRangeControls = 0x004016E8; // type:func
 replayPrependVectorSquaredScalarRecord = 0x00400230; // type:func
 replaySetSharedByte = 0x004002A8; // type:func
+replayReadVersionTwoFile = 0x00401968; // type:func
