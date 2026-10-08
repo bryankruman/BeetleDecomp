@@ -765,6 +765,23 @@ void uvDynPrepareLinkedNodeState(DynResetState *state) {
 }
 #line 343 "src/modules/uvdyn_rom.c"
 
+/* Set scalar properties through original15-entry table D_uvdyn_rom_00411AE0.
+ * Supported selectors are0/2/9/10/11/12/13/14; null nodes and other selectors
+ * return without mutation. Selector2 stores1528/1524/1520 in that order.
+ * Selector0 converts to signed32 at0x24; when zero, iterate attachments1C
+ * using count18 and publish state word28 through actual lowercase-isct38.
+ * That export targets0x400B90 and stores the word at intersection-record08.
+ * Selectors11/12 use native unsigned32 float conversion then low16 stores
+ * at154C/1210; selectors13/14 signed conversion stores04/10. Others store
+ * f32 at14AC/12B0. Retain low16 iteration and post-call count/provider reads.
+ * RE_UNKNOWN: physical property meanings/units, supported float input domains,
+ * complete attachment capacity and caller guarantees. Trace original constants,
+ * setters/getters and callers before adding validation or naming quantities.
+ * RE_UNKNOWN: historical source/local organization. Readable C preserves these
+ * effects and types but uses different live count/attachment registers, shifting
+ * subsequent temporary allocations. Native table ownership also remains here;
+ * retain original assembly until complete code and readonly proofs succeed. */
+#line 344 "src/modules/uvdyn_rom.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00403A1C.s")
 
 #line 346 "src/modules/uvdyn_rom.c"

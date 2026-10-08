@@ -411,6 +411,6 @@ raceGetIndexedValue = 0x0040348C; // type:func
 raceLoadModelAndRegisterCallback = 0x0040367C; // type:func
 raceSetEntryTable = 0x004036C8; // type:func
 raceDrawStatusFields = 0x00403268; // type:func
-raceForwardSharedHandle = 0x00404194; // type:func
+raceReleaseFirstPlayerSoundHandle = 0x00404194; // type:func
 racePlayPendingSoundByKind = 0x00404044; // type:func
 raceReleaseManagedSoundsAndClearBytes = 0x00400920; // type:func

@@ -82,7 +82,7 @@ void func_race_004037DC();
 void func_race_004038B0();
 void func_race_00403B6C();
 void racePlayPendingSoundByKind(s32 kind);
-void raceForwardSharedHandle();
+void raceReleaseFirstPlayerSoundHandle();
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/race/__entrypoint_func_race_400000.s")
 
 #line 82 "src/modules/race.c"
@@ -113,6 +113,13 @@ void raceReleaseManagedSoundsAndClearBytes(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/race/func_race_00400AB4.s")
 
+/* Original pause pass checks signed settings halfwords 0x9C/0x86/0x88 and
+ * player gates 0x58/0x1D; REPLAY 0x0C stores a shared byte, not pauseFlag.
+ * While paused, PAUS 0x08 dispatches state; CARAUDIO 0x0C processes each player
+ * before PLYR 0x20 releases its word-0x14 indexed sound handle. Preserve reloads.
+ * RE_UNKNOWN: gate/state domains, table capacity and player/handle lifetime
+ * need original writers/callers. Clean C is unmatched; retain original ASM. */
+#line 86 "src/modules/race.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/race/func_race_00400CC0.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/race/func_race_00400EB0.s")
@@ -275,10 +282,13 @@ void racePlayPendingSoundByKind(s32 kind) {
 #line 130 "src/modules/race.c"
 
 #line 131 "src/modules/race.c"
-/* Forward the shared race handle through export 0x20. Detailed handle
- * meaning and ownership remain with that module. */
-void raceForwardSharedHandle(void) {
+/* Pass the first stored player to PLYR 0x20, releasing its word-0x14 indexed sound handle.
+ * RE_UNKNOWN: nonnull player, valid handle index and lifetime need original callers/PLYR producers. */
+#line 133 "src/modules/race.c"
+
+void raceReleaseFirstPlayerSoundHandle(void) {
     (*(void (**)(s32))((u8 *)D_race_00404A04 + 0x20))(D_race_004049F0);
 }
+#line 136 "src/modules/race.c"
 #line 134 "src/modules/race.c"
 

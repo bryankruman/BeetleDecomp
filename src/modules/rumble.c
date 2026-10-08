@@ -4,15 +4,15 @@
 #include "global_exports.h"
 
 void rumbleNoOpModuleCleanup(void);
-void func_rumble_00400050(s32 arg0, f32 arg1, f32 arg2, f32 arg3);
+void rumbleMergeQuantizedPatternValues(s32 controllerIndex, f32 patternLevel, f32 requestedActiveValue, f32 requestedDelayValue);
 void rumbleUpdateControllerPatterns(void);
 
 // .bss
 s32 D_unused_rumble_00400450[2];
-f32 D_rumble_00400458[4][8];
-f32 D_rumble_004004D8[4][8];
-s32 D_rumble_00400558[4];
-u8 D_rumble_00400568[4];
+f32 D_rumble_00400458[4][8]; // Positive active values are eligible after the corresponding delay becomes negative.
+f32 D_rumble_004004D8[4][8]; // Delay values decrease each enabled update; active values decrease only once delay is negative.
+s32 D_rumble_00400558[4]; // Decremented every update; an inhibited controller requests reinitialization below zero and resets this to 30.
+u8 D_rumble_00400568[4]; // Twelve-step pattern cursor, advanced before the enabled controller's motor lookup.
 
 // .data
 u8 D_rumble_004003E0[8][12] = {
@@ -27,7 +27,7 @@ void __entrypoint_func_rumble_400000(Rumble_Exports *exports);
 void __entrypoint_func_rumble_400000(Rumble_Exports *exports) {
     uvUpdateFileAllocPtr(exports);
     exports->rumbleNoOpModuleCleanup = rumbleNoOpModuleCleanup;
-    exports->func_rumble_00400050 = func_rumble_00400050;
+    exports->rumbleMergeQuantizedPatternValues = rumbleMergeQuantizedPatternValues;
     exports->rumbleUpdateControllerPatterns = rumbleUpdateControllerPatterns;
 }
 
@@ -41,38 +41,56 @@ void rumbleNoOpModuleCleanup(void) {
 }
 #line 36 "src/modules/rumble.c"
 
-void func_rumble_00400050(s32 arg0, f32 arg1, f32 arg2, f32 arg3) {
-    s32 idx;
+#line 37 "src/modules/rumble.c"
 
-    arg1 *= 7.0f;
-    idx = arg1;
-    if (idx < 0) {
-        idx = 0;
-    } else if (idx >= 8) {
-        idx = 7;
+/* Scale the supplied pattern level by seven, truncate to an integer and clamp
+ * the resulting slot to 0..7. For an already-positive active value, retain the
+ * smaller ordered delay value; otherwise replace its delay. Merge the active value
+ * using the original ordered comparison, retaining the explicit self-stores.
+ * RE_UNKNOWN: controller-index bounds, finite/representable level domain,
+ * active/delay value units and alias/reentry guarantees. Trace original callers
+ * and the shared update-step producer before changing conversions, comparisons,
+ * table bounds or translating these values into elapsed time. */
+void rumbleMergeQuantizedPatternValues(s32 controllerIndex, f32 patternLevel, f32 requestedActiveValue, f32 requestedDelayValue) {
+    s32 patternIndex;
+
+    patternLevel *= 7.0f;
+    patternIndex = patternLevel;
+    if (patternIndex < 0) {
+        patternIndex = 0;
+    } else if (patternIndex >= 8) {
+        patternIndex = 7;
     }
-    if (D_rumble_00400458[arg0][idx] > 0.0f) {
-        if (D_rumble_004004D8[arg0][idx] < arg3) {
-            D_rumble_004004D8[arg0][idx] = D_rumble_004004D8[arg0][idx];
+    if (D_rumble_00400458[controllerIndex][patternIndex] > 0.0f) {
+        if (D_rumble_004004D8[controllerIndex][patternIndex] < requestedDelayValue) {
+            D_rumble_004004D8[controllerIndex][patternIndex] = D_rumble_004004D8[controllerIndex][patternIndex];
         } else {
-            D_rumble_004004D8[arg0][idx] = arg3;
+            D_rumble_004004D8[controllerIndex][patternIndex] = requestedDelayValue;
         }
     } else {
-        D_rumble_004004D8[arg0][idx] = arg3;
+        D_rumble_004004D8[controllerIndex][patternIndex] = requestedDelayValue;
     }
-    if (arg2 < D_rumble_00400458[arg0][idx]) {
-        D_rumble_00400458[arg0][idx] = D_rumble_00400458[arg0][idx];
+    if (requestedActiveValue < D_rumble_00400458[controllerIndex][patternIndex]) {
+        D_rumble_00400458[controllerIndex][patternIndex] = D_rumble_00400458[controllerIndex][patternIndex];
         return;
     }
-    D_rumble_00400458[arg0][idx] = arg2;
+    D_rumble_00400458[controllerIndex][patternIndex] = requestedActiveValue;
 }
+#line 62 "src/modules/rumble.c"
 
 #line 63 "src/modules/rumble.c"
-/* Update four controller rumble outputs from eight timed patterns.
- * When inhibited, clear pattern timing, stop rumble and periodically
- * reinitialize the controller; otherwise advance the twelve-step pattern
- * and use the highest eligible pattern index. RE_UNKNOWN: the additional
- * shared inhibit field and per-controller enable words retain their original roles. */
+#line 63 "src/modules/rumble.c"
+
+/* Update four motor outputs from eight slots and a twelve-step byte pattern.
+ * Inhibited controllers clear both value tables, request a motor stop and request
+ * reinitialization after the update-count countdown becomes negative. Otherwise advance the
+ * pattern cursor first, decrement every delay by the shared step and decrement
+ * the active value only after its updated delay is negative. Choose the highest
+ * eligible slot; slot zero is the all-zero fallback when no slot is eligible.
+ * RE_UNKNOWN: shared step units/domain, extra inhibit field and per-controller
+ * enable-byte lifecycle, plus callback/reentry guarantees. Trace original
+ * settings writers, slot-request callers and motor callers before assigning
+ * time units, replacing the float comparisons or changing update ordering. */
 void rumbleUpdateControllerPatterns(void) {
     s32 stopRumble;
     s32 selectedPattern;
@@ -118,6 +136,7 @@ void rumbleUpdateControllerPatterns(void) {
         }
     }
 }
+#line 113 "src/modules/rumble.c"
 #line 108 "src/modules/rumble.c"
 
 s32 D_00400440[] = { 0x000C0000, __entrypoint_func_rumble_400000, 0, 0 };

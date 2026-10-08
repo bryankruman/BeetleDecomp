@@ -3,7 +3,7 @@
 
 typedef struct Rumble_Exports_s {
     /* 0x0 */ void (*rumbleNoOpModuleCleanup)(void);                       /* inferred */
-    /* 0x4 */ void (*func_rumble_00400050)(s32, f32, f32, f32);     /* inferred */
+    /* 0x4 */ void (*rumbleMergeQuantizedPatternValues)(s32, f32, f32, f32);     /* inferred */
     /* 0x8 */ void (*rumbleUpdateControllerPatterns)(void);                       /* inferred */
 } Rumble_Exports;                                   /* size = 0xC */
 

@@ -12,3 +12,4 @@ D_rumble_004003E0 = 0x4003E0;
 B_rumble_00400450 = 0x00400450;
 rumbleUpdateControllerPatterns = 0x00400138; // type:func
 rumbleNoOpModuleCleanup = 0x00400048; // type:func
+rumbleMergeQuantizedPatternValues = 0x00400050; // type:func
