@@ -1579,6 +1579,28 @@ void uvDynApplyTranslatedDobjTransform(DynResetState *state) {
 }
 #line 443 "src/modules/uvdyn_rom.c"
 
+/* Original stored-vector interpolation and matrix update wrapper. Store the
+ * first scalar at 0x30, copy matrix 0x12EC to 0x13AC, then copy vectors
+ * 0x14BC/0x14E0 to 0x14D4/0x14F8. FVEC subtract/scale/add interpolates
+ * 0x14E0 from 0x14EC using the first scalar. A zero flag at 0x154C also
+ * interpolates 0x14BC from 0x14C8 before copying matrix 0x132C to 0x12EC;
+ * a nonzero flag instead interpolates the FMTX direction-transform results
+ * before that matrix copy. Native 0071C then receives the full flag, two
+ * matrices, five vector addresses and the second scalar. Finish with the
+ * linear 3x3 copy to 0x13EC and native 7C04, 09BC, then 94CC updates.
+ * RE_ORIGINAL_QUIRK: for a zero flag, native 0071C writes the first transformed
+ * scratch vector before reading it; for a nonzero flag the caller writes it.
+ * Zero and exactly one select distinct native helper branches. Preserve the
+ * full halfword value and separate in-place provider operations; the final
+ * linear 3x3 copy leaves the remaining destination matrix elements untouched.
+ * RE_UNKNOWN: vector/matrix frames, scalar units, valid interpolation domains,
+ * flag-enum names and historical source-local organization. Trace original
+ * callers, stored-bank writers and native 0071C consumers before assigning
+ * physical roles or bounds. The clean C recovery is parked: all provider calls,
+ * branch positions and ordered relocations match, but the 136-byte frame and
+ * stack homes differ from the candidate's 144-byte frame. Genuine source
+ * declarations/lifetimes are needed; do not invent padding or force registers. */
+#line 444 "src/modules/uvdyn_rom.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040954C.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040981C.s")

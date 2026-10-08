@@ -56,7 +56,26 @@ extern f32 *D_tdata_004029E4;
 void func_tdata_00401998();
 TdataHandle tdataPreviousHandle(TdataHandle handle);
 TdataRecord *tdataGetRecordByHandle(TdataHandle handle);
-void func_tdata_00401ADC();
+/* Minimum original access views used by the scalar-link query.
+ * RE_UNKNOWN: complete state/link allocation, physical roles and units need
+ * original producers/callers; these prefixes do not establish capacity. */
+typedef struct {
+    TdataHandle handle;
+    u8 opaque04[8];
+    u16 fractionWord0C;
+} TdataScalarLinkStateView;
+typedef struct TdataScalarLinkView {
+    f32 first;
+    f32 second;
+    f32 tolerance;
+    f32 lower;
+    f32 upper;
+    f32 target;
+    struct TdataScalarLinkView *next;
+} TdataScalarLinkView;
+extern f32 D_tdata_00402968;
+void tdataApplyFirstMatchingScalarLink(TdataScalarLinkStateView *, f32 *);
+#line 60 "src/modules/tdata.c"
 void func_tdata_00401CBC();
 void func_tdata_00401D38();
 void func_tdata_00402388();
@@ -401,7 +420,67 @@ TdataRecord *tdataGetRecordByHandle(TdataHandle handle) {
 }
 #line 167 "src/modules/tdata.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_00401ADC.s")
+#line 168 "src/modules/tdata.c"
+
+/* Apply the first scalar link whose strict two-component tolerance tests
+ * and lower/upper bounds contain the original derived record value. Snapshot
+ * the packed handle before both getters, then use the reloaded unsigned
+ * fraction at 0x0C divided by D2968 and record scalar at 0x30. Cache the two
+ * supplied components only when the shared link head is nonnull.
+ * Preserve the original ordered center<sample difference/negation branches;
+ * fabs would change NaN and signed-zero behavior. Request target-minus-value
+ * through the original adjustment helper with its optional position word zero,
+ * then return after the first match; the helper updates state handle/fraction
+ * and scalar fields. RE_ORIGINAL_QUIRK: lookup results are dereferenced without
+ * checking here. RE_UNKNOWN: handle/state/link/sample extents, alias/lifetime,
+ * acyclic-list and valid-handle guarantees, value meanings/units and caller
+ * reachability require original state/link producers and every entry caller. */
+void tdataApplyFirstMatchingScalarLink(TdataScalarLinkStateView *state, f32 *samplePair) {
+    TdataHandle handle;
+    TdataRecord *record;
+    f32 derivedValue;
+    TdataScalarLinkView *link;
+    f32 firstSample;
+    f32 secondSample;
+    f32 center;
+    f32 firstDifference;
+    f32 secondDifference;
+    f32 tolerance;
+
+    handle = state->handle;
+    record = tdataGetRecordByHandle(handle);
+    derivedValue = tdataGetLinearRecordValue(handle);
+    derivedValue += (state->fractionWord0C / D_tdata_00402968) *
+        *(f32 *)((u8 *)record + 0x30);
+    link = (TdataScalarLinkView *)D_tdata_004029D8;
+    if (link != NULL) {
+        firstSample = samplePair[0];
+        secondSample = samplePair[1];
+        do {
+            center = link->first;
+            if (center < firstSample) {
+                firstDifference = firstSample - center;
+            } else {
+                firstDifference = -(firstSample - center);
+            }
+            center = link->second;
+            if (center < secondSample) {
+                secondDifference = secondSample - center;
+            } else {
+                secondDifference = -(secondSample - center);
+            }
+            tolerance = link->tolerance;
+            if (firstDifference < tolerance && secondDifference < tolerance &&
+                derivedValue < link->upper && link->lower < derivedValue) {
+                func_tdata_00400234((TdataScalarState *)state,
+                    link->target - derivedValue, 0);
+                return;
+            }
+            link = link->next;
+        } while (link != NULL);
+    }
+}
+#line 169 "src/modules/tdata.c"
 
 #line 170 "src/modules/tdata.c"
 /* Prepend the supplied record through its link word at 0x18 and retain

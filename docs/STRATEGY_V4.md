@@ -34,8 +34,8 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **851** assembly references:
-**808** ordinary functions and **43** entrypoints, with **753,992** known instruction bytes
+matching C are preserved with `#line`. The current ledger has **850** assembly references:
+**807** ordinary functions and **43** entrypoints, with **753,612** known instruction bytes
 and no unknown sizes. The broader name audit still finds **304** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
@@ -2224,10 +2224,19 @@ Totals: 349 further recoveries after the 225 upstream ordinary imports, plus 127
 Frozen wave `1488-demo-replay-menu-contracts` and `accepted-demo-replay-menu-contracts` verify real translation-unit instructions/full relocations, 3 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 349 further readable functions
+## Historical accepted checkpoint — 349 further readable functions
 
 Clarify one older text-rendering function with proven primitive-color export, descriptor RGB components, byte index and object alpha names; descriptor extent, valid index and unused bytes stay explicit unknowns. All 84 original instruction bytes and full ordered relocation records agree. Add a native dynamics query/vector-offset contract beside retained assembly, preserving sentinel gates, narrowed results, callback order, range reset before zero return, original facing/cross/normalize aliases, exact 0.1f factor, and matrix-before-query vector updates. Keep physical frames/units, result semantics, allocation, callback effects and caller domains unresolved. Add a native vehicle scalar-response contract beside retained assembly, with actual ordered clamp provider and mixed single/double arithmetic documented. Both C recovery drafts remain unaccepted after instruction and full relocation mismatches; no universal exceptional-float equivalence is claimed and no trial-only types/prototypes are banked. Regenerate and check the uncertainty index. All three original packed modules, fresh complete ROM and complete source-manifest proof remain mandatory.
 
 Totals: 349 further recoveries after the 225 upstream ordinary imports, plus 1280 existing C semantic cleanups. Current ledger: 851 assembly references = 808 ordinary + 43 entrypoints; 753,992 known remaining instruction bytes; zero unknown sizes; 304 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `1500-letter-query-scalar-contracts` and `accepted-letter-query-scalar-contracts` verify real translation-unit instructions/full relocations, 3 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 350 further readable functions
+
+Recover tdataApplyFirstMatchingScalarLink from all380 exact original instruction bytes and seven complete ordered relocation records. Preserve the packed-handle snapshot before both getters, unsigned fraction and record scalar reloads, exact external normalization constant, conditional sample-pair snapshot, ordered difference/negation branches, strict tolerance/bounds tests and first-match target-minus-value request with optional-position word zero. Mark original unchecked record lookup separately from unknown allocation, valid-handle, alias/lifetime, acyclic-list, physical units and caller guarantees. Correct one older UFO allocator: original TDATA slot08 adjusts record state and slot10 resets record state; remove unsupported attachment/ownership wording while preserving all216 instruction bytes and complete ordered relocations. Keep unchecked allocation and unresolved state/position/camera contracts indexed. Document native dynamics stored-vector interpolation and matrix update beside retained assembly, including zero-mode helper scratch initialization before read, full halfword mode, original provider aliases and partial final3x3 copy. The720-byte draft remains unaccepted: all ordered relocations and call/branch positions match but45 stack immediates differ. Require genuine source evidence for further recovery. Regenerate/check the uncertainty index and require all affected packed modules, fresh full ROM and complete source hashes.
+
+Totals: 350 further recoveries after the 225 upstream ordinary imports, plus 1281 existing C semantic cleanups. Current ledger: 850 assembly references = 807 ordinary + 43 entrypoints; 753,612 known remaining instruction bytes; zero unknown sizes; 304 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `1506-tdata-scalar-link-contracts` and `accepted-tdata-scalar-link-contracts` verify real translation-unit instructions/full relocations, 3 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

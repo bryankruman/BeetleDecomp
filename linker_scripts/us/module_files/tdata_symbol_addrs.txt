@@ -58,3 +58,4 @@ tdataSetSharedParameters = 0x004027B8; // type:func
 tdataApplyScalarRegions = 0x004027CC; // type:func
 tdataBuildMatrixFromQuery = 0x004013EC; // type:func
 tdataReturnZeroScalar = 0x00401860; // type:func
+tdataApplyFirstMatchingScalarLink = 0x00401ADC; // type:func
