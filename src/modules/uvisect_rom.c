@@ -914,6 +914,19 @@ s32 uvIsectQueryFilteredSharedRecords(u32 mask, Vec3F *first, Vec3F *second,
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00405124.s")
 
+/* Select signed columns from record offsets 0x30/0x40/0x50, 0x34/0x44/0x54,
+ * or 0x38/0x48/0x58 for selectors +/-1, +/-2 or +/-3, then normalize the
+ * destination in place through the original FVEC slot 0x08 and return its status.
+ * Preserve interleaved source reads and output stores; overlap is not excluded.
+ * RE_ORIGINAL_QUIRK: zero and unsupported signed-low16 selectors normalize the
+ * existing destination without initializing it. Native code homes the incoming
+ * full selector word before narrowing it; preserve the original assembly.
+ * RE_UNKNOWN: column role/frame, historical declaration, record/output lifetime,
+ * overlap and caller initialization for unsupported selectors. Trace original
+ * producers and export consumers. The seven-entry native table at 0x4076E4 and
+ * surrounding readonly bytes remain original-owned; any C recovery must prove
+ * their targets and retain the separate table at 0x40771C. */
+#line 193 "src/modules/uvisect_rom.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004054F4.s")
 
 #line 195 "src/modules/uvisect_rom.c"

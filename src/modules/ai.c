@@ -568,6 +568,15 @@ void aiClearRecordShortWhenEnabled(void *record, s16 unused) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00404E10.s")
 
+/* func_ai_004051A4 updates active records through DYN vector 17/18 and matrix 6,
+ * transforms vector 100 into E8, then calls 53A8/5754 before refreshing linked scalars.
+ * Preserve active-path count reloads, the second pass over every record and final
+ * tail->word4->float4 read; this native call to 5B4C prepares A0/A1/A2 only.
+ * RE_UNKNOWN: record/source domains, scalar units, tail/list validity and lifetimes
+ * need original producers/callers; the shared four-formal 5B4C ABI remains unresolved.
+ * Clean C is unmatched: 384 native versus 372 draft bytes, frame/saved-pointer changes
+ * and cast-induced indirect call/full relocation differences. Retain original assembly. */
+#line 189 "src/modules/ai.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_004051A4.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00405324.s")

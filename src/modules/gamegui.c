@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+extern u32 D_gamegui_00402BD0[], D_gamegui_00402BE0[];
 #include "uvcback_rom.h"
 #include "uvchannel_rom.h"
 extern UvChannel_Exports *gUvChanExports;
@@ -89,7 +90,7 @@ void gameGuiRequestStateThirteen();
 void gameGuiRequestStateFourteen();
 void gameGuiRequestStateFifteen();
 void gameGuiToggleReplayAndRestartCurrentState();
-void func_gamegui_004021DC();
+void gameGuiApplyDitherAndVideoSettings(s32 unusedCallbackValue);
 void gameGuiRegisterChannelCallback(s32 context);
 u8 gameGuiGetDebugByte();
 /* Initializer storage view: these are original 32-bit addresses, not
@@ -471,7 +472,45 @@ void func_gamegui_004021D4(void) {
 }
 #line 252 "src/modules/gamegui.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/gamegui/func_gamegui_004021DC.s")
+#line 253 "src/modules/gamegui.c"
+/* Emit pipe sync plus color/alpha-dither commands, reset the two shared graphics words,
+ * then apply the original video-interface feature choices. RE_UNKNOWN: dither selector
+ * domains, display-list capacity/lifetime and the rendering meaning of shared word50's
+ * 0x400000 bit need original settings producers, graphics consumers and frame callers.
+ * The original callback homes but does not read its incoming word; its historical
+ * source declaration remains unresolved. Preserve settings reloads across callbacks. */
+void gameGuiApplyDitherAndVideoSettings(s32 unusedCallbackValue) {
+    Gfx **displayListHead;
+    u32 videoFeatures;
+
+    displayListHead = gUvGfxMgrExports->uvGetDisplayListHead();
+    gDPPipeSync((*displayListHead)++);
+    gDPSetColorDither((*displayListHead)++, D_gamegui_00402BD0[gGameSettings[0].unk4C]);
+    gDPSetAlphaDither((*displayListHead)++, D_gamegui_00402BE0[gGameSettings[0].unk48]);
+    gUvGfxStateExports->uvGfxSetSharedStateWord4C(-1);
+    if (gGameSettings[0].dbgDispAntialias == 0) {
+        gUvGfxStateExports->uvGfxSetSharedStateWord50(0x400000);
+    }
+
+    videoFeatures = gGameSettings[0].dbgDispViGamma ? OS_VI_GAMMA_ON : OS_VI_GAMMA_OFF;
+    if (gGameSettings[0].dbgDispViGamDith != 0) {
+        videoFeatures |= OS_VI_GAMMA_DITHER_ON;
+    } else {
+        videoFeatures |= OS_VI_GAMMA_DITHER_OFF;
+    }
+    if (gGameSettings[0].dbgDispViDither != 0) {
+        videoFeatures |= OS_VI_DITHER_FILTER_ON;
+    } else {
+        videoFeatures |= OS_VI_DITHER_FILTER_OFF;
+    }
+    if (gGameSettings[0].dbgDispViDivot != 0) {
+        videoFeatures |= OS_VI_DIVOT_ON;
+    } else {
+        videoFeatures |= OS_VI_DIVOT_OFF;
+    }
+    osViSetSpecialFeatures(videoFeatures);
+}
+#line 254 "src/modules/gamegui.c"
 
 #line 255 "src/modules/gamegui.c"
 /* Read callback-list property six from the supplied channel identifier.
@@ -479,7 +518,7 @@ void func_gamegui_004021D4(void) {
 void gameGuiRegisterChannelCallback(s32 context) {
     CallbackList *channel;
     gUvChanExports->uvChannelGetProperties(context, 6, &channel, 0);
-    gUvCbckExports->uvAddCallback(channel, func_gamegui_004021DC, 0, 0x21);
+    gUvCbckExports->uvAddCallback(channel, gameGuiApplyDitherAndVideoSettings, 0, 0x21);
 }
 #line 256 "src/modules/gamegui.c"
 

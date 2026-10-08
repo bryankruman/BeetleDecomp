@@ -17,17 +17,17 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 624 |
-| Preserved RE_ORIGINAL_QUIRK notes | 117 |
+| Explicit RE_UNKNOWN notes | 627 |
+| Preserved RE_ORIGINAL_QUIRK notes | 118 |
 | Older comments with uncertainty language | 88 |
 | Documented original-behavior audits | 28 |
-| Assembly-backed functions or data | 849 |
-| Address-based function identifiers | 992 |
-| Address-based global identifiers | 1342 |
-| Offset-based fields or neutral typed fields | 1430 |
+| Assembly-backed functions or data | 848 |
+| Address-based function identifiers | 991 |
+| Address-based global identifiers | 1344 |
+| Offset-based fields or neutral typed fields | 1432 |
 | Layout padding to preserve | 258 |
 | Unresolved type names | 282 |
-| Explicit unused ABI, storage or local identifiers | 116 |
+| Explicit unused ABI, storage or local identifiers | 117 |
 | Decompiler parameter/local names | 918 |
 | Fake, unresolved or TODO draft markers | 29 |
 | Data-dependent conditional draft guards | 4 |
@@ -1120,7 +1120,7 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_ai_00405324` | function `func_ai_00405324` | [179](../src/modules/ai.c#L179) |
 | address_function | `func_ai_004053A8` | function `func_ai_004053A8` | [180](../src/modules/ai.c#L180) |
 | address_function | `func_ai_004057C0` | function `func_ai_004057C0` | [181](../src/modules/ai.c#L181) |
-| address_function | `func_ai_00405B4C` | function `aiAllocateLinkedRecord`, function `func_ai_00405B4C` | [183](../src/modules/ai.c#L183), [623](../src/modules/ai.c#L623) |
+| address_function | `func_ai_00405B4C` | function `aiAllocateLinkedRecord`, function `func_ai_00405B4C` | [183](../src/modules/ai.c#L183), [632](../src/modules/ai.c#L632) |
 | address_function | `func_ai_00405D50` | function `func_ai_00405D50` | [186](../src/modules/ai.c#L186) |
 | address_function | `func_ai_00405EF4` | function `func_ai_00405EF4` | [188](../src/modules/ai.c#L188) |
 | address_function | `func_ai_0040617C` | function `func_ai_0040617C` | [190](../src/modules/ai.c#L190) |
@@ -1130,23 +1130,23 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_ai_00406D84` | function `func_ai_00406D84` | [194](../src/modules/ai.c#L194) |
 | address_function | `func_ai_00407054` | function `func_ai_00407054` | [195](../src/modules/ai.c#L195) |
 | address_function | `func_ai_004075B8` | function `func_ai_004075B8` | [197](../src/modules/ai.c#L197) |
-| address_function | `func_ai_00407718` | function `func_ai_00407718` | [819](../src/modules/ai.c#L819) |
+| address_function | `func_ai_00407718` | function `func_ai_00407718` | [828](../src/modules/ai.c#L828) |
 | address_global | `D_80025D70` | function `aiSnapshotAndUpdateDecisionState`, function `aiUpdateExplosionEffectAndRestoreDelay`, global `D_80025D70`, global `D_80025D70` | [78](../src/modules/ai.c#L78), [116](../src/modules/ai.c#L116), [373](../src/modules/ai.c#L373), [406](../src/modules/ai.c#L406) |
 | address_global | `D_80025DDC` | function `aiSnapshotAndUpdateDecisionState`, global `D_80025DDC` | [79](../src/modules/ai.c#L79), [412](../src/modules/ai.c#L412), [413](../src/modules/ai.c#L413) |
 | address_global | `D_ai_00407858` | function `aiSnapPositionToTargetWhenRequired` | [41](../src/modules/ai.c#L41), [515](../src/modules/ai.c#L515) |
 | address_global | `D_ai_00407E8C` | function `aiSnapPositionToTargetWhenRequired` | [41](../src/modules/ai.c#L41), [515](../src/modules/ai.c#L515) |
 | address_global | `D_ai_00407EA0` | function `aiCopySelectedRecordScalarPair`, global `D_ai_00407EA0` | [134](../src/modules/ai.c#L134), [472](../src/modules/ai.c#L472) |
 | address_global | `D_ai_00407FF4` | function `aiSelectFirstUnmarkedPreviousRecord`, function `aiSnapPositionToTargetWhenRequired`, function `aiUpdateTargetManhattanDistance`, global `D_ai_00407FF4`, global `D_ai_00407FF4` | [40](../src/modules/ai.c#L40), [136](../src/modules/ai.c#L136), [293](../src/modules/ai.c#L293), [294](../src/modules/ai.c#L294), [510](../src/modules/ai.c#L510), [512](../src/modules/ai.c#L512), [516](../src/modules/ai.c#L516), [517](../src/modules/ai.c#L517) (+2 in JSON) |
-| address_global | `D_ai_00407FFC` | function `aiClearRecordShortWhenEnabled`, function `aiSetRecordShortClearEnabled`, global `D_ai_00407FFC` | [200](../src/modules/ai.c#L200), [563](../src/modules/ai.c#L563), [795](../src/modules/ai.c#L795) |
-| address_global | `D_ai_00408000` | function `func_ai_00407718`, global `D_ai_00408000` | [201](../src/modules/ai.c#L201), [820](../src/modules/ai.c#L820) |
-| address_global | `D_ai_00408008` | function `aiFindActiveRecordByKey`, function `aiGetActiveRecordValue9C`, global `D_ai_00408008` | [139](../src/modules/ai.c#L139), [689](../src/modules/ai.c#L689), [830](../src/modules/ai.c#L830) |
+| address_global | `D_ai_00407FFC` | function `aiClearRecordShortWhenEnabled`, function `aiSetRecordShortClearEnabled`, global `D_ai_00407FFC` | [200](../src/modules/ai.c#L200), [563](../src/modules/ai.c#L563), [804](../src/modules/ai.c#L804) |
+| address_global | `D_ai_00408000` | function `func_ai_00407718`, global `D_ai_00408000` | [201](../src/modules/ai.c#L201), [829](../src/modules/ai.c#L829) |
+| address_global | `D_ai_00408008` | function `aiFindActiveRecordByKey`, function `aiGetActiveRecordValue9C`, global `D_ai_00408008` | [139](../src/modules/ai.c#L139), [698](../src/modules/ai.c#L698), [839](../src/modules/ai.c#L839) |
 | address_global | `D_ai_0040810C` | function `aiCopySelectedRecordScalarPair`, global `D_ai_0040810C` | [133](../src/modules/ai.c#L133), [474](../src/modules/ai.c#L474) |
-| address_global | `D_ai_00408D60` | function `aiAllocateLinkedRecord`, global `D_ai_00408D60` | [125](../src/modules/ai.c#L125), [616](../src/modules/ai.c#L616) |
-| address_global | `D_ai_00408E40` | function `aiInsertRecordBetweenNeighbors`, function `aiUnlinkRecord`, global `D_ai_00408E40` | [135](../src/modules/ai.c#L135), [644](../src/modules/ai.c#L644), [647](../src/modules/ai.c#L647), [662](../src/modules/ai.c#L662) |
-| address_global | `D_ai_00408E44` | function `aiGetEligibleListRank`, function `aiGetLinkedRecordTailAddress`, function `aiInsertRecordBetweenNeighbors`, function `aiSelectFirstUnmarkedPreviousRecord`, function `aiUnlinkRecord`, global `D_ai_00408E44` | [199](../src/modules/ai.c#L199), [648](../src/modules/ai.c#L648), [667](../src/modules/ai.c#L667), [703](../src/modules/ai.c#L703), [744](../src/modules/ai.c#L744), [787](../src/modules/ai.c#L787) |
-| address_global | `D_ai_00408E48` | function `aiAllocateLinkedRecord`, function `aiCountPreviousLinks`, global `D_ai_00408E48` | [137](../src/modules/ai.c#L137), [615](../src/modules/ai.c#L615), [616](../src/modules/ai.c#L616), [617](../src/modules/ai.c#L617), [804](../src/modules/ai.c#L804), [807](../src/modules/ai.c#L807), [811](../src/modules/ai.c#L811) |
-| address_global | `D_ai_00408E4C` | function `aiFindActiveRecordByKey`, function `aiGetActiveRecordValue9C`, global `D_ai_00408E4C` | [138](../src/modules/ai.c#L138), [688](../src/modules/ai.c#L688), [829](../src/modules/ai.c#L829) |
-| address_global | `D_ai_00408E58` | function `aiApplyCarAnimationStateFields`, function `aiUpdateExplosionEffectAndRestoreDelay`, global `D_ai_00408E58`, global `D_ai_00408E58` | [119](../src/modules/ai.c#L119), [354](../src/modules/ai.c#L354), [361](../src/modules/ai.c#L361), [577](../src/modules/ai.c#L577), [590](../src/modules/ai.c#L590), [593](../src/modules/ai.c#L593) |
+| address_global | `D_ai_00408D60` | function `aiAllocateLinkedRecord`, global `D_ai_00408D60` | [125](../src/modules/ai.c#L125), [625](../src/modules/ai.c#L625) |
+| address_global | `D_ai_00408E40` | function `aiInsertRecordBetweenNeighbors`, function `aiUnlinkRecord`, global `D_ai_00408E40` | [135](../src/modules/ai.c#L135), [653](../src/modules/ai.c#L653), [656](../src/modules/ai.c#L656), [671](../src/modules/ai.c#L671) |
+| address_global | `D_ai_00408E44` | function `aiGetEligibleListRank`, function `aiGetLinkedRecordTailAddress`, function `aiInsertRecordBetweenNeighbors`, function `aiSelectFirstUnmarkedPreviousRecord`, function `aiUnlinkRecord`, global `D_ai_00408E44` | [199](../src/modules/ai.c#L199), [657](../src/modules/ai.c#L657), [676](../src/modules/ai.c#L676), [712](../src/modules/ai.c#L712), [753](../src/modules/ai.c#L753), [796](../src/modules/ai.c#L796) |
+| address_global | `D_ai_00408E48` | function `aiAllocateLinkedRecord`, function `aiCountPreviousLinks`, global `D_ai_00408E48` | [137](../src/modules/ai.c#L137), [624](../src/modules/ai.c#L624), [625](../src/modules/ai.c#L625), [626](../src/modules/ai.c#L626), [813](../src/modules/ai.c#L813), [816](../src/modules/ai.c#L816), [820](../src/modules/ai.c#L820) |
+| address_global | `D_ai_00408E4C` | function `aiFindActiveRecordByKey`, function `aiGetActiveRecordValue9C`, global `D_ai_00408E4C` | [138](../src/modules/ai.c#L138), [697](../src/modules/ai.c#L697), [838](../src/modules/ai.c#L838) |
+| address_global | `D_ai_00408E58` | function `aiApplyCarAnimationStateFields`, function `aiUpdateExplosionEffectAndRestoreDelay`, global `D_ai_00408E58`, global `D_ai_00408E58` | [119](../src/modules/ai.c#L119), [354](../src/modules/ai.c#L354), [361](../src/modules/ai.c#L361), [586](../src/modules/ai.c#L586), [599](../src/modules/ai.c#L599), [602](../src/modules/ai.c#L602) |
 | address_global | `D_ai_00408EA0` | function `aiUpdateExplosionEffectAndRestoreDelay`, global `D_ai_00408EA0` | [115](../src/modules/ai.c#L115), [352](../src/modules/ai.c#L352), [358](../src/modules/ai.c#L358) |
 | assembly | `__entrypoint_func_ai_400bbc` | — | [210](../src/modules/ai.c#L210) |
 | assembly | `func_ai_00400000` | — | [202](../src/modules/ai.c#L202) |
@@ -1178,49 +1178,50 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_ai_0040462C` | — | [526](../src/modules/ai.c#L526) |
 | assembly | `func_ai_0040490C` | — | [548](../src/modules/ai.c#L548) |
 | assembly | `func_ai_00404E10` | — | [569](../src/modules/ai.c#L569) |
-| assembly | `func_ai_004051A4` | — | [571](../src/modules/ai.c#L571) |
-| assembly | `func_ai_00405324` | — | [573](../src/modules/ai.c#L573) |
-| assembly | `func_ai_004053A8` | — | [575](../src/modules/ai.c#L575) |
-| assembly | `func_ai_004057C0` | — | [607](../src/modules/ai.c#L607) |
-| assembly | `func_ai_00405B4C` | — | [637](../src/modules/ai.c#L637) |
-| assembly | `func_ai_00405D50` | — | [674](../src/modules/ai.c#L674) |
-| assembly | `func_ai_00405EF4` | — | [696](../src/modules/ai.c#L696) |
-| assembly | `func_ai_0040617C` | — | [732](../src/modules/ai.c#L732) |
-| assembly | `func_ai_00406400` | — | [764](../src/modules/ai.c#L764) |
-| assembly | `func_ai_004068A8` | — | [775](../src/modules/ai.c#L775) |
-| assembly | `func_ai_004069CC` | — | [777](../src/modules/ai.c#L777) |
-| assembly | `func_ai_00406D84` | — | [779](../src/modules/ai.c#L779) |
-| assembly | `func_ai_00407054` | — | [781](../src/modules/ai.c#L781) |
-| assembly | `func_ai_004075B8` | — | [815](../src/modules/ai.c#L815) |
+| assembly | `func_ai_004051A4` | — | [580](../src/modules/ai.c#L580) |
+| assembly | `func_ai_00405324` | — | [582](../src/modules/ai.c#L582) |
+| assembly | `func_ai_004053A8` | — | [584](../src/modules/ai.c#L584) |
+| assembly | `func_ai_004057C0` | — | [616](../src/modules/ai.c#L616) |
+| assembly | `func_ai_00405B4C` | — | [646](../src/modules/ai.c#L646) |
+| assembly | `func_ai_00405D50` | — | [683](../src/modules/ai.c#L683) |
+| assembly | `func_ai_00405EF4` | — | [705](../src/modules/ai.c#L705) |
+| assembly | `func_ai_0040617C` | — | [741](../src/modules/ai.c#L741) |
+| assembly | `func_ai_00406400` | — | [773](../src/modules/ai.c#L773) |
+| assembly | `func_ai_004068A8` | — | [784](../src/modules/ai.c#L784) |
+| assembly | `func_ai_004069CC` | — | [786](../src/modules/ai.c#L786) |
+| assembly | `func_ai_00406D84` | — | [788](../src/modules/ai.c#L788) |
+| assembly | `func_ai_00407054` | — | [790](../src/modules/ai.c#L790) |
+| assembly | `func_ai_004075B8` | — | [824](../src/modules/ai.c#L824) |
 | decompiler_local | `arg0` | function `aiCopySelectedRecordScalarPair`, function `func_ai_00403F4C`, function `func_ai_00403F4C` | [166](../src/modules/ai.c#L166), [169](../src/modules/ai.c#L169), [457](../src/modules/ai.c#L457) |
 | decompiler_local | `arg1` | function `aiCopySelectedRecordScalarPair` | [169](../src/modules/ai.c#L169) |
 | explicit_unknown | `A positive phase creates the piece effect and car-explosion sound, clears * object flag mask 0x01, then starts the original two-unit restore countdown. * Phase -1 advances that ...` | function `aiUpdateExplosionEffectAndRestoreDelay` | [339](../src/modules/ai.c#L339) |
 | explicit_unknown | `Access prefix only: original AI loads the pointer at 0x1DC and forwards * the existing vector at 0x100 plus its scalar at 0x104. RE_UNKNOWN: complete * allocation, vector units ...` | type `AiCarAnimationFields` | [4](../src/modules/ai.c#L4) |
-| explicit_unknown | `After elapsed >1, scan active 0x1E8-byte records for the smallest value * strictly below the initial threshold; equal values keep the first match. * Update/start managed sound w...` | assembly `func_ai_004057C0` | [597](../src/modules/ai.c#L597) |
-| explicit_unknown | `CARANIM slot0x38 at0x6334 reads label ID from *(actor+0x1DC)+0x404 and stores its result in output+0xC. RE_UNKNOWN: label-word domain and pointed-record validity/lifetime need o...` | — | [723](../src/modules/ai.c#L723) |
-| explicit_unknown | `Copy AI floats at 0x100/0x104/0x108 to car-animation fields * 0x3B8/0x3BC/0x3C0 through tag 0x11; tag 0xE separately copies float * 0x104 to field 0x3A8 after the original varia...` | function `aiApplyCarAnimationStateFields` | [580](../src/modules/ai.c#L580) |
-| explicit_unknown | `Count predecessor links at offset 0xC; store and return the shared count. * The input node itself is not counted and is dereferenced before any null check. * RE_UNKNOWN: valid n...` | function `aiCountPreviousLinks` | [800](../src/modules/ai.c#L800) |
+| explicit_unknown | `After elapsed >1, scan active 0x1E8-byte records for the smallest value * strictly below the initial threshold; equal values keep the first match. * Update/start managed sound w...` | assembly `func_ai_004057C0` | [606](../src/modules/ai.c#L606) |
+| explicit_unknown | `CARANIM slot0x38 at0x6334 reads label ID from *(actor+0x1DC)+0x404 and stores its result in output+0xC. RE_UNKNOWN: label-word domain and pointed-record validity/lifetime need o...` | — | [732](../src/modules/ai.c#L732) |
+| explicit_unknown | `Copy AI floats at 0x100/0x104/0x108 to car-animation fields * 0x3B8/0x3BC/0x3C0 through tag 0x11; tag 0xE separately copies float * 0x104 to field 0x3A8 after the original varia...` | function `aiApplyCarAnimationStateFields` | [589](../src/modules/ai.c#L589) |
+| explicit_unknown | `Count predecessor links at offset 0xC; store and return the shared count. * The input node itself is not counted and is dereferenced before any null check. * RE_UNKNOWN: valid n...` | function `aiCountPreviousLinks` | [809](../src/modules/ai.c#L809) |
 | explicit_unknown | `Evaluate the dot callback and compare target separation against the * squared product threshold unless settings force a snap. On success copy * target coordinates and set zero p...` | function `aiSnapPositionToTargetWhenRequired` | [495](../src/modules/ai.c#L495) |
 | explicit_unknown | `Original cara initializer: slot10=00400B08, slot14=00400C8C. Target10 * dereferences its state; target14 consumes a signed-low16 tagged vararg list. * Table D_caranim_004066C0: ...` | type `AiCarAnimationFieldExports` | [13](../src/modules/ai.c#L13) |
 | explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_ai_00400E38`, function `func_ai_0040179C`, function `func_ai_004021D8`, function `func_ai_00403F44`, function `func_ai_00403F4C`, function `func_ai_00404904`, function `func_ai_00404DE8` | [213](../src/modules/ai.c#L213), [244](../src/modules/ai.c#L244), [263](../src/modules/ai.c#L263), [444](../src/modules/ai.c#L444), [453](../src/modules/ai.c#L453), [540](../src/modules/ai.c#L540), [551](../src/modules/ai.c#L551) |
-| explicit_unknown | `Return the shared linked-record tail word; retain the existing s32 address ABI. * RE_UNKNOWN: ownership/lifetime guarantees need original callers and list teardown evidence.` | function `aiGetLinkedRecordTailAddress` | [784](../src/modules/ai.c#L784) |
-| explicit_unknown | `Select an original eight-record slot, clear links/scalars, then run helper 05B4C. * RE_UNKNOWN: shared index D_ai_00408E48 also resets/recounts in aiCountPreviousLinks; occupanc...` | function `aiAllocateLinkedRecord` | [610](../src/modules/ai.c#L610) |
+| explicit_unknown | `Return the shared linked-record tail word; retain the existing s32 address ABI. * RE_UNKNOWN: ownership/lifetime guarantees need original callers and list teardown evidence.` | function `aiGetLinkedRecordTailAddress` | [793](../src/modules/ai.c#L793) |
+| explicit_unknown | `Select an original eight-record slot, clear links/scalars, then run helper 05B4C. * RE_UNKNOWN: shared index D_ai_00408E48 also resets/recounts in aiCountPreviousLinks; occupanc...` | function `aiAllocateLinkedRecord` | [619](../src/modules/ai.c#L619) |
 | explicit_unknown | `Set X from direction, cross existing Y to rebuild Z/Y, then normalize; zero-length normalization leaves output unchanged. * RE_UNKNOWN: audit callers' nonzero/nonparallel direct...` | function `aiBuildOrthonormalBasisFromX` | [222](../src/modules/ai.c#L222) |
 | explicit_unknown | `Snapshot list head and scalar 0xCC before optional state-1 callbacks; * those callbacks detach the associated pointer, clear object mask 1 and * write CARANIM tag 27 value 0, th...` | assembly `func_ai_00402E4C` | [322](../src/modules/ai.c#L322) |
-| explicit_unknown | `Store the caller word without boolean normalization. Original func_ai_00402028 uses nonzero to bypass both difference bounds and choose adjustment 9 instead of 4.5. RE_UNKNOWN: ...` | function `func_ai_00407718` | [818](../src/modules/ai.c#L818) |
-| explicit_unknown | `Walk backward from the shared list tail while record word eight is * nonzero. Store the first unmarked record and return its one-based position; * a null tail or traversal past ...` | function `aiSelectFirstUnmarkedPreviousRecord` | [736](../src/modules/ai.c#L736) |
+| explicit_unknown | `Store the caller word without boolean normalization. Original func_ai_00402028 uses nonzero to bypass both difference bounds and choose adjustment 9 instead of 4.5. RE_UNKNOWN: ...` | function `func_ai_00407718` | [827](../src/modules/ai.c#L827) |
+| explicit_unknown | `Walk backward from the shared list tail while record word eight is * nonzero. Store the first unmarked record and return its one-based position; * a null tail or traversal past ...` | function `aiSelectFirstUnmarkedPreviousRecord` | [745](../src/modules/ai.c#L745) |
 | explicit_unknown | `When a shared record is selected, copy its scalar from the original * 0x1E8-byte record array and set the second output to zero. A selection of * -1 leaves both outputs untouche...` | function `aiCopySelectedRecordScalarPair` | [467](../src/modules/ai.c#L467) |
 | explicit_unknown | `With track data available, snapshot the transform and three vectors, * update camera/distance tests, decrement a positive remaining value and * clear the original per-update fie...` | function `aiSnapshotAndUpdateDecisionState` | [384](../src/modules/ai.c#L384) |
-| explicit_unknown | `aiFindActiveRecordByKey: first active match or -1. RE_ORIGINAL_QUIRK: loop index wraps to u16. * RE_UNKNOWN: full signed count/array extent and termination need original allocat...` | type `AiLookupRecord` | [677](../src/modules/ai.c#L677) |
-| explicit_unknown | `aiGetActiveRecordValue9C: return active field 0x9C or -1; compare low-u16 index with signed count. * RE_UNKNOWN: count-backed array extent and index domains need allocation/coun...` | function `aiGetActiveRecordValue9C` | [825](../src/modules/ai.c#L825) |
+| explicit_unknown | `aiFindActiveRecordByKey: first active match or -1. RE_ORIGINAL_QUIRK: loop index wraps to u16. * RE_UNKNOWN: full signed count/array extent and termination need original allocat...` | type `AiLookupRecord` | [686](../src/modules/ai.c#L686) |
+| explicit_unknown | `aiGetActiveRecordValue9C: return active field 0x9C or -1; compare low-u16 index with signed count. * RE_UNKNOWN: count-backed array extent and index domains need allocation/coun...` | function `aiGetActiveRecordValue9C` | [834](../src/modules/ai.c#L834) |
 | explicit_unknown | `func_ai_00402C2C queries objects between state vectors 0x70/0x30 after * temporarily clearing object 0x9C flags; the leaf setter only stores byte 4. * Restore flags before mappi...` | assembly `func_ai_00402C2C` | [311](../src/modules/ai.c#L311) |
-| explicit_unknown | `func_ai_00405B4C snapshots source+4, conditionally adjusts record+0x18, * writes the input/source, unlinks, then reinserts by that scalar. Native head * comparison uses <= and i...` | assembly `func_ai_00405B4C` | [628](../src/modules/ai.c#L628) |
-| explicit_unknown | `func_ai_0040617C swaps linked-record positions using scalar 0x18; * exact zero stops sorting, then all records serialize into 16-byte summaries. * Count only values >0; output b...` | assembly `func_ai_0040617C` | [725](../src/modules/ai.c#L725) |
-| explicit_unknown | `func_ai_004068A8 transforms vector 0xE8 into 0x100 through FMTX slots 0x40/0xB0, then * TDATA slot 0x08 refreshes query 0xC8 and slot 0x5C consumes its four-byte signed-halfword...` | assembly `func_ai_004068A8` | [766](../src/modules/ai.c#L766) |
-| layout_padding | `pad0` | type `AiLookupRecord` | [680](../src/modules/ai.c#L680) |
+| explicit_unknown | `func_ai_004051A4 updates active records through DYN vector 17/18 and matrix 6, * transforms vector 100 into E8, then calls 53A8/5754 before refreshing linked scalars. * Preserve...` | assembly `func_ai_004051A4` | [571](../src/modules/ai.c#L571) |
+| explicit_unknown | `func_ai_00405B4C snapshots source+4, conditionally adjusts record+0x18, * writes the input/source, unlinks, then reinserts by that scalar. Native head * comparison uses <= and i...` | assembly `func_ai_00405B4C` | [637](../src/modules/ai.c#L637) |
+| explicit_unknown | `func_ai_0040617C swaps linked-record positions using scalar 0x18; * exact zero stops sorting, then all records serialize into 16-byte summaries. * Count only values >0; output b...` | assembly `func_ai_0040617C` | [734](../src/modules/ai.c#L734) |
+| explicit_unknown | `func_ai_004068A8 transforms vector 0xE8 into 0x100 through FMTX slots 0x40/0xB0, then * TDATA slot 0x08 refreshes query 0xC8 and slot 0x5C consumes its four-byte signed-halfword...` | assembly `func_ai_004068A8` | [775](../src/modules/ai.c#L775) |
+| layout_padding | `pad0` | type `AiLookupRecord` | [689](../src/modules/ai.c#L689) |
 | layout_padding | `pad6FA4` | function `aiSnapPositionToTargetWhenRequired` | [507](../src/modules/ai.c#L507) |
-| layout_padding | `padA0` | type `AiLookupRecord` | [682](../src/modules/ai.c#L682) |
-| layout_padding | `padB6` | type `AiLookupRecord` | [684](../src/modules/ai.c#L684) |
+| layout_padding | `padA0` | type `AiLookupRecord` | [691](../src/modules/ai.c#L691) |
+| layout_padding | `padB6` | type `AiLookupRecord` | [693](../src/modules/ai.c#L693) |
 | offset_field | `byteC2` | function `aiSnapshotAndUpdateDecisionState`, type `AiDecisionUpdateState` | [58](../src/modules/ai.c#L58), [418](../src/modules/ai.c#L418) |
 | offset_field | `byteC3` | function `aiSnapshotAndUpdateDecisionState`, function `aiUpdateExplosionEffectAndRestoreDelay`, type `AiDecisionUpdateState`, type `AiEffectDelayState` | [59](../src/modules/ai.c#L59), [92](../src/modules/ai.c#L92), [365](../src/modules/ai.c#L365), [408](../src/modules/ai.c#L408) |
 | offset_field | `opaque00` | type `AiCarAnimationFieldExports`, type `AiCarAnimationFields`, type `AiEffectCallExports`, type `AiEffectDelayState`, type `AiPieceCallExports`, type `AiTargetSnapLink`, type `AiTargetSnapState`, type `AiTargetSnapTarget` | [8](../src/modules/ai.c#L8), [19](../src/modules/ai.c#L19), [26](../src/modules/ai.c#L26), [34](../src/modules/ai.c#L34), [39](../src/modules/ai.c#L39), [84](../src/modules/ai.c#L84), [103](../src/modules/ai.c#L103), [107](../src/modules/ai.c#L107) |
@@ -1244,21 +1245,21 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk6F74` | function `aiSnapPositionToTargetWhenRequired` | [508](../src/modules/ai.c#L508) |
 | offset_field | `unkA0` | type `AiIndexedRecord` | [126](../src/modules/ai.c#L126) |
 | offset_field | `unkB6` | type `AiIndexedRecord` | [126](../src/modules/ai.c#L126) |
-| offset_field | `value18` | function `aiAllocateLinkedRecord`, type `AiLinkedRecord` | [124](../src/modules/ai.c#L124), [622](../src/modules/ai.c#L622) |
+| offset_field | `value18` | function `aiAllocateLinkedRecord`, type `AiLinkedRecord` | [124](../src/modules/ai.c#L124), [631](../src/modules/ai.c#L631) |
 | offset_field | `value84` | function `aiSnapshotAndUpdateDecisionState`, type `AiDecisionUpdateState` | [50](../src/modules/ai.c#L50), [419](../src/modules/ai.c#L419) |
 | offset_field | `valueBA` | function `aiSnapshotAndUpdateDecisionState`, type `AiDecisionUpdateState` | [54](../src/modules/ai.c#L54), [423](../src/modules/ai.c#L423) |
 | offset_field | `valueBC` | function `aiSnapshotAndUpdateDecisionState`, function `aiUpdateExplosionEffectAndRestoreDelay`, type `AiDecisionUpdateState`, type `AiEffectDelayState` | [55](../src/modules/ai.c#L55), [89](../src/modules/ai.c#L89), [377](../src/modules/ai.c#L377), [422](../src/modules/ai.c#L422) |
 | offset_field | `valueCC` | function `aiSnapshotAndUpdateDecisionState`, type `AiDecisionUpdateState` | [61](../src/modules/ai.c#L61), [412](../src/modules/ai.c#L412), [413](../src/modules/ai.c#L413) |
 | offset_field | `valueE0` | function `aiUpdateExplosionEffectAndRestoreDelay`, type `AiEffectDelayState` | [95](../src/modules/ai.c#L95), [369](../src/modules/ai.c#L369) |
 | offset_field | `valueE4` | function `aiUpdateExplosionEffectAndRestoreDelay`, type `AiEffectDelayState` | [96](../src/modules/ai.c#L96), [368](../src/modules/ai.c#L368) |
-| offset_field | `vector100` | function `aiApplyCarAnimationStateFields`, function `aiSnapshotAndUpdateDecisionState`, type `AiCarAnimationFields`, type `AiDecisionUpdateState` | [9](../src/modules/ai.c#L9), [67](../src/modules/ai.c#L67), [400](../src/modules/ai.c#L400), [591](../src/modules/ai.c#L591), [592](../src/modules/ai.c#L592) |
+| offset_field | `vector100` | function `aiApplyCarAnimationStateFields`, function `aiSnapshotAndUpdateDecisionState`, type `AiCarAnimationFields`, type `AiDecisionUpdateState` | [9](../src/modules/ai.c#L9), [67](../src/modules/ai.c#L67), [400](../src/modules/ai.c#L400), [600](../src/modules/ai.c#L600), [601](../src/modules/ai.c#L601) |
 | offset_field | `vector118` | function `aiSnapshotAndUpdateDecisionState`, type `AiDecisionUpdateState` | [69](../src/modules/ai.c#L69), [401](../src/modules/ai.c#L401) |
 | offset_field | `vectorE8` | function `aiSnapshotAndUpdateDecisionState`, type `AiDecisionUpdateState` | [65](../src/modules/ai.c#L65), [399](../src/modules/ai.c#L399) |
-| offset_field | `word08` | function `aiAllocateLinkedRecord`, type `AiLinkedRecord` | [124](../src/modules/ai.c#L124), [620](../src/modules/ai.c#L620) |
+| offset_field | `word08` | function `aiAllocateLinkedRecord`, type `AiLinkedRecord` | [124](../src/modules/ai.c#L124), [629](../src/modules/ai.c#L629) |
 | opaque_type | `UnkStruct_004005C8` | global `D_ai_00408EA0` | [115](../src/modules/ai.c#L115) |
 | opaque_type | `UnkStruct_uvemitter_rom_004008CC` | function `aiUpdateExplosionEffectAndRestoreDelay` | [360](../src/modules/ai.c#L360) |
-| original_quirk | `After elapsed >1, scan active 0x1E8-byte records for the smallest value * strictly below the initial threshold; equal values keep the first match. * Update/start managed sound w...` | assembly `func_ai_004057C0` | [597](../src/modules/ai.c#L597) |
-| original_quirk | `aiFindActiveRecordByKey: first active match or -1. RE_ORIGINAL_QUIRK: loop index wraps to u16. * RE_UNKNOWN: full signed count/array extent and termination need original allocat...` | type `AiLookupRecord` | [677](../src/modules/ai.c#L677) |
+| original_quirk | `After elapsed >1, scan active 0x1E8-byte records for the smallest value * strictly below the initial threshold; equal values keep the first match. * Update/start managed sound w...` | assembly `func_ai_004057C0` | [606](../src/modules/ai.c#L606) |
+| original_quirk | `aiFindActiveRecordByKey: first active match or -1. RE_ORIGINAL_QUIRK: loop index wraps to u16. * RE_UNKNOWN: full signed count/array extent and termination need original allocat...` | type `AiLookupRecord` | [686](../src/modules/ai.c#L686) |
 | uncertainty_note | `Set record byte 0xC2 to one and clear floating fields 0x84 and 0xB0 * in their observed order. Their physical meanings remain unresolved.` | function `aiSetFlagAndClearScalarPair` | [483](../src/modules/ai.c#L483) |
 | unused_identifier | `unused` | function `aiClearRecordShortWhenEnabled` | [562](../src/modules/ai.c#L562) |
 
@@ -2102,56 +2103,60 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
-| address_function | `func_gamegui_004000A8` | function `__entrypoint_func_gameGuiInitializeModuleExports`, function `func_gamegui_004000A8`, function `func_gamegui_004000A8` | [113](../src/modules/gamegui.c#L113), [127](../src/modules/gamegui.c#L127), [146](../src/modules/gamegui.c#L146) |
-| address_function | `func_gamegui_00400194` | function `func_gamegui_00400194`, function `func_gamegui_00400194`, function `gameGuiCreateDebugRoot` | [14](../src/modules/gamegui.c#L14), [63](../src/modules/gamegui.c#L63), [169](../src/modules/gamegui.c#L169) |
-| address_function | `func_gamegui_00400370` | function `func_gamegui_00400370`, function `func_gamegui_00400370`, function `gameGuiCreateDebugRoot` | [15](../src/modules/gamegui.c#L15), [64](../src/modules/gamegui.c#L64), [170](../src/modules/gamegui.c#L170) |
-| address_function | `func_gamegui_004014F8` | function `func_gamegui_004014F8`, function `func_gamegui_004014F8`, function `gameGuiCreateDebugRoot` | [16](../src/modules/gamegui.c#L16), [65](../src/modules/gamegui.c#L65), [171](../src/modules/gamegui.c#L171) |
-| address_function | `func_gamegui_00401748` | function `__entrypoint_func_gameGuiInitializeModuleExports`, function `func_gamegui_00401748` | [66](../src/modules/gamegui.c#L66), [129](../src/modules/gamegui.c#L129) |
-| address_function | `func_gamegui_00401AF8` | function `func_gamegui_00401AF8` | [69](../src/modules/gamegui.c#L69) |
-| address_function | `func_gamegui_00402194` | function `func_gamegui_00402194` | [448](../src/modules/gamegui.c#L448) |
-| address_function | `func_gamegui_004021D4` | function `func_gamegui_004021D4` | [470](../src/modules/gamegui.c#L470) |
-| address_function | `func_gamegui_004021DC` | function `func_gamegui_004021DC`, function `gameGuiRegisterChannelCallback` | [92](../src/modules/gamegui.c#L92), [482](../src/modules/gamegui.c#L482) |
-| address_global | `D_gamegui_00402450` | function `gameGuiCreateDebugRoot`, global `D_gamegui_00402450` | [18](../src/modules/gamegui.c#L18), [167](../src/modules/gamegui.c#L167) |
-| address_global | `D_gamegui_00402C68` | function `__entrypoint_func_gameGuiInitializeModuleExports`, function `gameGuiGetDebugByte`, function `gameGuiInitializeSharedWidgetWhenEnabled`, function `gameGuiRenderMenuOrFontList`, function `gameGuiSetDebugByteWhenEnabled`, global `D_gamegui_00402C68` | [58](../src/modules/gamegui.c#L58), [137](../src/modules/gamegui.c#L137), [190](../src/modules/gamegui.c#L190), [202](../src/modules/gamegui.c#L202), [314](../src/modules/gamegui.c#L314), [491](../src/modules/gamegui.c#L491) |
-| address_global | `D_gamegui_00402C74` | function `gameGuiCreateDebugRoot`, global `D_gamegui_00402C74` | [19](../src/modules/gamegui.c#L19), [164](../src/modules/gamegui.c#L164) |
-| address_global | `D_gamegui_00402C78` | function `gameGuiCreateDebugRoot`, function `gameGuiInitializeSharedWidgetWhenEnabled`, function `gameGuiLoadPaletteThreeAndSelectDebugFont`, function `gameGuiRenderMenuOrFontList`, global `D_gamegui_00402C78` | [59](../src/modules/gamegui.c#L59), [168](../src/modules/gamegui.c#L168), [191](../src/modules/gamegui.c#L191), [305](../src/modules/gamegui.c#L305), [330](../src/modules/gamegui.c#L330) |
-| address_global | `D_gamegui_00402D04` | function `gameGuiSetSharedWord`, global `D_gamegui_00402D04` | [60](../src/modules/gamegui.c#L60), [339](../src/modules/gamegui.c#L339) |
-| address_global | `D_gamegui_00402D0C` | function `gameGuiInitializeSharedWidgetWhenEnabled`, global `D_gamegui_00402D0C` | [20](../src/modules/gamegui.c#L20), [302](../src/modules/gamegui.c#L302) |
-| address_global | `D_gamegui_00402D16` | function `gameGuiRestoreMusicUnlessModeOne`, global `D_gamegui_00402D16` | [61](../src/modules/gamegui.c#L61), [232](../src/modules/gamegui.c#L232) |
-| address_global | `D_gamegui_00402D28` | function `gameGuiRequestStateNineWithChoiceFlag`, global `D_gamegui_00402D28` | [62](../src/modules/gamegui.c#L62), [348](../src/modules/gamegui.c#L348) |
-| assembly | `func_gamegui_00400194` | — | [178](../src/modules/gamegui.c#L178) |
-| assembly | `func_gamegui_00400370` | — | [180](../src/modules/gamegui.c#L180) |
-| assembly | `func_gamegui_004014F8` | — | [182](../src/modules/gamegui.c#L182) |
-| assembly | `func_gamegui_00401748` | — | [184](../src/modules/gamegui.c#L184) |
-| assembly | `func_gamegui_00401AF8` | — | [207](../src/modules/gamegui.c#L207) |
-| assembly | `func_gamegui_004021DC` | — | [474](../src/modules/gamegui.c#L474) |
-| explicit_unknown | `Call original GUI0x28 with display-data ID-1 and palette ID3, then select * debug font3. Its target stores those IDs, skips the display-data load for-1, * loads palette3 and mar...` | function `gameGuiLoadPaletteThreeAndSelectDebugFont` | [324](../src/modules/gamegui.c#L324) |
-| explicit_unknown | `GUI28 consumes the signed low16 display-data and palette IDs. * RE_UNKNOWN: historical caller declaration widths. GUI0C and unused slots * retain the existing caller view. Exact...` | type `GameguiGuiExports` | [52](../src/modules/gamegui.c#L52) |
-| explicit_unknown | `Initializer storage view: these are original 32-bit addresses, not * invented callable declarations. Original slot 0x14 initializes the shared * widget conditionally and consume...` | type `GameGuiExportAddresses` | [95](../src/modules/gamegui.c#L95) |
-| explicit_unknown | `Original GUI04 initializes container fields after six helper calls; GUI1C * sets child-container bounds; GUI24 consumes a signed low16 selector and * stores its payload in an or...` | type `GameGuiInitializerExports` | [21](../src/modules/gamegui.c#L21) |
-| explicit_unknown | `Original GUI08/70/74/78 are append, signed-index allocation/access * and fixed-width text copy. Getter consumes low16; allocator returns a signed * index. RE_UNKNOWN: historical...` | type `LocalGuiExp_4000B0` | [35](../src/modules/gamegui.c#L35) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_gamegui_004000A8`, function `func_gamegui_00402194`, function `func_gamegui_004021D4` | [142](../src/modules/gamegui.c#L142), [444](../src/modules/gamegui.c#L444), [466](../src/modules/gamegui.c#L466) |
-| explicit_unknown | `Register the original ten game-GUI callback addresses and the shared * debug-byte address after updating the allocation pointer. Preserve slot * order and the empty callback's s...` | function `__entrypoint_func_gameGuiInitializeModuleExports` | [117](../src/modules/gamegui.c#L117) |
-| explicit_unknown | `Restore the stored music ID and music state zero unless the linked * record short at 0x1E equals one. * RE_UNKNOWN: the short's broader role and ownership/lifetime of node->unk2...` | function `gameGuiRestoreMusicUnlessModeOne` | [221](../src/modules/gamegui.c#L221) |
-| explicit_unknown | `Store the supplied word in D_gamegui_00402D04. RE_UNKNOWN: shared word role and use as callback/context data require original readers and initializer consumers.` | function `gameGuiSetSharedWord` | [338](../src/modules/gamegui.c#L338) |
-| explicit_unknown | `Visit loaded UVTX files and accumulate their unsigned field at offset * 0x1A. The original homes the incoming word but does not use it in the * scan. The local aggregate is neit...` | function `gameGuiAccumulateLoadedTextureField1A` | [497](../src/modules/gamegui.c#L497) |
-| explicit_unknown | `When debug mode is enabled, retain the existing setup call, allocate/get * a child-group pointer via GUI70/74, copy its text via78 and append via08. * Invoke the three GUI secti...` | function `gameGuiCreateDebugRoot` | [154](../src/modules/gamegui.c#L154) |
-| explicit_unknown | `When settings word 0x18C is nonzero, initialize the shared GUI widget. * Snapshot settings word 0x8C before all callbacks. If GUI is absent, load * original modules ugui/dled an...` | function `gameGuiInitializeSharedWidgetWhenEnabled` | [283](../src/modules/gamegui.c#L283) |
-| layout_padding | `pad0` | type `Inner_00401D34`, type `Outer_00401D34`, type `SceneExp_4000B0` | [48](../src/modules/gamegui.c#L48), [211](../src/modules/gamegui.c#L211), [216](../src/modules/gamegui.c#L216) |
-| layout_padding | `padE0` | function `gameGuiRequestStateNineWithChoiceFlag` | [349](../src/modules/gamegui.c#L349), [351](../src/modules/gamegui.c#L351) |
-| offset_field | `unk18C` | function `gameGuiInitializeSharedWidgetWhenEnabled` | [299](../src/modules/gamegui.c#L299) |
-| offset_field | `unk1E` | function `gameGuiRestoreMusicUnlessModeOne`, type `Inner_00401D34` | [212](../src/modules/gamegui.c#L212), [230](../src/modules/gamegui.c#L230) |
-| offset_field | `unk20` | function `gameGuiCreateDebugRoot`, type `SceneExp_4000B0` | [49](../src/modules/gamegui.c#L49), [172](../src/modules/gamegui.c#L172) |
-| offset_field | `unk28` | function `gameGuiRestoreMusicUnlessModeOne`, type `Outer_00401D34` | [217](../src/modules/gamegui.c#L217), [229](../src/modules/gamegui.c#L229) |
-| offset_field | `unk8C` | function `gameGuiInitializeSharedWidgetWhenEnabled` | [298](../src/modules/gamegui.c#L298) |
-| offset_field | `unkC` | function `gameGuiRenderMenuOrFontList`, function `gameGuiRequestInitialIntroTrack`, function `gameGuiRequestStateFour`, function `gameGuiRequestStateThree`, type `GameguiGuiExports` | [55](../src/modules/gamegui.c#L55), [191](../src/modules/gamegui.c#L191), [375](../src/modules/gamegui.c#L375), [383](../src/modules/gamegui.c#L383), [395](../src/modules/gamegui.c#L395) |
-| offset_field | `unknownCallback08Address` | function `__entrypoint_func_gameGuiInitializeModuleExports`, type `GameGuiExportAddresses` | [102](../src/modules/gamegui.c#L102), [129](../src/modules/gamegui.c#L129) |
-| unused_identifier | `unused00` | type `GameGuiInitializerExports`, type `GameguiGuiExports`, type `LocalGuiExp_4000B0` | [28](../src/modules/gamegui.c#L28), [40](../src/modules/gamegui.c#L40), [55](../src/modules/gamegui.c#L55) |
-| unused_identifier | `unused08` | type `GameGuiInitializerExports` | [30](../src/modules/gamegui.c#L30) |
-| unused_identifier | `unused0C` | type `LocalGuiExp_4000B0` | [42](../src/modules/gamegui.c#L42) |
-| unused_identifier | `unused10` | type `GameguiGuiExports` | [55](../src/modules/gamegui.c#L55) |
-| unused_identifier | `unused20` | type `GameGuiInitializerExports` | [32](../src/modules/gamegui.c#L32) |
-| unused_identifier | `unusedWord` | function `gameGuiAccumulateLoadedTextureField1A` | [504](../src/modules/gamegui.c#L504) |
+| address_function | `func_gamegui_004000A8` | function `__entrypoint_func_gameGuiInitializeModuleExports`, function `func_gamegui_004000A8`, function `func_gamegui_004000A8` | [114](../src/modules/gamegui.c#L114), [128](../src/modules/gamegui.c#L128), [147](../src/modules/gamegui.c#L147) |
+| address_function | `func_gamegui_00400194` | function `func_gamegui_00400194`, function `func_gamegui_00400194`, function `gameGuiCreateDebugRoot` | [15](../src/modules/gamegui.c#L15), [64](../src/modules/gamegui.c#L64), [170](../src/modules/gamegui.c#L170) |
+| address_function | `func_gamegui_00400370` | function `func_gamegui_00400370`, function `func_gamegui_00400370`, function `gameGuiCreateDebugRoot` | [16](../src/modules/gamegui.c#L16), [65](../src/modules/gamegui.c#L65), [171](../src/modules/gamegui.c#L171) |
+| address_function | `func_gamegui_004014F8` | function `func_gamegui_004014F8`, function `func_gamegui_004014F8`, function `gameGuiCreateDebugRoot` | [17](../src/modules/gamegui.c#L17), [66](../src/modules/gamegui.c#L66), [172](../src/modules/gamegui.c#L172) |
+| address_function | `func_gamegui_00401748` | function `__entrypoint_func_gameGuiInitializeModuleExports`, function `func_gamegui_00401748` | [67](../src/modules/gamegui.c#L67), [130](../src/modules/gamegui.c#L130) |
+| address_function | `func_gamegui_00401AF8` | function `func_gamegui_00401AF8` | [70](../src/modules/gamegui.c#L70) |
+| address_function | `func_gamegui_00402194` | function `func_gamegui_00402194` | [449](../src/modules/gamegui.c#L449) |
+| address_function | `func_gamegui_004021D4` | function `func_gamegui_004021D4` | [471](../src/modules/gamegui.c#L471) |
+| address_global | `D_gamegui_00402450` | function `gameGuiCreateDebugRoot`, global `D_gamegui_00402450` | [19](../src/modules/gamegui.c#L19), [168](../src/modules/gamegui.c#L168) |
+| address_global | `D_gamegui_00402BD0` | function `gameGuiApplyDitherAndVideoSettings`, global `D_gamegui_00402BD0` | [3](../src/modules/gamegui.c#L3), [488](../src/modules/gamegui.c#L488) |
+| address_global | `D_gamegui_00402BE0` | function `gameGuiApplyDitherAndVideoSettings`, global `D_gamegui_00402BD0` | [3](../src/modules/gamegui.c#L3), [489](../src/modules/gamegui.c#L489) |
+| address_global | `D_gamegui_00402C68` | function `__entrypoint_func_gameGuiInitializeModuleExports`, function `gameGuiGetDebugByte`, function `gameGuiInitializeSharedWidgetWhenEnabled`, function `gameGuiRenderMenuOrFontList`, function `gameGuiSetDebugByteWhenEnabled`, global `D_gamegui_00402C68` | [59](../src/modules/gamegui.c#L59), [138](../src/modules/gamegui.c#L138), [191](../src/modules/gamegui.c#L191), [203](../src/modules/gamegui.c#L203), [315](../src/modules/gamegui.c#L315), [530](../src/modules/gamegui.c#L530) |
+| address_global | `D_gamegui_00402C74` | function `gameGuiCreateDebugRoot`, global `D_gamegui_00402C74` | [20](../src/modules/gamegui.c#L20), [165](../src/modules/gamegui.c#L165) |
+| address_global | `D_gamegui_00402C78` | function `gameGuiCreateDebugRoot`, function `gameGuiInitializeSharedWidgetWhenEnabled`, function `gameGuiLoadPaletteThreeAndSelectDebugFont`, function `gameGuiRenderMenuOrFontList`, global `D_gamegui_00402C78` | [60](../src/modules/gamegui.c#L60), [169](../src/modules/gamegui.c#L169), [192](../src/modules/gamegui.c#L192), [306](../src/modules/gamegui.c#L306), [331](../src/modules/gamegui.c#L331) |
+| address_global | `D_gamegui_00402D04` | function `gameGuiSetSharedWord`, global `D_gamegui_00402D04` | [61](../src/modules/gamegui.c#L61), [340](../src/modules/gamegui.c#L340) |
+| address_global | `D_gamegui_00402D0C` | function `gameGuiInitializeSharedWidgetWhenEnabled`, global `D_gamegui_00402D0C` | [21](../src/modules/gamegui.c#L21), [303](../src/modules/gamegui.c#L303) |
+| address_global | `D_gamegui_00402D16` | function `gameGuiRestoreMusicUnlessModeOne`, global `D_gamegui_00402D16` | [62](../src/modules/gamegui.c#L62), [233](../src/modules/gamegui.c#L233) |
+| address_global | `D_gamegui_00402D28` | function `gameGuiRequestStateNineWithChoiceFlag`, global `D_gamegui_00402D28` | [63](../src/modules/gamegui.c#L63), [349](../src/modules/gamegui.c#L349) |
+| assembly | `func_gamegui_00400194` | — | [179](../src/modules/gamegui.c#L179) |
+| assembly | `func_gamegui_00400370` | — | [181](../src/modules/gamegui.c#L181) |
+| assembly | `func_gamegui_004014F8` | — | [183](../src/modules/gamegui.c#L183) |
+| assembly | `func_gamegui_00401748` | — | [185](../src/modules/gamegui.c#L185) |
+| assembly | `func_gamegui_00401AF8` | — | [208](../src/modules/gamegui.c#L208) |
+| explicit_unknown | `Call original GUI0x28 with display-data ID-1 and palette ID3, then select * debug font3. Its target stores those IDs, skips the display-data load for-1, * loads palette3 and mar...` | function `gameGuiLoadPaletteThreeAndSelectDebugFont` | [325](../src/modules/gamegui.c#L325) |
+| explicit_unknown | `Emit pipe sync plus color/alpha-dither commands, reset the two shared graphics words, * then apply the original video-interface feature choices. RE_UNKNOWN: dither selector * do...` | function `gameGuiApplyDitherAndVideoSettings` | [476](../src/modules/gamegui.c#L476) |
+| explicit_unknown | `GUI28 consumes the signed low16 display-data and palette IDs. * RE_UNKNOWN: historical caller declaration widths. GUI0C and unused slots * retain the existing caller view. Exact...` | type `GameguiGuiExports` | [53](../src/modules/gamegui.c#L53) |
+| explicit_unknown | `Initializer storage view: these are original 32-bit addresses, not * invented callable declarations. Original slot 0x14 initializes the shared * widget conditionally and consume...` | type `GameGuiExportAddresses` | [96](../src/modules/gamegui.c#L96) |
+| explicit_unknown | `Original GUI04 initializes container fields after six helper calls; GUI1C * sets child-container bounds; GUI24 consumes a signed low16 selector and * stores its payload in an or...` | type `GameGuiInitializerExports` | [22](../src/modules/gamegui.c#L22) |
+| explicit_unknown | `Original GUI08/70/74/78 are append, signed-index allocation/access * and fixed-width text copy. Getter consumes low16; allocator returns a signed * index. RE_UNKNOWN: historical...` | type `LocalGuiExp_4000B0` | [36](../src/modules/gamegui.c#L36) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_gamegui_004000A8`, function `func_gamegui_00402194`, function `func_gamegui_004021D4` | [143](../src/modules/gamegui.c#L143), [445](../src/modules/gamegui.c#L445), [467](../src/modules/gamegui.c#L467) |
+| explicit_unknown | `Register the original ten game-GUI callback addresses and the shared * debug-byte address after updating the allocation pointer. Preserve slot * order and the empty callback's s...` | function `__entrypoint_func_gameGuiInitializeModuleExports` | [118](../src/modules/gamegui.c#L118) |
+| explicit_unknown | `Restore the stored music ID and music state zero unless the linked * record short at 0x1E equals one. * RE_UNKNOWN: the short's broader role and ownership/lifetime of node->unk2...` | function `gameGuiRestoreMusicUnlessModeOne` | [222](../src/modules/gamegui.c#L222) |
+| explicit_unknown | `Store the supplied word in D_gamegui_00402D04. RE_UNKNOWN: shared word role and use as callback/context data require original readers and initializer consumers.` | function `gameGuiSetSharedWord` | [339](../src/modules/gamegui.c#L339) |
+| explicit_unknown | `Visit loaded UVTX files and accumulate their unsigned field at offset * 0x1A. The original homes the incoming word but does not use it in the * scan. The local aggregate is neit...` | function `gameGuiAccumulateLoadedTextureField1A` | [536](../src/modules/gamegui.c#L536) |
+| explicit_unknown | `When debug mode is enabled, retain the existing setup call, allocate/get * a child-group pointer via GUI70/74, copy its text via78 and append via08. * Invoke the three GUI secti...` | function `gameGuiCreateDebugRoot` | [155](../src/modules/gamegui.c#L155) |
+| explicit_unknown | `When settings word 0x18C is nonzero, initialize the shared GUI widget. * Snapshot settings word 0x8C before all callbacks. If GUI is absent, load * original modules ugui/dled an...` | function `gameGuiInitializeSharedWidgetWhenEnabled` | [284](../src/modules/gamegui.c#L284) |
+| layout_padding | `pad0` | type `Inner_00401D34`, type `Outer_00401D34`, type `SceneExp_4000B0` | [49](../src/modules/gamegui.c#L49), [212](../src/modules/gamegui.c#L212), [217](../src/modules/gamegui.c#L217) |
+| layout_padding | `padE0` | function `gameGuiRequestStateNineWithChoiceFlag` | [350](../src/modules/gamegui.c#L350), [352](../src/modules/gamegui.c#L352) |
+| offset_field | `unk18C` | function `gameGuiInitializeSharedWidgetWhenEnabled` | [300](../src/modules/gamegui.c#L300) |
+| offset_field | `unk1E` | function `gameGuiRestoreMusicUnlessModeOne`, type `Inner_00401D34` | [213](../src/modules/gamegui.c#L213), [231](../src/modules/gamegui.c#L231) |
+| offset_field | `unk20` | function `gameGuiCreateDebugRoot`, type `SceneExp_4000B0` | [50](../src/modules/gamegui.c#L50), [173](../src/modules/gamegui.c#L173) |
+| offset_field | `unk28` | function `gameGuiRestoreMusicUnlessModeOne`, type `Outer_00401D34` | [218](../src/modules/gamegui.c#L218), [230](../src/modules/gamegui.c#L230) |
+| offset_field | `unk48` | function `gameGuiApplyDitherAndVideoSettings` | [489](../src/modules/gamegui.c#L489) |
+| offset_field | `unk4C` | function `gameGuiApplyDitherAndVideoSettings` | [488](../src/modules/gamegui.c#L488) |
+| offset_field | `unk8C` | function `gameGuiInitializeSharedWidgetWhenEnabled` | [299](../src/modules/gamegui.c#L299) |
+| offset_field | `unkC` | function `gameGuiRenderMenuOrFontList`, function `gameGuiRequestInitialIntroTrack`, function `gameGuiRequestStateFour`, function `gameGuiRequestStateThree`, type `GameguiGuiExports` | [56](../src/modules/gamegui.c#L56), [192](../src/modules/gamegui.c#L192), [376](../src/modules/gamegui.c#L376), [384](../src/modules/gamegui.c#L384), [396](../src/modules/gamegui.c#L396) |
+| offset_field | `unknownCallback08Address` | function `__entrypoint_func_gameGuiInitializeModuleExports`, type `GameGuiExportAddresses` | [103](../src/modules/gamegui.c#L103), [130](../src/modules/gamegui.c#L130) |
+| unused_identifier | `unused00` | type `GameGuiInitializerExports`, type `GameguiGuiExports`, type `LocalGuiExp_4000B0` | [29](../src/modules/gamegui.c#L29), [41](../src/modules/gamegui.c#L41), [56](../src/modules/gamegui.c#L56) |
+| unused_identifier | `unused08` | type `GameGuiInitializerExports` | [31](../src/modules/gamegui.c#L31) |
+| unused_identifier | `unused0C` | type `LocalGuiExp_4000B0` | [43](../src/modules/gamegui.c#L43) |
+| unused_identifier | `unused10` | type `GameguiGuiExports` | [56](../src/modules/gamegui.c#L56) |
+| unused_identifier | `unused20` | type `GameGuiInitializerExports` | [33](../src/modules/gamegui.c#L33) |
+| unused_identifier | `unusedCallbackValue` | function `gameGuiApplyDitherAndVideoSettings`, function `gameGuiApplyDitherAndVideoSettings` | [93](../src/modules/gamegui.c#L93), [482](../src/modules/gamegui.c#L482) |
+| unused_identifier | `unusedWord` | function `gameGuiAccumulateLoadedTextureField1A` | [543](../src/modules/gamegui.c#L543) |
 
 ## src/modules/glare.c
 
@@ -6704,8 +6709,8 @@ For every future source wave, regenerate and check this index after code and str
 | address_global | `D_uvisect_rom_004077B8` | function `uvIsectGetSharedScalar`, function `uvIsectSetSharedScalar`, global `D_uvisect_rom_004077B8` | [119](../src/modules/uvisect_rom.c#L119), [634](../src/modules/uvisect_rom.c#L634), [645](../src/modules/uvisect_rom.c#L645) |
 | address_global | `D_uvisect_rom_004077BC` | function `uvIsectSetSharedWordPair`, global `D_uvisect_rom_004077BC` | [121](../src/modules/uvisect_rom.c#L121), [555](../src/modules/uvisect_rom.c#L555) |
 | address_global | `D_uvisect_rom_004077C0` | function `uvIsectSetQueryParameterBank`, global `D_uvisect_rom_004077C0` | [106](../src/modules/uvisect_rom.c#L106), [308](../src/modules/uvisect_rom.c#L308), [309](../src/modules/uvisect_rom.c#L309), [310](../src/modules/uvisect_rom.c#L310), [311](../src/modules/uvisect_rom.c#L311) |
-| address_global | `D_uvisect_rom_004077D0` | function `uvIsectCreateValueRecord`, global `D_uvisect_rom_004077D0` | [97](../src/modules/uvisect_rom.c#L97), [974](../src/modules/uvisect_rom.c#L974) |
-| address_global | `D_uvisect_rom_00407820` | function `uvIsectCreateValueRecord`, function `uvIsectResetValueRecordRegistryCount`, global `D_uvisect_rom_00407820` | [120](../src/modules/uvisect_rom.c#L120), [962](../src/modules/uvisect_rom.c#L962), [974](../src/modules/uvisect_rom.c#L974), [975](../src/modules/uvisect_rom.c#L975), [976](../src/modules/uvisect_rom.c#L976) |
+| address_global | `D_uvisect_rom_004077D0` | function `uvIsectCreateValueRecord`, global `D_uvisect_rom_004077D0` | [97](../src/modules/uvisect_rom.c#L97), [987](../src/modules/uvisect_rom.c#L987) |
+| address_global | `D_uvisect_rom_00407820` | function `uvIsectCreateValueRecord`, function `uvIsectResetValueRecordRegistryCount`, global `D_uvisect_rom_00407820` | [120](../src/modules/uvisect_rom.c#L120), [975](../src/modules/uvisect_rom.c#L975), [987](../src/modules/uvisect_rom.c#L987), [988](../src/modules/uvisect_rom.c#L988), [989](../src/modules/uvisect_rom.c#L989) |
 | address_global | `D_uvisect_rom_00407828` | function `uvIsectCreateLargeRecord`, global `D_uvisect_rom_00407828` | [21](../src/modules/uvisect_rom.c#L21), [152](../src/modules/uvisect_rom.c#L152) |
 | address_global | `D_uvisect_rom_00407878` | function `uvIsectCreateLargeRecord`, global `D_uvisect_rom_00407878` | [22](../src/modules/uvisect_rom.c#L22), [152](../src/modules/uvisect_rom.c#L152), [153](../src/modules/uvisect_rom.c#L153), [154](../src/modules/uvisect_rom.c#L154) |
 | address_global | `D_uvisect_rom_0040787C` | function `uvIsectAppendUniqueValue`, function `uvIsectGetRegisteredValueAtIndex`, function `uvIsectGetRegisteredValueCount`, function `uvIsectMatchesTextureByteOrIdList`, function `uvIsectScanRegisteredValues`, global `D_uvisect_rom_0040787C` | [117](../src/modules/uvisect_rom.c#L117), [449](../src/modules/uvisect_rom.c#L449), [565](../src/modules/uvisect_rom.c#L565), [568](../src/modules/uvisect_rom.c#L568), [569](../src/modules/uvisect_rom.c#L569), [579](../src/modules/uvisect_rom.c#L579), [592](../src/modules/uvisect_rom.c#L592), [603](../src/modules/uvisect_rom.c#L603) |
@@ -6732,7 +6737,7 @@ For every future source wave, regenerate and check this index after code and str
 | address_global | `D_uvisect_rom_00408070` | function `uvIsectQueryFilteredSharedRecords`, global `D_uvisect_rom_00408070` | [84](../src/modules/uvisect_rom.c#L84), [903](../src/modules/uvisect_rom.c#L903) |
 | address_global | `D_uvisect_rom_00408130` | function `uvIsectQueryFilteredSharedRecords`, global `D_uvisect_rom_00408130` | [85](../src/modules/uvisect_rom.c#L85), [906](../src/modules/uvisect_rom.c#L906) |
 | address_global | `D_uvisect_rom_004081F0` | function `uvIsectGetTransformProperty`, function `uvIsectSetTransformProperty`, global `D_uvisect_rom_004081F0` | [90](../src/modules/uvisect_rom.c#L90), [234](../src/modules/uvisect_rom.c#L234), [253](../src/modules/uvisect_rom.c#L253) |
-| address_global | `D_uvisect_rom_004081F4` | function `uvIsectFlipRecordVectorTowardPoint`, function `uvIsectGetVectorProperty`, function `uvIsectInitializeScalarAndVectorQueryState`, function `uvIsectSetIndexedVector`, function `uvIsectSetVectorProperty`, global `D_uvisect_rom_004081F4` | [91](../src/modules/uvisect_rom.c#L91), [197](../src/modules/uvisect_rom.c#L197), [223](../src/modules/uvisect_rom.c#L223), [481](../src/modules/uvisect_rom.c#L481), [482](../src/modules/uvisect_rom.c#L482), [730](../src/modules/uvisect_rom.c#L730), [734](../src/modules/uvisect_rom.c#L734), [1101](../src/modules/uvisect_rom.c#L1101) (+1 in JSON) |
+| address_global | `D_uvisect_rom_004081F4` | function `uvIsectFlipRecordVectorTowardPoint`, function `uvIsectGetVectorProperty`, function `uvIsectInitializeScalarAndVectorQueryState`, function `uvIsectSetIndexedVector`, function `uvIsectSetVectorProperty`, global `D_uvisect_rom_004081F4` | [91](../src/modules/uvisect_rom.c#L91), [197](../src/modules/uvisect_rom.c#L197), [223](../src/modules/uvisect_rom.c#L223), [481](../src/modules/uvisect_rom.c#L481), [482](../src/modules/uvisect_rom.c#L482), [730](../src/modules/uvisect_rom.c#L730), [734](../src/modules/uvisect_rom.c#L734), [1114](../src/modules/uvisect_rom.c#L1114) (+1 in JSON) |
 | address_global | `D_uvisect_rom_00408200` | function `uvIsectFlipRecordVectorTowardPoint`, function `uvIsectPackedTriangleTextureByteMatches`, global `D_uvisect_rom_00408200` | [15](../src/modules/uvisect_rom.c#L15), [659](../src/modules/uvisect_rom.c#L659), [707](../src/modules/uvisect_rom.c#L707) |
 | address_global | `D_uvisect_rom_00408204` | function `uvIsectMatchesTextureByteOrIdList`, function `uvIsectPackedTriangleTextureByteMatches`, global `D_uvisect_rom_00408204` | [6](../src/modules/uvisect_rom.c#L6), [447](../src/modules/uvisect_rom.c#L447), [660](../src/modules/uvisect_rom.c#L660) |
 | assembly | `__entrypoint_func_uvisect_rom_400000` | — | [123](../src/modules/uvisect_rom.c#L123) |
@@ -6762,13 +6767,13 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_uvisect_rom_00404A7C` | — | [857](../src/modules/uvisect_rom.c#L857) |
 | assembly | `func_uvisect_rom_00404ED4` | — | [913](../src/modules/uvisect_rom.c#L913) |
 | assembly | `func_uvisect_rom_00405124` | — | [915](../src/modules/uvisect_rom.c#L915) |
-| assembly | `func_uvisect_rom_004054F4` | — | [917](../src/modules/uvisect_rom.c#L917) |
-| assembly | `func_uvisect_rom_00405698` | — | [950](../src/modules/uvisect_rom.c#L950) |
-| assembly | `func_uvisect_rom_00405794` | — | [952](../src/modules/uvisect_rom.c#L952) |
-| assembly | `func_uvisect_rom_00405C8C` | — | [954](../src/modules/uvisect_rom.c#L954) |
-| assembly | `func_uvisect_rom_00405EDC` | — | [956](../src/modules/uvisect_rom.c#L956) |
-| assembly | `func_uvisect_rom_00407250` | — | [981](../src/modules/uvisect_rom.c#L981) |
-| assembly | `func_uvisect_rom_00407554` | — | [1090](../src/modules/uvisect_rom.c#L1090) |
+| assembly | `func_uvisect_rom_004054F4` | — | [930](../src/modules/uvisect_rom.c#L930) |
+| assembly | `func_uvisect_rom_00405698` | — | [963](../src/modules/uvisect_rom.c#L963) |
+| assembly | `func_uvisect_rom_00405794` | — | [965](../src/modules/uvisect_rom.c#L965) |
+| assembly | `func_uvisect_rom_00405C8C` | — | [967](../src/modules/uvisect_rom.c#L967) |
+| assembly | `func_uvisect_rom_00405EDC` | — | [969](../src/modules/uvisect_rom.c#L969) |
+| assembly | `func_uvisect_rom_00407250` | — | [994](../src/modules/uvisect_rom.c#L994) |
+| assembly | `func_uvisect_rom_00407554` | — | [1103](../src/modules/uvisect_rom.c#L1103) |
 | explicit_unknown | `Accessed prefix only: two 12-byte vectors and raw word 0x18. RE_UNKNOWN: * layout, frame and mode-specific word meaning: low-bit-tested by 24AC/2B5C, * dereferenced by 1DA4. Tra...` | type `IsectQueryInputPrefix` | [30](../src/modules/uvisect_rom.c#L30) |
 | explicit_unknown | `Append accepted DOBJ query candidates to the supplied intersection records. * DOBJ slot 0x50 supplies parallel words, fractions and Vec3F values; QERY slot * 0x1C supplies auxil...` | assembly `func_uvisect_rom_00403208` | [487](../src/modules/uvisect_rom.c#L487) |
 | explicit_unknown | `Append accepted TERR query candidates using the actual export at 0x90. * Preserve the cached source pointer/scalar, f32 square and f32 subtraction * before the square-root wrapp...` | assembly `func_uvisect_rom_0040344C` | [505](../src/modules/uvisect_rom.c#L505) |
@@ -6790,10 +6795,11 @@ For every future source wave, regenerate and check this index after code and str
 | explicit_unknown | `Return one when loaded texture byte 0x27 equals 0x0A, 0x11 or 0x1D, * or when the texture ID occurs in the registered integer list. The original * caller leaves its incoming A0 ...` | function `uvIsectMatchesTextureByteOrIdList` | [435](../src/modules/uvisect_rom.c#L435) |
 | explicit_unknown | `Return the shared limit checked by the indexed query-pair getter. * RE_UNKNOWN: whether callers treat this value as count or final valid * index is unproven; the existing getter...` | function `uvIsectGetIndexedQueryPairLimit` | [620](../src/modules/uvisect_rom.c#L620) |
 | explicit_unknown | `Run the selected original queries in flag order 2, 8, 1, 4, keeping the * successful 88-byte candidate with a strictly smaller value at offset 0x2C. * Equal values retain the ea...` | function `uvIsectQueryMinimumValueRecord` | [777](../src/modules/uvisect_rom.c#L777) |
-| explicit_unknown | `Scan kind-zero records using their count-prefixed value list and original * 16-bit index updates. Null/other-kind records are ignored. The original scan * performs no state upda...` | function `uvIsectScanRecordValues` | [1025](../src/modules/uvisect_rom.c#L1025) |
+| explicit_unknown | `Scan kind-zero records using their count-prefixed value list and original * 16-bit index updates. Null/other-kind records are ignored. The original scan * performs no state upda...` | function `uvIsectScanRecordValues` | [1038](../src/modules/uvisect_rom.c#L1038) |
 | explicit_unknown | `Scan the registered value array until a match or the original count limit. * Preserve 16-bit index updates. This original helper performs no state update; * RE_UNKNOWN: caller-o...` | function `uvIsectScanRegisteredValues` | [574](../src/modules/uvisect_rom.c#L574) |
 | explicit_unknown | `Scan the shared 0x78-byte records whose parallel filter word intersects mask. * The original helper appends results for the two input vectors. Expose shared * buffers only when ...` | function `uvIsectQueryFilteredSharedRecords` | [861](../src/modules/uvisect_rom.c#L861) |
-| explicit_unknown | `Select the side with the smallest signed XY face margin: +1/+2 select * maximum X/Y and -1/-2 minimum X/Y. Equal margins keep the first side. * RE_UNKNOWN: whether callers guara...` | type `IsectBounds` | [920](../src/modules/uvisect_rom.c#L920) |
+| explicit_unknown | `Select signed columns from record offsets 0x30/0x40/0x50, 0x34/0x44/0x54, * or 0x38/0x48/0x58 for selectors +/-1, +/-2 or +/-3, then normalize the * destination in place through...` | assembly `func_uvisect_rom_004054F4` | [917](../src/modules/uvisect_rom.c#L917) |
+| explicit_unknown | `Select the side with the smallest signed XY face margin: +1/+2 select * maximum X/Y and -1/-2 minimum X/Y. Equal margins keep the first side. * RE_UNKNOWN: whether callers guara...` | type `IsectBounds` | [933](../src/modules/uvisect_rom.c#L933) |
 | explicit_unknown | `Set the active bank's unsigned first/end record indices and two address words. * Mode 2 toggles banks 1/2; mode 0 stores nothing; retain original 16/32-bit widths. * RE_UNKNOWN:...` | function `uvIsectSetQueryParameterBank` | [303](../src/modules/uvisect_rom.c#L303) |
 | explicit_unknown | `Store input/zero at output byte offsets0x00/0x04, then delegate * using input vectors 0/0x0C and the raw word at 0x18. Preserve the original * second-vector/first-vector argumen...` | function `uvIsectQueryInputVectorsIntoRecord` | [387](../src/modules/uvisect_rom.c#L387) |
 | explicit_unknown | `Store shared record count and the record, record-word and filter-word addresses. * RE_UNKNOWN: bounds and lifetime; trace setters and query 0x404D74 before changing this four-s3...` | function `uvIsectSetSharedQueryWords` | [292](../src/modules/uvisect_rom.c#L292) |
@@ -6802,7 +6808,7 @@ For every future source wave, regenerate and check this index after code and str
 | explicit_unknown | `Store the supplied pointer at result offset 0x00 and clear word 0x04, * then append the entry address when fewer than 40 are pending. Return one on * insertion and zero when ful...` | function `uvIsectQueuePendingRecord` | [348](../src/modules/uvisect_rom.c#L348) |
 | explicit_unknown | `Store words at 0x08/0x0C and the floating-point fraction at 0x2C. Copy the * supplied direction into 0x34 and point into 0x14, then clear 16-bit state 0x4C. * RE_UNKNOWN: word m...` | function `uvIsectInitializeScalarAndVectorQueryState` | [472](../src/modules/uvisect_rom.c#L472) |
 | explicit_unknown | `TERR slot28 supplies the low-byte triangle-list count at point XY; * slot14 samples a scalar/vector for each triangle. Mode0 selects the greatest * scalar <= pointZ, mode1 the l...` | assembly `func_uvisect_rom_004045A8` | [761](../src/modules/uvisect_rom.c#L761) |
-| offset_field | `unk0` | type `UvIntersectionPayload` | [1081](../src/modules/uvisect_rom.c#L1081) |
+| offset_field | `unk0` | type `UvIntersectionPayload` | [1094](../src/modules/uvisect_rom.c#L1094) |
 | offset_field | `unk00` | function `uvIsectCreateValueRecord`, function `uvIsectQueryInputVectorsIntoRecord`, function `uvIsectQueryMinimumValueRecord`, type `IsectCopyRecord88`, type `IsectScalarPrefix`, type `IsectTransformPrefix`, type `IsectValueRecord` | [18](../src/modules/uvisect_rom.c#L18), [28](../src/modules/uvisect_rom.c#L28), [89](../src/modules/uvisect_rom.c#L89), [96](../src/modules/uvisect_rom.c#L96), [398](../src/modules/uvisect_rom.c#L398), [399](../src/modules/uvisect_rom.c#L399), [823](../src/modules/uvisect_rom.c#L823), [824](../src/modules/uvisect_rom.c#L824) (+1 in JSON) |
 | offset_field | `unk04` | function `uvIsectQueuePendingRecord`, type `IsectLargeRecord`, type `IsectOwnerResult`, type `IsectPendingRecords` | [20](../src/modules/uvisect_rom.c#L20), [98](../src/modules/uvisect_rom.c#L98), [99](../src/modules/uvisect_rom.c#L99), [356](../src/modules/uvisect_rom.c#L356) |
 | offset_field | `unk10` | type `IsectScalarPrefix` | [18](../src/modules/uvisect_rom.c#L18) |
@@ -6826,12 +6832,13 @@ For every future source wave, regenerate and check this index after code and str
 | original_quirk | `Return a registered value under the original upper-bound test. * RE_ORIGINAL_QUIRK: the test accepts index equal to count and negative * indices; preserve this matching behavior...` | function `uvIsectGetRegisteredValueAtIndex` | [588](../src/modules/uvisect_rom.c#L588) |
 | original_quirk | `Run the selected original queries in flag order 2, 8, 1, 4, keeping the * successful 88-byte candidate with a strictly smaller value at offset 0x2C. * Equal values retain the ea...` | function `uvIsectQueryMinimumValueRecord` | [777](../src/modules/uvisect_rom.c#L777) |
 | original_quirk | `Scan the shared 0x78-byte records whose parallel filter word intersects mask. * The original helper appends results for the two input vectors. Expose shared * buffers only when ...` | function `uvIsectQueryFilteredSharedRecords` | [861](../src/modules/uvisect_rom.c#L861) |
+| original_quirk | `Select signed columns from record offsets 0x30/0x40/0x50, 0x34/0x44/0x54, * or 0x38/0x48/0x58 for selectors +/-1, +/-2 or +/-3, then normalize the * destination in place through...` | assembly `func_uvisect_rom_004054F4` | [917](../src/modules/uvisect_rom.c#L917) |
 | uncertainty_note | `Allocate and clear the original 0xF14-byte record, register its 16-bit * index, set property 0xFFFF and initialize the self/shared-data links. Forty * link slots have stride 0x5...` | function `uvIsectCreateLargeRecord` | [142](../src/modules/uvisect_rom.c#L142) |
 | uncertainty_note | `Copy matrix translation for property 3 or the opaque 0xEC4 vector for * property 4. Null records and unsupported properties leave output unchanged.` | function `uvIsectGetVectorProperty` | [212](../src/modules/uvisect_rom.c#L212) |
 | uncertainty_note | `Copy the complete 88-byte intersection record, including opaque fields.` | — | [751](../src/modules/uvisect_rom.c#L751) |
 | uncertainty_note | `Replace the 88-byte record only when its value at offset 0x2C is smaller * than the running minimum. The value meaning is unknown; equal values keep * the existing record and Na...` | function `uvIsectUpdateMinimumValueRecord` | [833](../src/modules/uvisect_rom.c#L833) |
 | uncertainty_note | `Return the indexed integer/float query pair when the original inclusive * upper-bound check permits it. Outputs are unchanged on rejection. The query * parameter meaning and whe...` | function `uvIsectGetIndexedQueryPair` | [608](../src/modules/uvisect_rom.c#L608) |
-| uncertainty_note | `Store the attribute at offset 0x28C for a kind-zero record. Preserve the * original inclusive count check and lack of a negative-index check. The array * capacity is not establi...` | function `uvIsectSetValueAttribute` | [1043](../src/modules/uvisect_rom.c#L1043) |
+| uncertainty_note | `Store the attribute at offset 0x28C for a kind-zero record. Preserve the * original inclusive count check and lack of a negative-index check. The array * capacity is not establi...` | function `uvIsectSetValueAttribute` | [1056](../src/modules/uvisect_rom.c#L1056) |
 | uncertainty_note | `The original TERR export table has seven actual 32-bit function-address * entries before slot 0x1C. Keep those unused addresses opaque rather than * inventing callable signature...` | type `IsectTerrainTextureExports` | [8](../src/modules/uvisect_rom.c#L8) |
 
 ## src/modules/uvjanim_rom.c

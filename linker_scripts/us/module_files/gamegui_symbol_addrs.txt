@@ -247,3 +247,4 @@ gameGuiRequestStateFourteen = 0x0040216C; // type:func
 gameGuiRequestStateFifteen = 0x00402180; // type:func
 gameGuiSetSharedWord = 0x00402030; // type:func
 gameGuiAccumulateLoadedTextureField1A = 0x004023BC; // type:func
+gameGuiApplyDitherAndVideoSettings = 0x004021DC; // type:func

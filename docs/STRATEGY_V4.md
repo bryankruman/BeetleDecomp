@@ -34,8 +34,8 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **848** assembly references:
-**805** ordinary functions and **43** entrypoints, with **752,892** known instruction bytes
+matching C are preserved with `#line`. The current ledger has **847** assembly references:
+**804** ordinary functions and **43** entrypoints, with **752,512** known instruction bytes
 and no unknown sizes. The broader name audit still finds **303** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
@@ -2332,10 +2332,19 @@ Totals: 352 further recoveries after the 225 upstream ordinary imports, plus 130
 Frozen wave `1681-contract-uncertainties` and `accepted-contract-uncertainties` verify real translation-unit instructions/full relocations, 27 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 352 further readable functions
+## Historical accepted checkpoint — 352 further readable functions
 
 Record 36 reviewed contract uncertainties across 20 older modules, correcting unsupported input, capacity, ownership and lifetime promises. Pak converters read every requested input byte even after the first zero; listener selection retains the nearest qualifying entry and earliest ties. Keep source-level graph initialization uncertainty distinct from a proved original runtime fault. Preserve the previously documented light sentinel behavior. Add one original-backed intersection assembly note: selected pointers are stored at native stack 0x8C+index*4, while compaction reads halfwords at 0x130; the first 1 through 41 sequential pointer stores do not reach that region, while the 42nd would overlap it. Scratch provenance, count domain, callback effects and actual caller reachability remain unresolved. No universally uninitialized-storage or player-visible bug claim and no runtime fix. Every note names the evidence required for resolution. No executable tokens, types, prototypes, names or behavior changed; whole-source inverse and all noncomment logical source coordinates are checked. These notes add no recovered functions or older-body cleanup count. Require all 21 affected original packed modules, fresh four-job original ROM, all frozen source hashes and the regenerated searchable uncertainty index before acceptance.
 
 Totals: 352 further recoveries after the 225 upstream ordinary imports, plus 1305 existing C semantic cleanups. Current ledger: 848 assembly references = 805 ordinary + 43 entrypoints; 752,892 known remaining instruction bytes; zero unknown sizes; 303 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `1689-remaining-contract-notes` and `accepted-remaining-contract-notes` verify real translation-unit instructions/full relocations, 21 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 353 further readable functions
+
+Recover gameGuiApplyDitherAndVideoSettings as named commented C, preserving all380 original instruction bytes and all17 complete ordered relocation records. Original graphics-manager/state providers establish the display-list cursor and shared-word callbacks; original eight dither-table words and SDK feature constants establish literal operations. Preserve three display-list commands, callback-dependent settings reloads and native video flag order. Flag unresolved selector domains, cursor capacity/lifetime, shared-word bit meaning and historical unused callback declaration. Record two parked original-assembly contracts: AI dynamic-vector/matrix synchronization and callback-sensitive scalar refresh, with unresolved shared four-formal declaration and three prepared native arguments; and intersection signed columns with low16 selector, alias-sensitive stores, default normalization quirk and unchanged original readonly ownership. Failed drafts remain isolated and do not count as recoveries. Notes preserve executable tokens and every logical source coordinate; complete inverse checked. Require all affected original packed modules plus graphics providers, fresh four-job original ROM, every frozen source hash and regenerated uncertainty index.
+
+Totals: 353 further recoveries after the 225 upstream ordinary imports, plus 1305 existing C semantic cleanups. Current ledger: 847 assembly references = 804 ordinary + 43 entrypoints; 752,512 known remaining instruction bytes; zero unknown sizes; 303 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `1713-video-settings-and-recovery-notes` and `accepted-video-settings-and-recovery-notes` verify real translation-unit instructions/full relocations, 5 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

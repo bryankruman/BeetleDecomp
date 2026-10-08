@@ -192,7 +192,7 @@
     "src/mem_block.c": "b6e363010c6efbe986f1574e9bca20d849b80fbab803c44ce872ef258e3bdf7c",
     "src/memory.c": "12193127efd16283ab437abff693502560521b2899525757cb8997d3a26b70c5",
     "src/module.c": "38ad8e8ad2ad2ae43eb16b089dd9b9c8e56e71cdc9f38d6885cffb4b10515cc2",
-    "src/modules/ai.c": "9f381d5f373f22347e498b52609851bd2769ca5b74d59594c1611e7ffc60887b",
+    "src/modules/ai.c": "0c8891e9fa16684c5ad2c47dbd9ef10f691055069c2cbc523e79a7e5bedf2d41",
     "src/modules/aiedit.c": "1cd4bd3cfe12abd4393b00506ecd6c734413212333dc24ae6faeb2f9af9f56d4",
     "src/modules/airec.c": "8a6f864feb619fdf9fb677a704d09ed6fca688ddb6ec3f5fd2b73c370b3f6eb6",
     "src/modules/battle.c": "60d28ad02b2f7b6acc392799c84eaaf321cb87f8c199f7003b75c8b7373a6de6",
@@ -211,7 +211,7 @@
     "src/modules/filmroll.c": "f26786b05abe11f986fb150a1d732fdf9d41f45f3e39de1ebe00a86308c47cf1",
     "src/modules/flag.c": "ce4b4b4a1586f2f53ca7981aec47f7bdd9e6f012dd66db584f4cb9c2bd527c8d",
     "src/modules/game.c": "49c3add63f2b0781fa32a1b4e55cd6e0d3ce0b24c3c6d821f155d685fb5beb61",
-    "src/modules/gamegui.c": "fef0d68606078cb9ffd6433509504e41d4cd45ca51bc471106f11133065010a1",
+    "src/modules/gamegui.c": "ce6c75a3ced4d9f647fd39aaef35c7b0cd28e4185cf202f383412de851202cd7",
     "src/modules/glare.c": "5deea24cbe00920ce22d007ca5b365148d74d21e6590918ea93fa3dd76daaea5",
     "src/modules/intro.c": "1e37724db4a00b702fd3482ac3edd83cceefbe193c6d3e1047cb6b7725388d3c",
     "src/modules/letter.c": "64d4dbf2d12b2917d0d8d756242cf77e64f4d1b0d0bdc86d82d62434764259c3",
@@ -295,7 +295,7 @@
     "src/modules/uvgui_rom.c": "5cac5828929aa4db5bfd42b40a5a5547c077e87e084af2d04c7000a454a3b679",
     "src/modules/uvimtx_rom.c": "95ef1be4d43a90236fdd05e873bce5aa9054ae9cdd4b46dc61ce16c739e12c24",
     "src/modules/uvintersect_rom.c": "8fe7e116b2c3061d60128a794272d0c1b9cfc133f2c2b7319d650cc302fa6082",
-    "src/modules/uvisect_rom.c": "3f18ec9fdc1369bc2c6f26941502eca665a7eae0d45ad57453dc6ee5a6a3037f",
+    "src/modules/uvisect_rom.c": "63bef7e195c70e27c5487ee9a7b8c0febb915356ba7b07b8140362bcff17e74c",
     "src/modules/uvjanim_rom.c": "7f64c9fb290086fbdc996a0a3b28e99eda85f292f4219e5deb3fc7e15d601a27",
     "src/modules/uvjanimld_rom.c": "57ad2c95299146e0868deca476c5994d28a7d564fef31c9ebbd648cb67395419",
     "src/modules/uvled_rom.c": "b6791573015515d6d67a778e8b9a834783f13a18a1e9d7ac6b6b79fbe8060bee",
@@ -329,24 +329,24 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "bbff4e2e722e8d6120ed2544279892dcf9ada596c0304cee4119400578937a00",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "74e3067bdc4a02d762e818bd98c095039c0bad0841b232b8995a12c37a5426cc",
-    "docs/VALIDATION_20261006.md": "41937fed97de6b33f487436b59fddc3fe565a87f87ddfa9ecd8e2e06bceb5f3e"
+    "docs/STRATEGY_V4.md": "591efbfddd06a43d1ba24ff7971240d3c715387f04e9b816a8ff6b381ff51c39",
+    "docs/VALIDATION_20261006.md": "26adc00ffd684f3dce35a9ebcf1d79223b98c814b975a59073f2de59c601ad79"
   },
   "counts": {
-    "address_function": 992,
-    "address_global": 1342,
-    "assembly": 849,
+    "address_function": 991,
+    "address_global": 1344,
+    "assembly": 848,
     "audit_debt": 28,
     "conditional_draft": 4,
     "decompiler_local": 918,
     "draft_marker": 29,
-    "explicit_unknown": 624,
+    "explicit_unknown": 627,
     "layout_padding": 258,
-    "offset_field": 1430,
+    "offset_field": 1432,
     "opaque_type": 282,
-    "original_quirk": 117,
+    "original_quirk": 118,
     "uncertainty_note": 88,
-    "unused_identifier": 116
+    "unused_identifier": 117
   },
   "items": [
     {
@@ -2186,15 +2186,15 @@
       "symbol": "func_ai_00405B4C",
       "lines": [
         183,
-        623
+        632
       ],
       "owners": [
         {
           "kind": "function",
           "name": "aiAllocateLinkedRecord",
-          "declaration_line": 613,
+          "declaration_line": 622,
           "lines": [
-            623
+            632
           ]
         },
         {
@@ -2384,15 +2384,15 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00407718",
       "lines": [
-        819
+        828
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_ai_00407718",
-          "declaration_line": 819,
+          "declaration_line": 828,
           "lines": [
-            819
+            828
           ]
         }
       ]
@@ -5204,33 +5204,33 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_004000A8",
       "lines": [
-        113,
-        127,
-        146
+        114,
+        128,
+        147
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_gameGuiInitializeModuleExports",
-          "declaration_line": 125,
+          "declaration_line": 126,
           "lines": [
-            127
+            128
           ]
         },
         {
           "kind": "function",
           "name": "func_gamegui_004000A8",
-          "declaration_line": 113,
+          "declaration_line": 114,
           "lines": [
-            113
+            114
           ]
         },
         {
           "kind": "function",
           "name": "func_gamegui_004000A8",
-          "declaration_line": 146,
+          "declaration_line": 147,
           "lines": [
-            146
+            147
           ]
         }
       ]
@@ -5241,33 +5241,33 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_00400194",
       "lines": [
-        14,
-        63,
-        169
+        15,
+        64,
+        170
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_gamegui_00400194",
-          "declaration_line": 14,
+          "declaration_line": 15,
           "lines": [
-            14
+            15
           ]
         },
         {
           "kind": "function",
           "name": "func_gamegui_00400194",
-          "declaration_line": 63,
+          "declaration_line": 64,
           "lines": [
-            63
+            64
           ]
         },
         {
           "kind": "function",
           "name": "gameGuiCreateDebugRoot",
-          "declaration_line": 160,
+          "declaration_line": 161,
           "lines": [
-            169
+            170
           ]
         }
       ]
@@ -5278,33 +5278,33 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_00400370",
       "lines": [
-        15,
-        64,
-        170
+        16,
+        65,
+        171
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_gamegui_00400370",
-          "declaration_line": 15,
+          "declaration_line": 16,
           "lines": [
-            15
+            16
           ]
         },
         {
           "kind": "function",
           "name": "func_gamegui_00400370",
-          "declaration_line": 64,
+          "declaration_line": 65,
           "lines": [
-            64
+            65
           ]
         },
         {
           "kind": "function",
           "name": "gameGuiCreateDebugRoot",
-          "declaration_line": 160,
+          "declaration_line": 161,
           "lines": [
-            170
+            171
           ]
         }
       ]
@@ -5315,33 +5315,33 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_004014F8",
       "lines": [
-        16,
-        65,
-        171
+        17,
+        66,
+        172
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_gamegui_004014F8",
-          "declaration_line": 16,
+          "declaration_line": 17,
           "lines": [
-            16
+            17
           ]
         },
         {
           "kind": "function",
           "name": "func_gamegui_004014F8",
-          "declaration_line": 65,
+          "declaration_line": 66,
           "lines": [
-            65
+            66
           ]
         },
         {
           "kind": "function",
           "name": "gameGuiCreateDebugRoot",
-          "declaration_line": 160,
+          "declaration_line": 161,
           "lines": [
-            171
+            172
           ]
         }
       ]
@@ -5352,24 +5352,24 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_00401748",
       "lines": [
-        66,
-        129
+        67,
+        130
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_gameGuiInitializeModuleExports",
-          "declaration_line": 125,
+          "declaration_line": 126,
           "lines": [
-            129
+            130
           ]
         },
         {
           "kind": "function",
           "name": "func_gamegui_00401748",
-          "declaration_line": 66,
+          "declaration_line": 67,
           "lines": [
-            66
+            67
           ]
         }
       ]
@@ -5380,15 +5380,15 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_00401AF8",
       "lines": [
-        69
+        70
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_gamegui_00401AF8",
-          "declaration_line": 69,
+          "declaration_line": 70,
           "lines": [
-            69
+            70
           ]
         }
       ]
@@ -5399,15 +5399,15 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_00402194",
       "lines": [
-        448
+        449
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_gamegui_00402194",
-          "declaration_line": 448,
+          "declaration_line": 449,
           "lines": [
-            448
+            449
           ]
         }
       ]
@@ -5418,43 +5418,15 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_004021D4",
       "lines": [
-        470
+        471
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_gamegui_004021D4",
-          "declaration_line": 470,
+          "declaration_line": 471,
           "lines": [
-            470
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-ec25df35ee61",
-      "kind": "address_function",
-      "path": "src/modules/gamegui.c",
-      "symbol": "func_gamegui_004021DC",
-      "lines": [
-        92,
-        482
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_gamegui_004021DC",
-          "declaration_line": 92,
-          "lines": [
-            92
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "gameGuiRegisterChannelCallback",
-          "declaration_line": 479,
-          "lines": [
-            482
+            471
           ]
         }
       ]
@@ -25142,15 +25114,15 @@
         516,
         517,
         518,
-        759
+        768
       ],
       "owners": [
         {
           "kind": "function",
           "name": "aiSelectFirstUnmarkedPreviousRecord",
-          "declaration_line": 740,
+          "declaration_line": 749,
           "lines": [
-            759
+            768
           ]
         },
         {
@@ -25200,7 +25172,7 @@
       "lines": [
         200,
         563,
-        795
+        804
       ],
       "owners": [
         {
@@ -25214,9 +25186,9 @@
         {
           "kind": "function",
           "name": "aiSetRecordShortClearEnabled",
-          "declaration_line": 794,
+          "declaration_line": 803,
           "lines": [
-            795
+            804
           ]
         },
         {
@@ -25236,15 +25208,15 @@
       "symbol": "D_ai_00408000",
       "lines": [
         201,
-        820
+        829
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_ai_00407718",
-          "declaration_line": 819,
+          "declaration_line": 828,
           "lines": [
-            820
+            829
           ]
         },
         {
@@ -25264,24 +25236,24 @@
       "symbol": "D_ai_00408008",
       "lines": [
         139,
-        689,
-        830
+        698,
+        839
       ],
       "owners": [
         {
           "kind": "function",
           "name": "aiFindActiveRecordByKey",
-          "declaration_line": 686,
+          "declaration_line": 695,
           "lines": [
-            689
+            698
           ]
         },
         {
           "kind": "function",
           "name": "aiGetActiveRecordValue9C",
-          "declaration_line": 827,
+          "declaration_line": 836,
           "lines": [
-            830
+            839
           ]
         },
         {
@@ -25329,15 +25301,15 @@
       "symbol": "D_ai_00408D60",
       "lines": [
         125,
-        616
+        625
       ],
       "owners": [
         {
           "kind": "function",
           "name": "aiAllocateLinkedRecord",
-          "declaration_line": 613,
+          "declaration_line": 622,
           "lines": [
-            616
+            625
           ]
         },
         {
@@ -25357,26 +25329,26 @@
       "symbol": "D_ai_00408E40",
       "lines": [
         135,
-        644,
-        647,
-        662
+        653,
+        656,
+        671
       ],
       "owners": [
         {
           "kind": "function",
           "name": "aiInsertRecordBetweenNeighbors",
-          "declaration_line": 658,
+          "declaration_line": 667,
           "lines": [
-            662
+            671
           ]
         },
         {
           "kind": "function",
           "name": "aiUnlinkRecord",
-          "declaration_line": 643,
+          "declaration_line": 652,
           "lines": [
-            644,
-            647
+            653,
+            656
           ]
         },
         {
@@ -25396,51 +25368,51 @@
       "symbol": "D_ai_00408E44",
       "lines": [
         199,
-        648,
-        667,
-        703,
-        744,
-        787
+        657,
+        676,
+        712,
+        753,
+        796
       ],
       "owners": [
         {
           "kind": "function",
           "name": "aiGetEligibleListRank",
-          "declaration_line": 702,
+          "declaration_line": 711,
           "lines": [
-            703
+            712
           ]
         },
         {
           "kind": "function",
           "name": "aiGetLinkedRecordTailAddress",
-          "declaration_line": 786,
+          "declaration_line": 795,
           "lines": [
-            787
+            796
           ]
         },
         {
           "kind": "function",
           "name": "aiInsertRecordBetweenNeighbors",
-          "declaration_line": 658,
+          "declaration_line": 667,
           "lines": [
-            667
+            676
           ]
         },
         {
           "kind": "function",
           "name": "aiSelectFirstUnmarkedPreviousRecord",
-          "declaration_line": 740,
+          "declaration_line": 749,
           "lines": [
-            744
+            753
           ]
         },
         {
           "kind": "function",
           "name": "aiUnlinkRecord",
-          "declaration_line": 643,
+          "declaration_line": 652,
           "lines": [
-            648
+            657
           ]
         },
         {
@@ -25460,32 +25432,32 @@
       "symbol": "D_ai_00408E48",
       "lines": [
         137,
-        615,
-        616,
-        617,
-        804,
-        807,
-        811
+        624,
+        625,
+        626,
+        813,
+        816,
+        820
       ],
       "owners": [
         {
           "kind": "function",
           "name": "aiAllocateLinkedRecord",
-          "declaration_line": 613,
+          "declaration_line": 622,
           "lines": [
-            615,
-            616,
-            617
+            624,
+            625,
+            626
           ]
         },
         {
           "kind": "function",
           "name": "aiCountPreviousLinks",
-          "declaration_line": 803,
+          "declaration_line": 812,
           "lines": [
-            804,
-            807,
-            811
+            813,
+            816,
+            820
           ]
         },
         {
@@ -25505,24 +25477,24 @@
       "symbol": "D_ai_00408E4C",
       "lines": [
         138,
-        688,
-        829
+        697,
+        838
       ],
       "owners": [
         {
           "kind": "function",
           "name": "aiFindActiveRecordByKey",
-          "declaration_line": 686,
+          "declaration_line": 695,
           "lines": [
-            688
+            697
           ]
         },
         {
           "kind": "function",
           "name": "aiGetActiveRecordValue9C",
-          "declaration_line": 827,
+          "declaration_line": 836,
           "lines": [
-            829
+            838
           ]
         },
         {
@@ -25544,18 +25516,18 @@
         119,
         354,
         361,
-        577,
-        590,
-        593
+        586,
+        599,
+        602
       ],
       "owners": [
         {
           "kind": "function",
           "name": "aiApplyCarAnimationStateFields",
-          "declaration_line": 589,
+          "declaration_line": 598,
           "lines": [
-            590,
-            593
+            599,
+            602
           ]
         },
         {
@@ -25578,9 +25550,9 @@
         {
           "kind": "global",
           "name": "D_ai_00408E58",
-          "declaration_line": 577,
+          "declaration_line": 586,
           "lines": [
-            577
+            586
           ]
         }
       ]
@@ -30049,24 +30021,80 @@
       "path": "src/modules/gamegui.c",
       "symbol": "D_gamegui_00402450",
       "lines": [
-        18,
-        167
+        19,
+        168
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiCreateDebugRoot",
-          "declaration_line": 160,
+          "declaration_line": 161,
           "lines": [
-            167
+            168
           ]
         },
         {
           "kind": "global",
           "name": "D_gamegui_00402450",
-          "declaration_line": 18,
+          "declaration_line": 19,
           "lines": [
-            18
+            19
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-a3636f5e67f7",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_00402BD0",
+      "lines": [
+        3,
+        488
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiApplyDitherAndVideoSettings",
+          "declaration_line": 482,
+          "lines": [
+            488
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_00402BD0",
+          "declaration_line": 3,
+          "lines": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-186477ab57a1",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_00402BE0",
+      "lines": [
+        3,
+        489
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiApplyDitherAndVideoSettings",
+          "declaration_line": 482,
+          "lines": [
+            489
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_00402BD0",
+          "declaration_line": 3,
+          "lines": [
+            3
           ]
         }
       ]
@@ -30077,60 +30105,60 @@
       "path": "src/modules/gamegui.c",
       "symbol": "D_gamegui_00402C68",
       "lines": [
-        58,
-        137,
-        190,
-        202,
-        314,
-        491
+        59,
+        138,
+        191,
+        203,
+        315,
+        530
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_gameGuiInitializeModuleExports",
-          "declaration_line": 125,
+          "declaration_line": 126,
           "lines": [
-            137
+            138
           ]
         },
         {
           "kind": "function",
           "name": "gameGuiGetDebugByte",
-          "declaration_line": 490,
+          "declaration_line": 529,
           "lines": [
-            491
+            530
           ]
         },
         {
           "kind": "function",
           "name": "gameGuiInitializeSharedWidgetWhenEnabled",
-          "declaration_line": 293,
+          "declaration_line": 294,
           "lines": [
-            314
+            315
           ]
         },
         {
           "kind": "function",
           "name": "gameGuiRenderMenuOrFontList",
-          "declaration_line": 189,
+          "declaration_line": 190,
           "lines": [
-            190
+            191
           ]
         },
         {
           "kind": "function",
           "name": "gameGuiSetDebugByteWhenEnabled",
-          "declaration_line": 200,
+          "declaration_line": 201,
           "lines": [
-            202
+            203
           ]
         },
         {
           "kind": "global",
           "name": "D_gamegui_00402C68",
-          "declaration_line": 58,
+          "declaration_line": 59,
           "lines": [
-            58
+            59
           ]
         }
       ]
@@ -30141,24 +30169,24 @@
       "path": "src/modules/gamegui.c",
       "symbol": "D_gamegui_00402C74",
       "lines": [
-        19,
-        164
+        20,
+        165
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiCreateDebugRoot",
-          "declaration_line": 160,
+          "declaration_line": 161,
           "lines": [
-            164
+            165
           ]
         },
         {
           "kind": "global",
           "name": "D_gamegui_00402C74",
-          "declaration_line": 19,
+          "declaration_line": 20,
           "lines": [
-            19
+            20
           ]
         }
       ]
@@ -30169,51 +30197,51 @@
       "path": "src/modules/gamegui.c",
       "symbol": "D_gamegui_00402C78",
       "lines": [
-        59,
-        168,
-        191,
-        305,
-        330
+        60,
+        169,
+        192,
+        306,
+        331
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiCreateDebugRoot",
-          "declaration_line": 160,
+          "declaration_line": 161,
           "lines": [
-            168
+            169
           ]
         },
         {
           "kind": "function",
           "name": "gameGuiInitializeSharedWidgetWhenEnabled",
-          "declaration_line": 293,
+          "declaration_line": 294,
           "lines": [
-            305
+            306
           ]
         },
         {
           "kind": "function",
           "name": "gameGuiLoadPaletteThreeAndSelectDebugFont",
-          "declaration_line": 329,
+          "declaration_line": 330,
           "lines": [
-            330
+            331
           ]
         },
         {
           "kind": "function",
           "name": "gameGuiRenderMenuOrFontList",
-          "declaration_line": 189,
+          "declaration_line": 190,
           "lines": [
-            191
+            192
           ]
         },
         {
           "kind": "global",
           "name": "D_gamegui_00402C78",
-          "declaration_line": 59,
+          "declaration_line": 60,
           "lines": [
-            59
+            60
           ]
         }
       ]
@@ -30224,24 +30252,24 @@
       "path": "src/modules/gamegui.c",
       "symbol": "D_gamegui_00402D04",
       "lines": [
-        60,
-        339
+        61,
+        340
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiSetSharedWord",
-          "declaration_line": 338,
+          "declaration_line": 339,
           "lines": [
-            339
+            340
           ]
         },
         {
           "kind": "global",
           "name": "D_gamegui_00402D04",
-          "declaration_line": 60,
+          "declaration_line": 61,
           "lines": [
-            60
+            61
           ]
         }
       ]
@@ -30252,24 +30280,24 @@
       "path": "src/modules/gamegui.c",
       "symbol": "D_gamegui_00402D0C",
       "lines": [
-        20,
-        302
+        21,
+        303
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiInitializeSharedWidgetWhenEnabled",
-          "declaration_line": 293,
+          "declaration_line": 294,
           "lines": [
-            302
+            303
           ]
         },
         {
           "kind": "global",
           "name": "D_gamegui_00402D0C",
-          "declaration_line": 20,
+          "declaration_line": 21,
           "lines": [
-            20
+            21
           ]
         }
       ]
@@ -30280,24 +30308,24 @@
       "path": "src/modules/gamegui.c",
       "symbol": "D_gamegui_00402D16",
       "lines": [
-        61,
-        232
+        62,
+        233
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiRestoreMusicUnlessModeOne",
-          "declaration_line": 226,
+          "declaration_line": 227,
           "lines": [
-            232
+            233
           ]
         },
         {
           "kind": "global",
           "name": "D_gamegui_00402D16",
-          "declaration_line": 61,
+          "declaration_line": 62,
           "lines": [
-            61
+            62
           ]
         }
       ]
@@ -30308,24 +30336,24 @@
       "path": "src/modules/gamegui.c",
       "symbol": "D_gamegui_00402D28",
       "lines": [
-        62,
-        348
+        63,
+        349
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiRequestStateNineWithChoiceFlag",
-          "declaration_line": 347,
+          "declaration_line": 348,
           "lines": [
-            348
+            349
           ]
         },
         {
           "kind": "global",
           "name": "D_gamegui_00402D28",
-          "declaration_line": 62,
+          "declaration_line": 63,
           "lines": [
-            62
+            63
           ]
         }
       ]
@@ -61706,15 +61734,15 @@
       "symbol": "D_uvisect_rom_004077D0",
       "lines": [
         97,
-        974
+        987
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectCreateValueRecord",
-          "declaration_line": 970,
+          "declaration_line": 983,
           "lines": [
-            974
+            987
           ]
         },
         {
@@ -61734,28 +61762,28 @@
       "symbol": "D_uvisect_rom_00407820",
       "lines": [
         120,
-        962,
-        974,
         975,
-        976
+        987,
+        988,
+        989
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectCreateValueRecord",
-          "declaration_line": 970,
+          "declaration_line": 983,
           "lines": [
-            974,
-            975,
-            976
+            987,
+            988,
+            989
           ]
         },
         {
           "kind": "function",
           "name": "uvIsectResetValueRecordRegistryCount",
-          "declaration_line": 961,
+          "declaration_line": 974,
           "lines": [
-            962
+            975
           ]
         },
         {
@@ -62636,8 +62664,8 @@
         482,
         730,
         734,
-        1101,
-        1104
+        1114,
+        1117
       ],
       "owners": [
         {
@@ -62669,10 +62697,10 @@
         {
           "kind": "function",
           "name": "uvIsectSetIndexedVector",
-          "declaration_line": 1097,
+          "declaration_line": 1110,
           "lines": [
-            1101,
-            1104
+            1114,
+            1117
           ]
         },
         {
@@ -73552,7 +73580,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004051A4",
       "lines": [
-        571
+        580
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004051A4.s"
     },
@@ -73562,7 +73590,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00405324",
       "lines": [
-        573
+        582
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00405324.s"
     },
@@ -73572,7 +73600,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004053A8",
       "lines": [
-        575
+        584
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004053A8.s"
     },
@@ -73582,7 +73610,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004057C0",
       "lines": [
-        607
+        616
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004057C0.s"
     },
@@ -73592,7 +73620,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00405B4C",
       "lines": [
-        637
+        646
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00405B4C.s"
     },
@@ -73602,7 +73630,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00405D50",
       "lines": [
-        674
+        683
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00405D50.s"
     },
@@ -73612,7 +73640,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00405EF4",
       "lines": [
-        696
+        705
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00405EF4.s"
     },
@@ -73622,7 +73650,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_0040617C",
       "lines": [
-        732
+        741
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_0040617C.s"
     },
@@ -73632,7 +73660,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00406400",
       "lines": [
-        764
+        773
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00406400.s"
     },
@@ -73642,7 +73670,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004068A8",
       "lines": [
-        775
+        784
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004068A8.s"
     },
@@ -73652,7 +73680,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004069CC",
       "lines": [
-        777
+        786
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004069CC.s"
     },
@@ -73662,7 +73690,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00406D84",
       "lines": [
-        779
+        788
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00406D84.s"
     },
@@ -73672,7 +73700,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00407054",
       "lines": [
-        781
+        790
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_00407054.s"
     },
@@ -73682,7 +73710,7 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004075B8",
       "lines": [
-        815
+        824
       ],
       "evidence": "asm/us/nonmatchings/modules/ai/func_ai_004075B8.s"
     },
@@ -75372,7 +75400,7 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_00400194",
       "lines": [
-        178
+        179
       ],
       "evidence": "asm/us/nonmatchings/modules/gamegui/func_gamegui_00400194.s"
     },
@@ -75382,7 +75410,7 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_00400370",
       "lines": [
-        180
+        181
       ],
       "evidence": "asm/us/nonmatchings/modules/gamegui/func_gamegui_00400370.s"
     },
@@ -75392,7 +75420,7 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_004014F8",
       "lines": [
-        182
+        183
       ],
       "evidence": "asm/us/nonmatchings/modules/gamegui/func_gamegui_004014F8.s"
     },
@@ -75402,7 +75430,7 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_00401748",
       "lines": [
-        184
+        185
       ],
       "evidence": "asm/us/nonmatchings/modules/gamegui/func_gamegui_00401748.s"
     },
@@ -75412,19 +75440,9 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_00401AF8",
       "lines": [
-        207
+        208
       ],
       "evidence": "asm/us/nonmatchings/modules/gamegui/func_gamegui_00401AF8.s"
-    },
-    {
-      "id": "Q-61671add7088",
-      "kind": "assembly",
-      "path": "src/modules/gamegui.c",
-      "symbol": "func_gamegui_004021DC",
-      "lines": [
-        474
-      ],
-      "evidence": "asm/us/nonmatchings/modules/gamegui/func_gamegui_004021DC.s"
     },
     {
       "id": "Q-91264abe41f8",
@@ -80952,7 +80970,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_004054F4",
       "lines": [
-        917
+        930
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004054F4.s"
     },
@@ -80962,7 +80980,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00405698",
       "lines": [
-        950
+        963
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00405698.s"
     },
@@ -80972,7 +80990,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00405794",
       "lines": [
-        952
+        965
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00405794.s"
     },
@@ -80982,7 +81000,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00405C8C",
       "lines": [
-        954
+        967
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00405C8C.s"
     },
@@ -80992,7 +81010,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00405EDC",
       "lines": [
-        956
+        969
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00405EDC.s"
     },
@@ -81002,7 +81020,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00407250",
       "lines": [
-        981
+        994
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00407250.s"
     },
@@ -81012,7 +81030,7 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "func_uvisect_rom_00407554",
       "lines": [
-        1090
+        1103
       ],
       "evidence": "asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00407554.s"
     },
@@ -124692,16 +124710,16 @@
       "path": "src/modules/ai.c",
       "symbol": "After elapsed >1, scan active 0x1E8-byte records for the smallest value * strictly below the initial threshold; equal values keep the first match. * Update/start managed sound with the queried pitch; optional sound uses * SND's no-argument 1.0 return as volume, then emitter property 5 gets 56. * RE_ORIGINAL_QUIRK: scan index is signed 32-bit but each selected index is * narrowed to signed 16-bit; previous-index storage follows sound callbacks. * RE_UNKNOWN: record/count and selected-index domains, scalar units and * observer/record/handle lifetimes need original producers and callers. * Clean C remains unmatched; retain assembly pending full byte/relocation proof.",
       "lines": [
-        597
+        606
       ],
       "evidence": "After elapsed >1, scan active 0x1E8-byte records for the smallest value * strictly below the initial threshold; equal values keep the first match. * Update/start managed sound with the queried pitch; optional sound uses * SND's no-argument 1.0 return as volume, then emitter property 5 gets 56. * RE_ORIGINAL_QUIRK: scan index is signed 32-bit but each selected index is * narrowed to signed 16-bit; previous-index storage follows sound callbacks. * RE_UNKNOWN: record/count and selected-index domains, scalar units and * observer/record/handle lifetimes need original producers and callers. * Clean C remains unmatched; retain assembly pending full byte/relocation proof.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_ai_004057C0",
-          "declaration_line": 607,
+          "declaration_line": 616,
           "lines": [
-            597
+            606
           ]
         }
       ]
@@ -124712,7 +124730,7 @@
       "path": "src/modules/ai.c",
       "symbol": "CARANIM slot0x38 at0x6334 reads label ID from *(actor+0x1DC)+0x404 and stores its result in output+0xC. RE_UNKNOWN: label-word domain and pointed-record validity/lifetime need original actor/property8 producers and output consumers; -1 reachability remains unproved.",
       "lines": [
-        723
+        732
       ],
       "evidence": "CARANIM slot0x38 at0x6334 reads label ID from *(actor+0x1DC)+0x404 and stores its result in output+0xC. RE_UNKNOWN: label-word domain and pointed-record validity/lifetime need original actor/property8 producers and output consumers; -1 reachability remains unproved."
     },
@@ -124722,16 +124740,16 @@
       "path": "src/modules/ai.c",
       "symbol": "Copy AI floats at 0x100/0x104/0x108 to car-animation fields * 0x3B8/0x3BC/0x3C0 through tag 0x11; tag 0xE separately copies float * 0x104 to field 0x3A8 after the original variadic double promotion. * Tag zero terminates the list. Then apply the animation state, reloading * its pointer at AI offset 0x1DC and the dependency after the first call. * RE_UNKNOWN: physical field meanings/units, complete AI allocation and * lifecycle guarantees, and intended historical source declarations. * Trace original field producers/consumers before assigning physical names * or treating the access prefix as the complete AI object.",
       "lines": [
-        580
+        589
       ],
       "evidence": "Copy AI floats at 0x100/0x104/0x108 to car-animation fields * 0x3B8/0x3BC/0x3C0 through tag 0x11; tag 0xE separately copies float * 0x104 to field 0x3A8 after the original variadic double promotion. * Tag zero terminates the list. Then apply the animation state, reloading * its pointer at AI offset 0x1DC and the dependency after the first call. * RE_UNKNOWN: physical field meanings/units, complete AI allocation and * lifecycle guarantees, and intended historical source declarations. * Trace original field producers/consumers before assigning physical names * or treating the access prefix as the complete AI object.",
       "owners": [
         {
           "kind": "function",
           "name": "aiApplyCarAnimationStateFields",
-          "declaration_line": 589,
+          "declaration_line": 598,
           "lines": [
-            580
+            589
           ]
         }
       ]
@@ -124742,16 +124760,16 @@
       "path": "src/modules/ai.c",
       "symbol": "Count predecessor links at offset 0xC; store and return the shared count. * The input node itself is not counted and is dereferenced before any null check. * RE_UNKNOWN: valid node/link lifetime and null termination need original producers/callers.",
       "lines": [
-        800
+        809
       ],
       "evidence": "Count predecessor links at offset 0xC; store and return the shared count. * The input node itself is not counted and is dereferenced before any null check. * RE_UNKNOWN: valid node/link lifetime and null termination need original producers/callers.",
       "owners": [
         {
           "kind": "function",
           "name": "aiCountPreviousLinks",
-          "declaration_line": 803,
+          "declaration_line": 812,
           "lines": [
-            800
+            809
           ]
         }
       ]
@@ -124876,16 +124894,16 @@
       "path": "src/modules/ai.c",
       "symbol": "Return the shared linked-record tail word; retain the existing s32 address ABI. * RE_UNKNOWN: ownership/lifetime guarantees need original callers and list teardown evidence.",
       "lines": [
-        784
+        793
       ],
       "evidence": "Return the shared linked-record tail word; retain the existing s32 address ABI. * RE_UNKNOWN: ownership/lifetime guarantees need original callers and list teardown evidence.",
       "owners": [
         {
           "kind": "function",
           "name": "aiGetLinkedRecordTailAddress",
-          "declaration_line": 786,
+          "declaration_line": 795,
           "lines": [
-            784
+            793
           ]
         }
       ]
@@ -124896,16 +124914,16 @@
       "path": "src/modules/ai.c",
       "symbol": "Select an original eight-record slot, clear links/scalars, then run helper 05B4C. * RE_UNKNOWN: shared index D_ai_00408E48 also resets/recounts in aiCountPreviousLinks; occupancy/lifetime is unproven. * Audit both helpers' call order and all index writers before treating this index as persistent allocation.",
       "lines": [
-        610
+        619
       ],
       "evidence": "Select an original eight-record slot, clear links/scalars, then run helper 05B4C. * RE_UNKNOWN: shared index D_ai_00408E48 also resets/recounts in aiCountPreviousLinks; occupancy/lifetime is unproven. * Audit both helpers' call order and all index writers before treating this index as persistent allocation.",
       "owners": [
         {
           "kind": "function",
           "name": "aiAllocateLinkedRecord",
-          "declaration_line": 613,
+          "declaration_line": 622,
           "lines": [
-            610
+            619
           ]
         }
       ]
@@ -124956,16 +124974,16 @@
       "path": "src/modules/ai.c",
       "symbol": "Store the caller word without boolean normalization. Original func_ai_00402028 uses nonzero to bypass both difference bounds and choose adjustment 9 instead of 4.5. RE_UNKNOWN: shared-word ownership, lifetime and other consumers require caller/export evidence.",
       "lines": [
-        818
+        827
       ],
       "evidence": "Store the caller word without boolean normalization. Original func_ai_00402028 uses nonzero to bypass both difference bounds and choose adjustment 9 instead of 4.5. RE_UNKNOWN: shared-word ownership, lifetime and other consumers require caller/export evidence.",
       "owners": [
         {
           "kind": "function",
           "name": "func_ai_00407718",
-          "declaration_line": 819,
+          "declaration_line": 828,
           "lines": [
-            818
+            827
           ]
         }
       ]
@@ -124976,16 +124994,16 @@
       "path": "src/modules/ai.c",
       "symbol": "Walk backward from the shared list tail while record word eight is * nonzero. Store the first unmarked record and return its one-based position; * a null tail or traversal past the head returns one and stores null. * RE_UNKNOWN: The meaning of the nonzero word-eight marker remains unproven.",
       "lines": [
-        736
+        745
       ],
       "evidence": "Walk backward from the shared list tail while record word eight is * nonzero. Store the first unmarked record and return its one-based position; * a null tail or traversal past the head returns one and stores null. * RE_UNKNOWN: The meaning of the nonzero word-eight marker remains unproven.",
       "owners": [
         {
           "kind": "function",
           "name": "aiSelectFirstUnmarkedPreviousRecord",
-          "declaration_line": 740,
+          "declaration_line": 749,
           "lines": [
-            736
+            745
           ]
         }
       ]
@@ -125036,16 +125054,16 @@
       "path": "src/modules/ai.c",
       "symbol": "aiFindActiveRecordByKey: first active match or -1. RE_ORIGINAL_QUIRK: loop index wraps to u16. * RE_UNKNOWN: full signed count/array extent and termination need original allocation/count writers/callers.",
       "lines": [
-        677
+        686
       ],
       "evidence": "aiFindActiveRecordByKey: first active match or -1. RE_ORIGINAL_QUIRK: loop index wraps to u16. * RE_UNKNOWN: full signed count/array extent and termination need original allocation/count writers/callers.",
       "owners": [
         {
           "kind": "type",
           "name": "AiLookupRecord",
-          "declaration_line": 679,
+          "declaration_line": 688,
           "lines": [
-            677
+            686
           ]
         }
       ]
@@ -125056,16 +125074,16 @@
       "path": "src/modules/ai.c",
       "symbol": "aiGetActiveRecordValue9C: return active field 0x9C or -1; compare low-u16 index with signed count. * RE_UNKNOWN: count-backed array extent and index domains need allocation/count writers and callers.",
       "lines": [
-        825
+        834
       ],
       "evidence": "aiGetActiveRecordValue9C: return active field 0x9C or -1; compare low-u16 index with signed count. * RE_UNKNOWN: count-backed array extent and index domains need allocation/count writers and callers.",
       "owners": [
         {
           "kind": "function",
           "name": "aiGetActiveRecordValue9C",
-          "declaration_line": 827,
+          "declaration_line": 836,
           "lines": [
-            825
+            834
           ]
         }
       ]
@@ -125091,21 +125109,41 @@
       ]
     },
     {
+      "id": "Q-a9b5c630c05e",
+      "kind": "explicit_unknown",
+      "path": "src/modules/ai.c",
+      "symbol": "func_ai_004051A4 updates active records through DYN vector 17/18 and matrix 6, * transforms vector 100 into E8, then calls 53A8/5754 before refreshing linked scalars. * Preserve active-path count reloads, the second pass over every record and final * tail->word4->float4 read; this native call to 5B4C prepares A0/A1/A2 only. * RE_UNKNOWN: record/source domains, scalar units, tail/list validity and lifetimes * need original producers/callers; the shared four-formal 5B4C ABI remains unresolved. * Clean C is unmatched: 384 native versus 372 draft bytes, frame/saved-pointer changes * and cast-induced indirect call/full relocation differences. Retain original assembly.",
+      "lines": [
+        571
+      ],
+      "evidence": "func_ai_004051A4 updates active records through DYN vector 17/18 and matrix 6, * transforms vector 100 into E8, then calls 53A8/5754 before refreshing linked scalars. * Preserve active-path count reloads, the second pass over every record and final * tail->word4->float4 read; this native call to 5B4C prepares A0/A1/A2 only. * RE_UNKNOWN: record/source domains, scalar units, tail/list validity and lifetimes * need original producers/callers; the shared four-formal 5B4C ABI remains unresolved. * Clean C is unmatched: 384 native versus 372 draft bytes, frame/saved-pointer changes * and cast-induced indirect call/full relocation differences. Retain original assembly.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_ai_004051A4",
+          "declaration_line": 580,
+          "lines": [
+            571
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-fd46361adf7d",
       "kind": "explicit_unknown",
       "path": "src/modules/ai.c",
       "symbol": "func_ai_00405B4C snapshots source+4, conditionally adjusts record+0x18, * writes the input/source, unlinks, then reinserts by that scalar. Native head * comparison uses <= and interior comparisons use <; preserve ordered tests. * The draft remains unmatched (frame/homes, extra A3 store, FPR allocation, * initial comparison operand order and complete relocation offsets differ). * RE_UNKNOWN: scalar/settings meaning, valid source/link domains, initial * ordering and ownership/lifetime need original producers/callers; native * never reads incoming A3, so the historical source prototype remains open.",
       "lines": [
-        628
+        637
       ],
       "evidence": "func_ai_00405B4C snapshots source+4, conditionally adjusts record+0x18, * writes the input/source, unlinks, then reinserts by that scalar. Native head * comparison uses <= and interior comparisons use <; preserve ordered tests. * The draft remains unmatched (frame/homes, extra A3 store, FPR allocation, * initial comparison operand order and complete relocation offsets differ). * RE_UNKNOWN: scalar/settings meaning, valid source/link domains, initial * ordering and ownership/lifetime need original producers/callers; native * never reads incoming A3, so the historical source prototype remains open.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_ai_00405B4C",
-          "declaration_line": 637,
+          "declaration_line": 646,
           "lines": [
-            628
+            637
           ]
         }
       ]
@@ -125116,16 +125154,16 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_0040617C swaps linked-record positions using scalar 0x18; * exact zero stops sorting, then all records serialize into 16-byte summaries. * Count only values >0; output bytes 0xA/0xB are untouched. Preserve NaN tests. * RE_UNKNOWN: scalar purpose/units, initial nonnull tail, link/source lifetime * and output capacity need original list producers and summary callers. * Clean C remains unmatched; retain original assembly pending full proof.",
       "lines": [
-        725
+        734
       ],
       "evidence": "func_ai_0040617C swaps linked-record positions using scalar 0x18; * exact zero stops sorting, then all records serialize into 16-byte summaries. * Count only values >0; output bytes 0xA/0xB are untouched. Preserve NaN tests. * RE_UNKNOWN: scalar purpose/units, initial nonnull tail, link/source lifetime * and output capacity need original list producers and summary callers. * Clean C remains unmatched; retain original assembly pending full proof.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_ai_0040617C",
-          "declaration_line": 732,
+          "declaration_line": 741,
           "lines": [
-            725
+            734
           ]
         }
       ]
@@ -125136,16 +125174,16 @@
       "path": "src/modules/ai.c",
       "symbol": "func_ai_004068A8 transforms vector 0xE8 into 0x100 through FMTX slots 0x40/0xB0, then * TDATA slot 0x08 refreshes query 0xC8 and slot 0x5C consumes its four-byte signed-halfword key. * Preserve positive-test magnitude and float grouping; ordered threshold calls helper 0x3448, * and distinct then/else paths call helper 0x6400 with the same state. * RE_UNKNOWN: query domains, returned-record validity, scalar units and state/export * lifetime need original track producers, callers and teardown evidence. * Clean C matches all 292-byte instruction positions except six frame/local-home * words; all 11 complete ordered relocations match. Retain original assembly.",
       "lines": [
-        766
+        775
       ],
       "evidence": "func_ai_004068A8 transforms vector 0xE8 into 0x100 through FMTX slots 0x40/0xB0, then * TDATA slot 0x08 refreshes query 0xC8 and slot 0x5C consumes its four-byte signed-halfword key. * Preserve positive-test magnitude and float grouping; ordered threshold calls helper 0x3448, * and distinct then/else paths call helper 0x6400 with the same state. * RE_UNKNOWN: query domains, returned-record validity, scalar units and state/export * lifetime need original track producers, callers and teardown evidence. * Clean C matches all 292-byte instruction positions except six frame/local-home * words; all 11 complete ordered relocations match. Retain original assembly.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_ai_004068A8",
-          "declaration_line": 775,
+          "declaration_line": 784,
           "lines": [
-            766
+            775
           ]
         }
       ]
@@ -127181,16 +127219,36 @@
       "path": "src/modules/gamegui.c",
       "symbol": "Call original GUI0x28 with display-data ID-1 and palette ID3, then select * debug font3. Its target stores those IDs, skips the display-data load for-1, * loads palette3 and marks the GUI record ready; no selection reset is shown. * RE_UNKNOWN: palette3's asset meaning and the complete GUI lifecycle. Resolve * through the original palette loader/data and callers before stronger naming.",
       "lines": [
-        324
+        325
       ],
       "evidence": "Call original GUI0x28 with display-data ID-1 and palette ID3, then select * debug font3. Its target stores those IDs, skips the display-data load for-1, * loads palette3 and marks the GUI record ready; no selection reset is shown. * RE_UNKNOWN: palette3's asset meaning and the complete GUI lifecycle. Resolve * through the original palette loader/data and callers before stronger naming.",
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiLoadPaletteThreeAndSelectDebugFont",
-          "declaration_line": 329,
+          "declaration_line": 330,
           "lines": [
-            324
+            325
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-684c916a1f19",
+      "kind": "explicit_unknown",
+      "path": "src/modules/gamegui.c",
+      "symbol": "Emit pipe sync plus color/alpha-dither commands, reset the two shared graphics words, * then apply the original video-interface feature choices. RE_UNKNOWN: dither selector * domains, display-list capacity/lifetime and the rendering meaning of shared word50's * 0x400000 bit need original settings producers, graphics consumers and frame callers. * The original callback homes but does not read its incoming word; its historical * source declaration remains unresolved. Preserve settings reloads across callbacks.",
+      "lines": [
+        476
+      ],
+      "evidence": "Emit pipe sync plus color/alpha-dither commands, reset the two shared graphics words, * then apply the original video-interface feature choices. RE_UNKNOWN: dither selector * domains, display-list capacity/lifetime and the rendering meaning of shared word50's * 0x400000 bit need original settings producers, graphics consumers and frame callers. * The original callback homes but does not read its incoming word; its historical * source declaration remains unresolved. Preserve settings reloads across callbacks.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiApplyDitherAndVideoSettings",
+          "declaration_line": 482,
+          "lines": [
+            476
           ]
         }
       ]
@@ -127201,16 +127259,16 @@
       "path": "src/modules/gamegui.c",
       "symbol": "GUI28 consumes the signed low16 display-data and palette IDs. * RE_UNKNOWN: historical caller declaration widths. GUI0C and unused slots * retain the existing caller view. Exact caller proof gates this correction.",
       "lines": [
-        52
+        53
       ],
       "evidence": "GUI28 consumes the signed low16 display-data and palette IDs. * RE_UNKNOWN: historical caller declaration widths. GUI0C and unused slots * retain the existing caller view. Exact caller proof gates this correction.",
       "owners": [
         {
           "kind": "type",
           "name": "GameguiGuiExports",
-          "declaration_line": 55,
+          "declaration_line": 56,
           "lines": [
-            52
+            53
           ]
         }
       ]
@@ -127221,16 +127279,16 @@
       "path": "src/modules/gamegui.c",
       "symbol": "Initializer storage view: these are original 32-bit addresses, not * invented callable declarations. Original slot 0x14 initializes the shared * widget conditionally and consumes no incoming machine argument. * RE_UNKNOWN: historical source declarations and callback 0x08's contract.",
       "lines": [
-        95
+        96
       ],
       "evidence": "Initializer storage view: these are original 32-bit addresses, not * invented callable declarations. Original slot 0x14 initializes the shared * widget conditionally and consumes no incoming machine argument. * RE_UNKNOWN: historical source declarations and callback 0x08's contract.",
       "owners": [
         {
           "kind": "type",
           "name": "GameGuiExportAddresses",
-          "declaration_line": 99,
+          "declaration_line": 100,
           "lines": [
-            95
+            96
           ]
         }
       ]
@@ -127241,16 +127299,16 @@
       "path": "src/modules/gamegui.c",
       "symbol": "Original GUI04 initializes container fields after six helper calls; GUI1C * sets child-container bounds; GUI24 consumes a signed low16 selector and * stores its payload in an original word/byte field. * RE_UNKNOWN: historical source prototypes and complete property meanings. * Inspect original property tables and all field readers before expanding * this minimal target-consumption view into a complete export table.",
       "lines": [
-        21
+        22
       ],
       "evidence": "Original GUI04 initializes container fields after six helper calls; GUI1C * sets child-container bounds; GUI24 consumes a signed low16 selector and * stores its payload in an original word/byte field. * RE_UNKNOWN: historical source prototypes and complete property meanings. * Inspect original property tables and all field readers before expanding * this minimal target-consumption view into a complete export table.",
       "owners": [
         {
           "kind": "type",
           "name": "GameGuiInitializerExports",
-          "declaration_line": 27,
+          "declaration_line": 28,
           "lines": [
-            21
+            22
           ]
         }
       ]
@@ -127261,16 +127319,16 @@
       "path": "src/modules/gamegui.c",
       "symbol": "Original GUI08/70/74/78 are append, signed-index allocation/access * and fixed-width text copy. Getter consumes low16; allocator returns a signed * index. RE_UNKNOWN: historical caller declaration widths, unused slots and * full root lifecycle. This view records verified target consumption.",
       "lines": [
-        35
+        36
       ],
       "evidence": "Original GUI08/70/74/78 are append, signed-index allocation/access * and fixed-width text copy. Getter consumes low16; allocator returns a signed * index. RE_UNKNOWN: historical caller declaration widths, unused slots and * full root lifecycle. This view records verified target consumption.",
       "owners": [
         {
           "kind": "type",
           "name": "LocalGuiExp_4000B0",
-          "declaration_line": 39,
+          "declaration_line": 40,
           "lines": [
-            35
+            36
           ]
         }
       ]
@@ -127281,34 +127339,34 @@
       "path": "src/modules/gamegui.c",
       "symbol": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "lines": [
-        142,
-        444,
-        466
+        143,
+        445,
+        467
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "owners": [
         {
           "kind": "function",
           "name": "func_gamegui_004000A8",
-          "declaration_line": 146,
+          "declaration_line": 147,
           "lines": [
-            142
+            143
           ]
         },
         {
           "kind": "function",
           "name": "func_gamegui_00402194",
-          "declaration_line": 448,
+          "declaration_line": 449,
           "lines": [
-            444
+            445
           ]
         },
         {
           "kind": "function",
           "name": "func_gamegui_004021D4",
-          "declaration_line": 470,
+          "declaration_line": 471,
           "lines": [
-            466
+            467
           ]
         }
       ]
@@ -127319,16 +127377,16 @@
       "path": "src/modules/gamegui.c",
       "symbol": "Register the original ten game-GUI callback addresses and the shared * debug-byte address after updating the allocation pointer. Preserve slot * order and the empty callback's separate identity. * RE_UNKNOWN: the table is an explicit 32-bit initializer storage view, not * a callable API declaration. Slot0x14's consumed operations are established * by original assembly; its historical source declaration and slot 0x08's * complete callback contract remain unresolved. * The caller owns writable export storage of the original size.",
       "lines": [
-        117
+        118
       ],
       "evidence": "Register the original ten game-GUI callback addresses and the shared * debug-byte address after updating the allocation pointer. Preserve slot * order and the empty callback's separate identity. * RE_UNKNOWN: the table is an explicit 32-bit initializer storage view, not * a callable API declaration. Slot0x14's consumed operations are established * by original assembly; its historical source declaration and slot 0x08's * complete callback contract remain unresolved. * The caller owns writable export storage of the original size.",
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_gameGuiInitializeModuleExports",
-          "declaration_line": 125,
+          "declaration_line": 126,
           "lines": [
-            117
+            118
           ]
         }
       ]
@@ -127339,16 +127397,16 @@
       "path": "src/modules/gamegui.c",
       "symbol": "Restore the stored music ID and music state zero unless the linked * record short at 0x1E equals one. * RE_UNKNOWN: the short's broader role and ownership/lifetime of node->unk28. * This wrapper only reads the pointer; trace original record creation, * replacement and release paths before assigning an ownership contract.",
       "lines": [
-        221
+        222
       ],
       "evidence": "Restore the stored music ID and music state zero unless the linked * record short at 0x1E equals one. * RE_UNKNOWN: the short's broader role and ownership/lifetime of node->unk28. * This wrapper only reads the pointer; trace original record creation, * replacement and release paths before assigning an ownership contract.",
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiRestoreMusicUnlessModeOne",
-          "declaration_line": 226,
+          "declaration_line": 227,
           "lines": [
-            221
+            222
           ]
         }
       ]
@@ -127359,16 +127417,16 @@
       "path": "src/modules/gamegui.c",
       "symbol": "Store the supplied word in D_gamegui_00402D04. RE_UNKNOWN: shared word role and use as callback/context data require original readers and initializer consumers.",
       "lines": [
-        338
+        339
       ],
       "evidence": "Store the supplied word in D_gamegui_00402D04. RE_UNKNOWN: shared word role and use as callback/context data require original readers and initializer consumers.",
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiSetSharedWord",
-          "declaration_line": 338,
+          "declaration_line": 339,
           "lines": [
-            338
+            339
           ]
         }
       ]
@@ -127379,16 +127437,16 @@
       "path": "src/modules/gamegui.c",
       "symbol": "Visit loaded UVTX files and accumulate their unsigned field at offset * 0x1A. The original homes the incoming word but does not use it in the * scan. The local aggregate is neither returned nor stored here; preserve * the file-manager calls and original loop. RE_UNKNOWN: field 0x1A meaning, * valid asset extent and the discarded total's intended role. Trace original * UVTX producers and callers before treating this as a size/resource * statistic or adding an observable result.",
       "lines": [
-        497
+        536
       ],
       "evidence": "Visit loaded UVTX files and accumulate their unsigned field at offset * 0x1A. The original homes the incoming word but does not use it in the * scan. The local aggregate is neither returned nor stored here; preserve * the file-manager calls and original loop. RE_UNKNOWN: field 0x1A meaning, * valid asset extent and the discarded total's intended role. Trace original * UVTX producers and callers before treating this as a size/resource * statistic or adding an observable result.",
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiAccumulateLoadedTextureField1A",
-          "declaration_line": 504,
+          "declaration_line": 543,
           "lines": [
-            497
+            536
           ]
         }
       ]
@@ -127399,16 +127457,16 @@
       "path": "src/modules/gamegui.c",
       "symbol": "When debug mode is enabled, retain the existing setup call, allocate/get * a child-group pointer via GUI70/74, copy its text via78 and append via08. * Invoke the three GUI sections and scene section in their original order. * RE_UNKNOWN: those surrounding callbacks retain raw-word source prototypes; * their original targets must settle full argument contracts. The root label * extent is unresolved; inspect original data boundaries before assuming30bytes.",
       "lines": [
-        154
+        155
       ],
       "evidence": "When debug mode is enabled, retain the existing setup call, allocate/get * a child-group pointer via GUI70/74, copy its text via78 and append via08. * Invoke the three GUI sections and scene section in their original order. * RE_UNKNOWN: those surrounding callbacks retain raw-word source prototypes; * their original targets must settle full argument contracts. The root label * extent is unresolved; inspect original data boundaries before assuming30bytes.",
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiCreateDebugRoot",
-          "declaration_line": 160,
+          "declaration_line": 161,
           "lines": [
-            154
+            155
           ]
         }
       ]
@@ -127419,16 +127477,16 @@
       "path": "src/modules/gamegui.c",
       "symbol": "When settings word 0x18C is nonzero, initialize the shared GUI widget. * Snapshot settings word 0x8C before all callbacks. If GUI is absent, load * original modules ugui/dled and font asset 3 in order; retain the existing * GUI table when already loaded. Initialize widget D_gamegui_00402C78, set its rectangle * and five original property pairs, select palette/font 3, then clear the * shared debug byte and word+0xC. Reload exports for every original callback. * RE_UNKNOWN: settings words 0x18C/0x8C meanings, property payload semantics, * complete shared-state/widget allocation and resource ownership/lifetime. * Trace original writers, GUI property tables and loader/teardown paths before * replacing the neutral field views or inferring additional validation.",
       "lines": [
-        283
+        284
       ],
       "evidence": "When settings word 0x18C is nonzero, initialize the shared GUI widget. * Snapshot settings word 0x8C before all callbacks. If GUI is absent, load * original modules ugui/dled and font asset 3 in order; retain the existing * GUI table when already loaded. Initialize widget D_gamegui_00402C78, set its rectangle * and five original property pairs, select palette/font 3, then clear the * shared debug byte and word+0xC. Reload exports for every original callback. * RE_UNKNOWN: settings words 0x18C/0x8C meanings, property payload semantics, * complete shared-state/widget allocation and resource ownership/lifetime. * Trace original writers, GUI property tables and loader/teardown paths before * replacing the neutral field views or inferring additional validation.",
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiInitializeSharedWidgetWhenEnabled",
-          "declaration_line": 293,
+          "declaration_line": 294,
           "lines": [
-            283
+            284
           ]
         }
       ]
@@ -135159,16 +135217,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Scan kind-zero records using their count-prefixed value list and original * 16-bit index updates. Null/other-kind records are ignored. The original scan * performs no state update. RE_UNKNOWN: caller-observed return; trace export callers.",
       "lines": [
-        1025
+        1038
       ],
       "evidence": "Scan kind-zero records using their count-prefixed value list and original * 16-bit index updates. Null/other-kind records are ignored. The original scan * performs no state update. RE_UNKNOWN: caller-observed return; trace export callers.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectScanRecordValues",
-          "declaration_line": 1028,
+          "declaration_line": 1041,
           "lines": [
-            1025
+            1038
           ]
         }
       ]
@@ -135214,21 +135272,41 @@
       ]
     },
     {
+      "id": "Q-98613b067baa",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvisect_rom.c",
+      "symbol": "Select signed columns from record offsets 0x30/0x40/0x50, 0x34/0x44/0x54, * or 0x38/0x48/0x58 for selectors +/-1, +/-2 or +/-3, then normalize the * destination in place through the original FVEC slot 0x08 and return its status. * Preserve interleaved source reads and output stores; overlap is not excluded. * RE_ORIGINAL_QUIRK: zero and unsupported signed-low16 selectors normalize the * existing destination without initializing it. Native code homes the incoming * full selector word before narrowing it; preserve the original assembly. * RE_UNKNOWN: column role/frame, historical declaration, record/output lifetime, * overlap and caller initialization for unsupported selectors. Trace original * producers and export consumers. The seven-entry native table at 0x4076E4 and * surrounding readonly bytes remain original-owned; any C recovery must prove * their targets and retain the separate table at 0x40771C.",
+      "lines": [
+        917
+      ],
+      "evidence": "Select signed columns from record offsets 0x30/0x40/0x50, 0x34/0x44/0x54, * or 0x38/0x48/0x58 for selectors +/-1, +/-2 or +/-3, then normalize the * destination in place through the original FVEC slot 0x08 and return its status. * Preserve interleaved source reads and output stores; overlap is not excluded. * RE_ORIGINAL_QUIRK: zero and unsupported signed-low16 selectors normalize the * existing destination without initializing it. Native code homes the incoming * full selector word before narrowing it; preserve the original assembly. * RE_UNKNOWN: column role/frame, historical declaration, record/output lifetime, * overlap and caller initialization for unsupported selectors. Trace original * producers and export consumers. The seven-entry native table at 0x4076E4 and * surrounding readonly bytes remain original-owned; any C recovery must prove * their targets and retain the separate table at 0x40771C.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_uvisect_rom_004054F4",
+          "declaration_line": 930,
+          "lines": [
+            917
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-cb321697d4bb",
       "kind": "explicit_unknown",
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Select the side with the smallest signed XY face margin: +1/+2 select * maximum X/Y and -1/-2 minimum X/Y. Equal margins keep the first side. * RE_UNKNOWN: whether callers guarantee the point is inside the bounds. The * helper takes no absolute values and performs no containment check, so this * is not a general nearest-face calculation for outside points. Trace original * callers before relying on an inside-point precondition.",
       "lines": [
-        920
+        933
       ],
       "evidence": "Select the side with the smallest signed XY face margin: +1/+2 select * maximum X/Y and -1/-2 minimum X/Y. Equal margins keep the first side. * RE_UNKNOWN: whether callers guarantee the point is inside the bounds. The * helper takes no absolute values and performs no containment check, so this * is not a general nearest-face calculation for outside points. Trace original * callers before relying on an inside-point precondition.",
       "owners": [
         {
           "kind": "type",
           "name": "IsectBounds",
-          "declaration_line": 927,
+          "declaration_line": 940,
           "lines": [
-            920
+            933
           ]
         }
       ]
@@ -139047,15 +139125,15 @@
       "path": "src/modules/ai.c",
       "symbol": "pad0",
       "lines": [
-        680
+        689
       ],
       "owners": [
         {
           "kind": "type",
           "name": "AiLookupRecord",
-          "declaration_line": 679,
+          "declaration_line": 688,
           "lines": [
-            680
+            689
           ]
         }
       ]
@@ -139085,15 +139163,15 @@
       "path": "src/modules/ai.c",
       "symbol": "padA0",
       "lines": [
-        682
+        691
       ],
       "owners": [
         {
           "kind": "type",
           "name": "AiLookupRecord",
-          "declaration_line": 679,
+          "declaration_line": 688,
           "lines": [
-            682
+            691
           ]
         }
       ]
@@ -139104,15 +139182,15 @@
       "path": "src/modules/ai.c",
       "symbol": "padB6",
       "lines": [
-        684
+        693
       ],
       "owners": [
         {
           "kind": "type",
           "name": "AiLookupRecord",
-          "declaration_line": 679,
+          "declaration_line": 688,
           "lines": [
-            684
+            693
           ]
         }
       ]
@@ -140044,33 +140122,33 @@
       "path": "src/modules/gamegui.c",
       "symbol": "pad0",
       "lines": [
-        48,
-        211,
-        216
+        49,
+        212,
+        217
       ],
       "owners": [
         {
           "kind": "type",
           "name": "Inner_00401D34",
-          "declaration_line": 209,
+          "declaration_line": 210,
           "lines": [
-            211
+            212
           ]
         },
         {
           "kind": "type",
           "name": "Outer_00401D34",
-          "declaration_line": 214,
+          "declaration_line": 215,
           "lines": [
-            216
+            217
           ]
         },
         {
           "kind": "type",
           "name": "SceneExp_4000B0",
-          "declaration_line": 47,
+          "declaration_line": 48,
           "lines": [
-            48
+            49
           ]
         }
       ]
@@ -140081,17 +140159,17 @@
       "path": "src/modules/gamegui.c",
       "symbol": "padE0",
       "lines": [
-        349,
-        351
+        350,
+        352
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiRequestStateNineWithChoiceFlag",
-          "declaration_line": 347,
+          "declaration_line": 348,
           "lines": [
-            349,
-            351
+            350,
+            352
           ]
         }
       ]
@@ -152109,15 +152187,15 @@
       "symbol": "value18",
       "lines": [
         124,
-        622
+        631
       ],
       "owners": [
         {
           "kind": "function",
           "name": "aiAllocateLinkedRecord",
-          "declaration_line": 613,
+          "declaration_line": 622,
           "lines": [
-            622
+            631
           ]
         },
         {
@@ -152327,17 +152405,17 @@
         9,
         67,
         400,
-        591,
-        592
+        600,
+        601
       ],
       "owners": [
         {
           "kind": "function",
           "name": "aiApplyCarAnimationStateFields",
-          "declaration_line": 589,
+          "declaration_line": 598,
           "lines": [
-            591,
-            592
+            600,
+            601
           ]
         },
         {
@@ -152429,15 +152507,15 @@
       "symbol": "word08",
       "lines": [
         124,
-        620
+        629
       ],
       "owners": [
         {
           "kind": "function",
           "name": "aiAllocateLinkedRecord",
-          "declaration_line": 613,
+          "declaration_line": 622,
           "lines": [
-            620
+            629
           ]
         },
         {
@@ -156190,15 +156268,15 @@
       "path": "src/modules/gamegui.c",
       "symbol": "unk18C",
       "lines": [
-        299
+        300
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiInitializeSharedWidgetWhenEnabled",
-          "declaration_line": 293,
+          "declaration_line": 294,
           "lines": [
-            299
+            300
           ]
         }
       ]
@@ -156209,24 +156287,24 @@
       "path": "src/modules/gamegui.c",
       "symbol": "unk1E",
       "lines": [
-        212,
-        230
+        213,
+        231
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiRestoreMusicUnlessModeOne",
-          "declaration_line": 226,
+          "declaration_line": 227,
           "lines": [
-            230
+            231
           ]
         },
         {
           "kind": "type",
           "name": "Inner_00401D34",
-          "declaration_line": 209,
+          "declaration_line": 210,
           "lines": [
-            212
+            213
           ]
         }
       ]
@@ -156237,24 +156315,24 @@
       "path": "src/modules/gamegui.c",
       "symbol": "unk20",
       "lines": [
-        49,
-        172
+        50,
+        173
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiCreateDebugRoot",
-          "declaration_line": 160,
+          "declaration_line": 161,
           "lines": [
-            172
+            173
           ]
         },
         {
           "kind": "type",
           "name": "SceneExp_4000B0",
-          "declaration_line": 47,
+          "declaration_line": 48,
           "lines": [
-            49
+            50
           ]
         }
       ]
@@ -156265,24 +156343,62 @@
       "path": "src/modules/gamegui.c",
       "symbol": "unk28",
       "lines": [
-        217,
-        229
+        218,
+        230
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiRestoreMusicUnlessModeOne",
-          "declaration_line": 226,
+          "declaration_line": 227,
           "lines": [
-            229
+            230
           ]
         },
         {
           "kind": "type",
           "name": "Outer_00401D34",
-          "declaration_line": 214,
+          "declaration_line": 215,
           "lines": [
-            217
+            218
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-2042e64a56b4",
+      "kind": "offset_field",
+      "path": "src/modules/gamegui.c",
+      "symbol": "unk48",
+      "lines": [
+        489
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiApplyDitherAndVideoSettings",
+          "declaration_line": 482,
+          "lines": [
+            489
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-b641e442a8ca",
+      "kind": "offset_field",
+      "path": "src/modules/gamegui.c",
+      "symbol": "unk4C",
+      "lines": [
+        488
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiApplyDitherAndVideoSettings",
+          "declaration_line": 482,
+          "lines": [
+            488
           ]
         }
       ]
@@ -156293,15 +156409,15 @@
       "path": "src/modules/gamegui.c",
       "symbol": "unk8C",
       "lines": [
-        298
+        299
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiInitializeSharedWidgetWhenEnabled",
-          "declaration_line": 293,
+          "declaration_line": 294,
           "lines": [
-            298
+            299
           ]
         }
       ]
@@ -156312,51 +156428,51 @@
       "path": "src/modules/gamegui.c",
       "symbol": "unkC",
       "lines": [
-        55,
-        191,
-        375,
-        383,
-        395
+        56,
+        192,
+        376,
+        384,
+        396
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiRenderMenuOrFontList",
-          "declaration_line": 189,
+          "declaration_line": 190,
           "lines": [
-            191
+            192
           ]
         },
         {
           "kind": "function",
           "name": "gameGuiRequestInitialIntroTrack",
-          "declaration_line": 391,
+          "declaration_line": 392,
           "lines": [
-            395
+            396
           ]
         },
         {
           "kind": "function",
           "name": "gameGuiRequestStateFour",
-          "declaration_line": 381,
+          "declaration_line": 382,
           "lines": [
-            383
+            384
           ]
         },
         {
           "kind": "function",
           "name": "gameGuiRequestStateThree",
-          "declaration_line": 373,
+          "declaration_line": 374,
           "lines": [
-            375
+            376
           ]
         },
         {
           "kind": "type",
           "name": "GameguiGuiExports",
-          "declaration_line": 55,
+          "declaration_line": 56,
           "lines": [
-            55
+            56
           ]
         }
       ]
@@ -156367,24 +156483,24 @@
       "path": "src/modules/gamegui.c",
       "symbol": "unknownCallback08Address",
       "lines": [
-        102,
-        129
+        103,
+        130
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_gameGuiInitializeModuleExports",
-          "declaration_line": 125,
+          "declaration_line": 126,
           "lines": [
-            129
+            130
           ]
         },
         {
           "kind": "type",
           "name": "GameGuiExportAddresses",
-          "declaration_line": 99,
+          "declaration_line": 100,
           "lines": [
-            102
+            103
           ]
         }
       ]
@@ -185378,15 +185494,15 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "unk0",
       "lines": [
-        1081
+        1094
       ],
       "owners": [
         {
           "kind": "type",
           "name": "UvIntersectionPayload",
-          "declaration_line": 1081,
+          "declaration_line": 1094,
           "lines": [
-            1081
+            1094
           ]
         }
       ]
@@ -185405,15 +185521,15 @@
         399,
         823,
         824,
-        975
+        988
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectCreateValueRecord",
-          "declaration_line": 970,
+          "declaration_line": 983,
           "lines": [
-            975
+            988
           ]
         },
         {
@@ -204106,16 +204222,16 @@
       "path": "src/modules/ai.c",
       "symbol": "After elapsed >1, scan active 0x1E8-byte records for the smallest value * strictly below the initial threshold; equal values keep the first match. * Update/start managed sound with the queried pitch; optional sound uses * SND's no-argument 1.0 return as volume, then emitter property 5 gets 56. * RE_ORIGINAL_QUIRK: scan index is signed 32-bit but each selected index is * narrowed to signed 16-bit; previous-index storage follows sound callbacks. * RE_UNKNOWN: record/count and selected-index domains, scalar units and * observer/record/handle lifetimes need original producers and callers. * Clean C remains unmatched; retain assembly pending full byte/relocation proof.",
       "lines": [
-        597
+        606
       ],
       "evidence": "After elapsed >1, scan active 0x1E8-byte records for the smallest value * strictly below the initial threshold; equal values keep the first match. * Update/start managed sound with the queried pitch; optional sound uses * SND's no-argument 1.0 return as volume, then emitter property 5 gets 56. * RE_ORIGINAL_QUIRK: scan index is signed 32-bit but each selected index is * narrowed to signed 16-bit; previous-index storage follows sound callbacks. * RE_UNKNOWN: record/count and selected-index domains, scalar units and * observer/record/handle lifetimes need original producers and callers. * Clean C remains unmatched; retain assembly pending full byte/relocation proof.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_ai_004057C0",
-          "declaration_line": 607,
+          "declaration_line": 616,
           "lines": [
-            597
+            606
           ]
         }
       ]
@@ -204126,16 +204242,16 @@
       "path": "src/modules/ai.c",
       "symbol": "aiFindActiveRecordByKey: first active match or -1. RE_ORIGINAL_QUIRK: loop index wraps to u16. * RE_UNKNOWN: full signed count/array extent and termination need original allocation/count writers/callers.",
       "lines": [
-        677
+        686
       ],
       "evidence": "aiFindActiveRecordByKey: first active match or -1. RE_ORIGINAL_QUIRK: loop index wraps to u16. * RE_UNKNOWN: full signed count/array extent and termination need original allocation/count writers/callers.",
       "owners": [
         {
           "kind": "type",
           "name": "AiLookupRecord",
-          "declaration_line": 679,
+          "declaration_line": 688,
           "lines": [
-            677
+            686
           ]
         }
       ]
@@ -206025,6 +206141,26 @@
           "declaration_line": 870,
           "lines": [
             861
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-50553f068814",
+      "kind": "original_quirk",
+      "path": "src/modules/uvisect_rom.c",
+      "symbol": "Select signed columns from record offsets 0x30/0x40/0x50, 0x34/0x44/0x54, * or 0x38/0x48/0x58 for selectors +/-1, +/-2 or +/-3, then normalize the * destination in place through the original FVEC slot 0x08 and return its status. * Preserve interleaved source reads and output stores; overlap is not excluded. * RE_ORIGINAL_QUIRK: zero and unsupported signed-low16 selectors normalize the * existing destination without initializing it. Native code homes the incoming * full selector word before narrowing it; preserve the original assembly. * RE_UNKNOWN: column role/frame, historical declaration, record/output lifetime, * overlap and caller initialization for unsupported selectors. Trace original * producers and export consumers. The seven-entry native table at 0x4076E4 and * surrounding readonly bytes remain original-owned; any C recovery must prove * their targets and retain the separate table at 0x40771C.",
+      "lines": [
+        917
+      ],
+      "evidence": "Select signed columns from record offsets 0x30/0x40/0x50, 0x34/0x44/0x54, * or 0x38/0x48/0x58 for selectors +/-1, +/-2 or +/-3, then normalize the * destination in place through the original FVEC slot 0x08 and return its status. * Preserve interleaved source reads and output stores; overlap is not excluded. * RE_ORIGINAL_QUIRK: zero and unsupported signed-low16 selectors normalize the * existing destination without initializing it. Native code homes the incoming * full selector word before narrowing it; preserve the original assembly. * RE_UNKNOWN: column role/frame, historical declaration, record/output lifetime, * overlap and caller initialization for unsupported selectors. Trace original * producers and export consumers. The seven-entry native table at 0x4076E4 and * surrounding readonly bytes remain original-owned; any C recovery must prove * their targets and retain the separate table at 0x40771C.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_uvisect_rom_004054F4",
+          "declaration_line": 930,
+          "lines": [
+            917
           ]
         }
       ]
@@ -207945,16 +208081,16 @@
       "path": "src/modules/uvisect_rom.c",
       "symbol": "Store the attribute at offset 0x28C for a kind-zero record. Preserve the * original inclusive count check and lack of a negative-index check. The array * capacity is not established; callers must supply a valid index.",
       "lines": [
-        1043
+        1056
       ],
       "evidence": "Store the attribute at offset 0x28C for a kind-zero record. Preserve the * original inclusive count check and lack of a negative-index check. The array * capacity is not established; callers must supply a valid index.",
       "owners": [
         {
           "kind": "function",
           "name": "uvIsectSetValueAttribute",
-          "declaration_line": 1046,
+          "declaration_line": 1059,
           "lines": [
-            1043
+            1056
           ]
         }
       ]
@@ -208582,33 +208718,33 @@
       "path": "src/modules/gamegui.c",
       "symbol": "unused00",
       "lines": [
-        28,
-        40,
-        55
+        29,
+        41,
+        56
       ],
       "owners": [
         {
           "kind": "type",
           "name": "GameGuiInitializerExports",
-          "declaration_line": 27,
+          "declaration_line": 28,
           "lines": [
-            28
+            29
           ]
         },
         {
           "kind": "type",
           "name": "GameguiGuiExports",
-          "declaration_line": 55,
+          "declaration_line": 56,
           "lines": [
-            55
+            56
           ]
         },
         {
           "kind": "type",
           "name": "LocalGuiExp_4000B0",
-          "declaration_line": 39,
+          "declaration_line": 40,
           "lines": [
-            40
+            41
           ]
         }
       ]
@@ -208619,15 +208755,15 @@
       "path": "src/modules/gamegui.c",
       "symbol": "unused08",
       "lines": [
-        30
+        31
       ],
       "owners": [
         {
           "kind": "type",
           "name": "GameGuiInitializerExports",
-          "declaration_line": 27,
+          "declaration_line": 28,
           "lines": [
-            30
+            31
           ]
         }
       ]
@@ -208638,15 +208774,15 @@
       "path": "src/modules/gamegui.c",
       "symbol": "unused0C",
       "lines": [
-        42
+        43
       ],
       "owners": [
         {
           "kind": "type",
           "name": "LocalGuiExp_4000B0",
-          "declaration_line": 39,
+          "declaration_line": 40,
           "lines": [
-            42
+            43
           ]
         }
       ]
@@ -208657,15 +208793,15 @@
       "path": "src/modules/gamegui.c",
       "symbol": "unused10",
       "lines": [
-        55
+        56
       ],
       "owners": [
         {
           "kind": "type",
           "name": "GameguiGuiExports",
-          "declaration_line": 55,
+          "declaration_line": 56,
           "lines": [
-            55
+            56
           ]
         }
       ]
@@ -208676,15 +208812,43 @@
       "path": "src/modules/gamegui.c",
       "symbol": "unused20",
       "lines": [
-        32
+        33
       ],
       "owners": [
         {
           "kind": "type",
           "name": "GameGuiInitializerExports",
-          "declaration_line": 27,
+          "declaration_line": 28,
           "lines": [
-            32
+            33
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-e72d75208ae3",
+      "kind": "unused_identifier",
+      "path": "src/modules/gamegui.c",
+      "symbol": "unusedCallbackValue",
+      "lines": [
+        93,
+        482
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiApplyDitherAndVideoSettings",
+          "declaration_line": 93,
+          "lines": [
+            93
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "gameGuiApplyDitherAndVideoSettings",
+          "declaration_line": 482,
+          "lines": [
+            482
           ]
         }
       ]
@@ -208695,15 +208859,15 @@
       "path": "src/modules/gamegui.c",
       "symbol": "unusedWord",
       "lines": [
-        504
+        543
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiAccumulateLoadedTextureField1A",
-          "declaration_line": 504,
+          "declaration_line": 543,
           "lines": [
-            504
+            543
           ]
         }
       ]
