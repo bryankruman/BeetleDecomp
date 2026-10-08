@@ -1500,6 +1500,24 @@ void uvDynUpdateNodeTranslationVector(DynResetState *state) {
 #line 438 "src/modules/uvdyn_rom.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00409010.s")
 
+/* Original transform/vector update wrapper. Count at 0x18 is tested only
+ * against zero, so negative counts enter. FVEC slot 0x0C computes the length
+ * of vector 0x14BC for ISCT slot 0x80; native 50EC receives the original four
+ * forwarded 32-bit words, scalar and trailing mode 1. Its result is narrowed
+ * at 0x12B4; the shared scalar is reset to -1 before that result is reloaded.
+ * Result 2 copies the supplied matrix and two vectors, refreshes the linear
+ * matrix pair and DOBJ transform, then calls native 7C98 with mode 0.
+ * Every path clears the original halfword at 0x151C.
+ * RE_UNKNOWN: result-code meanings, vector frames/units, scalar units,
+ * forwarded-word interpretation, and input/state aliases and lifetimes.
+ * Trace native 50EC/7C98 callers, result checks and state producers before
+ * assigning physical roles or strengthening the exact-zero input guard.
+ * RE_UNKNOWN: historical C declarations and local organization. The bounded
+ * draft matches every operation, register and call/branch position but uses
+ * an 80-byte frame versus the original 72, shifting argument homes and three
+ * saved pointer slots. Preserve assembly until original source/ABI evidence
+ * supports a matching recovery; do not invent stack padding or unused locals. */
+#line 440 "src/modules/uvdyn_rom.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00409318.s")
 
 #line 442 "src/modules/uvdyn_rom.c"

@@ -333,6 +333,14 @@ void battleSetScaledCameraScalarOnce(BattleObj_00405034 *node, float value) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00405538.s")
 
+/* Original gated scalar pass caps positive changes at one; other paths
+ * clamp the negation and use DIV.S by 2 / MUL.S by 2 in configured modes.
+ * RUMBLE 0x04 receives linked word 0x14, .5, .4, 0; retain callback reloads,
+ * the first promoted-double gate, and negated action only after reset.
+ * RE_UNKNOWN: scalar/gate/counter meanings, units, linked index/lifetime,
+ * reset mode and historical source precision/dataflow need original producers
+ * and source evidence. Clean C remains unmatched; retain original assembly. */
+#line 269 "src/modules/battle.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00405764.s")
 
 #line 271 "src/modules/battle.c"
