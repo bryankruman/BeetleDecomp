@@ -313,3 +313,4 @@ D_demo_00401DB8 = 0x401DB8;
 B_demo_00402260 = 0x00402260;
 demoRestoreRaceSelection = 0x00400244; // type:func
 demoDrawBlackOverlay = 0x00400910; // type:func
+demoCreateReplayControlGroup = 0x004009F8; // type:func

@@ -679,6 +679,15 @@ void func_motion_0041476C(void) {
 }
 #line 293 "src/modules/motion.c"
 
+/* Draw background, graph-derived red/green bars, direct-value blue bar and
+ * a white marker from saved input 0x6D4. Preserve single arithmetic grouping,
+ * truncating signed coordinates and input reads between draw callbacks.
+ * Original UVGRPH 0x04 is linear evaluation; UVGEOM 0x0C/0x10 consume four
+ * singles for color / four signed words for rectangle coordinates.
+ * RE_UNKNOWN: scalar meanings/units, reachable input/coordinate ranges and
+ * graphics-state ownership need original producers/callers. Clean C remains
+ * unmatched; retain assembly pending complete byte/relocation proof. */
+#line 294 "src/modules/motion.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00414774.s")
 
 #line 296 "src/modules/motion.c"

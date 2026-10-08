@@ -488,7 +488,19 @@ void tedStoreSelectedRecordByte(s32 unused) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00405C9C.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00405EE8.s")
-
+/*
+ * RE_ORIGINAL_QUIRK: when unsigned D_ted_0040727C is outside 0..4,
+ * the original skips every sprintf but still passes unwritten scratch SP+0x20
+ * to GUI slot0xC4, whose original target reads 30 bytes. Reachability is
+ * RE_UNKNOWN: trace all selector writers, initialization and callback callers
+ * before claiming a player-visible fault or changing fallback behavior.
+ * Historical scratch-object extent is not established by the stack frame.
+ * After that callback, the original reloads selector and signed index D_ted_00407244;
+ * nonnegative indices store through pointer D_ted_00407298 at 16*index.
+ * RE_UNKNOWN: index/count bounds, backing-record extent, alias and callback
+ * mutation/lifetime guarantees need original pool producers and consumers.
+ */
+#line 225 "src/modules/ted.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_0040607C.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00406178.s")
@@ -516,7 +528,19 @@ void tedStoreSelectedRecordByte(s32 unused) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00406610.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_0040685C.s")
-
+/*
+ * RE_ORIGINAL_QUIRK: when unsigned D_ted_00407284 is outside 0..5,
+ * the original skips every sprintf but still passes unwritten scratch SP+0x20
+ * to GUI slot0xC4, whose original target reads 30 bytes. Reachability is
+ * RE_UNKNOWN: trace all selector writers, initialization and callback callers
+ * before claiming a player-visible fault or changing fallback behavior.
+ * Historical scratch-object extent is not established by the stack frame.
+ * After that callback, the original reloads selector and signed index D_ted_00407244;
+ * nonnegative indices store through pointer D_ted_004072A0 at 16*index.
+ * RE_UNKNOWN: index/count bounds, backing-record extent, alias and callback
+ * mutation/lifetime guarantees need original pool producers and consumers.
+ */
+#line 239 "src/modules/ted.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_004069F0.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00406B04.s")

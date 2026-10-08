@@ -12,8 +12,8 @@ rom:0x150 reloc:MIPS_HI16 symbol:D_demo_00402268
 rom:0x154 reloc:MIPS_LO16 symbol:D_demo_00402268
 rom:0x1E8 reloc:MIPS_HI16 symbol:D_demo_00402268
 rom:0x1EC reloc:MIPS_LO16 symbol:D_demo_00402268
-rom:0x258 reloc:MIPS_HI16 symbol:func_demo_004009F8
-rom:0x25C reloc:MIPS_LO16 symbol:func_demo_004009F8
+rom:0x258 reloc:MIPS_HI16 symbol:demoCreateReplayControlGroup
+rom:0x25C reloc:MIPS_LO16 symbol:demoCreateReplayControlGroup
 rom:0x294 reloc:MIPS_HI16 symbol:D_demo_00402270
 rom:0x298 reloc:MIPS_LO16 symbol:D_demo_00402270
 rom:0x314 reloc:MIPS_HI16 symbol:D_demo_00402238

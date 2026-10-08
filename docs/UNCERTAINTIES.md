@@ -17,14 +17,14 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 469 |
-| Preserved RE_ORIGINAL_QUIRK notes | 83 |
+| Explicit RE_UNKNOWN notes | 474 |
+| Preserved RE_ORIGINAL_QUIRK notes | 86 |
 | Older comments with uncertainty language | 100 |
 | Documented original-behavior audits | 28 |
-| Assembly-backed functions or data | 853 |
-| Address-based function identifiers | 997 |
-| Address-based global identifiers | 1333 |
-| Offset-based fields or neutral typed fields | 1441 |
+| Assembly-backed functions or data | 852 |
+| Address-based function identifiers | 996 |
+| Address-based global identifiers | 1339 |
+| Offset-based fields or neutral typed fields | 1446 |
 | Layout padding to preserve | 258 |
 | Unresolved type names | 282 |
 | Explicit unused ABI, storage or local identifiers | 113 |
@@ -1749,31 +1749,43 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
-| address_function | `func_demo_00400290` | function `func_demo_00400290` | [26](../src/modules/demo.c#L26) |
-| address_function | `func_demo_0040041C` | function `func_demo_0040041C` | [27](../src/modules/demo.c#L27) |
-| address_function | `func_demo_00400538` | function `func_demo_00400538` | [28](../src/modules/demo.c#L28) |
-| address_function | `func_demo_004009F8` | function `func_demo_004009F8` | [29](../src/modules/demo.c#L29) |
-| address_function | `func_demo_00400BC4` | function `func_demo_00400BC4` | [30](../src/modules/demo.c#L30) |
-| address_global | `D_demo_00402270` | function `demoRestoreRaceSelection`, global `D_demo_00402270` | [21](../src/modules/demo.c#L21), [37](../src/modules/demo.c#L37) |
-| address_global | `D_demo_00402274` | global `D_demo_00402274` | [24](../src/modules/demo.c#L24) |
-| assembly | `__entrypoint_func_demo_400000` | — | [31](../src/modules/demo.c#L31) |
-| assembly | `func_demo_00400290` | — | [57](../src/modules/demo.c#L57) |
-| assembly | `func_demo_0040041C` | — | [59](../src/modules/demo.c#L59) |
-| assembly | `func_demo_00400538` | — | [61](../src/modules/demo.c#L61) |
-| assembly | `func_demo_004009F8` | — | [78](../src/modules/demo.c#L78) |
-| assembly | `func_demo_00400BC4` | — | [80](../src/modules/demo.c#L80) |
-| explicit_unknown | `* RE_UNKNOWN: shared threshold/step units, replay masks 0x1000/0x8000 and * AI-tail/camera/collection storage/alias/lifetime guarantees. Trace original * setup, record/step writ...` | assembly `func_demo_00400290` | [42](../src/modules/demo.c#L42) |
-| layout_padding | `pad` | type `UvGeomExp_00400910` | [5](../src/modules/demo.c#L5) |
-| layout_padding | `pad00` | type `UvGfxStateExp_00400910` | [10](../src/modules/demo.c#L10) |
-| layout_padding | `pad18` | type `UvGfxStateExp_00400910` | [14](../src/modules/demo.c#L14) |
-| layout_padding | `pad58` | type `UvGfxStateExp_00400910` | [17](../src/modules/demo.c#L17) |
-| offset_field | `unk10` | function `demoDrawBlackOverlay`, type `UvGfxStateExp_00400910` | [12](../src/modules/demo.c#L12), [70](../src/modules/demo.c#L70) |
-| offset_field | `unk14` | function `demoDrawBlackOverlay`, type `UvGfxStateExp_00400910` | [13](../src/modules/demo.c#L13), [72](../src/modules/demo.c#L72) |
-| offset_field | `unk50` | function `demoDrawBlackOverlay`, type `UvGfxStateExp_00400910` | [15](../src/modules/demo.c#L15), [68](../src/modules/demo.c#L68) |
-| offset_field | `unk54` | function `demoDrawBlackOverlay`, type `UvGfxStateExp_00400910` | [16](../src/modules/demo.c#L16), [74](../src/modules/demo.c#L74) |
-| offset_field | `unk5C` | function `demoDrawBlackOverlay`, type `UvGfxStateExp_00400910` | [18](../src/modules/demo.c#L18), [73](../src/modules/demo.c#L73) |
-| offset_field | `unkC` | function `demoDrawBlackOverlay`, type `UvGeomExp_00400910`, type `UvGfxStateExp_00400910` | [6](../src/modules/demo.c#L6), [11](../src/modules/demo.c#L11), [69](../src/modules/demo.c#L69), [71](../src/modules/demo.c#L71) |
-| original_quirk | `* RE_UNKNOWN: shared threshold/step units, replay masks 0x1000/0x8000 and * AI-tail/camera/collection storage/alias/lifetime guarantees. Trace original * setup, record/step writ...` | assembly `func_demo_00400290` | [42](../src/modules/demo.c#L42) |
+| address_function | `func_demo_00400290` | function `func_demo_00400290` | [71](../src/modules/demo.c#L71) |
+| address_function | `func_demo_0040041C` | function `func_demo_0040041C` | [72](../src/modules/demo.c#L72) |
+| address_function | `func_demo_00400538` | function `func_demo_00400538` | [73](../src/modules/demo.c#L73) |
+| address_function | `func_demo_00400BC4` | function `func_demo_00400BC4` | [75](../src/modules/demo.c#L75) |
+| address_global | `D_demo_00401DCC` | function `demoCreateReplayControlGroup`, global `D_demo_00401DCC` | [43](../src/modules/demo.c#L43), [146](../src/modules/demo.c#L146) |
+| address_global | `D_demo_00401DD4` | function `demoCreateReplayControlGroup`, global `D_demo_00401DCC` | [43](../src/modules/demo.c#L43), [149](../src/modules/demo.c#L149) |
+| address_global | `D_demo_00401DDC` | function `demoCreateReplayControlGroup`, global `D_demo_00401DDC` | [44](../src/modules/demo.c#L44), [151](../src/modules/demo.c#L151) |
+| address_global | `D_demo_00401DE8` | function `demoCreateReplayControlGroup`, global `D_demo_00401DDC` | [44](../src/modules/demo.c#L44), [153](../src/modules/demo.c#L153) |
+| address_global | `D_demo_00402234` | function `demoCreateReplayControlGroup` | [45](../src/modules/demo.c#L45), [154](../src/modules/demo.c#L154) |
+| address_global | `D_demo_00402238` | function `demoCreateReplayControlGroup` | [45](../src/modules/demo.c#L45), [152](../src/modules/demo.c#L152) |
+| address_global | `D_demo_00402270` | function `demoRestoreRaceSelection`, global `D_demo_00402270` | [66](../src/modules/demo.c#L66), [82](../src/modules/demo.c#L82) |
+| address_global | `D_demo_00402274` | global `D_demo_00402274` | [69](../src/modules/demo.c#L69) |
+| assembly | `__entrypoint_func_demo_400000` | — | [76](../src/modules/demo.c#L76) |
+| assembly | `func_demo_00400290` | — | [102](../src/modules/demo.c#L102) |
+| assembly | `func_demo_0040041C` | — | [104](../src/modules/demo.c#L104) |
+| assembly | `func_demo_00400538` | — | [106](../src/modules/demo.c#L106) |
+| assembly | `func_demo_00400BC4` | — | [162](../src/modules/demo.c#L162) |
+| explicit_unknown | `* RE_UNKNOWN: shared threshold/step units, replay masks 0x1000/0x8000 and * AI-tail/camera/collection storage/alias/lifetime guarantees. Trace original * setup, record/step writ...` | assembly `func_demo_00400290` | [87](../src/modules/demo.c#L87) |
+| explicit_unknown | `Create the original "demo" group and text list, add float-bound * "playtime" and "loddist" rows with flags 0x11 and bounds 0..500, then * append the replay provider's three rang...` | function `demoCreateReplayControlGroup` | [125](../src/modules/demo.c#L125) |
+| explicit_unknown | `Original provider-backed export prefixes; skipped slots remain opaque. * RE_UNKNOWN: full export layouts and historical caller declaration widths * require complete original pro...` | type `DemoGuiMenuExports` | [3](../src/modules/demo.c#L3) |
+| layout_padding | `pad` | type `UvGeomExp_00400910` | [50](../src/modules/demo.c#L50) |
+| layout_padding | `pad00` | type `UvGfxStateExp_00400910` | [55](../src/modules/demo.c#L55) |
+| layout_padding | `pad18` | type `UvGfxStateExp_00400910` | [59](../src/modules/demo.c#L59) |
+| layout_padding | `pad58` | type `UvGfxStateExp_00400910` | [62](../src/modules/demo.c#L62) |
+| offset_field | `opaque00` | type `DemoAiMenuExports`, type `DemoGameGuiMenuExports`, type `DemoGuiMenuExports`, type `DemoMiscMenuExports`, type `DemoReplayMenuExports` | [7](../src/modules/demo.c#L7), [21](../src/modules/demo.c#L21), [27](../src/modules/demo.c#L27), [31](../src/modules/demo.c#L31), [35](../src/modules/demo.c#L35) |
+| offset_field | `opaque0C` | type `DemoGuiMenuExports` | [9](../src/modules/demo.c#L9) |
+| offset_field | `opaque18` | type `DemoGameGuiMenuExports` | [23](../src/modules/demo.c#L23) |
+| offset_field | `opaque7C` | type `DemoGuiMenuExports` | [13](../src/modules/demo.c#L13) |
+| offset_field | `opaque88` | type `DemoGuiMenuExports` | [15](../src/modules/demo.c#L15) |
+| offset_field | `unk10` | function `demoDrawBlackOverlay`, type `UvGfxStateExp_00400910` | [57](../src/modules/demo.c#L57), [115](../src/modules/demo.c#L115) |
+| offset_field | `unk14` | function `demoDrawBlackOverlay`, type `UvGfxStateExp_00400910` | [58](../src/modules/demo.c#L58), [117](../src/modules/demo.c#L117) |
+| offset_field | `unk50` | function `demoDrawBlackOverlay`, type `UvGfxStateExp_00400910` | [60](../src/modules/demo.c#L60), [113](../src/modules/demo.c#L113) |
+| offset_field | `unk54` | function `demoDrawBlackOverlay`, type `UvGfxStateExp_00400910` | [61](../src/modules/demo.c#L61), [119](../src/modules/demo.c#L119) |
+| offset_field | `unk5C` | function `demoDrawBlackOverlay`, type `UvGfxStateExp_00400910` | [63](../src/modules/demo.c#L63), [118](../src/modules/demo.c#L118) |
+| offset_field | `unkC` | function `demoDrawBlackOverlay`, type `UvGeomExp_00400910`, type `UvGfxStateExp_00400910` | [51](../src/modules/demo.c#L51), [56](../src/modules/demo.c#L56), [114](../src/modules/demo.c#L114), [116](../src/modules/demo.c#L116) |
+| original_quirk | `* RE_UNKNOWN: shared threshold/step units, replay masks 0x1000/0x8000 and * AI-tail/camera/collection storage/alias/lifetime guarantees. Trace original * setup, record/step writ...` | assembly `func_demo_00400290` | [87](../src/modules/demo.c#L87) |
+| original_quirk | `Create the original "demo" group and text list, add float-bound * "playtime" and "loddist" rows with flags 0x11 and bounds 0..500, then * append the replay provider's three rang...` | function `demoCreateReplayControlGroup` | [125](../src/modules/demo.c#L125) |
 
 ## src/modules/dledit.c
 
@@ -2688,13 +2700,13 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_motion_00414764` | function `func_motion_00414764` | [669](../src/modules/motion.c#L669) |
 | address_function | `func_motion_0041476C` | function `func_motion_0041476C` | [678](../src/modules/motion.c#L678) |
 | address_function | `func_motion_00414774` | function `func_motion_00414774` | [160](../src/modules/motion.c#L160) |
-| address_function | `func_motion_00414A68` | function `func_motion_00414A68` | [689](../src/modules/motion.c#L689) |
+| address_function | `func_motion_00414A68` | function `func_motion_00414A68` | [698](../src/modules/motion.c#L698) |
 | address_function | `func_motion_00414A70` | function `func_motion_00414A70` | [161](../src/modules/motion.c#L161) |
 | address_function | `func_motion_00414BB0` | function `func_motion_00414BB0` | [162](../src/modules/motion.c#L162) |
 | address_function | `func_motion_004151CC` | function `func_motion_004151CC` | [163](../src/modules/motion.c#L163) |
 | address_function | `func_motion_004154B8` | function `func_motion_004154B8` | [164](../src/modules/motion.c#L164) |
 | address_function | `func_motion_00415724` | function `func_motion_00415724` | [165](../src/modules/motion.c#L165) |
-| address_function | `func_motion_00415870` | function `func_motion_00415870` | [719](../src/modules/motion.c#L719) |
+| address_function | `func_motion_00415870` | function `func_motion_00415870` | [728](../src/modules/motion.c#L728) |
 | address_function | `func_motion_00415A3C` | function `func_motion_00415A3C` | [169](../src/modules/motion.c#L169) |
 | address_global | `D_80025D70` | function `motionApplyGatedModeResponse`, global `D_80025D70` | [37](../src/modules/motion.c#L37), [600](../src/modules/motion.c#L600) |
 | address_global | `D_motion_00415DE4` | function `motionComputePlanarRecordAngleResponse` | [18](../src/modules/motion.c#L18), [336](../src/modules/motion.c#L336) |
@@ -2705,19 +2717,19 @@ For every future source wave, regenerate and check this index after code and str
 | address_global | `D_motion_00415F84` | function `motionAccumulateTransformedConfiguredVector` | [33](../src/modules/motion.c#L33), [548](../src/modules/motion.c#L548) |
 | address_global | `D_motion_00415F88` | function `motionAccumulateTransformedConfiguredVector` | [33](../src/modules/motion.c#L33), [550](../src/modules/motion.c#L550) |
 | address_global | `D_motion_00415F8C` | function `motionApplyGatedModeResponse`, global `D_motion_00415F8C` | [36](../src/modules/motion.c#L36), [592](../src/modules/motion.c#L592) |
-| address_global | `D_motion_0041607C` | function `motionTryPlayExplosionVoice`, global `D_motion_0041607C` | [747](../src/modules/motion.c#L747), [758](../src/modules/motion.c#L758) |
+| address_global | `D_motion_0041607C` | function `motionTryPlayExplosionVoice`, global `D_motion_0041607C` | [756](../src/modules/motion.c#L756), [767](../src/modules/motion.c#L767) |
 | address_global | `D_motion_00416080` | function `motionApplyConditionalCorrection` | [67](../src/modules/motion.c#L67), [526](../src/modules/motion.c#L526) |
 | address_global | `D_motion_00416084` | function `motionApplyConditionalCorrection` | [67](../src/modules/motion.c#L67), [524](../src/modules/motion.c#L524), [525](../src/modules/motion.c#L525), [526](../src/modules/motion.c#L526) |
 | address_global | `D_motion_00416088` | function `motionApplyConditionalCorrection` | [67](../src/modules/motion.c#L67), [523](../src/modules/motion.c#L523) |
 | address_global | `D_motion_00416090` | function `motionApplyConditionalCorrection` | [67](../src/modules/motion.c#L67), [523](../src/modules/motion.c#L523) |
-| address_global | `D_motion_004160A0` | function `motionTryPlayHotLavaVoice`, global `D_motion_004160A0` | [727](../src/modules/motion.c#L727), [736](../src/modules/motion.c#L736), [738](../src/modules/motion.c#L738) |
-| address_global | `D_motion_004160A4` | function `motionTryPlayExplosionVoice`, global `D_motion_004160A4` | [748](../src/modules/motion.c#L748), [757](../src/modules/motion.c#L757), [759](../src/modules/motion.c#L759) |
-| address_global | `D_motion_004163A8` | function `motionEvaluateSelectedGraph`, global `D_motion_004163A8` | [77](../src/modules/motion.c#L77), [709](../src/modules/motion.c#L709) |
-| address_global | `D_motion_0041644C` | function `motionEvaluateSelectedGraph`, global `D_motion_0041644C` | [78](../src/modules/motion.c#L78), [711](../src/modules/motion.c#L711) |
+| address_global | `D_motion_004160A0` | function `motionTryPlayHotLavaVoice`, global `D_motion_004160A0` | [736](../src/modules/motion.c#L736), [745](../src/modules/motion.c#L745), [747](../src/modules/motion.c#L747) |
+| address_global | `D_motion_004160A4` | function `motionTryPlayExplosionVoice`, global `D_motion_004160A4` | [757](../src/modules/motion.c#L757), [766](../src/modules/motion.c#L766), [768](../src/modules/motion.c#L768) |
+| address_global | `D_motion_004163A8` | function `motionEvaluateSelectedGraph`, global `D_motion_004163A8` | [77](../src/modules/motion.c#L77), [718](../src/modules/motion.c#L718) |
+| address_global | `D_motion_0041644C` | function `motionEvaluateSelectedGraph`, global `D_motion_0041644C` | [78](../src/modules/motion.c#L78), [720](../src/modules/motion.c#L720) |
 | address_global | `D_motion_00416A88` | function `motionClearValueForFlaggedLookup`, global `D_motion_00416A88` | [50](../src/modules/motion.c#L50), [274](../src/modules/motion.c#L274), [281](../src/modules/motion.c#L281) |
 | address_global | `D_motion_00416AB8` | function `motionUpdateSharedState`, global `D_motion_00416AB8` | [82](../src/modules/motion.c#L82), [408](../src/modules/motion.c#L408) |
-| address_global | `D_motion_00416AF0` | function `motionTryPlayHotLavaVoice`, function `motionUnloadModulesAndStopEmitters`, global `D_motion_00416AF0` | [178](../src/modules/motion.c#L178), [183](../src/modules/motion.c#L183), [737](../src/modules/motion.c#L737) |
-| address_global | `D_motion_00416AF1` | function `motionTryPlayExplosionVoice`, function `motionUnloadModulesAndStopEmitters`, global `D_motion_00416AF1` | [179](../src/modules/motion.c#L179), [184](../src/modules/motion.c#L184), [758](../src/modules/motion.c#L758) |
+| address_global | `D_motion_00416AF0` | function `motionTryPlayHotLavaVoice`, function `motionUnloadModulesAndStopEmitters`, global `D_motion_00416AF0` | [178](../src/modules/motion.c#L178), [183](../src/modules/motion.c#L183), [746](../src/modules/motion.c#L746) |
+| address_global | `D_motion_00416AF1` | function `motionTryPlayExplosionVoice`, function `motionUnloadModulesAndStopEmitters`, global `D_motion_00416AF1` | [179](../src/modules/motion.c#L179), [184](../src/modules/motion.c#L184), [767](../src/modules/motion.c#L767) |
 | address_global | `D_motion_00416B10` | function `motionUpdateSharedState`, global `D_motion_00416B10` | [81](../src/modules/motion.c#L81), [402](../src/modules/motion.c#L402), [405](../src/modules/motion.c#L405), [406](../src/modules/motion.c#L406), [411](../src/modules/motion.c#L411) |
 | assembly | `__entrypoint_func_motion_400000` | — | [171](../src/modules/motion.c#L171) |
 | assembly | `func_motion_004002EC` | — | [188](../src/modules/motion.c#L188) |
@@ -2780,20 +2792,21 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_motion_00413284` | — | [649](../src/modules/motion.c#L649) |
 | assembly | `func_motion_00413568` | — | [651](../src/modules/motion.c#L651) |
 | assembly | `func_motion_00414430` | — | [653](../src/modules/motion.c#L653) |
-| assembly | `func_motion_00414774` | — | [682](../src/modules/motion.c#L682) |
-| assembly | `func_motion_00414A70` | — | [693](../src/modules/motion.c#L693) |
-| assembly | `func_motion_00414BB0` | — | [695](../src/modules/motion.c#L695) |
-| assembly | `func_motion_004151CC` | — | [697](../src/modules/motion.c#L697) |
-| assembly | `func_motion_004154B8` | — | [699](../src/modules/motion.c#L699) |
-| assembly | `func_motion_00415724` | — | [701](../src/modules/motion.c#L701) |
-| assembly | `func_motion_00415A3C` | — | [765](../src/modules/motion.c#L765) |
-| explicit_unknown | `Attempt pending Hot Lava speech on random choice 3 with priority 0x7FFF; playback value is 0x7A120. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: ...` | global `D_motion_004160A0` | [725](../src/modules/motion.c#L725) |
-| explicit_unknown | `Attempt pending explosion speech on random choice 3 with its scale; priority 0x7FFF, playback value 0x1F4. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UN...` | global `D_motion_0041607C` | [745](../src/modules/motion.c#L745) |
+| assembly | `func_motion_00414774` | — | [691](../src/modules/motion.c#L691) |
+| assembly | `func_motion_00414A70` | — | [702](../src/modules/motion.c#L702) |
+| assembly | `func_motion_00414BB0` | — | [704](../src/modules/motion.c#L704) |
+| assembly | `func_motion_004151CC` | — | [706](../src/modules/motion.c#L706) |
+| assembly | `func_motion_004154B8` | — | [708](../src/modules/motion.c#L708) |
+| assembly | `func_motion_00415724` | — | [710](../src/modules/motion.c#L710) |
+| assembly | `func_motion_00415A3C` | — | [774](../src/modules/motion.c#L774) |
+| explicit_unknown | `Attempt pending Hot Lava speech on random choice 3 with priority 0x7FFF; playback value is 0x7A120. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: ...` | global `D_motion_004160A0` | [734](../src/modules/motion.c#L734) |
+| explicit_unknown | `Attempt pending explosion speech on random choice 3 with its scale; priority 0x7FFF, playback value 0x1F4. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UN...` | global `D_motion_0041607C` | [754](../src/modules/motion.c#L754) |
+| explicit_unknown | `Draw background, graph-derived red/green bars, direct-value blue bar and * a white marker from saved input 0x6D4. Preserve single arithmetic grouping, * truncating signed coordi...` | assembly `func_motion_00414774` | [682](../src/modules/motion.c#L682) |
 | explicit_unknown | `Forward state, 1, embedded matrix 0x5E8 and 0 to the original helper. * RE_UNKNOWN: helper retention and mode meanings require its body and callers.` | function `motionForwardStateMatrix` | [622](../src/modules/motion.c#L622) |
 | explicit_unknown | `From the planar record's X/Y pair, compute a normalized pair angle, * apply the shared angle scale and fold degrees through the misc exports. * Below the first ordered Y-magnitu...` | function `motionComputePlanarRecordAngleResponse` | [322](../src/modules/motion.c#L322) |
 | explicit_unknown | `Original cross/add/transform and dot products update phase 0x8D4 and * component 0x998; 0x988/0x998 overlap vector 0x984.y / vector 0x990.z. * RE_ORIGINAL_QUIRK: caller passes 1...` | assembly `func_motion_00413284` | [641](../src/modules/motion.c#L641) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_motion_00405E5C`, function `func_motion_0041475C`, function `func_motion_00414764`, function `func_motion_0041476C`, function `func_motion_00414A68` | [389](../src/modules/motion.c#L389), [656](../src/modules/motion.c#L656), [665](../src/modules/motion.c#L665), [674](../src/modules/motion.c#L674), [685](../src/modules/motion.c#L685) |
-| explicit_unknown | `Read the unsigned halfword at state offset 0x70C without modifying the caller object. RE_UNKNOWN: the field role requires its writers and consumers; no status or identifier mean...` | function `func_motion_00415870` | [718](../src/modules/motion.c#L718) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_motion_00405E5C`, function `func_motion_0041475C`, function `func_motion_00414764`, function `func_motion_0041476C`, function `func_motion_00414A68` | [389](../src/modules/motion.c#L389), [656](../src/modules/motion.c#L656), [665](../src/modules/motion.c#L665), [674](../src/modules/motion.c#L674), [694](../src/modules/motion.c#L694) |
+| explicit_unknown | `Read the unsigned halfword at state offset 0x70C without modifying the caller object. RE_UNKNOWN: the field role requires its writers and consumers; no status or identifier mean...` | function `func_motion_00415870` | [727](../src/modules/motion.c#L727) |
 | explicit_unknown | `Subtract shared delta; a negative result advances one ten-slot history entry and adds one to remaining. * RE_ORIGINAL_QUIRK: no catch-up loop runs even if remaining stays negati...` | function `motionRecordHistoryAndUpdateTrack` | [237](../src/modules/motion.c#L237) |
 | explicit_unknown | `Transform a configured local Z vector through the state's linear matrix * and add it to the existing accumulated vector. Kind two selects the first * constant; other kinds selec...` | function `motionAccumulateTransformedConfiguredVector` | [533](../src/modules/motion.c#L533) |
 | layout_padding | `gap` | type `MotionProjectionRecord` | [56](../src/modules/motion.c#L56) |
@@ -2834,8 +2847,8 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `value690` | function `motionApplyConditionalCorrection`, type `MotionCorrectionState` | [66](../src/modules/motion.c#L66), [523](../src/modules/motion.c#L523) |
 | offset_field | `value988` | function `motionApplyConditionalCorrection`, function `motionApplyGatedModeResponse`, type `MotionCorrectionState`, type `MotionModeResponseState` | [35](../src/modules/motion.c#L35), [66](../src/modules/motion.c#L66), [524](../src/modules/motion.c#L524), [601](../src/modules/motion.c#L601), [602](../src/modules/motion.c#L602), [604](../src/modules/motion.c#L604), [605](../src/modules/motion.c#L605) |
 | offset_field | `value9A0` | function `motionApplyConditionalCorrection`, type `MotionCorrectionState` | [66](../src/modules/motion.c#L66), [526](../src/modules/motion.c#L526) |
-| original_quirk | `Attempt pending Hot Lava speech on random choice 3 with priority 0x7FFF; playback value is 0x7A120. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: ...` | global `D_motion_004160A0` | [725](../src/modules/motion.c#L725) |
-| original_quirk | `Attempt pending explosion speech on random choice 3 with its scale; priority 0x7FFF, playback value 0x1F4. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UN...` | global `D_motion_0041607C` | [745](../src/modules/motion.c#L745) |
+| original_quirk | `Attempt pending Hot Lava speech on random choice 3 with priority 0x7FFF; playback value is 0x7A120. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: ...` | global `D_motion_004160A0` | [734](../src/modules/motion.c#L734) |
+| original_quirk | `Attempt pending explosion speech on random choice 3 with its scale; priority 0x7FFF, playback value 0x1F4. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UN...` | global `D_motion_0041607C` | [754](../src/modules/motion.c#L754) |
 | original_quirk | `Original cross/add/transform and dot products update phase 0x8D4 and * component 0x998; 0x988/0x998 overlap vector 0x984.y / vector 0x990.z. * RE_ORIGINAL_QUIRK: caller passes 1...` | assembly `func_motion_00413284` | [641](../src/modules/motion.c#L641) |
 | original_quirk | `Subtract shared delta; a negative result advances one ten-slot history entry and adds one to remaining. * RE_ORIGINAL_QUIRK: no catch-up loop runs even if remaining stays negati...` | function `motionRecordHistoryAndUpdateTrack` | [237](../src/modules/motion.c#L237) |
 | uncertainty_note | `Accumulate two weighted three-component basis combinations. The first * uses one shared scale; the second uses per-component scales. Preserve * Z/X/Y product order, sequential s...` | function `motionAccumulateScaledBasisVectors` | [499](../src/modules/motion.c#L499) |
@@ -4526,17 +4539,19 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_ted_00405B94` | — | [486](../src/modules/ted.c#L486) |
 | assembly | `func_ted_00405C9C` | — | [488](../src/modules/ted.c#L488) |
 | assembly | `func_ted_00405EE8` | — | [490](../src/modules/ted.c#L490) |
-| assembly | `func_ted_0040607C` | — | [492](../src/modules/ted.c#L492) |
-| assembly | `func_ted_00406178` | — | [494](../src/modules/ted.c#L494) |
-| assembly | `func_ted_00406280` | — | [496](../src/modules/ted.c#L496) |
-| assembly | `func_ted_00406330` | — | [498](../src/modules/ted.c#L498) |
-| assembly | `func_ted_00406508` | — | [508](../src/modules/ted.c#L508) |
-| assembly | `func_ted_00406610` | — | [516](../src/modules/ted.c#L516) |
-| assembly | `func_ted_0040685C` | — | [518](../src/modules/ted.c#L518) |
-| assembly | `func_ted_004069F0` | — | [520](../src/modules/ted.c#L520) |
-| assembly | `func_ted_00406B04` | — | [522](../src/modules/ted.c#L522) |
+| assembly | `func_ted_0040607C` | — | [504](../src/modules/ted.c#L504) |
+| assembly | `func_ted_00406178` | — | [506](../src/modules/ted.c#L506) |
+| assembly | `func_ted_00406280` | — | [508](../src/modules/ted.c#L508) |
+| assembly | `func_ted_00406330` | — | [510](../src/modules/ted.c#L510) |
+| assembly | `func_ted_00406508` | — | [520](../src/modules/ted.c#L520) |
+| assembly | `func_ted_00406610` | — | [528](../src/modules/ted.c#L528) |
+| assembly | `func_ted_0040685C` | — | [530](../src/modules/ted.c#L530) |
+| assembly | `func_ted_004069F0` | — | [544](../src/modules/ted.c#L544) |
+| assembly | `func_ted_00406B04` | — | [546](../src/modules/ted.c#L546) |
+| explicit_unknown | `* RE_ORIGINAL_QUIRK: when unsigned D_ted_0040727C is outside 0..4, * the original skips every sprintf but still passes unwritten scratch SP+0x20 * to GUI slot0xC4, whose origina...` | assembly `func_ted_0040607C` | [491](../src/modules/ted.c#L491) |
+| explicit_unknown | `* RE_ORIGINAL_QUIRK: when unsigned D_ted_00407284 is outside 0..5, * the original skips every sprintf but still passes unwritten scratch SP+0x20 * to GUI slot0xC4, whose origina...` | assembly `func_ted_004069F0` | [531](../src/modules/ted.c#L531) |
 | explicit_unknown | `* RE_UNKNOWN: record/controller index bounds, backing and callback alias/mutation * domains, rotation frames/scalar domains and object property-seven meaning; * trace original f...` | assembly `func_ted_004040B4` | [292](../src/modules/ted.c#L292) |
-| explicit_unknown | `* RE_UNKNOWN: second-list backing capacities, count/selection validity, alias and * callback-mutation domains, record word/triple roles and helper effects; verify * allocators, ...` | assembly `func_ted_00406508` | [499](../src/modules/ted.c#L499) |
+| explicit_unknown | `* RE_UNKNOWN: second-list backing capacities, count/selection validity, alias and * callback-mutation domains, record word/triple roles and helper effects; verify * allocators, ...` | assembly `func_ted_00406508` | [511](../src/modules/ted.c#L511) |
 | explicit_unknown | `* RE_UNKNOWN: valid file counts, backing replacements, allocation failures, * record meanings and callback alias/mutation lifecycle; verify original file * producers, every coun...` | assembly `func_ted_00404468` | [323](../src/modules/ted.c#L323) |
 | explicit_unknown | `A nonzero shared frame flag delegates to original PAUS export 0x08. * Otherwise dispatch editor modes zero/one, then update the original camera. * RE_UNKNOWN: full callback cont...` | — | [159](../src/modules/ted.c#L159) |
 | explicit_unknown | `A nonzero shared frame flag invokes PAUS export 0x08 and returns. * Its original target dispatches the current pause-node callback selected * by short 0x10, updates linked menu ...` | function `tedDispatchFrameAndCamera` | [163](../src/modules/ted.c#L163) |
@@ -4544,32 +4559,32 @@ For every future source wave, regenerate and check this index after code and str
 | explicit_unknown | `Original PAUS export 0x08 binds func_pause_00400258. * RE_UNKNOWN: its initial node callback inherits incoming argument registers; * that callback's intended argument/result con...` | type `TedPauseFrameExports` | [13](../src/modules/ted.c#L13) |
 | explicit_unknown | `RE_UNKNOWN: first-list selection/count invariants, backing capacity, record word/vector roles and callback mutation domains; inspect original list creators, ID/record writers an...` | assembly `func_ted_00405C9C` | [487](../src/modules/ted.c#L487) |
 | explicit_unknown | `RE_UNKNOWN: record/object bounds and callback mutations, rotation units/frames, SMACK model-word meaning and DOBJ tag-one scalar units; trace original record creators, SMACK tab...` | assembly `func_ted_00404DA8` | [439](../src/modules/ted.c#L439) |
-| explicit_unknown | `RE_UNKNOWN: second-list backing capacity, selection/count/alias * invariants, word/triple roles and callback mutation lifecycle; verify * allocators, all callers and DOBJ callba...` | assembly `func_ted_00406610` | [509](../src/modules/ted.c#L509) |
+| explicit_unknown | `RE_UNKNOWN: second-list backing capacity, selection/count/alias * invariants, word/triple roles and callback mutation lifecycle; verify * allocators, all callers and DOBJ callba...` | assembly `func_ted_00406610` | [521](../src/modules/ted.c#L521) |
 | explicit_unknown | `Set the original GUI label to "ChkPt" and reset the shared record pool. * RE_UNKNOWN: the label expansion and the full GUI handle/pool type contract * remain unproven; preserve ...` | function `tedResetPoolWithChkPtLabel` | [217](../src/modules/ted.c#L217) |
 | explicit_unknown | `Set the original GUI label to "EnvPln" and reset the shared record pool. * RE_UNKNOWN: the label expansion and the full GUI handle/pool type contract * remain unproven; preserve...` | function `tedResetPoolWithEnvPlnLabel` | [207](../src/modules/ted.c#L207) |
 | layout_padding | `pad00` | type `TedGuiExports` | [63](../src/modules/ted.c#L63) |
 | layout_padding | `padA0` | type `TedGuiExports` | [65](../src/modules/ted.c#L65) |
 | layout_padding | `prefix` | type `TedFileLoaderExports`, type `TedPauseFrameExports`, type `TedSceneNameExports` | [6](../src/modules/ted.c#L6), [7](../src/modules/ted.c#L7), [19](../src/modules/ted.c#L19) |
 | offset_field | `unk00` | type `TedCameraFrameExports`, type `TedFileWriteExports`, type `TedGuiState`, type `TedRecordPool`, type `TedResetRecord`, type `TedSelectedRecord` | [10](../src/modules/ted.c#L10), [22](../src/modules/ted.c#L22), [26](../src/modules/ted.c#L26), [30](../src/modules/ted.c#L30), [47](../src/modules/ted.c#L47), [73](../src/modules/ted.c#L73) |
-| offset_field | `unk0C` | function `tedApplySelectedScalar0C`, function `tedResetRecord`, type `TedCheckData`, type `TedResetRecord`, type `TedSelectedRecord` | [48](../src/modules/ted.c#L48), [74](../src/modules/ted.c#L74), [79](../src/modules/ted.c#L79), [407](../src/modules/ted.c#L407), [547](../src/modules/ted.c#L547) |
-| offset_field | `unk0E` | function `tedResetRecord`, type `TedResetRecord` | [49](../src/modules/ted.c#L49), [548](../src/modules/ted.c#L548) |
-| offset_field | `unk10` | function `tedApplySelectedScalar10`, function `tedResetRecord`, type `TedResetRecord`, type `TedSelectedRecord` | [50](../src/modules/ted.c#L50), [74](../src/modules/ted.c#L74), [421](../src/modules/ted.c#L421), [549](../src/modules/ted.c#L549) |
-| offset_field | `unk12` | function `tedResetRecord`, type `TedResetRecord` | [51](../src/modules/ted.c#L51), [550](../src/modules/ted.c#L550) |
-| offset_field | `unk14` | function `tedApplySelectedScalar14`, function `tedResetRecord`, type `TedResetRecord`, type `TedSelectedRecord` | [52](../src/modules/ted.c#L52), [74](../src/modules/ted.c#L74), [435](../src/modules/ted.c#L435), [551](../src/modules/ted.c#L551) |
+| offset_field | `unk0C` | function `tedApplySelectedScalar0C`, function `tedResetRecord`, type `TedCheckData`, type `TedResetRecord`, type `TedSelectedRecord` | [48](../src/modules/ted.c#L48), [74](../src/modules/ted.c#L74), [79](../src/modules/ted.c#L79), [407](../src/modules/ted.c#L407), [571](../src/modules/ted.c#L571) |
+| offset_field | `unk0E` | function `tedResetRecord`, type `TedResetRecord` | [49](../src/modules/ted.c#L49), [572](../src/modules/ted.c#L572) |
+| offset_field | `unk10` | function `tedApplySelectedScalar10`, function `tedResetRecord`, type `TedResetRecord`, type `TedSelectedRecord` | [50](../src/modules/ted.c#L50), [74](../src/modules/ted.c#L74), [421](../src/modules/ted.c#L421), [573](../src/modules/ted.c#L573) |
+| offset_field | `unk12` | function `tedResetRecord`, type `TedResetRecord` | [51](../src/modules/ted.c#L51), [574](../src/modules/ted.c#L574) |
+| offset_field | `unk14` | function `tedApplySelectedScalar14`, function `tedResetRecord`, type `TedResetRecord`, type `TedSelectedRecord` | [52](../src/modules/ted.c#L52), [74](../src/modules/ted.c#L74), [435](../src/modules/ted.c#L435), [575](../src/modules/ted.c#L575) |
 | offset_field | `unk16` | type `TedResetRecord` | [53](../src/modules/ted.c#L53) |
 | offset_field | `unk18` | function `tedApplySelectedScalar18`, type `TedSelectedRecord` | [74](../src/modules/ted.c#L74), [349](../src/modules/ted.c#L349) |
-| offset_field | `unk1C` | function `tedApplySelectedScalar1C`, function `tedResetRecord`, type `TedResetRecord`, type `TedSelectedRecord` | [54](../src/modules/ted.c#L54), [74](../src/modules/ted.c#L74), [363](../src/modules/ted.c#L363), [552](../src/modules/ted.c#L552) |
-| offset_field | `unk1E` | function `tedResetGuiState`, type `TedGuiState` | [31](../src/modules/ted.c#L31), [573](../src/modules/ted.c#L573) |
-| offset_field | `unk20` | function `tedApplySelectedScalar20`, function `tedResetGuiState`, function `tedResetRecord`, type `TedGuiState`, type `TedResetRecord`, type `TedSelectedRecord` | [32](../src/modules/ted.c#L32), [55](../src/modules/ted.c#L55), [74](../src/modules/ted.c#L74), [377](../src/modules/ted.c#L377), [553](../src/modules/ted.c#L553), [574](../src/modules/ted.c#L574) |
+| offset_field | `unk1C` | function `tedApplySelectedScalar1C`, function `tedResetRecord`, type `TedResetRecord`, type `TedSelectedRecord` | [54](../src/modules/ted.c#L54), [74](../src/modules/ted.c#L74), [363](../src/modules/ted.c#L363), [576](../src/modules/ted.c#L576) |
+| offset_field | `unk1E` | function `tedResetGuiState`, type `TedGuiState` | [31](../src/modules/ted.c#L31), [597](../src/modules/ted.c#L597) |
+| offset_field | `unk20` | function `tedApplySelectedScalar20`, function `tedResetGuiState`, function `tedResetRecord`, type `TedGuiState`, type `TedResetRecord`, type `TedSelectedRecord` | [32](../src/modules/ted.c#L32), [55](../src/modules/ted.c#L55), [74](../src/modules/ted.c#L74), [377](../src/modules/ted.c#L377), [577](../src/modules/ted.c#L577), [598](../src/modules/ted.c#L598) |
 | offset_field | `unk22` | type `TedGuiState` | [33](../src/modules/ted.c#L33) |
-| offset_field | `unk24` | function `tedApplySelectedScalar24`, function `tedResetGuiState`, function `tedResetRecord`, type `TedGuiState`, type `TedResetRecord`, type `TedSelectedRecord` | [34](../src/modules/ted.c#L34), [56](../src/modules/ted.c#L56), [74](../src/modules/ted.c#L74), [391](../src/modules/ted.c#L391), [554](../src/modules/ted.c#L554), [579](../src/modules/ted.c#L579) |
-| offset_field | `unk28` | function `tedResetGuiState`, function `tedResetRecord`, type `TedGuiState`, type `TedResetRecord`, type `TedSelectedRecord` | [35](../src/modules/ted.c#L35), [57](../src/modules/ted.c#L57), [75](../src/modules/ted.c#L75), [546](../src/modules/ted.c#L546), [555](../src/modules/ted.c#L555), [578](../src/modules/ted.c#L578) |
-| offset_field | `unk2C` | function `tedResetGuiState`, function `tedResetRecord`, type `TedGuiState`, type `TedResetRecord` | [36](../src/modules/ted.c#L36), [58](../src/modules/ted.c#L58), [556](../src/modules/ted.c#L556), [575](../src/modules/ted.c#L575) |
-| offset_field | `unk30` | function `tedResetGuiState`, function `tedResetRecord`, type `TedGuiState`, type `TedResetRecord` | [37](../src/modules/ted.c#L37), [59](../src/modules/ted.c#L59), [557](../src/modules/ted.c#L557), [577](../src/modules/ted.c#L577) |
-| offset_field | `unk34` | function `tedResetGuiState`, type `TedGuiState` | [38](../src/modules/ted.c#L38), [580](../src/modules/ted.c#L580) |
+| offset_field | `unk24` | function `tedApplySelectedScalar24`, function `tedResetGuiState`, function `tedResetRecord`, type `TedGuiState`, type `TedResetRecord`, type `TedSelectedRecord` | [34](../src/modules/ted.c#L34), [56](../src/modules/ted.c#L56), [74](../src/modules/ted.c#L74), [391](../src/modules/ted.c#L391), [578](../src/modules/ted.c#L578), [603](../src/modules/ted.c#L603) |
+| offset_field | `unk28` | function `tedResetGuiState`, function `tedResetRecord`, type `TedGuiState`, type `TedResetRecord`, type `TedSelectedRecord` | [35](../src/modules/ted.c#L35), [57](../src/modules/ted.c#L57), [75](../src/modules/ted.c#L75), [570](../src/modules/ted.c#L570), [579](../src/modules/ted.c#L579), [602](../src/modules/ted.c#L602) |
+| offset_field | `unk2C` | function `tedResetGuiState`, function `tedResetRecord`, type `TedGuiState`, type `TedResetRecord` | [36](../src/modules/ted.c#L36), [58](../src/modules/ted.c#L58), [580](../src/modules/ted.c#L580), [599](../src/modules/ted.c#L599) |
+| offset_field | `unk30` | function `tedResetGuiState`, function `tedResetRecord`, type `TedGuiState`, type `TedResetRecord` | [37](../src/modules/ted.c#L37), [59](../src/modules/ted.c#L59), [581](../src/modules/ted.c#L581), [601](../src/modules/ted.c#L601) |
+| offset_field | `unk34` | function `tedResetGuiState`, type `TedGuiState` | [38](../src/modules/ted.c#L38), [604](../src/modules/ted.c#L604) |
 | offset_field | `unk38` | type `TedGuiState` | [39](../src/modules/ted.c#L39) |
-| offset_field | `unk40` | function `tedResetGuiState`, type `TedCheckData`, type `TedGuiState` | [40](../src/modules/ted.c#L40), [81](../src/modules/ted.c#L81), [586](../src/modules/ted.c#L586) |
-| offset_field | `unk44` | function `tedResetGuiState`, type `TedGuiState` | [41](../src/modules/ted.c#L41), [576](../src/modules/ted.c#L576) |
+| offset_field | `unk40` | function `tedResetGuiState`, type `TedCheckData`, type `TedGuiState` | [40](../src/modules/ted.c#L40), [81](../src/modules/ted.c#L81), [610](../src/modules/ted.c#L610) |
+| offset_field | `unk44` | function `tedResetGuiState`, type `TedGuiState` | [41](../src/modules/ted.c#L41), [600](../src/modules/ted.c#L600) |
 | offset_field | `unk60` | type `TedCheckData` | [83](../src/modules/ted.c#L83) |
 | offset_field | `unk84` | function `tedApplySelectedScalar0C`, function `tedApplySelectedScalar10`, function `tedApplySelectedScalar14`, function `tedApplySelectedScalar18`, function `tedApplySelectedScalar1C`, function `tedApplySelectedScalar20`, function `tedApplySelectedScalar24`, function `tedStoreSelectedRecordByte`, type `TedCheckData` | [84](../src/modules/ted.c#L84), [347](../src/modules/ted.c#L347), [361](../src/modules/ted.c#L361), [375](../src/modules/ted.c#L375), [389](../src/modules/ted.c#L389), [405](../src/modules/ted.c#L405), [419](../src/modules/ted.c#L419), [433](../src/modules/ted.c#L433) (+1 in JSON) |
 | offset_field | `unk88` | type `TedCheckData` | [85](../src/modules/ted.c#L85) |
@@ -4583,12 +4598,14 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unkAC` | function `tedApplySelectedScalar14`, type `TedCheckData` | [88](../src/modules/ted.c#L88), [435](../src/modules/ted.c#L435) |
 | offset_field | `unkB1` | type `TedCheckData` | [90](../src/modules/ted.c#L90) |
 | offset_field | `unkB4` | function `tedStoreSelectedRecordByte`, type `TedCheckData` | [91](../src/modules/ted.c#L91), [475](../src/modules/ted.c#L475) |
-| offset_field | `unkC8` | function `tedResetGuiState`, type `TedGuiExports` | [66](../src/modules/ted.c#L66), [585](../src/modules/ted.c#L585) |
-| original_quirk | `* RE_UNKNOWN: second-list backing capacities, count/selection validity, alias and * callback-mutation domains, record word/triple roles and helper effects; verify * allocators, ...` | assembly `func_ted_00406508` | [499](../src/modules/ted.c#L499) |
+| offset_field | `unkC8` | function `tedResetGuiState`, type `TedGuiExports` | [66](../src/modules/ted.c#L66), [609](../src/modules/ted.c#L609) |
+| original_quirk | `* RE_ORIGINAL_QUIRK: when unsigned D_ted_0040727C is outside 0..4, * the original skips every sprintf but still passes unwritten scratch SP+0x20 * to GUI slot0xC4, whose origina...` | assembly `func_ted_0040607C` | [491](../src/modules/ted.c#L491) |
+| original_quirk | `* RE_ORIGINAL_QUIRK: when unsigned D_ted_00407284 is outside 0..5, * the original skips every sprintf but still passes unwritten scratch SP+0x20 * to GUI slot0xC4, whose origina...` | assembly `func_ted_004069F0` | [531](../src/modules/ted.c#L531) |
+| original_quirk | `* RE_UNKNOWN: second-list backing capacities, count/selection validity, alias and * callback-mutation domains, record word/triple roles and helper effects; verify * allocators, ...` | assembly `func_ted_00406508` | [511](../src/modules/ted.c#L511) |
 | original_quirk | `* RE_UNKNOWN: valid file counts, backing replacements, allocation failures, * record meanings and callback alias/mutation lifecycle; verify original file * producers, every coun...` | assembly `func_ted_00404468` | [323](../src/modules/ted.c#L323) |
 | original_quirk | `Load the original file backend and open the formatted scene filename * for reading. Close and return when the one-byte version differs from three. * For version three, dispatch ...` | function `tedReadVersionThreeFile` | [233](../src/modules/ted.c#L233) |
-| original_quirk | `RE_UNKNOWN: second-list backing capacity, selection/count/alias * invariants, word/triple roles and callback mutation lifecycle; verify * allocators, all callers and DOBJ callba...` | assembly `func_ted_00406610` | [509](../src/modules/ted.c#L509) |
-| uncertainty_note | `For a non-null record, reset the nested GUI state referenced by field 0x28, * then restore the original halfword defaults and clear the six word fields. * Unknown fields retain ...` | function `tedResetRecord` | [541](../src/modules/ted.c#L541) |
+| original_quirk | `RE_UNKNOWN: second-list backing capacity, selection/count/alias * invariants, word/triple roles and callback mutation lifecycle; verify * allocators, all callers and DOBJ callba...` | assembly `func_ted_00406610` | [521](../src/modules/ted.c#L521) |
+| uncertainty_note | `For a non-null record, reset the nested GUI state referenced by field 0x28, * then restore the original halfword defaults and clear the six word fields. * Unknown fields retain ...` | function `tedResetRecord` | [565](../src/modules/ted.c#L565) |
 | unused_identifier | `unused` | function `tedApplySelectedScalar0C`, function `tedApplySelectedScalar0C`, function `tedApplySelectedScalar10`, function `tedApplySelectedScalar10`, function `tedApplySelectedScalar14`, function `tedApplySelectedScalar14`, function `tedApplySelectedScalar18`, function `tedApplySelectedScalar18`, function `tedApplySelectedScalar1C`, function `tedApplySelectedScalar1C`, function `tedApplySelectedScalar20`, function `tedApplySelectedScalar20`, function `tedApplySelectedScalar24`, function `tedApplySelectedScalar24`, function `tedReadVersionThreeFile`, function `tedStoreSelectedRecordByte`, function `tedWriteVersionThreeFile`, function `tedWriteVersionThreeFile` | [115](../src/modules/ted.c#L115), [121](../src/modules/ted.c#L121), [122](../src/modules/ted.c#L122), [123](../src/modules/ted.c#L123), [124](../src/modules/ted.c#L124), [126](../src/modules/ted.c#L126), [127](../src/modules/ted.c#L127), [128](../src/modules/ted.c#L128) (+10 in JSON) |
 
 ## src/modules/track1.c

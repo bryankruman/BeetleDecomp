@@ -201,7 +201,7 @@
     "src/modules/caranim.c": "0d626f02fd1906778b578c0c22d9c2f54ab6e91a86d3d94c3eea10d02ed6806d",
     "src/modules/caraudio.c": "8e3c31c7c58f3ee5f3ea49cf7b3a72f4cc7f7c66c95d8bb5d04fe508ac2eb39e",
     "src/modules/cbars.c": "a7d8817dc1873793aa3e2ef6cafcd98c4a92d2fe91251b54ed8e2b09bbb9becb",
-    "src/modules/demo.c": "3235e5aab559737397ec7340c4be094c1f1f80f5ee525c9e1952d785b872601c",
+    "src/modules/demo.c": "8e19de1cafc6a5ebde83a3020c92b2b17b3de91fc4abe245a5c53d96de69065f",
     "src/modules/dledit.c": "a2a3807d331e3196eb00bbc5dbfca4a4161a989e8eadbfa7678a2cb49ff51490",
     "src/modules/env.c": "d90ec47a52003badf3ff8f2774dddf7feba82970dd3d289f8c134f787c4685fe",
     "src/modules/envsnd.c": "07e282124182e0029ea6e57192687162f5959a3b1fc847a2f80a51e1e14862a5",
@@ -221,7 +221,7 @@
     "src/modules/med.c": "75883b1c720e6ddf29668d9d2ea81496621a5d3338ee77817ea0bf953a4abc11",
     "src/modules/menuslct.c": "40cca456720770fe92cb7f90ab85b54db5d0de789eb87256c8e9a892d88ec021",
     "src/modules/misc.c": "22da7a9f99cbdc10794c70a226808b1319b3239cb76f9233d3285ca3efc43c5f",
-    "src/modules/motion.c": "5141db855557171d01a65576f41343fdab2fc3bf12e730874e4e42fde8ebf739",
+    "src/modules/motion.c": "20b52504eaea86d801af2967c81890b2e0e09a3a309c3c738b0f7e0a5d02c183",
     "src/modules/mult1.c": "8dc4651cbdcdbb8cc596773b9f9ea3e42d22c5def4cb9868cc002ff19be35e1e",
     "src/modules/mult2.c": "38663c00f33b29492847a0c43d529ed98ac7952458eab5a1b8208d204f24cc69",
     "src/modules/mult3.c": "a9fa6288a8af859319d98b660843a5195024c23d3b02de640d84e329c31e4096",
@@ -253,7 +253,7 @@
     "src/modules/splash.c": "cb236edd1d5e78c972b7ec7e0f56d93a81544f089caa6419ca74fe5dd4881c22",
     "src/modules/spray.c": "ac12da17a797736336a995b57f6d4c2cf5b6b954480e18c7faad1bd7647eea83",
     "src/modules/tdata.c": "b13de88d4d12098ea6ad3bef4bb86e5a606b596eb794d52873683869056efec6",
-    "src/modules/ted.c": "b79d0554f38fd153ee050f429cb959f11aaecae09a6aef798f32e1896525edd7",
+    "src/modules/ted.c": "944e90adc1d68c3a5a5c5bd68974d8372994965f9b4240f03c3826492e5319ca",
     "src/modules/track1.c": "0556fb4aabcd27b156ca9f36a0e285d6da22fd54a581c1a113e6bd0c7d841378",
     "src/modules/track2.c": "cc484d92c7b2699434f673c268e92d060474552e04aa70fab1b45939c406ebc3",
     "src/modules/track3.c": "d791b6616a5ec2413ef8e2c636e0a255b1a97751fb3f0528c42f715615bcb218",
@@ -329,22 +329,22 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "bbff4e2e722e8d6120ed2544279892dcf9ada596c0304cee4119400578937a00",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "0310345af0c0be1c81dba41d60bb33b8a5658e59cce379a229890cd89d1256c6",
-    "docs/VALIDATION_20261006.md": "8012c47db307745c6e8bd6dbe77e83e90a6238c7aa35de406409ff5188a0e332"
+    "docs/STRATEGY_V4.md": "8d30485e18580f93db37297aa306ed07484c485a59206ed9ef6778580fb2d4ca",
+    "docs/VALIDATION_20261006.md": "7208f53debd048ae3e1d51219ea1738436ca78ce1dc62e9b3488fa8508e82329"
   },
   "counts": {
-    "address_function": 997,
-    "address_global": 1333,
-    "assembly": 853,
+    "address_function": 996,
+    "address_global": 1339,
+    "assembly": 852,
     "audit_debt": 28,
     "conditional_draft": 4,
     "decompiler_local": 920,
     "draft_marker": 29,
-    "explicit_unknown": 469,
+    "explicit_unknown": 474,
     "layout_padding": 258,
-    "offset_field": 1441,
+    "offset_field": 1446,
     "opaque_type": 282,
-    "original_quirk": 83,
+    "original_quirk": 86,
     "uncertainty_note": 100,
     "unused_identifier": 113
   },
@@ -4158,15 +4158,15 @@
       "path": "src/modules/demo.c",
       "symbol": "func_demo_00400290",
       "lines": [
-        26
+        71
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_demo_00400290",
-          "declaration_line": 26,
+          "declaration_line": 71,
           "lines": [
-            26
+            71
           ]
         }
       ]
@@ -4177,15 +4177,15 @@
       "path": "src/modules/demo.c",
       "symbol": "func_demo_0040041C",
       "lines": [
-        27
+        72
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_demo_0040041C",
-          "declaration_line": 27,
+          "declaration_line": 72,
           "lines": [
-            27
+            72
           ]
         }
       ]
@@ -4196,34 +4196,15 @@
       "path": "src/modules/demo.c",
       "symbol": "func_demo_00400538",
       "lines": [
-        28
+        73
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_demo_00400538",
-          "declaration_line": 28,
+          "declaration_line": 73,
           "lines": [
-            28
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-a05da78c75b6",
-      "kind": "address_function",
-      "path": "src/modules/demo.c",
-      "symbol": "func_demo_004009F8",
-      "lines": [
-        29
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_demo_004009F8",
-          "declaration_line": 29,
-          "lines": [
-            29
+            73
           ]
         }
       ]
@@ -4234,15 +4215,15 @@
       "path": "src/modules/demo.c",
       "symbol": "func_demo_00400BC4",
       "lines": [
-        30
+        75
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_demo_00400BC4",
-          "declaration_line": 30,
+          "declaration_line": 75,
           "lines": [
-            30
+            75
           ]
         }
       ]
@@ -8344,15 +8325,15 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00414A68",
       "lines": [
-        689
+        698
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_motion_00414A68",
-          "declaration_line": 689,
+          "declaration_line": 698,
           "lines": [
-            689
+            698
           ]
         }
       ]
@@ -8458,15 +8439,15 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00415870",
       "lines": [
-        719
+        728
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_motion_00415870",
-          "declaration_line": 719,
+          "declaration_line": 728,
           "lines": [
-            719
+            728
           ]
         }
       ]
@@ -28135,29 +28116,181 @@
       ]
     },
     {
+      "id": "Q-9141a3e0ce2b",
+      "kind": "address_global",
+      "path": "src/modules/demo.c",
+      "symbol": "D_demo_00401DCC",
+      "lines": [
+        43,
+        146
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "demoCreateReplayControlGroup",
+          "declaration_line": 138,
+          "lines": [
+            146
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_demo_00401DCC",
+          "declaration_line": 43,
+          "lines": [
+            43
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-e3f5c518756c",
+      "kind": "address_global",
+      "path": "src/modules/demo.c",
+      "symbol": "D_demo_00401DD4",
+      "lines": [
+        43,
+        149
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "demoCreateReplayControlGroup",
+          "declaration_line": 138,
+          "lines": [
+            149
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_demo_00401DCC",
+          "declaration_line": 43,
+          "lines": [
+            43
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-1f1308c12200",
+      "kind": "address_global",
+      "path": "src/modules/demo.c",
+      "symbol": "D_demo_00401DDC",
+      "lines": [
+        44,
+        151
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "demoCreateReplayControlGroup",
+          "declaration_line": 138,
+          "lines": [
+            151
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_demo_00401DDC",
+          "declaration_line": 44,
+          "lines": [
+            44
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-d1aceebfd7df",
+      "kind": "address_global",
+      "path": "src/modules/demo.c",
+      "symbol": "D_demo_00401DE8",
+      "lines": [
+        44,
+        153
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "demoCreateReplayControlGroup",
+          "declaration_line": 138,
+          "lines": [
+            153
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_demo_00401DDC",
+          "declaration_line": 44,
+          "lines": [
+            44
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-bc6fd9e5ac05",
+      "kind": "address_global",
+      "path": "src/modules/demo.c",
+      "symbol": "D_demo_00402234",
+      "lines": [
+        45,
+        154
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "demoCreateReplayControlGroup",
+          "declaration_line": 138,
+          "lines": [
+            154
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-358b8e404f74",
+      "kind": "address_global",
+      "path": "src/modules/demo.c",
+      "symbol": "D_demo_00402238",
+      "lines": [
+        45,
+        152
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "demoCreateReplayControlGroup",
+          "declaration_line": 138,
+          "lines": [
+            152
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-36a9ad387bbd",
       "kind": "address_global",
       "path": "src/modules/demo.c",
       "symbol": "D_demo_00402270",
       "lines": [
-        21,
-        37
+        66,
+        82
       ],
       "owners": [
         {
           "kind": "function",
           "name": "demoRestoreRaceSelection",
-          "declaration_line": 36,
+          "declaration_line": 81,
           "lines": [
-            37
+            82
           ]
         },
         {
           "kind": "global",
           "name": "D_demo_00402270",
-          "declaration_line": 21,
+          "declaration_line": 66,
           "lines": [
-            21
+            66
           ]
         }
       ]
@@ -28168,15 +28301,15 @@
       "path": "src/modules/demo.c",
       "symbol": "D_demo_00402274",
       "lines": [
-        24
+        69
       ],
       "owners": [
         {
           "kind": "global",
           "name": "D_demo_00402274",
-          "declaration_line": 24,
+          "declaration_line": 69,
           "lines": [
-            24
+            69
           ]
         }
       ]
@@ -32815,24 +32948,24 @@
       "path": "src/modules/motion.c",
       "symbol": "D_motion_0041607C",
       "lines": [
-        747,
-        758
+        756,
+        767
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionTryPlayExplosionVoice",
-          "declaration_line": 751,
+          "declaration_line": 760,
           "lines": [
-            758
+            767
           ]
         },
         {
           "kind": "global",
           "name": "D_motion_0041607C",
-          "declaration_line": 747,
+          "declaration_line": 756,
           "lines": [
-            747
+            756
           ]
         }
       ]
@@ -32927,26 +33060,26 @@
       "path": "src/modules/motion.c",
       "symbol": "D_motion_004160A0",
       "lines": [
-        727,
         736,
-        738
+        745,
+        747
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionTryPlayHotLavaVoice",
-          "declaration_line": 730,
+          "declaration_line": 739,
           "lines": [
-            736,
-            738
+            745,
+            747
           ]
         },
         {
           "kind": "global",
           "name": "D_motion_004160A0",
-          "declaration_line": 727,
+          "declaration_line": 736,
           "lines": [
-            727
+            736
           ]
         }
       ]
@@ -32957,26 +33090,26 @@
       "path": "src/modules/motion.c",
       "symbol": "D_motion_004160A4",
       "lines": [
-        748,
         757,
-        759
+        766,
+        768
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionTryPlayExplosionVoice",
-          "declaration_line": 751,
+          "declaration_line": 760,
           "lines": [
-            757,
-            759
+            766,
+            768
           ]
         },
         {
           "kind": "global",
           "name": "D_motion_004160A4",
-          "declaration_line": 748,
+          "declaration_line": 757,
           "lines": [
-            748
+            757
           ]
         }
       ]
@@ -32988,15 +33121,15 @@
       "symbol": "D_motion_004163A8",
       "lines": [
         77,
-        709
+        718
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionEvaluateSelectedGraph",
-          "declaration_line": 706,
+          "declaration_line": 715,
           "lines": [
-            709
+            718
           ]
         },
         {
@@ -33016,15 +33149,15 @@
       "symbol": "D_motion_0041644C",
       "lines": [
         78,
-        711
+        720
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionEvaluateSelectedGraph",
-          "declaration_line": 706,
+          "declaration_line": 715,
           "lines": [
-            711
+            720
           ]
         },
         {
@@ -33103,15 +33236,15 @@
       "lines": [
         178,
         183,
-        737
+        746
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionTryPlayHotLavaVoice",
-          "declaration_line": 730,
+          "declaration_line": 739,
           "lines": [
-            737
+            746
           ]
         },
         {
@@ -33140,15 +33273,15 @@
       "lines": [
         179,
         184,
-        758
+        767
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionTryPlayExplosionVoice",
-          "declaration_line": 751,
+          "declaration_line": 760,
           "lines": [
-            758
+            767
           ]
         },
         {
@@ -74919,7 +75052,7 @@
       "path": "src/modules/demo.c",
       "symbol": "__entrypoint_func_demo_400000",
       "lines": [
-        31
+        76
       ],
       "evidence": "asm/us/nonmatchings/modules/demo/__entrypoint_func_demo_400000.s"
     },
@@ -74929,7 +75062,7 @@
       "path": "src/modules/demo.c",
       "symbol": "func_demo_00400290",
       "lines": [
-        57
+        102
       ],
       "evidence": "asm/us/nonmatchings/modules/demo/func_demo_00400290.s"
     },
@@ -74939,7 +75072,7 @@
       "path": "src/modules/demo.c",
       "symbol": "func_demo_0040041C",
       "lines": [
-        59
+        104
       ],
       "evidence": "asm/us/nonmatchings/modules/demo/func_demo_0040041C.s"
     },
@@ -74949,19 +75082,9 @@
       "path": "src/modules/demo.c",
       "symbol": "func_demo_00400538",
       "lines": [
-        61
+        106
       ],
       "evidence": "asm/us/nonmatchings/modules/demo/func_demo_00400538.s"
-    },
-    {
-      "id": "Q-775fa4b743fc",
-      "kind": "assembly",
-      "path": "src/modules/demo.c",
-      "symbol": "func_demo_004009F8",
-      "lines": [
-        78
-      ],
-      "evidence": "asm/us/nonmatchings/modules/demo/func_demo_004009F8.s"
     },
     {
       "id": "Q-dd67b71e7813",
@@ -74969,7 +75092,7 @@
       "path": "src/modules/demo.c",
       "symbol": "func_demo_00400BC4",
       "lines": [
-        80
+        162
       ],
       "evidence": "asm/us/nonmatchings/modules/demo/func_demo_00400BC4.s"
     },
@@ -76479,7 +76602,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00414774",
       "lines": [
-        682
+        691
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00414774.s"
     },
@@ -76489,7 +76612,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00414A70",
       "lines": [
-        693
+        702
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00414A70.s"
     },
@@ -76499,7 +76622,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00414BB0",
       "lines": [
-        695
+        704
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00414BB0.s"
     },
@@ -76509,7 +76632,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_004151CC",
       "lines": [
-        697
+        706
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_004151CC.s"
     },
@@ -76519,7 +76642,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_004154B8",
       "lines": [
-        699
+        708
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_004154B8.s"
     },
@@ -76529,7 +76652,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00415724",
       "lines": [
-        701
+        710
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00415724.s"
     },
@@ -76539,7 +76662,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00415A3C",
       "lines": [
-        765
+        774
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00415A3C.s"
     },
@@ -79339,7 +79462,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_0040607C",
       "lines": [
-        492
+        504
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_0040607C.s"
     },
@@ -79349,7 +79472,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00406178",
       "lines": [
-        494
+        506
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00406178.s"
     },
@@ -79359,7 +79482,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00406280",
       "lines": [
-        496
+        508
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00406280.s"
     },
@@ -79369,7 +79492,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00406330",
       "lines": [
-        498
+        510
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00406330.s"
     },
@@ -79379,7 +79502,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00406508",
       "lines": [
-        508
+        520
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00406508.s"
     },
@@ -79389,7 +79512,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00406610",
       "lines": [
-        516
+        528
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00406610.s"
     },
@@ -79399,7 +79522,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_0040685C",
       "lines": [
-        518
+        530
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_0040685C.s"
     },
@@ -79409,7 +79532,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_004069F0",
       "lines": [
-        520
+        544
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_004069F0.s"
     },
@@ -79419,7 +79542,7 @@
       "path": "src/modules/ted.c",
       "symbol": "func_ted_00406B04",
       "lines": [
-        522
+        546
       ],
       "evidence": "asm/us/nonmatchings/modules/ted/func_ted_00406B04.s"
     },
@@ -125751,16 +125874,56 @@
       "path": "src/modules/demo.c",
       "symbol": "* RE_UNKNOWN: shared threshold/step units, replay masks 0x1000/0x8000 and * AI-tail/camera/collection storage/alias/lifetime guarantees. Trace original * setup, record/step writers and downstream copied-word readers. Original * callbacks copy tail word 0x14 to camera 0x1E8, write 13 at 0x1EC and pass tail * word 4 through CAM tag19 to 0x214; tag0 terminates. Preserve ordered f32 * comparison, independent AI checks and every callback/global-reload order. * RE_ORIGINAL_QUIRK: the original returned AI tail is dereferenced unchecked; * empty-tail reachability requires caller/setup proof, not a new player bug. * Readable recovery remains parked: 396 original versus 404 candidate bytes, * 87 differing words and relocation mismatches, including generated global * address lifetimes. Require complete instruction/module/ROM proof before * replacing ASM; no storage/layout or physical meanings inferred to match.",
       "lines": [
-        42
+        87
       ],
       "evidence": "* RE_UNKNOWN: shared threshold/step units, replay masks 0x1000/0x8000 and * AI-tail/camera/collection storage/alias/lifetime guarantees. Trace original * setup, record/step writers and downstream copied-word readers. Original * callbacks copy tail word 0x14 to camera 0x1E8, write 13 at 0x1EC and pass tail * word 4 through CAM tag19 to 0x214; tag0 terminates. Preserve ordered f32 * comparison, independent AI checks and every callback/global-reload order. * RE_ORIGINAL_QUIRK: the original returned AI tail is dereferenced unchecked; * empty-tail reachability requires caller/setup proof, not a new player bug. * Readable recovery remains parked: 396 original versus 404 candidate bytes, * 87 differing words and relocation mismatches, including generated global * address lifetimes. Require complete instruction/module/ROM proof before * replacing ASM; no storage/layout or physical meanings inferred to match.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_demo_00400290",
-          "declaration_line": 57,
+          "declaration_line": 102,
           "lines": [
-            42
+            87
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-90482fc13e51",
+      "kind": "explicit_unknown",
+      "path": "src/modules/demo.c",
+      "symbol": "Create the original \"demo\" group and text list, add float-bound * \"playtime\" and \"loddist\" rows with flags 0x11 and bounds 0..500, then * append the replay provider's three range controls. Snapshot the shared * host address before initialization and retain the optional AI slot14 call. * That original AI callback only homes its incoming word; its intended ABI and * purpose remain RE_UNKNOWN pending original callers and lifecycle proof. * MISC104 selects float storage for these flags; the s32 pointer casts expose * the same four-byte value addresses through its shared integer/float API. * RE_ORIGINAL_QUIRK: pool/attachment exhaustion is unchecked here. * RE_UNKNOWN: bound-value units, callback mutation, host/value lifetime and * exhaustion reachability need original readers/writers, entry callers and * active-slot producers. GUI text copies read 30 bytes; the complete readable * label windows need original object/layout proof, not inferred capacities.",
+      "lines": [
+        125
+      ],
+      "evidence": "Create the original \"demo\" group and text list, add float-bound * \"playtime\" and \"loddist\" rows with flags 0x11 and bounds 0..500, then * append the replay provider's three range controls. Snapshot the shared * host address before initialization and retain the optional AI slot14 call. * That original AI callback only homes its incoming word; its intended ABI and * purpose remain RE_UNKNOWN pending original callers and lifecycle proof. * MISC104 selects float storage for these flags; the s32 pointer casts expose * the same four-byte value addresses through its shared integer/float API. * RE_ORIGINAL_QUIRK: pool/attachment exhaustion is unchecked here. * RE_UNKNOWN: bound-value units, callback mutation, host/value lifetime and * exhaustion reachability need original readers/writers, entry callers and * active-slot producers. GUI text copies read 30 bytes; the complete readable * label windows need original object/layout proof, not inferred capacities.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "demoCreateReplayControlGroup",
+          "declaration_line": 138,
+          "lines": [
+            125
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-f5425657efaf",
+      "kind": "explicit_unknown",
+      "path": "src/modules/demo.c",
+      "symbol": "Original provider-backed export prefixes; skipped slots remain opaque. * RE_UNKNOWN: full export layouts and historical caller declaration widths * require complete original provider/caller proof beyond these used slots.",
+      "lines": [
+        3
+      ],
+      "evidence": "Original provider-backed export prefixes; skipped slots remain opaque. * RE_UNKNOWN: full export layouts and historical caller declaration widths * require complete original provider/caller proof beyond these used slots.",
+      "owners": [
+        {
+          "kind": "type",
+          "name": "DemoGuiMenuExports",
+          "declaration_line": 6,
+          "lines": [
+            3
           ]
         }
       ]
@@ -127904,16 +128067,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Attempt pending Hot Lava speech on random choice 3 with priority 0x7FFF; playback value is 0x7A120. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: playback-value units need consumers.",
       "lines": [
-        725
+        734
       ],
       "evidence": "Attempt pending Hot Lava speech on random choice 3 with priority 0x7FFF; playback value is 0x7A120. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: playback-value units need consumers.",
       "owners": [
         {
           "kind": "global",
           "name": "D_motion_004160A0",
-          "declaration_line": 727,
+          "declaration_line": 736,
           "lines": [
-            725
+            734
           ]
         }
       ]
@@ -127924,16 +128087,36 @@
       "path": "src/modules/motion.c",
       "symbol": "Attempt pending explosion speech on random choice 3 with its scale; priority 0x7FFF, playback value 0x1F4. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: playback-value units need consumers.",
       "lines": [
-        745
+        754
       ],
       "evidence": "Attempt pending explosion speech on random choice 3 with its scale; priority 0x7FFF, playback value 0x1F4. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: playback-value units need consumers.",
       "owners": [
         {
           "kind": "global",
           "name": "D_motion_0041607C",
-          "declaration_line": 747,
+          "declaration_line": 756,
           "lines": [
-            745
+            754
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-1ca18515c191",
+      "kind": "explicit_unknown",
+      "path": "src/modules/motion.c",
+      "symbol": "Draw background, graph-derived red/green bars, direct-value blue bar and * a white marker from saved input 0x6D4. Preserve single arithmetic grouping, * truncating signed coordinates and input reads between draw callbacks. * Original UVGRPH 0x04 is linear evaluation; UVGEOM 0x0C/0x10 consume four * singles for color / four signed words for rectangle coordinates. * RE_UNKNOWN: scalar meanings/units, reachable input/coordinate ranges and * graphics-state ownership need original producers/callers. Clean C remains * unmatched; retain assembly pending complete byte/relocation proof.",
+      "lines": [
+        682
+      ],
+      "evidence": "Draw background, graph-derived red/green bars, direct-value blue bar and * a white marker from saved input 0x6D4. Preserve single arithmetic grouping, * truncating signed coordinates and input reads between draw callbacks. * Original UVGRPH 0x04 is linear evaluation; UVGEOM 0x0C/0x10 consume four * singles for color / four signed words for rectangle coordinates. * RE_UNKNOWN: scalar meanings/units, reachable input/coordinate ranges and * graphics-state ownership need original producers/callers. Clean C remains * unmatched; retain assembly pending complete byte/relocation proof.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_motion_00414774",
+          "declaration_line": 691,
+          "lines": [
+            682
           ]
         }
       ]
@@ -128008,7 +128191,7 @@
         656,
         665,
         674,
-        685
+        694
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "owners": [
@@ -128047,9 +128230,9 @@
         {
           "kind": "function",
           "name": "func_motion_00414A68",
-          "declaration_line": 689,
+          "declaration_line": 698,
           "lines": [
-            685
+            694
           ]
         }
       ]
@@ -128060,16 +128243,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Read the unsigned halfword at state offset 0x70C without modifying the caller object. RE_UNKNOWN: the field role requires its writers and consumers; no status or identifier meaning is assumed.",
       "lines": [
-        718
+        727
       ],
       "evidence": "Read the unsigned halfword at state offset 0x70C without modifying the caller object. RE_UNKNOWN: the field role requires its writers and consumers; no status or identifier meaning is assumed.",
       "owners": [
         {
           "kind": "function",
           "name": "func_motion_00415870",
-          "declaration_line": 719,
+          "declaration_line": 728,
           "lines": [
-            718
+            727
           ]
         }
       ]
@@ -130415,6 +130598,46 @@
       ]
     },
     {
+      "id": "Q-4c95f368c9c9",
+      "kind": "explicit_unknown",
+      "path": "src/modules/ted.c",
+      "symbol": "* RE_ORIGINAL_QUIRK: when unsigned D_ted_0040727C is outside 0..4, * the original skips every sprintf but still passes unwritten scratch SP+0x20 * to GUI slot0xC4, whose original target reads 30 bytes. Reachability is * RE_UNKNOWN: trace all selector writers, initialization and callback callers * before claiming a player-visible fault or changing fallback behavior. * Historical scratch-object extent is not established by the stack frame. * After that callback, the original reloads selector and signed index D_ted_00407244; * nonnegative indices store through pointer D_ted_00407298 at 16*index. * RE_UNKNOWN: index/count bounds, backing-record extent, alias and callback * mutation/lifetime guarantees need original pool producers and consumers.",
+      "lines": [
+        491
+      ],
+      "evidence": "* RE_ORIGINAL_QUIRK: when unsigned D_ted_0040727C is outside 0..4, * the original skips every sprintf but still passes unwritten scratch SP+0x20 * to GUI slot0xC4, whose original target reads 30 bytes. Reachability is * RE_UNKNOWN: trace all selector writers, initialization and callback callers * before claiming a player-visible fault or changing fallback behavior. * Historical scratch-object extent is not established by the stack frame. * After that callback, the original reloads selector and signed index D_ted_00407244; * nonnegative indices store through pointer D_ted_00407298 at 16*index. * RE_UNKNOWN: index/count bounds, backing-record extent, alias and callback * mutation/lifetime guarantees need original pool producers and consumers.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_ted_0040607C",
+          "declaration_line": 504,
+          "lines": [
+            491
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-e32fd50515dd",
+      "kind": "explicit_unknown",
+      "path": "src/modules/ted.c",
+      "symbol": "* RE_ORIGINAL_QUIRK: when unsigned D_ted_00407284 is outside 0..5, * the original skips every sprintf but still passes unwritten scratch SP+0x20 * to GUI slot0xC4, whose original target reads 30 bytes. Reachability is * RE_UNKNOWN: trace all selector writers, initialization and callback callers * before claiming a player-visible fault or changing fallback behavior. * Historical scratch-object extent is not established by the stack frame. * After that callback, the original reloads selector and signed index D_ted_00407244; * nonnegative indices store through pointer D_ted_004072A0 at 16*index. * RE_UNKNOWN: index/count bounds, backing-record extent, alias and callback * mutation/lifetime guarantees need original pool producers and consumers.",
+      "lines": [
+        531
+      ],
+      "evidence": "* RE_ORIGINAL_QUIRK: when unsigned D_ted_00407284 is outside 0..5, * the original skips every sprintf but still passes unwritten scratch SP+0x20 * to GUI slot0xC4, whose original target reads 30 bytes. Reachability is * RE_UNKNOWN: trace all selector writers, initialization and callback callers * before claiming a player-visible fault or changing fallback behavior. * Historical scratch-object extent is not established by the stack frame. * After that callback, the original reloads selector and signed index D_ted_00407244; * nonnegative indices store through pointer D_ted_004072A0 at 16*index. * RE_UNKNOWN: index/count bounds, backing-record extent, alias and callback * mutation/lifetime guarantees need original pool producers and consumers.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_ted_004069F0",
+          "declaration_line": 544,
+          "lines": [
+            531
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-3788e50cdf79",
       "kind": "explicit_unknown",
       "path": "src/modules/ted.c",
@@ -130440,16 +130663,16 @@
       "path": "src/modules/ted.c",
       "symbol": "* RE_UNKNOWN: second-list backing capacities, count/selection validity, alias and * callback-mutation domains, record word/triple roles and helper effects; verify * allocators, every writer/caller and DOBJ callback lifecycle before rewriting. * RE_ORIGINAL_QUIRK: original DOBJ create returns zero-extended 0xFFFF on pool * exhaustion, but this caller rejects only the full word -1. Exhausted-pool * reachability is unknown; inspect original pool sizing and actual call states.",
       "lines": [
-        499
+        511
       ],
       "evidence": "* RE_UNKNOWN: second-list backing capacities, count/selection validity, alias and * callback-mutation domains, record word/triple roles and helper effects; verify * allocators, every writer/caller and DOBJ callback lifecycle before rewriting. * RE_ORIGINAL_QUIRK: original DOBJ create returns zero-extended 0xFFFF on pool * exhaustion, but this caller rejects only the full word -1. Exhausted-pool * reachability is unknown; inspect original pool sizing and actual call states.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_ted_00406508",
-          "declaration_line": 508,
+          "declaration_line": 520,
           "lines": [
-            499
+            511
           ]
         }
       ]
@@ -130590,16 +130813,16 @@
       "path": "src/modules/ted.c",
       "symbol": "RE_UNKNOWN: second-list backing capacity, selection/count/alias * invariants, word/triple roles and callback mutation lifecycle; verify * allocators, all callers and DOBJ callbacks before changing 16-byte * compaction or the D_ted_00407280 count reload. RE_ORIGINAL_QUIRK: only * negative selection is guarded and byte decrement wraps; producer 6508's * count<20 test does not establish every caller's bounds.",
       "lines": [
-        509
+        521
       ],
       "evidence": "RE_UNKNOWN: second-list backing capacity, selection/count/alias * invariants, word/triple roles and callback mutation lifecycle; verify * allocators, all callers and DOBJ callbacks before changing 16-byte * compaction or the D_ted_00407280 count reload. RE_ORIGINAL_QUIRK: only * negative selection is guarded and byte decrement wraps; producer 6508's * count<20 test does not establish every caller's bounds.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_ted_00406610",
-          "declaration_line": 516,
+          "declaration_line": 528,
           "lines": [
-            509
+            521
           ]
         }
       ]
@@ -136504,15 +136727,15 @@
       "path": "src/modules/demo.c",
       "symbol": "pad",
       "lines": [
-        5
+        50
       ],
       "owners": [
         {
           "kind": "type",
           "name": "UvGeomExp_00400910",
-          "declaration_line": 4,
+          "declaration_line": 49,
           "lines": [
-            5
+            50
           ]
         }
       ]
@@ -136523,15 +136746,15 @@
       "path": "src/modules/demo.c",
       "symbol": "pad00",
       "lines": [
-        10
+        55
       ],
       "owners": [
         {
           "kind": "type",
           "name": "UvGfxStateExp_00400910",
-          "declaration_line": 9,
+          "declaration_line": 54,
           "lines": [
-            10
+            55
           ]
         }
       ]
@@ -136542,15 +136765,15 @@
       "path": "src/modules/demo.c",
       "symbol": "pad18",
       "lines": [
-        14
+        59
       ],
       "owners": [
         {
           "kind": "type",
           "name": "UvGfxStateExp_00400910",
-          "declaration_line": 9,
+          "declaration_line": 54,
           "lines": [
-            14
+            59
           ]
         }
       ]
@@ -136561,15 +136784,15 @@
       "path": "src/modules/demo.c",
       "symbol": "pad58",
       "lines": [
-        17
+        62
       ],
       "owners": [
         {
           "kind": "type",
           "name": "UvGfxStateExp_00400910",
-          "declaration_line": 9,
+          "declaration_line": 54,
           "lines": [
-            17
+            62
           ]
         }
       ]
@@ -151585,29 +151808,160 @@
       ]
     },
     {
+      "id": "Q-c85e98e8c171",
+      "kind": "offset_field",
+      "path": "src/modules/demo.c",
+      "symbol": "opaque00",
+      "lines": [
+        7,
+        21,
+        27,
+        31,
+        35
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "DemoAiMenuExports",
+          "declaration_line": 34,
+          "lines": [
+            35
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "DemoGameGuiMenuExports",
+          "declaration_line": 20,
+          "lines": [
+            21
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "DemoGuiMenuExports",
+          "declaration_line": 6,
+          "lines": [
+            7
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "DemoMiscMenuExports",
+          "declaration_line": 26,
+          "lines": [
+            27
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "DemoReplayMenuExports",
+          "declaration_line": 30,
+          "lines": [
+            31
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-914a04ce45ab",
+      "kind": "offset_field",
+      "path": "src/modules/demo.c",
+      "symbol": "opaque0C",
+      "lines": [
+        9
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "DemoGuiMenuExports",
+          "declaration_line": 6,
+          "lines": [
+            9
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-c1487e1ce605",
+      "kind": "offset_field",
+      "path": "src/modules/demo.c",
+      "symbol": "opaque18",
+      "lines": [
+        23
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "DemoGameGuiMenuExports",
+          "declaration_line": 20,
+          "lines": [
+            23
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-b7b4538d4c2a",
+      "kind": "offset_field",
+      "path": "src/modules/demo.c",
+      "symbol": "opaque7C",
+      "lines": [
+        13
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "DemoGuiMenuExports",
+          "declaration_line": 6,
+          "lines": [
+            13
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-602bb20d81d9",
+      "kind": "offset_field",
+      "path": "src/modules/demo.c",
+      "symbol": "opaque88",
+      "lines": [
+        15
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "DemoGuiMenuExports",
+          "declaration_line": 6,
+          "lines": [
+            15
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-50485ba672e1",
       "kind": "offset_field",
       "path": "src/modules/demo.c",
       "symbol": "unk10",
       "lines": [
-        12,
-        70
+        57,
+        115
       ],
       "owners": [
         {
           "kind": "function",
           "name": "demoDrawBlackOverlay",
-          "declaration_line": 67,
+          "declaration_line": 112,
           "lines": [
-            70
+            115
           ]
         },
         {
           "kind": "type",
           "name": "UvGfxStateExp_00400910",
-          "declaration_line": 9,
+          "declaration_line": 54,
           "lines": [
-            12
+            57
           ]
         }
       ]
@@ -151618,24 +151972,24 @@
       "path": "src/modules/demo.c",
       "symbol": "unk14",
       "lines": [
-        13,
-        72
+        58,
+        117
       ],
       "owners": [
         {
           "kind": "function",
           "name": "demoDrawBlackOverlay",
-          "declaration_line": 67,
+          "declaration_line": 112,
           "lines": [
-            72
+            117
           ]
         },
         {
           "kind": "type",
           "name": "UvGfxStateExp_00400910",
-          "declaration_line": 9,
+          "declaration_line": 54,
           "lines": [
-            13
+            58
           ]
         }
       ]
@@ -151646,24 +152000,24 @@
       "path": "src/modules/demo.c",
       "symbol": "unk50",
       "lines": [
-        15,
-        68
+        60,
+        113
       ],
       "owners": [
         {
           "kind": "function",
           "name": "demoDrawBlackOverlay",
-          "declaration_line": 67,
+          "declaration_line": 112,
           "lines": [
-            68
+            113
           ]
         },
         {
           "kind": "type",
           "name": "UvGfxStateExp_00400910",
-          "declaration_line": 9,
+          "declaration_line": 54,
           "lines": [
-            15
+            60
           ]
         }
       ]
@@ -151674,24 +152028,24 @@
       "path": "src/modules/demo.c",
       "symbol": "unk54",
       "lines": [
-        16,
-        74
+        61,
+        119
       ],
       "owners": [
         {
           "kind": "function",
           "name": "demoDrawBlackOverlay",
-          "declaration_line": 67,
+          "declaration_line": 112,
           "lines": [
-            74
+            119
           ]
         },
         {
           "kind": "type",
           "name": "UvGfxStateExp_00400910",
-          "declaration_line": 9,
+          "declaration_line": 54,
           "lines": [
-            16
+            61
           ]
         }
       ]
@@ -151702,24 +152056,24 @@
       "path": "src/modules/demo.c",
       "symbol": "unk5C",
       "lines": [
-        18,
-        73
+        63,
+        118
       ],
       "owners": [
         {
           "kind": "function",
           "name": "demoDrawBlackOverlay",
-          "declaration_line": 67,
+          "declaration_line": 112,
           "lines": [
-            73
+            118
           ]
         },
         {
           "kind": "type",
           "name": "UvGfxStateExp_00400910",
-          "declaration_line": 9,
+          "declaration_line": 54,
           "lines": [
-            18
+            63
           ]
         }
       ]
@@ -151730,35 +152084,35 @@
       "path": "src/modules/demo.c",
       "symbol": "unkC",
       "lines": [
-        6,
-        11,
-        69,
-        71
+        51,
+        56,
+        114,
+        116
       ],
       "owners": [
         {
           "kind": "function",
           "name": "demoDrawBlackOverlay",
-          "declaration_line": 67,
+          "declaration_line": 112,
           "lines": [
-            69,
-            71
+            114,
+            116
           ]
         },
         {
           "kind": "type",
           "name": "UvGeomExp_00400910",
-          "declaration_line": 4,
+          "declaration_line": 49,
           "lines": [
-            6
+            51
           ]
         },
         {
           "kind": "type",
           "name": "UvGfxStateExp_00400910",
-          "declaration_line": 9,
+          "declaration_line": 54,
           "lines": [
-            11
+            56
           ]
         }
       ]
@@ -165647,7 +166001,7 @@
         74,
         79,
         407,
-        547
+        571
       ],
       "owners": [
         {
@@ -165661,9 +166015,9 @@
         {
           "kind": "function",
           "name": "tedResetRecord",
-          "declaration_line": 544,
+          "declaration_line": 568,
           "lines": [
-            547
+            571
           ]
         },
         {
@@ -165699,15 +166053,15 @@
       "symbol": "unk0E",
       "lines": [
         49,
-        548
+        572
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedResetRecord",
-          "declaration_line": 544,
+          "declaration_line": 568,
           "lines": [
-            548
+            572
           ]
         },
         {
@@ -165729,7 +166083,7 @@
         50,
         74,
         421,
-        549
+        573
       ],
       "owners": [
         {
@@ -165743,9 +166097,9 @@
         {
           "kind": "function",
           "name": "tedResetRecord",
-          "declaration_line": 544,
+          "declaration_line": 568,
           "lines": [
-            549
+            573
           ]
         },
         {
@@ -165773,15 +166127,15 @@
       "symbol": "unk12",
       "lines": [
         51,
-        550
+        574
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedResetRecord",
-          "declaration_line": 544,
+          "declaration_line": 568,
           "lines": [
-            550
+            574
           ]
         },
         {
@@ -165803,7 +166157,7 @@
         52,
         74,
         435,
-        551
+        575
       ],
       "owners": [
         {
@@ -165817,9 +166171,9 @@
         {
           "kind": "function",
           "name": "tedResetRecord",
-          "declaration_line": 544,
+          "declaration_line": 568,
           "lines": [
-            551
+            575
           ]
         },
         {
@@ -165896,7 +166250,7 @@
         54,
         74,
         363,
-        552
+        576
       ],
       "owners": [
         {
@@ -165910,9 +166264,9 @@
         {
           "kind": "function",
           "name": "tedResetRecord",
-          "declaration_line": 544,
+          "declaration_line": 568,
           "lines": [
-            552
+            576
           ]
         },
         {
@@ -165940,15 +166294,15 @@
       "symbol": "unk1E",
       "lines": [
         31,
-        573
+        597
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedResetGuiState",
-          "declaration_line": 566,
+          "declaration_line": 590,
           "lines": [
-            573
+            597
           ]
         },
         {
@@ -165971,8 +166325,8 @@
         55,
         74,
         377,
-        553,
-        574
+        577,
+        598
       ],
       "owners": [
         {
@@ -165986,17 +166340,17 @@
         {
           "kind": "function",
           "name": "tedResetGuiState",
-          "declaration_line": 566,
+          "declaration_line": 590,
           "lines": [
-            574
+            598
           ]
         },
         {
           "kind": "function",
           "name": "tedResetRecord",
-          "declaration_line": 544,
+          "declaration_line": 568,
           "lines": [
-            553
+            577
           ]
         },
         {
@@ -166054,8 +166408,8 @@
         56,
         74,
         391,
-        554,
-        579
+        578,
+        603
       ],
       "owners": [
         {
@@ -166069,17 +166423,17 @@
         {
           "kind": "function",
           "name": "tedResetGuiState",
-          "declaration_line": 566,
+          "declaration_line": 590,
           "lines": [
-            579
+            603
           ]
         },
         {
           "kind": "function",
           "name": "tedResetRecord",
-          "declaration_line": 544,
+          "declaration_line": 568,
           "lines": [
-            554
+            578
           ]
         },
         {
@@ -166117,26 +166471,26 @@
         35,
         57,
         75,
-        546,
-        555,
-        578
+        570,
+        579,
+        602
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedResetGuiState",
-          "declaration_line": 566,
+          "declaration_line": 590,
           "lines": [
-            578
+            602
           ]
         },
         {
           "kind": "function",
           "name": "tedResetRecord",
-          "declaration_line": 544,
+          "declaration_line": 568,
           "lines": [
-            546,
-            555
+            570,
+            579
           ]
         },
         {
@@ -166173,24 +166527,24 @@
       "lines": [
         36,
         58,
-        556,
-        575
+        580,
+        599
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedResetGuiState",
-          "declaration_line": 566,
+          "declaration_line": 590,
           "lines": [
-            575
+            599
           ]
         },
         {
           "kind": "function",
           "name": "tedResetRecord",
-          "declaration_line": 544,
+          "declaration_line": 568,
           "lines": [
-            556
+            580
           ]
         },
         {
@@ -166219,24 +166573,24 @@
       "lines": [
         37,
         59,
-        557,
-        577
+        581,
+        601
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedResetGuiState",
-          "declaration_line": 566,
+          "declaration_line": 590,
           "lines": [
-            577
+            601
           ]
         },
         {
           "kind": "function",
           "name": "tedResetRecord",
-          "declaration_line": 544,
+          "declaration_line": 568,
           "lines": [
-            557
+            581
           ]
         },
         {
@@ -166264,15 +166618,15 @@
       "symbol": "unk34",
       "lines": [
         38,
-        580
+        604
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedResetGuiState",
-          "declaration_line": 566,
+          "declaration_line": 590,
           "lines": [
-            580
+            604
           ]
         },
         {
@@ -166312,15 +166666,15 @@
       "lines": [
         40,
         81,
-        586
+        610
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedResetGuiState",
-          "declaration_line": 566,
+          "declaration_line": 590,
           "lines": [
-            586
+            610
           ]
         },
         {
@@ -166348,15 +166702,15 @@
       "symbol": "unk44",
       "lines": [
         41,
-        576
+        600
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedResetGuiState",
-          "declaration_line": 566,
+          "declaration_line": 590,
           "lines": [
-            576
+            600
           ]
         },
         {
@@ -166794,15 +167148,15 @@
       "symbol": "unkC8",
       "lines": [
         66,
-        585
+        609
       ],
       "owners": [
         {
           "kind": "function",
           "name": "tedResetGuiState",
-          "declaration_line": 566,
+          "declaration_line": 590,
           "lines": [
-            585
+            609
           ]
         },
         {
@@ -201424,16 +201778,36 @@
       "path": "src/modules/demo.c",
       "symbol": "* RE_UNKNOWN: shared threshold/step units, replay masks 0x1000/0x8000 and * AI-tail/camera/collection storage/alias/lifetime guarantees. Trace original * setup, record/step writers and downstream copied-word readers. Original * callbacks copy tail word 0x14 to camera 0x1E8, write 13 at 0x1EC and pass tail * word 4 through CAM tag19 to 0x214; tag0 terminates. Preserve ordered f32 * comparison, independent AI checks and every callback/global-reload order. * RE_ORIGINAL_QUIRK: the original returned AI tail is dereferenced unchecked; * empty-tail reachability requires caller/setup proof, not a new player bug. * Readable recovery remains parked: 396 original versus 404 candidate bytes, * 87 differing words and relocation mismatches, including generated global * address lifetimes. Require complete instruction/module/ROM proof before * replacing ASM; no storage/layout or physical meanings inferred to match.",
       "lines": [
-        42
+        87
       ],
       "evidence": "* RE_UNKNOWN: shared threshold/step units, replay masks 0x1000/0x8000 and * AI-tail/camera/collection storage/alias/lifetime guarantees. Trace original * setup, record/step writers and downstream copied-word readers. Original * callbacks copy tail word 0x14 to camera 0x1E8, write 13 at 0x1EC and pass tail * word 4 through CAM tag19 to 0x214; tag0 terminates. Preserve ordered f32 * comparison, independent AI checks and every callback/global-reload order. * RE_ORIGINAL_QUIRK: the original returned AI tail is dereferenced unchecked; * empty-tail reachability requires caller/setup proof, not a new player bug. * Readable recovery remains parked: 396 original versus 404 candidate bytes, * 87 differing words and relocation mismatches, including generated global * address lifetimes. Require complete instruction/module/ROM proof before * replacing ASM; no storage/layout or physical meanings inferred to match.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_demo_00400290",
-          "declaration_line": 57,
+          "declaration_line": 102,
           "lines": [
-            42
+            87
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-3b10c6c5977e",
+      "kind": "original_quirk",
+      "path": "src/modules/demo.c",
+      "symbol": "Create the original \"demo\" group and text list, add float-bound * \"playtime\" and \"loddist\" rows with flags 0x11 and bounds 0..500, then * append the replay provider's three range controls. Snapshot the shared * host address before initialization and retain the optional AI slot14 call. * That original AI callback only homes its incoming word; its intended ABI and * purpose remain RE_UNKNOWN pending original callers and lifecycle proof. * MISC104 selects float storage for these flags; the s32 pointer casts expose * the same four-byte value addresses through its shared integer/float API. * RE_ORIGINAL_QUIRK: pool/attachment exhaustion is unchecked here. * RE_UNKNOWN: bound-value units, callback mutation, host/value lifetime and * exhaustion reachability need original readers/writers, entry callers and * active-slot producers. GUI text copies read 30 bytes; the complete readable * label windows need original object/layout proof, not inferred capacities.",
+      "lines": [
+        125
+      ],
+      "evidence": "Create the original \"demo\" group and text list, add float-bound * \"playtime\" and \"loddist\" rows with flags 0x11 and bounds 0..500, then * append the replay provider's three range controls. Snapshot the shared * host address before initialization and retain the optional AI slot14 call. * That original AI callback only homes its incoming word; its intended ABI and * purpose remain RE_UNKNOWN pending original callers and lifecycle proof. * MISC104 selects float storage for these flags; the s32 pointer casts expose * the same four-byte value addresses through its shared integer/float API. * RE_ORIGINAL_QUIRK: pool/attachment exhaustion is unchecked here. * RE_UNKNOWN: bound-value units, callback mutation, host/value lifetime and * exhaustion reachability need original readers/writers, entry callers and * active-slot producers. GUI text copies read 30 bytes; the complete readable * label windows need original object/layout proof, not inferred capacities.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "demoCreateReplayControlGroup",
+          "declaration_line": 138,
+          "lines": [
+            125
           ]
         }
       ]
@@ -201644,16 +202018,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Attempt pending Hot Lava speech on random choice 3 with priority 0x7FFF; playback value is 0x7A120. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: playback-value units need consumers.",
       "lines": [
-        725
+        734
       ],
       "evidence": "Attempt pending Hot Lava speech on random choice 3 with priority 0x7FFF; playback value is 0x7A120. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: playback-value units need consumers.",
       "owners": [
         {
           "kind": "global",
           "name": "D_motion_004160A0",
-          "declaration_line": 727,
+          "declaration_line": 736,
           "lines": [
-            725
+            734
           ]
         }
       ]
@@ -201664,16 +202038,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Attempt pending explosion speech on random choice 3 with its scale; priority 0x7FFF, playback value 0x1F4. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: playback-value units need consumers.",
       "lines": [
-        745
+        754
       ],
       "evidence": "Attempt pending explosion speech on random choice 3 with its scale; priority 0x7FFF, playback value 0x1F4. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: playback-value units need consumers.",
       "owners": [
         {
           "kind": "global",
           "name": "D_motion_0041607C",
-          "declaration_line": 747,
+          "declaration_line": 756,
           "lines": [
-            745
+            754
           ]
         }
       ]
@@ -201879,21 +202253,61 @@
       ]
     },
     {
+      "id": "Q-a5204dad5263",
+      "kind": "original_quirk",
+      "path": "src/modules/ted.c",
+      "symbol": "* RE_ORIGINAL_QUIRK: when unsigned D_ted_0040727C is outside 0..4, * the original skips every sprintf but still passes unwritten scratch SP+0x20 * to GUI slot0xC4, whose original target reads 30 bytes. Reachability is * RE_UNKNOWN: trace all selector writers, initialization and callback callers * before claiming a player-visible fault or changing fallback behavior. * Historical scratch-object extent is not established by the stack frame. * After that callback, the original reloads selector and signed index D_ted_00407244; * nonnegative indices store through pointer D_ted_00407298 at 16*index. * RE_UNKNOWN: index/count bounds, backing-record extent, alias and callback * mutation/lifetime guarantees need original pool producers and consumers.",
+      "lines": [
+        491
+      ],
+      "evidence": "* RE_ORIGINAL_QUIRK: when unsigned D_ted_0040727C is outside 0..4, * the original skips every sprintf but still passes unwritten scratch SP+0x20 * to GUI slot0xC4, whose original target reads 30 bytes. Reachability is * RE_UNKNOWN: trace all selector writers, initialization and callback callers * before claiming a player-visible fault or changing fallback behavior. * Historical scratch-object extent is not established by the stack frame. * After that callback, the original reloads selector and signed index D_ted_00407244; * nonnegative indices store through pointer D_ted_00407298 at 16*index. * RE_UNKNOWN: index/count bounds, backing-record extent, alias and callback * mutation/lifetime guarantees need original pool producers and consumers.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_ted_0040607C",
+          "declaration_line": 504,
+          "lines": [
+            491
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-999f088fc856",
+      "kind": "original_quirk",
+      "path": "src/modules/ted.c",
+      "symbol": "* RE_ORIGINAL_QUIRK: when unsigned D_ted_00407284 is outside 0..5, * the original skips every sprintf but still passes unwritten scratch SP+0x20 * to GUI slot0xC4, whose original target reads 30 bytes. Reachability is * RE_UNKNOWN: trace all selector writers, initialization and callback callers * before claiming a player-visible fault or changing fallback behavior. * Historical scratch-object extent is not established by the stack frame. * After that callback, the original reloads selector and signed index D_ted_00407244; * nonnegative indices store through pointer D_ted_004072A0 at 16*index. * RE_UNKNOWN: index/count bounds, backing-record extent, alias and callback * mutation/lifetime guarantees need original pool producers and consumers.",
+      "lines": [
+        531
+      ],
+      "evidence": "* RE_ORIGINAL_QUIRK: when unsigned D_ted_00407284 is outside 0..5, * the original skips every sprintf but still passes unwritten scratch SP+0x20 * to GUI slot0xC4, whose original target reads 30 bytes. Reachability is * RE_UNKNOWN: trace all selector writers, initialization and callback callers * before claiming a player-visible fault or changing fallback behavior. * Historical scratch-object extent is not established by the stack frame. * After that callback, the original reloads selector and signed index D_ted_00407244; * nonnegative indices store through pointer D_ted_004072A0 at 16*index. * RE_UNKNOWN: index/count bounds, backing-record extent, alias and callback * mutation/lifetime guarantees need original pool producers and consumers.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_ted_004069F0",
+          "declaration_line": 544,
+          "lines": [
+            531
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-f6de83082413",
       "kind": "original_quirk",
       "path": "src/modules/ted.c",
       "symbol": "* RE_UNKNOWN: second-list backing capacities, count/selection validity, alias and * callback-mutation domains, record word/triple roles and helper effects; verify * allocators, every writer/caller and DOBJ callback lifecycle before rewriting. * RE_ORIGINAL_QUIRK: original DOBJ create returns zero-extended 0xFFFF on pool * exhaustion, but this caller rejects only the full word -1. Exhausted-pool * reachability is unknown; inspect original pool sizing and actual call states.",
       "lines": [
-        499
+        511
       ],
       "evidence": "* RE_UNKNOWN: second-list backing capacities, count/selection validity, alias and * callback-mutation domains, record word/triple roles and helper effects; verify * allocators, every writer/caller and DOBJ callback lifecycle before rewriting. * RE_ORIGINAL_QUIRK: original DOBJ create returns zero-extended 0xFFFF on pool * exhaustion, but this caller rejects only the full word -1. Exhausted-pool * reachability is unknown; inspect original pool sizing and actual call states.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_ted_00406508",
-          "declaration_line": 508,
+          "declaration_line": 520,
           "lines": [
-            499
+            511
           ]
         }
       ]
@@ -201944,16 +202358,16 @@
       "path": "src/modules/ted.c",
       "symbol": "RE_UNKNOWN: second-list backing capacity, selection/count/alias * invariants, word/triple roles and callback mutation lifecycle; verify * allocators, all callers and DOBJ callbacks before changing 16-byte * compaction or the D_ted_00407280 count reload. RE_ORIGINAL_QUIRK: only * negative selection is guarded and byte decrement wraps; producer 6508's * count<20 test does not establish every caller's bounds.",
       "lines": [
-        509
+        521
       ],
       "evidence": "RE_UNKNOWN: second-list backing capacity, selection/count/alias * invariants, word/triple roles and callback mutation lifecycle; verify * allocators, all callers and DOBJ callbacks before changing 16-byte * compaction or the D_ted_00407280 count reload. RE_ORIGINAL_QUIRK: only * negative selection is guarded and byte decrement wraps; producer 6508's * count<20 test does not establish every caller's bounds.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_ted_00406610",
-          "declaration_line": 516,
+          "declaration_line": 528,
           "lines": [
-            509
+            521
           ]
         }
       ]
@@ -203503,16 +203917,16 @@
       "path": "src/modules/ted.c",
       "symbol": "For a non-null record, reset the nested GUI state referenced by field 0x28, * then restore the original halfword defaults and clear the six word fields. * Unknown fields retain offset names rather than speculative editor meanings.",
       "lines": [
-        541
+        565
       ],
       "evidence": "For a non-null record, reset the nested GUI state referenced by field 0x28, * then restore the original halfword defaults and clear the six word fields. * Unknown fields retain offset names rather than speculative editor meanings.",
       "owners": [
         {
           "kind": "function",
           "name": "tedResetRecord",
-          "declaration_line": 544,
+          "declaration_line": 568,
           "lines": [
-            541
+            565
           ]
         }
       ]

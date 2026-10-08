@@ -1,5 +1,50 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+/* Original provider-backed export prefixes; skipped slots remain opaque.
+ * RE_UNKNOWN: full export layouts and historical caller declaration widths
+ * require complete original provider/caller proof beyond these used slots. */
+typedef struct {
+    u8 opaque00[8];
+    void (*appendChildRow)(void *, void *);
+    u8 opaque0C[0x64];
+    s16 (*allocateChildGroup)(void);
+    void *(*getChildGroup)(s16);
+    void (*copyChildGroupText)(void *, u8 *);
+    u8 opaque7C[8];
+    void (*attachTextList)(void *, void *);
+    u8 opaque88[0xC];
+    s16 (*allocateTextList)(void);
+    void *(*getTextList)(s16);
+    void (*copyTextListText)(void *, u8 *);
+} DemoGuiMenuExports;
+typedef struct {
+    u8 opaque00[0x14];
+    void (*initializeSharedWidget)(void);
+    u8 opaque18[0x10];
+    u8 *sharedDebugByte;
+} DemoGameGuiMenuExports;
+typedef struct {
+    u8 opaque00[0x104];
+    void *(*createBoundScalarRow)(void *, u8 *, s16, f32, f32, s32 *, void **);
+} DemoMiscMenuExports;
+typedef struct {
+    u8 opaque00[0x34];
+    void (*createThreeRangeControls)(s32);
+} DemoReplayMenuExports;
+typedef struct {
+    u8 opaque00[0x14];
+    void (*emptyCallback14)(s32);
+} DemoAiMenuExports;
+extern DemoGuiMenuExports *gUvGuiExports;
+extern DemoGameGuiMenuExports *gGameGuiExports;
+extern DemoMiscMenuExports *gMiscExports;
+extern DemoReplayMenuExports *gReplayExports;
+extern DemoAiMenuExports *gAiExports;
+extern u8 D_demo_00401DCC[], D_demo_00401DD4[];
+extern u8 D_demo_00401DDC[], D_demo_00401DE8[];
+extern f32 D_demo_00402238, D_demo_00402234;
+
+#line 3 "src/modules/demo.c"
 /*__SEEDEXTERNS__*/
 typedef struct {
     /* 0x00 */ char pad[0xC];
@@ -26,7 +71,7 @@ void demoRestoreRaceSelection();
 void func_demo_00400290();
 void func_demo_0040041C();
 void func_demo_00400538();
-void func_demo_004009F8();
+void demoCreateReplayControlGroup();
 void func_demo_00400BC4();
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/demo/__entrypoint_func_demo_400000.s")
 
@@ -75,7 +120,44 @@ void demoDrawBlackOverlay(f32 alpha) {
 }
 #line 55 "src/modules/demo.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/demo/func_demo_004009F8.s")
+#line 56 "src/modules/demo.c"
+
+/* Create the original "demo" group and text list, add float-bound
+ * "playtime" and "loddist" rows with flags 0x11 and bounds 0..500, then
+ * append the replay provider's three range controls. Snapshot the shared
+ * host address before initialization and retain the optional AI slot14 call.
+ * That original AI callback only homes its incoming word; its intended ABI and
+ * purpose remain RE_UNKNOWN pending original callers and lifecycle proof.
+ * MISC104 selects float storage for these flags; the s32 pointer casts expose
+ * the same four-byte value addresses through its shared integer/float API.
+ * RE_ORIGINAL_QUIRK: pool/attachment exhaustion is unchecked here.
+ * RE_UNKNOWN: bound-value units, callback mutation, host/value lifetime and
+ * exhaustion reachability need original readers/writers, entry callers and
+ * active-slot producers. GUI text copies read 30 bytes; the complete readable
+ * label windows need original object/layout proof, not inferred capacities. */
+void demoCreateReplayControlGroup(void) {
+    void *host;
+    void *group;
+    void *textList;
+
+    host = gGameGuiExports->sharedDebugByte + 0x10;
+    gGameGuiExports->initializeSharedWidget();
+    group = gUvGuiExports->getChildGroup(gUvGuiExports->allocateChildGroup());
+    gUvGuiExports->copyChildGroupText(group, D_demo_00401DCC);
+    gUvGuiExports->appendChildRow(host, group);
+    textList = gUvGuiExports->getTextList(gUvGuiExports->allocateTextList());
+    gUvGuiExports->copyTextListText(textList, D_demo_00401DD4);
+    gUvGuiExports->attachTextList(group, textList);
+    gMiscExports->createBoundScalarRow(textList, D_demo_00401DDC,
+        0x11, 0.0f, 500.0f, (s32 *)&D_demo_00402238, NULL);
+    gMiscExports->createBoundScalarRow(textList, D_demo_00401DE8,
+        0x11, 0.0f, 500.0f, (s32 *)&D_demo_00402234, NULL);
+    gReplayExports->createThreeRangeControls((s32)group);
+    if (gAiExports != NULL) {
+        gAiExports->emptyCallback14((s32)group);
+    }
+}
+#line 57 "src/modules/demo.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/demo/func_demo_00400BC4.s")
 
