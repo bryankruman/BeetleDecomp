@@ -52,19 +52,22 @@ void carAudioModuleCleanup(void) {
 #line 49 "src/modules/caraudio.c"
 
 #line 50 "src/modules/caraudio.c"
-/* Allocate the original 0x50-byte audio state, initialize its matrix,
- * set halfword six and the supplied word at 0xC, then run the original
- * initializer. Preserve the repeated halfword store and allocation contract. */
-void *carAudioAllocateState(s32 valueC, s32 context)
+/* Allocate 0x50 bytes; initialize matrix at 0x10 and store sourceRecordAddress at 0xC.
+ * handleSlotIndex selects stride-8 handles. RE_UNKNOWN: source extent/lifetime and index
+ * bounds need callers/0x3B0. Preserve repeated halfword 0x1C stores at 0x6 and allocation behavior. */
+#line 53 "src/modules/caraudio.c"
+
+void *carAudioAllocateState(s32 sourceRecordAddress, s32 handleSlotIndex)
 {
   void *state = _uvMemAllocAlign8(0x50);
   (*((void (**)(void *)) (((u8 *) gUvFmtxExports) + 0x1C)))(((u8 *) state) + 0x10);
   *((s16 *) (((u8 *) state) + 0x6)) = 0x1C;
-  *((s32 *) (((u8 *) state) + 0xC)) = valueC;
+  *((s32 *) (((u8 *) state) + 0xC)) = sourceRecordAddress;
   *((s16 *) (((u8 *) state) + 0x6)) = 0x1C;
-  func_caraudio_004003B0(state, context);
+  func_caraudio_004003B0(state, handleSlotIndex);
   return state;
 }
+#line 63 "src/modules/caraudio.c"
 #line 60 "src/modules/caraudio.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_004003B0.s")
@@ -201,7 +204,7 @@ s32 carAudioGetCurrentTrack(void) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_00402E00.s")
 
 #line 141 "src/modules/caraudio.c"
-/* Prepare sound 0x1D at fixed XYZ, then set volume/pitch and request playback.
+/* Prepare sound selector 0x1D at fixed XYZ; reject returned managed-slot byte 0xFF.
  * Sound slot 0x80 copies matrix translation; the local matrix is not retained.
  * RE_UNKNOWN: gameplay identity and shared-handle setup need assets/callers. */
 extern f32 D_caraudio_00403F00;
@@ -209,16 +212,18 @@ extern f32 D_caraudio_00403F04;
 extern f32 D_caraudio_00403F08;
 extern UnkStruct_004005C8 D_caraudio_00404300;
 
+#line 149 "src/modules/caraudio.c"
+
 void carAudioStartFixedPositionSound(s32 unused) {
-    u8 soundId;
+    u8 preparedSlotId;
     Mtx4F soundTransform;
 
     gUvFmtxExports->uvMat4SetIdentity(&soundTransform);
     soundTransform.m[3][0] = D_caraudio_00403F00;
     soundTransform.m[3][1] = D_caraudio_00403F04;
     soundTransform.m[3][2] = 284.0f;
-    soundId = gSndExports->sndPrepareManagedSound(&D_caraudio_00404300, 0x1D, 0xBB8, 0);
-    if (soundId != 0xFF) {
+    preparedSlotId = gSndExports->sndPrepareManagedSound(&D_caraudio_00404300, 0x1D, 0xBB8, 0);
+    if (preparedSlotId != 0xFF) {
         gSndExports->sndSetHandleRepeatPolicyByte(&D_caraudio_00404300, 0U);
         gSndExports->sndSetHandlePositionFromState(&D_caraudio_00404300, (UnkStruct_uvemitter_rom_004008CC *) &soundTransform);
         gSndExports->sndSetHandleVolume(&D_caraudio_00404300, gSndExports->sndGetSfxVolumeScale() * D_caraudio_00403F08);
@@ -226,6 +231,7 @@ void carAudioStartFixedPositionSound(s32 unused) {
         gSndExports->sndRequestHandlePlayback(&D_caraudio_00404300);
     }
 }
+#line 166 "src/modules/caraudio.c"
 #line 142 "src/modules/caraudio.c"
 
 extern void *D_caraudio_00404228;

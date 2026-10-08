@@ -539,13 +539,26 @@ u16 uvIsectGetIndexedQueryPairLimit(void) {
 }
 #line 150 "src/modules/uvisect_rom.c"
 
-f32 func_uvisect_rom_00403E0C(void) {
+#line 151 "src/modules/uvisect_rom.c"
+
+/* Read the shared float written by ISCT slot 0x80.
+ * RE_UNKNOWN: its physical units and full caller protocol; trace native
+ * D_uvisect_rom_004077B8 consumers and original slot-0x80 callers. */
+f32 uvIsectGetSharedScalar(void) {
     return D_uvisect_rom_004077B8;
 }
+#line 154 "src/modules/uvisect_rom.c"
 
-void func_uvisect_rom_00403E18(f32 arg0) {
-    D_uvisect_rom_004077B8 = arg0;
+#line 155 "src/modules/uvisect_rom.c"
+
+/* Store the shared float exposed by original ISCT slot 0x80. Dynamics
+ * update7C98 writes vector14BC length and later -1 through this exact slot.
+ * RE_UNKNOWN: complete physical meaning, valid domain and cross-call
+ * protocol; trace native D_uvisect_rom_004077B8 consumers and other callers. */
+void uvIsectSetSharedScalar(f32 value) {
+    D_uvisect_rom_004077B8 = value;
 }
+#line 158 "src/modules/uvisect_rom.c"
 
 #line 159 "src/modules/uvisect_rom.c"
 /* Get the packed triangle texture word through TERR slot 0x1C, mask its

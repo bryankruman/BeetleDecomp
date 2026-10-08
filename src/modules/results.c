@@ -178,7 +178,7 @@ s32 resultsFindStrictTimeRank(f32 time)
   return rank;
 }
 #line 156 "src/modules/results.c"
-
+/* RE_UNKNOWN: counted float slots at 0x6EE0/0x6F00 and shared scalar 0xEC have unresolved meanings, units, count bounds, full backing layout and alias/lifetime; trace original count/storage writers and result callers. Native ordered comparisons gate division by the positive observed/shared ratio. The readable draft preserves every arithmetic/load/store/control effect, but compiler base-address reuse differs; retain original assembly until historical typed access views or new source/compiler evidence resolves it. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/results/func_results_00406184.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/results/func_results_0040620C.s")

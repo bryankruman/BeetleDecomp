@@ -1344,7 +1344,20 @@ void uvDynUpdateNodeTranslationVector(DynResetState *state) {
 }
 #line 427 "src/modules/uvdyn_rom.c"
 
+/* Original node-update wrapper: FVEC0x0C length -> ISCT0x80 shared scalar,
+ * direct0x4050EC update -> low16 result at0x12B4, then scalar reset to -1.
+ * Result2 copies matrix132C to12EC, refreshes the node vector, copies only
+ * the linear3x3 to13EC, transposes only that linear3x3 to142C, initializes
+ * matrix136C, stores result3, then calls callback155C(state,word1584) if set.
+ * RE_UNKNOWN: returned-code meanings, vector14BC units, four forwarded-word
+ * meanings and callback/context registration/lifetime. Trace original50EC
+ * callers/result paths and state/callback producers before assigning them.
+ * RE_UNKNOWN: original C local organization. Two readable candidates preserve
+ * every instruction operation/register/branch/call and relocation identity,
+ * but differ in frame64/72 and pointer/home offsets; original declarations
+ * or new source-contract evidence is needed, not artificial stack padding. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00407C98.s")
+#line 429 "src/modules/uvdyn_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00407DF0.s")
 

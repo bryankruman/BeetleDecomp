@@ -14,7 +14,7 @@ extern s32 D_med_00407FDC;
 extern void *gUvTexAnimExports;
 void func_med_00400160();
 void medInitializeCameraNode();
-void medReleaseCameraNode();
+void medReleaseStoredCameraChannel();
 
 
 
@@ -50,7 +50,7 @@ extern UvDobj_Exports* gUvDobjExports;
 extern s32 D_med_00406BD8[];
 extern s32 D_med_00406BF8[];
 extern s32 D_med_00406C08;
-void medReleaseCameraNode(s32);
+void medReleaseStoredCameraChannel(const s32 *);
 void medReleaseObjectsAndCamera(void);
 typedef struct MedObj_s {
     char pad0[0x248];
@@ -90,7 +90,7 @@ void medReleaseObjectsAndCamera(void)
   s32 sentinel;
   sentinel = 0xFFFF;
  do { entry = D_med_00406BD8; do { handle = entry[2]; if (sentinel != handle) { gUvDobjExports->uvDobjClearModelAndStateByte(handle); } entry++; } while (entry != D_med_00406BF8); } while (0);
-  medReleaseCameraNode((s32) (&D_med_00406C08));
+  medReleaseStoredCameraChannel(&D_med_00406C08);
 }
 #line 91 "src/modules/med.c"
 
@@ -119,7 +119,7 @@ typedef struct {
     /* 0x00 */ char pad0[0x4];
     /* 0x04 */ s32 (*unk4)(void);
     /* 0x08 */ char pad8[0x18];
-    /* 0x20 */ void (*unk20)(s32, s32, f64, s32, f64, s32, f64, s32);
+    /* 0x20 */ void (*setTaggedProperties)(s32, ...);
 } CamExp_4007B4;
 typedef struct {
     /* 0x00 */ char pad0[0x1C];
@@ -154,6 +154,8 @@ void medUpdateCameraByMode(Node_4007B4 *node);
  * The original dispatcher forwards the incoming node pointer unchanged
  * to both update paths. RE_UNKNOWN: mode transitions and node/camera
  * lifetime require original mode writers and create/use callers. */
+#line 137 "src/modules/med.c"
+
 void medInitializeCameraNode(Node_4007B4 *node)
 {
   float unitScale;
@@ -161,7 +163,7 @@ void medInitializeCameraNode(Node_4007B4 *node)
   camera = ((CamExp_4007B4 *) gCamExports)->unk4();
   unitScale = 1.0f;
   node->unk0 = camera;
-  ((CamExp_4007B4 *) gCamExports)->unk20(camera, 0x9, (f64) D_med_00406A94, 0x6, (f64) unitScale, 0x7, (f64) D_med_00406A98, 0);
+  ((CamExp_4007B4 *) gCamExports)->setTaggedProperties(camera, 0x9, (f64) D_med_00406A94, 0x6, (f64) unitScale, 0x7, (f64) D_med_00406A98, 0);
   node->unk48 = 0.0f;
   node->unk4C = D_med_00406A9C;
   node->unk50 = 10.0f;
@@ -176,14 +178,18 @@ void medInitializeCameraNode(Node_4007B4 *node)
   node->unk8.m[3][2] = 5.0f;
   medUpdateCameraByMode(node);
 }
+#line 159 "src/modules/med.c"
 #line 153 "src/modules/med.c"
 
 #line 154 "src/modules/med.c"
-/* Forward the node's first word to the existing camera slot 0x08 callback.
- * RE_UNKNOWN: ownership/lifetime contract; trace original create/release callers. */
-void medReleaseCameraNode(s32 nodeAddress) {
-    (*(void (**)(s32))((u8*)gCamExports + 0x8))(*(s32*)nodeAddress);
+#line 154 "src/modules/med.c"
+
+/* Forward the stored camera address to CAM slot 0x08: it forwards the signed-short channel through UVCHAN slot 0x20, then writes -1.
+ * RE_UNKNOWN: camera allocation/ownership, repeated-release validity and alias/lifetime require original channel consumers, storage writers and create/use/release callers. */
+void medReleaseStoredCameraChannel(const s32 *cameraWord) {
+    (*(void (**)(s16 *))((u8*)gCamExports + 0x8))((s16 *)(u32)*cameraWord);
 }
+#line 159 "src/modules/med.c"
 #line 157 "src/modules/med.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_004008F0.s")
@@ -383,7 +389,7 @@ void medSetEnvironmentBlendFromNode(Node_4052C8 *node)
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_00405488.s")
 /* RE_ORIGINAL_QUIRK: unbounded load retry and unchecked object-create result. RE_UNKNOWN: scalar domain, overlapping word-table bounds/lifetime, label extent/trailing bytes and failure reachability; trace original control/table producers, stack objects, resource inventory and callers before changing retry, traversal or failure behavior. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_004057A8.s")
-
+/* RE_UNKNOWN: selected-ID/selector domains, scene-byte versus signed-cache relation, property units/frames, storage alias/lifetime and the label's 30-byte consumer window/trailing state require original control/storage writers, UVEN assets and create-use-release callers. LIGHT tag 4 conditionally skips its supplied triple when context halfword +2 is nonzero; inspect original flag writers/caller contexts before changing the preserved call. Readable C is not yet instruction-equivalent; resolve original local declarations and compiler dataflow without inventing storage or changing callback/reload order. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_004059E8.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/func_med_00405DC4.s")

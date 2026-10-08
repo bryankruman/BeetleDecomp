@@ -36,7 +36,7 @@ packed-module checks and original full ROM check after symbol extraction:
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
 matching C are preserved with `#line`. The current ledger has **856** assembly references:
 **813** ordinary functions and **43** entrypoints, with **756,000** known instruction bytes
-and no unknown sizes. The broader name audit still finds **322** address-named C definitions.
+and no unknown sizes. The broader name audit still finds **320** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
 Two further accepted waves recover nine functions. Commit `06bf51c` implements
@@ -2087,10 +2087,19 @@ Totals: 344 further recoveries after the 225 upstream ordinary imports, plus 122
 Frozen wave `1274-audio-query-contracts` and `accepted-audio-query-contracts` verify real translation-unit instructions/full relocations, 4 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 344 further readable functions
+## Historical accepted checkpoint — 344 further readable functions
 
 Improve six existing C functions without accepting a new recovery: two intersection query users share a neutral word18 member because actual original helpers low-bit-test the word or conditionally dereference it; their complete436 instruction bytes and full relocation records remain exact, and all guarded context/body changes compose to the independently audited whole-source hash before the banker line wrapper. An older selected-light wrapper now exposes the actual LIGHT tagged variadic parser rather than a single fixed tag signature, retaining tag1 promoted scalar order and132 original bytes/full relocations. Two older64-byte RGBA wrappers use explicit native-width command-address and observed read-only binary32 channel pointer views, preserving all128 bytes/full relocations without guessing historical complete storage. The audio prepend comment records only the proven fresh caud-image BSS-head zeroing, retaining capacity, cached reset/freeing and opaque-value uncertainties. A precise note beside retained intersection01558 assembly records original object-byte access, strict minimum selection, raw helper-result retention and mixed word representation; historical scratch declaration/alignment and helper-output validity remain unknown. Failed drafts are excluded. Full affected modules, fresh original USA ROM, complete source hashes and the regenerated uncertainty index gate landing.
 
 Totals: 344 further recoveries after the 225 upstream ordinary imports, plus 1227 existing C semantic cleanups. Current ledger: 856 assembly references = 813 ordinary + 43 entrypoints; 756,000 known remaining instruction bytes; zero unknown sizes; 322 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `1286-neutral-parser-contracts` and `accepted-neutral-parser-contracts` verify real translation-unit instructions/full relocations, 3 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 344 further readable functions
+
+Improve seven existing C functions while preserving all872 original instruction bytes and full relocation records. The older camera initializer now describes actual CAM20 as a tagged variadic parser; its original three aligned double arguments and tag sequence remain unchanged. Atomically type medReleaseStoredCameraChannel as a pointer to one stored native-width camera address and adjust its sole direct release caller; actual CAM08 consumes a signed-short channel, forwards it to UVCHAN20 and stores -1, while complete ownership/repeated-release validity remain unknown. Audio start uses preparedSlotId for the returned managed slot, distinguishing the separately supplied sound selector. Audio allocation uses sourceRecordAddress and handleSlotIndex from original consumer dereferences and stride8 handle table accesses; the original repeated halfword store, s32 ABI, operations and ordering remain. Name two existing intersection shared-scalar accessors from the actual ISCT80 provider and Dynamics original caller, retaining physical units/domains/protocol uncertainties. Preserve original assembly beside three parked drafts: MED environment selection, Dynamics node update/finalization and results positive-ratio scaling. Their searchable notes distinguish proven original operations and call contracts from unresolved historical source/storage declarations and remaining compiler differences; no failed draft is accepted. Full affected modules, fresh original USA ROM, complete source hashes and regenerated uncertainty index gate landing.
+
+Totals: 344 further recoveries after the 225 upstream ordinary imports, plus 1234 existing C semantic cleanups. Current ledger: 856 assembly references = 813 ordinary + 43 entrypoints; 756,000 known remaining instruction bytes; zero unknown sizes; 320 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `1298-camera-audio-scalar-contracts` and `accepted-camera-audio-scalar-contracts` verify real translation-unit instructions/full relocations, 5 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
