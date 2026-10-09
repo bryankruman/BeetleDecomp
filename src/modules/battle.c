@@ -15,7 +15,7 @@ typedef struct {
     /* 0x00 */ int unk0;
     /* 0x04 */ int unk4;
     /* 0x08 */ char pad8[0xC];
-    /* 0x14 */ void *objectHandle;
+    /* 0x14 */ void *objectHandle; /* RE_UNKNOWN: native DOBJ consumes this word as a signed pool index; historical pointer spelling and upstream producer/caller contract need original evidence. */
     /* 0x18 */ char pad18[0x10];
     /* 0x28 */ int unk28;
 } Node_00407F30;
@@ -949,8 +949,39 @@ void battleEnableIndexedModelAndInitializeSounds(Node_00407F30 *node) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00407FF4.s")
 
+/* Original setup reuses the helper-selected record, sets countdown 30 and
+ * its source-peer pointer, initializes model/flags/sounds, then derives a
+ * translation through two matrices and local translation (0,-2,0).
+ * DOBJ24 precedes copying the submitted matrix row into the record. SND48
+ * returns 1.0f here and its returned scalar is forwarded to SND08/ID128.
+ * RE_ORIGINAL_QUIRK: the selector can reuse an active minimum-countdown
+ * record; this call does not establish a new allocation or ownership.
+ * RE_UNKNOWN: input/link/handle domains, complete storage, countdown units,
+ * aliases and module/callback replacement lifetimes need original writers
+ * and callers. DOBJ28 rejection may leave the original matrix unwritten.
+ * Matching debt: the first 348B draft had 12 differing words, including a
+ * wrong SND4C view. The corrected SND48 draft has 11 differing matrix-home
+ * words (SP2C/SP6C exchanged); all 16 ordered relocation records match.
+ * Retain ASM; historical local storage/declarations remain unresolved. */
+#line 397 "src/modules/battle.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_0040807C.s")
 
+/* Original update stores/reloads the countdown and tests ordered <=0.
+ * Expiry submits sound 44, the matrix translation to EXPL/75, then clears.
+ * Otherwise 9144 receives 27.0f; a match drives CAM18/word3/double1,5764,
+ * RUMBLE and scalarA8=0, then sound 65, optional three-ID voice, EXPL,
+ * 8454 and clear. SND48 results precede distinct readonly multiplier reads
+ * and playback-export reloads; the matrix-row argument is an actual alias.
+ * RE_UNKNOWN: valid count/index/handle domains, complete storage, units,
+ * aliases and callback/module replacement lifetimes need original producers
+ * and callers. Rejected DOBJ queries do not justify default local outputs.
+ * Matching debt: first 636B draft had 32 differing words including two wrong
+ * SND4C views; corrected SND48 draft has 30. Matrix/action stack homes and
+ * FP registers differ; native float1-to-double conversion became a direct
+ * double constant. The 34-record lists differ at the CAM pair sites
+ * (304/308 to 308/312), with the same target sequence. Retain ASM; historical
+ * declarations/storage/FP lowering remain unproved, not a gameplay bug. */
+#line 399 "src/modules/battle.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_004081D8.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00408454.s")
@@ -976,6 +1007,22 @@ void battleSetIndexedPrimitiveColor(int *colorIndex) {
 }
 #line 418 "src/modules/battle.c"
 
+/* Original property 7 and matrix 0 queries precede the signed live-count
+ * gate. Scan peers at stride 0x5B8; only the source-peer equality arm tests
+ * record countdown against the supplied threshold. Query each eligible
+ * peer, preserving link/provider reloads; retain the LAST strict match of
+ * matrix-translation distance < (recordScalar+peerScalar)/2.0f, else -1.
+ * RE_UNKNOWN: scalar/countdown units, valid count/handle domains, complete
+ * input/table storage, aliases and callback replacement lifetimes need
+ * original producers/callers. DOBJ rejection can leave outputs unwritten;
+ * no default scalar or matrix is supplied by the original caller.
+ * Matching debt: natural C 460B vs native 464B, 83 differing words. Frame 248
+ * is unchanged, but matrix/scalar homes differ and duplicate A080 address
+ * formation was commoned (8 original vs 6 draft relocation records).
+ * Native DIV.S by 2 became MUL.S by 0.5; FP exception/NaN equivalence is not
+ * established. Historical declarations/storage/lowering remain unknown;
+ * retain ASM, with no accepted C, padding trim or runtime change. */
+#line 419 "src/modules/battle.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00409144.s")
 
 /* Query with the original scene signed-byte filter, then inspect kind 2's

@@ -34,8 +34,8 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **800** assembly references:
-**758** ordinary functions and **42** entrypoints, with **720,232** known instruction bytes
+matching C are preserved with `#line`. The current ledger has **799** assembly references:
+**757** ordinary functions and **42** entrypoints, with **719,832** known instruction bytes
 and no unknown sizes. The broader name audit still finds **298** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
@@ -2944,10 +2944,19 @@ Totals: 400 further recoveries after the 225 upstream ordinary imports, plus 135
 Frozen wave `2637-older-dobj-getter-contracts-2637` and `accepted-older-dobj-getter-contracts-2637` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 400 further readable functions
+## Historical accepted checkpoint — 400 further readable functions
 
 One existing DOBJ object slot creator gains a scoped index name and six same-line comments. All50 original instructions,8 ordered relocation records and two empty compiler logs match. Preserve signed count traversal, the first zero occupancy byte, publication before ordered partial reset with global-base reloads, the conditional signed ID-limit update, and fullwordFFFF failure return. Four searchable unknowns name settings/count validity, pool extents, allocation and field lifetime, release/reuse rules, aliases and displaced-buffer ownership. Exact full-source/member/logical/physical inverse preserves1348 executable rows. No field/type/ABI/algorithm change. One older cleanup, zero recoveries. Require normal extraction, original packed DOBJ, fresh fullROM,1034source pins, index and unchanged full800remaining/data2/address298 dictionaries before guarded landing.
 
 Totals: 400 further recoveries after the 225 upstream ordinary imports, plus 1358 existing C semantic cleanups. Current ledger: 800 assembly references = 758 ordinary + 42 entrypoints; 720,232 known remaining instruction bytes; zero unknown sizes; 298 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `2646-older-dobj-create-contracts-2646` and `accepted-older-dobj-create-contracts-2646` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 401 further readable functions
+
+Recover one400-byte Selection function with all100 instructions exact. Preserve SND numeric flags, fresh MENU/node reads, asymmetric action7/action8 latches and original deferred callback stores; retain specific original-domain/lifetime/type unknowns. All38 complete object records agree by site and all19 pairs remain intact. Six UND kernel SND records resolve to80025C78; all32 internal serialized records and16 signed targets exactly match original4279..4310 using unchanged metadata. Add five zero-credit source notes: one parked arrow function, three parked Battle functions, and one Battle object-index declaration uncertainty. Exact whole source/context/map inverses and logical coordinates precede writes. No failed C/types, metadata/readonly ownership, ABI or gameplay changes. Existing36 pointer and18 prototype warnings remain byte-identical. Normal extraction must regenerate canonical name references. Full original packed Selection and Battle, fresh original ROM, all1034 source pins, complete remaining/data/address ledger and index are mandatory before landing; checked converter source is not proof of actual converter behavior.
+
+Totals: 401 further recoveries after the 225 upstream ordinary imports, plus 1358 existing C semantic cleanups. Current ledger: 799 assembly references = 757 ordinary + 42 entrypoints; 719,832 known remaining instruction bytes; zero unknown sizes; 298 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `2664-selection-latched-action-contracts-2664` and `accepted-selection-latched-action-contracts-2664` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

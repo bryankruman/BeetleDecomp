@@ -1,5 +1,14 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+/* Consumed SND word slots only; no backing storage is defined.
+ * RE_UNKNOWN: historical full export types and flag purpose require
+ * original declarations, callers and sound-flag consumers. */
+typedef struct {
+    u8 unobserved00[0xDC];
+    void (*clearSoundFlags)(void);
+    void (*setSoundFlag)(s32 soundId);
+} SelectionMenuSoundExports;
+#line 3 "src/modules/selection.c"
 /* Observed offsets only; RE_UNKNOWN: complete historical node/export declarations need producer/caller evidence. */
 typedef struct {
     u8 opaque00[0x12];
@@ -744,7 +753,7 @@ void selectionLatchMenuActionsWithRecordGuard();
 void func_selection_0041A210();
 void func_selection_0041A244();
 void func_selection_0041A5BC(s32 xWord, s32 yWord, s32 controller);
-void func_selection_0041A7D0();
+void selectionUpdateMenuAndScheduleLatchedActions();
 void func_selection_0041A960();
 f32 selectionComposeTimeScalar(s32 arg0, s32 arg1, s32 arg2);
 void selectionApplyChosenLanguageAndReloadTextures(void);
@@ -3813,9 +3822,87 @@ void func_selection_0041A210(void) {
 #line 2094 "src/modules/selection.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0041A244.s")
 
+/* Select font 0, query the MENU action using the controller and current
+ * node, then draw the right arrow at x + 2. Action 2 uses the gold palette;
+ * other actions use gray. Save the action across that draw, then reload the
+ * node and language to select text through the node's nested table pointer.
+ * Measure that text and a separate left-arrow label. Draw the left arrow at
+ * x - textWidth - arrowWidth - 2; saved action 1 uses gold, otherwise gray.
+ * Preserve all five distinct original arrow-label addresses and the fresh
+ * provider loads. The original does not flush or restore font state here.
+ * RE_UNKNOWN: controller/language domains, nested record and table types,
+ * complete extents, string termination, producer/reset paths, callback
+ * mutations, pointer/glyph/font lifetimes and integer-overflow reachability.
+ * Resolve through original callers, input/language writers, node/table
+ * allocation and reset paths, and the actual FONT and MENU consumers.
+ * The readable drafts remain unmatched at 544 and 536 bytes versus 532
+ * native bytes. Stack layout, pointer materialization, register allocation
+ * and relocation sites still differ. Historical declarations or new
+ * operation evidence plus full instruction, serialized-record and packed
+ * module/ROM equality are required; retain the original ASM. */
+#line 2096 "src/modules/selection.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0041A5BC.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0041A7D0.s")
+#line 2098 "src/modules/selection.c"
+/* Clear the shared action byte, clear the SND flag bytes, then set flags
+ * for numeric sound IDs 14 and 219. Update the current MENU selection for
+ * controller zero and query its action using a fresh node/record pointer.
+ * Action 7 uses latch byte 1 and the original callback word at 0x420F1C;
+ * action 8 uses latch byte 0 and the signed selected item's callback index.
+ * Both scheduling paths write shared byte 2 and clear the shared halfword.
+ * RE_UNKNOWN: complete historical node/item/latch/export declarations,
+ * signed selection/item domains and callback-table capacity, flag purpose,
+ * producer/reset and deferred-callback consumers, provider/node mutations,
+ * ownership and scheduler/resource lifetimes. Original callers, node/table
+ * allocations and writers, latch resets, sound-flag and deferred-word
+ * consumers must establish those contracts. The views cover observed fields,
+ * not complete storage. MENU navigation retries without a bounded attempt
+ * count; eligible-item invariants and reachable domains must prove termination.
+ * RE_ORIGINAL_QUIRK: action 7 sets its latch before testing node word 0x04;
+ * a successful schedule returns before clearing latch byte 0. A rejected
+ * node retains latch byte 1. Action 8 performs no new local signed-index
+ * check; invalid-domain reachability remains unproved. */
+#line 2098 "src/modules/selection.c"
+void selectionUpdateMenuAndScheduleLatchedActions(void) {
+    s32 action;
+    InnerObj_0041B19C *menuEntries;
+
+    D_selection_00420DE8 = 0;
+    ((SelectionMenuSoundExports *)gSndExports)->clearSoundFlags();
+    ((SelectionMenuSoundExports *)gSndExports)->setSoundFlag(14);
+    ((SelectionMenuSoundExports *)gSndExports)->setSoundFlag(219);
+    ((ContExp_0041B19C *)D_selection_00421B90)->unk4(
+        &D_selection_00421CF0, 0,
+        ((D1CTarget_0041B19C *)D_selection_00421D1C)->unk8);
+    action = ((ContExp_0041B19C *)D_selection_00421B90)->unk8(
+        0, ((D1CTarget_0041B19C *)D_selection_00421D1C)->unk8);
+    if (action == 7) {
+        if (((u8 *)&D_selection_00421CF0)[1] == 0) {
+            ((u8 *)&D_selection_00421CF0)[1] = 1;
+            if (((SelectionActionNodeView *)D_selection_00421D1C)->word04 != 0) {
+                D_selection_00421D28 = D_selection_00420F1C;
+                D_selection_00420DE8 = 2;
+                D_selection_00420DEC = 0;
+                return;
+            }
+        }
+    } else {
+        ((u8 *)&D_selection_00421CF0)[1] = 0;
+    }
+    if (action == 8) {
+        if (*(u8 *)&D_selection_00421CF0 == 0) {
+            *(u8 *)&D_selection_00421CF0 = 1;
+            menuEntries = ((D1CTarget_0041B19C *)D_selection_00421D1C)->unk8;
+            D_selection_00421D28 =
+                (s32)D_selection_00420F18[menuEntries->unk8[menuEntries->unk4].unk4];
+            D_selection_00420DE8 = 2;
+            D_selection_00420DEC = 0;
+        }
+    } else {
+        *(u8 *)&D_selection_00421CF0 = 0;
+    }
+}
+#line 2099 "src/modules/selection.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0041A960.s")
 
