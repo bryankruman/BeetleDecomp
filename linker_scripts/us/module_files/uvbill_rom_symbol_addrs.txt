@@ -109,3 +109,5 @@ uvBillboardClearFrameMarks = 0x00400D9C; // type:func
 uvBillboardIntersectsSphere = 0x00401388; // type:func
 uvBillboardQuerySphere = 0x00401418; // type:func
 uvBillboardRelease = 0x00401F5C; // type:func
+uvBillboardQueueVisibleForChannel = 0x00400DEC; // type:func
+uvBillboardCollectSegmentHits = 0x004010B8; // type:func

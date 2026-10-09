@@ -44,8 +44,8 @@ typedef struct BillBoard_s {
 void uvBillDestroy(void);
 void uvBillDraw(s32 arg0, BillBoard *arg1);
 void uvBillboardClearFrameMarks(s32 arg0);
-void func_uvbill_rom_00400DEC(s32 arg0);
-s32 func_uvbill_rom_004010B8(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, s32 arg6,
+void uvBillboardQueueVisibleForChannel(s32 arg0);
+s32 uvBillboardCollectSegmentHits(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, s32 arg6,
                              s32 **arg7, f32 **arg8, Vec3F **arg9);
 s32 uvBillboardIntersectsSphere(s32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4);
 s32 uvBillboardQuerySphere(f32 arg0, f32 arg1, f32 arg2, f32 arg3, s32 arg4, s32 **arg5);
@@ -82,7 +82,7 @@ void __entrypoint_func_uvbill_rom_400000(UvBill_Exports *exports) {
     uvUpdateFileAllocPtr(exports);
     exports->uvBillDestroy = uvBillDestroy;
     exports->uvBillboardAttachChannelCallback = uvBillboardAttachChannelCallback;
-    exports->func_uvbill_rom_004010B8 = func_uvbill_rom_004010B8;
+    exports->uvBillboardCollectSegmentHits = uvBillboardCollectSegmentHits;
     exports->uvBillboardIntersectsSphere = uvBillboardIntersectsSphere;
     exports->uvBillboardQuerySphere = uvBillboardQuerySphere;
     exports->uvBillSetTransMtx = uvBillSetTransMtx;
@@ -131,7 +131,7 @@ void uvBillboardAttachChannelCallback(s32 channel) {
     CallbackList *callbackList;
 
     sUvChannel_Exports->uvChannelGetProperties(channel, 6, &callbackList, 0);
-    sUvCbackExports->uvAddCallback(callbackList, func_uvbill_rom_00400DEC, 0, 0x32);
+    sUvCbackExports->uvAddCallback(callbackList, uvBillboardQueueVisibleForChannel, 0, 0x32);
 }
 #line 134 "src/modules/uvbill_rom.c"
 
@@ -149,134 +149,136 @@ void uvBillDestroy(void) {
     uvUnloadModule('CBCK');
 }
 
-void uvBillDraw(s32 arg0, BillBoard *arg1) {
+/* Draw one billboard using texture coordinates, a scaled matrix and a cached four-vertex range. */
+#line 149 "src/modules/uvbill_rom.c"
+void uvBillDraw(s32 unusedCallbackArgument, BillBoard *billboard) {
     s32 texture;
-    u16 spCA;
-    u16 spC8;
-    u16 spC6;
-    u16 spC4;
-    u16 spC2;
-    u16 spC0;
-    u16 spBE;
-    u16 spBC;
-    s16 pad;
-    s16 spB8;
-    s16 spB6;
-    s32 var_v1;
-    f32 temp_fv0;
-    f32 spA8;
-    f32 temp_fv1;
-    f32 spA0;
-    Mtx4F sp60;
-    ParsedUVTX *uvtx;
-    s32 var_v0;
+    u16 textureS0;
+    u16 textureT0;
+    u16 textureS1;
+    u16 textureT1;
+    u16 textureS2;
+    u16 textureT2;
+    u16 textureS3;
+    u16 textureT3;
+    s16 historicalUnusedPad; /* RE_UNKNOWN: retain unused argument/pad storage; historical declarations are unproved. */
+    s16 row0Z;
+    s16 row1Z;
+    s32 scaledTextureHeight;
+    f32 angleCosine;
+    f32 angleSine;
+    f32 halfTextureWidth;
+    f32 angleOrHalfTextureHeight;
+    Mtx4F scaledMatrix;
+    ParsedUVTX *textureAsset;
+    s32 coordinateOrWidth;
 
-    if (arg1->colorAlpha == 0) {
+    if (billboard->colorAlpha == 0) {
         return;
     }
 
     sUvGfxState->uvGfxStatePush();
     sUvGfxState->uvGfxStateSetFlags(0x04E20FFF);
     sUvGfxState->uvGfxClearCurrentStateBits(0x99140000);
-    if (arg1->unk70 != NULL) {
-        arg1->unk70();
+    if (billboard->unk70 != NULL) { /* RE_UNKNOWN: callback targets, mutation/reentry and billboard lifetime need caller/provider proof; keep fresh member reads. */
+        billboard->unk70();
     }
-    if (arg1->unk2 == 0) {
-        if (arg1->unk74 != NULL) {
-            arg1->unk74();
+    if (billboard->unk2 == 0) {
+        if (billboard->unk74 != NULL) {
+            billboard->unk74();
         }
         sUvGfxState->uvGfxStatePop();
         return;
     }
-    if (arg1->textureSeq != 0xFF) {
-        texture = sUvTSeqExports->uvTexSeqGetCurFrameTexture(arg1->textureSeq);
+    if (billboard->textureSeq != 0xFF) {
+        texture = sUvTSeqExports->uvTexSeqGetCurFrameTexture(billboard->textureSeq);
     } else {
-        if (arg1->texture != 0xFFF) {
-            texture = arg1->texture;
+        if (billboard->texture != 0xFFF) {
+            texture = billboard->texture;
         } else {
             texture = 0xFFF;
         }
     }
     if (texture != 0xFFF) {
-        uvtx = uvGetLoadedFile('UVTX', texture);
+        textureAsset = uvGetLoadedFile('UVTX', texture);
     } else {
-        uvtx = NULL;
+        textureAsset = NULL;
     }
-    if ((texture != 0xFFF) && (uvtx != NULL)) {
+    if ((texture != 0xFFF) && (textureAsset != NULL)) { /* RE_UNKNOWN: texture/sequence storage, ID domains and coordinate/FP conversion ranges need producer proof. */
         sUvGfxState->uvGfxStateBindTexture(texture);
-        if (arg1->angle == 0.0f) {
-            spCA = 0;
-            spC8 = 0;
-            var_v0 = uvtx->width << 5;
-            spC2 = spC6 = var_v0;
-            spC4 = 0;
-            var_v1 = uvtx->height << 5;
-            spBC = spC0 = var_v1;
-            spBE = 0;
+        if (billboard->angle == 0.0f) {
+            textureS0 = 0;
+            textureT0 = 0;
+            coordinateOrWidth = textureAsset->width << 5;
+            textureS2 = textureS1 = coordinateOrWidth;
+            textureT1 = 0;
+            scaledTextureHeight = textureAsset->height << 5;
+            textureT3 = textureT2 = scaledTextureHeight;
+            textureS3 = 0;
         } else {
-            spA0 = arg1->angle * DEG_TO_RAD;
-            spA8 = sUvMathExports->uvSinF(spA0);
-            temp_fv0 = sUvMathExports->uvCosF(spA0);
-            temp_fv1 = uvtx->width * 16.0f;
-            spA0 = uvtx->height * 16.0f;
-            spCA = ((-temp_fv1 * temp_fv0) + (spA0 * spA8) + temp_fv1);
-            spC8 = (((-temp_fv1 * spA8) - (spA0 * temp_fv0)) + spA0);
-            spC6 = ((temp_fv1 * temp_fv0) + (spA0 * spA8) + temp_fv1);
-            spC4 = (((temp_fv1 * spA8) - (spA0 * temp_fv0)) + spA0);
-            spC2 = (((temp_fv1 * temp_fv0) - (spA0 * spA8)) + temp_fv1);
-            spC0 = ((temp_fv1 * spA8) + (spA0 * temp_fv0) + spA0);
-            spBE = (((-temp_fv1 * temp_fv0) - (spA0 * spA8)) + temp_fv1);
-            spBC = ((-temp_fv1 * spA8) + (spA0 * temp_fv0) + spA0);
+            angleOrHalfTextureHeight = billboard->angle * DEG_TO_RAD;
+            angleSine = sUvMathExports->uvSinF(angleOrHalfTextureHeight);
+            angleCosine = sUvMathExports->uvCosF(angleOrHalfTextureHeight);
+            halfTextureWidth = textureAsset->width * 16.0f;
+            angleOrHalfTextureHeight = textureAsset->height * 16.0f;
+            textureS0 = ((-halfTextureWidth * angleCosine) + (angleOrHalfTextureHeight * angleSine) + halfTextureWidth);
+            textureT0 = (((-halfTextureWidth * angleSine) - (angleOrHalfTextureHeight * angleCosine)) + angleOrHalfTextureHeight);
+            textureS1 = ((halfTextureWidth * angleCosine) + (angleOrHalfTextureHeight * angleSine) + halfTextureWidth);
+            textureT1 = (((halfTextureWidth * angleSine) - (angleOrHalfTextureHeight * angleCosine)) + angleOrHalfTextureHeight);
+            textureS2 = (((halfTextureWidth * angleCosine) - (angleOrHalfTextureHeight * angleSine)) + halfTextureWidth);
+            textureT2 = ((halfTextureWidth * angleSine) + (angleOrHalfTextureHeight * angleCosine) + angleOrHalfTextureHeight);
+            textureS3 = (((-halfTextureWidth * angleCosine) - (angleOrHalfTextureHeight * angleSine)) + halfTextureWidth);
+            textureT3 = ((-halfTextureWidth * angleSine) + (angleOrHalfTextureHeight * angleCosine) + angleOrHalfTextureHeight);
         }
-        if (arg1->unk5 != 0) {
-            var_v0 = spCA;
-            spCA = spC2;
-            spC2 = var_v0;
-            var_v0 = spC6;
-            spC6 = spBE;
-            spBE = var_v0;
+        if (billboard->unk5 != 0) {
+            coordinateOrWidth = textureS0;
+            textureS0 = textureS2;
+            textureS2 = coordinateOrWidth;
+            coordinateOrWidth = textureS1;
+            textureS1 = textureS3;
+            textureS3 = coordinateOrWidth;
         }
-        if (arg1->unk6 != 0) {
-            var_v0 = spC8;
-            spC8 = spC0;
-            spC0 = var_v0;
-            var_v0 = spC4;
-            spC4 = spBC;
-            spBC = var_v0;
+        if (billboard->unk6 != 0) {
+            coordinateOrWidth = textureT0;
+            textureT0 = textureT2;
+            textureT2 = coordinateOrWidth;
+            coordinateOrWidth = textureT1;
+            textureT1 = textureT3;
+            textureT3 = coordinateOrWidth;
         }
     }
-    if (arg1->colorAlpha < 0xFF) {
+    if (billboard->colorAlpha < 0xFF) {
         sUvGfxState->uvGfxStateSetFlags(0x04800000);
     }
-    sUvFmtxExports->uvMat4FCopy(&sp60, &arg1->trans);
-    sUvFmtxExports->uvMat4Scale(&sp60, arg1->scaleX, arg1->scaleY, arg1->scaleZ);
-    sUvFmtxExports->uvMat4PushFloatMatrix(&sp60);
+    sUvFmtxExports->uvMat4FCopy(&scaledMatrix, &billboard->trans);
+    sUvFmtxExports->uvMat4Scale(&scaledMatrix, billboard->scaleX, billboard->scaleY, billboard->scaleZ);
+    sUvFmtxExports->uvMat4PushFloatMatrix(&scaledMatrix);
     sUvDGeomExports->uvVtxBeginPoly();
-    if (arg1->unk4 != 0) {
-        spB8 = -1;
-        spB6 = 1;
+    if (billboard->unk4 != 0) {
+        row0Z = -1;
+        row1Z = 1;
     } else {
-        spB8 = 0;
-        spB6 = 2;
+        row0Z = 0;
+        row1Z = 2;
     }
-    if (arg1->unk2C != 0) {
-        sUvDGeomExports->uvDgeomSetVertexRange(arg1->unk2C - 1, 4);
+    if (billboard->unk2C != 0) { /* RE_UNKNOWN: cached range lifetime and DGEO capacity need allocation/frame/caller proof; preserve signed halfword reads. */
+        sUvDGeomExports->uvDgeomSetVertexRange(billboard->unk2C - 1, 4);
     } else {
-        arg1->unk2C = sUvDGeomExports->uvVtx(-1, 0, spB8, spCA, spC8, arg1->colorRed, arg1->colorGreen,
-                                             arg1->colorBlue, arg1->colorAlpha)
+        billboard->unk2C = sUvDGeomExports->uvVtx(-1, 0, row0Z, textureS0, textureT0, billboard->colorRed, billboard->colorGreen, /* RE_ORIGINAL_QUIRK: absent texture skips coordinate initialization; RE_UNKNOWN: reachability of this uncached path needs resource/caller proof. */
+                                             billboard->colorBlue, billboard->colorAlpha)
                       + 1;
 
-        sUvDGeomExports->uvVtx(1, 0, spB8, spC6, spC4, arg1->colorRed, arg1->colorGreen, arg1->colorBlue,
-                               arg1->colorAlpha);
-        sUvDGeomExports->uvVtx(1, 0, spB6, spC2, spC0, arg1->colorRed, arg1->colorGreen, arg1->colorBlue,
-                               arg1->colorAlpha);
-        sUvDGeomExports->uvVtx(-1, 0, spB6, spBE, spBC, arg1->colorRed, arg1->colorGreen, arg1->colorBlue,
-                               arg1->colorAlpha);
+        sUvDGeomExports->uvVtx(1, 0, row0Z, textureS1, textureT1, billboard->colorRed, billboard->colorGreen, billboard->colorBlue,
+                               billboard->colorAlpha);
+        sUvDGeomExports->uvVtx(1, 0, row1Z, textureS2, textureT2, billboard->colorRed, billboard->colorGreen, billboard->colorBlue,
+                               billboard->colorAlpha);
+        sUvDGeomExports->uvVtx(-1, 0, row1Z, textureS3, textureT3, billboard->colorRed, billboard->colorGreen, billboard->colorBlue,
+                               billboard->colorAlpha);
     }
-    sUvDGeomExports->uvVtxEndPoly();
+    sUvDGeomExports->uvVtxEndPoly(); /* Keep matrix/state pop order and ignored geometry results; no failure-path cleanup is invented. */
     sUvFmtxExports->uvGfxMtxFViewPop();
-    if (arg1->unk74 != NULL) {
-        arg1->unk74();
+    if (billboard->unk74 != NULL) {
+        billboard->unk74();
     }
     sUvGfxState->uvGfxStatePop();
 }
@@ -293,109 +295,113 @@ void uvBillboardClearFrameMarks(s32 unused) {
 }
 #line 289 "src/modules/uvbill_rom.c"
 
-void func_uvbill_rom_00400DEC(s32 arg0) {
-    f32 temp_fs0;
-    f32 temp_fs1;
-    f32 temp_fs2;
-    f32 temp_fv0;
-    f32 temp_fv0_2;
-    f32 temp_fv1;
-    f32 var_fa0;
-    s32 i;
-    BillBoard *billBoard;
-    Mtx4F sp9C;
-    Vec3F sp90;
+/* Test active billboards against channel vectors, update selected matrix components and queue the drawing callback. */
+#line 290 "src/modules/uvbill_rom.c"
+void uvBillboardQueueVisibleForChannel(s32 channel) {
+    f32 relativeZ;
+    f32 relativeX;
+    f32 relativeY;
+    f32 distance;
+    f32 xyLengthOrUnitX;
+    f32 unitY;
+    f32 inverseXYLength;
+    s32 billboardIndex;
+    BillBoard *billboard;
+    Mtx4F channelMatrix;
+    Vec3F channelPosition;
 
-    for (i = 0; i < sBillBoardCount; i++) {
-        billBoard = &sBillBoardPool[i];
-        if (!billBoard->active) {
+    for (billboardIndex = 0; billboardIndex < sBillBoardCount; billboardIndex++) { /* RE_UNKNOWN: pool/count/channel validity and callback mutation/lifetimes need producer/caller proof; keep live reloads. */
+        billboard = &sBillBoardPool[billboardIndex];
+        if (!billboard->active) {
             continue;
         }
-        sUvChannel_Exports->uvChannelGetProperties(arg0, 7, &sp90, 3, &sp9C, 0);
-        temp_fs1 = billBoard->trans.m[3][0] - sp90.x;
-        temp_fs2 = billBoard->trans.m[3][1] - sp90.y;
-        temp_fs0 = billBoard->trans.m[3][2] - sp90.z;
-        temp_fv0 = sUvMathExports->uvSqrtf(SQ(temp_fs1) + SQ(temp_fs2) + SQ(temp_fs0));
-        if (billBoard->unk20 < temp_fv0) {
+        sUvChannel_Exports->uvChannelGetProperties(channel, 7, &channelPosition, 3, &channelMatrix, 0);
+        relativeX = billboard->trans.m[3][0] - channelPosition.x;
+        relativeY = billboard->trans.m[3][1] - channelPosition.y;
+        relativeZ = billboard->trans.m[3][2] - channelPosition.z;
+        distance = sUvMathExports->uvSqrtf(SQ(relativeX) + SQ(relativeY) + SQ(relativeZ));
+        if (billboard->unk20 < distance) { /* RE_ORIGINAL_QUIRK: unordered distance comparisons bypass rejection; RE_UNKNOWN: FP and scalar conventions need producer/caller proof. */
             continue;
-        } else if (sUvChannel_Exports->uvChannelTestCachedVectorPairs(arg0, temp_fs1, temp_fs2, temp_fs0,
-                                                                  billBoard->unkC)
+        } else if (sUvChannel_Exports->uvChannelTestCachedVectorPairs(channel, relativeX, relativeY, relativeZ,
+                                                                  billboard->unkC)
                    == 0) {
             continue;
         }
 
-        if (billBoard->unk0 == 3) {
-            sUvFmtxExports->uvMat4CopyLinear3x3(&billBoard->trans, &sp9C);
-        } else if (billBoard->unk0 == 2) {
-            temp_fv0_2 = sUvMathExports->uvSqrtf(SQ(temp_fs1) + SQ(temp_fs2));
-            if (temp_fv0_2 != 0.0f) {
-                var_fa0 = 1.0f / temp_fv0_2;
+        if (billboard->unk0 == 3) { /* Mode 3 copies only the linear 3x3; mode 2 keeps the original grouped arithmetic and partial matrix store order. */
+            sUvFmtxExports->uvMat4CopyLinear3x3(&billboard->trans, &channelMatrix);
+        } else if (billboard->unk0 == 2) {
+            xyLengthOrUnitX = sUvMathExports->uvSqrtf(SQ(relativeX) + SQ(relativeY));
+            if (xyLengthOrUnitX != 0.0f) { /* Exact zero selects reciprocal 1; RE_UNKNOWN: other FP domains and physical orientation need producer proof. */
+                inverseXYLength = 1.0f / xyLengthOrUnitX;
             } else {
-                var_fa0 = 1.0f;
+                inverseXYLength = 1.0f;
             }
-            temp_fv0_2 = temp_fs1 * var_fa0;
-            temp_fv1 = temp_fs2 * var_fa0;
-            billBoard->trans.m[0][2] = 0.0f;
-            billBoard->trans.m[1][2] = 0.0f;
-            billBoard->trans.m[2][0] = 0.0f;
-            billBoard->trans.m[1][1] = temp_fv1;
-            billBoard->trans.m[0][0] = (f32) -temp_fv1;
-            billBoard->trans.m[0][1] = temp_fv0_2;
-            billBoard->trans.m[1][0] = temp_fv0_2;
-            billBoard->trans.m[2][1] = 0.0f;
-            billBoard->trans.m[2][2] = 1.0f;
+            xyLengthOrUnitX = relativeX * inverseXYLength;
+            unitY = relativeY * inverseXYLength;
+            billboard->trans.m[0][2] = 0.0f;
+            billboard->trans.m[1][2] = 0.0f;
+            billboard->trans.m[2][0] = 0.0f;
+            billboard->trans.m[1][1] = unitY;
+            billboard->trans.m[0][0] = (f32) -unitY;
+            billboard->trans.m[0][1] = xyLengthOrUnitX;
+            billboard->trans.m[1][0] = xyLengthOrUnitX;
+            billboard->trans.m[2][1] = 0.0f;
+            billboard->trans.m[2][2] = 1.0f;
         }
-        sUvTerraExports->unkAC(arg0, 1, billBoard->trans.m[3][0], billBoard->trans.m[3][1],
-                               (void*)uvBillDraw, billBoard, temp_fv0);
+        sUvTerraExports->unkAC(channel, 1, billboard->trans.m[3][0], billboard->trans.m[3][1], /* TERR slot 0xAC selects a queue and forwards callback/data/distance; RE_UNKNOWN: queue capacity/ABI/lifetime need caller/provider proof. */
+                               (void*)uvBillDraw, billboard, distance);
     }
 }
 
-s32 func_uvbill_rom_004010B8(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, s32 arg6,
-                             s32 **arg7, f32 **arg8, Vec3F **arg9) {
-    f32 temp_fv0;
-    s32 i;
-    s32 var_s3;
-    f32 spA8;
-    s32 var_s4;
-    BillBoard *temp_s0;
+/* Collect active billboard segment hits and publish shared ID, fraction and normal buffers. */
+#line 347 "src/modules/uvbill_rom.c"
+s32 uvBillboardCollectSegmentHits(f32 startX, f32 startY, f32 startZ, f32 endX, f32 endY, f32 endZ, s32 filterMask,
+                             s32 **outIds, f32 **outFractions, Vec3F **outNormals) {
+    f32 zeroFraction;
+    s32 billboardIndex;
+    s32 historicalUnusedIndex; /* RE_UNKNOWN: unused local storage and historical declarations remain unproved. */
+    f32 hitFraction;
+    s32 hitCount;
+    BillBoard *billboard;
 
-    *arg7 = D_uvbill_rom_00402004;
-    *arg8 = D_uvbill_rom_0040200C;
-    *arg9 = D_uvbill_rom_00402008;
-    var_s4 = 0;
+    *outIds = D_uvbill_rom_00402004; /* Publish shared bases before endpoint tests; RE_UNKNOWN: output aliasing/capacity/reentry/lifetime need allocation/caller proof. */
+    *outFractions = D_uvbill_rom_0040200C;
+    *outNormals = D_uvbill_rom_00402008;
+    hitCount = 0;
 
-    if ((arg0 == arg3) && (arg1 == arg4) && (arg2 == arg5)) {
-        var_s4 = uvBillboardQuerySphere(arg0, arg1, arg2, 0.0f, arg6, arg7);
-        if (var_s4 > 0) {
+    if ((startX == endX) && (startY == endY) && (startZ == endZ)) {
+        hitCount = uvBillboardQuerySphere(startX, startY, startZ, 0.0f, filterMask, outIds);
+        if (hitCount > 0) { /* RE_ORIGINAL_QUIRK: coincident endpoints zero only the first fraction/normal, then return the entire sphere-hit count. */
             *D_uvbill_rom_0040200C = 0.0f;
-            temp_fv0 = *D_uvbill_rom_0040200C;
-            D_uvbill_rom_00402008->z = temp_fv0;
-            D_uvbill_rom_00402008->y = temp_fv0;
-            D_uvbill_rom_00402008->x = temp_fv0;
-            *arg8 = D_uvbill_rom_0040200C;
-            *arg9 = D_uvbill_rom_00402008;
-            return var_s4;
+            zeroFraction = *D_uvbill_rom_0040200C;
+            D_uvbill_rom_00402008->z = zeroFraction;
+            D_uvbill_rom_00402008->y = zeroFraction;
+            D_uvbill_rom_00402008->x = zeroFraction;
+            *outFractions = D_uvbill_rom_0040200C;
+            *outNormals = D_uvbill_rom_00402008;
+            return hitCount;
         }
     }
-    for (i = 0; i < sBillBoardCount; i++) {
-        temp_s0 = &sBillBoardPool[i];
-        if ((temp_s0->active) && ((arg6 == 0) || (temp_s0->unk28 & arg6))) {
-            //! @bug: sUvIntersectExports is uninitialized!
+    for (billboardIndex = 0; billboardIndex < sBillBoardCount; billboardIndex++) {
+        billboard = &sBillBoardPool[billboardIndex];
+        if ((billboard->active) && ((filterMask == 0) || (billboard->unk28 & filterMask))) {
+            // RE_UNKNOWN: BILL native initializer/current source show no ISCT import assignment; valid publication/caller paths are unproved.
             if (sUvIntersectExports->uvIntersectSegmentSphereFraction(
-                    arg0, arg1, arg2, arg3, arg4, arg5, temp_s0->trans.m[3][0], temp_s0->trans.m[3][1],
-                    temp_s0->trans.m[3][2], temp_s0->unkC, &spA8)
+                    startX, startY, startZ, endX, endY, endZ, billboard->trans.m[3][0], billboard->trans.m[3][1],
+                    billboard->trans.m[3][2], billboard->unkC, &hitFraction)
                 == 0) {
                 continue;
             }
-            sUvIntersectExports->uvIntersectGetSegmentSphereNormal(
-                arg0, arg1, arg2, arg3, arg4, arg5, spA8, temp_s0->trans.m[3][0],
-                temp_s0->trans.m[3][1], temp_s0->trans.m[3][2], &D_uvbill_rom_00402008[var_s4]);
-            D_uvbill_rom_00402004[var_s4] = i;
-            D_uvbill_rom_0040200C[var_s4] = spA8;
-            var_s4++;
+            sUvIntersectExports->uvIntersectGetSegmentSphereNormal( /* Preserve fresh import/center reads after the fraction callback; no alias or callback stability is assumed. */
+                startX, startY, startZ, endX, endY, endZ, hitFraction, billboard->trans.m[3][0],
+                billboard->trans.m[3][1], billboard->trans.m[3][2], &D_uvbill_rom_00402008[hitCount]);
+            D_uvbill_rom_00402004[hitCount] = billboardIndex;
+            D_uvbill_rom_0040200C[hitCount] = hitFraction;
+            hitCount++;
         }
     }
-    return var_s4;
+    return hitCount;
 }
 
 #line 395 "src/modules/uvbill_rom.c"
@@ -451,108 +457,110 @@ void uvBillSetTransMtx(s32 bill, Mtx4F *mtx) {
     }
 }
 
-void uvBillProps(s32 bill, ...) {
-    BillBoard *temp_s0;
-    f32 var_fv0;
-    s32 prop;
-    va_list args;
-    f32 y = 10.0f;
+/* Consume tagged billboard properties, retaining selector termination, narrowing and radius recomputation. */
+#line 440 "src/modules/uvbill_rom.c"
+void uvBillProps(s32 billboardId, ...) {
+    BillBoard *billboard;
+    f32 scalarOrExtent;
+    s32 selectorOrMode;
+    va_list arguments;
+    f32 historicalRegisterLiteral = 10.0f;
 
-    if ((bill < 0) || (bill >= sBillBoardCount)) {
+    if ((billboardId < 0) || (billboardId >= sBillBoardCount)) {
         return;
     }
-    temp_s0 = &sBillBoardPool[bill];
-    va_start(args, bill);
+    billboard = &sBillBoardPool[billboardId];
+    va_start(arguments, billboardId); /* RE_UNKNOWN: vararg types/termination, allocation lifetime and output alias/FP domains need producer/caller proof. */
     while (TRUE) {
-        prop = va_arg(args, s32);
-        // FAKE: Make IDO reserve ft4 for the literal and fa1 for y...
-        if (y > 4) {
+        selectorOrMode = va_arg(arguments, s32);
+        // RE_UNKNOWN: retain five empty tests as the existing register-allocation scaffold; historical source form is unproved.
+        if (historicalRegisterLiteral > 4) {
         }
-        if (y > 4) {
+        if (historicalRegisterLiteral > 4) {
         }
-        if (y > 4) {
+        if (historicalRegisterLiteral > 4) {
         }
-        if (y > 4) {
+        if (historicalRegisterLiteral > 4) {
         }
-        if (y > 4) {
+        if (historicalRegisterLiteral > 4) {
         }
 
-        switch (prop) {
+        switch (selectorOrMode) {
             case 0:
                 return;
             case 1:
-                temp_s0->trans.m[3][0] = va_arg(args, f64);
-                temp_s0->trans.m[3][1] = va_arg(args, f64);
-                temp_s0->trans.m[3][2] = va_arg(args, f64);
+                billboard->trans.m[3][0] = va_arg(arguments, f64);
+                billboard->trans.m[3][1] = va_arg(arguments, f64);
+                billboard->trans.m[3][2] = va_arg(arguments, f64);
                 break;
             case 2:
-                temp_s0->active = va_arg(args, s32);
+                billboard->active = va_arg(arguments, s32);
                 break;
             case 3:
-                prop = va_arg(args, s32);
-                if (prop > 0 && prop < 4) {
-                    temp_s0->unk0 = prop;
+                selectorOrMode = va_arg(arguments, s32);
+                if (selectorOrMode > 0 && selectorOrMode < 4) {
+                    billboard->unk0 = selectorOrMode;
                 }
                 break;
             case 4:
-                temp_s0->textureSeq = va_arg(args, s32);
+                billboard->textureSeq = va_arg(arguments, s32);
                 break;
             case 5:
-                temp_s0->texture = va_arg(args, s32);
+                billboard->texture = va_arg(arguments, s32);
                 break;
             case 6:
-                temp_s0->unk4 = va_arg(args, s32);
-                if (temp_s0->unk4 != 0) {
-                    var_fv0 = temp_s0->scaleZ;
+                billboard->unk4 = va_arg(arguments, s32);
+                if (billboard->unk4 != 0) {
+                    scalarOrExtent = billboard->scaleZ;
                 } else {
-                    var_fv0 = 2.0f * temp_s0->scaleZ;
+                    scalarOrExtent = 2.0f * billboard->scaleZ;
                 }
-                temp_s0->unkC = sUvMathExports->uvSqrtf(SQ(temp_s0->scaleX) + SQ(var_fv0));
+                billboard->unkC = sUvMathExports->uvSqrtf(SQ(billboard->scaleX) + SQ(scalarOrExtent)); /* RE_ORIGINAL_QUIRK: radius uses X/Z and field 0x04, omitting Y; preserve grouped arithmetic. */
                 break;
             case 7:
-                temp_s0->scaleX = va_arg(args, f64);
-                temp_s0->scaleY = va_arg(args, f64);
-                temp_s0->scaleZ = va_arg(args, f64);
-                if (temp_s0->unk4 != 0) {
-                    var_fv0 = temp_s0->scaleZ;
+                billboard->scaleX = va_arg(arguments, f64);
+                billboard->scaleY = va_arg(arguments, f64);
+                billboard->scaleZ = va_arg(arguments, f64);
+                if (billboard->unk4 != 0) {
+                    scalarOrExtent = billboard->scaleZ;
                 } else {
-                    var_fv0 = 2.0f * temp_s0->scaleZ;
+                    scalarOrExtent = 2.0f * billboard->scaleZ;
                 }
-                temp_s0->unkC = sUvMathExports->uvSqrtf(SQ(temp_s0->scaleX) + SQ(var_fv0));
+                billboard->unkC = sUvMathExports->uvSqrtf(SQ(billboard->scaleX) + SQ(scalarOrExtent));
                 break;
             case 9:
-                temp_s0->unk28 = va_arg(args, s32);
+                billboard->unk28 = va_arg(arguments, s32);
                 break;
             case 8:
-                var_fv0 = va_arg(args, f64);
-                temp_s0->colorRed = var_fv0 * 255.0f;
-                var_fv0 = va_arg(args, f64);
-                temp_s0->colorGreen = var_fv0 * 255.0f;
-                var_fv0 = va_arg(args, f64);
-                temp_s0->colorBlue = var_fv0 * 255.0f;
-                var_fv0 = va_arg(args, f64);
-                temp_s0->colorAlpha = var_fv0 * 255.0f;
+                scalarOrExtent = va_arg(arguments, f64);
+                billboard->colorRed = scalarOrExtent * 255.0f; /* Preserve f64-to-f32 and byte narrowing without clamps; RE_UNKNOWN: valid value/FP ranges need producer/caller proof. */
+                scalarOrExtent = va_arg(arguments, f64);
+                billboard->colorGreen = scalarOrExtent * 255.0f;
+                scalarOrExtent = va_arg(arguments, f64);
+                billboard->colorBlue = scalarOrExtent * 255.0f;
+                scalarOrExtent = va_arg(arguments, f64);
+                billboard->colorAlpha = scalarOrExtent * 255.0f;
                 break;
             case 10:
-                temp_s0->unk20 = va_arg(args, f64);
+                billboard->unk20 = va_arg(arguments, f64);
                 break;
             case 11:
-                temp_s0->angle = va_arg(args, f64);
+                billboard->angle = va_arg(arguments, f64);
                 break;
             case 12:
-                var_fv0 = va_arg(args, f64);
-                temp_s0->colorAlpha = var_fv0 * 255.0f;
+                scalarOrExtent = va_arg(arguments, f64);
+                billboard->colorAlpha = scalarOrExtent * 255.0f;
                 break;
             case 13:
-                temp_s0->unk2 = va_arg(args, s32);
+                billboard->unk2 = va_arg(arguments, s32);
                 break;
             case 14:
-                temp_s0->unk5 = va_arg(args, s32);
+                billboard->unk5 = va_arg(arguments, s32);
                 break;
             case 15:
-                temp_s0->unk6 = va_arg(args, s32);
+                billboard->unk6 = va_arg(arguments, s32);
                 break;
-            default:
+            default: /* Unknown selectors terminate immediately; keep consumed arguments and partial earlier stores. */
                 return;
         }
     }

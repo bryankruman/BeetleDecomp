@@ -1046,6 +1046,25 @@ void selectionApplyLatchedMenuActionWords(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00401D04.s")
 
+/* Navigate the current menu and obtain its action, refreshing menu/choice
+ * pointers after the provider calls. A nonzero selected-option gate invokes
+ * its indexed callback before processing actions 7 and 8 through edge latches.
+ * Those actions schedule callbacks and set the two transition flags. The
+ * nonzero-gate action-7 transition returns before clearing latch zero; the
+ * zero-gate path continues to that clear. Preserve the fresh pointer reads.
+ * RE_ORIGINAL_QUIRK: the selected-option gate is read before the selected
+ * index is tested against -1. Other indices and callback-table entries are
+ * also used without local bounds checks; invalid-domain reachability is unknown.
+ * RE_UNKNOWN: historical menu/option declarations, capacities, signed-index
+ * domains, callback mutations and deferred-callback consumers/lifetimes.
+ * Resolve original producers and callers before asserting broader contracts.
+ * Two 676-byte natural C trials retain all observed effects and differ from
+ * the original in one BEQ instruction: the two equality operands are swapped.
+ * The source comparison-order refinement produced the same instruction.
+ * All 60 reference/candidate relocation dictionaries agree by site; actual
+ * native serialization remains a separate requirement. Retain this assembly
+ * until the unresolved compiler expression ordering can match exactly. */
+#line 677 "src/modules/selection.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00401FB0.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00402254.s")
@@ -1607,6 +1626,24 @@ void selectionAdjustLanguageAndReloadTextures(void) {
 }
 #line 971 "src/modules/selection.c"
 
+/* Adjust the shared choice word through the original wrapped-value helper.
+ * Choice zero tests shared bytes at 0x8002CD98 + 0x271 through 0x278 for
+ * option states 2 through 9, then writes state 2 to options 10 through 19.
+ * Choice one writes state 2 to options 2 through 9 and tests bytes +0x279
+ * through +0x282 for options 10 through 19. Tests write 1 or 0; any other
+ * choice resets the choice word to zero without writing option states.
+ * Keep the original two pointer loads for each state store, the 20-byte
+ * option stride and signed state halfword at offset two.
+ * RE_UNKNOWN: complete historical menu/option declarations, shared-byte
+ * meaning and lifecycle, allocation capacities, caller domains and aliasing.
+ * Resolve original producers, callers and option-state consumers before
+ * assigning complete types or broader semantic roles. The natural draft
+ * was 640 bytes against the original 632: integer-index address bookkeeping,
+ * kernel alias references and scheduling differed despite the same accesses
+ * and stores. No exact C representation is accepted; retain this assembly.
+ * RE_ORIGINAL_QUIRK: pointers are used without local validity checks.
+ * Invalid-domain reachability is unproved; no runtime correction is made. */
+#line 972 "src/modules/selection.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040437C.s")
 
 #line 974 "src/modules/selection.c"
@@ -2017,6 +2054,24 @@ void func_selection_00406F78(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040705C.s")
 
+/* Apply stored sound options and initialize the original menu fields. Snapshot
+ * four settings bytes before writing the four shared bytes. For each observed
+ * menu row, call MENU slot 0x18 and reload the current node before storing its
+ * selected halfword. Scan the original byte interval ending at 0x8002CDAA;
+ * any nonzero byte enables option nine of the first row. Load the bitmap,
+ * allocate the cached sprite only when its ID is -1, and assign its asset,
+ * centered position and enabled property through freshly loaded exports.
+ * RE_ORIGINAL_QUIRK: option nine and allocator results are used without local
+ * bounds or failure checks; reachable invalid inputs are not established.
+ * RE_UNKNOWN: complete node, row and option extents, caller/index domains,
+ * settings meanings, shared-flag producers, callback mutations and lifetimes.
+ * The draft views describe consumed fields only; resolve original producers
+ * and consumers before widening their declarations or ownership contracts.
+ * The endpoint-corrected draft adds an entry test between separately declared
+ * addresses and changes address materialization and register scheduling.
+ * Historical source representation remains unresolved. Retain original ASM;
+ * native instructions, serialized module and full ROM must all agree. */
+#line 1129 "src/modules/selection.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004078D4.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00407AF8.s")
@@ -2561,6 +2616,23 @@ void selectionSetPlayerTransmissionZero(void) {
 }
 #line 1348 "src/modules/selection.c"
 
+/* Load the three original bitmap/texture resources and allocate the shared
+ * sprite. Set its bitmap, center it from the queried dimensions and enable it.
+ * Copy the signed controller halfword, apply stored sound options, then call
+ * the sound selectors with 12, 2 and one minus the freshly reloaded controller.
+ * Use the controller preset and language word to select the original label;
+ * reload the linked node before clearing its selected halfword, then store -1.
+ * RE_ORIGINAL_QUIRK: allocation results and computed controller, preset and
+ * language indices are used without local checks; invalid reachability is unproved.
+ * RE_UNKNOWN: complete node, label and settings extents, historical types and
+ * aliasing, resource failure contracts, callback mutations and ownership/lifetimes.
+ * Resolve original callers, settings writers and node/provider consumers before
+ * widening the draft access views into complete storage or ownership declarations.
+ * The draft represents the observed effects but differs in the width stack home
+ * and final label arithmetic, load ordering and register scheduling (27 words).
+ * Historical source lowering remains unresolved. Retain original ASM until native
+ * instructions, serialized module and full ROM proof all agree. */
+#line 1349 "src/modules/selection.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040D280.s")
 
 /* Unload selection screen resources: flush gfx/texanim state, unload VB/VTX files, free sprite. */
@@ -2798,6 +2870,25 @@ void func_selection_0041057C(void) {
     gUvSprtExports->unk8(D_selection_00421E38);
 }
 
+/* Capture the current node and mark the two original controller flag bytes.
+ * Request a MENU action; only a previously zero action latch changes the
+ * controller preset, wrapping the observed choices from zero through three.
+ * Copy its low byte and select the original language-indexed label pointer.
+ * Query CONT slot 0x18 with masks 0x9000 and 0x4000 in order. Its predicate
+ * requires a nonzero current masked word and a zero previous masked word.
+ * Either result sets the original transition fields and callback. Presets
+ * zero through two invoke the nine-word copier; preset three changes the
+ * transition/callback only for the first query. Cache the MENU action last.
+ * RE_UNKNOWN: controller, language and preset domains, complete flag, label,
+ * node and copied-record extents, historical declarations and alias contracts,
+ * input-word arithmetic, callback mutations and ownership/lifetimes.
+ * The draft views cover observed accesses only. Resolve original callers,
+ * settings writers and callback consumers before widening those contracts.
+ * The draft preserves observed effects but changes shared-address arithmetic,
+ * read scheduling, saved registers, stack homes and relocation sites.
+ * Historical source lowering remains unresolved. Retain original ASM until
+ * native instructions, serialized module and full ROM proof agree. */
+#line 1517 "src/modules/selection.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00410614.s")
 
 #line 1519 "src/modules/selection.c"
@@ -3350,10 +3441,69 @@ void func_selection_00414CEC(void) {
 }
 #line 1802 "src/modules/selection.c"
 
+/* Process fresh MENU actions and selected-option callbacks for each player,
+ * retaining the original node/choice reloads and separate eight-byte edge rows.
+ * Action 7 can request the return-node word when every ready byte is zero;
+ * otherwise ready byte 1 is cleared, SND clears its indexed flag, and a fresh
+ * MENU selection is written through the freshly reloaded node.
+ * Action 8 writes ready byte 1, snapshots the shared count, then sets its
+ * edge byte. A small count or all-nonzero predicate can request a callback.
+ * Both qualifying transition paths return even if no request is stored.
+ * Only a completed control pass applies properties 9/8 with 1 and the signed
+ * settings halfword to each object, then calls the freshly loaded update slot.
+ * RE_UNKNOWN: complete node/option/latch/ready/callback/handle allocations;
+ * player and selector domains; historical prototypes, provider lifetimes,
+ * callback mutation rights, property meanings and settings units.
+ * The draft export views and six-byte settings cursor describe observed
+ * accesses only; none of those draft declarations has been accepted here.
+ * RE_ORIGINAL_QUIRK: shared counts and selected indices lack local bounds;
+ * the byte predicates receive a signed 16-bit count. Reachability is unknown.
+ * Retain assembly: native count ordering is represented, but register and
+ * instruction scheduling and settings-address reuse still differ. Exact
+ * instructions and complete serialized module equality remain required. */
+#line 1803 "src/modules/selection.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00414CF4.s")
 
+/* Measure four localized player labels with font 1, then draw each row at
+ * its original X/Y home. Ready byte zero selects the player label in
+ * RGB (251,204,30); nonzero selects localized Ready in RGB (210,210,210).
+ * Reload the ready byte after drawing: exactly 1 calls SND slot 0x24,
+ * whose original provider stores 1 in the indexed replay-input flag.
+ * Reload the shared player count after callbacks. Finish with font 11
+ * and the localized color hint at (44,22), RGB (90,90,90), alpha 255.
+ * RE_UNKNOWN: complete localized, flag and coordinate storage owners;
+ * player/language domains, glyph/queue and writable-string contracts,
+ * historical prototypes, callback mutation rights and provider lifetimes.
+ * The draft pointer views describe observed language strides only and
+ * have not established historical declarations or total allocations.
+ * RE_ORIGINAL_QUIRK: the shared count is not locally bounded against the
+ * four coordinate slots; invalid-domain reachability remains unknown.
+ * Retain assembly: the closest natural draft still differs in address
+ * initialization and independent cursor scheduling. Exact instructions,
+ * serialized relocations and the complete packed module remain required. */
+#line 1805 "src/modules/selection.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00415040.s")
 
+/* Initialize two matrix scratch views, then translate one from three native
+ * shared f32 reads with the original f32-to-f64-to-f32 arithmetic grouping.
+ * Store the derived object scalar, copy the translated matrix to the object,
+ * set camera selector 9, and copy/rotate/translate its matrix before copying
+ * the result back. Reload shared object/export pointers between callbacks.
+ * RE_UNKNOWN: historical vector/constant declarations, complete storage owners,
+ * coordinate spaces, angle/scalar units, input/NaN domains and callback effects.
+ * The observed three-f32 view describes reads at +0/+4/+8 only; it does not
+ * widen the accepted two-field declaration or establish backing capacity.
+ * Original providers and selector-table records close the consumed calls;
+ * broader ownership and mutation lifetimes still require producer/caller proof.
+ * RE_ORIGINAL_QUIRK: object pointers and provider-derived indices are used
+ * without local validity checks. Invalid-domain reachability remains unknown.
+ * Two natural trials produce 632 bytes against the original 628: floating
+ * operand/load scheduling differs, and the double argument uses two address
+ * materializations where the original shares one. Both retain the observed
+ * calls/stores; exceptional floating-point equivalence is not established.
+ * Retain assembly until the historical expression/constant representation and
+ * complete instruction/relocation/packed-module proof can match exactly. */
+#line 1807 "src/modules/selection.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0041532C.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004155A0.s")
@@ -3690,6 +3840,24 @@ s32 selectionWritePakSettingsBlock(void) {
 }
 #line 1975 "src/modules/selection.c"
 
+/* Request 1,024 Pak bytes into the shared settings block for controller zero.
+ * Only status zero applies the saved values; status 17 also sets the shared
+ * status halfword before returning zero. Repair zero entries in two nine-word
+ * mapping rows from the original defaults, then copy each word to the active
+ * mapping. Preserve the first default-index reload after its source-index store.
+ * Copy both preset bytes, three settings words and four bytes, preserving 0x17A.
+ * RE_ORIGINAL_QUIRK: file contents and mapping indices are used without local
+ * bounds checks; reachable invalid inputs are not established.
+ * RE_UNKNOWN: complete storage, historical types/aliasing and input domains,
+ * zero-sentinel meaning, settings meanings, SDK status/output guarantees,
+ * partial writes and resource ownership/lifetimes. Resolve original SDK,
+ * caller and mapping/settings consumers before widening the draft access views.
+ * The draft retains observed effects but unrolls the inner loop four entries
+ * instead of two, multiplies the row stride and rematerializes shared addresses.
+ * Its frame is 56 bytes versus 64; 664 draft bytes differ from 588 native bytes.
+ * Historical source lowering remains unresolved. Retain original ASM until
+ * native instructions, serialized module and full ROM proof all agree. */
+#line 1976 "src/modules/selection.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00416FF4.s")
 
 #line 1978 "src/modules/selection.c"

@@ -3,7 +3,7 @@
 typedef struct UvBill_Exports_s {
     /* 0x0 */ void (*uvBillDestroy)(void);
     /* 0x4 */ void (*uvBillboardAttachChannelCallback)(s32);
-    /* 0x8 */ s32 (*func_uvbill_rom_004010B8)(f32, f32, f32, f32, f32, f32, s32, s32 **, f32 **,
+    /* 0x8 */ s32 (*uvBillboardCollectSegmentHits)(f32, f32, f32, f32, f32, f32, s32, s32 **, f32 **,
                                               Vec3F **);
     /* 0xC */ s32 (*uvBillboardIntersectsSphere)(s32, f32, f32, f32, f32);
     /* 0x10 */ s32 (*uvBillboardQuerySphere)(f32, f32, f32, f32, s32, s32 **);
