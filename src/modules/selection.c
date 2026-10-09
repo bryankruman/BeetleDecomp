@@ -1950,6 +1950,26 @@ void selectionRenderSharedSpriteWithState(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00406924.s")
 
+/* Clamp the signed shared selector to 0 through 6, resetting other values
+ * to zero. Store the SCENE lookup's returned word, conditionally wait for
+ * graphics, then release the shared texture-animation array. Reload the
+ * selector for each of three signed-halfword UVBT lookups and unload calls.
+ * Clear the shared object through DOBJ slot 0x40, then unload six UVMD words
+ * from 0x420D9C to the distinct 0x420DB4 boundary. Reload the sprite provider
+ * and signed handle for each of three state clears; reset only the last
+ * handle to -1. A fresh flag equal to one invokes the gated voice-0xE4 call.
+ * RE_UNKNOWN: selector/table producers and complete historical extents,
+ * provider/callback mutations and lifetimes, resource ownership/reference
+ * counts, object/sprite eligibility, flag meaning and historical types.
+ * Resolve through original callers, writers, callback consumers and
+ * allocation/reset/release paths. The readable draft also differs in three
+ * independent loop-setup scheduling words; historical source or new
+ * operation evidence plus complete instruction, serialized-record and
+ * packed-module/ROM equality are needed. Retain the original ASM.
+ * RE_ORIGINAL_QUIRK: the caller permits selector 6 while SCENE clamps it to
+ * 5; later lookups use fresh selectors without another range check. Sprite
+ * state clears use unchecked indexed addresses; reachable faults are unproved. */
+#line 1120 "src/modules/selection.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00406DC4.s")
 
 #line 1122 "src/modules/selection.c"

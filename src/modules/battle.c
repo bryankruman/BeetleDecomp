@@ -862,8 +862,43 @@ void battleResetNodeAndIncrementSecondCount(BattleNode_40733C *node) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_004073BC.s")
 
+/* Original Battle7740 looks up the object's loaded UVMD and optional +20
+ * pointer, captures config scalars 8/20, then measures/scales source+9D8.
+ * Add config C to the third component, invoke RUMBLE04, then PIECE0C/08.
+ * PIECE tag 3 consumes a promoted double, then word pairs 1/0, 5/3, 2/0
+ * and terminator 0. Keep the vector snapshot and later owner/handle reads.
+ * RE_UNKNOWN: complete input/model/config/source extents and types, units,
+ * handle/pattern-index domains, aliases and callback/module replacement
+ * lifetimes need original producers/callers; ownership and downstream
+ * action purpose are unproved. Retain the original null-pointer gates.
+ * Trial2591: native 428/draft 424 bytes, 93 differing positions, frame 112/104.
+ * Direct S0 config capture removes a native transfer; scalar homes and
+ * register/address/arithmetic scheduling differ. Both 13-record relocation
+ * lists retain identities but differ at later sites. Full native/provider/
+ * candidate review found no supported missing callback/width/reload fix.
+ * Historical declarations/storage/lowering remain unknown. Retain ASM;
+ * no draft types, headers, prototypes or source-shape variants accepted. */
+#line 358 "src/modules/battle.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00407740.s")
 
+/* Original Battle78EC returns the last state-1 forty-byte record satisfying
+ * strict distance < (incoming scalar + queried DOBJ property 7) / 2, or -1.
+ * Keep grouped single squared distance and MATH04's clamped sqrt, index
+ * reload after query, and signed count reload on every loop path.
+ * RE_ORIGINAL_QUIRK: output storage is not initialized; DOBJ20's signed
+ * upper-bound rejection leaves it unwritten. Preserve no fallback value.
+ * RE_UNKNOWN: handle/count/index guarantees, full record/table extents,
+ * units, aliases and callback/module replacement lifetimes need original
+ * producers/readers. No reachable unwritten-output failure is established.
+ * Trial2591: both 380 bytes, 66 differing words, same frame 120; property home
+ * SP108 becomes SP100, pre-added record cursors replace fixed-offset bases,
+ * and MULTU by 12 replaces shift/subtract/shift indexing. Explicit draft /2.0f
+ * becomes MUL.S .5 versus native DIV.S by 2; identical floating exceptions/NaN
+ * effects are unproved. Both ten-record lists differ in sites/order.
+ * Full review found no supported missing callback/width/count-reload fix.
+ * Historical storage/declarations/arithmetic lowering remain unknown.
+ * Retain ASM; no draft types, headers or source-shape variants accepted. */
+#line 360 "src/modules/battle.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_004078EC.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00407A68.s")

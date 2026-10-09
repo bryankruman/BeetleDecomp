@@ -379,53 +379,53 @@ u16 uvDobjGetModel(s32 objId) {
 
 void uvDobjProps(s32 objId, ...) {
     va_list args;
-    DObj *temp_s1;
-    f32 temp_fs0;
+    DObj *object; /* RE_UNKNOWN: object storage extent, aliases and lifetime need original allocators and export 0x1C callers. */
+    f32 scalarMultiplier;
     ParsedUVMD *uvmd;
-    s16 temp_v0;
+    s16 propertySelector; /* Consume a word, then narrow to signed 16 bits. RE_UNKNOWN: argument types, selector domains and zero termination need original callers and historical declarations. */
 
-    if (objId >= sDObjsCount) {
+    if (objId >= sDObjsCount) { /* RE_ORIGINAL_QUIRK: native checks only the signed upper bound. RE_UNKNOWN: negative-ID reachability needs original caller-domain evidence. */
         return;
     }
-    temp_s1 = &sDObjs[objId];
+    object = &sDObjs[objId];
     va_start(args, objId);
-    if (temp_s1->modelId == 0xFFFF) {
+    if (object->modelId == 0xFFFF) {
         PANIC;
         return;
     }
     while (TRUE) {
-        temp_v0 = va_arg(args, s32);
-        switch (temp_v0) {
+        propertySelector = va_arg(args, s32);
+        switch (propertySelector) {
             case 10:
-                temp_s1->unk7 = va_arg(args, s32);
+                object->unk7 = va_arg(args, s32);
                 break;
             case 1:
-                temp_fs0 = va_arg(args, f64);
-                uvmd = uvGetLoadedFile('UVMD', temp_s1->modelId);
-                temp_s1->unk10 = uvmd->unkC * temp_fs0;
+                scalarMultiplier = va_arg(args, f64);
+                uvmd = uvGetLoadedFile('UVMD', object->modelId); /* RE_UNKNOWN: lookup can return null, but the next read has no null gate; valid model IDs and resource lifetime need original loaders/callers. */
+                object->unk10 = uvmd->unkC * scalarMultiplier;
                 break;
             case 7:
-                temp_s1->unk10 = va_arg(args, f64);
+                object->unk10 = va_arg(args, f64);
                 break;
             case 2:
-                temp_s1->unk14 &= ~(1 << va_arg(args, s32));
+                object->unk14 &= ~(1 << va_arg(args, s32)); /* Preserve this and case 3 variable shifts. RE_UNKNOWN: C shift domains and historical types need original argument producers; native SLLV alone does not establish valid C inputs. */
                 break;
             case 3:
-                temp_s1->unk14 |= 1 << va_arg(args, s32);
+                object->unk14 |= 1 << va_arg(args, s32);
                 break;
             case 6:
-                temp_s1->unk14 = va_arg(args, s32);
+                object->unk14 = va_arg(args, s32);
                 break;
             case 4:
-                temp_s1->unk20 = va_arg(args, s32);
-                temp_s1->unk28 = va_arg(args, s32);
+                object->unk20 = va_arg(args, s32); /* Cases 4/5 store the first word before fetching the second. RE_UNKNOWN: word roles and pointee ownership need original consumers; do not infer them from callback-shaped uses. */
+                object->unk28 = va_arg(args, s32);
                 break;
             case 5:
-                temp_s1->unk24 = va_arg(args, s32);
-                temp_s1->unk2C = va_arg(args, s32);
+                object->unk24 = va_arg(args, s32);
+                object->unk2C = va_arg(args, s32);
                 break;
             default:
-                PANIC;
+                PANIC; /* Preserve native null store, then the loop backedge if control continues; the missing-model path instead returns. RE_UNKNOWN: error-path reachability needs original callers/runtime behavior. */
                 break;
             case 0:
                 return;
