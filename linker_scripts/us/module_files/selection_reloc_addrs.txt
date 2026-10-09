@@ -5279,7 +5279,7 @@ rom:0x21248 reloc:MIPS_32 symbol:selectionAdjustCheatTrackMusic
 rom:0x2124C reloc:MIPS_32 symbol:selectionAdjustCheatHandbreakPower
 rom:0x21250 reloc:MIPS_32 symbol:func_selection_00404B24
 rom:0x21254 reloc:MIPS_32 symbol:func_selection_00419BC8
-rom:0x21258 reloc:MIPS_32 symbol:func_selection_00419D54
+rom:0x21258 reloc:MIPS_32 symbol:selectionPrepareLocalizedCenteredBitmapMenu
 rom:0x2125C reloc:MIPS_32 symbol:selectionReleaseLanguageScreenAssets
 rom:0x21260 reloc:MIPS_32 symbol:func_selection_0041A208
 rom:0x21264 reloc:MIPS_32 symbol:func_selection_0041A210

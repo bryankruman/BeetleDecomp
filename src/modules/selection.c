@@ -770,7 +770,8 @@ void func_selection_00419384();
 void func_selection_00419B78();
 void func_selection_00419B9C();
 void func_selection_00419BC8();
-void func_selection_00419D54();
+void selectionPrepareLocalizedCenteredBitmapMenu(void);
+#line 687 "src/modules/selection.c"
 void selectionLatchMenuActionsWithRecordGuard();
 void func_selection_0041A210();
 void func_selection_0041A244();
@@ -3930,7 +3931,66 @@ void func_selection_00419B9C(void) {
 #line 2053 "src/modules/selection.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00419BC8.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00419D54.s")
+#line 2055 "src/modules/selection.c"
+/* Apply stored sound options and set the two original sound flags. Replace
+ * the current node's pointer at offset four and clear its first selected
+ * halfword through the freshly loaded pointer at offset eight. Reset and
+ * allocate the shared signed sprite ID, then load the original language-zero,
+ * one or two texture/bitmap asset sequence. Each recognized language assigns
+ * bitmap property nine; every path centers the sprite with signed dimension
+ * halves and properties two and three. Reload shared exports for each call.
+ * RE_ORIGINAL_QUIRK: allocation failure is stored as a halfword and used by
+ * subsequent calls without a local check. Other language words skip asset
+ * assignment but still query dimensions and set position. Reachability of
+ * invalid IDs or unsupported languages is unproved, not an established fault.
+ * RE_UNKNOWN: complete node/choice extents, historical declarations, valid
+ * language and sprite domains, asset meaning, callback mutations and resource
+ * ownership/lifetimes. Existing views describe only consumed offsets/calls.
+ * Resolve original callers, node producers and allocation-failure consumers
+ * before widening those contracts; exact native/serialized/packed-ROM proof
+ * is required before accepting the draft. */
+#line 2055 "src/modules/selection.c"
+void selectionPrepareLocalizedCenteredBitmapMenu(void) {
+    s32 halfWidth;
+    s32 halfHeight;
+
+    selectionApplySoundOptions();
+    ((SelectionMenuSoundExports *)gSndExports)->setSoundFlag(12);
+    ((SelectionMenuSoundExports *)gSndExports)->setSoundFlag(0xDB);
+    ((AgentLanguageExpressionMenu *)D_selection_00421D1C)->returnMenu =
+        (SelectionState2E98 *)&D_selection_00420104;
+    ((AgentLanguageExpressionMenu *)D_selection_00421D1C)->choices->selected = 0;
+    D_selection_00420DF8 = -1;
+    D_selection_00420DF8 = ((AgentTrackPreviewSpriteExports *)gUvSprtExports)->allocate();
+    switch (D_80025E64) {
+        case 0:
+            uvLoadFile(0x55565458, 9);
+            uvLoadFile(0x55565458, 8);
+            uvLoadFile(0x55564254, 26);
+            ((AgentTrackPreviewSpriteExports *)gUvSprtExports)->setProperties(
+                D_selection_00420DF8, 9, 26, 0);
+            break;
+        case 1:
+            uvLoadFile(0x55565458, 1446);
+            uvLoadFile(0x55565458, 8);
+            uvLoadFile(0x55564254, 82);
+            ((AgentTrackPreviewSpriteExports *)gUvSprtExports)->setProperties(
+                D_selection_00420DF8, 9, 82, 0);
+            break;
+        case 2:
+            uvLoadFile(0x55565458, 1445);
+            uvLoadFile(0x55565458, 1444);
+            uvLoadFile(0x55564254, 81);
+            ((AgentTrackPreviewSpriteExports *)gUvSprtExports)->setProperties(
+                D_selection_00420DF8, 9, 81, 0);
+            break;
+    }
+    halfWidth = ((AgentTrackPreviewSpriteExports *)gUvSprtExports)->getWidth(D_selection_00420DF8) / 2;
+    halfHeight = ((AgentTrackPreviewSpriteExports *)gUvSprtExports)->getHeight(D_selection_00420DF8) / 2;
+    ((AgentTrackPreviewSpriteExports *)gUvSprtExports)->setProperties(
+        D_selection_00420DF8, 2, 160 - halfWidth, 120 - halfHeight, 3, 1, 0);
+}
+#line 2056 "src/modules/selection.c"
 
 #line 2057 "src/modules/selection.c"
 /* Clear the original shared DATA byte, then query MENU slot 0x08 with

@@ -3222,3 +3222,4 @@ selectionUpdateMenuAndScheduleLatchedActions = 0x0041A7D0; // type:func
 selectionApplyEightObjectPropertyFlagsForChoice = 0x0040B608; // type:func
 selectionPrepareBitmapAndSharedText = 0x0040A5E0; // type:func
 selectionDrawMeasuredMenuLabel = 0x00410E78; // type:func
+selectionPrepareLocalizedCenteredBitmapMenu = 0x00419D54; // type:func

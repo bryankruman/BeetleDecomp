@@ -34,8 +34,8 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **791** assembly references:
-**749** ordinary functions and **42** entrypoints, with **716,088** known instruction bytes
+matching C are preserved with `#line`. The current ledger has **790** assembly references:
+**748** ordinary functions and **42** entrypoints, with **715,476** known instruction bytes
 and no unknown sizes. The broader name audit still finds **290** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
@@ -3088,10 +3088,19 @@ Totals: 409 further recoveries after the 225 upstream ordinary imports, plus 138
 Frozen wave `2950-older-dobj-query-contracts-2950` and `accepted-older-dobj-query-contracts-2950` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 409 further readable functions
+## Historical accepted checkpoint — 409 further readable functions
 
 One existing six-plane perspective matrix builder gains a purpose comment, destination/near/far parameter roles, and a consistent function/export/caller name. Preserve all float types, formula association, chained zeros, original stores and historical empty matching scaffold; caller clip-plane, FP, storage and historical-source evidence remain explicit RE_UNKNOWN debt. Full49 original native/reference/candidate words must be literally equal, with zero ordered ELF records and two complete empty compiler logs. Full1065 FMTX executable logical rows and all header/Channel/Environment coordinates remain exact under scoped roles/comments and global name/member inverses. Exactly one slot50 field and two caller member identifiers change; public offsets/types remain unchanged. Append one proven semantic alias; normal extraction must regenerate two derived references. One older treatment, zero recoveries. Parent normal extraction, three affected original packed modules, fresh original ROM, all1034 source pins, complete unchanged791 remaining/data/per-source dictionaries, address291 minus only1F74, and fresh uncertainty index remain mandatory.
 
 Totals: 409 further recoveries after the 225 upstream ordinary imports, plus 1384 existing C semantic cleanups. Current ledger: 791 assembly references = 749 ordinary + 42 entrypoints; 716,088 known remaining instruction bytes; zero unknown sizes; 290 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `2966-older-fmtx-perspective-contracts-2966` and `accepted-older-fmtx-perspective-contracts-2966` verify real translation-unit instructions/full relocations, 3 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 410 further readable functions
+
+Recover the612-byte localized centered bitmap-menu initializer with all153 instructions exact. Preserve stored sound flags, fresh current-node and export reloads, original language-dependent asset sequences, signed dimension halves and unchecked allocation-result behavior with explicit unknown domains/lifetimes. All34 ELF dictionaries agree by site; existing seven text-sort rows reproduce the original native localJAL and three signed address pairs, while all27 undefined kernel records independently resolve original words and canonical maps. No body/type/header/readonly/text-sort change. Rename only the target definition and forward declaration, append one semantic symbol alias, and canonically rename one independently proved original DATA MIPS_32 reference. Normal extraction, entire original packed Selection including DATA/RELA, fresh original ROM, all1034 source pins, complete remaining/data/address/per-source bridge minus only612-byte target and uncertainty index are mandatory before acceptance.
+
+Totals: 410 further recoveries after the 225 upstream ordinary imports, plus 1384 existing C semantic cleanups. Current ledger: 790 assembly references = 748 ordinary + 42 entrypoints; 715,476 known remaining instruction bytes; zero unknown sizes; 290 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `2967-selection-localized-centered-bitmap-contracts-2967` and `accepted-selection-localized-centered-bitmap-contracts-2967` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
