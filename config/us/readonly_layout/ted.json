@@ -1,26 +1,63 @@
 {
-  "version": 1,
+  "monolithic_assembly": "asm/us/data/modules/ted.rodata.s",
+  "witness_sha256": "b7052304338beec4ffed64574904f20640614ff440d3fd36f88d90a5337a24c1",
+  "witness": "tools/readonly_layout/ted.original-rodata.s",
+  "begin": 4222464,
   "module": "ted",
   "source": "src/modules/ted.c",
-  "witness": "tools/readonly_layout/ted.original-rodata.s",
-  "witness_sha256": "b7052304338beec4ffed64574904f20640614ff440d3fd36f88d90a5337a24c1",
   "readonly_sha256": "77b0426436b4d56aaa015124af37393fcf5ffd8035dd9b0bfc96f7b4561e840e",
-  "begin": 4222464,
-  "table_begin": 4223252,
-  "table_end": 4223284,
   "end": 4223392,
-  "table_label": "D_ted_00407114",
-  "owner_original_symbol": "func_ted_00401A8C",
-  "owner_c_symbol": "tedCreateTaskEditorGroupsAndDispatchSelector",
-  "host_symbol": "func_ted_00401C6C",
-  "host_assembly": "asm/us/nonmatchings/modules/ted/func_ted_00401C6C.s",
-  "host_sha256": "bba7c044b2c8480c0633ada262d8a4f9621c6bafb8cb6bbcfeaef4db9ea954e9",
-  "host_bytes": 1716,
   "prefix_assembly": "asm/us/data/modules/ted.rodata-prefix.s",
-  "monolithic_assembly": "asm/us/data/modules/ted.rodata.s",
-  "duplicate_assembly": "asm/us/nonmatchings/modules/ted/D_ted_00407114.s",
-  "owner_address": 4201100,
-  "owner_bytes": 480,
-  "owner_instruction_sha256": "2de6787e9ae80d700c79e2edc7963dd12cf1a847573c8b27ebd8c1f3270e11d5",
-  "owner_asm_normalized_sha256": "d8bc750c44b7a8cf4629b231df14c1079b225586dc9d125c395757e73c10a205"
+  "version": 3,
+  "tables": [
+    {
+      "owner_instruction_sha256": "2de6787e9ae80d700c79e2edc7963dd12cf1a847573c8b27ebd8c1f3270e11d5",
+      "owner_bytes": 480,
+      "duplicate_assembly": "asm/us/nonmatchings/modules/ted/D_ted_00407114.s",
+      "table_begin": 4223252,
+      "table_label": "D_ted_00407114",
+      "owner_original_symbol": "func_ted_00401A8C",
+      "owner_asm_normalized_sha256": "d8bc750c44b7a8cf4629b231df14c1079b225586dc9d125c395757e73c10a205",
+      "owner_c_symbol": "tedCreateTaskEditorGroupsAndDispatchSelector",
+      "table_end": 4223284,
+      "owner_address": 4201100
+    },
+    {
+      "table_begin": 4223348,
+      "table_end": 4223368,
+      "table_label": "D_ted_00407174",
+      "owner_original_symbol": "func_ted_0040607C",
+      "owner_c_symbol": "tedUpdateSelectedItemLabel",
+      "duplicate_assembly": "asm/us/nonmatchings/modules/ted/D_ted_00407174.s",
+      "owner_address": 4219004,
+      "owner_bytes": 252,
+      "owner_instruction_sha256": "853f266f01ea032aa84e95bca7ca9c6ca6822284fc97f7ea5189bcd5c497141b",
+      "owner_asm_normalized_sha256": "156be6450a29cd722d26be6da201a1f611ee385545407ee927f6251b9361a837"
+    },
+    {
+      "table_begin": 4223368,
+      "table_end": 4223392,
+      "table_label": "D_ted_00407188",
+      "owner_original_symbol": "func_ted_004069F0",
+      "owner_c_symbol": "tedUpdateSelectedColoredLetterLabel",
+      "duplicate_assembly": "asm/us/nonmatchings/modules/ted/D_ted_00407188.s",
+      "owner_address": 4221424,
+      "owner_bytes": 276,
+      "owner_instruction_sha256": "80648da693743a9bac712be4a6ffbaae6d97b420dfbec556b2aec6639cb7bc9f",
+      "owner_asm_normalized_sha256": "89eb6cb0db13789b0fb16ca89202fd1a83bf73c06ee333a66d9376e2d9c289ee"
+    }
+  ],
+  "late_spans": [
+    {
+      "begin": 4223284,
+      "end": 4223348,
+      "host_symbol": "func_ted_00401C6C",
+      "host_address": 4201580,
+      "host_assembly": "asm/us/nonmatchings/modules/ted/func_ted_00401C6C.s",
+      "host_sha256": "bba7c044b2c8480c0633ada262d8a4f9621c6bafb8cb6bbcfeaef4db9ea954e9",
+      "host_bytes": 1716
+    },
+    null,
+    null
+  ]
 }

@@ -518,3 +518,5 @@ tedResetPoolWithEnvPlnLabel = 0x00403830; // type:func
 tedResetPoolWithChkPtLabel = 0x00403874; // type:func
 tedReadVersionThreeFile = 0x00403E90; // type:func
 tedCreateTaskEditorGroupsAndDispatchSelector = 0x00401A8C; // type:func
+tedUpdateSelectedItemLabel = 0x40607C;
+tedUpdateSelectedColoredLetterLabel = 0x4069F0;

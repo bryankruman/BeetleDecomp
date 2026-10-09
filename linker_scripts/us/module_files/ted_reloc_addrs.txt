@@ -498,8 +498,8 @@ rom:0x3490 reloc:MIPS_HI16 symbol:D_ted_0040727C
 rom:0x3494 reloc:MIPS_LO16 symbol:D_ted_0040727C
 rom:0x349C reloc:MIPS_HI16 symbol:D_ted_0040727C
 rom:0x34A4 reloc:MIPS_LO16 symbol:D_ted_0040727C
-rom:0x34CC reloc:MIPS_HI16 symbol:func_ted_0040607C
-rom:0x34D0 reloc:MIPS_LO16 symbol:func_ted_0040607C
+rom:0x34CC reloc:MIPS_HI16 symbol:tedUpdateSelectedItemLabel
+rom:0x34D0 reloc:MIPS_LO16 symbol:tedUpdateSelectedItemLabel
 rom:0x34F4 reloc:MIPS_HI16 symbol:D_ted_00406F84
 rom:0x34F8 reloc:MIPS_LO16 symbol:D_ted_00406F84
 rom:0x3558 reloc:MIPS_HI16 symbol:D_ted_004072B0
@@ -534,8 +534,8 @@ rom:0x37D8 reloc:MIPS_HI16 symbol:D_ted_00407284
 rom:0x37DC reloc:MIPS_LO16 symbol:D_ted_00407284
 rom:0x37E4 reloc:MIPS_HI16 symbol:D_ted_00407284
 rom:0x37EC reloc:MIPS_LO16 symbol:D_ted_00407284
-rom:0x3814 reloc:MIPS_HI16 symbol:func_ted_004069F0
-rom:0x3818 reloc:MIPS_LO16 symbol:func_ted_004069F0
+rom:0x3814 reloc:MIPS_HI16 symbol:tedUpdateSelectedColoredLetterLabel
+rom:0x3818 reloc:MIPS_LO16 symbol:tedUpdateSelectedColoredLetterLabel
 rom:0x383C reloc:MIPS_HI16 symbol:D_ted_00406FB0
 rom:0x3840 reloc:MIPS_LO16 symbol:D_ted_00406FB0
 rom:0x3894 reloc:MIPS_HI16 symbol:D_ted_004072B0

@@ -128,102 +128,104 @@ void uvEnvBuildDepthFogLookup(f32 rampStart, f32 intensity, u16* lookup, ParsedU
 }
 #line 58 "src/modules/uvenv_rom.c"
 
+/* Apply a zero-terminated property stream to a loaded environment, preserving fog updates, lookup allocation and numeric conversions. */
+#line 59 "src/modules/uvenv_rom.c"
 void uvEnvProps(s32 envId, ...) {
-    ParsedUVEN *var_a3;
+    ParsedUVEN *environment;
     va_list args;
-    s32 pad;
-    f32 temp_fa0;
-    f32 temp_fa1;
-    u32 temp_v0_2;
-    void *var_a2;
+    s32 historicalUnusedPad; /* RE_UNKNOWN: retain unused storage; the historical declaration is unproved. */
+    f32 firstControl;
+    f32 secondControl;
+    u32 property;
+    void *lookup;
 
-    var_a3 = uvGetLoadedFile('UVEN', envId);
+    environment = uvGetLoadedFile('UVEN', envId);
 
-    if (var_a3 == NULL) {
+    if (environment == NULL) {
         return;
     }
-    va_start(args, envId);
+    va_start(args, envId); /* RE_UNKNOWN: argument promotions, termination and caller storage domains need caller proof. */
     while (TRUE) {  
-        temp_v0_2 = va_arg(args, s32);
-        switch (temp_v0_2) {
+        property = va_arg(args, s32);
+        switch (property) { /* Unsupported selectors consume only their selector and continue; selector 0 returns without va_end. */
             case 2:
-                temp_fa0 = va_arg(args, f64);
-                temp_fa1 = va_arg(args, f64);
-                if (!(temp_fa0 > 1.0f) && !(temp_fa0 < 0.0f)) {
-                    sUvGfxStateExports->uvGfxSetFogParameters(temp_fa0, temp_fa1);
-                    if ((temp_fa0 == 0.0f) || (temp_fa0 == 1.0f)) {
-                        var_a3->unk1C = 0;
+                firstControl = va_arg(args, f64);
+                secondControl = va_arg(args, f64);
+                if (!(firstControl > 1.0f) && !(firstControl < 0.0f)) { /* RE_ORIGINAL_QUIRK: NaN bypasses both range comparisons; preserve the original guard. */
+                    sUvGfxStateExports->uvGfxSetFogParameters(firstControl, secondControl); /* Keep this call before field writes; RE_UNKNOWN: environment/display-list storage aliases and lifetimes need caller proof. */
+                    if ((firstControl == 0.0f) || (firstControl == 1.0f)) {
+                        environment->unk1C = 0;
                     } else {
-                        var_a3->unk1C = 1;
-                        var_a3->unk1D = 0;
-                        var_a3->unk3C = temp_fa0;
-                        var_a3->unk40 = temp_fa1;
+                        environment->unk1C = 1;
+                        environment->unk1D = 0;
+                        environment->unk3C = firstControl;
+                        environment->unk40 = secondControl;
                     }
                 }
                 break;
             case 3:
-                temp_fa0 = va_arg(args, f64);
-                temp_fa1 = va_arg(args, f64);
-                if (!(temp_fa0 > 1.0f) && !(temp_fa0 < 0.0f)) {
-                    if ((temp_fa0 != 0.0f) && (temp_fa0 != 1.0f)) {
-                        var_a2 = var_a3->unk44;
-                        var_a3->unk3C = temp_fa0;
-                        var_a3->unk40 = temp_fa1;
-                        var_a3->unk1D = 1;
-                        var_a3->unk1C = 0;
-                        if (var_a2 == NULL) {
-                            var_a2 = _uvMemAlloc(0x200U, 8U);
-                            var_a3->unk44 = var_a2;
+                firstControl = va_arg(args, f64);
+                secondControl = va_arg(args, f64);
+                if (!(firstControl > 1.0f) && !(firstControl < 0.0f)) { /* RE_ORIGINAL_QUIRK: NaN bypasses both range comparisons; preserve the original guard. */
+                    if ((firstControl != 0.0f) && (firstControl != 1.0f)) {
+                        lookup = environment->unk44;
+                        environment->unk3C = firstControl;
+                        environment->unk40 = secondControl;
+                        environment->unk1D = 1;
+                        environment->unk1C = 0;
+                        if (lookup == NULL) {
+                            lookup = _uvMemAlloc(0x200U, 8U); /* RE_UNKNOWN: allocation success, ownership and lookup lifetime need allocator/caller proof; keep publication even on failure. */
+                            environment->unk44 = lookup;
                         }
-                        uvEnvBuildDepthFogLookup(temp_fa0, temp_fa1, var_a2, var_a3);
+                        uvEnvBuildDepthFogLookup(firstControl, secondControl, lookup, environment);
                     } else {
-                        var_a3->unk1D = 0;
+                        environment->unk1D = 0;
                     }
                 }
                 break;
             case 5:
-                var_a3->unkC = va_arg(args, f64) * 255.0;
-                var_a3->unkD = va_arg(args, f64) * 255.0;
-                var_a3->unkE = va_arg(args, f64) * 255.0;
+                environment->unkC = va_arg(args, f64) * 255.0; /* RE_UNKNOWN: finite/range and floating-point conversion contracts remain unproved; preserve byte narrowing. */
+                environment->unkD = va_arg(args, f64) * 255.0;
+                environment->unkE = va_arg(args, f64) * 255.0;
                 break;
             case 1:
-                var_a3->unk3 = va_arg(args, f64) * 255.0;
-                var_a3->unk4 = va_arg(args, f64) * 255.0;
-                var_a3->unk5 = va_arg(args, f64) * 255.0;
+                environment->unk3 = va_arg(args, f64) * 255.0;
+                environment->unk4 = va_arg(args, f64) * 255.0;
+                environment->unk5 = va_arg(args, f64) * 255.0;
                 break;
             case 4:
-                var_a3->unkF = va_arg(args, f64) * 255.0;
-                var_a3->unk10 = va_arg(args, f64) * 255.0;
-                var_a3->unk11 = va_arg(args, f64) * 255.0;
+                environment->unkF = va_arg(args, f64) * 255.0;
+                environment->unk10 = va_arg(args, f64) * 255.0;
+                environment->unk11 = va_arg(args, f64) * 255.0;
                 break;
             case 8:
-                var_a3->unk6 = va_arg(args, f64) * 255.0;
-                var_a3->unk7 = va_arg(args, f64) * 255.0;
-                var_a3->unk8 = va_arg(args, f64) * 255.0;
+                environment->unk6 = va_arg(args, f64) * 255.0;
+                environment->unk7 = va_arg(args, f64) * 255.0;
+                environment->unk8 = va_arg(args, f64) * 255.0;
                 break;
             case 9:
-                var_a3->unk9 = va_arg(args, f64) * 255.0;
-                var_a3->unkA = va_arg(args, f64) * 255.0;
-                var_a3->unkB = va_arg(args, f64) * 255.0;
+                environment->unk9 = va_arg(args, f64) * 255.0;
+                environment->unkA = va_arg(args, f64) * 255.0;
+                environment->unkB = va_arg(args, f64) * 255.0;
                 break;
             case 6:
-                var_a3->unk4C = (u8)(va_arg(args, f64) * 255.0);
-                var_a3->unk50 = (u8)(va_arg(args, f64) * 255.0);
-                var_a3->unk54 = (u8)(va_arg(args, f64) * 255.0);
+                environment->unk4C = (u8)(va_arg(args, f64) * 255.0); /* Preserve double-to-byte quantization before storing the float field. */
+                environment->unk50 = (u8)(va_arg(args, f64) * 255.0);
+                environment->unk54 = (u8)(va_arg(args, f64) * 255.0);
                 break;
             case 10:
-                var_a3->unk0 = va_arg(args, f64) * 255.0;
-                var_a3->unk1 = va_arg(args, f64) * 255.0;
-                var_a3->unk2 = va_arg(args, f64) * 255.0;
+                environment->unk0 = va_arg(args, f64) * 255.0;
+                environment->unk1 = va_arg(args, f64) * 255.0;
+                environment->unk2 = va_arg(args, f64) * 255.0;
                 break;
             case 7:
-                var_a3->unk48 = va_arg(args, f64);
+                environment->unk48 = va_arg(args, f64);
                 break;
             case 12:
-                var_a3->unk58 = va_arg(args, s32);
+                environment->unk58 = va_arg(args, s32); /* Preserve the byte store at +0x58. */
                 break;
             case 13:
-                var_a3->unk2E = va_arg(args, s32);
+                environment->unk2E = va_arg(args, s32); /* Preserve the distinct byte store at +0x2E. */
                 break;
             case 0:
                 return;
@@ -232,97 +234,99 @@ void uvEnvProps(s32 envId, ...) {
     }
 }
 
+/* Read environment properties into a zero-terminated output stream, preserving captured pairs, fresh model-table reads and duplicate selectors. */
+#line 163 "src/modules/uvenv_rom.c"
 void uvEnvGetProps(s32 envId, ...) {
     va_list args;
-    ParsedUVEN *parsedUvEnv;
-    f32 var_fa0;
-    f32 var_fv1;
-    s32 i;
-    u32 prop;
-    s32 *modelIdsPtr;
+    ParsedUVEN *environment;
+    f32 secondControl;
+    f32 firstControl;
+    s32 modelIndex;
+    u32 property;
+    s32 *modelIds;
 
-    parsedUvEnv = uvGetLoadedFile('UVEN', envId);
-    va_start(args, envId);
-    if (parsedUvEnv == NULL) {
-        PANIC;
+    environment = uvGetLoadedFile('UVEN', envId);
+    va_start(args, envId); /* RE_UNKNOWN: output capacities, aliasing, argument promotions and stream termination need caller proof. */
+    if (environment == NULL) {
+        PANIC; /* RE_ORIGINAL_QUIRK: a missing file reaches PANIC before return; preserve the original failure path. */
         return;
     }
 
     while (TRUE) {
-        prop = va_arg(args, s32);
-        switch (prop) {
+        property = va_arg(args, s32);
+        switch (property) { /* Unsupported selectors, including 13, consume only their selector and continue. */
             case 2:
-                if (parsedUvEnv->unk1C != 0) {
-                    var_fv1 = parsedUvEnv->unk3C;
-                    var_fa0 = parsedUvEnv->unk40;
+                if (environment->unk1C != 0) { /* Capture both control values before sequential output stores; preserve possible output alias effects. */
+                    firstControl = environment->unk3C;
+                    secondControl = environment->unk40;
                 } else {
-                    var_fv1 = 0.0f;
-                    var_fa0 = 0.0f;
+                    firstControl = 0.0f;
+                    secondControl = 0.0f;
                 }
-                *va_arg(args, f32*) = var_fv1;
-                *va_arg(args, f32*) = var_fa0;
+                *va_arg(args, f32*) = firstControl;
+                *va_arg(args, f32*) = secondControl;
                 break;
             case 3:
-                if (parsedUvEnv->unk1D != 0) {
-                    var_fv1 = parsedUvEnv->unk3C;
-                    var_fa0 = parsedUvEnv->unk40;
+                if (environment->unk1D != 0) {
+                    firstControl = environment->unk3C;
+                    secondControl = environment->unk40;
                 } else {
-                    var_fv1 = 0.0f;
-                    var_fa0 = 0.0f;
+                    firstControl = 0.0f;
+                    secondControl = 0.0f;
                 }
-                *va_arg(args, f32*) = var_fv1;
-                *va_arg(args, f32*) = var_fa0;
+                *va_arg(args, f32*) = firstControl;
+                *va_arg(args, f32*) = secondControl;
                 break;
             case 11:
-                *va_arg(args, s32*) = parsedUvEnv->modelCount;
-                modelIdsPtr = va_arg(args, s32*);
-                for (i = 0; i < parsedUvEnv->modelCount; i++) {
-                    modelIdsPtr[i] = parsedUvEnv->modelTable[i].modelId;
+                *va_arg(args, s32*) = environment->modelCount; /* Publish the count first, then freshly read the count/table during copying; RE_UNKNOWN: output extent and mutation domains need caller proof. */
+                modelIds = va_arg(args, s32*); /* Copy each unsigned halfword model ID into a full output word. */
+                for (modelIndex = 0; modelIndex < environment->modelCount; modelIndex++) {
+                    modelIds[modelIndex] = environment->modelTable[modelIndex].modelId;
                 }
                 break;
             case 1:
-                *va_arg(args, f32*) = parsedUvEnv->unk3 * 0.0039215684f;
-                *va_arg(args, f32*) = (parsedUvEnv->unk4 * 0.0039215684f);
-                *va_arg(args, f32*) = (parsedUvEnv->unk5 * 0.0039215684f);
+                *va_arg(args, f32*) = environment->unk3 * 0.0039215684f;
+                *va_arg(args, f32*) = (environment->unk4 * 0.0039215684f);
+                *va_arg(args, f32*) = (environment->unk5 * 0.0039215684f);
                 break;
             case 5:
-                *va_arg(args, f32*) = parsedUvEnv->unkC * 0.0039215684f;
-                *va_arg(args, f32*) = (parsedUvEnv->unkD * 0.0039215684f);
-                *va_arg(args, f32*) = (parsedUvEnv->unkE * 0.0039215684f);
+                *va_arg(args, f32*) = environment->unkC * 0.0039215684f;
+                *va_arg(args, f32*) = (environment->unkD * 0.0039215684f);
+                *va_arg(args, f32*) = (environment->unkE * 0.0039215684f);
                 break;
             case 4:
-                *va_arg(args, f32*) = parsedUvEnv->unkF * 0.0039215684f;
-                *va_arg(args, f32*) = (parsedUvEnv->unk10 * 0.0039215684f);
-                *va_arg(args, f32*) = (parsedUvEnv->unk11 * 0.0039215684f);
+                *va_arg(args, f32*) = environment->unkF * 0.0039215684f;
+                *va_arg(args, f32*) = (environment->unk10 * 0.0039215684f);
+                *va_arg(args, f32*) = (environment->unk11 * 0.0039215684f);
                 break;
             case 8:
-                *va_arg(args, f32*) = parsedUvEnv->unk6 * 0.0039215684f;
-                *va_arg(args, f32*) = (parsedUvEnv->unk7 * 0.0039215684f);
-                *va_arg(args, f32*) = (parsedUvEnv->unk8 * 0.0039215684f);
+                *va_arg(args, f32*) = environment->unk6 * 0.0039215684f;
+                *va_arg(args, f32*) = (environment->unk7 * 0.0039215684f);
+                *va_arg(args, f32*) = (environment->unk8 * 0.0039215684f);
                 break;
             case 6:
-                *va_arg(args, f32*) = parsedUvEnv->unk4C;
-                *va_arg(args, f32*) = parsedUvEnv->unk50;
-                *va_arg(args, f32*) = parsedUvEnv->unk54;
+                *va_arg(args, f32*) = environment->unk4C;
+                *va_arg(args, f32*) = environment->unk50;
+                *va_arg(args, f32*) = environment->unk54;
                 break;
             case 9:
-                *va_arg(args, f32*) = parsedUvEnv->unk9 * 0.0039215684f;
-                *va_arg(args, f32*) = (parsedUvEnv->unkA * 0.0039215684f);
-                *va_arg(args, f32*) = (parsedUvEnv->unkB * 0.0039215684f);
+                *va_arg(args, f32*) = environment->unk9 * 0.0039215684f;
+                *va_arg(args, f32*) = (environment->unkA * 0.0039215684f);
+                *va_arg(args, f32*) = (environment->unkB * 0.0039215684f);
                 break;
             case 10:
-                *va_arg(args, f32*) = parsedUvEnv->unk0 * 0.0039215684f;
-                *va_arg(args, f32*) = (parsedUvEnv->unk1 * 0.0039215684f);
-                *va_arg(args, f32*) = (parsedUvEnv->unk2 * 0.0039215684f);
+                *va_arg(args, f32*) = environment->unk0 * 0.0039215684f;
+                *va_arg(args, f32*) = (environment->unk1 * 0.0039215684f);
+                *va_arg(args, f32*) = (environment->unk2 * 0.0039215684f);
                 break;
             case 7:
-                *va_arg(args, f32*) = parsedUvEnv->unk48;
+                *va_arg(args, f32*) = environment->unk48;
                 break;
             case 12:
-                *va_arg(args, s32*) = parsedUvEnv->unk58;
+                *va_arg(args, s32*) = environment->unk58;
                 break;
-            case 14:
-                *va_arg(args, s32*) = parsedUvEnv->unk58;
+            case 14: /* RE_ORIGINAL_QUIRK: selectors 12 and 14 both read byte +0x58; keep the duplicate mapping. */
+                *va_arg(args, s32*) = environment->unk58;
                 break;
             case 0:
                 return;
@@ -436,198 +440,200 @@ void uvEnvApplyDepthFogOverlay(s32 slot) {
 }
 #line 350 "src/modules/uvenv_rom.c"
 
-void _uvEnvDraw(s32 arg0) {
-    ParsedUVMD *parsedUvMD;
-    ParsedUVEN *var_s6;
-    f32 temp_fa0;
-    f32 temp_fv0;
-    f32 temp_fv1;
-    u8 temp_s2;
-    f32 sp214;
-    f32 sp210;
-    Gfx **gdl;
-    f32 var_fv0;
-    s32 temp_s0;
-    Vec3F sp1F8;
-    f32 sp1F4;
-    f32 sp1F0;
-    f32 sp1EC;
-    f32 sp1E8;
-    f32 sp1E4;
-    f32 sp1E0;
-    Mtx4F sp1A0;
-    Mtx4F sp160;
-    Mtx4F sp120;
-    s32 sp11C;
-    s32 var_a0;
-    s32 sp114;
-    Mtx4F spD4;
-    uvModelLOD *modLod;
-    s32 i;
-    s32 j;
+/* Draw the environment assigned to a channel using model flags, threshold bands, temporary matrices and saved graphics-state words. */
+#line 351 "src/modules/uvenv_rom.c"
+void _uvEnvDraw(s32 channel) {
+    ParsedUVMD *model;
+    ParsedUVEN *environment;
+    f32 secondSideGap;
+    f32 reciprocalWord10;
+    f32 firstSideGap;
+    u8 modelFlags;
+    f32 fogFirstControl;
+    f32 fogSecondControl;
+    Gfx **displayList;
+    f32 axisGap;
+    s32 environmentFileId;
+    Vec3F channelVector;
+    f32 projectionInput0;
+    f32 projectionInput1;
+    f32 projectionInput3;
+    f32 projectionInput2;
+    f32 projectionInput4;
+    f32 unusedProjectionInput5;
+    Mtx4F modelMatrix;
+    Mtx4F channelMatrix;
+    Mtx4F projectionMatrix;
+    s32 requestedModelCount;
+    s32 bandIndex;
+    s32 filledBackground;
+    Mtx4F translatedMatrix;
+    uvModelLOD *lod;
+    s32 modelIndex;
+    s32 lodOrStateIndex;
 
-    gdl = sUvGfxMgrExports->uvGetDisplayListHead();
-    temp_s0 = D_uvenv_rom_00403C08[arg0];
-    sp114 = 0;
-    if (D_uvenv_rom_00403C04 != 0) {
+    displayList = sUvGfxMgrExports->uvGetDisplayListHead(); /* RE_UNKNOWN: display-list capacity, ownership and lifetime need producer/caller proof. */
+    environmentFileId = D_uvenv_rom_00403C08[channel]; /* RE_ORIGINAL_QUIRK: read the assignment before the upper-bound check; RE_UNKNOWN: negative/index domains need caller proof. */
+    filledBackground = 0;
+    if (D_uvenv_rom_00403C04 != 0) { /* The disabled path fills black and returns before checking the channel bound. */
         sUvGfxMgrExports->uvGfxFillRect(0U, 0U, 0U);
         return;
     }
-    if (arg0 >= D_uvenv_rom_00403C0C) {
+    if (channel >= D_uvenv_rom_00403C0C) {
         return;
     }
 
-    sUvChannel_Exports->uvChannelGetProperties(arg0, 7, &sp1F8, 0);
-    if (temp_s0 == 0xFFFF) {
-        var_s6 = NULL;
+    sUvChannel_Exports->uvChannelGetProperties(channel, 7, &channelVector, 0);
+    if (environmentFileId == 0xFFFF) {
+        environment = NULL;
     } else {
-        var_s6 = uvGetLoadedFile('UVEN', temp_s0);
+        environment = uvGetLoadedFile('UVEN', environmentFileId);
     }
-    if (var_s6 == NULL) {
+    if (environment == NULL) {
         return;
     }
 
-    if (var_s6->unk5C != NULL) {
-        var_s6->unk5C();
+    if (environment->unk5C != NULL) {
+        environment->unk5C(); /* RE_UNKNOWN: callback mutation/reentry and imported-file lifetime remain unproved; reload fields after the call. */
     }
     
-    if (var_s6->unk1C != 0) {
-        sp214 = var_s6->unk3C;
-        sp210 = var_s6->unk40;
+    if (environment->unk1C != 0) {
+        fogFirstControl = environment->unk3C;
+        fogSecondControl = environment->unk40;
     } else {
-        sp214 = 0.0f;
-        sp210 = 0.0f;
+        fogFirstControl = 0.0f;
+        fogSecondControl = 0.0f;
     }
-    if (var_s6->unk2E != 0) {
-        sUvGfxMgrExports->uvGfxFillRect(var_s6->unk0, var_s6->unk1, var_s6->unk2);
-        sp114 = 1;
+    if (environment->unk2E != 0) {
+        sUvGfxMgrExports->uvGfxFillRect(environment->unk0, environment->unk1, environment->unk2);
+        filledBackground = 1;
     }
 
-    gDPSetFogColor(gdl[0]++, var_s6->unk3, var_s6->unk4, var_s6->unk5, 0xFF);
-    if (var_s6->unk58 != 0) {
-        sp11C = var_s6->modelCount;
+    gDPSetFogColor(displayList[0]++, environment->unk3, environment->unk4, environment->unk5, 0xFF);
+    if (environment->unk58 != 0) {
+        requestedModelCount = environment->modelCount;
     } else {
-        sp11C = 0;
+        requestedModelCount = 0;
     }
 
-    for (i = 0; i != sp11C; i++) {
-        if (i == 0) {
-            gSPClipRatio(gdl[0]++, FRUSTRATIO_1);
+    for (modelIndex = 0; modelIndex != requestedModelCount; modelIndex++) { /* Use the captured byte count; RE_UNKNOWN: model-table extent and count domains need producer/caller proof. */
+        if (modelIndex == 0) {
+            gSPClipRatio(displayList[0]++, FRUSTRATIO_1);
         }
-        parsedUvMD = uvGetLoadedFile('UVMD', var_s6->modelTable[i].modelId);
-        if (parsedUvMD == NULL) {
+        model = uvGetLoadedFile('UVMD', environment->modelTable[modelIndex].modelId);
+        if (model == NULL) { /* RE_ORIGINAL_QUIRK: missing model returns before fog restoration and the post-draw callback. */
             return;
         }
 
-        temp_s2 = var_s6->modelTable[i].flag;
-        if ((temp_s2 & 2) && (var_s6->unk40 > 0.95) && (var_s6->unk1D != 0)) {
-            if (sp114 == 0) {
-                sUvGfxMgrExports->uvGfxFillRect(var_s6->unk3, var_s6->unk4, var_s6->unk5);
-                sp114 = 1;
+        modelFlags = environment->modelTable[modelIndex].flag;
+        if ((modelFlags & 2) && (environment->unk40 > 0.95) && (environment->unk1D != 0)) {
+            if (filledBackground == 0) {
+                sUvGfxMgrExports->uvGfxFillRect(environment->unk3, environment->unk4, environment->unk5);
+                filledBackground = 1;
             }
             continue;
         }
         
-        var_a0 = 0;
-        if (parsedUvMD->unk4 >= 2) {
-            uvModelLOD_inner sp9C;
-            f32 var_fa1;
-            var_fa1 = 0.0f;
-            for (j = 0; j < parsedUvMD->unk4; j++) {
-                if ((parsedUvMD->unk0[j].unk0)->unk4 == 0) {
+        bandIndex = 0;
+        if (model->unk4 >= 2) {
+            uvModelLOD_inner bounds; /* RE_UNKNOWN: bounds stay uninitialized if no populated band exists; prove that domain from assets/callers. */
+            f32 maximumGap;
+            maximumGap = 0.0f;
+            for (lodOrStateIndex = 0; lodOrStateIndex < model->unk4; lodOrStateIndex++) {
+                if ((model->unk0[lodOrStateIndex].unk0)->unk4 == 0) {
                     continue;
                 }
-                sp9C = (parsedUvMD->unk0[j].unk0)->unk8;
+                bounds = (model->unk0[lodOrStateIndex].unk0)->unk8;
                 break;
             }
-            temp_fv1 = sp9C.unk0 - sp1F8.x;
-            temp_fa0 = sp1F8.x - sp9C.unkC;
-            if (temp_fv1 < temp_fa0) {
-                var_fv0 = temp_fa0;
+            firstSideGap = bounds.unk0 - channelVector.x;
+            secondSideGap = channelVector.x - bounds.unkC;
+            if (firstSideGap < secondSideGap) {
+                axisGap = secondSideGap;
             } else {
-                var_fv0 = temp_fv1;
+                axisGap = firstSideGap;
             }
-            temp_fv1 = sp9C.unk4 - sp1F8.y;
-            temp_fa0 = sp1F8.y - sp9C.unk10;
-            if (var_fv0 > 0.0f) {
-                var_fa1 = var_fv0;
+            firstSideGap = bounds.unk4 - channelVector.y;
+            secondSideGap = channelVector.y - bounds.unk10;
+            if (axisGap > 0.0f) {
+                maximumGap = axisGap;
             }
-            if (temp_fv1 < temp_fa0) {
-                var_fv0 = temp_fa0;
+            if (firstSideGap < secondSideGap) {
+                axisGap = secondSideGap;
             } else {
-                var_fv0 = temp_fv1;
+                axisGap = firstSideGap;
             }
-            if (var_fa1 < var_fv0) {
-                var_fa1 = var_fv0;
+            if (maximumGap < axisGap) {
+                maximumGap = axisGap;
             }
-            temp_fv1 = sp9C.unk8 - sp1F8.z;
-            temp_fa0 = sp1F8.z - sp9C.unk14;
-            if (temp_fv1 < temp_fa0) {
-                var_fv0 = temp_fa0;
+            firstSideGap = bounds.unk8 - channelVector.z;
+            secondSideGap = channelVector.z - bounds.unk14;
+            if (firstSideGap < secondSideGap) {
+                axisGap = secondSideGap;
             } else {
-                var_fv0 = temp_fv1;
+                axisGap = firstSideGap;
             }
-            if (var_fa1 < var_fv0) {
-                var_fa1 = var_fv0;
+            if (maximumGap < axisGap) {
+                maximumGap = axisGap;
             }
-            var_a0 = sUvModelExports->uvModelFindThresholdBand(parsedUvMD, SQ(var_fa1));
-            if (var_a0 == 0xFF) {
+            bandIndex = sUvModelExports->uvModelFindThresholdBand(model, SQ(maximumGap)); /* Preserve per-axis comparison grouping and the squared threshold input; no distance convention is inferred. */
+            if (bandIndex == 0xFF) {
                 continue;
             }
-             // FAKE
+             // RE_UNKNOWN: retain the no-op matching scaffold; historical source form is unproved.
             if (1) {} 
         } else {
-            j = 1;
+            lodOrStateIndex = 1; /* RE_UNKNOWN: retain the historical matching assignment even though the next drawing loop resets this local. */
         }
         
-        modLod = parsedUvMD->unk0[var_a0].unk0;
-        if (temp_s2 & 4) {
-            sUvGfxStateExports->uvGfxSetFogParameters(sp214, sp210);
+        lod = model->unk0[bandIndex].unk0;
+        if (modelFlags & 4) {
+            sUvGfxStateExports->uvGfxSetFogParameters(fogFirstControl, fogSecondControl);
         } else {
             sUvGfxStateExports->uvGfxSetFogParameters(0.0f, 0.0f);
         }
-        if (temp_s2 & 2) {
-            sUvChannel_Exports->uvChannelGetProperties(arg0, 4, &sp1F4, &sp1F0, &sp1E8,
-                                                              &sp1EC, &sp1E4, &sp1E0, 1, &sp160, 0);
-            sUvFmtxExports->uvMat4BuildPerspectiveProjection(&sp120, sp1F4, sp1F0, sp1E8, sp1EC, sp1E4,
+        if (modelFlags & 2) {
+            sUvChannel_Exports->uvChannelGetProperties(channel, 4, &projectionInput0, &projectionInput1, &projectionInput2,
+                                                              &projectionInput3, &projectionInput4, &unusedProjectionInput5, 1, &channelMatrix, 0); /* Consume all six scalar outputs and the matrix; the sixth scalar remains unused. */
+            sUvFmtxExports->uvMat4BuildPerspectiveProjection(&projectionMatrix, projectionInput0, projectionInput1, projectionInput2, projectionInput3, projectionInput4,
                                                 27000.0f);
-            sUvFmtxExports->uvGfxMtxProjPushF(&sp120);
-            if (var_s6->unk1D != 0) {
-                gDPSetEnvColor(gdl[0]++, var_s6->unk3, var_s6->unk4, var_s6->unk5, (u8)(255.0f * var_s6->unk40));
+            sUvFmtxExports->uvGfxMtxProjPushF(&projectionMatrix);
+            if (environment->unk1D != 0) {
+                gDPSetEnvColor(displayList[0]++, environment->unk3, environment->unk4, environment->unk5, (u8)(255.0f * environment->unk40));
             } else {
-                gDPSetEnvColor(gdl[0]++, var_s6->unk3, var_s6->unk4, var_s6->unk5, 0);
+                gDPSetEnvColor(displayList[0]++, environment->unk3, environment->unk4, environment->unk5, 0);
             }
         }
-        sUvFmtxExports->uvMat4SetIdentity(&sp1A0);
-        if (temp_s2 & 8) {
-            sp1A0.m[3][0] = sp1F8.x;
-            sp1A0.m[3][1] = sp1F8.y;
+        sUvFmtxExports->uvMat4SetIdentity(&modelMatrix);
+        if (modelFlags & 8) {
+            modelMatrix.m[3][0] = channelVector.x;
+            modelMatrix.m[3][1] = channelVector.y; /* Only X/Y translation is written here; RE_UNKNOWN: coordinate and matrix conventions need caller proof. */
         }
-        temp_fv0 = 1.0f / parsedUvMD->unk10;
-        sp1A0.m[2][2] = temp_fv0;
-        sp1A0.m[1][1] = temp_fv0;
-        sp1A0.m[0][0] = temp_fv0;
-        sUvFmtxExports->uvMat4ApplySharedInverseTranslation(&spD4, &sp1A0);
-        sUvFmtxExports->uvGfxMtxViewLoad(&spD4, 3);
-        for (j = 0; j < (u32)modLod->unk4; j++) {
-            int prev = modLod->stateTable[j].state;
-            if (!(temp_s2 & 1)) {
-                modLod->stateTable[j].state &= ~0x200000;
+        reciprocalWord10 = 1.0f / model->unk10; /* RE_UNKNOWN: zero/nonfinite values and floating-point contracts need asset/caller proof; preserve reciprocal and store order. */
+        modelMatrix.m[2][2] = reciprocalWord10;
+        modelMatrix.m[1][1] = reciprocalWord10;
+        modelMatrix.m[0][0] = reciprocalWord10;
+        sUvFmtxExports->uvMat4ApplySharedInverseTranslation(&translatedMatrix, &modelMatrix);
+        sUvFmtxExports->uvGfxMtxViewLoad(&translatedMatrix, 3);
+        for (lodOrStateIndex = 0; lodOrStateIndex < (u32)lod->unk4; lodOrStateIndex++) {
+            int savedState = lod->stateTable[lodOrStateIndex].state;
+            if (!(modelFlags & 1)) {
+                lod->stateTable[lodOrStateIndex].state &= ~0x200000;
             }
-            if (temp_s2 & 0x10) {
-                modLod->stateTable[j].state &= ~0x400000;
+            if (modelFlags & 0x10) {
+                lod->stateTable[lodOrStateIndex].state &= ~0x400000;
             }
-            sUvGfxStateExports->uvGfxStateDraw(&modLod->stateTable[j]);
-            modLod->stateTable[j].state = prev;
+            sUvGfxStateExports->uvGfxStateDraw(&lod->stateTable[lodOrStateIndex]); /* RE_UNKNOWN: callback mutation and state-table lifetime remain unproved; reload the table before restoring its saved word. */
+            lod->stateTable[lodOrStateIndex].state = savedState;
         }
-        if (temp_s2 & 2) {
-            sUvFmtxExports->uvGfxMtxProjPushF(&sp160);
+        if (modelFlags & 2) {
+            sUvFmtxExports->uvGfxMtxProjPushF(&channelMatrix);
         }
         sUvFmtxExports->uvGfxMtxFViewPop();
     }
-    sUvGfxStateExports->uvGfxSetFogParameters(sp214, sp210);
-    if (var_s6->unk38 != NULL) {
-        var_s6->unk38();
+    sUvGfxStateExports->uvGfxSetFogParameters(fogFirstControl, fogSecondControl);
+    if (environment->unk38 != NULL) {
+        environment->unk38(); /* This callback follows normal fog restoration; early returns above bypass it. */
     }
 }
 

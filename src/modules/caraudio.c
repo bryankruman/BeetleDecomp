@@ -124,10 +124,53 @@ void carAudioUpdateSharedScalarAndEmitters(void *state) {
 #line 71 "src/modules/caraudio.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_00400758.s")
 
+/* Update the selected shared handle and bounded-position sound from the
+ * captured selector/scalar and initial matrix translation; reload the later
+ * matrix source after callbacks. Pitch changes only with a selector change.
+ * RE_ORIGINAL_QUIRK: fallback selector zero updates the shared sound without
+ * rewriting audioState+8, which retains the previous selector halfword.
+ * RE_UNKNOWN: numeric units, selector/table and source/matrix extents,
+ * callback replacement/lifetimes and original declarations remain unresolved.
+ * The first natural draft failed because its handle declaration followed
+ * this function. A compatible forward declaration fixes compilation only:
+ * the 1192-byte draft still differs in 41 words, with register/stack/address
+ * lowering debt despite the same 200-byte frame. Both complete object lists
+ * have 82 records; the packed native list separately has 52. The draft uses
+ * the selection base/field where the reference names its coefficient+4 alias.
+ * Retain ASM pending exact body/packed-ROM recovery; no credit claimed. */
+#line 73 "src/modules/caraudio.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_0040090C.s")
 
+/* Update the two indexed handles from the captured input scalar and held
+ * configuration pointer; the first handle is gated by one active player.
+ * Preserve the pause-reset branch, graph evaluation before the shared-scale
+ * read, fresh source/index/export reloads and the two distinct thresholds.
+ * RE_UNKNOWN: configuration/source/handle extents, index and graph bounds,
+ * callback replacement/lifetime, scalar units and historical declarations
+ * need original producers and consumers. No default initialization is added.
+ * The natural C trial has the original 752-byte extent; all 15 differing
+ * words are stack/frame immediates (48-byte native versus 56-byte draft
+ * frame). The two complete 47-record object lists have equal multisets but
+ * different enumeration; the separate packed native list has 29 records.
+ * Retain ASM pending exact body and packed-ROM recovery; no credit claimed. */
+#line 75 "src/modules/caraudio.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_00400DB4.s")
 
+/* Process indexed source gates, shared last-ID/scalar storage and handles.
+ * Preserve callback/index reloads, the stored-byte 255 test and ordered
+ * floating comparisons, including the nonpositive/NaN source branch.
+ * RE_ORIGINAL_QUIRK: the first path stores a zero-extended sound-ID byte in
+ * shared last-ID storage; the later path compares signed table halfwords.
+ * RE_UNKNOWN: flag meanings, index/selector bounds, storage lifetimes,
+ * callback replacement, units and historical local/object declarations
+ * remain unresolved. The natural C trial retains the 1300-byte extent but
+ * differs in 56 words, with 40-byte native versus 48-byte draft frames and
+ * register/control/address lowering debt. Both object lists have 104
+ * records; six native-reference records name the handle-byte base+4 alias,
+ * whereas the draft uses the handle base/field. Packed native records are
+ * a separate 82-record view. No missing effect is established by the reduced
+ * diagnostic categories. Retain ASM; no recovery/readability credit claimed. */
+#line 77 "src/modules/caraudio.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_004010A4.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_004015B8.s")

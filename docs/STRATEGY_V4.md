@@ -34,8 +34,8 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **788** assembly references:
-**746** ordinary functions and **42** entrypoints, with **714,248** known instruction bytes
+matching C are preserved with `#line`. The current ledger has **786** assembly references:
+**744** ordinary functions and **42** entrypoints, with **713,720** known instruction bytes
 and no unknown sizes. The broader name audit still finds **283** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
@@ -3178,10 +3178,19 @@ Totals: 412 further recoveries after the 225 upstream ordinary imports, plus 140
 Frozen wave `3148-older-caraudio-bindings-and-retained-contracts-3148` and `accepted-older-caraudio-bindings-and-retained-contracts-3148` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 412 further readable functions
+## Historical accepted checkpoint — 412 further readable functions
 
 Clarify three existing Selection object-property/release routines and four graphics-manager initialization/frame routines with scoped local names and truthful original-contract comments. Preserve public symbols, headers, types, operations, masks, memory order, internal __sgi line reset, all executable logical coordinates, member selectors and ASM pragmas. Add zero-credit Selection object-setup retained-ASM and graphics-settings partial-view notes. All seven isolated bodies match 4596 bytes/1149 words and 497 ordered object relocation records; complete original-native nonrelocation/opcode/reference-site checks pass. Selection retains the same 36 GCC and 19 IDO diagnostic identities; graphics-manager logs are empty. Seven older cleanups, zero recoveries. Full original packed Selection/GMGR, fresh original ROM, all1035 frozen files, complete unchanged remaining/data/address/per-source ledger and uncertainty index remain mandatory before acceptance.
 
 Totals: 412 further recoveries after the 225 upstream ordinary imports, plus 1411 existing C semantic cleanups. Current ledger: 788 assembly references = 746 ordinary + 42 entrypoints; 714,248 known remaining instruction bytes; zero unknown sizes; 283 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `3197-older-selection-graphics-manager-contracts-3197` and `accepted-older-selection-graphics-manager-contracts-3197` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 414 further readable functions
+
+Recover two original TED selector-label routines (528 instruction bytes) with natural C and exact original readonly ownership: three real compiler tables, 788-byte retained prefix and 64-byte retained middle, with terminal table at the exact section end and no fabricated host. Clarify three existing ENV routines (9160 bytes) with scoped local roles and original-contract comments; add three zero-credit CARAUDIO retained-ASM notes. Extend only the two reviewed V3 terminal-layout functions and four pure tests. Preserve raw object-order differences in evidence; require exact original packed TED/ENV/CARAUDIO and a fresh original USA ROM after normal extraction and four-job build. Complete1035 frozen source hashes, exact788-minus2 remaining dictionaries, exact2 data entries with only proven TED44-byte ownership transfer, all283 address-name dictionaries, per-source counts and uncertainty index are mandatory. Two recoveries, three older cleanups; comments and tooling receive no code credit.
+
+Totals: 414 further recoveries after the 225 upstream ordinary imports, plus 1414 existing C semantic cleanups. Current ledger: 786 assembly references = 744 ordinary + 42 entrypoints; 713,720 known remaining instruction bytes; zero unknown sizes; 283 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `3236-ted-environment-audio-contracts-3236` and `accepted-ted-environment-audio-contracts-3236` verify real translation-unit instructions/full relocations, 3 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

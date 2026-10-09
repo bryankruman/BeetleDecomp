@@ -17,19 +17,19 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 1080 |
-| Preserved RE_ORIGINAL_QUIRK notes | 299 |
+| Explicit RE_UNKNOWN notes | 1101 |
+| Preserved RE_ORIGINAL_QUIRK notes | 307 |
 | Older comments with uncertainty language | 92 |
 | Documented original-behavior audits | 30 |
-| Assembly-backed functions or data | 790 |
-| Address-based function identifiers | 906 |
-| Address-based global identifiers | 1435 |
-| Offset-based fields or neutral typed fields | 1598 |
-| Layout padding to preserve | 270 |
+| Assembly-backed functions or data | 788 |
+| Address-based function identifiers | 904 |
+| Address-based global identifiers | 1451 |
+| Offset-based fields or neutral typed fields | 1599 |
+| Layout padding to preserve | 269 |
 | Unresolved type names | 282 |
-| Explicit unused ABI, storage or local identifiers | 131 |
-| Decompiler parameter/local names | 748 |
-| Fake, unresolved or TODO draft markers | 26 |
+| Explicit unused ABI, storage or local identifiers | 133 |
+| Decompiler parameter/local names | 717 |
+| Fake, unresolved or TODO draft markers | 25 |
 | Data-dependent conditional draft guards | 4 |
 
 ## docs/STRATEGY_V4.md
@@ -1907,72 +1907,77 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_caraudio_004027A8` | function `func_caraudio_004027A8` | [31](../src/modules/caraudio.c#L31) |
 | address_function | `func_caraudio_004029F8` | function `func_caraudio_004029F8` | [32](../src/modules/caraudio.c#L32) |
 | address_function | `func_caraudio_00402B20` | function `carAudioUpdateSharedScalarAndEmitters`, function `func_caraudio_00402B20` | [33](../src/modules/caraudio.c#L33), [105](../src/modules/caraudio.c#L105) |
-| address_function | `func_caraudio_00402C08` | function `func_caraudio_00402C08` | [235](../src/modules/caraudio.c#L235) |
+| address_function | `func_caraudio_00402C08` | function `func_caraudio_00402C08` | [278](../src/modules/caraudio.c#L278) |
 | address_function | `func_caraudio_00402CA4` | function `func_caraudio_00402CA4` | [35](../src/modules/caraudio.c#L35) |
 | address_function | `func_caraudio_00402E00` | function `func_caraudio_00402E00` | [36](../src/modules/caraudio.c#L36) |
 | address_function | `func_caraudio_004031E0` | function `func_caraudio_004031E0` | [38](../src/modules/caraudio.c#L38) |
 | address_function | `func_caraudio_0040336C` | function `func_caraudio_0040336C` | [39](../src/modules/caraudio.c#L39) |
 | address_function | `func_caraudio_0040397C` | function `func_caraudio_0040397C` | [40](../src/modules/caraudio.c#L40) |
-| address_function | `func_caraudio_00403A2C` | function `func_caraudio_00403A2C` | [341](../src/modules/caraudio.c#L341) |
-| address_global | `D_caraudio_00403EF4` | function `carAudioUpdateDualEmitterVolume`, global `D_caraudio_00403EF4` | [5](../src/modules/caraudio.c#L5), [244](../src/modules/caraudio.c#L244) |
-| address_global | `D_caraudio_00403F00` | function `carAudioStartFixedPositionSound`, global `D_caraudio_00403F00` | [274](../src/modules/caraudio.c#L274), [286](../src/modules/caraudio.c#L286) |
-| address_global | `D_caraudio_00403F04` | function `carAudioStartFixedPositionSound`, global `D_caraudio_00403F04` | [275](../src/modules/caraudio.c#L275), [287](../src/modules/caraudio.c#L287) |
-| address_global | `D_caraudio_00403F08` | function `carAudioStartFixedPositionSound`, global `D_caraudio_00403F08` | [276](../src/modules/caraudio.c#L276), [293](../src/modules/caraudio.c#L293) |
+| address_function | `func_caraudio_00403A2C` | function `func_caraudio_00403A2C` | [384](../src/modules/caraudio.c#L384) |
+| address_global | `D_caraudio_00403EF4` | function `carAudioUpdateDualEmitterVolume`, global `D_caraudio_00403EF4` | [5](../src/modules/caraudio.c#L5), [287](../src/modules/caraudio.c#L287) |
+| address_global | `D_caraudio_00403F00` | function `carAudioStartFixedPositionSound`, global `D_caraudio_00403F00` | [317](../src/modules/caraudio.c#L317), [329](../src/modules/caraudio.c#L329) |
+| address_global | `D_caraudio_00403F04` | function `carAudioStartFixedPositionSound`, global `D_caraudio_00403F04` | [318](../src/modules/caraudio.c#L318), [330](../src/modules/caraudio.c#L330) |
+| address_global | `D_caraudio_00403F08` | function `carAudioStartFixedPositionSound`, global `D_caraudio_00403F08` | [319](../src/modules/caraudio.c#L319), [336](../src/modules/caraudio.c#L336) |
 | address_global | `D_caraudio_004040C0` | function `carAudioUpdateSharedScalarAndEmitters`, global `D_caraudio_004040C0` | [12](../src/modules/caraudio.c#L12), [104](../src/modules/caraudio.c#L104) |
-| address_global | `D_caraudio_004041E0` | function `carAudioClearSlotFlag`, global `D_caraudio_004041E0` | [41](../src/modules/caraudio.c#L41), [257](../src/modules/caraudio.c#L257) |
-| address_global | `D_caraudio_00404228` | function `carAudioPrependCommand`, global `D_caraudio_00404228` | [301](../src/modules/caraudio.c#L301), [318](../src/modules/caraudio.c#L318), [319](../src/modules/caraudio.c#L319) |
-| address_global | `D_caraudio_00404230` | function `func_caraudio_00403A2C`, global `D_caraudio_00404230` | [330](../src/modules/caraudio.c#L330), [348](../src/modules/caraudio.c#L348) |
-| address_global | `D_caraudio_00404254` | function `carAudioUpdateDualEmitterVolume`, function `carAudioUpdateSharedScalarAndEmitters`, global `D_caraudio_00404254` | [13](../src/modules/caraudio.c#L13), [104](../src/modules/caraudio.c#L104), [244](../src/modules/caraudio.c#L244) |
-| address_global | `D_caraudio_00404300` | function `carAudioStartFixedPositionSound`, global `D_caraudio_00404300` | [277](../src/modules/caraudio.c#L277), [289](../src/modules/caraudio.c#L289), [291](../src/modules/caraudio.c#L291), [292](../src/modules/caraudio.c#L292), [293](../src/modules/caraudio.c#L293), [294](../src/modules/caraudio.c#L294), [295](../src/modules/caraudio.c#L295) |
+| address_global | `D_caraudio_004041E0` | function `carAudioClearSlotFlag`, global `D_caraudio_004041E0` | [41](../src/modules/caraudio.c#L41), [300](../src/modules/caraudio.c#L300) |
+| address_global | `D_caraudio_00404228` | function `carAudioPrependCommand`, global `D_caraudio_00404228` | [344](../src/modules/caraudio.c#L344), [361](../src/modules/caraudio.c#L361), [362](../src/modules/caraudio.c#L362) |
+| address_global | `D_caraudio_00404230` | function `func_caraudio_00403A2C`, global `D_caraudio_00404230` | [373](../src/modules/caraudio.c#L373), [391](../src/modules/caraudio.c#L391) |
+| address_global | `D_caraudio_00404254` | function `carAudioUpdateDualEmitterVolume`, function `carAudioUpdateSharedScalarAndEmitters`, global `D_caraudio_00404254` | [13](../src/modules/caraudio.c#L13), [104](../src/modules/caraudio.c#L104), [287](../src/modules/caraudio.c#L287) |
+| address_global | `D_caraudio_00404300` | function `carAudioStartFixedPositionSound`, global `D_caraudio_00404300` | [320](../src/modules/caraudio.c#L320), [332](../src/modules/caraudio.c#L332), [334](../src/modules/caraudio.c#L334), [335](../src/modules/caraudio.c#L335), [336](../src/modules/caraudio.c#L336), [337](../src/modules/caraudio.c#L337), [338](../src/modules/caraudio.c#L338) |
 | assembly | `__entrypoint_func_caraudio_400000` | — | [43](../src/modules/caraudio.c#L43) |
 | assembly | `func_caraudio_004003B0` | — | [84](../src/modules/caraudio.c#L84) |
 | assembly | `func_caraudio_00400550` | — | [97](../src/modules/caraudio.c#L97) |
 | assembly | `func_caraudio_00400758` | — | [125](../src/modules/caraudio.c#L125) |
-| assembly | `func_caraudio_0040090C` | — | [127](../src/modules/caraudio.c#L127) |
-| assembly | `func_caraudio_00400DB4` | — | [129](../src/modules/caraudio.c#L129) |
-| assembly | `func_caraudio_004010A4` | — | [131](../src/modules/caraudio.c#L131) |
-| assembly | `func_caraudio_004015B8` | — | [133](../src/modules/caraudio.c#L133) |
-| assembly | `func_caraudio_00401698` | — | [135](../src/modules/caraudio.c#L135) |
-| assembly | `func_caraudio_0040171C` | — | [137](../src/modules/caraudio.c#L137) |
-| assembly | `func_caraudio_00401A08` | — | [139](../src/modules/caraudio.c#L139) |
-| assembly | `func_caraudio_00401F24` | — | [141](../src/modules/caraudio.c#L141) |
-| assembly | `func_caraudio_00402070` | — | [167](../src/modules/caraudio.c#L167) |
-| assembly | `func_caraudio_0040218C` | — | [182](../src/modules/caraudio.c#L182) |
-| assembly | `func_caraudio_004022BC` | — | [198](../src/modules/caraudio.c#L198) |
-| assembly | `func_caraudio_004027A8` | — | [200](../src/modules/caraudio.c#L200) |
-| assembly | `func_caraudio_004029F8` | — | [226](../src/modules/caraudio.c#L226) |
-| assembly | `func_caraudio_00402B20` | — | [228](../src/modules/caraudio.c#L228) |
-| assembly | `func_caraudio_00402CA4` | — | [251](../src/modules/caraudio.c#L251) |
-| assembly | `func_caraudio_00402E00` | — | [268](../src/modules/caraudio.c#L268) |
-| assembly | `func_caraudio_004031E0` | — | [324](../src/modules/caraudio.c#L324) |
-| assembly | `func_caraudio_0040336C` | — | [326](../src/modules/caraudio.c#L326) |
-| assembly | `func_caraudio_0040397C` | — | [328](../src/modules/caraudio.c#L328) |
+| assembly | `func_caraudio_0040090C` | — | [142](../src/modules/caraudio.c#L142) |
+| assembly | `func_caraudio_00400DB4` | — | [157](../src/modules/caraudio.c#L157) |
+| assembly | `func_caraudio_004010A4` | — | [174](../src/modules/caraudio.c#L174) |
+| assembly | `func_caraudio_004015B8` | — | [176](../src/modules/caraudio.c#L176) |
+| assembly | `func_caraudio_00401698` | — | [178](../src/modules/caraudio.c#L178) |
+| assembly | `func_caraudio_0040171C` | — | [180](../src/modules/caraudio.c#L180) |
+| assembly | `func_caraudio_00401A08` | — | [182](../src/modules/caraudio.c#L182) |
+| assembly | `func_caraudio_00401F24` | — | [184](../src/modules/caraudio.c#L184) |
+| assembly | `func_caraudio_00402070` | — | [210](../src/modules/caraudio.c#L210) |
+| assembly | `func_caraudio_0040218C` | — | [225](../src/modules/caraudio.c#L225) |
+| assembly | `func_caraudio_004022BC` | — | [241](../src/modules/caraudio.c#L241) |
+| assembly | `func_caraudio_004027A8` | — | [243](../src/modules/caraudio.c#L243) |
+| assembly | `func_caraudio_004029F8` | — | [269](../src/modules/caraudio.c#L269) |
+| assembly | `func_caraudio_00402B20` | — | [271](../src/modules/caraudio.c#L271) |
+| assembly | `func_caraudio_00402CA4` | — | [294](../src/modules/caraudio.c#L294) |
+| assembly | `func_caraudio_00402E00` | — | [311](../src/modules/caraudio.c#L311) |
+| assembly | `func_caraudio_004031E0` | — | [367](../src/modules/caraudio.c#L367) |
+| assembly | `func_caraudio_0040336C` | — | [369](../src/modules/caraudio.c#L369) |
+| assembly | `func_caraudio_0040397C` | — | [371](../src/modules/caraudio.c#L371) |
 | decompiler_local | `arg0` | function `carAudioStartFixedPositionSound` | [37](../src/modules/caraudio.c#L37) |
 | explicit_unknown | `Allocate 0x50 bytes; initialize matrix at 0x10 and store sourceRecordAddress at 0xC. * handleSlotIndex selects stride-8 handles. RE_UNKNOWN: source extent/lifetime and index * b...` | function `carAudioAllocateState` | [55](../src/modules/caraudio.c#L55) |
-| explicit_unknown | `Check the first enabled matching low-byte ID in banks 0x41DC/0x41E8 * then 0x41D8/0x41E4. Release and initialize its stride-eight sound handle, * reload sound exports between ca...` | assembly `func_caraudio_0040218C` | [169](../src/modules/caraudio.c#L169) |
-| explicit_unknown | `Clear the flag byte using the supplied signed slot without a range check. * RE_UNKNOWN: valid slot domain and flag-table extent need original callers and data layout.` | function `carAudioClearSlotFlag` | [254](../src/modules/caraudio.c#L254) |
+| explicit_unknown | `Check the first enabled matching low-byte ID in banks 0x41DC/0x41E8 * then 0x41D8/0x41E4. Release and initialize its stride-eight sound handle, * reload sound exports between ca...` | assembly `func_caraudio_0040218C` | [212](../src/modules/caraudio.c#L212) |
+| explicit_unknown | `Clear the flag byte using the supplied signed slot without a range check. * RE_UNKNOWN: valid slot domain and flag-table extent need original callers and data layout.` | function `carAudioClearSlotFlag` | [297](../src/modules/caraudio.c#L297) |
 | explicit_unknown | `Copy screen-record matrices into matching registry entries, then run * the original setting/motion-word gates and ordered audio helpers. * RE_ORIGINAL_QUIRK: SCRN slot 0x14 copi...` | assembly `func_caraudio_00400758` | [110](../src/modules/caraudio.c#L110) |
-| explicit_unknown | `For signed slotIndex <4, store [destination word, slotIndex] in the * original 8-byte slot, then copy 64 bytes from the word loaded at * binding+0xC, plus0x1A8, to destination w...` | function `func_caraudio_00403A2C` | [332](../src/modules/caraudio.c#L332) |
+| explicit_unknown | `For signed slotIndex <4, store [destination word, slotIndex] in the * original 8-byte slot, then copy 64 bytes from the word loaded at * binding+0xC, plus0x1A8, to destination w...` | function `func_caraudio_00403A2C` | [375](../src/modules/caraudio.c#L375) |
 | explicit_unknown | `Initialize both indexed handles and prepare the shared sound handle; * only the first indexed handle is gated by gNumPlayers == 1. Preserve * callback reloads and each stored-ha...` | assembly `func_caraudio_004003B0` | [73](../src/modules/caraudio.c#L73) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_caraudio_00402C08` | [231](../src/modules/caraudio.c#L231) |
-| explicit_unknown | `Prepare sound selector 0x1D at fixed XYZ; reject returned managed-slot byte 0xFF. * Sound slot 0x80 copies matrix translation; the local matrix is not retained. * RE_UNKNOWN: ga...` | global `D_caraudio_00403F00` | [271](../src/modules/caraudio.c#L271) |
-| explicit_unknown | `Prepend kind zero; soundHandlingEnabled gates soundId/volume (SND 0x6C/0x84). * Original loader zeroes the head in fresh caud-image BSS before entry. RE_UNKNOWN: * value4/valueC...` | function `carAudioPrependCommand` | [305](../src/modules/caraudio.c#L305) |
-| explicit_unknown | `Resolve all four CARANIM material records before sequential signed16 code * tests. Priority is 4, then 5/6 (5 on track 7, otherwise 2), followed by * 12, 3, 2, 8, 9, 7, 10, 11, ...` | assembly `func_caraudio_004022BC` | [184](../src/modules/caraudio.c#L184) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_caraudio_00402C08` | [274](../src/modules/caraudio.c#L274) |
+| explicit_unknown | `Prepare sound selector 0x1D at fixed XYZ; reject returned managed-slot byte 0xFF. * Sound slot 0x80 copies matrix translation; the local matrix is not retained. * RE_UNKNOWN: ga...` | global `D_caraudio_00403F00` | [314](../src/modules/caraudio.c#L314) |
+| explicit_unknown | `Prepend kind zero; soundHandlingEnabled gates soundId/volume (SND 0x6C/0x84). * Original loader zeroes the head in fresh caud-image BSS before entry. RE_UNKNOWN: * value4/valueC...` | function `carAudioPrependCommand` | [348](../src/modules/caraudio.c#L348) |
+| explicit_unknown | `Process indexed source gates, shared last-ID/scalar storage and handles. * Preserve callback/index reloads, the stored-byte 255 test and ordered * floating comparisons, includin...` | assembly `func_caraudio_004010A4` | [159](../src/modules/caraudio.c#L159) |
+| explicit_unknown | `Resolve all four CARANIM material records before sequential signed16 code * tests. Priority is 4, then 5/6 (5 on track 7, otherwise 2), followed by * 12, 3, 2, 8, 9, 7, 10, 11, ...` | assembly `func_caraudio_004022BC` | [227](../src/modules/caraudio.c#L227) |
 | explicit_unknown | `Snapshot the inner audio-state pointer, then process/reset/recreate each * indexed sound handle; only the first handle is gated by gNumPlayers == 1. * Reload the outer slot inde...` | assembly `func_caraudio_00400550` | [86](../src/modules/caraudio.c#L86) |
-| explicit_unknown | `Test four source words at 0x2D0..0x2DC; return one on first nonzero, else zero. * Preserve the original unchecked state/source dereferences and short-circuit order. * RE_UNKNOWN...` | function `carAudioHasAnySourceSlot` | [203](../src/modules/caraudio.c#L203) |
+| explicit_unknown | `Test four source words at 0x2D0..0x2DC; return one on first nonzero, else zero. * Preserve the original unchecked state/source dereferences and short-circuit order. * RE_UNKNOWN...` | function `carAudioHasAnySourceSlot` | [246](../src/modules/caraudio.c#L246) |
+| explicit_unknown | `Update the selected shared handle and bounded-position sound from the * captured selector/scalar and initial matrix translation; reload the later * matrix source after callbacks...` | assembly `func_caraudio_0040090C` | [127](../src/modules/caraudio.c#L127) |
+| explicit_unknown | `Update the two indexed handles from the captured input scalar and held * configuration pointer; the first handle is gated by one active player. * Preserve the pause-reset branch...` | assembly `func_caraudio_00400DB4` | [144](../src/modules/caraudio.c#L144) |
 | explicit_unknown | `Use source-record word 0x1EC as the unchecked shared-scalar index, * then run the original audio update and dual-emitter scalar update. * RE_UNKNOWN: index bounds, source extent...` | function `carAudioUpdateSharedScalarAndEmitters` | [100](../src/modules/caraudio.c#L100) |
-| layout_padding | `gap11` | type `CarAudioCommand` | [302](../src/modules/caraudio.c#L302) |
+| layout_padding | `gap11` | type `CarAudioCommand` | [345](../src/modules/caraudio.c#L345) |
 | offset_field | `unk00` | type `CarAudioDualVoice`, type `CarAudioVoiceIds` | [3](../src/modules/caraudio.c#L3), [4](../src/modules/caraudio.c#L4) |
 | offset_field | `unk02` | type `CarAudioVoiceIds` | [3](../src/modules/caraudio.c#L3) |
-| offset_field | `value4` | function `carAudioPrependCommand`, type `CarAudioCommand` | [302](../src/modules/caraudio.c#L302), [310](../src/modules/caraudio.c#L310), [313](../src/modules/caraudio.c#L313) |
-| offset_field | `valueC` | function `carAudioPrependCommand`, type `CarAudioCommand` | [302](../src/modules/caraudio.c#L302), [310](../src/modules/caraudio.c#L310), [315](../src/modules/caraudio.c#L315) |
-| opaque_type | `UnkStruct_004005C8` | function `carAudioReleaseHandle`, function `carAudioSetHandlePositionAndPitch`, function `carAudioSetHandlePositionAndPitch`, global `D_caraudio_00404300` | [26](../src/modules/caraudio.c#L26), [147](../src/modules/caraudio.c#L147), [160](../src/modules/caraudio.c#L160), [277](../src/modules/caraudio.c#L277) |
-| opaque_type | `UnkStruct_uvemitter_rom_004008CC` | function `carAudioSetHandlePositionAndPitch`, function `carAudioSetHandlePositionAndPitch`, function `carAudioStartFixedPositionSound` | [26](../src/modules/caraudio.c#L26), [147](../src/modules/caraudio.c#L147), [292](../src/modules/caraudio.c#L292) |
-| original_quirk | `Check the first enabled matching low-byte ID in banks 0x41DC/0x41E8 * then 0x41D8/0x41E4. Release and initialize its stride-eight sound handle, * reload sound exports between ca...` | assembly `func_caraudio_0040218C` | [169](../src/modules/caraudio.c#L169) |
+| offset_field | `value4` | function `carAudioPrependCommand`, type `CarAudioCommand` | [345](../src/modules/caraudio.c#L345), [353](../src/modules/caraudio.c#L353), [356](../src/modules/caraudio.c#L356) |
+| offset_field | `valueC` | function `carAudioPrependCommand`, type `CarAudioCommand` | [345](../src/modules/caraudio.c#L345), [353](../src/modules/caraudio.c#L353), [358](../src/modules/caraudio.c#L358) |
+| opaque_type | `UnkStruct_004005C8` | function `carAudioReleaseHandle`, function `carAudioSetHandlePositionAndPitch`, function `carAudioSetHandlePositionAndPitch`, global `D_caraudio_00404300` | [26](../src/modules/caraudio.c#L26), [190](../src/modules/caraudio.c#L190), [203](../src/modules/caraudio.c#L203), [320](../src/modules/caraudio.c#L320) |
+| opaque_type | `UnkStruct_uvemitter_rom_004008CC` | function `carAudioSetHandlePositionAndPitch`, function `carAudioSetHandlePositionAndPitch`, function `carAudioStartFixedPositionSound` | [26](../src/modules/caraudio.c#L26), [190](../src/modules/caraudio.c#L190), [335](../src/modules/caraudio.c#L335) |
+| original_quirk | `Check the first enabled matching low-byte ID in banks 0x41DC/0x41E8 * then 0x41D8/0x41E4. Release and initialize its stride-eight sound handle, * reload sound exports between ca...` | assembly `func_caraudio_0040218C` | [212](../src/modules/caraudio.c#L212) |
 | original_quirk | `Copy screen-record matrices into matching registry entries, then run * the original setting/motion-word gates and ordered audio helpers. * RE_ORIGINAL_QUIRK: SCRN slot 0x14 copi...` | assembly `func_caraudio_00400758` | [110](../src/modules/caraudio.c#L110) |
 | original_quirk | `Initialize both indexed handles and prepare the shared sound handle; * only the first indexed handle is gated by gNumPlayers == 1. Preserve * callback reloads and each stored-ha...` | assembly `func_caraudio_004003B0` | [73](../src/modules/caraudio.c#L73) |
-| original_quirk | `Resolve all four CARANIM material records before sequential signed16 code * tests. Priority is 4, then 5/6 (5 on track 7, otherwise 2), followed by * 12, 3, 2, 8, 9, 7, 10, 11, ...` | assembly `func_caraudio_004022BC` | [184](../src/modules/caraudio.c#L184) |
-| unused_identifier | `unused` | function `carAudioStartFixedPositionSound` | [281](../src/modules/caraudio.c#L281) |
+| original_quirk | `Process indexed source gates, shared last-ID/scalar storage and handles. * Preserve callback/index reloads, the stored-byte 255 test and ordered * floating comparisons, includin...` | assembly `func_caraudio_004010A4` | [159](../src/modules/caraudio.c#L159) |
+| original_quirk | `Resolve all four CARANIM material records before sequential signed16 code * tests. Priority is 4, then 5/6 (5 on track 7, otherwise 2), followed by * 12, 3, 2, 8, 9, 7, 10, 11, ...` | assembly `func_caraudio_004022BC` | [227](../src/modules/caraudio.c#L227) |
+| original_quirk | `Update the selected shared handle and bounded-position sound from the * captured selector/scalar and initial matrix translation; reload the later * matrix source after callbacks...` | assembly `func_caraudio_0040090C` | [127](../src/modules/caraudio.c#L127) |
+| unused_identifier | `unused` | function `carAudioStartFixedPositionSound` | [324](../src/modules/caraudio.c#L324) |
 
 ## src/modules/cbars.c
 
@@ -4921,197 +4926,213 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
-| address_function | `func_ted_00400558` | function `func_ted_00400558` | [123](../src/modules/ted.c#L123) |
-| address_function | `func_ted_004007B8` | function `func_ted_004007B8`, function `tedDispatchFrameAndCamera` | [125](../src/modules/ted.c#L125), [206](../src/modules/ted.c#L206) |
-| address_function | `func_ted_00400C18` | function `func_ted_00400C18`, function `tedDispatchFrameAndCamera` | [126](../src/modules/ted.c#L126), [207](../src/modules/ted.c#L207) |
-| address_function | `func_ted_00401004` | function `func_ted_00401004` | [127](../src/modules/ted.c#L127) |
-| address_function | `func_ted_00401338` | function `func_ted_00401338` | [128](../src/modules/ted.c#L128) |
-| address_function | `func_ted_00401C6C` | function `func_ted_00401C6C`, function `tedCreateTaskEditorGroupsAndDispatchSelector`, function `tedReadVersionThreeFile` | [130](../src/modules/ted.c#L130), [261](../src/modules/ted.c#L261), [416](../src/modules/ted.c#L416) |
-| address_function | `func_ted_00402320` | function `func_ted_00402320`, function `tedCreateTaskEditorGroupsAndDispatchSelector` | [131](../src/modules/ted.c#L131), [265](../src/modules/ted.c#L265) |
-| address_function | `func_ted_00402E58` | function `func_ted_00402E58`, function `tedCreateTaskEditorGroupsAndDispatchSelector` | [132](../src/modules/ted.c#L132), [268](../src/modules/ted.c#L268) |
-| address_function | `func_ted_004031A0` | function `func_ted_004031A0`, function `tedCreateTaskEditorGroupsAndDispatchSelector` | [133](../src/modules/ted.c#L133), [271](../src/modules/ted.c#L271) |
-| address_function | `func_ted_004034E8` | function `func_ted_004034E8`, function `tedCreateTaskEditorGroupsAndDispatchSelector` | [134](../src/modules/ted.c#L134), [274](../src/modules/ted.c#L274) |
-| address_function | `func_ted_004038B8` | function `func_ted_004038B8` | [137](../src/modules/ted.c#L137) |
-| address_function | `func_ted_00403A58` | function `func_ted_00403A58`, function `tedReadVersionThreeFile` | [138](../src/modules/ted.c#L138), [415](../src/modules/ted.c#L415) |
-| address_function | `func_ted_00403C20` | function `func_ted_00403C20` | [139](../src/modules/ted.c#L139) |
-| address_function | `func_ted_004040B4` | function `func_ted_004040B4` | [142](../src/modules/ted.c#L142) |
-| address_function | `func_ted_00404468` | function `func_ted_00404468`, function `tedReadVersionThreeFile` | [144](../src/modules/ted.c#L144), [410](../src/modules/ted.c#L410) |
-| address_function | `func_ted_0040465C` | function `func_ted_0040465C` | [145](../src/modules/ted.c#L145) |
-| address_function | `func_ted_004047DC` | function `func_ted_004047DC` | [146](../src/modules/ted.c#L146) |
-| address_function | `func_ted_00404C28` | function `func_ted_00404C28` | [151](../src/modules/ted.c#L151) |
-| address_function | `func_ted_00404DA8` | function `func_ted_00404DA8` | [155](../src/modules/ted.c#L155) |
-| address_function | `func_ted_00405018` | function `func_ted_00405018`, function `tedReadVersionThreeFile` | [157](../src/modules/ted.c#L157), [411](../src/modules/ted.c#L411) |
-| address_function | `func_ted_004051F0` | function `func_ted_004051F0` | [158](../src/modules/ted.c#L158) |
-| address_function | `func_ted_00405344` | function `func_ted_00405344` | [159](../src/modules/ted.c#L159) |
-| address_function | `func_ted_0040561C` | function `func_ted_0040561C` | [160](../src/modules/ted.c#L160) |
-| address_function | `func_ted_00405804` | function `func_ted_00405804` | [162](../src/modules/ted.c#L162) |
-| address_function | `func_ted_0040590C` | function `func_ted_0040590C`, function `tedWriteVersionThreeFile` | [163](../src/modules/ted.c#L163), [437](../src/modules/ted.c#L437) |
-| address_function | `func_ted_004059BC` | function `func_ted_004059BC`, function `tedReadVersionThreeFile` | [164](../src/modules/ted.c#L164), [412](../src/modules/ted.c#L412) |
-| address_function | `func_ted_00405B94` | function `func_ted_00405B94` | [165](../src/modules/ted.c#L165) |
-| address_function | `func_ted_00405C9C` | function `func_ted_00405C9C` | [166](../src/modules/ted.c#L166) |
-| address_function | `func_ted_00405EE8` | function `func_ted_00405EE8` | [167](../src/modules/ted.c#L167) |
-| address_function | `func_ted_0040607C` | function `func_ted_0040607C` | [168](../src/modules/ted.c#L168) |
-| address_function | `func_ted_00406178` | function `func_ted_00406178` | [169](../src/modules/ted.c#L169) |
-| address_function | `func_ted_00406280` | function `func_ted_00406280`, function `tedWriteVersionThreeFile` | [170](../src/modules/ted.c#L170), [438](../src/modules/ted.c#L438) |
-| address_function | `func_ted_00406330` | function `func_ted_00406330`, function `tedReadVersionThreeFile` | [171](../src/modules/ted.c#L171), [413](../src/modules/ted.c#L413) |
-| address_function | `func_ted_00406508` | function `func_ted_00406508` | [172](../src/modules/ted.c#L172) |
-| address_function | `func_ted_00406610` | function `func_ted_00406610` | [173](../src/modules/ted.c#L173) |
-| address_function | `func_ted_0040685C` | function `func_ted_0040685C` | [174](../src/modules/ted.c#L174) |
-| address_function | `func_ted_004069F0` | function `func_ted_004069F0` | [175](../src/modules/ted.c#L175) |
-| address_function | `func_ted_00406B04` | function `func_ted_00406B04` | [176](../src/modules/ted.c#L176) |
-| address_global | `D_80025D76` | function `tedDispatchFrameAndCamera`, global `D_80025D76` | [49](../src/modules/ted.c#L49), [201](../src/modules/ted.c#L201) |
-| address_global | `D_ted_00406E60` | function `tedCreateTaskEditorGroupsAndDispatchSelector`, global `D_ted_00406E60` | [27](../src/modules/ted.c#L27), [248](../src/modules/ted.c#L248) |
-| address_global | `D_ted_00406FB8` | function `tedResetPoolWithEnvPlnLabel`, global `D_ted_00406FB8` | [96](../src/modules/ted.c#L96), [301](../src/modules/ted.c#L301) |
-| address_global | `D_ted_00406FC0` | function `tedResetPoolWithChkPtLabel`, global `D_ted_00406FC0` | [97](../src/modules/ted.c#L97), [311](../src/modules/ted.c#L311) |
-| address_global | `D_ted_0040701C` | function `tedReadVersionThreeFile`, global `D_ted_0040701C` | [29](../src/modules/ted.c#L29), [401](../src/modules/ted.c#L401) |
-| address_global | `D_ted_00407028` | function `tedReadVersionThreeFile`, global `D_ted_0040701C` | [29](../src/modules/ted.c#L29), [401](../src/modules/ted.c#L401) |
-| address_global | `D_ted_00407048` | function `tedWriteVersionThreeFile`, global `D_ted_00407048` | [35](../src/modules/ted.c#L35), [431](../src/modules/ted.c#L431) |
-| address_global | `D_ted_00407054` | function `tedWriteVersionThreeFile`, global `D_ted_00407048` | [35](../src/modules/ted.c#L35), [431](../src/modules/ted.c#L431) |
-| address_global | `D_ted_004071B4` | function `tedReadVersionThreeFile`, function `tedWriteSecondaryRecords`, function `tedWriteSelectedRecords`, function `tedWriteVersionThreeFile`, global `D_ted_004071B4` | [37](../src/modules/ted.c#L37), [400](../src/modules/ted.c#L400), [403](../src/modules/ted.c#L403), [405](../src/modules/ted.c#L405), [407](../src/modules/ted.c#L407), [414](../src/modules/ted.c#L414), [429](../src/modules/ted.c#L429), [432](../src/modules/ted.c#L432) (+6 in JSON) |
-| address_global | `D_ted_004071B8` | function `tedDispatchFrameAndCamera` | [50](../src/modules/ted.c#L50), [202](../src/modules/ted.c#L202) |
-| address_global | `D_ted_004071C0` | function `tedApplySelectedScalar0C`, function `tedApplySelectedScalar10`, function `tedApplySelectedScalar14`, function `tedApplySelectedScalar18`, function `tedApplySelectedScalar1C`, function `tedApplySelectedScalar20`, function `tedApplySelectedScalar24`, function `tedStoreSelectedRecordByte`, function `tedWriteSecondaryRecords`, function `tedWriteSelectedRecords`, global `D_ted_004071C0` | [120](../src/modules/ted.c#L120), [465](../src/modules/ted.c#L465), [470](../src/modules/ted.c#L470), [498](../src/modules/ted.c#L498), [500](../src/modules/ted.c#L500), [512](../src/modules/ted.c#L512), [514](../src/modules/ted.c#L514), [526](../src/modules/ted.c#L526) (+13 in JSON) |
-| address_global | `D_ted_004071E4` | function `tedDispatchFrameAndCamera` | [51](../src/modules/ted.c#L51), [209](../src/modules/ted.c#L209) |
-| address_global | `D_ted_00407224` | function `tedDispatchFrameAndCamera` | [51](../src/modules/ted.c#L51), [209](../src/modules/ted.c#L209) |
-| address_global | `D_ted_0040722C` | function `tedDispatchFrameAndCamera` | [51](../src/modules/ted.c#L51), [205](../src/modules/ted.c#L205) |
-| address_global | `D_ted_00407240` | function `tedCreateTaskEditorGroupsAndDispatchSelector` | [26](../src/modules/ted.c#L26), [263](../src/modules/ted.c#L263) |
-| address_global | `D_ted_0040724C` | function `tedWriteSelectedRecords` | [38](../src/modules/ted.c#L38), [462](../src/modules/ted.c#L462) |
-| address_global | `D_ted_00407270` | function `tedWriteSecondaryRecords` | [38](../src/modules/ted.c#L38), [599](../src/modules/ted.c#L599) |
-| address_global | `D_ted_00407288` | function `tedApplySelectedScalar0C`, function `tedApplySelectedScalar10`, function `tedApplySelectedScalar14`, function `tedApplySelectedScalar18`, function `tedApplySelectedScalar1C`, function `tedApplySelectedScalar20`, function `tedApplySelectedScalar24`, function `tedWriteSelectedRecords`, global `D_ted_00407288` | [119](../src/modules/ted.c#L119), [467](../src/modules/ted.c#L467), [500](../src/modules/ted.c#L500), [514](../src/modules/ted.c#L514), [528](../src/modules/ted.c#L528), [542](../src/modules/ted.c#L542), [558](../src/modules/ted.c#L558), [572](../src/modules/ted.c#L572) (+1 in JSON) |
-| address_global | `D_ted_00407290` | function `tedStoreSelectedRecordByte`, function `tedWriteSecondaryRecords`, global `D_ted_00407290` | [121](../src/modules/ted.c#L121), [604](../src/modules/ted.c#L604), [684](../src/modules/ted.c#L684) |
-| address_global | `D_ted_004072A8` | function `tedCreateTaskEditorGroupsAndDispatchSelector` | [26](../src/modules/ted.c#L26), [245](../src/modules/ted.c#L245), [248](../src/modules/ted.c#L248), [250](../src/modules/ted.c#L250), [255](../src/modules/ted.c#L255), [260](../src/modules/ted.c#L260) |
-| address_global | `D_ted_004072AC` | function `tedCreateTaskEditorGroupsAndDispatchSelector` | [26](../src/modules/ted.c#L26), [252](../src/modules/ted.c#L252), [255](../src/modules/ted.c#L255) |
-| address_global | `D_ted_004072B0` | function `tedCreateTaskEditorGroupsAndDispatchSelector`, function `tedResetPoolWithChkPtLabel`, function `tedResetPoolWithEnvPlnLabel`, global `D_ted_004072B0` | [95](../src/modules/ted.c#L95), [257](../src/modules/ted.c#L257), [260](../src/modules/ted.c#L260), [301](../src/modules/ted.c#L301), [302](../src/modules/ted.c#L302), [311](../src/modules/ted.c#L311), [312](../src/modules/ted.c#L312) |
-| address_global | `D_ted_004072B8` | function `tedReadVersionThreeFile`, global `D_ted_004072B8` | [30](../src/modules/ted.c#L30), [415](../src/modules/ted.c#L415) |
-| assembly | `__entrypoint_func_ted_400000` | — | [182](../src/modules/ted.c#L182) |
-| assembly | `func_ted_00400558` | — | [184](../src/modules/ted.c#L184) |
-| assembly | `func_ted_004007B8` | — | [214](../src/modules/ted.c#L214) |
-| assembly | `func_ted_00400C18` | — | [216](../src/modules/ted.c#L216) |
-| assembly | `func_ted_00401004` | — | [218](../src/modules/ted.c#L218) |
-| assembly | `func_ted_00401338` | — | [220](../src/modules/ted.c#L220) |
-| assembly | `func_ted_00401C6C` | — | [286](../src/modules/ted.c#L286) |
-| assembly | `func_ted_00402320` | — | [288](../src/modules/ted.c#L288) |
-| assembly | `func_ted_00402E58` | — | [290](../src/modules/ted.c#L290) |
-| assembly | `func_ted_004031A0` | — | [292](../src/modules/ted.c#L292) |
-| assembly | `func_ted_004034E8` | — | [294](../src/modules/ted.c#L294) |
-| assembly | `func_ted_004038B8` | — | [327](../src/modules/ted.c#L327) |
-| assembly | `func_ted_00403A58` | — | [353](../src/modules/ted.c#L353) |
-| assembly | `func_ted_00403C20` | — | [381](../src/modules/ted.c#L381) |
-| assembly | `func_ted_004040B4` | — | [453](../src/modules/ted.c#L453) |
-| assembly | `func_ted_00404468` | — | [485](../src/modules/ted.c#L485) |
-| assembly | `func_ted_0040465C` | — | [487](../src/modules/ted.c#L487) |
-| assembly | `func_ted_004047DC` | — | [489](../src/modules/ted.c#L489) |
-| assembly | `func_ted_00404C28` | — | [547](../src/modules/ted.c#L547) |
-| assembly | `func_ted_00404DA8` | — | [591](../src/modules/ted.c#L591) |
-| assembly | `func_ted_00405018` | — | [630](../src/modules/ted.c#L630) |
-| assembly | `func_ted_004051F0` | — | [650](../src/modules/ted.c#L650) |
-| assembly | `func_ted_00405344` | — | [652](../src/modules/ted.c#L652) |
-| assembly | `func_ted_0040561C` | — | [676](../src/modules/ted.c#L676) |
-| assembly | `func_ted_00405804` | — | [689](../src/modules/ted.c#L689) |
-| assembly | `func_ted_0040590C` | — | [691](../src/modules/ted.c#L691) |
-| assembly | `func_ted_004059BC` | — | [715](../src/modules/ted.c#L715) |
-| assembly | `func_ted_00405B94` | — | [717](../src/modules/ted.c#L717) |
-| assembly | `func_ted_00405C9C` | — | [719](../src/modules/ted.c#L719) |
-| assembly | `func_ted_00405EE8` | — | [742](../src/modules/ted.c#L742) |
-| assembly | `func_ted_0040607C` | — | [756](../src/modules/ted.c#L756) |
-| assembly | `func_ted_00406178` | — | [758](../src/modules/ted.c#L758) |
-| assembly | `func_ted_00406280` | — | [760](../src/modules/ted.c#L760) |
-| assembly | `func_ted_00406330` | — | [785](../src/modules/ted.c#L785) |
-| assembly | `func_ted_00406508` | — | [795](../src/modules/ted.c#L795) |
-| assembly | `func_ted_00406610` | — | [803](../src/modules/ted.c#L803) |
-| assembly | `func_ted_0040685C` | — | [824](../src/modules/ted.c#L824) |
-| assembly | `func_ted_004069F0` | — | [838](../src/modules/ted.c#L838) |
-| assembly | `func_ted_00406B04` | — | [840](../src/modules/ted.c#L840) |
-| assembly | `ted.rodata-prefix` | — | [180](../src/modules/ted.c#L180) |
-| explicit_unknown | `* Append a secondary44-byte editor record under the pre-create byte-count<100 * gate; reload/wrap count after DOBJ creation, write count/index words and the * parallel handle, c...` | assembly `func_ted_004051F0` | [631](../src/modules/ted.c#L631) |
-| explicit_unknown | `* Apply the segment-query update to the second selected editor pool: retain * its 16-byte record, copy position twice, subtract 100 from the second Z, * and use flags 255. On su...` | assembly `func_ted_0040685C` | [804](../src/modules/ted.c#L804) |
-| explicit_unknown | `* Clear the 100 parallel object slots through DOBJ tag4 and slot0x40, reading * each current handle again across callbacks. Read the original one-byte * header, then 44-byte rec...` | assembly `func_ted_00405018` | [611](../src/modules/ted.c#L611) |
-| explicit_unknown | `* Copy the first selected editor record's position twice, subtract 100 from * the second Z, and query the segment with flags 255. On success, copy the * query scalar at offset 0...` | assembly `func_ted_00405EE8` | [720](../src/modules/ted.c#L720) |
-| explicit_unknown | `* For a nonnegative selected secondary object, copy its scalar triple twice, * subtract 100.0f from the second z component and query the original segment * provider with words 0...` | assembly `func_ted_0040561C` | [653](../src/modules/ted.c#L653) |
-| explicit_unknown | `* Preserve the original shared-mode branch: mode0 or1 formats stack+0x30, * updates GUI bounds and then calls the shared selector refresh; other modes * skip both local formatti...` | assembly `func_ted_004038B8` | [315](../src/modules/ted.c#L315) |
-| explicit_unknown | `* RE_ORIGINAL_QUIRK: when unsigned D_ted_0040727C is outside 0..4, * the original skips every sprintf but still passes unwritten scratch SP+0x20 * to GUI slot0xC4, whose origina...` | assembly `func_ted_0040607C` | [743](../src/modules/ted.c#L743) |
-| explicit_unknown | `* RE_ORIGINAL_QUIRK: when unsigned D_ted_00407284 is outside 0..5, * the original skips every sprintf but still passes unwritten scratch SP+0x20 * to GUI slot0xC4, whose origina...` | assembly `func_ted_004069F0` | [825](../src/modules/ted.c#L825) |
-| explicit_unknown | `* RE_UNKNOWN: record/controller index bounds, backing and callback alias/mutation * domains, rotation frames/scalar domains and object property-seven meaning; * trace original f...` | assembly `func_ted_004040B4` | [443](../src/modules/ted.c#L443) |
-| explicit_unknown | `* RE_UNKNOWN: second-list backing capacities, count/selection validity, alias and * callback-mutation domains, record word/triple roles and helper effects; verify * allocators, ...` | assembly `func_ted_00406508` | [786](../src/modules/ted.c#L786) |
-| explicit_unknown | `* RE_UNKNOWN: valid file counts, backing replacements, allocation failures, * record meanings and callback alias/mutation lifecycle; verify original file * producers, every coun...` | assembly `func_ted_00404468` | [474](../src/modules/ted.c#L474) |
-| explicit_unknown | `* Reset 20 object-list slots, then read a byte count and 16-byte records. * Keep attempted reads separate from retained-record and object-list indices; * only a stored creation ...` | assembly `func_ted_00406330` | [761](../src/modules/ted.c#L761) |
-| explicit_unknown | `* Reset 30 object-list entries, then read a byte count and 16-byte records. * Keep separate attempted-read and retained-record counters: the record and * object-list cursors adv...` | assembly `func_ted_004059BC` | [692](../src/modules/ted.c#L692) |
-| explicit_unknown | `* Reset the shared selector's scalar/word defaults and selected index before * dispatching. Selectors 1, 2, 3, 4, 7 and 8 choose the original literal label * and count; selector...` | assembly `func_ted_00403A58` | [328](../src/modules/ted.c#L328) |
-| explicit_unknown | `A nonzero shared frame flag delegates to original PAUS export 0x08. * Otherwise dispatch editor modes zero/one, then update the original camera. * RE_UNKNOWN: full callback cont...` | — | [187](../src/modules/ted.c#L187) |
-| explicit_unknown | `A nonzero shared frame flag invokes PAUS export 0x08 and returns. * Its original target dispatches the current pause-node callback selected * by short 0x10, updates linked menu ...` | function `tedDispatchFrameAndCamera` | [191](../src/modules/ted.c#L191) |
-| explicit_unknown | `Create the "Task Editor" child group and two text lists, append the group * to the original GAMEGUI shared-state address plus 0x10, then refresh and * dispatch the current selec...` | function `tedCreateTaskEditorGroupsAndDispatchSelector` | [223](../src/modules/ted.c#L223) |
-| explicit_unknown | `If selection>=0, store the editor byte at selected 0x2C record offset one. * RE_UNKNOWN: upper index/storage bounds need original selection producers and callers.` | function `tedStoreSelectedRecordByte` | [679](../src/modules/ted.c#L679) |
-| explicit_unknown | `Load the original file backend and open the formatted scene filename * for reading. Close and return when the one-byte version differs from three. * For version three, dispatch ...` | function `tedReadVersionThreeFile` | [384](../src/modules/ted.c#L384) |
-| explicit_unknown | `Minimal original slot-consumption views; unused storage is not a complete * export-table or historical ABI declaration. Keep shared provider reloads. * RE_UNKNOWN: full table li...` | type `TedTaskEditorGameGuiExports` | [3](../src/modules/ted.c#L3) |
-| explicit_unknown | `Original PAUS export 0x08 binds func_pause_00400258. * RE_UNKNOWN: its initial node callback inherits incoming argument registers; * that callback's intended argument/result con...` | type `TedPauseFrameExports` | [39](../src/modules/ted.c#L39) |
-| explicit_unknown | `RE_UNKNOWN: first-list selection/count invariants, backing capacity, record word/vector roles and callback mutation domains; inspect original list creators, ID/record writers an...` | assembly `func_ted_00405C9C` | [718](../src/modules/ted.c#L718) |
-| explicit_unknown | `RE_UNKNOWN: record/object bounds and callback mutations, rotation units/frames, SMACK model-word meaning and DOBJ tag-one scalar units; trace original record creators, SMACK tab...` | assembly `func_ted_00404DA8` | [590](../src/modules/ted.c#L590) |
-| explicit_unknown | `RE_UNKNOWN: second-list backing capacity, selection/count/alias * invariants, word/triple roles and callback mutation lifecycle; verify * allocators, all callers and DOBJ callba...` | assembly `func_ted_00406610` | [796](../src/modules/ted.c#L796) |
-| explicit_unknown | `Refresh shared editor fields from the selected record, then dispatch the * original selector-specific refresh callback. Selectors 1 and 2 use 44-byte * record strides; selectors...` | assembly `func_ted_00403C20` | [355](../src/modules/ted.c#L355) |
-| explicit_unknown | `Reset and clear 80 record pointers, then count/selection; ignore a null pool. * RE_UNKNOWN: node/GUI ownership/lifetime need original producers and teardown callers.` | function `tedResetRecordPool` | [843](../src/modules/ted.c#L843) |
-| explicit_unknown | `Set the original GUI label to "ChkPt" and reset the shared record pool. * RE_UNKNOWN: the label expansion and the full GUI handle/pool type contract * remain unproven; preserve ...` | function `tedResetPoolWithChkPtLabel` | [307](../src/modules/ted.c#L307) |
-| explicit_unknown | `Set the original GUI label to "EnvPln" and reset the shared record pool. * RE_UNKNOWN: the label expansion and the full GUI handle/pool type contract * remain unproven; preserve...` | function `tedResetPoolWithEnvPlnLabel` | [297](../src/modules/ted.c#L297) |
-| explicit_unknown | `Write the one-byte header followed by count8C records of 0x2C bytes. * Reload shared count/base after each callback; write statuses are ignored. * RE_UNKNOWN: record/count bound...` | function `tedWriteSelectedRecords` | [456](../src/modules/ted.c#L456) |
-| layout_padding | `pad00` | type `TedGuiExports` | [89](../src/modules/ted.c#L89) |
-| layout_padding | `padA0` | type `TedGuiExports` | [91](../src/modules/ted.c#L91) |
-| layout_padding | `prefix` | type `TedFileLoaderExports`, type `TedPauseFrameExports`, type `TedSceneNameExports` | [32](../src/modules/ted.c#L32), [33](../src/modules/ted.c#L33), [45](../src/modules/ted.c#L45) |
-| layout_padding | `prefix00` | type `TedTaskEditorGameGuiExports`, type `TedTaskEditorGuiExports` | [7](../src/modules/ted.c#L7), [13](../src/modules/ted.c#L13) |
-| layout_padding | `prefix0C` | type `TedTaskEditorGuiExports` | [15](../src/modules/ted.c#L15) |
-| layout_padding | `prefix18` | type `TedTaskEditorGameGuiExports` | [9](../src/modules/ted.c#L9) |
-| layout_padding | `prefix7C` | type `TedTaskEditorGuiExports` | [19](../src/modules/ted.c#L19) |
-| layout_padding | `prefix88` | type `TedTaskEditorGuiExports` | [21](../src/modules/ted.c#L21) |
-| offset_field | `unk00` | type `TedCameraFrameExports`, type `TedFileWriteExports`, type `TedGuiState`, type `TedRecordPool`, type `TedResetRecord`, type `TedSelectedRecord` | [36](../src/modules/ted.c#L36), [48](../src/modules/ted.c#L48), [52](../src/modules/ted.c#L52), [56](../src/modules/ted.c#L56), [73](../src/modules/ted.c#L73), [99](../src/modules/ted.c#L99) |
-| offset_field | `unk0C` | function `tedApplySelectedScalar0C`, function `tedResetRecord`, type `TedCheckData`, type `TedResetRecord`, type `TedSelectedRecord` | [74](../src/modules/ted.c#L74), [100](../src/modules/ted.c#L100), [105](../src/modules/ted.c#L105), [558](../src/modules/ted.c#L558), [865](../src/modules/ted.c#L865) |
-| offset_field | `unk0E` | function `tedResetRecord`, type `TedResetRecord` | [75](../src/modules/ted.c#L75), [866](../src/modules/ted.c#L866) |
-| offset_field | `unk10` | function `tedApplySelectedScalar10`, function `tedResetRecord`, type `TedResetRecord`, type `TedSelectedRecord` | [76](../src/modules/ted.c#L76), [100](../src/modules/ted.c#L100), [572](../src/modules/ted.c#L572), [867](../src/modules/ted.c#L867) |
-| offset_field | `unk12` | function `tedResetRecord`, type `TedResetRecord` | [77](../src/modules/ted.c#L77), [868](../src/modules/ted.c#L868) |
-| offset_field | `unk14` | function `tedApplySelectedScalar14`, function `tedResetRecord`, type `TedResetRecord`, type `TedSelectedRecord` | [78](../src/modules/ted.c#L78), [100](../src/modules/ted.c#L100), [586](../src/modules/ted.c#L586), [869](../src/modules/ted.c#L869) |
-| offset_field | `unk16` | type `TedResetRecord` | [79](../src/modules/ted.c#L79) |
-| offset_field | `unk18` | function `tedApplySelectedScalar18`, type `TedSelectedRecord` | [100](../src/modules/ted.c#L100), [500](../src/modules/ted.c#L500) |
-| offset_field | `unk1C` | function `tedApplySelectedScalar1C`, function `tedResetRecord`, type `TedResetRecord`, type `TedSelectedRecord` | [80](../src/modules/ted.c#L80), [100](../src/modules/ted.c#L100), [514](../src/modules/ted.c#L514), [870](../src/modules/ted.c#L870) |
-| offset_field | `unk1E` | function `tedResetGuiState`, type `TedGuiState` | [57](../src/modules/ted.c#L57), [891](../src/modules/ted.c#L891) |
-| offset_field | `unk20` | function `tedApplySelectedScalar20`, function `tedResetGuiState`, function `tedResetRecord`, type `TedGuiState`, type `TedResetRecord`, type `TedSelectedRecord` | [58](../src/modules/ted.c#L58), [81](../src/modules/ted.c#L81), [100](../src/modules/ted.c#L100), [528](../src/modules/ted.c#L528), [871](../src/modules/ted.c#L871), [892](../src/modules/ted.c#L892) |
-| offset_field | `unk22` | type `TedGuiState` | [59](../src/modules/ted.c#L59) |
-| offset_field | `unk24` | function `tedApplySelectedScalar24`, function `tedResetGuiState`, function `tedResetRecord`, type `TedGuiState`, type `TedResetRecord`, type `TedSelectedRecord` | [60](../src/modules/ted.c#L60), [82](../src/modules/ted.c#L82), [100](../src/modules/ted.c#L100), [542](../src/modules/ted.c#L542), [872](../src/modules/ted.c#L872), [897](../src/modules/ted.c#L897) |
-| offset_field | `unk28` | function `tedResetGuiState`, function `tedResetRecord`, type `TedGuiState`, type `TedResetRecord`, type `TedSelectedRecord` | [61](../src/modules/ted.c#L61), [83](../src/modules/ted.c#L83), [101](../src/modules/ted.c#L101), [864](../src/modules/ted.c#L864), [873](../src/modules/ted.c#L873), [896](../src/modules/ted.c#L896) |
-| offset_field | `unk2C` | function `tedResetGuiState`, function `tedResetRecord`, type `TedGuiState`, type `TedResetRecord` | [62](../src/modules/ted.c#L62), [84](../src/modules/ted.c#L84), [874](../src/modules/ted.c#L874), [893](../src/modules/ted.c#L893) |
-| offset_field | `unk30` | function `tedResetGuiState`, function `tedResetRecord`, type `TedGuiState`, type `TedResetRecord` | [63](../src/modules/ted.c#L63), [85](../src/modules/ted.c#L85), [875](../src/modules/ted.c#L875), [895](../src/modules/ted.c#L895) |
-| offset_field | `unk34` | function `tedResetGuiState`, type `TedGuiState` | [64](../src/modules/ted.c#L64), [898](../src/modules/ted.c#L898) |
-| offset_field | `unk38` | type `TedGuiState` | [65](../src/modules/ted.c#L65) |
-| offset_field | `unk40` | function `tedResetGuiState`, type `TedCheckData`, type `TedGuiState` | [66](../src/modules/ted.c#L66), [107](../src/modules/ted.c#L107), [904](../src/modules/ted.c#L904) |
-| offset_field | `unk44` | function `tedResetGuiState`, type `TedGuiState` | [67](../src/modules/ted.c#L67), [894](../src/modules/ted.c#L894) |
-| offset_field | `unk60` | type `TedCheckData` | [109](../src/modules/ted.c#L109) |
-| offset_field | `unk84` | function `tedApplySelectedScalar0C`, function `tedApplySelectedScalar10`, function `tedApplySelectedScalar14`, function `tedApplySelectedScalar18`, function `tedApplySelectedScalar1C`, function `tedApplySelectedScalar20`, function `tedApplySelectedScalar24`, function `tedStoreSelectedRecordByte`, type `TedCheckData` | [110](../src/modules/ted.c#L110), [498](../src/modules/ted.c#L498), [512](../src/modules/ted.c#L512), [526](../src/modules/ted.c#L526), [540](../src/modules/ted.c#L540), [556](../src/modules/ted.c#L556), [570](../src/modules/ted.c#L570), [584](../src/modules/ted.c#L584) (+1 in JSON) |
-| offset_field | `unk88` | type `TedCheckData` | [111](../src/modules/ted.c#L111) |
-| offset_field | `unk8D` | type `TedCheckData` | [113](../src/modules/ted.c#L113) |
-| offset_field | `unk94` | function `tedApplySelectedScalar18`, type `TedCheckData` | [114](../src/modules/ted.c#L114), [500](../src/modules/ted.c#L500) |
-| offset_field | `unk98` | function `tedApplySelectedScalar1C`, type `TedCheckData` | [114](../src/modules/ted.c#L114), [514](../src/modules/ted.c#L514) |
-| offset_field | `unk9C` | function `tedApplySelectedScalar20`, function `tedResetPoolWithChkPtLabel`, function `tedResetPoolWithEnvPlnLabel`, type `TedCheckData`, type `TedGuiExports` | [90](../src/modules/ted.c#L90), [114](../src/modules/ted.c#L114), [301](../src/modules/ted.c#L301), [311](../src/modules/ted.c#L311), [528](../src/modules/ted.c#L528) |
-| offset_field | `unkA0` | function `tedApplySelectedScalar24`, type `TedCheckData` | [114](../src/modules/ted.c#L114), [542](../src/modules/ted.c#L542) |
-| offset_field | `unkA4` | function `tedApplySelectedScalar0C`, type `TedCheckData` | [114](../src/modules/ted.c#L114), [558](../src/modules/ted.c#L558) |
-| offset_field | `unkA8` | function `tedApplySelectedScalar10`, type `TedCheckData` | [114](../src/modules/ted.c#L114), [572](../src/modules/ted.c#L572) |
-| offset_field | `unkAC` | function `tedApplySelectedScalar14`, type `TedCheckData` | [114](../src/modules/ted.c#L114), [586](../src/modules/ted.c#L586) |
-| offset_field | `unkB1` | type `TedCheckData` | [116](../src/modules/ted.c#L116) |
-| offset_field | `unkB4` | function `tedStoreSelectedRecordByte`, type `TedCheckData` | [117](../src/modules/ted.c#L117), [684](../src/modules/ted.c#L684) |
-| offset_field | `unkC8` | function `tedResetGuiState`, type `TedGuiExports` | [92](../src/modules/ted.c#L92), [903](../src/modules/ted.c#L903) |
-| original_quirk | `* Append a secondary44-byte editor record under the pre-create byte-count<100 * gate; reload/wrap count after DOBJ creation, write count/index words and the * parallel handle, c...` | assembly `func_ted_004051F0` | [631](../src/modules/ted.c#L631) |
-| original_quirk | `* Apply the segment-query update to the second selected editor pool: retain * its 16-byte record, copy position twice, subtract 100 from the second Z, * and use flags 255. On su...` | assembly `func_ted_0040685C` | [804](../src/modules/ted.c#L804) |
-| original_quirk | `* Clear the 100 parallel object slots through DOBJ tag4 and slot0x40, reading * each current handle again across callbacks. Read the original one-byte * header, then 44-byte rec...` | assembly `func_ted_00405018` | [611](../src/modules/ted.c#L611) |
-| original_quirk | `* Copy the first selected editor record's position twice, subtract 100 from * the second Z, and query the segment with flags 255. On success, copy the * query scalar at offset 0...` | assembly `func_ted_00405EE8` | [720](../src/modules/ted.c#L720) |
-| original_quirk | `* For a nonnegative selected secondary object, copy its scalar triple twice, * subtract 100.0f from the second z component and query the original segment * provider with words 0...` | assembly `func_ted_0040561C` | [653](../src/modules/ted.c#L653) |
-| original_quirk | `* Preserve the original shared-mode branch: mode0 or1 formats stack+0x30, * updates GUI bounds and then calls the shared selector refresh; other modes * skip both local formatti...` | assembly `func_ted_004038B8` | [315](../src/modules/ted.c#L315) |
-| original_quirk | `* RE_ORIGINAL_QUIRK: when unsigned D_ted_0040727C is outside 0..4, * the original skips every sprintf but still passes unwritten scratch SP+0x20 * to GUI slot0xC4, whose origina...` | assembly `func_ted_0040607C` | [743](../src/modules/ted.c#L743) |
-| original_quirk | `* RE_ORIGINAL_QUIRK: when unsigned D_ted_00407284 is outside 0..5, * the original skips every sprintf but still passes unwritten scratch SP+0x20 * to GUI slot0xC4, whose origina...` | assembly `func_ted_004069F0` | [825](../src/modules/ted.c#L825) |
-| original_quirk | `* RE_UNKNOWN: second-list backing capacities, count/selection validity, alias and * callback-mutation domains, record word/triple roles and helper effects; verify * allocators, ...` | assembly `func_ted_00406508` | [786](../src/modules/ted.c#L786) |
-| original_quirk | `* RE_UNKNOWN: valid file counts, backing replacements, allocation failures, * record meanings and callback alias/mutation lifecycle; verify original file * producers, every coun...` | assembly `func_ted_00404468` | [474](../src/modules/ted.c#L474) |
-| original_quirk | `* Reset 20 object-list slots, then read a byte count and 16-byte records. * Keep attempted reads separate from retained-record and object-list indices; * only a stored creation ...` | assembly `func_ted_00406330` | [761](../src/modules/ted.c#L761) |
-| original_quirk | `* Reset 30 object-list entries, then read a byte count and 16-byte records. * Keep separate attempted-read and retained-record counters: the record and * object-list cursors adv...` | assembly `func_ted_004059BC` | [692](../src/modules/ted.c#L692) |
-| original_quirk | `* Reset the shared selector's scalar/word defaults and selected index before * dispatching. Selectors 1, 2, 3, 4, 7 and 8 choose the original literal label * and count; selector...` | assembly `func_ted_00403A58` | [328](../src/modules/ted.c#L328) |
-| original_quirk | `Create the "Task Editor" child group and two text lists, append the group * to the original GAMEGUI shared-state address plus 0x10, then refresh and * dispatch the current selec...` | function `tedCreateTaskEditorGroupsAndDispatchSelector` | [223](../src/modules/ted.c#L223) |
-| original_quirk | `Load the original file backend and open the formatted scene filename * for reading. Close and return when the one-byte version differs from three. * For version three, dispatch ...` | function `tedReadVersionThreeFile` | [384](../src/modules/ted.c#L384) |
-| original_quirk | `RE_UNKNOWN: second-list backing capacity, selection/count/alias * invariants, word/triple roles and callback mutation lifecycle; verify * allocators, all callers and DOBJ callba...` | assembly `func_ted_00406610` | [796](../src/modules/ted.c#L796) |
-| original_quirk | `Refresh shared editor fields from the selected record, then dispatch the * original selector-specific refresh callback. Selectors 1 and 2 use 44-byte * record strides; selectors...` | assembly `func_ted_00403C20` | [355](../src/modules/ted.c#L355) |
-| uncertainty_note | `For a non-null record, reset the nested GUI state referenced by field 0x28, * then restore the original halfword defaults and clear the six word fields. * Unknown fields retain ...` | function `tedResetRecord` | [859](../src/modules/ted.c#L859) |
-| unused_identifier | `unused` | function `tedApplySelectedScalar0C`, function `tedApplySelectedScalar0C`, function `tedApplySelectedScalar10`, function `tedApplySelectedScalar10`, function `tedApplySelectedScalar14`, function `tedApplySelectedScalar14`, function `tedApplySelectedScalar18`, function `tedApplySelectedScalar18`, function `tedApplySelectedScalar1C`, function `tedApplySelectedScalar1C`, function `tedApplySelectedScalar20`, function `tedApplySelectedScalar20`, function `tedApplySelectedScalar24`, function `tedApplySelectedScalar24`, function `tedReadVersionThreeFile`, function `tedStoreSelectedRecordByte`, function `tedWriteVersionThreeFile`, function `tedWriteVersionThreeFile` | [141](../src/modules/ted.c#L141), [147](../src/modules/ted.c#L147), [148](../src/modules/ted.c#L148), [149](../src/modules/ted.c#L149), [150](../src/modules/ted.c#L150), [152](../src/modules/ted.c#L152), [153](../src/modules/ted.c#L153), [154](../src/modules/ted.c#L154) (+10 in JSON) |
+| address_function | `func_ted_00400558` | function `func_ted_00400558` | [143](../src/modules/ted.c#L143) |
+| address_function | `func_ted_004007B8` | function `func_ted_004007B8`, function `tedDispatchFrameAndCamera` | [145](../src/modules/ted.c#L145), [226](../src/modules/ted.c#L226) |
+| address_function | `func_ted_00400C18` | function `func_ted_00400C18`, function `tedDispatchFrameAndCamera` | [146](../src/modules/ted.c#L146), [227](../src/modules/ted.c#L227) |
+| address_function | `func_ted_00401004` | function `func_ted_00401004` | [147](../src/modules/ted.c#L147) |
+| address_function | `func_ted_00401338` | function `func_ted_00401338` | [148](../src/modules/ted.c#L148) |
+| address_function | `func_ted_00401C6C` | function `func_ted_00401C6C`, function `tedCreateTaskEditorGroupsAndDispatchSelector`, function `tedReadVersionThreeFile` | [150](../src/modules/ted.c#L150), [281](../src/modules/ted.c#L281), [436](../src/modules/ted.c#L436) |
+| address_function | `func_ted_00402320` | function `func_ted_00402320`, function `tedCreateTaskEditorGroupsAndDispatchSelector` | [151](../src/modules/ted.c#L151), [285](../src/modules/ted.c#L285) |
+| address_function | `func_ted_00402E58` | function `func_ted_00402E58`, function `tedCreateTaskEditorGroupsAndDispatchSelector` | [152](../src/modules/ted.c#L152), [288](../src/modules/ted.c#L288) |
+| address_function | `func_ted_004031A0` | function `func_ted_004031A0`, function `tedCreateTaskEditorGroupsAndDispatchSelector` | [153](../src/modules/ted.c#L153), [291](../src/modules/ted.c#L291) |
+| address_function | `func_ted_004034E8` | function `func_ted_004034E8`, function `tedCreateTaskEditorGroupsAndDispatchSelector` | [154](../src/modules/ted.c#L154), [294](../src/modules/ted.c#L294) |
+| address_function | `func_ted_004038B8` | function `func_ted_004038B8` | [157](../src/modules/ted.c#L157) |
+| address_function | `func_ted_00403A58` | function `func_ted_00403A58`, function `tedReadVersionThreeFile` | [158](../src/modules/ted.c#L158), [435](../src/modules/ted.c#L435) |
+| address_function | `func_ted_00403C20` | function `func_ted_00403C20` | [159](../src/modules/ted.c#L159) |
+| address_function | `func_ted_004040B4` | function `func_ted_004040B4` | [162](../src/modules/ted.c#L162) |
+| address_function | `func_ted_00404468` | function `func_ted_00404468`, function `tedReadVersionThreeFile` | [164](../src/modules/ted.c#L164), [430](../src/modules/ted.c#L430) |
+| address_function | `func_ted_0040465C` | function `func_ted_0040465C` | [165](../src/modules/ted.c#L165) |
+| address_function | `func_ted_004047DC` | function `func_ted_004047DC` | [166](../src/modules/ted.c#L166) |
+| address_function | `func_ted_00404C28` | function `func_ted_00404C28` | [171](../src/modules/ted.c#L171) |
+| address_function | `func_ted_00404DA8` | function `func_ted_00404DA8` | [175](../src/modules/ted.c#L175) |
+| address_function | `func_ted_00405018` | function `func_ted_00405018`, function `tedReadVersionThreeFile` | [177](../src/modules/ted.c#L177), [431](../src/modules/ted.c#L431) |
+| address_function | `func_ted_004051F0` | function `func_ted_004051F0` | [178](../src/modules/ted.c#L178) |
+| address_function | `func_ted_00405344` | function `func_ted_00405344` | [179](../src/modules/ted.c#L179) |
+| address_function | `func_ted_0040561C` | function `func_ted_0040561C` | [180](../src/modules/ted.c#L180) |
+| address_function | `func_ted_00405804` | function `func_ted_00405804` | [182](../src/modules/ted.c#L182) |
+| address_function | `func_ted_0040590C` | function `func_ted_0040590C`, function `tedWriteVersionThreeFile` | [183](../src/modules/ted.c#L183), [457](../src/modules/ted.c#L457) |
+| address_function | `func_ted_004059BC` | function `func_ted_004059BC`, function `tedReadVersionThreeFile` | [184](../src/modules/ted.c#L184), [432](../src/modules/ted.c#L432) |
+| address_function | `func_ted_00405B94` | function `func_ted_00405B94` | [185](../src/modules/ted.c#L185) |
+| address_function | `func_ted_00405C9C` | function `func_ted_00405C9C` | [186](../src/modules/ted.c#L186) |
+| address_function | `func_ted_00405EE8` | function `func_ted_00405EE8` | [187](../src/modules/ted.c#L187) |
+| address_function | `func_ted_00406178` | function `func_ted_00406178` | [189](../src/modules/ted.c#L189) |
+| address_function | `func_ted_00406280` | function `func_ted_00406280`, function `tedWriteVersionThreeFile` | [190](../src/modules/ted.c#L190), [458](../src/modules/ted.c#L458) |
+| address_function | `func_ted_00406330` | function `func_ted_00406330`, function `tedReadVersionThreeFile` | [191](../src/modules/ted.c#L191), [433](../src/modules/ted.c#L433) |
+| address_function | `func_ted_00406508` | function `func_ted_00406508` | [192](../src/modules/ted.c#L192) |
+| address_function | `func_ted_00406610` | function `func_ted_00406610` | [193](../src/modules/ted.c#L193) |
+| address_function | `func_ted_0040685C` | function `func_ted_0040685C` | [194](../src/modules/ted.c#L194) |
+| address_function | `func_ted_00406B04` | function `func_ted_00406B04` | [196](../src/modules/ted.c#L196) |
+| address_global | `D_80025D76` | function `tedDispatchFrameAndCamera`, global `D_80025D76` | [69](../src/modules/ted.c#L69), [221](../src/modules/ted.c#L221) |
+| address_global | `D_ted_00406E60` | function `tedCreateTaskEditorGroupsAndDispatchSelector`, global `D_ted_00406E60` | [47](../src/modules/ted.c#L47), [268](../src/modules/ted.c#L268) |
+| address_global | `D_ted_00406FB8` | function `tedResetPoolWithEnvPlnLabel`, global `D_ted_00406FB8` | [116](../src/modules/ted.c#L116), [321](../src/modules/ted.c#L321) |
+| address_global | `D_ted_00406FC0` | function `tedResetPoolWithChkPtLabel`, global `D_ted_00406FC0` | [117](../src/modules/ted.c#L117), [331](../src/modules/ted.c#L331) |
+| address_global | `D_ted_0040701C` | function `tedReadVersionThreeFile`, global `D_ted_0040701C` | [49](../src/modules/ted.c#L49), [421](../src/modules/ted.c#L421) |
+| address_global | `D_ted_00407028` | function `tedReadVersionThreeFile`, global `D_ted_0040701C` | [49](../src/modules/ted.c#L49), [421](../src/modules/ted.c#L421) |
+| address_global | `D_ted_00407048` | function `tedWriteVersionThreeFile`, global `D_ted_00407048` | [55](../src/modules/ted.c#L55), [451](../src/modules/ted.c#L451) |
+| address_global | `D_ted_00407054` | function `tedWriteVersionThreeFile`, global `D_ted_00407048` | [55](../src/modules/ted.c#L55), [451](../src/modules/ted.c#L451) |
+| address_global | `D_ted_00407090` | function `tedUpdateSelectedItemLabel`, global `D_ted_00407090` | [9](../src/modules/ted.c#L9), [794](../src/modules/ted.c#L794) |
+| address_global | `D_ted_00407098` | function `tedUpdateSelectedItemLabel`, global `D_ted_00407098` | [10](../src/modules/ted.c#L10), [797](../src/modules/ted.c#L797) |
+| address_global | `D_ted_004070A0` | function `tedUpdateSelectedItemLabel`, global `D_ted_004070A0` | [11](../src/modules/ted.c#L11), [800](../src/modules/ted.c#L800) |
+| address_global | `D_ted_004070AC` | function `tedUpdateSelectedItemLabel`, global `D_ted_004070AC` | [12](../src/modules/ted.c#L12), [803](../src/modules/ted.c#L803) |
+| address_global | `D_ted_004070B4` | function `tedUpdateSelectedItemLabel`, global `D_ted_004070B4` | [13](../src/modules/ted.c#L13), [806](../src/modules/ted.c#L806) |
+| address_global | `D_ted_004070BC` | function `tedUpdateSelectedColoredLetterLabel`, global `D_ted_004070BC` | [16](../src/modules/ted.c#L16), [915](../src/modules/ted.c#L915) |
+| address_global | `D_ted_004070C4` | function `tedUpdateSelectedColoredLetterLabel`, global `D_ted_004070C4` | [17](../src/modules/ted.c#L17), [918](../src/modules/ted.c#L918) |
+| address_global | `D_ted_004070CC` | function `tedUpdateSelectedColoredLetterLabel`, global `D_ted_004070CC` | [18](../src/modules/ted.c#L18), [921](../src/modules/ted.c#L921) |
+| address_global | `D_ted_004070D4` | function `tedUpdateSelectedColoredLetterLabel`, global `D_ted_004070D4` | [19](../src/modules/ted.c#L19), [924](../src/modules/ted.c#L924) |
+| address_global | `D_ted_004070E0` | function `tedUpdateSelectedColoredLetterLabel`, global `D_ted_004070E0` | [20](../src/modules/ted.c#L20), [927](../src/modules/ted.c#L927) |
+| address_global | `D_ted_004070EC` | function `tedUpdateSelectedColoredLetterLabel`, global `D_ted_004070EC` | [21](../src/modules/ted.c#L21), [930](../src/modules/ted.c#L930) |
+| address_global | `D_ted_004071B4` | function `tedReadVersionThreeFile`, function `tedWriteSecondaryRecords`, function `tedWriteSelectedRecords`, function `tedWriteVersionThreeFile`, global `D_ted_004071B4` | [57](../src/modules/ted.c#L57), [420](../src/modules/ted.c#L420), [423](../src/modules/ted.c#L423), [425](../src/modules/ted.c#L425), [427](../src/modules/ted.c#L427), [434](../src/modules/ted.c#L434), [449](../src/modules/ted.c#L449), [452](../src/modules/ted.c#L452) (+6 in JSON) |
+| address_global | `D_ted_004071B8` | function `tedDispatchFrameAndCamera` | [70](../src/modules/ted.c#L70), [222](../src/modules/ted.c#L222) |
+| address_global | `D_ted_004071C0` | function `tedApplySelectedScalar0C`, function `tedApplySelectedScalar10`, function `tedApplySelectedScalar14`, function `tedApplySelectedScalar18`, function `tedApplySelectedScalar1C`, function `tedApplySelectedScalar20`, function `tedApplySelectedScalar24`, function `tedStoreSelectedRecordByte`, function `tedWriteSecondaryRecords`, function `tedWriteSelectedRecords`, global `D_ted_004071C0` | [140](../src/modules/ted.c#L140), [485](../src/modules/ted.c#L485), [490](../src/modules/ted.c#L490), [518](../src/modules/ted.c#L518), [520](../src/modules/ted.c#L520), [532](../src/modules/ted.c#L532), [534](../src/modules/ted.c#L534), [546](../src/modules/ted.c#L546) (+13 in JSON) |
+| address_global | `D_ted_004071E4` | function `tedDispatchFrameAndCamera` | [71](../src/modules/ted.c#L71), [229](../src/modules/ted.c#L229) |
+| address_global | `D_ted_00407224` | function `tedDispatchFrameAndCamera` | [71](../src/modules/ted.c#L71), [229](../src/modules/ted.c#L229) |
+| address_global | `D_ted_0040722C` | function `tedDispatchFrameAndCamera` | [71](../src/modules/ted.c#L71), [225](../src/modules/ted.c#L225) |
+| address_global | `D_ted_00407240` | function `tedCreateTaskEditorGroupsAndDispatchSelector` | [46](../src/modules/ted.c#L46), [283](../src/modules/ted.c#L283) |
+| address_global | `D_ted_00407244` | function `tedUpdateSelectedColoredLetterLabel`, function `tedUpdateSelectedItemLabel`, global `D_ted_00407244` | [6](../src/modules/ted.c#L6), [810](../src/modules/ted.c#L810), [934](../src/modules/ted.c#L934) |
+| address_global | `D_ted_0040724C` | function `tedWriteSelectedRecords` | [58](../src/modules/ted.c#L58), [482](../src/modules/ted.c#L482) |
+| address_global | `D_ted_00407270` | function `tedWriteSecondaryRecords` | [58](../src/modules/ted.c#L58), [619](../src/modules/ted.c#L619) |
+| address_global | `D_ted_0040727C` | function `tedUpdateSelectedItemLabel`, global `D_ted_0040727C` | [7](../src/modules/ted.c#L7), [792](../src/modules/ted.c#L792), [812](../src/modules/ted.c#L812) |
+| address_global | `D_ted_00407284` | function `tedUpdateSelectedColoredLetterLabel`, global `D_ted_00407284` | [14](../src/modules/ted.c#L14), [913](../src/modules/ted.c#L913), [936](../src/modules/ted.c#L936) |
+| address_global | `D_ted_00407288` | function `tedApplySelectedScalar0C`, function `tedApplySelectedScalar10`, function `tedApplySelectedScalar14`, function `tedApplySelectedScalar18`, function `tedApplySelectedScalar1C`, function `tedApplySelectedScalar20`, function `tedApplySelectedScalar24`, function `tedWriteSelectedRecords`, global `D_ted_00407288` | [139](../src/modules/ted.c#L139), [487](../src/modules/ted.c#L487), [520](../src/modules/ted.c#L520), [534](../src/modules/ted.c#L534), [548](../src/modules/ted.c#L548), [562](../src/modules/ted.c#L562), [578](../src/modules/ted.c#L578), [592](../src/modules/ted.c#L592) (+1 in JSON) |
+| address_global | `D_ted_00407290` | function `tedStoreSelectedRecordByte`, function `tedWriteSecondaryRecords`, global `D_ted_00407290` | [141](../src/modules/ted.c#L141), [624](../src/modules/ted.c#L624), [704](../src/modules/ted.c#L704) |
+| address_global | `D_ted_00407298` | function `tedUpdateSelectedItemLabel`, global `D_ted_00407298` | [8](../src/modules/ted.c#L8), [812](../src/modules/ted.c#L812) |
+| address_global | `D_ted_004072A0` | function `tedUpdateSelectedColoredLetterLabel`, global `D_ted_004072A0` | [15](../src/modules/ted.c#L15), [936](../src/modules/ted.c#L936) |
+| address_global | `D_ted_004072A8` | function `tedCreateTaskEditorGroupsAndDispatchSelector` | [46](../src/modules/ted.c#L46), [265](../src/modules/ted.c#L265), [268](../src/modules/ted.c#L268), [270](../src/modules/ted.c#L270), [275](../src/modules/ted.c#L275), [280](../src/modules/ted.c#L280) |
+| address_global | `D_ted_004072AC` | function `tedCreateTaskEditorGroupsAndDispatchSelector` | [46](../src/modules/ted.c#L46), [272](../src/modules/ted.c#L272), [275](../src/modules/ted.c#L275) |
+| address_global | `D_ted_004072B0` | function `tedCreateTaskEditorGroupsAndDispatchSelector`, function `tedResetPoolWithChkPtLabel`, function `tedResetPoolWithEnvPlnLabel`, global `D_ted_004072B0` | [115](../src/modules/ted.c#L115), [277](../src/modules/ted.c#L277), [280](../src/modules/ted.c#L280), [321](../src/modules/ted.c#L321), [322](../src/modules/ted.c#L322), [331](../src/modules/ted.c#L331), [332](../src/modules/ted.c#L332) |
+| address_global | `D_ted_004072B8` | function `tedReadVersionThreeFile`, global `D_ted_004072B8` | [50](../src/modules/ted.c#L50), [435](../src/modules/ted.c#L435) |
+| assembly | `__entrypoint_func_ted_400000` | — | [202](../src/modules/ted.c#L202) |
+| assembly | `func_ted_00400558` | — | [204](../src/modules/ted.c#L204) |
+| assembly | `func_ted_004007B8` | — | [234](../src/modules/ted.c#L234) |
+| assembly | `func_ted_00400C18` | — | [236](../src/modules/ted.c#L236) |
+| assembly | `func_ted_00401004` | — | [238](../src/modules/ted.c#L238) |
+| assembly | `func_ted_00401338` | — | [240](../src/modules/ted.c#L240) |
+| assembly | `func_ted_00401C6C` | — | [306](../src/modules/ted.c#L306) |
+| assembly | `func_ted_00402320` | — | [308](../src/modules/ted.c#L308) |
+| assembly | `func_ted_00402E58` | — | [310](../src/modules/ted.c#L310) |
+| assembly | `func_ted_004031A0` | — | [312](../src/modules/ted.c#L312) |
+| assembly | `func_ted_004034E8` | — | [314](../src/modules/ted.c#L314) |
+| assembly | `func_ted_004038B8` | — | [347](../src/modules/ted.c#L347) |
+| assembly | `func_ted_00403A58` | — | [373](../src/modules/ted.c#L373) |
+| assembly | `func_ted_00403C20` | — | [401](../src/modules/ted.c#L401) |
+| assembly | `func_ted_004040B4` | — | [473](../src/modules/ted.c#L473) |
+| assembly | `func_ted_00404468` | — | [505](../src/modules/ted.c#L505) |
+| assembly | `func_ted_0040465C` | — | [507](../src/modules/ted.c#L507) |
+| assembly | `func_ted_004047DC` | — | [509](../src/modules/ted.c#L509) |
+| assembly | `func_ted_00404C28` | — | [567](../src/modules/ted.c#L567) |
+| assembly | `func_ted_00404DA8` | — | [611](../src/modules/ted.c#L611) |
+| assembly | `func_ted_00405018` | — | [650](../src/modules/ted.c#L650) |
+| assembly | `func_ted_004051F0` | — | [670](../src/modules/ted.c#L670) |
+| assembly | `func_ted_00405344` | — | [672](../src/modules/ted.c#L672) |
+| assembly | `func_ted_0040561C` | — | [696](../src/modules/ted.c#L696) |
+| assembly | `func_ted_00405804` | — | [709](../src/modules/ted.c#L709) |
+| assembly | `func_ted_0040590C` | — | [711](../src/modules/ted.c#L711) |
+| assembly | `func_ted_004059BC` | — | [735](../src/modules/ted.c#L735) |
+| assembly | `func_ted_00405B94` | — | [737](../src/modules/ted.c#L737) |
+| assembly | `func_ted_00405C9C` | — | [739](../src/modules/ted.c#L739) |
+| assembly | `func_ted_00405EE8` | — | [762](../src/modules/ted.c#L762) |
+| assembly | `func_ted_00406178` | — | [817](../src/modules/ted.c#L817) |
+| assembly | `func_ted_00406280` | — | [819](../src/modules/ted.c#L819) |
+| assembly | `func_ted_00406330` | — | [844](../src/modules/ted.c#L844) |
+| assembly | `func_ted_00406508` | — | [854](../src/modules/ted.c#L854) |
+| assembly | `func_ted_00406610` | — | [862](../src/modules/ted.c#L862) |
+| assembly | `func_ted_0040685C` | — | [883](../src/modules/ted.c#L883) |
+| assembly | `func_ted_00406B04` | — | [941](../src/modules/ted.c#L941) |
+| assembly | `ted.rodata-prefix` | — | [200](../src/modules/ted.c#L200) |
+| explicit_unknown | `* Append a secondary44-byte editor record under the pre-create byte-count<100 * gate; reload/wrap count after DOBJ creation, write count/index words and the * parallel handle, c...` | assembly `func_ted_004051F0` | [651](../src/modules/ted.c#L651) |
+| explicit_unknown | `* Apply the segment-query update to the second selected editor pool: retain * its 16-byte record, copy position twice, subtract 100 from the second Z, * and use flags 255. On su...` | assembly `func_ted_0040685C` | [863](../src/modules/ted.c#L863) |
+| explicit_unknown | `* Clear the 100 parallel object slots through DOBJ tag4 and slot0x40, reading * each current handle again across callbacks. Read the original one-byte * header, then 44-byte rec...` | assembly `func_ted_00405018` | [631](../src/modules/ted.c#L631) |
+| explicit_unknown | `* Copy the first selected editor record's position twice, subtract 100 from * the second Z, and query the segment with flags 255. On success, copy the * query scalar at offset 0...` | assembly `func_ted_00405EE8` | [740](../src/modules/ted.c#L740) |
+| explicit_unknown | `* For a nonnegative selected secondary object, copy its scalar triple twice, * subtract 100.0f from the second z component and query the original segment * provider with words 0...` | assembly `func_ted_0040561C` | [673](../src/modules/ted.c#L673) |
+| explicit_unknown | `* Preserve the original shared-mode branch: mode0 or1 formats stack+0x30, * updates GUI bounds and then calls the shared selector refresh; other modes * skip both local formatti...` | assembly `func_ted_004038B8` | [335](../src/modules/ted.c#L335) |
+| explicit_unknown | `* RE_ORIGINAL_QUIRK: when unsigned D_ted_0040727C is outside 0..4, * the original skips every sprintf but still passes unwritten scratch SP+0x20 * to GUI slot0xC4, whose origina...` | — | [763](../src/modules/ted.c#L763) |
+| explicit_unknown | `* RE_ORIGINAL_QUIRK: when unsigned D_ted_00407284 is outside 0..5, * the original skips every sprintf but still passes unwritten scratch SP+0x20 * to GUI slot0xC4, whose origina...` | — | [884](../src/modules/ted.c#L884) |
+| explicit_unknown | `* RE_UNKNOWN: record/controller index bounds, backing and callback alias/mutation * domains, rotation frames/scalar domains and object property-seven meaning; * trace original f...` | assembly `func_ted_004040B4` | [463](../src/modules/ted.c#L463) |
+| explicit_unknown | `* RE_UNKNOWN: second-list backing capacities, count/selection validity, alias and * callback-mutation domains, record word/triple roles and helper effects; verify * allocators, ...` | assembly `func_ted_00406508` | [845](../src/modules/ted.c#L845) |
+| explicit_unknown | `* RE_UNKNOWN: valid file counts, backing replacements, allocation failures, * record meanings and callback alias/mutation lifecycle; verify original file * producers, every coun...` | assembly `func_ted_00404468` | [494](../src/modules/ted.c#L494) |
+| explicit_unknown | `* Reset 20 object-list slots, then read a byte count and 16-byte records. * Keep attempted reads separate from retained-record and object-list indices; * only a stored creation ...` | assembly `func_ted_00406330` | [820](../src/modules/ted.c#L820) |
+| explicit_unknown | `* Reset 30 object-list entries, then read a byte count and 16-byte records. * Keep separate attempted-read and retained-record counters: the record and * object-list cursors adv...` | assembly `func_ted_004059BC` | [712](../src/modules/ted.c#L712) |
+| explicit_unknown | `* Reset the shared selector's scalar/word defaults and selected index before * dispatching. Selectors 1, 2, 3, 4, 7 and 8 choose the original literal label * and count; selector...` | assembly `func_ted_00403A58` | [348](../src/modules/ted.c#L348) |
+| explicit_unknown | `A nonzero shared frame flag delegates to original PAUS export 0x08. * Otherwise dispatch editor modes zero/one, then update the original camera. * RE_UNKNOWN: full callback cont...` | — | [207](../src/modules/ted.c#L207) |
+| explicit_unknown | `A nonzero shared frame flag invokes PAUS export 0x08 and returns. * Its original target dispatches the current pause-node callback selected * by short 0x10, updates linked menu ...` | function `tedDispatchFrameAndCamera` | [211](../src/modules/ted.c#L211) |
+| explicit_unknown | `Create the "Task Editor" child group and two text lists, append the group * to the original GAMEGUI shared-state address plus 0x10, then refresh and * dispatch the current selec...` | function `tedCreateTaskEditorGroupsAndDispatchSelector` | [243](../src/modules/ted.c#L243) |
+| explicit_unknown | `Format the current selector's original label, forward the stack text to * GUI slot 0xC4, then reload the selected index and current selector for the * 16-byte record store. The ...` | function `tedUpdateSelectedColoredLetterLabel`, function `tedUpdateSelectedItemLabel` | [777](../src/modules/ted.c#L777), [898](../src/modules/ted.c#L898) |
+| explicit_unknown | `If selection>=0, store the editor byte at selected 0x2C record offset one. * RE_UNKNOWN: upper index/storage bounds need original selection producers and callers.` | function `tedStoreSelectedRecordByte` | [699](../src/modules/ted.c#L699) |
+| explicit_unknown | `Load the original file backend and open the formatted scene filename * for reading. Close and return when the one-byte version differs from three. * For version three, dispatch ...` | function `tedReadVersionThreeFile` | [404](../src/modules/ted.c#L404) |
+| explicit_unknown | `Minimal original slot-consumption views; unused storage is not a complete * export-table or historical ABI declaration. Keep shared provider reloads. * RE_UNKNOWN: full table li...` | type `TedTaskEditorGameGuiExports` | [23](../src/modules/ted.c#L23) |
+| explicit_unknown | `Original PAUS export 0x08 binds func_pause_00400258. * RE_UNKNOWN: its initial node callback inherits incoming argument registers; * that callback's intended argument/result con...` | type `TedPauseFrameExports` | [59](../src/modules/ted.c#L59) |
+| explicit_unknown | `RE_UNKNOWN: first-list selection/count invariants, backing capacity, record word/vector roles and callback mutation domains; inspect original list creators, ID/record writers an...` | assembly `func_ted_00405C9C` | [738](../src/modules/ted.c#L738) |
+| explicit_unknown | `RE_UNKNOWN: record/object bounds and callback mutations, rotation units/frames, SMACK model-word meaning and DOBJ tag-one scalar units; trace original record creators, SMACK tab...` | assembly `func_ted_00404DA8` | [610](../src/modules/ted.c#L610) |
+| explicit_unknown | `RE_UNKNOWN: second-list backing capacity, selection/count/alias * invariants, word/triple roles and callback mutation lifecycle; verify * allocators, all callers and DOBJ callba...` | assembly `func_ted_00406610` | [855](../src/modules/ted.c#L855) |
+| explicit_unknown | `Refresh shared editor fields from the selected record, then dispatch the * original selector-specific refresh callback. Selectors 1 and 2 use 44-byte * record strides; selectors...` | assembly `func_ted_00403C20` | [375](../src/modules/ted.c#L375) |
+| explicit_unknown | `Reset and clear 80 record pointers, then count/selection; ignore a null pool. * RE_UNKNOWN: node/GUI ownership/lifetime need original producers and teardown callers.` | function `tedResetRecordPool` | [944](../src/modules/ted.c#L944) |
+| explicit_unknown | `Set the original GUI label to "ChkPt" and reset the shared record pool. * RE_UNKNOWN: the label expansion and the full GUI handle/pool type contract * remain unproven; preserve ...` | function `tedResetPoolWithChkPtLabel` | [327](../src/modules/ted.c#L327) |
+| explicit_unknown | `Set the original GUI label to "EnvPln" and reset the shared record pool. * RE_UNKNOWN: the label expansion and the full GUI handle/pool type contract * remain unproven; preserve...` | function `tedResetPoolWithEnvPlnLabel` | [317](../src/modules/ted.c#L317) |
+| explicit_unknown | `Write the one-byte header followed by count8C records of 0x2C bytes. * Reload shared count/base after each callback; write statuses are ignored. * RE_UNKNOWN: record/count bound...` | function `tedWriteSelectedRecords` | [476](../src/modules/ted.c#L476) |
+| layout_padding | `pad00` | type `TedGuiExports` | [109](../src/modules/ted.c#L109) |
+| layout_padding | `padA0` | type `TedGuiExports` | [111](../src/modules/ted.c#L111) |
+| layout_padding | `prefix` | type `TedFileLoaderExports`, type `TedPauseFrameExports`, type `TedSceneNameExports` | [52](../src/modules/ted.c#L52), [53](../src/modules/ted.c#L53), [65](../src/modules/ted.c#L65) |
+| layout_padding | `prefix00` | type `TedTaskEditorGameGuiExports`, type `TedTaskEditorGuiExports` | [27](../src/modules/ted.c#L27), [33](../src/modules/ted.c#L33) |
+| layout_padding | `prefix0C` | type `TedTaskEditorGuiExports` | [35](../src/modules/ted.c#L35) |
+| layout_padding | `prefix18` | type `TedTaskEditorGameGuiExports` | [29](../src/modules/ted.c#L29) |
+| layout_padding | `prefix7C` | type `TedTaskEditorGuiExports` | [39](../src/modules/ted.c#L39) |
+| layout_padding | `prefix88` | type `TedTaskEditorGuiExports` | [41](../src/modules/ted.c#L41) |
+| offset_field | `unk00` | type `TedCameraFrameExports`, type `TedFileWriteExports`, type `TedGuiState`, type `TedRecordPool`, type `TedResetRecord`, type `TedSelectedRecord` | [56](../src/modules/ted.c#L56), [68](../src/modules/ted.c#L68), [72](../src/modules/ted.c#L72), [76](../src/modules/ted.c#L76), [93](../src/modules/ted.c#L93), [119](../src/modules/ted.c#L119) |
+| offset_field | `unk0C` | function `tedApplySelectedScalar0C`, function `tedResetRecord`, type `TedCheckData`, type `TedResetRecord`, type `TedSelectedRecord` | [94](../src/modules/ted.c#L94), [120](../src/modules/ted.c#L120), [125](../src/modules/ted.c#L125), [578](../src/modules/ted.c#L578), [966](../src/modules/ted.c#L966) |
+| offset_field | `unk0E` | function `tedResetRecord`, type `TedResetRecord` | [95](../src/modules/ted.c#L95), [967](../src/modules/ted.c#L967) |
+| offset_field | `unk10` | function `tedApplySelectedScalar10`, function `tedResetRecord`, type `TedResetRecord`, type `TedSelectedRecord` | [96](../src/modules/ted.c#L96), [120](../src/modules/ted.c#L120), [592](../src/modules/ted.c#L592), [968](../src/modules/ted.c#L968) |
+| offset_field | `unk12` | function `tedResetRecord`, type `TedResetRecord` | [97](../src/modules/ted.c#L97), [969](../src/modules/ted.c#L969) |
+| offset_field | `unk14` | function `tedApplySelectedScalar14`, function `tedResetRecord`, type `TedResetRecord`, type `TedSelectedRecord` | [98](../src/modules/ted.c#L98), [120](../src/modules/ted.c#L120), [606](../src/modules/ted.c#L606), [970](../src/modules/ted.c#L970) |
+| offset_field | `unk16` | type `TedResetRecord` | [99](../src/modules/ted.c#L99) |
+| offset_field | `unk18` | function `tedApplySelectedScalar18`, type `TedSelectedRecord` | [120](../src/modules/ted.c#L120), [520](../src/modules/ted.c#L520) |
+| offset_field | `unk1C` | function `tedApplySelectedScalar1C`, function `tedResetRecord`, type `TedResetRecord`, type `TedSelectedRecord` | [100](../src/modules/ted.c#L100), [120](../src/modules/ted.c#L120), [534](../src/modules/ted.c#L534), [971](../src/modules/ted.c#L971) |
+| offset_field | `unk1E` | function `tedResetGuiState`, type `TedGuiState` | [77](../src/modules/ted.c#L77), [992](../src/modules/ted.c#L992) |
+| offset_field | `unk20` | function `tedApplySelectedScalar20`, function `tedResetGuiState`, function `tedResetRecord`, type `TedGuiState`, type `TedResetRecord`, type `TedSelectedRecord` | [78](../src/modules/ted.c#L78), [101](../src/modules/ted.c#L101), [120](../src/modules/ted.c#L120), [548](../src/modules/ted.c#L548), [972](../src/modules/ted.c#L972), [993](../src/modules/ted.c#L993) |
+| offset_field | `unk22` | type `TedGuiState` | [79](../src/modules/ted.c#L79) |
+| offset_field | `unk24` | function `tedApplySelectedScalar24`, function `tedResetGuiState`, function `tedResetRecord`, type `TedGuiState`, type `TedResetRecord`, type `TedSelectedRecord` | [80](../src/modules/ted.c#L80), [102](../src/modules/ted.c#L102), [120](../src/modules/ted.c#L120), [562](../src/modules/ted.c#L562), [973](../src/modules/ted.c#L973), [998](../src/modules/ted.c#L998) |
+| offset_field | `unk28` | function `tedResetGuiState`, function `tedResetRecord`, type `TedGuiState`, type `TedResetRecord`, type `TedSelectedRecord` | [81](../src/modules/ted.c#L81), [103](../src/modules/ted.c#L103), [121](../src/modules/ted.c#L121), [965](../src/modules/ted.c#L965), [974](../src/modules/ted.c#L974), [997](../src/modules/ted.c#L997) |
+| offset_field | `unk2C` | function `tedResetGuiState`, function `tedResetRecord`, type `TedGuiState`, type `TedResetRecord` | [82](../src/modules/ted.c#L82), [104](../src/modules/ted.c#L104), [975](../src/modules/ted.c#L975), [994](../src/modules/ted.c#L994) |
+| offset_field | `unk30` | function `tedResetGuiState`, function `tedResetRecord`, type `TedGuiState`, type `TedResetRecord` | [83](../src/modules/ted.c#L83), [105](../src/modules/ted.c#L105), [976](../src/modules/ted.c#L976), [996](../src/modules/ted.c#L996) |
+| offset_field | `unk34` | function `tedResetGuiState`, type `TedGuiState` | [84](../src/modules/ted.c#L84), [999](../src/modules/ted.c#L999) |
+| offset_field | `unk38` | type `TedGuiState` | [85](../src/modules/ted.c#L85) |
+| offset_field | `unk40` | function `tedResetGuiState`, type `TedCheckData`, type `TedGuiState` | [86](../src/modules/ted.c#L86), [127](../src/modules/ted.c#L127), [1005](../src/modules/ted.c#L1005) |
+| offset_field | `unk44` | function `tedResetGuiState`, type `TedGuiState` | [87](../src/modules/ted.c#L87), [995](../src/modules/ted.c#L995) |
+| offset_field | `unk60` | type `TedCheckData` | [129](../src/modules/ted.c#L129) |
+| offset_field | `unk84` | function `tedApplySelectedScalar0C`, function `tedApplySelectedScalar10`, function `tedApplySelectedScalar14`, function `tedApplySelectedScalar18`, function `tedApplySelectedScalar1C`, function `tedApplySelectedScalar20`, function `tedApplySelectedScalar24`, function `tedStoreSelectedRecordByte`, type `TedCheckData` | [130](../src/modules/ted.c#L130), [518](../src/modules/ted.c#L518), [532](../src/modules/ted.c#L532), [546](../src/modules/ted.c#L546), [560](../src/modules/ted.c#L560), [576](../src/modules/ted.c#L576), [590](../src/modules/ted.c#L590), [604](../src/modules/ted.c#L604) (+1 in JSON) |
+| offset_field | `unk88` | type `TedCheckData` | [131](../src/modules/ted.c#L131) |
+| offset_field | `unk8D` | type `TedCheckData` | [133](../src/modules/ted.c#L133) |
+| offset_field | `unk94` | function `tedApplySelectedScalar18`, type `TedCheckData` | [134](../src/modules/ted.c#L134), [520](../src/modules/ted.c#L520) |
+| offset_field | `unk98` | function `tedApplySelectedScalar1C`, type `TedCheckData` | [134](../src/modules/ted.c#L134), [534](../src/modules/ted.c#L534) |
+| offset_field | `unk9C` | function `tedApplySelectedScalar20`, function `tedResetPoolWithChkPtLabel`, function `tedResetPoolWithEnvPlnLabel`, type `TedCheckData`, type `TedGuiExports` | [110](../src/modules/ted.c#L110), [134](../src/modules/ted.c#L134), [321](../src/modules/ted.c#L321), [331](../src/modules/ted.c#L331), [548](../src/modules/ted.c#L548) |
+| offset_field | `unkA0` | function `tedApplySelectedScalar24`, type `TedCheckData` | [134](../src/modules/ted.c#L134), [562](../src/modules/ted.c#L562) |
+| offset_field | `unkA4` | function `tedApplySelectedScalar0C`, type `TedCheckData` | [134](../src/modules/ted.c#L134), [578](../src/modules/ted.c#L578) |
+| offset_field | `unkA8` | function `tedApplySelectedScalar10`, type `TedCheckData` | [134](../src/modules/ted.c#L134), [592](../src/modules/ted.c#L592) |
+| offset_field | `unkAC` | function `tedApplySelectedScalar14`, type `TedCheckData` | [134](../src/modules/ted.c#L134), [606](../src/modules/ted.c#L606) |
+| offset_field | `unkB1` | type `TedCheckData` | [136](../src/modules/ted.c#L136) |
+| offset_field | `unkB4` | function `tedStoreSelectedRecordByte`, type `TedCheckData` | [137](../src/modules/ted.c#L137), [704](../src/modules/ted.c#L704) |
+| offset_field | `unkC8` | function `tedResetGuiState`, type `TedGuiExports` | [112](../src/modules/ted.c#L112), [1004](../src/modules/ted.c#L1004) |
+| offset_field | `unknown04` | type `TedSelectorLabelRecord` | [5](../src/modules/ted.c#L5) |
+| original_quirk | `* Append a secondary44-byte editor record under the pre-create byte-count<100 * gate; reload/wrap count after DOBJ creation, write count/index words and the * parallel handle, c...` | assembly `func_ted_004051F0` | [651](../src/modules/ted.c#L651) |
+| original_quirk | `* Apply the segment-query update to the second selected editor pool: retain * its 16-byte record, copy position twice, subtract 100 from the second Z, * and use flags 255. On su...` | assembly `func_ted_0040685C` | [863](../src/modules/ted.c#L863) |
+| original_quirk | `* Clear the 100 parallel object slots through DOBJ tag4 and slot0x40, reading * each current handle again across callbacks. Read the original one-byte * header, then 44-byte rec...` | assembly `func_ted_00405018` | [631](../src/modules/ted.c#L631) |
+| original_quirk | `* Copy the first selected editor record's position twice, subtract 100 from * the second Z, and query the segment with flags 255. On success, copy the * query scalar at offset 0...` | assembly `func_ted_00405EE8` | [740](../src/modules/ted.c#L740) |
+| original_quirk | `* For a nonnegative selected secondary object, copy its scalar triple twice, * subtract 100.0f from the second z component and query the original segment * provider with words 0...` | assembly `func_ted_0040561C` | [673](../src/modules/ted.c#L673) |
+| original_quirk | `* Preserve the original shared-mode branch: mode0 or1 formats stack+0x30, * updates GUI bounds and then calls the shared selector refresh; other modes * skip both local formatti...` | assembly `func_ted_004038B8` | [335](../src/modules/ted.c#L335) |
+| original_quirk | `* RE_ORIGINAL_QUIRK: when unsigned D_ted_0040727C is outside 0..4, * the original skips every sprintf but still passes unwritten scratch SP+0x20 * to GUI slot0xC4, whose origina...` | — | [763](../src/modules/ted.c#L763) |
+| original_quirk | `* RE_ORIGINAL_QUIRK: when unsigned D_ted_00407284 is outside 0..5, * the original skips every sprintf but still passes unwritten scratch SP+0x20 * to GUI slot0xC4, whose origina...` | — | [884](../src/modules/ted.c#L884) |
+| original_quirk | `* RE_UNKNOWN: second-list backing capacities, count/selection validity, alias and * callback-mutation domains, record word/triple roles and helper effects; verify * allocators, ...` | assembly `func_ted_00406508` | [845](../src/modules/ted.c#L845) |
+| original_quirk | `* RE_UNKNOWN: valid file counts, backing replacements, allocation failures, * record meanings and callback alias/mutation lifecycle; verify original file * producers, every coun...` | assembly `func_ted_00404468` | [494](../src/modules/ted.c#L494) |
+| original_quirk | `* Reset 20 object-list slots, then read a byte count and 16-byte records. * Keep attempted reads separate from retained-record and object-list indices; * only a stored creation ...` | assembly `func_ted_00406330` | [820](../src/modules/ted.c#L820) |
+| original_quirk | `* Reset 30 object-list entries, then read a byte count and 16-byte records. * Keep separate attempted-read and retained-record counters: the record and * object-list cursors adv...` | assembly `func_ted_004059BC` | [712](../src/modules/ted.c#L712) |
+| original_quirk | `* Reset the shared selector's scalar/word defaults and selected index before * dispatching. Selectors 1, 2, 3, 4, 7 and 8 choose the original literal label * and count; selector...` | assembly `func_ted_00403A58` | [348](../src/modules/ted.c#L348) |
+| original_quirk | `Create the "Task Editor" child group and two text lists, append the group * to the original GAMEGUI shared-state address plus 0x10, then refresh and * dispatch the current selec...` | function `tedCreateTaskEditorGroupsAndDispatchSelector` | [243](../src/modules/ted.c#L243) |
+| original_quirk | `Format the current selector's original label, forward the stack text to * GUI slot 0xC4, then reload the selected index and current selector for the * 16-byte record store. The ...` | function `tedUpdateSelectedColoredLetterLabel`, function `tedUpdateSelectedItemLabel` | [777](../src/modules/ted.c#L777), [898](../src/modules/ted.c#L898) |
+| original_quirk | `Load the original file backend and open the formatted scene filename * for reading. Close and return when the one-byte version differs from three. * For version three, dispatch ...` | function `tedReadVersionThreeFile` | [404](../src/modules/ted.c#L404) |
+| original_quirk | `RE_UNKNOWN: second-list backing capacity, selection/count/alias * invariants, word/triple roles and callback mutation lifecycle; verify * allocators, all callers and DOBJ callba...` | assembly `func_ted_00406610` | [855](../src/modules/ted.c#L855) |
+| original_quirk | `Refresh shared editor fields from the selected record, then dispatch the * original selector-specific refresh callback. Selectors 1 and 2 use 44-byte * record strides; selectors...` | assembly `func_ted_00403C20` | [375](../src/modules/ted.c#L375) |
+| uncertainty_note | `For a non-null record, reset the nested GUI state referenced by field 0x28, * then restore the original halfword defaults and clear the six word fields. * Unknown fields retain ...` | function `tedResetRecord` | [960](../src/modules/ted.c#L960) |
+| unused_identifier | `unused` | function `tedApplySelectedScalar0C`, function `tedApplySelectedScalar0C`, function `tedApplySelectedScalar10`, function `tedApplySelectedScalar10`, function `tedApplySelectedScalar14`, function `tedApplySelectedScalar14`, function `tedApplySelectedScalar18`, function `tedApplySelectedScalar18`, function `tedApplySelectedScalar1C`, function `tedApplySelectedScalar1C`, function `tedApplySelectedScalar20`, function `tedApplySelectedScalar20`, function `tedApplySelectedScalar24`, function `tedApplySelectedScalar24`, function `tedReadVersionThreeFile`, function `tedStoreSelectedRecordByte`, function `tedWriteVersionThreeFile`, function `tedWriteVersionThreeFile` | [161](../src/modules/ted.c#L161), [167](../src/modules/ted.c#L167), [168](../src/modules/ted.c#L168), [169](../src/modules/ted.c#L169), [170](../src/modules/ted.c#L170), [172](../src/modules/ted.c#L172), [173](../src/modules/ted.c#L173), [174](../src/modules/ted.c#L174) (+10 in JSON) |
+| unused_identifier | `unused00` | type `TedSelectorLabelExports` | [4](../src/modules/ted.c#L4) |
 
 ## src/modules/track1.c
 
@@ -6447,95 +6468,85 @@ For every future source wave, regenerate and check this index after code and str
 | --- | --- | --- | --- |
 | address_function | `__entrypoint_func_uvenv_rom_400000` | function `__entrypoint_func_uvenv_rom_400000`, function `__entrypoint_func_uvenv_rom_400000` | [14](../src/modules/uvenv_rom.c#L14), [29](../src/modules/uvenv_rom.c#L29), [43](../src/modules/uvenv_rom.c#L43) |
 | address_global | `D_uvenv_rom_00403BF0` | — | [29](../src/modules/uvenv_rom.c#L29) |
-| address_global | `D_uvenv_rom_00403C00` | function `__entrypoint_func_uvenv_rom_400000`, function `uvEnvApplyDepthFogOverlay`, global `D_uvenv_rom_00403C00` | [32](../src/modules/uvenv_rom.c#L32), [57](../src/modules/uvenv_rom.c#L57), [386](../src/modules/uvenv_rom.c#L386) |
-| address_global | `D_uvenv_rom_00403C04` | function `__entrypoint_func_uvenv_rom_400000`, function `_uvEnvDraw`, global `D_uvenv_rom_00403C04` | [33](../src/modules/uvenv_rom.c#L33), [58](../src/modules/uvenv_rom.c#L58), [472](../src/modules/uvenv_rom.c#L472) |
-| address_global | `D_uvenv_rom_00403C08` | function `__entrypoint_func_uvenv_rom_400000`, function `_uvEnvDraw`, function `uvEnvApplyDepthFogOverlay`, function `uvEnvAssignFileToSlot`, function `uvEnvGetAssignedFileId`, function `uvEnvModuleCleanup`, global `D_uvenv_rom_00403C08` | [34](../src/modules/uvenv_rom.c#L34), [69](../src/modules/uvenv_rom.c#L69), [71](../src/modules/uvenv_rom.c#L71), [80](../src/modules/uvenv_rom.c#L80), [385](../src/modules/uvenv_rom.c#L385), [470](../src/modules/uvenv_rom.c#L470), [653](../src/modules/uvenv_rom.c#L653), [771](../src/modules/uvenv_rom.c#L771) |
-| address_global | `D_uvenv_rom_00403C0C` | function `__entrypoint_func_uvenv_rom_400000`, function `_uvEnvDraw`, function `uvEnvAssignFileToSlot`, function `uvEnvGetAssignedFileId`, global `D_uvenv_rom_00403C0C` | [35](../src/modules/uvenv_rom.c#L35), [68](../src/modules/uvenv_rom.c#L68), [69](../src/modules/uvenv_rom.c#L69), [70](../src/modules/uvenv_rom.c#L70), [476](../src/modules/uvenv_rom.c#L476), [642](../src/modules/uvenv_rom.c#L642), [768](../src/modules/uvenv_rom.c#L768) |
-| decompiler_local | `arg0` | function `_uvEnvDraw`, function `_uvEnvDraw`, function `uvEnvApplyDepthFogOverlay`, function `uvEnvAssignFileToSlot`, function `uvEnvAttachDrawCallbacksToChannel`, function `uvEnvBlendLoadedRecords`, function `uvEnvBuildDepthFogLookup`, function `uvEnvCopyLoadedRecord`, function `uvEnvGetAssignedFileId`, type `UnkModel_Exports` | [9](../src/modules/uvenv_rom.c#L9), [16](../src/modules/uvenv_rom.c#L16), [20](../src/modules/uvenv_rom.c#L20), [21](../src/modules/uvenv_rom.c#L21), [22](../src/modules/uvenv_rom.c#L22), [23](../src/modules/uvenv_rom.c#L23), [24](../src/modules/uvenv_rom.c#L24), [25](../src/modules/uvenv_rom.c#L25) (+6 in JSON) |
+| address_global | `D_uvenv_rom_00403C00` | function `__entrypoint_func_uvenv_rom_400000`, function `uvEnvApplyDepthFogOverlay`, global `D_uvenv_rom_00403C00` | [32](../src/modules/uvenv_rom.c#L32), [57](../src/modules/uvenv_rom.c#L57), [390](../src/modules/uvenv_rom.c#L390) |
+| address_global | `D_uvenv_rom_00403C04` | function `__entrypoint_func_uvenv_rom_400000`, function `_uvEnvDraw`, global `D_uvenv_rom_00403C04` | [33](../src/modules/uvenv_rom.c#L33), [58](../src/modules/uvenv_rom.c#L58), [478](../src/modules/uvenv_rom.c#L478) |
+| address_global | `D_uvenv_rom_00403C08` | function `__entrypoint_func_uvenv_rom_400000`, function `_uvEnvDraw`, function `uvEnvApplyDepthFogOverlay`, function `uvEnvAssignFileToSlot`, function `uvEnvGetAssignedFileId`, function `uvEnvModuleCleanup`, global `D_uvenv_rom_00403C08` | [34](../src/modules/uvenv_rom.c#L34), [69](../src/modules/uvenv_rom.c#L69), [71](../src/modules/uvenv_rom.c#L71), [80](../src/modules/uvenv_rom.c#L80), [389](../src/modules/uvenv_rom.c#L389), [476](../src/modules/uvenv_rom.c#L476), [659](../src/modules/uvenv_rom.c#L659), [777](../src/modules/uvenv_rom.c#L777) |
+| address_global | `D_uvenv_rom_00403C0C` | function `__entrypoint_func_uvenv_rom_400000`, function `_uvEnvDraw`, function `uvEnvAssignFileToSlot`, function `uvEnvGetAssignedFileId`, global `D_uvenv_rom_00403C0C` | [35](../src/modules/uvenv_rom.c#L35), [68](../src/modules/uvenv_rom.c#L68), [69](../src/modules/uvenv_rom.c#L69), [70](../src/modules/uvenv_rom.c#L70), [482](../src/modules/uvenv_rom.c#L482), [648](../src/modules/uvenv_rom.c#L648), [774](../src/modules/uvenv_rom.c#L774) |
+| decompiler_local | `arg0` | function `_uvEnvDraw`, function `uvEnvApplyDepthFogOverlay`, function `uvEnvAssignFileToSlot`, function `uvEnvAttachDrawCallbacksToChannel`, function `uvEnvBlendLoadedRecords`, function `uvEnvBuildDepthFogLookup`, function `uvEnvCopyLoadedRecord`, function `uvEnvGetAssignedFileId`, type `UnkModel_Exports` | [9](../src/modules/uvenv_rom.c#L9), [16](../src/modules/uvenv_rom.c#L16), [20](../src/modules/uvenv_rom.c#L20), [21](../src/modules/uvenv_rom.c#L21), [22](../src/modules/uvenv_rom.c#L22), [23](../src/modules/uvenv_rom.c#L23), [24](../src/modules/uvenv_rom.c#L24), [25](../src/modules/uvenv_rom.c#L25) (+1 in JSON) |
 | decompiler_local | `arg1` | function `uvEnvAssignFileToSlot`, function `uvEnvBlendLoadedRecords`, function `uvEnvBuildDepthFogLookup`, function `uvEnvCopyLoadedRecord`, function `uvEnvSetLoadedRecordProperty`, type `UnkModel_Exports` | [9](../src/modules/uvenv_rom.c#L9), [16](../src/modules/uvenv_rom.c#L16), [19](../src/modules/uvenv_rom.c#L19), [23](../src/modules/uvenv_rom.c#L23), [24](../src/modules/uvenv_rom.c#L24), [25](../src/modules/uvenv_rom.c#L25) |
 | decompiler_local | `arg2` | function `uvEnvBlendLoadedRecords`, function `uvEnvBuildDepthFogLookup`, function `uvEnvSetLoadedRecordProperty` | [16](../src/modules/uvenv_rom.c#L16), [19](../src/modules/uvenv_rom.c#L19), [25](../src/modules/uvenv_rom.c#L25) |
 | decompiler_local | `arg3` | function `uvEnvBlendLoadedRecords`, function `uvEnvBuildDepthFogLookup` | [16](../src/modules/uvenv_rom.c#L16), [25](../src/modules/uvenv_rom.c#L25) |
-| decompiler_local | `sp114` | function `_uvEnvDraw` | [463](../src/modules/uvenv_rom.c#L463), [471](../src/modules/uvenv_rom.c#L471), [503](../src/modules/uvenv_rom.c#L503), [524](../src/modules/uvenv_rom.c#L524), [526](../src/modules/uvenv_rom.c#L526) |
-| decompiler_local | `sp11C` | function `_uvEnvDraw` | [461](../src/modules/uvenv_rom.c#L461), [508](../src/modules/uvenv_rom.c#L508), [510](../src/modules/uvenv_rom.c#L510), [513](../src/modules/uvenv_rom.c#L513) |
-| decompiler_local | `sp120` | function `_uvEnvDraw` | [460](../src/modules/uvenv_rom.c#L460), [592](../src/modules/uvenv_rom.c#L592), [594](../src/modules/uvenv_rom.c#L594) |
-| decompiler_local | `sp160` | function `_uvEnvDraw` | [459](../src/modules/uvenv_rom.c#L459), [591](../src/modules/uvenv_rom.c#L591), [624](../src/modules/uvenv_rom.c#L624) |
-| decompiler_local | `sp1A0` | function `_uvEnvDraw` | [458](../src/modules/uvenv_rom.c#L458), [601](../src/modules/uvenv_rom.c#L601), [603](../src/modules/uvenv_rom.c#L603), [604](../src/modules/uvenv_rom.c#L604), [607](../src/modules/uvenv_rom.c#L607), [608](../src/modules/uvenv_rom.c#L608), [609](../src/modules/uvenv_rom.c#L609), [610](../src/modules/uvenv_rom.c#L610) |
-| decompiler_local | `sp1E0` | function `_uvEnvDraw` | [457](../src/modules/uvenv_rom.c#L457), [591](../src/modules/uvenv_rom.c#L591) |
-| decompiler_local | `sp1E4` | function `_uvEnvDraw` | [456](../src/modules/uvenv_rom.c#L456), [591](../src/modules/uvenv_rom.c#L591), [592](../src/modules/uvenv_rom.c#L592) |
-| decompiler_local | `sp1E8` | function `_uvEnvDraw` | [455](../src/modules/uvenv_rom.c#L455), [590](../src/modules/uvenv_rom.c#L590), [592](../src/modules/uvenv_rom.c#L592) |
-| decompiler_local | `sp1EC` | function `_uvEnvDraw` | [454](../src/modules/uvenv_rom.c#L454), [591](../src/modules/uvenv_rom.c#L591), [592](../src/modules/uvenv_rom.c#L592) |
-| decompiler_local | `sp1F0` | function `_uvEnvDraw` | [453](../src/modules/uvenv_rom.c#L453), [590](../src/modules/uvenv_rom.c#L590), [592](../src/modules/uvenv_rom.c#L592) |
-| decompiler_local | `sp1F4` | function `_uvEnvDraw` | [452](../src/modules/uvenv_rom.c#L452), [590](../src/modules/uvenv_rom.c#L590), [592](../src/modules/uvenv_rom.c#L592) |
-| decompiler_local | `sp1F8` | function `_uvEnvDraw` | [451](../src/modules/uvenv_rom.c#L451), [480](../src/modules/uvenv_rom.c#L480), [543](../src/modules/uvenv_rom.c#L543), [544](../src/modules/uvenv_rom.c#L544), [550](../src/modules/uvenv_rom.c#L550), [551](../src/modules/uvenv_rom.c#L551), [563](../src/modules/uvenv_rom.c#L563), [564](../src/modules/uvenv_rom.c#L564) (+2 in JSON) |
-| decompiler_local | `sp210` | function `_uvEnvDraw` | [447](../src/modules/uvenv_rom.c#L447), [496](../src/modules/uvenv_rom.c#L496), [499](../src/modules/uvenv_rom.c#L499), [585](../src/modules/uvenv_rom.c#L585), [628](../src/modules/uvenv_rom.c#L628) |
-| decompiler_local | `sp214` | function `_uvEnvDraw` | [446](../src/modules/uvenv_rom.c#L446), [495](../src/modules/uvenv_rom.c#L495), [498](../src/modules/uvenv_rom.c#L498), [585](../src/modules/uvenv_rom.c#L585), [628](../src/modules/uvenv_rom.c#L628) |
-| decompiler_local | `sp9C` | function `_uvEnvDraw` | [533](../src/modules/uvenv_rom.c#L533), [540](../src/modules/uvenv_rom.c#L540), [543](../src/modules/uvenv_rom.c#L543), [544](../src/modules/uvenv_rom.c#L544), [550](../src/modules/uvenv_rom.c#L550), [551](../src/modules/uvenv_rom.c#L551), [563](../src/modules/uvenv_rom.c#L563), [564](../src/modules/uvenv_rom.c#L564) |
-| decompiler_local | `spD4` | function `_uvEnvDraw` | [464](../src/modules/uvenv_rom.c#L464), [610](../src/modules/uvenv_rom.c#L610), [611](../src/modules/uvenv_rom.c#L611) |
-| decompiler_local | `temp_fa0` | function `_uvEnvDraw`, function `uvEnvProps` | [135](../src/modules/uvenv_rom.c#L135), [150](../src/modules/uvenv_rom.c#L150), [152](../src/modules/uvenv_rom.c#L152), [153](../src/modules/uvenv_rom.c#L153), [154](../src/modules/uvenv_rom.c#L154), [159](../src/modules/uvenv_rom.c#L159), [165](../src/modules/uvenv_rom.c#L165), [167](../src/modules/uvenv_rom.c#L167) (+13 in JSON) |
-| decompiler_local | `temp_fa1` | function `uvEnvProps` | [136](../src/modules/uvenv_rom.c#L136), [151](../src/modules/uvenv_rom.c#L151), [153](../src/modules/uvenv_rom.c#L153), [160](../src/modules/uvenv_rom.c#L160), [166](../src/modules/uvenv_rom.c#L166), [171](../src/modules/uvenv_rom.c#L171), [178](../src/modules/uvenv_rom.c#L178) |
-| decompiler_local | `temp_fv0` | function `_uvEnvDraw` | [443](../src/modules/uvenv_rom.c#L443), [606](../src/modules/uvenv_rom.c#L606), [607](../src/modules/uvenv_rom.c#L607), [608](../src/modules/uvenv_rom.c#L608), [609](../src/modules/uvenv_rom.c#L609) |
-| decompiler_local | `temp_fv1` | function `_uvEnvDraw` | [444](../src/modules/uvenv_rom.c#L444), [543](../src/modules/uvenv_rom.c#L543), [545](../src/modules/uvenv_rom.c#L545), [548](../src/modules/uvenv_rom.c#L548), [550](../src/modules/uvenv_rom.c#L550), [555](../src/modules/uvenv_rom.c#L555), [558](../src/modules/uvenv_rom.c#L558), [563](../src/modules/uvenv_rom.c#L563) (+2 in JSON) |
-| decompiler_local | `temp_s0` | function `_uvEnvDraw` | [450](../src/modules/uvenv_rom.c#L450), [470](../src/modules/uvenv_rom.c#L470), [481](../src/modules/uvenv_rom.c#L481), [484](../src/modules/uvenv_rom.c#L484) |
-| decompiler_local | `temp_s2` | function `_uvEnvDraw` | [445](../src/modules/uvenv_rom.c#L445), [522](../src/modules/uvenv_rom.c#L522), [523](../src/modules/uvenv_rom.c#L523), [584](../src/modules/uvenv_rom.c#L584), [589](../src/modules/uvenv_rom.c#L589), [602](../src/modules/uvenv_rom.c#L602), [614](../src/modules/uvenv_rom.c#L614), [617](../src/modules/uvenv_rom.c#L617) (+1 in JSON) |
-| decompiler_local | `temp_v0_2` | function `uvEnvProps` | [137](../src/modules/uvenv_rom.c#L137), [147](../src/modules/uvenv_rom.c#L147), [148](../src/modules/uvenv_rom.c#L148) |
-| decompiler_local | `var_a0` | function `_uvEnvDraw` | [462](../src/modules/uvenv_rom.c#L462), [531](../src/modules/uvenv_rom.c#L531), [573](../src/modules/uvenv_rom.c#L573), [574](../src/modules/uvenv_rom.c#L574), [583](../src/modules/uvenv_rom.c#L583) |
-| decompiler_local | `var_a2` | function `uvEnvProps` | [138](../src/modules/uvenv_rom.c#L138), [169](../src/modules/uvenv_rom.c#L169), [174](../src/modules/uvenv_rom.c#L174), [175](../src/modules/uvenv_rom.c#L175), [176](../src/modules/uvenv_rom.c#L176), [178](../src/modules/uvenv_rom.c#L178) |
-| decompiler_local | `var_a3` | function `uvEnvProps` | [132](../src/modules/uvenv_rom.c#L132), [140](../src/modules/uvenv_rom.c#L140), [142](../src/modules/uvenv_rom.c#L142), [155](../src/modules/uvenv_rom.c#L155), [157](../src/modules/uvenv_rom.c#L157), [158](../src/modules/uvenv_rom.c#L158), [159](../src/modules/uvenv_rom.c#L159), [160](../src/modules/uvenv_rom.c#L160) (+32 in JSON) |
-| decompiler_local | `var_fa0` | function `uvEnvGetProps` | [238](../src/modules/uvenv_rom.c#L238), [257](../src/modules/uvenv_rom.c#L257), [260](../src/modules/uvenv_rom.c#L260), [263](../src/modules/uvenv_rom.c#L263), [268](../src/modules/uvenv_rom.c#L268), [271](../src/modules/uvenv_rom.c#L271), [274](../src/modules/uvenv_rom.c#L274) |
-| decompiler_local | `var_fa1` | function `_uvEnvDraw` | [534](../src/modules/uvenv_rom.c#L534), [535](../src/modules/uvenv_rom.c#L535), [553](../src/modules/uvenv_rom.c#L553), [560](../src/modules/uvenv_rom.c#L560), [561](../src/modules/uvenv_rom.c#L561), [570](../src/modules/uvenv_rom.c#L570), [571](../src/modules/uvenv_rom.c#L571), [573](../src/modules/uvenv_rom.c#L573) |
-| decompiler_local | `var_fv0` | function `_uvEnvDraw` | [449](../src/modules/uvenv_rom.c#L449), [546](../src/modules/uvenv_rom.c#L546), [548](../src/modules/uvenv_rom.c#L548), [552](../src/modules/uvenv_rom.c#L552), [553](../src/modules/uvenv_rom.c#L553), [556](../src/modules/uvenv_rom.c#L556), [558](../src/modules/uvenv_rom.c#L558), [560](../src/modules/uvenv_rom.c#L560) (+5 in JSON) |
-| decompiler_local | `var_fv1` | function `uvEnvGetProps` | [239](../src/modules/uvenv_rom.c#L239), [256](../src/modules/uvenv_rom.c#L256), [259](../src/modules/uvenv_rom.c#L259), [262](../src/modules/uvenv_rom.c#L262), [267](../src/modules/uvenv_rom.c#L267), [270](../src/modules/uvenv_rom.c#L270), [273](../src/modules/uvenv_rom.c#L273) |
-| decompiler_local | `var_s6` | function `_uvEnvDraw` | [441](../src/modules/uvenv_rom.c#L441), [482](../src/modules/uvenv_rom.c#L482), [484](../src/modules/uvenv_rom.c#L484), [486](../src/modules/uvenv_rom.c#L486), [490](../src/modules/uvenv_rom.c#L490), [491](../src/modules/uvenv_rom.c#L491), [494](../src/modules/uvenv_rom.c#L494), [495](../src/modules/uvenv_rom.c#L495) (+15 in JSON) |
-| draft_marker | `FAKE` | function `_uvEnvDraw` | [577](../src/modules/uvenv_rom.c#L577) |
-| explicit_unknown | `Apply the assigned environment lookup to the depth image using * three-row strips and the original fog-color blend commands. Skip disabled, * unassigned, missing and non-overlay...` | function `uvEnvApplyDepthFogOverlay` | [368](../src/modules/uvenv_rom.c#L368) |
-| explicit_unknown | `Assign a UVEN file to the environment slot, loading it on demand. * Convert -1 and failed loads to the existing 0xFFFF sentinel. * RE_ORIGINAL_QUIRK: retain the inclusive upper-...` | function `uvEnvAssignFileToSlot` | [635](../src/modules/uvenv_rom.c#L635) |
-| explicit_unknown | `Blend the selected scalar and color fields of two loaded UVEN records. * Exact weights zero and one use the record-copy path. Replace a zero source * fog-start value by one befo...` | function `uvEnvBlendLoadedRecords` | [685](../src/modules/uvenv_rom.c#L685) |
+| explicit_unknown | `Apply the assigned environment lookup to the depth image using * three-row strips and the original fog-color blend commands. Skip disabled, * unassigned, missing and non-overlay...` | function `uvEnvApplyDepthFogOverlay` | [372](../src/modules/uvenv_rom.c#L372) |
+| explicit_unknown | `Assign a UVEN file to the environment slot, loading it on demand. * Convert -1 and failed loads to the existing 0xFFFF sentinel. * RE_ORIGINAL_QUIRK: retain the inclusive upper-...` | function `uvEnvAssignFileToSlot` | [641](../src/modules/uvenv_rom.c#L641) |
+| explicit_unknown | `Blend the selected scalar and color fields of two loaded UVEN records. * Exact weights zero and one use the record-copy path. Replace a zero source * fog-start value by one befo...` | function `uvEnvBlendLoadedRecords` | [691](../src/modules/uvenv_rom.c#L691) |
 | explicit_unknown | `Build the 256-entry, duplicated-byte intensity lookup used by the * depth-image fog overlay. Model flag two suppresses the final seven entries; * entries before the scaled start...` | function `uvEnvBuildDepthFogLookup` | [91](../src/modules/uvenv_rom.c#L91) |
-| explicit_unknown | `Copy one loaded UVEN record into another, returning if either is absent. * When the copied lookup pointer is non-null, allocate and copy its 512 bytes. * RE_UNKNOWN: replacement...` | function `uvEnvCopyLoadedRecord` | [660](../src/modules/uvenv_rom.c#L660) |
+| explicit_unknown | `Copy one loaded UVEN record into another, returning if either is absent. * When the copied lookup pointer is non-null, allocate and copy its 512 bytes. * RE_UNKNOWN: replacement...` | function `uvEnvCopyLoadedRecord` | [666](../src/modules/uvenv_rom.c#L666) |
+| explicit_unknown | `Keep this call before field writes; RE_UNKNOWN: environment/display-list storage aliases and lifetimes need caller proof.` | function `uvEnvProps` | [155](../src/modules/uvenv_rom.c#L155) |
+| explicit_unknown | `Only X/Y translation is written here; RE_UNKNOWN: coordinate and matrix conventions need caller proof.` | function `_uvEnvDraw` | [610](../src/modules/uvenv_rom.c#L610) |
+| explicit_unknown | `Publish the count first, then freshly read the count/table during copying; RE_UNKNOWN: output extent and mutation domains need caller proof.` | function `uvEnvGetProps` | [281](../src/modules/uvenv_rom.c#L281) |
+| explicit_unknown | `RE_ORIGINAL_QUIRK: read the assignment before the upper-bound check; RE_UNKNOWN: negative/index domains need caller proof.` | function `_uvEnvDraw` | [476](../src/modules/uvenv_rom.c#L476) |
+| explicit_unknown | `RE_UNKNOWN: allocation success, ownership and lookup lifetime need allocator/caller proof; keep publication even on failure.` | function `uvEnvProps` | [177](../src/modules/uvenv_rom.c#L177) |
+| explicit_unknown | `RE_UNKNOWN: argument promotions, termination and caller storage domains need caller proof.` | function `uvEnvProps` | [147](../src/modules/uvenv_rom.c#L147) |
+| explicit_unknown | `RE_UNKNOWN: bounds stay uninitialized if no populated band exists; prove that domain from assets/callers.` | function `_uvEnvDraw` | [539](../src/modules/uvenv_rom.c#L539) |
+| explicit_unknown | `RE_UNKNOWN: callback mutation and state-table lifetime remain unproved; reload the table before restoring its saved word.` | function `_uvEnvDraw` | [626](../src/modules/uvenv_rom.c#L626) |
+| explicit_unknown | `RE_UNKNOWN: callback mutation/reentry and imported-file lifetime remain unproved; reload fields after the call.` | function `_uvEnvDraw` | [497](../src/modules/uvenv_rom.c#L497) |
+| explicit_unknown | `RE_UNKNOWN: display-list capacity, ownership and lifetime need producer/caller proof.` | function `_uvEnvDraw` | [475](../src/modules/uvenv_rom.c#L475) |
+| explicit_unknown | `RE_UNKNOWN: finite/range and floating-point conversion contracts remain unproved; preserve byte narrowing.` | function `uvEnvProps` | [187](../src/modules/uvenv_rom.c#L187) |
+| explicit_unknown | `RE_UNKNOWN: output capacities, aliasing, argument promotions and stream termination need caller proof.` | function `uvEnvGetProps` | [249](../src/modules/uvenv_rom.c#L249) |
+| explicit_unknown | `RE_UNKNOWN: retain the historical matching assignment even though the next drawing loop resets this local.` | function `_uvEnvDraw` | [586](../src/modules/uvenv_rom.c#L586) |
+| explicit_unknown | `RE_UNKNOWN: retain the no-op matching scaffold; historical source form is unproved.` | function `_uvEnvDraw` | [583](../src/modules/uvenv_rom.c#L583) |
+| explicit_unknown | `RE_UNKNOWN: retain unused storage; the historical declaration is unproved.` | function `uvEnvProps` | [136](../src/modules/uvenv_rom.c#L136) |
+| explicit_unknown | `RE_UNKNOWN: zero/nonfinite values and floating-point contracts need asset/caller proof; preserve reciprocal and store order.` | function `_uvEnvDraw` | [612](../src/modules/uvenv_rom.c#L612) |
 | explicit_unknown | `Release the environment assignment table, then unload FMTX, STAT, * GMGR, CHAN, CBCK and MODL in the existing order. * RE_UNKNOWN: initialization and single-owner cleanup remain...` | function `uvEnvModuleCleanup` | [76](../src/modules/uvenv_rom.c#L76) |
-| explicit_unknown | `Return the file identifier stored in the environment assignment table, * or -1 when the supplied slot is greater than the configured count. * RE_ORIGINAL_QUIRK: retain the inclu...` | function `uvEnvGetAssignedFileId` | [763](../src/modules/uvenv_rom.c#L763) |
-| layout_padding | `pad` | function `uvEnvProps` | [134](../src/modules/uvenv_rom.c#L134) |
+| explicit_unknown | `Return the file identifier stored in the environment assignment table, * or -1 when the supplied slot is greater than the configured count. * RE_ORIGINAL_QUIRK: retain the inclu...` | function `uvEnvGetAssignedFileId` | [769](../src/modules/uvenv_rom.c#L769) |
+| explicit_unknown | `Use the captured byte count; RE_UNKNOWN: model-table extent and count domains need producer/caller proof.` | function `_uvEnvDraw` | [519](../src/modules/uvenv_rom.c#L519) |
 | layout_padding | `pad0` | type `UnkModel_Exports` | [8](../src/modules/uvenv_rom.c#L8) |
 | layout_padding | `pad20` | type `UnkModel_Exports` | [10](../src/modules/uvenv_rom.c#L10) |
-| offset_field | `unk0` | function `_uvEnvDraw`, function `uvEnvBlendLoadedRecords`, function `uvEnvGetProps`, function `uvEnvProps` | [215](../src/modules/uvenv_rom.c#L215), [314](../src/modules/uvenv_rom.c#L314), [502](../src/modules/uvenv_rom.c#L502), [537](../src/modules/uvenv_rom.c#L537), [540](../src/modules/uvenv_rom.c#L540), [543](../src/modules/uvenv_rom.c#L543), [583](../src/modules/uvenv_rom.c#L583), [716](../src/modules/uvenv_rom.c#L716) |
-| offset_field | `unk1` | function `_uvEnvDraw`, function `uvEnvBlendLoadedRecords`, function `uvEnvGetProps`, function `uvEnvProps` | [216](../src/modules/uvenv_rom.c#L216), [315](../src/modules/uvenv_rom.c#L315), [502](../src/modules/uvenv_rom.c#L502), [717](../src/modules/uvenv_rom.c#L717) |
-| offset_field | `unk10` | function `_uvEnvDraw`, function `uvEnvGetProps`, function `uvEnvProps` | [196](../src/modules/uvenv_rom.c#L196), [295](../src/modules/uvenv_rom.c#L295), [551](../src/modules/uvenv_rom.c#L551), [606](../src/modules/uvenv_rom.c#L606) |
-| offset_field | `unk11` | function `uvEnvGetProps`, function `uvEnvProps` | [197](../src/modules/uvenv_rom.c#L197), [296](../src/modules/uvenv_rom.c#L296) |
-| offset_field | `unk14` | function `_uvEnvDraw` | [564](../src/modules/uvenv_rom.c#L564) |
-| offset_field | `unk1C` | function `_uvEnvDraw`, function `uvEnvBlendLoadedRecords`, function `uvEnvGetProps`, function `uvEnvProps` | [155](../src/modules/uvenv_rom.c#L155), [157](../src/modules/uvenv_rom.c#L157), [173](../src/modules/uvenv_rom.c#L173), [255](../src/modules/uvenv_rom.c#L255), [494](../src/modules/uvenv_rom.c#L494), [749](../src/modules/uvenv_rom.c#L749), [750](../src/modules/uvenv_rom.c#L750), [752](../src/modules/uvenv_rom.c#L752) |
-| offset_field | `unk1D` | function `_uvEnvDraw`, function `uvEnvApplyDepthFogOverlay`, function `uvEnvBlendLoadedRecords`, function `uvEnvGetProps`, function `uvEnvProps` | [158](../src/modules/uvenv_rom.c#L158), [172](../src/modules/uvenv_rom.c#L172), [180](../src/modules/uvenv_rom.c#L180), [266](../src/modules/uvenv_rom.c#L266), [397](../src/modules/uvenv_rom.c#L397), [523](../src/modules/uvenv_rom.c#L523), [595](../src/modules/uvenv_rom.c#L595), [744](../src/modules/uvenv_rom.c#L744) (+2 in JSON) |
-| offset_field | `unk2` | function `_uvEnvDraw`, function `uvEnvBlendLoadedRecords`, function `uvEnvGetProps`, function `uvEnvProps` | [217](../src/modules/uvenv_rom.c#L217), [316](../src/modules/uvenv_rom.c#L316), [502](../src/modules/uvenv_rom.c#L502), [718](../src/modules/uvenv_rom.c#L718) |
+| offset_field | `unk0` | function `_uvEnvDraw`, function `uvEnvBlendLoadedRecords`, function `uvEnvGetProps`, function `uvEnvProps` | [217](../src/modules/uvenv_rom.c#L217), [318](../src/modules/uvenv_rom.c#L318), [508](../src/modules/uvenv_rom.c#L508), [543](../src/modules/uvenv_rom.c#L543), [546](../src/modules/uvenv_rom.c#L546), [549](../src/modules/uvenv_rom.c#L549), [589](../src/modules/uvenv_rom.c#L589), [722](../src/modules/uvenv_rom.c#L722) |
+| offset_field | `unk1` | function `_uvEnvDraw`, function `uvEnvBlendLoadedRecords`, function `uvEnvGetProps`, function `uvEnvProps` | [218](../src/modules/uvenv_rom.c#L218), [319](../src/modules/uvenv_rom.c#L319), [508](../src/modules/uvenv_rom.c#L508), [723](../src/modules/uvenv_rom.c#L723) |
+| offset_field | `unk10` | function `_uvEnvDraw`, function `uvEnvGetProps`, function `uvEnvProps` | [198](../src/modules/uvenv_rom.c#L198), [299](../src/modules/uvenv_rom.c#L299), [557](../src/modules/uvenv_rom.c#L557), [612](../src/modules/uvenv_rom.c#L612) |
+| offset_field | `unk11` | function `uvEnvGetProps`, function `uvEnvProps` | [199](../src/modules/uvenv_rom.c#L199), [300](../src/modules/uvenv_rom.c#L300) |
+| offset_field | `unk14` | function `_uvEnvDraw` | [570](../src/modules/uvenv_rom.c#L570) |
+| offset_field | `unk1C` | function `_uvEnvDraw`, function `uvEnvBlendLoadedRecords`, function `uvEnvGetProps`, function `uvEnvProps` | [157](../src/modules/uvenv_rom.c#L157), [159](../src/modules/uvenv_rom.c#L159), [175](../src/modules/uvenv_rom.c#L175), [259](../src/modules/uvenv_rom.c#L259), [500](../src/modules/uvenv_rom.c#L500), [755](../src/modules/uvenv_rom.c#L755), [756](../src/modules/uvenv_rom.c#L756), [758](../src/modules/uvenv_rom.c#L758) |
+| offset_field | `unk1D` | function `_uvEnvDraw`, function `uvEnvApplyDepthFogOverlay`, function `uvEnvBlendLoadedRecords`, function `uvEnvGetProps`, function `uvEnvProps` | [160](../src/modules/uvenv_rom.c#L160), [174](../src/modules/uvenv_rom.c#L174), [182](../src/modules/uvenv_rom.c#L182), [270](../src/modules/uvenv_rom.c#L270), [401](../src/modules/uvenv_rom.c#L401), [529](../src/modules/uvenv_rom.c#L529), [601](../src/modules/uvenv_rom.c#L601), [750](../src/modules/uvenv_rom.c#L750) (+2 in JSON) |
+| offset_field | `unk2` | function `_uvEnvDraw`, function `uvEnvBlendLoadedRecords`, function `uvEnvGetProps`, function `uvEnvProps` | [219](../src/modules/uvenv_rom.c#L219), [320](../src/modules/uvenv_rom.c#L320), [508](../src/modules/uvenv_rom.c#L508), [724](../src/modules/uvenv_rom.c#L724) |
 | offset_field | `unk28` | function `__entrypoint_func_uvenv_rom_400000` | [57](../src/modules/uvenv_rom.c#L57) |
 | offset_field | `unk2C` | function `__entrypoint_func_uvenv_rom_400000` | [58](../src/modules/uvenv_rom.c#L58) |
-| offset_field | `unk2E` | function `_uvEnvDraw`, function `uvEnvBlendLoadedRecords`, function `uvEnvProps` | [226](../src/modules/uvenv_rom.c#L226), [501](../src/modules/uvenv_rom.c#L501), [754](../src/modules/uvenv_rom.c#L754), [755](../src/modules/uvenv_rom.c#L755), [758](../src/modules/uvenv_rom.c#L758) |
-| offset_field | `unk3` | function `_uvEnvDraw`, function `uvEnvApplyDepthFogOverlay`, function `uvEnvBlendLoadedRecords`, function `uvEnvGetProps`, function `uvEnvProps` | [190](../src/modules/uvenv_rom.c#L190), [284](../src/modules/uvenv_rom.c#L284), [418](../src/modules/uvenv_rom.c#L418), [506](../src/modules/uvenv_rom.c#L506), [525](../src/modules/uvenv_rom.c#L525), [596](../src/modules/uvenv_rom.c#L596), [598](../src/modules/uvenv_rom.c#L598), [719](../src/modules/uvenv_rom.c#L719) |
-| offset_field | `unk38` | function `_uvEnvDraw`, function `uvEnvSetLoadedRecordProperty` | [346](../src/modules/uvenv_rom.c#L346), [629](../src/modules/uvenv_rom.c#L629), [630](../src/modules/uvenv_rom.c#L630) |
-| offset_field | `unk3C` | function `_uvEnvDraw`, function `uvEnvBlendLoadedRecords`, function `uvEnvGetProps`, function `uvEnvProps` | [159](../src/modules/uvenv_rom.c#L159), [170](../src/modules/uvenv_rom.c#L170), [256](../src/modules/uvenv_rom.c#L256), [267](../src/modules/uvenv_rom.c#L267), [495](../src/modules/uvenv_rom.c#L495), [733](../src/modules/uvenv_rom.c#L733), [736](../src/modules/uvenv_rom.c#L736), [738](../src/modules/uvenv_rom.c#L738) (+2 in JSON) |
-| offset_field | `unk4` | function `_uvEnvDraw`, function `uvEnvApplyDepthFogOverlay`, function `uvEnvBlendLoadedRecords`, function `uvEnvGetProps`, function `uvEnvProps` | [191](../src/modules/uvenv_rom.c#L191), [285](../src/modules/uvenv_rom.c#L285), [418](../src/modules/uvenv_rom.c#L418), [506](../src/modules/uvenv_rom.c#L506), [525](../src/modules/uvenv_rom.c#L525), [532](../src/modules/uvenv_rom.c#L532), [536](../src/modules/uvenv_rom.c#L536), [537](../src/modules/uvenv_rom.c#L537) (+5 in JSON) |
-| offset_field | `unk40` | function `_uvEnvDraw`, function `uvEnvBlendLoadedRecords`, function `uvEnvGetProps`, function `uvEnvProps` | [160](../src/modules/uvenv_rom.c#L160), [171](../src/modules/uvenv_rom.c#L171), [257](../src/modules/uvenv_rom.c#L257), [268](../src/modules/uvenv_rom.c#L268), [496](../src/modules/uvenv_rom.c#L496), [523](../src/modules/uvenv_rom.c#L523), [596](../src/modules/uvenv_rom.c#L596), [732](../src/modules/uvenv_rom.c#L732) |
-| offset_field | `unk44` | function `uvEnvApplyDepthFogOverlay`, function `uvEnvCopyLoadedRecord`, function `uvEnvProps` | [169](../src/modules/uvenv_rom.c#L169), [176](../src/modules/uvenv_rom.c#L176), [411](../src/modules/uvenv_rom.c#L411), [676](../src/modules/uvenv_rom.c#L676), [677](../src/modules/uvenv_rom.c#L677), [678](../src/modules/uvenv_rom.c#L678) |
-| offset_field | `unk48` | function `uvEnvBlendLoadedRecords`, function `uvEnvGetProps`, function `uvEnvProps` | [220](../src/modules/uvenv_rom.c#L220), [319](../src/modules/uvenv_rom.c#L319), [731](../src/modules/uvenv_rom.c#L731) |
-| offset_field | `unk4C` | function `uvEnvBlendLoadedRecords`, function `uvEnvGetProps`, function `uvEnvProps` | [210](../src/modules/uvenv_rom.c#L210), [304](../src/modules/uvenv_rom.c#L304), [728](../src/modules/uvenv_rom.c#L728) |
-| offset_field | `unk5` | function `_uvEnvDraw`, function `uvEnvApplyDepthFogOverlay`, function `uvEnvBlendLoadedRecords`, function `uvEnvGetProps`, function `uvEnvProps` | [192](../src/modules/uvenv_rom.c#L192), [286](../src/modules/uvenv_rom.c#L286), [418](../src/modules/uvenv_rom.c#L418), [506](../src/modules/uvenv_rom.c#L506), [525](../src/modules/uvenv_rom.c#L525), [596](../src/modules/uvenv_rom.c#L596), [598](../src/modules/uvenv_rom.c#L598), [721](../src/modules/uvenv_rom.c#L721) |
-| offset_field | `unk50` | function `uvEnvBlendLoadedRecords`, function `uvEnvGetProps`, function `uvEnvProps` | [211](../src/modules/uvenv_rom.c#L211), [305](../src/modules/uvenv_rom.c#L305), [729](../src/modules/uvenv_rom.c#L729) |
-| offset_field | `unk54` | function `uvEnvBlendLoadedRecords`, function `uvEnvGetProps`, function `uvEnvProps` | [212](../src/modules/uvenv_rom.c#L212), [306](../src/modules/uvenv_rom.c#L306), [730](../src/modules/uvenv_rom.c#L730) |
-| offset_field | `unk58` | function `_uvEnvDraw`, function `uvEnvGetProps`, function `uvEnvProps` | [223](../src/modules/uvenv_rom.c#L223), [322](../src/modules/uvenv_rom.c#L322), [325](../src/modules/uvenv_rom.c#L325), [507](../src/modules/uvenv_rom.c#L507) |
-| offset_field | `unk5C` | function `_uvEnvDraw`, function `uvEnvSetLoadedRecordProperty` | [349](../src/modules/uvenv_rom.c#L349), [490](../src/modules/uvenv_rom.c#L490), [491](../src/modules/uvenv_rom.c#L491) |
-| offset_field | `unk6` | function `uvEnvBlendLoadedRecords`, function `uvEnvGetProps`, function `uvEnvProps` | [200](../src/modules/uvenv_rom.c#L200), [299](../src/modules/uvenv_rom.c#L299), [722](../src/modules/uvenv_rom.c#L722) |
-| offset_field | `unk7` | function `uvEnvBlendLoadedRecords`, function `uvEnvGetProps`, function `uvEnvProps` | [201](../src/modules/uvenv_rom.c#L201), [300](../src/modules/uvenv_rom.c#L300), [723](../src/modules/uvenv_rom.c#L723) |
-| offset_field | `unk8` | function `_uvEnvDraw`, function `uvEnvBlendLoadedRecords`, function `uvEnvGetProps`, function `uvEnvProps` | [202](../src/modules/uvenv_rom.c#L202), [301](../src/modules/uvenv_rom.c#L301), [540](../src/modules/uvenv_rom.c#L540), [563](../src/modules/uvenv_rom.c#L563), [724](../src/modules/uvenv_rom.c#L724) |
-| offset_field | `unk9` | function `uvEnvBlendLoadedRecords`, function `uvEnvGetProps`, function `uvEnvProps` | [205](../src/modules/uvenv_rom.c#L205), [309](../src/modules/uvenv_rom.c#L309), [725](../src/modules/uvenv_rom.c#L725) |
-| offset_field | `unkA` | function `uvEnvBlendLoadedRecords`, function `uvEnvGetProps`, function `uvEnvProps` | [206](../src/modules/uvenv_rom.c#L206), [310](../src/modules/uvenv_rom.c#L310), [726](../src/modules/uvenv_rom.c#L726) |
-| offset_field | `unkB` | function `uvEnvBlendLoadedRecords`, function `uvEnvGetProps`, function `uvEnvProps` | [207](../src/modules/uvenv_rom.c#L207), [311](../src/modules/uvenv_rom.c#L311), [727](../src/modules/uvenv_rom.c#L727) |
-| offset_field | `unkC` | function `_uvEnvDraw`, function `uvEnvGetProps`, function `uvEnvProps` | [185](../src/modules/uvenv_rom.c#L185), [289](../src/modules/uvenv_rom.c#L289), [544](../src/modules/uvenv_rom.c#L544) |
-| offset_field | `unkD` | function `uvEnvGetProps`, function `uvEnvProps` | [186](../src/modules/uvenv_rom.c#L186), [290](../src/modules/uvenv_rom.c#L290) |
-| offset_field | `unkE` | function `uvEnvGetProps`, function `uvEnvProps` | [187](../src/modules/uvenv_rom.c#L187), [291](../src/modules/uvenv_rom.c#L291) |
-| offset_field | `unkF` | function `uvEnvGetProps`, function `uvEnvProps` | [195](../src/modules/uvenv_rom.c#L195), [294](../src/modules/uvenv_rom.c#L294) |
+| offset_field | `unk2E` | function `_uvEnvDraw`, function `uvEnvBlendLoadedRecords`, function `uvEnvProps` | [228](../src/modules/uvenv_rom.c#L228), [507](../src/modules/uvenv_rom.c#L507), [760](../src/modules/uvenv_rom.c#L760), [761](../src/modules/uvenv_rom.c#L761), [764](../src/modules/uvenv_rom.c#L764) |
+| offset_field | `unk3` | function `_uvEnvDraw`, function `uvEnvApplyDepthFogOverlay`, function `uvEnvBlendLoadedRecords`, function `uvEnvGetProps`, function `uvEnvProps` | [192](../src/modules/uvenv_rom.c#L192), [288](../src/modules/uvenv_rom.c#L288), [422](../src/modules/uvenv_rom.c#L422), [512](../src/modules/uvenv_rom.c#L512), [531](../src/modules/uvenv_rom.c#L531), [602](../src/modules/uvenv_rom.c#L602), [604](../src/modules/uvenv_rom.c#L604), [725](../src/modules/uvenv_rom.c#L725) |
+| offset_field | `unk38` | function `_uvEnvDraw`, function `uvEnvSetLoadedRecordProperty` | [350](../src/modules/uvenv_rom.c#L350), [635](../src/modules/uvenv_rom.c#L635), [636](../src/modules/uvenv_rom.c#L636) |
+| offset_field | `unk3C` | function `_uvEnvDraw`, function `uvEnvBlendLoadedRecords`, function `uvEnvGetProps`, function `uvEnvProps` | [161](../src/modules/uvenv_rom.c#L161), [172](../src/modules/uvenv_rom.c#L172), [260](../src/modules/uvenv_rom.c#L260), [271](../src/modules/uvenv_rom.c#L271), [501](../src/modules/uvenv_rom.c#L501), [739](../src/modules/uvenv_rom.c#L739), [742](../src/modules/uvenv_rom.c#L742), [744](../src/modules/uvenv_rom.c#L744) (+2 in JSON) |
+| offset_field | `unk4` | function `_uvEnvDraw`, function `uvEnvApplyDepthFogOverlay`, function `uvEnvBlendLoadedRecords`, function `uvEnvGetProps`, function `uvEnvProps` | [193](../src/modules/uvenv_rom.c#L193), [289](../src/modules/uvenv_rom.c#L289), [422](../src/modules/uvenv_rom.c#L422), [512](../src/modules/uvenv_rom.c#L512), [531](../src/modules/uvenv_rom.c#L531), [538](../src/modules/uvenv_rom.c#L538), [542](../src/modules/uvenv_rom.c#L542), [543](../src/modules/uvenv_rom.c#L543) (+5 in JSON) |
+| offset_field | `unk40` | function `_uvEnvDraw`, function `uvEnvBlendLoadedRecords`, function `uvEnvGetProps`, function `uvEnvProps` | [162](../src/modules/uvenv_rom.c#L162), [173](../src/modules/uvenv_rom.c#L173), [261](../src/modules/uvenv_rom.c#L261), [272](../src/modules/uvenv_rom.c#L272), [502](../src/modules/uvenv_rom.c#L502), [529](../src/modules/uvenv_rom.c#L529), [602](../src/modules/uvenv_rom.c#L602), [738](../src/modules/uvenv_rom.c#L738) |
+| offset_field | `unk44` | function `uvEnvApplyDepthFogOverlay`, function `uvEnvCopyLoadedRecord`, function `uvEnvProps` | [171](../src/modules/uvenv_rom.c#L171), [178](../src/modules/uvenv_rom.c#L178), [415](../src/modules/uvenv_rom.c#L415), [682](../src/modules/uvenv_rom.c#L682), [683](../src/modules/uvenv_rom.c#L683), [684](../src/modules/uvenv_rom.c#L684) |
+| offset_field | `unk48` | function `uvEnvBlendLoadedRecords`, function `uvEnvGetProps`, function `uvEnvProps` | [222](../src/modules/uvenv_rom.c#L222), [323](../src/modules/uvenv_rom.c#L323), [737](../src/modules/uvenv_rom.c#L737) |
+| offset_field | `unk4C` | function `uvEnvBlendLoadedRecords`, function `uvEnvGetProps`, function `uvEnvProps` | [212](../src/modules/uvenv_rom.c#L212), [308](../src/modules/uvenv_rom.c#L308), [734](../src/modules/uvenv_rom.c#L734) |
+| offset_field | `unk5` | function `_uvEnvDraw`, function `uvEnvApplyDepthFogOverlay`, function `uvEnvBlendLoadedRecords`, function `uvEnvGetProps`, function `uvEnvProps` | [194](../src/modules/uvenv_rom.c#L194), [290](../src/modules/uvenv_rom.c#L290), [422](../src/modules/uvenv_rom.c#L422), [512](../src/modules/uvenv_rom.c#L512), [531](../src/modules/uvenv_rom.c#L531), [602](../src/modules/uvenv_rom.c#L602), [604](../src/modules/uvenv_rom.c#L604), [727](../src/modules/uvenv_rom.c#L727) |
+| offset_field | `unk50` | function `uvEnvBlendLoadedRecords`, function `uvEnvGetProps`, function `uvEnvProps` | [213](../src/modules/uvenv_rom.c#L213), [309](../src/modules/uvenv_rom.c#L309), [735](../src/modules/uvenv_rom.c#L735) |
+| offset_field | `unk54` | function `uvEnvBlendLoadedRecords`, function `uvEnvGetProps`, function `uvEnvProps` | [214](../src/modules/uvenv_rom.c#L214), [310](../src/modules/uvenv_rom.c#L310), [736](../src/modules/uvenv_rom.c#L736) |
+| offset_field | `unk58` | function `_uvEnvDraw`, function `uvEnvGetProps`, function `uvEnvProps` | [225](../src/modules/uvenv_rom.c#L225), [326](../src/modules/uvenv_rom.c#L326), [329](../src/modules/uvenv_rom.c#L329), [513](../src/modules/uvenv_rom.c#L513) |
+| offset_field | `unk5C` | function `_uvEnvDraw`, function `uvEnvSetLoadedRecordProperty` | [353](../src/modules/uvenv_rom.c#L353), [496](../src/modules/uvenv_rom.c#L496), [497](../src/modules/uvenv_rom.c#L497) |
+| offset_field | `unk6` | function `uvEnvBlendLoadedRecords`, function `uvEnvGetProps`, function `uvEnvProps` | [202](../src/modules/uvenv_rom.c#L202), [303](../src/modules/uvenv_rom.c#L303), [728](../src/modules/uvenv_rom.c#L728) |
+| offset_field | `unk7` | function `uvEnvBlendLoadedRecords`, function `uvEnvGetProps`, function `uvEnvProps` | [203](../src/modules/uvenv_rom.c#L203), [304](../src/modules/uvenv_rom.c#L304), [729](../src/modules/uvenv_rom.c#L729) |
+| offset_field | `unk8` | function `_uvEnvDraw`, function `uvEnvBlendLoadedRecords`, function `uvEnvGetProps`, function `uvEnvProps` | [204](../src/modules/uvenv_rom.c#L204), [305](../src/modules/uvenv_rom.c#L305), [546](../src/modules/uvenv_rom.c#L546), [569](../src/modules/uvenv_rom.c#L569), [730](../src/modules/uvenv_rom.c#L730) |
+| offset_field | `unk9` | function `uvEnvBlendLoadedRecords`, function `uvEnvGetProps`, function `uvEnvProps` | [207](../src/modules/uvenv_rom.c#L207), [313](../src/modules/uvenv_rom.c#L313), [731](../src/modules/uvenv_rom.c#L731) |
+| offset_field | `unkA` | function `uvEnvBlendLoadedRecords`, function `uvEnvGetProps`, function `uvEnvProps` | [208](../src/modules/uvenv_rom.c#L208), [314](../src/modules/uvenv_rom.c#L314), [732](../src/modules/uvenv_rom.c#L732) |
+| offset_field | `unkB` | function `uvEnvBlendLoadedRecords`, function `uvEnvGetProps`, function `uvEnvProps` | [209](../src/modules/uvenv_rom.c#L209), [315](../src/modules/uvenv_rom.c#L315), [733](../src/modules/uvenv_rom.c#L733) |
+| offset_field | `unkC` | function `_uvEnvDraw`, function `uvEnvGetProps`, function `uvEnvProps` | [187](../src/modules/uvenv_rom.c#L187), [293](../src/modules/uvenv_rom.c#L293), [550](../src/modules/uvenv_rom.c#L550) |
+| offset_field | `unkD` | function `uvEnvGetProps`, function `uvEnvProps` | [188](../src/modules/uvenv_rom.c#L188), [294](../src/modules/uvenv_rom.c#L294) |
+| offset_field | `unkE` | function `uvEnvGetProps`, function `uvEnvProps` | [189](../src/modules/uvenv_rom.c#L189), [295](../src/modules/uvenv_rom.c#L295) |
+| offset_field | `unkF` | function `uvEnvGetProps`, function `uvEnvProps` | [197](../src/modules/uvenv_rom.c#L197), [298](../src/modules/uvenv_rom.c#L298) |
 | opaque_type | `UnkModel_Exports` | global `sUvModelExports`, type `UnkModel_Exports` | [11](../src/modules/uvenv_rom.c#L11), [41](../src/modules/uvenv_rom.c#L41) |
 | opaque_type | `UnkModel_Exports_s` | type `UnkModel_Exports` | [7](../src/modules/uvenv_rom.c#L7) |
-| original_quirk | `Assign a UVEN file to the environment slot, loading it on demand. * Convert -1 and failed loads to the existing 0xFFFF sentinel. * RE_ORIGINAL_QUIRK: retain the inclusive upper-...` | function `uvEnvAssignFileToSlot` | [635](../src/modules/uvenv_rom.c#L635) |
+| original_quirk | `Assign a UVEN file to the environment slot, loading it on demand. * Convert -1 and failed loads to the existing 0xFFFF sentinel. * RE_ORIGINAL_QUIRK: retain the inclusive upper-...` | function `uvEnvAssignFileToSlot` | [641](../src/modules/uvenv_rom.c#L641) |
 | original_quirk | `Build the 256-entry, duplicated-byte intensity lookup used by the * depth-image fog overlay. Model flag two suppresses the final seven entries; * entries before the scaled start...` | function `uvEnvBuildDepthFogLookup` | [91](../src/modules/uvenv_rom.c#L91) |
-| original_quirk | `Return the file identifier stored in the environment assignment table, * or -1 when the supplied slot is greater than the configured count. * RE_ORIGINAL_QUIRK: retain the inclu...` | function `uvEnvGetAssignedFileId` | [763](../src/modules/uvenv_rom.c#L763) |
+| original_quirk | `RE_ORIGINAL_QUIRK: NaN bypasses both range comparisons; preserve the original guard.` | function `uvEnvProps` | [154](../src/modules/uvenv_rom.c#L154), [169](../src/modules/uvenv_rom.c#L169) |
+| original_quirk | `RE_ORIGINAL_QUIRK: a missing file reaches PANIC before return; preserve the original failure path.` | function `uvEnvGetProps` | [251](../src/modules/uvenv_rom.c#L251) |
+| original_quirk | `RE_ORIGINAL_QUIRK: missing model returns before fog restoration and the post-draw callback.` | function `_uvEnvDraw` | [524](../src/modules/uvenv_rom.c#L524) |
+| original_quirk | `RE_ORIGINAL_QUIRK: read the assignment before the upper-bound check; RE_UNKNOWN: negative/index domains need caller proof.` | function `_uvEnvDraw` | [476](../src/modules/uvenv_rom.c#L476) |
+| original_quirk | `RE_ORIGINAL_QUIRK: selectors 12 and 14 both read byte +0x58; keep the duplicate mapping.` | function `uvEnvGetProps` | [328](../src/modules/uvenv_rom.c#L328) |
+| original_quirk | `Return the file identifier stored in the environment assignment table, * or -1 when the supplied slot is greater than the configured count. * RE_ORIGINAL_QUIRK: retain the inclu...` | function `uvEnvGetAssignedFileId` | [769](../src/modules/uvenv_rom.c#L769) |
+| unused_identifier | `unusedProjectionInput5` | function `_uvEnvDraw` | [463](../src/modules/uvenv_rom.c#L463), [597](../src/modules/uvenv_rom.c#L597) |
 
 ## src/modules/uvenvld_rom.c
 

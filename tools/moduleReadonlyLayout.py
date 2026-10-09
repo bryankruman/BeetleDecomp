@@ -571,10 +571,11 @@ def load_v3(root, layout, module):
         require(table['table_begin'] < table['table_end'] <= following and table['owner_bytes'] > 0,
                 'V3 tables must be nonempty and disjoint in physical order')
         if span is None:
-            require(i + 1 < len(tables) and table['table_end'] == following,
-                    'null V3 span requires directly adjacent compiler tables')
-            require(table['owner_address'] + table['owner_bytes'] <= tables[i + 1]['owner_address'],
-                    'adjacent V3 owners must follow text order')
+            require(table['table_end'] == following,
+                    'null V3 span requires an adjacent table or the exact section end')
+            if i + 1 < len(tables):
+                require(table['owner_address'] + table['owner_bytes'] <= tables[i + 1]['owner_address'],
+                        'adjacent V3 owners must follow text order')
         else:
             require(table['table_end'] == span['begin'] < span['end'] == following,
                     'V3 retained spans must cover the exact nonempty table gap')
@@ -675,14 +676,17 @@ def v3_original_host(root, layout, index, raw, fragment):
         if j < len(layout['tables']) and layout['late_spans'][j] is None:
             while j < len(layout['tables']) and layout['late_spans'][j] is None:
                 j += 1
-            require(j < len(layout['tables']), 'V3 transition lacks a following compiler table')
             witness = inside(root, layout['witness']).read_text(encoding='utf-8')
             bounds = v3_witness_bounds(layout, witness)
-            transition = v3_fragment(span['begin'], witness[bounds[index][1]:bounds[j][0]])
-            decoded = original_bytes(transition.decode(), span['begin'], layout['tables'][j]['table_begin'])
+            # A newly compiler-owned terminal table has no following ASM host.
+            # Migrate only the exact old witness suffix, through the real end.
+            stop = bounds[j][0] if j < len(bounds) else len(witness)
+            end = layout['tables'][j]['table_begin'] if j < len(bounds) else layout['end']
+            transition = v3_fragment(span['begin'], witness[bounds[index][1]:stop])
+            decoded = original_bytes(transition.decode(), span['begin'], end)
             all_original = original_bytes(witness, layout['begin'], layout['end'])
             require(decoded == all_original[span['begin'] - layout['begin']:
-                                           layout['tables'][j]['table_begin'] - layout['begin']],
+                                           end - layout['begin']],
                     'V3 transition is not exact original readonly')
             allowed.append(transition)
         require(existing in allowed, 'V3 managed suffix differs from exact original retained/transition spans')

@@ -571,5 +571,81 @@ class AdjacentLayoutTests(unittest.TestCase):
         self.binary.write_bytes(self.binary.read_bytes()[:-1])
         self.rejected_unchanged(self.prepare)
 
+class TerminalLayoutTests(unittest.TestCase):
+    """Synthetic ownership fixtures only; no game code or binary is fabricated."""
+    write = LayoutTests.write
+    save_config = LayoutTests.save_config
+    prepare = LayoutTests.prepare
+    outputs = LayoutTests.outputs
+    rejected_unchanged = LayoutTests.rejected_unchanged
+
+    def setUp(self):
+        AdjacentLayoutTests.setUp(self)
+        last = self.layout['tables'][-1]
+        old_span = self.layout['late_spans'][-1]
+        self.layout['end'] = last['table_end']
+        self.layout['late_spans'][-1] = None
+        path = self.root / self.layout['witness']
+        witness = path.read_text()
+        marker = 'enddlabel ' + last['table_label']
+        witness = witness[:witness.index(marker) + len(marker)] + '\n'
+        path.write_bytes(witness.encode())
+        self.original = self.original[:self.layout['end'] - self.layout['begin']]
+        self.layout['witness_sha256'] = tool.sha(path.read_bytes())
+        self.layout['readonly_sha256'] = tool.sha(self.original)
+        self.write(self.layout['monolithic_assembly'], path.read_bytes())
+        source = self.root / self.layout['source']
+        source.write_bytes(source.read_bytes().replace(
+            ('#pragma GLOBAL_ASM("' + old_span['host_assembly'] + '")\n').encode(), b''))
+        (self.root / old_span['host_assembly']).unlink()
+        raw = bytearray(self.binary.read_bytes()[:0x50 + self.layout['begin'] - 0x400000])
+        struct.pack_into('>I', raw, 0x2C, len(self.original))
+        self.binary.write_bytes(raw + self.original)
+        self.save_config()
+
+    def test_terminal_table_has_no_fake_host_and_is_deterministic(self):
+        plan = self.prepare()
+        self.assertEqual(len(plan['suffix']), 1)
+        self.assertIsNone(self.layout['late_spans'][-1])
+        self.assertEqual(self.layout['tables'][-1]['table_end'], self.layout['end'])
+        tool.apply(plan)
+        first = self.outputs()
+        tool.apply(self.prepare())
+        self.assertEqual(first, self.outputs())
+
+    def previous_suffix(self):
+        witness = (self.root / self.layout['witness']).read_text()
+        bounds = tool.v3_witness_bounds(self.layout, witness)
+        return tool.v3_fragment(self.layout['late_spans'][0]['begin'], witness[bounds[0][1]:])
+
+    def test_exact_previous_suffix_migrates_terminal_adjacent_tables(self):
+        span = self.layout['late_spans'][0]
+        path = self.root / span['host_assembly']
+        path.write_bytes(self.hosts[span['host_assembly']] + tool.SUFFIX_MARKER + self.previous_suffix())
+        tool.apply(self.prepare())
+        self.assertNotIn(self.layout['tables'][-1]['table_label'].encode(), path.read_bytes())
+        tool.apply(self.prepare())
+
+    def test_terminal_transition_rejects_changed_bytes_code_or_extra_contents(self):
+        span = self.layout['late_spans'][0]
+        original = self.hosts[span['host_assembly']] + tool.SUFFIX_MARKER + self.previous_suffix()
+        # Alter an actual table operand, an original instruction, or add data.
+        suffix = self.previous_suffix()
+        word = next(line for line in suffix.splitlines() if b'.word .L' in line)
+        target = word.rsplit(b'_', 1)[1]
+        changed_word = word[:-len(target)] + ('%08X' % (int(target, 16) + 4)).encode()
+        for bad in (original.replace(word, changed_word, 1),
+                    original.replace(b'nop', b'addiu $v0, $zero, 1', 1),
+                    original + b'.word 0\n'):
+            with self.subTest(bad=bad):
+                self.write(span['host_assembly'], bad)
+                self.rejected_unchanged(self.prepare)
+
+    def test_terminal_gap_or_extra_witness_bytes_rejected(self):
+        self.layout['end'] += 4
+        self.save_config()
+        self.rejected_unchanged(self.prepare)
+
+
 if __name__ == '__main__':
     unittest.main()

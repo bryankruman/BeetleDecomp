@@ -1,5 +1,25 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+/* Focused slot/record views; neither establishes complete historical layout. */
+typedef struct { u8 unused00[0xC4]; void (*copyText)(void *, char *); } TedSelectorLabelExports;
+typedef struct { s32 selector; u8 unknown04[12]; } TedSelectorLabelRecord;
+extern s32 D_ted_00407244;
+extern s32 D_ted_0040727C;
+extern TedSelectorLabelRecord *D_ted_00407298;
+extern char D_ted_00407090[];
+extern char D_ted_00407098[];
+extern char D_ted_004070A0[];
+extern char D_ted_004070AC[];
+extern char D_ted_004070B4[];
+extern s32 D_ted_00407284;
+extern TedSelectorLabelRecord *D_ted_004072A0;
+extern char D_ted_004070BC[];
+extern char D_ted_004070C4[];
+extern char D_ted_004070CC[];
+extern char D_ted_004070D4[];
+extern char D_ted_004070E0[];
+extern char D_ted_004070EC[];
+#line 3 "src/modules/ted.c"
 /* Minimal original slot-consumption views; unused storage is not a complete
  * export-table or historical ABI declaration. Keep shared provider reloads.
  * RE_UNKNOWN: full table lifecycle, historical formals and all unused slots. */
@@ -165,14 +185,14 @@ void func_ted_004059BC();
 void func_ted_00405B94();
 void func_ted_00405C9C();
 void func_ted_00405EE8();
-void func_ted_0040607C();
+void tedUpdateSelectedItemLabel(void *widget);
 void func_ted_00406178();
 void func_ted_00406280();
 void func_ted_00406330();
 void func_ted_00406508();
 void func_ted_00406610();
 void func_ted_0040685C();
-void func_ted_004069F0();
+void tedUpdateSelectedColoredLetterLabel(void *widget);
 void func_ted_00406B04();
 void tedResetRecordPool();
 void tedResetRecord(TedResetRecord *record);
@@ -753,7 +773,46 @@ void tedStoreSelectedRecordByte(s32 unused) {
  * mutation/lifetime guarantees need original pool producers and consumers.
  */
 #line 225 "src/modules/ted.c"
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_0040607C.s")
+#line 225 "src/modules/ted.c"
+/* Format the current selector's original label, forward the stack text to
+ * GUI slot 0xC4, then reload the selected index and current selector for the
+ * 16-byte record store. The GUI callback may change shared state.
+ * RE_ORIGINAL_QUIRK: an out-of-range selector skips formatting but still
+ * forwards uninitialized scratch. Preserve that path; reachability is unknown.
+ * RE_ORIGINAL_QUIRK: the GUI provider consumes 30 bytes even past a short
+ * formatted label's terminator; the original scratch tail is not initialized.
+ * RE_UNKNOWN: historical scratch extent (32 is a draft local view), valid
+ * selector/index domains, GUI's 30-byte consumption, backing allocations,
+ * callback mutation/lifetimes and full argument/record declarations. */
+void tedUpdateSelectedItemLabel(void *widget)
+{
+    char text[32];
+    s32 selectedIndex;
+
+    switch (D_ted_0040727C) {
+    case 0:
+        sprintf(text, D_ted_00407090);
+        break;
+    case 1:
+        sprintf(text, D_ted_00407098);
+        break;
+    case 2:
+        sprintf(text, D_ted_004070A0);
+        break;
+    case 3:
+        sprintf(text, D_ted_004070AC);
+        break;
+    case 4:
+        sprintf(text, D_ted_004070B4);
+        break;
+    }
+    ((TedSelectorLabelExports *)gUvGuiExports)->copyText(widget, text);
+    selectedIndex = D_ted_00407244;
+    if (selectedIndex >= 0) {
+        D_ted_00407298[selectedIndex].selector = D_ted_0040727C;
+    }
+}
+#line 226 "src/modules/ted.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00406178.s")
 
@@ -835,7 +894,49 @@ void tedStoreSelectedRecordByte(s32 unused) {
  * mutation/lifetime guarantees need original pool producers and consumers.
  */
 #line 239 "src/modules/ted.c"
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_004069F0.s")
+#line 239 "src/modules/ted.c"
+/* Format the current selector's original label, forward the stack text to
+ * GUI slot 0xC4, then reload the selected index and current selector for the
+ * 16-byte record store. The GUI callback may change shared state.
+ * RE_ORIGINAL_QUIRK: an out-of-range selector skips formatting but still
+ * forwards uninitialized scratch. Preserve that path; reachability is unknown.
+ * RE_ORIGINAL_QUIRK: the GUI provider consumes 30 bytes even past a short
+ * formatted label's terminator; the original scratch tail is not initialized.
+ * RE_UNKNOWN: historical scratch extent (32 is a draft local view), valid
+ * selector/index domains, GUI's 30-byte consumption, backing allocations,
+ * callback mutation/lifetimes and full argument/record declarations. */
+void tedUpdateSelectedColoredLetterLabel(void *widget)
+{
+    char text[32];
+    s32 selectedIndex;
+
+    switch (D_ted_00407284) {
+    case 0:
+        sprintf(text, D_ted_004070BC);
+        break;
+    case 1:
+        sprintf(text, D_ted_004070C4);
+        break;
+    case 2:
+        sprintf(text, D_ted_004070CC);
+        break;
+    case 3:
+        sprintf(text, D_ted_004070D4);
+        break;
+    case 4:
+        sprintf(text, D_ted_004070E0);
+        break;
+    case 5:
+        sprintf(text, D_ted_004070EC);
+        break;
+    }
+    ((TedSelectorLabelExports *)gUvGuiExports)->copyText(widget, text);
+    selectedIndex = D_ted_00407244;
+    if (selectedIndex >= 0) {
+        D_ted_004072A0[selectedIndex].selector = D_ted_00407284;
+    }
+}
+#line 240 "src/modules/ted.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00406B04.s")
 
