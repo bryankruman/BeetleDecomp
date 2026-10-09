@@ -17,7 +17,7 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 935 |
+| Explicit RE_UNKNOWN notes | 940 |
 | Preserved RE_ORIGINAL_QUIRK notes | 246 |
 | Older comments with uncertainty language | 91 |
 | Documented original-behavior audits | 30 |
@@ -6582,6 +6582,11 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `arg0` | function `uvVec2FLengthSquared`, function `uvVec2FScalarProj`, function `uvVec3FCross`, function `uvVec3FDistance`, function `uvVec3FScalarProj`, function `uvVec3fFromSpherical` | [19](../src/modules/uvfvec_rom.c#L19), [23](../src/modules/uvfvec_rom.c#L23), [35](../src/modules/uvfvec_rom.c#L35), [37](../src/modules/uvfvec_rom.c#L37), [48](../src/modules/uvfvec_rom.c#L48), [54](../src/modules/uvfvec_rom.c#L54) |
 | decompiler_local | `arg1` | function `uvVec2FScalarProj`, function `uvVec3FCross`, function `uvVec3FDistance`, function `uvVec3FScalarProj`, function `uvVec3fFromSpherical` | [23](../src/modules/uvfvec_rom.c#L23), [35](../src/modules/uvfvec_rom.c#L35), [37](../src/modules/uvfvec_rom.c#L37), [48](../src/modules/uvfvec_rom.c#L48), [54](../src/modules/uvfvec_rom.c#L54) |
 | decompiler_local | `arg2` | function `uvVec3FCross`, function `uvVec3fFromSpherical` | [35](../src/modules/uvfvec_rom.c#L35), [54](../src/modules/uvfvec_rom.c#L54) |
+| explicit_unknown | `RE_UNKNOWN: caller alias/storage/lifetime and FP contracts remain unproved.` | function `uvVec2FScale`, function `uvVec3FMult` | [201](../src/modules/uvfvec_rom.c#L201), [387](../src/modules/uvfvec_rom.c#L387) |
+| explicit_unknown | `RE_UNKNOWN: caller alias/storage/lifetime and FP contracts remain unproved; retain interleaving.` | function `uvVec3FSub` | [218](../src/modules/uvfvec_rom.c#L218) |
+| explicit_unknown | `RE_UNKNOWN: caller partial-overlap and storage/lifetime contracts remain unproved.` | function `uvVec2FCopy` | [349](../src/modules/uvfvec_rom.c#L349) |
+| explicit_unknown | `RE_UNKNOWN: caller storage/alias/FP contracts and historical MATH/kernel declarations need further evidence.` | function `uvVec3FDistance` | [149](../src/modules/uvfvec_rom.c#L149) |
+| explicit_unknown | `RE_UNKNOWN: historical purpose of this unused local needs original source.` | function `uvVec3FSub` | [215](../src/modules/uvfvec_rom.c#L215) |
 | layout_padding | `pad` | function `uvVec2FReflect`, function `uvVec3FSub` | [215](../src/modules/uvfvec_rom.c#L215), [407](../src/modules/uvfvec_rom.c#L407) |
 | layout_padding | `pad1C` | function `uvVec3fFromSpherical` | [245](../src/modules/uvfvec_rom.c#L245) |
 | original_quirk | `Return the dot product divided by both vector lengths: the cosine * of their angle for nonzero vectors. Keep the established export name. * RE_ORIGINAL_QUIRK: zero-length vector...` | function `uvVec2FScalarProj`, function `uvVec3FScalarProj` | [166](../src/modules/uvfvec_rom.c#L166), [353](../src/modules/uvfvec_rom.c#L353) |

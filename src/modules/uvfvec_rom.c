@@ -145,11 +145,11 @@ f32 uvVec3FLengthSquared(Vec3F* vector) {
 }
 #line 139 "src/modules/uvfvec_rom.c"
 
-f32 uvVec3FDistance(Vec3F *va, Vec3F *vb) {
-    Vec3F v;
+f32 uvVec3FDistance(Vec3F *first, Vec3F *second) {
+    Vec3F difference; /* RE_UNKNOWN: caller storage/alias/FP contracts and historical MATH/kernel declarations need further evidence. */
 
-    uvVec3FSub(&v, va, vb);
-    return sUvMathRomExports->uvSqrtf(uvVec3FLengthSquared(&v));
+    uvVec3FSub(&difference, first, second);
+    return sUvMathRomExports->uvSqrtf(uvVec3FLengthSquared(&difference)); /* Preserve Sub, length-squared, then live MATH slot 4 dispatch. */
 }
 
 f32 uvVec3FDot(Vec3F* va, Vec3F* vb) {
@@ -195,10 +195,10 @@ void uvVec3FAdd(Vec3F *vdst, Vec3F *va, Vec3F *vb) {
     vdst->z = va->z + vb->z;
 }
 
-void uvVec3FMult(Vec3F *vdst, Vec3F *va, Vec3F *vb) {
-    vdst->x = va->x * vb->x;
-    vdst->y = va->y * vb->y;
-    vdst->z = va->z * vb->z;
+void uvVec3FMult(Vec3F *destination, Vec3F *first, Vec3F *second) {
+    destination->x = first->x * second->x; /* Component-wise product; retain interleaved reads/stores. */
+    destination->y = first->y * second->y;
+    destination->z = first->z * second->z; /* RE_UNKNOWN: caller alias/storage/lifetime and FP contracts remain unproved. */
 }
 
 #line 187 "src/modules/uvfvec_rom.c"
@@ -211,11 +211,11 @@ void uvVec3FAddScaled(Vec3F *destination, Vec3F *first, f32 scale, Vec3F *second
 }
 #line 192 "src/modules/uvfvec_rom.c"
 
-void uvVec3FSub(Vec3F *vdst, Vec3F *va, Vec3F *vb) {
-    s32 pad;
-    vdst->x = va->x - vb->x;
-    vdst->y = va->y - vb->y;
-    vdst->z = va->z - vb->z;
+void uvVec3FSub(Vec3F *destination, Vec3F *first, Vec3F *second) {
+    s32 pad; /* RE_UNKNOWN: historical purpose of this unused local needs original source. */
+    destination->x = first->x - second->x;
+    destination->y = first->y - second->y;
+    destination->z = first->z - second->z; /* RE_UNKNOWN: caller alias/storage/lifetime and FP contracts remain unproved; retain interleaving. */
 }
 
 void uvVec3FScale(Vec3F *vdst, Vec3F *va, f32 scale) {
@@ -344,9 +344,9 @@ f32 uvVec2FDot(Vec2F *va, Vec2F *vb) {
     return (va->x * vb->x) + (va->y * vb->y);
 }
 
-void uvVec2FCopy(Vec2F *va, Vec2F *vb) {
-    va->x = vb->x;
-    va->y = vb->y;
+void uvVec2FCopy(Vec2F *destination, Vec2F *source) {
+    destination->x = source->x; /* Preserve the first store before reading source->y. */
+    destination->y = source->y; /* RE_UNKNOWN: caller partial-overlap and storage/lifetime contracts remain unproved. */
 }
 
 #line 313 "src/modules/uvfvec_rom.c"
@@ -382,9 +382,9 @@ void uvVec2FSub(Vec2F *vdst, Vec2F *va, Vec2F *vb) {
     vdst->y = va->y - vb->y;
 }
 
-void uvVec2FScale(Vec2F *vdst, Vec2F *va, f32 sb) {
-    vdst->x = va->x * sb;
-    vdst->y = va->y * sb;
+void uvVec2FScale(Vec2F *destination, Vec2F *source, f32 scale) {
+    destination->x = source->x * scale; /* Retain f32 products and interleaved reads/stores. */
+    destination->y = source->y * scale; /* RE_UNKNOWN: caller alias/storage/lifetime and FP contracts remain unproved. */
 }
 
 s32 uvVec2FIsZero(Vec2F *v) {

@@ -287,7 +287,7 @@
     "src/modules/uvfmtx_rom.c": "71c5de290552da50235ba31fbece2a97a0419cafbada6e0059d04932d89303f6",
     "src/modules/uvfont_rom.c": "6c7146367f155dbe1d8a1ea4dc0d8dcb9a0cd4615a444a200d97041791011318",
     "src/modules/uvfontld_rom.c": "81262e86812be50e51fbe741f6e4b0475b58c71b4d822a50ae83c16602fd4733",
-    "src/modules/uvfvec_rom.c": "c0d542dc9473cb90630fe609a22adc6b982d02725e71082d42b1dc4d9ef66893",
+    "src/modules/uvfvec_rom.c": "c82bb2d2b64c8b2b666eea01a5b1829bf976edf2375e50e5eed9d204c02c0619",
     "src/modules/uvfx_rom.c": "ea9e30b63484a3d999463727ce7bf9198e21261cb72a88e1c9865da3af27c5e8",
     "src/modules/uvgeom_rom.c": "7793cd32eab51f63bd3cf8d7df3b4ad6e26d67f44cf3fd8a1ffd56fcb8860e71",
     "src/modules/uvgfxmgr_rom.c": "c21151fb9c51017919699a7834a7a76ff06a565f7d6cb1b9c462a43f288971b9",
@@ -330,8 +330,8 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "4e056cf8ac776ce0e3b058a0740898d8de928098299fb999511e5a30575d541f",
-    "docs/VALIDATION_20261006.md": "f266be95bb1de5f89683bb8b16eb0e9f212b850cbc9e0c2f77cb86d49f266192"
+    "docs/STRATEGY_V4.md": "9305ffd4a45a07735fd8702f273c8318b09e653abb78ec97910b37af62e40f8d",
+    "docs/VALIDATION_20261006.md": "d540dcc38040ecf6ea935db7df601dc8cce22d93629dbd674868deca2e2fc722"
   },
   "counts": {
     "address_function": 937,
@@ -341,7 +341,7 @@
     "conditional_draft": 4,
     "decompiler_local": 911,
     "draft_marker": 27,
-    "explicit_unknown": 935,
+    "explicit_unknown": 940,
     "layout_padding": 274,
     "offset_field": 1587,
     "opaque_type": 282,
@@ -138779,6 +138779,115 @@
           "declaration_line": 31,
           "lines": [
             28
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-247cd9a21deb",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvfvec_rom.c",
+      "symbol": "RE_UNKNOWN: caller alias/storage/lifetime and FP contracts remain unproved.",
+      "lines": [
+        201,
+        387
+      ],
+      "evidence": "RE_UNKNOWN: caller alias/storage/lifetime and FP contracts remain unproved.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvVec2FScale",
+          "declaration_line": 385,
+          "lines": [
+            387
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvVec3FMult",
+          "declaration_line": 198,
+          "lines": [
+            201
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-e8295913d912",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvfvec_rom.c",
+      "symbol": "RE_UNKNOWN: caller alias/storage/lifetime and FP contracts remain unproved; retain interleaving.",
+      "lines": [
+        218
+      ],
+      "evidence": "RE_UNKNOWN: caller alias/storage/lifetime and FP contracts remain unproved; retain interleaving.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvVec3FSub",
+          "declaration_line": 214,
+          "lines": [
+            218
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-7700483e09af",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvfvec_rom.c",
+      "symbol": "RE_UNKNOWN: caller partial-overlap and storage/lifetime contracts remain unproved.",
+      "lines": [
+        349
+      ],
+      "evidence": "RE_UNKNOWN: caller partial-overlap and storage/lifetime contracts remain unproved.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvVec2FCopy",
+          "declaration_line": 347,
+          "lines": [
+            349
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-0df81d925033",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvfvec_rom.c",
+      "symbol": "RE_UNKNOWN: caller storage/alias/FP contracts and historical MATH/kernel declarations need further evidence.",
+      "lines": [
+        149
+      ],
+      "evidence": "RE_UNKNOWN: caller storage/alias/FP contracts and historical MATH/kernel declarations need further evidence.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvVec3FDistance",
+          "declaration_line": 148,
+          "lines": [
+            149
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-0154e08350c6",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvfvec_rom.c",
+      "symbol": "RE_UNKNOWN: historical purpose of this unused local needs original source.",
+      "lines": [
+        215
+      ],
+      "evidence": "RE_UNKNOWN: historical purpose of this unused local needs original source.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvVec3FSub",
+          "declaration_line": 214,
+          "lines": [
+            215
           ]
         }
       ]
