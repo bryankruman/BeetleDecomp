@@ -66,9 +66,9 @@ s32 func_uvdobj_rom_00402420(f32 arg0, f32 arg1, f32 arg2, f32 arg3, s32 **arg4,
                              Vec3F **arg6);
 s32 func_uvdobj_rom_00402870(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, s32 **arg6,
                              f32 **arg7, Vec3F **arg8);
-s16 func_uvdobj_rom_00402D68(f32 arg0, f32 arg1, f32 arg2, f32 arg3, DObj *arg4);
-s16 func_uvdobj_rom_00403054(f32 arg0, f32 arg1, f32 arg2, DObj *arg3);
-s16 func_uvdobj_rom_004032DC(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, DObj *arg6);
+s16 uvDobjQueryHierarchyWithScalarExtent(f32 arg0, f32 arg1, f32 arg2, f32 arg3, DObj *arg4);
+s16 uvDobjTestHierarchyPointBounds(f32 arg0, f32 arg1, f32 arg2, DObj *arg3);
+s16 uvDobjQueryHierarchySegment(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, DObj *arg6);
 s32 uvDobjExtractJointQuaternionsFromMatrices(s32 arg0, Quat *arg1, u8 *arg2);
 void uvDobjClearFixedDepthImageRectangle(void);
 void uvDobjReplaceLightColorRecord(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
@@ -1023,7 +1023,7 @@ s32 uvDobjFindObjectContainingWorldPoint(f32 pointX, f32 pointY, f32 pointZ) {
                 return i;
             }
             *D_uvdobj_rom_004039E0 = i;
-            if (func_uvdobj_rom_00403054(pointX, pointY, pointZ, object) >= 0) {
+            if (uvDobjTestHierarchyPointBounds(pointX, pointY, pointZ, object) >= 0) {
                 return *D_uvdobj_rom_004039E0;
             }
             continue;
@@ -1176,7 +1176,7 @@ s32 func_uvdobj_rom_00402420(f32 arg0, f32 arg1, f32 arg2, f32 arg3, s32 **arg4,
         temp_s2 = uvGetLoadedFile('UVMD', temp_s0->modelId);
         *D_uvdobj_rom_004039E0 = var_s4;
         if (temp_s2->unk5 & 0x76) {
-            func_uvdobj_rom_00402D68(arg0, arg1, arg2, arg3, temp_s0);
+            uvDobjQueryHierarchyWithScalarExtent(arg0, arg1, arg2, arg3, temp_s0);
             if (*D_uvdobj_rom_004039E4 >= sUvQueryExports->uvQueryGetRecordCapacity()) {
                 break;
             }
@@ -1314,7 +1314,7 @@ s32 func_uvdobj_rom_00402870(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f
             }
 
             *D_uvdobj_rom_004039E0 = var_s1;
-            func_uvdobj_rom_004032DC(arg0, arg1, arg2, arg3, arg4, arg5, temp_s0);
+            uvDobjQueryHierarchySegment(arg0, arg1, arg2, arg3, arg4, arg5, temp_s0);
         }
     }
     *arg6 = D_uvdobj_rom_004039D4;
@@ -1324,174 +1324,180 @@ s32 func_uvdobj_rom_00402870(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f
     return *D_uvdobj_rom_004039E4;
 }
 
-s16 func_uvdobj_rom_00402D68(f32 arg0, f32 arg1, f32 arg2, f32 arg3, DObj *arg4) {
-    char pad[0x10];
-    ParsedUVMD_1 *temp_s6;
-    ParsedUVMD *sp60;
-    s16 temp_s1;
-    s16 j;
-    s16 var_s2;
-    s16 i;
-    s32 var_s0;
-    s32 temp_s7;
-    uvModelLOD *temp_v1;
-    s16 unused;
+/* Traverse model nodes for the four-scalar query; preserve shared result writes, capacity early return and ignored signed sum. */
+#line 1247 "src/modules/uvdobj_rom.c"
+s16 uvDobjQueryHierarchyWithScalarExtent(f32 pointX, f32 pointY, f32 pointZ, f32 scalarExtent, DObj *object) {
+    char pad[0x10]; /* RE_UNKNOWN: historical unused pad/local declarations. */
+    ParsedUVMD_1 *hierarchy;
+    ParsedUVMD *parsedModel;
+    s16 depthDifference;
+    s16 popIndex;
+    s16 outstandingPushes;
+    s16 nodeIndex;
+    s32 queryNode;
+    s32 nodeCount;
+    uvModelLOD *node;
+    s16 ignoredResultSum;
 
-    sp60 = uvGetLoadedFile('UVMD', arg4->modelId);
-    temp_s6 = sp60->unk0;
-    unused = -1;
-    temp_s7 = temp_s6->unk8;
+    parsedModel = uvGetLoadedFile('UVMD', object->modelId); /* RE_UNKNOWN: model/node/matrix validity and lifetime need producer/caller proof. */
+    hierarchy = parsedModel->unk0;
+    ignoredResultSum = -1;
+    nodeCount = hierarchy->unk8; /* Cache the u8 count before callbacks; keep later node-array reloads. */
     sUvModelExports->uvModelResetMatrixStack();
-    var_s2 = 0;
-    for (i = 0; i < temp_s7; i++) {
+    outstandingPushes = 0;
+    for (nodeIndex = 0; nodeIndex < nodeCount; nodeIndex++) {
         if (*D_uvdobj_rom_004039E4 >= sUvQueryExports->uvQueryGetRecordCapacity()) {
-            return sUvQueryExports->uvQueryGetRecordCapacity();
+            return sUvQueryExports->uvQueryGetRecordCapacity(); /* RE_ORIGINAL_QUIRK: query capacity again and return without the final pop loop. */
         }
-        temp_v1 = &temp_s6->unk0[i];
+        node = &hierarchy->unk0[nodeIndex];
 
-        if ((arg4->unk14 & (1 << i)) || (temp_v1->unk7 & 1)
-            || (((D_uvdobj_rom_004039F0 != -1)) && (i != D_uvdobj_rom_004039F0))) {
-            var_s0 = 0;
+        if ((object->unk14 & (1 << nodeIndex)) || (node->unk7 & 1)
+            || (((D_uvdobj_rom_004039F0 != -1)) && (nodeIndex != D_uvdobj_rom_004039F0))) {
+            queryNode = 0; /* RE_UNKNOWN: mask/flag meanings and shift-index domain need producer/caller evidence. */
         } else {
-            var_s0 = 1;
+            queryNode = 1;
         }
-        if ((var_s0 != 0) || !(temp_v1->unk7 & 2)) {
-            sUvModelExports->uvModelPushMatrix((u32) arg4->unk1C + i * sizeof(Mtx4F));
-            var_s2++;
-            if (var_s0 != 0) {
-                *D_uvdobj_rom_004039E0 = (*D_uvdobj_rom_004039E0 & 0xFFFFFF) | (i << 0x18);
-                unused += sUvModelExports->func_uvmodel_rom_004006B4(
-                    arg0, arg1, arg2, arg3, sUvModelExports->uvModelGetCurrentMatrix(),
-                    &temp_s6->unk0[i], sp60);
+        if ((queryNode != 0) || !(node->unk7 & 2)) {
+            sUvModelExports->uvModelPushMatrix((u32) object->unk1C + nodeIndex * sizeof(Mtx4F));
+            outstandingPushes++; /* RE_UNKNOWN: stack capacity/balance and callback aliases need lifecycle/caller proof. */
+            if (queryNode != 0) {
+                *D_uvdobj_rom_004039E0 = (*D_uvdobj_rom_004039E0 & 0xFFFFFF) | (nodeIndex << 0x18);
+                ignoredResultSum += sUvModelExports->func_uvmodel_rom_004006B4(
+                    pointX, pointY, pointZ, scalarExtent, sUvModelExports->uvModelGetCurrentMatrix(),
+                    &hierarchy->unk0[nodeIndex], parsedModel); /* RE_ORIGINAL_QUIRK: retain the ignored s16 sum. RE_UNKNOWN: scalar units/FP domain need caller proof. */
             }
-            if (i == (temp_s7 - 1)) {
+            if (nodeIndex == (nodeCount - 1)) {
                 break;
             }
 
-            temp_s1 = temp_s6->unk0[i].unk6 - temp_s6->unk0[i + 1].unk6;
+            depthDifference = hierarchy->unk0[nodeIndex].unk6 - hierarchy->unk0[nodeIndex + 1].unk6;
             // clang-format off
-            for (j = 0; j <= temp_s1; j++) { \
+            for (popIndex = 0; popIndex <= depthDifference; popIndex++) { \
                 sUvModelExports->uvModelPopMatrix(); \
-                var_s2 -= 1; \
+                outstandingPushes -= 1; \
             } // clang-format on
         }
     }
-    for (i = 0; i < var_s2; i++) {
+    for (nodeIndex = 0; nodeIndex < outstandingPushes; nodeIndex++) {
         sUvModelExports->uvModelPopMatrix();
     }
-    return -1;
+    return -1; /* Shared query state carries results; this normal return stays -1. */
 }
 
-s16 func_uvdobj_rom_00403054(f32 arg0, f32 arg1, f32 arg2, DObj *arg3) {
-    s16 temp_s1;
-    s16 temp_v0;
-    s16 j;
-    s16 var_s2;
-    s16 i;
-    s32 temp_s5;
-    s32 var_s0;
-    ParsedUVMD_1 *temp_s6;
-    s32 temp_s7;
-    void *temp_v0_2;
-    uvModelLOD *temp_v1;
-    ParsedUVMD *uvmd = uvGetLoadedFile('UVMD', arg3->modelId);
+/* Traverse model nodes and test point bounds; preserve the signed provider result and success early return. */
+#line 1305 "src/modules/uvdobj_rom.c"
+s16 uvDobjTestHierarchyPointBounds(f32 pointX, f32 pointY, f32 pointZ, DObj *object) {
+    s16 depthDifference;
+    s16 pointResult;
+    s16 popIndex;
+    s16 outstandingPushes;
+    s16 nodeIndex;
+    s32 temp_s5; /* RE_UNKNOWN: historical unused locals retain their original declarations. */
+    s32 queryNode;
+    ParsedUVMD_1 *hierarchy;
+    s32 nodeCount;
+    void *temp_v0_2; /* RE_UNKNOWN: historical unused pointer declaration. */
+    uvModelLOD *node;
+    ParsedUVMD *parsedModel = uvGetLoadedFile('UVMD', object->modelId); /* RE_UNKNOWN: model/node/matrix validity and lifetime need producer/caller proof. */
 
-    temp_s6 = uvmd->unk0;
-    temp_s7 = temp_s6->unk8;
+    hierarchy = parsedModel->unk0;
+    nodeCount = hierarchy->unk8; /* Cache the u8 count before callbacks; keep later node-array reloads. */
     sUvModelExports->uvModelResetMatrixStack();
-    var_s2 = 0;
-    for (i = 0; i < temp_s7; i++) {
-        temp_v1 = &temp_s6->unk0[i];
-        if ((arg3->unk14 & (1 << i)) || (temp_v1->unk7 & 1)
-            || (((D_uvdobj_rom_004039F0 != -1)) && (i != D_uvdobj_rom_004039F0))) {
-            var_s0 = 0;
+    outstandingPushes = 0;
+    for (nodeIndex = 0; nodeIndex < nodeCount; nodeIndex++) {
+        node = &hierarchy->unk0[nodeIndex];
+        if ((object->unk14 & (1 << nodeIndex)) || (node->unk7 & 1)
+            || (((D_uvdobj_rom_004039F0 != -1)) && (nodeIndex != D_uvdobj_rom_004039F0))) {
+            queryNode = 0; /* RE_UNKNOWN: mask/flag meanings and shift-index domain need producer/caller evidence. */
         } else {
-            var_s0 = 1;
+            queryNode = 1;
         }
-        if ((var_s0 != 0) || !(temp_v1->unk7 & 2)) {
-            sUvModelExports->uvModelPushMatrix(&arg3->unk1C[i]);
-            var_s2++;
-            if (var_s0 != 0) {
-                *D_uvdobj_rom_004039E0 = (*D_uvdobj_rom_004039E0 & 0xFFFFFF) | (i << 0x18);
-                temp_v0 = sUvModelExports->uvModelTestWorldPointInLodBounds(
-                    arg0, arg1, arg2, sUvModelExports->uvModelGetCurrentMatrix(), &temp_s6->unk0[i]);
-                if (temp_v0 >= 0) {
-                    return temp_v0;
+        if ((queryNode != 0) || !(node->unk7 & 2)) {
+            sUvModelExports->uvModelPushMatrix(&object->unk1C[nodeIndex]);
+            outstandingPushes++; /* RE_UNKNOWN: stack capacity/balance and callback aliases need lifecycle/caller proof. */
+            if (queryNode != 0) {
+                *D_uvdobj_rom_004039E0 = (*D_uvdobj_rom_004039E0 & 0xFFFFFF) | (nodeIndex << 0x18);
+                pointResult = sUvModelExports->uvModelTestWorldPointInLodBounds(
+                    pointX, pointY, pointZ, sUvModelExports->uvModelGetCurrentMatrix(), &hierarchy->unk0[nodeIndex]);
+                if (pointResult >= 0) {
+                    return pointResult; /* RE_ORIGINAL_QUIRK: success returns without the final pop loop. */
                 }
             }
-            if ((i + 1) == temp_s7) {
+            if ((nodeIndex + 1) == nodeCount) {
                 break;
             }
-            temp_s1 = temp_s6->unk0[i].unk6 - temp_s6->unk0[i + 1].unk6;
+            depthDifference = hierarchy->unk0[nodeIndex].unk6 - hierarchy->unk0[nodeIndex + 1].unk6;
             // clang-format off
-            for (j = 0; j <= temp_s1; j++) { \
+            for (popIndex = 0; popIndex <= depthDifference; popIndex++) { \
                 sUvModelExports->uvModelPopMatrix(); \
-                var_s2--; \
+                outstandingPushes--; \
             } // clang-format on
             continue;
         }
     }
-    for (i = 0; i < var_s2; i++) {
+    for (nodeIndex = 0; nodeIndex < outstandingPushes; nodeIndex++) {
         sUvModelExports->uvModelPopMatrix();
     }
-    return -1;
+    return -1; /* RE_UNKNOWN: point units, exceptional values and FP contracts need caller/provider evidence. */
 }
 
-s16 func_uvdobj_rom_004032DC(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, DObj *arg6) {
-    char pad[0x10];
-    ParsedUVMD *sp8C;
-    ParsedUVMD *temp_v0;
-    ParsedUVMD_1 *temp_s6;
-    s16 temp_s1;
-    s16 j;
-    s16 var_s2;
-    s16 i;
-    s32 var_s0;
-    s32 temp_s7;
-    uvModelLOD *temp_v0_2;
-    uvModelLOD *temp_v1;
+/* Traverse model nodes for the segment query; preserve shared result writes, ignored provider return and final -1. */
+#line 1360 "src/modules/uvdobj_rom.c"
+s16 uvDobjQueryHierarchySegment(f32 startX, f32 startY, f32 startZ, f32 endX, f32 endY, f32 endZ, DObj *object) {
+    char pad[0x10]; /* RE_UNKNOWN: historical unused pad/local declarations. */
+    ParsedUVMD *parsedModel;
+    ParsedUVMD *loadedModel;
+    ParsedUVMD_1 *hierarchy;
+    s16 depthDifference;
+    s16 popIndex;
+    s16 outstandingPushes;
+    s16 nodeIndex;
+    s32 queryNode;
+    s32 nodeCount;
+    uvModelLOD *temp_v0_2; /* RE_UNKNOWN: historical unused pointer declaration. */
+    uvModelLOD *node;
 
-    temp_v0 = uvGetLoadedFile('UVMD', arg6->modelId);
-    sp8C = temp_v0;
-    temp_s6 = temp_v0->unk0;
-    temp_s7 = temp_s6->unk8;
+    loadedModel = uvGetLoadedFile('UVMD', object->modelId); /* RE_UNKNOWN: model/node/matrix validity and lifetime need producer/caller proof. */
+    parsedModel = loadedModel;
+    hierarchy = loadedModel->unk0;
+    nodeCount = hierarchy->unk8; /* Cache the u8 count before callbacks; keep later node-array reloads. */
     sUvModelExports->uvModelResetMatrixStack();
-    var_s2 = 0;
-    for (i = 0; i < temp_s7; i++) {
-        temp_v1 = &temp_s6->unk0[i];
-        if ((arg6->unk14 & (1 << i)) || (temp_v1->unk7 & 1)
-            || (((D_uvdobj_rom_004039F0 != -1)) && (i != D_uvdobj_rom_004039F0))) {
-            var_s0 = 0;
+    outstandingPushes = 0;
+    for (nodeIndex = 0; nodeIndex < nodeCount; nodeIndex++) {
+        node = &hierarchy->unk0[nodeIndex];
+        if ((object->unk14 & (1 << nodeIndex)) || (node->unk7 & 1)
+            || (((D_uvdobj_rom_004039F0 != -1)) && (nodeIndex != D_uvdobj_rom_004039F0))) {
+            queryNode = 0; /* RE_UNKNOWN: mask/flag meanings and shift-index domain need producer/caller evidence. */
         } else {
-            var_s0 = 1;
+            queryNode = 1;
         }
-        if ((var_s0 != 0) || !(temp_v1->unk7 & 2)) {
-            sUvModelExports->uvModelPushMatrix(&arg6->unk1C[i]);
-            var_s2 += 1;
-            if (var_s0 != 0) {
-                *D_uvdobj_rom_004039E0 = (*D_uvdobj_rom_004039E0 & 0xFFFFFF) | (i << 0x18);
-                sUvModelExports->func_uvmodel_rom_0040199C(arg0, arg1, arg2, arg3, arg4, arg5,
+        if ((queryNode != 0) || !(node->unk7 & 2)) {
+            sUvModelExports->uvModelPushMatrix(&object->unk1C[nodeIndex]);
+            outstandingPushes += 1; /* RE_UNKNOWN: stack capacity/balance and callback aliases need lifecycle/caller proof. */
+            if (queryNode != 0) {
+                *D_uvdobj_rom_004039E0 = (*D_uvdobj_rom_004039E0 & 0xFFFFFF) | (nodeIndex << 0x18);
+                sUvModelExports->func_uvmodel_rom_0040199C(startX, startY, startZ, endX, endY, endZ,
                                                            sUvModelExports->uvModelGetCurrentMatrix(),
-                                                           &temp_s6->unk0[i], sp8C);
+                                                           &hierarchy->unk0[nodeIndex], parsedModel); /* Retain the ignored provider return and shared result writes. */
             }
-            if (i == (temp_s7 - 1)) {
+            if (nodeIndex == (nodeCount - 1)) {
                 break;
             }
-            temp_s1 = temp_s6->unk0[i].unk6 - temp_s6->unk0[i + 1].unk6;
+            depthDifference = hierarchy->unk0[nodeIndex].unk6 - hierarchy->unk0[nodeIndex + 1].unk6;
 
             // clang-format off
-            for (j = 0; j <= temp_s1; j++) { \
+            for (popIndex = 0; popIndex <= depthDifference; popIndex++) { \
                 sUvModelExports->uvModelPopMatrix(); \
-                var_s2 -= 1; \
+                outstandingPushes -= 1; \
             }
             // clang-format on
         }
     }
 
-    for (i = 0; i < var_s2; i++) {
+    for (nodeIndex = 0; nodeIndex < outstandingPushes; nodeIndex++) {
         sUvModelExports->uvModelPopMatrix();
     }
-    return -1;
+    return -1; /* RE_UNKNOWN: segment units and FP domain need caller/provider proof; normal return stays -1. */
 }
 
 #line 1417 "src/modules/uvdobj_rom.c"

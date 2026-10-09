@@ -211,3 +211,6 @@ uvDobjFindObjectContainingWorldPoint = 0x00401F14; // type:func
 uvDobjCollectCapsuleOverlaps = 0x00402138; // type:func
 uvDobjClearFixedDepthImageRectangle = 0x0040368C; // type:func
 uvDobjReplaceLightColorRecord = 0x004038C4; // type:func
+uvDobjQueryHierarchyWithScalarExtent = 0x00402D68; // type:func
+uvDobjTestHierarchyPointBounds = 0x00403054; // type:func
+uvDobjQueryHierarchySegment = 0x004032DC; // type:func
