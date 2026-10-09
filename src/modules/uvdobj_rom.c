@@ -57,8 +57,8 @@ void uvDobjClearModelAndStateByte(s32 arg0);
 void uvDobjQueueChannelObjectsWhenEnabled(s32 arg0);
 void uvDobjQueueVisibleChannelObjects(s32 arg0, s32 arg1);
 void uvDobjSetReciprocalScalar(s32 arg0, f32 arg1);
-void func_uvdobj_rom_004015C0(s32 arg0, DObj *arg1);
-void func_uvdobj_rom_00401ABC(s32 arg0, DObj *arg1);
+void uvDobjDrawHierarchyUsingNodeMatrixIndices(s32 arg0, DObj *arg1);
+void uvDobjDrawHierarchyWithPlanarMatrixOverride(s32 arg0, DObj *arg1);
 s32 uvDobjFindObjectContainingWorldPoint(f32 arg0, f32 arg1, f32 arg2);
 s32 uvDobjCollectCapsuleOverlaps(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6,
                              s32 *arg7);
@@ -727,9 +727,9 @@ void uvDobjQueueVisibleChannelObjects(s32 channel, s32 unusedMode) {
         }
 
         if (model->unk0[distanceBand].unk9) {
-            renderCallback = func_uvdobj_rom_00401ABC;
+            renderCallback = uvDobjDrawHierarchyWithPlanarMatrixOverride;
         } else {
-            renderCallback = func_uvdobj_rom_004015C0;
+            renderCallback = uvDobjDrawHierarchyUsingNodeMatrixIndices;
         }
         object->unk6 = distanceBand;
         object->unk8 = relativeX;
@@ -750,230 +750,234 @@ void uvDobjSetReciprocalScalar(s32 objectId, f32 scalar) {
 
 void uvDobjClearFixedDepthImageRectangle(); /* */
 
-void func_uvdobj_rom_004015C0(s32 arg0, DObj *arg1) {
-    ParsedUVMD_1 *sp154;
-    void (*temp_v0)(s32, void *);
-    void (*temp_v0_6)(s32, void *);
-    ParsedUVMD *temp_s0;
-    s32 temp_s2_2;
-    s32 var_s0;
-    s32 j;
-    s32 var_s5;
-    s32 temp_s4;
-    u32 sp130;
-    s32 temp_s1;
-    uvModelLOD *temp_s2;
-    s32 var_fp;
-    s32 sp120;
-    s32 sp11C;
-    s32 sp118;
-    Mtx4F spD8;
-    Mtx4F sp98;
-    Mtx4F sp58;
+/* Draw selected model nodes using their matrix indices; preserve light selection, conditional state changes and callback order. */
+#line 683 "src/modules/uvdobj_rom.c"
+void uvDobjDrawHierarchyUsingNodeMatrixIndices(s32 unusedQueueWord, DObj *object) {
+    ParsedUVMD_1 *hierarchy;
+    void (*unusedCallbackA)(s32, void *); /* RE_UNKNOWN: historical unused callback declarations/ABI. */
+    void (*unusedCallbackB)(s32, void *); /* Retain the original unused declaration. */
+    ParsedUVMD *parsedModel;
+    s32 depthDifference;
+    s32 drawNode;
+    s32 stepIndex;
+    s32 outstandingPushes;
+    s32 stateCount;
+    u32 invertedNodeMask;
+    s32 selectedLod;
+    uvModelLOD *node;
+    s32 nodeIndex;
+    s32 forceInverseTranslation;
+    s32 matrixLoadFlags;
+    s32 lookAtMode;
+    Mtx4F viewMatrix;
+    Mtx4F hiliteMatrix;
+    Mtx4F lookAtMatrix;
 
-    sp118 = 0;
-    if (arg1->unk20 != NULL) {
-        arg1->unk20(arg1->unk28);
+    lookAtMode = 0;
+    if (object->unk20 != NULL) {
+        object->unk20(object->unk28); /* RE_UNKNOWN: callback mutation, aliases and storage lifetime need original caller/provider proof. */
     }
-    if (!(arg1->unk4 & 2)) {
-        return;
+    if (!(object->unk4 & 2)) {
+        return; /* RE_ORIGINAL_QUIRK: visibility return after pre-callback skips post-callback. */
     }
 
-    temp_s1 = arg1->unk6;
-    temp_s0 = uvGetLoadedFile('UVMD', arg1->modelId);
-    sUvLightExports->uvLightSelectRecord(arg1->unk2);
-    D_uvdobj_rom_004039B8[D_uvdobj_rom_004039BC++] = (arg1 - sDObjs);
-    if (arg1->unk4 & 8) {
+    selectedLod = object->unk6;
+    parsedModel = uvGetLoadedFile('UVMD', object->modelId); /* RE_UNKNOWN: model/LOD/node/matrix validity and extents need lifecycle/producer proof. */
+    sUvLightExports->uvLightSelectRecord(object->unk2); /* RE_UNKNOWN: signed light-ID domain/storage; native selector -1 still reads a record. */
+    D_uvdobj_rom_004039B8[D_uvdobj_rom_004039BC++] = (object - sDObjs); /* RE_UNKNOWN: array extent/object membership; retain u16 cursor wrap. */
+    if (object->unk4 & 8) {
         uvDobjClearFixedDepthImageRectangle();
     }
-    sp154 = &temp_s0->unk0[temp_s1];
-    var_s5 = 0;
-    sp120 = arg1->unk4 & 0x80;
-    if (sp120) {
-        sp11C = 3;
+    hierarchy = &parsedModel->unk0[selectedLod];
+    outstandingPushes = 0;
+    forceInverseTranslation = object->unk4 & 0x80;
+    if (forceInverseTranslation) {
+        matrixLoadFlags = 3;
     } else {
-        sp11C = 1;
+        matrixLoadFlags = 1;
     }
-    sp130 = ~arg1->unk14;
-    for (var_fp = 0; var_fp < sp154->unk8; var_fp++) {
-        temp_s2 = &sp154->unk0[var_fp];
-        if (sp130 < (1 << var_fp)) {
+    invertedNodeMask = ~object->unk14; /* Snapshot this mask; later per-node tests still reload object flags. */
+    for (nodeIndex = 0; nodeIndex < hierarchy->unk8; nodeIndex++) {
+        node = &hierarchy->unk0[nodeIndex];
+        if (invertedNodeMask < (1 << nodeIndex)) { /* RE_UNKNOWN: mask/flag meanings and shift-index range need original producers/callers. */
             break;
         }
-        if ((arg1->unk14 & (1 << var_fp)) || (((temp_s2->unk7 & 1)))) {
-            var_s0 = FALSE;
+        if ((object->unk14 & (1 << nodeIndex)) || (((node->unk7 & 1)))) {
+            drawNode = FALSE;
         } else {
-            var_s0 = TRUE;
+            drawNode = TRUE;
         }
 
-        if (!var_s0) {
-            if (temp_s2->unk7 & 2) {
-                var_s5++;
-                temp_s2_2 = sp154->unk0[var_fp].unk6 - sp154->unk0[var_fp + 1].unk6;
-                for (j = 0; j < temp_s2_2; j++) {
+        if (!drawNode) {
+            if (node->unk7 & 2) {
+                outstandingPushes++;
+                depthDifference = hierarchy->unk0[nodeIndex].unk6 - hierarchy->unk0[nodeIndex + 1].unk6; /* RE_UNKNOWN: next-node readability, depth rules and stack balance need asset/caller proof. */
+                for (stepIndex = 0; stepIndex < depthDifference; stepIndex++) {
                     sUvFMtxExports->uvGfxMtxFViewPop();
-                    var_s5--;
+                    outstandingPushes--;
                 }
                 continue;
             }
         }
-        if ((var_fp == 0) || (sp120)) {
-            sUvFMtxExports->uvMat4ApplySharedInverseTranslation(&spD8, (u32) arg1->unk1C + temp_s2->unk5 * sizeof(Mtx4F));
-            sUvFMtxExports->uvGfxMtxViewLoad(&spD8, 3U);
+        if ((nodeIndex == 0) || (forceInverseTranslation)) {
+            sUvFMtxExports->uvMat4ApplySharedInverseTranslation(&viewMatrix, (u32) object->unk1C + node->unk5 * sizeof(Mtx4F));
+            sUvFMtxExports->uvGfxMtxViewLoad(&viewMatrix, 3U);
         } else {
-            sUvFMtxExports->uvGfxMtxViewLoad((u32) arg1->unk1C + temp_s2->unk5 * sizeof(Mtx4F),
-                                             (u16) sp11C);
+            sUvFMtxExports->uvGfxMtxViewLoad((u32) object->unk1C + node->unk5 * sizeof(Mtx4F),
+                                             (u16) matrixLoadFlags);
         }
-        var_s5++;
-        if (var_s0) {
-            if ((temp_s2->unk20 != 0) && (arg1->unk7 == 0) && (sp118 != 1)) {
-                sUvFMtxExports->uvMat4ApplySharedInverseTranslation(&sp98, arg1->unk1C);
-                sp118 = 1;
-                sUvGfxStateExports->uvGfxEmitLookAtAndOptionalHilites(&sp98, 1);
+        outstandingPushes++; /* RE_UNKNOWN: matrix-stack and graphics-buffer capacity need allocation/consumer proof. */
+        if (drawNode) {
+            if ((node->unk20 != 0) && (object->unk7 == 0) && (lookAtMode != 1)) {
+                sUvFMtxExports->uvMat4ApplySharedInverseTranslation(&hiliteMatrix, object->unk1C);
+                lookAtMode = 1;
+                sUvGfxStateExports->uvGfxEmitLookAtAndOptionalHilites(&hiliteMatrix, 1);
             }
-            if ((arg1->unk7 != 0) && (sp118 != 2)) {
-                sUvFMtxExports->uvMat4ApplySharedInverseTranslation(&sp58, arg1->unk1C);
-                sp118 = 2;
-                sUvGfxStateExports->uvGfxEmitLookAtAndOptionalHilites(&sp58, 0);
+            if ((object->unk7 != 0) && (lookAtMode != 2)) {
+                sUvFMtxExports->uvMat4ApplySharedInverseTranslation(&lookAtMatrix, object->unk1C);
+                lookAtMode = 2;
+                sUvGfxStateExports->uvGfxEmitLookAtAndOptionalHilites(&lookAtMatrix, 0);
             }
-            j = 0;
-            temp_s4 = temp_s2->unk4;
-            if (j < temp_s4) {
+            stepIndex = 0;
+            stateCount = node->unk4;
+            if (stepIndex < stateCount) {
                 do {
-                    if ((arg1->unk4 & 0x20) && (var_fp == 0) && (j == 0)) {
-                        int prev = temp_s2->stateTable[j].state;
-                        temp_s2->stateTable[j].state |= 0x10000000;
-                        sUvGfxStateExports->uvGfxStateDraw(&temp_s2->stateTable[j]);
-                        temp_s2->stateTable[j].state = prev;
+                    if ((object->unk4 & 0x20) && (nodeIndex == 0) && (stepIndex == 0)) {
+                        int savedState = node->stateTable[stepIndex].state;
+                        node->stateTable[stepIndex].state |= 0x10000000;
+                        sUvGfxStateExports->uvGfxStateDraw(&node->stateTable[stepIndex]);
+                        node->stateTable[stepIndex].state = savedState; /* RE_ORIGINAL_QUIRK: re-read stateTable after drawing; aliases may change the restore destination. */
                         continue;
                     }
-                    sUvGfxStateExports->uvGfxStateDraw(&temp_s2->stateTable[j]);
-                } while (++j != temp_s4);
+                    sUvGfxStateExports->uvGfxStateDraw(&node->stateTable[stepIndex]);
+                } while (++stepIndex != stateCount);
             }
         }
-        if ((var_fp + 1) == sp154->unk8) {
+        if ((nodeIndex + 1) == hierarchy->unk8) {
             break;
         }
-        temp_s2_2 = sp154->unk0[var_fp].unk6 - sp154->unk0[var_fp + 1].unk6;
-        for (j = 0; j <= temp_s2_2; j++) {
+        depthDifference = hierarchy->unk0[nodeIndex].unk6 - hierarchy->unk0[nodeIndex + 1].unk6;
+        for (stepIndex = 0; stepIndex <= depthDifference; stepIndex++) { /* Keep this inclusive bound; the skipped-node loop is exclusive. */
             sUvFMtxExports->uvGfxMtxFViewPop();
-            var_s5--;
+            outstandingPushes--;
         }
     }
 
-    for (var_fp = 0; var_fp < var_s5; var_fp++) {
+    for (nodeIndex = 0; nodeIndex < outstandingPushes; nodeIndex++) {
         sUvFMtxExports->uvGfxMtxFViewPop();
     }
-    if (arg1->unk24 != NULL) {
-        arg1->unk24(arg1->unk2C);
+    if (object->unk24 != NULL) {
+        object->unk24(object->unk2C);
     }
 }
 
-void func_uvdobj_rom_00401ABC(s32 arg0, DObj *arg1) {
-    ParsedUVMD_1 *spE4;
-    s32 var_s7;
-    s32 var_s3;
-    s32 var_s0;
-    s32 temp_s2;
-    ParsedUVMD *temp_v0_2;
-    f32 temp_fa0;
-    f32 temp_fv0;
-    f32 var_fv1;
-    Mtx4F *spC0;
-    u8 temp_s0;
-    s32 temp_s1;
-    f32 spB4;
-    f32 spB0;
-    f32 spAC;
-    f32 spA8;
-    f32 spA4;
-    uvModelLOD *temp_s4;
-    f32 sp9C;
-    f32 sp98;
-    s32 j;
-    Mtx4F sp54;
+/* Draw selected model nodes while temporarily replacing four matrix coefficients; restore the captured matrix before post-callback. */
+#line 802 "src/modules/uvdobj_rom.c"
+void uvDobjDrawHierarchyWithPlanarMatrixOverride(s32 unusedQueueWord, DObj *object) {
+    ParsedUVMD_1 *hierarchy;
+    s32 nodeIndex;
+    s32 outstandingPushes;
+    s32 drawNode;
+    s32 depthDifference;
+    ParsedUVMD *parsedModel;
+    f32 unusedFloatA; /* RE_UNKNOWN: historical unused floating-point declarations/ABI. */
+    f32 unusedFloatB; /* Retain the original unused declaration. */
+    f32 normalizationDivisor;
+    Mtx4F *capturedMatrix;
+    u8 selectedLod;
+    s32 stateCount;
+    f32 modelScalar;
+    f32 savedM00;
+    f32 savedM01;
+    f32 savedM10;
+    f32 savedM11;
+    uvModelLOD *node;
+    f32 objectScalar8;
+    f32 objectScalarC;
+    s32 stepIndex;
+    Mtx4F viewMatrix;
 
-    sp9C = arg1->unk8;
-    sp98 = arg1->unkC;
-    if (arg1->unk20 != NULL) {
-        arg1->unk20(arg1->unk28);
+    objectScalar8 = object->unk8; /* Snapshot +8/+C before pre-callback; do not reload them afterward. */
+    objectScalarC = object->unkC;
+    if (object->unk20 != NULL) {
+        object->unk20(object->unk28); /* RE_UNKNOWN: callback aliases/mutation and input/resource lifetimes need caller/provider proof. */
     }
-    temp_s0 = arg1->unk6;
-    temp_v0_2 = uvGetLoadedFile('UVMD', arg1->modelId);
-    spB4 = temp_v0_2->unk10;
-    D_uvdobj_rom_004039B8[D_uvdobj_rom_004039BC++] = (arg1 - sDObjs);
-    spE4 = &temp_v0_2->unk0[temp_s0];
-    spC0 = arg1->unk1C;
-    spB0 = spC0->m[0][0];
-    spAC = spC0->m[0][1];
-    spA8 = spC0->m[1][0];
-    spA4 = spC0->m[1][1];
+    selectedLod = object->unk6;
+    parsedModel = uvGetLoadedFile('UVMD', object->modelId); /* RE_UNKNOWN: model/LOD/node/matrix extents and validity need producer/lifecycle proof. */
+    modelScalar = parsedModel->unk10;
+    D_uvdobj_rom_004039B8[D_uvdobj_rom_004039BC++] = (object - sDObjs); /* RE_UNKNOWN: object membership/array capacity; retain u16 cursor wrap. */
+    hierarchy = &parsedModel->unk0[selectedLod];
+    capturedMatrix = object->unk1C; /* Restore this captured pointer even if later callbacks retarget object->unk1C. */
+    savedM00 = capturedMatrix->m[0][0];
+    savedM01 = capturedMatrix->m[0][1];
+    savedM10 = capturedMatrix->m[1][0];
+    savedM11 = capturedMatrix->m[1][1];
 
-    var_fv1 = MAX(1.0f, sUvMathExports->uvSqrtf(SQ(sp9C) + SQ(sp98)));
-    sp9C /= var_fv1;
-    sp98 /= var_fv1;
+    normalizationDivisor = MAX(1.0f, sUvMathExports->uvSqrtf(SQ(objectScalar8) + SQ(objectScalarC))); /* RE_ORIGINAL_QUIRK: MAX can call sqrt twice; preserve macro evaluation. */
+    objectScalar8 /= normalizationDivisor; /* RE_UNKNOWN: scalar meaning, divisor/NaN/FP domains need original callers and FP-mode evidence. */
+    objectScalarC /= normalizationDivisor;
 
-    spC0->m[0][0] = -sp98 / spB4;
-    spC0->m[1][1] = -sp98 / spB4;
-    spC0->m[0][1] = sp9C / spB4;
-    spC0->m[1][0] = -sp9C / spB4;
-    var_s3 = 0;
-    for (var_s7 = 0; var_s7 < spE4->unk8; var_s7++) {
-        temp_s4 = &spE4->unk0[var_s7];
-        if ((arg1->unk14 & (1 << var_s7)) || (((temp_s4->unk7 & 1) != 0))) {
-            var_s0 = FALSE;
+    capturedMatrix->m[0][0] = -objectScalarC / modelScalar;
+    capturedMatrix->m[1][1] = -objectScalarC / modelScalar;
+    capturedMatrix->m[0][1] = objectScalar8 / modelScalar;
+    capturedMatrix->m[1][0] = -objectScalar8 / modelScalar;
+    outstandingPushes = 0;
+    for (nodeIndex = 0; nodeIndex < hierarchy->unk8; nodeIndex++) {
+        node = &hierarchy->unk0[nodeIndex];
+        if ((object->unk14 & (1 << nodeIndex)) || (((node->unk7 & 1) != 0))) { /* RE_UNKNOWN: mask/flag meanings and shift-index domain need producer/caller proof. */
+            drawNode = FALSE;
         } else {
-            var_s0 = TRUE;
+            drawNode = TRUE;
         }
 
-        if (!var_s0) {
-            if (temp_s4->unk7 & 2) {
-                var_s3++;
-                temp_s2 = spE4->unk0[var_s7].unk6 - spE4->unk0[var_s7 + 1].unk6;
-                for (j = 0; j < temp_s2; j++) {
+        if (!drawNode) {
+            if (node->unk7 & 2) {
+                outstandingPushes++;
+                depthDifference = hierarchy->unk0[nodeIndex].unk6 - hierarchy->unk0[nodeIndex + 1].unk6; /* RE_UNKNOWN: next-node extent/depth rules need asset/caller proof. */
+                for (stepIndex = 0; stepIndex < depthDifference; stepIndex++) {
                     sUvFMtxExports->uvGfxMtxFViewPop();
-                    var_s3--;
+                    outstandingPushes--;
                 }
                 continue;
             }
         }
-        if (var_s7 == 0) {
-            sUvFMtxExports->uvMat4ApplySharedInverseTranslation(&sp54, (u32) arg1->unk1C + var_s7 * sizeof(Mtx4F));
-            sUvFMtxExports->uvGfxMtxViewLoad(&sp54, 3);
+        if (nodeIndex == 0) {
+            sUvFMtxExports->uvMat4ApplySharedInverseTranslation(&viewMatrix, (u32) object->unk1C + nodeIndex * sizeof(Mtx4F));
+            sUvFMtxExports->uvGfxMtxViewLoad(&viewMatrix, 3);
         } else {
-            sUvFMtxExports->uvGfxMtxViewLoad((u32) arg1->unk1C + var_s7 * sizeof(Mtx4F), 1);
+            sUvFMtxExports->uvGfxMtxViewLoad((u32) object->unk1C + nodeIndex * sizeof(Mtx4F), 1);
         }
-        var_s3++;
-        if (var_s0) {
-            temp_s1 = temp_s4->unk4;
-            j = 0;
-            if (temp_s1 > 0) {
+        outstandingPushes++; /* RE_UNKNOWN: matrix-stack balance/capacity and graphics storage need allocation/consumer proof. */
+        if (drawNode) {
+            stateCount = node->unk4;
+            stepIndex = 0;
+            if (stateCount > 0) {
                 do {
-                    sUvGfxStateExports->uvGfxStateDraw(&temp_s4->stateTable[j]);
-                } while (++j != temp_s1);
+                    sUvGfxStateExports->uvGfxStateDraw(&node->stateTable[stepIndex]);
+                } while (++stepIndex != stateCount);
             }
         }
 
-        if ((var_s7 + 1) == spE4->unk8) {
+        if ((nodeIndex + 1) == hierarchy->unk8) {
             break;
         }
 
-        temp_s2 = spE4->unk0[var_s7].unk6 - spE4->unk0[var_s7 + 1].unk6;
-        for (j = 0; j <= temp_s2; j++) {
+        depthDifference = hierarchy->unk0[nodeIndex].unk6 - hierarchy->unk0[nodeIndex + 1].unk6;
+        for (stepIndex = 0; stepIndex <= depthDifference; stepIndex++) { /* Keep inclusive pops here and exclusive pops for skipped nodes. */
             sUvFMtxExports->uvGfxMtxFViewPop();
-            var_s3--;
+            outstandingPushes--;
         }
     }
 
-    for (var_s7 = 0; var_s7 < var_s3; var_s7++) {
+    for (nodeIndex = 0; nodeIndex < outstandingPushes; nodeIndex++) {
         sUvFMtxExports->uvGfxMtxFViewPop();
     }
-    spC0->m[0][0] = spB0;
-    spC0->m[0][1] = spAC;
-    spC0->m[1][0] = spA8;
-    spC0->m[1][1] = spA4;
-    if (arg1->unk24 != NULL) {
-        arg1->unk24(arg1->unk2C);
+    capturedMatrix->m[0][0] = savedM00;
+    capturedMatrix->m[0][1] = savedM01;
+    capturedMatrix->m[1][0] = savedM10;
+    capturedMatrix->m[1][1] = savedM11;
+    if (object->unk24 != NULL) {
+        object->unk24(object->unk2C);
     }
 }
 

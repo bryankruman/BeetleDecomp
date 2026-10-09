@@ -277,7 +277,7 @@
     "src/modules/uvcontourld_rom.c": "41ea663b547c85255087cbba8cedc39bb964795476f0d682e11dafc61ae2d97a",
     "src/modules/uvdbg_rom.c": "20dbff47ebe571eb2b5462d238cd16c53f00157a154f22f8c051f64b8f1dce0b",
     "src/modules/uvdgeom_rom.c": "6fb52252f88afc60e053a4213e19fdebd44296f68d23ef8116e80f6460503ace",
-    "src/modules/uvdobj_rom.c": "44f2bcbb315ab233859e58a0588c3fbdb189aa71d4d75bb7b944f833229eceda",
+    "src/modules/uvdobj_rom.c": "11e84178171709b47d2338d68d744ef84a517cc9473d7bcaf595d9e965b2f95d",
     "src/modules/uvdsetld_rom.c": "274d09695ac5beb2913e83e67baba614f43b5f52001c6d62c18a22bee027edf4",
     "src/modules/uvdyn_rom.c": "75452ccfc5179ee2ef080780960447ba028968464c3d3adf902fe7db4d2b15ac",
     "src/modules/uvear_rom.c": "83f2d9c53aac67e858f5c0af27d2d96d72a659a369fa541188f1cfa4ffaf3f1c",
@@ -330,24 +330,24 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "3bb6af6baf8407f52d67482483a86032141a003eb9cba450b80de39feb833721",
-    "docs/VALIDATION_20261006.md": "40f2c98a419458d87c3b6bf58becfb4bc22ccbb53df27d3e2f25c85e6151acba"
+    "docs/STRATEGY_V4.md": "1b981fc621df81c2f9ef29fb526b8dc064b7f2566a8c999da546aa26b08dba23",
+    "docs/VALIDATION_20261006.md": "f5ae632816972109895ef3498147c39f2f1f581f681ccf243e96b61639d226f5"
   },
   "counts": {
-    "address_function": 935,
+    "address_function": 933,
     "address_global": 1409,
     "assembly": 793,
     "audit_debt": 30,
     "conditional_draft": 4,
-    "decompiler_local": 906,
+    "decompiler_local": 885,
     "draft_marker": 27,
-    "explicit_unknown": 967,
+    "explicit_unknown": 983,
     "layout_padding": 274,
     "offset_field": 1593,
     "opaque_type": 282,
-    "original_quirk": 258,
+    "original_quirk": 261,
     "uncertainty_note": 91,
-    "unused_identifier": 125
+    "unused_identifier": 130
   },
   "items": [
     {
@@ -18516,80 +18516,6 @@
       ]
     },
     {
-      "id": "Q-dedf7838a656",
-      "kind": "address_function",
-      "path": "src/modules/uvdobj_rom.c",
-      "symbol": "func_uvdobj_rom_004015C0",
-      "lines": [
-        60,
-        732,
-        753
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 60,
-          "lines": [
-            60
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 753,
-          "lines": [
-            753
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvDobjQueueVisibleChannelObjects",
-          "declaration_line": 658,
-          "lines": [
-            732
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-6b3e711bef23",
-      "kind": "address_function",
-      "path": "src/modules/uvdobj_rom.c",
-      "symbol": "func_uvdobj_rom_00401ABC",
-      "lines": [
-        61,
-        730,
-        872
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 61,
-          "lines": [
-            61
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 872,
-          "lines": [
-            872
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvDobjQueueVisibleChannelObjects",
-          "declaration_line": 658,
-          "lines": [
-            730
-          ]
-        }
-      ]
-    },
-    {
       "id": "Q-190d912c9b8b",
       "kind": "address_function",
       "path": "src/modules/uvdobj_rom.c",
@@ -18597,7 +18523,7 @@
       "lines": [
         65,
         133,
-        1110
+        1114
       ],
       "owners": [
         {
@@ -18619,9 +18545,9 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1110,
+          "declaration_line": 1114,
           "lines": [
-            1110
+            1114
           ]
         }
       ]
@@ -18634,7 +18560,7 @@
       "lines": [
         67,
         135,
-        1214
+        1218
       ],
       "owners": [
         {
@@ -18656,9 +18582,9 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1214,
+          "declaration_line": 1218,
           "lines": [
-            1214
+            1218
           ]
         }
       ]
@@ -18669,15 +18595,15 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "func_uvintersect_rom_00400530",
       "lines": [
-        1091
+        1095
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDobjCollectCapsuleOverlaps",
-          "declaration_line": 1040,
+          "declaration_line": 1044,
           "lines": [
-            1091
+            1095
           ]
         }
       ]
@@ -18688,15 +18614,15 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "func_uvmodel_rom_004006B4",
       "lines": [
-        1365
+        1369
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDobjQueryHierarchyWithScalarExtent",
-          "declaration_line": 1329,
+          "declaration_line": 1333,
           "lines": [
-            1365
+            1369
           ]
         }
       ]
@@ -18707,15 +18633,15 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "func_uvmodel_rom_0040199C",
       "lines": [
-        1479
+        1483
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDobjQueryHierarchySegment",
-          "declaration_line": 1446,
+          "declaration_line": 1450,
           "lines": [
-            1479
+            1483
           ]
         }
       ]
@@ -53925,9 +53851,9 @@
         191,
         193,
         249,
-        785,
-        904,
-        1583
+        787,
+        908,
+        1587
       ],
       "owners": [
         {
@@ -53941,26 +53867,26 @@
         },
         {
           "kind": "function",
-          "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 753,
+          "name": "uvDobjDrawHierarchyUsingNodeMatrixIndices",
+          "declaration_line": 755,
           "lines": [
-            785
+            787
           ]
         },
         {
           "kind": "function",
-          "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 872,
+          "name": "uvDobjDrawHierarchyWithPlanarMatrixOverride",
+          "declaration_line": 876,
           "lines": [
-            904
+            908
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjGetQueryArray",
-          "declaration_line": 1582,
+          "declaration_line": 1586,
           "lines": [
-            1583
+            1587
           ]
         },
         {
@@ -53989,33 +53915,33 @@
       "lines": [
         85,
         682,
-        785,
-        904,
-        1584
+        787,
+        908,
+        1588
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 753,
+          "name": "uvDobjDrawHierarchyUsingNodeMatrixIndices",
+          "declaration_line": 755,
           "lines": [
-            785
+            787
           ]
         },
         {
           "kind": "function",
-          "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 872,
+          "name": "uvDobjDrawHierarchyWithPlanarMatrixOverride",
+          "declaration_line": 876,
           "lines": [
-            904
+            908
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjGetQueryArray",
-          "declaration_line": 1582,
+          "declaration_line": 1586,
           "lines": [
-            1584
+            1588
           ]
         },
         {
@@ -54136,12 +54062,12 @@
       "lines": [
         91,
         199,
-        1196,
-        1198,
-        1208,
-        1243,
-        1248,
-        1321
+        1200,
+        1202,
+        1212,
+        1247,
+        1252,
+        1325
       ],
       "owners": [
         {
@@ -54155,21 +54081,21 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1110,
+          "declaration_line": 1114,
           "lines": [
-            1196,
-            1198,
-            1208
+            1200,
+            1202,
+            1212
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1214,
+          "declaration_line": 1218,
           "lines": [
-            1243,
-            1248,
-            1321
+            1247,
+            1252,
+            1325
           ]
         },
         {
@@ -54190,13 +54116,13 @@
       "lines": [
         92,
         200,
-        1097,
-        1104,
-        1186,
-        1207,
-        1242,
-        1247,
-        1320
+        1101,
+        1108,
+        1190,
+        1211,
+        1246,
+        1251,
+        1324
       ],
       "owners": [
         {
@@ -54210,29 +54136,29 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1110,
+          "declaration_line": 1114,
           "lines": [
-            1186,
-            1207
+            1190,
+            1211
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1214,
+          "declaration_line": 1218,
           "lines": [
-            1242,
-            1247,
-            1320
+            1246,
+            1251,
+            1324
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjCollectCapsuleOverlaps",
-          "declaration_line": 1040,
+          "declaration_line": 1044,
           "lines": [
-            1097,
-            1104
+            1101,
+            1108
           ]
         },
         {
@@ -54253,13 +54179,13 @@
       "lines": [
         93,
         201,
-        1187,
-        1209,
-        1244,
-        1245,
-        1246,
+        1191,
+        1213,
+        1248,
         1249,
-        1322
+        1250,
+        1253,
+        1326
       ],
       "owners": [
         {
@@ -54273,22 +54199,22 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1110,
+          "declaration_line": 1114,
           "lines": [
-            1187,
-            1209
+            1191,
+            1213
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1214,
+          "declaration_line": 1218,
           "lines": [
-            1244,
-            1245,
-            1246,
+            1248,
             1249,
-            1322
+            1250,
+            1253,
+            1326
           ]
         },
         {
@@ -54309,7 +54235,7 @@
       "lines": [
         94,
         204,
-        1200
+        1204
       ],
       "owners": [
         {
@@ -54323,9 +54249,9 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1110,
+          "declaration_line": 1114,
           "lines": [
-            1200
+            1204
           ]
         },
         {
@@ -54346,14 +54272,14 @@
       "lines": [
         95,
         203,
-        1025,
-        1027,
-        1177,
-        1186,
-        1316,
-        1364,
-        1419,
-        1478
+        1029,
+        1031,
+        1181,
+        1190,
+        1320,
+        1368,
+        1423,
+        1482
       ],
       "owners": [
         {
@@ -54367,51 +54293,51 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1110,
+          "declaration_line": 1114,
           "lines": [
-            1177,
-            1186
+            1181,
+            1190
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1214,
+          "declaration_line": 1218,
           "lines": [
-            1316
+            1320
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjFindObjectContainingWorldPoint",
-          "declaration_line": 984,
+          "declaration_line": 988,
           "lines": [
-            1025,
-            1027
+            1029,
+            1031
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjQueryHierarchySegment",
-          "declaration_line": 1446,
+          "declaration_line": 1450,
           "lines": [
-            1478
+            1482
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjQueryHierarchyWithScalarExtent",
-          "declaration_line": 1329,
+          "declaration_line": 1333,
           "lines": [
-            1364
+            1368
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjTestHierarchyPointBounds",
-          "declaration_line": 1389,
+          "declaration_line": 1393,
           "lines": [
-            1419
+            1423
           ]
         },
         {
@@ -54432,26 +54358,26 @@
       "lines": [
         96,
         202,
-        1053,
-        1097,
-        1098,
-        1099,
+        1057,
+        1101,
+        1102,
         1103,
-        1106,
-        1137,
-        1180,
-        1186,
-        1187,
-        1196,
-        1198,
+        1107,
+        1110,
+        1141,
+        1184,
+        1190,
+        1191,
         1200,
-        1201,
         1202,
+        1204,
+        1205,
         1206,
-        1211,
-        1233,
-        1324,
-        1349
+        1210,
+        1215,
+        1237,
+        1328,
+        1353
       ],
       "owners": [
         {
@@ -54465,49 +54391,49 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1110,
+          "declaration_line": 1114,
           "lines": [
-            1137,
-            1180,
-            1186,
-            1187,
-            1196,
-            1198,
+            1141,
+            1184,
+            1190,
+            1191,
             1200,
-            1201,
             1202,
+            1204,
+            1205,
             1206,
-            1211
+            1210,
+            1215
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1214,
+          "declaration_line": 1218,
           "lines": [
-            1233,
-            1324
+            1237,
+            1328
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjCollectCapsuleOverlaps",
-          "declaration_line": 1040,
+          "declaration_line": 1044,
           "lines": [
-            1053,
-            1097,
-            1098,
-            1099,
+            1057,
+            1101,
+            1102,
             1103,
-            1106
+            1107,
+            1110
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjQueryHierarchyWithScalarExtent",
-          "declaration_line": 1329,
+          "declaration_line": 1333,
           "lines": [
-            1349
+            1353
           ]
         },
         {
@@ -54579,18 +54505,18 @@
         98,
         206,
         213,
-        996,
-        1001,
-        1002,
-        1054,
-        1059,
-        1060,
-        1129,
-        1134,
-        1135,
-        1252,
+        1000,
+        1005,
+        1006,
+        1058,
+        1063,
+        1064,
+        1133,
+        1138,
+        1139,
         1256,
-        1257
+        1260,
+        1261
       ],
       "owners": [
         {
@@ -54604,41 +54530,41 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1110,
+          "declaration_line": 1114,
           "lines": [
-            1129,
-            1134,
-            1135
+            1133,
+            1138,
+            1139
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1214,
+          "declaration_line": 1218,
           "lines": [
-            1252,
             1256,
-            1257
+            1260,
+            1261
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjCollectCapsuleOverlaps",
-          "declaration_line": 1040,
+          "declaration_line": 1044,
           "lines": [
-            1054,
-            1059,
-            1060
+            1058,
+            1063,
+            1064
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjFindObjectContainingWorldPoint",
-          "declaration_line": 984,
+          "declaration_line": 988,
           "lines": [
-            996,
-            1001,
-            1002
+            1000,
+            1005,
+            1006
           ]
         },
         {
@@ -54668,9 +54594,9 @@
         99,
         207,
         214,
-        1355,
-        1410,
-        1469
+        1359,
+        1414,
+        1473
       ],
       "owners": [
         {
@@ -54684,17 +54610,17 @@
         {
           "kind": "function",
           "name": "uvDobjQueryHierarchySegment",
-          "declaration_line": 1446,
+          "declaration_line": 1450,
           "lines": [
-            1469
+            1473
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjQueryHierarchyWithScalarExtent",
-          "declaration_line": 1329,
+          "declaration_line": 1333,
           "lines": [
-            1355
+            1359
           ]
         },
         {
@@ -54708,9 +54634,9 @@
         {
           "kind": "function",
           "name": "uvDobjTestHierarchyPointBounds",
-          "declaration_line": 1389,
+          "declaration_line": 1393,
           "lines": [
-            1410
+            1414
           ]
         },
         {
@@ -54763,7 +54689,7 @@
       "lines": [
         101,
         205,
-        1138
+        1142
       ],
       "owners": [
         {
@@ -54777,9 +54703,9 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1110,
+          "declaration_line": 1114,
           "lines": [
-            1138
+            1142
           ]
         },
         {
@@ -95047,23 +94973,21 @@
         74,
         75,
         218,
-        753,
-        872,
-        1110,
-        1150,
+        1114,
         1154,
-        1170,
-        1179,
-        1188,
-        1214,
-        1234,
-        1235,
-        1261,
+        1158,
+        1174,
+        1183,
+        1192,
+        1218,
+        1238,
+        1239,
         1265,
-        1279,
+        1269,
         1283,
-        1307,
-        1317
+        1287,
+        1311,
+        1321
       ],
       "owners": [
         {
@@ -95084,38 +95008,6 @@
         },
         {
           "kind": "function",
-          "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 60,
-          "lines": [
-            60
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 753,
-          "lines": [
-            753
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 61,
-          "lines": [
-            61
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 872,
-          "lines": [
-            872
-          ]
-        },
-        {
-          "kind": "function",
           "name": "func_uvdobj_rom_00402420",
           "declaration_line": 65,
           "lines": [
@@ -95125,14 +95017,14 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1110,
+          "declaration_line": 1114,
           "lines": [
-            1110,
-            1150,
+            1114,
             1154,
-            1170,
-            1179,
-            1188
+            1158,
+            1174,
+            1183,
+            1192
           ]
         },
         {
@@ -95146,17 +95038,17 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1214,
+          "declaration_line": 1218,
           "lines": [
-            1214,
-            1234,
-            1235,
-            1261,
+            1218,
+            1238,
+            1239,
             1265,
-            1279,
+            1269,
             1283,
-            1307,
-            1317
+            1287,
+            1311,
+            1321
           ]
         },
         {
@@ -95181,6 +95073,22 @@
           "declaration_line": 63,
           "lines": [
             63
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvDobjDrawHierarchyUsingNodeMatrixIndices",
+          "declaration_line": 60,
+          "lines": [
+            60
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvDobjDrawHierarchyWithPlanarMatrixOverride",
+          "declaration_line": 61,
+          "lines": [
+            61
           ]
         },
         {
@@ -95398,56 +95306,21 @@
         72,
         74,
         218,
-        753,
-        775,
-        776,
-        778,
-        782,
-        783,
-        784,
-        785,
-        786,
-        791,
-        797,
-        803,
-        821,
-        824,
-        829,
-        830,
-        834,
-        835,
-        843,
-        867,
-        868,
-        872,
-        896,
-        897,
-        898,
-        899,
-        901,
-        902,
-        904,
-        906,
-        923,
-        941,
-        944,
-        975,
-        976,
-        1110,
-        1157,
+        1114,
         1161,
-        1170,
-        1179,
-        1189,
-        1214,
-        1234,
-        1235,
-        1262,
+        1165,
+        1174,
+        1183,
+        1193,
+        1218,
+        1238,
+        1239,
         1266,
-        1287,
+        1270,
         1291,
-        1307,
-        1317
+        1295,
+        1311,
+        1321
       ],
       "owners": [
         {
@@ -95468,71 +95341,6 @@
         },
         {
           "kind": "function",
-          "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 60,
-          "lines": [
-            60
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 753,
-          "lines": [
-            753,
-            775,
-            776,
-            778,
-            782,
-            783,
-            784,
-            785,
-            786,
-            791,
-            797,
-            803,
-            821,
-            824,
-            829,
-            830,
-            834,
-            835,
-            843,
-            867,
-            868
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 61,
-          "lines": [
-            61
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 872,
-          "lines": [
-            872,
-            896,
-            897,
-            898,
-            899,
-            901,
-            902,
-            904,
-            906,
-            923,
-            941,
-            944,
-            975,
-            976
-          ]
-        },
-        {
-          "kind": "function",
           "name": "func_uvdobj_rom_00402420",
           "declaration_line": 65,
           "lines": [
@@ -95542,14 +95350,14 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1110,
+          "declaration_line": 1114,
           "lines": [
-            1110,
-            1157,
+            1114,
             1161,
-            1170,
-            1179,
-            1189
+            1165,
+            1174,
+            1183,
+            1193
           ]
         },
         {
@@ -95563,17 +95371,17 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1214,
+          "declaration_line": 1218,
           "lines": [
-            1214,
-            1234,
-            1235,
-            1262,
+            1218,
+            1238,
+            1239,
             1266,
-            1287,
+            1270,
             1291,
-            1307,
-            1317
+            1295,
+            1311,
+            1321
           ]
         },
         {
@@ -95590,6 +95398,22 @@
           "declaration_line": 63,
           "lines": [
             63
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvDobjDrawHierarchyUsingNodeMatrixIndices",
+          "declaration_line": 60,
+          "lines": [
+            60
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvDobjDrawHierarchyWithPlanarMatrixOverride",
+          "declaration_line": 61,
+          "lines": [
+            61
           ]
         },
         {
@@ -95733,21 +95557,21 @@
         72,
         74,
         218,
-        1110,
-        1165,
+        1114,
         1169,
-        1170,
-        1179,
-        1190,
-        1214,
-        1234,
-        1235,
-        1263,
+        1173,
+        1174,
+        1183,
+        1194,
+        1218,
+        1238,
+        1239,
         1267,
-        1295,
+        1271,
         1299,
-        1307,
-        1317
+        1303,
+        1311,
+        1321
       ],
       "owners": [
         {
@@ -95777,14 +95601,14 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1110,
+          "declaration_line": 1114,
           "lines": [
-            1110,
-            1165,
+            1114,
             1169,
-            1170,
-            1179,
-            1190
+            1173,
+            1174,
+            1183,
+            1194
           ]
         },
         {
@@ -95798,17 +95622,17 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1214,
+          "declaration_line": 1218,
           "lines": [
-            1214,
-            1234,
-            1235,
-            1263,
+            1218,
+            1238,
+            1239,
             1267,
-            1295,
+            1271,
             1299,
-            1307,
-            1317
+            1303,
+            1311,
+            1321
           ]
         },
         {
@@ -95898,23 +95722,23 @@
         70,
         71,
         74,
-        1110,
-        1150,
+        1114,
         1154,
-        1157,
+        1158,
         1161,
         1165,
         1169,
-        1170,
-        1179,
-        1194,
-        1214,
-        1234,
-        1261,
-        1279,
+        1173,
+        1174,
+        1183,
+        1198,
+        1218,
+        1238,
+        1265,
         1283,
-        1307,
-        1317
+        1287,
+        1311,
+        1321
       ],
       "owners": [
         {
@@ -95928,18 +95752,18 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1110,
+          "declaration_line": 1114,
           "lines": [
-            1110,
-            1150,
+            1114,
             1154,
-            1157,
+            1158,
             1161,
             1165,
             1169,
-            1170,
-            1179,
-            1194
+            1173,
+            1174,
+            1183,
+            1198
           ]
         },
         {
@@ -95953,15 +95777,15 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1214,
+          "declaration_line": 1218,
           "lines": [
-            1214,
-            1234,
-            1261,
-            1279,
+            1218,
+            1238,
+            1265,
             1283,
-            1307,
-            1317
+            1287,
+            1311,
+            1321
           ]
         },
         {
@@ -96017,15 +95841,15 @@
         67,
         69,
         71,
-        1110,
-        1207,
-        1214,
-        1234,
-        1262,
-        1287,
+        1114,
+        1211,
+        1218,
+        1238,
+        1266,
         1291,
-        1307,
-        1317
+        1295,
+        1311,
+        1321
       ],
       "owners": [
         {
@@ -96039,10 +95863,10 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1110,
+          "declaration_line": 1114,
           "lines": [
-            1110,
-            1207
+            1114,
+            1211
           ]
         },
         {
@@ -96056,15 +95880,15 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1214,
+          "declaration_line": 1218,
           "lines": [
-            1214,
-            1234,
-            1262,
-            1287,
+            1218,
+            1238,
+            1266,
             1291,
-            1307,
-            1317
+            1295,
+            1311,
+            1321
           ]
         },
         {
@@ -96103,15 +95927,15 @@
         65,
         67,
         71,
-        1110,
-        1208,
-        1214,
-        1234,
-        1263,
-        1295,
+        1114,
+        1212,
+        1218,
+        1238,
+        1267,
         1299,
-        1307,
-        1317
+        1303,
+        1311,
+        1321
       ],
       "owners": [
         {
@@ -96125,10 +95949,10 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1110,
+          "declaration_line": 1114,
           "lines": [
-            1110,
-            1208
+            1114,
+            1212
           ]
         },
         {
@@ -96142,15 +95966,15 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1214,
+          "declaration_line": 1218,
           "lines": [
-            1214,
-            1234,
-            1263,
-            1295,
+            1218,
+            1238,
+            1267,
             1299,
-            1307,
-            1317
+            1303,
+            1311,
+            1321
           ]
         },
         {
@@ -96181,12 +96005,12 @@
         66,
         67,
         71,
-        1111,
-        1209,
-        1214,
-        1237,
-        1247,
-        1320
+        1115,
+        1213,
+        1218,
+        1241,
+        1251,
+        1324
       ],
       "owners": [
         {
@@ -96200,10 +96024,10 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1110,
+          "declaration_line": 1114,
           "lines": [
-            1111,
-            1209
+            1115,
+            1213
           ]
         },
         {
@@ -96217,12 +96041,12 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1214,
+          "declaration_line": 1218,
           "lines": [
-            1214,
-            1237,
-            1247,
-            1320
+            1218,
+            1241,
+            1251,
+            1324
           ]
         },
         {
@@ -96251,10 +96075,10 @@
       "lines": [
         64,
         68,
-        1215,
-        1238,
-        1248,
-        1321
+        1219,
+        1242,
+        1252,
+        1325
       ],
       "owners": [
         {
@@ -96268,12 +96092,12 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1214,
+          "declaration_line": 1218,
           "lines": [
-            1215,
-            1238,
-            1248,
-            1321
+            1219,
+            1242,
+            1252,
+            1325
           ]
         },
         {
@@ -96293,10 +96117,10 @@
       "symbol": "arg8",
       "lines": [
         68,
-        1215,
-        1239,
-        1249,
-        1322
+        1219,
+        1243,
+        1253,
+        1326
       ],
       "owners": [
         {
@@ -96310,191 +96134,12 @@
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1214,
+          "declaration_line": 1218,
           "lines": [
-            1215,
-            1239,
-            1249,
-            1322
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-849e62c59268",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvdobj_rom.c",
-      "symbol": "sp118",
-      "lines": [
-        769,
-        774,
-        829,
-        831,
-        834,
-        836
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 753,
-          "lines": [
-            769,
-            774,
-            829,
-            831,
-            834,
-            836
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-53671d4e3f54",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvdobj_rom.c",
-      "symbol": "sp11C",
-      "lines": [
-        768,
-        793,
-        795,
-        825
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 753,
-          "lines": [
-            768,
-            793,
-            795,
-            825
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-561f96d582fe",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvdobj_rom.c",
-      "symbol": "sp120",
-      "lines": [
-        767,
-        791,
-        792,
-        820
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 753,
-          "lines": [
-            767,
-            791,
-            792,
-            820
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-66238f061d85",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvdobj_rom.c",
-      "symbol": "sp130",
-      "lines": [
-        763,
-        797,
-        800
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 753,
-          "lines": [
-            763,
-            797,
-            800
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-9a63d4af0ef0",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvdobj_rom.c",
-      "symbol": "sp154",
-      "lines": [
-        754,
-        789,
-        798,
-        799,
-        812,
-        854,
-        857
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 753,
-          "lines": [
-            754,
-            789,
-            798,
-            799,
-            812,
-            854,
-            857
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-2a30a30ee4d3",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvdobj_rom.c",
-      "symbol": "sp54",
-      "lines": [
-        894,
-        941,
-        942
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 872,
-          "lines": [
-            894,
-            941,
-            942
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-573379f3c0cc",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvdobj_rom.c",
-      "symbol": "sp58",
-      "lines": [
-        772,
-        835,
-        837
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 753,
-          "lines": [
-            772,
-            835,
-            837
+            1219,
+            1243,
+            1253,
+            1326
           ]
         }
       ]
@@ -96505,21 +96150,21 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "sp78",
       "lines": [
-        1115,
-        1132,
-        1134,
-        1139
+        1119,
+        1136,
+        1138,
+        1143
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1110,
+          "declaration_line": 1114,
           "lines": [
-            1115,
-            1132,
-            1134,
-            1139
+            1119,
+            1136,
+            1138,
+            1143
           ]
         }
       ]
@@ -96530,92 +96175,21 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "sp88",
       "lines": [
-        1231,
-        1259,
-        1260,
-        1302
+        1235,
+        1263,
+        1264,
+        1306
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1214,
+          "declaration_line": 1218,
           "lines": [
-            1231,
-            1259,
-            1260,
-            1302
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-ce03c0d65ee8",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvdobj_rom.c",
-      "symbol": "sp98",
-      "lines": [
-        771,
-        830,
-        832,
-        892,
-        897,
-        912,
-        914,
-        916,
-        917
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 753,
-          "lines": [
-            771,
-            830,
-            832
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 872,
-          "lines": [
-            892,
-            897,
-            912,
-            914,
-            916,
-            917
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-bb4a6168e995",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvdobj_rom.c",
-      "symbol": "sp9C",
-      "lines": [
-        891,
-        896,
-        912,
-        913,
-        918,
-        919
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 872,
-          "lines": [
-            891,
-            896,
-            912,
-            913,
-            918,
-            919
+            1235,
+            1263,
+            1264,
+            1306
           ]
         }
       ]
@@ -96626,19 +96200,19 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "spA0",
       "lines": [
-        1227,
-        1264,
-        1303
+        1231,
+        1268,
+        1307
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1214,
+          "declaration_line": 1218,
           "lines": [
-            1227,
-            1264,
-            1303
+            1231,
+            1268,
+            1307
           ]
         }
       ]
@@ -96649,32 +96223,19 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "spA4",
       "lines": [
-        889,
-        910,
-        974,
-        1226,
-        1267,
-        1303
+        1230,
+        1271,
+        1307
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 872,
-          "lines": [
-            889,
-            910,
-            974
-          ]
-        },
-        {
-          "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1214,
+          "declaration_line": 1218,
           "lines": [
-            1226,
-            1267,
-            1303
+            1230,
+            1271,
+            1307
           ]
         }
       ]
@@ -96685,32 +96246,19 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "spA8",
       "lines": [
-        888,
-        909,
-        973,
-        1225,
-        1266,
-        1303
+        1229,
+        1270,
+        1307
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 872,
-          "lines": [
-            888,
-            909,
-            973
-          ]
-        },
-        {
-          "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1214,
+          "declaration_line": 1218,
           "lines": [
-            1225,
-            1266,
-            1303
+            1229,
+            1270,
+            1307
           ]
         }
       ]
@@ -96721,32 +96269,19 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "spAC",
       "lines": [
-        887,
-        908,
-        972,
-        1224,
-        1265,
-        1303
+        1228,
+        1269,
+        1307
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 872,
-          "lines": [
-            887,
-            908,
-            972
-          ]
-        },
-        {
-          "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1214,
+          "declaration_line": 1218,
           "lines": [
-            1224,
-            1265,
-            1303
+            1228,
+            1269,
+            1307
           ]
         }
       ]
@@ -96757,65 +96292,23 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "spB0",
       "lines": [
-        886,
-        907,
-        971,
-        1223,
-        1254,
-        1256,
-        1259,
-        1269
+        1227,
+        1258,
+        1260,
+        1263,
+        1273
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 872,
-          "lines": [
-            886,
-            907,
-            971
-          ]
-        },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1214,
+          "declaration_line": 1218,
           "lines": [
-            1223,
-            1254,
-            1256,
-            1259,
-            1269
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-1f2f72c6c1d0",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvdobj_rom.c",
-      "symbol": "spB4",
-      "lines": [
-        885,
-        903,
-        916,
-        917,
-        918,
-        919
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 872,
-          "lines": [
-            885,
-            903,
-            916,
-            917,
-            918,
-            919
+            1227,
+            1258,
+            1260,
+            1263,
+            1273
           ]
         }
       ]
@@ -96849,17 +96342,17 @@
       "lines": [
         675,
         683,
-        1220,
-        1307
+        1224,
+        1311
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1214,
+          "declaration_line": 1218,
           "lines": [
-            1220,
-            1307
+            1224,
+            1311
           ]
         },
         {
@@ -96880,44 +96373,9 @@
       "symbol": "spC0",
       "lines": [
         674,
-        683,
-        882,
-        906,
-        907,
-        908,
-        909,
-        910,
-        916,
-        917,
-        918,
-        919,
-        971,
-        972,
-        973,
-        974
+        683
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 872,
-          "lines": [
-            882,
-            906,
-            907,
-            908,
-            909,
-            910,
-            916,
-            917,
-            918,
-            919,
-            971,
-            972,
-            973,
-            974
-          ]
-        },
         {
           "kind": "function",
           "name": "uvDobjQueueVisibleChannelObjects",
@@ -96993,60 +96451,6 @@
       ]
     },
     {
-      "id": "Q-ada98e43b8d6",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvdobj_rom.c",
-      "symbol": "spD8",
-      "lines": [
-        770,
-        821,
-        822
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 753,
-          "lines": [
-            770,
-            821,
-            822
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-a41bee657875",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvdobj_rom.c",
-      "symbol": "spE4",
-      "lines": [
-        873,
-        905,
-        921,
-        922,
-        932,
-        957,
-        961
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 872,
-          "lines": [
-            873,
-            905,
-            921,
-            922,
-            932,
-            957,
-            961
-          ]
-        }
-      ]
-    },
-    {
       "id": "Q-9b680c7b5d5d",
       "kind": "decompiler_local",
       "path": "src/modules/uvdobj_rom.c",
@@ -97066,39 +96470,20 @@
       ]
     },
     {
-      "id": "Q-f2dc2266cd5e",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvdobj_rom.c",
-      "symbol": "temp_fa0",
-      "lines": [
-        879
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 872,
-          "lines": [
-            879
-          ]
-        }
-      ]
-    },
-    {
       "id": "Q-5b44c435efc6",
       "kind": "decompiler_local",
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "temp_fa1",
       "lines": [
-        1117
+        1121
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1110,
+          "declaration_line": 1114,
           "lines": [
-            1117
+            1121
           ]
         }
       ]
@@ -97109,39 +96494,39 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "temp_fs0",
       "lines": [
-        1217,
-        1261,
-        1264,
+        1221,
         1265,
-        1275,
+        1268,
+        1269,
         1279,
         1283,
         1287,
         1291,
         1295,
         1299,
-        1304,
-        1307
+        1303,
+        1308,
+        1311
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1214,
+          "declaration_line": 1218,
           "lines": [
-            1217,
-            1261,
-            1264,
+            1221,
             1265,
-            1275,
+            1268,
+            1269,
             1279,
             1283,
             1287,
             1291,
             1295,
             1299,
-            1304,
-            1307
+            1303,
+            1308,
+            1311
           ]
         }
       ]
@@ -97152,31 +96537,31 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "temp_fs1",
       "lines": [
-        1218,
-        1262,
-        1264,
+        1222,
         1266,
-        1276,
-        1279,
+        1268,
+        1270,
+        1280,
         1283,
-        1303,
-        1307
+        1287,
+        1307,
+        1311
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1214,
+          "declaration_line": 1218,
           "lines": [
-            1218,
-            1262,
-            1264,
+            1222,
             1266,
-            1276,
-            1279,
+            1268,
+            1270,
+            1280,
             1283,
-            1303,
-            1307
+            1287,
+            1307,
+            1311
           ]
         }
       ]
@@ -97187,31 +96572,31 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "temp_fs2",
       "lines": [
-        1221,
-        1263,
-        1264,
+        1225,
         1267,
-        1277,
-        1287,
+        1268,
+        1271,
+        1281,
         1291,
-        1304,
-        1307
+        1295,
+        1308,
+        1311
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1214,
+          "declaration_line": 1218,
           "lines": [
-            1221,
-            1263,
-            1264,
+            1225,
             1267,
-            1277,
-            1287,
+            1268,
+            1271,
+            1281,
             1291,
-            1304,
-            1307
+            1295,
+            1308,
+            1311
           ]
         }
       ]
@@ -97222,25 +96607,25 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "temp_fs3",
       "lines": [
-        1222,
-        1278,
-        1295,
+        1226,
+        1282,
         1299,
-        1304,
-        1307
+        1303,
+        1308,
+        1311
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1214,
+          "declaration_line": 1218,
           "lines": [
-            1222,
-            1278,
-            1295,
+            1226,
+            1282,
             1299,
-            1304,
-            1307
+            1303,
+            1308,
+            1311
           ]
         }
       ]
@@ -97251,23 +96636,23 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "temp_ft4",
       "lines": [
-        1118,
-        1147,
-        1157,
+        1122,
+        1151,
         1161,
-        1171
+        1165,
+        1175
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1110,
+          "declaration_line": 1114,
           "lines": [
-            1118,
-            1147,
-            1157,
+            1122,
+            1151,
             1161,
-            1171
+            1165,
+            1175
           ]
         }
       ]
@@ -97278,23 +96663,23 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "temp_ft5",
       "lines": [
-        1119,
-        1148,
-        1165,
+        1123,
+        1152,
         1169,
-        1171
+        1173,
+        1175
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1110,
+          "declaration_line": 1114,
           "lines": [
-            1119,
-            1148,
-            1165,
+            1123,
+            1152,
             1169,
-            1171
+            1173,
+            1175
           ]
         }
       ]
@@ -97305,40 +96690,31 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "temp_fv0",
       "lines": [
-        880,
-        1120,
-        1144,
-        1150,
+        1124,
+        1148,
         1154,
-        1157,
+        1158,
         1161,
         1165,
         1169,
-        1171
+        1173,
+        1175
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 872,
-          "lines": [
-            880
-          ]
-        },
-        {
-          "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1110,
+          "declaration_line": 1114,
           "lines": [
-            1120,
-            1144,
-            1150,
+            1124,
+            1148,
             1154,
-            1157,
+            1158,
             1161,
             1165,
             1169,
-            1171
+            1173,
+            1175
           ]
         }
       ]
@@ -97349,23 +96725,23 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "temp_fv1",
       "lines": [
-        1121,
-        1146,
+        1125,
         1150,
         1154,
-        1170
+        1158,
+        1174
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1110,
+          "declaration_line": 1114,
           "lines": [
-            1121,
-            1146,
+            1125,
             1150,
             1154,
-            1170
+            1158,
+            1174
           ]
         }
       ]
@@ -97376,21 +96752,21 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "temp_fv1_3",
       "lines": [
-        1122,
-        1192,
-        1195,
-        1196
+        1126,
+        1196,
+        1199,
+        1200
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1110,
+          "declaration_line": 1114,
           "lines": [
-            1122,
-            1192,
-            1195,
-            1196
+            1126,
+            1196,
+            1199,
+            1200
           ]
         }
       ]
@@ -97401,78 +96777,52 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "temp_s0",
       "lines": [
-        757,
-        783,
-        789,
-        883,
-        901,
-        905,
-        1114,
-        1140,
-        1141,
+        1118,
         1144,
         1145,
-        1176,
-        1179,
-        1216,
-        1270,
-        1271,
+        1148,
+        1149,
+        1180,
+        1183,
+        1220,
+        1274,
         1275,
-        1276,
-        1277,
-        1278,
-        1311,
-        1317
+        1279,
+        1280,
+        1281,
+        1282,
+        1315,
+        1321
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 753,
-          "lines": [
-            757,
-            783,
-            789
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 872,
-          "lines": [
-            883,
-            901,
-            905
-          ]
-        },
-        {
-          "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1110,
+          "declaration_line": 1114,
           "lines": [
-            1114,
-            1140,
-            1141,
+            1118,
             1144,
             1145,
-            1176,
-            1179
+            1148,
+            1149,
+            1180,
+            1183
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1214,
+          "declaration_line": 1218,
           "lines": [
-            1216,
-            1270,
-            1271,
+            1220,
+            1274,
             1275,
-            1276,
-            1277,
-            1278,
-            1311,
-            1317
+            1279,
+            1280,
+            1281,
+            1282,
+            1315,
+            1321
           ]
         }
       ]
@@ -97483,27 +96833,27 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "temp_s0_2",
       "lines": [
-        1116,
-        1187,
-        1188,
-        1189,
-        1190,
+        1120,
         1191,
-        1193
+        1192,
+        1193,
+        1194,
+        1195,
+        1197
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1110,
+          "declaration_line": 1114,
           "lines": [
-            1116,
-            1187,
-            1188,
-            1189,
-            1190,
+            1120,
             1191,
-            1193
+            1192,
+            1193,
+            1194,
+            1195,
+            1197
           ]
         }
       ]
@@ -97514,57 +96864,29 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "temp_s1",
       "lines": [
-        764,
-        782,
-        789,
-        884,
-        948,
-        950,
-        953,
-        1113,
-        1145,
-        1146,
-        1147,
-        1148,
-        1188,
-        1189,
-        1190
+        1117,
+        1149,
+        1150,
+        1151,
+        1152,
+        1192,
+        1193,
+        1194
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 753,
-          "lines": [
-            764,
-            782,
-            789
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 872,
-          "lines": [
-            884,
-            948,
-            950,
-            953
-          ]
-        },
-        {
-          "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1110,
+          "declaration_line": 1114,
           "lines": [
-            1113,
-            1145,
-            1146,
-            1147,
-            1148,
-            1188,
-            1189,
-            1190
+            1117,
+            1149,
+            1150,
+            1151,
+            1152,
+            1192,
+            1193,
+            1194
           ]
         }
       ]
@@ -97575,142 +96897,21 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "temp_s2",
       "lines": [
-        765,
-        799,
-        803,
-        810,
-        821,
-        824,
-        829,
-        840,
-        844,
-        845,
-        846,
-        847,
-        850,
-        877,
-        932,
-        933,
-        961,
-        962,
-        1126,
-        1176,
-        1178,
-        1192
+        1130,
+        1180,
+        1182,
+        1196
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 753,
-          "lines": [
-            765,
-            799,
-            803,
-            810,
-            821,
-            824,
-            829,
-            840,
-            844,
-            845,
-            846,
-            847,
-            850
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 872,
-          "lines": [
-            877,
-            932,
-            933,
-            961,
-            962
-          ]
-        },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1110,
+          "declaration_line": 1114,
           "lines": [
-            1126,
-            1176,
-            1178,
-            1192
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-314dec16fcaa",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvdobj_rom.c",
-      "symbol": "temp_s2_2",
-      "lines": [
-        758,
-        812,
-        813,
-        857,
-        858
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 753,
-          "lines": [
-            758,
-            812,
-            813,
-            857,
-            858
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-db11fc37c3ab",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvdobj_rom.c",
-      "symbol": "temp_s4",
-      "lines": [
-        762,
-        840,
-        841,
-        851,
-        890,
-        922,
-        923,
-        930,
-        948,
-        952
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 753,
-          "lines": [
-            762,
-            840,
-            841,
-            851
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 872,
-          "lines": [
-            890,
-            922,
-            923,
-            930,
-            948,
-            952
+            1130,
+            1180,
+            1182,
+            1196
           ]
         }
       ]
@@ -97721,15 +96922,15 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "temp_s5",
       "lines": [
-        1395
+        1399
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDobjTestHierarchyPointBounds",
-          "declaration_line": 1389,
+          "declaration_line": 1393,
           "lines": [
-            1395
+            1399
           ]
         }
       ]
@@ -97740,39 +96941,30 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "temp_v0",
       "lines": [
-        755,
-        1127,
-        1228,
-        1235,
-        1236,
-        1242
+        1131,
+        1232,
+        1239,
+        1240,
+        1246
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 753,
-          "lines": [
-            755
-          ]
-        },
-        {
-          "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1110,
+          "declaration_line": 1114,
           "lines": [
-            1127
+            1131
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1214,
+          "declaration_line": 1218,
           "lines": [
-            1228,
-            1235,
-            1236,
-            1242
+            1232,
+            1239,
+            1240,
+            1246
           ]
         }
       ]
@@ -97783,122 +96975,24 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "temp_v0_2",
       "lines": [
-        878,
-        902,
-        903,
-        905,
-        1399,
-        1457
+        1403,
+        1461
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 872,
-          "lines": [
-            878,
-            902,
-            903,
-            905
-          ]
-        },
-        {
-          "kind": "function",
           "name": "uvDobjQueryHierarchySegment",
-          "declaration_line": 1446,
+          "declaration_line": 1450,
           "lines": [
-            1457
+            1461
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjTestHierarchyPointBounds",
-          "declaration_line": 1389,
+          "declaration_line": 1393,
           "lines": [
-            1399
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-a55c0a3633a7",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvdobj_rom.c",
-      "symbol": "temp_v0_6",
-      "lines": [
-        756
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 753,
-          "lines": [
-            756
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-cd9ba840b91a",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvdobj_rom.c",
-      "symbol": "var_fp",
-      "lines": [
-        766,
-        798,
-        799,
-        800,
-        803,
-        812,
-        820,
-        843,
-        854,
-        857,
-        864
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 753,
-          "lines": [
-            766,
-            798,
-            799,
-            800,
-            803,
-            812,
-            820,
-            843,
-            854,
-            857,
-            864
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-b43b00d450ef",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvdobj_rom.c",
-      "symbol": "var_fv1",
-      "lines": [
-        881,
-        912,
-        913,
-        914
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 872,
-          "lines": [
-            881,
-            912,
-            913,
-            914
+            1403
           ]
         }
       ]
@@ -97909,57 +97003,23 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "var_s0",
       "lines": [
-        759,
-        804,
-        806,
-        809,
-        828,
-        876,
-        924,
-        926,
-        929,
-        947,
-        1229,
-        1253,
+        1233,
         1257,
-        1259,
-        1269
+        1261,
+        1263,
+        1273
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 753,
-          "lines": [
-            759,
-            804,
-            806,
-            809,
-            828
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 872,
-          "lines": [
-            876,
-            924,
-            926,
-            929,
-            947
-          ]
-        },
-        {
-          "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1214,
+          "declaration_line": 1218,
           "lines": [
-            1229,
-            1253,
+            1233,
             1257,
-            1259,
-            1269
+            1261,
+            1263,
+            1273
           ]
         }
       ]
@@ -97970,30 +97030,30 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "var_s1",
       "lines": [
-        1047,
-        1230,
-        1269,
-        1270,
-        1316
+        1051,
+        1234,
+        1273,
+        1274,
+        1320
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1214,
+          "declaration_line": 1218,
           "lines": [
-            1230,
-            1269,
-            1270,
-            1316
+            1234,
+            1273,
+            1274,
+            1320
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjCollectCapsuleOverlaps",
-          "declaration_line": 1040,
+          "declaration_line": 1044,
           "lines": [
-            1047
+            1051
           ]
         }
       ]
@@ -98004,46 +97064,15 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "var_s2",
       "lines": [
-        990
+        994
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDobjFindObjectContainingWorldPoint",
-          "declaration_line": 984,
+          "declaration_line": 988,
           "lines": [
-            990
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-6dcb77f502ab",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvdobj_rom.c",
-      "symbol": "var_s3",
-      "lines": [
-        875,
-        920,
-        931,
-        935,
-        946,
-        964,
-        968
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 872,
-          "lines": [
-            875,
-            920,
-            931,
-            935,
-            946,
-            964,
-            968
+            994
           ]
         }
       ]
@@ -98054,91 +97083,21 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "var_s4",
       "lines": [
-        1123,
-        1139,
-        1140,
-        1177
+        1127,
+        1143,
+        1144,
+        1181
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1110,
+          "declaration_line": 1114,
           "lines": [
-            1123,
-            1139,
-            1140,
-            1177
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-d25d696dc3fc",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvdobj_rom.c",
-      "symbol": "var_s5",
-      "lines": [
-        761,
-        790,
-        811,
-        815,
-        827,
-        860,
-        864
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 753,
-          "lines": [
-            761,
-            790,
-            811,
-            815,
-            827,
-            860,
-            864
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-7649148f1ad6",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvdobj_rom.c",
-      "symbol": "var_s7",
-      "lines": [
-        874,
-        921,
-        922,
-        923,
-        932,
-        940,
-        941,
-        944,
-        957,
-        961,
-        968
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 872,
-          "lines": [
-            874,
-            921,
-            922,
-            923,
-            932,
-            940,
-            941,
-            944,
-            957,
-            961,
-            968
+            1127,
+            1143,
+            1144,
+            1181
           ]
         }
       ]
@@ -98149,21 +97108,21 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "var_v0",
       "lines": [
-        1124,
-        1131,
+        1128,
         1135,
-        1139
+        1139,
+        1143
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1110,
+          "declaration_line": 1114,
           "lines": [
-            1124,
-            1131,
+            1128,
             1135,
-            1139
+            1139,
+            1143
           ]
         }
       ]
@@ -98174,19 +97133,19 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "var_v1",
       "lines": [
-        1125,
         1129,
-        1130
+        1133,
+        1134
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1110,
+          "declaration_line": 1114,
           "lines": [
-            1125,
             1129,
-            1130
+            1133,
+            1134
           ]
         }
       ]
@@ -137312,16 +136271,16 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "Extract quaternions from nonroot object matrices and write one-based joint * indices. Return max(model joint count - 1, 0). RE_UNKNOWN: object/model validity * and output capacity/lifetime; trace original constructors and callers.",
       "lines": [
-        1504
+        1508
       ],
       "evidence": "Extract quaternions from nonroot object matrices and write one-based joint * indices. Return max(model joint count - 1, 0). RE_UNKNOWN: object/model validity * and output capacity/lifetime; trace original constructors and callers.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDobjExtractJointQuaternionsFromMatrices",
-          "declaration_line": 1507,
+          "declaration_line": 1511,
           "lines": [
-            1504
+            1508
           ]
         }
       ]
@@ -137592,16 +136551,16 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "RE_ORIGINAL_QUIRK: retain the ignored s16 sum. RE_UNKNOWN: scalar units/FP domain need caller proof.",
       "lines": [
-        1367
+        1371
       ],
       "evidence": "RE_ORIGINAL_QUIRK: retain the ignored s16 sum. RE_UNKNOWN: scalar units/FP domain need caller proof.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDobjQueryHierarchyWithScalarExtent",
-          "declaration_line": 1329,
+          "declaration_line": 1333,
           "lines": [
-            1367
+            1371
           ]
         }
       ]
@@ -137627,6 +136586,66 @@
       ]
     },
     {
+      "id": "Q-223b5abe4cbe",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdobj_rom.c",
+      "symbol": "RE_UNKNOWN: array extent/object membership; retain u16 cursor wrap.",
+      "lines": [
+        787
+      ],
+      "evidence": "RE_UNKNOWN: array extent/object membership; retain u16 cursor wrap.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDobjDrawHierarchyUsingNodeMatrixIndices",
+          "declaration_line": 755,
+          "lines": [
+            787
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-028adb8ebf9b",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdobj_rom.c",
+      "symbol": "RE_UNKNOWN: callback aliases/mutation and input/resource lifetimes need caller/provider proof.",
+      "lines": [
+        903
+      ],
+      "evidence": "RE_UNKNOWN: callback aliases/mutation and input/resource lifetimes need caller/provider proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDobjDrawHierarchyWithPlanarMatrixOverride",
+          "declaration_line": 876,
+          "lines": [
+            903
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-3f7faee105a7",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdobj_rom.c",
+      "symbol": "RE_UNKNOWN: callback mutation, aliases and storage lifetime need original caller/provider proof.",
+      "lines": [
+        778
+      ],
+      "evidence": "RE_UNKNOWN: callback mutation, aliases and storage lifetime need original caller/provider proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDobjDrawHierarchyUsingNodeMatrixIndices",
+          "declaration_line": 755,
+          "lines": [
+            778
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-367b0c35e006",
       "kind": "explicit_unknown",
       "path": "src/modules/uvdobj_rom.c",
@@ -137647,21 +136666,61 @@
       ]
     },
     {
+      "id": "Q-3b143bad38b9",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdobj_rom.c",
+      "symbol": "RE_UNKNOWN: historical unused callback declarations/ABI.",
+      "lines": [
+        757
+      ],
+      "evidence": "RE_UNKNOWN: historical unused callback declarations/ABI.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDobjDrawHierarchyUsingNodeMatrixIndices",
+          "declaration_line": 755,
+          "lines": [
+            757
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-b5aaa739db80",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdobj_rom.c",
+      "symbol": "RE_UNKNOWN: historical unused floating-point declarations/ABI.",
+      "lines": [
+        883
+      ],
+      "evidence": "RE_UNKNOWN: historical unused floating-point declarations/ABI.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDobjDrawHierarchyWithPlanarMatrixOverride",
+          "declaration_line": 876,
+          "lines": [
+            883
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-54711ad89114",
       "kind": "explicit_unknown",
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "RE_UNKNOWN: historical unused locals retain their original declarations.",
       "lines": [
-        1395
+        1399
       ],
       "evidence": "RE_UNKNOWN: historical unused locals retain their original declarations.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDobjTestHierarchyPointBounds",
-          "declaration_line": 1389,
+          "declaration_line": 1393,
           "lines": [
-            1395
+            1399
           ]
         }
       ]
@@ -137672,25 +136731,25 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "RE_UNKNOWN: historical unused pad/local declarations.",
       "lines": [
-        1330,
-        1447
+        1334,
+        1451
       ],
       "evidence": "RE_UNKNOWN: historical unused pad/local declarations.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDobjQueryHierarchySegment",
-          "declaration_line": 1446,
+          "declaration_line": 1450,
           "lines": [
-            1447
+            1451
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjQueryHierarchyWithScalarExtent",
-          "declaration_line": 1329,
+          "declaration_line": 1333,
           "lines": [
-            1330
+            1334
           ]
         }
       ]
@@ -137701,25 +136760,25 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "RE_UNKNOWN: historical unused pointer declaration.",
       "lines": [
-        1399,
-        1457
+        1403,
+        1461
       ],
       "evidence": "RE_UNKNOWN: historical unused pointer declaration.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDobjQueryHierarchySegment",
-          "declaration_line": 1446,
+          "declaration_line": 1450,
           "lines": [
-            1457
+            1461
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjTestHierarchyPointBounds",
-          "declaration_line": 1389,
+          "declaration_line": 1393,
           "lines": [
-            1399
+            1403
           ]
         }
       ]
@@ -137750,34 +136809,154 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "RE_UNKNOWN: mask/flag meanings and shift-index domain need producer/caller evidence.",
       "lines": [
-        1356,
-        1411,
-        1470
+        1360,
+        1415,
+        1474
       ],
       "evidence": "RE_UNKNOWN: mask/flag meanings and shift-index domain need producer/caller evidence.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDobjQueryHierarchySegment",
-          "declaration_line": 1446,
+          "declaration_line": 1450,
           "lines": [
-            1470
+            1474
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjQueryHierarchyWithScalarExtent",
-          "declaration_line": 1329,
+          "declaration_line": 1333,
           "lines": [
-            1356
+            1360
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjTestHierarchyPointBounds",
-          "declaration_line": 1389,
+          "declaration_line": 1393,
           "lines": [
-            1411
+            1415
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-420efc6f086e",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdobj_rom.c",
+      "symbol": "RE_UNKNOWN: mask/flag meanings and shift-index domain need producer/caller proof.",
+      "lines": [
+        927
+      ],
+      "evidence": "RE_UNKNOWN: mask/flag meanings and shift-index domain need producer/caller proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDobjDrawHierarchyWithPlanarMatrixOverride",
+          "declaration_line": 876,
+          "lines": [
+            927
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-d819d35209f7",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdobj_rom.c",
+      "symbol": "RE_UNKNOWN: mask/flag meanings and shift-index range need original producers/callers.",
+      "lines": [
+        802
+      ],
+      "evidence": "RE_UNKNOWN: mask/flag meanings and shift-index range need original producers/callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDobjDrawHierarchyUsingNodeMatrixIndices",
+          "declaration_line": 755,
+          "lines": [
+            802
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-1263f6bf26ca",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdobj_rom.c",
+      "symbol": "RE_UNKNOWN: matrix-stack and graphics-buffer capacity need allocation/consumer proof.",
+      "lines": [
+        829
+      ],
+      "evidence": "RE_UNKNOWN: matrix-stack and graphics-buffer capacity need allocation/consumer proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDobjDrawHierarchyUsingNodeMatrixIndices",
+          "declaration_line": 755,
+          "lines": [
+            829
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-e56f906f8705",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdobj_rom.c",
+      "symbol": "RE_UNKNOWN: matrix-stack balance/capacity and graphics storage need allocation/consumer proof.",
+      "lines": [
+        950
+      ],
+      "evidence": "RE_UNKNOWN: matrix-stack balance/capacity and graphics storage need allocation/consumer proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDobjDrawHierarchyWithPlanarMatrixOverride",
+          "declaration_line": 876,
+          "lines": [
+            950
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-b3ef96b02995",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdobj_rom.c",
+      "symbol": "RE_UNKNOWN: model/LOD/node/matrix extents and validity need producer/lifecycle proof.",
+      "lines": [
+        906
+      ],
+      "evidence": "RE_UNKNOWN: model/LOD/node/matrix extents and validity need producer/lifecycle proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDobjDrawHierarchyWithPlanarMatrixOverride",
+          "declaration_line": 876,
+          "lines": [
+            906
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-fbdd707fccd8",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdobj_rom.c",
+      "symbol": "RE_UNKNOWN: model/LOD/node/matrix validity and extents need lifecycle/producer proof.",
+      "lines": [
+        785
+      ],
+      "evidence": "RE_UNKNOWN: model/LOD/node/matrix validity and extents need lifecycle/producer proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDobjDrawHierarchyUsingNodeMatrixIndices",
+          "declaration_line": 755,
+          "lines": [
+            785
           ]
         }
       ]
@@ -137788,34 +136967,94 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "RE_UNKNOWN: model/node/matrix validity and lifetime need producer/caller proof.",
       "lines": [
-        1342,
-        1401,
-        1460
+        1346,
+        1405,
+        1464
       ],
       "evidence": "RE_UNKNOWN: model/node/matrix validity and lifetime need producer/caller proof.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDobjQueryHierarchySegment",
-          "declaration_line": 1446,
+          "declaration_line": 1450,
           "lines": [
-            1460
+            1464
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjQueryHierarchyWithScalarExtent",
-          "declaration_line": 1329,
+          "declaration_line": 1333,
           "lines": [
-            1342
+            1346
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjTestHierarchyPointBounds",
-          "declaration_line": 1389,
+          "declaration_line": 1393,
           "lines": [
-            1401
+            1405
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-4c857f078bdd",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdobj_rom.c",
+      "symbol": "RE_UNKNOWN: next-node extent/depth rules need asset/caller proof.",
+      "lines": [
+        936
+      ],
+      "evidence": "RE_UNKNOWN: next-node extent/depth rules need asset/caller proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDobjDrawHierarchyWithPlanarMatrixOverride",
+          "declaration_line": 876,
+          "lines": [
+            936
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-e702d11f2656",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdobj_rom.c",
+      "symbol": "RE_UNKNOWN: next-node readability, depth rules and stack balance need asset/caller proof.",
+      "lines": [
+        814
+      ],
+      "evidence": "RE_UNKNOWN: next-node readability, depth rules and stack balance need asset/caller proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDobjDrawHierarchyUsingNodeMatrixIndices",
+          "declaration_line": 755,
+          "lines": [
+            814
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-d550d3d58b6f",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdobj_rom.c",
+      "symbol": "RE_UNKNOWN: object membership/array capacity; retain u16 cursor wrap.",
+      "lines": [
+        908
+      ],
+      "evidence": "RE_UNKNOWN: object membership/array capacity; retain u16 cursor wrap.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDobjDrawHierarchyWithPlanarMatrixOverride",
+          "declaration_line": 876,
+          "lines": [
+            908
           ]
         }
       ]
@@ -137846,16 +137085,16 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "RE_UNKNOWN: point units, exceptional values and FP contracts need caller/provider evidence.",
       "lines": [
-        1441
+        1445
       ],
       "evidence": "RE_UNKNOWN: point units, exceptional values and FP contracts need caller/provider evidence.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDobjTestHierarchyPointBounds",
-          "declaration_line": 1389,
+          "declaration_line": 1393,
           "lines": [
-            1441
+            1445
           ]
         }
       ]
@@ -137901,21 +137140,61 @@
       ]
     },
     {
+      "id": "Q-f3d0f6b7323c",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdobj_rom.c",
+      "symbol": "RE_UNKNOWN: scalar meaning, divisor/NaN/FP domains need original callers and FP-mode evidence.",
+      "lines": [
+        917
+      ],
+      "evidence": "RE_UNKNOWN: scalar meaning, divisor/NaN/FP domains need original callers and FP-mode evidence.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDobjDrawHierarchyWithPlanarMatrixOverride",
+          "declaration_line": 876,
+          "lines": [
+            917
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-0ddecf3999dc",
       "kind": "explicit_unknown",
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "RE_UNKNOWN: segment units and FP domain need caller/provider proof; normal return stays -1.",
       "lines": [
-        1500
+        1504
       ],
       "evidence": "RE_UNKNOWN: segment units and FP domain need caller/provider proof; normal return stays -1.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDobjQueryHierarchySegment",
-          "declaration_line": 1446,
+          "declaration_line": 1450,
           "lines": [
-            1500
+            1504
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-80b835fd7e74",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdobj_rom.c",
+      "symbol": "RE_UNKNOWN: signed light-ID domain/storage; native selector -1 still reads a record.",
+      "lines": [
+        786
+      ],
+      "evidence": "RE_UNKNOWN: signed light-ID domain/storage; native selector -1 still reads a record.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDobjDrawHierarchyUsingNodeMatrixIndices",
+          "declaration_line": 755,
+          "lines": [
+            786
           ]
         }
       ]
@@ -137926,34 +137205,34 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "RE_UNKNOWN: stack capacity/balance and callback aliases need lifecycle/caller proof.",
       "lines": [
-        1362,
-        1417,
-        1476
+        1366,
+        1421,
+        1480
       ],
       "evidence": "RE_UNKNOWN: stack capacity/balance and callback aliases need lifecycle/caller proof.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDobjQueryHierarchySegment",
-          "declaration_line": 1446,
+          "declaration_line": 1450,
           "lines": [
-            1476
+            1480
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjQueryHierarchyWithScalarExtent",
-          "declaration_line": 1329,
+          "declaration_line": 1333,
           "lines": [
-            1362
+            1366
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjTestHierarchyPointBounds",
-          "declaration_line": 1389,
+          "declaration_line": 1393,
           "lines": [
-            1417
+            1421
           ]
         }
       ]
@@ -150968,17 +150247,17 @@
       "symbol": "pad",
       "lines": [
         480,
-        1112,
-        1330,
-        1447
+        1116,
+        1334,
+        1451
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1110,
+          "declaration_line": 1114,
           "lines": [
-            1112
+            1116
           ]
         },
         {
@@ -150992,17 +150271,17 @@
         {
           "kind": "function",
           "name": "uvDobjQueryHierarchySegment",
-          "declaration_line": 1446,
+          "declaration_line": 1450,
           "lines": [
-            1447
+            1451
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjQueryHierarchyWithScalarExtent",
-          "declaration_line": 1329,
+          "declaration_line": 1333,
           "lines": [
-            1330
+            1334
           ]
         }
       ]
@@ -185278,48 +184557,48 @@
       "lines": [
         503,
         729,
-        789,
-        799,
-        812,
-        857,
-        905,
-        922,
-        932,
-        961,
-        1343,
-        1352,
-        1367,
-        1373,
-        1403,
-        1408,
-        1421,
-        1429,
-        1462,
-        1467,
-        1481,
-        1486
+        791,
+        801,
+        814,
+        859,
+        909,
+        926,
+        936,
+        965,
+        1347,
+        1356,
+        1371,
+        1377,
+        1407,
+        1412,
+        1425,
+        1433,
+        1466,
+        1471,
+        1485,
+        1490
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 753,
+          "name": "uvDobjDrawHierarchyUsingNodeMatrixIndices",
+          "declaration_line": 755,
           "lines": [
-            789,
-            799,
-            812,
-            857
+            791,
+            801,
+            814,
+            859
           ]
         },
         {
           "kind": "function",
-          "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 872,
+          "name": "uvDobjDrawHierarchyWithPlanarMatrixOverride",
+          "declaration_line": 876,
           "lines": [
-            905,
-            922,
-            932,
-            961
+            909,
+            926,
+            936,
+            965
           ]
         },
         {
@@ -185333,23 +184612,23 @@
         {
           "kind": "function",
           "name": "uvDobjQueryHierarchySegment",
-          "declaration_line": 1446,
+          "declaration_line": 1450,
           "lines": [
-            1462,
-            1467,
-            1481,
-            1486
+            1466,
+            1471,
+            1485,
+            1490
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjQueryHierarchyWithScalarExtent",
-          "declaration_line": 1329,
+          "declaration_line": 1333,
           "lines": [
-            1343,
-            1352,
-            1367,
-            1373
+            1347,
+            1356,
+            1371,
+            1377
           ]
         },
         {
@@ -185363,12 +184642,12 @@
         {
           "kind": "function",
           "name": "uvDobjTestHierarchyPointBounds",
-          "declaration_line": 1389,
+          "declaration_line": 1393,
           "lines": [
-            1403,
-            1408,
-            1421,
-            1429
+            1407,
+            1412,
+            1425,
+            1433
           ]
         }
       ]
@@ -185398,51 +184677,51 @@
         560,
         561,
         708,
-        903,
-        1011,
-        1068,
-        1144,
-        1275
+        907,
+        1015,
+        1072,
+        1148,
+        1279
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 872,
-          "lines": [
-            903
-          ]
-        },
-        {
-          "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1110,
+          "declaration_line": 1114,
           "lines": [
-            1144
+            1148
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1214,
+          "declaration_line": 1218,
           "lines": [
-            1275
+            1279
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjCollectCapsuleOverlaps",
-          "declaration_line": 1040,
+          "declaration_line": 1044,
           "lines": [
-            1068
+            1072
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvDobjDrawHierarchyWithPlanarMatrixOverride",
+          "declaration_line": 876,
+          "lines": [
+            907
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjFindObjectContainingWorldPoint",
-          "declaration_line": 984,
+          "declaration_line": 988,
           "lines": [
-            1011
+            1015
           ]
         },
         {
@@ -185527,29 +184806,29 @@
         414,
         417,
         462,
-        797,
-        803,
-        923,
-        1354,
-        1409,
-        1468
+        799,
+        805,
+        927,
+        1358,
+        1413,
+        1472
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 753,
+          "name": "uvDobjDrawHierarchyUsingNodeMatrixIndices",
+          "declaration_line": 755,
           "lines": [
-            797,
-            803
+            799,
+            805
           ]
         },
         {
           "kind": "function",
-          "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 872,
+          "name": "uvDobjDrawHierarchyWithPlanarMatrixOverride",
+          "declaration_line": 876,
           "lines": [
-            923
+            927
           ]
         },
         {
@@ -185581,25 +184860,25 @@
         {
           "kind": "function",
           "name": "uvDobjQueryHierarchySegment",
-          "declaration_line": 1446,
+          "declaration_line": 1450,
           "lines": [
-            1468
+            1472
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjQueryHierarchyWithScalarExtent",
-          "declaration_line": 1329,
+          "declaration_line": 1333,
           "lines": [
-            1354
+            1358
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjTestHierarchyPointBounds",
-          "declaration_line": 1389,
+          "declaration_line": 1393,
           "lines": [
-            1409
+            1413
           ]
         },
         {
@@ -185682,76 +184961,55 @@
         700,
         701,
         702,
-        821,
-        824,
-        830,
-        835,
-        906,
-        941,
-        944,
-        1012,
-        1013,
-        1014,
-        1069,
-        1070,
-        1071,
-        1145,
-        1276,
-        1277,
-        1278,
-        1361,
-        1416,
-        1475,
-        1521
+        823,
+        826,
+        832,
+        837,
+        910,
+        945,
+        948,
+        1016,
+        1017,
+        1018,
+        1073,
+        1074,
+        1075,
+        1149,
+        1280,
+        1281,
+        1282,
+        1365,
+        1420,
+        1479,
+        1525
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 753,
-          "lines": [
-            821,
-            824,
-            830,
-            835
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 872,
-          "lines": [
-            906,
-            941,
-            944
-          ]
-        },
-        {
-          "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1110,
+          "declaration_line": 1114,
           "lines": [
-            1145
+            1149
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1214,
+          "declaration_line": 1218,
           "lines": [
-            1276,
-            1277,
-            1278
+            1280,
+            1281,
+            1282
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjCollectCapsuleOverlaps",
-          "declaration_line": 1040,
+          "declaration_line": 1044,
           "lines": [
-            1069,
-            1070,
-            1071
+            1073,
+            1074,
+            1075
           ]
         },
         {
@@ -185764,20 +185022,41 @@
         },
         {
           "kind": "function",
-          "name": "uvDobjExtractJointQuaternionsFromMatrices",
-          "declaration_line": 1507,
+          "name": "uvDobjDrawHierarchyUsingNodeMatrixIndices",
+          "declaration_line": 755,
           "lines": [
-            1521
+            823,
+            826,
+            832,
+            837
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvDobjDrawHierarchyWithPlanarMatrixOverride",
+          "declaration_line": 876,
+          "lines": [
+            910,
+            945,
+            948
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvDobjExtractJointQuaternionsFromMatrices",
+          "declaration_line": 1511,
+          "lines": [
+            1525
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjFindObjectContainingWorldPoint",
-          "declaration_line": 984,
+          "declaration_line": 988,
           "lines": [
-            1012,
-            1013,
-            1014
+            1016,
+            1017,
+            1018
           ]
         },
         {
@@ -185829,17 +185108,17 @@
         {
           "kind": "function",
           "name": "uvDobjQueryHierarchySegment",
-          "declaration_line": 1446,
+          "declaration_line": 1450,
           "lines": [
-            1475
+            1479
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjQueryHierarchyWithScalarExtent",
-          "declaration_line": 1329,
+          "declaration_line": 1333,
           "lines": [
-            1361
+            1365
           ]
         },
         {
@@ -185855,9 +185134,9 @@
         {
           "kind": "function",
           "name": "uvDobjTestHierarchyPointBounds",
-          "declaration_line": 1389,
+          "declaration_line": 1393,
           "lines": [
-            1416
+            1420
           ]
         },
         {
@@ -185878,20 +185157,12 @@
       "lines": [
         11,
         619,
-        784,
-        1572,
-        1573,
-        1575
+        786,
+        1576,
+        1577,
+        1579
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 753,
-          "lines": [
-            784
-          ]
-        },
         {
           "kind": "function",
           "name": "uvDobjCreate",
@@ -185902,12 +185173,20 @@
         },
         {
           "kind": "function",
-          "name": "uvDobjReplaceLightColorRecord",
-          "declaration_line": 1564,
+          "name": "uvDobjDrawHierarchyUsingNodeMatrixIndices",
+          "declaration_line": 755,
           "lines": [
-            1572,
-            1573,
-            1575
+            786
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvDobjReplaceLightColorRecord",
+          "declaration_line": 1568,
+          "lines": [
+            1576,
+            1577,
+            1579
           ]
         },
         {
@@ -185929,38 +185208,38 @@
         23,
         420,
         621,
-        775,
-        776,
-        829,
-        898,
-        899
+        777,
+        778,
+        831,
+        902,
+        903
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 753,
-          "lines": [
-            775,
-            776,
-            829
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 872,
-          "lines": [
-            898,
-            899
-          ]
-        },
         {
           "kind": "function",
           "name": "uvDobjCreate",
           "declaration_line": 613,
           "lines": [
             621
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvDobjDrawHierarchyUsingNodeMatrixIndices",
+          "declaration_line": 755,
+          "lines": [
+            777,
+            778,
+            831
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvDobjDrawHierarchyWithPlanarMatrixOverride",
+          "declaration_line": 876,
+          "lines": [
+            902,
+            903
           ]
         },
         {
@@ -185990,37 +185269,37 @@
         24,
         424,
         622,
-        867,
-        868,
-        975,
-        976,
-        1570
+        869,
+        870,
+        979,
+        980,
+        1574
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 753,
-          "lines": [
-            867,
-            868
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 872,
-          "lines": [
-            975,
-            976
-          ]
-        },
         {
           "kind": "function",
           "name": "uvDobjCreate",
           "declaration_line": 613,
           "lines": [
             622
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvDobjDrawHierarchyUsingNodeMatrixIndices",
+          "declaration_line": 755,
+          "lines": [
+            869,
+            870
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvDobjDrawHierarchyWithPlanarMatrixOverride",
+          "declaration_line": 876,
+          "lines": [
+            979,
+            980
           ]
         },
         {
@@ -186034,9 +185313,9 @@
         {
           "kind": "function",
           "name": "uvDobjReplaceLightColorRecord",
-          "declaration_line": 1564,
+          "declaration_line": 1568,
           "lines": [
-            1570
+            1574
           ]
         },
         {
@@ -186057,25 +185336,25 @@
       "lines": [
         25,
         421,
-        776,
-        899,
-        1569
+        778,
+        903,
+        1573
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 753,
+          "name": "uvDobjDrawHierarchyUsingNodeMatrixIndices",
+          "declaration_line": 755,
           "lines": [
-            776
+            778
           ]
         },
         {
           "kind": "function",
-          "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 872,
+          "name": "uvDobjDrawHierarchyWithPlanarMatrixOverride",
+          "declaration_line": 876,
           "lines": [
-            899
+            903
           ]
         },
         {
@@ -186089,9 +185368,9 @@
         {
           "kind": "function",
           "name": "uvDobjReplaceLightColorRecord",
-          "declaration_line": 1564,
+          "declaration_line": 1568,
           "lines": [
-            1569
+            1573
           ]
         },
         {
@@ -186112,25 +185391,25 @@
       "lines": [
         26,
         425,
-        868,
-        976,
-        1568
+        870,
+        980,
+        1572
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 753,
+          "name": "uvDobjDrawHierarchyUsingNodeMatrixIndices",
+          "declaration_line": 755,
           "lines": [
-            868
+            870
           ]
         },
         {
           "kind": "function",
-          "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 872,
+          "name": "uvDobjDrawHierarchyWithPlanarMatrixOverride",
+          "declaration_line": 876,
           "lines": [
-            976
+            980
           ]
         },
         {
@@ -186144,9 +185423,9 @@
         {
           "kind": "function",
           "name": "uvDobjReplaceLightColorRecord",
-          "declaration_line": 1564,
+          "declaration_line": 1568,
           "lines": [
-            1568
+            1572
           ]
         },
         {
@@ -186176,16 +185455,16 @@
         690,
         693,
         706,
-        778,
-        786,
-        791,
-        840,
-        843,
-        948,
-        1007,
-        1064,
-        1141,
-        1271
+        780,
+        788,
+        793,
+        842,
+        845,
+        952,
+        1011,
+        1068,
+        1145,
+        1275
       ],
       "owners": [
         {
@@ -186199,38 +185478,18 @@
         },
         {
           "kind": "function",
-          "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 753,
-          "lines": [
-            778,
-            786,
-            791,
-            840,
-            843
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 872,
-          "lines": [
-            948
-          ]
-        },
-        {
-          "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1110,
+          "declaration_line": 1114,
           "lines": [
-            1141
+            1145
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1214,
+          "declaration_line": 1218,
           "lines": [
-            1271
+            1275
           ]
         },
         {
@@ -186244,17 +185503,37 @@
         {
           "kind": "function",
           "name": "uvDobjCollectCapsuleOverlaps",
-          "declaration_line": 1040,
+          "declaration_line": 1044,
           "lines": [
-            1064
+            1068
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvDobjDrawHierarchyUsingNodeMatrixIndices",
+          "declaration_line": 755,
+          "lines": [
+            780,
+            788,
+            793,
+            842,
+            845
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvDobjDrawHierarchyWithPlanarMatrixOverride",
+          "declaration_line": 876,
+          "lines": [
+            952
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjFindObjectContainingWorldPoint",
-          "declaration_line": 984,
+          "declaration_line": 988,
           "lines": [
-            1007
+            1011
           ]
         },
         {
@@ -186321,36 +185600,27 @@
         618,
         640,
         723,
-        821,
-        824,
-        1022,
-        1178,
-        1312
+        823,
+        826,
+        1026,
+        1182,
+        1316
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 753,
-          "lines": [
-            821,
-            824
-          ]
-        },
-        {
-          "kind": "function",
           "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1110,
+          "declaration_line": 1114,
           "lines": [
-            1178
+            1182
           ]
         },
         {
           "kind": "function",
           "name": "func_uvdobj_rom_00402870",
-          "declaration_line": 1214,
+          "declaration_line": 1218,
           "lines": [
-            1312
+            1316
           ]
         },
         {
@@ -186372,10 +185642,19 @@
         },
         {
           "kind": "function",
-          "name": "uvDobjFindObjectContainingWorldPoint",
-          "declaration_line": 984,
+          "name": "uvDobjDrawHierarchyUsingNodeMatrixIndices",
+          "declaration_line": 755,
           "lines": [
-            1022
+            823,
+            826
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvDobjFindObjectContainingWorldPoint",
+          "declaration_line": 988,
+          "lines": [
+            1026
           ]
         },
         {
@@ -186414,46 +185693,46 @@
         337,
         347,
         734,
-        782,
-        812,
-        857,
-        901,
-        932,
-        961,
-        1373,
-        1429,
-        1486,
-        1515,
-        1516
+        784,
+        814,
+        859,
+        905,
+        936,
+        965,
+        1377,
+        1433,
+        1490,
+        1519,
+        1520
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 753,
+          "name": "uvDobjDrawHierarchyUsingNodeMatrixIndices",
+          "declaration_line": 755,
           "lines": [
-            782,
-            812,
-            857
+            784,
+            814,
+            859
           ]
         },
         {
           "kind": "function",
-          "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 872,
+          "name": "uvDobjDrawHierarchyWithPlanarMatrixOverride",
+          "declaration_line": 876,
           "lines": [
-            901,
-            932,
-            961
+            905,
+            936,
+            965
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjExtractJointQuaternionsFromMatrices",
-          "declaration_line": 1507,
+          "declaration_line": 1511,
           "lines": [
-            1515,
-            1516
+            1519,
+            1520
           ]
         },
         {
@@ -186468,17 +185747,17 @@
         {
           "kind": "function",
           "name": "uvDobjQueryHierarchySegment",
-          "declaration_line": 1446,
+          "declaration_line": 1450,
           "lines": [
-            1486
+            1490
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjQueryHierarchyWithScalarExtent",
-          "declaration_line": 1329,
+          "declaration_line": 1333,
           "lines": [
-            1373
+            1377
           ]
         },
         {
@@ -186492,9 +185771,9 @@
         {
           "kind": "function",
           "name": "uvDobjTestHierarchyPointBounds",
-          "declaration_line": 1389,
+          "declaration_line": 1393,
           "lines": [
-            1429
+            1433
           ]
         },
         {
@@ -186517,46 +185796,46 @@
         400,
         620,
         723,
-        803,
-        810,
-        829,
-        834,
-        923,
-        930,
-        1354,
-        1360,
-        1409,
-        1415,
-        1468,
-        1474
+        805,
+        812,
+        831,
+        836,
+        927,
+        934,
+        1358,
+        1364,
+        1413,
+        1419,
+        1472,
+        1478
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 753,
-          "lines": [
-            803,
-            810,
-            829,
-            834
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 872,
-          "lines": [
-            923,
-            930
-          ]
-        },
         {
           "kind": "function",
           "name": "uvDobjCreate",
           "declaration_line": 613,
           "lines": [
             620
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvDobjDrawHierarchyUsingNodeMatrixIndices",
+          "declaration_line": 755,
+          "lines": [
+            805,
+            812,
+            831,
+            836
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvDobjDrawHierarchyWithPlanarMatrixOverride",
+          "declaration_line": 876,
+          "lines": [
+            927,
+            934
           ]
         },
         {
@@ -186570,19 +185849,19 @@
         {
           "kind": "function",
           "name": "uvDobjQueryHierarchySegment",
-          "declaration_line": 1446,
+          "declaration_line": 1450,
           "lines": [
-            1468,
-            1474
+            1472,
+            1478
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjQueryHierarchyWithScalarExtent",
-          "declaration_line": 1329,
+          "declaration_line": 1333,
           "lines": [
-            1354,
-            1360
+            1358,
+            1364
           ]
         },
         {
@@ -186596,10 +185875,10 @@
         {
           "kind": "function",
           "name": "uvDobjTestHierarchyPointBounds",
-          "declaration_line": 1389,
+          "declaration_line": 1393,
           "lines": [
-            1409,
-            1415
+            1413,
+            1419
           ]
         },
         {
@@ -186625,14 +185904,14 @@
         359,
         503,
         735,
-        798,
-        854,
-        896,
-        921,
-        957,
-        1345,
-        1404,
-        1463
+        800,
+        856,
+        900,
+        925,
+        961,
+        1349,
+        1408,
+        1467
       ],
       "owners": [
         {
@@ -186646,21 +185925,21 @@
         },
         {
           "kind": "function",
-          "name": "func_uvdobj_rom_004015C0",
-          "declaration_line": 753,
+          "name": "uvDobjDrawHierarchyUsingNodeMatrixIndices",
+          "declaration_line": 755,
           "lines": [
-            798,
-            854
+            800,
+            856
           ]
         },
         {
           "kind": "function",
-          "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 872,
+          "name": "uvDobjDrawHierarchyWithPlanarMatrixOverride",
+          "declaration_line": 876,
           "lines": [
-            896,
-            921,
-            957
+            900,
+            925,
+            961
           ]
         },
         {
@@ -186682,17 +185961,17 @@
         {
           "kind": "function",
           "name": "uvDobjQueryHierarchySegment",
-          "declaration_line": 1446,
+          "declaration_line": 1450,
           "lines": [
-            1463
+            1467
           ]
         },
         {
           "kind": "function",
           "name": "uvDobjQueryHierarchyWithScalarExtent",
-          "declaration_line": 1329,
+          "declaration_line": 1333,
           "lines": [
-            1345
+            1349
           ]
         },
         {
@@ -186706,9 +185985,9 @@
         {
           "kind": "function",
           "name": "uvDobjTestHierarchyPointBounds",
-          "declaration_line": 1389,
+          "declaration_line": 1393,
           "lines": [
-            1404
+            1408
           ]
         },
         {
@@ -186758,24 +186037,24 @@
         333,
         405,
         736,
-        897,
-        1192
+        901,
+        1196
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvdobj_rom_00401ABC",
-          "declaration_line": 872,
+          "name": "func_uvdobj_rom_00402420",
+          "declaration_line": 1114,
           "lines": [
-            897
+            1196
           ]
         },
         {
           "kind": "function",
-          "name": "func_uvdobj_rom_00402420",
-          "declaration_line": 1110,
+          "name": "uvDobjDrawHierarchyWithPlanarMatrixOverride",
+          "declaration_line": 876,
           "lines": [
-            1192
+            901
           ]
         },
         {
@@ -215713,15 +214992,15 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "UnkStruct_uvlight_rom_00401758",
       "lines": [
-        1566
+        1570
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDobjReplaceLightColorRecord",
-          "declaration_line": 1564,
+          "declaration_line": 1568,
           "lines": [
-            1566
+            1570
           ]
         }
       ]
@@ -221628,6 +220907,26 @@
       ]
     },
     {
+      "id": "Q-6ab6e99067d5",
+      "kind": "original_quirk",
+      "path": "src/modules/uvdobj_rom.c",
+      "symbol": "RE_ORIGINAL_QUIRK: MAX can call sqrt twice; preserve macro evaluation.",
+      "lines": [
+        916
+      ],
+      "evidence": "RE_ORIGINAL_QUIRK: MAX can call sqrt twice; preserve macro evaluation.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDobjDrawHierarchyWithPlanarMatrixOverride",
+          "declaration_line": 876,
+          "lines": [
+            916
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-42c60b8912d1",
       "kind": "original_quirk",
       "path": "src/modules/uvdobj_rom.c",
@@ -221693,16 +220992,36 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "RE_ORIGINAL_QUIRK: query capacity again and return without the final pop loop.",
       "lines": [
-        1350
+        1354
       ],
       "evidence": "RE_ORIGINAL_QUIRK: query capacity again and return without the final pop loop.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDobjQueryHierarchyWithScalarExtent",
-          "declaration_line": 1329,
+          "declaration_line": 1333,
           "lines": [
-            1350
+            1354
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-1c1d62915a74",
+      "kind": "original_quirk",
+      "path": "src/modules/uvdobj_rom.c",
+      "symbol": "RE_ORIGINAL_QUIRK: re-read stateTable after drawing; aliases may change the restore destination.",
+      "lines": [
+        849
+      ],
+      "evidence": "RE_ORIGINAL_QUIRK: re-read stateTable after drawing; aliases may change the restore destination.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDobjDrawHierarchyUsingNodeMatrixIndices",
+          "declaration_line": 755,
+          "lines": [
+            849
           ]
         }
       ]
@@ -221713,16 +221032,16 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "RE_ORIGINAL_QUIRK: retain the ignored s16 sum. RE_UNKNOWN: scalar units/FP domain need caller proof.",
       "lines": [
-        1367
+        1371
       ],
       "evidence": "RE_ORIGINAL_QUIRK: retain the ignored s16 sum. RE_UNKNOWN: scalar units/FP domain need caller proof.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDobjQueryHierarchyWithScalarExtent",
-          "declaration_line": 1329,
+          "declaration_line": 1333,
           "lines": [
-            1367
+            1371
           ]
         }
       ]
@@ -221753,16 +221072,36 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "RE_ORIGINAL_QUIRK: success returns without the final pop loop.",
       "lines": [
-        1423
+        1427
       ],
       "evidence": "RE_ORIGINAL_QUIRK: success returns without the final pop loop.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDobjTestHierarchyPointBounds",
-          "declaration_line": 1389,
+          "declaration_line": 1393,
           "lines": [
-            1423
+            1427
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-442f7d1cbe65",
+      "kind": "original_quirk",
+      "path": "src/modules/uvdobj_rom.c",
+      "symbol": "RE_ORIGINAL_QUIRK: visibility return after pre-callback skips post-callback.",
+      "lines": [
+        781
+      ],
+      "evidence": "RE_ORIGINAL_QUIRK: visibility return after pre-callback skips post-callback.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDobjDrawHierarchyUsingNodeMatrixIndices",
+          "declaration_line": 755,
+          "lines": [
+            781
           ]
         }
       ]
@@ -227561,6 +226900,82 @@
       ]
     },
     {
+      "id": "Q-918eb33e59b5",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvdobj_rom.c",
+      "symbol": "unusedCallbackA",
+      "lines": [
+        757
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDobjDrawHierarchyUsingNodeMatrixIndices",
+          "declaration_line": 755,
+          "lines": [
+            757
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-6e9e72725c9c",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvdobj_rom.c",
+      "symbol": "unusedCallbackB",
+      "lines": [
+        758
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDobjDrawHierarchyUsingNodeMatrixIndices",
+          "declaration_line": 755,
+          "lines": [
+            758
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-68a821072359",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvdobj_rom.c",
+      "symbol": "unusedFloatA",
+      "lines": [
+        883
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDobjDrawHierarchyWithPlanarMatrixOverride",
+          "declaration_line": 876,
+          "lines": [
+            883
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-0e87b7efa20f",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvdobj_rom.c",
+      "symbol": "unusedFloatB",
+      "lines": [
+        884
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDobjDrawHierarchyWithPlanarMatrixOverride",
+          "declaration_line": 876,
+          "lines": [
+            884
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-59a464092430",
       "kind": "unused_identifier",
       "path": "src/modules/uvdobj_rom.c",
@@ -227575,6 +226990,34 @@
           "declaration_line": 658,
           "lines": [
             658
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-a917a0cd63ec",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvdobj_rom.c",
+      "symbol": "unusedQueueWord",
+      "lines": [
+        755,
+        876
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDobjDrawHierarchyUsingNodeMatrixIndices",
+          "declaration_line": 755,
+          "lines": [
+            755
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvDobjDrawHierarchyWithPlanarMatrixOverride",
+          "declaration_line": 876,
+          "lines": [
+            876
           ]
         }
       ]

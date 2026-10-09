@@ -214,3 +214,5 @@ uvDobjReplaceLightColorRecord = 0x004038C4; // type:func
 uvDobjQueryHierarchyWithScalarExtent = 0x00402D68; // type:func
 uvDobjTestHierarchyPointBounds = 0x00403054; // type:func
 uvDobjQueryHierarchySegment = 0x004032DC; // type:func
+uvDobjDrawHierarchyUsingNodeMatrixIndices = 0x004015C0; // type:func
+uvDobjDrawHierarchyWithPlanarMatrixOverride = 0x00401ABC; // type:func
