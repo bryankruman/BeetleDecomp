@@ -34,8 +34,8 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **790** assembly references:
-**748** ordinary functions and **42** entrypoints, with **715,476** known instruction bytes
+matching C are preserved with `#line`. The current ledger has **789** assembly references:
+**747** ordinary functions and **42** entrypoints, with **715,124** known instruction bytes
 and no unknown sizes. The broader name audit still finds **290** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
@@ -3106,10 +3106,19 @@ Totals: 410 further recoveries after the 225 upstream ordinary imports, plus 138
 Frozen wave `2967-selection-localized-centered-bitmap-contracts-2967` and `accepted-selection-localized-centered-bitmap-contracts-2967` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 410 further readable functions
+## Historical accepted checkpoint — 410 further readable functions
 
 Five genuinely untreated existing FVEC scalar and predicate helpers gain vector/input roles and concise operation/RE_UNKNOWN comments. Preserve public names/types/macros, component load/evaluation order, (x product + y product) + z product, unsuffixed double-zero comparisons, f32-to-f64 promotion and short circuit, TRUE/FALSE results, and the live MATH slot04 reload after squared-length calls. Original caller storage/lifetimes, FP mode/traps and loader/kernel contracts remain explicitly unknown. Full296 original target/initializer/provider words and116 auxiliary annotations reviewed. All84+84 complete reference/candidate words, six complete ordered records and ten empty compiler logs agree; the two original internal J26 operands are separately resolved against actual ELF targets. Exact scoped binding/comment/full-source/member inverses preserve all308 executable logical rows, physical rows, directives and every other definition. Five older cleanups only, zero recoveries/aliases/types/ownership changes. Require normal extraction, original packed FVEC equality, fresh full original ROM, all1034 source pins, complete unchanged accepted-baseline remaining/data/address/per-source dictionaries and fresh uncertainty index before guarded landing.
 
 Totals: 410 further recoveries after the 225 upstream ordinary imports, plus 1389 existing C semantic cleanups. Current ledger: 790 assembly references = 748 ordinary + 42 entrypoints; 715,476 known remaining instruction bytes; zero unknown sizes; 290 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `2988-older-fvec-scalar-predicate-contracts-2988` and `accepted-older-fvec-scalar-predicate-contracts-2988` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 411 further readable functions
+
+Recover075B8 as aiEvaluateScaledCurveWithClampedAdjustment. All352bytes/88instructions match the original reference;12object records have identical sites/targets, with one pair enumeration permutation across the two excluded gUvGrphExports imports. All10 original serialized native records and existing order rows remain unchanged. Preserve grouped input/amplitude scaling, post-callback memory reads, ordered clamps and specific caller/alias/allocation/divisor-domain unknowns. Original DATA coefficients remain memory reads. Existing compiler prototype warnings elsewhere in AI are preserved in the full proof, not waived. Normal extraction, original packed AI/fresh ROM, all frozen manifest files, full remaining dictionary/data/address/per-source/index gates are mandatory.
+
+Totals: 411 further recoveries after the 225 upstream ordinary imports, plus 1389 existing C semantic cleanups. Current ledger: 789 assembly references = 747 ordinary + 42 entrypoints; 715,124 known remaining instruction bytes; zero unknown sizes; 290 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `2996-ai-scaled-curve-readable-recovery-2996` and `accepted-ai-scaled-curve-readable-recovery-2996` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

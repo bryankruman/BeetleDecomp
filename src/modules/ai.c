@@ -194,7 +194,21 @@ void func_ai_004069CC();
 void func_ai_00406D84();
 void func_ai_00407054();
 s32 aiCountPreviousLinks();
-void func_ai_004075B8();
+/* Consumed scalar offsets only; complete historical types and lifetimes remain RE_UNKNOWN. */
+typedef struct {
+    u8 unknown00[0x8C];
+    f32 scale8C;
+    u8 unknown90[0x14];
+    f32 adjustmentInputA4;
+} AiCurveScaleState;
+typedef struct { u8 unknown00[4]; f32 amplitudeScale, inputScale; } AiCurveScaleView;
+typedef struct { u8 unknown00[4]; f32 (*evaluate)(void *, f32); } AiCurveGraphExports;
+extern void *gUvGrphExports;
+extern AiCurveScaleView *D_ai_00407FE0, *D_ai_00407FE4;
+extern f32 D_ai_00407EB4, D_ai_00407E9C;
+extern u8 D_ai_004078E0[];
+f32 aiEvaluateScaledCurveWithClampedAdjustment(AiCurveScaleState *, f32);
+#line 198 "src/modules/ai.c"
 s32 aiGetActiveRecordValue9C(u16 index);
 extern s32 D_ai_00408E44;
 extern s32 D_ai_00407FFC;
@@ -846,7 +860,51 @@ s32 aiCountPreviousLinks(void *node) {
 }
 #line 288 "src/modules/ai.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_004075B8.s")
+/* Evaluate the original piecewise linear curve using an input normalized by
+ * the two shared input scales. Multiply its output by the state scalar and
+ * the two amplitude scales captured before the callback. Read the adjustment
+ * coefficient and state field again afterward; when positive, apply two
+ * ordered zero-to-one clamps and the original grouped multiplier.
+ * RE_ORIGINAL_QUIRK: there are no local pointer, divisor or finite-value checks.
+ * Ordered comparisons let NaNs pass through the clamps. Preserve the exact
+ * floating-point grouping and the post-callback reads.
+ * RE_UNKNOWN: physical scalar meanings/units, nonzero denominator domains,
+ * complete historical structures/curve capacity, pointer lifetimes and
+ * callback mutation/alias contracts need original callers and writers.
+ * The original DATA curve begins with count20; that observed value establishes
+ * neither a complete historical allocation nor a runtime invariant. Original
+ * DATA coefficients currently hold1.0 and30.0 but remain memory reads.
+ * Full instruction, ordered metadata, packed-module and ROM proof is required. */
+#line 289 "src/modules/ai.c"
+f32 aiEvaluateScaledCurveWithClampedAdjustment(AiCurveScaleState *state, f32 input) {
+    f32 factor;
+    f32 amplitude;
+    f32 result;
+    f32 adjustment;
+
+    amplitude = ((state->scale8C * D_ai_00407EB4) * D_ai_00407FE0->amplitudeScale) *
+        D_ai_00407FE4->amplitudeScale;
+    input /= (D_ai_00407EB4 * D_ai_00407FE0->inputScale) * D_ai_00407FE4->inputScale;
+    result = ((AiCurveGraphExports *)gUvGrphExports)->evaluate(D_ai_004078E0, input) * amplitude;
+    adjustment = D_ai_00407E9C;
+    if (0.0f < adjustment) {
+        factor = (state->adjustmentInputA4 - 20.0f) / 100.0f;
+        if (factor < 0.0f) {
+            factor = 0.0f;
+        } else if (1.0f < factor) {
+            factor = 1.0f;
+        }
+        factor *= adjustment / 30.0f;
+        if (factor < 0.0f) {
+            factor = 0.0f;
+        } else if (1.0f < factor) {
+            factor = 1.0f;
+        }
+        result *= 1.0f + factor * 3.0f;
+    }
+    return result;
+}
+#line 290 "src/modules/ai.c"
 
 #line 291 "src/modules/ai.c"
 /* Store the caller word without boolean normalization. Original func_ai_00402028 uses nonzero to bypass both difference bounds and choose adjustment 9 instead of 4.5. RE_UNKNOWN: shared-word ownership, lifetime and other consumers require caller/export evidence. */

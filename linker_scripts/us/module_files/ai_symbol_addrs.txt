@@ -341,3 +341,4 @@ aiUpdateExplosionEffectAndRestoreDelay = 0x004030BC; // type:func
 aiSnapshotAndUpdateDecisionState = 0x00403288; // type:func
 aiSnapPositionToTargetWhenRequired = 0x004044F0; // type:func
 aiApplyCarAnimationStateFields = 0x00405754; // type:func
+aiEvaluateScaledCurveWithClampedAdjustment = 0x004075B8; // type:func

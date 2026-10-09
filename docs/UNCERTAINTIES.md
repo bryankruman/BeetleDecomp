@@ -17,14 +17,14 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 997 |
-| Preserved RE_ORIGINAL_QUIRK notes | 268 |
+| Explicit RE_UNKNOWN notes | 999 |
+| Preserved RE_ORIGINAL_QUIRK notes | 269 |
 | Older comments with uncertainty language | 91 |
 | Documented original-behavior audits | 30 |
-| Assembly-backed functions or data | 792 |
-| Address-based function identifiers | 924 |
-| Address-based global identifiers | 1409 |
-| Offset-based fields or neutral typed fields | 1593 |
+| Assembly-backed functions or data | 791 |
+| Address-based function identifiers | 923 |
+| Address-based global identifiers | 1414 |
+| Offset-based fields or neutral typed fields | 1595 |
 | Layout padding to preserve | 274 |
 | Unresolved type names | 282 |
 | Explicit unused ABI, storage or local identifiers | 130 |
@@ -1151,43 +1151,43 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_ai_0040019C` | function `func_ai_0040019C` | [141](../src/modules/ai.c#L141) |
 | address_function | `func_ai_0040089C` | function `func_ai_0040089C` | [142](../src/modules/ai.c#L142) |
 | address_function | `func_ai_00400A24` | function `func_ai_00400A24` | [143](../src/modules/ai.c#L143) |
-| address_function | `func_ai_00400E38` | function `func_ai_00400E38` | [217](../src/modules/ai.c#L217) |
+| address_function | `func_ai_00400E38` | function `func_ai_00400E38` | [231](../src/modules/ai.c#L231) |
 | address_function | `func_ai_00400F18` | function `func_ai_00400F18` | [145](../src/modules/ai.c#L145) |
 | address_function | `func_ai_00400FF0` | function `func_ai_00400FF0` | [146](../src/modules/ai.c#L146) |
-| address_function | `func_ai_0040179C` | function `func_ai_0040179C` | [248](../src/modules/ai.c#L248) |
+| address_function | `func_ai_0040179C` | function `func_ai_0040179C` | [262](../src/modules/ai.c#L262) |
 | address_function | `func_ai_004017A4` | function `func_ai_004017A4` | [147](../src/modules/ai.c#L147) |
-| address_function | `func_ai_004019EC` | function `aiSnapshotAndUpdateDecisionState`, function `func_ai_004019EC` | [148](../src/modules/ai.c#L148), [442](../src/modules/ai.c#L442) |
+| address_function | `func_ai_004019EC` | function `aiSnapshotAndUpdateDecisionState`, function `func_ai_004019EC` | [148](../src/modules/ai.c#L148), [456](../src/modules/ai.c#L456) |
 | address_function | `func_ai_00401C84` | function `func_ai_00401C84` | [149](../src/modules/ai.c#L149) |
 | address_function | `func_ai_00401EF0` | function `func_ai_00401EF0` | [150](../src/modules/ai.c#L150) |
 | address_function | `func_ai_00402028` | function `func_ai_00402028` | [151](../src/modules/ai.c#L151) |
-| address_function | `func_ai_004021D8` | function `func_ai_004021D8` | [281](../src/modules/ai.c#L281) |
+| address_function | `func_ai_004021D8` | function `func_ai_004021D8` | [295](../src/modules/ai.c#L295) |
 | address_function | `func_ai_004021E0` | function `func_ai_004021E0` | [152](../src/modules/ai.c#L152) |
 | address_function | `func_ai_004022A4` | function `func_ai_004022A4` | [153](../src/modules/ai.c#L153) |
-| address_function | `func_ai_00402858` | function `aiSnapshotAndUpdateDecisionState`, function `func_ai_00402858` | [154](../src/modules/ai.c#L154), [438](../src/modules/ai.c#L438) |
-| address_function | `func_ai_00402974` | function `aiSnapshotAndUpdateDecisionState`, function `func_ai_00402974` | [155](../src/modules/ai.c#L155), [441](../src/modules/ai.c#L441) |
-| address_function | `func_ai_00402AE0` | function `aiSnapshotAndUpdateDecisionState`, function `func_ai_00402AE0` | [157](../src/modules/ai.c#L157), [416](../src/modules/ai.c#L416) |
+| address_function | `func_ai_00402858` | function `aiSnapshotAndUpdateDecisionState`, function `func_ai_00402858` | [154](../src/modules/ai.c#L154), [452](../src/modules/ai.c#L452) |
+| address_function | `func_ai_00402974` | function `aiSnapshotAndUpdateDecisionState`, function `func_ai_00402974` | [155](../src/modules/ai.c#L155), [455](../src/modules/ai.c#L455) |
+| address_function | `func_ai_00402AE0` | function `aiSnapshotAndUpdateDecisionState`, function `func_ai_00402AE0` | [157](../src/modules/ai.c#L157), [430](../src/modules/ai.c#L430) |
 | address_function | `func_ai_00402C2C` | function `func_ai_00402C2C` | [158](../src/modules/ai.c#L158) |
 | address_function | `func_ai_00402E4C` | function `func_ai_00402E4C` | [159](../src/modules/ai.c#L159) |
 | address_function | `func_ai_00403448` | function `func_ai_00403448` | [162](../src/modules/ai.c#L162) |
 | address_function | `func_ai_004037B4` | function `func_ai_004037B4` | [163](../src/modules/ai.c#L163) |
 | address_function | `func_ai_00403994` | function `func_ai_00403994` | [164](../src/modules/ai.c#L164) |
 | address_function | `func_ai_00403C80` | function `func_ai_00403C80` | [165](../src/modules/ai.c#L165) |
-| address_function | `func_ai_00403F44` | function `func_ai_00403F44` | [462](../src/modules/ai.c#L462) |
-| address_function | `func_ai_00403F4C` | function `func_ai_00403F4C`, function `func_ai_00403F4C` | [166](../src/modules/ai.c#L166), [471](../src/modules/ai.c#L471) |
+| address_function | `func_ai_00403F44` | function `func_ai_00403F44` | [476](../src/modules/ai.c#L476) |
+| address_function | `func_ai_00403F4C` | function `func_ai_00403F4C`, function `func_ai_00403F4C` | [166](../src/modules/ai.c#L166), [485](../src/modules/ai.c#L485) |
 | address_function | `func_ai_00403F54` | function `func_ai_00403F54` | [167](../src/modules/ai.c#L167) |
 | address_function | `func_ai_00404064` | function `func_ai_00404064` | [168](../src/modules/ai.c#L168) |
 | address_function | `func_ai_00404194` | function `func_ai_00404194` | [170](../src/modules/ai.c#L170) |
 | address_function | `func_ai_004042A4` | function `func_ai_004042A4` | [172](../src/modules/ai.c#L172) |
-| address_function | `func_ai_0040462C` | function `aiTestBoundsContainmentEitherOrder`, function `func_ai_0040462C` | [174](../src/modules/ai.c#L174), [546](../src/modules/ai.c#L546) |
-| address_function | `func_ai_00404904` | function `func_ai_00404904` | [558](../src/modules/ai.c#L558) |
+| address_function | `func_ai_0040462C` | function `aiTestBoundsContainmentEitherOrder`, function `func_ai_0040462C` | [174](../src/modules/ai.c#L174), [560](../src/modules/ai.c#L560) |
+| address_function | `func_ai_00404904` | function `func_ai_00404904` | [572](../src/modules/ai.c#L572) |
 | address_function | `func_ai_0040490C` | function `func_ai_0040490C` | [176](../src/modules/ai.c#L176) |
-| address_function | `func_ai_00404DE8` | function `func_ai_00404DE8` | [569](../src/modules/ai.c#L569) |
+| address_function | `func_ai_00404DE8` | function `func_ai_00404DE8` | [583](../src/modules/ai.c#L583) |
 | address_function | `func_ai_00404E10` | function `func_ai_00404E10` | [177](../src/modules/ai.c#L177) |
 | address_function | `func_ai_004051A4` | function `func_ai_004051A4` | [178](../src/modules/ai.c#L178) |
 | address_function | `func_ai_00405324` | function `func_ai_00405324` | [179](../src/modules/ai.c#L179) |
 | address_function | `func_ai_004053A8` | function `func_ai_004053A8` | [180](../src/modules/ai.c#L180) |
 | address_function | `func_ai_004057C0` | function `func_ai_004057C0` | [181](../src/modules/ai.c#L181) |
-| address_function | `func_ai_00405B4C` | function `aiAllocateLinkedRecord`, function `func_ai_00405B4C` | [183](../src/modules/ai.c#L183), [646](../src/modules/ai.c#L646) |
+| address_function | `func_ai_00405B4C` | function `aiAllocateLinkedRecord`, function `func_ai_00405B4C` | [183](../src/modules/ai.c#L183), [660](../src/modules/ai.c#L660) |
 | address_function | `func_ai_00405D50` | function `func_ai_00405D50` | [186](../src/modules/ai.c#L186) |
 | address_function | `func_ai_00405EF4` | function `func_ai_00405EF4` | [188](../src/modules/ai.c#L188) |
 | address_function | `func_ai_0040617C` | function `func_ai_0040617C` | [190](../src/modules/ai.c#L190) |
@@ -1196,103 +1196,108 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_ai_004069CC` | function `func_ai_004069CC` | [193](../src/modules/ai.c#L193) |
 | address_function | `func_ai_00406D84` | function `func_ai_00406D84` | [194](../src/modules/ai.c#L194) |
 | address_function | `func_ai_00407054` | function `func_ai_00407054` | [195](../src/modules/ai.c#L195) |
-| address_function | `func_ai_004075B8` | function `func_ai_004075B8` | [197](../src/modules/ai.c#L197) |
-| address_function | `func_ai_00407718` | function `func_ai_00407718` | [853](../src/modules/ai.c#L853) |
-| address_global | `D_80025D70` | function `aiSnapshotAndUpdateDecisionState`, function `aiUpdateExplosionEffectAndRestoreDelay`, global `D_80025D70`, global `D_80025D70` | [78](../src/modules/ai.c#L78), [116](../src/modules/ai.c#L116), [387](../src/modules/ai.c#L387), [420](../src/modules/ai.c#L420) |
-| address_global | `D_80025DDC` | function `aiSnapshotAndUpdateDecisionState`, global `D_80025DDC` | [79](../src/modules/ai.c#L79), [426](../src/modules/ai.c#L426), [427](../src/modules/ai.c#L427) |
-| address_global | `D_ai_00407858` | function `aiSnapPositionToTargetWhenRequired` | [41](../src/modules/ai.c#L41), [529](../src/modules/ai.c#L529) |
-| address_global | `D_ai_00407E8C` | function `aiSnapPositionToTargetWhenRequired` | [41](../src/modules/ai.c#L41), [529](../src/modules/ai.c#L529) |
-| address_global | `D_ai_00407EA0` | function `aiCopySelectedRecordScalarPair`, global `D_ai_00407EA0` | [134](../src/modules/ai.c#L134), [486](../src/modules/ai.c#L486) |
-| address_global | `D_ai_00407FF4` | function `aiSelectFirstUnmarkedPreviousRecord`, function `aiSnapPositionToTargetWhenRequired`, function `aiUpdateTargetManhattanDistance`, global `D_ai_00407FF4`, global `D_ai_00407FF4` | [40](../src/modules/ai.c#L40), [136](../src/modules/ai.c#L136), [307](../src/modules/ai.c#L307), [308](../src/modules/ai.c#L308), [524](../src/modules/ai.c#L524), [526](../src/modules/ai.c#L526), [530](../src/modules/ai.c#L530), [531](../src/modules/ai.c#L531) (+2 in JSON) |
-| address_global | `D_ai_00407FFC` | function `aiClearRecordShortWhenEnabled`, function `aiSetRecordShortClearEnabled`, global `D_ai_00407FFC` | [200](../src/modules/ai.c#L200), [577](../src/modules/ai.c#L577), [829](../src/modules/ai.c#L829) |
-| address_global | `D_ai_00408000` | function `func_ai_00407718`, global `D_ai_00408000` | [201](../src/modules/ai.c#L201), [854](../src/modules/ai.c#L854) |
-| address_global | `D_ai_00408008` | function `aiFindActiveRecordByKey`, function `aiGetActiveRecordValue9C`, global `D_ai_00408008` | [139](../src/modules/ai.c#L139), [712](../src/modules/ai.c#L712), [864](../src/modules/ai.c#L864) |
-| address_global | `D_ai_0040810C` | function `aiCopySelectedRecordScalarPair`, global `D_ai_0040810C` | [133](../src/modules/ai.c#L133), [488](../src/modules/ai.c#L488) |
-| address_global | `D_ai_00408D60` | function `aiAllocateLinkedRecord`, global `D_ai_00408D60` | [125](../src/modules/ai.c#L125), [639](../src/modules/ai.c#L639) |
-| address_global | `D_ai_00408E40` | function `aiInsertRecordBetweenNeighbors`, function `aiUnlinkRecord`, global `D_ai_00408E40` | [135](../src/modules/ai.c#L135), [667](../src/modules/ai.c#L667), [670](../src/modules/ai.c#L670), [685](../src/modules/ai.c#L685) |
-| address_global | `D_ai_00408E44` | function `aiGetEligibleListRank`, function `aiGetLinkedRecordTailAddress`, function `aiInsertRecordBetweenNeighbors`, function `aiSelectFirstUnmarkedPreviousRecord`, function `aiUnlinkRecord`, global `D_ai_00408E44` | [199](../src/modules/ai.c#L199), [671](../src/modules/ai.c#L671), [690](../src/modules/ai.c#L690), [726](../src/modules/ai.c#L726), [767](../src/modules/ai.c#L767), [821](../src/modules/ai.c#L821) |
-| address_global | `D_ai_00408E48` | function `aiAllocateLinkedRecord`, function `aiCountPreviousLinks`, global `D_ai_00408E48` | [137](../src/modules/ai.c#L137), [638](../src/modules/ai.c#L638), [639](../src/modules/ai.c#L639), [640](../src/modules/ai.c#L640), [838](../src/modules/ai.c#L838), [841](../src/modules/ai.c#L841), [845](../src/modules/ai.c#L845) |
-| address_global | `D_ai_00408E4C` | function `aiFindActiveRecordByKey`, function `aiGetActiveRecordValue9C`, global `D_ai_00408E4C` | [138](../src/modules/ai.c#L138), [711](../src/modules/ai.c#L711), [863](../src/modules/ai.c#L863) |
-| address_global | `D_ai_00408E58` | function `aiApplyCarAnimationStateFields`, function `aiUpdateExplosionEffectAndRestoreDelay`, global `D_ai_00408E58`, global `D_ai_00408E58` | [119](../src/modules/ai.c#L119), [368](../src/modules/ai.c#L368), [375](../src/modules/ai.c#L375), [600](../src/modules/ai.c#L600), [613](../src/modules/ai.c#L613), [616](../src/modules/ai.c#L616) |
-| address_global | `D_ai_00408EA0` | function `aiUpdateExplosionEffectAndRestoreDelay`, global `D_ai_00408EA0` | [115](../src/modules/ai.c#L115), [366](../src/modules/ai.c#L366), [372](../src/modules/ai.c#L372) |
-| assembly | `__entrypoint_func_ai_400bbc` | — | [210](../src/modules/ai.c#L210) |
-| assembly | `func_ai_00400000` | — | [202](../src/modules/ai.c#L202) |
-| assembly | `func_ai_0040019C` | — | [204](../src/modules/ai.c#L204) |
-| assembly | `func_ai_0040089C` | — | [206](../src/modules/ai.c#L206) |
-| assembly | `func_ai_00400A24` | — | [208](../src/modules/ai.c#L208) |
-| assembly | `func_ai_00400F18` | — | [239](../src/modules/ai.c#L239) |
-| assembly | `func_ai_00400FF0` | — | [241](../src/modules/ai.c#L241) |
-| assembly | `func_ai_004017A4` | — | [266](../src/modules/ai.c#L266) |
-| assembly | `func_ai_004019EC` | — | [268](../src/modules/ai.c#L268) |
-| assembly | `func_ai_00401C84` | — | [270](../src/modules/ai.c#L270) |
-| assembly | `func_ai_00401EF0` | — | [272](../src/modules/ai.c#L272) |
-| assembly | `func_ai_00402028` | — | [274](../src/modules/ai.c#L274) |
-| assembly | `func_ai_004021E0` | — | [285](../src/modules/ai.c#L285) |
-| assembly | `func_ai_004022A4` | — | [287](../src/modules/ai.c#L287) |
-| assembly | `func_ai_00402858` | — | [289](../src/modules/ai.c#L289) |
-| assembly | `func_ai_00402974` | — | [291](../src/modules/ai.c#L291) |
-| assembly | `func_ai_00402AE0` | — | [323](../src/modules/ai.c#L323) |
-| assembly | `func_ai_00402C2C` | — | [334](../src/modules/ai.c#L334) |
-| assembly | `func_ai_00402E4C` | — | [350](../src/modules/ai.c#L350) |
-| assembly | `func_ai_00403448` | — | [449](../src/modules/ai.c#L449) |
-| assembly | `func_ai_004037B4` | — | [451](../src/modules/ai.c#L451) |
-| assembly | `func_ai_00403994` | — | [453](../src/modules/ai.c#L453) |
-| assembly | `func_ai_00403C80` | — | [455](../src/modules/ai.c#L455) |
-| assembly | `func_ai_00403F54` | — | [476](../src/modules/ai.c#L476) |
-| assembly | `func_ai_00404064` | — | [478](../src/modules/ai.c#L478) |
-| assembly | `func_ai_00404194` | — | [494](../src/modules/ai.c#L494) |
-| assembly | `func_ai_004042A4` | — | [506](../src/modules/ai.c#L506) |
-| assembly | `func_ai_0040462C` | — | [540](../src/modules/ai.c#L540) |
-| assembly | `func_ai_0040490C` | — | [562](../src/modules/ai.c#L562) |
-| assembly | `func_ai_00404E10` | — | [583](../src/modules/ai.c#L583) |
-| assembly | `func_ai_004051A4` | — | [594](../src/modules/ai.c#L594) |
-| assembly | `func_ai_00405324` | — | [596](../src/modules/ai.c#L596) |
-| assembly | `func_ai_004053A8` | — | [598](../src/modules/ai.c#L598) |
-| assembly | `func_ai_004057C0` | — | [630](../src/modules/ai.c#L630) |
-| assembly | `func_ai_00405B4C` | — | [660](../src/modules/ai.c#L660) |
-| assembly | `func_ai_00405D50` | — | [697](../src/modules/ai.c#L697) |
-| assembly | `func_ai_00405EF4` | — | [719](../src/modules/ai.c#L719) |
-| assembly | `func_ai_0040617C` | — | [755](../src/modules/ai.c#L755) |
-| assembly | `func_ai_00406400` | — | [787](../src/modules/ai.c#L787) |
-| assembly | `func_ai_004068A8` | — | [798](../src/modules/ai.c#L798) |
-| assembly | `func_ai_004069CC` | — | [800](../src/modules/ai.c#L800) |
-| assembly | `func_ai_00406D84` | — | [802](../src/modules/ai.c#L802) |
-| assembly | `func_ai_00407054` | — | [815](../src/modules/ai.c#L815) |
-| assembly | `func_ai_004075B8` | — | [849](../src/modules/ai.c#L849) |
-| decompiler_local | `arg0` | function `aiCopySelectedRecordScalarPair`, function `func_ai_00403F4C`, function `func_ai_00403F4C` | [166](../src/modules/ai.c#L166), [169](../src/modules/ai.c#L169), [471](../src/modules/ai.c#L471) |
+| address_function | `func_ai_00407718` | function `func_ai_00407718` | [911](../src/modules/ai.c#L911) |
+| address_global | `D_80025D70` | function `aiSnapshotAndUpdateDecisionState`, function `aiUpdateExplosionEffectAndRestoreDelay`, global `D_80025D70`, global `D_80025D70` | [78](../src/modules/ai.c#L78), [116](../src/modules/ai.c#L116), [401](../src/modules/ai.c#L401), [434](../src/modules/ai.c#L434) |
+| address_global | `D_80025DDC` | function `aiSnapshotAndUpdateDecisionState`, global `D_80025DDC` | [79](../src/modules/ai.c#L79), [440](../src/modules/ai.c#L440), [441](../src/modules/ai.c#L441) |
+| address_global | `D_ai_00407858` | function `aiSnapPositionToTargetWhenRequired` | [41](../src/modules/ai.c#L41), [543](../src/modules/ai.c#L543) |
+| address_global | `D_ai_004078E0` | function `aiEvaluateScaledCurveWithClampedAdjustment`, global `D_ai_004078E0` | [209](../src/modules/ai.c#L209), [888](../src/modules/ai.c#L888) |
+| address_global | `D_ai_00407E8C` | function `aiSnapPositionToTargetWhenRequired` | [41](../src/modules/ai.c#L41), [543](../src/modules/ai.c#L543) |
+| address_global | `D_ai_00407E9C` | function `aiEvaluateScaledCurveWithClampedAdjustment` | [208](../src/modules/ai.c#L208), [889](../src/modules/ai.c#L889) |
+| address_global | `D_ai_00407EA0` | function `aiCopySelectedRecordScalarPair`, global `D_ai_00407EA0` | [134](../src/modules/ai.c#L134), [500](../src/modules/ai.c#L500) |
+| address_global | `D_ai_00407EB4` | function `aiEvaluateScaledCurveWithClampedAdjustment` | [208](../src/modules/ai.c#L208), [885](../src/modules/ai.c#L885), [887](../src/modules/ai.c#L887) |
+| address_global | `D_ai_00407FE0` | function `aiEvaluateScaledCurveWithClampedAdjustment` | [207](../src/modules/ai.c#L207), [885](../src/modules/ai.c#L885), [887](../src/modules/ai.c#L887) |
+| address_global | `D_ai_00407FE4` | function `aiEvaluateScaledCurveWithClampedAdjustment` | [207](../src/modules/ai.c#L207), [886](../src/modules/ai.c#L886), [887](../src/modules/ai.c#L887) |
+| address_global | `D_ai_00407FF4` | function `aiSelectFirstUnmarkedPreviousRecord`, function `aiSnapPositionToTargetWhenRequired`, function `aiUpdateTargetManhattanDistance`, global `D_ai_00407FF4`, global `D_ai_00407FF4` | [40](../src/modules/ai.c#L40), [136](../src/modules/ai.c#L136), [321](../src/modules/ai.c#L321), [322](../src/modules/ai.c#L322), [538](../src/modules/ai.c#L538), [540](../src/modules/ai.c#L540), [544](../src/modules/ai.c#L544), [545](../src/modules/ai.c#L545) (+2 in JSON) |
+| address_global | `D_ai_00407FFC` | function `aiClearRecordShortWhenEnabled`, function `aiSetRecordShortClearEnabled`, global `D_ai_00407FFC` | [214](../src/modules/ai.c#L214), [591](../src/modules/ai.c#L591), [843](../src/modules/ai.c#L843) |
+| address_global | `D_ai_00408000` | function `func_ai_00407718`, global `D_ai_00408000` | [215](../src/modules/ai.c#L215), [912](../src/modules/ai.c#L912) |
+| address_global | `D_ai_00408008` | function `aiFindActiveRecordByKey`, function `aiGetActiveRecordValue9C`, global `D_ai_00408008` | [139](../src/modules/ai.c#L139), [726](../src/modules/ai.c#L726), [922](../src/modules/ai.c#L922) |
+| address_global | `D_ai_0040810C` | function `aiCopySelectedRecordScalarPair`, global `D_ai_0040810C` | [133](../src/modules/ai.c#L133), [502](../src/modules/ai.c#L502) |
+| address_global | `D_ai_00408D60` | function `aiAllocateLinkedRecord`, global `D_ai_00408D60` | [125](../src/modules/ai.c#L125), [653](../src/modules/ai.c#L653) |
+| address_global | `D_ai_00408E40` | function `aiInsertRecordBetweenNeighbors`, function `aiUnlinkRecord`, global `D_ai_00408E40` | [135](../src/modules/ai.c#L135), [681](../src/modules/ai.c#L681), [684](../src/modules/ai.c#L684), [699](../src/modules/ai.c#L699) |
+| address_global | `D_ai_00408E44` | function `aiGetEligibleListRank`, function `aiGetLinkedRecordTailAddress`, function `aiInsertRecordBetweenNeighbors`, function `aiSelectFirstUnmarkedPreviousRecord`, function `aiUnlinkRecord`, global `D_ai_00408E44` | [213](../src/modules/ai.c#L213), [685](../src/modules/ai.c#L685), [704](../src/modules/ai.c#L704), [740](../src/modules/ai.c#L740), [781](../src/modules/ai.c#L781), [835](../src/modules/ai.c#L835) |
+| address_global | `D_ai_00408E48` | function `aiAllocateLinkedRecord`, function `aiCountPreviousLinks`, global `D_ai_00408E48` | [137](../src/modules/ai.c#L137), [652](../src/modules/ai.c#L652), [653](../src/modules/ai.c#L653), [654](../src/modules/ai.c#L654), [852](../src/modules/ai.c#L852), [855](../src/modules/ai.c#L855), [859](../src/modules/ai.c#L859) |
+| address_global | `D_ai_00408E4C` | function `aiFindActiveRecordByKey`, function `aiGetActiveRecordValue9C`, global `D_ai_00408E4C` | [138](../src/modules/ai.c#L138), [725](../src/modules/ai.c#L725), [921](../src/modules/ai.c#L921) |
+| address_global | `D_ai_00408E58` | function `aiApplyCarAnimationStateFields`, function `aiUpdateExplosionEffectAndRestoreDelay`, global `D_ai_00408E58`, global `D_ai_00408E58` | [119](../src/modules/ai.c#L119), [382](../src/modules/ai.c#L382), [389](../src/modules/ai.c#L389), [614](../src/modules/ai.c#L614), [627](../src/modules/ai.c#L627), [630](../src/modules/ai.c#L630) |
+| address_global | `D_ai_00408EA0` | function `aiUpdateExplosionEffectAndRestoreDelay`, global `D_ai_00408EA0` | [115](../src/modules/ai.c#L115), [380](../src/modules/ai.c#L380), [386](../src/modules/ai.c#L386) |
+| assembly | `__entrypoint_func_ai_400bbc` | — | [224](../src/modules/ai.c#L224) |
+| assembly | `func_ai_00400000` | — | [216](../src/modules/ai.c#L216) |
+| assembly | `func_ai_0040019C` | — | [218](../src/modules/ai.c#L218) |
+| assembly | `func_ai_0040089C` | — | [220](../src/modules/ai.c#L220) |
+| assembly | `func_ai_00400A24` | — | [222](../src/modules/ai.c#L222) |
+| assembly | `func_ai_00400F18` | — | [253](../src/modules/ai.c#L253) |
+| assembly | `func_ai_00400FF0` | — | [255](../src/modules/ai.c#L255) |
+| assembly | `func_ai_004017A4` | — | [280](../src/modules/ai.c#L280) |
+| assembly | `func_ai_004019EC` | — | [282](../src/modules/ai.c#L282) |
+| assembly | `func_ai_00401C84` | — | [284](../src/modules/ai.c#L284) |
+| assembly | `func_ai_00401EF0` | — | [286](../src/modules/ai.c#L286) |
+| assembly | `func_ai_00402028` | — | [288](../src/modules/ai.c#L288) |
+| assembly | `func_ai_004021E0` | — | [299](../src/modules/ai.c#L299) |
+| assembly | `func_ai_004022A4` | — | [301](../src/modules/ai.c#L301) |
+| assembly | `func_ai_00402858` | — | [303](../src/modules/ai.c#L303) |
+| assembly | `func_ai_00402974` | — | [305](../src/modules/ai.c#L305) |
+| assembly | `func_ai_00402AE0` | — | [337](../src/modules/ai.c#L337) |
+| assembly | `func_ai_00402C2C` | — | [348](../src/modules/ai.c#L348) |
+| assembly | `func_ai_00402E4C` | — | [364](../src/modules/ai.c#L364) |
+| assembly | `func_ai_00403448` | — | [463](../src/modules/ai.c#L463) |
+| assembly | `func_ai_004037B4` | — | [465](../src/modules/ai.c#L465) |
+| assembly | `func_ai_00403994` | — | [467](../src/modules/ai.c#L467) |
+| assembly | `func_ai_00403C80` | — | [469](../src/modules/ai.c#L469) |
+| assembly | `func_ai_00403F54` | — | [490](../src/modules/ai.c#L490) |
+| assembly | `func_ai_00404064` | — | [492](../src/modules/ai.c#L492) |
+| assembly | `func_ai_00404194` | — | [508](../src/modules/ai.c#L508) |
+| assembly | `func_ai_004042A4` | — | [520](../src/modules/ai.c#L520) |
+| assembly | `func_ai_0040462C` | — | [554](../src/modules/ai.c#L554) |
+| assembly | `func_ai_0040490C` | — | [576](../src/modules/ai.c#L576) |
+| assembly | `func_ai_00404E10` | — | [597](../src/modules/ai.c#L597) |
+| assembly | `func_ai_004051A4` | — | [608](../src/modules/ai.c#L608) |
+| assembly | `func_ai_00405324` | — | [610](../src/modules/ai.c#L610) |
+| assembly | `func_ai_004053A8` | — | [612](../src/modules/ai.c#L612) |
+| assembly | `func_ai_004057C0` | — | [644](../src/modules/ai.c#L644) |
+| assembly | `func_ai_00405B4C` | — | [674](../src/modules/ai.c#L674) |
+| assembly | `func_ai_00405D50` | — | [711](../src/modules/ai.c#L711) |
+| assembly | `func_ai_00405EF4` | — | [733](../src/modules/ai.c#L733) |
+| assembly | `func_ai_0040617C` | — | [769](../src/modules/ai.c#L769) |
+| assembly | `func_ai_00406400` | — | [801](../src/modules/ai.c#L801) |
+| assembly | `func_ai_004068A8` | — | [812](../src/modules/ai.c#L812) |
+| assembly | `func_ai_004069CC` | — | [814](../src/modules/ai.c#L814) |
+| assembly | `func_ai_00406D84` | — | [816](../src/modules/ai.c#L816) |
+| assembly | `func_ai_00407054` | — | [829](../src/modules/ai.c#L829) |
+| decompiler_local | `arg0` | function `aiCopySelectedRecordScalarPair`, function `func_ai_00403F4C`, function `func_ai_00403F4C` | [166](../src/modules/ai.c#L166), [169](../src/modules/ai.c#L169), [485](../src/modules/ai.c#L485) |
 | decompiler_local | `arg1` | function `aiCopySelectedRecordScalarPair` | [169](../src/modules/ai.c#L169) |
-| explicit_unknown | `A positive phase creates the piece effect and car-explosion sound, clears * object flag mask 0x01, then starts the original two-unit restore countdown. * Phase -1 advances that ...` | function `aiUpdateExplosionEffectAndRestoreDelay` | [353](../src/modules/ai.c#L353) |
+| explicit_unknown | `A positive phase creates the piece effect and car-explosion sound, clears * object flag mask 0x01, then starts the original two-unit restore countdown. * Phase -1 advances that ...` | function `aiUpdateExplosionEffectAndRestoreDelay` | [367](../src/modules/ai.c#L367) |
 | explicit_unknown | `Access prefix only: original AI loads the pointer at 0x1DC and forwards * the existing vector at 0x100 plus its scalar at 0x104. RE_UNKNOWN: complete * allocation, vector units ...` | type `AiCarAnimationFields` | [4](../src/modules/ai.c#L4) |
-| explicit_unknown | `After elapsed >1, scan active 0x1E8-byte records for the smallest value * strictly below the initial threshold; equal values keep the first match. * Update/start managed sound w...` | assembly `func_ai_004057C0` | [620](../src/modules/ai.c#L620) |
-| explicit_unknown | `CARANIM slot0x38 at0x6334 reads label ID from *(actor+0x1DC)+0x404 and stores its result in output+0xC. RE_UNKNOWN: label-word domain and pointed-record validity/lifetime need o...` | — | [746](../src/modules/ai.c#L746) |
-| explicit_unknown | `Copy AI floats at 0x100/0x104/0x108 to car-animation fields * 0x3B8/0x3BC/0x3C0 through tag 0x11; tag 0xE separately copies float * 0x104 to field 0x3A8 after the original varia...` | function `aiApplyCarAnimationStateFields` | [603](../src/modules/ai.c#L603) |
-| explicit_unknown | `Count predecessor links at offset 0xC; store and return the shared count. * The input node itself is not counted and is dereferenced before any null check. * RE_UNKNOWN: valid n...` | function `aiCountPreviousLinks` | [834](../src/modules/ai.c#L834) |
-| explicit_unknown | `Evaluate the dot callback and compare target separation against the * squared product threshold unless settings force a snap. On success copy * target coordinates and set zero p...` | function `aiSnapPositionToTargetWhenRequired` | [509](../src/modules/ai.c#L509) |
+| explicit_unknown | `After elapsed >1, scan active 0x1E8-byte records for the smallest value * strictly below the initial threshold; equal values keep the first match. * Update/start managed sound w...` | assembly `func_ai_004057C0` | [634](../src/modules/ai.c#L634) |
+| explicit_unknown | `CARANIM slot0x38 at0x6334 reads label ID from *(actor+0x1DC)+0x404 and stores its result in output+0xC. RE_UNKNOWN: label-word domain and pointed-record validity/lifetime need o...` | — | [760](../src/modules/ai.c#L760) |
+| explicit_unknown | `Consumed scalar offsets only; complete historical types and lifetimes remain RE_UNKNOWN.` | type `AiCurveScaleState` | [197](../src/modules/ai.c#L197) |
+| explicit_unknown | `Copy AI floats at 0x100/0x104/0x108 to car-animation fields * 0x3B8/0x3BC/0x3C0 through tag 0x11; tag 0xE separately copies float * 0x104 to field 0x3A8 after the original varia...` | function `aiApplyCarAnimationStateFields` | [617](../src/modules/ai.c#L617) |
+| explicit_unknown | `Count predecessor links at offset 0xC; store and return the shared count. * The input node itself is not counted and is dereferenced before any null check. * RE_UNKNOWN: valid n...` | function `aiCountPreviousLinks` | [848](../src/modules/ai.c#L848) |
+| explicit_unknown | `Evaluate the dot callback and compare target separation against the * squared product threshold unless settings force a snap. On success copy * target coordinates and set zero p...` | function `aiSnapPositionToTargetWhenRequired` | [523](../src/modules/ai.c#L523) |
+| explicit_unknown | `Evaluate the original piecewise linear curve using an input normalized by * the two shared input scales. Multiply its output by the state scalar and * the two amplitude scales c...` | function `aiEvaluateScaledCurveWithClampedAdjustment` | [863](../src/modules/ai.c#L863) |
 | explicit_unknown | `Original cara initializer: slot10=00400B08, slot14=00400C8C. Target10 * dereferences its state; target14 consumes a signed-low16 tagged vararg list. * Table D_caranim_004066C0: ...` | type `AiCarAnimationFieldExports` | [13](../src/modules/ai.c#L13) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_ai_00400E38`, function `func_ai_0040179C`, function `func_ai_004021D8`, function `func_ai_00403F44`, function `func_ai_00403F4C`, function `func_ai_00404904`, function `func_ai_00404DE8` | [213](../src/modules/ai.c#L213), [244](../src/modules/ai.c#L244), [277](../src/modules/ai.c#L277), [458](../src/modules/ai.c#L458), [467](../src/modules/ai.c#L467), [554](../src/modules/ai.c#L554), [565](../src/modules/ai.c#L565) |
-| explicit_unknown | `Return the shared linked-record tail word; retain the existing s32 address ABI. * RE_UNKNOWN: ownership/lifetime guarantees need original callers and list teardown evidence.` | function `aiGetLinkedRecordTailAddress` | [818](../src/modules/ai.c#L818) |
-| explicit_unknown | `Select an original eight-record slot, clear links/scalars, then run helper 05B4C. * RE_UNKNOWN: shared index D_ai_00408E48 also resets/recounts in aiCountPreviousLinks; occupanc...` | function `aiAllocateLinkedRecord` | [633](../src/modules/ai.c#L633) |
-| explicit_unknown | `Set X from direction, cross existing Y to rebuild Z/Y, then normalize; zero-length normalization leaves output unchanged. * RE_UNKNOWN: audit callers' nonzero/nonparallel direct...` | function `aiBuildOrthonormalBasisFromX` | [222](../src/modules/ai.c#L222) |
-| explicit_unknown | `Snapshot list head and scalar 0xCC before optional state-1 callbacks; * those callbacks detach the associated pointer, clear object mask 1 and * write CARANIM tag 27 value 0, th...` | assembly `func_ai_00402E4C` | [336](../src/modules/ai.c#L336) |
-| explicit_unknown | `Snapshot vector 13C before optional object-matrix update, normalize its * displacement from current position, and map the cross/dot response 150. * Each result is stored before ...` | assembly `func_ai_004017A4` | [252](../src/modules/ai.c#L252) |
-| explicit_unknown | `Store the caller word without boolean normalization. Original func_ai_00402028 uses nonzero to bypass both difference bounds and choose adjustment 9 instead of 4.5. RE_UNKNOWN: ...` | function `func_ai_00407718` | [852](../src/modules/ai.c#L852) |
-| explicit_unknown | `Walk backward from the shared list tail while record word eight is * nonzero. Store the first unmarked record and return its one-based position; * a null tail or traversal past ...` | function `aiSelectFirstUnmarkedPreviousRecord` | [759](../src/modules/ai.c#L759) |
-| explicit_unknown | `When a shared record is selected, copy its scalar from the original * 0x1E8-byte record array and set the second output to zero. A selection of * -1 leaves both outputs untouche...` | function `aiCopySelectedRecordScalarPair` | [481](../src/modules/ai.c#L481) |
-| explicit_unknown | `With track data available, snapshot the transform and three vectors, * update camera/distance tests, decrement a positive remaining value and * clear the original per-update fie...` | function `aiSnapshotAndUpdateDecisionState` | [398](../src/modules/ai.c#L398) |
-| explicit_unknown | `aiFindActiveRecordByKey: first active match or -1. RE_ORIGINAL_QUIRK: loop index wraps to u16. * RE_UNKNOWN: full signed count/array extent and termination need original allocat...` | type `AiLookupRecord` | [700](../src/modules/ai.c#L700) |
-| explicit_unknown | `aiGetActiveRecordValue9C: return active field 0x9C or -1; compare low-u16 index with signed count. * RE_UNKNOWN: count-backed array extent and index domains need allocation/coun...` | function `aiGetActiveRecordValue9C` | [859](../src/modules/ai.c#L859) |
-| explicit_unknown | `func_ai_00402C2C queries objects between state vectors 0x70/0x30 after * temporarily clearing object 0x9C flags; the leaf setter only stores byte 4. * Restore flags before mappi...` | assembly `func_ai_00402C2C` | [325](../src/modules/ai.c#L325) |
-| explicit_unknown | `func_ai_004051A4 updates active records through DYN vector 17/18 and matrix 6, * transforms vector 100 into E8, then calls 53A8/5754 before refreshing linked scalars. * Preserve...` | assembly `func_ai_004051A4` | [585](../src/modules/ai.c#L585) |
-| explicit_unknown | `func_ai_00405B4C snapshots source+4, conditionally adjusts record+0x18, * writes the input/source, unlinks, then reinserts by that scalar. Native head * comparison uses <= and i...` | assembly `func_ai_00405B4C` | [651](../src/modules/ai.c#L651) |
-| explicit_unknown | `func_ai_0040617C swaps linked-record positions using scalar 0x18; * exact zero stops sorting, then all records serialize into 16-byte summaries. * Count only values >0; output b...` | assembly `func_ai_0040617C` | [748](../src/modules/ai.c#L748) |
-| explicit_unknown | `func_ai_004068A8 transforms vector 0xE8 into 0x100 through FMTX slots 0x40/0xB0, then * TDATA slot 0x08 refreshes query 0xC8 and slot 0x5C consumes its four-byte signed-halfword...` | assembly `func_ai_004068A8` | [789](../src/modules/ai.c#L789) |
-| explicit_unknown | `func_ai_00407054 combines original MATH sine/cosine/square-root and MISC * ratio results, updates scalars 0x100/0x104/0x120, then transforms 0x100 to * 0xE8 through FMTX slot 0x...` | assembly `func_ai_00407054` | [804](../src/modules/ai.c#L804) |
-| layout_padding | `pad0` | type `AiLookupRecord` | [703](../src/modules/ai.c#L703) |
-| layout_padding | `pad6FA4` | function `aiSnapPositionToTargetWhenRequired` | [521](../src/modules/ai.c#L521) |
-| layout_padding | `padA0` | type `AiLookupRecord` | [705](../src/modules/ai.c#L705) |
-| layout_padding | `padB6` | type `AiLookupRecord` | [707](../src/modules/ai.c#L707) |
-| offset_field | `byteC2` | function `aiSnapshotAndUpdateDecisionState`, type `AiDecisionUpdateState` | [58](../src/modules/ai.c#L58), [432](../src/modules/ai.c#L432) |
-| offset_field | `byteC3` | function `aiSnapshotAndUpdateDecisionState`, function `aiUpdateExplosionEffectAndRestoreDelay`, type `AiDecisionUpdateState`, type `AiEffectDelayState` | [59](../src/modules/ai.c#L59), [92](../src/modules/ai.c#L92), [379](../src/modules/ai.c#L379), [422](../src/modules/ai.c#L422) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_ai_00400E38`, function `func_ai_0040179C`, function `func_ai_004021D8`, function `func_ai_00403F44`, function `func_ai_00403F4C`, function `func_ai_00404904`, function `func_ai_00404DE8` | [227](../src/modules/ai.c#L227), [258](../src/modules/ai.c#L258), [291](../src/modules/ai.c#L291), [472](../src/modules/ai.c#L472), [481](../src/modules/ai.c#L481), [568](../src/modules/ai.c#L568), [579](../src/modules/ai.c#L579) |
+| explicit_unknown | `Return the shared linked-record tail word; retain the existing s32 address ABI. * RE_UNKNOWN: ownership/lifetime guarantees need original callers and list teardown evidence.` | function `aiGetLinkedRecordTailAddress` | [832](../src/modules/ai.c#L832) |
+| explicit_unknown | `Select an original eight-record slot, clear links/scalars, then run helper 05B4C. * RE_UNKNOWN: shared index D_ai_00408E48 also resets/recounts in aiCountPreviousLinks; occupanc...` | function `aiAllocateLinkedRecord` | [647](../src/modules/ai.c#L647) |
+| explicit_unknown | `Set X from direction, cross existing Y to rebuild Z/Y, then normalize; zero-length normalization leaves output unchanged. * RE_UNKNOWN: audit callers' nonzero/nonparallel direct...` | function `aiBuildOrthonormalBasisFromX` | [236](../src/modules/ai.c#L236) |
+| explicit_unknown | `Snapshot list head and scalar 0xCC before optional state-1 callbacks; * those callbacks detach the associated pointer, clear object mask 1 and * write CARANIM tag 27 value 0, th...` | assembly `func_ai_00402E4C` | [350](../src/modules/ai.c#L350) |
+| explicit_unknown | `Snapshot vector 13C before optional object-matrix update, normalize its * displacement from current position, and map the cross/dot response 150. * Each result is stored before ...` | assembly `func_ai_004017A4` | [266](../src/modules/ai.c#L266) |
+| explicit_unknown | `Store the caller word without boolean normalization. Original func_ai_00402028 uses nonzero to bypass both difference bounds and choose adjustment 9 instead of 4.5. RE_UNKNOWN: ...` | function `func_ai_00407718` | [910](../src/modules/ai.c#L910) |
+| explicit_unknown | `Walk backward from the shared list tail while record word eight is * nonzero. Store the first unmarked record and return its one-based position; * a null tail or traversal past ...` | function `aiSelectFirstUnmarkedPreviousRecord` | [773](../src/modules/ai.c#L773) |
+| explicit_unknown | `When a shared record is selected, copy its scalar from the original * 0x1E8-byte record array and set the second output to zero. A selection of * -1 leaves both outputs untouche...` | function `aiCopySelectedRecordScalarPair` | [495](../src/modules/ai.c#L495) |
+| explicit_unknown | `With track data available, snapshot the transform and three vectors, * update camera/distance tests, decrement a positive remaining value and * clear the original per-update fie...` | function `aiSnapshotAndUpdateDecisionState` | [412](../src/modules/ai.c#L412) |
+| explicit_unknown | `aiFindActiveRecordByKey: first active match or -1. RE_ORIGINAL_QUIRK: loop index wraps to u16. * RE_UNKNOWN: full signed count/array extent and termination need original allocat...` | type `AiLookupRecord` | [714](../src/modules/ai.c#L714) |
+| explicit_unknown | `aiGetActiveRecordValue9C: return active field 0x9C or -1; compare low-u16 index with signed count. * RE_UNKNOWN: count-backed array extent and index domains need allocation/coun...` | function `aiGetActiveRecordValue9C` | [917](../src/modules/ai.c#L917) |
+| explicit_unknown | `func_ai_00402C2C queries objects between state vectors 0x70/0x30 after * temporarily clearing object 0x9C flags; the leaf setter only stores byte 4. * Restore flags before mappi...` | assembly `func_ai_00402C2C` | [339](../src/modules/ai.c#L339) |
+| explicit_unknown | `func_ai_004051A4 updates active records through DYN vector 17/18 and matrix 6, * transforms vector 100 into E8, then calls 53A8/5754 before refreshing linked scalars. * Preserve...` | assembly `func_ai_004051A4` | [599](../src/modules/ai.c#L599) |
+| explicit_unknown | `func_ai_00405B4C snapshots source+4, conditionally adjusts record+0x18, * writes the input/source, unlinks, then reinserts by that scalar. Native head * comparison uses <= and i...` | assembly `func_ai_00405B4C` | [665](../src/modules/ai.c#L665) |
+| explicit_unknown | `func_ai_0040617C swaps linked-record positions using scalar 0x18; * exact zero stops sorting, then all records serialize into 16-byte summaries. * Count only values >0; output b...` | assembly `func_ai_0040617C` | [762](../src/modules/ai.c#L762) |
+| explicit_unknown | `func_ai_004068A8 transforms vector 0xE8 into 0x100 through FMTX slots 0x40/0xB0, then * TDATA slot 0x08 refreshes query 0xC8 and slot 0x5C consumes its four-byte signed-halfword...` | assembly `func_ai_004068A8` | [803](../src/modules/ai.c#L803) |
+| explicit_unknown | `func_ai_00407054 combines original MATH sine/cosine/square-root and MISC * ratio results, updates scalars 0x100/0x104/0x120, then transforms 0x100 to * 0xE8 through FMTX slot 0x...` | assembly `func_ai_00407054` | [818](../src/modules/ai.c#L818) |
+| layout_padding | `pad0` | type `AiLookupRecord` | [717](../src/modules/ai.c#L717) |
+| layout_padding | `pad6FA4` | function `aiSnapPositionToTargetWhenRequired` | [535](../src/modules/ai.c#L535) |
+| layout_padding | `padA0` | type `AiLookupRecord` | [719](../src/modules/ai.c#L719) |
+| layout_padding | `padB6` | type `AiLookupRecord` | [721](../src/modules/ai.c#L721) |
+| offset_field | `byteC2` | function `aiSnapshotAndUpdateDecisionState`, type `AiDecisionUpdateState` | [58](../src/modules/ai.c#L58), [446](../src/modules/ai.c#L446) |
+| offset_field | `byteC3` | function `aiSnapshotAndUpdateDecisionState`, function `aiUpdateExplosionEffectAndRestoreDelay`, type `AiDecisionUpdateState`, type `AiEffectDelayState` | [59](../src/modules/ai.c#L59), [92](../src/modules/ai.c#L92), [393](../src/modules/ai.c#L393), [436](../src/modules/ai.c#L436) |
 | offset_field | `opaque00` | type `AiCarAnimationFieldExports`, type `AiCarAnimationFields`, type `AiEffectCallExports`, type `AiEffectDelayState`, type `AiPieceCallExports`, type `AiTargetSnapLink`, type `AiTargetSnapState`, type `AiTargetSnapTarget` | [8](../src/modules/ai.c#L8), [19](../src/modules/ai.c#L19), [26](../src/modules/ai.c#L26), [34](../src/modules/ai.c#L34), [39](../src/modules/ai.c#L39), [84](../src/modules/ai.c#L84), [103](../src/modules/ai.c#L103), [107](../src/modules/ai.c#L107) |
 | offset_field | `opaque10C` | type `AiCarAnimationFields` | [10](../src/modules/ai.c#L10) |
 | offset_field | `opaque13C` | type `AiDecisionUpdateState` | [72](../src/modules/ai.c#L72) |
@@ -1311,28 +1316,31 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk00` | type `AiDistanceLink`, type `AiDistanceState`, type `AiDistanceTarget`, type `AiIndexedRecord`, type `AiLinkedRecord`, type `AiRankActor`, type `AiRankNode` | [121](../src/modules/ai.c#L121), [122](../src/modules/ai.c#L122), [123](../src/modules/ai.c#L123), [124](../src/modules/ai.c#L124), [126](../src/modules/ai.c#L126), [127](../src/modules/ai.c#L127), [129](../src/modules/ai.c#L129) |
 | offset_field | `unk10` | type `AiRankNode` | [129](../src/modules/ai.c#L129) |
 | offset_field | `unk3C` | type `AiDistanceState` | [121](../src/modules/ai.c#L121) |
-| offset_field | `unk6F74` | function `aiSnapPositionToTargetWhenRequired` | [522](../src/modules/ai.c#L522) |
+| offset_field | `unk6F74` | function `aiSnapPositionToTargetWhenRequired` | [536](../src/modules/ai.c#L536) |
 | offset_field | `unkA0` | type `AiIndexedRecord` | [126](../src/modules/ai.c#L126) |
 | offset_field | `unkB6` | type `AiIndexedRecord` | [126](../src/modules/ai.c#L126) |
-| offset_field | `value18` | function `aiAllocateLinkedRecord`, type `AiLinkedRecord` | [124](../src/modules/ai.c#L124), [645](../src/modules/ai.c#L645) |
-| offset_field | `value84` | function `aiSnapshotAndUpdateDecisionState`, type `AiDecisionUpdateState` | [50](../src/modules/ai.c#L50), [433](../src/modules/ai.c#L433) |
-| offset_field | `valueBA` | function `aiSnapshotAndUpdateDecisionState`, type `AiDecisionUpdateState` | [54](../src/modules/ai.c#L54), [437](../src/modules/ai.c#L437) |
-| offset_field | `valueBC` | function `aiSnapshotAndUpdateDecisionState`, function `aiUpdateExplosionEffectAndRestoreDelay`, type `AiDecisionUpdateState`, type `AiEffectDelayState` | [55](../src/modules/ai.c#L55), [89](../src/modules/ai.c#L89), [391](../src/modules/ai.c#L391), [436](../src/modules/ai.c#L436) |
-| offset_field | `valueCC` | function `aiSnapshotAndUpdateDecisionState`, type `AiDecisionUpdateState` | [61](../src/modules/ai.c#L61), [426](../src/modules/ai.c#L426), [427](../src/modules/ai.c#L427) |
-| offset_field | `valueE0` | function `aiUpdateExplosionEffectAndRestoreDelay`, type `AiEffectDelayState` | [95](../src/modules/ai.c#L95), [383](../src/modules/ai.c#L383) |
-| offset_field | `valueE4` | function `aiUpdateExplosionEffectAndRestoreDelay`, type `AiEffectDelayState` | [96](../src/modules/ai.c#L96), [382](../src/modules/ai.c#L382) |
-| offset_field | `vector100` | function `aiApplyCarAnimationStateFields`, function `aiSnapshotAndUpdateDecisionState`, type `AiCarAnimationFields`, type `AiDecisionUpdateState` | [9](../src/modules/ai.c#L9), [67](../src/modules/ai.c#L67), [414](../src/modules/ai.c#L414), [614](../src/modules/ai.c#L614), [615](../src/modules/ai.c#L615) |
-| offset_field | `vector118` | function `aiSnapshotAndUpdateDecisionState`, type `AiDecisionUpdateState` | [69](../src/modules/ai.c#L69), [415](../src/modules/ai.c#L415) |
-| offset_field | `vectorE8` | function `aiSnapshotAndUpdateDecisionState`, type `AiDecisionUpdateState` | [65](../src/modules/ai.c#L65), [413](../src/modules/ai.c#L413) |
-| offset_field | `word08` | function `aiAllocateLinkedRecord`, type `AiLinkedRecord` | [124](../src/modules/ai.c#L124), [643](../src/modules/ai.c#L643) |
+| offset_field | `unknown00` | type `AiCurveGraphExports`, type `AiCurveScaleState`, type `AiCurveScaleView` | [199](../src/modules/ai.c#L199), [204](../src/modules/ai.c#L204), [205](../src/modules/ai.c#L205) |
+| offset_field | `unknown90` | type `AiCurveScaleState` | [201](../src/modules/ai.c#L201) |
+| offset_field | `value18` | function `aiAllocateLinkedRecord`, type `AiLinkedRecord` | [124](../src/modules/ai.c#L124), [659](../src/modules/ai.c#L659) |
+| offset_field | `value84` | function `aiSnapshotAndUpdateDecisionState`, type `AiDecisionUpdateState` | [50](../src/modules/ai.c#L50), [447](../src/modules/ai.c#L447) |
+| offset_field | `valueBA` | function `aiSnapshotAndUpdateDecisionState`, type `AiDecisionUpdateState` | [54](../src/modules/ai.c#L54), [451](../src/modules/ai.c#L451) |
+| offset_field | `valueBC` | function `aiSnapshotAndUpdateDecisionState`, function `aiUpdateExplosionEffectAndRestoreDelay`, type `AiDecisionUpdateState`, type `AiEffectDelayState` | [55](../src/modules/ai.c#L55), [89](../src/modules/ai.c#L89), [405](../src/modules/ai.c#L405), [450](../src/modules/ai.c#L450) |
+| offset_field | `valueCC` | function `aiSnapshotAndUpdateDecisionState`, type `AiDecisionUpdateState` | [61](../src/modules/ai.c#L61), [440](../src/modules/ai.c#L440), [441](../src/modules/ai.c#L441) |
+| offset_field | `valueE0` | function `aiUpdateExplosionEffectAndRestoreDelay`, type `AiEffectDelayState` | [95](../src/modules/ai.c#L95), [397](../src/modules/ai.c#L397) |
+| offset_field | `valueE4` | function `aiUpdateExplosionEffectAndRestoreDelay`, type `AiEffectDelayState` | [96](../src/modules/ai.c#L96), [396](../src/modules/ai.c#L396) |
+| offset_field | `vector100` | function `aiApplyCarAnimationStateFields`, function `aiSnapshotAndUpdateDecisionState`, type `AiCarAnimationFields`, type `AiDecisionUpdateState` | [9](../src/modules/ai.c#L9), [67](../src/modules/ai.c#L67), [428](../src/modules/ai.c#L428), [628](../src/modules/ai.c#L628), [629](../src/modules/ai.c#L629) |
+| offset_field | `vector118` | function `aiSnapshotAndUpdateDecisionState`, type `AiDecisionUpdateState` | [69](../src/modules/ai.c#L69), [429](../src/modules/ai.c#L429) |
+| offset_field | `vectorE8` | function `aiSnapshotAndUpdateDecisionState`, type `AiDecisionUpdateState` | [65](../src/modules/ai.c#L65), [427](../src/modules/ai.c#L427) |
+| offset_field | `word08` | function `aiAllocateLinkedRecord`, type `AiLinkedRecord` | [124](../src/modules/ai.c#L124), [657](../src/modules/ai.c#L657) |
 | opaque_type | `UnkStruct_004005C8` | global `D_ai_00408EA0` | [115](../src/modules/ai.c#L115) |
-| opaque_type | `UnkStruct_uvemitter_rom_004008CC` | function `aiUpdateExplosionEffectAndRestoreDelay` | [374](../src/modules/ai.c#L374) |
-| original_quirk | `After elapsed >1, scan active 0x1E8-byte records for the smallest value * strictly below the initial threshold; equal values keep the first match. * Update/start managed sound w...` | assembly `func_ai_004057C0` | [620](../src/modules/ai.c#L620) |
-| original_quirk | `Snapshot vector 13C before optional object-matrix update, normalize its * displacement from current position, and map the cross/dot response 150. * Each result is stored before ...` | assembly `func_ai_004017A4` | [252](../src/modules/ai.c#L252) |
-| original_quirk | `aiFindActiveRecordByKey: first active match or -1. RE_ORIGINAL_QUIRK: loop index wraps to u16. * RE_UNKNOWN: full signed count/array extent and termination need original allocat...` | type `AiLookupRecord` | [700](../src/modules/ai.c#L700) |
-| original_quirk | `func_ai_00407054 combines original MATH sine/cosine/square-root and MISC * ratio results, updates scalars 0x100/0x104/0x120, then transforms 0x100 to * 0xE8 through FMTX slot 0x...` | assembly `func_ai_00407054` | [804](../src/modules/ai.c#L804) |
-| uncertainty_note | `Set record byte 0xC2 to one and clear floating fields 0x84 and 0xB0 * in their observed order. Their physical meanings remain unresolved.` | function `aiSetFlagAndClearScalarPair` | [497](../src/modules/ai.c#L497) |
-| unused_identifier | `unused` | function `aiClearRecordShortWhenEnabled` | [576](../src/modules/ai.c#L576) |
+| opaque_type | `UnkStruct_uvemitter_rom_004008CC` | function `aiUpdateExplosionEffectAndRestoreDelay` | [388](../src/modules/ai.c#L388) |
+| original_quirk | `After elapsed >1, scan active 0x1E8-byte records for the smallest value * strictly below the initial threshold; equal values keep the first match. * Update/start managed sound w...` | assembly `func_ai_004057C0` | [634](../src/modules/ai.c#L634) |
+| original_quirk | `Evaluate the original piecewise linear curve using an input normalized by * the two shared input scales. Multiply its output by the state scalar and * the two amplitude scales c...` | function `aiEvaluateScaledCurveWithClampedAdjustment` | [863](../src/modules/ai.c#L863) |
+| original_quirk | `Snapshot vector 13C before optional object-matrix update, normalize its * displacement from current position, and map the cross/dot response 150. * Each result is stored before ...` | assembly `func_ai_004017A4` | [266](../src/modules/ai.c#L266) |
+| original_quirk | `aiFindActiveRecordByKey: first active match or -1. RE_ORIGINAL_QUIRK: loop index wraps to u16. * RE_UNKNOWN: full signed count/array extent and termination need original allocat...` | type `AiLookupRecord` | [714](../src/modules/ai.c#L714) |
+| original_quirk | `func_ai_00407054 combines original MATH sine/cosine/square-root and MISC * ratio results, updates scalars 0x100/0x104/0x120, then transforms 0x100 to * 0xE8 through FMTX slot 0x...` | assembly `func_ai_00407054` | [818](../src/modules/ai.c#L818) |
+| uncertainty_note | `Set record byte 0xC2 to one and clear floating fields 0x84 and 0xB0 * in their observed order. Their physical meanings remain unresolved.` | function `aiSetFlagAndClearScalarPair` | [511](../src/modules/ai.c#L511) |
+| unused_identifier | `unused` | function `aiClearRecordShortWhenEnabled` | [590](../src/modules/ai.c#L590) |
 
 ## src/modules/aiedit.c
 
