@@ -35,7 +35,7 @@ void uvMat4CopyWithReciprocalAndLinearScale(Mtx4F *arg0, Mtx4F *arg1, f32 arg2, 
 void uvMat4TransformPoint(Mtx4F *src, Vec3F *dst, Vec3F *vec2);
 void uvMat4BuildFacingBasisBetweenTransforms(Mtx4F *arg0, Mtx4F *arg1, Mtx4F *arg2);
 void uvMat4BuildFacingBasisBetweenTransforms(Mtx4F *arg0, Mtx4F *arg1, Mtx4F *arg2);
-void func_uvfmtx_rom_00401F74(Mtx4F *dst, float left, float right, float top, float bottom, float near,
+void uvMat4BuildPerspectiveProjection(Mtx4F *dst, float left, float right, float top, float bottom, float near,
                               float far);
 void uvMat4BuildOrthographicProjection(Mtx4F *arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6);
 void uvMat4SetOrtho(Mtx4F *arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4);
@@ -96,7 +96,7 @@ void __entrypoint_func_uvfmtx_rom_400000(UvFMtx_Rom_Exports *exports) {
     exports->uvMat4Mul = uvMat4Mul;
     exports->func_uvfmtx_rom_00400FF8 = func_uvfmtx_rom_00400FF8;
     exports->uvFmtxModuleCleanup = uvFmtxModuleCleanup;
-    exports->func_uvfmtx_rom_00401F74 = func_uvfmtx_rom_00401F74;
+    exports->uvMat4BuildPerspectiveProjection = uvMat4BuildPerspectiveProjection;
     exports->uvMat4BuildOrthographicProjection = uvMat4BuildOrthographicProjection;
     exports->uvMat4GetYAxisAlias = uvMat4GetYAxisAlias;
     exports->uvMat4SetOrtho = uvMat4SetOrtho;
@@ -853,19 +853,21 @@ void uvMat4BuildFacingBasisBetweenTransforms(Mtx4F *destination, Mtx4F *targetTr
 }
 #line 746 "src/modules/uvfmtx_rom.c"
 
-void func_uvfmtx_rom_00401F74(Mtx4F *dst, float left, float right, float top, float bottom, float near,
-                              float far) {
-    dst->m[0][0] = (2.0f * near) / (right - left);
-    dst->m[1][1] = (2.0f * near) / (bottom - top);
-    dst->m[2][0] = (right + left) / (right - left);
-    dst->m[2][1] = (bottom + top) / (bottom - top);
-    dst->m[2][2] = -(far + near) / (far - near);
-    dst->m[2][3] = -1.0f;
-    dst->m[3][2] = -((2.0f * near) * far) / (far - near);
+/* Build the six-plane perspective coefficients, retaining the original grouping and stores. */
+#line 747 "src/modules/uvfmtx_rom.c"
+void uvMat4BuildPerspectiveProjection(Mtx4F *destination, float left, float right, float top, float bottom, float nearPlane,
+                              float farPlane) {
+    destination->m[0][0] = (2.0f * nearPlane) / (right - left); /* RE_UNKNOWN: clip-plane/FP domains and caller storage need caller proof. */
+    destination->m[1][1] = (2.0f * nearPlane) / (bottom - top);
+    destination->m[2][0] = (right + left) / (right - left);
+    destination->m[2][1] = (bottom + top) / (bottom - top);
+    destination->m[2][2] = -(farPlane + nearPlane) / (farPlane - nearPlane);
+    destination->m[2][3] = -1.0f;
+    destination->m[3][2] = -((2.0f * nearPlane) * farPlane) / (farPlane - nearPlane);
     if (0) {
-    } // fakematch
-    dst->m[0][1] = dst->m[0][2] = dst->m[0][3] = dst->m[1][0] = dst->m[1][2] = dst->m[1][3] =
-        dst->m[3][0] = dst->m[3][1] = dst->m[3][3] = 0.0f;
+    } // RE_UNKNOWN: historical empty matching scaffold; retain pending original-source evidence.
+    destination->m[0][1] = destination->m[0][2] = destination->m[0][3] = destination->m[1][0] = destination->m[1][2] = destination->m[1][3] =
+        destination->m[3][0] = destination->m[3][1] = destination->m[3][3] = 0.0f;
 }
 
 #line 762 "src/modules/uvfmtx_rom.c"

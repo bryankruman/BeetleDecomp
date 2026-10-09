@@ -22,7 +22,7 @@ typedef struct UvFMtx_Rom_Exports_s {
     /* 0x044 */ void (*uvMat4CopyWithReciprocalAndLinearScale)(Mtx4F*, Mtx4F*, f32, f32);
     /* 0x048 */ void (*uvMat4TransformPoint)(Mtx4F*, Vec3F*, Vec3F*);
     /* 0x04C */ void (*uvMat4BuildFacingBasisBetweenTransforms)(Mtx4F*, Mtx4F*, Mtx4F*);
-    /* 0x050 */ void (*func_uvfmtx_rom_00401F74)(Mtx4F*, f32, f32, f32, f32, f32, f32);
+    /* 0x050 */ void (*uvMat4BuildPerspectiveProjection)(Mtx4F*, f32, f32, f32, f32, f32, f32);
     /* 0x054 */ void (*uvMat4BuildOrthographicProjection)(Mtx4F*, f32, f32, f32, f32, f32, f32);
     /* 0x058 */ void (*uvMat4SetOrtho)(Mtx4F*, f32, f32, f32, f32);
     /* 0x05C */ void (*uvMat4BuildLookAtFromCoordinates)(Mtx4F*, f32, f32, f32, f32, f32, f32, f32, f32, f32);

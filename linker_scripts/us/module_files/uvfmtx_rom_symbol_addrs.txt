@@ -114,3 +114,4 @@ uvMat4ApplyQuaternionRotationAboutPivot = 0x00403480; // type:func
 uvMat4ApplyAxisRotationAboutPivot = 0x00403568; // type:func
 uvMat4CopyWithReciprocalAndLinearScale = 0x00401C3C; // type:func
 uvMat4SetRotationFromThreeAngles = 0x00402B30; // type:func
+uvMat4BuildPerspectiveProjection = 0x00401F74; // type:func

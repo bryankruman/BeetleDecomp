@@ -238,7 +238,7 @@ void uvChannelSetProperties(s32 channel, ...) {
                 state->unkE8 = va_arg(args, f64);
                 state->unkEC = va_arg(args, f64);
                 state->unkF0 = va_arg(args, f64);
-                sUvFmtxExports->func_uvfmtx_rom_00401F74(&state->unk4, state->unkDC, state->unkE0,
+                sUvFmtxExports->uvMat4BuildPerspectiveProjection(&state->unk4, state->unkDC, state->unkE0,
                                                          state->unkE4, state->unkE8, state->unkEC,
                                                          state->unkF0);
                 func_uvchannel_rom_00401658(channel);

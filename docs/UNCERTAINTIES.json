@@ -127,7 +127,7 @@
     "include/uvemitter_rom.h": "2702bbf88a0390811325664b45510f4b9452fc3738981d0330f1beaa9a3c80c0",
     "include/uvenv_rom.h": "a3b55cfc123f197a8c0b2682ea74be45187370c680c60418158779c6c40c079d",
     "include/uvenvld_rom.h": "3197b7f126c314fc8df5f1e78082428baa0b108b72915fbcaa5ccf92c449e2d1",
-    "include/uvfmtx_rom.h": "fa29ce0f51d775c80cc361e19046ac983a218daa43f5389d20c58dc999fc963a",
+    "include/uvfmtx_rom.h": "14366302ed16e1d960560f4462ce6516b6de53a586e3fbda3f96c731d1181203",
     "include/uvfont_rom.h": "066c80966cf743fba691ffcecd68f1265c061bd61c8e3df61b7b928eb24b8b2e",
     "include/uvfontld_rom.h": "790e8502137164648c6effdb1c482dc2b0052b4c7c0c02ac0aed7b0a55e0e384",
     "include/uvfvec_rom.h": "c21973d929480a7d22f3aeccbd3e22737c09edfac61b9f219016e75adf783a4b",
@@ -270,7 +270,7 @@
     "src/modules/uvbill_rom.c": "d04559a6d33cbea25a52e5251f98f6563d32e0cd9c0a4b8ccfecbcec43135289",
     "src/modules/uvblit_rom.c": "f437f580274c31de0cdcb94d429207f68e556600036f676a849b2958251cf5c0",
     "src/modules/uvcback_rom.c": "757b149d9e0e2b3226f23c884936b35583aa6b86186c5c3cc2863fbcbffac679",
-    "src/modules/uvchannel_rom.c": "347b41ea66f152fb135c76bfdfbe3f77af9b0cd734d64995ac9a36c3e27656d4",
+    "src/modules/uvchannel_rom.c": "6ceecb271933ffbd4f53ab7df0c90062469c9e49456a3a2aaca1febcbce83765",
     "src/modules/uvcmidi_rom.c": "8b011e44de82abbe27ef9df39397058c4323d2be5dcf08df447558cce0044255",
     "src/modules/uvcolor_rom.c": "f5d5fe7883be4cf747d95911339e084b69c2374ed09635c70d58528dcca374ef",
     "src/modules/uvcont_rom.c": "353b91ed7beb73cb8a8a77db2514ea18a4d44afb0297d68e6999fb5a33be7b58",
@@ -282,9 +282,9 @@
     "src/modules/uvdyn_rom.c": "75452ccfc5179ee2ef080780960447ba028968464c3d3adf902fe7db4d2b15ac",
     "src/modules/uvear_rom.c": "83f2d9c53aac67e858f5c0af27d2d96d72a659a369fa541188f1cfa4ffaf3f1c",
     "src/modules/uvemitter_rom.c": "e07261da01e8e6f6a7f12200d084114f960314d2afe12ea1da88d428d112ea46",
-    "src/modules/uvenv_rom.c": "ee1e5e8ff8a5e833483fbbb2a1a9275a48e30cc4976a9822cf62c67993892b57",
+    "src/modules/uvenv_rom.c": "ef6a83c3ca3072c428887b422d229cf82df822a4bf3736e5b6fff9fa0d97a2ac",
     "src/modules/uvenvld_rom.c": "ca96c6f0fc2296bc498d87dcb7372865f5ca95ca1559e83a10238bb25cce08b3",
-    "src/modules/uvfmtx_rom.c": "71c5de290552da50235ba31fbece2a97a0419cafbada6e0059d04932d89303f6",
+    "src/modules/uvfmtx_rom.c": "9d9e75dfc6062ec023dd6725fd42888fc9345b7c9234dec22deb928997b35726",
     "src/modules/uvfont_rom.c": "6c7146367f155dbe1d8a1ea4dc0d8dcb9a0cd4615a444a200d97041791011318",
     "src/modules/uvfontld_rom.c": "81262e86812be50e51fbe741f6e4b0475b58c71b4d822a50ae83c16602fd4733",
     "src/modules/uvfvec_rom.c": "6a0af50506ae1e04d3474378c1551ce8e8cdb908704cc9a69fd1d6986bd52323",
@@ -330,18 +330,18 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "fe387a6b4820c47fbf885b8e3ae30aa4e35668ac5495bf61d8cda778538e1e6f",
-    "docs/VALIDATION_20261006.md": "b685e137332764181c0caf1b5b7cf403e4c4ae6c424527c92290a8876f164fe0"
+    "docs/STRATEGY_V4.md": "38321888a596e1381853382192d11d57bbaece1b1f08eed34ee21e24c50e5537",
+    "docs/VALIDATION_20261006.md": "9a3eb00b1b6883a9f064ff1f501080b39a6d0b4d2677d13888959826210f74c6"
   },
   "counts": {
-    "address_function": 929,
+    "address_function": 925,
     "address_global": 1409,
     "assembly": 793,
     "audit_debt": 30,
     "conditional_draft": 4,
     "decompiler_local": 859,
     "draft_marker": 27,
-    "explicit_unknown": 991,
+    "explicit_unknown": 993,
     "layout_padding": 274,
     "offset_field": 1593,
     "opaque_type": 282,
@@ -868,25 +868,6 @@
           "declaration_line": 4,
           "lines": [
             14
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-dc6a251fd3b5",
-      "kind": "address_function",
-      "path": "include/uvfmtx_rom.h",
-      "symbol": "func_uvfmtx_rom_00401F74",
-      "lines": [
-        25
-      ],
-      "owners": [
-        {
-          "kind": "type",
-          "name": "UvFMtx_Rom_Exports",
-          "declaration_line": 4,
-          "lines": [
-            25
           ]
         }
       ]
@@ -18018,25 +17999,6 @@
       ]
     },
     {
-      "id": "Q-6848ea7ce193",
-      "kind": "address_function",
-      "path": "src/modules/uvchannel_rom.c",
-      "symbol": "func_uvfmtx_rom_00401F74",
-      "lines": [
-        241
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvChannelSetProperties",
-          "declaration_line": 208,
-          "lines": [
-            241
-          ]
-        }
-      ]
-    },
-    {
       "id": "Q-d0a045eb0cd9",
       "kind": "address_function",
       "path": "src/modules/uvcmidi_rom.c",
@@ -19761,25 +19723,6 @@
       ]
     },
     {
-      "id": "Q-286b82a0348c",
-      "kind": "address_function",
-      "path": "src/modules/uvenv_rom.c",
-      "symbol": "func_uvfmtx_rom_00401F74",
-      "lines": [
-        592
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "_uvEnvDraw",
-          "declaration_line": 439,
-          "lines": [
-            592
-          ]
-        }
-      ]
-    },
-    {
       "id": "Q-d642a2708cc3",
       "kind": "address_function",
       "path": "src/modules/uvenvld_rom.c",
@@ -19870,43 +19813,6 @@
           "declaration_line": 491,
           "lines": [
             491
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-34c531ff5a3d",
-      "kind": "address_function",
-      "path": "src/modules/uvfmtx_rom.c",
-      "symbol": "func_uvfmtx_rom_00401F74",
-      "lines": [
-        38,
-        99,
-        856
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "__entrypoint_func_uvfmtx_rom_400000",
-          "declaration_line": 87,
-          "lines": [
-            99
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvfmtx_rom_00401F74",
-          "declaration_line": 38,
-          "lines": [
-            38
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvfmtx_rom_00401F74",
-          "declaration_line": 856,
-          "lines": [
-            856
           ]
         }
       ]
@@ -58624,11 +58530,11 @@
       "lines": [
         80,
         147,
-        1081,
-        1090,
-        1102,
-        1105,
-        1106
+        1083,
+        1092,
+        1104,
+        1107,
+        1108
       ],
       "owners": [
         {
@@ -58642,27 +58548,27 @@
         {
           "kind": "function",
           "name": "uvGfxMtxCopySharedFloatMatrix",
-          "declaration_line": 1089,
+          "declaration_line": 1091,
           "lines": [
-            1090
+            1092
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxMtxLoadProjectionWithQuarterTurn",
-          "declaration_line": 1098,
+          "declaration_line": 1100,
           "lines": [
-            1102,
-            1105,
-            1106
+            1104,
+            1107,
+            1108
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxMtxProjPushF",
-          "declaration_line": 1077,
+          "declaration_line": 1079,
           "lines": [
-            1081
+            1083
           ]
         },
         {
@@ -58683,9 +58589,9 @@
       "lines": [
         81,
         146,
-        1080,
-        1081,
-        1106
+        1082,
+        1083,
+        1108
       ],
       "owners": [
         {
@@ -58699,18 +58605,18 @@
         {
           "kind": "function",
           "name": "uvGfxMtxLoadProjectionWithQuarterTurn",
-          "declaration_line": 1098,
+          "declaration_line": 1100,
           "lines": [
-            1106
+            1108
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxMtxProjPushF",
-          "declaration_line": 1077,
+          "declaration_line": 1079,
           "lines": [
-            1080,
-            1081
+            1082,
+            1083
           ]
         },
         {
@@ -58731,11 +58637,11 @@
       "lines": [
         82,
         148,
-        1081,
-        1082,
-        1106,
-        1107,
-        1415
+        1083,
+        1084,
+        1108,
+        1109,
+        1417
       ],
       "owners": [
         {
@@ -58749,27 +58655,27 @@
         {
           "kind": "function",
           "name": "uvFmtxCopyAlternateSharedMatrix",
-          "declaration_line": 1414,
+          "declaration_line": 1416,
           "lines": [
-            1415
+            1417
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxMtxLoadProjectionWithQuarterTurn",
-          "declaration_line": 1098,
+          "declaration_line": 1100,
           "lines": [
-            1106,
-            1107
+            1108,
+            1109
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxMtxProjPushF",
-          "declaration_line": 1077,
+          "declaration_line": 1079,
           "lines": [
-            1081,
-            1082
+            1083,
+            1084
           ]
         },
         {
@@ -100348,15 +100254,15 @@
       "path": "src/modules/uvfmtx_rom.c",
       "symbol": "temp_ft4",
       "lines": [
-        934
+        936
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvMat4BuildLookAtFromCoordinates",
-          "declaration_line": 926,
+          "declaration_line": 928,
           "lines": [
-            934
+            936
           ]
         }
       ]
@@ -100367,15 +100273,15 @@
       "path": "src/modules/uvfmtx_rom.c",
       "symbol": "temp_ft5",
       "lines": [
-        935
+        937
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvMat4BuildLookAtFromCoordinates",
-          "declaration_line": 926,
+          "declaration_line": 928,
           "lines": [
-            935
+            937
           ]
         }
       ]
@@ -122739,7 +122645,7 @@
       "symbol": "FAKE",
       "lines": [
         776,
-        1149
+        1151
       ],
       "evidence": "FAKE",
       "owners": [
@@ -122754,9 +122660,9 @@
         {
           "kind": "function",
           "name": "uvMat4SetRotationFromThreeAngles",
-          "declaration_line": 1126,
+          "declaration_line": 1128,
           "lines": [
-            1149
+            1151
           ]
         }
       ]
@@ -137135,16 +137041,16 @@
       "path": "src/modules/uvfmtx_rom.c",
       "symbol": "Build the original matrix from three ordered sine/cosine pairs. For each * exact zero input, retain the original zero/one assignments and skipped * callbacks. The third zero-input path assigns zero products and sineSecond * directly; preserve that path, callback reloads and all f32 associations. * Retain the inherited do/while-zero source scaffold. * RE_UNKNOWN: historical angle/axis conventions and source form, valid input * and matrix-storage domains, aliases and module/callback lifetimes require * original callers, parameter producers and source/module-management evidence. * Observed callback bindings do not establish caller range guarantees.",
       "lines": [
-        1116
+        1118
       ],
       "evidence": "Build the original matrix from three ordered sine/cosine pairs. For each * exact zero input, retain the original zero/one assignments and skipped * callbacks. The third zero-input path assigns zero products and sineSecond * directly; preserve that path, callback reloads and all f32 associations. * Retain the inherited do/while-zero source scaffold. * RE_UNKNOWN: historical angle/axis conventions and source form, valid input * and matrix-storage domains, aliases and module/callback lifetimes require * original callers, parameter producers and source/module-management evidence. * Observed callback bindings do not establish caller range guarantees.",
       "owners": [
         {
           "kind": "function",
           "name": "uvMat4SetRotationFromThreeAngles",
-          "declaration_line": 1126,
+          "declaration_line": 1128,
           "lines": [
-            1116
+            1118
           ]
         }
       ]
@@ -137195,16 +137101,16 @@
       "path": "src/modules/uvfmtx_rom.c",
       "symbol": "Convert the floating matrix, then pass the fixed matrix by value to the * original IMTX stack provider with the low 16 flag bits. Preserve the * ignored return value when the provider rejects its stack-index comparison. * RE_UNKNOWN: valid conversion inputs, matrix spans, stack/buffer indices, * capacity, historical flag meanings and backing-storage lifetime through * RSP consumption require original callers, parameter producers and * allocation/frame scheduling. Caller expectations for rejection and * source/storage aliases remain unresolved.",
       "lines": [
-        1034
+        1036
       ],
       "evidence": "Convert the floating matrix, then pass the fixed matrix by value to the * original IMTX stack provider with the low 16 flag bits. Preserve the * ignored return value when the provider rejects its stack-index comparison. * RE_UNKNOWN: valid conversion inputs, matrix spans, stack/buffer indices, * capacity, historical flag meanings and backing-storage lifetime through * RSP consumption require original callers, parameter producers and * allocation/frame scheduling. Caller expectations for rejection and * source/storage aliases remain unresolved.",
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxMtxViewLoad",
-          "declaration_line": 1043,
+          "declaration_line": 1045,
           "lines": [
-            1034
+            1036
           ]
         }
       ]
@@ -137235,16 +137141,16 @@
       "path": "src/modules/uvfmtx_rom.c",
       "symbol": "Copy into shared matrix 0x4036D0, multiply into 0x403710 using 0x4036D0 * and 0x403690 in the original argument order, then convert and pass the * fixed matrix by value to IMTX projection loading. That provider forwards * flags 6 to the stack provider; preserve the unchecked submission result. * RE_UNKNOWN: projection conventions, historical flag meanings, conversion * inputs, matrix spans, shared-storage aliases/lifetimes and valid stack/ * buffer domains require original callers, shared-matrix producers and * allocation/frame scheduling. Caller expectations for rejection are unknown.",
       "lines": [
-        1068
+        1070
       ],
       "evidence": "Copy into shared matrix 0x4036D0, multiply into 0x403710 using 0x4036D0 * and 0x403690 in the original argument order, then convert and pass the * fixed matrix by value to IMTX projection loading. That provider forwards * flags 6 to the stack provider; preserve the unchecked submission result. * RE_UNKNOWN: projection conventions, historical flag meanings, conversion * inputs, matrix spans, shared-storage aliases/lifetimes and valid stack/ * buffer domains require original callers, shared-matrix producers and * allocation/frame scheduling. Caller expectations for rejection are unknown.",
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxMtxProjPushF",
-          "declaration_line": 1077,
+          "declaration_line": 1079,
           "lines": [
-            1068
+            1070
           ]
         }
       ]
@@ -137265,6 +137171,46 @@
           "declaration_line": 491,
           "lines": [
             486
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-a41cd346d721",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvfmtx_rom.c",
+      "symbol": "RE_UNKNOWN: clip-plane/FP domains and caller storage need caller proof.",
+      "lines": [
+        860
+      ],
+      "evidence": "RE_UNKNOWN: clip-plane/FP domains and caller storage need caller proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvMat4BuildPerspectiveProjection",
+          "declaration_line": 858,
+          "lines": [
+            860
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-47d616735f92",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvfmtx_rom.c",
+      "symbol": "RE_UNKNOWN: historical empty matching scaffold; retain pending original-source evidence.",
+      "lines": [
+        868
+      ],
+      "evidence": "RE_UNKNOWN: historical empty matching scaffold; retain pending original-source evidence.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvMat4BuildPerspectiveProjection",
+          "declaration_line": 858,
+          "lines": [
+            868
           ]
         }
       ]
@@ -149410,7 +149356,7 @@
         248,
         662,
         731,
-        1336
+        1338
       ],
       "owners": [
         {
@@ -149432,9 +149378,9 @@
         {
           "kind": "function",
           "name": "uvMat4MultiplyLinear3x3",
-          "declaration_line": 1335,
+          "declaration_line": 1337,
           "lines": [
-            1336
+            1338
           ]
         },
         {

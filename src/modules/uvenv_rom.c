@@ -589,7 +589,7 @@ void _uvEnvDraw(s32 arg0) {
         if (temp_s2 & 2) {
             sUvChannel_Exports->uvChannelGetProperties(arg0, 4, &sp1F4, &sp1F0, &sp1E8,
                                                               &sp1EC, &sp1E4, &sp1E0, 1, &sp160, 0);
-            sUvFmtxExports->func_uvfmtx_rom_00401F74(&sp120, sp1F4, sp1F0, sp1E8, sp1EC, sp1E4,
+            sUvFmtxExports->uvMat4BuildPerspectiveProjection(&sp120, sp1F4, sp1F0, sp1E8, sp1EC, sp1E4,
                                                 27000.0f);
             sUvFmtxExports->uvGfxMtxProjPushF(&sp120);
             if (var_s6->unk1D != 0) {
