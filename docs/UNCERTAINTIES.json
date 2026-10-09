@@ -287,7 +287,7 @@
     "src/modules/uvfmtx_rom.c": "9d9e75dfc6062ec023dd6725fd42888fc9345b7c9234dec22deb928997b35726",
     "src/modules/uvfont_rom.c": "6c7146367f155dbe1d8a1ea4dc0d8dcb9a0cd4615a444a200d97041791011318",
     "src/modules/uvfontld_rom.c": "81262e86812be50e51fbe741f6e4b0475b58c71b4d822a50ae83c16602fd4733",
-    "src/modules/uvfvec_rom.c": "6a0af50506ae1e04d3474378c1551ce8e8cdb908704cc9a69fd1d6986bd52323",
+    "src/modules/uvfvec_rom.c": "c778a230bfc390f3ca94e06bddaa9892c4fc6cf0ab2cea81cbdb030e785d7b21",
     "src/modules/uvfx_rom.c": "ea9e30b63484a3d999463727ce7bf9198e21261cb72a88e1c9865da3af27c5e8",
     "src/modules/uvgeom_rom.c": "7793cd32eab51f63bd3cf8d7df3b4ad6e26d67f44cf3fd8a1ffd56fcb8860e71",
     "src/modules/uvgfxmgr_rom.c": "c21151fb9c51017919699a7834a7a76ff06a565f7d6cb1b9c462a43f288971b9",
@@ -330,8 +330,8 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "cff282e3ffbf7fdb61872769e5628ddd9b884b2ee4fd1a6f53f8bbf9b306327c",
-    "docs/VALIDATION_20261006.md": "597fa9130039e3b373ea2b08d9cb2602328356c8509cf97d167702f20fb1f4e5"
+    "docs/STRATEGY_V4.md": "94a208191a0ade18b14928a1ffc0bc09d5319b6f360fdc8022ddf1ac6be43dd9",
+    "docs/VALIDATION_20261006.md": "a07c79ef48aaecc2d874dc1e3d72fa111070ab5013f1d0b6d0612caf98666635"
   },
   "counts": {
     "address_function": 924,
@@ -341,7 +341,7 @@
     "conditional_draft": 4,
     "decompiler_local": 859,
     "draft_marker": 27,
-    "explicit_unknown": 994,
+    "explicit_unknown": 997,
     "layout_padding": 274,
     "offset_field": 1593,
     "opaque_type": 282,
@@ -137566,6 +137566,84 @@
           "declaration_line": 214,
           "lines": [
             215
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-060da7728239",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvfvec_rom.c",
+      "symbol": "RE_UNKNOWN: storage/FP and MATH lifetime need caller/loader/kernel evidence.",
+      "lines": [
+        137,
+        332
+      ],
+      "evidence": "RE_UNKNOWN: storage/FP and MATH lifetime need caller/loader/kernel evidence.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvVec2FLen",
+          "declaration_line": 332,
+          "lines": [
+            332
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvVec3FLen",
+          "declaration_line": 137,
+          "lines": [
+            137
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-88e0b0a0c839",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvfvec_rom.c",
+      "symbol": "RE_UNKNOWN: storage/lifetime and FP contracts need caller/FP evidence.",
+      "lines": [
+        155
+      ],
+      "evidence": "RE_UNKNOWN: storage/lifetime and FP contracts need caller/FP evidence.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvVec3FDot",
+          "declaration_line": 155,
+          "lines": [
+            155
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-92f8868d45b8",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvfvec_rom.c",
+      "symbol": "RE_UNKNOWN: storage/lifetime and FP traps need caller/FP evidence.",
+      "lines": [
+        297,
+        394
+      ],
+      "evidence": "RE_UNKNOWN: storage/lifetime and FP traps need caller/FP evidence.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvVec2FIsZero",
+          "declaration_line": 390,
+          "lines": [
+            394
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvVec3FIsZero",
+          "declaration_line": 293,
+          "lines": [
+            297
           ]
         }
       ]

@@ -17,7 +17,7 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 994 |
+| Explicit RE_UNKNOWN notes | 997 |
 | Preserved RE_ORIGINAL_QUIRK notes | 268 |
 | Older comments with uncertainty language | 91 |
 | Documented original-behavior audits | 30 |
@@ -6616,6 +6616,9 @@ For every future source wave, regenerate and check this index after code and str
 | explicit_unknown | `RE_UNKNOWN: caller storage/alias/FP contracts and historical MATH/kernel declarations need further evidence.` | function `uvVec3FDistance` | [149](../src/modules/uvfvec_rom.c#L149) |
 | explicit_unknown | `RE_UNKNOWN: destination extent/alias/lifetime need caller/allocation evidence.` | function `uvVec2FSet`, function `uvVec3FSet` | [109](../src/modules/uvfvec_rom.c#L109), [308](../src/modules/uvfvec_rom.c#L308) |
 | explicit_unknown | `RE_UNKNOWN: historical purpose of this unused local needs original source.` | function `uvVec3FSub` | [215](../src/modules/uvfvec_rom.c#L215) |
+| explicit_unknown | `RE_UNKNOWN: storage/FP and MATH lifetime need caller/loader/kernel evidence.` | function `uvVec2FLen`, function `uvVec3FLen` | [137](../src/modules/uvfvec_rom.c#L137), [332](../src/modules/uvfvec_rom.c#L332) |
+| explicit_unknown | `RE_UNKNOWN: storage/lifetime and FP contracts need caller/FP evidence.` | function `uvVec3FDot` | [155](../src/modules/uvfvec_rom.c#L155) |
+| explicit_unknown | `RE_UNKNOWN: storage/lifetime and FP traps need caller/FP evidence.` | function `uvVec2FIsZero`, function `uvVec3FIsZero` | [297](../src/modules/uvfvec_rom.c#L297), [394](../src/modules/uvfvec_rom.c#L394) |
 | layout_padding | `pad` | function `uvVec2FReflect`, function `uvVec3FSub` | [215](../src/modules/uvfvec_rom.c#L215), [407](../src/modules/uvfvec_rom.c#L407) |
 | layout_padding | `pad1C` | function `uvVec3fFromSpherical` | [245](../src/modules/uvfvec_rom.c#L245) |
 | original_quirk | `Return the dot product divided by both vector lengths: the cosine * of their angle for nonzero vectors. Keep the established export name. * RE_ORIGINAL_QUIRK: zero-length vector...` | function `uvVec2FScalarProj`, function `uvVec3FScalarProj` | [166](../src/modules/uvfvec_rom.c#L166), [353](../src/modules/uvfvec_rom.c#L353) |

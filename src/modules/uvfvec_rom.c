@@ -134,8 +134,8 @@ s32 uvVec3FNormalize(Vec3F* destination, Vec3F* source) {
 }
 #line 131 "src/modules/uvfvec_rom.c"
 
-f32 uvVec3FLen(Vec3F *v) {
-    return sUvMathRomExports->uvSqrtf(uvVec3FLengthSquared(v));
+f32 uvVec3FLen(Vec3F *vector) { /* RE_UNKNOWN: storage/FP and MATH lifetime need caller/loader/kernel evidence. */
+    return sUvMathRomExports->uvSqrtf(uvVec3FLengthSquared(vector)); /* Squared length, then live MATH slot04. */
 }
 
 #line 136 "src/modules/uvfvec_rom.c"
@@ -152,8 +152,8 @@ f32 uvVec3FDistance(Vec3F *first, Vec3F *second) {
     return sUvMathRomExports->uvSqrtf(uvVec3FLengthSquared(&difference)); /* Preserve Sub, length-squared, then live MATH slot 4 dispatch. */
 }
 
-f32 uvVec3FDot(Vec3F* va, Vec3F* vb) {
-    return (va->x * vb->x) + (va->y * vb->y) + (va->z * vb->z);
+f32 uvVec3FDot(Vec3F* first, Vec3F* second) { /* RE_UNKNOWN: storage/lifetime and FP contracts need caller/FP evidence. */
+    return (first->x * second->x) + (first->y * second->y) + (first->z * second->z); /* Retain (x product + y product) + z product. */
 }
 
 void uvVec3FCopy(Vec3F *destination, Vec3F *source) {
@@ -290,11 +290,11 @@ void uvVec3fFromSpherical(Vec3F* destination, f32 azimuth, f32 elevation) {
 }
 #line 261 "src/modules/uvfvec_rom.c"
 
-s32 uvVec3FIsZero(Vec3F *v) {
-    if ((v->x == 0.0) && (v->y == 0.0) && (v->z == 0.0)) {
+s32 uvVec3FIsZero(Vec3F *vector) { /* Exact x/y/z zero test; retain short circuit and f64 promotion. */
+    if ((vector->x == 0.0) && (vector->y == 0.0) && (vector->z == 0.0)) {
         return TRUE;
     }
-    return FALSE;
+    return FALSE; /* RE_UNKNOWN: storage/lifetime and FP traps need caller/FP evidence. */
 }
 
 void uvVec3FNegate(Vec3F* destination, Vec3F *source) {
@@ -329,8 +329,8 @@ s32 uvVec2FNormalize(Vec2F* destination, Vec2F* source) {
 }
 #line 295 "src/modules/uvfvec_rom.c"
 
-f32 uvVec2FLen(Vec2F *v) {
-    return sUvMathRomExports->uvSqrtf(uvVec2FLengthSquared(v));
+f32 uvVec2FLen(Vec2F *vector) { /* RE_UNKNOWN: storage/FP and MATH lifetime need caller/loader/kernel evidence. */
+    return sUvMathRomExports->uvSqrtf(uvVec2FLengthSquared(vector)); /* Squared length, then live MATH slot04. */
 }
 
 #line 300 "src/modules/uvfvec_rom.c"
@@ -387,11 +387,11 @@ void uvVec2FScale(Vec2F *destination, Vec2F *source, f32 scale) {
     destination->y = source->y * scale; /* RE_UNKNOWN: caller alias/storage/lifetime and FP contracts remain unproved. */
 }
 
-s32 uvVec2FIsZero(Vec2F *v) {
-    if ((v->x == 0.0) && (v->y == 0.0)) {
+s32 uvVec2FIsZero(Vec2F *vector) { /* Exact x/y zero test; retain short circuit and f64 promotion. */
+    if ((vector->x == 0.0) && (vector->y == 0.0)) {
         return TRUE;
     }
-    return FALSE;
+    return FALSE; /* RE_UNKNOWN: storage/lifetime and FP traps need caller/FP evidence. */
 }
 
 void uvVec2FNegate(Vec2F *destination, Vec2F *source) {
