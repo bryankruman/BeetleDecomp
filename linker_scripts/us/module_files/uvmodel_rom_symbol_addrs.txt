@@ -151,3 +151,5 @@ uvModelReplaceTextureId = 0x00402BB8; // type:func
 uvModelCollectStatesByTextureId = 0x00402CEC; // type:func
 uvModelSetCollisionMetadataWord38 = 0x00402E50; // type:func
 uvModelIntersectSegmentWithBoundsFaces = 0x004022E4; // type:func
+uvModelAppendScalarExtentLodQueryResults = 0x004006B4; // type:func
+uvModelAppendSegmentLodQueryResults = 0x0040199C; // type:func

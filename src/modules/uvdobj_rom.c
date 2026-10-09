@@ -1370,7 +1370,7 @@ s16 uvDobjQueryHierarchyWithScalarExtent(f32 pointX, f32 pointY, f32 pointZ, f32
             outstandingPushes++; /* RE_UNKNOWN: stack capacity/balance and callback aliases need lifecycle/caller proof. */
             if (queryNode != 0) {
                 *D_uvdobj_rom_004039E0 = (*D_uvdobj_rom_004039E0 & 0xFFFFFF) | (nodeIndex << 0x18);
-                ignoredResultSum += sUvModelExports->func_uvmodel_rom_004006B4(
+                ignoredResultSum += sUvModelExports->uvModelAppendScalarExtentLodQueryResults(
                     pointX, pointY, pointZ, scalarExtent, sUvModelExports->uvModelGetCurrentMatrix(),
                     &hierarchy->unk0[nodeIndex], parsedModel); /* RE_ORIGINAL_QUIRK: retain the ignored s16 sum. RE_UNKNOWN: scalar units/FP domain need caller proof. */
             }
@@ -1484,7 +1484,7 @@ s16 uvDobjQueryHierarchySegment(f32 startX, f32 startY, f32 startZ, f32 endX, f3
             outstandingPushes += 1; /* RE_UNKNOWN: stack capacity/balance and callback aliases need lifecycle/caller proof. */
             if (queryNode != 0) {
                 *D_uvdobj_rom_004039E0 = (*D_uvdobj_rom_004039E0 & 0xFFFFFF) | (nodeIndex << 0x18);
-                sUvModelExports->func_uvmodel_rom_0040199C(startX, startY, startZ, endX, endY, endZ,
+                sUvModelExports->uvModelAppendSegmentLodQueryResults(startX, startY, startZ, endX, endY, endZ,
                                                            sUvModelExports->uvModelGetCurrentMatrix(),
                                                            &hierarchy->unk0[nodeIndex], parsedModel); /* Retain the ignored provider return and shared result writes. */
             }

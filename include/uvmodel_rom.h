@@ -24,8 +24,8 @@ typedef struct UvModel_Exports_s {
     /* 0x14 */ void (*uvModelGetPosm)(s32, s32, Mtx4F *);    /* inferred */
     /* 0x18 */ void (*uvModelGetProps)(s32, ...);             /* inferred */
     /* 0x1C */ u8 (*uvModelFindThresholdBand)(ParsedUVMD *, f32); /* inferred */
-    /* 0x20 */ s16 (*func_uvmodel_rom_004006B4)(f32, f32, f32, f32, Mtx4F *, uvModelLOD *, ParsedUVMD *); /* inferred */
-    /* 0x24 */ s16 (*func_uvmodel_rom_0040199C)(f32, f32, f32, f32, f32, f32, Mtx4F *, uvModelLOD *, ParsedUVMD *); /* inferred */
+    /* 0x20 */ s16 (*uvModelAppendScalarExtentLodQueryResults)(f32, f32, f32, f32, Mtx4F *, uvModelLOD *, ParsedUVMD *); /* inferred */
+    /* 0x24 */ s16 (*uvModelAppendSegmentLodQueryResults)(f32, f32, f32, f32, f32, f32, Mtx4F *, uvModelLOD *, ParsedUVMD *); /* inferred */
     /* 0x28 */ s16 (*uvModelTestWorldPointInLodBounds)(f32 x, f32 y, f32 z, Mtx4F *arg3, uvModelLOD *arg4); /* inferred */
     /* 0x2C */ s32 (*uvModelContainsLocalPoint)(f32, f32, f32, uvModelLOD_inner *); /* inferred */
     /* 0x30 */ u8 (*uvModelIntersectSegmentWithBoundsFaces)(f32, f32, f32, f32, f32, f32, UnkUVMD_24_Unk4 *, f32 *, f32 *, s16 *, s16 *); /* inferred */

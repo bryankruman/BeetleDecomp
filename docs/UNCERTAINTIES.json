@@ -144,7 +144,7 @@
     "include/uvled_rom.h": "0caef928a0b10b7ece633205368f4e2cc84d70a3a313be8a3418c1fc4bec7dc2",
     "include/uvlight_rom.h": "6019b67ce4bfe560ddc13bd8d15563173a76e7d7c1ff7813cf07b6e5604fed82",
     "include/uvmath_rom.h": "5c806282272ac3a8e615b49203cf8232642e689c5346e8b5c658040daaca80df",
-    "include/uvmodel_rom.h": "fce2ac5eaddc8a3678c24e49ce1fb63e8a807296ab7f2c303b435f9de3da19d3",
+    "include/uvmodel_rom.h": "39b53d6143d87e09901fe4e31b9443c32d42be4c56a0eea97634c42f4f87e1e5",
     "include/uvpfx_rom.h": "cb6622cdc9185ccd5794a62fb8ef405371eada8ceec9de284478f68963e34605",
     "include/uvquat_rom.h": "07cd4812764f8ad6a72b262534093b4fff51aa22bbb0ccc5f798e0e89c6c93ac",
     "include/uvquery_rom.h": "232821ac5ea6beabdc1059fbfc57f86bb3ede2721142412d6be762a0c6b27ba9",
@@ -277,7 +277,7 @@
     "src/modules/uvcontourld_rom.c": "41ea663b547c85255087cbba8cedc39bb964795476f0d682e11dafc61ae2d97a",
     "src/modules/uvdbg_rom.c": "20dbff47ebe571eb2b5462d238cd16c53f00157a154f22f8c051f64b8f1dce0b",
     "src/modules/uvdgeom_rom.c": "6fb52252f88afc60e053a4213e19fdebd44296f68d23ef8116e80f6460503ace",
-    "src/modules/uvdobj_rom.c": "aa87475a411386218dc98738f2e529af56cc5cae94c705ebabd1e3e565c933bc",
+    "src/modules/uvdobj_rom.c": "e9bd9c29952ad5625eef4d27af43bda785ff1fb900d53ace9b485b4939809159",
     "src/modules/uvdsetld_rom.c": "274d09695ac5beb2913e83e67baba614f43b5f52001c6d62c18a22bee027edf4",
     "src/modules/uvdyn_rom.c": "75452ccfc5179ee2ef080780960447ba028968464c3d3adf902fe7db4d2b15ac",
     "src/modules/uvear_rom.c": "83f2d9c53aac67e858f5c0af27d2d96d72a659a369fa541188f1cfa4ffaf3f1c",
@@ -302,7 +302,7 @@
     "src/modules/uvled_rom.c": "b6791573015515d6d67a778e8b9a834783f13a18a1e9d7ac6b6b79fbe8060bee",
     "src/modules/uvlight_rom.c": "07a8d19263d87652138d20d202bb4416e62fa6ee1571816afa874b4f84dd7fc0",
     "src/modules/uvmath_rom.c": "7d87dec9087dbbcb5e15901b2d3fd9b1f9ed337bab1d77a39ca8a9c9e4ae728a",
-    "src/modules/uvmodel_rom.c": "49cd13a93e1c830da0d8bd888a8532dce35a3fe1bca5845874ee2cea936b2f81",
+    "src/modules/uvmodel_rom.c": "cbeb29cdf10a33b8853d300d1493a3ef4105cda9a1901c5f9b1dbe0c50e4c90f",
     "src/modules/uvmodelld_rom.c": "39667b44820e1aba5d5b6c7371d10d973e08ce44987262dd6e330d00e047ec89",
     "src/modules/uvpfx_rom.c": "fac7b189d953497596ae631d1a9b1d83f9b5ed3ef092b700ae193f2a7478ec4e",
     "src/modules/uvpfxld_rom.c": "3d9acef0a9067b0e12023267a4581db2658028e07ca07ef58d9f82c0baec1bc9",
@@ -330,23 +330,23 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "f19b6d42e00575e3a23754f697ece3cd64f47ac4bc5fc02f2d581fbe88697e99",
-    "docs/VALIDATION_20261006.md": "e1e0dc4c651262e76a923cf442aa20d59b179a2498606a43a80d3dee8f60cbe7"
+    "docs/STRATEGY_V4.md": "3665781979fbd52e1d07c3305c5013681ad8cd17588f83e5d3b81016c25711fe",
+    "docs/VALIDATION_20261006.md": "35c94e1e5c923f67fbfb49ceb6531177c913e8542615f8c4044870238d4cd01f"
   },
   "counts": {
-    "address_function": 923,
+    "address_function": 917,
     "address_global": 1414,
     "assembly": 791,
     "audit_debt": 30,
     "conditional_draft": 4,
-    "decompiler_local": 859,
+    "decompiler_local": 799,
     "draft_marker": 27,
-    "explicit_unknown": 999,
-    "layout_padding": 274,
+    "explicit_unknown": 1016,
+    "layout_padding": 273,
     "offset_field": 1595,
     "opaque_type": 282,
-    "original_quirk": 269,
-    "uncertainty_note": 91,
+    "original_quirk": 276,
+    "uncertainty_note": 92,
     "unused_identifier": 130
   },
   "items": [
@@ -982,44 +982,6 @@
           "declaration_line": 18,
           "lines": [
             20
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-61ebee49b20d",
-      "kind": "address_function",
-      "path": "include/uvmodel_rom.h",
-      "symbol": "func_uvmodel_rom_004006B4",
-      "lines": [
-        27
-      ],
-      "owners": [
-        {
-          "kind": "type",
-          "name": "UvModel_Exports",
-          "declaration_line": 18,
-          "lines": [
-            27
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-0781e5d4e306",
-      "kind": "address_function",
-      "path": "include/uvmodel_rom.h",
-      "symbol": "func_uvmodel_rom_0040199C",
-      "lines": [
-        28
-      ],
-      "owners": [
-        {
-          "kind": "type",
-          "name": "UvModel_Exports",
-          "declaration_line": 18,
-          "lines": [
-            28
           ]
         }
       ]
@@ -18421,44 +18383,6 @@
       ]
     },
     {
-      "id": "Q-ec2f38be9913",
-      "kind": "address_function",
-      "path": "src/modules/uvdobj_rom.c",
-      "symbol": "func_uvmodel_rom_004006B4",
-      "lines": [
-        1373
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvDobjQueryHierarchyWithScalarExtent",
-          "declaration_line": 1337,
-          "lines": [
-            1373
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-83d246611fb7",
-      "kind": "address_function",
-      "path": "src/modules/uvdobj_rom.c",
-      "symbol": "func_uvmodel_rom_0040199C",
-      "lines": [
-        1487
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvDobjQueryHierarchySegment",
-          "declaration_line": 1454,
-          "lines": [
-            1487
-          ]
-        }
-      ]
-    },
-    {
       "id": "Q-f7afabcb2519",
       "kind": "address_function",
       "path": "src/modules/uvdobj_rom.c",
@@ -20810,80 +20734,6 @@
           "declaration_line": 74,
           "lines": [
             74
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-d40cb61fb6f3",
-      "kind": "address_function",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "func_uvmodel_rom_004006B4",
-      "lines": [
-        8,
-        85,
-        283
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "__entrypoint_func_uvmodel_rom_400000",
-          "declaration_line": 74,
-          "lines": [
-            85
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 8,
-          "lines": [
-            8
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
-          "lines": [
-            283
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-7758a09a3b50",
-      "kind": "address_function",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "func_uvmodel_rom_0040199C",
-      "lines": [
-        10,
-        86,
-        680
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "__entrypoint_func_uvmodel_rom_400000",
-          "declaration_line": 74,
-          "lines": [
-            86
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_0040199C",
-          "declaration_line": 10,
-          "lines": [
-            10
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_0040199C",
-          "declaration_line": 680,
-          "lines": [
-            680
           ]
         }
       ]
@@ -67381,50 +67231,50 @@
       "symbol": "D_uvmodel_rom_00403130",
       "lines": [
         54,
-        1103,
-        1114,
-        1129,
-        1132,
-        1133,
-        1136,
-        1145,
-        1146
+        1109,
+        1120,
+        1135,
+        1138,
+        1139,
+        1142,
+        1151,
+        1152
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvModelGetCurrentMatrix",
-          "declaration_line": 1113,
+          "declaration_line": 1119,
           "lines": [
-            1114
+            1120
           ]
         },
         {
           "kind": "function",
           "name": "uvModelPopMatrix",
-          "declaration_line": 1144,
+          "declaration_line": 1150,
           "lines": [
-            1145,
-            1146
+            1151,
+            1152
           ]
         },
         {
           "kind": "function",
           "name": "uvModelPushMatrix",
-          "declaration_line": 1126,
+          "declaration_line": 1132,
           "lines": [
-            1129,
-            1132,
-            1133,
-            1136
+            1135,
+            1138,
+            1139,
+            1142
           ]
         },
         {
           "kind": "function",
           "name": "uvModelResetMatrixStack",
-          "declaration_line": 1102,
+          "declaration_line": 1108,
           "lines": [
-            1103
+            1109
           ]
         },
         {
@@ -67458,7 +67308,7 @@
         105,
         109,
         110,
-        1129
+        1135
       ],
       "owners": [
         {
@@ -67476,9 +67326,9 @@
         {
           "kind": "function",
           "name": "uvModelPushMatrix",
-          "declaration_line": 1126,
+          "declaration_line": 1132,
           "lines": [
-            1129
+            1135
           ]
         },
         {
@@ -67499,15 +67349,15 @@
       "lines": [
         59,
         118,
-        546,
-        559,
-        631,
-        634,
-        735,
-        737,
-        744,
-        746,
-        803
+        550,
+        563,
+        635,
+        638,
+        741,
+        743,
+        750,
+        752,
+        809
       ],
       "owners": [
         {
@@ -67520,25 +67370,25 @@
         },
         {
           "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
+          "name": "uvModelAppendScalarExtentLodQueryResults",
+          "declaration_line": 287,
           "lines": [
-            546,
-            559,
-            631,
-            634
+            550,
+            563,
+            635,
+            638
           ]
         },
         {
           "kind": "function",
-          "name": "func_uvmodel_rom_0040199C",
-          "declaration_line": 680,
+          "name": "uvModelAppendSegmentLodQueryResults",
+          "declaration_line": 686,
           "lines": [
-            735,
-            737,
-            744,
-            746,
-            803
+            741,
+            743,
+            750,
+            752,
+            809
           ]
         },
         {
@@ -67559,11 +67409,11 @@
       "lines": [
         60,
         119,
-        561,
-        633,
-        733,
+        565,
+        637,
         739,
-        802
+        745,
+        808
       ],
       "owners": [
         {
@@ -67576,21 +67426,21 @@
         },
         {
           "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
+          "name": "uvModelAppendScalarExtentLodQueryResults",
+          "declaration_line": 287,
           "lines": [
-            561,
-            633
+            565,
+            637
           ]
         },
         {
           "kind": "function",
-          "name": "func_uvmodel_rom_0040199C",
-          "declaration_line": 680,
+          "name": "uvModelAppendSegmentLodQueryResults",
+          "declaration_line": 686,
           "lines": [
-            733,
             739,
-            802
+            745,
+            808
           ]
         },
         {
@@ -67611,8 +67461,8 @@
       "lines": [
         61,
         123,
-        549,
-        636
+        553,
+        640
       ],
       "owners": [
         {
@@ -67625,11 +67475,11 @@
         },
         {
           "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
+          "name": "uvModelAppendScalarExtentLodQueryResults",
+          "declaration_line": 287,
           "lines": [
-            549,
-            636
+            553,
+            640
           ]
         },
         {
@@ -67650,24 +67500,24 @@
       "lines": [
         62,
         120,
-        496,
-        630,
-        639,
-        640,
-        642,
+        500,
+        634,
         643,
-        664,
-        730,
-        731,
-        732,
-        741,
-        742,
-        743,
-        800,
-        805,
+        644,
+        646,
+        647,
+        668,
+        736,
+        737,
+        738,
+        747,
+        748,
+        749,
         806,
-        808,
-        809
+        811,
+        812,
+        814,
+        815
       ],
       "owners": [
         {
@@ -67680,34 +67530,34 @@
         },
         {
           "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
+          "name": "uvModelAppendScalarExtentLodQueryResults",
+          "declaration_line": 287,
           "lines": [
-            496,
-            630,
-            639,
-            640,
-            642,
+            500,
+            634,
             643,
-            664
+            644,
+            646,
+            647,
+            668
           ]
         },
         {
           "kind": "function",
-          "name": "func_uvmodel_rom_0040199C",
-          "declaration_line": 680,
+          "name": "uvModelAppendSegmentLodQueryResults",
+          "declaration_line": 686,
           "lines": [
-            730,
-            731,
-            732,
-            741,
-            742,
-            743,
-            800,
-            805,
+            736,
+            737,
+            738,
+            747,
+            748,
+            749,
             806,
-            808,
-            809
+            811,
+            812,
+            814,
+            815
           ]
         },
         {
@@ -67728,14 +67578,14 @@
       "lines": [
         63,
         122,
-        415,
-        449,
-        478,
-        561,
-        633,
-        733,
+        419,
+        453,
+        482,
+        565,
+        637,
         739,
-        802
+        745,
+        808
       ],
       "owners": [
         {
@@ -67748,24 +67598,24 @@
         },
         {
           "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
+          "name": "uvModelAppendScalarExtentLodQueryResults",
+          "declaration_line": 287,
           "lines": [
-            415,
-            449,
-            478,
-            561,
-            633
+            419,
+            453,
+            482,
+            565,
+            637
           ]
         },
         {
           "kind": "function",
-          "name": "func_uvmodel_rom_0040199C",
-          "declaration_line": 680,
+          "name": "uvModelAppendSegmentLodQueryResults",
+          "declaration_line": 686,
           "lines": [
-            733,
             739,
-            802
+            745,
+            808
           ]
         },
         {
@@ -67786,52 +67636,52 @@
       "lines": [
         64,
         121,
-        328,
-        496,
-        546,
-        549,
-        559,
-        561,
+        332,
+        500,
+        550,
+        553,
         563,
-        576,
+        565,
+        567,
         580,
-        630,
-        631,
-        633,
+        584,
         634,
-        636,
-        639,
+        635,
+        637,
+        638,
         640,
-        642,
         643,
+        644,
         646,
-        664,
-        666,
+        647,
+        650,
         668,
-        669,
-        677,
-        730,
-        731,
-        732,
-        733,
-        735,
+        670,
+        672,
+        673,
+        681,
+        736,
         737,
         738,
         739,
         741,
-        742,
         743,
         744,
-        746,
+        745,
+        747,
         748,
-        800,
-        802,
-        803,
-        805,
+        749,
+        750,
+        752,
+        754,
         806,
         808,
         809,
-        810
+        811,
+        812,
+        814,
+        815,
+        816
       ],
       "owners": [
         {
@@ -67844,62 +67694,62 @@
         },
         {
           "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
+          "name": "uvModelAppendScalarExtentLodQueryResults",
+          "declaration_line": 287,
           "lines": [
-            328,
-            496,
-            546,
-            549,
-            559,
-            561,
+            332,
+            500,
+            550,
+            553,
             563,
-            576,
+            565,
+            567,
             580,
-            630,
-            631,
-            633,
+            584,
             634,
-            636,
-            639,
+            635,
+            637,
+            638,
             640,
-            642,
             643,
+            644,
             646,
-            664,
-            666,
+            647,
+            650,
             668,
-            669,
-            677
+            670,
+            672,
+            673,
+            681
           ]
         },
         {
           "kind": "function",
-          "name": "func_uvmodel_rom_0040199C",
-          "declaration_line": 680,
+          "name": "uvModelAppendSegmentLodQueryResults",
+          "declaration_line": 686,
           "lines": [
-            730,
-            731,
-            732,
-            733,
-            735,
+            736,
             737,
             738,
             739,
             741,
-            742,
             743,
             744,
-            746,
+            745,
+            747,
             748,
-            800,
-            802,
-            803,
-            805,
+            749,
+            750,
+            752,
+            754,
             806,
             808,
             809,
-            810
+            811,
+            812,
+            814,
+            815,
+            816
           ]
         },
         {
@@ -67920,15 +67770,15 @@
       "lines": [
         65,
         124,
-        404,
-        414,
-        431,
-        438,
-        448,
-        460,
-        467,
-        477,
-        489
+        408,
+        418,
+        435,
+        442,
+        452,
+        464,
+        471,
+        481,
+        493
       ],
       "owners": [
         {
@@ -67941,18 +67791,18 @@
         },
         {
           "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
+          "name": "uvModelAppendScalarExtentLodQueryResults",
+          "declaration_line": 287,
           "lines": [
-            404,
-            414,
-            431,
-            438,
-            448,
-            460,
-            467,
-            477,
-            489
+            408,
+            418,
+            435,
+            442,
+            452,
+            464,
+            471,
+            481,
+            493
           ]
         },
         {
@@ -67975,9 +67825,9 @@
         109,
         110,
         133,
-        1114,
-        1133,
-        1136
+        1120,
+        1139,
+        1142
       ],
       "owners": [
         {
@@ -68000,18 +67850,18 @@
         {
           "kind": "function",
           "name": "uvModelGetCurrentMatrix",
-          "declaration_line": 1113,
+          "declaration_line": 1119,
           "lines": [
-            1114
+            1120
           ]
         },
         {
           "kind": "function",
           "name": "uvModelPushMatrix",
-          "declaration_line": 1126,
+          "declaration_line": 1132,
           "lines": [
-            1133,
-            1136
+            1139,
+            1142
           ]
         },
         {
@@ -113467,16 +113317,12 @@
         18,
         19,
         21,
-        22,
-        283,
-        330,
-        680,
-        711
+        22
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
+          "name": "uvModelAppendScalarExtentLodQueryResults",
           "declaration_line": 8,
           "lines": [
             8
@@ -113484,28 +113330,10 @@
         },
         {
           "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
-          "lines": [
-            283,
-            330
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_0040199C",
+          "name": "uvModelAppendSegmentLodQueryResults",
           "declaration_line": 10,
           "lines": [
             10
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_0040199C",
-          "declaration_line": 680,
-          "lines": [
-            680,
-            711
           ]
         },
         {
@@ -113606,16 +113434,12 @@
         21,
         22,
         28,
-        30,
-        283,
-        330,
-        680,
-        712
+        30
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
+          "name": "uvModelAppendScalarExtentLodQueryResults",
           "declaration_line": 8,
           "lines": [
             8
@@ -113623,28 +113447,10 @@
         },
         {
           "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
-          "lines": [
-            283,
-            330
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_0040199C",
+          "name": "uvModelAppendSegmentLodQueryResults",
           "declaration_line": 10,
           "lines": [
             10
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_0040199C",
-          "declaration_line": 680,
-          "lines": [
-            680,
-            712
           ]
         },
         {
@@ -113754,17 +113560,12 @@
         21,
         22,
         28,
-        29,
-        283,
-        330,
-        332,
-        680,
-        713
+        29
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
+          "name": "uvModelAppendScalarExtentLodQueryResults",
           "declaration_line": 8,
           "lines": [
             8
@@ -113772,29 +113573,10 @@
         },
         {
           "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
-          "lines": [
-            283,
-            330,
-            332
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_0040199C",
+          "name": "uvModelAppendSegmentLodQueryResults",
           "declaration_line": 10,
           "lines": [
             10
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_0040199C",
-          "declaration_line": 680,
-          "lines": [
-            680,
-            713
           ]
         },
         {
@@ -113866,18 +113648,12 @@
         10,
         20,
         21,
-        22,
-        283,
-        334,
-        335,
-        336,
-        680,
-        714
+        22
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
+          "name": "uvModelAppendScalarExtentLodQueryResults",
           "declaration_line": 8,
           "lines": [
             8
@@ -113885,30 +113661,10 @@
         },
         {
           "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
-          "lines": [
-            283,
-            334,
-            335,
-            336
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_0040199C",
+          "name": "uvModelAppendSegmentLodQueryResults",
           "declaration_line": 10,
           "lines": [
             10
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_0040199C",
-          "declaration_line": 680,
-          "lines": [
-            680,
-            714
           ]
         },
         {
@@ -113954,28 +113710,12 @@
         8,
         10,
         20,
-        22,
-        283,
-        338,
-        419,
-        422,
-        452,
-        454,
-        481,
-        483,
-        543,
-        558,
-        639,
-        658,
-        660,
-        662,
-        680,
-        715
+        22
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
+          "name": "uvModelAppendScalarExtentLodQueryResults",
           "declaration_line": 8,
           "lines": [
             8
@@ -113983,40 +113723,10 @@
         },
         {
           "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
-          "lines": [
-            283,
-            338,
-            419,
-            422,
-            452,
-            454,
-            481,
-            483,
-            543,
-            558,
-            639,
-            658,
-            660,
-            662
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_0040199C",
+          "name": "uvModelAppendSegmentLodQueryResults",
           "declaration_line": 10,
           "lines": [
             10
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_0040199C",
-          "declaration_line": 680,
-          "lines": [
-            680,
-            715
           ]
         },
         {
@@ -114045,31 +113755,12 @@
       "lines": [
         8,
         10,
-        22,
-        283,
-        364,
-        365,
-        408,
-        426,
-        427,
-        442,
-        457,
-        458,
-        471,
-        486,
-        487,
-        572,
-        573,
-        587,
-        588,
-        657,
-        680,
-        716
+        22
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
+          "name": "uvModelAppendScalarExtentLodQueryResults",
           "declaration_line": 8,
           "lines": [
             8
@@ -114077,43 +113768,10 @@
         },
         {
           "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
-          "lines": [
-            283,
-            364,
-            365,
-            408,
-            426,
-            427,
-            442,
-            457,
-            458,
-            471,
-            486,
-            487,
-            572,
-            573,
-            587,
-            588,
-            657
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_0040199C",
+          "name": "uvModelAppendSegmentLodQueryResults",
           "declaration_line": 10,
           "lines": [
             10
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_0040199C",
-          "declaration_line": 680,
-          "lines": [
-            680,
-            716
           ]
         },
         {
@@ -114134,26 +113792,12 @@
       "lines": [
         9,
         10,
-        23,
-        284,
-        363,
-        402,
-        436,
-        465,
-        494,
-        579,
-        582,
-        598,
-        680,
-        708,
-        730,
-        741,
-        805
+        23
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
+          "name": "uvModelAppendScalarExtentLodQueryResults",
           "declaration_line": 8,
           "lines": [
             9
@@ -114161,38 +113805,10 @@
         },
         {
           "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
-          "lines": [
-            284,
-            363,
-            402,
-            436,
-            465,
-            494,
-            579,
-            582,
-            598
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_0040199C",
+          "name": "uvModelAppendSegmentLodQueryResults",
           "declaration_line": 10,
           "lines": [
             10
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_0040199C",
-          "declaration_line": 680,
-          "lines": [
-            680,
-            708,
-            730,
-            741,
-            805
           ]
         },
         {
@@ -114212,30 +113828,15 @@
       "symbol": "arg7",
       "lines": [
         11,
-        23,
-        681,
-        722,
-        755,
-        756
+        23
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvmodel_rom_0040199C",
+          "name": "uvModelAppendSegmentLodQueryResults",
           "declaration_line": 10,
           "lines": [
             11
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_0040199C",
-          "declaration_line": 680,
-          "lines": [
-            681,
-            722,
-            755,
-            756
           ]
         },
         {
@@ -114255,46 +113856,15 @@
       "symbol": "arg8",
       "lines": [
         11,
-        23,
-        681,
-        720,
-        728,
-        732,
-        743,
-        765,
-        795,
-        796,
-        797,
-        798,
-        799,
-        809
+        23
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvmodel_rom_0040199C",
+          "name": "uvModelAppendSegmentLodQueryResults",
           "declaration_line": 10,
           "lines": [
             11
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_0040199C",
-          "declaration_line": 680,
-          "lines": [
-            681,
-            720,
-            728,
-            732,
-            743,
-            765,
-            795,
-            796,
-            797,
-            798,
-            799,
-            809
           ]
         },
         {
@@ -114322,2109 +113892,6 @@
           "declaration_line": 22,
           "lines": [
             23
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-e397387121f2",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "sp140",
-      "lines": [
-        695,
-        756,
-        757,
-        758,
-        759
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_0040199C",
-          "declaration_line": 680,
-          "lines": [
-            695,
-            756,
-            757,
-            758,
-            759
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-e7f2bfe60940",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "sp146",
-      "lines": [
-        693,
-        723,
-        741
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_0040199C",
-          "declaration_line": 680,
-          "lines": [
-            693,
-            723,
-            741
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-8fe1cf62f25d",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "sp148",
-      "lines": [
-        692,
-        722,
-        730
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_0040199C",
-          "declaration_line": 680,
-          "lines": [
-            692,
-            722,
-            730
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-758d2d9f7d23",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "sp14C",
-      "lines": [
-        690,
-        755,
-        756
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_0040199C",
-          "declaration_line": 680,
-          "lines": [
-            690,
-            755,
-            756
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-4719cb78bb44",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "sp14E",
-      "lines": [
-        689,
-        719,
-        811,
-        818,
-        819
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_0040199C",
-          "declaration_line": 680,
-          "lines": [
-            689,
-            719,
-            811,
-            818,
-            819
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-7da7d0c1767e",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "sp150",
-      "lines": [
-        688,
-        722,
-        744
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_0040199C",
-          "declaration_line": 680,
-          "lines": [
-            688,
-            722,
-            744
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-13d56c3ff8db",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "sp154",
-      "lines": [
-        687,
-        722,
-        735,
-        737
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_0040199C",
-          "declaration_line": 680,
-          "lines": [
-            687,
-            722,
-            735,
-            737
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-4741e45e99f4",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "sp158",
-      "lines": [
-        686,
-        799,
-        803
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_0040199C",
-          "declaration_line": 680,
-          "lines": [
-            686,
-            799,
-            803
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-ed3ad454c3c0",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "sp15C",
-      "lines": [
-        313,
-        588,
-        589,
-        590,
-        591
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
-          "lines": [
-            313,
-            588,
-            589,
-            590,
-            591
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-977a87e16c34",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "sp15F",
-      "lines": [
-        685,
-        721,
-        724,
-        734,
-        736,
-        745
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_0040199C",
-          "declaration_line": 680,
-          "lines": [
-            685,
-            721,
-            724,
-            734,
-            736,
-            745
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-bc339b1515e5",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "sp160",
-      "lines": [
-        312,
-        582,
-        626,
-        627,
-        628,
-        629,
-        647,
-        648,
-        649,
-        650,
-        651,
-        652,
-        653,
-        654,
-        655,
-        684,
-        714,
-        715,
-        716,
-        718,
-        721,
-        794
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
-          "lines": [
-            312,
-            582,
-            626,
-            627,
-            628,
-            629,
-            647,
-            648,
-            649,
-            650,
-            651,
-            652,
-            653,
-            654,
-            655
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_0040199C",
-          "declaration_line": 680,
-          "lines": [
-            684,
-            714,
-            715,
-            716,
-            718,
-            721,
-            794
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-433866e83dfa",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "sp164",
-      "lines": [
-        311,
-        416,
-        417,
-        418,
-        420,
-        421,
-        423,
-        450,
-        451,
-        452,
-        453,
-        454,
-        479,
-        480,
-        481,
-        482,
-        483
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
-          "lines": [
-            311,
-            416,
-            417,
-            418,
-            420,
-            421,
-            423,
-            450,
-            451,
-            452,
-            453,
-            454,
-            479,
-            480,
-            481,
-            482,
-            483
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-a21c18a2402f",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "sp16C",
-      "lines": [
-        683,
-        711,
-        712,
-        713,
-        717,
-        721,
-        794
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_0040199C",
-          "declaration_line": 680,
-          "lines": [
-            683,
-            711,
-            712,
-            713,
-            717,
-            721,
-            794
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-850d7574034c",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "sp178",
-      "lines": [
-        308,
-        385,
-        386,
-        514,
-        515,
-        535,
-        536,
-        682,
-        708,
-        717,
-        718
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
-          "lines": [
-            308,
-            385,
-            386,
-            514,
-            515,
-            535,
-            536
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_0040199C",
-          "declaration_line": 680,
-          "lines": [
-            682,
-            708,
-            717,
-            718
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-7b39ac95bcec",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "sp17C",
-      "lines": [
-        307,
-        381,
-        382,
-        511,
-        512,
-        539,
-        540
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
-          "lines": [
-            307,
-            381,
-            382,
-            511,
-            512,
-            539,
-            540
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-98a60f6e6c0b",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "sp180",
-      "lines": [
-        306,
-        377,
-        378,
-        506,
-        508,
-        527,
-        528
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
-          "lines": [
-            306,
-            377,
-            378,
-            506,
-            508,
-            527,
-            528
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-f86255104289",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "sp184",
-      "lines": [
-        305,
-        373,
-        374,
-        503,
-        504,
-        531,
-        532
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
-          "lines": [
-            305,
-            373,
-            374,
-            503,
-            504,
-            531,
-            532
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-180f3f1bdaaf",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "sp188",
-      "lines": [
-        304,
-        369,
-        370,
-        500,
-        501,
-        519,
-        520
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
-          "lines": [
-            304,
-            369,
-            370,
-            500,
-            501,
-            519,
-            520
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-9fde466abde2",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "sp18C",
-      "lines": [
-        303,
-        365,
-        366,
-        497,
-        498,
-        523,
-        524
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
-          "lines": [
-            303,
-            365,
-            366,
-            497,
-            498,
-            523,
-            524
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-bdc282b59ee5",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "sp19C",
-      "lines": [
-        299,
-        592,
-        603,
-        608,
-        610,
-        612
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
-          "lines": [
-            299,
-            592,
-            603,
-            608,
-            610,
-            612
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-5c86f8194942",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "sp1B8",
-      "lines": [
-        293,
-        362,
-        403,
-        437,
-        466,
-        562,
-        644
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
-          "lines": [
-            293,
-            362,
-            403,
-            437,
-            466,
-            562,
-            644
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-7d41a524ba5d",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "sp1C0",
-      "lines": [
-        291,
-        328,
-        580,
-        669,
-        677
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
-          "lines": [
-            291,
-            328,
-            580,
-            669,
-            677
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-79a056005c56",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "sp1CC",
-      "lines": [
-        288,
-        364,
-        369,
-        373,
-        377,
-        381,
-        385,
-        564,
-        565,
-        566,
-        567,
-        568,
-        569
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
-          "lines": [
-            288,
-            364,
-            369,
-            373,
-            377,
-            381,
-            385,
-            564,
-            565,
-            566,
-            567,
-            568,
-            569
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-638e6120942f",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "sp1D0",
-      "lines": [
-        287,
-        334,
-        335,
-        336,
-        342,
-        343,
-        344,
-        345,
-        346,
-        347,
-        349,
-        352,
-        353,
-        354,
-        356,
-        360
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
-          "lines": [
-            287,
-            334,
-            335,
-            336,
-            342,
-            343,
-            344,
-            345,
-            346,
-            347,
-            349,
-            352,
-            353,
-            354,
-            356,
-            360
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-f1a877cf8063",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "sp1DC",
-      "lines": [
-        286,
-        330,
-        341,
-        365,
-        369,
-        373,
-        377,
-        381,
-        385,
-        405,
-        406,
-        411,
-        412,
-        439,
-        440,
-        445,
-        446,
-        468,
-        469,
-        474,
-        475,
-        626
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
-          "lines": [
-            286,
-            330,
-            341,
-            365,
-            369,
-            373,
-            377,
-            381,
-            385,
-            405,
-            406,
-            411,
-            412,
-            439,
-            440,
-            445,
-            446,
-            468,
-            469,
-            474,
-            475,
-            626
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-0f936121573e",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "sp1E8",
-      "lines": [
-        285,
-        338,
-        341,
-        342,
-        570
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
-          "lines": [
-            285,
-            338,
-            341,
-            342,
-            570
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-1b8b58088bdd",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "sp98",
-      "lines": [
-        706,
-        752,
-        772,
-        790,
-        791,
-        792
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_0040199C",
-          "declaration_line": 680,
-          "lines": [
-            706,
-            752,
-            772,
-            790,
-            791,
-            792
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-60aaad549489",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "spB4",
-      "lines": [
-        324,
-        521,
-        525,
-        529,
-        533,
-        537,
-        541,
-        543
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
-          "lines": [
-            324,
-            521,
-            525,
-            529,
-            533,
-            537,
-            541,
-            543
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-6629c151ef14",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "spC4",
-      "lines": [
-        320,
-        495,
-        498,
-        501,
-        517,
-        551,
-        555
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
-          "lines": [
-            320,
-            495,
-            498,
-            501,
-            517,
-            551,
-            555
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-3cf28b860703",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "spC8",
-      "lines": [
-        319,
-        495,
-        504,
-        508,
-        517,
-        551,
-        556
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
-          "lines": [
-            319,
-            495,
-            504,
-            508,
-            517,
-            551,
-            556
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-ed38714b42b2",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "spCC",
-      "lines": [
-        318,
-        495,
-        512,
-        515,
-        517,
-        551,
-        557
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
-          "lines": [
-            318,
-            495,
-            512,
-            515,
-            517,
-            551,
-            557
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-22eab6da0c8a",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "spDC",
-      "lines": [
-        314,
-        584,
-        604,
-        622,
-        623,
-        624
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
-          "lines": [
-            314,
-            584,
-            604,
-            622,
-            623,
-            624
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-3d16df74acb9",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "temp_fv0_2",
-      "lines": [
-        290,
-        407,
-        411,
-        412,
-        441,
-        445,
-        446,
-        470,
-        474,
-        475,
-        551,
-        552,
-        555,
-        556,
-        557,
-        559
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
-          "lines": [
-            290,
-            407,
-            411,
-            412,
-            441,
-            445,
-            446,
-            470,
-            474,
-            475,
-            551,
-            552,
-            555,
-            556,
-            557,
-            559
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-f5e552a61c2d",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "temp_fv0_7",
-      "lines": [
-        298,
-        544,
-        546
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
-          "lines": [
-            298,
-            544,
-            546
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-e3dcc957b776",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "temp_s0",
-      "lines": [
-        321,
-        408,
-        409,
-        411,
-        412,
-        416,
-        421,
-        425,
-        442,
-        443,
-        445,
-        446,
-        450,
-        453,
-        456,
-        471,
-        472,
-        474,
-        475,
-        479,
-        482,
-        485
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
-          "lines": [
-            321,
-            408,
-            409,
-            411,
-            412,
-            416,
-            421,
-            425,
-            442,
-            443,
-            445,
-            446,
-            450,
-            453,
-            456,
-            471,
-            472,
-            474,
-            475,
-            479,
-            482,
-            485
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-ce1a885a01b4",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "temp_s0_5",
-      "lines": [
-        289,
-        496,
-        543,
-        555,
-        556,
-        557,
-        558
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
-          "lines": [
-            289,
-            496,
-            543,
-            555,
-            556,
-            557,
-            558
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-df2eca61f605",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "temp_s0_6",
-      "lines": [
-        322,
-        428,
-        563,
-        564,
-        565,
-        566,
-        567,
-        568,
-        569,
-        570,
-        571,
-        573,
-        645,
-        647,
-        648,
-        649,
-        650,
-        651,
-        652,
-        653,
-        654,
-        655,
-        656,
-        657,
-        658,
-        659,
-        660,
-        661,
-        662,
-        663,
-        664
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
-          "lines": [
-            322,
-            428,
-            563,
-            564,
-            565,
-            566,
-            567,
-            568,
-            569,
-            570,
-            571,
-            573,
-            645,
-            647,
-            648,
-            649,
-            650,
-            651,
-            652,
-            653,
-            654,
-            655,
-            656,
-            657,
-            658,
-            659,
-            660,
-            661,
-            662,
-            663,
-            664
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-bc224b41c92d",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "temp_s1",
-      "lines": [
-        323,
-        413,
-        415,
-        419,
-        422,
-        424,
-        425,
-        427,
-        447,
-        449,
-        452,
-        454,
-        455,
-        456,
-        458,
-        476,
-        478,
-        481,
-        483,
-        484,
-        485,
-        487
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
-          "lines": [
-            323,
-            413,
-            415,
-            419,
-            422,
-            424,
-            425,
-            427,
-            447,
-            449,
-            452,
-            454,
-            455,
-            456,
-            458,
-            476,
-            478,
-            481,
-            483,
-            484,
-            485,
-            487
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-5a0265ee3042",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "temp_s2",
-      "lines": [
-        696,
-        758,
-        760,
-        767,
-        771,
-        782,
-        783,
-        784
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_0040199C",
-          "declaration_line": 680,
-          "lines": [
-            696,
-            758,
-            760,
-            767,
-            771,
-            782,
-            783,
-            784
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-638200659111",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "temp_s3",
-      "lines": [
-        697,
-        759,
-        765,
-        786,
-        787,
-        788
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_0040199C",
-          "declaration_line": 680,
-          "lines": [
-            697,
-            759,
-            765,
-            786,
-            787,
-            788
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-95d2b911c91c",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "temp_s5",
-      "lines": [
-        300,
-        590,
-        592,
-        593,
-        600,
-        603,
-        614,
-        615,
-        616
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
-          "lines": [
-            300,
-            590,
-            592,
-            593,
-            600,
-            603,
-            614,
-            615,
-            616
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-7488e7fe7800",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "temp_s6",
-      "lines": [
-        301,
-        591,
-        598,
-        618,
-        619,
-        620
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
-          "lines": [
-            301,
-            591,
-            598,
-            618,
-            619,
-            620
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-e935486f47f9",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "temp_t4",
-      "lines": [
-        310,
-        601,
-        602
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
-          "lines": [
-            310,
-            601,
-            602
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-e902562dc8bb",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "temp_t6",
-      "lines": [
-        698
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_0040199C",
-          "declaration_line": 680,
-          "lines": [
-            698
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-804f0834dc0f",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "temp_v0_2",
-      "lines": [
-        302,
-        593,
-        594,
-        597,
-        598,
-        599,
-        604,
-        609,
-        625,
-        632,
-        635,
-        699,
-        760,
-        761,
-        764,
-        765,
-        766,
-        772,
-        777
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
-          "lines": [
-            302,
-            593,
-            594,
-            597,
-            598,
-            599,
-            604,
-            609,
-            625,
-            632,
-            635
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_0040199C",
-          "declaration_line": 680,
-          "lines": [
-            699,
-            760,
-            761,
-            764,
-            765,
-            766,
-            772,
-            777
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-757277d75d8d",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "var_a0",
-      "lines": [
-        315,
-        616,
-        620,
-        624,
-        628,
-        629,
-        653,
-        654,
-        655
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
-          "lines": [
-            315,
-            616,
-            620,
-            624,
-            628,
-            629,
-            653,
-            654,
-            655
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-1d450989e5f4",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "var_a1",
-      "lines": [
-        700,
-        767,
-        768,
-        771,
-        782,
-        786,
-        790,
-        795,
-        796
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_0040199C",
-          "declaration_line": 680,
-          "lines": [
-            700,
-            767,
-            768,
-            771,
-            782,
-            786,
-            790,
-            795,
-            796
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-577920e660d5",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "var_a3",
-      "lines": [
-        325,
-        600,
-        601
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
-          "lines": [
-            325,
-            600,
-            601
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-e7d71d476edc",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "var_fa0",
-      "lines": [
-        292,
-        405,
-        407,
-        439,
-        441,
-        468,
-        470
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
-          "lines": [
-            292,
-            405,
-            407,
-            439,
-            441,
-            468,
-            470
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-d902528b9b61",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "var_fp",
-      "lines": [
-        701,
-        776,
-        778,
-        780
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_0040199C",
-          "declaration_line": 680,
-          "lines": [
-            701,
-            776,
-            778,
-            780
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-56c6bd4b52ec",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "var_fs0",
-      "lines": [
-        294,
-        409,
-        410,
-        424,
-        425,
-        443,
-        444,
-        455,
-        456,
-        472,
-        473,
-        484,
-        485,
-        518,
-        519,
-        520,
-        523,
-        524,
-        527,
-        528,
-        531,
-        532,
-        535,
-        536,
-        539,
-        540,
-        544
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
-          "lines": [
-            294,
-            409,
-            410,
-            424,
-            425,
-            443,
-            444,
-            455,
-            456,
-            472,
-            473,
-            484,
-            485,
-            518,
-            519,
-            520,
-            523,
-            524,
-            527,
-            528,
-            531,
-            532,
-            535,
-            536,
-            539,
-            540,
-            544
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-41bf2be35f48",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "var_fs1",
-      "lines": [
-        295,
-        358,
-        360,
-        366,
-        370,
-        374,
-        378,
-        382,
-        386,
-        405,
-        406,
-        439,
-        440,
-        468,
-        469,
-        498,
-        501,
-        504,
-        508,
-        512,
-        515,
-        544,
-        626,
-        634
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
-          "lines": [
-            295,
-            358,
-            360,
-            366,
-            370,
-            374,
-            378,
-            382,
-            386,
-            405,
-            406,
-            439,
-            440,
-            468,
-            469,
-            498,
-            501,
-            504,
-            508,
-            512,
-            515,
-            544,
-            626,
-            634
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-728e19431343",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "var_fv0",
-      "lines": [
-        296,
-        347,
-        349,
-        352,
-        354,
-        356,
-        358
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
-          "lines": [
-            296,
-            347,
-            349,
-            352,
-            354,
-            356,
-            358
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-c91012656f1d",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "var_fv1",
-      "lines": [
-        297
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
-          "lines": [
-            297
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-955a54afb9bc",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "var_s1",
-      "lines": [
-        691,
-        770,
-        772,
-        780,
-        781
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_0040199C",
-          "declaration_line": 680,
-          "lines": [
-            691,
-            770,
-            772,
-            780,
-            781
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-310ce9c0596b",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "var_s4",
-      "lines": [
-        309,
-        602,
-        604,
-        612,
-        613
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
-          "lines": [
-            309,
-            602,
-            604,
-            612,
-            613
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-32adb39fed42",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "var_t0",
-      "lines": [
-        702,
-        783,
-        787,
-        791,
-        796,
-        797
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_0040199C",
-          "declaration_line": 680,
-          "lines": [
-            702,
-            783,
-            787,
-            791,
-            796,
-            797
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-dd095020d49e",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "var_t1",
-      "lines": [
-        703,
-        784,
-        788,
-        792,
-        798,
-        799
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_0040199C",
-          "declaration_line": 680,
-          "lines": [
-            703,
-            784,
-            788,
-            792,
-            798,
-            799
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-90c3babe8eda",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "var_v0_5",
-      "lines": [
-        316,
-        614,
-        618,
-        622,
-        626,
-        627,
-        647,
-        648,
-        649
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
-          "lines": [
-            316,
-            614,
-            618,
-            622,
-            626,
-            627,
-            647,
-            648,
-            649
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-6a8f4b64e488",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "var_v1_3",
-      "lines": [
-        317,
-        615,
-        619,
-        623,
-        627,
-        628,
-        650,
-        651,
-        652
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
-          "lines": [
-            317,
-            615,
-            619,
-            623,
-            627,
-            628,
-            650,
-            651,
-            652
           ]
         }
       ]
@@ -140698,16 +138165,16 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "Advance the matrix-stack index, copying at level zero or composing with * the preceding matrix below capacity. * RE_ORIGINAL_QUIRK: a rejected push retains the incremented index. * RE_UNKNOWN: original caller guarantees for balanced stack operations and * capacity; trace initialization and push/pop/get sequences before treating * a later getter as valid or changing this preserved overflow behavior.",
       "lines": [
-        1119
+        1125
       ],
       "evidence": "Advance the matrix-stack index, copying at level zero or composing with * the preceding matrix below capacity. * RE_ORIGINAL_QUIRK: a rejected push retains the incremented index. * RE_UNKNOWN: original caller guarantees for balanced stack operations and * capacity; trace initialization and push/pop/get sequences before treating * a later getter as valid or changing this preserved overflow behavior.",
       "owners": [
         {
           "kind": "function",
           "name": "uvModelPushMatrix",
-          "declaration_line": 1126,
+          "declaration_line": 1132,
           "lines": [
-            1119
+            1125
           ]
         }
       ]
@@ -140718,16 +138185,336 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "Append pointers to graphics states matching the texture ID and return * the number written, preserving group/LOD/state traversal and write order. * RE_ORIGINAL_QUIRK: this routine has no output-capacity argument or check. * RE_UNKNOWN: whether callers provide enough output entries for every match. * Trace original callers and loaded-model state counts before assuming that * the supplied output pointer array has sufficient storage.",
       "lines": [
-        1180
+        1186
       ],
       "evidence": "Append pointers to graphics states matching the texture ID and return * the number written, preserving group/LOD/state traversal and write order. * RE_ORIGINAL_QUIRK: this routine has no output-capacity argument or check. * RE_UNKNOWN: whether callers provide enough output entries for every match. * Trace original callers and loaded-model state counts before assuming that * the supplied output pointer array has sufficient storage.",
       "owners": [
         {
           "kind": "function",
           "name": "uvModelCollectStatesByTextureId",
-          "declaration_line": 1187,
+          "declaration_line": 1193,
           "lines": [
-            1180
+            1186
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-8abdd5efc892",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvmodel_rom.c",
+      "symbol": "Keep each scalar reload; RE_UNKNOWN: scalar meaning, zero/nonfinite values and FP contracts need producer/caller proof.",
+      "lines": [
+        187
+      ],
+      "evidence": "Keep each scalar reload; RE_UNKNOWN: scalar meaning, zero/nonfinite values and FP contracts need producer/caller proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvModelGetPosm",
+          "declaration_line": 179,
+          "lines": [
+            187
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-0a61addbe5a2",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvmodel_rom.c",
+      "symbol": "Keep ordered comparisons and arithmetic grouping; RE_UNKNOWN: extent conventions and FP/nonfinite domains need caller proof.",
+      "lines": [
+        347
+      ],
+      "evidence": "Keep ordered comparisons and arithmetic grouping; RE_UNKNOWN: extent conventions and FP/nonfinite domains need caller proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvModelAppendScalarExtentLodQueryResults",
+          "declaration_line": 287,
+          "lines": [
+            347
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-c2434bd5738a",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvmodel_rom.c",
+      "symbol": "Only this flag initializes bounds results/fractions/faces; RE_UNKNOWN: other paths need flag/asset/caller proof.",
+      "lines": [
+        726
+      ],
+      "evidence": "Only this flag initializes bounds results/fractions/faces; RE_UNKNOWN: other paths need flag/asset/caller proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvModelAppendSegmentLodQueryResults",
+          "declaration_line": 686,
+          "lines": [
+            726
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-88feedf8262e",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvmodel_rom.c",
+      "symbol": "Only this flag initializes bounds/gaps; RE_UNKNOWN: later bounds-path validity needs complete flag/asset/caller proof.",
+      "lines": [
+        367
+      ],
+      "evidence": "Only this flag initializes bounds/gaps; RE_UNKNOWN: later bounds-path validity needs complete flag/asset/caller proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvModelAppendScalarExtentLodQueryResults",
+          "declaration_line": 287,
+          "lines": [
+            367
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-96740164e1f4",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvmodel_rom.c",
+      "symbol": "RE_ORIGINAL_QUIRK: only an upper index bound is checked; RE_UNKNOWN: negative-index validity needs caller proof.",
+      "lines": [
+        183
+      ],
+      "evidence": "RE_ORIGINAL_QUIRK: only an upper index bound is checked; RE_UNKNOWN: negative-index validity needs caller proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvModelGetPosm",
+          "declaration_line": 179,
+          "lines": [
+            183
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-bf37ef88610a",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvmodel_rom.c",
+      "symbol": "RE_UNKNOWN: FP domains and matrix/vector conventions need producer/caller proof.",
+      "lines": [
+        714
+      ],
+      "evidence": "RE_UNKNOWN: FP domains and matrix/vector conventions need producer/caller proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvModelAppendSegmentLodQueryResults",
+          "declaration_line": 686,
+          "lines": [
+            714
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-f020f48db913",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvmodel_rom.c",
+      "symbol": "RE_UNKNOWN: face initialization when ordered comparisons all fail needs nonfinite-input/caller proof.",
+      "lines": [
+        522
+      ],
+      "evidence": "RE_UNKNOWN: face initialization when ordered comparisons all fail needs nonfinite-input/caller proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvModelAppendScalarExtentLodQueryResults",
+          "declaration_line": 287,
+          "lines": [
+            522
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-56e9b90b36b6",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvmodel_rom.c",
+      "symbol": "RE_UNKNOWN: resource/model/output lifetime and alias contracts need caller/allocation proof.",
+      "lines": [
+        182
+      ],
+      "evidence": "RE_UNKNOWN: resource/model/output lifetime and alias contracts need caller/allocation proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvModelGetPosm",
+          "declaration_line": 179,
+          "lines": [
+            182
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-1a06bd63e6de",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvmodel_rom.c",
+      "symbol": "RE_UNKNOWN: retained source test uses a conditionally assigned local; historical declaration/control needs source evidence.",
+      "lines": [
+        432
+      ],
+      "evidence": "RE_UNKNOWN: retained source test uses a conditionally assigned local; historical declaration/control needs source evidence.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvModelAppendScalarExtentLodQueryResults",
+          "declaration_line": 287,
+          "lines": [
+            432
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-c633db7ed9a8",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvmodel_rom.c",
+      "symbol": "RE_UNKNOWN: shared arrays/counts/IDs, callback mutation, aliases and lifetimes need allocation/caller proof.",
+      "lines": [
+        332
+      ],
+      "evidence": "RE_UNKNOWN: shared arrays/counts/IDs, callback mutation, aliases and lifetimes need allocation/caller proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvModelAppendScalarExtentLodQueryResults",
+          "declaration_line": 287,
+          "lines": [
+            332
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-b6e7f2ef0b4c",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvmodel_rom.c",
+      "symbol": "RE_UNKNOWN: shared-buffer capacity, aliases/callback mutation, vertex indices, command termination and lifetimes need producer/caller proof.",
+      "lines": [
+        757
+      ],
+      "evidence": "RE_UNKNOWN: shared-buffer capacity, aliases/callback mutation, vertex indices, command termination and lifetimes need producer/caller proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvModelAppendSegmentLodQueryResults",
+          "declaration_line": 686,
+          "lines": [
+            757
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-d1d197686cf2",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvmodel_rom.c",
+      "symbol": "RE_UNKNOWN: signed 16-bit hit/state/element counters and return narrowing need count/asset/caller-domain proof.",
+      "lines": [
+        695
+      ],
+      "evidence": "RE_UNKNOWN: signed 16-bit hit/state/element counters and return narrowing need count/asset/caller-domain proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvModelAppendSegmentLodQueryResults",
+          "declaration_line": 686,
+          "lines": [
+            695
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-52a9891106df",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvmodel_rom.c",
+      "symbol": "RE_UNKNOWN: signed count subtraction/narrowing domain needs caller/count-producer proof.",
+      "lines": [
+        584
+      ],
+      "evidence": "RE_UNKNOWN: signed count subtraction/narrowing domain needs caller/count-producer proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvModelAppendScalarExtentLodQueryResults",
+          "declaration_line": 287,
+          "lines": [
+            584
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-ca18811c7611",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvmodel_rom.c",
+      "symbol": "RE_UNKNOWN: unused declaration and empty scaffolds retain compiler behavior; historical source needs independent evidence.",
+      "lines": [
+        301
+      ],
+      "evidence": "RE_UNKNOWN: unused declaration and empty scaffolds retain compiler behavior; historical source needs independent evidence.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvModelAppendScalarExtentLodQueryResults",
+          "declaration_line": 287,
+          "lines": [
+            301
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-ded504987561",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvmodel_rom.c",
+      "symbol": "RE_UNKNOWN: unused declarations/storage retain compiler behavior; historical source needs independent evidence.",
+      "lines": [
+        704
+      ],
+      "evidence": "RE_UNKNOWN: unused declarations/storage retain compiler behavior; historical source needs independent evidence.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvModelAppendSegmentLodQueryResults",
+          "declaration_line": 686,
+          "lines": [
+            704
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-1c60fc376ac2",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvmodel_rom.c",
+      "symbol": "RE_UNKNOWN: vertex-map indices, command extents/termination and resource lifetimes need asset/caller proof.",
+      "lines": [
+        586
+      ],
+      "evidence": "RE_UNKNOWN: vertex-map indices, command extents/termination and resource lifetimes need asset/caller proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvModelAppendScalarExtentLodQueryResults",
+          "declaration_line": 287,
+          "lines": [
+            586
           ]
         }
       ]
@@ -140738,16 +138525,16 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "Reject the original absent-bounds sentinel or a failed matrix inverse, * transform the point to local space and delegate to the bounds predicate. * RE_UNKNOWN: whether original callers guarantee finite points/transforms * and finite ordered asset bounds. The helper's strict rejection comparisons * do not prove containment for NaNs; trace callers and asset validation.",
       "lines": [
-        825
+        831
       ],
       "evidence": "Reject the original absent-bounds sentinel or a failed matrix inverse, * transform the point to local space and delegate to the bounds predicate. * RE_UNKNOWN: whether original callers guarantee finite points/transforms * and finite ordered asset bounds. The helper's strict rejection comparisons * do not prove containment for NaNs; trace callers and asset validation.",
       "owners": [
         {
           "kind": "function",
           "name": "uvModelTestWorldPointInLodBounds",
-          "declaration_line": 831,
+          "declaration_line": 837,
           "lines": [
-            825
+            831
           ]
         }
       ]
@@ -140758,16 +138545,16 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "Reject the point on the first strict comparison outside a bound, in the * original X/Y/Z order. Equality passes for finite ordered bounds. * RE_ORIGINAL_QUIRK: a NaN coordinate takes neither rejection for its axis; * preserve these comparisons rather than replacing them with positive tests. * RE_UNKNOWN: finite-coordinate and ordered-bound caller/asset guarantees. * Trace original bound producers and callers before asserting containment.",
       "lines": [
-        855
+        861
       ],
       "evidence": "Reject the point on the first strict comparison outside a bound, in the * original X/Y/Z order. Equality passes for finite ordered bounds. * RE_ORIGINAL_QUIRK: a NaN coordinate takes neither rejection for its axis; * preserve these comparisons rather than replacing them with positive tests. * RE_UNKNOWN: finite-coordinate and ordered-bound caller/asset guarantees. * Trace original bound producers and callers before asserting containment.",
       "owners": [
         {
           "kind": "function",
           "name": "uvModelContainsLocalPoint",
-          "declaration_line": 862,
+          "declaration_line": 868,
           "lines": [
-            855
+            861
           ]
         }
       ]
@@ -140798,16 +138585,36 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "Return the address selected by the current matrix-stack index directly. * RE_UNKNOWN: whether callers ensure the index is within allocated storage. * Reset sets -1 and an over-capacity push retains its increment; trace stack * setup and balanced push/pop/get callers before assuming a valid matrix.",
       "lines": [
-        1108
+        1114
       ],
       "evidence": "Return the address selected by the current matrix-stack index directly. * RE_UNKNOWN: whether callers ensure the index is within allocated storage. * Reset sets -1 and an over-capacity push retains its increment; trace stack * setup and balanced push/pop/get callers before assuming a valid matrix.",
       "owners": [
         {
           "kind": "function",
           "name": "uvModelGetCurrentMatrix",
-          "declaration_line": 1113,
+          "declaration_line": 1119,
           "lines": [
-            1108
+            1114
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-81fb9ca6693a",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvmodel_rom.c",
+      "symbol": "This bounds path publishes without a capacity check; RE_UNKNOWN: buffer extent needs allocation/caller proof.",
+      "lines": [
+        580
+      ],
+      "evidence": "This bounds path publishes without a capacity check; RE_UNKNOWN: buffer extent needs allocation/caller proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvModelAppendScalarExtentLodQueryResults",
+          "declaration_line": 287,
+          "lines": [
+            580
           ]
         }
       ]
@@ -150235,56 +148042,24 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "pad",
       "lines": [
-        707,
-        768,
-        770,
-        895,
-        1162
+        901,
+        1168
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvmodel_rom_0040199C",
-          "declaration_line": 680,
-          "lines": [
-            707,
-            768,
-            770
-          ]
-        },
-        {
-          "kind": "function",
           "name": "uvModelIntersectSegmentWithBoundsFaces",
-          "declaration_line": 890,
+          "declaration_line": 896,
           "lines": [
-            895
+            901
           ]
         },
         {
           "kind": "function",
           "name": "uvModelReplaceTextureId",
-          "declaration_line": 1156,
+          "declaration_line": 1162,
           "lines": [
-            1162
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-40a457eb0389",
-      "kind": "layout_padding",
-      "path": "src/modules/uvmodel_rom.c",
-      "symbol": "pad1",
-      "lines": [
-        705
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvmodel_rom_0040199C",
-          "declaration_line": 680,
-          "lines": [
-            705
+            1168
           ]
         }
       ]
@@ -200708,89 +198483,89 @@
       "lines": [
         170,
         173,
-        181,
-        216,
-        229,
-        242,
-        264,
-        365,
-        409,
-        411,
+        183,
+        218,
+        231,
+        244,
+        266,
+        369,
+        413,
         415,
-        416,
-        425,
-        449,
-        478,
-        564,
-        565,
-        566,
-        647,
-        648,
-        649,
-        658,
-        659,
-        835,
-        863,
-        938,
-        967,
-        983,
-        1003,
-        1023,
-        1043,
-        1056,
-        1060,
-        1165,
-        1167,
-        1198,
-        1200
+        419,
+        420,
+        429,
+        453,
+        482,
+        568,
+        569,
+        570,
+        651,
+        652,
+        653,
+        662,
+        663,
+        841,
+        869,
+        944,
+        973,
+        989,
+        1009,
+        1029,
+        1049,
+        1062,
+        1066,
+        1171,
+        1173,
+        1204,
+        1206
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
+          "name": "uvModelAppendScalarExtentLodQueryResults",
+          "declaration_line": 287,
           "lines": [
-            365,
-            409,
-            411,
+            369,
+            413,
             415,
-            416,
-            425,
-            449,
-            478,
-            564,
-            565,
-            566,
-            647,
-            648,
-            649,
-            658,
-            659
+            419,
+            420,
+            429,
+            453,
+            482,
+            568,
+            569,
+            570,
+            651,
+            652,
+            653,
+            662,
+            663
           ]
         },
         {
           "kind": "function",
           "name": "uvModelCollectStatesByTextureId",
-          "declaration_line": 1187,
+          "declaration_line": 1193,
           "lines": [
-            1198,
-            1200
+            1204,
+            1206
           ]
         },
         {
           "kind": "function",
           "name": "uvModelContainsLocalPoint",
-          "declaration_line": 862,
+          "declaration_line": 868,
           "lines": [
-            863
+            869
           ]
         },
         {
           "kind": "function",
           "name": "uvModelFindThresholdBand",
-          "declaration_line": 256,
+          "declaration_line": 258,
           "lines": [
-            264
+            266
           ]
         },
         {
@@ -200805,51 +198580,51 @@
         {
           "kind": "function",
           "name": "uvModelGetPosm",
-          "declaration_line": 177,
+          "declaration_line": 179,
           "lines": [
-            181
+            183
           ]
         },
         {
           "kind": "function",
           "name": "uvModelGetProps",
-          "declaration_line": 192,
+          "declaration_line": 194,
           "lines": [
-            216,
-            229,
-            242
+            218,
+            231,
+            244
           ]
         },
         {
           "kind": "function",
           "name": "uvModelIntersectSegmentWithBoundsFaces",
-          "declaration_line": 890,
+          "declaration_line": 896,
           "lines": [
-            938,
-            967,
-            983,
-            1003,
-            1023,
-            1043,
-            1056,
-            1060
+            944,
+            973,
+            989,
+            1009,
+            1029,
+            1049,
+            1062,
+            1066
           ]
         },
         {
           "kind": "function",
           "name": "uvModelReplaceTextureId",
-          "declaration_line": 1156,
+          "declaration_line": 1162,
           "lines": [
-            1165,
-            1167
+            1171,
+            1173
           ]
         },
         {
           "kind": "function",
           "name": "uvModelTestWorldPointInLodBounds",
-          "declaration_line": 831,
+          "declaration_line": 837,
           "lines": [
-            835
+            841
           ]
         }
       ]
@@ -200860,90 +198635,90 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "unk10",
       "lines": [
-        185,
-        186,
         187,
-        235,
-        377,
-        443,
-        446,
-        453,
-        568,
-        732,
-        743,
-        809,
-        872,
-        953,
-        967,
-        985,
-        1005,
-        1036,
-        1040,
-        1065,
-        1085
+        188,
+        189,
+        237,
+        381,
+        447,
+        450,
+        457,
+        572,
+        738,
+        749,
+        815,
+        878,
+        959,
+        973,
+        991,
+        1011,
+        1042,
+        1046,
+        1071,
+        1091
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
+          "name": "uvModelAppendScalarExtentLodQueryResults",
+          "declaration_line": 287,
           "lines": [
-            377,
-            443,
-            446,
-            453,
-            568
+            381,
+            447,
+            450,
+            457,
+            572
           ]
         },
         {
           "kind": "function",
-          "name": "func_uvmodel_rom_0040199C",
-          "declaration_line": 680,
+          "name": "uvModelAppendSegmentLodQueryResults",
+          "declaration_line": 686,
           "lines": [
-            732,
-            743,
-            809
+            738,
+            749,
+            815
           ]
         },
         {
           "kind": "function",
           "name": "uvModelContainsLocalPoint",
-          "declaration_line": 862,
+          "declaration_line": 868,
           "lines": [
-            872
+            878
           ]
         },
         {
           "kind": "function",
           "name": "uvModelGetPosm",
-          "declaration_line": 177,
+          "declaration_line": 179,
           "lines": [
-            185,
-            186,
-            187
+            187,
+            188,
+            189
           ]
         },
         {
           "kind": "function",
           "name": "uvModelGetProps",
-          "declaration_line": 192,
+          "declaration_line": 194,
           "lines": [
-            235
+            237
           ]
         },
         {
           "kind": "function",
           "name": "uvModelIntersectSegmentWithBoundsFaces",
-          "declaration_line": 890,
+          "declaration_line": 896,
           "lines": [
-            953,
-            967,
-            985,
-            1005,
-            1036,
-            1040,
-            1065,
-            1085
+            959,
+            973,
+            991,
+            1011,
+            1042,
+            1046,
+            1071,
+            1091
           ]
         }
       ]
@@ -200954,61 +198729,61 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "unk14",
       "lines": [
-        385,
-        419,
-        452,
-        472,
-        475,
-        481,
-        482,
-        569,
-        878,
-        963,
-        967,
-        996,
-        1000,
-        1025,
-        1045,
-        1063,
-        1083
+        389,
+        423,
+        456,
+        476,
+        479,
+        485,
+        486,
+        573,
+        884,
+        969,
+        973,
+        1002,
+        1006,
+        1031,
+        1051,
+        1069,
+        1089
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
+          "name": "uvModelAppendScalarExtentLodQueryResults",
+          "declaration_line": 287,
           "lines": [
-            385,
-            419,
-            452,
-            472,
-            475,
-            481,
-            482,
-            569
+            389,
+            423,
+            456,
+            476,
+            479,
+            485,
+            486,
+            573
           ]
         },
         {
           "kind": "function",
           "name": "uvModelContainsLocalPoint",
-          "declaration_line": 862,
+          "declaration_line": 868,
           "lines": [
-            878
+            884
           ]
         },
         {
           "kind": "function",
           "name": "uvModelIntersectSegmentWithBoundsFaces",
-          "declaration_line": 890,
+          "declaration_line": 896,
           "lines": [
-            963,
-            967,
-            996,
-            1000,
-            1025,
-            1045,
-            1063,
-            1083
+            969,
+            973,
+            1002,
+            1006,
+            1031,
+            1051,
+            1069,
+            1089
           ]
         }
       ]
@@ -201019,23 +198794,23 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "unk18",
       "lines": [
-        653,
-        654,
-        655,
-        662,
-        663
+        657,
+        658,
+        659,
+        666,
+        667
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
+          "name": "uvModelAppendScalarExtentLodQueryResults",
+          "declaration_line": 287,
           "lines": [
-            653,
-            654,
-            655,
-            662,
-            663
+            657,
+            658,
+            659,
+            666,
+            667
           ]
         }
       ]
@@ -201046,30 +198821,30 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "unk20",
       "lines": [
-        424,
-        455,
-        484,
-        1225,
-        1226
+        428,
+        459,
+        488,
+        1231,
+        1232
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
+          "name": "uvModelAppendScalarExtentLodQueryResults",
+          "declaration_line": 287,
           "lines": [
-            424,
-            455,
-            484
+            428,
+            459,
+            488
           ]
         },
         {
           "kind": "function",
           "name": "uvModelSetCollisionMetadataWord38",
-          "declaration_line": 1218,
+          "declaration_line": 1224,
           "lines": [
-            1225,
-            1226
+            1231,
+            1232
           ]
         }
       ]
@@ -201080,21 +198855,21 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "unk24",
       "lines": [
-        425,
-        456,
-        485,
-        664
+        429,
+        460,
+        489,
+        668
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
+          "name": "uvModelAppendScalarExtentLodQueryResults",
+          "declaration_line": 287,
           "lines": [
-            425,
-            456,
-            485,
-            664
+            429,
+            460,
+            489,
+            668
           ]
         }
       ]
@@ -201105,15 +198880,15 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "unk30",
       "lines": [
-        570
+        574
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
+          "name": "uvModelAppendScalarExtentLodQueryResults",
+          "declaration_line": 287,
           "lines": [
-            570
+            574
           ]
         }
       ]
@@ -201124,15 +198899,15 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "unk38",
       "lines": [
-        1226
+        1232
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvModelSetCollisionMetadataWord38",
-          "declaration_line": 1218,
+          "declaration_line": 1224,
           "lines": [
-            1226
+            1232
           ]
         }
       ]
@@ -201144,97 +198919,97 @@
       "symbol": "unk4",
       "lines": [
         170,
-        213,
-        217,
-        263,
-        266,
-        269,
-        274,
-        373,
-        426,
-        427,
-        443,
-        445,
-        450,
-        456,
-        457,
-        458,
-        486,
-        487,
-        565,
-        572,
-        587,
-        755,
-        869,
-        948,
-        967,
-        985,
-        1005,
-        1016,
-        1020,
-        1065,
-        1085,
-        1164,
-        1168,
-        1197,
-        1201
+        215,
+        219,
+        265,
+        268,
+        271,
+        276,
+        377,
+        430,
+        431,
+        447,
+        449,
+        454,
+        460,
+        461,
+        462,
+        490,
+        491,
+        569,
+        576,
+        591,
+        761,
+        875,
+        954,
+        973,
+        991,
+        1011,
+        1022,
+        1026,
+        1071,
+        1091,
+        1170,
+        1174,
+        1203,
+        1207
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
+          "name": "uvModelAppendScalarExtentLodQueryResults",
+          "declaration_line": 287,
           "lines": [
-            373,
-            426,
-            427,
-            443,
-            445,
-            450,
-            456,
-            457,
-            458,
-            486,
-            487,
-            565,
-            572,
-            587
+            377,
+            430,
+            431,
+            447,
+            449,
+            454,
+            460,
+            461,
+            462,
+            490,
+            491,
+            569,
+            576,
+            591
           ]
         },
         {
           "kind": "function",
-          "name": "func_uvmodel_rom_0040199C",
-          "declaration_line": 680,
+          "name": "uvModelAppendSegmentLodQueryResults",
+          "declaration_line": 686,
           "lines": [
-            755
+            761
           ]
         },
         {
           "kind": "function",
           "name": "uvModelCollectStatesByTextureId",
-          "declaration_line": 1187,
+          "declaration_line": 1193,
           "lines": [
-            1197,
-            1201
+            1203,
+            1207
           ]
         },
         {
           "kind": "function",
           "name": "uvModelContainsLocalPoint",
-          "declaration_line": 862,
+          "declaration_line": 868,
           "lines": [
-            869
+            875
           ]
         },
         {
           "kind": "function",
           "name": "uvModelFindThresholdBand",
-          "declaration_line": 256,
+          "declaration_line": 258,
           "lines": [
-            263,
-            266,
-            269,
-            274
+            265,
+            268,
+            271,
+            276
           ]
         },
         {
@@ -201248,34 +199023,34 @@
         {
           "kind": "function",
           "name": "uvModelGetProps",
-          "declaration_line": 192,
+          "declaration_line": 194,
           "lines": [
-            213,
-            217
+            215,
+            219
           ]
         },
         {
           "kind": "function",
           "name": "uvModelIntersectSegmentWithBoundsFaces",
-          "declaration_line": 890,
+          "declaration_line": 896,
           "lines": [
-            948,
-            967,
-            985,
-            1005,
-            1016,
-            1020,
-            1065,
-            1085
+            954,
+            973,
+            991,
+            1011,
+            1022,
+            1026,
+            1071,
+            1091
           ]
         },
         {
           "kind": "function",
           "name": "uvModelReplaceTextureId",
-          "declaration_line": 1156,
+          "declaration_line": 1162,
           "lines": [
-            1164,
-            1168
+            1170,
+            1174
           ]
         }
       ]
@@ -201286,45 +199061,45 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "unk5",
       "lines": [
-        238,
-        363,
-        402,
-        436,
-        465,
-        494,
-        579,
-        720,
-        728
+        240,
+        367,
+        406,
+        440,
+        469,
+        498,
+        583,
+        726,
+        734
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
+          "name": "uvModelAppendScalarExtentLodQueryResults",
+          "declaration_line": 287,
           "lines": [
-            363,
-            402,
-            436,
-            465,
-            494,
-            579
+            367,
+            406,
+            440,
+            469,
+            498,
+            583
           ]
         },
         {
           "kind": "function",
-          "name": "func_uvmodel_rom_0040199C",
-          "declaration_line": 680,
+          "name": "uvModelAppendSegmentLodQueryResults",
+          "declaration_line": 686,
           "lines": [
-            720,
-            728
+            726,
+            734
           ]
         },
         {
           "kind": "function",
           "name": "uvModelGetProps",
-          "declaration_line": 192,
+          "declaration_line": 194,
           "lines": [
-            238
+            240
           ]
         }
       ]
@@ -201335,15 +199110,15 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "unk6",
       "lines": [
-        242
+        244
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvModelGetProps",
-          "declaration_line": 192,
+          "declaration_line": 194,
           "lines": [
-            242
+            244
           ]
         }
       ]
@@ -201354,17 +199129,17 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "unk70",
       "lines": [
-        571,
-        656
+        575,
+        660
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
+          "name": "uvModelAppendScalarExtentLodQueryResults",
+          "declaration_line": 287,
           "lines": [
-            571,
-            656
+            575,
+            660
           ]
         }
       ]
@@ -201375,17 +199150,17 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "unk74",
       "lines": [
-        573,
-        657
+        577,
+        661
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
+          "name": "uvModelAppendScalarExtentLodQueryResults",
+          "declaration_line": 287,
           "lines": [
-            573,
-            657
+            577,
+            661
           ]
         }
       ]
@@ -201396,131 +199171,131 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "unk8",
       "lines": [
-        181,
-        184,
-        229,
-        364,
-        365,
-        381,
-        408,
-        422,
-        442,
-        454,
-        471,
-        472,
-        474,
-        479,
+        183,
+        186,
+        231,
+        368,
+        369,
+        385,
+        412,
+        426,
+        446,
+        458,
+        475,
+        476,
+        478,
         483,
-        485,
-        566,
-        722,
-        835,
-        847,
-        875,
-        958,
-        967,
-        976,
-        980,
-        1025,
-        1045,
-        1063,
-        1083,
-        1166,
-        1199
+        487,
+        489,
+        570,
+        728,
+        841,
+        853,
+        881,
+        964,
+        973,
+        982,
+        986,
+        1031,
+        1051,
+        1069,
+        1089,
+        1172,
+        1205
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
+          "name": "uvModelAppendScalarExtentLodQueryResults",
+          "declaration_line": 287,
           "lines": [
-            364,
-            365,
-            381,
-            408,
-            422,
-            442,
-            454,
-            471,
-            472,
-            474,
-            479,
+            368,
+            369,
+            385,
+            412,
+            426,
+            446,
+            458,
+            475,
+            476,
+            478,
             483,
-            485,
-            566
+            487,
+            489,
+            570
           ]
         },
         {
           "kind": "function",
-          "name": "func_uvmodel_rom_0040199C",
-          "declaration_line": 680,
+          "name": "uvModelAppendSegmentLodQueryResults",
+          "declaration_line": 686,
           "lines": [
-            722
+            728
           ]
         },
         {
           "kind": "function",
           "name": "uvModelCollectStatesByTextureId",
-          "declaration_line": 1187,
+          "declaration_line": 1193,
           "lines": [
-            1199
+            1205
           ]
         },
         {
           "kind": "function",
           "name": "uvModelContainsLocalPoint",
-          "declaration_line": 862,
+          "declaration_line": 868,
           "lines": [
-            875
+            881
           ]
         },
         {
           "kind": "function",
           "name": "uvModelGetPosm",
-          "declaration_line": 177,
+          "declaration_line": 179,
           "lines": [
-            181,
-            184
+            183,
+            186
           ]
         },
         {
           "kind": "function",
           "name": "uvModelGetProps",
-          "declaration_line": 192,
+          "declaration_line": 194,
           "lines": [
-            229
+            231
           ]
         },
         {
           "kind": "function",
           "name": "uvModelIntersectSegmentWithBoundsFaces",
-          "declaration_line": 890,
+          "declaration_line": 896,
           "lines": [
-            958,
-            967,
-            976,
-            980,
-            1025,
-            1045,
-            1063,
-            1083
+            964,
+            973,
+            982,
+            986,
+            1031,
+            1051,
+            1069,
+            1089
           ]
         },
         {
           "kind": "function",
           "name": "uvModelReplaceTextureId",
-          "declaration_line": 1156,
+          "declaration_line": 1162,
           "lines": [
-            1166
+            1172
           ]
         },
         {
           "kind": "function",
           "name": "uvModelTestWorldPointInLodBounds",
-          "declaration_line": 831,
+          "declaration_line": 837,
           "lines": [
-            835,
-            847
+            841,
+            853
           ]
         }
       ]
@@ -201531,78 +199306,78 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "unkC",
       "lines": [
-        232,
-        369,
-        409,
-        412,
-        421,
-        567,
-        568,
-        569,
-        650,
-        651,
-        652,
-        660,
-        661,
-        866,
-        943,
-        967,
-        983,
-        1003,
-        1023,
-        1043,
-        1076,
-        1080
+        234,
+        373,
+        413,
+        416,
+        425,
+        571,
+        572,
+        573,
+        654,
+        655,
+        656,
+        664,
+        665,
+        872,
+        949,
+        973,
+        989,
+        1009,
+        1029,
+        1049,
+        1082,
+        1086
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvmodel_rom_004006B4",
-          "declaration_line": 283,
+          "name": "uvModelAppendScalarExtentLodQueryResults",
+          "declaration_line": 287,
           "lines": [
-            369,
-            409,
-            412,
-            421,
-            567,
-            568,
-            569,
-            650,
-            651,
-            652,
-            660,
-            661
+            373,
+            413,
+            416,
+            425,
+            571,
+            572,
+            573,
+            654,
+            655,
+            656,
+            664,
+            665
           ]
         },
         {
           "kind": "function",
           "name": "uvModelContainsLocalPoint",
-          "declaration_line": 862,
+          "declaration_line": 868,
           "lines": [
-            866
+            872
           ]
         },
         {
           "kind": "function",
           "name": "uvModelGetProps",
-          "declaration_line": 192,
+          "declaration_line": 194,
           "lines": [
-            232
+            234
           ]
         },
         {
           "kind": "function",
           "name": "uvModelIntersectSegmentWithBoundsFaces",
-          "declaration_line": 890,
+          "declaration_line": 896,
           "lines": [
-            943,
-            967,
-            983,
-            1003,
-            1023,
-            1043,
-            1076,
-            1080
+            949,
+            973,
+            989,
+            1009,
+            1029,
+            1049,
+            1082,
+            1086
           ]
         }
       ]
@@ -215248,16 +213023,16 @@
       "symbol": "UnkUVMD_24_Unk4",
       "lines": [
         23,
-        722,
-        891
+        728,
+        897
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvmodel_rom_0040199C",
-          "declaration_line": 680,
+          "name": "uvModelAppendSegmentLodQueryResults",
+          "declaration_line": 686,
           "lines": [
-            722
+            728
           ]
         },
         {
@@ -215271,9 +213046,9 @@
         {
           "kind": "function",
           "name": "uvModelIntersectSegmentWithBoundsFaces",
-          "declaration_line": 890,
+          "declaration_line": 896,
           "lines": [
-            891
+            897
           ]
         }
       ]
@@ -221712,16 +219487,16 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "Advance the matrix-stack index, copying at level zero or composing with * the preceding matrix below capacity. * RE_ORIGINAL_QUIRK: a rejected push retains the incremented index. * RE_UNKNOWN: original caller guarantees for balanced stack operations and * capacity; trace initialization and push/pop/get sequences before treating * a later getter as valid or changing this preserved overflow behavior.",
       "lines": [
-        1119
+        1125
       ],
       "evidence": "Advance the matrix-stack index, copying at level zero or composing with * the preceding matrix below capacity. * RE_ORIGINAL_QUIRK: a rejected push retains the incremented index. * RE_UNKNOWN: original caller guarantees for balanced stack operations and * capacity; trace initialization and push/pop/get sequences before treating * a later getter as valid or changing this preserved overflow behavior.",
       "owners": [
         {
           "kind": "function",
           "name": "uvModelPushMatrix",
-          "declaration_line": 1126,
+          "declaration_line": 1132,
           "lines": [
-            1119
+            1125
           ]
         }
       ]
@@ -221732,16 +219507,16 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "Append pointers to graphics states matching the texture ID and return * the number written, preserving group/LOD/state traversal and write order. * RE_ORIGINAL_QUIRK: this routine has no output-capacity argument or check. * RE_UNKNOWN: whether callers provide enough output entries for every match. * Trace original callers and loaded-model state counts before assuming that * the supplied output pointer array has sufficient storage.",
       "lines": [
-        1180
+        1186
       ],
       "evidence": "Append pointers to graphics states matching the texture ID and return * the number written, preserving group/LOD/state traversal and write order. * RE_ORIGINAL_QUIRK: this routine has no output-capacity argument or check. * RE_UNKNOWN: whether callers provide enough output entries for every match. * Trace original callers and loaded-model state counts before assuming that * the supplied output pointer array has sufficient storage.",
       "owners": [
         {
           "kind": "function",
           "name": "uvModelCollectStatesByTextureId",
-          "declaration_line": 1187,
+          "declaration_line": 1193,
           "lines": [
-            1180
+            1186
           ]
         }
       ]
@@ -221752,16 +219527,156 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "Classify the segment against the axis-aligned bounds and collect up * to two face intersections. Side IDs are signed axes: X=1, Y=2, Z=3. * RE_ORIGINAL_QUIRK: fully contained endpoints return three and side -1; * retain face order, inclusive comparisons and unchanged unused outputs.",
       "lines": [
-        886
+        892
       ],
       "evidence": "Classify the segment against the axis-aligned bounds and collect up * to two face intersections. Side IDs are signed axes: X=1, Y=2, Z=3. * RE_ORIGINAL_QUIRK: fully contained endpoints return three and side -1; * retain face order, inclusive comparisons and unchanged unused outputs.",
       "owners": [
         {
           "kind": "function",
           "name": "uvModelIntersectSegmentWithBoundsFaces",
-          "declaration_line": 890,
+          "declaration_line": 896,
           "lines": [
-            886
+            892
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-f0befe13eb94",
+      "kind": "original_quirk",
+      "path": "src/modules/uvmodel_rom.c",
+      "symbol": "RE_ORIGINAL_QUIRK: appends without checking capacity; preserve every live count/ID/pointer reload.",
+      "lines": [
+        816
+      ],
+      "evidence": "RE_ORIGINAL_QUIRK: appends without checking capacity; preserve every live count/ID/pointer reload.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvModelAppendSegmentLodQueryResults",
+          "declaration_line": 686,
+          "lines": [
+            816
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-6c18968ef000",
+      "kind": "original_quirk",
+      "path": "src/modules/uvmodel_rom.c",
+      "symbol": "RE_ORIGINAL_QUIRK: consumes conditionally initialized bounds/gaps; no defaults are invented.",
+      "lines": [
+        498
+      ],
+      "evidence": "RE_ORIGINAL_QUIRK: consumes conditionally initialized bounds/gaps; no defaults are invented.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvModelAppendScalarExtentLodQueryResults",
+          "declaration_line": 287,
+          "lines": [
+            498
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-f1876746b2ea",
+      "kind": "original_quirk",
+      "path": "src/modules/uvmodel_rom.c",
+      "symbol": "RE_ORIGINAL_QUIRK: divide without a zero guard; unordered upper-clamp comparison takes the 1.0 branch.",
+      "lines": [
+        548
+      ],
+      "evidence": "RE_ORIGINAL_QUIRK: divide without a zero guard; unordered upper-clamp comparison takes the 1.0 branch.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvModelAppendScalarExtentLodQueryResults",
+          "declaration_line": 287,
+          "lines": [
+            548
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-1be358e93860",
+      "kind": "original_quirk",
+      "path": "src/modules/uvmodel_rom.c",
+      "symbol": "RE_ORIGINAL_QUIRK: only an upper index bound is checked; RE_UNKNOWN: negative-index validity needs caller proof.",
+      "lines": [
+        183
+      ],
+      "evidence": "RE_ORIGINAL_QUIRK: only an upper index bound is checked; RE_UNKNOWN: negative-index validity needs caller proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvModelGetPosm",
+          "declaration_line": 179,
+          "lines": [
+            183
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-11d268ed5f5d",
+      "kind": "original_quirk",
+      "path": "src/modules/uvmodel_rom.c",
+      "symbol": "RE_ORIGINAL_QUIRK: reads conditionally initialized bounds outputs; preserve byte result and per-output store order.",
+      "lines": [
+        734
+      ],
+      "evidence": "RE_ORIGINAL_QUIRK: reads conditionally initialized bounds outputs; preserve byte result and per-output store order.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvModelAppendSegmentLodQueryResults",
+          "declaration_line": 686,
+          "lines": [
+            734
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-4fcd4a98ff47",
+      "kind": "original_quirk",
+      "path": "src/modules/uvmodel_rom.c",
+      "symbol": "RE_ORIGINAL_QUIRK: result writes precede capacity testing; overflow decrements only the count and retains writes.",
+      "lines": [
+        670
+      ],
+      "evidence": "RE_ORIGINAL_QUIRK: result writes precede capacity testing; overflow decrements only the count and retains writes.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvModelAppendScalarExtentLodQueryResults",
+          "declaration_line": 287,
+          "lines": [
+            670
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-d0b79c9af51a",
+      "kind": "original_quirk",
+      "path": "src/modules/uvmodel_rom.c",
+      "symbol": "RE_ORIGINAL_QUIRK: returns 1 even when bounds result 2 appended two records; no capacity check occurs here.",
+      "lines": [
+        755
+      ],
+      "evidence": "RE_ORIGINAL_QUIRK: returns 1 even when bounds result 2 appended two records; no capacity check occurs here.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvModelAppendSegmentLodQueryResults",
+          "declaration_line": 686,
+          "lines": [
+            755
           ]
         }
       ]
@@ -221772,16 +219687,16 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "Reject the point on the first strict comparison outside a bound, in the * original X/Y/Z order. Equality passes for finite ordered bounds. * RE_ORIGINAL_QUIRK: a NaN coordinate takes neither rejection for its axis; * preserve these comparisons rather than replacing them with positive tests. * RE_UNKNOWN: finite-coordinate and ordered-bound caller/asset guarantees. * Trace original bound producers and callers before asserting containment.",
       "lines": [
-        855
+        861
       ],
       "evidence": "Reject the point on the first strict comparison outside a bound, in the * original X/Y/Z order. Equality passes for finite ordered bounds. * RE_ORIGINAL_QUIRK: a NaN coordinate takes neither rejection for its axis; * preserve these comparisons rather than replacing them with positive tests. * RE_UNKNOWN: finite-coordinate and ordered-bound caller/asset guarantees. * Trace original bound producers and callers before asserting containment.",
       "owners": [
         {
           "kind": "function",
           "name": "uvModelContainsLocalPoint",
-          "declaration_line": 862,
+          "declaration_line": 868,
           "lines": [
-            855
+            861
           ]
         }
       ]
@@ -223973,16 +221888,36 @@
       "path": "src/modules/uvmodel_rom.c",
       "symbol": "For a loaded model with collision metadata, store its word at offset 0x38. * The word meaning remains unproven.",
       "lines": [
-        1216
+        1222
       ],
       "evidence": "For a loaded model with collision metadata, store its word at offset 0x38. * The word meaning remains unproven.",
       "owners": [
         {
           "kind": "function",
           "name": "uvModelSetCollisionMetadataWord38",
-          "declaration_line": 1218,
+          "declaration_line": 1224,
           "lines": [
-            1216
+            1222
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-e89a63ac02a4",
+      "kind": "uncertainty_note",
+      "path": "src/modules/uvmodel_rom.c",
+      "symbol": "Retain six empty compiler scaffolds; historical source remains unknown.",
+      "lines": [
+        393
+      ],
+      "evidence": "Retain six empty compiler scaffolds; historical source remains unknown.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvModelAppendScalarExtentLodQueryResults",
+          "declaration_line": 287,
+          "lines": [
+            393
           ]
         }
       ]
@@ -226893,15 +224828,15 @@
       "lines": [
         150,
         156,
-        257
+        259
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvModelFindThresholdBand",
-          "declaration_line": 256,
+          "declaration_line": 258,
           "lines": [
-            257
+            259
           ]
         },
         {
@@ -226930,15 +224865,15 @@
       "lines": [
         150,
         156,
-        258
+        260
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvModelFindThresholdBand",
-          "declaration_line": 256,
+          "declaration_line": 258,
           "lines": [
-            258
+            260
           ]
         },
         {

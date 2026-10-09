@@ -5,9 +5,9 @@
 
 s32 uvModelContainsLocalPoint(f32 arg0, f32 arg1, f32 arg2, uvModelLOD_inner *arg3);
 void uvModelGetProps(s32 arg0, ...);
-s16 func_uvmodel_rom_004006B4(f32 arg0, f32 arg1, f32 arg2, f32 arg3, Mtx4F *arg4, uvModelLOD *arg5,
+s16 uvModelAppendScalarExtentLodQueryResults(f32 arg0, f32 arg1, f32 arg2, f32 arg3, Mtx4F *arg4, uvModelLOD *arg5,
                               ParsedUVMD *arg6);
-s16 func_uvmodel_rom_0040199C(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, Mtx4F *arg6,
+s16 uvModelAppendSegmentLodQueryResults(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, Mtx4F *arg6,
                               uvModelLOD *arg7, ParsedUVMD *arg8);
 void uvModelCleanup(void);
 void uvModelReservedCallback0(s32 arg0);
@@ -82,8 +82,8 @@ void __entrypoint_func_uvmodel_rom_400000(UvModel_Exports *exports) {
     exports->uvModelGetPosm = uvModelGetPosm;
     exports->uvModelGetProps = uvModelGetProps;
     exports->uvModelFindThresholdBand = uvModelFindThresholdBand;
-    exports->func_uvmodel_rom_004006B4 = func_uvmodel_rom_004006B4;
-    exports->func_uvmodel_rom_0040199C = func_uvmodel_rom_0040199C;
+    exports->uvModelAppendScalarExtentLodQueryResults = uvModelAppendScalarExtentLodQueryResults;
+    exports->uvModelAppendSegmentLodQueryResults = uvModelAppendSegmentLodQueryResults;
     exports->uvModelCleanup = uvModelCleanup;
     exports->uvModelTestWorldPointInLodBounds = uvModelTestWorldPointInLodBounds;
     exports->uvModelContainsLocalPoint = uvModelContainsLocalPoint;
@@ -174,17 +174,19 @@ s32 uvModelGetFirstStateWordAddress(s32 modelId) {
 }
 #line 157 "src/modules/uvmodel_rom.c"
 
+/* Copy a model-part matrix, then divide its translation components by the live model scalar. */
+#line 158 "src/modules/uvmodel_rom.c"
 void uvModelGetPosm(s32 modelId, s32 partIndex, Mtx4F *posm) {
-    ParsedUVMD *uvmd;
+    ParsedUVMD *model;
 
-    uvmd = uvGetLoadedFile('UVMD', modelId);
-    if ((uvmd == NULL) || (partIndex >= uvmd->unk0->unk8)) {
+    model = uvGetLoadedFile('UVMD', modelId); /* RE_UNKNOWN: resource/model/output lifetime and alias contracts need caller/allocation proof. */
+    if ((model == NULL) || (partIndex >= model->unk0->unk8)) { /* RE_ORIGINAL_QUIRK: only an upper index bound is checked; RE_UNKNOWN: negative-index validity needs caller proof. */
         return;
     }
-    sUvFmtxExports->uvMat4FCopy(posm, &uvmd->unk8[partIndex]);
-    posm->m[3][0] /= uvmd->unk10;
-    posm->m[3][1] /= uvmd->unk10;
-    posm->m[3][2] /= uvmd->unk10;
+    sUvFmtxExports->uvMat4FCopy(posm, &model->unk8[partIndex]);
+    posm->m[3][0] /= model->unk10; /* Keep each scalar reload; RE_UNKNOWN: scalar meaning, zero/nonfinite values and FP contracts need producer/caller proof. */
+    posm->m[3][1] /= model->unk10;
+    posm->m[3][2] /= model->unk10;
 }
 
 #line 171 "src/modules/uvmodel_rom.c"
@@ -280,113 +282,115 @@ u8 uvModelFindThresholdBand(ParsedUVMD *model, f32 value) {
 }
 #line 256 "src/modules/uvmodel_rom.c"
 
-s16 func_uvmodel_rom_004006B4(f32 arg0, f32 arg1, f32 arg2, f32 arg3, Mtx4F *arg4, uvModelLOD *arg5,
-                              ParsedUVMD *arg6) {
-    Mtx4F sp1E8;
-    Vec3F sp1DC;
-    Vec3F sp1D0;
-    uvModelLOD_inner *sp1CC;
-    Vec3F *temp_s0_5;
-    f32 temp_fv0_2;
-    s32 sp1C0;
-    f32 var_fa0;
-    s32 sp1B8;
-    f32 var_fs0;
-    f32 var_fs1;
-    f32 var_fv0;
-    f32 var_fv1;
-    f64 temp_fv0_7;
-    s32 sp19C;
-    s32 temp_s5;
-    s32 temp_s6;
-    s32 temp_v0_2;
-    f32 sp18C;
-    f32 sp188;
-    f32 sp184;
-    f32 sp180;
-    f32 sp17C;
-    f32 sp178;
-    s32 var_s4;
-    s32 temp_t4;
-    Vec3F sp164;
-    Vtx *sp160;
-    Gfx *sp15C;
-    s32 spDC[32];
-    u32 var_a0;
-    u32 var_v0_5;
-    u32 var_v1_3;
-    f32 spCC;
-    f32 spC8;
-    f32 spC4;
-    uvModelLOD_inner *temp_s0;
-    query_78 *temp_s0_6;
-    query_28 *temp_s1;
-    s32 spB4;
-    u32 var_a3;
-    s32 i;
+/* Transform a point and scalar extent into model space and append bounds, axis or decoded-triangle query results. */
+#line 257 "src/modules/uvmodel_rom.c"
+s16 uvModelAppendScalarExtentLodQueryResults(f32 queryX, f32 queryY, f32 queryZ, f32 scalarExtent, Mtx4F *modelMatrix, uvModelLOD *lod,
+                              ParsedUVMD *model) {
+    Mtx4F inverseMatrix;
+    Vec3F localPoint;
+    Vec3F transformedExtent;
+    uvModelLOD_inner *bounds;
+    Vec3F *outputNormal;
+    f32 rootOrDistance;
+    s32 initialHitCount;
+    f32 radicand;
+    s32 queryMode;
+    f32 rangeOrGap;
+    f32 localExtent;
+    f32 extentXY;
+    f32 historicalUnusedScalar; /* RE_UNKNOWN: unused declaration and empty scaffolds retain compiler behavior; historical source needs independent evidence. */
+    f64 boundedFraction;
+    s32 commandElementCount;
+    s32 commandWord0;
+    s32 commandWord1;
+    s32 opcodeVertexBaseOrContact;
+    f32 lowerXGap;
+    f32 upperXGap;
+    f32 lowerYGap;
+    f32 upperYGap;
+    f32 lowerZGap;
+    f32 upperZGap;
+    s32 elementIndex;
+    s32 loadedVertexCount;
+    Vec3F axisEndpoint;
+    Vtx *vertices;
+    Gfx *command;
+    s32 vertexMap[32];
+    u32 vertex2;
+    u32 vertex0;
+    u32 vertex1;
+    f32 normalizedGapZ;
+    f32 normalizedGapY;
+    f32 normalizedGapX;
+    uvModelLOD_inner *axisBounds;
+    query_78 *detailRecord;
+    query_28 *axisRecord;
+    s32 signedFace;
+    u32 vertexCountBits;
+    s32 index;
 
-    sp1C0 = *D_uvmodel_rom_00403158;
+    initialHitCount = *D_uvmodel_rom_00403158; /* RE_UNKNOWN: shared arrays/counts/IDs, callback mutation, aliases and lifetimes need allocation/caller proof. */
     // clang-format off
-    sp1DC.x = arg0;sp1DC.y = arg1;sp1DC.z = arg2;
+    localPoint.x = queryX;localPoint.y = queryY;localPoint.z = queryZ;
     // clang-format on
-    if (arg2) {
+    if (queryZ) { /* Retain the historical empty conditional. */
     }
-    sp1D0.x = arg3;
-    sp1D0.y = arg3;
-    sp1D0.z = arg3;
+    transformedExtent.x = scalarExtent;
+    transformedExtent.y = scalarExtent;
+    transformedExtent.z = scalarExtent;
 
-    if (sUvFmtxExports->uvMat4InvertAffineByCofactors(&sp1E8, arg4) == 0) {
+    if (sUvFmtxExports->uvMat4InvertAffineByCofactors(&inverseMatrix, modelMatrix) == 0) {
         return -1;
     }
-    sUvFmtxExports->uvMat4TransformPoint(&sp1E8, &sp1DC, &sp1DC);
-    sUvFmtxExports->uvMat4TransformDirection(&sp1E8, &sp1D0, &sp1D0);
-    sp1D0.x = (sp1D0.x > 0.00f) ? (sp1D0.x) : (-sp1D0.x);
-    sp1D0.y = (sp1D0.y > 0.00f) ? (sp1D0.y) : (-sp1D0.y);
-    sp1D0.z = (sp1D0.z > 0.00f) ? (sp1D0.z) : (-sp1D0.z);
-    if (sp1D0.y < sp1D0.x) {
-        var_fv0 = sp1D0.x;
+    sUvFmtxExports->uvMat4TransformPoint(&inverseMatrix, &localPoint, &localPoint);
+    sUvFmtxExports->uvMat4TransformDirection(&inverseMatrix, &transformedExtent, &transformedExtent);
+    transformedExtent.x = (transformedExtent.x > 0.00f) ? (transformedExtent.x) : (-transformedExtent.x); /* Keep ordered comparisons and arithmetic grouping; RE_UNKNOWN: extent conventions and FP/nonfinite domains need caller proof. */
+    transformedExtent.y = (transformedExtent.y > 0.00f) ? (transformedExtent.y) : (-transformedExtent.y);
+    transformedExtent.z = (transformedExtent.z > 0.00f) ? (transformedExtent.z) : (-transformedExtent.z);
+    if (transformedExtent.y < transformedExtent.x) {
+        extentXY = transformedExtent.x;
     } else {
-        var_fv0 = sp1D0.y;
+        extentXY = transformedExtent.y;
     }
 
-    if (sp1D0.z < var_fv0) {
-        if (sp1D0.y < sp1D0.x) {
-            var_fv0 = sp1D0.x;
+    if (transformedExtent.z < extentXY) {
+        if (transformedExtent.y < transformedExtent.x) {
+            extentXY = transformedExtent.x;
         } else {
-            var_fv0 = sp1D0.y;
+            extentXY = transformedExtent.y;
         }
-        var_fs1 = var_fv0;
+        localExtent = extentXY;
     } else {
-        var_fs1 = sp1D0.z;
+        localExtent = transformedExtent.z;
     }
-    sUvQueryExports->uvQueryGetProps(0, 1, &sp1B8, 0);
-    if (arg6->unk5 & 2) {
-        sp1CC = &arg5->unk8;
-        sp18C = arg5->unk8.unk0 - sp1DC.x;
-        if (var_fs1 < sp18C) {
+    sUvQueryExports->uvQueryGetProps(0, 1, &queryMode, 0);
+    if (model->unk5 & 2) { /* Only this flag initializes bounds/gaps; RE_UNKNOWN: later bounds-path validity needs complete flag/asset/caller proof. */
+        bounds = &lod->unk8;
+        lowerXGap = lod->unk8.unk0 - localPoint.x;
+        if (localExtent < lowerXGap) {
             return -1;
         }
-        sp188 = sp1DC.x - sp1CC->unkC;
-        if (var_fs1 < sp188) {
+        upperXGap = localPoint.x - bounds->unkC;
+        if (localExtent < upperXGap) {
             return -1;
         }
-        sp184 = sp1CC->unk4 - sp1DC.y;
-        if (var_fs1 < sp184) {
+        lowerYGap = bounds->unk4 - localPoint.y;
+        if (localExtent < lowerYGap) {
             return -1;
         }
-        sp180 = sp1DC.y - sp1CC->unk10;
-        if (var_fs1 < sp180) {
+        upperYGap = localPoint.y - bounds->unk10;
+        if (localExtent < upperYGap) {
             return -1;
         }
-        sp17C = sp1CC->unk8 - sp1DC.z;
-        if (var_fs1 < sp17C) {
+        lowerZGap = bounds->unk8 - localPoint.z;
+        if (localExtent < lowerZGap) {
             return -1;
         }
-        sp178 = sp1DC.z - sp1CC->unk14;
-        if (var_fs1 < sp178) {
+        upperZGap = localPoint.z - bounds->unk14;
+        if (localExtent < upperZGap) {
             return -1;
         }
-        if (1) {
+        if (1) { /* Retain six empty compiler scaffolds; historical source remains unknown. */
         }
         if (1) {
         }
@@ -399,33 +403,33 @@ s16 func_uvmodel_rom_004006B4(f32 arg0, f32 arg1, f32 arg2, f32 arg3, Mtx4F *arg
         if (1) {
         }
     }
-    if (arg6->unk5 & 0x10) {
-        if ((sp1B8 != 0)
+    if (model->unk5 & 0x10) { /* Prioritize X, then Y, then Z axis records; each tests the live secondary count before writing. */
+        if ((queryMode != 0)
             && ((*D_uvmodel_rom_0040315C) < sUvQueryExports->uvQueryGetSecondaryValue())) {
-            var_fa0 = (var_fs1 * var_fs1) - ((sp1DC.y * sp1DC.y) + (sp1DC.z * sp1DC.z));
-            if (((sp1DC.y * sp1DC.y) + (sp1DC.z * sp1DC.z)) <= (var_fs1 * var_fs1)) {
-                temp_fv0_2 = sUvMathExports->uvSqrtf(var_fa0);
-                temp_s0 = &arg5->unk8;
-                var_fs0 = temp_s0->unkC - temp_s0->unk0;
-                if (var_fs0 > 0.00001f) {
-                    if ((temp_s0->unk0 <= (sp1DC.x + temp_fv0_2))
-                        && ((sp1DC.x - temp_fv0_2) <= temp_s0->unkC)) {
-                        temp_s1 =
+            radicand = (localExtent * localExtent) - ((localPoint.y * localPoint.y) + (localPoint.z * localPoint.z));
+            if (((localPoint.y * localPoint.y) + (localPoint.z * localPoint.z)) <= (localExtent * localExtent)) {
+                rootOrDistance = sUvMathExports->uvSqrtf(radicand);
+                axisBounds = &lod->unk8;
+                rangeOrGap = axisBounds->unkC - axisBounds->unk0;
+                if (rangeOrGap > 0.00001f) {
+                    if ((axisBounds->unk0 <= (localPoint.x + rootOrDistance))
+                        && ((localPoint.x - rootOrDistance) <= axisBounds->unkC)) {
+                        axisRecord =
                             sUvQueryExports->uvQueryGetSecondaryRecordArray() + (*D_uvmodel_rom_0040315C);
-                        temp_s1->unk0 = *D_uvmodel_rom_00403154;
-                        sp164.x = temp_s0->unk0;
-                        sp164.y = 0.0f;
-                        sp164.z = 0.0f;
-                        sUvFmtxExports->uvMat4TransformPoint(arg4, &temp_s1->unk14,
-                                                                 (Vec3F *) (&sp164));
-                        sp164.x = temp_s0->unkC;
-                        sUvFmtxExports->uvMat4TransformPoint(arg4, &temp_s1->unk8,
-                                                                 (Vec3F *) (&sp164));
-                        temp_s1->unk20 = var_fs0;
-                        temp_s1->unk24 = (-temp_s0->unk0) / var_fs0;
-                        if (arg5->unk4 != 0) {
-                            temp_s1->unk4 = (s32) arg5->stateTable->state;
-                            if (temp_s0_6) {
+                        axisRecord->unk0 = *D_uvmodel_rom_00403154;
+                        axisEndpoint.x = axisBounds->unk0;
+                        axisEndpoint.y = 0.0f;
+                        axisEndpoint.z = 0.0f;
+                        sUvFmtxExports->uvMat4TransformPoint(modelMatrix, &axisRecord->unk14,
+                                                                 (Vec3F *) (&axisEndpoint));
+                        axisEndpoint.x = axisBounds->unkC;
+                        sUvFmtxExports->uvMat4TransformPoint(modelMatrix, &axisRecord->unk8,
+                                                                 (Vec3F *) (&axisEndpoint));
+                        axisRecord->unk20 = rangeOrGap;
+                        axisRecord->unk24 = (-axisBounds->unk0) / rangeOrGap;
+                        if (lod->unk4 != 0) {
+                            axisRecord->unk4 = (s32) lod->stateTable->state;
+                            if (detailRecord) { /* RE_UNKNOWN: retained source test uses a conditionally assigned local; historical declaration/control needs source evidence. */
                             }
                         }
                         *D_uvmodel_rom_0040315C += 1;
@@ -433,240 +437,240 @@ s16 func_uvmodel_rom_004006B4(f32 arg0, f32 arg1, f32 arg2, f32 arg3, Mtx4F *arg
                 }
             }
         }
-    } else if (arg6->unk5 & 0x20) {
-        if ((sp1B8 != 0)
+    } else if (model->unk5 & 0x20) {
+        if ((queryMode != 0)
             && ((*D_uvmodel_rom_0040315C) < sUvQueryExports->uvQueryGetSecondaryValue())) {
-            var_fa0 = (var_fs1 * var_fs1) - ((sp1DC.x * sp1DC.x) + (sp1DC.z * sp1DC.z));
-            if (((sp1DC.x * sp1DC.x) + (sp1DC.z * sp1DC.z)) <= (var_fs1 * var_fs1)) {
-                temp_fv0_2 = sUvMathExports->uvSqrtf(var_fa0);
-                temp_s0 = &arg5->unk8;
-                var_fs0 = temp_s0->unk10 - temp_s0->unk4;
-                if (var_fs0 > 0.00001f) {
-                    if ((temp_s0->unk4 <= (sp1DC.y + temp_fv0_2))
-                        && ((sp1DC.y - temp_fv0_2) <= temp_s0->unk10)) {
-                        temp_s1 =
+            radicand = (localExtent * localExtent) - ((localPoint.x * localPoint.x) + (localPoint.z * localPoint.z));
+            if (((localPoint.x * localPoint.x) + (localPoint.z * localPoint.z)) <= (localExtent * localExtent)) {
+                rootOrDistance = sUvMathExports->uvSqrtf(radicand);
+                axisBounds = &lod->unk8;
+                rangeOrGap = axisBounds->unk10 - axisBounds->unk4;
+                if (rangeOrGap > 0.00001f) {
+                    if ((axisBounds->unk4 <= (localPoint.y + rootOrDistance))
+                        && ((localPoint.y - rootOrDistance) <= axisBounds->unk10)) {
+                        axisRecord =
                             sUvQueryExports->uvQueryGetSecondaryRecordArray() + (*D_uvmodel_rom_0040315C);
-                        temp_s1->unk0 = (s32) (*D_uvmodel_rom_00403154);
-                        sp164.y = temp_s0->unk4;
-                        sp164.x = (sp164.z = 0.0f);
-                        sUvFmtxExports->uvMat4TransformPoint(arg4, &temp_s1->unk14, &sp164);
-                        sp164.y = temp_s0->unk10;
-                        sUvFmtxExports->uvMat4TransformPoint(arg4, &temp_s1->unk8, &sp164);
-                        temp_s1->unk20 = var_fs0;
-                        temp_s1->unk24 = (-temp_s0->unk4) / var_fs0;
-                        if (arg5->unk4 != 0) {
-                            temp_s1->unk4 = (s32) arg5->stateTable->state;
+                        axisRecord->unk0 = (s32) (*D_uvmodel_rom_00403154);
+                        axisEndpoint.y = axisBounds->unk4;
+                        axisEndpoint.x = (axisEndpoint.z = 0.0f);
+                        sUvFmtxExports->uvMat4TransformPoint(modelMatrix, &axisRecord->unk14, &axisEndpoint);
+                        axisEndpoint.y = axisBounds->unk10;
+                        sUvFmtxExports->uvMat4TransformPoint(modelMatrix, &axisRecord->unk8, &axisEndpoint);
+                        axisRecord->unk20 = rangeOrGap;
+                        axisRecord->unk24 = (-axisBounds->unk4) / rangeOrGap;
+                        if (lod->unk4 != 0) {
+                            axisRecord->unk4 = (s32) lod->stateTable->state;
                         }
                         *D_uvmodel_rom_0040315C += 1;
                     }
                 }
             }
         }
-    } else if (arg6->unk5 & 0x40) {
-        if ((sp1B8 != 0)
+    } else if (model->unk5 & 0x40) {
+        if ((queryMode != 0)
             && ((*D_uvmodel_rom_0040315C) < sUvQueryExports->uvQueryGetSecondaryValue())) {
-            var_fa0 = (var_fs1 * var_fs1) - ((sp1DC.x * sp1DC.x) + (sp1DC.y * sp1DC.y));
-            if (((sp1DC.x * sp1DC.x) + (sp1DC.y * sp1DC.y)) <= (var_fs1 * var_fs1)) {
-                temp_fv0_2 = sUvMathExports->uvSqrtf(var_fa0);
-                temp_s0 = &arg5->unk8;
-                var_fs0 = temp_s0->unk14 - temp_s0->unk8;
-                if (var_fs0 > 0.00001f) {
-                    if ((temp_s0->unk8 <= (sp1DC.z + temp_fv0_2))
-                        && ((sp1DC.z - temp_fv0_2) <= temp_s0->unk14)) {
-                        temp_s1 =
+            radicand = (localExtent * localExtent) - ((localPoint.x * localPoint.x) + (localPoint.y * localPoint.y));
+            if (((localPoint.x * localPoint.x) + (localPoint.y * localPoint.y)) <= (localExtent * localExtent)) {
+                rootOrDistance = sUvMathExports->uvSqrtf(radicand);
+                axisBounds = &lod->unk8;
+                rangeOrGap = axisBounds->unk14 - axisBounds->unk8;
+                if (rangeOrGap > 0.00001f) {
+                    if ((axisBounds->unk8 <= (localPoint.z + rootOrDistance))
+                        && ((localPoint.z - rootOrDistance) <= axisBounds->unk14)) {
+                        axisRecord =
                             &sUvQueryExports->uvQueryGetSecondaryRecordArray()[*D_uvmodel_rom_0040315C];
-                        temp_s1->unk0 = *D_uvmodel_rom_00403154;
-                        sp164.z = temp_s0->unk8;
-                        sp164.x = (sp164.y = 0.0f);
-                        sUvFmtxExports->uvMat4TransformPoint(arg4, &temp_s1->unk14, &sp164);
-                        sp164.z = temp_s0->unk14;
-                        sUvFmtxExports->uvMat4TransformPoint(arg4, &temp_s1->unk8, &sp164);
-                        temp_s1->unk20 = var_fs0;
-                        temp_s1->unk24 = (-temp_s0->unk8) / var_fs0;
-                        if (arg5->unk4 != 0) {
-                            temp_s1->unk4 = (s32) arg5->stateTable->state;
+                        axisRecord->unk0 = *D_uvmodel_rom_00403154;
+                        axisEndpoint.z = axisBounds->unk8;
+                        axisEndpoint.x = (axisEndpoint.y = 0.0f);
+                        sUvFmtxExports->uvMat4TransformPoint(modelMatrix, &axisRecord->unk14, &axisEndpoint);
+                        axisEndpoint.z = axisBounds->unk14;
+                        sUvFmtxExports->uvMat4TransformPoint(modelMatrix, &axisRecord->unk8, &axisEndpoint);
+                        axisRecord->unk20 = rangeOrGap;
+                        axisRecord->unk24 = (-axisBounds->unk8) / rangeOrGap;
+                        if (lod->unk4 != 0) {
+                            axisRecord->unk4 = (s32) lod->stateTable->state;
                         }
                         *D_uvmodel_rom_0040315C += 1;
                     }
                 }
             }
         }
-    } else if (!(arg6->unk5 & 4)) {
-        spC4 = (spC8 = (spCC = 0.0f));
-        temp_s0_5 = &D_uvmodel_rom_00403150[*D_uvmodel_rom_00403158];
-        if (sp18C > 0.0f) {
-            spC4 += sp18C / var_fs1;
+    } else if (!(model->unk5 & 4)) { /* RE_ORIGINAL_QUIRK: consumes conditionally initialized bounds/gaps; no defaults are invented. */
+        normalizedGapX = (normalizedGapY = (normalizedGapZ = 0.0f));
+        outputNormal = &D_uvmodel_rom_00403150[*D_uvmodel_rom_00403158];
+        if (lowerXGap > 0.0f) {
+            normalizedGapX += lowerXGap / localExtent;
         }
-        if (sp188 > 0.0f) {
-            spC4 += sp188 / var_fs1;
+        if (upperXGap > 0.0f) {
+            normalizedGapX += upperXGap / localExtent;
         }
-        if (sp184 > 0.0f) {
-            spC8 += sp184 / var_fs1;
+        if (lowerYGap > 0.0f) {
+            normalizedGapY += lowerYGap / localExtent;
         }
-        if (sp180 > 0.0f) {
+        if (upperYGap > 0.0f) {
             if (1) {
-                spC8 += sp180 / var_fs1;
+                normalizedGapY += upperYGap / localExtent;
             }
         }
-        if (sp17C > 0.0f) {
-            spCC += sp17C / var_fs1;
+        if (lowerZGap > 0.0f) {
+            normalizedGapZ += lowerZGap / localExtent;
         }
-        if (sp178 > 0.0f) {
-            spCC += sp178 / var_fs1;
+        if (upperZGap > 0.0f) {
+            normalizedGapZ += upperZGap / localExtent;
         }
-        if (((spC4 == 0.0f) && (spC8 == 0.0f)) && (spCC == 0.0f)) {
-            var_fs0 = -10000000000.0f;
-            if (var_fs0 < sp188) {
-                var_fs0 = sp188;
-                spB4 = 1;
+        if (((normalizedGapX == 0.0f) && (normalizedGapY == 0.0f)) && (normalizedGapZ == 0.0f)) {
+            rangeOrGap = -10000000000.0f; /* RE_UNKNOWN: face initialization when ordered comparisons all fail needs nonfinite-input/caller proof. */
+            if (rangeOrGap < upperXGap) {
+                rangeOrGap = upperXGap;
+                signedFace = 1;
             }
-            if (var_fs0 < sp18C) {
-                var_fs0 = sp18C;
-                spB4 = -1;
+            if (rangeOrGap < lowerXGap) {
+                rangeOrGap = lowerXGap;
+                signedFace = -1;
             }
-            if (var_fs0 < sp180) {
-                var_fs0 = sp180;
-                spB4 = 2;
+            if (rangeOrGap < upperYGap) {
+                rangeOrGap = upperYGap;
+                signedFace = 2;
             }
-            if (var_fs0 < sp184) {
-                var_fs0 = sp184;
-                spB4 = -2;
+            if (rangeOrGap < lowerYGap) {
+                rangeOrGap = lowerYGap;
+                signedFace = -2;
             }
-            if (var_fs0 < sp178) {
-                var_fs0 = sp178;
-                spB4 = 3;
+            if (rangeOrGap < upperZGap) {
+                rangeOrGap = upperZGap;
+                signedFace = 3;
             }
-            if (var_fs0 < sp17C) {
-                var_fs0 = sp17C;
-                spB4 = -3;
+            if (rangeOrGap < lowerZGap) {
+                rangeOrGap = lowerZGap;
+                signedFace = -3;
             }
-            sUvIntersectExports->uvIntersectCopySignedMatrixRowVector(arg4, spB4, temp_s0_5);
-            temp_fv0_7 = (-var_fs0) / var_fs1;
+            sUvIntersectExports->uvIntersectCopySignedMatrixRowVector(modelMatrix, signedFace, outputNormal);
+            boundedFraction = (-rangeOrGap) / localExtent; /* RE_ORIGINAL_QUIRK: divide without a zero guard; unordered upper-clamp comparison takes the 1.0 branch. */
             // clang-format off
-            if (temp_fv0_7 < 1.0) { D_uvmodel_rom_00403144[*D_uvmodel_rom_00403158] = temp_fv0_7; } else { temp_fv0_7 = 1.0; D_uvmodel_rom_00403144[*D_uvmodel_rom_00403158] = temp_fv0_7;
+            if (boundedFraction < 1.0) { D_uvmodel_rom_00403144[*D_uvmodel_rom_00403158] = boundedFraction; } else { boundedFraction = 1.0; D_uvmodel_rom_00403144[*D_uvmodel_rom_00403158] = boundedFraction;
             }
             // clang-format on
             D_uvmodel_rom_0040314C[*D_uvmodel_rom_00403158] |= 1;
         } else {
-            temp_fv0_2 = sUvMathExports->uvSqrtf(((spC4 * spC4) + (spC8 * spC8)) + (spCC * spCC));
-            if (temp_fv0_2 > 1.0f) {
+            rootOrDistance = sUvMathExports->uvSqrtf(((normalizedGapX * normalizedGapX) + (normalizedGapY * normalizedGapY)) + (normalizedGapZ * normalizedGapZ));
+            if (rootOrDistance > 1.0f) {
                 return -1;
             }
-            temp_s0_5->x = (-spC4) / temp_fv0_2;
-            temp_s0_5->y = (-spC8) / temp_fv0_2;
-            temp_s0_5->z = (-spCC) / temp_fv0_2;
-            sUvFmtxExports->uvMat4TransformDirection(arg4, temp_s0_5, temp_s0_5);
-            D_uvmodel_rom_00403144[*D_uvmodel_rom_00403158] = temp_fv0_2;
+            outputNormal->x = (-normalizedGapX) / rootOrDistance;
+            outputNormal->y = (-normalizedGapY) / rootOrDistance;
+            outputNormal->z = (-normalizedGapZ) / rootOrDistance;
+            sUvFmtxExports->uvMat4TransformDirection(modelMatrix, outputNormal, outputNormal);
+            D_uvmodel_rom_00403144[*D_uvmodel_rom_00403158] = rootOrDistance;
         }
         D_uvmodel_rom_00403148[*D_uvmodel_rom_00403158] = *D_uvmodel_rom_00403154;
-        if (sp1B8 != 0) {
-            temp_s0_6 = sUvQueryExports->uvQueryGetActiveRecordArray() + (*D_uvmodel_rom_00403158);
-            temp_s0_6->unk0.x = sp1CC->unk0;
-            temp_s0_6->unk0.y = sp1CC->unk4;
-            temp_s0_6->unk0.z = sp1CC->unk8;
-            temp_s0_6->unkC.x = sp1CC->unkC;
-            temp_s0_6->unkC.y = sp1CC->unk10;
-            temp_s0_6->unkC.z = sp1CC->unk14;
-            sUvFmtxExports->uvMat4FCopy(&temp_s0_6->unk30, &sp1E8);
-            temp_s0_6->unk70 &= ~1;
-            if (arg5->unk4 != 0) {
-                temp_s0_6->unk74 = (s32) arg5->stateTable->state;
+        if (queryMode != 0) {
+            detailRecord = sUvQueryExports->uvQueryGetActiveRecordArray() + (*D_uvmodel_rom_00403158);
+            detailRecord->unk0.x = bounds->unk0;
+            detailRecord->unk0.y = bounds->unk4;
+            detailRecord->unk0.z = bounds->unk8;
+            detailRecord->unkC.x = bounds->unkC;
+            detailRecord->unkC.y = bounds->unk10;
+            detailRecord->unkC.z = bounds->unk14;
+            sUvFmtxExports->uvMat4FCopy(&detailRecord->unk30, &inverseMatrix);
+            detailRecord->unk70 &= ~1;
+            if (lod->unk4 != 0) {
+                detailRecord->unk74 = (s32) lod->stateTable->state;
             }
         }
-        *D_uvmodel_rom_00403158 += 1;
+        *D_uvmodel_rom_00403158 += 1; /* This bounds path publishes without a capacity check; RE_UNKNOWN: buffer extent needs allocation/caller proof. */
         return 1;
     }
-    if (!(arg6->unk5 & 4)) {
-        return (s16) ((*D_uvmodel_rom_00403158) - sp1C0);
+    if (!(model->unk5 & 4)) {
+        return (s16) ((*D_uvmodel_rom_00403158) - initialHitCount); /* RE_UNKNOWN: signed count subtraction/narrowing domain needs caller/count-producer proof. */
     }
-    sp160 = arg6->vtxTable;
-    for (i = 0; i < 32; i++) {
-        spDC[i] = -1;
+    vertices = model->vtxTable; /* RE_UNKNOWN: vertex-map indices, command extents/termination and resource lifetimes need asset/caller proof. */
+    for (index = 0; index < 32; index++) {
+        vertexMap[index] = -1;
     }
 
-    for (i = 0; i < arg5->unk4; i++) {
-        sp15C = arg5->stateTable[i].displayList;
-        for (sp15C = ((u32) sp15C) | 0x80000000;; sp15C++) {
-            temp_s5 = sp15C->words.w0;
-            temp_s6 = sp15C->words.w1;
-            sp19C = ((u32) (temp_s5 & 0xFF000)) >> 0xC;
-            temp_v0_2 = temp_s5 & 0xFF000000;
-            if (temp_v0_2 == 0xDF000000) {
+    for (index = 0; index < lod->unk4; index++) {
+        command = lod->stateTable[index].displayList;
+        for (command = ((u32) command) | 0x80000000;; command++) {
+            commandWord0 = command->words.w0;
+            commandWord1 = command->words.w1;
+            commandElementCount = ((u32) (commandWord0 & 0xFF000)) >> 0xC;
+            opcodeVertexBaseOrContact = commandWord0 & 0xFF000000;
+            if (opcodeVertexBaseOrContact == 0xDF000000) {
                 break;
             }
-            if (temp_v0_2 == 0x01000000) {
-                temp_v0_2 = ((u32) temp_s6) - ((u32) arg6->vtxTable);
-                temp_v0_2 = ((u32) ((void *) (((u32) temp_v0_2) + 0x80000000))) / (sizeof(Vtx));
-                var_a3 = temp_s5 & 0xFF000;
-                temp_t4 = var_a3 >> 0xC;
-                for (var_s4 = 0; var_s4 < temp_t4; var_s4++) {
-                    s32 temp = (((u32) (temp_s5 & 0xFE)) >> 1) - sp19C;
-                    spDC[var_s4 + temp] = var_s4 + temp_v0_2;
+            if (opcodeVertexBaseOrContact == 0x01000000) {
+                opcodeVertexBaseOrContact = ((u32) commandWord1) - ((u32) model->vtxTable);
+                opcodeVertexBaseOrContact = ((u32) ((void *) (((u32) opcodeVertexBaseOrContact) + 0x80000000))) / (sizeof(Vtx));
+                vertexCountBits = commandWord0 & 0xFF000;
+                loadedVertexCount = vertexCountBits >> 0xC;
+                for (elementIndex = 0; elementIndex < loadedVertexCount; elementIndex++) {
+                    s32 vertexSlotOffset = (((u32) (commandWord0 & 0xFE)) >> 1) - commandElementCount;
+                    vertexMap[elementIndex + vertexSlotOffset] = elementIndex + opcodeVertexBaseOrContact;
                 }
 
-            } else {
-                sp19C = 1;
-                if (temp_v0_2 == 0x06000000) {
-                    sp19C = 2;
+            } else { /* Every other non-end opcode reaches triangle decoding; do not restrict this to a guessed command subset. */
+                commandElementCount = 1;
+                if (opcodeVertexBaseOrContact == 0x06000000) {
+                    commandElementCount = 2;
                 }
-                for (var_s4 = 0; var_s4 < sp19C; var_s4++) {
-                    if (var_s4 == 0) {
-                        var_v0_5 = ((u32) (temp_s5 & 0xFF0000)) >> 0x11;
-                        var_v1_3 = ((u32) (temp_s5 & 0xFF00)) >> 9;
-                        var_a0 = ((u32) (temp_s5 & 0xFF)) >> 1;
+                for (elementIndex = 0; elementIndex < commandElementCount; elementIndex++) {
+                    if (elementIndex == 0) {
+                        vertex0 = ((u32) (commandWord0 & 0xFF0000)) >> 0x11;
+                        vertex1 = ((u32) (commandWord0 & 0xFF00)) >> 9;
+                        vertex2 = ((u32) (commandWord0 & 0xFF)) >> 1;
                     } else {
-                        var_v0_5 = ((u32) (temp_s6 & 0xFF0000)) >> 0x11;
-                        var_v1_3 = ((u32) (temp_s6 & 0xFF00)) >> 9;
-                        var_a0 = ((u32) (temp_s6 & 0xFF)) >> 1;
+                        vertex0 = ((u32) (commandWord1 & 0xFF0000)) >> 0x11;
+                        vertex1 = ((u32) (commandWord1 & 0xFF00)) >> 9;
+                        vertex2 = ((u32) (commandWord1 & 0xFF)) >> 1;
                     }
-                    var_v0_5 = spDC[var_v0_5];
-                    var_v1_3 = spDC[var_v1_3];
-                    var_a0 = spDC[var_a0];
-                    temp_v0_2 = sUvIntersectExports->uvIntersectClassifySphereTriangleContact(
-                        sp1DC.x, sp1DC.y, sp1DC.z, var_fs1, 1.0f, sp160[var_v0_5].v.ob[0],
-                        sp160[var_v0_5].v.ob[1], sp160[var_v0_5].v.ob[2], sp160[var_v1_3].v.ob[0],
-                        sp160[var_v1_3].v.ob[1], sp160[var_v1_3].v.ob[2], sp160[var_a0].v.ob[0],
-                        sp160[var_a0].v.ob[1], sp160[var_a0].v.ob[2],
+                    vertex0 = vertexMap[vertex0];
+                    vertex1 = vertexMap[vertex1];
+                    vertex2 = vertexMap[vertex2];
+                    opcodeVertexBaseOrContact = sUvIntersectExports->uvIntersectClassifySphereTriangleContact(
+                        localPoint.x, localPoint.y, localPoint.z, localExtent, 1.0f, vertices[vertex0].v.ob[0],
+                        vertices[vertex0].v.ob[1], vertices[vertex0].v.ob[2], vertices[vertex1].v.ob[0],
+                        vertices[vertex1].v.ob[1], vertices[vertex1].v.ob[2], vertices[vertex2].v.ob[0],
+                        vertices[vertex2].v.ob[1], vertices[vertex2].v.ob[2],
                         &D_uvmodel_rom_00403150[*D_uvmodel_rom_00403158],
                         &D_uvmodel_rom_00403144[*D_uvmodel_rom_00403158]);
-                    if (temp_v0_2 != 0) {
+                    if (opcodeVertexBaseOrContact != 0) {
                         D_uvmodel_rom_00403148[*D_uvmodel_rom_00403158] = *D_uvmodel_rom_00403154;
-                        D_uvmodel_rom_00403144[*D_uvmodel_rom_00403158] /= -var_fs1;
-                        if (temp_v0_2 == 1) {
+                        D_uvmodel_rom_00403144[*D_uvmodel_rom_00403158] /= -localExtent;
+                        if (opcodeVertexBaseOrContact == 1) {
                             D_uvmodel_rom_0040314C[*D_uvmodel_rom_00403158] |= 1;
                         }
                         sUvFmtxExports->uvMat4TransformDirection(
-                            arg4, &D_uvmodel_rom_00403150[*D_uvmodel_rom_00403158],
+                            modelMatrix, &D_uvmodel_rom_00403150[*D_uvmodel_rom_00403158],
                             &D_uvmodel_rom_00403150[*D_uvmodel_rom_00403158]);
-                        sUvFvecExports->uvVec3FNormalize(
+                        sUvFvecExports->uvVec3FNormalize( /* Preserve the ignored normalization result and callback-visible component writes. */
                             &D_uvmodel_rom_00403150[*D_uvmodel_rom_00403158],
                             &D_uvmodel_rom_00403150[*D_uvmodel_rom_00403158]);
-                        if (sp1B8 != 0) {
-                            temp_s0_6 =
+                        if (queryMode != 0) {
+                            detailRecord =
                                 &sUvQueryExports->uvQueryGetActiveRecordArray()[*D_uvmodel_rom_00403158];
-                            temp_s0_6->unk0.x = sp160[var_v0_5].v.ob[0];
-                            temp_s0_6->unk0.y = sp160[var_v0_5].v.ob[1];
-                            temp_s0_6->unk0.z = sp160[var_v0_5].v.ob[2];
-                            temp_s0_6->unkC.x = sp160[var_v1_3].v.ob[0];
-                            temp_s0_6->unkC.y = sp160[var_v1_3].v.ob[1];
-                            temp_s0_6->unkC.z = sp160[var_v1_3].v.ob[2],
-                            temp_s0_6->unk18.x = sp160[var_a0].v.ob[0];
-                            temp_s0_6->unk18.y = sp160[var_a0].v.ob[1];
-                            temp_s0_6->unk18.z = sp160[var_a0].v.ob[2];
-                            temp_s0_6->unk70 |= 1;
-                            temp_s0_6->unk74 = arg5->stateTable[i].state;
-                            sUvFmtxExports->uvMat4TransformPoint(arg4, &temp_s0_6->unk0,
-                                                                     &temp_s0_6->unk0);
-                            sUvFmtxExports->uvMat4TransformPoint(arg4, &temp_s0_6->unkC,
-                                                                     &temp_s0_6->unkC);
-                            sUvFmtxExports->uvMat4TransformPoint(arg4, &temp_s0_6->unk18,
-                                                                     &temp_s0_6->unk18);
-                            temp_s0_6->unk24 = D_uvmodel_rom_00403150[*D_uvmodel_rom_00403158];
+                            detailRecord->unk0.x = vertices[vertex0].v.ob[0];
+                            detailRecord->unk0.y = vertices[vertex0].v.ob[1];
+                            detailRecord->unk0.z = vertices[vertex0].v.ob[2];
+                            detailRecord->unkC.x = vertices[vertex1].v.ob[0];
+                            detailRecord->unkC.y = vertices[vertex1].v.ob[1];
+                            detailRecord->unkC.z = vertices[vertex1].v.ob[2],
+                            detailRecord->unk18.x = vertices[vertex2].v.ob[0];
+                            detailRecord->unk18.y = vertices[vertex2].v.ob[1];
+                            detailRecord->unk18.z = vertices[vertex2].v.ob[2];
+                            detailRecord->unk70 |= 1;
+                            detailRecord->unk74 = lod->stateTable[index].state;
+                            sUvFmtxExports->uvMat4TransformPoint(modelMatrix, &detailRecord->unk0,
+                                                                     &detailRecord->unk0);
+                            sUvFmtxExports->uvMat4TransformPoint(modelMatrix, &detailRecord->unkC,
+                                                                     &detailRecord->unkC);
+                            sUvFmtxExports->uvMat4TransformPoint(modelMatrix, &detailRecord->unk18,
+                                                                     &detailRecord->unk18);
+                            detailRecord->unk24 = D_uvmodel_rom_00403150[*D_uvmodel_rom_00403158];
                         }
-                        if ((++(*D_uvmodel_rom_00403158))
+                        if ((++(*D_uvmodel_rom_00403158)) /* RE_ORIGINAL_QUIRK: result writes precede capacity testing; overflow decrements only the count and retains writes. */
                             >= sUvQueryExports->uvQueryGetRecordCapacity()) {
                             --(*D_uvmodel_rom_00403158);
-                            return (*D_uvmodel_rom_00403158) - sp1C0;
+                            return (*D_uvmodel_rom_00403158) - initialHitCount;
                         }
                     }
                 }
@@ -674,149 +678,151 @@ s16 func_uvmodel_rom_004006B4(f32 arg0, f32 arg1, f32 arg2, f32 arg3, Mtx4F *arg
         }
     }
 
-    return (*D_uvmodel_rom_00403158) - sp1C0;
+    return (*D_uvmodel_rom_00403158) - initialHitCount;
 }
 
-s16 func_uvmodel_rom_0040199C(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, Mtx4F *arg6,
-                              uvModelLOD *arg7, ParsedUVMD *arg8) {
-    Mtx4F sp178;
-    Vec3F sp16C;
-    Vec3F sp160;
-    u8 sp15F;
-    f32 sp158;
-    f32 sp154;
-    f32 sp150;
-    s16 sp14E;
-    s16 sp14C;
-    s16 var_s1;
-    s16 sp148;
-    s16 sp146;
-    s16 i;
-    Gfx *sp140;
-    s32 temp_s2;
-    s32 temp_s3;
-    s32 temp_t6;
-    s32 temp_v0_2;
-    s32 var_a1;
-    s32 var_fp;
-    s32 var_t0;
-    s32 var_t1;
-    s32 temp;
-    s32 pad1;
-    s32 sp98[32];
-    s32 pad;
-    if (sUvFmtxExports->uvMat4InvertAffineByCofactors(&sp178, arg6) == 0) {
+/* Transform segment endpoints into model space and append bounds-face or decoded-triangle query results. */
+#line 654 "src/modules/uvmodel_rom.c"
+s16 uvModelAppendSegmentLodQueryResults(f32 startX, f32 startY, f32 startZ, f32 endX, f32 endY, f32 endZ, Mtx4F *modelMatrix,
+                              uvModelLOD *lod, ParsedUVMD *model) {
+    Mtx4F inverseMatrix;
+    Vec3F localStart;
+    Vec3F localEnd;
+    u8 boundsResult;
+    f32 triangleFraction;
+    f32 firstFraction;
+    f32 lastFraction;
+    s16 hitCount; /* RE_UNKNOWN: signed 16-bit hit/state/element counters and return narrowing need count/asset/caller-domain proof. */
+    s16 stateIndex;
+    s16 elementIndex;
+    s16 firstFace;
+    s16 lastFace;
+    s16 mapIndex;
+    Gfx *command;
+    s32 commandWord0;
+    s32 commandWord1;
+    s32 historicalUnusedWord; /* RE_UNKNOWN: unused declarations/storage retain compiler behavior; historical source needs independent evidence. */
+    s32 opcodeOrVertexBase;
+    s32 vertexCountBitsOrVertex0;
+    s32 triangleCount;
+    s32 vertex1;
+    s32 vertex2;
+    s32 vertexSlotOffset;
+    s32 historicalUnusedStorage;
+    s32 vertexMap[32];
+    s32 loadedVertexCount;
+    if (sUvFmtxExports->uvMat4InvertAffineByCofactors(&inverseMatrix, modelMatrix) == 0) { /* RE_UNKNOWN: FP domains and matrix/vector conventions need producer/caller proof. */
         return -1;
     }
-    sp16C.x = arg0;
-    sp16C.y = arg1;
-    sp16C.z = arg2;
-    sp160.x = arg3;
-    sp160.y = arg4;
-    sp160.z = arg5;
-    sUvFmtxExports->uvMat4TransformPoint(&sp178, (Vec3F *) (&sp16C), (Vec3F *) (&sp16C));
-    sUvFmtxExports->uvMat4TransformPoint(&sp178, (Vec3F *) (&sp160), (Vec3F *) (&sp160));
-    sp14E = 0;
-    if (arg8->unk5 & 2) {
-        sp15F = uvModelIntersectSegmentWithBoundsFaces(sp16C.x, sp16C.y, sp16C.z, sp160.x, sp160.y, sp160.z,
-                                          (UnkUVMD_24_Unk4 *) (&arg7->unk8), &sp154, &sp150, &sp148,
-                                          &sp146);
-        if (sp15F == 0) {
+    localStart.x = startX;
+    localStart.y = startY;
+    localStart.z = startZ;
+    localEnd.x = endX;
+    localEnd.y = endY;
+    localEnd.z = endZ;
+    sUvFmtxExports->uvMat4TransformPoint(&inverseMatrix, (Vec3F *) (&localStart), (Vec3F *) (&localStart));
+    sUvFmtxExports->uvMat4TransformPoint(&inverseMatrix, (Vec3F *) (&localEnd), (Vec3F *) (&localEnd));
+    hitCount = 0;
+    if (model->unk5 & 2) { /* Only this flag initializes bounds results/fractions/faces; RE_UNKNOWN: other paths need flag/asset/caller proof. */
+        boundsResult = uvModelIntersectSegmentWithBoundsFaces(localStart.x, localStart.y, localStart.z, localEnd.x, localEnd.y, localEnd.z,
+                                          (UnkUVMD_24_Unk4 *) (&lod->unk8), &firstFraction, &lastFraction, &firstFace,
+                                          &lastFace);
+        if (boundsResult == 0) {
             return -1;
         }
     }
-    if (!(arg8->unk5 & 4)) {
+    if (!(model->unk5 & 4)) { /* RE_ORIGINAL_QUIRK: reads conditionally initialized bounds outputs; preserve byte result and per-output store order. */
         sUvIntersectExports->uvIntersectCopySignedMatrixRowVector(
-            arg6, sp148, &D_uvmodel_rom_00403150[*D_uvmodel_rom_00403158]);
+            modelMatrix, firstFace, &D_uvmodel_rom_00403150[*D_uvmodel_rom_00403158]);
         sUvFvecExports->uvVec3FScale(&D_uvmodel_rom_00403150[*D_uvmodel_rom_00403158],
-                                     &D_uvmodel_rom_00403150[*D_uvmodel_rom_00403158], arg8->unk10);
+                                     &D_uvmodel_rom_00403150[*D_uvmodel_rom_00403158], model->unk10);
         D_uvmodel_rom_00403148[*D_uvmodel_rom_00403158] = *D_uvmodel_rom_00403154;
-        if (sp15F == 1) {
-            D_uvmodel_rom_00403144[*D_uvmodel_rom_00403158] = sp154;
-        } else if (sp15F == 2) {
-            D_uvmodel_rom_00403144[*D_uvmodel_rom_00403158] = sp154;
+        if (boundsResult == 1) {
+            D_uvmodel_rom_00403144[*D_uvmodel_rom_00403158] = firstFraction;
+        } else if (boundsResult == 2) {
+            D_uvmodel_rom_00403144[*D_uvmodel_rom_00403158] = firstFraction;
             *D_uvmodel_rom_00403158 += 1;
             D_uvmodel_rom_00403148[*D_uvmodel_rom_00403158] = *D_uvmodel_rom_00403154;
             sUvIntersectExports->uvIntersectCopySignedMatrixRowVector(
-                arg6, sp146, &D_uvmodel_rom_00403150[*D_uvmodel_rom_00403158]);
+                modelMatrix, lastFace, &D_uvmodel_rom_00403150[*D_uvmodel_rom_00403158]);
             sUvFvecExports->uvVec3FScale(&D_uvmodel_rom_00403150[*D_uvmodel_rom_00403158],
-                                         &D_uvmodel_rom_00403150[*D_uvmodel_rom_00403158], arg8->unk10);
-            D_uvmodel_rom_00403144[*D_uvmodel_rom_00403158] = sp150;
-        } else if (sp15F == 3) {
+                                         &D_uvmodel_rom_00403150[*D_uvmodel_rom_00403158], model->unk10);
+            D_uvmodel_rom_00403144[*D_uvmodel_rom_00403158] = lastFraction;
+        } else if (boundsResult == 3) {
             D_uvmodel_rom_00403144[*D_uvmodel_rom_00403158] = 1.0f;
         }
         *D_uvmodel_rom_00403158 += 1;
-        return 1;
+        return 1; /* RE_ORIGINAL_QUIRK: returns 1 even when bounds result 2 appended two records; no capacity check occurs here. */
     }
-    for (i = 0; i < 32; i++) {
-        sp98[i] = -1;
+    for (mapIndex = 0; mapIndex < 32; mapIndex++) { /* RE_UNKNOWN: shared-buffer capacity, aliases/callback mutation, vertex indices, command termination and lifetimes need producer/caller proof. */
+        vertexMap[mapIndex] = -1;
     }
 
-    for (sp14C = 0; sp14C < arg7->unk4; sp14C++) {
-        sp140 = arg7->stateTable[sp14C].displayList;
-        for (sp140 = (Gfx *) (((u32) sp140) | 0x80000000);; sp140++) {
-            temp_s2 = sp140->words.w0;
-            temp_s3 = sp140->words.w1;
-            temp_v0_2 = temp_s2 & 0xFF000000;
-            if (temp_v0_2 == (0xdf << 24)) {
+    for (stateIndex = 0; stateIndex < lod->unk4; stateIndex++) {
+        command = lod->stateTable[stateIndex].displayList;
+        for (command = (Gfx *) (((u32) command) | 0x80000000);; command++) {
+            commandWord0 = command->words.w0;
+            commandWord1 = command->words.w1;
+            opcodeOrVertexBase = commandWord0 & 0xFF000000;
+            if (opcodeOrVertexBase == (0xdf << 24)) {
                 break;
             }
-            if (temp_v0_2 == (0x01 << 24)) {
-                temp_v0_2 = ((u32) temp_s3) - ((u32) arg8->vtxTable);
-                temp_v0_2 = ((u32) ((void *) (((u32) temp_v0_2) + 0x80000000))) / (sizeof(Vtx));
-                var_a1 = (u32) (temp_s2 & 0xFF000);
-                pad = var_a1 >> 0xC;
+            if (opcodeOrVertexBase == (0x01 << 24)) {
+                opcodeOrVertexBase = ((u32) commandWord1) - ((u32) model->vtxTable);
+                opcodeOrVertexBase = ((u32) ((void *) (((u32) opcodeOrVertexBase) + 0x80000000))) / (sizeof(Vtx));
+                vertexCountBitsOrVertex0 = (u32) (commandWord0 & 0xFF000);
+                loadedVertexCount = vertexCountBitsOrVertex0 >> 0xC;
                 // clang-format off
-                for (var_s1 = 0; var_s1 < pad; var_s1++) { \
-                    temp = ((temp_s2 & 0xFE) >> 1) - (var_a1 >> 0xC); \
-                    sp98[var_s1 + temp] = var_s1 + temp_v0_2; \
+                for (elementIndex = 0; elementIndex < loadedVertexCount; elementIndex++) { \
+                    vertexSlotOffset = ((commandWord0 & 0xFE) >> 1) - (vertexCountBitsOrVertex0 >> 0xC); \
+                    vertexMap[elementIndex + vertexSlotOffset] = elementIndex + opcodeOrVertexBase; \
                 } \
                 // clang-format off
-            } else {
-                var_fp = 1;
-                if (temp_v0_2 == (0x06 << 24)) {
-                    var_fp = 2;
+            } else { /* Every other non-end opcode reaches triangle decoding; preserve the two-triangle special case. */
+                triangleCount = 1;
+                if (opcodeOrVertexBase == (0x06 << 24)) {
+                    triangleCount = 2;
                 }
-                for (var_s1 = 0; var_s1 < var_fp; var_s1++) {
-                    if (var_s1 == 0) {
-                        var_a1 = (temp_s2 & 0xFF0000) >> 17;
-                        var_t0 = (temp_s2 & 0xFF00) >> 9;
-                        var_t1 = (temp_s2 & 0xFF) >> 1;
+                for (elementIndex = 0; elementIndex < triangleCount; elementIndex++) {
+                    if (elementIndex == 0) {
+                        vertexCountBitsOrVertex0 = (commandWord0 & 0xFF0000) >> 17;
+                        vertex1 = (commandWord0 & 0xFF00) >> 9;
+                        vertex2 = (commandWord0 & 0xFF) >> 1;
                     } else {
-                        var_a1 = (temp_s3 & 0xFF0000) >> 17;
-                        var_t0 = (temp_s3 & 0xFF00) >> 9;
-                        var_t1 = (temp_s3 & 0xFF) >> 1;
+                        vertexCountBitsOrVertex0 = (commandWord1 & 0xFF0000) >> 17;
+                        vertex1 = (commandWord1 & 0xFF00) >> 9;
+                        vertex2 = (commandWord1 & 0xFF) >> 1;
                     }
-                    var_a1 = sp98[var_a1];
-                    var_t0 = sp98[var_t0];
-                    var_t1 = sp98[var_t1];
-                    if (sUvIntersectExports->uvIntersectSegmentScaledTriangle(
-                            sp16C.x, sp16C.y, sp16C.z, sp160.x, sp160.y, sp160.z,
-                            arg8->vtxTable[var_a1].v.ob[0], arg8->vtxTable[var_a1].v.ob[1],
-                            arg8->vtxTable[var_a1].v.ob[2], arg8->vtxTable[var_t0].v.ob[0],
-                            arg8->vtxTable[var_t0].v.ob[1], arg8->vtxTable[var_t0].v.ob[2],
-                            arg8->vtxTable[var_t1].v.ob[0], arg8->vtxTable[var_t1].v.ob[1],
-                            arg8->vtxTable[var_t1].v.ob[2], 1.0f, 1.0f, &sp158,
+                    vertexCountBitsOrVertex0 = vertexMap[vertexCountBitsOrVertex0];
+                    vertex1 = vertexMap[vertex1];
+                    vertex2 = vertexMap[vertex2];
+                    if (sUvIntersectExports->uvIntersectSegmentScaledTriangle( /* Provider may write the shared normal before rejecting; early rejection can leave the scalar output untouched. */
+                            localStart.x, localStart.y, localStart.z, localEnd.x, localEnd.y, localEnd.z,
+                            model->vtxTable[vertexCountBitsOrVertex0].v.ob[0], model->vtxTable[vertexCountBitsOrVertex0].v.ob[1],
+                            model->vtxTable[vertexCountBitsOrVertex0].v.ob[2], model->vtxTable[vertex1].v.ob[0],
+                            model->vtxTable[vertex1].v.ob[1], model->vtxTable[vertex1].v.ob[2],
+                            model->vtxTable[vertex2].v.ob[0], model->vtxTable[vertex2].v.ob[1],
+                            model->vtxTable[vertex2].v.ob[2], 1.0f, 1.0f, &triangleFraction,
                             &D_uvmodel_rom_00403150[*D_uvmodel_rom_00403158])
                         != 0) {
                         D_uvmodel_rom_00403148[*D_uvmodel_rom_00403158] = *D_uvmodel_rom_00403154;
-                        D_uvmodel_rom_00403144[*D_uvmodel_rom_00403158] = sp158;
+                        D_uvmodel_rom_00403144[*D_uvmodel_rom_00403158] = triangleFraction;
                         sUvFmtxExports->uvMat4TransformDirection(
-                            arg6, &D_uvmodel_rom_00403150[*D_uvmodel_rom_00403158],
+                            modelMatrix, &D_uvmodel_rom_00403150[*D_uvmodel_rom_00403158],
                             &D_uvmodel_rom_00403150[*D_uvmodel_rom_00403158]);
                         sUvFvecExports->uvVec3FScale(
                             &D_uvmodel_rom_00403150[*D_uvmodel_rom_00403158],
-                            &D_uvmodel_rom_00403150[*D_uvmodel_rom_00403158], arg8->unk10);
-                        *D_uvmodel_rom_00403158 += 1;
-                        sp14E += 1;
+                            &D_uvmodel_rom_00403150[*D_uvmodel_rom_00403158], model->unk10);
+                        *D_uvmodel_rom_00403158 += 1; /* RE_ORIGINAL_QUIRK: appends without checking capacity; preserve every live count/ID/pointer reload. */
+                        hitCount += 1;
                     }
                 }
             }
         }
     }
 
-    if (sp14E != 0) {
-        return sp14E;
+    if (hitCount != 0) {
+        return hitCount;
     }
     return -1;
 }
