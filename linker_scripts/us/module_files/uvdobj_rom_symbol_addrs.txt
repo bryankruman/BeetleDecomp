@@ -216,3 +216,5 @@ uvDobjTestHierarchyPointBounds = 0x00403054; // type:func
 uvDobjQueryHierarchySegment = 0x004032DC; // type:func
 uvDobjDrawHierarchyUsingNodeMatrixIndices = 0x004015C0; // type:func
 uvDobjDrawHierarchyWithPlanarMatrixOverride = 0x00401ABC; // type:func
+uvDobjCollectOverlapsWithScalarExtent = 0x00402420; // type:func
+uvDobjCollectSegmentHierarchyResults = 0x00402870; // type:func

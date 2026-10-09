@@ -62,9 +62,9 @@ void uvDobjDrawHierarchyWithPlanarMatrixOverride(s32 arg0, DObj *arg1);
 s32 uvDobjFindObjectContainingWorldPoint(f32 arg0, f32 arg1, f32 arg2);
 s32 uvDobjCollectCapsuleOverlaps(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6,
                              s32 *arg7);
-s32 func_uvdobj_rom_00402420(f32 arg0, f32 arg1, f32 arg2, f32 arg3, s32 **arg4, f32 **arg5,
+s32 uvDobjCollectOverlapsWithScalarExtent(f32 arg0, f32 arg1, f32 arg2, f32 arg3, s32 **arg4, f32 **arg5,
                              Vec3F **arg6);
-s32 func_uvdobj_rom_00402870(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, s32 **arg6,
+s32 uvDobjCollectSegmentHierarchyResults(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, s32 **arg6,
                              f32 **arg7, Vec3F **arg8);
 s16 uvDobjQueryHierarchyWithScalarExtent(f32 arg0, f32 arg1, f32 arg2, f32 arg3, DObj *arg4);
 s16 uvDobjTestHierarchyPointBounds(f32 arg0, f32 arg1, f32 arg2, DObj *arg3);
@@ -130,9 +130,9 @@ void __entrypoint_func_uvdobj_rom_400000(UvDobj_Exports *exports) {
     exports->uvDobjPosm = uvDobjPosm;
     exports->uvDobjModuleCleanup = uvDobjModuleCleanup;
     exports->uvDobjGetPosm = uvDobjGetPosm;
-    exports->func_uvdobj_rom_00402420 = func_uvdobj_rom_00402420;
+    exports->uvDobjCollectOverlapsWithScalarExtent = uvDobjCollectOverlapsWithScalarExtent;
     exports->uvDobjSetFlags = uvDobjSetFlags;
-    exports->func_uvdobj_rom_00402870 = func_uvdobj_rom_00402870;
+    exports->uvDobjCollectSegmentHierarchyResults = uvDobjCollectSegmentHierarchyResults;
     exports->uvDobjSetFlagBits = uvDobjSetFlagBits;
     exports->uvDobjExtractJointQuaternionsFromMatrices = uvDobjExtractJointQuaternionsFromMatrices;
     exports->uvDobjGetFlags = uvDobjGetFlags;
@@ -1111,93 +1111,95 @@ s32 uvDobjCollectCapsuleOverlaps(f32 startX, f32 startY, f32 startZ, f32 endX, f
 }
 #line 1029 "src/modules/uvdobj_rom.c"
 
-s32 func_uvdobj_rom_00402420(f32 arg0, f32 arg1, f32 arg2, f32 arg3, s32 **arg4, f32 **arg5,
-                             Vec3F **arg6) {
-    char pad[0x14];
-    Mtx4F *temp_s1;
-    DObj *temp_s0;
-    s32 sp78;
-    Vec3F *temp_s0_2;
-    f32 temp_fa1;
-    f32 temp_ft4;
-    f32 temp_ft5;
-    f32 temp_fv0;
-    f32 temp_fv1;
-    f32 temp_fv1_3;
-    s32 var_s4;
-    s32 var_v0;
-    s32 var_v1;
-    ParsedUVMD *temp_s2;
-    ParsedUVMD *temp_v0;
+/* Collect shared XYZ/scalar-extent overlap results, dispatching flagged models to hierarchy tests. */
+#line 1030 "src/modules/uvdobj_rom.c"
+s32 uvDobjCollectOverlapsWithScalarExtent(f32 queryX, f32 queryY, f32 queryZ, f32 queryExtent, s32 **outObjectWords, f32 **outScalars,
+                             Vec3F **outVectors) {
+    char historicalStorage[0x14]; /* RE_UNKNOWN: historical unused storage/ABI; retain declarations. */
+    Mtx4F *objectMatrix;
+    DObj *object;
+    s32 endObjectIndex;
+    Vec3F *resultVector;
+    f32 historicalUnusedScalar; /* Retain the original unused scalar. */
+    f32 objectY;
+    f32 objectZ;
+    f32 objectExtent;
+    f32 objectX;
+    f32 resultScalar;
+    s32 objectIndex;
+    s32 firstObjectIndex;
+    s32 selectedObjectIndex;
+    ParsedUVMD *model;
+    ParsedUVMD *historicalUnusedModel; /* Retain the original unused pointer. */
 
-    var_v1 = D_uvdobj_rom_004039EC;
-    if (var_v1 == -1) {
-        var_v0 = 0;
-        sp78 = sUvDobjId;
+    selectedObjectIndex = D_uvdobj_rom_004039EC; /* RE_UNKNOWN: selected-index range and shared-buffer lifetime need caller/allocation proof. */
+    if (selectedObjectIndex == -1) {
+        firstObjectIndex = 0;
+        endObjectIndex = sUvDobjId;
     } else {
-        sp78 = D_uvdobj_rom_004039EC + 1;
-        var_v0 = D_uvdobj_rom_004039EC;
+        endObjectIndex = D_uvdobj_rom_004039EC + 1;
+        firstObjectIndex = D_uvdobj_rom_004039EC;
     }
     *D_uvdobj_rom_004039E4 = 0;
     *D_uvdobj_rom_004039F8 = 0;
-    for (var_s4 = var_v0; var_s4 < sp78; var_s4++) {
-        temp_s0 = &sDObjs[var_s4];
-        if ((temp_s0->modelId == 0xFFFF) || !(temp_s0->unk4 & 1)) {
+    for (objectIndex = firstObjectIndex; objectIndex < endObjectIndex; objectIndex++) {
+        object = &sDObjs[objectIndex];
+        if ((object->modelId == 0xFFFF) || !(object->unk4 & 1)) {
             continue;
         }
-        temp_fv0 = temp_s0->unk10;
-        temp_s1 = temp_s0->unk1C;
-        temp_fv1 = temp_s1->m[3][0];
-        temp_ft4 = temp_s1->m[3][1];
-        temp_ft5 = temp_s1->m[3][2];
+        objectExtent = object->unk10;
+        objectMatrix = object->unk1C;
+        objectX = objectMatrix->m[3][0];
+        objectY = objectMatrix->m[3][1];
+        objectZ = objectMatrix->m[3][2];
 
-        if (((arg0 + arg3 + temp_fv0) < temp_fv1)) {
-            continue;
-        }
-
-        if ((temp_fv1 < ((arg0 - arg3) - temp_fv0))) {
-            continue;
-        }
-        if (((arg1 + arg3 + temp_fv0) < temp_ft4)) {
+        if (((queryX + queryExtent + objectExtent) < objectX)) {
             continue;
         }
 
-        if ((temp_ft4 < ((arg1 - arg3) - temp_fv0))) {
+        if ((objectX < ((queryX - queryExtent) - objectExtent))) {
+            continue;
+        }
+        if (((queryY + queryExtent + objectExtent) < objectY)) {
             continue;
         }
 
-        if (((arg2 + arg3 + temp_fv0) < temp_ft5)) {
+        if ((objectY < ((queryY - queryExtent) - objectExtent))) {
             continue;
         }
 
-        if ((temp_ft5 < ((arg2 - arg3) - temp_fv0))
-            || (sUvIntersectExports->uvIntersectSpheresOverlap(arg0, arg1, arg2, arg3, temp_fv1,
-                                                                   temp_ft4, temp_ft5, temp_fv0)
+        if (((queryZ + queryExtent + objectExtent) < objectZ)) {
+            continue;
+        }
+
+        if ((objectZ < ((queryZ - queryExtent) - objectExtent))
+            || (sUvIntersectExports->uvIntersectSpheresOverlap(queryX, queryY, queryZ, queryExtent, objectX,
+                                                                   objectY, objectZ, objectExtent)
                 == 0)) {
             continue;
         }
 
-        temp_s2 = uvGetLoadedFile('UVMD', temp_s0->modelId);
-        *D_uvdobj_rom_004039E0 = var_s4;
-        if (temp_s2->unk5 & 0x76) {
-            uvDobjQueryHierarchyWithScalarExtent(arg0, arg1, arg2, arg3, temp_s0);
+        model = uvGetLoadedFile('UVMD', object->modelId); /* RE_UNKNOWN: model residency, flags and bound meanings need producer/lifecycle proof. */
+        *D_uvdobj_rom_004039E0 = objectIndex;
+        if (model->unk5 & 0x76) {
+            uvDobjQueryHierarchyWithScalarExtent(queryX, queryY, queryZ, queryExtent, object);
             if (*D_uvdobj_rom_004039E4 >= sUvQueryExports->uvQueryGetRecordCapacity()) {
                 break;
             }
             continue;
         }
 
-        D_uvdobj_rom_004039D4[*D_uvdobj_rom_004039E4] = *D_uvdobj_rom_004039E0;
-        temp_s0_2 = &D_uvdobj_rom_004039D8[*D_uvdobj_rom_004039E4];
-        temp_s0_2->x = arg0 - temp_s1->m[3][0];
-        temp_s0_2->y = arg1 - temp_s1->m[3][1];
-        temp_s0_2->z = arg2 - temp_s1->m[3][2];
-        sUvFVecExports->uvVec3FNormalize(temp_s0_2, temp_s0_2);
-        temp_fv1_3 = (temp_s2->unkC
-                      - sUvMathExports->uvSqrtf(SQ(temp_s0_2->x) + SQ(temp_s0_2->y) + SQ(temp_s0_2->z)))
-                     / arg3;
-        if (temp_fv1_3 < 0.0f) {
-            D_uvdobj_rom_004039D0[*D_uvdobj_rom_004039E4] = temp_fv1_3;
+        D_uvdobj_rom_004039D4[*D_uvdobj_rom_004039E4] = *D_uvdobj_rom_004039E0; /* RE_ORIGINAL_QUIRK: append precedes capacity test; RE_UNKNOWN: buffer extent/alias domain needs allocation/caller proof. */
+        resultVector = &D_uvdobj_rom_004039D8[*D_uvdobj_rom_004039E4];
+        resultVector->x = queryX - objectMatrix->m[3][0];
+        resultVector->y = queryY - objectMatrix->m[3][1];
+        resultVector->z = queryZ - objectMatrix->m[3][2];
+        sUvFVecExports->uvVec3FNormalize(resultVector, resultVector); /* RE_ORIGINAL_QUIRK: ignore normalization return, then re-read the vector for the scalar. */
+        resultScalar = (model->unkC
+                      - sUvMathExports->uvSqrtf(SQ(resultVector->x) + SQ(resultVector->y) + SQ(resultVector->z)))
+                     / queryExtent; /* RE_UNKNOWN: zero/nonfinite extent and FP-mode contracts need caller evidence. */
+        if (resultScalar < 0.0f) {
+            D_uvdobj_rom_004039D0[*D_uvdobj_rom_004039E4] = resultScalar;
         } else {
             D_uvdobj_rom_004039D0[*D_uvdobj_rom_004039E4] = 0.0f;
         }
@@ -1207,124 +1209,126 @@ s32 func_uvdobj_rom_00402420(f32 arg0, f32 arg1, f32 arg2, f32 arg3, s32 **arg4,
             break;
         }
     }
-    if (*D_uvdobj_rom_004039E4 != 0) {
-        *arg4 = D_uvdobj_rom_004039D4;
-        *arg5 = D_uvdobj_rom_004039D0;
-        *arg6 = D_uvdobj_rom_004039D8;
+    if (*D_uvdobj_rom_004039E4 != 0) { /* RE_ORIGINAL_QUIRK: zero results leave caller output pointers unchanged. */
+        *outObjectWords = D_uvdobj_rom_004039D4;
+        *outScalars = D_uvdobj_rom_004039D0;
+        *outVectors = D_uvdobj_rom_004039D8;
     }
     return *D_uvdobj_rom_004039E4;
 }
 
-s32 func_uvdobj_rom_00402870(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, s32 **arg6,
-                             f32 **arg7, Vec3F **arg8) {
-    DObj *temp_s0;
-    f32 temp_fs0;
-    f32 temp_fs1;
-    ParsedUVMD *uvmd;
-    f32 spBC;
-    f32 temp_fs2;
-    f32 temp_fs3;
-    s32 spB0;
-    f32 spAC;
-    f32 spA8;
-    f32 spA4;
-    f32 spA0;
-    u16 temp_v0;
-    s32 var_s0;
-    s32 var_s1;
-    s32 sp88;
+/* Collect hierarchy results for an endpoint pair, preserving the coincident-point path and shared-result sort. */
+#line 1134 "src/modules/uvdobj_rom.c"
+s32 uvDobjCollectSegmentHierarchyResults(f32 startX, f32 startY, f32 startZ, f32 endX, f32 endY, f32 endZ, s32 **outObjectWords,
+                             f32 **outScalars, Vec3F **outVectors) {
+    DObj *object;
+    f32 extentOrDeltaX;
+    f32 xOrDeltaY;
+    ParsedUVMD *model;
+    f32 broadPhaseFraction; /* Provider-written fraction remains unused by this caller. */
+    f32 yOrDeltaZ;
+    f32 objectZ;
+    s32 endObjectIndex;
+    f32 midpointX;
+    f32 midpointY;
+    f32 midpointZ;
+    f32 midpointExtent;
+    u16 containingObjectId;
+    s32 firstObjectIndex;
+    s32 objectIndex;
+    s32 candidateObjectCount;
 
-    *D_uvdobj_rom_004039E4 = 0;
-    if ((arg0 == arg3) && (arg1 == arg4) && (arg2 == arg5)) {
-        temp_v0 = uvDobjFindObjectContainingWorldPoint(arg0, arg1, arg2);
-        if (temp_v0 == 0xFFFF) {
-            *arg6 = NULL;
-            *arg7 = NULL;
-            *arg8 = NULL;
+    *D_uvdobj_rom_004039E4 = 0; /* RE_UNKNOWN: shared/output storage, aliases and lifetime need allocation/caller proof. */
+    if ((startX == endX) && (startY == endY) && (startZ == endZ)) {
+        containingObjectId = uvDobjFindObjectContainingWorldPoint(startX, startY, startZ); /* RE_ORIGINAL_QUIRK: keep only the returned low u16. */
+        if (containingObjectId == 0xFFFF) {
+            *outObjectWords = NULL;
+            *outScalars = NULL;
+            *outVectors = NULL;
             return 0;
         }
-        *D_uvdobj_rom_004039D4 = temp_v0;
+        *D_uvdobj_rom_004039D4 = containingObjectId;
         *D_uvdobj_rom_004039D0 = 0.0f;
         D_uvdobj_rom_004039D8->x = 0.0f;
         D_uvdobj_rom_004039D8->y = 0.0f;
         D_uvdobj_rom_004039D8->z = 1.0f;
-        *arg6 = D_uvdobj_rom_004039D4;
-        *arg7 = D_uvdobj_rom_004039D0;
-        *arg8 = D_uvdobj_rom_004039D8;
-        return 1;
+        *outObjectWords = D_uvdobj_rom_004039D4;
+        *outScalars = D_uvdobj_rom_004039D0;
+        *outVectors = D_uvdobj_rom_004039D8;
+        return 1; /* RE_ORIGINAL_QUIRK: return one without publishing one to the shared count. */
     }
     if (D_uvdobj_rom_004039EC == -1) {
-        var_s0 = 0;
-        spB0 = sUvDobjId;
+        firstObjectIndex = 0;
+        endObjectIndex = sUvDobjId;
     } else {
-        spB0 = D_uvdobj_rom_004039EC + 1;
-        var_s0 = D_uvdobj_rom_004039EC;
+        endObjectIndex = D_uvdobj_rom_004039EC + 1;
+        firstObjectIndex = D_uvdobj_rom_004039EC;
     }
-    sp88 = spB0 - var_s0;
-    if (sp88 >= 6) {
-        temp_fs0 = arg3 - arg0;
-        temp_fs1 = arg4 - arg1;
-        temp_fs2 = arg5 - arg2;
-        spA0 = sUvMathExports->uvSqrtf(SQ(temp_fs0) + SQ(temp_fs1) + SQ(temp_fs2)) * 0.5f;
-        spAC = (0.5f * temp_fs0) + arg0;
-        spA8 = (0.5f * temp_fs1) + arg1;
-        spA4 = (0.5f * temp_fs2) + arg2;
+    candidateObjectCount = endObjectIndex - firstObjectIndex; /* RE_UNKNOWN: index/FP domains need callers; preserve cached threshold and MIN/MAX evaluation. */
+    if (candidateObjectCount >= 6) {
+        extentOrDeltaX = endX - startX;
+        xOrDeltaY = endY - startY;
+        yOrDeltaZ = endZ - startZ;
+        midpointExtent = sUvMathExports->uvSqrtf(SQ(extentOrDeltaX) + SQ(xOrDeltaY) + SQ(yOrDeltaZ)) * 0.5f;
+        midpointX = (0.5f * extentOrDeltaX) + startX;
+        midpointY = (0.5f * xOrDeltaY) + startY;
+        midpointZ = (0.5f * yOrDeltaZ) + startZ;
     }
-    for (var_s1 = var_s0; var_s1 < spB0; var_s1++) {
-        temp_s0 = &sDObjs[var_s1];
-        if ((temp_s0->modelId == 0xFFFF) || !(temp_s0->unk4 & 1)) {
+    for (objectIndex = firstObjectIndex; objectIndex < endObjectIndex; objectIndex++) {
+        object = &sDObjs[objectIndex];
+        if ((object->modelId == 0xFFFF) || !(object->unk4 & 1)) {
             continue;
         }
 
-        temp_fs0 = temp_s0->unk10;
-        temp_fs1 = temp_s0->unk1C->m[3][0];
-        temp_fs2 = temp_s0->unk1C->m[3][1];
-        temp_fs3 = temp_s0->unk1C->m[3][2];
-        if (((temp_fs1 + temp_fs0) < MIN(arg0, arg3))) {
+        extentOrDeltaX = object->unk10;
+        xOrDeltaY = object->unk1C->m[3][0];
+        yOrDeltaZ = object->unk1C->m[3][1];
+        objectZ = object->unk1C->m[3][2];
+        if (((xOrDeltaY + extentOrDeltaX) < MIN(startX, endX))) {
             continue;
         }
 
-        if ((MAX(arg0, arg3) < (temp_fs1 - temp_fs0))) {
+        if ((MAX(startX, endX) < (xOrDeltaY - extentOrDeltaX))) {
             continue;
         }
 
-        if (((temp_fs2 + temp_fs0) < MIN(arg1, arg4))) {
+        if (((yOrDeltaZ + extentOrDeltaX) < MIN(startY, endY))) {
             continue;
         }
 
-        if ((MAX(arg1, arg4) < (temp_fs2 - temp_fs0))) {
+        if ((MAX(startY, endY) < (yOrDeltaZ - extentOrDeltaX))) {
             continue;
         }
 
-        if (((temp_fs3 + temp_fs0) < MIN(arg2, arg5))) {
+        if (((objectZ + extentOrDeltaX) < MIN(startZ, endZ))) {
             continue;
         }
 
-        if ((MAX(arg2, arg5) < (temp_fs3 - temp_fs0))) {
+        if ((MAX(startZ, endZ) < (objectZ - extentOrDeltaX))) {
             continue;
         }
-        if (((sp88 < 6)
-             || (sUvIntersectExports->uvIntersectSpheresOverlap(spAC, spA8, spA4, spA0, temp_fs1,
-                                                                    temp_fs2, temp_fs3, temp_fs0)
+        if (((candidateObjectCount < 6)
+             || (sUvIntersectExports->uvIntersectSpheresOverlap(midpointX, midpointY, midpointZ, midpointExtent, xOrDeltaY,
+                                                                    yOrDeltaZ, objectZ, extentOrDeltaX)
                  != 0))) {
             if ((sUvIntersectExports->uvIntersectSegmentSphereFraction(
-                     arg0, arg1, arg2, arg3, arg4, arg5, temp_fs1, temp_fs2, temp_fs3, temp_fs0, &spBC)
+                     startX, startY, startZ, endX, endY, endZ, xOrDeltaY, yOrDeltaZ, objectZ, extentOrDeltaX, &broadPhaseFraction)
                  == 0)) {
                 continue;
             }
-            uvmd = uvGetLoadedFile('UVMD', temp_s0->modelId);
-            if (!(uvmd->unk5 & 6)) {
+            model = uvGetLoadedFile('UVMD', object->modelId); /* RE_UNKNOWN: model/flag validity and callback mutation need producer/lifecycle proof. */
+            if (!(model->unk5 & 6)) {
                 continue;
             }
 
-            *D_uvdobj_rom_004039E0 = var_s1;
-            uvDobjQueryHierarchySegment(arg0, arg1, arg2, arg3, arg4, arg5, temp_s0);
+            *D_uvdobj_rom_004039E0 = objectIndex;
+            uvDobjQueryHierarchySegment(startX, startY, startZ, endX, endY, endZ, object);
         }
     }
-    *arg6 = D_uvdobj_rom_004039D4;
-    *arg7 = D_uvdobj_rom_004039D0;
-    *arg8 = D_uvdobj_rom_004039D8;
-    sUvQueryExports->uvQueryDoSorting();
+    *outObjectWords = D_uvdobj_rom_004039D4;
+    *outScalars = D_uvdobj_rom_004039D0;
+    *outVectors = D_uvdobj_rom_004039D8;
+    sUvQueryExports->uvQueryDoSorting(); /* RE_ORIGINAL_QUIRK: publish pointers before sorting; keep fresh shared-count return. */
     return *D_uvdobj_rom_004039E4;
 }
 
