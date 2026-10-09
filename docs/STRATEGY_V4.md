@@ -36,7 +36,7 @@ packed-module checks and original full ROM check after symbol extraction:
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
 matching C are preserved with `#line`. The current ledger has **788** assembly references:
 **746** ordinary functions and **42** entrypoints, with **714,248** known instruction bytes
-and no unknown sizes. The broader name audit still finds **288** address-named C definitions.
+and no unknown sizes. The broader name audit still finds **285** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
 Two further accepted waves recover nine functions. Commit `06bf51c` implements
@@ -3133,10 +3133,19 @@ Totals: 411 further recoveries after the 225 upstream ordinary imports, plus 139
 Frozen wave `3024-older-model-node-query-contracts-3024` and `accepted-older-model-node-query-contracts-3024` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 412 further readable functions
+## Historical accepted checkpoint — 412 further readable functions
 
 Recover3D08 as battleBuildAdjustmentControls:876bytes/all219instructions exact, two empty compiler logs and all50 complete object records equal by site and identity. Original42 local records/order rows353..394, actual25 section-relative/import identities and six serializer sources remain unchanged. Preserve owner capture before initializer, fresh export reloads, unchecked factory indices, distinct labels and nine bound controls sharing optional output storage. Full object/export extents, failure/input domains and callback/module lifetimes remain explicit unknowns. Timer4694 and all other Battle bodies/prototypes remain unchanged. Only the canonical prototype/definition and append-only address alias are renamed. Normal extraction, original packed Battle/fresh ROM/all frozen manifest pins, full remaining dictionaries/data/address/per-source and uncertainty-index gates remain mandatory.
 
 Totals: 412 further recoveries after the 225 upstream ordinary imports, plus 1392 existing C semantic cleanups. Current ledger: 788 assembly references = 746 ordinary + 42 entrypoints; 714,248 known remaining instruction bytes; zero unknown sizes; 288 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `3042-battle-adjustment-controls-recovery-3042` and `accepted-battle-adjustment-controls-recovery-3042` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 412 further readable functions
+
+Three genuinely untreated existing CHANNEL functions gain descriptive local/parameter roles, concise operation and uncertainty comments, and consistent canonical names across source, export members, header, three callers and exactly appended native aliases. Preserve all types/offsets/macros, grouped floating-point arithmetic, live reloads, stores and callbacks; retain the null-path absolute-word quirk, ignored callback/normalization results, unreachable i==5 and FAKE/unused-storage scaffolds. Historical struct/array bounds, capacities, allocation/null paths, callback ABI/lifetimes, aliases and FP domains remain searchable RE_UNKNOWN. Original360 target words/117 initializer words and strict provider closure reviewed; full360 reference/draft words,35 ordered five-field object records/native operand mappings and six empty full compiler logs required. Binding-aware whole-source inverses preserve all542 executable CHANNEL rows and every header/caller coordinate; exactly seven export member identifiers change. Three older cleanups, zero recoveries. Normal extraction, original packed CHANNEL/BILL/DOBJ/FX, fresh full original ROM, all1035 source pins, entire unchanged remaining/data/per-source dictionaries, address rows minus only these three and fresh uncertainty index are mandatory.
+
+Totals: 412 further recoveries after the 225 upstream ordinary imports, plus 1395 existing C semantic cleanups. Current ledger: 788 assembly references = 746 ordinary + 42 entrypoints; 714,248 known remaining instruction bytes; zero unknown sizes; 285 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `3080-older-channel-allocation-vector-contracts-3080` and `accepted-older-channel-allocation-vector-contracts-3080` verify real translation-unit instructions/full relocations, 4 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

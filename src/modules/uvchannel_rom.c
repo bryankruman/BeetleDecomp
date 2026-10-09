@@ -39,13 +39,13 @@ void uvChannelSetFlags(s32 arg0, s32 arg1);
 void uvChannelSetFrustum(s32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6);
 void uvChannelSetViewport(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4);
 void uvChannelSetBoundaryCallback(s32 arg0, s32 arg1, CallbackRoutine arg2);
-s32 func_uvchannel_rom_00400CCC(void);
+s32 uvChannelAcquireSlotAndInitializeCallbacks(void);
 void uvChannelRelease(s32 arg0);
 void uvChannelApplyClipRatio(s32 arg0);
 void uvChannelRender(s32 arg0);
 void uvChannelSetViewMatrix(s32 arg0, Mtx4F *arg1);
-s32 func_uvchannel_rom_004014E8(s32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4);
-void func_uvchannel_rom_00401658(s32 arg0);
+s32 uvChannelTestCachedVectorPairs(s32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4);
+void uvChannelRebuildCachedVectors(s32 arg0);
 void uvChannelBeginDebugFrustum(s32 arg0);
 void uvChannelDrawDebugFrustum(s32 arg0);
 void __entrypoint_func_uvchannel_rom_400000(UvChannel_Exports *exports);
@@ -73,13 +73,13 @@ void __entrypoint_func_uvchannel_rom_400000(UvChannel_Exports *exports) {
     exports->uvChannelModuleCleanup = uvChannelModuleCleanup;
     exports->uvChannelSetViewMatrix = uvChannelSetViewMatrix;
     exports->uvChannelGetProperties = uvChannelGetProperties;
-    exports->func_uvchannel_rom_004014E8 = func_uvchannel_rom_004014E8;
+    exports->uvChannelTestCachedVectorPairs = uvChannelTestCachedVectorPairs;
     exports->uvChannelSetProperties = uvChannelSetProperties;
     exports->uvChannelSetFlags = uvChannelSetFlags;
     exports->uvChannelSetFrustum = uvChannelSetFrustum;
     exports->uvChannelSetViewport = uvChannelSetViewport;
     exports->uvChannelSetBoundaryCallback = uvChannelSetBoundaryCallback;
-    exports->func_uvchannel_rom_00400CCC = func_uvchannel_rom_00400CCC;
+    exports->uvChannelAcquireSlotAndInitializeCallbacks = uvChannelAcquireSlotAndInitializeCallbacks;
     exports->uvChannelRelease = uvChannelRelease;
     exports->uvChannelRender = uvChannelRender;
 #ifdef __sgi
@@ -241,7 +241,7 @@ void uvChannelSetProperties(s32 channel, ...) {
                 sUvFmtxExports->uvMat4BuildPerspectiveProjection(&state->unk4, state->unkDC, state->unkE0,
                                                          state->unkE4, state->unkE8, state->unkEC,
                                                          state->unkF0);
-                func_uvchannel_rom_00401658(channel);
+                uvChannelRebuildCachedVectors(channel);
                 break;
             case 5:
                 state->unk214 = va_arg(args, s32);
@@ -340,50 +340,52 @@ void uvChannelSetBoundaryCallback(s32 channel, s32 boundary, CallbackRoutine cal
 }
 #line 300 "src/modules/uvchannel_rom.c"
 
-s32 func_uvchannel_rom_00400CCC(void) {
-    s32 *sp20;
-    s32 var_a0_2;
-    s32 *temp_v0;
-    UnkStruct_uvchannel_rom_00401CD0 *var_s1;
-    s32 i;
+/* Acquire the first free channel slot, initialize viewport/matrices and register two clip-ratio callbacks. */
+#line 301 "src/modules/uvchannel_rom.c"
+s32 uvChannelAcquireSlotAndInitializeCallbacks(void) {
+    s32 *historicalUnusedPointer; /* RE_UNKNOWN: unused declaration preserves compiler storage; historical source is unproved. */
+    s32 callbackCapacityOrListWord;
+    s32 *settings;
+    UnkStruct_uvchannel_rom_00401CD0 *state;
+    s32 channelIndex;
 
-    var_s1 = NULL;
-    temp_v0 = uvGetSystemProp(SYSTEM_PROPID_CHANNEL_SETTINGS);
-    for (i = 0; i < D_uvchannel_rom_00401CD4; i++) {
-        if (!(D_uvchannel_rom_00401CD0[i].unk0 & 1)) {
-            D_uvchannel_rom_00401CD0[i].unk0 = 1;
-            var_s1 = &D_uvchannel_rom_00401CD0[i];
+    state = NULL;
+    settings = uvGetSystemProp(SYSTEM_PROPID_CHANNEL_SETTINGS); /* RE_UNKNOWN: settings/count/capacity, allocation and slot lifetime need producer/caller proof. */
+    for (channelIndex = 0; channelIndex < D_uvchannel_rom_00401CD4; channelIndex++) {
+        if (!(D_uvchannel_rom_00401CD0[channelIndex].unk0 & 1)) {
+            D_uvchannel_rom_00401CD0[channelIndex].unk0 = 1;
+            state = &D_uvchannel_rom_00401CD0[channelIndex];
             break;
         }
     }
 
-    if (var_s1 == NULL) {
+    if (state == NULL) {
         return -1;
     }
-    if (temp_v0 != NULL) {
-        var_a0_2 = temp_v0[1];
+    if (settings != NULL) {
+        callbackCapacityOrListWord = settings[1];
     } else {
-        var_a0_2 = 0x14;
+        callbackCapacityOrListWord = 0x14;
     }
-    var_s1->unk21C = sUvCbackExports->uvCreateCallbackList(var_a0_2);
-    var_s1->unk214 = 0;
-    var_s1->unk216 = (s16) (sUvGfxMgrExports->uvGetScreenWidth() - 1);
-    var_s1->unk218 = 0;
-    var_s1->unk21A = (s16) (sUvGfxMgrExports->uvGetScreenHeight() - 1);
-    var_s1->unk2 = 2;
-    sUvFmtxExports->uvMat4SetIdentity(&var_s1->unk84);
-    sUvFmtxExports->uvMat4SetIdentity(&var_s1->unk44);
-    sUvFmtxExports->uvMat4SetIdentity(&var_s1->unk4);
-    // TODO: Find a better match
-    var_a0_2 = var_s1->unk21C;
-    if (var_a0_2 == NULL) {
-        var_s1->unk1 = 0;
-        var_a0_2 = *(void **) 0x21C;
-        var_s1 = NULL;
+    state->unk21C = sUvCbackExports->uvCreateCallbackList(callbackCapacityOrListWord); /* Callback-list creation allocates and zeroes capacity-derived storage without a null-allocation guard. */
+    state->unk214 = 0;
+    state->unk216 = (s16) (sUvGfxMgrExports->uvGetScreenWidth() - 1); /* Preserve repeated dimension callbacks and halfword narrowing; RE_UNKNOWN: dimension domains need producer proof. */
+    state->unk218 = 0;
+    state->unk21A = (s16) (sUvGfxMgrExports->uvGetScreenHeight() - 1);
+    state->unk2 = 2;
+    sUvFmtxExports->uvMat4SetIdentity(&state->unk84);
+    sUvFmtxExports->uvMat4SetIdentity(&state->unk44);
+    sUvFmtxExports->uvMat4SetIdentity(&state->unk4);
+    // RE_UNKNOWN: this live callback-word reload preserves native storage/control; historical declaration is unproved.
+    callbackCapacityOrListWord = state->unk21C;
+    if (callbackCapacityOrListWord == NULL) {
+        state->unk1 = 0;
+        callbackCapacityOrListWord = *(void **) 0x21C; /* RE_ORIGINAL_QUIRK: reload absolute 0x21C, then clear the local state pointer; no failure-path repair. */
+        state = NULL;
     }
-    sUvCbackExports->uvAddCallback(var_a0_2, (s32) &uvChannelApplyClipRatio, 0, 0x1E);
-    sUvCbackExports->uvAddCallback(var_s1->unk21C, (s32) &uvChannelApplyClipRatio, 0, 0xC8);
-    return i;
+    sUvCbackExports->uvAddCallback(callbackCapacityOrListWord, (s32) &uvChannelApplyClipRatio, 0, 0x1E);
+    sUvCbackExports->uvAddCallback(state->unk21C, (s32) &uvChannelApplyClipRatio, 0, 0xC8); /* RE_UNKNOWN: null-path validity, callback ABI/lifetime and ignored registration results need caller/provider proof. */
+    return channelIndex;
 }
 
 #line 347 "src/modules/uvchannel_rom.c"
@@ -491,111 +493,115 @@ void uvChannelSetViewMatrix(s32 channel, Mtx4F *matrix) {
     state->unkD0.x = matrix->m[1][0];
     state->unkD0.y = matrix->m[1][1];
     state->unkD0.z = matrix->m[1][2];
-    func_uvchannel_rom_00401658(channel);
+    uvChannelRebuildCachedVectors(channel);
 }
 #line 438 "src/modules/uvchannel_rom.c"
 
-s32 func_uvchannel_rom_004014E8(s32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4) {
-    UnkStruct_uvchannel_rom_00401CD0 *temp_v0;
-    f32 temp_fv0;
-    s32 i;
+/* Test three cached vector pairs with a scalar bias, adjusting the point before the final second-vector test. */
+#line 439 "src/modules/uvchannel_rom.c"
+s32 uvChannelTestCachedVectorPairs(s32 channel, f32 pointX, f32 pointY, f32 pointZ, f32 bias) {
+    UnkStruct_uvchannel_rom_00401CD0 *state;
+    f32 dot;
+    s32 pairIndex;
 
-    if ((arg0 >= 0) && (arg0 < D_uvchannel_rom_00401CD4)) {
-        temp_v0 = &D_uvchannel_rom_00401CD0[arg0];
+    if ((channel >= 0) && (channel < D_uvchannel_rom_00401CD4)) { /* RE_UNKNOWN: vector/bias conventions, storage lifetime and FP domains need producer/caller proof. */
+        state = &D_uvchannel_rom_00401CD0[channel];
 
-        for (i = 0; i < 6; i += 2) {
-            Vec3F *a3 = &temp_v0->unk1CC[i];
-            Vec3F *v1 = &temp_v0->unk1CC[i + 1];
+        for (pairIndex = 0; pairIndex < 6; pairIndex += 2) {
+            Vec3F *firstVector = &state->unk1CC[pairIndex];
+            Vec3F *secondVector = &state->unk1CC[pairIndex + 1];
 
-            // never true
-            if (i == 5) {
-                arg1 += a3->x * temp_v0->unkF0;
-                arg2 += a3->y * temp_v0->unkF0;
-                arg3 += a3->z * temp_v0->unkF0;
+            // RE_UNKNOWN: retain the unreachable pairIndex==5 source scaffold and native conditional; historical form is unproved.
+            if (pairIndex == 5) {
+                pointX += firstVector->x * state->unkF0;
+                pointY += firstVector->y * state->unkF0;
+                pointZ += firstVector->z * state->unkF0;
             }
 
-            temp_fv0 = (a3->x * arg1) + (a3->y * arg2) + (a3->z * arg3);
-            if ((temp_fv0 + arg4) < 0.0f) {
+            dot = (firstVector->x * pointX) + (firstVector->y * pointY) + (firstVector->z * pointZ);
+            if ((dot + bias) < 0.0f) { /* Keep grouped products and live component/scalar reads; unordered comparisons do not reject. */
                 return 0;
             }
 
-            if (i == 4) {
-                arg1 += v1->x * temp_v0->unkF0;
-                arg2 += v1->y * temp_v0->unkF0;
-                arg3 += v1->z * temp_v0->unkF0;
+            if (pairIndex == 4) {
+                pointX += secondVector->x * state->unkF0;
+                pointY += secondVector->y * state->unkF0;
+                pointZ += secondVector->z * state->unkF0;
             }
-            temp_fv0 = (v1->x * arg1) + (v1->y * arg2) + (v1->z * arg3);
-            if ((temp_fv0 + arg4) < 0.0f) {
+            dot = (secondVector->x * pointX) + (secondVector->y * pointY) + (secondVector->z * pointZ);
+            if ((dot + bias) < 0.0f) {
                 return 0;
             }
         }
     }
 
-    return 1;
+    return 1; /* RE_ORIGINAL_QUIRK: invalid channel indices return 1 without testing vectors. */
 }
 
-void func_uvchannel_rom_00401658(s32 arg0) {
-    f32 temp_fa0;
-    f32 temp_fa1;
-    f32 temp_ft4;
-    f32 temp_ft5;
-    f32 temp_fv0;
-    s32 temp_s1;
-    s32 var_v0;
-    s32 i;
-    UnkStruct_uvchannel_rom_00401CD0 *temp_s3;
-    Vec3F *temp_s0;
-    Mtx4F sp50;
+/* Build six vectors from channel scalars, derive normalized cross products and transform both cached sets. */
+#line 478 "src/modules/uvchannel_rom.c"
+void uvChannelRebuildCachedVectors(s32 channel) {
+    f32 scaledE0;
+    f32 scaledDC;
+    f32 scaledE4;
+    f32 scaledE8;
+    f32 ratio;
+    s32 historicalUnusedWord0; /* RE_UNKNOWN: unused words and empty scaffold retain compiler behavior; historical storage is unproved. */
+    s32 historicalUnusedWord1;
+    s32 vectorIndex;
+    UnkStruct_uvchannel_rom_00401CD0 *state;
+    Vec3F *workVector;
+    Mtx4F transformMatrix;
 
-    temp_s3 = &D_uvchannel_rom_00401CD0[arg0];
-    temp_s0 = &temp_s3->unkF4[2];
-    temp_fv0 = temp_s3->unkF0 / temp_s3->unkEC;
-    temp_s3->unkF4[0].y = temp_s3->unkF0;
-    temp_s3->unkF4[1].y = temp_s3->unkF0;
+    state = &D_uvchannel_rom_00401CD0[channel]; /* RE_UNKNOWN: unchecked index, shared storage/alias lifetime and full historical layout need caller/allocation proof. */
+    workVector = &state->unkF4[2];
+    ratio = state->unkF0 / state->unkEC; /* RE_ORIGINAL_QUIRK: divide without a zero guard; RE_UNKNOWN: scalar meaning and FP domains need producer proof. */
+    state->unkF4[0].y = state->unkF0;
+    state->unkF4[1].y = state->unkF0;
 
-    temp_fa1 = temp_s3->unkDC * temp_fv0;
-    temp_fa0 = temp_s3->unkE0 * temp_fv0;
-    temp_ft4 = temp_s3->unkE4 * temp_fv0;
-    temp_ft5 = temp_s3->unkE8 * temp_fv0;
-    temp_s3->unkF4[0].x = temp_fa0;
-    temp_s3->unkF4[1].x = temp_fa0;
-    temp_s3->unkF4[0].z = temp_ft4;
-    temp_s3->unkF4[1].z = temp_ft5;
+    scaledDC = state->unkDC * ratio;
+    scaledE0 = state->unkE0 * ratio;
+    scaledE4 = state->unkE4 * ratio;
+    scaledE8 = state->unkE8 * ratio;
+    state->unkF4[0].x = scaledE0;
+    state->unkF4[1].x = scaledE0;
+    state->unkF4[0].z = scaledE4;
+    state->unkF4[1].z = scaledE8;
     if (0)
-        ; // FAKE
-    temp_s0->x = temp_fa1;
-    temp_s0->y = temp_s3->unkF0;
-    temp_s0->z = temp_ft5;
-    temp_s3->unkF4[3].z = temp_ft4;
-    temp_s3->unkF4[3].x = temp_fa1;
-    temp_s3->unkF4[4].z = 0.0f;
-    temp_s3->unkF4[4].x = 0.0f;
-    temp_s3->unkF4[5].z = 0.0f;
-    temp_s3->unkF4[5].y = 0.0f;
-    temp_s3->unkF4[5].x = 0.0f;
-    temp_s3->unkF4[3].y = temp_s3->unkF0;
-    temp_s3->unkF4[4].y = temp_s3->unkF0;
+        ; // FAKE /* RE_UNKNOWN: preserve the empty compiler scaffold; original source form is unproved. */
+    workVector->x = scaledDC;
+    workVector->y = state->unkF0;
+    workVector->z = scaledE8;
+    state->unkF4[3].z = scaledE4;
+    state->unkF4[3].x = scaledDC;
+    state->unkF4[4].z = 0.0f;
+    state->unkF4[4].x = 0.0f;
+    state->unkF4[5].z = 0.0f;
+    state->unkF4[5].y = 0.0f;
+    state->unkF4[5].x = 0.0f;
+    state->unkF4[3].y = state->unkF0;
+    state->unkF4[4].y = state->unkF0;
 
-    for (i = 0; i < 4; i++) {
-        Vec3F *temp_s2 = &temp_s3->unkF4[i];
-        sUvFvecExports->uvVec3FCross(&temp_s3->unk184[i], &temp_s3->unkF4[(i + 1) % 4], temp_s2);
-        sUvFvecExports->uvVec3FNormalize(&temp_s3->unk184[i], &temp_s3->unk184[i]);
+    for (vectorIndex = 0; vectorIndex < 4; vectorIndex++) {
+        Vec3F *currentVector = &state->unkF4[vectorIndex];
+        sUvFvecExports->uvVec3FCross(&state->unk184[vectorIndex], &state->unkF4[(vectorIndex + 1) % 4], currentVector);
+        sUvFvecExports->uvVec3FNormalize(&state->unk184[vectorIndex], &state->unk184[vectorIndex]); /* RE_ORIGINAL_QUIRK: ignored zero-length result leaves the in-place cross product unchanged. */
     }
-    temp_s0 = temp_s3->unk1B4;
-    sUvFvecExports->uvVec3FCopy(temp_s0, (Vec3F *) &temp_s3->unkF4[4].x);
-    sUvFvecExports->uvVec3FNormalize(temp_s0, temp_s0);
-    temp_s3->unk1B4[1].x = -temp_s0->x;
-    temp_s3->unk1B4[1].y = -temp_s0->y;
-    temp_s3->unk1B4[1].z = -temp_s0->z;
-    sUvFmtxExports->uvMat4FCopy(&sp50, &temp_s3->unk44);
+    workVector = state->unk1B4;
+    sUvFvecExports->uvVec3FCopy(workVector, (Vec3F *) &state->unkF4[4].x);
+    sUvFvecExports->uvVec3FNormalize(workVector, workVector); /* Preserve ignored status and live component negations; no substitute direction is invented. */
+    state->unk1B4[1].x = -workVector->x;
+    state->unk1B4[1].y = -workVector->y;
+    state->unk1B4[1].z = -workVector->z;
+    sUvFmtxExports->uvMat4FCopy(&transformMatrix, &state->unk44);
 
-    for (i = 0; i < 6; i++) {
-        sUvFmtxExports->uvMat4TransformPoint(&sp50, &temp_s3->unk13C[i], &temp_s3->unkF4[i]);
+    for (vectorIndex = 0; vectorIndex < 6; vectorIndex++) {
+        sUvFmtxExports->uvMat4TransformPoint(&transformMatrix, &state->unk13C[vectorIndex], &state->unkF4[vectorIndex]);
     }
-    sp50.m[3][0] = sp50.m[3][1] = sp50.m[3][2] = 0.0f;
+    transformMatrix.m[3][0] = transformMatrix.m[3][1] = transformMatrix.m[3][2] = 0.0f; /* The first six point transforms include translation; clear it only before the second traversal. */
 
-    for (i = 0; i < 6; i++) {
-        sUvFmtxExports->uvMat4TransformPoint(&sp50, &temp_s3->unk1CC[i], &temp_s3->unk184[i]);
+    for (vectorIndex = 0; vectorIndex < 6; vectorIndex++) {
+        sUvFmtxExports->uvMat4TransformPoint(&transformMatrix, &state->unk1CC[vectorIndex], &state->unk184[vectorIndex]); /* RE_UNKNOWN: native traverses six contiguous vectors across declared unk184[4]/unk1B4[2]; historical array extent needs source/layout proof. */
     }
 }
 

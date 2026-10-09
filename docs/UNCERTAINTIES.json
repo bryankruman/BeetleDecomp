@@ -114,7 +114,7 @@
     "include/uvbill_rom.h": "cb47a6247248eb391506901eae6dca183383d224b68bcebabe0dad47b7794375",
     "include/uvblit_rom.h": "242d1cc03a79ec5e3671c96dd77f635befb134db967cf1bdcbc540e8faee9b5e",
     "include/uvcback_rom.h": "30eab108df16ff869caf8df370256a0fe379087ab7dfc289e1d9ca7b1d1abfd0",
-    "include/uvchannel_rom.h": "3a8d830f5992fc8614917b9724194b448b11bf83ed04dd9350e5a5f44ac408e7",
+    "include/uvchannel_rom.h": "0e11d84d3a1c78c98db78eda1cdc6f72e85a058452371cb217c58b5bf48e5999",
     "include/uvcmidi_rom.h": "2b8e5c063c35289322188edd80f7e4e79f047efee016e63fa9aca6bafa0ecd53",
     "include/uvcolor_rom.h": "bebbccae8bb48a4f2e351cf28e8f6ef06b81dc147c7f8aa4efdf28df89466b5f",
     "include/uvcont_rom.h": "dddc48122022cfa2f7db7dd28e95ea780c93c940be8d43150914b3a1ec58cd6a",
@@ -267,17 +267,17 @@
     "src/modules/ufo.c": "2165d432b44ec3455fea1108e6085e9a63349a706cc2d2a0eec1ef342231980d",
     "src/modules/ufogame.c": "607e9c04b757e9af7e22e26c02d46e554a04f5e7d37563c2c8a8f7f88c475fda",
     "src/modules/uvaudiomgr_rom.c": "dd7a4355c0cd2b056faeb4061e582070a17659288ff05becda8167d3a61fce8a",
-    "src/modules/uvbill_rom.c": "d04559a6d33cbea25a52e5251f98f6563d32e0cd9c0a4b8ccfecbcec43135289",
+    "src/modules/uvbill_rom.c": "f995a145fb98ee8610641556fb5a1305df203b06a2b9884ffd4e468c580038ed",
     "src/modules/uvblit_rom.c": "f437f580274c31de0cdcb94d429207f68e556600036f676a849b2958251cf5c0",
     "src/modules/uvcback_rom.c": "757b149d9e0e2b3226f23c884936b35583aa6b86186c5c3cc2863fbcbffac679",
-    "src/modules/uvchannel_rom.c": "6ceecb271933ffbd4f53ab7df0c90062469c9e49456a3a2aaca1febcbce83765",
+    "src/modules/uvchannel_rom.c": "d1d84742ed487ab38a82ac3879558c9f847fab70797a031463f9c011a77cd811",
     "src/modules/uvcmidi_rom.c": "8b011e44de82abbe27ef9df39397058c4323d2be5dcf08df447558cce0044255",
     "src/modules/uvcolor_rom.c": "f5d5fe7883be4cf747d95911339e084b69c2374ed09635c70d58528dcca374ef",
     "src/modules/uvcont_rom.c": "353b91ed7beb73cb8a8a77db2514ea18a4d44afb0297d68e6999fb5a33be7b58",
     "src/modules/uvcontourld_rom.c": "41ea663b547c85255087cbba8cedc39bb964795476f0d682e11dafc61ae2d97a",
     "src/modules/uvdbg_rom.c": "20dbff47ebe571eb2b5462d238cd16c53f00157a154f22f8c051f64b8f1dce0b",
     "src/modules/uvdgeom_rom.c": "6fb52252f88afc60e053a4213e19fdebd44296f68d23ef8116e80f6460503ace",
-    "src/modules/uvdobj_rom.c": "e9bd9c29952ad5625eef4d27af43bda785ff1fb900d53ace9b485b4939809159",
+    "src/modules/uvdobj_rom.c": "e976d674c6ade4f3e72a981e0dd5067a529cb5e824edccbd28148f1d9e1f3efb",
     "src/modules/uvdsetld_rom.c": "274d09695ac5beb2913e83e67baba614f43b5f52001c6d62c18a22bee027edf4",
     "src/modules/uvdyn_rom.c": "75452ccfc5179ee2ef080780960447ba028968464c3d3adf902fe7db4d2b15ac",
     "src/modules/uvear_rom.c": "83f2d9c53aac67e858f5c0af27d2d96d72a659a369fa541188f1cfa4ffaf3f1c",
@@ -288,7 +288,7 @@
     "src/modules/uvfont_rom.c": "6c7146367f155dbe1d8a1ea4dc0d8dcb9a0cd4615a444a200d97041791011318",
     "src/modules/uvfontld_rom.c": "81262e86812be50e51fbe741f6e4b0475b58c71b4d822a50ae83c16602fd4733",
     "src/modules/uvfvec_rom.c": "c778a230bfc390f3ca94e06bddaa9892c4fc6cf0ab2cea81cbdb030e785d7b21",
-    "src/modules/uvfx_rom.c": "ea9e30b63484a3d999463727ce7bf9198e21261cb72a88e1c9865da3af27c5e8",
+    "src/modules/uvfx_rom.c": "3700b04163745b5aea4f492e3dfabffa39b618dac447bbb5e77aca73e8a9e574",
     "src/modules/uvgeom_rom.c": "7793cd32eab51f63bd3cf8d7df3b4ad6e26d67f44cf3fd8a1ffd56fcb8860e71",
     "src/modules/uvgfxmgr_rom.c": "c21151fb9c51017919699a7834a7a76ff06a565f7d6cb1b9c462a43f288971b9",
     "src/modules/uvgfxstate_rom.c": "f2ac7bdad30243e6bec45faa1438be25934cece6413a0e6016fe445d9fbd4b36",
@@ -330,22 +330,22 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "9690714769ec4ab103292cf8289fc12e52781941feb3e2383ec2c153d111ab40",
-    "docs/VALIDATION_20261006.md": "32f1fee3e75877b719d195525ed6c1b7fdc6687ba0817d7d6138ec8b575e6c6a"
+    "docs/STRATEGY_V4.md": "6ddb24100af7256c2a2b9f10cf286985f44a7494c19fa7af6c8e9dcf6907f47c",
+    "docs/VALIDATION_20261006.md": "b0d14d26ee85b06f0f7b067a4f2e94af9407df0ed3fd1bca1fe4e12cddf21585"
   },
   "counts": {
-    "address_function": 917,
+    "address_function": 909,
     "address_global": 1435,
     "assembly": 790,
     "audit_debt": 30,
     "conditional_draft": 4,
-    "decompiler_local": 799,
-    "draft_marker": 27,
-    "explicit_unknown": 1018,
+    "decompiler_local": 784,
+    "draft_marker": 26,
+    "explicit_unknown": 1030,
     "layout_padding": 273,
     "offset_field": 1598,
     "opaque_type": 282,
-    "original_quirk": 277,
+    "original_quirk": 281,
     "uncertainty_note": 92,
     "unused_identifier": 130
   },
@@ -754,44 +754,6 @@
           "declaration_line": 3,
           "lines": [
             6
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-1179ce97dddc",
-      "kind": "address_function",
-      "path": "include/uvchannel_rom.h",
-      "symbol": "func_uvchannel_rom_00400CCC",
-      "lines": [
-        11
-      ],
-      "owners": [
-        {
-          "kind": "type",
-          "name": "UvChannel_Exports",
-          "declaration_line": 3,
-          "lines": [
-            11
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-203ba73758a3",
-      "kind": "address_function",
-      "path": "include/uvchannel_rom.h",
-      "symbol": "func_uvchannel_rom_004014E8",
-      "lines": [
-        15
-      ],
-      "owners": [
-        {
-          "kind": "type",
-          "name": "UvChannel_Exports",
-          "declaration_line": 3,
-          "lines": [
-            15
           ]
         }
       ]
@@ -17707,25 +17669,6 @@
       ]
     },
     {
-      "id": "Q-99c298009f08",
-      "kind": "address_function",
-      "path": "src/modules/uvbill_rom.c",
-      "symbol": "func_uvchannel_rom_004014E8",
-      "lines": [
-        321
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvbill_rom_00400DEC",
-          "declaration_line": 296,
-          "lines": [
-            321
-          ]
-        }
-      ]
-    },
-    {
       "id": "Q-e6fb8fac597a",
       "kind": "address_function",
       "path": "src/modules/uvblit_rom.c",
@@ -17798,126 +17741,6 @@
           "declaration_line": 69,
           "lines": [
             69
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-f3fbeadfb39c",
-      "kind": "address_function",
-      "path": "src/modules/uvchannel_rom.c",
-      "symbol": "func_uvchannel_rom_00400CCC",
-      "lines": [
-        42,
-        82,
-        343
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "__entrypoint_func_uvchannel_rom_400000",
-          "declaration_line": 69,
-          "lines": [
-            82
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvchannel_rom_00400CCC",
-          "declaration_line": 42,
-          "lines": [
-            42
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvchannel_rom_00400CCC",
-          "declaration_line": 343,
-          "lines": [
-            343
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-f006a26d40d3",
-      "kind": "address_function",
-      "path": "src/modules/uvchannel_rom.c",
-      "symbol": "func_uvchannel_rom_004014E8",
-      "lines": [
-        47,
-        76,
-        498
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "__entrypoint_func_uvchannel_rom_400000",
-          "declaration_line": 69,
-          "lines": [
-            76
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvchannel_rom_004014E8",
-          "declaration_line": 47,
-          "lines": [
-            47
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvchannel_rom_004014E8",
-          "declaration_line": 498,
-          "lines": [
-            498
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-123c64d27d68",
-      "kind": "address_function",
-      "path": "src/modules/uvchannel_rom.c",
-      "symbol": "func_uvchannel_rom_00401658",
-      "lines": [
-        48,
-        244,
-        494,
-        537
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvchannel_rom_00401658",
-          "declaration_line": 48,
-          "lines": [
-            48
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvchannel_rom_00401658",
-          "declaration_line": 537,
-          "lines": [
-            537
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvChannelSetProperties",
-          "declaration_line": 208,
-          "lines": [
-            244
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvChannelSetViewMatrix",
-          "declaration_line": 478,
-          "lines": [
-            494
           ]
         }
       ]
@@ -18303,25 +18126,6 @@
           "declaration_line": 117,
           "lines": [
             117
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-fcfe8248480a",
-      "kind": "address_function",
-      "path": "src/modules/uvdobj_rom.c",
-      "symbol": "func_uvchannel_rom_004014E8",
-      "lines": [
-        707
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvDobjQueueVisibleChannelObjects",
-          "declaration_line": 658,
-          "lines": [
-            707
           ]
         }
       ]
@@ -19813,25 +19617,6 @@
           "declaration_line": 78,
           "lines": [
             78
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-3f2e2447b1f7",
-      "kind": "address_function",
-      "path": "src/modules/uvfx_rom.c",
-      "symbol": "func_uvchannel_rom_004014E8",
-      "lines": [
-        424
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvFxUpdateAndQueueVisible",
-          "declaration_line": 390,
-          "lines": [
-            424
           ]
         }
       ]
@@ -50273,17 +50058,17 @@
         146,
         220,
         314,
-        353,
-        354,
         355,
-        400,
-        419,
-        455,
-        485,
-        504,
-        550,
-        612,
-        635
+        356,
+        357,
+        402,
+        421,
+        457,
+        487,
+        508,
+        556,
+        618,
+        641
       ],
       "owners": [
         {
@@ -50297,52 +50082,36 @@
         },
         {
           "kind": "function",
-          "name": "func_uvchannel_rom_00400CCC",
-          "declaration_line": 343,
+          "name": "uvChannelAcquireSlotAndInitializeCallbacks",
+          "declaration_line": 345,
           "lines": [
-            353,
-            354,
-            355
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvchannel_rom_004014E8",
-          "declaration_line": 498,
-          "lines": [
-            504
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvchannel_rom_00401658",
-          "declaration_line": 537,
-          "lines": [
-            550
+            355,
+            356,
+            357
           ]
         },
         {
           "kind": "function",
           "name": "uvChannelApplyClipRatio",
-          "declaration_line": 414,
+          "declaration_line": 416,
           "lines": [
-            419
+            421
           ]
         },
         {
           "kind": "function",
           "name": "uvChannelBeginDebugFrustum",
-          "declaration_line": 605,
+          "declaration_line": 611,
           "lines": [
-            612
+            618
           ]
         },
         {
           "kind": "function",
           "name": "uvChannelDrawDebugFrustum",
-          "declaration_line": 632,
+          "declaration_line": 638,
           "lines": [
-            635
+            641
           ]
         },
         {
@@ -50355,18 +50124,26 @@
         },
         {
           "kind": "function",
-          "name": "uvChannelRelease",
-          "declaration_line": 392,
+          "name": "uvChannelRebuildCachedVectors",
+          "declaration_line": 543,
           "lines": [
-            400
+            556
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvChannelRelease",
+          "declaration_line": 394,
+          "lines": [
+            402
           ]
         },
         {
           "kind": "function",
           "name": "uvChannelRender",
-          "declaration_line": 446,
+          "declaration_line": 448,
           "lines": [
-            455
+            457
           ]
         },
         {
@@ -50388,9 +50165,17 @@
         {
           "kind": "function",
           "name": "uvChannelSetViewMatrix",
-          "declaration_line": 478,
+          "declaration_line": 480,
           "lines": [
-            485
+            487
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvChannelTestCachedVectorPairs",
+          "declaration_line": 502,
+          "lines": [
+            508
           ]
         },
         {
@@ -50417,11 +50202,11 @@
         141,
         197,
         215,
-        352,
-        396,
-        451,
-        481,
-        503
+        354,
+        398,
+        453,
+        483,
+        507
       ],
       "owners": [
         {
@@ -50437,18 +50222,10 @@
         },
         {
           "kind": "function",
-          "name": "func_uvchannel_rom_00400CCC",
-          "declaration_line": 343,
+          "name": "uvChannelAcquireSlotAndInitializeCallbacks",
+          "declaration_line": 345,
           "lines": [
-            352
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvchannel_rom_004014E8",
-          "declaration_line": 498,
-          "lines": [
-            503
+            354
           ]
         },
         {
@@ -50463,17 +50240,17 @@
         {
           "kind": "function",
           "name": "uvChannelRelease",
-          "declaration_line": 392,
+          "declaration_line": 394,
           "lines": [
-            396
+            398
           ]
         },
         {
           "kind": "function",
           "name": "uvChannelRender",
-          "declaration_line": 446,
+          "declaration_line": 448,
           "lines": [
-            451
+            453
           ]
         },
         {
@@ -50487,9 +50264,17 @@
         {
           "kind": "function",
           "name": "uvChannelSetViewMatrix",
-          "declaration_line": 478,
+          "declaration_line": 480,
           "lines": [
-            481
+            483
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvChannelTestCachedVectorPairs",
+          "declaration_line": 502,
+          "lines": [
+            507
           ]
         },
         {
@@ -89463,49 +89248,9 @@
         47,
         48,
         49,
-        50,
-        498,
-        503,
-        504,
-        537,
-        550
+        50
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvchannel_rom_004014E8",
-          "declaration_line": 47,
-          "lines": [
-            47
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvchannel_rom_004014E8",
-          "declaration_line": 498,
-          "lines": [
-            498,
-            503,
-            504
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvchannel_rom_00401658",
-          "declaration_line": 48,
-          "lines": [
-            48
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvchannel_rom_00401658",
-          "declaration_line": 537,
-          "lines": [
-            537,
-            550
-          ]
-        },
         {
           "kind": "function",
           "name": "uvChannelApplyClipRatio",
@@ -89536,6 +89281,14 @@
           "declaration_line": 36,
           "lines": [
             36
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvChannelRebuildCachedVectors",
+          "declaration_line": 48,
+          "lines": [
+            48
           ]
         },
         {
@@ -89601,6 +89354,14 @@
           "lines": [
             40
           ]
+        },
+        {
+          "kind": "function",
+          "name": "uvChannelTestCachedVectorPairs",
+          "declaration_line": 47,
+          "lines": [
+            47
+          ]
         }
       ]
     },
@@ -89615,34 +89376,9 @@
         40,
         41,
         46,
-        47,
-        498,
-        512,
-        517,
-        523,
-        527
+        47
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvchannel_rom_004014E8",
-          "declaration_line": 47,
-          "lines": [
-            47
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvchannel_rom_004014E8",
-          "declaration_line": 498,
-          "lines": [
-            498,
-            512,
-            517,
-            523,
-            527
-          ]
-        },
         {
           "kind": "function",
           "name": "uvChannelSetBoundaryCallback",
@@ -89682,6 +89418,14 @@
           "lines": [
             40
           ]
+        },
+        {
+          "kind": "function",
+          "name": "uvChannelTestCachedVectorPairs",
+          "declaration_line": 47,
+          "lines": [
+            47
+          ]
         }
       ]
     },
@@ -89694,34 +89438,9 @@
         39,
         40,
         41,
-        47,
-        498,
-        513,
-        517,
-        524,
-        527
+        47
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvchannel_rom_004014E8",
-          "declaration_line": 47,
-          "lines": [
-            47
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvchannel_rom_004014E8",
-          "declaration_line": 498,
-          "lines": [
-            498,
-            513,
-            517,
-            524,
-            527
-          ]
-        },
         {
           "kind": "function",
           "name": "uvChannelSetBoundaryCallback",
@@ -89745,6 +89464,14 @@
           "lines": [
             40
           ]
+        },
+        {
+          "kind": "function",
+          "name": "uvChannelTestCachedVectorPairs",
+          "declaration_line": 47,
+          "lines": [
+            47
+          ]
         }
       ]
     },
@@ -89756,34 +89483,9 @@
       "lines": [
         39,
         40,
-        47,
-        498,
-        514,
-        517,
-        525,
-        527
+        47
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvchannel_rom_004014E8",
-          "declaration_line": 47,
-          "lines": [
-            47
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvchannel_rom_004014E8",
-          "declaration_line": 498,
-          "lines": [
-            498,
-            514,
-            517,
-            525,
-            527
-          ]
-        },
         {
           "kind": "function",
           "name": "uvChannelSetFrustum",
@@ -89798,6 +89500,14 @@
           "declaration_line": 40,
           "lines": [
             40
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvChannelTestCachedVectorPairs",
+          "declaration_line": 47,
+          "lines": [
+            47
           ]
         }
       ]
@@ -89810,30 +89520,9 @@
       "lines": [
         39,
         40,
-        47,
-        498,
-        518,
-        528
+        47
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvchannel_rom_004014E8",
-          "declaration_line": 47,
-          "lines": [
-            47
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvchannel_rom_004014E8",
-          "declaration_line": 498,
-          "lines": [
-            498,
-            518,
-            528
-          ]
-        },
         {
           "kind": "function",
           "name": "uvChannelSetFrustum",
@@ -89848,6 +89537,14 @@
           "declaration_line": 40,
           "lines": [
             40
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvChannelTestCachedVectorPairs",
+          "declaration_line": 47,
+          "lines": [
+            47
           ]
         }
       ]
@@ -89886,519 +89583,6 @@
           "declaration_line": 39,
           "lines": [
             39
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-20a3c51c13e3",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvchannel_rom.c",
-      "symbol": "sp20",
-      "lines": [
-        344
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvchannel_rom_00400CCC",
-          "declaration_line": 343,
-          "lines": [
-            344
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-1bde313cbe5a",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvchannel_rom.c",
-      "symbol": "sp50",
-      "lines": [
-        548,
-        590,
-        593,
-        595,
-        598
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvchannel_rom_00401658",
-          "declaration_line": 537,
-          "lines": [
-            548,
-            590,
-            593,
-            595,
-            598
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-a2f6ac238c04",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvchannel_rom.c",
-      "symbol": "temp_fa0",
-      "lines": [
-        538,
-        557,
-        560,
-        561
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvchannel_rom_00401658",
-          "declaration_line": 537,
-          "lines": [
-            538,
-            557,
-            560,
-            561
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-dabd4ee4e060",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvchannel_rom.c",
-      "symbol": "temp_fa1",
-      "lines": [
-        539,
-        556,
-        566,
-        570
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvchannel_rom_00401658",
-          "declaration_line": 537,
-          "lines": [
-            539,
-            556,
-            566,
-            570
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-d289e7e70e02",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvchannel_rom.c",
-      "symbol": "temp_ft4",
-      "lines": [
-        540,
-        558,
-        562,
-        569
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvchannel_rom_00401658",
-          "declaration_line": 537,
-          "lines": [
-            540,
-            558,
-            562,
-            569
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-9d92a179c9c0",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvchannel_rom.c",
-      "symbol": "temp_ft5",
-      "lines": [
-        541,
-        559,
-        563,
-        568
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvchannel_rom_00401658",
-          "declaration_line": 537,
-          "lines": [
-            541,
-            559,
-            563,
-            568
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-70d568339188",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvchannel_rom.c",
-      "symbol": "temp_fv0",
-      "lines": [
-        500,
-        517,
-        518,
-        527,
-        528,
-        542,
-        552,
-        556,
-        557,
-        558,
-        559
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvchannel_rom_004014E8",
-          "declaration_line": 498,
-          "lines": [
-            500,
-            517,
-            518,
-            527,
-            528
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvchannel_rom_00401658",
-          "declaration_line": 537,
-          "lines": [
-            542,
-            552,
-            556,
-            557,
-            558,
-            559
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-9d95d3d38f2c",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvchannel_rom.c",
-      "symbol": "temp_s0",
-      "lines": [
-        547,
-        551,
-        566,
-        567,
-        568,
-        584,
-        585,
-        586,
-        587,
-        588,
-        589
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvchannel_rom_00401658",
-          "declaration_line": 537,
-          "lines": [
-            547,
-            551,
-            566,
-            567,
-            568,
-            584,
-            585,
-            586,
-            587,
-            588,
-            589
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-68e6fc93c689",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvchannel_rom.c",
-      "symbol": "temp_s1",
-      "lines": [
-        543
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvchannel_rom_00401658",
-          "declaration_line": 537,
-          "lines": [
-            543
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-d0370e7bb54f",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvchannel_rom.c",
-      "symbol": "temp_s2",
-      "lines": [
-        580,
-        581
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvchannel_rom_00401658",
-          "declaration_line": 537,
-          "lines": [
-            580,
-            581
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-b17f0596b892",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvchannel_rom.c",
-      "symbol": "temp_s3",
-      "lines": [
-        546,
-        550,
-        551,
-        552,
-        553,
-        554,
-        556,
-        557,
-        558,
-        559,
-        560,
-        561,
-        562,
-        563,
-        567,
-        569,
-        570,
-        571,
-        572,
-        573,
-        574,
-        575,
-        576,
-        577,
-        580,
-        581,
-        582,
-        584,
-        585,
-        587,
-        588,
-        589,
-        590,
-        593,
-        598
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvchannel_rom_00401658",
-          "declaration_line": 537,
-          "lines": [
-            546,
-            550,
-            551,
-            552,
-            553,
-            554,
-            556,
-            557,
-            558,
-            559,
-            560,
-            561,
-            562,
-            563,
-            567,
-            569,
-            570,
-            571,
-            572,
-            573,
-            574,
-            575,
-            576,
-            577,
-            580,
-            581,
-            582,
-            584,
-            585,
-            587,
-            588,
-            589,
-            590,
-            593,
-            598
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-19a146ced373",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvchannel_rom.c",
-      "symbol": "temp_v0",
-      "lines": [
-        346,
-        351,
-        363,
-        364,
-        499,
-        504,
-        507,
-        508,
-        512,
-        513,
-        514,
-        523,
-        524,
-        525
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvchannel_rom_00400CCC",
-          "declaration_line": 343,
-          "lines": [
-            346,
-            351,
-            363,
-            364
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvchannel_rom_004014E8",
-          "declaration_line": 498,
-          "lines": [
-            499,
-            504,
-            507,
-            508,
-            512,
-            513,
-            514,
-            523,
-            524,
-            525
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-51bf8c5e0ef2",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvchannel_rom.c",
-      "symbol": "var_a0_2",
-      "lines": [
-        345,
-        364,
-        366,
-        368,
-        378,
-        379,
-        381,
-        384
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvchannel_rom_00400CCC",
-          "declaration_line": 343,
-          "lines": [
-            345,
-            364,
-            366,
-            368,
-            378,
-            379,
-            381,
-            384
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-3ef784621c39",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvchannel_rom.c",
-      "symbol": "var_s1",
-      "lines": [
-        347,
-        350,
-        355,
-        360,
-        368,
-        369,
-        370,
-        371,
-        372,
-        373,
-        374,
-        375,
-        376,
-        378,
-        380,
-        382,
-        385
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvchannel_rom_00400CCC",
-          "declaration_line": 343,
-          "lines": [
-            347,
-            350,
-            355,
-            360,
-            368,
-            369,
-            370,
-            371,
-            372,
-            373,
-            374,
-            375,
-            376,
-            378,
-            380,
-            382,
-            385
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-81c2655365ba",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvchannel_rom.c",
-      "symbol": "var_v0",
-      "lines": [
-        544
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvchannel_rom_00401658",
-          "declaration_line": 537,
-          "lines": [
-            544
           ]
         }
       ]
@@ -120645,36 +119829,16 @@
       "path": "src/modules/uvchannel_rom.c",
       "symbol": "FAKE",
       "lines": [
-        565
+        571
       ],
-      "evidence": "FAKE",
+      "evidence": "FAKE RE_UNKNOWN: preserve the empty compiler scaffold; original source form is unproved.",
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvchannel_rom_00401658",
-          "declaration_line": 537,
+          "name": "uvChannelRebuildCachedVectors",
+          "declaration_line": 543,
           "lines": [
-            565
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-b06a68dbdca9",
-      "kind": "draft_marker",
-      "path": "src/modules/uvchannel_rom.c",
-      "symbol": "TODO",
-      "lines": [
-        377
-      ],
-      "evidence": "TODO: Find a better match",
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvchannel_rom_00400CCC",
-          "declaration_line": 343,
-          "lines": [
-            377
+            571
           ]
         }
       ]
@@ -132471,6 +131635,246 @@
           "declaration_line": 37,
           "lines": [
             39
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-00f2eb9b1acb",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvchannel_rom.c",
+      "symbol": "FAKE RE_UNKNOWN: preserve the empty compiler scaffold; original source form is unproved.",
+      "lines": [
+        571
+      ],
+      "evidence": "FAKE RE_UNKNOWN: preserve the empty compiler scaffold; original source form is unproved.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvChannelRebuildCachedVectors",
+          "declaration_line": 543,
+          "lines": [
+            571
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-79ae11a6e984",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvchannel_rom.c",
+      "symbol": "Preserve repeated dimension callbacks and halfword narrowing; RE_UNKNOWN: dimension domains need producer proof.",
+      "lines": [
+        372
+      ],
+      "evidence": "Preserve repeated dimension callbacks and halfword narrowing; RE_UNKNOWN: dimension domains need producer proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvChannelAcquireSlotAndInitializeCallbacks",
+          "declaration_line": 345,
+          "lines": [
+            372
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-673806bafbb6",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvchannel_rom.c",
+      "symbol": "RE_ORIGINAL_QUIRK: divide without a zero guard; RE_UNKNOWN: scalar meaning and FP domains need producer proof.",
+      "lines": [
+        558
+      ],
+      "evidence": "RE_ORIGINAL_QUIRK: divide without a zero guard; RE_UNKNOWN: scalar meaning and FP domains need producer proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvChannelRebuildCachedVectors",
+          "declaration_line": 543,
+          "lines": [
+            558
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-d0ba28915aae",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvchannel_rom.c",
+      "symbol": "RE_UNKNOWN: native traverses six contiguous vectors across declared unk184[4]/unk1B4[2]; historical array extent needs source/layout proof.",
+      "lines": [
+        604
+      ],
+      "evidence": "RE_UNKNOWN: native traverses six contiguous vectors across declared unk184[4]/unk1B4[2]; historical array extent needs source/layout proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvChannelRebuildCachedVectors",
+          "declaration_line": 543,
+          "lines": [
+            604
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-ab7af97a5be7",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvchannel_rom.c",
+      "symbol": "RE_UNKNOWN: null-path validity, callback ABI/lifetime and ignored registration results need caller/provider proof.",
+      "lines": [
+        387
+      ],
+      "evidence": "RE_UNKNOWN: null-path validity, callback ABI/lifetime and ignored registration results need caller/provider proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvChannelAcquireSlotAndInitializeCallbacks",
+          "declaration_line": 345,
+          "lines": [
+            387
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-a323b8a8338a",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvchannel_rom.c",
+      "symbol": "RE_UNKNOWN: retain the unreachable pairIndex==5 source scaffold and native conditional; historical form is unproved.",
+      "lines": [
+        514
+      ],
+      "evidence": "RE_UNKNOWN: retain the unreachable pairIndex==5 source scaffold and native conditional; historical form is unproved.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvChannelTestCachedVectorPairs",
+          "declaration_line": 502,
+          "lines": [
+            514
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-9b985f1bad6d",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvchannel_rom.c",
+      "symbol": "RE_UNKNOWN: settings/count/capacity, allocation and slot lifetime need producer/caller proof.",
+      "lines": [
+        353
+      ],
+      "evidence": "RE_UNKNOWN: settings/count/capacity, allocation and slot lifetime need producer/caller proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvChannelAcquireSlotAndInitializeCallbacks",
+          "declaration_line": 345,
+          "lines": [
+            353
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-ececdb033df4",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvchannel_rom.c",
+      "symbol": "RE_UNKNOWN: this live callback-word reload preserves native storage/control; historical declaration is unproved.",
+      "lines": [
+        379
+      ],
+      "evidence": "RE_UNKNOWN: this live callback-word reload preserves native storage/control; historical declaration is unproved.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvChannelAcquireSlotAndInitializeCallbacks",
+          "declaration_line": 345,
+          "lines": [
+            379
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-92d76b3d5cf8",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvchannel_rom.c",
+      "symbol": "RE_UNKNOWN: unchecked index, shared storage/alias lifetime and full historical layout need caller/allocation proof.",
+      "lines": [
+        556
+      ],
+      "evidence": "RE_UNKNOWN: unchecked index, shared storage/alias lifetime and full historical layout need caller/allocation proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvChannelRebuildCachedVectors",
+          "declaration_line": 543,
+          "lines": [
+            556
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-117efa82b7aa",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvchannel_rom.c",
+      "symbol": "RE_UNKNOWN: unused declaration preserves compiler storage; historical source is unproved.",
+      "lines": [
+        346
+      ],
+      "evidence": "RE_UNKNOWN: unused declaration preserves compiler storage; historical source is unproved.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvChannelAcquireSlotAndInitializeCallbacks",
+          "declaration_line": 345,
+          "lines": [
+            346
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-3f15352bcc8b",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvchannel_rom.c",
+      "symbol": "RE_UNKNOWN: unused words and empty scaffold retain compiler behavior; historical storage is unproved.",
+      "lines": [
+        549
+      ],
+      "evidence": "RE_UNKNOWN: unused words and empty scaffold retain compiler behavior; historical storage is unproved.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvChannelRebuildCachedVectors",
+          "declaration_line": 543,
+          "lines": [
+            549
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-29426f2a46bc",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvchannel_rom.c",
+      "symbol": "RE_UNKNOWN: vector/bias conventions, storage lifetime and FP domains need producer/caller proof.",
+      "lines": [
+        507
+      ],
+      "evidence": "RE_UNKNOWN: vector/bias conventions, storage lifetime and FP domains need producer/caller proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvChannelTestCachedVectorPairs",
+          "declaration_line": 502,
+          "lines": [
+            507
           ]
         }
       ]
@@ -179298,26 +178702,26 @@
       "symbol": "unk0",
       "lines": [
         6,
-        353,
-        354,
-        403
+        355,
+        356,
+        405
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvchannel_rom_00400CCC",
-          "declaration_line": 343,
+          "name": "uvChannelAcquireSlotAndInitializeCallbacks",
+          "declaration_line": 345,
           "lines": [
-            353,
-            354
+            355,
+            356
           ]
         },
         {
           "kind": "function",
           "name": "uvChannelRelease",
-          "declaration_line": 392,
+          "declaration_line": 394,
           "lines": [
-            403
+            405
           ]
         },
         {
@@ -179339,18 +178743,18 @@
         7,
         194,
         262,
-        380,
-        402,
-        456,
-        466
+        382,
+        404,
+        458,
+        468
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvchannel_rom_00400CCC",
-          "declaration_line": 343,
+          "name": "uvChannelAcquireSlotAndInitializeCallbacks",
+          "declaration_line": 345,
           "lines": [
-            380
+            382
           ]
         },
         {
@@ -179364,18 +178768,18 @@
         {
           "kind": "function",
           "name": "uvChannelRelease",
-          "declaration_line": 392,
+          "declaration_line": 394,
           "lines": [
-            402
+            404
           ]
         },
         {
           "kind": "function",
           "name": "uvChannelRender",
-          "declaration_line": 446,
+          "declaration_line": 448,
           "lines": [
-            456,
-            466
+            458,
+            468
           ]
         },
         {
@@ -179404,28 +178808,20 @@
       "lines": [
         22,
         185,
-        593,
-        642,
-        644,
-        646
+        599,
+        648,
+        650,
+        652
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvchannel_rom_00401658",
-          "declaration_line": 537,
-          "lines": [
-            593
-          ]
-        },
-        {
-          "kind": "function",
           "name": "uvChannelDrawDebugFrustum",
-          "declaration_line": 632,
+          "declaration_line": 638,
           "lines": [
-            642,
-            644,
-            646
+            648,
+            650,
+            652
           ]
         },
         {
@@ -179434,6 +178830,14 @@
           "declaration_line": 135,
           "lines": [
             185
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvChannelRebuildCachedVectors",
+          "declaration_line": 543,
+          "lines": [
+            599
           ]
         },
         {
@@ -179454,27 +178858,27 @@
       "lines": [
         23,
         188,
-        581,
-        582,
-        598
+        587,
+        588,
+        604
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvchannel_rom_00401658",
-          "declaration_line": 537,
-          "lines": [
-            581,
-            582,
-            598
-          ]
-        },
         {
           "kind": "function",
           "name": "uvChannelGetProperties",
           "declaration_line": 135,
           "lines": [
             188
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvChannelRebuildCachedVectors",
+          "declaration_line": 543,
+          "lines": [
+            587,
+            588,
+            604
           ]
         },
         {
@@ -179494,21 +178898,21 @@
       "symbol": "unk1B4",
       "lines": [
         24,
-        584,
-        587,
-        588,
-        589
+        590,
+        593,
+        594,
+        595
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvchannel_rom_00401658",
-          "declaration_line": 537,
+          "name": "uvChannelRebuildCachedVectors",
+          "declaration_line": 543,
           "lines": [
-            584,
-            587,
-            588,
-            589
+            590,
+            593,
+            594,
+            595
           ]
         },
         {
@@ -179529,34 +178933,34 @@
       "lines": [
         25,
         191,
-        507,
-        508,
-        598
+        511,
+        512,
+        604
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvchannel_rom_004014E8",
-          "declaration_line": 498,
-          "lines": [
-            507,
-            508
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvchannel_rom_00401658",
-          "declaration_line": 537,
-          "lines": [
-            598
-          ]
-        },
         {
           "kind": "function",
           "name": "uvChannelGetProperties",
           "declaration_line": 135,
           "lines": [
             191
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvChannelRebuildCachedVectors",
+          "declaration_line": 543,
+          "lines": [
+            604
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvChannelTestCachedVectorPairs",
+          "declaration_line": 502,
+          "lines": [
+            511,
+            512
           ]
         },
         {
@@ -179581,24 +178985,24 @@
         255,
         257,
         258,
-        373,
-        419
+        375,
+        421
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvchannel_rom_00400CCC",
-          "declaration_line": 343,
+          "name": "uvChannelAcquireSlotAndInitializeCallbacks",
+          "declaration_line": 345,
           "lines": [
-            373
+            375
           ]
         },
         {
           "kind": "function",
           "name": "uvChannelApplyClipRatio",
-          "declaration_line": 414,
+          "declaration_line": 416,
           "lines": [
-            419
+            421
           ]
         },
         {
@@ -179632,16 +179036,16 @@
         26,
         167,
         247,
-        369,
-        457
+        371,
+        459
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvchannel_rom_00400CCC",
-          "declaration_line": 343,
+          "name": "uvChannelAcquireSlotAndInitializeCallbacks",
+          "declaration_line": 345,
           "lines": [
-            369
+            371
           ]
         },
         {
@@ -179655,9 +179059,9 @@
         {
           "kind": "function",
           "name": "uvChannelRender",
-          "declaration_line": 446,
+          "declaration_line": 448,
           "lines": [
-            457
+            459
           ]
         },
         {
@@ -179687,16 +179091,16 @@
         27,
         168,
         248,
-        370,
-        457
+        372,
+        459
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvchannel_rom_00400CCC",
-          "declaration_line": 343,
+          "name": "uvChannelAcquireSlotAndInitializeCallbacks",
+          "declaration_line": 345,
           "lines": [
-            370
+            372
           ]
         },
         {
@@ -179710,9 +179114,9 @@
         {
           "kind": "function",
           "name": "uvChannelRender",
-          "declaration_line": 446,
+          "declaration_line": 448,
           "lines": [
-            457
+            459
           ]
         },
         {
@@ -179742,16 +179146,16 @@
         28,
         169,
         249,
-        371,
-        458
+        373,
+        460
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvchannel_rom_00400CCC",
-          "declaration_line": 343,
+          "name": "uvChannelAcquireSlotAndInitializeCallbacks",
+          "declaration_line": 345,
           "lines": [
-            371
+            373
           ]
         },
         {
@@ -179765,9 +179169,9 @@
         {
           "kind": "function",
           "name": "uvChannelRender",
-          "declaration_line": 446,
+          "declaration_line": 448,
           "lines": [
-            458
+            460
           ]
         },
         {
@@ -179797,16 +179201,16 @@
         29,
         170,
         250,
-        372,
-        458
+        374,
+        460
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvchannel_rom_00400CCC",
-          "declaration_line": 343,
+          "name": "uvChannelAcquireSlotAndInitializeCallbacks",
+          "declaration_line": 345,
           "lines": [
-            372
+            374
           ]
         },
         {
@@ -179820,9 +179224,9 @@
         {
           "kind": "function",
           "name": "uvChannelRender",
-          "declaration_line": 446,
+          "declaration_line": 448,
           "lines": [
-            458
+            460
           ]
         },
         {
@@ -179855,22 +179259,22 @@
         323,
         330,
         335,
-        368,
-        378,
-        385,
-        401,
-        406,
-        469
+        370,
+        380,
+        387,
+        403,
+        408,
+        471
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvchannel_rom_00400CCC",
-          "declaration_line": 343,
+          "name": "uvChannelAcquireSlotAndInitializeCallbacks",
+          "declaration_line": 345,
           "lines": [
-            368,
-            378,
-            385
+            370,
+            380,
+            387
           ]
         },
         {
@@ -179884,18 +179288,18 @@
         {
           "kind": "function",
           "name": "uvChannelRelease",
-          "declaration_line": 392,
+          "declaration_line": 394,
           "lines": [
-            401,
-            406
+            403,
+            408
           ]
         },
         {
           "kind": "function",
           "name": "uvChannelRender",
-          "declaration_line": 446,
+          "declaration_line": 448,
           "lines": [
-            469
+            471
           ]
         },
         {
@@ -179997,16 +179401,16 @@
         150,
         225,
         241,
-        376,
-        459
+        378,
+        461
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvchannel_rom_00400CCC",
-          "declaration_line": 343,
+          "name": "uvChannelAcquireSlotAndInitializeCallbacks",
+          "declaration_line": 345,
           "lines": [
-            376
+            378
           ]
         },
         {
@@ -180020,9 +179424,9 @@
         {
           "kind": "function",
           "name": "uvChannelRender",
-          "declaration_line": 446,
+          "declaration_line": 448,
           "lines": [
-            459
+            461
           ]
         },
         {
@@ -180053,39 +179457,31 @@
         11,
         156,
         231,
-        375,
-        460,
-        461,
+        377,
         462,
-        486,
-        590,
-        622,
-        623
+        463,
+        464,
+        488,
+        596,
+        628,
+        629
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvchannel_rom_00400CCC",
-          "declaration_line": 343,
+          "name": "uvChannelAcquireSlotAndInitializeCallbacks",
+          "declaration_line": 345,
           "lines": [
-            375
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvchannel_rom_00401658",
-          "declaration_line": 537,
-          "lines": [
-            590
+            377
           ]
         },
         {
           "kind": "function",
           "name": "uvChannelBeginDebugFrustum",
-          "declaration_line": 605,
+          "declaration_line": 611,
           "lines": [
-            622,
-            623
+            628,
+            629
           ]
         },
         {
@@ -180098,12 +179494,20 @@
         },
         {
           "kind": "function",
-          "name": "uvChannelRender",
-          "declaration_line": 446,
+          "name": "uvChannelRebuildCachedVectors",
+          "declaration_line": 543,
           "lines": [
-            460,
-            461,
-            462
+            596
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvChannelRender",
+          "declaration_line": 448,
+          "lines": [
+            462,
+            463,
+            464
           ]
         },
         {
@@ -180117,9 +179521,9 @@
         {
           "kind": "function",
           "name": "uvChannelSetViewMatrix",
-          "declaration_line": 478,
+          "declaration_line": 480,
           "lines": [
-            486
+            488
           ]
         },
         {
@@ -180141,16 +179545,16 @@
         12,
         153,
         228,
-        374,
-        487
+        376,
+        489
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvchannel_rom_00400CCC",
-          "declaration_line": 343,
+          "name": "uvChannelAcquireSlotAndInitializeCallbacks",
+          "declaration_line": 345,
           "lines": [
-            374
+            376
           ]
         },
         {
@@ -180172,9 +179576,9 @@
         {
           "kind": "function",
           "name": "uvChannelSetViewMatrix",
-          "declaration_line": 478,
+          "declaration_line": 480,
           "lines": [
-            487
+            489
           ]
         },
         {
@@ -180195,9 +179599,9 @@
       "lines": [
         13,
         176,
-        488,
-        489,
-        490
+        490,
+        491,
+        492
       ],
       "owners": [
         {
@@ -180211,11 +179615,11 @@
         {
           "kind": "function",
           "name": "uvChannelSetViewMatrix",
-          "declaration_line": 478,
+          "declaration_line": 480,
           "lines": [
-            488,
-            489,
-            490
+            490,
+            491,
+            492
           ]
         },
         {
@@ -180236,9 +179640,9 @@
       "lines": [
         14,
         179,
-        491,
-        492,
-        493
+        493,
+        494,
+        495
       ],
       "owners": [
         {
@@ -180252,11 +179656,11 @@
         {
           "kind": "function",
           "name": "uvChannelSetViewMatrix",
-          "declaration_line": 478,
+          "declaration_line": 480,
           "lines": [
-            491,
-            492,
-            493
+            493,
+            494,
+            495
           ]
         },
         {
@@ -180279,23 +179683,23 @@
         159,
         235,
         241,
-        556
+        562
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvchannel_rom_00401658",
-          "declaration_line": 537,
-          "lines": [
-            556
-          ]
-        },
         {
           "kind": "function",
           "name": "uvChannelGetProperties",
           "declaration_line": 135,
           "lines": [
             159
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvChannelRebuildCachedVectors",
+          "declaration_line": 543,
+          "lines": [
+            562
           ]
         },
         {
@@ -180327,23 +179731,23 @@
         160,
         236,
         241,
-        557
+        563
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvchannel_rom_00401658",
-          "declaration_line": 537,
-          "lines": [
-            557
-          ]
-        },
         {
           "kind": "function",
           "name": "uvChannelGetProperties",
           "declaration_line": 135,
           "lines": [
             160
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvChannelRebuildCachedVectors",
+          "declaration_line": 543,
+          "lines": [
+            563
           ]
         },
         {
@@ -180375,23 +179779,23 @@
         161,
         237,
         242,
-        558
+        564
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvchannel_rom_00401658",
-          "declaration_line": 537,
-          "lines": [
-            558
-          ]
-        },
         {
           "kind": "function",
           "name": "uvChannelGetProperties",
           "declaration_line": 135,
           "lines": [
             161
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvChannelRebuildCachedVectors",
+          "declaration_line": 543,
+          "lines": [
+            564
           ]
         },
         {
@@ -180423,23 +179827,23 @@
         162,
         238,
         242,
-        559
+        565
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvchannel_rom_00401658",
-          "declaration_line": 537,
-          "lines": [
-            559
-          ]
-        },
         {
           "kind": "function",
           "name": "uvChannelGetProperties",
           "declaration_line": 135,
           "lines": [
             162
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvChannelRebuildCachedVectors",
+          "declaration_line": 543,
+          "lines": [
+            565
           ]
         },
         {
@@ -180471,18 +179875,10 @@
         163,
         239,
         242,
-        465,
-        552
+        467,
+        558
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvchannel_rom_00401658",
-          "declaration_line": 537,
-          "lines": [
-            552
-          ]
-        },
         {
           "kind": "function",
           "name": "uvChannelGetProperties",
@@ -180493,10 +179889,18 @@
         },
         {
           "kind": "function",
-          "name": "uvChannelRender",
-          "declaration_line": 446,
+          "name": "uvChannelRebuildCachedVectors",
+          "declaration_line": 543,
           "lines": [
-            465
+            558
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvChannelRender",
+          "declaration_line": 448,
+          "lines": [
+            467
           ]
         },
         {
@@ -180528,54 +179932,28 @@
         164,
         240,
         243,
-        465,
-        512,
-        513,
-        514,
-        523,
-        524,
-        525,
-        552,
-        553,
-        554,
-        567,
-        576,
-        577,
-        613
+        467,
+        516,
+        517,
+        518,
+        527,
+        528,
+        529,
+        558,
+        559,
+        560,
+        573,
+        582,
+        583,
+        619
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvchannel_rom_004014E8",
-          "declaration_line": 498,
-          "lines": [
-            512,
-            513,
-            514,
-            523,
-            524,
-            525
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvchannel_rom_00401658",
-          "declaration_line": 537,
-          "lines": [
-            552,
-            553,
-            554,
-            567,
-            576,
-            577
-          ]
-        },
-        {
-          "kind": "function",
           "name": "uvChannelBeginDebugFrustum",
-          "declaration_line": 605,
+          "declaration_line": 611,
           "lines": [
-            613
+            619
           ]
         },
         {
@@ -180588,10 +179966,23 @@
         },
         {
           "kind": "function",
-          "name": "uvChannelRender",
-          "declaration_line": 446,
+          "name": "uvChannelRebuildCachedVectors",
+          "declaration_line": 543,
           "lines": [
-            465
+            558,
+            559,
+            560,
+            573,
+            582,
+            583
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvChannelRender",
+          "declaration_line": 448,
+          "lines": [
+            467
           ]
         },
         {
@@ -180601,6 +179992,19 @@
           "lines": [
             240,
             243
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvChannelTestCachedVectorPairs",
+          "declaration_line": 502,
+          "lines": [
+            516,
+            517,
+            518,
+            527,
+            528,
+            529
           ]
         },
         {
@@ -180621,61 +180025,61 @@
       "lines": [
         21,
         182,
-        551,
-        553,
-        554,
+        557,
+        559,
         560,
-        561,
-        562,
-        563,
+        566,
+        567,
+        568,
         569,
-        570,
-        571,
-        572,
-        573,
-        574,
         575,
         576,
         577,
+        578,
+        579,
         580,
         581,
-        585,
-        593
+        582,
+        583,
+        586,
+        587,
+        591,
+        599
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvchannel_rom_00401658",
-          "declaration_line": 537,
-          "lines": [
-            551,
-            553,
-            554,
-            560,
-            561,
-            562,
-            563,
-            569,
-            570,
-            571,
-            572,
-            573,
-            574,
-            575,
-            576,
-            577,
-            580,
-            581,
-            585,
-            593
-          ]
-        },
         {
           "kind": "function",
           "name": "uvChannelGetProperties",
           "declaration_line": 135,
           "lines": [
             182
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvChannelRebuildCachedVectors",
+          "declaration_line": 543,
+          "lines": [
+            557,
+            559,
+            560,
+            566,
+            567,
+            568,
+            569,
+            575,
+            576,
+            577,
+            578,
+            579,
+            580,
+            581,
+            582,
+            583,
+            586,
+            587,
+            591,
+            599
           ]
         },
         {
@@ -212155,14 +211559,14 @@
         136,
         209,
         312,
-        347,
-        393,
-        447,
-        479,
-        499,
-        546,
-        608,
-        633
+        349,
+        395,
+        449,
+        481,
+        503,
+        552,
+        614,
+        639
       ],
       "owners": [
         {
@@ -212176,42 +211580,26 @@
         },
         {
           "kind": "function",
-          "name": "func_uvchannel_rom_00400CCC",
-          "declaration_line": 343,
+          "name": "uvChannelAcquireSlotAndInitializeCallbacks",
+          "declaration_line": 345,
           "lines": [
-            347
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvchannel_rom_004014E8",
-          "declaration_line": 498,
-          "lines": [
-            499
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvchannel_rom_00401658",
-          "declaration_line": 537,
-          "lines": [
-            546
+            349
           ]
         },
         {
           "kind": "function",
           "name": "uvChannelBeginDebugFrustum",
-          "declaration_line": 605,
+          "declaration_line": 611,
           "lines": [
-            608
+            614
           ]
         },
         {
           "kind": "function",
           "name": "uvChannelDrawDebugFrustum",
-          "declaration_line": 632,
+          "declaration_line": 638,
           "lines": [
-            633
+            639
           ]
         },
         {
@@ -212224,18 +211612,26 @@
         },
         {
           "kind": "function",
-          "name": "uvChannelRelease",
-          "declaration_line": 392,
+          "name": "uvChannelRebuildCachedVectors",
+          "declaration_line": 543,
           "lines": [
-            393
+            552
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvChannelRelease",
+          "declaration_line": 394,
+          "lines": [
+            395
           ]
         },
         {
           "kind": "function",
           "name": "uvChannelRender",
-          "declaration_line": 446,
+          "declaration_line": 448,
           "lines": [
-            447
+            449
           ]
         },
         {
@@ -212257,9 +211653,17 @@
         {
           "kind": "function",
           "name": "uvChannelSetViewMatrix",
-          "declaration_line": 478,
+          "declaration_line": 480,
           "lines": [
-            479
+            481
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvChannelTestCachedVectorPairs",
+          "declaration_line": 502,
+          "lines": [
+            503
           ]
         },
         {
@@ -218434,6 +217838,86 @@
           "declaration_line": 147,
           "lines": [
             144
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-9030e20c0e3a",
+      "kind": "original_quirk",
+      "path": "src/modules/uvchannel_rom.c",
+      "symbol": "RE_ORIGINAL_QUIRK: divide without a zero guard; RE_UNKNOWN: scalar meaning and FP domains need producer proof.",
+      "lines": [
+        558
+      ],
+      "evidence": "RE_ORIGINAL_QUIRK: divide without a zero guard; RE_UNKNOWN: scalar meaning and FP domains need producer proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvChannelRebuildCachedVectors",
+          "declaration_line": 543,
+          "lines": [
+            558
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-601a6a19c512",
+      "kind": "original_quirk",
+      "path": "src/modules/uvchannel_rom.c",
+      "symbol": "RE_ORIGINAL_QUIRK: ignored zero-length result leaves the in-place cross product unchanged.",
+      "lines": [
+        588
+      ],
+      "evidence": "RE_ORIGINAL_QUIRK: ignored zero-length result leaves the in-place cross product unchanged.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvChannelRebuildCachedVectors",
+          "declaration_line": 543,
+          "lines": [
+            588
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-90b204f301ee",
+      "kind": "original_quirk",
+      "path": "src/modules/uvchannel_rom.c",
+      "symbol": "RE_ORIGINAL_QUIRK: invalid channel indices return 1 without testing vectors.",
+      "lines": [
+        538
+      ],
+      "evidence": "RE_ORIGINAL_QUIRK: invalid channel indices return 1 without testing vectors.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvChannelTestCachedVectorPairs",
+          "declaration_line": 502,
+          "lines": [
+            538
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-e77444628fe9",
+      "kind": "original_quirk",
+      "path": "src/modules/uvchannel_rom.c",
+      "symbol": "RE_ORIGINAL_QUIRK: reload absolute 0x21C, then clear the local state pointer; no failure-path repair.",
+      "lines": [
+        383
+      ],
+      "evidence": "RE_ORIGINAL_QUIRK: reload absolute 0x21C, then clear the local state pointer; no failure-path repair.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvChannelAcquireSlotAndInitializeCallbacks",
+          "declaration_line": 345,
+          "lines": [
+            383
           ]
         }
       ]

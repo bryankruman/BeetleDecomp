@@ -704,7 +704,7 @@ void uvDobjQueueVisibleChannelObjects(s32 channel, s32 unusedMode) {
         relativeY = worldY - channelPosition.y;
         relativeZ = worldZ - channelPosition.z;
         if (!(object->unk4 & 0x40)
-            && (sUvChannel_Exports->func_uvchannel_rom_004014E8(channel, relativeX, relativeY, relativeZ,
+            && (sUvChannel_Exports->uvChannelTestCachedVectorPairs(channel, relativeX, relativeY, relativeZ,
                                                                object->unk10)
                 == 0)) {
             continue;

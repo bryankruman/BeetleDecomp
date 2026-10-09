@@ -105,3 +105,6 @@ uvChannelRender = 0x00401278; // type:func
 uvChannelSetViewMatrix = 0x00401414; // type:func
 uvChannelBeginDebugFrustum = 0x004018D8; // type:func
 uvChannelDrawDebugFrustum = 0x00401A4C; // type:func
+uvChannelAcquireSlotAndInitializeCallbacks = 0x00400CCC; // type:func
+uvChannelTestCachedVectorPairs = 0x004014E8; // type:func
+uvChannelRebuildCachedVectors = 0x00401658; // type:func

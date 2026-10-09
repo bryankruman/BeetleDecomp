@@ -421,7 +421,7 @@ void uvFxUpdateAndQueueVisible(s32 channel) {
         dx = effect->unk48.m[3][0] - channelMatrix.m[3][0];
         dy = effect->unk48.m[3][1] - channelMatrix.m[3][1];
         dz = effect->unk48.m[3][2] - channelMatrix.m[3][2];
-        if (sUvChannel_Exports->func_uvchannel_rom_004014E8(channel, dx, dy, dz,
+        if (sUvChannel_Exports->uvChannelTestCachedVectorPairs(channel, dx, dy, dz,
                                                              effect->unk8)
             != 0) {
             sUvTerraExports->unkAC(

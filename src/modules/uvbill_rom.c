@@ -318,7 +318,7 @@ void func_uvbill_rom_00400DEC(s32 arg0) {
         temp_fv0 = sUvMathExports->uvSqrtf(SQ(temp_fs1) + SQ(temp_fs2) + SQ(temp_fs0));
         if (billBoard->unk20 < temp_fv0) {
             continue;
-        } else if (sUvChannel_Exports->func_uvchannel_rom_004014E8(arg0, temp_fs1, temp_fs2, temp_fs0,
+        } else if (sUvChannel_Exports->uvChannelTestCachedVectorPairs(arg0, temp_fs1, temp_fs2, temp_fs0,
                                                                   billBoard->unkC)
                    == 0) {
             continue;
