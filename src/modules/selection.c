@@ -406,7 +406,23 @@ typedef struct D_selection_004217C8_entry_s {
 extern UvString_Exports4 *gUvStringExports;
 extern D_selection_004217C8_entry D_selection_004217C8[];
 extern char D_selection_0041EEA0[];
-void func_selection_00410E78(s32, s32, char *);
+/* Focused views of the consumed FONT and MENU callback slots only.
+ * RE_UNKNOWN: complete export layouts and historical source prototypes. */
+typedef struct {
+    u8 opaque00[4];
+    void (*selectFont)(s32);
+    u8 opaque08[0x10];
+    s32 (*measureWidth)(char *);
+    s32 (*measureHeight)(void);
+    u8 opaque20[8];
+    void (*generateList)(void);
+} SelectionMeasuredLabelFontExports;
+typedef struct {
+    u8 opaque00[0x40];
+    void (*drawText)(s32, s32, s32, s32, s32, s32, s32, char *, s32);
+} SelectionMeasuredLabelMenuExports;
+void selectionDrawMeasuredMenuLabel(s32, s32, char *);
+#line 345 "src/modules/selection.c"
 typedef struct {
     s32 text;
     s8  pad[0x28];
@@ -693,7 +709,7 @@ void func_selection_004103CC();
 void func_selection_00410614();
 void func_selection_0041088C();
 void func_selection_00410AA8();
-void func_selection_00410E78();
+void selectionDrawMeasuredMenuLabel();
 void func_selection_0041129C();
 void func_selection_004114A0();
 void func_selection_004116E0();
@@ -2908,7 +2924,43 @@ void selectionDrawVerticalBeveledBar(s32 bottom, s32 top, s32 centerX) {
 }
 #line 1578 "src/modules/selection.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00410E78.s")
+#line 1579 "src/modules/selection.c"
+/* Select FONT 11, then measure this text and the current font height.
+ * Draw through MENU at (referenceX - measuredWidth + sharedX - 3,
+ * referenceY + sharedY - height / 2), with signed division toward zero.
+ * Use RGB (251, 204, 30) when the shared flag is nonzero, otherwise
+ * (210, 210, 210), with alpha 255 and the original shadow flag 1.
+ * Reload FONT and MENU before each callback, then generate the font list.
+ * RE_ORIGINAL_QUIRK: MENU resets font scale to 1.0 after these measurements.
+ * RE_UNKNOWN: historical prototypes/export layouts, coordinate and shared
+ * state domains, agreement between measurement and rendering scales,
+ * font lookup success, writable text/length/termination, queue capacity,
+ * callback mutations, caller storage ownership and provider lifetimes.
+ * The native call sequence does not establish those caller/consumer contracts. */
+#line 1579 "src/modules/selection.c"
+void selectionDrawMeasuredMenuLabel(s32 referenceX, s32 referenceY, char *text) {
+    s32 fontHeight;
+    s32 textWidth;
+
+    ((SelectionMeasuredLabelFontExports *)gUvFontExports)->selectFont(11);
+    if (D_selection_00421CE8 != 0) {
+        textWidth = ((SelectionMeasuredLabelFontExports *)gUvFontExports)->measureWidth(text);
+        fontHeight = ((SelectionMeasuredLabelFontExports *)gUvFontExports)->measureHeight();
+        ((SelectionMeasuredLabelMenuExports *)D_selection_00421B90)->drawText(
+            (referenceX - textWidth) + D_selection_00421E98 - 3,
+            (referenceY + D_selection_00421E9C) - fontHeight / 2,
+            11, 251, 204, 30, 255, text, 1);
+    } else {
+        textWidth = ((SelectionMeasuredLabelFontExports *)gUvFontExports)->measureWidth(text);
+        fontHeight = ((SelectionMeasuredLabelFontExports *)gUvFontExports)->measureHeight();
+        ((SelectionMeasuredLabelMenuExports *)D_selection_00421B90)->drawText(
+            (referenceX - textWidth) + D_selection_00421E98 - 3,
+            (referenceY + D_selection_00421E9C) - fontHeight / 2,
+            11, 210, 210, 210, 255, text, 1);
+    }
+    ((SelectionMeasuredLabelFontExports *)gUvFontExports)->generateList();
+}
+#line 1580 "src/modules/selection.c"
 
 /* Draw a selection label at (arg0+xOff+5, arg1+yOff - fontH/2) in highlight or normal color. */
 #line 1582 "src/modules/selection.c"
@@ -2933,42 +2985,42 @@ void selectionDrawHighlightedMenuLabel(s32 x, s32 y, s32 textAddress) {
 void func_selection_004111B8(s32 arg0) {
     selectionDrawHorizontalBeveledBar(0x74, 0xA3, 0xBD);
     selectionDrawVerticalBeveledBar(0x86, 0xBD, 0xA3);
-    func_selection_00410E78(0x74, 0xBD, arg0);
+    selectionDrawMeasuredMenuLabel(0x74, 0xBD, arg0);
 }
 
 void func_selection_00411204(s32 arg0) {
     selectionDrawHorizontalBeveledBar(0x74, 0x8E, 0xB1);
     selectionDrawVerticalBeveledBar(0x98, 0xB1, 0x8E);
-    func_selection_00410E78(0x74, 0xB1, arg0);
+    selectionDrawMeasuredMenuLabel(0x74, 0xB1, arg0);
 }
 
 void func_selection_00411250(s32 arg0) {
     selectionDrawHorizontalBeveledBar(0x74, 0x88, 0x90);
     selectionDrawVerticalBeveledBar(0x8B, 0x90, 0x88);
-    func_selection_00410E78(0x74, 0x90, arg0);
+    selectionDrawMeasuredMenuLabel(0x74, 0x90, arg0);
 }
 
 void func_selection_0041129C(s32 arg0) {
     selectionDrawHorizontalBeveledBar(0x74, 0x80, 0x81);
-    func_selection_00410E78(0x74, 0x81, arg0);
+    selectionDrawMeasuredMenuLabel(0x74, 0x81, arg0);
 }
 
 void func_selection_004112D8(s32 arg0) {
     selectionDrawHorizontalBeveledBar(0x74, 0x88, 0x72);
     selectionDrawVerticalBeveledBar(0x72, 0x76, 0x88);
-    func_selection_00410E78(0x74, 0x72, arg0);
+    selectionDrawMeasuredMenuLabel(0x74, 0x72, arg0);
 }
 
 void func_selection_00411324(s32 arg0) {
     selectionDrawHorizontalBeveledBar(0x74, 0x91, 0x63);
     selectionDrawVerticalBeveledBar(0x63, 0x7D, 0x91);
-    func_selection_00410E78(0x74, 0x63, arg0);
+    selectionDrawMeasuredMenuLabel(0x74, 0x63, arg0);
 }
 
 void func_selection_00411370(s32 arg0) {
     selectionDrawVerticalBeveledBar(0x57, 0x5C, 0x97);
     selectionDrawHorizontalBeveledBar(0x74, 0x97, 0x57);
-    func_selection_00410E78(0x74, 0x57, arg0);
+    selectionDrawMeasuredMenuLabel(0x74, 0x57, arg0);
 }
 
 void func_selection_004113BC(s32 arg0) {
@@ -3043,7 +3095,7 @@ void selectionDrawFormattedLocalizedLabel(void) {
     }
     selectionDrawHorizontalBeveledBar(left, 0xA3, 0x4A);
     selectionDrawVerticalBeveledBar(0x4A, 0x64, 0xA3);
-    func_selection_00410E78(left, 0x4A, text);
+    selectionDrawMeasuredMenuLabel(left, 0x4A, text);
 }
 #line 1701 "src/modules/selection.c"
 
