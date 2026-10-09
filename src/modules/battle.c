@@ -603,8 +603,55 @@ void battleCopyNodeStateAndUpdateMotion(BattleResetNode *node, s32 mode) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00405E68.s")
 
+/* Original Battle6170 initializes thirty 28-byte records but sets the
+ * active count to 24. Each record reloads the modulo divisor, creates an
+ * object, assigns its indexed model, retains the palette callback/context
+ * via DOBJ property 4, invokes the first-count reset helper, stores .5, then calls
+ * SNDCC on its embedded eight-byte handle. Preserve that order and reloads.
+ * RE_ORIGINAL_QUIRK: DOBJ3C can return 0xFFFF; this caller immediately
+ * forwards the returned word to model assignment without a failure gate.
+ * SNDCC writes sentinels for nonnull inputs; its null path stores at zero.
+ * These native behaviors do not establish reachable failure for this caller.
+ * RE_UNKNOWN: available object slots, settings/model/palette index domains,
+ * divisor validity, input extent/aliases, retained callback invocation and
+ * context lifetime, module replacement and scalar units require original
+ * producers/callers. Thirty initialized slots do not prove full allocation.
+ * The first compiled natural draft2553 produced 452 versus 468 bytes and
+ * 116 differing instruction positions. Frame 80 becomes 72; the native
+ * independent sound-address induction and S8 retention are not reproduced,
+ * and the draft duplicates settings-base materialization. All observed
+ * callback inputs, scalar/store order and per-record reads remain represented.
+ * The two relocation lists contain 17/19 records and differ; downstream
+ * symbol values also move with the shorter body. Full comparison2554 found
+ * no supported missing native effect or ABI correction. Warning835 records
+ * the unprototyped direct reset call; its later anonymous canonical type and
+ * historical shared declaration remain unresolved. Keep the original ASM;
+ * no draft types, prototypes, headers or guessed storage are accepted. */
+#line 281 "src/modules/battle.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00406170.s")
 
+/* Original Battle6344 clamps the shared signed limit, then walks 28-byte
+ * records through a state-relative cursor and unsigned end comparison.
+ * State0's inner gate selects decrement or the direct helper and reloads
+ * count afterward; a false gate retains the incoming count. State1 reloads
+ * count after either decrement or index-wrap/scalar-reset/model assignment.
+ * State2/other values retain count. Ordered-positive tests send NaNs to the
+ * alternate paths; preserve the callback, scalar and count-read ordering.
+ * RE_UNKNOWN: caller count/index/handle domains, cursor/end arithmetic and
+ * overflow bounds, settings/table extents, aliases, physical units and
+ * callback/module replacement lifetimes need original producers/readers.
+ * DOBJ model assignment indexes before its upper-bound check; no universal
+ * valid-handle/output or reachable caller failure is proved by these bytes.
+ * The first compiled natural draft2553 produced 496 versus 488 bytes and
+ * 116 differing instruction positions. Frame 64 remains, but initial shared
+ * base retention and repeated absolute HI/LO materialization differ from the
+ * native cached base. The full 17/27-record lists differ in sites, multiplicity
+ * and downstream direct-helper value; this is not a missing-call-target claim.
+ * Full comparison2554 found no supported omitted store, count reload, ordered
+ * test or callback input. Historical source declarations/alias organization
+ * and compiler lowering remain unproved. Keep the original ASM; no draft
+ * types, prototypes, headers, padding or declaration variants are accepted. */
+#line 283 "src/modules/battle.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00406344.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_0040652C.s")
@@ -708,8 +755,55 @@ void battleSetPalettePrimitiveColor(BattlePaletteSelector *selector) {
 #line 317 "src/modules/battle.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00406954.s")
 
+/* Original Battle6AD0 initializes twenty forty-byte records while the
+ * active count starts at 16. The settings word 7088 is captured once;
+ * 6 with word 708C equal to 3, or captured value 8, selects limit zero.
+ * Each record uses signed remainder by 7, creates/assigns its model,
+ * invokes the second-count reset helper, initializes both embedded sound
+ * handles through fresh SND exports, then stores .5 after both callbacks.
+ * RE_ORIGINAL_QUIRK: DOBJ creation can return 0xFFFF, yet this caller
+ * forwards the word to model assignment without a failure gate. SNDCC's
+ * null path stores at zero; reachable caller failure is not established.
+ * RE_UNKNOWN: original allocation/handle/count/index domains,
+ * table extents, aliases, scalar units and callback/module lifetimes need
+ * original producers/readers. Twenty iterations do not prove allocation.
+ * First natural trial2569 produced 432 versus 436 bytes, with 54 differing
+ * instruction positions. Both frames are 72; the native auxiliary record
+ * pointer and backedge-delay scalar store become a direct earlier store,
+ * still after both callbacks. Settings-base materialization duplicates,
+ * saved registers and bound retention differ, and the full 9/11-record
+ * relocation lists differ in sites/multiplicity/downstream helper value.
+ * Full comparison2570 found no supported omitted effect or ABI correction.
+ * Warning835 records the canonical reset helper's nonprototype call;
+ * its historical shared declaration and later anonymous type remain
+ * unresolved. Keep original ASM; no draft type/header/prototype accepted. */
+#line 319 "src/modules/battle.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00406AD0.s")
 
+/* Original Battle6C84 subtracts 2 from the shared range word before
+ * comparing/clamping its signed limit. Walk forty-byte records with a
+ * state-relative cursor and unsigned modulo-word end calculation.
+ * State0 reloads count only after its true inner gate; state1 reloads after
+ * either decrement or expiry path. Other paths retain the previous count.
+ * Expiry resets the scalar before the model-index 3/settings-word 708C
+ * gate, toggles the alternate index between zero and 2, reloads that field
+ * for model lookup, assigns the model and calls the translation helper.
+ * Ordered-positive scalar tests send NaNs to the alternate paths.
+ * RE_UNKNOWN: caller count/index/handle domains, cursor/end overflow and
+ * alias bounds, model/settings table extents, scalar units and callback/
+ * module lifetimes need original producers/readers. The translated-object
+ * argument view establishes fields 8/14 only, not a full historical type.
+ * First natural trial2569 produced 528 versus 532 bytes, with 121 differing
+ * instruction positions. Frame 72 becomes 64; cached settings/shared-base
+ * retention becomes repeated absolute address materialization, with saved
+ * register and scheduling changes. The full 18/30-record relocation lists
+ * differ; direct helper values also move with the shorter body. This does
+ * not establish missing call targets. Full comparison2570 found all visible
+ * callbacks, count reloads, stores and ordered tests represented, with no
+ * supported semantic correction. Historical declarations/alias organization
+ * and compiler lowering remain unproved. Keep original ASM; no draft type,
+ * header, prototype, padding or declaration-order variant accepted. */
+#line 321 "src/modules/battle.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00406C84.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00406E98.s")

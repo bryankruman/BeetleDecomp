@@ -3217,3 +3217,4 @@ selectionApplyLatchedMenuActionWords = 0x00401BF4; // type:func
 selectionDrawCurrentMenuAndConditionalOverlay = 0x004003DC; // type:func
 selectionLatchMenuActionsWithRecordGuard = 0x00419FB8; // type:func
 selectionUpdateMenuActionAndPendingNodeChange = 0x00419194; // type:func
+selectionUpdateSharedObjectMatrixAndArrows = 0x0040611C; // type:func

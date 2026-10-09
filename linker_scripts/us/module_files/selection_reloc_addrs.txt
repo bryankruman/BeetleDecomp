@@ -5134,7 +5134,7 @@ rom:0x21004 reloc:MIPS_32 symbol:func_selection_00410884
 rom:0x21008 reloc:MIPS_32 symbol:func_selection_0041087C
 rom:0x2100C reloc:MIPS_32 symbol:func_selection_0040D280
 rom:0x21010 reloc:MIPS_32 symbol:func_selection_0040D488
-rom:0x21014 reloc:MIPS_32 symbol:func_selection_0040611C
+rom:0x21014 reloc:MIPS_32 symbol:selectionUpdateSharedObjectMatrixAndArrows
 rom:0x21018 reloc:MIPS_32 symbol:func_selection_004062F8
 rom:0x2101C reloc:MIPS_32 symbol:func_selection_00406DC4
 rom:0x21020 reloc:MIPS_32 symbol:func_selection_00406924

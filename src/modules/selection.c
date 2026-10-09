@@ -118,6 +118,25 @@ typedef struct {
     /* 0x2C */ void (*unk2C)(Mtx4F *, f32, f32, f32);
 } UvFMtxExp_4168C4;
 extern UvFMtxExp_4168C4 *gUvFmtxExports;
+/* Minimum consumed views only; no complete historical storage claimed. */
+typedef struct {
+    u32 words[6];
+} SelectionCopiedWords24;
+typedef struct {
+    u8 opaque00[0x1C];
+    void (*identity)(Mtx4F *matrix);
+    u8 opaque20[8];
+    void (*rotateAxis)(Mtx4F *matrix, f32 angle, s8 axis);
+} SelectionMatrixFmtxExports;
+typedef struct {
+    u8 opaque00[0x24];
+    void (*setMatrix)(s32 objectIndex, s32 partIndex, Mtx4F *matrix);
+} SelectionMatrixDobjExports;
+extern SelectionMatrixDobjExports *gUvDobjExports;
+extern SelectionCopiedWords24 D_selection_00421470;
+extern f32 D_selection_00420E10, D_selection_0041F178;
+extern s32 D_selection_00421E4C;
+#line 84 "src/modules/selection.c"
 typedef struct {
     char pad[0x40];
     void (*unk40)(s32, s32, s32, s32, s32, s32, s32, s32, s32);
@@ -594,7 +613,7 @@ void func_selection_00405CB0();
 void func_selection_00405E38();
 void func_selection_00405F48();
 void selectionAdjustSelectedPlayerTransmission();
-void func_selection_0040611C();
+void selectionUpdateSharedObjectMatrixAndArrows();
 void func_selection_004062F8();
 void func_selection_00406924();
 void func_selection_00406DC4();
@@ -724,7 +743,7 @@ void func_selection_00419D54();
 void selectionLatchMenuActionsWithRecordGuard();
 void func_selection_0041A210();
 void func_selection_0041A244();
-void func_selection_0041A5BC();
+void func_selection_0041A5BC(s32 xWord, s32 yWord, s32 controller);
 void func_selection_0041A7D0();
 void func_selection_0041A960();
 f32 selectionComposeTimeScalar(s32 arg0, s32 arg1, s32 arg2);
@@ -1863,7 +1882,50 @@ void func_selection_00406114(void) {
 }
 #line 1105 "src/modules/selection.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040611C.s")
+/* Copy the original six words at 0x421470 into a 24-byte local view.
+ * The native routine does not subsequently read that copy; preserve the
+ * observed initialization without inventing a use or calling it padding.
+ * Subtract 0.5f from the shared scalar and, only when the stored value is
+ * negative, add 360.0f once. Build an identity matrix, rotate it about X with
+ * the exact f32 word 0x3ED6774E, then about Z with the freshly loaded scalar
+ * times the original f32 factor at 0x41F178 (word 0x3C8EFA34). Reload the
+ * matrix provider between calls. Send the matrix to the freshly loaded
+ * shared object index and part zero. After that callback, reload the current
+ * node and its position pointer at offset 0x0C; send the first two signed
+ * halfwords and controller word zero to the original local arrow renderer.
+ * RE_UNKNOWN: the copied words' purpose and complete historical declaration;
+ * scalar purpose, units, initial/reset domain and callback-driven changes;
+ * object allocation/index eligibility and provider lifetime; complete node
+ * and position storage/alias contracts; and historical local/call types.
+ * Resolve through original callers, scalar/object/node writers and reset
+ * paths, data producers and all matrix/position consumers. The aggregate,
+ * export and unsized access views describe only consumed spans/word slots;
+ * they define no backing data or complete historical ownership. The observed
+ * local arrow renderer consumes three words, not an inferred pointer ABI.
+ * RE_ORIGINAL_QUIRK: the scalar correction adds 360 only once and is not a
+ * full normalization of arbitrary input. NaN skips that correction. The
+ * object provider applies its original upper-only object guard; this caller
+ * has no local node/position/provider null tests or allocation checks.
+ * Reachable fault domains remain unproved; no runtime fix is claimed. */
+#line 1106 "src/modules/selection.c"
+void selectionUpdateSharedObjectMatrixAndArrows(void) {
+    Mtx4F matrix;
+    SelectionCopiedWords24 copiedWords = D_selection_00421470;
+    s16 *position;
+
+    D_selection_00420E10 -= 0.5f;
+    if (D_selection_00420E10 < 0.0f) {
+        D_selection_00420E10 += 360.0f;
+    }
+    ((SelectionMatrixFmtxExports *)gUvFmtxExports)->identity(&matrix);
+    ((SelectionMatrixFmtxExports *)gUvFmtxExports)->rotateAxis(&matrix, 0.4188789725f, 'x');
+    ((SelectionMatrixFmtxExports *)gUvFmtxExports)->rotateAxis(
+        &matrix, D_selection_00420E10 * D_selection_0041F178, 'z');
+    gUvDobjExports->setMatrix(D_selection_00421E4C, 0, &matrix);
+    position = *(s16 **)((u8 *)D_selection_00421D1C + 0xC);
+    func_selection_0041A5BC(position[0], position[1], 0);
+}
+#line 1107 "src/modules/selection.c"
 
 #line 1108 "src/modules/selection.c"
 /* Request a graphics-state push, set bits 0x04800000 and clear bits

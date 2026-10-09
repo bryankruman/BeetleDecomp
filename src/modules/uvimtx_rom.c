@@ -4,7 +4,7 @@
 
 #define IMTX_STACK_SIZE 100
 
-// Todo replace these structs with the actual exports of uvcback_rom and uvgfxmgr_rom
+// RE_UNKNOWN: these partial GMGR/CBCK export views need complete original initializer, provider and caller evidence before assigning full historical declarations.
 typedef struct UnkStruct_00400764_s {
     /* 0x00 */ char pad0[0x10];
     /* 0x10 */ void (*unk10)(s32, void (*)(s32), s32, s32); /* inferred */
@@ -74,7 +74,7 @@ void __entrypoint_func_uvimtx_rom_400000(UvImtx_Rom_Exports* arg0) {
     sUvGfxMgrExports_imtx = uvLoadModule('GMGR');
     sUvCbckExports = uvLoadModule('CBCK');
 
-    // Create two 4x4 dynamic matrices
+    // Request two buffers using the signed stack count * sizeof(Mtx), passing 16 to each allocator call. RE_UNKNOWN: valid count domains, allocator outcomes, actual extents/lifetimes and callback scheduling need property writers, allocation and frame consumers.
     *sMatrixStack = _uvMemAlloc(sIMtxStackSize * sizeof(Mtx), 4 * 4);
     D_uvimtx_rom_00400774 = _uvMemAlloc(sIMtxStackSize * sizeof(Mtx), 4 * 4);
     sUvCbckExports->unk10(sUvGfxMgrExports_imtx->unk10(1), uvIMtxStackInit, 0, 0);
@@ -131,23 +131,23 @@ void uvIMtxCopy(Mtx* dst, Mtx src) {
 }
 #line 117 "src/modules/uvimtx_rom.c"
 
-void uvIMtxSetIdentity(Mtx* m) {
-    m->m[0][0] = 0x10000;
-    m->m[0][1] = 0;
-    m->m[0][2] = 1;
-    m->m[0][3] = 0;
-    m->m[1][1] = 0x10000;
-    m->m[1][0] = 0;
-    m->m[1][3] = 1;
-    m->m[1][2] = 0;
-    m->m[2][0] = 0;
-    m->m[2][1] = 0;
-    m->m[2][2] = 0;
-    m->m[2][3] = 0;
-    m->m[3][0] = 0;
-    m->m[3][1] = 0;
-    m->m[3][2] = 0;
-    m->m[3][3] = 0;
+void uvIMtxSetIdentity(Mtx* output) { /* Write the original sixteen packed words in order. RE_UNKNOWN: writable span, alignment/lifetime and historical packed-layout declaration need original callers and storage producers. */
+    output->m[0][0] = 0x10000;
+    output->m[0][1] = 0;
+    output->m[0][2] = 1;
+    output->m[0][3] = 0;
+    output->m[1][1] = 0x10000;
+    output->m[1][0] = 0;
+    output->m[1][3] = 1;
+    output->m[1][2] = 0;
+    output->m[2][0] = 0;
+    output->m[2][1] = 0;
+    output->m[2][2] = 0;
+    output->m[2][3] = 0;
+    output->m[3][0] = 0;
+    output->m[3][1] = 0;
+    output->m[3][2] = 0;
+    output->m[3][3] = 0;
 }
 
 void uvImtxStub(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
@@ -203,11 +203,11 @@ void uvIMtxLoadModelview(Mtx mtx) {
 #line 171 "src/modules/uvimtx_rom.c"
 
 void uvGfxMtxViewPop(void) {
-    Gfx** gdlh;
+    Gfx** displayList; /* Obtain the shared cursor and append the original model-view pop command. RE_UNKNOWN: writable command span, provider lifetime and valid pop depth need command allocation, frame scheduling and original callers. */
 
-    gdlh = sUvGfxMgrExports_imtx->unk8();
+    displayList = sUvGfxMgrExports_imtx->unk8();
 
-    gSPPopMatrix((*gdlh)++, G_MTX_MODELVIEW);
+    gSPPopMatrix((*displayList)++, G_MTX_MODELVIEW);
 }
 
 #line 180 "src/modules/uvimtx_rom.c"
