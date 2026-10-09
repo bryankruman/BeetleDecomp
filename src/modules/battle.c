@@ -257,6 +257,41 @@ typedef struct {
     s32 objectHandle;
 } BattleMatrixBlendNode;
 extern f32 D_80025D70;
+
+/* Focused views of original callback slots and observed fields only.
+ * RE_UNKNOWN: these views do not establish full export/object layouts,
+ * allocation capacities, module availability or callback lifetimes. */
+typedef struct {
+    u8 unknown00[0x14]; void (*initialize)(void);
+    u8 unknown18[0x10]; u8 *owner;
+} BattleGuiOwnerExports;
+typedef struct {
+    u8 unknown00[8]; void (*appendRow)(void *, void *);
+    u8 unknown0C[0x64]; s16 (*allocateRow)(void);
+    void *(*getRow)(s16); void (*setRowLabel)(void *, char *);
+    u8 unknown7C[8]; void (*appendPanel)(void *, void *);
+    u8 unknown88[0xC]; s16 (*allocatePanel)(void);
+    void *(*getPanel)(s16); void (*setPanelLabel)(void *, char *);
+} BattleAdjustGuiExports;
+typedef struct { u8 unknown00[0x104];
+    void *(*addBoundControl)(void *, char *, s32, f32, f32, void *, void **);
+} BattleBoundControlExports;
+typedef struct { u8 unknown00[8]; void (*update)(void *);
+    u8 unknown0C[4]; void (*buildControls)(void *);
+} BattleGuiPlayerExports;
+typedef struct { u8 unknown00[0x2C]; void (*buildControls)(void *); } BattleGuiCameraExports;
+extern BattleGuiOwnerExports *gGameGuiExports;
+extern BattleAdjustGuiExports *gUvGuiExports;
+extern BattleGuiPlayerExports *D_battle_0040A04C;
+extern char D_battle_00409B68[], D_battle_00409B70[], D_battle_00409B78[];
+extern char D_battle_00409B80[], D_battle_00409B8C[], D_battle_00409B98[];
+extern char D_battle_00409BA4[], D_battle_00409BB0[], D_battle_00409BBC[];
+extern char D_battle_00409BC8[], D_battle_00409BD4[];
+extern s32 D_battle_0040BAA8, D_battle_0040BAAC, D_battle_0040BABC;
+extern f32 D_battle_0040BAB4, D_battle_0040BAC0;
+extern f32 D_battle_0040C2C4, D_battle_0040C2C8, D_battle_0040C2CC, D_battle_0040C2D0;
+void battleBuildAdjustmentControls(void);
+#line 219 "src/modules/battle.c"
 void func_battle_00409838(Mtx4F *, Vec3F *);
 
 #include "uvpfx_rom.h"
@@ -469,7 +504,44 @@ void battleRunFrameCallbacks(void) {
 #line 204 "src/modules/battle.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00403A54.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00403D08.s")
+/* Build the Battle adjustment panel and its nine bound controls.
+ * RE_ORIGINAL_QUIRK: capture the owner before initialization; pass factory
+ * indices unchecked and reuse the optional control-output home.
+ * RE_UNKNOWN: full object/export extents, factory failure domains, module
+ * availability, callback lifetimes and setting purposes require producers. */
+#line 206 "src/modules/battle.c"
+void battleBuildAdjustmentControls(void) {
+    void *owner;
+    void *row;
+    void *panel;
+    void *control;
+    s16 index;
+
+    /* Capture the owner's interior pointer before the initializer callback. */
+    owner = gGameGuiExports->owner + 0x10;
+    gGameGuiExports->initialize();
+    index = gUvGuiExports->allocateRow();
+    row = gUvGuiExports->getRow(index);
+    gUvGuiExports->setRowLabel(row, D_battle_00409B68);
+    gUvGuiExports->appendRow(owner, row);
+    ((BattleGuiCameraExports *)gCamExports)->buildControls(row);
+    D_battle_0040A04C->buildControls(row);
+    index = gUvGuiExports->allocatePanel();
+    panel = gUvGuiExports->getPanel(index);
+    gUvGuiExports->setPanelLabel(panel, D_battle_00409B70);
+    gUvGuiExports->appendPanel(row, panel);
+    ((BattleBoundControlExports *)gMiscExports)->addBoundControl(panel, D_battle_00409B78, 2, 1.0f, 30.0f, &D_battle_0040BAA8, &control);
+    ((BattleBoundControlExports *)gMiscExports)->addBoundControl(panel, D_battle_00409B80, 2, 1.0f, 30.0f, &D_battle_0040BAAC, &control);
+    ((BattleBoundControlExports *)gMiscExports)->addBoundControl(panel, D_battle_00409B8C, 2, 1.0f, 30.0f, &D_battle_0040BABC, &control);
+    ((BattleBoundControlExports *)gMiscExports)->addBoundControl(panel, D_battle_00409B98, 17, 0.0f, 20.0f, &D_battle_0040BAB4, &control);
+    ((BattleBoundControlExports *)gMiscExports)->addBoundControl(panel, D_battle_00409BA4, 17, 0.0f, 20.0f, &D_battle_0040BAC0, &control);
+    ((BattleBoundControlExports *)gMiscExports)->addBoundControl(panel, D_battle_00409BB0, 17, 0.0f, 1.0f, &D_battle_0040C2C4, &control);
+    ((BattleBoundControlExports *)gMiscExports)->addBoundControl(panel, D_battle_00409BBC, 17, 0.0f, 1.0f, &D_battle_0040C2C8, &control);
+    ((BattleBoundControlExports *)gMiscExports)->addBoundControl(panel, D_battle_00409BC8, 17, 0.0f, 1.0f, &D_battle_0040C2CC, &control);
+    ((BattleBoundControlExports *)gMiscExports)->addBoundControl(panel, D_battle_00409BD4, 17, 0.0f, 100.0f, &D_battle_0040C2D0, &control);
+}
+
+#line 207 "src/modules/battle.c"
 
 #line 208 "src/modules/battle.c"
 /* Select one of four sound handles only while DATA+0x31C is nonzero.
