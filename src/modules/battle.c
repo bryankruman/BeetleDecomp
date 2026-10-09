@@ -258,6 +258,38 @@ typedef struct {
 } BattleMatrixBlendNode;
 extern f32 D_80025D70;
 void func_battle_00409838(Mtx4F *, Vec3F *);
+
+#include "uvpfx_rom.h"
+/* Observed 0x3C record stride and consumed words only. These views do not
+ * establish complete historical allocations, ownership or caller validity. */
+typedef struct {
+    s32 kind;
+    s32 activeWord;
+    f32 scalar8;
+    BattleMatrixBlendLink *link;
+    s32 word10;
+    s32 objectHandle;
+    BattleInitWordTriple copiedMatrixWords;
+    f32 scalar24;
+    s32 particleIndex;
+    u8 firstSoundHandle[8];
+    u8 secondSoundHandle[8];
+} BattleAcquiredModelRecord;
+
+typedef struct {
+    u8 unknown00[0x14];
+    void (*setModel)(s32, s32);
+    u8 unknown18[8];
+    void (*getProperties)(s32, ...);
+    void (*setMatrix)(s32, s32, Mtx4F *);
+    void (*getMatrix)(s32, s32, Mtx4F *);
+    u8 unknown2C[0xC];
+    void (*clearFlagBits)(s32, s32);
+} BattleAcquireDobjExports;
+
+BattleAcquiredModelRecord *func_battle_00407FF4(void);
+extern f32 D_battle_00409C6C;
+extern f32 D_battle_00409C74;
 #line 209 "src/modules/battle.c"
 typedef struct { u8 prefix[0x3C]; void (*apply)(BattleMotionSource *, Vec3F *, s32); } BattleMotionResetExports;
 extern BattleMotionResetExports *D_battle_0040A050;
@@ -1210,11 +1242,98 @@ void battleEnableIndexedModelAndInitializeSounds(Node_00407F30 *node) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00408454.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_004085F8.s")
+#line 403 "src/modules/battle.c"
+/* Configure an acquired record of kind 1 from the linked object's
+ * matrix, then play sound129 and configure/restart a nonnegative PFX index.
+ * RE_ORIGINAL_QUIRK: preserve both tag7 queries although their outputs are
+ * unused; matrix rejection leaves caller storage untouched, with no new gate.
+ * RE_UNKNOWN: record/link/handle validity, capacities, aliases and module or
+ * callback replacement lifetimes need original producers and entry callers.
+ * Scalar units, particle flag purpose and historical declarations remain
+ * unproved; the matrix-row copy retains the original three word bit patterns. */
+void battleConfigureKindOneModelEffects(BattleMatrixBlendLink *link)
+{
+    f32 volumeScale;
+    Mtx4F matrix;
+    f32 sourceQueryValue;
+    f32 recordQueryValue;
+    BattleAcquiredModelRecord *record;
+
+    record = func_battle_00407FF4();
+    record->kind = 1;
+    record->word10 = 0;
+    record->scalar8 = 10.0f;
+    record->link = link;
+    record->scalar24 = 0.0f;
+    ((BattleAcquireDobjExports *)gUvDobjExports)->setModel(record->objectHandle, 52);
+    ((BattleAcquireDobjExports *)gUvDobjExports)->getProperties(record->objectHandle, 7, &recordQueryValue, 0);
+    ((BattleAcquireDobjExports *)gUvDobjExports)->getProperties(link->source->objectHandle, 7, &sourceQueryValue, 0);
+    ((BattleAcquireDobjExports *)gUvDobjExports)->getMatrix(link->source->objectHandle, 0, &matrix);
+    gUvFmtxExports->uvMat4LocalTranslate(&matrix, 0.0f, 1.0f, 1.0f);
+    ((BattleAcquireDobjExports *)gUvDobjExports)->setMatrix(record->objectHandle, 0, &matrix);
+    record->copiedMatrixWords = *(BattleInitWordTriple *)&matrix.m[3][0];
+    battleEnableIndexedModelAndInitializeSounds((Node_00407F30 *)record);
+    ((BattleAcquireDobjExports *)gUvDobjExports)->clearFlagBits(record->objectHandle, 2);
+    volumeScale = ((BattleResetSoundExports *)gSndExports)->getVolumeScale();
+    ((BattleResetSoundExports *)gSndExports)->playSpatialSound(record->firstSoundHandle,
+        129, 0x7FF5, volumeScale * D_battle_00409C6C,
+        1.0f, 0.0f, &matrix);
+    record->particleIndex = ((UvPfx_Exports *)gUvPfxExports)->uvPfxAcquireInactiveByKind(6);
+    if (record->particleIndex >= 0) {
+        ((UvPfx_Exports *)gUvPfxExports)->func_uvpfx_rom_004004D0(record->particleIndex,
+            0x1010, (f64)matrix.m[3][0], (f64)matrix.m[3][1], (f64)matrix.m[3][2],
+            0x1003, 1.0f, 1.0f, 1.0f, 0x1026, 1, 0);
+        ((UvPfx_Exports *)gUvPfxExports)->uvPfxRestart(record->particleIndex);
+    }
+}
+#line 404 "src/modules/battle.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00408858.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00408B70.s")
+#line 407 "src/modules/battle.c"
+/* Configure an acquired record of kind 2 from the linked object's
+ * matrix, then play sound129 and configure/restart a nonnegative PFX index.
+ * RE_ORIGINAL_QUIRK: preserve both tag7 queries although their outputs are
+ * unused; matrix rejection leaves caller storage untouched, with no new gate.
+ * RE_UNKNOWN: record/link/handle validity, capacities, aliases and module or
+ * callback replacement lifetimes need original producers and entry callers.
+ * Scalar units, particle flag purpose and historical declarations remain
+ * unproved; the matrix-row copy retains the original three word bit patterns. */
+void battleConfigureKindTwoModelEffects(BattleMatrixBlendLink *link)
+{
+    f32 volumeScale;
+    Mtx4F matrix;
+    f32 sourceQueryValue;
+    f32 recordQueryValue;
+    BattleAcquiredModelRecord *record;
+
+    record = func_battle_00407FF4();
+    record->kind = 2;
+    record->word10 = 0;
+    record->scalar8 = 10.0f;
+    record->link = link;
+    ((BattleAcquireDobjExports *)gUvDobjExports)->setModel(record->objectHandle, 52);
+    ((BattleAcquireDobjExports *)gUvDobjExports)->getProperties(record->objectHandle, 7, &recordQueryValue, 0);
+    ((BattleAcquireDobjExports *)gUvDobjExports)->getProperties(link->source->objectHandle, 7, &sourceQueryValue, 0);
+    ((BattleAcquireDobjExports *)gUvDobjExports)->getMatrix(link->source->objectHandle, 0, &matrix);
+    gUvFmtxExports->uvMat4LocalTranslate(&matrix, 0.0f, 1.0f, 1.0f);
+    ((BattleAcquireDobjExports *)gUvDobjExports)->setMatrix(record->objectHandle, 0, &matrix);
+    record->copiedMatrixWords = *(BattleInitWordTriple *)&matrix.m[3][0];
+    battleEnableIndexedModelAndInitializeSounds((Node_00407F30 *)record);
+    ((BattleAcquireDobjExports *)gUvDobjExports)->clearFlagBits(record->objectHandle, 2);
+    volumeScale = ((BattleResetSoundExports *)gSndExports)->getVolumeScale();
+    ((BattleResetSoundExports *)gSndExports)->playSpatialSound(record->firstSoundHandle,
+        129, 0x7FF5, volumeScale * D_battle_00409C74,
+        1.0f, 0.0f, &matrix);
+    record->particleIndex = ((UvPfx_Exports *)gUvPfxExports)->uvPfxAcquireInactiveByKind(6);
+    if (record->particleIndex >= 0) {
+        ((UvPfx_Exports *)gUvPfxExports)->func_uvpfx_rom_004004D0(record->particleIndex,
+            0x1010, (f64)matrix.m[3][0], (f64)matrix.m[3][1], (f64)matrix.m[3][2],
+            0x1003, 1.0f, 1.0f, 1.0f, 0x1026, 1, 0);
+        ((UvPfx_Exports *)gUvPfxExports)->uvPfxRestart(record->particleIndex);
+    }
+}
+#line 408 "src/modules/battle.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00408DC8.s")
 

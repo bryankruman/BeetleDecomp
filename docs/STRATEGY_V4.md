@@ -34,8 +34,8 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **793** assembly references:
-**751** ordinary functions and **42** entrypoints, with **717,296** known instruction bytes
+matching C are preserved with `#line`. The current ledger has **791** assembly references:
+**749** ordinary functions and **42** entrypoints, with **716,088** known instruction bytes
 and no unknown sizes. The broader name audit still finds **295** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
@@ -3052,10 +3052,19 @@ Totals: 407 further recoveries after the 225 upstream ordinary imports, plus 137
 Frozen wave `2866-selection-measured-menu-label-contracts-2866` and `accepted-selection-measured-menu-label-contracts-2866` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 407 further readable functions
+## Historical accepted checkpoint — 407 further readable functions
 
 Three existing DOBJ hierarchy routines gain purpose comments, parameter/local roles and globally consistent names for a scalar-extent query, point-bounds test and segment query. Preserve all current ABI/types, member selectors, macros, callback sequencing, fresh node-array reloads, cached u8 traversal count, signed narrowing/depth loops, shared-word writes and inherited unused storage. RE_UNKNOWN notes identify resource/node/matrix extents and lifetimes, mask and shift domains, stack capacity/balance, callback aliases, units/FP and historical storage evidence still needed; RE_ORIGINAL_QUIRK marks repeated capacity calls, ignored sums and early returns without final pops. All3552 original target/provider/initializer/kernel words reviewed; all525+525 complete reference/candidate instructions and27+27 ordered five-field records agree with six empty logs. Native packed/reference JAL/BSS operand differences are explicitly proved separately, never normalized. Exact binding/comment/global-name and alias-suffix inverses preserve all1348 executable source coordinates; three overview/#line prefixes add six physical lines. Three older cleanups, zero recoveries. Normal extraction, original packed affected modules, fresh original ROM, all1034 source pins, full unchanged remaining/data/per-source dictionaries, exact removal of only these three address-named C rows and fresh uncertainty index remain mandatory before acceptance.
 
 Totals: 407 further recoveries after the 225 upstream ordinary imports, plus 1379 existing C semantic cleanups. Current ledger: 793 assembly references = 751 ordinary + 42 entrypoints; 717,296 known remaining instruction bytes; zero unknown sizes; 295 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `2866-older-dobj-hierarchy-contracts-2866` and `accepted-older-dobj-hierarchy-contracts-2866` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 409 further readable functions
+
+Recover 85F8/8B70 as battleConfigureKindOneModelEffects and battleConfigureKindTwoModelEffects: 608+600 bytes, all 302 instructions and 24 ordered object records match, with four empty compiler logs. Preserve actual DOBJ/FMTX/SND/PFX reloads, the three-word matrix copy, ignored queries and rejected-output quirks, distinct readonly coefficient symbols and optional PFX failure. Native-evidenced 1.0f default promotions and genuine local declaration order resolve the first trial differences; historical declarations remain unknown. All eight native local relocation records, 740 existing order rows and six serializers remain unchanged. Caller, extent, ownership, module lifetime, scalar unit and flag unknowns remain explicit. Only the two canonical definitions and append-only aliases are renamed. Normal extraction, full original packed Battle, fresh ROM, all frozen manifest pins, exact remaining dictionary, data, address, per-source and index gates remain mandatory.
+
+Totals: 409 further recoveries after the 225 upstream ordinary imports, plus 1379 existing C semantic cleanups. Current ledger: 791 assembly references = 749 ordinary + 42 entrypoints; 716,088 known remaining instruction bytes; zero unknown sizes; 295 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `2902-battle-acquired-model-effects-recoveries-2902` and `accepted-battle-acquired-model-effects-recoveries-2902` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

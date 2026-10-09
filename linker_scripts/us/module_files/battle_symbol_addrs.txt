@@ -341,3 +341,5 @@ battlePlayRandomThreeSoundVariant = 0x00409910; // type:func
 battleProcessKindSoundVariant = 0x00407A68; // type:func
 battlePlayGatedIndexedSound = 0x00404074; // type:func
 battleBlendLinkedMatrixDirection = 0x0040969C; // type:func
+battleConfigureKindOneModelEffects = 0x004085F8; // type:func
+battleConfigureKindTwoModelEffects = 0x00408B70; // type:func
