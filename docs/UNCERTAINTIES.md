@@ -17,8 +17,8 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 1030 |
-| Preserved RE_ORIGINAL_QUIRK notes | 281 |
+| Explicit RE_UNKNOWN notes | 1032 |
+| Preserved RE_ORIGINAL_QUIRK notes | 282 |
 | Older comments with uncertainty language | 92 |
 | Documented original-behavior audits | 30 |
 | Assembly-backed functions or data | 790 |
@@ -2930,7 +2930,7 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_motion_004013B0` | function `func_motion_004013B0` | [89](../src/modules/motion.c#L89) |
 | address_function | `func_motion_004017E4` | function `func_motion_004017E4` | [90](../src/modules/motion.c#L90) |
 | address_function | `func_motion_00401B94` | function `func_motion_00401B94` | [91](../src/modules/motion.c#L91) |
-| address_function | `func_motion_004039BC` | function `func_motion_004039BC`, function `motionUpdateModeGatedProperties` | [94](../src/modules/motion.c#L94), [1245](../src/modules/motion.c#L1245) |
+| address_function | `func_motion_004039BC` | function `func_motion_004039BC`, function `motionUpdateModeGatedProperties` | [94](../src/modules/motion.c#L94), [1249](../src/modules/motion.c#L1249) |
 | address_function | `func_motion_00403C04` | function `func_motion_00403C04` | [95](../src/modules/motion.c#L95) |
 | address_function | `func_motion_00403E74` | function `func_motion_00403E74` | [97](../src/modules/motion.c#L97) |
 | address_function | `func_motion_0040424C` | function `func_motion_0040424C` | [98](../src/modules/motion.c#L98) |
@@ -2941,10 +2941,10 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_motion_004057E4` | function `func_motion_004057E4` | [108](../src/modules/motion.c#L108) |
 | address_function | `func_motion_00405B44` | function `func_motion_00405B44` | [109](../src/modules/motion.c#L109) |
 | address_function | `func_motion_00405D7C` | function `func_motion_00405D7C` | [110](../src/modules/motion.c#L110) |
-| address_function | `func_motion_00405E5C` | function `func_motion_00405E5C` | [705](../src/modules/motion.c#L705) |
-| address_function | `func_motion_00405EBC` | function `func_motion_00405EBC`, function `motionBuildBasisAndCallScalarHelper`, function `motionCallScalarHelperWithThreeTransforms` | [137](../src/modules/motion.c#L137), [755](../src/modules/motion.c#L755), [763](../src/modules/motion.c#L763), [770](../src/modules/motion.c#L770), [822](../src/modules/motion.c#L822) |
-| address_function | `func_motion_004066E4` | function `func_motion_004066E4`, function `motionUpdateSharedState` | [141](../src/modules/motion.c#L141), [723](../src/modules/motion.c#L723) |
-| address_function | `func_motion_00406A58` | function `func_motion_00406A58`, function `motionUpdateSharedState` | [142](../src/modules/motion.c#L142), [718](../src/modules/motion.c#L718) |
+| address_function | `func_motion_00405E5C` | function `func_motion_00405E5C` | [709](../src/modules/motion.c#L709) |
+| address_function | `func_motion_00405EBC` | function `func_motion_00405EBC`, function `motionBuildBasisAndCallScalarHelper`, function `motionCallScalarHelperWithThreeTransforms` | [137](../src/modules/motion.c#L137), [759](../src/modules/motion.c#L759), [767](../src/modules/motion.c#L767), [774](../src/modules/motion.c#L774), [826](../src/modules/motion.c#L826) |
+| address_function | `func_motion_004066E4` | function `func_motion_004066E4`, function `motionUpdateSharedState` | [141](../src/modules/motion.c#L141), [727](../src/modules/motion.c#L727) |
+| address_function | `func_motion_00406A58` | function `func_motion_00406A58`, function `motionUpdateSharedState` | [142](../src/modules/motion.c#L142), [722](../src/modules/motion.c#L722) |
 | address_function | `func_motion_00406C30` | function `func_motion_00406C30` | [143](../src/modules/motion.c#L143) |
 | address_function | `func_motion_004077A8` | function `func_motion_004077A8` | [144](../src/modules/motion.c#L144) |
 | address_function | `func_motion_00407B44` | function `func_motion_00407B44` | [145](../src/modules/motion.c#L145) |
@@ -2970,61 +2970,61 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_motion_0040F2EC` | function `func_motion_0040F2EC` | [169](../src/modules/motion.c#L169) |
 | address_function | `func_motion_0040F694` | function `func_motion_0040F694` | [173](../src/modules/motion.c#L173) |
 | address_function | `func_motion_0040FE84` | function `func_motion_0040FE84` | [174](../src/modules/motion.c#L174) |
-| address_function | `func_motion_00411C64` | function `func_motion_00411C64`, function `func_motion_00411C64`, function `motionForwardStateMatrix` | [206](../src/modules/motion.c#L206), [325](../src/modules/motion.c#L325), [1187](../src/modules/motion.c#L1187) |
+| address_function | `func_motion_00411C64` | function `func_motion_00411C64`, function `func_motion_00411C64`, function `motionForwardStateMatrix` | [206](../src/modules/motion.c#L206), [325](../src/modules/motion.c#L325), [1191](../src/modules/motion.c#L1191) |
 | address_function | `func_motion_00412770` | function `func_motion_00412770` | [207](../src/modules/motion.c#L207) |
 | address_function | `func_motion_00412B14` | function `func_motion_00412B14` | [208](../src/modules/motion.c#L208) |
 | address_function | `func_motion_00412E44` | function `func_motion_00412E44` | [251](../src/modules/motion.c#L251) |
-| address_function | `func_motion_004130E4` | function `func_motion_004130E4`, function `motionRunBattleAndHotLavaUpdate` | [311](../src/modules/motion.c#L311), [1006](../src/modules/motion.c#L1006) |
+| address_function | `func_motion_004130E4` | function `func_motion_004130E4`, function `motionRunBattleAndHotLavaUpdate` | [311](../src/modules/motion.c#L311), [1010](../src/modules/motion.c#L1010) |
 | address_function | `func_motion_00413284` | function `func_motion_00413284` | [312](../src/modules/motion.c#L312) |
 | address_function | `func_motion_00413568` | function `func_motion_00413568` | [313](../src/modules/motion.c#L313) |
 | address_function | `func_motion_00414430` | function `func_motion_00414430` | [314](../src/modules/motion.c#L314) |
-| address_function | `func_motion_0041475C` | function `func_motion_0041475C` | [1321](../src/modules/motion.c#L1321) |
-| address_function | `func_motion_00414764` | function `func_motion_00414764` | [1330](../src/modules/motion.c#L1330) |
-| address_function | `func_motion_0041476C` | function `func_motion_0041476C` | [1339](../src/modules/motion.c#L1339) |
+| address_function | `func_motion_0041475C` | function `func_motion_0041475C` | [1325](../src/modules/motion.c#L1325) |
+| address_function | `func_motion_00414764` | function `func_motion_00414764` | [1334](../src/modules/motion.c#L1334) |
+| address_function | `func_motion_0041476C` | function `func_motion_0041476C` | [1343](../src/modules/motion.c#L1343) |
 | address_function | `func_motion_00414774` | function `func_motion_00414774` | [315](../src/modules/motion.c#L315) |
-| address_function | `func_motion_00414A68` | function `func_motion_00414A68` | [1359](../src/modules/motion.c#L1359) |
+| address_function | `func_motion_00414A68` | function `func_motion_00414A68` | [1363](../src/modules/motion.c#L1363) |
 | address_function | `func_motion_00414A70` | function `func_motion_00414A70` | [316](../src/modules/motion.c#L316) |
 | address_function | `func_motion_00414BB0` | function `func_motion_00414BB0` | [317](../src/modules/motion.c#L317) |
 | address_function | `func_motion_004151CC` | function `func_motion_004151CC` | [318](../src/modules/motion.c#L318) |
 | address_function | `func_motion_004154B8` | function `func_motion_004154B8` | [319](../src/modules/motion.c#L319) |
 | address_function | `func_motion_00415724` | function `func_motion_00415724` | [320](../src/modules/motion.c#L320) |
-| address_function | `func_motion_00415870` | function `func_motion_00415870` | [1389](../src/modules/motion.c#L1389) |
+| address_function | `func_motion_00415870` | function `func_motion_00415870` | [1396](../src/modules/motion.c#L1396) |
 | address_function | `func_motion_00415A3C` | function `func_motion_00415A3C` | [324](../src/modules/motion.c#L324) |
-| address_global | `D_80025D6C` | function `motionUpdateModeGatedProperties`, global `D_80025D6C` | [248](../src/modules/motion.c#L248), [1228](../src/modules/motion.c#L1228) |
-| address_global | `D_80025D70` | function `motionApplyGatedModeResponse`, global `D_80025D70` | [37](../src/modules/motion.c#L37), [1133](../src/modules/motion.c#L1133) |
-| address_global | `D_motion_00415DE4` | function `motionComputePlanarRecordAngleResponse` | [18](../src/modules/motion.c#L18), [639](../src/modules/motion.c#L639) |
-| address_global | `D_motion_00415DE8` | function `motionComputePlanarRecordAngleResponse` | [18](../src/modules/motion.c#L18), [645](../src/modules/motion.c#L645) |
-| address_global | `D_motion_00415DEC` | function `motionComputePlanarRecordAngleResponse` | [18](../src/modules/motion.c#L18), [646](../src/modules/motion.c#L646) |
-| address_global | `D_motion_00415DF0` | function `motionComputePlanarRecordAngleResponse` | [19](../src/modules/motion.c#L19), [648](../src/modules/motion.c#L648) |
-| address_global | `D_motion_00415DF4` | function `motionComputePlanarRecordAngleResponse` | [19](../src/modules/motion.c#L19), [648](../src/modules/motion.c#L648) |
-| address_global | `D_motion_00415E20` | function `motionCallScalarHelperWithThreeTransforms` | [133](../src/modules/motion.c#L133), [755](../src/modules/motion.c#L755) |
-| address_global | `D_motion_00415E24` | function `motionCallScalarHelperWithThreeTransforms` | [133](../src/modules/motion.c#L133), [755](../src/modules/motion.c#L755) |
-| address_global | `D_motion_00415E28` | function `motionCallScalarHelperWithThreeTransforms` | [133](../src/modules/motion.c#L133), [763](../src/modules/motion.c#L763) |
-| address_global | `D_motion_00415E2C` | function `motionCallScalarHelperWithThreeTransforms` | [134](../src/modules/motion.c#L134), [763](../src/modules/motion.c#L763) |
-| address_global | `D_motion_00415E30` | function `motionCallScalarHelperWithThreeTransforms` | [134](../src/modules/motion.c#L134), [770](../src/modules/motion.c#L770) |
-| address_global | `D_motion_00415E34` | function `motionCallScalarHelperWithThreeTransforms` | [134](../src/modules/motion.c#L134), [770](../src/modules/motion.c#L770) |
-| address_global | `D_motion_00415E38` | function `motionBuildBasisAndCallScalarHelper`, global `D_motion_00415E38` | [135](../src/modules/motion.c#L135), [802](../src/modules/motion.c#L802) |
-| address_global | `D_motion_00415E40` | function `motionBuildBasisAndCallScalarHelper` | [136](../src/modules/motion.c#L136), [819](../src/modules/motion.c#L819), [820](../src/modules/motion.c#L820) |
-| address_global | `D_motion_00415E44` | function `motionBuildBasisAndCallScalarHelper` | [136](../src/modules/motion.c#L136), [822](../src/modules/motion.c#L822) |
-| address_global | `D_motion_00415F84` | function `motionAccumulateTransformedConfiguredVector` | [33](../src/modules/motion.c#L33), [1081](../src/modules/motion.c#L1081) |
-| address_global | `D_motion_00415F88` | function `motionAccumulateTransformedConfiguredVector` | [33](../src/modules/motion.c#L33), [1083](../src/modules/motion.c#L1083) |
-| address_global | `D_motion_00415F8C` | function `motionApplyGatedModeResponse`, global `D_motion_00415F8C` | [36](../src/modules/motion.c#L36), [1125](../src/modules/motion.c#L1125) |
-| address_global | `D_motion_0041607C` | function `motionTryPlayExplosionVoice`, global `D_motion_0041607C` | [1417](../src/modules/motion.c#L1417), [1428](../src/modules/motion.c#L1428) |
-| address_global | `D_motion_00416080` | function `motionApplyConditionalCorrection` | [67](../src/modules/motion.c#L67), [1059](../src/modules/motion.c#L1059) |
-| address_global | `D_motion_00416084` | function `motionApplyConditionalCorrection` | [67](../src/modules/motion.c#L67), [1057](../src/modules/motion.c#L1057), [1058](../src/modules/motion.c#L1058), [1059](../src/modules/motion.c#L1059) |
-| address_global | `D_motion_00416088` | function `motionApplyConditionalCorrection` | [67](../src/modules/motion.c#L67), [1056](../src/modules/motion.c#L1056) |
-| address_global | `D_motion_00416090` | function `motionApplyConditionalCorrection` | [67](../src/modules/motion.c#L67), [1056](../src/modules/motion.c#L1056) |
-| address_global | `D_motion_004160A0` | function `motionTryPlayHotLavaVoice`, global `D_motion_004160A0` | [1397](../src/modules/motion.c#L1397), [1406](../src/modules/motion.c#L1406), [1408](../src/modules/motion.c#L1408) |
-| address_global | `D_motion_004160A4` | function `motionTryPlayExplosionVoice`, global `D_motion_004160A4` | [1418](../src/modules/motion.c#L1418), [1427](../src/modules/motion.c#L1427), [1429](../src/modules/motion.c#L1429) |
-| address_global | `D_motion_004163A8` | function `motionEvaluateSelectedGraph`, global `D_motion_004163A8` | [77](../src/modules/motion.c#L77), [1379](../src/modules/motion.c#L1379) |
-| address_global | `D_motion_0041644C` | function `motionEvaluateSelectedGraph`, global `D_motion_0041644C` | [78](../src/modules/motion.c#L78), [1381](../src/modules/motion.c#L1381) |
-| address_global | `D_motion_00416A64` | function `motionApplyPropertyAndRumbleSequence`, global `D_motion_00416A64` | [308](../src/modules/motion.c#L308), [1283](../src/modules/motion.c#L1283) |
-| address_global | `D_motion_00416A84` | function `motionApplyPropertyAndRumbleSequence`, function `motionUpdateModeGatedProperties`, global `D_motion_00416A84`, global `D_motion_00416A84` | [245](../src/modules/motion.c#L245), [302](../src/modules/motion.c#L302), [1229](../src/modules/motion.c#L1229), [1232](../src/modules/motion.c#L1232), [1241](../src/modules/motion.c#L1241), [1273](../src/modules/motion.c#L1273), [1286](../src/modules/motion.c#L1286) |
+| address_global | `D_80025D6C` | function `motionUpdateModeGatedProperties`, global `D_80025D6C` | [248](../src/modules/motion.c#L248), [1232](../src/modules/motion.c#L1232) |
+| address_global | `D_80025D70` | function `motionApplyGatedModeResponse`, global `D_80025D70` | [37](../src/modules/motion.c#L37), [1137](../src/modules/motion.c#L1137) |
+| address_global | `D_motion_00415DE4` | function `motionComputePlanarRecordAngleResponse` | [18](../src/modules/motion.c#L18), [643](../src/modules/motion.c#L643) |
+| address_global | `D_motion_00415DE8` | function `motionComputePlanarRecordAngleResponse` | [18](../src/modules/motion.c#L18), [649](../src/modules/motion.c#L649) |
+| address_global | `D_motion_00415DEC` | function `motionComputePlanarRecordAngleResponse` | [18](../src/modules/motion.c#L18), [650](../src/modules/motion.c#L650) |
+| address_global | `D_motion_00415DF0` | function `motionComputePlanarRecordAngleResponse` | [19](../src/modules/motion.c#L19), [652](../src/modules/motion.c#L652) |
+| address_global | `D_motion_00415DF4` | function `motionComputePlanarRecordAngleResponse` | [19](../src/modules/motion.c#L19), [652](../src/modules/motion.c#L652) |
+| address_global | `D_motion_00415E20` | function `motionCallScalarHelperWithThreeTransforms` | [133](../src/modules/motion.c#L133), [759](../src/modules/motion.c#L759) |
+| address_global | `D_motion_00415E24` | function `motionCallScalarHelperWithThreeTransforms` | [133](../src/modules/motion.c#L133), [759](../src/modules/motion.c#L759) |
+| address_global | `D_motion_00415E28` | function `motionCallScalarHelperWithThreeTransforms` | [133](../src/modules/motion.c#L133), [767](../src/modules/motion.c#L767) |
+| address_global | `D_motion_00415E2C` | function `motionCallScalarHelperWithThreeTransforms` | [134](../src/modules/motion.c#L134), [767](../src/modules/motion.c#L767) |
+| address_global | `D_motion_00415E30` | function `motionCallScalarHelperWithThreeTransforms` | [134](../src/modules/motion.c#L134), [774](../src/modules/motion.c#L774) |
+| address_global | `D_motion_00415E34` | function `motionCallScalarHelperWithThreeTransforms` | [134](../src/modules/motion.c#L134), [774](../src/modules/motion.c#L774) |
+| address_global | `D_motion_00415E38` | function `motionBuildBasisAndCallScalarHelper`, global `D_motion_00415E38` | [135](../src/modules/motion.c#L135), [806](../src/modules/motion.c#L806) |
+| address_global | `D_motion_00415E40` | function `motionBuildBasisAndCallScalarHelper` | [136](../src/modules/motion.c#L136), [823](../src/modules/motion.c#L823), [824](../src/modules/motion.c#L824) |
+| address_global | `D_motion_00415E44` | function `motionBuildBasisAndCallScalarHelper` | [136](../src/modules/motion.c#L136), [826](../src/modules/motion.c#L826) |
+| address_global | `D_motion_00415F84` | function `motionAccumulateTransformedConfiguredVector` | [33](../src/modules/motion.c#L33), [1085](../src/modules/motion.c#L1085) |
+| address_global | `D_motion_00415F88` | function `motionAccumulateTransformedConfiguredVector` | [33](../src/modules/motion.c#L33), [1087](../src/modules/motion.c#L1087) |
+| address_global | `D_motion_00415F8C` | function `motionApplyGatedModeResponse`, global `D_motion_00415F8C` | [36](../src/modules/motion.c#L36), [1129](../src/modules/motion.c#L1129) |
+| address_global | `D_motion_0041607C` | function `motionTryPlayExplosionVoice`, global `D_motion_0041607C` | [1437](../src/modules/motion.c#L1437), [1448](../src/modules/motion.c#L1448) |
+| address_global | `D_motion_00416080` | function `motionApplyConditionalCorrection` | [67](../src/modules/motion.c#L67), [1063](../src/modules/motion.c#L1063) |
+| address_global | `D_motion_00416084` | function `motionApplyConditionalCorrection` | [67](../src/modules/motion.c#L67), [1061](../src/modules/motion.c#L1061), [1062](../src/modules/motion.c#L1062), [1063](../src/modules/motion.c#L1063) |
+| address_global | `D_motion_00416088` | function `motionApplyConditionalCorrection` | [67](../src/modules/motion.c#L67), [1060](../src/modules/motion.c#L1060) |
+| address_global | `D_motion_00416090` | function `motionApplyConditionalCorrection` | [67](../src/modules/motion.c#L67), [1060](../src/modules/motion.c#L1060) |
+| address_global | `D_motion_004160A0` | function `motionTryPlayHotLavaVoice`, global `D_motion_004160A0` | [1410](../src/modules/motion.c#L1410), [1419](../src/modules/motion.c#L1419), [1421](../src/modules/motion.c#L1421) |
+| address_global | `D_motion_004160A4` | function `motionTryPlayExplosionVoice`, global `D_motion_004160A4` | [1438](../src/modules/motion.c#L1438), [1447](../src/modules/motion.c#L1447), [1449](../src/modules/motion.c#L1449) |
+| address_global | `D_motion_004163A8` | function `motionEvaluateSelectedGraph`, global `D_motion_004163A8` | [77](../src/modules/motion.c#L77), [1386](../src/modules/motion.c#L1386) |
+| address_global | `D_motion_0041644C` | function `motionEvaluateSelectedGraph`, global `D_motion_0041644C` | [78](../src/modules/motion.c#L78), [1388](../src/modules/motion.c#L1388) |
+| address_global | `D_motion_00416A64` | function `motionApplyPropertyAndRumbleSequence`, global `D_motion_00416A64` | [308](../src/modules/motion.c#L308), [1287](../src/modules/motion.c#L1287) |
+| address_global | `D_motion_00416A84` | function `motionApplyPropertyAndRumbleSequence`, function `motionUpdateModeGatedProperties`, global `D_motion_00416A84`, global `D_motion_00416A84` | [245](../src/modules/motion.c#L245), [302](../src/modules/motion.c#L302), [1233](../src/modules/motion.c#L1233), [1236](../src/modules/motion.c#L1236), [1245](../src/modules/motion.c#L1245), [1277](../src/modules/motion.c#L1277), [1290](../src/modules/motion.c#L1290) |
 | address_global | `D_motion_00416A88` | function `motionClearValueForFlaggedLookup`, global `D_motion_00416A88` | [50](../src/modules/motion.c#L50), [535](../src/modules/motion.c#L535), [542](../src/modules/motion.c#L542) |
-| address_global | `D_motion_00416AB8` | function `motionUpdateSharedState`, global `D_motion_00416AB8` | [82](../src/modules/motion.c#L82), [720](../src/modules/motion.c#L720) |
-| address_global | `D_motion_00416AF0` | function `motionTryPlayHotLavaVoice`, function `motionUnloadModulesAndStopEmitters`, global `D_motion_00416AF0` | [333](../src/modules/motion.c#L333), [338](../src/modules/motion.c#L338), [1407](../src/modules/motion.c#L1407) |
-| address_global | `D_motion_00416AF1` | function `motionTryPlayExplosionVoice`, function `motionUnloadModulesAndStopEmitters`, global `D_motion_00416AF1` | [334](../src/modules/motion.c#L334), [339](../src/modules/motion.c#L339), [1428](../src/modules/motion.c#L1428) |
-| address_global | `D_motion_00416B10` | function `motionUpdateSharedState`, global `D_motion_00416B10` | [81](../src/modules/motion.c#L81), [714](../src/modules/motion.c#L714), [717](../src/modules/motion.c#L717), [718](../src/modules/motion.c#L718), [723](../src/modules/motion.c#L723) |
+| address_global | `D_motion_00416AB8` | function `motionUpdateSharedState`, global `D_motion_00416AB8` | [82](../src/modules/motion.c#L82), [724](../src/modules/motion.c#L724) |
+| address_global | `D_motion_00416AF0` | function `motionTryPlayHotLavaVoice`, function `motionUnloadModulesAndStopEmitters`, global `D_motion_00416AF0` | [333](../src/modules/motion.c#L333), [338](../src/modules/motion.c#L338), [1420](../src/modules/motion.c#L1420) |
+| address_global | `D_motion_00416AF1` | function `motionTryPlayExplosionVoice`, function `motionUnloadModulesAndStopEmitters`, global `D_motion_00416AF1` | [334](../src/modules/motion.c#L334), [339](../src/modules/motion.c#L339), [1448](../src/modules/motion.c#L1448) |
+| address_global | `D_motion_00416B10` | function `motionUpdateSharedState`, global `D_motion_00416B10` | [81](../src/modules/motion.c#L81), [718](../src/modules/motion.c#L718), [721](../src/modules/motion.c#L721), [722](../src/modules/motion.c#L722), [727](../src/modules/motion.c#L727) |
 | assembly | `__entrypoint_func_motion_400000` | — | [326](../src/modules/motion.c#L326) |
 | assembly | `func_motion_004002EC` | — | [343](../src/modules/motion.c#L343) |
 | assembly | `func_motion_00400748` | — | [345](../src/modules/motion.c#L345) |
@@ -3042,91 +3042,93 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_motion_0040456C` | — | [586](../src/modules/motion.c#L586) |
 | assembly | `func_motion_00404868` | — | [596](../src/modules/motion.c#L596) |
 | assembly | `func_motion_00404C24` | — | [605](../src/modules/motion.c#L605) |
-| assembly | `func_motion_004057E4` | — | [694](../src/modules/motion.c#L694) |
-| assembly | `func_motion_00405B44` | — | [696](../src/modules/motion.c#L696) |
-| assembly | `func_motion_00405D7C` | — | [698](../src/modules/motion.c#L698) |
-| assembly | `func_motion_00405EBC` | — | [727](../src/modules/motion.c#L727) |
-| assembly | `func_motion_004066E4` | — | [851](../src/modules/motion.c#L851) |
-| assembly | `func_motion_00406A58` | — | [853](../src/modules/motion.c#L853) |
-| assembly | `func_motion_00406C30` | — | [855](../src/modules/motion.c#L855) |
-| assembly | `func_motion_004077A8` | — | [881](../src/modules/motion.c#L881) |
-| assembly | `func_motion_00407B44` | — | [883](../src/modules/motion.c#L883) |
-| assembly | `func_motion_00407C10` | — | [907](../src/modules/motion.c#L907) |
-| assembly | `func_motion_00407FC0` | — | [927](../src/modules/motion.c#L927) |
-| assembly | `func_motion_00408254` | — | [929](../src/modules/motion.c#L929) |
-| assembly | `func_motion_004087DC` | — | [931](../src/modules/motion.c#L931) |
-| assembly | `func_motion_00408940` | — | [933](../src/modules/motion.c#L933) |
-| assembly | `func_motion_00408A84` | — | [935](../src/modules/motion.c#L935) |
-| assembly | `func_motion_00408FD4` | — | [953](../src/modules/motion.c#L953) |
-| assembly | `func_motion_00409734` | — | [975](../src/modules/motion.c#L975) |
-| assembly | `func_motion_004098B8` | — | [996](../src/modules/motion.c#L996) |
-| assembly | `func_motion_00409B3C` | — | [1011](../src/modules/motion.c#L1011) |
-| assembly | `func_motion_00409C68` | — | [1013](../src/modules/motion.c#L1013) |
-| assembly | `func_motion_0040A3CC` | — | [1015](../src/modules/motion.c#L1015) |
-| assembly | `func_motion_0040B4EC` | — | [1017](../src/modules/motion.c#L1017) |
-| assembly | `func_motion_0040B7B8` | — | [1019](../src/modules/motion.c#L1019) |
-| assembly | `func_motion_0040BBE0` | — | [1021](../src/modules/motion.c#L1021) |
-| assembly | `func_motion_0040BFE0` | — | [1023](../src/modules/motion.c#L1023) |
-| assembly | `func_motion_0040C7DC` | — | [1025](../src/modules/motion.c#L1025) |
-| assembly | `func_motion_0040C8A0` | — | [1027](../src/modules/motion.c#L1027) |
-| assembly | `func_motion_0040E7BC` | — | [1029](../src/modules/motion.c#L1029) |
-| assembly | `func_motion_0040F2EC` | — | [1048](../src/modules/motion.c#L1048) |
-| assembly | `func_motion_0040F694` | — | [1146](../src/modules/motion.c#L1146) |
-| assembly | `func_motion_0040FE84` | — | [1148](../src/modules/motion.c#L1148) |
-| assembly | `func_motion_00411C64` | — | [1181](../src/modules/motion.c#L1181) |
-| assembly | `func_motion_00412770` | — | [1201](../src/modules/motion.c#L1201) |
-| assembly | `func_motion_00412B14` | — | [1203](../src/modules/motion.c#L1203) |
-| assembly | `func_motion_00412E44` | — | [1250](../src/modules/motion.c#L1250) |
-| assembly | `func_motion_004130E4` | — | [1291](../src/modules/motion.c#L1291) |
-| assembly | `func_motion_00413284` | — | [1301](../src/modules/motion.c#L1301) |
-| assembly | `func_motion_00413568` | — | [1303](../src/modules/motion.c#L1303) |
-| assembly | `func_motion_00414430` | — | [1314](../src/modules/motion.c#L1314) |
-| assembly | `func_motion_00414774` | — | [1352](../src/modules/motion.c#L1352) |
-| assembly | `func_motion_00414A70` | — | [1363](../src/modules/motion.c#L1363) |
-| assembly | `func_motion_00414BB0` | — | [1365](../src/modules/motion.c#L1365) |
-| assembly | `func_motion_004151CC` | — | [1367](../src/modules/motion.c#L1367) |
-| assembly | `func_motion_004154B8` | — | [1369](../src/modules/motion.c#L1369) |
-| assembly | `func_motion_00415724` | — | [1371](../src/modules/motion.c#L1371) |
-| assembly | `func_motion_00415A3C` | — | [1435](../src/modules/motion.c#L1435) |
+| assembly | `func_motion_004057E4` | — | [698](../src/modules/motion.c#L698) |
+| assembly | `func_motion_00405B44` | — | [700](../src/modules/motion.c#L700) |
+| assembly | `func_motion_00405D7C` | — | [702](../src/modules/motion.c#L702) |
+| assembly | `func_motion_00405EBC` | — | [731](../src/modules/motion.c#L731) |
+| assembly | `func_motion_004066E4` | — | [855](../src/modules/motion.c#L855) |
+| assembly | `func_motion_00406A58` | — | [857](../src/modules/motion.c#L857) |
+| assembly | `func_motion_00406C30` | — | [859](../src/modules/motion.c#L859) |
+| assembly | `func_motion_004077A8` | — | [885](../src/modules/motion.c#L885) |
+| assembly | `func_motion_00407B44` | — | [887](../src/modules/motion.c#L887) |
+| assembly | `func_motion_00407C10` | — | [911](../src/modules/motion.c#L911) |
+| assembly | `func_motion_00407FC0` | — | [931](../src/modules/motion.c#L931) |
+| assembly | `func_motion_00408254` | — | [933](../src/modules/motion.c#L933) |
+| assembly | `func_motion_004087DC` | — | [935](../src/modules/motion.c#L935) |
+| assembly | `func_motion_00408940` | — | [937](../src/modules/motion.c#L937) |
+| assembly | `func_motion_00408A84` | — | [939](../src/modules/motion.c#L939) |
+| assembly | `func_motion_00408FD4` | — | [957](../src/modules/motion.c#L957) |
+| assembly | `func_motion_00409734` | — | [979](../src/modules/motion.c#L979) |
+| assembly | `func_motion_004098B8` | — | [1000](../src/modules/motion.c#L1000) |
+| assembly | `func_motion_00409B3C` | — | [1015](../src/modules/motion.c#L1015) |
+| assembly | `func_motion_00409C68` | — | [1017](../src/modules/motion.c#L1017) |
+| assembly | `func_motion_0040A3CC` | — | [1019](../src/modules/motion.c#L1019) |
+| assembly | `func_motion_0040B4EC` | — | [1021](../src/modules/motion.c#L1021) |
+| assembly | `func_motion_0040B7B8` | — | [1023](../src/modules/motion.c#L1023) |
+| assembly | `func_motion_0040BBE0` | — | [1025](../src/modules/motion.c#L1025) |
+| assembly | `func_motion_0040BFE0` | — | [1027](../src/modules/motion.c#L1027) |
+| assembly | `func_motion_0040C7DC` | — | [1029](../src/modules/motion.c#L1029) |
+| assembly | `func_motion_0040C8A0` | — | [1031](../src/modules/motion.c#L1031) |
+| assembly | `func_motion_0040E7BC` | — | [1033](../src/modules/motion.c#L1033) |
+| assembly | `func_motion_0040F2EC` | — | [1052](../src/modules/motion.c#L1052) |
+| assembly | `func_motion_0040F694` | — | [1150](../src/modules/motion.c#L1150) |
+| assembly | `func_motion_0040FE84` | — | [1152](../src/modules/motion.c#L1152) |
+| assembly | `func_motion_00411C64` | — | [1185](../src/modules/motion.c#L1185) |
+| assembly | `func_motion_00412770` | — | [1205](../src/modules/motion.c#L1205) |
+| assembly | `func_motion_00412B14` | — | [1207](../src/modules/motion.c#L1207) |
+| assembly | `func_motion_00412E44` | — | [1254](../src/modules/motion.c#L1254) |
+| assembly | `func_motion_004130E4` | — | [1295](../src/modules/motion.c#L1295) |
+| assembly | `func_motion_00413284` | — | [1305](../src/modules/motion.c#L1305) |
+| assembly | `func_motion_00413568` | — | [1307](../src/modules/motion.c#L1307) |
+| assembly | `func_motion_00414430` | — | [1318](../src/modules/motion.c#L1318) |
+| assembly | `func_motion_00414774` | — | [1356](../src/modules/motion.c#L1356) |
+| assembly | `func_motion_00414A70` | — | [1367](../src/modules/motion.c#L1367) |
+| assembly | `func_motion_00414BB0` | — | [1369](../src/modules/motion.c#L1369) |
+| assembly | `func_motion_004151CC` | — | [1371](../src/modules/motion.c#L1371) |
+| assembly | `func_motion_004154B8` | — | [1373](../src/modules/motion.c#L1373) |
+| assembly | `func_motion_00415724` | — | [1375](../src/modules/motion.c#L1375) |
+| assembly | `func_motion_00415A3C` | — | [1455](../src/modules/motion.c#L1455) |
 | explicit_unknown | `Advance scalar 0x694 toward the graph-derived target; optional debug * assist preserves separate ordered magnitude/sign gates. Native averaging * starts with positive float zero...` | assembly `func_motion_00403E74` | [546](../src/modules/motion.c#L546) |
-| explicit_unknown | `Apply the original dynamic/object flags, CARANIM properties and three * rumble merges, then forward CAM tag18 and configure the returned PIECE object. * RE_ORIGINAL_QUIRK: the P...` | function `motionApplyPropertyAndRumbleSequence` | [1254](../src/modules/motion.c#L1254) |
-| explicit_unknown | `Apply three ordered transforms and call the scalar helper after each. * Preserve separate original RODATA loads and the signed16 conversions of * 255*weight and 255-(255*weight)...` | function `motionCallScalarHelperWithThreeTransforms` | [731](../src/modules/motion.c#L731) |
-| explicit_unknown | `Attempt pending Hot Lava speech on random choice 3 with priority 0x7FFF; playback value is 0x7A120. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: ...` | global `D_motion_004160A0` | [1395](../src/modules/motion.c#L1395) |
-| explicit_unknown | `Attempt pending explosion speech on random choice 3 with its scale; priority 0x7FFF, playback value 0x1F4. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UN...` | global `D_motion_0041607C` | [1415](../src/modules/motion.c#L1415) |
+| explicit_unknown | `Any nonzero selector chooses D_motion_004163A8; zero chooses * D_motion_0041644C. Forward the input to the original curve evaluator. * RE_UNKNOWN: input units/range, graph write...` | function `motionEvaluateSelectedGraph` | [1378](../src/modules/motion.c#L1378) |
+| explicit_unknown | `Apply the original dynamic/object flags, CARANIM properties and three * rumble merges, then forward CAM tag18 and configure the returned PIECE object. * RE_ORIGINAL_QUIRK: the P...` | function `motionApplyPropertyAndRumbleSequence` | [1258](../src/modules/motion.c#L1258) |
+| explicit_unknown | `Apply three ordered transforms and call the scalar helper after each. * Preserve separate original RODATA loads and the signed16 conversions of * 255*weight and 255-(255*weight)...` | function `motionCallScalarHelperWithThreeTransforms` | [735](../src/modules/motion.c#L735) |
 | explicit_unknown | `Blend raw scalar fields using a snapshotted player-two handicap selector. * Mode 4 leaves the fields unchanged; mode 3 uses the computed limit directly. * The original loads the...` | assembly `func_motion_00400D74` | [347](../src/modules/motion.c#L347) |
-| explicit_unknown | `Bound selected paired scalars, then advance them through the original * sqrt, cosine, sine and MISC 0xDC factor callbacks in that order. Full-word * selectors stride 0x10; recor...` | assembly `func_motion_00412770` | [1191](../src/modules/motion.c#L1191) |
-| explicit_unknown | `Build a basis in one matrix, preserving its vector-row aliases and * translation copied from input14. Cross-product order depends on the * ordered magnitude test against the ori...` | function `motionBuildBasisAndCallScalarHelper` | [778](../src/modules/motion.c#L778) |
-| explicit_unknown | `Dispatch original record kinds 1/2/4/8/24, then apply indexed/dot gates. * Native table entries and providers establish the callback arguments, not * physical meanings. Entry re...` | assembly `func_motion_004077A8` | [857](../src/modules/motion.c#L857) |
-| explicit_unknown | `Dispatch record kinds and process a selected three-float output. * Native SMACK10/14 return record pointers; SMACK0C consumes the output and * a fresh state+126C pointer. Earlie...` | assembly `func_motion_00407C10` | [885](../src/modules/motion.c#L885) |
-| explicit_unknown | `Dispatch record kinds and transform state+984 through matrix+5E8. * Native FMTXB0 writes three floats for SMACK0C, which receives a fresh * state+126C pointer. Earlier context/r...` | assembly `func_motion_00407FC0` | [909](../src/modules/motion.c#L909) |
-| explicit_unknown | `Draw background, graph-derived red/green bars, direct-value blue bar and * a white marker from saved input 0x6D4. Preserve single arithmetic grouping, * truncating signed coordi...` | assembly `func_motion_00414774` | [1343](../src/modules/motion.c#L1343) |
+| explicit_unknown | `Bound selected paired scalars, then advance them through the original * sqrt, cosine, sine and MISC 0xDC factor callbacks in that order. Full-word * selectors stride 0x10; recor...` | assembly `func_motion_00412770` | [1195](../src/modules/motion.c#L1195) |
+| explicit_unknown | `Build a basis in one matrix, preserving its vector-row aliases and * translation copied from input14. Cross-product order depends on the * ordered magnitude test against the ori...` | function `motionBuildBasisAndCallScalarHelper` | [782](../src/modules/motion.c#L782) |
+| explicit_unknown | `Dispatch original record kinds 1/2/4/8/24, then apply indexed/dot gates. * Native table entries and providers establish the callback arguments, not * physical meanings. Entry re...` | assembly `func_motion_004077A8` | [861](../src/modules/motion.c#L861) |
+| explicit_unknown | `Dispatch record kinds and process a selected three-float output. * Native SMACK10/14 return record pointers; SMACK0C consumes the output and * a fresh state+126C pointer. Earlie...` | assembly `func_motion_00407C10` | [889](../src/modules/motion.c#L889) |
+| explicit_unknown | `Dispatch record kinds and transform state+984 through matrix+5E8. * Native FMTXB0 writes three floats for SMACK0C, which receives a fresh * state+126C pointer. Earlier context/r...` | assembly `func_motion_00407FC0` | [913](../src/modules/motion.c#L913) |
+| explicit_unknown | `Draw background, graph-derived red/green bars, direct-value blue bar and * a white marker from saved input 0x6D4. Preserve single arithmetic grouping, * truncating signed coordi...` | assembly `func_motion_00414774` | [1347](../src/modules/motion.c#L1347) |
 | explicit_unknown | `Find the primary record for a key and optionally query the AI module. * Clear output halfword 0xA when this state is flagged and either lookup * succeeds, or when the primary re...` | function `motionClearValueForFlaggedLookup` | [529](../src/modules/motion.c#L529) |
 | explicit_unknown | `Focused original consumers only. RE_UNKNOWN: complete input allocation, * historical local/parameter declarations and callback ownership are unproved.` | — | [112](../src/modules/motion.c#L112) |
 | explicit_unknown | `Focused views of the original isct query input and copied result span. * The native record copier transfers exactly 0x58 bytes. RE_UNKNOWN: these * views do not establish histor...` | type `MotionCollisionInput` | [175](../src/modules/motion.c#L175) |
-| explicit_unknown | `Forward state, 1, embedded matrix 0x5E8 and 0 to the original helper. * RE_UNKNOWN: helper retention and mode meanings require its body and callers.` | function `motionForwardStateMatrix` | [1184](../src/modules/motion.c#L1184) |
-| explicit_unknown | `From the planar record's X/Y pair, compute a normalized pair angle, * apply the shared angle scale and fold degrees through the misc exports. * Below the first ordered Y-magnitu...` | function `motionComputePlanarRecordAngleResponse` | [625](../src/modules/motion.c#L625) |
-| explicit_unknown | `Gate scaling of scalar 0x988 by count 0x10E0, mode 0xA3C, vector dots * and signed kinds 0xA40/0xA68. Original UVFV 0x18 is a three-single dot * leaf; preserve repeated calls an...` | assembly `func_motion_00414430` | [1305](../src/modules/motion.c#L1305) |
-| explicit_unknown | `In game state six, forward the stored word to BATTLE's identity scan. * Always call helper130E4(state, state+618, 1), then the voice helper. * RE_UNKNOWN: identity/phase roles a...` | function `motionRunBattleAndHotLavaUpdate` | [999](../src/modules/motion.c#L999) |
-| explicit_unknown | `Initialize the shared sound handle before checking byte70E, then try a * SPLASH acquisition while that byte is zero. Copy input XYZ to matrix5E8 * translation row618; rumble run...` | assembly `func_motion_004098B8` | [977](../src/modules/motion.c#L977) |
-| explicit_unknown | `Original cross/add/transform and dot products update phase 0x8D4 and * component 0x998; 0x988/0x998 overlap vector 0x984.y / vector 0x990.z. * RE_ORIGINAL_QUIRK: caller passes 1...` | assembly `func_motion_00413284` | [1293](../src/modules/motion.c#L1293) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_motion_00405E5C`, function `func_motion_0041475C`, function `func_motion_00414764`, function `func_motion_0041476C`, function `func_motion_00414A68` | [701](../src/modules/motion.c#L701), [1317](../src/modules/motion.c#L1317), [1326](../src/modules/motion.c#L1326), [1335](../src/modules/motion.c#L1335), [1355](../src/modules/motion.c#L1355) |
+| explicit_unknown | `For a nonzero speech setting, set volume, then truncate randomScalar*4. * Only choice three with pending word D_motion_004160A0 set submits Hot Lava * speech with priority 0x7FF...` | global `D_motion_004160A0` | [1402](../src/modules/motion.c#L1402) |
+| explicit_unknown | `For a nonzero speech setting, set volume, then truncate randomScalar*4. * Only choice three with pending word D_motion_004160A4 set submits explosion * speech. Scale the getter ...` | global `D_motion_0041607C` | [1428](../src/modules/motion.c#L1428) |
+| explicit_unknown | `Forward state, 1, embedded matrix 0x5E8 and 0 to the original helper. * RE_UNKNOWN: helper retention and mode meanings require its body and callers.` | function `motionForwardStateMatrix` | [1188](../src/modules/motion.c#L1188) |
+| explicit_unknown | `From the planar record's X/Y pair, compute a normalized pair angle, * apply the shared angle scale and fold degrees through the misc exports. * Below the first ordered Y-magnitu...` | function `motionComputePlanarRecordAngleResponse` | [629](../src/modules/motion.c#L629) |
+| explicit_unknown | `Gate scaling of scalar 0x988 by count 0x10E0, mode 0xA3C, vector dots * and signed kinds 0xA40/0xA68. Original UVFV 0x18 is a three-single dot * leaf; preserve repeated calls an...` | assembly `func_motion_00414430` | [1309](../src/modules/motion.c#L1309) |
+| explicit_unknown | `In game state six, forward the stored word to BATTLE's identity scan. * Always call helper130E4(state, state+618, 1), then the voice helper. * RE_UNKNOWN: identity/phase roles a...` | function `motionRunBattleAndHotLavaUpdate` | [1003](../src/modules/motion.c#L1003) |
+| explicit_unknown | `Initialize the shared sound handle before checking byte70E, then try a * SPLASH acquisition while that byte is zero. Copy input XYZ to matrix5E8 * translation row618; rumble run...` | assembly `func_motion_004098B8` | [981](../src/modules/motion.c#L981) |
+| explicit_unknown | `Original cross/add/transform and dot products update phase 0x8D4 and * component 0x998; 0x988/0x998 overlap vector 0x984.y / vector 0x990.z. * RE_ORIGINAL_QUIRK: caller passes 1...` | assembly `func_motion_00413284` | [1297](../src/modules/motion.c#L1297) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_motion_00405E5C`, function `func_motion_0041475C`, function `func_motion_00414764`, function `func_motion_0041476C`, function `func_motion_00414A68` | [705](../src/modules/motion.c#L705), [1321](../src/modules/motion.c#L1321), [1330](../src/modules/motion.c#L1330), [1339](../src/modules/motion.c#L1339), [1359](../src/modules/motion.c#L1359) |
 | explicit_unknown | `Preserve the captured context126C across the optional TDATA query path or * indexed-history path, then CARANIM property10, byte111/value114 stores, * optional AI4C word store, d...` | assembly `func_motion_004039BC` | [474](../src/modules/motion.c#L474) |
 | explicit_unknown | `Preserve the positive value714 copy/reset group and the byte111 gate. * Modes 5/7 clear value114 and byte111, optionally call the AI word store, * then return without a CARANIM ...` | assembly `func_motion_00403C04` | [498](../src/modules/motion.c#L498) |
-| explicit_unknown | `Query between matrix translations and retain the original drawing calls. * Original matrix-row aliases, three single-precision component divisions, * MISC110 returned scalar, qu...` | assembly `func_motion_004066E4` | [828](../src/modules/motion.c#L828) |
+| explicit_unknown | `Query between matrix translations and retain the original drawing calls. * Original matrix-row aliases, three single-precision component divisions, * MISC110 returned scalar, qu...` | assembly `func_motion_004066E4` | [832](../src/modules/motion.c#L832) |
 | explicit_unknown | `Query four 0x130-stride sample views after stores at 0x12A/0x12E/0x12C. * ISCT 0xA4 mode 2 outputs key/scalar/XYZ; misses or loaded texture flag 4 * trigger ISCT 0xA0 mask 0xFE,...` | assembly `func_motion_004017E4` | [392](../src/modules/motion.c#L392) |
-| explicit_unknown | `Query the descriptor's dynamic word, forward CAM tag 18 and copy the two * vectors in their original order; the store at 10C4 also occurs when signed E50=-1. * Preserve the orde...` | assembly `func_motion_00409734` | [955](../src/modules/motion.c#L955) |
-| explicit_unknown | `RE_UNKNOWN: The s32 snapshot preserves promoted byte values; original lexical local type/order and complete historical allocation types remain unproved. * Runtime module availab...` | — | [1206](../src/modules/motion.c#L1206) |
-| explicit_unknown | `Read the unsigned halfword at state offset 0x70C without modifying the caller object. RE_UNKNOWN: the field role requires its writers and consumers; no status or identifier mean...` | function `func_motion_00415870` | [1388](../src/modules/motion.c#L1388) |
+| explicit_unknown | `Query the descriptor's dynamic word, forward CAM tag 18 and copy the two * vectors in their original order; the store at 10C4 also occurs when signed E50=-1. * Preserve the orde...` | assembly `func_motion_00409734` | [959](../src/modules/motion.c#L959) |
+| explicit_unknown | `RE_UNKNOWN: The s32 snapshot preserves promoted byte values; original lexical local type/order and complete historical allocation types remain unproved. * Runtime module availab...` | — | [1210](../src/modules/motion.c#L1210) |
+| explicit_unknown | `Read the unsigned halfword at state offset 0x70C without modifying the caller object. RE_UNKNOWN: the field role requires its writers and consumers; no status or identifier mean...` | function `func_motion_00415870` | [1395](../src/modules/motion.c#L1395) |
 | explicit_unknown | `Reset scalar/history state, build matrix5E8, then copy the source vector * to618 and ten 24-byte history rows with a fresh settings7C read per row. * Matrix5E8 and vector618 ove...` | assembly `func_motion_00400F54` | [365](../src/modules/motion.c#L365) |
-| explicit_unknown | `Return one for a successful query whose final kind is not four. * Kind one is reclassified as four when its terrain triangle resolves to * loaded texture byte 0x27 equal to four...` | function `motionQueryHasNonExcludedKind` | [1152](../src/modules/motion.c#L1152) |
+| explicit_unknown | `Return one for a successful query whose final kind is not four. * Kind one is reclassified as four when its terrain triangle resolves to * loaded texture byte 0x27 equal to four...` | function `motionQueryHasNonExcludedKind` | [1156](../src/modules/motion.c#L1156) |
 | explicit_unknown | `Select a material-row scalar unless shared game state is 6, then evaluate * two curves with the input field reloaded before each call. Store the * selected scalar at 704 before ...` | assembly `func_motion_0040424C` | [560](../src/modules/motion.c#L560) |
-| explicit_unknown | `Select one of the original 0x1C-byte point records, compute angular * cross offset plus linear velocity, then transform by matrix 0x5E8. * RE_UNKNOWN: index bounds for tables at...` | function `motionTransformSelectedPointVelocity` | [938](../src/modules/motion.c#L938) |
+| explicit_unknown | `Select one of the original 0x1C-byte point records, compute angular * cross offset plus linear velocity, then transform by matrix 0x5E8. * RE_UNKNOWN: index bounds for tables at...` | function `motionTransformSelectedPointVelocity` | [942](../src/modules/motion.c#L942) |
 | explicit_unknown | `Subtract shared delta; a negative result advances one ten-slot history entry and adds one to remaining. * RE_ORIGINAL_QUIRK: no catch-up loop runs even if remaining stays negati...` | function `motionRecordHistoryAndUpdateTrack` | [448](../src/modules/motion.c#L448) |
-| explicit_unknown | `Transform a configured local Z vector through the state's linear matrix * and add it to the existing accumulated vector. Kind two selects the first * constant; other kinds selec...` | function `motionAccumulateTransformedConfiguredVector` | [1066](../src/modules/motion.c#L1066) |
-| explicit_unknown | `Update CARANIM property 27 from the byte mode and ordered double * comparison. A zero mode activates the dynamic record, sets property 27, * clears CAM property 14, then invokes...` | function `motionUpdateModeGatedProperties` | [1208](../src/modules/motion.c#L1208) |
+| explicit_unknown | `Transform a configured local Z vector through the state's linear matrix * and add it to the existing accumulated vector. Kind two selects the first * constant; other kinds selec...` | function `motionAccumulateTransformedConfiguredVector` | [1070](../src/modules/motion.c#L1070) |
+| explicit_unknown | `Update CARANIM property 27 from the byte mode and ordered double * comparison. A zero mode activates the dynamic record, sets property 27, * clears CAM property 14, then invokes...` | function `motionUpdateModeGatedProperties` | [1212](../src/modules/motion.c#L1212) |
 | explicit_unknown | `Update scalar 0x680 through level 0x6C4, signed mode 0xA3C and * ordered sign/magnitude gates, including sample 0x3A4 and both incoming * word gates. Every path joins original M...` | assembly `func_motion_00404868` | [588](../src/modules/motion.c#L588) |
 | explicit_unknown | `Update scalar 0x684, signed counter 0x688 and configuration scale 0x6AC * through enable/gate/sign tests. Original MISC 0x54 clamps value to ordered * upper/lower singles; its l...` | assembly `func_motion_0040456C` | [578](../src/modules/motion.c#L578) |
-| explicit_unknown | `Update three selected-record scalars with the original pre-gate ratio, * promoted-double gate, signed samples, MISC 0x58 degree fold and GRPH 0x04 * curve. Selector halfwords st...` | assembly `func_motion_004057E4` | [685](../src/modules/motion.c#L685) |
+| explicit_unknown | `Update three selected-record scalars with the original pre-gate ratio, * promoted-double gate, signed samples, MISC 0x58 degree fold and GRPH 0x04 * curve. Selector halfwords st...` | assembly `func_motion_004057E4` | [689](../src/modules/motion.c#L689) |
+| explicit_unknown | `Visit four state-relative 0x130-byte regions. Pass each region+0x128 * to the vector helper with output region+0x164, then its angle response. * RE_ORIGINAL_QUIRK: wrap the inde...` | function `motionUpdateFourPlanarRecords` | [608](../src/modules/motion.c#L608) |
 | layout_padding | `gap` | type `MotionProjectionRecord` | [56](../src/modules/motion.c#L56) |
 | layout_padding | `gap1132` | type `MotionDirectionState` | [57](../src/modules/motion.c#L57) |
 | layout_padding | `gap1144` | type `MotionDirectionState` | [57](../src/modules/motion.c#L57) |
@@ -3159,10 +3161,10 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `opaque918` | type `MotionModePropertyState` | [230](../src/modules/motion.c#L230) |
 | offset_field | `opaque91C` | type `MotionPropertySequenceState` | [271](../src/modules/motion.c#L271) |
 | offset_field | `opaque984` | type `MotionConfiguredVectorState` | [30](../src/modules/motion.c#L30) |
-| offset_field | `scalar1` | function `motionCallScalarHelperWithThreeTransforms` | [738](../src/modules/motion.c#L738), [763](../src/modules/motion.c#L763) |
+| offset_field | `scalar1` | function `motionCallScalarHelperWithThreeTransforms` | [742](../src/modules/motion.c#L742), [767](../src/modules/motion.c#L767) |
 | offset_field | `scalar10` | function `motionRecordHistoryAndUpdateTrack`, type `MotionHistorySample` | [42](../src/modules/motion.c#L42), [464](../src/modules/motion.c#L464) |
-| offset_field | `scalar2` | function `motionCallScalarHelperWithThreeTransforms` | [738](../src/modules/motion.c#L738), [770](../src/modules/motion.c#L770) |
-| offset_field | `scalar3` | function `motionCallScalarHelperWithThreeTransforms` | [739](../src/modules/motion.c#L739), [755](../src/modules/motion.c#L755) |
+| offset_field | `scalar2` | function `motionCallScalarHelperWithThreeTransforms` | [742](../src/modules/motion.c#L742), [774](../src/modules/motion.c#L774) |
+| offset_field | `scalar3` | function `motionCallScalarHelperWithThreeTransforms` | [743](../src/modules/motion.c#L743), [759](../src/modules/motion.c#L759) |
 | offset_field | `scalar670` | function `motionRecordHistoryAndUpdateTrack`, type `MotionHistoryState` | [43](../src/modules/motion.c#L43), [463](../src/modules/motion.c#L463) |
 | offset_field | `scalar6C4` | function `motionRecordHistoryAndUpdateTrack`, type `MotionHistoryState` | [43](../src/modules/motion.c#L43), [464](../src/modules/motion.c#L464) |
 | offset_field | `scalarC` | function `motionRecordHistoryAndUpdateTrack`, type `MotionHistorySample` | [42](../src/modules/motion.c#L42), [463](../src/modules/motion.c#L463) |
@@ -3174,34 +3176,35 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk80` | function `motionRecordHistoryAndUpdateTrack` | [455](../src/modules/motion.c#L455) |
 | offset_field | `unk98C` | type `MotionCorrectionState`, type `MotionPlanarState` | [62](../src/modules/motion.c#L62), [66](../src/modules/motion.c#L66) |
 | offset_field | `value0` | type `MotionPointSelector` | [58](../src/modules/motion.c#L58) |
-| offset_field | `value15C` | function `motionApplyPropertyAndRumbleSequence`, type `MotionPropertySequenceCamera` | [257](../src/modules/motion.c#L257), [1282](../src/modules/motion.c#L1282) |
-| offset_field | `value674` | function `motionAccumulateTransformedConfiguredVector`, type `MotionConfiguredVectorState` | [25](../src/modules/motion.c#L25), [1088](../src/modules/motion.c#L1088) |
-| offset_field | `value690` | function `motionApplyConditionalCorrection`, type `MotionCorrectionState` | [66](../src/modules/motion.c#L66), [1056](../src/modules/motion.c#L1056) |
-| offset_field | `value988` | function `motionApplyConditionalCorrection`, function `motionApplyGatedModeResponse`, type `MotionCorrectionState`, type `MotionModeResponseState` | [35](../src/modules/motion.c#L35), [66](../src/modules/motion.c#L66), [1057](../src/modules/motion.c#L1057), [1134](../src/modules/motion.c#L1134), [1135](../src/modules/motion.c#L1135), [1137](../src/modules/motion.c#L1137), [1138](../src/modules/motion.c#L1138) |
-| offset_field | `value9A0` | function `motionApplyConditionalCorrection`, type `MotionCorrectionState` | [66](../src/modules/motion.c#L66), [1059](../src/modules/motion.c#L1059) |
-| offset_field | `vector14` | function `motionBuildBasisAndCallScalarHelper`, type `MotionBasisDrawInput` | [118](../src/modules/motion.c#L118), [795](../src/modules/motion.c#L795) |
-| offset_field | `vector34` | function `motionBuildBasisAndCallScalarHelper`, type `MotionBasisDrawInput` | [120](../src/modules/motion.c#L120), [796](../src/modules/motion.c#L796) |
-| original_quirk | `Apply the original dynamic/object flags, CARANIM properties and three * rumble merges, then forward CAM tag18 and configure the returned PIECE object. * RE_ORIGINAL_QUIRK: the P...` | function `motionApplyPropertyAndRumbleSequence` | [1254](../src/modules/motion.c#L1254) |
-| original_quirk | `Attempt pending Hot Lava speech on random choice 3 with priority 0x7FFF; playback value is 0x7A120. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: ...` | global `D_motion_004160A0` | [1395](../src/modules/motion.c#L1395) |
-| original_quirk | `Attempt pending explosion speech on random choice 3 with its scale; priority 0x7FFF, playback value 0x1F4. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UN...` | global `D_motion_0041607C` | [1415](../src/modules/motion.c#L1415) |
+| offset_field | `value15C` | function `motionApplyPropertyAndRumbleSequence`, type `MotionPropertySequenceCamera` | [257](../src/modules/motion.c#L257), [1286](../src/modules/motion.c#L1286) |
+| offset_field | `value674` | function `motionAccumulateTransformedConfiguredVector`, type `MotionConfiguredVectorState` | [25](../src/modules/motion.c#L25), [1092](../src/modules/motion.c#L1092) |
+| offset_field | `value690` | function `motionApplyConditionalCorrection`, type `MotionCorrectionState` | [66](../src/modules/motion.c#L66), [1060](../src/modules/motion.c#L1060) |
+| offset_field | `value988` | function `motionApplyConditionalCorrection`, function `motionApplyGatedModeResponse`, type `MotionCorrectionState`, type `MotionModeResponseState` | [35](../src/modules/motion.c#L35), [66](../src/modules/motion.c#L66), [1061](../src/modules/motion.c#L1061), [1138](../src/modules/motion.c#L1138), [1139](../src/modules/motion.c#L1139), [1141](../src/modules/motion.c#L1141), [1142](../src/modules/motion.c#L1142) |
+| offset_field | `value9A0` | function `motionApplyConditionalCorrection`, type `MotionCorrectionState` | [66](../src/modules/motion.c#L66), [1063](../src/modules/motion.c#L1063) |
+| offset_field | `vector14` | function `motionBuildBasisAndCallScalarHelper`, type `MotionBasisDrawInput` | [118](../src/modules/motion.c#L118), [799](../src/modules/motion.c#L799) |
+| offset_field | `vector34` | function `motionBuildBasisAndCallScalarHelper`, type `MotionBasisDrawInput` | [120](../src/modules/motion.c#L120), [800](../src/modules/motion.c#L800) |
+| original_quirk | `Apply the original dynamic/object flags, CARANIM properties and three * rumble merges, then forward CAM tag18 and configure the returned PIECE object. * RE_ORIGINAL_QUIRK: the P...` | function `motionApplyPropertyAndRumbleSequence` | [1258](../src/modules/motion.c#L1258) |
 | original_quirk | `Blend raw scalar fields using a snapshotted player-two handicap selector. * Mode 4 leaves the fields unchanged; mode 3 uses the computed limit directly. * The original loads the...` | assembly `func_motion_00400D74` | [347](../src/modules/motion.c#L347) |
-| original_quirk | `Build a basis in one matrix, preserving its vector-row aliases and * translation copied from input14. Cross-product order depends on the * ordered magnitude test against the ori...` | function `motionBuildBasisAndCallScalarHelper` | [778](../src/modules/motion.c#L778) |
-| original_quirk | `Dispatch record kinds and process a selected three-float output. * Native SMACK10/14 return record pointers; SMACK0C consumes the output and * a fresh state+126C pointer. Earlie...` | assembly `func_motion_00407C10` | [885](../src/modules/motion.c#L885) |
-| original_quirk | `Gate scaling of scalar 0x988 by count 0x10E0, mode 0xA3C, vector dots * and signed kinds 0xA40/0xA68. Original UVFV 0x18 is a three-single dot * leaf; preserve repeated calls an...` | assembly `func_motion_00414430` | [1305](../src/modules/motion.c#L1305) |
-| original_quirk | `Initialize the shared sound handle before checking byte70E, then try a * SPLASH acquisition while that byte is zero. Copy input XYZ to matrix5E8 * translation row618; rumble run...` | assembly `func_motion_004098B8` | [977](../src/modules/motion.c#L977) |
-| original_quirk | `Original cross/add/transform and dot products update phase 0x8D4 and * component 0x998; 0x988/0x998 overlap vector 0x984.y / vector 0x990.z. * RE_ORIGINAL_QUIRK: caller passes 1...` | assembly `func_motion_00413284` | [1293](../src/modules/motion.c#L1293) |
+| original_quirk | `Build a basis in one matrix, preserving its vector-row aliases and * translation copied from input14. Cross-product order depends on the * ordered magnitude test against the ori...` | function `motionBuildBasisAndCallScalarHelper` | [782](../src/modules/motion.c#L782) |
+| original_quirk | `Dispatch record kinds and process a selected three-float output. * Native SMACK10/14 return record pointers; SMACK0C consumes the output and * a fresh state+126C pointer. Earlie...` | assembly `func_motion_00407C10` | [889](../src/modules/motion.c#L889) |
+| original_quirk | `For a nonzero speech setting, set volume, then truncate randomScalar*4. * Only choice three with pending word D_motion_004160A0 set submits Hot Lava * speech with priority 0x7FF...` | global `D_motion_004160A0` | [1402](../src/modules/motion.c#L1402) |
+| original_quirk | `For a nonzero speech setting, set volume, then truncate randomScalar*4. * Only choice three with pending word D_motion_004160A4 set submits explosion * speech. Scale the getter ...` | global `D_motion_0041607C` | [1428](../src/modules/motion.c#L1428) |
+| original_quirk | `Gate scaling of scalar 0x988 by count 0x10E0, mode 0xA3C, vector dots * and signed kinds 0xA40/0xA68. Original UVFV 0x18 is a three-single dot * leaf; preserve repeated calls an...` | assembly `func_motion_00414430` | [1309](../src/modules/motion.c#L1309) |
+| original_quirk | `Initialize the shared sound handle before checking byte70E, then try a * SPLASH acquisition while that byte is zero. Copy input XYZ to matrix5E8 * translation row618; rumble run...` | assembly `func_motion_004098B8` | [981](../src/modules/motion.c#L981) |
+| original_quirk | `Original cross/add/transform and dot products update phase 0x8D4 and * component 0x998; 0x988/0x998 overlap vector 0x984.y / vector 0x990.z. * RE_ORIGINAL_QUIRK: caller passes 1...` | assembly `func_motion_00413284` | [1297](../src/modules/motion.c#L1297) |
 | original_quirk | `Preserve the captured context126C across the optional TDATA query path or * indexed-history path, then CARANIM property10, byte111/value114 stores, * optional AI4C word store, d...` | assembly `func_motion_004039BC` | [474](../src/modules/motion.c#L474) |
 | original_quirk | `Preserve the positive value714 copy/reset group and the byte111 gate. * Modes 5/7 clear value114 and byte111, optionally call the AI word store, * then return without a CARANIM ...` | assembly `func_motion_00403C04` | [498](../src/modules/motion.c#L498) |
-| original_quirk | `Query between matrix translations and retain the original drawing calls. * Original matrix-row aliases, three single-precision component divisions, * MISC110 returned scalar, qu...` | assembly `func_motion_004066E4` | [828](../src/modules/motion.c#L828) |
+| original_quirk | `Query between matrix translations and retain the original drawing calls. * Original matrix-row aliases, three single-precision component divisions, * MISC110 returned scalar, qu...` | assembly `func_motion_004066E4` | [832](../src/modules/motion.c#L832) |
 | original_quirk | `Query four 0x130-stride sample views after stores at 0x12A/0x12E/0x12C. * ISCT 0xA4 mode 2 outputs key/scalar/XYZ; misses or loaded texture flag 4 * trigger ISCT 0xA0 mask 0xFE,...` | assembly `func_motion_004017E4` | [392](../src/modules/motion.c#L392) |
 | original_quirk | `Subtract shared delta; a negative result advances one ten-slot history entry and adds one to remaining. * RE_ORIGINAL_QUIRK: no catch-up loop runs even if remaining stays negati...` | function `motionRecordHistoryAndUpdateTrack` | [448](../src/modules/motion.c#L448) |
-| uncertainty_note | `Accumulate two weighted three-component basis combinations. The first * uses one shared scale; the second uses per-component scales. Preserve * Z/X/Y product order, sequential s...` | function `motionAccumulateScaledBasisVectors` | [1032](../src/modules/motion.c#L1032) |
-| uncertainty_note | `Apply the original scaled correction only above the 0x690 threshold and * below the positive 0x988 limit. Preserve floating evaluation order; the * full physical meaning of thes...` | function `motionApplyConditionalCorrection` | [1051](../src/modules/motion.c#L1051) |
-| uncertainty_note | `For enabled input with magnitude at least 0.5, gate on field 0x6C4 * magnitude at most five and mode zero/two. Smooth response 0x998 toward * the signed mode target and enforce ...` | function `motionApplyGatedModeResponse` | [1101](../src/modules/motion.c#L1101) |
-| uncertainty_note | `Original instruction and relocation match; unresolved contracts follow.` | — | [730](../src/modules/motion.c#L730), [777](../src/modules/motion.c#L777) |
+| original_quirk | `Visit four state-relative 0x130-byte regions. Pass each region+0x128 * to the vector helper with output region+0x164, then its angle response. * RE_ORIGINAL_QUIRK: wrap the inde...` | function `motionUpdateFourPlanarRecords` | [608](../src/modules/motion.c#L608) |
+| uncertainty_note | `Accumulate two weighted three-component basis combinations. The first * uses one shared scale; the second uses per-component scales. Preserve * Z/X/Y product order, sequential s...` | function `motionAccumulateScaledBasisVectors` | [1036](../src/modules/motion.c#L1036) |
+| uncertainty_note | `Apply the original scaled correction only above the 0x690 threshold and * below the positive 0x988 limit. Preserve floating evaluation order; the * full physical meaning of thes...` | function `motionApplyConditionalCorrection` | [1055](../src/modules/motion.c#L1055) |
+| uncertainty_note | `For enabled input with magnitude at least 0.5, gate on field 0x6C4 * magnitude at most five and mode zero/two. Smooth response 0x998 toward * the signed mode target and enforce ...` | function `motionApplyGatedModeResponse` | [1105](../src/modules/motion.c#L1105) |
+| uncertainty_note | `Original instruction and relocation match; unresolved contracts follow.` | — | [734](../src/modules/motion.c#L734), [781](../src/modules/motion.c#L781) |
 | unused_identifier | `unused00` | type `MotionPlanarAngleMiscExports` | [12](../src/modules/motion.c#L12) |
 | unused_identifier | `unused5C` | type `MotionPlanarAngleMiscExports` | [14](../src/modules/motion.c#L14) |
-| unused_identifier | `unusedIncomingWord` | function `motionRunBattleAndHotLavaUpdate`, function `motionRunBattleAndHotLavaUpdate` | [156](../src/modules/motion.c#L156), [1002](../src/modules/motion.c#L1002) |
+| unused_identifier | `unusedIncomingWord` | function `motionRunBattleAndHotLavaUpdate`, function `motionRunBattleAndHotLavaUpdate` | [156](../src/modules/motion.c#L156), [1006](../src/modules/motion.c#L1006) |
 
 ## src/modules/mult1.c
 

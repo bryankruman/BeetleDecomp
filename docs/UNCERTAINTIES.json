@@ -222,7 +222,7 @@
     "src/modules/med.c": "388ae18d3726f26ed10f43072b63277fb5568e735cbe9ac55f27d87f235cc000",
     "src/modules/menuslct.c": "6c5d9188d9d0fbbc20982a1327e21430ed180418332a9f13ec96803877adac15",
     "src/modules/misc.c": "7bd64fd225a3d1ad82e6d0eb1d987f5d92a232c94f609b97313e6d4fbc21e368",
-    "src/modules/motion.c": "ae3d601058fc7560e5185dd5bd7b61aa0ded9065dafd4d3cdaec2c6b81902768",
+    "src/modules/motion.c": "ccb8d0f94ce7462025ce8722031ba3730635533d58fa786b0cc44a82a27ccc6a",
     "src/modules/mult1.c": "fcd148eabbeb9db35e3da555b6e77e8b47903ced46b4e915dad1c4e132781ff7",
     "src/modules/mult2.c": "ad25b8e93a8307ad21fc18221aa4ab3559721814689e9a500aa5105b3e820663",
     "src/modules/mult3.c": "379be2535d6acd8e5818d04f5e6175105d6a77eb40738488d31dd0efad16f05b",
@@ -330,8 +330,8 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "6ddb24100af7256c2a2b9f10cf286985f44a7494c19fa7af6c8e9dcf6907f47c",
-    "docs/VALIDATION_20261006.md": "b0d14d26ee85b06f0f7b067a4f2e94af9407df0ed3fd1bca1fe4e12cddf21585"
+    "docs/STRATEGY_V4.md": "6afd35d07c12204bfecac77ebfbd85f8ef5ed6653599a688007da7eeb33f6959",
+    "docs/VALIDATION_20261006.md": "62aff3ab3686f9b9d85a260d70799e12c162e3b8d386d9ae7318eb4346d4ee50"
   },
   "counts": {
     "address_function": 909,
@@ -341,11 +341,11 @@
     "conditional_draft": 4,
     "decompiler_local": 784,
     "draft_marker": 26,
-    "explicit_unknown": 1030,
+    "explicit_unknown": 1032,
     "layout_padding": 273,
     "offset_field": 1598,
     "opaque_type": 282,
-    "original_quirk": 281,
+    "original_quirk": 282,
     "uncertainty_note": 92,
     "unused_identifier": 130
   },
@@ -6943,7 +6943,7 @@
       "symbol": "func_motion_004039BC",
       "lines": [
         94,
-        1245
+        1249
       ],
       "owners": [
         {
@@ -6957,9 +6957,9 @@
         {
           "kind": "function",
           "name": "motionUpdateModeGatedProperties",
-          "declaration_line": 1215,
+          "declaration_line": 1219,
           "lines": [
-            1245
+            1249
           ]
         }
       ]
@@ -7160,15 +7160,15 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00405E5C",
       "lines": [
-        705
+        709
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_motion_00405E5C",
-          "declaration_line": 705,
+          "declaration_line": 709,
           "lines": [
-            705
+            709
           ]
         }
       ]
@@ -7180,10 +7180,10 @@
       "symbol": "func_motion_00405EBC",
       "lines": [
         137,
-        755,
-        763,
-        770,
-        822
+        759,
+        767,
+        774,
+        826
       ],
       "owners": [
         {
@@ -7197,19 +7197,19 @@
         {
           "kind": "function",
           "name": "motionBuildBasisAndCallScalarHelper",
-          "declaration_line": 787,
+          "declaration_line": 791,
           "lines": [
-            822
+            826
           ]
         },
         {
           "kind": "function",
           "name": "motionCallScalarHelperWithThreeTransforms",
-          "declaration_line": 738,
+          "declaration_line": 742,
           "lines": [
-            755,
-            763,
-            770
+            759,
+            767,
+            774
           ]
         }
       ]
@@ -7221,7 +7221,7 @@
       "symbol": "func_motion_004066E4",
       "lines": [
         141,
-        723
+        727
       ],
       "owners": [
         {
@@ -7235,9 +7235,9 @@
         {
           "kind": "function",
           "name": "motionUpdateSharedState",
-          "declaration_line": 713,
+          "declaration_line": 717,
           "lines": [
-            723
+            727
           ]
         }
       ]
@@ -7249,7 +7249,7 @@
       "symbol": "func_motion_00406A58",
       "lines": [
         142,
-        718
+        722
       ],
       "owners": [
         {
@@ -7263,9 +7263,9 @@
         {
           "kind": "function",
           "name": "motionUpdateSharedState",
-          "declaration_line": 713,
+          "declaration_line": 717,
           "lines": [
-            718
+            722
           ]
         }
       ]
@@ -7753,7 +7753,7 @@
       "lines": [
         206,
         325,
-        1187
+        1191
       ],
       "owners": [
         {
@@ -7775,9 +7775,9 @@
         {
           "kind": "function",
           "name": "motionForwardStateMatrix",
-          "declaration_line": 1186,
+          "declaration_line": 1190,
           "lines": [
-            1187
+            1191
           ]
         }
       ]
@@ -7846,7 +7846,7 @@
       "symbol": "func_motion_004130E4",
       "lines": [
         311,
-        1006
+        1010
       ],
       "owners": [
         {
@@ -7860,9 +7860,9 @@
         {
           "kind": "function",
           "name": "motionRunBattleAndHotLavaUpdate",
-          "declaration_line": 1002,
+          "declaration_line": 1006,
           "lines": [
-            1006
+            1010
           ]
         }
       ]
@@ -7930,15 +7930,15 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0041475C",
       "lines": [
-        1321
+        1325
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_motion_0041475C",
-          "declaration_line": 1321,
+          "declaration_line": 1325,
           "lines": [
-            1321
+            1325
           ]
         }
       ]
@@ -7949,15 +7949,15 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00414764",
       "lines": [
-        1330
+        1334
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_motion_00414764",
-          "declaration_line": 1330,
+          "declaration_line": 1334,
           "lines": [
-            1330
+            1334
           ]
         }
       ]
@@ -7968,15 +7968,15 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0041476C",
       "lines": [
-        1339
+        1343
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_motion_0041476C",
-          "declaration_line": 1339,
+          "declaration_line": 1343,
           "lines": [
-            1339
+            1343
           ]
         }
       ]
@@ -8006,15 +8006,15 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00414A68",
       "lines": [
-        1359
+        1363
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_motion_00414A68",
-          "declaration_line": 1359,
+          "declaration_line": 1363,
           "lines": [
-            1359
+            1363
           ]
         }
       ]
@@ -8120,15 +8120,15 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00415870",
       "lines": [
-        1389
+        1396
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_motion_00415870",
-          "declaration_line": 1389,
+          "declaration_line": 1396,
           "lines": [
-            1389
+            1396
           ]
         }
       ]
@@ -32481,15 +32481,15 @@
       "symbol": "D_80025D6C",
       "lines": [
         248,
-        1228
+        1232
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionUpdateModeGatedProperties",
-          "declaration_line": 1215,
+          "declaration_line": 1219,
           "lines": [
-            1228
+            1232
           ]
         },
         {
@@ -32509,15 +32509,15 @@
       "symbol": "D_80025D70",
       "lines": [
         37,
-        1133
+        1137
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionApplyGatedModeResponse",
-          "declaration_line": 1105,
+          "declaration_line": 1109,
           "lines": [
-            1133
+            1137
           ]
         },
         {
@@ -32537,15 +32537,15 @@
       "symbol": "D_motion_00415DE4",
       "lines": [
         18,
-        639
+        643
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionComputePlanarRecordAngleResponse",
-          "declaration_line": 632,
+          "declaration_line": 636,
           "lines": [
-            639
+            643
           ]
         }
       ]
@@ -32557,15 +32557,15 @@
       "symbol": "D_motion_00415DE8",
       "lines": [
         18,
-        645
+        649
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionComputePlanarRecordAngleResponse",
-          "declaration_line": 632,
+          "declaration_line": 636,
           "lines": [
-            645
+            649
           ]
         }
       ]
@@ -32577,15 +32577,15 @@
       "symbol": "D_motion_00415DEC",
       "lines": [
         18,
-        646
+        650
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionComputePlanarRecordAngleResponse",
-          "declaration_line": 632,
+          "declaration_line": 636,
           "lines": [
-            646
+            650
           ]
         }
       ]
@@ -32597,15 +32597,15 @@
       "symbol": "D_motion_00415DF0",
       "lines": [
         19,
-        648
+        652
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionComputePlanarRecordAngleResponse",
-          "declaration_line": 632,
+          "declaration_line": 636,
           "lines": [
-            648
+            652
           ]
         }
       ]
@@ -32617,15 +32617,15 @@
       "symbol": "D_motion_00415DF4",
       "lines": [
         19,
-        648
+        652
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionComputePlanarRecordAngleResponse",
-          "declaration_line": 632,
+          "declaration_line": 636,
           "lines": [
-            648
+            652
           ]
         }
       ]
@@ -32637,15 +32637,15 @@
       "symbol": "D_motion_00415E20",
       "lines": [
         133,
-        755
+        759
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionCallScalarHelperWithThreeTransforms",
-          "declaration_line": 738,
+          "declaration_line": 742,
           "lines": [
-            755
+            759
           ]
         }
       ]
@@ -32657,15 +32657,15 @@
       "symbol": "D_motion_00415E24",
       "lines": [
         133,
-        755
+        759
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionCallScalarHelperWithThreeTransforms",
-          "declaration_line": 738,
+          "declaration_line": 742,
           "lines": [
-            755
+            759
           ]
         }
       ]
@@ -32677,15 +32677,15 @@
       "symbol": "D_motion_00415E28",
       "lines": [
         133,
-        763
+        767
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionCallScalarHelperWithThreeTransforms",
-          "declaration_line": 738,
+          "declaration_line": 742,
           "lines": [
-            763
+            767
           ]
         }
       ]
@@ -32697,15 +32697,15 @@
       "symbol": "D_motion_00415E2C",
       "lines": [
         134,
-        763
+        767
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionCallScalarHelperWithThreeTransforms",
-          "declaration_line": 738,
+          "declaration_line": 742,
           "lines": [
-            763
+            767
           ]
         }
       ]
@@ -32717,15 +32717,15 @@
       "symbol": "D_motion_00415E30",
       "lines": [
         134,
-        770
+        774
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionCallScalarHelperWithThreeTransforms",
-          "declaration_line": 738,
+          "declaration_line": 742,
           "lines": [
-            770
+            774
           ]
         }
       ]
@@ -32737,15 +32737,15 @@
       "symbol": "D_motion_00415E34",
       "lines": [
         134,
-        770
+        774
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionCallScalarHelperWithThreeTransforms",
-          "declaration_line": 738,
+          "declaration_line": 742,
           "lines": [
-            770
+            774
           ]
         }
       ]
@@ -32757,15 +32757,15 @@
       "symbol": "D_motion_00415E38",
       "lines": [
         135,
-        802
+        806
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionBuildBasisAndCallScalarHelper",
-          "declaration_line": 787,
+          "declaration_line": 791,
           "lines": [
-            802
+            806
           ]
         },
         {
@@ -32785,17 +32785,17 @@
       "symbol": "D_motion_00415E40",
       "lines": [
         136,
-        819,
-        820
+        823,
+        824
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionBuildBasisAndCallScalarHelper",
-          "declaration_line": 787,
+          "declaration_line": 791,
           "lines": [
-            819,
-            820
+            823,
+            824
           ]
         }
       ]
@@ -32807,15 +32807,15 @@
       "symbol": "D_motion_00415E44",
       "lines": [
         136,
-        822
+        826
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionBuildBasisAndCallScalarHelper",
-          "declaration_line": 787,
+          "declaration_line": 791,
           "lines": [
-            822
+            826
           ]
         }
       ]
@@ -32827,15 +32827,15 @@
       "symbol": "D_motion_00415F84",
       "lines": [
         33,
-        1081
+        1085
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionAccumulateTransformedConfiguredVector",
-          "declaration_line": 1073,
+          "declaration_line": 1077,
           "lines": [
-            1081
+            1085
           ]
         }
       ]
@@ -32847,15 +32847,15 @@
       "symbol": "D_motion_00415F88",
       "lines": [
         33,
-        1083
+        1087
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionAccumulateTransformedConfiguredVector",
-          "declaration_line": 1073,
+          "declaration_line": 1077,
           "lines": [
-            1083
+            1087
           ]
         }
       ]
@@ -32867,15 +32867,15 @@
       "symbol": "D_motion_00415F8C",
       "lines": [
         36,
-        1125
+        1129
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionApplyGatedModeResponse",
-          "declaration_line": 1105,
+          "declaration_line": 1109,
           "lines": [
-            1125
+            1129
           ]
         },
         {
@@ -32894,24 +32894,24 @@
       "path": "src/modules/motion.c",
       "symbol": "D_motion_0041607C",
       "lines": [
-        1417,
-        1428
+        1437,
+        1448
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionTryPlayExplosionVoice",
-          "declaration_line": 1421,
+          "declaration_line": 1441,
           "lines": [
-            1428
+            1448
           ]
         },
         {
           "kind": "global",
           "name": "D_motion_0041607C",
-          "declaration_line": 1417,
+          "declaration_line": 1437,
           "lines": [
-            1417
+            1437
           ]
         }
       ]
@@ -32923,15 +32923,15 @@
       "symbol": "D_motion_00416080",
       "lines": [
         67,
-        1059
+        1063
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionApplyConditionalCorrection",
-          "declaration_line": 1054,
+          "declaration_line": 1058,
           "lines": [
-            1059
+            1063
           ]
         }
       ]
@@ -32943,19 +32943,19 @@
       "symbol": "D_motion_00416084",
       "lines": [
         67,
-        1057,
-        1058,
-        1059
+        1061,
+        1062,
+        1063
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionApplyConditionalCorrection",
-          "declaration_line": 1054,
+          "declaration_line": 1058,
           "lines": [
-            1057,
-            1058,
-            1059
+            1061,
+            1062,
+            1063
           ]
         }
       ]
@@ -32967,15 +32967,15 @@
       "symbol": "D_motion_00416088",
       "lines": [
         67,
-        1056
+        1060
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionApplyConditionalCorrection",
-          "declaration_line": 1054,
+          "declaration_line": 1058,
           "lines": [
-            1056
+            1060
           ]
         }
       ]
@@ -32987,15 +32987,15 @@
       "symbol": "D_motion_00416090",
       "lines": [
         67,
-        1056
+        1060
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionApplyConditionalCorrection",
-          "declaration_line": 1054,
+          "declaration_line": 1058,
           "lines": [
-            1056
+            1060
           ]
         }
       ]
@@ -33006,26 +33006,26 @@
       "path": "src/modules/motion.c",
       "symbol": "D_motion_004160A0",
       "lines": [
-        1397,
-        1406,
-        1408
+        1410,
+        1419,
+        1421
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionTryPlayHotLavaVoice",
-          "declaration_line": 1400,
+          "declaration_line": 1413,
           "lines": [
-            1406,
-            1408
+            1419,
+            1421
           ]
         },
         {
           "kind": "global",
           "name": "D_motion_004160A0",
-          "declaration_line": 1397,
+          "declaration_line": 1410,
           "lines": [
-            1397
+            1410
           ]
         }
       ]
@@ -33036,26 +33036,26 @@
       "path": "src/modules/motion.c",
       "symbol": "D_motion_004160A4",
       "lines": [
-        1418,
-        1427,
-        1429
+        1438,
+        1447,
+        1449
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionTryPlayExplosionVoice",
-          "declaration_line": 1421,
+          "declaration_line": 1441,
           "lines": [
-            1427,
-            1429
+            1447,
+            1449
           ]
         },
         {
           "kind": "global",
           "name": "D_motion_004160A4",
-          "declaration_line": 1418,
+          "declaration_line": 1438,
           "lines": [
-            1418
+            1438
           ]
         }
       ]
@@ -33067,15 +33067,15 @@
       "symbol": "D_motion_004163A8",
       "lines": [
         77,
-        1379
+        1386
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionEvaluateSelectedGraph",
-          "declaration_line": 1376,
+          "declaration_line": 1383,
           "lines": [
-            1379
+            1386
           ]
         },
         {
@@ -33095,15 +33095,15 @@
       "symbol": "D_motion_0041644C",
       "lines": [
         78,
-        1381
+        1388
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionEvaluateSelectedGraph",
-          "declaration_line": 1376,
+          "declaration_line": 1383,
           "lines": [
-            1381
+            1388
           ]
         },
         {
@@ -33123,15 +33123,15 @@
       "symbol": "D_motion_00416A64",
       "lines": [
         308,
-        1283
+        1287
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionApplyPropertyAndRumbleSequence",
-          "declaration_line": 1262,
+          "declaration_line": 1266,
           "lines": [
-            1283
+            1287
           ]
         },
         {
@@ -33152,30 +33152,30 @@
       "lines": [
         245,
         302,
-        1229,
-        1232,
-        1241,
-        1273,
-        1286
+        1233,
+        1236,
+        1245,
+        1277,
+        1290
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionApplyPropertyAndRumbleSequence",
-          "declaration_line": 1262,
+          "declaration_line": 1266,
           "lines": [
-            1273,
-            1286
+            1277,
+            1290
           ]
         },
         {
           "kind": "function",
           "name": "motionUpdateModeGatedProperties",
-          "declaration_line": 1215,
+          "declaration_line": 1219,
           "lines": [
-            1229,
-            1232,
-            1241
+            1233,
+            1236,
+            1245
           ]
         },
         {
@@ -33233,15 +33233,15 @@
       "symbol": "D_motion_00416AB8",
       "lines": [
         82,
-        720
+        724
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionUpdateSharedState",
-          "declaration_line": 713,
+          "declaration_line": 717,
           "lines": [
-            720
+            724
           ]
         },
         {
@@ -33262,15 +33262,15 @@
       "lines": [
         333,
         338,
-        1407
+        1420
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionTryPlayHotLavaVoice",
-          "declaration_line": 1400,
+          "declaration_line": 1413,
           "lines": [
-            1407
+            1420
           ]
         },
         {
@@ -33299,15 +33299,15 @@
       "lines": [
         334,
         339,
-        1428
+        1448
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionTryPlayExplosionVoice",
-          "declaration_line": 1421,
+          "declaration_line": 1441,
           "lines": [
-            1428
+            1448
           ]
         },
         {
@@ -33335,21 +33335,21 @@
       "symbol": "D_motion_00416B10",
       "lines": [
         81,
-        714,
-        717,
         718,
-        723
+        721,
+        722,
+        727
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionUpdateSharedState",
-          "declaration_line": 713,
+          "declaration_line": 717,
           "lines": [
-            714,
-            717,
             718,
-            723
+            721,
+            722,
+            727
           ]
         },
         {
@@ -77571,7 +77571,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_004057E4",
       "lines": [
-        694
+        698
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_004057E4.s"
     },
@@ -77581,7 +77581,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00405B44",
       "lines": [
-        696
+        700
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00405B44.s"
     },
@@ -77591,7 +77591,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00405D7C",
       "lines": [
-        698
+        702
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00405D7C.s"
     },
@@ -77601,7 +77601,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00405EBC",
       "lines": [
-        727
+        731
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00405EBC.s"
     },
@@ -77611,7 +77611,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_004066E4",
       "lines": [
-        851
+        855
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_004066E4.s"
     },
@@ -77621,7 +77621,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00406A58",
       "lines": [
-        853
+        857
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00406A58.s"
     },
@@ -77631,7 +77631,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00406C30",
       "lines": [
-        855
+        859
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00406C30.s"
     },
@@ -77641,7 +77641,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_004077A8",
       "lines": [
-        881
+        885
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_004077A8.s"
     },
@@ -77651,7 +77651,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00407B44",
       "lines": [
-        883
+        887
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00407B44.s"
     },
@@ -77661,7 +77661,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00407C10",
       "lines": [
-        907
+        911
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00407C10.s"
     },
@@ -77671,7 +77671,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00407FC0",
       "lines": [
-        927
+        931
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00407FC0.s"
     },
@@ -77681,7 +77681,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00408254",
       "lines": [
-        929
+        933
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00408254.s"
     },
@@ -77691,7 +77691,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_004087DC",
       "lines": [
-        931
+        935
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_004087DC.s"
     },
@@ -77701,7 +77701,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00408940",
       "lines": [
-        933
+        937
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00408940.s"
     },
@@ -77711,7 +77711,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00408A84",
       "lines": [
-        935
+        939
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00408A84.s"
     },
@@ -77721,7 +77721,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00408FD4",
       "lines": [
-        953
+        957
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00408FD4.s"
     },
@@ -77731,7 +77731,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00409734",
       "lines": [
-        975
+        979
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00409734.s"
     },
@@ -77741,7 +77741,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_004098B8",
       "lines": [
-        996
+        1000
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_004098B8.s"
     },
@@ -77751,7 +77751,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00409B3C",
       "lines": [
-        1011
+        1015
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00409B3C.s"
     },
@@ -77761,7 +77761,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00409C68",
       "lines": [
-        1013
+        1017
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00409C68.s"
     },
@@ -77771,7 +77771,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040A3CC",
       "lines": [
-        1015
+        1019
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_0040A3CC.s"
     },
@@ -77781,7 +77781,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040B4EC",
       "lines": [
-        1017
+        1021
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_0040B4EC.s"
     },
@@ -77791,7 +77791,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040B7B8",
       "lines": [
-        1019
+        1023
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_0040B7B8.s"
     },
@@ -77801,7 +77801,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040BBE0",
       "lines": [
-        1021
+        1025
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_0040BBE0.s"
     },
@@ -77811,7 +77811,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040BFE0",
       "lines": [
-        1023
+        1027
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_0040BFE0.s"
     },
@@ -77821,7 +77821,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040C7DC",
       "lines": [
-        1025
+        1029
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_0040C7DC.s"
     },
@@ -77831,7 +77831,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040C8A0",
       "lines": [
-        1027
+        1031
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_0040C8A0.s"
     },
@@ -77841,7 +77841,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040E7BC",
       "lines": [
-        1029
+        1033
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_0040E7BC.s"
     },
@@ -77851,7 +77851,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040F2EC",
       "lines": [
-        1048
+        1052
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_0040F2EC.s"
     },
@@ -77861,7 +77861,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040F694",
       "lines": [
-        1146
+        1150
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_0040F694.s"
     },
@@ -77871,7 +77871,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_0040FE84",
       "lines": [
-        1148
+        1152
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_0040FE84.s"
     },
@@ -77881,7 +77881,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00411C64",
       "lines": [
-        1181
+        1185
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00411C64.s"
     },
@@ -77891,7 +77891,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00412770",
       "lines": [
-        1201
+        1205
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00412770.s"
     },
@@ -77901,7 +77901,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00412B14",
       "lines": [
-        1203
+        1207
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00412B14.s"
     },
@@ -77911,7 +77911,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00412E44",
       "lines": [
-        1250
+        1254
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00412E44.s"
     },
@@ -77921,7 +77921,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_004130E4",
       "lines": [
-        1291
+        1295
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_004130E4.s"
     },
@@ -77931,7 +77931,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00413284",
       "lines": [
-        1301
+        1305
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00413284.s"
     },
@@ -77941,7 +77941,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00413568",
       "lines": [
-        1303
+        1307
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00413568.s"
     },
@@ -77951,7 +77951,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00414430",
       "lines": [
-        1314
+        1318
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00414430.s"
     },
@@ -77961,7 +77961,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00414774",
       "lines": [
-        1352
+        1356
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00414774.s"
     },
@@ -77971,7 +77971,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00414A70",
       "lines": [
-        1363
+        1367
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00414A70.s"
     },
@@ -77981,7 +77981,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00414BB0",
       "lines": [
-        1365
+        1369
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00414BB0.s"
     },
@@ -77991,7 +77991,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_004151CC",
       "lines": [
-        1367
+        1371
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_004151CC.s"
     },
@@ -78001,7 +78001,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_004154B8",
       "lines": [
-        1369
+        1373
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_004154B8.s"
     },
@@ -78011,7 +78011,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00415724",
       "lines": [
-        1371
+        1375
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00415724.s"
     },
@@ -78021,7 +78021,7 @@
       "path": "src/modules/motion.c",
       "symbol": "func_motion_00415A3C",
       "lines": [
-        1435
+        1455
       ],
       "evidence": "asm/us/nonmatchings/modules/motion/func_motion_00415A3C.s"
     },
@@ -125858,21 +125858,41 @@
       ]
     },
     {
+      "id": "Q-ada176d0aabf",
+      "kind": "explicit_unknown",
+      "path": "src/modules/motion.c",
+      "symbol": "Any nonzero selector chooses D_motion_004163A8; zero chooses * D_motion_0041644C. Forward the input to the original curve evaluator. * RE_UNKNOWN: input units/range, graph writers/knot ordering and module * availability need producers; this wrapper adds no input clamp.",
+      "lines": [
+        1378
+      ],
+      "evidence": "Any nonzero selector chooses D_motion_004163A8; zero chooses * D_motion_0041644C. Forward the input to the original curve evaluator. * RE_UNKNOWN: input units/range, graph writers/knot ordering and module * availability need producers; this wrapper adds no input clamp.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "motionEvaluateSelectedGraph",
+          "declaration_line": 1383,
+          "lines": [
+            1378
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-d5bc15e97517",
       "kind": "explicit_unknown",
       "path": "src/modules/motion.c",
       "symbol": "Apply the original dynamic/object flags, CARANIM properties and three * rumble merges, then forward CAM tag18 and configure the returned PIECE object. * RE_ORIGINAL_QUIRK: the PIECE source handle reloads state->context after * callbacks, while the final CARANIM call uses the initially captured context. * RE_UNKNOWN: property/value roles and physical units, caller ID domains, * module availability, record allocations, aliases and retained pointer * lifetimes require original producers/callers. Keep the original read order * and callback results without adding null/default handling.",
       "lines": [
-        1254
+        1258
       ],
       "evidence": "Apply the original dynamic/object flags, CARANIM properties and three * rumble merges, then forward CAM tag18 and configure the returned PIECE object. * RE_ORIGINAL_QUIRK: the PIECE source handle reloads state->context after * callbacks, while the final CARANIM call uses the initially captured context. * RE_UNKNOWN: property/value roles and physical units, caller ID domains, * module availability, record allocations, aliases and retained pointer * lifetimes require original producers/callers. Keep the original read order * and callback results without adding null/default handling.",
       "owners": [
         {
           "kind": "function",
           "name": "motionApplyPropertyAndRumbleSequence",
-          "declaration_line": 1262,
+          "declaration_line": 1266,
           "lines": [
-            1254
+            1258
           ]
         }
       ]
@@ -125883,56 +125903,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Apply three ordered transforms and call the scalar helper after each. * Preserve separate original RODATA loads and the signed16 conversions of * 255*weight and 255-(255*weight); no input clamping is introduced. * RE_UNKNOWN: scalar/weight domains and units, conversion validity, rendered * purpose, FONT resource availability and module/callback lifetimes need * original callers and resource producers. Historical parameter/local types * remain inferred consumed views; axis tags120/122 are actual provider tags.",
       "lines": [
-        731
+        735
       ],
       "evidence": "Apply three ordered transforms and call the scalar helper after each. * Preserve separate original RODATA loads and the signed16 conversions of * 255*weight and 255-(255*weight); no input clamping is introduced. * RE_UNKNOWN: scalar/weight domains and units, conversion validity, rendered * purpose, FONT resource availability and module/callback lifetimes need * original callers and resource producers. Historical parameter/local types * remain inferred consumed views; axis tags120/122 are actual provider tags.",
       "owners": [
         {
           "kind": "function",
           "name": "motionCallScalarHelperWithThreeTransforms",
-          "declaration_line": 738,
+          "declaration_line": 742,
           "lines": [
-            731
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-c8b8e3dac487",
-      "kind": "explicit_unknown",
-      "path": "src/modules/motion.c",
-      "symbol": "Attempt pending Hot Lava speech on random choice 3 with priority 0x7FFF; playback value is 0x7A120. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: playback-value units need consumers.",
-      "lines": [
-        1395
-      ],
-      "evidence": "Attempt pending Hot Lava speech on random choice 3 with priority 0x7FFF; playback value is 0x7A120. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: playback-value units need consumers.",
-      "owners": [
-        {
-          "kind": "global",
-          "name": "D_motion_004160A0",
-          "declaration_line": 1397,
-          "lines": [
-            1395
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-d93fe870a688",
-      "kind": "explicit_unknown",
-      "path": "src/modules/motion.c",
-      "symbol": "Attempt pending explosion speech on random choice 3 with its scale; priority 0x7FFF, playback value 0x1F4. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: playback-value units need consumers.",
-      "lines": [
-        1415
-      ],
-      "evidence": "Attempt pending explosion speech on random choice 3 with its scale; priority 0x7FFF, playback value 0x1F4. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: playback-value units need consumers.",
-      "owners": [
-        {
-          "kind": "global",
-          "name": "D_motion_0041607C",
-          "declaration_line": 1417,
-          "lines": [
-            1415
+            735
           ]
         }
       ]
@@ -125963,16 +125943,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Bound selected paired scalars, then advance them through the original * sqrt, cosine, sine and MISC 0xDC factor callbacks in that order. Full-word * selectors stride 0x10; records start at 0x128, stride 0x130. Mirror the * stored scalar through each record's u16 slot and preserve live u16 count. * Forward state, 1, state+0x5E8, 0 to helper 0x11C64 when count is nonzero. * RE_UNKNOWN: physical units, selector/slot capacities, coefficient/divisor * domains, flag meaning and allocation/alias/lifetime need original producers. * Clean C differs in address reuse, branches, allocation and scheduling; * retain ASM pending complete instruction and relocation proof.",
       "lines": [
-        1191
+        1195
       ],
       "evidence": "Bound selected paired scalars, then advance them through the original * sqrt, cosine, sine and MISC 0xDC factor callbacks in that order. Full-word * selectors stride 0x10; records start at 0x128, stride 0x130. Mirror the * stored scalar through each record's u16 slot and preserve live u16 count. * Forward state, 1, state+0x5E8, 0 to helper 0x11C64 when count is nonzero. * RE_UNKNOWN: physical units, selector/slot capacities, coefficient/divisor * domains, flag meaning and allocation/alias/lifetime need original producers. * Clean C differs in address reuse, branches, allocation and scheduling; * retain ASM pending complete instruction and relocation proof.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_motion_00412770",
-          "declaration_line": 1201,
+          "declaration_line": 1205,
           "lines": [
-            1191
+            1195
           ]
         }
       ]
@@ -125983,16 +125963,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Build a basis in one matrix, preserving its vector-row aliases and * translation copied from input14. Cross-product order depends on the * ordered magnitude test against the original double0.2 threshold. * RE_ORIGINAL_QUIRK: all three normalization return values are ignored; * the actual provider leaves the destination unchanged on zero length. * RE_UNKNOWN: full input allocation/ownership and vector meanings/frames, * finite/nondegenerate domains, rendering purpose and module/callback * lifetime guarantees need original producers/callers. This union describes * actual shared local storage, not a proved historical union declaration.",
       "lines": [
-        778
+        782
       ],
       "evidence": "Build a basis in one matrix, preserving its vector-row aliases and * translation copied from input14. Cross-product order depends on the * ordered magnitude test against the original double0.2 threshold. * RE_ORIGINAL_QUIRK: all three normalization return values are ignored; * the actual provider leaves the destination unchanged on zero length. * RE_UNKNOWN: full input allocation/ownership and vector meanings/frames, * finite/nondegenerate domains, rendering purpose and module/callback * lifetime guarantees need original producers/callers. This union describes * actual shared local storage, not a proved historical union declaration.",
       "owners": [
         {
           "kind": "function",
           "name": "motionBuildBasisAndCallScalarHelper",
-          "declaration_line": 787,
+          "declaration_line": 791,
           "lines": [
-            778
+            782
           ]
         }
       ]
@@ -126003,16 +125983,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Dispatch original record kinds 1/2/4/8/24, then apply indexed/dot gates. * Native table entries and providers establish the callback arguments, not * physical meanings. Entry record and initial context remain captured; the * final SMACK callback reloads context, and its key store reloads record+0C. * Kind 2 stores flag70C=1 and returns when that reloaded halfword is zero. * Tail index >=0 and <4 guards the 0x130-stride halfword; count10E2>=3 and * count10E0<3 gate FVEC18's three-float dot and ordered threshold comparison. * RE_UNKNOWN: full allocations, reachable kind/index/key/count domains, * flag/scalar/vector purposes and units, aliases, pointer replacement and * module lifetimes need original producers, callers and callback evidence. * Readable C remains parked: 924 native versus 900 draft bytes, with 204 * differing positions. Native frame80 becomes88; draft retains entry in S2 * instead of its argument home, changing reloads, local homes and epilogue. * Context/output/key/SMACK homes SP+52/56/68/72 become SP+64/68/80/84. * Native shared branch/flag-clear lowering differs from draft early returns. * The complete 40/31 relocation lists differ: nine native PC16 label records * resolve locally in C, the table uses .rodata, and sites/downstream helper * values shift. All 31 non-PC16 type/target roles remain represented. * Existing direct154B8/14BB0/98B8 calls lack full source prototypes; their * historical declarations require original callers/consumption evidence. * Full review supports no omitted effect, width, precision, ABI or reload * correction. Historical declarations/storage/lowering remain unproved; * require exact instructions and original packed-module/fresh ROM proof.",
       "lines": [
-        857
+        861
       ],
       "evidence": "Dispatch original record kinds 1/2/4/8/24, then apply indexed/dot gates. * Native table entries and providers establish the callback arguments, not * physical meanings. Entry record and initial context remain captured; the * final SMACK callback reloads context, and its key store reloads record+0C. * Kind 2 stores flag70C=1 and returns when that reloaded halfword is zero. * Tail index >=0 and <4 guards the 0x130-stride halfword; count10E2>=3 and * count10E0<3 gate FVEC18's three-float dot and ordered threshold comparison. * RE_UNKNOWN: full allocations, reachable kind/index/key/count domains, * flag/scalar/vector purposes and units, aliases, pointer replacement and * module lifetimes need original producers, callers and callback evidence. * Readable C remains parked: 924 native versus 900 draft bytes, with 204 * differing positions. Native frame80 becomes88; draft retains entry in S2 * instead of its argument home, changing reloads, local homes and epilogue. * Context/output/key/SMACK homes SP+52/56/68/72 become SP+64/68/80/84. * Native shared branch/flag-clear lowering differs from draft early returns. * The complete 40/31 relocation lists differ: nine native PC16 label records * resolve locally in C, the table uses .rodata, and sites/downstream helper * values shift. All 31 non-PC16 type/target roles remain represented. * Existing direct154B8/14BB0/98B8 calls lack full source prototypes; their * historical declarations require original callers/consumption evidence. * Full review supports no omitted effect, width, precision, ABI or reload * correction. Historical declarations/storage/lowering remain unproved; * require exact instructions and original packed-module/fresh ROM proof.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_motion_004077A8",
-          "declaration_line": 881,
+          "declaration_line": 885,
           "lines": [
-            857
+            861
           ]
         }
       ]
@@ -126023,16 +126003,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Dispatch record kinds and process a selected three-float output. * Native SMACK10/14 return record pointers; SMACK0C consumes the output and * a fresh state+126C pointer. Earlier context/record pointers stay captured; * the final stored key is read again after the callback. Category20 is * tested before the later u16 narrowing. Signed selectors and ordered * single-precision open scalar intervals are preserved in the parked C. * RE_ORIGINAL_QUIRK: the indexed selector halfword read has no bound test; * the later signed index < 4 test has no nonnegative check. These operations * do not establish that any caller supplies an out-of-range index. * RE_UNKNOWN: complete state/entry/record allocations, index/key/category * domains, pointer aliases and replacement lifetimes, module availability, * flag/vector/scalar purposes and units need original callers and producers. * Readable C remains parked: 944 native versus 964 draft bytes, with 225 * differing positions. The native retains state in S0 and entry in S1; * the draft homes state at SP+84 and retains entry in S0, adding reloads. * Both use an 80-byte frame. All 34 relocation symbol/type identities keep * their order, but sites and downstream helper values shift with the real * 20-byte growth; complete relocation equality fails. No missing effect, * width, precision, argument or callback reload is supported by full review. * Historical declarations/storage remain unproved; require exact code and * original packed-module/fresh ROM proof before replacing retained ASM.",
       "lines": [
-        885
+        889
       ],
       "evidence": "Dispatch record kinds and process a selected three-float output. * Native SMACK10/14 return record pointers; SMACK0C consumes the output and * a fresh state+126C pointer. Earlier context/record pointers stay captured; * the final stored key is read again after the callback. Category20 is * tested before the later u16 narrowing. Signed selectors and ordered * single-precision open scalar intervals are preserved in the parked C. * RE_ORIGINAL_QUIRK: the indexed selector halfword read has no bound test; * the later signed index < 4 test has no nonnegative check. These operations * do not establish that any caller supplies an out-of-range index. * RE_UNKNOWN: complete state/entry/record allocations, index/key/category * domains, pointer aliases and replacement lifetimes, module availability, * flag/vector/scalar purposes and units need original callers and producers. * Readable C remains parked: 944 native versus 964 draft bytes, with 225 * differing positions. The native retains state in S0 and entry in S1; * the draft homes state at SP+84 and retains entry in S0, adding reloads. * Both use an 80-byte frame. All 34 relocation symbol/type identities keep * their order, but sites and downstream helper values shift with the real * 20-byte growth; complete relocation equality fails. No missing effect, * width, precision, argument or callback reload is supported by full review. * Historical declarations/storage remain unproved; require exact code and * original packed-module/fresh ROM proof before replacing retained ASM.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_motion_00407C10",
-          "declaration_line": 907,
+          "declaration_line": 911,
           "lines": [
-            885
+            889
           ]
         }
       ]
@@ -126043,16 +126023,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Dispatch record kinds and transform state+984 through matrix+5E8. * Native FMTXB0 writes three floats for SMACK0C, which receives a fresh * state+126C pointer. Earlier context/record pointers remain captured, and * the final stored key is read again after the callback. Category20 is * tested before the later u16 narrowing; the same-key case returns early. * RE_UNKNOWN: complete allocations, key/category domains, pointer aliases * and replacement lifetimes, module availability, flag/vector purposes and * historical declarations need original callers, producers and lifetimes. * Readable C remains parked at 660/660 bytes. Thirteen instruction words * move genuine local homes by four bytes: native SMACK pointer SP+72, key * SP+68, context SP+52 and output SP+56 become SP+76/72/56/60. One BNE swaps * its symmetric equality operands. All other 151 words and all 23 complete * ordered relocation records match; the 80-byte frame is unchanged. * Full review supports no missing effect, width, argument, precision or * callback reload correction. Historical local storage remains unproved; * require exact instructions and original packed-module/fresh ROM proof * before replacing ASM; no padding or register forcing is justified.",
       "lines": [
-        909
+        913
       ],
       "evidence": "Dispatch record kinds and transform state+984 through matrix+5E8. * Native FMTXB0 writes three floats for SMACK0C, which receives a fresh * state+126C pointer. Earlier context/record pointers remain captured, and * the final stored key is read again after the callback. Category20 is * tested before the later u16 narrowing; the same-key case returns early. * RE_UNKNOWN: complete allocations, key/category domains, pointer aliases * and replacement lifetimes, module availability, flag/vector purposes and * historical declarations need original callers, producers and lifetimes. * Readable C remains parked at 660/660 bytes. Thirteen instruction words * move genuine local homes by four bytes: native SMACK pointer SP+72, key * SP+68, context SP+52 and output SP+56 become SP+76/72/56/60. One BNE swaps * its symmetric equality operands. All other 151 words and all 23 complete * ordered relocation records match; the 80-byte frame is unchanged. * Full review supports no missing effect, width, argument, precision or * callback reload correction. Historical local storage remains unproved; * require exact instructions and original packed-module/fresh ROM proof * before replacing ASM; no padding or register forcing is justified.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_motion_00407FC0",
-          "declaration_line": 927,
+          "declaration_line": 931,
           "lines": [
-            909
+            913
           ]
         }
       ]
@@ -126063,16 +126043,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Draw background, graph-derived red/green bars, direct-value blue bar and * a white marker from saved input 0x6D4. Preserve single arithmetic grouping, * truncating signed coordinates and input reads between draw callbacks. * Original UVGRPH 0x04 is linear evaluation; UVGEOM 0x0C/0x10 consume four * singles for color / four signed words for rectangle coordinates. * RE_UNKNOWN: scalar meanings/units, reachable input/coordinate ranges and * graphics-state ownership need original producers/callers. Clean C remains * unmatched; retain assembly pending complete byte/relocation proof.",
       "lines": [
-        1343
+        1347
       ],
       "evidence": "Draw background, graph-derived red/green bars, direct-value blue bar and * a white marker from saved input 0x6D4. Preserve single arithmetic grouping, * truncating signed coordinates and input reads between draw callbacks. * Original UVGRPH 0x04 is linear evaluation; UVGEOM 0x0C/0x10 consume four * singles for color / four signed words for rectangle coordinates. * RE_UNKNOWN: scalar meanings/units, reachable input/coordinate ranges and * graphics-state ownership need original producers/callers. Clean C remains * unmatched; retain assembly pending complete byte/relocation proof.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_motion_00414774",
-          "declaration_line": 1352,
+          "declaration_line": 1356,
           "lines": [
-            1343
+            1347
           ]
         }
       ]
@@ -126128,21 +126108,61 @@
       ]
     },
     {
+      "id": "Q-93b4c78fc990",
+      "kind": "explicit_unknown",
+      "path": "src/modules/motion.c",
+      "symbol": "For a nonzero speech setting, set volume, then truncate randomScalar*4. * Only choice three with pending word D_motion_004160A0 set submits Hot Lava * speech with priority 0x7FFF and playback value 0x7A120. * RE_ORIGINAL_QUIRK: retain every choice gate, store the emitter byte and * clear pending after the attempt even when the returned emitter is 255. * RE_UNKNOWN: speech-setting bounds, pending writers/rearming, module * availability and playback-value units need producer/consumer evidence.",
+      "lines": [
+        1402
+      ],
+      "evidence": "For a nonzero speech setting, set volume, then truncate randomScalar*4. * Only choice three with pending word D_motion_004160A0 set submits Hot Lava * speech with priority 0x7FFF and playback value 0x7A120. * RE_ORIGINAL_QUIRK: retain every choice gate, store the emitter byte and * clear pending after the attempt even when the returned emitter is 255. * RE_UNKNOWN: speech-setting bounds, pending writers/rearming, module * availability and playback-value units need producer/consumer evidence.",
+      "owners": [
+        {
+          "kind": "global",
+          "name": "D_motion_004160A0",
+          "declaration_line": 1410,
+          "lines": [
+            1402
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-c61cf0a7ae28",
+      "kind": "explicit_unknown",
+      "path": "src/modules/motion.c",
+      "symbol": "For a nonzero speech setting, set volume, then truncate randomScalar*4. * Only choice three with pending word D_motion_004160A4 set submits explosion * speech. Scale the getter result by original D_motion_0041607C (0.9f); * retain priority 0x7FFF and playback value 0x1F4. * RE_ORIGINAL_QUIRK: retain every choice gate, store the emitter byte and * clear pending after the attempt even when the returned emitter is 255. * RE_UNKNOWN: speech-setting bounds, pending writers/rearming, module * availability, tuning purpose and playback-value units need evidence.",
+      "lines": [
+        1428
+      ],
+      "evidence": "For a nonzero speech setting, set volume, then truncate randomScalar*4. * Only choice three with pending word D_motion_004160A4 set submits explosion * speech. Scale the getter result by original D_motion_0041607C (0.9f); * retain priority 0x7FFF and playback value 0x1F4. * RE_ORIGINAL_QUIRK: retain every choice gate, store the emitter byte and * clear pending after the attempt even when the returned emitter is 255. * RE_UNKNOWN: speech-setting bounds, pending writers/rearming, module * availability, tuning purpose and playback-value units need evidence.",
+      "owners": [
+        {
+          "kind": "global",
+          "name": "D_motion_0041607C",
+          "declaration_line": 1437,
+          "lines": [
+            1428
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-664857950258",
       "kind": "explicit_unknown",
       "path": "src/modules/motion.c",
       "symbol": "Forward state, 1, embedded matrix 0x5E8 and 0 to the original helper. * RE_UNKNOWN: helper retention and mode meanings require its body and callers.",
       "lines": [
-        1184
+        1188
       ],
       "evidence": "Forward state, 1, embedded matrix 0x5E8 and 0 to the original helper. * RE_UNKNOWN: helper retention and mode meanings require its body and callers.",
       "owners": [
         {
           "kind": "function",
           "name": "motionForwardStateMatrix",
-          "declaration_line": 1186,
+          "declaration_line": 1190,
           "lines": [
-            1184
+            1188
           ]
         }
       ]
@@ -126153,16 +126173,16 @@
       "path": "src/modules/motion.c",
       "symbol": "From the planar record's X/Y pair, compute a normalized pair angle, * apply the shared angle scale and fold degrees through the misc exports. * Below the first ordered Y-magnitude threshold store zero; below the second, * multiply the folded result by the original (magnitude-offset)/span factor. * Preserve positive-test magnitude semantics for zero/NaN and reload the * stored response before attenuation. RE_UNKNOWN: constant units/ranges and * the response's consumer meaning require original writers/callers.",
       "lines": [
-        625
+        629
       ],
       "evidence": "From the planar record's X/Y pair, compute a normalized pair angle, * apply the shared angle scale and fold degrees through the misc exports. * Below the first ordered Y-magnitude threshold store zero; below the second, * multiply the folded result by the original (magnitude-offset)/span factor. * Preserve positive-test magnitude semantics for zero/NaN and reload the * stored response before attenuation. RE_UNKNOWN: constant units/ranges and * the response's consumer meaning require original writers/callers.",
       "owners": [
         {
           "kind": "function",
           "name": "motionComputePlanarRecordAngleResponse",
-          "declaration_line": 632,
+          "declaration_line": 636,
           "lines": [
-            625
+            629
           ]
         }
       ]
@@ -126173,16 +126193,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Gate scaling of scalar 0x988 by count 0x10E0, mode 0xA3C, vector dots * and signed kinds 0xA40/0xA68. Original UVFV 0x18 is a three-single dot * leaf; preserve repeated calls and postcall field reloads. Mode 1 returns * after a successful vector gate even when the input/kind test rejects it. * RE_ORIGINAL_QUIRK: mode-2 kinds 4/6 accept input >= 0; 7/5 require > 0. * RE_UNKNOWN: vector frames/normalization, scalar units, kind/count domains * and state/config lifetime need original producers/callers. Clean C remains * unmatched; retain assembly pending complete byte/relocation proof.",
       "lines": [
-        1305
+        1309
       ],
       "evidence": "Gate scaling of scalar 0x988 by count 0x10E0, mode 0xA3C, vector dots * and signed kinds 0xA40/0xA68. Original UVFV 0x18 is a three-single dot * leaf; preserve repeated calls and postcall field reloads. Mode 1 returns * after a successful vector gate even when the input/kind test rejects it. * RE_ORIGINAL_QUIRK: mode-2 kinds 4/6 accept input >= 0; 7/5 require > 0. * RE_UNKNOWN: vector frames/normalization, scalar units, kind/count domains * and state/config lifetime need original producers/callers. Clean C remains * unmatched; retain assembly pending complete byte/relocation proof.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_motion_00414430",
-          "declaration_line": 1314,
+          "declaration_line": 1318,
           "lines": [
-            1305
+            1309
           ]
         }
       ]
@@ -126193,16 +126213,16 @@
       "path": "src/modules/motion.c",
       "symbol": "In game state six, forward the stored word to BATTLE's identity scan. * Always call helper130E4(state, state+618, 1), then the voice helper. * RE_UNKNOWN: identity/phase roles and lifetimes need producers/callers; the second incoming word is unused.",
       "lines": [
-        999
+        1003
       ],
       "evidence": "In game state six, forward the stored word to BATTLE's identity scan. * Always call helper130E4(state, state+618, 1), then the voice helper. * RE_UNKNOWN: identity/phase roles and lifetimes need producers/callers; the second incoming word is unused.",
       "owners": [
         {
           "kind": "function",
           "name": "motionRunBattleAndHotLavaUpdate",
-          "declaration_line": 1002,
+          "declaration_line": 1006,
           "lines": [
-            999
+            1003
           ]
         }
       ]
@@ -126213,16 +126233,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Initialize the shared sound handle before checking byte70E, then try a * SPLASH acquisition while that byte is zero. Copy input XYZ to matrix5E8 * translation row618; rumble runs after acquisition even on failure. * Success sets kind+1 and updates dynamic/animation/camera/audio state, * with BATTLE0C after sound only when current game state is 6. Player is * snapshotted before initialization; fields and acquired pointer reload * across callbacks. RE_ORIGINAL_QUIRK: initialization precedes the active * exit; either attempted outcome ends by storing halfword70C=5. * RE_UNKNOWN: input flags, state byte/halfword policy, state6, sound10, * scalar units, caller index/null guarantees, allocation, aliasing and * callback/resource lifetimes need original producers/callers. * Both genuine local declaration orders match 540 bytes and 132/135 words; * only two SH and one LHU kind stack offsets differ: native SP+54 decimal, * first draft SP+50, sole order alternative SP+46 (hex 36/32/2E). * Each trial's 30 full relocation records match the original as a multiset; * enumeration differs. Historical local storage/order remains unknown. * Retain original ASM until complete instruction identity is recovered; * no padding, extra local or further declaration permutation is inferred.",
       "lines": [
-        977
+        981
       ],
       "evidence": "Initialize the shared sound handle before checking byte70E, then try a * SPLASH acquisition while that byte is zero. Copy input XYZ to matrix5E8 * translation row618; rumble runs after acquisition even on failure. * Success sets kind+1 and updates dynamic/animation/camera/audio state, * with BATTLE0C after sound only when current game state is 6. Player is * snapshotted before initialization; fields and acquired pointer reload * across callbacks. RE_ORIGINAL_QUIRK: initialization precedes the active * exit; either attempted outcome ends by storing halfword70C=5. * RE_UNKNOWN: input flags, state byte/halfword policy, state6, sound10, * scalar units, caller index/null guarantees, allocation, aliasing and * callback/resource lifetimes need original producers/callers. * Both genuine local declaration orders match 540 bytes and 132/135 words; * only two SH and one LHU kind stack offsets differ: native SP+54 decimal, * first draft SP+50, sole order alternative SP+46 (hex 36/32/2E). * Each trial's 30 full relocation records match the original as a multiset; * enumeration differs. Historical local storage/order remains unknown. * Retain original ASM until complete instruction identity is recovered; * no padding, extra local or further declaration permutation is inferred.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_motion_004098B8",
-          "declaration_line": 996,
+          "declaration_line": 1000,
           "lines": [
-            977
+            981
           ]
         }
       ]
@@ -126233,16 +126253,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Original cross/add/transform and dot products update phase 0x8D4 and * component 0x998; 0x988/0x998 overlap vector 0x984.y / vector 0x990.z. * RE_ORIGINAL_QUIRK: caller passes 1-dot*dot directly; the bound sqrt export * returns zero for ordered-negative input. Keep phase reloads and NaN tests. * RE_UNKNOWN: vector frames/units, normalized-input/phase domains and linked * record lifetime need original producers/callers. Clean C remains unmatched; * retain original assembly pending complete instruction/relocation proof.",
       "lines": [
-        1293
+        1297
       ],
       "evidence": "Original cross/add/transform and dot products update phase 0x8D4 and * component 0x998; 0x988/0x998 overlap vector 0x984.y / vector 0x990.z. * RE_ORIGINAL_QUIRK: caller passes 1-dot*dot directly; the bound sqrt export * returns zero for ordered-negative input. Keep phase reloads and NaN tests. * RE_UNKNOWN: vector frames/units, normalized-input/phase domains and linked * record lifetime need original producers/callers. Clean C remains unmatched; * retain original assembly pending complete instruction/relocation proof.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_motion_00413284",
-          "declaration_line": 1301,
+          "declaration_line": 1305,
           "lines": [
-            1293
+            1297
           ]
         }
       ]
@@ -126253,52 +126273,52 @@
       "path": "src/modules/motion.c",
       "symbol": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "lines": [
-        701,
-        1317,
-        1326,
-        1335,
-        1355
+        705,
+        1321,
+        1330,
+        1339,
+        1359
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "owners": [
         {
           "kind": "function",
           "name": "func_motion_00405E5C",
-          "declaration_line": 705,
+          "declaration_line": 709,
           "lines": [
-            701
+            705
           ]
         },
         {
           "kind": "function",
           "name": "func_motion_0041475C",
-          "declaration_line": 1321,
+          "declaration_line": 1325,
           "lines": [
-            1317
+            1321
           ]
         },
         {
           "kind": "function",
           "name": "func_motion_00414764",
-          "declaration_line": 1330,
+          "declaration_line": 1334,
           "lines": [
-            1326
+            1330
           ]
         },
         {
           "kind": "function",
           "name": "func_motion_0041476C",
-          "declaration_line": 1339,
+          "declaration_line": 1343,
           "lines": [
-            1335
+            1339
           ]
         },
         {
           "kind": "function",
           "name": "func_motion_00414A68",
-          "declaration_line": 1359,
+          "declaration_line": 1363,
           "lines": [
-            1355
+            1359
           ]
         }
       ]
@@ -126349,16 +126369,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Query between matrix translations and retain the original drawing calls. * Original matrix-row aliases, three single-precision component divisions, * MISC110 returned scalar, query arguments and export reloads are established * by native providers. Positive results select the first flag; any nonzero * result reaches the downstream basis helper. Preserve this distinction. * RE_ORIGINAL_QUIRK: the local query record is uninitialized before isct54 * reads its first two words; no caller initialization guarantee is established. * RE_UNKNOWN: original state/input allocations, zero-length/finite domains, * result-prefix initialization, vector/scalar meanings and units, query flags, * pointer aliases and module/resource lifetimes need original callers/producers. * The observed 88-byte query and 64-byte draw access views share local storage; * they do not prove complete historical object declarations or allocations. * Readable C remains parked: the first draft has 880 versus 884 native bytes * and 73 differing positions. Preserving native zero-before-test flag flow * gives 884/884 bytes and all 30 complete relocation records match by site; * only the initial three HI/LO pair groups differ in record enumeration. * Seven instruction words still differ: native positive/other flag registers * V1/A1 become V0/V1, including their shared halfword stores. All 214 other * words, frame and local homes match. No further effect/type correction is * supported; historical declarations and flag lifetimes remain unproved. * Require exact instructions and original packed-module/fresh ROM proof * before replacing ASM; no dummy storage or register forcing is justified.",
       "lines": [
-        828
+        832
       ],
       "evidence": "Query between matrix translations and retain the original drawing calls. * Original matrix-row aliases, three single-precision component divisions, * MISC110 returned scalar, query arguments and export reloads are established * by native providers. Positive results select the first flag; any nonzero * result reaches the downstream basis helper. Preserve this distinction. * RE_ORIGINAL_QUIRK: the local query record is uninitialized before isct54 * reads its first two words; no caller initialization guarantee is established. * RE_UNKNOWN: original state/input allocations, zero-length/finite domains, * result-prefix initialization, vector/scalar meanings and units, query flags, * pointer aliases and module/resource lifetimes need original callers/producers. * The observed 88-byte query and 64-byte draw access views share local storage; * they do not prove complete historical object declarations or allocations. * Readable C remains parked: the first draft has 880 versus 884 native bytes * and 73 differing positions. Preserving native zero-before-test flag flow * gives 884/884 bytes and all 30 complete relocation records match by site; * only the initial three HI/LO pair groups differ in record enumeration. * Seven instruction words still differ: native positive/other flag registers * V1/A1 become V0/V1, including their shared halfword stores. All 214 other * words, frame and local homes match. No further effect/type correction is * supported; historical declarations and flag lifetimes remain unproved. * Require exact instructions and original packed-module/fresh ROM proof * before replacing ASM; no dummy storage or register forcing is justified.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_motion_004066E4",
-          "declaration_line": 851,
+          "declaration_line": 855,
           "lines": [
-            828
+            832
           ]
         }
       ]
@@ -126389,16 +126409,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Query the descriptor's dynamic word, forward CAM tag 18 and copy the two * vectors in their original order; the store at 10C4 also occurs when signed E50=-1. * Preserve the ordered single multiply/negate threshold gates, post-DYN * reloads and shared E50=1 failure store. The successful mode2/gameState!=6 * path calls 130E4 then the voice helper without that replacement. * Original DYN64 selector6 copies 16 floats; the natural 64-byte matrix output * and its +48 interior address are grounded by actual FMTX0C/native callers. * The 130E4 call receives third word 0 and does not dereference that address on * this path; retain the object/address/call, not an invented unused vector. * RE_UNKNOWN: state/property/value meanings and units, caller record extents, * module availability, aliases/lifetimes and historical local declarations * require original producers/callers; historical storage declarations remain unproved. * Readable C remains parked: first draft 412 versus 388 native bytes; preserving * the observed shared failure store gives 388/388 and all 18 complete ordered * relocation records match. Exactly four instruction words still differ: * frame 128 versus 120 and captured-context homeSP120 versus116. All 93 other * words match, including matrix SP52 and final-row SP100. No dummy storage or * alignment/declaration permutation is justified by these residual offsets. * Require exact instructions and packed-module/fresh ROM proof before C.",
       "lines": [
-        955
+        959
       ],
       "evidence": "Query the descriptor's dynamic word, forward CAM tag 18 and copy the two * vectors in their original order; the store at 10C4 also occurs when signed E50=-1. * Preserve the ordered single multiply/negate threshold gates, post-DYN * reloads and shared E50=1 failure store. The successful mode2/gameState!=6 * path calls 130E4 then the voice helper without that replacement. * Original DYN64 selector6 copies 16 floats; the natural 64-byte matrix output * and its +48 interior address are grounded by actual FMTX0C/native callers. * The 130E4 call receives third word 0 and does not dereference that address on * this path; retain the object/address/call, not an invented unused vector. * RE_UNKNOWN: state/property/value meanings and units, caller record extents, * module availability, aliases/lifetimes and historical local declarations * require original producers/callers; historical storage declarations remain unproved. * Readable C remains parked: first draft 412 versus 388 native bytes; preserving * the observed shared failure store gives 388/388 and all 18 complete ordered * relocation records match. Exactly four instruction words still differ: * frame 128 versus 120 and captured-context homeSP120 versus116. All 93 other * words match, including matrix SP52 and final-row SP100. No dummy storage or * alignment/declaration permutation is justified by these residual offsets. * Require exact instructions and packed-module/fresh ROM proof before C.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_motion_00409734",
-          "declaration_line": 975,
+          "declaration_line": 979,
           "lines": [
-            955
+            959
           ]
         }
       ]
@@ -126409,7 +126429,7 @@
       "path": "src/modules/motion.c",
       "symbol": "RE_UNKNOWN: The s32 snapshot preserves promoted byte values; original lexical local type/order and complete historical allocation types remain unproved. * Runtime module availability and pointer lifetime/alias guarantees still require original loading and caller paths; no new null/default handling is added.",
       "lines": [
-        1206
+        1210
       ],
       "evidence": "RE_UNKNOWN: The s32 snapshot preserves promoted byte values; original lexical local type/order and complete historical allocation types remain unproved. * Runtime module availability and pointer lifetime/alias guarantees still require original loading and caller paths; no new null/default handling is added."
     },
@@ -126419,16 +126439,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Read the unsigned halfword at state offset 0x70C without modifying the caller object. RE_UNKNOWN: the field role requires its writers and consumers; no status or identifier meaning is assumed.",
       "lines": [
-        1388
+        1395
       ],
       "evidence": "Read the unsigned halfword at state offset 0x70C without modifying the caller object. RE_UNKNOWN: the field role requires its writers and consumers; no status or identifier meaning is assumed.",
       "owners": [
         {
           "kind": "function",
           "name": "func_motion_00415870",
-          "declaration_line": 1389,
+          "declaration_line": 1396,
           "lines": [
-            1388
+            1395
           ]
         }
       ]
@@ -126459,16 +126479,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Return one for a successful query whose final kind is not four. * Kind one is reclassified as four when its terrain triangle resolves to * loaded texture byte 0x27 equal to four. Reload shared terrain state for * that second query, preserving the original signed-byte promotion. * RE_UNKNOWN: caller input domain, mode/kind meanings, terrain-ID validity * and provider/shared-state lifetimes need original producers/callers.",
       "lines": [
-        1152
+        1156
       ],
       "evidence": "Return one for a successful query whose final kind is not four. * Kind one is reclassified as four when its terrain triangle resolves to * loaded texture byte 0x27 equal to four. Reload shared terrain state for * that second query, preserving the original signed-byte promotion. * RE_UNKNOWN: caller input domain, mode/kind meanings, terrain-ID validity * and provider/shared-state lifetimes need original producers/callers.",
       "owners": [
         {
           "kind": "function",
           "name": "motionQueryHasNonExcludedKind",
-          "declaration_line": 1158,
+          "declaration_line": 1162,
           "lines": [
-            1152
+            1156
           ]
         }
       ]
@@ -126499,16 +126519,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Select one of the original 0x1C-byte point records, compute angular * cross offset plus linear velocity, then transform by matrix 0x5E8. * RE_UNKNOWN: index bounds for tables at 0x728/0x71C need original state/selector producers.",
       "lines": [
-        938
+        942
       ],
       "evidence": "Select one of the original 0x1C-byte point records, compute angular * cross offset plus linear velocity, then transform by matrix 0x5E8. * RE_UNKNOWN: index bounds for tables at 0x728/0x71C need original state/selector producers.",
       "owners": [
         {
           "kind": "function",
           "name": "motionTransformSelectedPointVelocity",
-          "declaration_line": 941,
+          "declaration_line": 945,
           "lines": [
-            938
+            942
           ]
         }
       ]
@@ -126539,16 +126559,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Transform a configured local Z vector through the state's linear matrix * and add it to the existing accumulated vector. Kind two selects the first * constant; other kinds select the alternate. Recheck kind after the helper. * For kind one, halve transformed Y in double precision only when value674 * is strictly negative or positive; zeros and NaNs leave Y unchanged. * RE_UNKNOWN: kind/value ownership, constant units and the accumulated * vector's physical interpretation require original producers/callers.",
       "lines": [
-        1066
+        1070
       ],
       "evidence": "Transform a configured local Z vector through the state's linear matrix * and add it to the existing accumulated vector. Kind two selects the first * constant; other kinds select the alternate. Recheck kind after the helper. * For kind one, halve transformed Y in double precision only when value674 * is strictly negative or positive; zeros and NaNs leave Y unchanged. * RE_UNKNOWN: kind/value ownership, constant units and the accumulated * vector's physical interpretation require original producers/callers.",
       "owners": [
         {
           "kind": "function",
           "name": "motionAccumulateTransformedConfiguredVector",
-          "declaration_line": 1073,
+          "declaration_line": 1077,
           "lines": [
-            1066
+            1070
           ]
         }
       ]
@@ -126559,16 +126579,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Update CARANIM property 27 from the byte mode and ordered double * comparison. A zero mode activates the dynamic record, sets property 27, * clears CAM property 14, then invokes the existing state helper. * RE_UNKNOWN: mode/value meanings and units, object/input domains, allocation * extents, aliases and retained context lifetimes require original callers * and producers. Keep context captured before callbacks and reload mode * after the property callback; do not invent null/default handling.",
       "lines": [
-        1208
+        1212
       ],
       "evidence": "Update CARANIM property 27 from the byte mode and ordered double * comparison. A zero mode activates the dynamic record, sets property 27, * clears CAM property 14, then invokes the existing state helper. * RE_UNKNOWN: mode/value meanings and units, object/input domains, allocation * extents, aliases and retained context lifetimes require original callers * and producers. Keep context captured before callbacks and reload mode * after the property callback; do not invent null/default handling.",
       "owners": [
         {
           "kind": "function",
           "name": "motionUpdateModeGatedProperties",
-          "declaration_line": 1215,
+          "declaration_line": 1219,
           "lines": [
-            1208
+            1212
           ]
         }
       ]
@@ -126619,16 +126639,36 @@
       "path": "src/modules/motion.c",
       "symbol": "Update three selected-record scalars with the original pre-gate ratio, * promoted-double gate, signed samples, MISC 0x58 degree fold and GRPH 0x04 * curve. Selector halfwords stride 0x10; records begin at 0x128, stride 0x130. * Preserve the live count at 0x1130, u16 traversal and ordered zero/NaN gates. * RE_UNKNOWN: physical units, selector/record capacities, divisor/curve * domains, alternate-mode meaning and alias/lifetime need original producers. * Clean C differs in reloads, branches, frame and operand order; retain ASM * pending complete instruction and relocation proof.",
       "lines": [
-        685
+        689
       ],
       "evidence": "Update three selected-record scalars with the original pre-gate ratio, * promoted-double gate, signed samples, MISC 0x58 degree fold and GRPH 0x04 * curve. Selector halfwords stride 0x10; records begin at 0x128, stride 0x130. * Preserve the live count at 0x1130, u16 traversal and ordered zero/NaN gates. * RE_UNKNOWN: physical units, selector/record capacities, divisor/curve * domains, alternate-mode meaning and alias/lifetime need original producers. * Clean C differs in reloads, branches, frame and operand order; retain ASM * pending complete instruction and relocation proof.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_motion_004057E4",
-          "declaration_line": 694,
+          "declaration_line": 698,
           "lines": [
-            685
+            689
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-a18f9feda28d",
+      "kind": "explicit_unknown",
+      "path": "src/modules/motion.c",
+      "symbol": "Visit four state-relative 0x130-byte regions. Pass each region+0x128 * to the vector helper with output region+0x164, then its angle response. * RE_ORIGINAL_QUIRK: wrap the index to 16 bits before the signed <4 test. * RE_UNKNOWN: the two focused record views, full state extent and lifetime * need allocation/writer evidence; no four-element C array is established.",
+      "lines": [
+        608
+      ],
+      "evidence": "Visit four state-relative 0x130-byte regions. Pass each region+0x128 * to the vector helper with output region+0x164, then its angle response. * RE_ORIGINAL_QUIRK: wrap the index to 16 bits before the signed <4 test. * RE_UNKNOWN: the two focused record views, full state extent and lifetime * need allocation/writer evidence; no four-element C array is established.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "motionUpdateFourPlanarRecords",
+          "declaration_line": 614,
+          "lines": [
+            608
           ]
         }
       ]
@@ -166881,17 +166921,17 @@
       "path": "src/modules/motion.c",
       "symbol": "scalar1",
       "lines": [
-        738,
-        763
+        742,
+        767
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionCallScalarHelperWithThreeTransforms",
-          "declaration_line": 738,
+          "declaration_line": 742,
           "lines": [
-            738,
-            763
+            742,
+            767
           ]
         }
       ]
@@ -166930,17 +166970,17 @@
       "path": "src/modules/motion.c",
       "symbol": "scalar2",
       "lines": [
-        738,
-        770
+        742,
+        774
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionCallScalarHelperWithThreeTransforms",
-          "declaration_line": 738,
+          "declaration_line": 742,
           "lines": [
-            738,
-            770
+            742,
+            774
           ]
         }
       ]
@@ -166951,17 +166991,17 @@
       "path": "src/modules/motion.c",
       "symbol": "scalar3",
       "lines": [
-        739,
-        755
+        743,
+        759
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionCallScalarHelperWithThreeTransforms",
-          "declaration_line": 738,
+          "declaration_line": 742,
           "lines": [
-            739,
-            755
+            743,
+            759
           ]
         }
       ]
@@ -167254,15 +167294,15 @@
       "symbol": "value15C",
       "lines": [
         257,
-        1282
+        1286
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionApplyPropertyAndRumbleSequence",
-          "declaration_line": 1262,
+          "declaration_line": 1266,
           "lines": [
-            1282
+            1286
           ]
         },
         {
@@ -167282,15 +167322,15 @@
       "symbol": "value674",
       "lines": [
         25,
-        1088
+        1092
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionAccumulateTransformedConfiguredVector",
-          "declaration_line": 1073,
+          "declaration_line": 1077,
           "lines": [
-            1088
+            1092
           ]
         },
         {
@@ -167310,15 +167350,15 @@
       "symbol": "value690",
       "lines": [
         66,
-        1056
+        1060
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionApplyConditionalCorrection",
-          "declaration_line": 1054,
+          "declaration_line": 1058,
           "lines": [
-            1056
+            1060
           ]
         },
         {
@@ -167339,30 +167379,30 @@
       "lines": [
         35,
         66,
-        1057,
-        1134,
-        1135,
-        1137,
-        1138
+        1061,
+        1138,
+        1139,
+        1141,
+        1142
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionApplyConditionalCorrection",
-          "declaration_line": 1054,
+          "declaration_line": 1058,
           "lines": [
-            1057
+            1061
           ]
         },
         {
           "kind": "function",
           "name": "motionApplyGatedModeResponse",
-          "declaration_line": 1105,
+          "declaration_line": 1109,
           "lines": [
-            1134,
-            1135,
-            1137,
-            1138
+            1138,
+            1139,
+            1141,
+            1142
           ]
         },
         {
@@ -167390,15 +167430,15 @@
       "symbol": "value9A0",
       "lines": [
         66,
-        1059
+        1063
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionApplyConditionalCorrection",
-          "declaration_line": 1054,
+          "declaration_line": 1058,
           "lines": [
-            1059
+            1063
           ]
         },
         {
@@ -167418,15 +167458,15 @@
       "symbol": "vector14",
       "lines": [
         118,
-        795
+        799
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionBuildBasisAndCallScalarHelper",
-          "declaration_line": 787,
+          "declaration_line": 791,
           "lines": [
-            795
+            799
           ]
         },
         {
@@ -167446,15 +167486,15 @@
       "symbol": "vector34",
       "lines": [
         120,
-        796
+        800
       ],
       "owners": [
         {
           "kind": "function",
           "name": "motionBuildBasisAndCallScalarHelper",
-          "declaration_line": 787,
+          "declaration_line": 791,
           "lines": [
-            796
+            800
           ]
         },
         {
@@ -216368,56 +216408,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Apply the original dynamic/object flags, CARANIM properties and three * rumble merges, then forward CAM tag18 and configure the returned PIECE object. * RE_ORIGINAL_QUIRK: the PIECE source handle reloads state->context after * callbacks, while the final CARANIM call uses the initially captured context. * RE_UNKNOWN: property/value roles and physical units, caller ID domains, * module availability, record allocations, aliases and retained pointer * lifetimes require original producers/callers. Keep the original read order * and callback results without adding null/default handling.",
       "lines": [
-        1254
+        1258
       ],
       "evidence": "Apply the original dynamic/object flags, CARANIM properties and three * rumble merges, then forward CAM tag18 and configure the returned PIECE object. * RE_ORIGINAL_QUIRK: the PIECE source handle reloads state->context after * callbacks, while the final CARANIM call uses the initially captured context. * RE_UNKNOWN: property/value roles and physical units, caller ID domains, * module availability, record allocations, aliases and retained pointer * lifetimes require original producers/callers. Keep the original read order * and callback results without adding null/default handling.",
       "owners": [
         {
           "kind": "function",
           "name": "motionApplyPropertyAndRumbleSequence",
-          "declaration_line": 1262,
+          "declaration_line": 1266,
           "lines": [
-            1254
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-6be59b2b872d",
-      "kind": "original_quirk",
-      "path": "src/modules/motion.c",
-      "symbol": "Attempt pending Hot Lava speech on random choice 3 with priority 0x7FFF; playback value is 0x7A120. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: playback-value units need consumers.",
-      "lines": [
-        1395
-      ],
-      "evidence": "Attempt pending Hot Lava speech on random choice 3 with priority 0x7FFF; playback value is 0x7A120. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: playback-value units need consumers.",
-      "owners": [
-        {
-          "kind": "global",
-          "name": "D_motion_004160A0",
-          "declaration_line": 1397,
-          "lines": [
-            1395
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-313c3f21035f",
-      "kind": "original_quirk",
-      "path": "src/modules/motion.c",
-      "symbol": "Attempt pending explosion speech on random choice 3 with its scale; priority 0x7FFF, playback value 0x1F4. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: playback-value units need consumers.",
-      "lines": [
-        1415
-      ],
-      "evidence": "Attempt pending explosion speech on random choice 3 with its scale; priority 0x7FFF, playback value 0x1F4. * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: playback-value units need consumers.",
-      "owners": [
-        {
-          "kind": "global",
-          "name": "D_motion_0041607C",
-          "declaration_line": 1417,
-          "lines": [
-            1415
+            1258
           ]
         }
       ]
@@ -216448,16 +216448,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Build a basis in one matrix, preserving its vector-row aliases and * translation copied from input14. Cross-product order depends on the * ordered magnitude test against the original double0.2 threshold. * RE_ORIGINAL_QUIRK: all three normalization return values are ignored; * the actual provider leaves the destination unchanged on zero length. * RE_UNKNOWN: full input allocation/ownership and vector meanings/frames, * finite/nondegenerate domains, rendering purpose and module/callback * lifetime guarantees need original producers/callers. This union describes * actual shared local storage, not a proved historical union declaration.",
       "lines": [
-        778
+        782
       ],
       "evidence": "Build a basis in one matrix, preserving its vector-row aliases and * translation copied from input14. Cross-product order depends on the * ordered magnitude test against the original double0.2 threshold. * RE_ORIGINAL_QUIRK: all three normalization return values are ignored; * the actual provider leaves the destination unchanged on zero length. * RE_UNKNOWN: full input allocation/ownership and vector meanings/frames, * finite/nondegenerate domains, rendering purpose and module/callback * lifetime guarantees need original producers/callers. This union describes * actual shared local storage, not a proved historical union declaration.",
       "owners": [
         {
           "kind": "function",
           "name": "motionBuildBasisAndCallScalarHelper",
-          "declaration_line": 787,
+          "declaration_line": 791,
           "lines": [
-            778
+            782
           ]
         }
       ]
@@ -216468,16 +216468,56 @@
       "path": "src/modules/motion.c",
       "symbol": "Dispatch record kinds and process a selected three-float output. * Native SMACK10/14 return record pointers; SMACK0C consumes the output and * a fresh state+126C pointer. Earlier context/record pointers stay captured; * the final stored key is read again after the callback. Category20 is * tested before the later u16 narrowing. Signed selectors and ordered * single-precision open scalar intervals are preserved in the parked C. * RE_ORIGINAL_QUIRK: the indexed selector halfword read has no bound test; * the later signed index < 4 test has no nonnegative check. These operations * do not establish that any caller supplies an out-of-range index. * RE_UNKNOWN: complete state/entry/record allocations, index/key/category * domains, pointer aliases and replacement lifetimes, module availability, * flag/vector/scalar purposes and units need original callers and producers. * Readable C remains parked: 944 native versus 964 draft bytes, with 225 * differing positions. The native retains state in S0 and entry in S1; * the draft homes state at SP+84 and retains entry in S0, adding reloads. * Both use an 80-byte frame. All 34 relocation symbol/type identities keep * their order, but sites and downstream helper values shift with the real * 20-byte growth; complete relocation equality fails. No missing effect, * width, precision, argument or callback reload is supported by full review. * Historical declarations/storage remain unproved; require exact code and * original packed-module/fresh ROM proof before replacing retained ASM.",
       "lines": [
-        885
+        889
       ],
       "evidence": "Dispatch record kinds and process a selected three-float output. * Native SMACK10/14 return record pointers; SMACK0C consumes the output and * a fresh state+126C pointer. Earlier context/record pointers stay captured; * the final stored key is read again after the callback. Category20 is * tested before the later u16 narrowing. Signed selectors and ordered * single-precision open scalar intervals are preserved in the parked C. * RE_ORIGINAL_QUIRK: the indexed selector halfword read has no bound test; * the later signed index < 4 test has no nonnegative check. These operations * do not establish that any caller supplies an out-of-range index. * RE_UNKNOWN: complete state/entry/record allocations, index/key/category * domains, pointer aliases and replacement lifetimes, module availability, * flag/vector/scalar purposes and units need original callers and producers. * Readable C remains parked: 944 native versus 964 draft bytes, with 225 * differing positions. The native retains state in S0 and entry in S1; * the draft homes state at SP+84 and retains entry in S0, adding reloads. * Both use an 80-byte frame. All 34 relocation symbol/type identities keep * their order, but sites and downstream helper values shift with the real * 20-byte growth; complete relocation equality fails. No missing effect, * width, precision, argument or callback reload is supported by full review. * Historical declarations/storage remain unproved; require exact code and * original packed-module/fresh ROM proof before replacing retained ASM.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_motion_00407C10",
-          "declaration_line": 907,
+          "declaration_line": 911,
           "lines": [
-            885
+            889
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-f4428ba03de0",
+      "kind": "original_quirk",
+      "path": "src/modules/motion.c",
+      "symbol": "For a nonzero speech setting, set volume, then truncate randomScalar*4. * Only choice three with pending word D_motion_004160A0 set submits Hot Lava * speech with priority 0x7FFF and playback value 0x7A120. * RE_ORIGINAL_QUIRK: retain every choice gate, store the emitter byte and * clear pending after the attempt even when the returned emitter is 255. * RE_UNKNOWN: speech-setting bounds, pending writers/rearming, module * availability and playback-value units need producer/consumer evidence.",
+      "lines": [
+        1402
+      ],
+      "evidence": "For a nonzero speech setting, set volume, then truncate randomScalar*4. * Only choice three with pending word D_motion_004160A0 set submits Hot Lava * speech with priority 0x7FFF and playback value 0x7A120. * RE_ORIGINAL_QUIRK: retain every choice gate, store the emitter byte and * clear pending after the attempt even when the returned emitter is 255. * RE_UNKNOWN: speech-setting bounds, pending writers/rearming, module * availability and playback-value units need producer/consumer evidence.",
+      "owners": [
+        {
+          "kind": "global",
+          "name": "D_motion_004160A0",
+          "declaration_line": 1410,
+          "lines": [
+            1402
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-cdaa10d77584",
+      "kind": "original_quirk",
+      "path": "src/modules/motion.c",
+      "symbol": "For a nonzero speech setting, set volume, then truncate randomScalar*4. * Only choice three with pending word D_motion_004160A4 set submits explosion * speech. Scale the getter result by original D_motion_0041607C (0.9f); * retain priority 0x7FFF and playback value 0x1F4. * RE_ORIGINAL_QUIRK: retain every choice gate, store the emitter byte and * clear pending after the attempt even when the returned emitter is 255. * RE_UNKNOWN: speech-setting bounds, pending writers/rearming, module * availability, tuning purpose and playback-value units need evidence.",
+      "lines": [
+        1428
+      ],
+      "evidence": "For a nonzero speech setting, set volume, then truncate randomScalar*4. * Only choice three with pending word D_motion_004160A4 set submits explosion * speech. Scale the getter result by original D_motion_0041607C (0.9f); * retain priority 0x7FFF and playback value 0x1F4. * RE_ORIGINAL_QUIRK: retain every choice gate, store the emitter byte and * clear pending after the attempt even when the returned emitter is 255. * RE_UNKNOWN: speech-setting bounds, pending writers/rearming, module * availability, tuning purpose and playback-value units need evidence.",
+      "owners": [
+        {
+          "kind": "global",
+          "name": "D_motion_0041607C",
+          "declaration_line": 1437,
+          "lines": [
+            1428
           ]
         }
       ]
@@ -216488,16 +216528,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Gate scaling of scalar 0x988 by count 0x10E0, mode 0xA3C, vector dots * and signed kinds 0xA40/0xA68. Original UVFV 0x18 is a three-single dot * leaf; preserve repeated calls and postcall field reloads. Mode 1 returns * after a successful vector gate even when the input/kind test rejects it. * RE_ORIGINAL_QUIRK: mode-2 kinds 4/6 accept input >= 0; 7/5 require > 0. * RE_UNKNOWN: vector frames/normalization, scalar units, kind/count domains * and state/config lifetime need original producers/callers. Clean C remains * unmatched; retain assembly pending complete byte/relocation proof.",
       "lines": [
-        1305
+        1309
       ],
       "evidence": "Gate scaling of scalar 0x988 by count 0x10E0, mode 0xA3C, vector dots * and signed kinds 0xA40/0xA68. Original UVFV 0x18 is a three-single dot * leaf; preserve repeated calls and postcall field reloads. Mode 1 returns * after a successful vector gate even when the input/kind test rejects it. * RE_ORIGINAL_QUIRK: mode-2 kinds 4/6 accept input >= 0; 7/5 require > 0. * RE_UNKNOWN: vector frames/normalization, scalar units, kind/count domains * and state/config lifetime need original producers/callers. Clean C remains * unmatched; retain assembly pending complete byte/relocation proof.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_motion_00414430",
-          "declaration_line": 1314,
+          "declaration_line": 1318,
           "lines": [
-            1305
+            1309
           ]
         }
       ]
@@ -216508,16 +216548,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Initialize the shared sound handle before checking byte70E, then try a * SPLASH acquisition while that byte is zero. Copy input XYZ to matrix5E8 * translation row618; rumble runs after acquisition even on failure. * Success sets kind+1 and updates dynamic/animation/camera/audio state, * with BATTLE0C after sound only when current game state is 6. Player is * snapshotted before initialization; fields and acquired pointer reload * across callbacks. RE_ORIGINAL_QUIRK: initialization precedes the active * exit; either attempted outcome ends by storing halfword70C=5. * RE_UNKNOWN: input flags, state byte/halfword policy, state6, sound10, * scalar units, caller index/null guarantees, allocation, aliasing and * callback/resource lifetimes need original producers/callers. * Both genuine local declaration orders match 540 bytes and 132/135 words; * only two SH and one LHU kind stack offsets differ: native SP+54 decimal, * first draft SP+50, sole order alternative SP+46 (hex 36/32/2E). * Each trial's 30 full relocation records match the original as a multiset; * enumeration differs. Historical local storage/order remains unknown. * Retain original ASM until complete instruction identity is recovered; * no padding, extra local or further declaration permutation is inferred.",
       "lines": [
-        977
+        981
       ],
       "evidence": "Initialize the shared sound handle before checking byte70E, then try a * SPLASH acquisition while that byte is zero. Copy input XYZ to matrix5E8 * translation row618; rumble runs after acquisition even on failure. * Success sets kind+1 and updates dynamic/animation/camera/audio state, * with BATTLE0C after sound only when current game state is 6. Player is * snapshotted before initialization; fields and acquired pointer reload * across callbacks. RE_ORIGINAL_QUIRK: initialization precedes the active * exit; either attempted outcome ends by storing halfword70C=5. * RE_UNKNOWN: input flags, state byte/halfword policy, state6, sound10, * scalar units, caller index/null guarantees, allocation, aliasing and * callback/resource lifetimes need original producers/callers. * Both genuine local declaration orders match 540 bytes and 132/135 words; * only two SH and one LHU kind stack offsets differ: native SP+54 decimal, * first draft SP+50, sole order alternative SP+46 (hex 36/32/2E). * Each trial's 30 full relocation records match the original as a multiset; * enumeration differs. Historical local storage/order remains unknown. * Retain original ASM until complete instruction identity is recovered; * no padding, extra local or further declaration permutation is inferred.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_motion_004098B8",
-          "declaration_line": 996,
+          "declaration_line": 1000,
           "lines": [
-            977
+            981
           ]
         }
       ]
@@ -216528,16 +216568,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Original cross/add/transform and dot products update phase 0x8D4 and * component 0x998; 0x988/0x998 overlap vector 0x984.y / vector 0x990.z. * RE_ORIGINAL_QUIRK: caller passes 1-dot*dot directly; the bound sqrt export * returns zero for ordered-negative input. Keep phase reloads and NaN tests. * RE_UNKNOWN: vector frames/units, normalized-input/phase domains and linked * record lifetime need original producers/callers. Clean C remains unmatched; * retain original assembly pending complete instruction/relocation proof.",
       "lines": [
-        1293
+        1297
       ],
       "evidence": "Original cross/add/transform and dot products update phase 0x8D4 and * component 0x998; 0x988/0x998 overlap vector 0x984.y / vector 0x990.z. * RE_ORIGINAL_QUIRK: caller passes 1-dot*dot directly; the bound sqrt export * returns zero for ordered-negative input. Keep phase reloads and NaN tests. * RE_UNKNOWN: vector frames/units, normalized-input/phase domains and linked * record lifetime need original producers/callers. Clean C remains unmatched; * retain original assembly pending complete instruction/relocation proof.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_motion_00413284",
-          "declaration_line": 1301,
+          "declaration_line": 1305,
           "lines": [
-            1293
+            1297
           ]
         }
       ]
@@ -216588,16 +216628,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Query between matrix translations and retain the original drawing calls. * Original matrix-row aliases, three single-precision component divisions, * MISC110 returned scalar, query arguments and export reloads are established * by native providers. Positive results select the first flag; any nonzero * result reaches the downstream basis helper. Preserve this distinction. * RE_ORIGINAL_QUIRK: the local query record is uninitialized before isct54 * reads its first two words; no caller initialization guarantee is established. * RE_UNKNOWN: original state/input allocations, zero-length/finite domains, * result-prefix initialization, vector/scalar meanings and units, query flags, * pointer aliases and module/resource lifetimes need original callers/producers. * The observed 88-byte query and 64-byte draw access views share local storage; * they do not prove complete historical object declarations or allocations. * Readable C remains parked: the first draft has 880 versus 884 native bytes * and 73 differing positions. Preserving native zero-before-test flag flow * gives 884/884 bytes and all 30 complete relocation records match by site; * only the initial three HI/LO pair groups differ in record enumeration. * Seven instruction words still differ: native positive/other flag registers * V1/A1 become V0/V1, including their shared halfword stores. All 214 other * words, frame and local homes match. No further effect/type correction is * supported; historical declarations and flag lifetimes remain unproved. * Require exact instructions and original packed-module/fresh ROM proof * before replacing ASM; no dummy storage or register forcing is justified.",
       "lines": [
-        828
+        832
       ],
       "evidence": "Query between matrix translations and retain the original drawing calls. * Original matrix-row aliases, three single-precision component divisions, * MISC110 returned scalar, query arguments and export reloads are established * by native providers. Positive results select the first flag; any nonzero * result reaches the downstream basis helper. Preserve this distinction. * RE_ORIGINAL_QUIRK: the local query record is uninitialized before isct54 * reads its first two words; no caller initialization guarantee is established. * RE_UNKNOWN: original state/input allocations, zero-length/finite domains, * result-prefix initialization, vector/scalar meanings and units, query flags, * pointer aliases and module/resource lifetimes need original callers/producers. * The observed 88-byte query and 64-byte draw access views share local storage; * they do not prove complete historical object declarations or allocations. * Readable C remains parked: the first draft has 880 versus 884 native bytes * and 73 differing positions. Preserving native zero-before-test flag flow * gives 884/884 bytes and all 30 complete relocation records match by site; * only the initial three HI/LO pair groups differ in record enumeration. * Seven instruction words still differ: native positive/other flag registers * V1/A1 become V0/V1, including their shared halfword stores. All 214 other * words, frame and local homes match. No further effect/type correction is * supported; historical declarations and flag lifetimes remain unproved. * Require exact instructions and original packed-module/fresh ROM proof * before replacing ASM; no dummy storage or register forcing is justified.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_motion_004066E4",
-          "declaration_line": 851,
+          "declaration_line": 855,
           "lines": [
-            828
+            832
           ]
         }
       ]
@@ -216638,6 +216678,26 @@
           "declaration_line": 451,
           "lines": [
             448
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-5ab7eb84bf66",
+      "kind": "original_quirk",
+      "path": "src/modules/motion.c",
+      "symbol": "Visit four state-relative 0x130-byte regions. Pass each region+0x128 * to the vector helper with output region+0x164, then its angle response. * RE_ORIGINAL_QUIRK: wrap the index to 16 bits before the signed <4 test. * RE_UNKNOWN: the two focused record views, full state extent and lifetime * need allocation/writer evidence; no four-element C array is established.",
+      "lines": [
+        608
+      ],
+      "evidence": "Visit four state-relative 0x130-byte regions. Pass each region+0x128 * to the vector helper with output region+0x164, then its angle response. * RE_ORIGINAL_QUIRK: wrap the index to 16 bits before the signed <4 test. * RE_UNKNOWN: the two focused record views, full state extent and lifetime * need allocation/writer evidence; no four-element C array is established.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "motionUpdateFourPlanarRecords",
+          "declaration_line": 614,
+          "lines": [
+            608
           ]
         }
       ]
@@ -220727,16 +220787,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Accumulate two weighted three-component basis combinations. The first * uses one shared scale; the second uses per-component scales. Preserve * Z/X/Y product order, sequential stores and original aliased-input behavior. * Physical units are unproven; first/second identify the observed field groups.",
       "lines": [
-        1032
+        1036
       ],
       "evidence": "Accumulate two weighted three-component basis combinations. The first * uses one shared scale; the second uses per-component scales. Preserve * Z/X/Y product order, sequential stores and original aliased-input behavior. * Physical units are unproven; first/second identify the observed field groups.",
       "owners": [
         {
           "kind": "function",
           "name": "motionAccumulateScaledBasisVectors",
-          "declaration_line": 1036,
+          "declaration_line": 1040,
           "lines": [
-            1032
+            1036
           ]
         }
       ]
@@ -220747,16 +220807,16 @@
       "path": "src/modules/motion.c",
       "symbol": "Apply the original scaled correction only above the 0x690 threshold and * below the positive 0x988 limit. Preserve floating evaluation order; the * full physical meaning of these three offset-named fields remains unknown.",
       "lines": [
-        1051
+        1055
       ],
       "evidence": "Apply the original scaled correction only above the 0x690 threshold and * below the positive 0x988 limit. Preserve floating evaluation order; the * full physical meaning of these three offset-named fields remains unknown.",
       "owners": [
         {
           "kind": "function",
           "name": "motionApplyConditionalCorrection",
-          "declaration_line": 1054,
+          "declaration_line": 1058,
           "lines": [
-            1051
+            1055
           ]
         }
       ]
@@ -220767,16 +220827,16 @@
       "path": "src/modules/motion.c",
       "symbol": "For enabled input with magnitude at least 0.5, gate on field 0x6C4 * magnitude at most five and mode zero/two. Smooth response 0x998 toward * the signed mode target and enforce the original mode-dependent 0x988 bound. * Field units remain unproven; preserve strict comparisons and NaN paths.",
       "lines": [
-        1101
+        1105
       ],
       "evidence": "For enabled input with magnitude at least 0.5, gate on field 0x6C4 * magnitude at most five and mode zero/two. Smooth response 0x998 toward * the signed mode target and enforce the original mode-dependent 0x988 bound. * Field units remain unproven; preserve strict comparisons and NaN paths.",
       "owners": [
         {
           "kind": "function",
           "name": "motionApplyGatedModeResponse",
-          "declaration_line": 1105,
+          "declaration_line": 1109,
           "lines": [
-            1101
+            1105
           ]
         }
       ]
@@ -220787,8 +220847,8 @@
       "path": "src/modules/motion.c",
       "symbol": "Original instruction and relocation match; unresolved contracts follow.",
       "lines": [
-        730,
-        777
+        734,
+        781
       ],
       "evidence": "Original instruction and relocation match; unresolved contracts follow."
     },
@@ -223466,7 +223526,7 @@
       "symbol": "unusedIncomingWord",
       "lines": [
         156,
-        1002
+        1006
       ],
       "owners": [
         {
@@ -223480,9 +223540,9 @@
         {
           "kind": "function",
           "name": "motionRunBattleAndHotLavaUpdate",
-          "declaration_line": 1002,
+          "declaration_line": 1006,
           "lines": [
-            1002
+            1006
           ]
         }
       ]

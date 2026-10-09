@@ -318,7 +318,7 @@ void func_motion_00414BB0();
 void func_motion_004151CC();
 void func_motion_004154B8();
 void func_motion_00415724();
-f32 motionEvaluateSelectedGraph(f32 value, s32 alternate);
+f32 motionEvaluateSelectedGraph(f32 inputValue, s32 alternateGraphSelector);
 void motionTryPlayHotLavaVoice(void);
 void motionTryPlayExplosionVoice(void);
 void func_motion_00415A3C();
@@ -605,19 +605,23 @@ void motionCopyMatrix5E8(MotionMatrixState *state, Mtx4F *output) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00404C24.s")
 
 #line 157 "src/modules/motion.c"
-/* Visit four original 0x130-byte record regions, compute each planar vector
- * and run its follow-up update. Preserve the original 16-bit index wrapping. */
+/* Visit four state-relative 0x130-byte regions. Pass each region+0x128
+ * to the vector helper with output region+0x164, then its angle response.
+ * RE_ORIGINAL_QUIRK: wrap the index to 16 bits before the signed <4 test.
+ * RE_UNKNOWN: the two focused record views, full state extent and lifetime
+ * need allocation/writer evidence; no four-element C array is established. */
+#line 159 "src/modules/motion.c"
 void motionUpdateFourPlanarRecords(MotionPlanarState *state) {
-    s32 index = 0;
-    u8 *base;
-    MotionPlanarRecord *record;
+    s32 recordIndex = 0;
+    u8 *recordRegion;
+    MotionPlanarRecord *planarRecord;
     do {
-        base = (u8 *)state + index * 0x130;
-        record = (MotionPlanarRecord *)(base + 0x128);
-        motionComputePlanarRecordVector(state, record, (Vec3F *)(base + 0x164));
-        motionComputePlanarRecordAngleResponse(record);
-        index = (index + 1) & 0xFFFF;
-    } while (index < 4);
+        recordRegion = (u8 *)state + recordIndex * 0x130;
+        planarRecord = (MotionPlanarRecord *)(recordRegion + 0x128);
+        motionComputePlanarRecordVector(state, planarRecord, (Vec3F *)(recordRegion + 0x164));
+        motionComputePlanarRecordAngleResponse(planarRecord);
+        recordIndex = (recordIndex + 1) & 0xFFFF;
+    } while (recordIndex < 4);
 }
 #line 158 "src/modules/motion.c"
 
@@ -1371,16 +1375,19 @@ void func_motion_00414A68(s32 a0) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00415724.s")
 
 #line 309 "src/modules/motion.c"
-/* Evaluate one of the two original motion graphs at the supplied value.
- * Any nonzero selector chooses the alternate graph. */
-f32 motionEvaluateSelectedGraph(f32 value, s32 alternate) {
-    UvGrphStruct *graph;
-    if (alternate != 0) {
-        graph = &D_motion_004163A8;
+/* Any nonzero selector chooses D_motion_004163A8; zero chooses
+ * D_motion_0041644C. Forward the input to the original curve evaluator.
+ * RE_UNKNOWN: input units/range, graph writers/knot ordering and module
+ * availability need producers; this wrapper adds no input clamp. */
+#line 311 "src/modules/motion.c"
+f32 motionEvaluateSelectedGraph(f32 inputValue, s32 alternateGraphSelector) {
+    UvGrphStruct *selectedGraph;
+    if (alternateGraphSelector != 0) {
+        selectedGraph = &D_motion_004163A8;
     } else {
-        graph = &D_motion_0041644C;
+        selectedGraph = &D_motion_0041644C;
     }
-    return gUvGrphExports->uvGrphEvaluateLinearCurve(graph, value);
+    return gUvGrphExports->uvGrphEvaluateLinearCurve(selectedGraph, inputValue);
 }
 #line 310 "src/modules/motion.c"
 
@@ -1392,18 +1399,24 @@ u16 func_motion_00415870(void *state) {
 #line 314 "src/modules/motion.c"
 
 #line 315 "src/modules/motion.c"
-/* Attempt pending Hot Lava speech on random choice 3 with priority 0x7FFF; playback value is 0x7A120.
- * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: playback-value units need consumers. */
+/* For a nonzero speech setting, set volume, then truncate randomScalar*4.
+ * Only choice three with pending word D_motion_004160A0 set submits Hot Lava
+ * speech with priority 0x7FFF and playback value 0x7A120.
+ * RE_ORIGINAL_QUIRK: retain every choice gate, store the emitter byte and
+ * clear pending after the attempt even when the returned emitter is 255.
+ * RE_UNKNOWN: speech-setting bounds, pending writers/rearming, module
+ * availability and playback-value units need producer/consumer evidence. */
+#line 317 "src/modules/motion.c"
 extern s32 D_motion_004160A0;
 extern s32 gOptionsSpeechVol;
 
 void motionTryPlayHotLavaVoice(void) {
-    s32 choice;
+    s32 voiceChoice;
 
     if (gOptionsSpeechVol != 0) {
         gSndExports->sndSetSpeechVol(gOptionsSpeechVol);
-        choice = (s32) (gUvMathExports->uvRandFLcg() * 4.0f);
-        if ((choice != 0) && (choice != 1) && (choice != 2) && (choice == 3) && (D_motion_004160A0 != 0)) {
+        voiceChoice = (s32) (gUvMathExports->uvRandFLcg() * 4.0f);
+        if ((voiceChoice != 0) && (voiceChoice != 1) && (voiceChoice != 2) && (voiceChoice == 3) && (D_motion_004160A0 != 0)) {
             D_motion_00416AF0 = gSndExports->sndPlaySharedHandleWithPlaybackValue(V_HOTLAVA, 0x7FFF, gSndExports->sndGetSpeechVolumeScale(), 0x7A120);
             D_motion_004160A0 = 0;
         }
@@ -1412,19 +1425,26 @@ void motionTryPlayHotLavaVoice(void) {
 #line 316 "src/modules/motion.c"
 
 #line 317 "src/modules/motion.c"
-/* Attempt pending explosion speech on random choice 3 with its scale; priority 0x7FFF, playback value 0x1F4.
- * RE_ORIGINAL_QUIRK: pending clears even on emitter-255 failure. RE_UNKNOWN: playback-value units need consumers. */
+/* For a nonzero speech setting, set volume, then truncate randomScalar*4.
+ * Only choice three with pending word D_motion_004160A4 set submits explosion
+ * speech. Scale the getter result by original D_motion_0041607C (0.9f);
+ * retain priority 0x7FFF and playback value 0x1F4.
+ * RE_ORIGINAL_QUIRK: retain every choice gate, store the emitter byte and
+ * clear pending after the attempt even when the returned emitter is 255.
+ * RE_UNKNOWN: speech-setting bounds, pending writers/rearming, module
+ * availability, tuning purpose and playback-value units need evidence. */
+#line 319 "src/modules/motion.c"
 extern f32 D_motion_0041607C;
 extern s32 D_motion_004160A4;
 extern s32 gOptionsSpeechVol;
 
 void motionTryPlayExplosionVoice(void) {
-    s32 choice;
+    s32 voiceChoice;
 
     if (gOptionsSpeechVol != 0) {
         gSndExports->sndSetSpeechVol(gOptionsSpeechVol);
-        choice = (s32) (gUvMathExports->uvRandFLcg() * 4.0f);
-        if ((choice != 0) && (choice != 1) && (choice != 2) && (choice == 3) && (D_motion_004160A4 != 0)) {
+        voiceChoice = (s32) (gUvMathExports->uvRandFLcg() * 4.0f);
+        if ((voiceChoice != 0) && (voiceChoice != 1) && (voiceChoice != 2) && (voiceChoice == 3) && (D_motion_004160A4 != 0)) {
             D_motion_00416AF1 = gSndExports->sndPlaySharedHandleWithPlaybackValue(V_EXPLOSION, 0x7FFF, gSndExports->sndGetSpeechVolumeScale() * D_motion_0041607C, 0x1F4);
             D_motion_004160A4 = 0;
         }
