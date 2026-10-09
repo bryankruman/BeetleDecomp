@@ -156,10 +156,10 @@ f32 uvVec3FDot(Vec3F* va, Vec3F* vb) {
     return (va->x * vb->x) + (va->y * vb->y) + (va->z * vb->z);
 }
 
-void uvVec3FCopy(Vec3F *vdst, Vec3F *vsrc) {
-    vdst->x = vsrc->x;
-    vdst->y = vsrc->y;
-    vdst->z = vsrc->z;
+void uvVec3FCopy(Vec3F *destination, Vec3F *source) {
+    destination->x = source->x; /* Retain each source load before its destination store. */
+    destination->y = source->y;
+    destination->z = source->z; /* RE_UNKNOWN: caller storage, overlap and lifetime need caller/allocation evidence. */
 }
 
 #line 157 "src/modules/uvfvec_rom.c"
@@ -189,10 +189,10 @@ void uvVec3FCross(Vec3F* destination, Vec3F* first, Vec3F* second) {
 }
 #line 174 "src/modules/uvfvec_rom.c"
 
-void uvVec3FAdd(Vec3F *vdst, Vec3F *va, Vec3F *vb) {
-    vdst->x = va->x + vb->x;
-    vdst->y = va->y + vb->y;
-    vdst->z = va->z + vb->z;
+void uvVec3FAdd(Vec3F *destination, Vec3F *first, Vec3F *second) {
+    destination->x = first->x + second->x; /* Component-wise f32 sum; retain operand/store order. */
+    destination->y = first->y + second->y;
+    destination->z = first->z + second->z; /* RE_UNKNOWN: caller alias/storage/lifetime and FP contracts remain unproved. */
 }
 
 void uvVec3FMult(Vec3F *destination, Vec3F *first, Vec3F *second) {
@@ -218,10 +218,10 @@ void uvVec3FSub(Vec3F *destination, Vec3F *first, Vec3F *second) {
     destination->z = first->z - second->z; /* RE_UNKNOWN: caller alias/storage/lifetime and FP contracts remain unproved; retain interleaving. */
 }
 
-void uvVec3FScale(Vec3F *vdst, Vec3F *va, f32 scale) {
-    vdst->x = va->x * scale;
-    vdst->y = va->y * scale;
-    vdst->z = va->z * scale;
+void uvVec3FScale(Vec3F *destination, Vec3F *source, f32 scale) {
+    destination->x = source->x * scale; /* Retain f32 products and component store order. */
+    destination->y = source->y * scale;
+    destination->z = source->z * scale; /* RE_UNKNOWN: caller alias/storage/lifetime and FP contracts remain unproved. */
 }
 
 #line 206 "src/modules/uvfvec_rom.c"
@@ -377,9 +377,9 @@ void uvVec2FAddScaled(Vec2F *destination, Vec2F *first, f32 scale, Vec2F *second
 }
 #line 331 "src/modules/uvfvec_rom.c"
 
-void uvVec2FSub(Vec2F *vdst, Vec2F *va, Vec2F *vb) {
-    vdst->x = va->x - vb->x;
-    vdst->y = va->y - vb->y;
+void uvVec2FSub(Vec2F *destination, Vec2F *first, Vec2F *second) {
+    destination->x = first->x - second->x; /* Component-wise first minus second; retain operand order. */
+    destination->y = first->y - second->y; /* RE_UNKNOWN: caller alias/storage/lifetime and FP contracts remain unproved. */
 }
 
 void uvVec2FScale(Vec2F *destination, Vec2F *source, f32 scale) {
@@ -394,9 +394,9 @@ s32 uvVec2FIsZero(Vec2F *v) {
     return FALSE;
 }
 
-void uvVec2FNegate(Vec2F *vdst, Vec2F *vsrc) {
-    vdst->x = -vsrc->x;
-    vdst->y = -vsrc->y;
+void uvVec2FNegate(Vec2F *destination, Vec2F *source) {
+    destination->x = -source->x; /* Retain unary f32 negation and component store order. */
+    destination->y = -source->y; /* RE_UNKNOWN: caller alias/storage/lifetime and FP contracts remain unproved. */
 }
 
 #line 354 "src/modules/uvfvec_rom.c"

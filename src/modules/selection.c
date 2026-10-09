@@ -2639,6 +2639,26 @@ loop_3:
 }
 #line 1470 "src/modules/selection.c"
 
+/* Copy one initial and eight further table indices into the observed row,
+ * using a 44-byte controller stride. Copy the corresponding mapped words
+ * into settings offset 0x6FC0 and saved-data offset 0x284, each with a
+ * 36-byte controller stride. The first index store precedes its mapping
+ * lookup; each later mapping load precedes its index store. Reload each
+ * source index after the settings store before the saved-data lookup.
+ * Clear the shared settings word at 0x7074 without a controller stride.
+ * The initializer calls controllers 0 and 1 when byte 0x8002CD50 is set,
+ * then clears that flag; this does not establish all public caller domains.
+ * RE_UNKNOWN: historical parameter signedness and declarations, complete
+ * table/row allocations, controller/index and arithmetic domains, overlap,
+ * ownership, lifetimes, table writers and downstream row/reset consumers.
+ * Original declarations, producers and callers must establish these facts.
+ * RE_UNKNOWN: the natural draft is unmatched, 400 native bytes versus 360.
+ * Its compiler hoists the first lookup and merges the first index reloads;
+ * the original uses the distinct table-end symbol and a live reset counter.
+ * Read ordering, alias/declaration representation and loop lowering remain
+ * unresolved. Preserve the original assembly; no padding or shape retries.
+ */
+#line 1471 "src/modules/selection.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040F4BC.s")
 
 extern s32 D_8002CD98;
@@ -2750,8 +2770,39 @@ void func_selection_00410884(void) {
 }
 #line 1530 "src/modules/selection.c"
 
+/* Test controller-layout mask words in their original order and return the
+ * first matching language-selected text pointer word, or zero if none match.
+ * Layout 3 selects shared words at 0x8002CD98 + 0x284 + selectedIndex * 36;
+ * other layouts use 0x421670 + layout * 36. Language pointer rows stride 44.
+ * RE_ORIGINAL_QUIRK: the ordered tests can inspect source offsets 0 through
+ * 40 even though source-row addresses advance by 36 bytes. Earlier matches
+ * return before later reads; retain the original order and neighboring reads.
+ * RE_UNKNOWN: historical row declarations and allocations, valid controller,
+ * layout, language and mask domains, neighboring-word roles and text lifetimes.
+ * Original row producers, caller masks and language/controller state writers
+ * must establish which reads are reached and what adjacent storage represents.
+ * Keep the observed native access model without a bounds or lifetime promise.
+ */
+#line 1531 "src/modules/selection.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0041088C.s")
 
+/* Draw controller-layout labels with font 1, white RGBA and double scale 1.0.
+ * Draw Pause and the localized steering label, adding the formatted first
+ * two action labels only for layout 2. Visit thirteen observed mask/callback
+ * pairs and call the current row callback only for a nonzero text result.
+ * Reload the font provider for every font call; set scale 1.0 again on exit.
+ * The original routine does not save the previous font, color or scale.
+ * RE_UNKNOWN: historical call/table declarations, complete allocations,
+ * controller/layout/language and mask domains, text lifetimes and callback
+ * mutations. Original declarations, state writers, table producers, callers
+ * and callback consumers must establish these contracts. Thirteen observed
+ * rows do not establish the complete historical allocation.
+ * RE_UNKNOWN: the readable draft remains unmatched: 296 native bytes versus
+ * 292 draft bytes, with different saved registers, frame size and loop-end
+ * address construction. Historical source/lowering evidence is needed;
+ * retain the original assembly without invented storage or padding.
+ */
+#line 1533 "src/modules/selection.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00410AA8.s")
 
 extern s32 D_selection_00421E90;
@@ -3020,6 +3071,26 @@ void func_selection_00413568(void) {
     selectionActivateMenuNode(&D_selection_00420218);
 }
 
+/* Request a 0x400-byte Controller Pak file after selecting the stored identity.
+ * A nonnegative shared file word is copied to the tracked word and deleted
+ * first. Consume the SDK status returned unchanged through the CONT wrapper.
+ * Status 0 with a nonnegative file number stores halfword 1 at settings
+ * offset 0x6F94 and the file word at 0x6F9C, then writes and reads/merges
+ * settings in order. Success from both selects state 3; other paths select
+ * state 4. Status 7 or 8 also stores that value in the shared result word.
+ * Every exit stores scalar 3.0; its unit and downstream meaning are unknown.
+ * RE_ORIGINAL_QUIRK: the prior tracked-file deletion result is ignored.
+ * RE_UNKNOWN: historical wrapper/setting declarations, valid file/name and
+ * resource domains, initialized-output paths, complete allocations, ownership,
+ * lifetimes and callback effects. Original declarations, SDK lookup helpers,
+ * producers, callers and downstream state readers must establish these facts.
+ * RE_UNKNOWN: the natural draft is unmatched: 312 native bytes versus 296,
+ * with a three-case branch chain instead of the original thirteen-entry
+ * table, different file-number scratch placement and relocation sites.
+ * Preserve the original assembly/table; genuine source/lowering evidence is
+ * needed rather than invented cases, storage or padding.
+ */
+#line 1756 "src/modules/selection.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00413594.s")
 
 #line 1758 "src/modules/selection.c"
