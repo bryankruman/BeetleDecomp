@@ -64,10 +64,10 @@ s32 D_uvsort_rom_00400C1C;
 extern s32 D_uvsort_rom_00400BF0[];
 
 
-void __entrypoint_func_uvsort_rom_400000(UvSort_Exports *exports) {
-    s32 var_a1;
-    s32 var_s0;
-    s32 *temp_v0;
+void __entrypoint_func_uvsort_rom_400000(UvSort_Exports *exports) { /* Publish six exports, allocate group/callback storage and register the graphics stub. RE_UNKNOWN: import/export lifetime and historical ABI need original loader/callers. */
+    s32 allocationGroupCount;
+    s32 groupIndex;
+    s32 *settings;
 
     uvUpdateFileAllocPtr(exports);
     exports->uvSortSetGroupOptions = uvSortSetGroupOptions;
@@ -80,36 +80,36 @@ void __entrypoint_func_uvsort_rom_400000(UvSort_Exports *exports) {
     // clang-format on
     D_uvsort_rom_00400C00 = uvLoadModule('CBCK');
     D_uvsort_rom_00400C08 = uvLoadModule('GMGR');
-    temp_v0 = uvGetSystemProp(0x10);
-    if (temp_v0 == NULL) {
-        var_a1 = D_uvsort_rom_00400C10 = 4;
+    settings = uvGetSystemProp(0x10); /* Defaults are 4 groups and 50 callbacks; nonzero settings words are copied literally. RE_UNKNOWN: two-word extent and signed size/count domains need original settings producers. */
+    if (settings == NULL) {
+        allocationGroupCount = D_uvsort_rom_00400C10 = 4;
         D_uvsort_rom_00400C0C = 0x32;
     } else {
-        if (temp_v0[0] != 0) {
-            D_uvsort_rom_00400C10 = temp_v0[0];
+        if (settings[0] != 0) {
+            D_uvsort_rom_00400C10 = settings[0];
         } else {
             D_uvsort_rom_00400C10 = 4;
         }
-        var_a1 = D_uvsort_rom_00400C10;
-        if (temp_v0[1] != 0) {
-            D_uvsort_rom_00400C0C = temp_v0[1];
+        allocationGroupCount = D_uvsort_rom_00400C10;
+        if (settings[1] != 0) {
+            D_uvsort_rom_00400C0C = settings[1];
         } else {
             D_uvsort_rom_00400C0C = 0x32;
         }
     }
 
-    if (D_uvsort_rom_00400C0C) { // FAKE
+    if (D_uvsort_rom_00400C0C) { // FAKE. RE_UNKNOWN: historical empty conditional/compiler purpose needs original source evidence; preserve it.
     }
 
-    D_uvsort_rom_00400C14 = _uvMemAllocAlign8(var_a1 * 0x14);
-    for (var_s0 = 0; var_s0 < D_uvsort_rom_00400C10; var_s0++) {
-        D_uvsort_rom_00400C14[var_s0].unkC = _uvMemAllocAlign8(D_uvsort_rom_00400C0C * 0x10);
-        D_uvsort_rom_00400C14[var_s0].unk9 = 0;
-        D_uvsort_rom_00400C14[var_s0].unkB = 0xFF;
+    D_uvsort_rom_00400C14 = _uvMemAllocAlign8(allocationGroupCount * 0x14); /* Allocate using the captured count, then traverse the reloaded global count. RE_UNKNOWN: failure, capacity and reinitialization ownership need original allocator/lifecycle callers. */
+    for (groupIndex = 0; groupIndex < D_uvsort_rom_00400C10; groupIndex++) {
+        D_uvsort_rom_00400C14[groupIndex].unkC = _uvMemAllocAlign8(D_uvsort_rom_00400C0C * 0x10); /* Fresh capacity and group-base reads precede the partial +0x0C/+0x09/+0x0B writes. RE_UNKNOWN: aliasing and remaining-field validity need original producers/consumers. */
+        D_uvsort_rom_00400C14[groupIndex].unk9 = 0;
+        D_uvsort_rom_00400C14[groupIndex].unkB = 0xFF;
     }
 
-    D_uvsort_rom_00400C04->unk4(0, 0xD, (s32) &D_uvsort_rom_00400C1C, 0);
-    D_uvsort_rom_00400C00->unk10(D_uvsort_rom_00400C08->unk10(1), (s32) uvSortGraphicsCallbackStub, 0, 0);
+    D_uvsort_rom_00400C04->unk4(0, 0xD, (s32) &D_uvsort_rom_00400C1C, 0); /* CHAN property 13 writes its count only for valid channel 0. RE_UNKNOWN: startup/channel validity and prior +0x1C state need original callers/setup. */
+    D_uvsort_rom_00400C00->unk10(D_uvsort_rom_00400C08->unk10(1), (s32) uvSortGraphicsCallbackStub, 0, 0); /* GMGR list 1 is passed to CBCK slot 0x10; registration status is ignored. RE_UNKNOWN: list capacity/storage and failure handling need original list producers/callers. */
 }
 
 

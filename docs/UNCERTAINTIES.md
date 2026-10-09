@@ -17,7 +17,7 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 920 |
+| Explicit RE_UNKNOWN notes | 927 |
 | Preserved RE_ORIGINAL_QUIRK notes | 243 |
 | Older comments with uncertainty language | 91 |
 | Documented original-behavior audits | 30 |
@@ -28,7 +28,7 @@ For every future source wave, regenerate and check this index after code and str
 | Layout padding to preserve | 274 |
 | Unresolved type names | 282 |
 | Explicit unused ABI, storage or local identifiers | 126 |
-| Decompiler parameter/local names | 914 |
+| Decompiler parameter/local names | 911 |
 | Fake, unresolved or TODO draft markers | 27 |
 | Data-dependent conditional draft guards | 4 |
 
@@ -7959,13 +7959,17 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `arg1` | function `uvSortAppendCallback` | [49](../src/modules/uvsort_rom.c#L49) |
 | decompiler_local | `arg2` | function `uvSortAppendCallback` | [49](../src/modules/uvsort_rom.c#L49) |
 | decompiler_local | `arg3` | function `uvSortAppendCallback` | [49](../src/modules/uvsort_rom.c#L49) |
-| decompiler_local | `temp_v0` | function `__entrypoint_func_uvsort_rom_400000` | [70](../src/modules/uvsort_rom.c#L70), [83](../src/modules/uvsort_rom.c#L83), [84](../src/modules/uvsort_rom.c#L84), [88](../src/modules/uvsort_rom.c#L88), [89](../src/modules/uvsort_rom.c#L89), [94](../src/modules/uvsort_rom.c#L94), [95](../src/modules/uvsort_rom.c#L95) |
-| decompiler_local | `var_a1` | function `__entrypoint_func_uvsort_rom_400000` | [68](../src/modules/uvsort_rom.c#L68), [85](../src/modules/uvsort_rom.c#L85), [93](../src/modules/uvsort_rom.c#L93), [104](../src/modules/uvsort_rom.c#L104) |
-| decompiler_local | `var_s0` | function `__entrypoint_func_uvsort_rom_400000` | [69](../src/modules/uvsort_rom.c#L69), [105](../src/modules/uvsort_rom.c#L105), [106](../src/modules/uvsort_rom.c#L106), [107](../src/modules/uvsort_rom.c#L107), [108](../src/modules/uvsort_rom.c#L108) |
 | draft_marker | `FAKE` | function `__entrypoint_func_uvsort_rom_400000` | [101](../src/modules/uvsort_rom.c#L101) |
 | explicit_unknown | `Allocate the first unused SORT group, record its byte tag, insert its * index into tag order and attach original callbacks for tracked channels. * Return -1 on an encountered ex...` | function `uvSortAllocateGroupForTag` | [145](../src/modules/uvsort_rom.c#L145) |
+| explicit_unknown | `Allocate using the captured count, then traverse the reloaded global count. RE_UNKNOWN: failure, capacity and reinitialization ownership need original allocator/lifecycle callers.` | function `__entrypoint_func_uvsort_rom_400000` | [104](../src/modules/uvsort_rom.c#L104) |
 | explicit_unknown | `Append callback/context/key when count!=configured capacity and clear * cached-order bit. RE_UNKNOWN: group index, count/capacity/backing * correspondence need original setup/re...` | function `uvSortAppendCallback` | [273](../src/modules/uvsort_rom.c#L273) |
+| explicit_unknown | `CHAN property 13 writes its count only for valid channel 0. RE_UNKNOWN: startup/channel validity and prior +0x1C state need original callers/setup.` | function `__entrypoint_func_uvsort_rom_400000` | [111](../src/modules/uvsort_rom.c#L111) |
 | explicit_unknown | `Consume zero-terminated option/value pairs; option 1 sets * insertion-order mode and unknown tags consume no value. RE_UNKNOWN: group * index and promoted-word stream extent/ter...` | function `uvSortSetGroupOptions` | [342](../src/modules/uvsort_rom.c#L342) |
+| explicit_unknown | `Defaults are 4 groups and 50 callbacks; nonzero settings words are copied literally. RE_UNKNOWN: two-word extent and signed size/count domains need original settings producers.` | function `__entrypoint_func_uvsort_rom_400000` | [83](../src/modules/uvsort_rom.c#L83) |
+| explicit_unknown | `FAKE. RE_UNKNOWN: historical empty conditional/compiler purpose needs original source evidence; preserve it.` | function `__entrypoint_func_uvsort_rom_400000` | [101](../src/modules/uvsort_rom.c#L101) |
+| explicit_unknown | `Fresh capacity and group-base reads precede the partial +0x0C/+0x09/+0x0B writes. RE_UNKNOWN: aliasing and remaining-field validity need original producers/consumers.` | function `__entrypoint_func_uvsort_rom_400000` | [106](../src/modules/uvsort_rom.c#L106) |
+| explicit_unknown | `GMGR list 1 is passed to CBCK slot 0x10; registration status is ignored. RE_UNKNOWN: list capacity/storage and failure handling need original list producers/callers.` | function `__entrypoint_func_uvsort_rom_400000` | [112](../src/modules/uvsort_rom.c#L112) |
+| explicit_unknown | `Publish six exports, allocate group/callback storage and register the graphics stub. RE_UNKNOWN: import/export lifetime and historical ABI need original loader/callers.` | function `__entrypoint_func_uvsort_rom_400000` | [67](../src/modules/uvsort_rom.c#L67) |
 | explicit_unknown | `Register reset and missing active-group callbacks using channel * property 6, then set its channel bit. RE_UNKNOWN: channel-shift domain * and callback-list capacity/lifetime ne...` | function `uvSortAttachChannelCallbacks` | [213](../src/modules/uvsort_rom.c#L213) |
 | layout_padding | `pad` | type `UnkStruct_00400C08` | [30](../src/modules/uvsort_rom.c#L30) |
 | layout_padding | `pad0` | type `UnkStruct_00400C00`, type `UnkStruct_00400C04` | [25](../src/modules/uvsort_rom.c#L25), [35](../src/modules/uvsort_rom.c#L35) |

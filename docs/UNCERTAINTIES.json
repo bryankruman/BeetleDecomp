@@ -308,7 +308,7 @@
     "src/modules/uvpfxld_rom.c": "3d9acef0a9067b0e12023267a4581db2658028e07ca07ef58d9f82c0baec1bc9",
     "src/modules/uvquat_rom.c": "2a759d4e3bbdf0d37127fe0945ed941e7cbab73d40a5a3708218451f2f645c23",
     "src/modules/uvquery_rom.c": "5af6f38d546de67c02228242a6578a86925d0c0792c0a330437b3cd35e19b586",
-    "src/modules/uvsort_rom.c": "a8d25d7f0e6e33288f39c1de9589270ba1d5b77fbcd2f9c370749e386904b727",
+    "src/modules/uvsort_rom.c": "bb146bf878382c9939ff7cd9073bcc55ba8152f56c5eb76298a023162e156f34",
     "src/modules/uvsprt_rom.c": "612e86b41399a9401a50b0d6cdd87464098df042e326a4dc1027d7adab095d86",
     "src/modules/uvstring_rom.c": "94b9208341f1faf5aee2e8bd9e6e2c6336878522d977776684d4d7ffa5473720",
     "src/modules/uvterra_rom.c": "212d749a78b4a0059eec21fdaa6774e93f94f0d853dffa73e48c5fddac79121e",
@@ -330,8 +330,8 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "6b529efc76a5c1ac54185b6462b8ef676be808943d77f4d844a093a9158706b3",
-    "docs/VALIDATION_20261006.md": "3a0fe13f42209ce8749b9d4d119a094dbce32b9f6132b8e9841b791050594bfc"
+    "docs/STRATEGY_V4.md": "2a0376ff2cdffff63f641d67a590d1cd3b5a5d96e812dd35658359a3e404dfce",
+    "docs/VALIDATION_20261006.md": "486a71d016500bb54a6734bdcc4b5964ccabdbffec32a0bd95e792b715cddeee"
   },
   "counts": {
     "address_function": 938,
@@ -339,9 +339,9 @@
     "assembly": 801,
     "audit_debt": 30,
     "conditional_draft": 4,
-    "decompiler_local": 914,
+    "decompiler_local": 911,
     "draft_marker": 27,
-    "explicit_unknown": 920,
+    "explicit_unknown": 927,
     "layout_padding": 274,
     "offset_field": 1585,
     "opaque_type": 282,
@@ -121021,89 +121021,6 @@
       ]
     },
     {
-      "id": "Q-905ac580b2a8",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvsort_rom.c",
-      "symbol": "temp_v0",
-      "lines": [
-        70,
-        83,
-        84,
-        88,
-        89,
-        94,
-        95
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "__entrypoint_func_uvsort_rom_400000",
-          "declaration_line": 67,
-          "lines": [
-            70,
-            83,
-            84,
-            88,
-            89,
-            94,
-            95
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-51eaf421ec64",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvsort_rom.c",
-      "symbol": "var_a1",
-      "lines": [
-        68,
-        85,
-        93,
-        104
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "__entrypoint_func_uvsort_rom_400000",
-          "declaration_line": 67,
-          "lines": [
-            68,
-            85,
-            93,
-            104
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-603d3c0619a0",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvsort_rom.c",
-      "symbol": "var_s0",
-      "lines": [
-        69,
-        105,
-        106,
-        107,
-        108
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "__entrypoint_func_uvsort_rom_400000",
-          "declaration_line": 67,
-          "lines": [
-            69,
-            105,
-            106,
-            107,
-            108
-          ]
-        }
-      ]
-    },
-    {
       "id": "Q-27bb1435a000",
       "kind": "decompiler_local",
       "path": "src/modules/uvsprt_rom.c",
@@ -125411,7 +125328,7 @@
       "lines": [
         101
       ],
-      "evidence": "FAKE",
+      "evidence": "FAKE. RE_UNKNOWN: historical empty conditional/compiler purpose needs original source evidence; preserve it.",
       "owners": [
         {
           "kind": "function",
@@ -142139,6 +142056,26 @@
       ]
     },
     {
+      "id": "Q-f06e5f31be70",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvsort_rom.c",
+      "symbol": "Allocate using the captured count, then traverse the reloaded global count. RE_UNKNOWN: failure, capacity and reinitialization ownership need original allocator/lifecycle callers.",
+      "lines": [
+        104
+      ],
+      "evidence": "Allocate using the captured count, then traverse the reloaded global count. RE_UNKNOWN: failure, capacity and reinitialization ownership need original allocator/lifecycle callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_uvsort_rom_400000",
+          "declaration_line": 67,
+          "lines": [
+            104
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-52580bfc5f9f",
       "kind": "explicit_unknown",
       "path": "src/modules/uvsort_rom.c",
@@ -142159,6 +142096,26 @@
       ]
     },
     {
+      "id": "Q-2df405f7257a",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvsort_rom.c",
+      "symbol": "CHAN property 13 writes its count only for valid channel 0. RE_UNKNOWN: startup/channel validity and prior +0x1C state need original callers/setup.",
+      "lines": [
+        111
+      ],
+      "evidence": "CHAN property 13 writes its count only for valid channel 0. RE_UNKNOWN: startup/channel validity and prior +0x1C state need original callers/setup.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_uvsort_rom_400000",
+          "declaration_line": 67,
+          "lines": [
+            111
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-33baf269e4ae",
       "kind": "explicit_unknown",
       "path": "src/modules/uvsort_rom.c",
@@ -142174,6 +142131,106 @@
           "declaration_line": 345,
           "lines": [
             342
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-a71a73b6775d",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvsort_rom.c",
+      "symbol": "Defaults are 4 groups and 50 callbacks; nonzero settings words are copied literally. RE_UNKNOWN: two-word extent and signed size/count domains need original settings producers.",
+      "lines": [
+        83
+      ],
+      "evidence": "Defaults are 4 groups and 50 callbacks; nonzero settings words are copied literally. RE_UNKNOWN: two-word extent and signed size/count domains need original settings producers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_uvsort_rom_400000",
+          "declaration_line": 67,
+          "lines": [
+            83
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-6feaaeb3e8fa",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvsort_rom.c",
+      "symbol": "FAKE. RE_UNKNOWN: historical empty conditional/compiler purpose needs original source evidence; preserve it.",
+      "lines": [
+        101
+      ],
+      "evidence": "FAKE. RE_UNKNOWN: historical empty conditional/compiler purpose needs original source evidence; preserve it.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_uvsort_rom_400000",
+          "declaration_line": 67,
+          "lines": [
+            101
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-7bec8dbc024a",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvsort_rom.c",
+      "symbol": "Fresh capacity and group-base reads precede the partial +0x0C/+0x09/+0x0B writes. RE_UNKNOWN: aliasing and remaining-field validity need original producers/consumers.",
+      "lines": [
+        106
+      ],
+      "evidence": "Fresh capacity and group-base reads precede the partial +0x0C/+0x09/+0x0B writes. RE_UNKNOWN: aliasing and remaining-field validity need original producers/consumers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_uvsort_rom_400000",
+          "declaration_line": 67,
+          "lines": [
+            106
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-fbfa5439c942",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvsort_rom.c",
+      "symbol": "GMGR list 1 is passed to CBCK slot 0x10; registration status is ignored. RE_UNKNOWN: list capacity/storage and failure handling need original list producers/callers.",
+      "lines": [
+        112
+      ],
+      "evidence": "GMGR list 1 is passed to CBCK slot 0x10; registration status is ignored. RE_UNKNOWN: list capacity/storage and failure handling need original list producers/callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_uvsort_rom_400000",
+          "declaration_line": 67,
+          "lines": [
+            112
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-2fbd2f9dfbe8",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvsort_rom.c",
+      "symbol": "Publish six exports, allocate group/callback storage and register the graphics stub. RE_UNKNOWN: import/export lifetime and historical ABI need original loader/callers.",
+      "lines": [
+        67
+      ],
+      "evidence": "Publish six exports, allocate group/callback storage and register the graphics stub. RE_UNKNOWN: import/export lifetime and historical ABI need original loader/callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_uvsort_rom_400000",
+          "declaration_line": 67,
+          "lines": [
+            67
           ]
         }
       ]
