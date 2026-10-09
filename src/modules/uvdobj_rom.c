@@ -285,17 +285,17 @@ void uvDobjSetLoadedModel(s32 objectId, s32 modelId) {
 #line 269 "src/modules/uvdobj_rom.c"
 
 void uvDobjModel(s32 objId, s32 modelId) {
-    f32 temp_fv0;
-    u8 temp_v0_3;
-    u8 var_s2;
+    f32 reciprocalScale;
+    u8 newMatrixCount;
+    u8 oldMatrixCount;
     s32 i;
-    ParsedUVMD *temp_v0_2;
-    ParsedUVMD *var_s1;
-    Mtx4F *sp38;
-    DObj *temp_s5;
+    ParsedUVMD *newModel;
+    ParsedUVMD *oldModel;
+    Mtx4F *oldMatrices;
+    DObj *object; /* RE_UNKNOWN: record extents, aliases and lifetime need original allocators and export 0x14 callers; UVMD field roles need independent consumers. */
 
-    temp_s5 = &sDObjs[objId];
-    if (modelId == temp_s5->modelId) {
+    object = &sDObjs[objId]; /* RE_ORIGINAL_QUIRK: native reads modelId before the signed upper-only ID gate. RE_UNKNOWN: valid IDs and pre-gate readability need original caller-domain evidence. */
+    if (modelId == object->modelId) {
         return;
     }
 
@@ -303,70 +303,70 @@ void uvDobjModel(s32 objId, s32 modelId) {
         return;
     }
 
-    var_s1 = NULL;
-    if (temp_s5->modelId != 0xFFFF) {
-        var_s1 = uvGetLoadedFile('UVMD', temp_s5->modelId);
-        if (var_s1 == NULL) {
-            PANIC;
+    oldModel = NULL;
+    if (object->modelId != 0xFFFF) {
+        oldModel = uvGetLoadedFile('UVMD', object->modelId);
+        if (oldModel == NULL) {
+            PANIC; /* Preserve the native null store, then remaining control if execution continues. RE_UNKNOWN: missing-model error-path reachability needs original loaders/callers/runtime evidence. */
         } else {
-            // FAKE
-            if (var_s1 && var_s1 && var_s1)
+            // FAKE: RE_UNKNOWN: historical compiler workaround; preserve the triple pointer no-op until original declarations/source justify a natural replacement.
+            if (oldModel && oldModel && oldModel)
                 ;
         }
     }
     if (modelId == 0xFFFF) {
-        temp_s5->modelId = 0xFFFF;
-        if (temp_s5->unk1C != 0) {
-            _uvMemFree((void *) temp_s5->unk1C);
-            temp_s5->unk1C = 0;
-            temp_s5->unk1A = 0;
+        object->modelId = 0xFFFF;
+        if (object->unk1C != 0) {
+            _uvMemFree((void *) object->unk1C);
+            object->unk1C = 0;
+            object->unk1A = 0;
         }
         return;
     }
 
-    temp_v0_2 = uvGetLoadedFile('UVMD', modelId);
-    if (temp_v0_2 == NULL) {
+    newModel = uvGetLoadedFile('UVMD', modelId);
+    if (newModel == NULL) {
         return;
     }
 
-    temp_s5->unk14 = 0;
-    temp_s5->unk10 = temp_v0_2->unkC;
-    if (temp_s5->modelId == 0xFFFF) {
-        var_s2 = 0;
-    } else if (var_s1 != NULL) {
-        var_s2 = var_s1->unk6;
+    object->unk14 = 0;
+    object->unk10 = newModel->unkC;
+    if (object->modelId == 0xFFFF) {
+        oldMatrixCount = 0;
+    } else if (oldModel != NULL) {
+        oldMatrixCount = oldModel->unk6; /* Capture this old resource byte before allocation/callbacks. RE_UNKNOWN: old/new count compatibility needs original model-transition producers. */
     } else {
-        var_s2 = 0;
-        if (temp_s5->unk1C != 0) {
-            _uvMemFree((void *) temp_s5->unk1C);
-            temp_s5->unk1C = 0;
-            temp_s5->unk1A = 0;
+        oldMatrixCount = 0;
+        if (object->unk1C != 0) {
+            _uvMemFree((void *) object->unk1C);
+            object->unk1C = 0;
+            object->unk1A = 0;
         }
     }
-    sp38 = temp_s5->unk1C;
-    temp_v0_3 = temp_v0_2->unk6;
-    temp_s5->unk1C = _uvMemAllocAlign8(temp_v0_3 << 6);
-    temp_s5->unk1A = temp_v0_3;
+    oldMatrices = object->unk1C;
+    newMatrixCount = newModel->unk6;
+    object->unk1C = _uvMemAllocAlign8(newMatrixCount << 6); /* Publish pointer/count without a success gate; native allocator can return null. RE_UNKNOWN: allocation outcomes, capacities and valid zero-count transitions need original resource/lifecycle callers. */
+    object->unk1A = newMatrixCount;
 
-    for (i = 0; i < var_s2; i++) {
-        sUvFMtxExports->uvMat4FCopy((u32) temp_s5->unk1C + i * sizeof(Mtx4F),
-                                    (u32) sp38 + i * sizeof(Mtx4F));
-        _uvMemFree(sp38);
+    for (i = 0; i < oldMatrixCount; i++) {
+        sUvFMtxExports->uvMat4FCopy((u32) object->unk1C + i * sizeof(Mtx4F),
+                                    (u32) oldMatrices + i * sizeof(Mtx4F));
+        _uvMemFree(oldMatrices); /* RE_ORIGINAL_QUIRK: free the same captured base after each old-matrix copy; no old/new count clamp. RE_UNKNOWN: ownership, repeat-free validity and reachability need original allocation/lifecycle callers. */
     }
 
-    for (i = var_s2; i < temp_v0_3; i++) {
-        Mtx4F *temp = (u32) temp_s5->unk1C + (i * sizeof(Mtx4F));
-        Mtx4F *temp2 = (u32) temp_v0_2->unk8 + (i * sizeof(Mtx4F));
-        sUvFMtxExports->uvMat4FCopy(temp, temp2);
+    for (i = oldMatrixCount; i < newMatrixCount; i++) {
+        Mtx4F *destinationMatrix = (u32) object->unk1C + (i * sizeof(Mtx4F));
+        Mtx4F *modelMatrix = (u32) newModel->unk8 + (i * sizeof(Mtx4F));
+        sUvFMtxExports->uvMat4FCopy(destinationMatrix, modelMatrix); /* Native copy interleaves loads/stores. RE_UNKNOWN: readable/writable extents, overlap and resource lifetime need original producers/consumers; retain these fresh pointer reads. */
     }
-    if (var_s2 == 0) {
-        if (temp_v0_2->unk10 != 1.0f) {
-            temp_fv0 = 1.0f / temp_v0_2->unk10;
-            sUvFMtxExports->uvMat4Scale((Mtx4F *) temp_s5->unk1C, temp_fv0, temp_fv0, temp_fv0);
+    if (oldMatrixCount == 0) {
+        if (newModel->unk10 != 1.0f) {
+            reciprocalScale = 1.0f / newModel->unk10; /* Preserve the unequal-to-1 test, including NaN, and scale only the first three matrix rows. RE_UNKNOWN: factor units and finite/nonzero domains need original resource producers and transform consumers. */
+            sUvFMtxExports->uvMat4Scale((Mtx4F *) object->unk1C, reciprocalScale, reciprocalScale, reciprocalScale);
         }
     }
-    temp_s5->modelId = modelId;
-    if (temp_v0_2->unk5 & 0x76) {
+    object->modelId = modelId;
+    if (newModel->unk5 & 0x76) { /* Reload this byte after callbacks; native flag setter stores one byte. RE_UNKNOWN: flag meanings and its different inclusive upper-ID gate need original callers/consumers. */
         uvDobjSetFlags(objId, 3);
     } else {
         uvDobjSetFlags(objId, 2);

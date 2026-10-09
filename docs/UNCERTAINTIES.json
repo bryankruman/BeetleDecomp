@@ -277,7 +277,7 @@
     "src/modules/uvcontourld_rom.c": "41ea663b547c85255087cbba8cedc39bb964795476f0d682e11dafc61ae2d97a",
     "src/modules/uvdbg_rom.c": "20dbff47ebe571eb2b5462d238cd16c53f00157a154f22f8c051f64b8f1dce0b",
     "src/modules/uvdgeom_rom.c": "6fb52252f88afc60e053a4213e19fdebd44296f68d23ef8116e80f6460503ace",
-    "src/modules/uvdobj_rom.c": "27d2e712ffae78fabff79f24a762807cb45d0220d0da270495ad8f378a080054",
+    "src/modules/uvdobj_rom.c": "fea252722a218bd05fadf2711a55f76a692d2027b27c86bb52ff96bd648072cd",
     "src/modules/uvdsetld_rom.c": "274d09695ac5beb2913e83e67baba614f43b5f52001c6d62c18a22bee027edf4",
     "src/modules/uvdyn_rom.c": "75452ccfc5179ee2ef080780960447ba028968464c3d3adf902fe7db4d2b15ac",
     "src/modules/uvear_rom.c": "83f2d9c53aac67e858f5c0af27d2d96d72a659a369fa541188f1cfa4ffaf3f1c",
@@ -330,8 +330,8 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "bc3c889992934500a49c9794c46429fb6029da50d12aad9842179df0a0bb8bc5",
-    "docs/VALIDATION_20261006.md": "9ac0a0c2be6386b8cb40e3baa28fab5e8df595012f7893a54f905d9133ce1971"
+    "docs/STRATEGY_V4.md": "e5b6bc67028fcc2e66894f55ca605544e8f19b9b4da82e2a3e88ea051a6f9702",
+    "docs/VALIDATION_20261006.md": "61bf82a7614e2452b071913a52aad32e6e757fb5a3b81489709b26ad0b84481e"
   },
   "counts": {
     "address_function": 939,
@@ -339,13 +339,13 @@
     "assembly": 802,
     "audit_debt": 30,
     "conditional_draft": 4,
-    "decompiler_local": 916,
+    "decompiler_local": 914,
     "draft_marker": 27,
-    "explicit_unknown": 894,
+    "explicit_unknown": 904,
     "layout_padding": 274,
     "offset_field": 1585,
     "opaque_type": 282,
-    "original_quirk": 238,
+    "original_quirk": 240,
     "uncertainty_note": 91,
     "unused_identifier": 126
   },
@@ -96217,31 +96217,6 @@
       ]
     },
     {
-      "id": "Q-7729203073b0",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvdobj_rom.c",
-      "symbol": "sp38",
-      "lines": [
-        294,
-        346,
-        353,
-        354
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvDobjModel",
-          "declaration_line": 287,
-          "lines": [
-            294,
-            346,
-            353,
-            354
-          ]
-        }
-      ]
-    },
-    {
       "id": "Q-2a30a30ee4d3",
       "kind": "decompiler_local",
       "path": "src/modules/uvdobj_rom.c",
@@ -97141,9 +97116,6 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "temp_fv0",
       "lines": [
-        288,
-        364,
-        365,
         880,
         1120,
         1144,
@@ -97178,16 +97150,6 @@
             1165,
             1169,
             1171
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvDobjModel",
-          "declaration_line": 287,
-          "lines": [
-            288,
-            364,
-            365
           ]
         }
       ]
@@ -97609,30 +97571,6 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "temp_s5",
       "lines": [
-        295,
-        297,
-        298,
-        307,
-        308,
-        318,
-        319,
-        320,
-        321,
-        322,
-        332,
-        333,
-        334,
-        340,
-        341,
-        342,
-        343,
-        346,
-        348,
-        349,
-        352,
-        358,
-        365,
-        368,
         1391
       ],
       "owners": [
@@ -97642,37 +97580,6 @@
           "declaration_line": 1385,
           "lines": [
             1391
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvDobjModel",
-          "declaration_line": 287,
-          "lines": [
-            295,
-            297,
-            298,
-            307,
-            308,
-            318,
-            319,
-            320,
-            321,
-            322,
-            332,
-            333,
-            334,
-            340,
-            341,
-            342,
-            343,
-            346,
-            348,
-            349,
-            352,
-            358,
-            365,
-            368
           ]
         }
       ]
@@ -97878,15 +97785,6 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "temp_v0_2",
       "lines": [
-        292,
-        327,
-        328,
-        333,
-        347,
-        359,
-        363,
-        364,
-        369,
         878,
         902,
         903,
@@ -97920,49 +97818,6 @@
           "declaration_line": 1440,
           "lines": [
             1451
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvDobjModel",
-          "declaration_line": 287,
-          "lines": [
-            292,
-            327,
-            328,
-            333,
-            347,
-            359,
-            363,
-            364,
-            369
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-2592f5114105",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvdobj_rom.c",
-      "symbol": "temp_v0_3",
-      "lines": [
-        289,
-        347,
-        348,
-        349,
-        357
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvDobjModel",
-          "declaration_line": 287,
-          "lines": [
-            289,
-            347,
-            348,
-            349,
-            357
           ]
         }
       ]
@@ -98223,13 +98078,6 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "var_s1",
       "lines": [
-        293,
-        306,
-        308,
-        309,
-        313,
-        336,
-        337,
         1047,
         1230,
         1269,
@@ -98255,20 +98103,6 @@
           "lines": [
             1047
           ]
-        },
-        {
-          "kind": "function",
-          "name": "uvDobjModel",
-          "declaration_line": 287,
-          "lines": [
-            293,
-            306,
-            308,
-            309,
-            313,
-            336,
-            337
-          ]
         }
       ]
     },
@@ -98278,13 +98112,6 @@
       "path": "src/modules/uvdobj_rom.c",
       "symbol": "var_s2",
       "lines": [
-        290,
-        335,
-        337,
-        339,
-        351,
-        357,
-        362,
         990,
         1333,
         1345,
@@ -98345,20 +98172,6 @@
           "declaration_line": 984,
           "lines": [
             990
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvDobjModel",
-          "declaration_line": 287,
-          "lines": [
-            290,
-            335,
-            337,
-            339,
-            351,
-            357,
-            362
           ]
         }
       ]
@@ -125358,7 +125171,7 @@
       "lines": [
         312
       ],
-      "evidence": "FAKE",
+      "evidence": "FAKE: RE_UNKNOWN: historical compiler workaround; preserve the triple pointer no-op until original declarations/source justify a natural replacement.",
       "owners": [
         {
           "kind": "function",
@@ -136996,6 +136809,26 @@
       ]
     },
     {
+      "id": "Q-6a8dde22c3ce",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdobj_rom.c",
+      "symbol": "Capture this old resource byte before allocation/callbacks. RE_UNKNOWN: old/new count compatibility needs original model-transition producers.",
+      "lines": [
+        337
+      ],
+      "evidence": "Capture this old resource byte before allocation/callbacks. RE_UNKNOWN: old/new count compatibility needs original model-transition producers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDobjModel",
+          "declaration_line": 287,
+          "lines": [
+            337
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-18fc6e35b558",
       "kind": "explicit_unknown",
       "path": "src/modules/uvdobj_rom.c",
@@ -137096,6 +136929,26 @@
       ]
     },
     {
+      "id": "Q-23d9fafb86cf",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdobj_rom.c",
+      "symbol": "FAKE: RE_UNKNOWN: historical compiler workaround; preserve the triple pointer no-op until original declarations/source justify a natural replacement.",
+      "lines": [
+        312
+      ],
+      "evidence": "FAKE: RE_UNKNOWN: historical compiler workaround; preserve the triple pointer no-op until original declarations/source justify a natural replacement.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDobjModel",
+          "declaration_line": 287,
+          "lines": [
+            312
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-d3b85ef34e35",
       "kind": "explicit_unknown",
       "path": "src/modules/uvdobj_rom.c",
@@ -137111,6 +136964,26 @@
           "declaration_line": 271,
           "lines": [
             268
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-4e566af8d81e",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdobj_rom.c",
+      "symbol": "Native copy interleaves loads/stores. RE_UNKNOWN: readable/writable extents, overlap and resource lifetime need original producers/consumers; retain these fresh pointer reads.",
+      "lines": [
+        360
+      ],
+      "evidence": "Native copy interleaves loads/stores. RE_UNKNOWN: readable/writable extents, overlap and resource lifetime need original producers/consumers; retain these fresh pointer reads.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDobjModel",
+          "declaration_line": 287,
+          "lines": [
+            360
           ]
         }
       ]
@@ -137136,6 +137009,46 @@
       ]
     },
     {
+      "id": "Q-bff295506c15",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdobj_rom.c",
+      "symbol": "Preserve the native null store, then remaining control if execution continues. RE_UNKNOWN: missing-model error-path reachability needs original loaders/callers/runtime evidence.",
+      "lines": [
+        310
+      ],
+      "evidence": "Preserve the native null store, then remaining control if execution continues. RE_UNKNOWN: missing-model error-path reachability needs original loaders/callers/runtime evidence.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDobjModel",
+          "declaration_line": 287,
+          "lines": [
+            310
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-849ecd169d28",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdobj_rom.c",
+      "symbol": "Preserve the unequal-to-1 test, including NaN, and scale only the first three matrix rows. RE_UNKNOWN: factor units and finite/nonzero domains need original resource producers and transform consumers.",
+      "lines": [
+        364
+      ],
+      "evidence": "Preserve the unequal-to-1 test, including NaN, and scale only the first three matrix rows. RE_UNKNOWN: factor units and finite/nonzero domains need original resource producers and transform consumers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDobjModel",
+          "declaration_line": 287,
+          "lines": [
+            364
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-193776d6154a",
       "kind": "explicit_unknown",
       "path": "src/modules/uvdobj_rom.c",
@@ -137156,6 +137069,46 @@
       ]
     },
     {
+      "id": "Q-d3192989a190",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdobj_rom.c",
+      "symbol": "Publish pointer/count without a success gate; native allocator can return null. RE_UNKNOWN: allocation outcomes, capacities and valid zero-count transitions need original resource/lifecycle callers.",
+      "lines": [
+        348
+      ],
+      "evidence": "Publish pointer/count without a success gate; native allocator can return null. RE_UNKNOWN: allocation outcomes, capacities and valid zero-count transitions need original resource/lifecycle callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDobjModel",
+          "declaration_line": 287,
+          "lines": [
+            348
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-bdb3b81fb82d",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdobj_rom.c",
+      "symbol": "RE_ORIGINAL_QUIRK: free the same captured base after each old-matrix copy; no old/new count clamp. RE_UNKNOWN: ownership, repeat-free validity and reachability need original allocation/lifecycle callers.",
+      "lines": [
+        354
+      ],
+      "evidence": "RE_ORIGINAL_QUIRK: free the same captured base after each old-matrix copy; no old/new count clamp. RE_UNKNOWN: ownership, repeat-free validity and reachability need original allocation/lifecycle callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDobjModel",
+          "declaration_line": 287,
+          "lines": [
+            354
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-3a896daa83e0",
       "kind": "explicit_unknown",
       "path": "src/modules/uvdobj_rom.c",
@@ -137171,6 +137124,26 @@
           "declaration_line": 380,
           "lines": [
             387
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-f8a601018093",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdobj_rom.c",
+      "symbol": "RE_ORIGINAL_QUIRK: native reads modelId before the signed upper-only ID gate. RE_UNKNOWN: valid IDs and pre-gate readability need original caller-domain evidence.",
+      "lines": [
+        297
+      ],
+      "evidence": "RE_ORIGINAL_QUIRK: native reads modelId before the signed upper-only ID gate. RE_UNKNOWN: valid IDs and pre-gate readability need original caller-domain evidence.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDobjModel",
+          "declaration_line": 287,
+          "lines": [
+            297
           ]
         }
       ]
@@ -137211,6 +137184,46 @@
           "declaration_line": 380,
           "lines": [
             382
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-566858f2bdfe",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdobj_rom.c",
+      "symbol": "RE_UNKNOWN: record extents, aliases and lifetime need original allocators and export 0x14 callers; UVMD field roles need independent consumers.",
+      "lines": [
+        295
+      ],
+      "evidence": "RE_UNKNOWN: record extents, aliases and lifetime need original allocators and export 0x14 callers; UVMD field roles need independent consumers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDobjModel",
+          "declaration_line": 287,
+          "lines": [
+            295
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-67681e4114bc",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdobj_rom.c",
+      "symbol": "Reload this byte after callbacks; native flag setter stores one byte. RE_UNKNOWN: flag meanings and its different inclusive upper-ID gate need original callers/consumers.",
+      "lines": [
+        369
+      ],
+      "evidence": "Reload this byte after callbacks; native flag setter stores one byte. RE_UNKNOWN: flag meanings and its different inclusive upper-ID gate need original callers/consumers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDobjModel",
+          "declaration_line": 287,
+          "lines": [
+            369
           ]
         }
       ]
@@ -219867,6 +219880,26 @@
       ]
     },
     {
+      "id": "Q-42c60b8912d1",
+      "kind": "original_quirk",
+      "path": "src/modules/uvdobj_rom.c",
+      "symbol": "RE_ORIGINAL_QUIRK: free the same captured base after each old-matrix copy; no old/new count clamp. RE_UNKNOWN: ownership, repeat-free validity and reachability need original allocation/lifecycle callers.",
+      "lines": [
+        354
+      ],
+      "evidence": "RE_ORIGINAL_QUIRK: free the same captured base after each old-matrix copy; no old/new count clamp. RE_UNKNOWN: ownership, repeat-free validity and reachability need original allocation/lifecycle callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDobjModel",
+          "declaration_line": 287,
+          "lines": [
+            354
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-e9b258bb21c3",
       "kind": "original_quirk",
       "path": "src/modules/uvdobj_rom.c",
@@ -219882,6 +219915,26 @@
           "declaration_line": 380,
           "lines": [
             387
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-354033d0645e",
+      "kind": "original_quirk",
+      "path": "src/modules/uvdobj_rom.c",
+      "symbol": "RE_ORIGINAL_QUIRK: native reads modelId before the signed upper-only ID gate. RE_UNKNOWN: valid IDs and pre-gate readability need original caller-domain evidence.",
+      "lines": [
+        297
+      ],
+      "evidence": "RE_ORIGINAL_QUIRK: native reads modelId before the signed upper-only ID gate. RE_UNKNOWN: valid IDs and pre-gate readability need original caller-domain evidence.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDobjModel",
+          "declaration_line": 287,
+          "lines": [
+            297
           ]
         }
       ]
