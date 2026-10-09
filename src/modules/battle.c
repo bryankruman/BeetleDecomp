@@ -654,6 +654,28 @@ void battleCopyNodeStateAndUpdateMotion(BattleResetNode *node, s32 mode) {
 #line 283 "src/modules/battle.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00406344.s")
 
+/* Original 652C draws/clamps an index from MATH slot 0x34's LCG fraction and retries
+ * while excluded or used by an active 28-byte record. Each scan captures
+ * its count once and compares unshifted state cursors with fixed field
+ * loads at +16E4/+16E8, without an early match exit. It updates two counts,
+ * retains the selected index across callbacks, draws/clamps a model index,
+ * sets the model, then submits the selected vector as matrix translation
+ * before setting flag bits 2 and clearing bits 1 through fresh handle reads.
+ * RE_ORIGINAL_QUIRK: retry has no exhaustion bound or alternate exit here.
+ * RE_UNKNOWN: count/index/handle and address-wrap domains, table/record
+ * capacities, countdown/count purposes and units, aliases and callback
+ * lifetimes need original producers/callers; no reachable exhaustion claim.
+ * DATA+230 numeric model words have no loader relocations at observed sites;
+ * those bytes and the vector-table alias do not prove complete capacities.
+ * Retain ASM: first draft 600->672 bytes / 168 differences; the sole unshifted scan
+ * correction 600->656 bytes / 164 differences. Final frame 144->168 bytes, snapshot 0x88->0x54
+ * and matrix 0x40->0x5C stack homes, shared-base rematerialization, MULTU by 28 versus
+ * native shifts/subtraction, and commuted MUL.S operands remain different.
+ * The 14-reference-object/32-draft object relocation lists differ in sites/multiplicity; all
+ * six unique symbol identities remain. No further omitted call/input/reload
+ * was found; historical declarations, lowering and exact FP effects remain
+ * unproved. No C body, focused type or prototype from either trial accepted. */
+#line 285 "src/modules/battle.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_0040652C.s")
 
 /* Reset node fields and copy the shared scalar, then increment its count

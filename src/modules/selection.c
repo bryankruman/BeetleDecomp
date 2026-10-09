@@ -3904,6 +3904,24 @@ void selectionUpdateMenuAndScheduleLatchedActions(void) {
 }
 #line 2099 "src/modules/selection.c"
 
+/* Queue three localized save-warning lines ending with "Continue?".
+ * Set color (30, 227, 255, 255) and choose font 1 for language zero,
+ * otherwise font 11. Center each line at x = 160 using signed width / 2.
+ * Read node coordinates after the height callback, then subtract fresh
+ * height and node word 0x1C for each following line. Reload language and
+ * export tables around callbacks; retain the three distinct "%s" addresses.
+ * RE_UNKNOWN: caller save-state trigger, historical node/export/formal
+ * declarations and scratch extent, language/table and arithmetic domains,
+ * node/resource validity, callback mutations and queue/glyph lifetimes.
+ * Original callers, declarations, table/node writers and allocations, and
+ * FONT/STRG queue consumers must establish these contracts. Shipped strings
+ * fitting the draft scratch buffer do not prove historical capacity.
+ * The readable draft has 616 bytes but differs in 49 instruction words:
+ * stack layout, register choices, scheduling and one relocation site remain
+ * unmatched. Historical source or new operation evidence and complete
+ * instruction/serialized-record/packed module/ROM equality are required;
+ * retain the original ASM. No draft types or body are accepted. */
+#line 2100 "src/modules/selection.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0041A960.s")
 
 #line 2102 "src/modules/selection.c"

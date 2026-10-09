@@ -196,7 +196,7 @@
     "src/modules/ai.c": "777cc28944f0bdc739d92738d0f699939d0aab6e5f8c8b379048cb73011b91b9",
     "src/modules/aiedit.c": "1cd4bd3cfe12abd4393b00506ecd6c734413212333dc24ae6faeb2f9af9f56d4",
     "src/modules/airec.c": "8a6f864feb619fdf9fb677a704d09ed6fca688ddb6ec3f5fd2b73c370b3f6eb6",
-    "src/modules/battle.c": "3930a86cbba5f3250c6d63dc6324d8c16c88822e6430ce5c80d6bd56c4830028",
+    "src/modules/battle.c": "4231f395f202d0bc107c7918f97903c0c1697e204d025eb1e4a36c66cbeac42a",
     "src/modules/bubble.c": "8a3c733b7f0370b5b2e51cc123470d44edcf1bf2a2ca8fe481170fd858f9c904",
     "src/modules/cam.c": "95d22d3a7536150c4e84fd508381b424b67a127129ab9b7e2d99da3dfa2addcc",
     "src/modules/caranim.c": "649683b571cd247da0f98e863c6329dd3c815c3f80fe5131eb21ee32c752b94b",
@@ -245,7 +245,7 @@
     "src/modules/rumble.c": "88f3c10749b25988a2186cebe9bee3e409df9f8f8dd0a5f24d95592f705298a0",
     "src/modules/scene.c": "3ff752ffb9c21ea1ae8c2358b5317bc31160f28ced003fc7975847ef66b798b3",
     "src/modules/scrn.c": "664328a6dec742e1b51d5dd7e6c0dc5fd4de9132c1604053f0e5f3d7d4aca412",
-    "src/modules/selection.c": "b1818972a13a15f6c74de44b4a131f6bc969b7c24b290420c6a3b55d38fb089d",
+    "src/modules/selection.c": "3f8ccf76ef8251fed10e87be2b41091c322ecf07f2f54a16c2e5c4d4fc5fb260",
     "src/modules/shadow.c": "88396120a38816a4a31db9ced202e9d704b3928429b4e12b8ecb338df93f715b",
     "src/modules/skid.c": "981393e4b967d8c5a37b9a02f5a33eec049981cda90ea9821e7870fe17f8e211",
     "src/modules/smack.c": "451a7a7c8df88f8c880e4b09b2ac72b7bf7cb5e06f871f453b3ff69b1ab211b9",
@@ -269,7 +269,7 @@
     "src/modules/uvaudiomgr_rom.c": "dd7a4355c0cd2b056faeb4061e582070a17659288ff05becda8167d3a61fce8a",
     "src/modules/uvbill_rom.c": "d04559a6d33cbea25a52e5251f98f6563d32e0cd9c0a4b8ccfecbcec43135289",
     "src/modules/uvblit_rom.c": "f437f580274c31de0cdcb94d429207f68e556600036f676a849b2958251cf5c0",
-    "src/modules/uvcback_rom.c": "2145f0cb78ec702ad72eb11360bb0a73a067583ba738fc7dd33428bca296d26f",
+    "src/modules/uvcback_rom.c": "757b149d9e0e2b3226f23c884936b35583aa6b86186c5c3cc2863fbcbffac679",
     "src/modules/uvchannel_rom.c": "347b41ea66f152fb135c76bfdfbe3f77af9b0cd734d64995ac9a36c3e27656d4",
     "src/modules/uvcmidi_rom.c": "8b011e44de82abbe27ef9df39397058c4323d2be5dcf08df447558cce0044255",
     "src/modules/uvcolor_rom.c": "f5d5fe7883be4cf747d95911339e084b69c2374ed09635c70d58528dcca374ef",
@@ -330,8 +330,8 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "2a0376ff2cdffff63f641d67a590d1cd3b5a5d96e812dd35658359a3e404dfce",
-    "docs/VALIDATION_20261006.md": "486a71d016500bb54a6734bdcc4b5964ccabdbffec32a0bd95e792b715cddeee"
+    "docs/STRATEGY_V4.md": "d04cf692423d1d87cac644b900bfca330d42bbab644cb13b7bb9d17b7bd8723d",
+    "docs/VALIDATION_20261006.md": "09cecb98832cda35a852b2b2ba6810460bb9f6f9bdd5081c568d544b9524d5e1"
   },
   "counts": {
     "address_function": 938,
@@ -341,11 +341,11 @@
     "conditional_draft": 4,
     "decompiler_local": 911,
     "draft_marker": 27,
-    "explicit_unknown": 927,
+    "explicit_unknown": 932,
     "layout_padding": 274,
     "offset_field": 1585,
     "opaque_type": 282,
-    "original_quirk": 243,
+    "original_quirk": 244,
     "uncertainty_note": 91,
     "unused_identifier": 126
   },
@@ -25054,15 +25054,15 @@
       "symbol": "D_battle_00409C80",
       "lines": [
         238,
-        731
+        753
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleSetPalettePrimitiveColor",
-          "declaration_line": 730,
+          "declaration_line": 752,
           "lines": [
-            731
+            753
           ]
         },
         {
@@ -25082,15 +25082,15 @@
       "symbol": "D_battle_00409D28",
       "lines": [
         12,
-        1005
+        1027
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleSetIndexedPrimitiveColor",
-          "declaration_line": 1002,
+          "declaration_line": 1024,
           "lines": [
-            1005
+            1027
           ]
         },
         {
@@ -25110,15 +25110,15 @@
       "symbol": "D_battle_00409EF8",
       "lines": [
         24,
-        940
+        962
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleEnableIndexedModelAndInitializeSounds",
-          "declaration_line": 938,
+          "declaration_line": 960,
           "lines": [
-            940
+            962
           ]
         },
         {
@@ -25379,41 +25379,41 @@
         298,
         299,
         303,
-        688,
-        690,
-        713,
-        715,
-        717,
-        854,
-        856
+        710,
+        712,
+        735,
+        737,
+        739,
+        876,
+        878
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleResetNodeAndIncrementFirstCount",
-          "declaration_line": 686,
+          "declaration_line": 708,
           "lines": [
-            688,
-            690
+            710,
+            712
           ]
         },
         {
           "kind": "function",
           "name": "battleResetNodeAndIncrementSecondCount",
-          "declaration_line": 852,
+          "declaration_line": 874,
           "lines": [
-            854,
-            856
+            876,
+            878
           ]
         },
         {
           "kind": "function",
           "name": "battleResetNodePlaySoundAndClearObjectFlags",
-          "declaration_line": 708,
+          "declaration_line": 730,
           "lines": [
-            713,
-            715,
-            717
+            735,
+            737,
+            739
           ]
         },
         {
@@ -25538,19 +25538,19 @@
       "lines": [
         232,
         302,
-        818,
-        819,
-        820
+        840,
+        841,
+        842
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleApplyIndexedObjectTranslation",
-          "declaration_line": 815,
+          "declaration_line": 837,
           "lines": [
-            818,
-            819,
-            820
+            840,
+            841,
+            842
           ]
         },
         {
@@ -39054,9 +39054,9 @@
         1493,
         1510,
         1527,
-        3947,
-        3964,
-        3981
+        3965,
+        3982,
+        3999
       ],
       "owners": [
         {
@@ -39074,11 +39074,11 @@
         {
           "kind": "function",
           "name": "selectionApplyChosenLanguageAndReloadTextures",
-          "declaration_line": 3924,
+          "declaration_line": 3942,
           "lines": [
-            3947,
-            3964,
-            3981
+            3965,
+            3982,
+            3999
           ]
         },
         {
@@ -39109,9 +39109,9 @@
         1546,
         1563,
         1580,
-        4000,
-        4017,
-        4034
+        4018,
+        4035,
+        4052
       ],
       "owners": [
         {
@@ -39127,11 +39127,11 @@
         {
           "kind": "function",
           "name": "selectionApplyChosenLanguageAndReloadTextures",
-          "declaration_line": 3924,
+          "declaration_line": 3942,
           "lines": [
-            4000,
-            4017,
-            4034
+            4018,
+            4035,
+            4052
           ]
         },
         {
@@ -41381,8 +41381,8 @@
         3870,
         3884,
         3898,
-        4076,
-        4083
+        4094,
+        4101
       ],
       "owners": [
         {
@@ -41429,10 +41429,10 @@
         {
           "kind": "function",
           "name": "selectionScheduleChosenMenuActionOnce",
-          "declaration_line": 4073,
+          "declaration_line": 4091,
           "lines": [
-            4076,
-            4083
+            4094,
+            4101
           ]
         },
         {
@@ -41478,7 +41478,7 @@
         3631,
         3885,
         3899,
-        4084
+        4102
       ],
       "owners": [
         {
@@ -41516,9 +41516,9 @@
         {
           "kind": "function",
           "name": "selectionScheduleChosenMenuActionOnce",
-          "declaration_line": 4073,
+          "declaration_line": 4091,
           "lines": [
-            4084
+            4102
           ]
         },
         {
@@ -42566,7 +42566,7 @@
         1089,
         3629,
         3897,
-        4082
+        4100
       ],
       "owners": [
         {
@@ -42605,9 +42605,9 @@
         {
           "kind": "function",
           "name": "selectionScheduleChosenMenuActionOnce",
-          "declaration_line": 4073,
+          "declaration_line": 4091,
           "lines": [
-            4082
+            4100
           ]
         },
         {
@@ -43058,8 +43058,8 @@
         3738,
         3874,
         3877,
-        4077,
-        4078
+        4095,
+        4096
       ],
       "owners": [
         {
@@ -43155,10 +43155,10 @@
         {
           "kind": "function",
           "name": "selectionScheduleChosenMenuActionOnce",
-          "declaration_line": 4073,
+          "declaration_line": 4091,
           "lines": [
-            4077,
-            4078
+            4095,
+            4096
           ]
         },
         {
@@ -43578,10 +43578,10 @@
         3893,
         3894,
         3902,
-        4077,
-        4079,
-        4080,
-        4087
+        4095,
+        4097,
+        4098,
+        4105
       ],
       "owners": [
         {
@@ -43621,12 +43621,12 @@
         {
           "kind": "function",
           "name": "selectionScheduleChosenMenuActionOnce",
-          "declaration_line": 4073,
+          "declaration_line": 4091,
           "lines": [
-            4077,
-            4079,
-            4080,
-            4087
+            4095,
+            4097,
+            4098,
+            4105
           ]
         },
         {
@@ -43961,13 +43961,13 @@
         3878,
         3882,
         3895,
-        3927,
-        4037,
-        4049,
-        4059,
+        3945,
+        4055,
+        4067,
         4077,
-        4078,
-        4081
+        4095,
+        4096,
+        4099
       ],
       "owners": [
         {
@@ -44048,10 +44048,10 @@
         {
           "kind": "function",
           "name": "selectionApplyChosenLanguageAndReloadTextures",
-          "declaration_line": 3924,
+          "declaration_line": 3942,
           "lines": [
-            3927,
-            4037
+            3945,
+            4055
           ]
         },
         {
@@ -44066,17 +44066,17 @@
         {
           "kind": "function",
           "name": "selectionChooseLanguage1AndSpeedOption",
-          "declaration_line": 4046,
+          "declaration_line": 4064,
           "lines": [
-            4049
+            4067
           ]
         },
         {
           "kind": "function",
           "name": "selectionChooseLanguage2AndSpeedOption",
-          "declaration_line": 4056,
+          "declaration_line": 4074,
           "lines": [
-            4059
+            4077
           ]
         },
         {
@@ -44179,11 +44179,11 @@
         {
           "kind": "function",
           "name": "selectionScheduleChosenMenuActionOnce",
-          "declaration_line": 4073,
+          "declaration_line": 4091,
           "lines": [
-            4077,
-            4078,
-            4081
+            4095,
+            4096,
+            4099
           ]
         },
         {
@@ -44299,7 +44299,7 @@
         3757,
         3883,
         3896,
-        4082
+        4100
       ],
       "owners": [
         {
@@ -44347,9 +44347,9 @@
         {
           "kind": "function",
           "name": "selectionScheduleChosenMenuActionOnce",
-          "declaration_line": 4073,
+          "declaration_line": 4091,
           "lines": [
-            4082
+            4100
           ]
         },
         {
@@ -75118,7 +75118,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_0040652C",
       "lines": [
-        657
+        679
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_0040652C.s"
     },
@@ -75128,7 +75128,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_00406954",
       "lines": [
-        756
+        778
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_00406954.s"
     },
@@ -75138,7 +75138,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_00406AD0",
       "lines": [
-        781
+        803
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_00406AD0.s"
     },
@@ -75148,7 +75148,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_00406C84",
       "lines": [
-        807
+        829
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_00406C84.s"
     },
@@ -75158,7 +75158,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_00406E98",
       "lines": [
-        809
+        831
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_00406E98.s"
     },
@@ -75168,7 +75168,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_004073BC",
       "lines": [
-        863
+        885
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_004073BC.s"
     },
@@ -75178,7 +75178,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_00407740",
       "lines": [
-        882
+        904
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_00407740.s"
     },
@@ -75188,7 +75188,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_004078EC",
       "lines": [
-        902
+        924
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_004078EC.s"
     },
@@ -75198,7 +75198,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_00407A68",
       "lines": [
-        904
+        926
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_00407A68.s"
     },
@@ -75208,7 +75208,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_00407C58",
       "lines": [
-        906
+        928
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_00407C58.s"
     },
@@ -75218,7 +75218,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_00407DC4",
       "lines": [
-        908
+        930
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_00407DC4.s"
     },
@@ -75228,7 +75228,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_00407FF4",
       "lines": [
-        950
+        972
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_00407FF4.s"
     },
@@ -75238,7 +75238,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_0040807C",
       "lines": [
-        967
+        989
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_0040807C.s"
     },
@@ -75248,7 +75248,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_004081D8",
       "lines": [
-        985
+        1007
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_004081D8.s"
     },
@@ -75258,7 +75258,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_00408454",
       "lines": [
-        987
+        1009
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_00408454.s"
     },
@@ -75268,7 +75268,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_004085F8",
       "lines": [
-        989
+        1011
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_004085F8.s"
     },
@@ -75278,7 +75278,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_00408858",
       "lines": [
-        991
+        1013
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_00408858.s"
     },
@@ -75288,7 +75288,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_00408B70",
       "lines": [
-        993
+        1015
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_00408B70.s"
     },
@@ -75298,7 +75298,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_00408DC8",
       "lines": [
-        995
+        1017
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_00408DC8.s"
     },
@@ -75308,7 +75308,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_00409144",
       "lines": [
-        1026
+        1048
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_00409144.s"
     },
@@ -75318,7 +75318,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_00409314",
       "lines": [
-        1048
+        1070
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_00409314.s"
     },
@@ -75328,7 +75328,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_00409410",
       "lines": [
-        1050
+        1072
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_00409410.s"
     },
@@ -75338,7 +75338,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_0040969C",
       "lines": [
-        1052
+        1074
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_0040969C.s"
     },
@@ -75348,7 +75348,7 @@
       "path": "src/modules/battle.c",
       "symbol": "func_battle_00409838",
       "lines": [
-        1054
+        1076
       ],
       "evidence": "asm/us/nonmatchings/modules/battle/func_battle_00409838.s"
     },
@@ -79588,7 +79588,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0041A960",
       "lines": [
-        3907
+        3925
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0041A960.s"
     },
@@ -79598,7 +79598,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0041B28C",
       "lines": [
-        4117
+        4135
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0041B28C.s"
     },
@@ -79608,7 +79608,7 @@
       "path": "src/modules/selection.c",
       "symbol": "func_selection_0041B370",
       "lines": [
-        4119
+        4137
       ],
       "evidence": "asm/us/nonmatchings/modules/selection/func_selection_0041B370.s"
     },
@@ -126688,16 +126688,16 @@
       "path": "src/modules/battle.c",
       "symbol": "Build an identity matrix with the indexed battle-table translation, * assign it to object matrix slot zero, select mode two and clear flag bit one. * RE_UNKNOWN: translation index and handle validity/lifetime need original producers/callers.",
       "lines": [
-        812
+        834
       ],
       "evidence": "Build an identity matrix with the indexed battle-table translation, * assign it to object matrix slot zero, select mode two and clear flag bit one. * RE_UNKNOWN: translation index and handle validity/lifetime need original producers/callers.",
       "owners": [
         {
           "kind": "function",
           "name": "battleApplyIndexedObjectTranslation",
-          "declaration_line": 815,
+          "declaration_line": 837,
           "lines": [
-            812
+            834
           ]
         }
       ]
@@ -126708,16 +126708,16 @@
       "path": "src/modules/battle.c",
       "symbol": "Clear node fields 0x8 and 0x4, copy the shared scalar at 0x1A34, * and increment its associated count at 0x1A30. Clear object flag bits * masks 2 then 1; retain the legacy extra argument. RE_UNKNOWN: object-handle bounds/lifetime need original callers.",
       "lines": [
-        681
+        703
       ],
       "evidence": "Clear node fields 0x8 and 0x4, copy the shared scalar at 0x1A34, * and increment its associated count at 0x1A30. Clear object flag bits * masks 2 then 1; retain the legacy extra argument. RE_UNKNOWN: object-handle bounds/lifetime need original callers.",
       "owners": [
         {
           "kind": "function",
           "name": "battleResetNodeAndIncrementFirstCount",
-          "declaration_line": 686,
+          "declaration_line": 708,
           "lines": [
-            681
+            703
           ]
         }
       ]
@@ -126728,16 +126728,16 @@
       "path": "src/modules/battle.c",
       "symbol": "Clear node fields 0x8 and 0x4, copy the shared scalar at 0x1D70, * and increment its associated count at 0x1D6C. Clear object flag bits * masks 2 then 1; retain the legacy extra argument. RE_UNKNOWN: object-handle bounds/lifetime need original callers.",
       "lines": [
-        847
+        869
       ],
       "evidence": "Clear node fields 0x8 and 0x4, copy the shared scalar at 0x1D70, * and increment its associated count at 0x1D6C. Clear object flag bits * masks 2 then 1; retain the legacy extra argument. RE_UNKNOWN: object-handle bounds/lifetime need original callers.",
       "owners": [
         {
           "kind": "function",
           "name": "battleResetNodeAndIncrementSecondCount",
-          "declaration_line": 852,
+          "declaration_line": 874,
           "lines": [
-            847
+            869
           ]
         }
       ]
@@ -126818,6 +126818,26 @@
           "declaration_line": 385,
           "lines": [
             377
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-f7d5853b681e",
+      "kind": "explicit_unknown",
+      "path": "src/modules/battle.c",
+      "symbol": "Original 652C draws/clamps an index from MATH slot 0x34's LCG fraction and retries * while excluded or used by an active 28-byte record. Each scan captures * its count once and compares unshifted state cursors with fixed field * loads at +16E4/+16E8, without an early match exit. It updates two counts, * retains the selected index across callbacks, draws/clamps a model index, * sets the model, then submits the selected vector as matrix translation * before setting flag bits 2 and clearing bits 1 through fresh handle reads. * RE_ORIGINAL_QUIRK: retry has no exhaustion bound or alternate exit here. * RE_UNKNOWN: count/index/handle and address-wrap domains, table/record * capacities, countdown/count purposes and units, aliases and callback * lifetimes need original producers/callers; no reachable exhaustion claim. * DATA+230 numeric model words have no loader relocations at observed sites; * those bytes and the vector-table alias do not prove complete capacities. * Retain ASM: first draft 600->672 bytes / 168 differences; the sole unshifted scan * correction 600->656 bytes / 164 differences. Final frame 144->168 bytes, snapshot 0x88->0x54 * and matrix 0x40->0x5C stack homes, shared-base rematerialization, MULTU by 28 versus * native shifts/subtraction, and commuted MUL.S operands remain different. * The 14-reference-object/32-draft object relocation lists differ in sites/multiplicity; all * six unique symbol identities remain. No further omitted call/input/reload * was found; historical declarations, lowering and exact FP effects remain * unproved. No C body, focused type or prototype from either trial accepted.",
+      "lines": [
+        657
+      ],
+      "evidence": "Original 652C draws/clamps an index from MATH slot 0x34's LCG fraction and retries * while excluded or used by an active 28-byte record. Each scan captures * its count once and compares unshifted state cursors with fixed field * loads at +16E4/+16E8, without an early match exit. It updates two counts, * retains the selected index across callbacks, draws/clamps a model index, * sets the model, then submits the selected vector as matrix translation * before setting flag bits 2 and clearing bits 1 through fresh handle reads. * RE_ORIGINAL_QUIRK: retry has no exhaustion bound or alternate exit here. * RE_UNKNOWN: count/index/handle and address-wrap domains, table/record * capacities, countdown/count purposes and units, aliases and callback * lifetimes need original producers/callers; no reachable exhaustion claim. * DATA+230 numeric model words have no loader relocations at observed sites; * those bytes and the vector-table alias do not prove complete capacities. * Retain ASM: first draft 600->672 bytes / 168 differences; the sole unshifted scan * correction 600->656 bytes / 164 differences. Final frame 144->168 bytes, snapshot 0x88->0x54 * and matrix 0x40->0x5C stack homes, shared-base rematerialization, MULTU by 28 versus * native shifts/subtraction, and commuted MUL.S operands remain different. * The 14-reference-object/32-draft object relocation lists differ in sites/multiplicity; all * six unique symbol identities remain. No further omitted call/input/reload * was found; historical declarations, lowering and exact FP effects remain * unproved. No C body, focused type or prototype from either trial accepted.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_battle_0040652C",
+          "declaration_line": 679,
+          "lines": [
+            657
           ]
         }
       ]
@@ -126908,16 +126928,16 @@
       "path": "src/modules/battle.c",
       "symbol": "Original Battle6954 scans active 28-byte records using a reloaded * signed count, requests DOBJ property 7, then reloads the record index and * reads the input/table triples. It evaluates the grouped squared difference * through MATH04 and keeps the last index strictly below the mean of the * input and queried scalars; it returns -1 when no index passes. * RE_ORIGINAL_QUIRK: DOBJ7 only writes the float output when its signed * upper-bound test accepts the handle. The original query scratch has no * initialization here; caller evidence must establish any valid-output domain. * RE_UNKNOWN: count/index/handle bounds, output validity, aliases, physical * units, object lifetimes and historical declarations need original callers * and producers. Ordered NaN comparisons reject the test; no guard is added. * Trial2515 retained 380 bytes but changed 70 instruction words. Native * DIV.S by 2 became MUL.S by .5 despite the draft's /2.0f expression; exact * floating effects and historical precision/source organization are unproved. * Record-index scaling changed from shifts/subtraction to MULTU by 12; * stack scratch/result homes, base retention and scheduling also differ. * The two ten-record relocation lists differ in sites/enumeration. Full * comparison2516 found no omitted provider call, state reload or ABI input. * Retain original assembly; no clean draft or focused declarations accepted.",
       "lines": [
-        736
+        758
       ],
       "evidence": "Original Battle6954 scans active 28-byte records using a reloaded * signed count, requests DOBJ property 7, then reloads the record index and * reads the input/table triples. It evaluates the grouped squared difference * through MATH04 and keeps the last index strictly below the mean of the * input and queried scalars; it returns -1 when no index passes. * RE_ORIGINAL_QUIRK: DOBJ7 only writes the float output when its signed * upper-bound test accepts the handle. The original query scratch has no * initialization here; caller evidence must establish any valid-output domain. * RE_UNKNOWN: count/index/handle bounds, output validity, aliases, physical * units, object lifetimes and historical declarations need original callers * and producers. Ordered NaN comparisons reject the test; no guard is added. * Trial2515 retained 380 bytes but changed 70 instruction words. Native * DIV.S by 2 became MUL.S by .5 despite the draft's /2.0f expression; exact * floating effects and historical precision/source organization are unproved. * Record-index scaling changed from shifts/subtraction to MULTU by 12; * stack scratch/result homes, base retention and scheduling also differ. * The two ten-record relocation lists differ in sites/enumeration. Full * comparison2516 found no omitted provider call, state reload or ABI input. * Retain original assembly; no clean draft or focused declarations accepted.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_battle_00406954",
-          "declaration_line": 756,
+          "declaration_line": 778,
           "lines": [
-            736
+            758
           ]
         }
       ]
@@ -126928,16 +126948,16 @@
       "path": "src/modules/battle.c",
       "symbol": "Original Battle6AD0 initializes twenty forty-byte records while the * active count starts at 16. The settings word 7088 is captured once; * 6 with word 708C equal to 3, or captured value 8, selects limit zero. * Each record uses signed remainder by 7, creates/assigns its model, * invokes the second-count reset helper, initializes both embedded sound * handles through fresh SND exports, then stores .5 after both callbacks. * RE_ORIGINAL_QUIRK: DOBJ creation can return 0xFFFF, yet this caller * forwards the word to model assignment without a failure gate. SNDCC's * null path stores at zero; reachable caller failure is not established. * RE_UNKNOWN: original allocation/handle/count/index domains, * table extents, aliases, scalar units and callback/module lifetimes need * original producers/readers. Twenty iterations do not prove allocation. * First natural trial2569 produced 432 versus 436 bytes, with 54 differing * instruction positions. Both frames are 72; the native auxiliary record * pointer and backedge-delay scalar store become a direct earlier store, * still after both callbacks. Settings-base materialization duplicates, * saved registers and bound retention differ, and the full 9/11-record * relocation lists differ in sites/multiplicity/downstream helper value. * Full comparison2570 found no supported omitted effect or ABI correction. * Warning835 records the canonical reset helper's nonprototype call; * its historical shared declaration and later anonymous type remain * unresolved. Keep original ASM; no draft type/header/prototype accepted.",
       "lines": [
-        758
+        780
       ],
       "evidence": "Original Battle6AD0 initializes twenty forty-byte records while the * active count starts at 16. The settings word 7088 is captured once; * 6 with word 708C equal to 3, or captured value 8, selects limit zero. * Each record uses signed remainder by 7, creates/assigns its model, * invokes the second-count reset helper, initializes both embedded sound * handles through fresh SND exports, then stores .5 after both callbacks. * RE_ORIGINAL_QUIRK: DOBJ creation can return 0xFFFF, yet this caller * forwards the word to model assignment without a failure gate. SNDCC's * null path stores at zero; reachable caller failure is not established. * RE_UNKNOWN: original allocation/handle/count/index domains, * table extents, aliases, scalar units and callback/module lifetimes need * original producers/readers. Twenty iterations do not prove allocation. * First natural trial2569 produced 432 versus 436 bytes, with 54 differing * instruction positions. Both frames are 72; the native auxiliary record * pointer and backedge-delay scalar store become a direct earlier store, * still after both callbacks. Settings-base materialization duplicates, * saved registers and bound retention differ, and the full 9/11-record * relocation lists differ in sites/multiplicity/downstream helper value. * Full comparison2570 found no supported omitted effect or ABI correction. * Warning835 records the canonical reset helper's nonprototype call; * its historical shared declaration and later anonymous type remain * unresolved. Keep original ASM; no draft type/header/prototype accepted.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_battle_00406AD0",
-          "declaration_line": 781,
+          "declaration_line": 803,
           "lines": [
-            758
+            780
           ]
         }
       ]
@@ -126948,16 +126968,16 @@
       "path": "src/modules/battle.c",
       "symbol": "Original Battle6C84 subtracts 2 from the shared range word before * comparing/clamping its signed limit. Walk forty-byte records with a * state-relative cursor and unsigned modulo-word end calculation. * State0 reloads count only after its true inner gate; state1 reloads after * either decrement or expiry path. Other paths retain the previous count. * Expiry resets the scalar before the model-index 3/settings-word 708C * gate, toggles the alternate index between zero and 2, reloads that field * for model lookup, assigns the model and calls the translation helper. * Ordered-positive scalar tests send NaNs to the alternate paths. * RE_UNKNOWN: caller count/index/handle domains, cursor/end overflow and * alias bounds, model/settings table extents, scalar units and callback/ * module lifetimes need original producers/readers. The translated-object * argument view establishes fields 8/14 only, not a full historical type. * First natural trial2569 produced 528 versus 532 bytes, with 121 differing * instruction positions. Frame 72 becomes 64; cached settings/shared-base * retention becomes repeated absolute address materialization, with saved * register and scheduling changes. The full 18/30-record relocation lists * differ; direct helper values also move with the shorter body. This does * not establish missing call targets. Full comparison2570 found all visible * callbacks, count reloads, stores and ordered tests represented, with no * supported semantic correction. Historical declarations/alias organization * and compiler lowering remain unproved. Keep original ASM; no draft type, * header, prototype, padding or declaration-order variant accepted.",
       "lines": [
-        783
+        805
       ],
       "evidence": "Original Battle6C84 subtracts 2 from the shared range word before * comparing/clamping its signed limit. Walk forty-byte records with a * state-relative cursor and unsigned modulo-word end calculation. * State0 reloads count only after its true inner gate; state1 reloads after * either decrement or expiry path. Other paths retain the previous count. * Expiry resets the scalar before the model-index 3/settings-word 708C * gate, toggles the alternate index between zero and 2, reloads that field * for model lookup, assigns the model and calls the translation helper. * Ordered-positive scalar tests send NaNs to the alternate paths. * RE_UNKNOWN: caller count/index/handle domains, cursor/end overflow and * alias bounds, model/settings table extents, scalar units and callback/ * module lifetimes need original producers/readers. The translated-object * argument view establishes fields 8/14 only, not a full historical type. * First natural trial2569 produced 528 versus 532 bytes, with 121 differing * instruction positions. Frame 72 becomes 64; cached settings/shared-base * retention becomes repeated absolute address materialization, with saved * register and scheduling changes. The full 18/30-record relocation lists * differ; direct helper values also move with the shorter body. This does * not establish missing call targets. Full comparison2570 found all visible * callbacks, count reloads, stores and ordered tests represented, with no * supported semantic correction. Historical declarations/alias organization * and compiler lowering remain unproved. Keep original ASM; no draft type, * header, prototype, padding or declaration-order variant accepted.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_battle_00406C84",
-          "declaration_line": 807,
+          "declaration_line": 829,
           "lines": [
-            783
+            805
           ]
         }
       ]
@@ -126968,16 +126988,16 @@
       "path": "src/modules/battle.c",
       "symbol": "Original Battle7740 looks up the object's loaded UVMD and optional +20 * pointer, captures config scalars 8/20, then measures/scales source+9D8. * Add config C to the third component, invoke RUMBLE04, then PIECE0C/08. * PIECE tag 3 consumes a promoted double, then word pairs 1/0, 5/3, 2/0 * and terminator 0. Keep the vector snapshot and later owner/handle reads. * RE_UNKNOWN: complete input/model/config/source extents and types, units, * handle/pattern-index domains, aliases and callback/module replacement * lifetimes need original producers/callers; ownership and downstream * action purpose are unproved. Retain the original null-pointer gates. * Trial2591: native 428/draft 424 bytes, 93 differing positions, frame 112/104. * Direct S0 config capture removes a native transfer; scalar homes and * register/address/arithmetic scheduling differ. Both 13-record relocation * lists retain identities but differ at later sites. Full native/provider/ * candidate review found no supported missing callback/width/reload fix. * Historical declarations/storage/lowering remain unknown. Retain ASM; * no draft types, headers, prototypes or source-shape variants accepted.",
       "lines": [
-        865
+        887
       ],
       "evidence": "Original Battle7740 looks up the object's loaded UVMD and optional +20 * pointer, captures config scalars 8/20, then measures/scales source+9D8. * Add config C to the third component, invoke RUMBLE04, then PIECE0C/08. * PIECE tag 3 consumes a promoted double, then word pairs 1/0, 5/3, 2/0 * and terminator 0. Keep the vector snapshot and later owner/handle reads. * RE_UNKNOWN: complete input/model/config/source extents and types, units, * handle/pattern-index domains, aliases and callback/module replacement * lifetimes need original producers/callers; ownership and downstream * action purpose are unproved. Retain the original null-pointer gates. * Trial2591: native 428/draft 424 bytes, 93 differing positions, frame 112/104. * Direct S0 config capture removes a native transfer; scalar homes and * register/address/arithmetic scheduling differ. Both 13-record relocation * lists retain identities but differ at later sites. Full native/provider/ * candidate review found no supported missing callback/width/reload fix. * Historical declarations/storage/lowering remain unknown. Retain ASM; * no draft types, headers, prototypes or source-shape variants accepted.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_battle_00407740",
-          "declaration_line": 882,
+          "declaration_line": 904,
           "lines": [
-            865
+            887
           ]
         }
       ]
@@ -126988,16 +127008,16 @@
       "path": "src/modules/battle.c",
       "symbol": "Original Battle78EC returns the last state-1 forty-byte record satisfying * strict distance < (incoming scalar + queried DOBJ property 7) / 2, or -1. * Keep grouped single squared distance and MATH04's clamped sqrt, index * reload after query, and signed count reload on every loop path. * RE_ORIGINAL_QUIRK: output storage is not initialized; DOBJ20's signed * upper-bound rejection leaves it unwritten. Preserve no fallback value. * RE_UNKNOWN: handle/count/index guarantees, full record/table extents, * units, aliases and callback/module replacement lifetimes need original * producers/readers. No reachable unwritten-output failure is established. * Trial2591: both 380 bytes, 66 differing words, same frame 120; property home * SP108 becomes SP100, pre-added record cursors replace fixed-offset bases, * and MULTU by 12 replaces shift/subtract/shift indexing. Explicit draft /2.0f * becomes MUL.S .5 versus native DIV.S by 2; identical floating exceptions/NaN * effects are unproved. Both ten-record lists differ in sites/order. * Full review found no supported missing callback/width/count-reload fix. * Historical storage/declarations/arithmetic lowering remain unknown. * Retain ASM; no draft types, headers or source-shape variants accepted.",
       "lines": [
-        884
+        906
       ],
       "evidence": "Original Battle78EC returns the last state-1 forty-byte record satisfying * strict distance < (incoming scalar + queried DOBJ property 7) / 2, or -1. * Keep grouped single squared distance and MATH04's clamped sqrt, index * reload after query, and signed count reload on every loop path. * RE_ORIGINAL_QUIRK: output storage is not initialized; DOBJ20's signed * upper-bound rejection leaves it unwritten. Preserve no fallback value. * RE_UNKNOWN: handle/count/index guarantees, full record/table extents, * units, aliases and callback/module replacement lifetimes need original * producers/readers. No reachable unwritten-output failure is established. * Trial2591: both 380 bytes, 66 differing words, same frame 120; property home * SP108 becomes SP100, pre-added record cursors replace fixed-offset bases, * and MULTU by 12 replaces shift/subtract/shift indexing. Explicit draft /2.0f * becomes MUL.S .5 versus native DIV.S by 2; identical floating exceptions/NaN * effects are unproved. Both ten-record lists differ in sites/order. * Full review found no supported missing callback/width/count-reload fix. * Historical storage/declarations/arithmetic lowering remain unknown. * Retain ASM; no draft types, headers or source-shape variants accepted.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_battle_004078EC",
-          "declaration_line": 902,
+          "declaration_line": 924,
           "lines": [
-            884
+            906
           ]
         }
       ]
@@ -127028,16 +127048,16 @@
       "path": "src/modules/battle.c",
       "symbol": "Original property 7 and matrix 0 queries precede the signed live-count * gate. Scan peers at stride 0x5B8; only the source-peer equality arm tests * record countdown against the supplied threshold. Query each eligible * peer, preserving link/provider reloads; retain the LAST strict match of * matrix-translation distance < (recordScalar+peerScalar)/2.0f, else -1. * RE_UNKNOWN: scalar/countdown units, valid count/handle domains, complete * input/table storage, aliases and callback replacement lifetimes need * original producers/callers. DOBJ rejection can leave outputs unwritten; * no default scalar or matrix is supplied by the original caller. * Matching debt: natural C 460B vs native 464B, 83 differing words. Frame 248 * is unchanged, but matrix/scalar homes differ and duplicate A080 address * formation was commoned (8 original vs 6 draft relocation records). * Native DIV.S by 2 became MUL.S by 0.5; FP exception/NaN equivalence is not * established. Historical declarations/storage/lowering remain unknown; * retain ASM, with no accepted C, padding trim or runtime change.",
       "lines": [
-        1010
+        1032
       ],
       "evidence": "Original property 7 and matrix 0 queries precede the signed live-count * gate. Scan peers at stride 0x5B8; only the source-peer equality arm tests * record countdown against the supplied threshold. Query each eligible * peer, preserving link/provider reloads; retain the LAST strict match of * matrix-translation distance < (recordScalar+peerScalar)/2.0f, else -1. * RE_UNKNOWN: scalar/countdown units, valid count/handle domains, complete * input/table storage, aliases and callback replacement lifetimes need * original producers/callers. DOBJ rejection can leave outputs unwritten; * no default scalar or matrix is supplied by the original caller. * Matching debt: natural C 460B vs native 464B, 83 differing words. Frame 248 * is unchanged, but matrix/scalar homes differ and duplicate A080 address * formation was commoned (8 original vs 6 draft relocation records). * Native DIV.S by 2 became MUL.S by 0.5; FP exception/NaN equivalence is not * established. Historical declarations/storage/lowering remain unknown; * retain ASM, with no accepted C, padding trim or runtime change.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_battle_00409144",
-          "declaration_line": 1026,
+          "declaration_line": 1048,
           "lines": [
-            1010
+            1032
           ]
         }
       ]
@@ -127048,16 +127068,16 @@
       "path": "src/modules/battle.c",
       "symbol": "Original setup reuses the helper-selected record, sets countdown 30 and * its source-peer pointer, initializes model/flags/sounds, then derives a * translation through two matrices and local translation (0,-2,0). * DOBJ24 precedes copying the submitted matrix row into the record. SND48 * returns 1.0f here and its returned scalar is forwarded to SND08/ID128. * RE_ORIGINAL_QUIRK: the selector can reuse an active minimum-countdown * record; this call does not establish a new allocation or ownership. * RE_UNKNOWN: input/link/handle domains, complete storage, countdown units, * aliases and module/callback replacement lifetimes need original writers * and callers. DOBJ28 rejection may leave the original matrix unwritten. * Matching debt: the first 348B draft had 12 differing words, including a * wrong SND4C view. The corrected SND48 draft has 11 differing matrix-home * words (SP2C/SP6C exchanged); all 16 ordered relocation records match. * Retain ASM; historical local storage/declarations remain unresolved.",
       "lines": [
-        952
+        974
       ],
       "evidence": "Original setup reuses the helper-selected record, sets countdown 30 and * its source-peer pointer, initializes model/flags/sounds, then derives a * translation through two matrices and local translation (0,-2,0). * DOBJ24 precedes copying the submitted matrix row into the record. SND48 * returns 1.0f here and its returned scalar is forwarded to SND08/ID128. * RE_ORIGINAL_QUIRK: the selector can reuse an active minimum-countdown * record; this call does not establish a new allocation or ownership. * RE_UNKNOWN: input/link/handle domains, complete storage, countdown units, * aliases and module/callback replacement lifetimes need original writers * and callers. DOBJ28 rejection may leave the original matrix unwritten. * Matching debt: the first 348B draft had 12 differing words, including a * wrong SND4C view. The corrected SND48 draft has 11 differing matrix-home * words (SP2C/SP6C exchanged); all 16 ordered relocation records match. * Retain ASM; historical local storage/declarations remain unresolved.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_battle_0040807C",
-          "declaration_line": 967,
+          "declaration_line": 989,
           "lines": [
-            952
+            974
           ]
         }
       ]
@@ -127068,16 +127088,16 @@
       "path": "src/modules/battle.c",
       "symbol": "Original update stores/reloads the countdown and tests ordered <=0. * Expiry submits sound 44, the matrix translation to EXPL/75, then clears. * Otherwise 9144 receives 27.0f; a match drives CAM18/word3/double1,5764, * RUMBLE and scalarA8=0, then sound 65, optional three-ID voice, EXPL, * 8454 and clear. SND48 results precede distinct readonly multiplier reads * and playback-export reloads; the matrix-row argument is an actual alias. * RE_UNKNOWN: valid count/index/handle domains, complete storage, units, * aliases and callback/module replacement lifetimes need original producers * and callers. Rejected DOBJ queries do not justify default local outputs. * Matching debt: first 636B draft had 32 differing words including two wrong * SND4C views; corrected SND48 draft has 30. Matrix/action stack homes and * FP registers differ; native float1-to-double conversion became a direct * double constant. The 34-record lists differ at the CAM pair sites * (304/308 to 308/312), with the same target sequence. Retain ASM; historical * declarations/storage/FP lowering remain unproved, not a gameplay bug.",
       "lines": [
-        969
+        991
       ],
       "evidence": "Original update stores/reloads the countdown and tests ordered <=0. * Expiry submits sound 44, the matrix translation to EXPL/75, then clears. * Otherwise 9144 receives 27.0f; a match drives CAM18/word3/double1,5764, * RUMBLE and scalarA8=0, then sound 65, optional three-ID voice, EXPL, * 8454 and clear. SND48 results precede distinct readonly multiplier reads * and playback-export reloads; the matrix-row argument is an actual alias. * RE_UNKNOWN: valid count/index/handle domains, complete storage, units, * aliases and callback/module replacement lifetimes need original producers * and callers. Rejected DOBJ queries do not justify default local outputs. * Matching debt: first 636B draft had 32 differing words including two wrong * SND4C views; corrected SND48 draft has 30. Matrix/action stack homes and * FP registers differ; native float1-to-double conversion became a direct * double constant. The 34-record lists differ at the CAM pair sites * (304/308 to 308/312), with the same target sequence. Retain ASM; historical * declarations/storage/FP lowering remain unproved, not a gameplay bug.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_battle_004081D8",
-          "declaration_line": 985,
+          "declaration_line": 1007,
           "lines": [
-            969
+            991
           ]
         }
       ]
@@ -127088,16 +127108,16 @@
       "path": "src/modules/battle.c",
       "symbol": "Query with the original scene signed-byte filter, then inspect kind 2's * low-24-bit identifier: self match returns 0; the first peer match returns * its one-based index. Query failure/absent peer return 0; other kinds -1. * RE_ORIGINAL_QUIRK: this caller leaves the output local uninitialized, * although original lower-isct slot 54 reads its first two words before * delegation. The observed 88-byte copy span is not a historical type or * complete allocation guarantee; do not invent zero/default prefix values. * RE_UNKNOWN: prefix provenance, caller pointer/identifier/count domains, * peer-array extent and pointer/module replacement lifetimes need original * producers, entry callers and full callback-path evidence. No reachable * invalid-input or player bug is established by this bounded native review. * Readable C remains parked: native 252 versus draft 248 bytes, 27 differing * instruction positions. Frame 160 becomes 152; result/output SP+68/72 become * SP+136/48. Native signed SLT/BNEZ termination becomes BNE after the draft's * positive-count gate and zero index; count capture and scan effects agree. * The two eight-record relocation lists differ at peer-array address sites; * all eight type/target roles remain represented. Full review supports no * missing effect, width or ABI correction. Historical local declarations, * stack storage and lowering need exact instruction and packed/ROM proof.",
       "lines": [
-        1028
+        1050
       ],
       "evidence": "Query with the original scene signed-byte filter, then inspect kind 2's * low-24-bit identifier: self match returns 0; the first peer match returns * its one-based index. Query failure/absent peer return 0; other kinds -1. * RE_ORIGINAL_QUIRK: this caller leaves the output local uninitialized, * although original lower-isct slot 54 reads its first two words before * delegation. The observed 88-byte copy span is not a historical type or * complete allocation guarantee; do not invent zero/default prefix values. * RE_UNKNOWN: prefix provenance, caller pointer/identifier/count domains, * peer-array extent and pointer/module replacement lifetimes need original * producers, entry callers and full callback-path evidence. No reachable * invalid-input or player bug is established by this bounded native review. * Readable C remains parked: native 252 versus draft 248 bytes, 27 differing * instruction positions. Frame 160 becomes 152; result/output SP+68/72 become * SP+136/48. Native signed SLT/BNEZ termination becomes BNE after the draft's * positive-count gate and zero index; count capture and scan effects agree. * The two eight-record relocation lists differ at peer-array address sites; * all eight type/target roles remain represented. Full review supports no * missing effect, width or ABI correction. Historical local declarations, * stack storage and lowering need exact instruction and packed/ROM proof.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_battle_00409314",
-          "declaration_line": 1048,
+          "declaration_line": 1070,
           "lines": [
-            1028
+            1050
           ]
         }
       ]
@@ -127138,16 +127158,16 @@
       "path": "src/modules/battle.c",
       "symbol": "Read the indexed twelve-byte color record and call the primitive * color export; last channel and alpha 0.5 keep their original raw-word ABI. * RE_UNKNOWN: input/index validity and table extent need original producers/callers.",
       "lines": [
-        999
+        1021
       ],
       "evidence": "Read the indexed twelve-byte color record and call the primitive * color export; last channel and alpha 0.5 keep their original raw-word ABI. * RE_UNKNOWN: input/index validity and table extent need original producers/callers.",
       "owners": [
         {
           "kind": "function",
           "name": "battleSetIndexedPrimitiveColor",
-          "declaration_line": 1002,
+          "declaration_line": 1024,
           "lines": [
-            999
+            1021
           ]
         }
       ]
@@ -127178,16 +127198,16 @@
       "path": "src/modules/battle.c",
       "symbol": "Save and clear node word 0x8, set word 0x4 to two, copy the shared * scalar and decrement the shared count. Read object matrix slot zero, * request sound 0x84 using the returned volume scale and that matrix, * then clear object flag bits two and one with fresh callback/handle reads. * RE_UNKNOWN: node/shared field purpose and units, handle and count domains, * shared aliases, asset lifetimes and matrix availability require original * callers/producers. DOBJ 0x28 can return without writing the matrix on * invalid/unloaded inputs; preserve the original uninitialized local rather * than inventing a default. No reachable failure is established here.",
       "lines": [
-        699
+        721
       ],
       "evidence": "Save and clear node word 0x8, set word 0x4 to two, copy the shared * scalar and decrement the shared count. Read object matrix slot zero, * request sound 0x84 using the returned volume scale and that matrix, * then clear object flag bits two and one with fresh callback/handle reads. * RE_UNKNOWN: node/shared field purpose and units, handle and count domains, * shared aliases, asset lifetimes and matrix availability require original * callers/producers. DOBJ 0x28 can return without writing the matrix on * invalid/unloaded inputs; preserve the original uninitialized local rather * than inventing a default. No reachable failure is established here.",
       "owners": [
         {
           "kind": "function",
           "name": "battleResetNodePlaySoundAndClearObjectFlags",
-          "declaration_line": 708,
+          "declaration_line": 730,
           "lines": [
-            699
+            721
           ]
         }
       ]
@@ -127198,16 +127218,16 @@
       "path": "src/modules/battle.c",
       "symbol": "Set the node activity word, assign its indexed object model and * invalidate its particle handle. Set object flag bits two and one, * then initialize both sound handles. RE_UNKNOWN: object-handle bounds/lifetime need original callers; sound loops are not started here.",
       "lines": [
-        933
+        955
       ],
       "evidence": "Set the node activity word, assign its indexed object model and * invalidate its particle handle. Set object flag bits two and one, * then initialize both sound handles. RE_UNKNOWN: object-handle bounds/lifetime need original callers; sound loops are not started here.",
       "owners": [
         {
           "kind": "function",
           "name": "battleEnableIndexedModelAndInitializeSounds",
-          "declaration_line": 938,
+          "declaration_line": 960,
           "lines": [
-            933
+            955
           ]
         }
       ]
@@ -127218,16 +127238,16 @@
       "path": "src/modules/battle.c",
       "symbol": "Set the primitive RGB color from the indexed palette, with alpha 1.0. * RE_UNKNOWN: selector/index bounds, retained context lifetime and actual tag4 invokers need original producers/readers.",
       "lines": [
-        728
+        750
       ],
       "evidence": "Set the primitive RGB color from the indexed palette, with alpha 1.0. * RE_UNKNOWN: selector/index bounds, retained context lifetime and actual tag4 invokers need original producers/readers.",
       "owners": [
         {
           "kind": "function",
           "name": "battleSetPalettePrimitiveColor",
-          "declaration_line": 730,
+          "declaration_line": 752,
           "lines": [
-            728
+            750
           ]
         }
       ]
@@ -127238,16 +127258,16 @@
       "path": "src/modules/battle.c",
       "symbol": "The original MATH34 provider returns a 15-bit LCG value divided by * 32768.0f. Preserve signed truncation of that result times 3.0f, and the * three distinct callback paths. SND4C returns 1.0f, which is passed as the * fourth SND08 input; the fifth input is 0.5f. Reload SND after that callback. * The existing eight-byte field at owner+0x34 is passed as a sound handle, * with IDs 175/176/177 and third input 0x7FEB. * RE_UNKNOWN: caller validity, handle lifetime, module replacement domains * and historical formal type require original callers/producers. Native * body extent is 324 bytes; the final object also has a separate 12-byte * zero tail at original TEXT end, whose historical purpose is unproved.",
       "lines": [
-        1058
+        1080
       ],
       "evidence": "The original MATH34 provider returns a 15-bit LCG value divided by * 32768.0f. Preserve signed truncation of that result times 3.0f, and the * three distinct callback paths. SND4C returns 1.0f, which is passed as the * fourth SND08 input; the fifth input is 0.5f. Reload SND after that callback. * The existing eight-byte field at owner+0x34 is passed as a sound handle, * with IDs 175/176/177 and third input 0x7FEB. * RE_UNKNOWN: caller validity, handle lifetime, module replacement domains * and historical formal type require original callers/producers. Native * body extent is 324 bytes; the final object also has a separate 12-byte * zero tail at original TEXT end, whose historical purpose is unproved.",
       "owners": [
         {
           "kind": "function",
           "name": "battlePlayRandomThreeSoundVariant",
-          "declaration_line": 1068,
+          "declaration_line": 1090,
           "lines": [
-            1058
+            1080
           ]
         }
       ]
@@ -134212,16 +134232,16 @@
       "path": "src/modules/selection.c",
       "symbol": "Draw the original multilingual language question using FONT slots * 0x04, 0x18, and 0x1C for font 1, text width, and font height. Preserve * each provider reload and capture the current node after those callbacks. * Read the signed coordinate halfwords through node offset 0x0C and * the word at offset 0x1C. Forward x - width/2 and * y + 2 * (height + word1C) to MENU slot 0x40 with the original words * 1, 30, 227, 255, 255, text address, and 1. Signed division truncates * toward zero. Width uses D_selection_0041F0BC; drawing uses the distinct * D_selection_0041F0D8. Both original readonly literals contain * \"Language? Sprache? Langue?\"; their separate storage identities remain. * RE_UNKNOWN: complete node/coordinate storage and ownership, node word * 0x1C meaning and domain, callback/export declarations, and font/resource * lifetimes across calls. Original node producers, callback registration, * resource setup and callers must establish those contracts; local null * checks are absent, but invalid-domain reachability is unproved. * Recovery remains deferred: both drafts contain 228 native/draft bytes. * The first differs in ten words; one bounded sum-first expression and * used-scalar declaration refinement restores the original width home at * SP+48, within the same 56-byte frame. Eight remaining words change roles for * the node word, y coordinate, arithmetic and MENU base. All fourteen * complete object relocation records agree as a multiset; pair emission * order differs. No missing operation or ABI discrepancy was identified. * Historical source/storage evidence is needed before another attempt; * retain original ASM without invented padding or register-shape changes.",
       "lines": [
-        4092
+        4110
       ],
       "evidence": "Draw the original multilingual language question using FONT slots * 0x04, 0x18, and 0x1C for font 1, text width, and font height. Preserve * each provider reload and capture the current node after those callbacks. * Read the signed coordinate halfwords through node offset 0x0C and * the word at offset 0x1C. Forward x - width/2 and * y + 2 * (height + word1C) to MENU slot 0x40 with the original words * 1, 30, 227, 255, 255, text address, and 1. Signed division truncates * toward zero. Width uses D_selection_0041F0BC; drawing uses the distinct * D_selection_0041F0D8. Both original readonly literals contain * \"Language? Sprache? Langue?\"; their separate storage identities remain. * RE_UNKNOWN: complete node/coordinate storage and ownership, node word * 0x1C meaning and domain, callback/export declarations, and font/resource * lifetimes across calls. Original node producers, callback registration, * resource setup and callers must establish those contracts; local null * checks are absent, but invalid-domain reachability is unproved. * Recovery remains deferred: both drafts contain 228 native/draft bytes. * The first differs in ten words; one bounded sum-first expression and * used-scalar declaration refinement restores the original width home at * SP+48, within the same 56-byte frame. Eight remaining words change roles for * the node word, y coordinate, arithmetic and MENU base. All fourteen * complete object relocation records agree as a multiset; pair emission * order differs. No missing operation or ABI discrepancy was identified. * Historical source/storage evidence is needed before another attempt; * retain original ASM without invented padding or register-shape changes.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_selection_0041B28C",
-          "declaration_line": 4117,
+          "declaration_line": 4135,
           "lines": [
-            4092
+            4110
           ]
         }
       ]
@@ -134585,6 +134605,26 @@
       ]
     },
     {
+      "id": "Q-575b064f0070",
+      "kind": "explicit_unknown",
+      "path": "src/modules/selection.c",
+      "symbol": "Queue three localized save-warning lines ending with \"Continue?\". * Set color (30, 227, 255, 255) and choose font 1 for language zero, * otherwise font 11. Center each line at x = 160 using signed width / 2. * Read node coordinates after the height callback, then subtract fresh * height and node word 0x1C for each following line. Reload language and * export tables around callbacks; retain the three distinct \"%s\" addresses. * RE_UNKNOWN: caller save-state trigger, historical node/export/formal * declarations and scratch extent, language/table and arithmetic domains, * node/resource validity, callback mutations and queue/glyph lifetimes. * Original callers, declarations, table/node writers and allocations, and * FONT/STRG queue consumers must establish these contracts. Shipped strings * fitting the draft scratch buffer do not prove historical capacity. * The readable draft has 616 bytes but differs in 49 instruction words: * stack layout, register choices, scheduling and one relocation site remain * unmatched. Historical source or new operation evidence and complete * instruction/serialized-record/packed module/ROM equality are required; * retain the original ASM. No draft types or body are accepted.",
+      "lines": [
+        3907
+      ],
+      "evidence": "Queue three localized save-warning lines ending with \"Continue?\". * Set color (30, 227, 255, 255) and choose font 1 for language zero, * otherwise font 11. Center each line at x = 160 using signed width / 2. * Read node coordinates after the height callback, then subtract fresh * height and node word 0x1C for each following line. Reload language and * export tables around callbacks; retain the three distinct \"%s\" addresses. * RE_UNKNOWN: caller save-state trigger, historical node/export/formal * declarations and scratch extent, language/table and arithmetic domains, * node/resource validity, callback mutations and queue/glyph lifetimes. * Original callers, declarations, table/node writers and allocations, and * FONT/STRG queue consumers must establish these contracts. Shipped strings * fitting the draft scratch buffer do not prove historical capacity. * The readable draft has 616 bytes but differs in 49 instruction words: * stack layout, register choices, scheduling and one relocation site remain * unmatched. Historical source or new operation evidence and complete * instruction/serialized-record/packed module/ROM equality are required; * retain the original ASM. No draft types or body are accepted.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_selection_0041A960",
+          "declaration_line": 3925,
+          "lines": [
+            3907
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-88754c9d810d",
       "kind": "explicit_unknown",
       "path": "src/modules/selection.c",
@@ -134770,16 +134810,16 @@
       "path": "src/modules/selection.c",
       "symbol": "Store the signed 16-bit menu choice as a language word, even when unchanged. * On a change, replace old/current thirteen-texture sets in original file order. * Preserve graphics waits and word-sized language reloads after asset calls. * Update the language-dependent speed option and return via the current menu. * RE_UNKNOWN: choice producers must establish language 0..2; no local clamp. * Speed-option physical meaning remains unproved; trace menu/option consumers.",
       "lines": [
-        3918
+        3936
       ],
       "evidence": "Store the signed 16-bit menu choice as a language word, even when unchanged. * On a change, replace old/current thirteen-texture sets in original file order. * Preserve graphics waits and word-sized language reloads after asset calls. * Update the language-dependent speed option and return via the current menu. * RE_UNKNOWN: choice producers must establish language 0..2; no local clamp. * Speed-option physical meaning remains unproved; trace menu/option consumers.",
       "owners": [
         {
           "kind": "function",
           "name": "selectionApplyChosenLanguageAndReloadTextures",
-          "declaration_line": 3924,
+          "declaration_line": 3942,
           "lines": [
-            3918
+            3936
           ]
         }
       ]
@@ -136383,6 +136423,66 @@
           "declaration_line": 51,
           "lines": [
             56
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-9023a865dfeb",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvcback_rom.c",
+      "symbol": "* Allocate and clear a four-byte header plus capacity eight-byte entries. * * @param capacity Signed entry count; the original stores it unchanged. * RE_UNKNOWN: valid count/range and allocation-failure contracts need callers.",
+      "lines": [
+        31
+      ],
+      "evidence": "* Allocate and clear a four-byte header plus capacity eight-byte entries. * * @param capacity Signed entry count; the original stores it unchanged. * RE_UNKNOWN: valid count/range and allocation-failure contracts need callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvCreateCallbackList",
+          "declaration_line": 37,
+          "lines": [
+            31
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-fa943a1b25d4",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvcback_rom.c",
+      "symbol": "RE_UNKNOWN: capacity/storage validity, mutation, reentrancy and list lifetime need actual callbacks and lifecycle callers.",
+      "lines": [
+        64
+      ],
+      "evidence": "RE_UNKNOWN: capacity/storage validity, mutation, reentrancy and list lifetime need actual callbacks and lifecycle callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvExecuteCallbacks",
+          "declaration_line": 63,
+          "lines": [
+            64
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-1c936feadb27",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvcback_rom.c",
+      "symbol": "RE_UNKNOWN: signed capacity/size domains, allocation success and list ownership/lifetime need original callers and allocator failure paths.",
+      "lines": [
+        39
+      ],
+      "evidence": "RE_UNKNOWN: signed capacity/size domains, allocation success and list ownership/lifetime need original callers and allocator failure paths.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvCreateCallbackList",
+          "declaration_line": 37,
+          "lines": [
+            39
           ]
         }
       ]
@@ -146440,28 +146540,28 @@
         80,
         101,
         109,
-        664,
-        669,
-        673,
-        829,
-        834,
-        838
+        686,
+        691,
+        695,
+        851,
+        856,
+        860
       ],
       "owners": [
         {
           "kind": "type",
           "name": "BattleData_40733C",
-          "declaration_line": 828,
+          "declaration_line": 850,
           "lines": [
-            829
+            851
           ]
         },
         {
           "kind": "type",
           "name": "BattleNode_40733C",
-          "declaration_line": 837,
+          "declaration_line": 859,
           "lines": [
-            838
+            860
           ]
         },
         {
@@ -146475,9 +146575,9 @@
         {
           "kind": "type",
           "name": "BattleState_00406784",
-          "declaration_line": 663,
+          "declaration_line": 685,
           "lines": [
-            664
+            686
           ]
         },
         {
@@ -146515,9 +146615,9 @@
         {
           "kind": "type",
           "name": "DobjExp3_00406784",
-          "declaration_line": 668,
+          "declaration_line": 690,
           "lines": [
-            669
+            691
           ]
         },
         {
@@ -146539,9 +146639,9 @@
         {
           "kind": "type",
           "name": "Node_00406784",
-          "declaration_line": 672,
+          "declaration_line": 694,
           "lines": [
-            673
+            695
           ]
         },
         {
@@ -146571,9 +146671,9 @@
         {
           "kind": "type",
           "name": "UvDobjExp_40733C",
-          "declaration_line": 833,
+          "declaration_line": 855,
           "lines": [
-            834
+            856
           ]
         }
       ]
@@ -146584,15 +146684,15 @@
       "path": "src/modules/battle.c",
       "symbol": "pad10",
       "lines": [
-        842
+        864
       ],
       "owners": [
         {
           "kind": "type",
           "name": "BattleNode_40733C",
-          "declaration_line": 837,
+          "declaration_line": 859,
           "lines": [
-            842
+            864
           ]
         }
       ]
@@ -161807,7 +161907,7 @@
         173,
         217,
         546,
-        715
+        737
       ],
       "owners": [
         {
@@ -161821,9 +161921,9 @@
         {
           "kind": "function",
           "name": "battleResetNodePlaySoundAndClearObjectFlags",
-          "declaration_line": 708,
+          "declaration_line": 730,
           "lines": [
-            715
+            737
           ]
         },
         {
@@ -161865,16 +161965,16 @@
         474,
         491,
         510,
-        940,
-        1006
+        962,
+        1028
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleEnableIndexedModelAndInitializeSounds",
-          "declaration_line": 938,
+          "declaration_line": 960,
           "lines": [
-            940
+            962
           ]
         },
         {
@@ -161893,9 +161993,9 @@
         {
           "kind": "function",
           "name": "battleSetIndexedPrimitiveColor",
-          "declaration_line": 1002,
+          "declaration_line": 1024,
           "lines": [
-            1006
+            1028
           ]
         },
         {
@@ -161980,26 +162080,26 @@
       "lines": [
         22,
         46,
-        919,
-        920,
-        940
+        941,
+        942,
+        962
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleClearObjectEffectsAndInitializeSounds",
-          "declaration_line": 915,
+          "declaration_line": 937,
           "lines": [
-            919,
-            920
+            941,
+            942
           ]
         },
         {
           "kind": "function",
           "name": "battleEnableIndexedModelAndInitializeSounds",
-          "declaration_line": 938,
+          "declaration_line": 960,
           "lines": [
-            940
+            962
           ]
         },
         {
@@ -162026,24 +162126,24 @@
       "path": "src/modules/battle.c",
       "symbol": "unk1A30",
       "lines": [
-        665,
-        690
+        687,
+        712
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleResetNodeAndIncrementFirstCount",
-          "declaration_line": 686,
+          "declaration_line": 708,
           "lines": [
-            690
+            712
           ]
         },
         {
           "kind": "type",
           "name": "BattleState_00406784",
-          "declaration_line": 663,
+          "declaration_line": 685,
           "lines": [
-            665
+            687
           ]
         }
       ]
@@ -162054,24 +162154,24 @@
       "path": "src/modules/battle.c",
       "symbol": "unk1A34",
       "lines": [
-        666,
-        688
+        688,
+        710
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleResetNodeAndIncrementFirstCount",
-          "declaration_line": 686,
+          "declaration_line": 708,
           "lines": [
-            688
+            710
           ]
         },
         {
           "kind": "type",
           "name": "BattleState_00406784",
-          "declaration_line": 663,
+          "declaration_line": 685,
           "lines": [
-            666
+            688
           ]
         }
       ]
@@ -162128,24 +162228,24 @@
       "path": "src/modules/battle.c",
       "symbol": "unk1D6C",
       "lines": [
-        830,
-        856
+        852,
+        878
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleResetNodeAndIncrementSecondCount",
-          "declaration_line": 852,
+          "declaration_line": 874,
           "lines": [
-            856
+            878
           ]
         },
         {
           "kind": "type",
           "name": "BattleData_40733C",
-          "declaration_line": 828,
+          "declaration_line": 850,
           "lines": [
-            830
+            852
           ]
         }
       ]
@@ -162156,24 +162256,24 @@
       "path": "src/modules/battle.c",
       "symbol": "unk1D70",
       "lines": [
-        831,
-        854
+        853,
+        876
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleResetNodeAndIncrementSecondCount",
-          "declaration_line": 852,
+          "declaration_line": 874,
           "lines": [
-            854
+            876
           ]
         },
         {
           "kind": "type",
           "name": "BattleData_40733C",
-          "declaration_line": 828,
+          "declaration_line": 850,
           "lines": [
-            831
+            853
           ]
         }
       ]
@@ -162400,26 +162500,26 @@
       "lines": [
         20,
         48,
-        921,
-        924,
-        941
+        943,
+        946,
+        963
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleClearObjectEffectsAndInitializeSounds",
-          "declaration_line": 915,
+          "declaration_line": 937,
           "lines": [
-            921,
-            924
+            943,
+            946
           ]
         },
         {
           "kind": "function",
           "name": "battleEnableIndexedModelAndInitializeSounds",
-          "declaration_line": 938,
+          "declaration_line": 960,
           "lines": [
-            941
+            963
           ]
         },
         {
@@ -162448,17 +162548,17 @@
       "lines": [
         37,
         49,
-        923,
-        926
+        945,
+        948
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleClearObjectEffectsAndInitializeSounds",
-          "declaration_line": 915,
+          "declaration_line": 937,
           "lines": [
-            923,
-            926
+            945,
+            948
           ]
         },
         {
@@ -162486,28 +162586,28 @@
       "symbol": "unk34",
       "lines": [
         50,
-        927,
-        1077,
-        1081,
-        1085
+        949,
+        1099,
+        1103,
+        1107
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleClearObjectEffectsAndInitializeSounds",
-          "declaration_line": 915,
+          "declaration_line": 937,
           "lines": [
-            927
+            949
           ]
         },
         {
           "kind": "function",
           "name": "battlePlayRandomThreeSoundVariant",
-          "declaration_line": 1068,
+          "declaration_line": 1090,
           "lines": [
-            1077,
-            1081,
-            1085
+            1099,
+            1103,
+            1107
           ]
         },
         {
@@ -162527,37 +162627,37 @@
       "symbol": "unk38",
       "lines": [
         36,
-        722,
-        723,
-        823,
-        919,
-        920
+        744,
+        745,
+        845,
+        941,
+        942
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleApplyIndexedObjectTranslation",
-          "declaration_line": 815,
+          "declaration_line": 837,
           "lines": [
-            823
+            845
           ]
         },
         {
           "kind": "function",
           "name": "battleClearObjectEffectsAndInitializeSounds",
-          "declaration_line": 915,
+          "declaration_line": 937,
           "lines": [
-            919,
-            920
+            941,
+            942
           ]
         },
         {
           "kind": "function",
           "name": "battleResetNodePlaySoundAndClearObjectFlags",
-          "declaration_line": 708,
+          "declaration_line": 730,
           "lines": [
-            722,
-            723
+            744,
+            745
           ]
         },
         {
@@ -162577,15 +162677,15 @@
       "symbol": "unk3C",
       "lines": [
         10,
-        1006
+        1028
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleSetIndexedPrimitiveColor",
-          "declaration_line": 1002,
+          "declaration_line": 1024,
           "lines": [
-            1006
+            1028
           ]
         },
         {
@@ -162607,61 +162707,61 @@
         4,
         16,
         44,
-        674,
-        689,
-        839,
-        855,
-        918,
-        939,
-        1006
+        696,
+        711,
+        861,
+        877,
+        940,
+        961,
+        1028
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleClearObjectEffectsAndInitializeSounds",
-          "declaration_line": 915,
+          "declaration_line": 937,
           "lines": [
-            918
+            940
           ]
         },
         {
           "kind": "function",
           "name": "battleEnableIndexedModelAndInitializeSounds",
-          "declaration_line": 938,
+          "declaration_line": 960,
           "lines": [
-            939
+            961
           ]
         },
         {
           "kind": "function",
           "name": "battleResetNodeAndIncrementFirstCount",
-          "declaration_line": 686,
+          "declaration_line": 708,
           "lines": [
-            689
+            711
           ]
         },
         {
           "kind": "function",
           "name": "battleResetNodeAndIncrementSecondCount",
-          "declaration_line": 852,
+          "declaration_line": 874,
           "lines": [
-            855
+            877
           ]
         },
         {
           "kind": "function",
           "name": "battleSetIndexedPrimitiveColor",
-          "declaration_line": 1002,
+          "declaration_line": 1024,
           "lines": [
-            1006
+            1028
           ]
         },
         {
           "kind": "type",
           "name": "BattleNode_40733C",
-          "declaration_line": 837,
+          "declaration_line": 859,
           "lines": [
-            839
+            861
           ]
         },
         {
@@ -162683,9 +162783,9 @@
         {
           "kind": "type",
           "name": "Node_00406784",
-          "declaration_line": 672,
+          "declaration_line": 694,
           "lines": [
-            674
+            696
           ]
         },
         {
@@ -162855,43 +162955,43 @@
       "symbol": "unk8",
       "lines": [
         5,
-        675,
-        687,
-        840,
-        853,
-        1006
+        697,
+        709,
+        862,
+        875,
+        1028
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleResetNodeAndIncrementFirstCount",
-          "declaration_line": 686,
+          "declaration_line": 708,
           "lines": [
-            687
+            709
           ]
         },
         {
           "kind": "function",
           "name": "battleResetNodeAndIncrementSecondCount",
-          "declaration_line": 852,
+          "declaration_line": 874,
           "lines": [
-            853
+            875
           ]
         },
         {
           "kind": "function",
           "name": "battleSetIndexedPrimitiveColor",
-          "declaration_line": 1002,
+          "declaration_line": 1024,
           "lines": [
-            1006
+            1028
           ]
         },
         {
           "kind": "type",
           "name": "BattleNode_40733C",
-          "declaration_line": 837,
+          "declaration_line": 859,
           "lines": [
-            840
+            862
           ]
         },
         {
@@ -162905,9 +163005,9 @@
         {
           "kind": "type",
           "name": "Node_00406784",
-          "declaration_line": 672,
+          "declaration_line": 694,
           "lines": [
-            675
+            697
           ]
         }
       ]
@@ -162931,10 +163031,10 @@
         474,
         491,
         510,
-        676,
-        688,
-        841,
-        854
+        698,
+        710,
+        863,
+        876
       ],
       "owners": [
         {
@@ -162953,17 +163053,17 @@
         {
           "kind": "function",
           "name": "battleResetNodeAndIncrementFirstCount",
-          "declaration_line": 686,
+          "declaration_line": 708,
           "lines": [
-            688
+            710
           ]
         },
         {
           "kind": "function",
           "name": "battleResetNodeAndIncrementSecondCount",
-          "declaration_line": 852,
+          "declaration_line": 874,
           "lines": [
-            854
+            876
           ]
         },
         {
@@ -162993,9 +163093,9 @@
         {
           "kind": "type",
           "name": "BattleNode_40733C",
-          "declaration_line": 837,
+          "declaration_line": 859,
           "lines": [
-            841
+            863
           ]
         },
         {
@@ -163025,9 +163125,9 @@
         {
           "kind": "type",
           "name": "Node_00406784",
-          "declaration_line": 672,
+          "declaration_line": 694,
           "lines": [
-            676
+            698
           ]
         },
         {
@@ -163051,19 +163151,19 @@
         414,
         415,
         453,
-        926,
-        927,
-        944,
-        945
+        948,
+        949,
+        966,
+        967
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleClearObjectEffectsAndInitializeSounds",
-          "declaration_line": 915,
+          "declaration_line": 937,
           "lines": [
-            926,
-            927
+            948,
+            949
           ]
         },
         {
@@ -163077,10 +163177,10 @@
         {
           "kind": "function",
           "name": "battleEnableIndexedModelAndInitializeSounds",
-          "declaration_line": 938,
+          "declaration_line": 960,
           "lines": [
-            944,
-            945
+            966,
+            967
           ]
         },
         {
@@ -163325,15 +163425,15 @@
       "lines": [
         149,
         172,
-        716
+        738
       ],
       "owners": [
         {
           "kind": "function",
           "name": "battleResetNodePlaySoundAndClearObjectFlags",
-          "declaration_line": 708,
+          "declaration_line": 730,
           "lines": [
-            716
+            738
           ]
         },
         {
@@ -163447,8 +163547,8 @@
         149,
         172,
         391,
-        713,
-        714
+        735,
+        736
       ],
       "owners": [
         {
@@ -163462,10 +163562,10 @@
         {
           "kind": "function",
           "name": "battleResetNodePlaySoundAndClearObjectFlags",
-          "declaration_line": 708,
+          "declaration_line": 730,
           "lines": [
-            713,
-            714
+            735,
+            736
           ]
         },
         {
@@ -175360,8 +175460,8 @@
         3629,
         3874,
         3897,
-        4077,
-        4082
+        4095,
+        4100
       ],
       "owners": [
         {
@@ -175423,10 +175523,10 @@
         {
           "kind": "function",
           "name": "selectionScheduleChosenMenuActionOnce",
-          "declaration_line": 4073,
+          "declaration_line": 4091,
           "lines": [
-            4077,
-            4082
+            4095,
+            4100
           ]
         },
         {
@@ -176101,12 +176201,12 @@
         3776,
         3782,
         3788,
-        3933,
-        3950,
-        3967,
-        3986,
-        4003,
-        4020
+        3951,
+        3968,
+        3985,
+        4004,
+        4021,
+        4038
       ],
       "owners": [
         {
@@ -176205,14 +176305,14 @@
         {
           "kind": "function",
           "name": "selectionApplyChosenLanguageAndReloadTextures",
-          "declaration_line": 3924,
+          "declaration_line": 3942,
           "lines": [
-            3933,
-            3950,
-            3967,
-            3986,
-            4003,
-            4020
+            3951,
+            3968,
+            3985,
+            4004,
+            4021,
+            4038
           ]
         },
         {
@@ -176426,10 +176526,10 @@
         3878,
         3895,
         3897,
-        4077,
-        4078,
-        4081,
-        4082
+        4095,
+        4096,
+        4099,
+        4100
       ],
       "owners": [
         {
@@ -176622,12 +176722,12 @@
         {
           "kind": "function",
           "name": "selectionScheduleChosenMenuActionOnce",
-          "declaration_line": 4073,
+          "declaration_line": 4091,
           "lines": [
-            4077,
-            4078,
-            4081,
-            4082
+            4095,
+            4096,
+            4099,
+            4100
           ]
         },
         {
@@ -217775,6 +217875,26 @@
       ]
     },
     {
+      "id": "Q-350a1ea88a4f",
+      "kind": "original_quirk",
+      "path": "src/modules/battle.c",
+      "symbol": "Original 652C draws/clamps an index from MATH slot 0x34's LCG fraction and retries * while excluded or used by an active 28-byte record. Each scan captures * its count once and compares unshifted state cursors with fixed field * loads at +16E4/+16E8, without an early match exit. It updates two counts, * retains the selected index across callbacks, draws/clamps a model index, * sets the model, then submits the selected vector as matrix translation * before setting flag bits 2 and clearing bits 1 through fresh handle reads. * RE_ORIGINAL_QUIRK: retry has no exhaustion bound or alternate exit here. * RE_UNKNOWN: count/index/handle and address-wrap domains, table/record * capacities, countdown/count purposes and units, aliases and callback * lifetimes need original producers/callers; no reachable exhaustion claim. * DATA+230 numeric model words have no loader relocations at observed sites; * those bytes and the vector-table alias do not prove complete capacities. * Retain ASM: first draft 600->672 bytes / 168 differences; the sole unshifted scan * correction 600->656 bytes / 164 differences. Final frame 144->168 bytes, snapshot 0x88->0x54 * and matrix 0x40->0x5C stack homes, shared-base rematerialization, MULTU by 28 versus * native shifts/subtraction, and commuted MUL.S operands remain different. * The 14-reference-object/32-draft object relocation lists differ in sites/multiplicity; all * six unique symbol identities remain. No further omitted call/input/reload * was found; historical declarations, lowering and exact FP effects remain * unproved. No C body, focused type or prototype from either trial accepted.",
+      "lines": [
+        657
+      ],
+      "evidence": "Original 652C draws/clamps an index from MATH slot 0x34's LCG fraction and retries * while excluded or used by an active 28-byte record. Each scan captures * its count once and compares unshifted state cursors with fixed field * loads at +16E4/+16E8, without an early match exit. It updates two counts, * retains the selected index across callbacks, draws/clamps a model index, * sets the model, then submits the selected vector as matrix translation * before setting flag bits 2 and clearing bits 1 through fresh handle reads. * RE_ORIGINAL_QUIRK: retry has no exhaustion bound or alternate exit here. * RE_UNKNOWN: count/index/handle and address-wrap domains, table/record * capacities, countdown/count purposes and units, aliases and callback * lifetimes need original producers/callers; no reachable exhaustion claim. * DATA+230 numeric model words have no loader relocations at observed sites; * those bytes and the vector-table alias do not prove complete capacities. * Retain ASM: first draft 600->672 bytes / 168 differences; the sole unshifted scan * correction 600->656 bytes / 164 differences. Final frame 144->168 bytes, snapshot 0x88->0x54 * and matrix 0x40->0x5C stack homes, shared-base rematerialization, MULTU by 28 versus * native shifts/subtraction, and commuted MUL.S operands remain different. * The 14-reference-object/32-draft object relocation lists differ in sites/multiplicity; all * six unique symbol identities remain. No further omitted call/input/reload * was found; historical declarations, lowering and exact FP effects remain * unproved. No C body, focused type or prototype from either trial accepted.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_battle_0040652C",
+          "declaration_line": 679,
+          "lines": [
+            657
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-6f724b5a51f5",
       "kind": "original_quirk",
       "path": "src/modules/battle.c",
@@ -217840,16 +217960,16 @@
       "path": "src/modules/battle.c",
       "symbol": "Original Battle6954 scans active 28-byte records using a reloaded * signed count, requests DOBJ property 7, then reloads the record index and * reads the input/table triples. It evaluates the grouped squared difference * through MATH04 and keeps the last index strictly below the mean of the * input and queried scalars; it returns -1 when no index passes. * RE_ORIGINAL_QUIRK: DOBJ7 only writes the float output when its signed * upper-bound test accepts the handle. The original query scratch has no * initialization here; caller evidence must establish any valid-output domain. * RE_UNKNOWN: count/index/handle bounds, output validity, aliases, physical * units, object lifetimes and historical declarations need original callers * and producers. Ordered NaN comparisons reject the test; no guard is added. * Trial2515 retained 380 bytes but changed 70 instruction words. Native * DIV.S by 2 became MUL.S by .5 despite the draft's /2.0f expression; exact * floating effects and historical precision/source organization are unproved. * Record-index scaling changed from shifts/subtraction to MULTU by 12; * stack scratch/result homes, base retention and scheduling also differ. * The two ten-record relocation lists differ in sites/enumeration. Full * comparison2516 found no omitted provider call, state reload or ABI input. * Retain original assembly; no clean draft or focused declarations accepted.",
       "lines": [
-        736
+        758
       ],
       "evidence": "Original Battle6954 scans active 28-byte records using a reloaded * signed count, requests DOBJ property 7, then reloads the record index and * reads the input/table triples. It evaluates the grouped squared difference * through MATH04 and keeps the last index strictly below the mean of the * input and queried scalars; it returns -1 when no index passes. * RE_ORIGINAL_QUIRK: DOBJ7 only writes the float output when its signed * upper-bound test accepts the handle. The original query scratch has no * initialization here; caller evidence must establish any valid-output domain. * RE_UNKNOWN: count/index/handle bounds, output validity, aliases, physical * units, object lifetimes and historical declarations need original callers * and producers. Ordered NaN comparisons reject the test; no guard is added. * Trial2515 retained 380 bytes but changed 70 instruction words. Native * DIV.S by 2 became MUL.S by .5 despite the draft's /2.0f expression; exact * floating effects and historical precision/source organization are unproved. * Record-index scaling changed from shifts/subtraction to MULTU by 12; * stack scratch/result homes, base retention and scheduling also differ. * The two ten-record relocation lists differ in sites/enumeration. Full * comparison2516 found no omitted provider call, state reload or ABI input. * Retain original assembly; no clean draft or focused declarations accepted.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_battle_00406954",
-          "declaration_line": 756,
+          "declaration_line": 778,
           "lines": [
-            736
+            758
           ]
         }
       ]
@@ -217860,16 +217980,16 @@
       "path": "src/modules/battle.c",
       "symbol": "Original Battle6AD0 initializes twenty forty-byte records while the * active count starts at 16. The settings word 7088 is captured once; * 6 with word 708C equal to 3, or captured value 8, selects limit zero. * Each record uses signed remainder by 7, creates/assigns its model, * invokes the second-count reset helper, initializes both embedded sound * handles through fresh SND exports, then stores .5 after both callbacks. * RE_ORIGINAL_QUIRK: DOBJ creation can return 0xFFFF, yet this caller * forwards the word to model assignment without a failure gate. SNDCC's * null path stores at zero; reachable caller failure is not established. * RE_UNKNOWN: original allocation/handle/count/index domains, * table extents, aliases, scalar units and callback/module lifetimes need * original producers/readers. Twenty iterations do not prove allocation. * First natural trial2569 produced 432 versus 436 bytes, with 54 differing * instruction positions. Both frames are 72; the native auxiliary record * pointer and backedge-delay scalar store become a direct earlier store, * still after both callbacks. Settings-base materialization duplicates, * saved registers and bound retention differ, and the full 9/11-record * relocation lists differ in sites/multiplicity/downstream helper value. * Full comparison2570 found no supported omitted effect or ABI correction. * Warning835 records the canonical reset helper's nonprototype call; * its historical shared declaration and later anonymous type remain * unresolved. Keep original ASM; no draft type/header/prototype accepted.",
       "lines": [
-        758
+        780
       ],
       "evidence": "Original Battle6AD0 initializes twenty forty-byte records while the * active count starts at 16. The settings word 7088 is captured once; * 6 with word 708C equal to 3, or captured value 8, selects limit zero. * Each record uses signed remainder by 7, creates/assigns its model, * invokes the second-count reset helper, initializes both embedded sound * handles through fresh SND exports, then stores .5 after both callbacks. * RE_ORIGINAL_QUIRK: DOBJ creation can return 0xFFFF, yet this caller * forwards the word to model assignment without a failure gate. SNDCC's * null path stores at zero; reachable caller failure is not established. * RE_UNKNOWN: original allocation/handle/count/index domains, * table extents, aliases, scalar units and callback/module lifetimes need * original producers/readers. Twenty iterations do not prove allocation. * First natural trial2569 produced 432 versus 436 bytes, with 54 differing * instruction positions. Both frames are 72; the native auxiliary record * pointer and backedge-delay scalar store become a direct earlier store, * still after both callbacks. Settings-base materialization duplicates, * saved registers and bound retention differ, and the full 9/11-record * relocation lists differ in sites/multiplicity/downstream helper value. * Full comparison2570 found no supported omitted effect or ABI correction. * Warning835 records the canonical reset helper's nonprototype call; * its historical shared declaration and later anonymous type remain * unresolved. Keep original ASM; no draft type/header/prototype accepted.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_battle_00406AD0",
-          "declaration_line": 781,
+          "declaration_line": 803,
           "lines": [
-            758
+            780
           ]
         }
       ]
@@ -217880,16 +218000,16 @@
       "path": "src/modules/battle.c",
       "symbol": "Original Battle78EC returns the last state-1 forty-byte record satisfying * strict distance < (incoming scalar + queried DOBJ property 7) / 2, or -1. * Keep grouped single squared distance and MATH04's clamped sqrt, index * reload after query, and signed count reload on every loop path. * RE_ORIGINAL_QUIRK: output storage is not initialized; DOBJ20's signed * upper-bound rejection leaves it unwritten. Preserve no fallback value. * RE_UNKNOWN: handle/count/index guarantees, full record/table extents, * units, aliases and callback/module replacement lifetimes need original * producers/readers. No reachable unwritten-output failure is established. * Trial2591: both 380 bytes, 66 differing words, same frame 120; property home * SP108 becomes SP100, pre-added record cursors replace fixed-offset bases, * and MULTU by 12 replaces shift/subtract/shift indexing. Explicit draft /2.0f * becomes MUL.S .5 versus native DIV.S by 2; identical floating exceptions/NaN * effects are unproved. Both ten-record lists differ in sites/order. * Full review found no supported missing callback/width/count-reload fix. * Historical storage/declarations/arithmetic lowering remain unknown. * Retain ASM; no draft types, headers or source-shape variants accepted.",
       "lines": [
-        884
+        906
       ],
       "evidence": "Original Battle78EC returns the last state-1 forty-byte record satisfying * strict distance < (incoming scalar + queried DOBJ property 7) / 2, or -1. * Keep grouped single squared distance and MATH04's clamped sqrt, index * reload after query, and signed count reload on every loop path. * RE_ORIGINAL_QUIRK: output storage is not initialized; DOBJ20's signed * upper-bound rejection leaves it unwritten. Preserve no fallback value. * RE_UNKNOWN: handle/count/index guarantees, full record/table extents, * units, aliases and callback/module replacement lifetimes need original * producers/readers. No reachable unwritten-output failure is established. * Trial2591: both 380 bytes, 66 differing words, same frame 120; property home * SP108 becomes SP100, pre-added record cursors replace fixed-offset bases, * and MULTU by 12 replaces shift/subtract/shift indexing. Explicit draft /2.0f * becomes MUL.S .5 versus native DIV.S by 2; identical floating exceptions/NaN * effects are unproved. Both ten-record lists differ in sites/order. * Full review found no supported missing callback/width/count-reload fix. * Historical storage/declarations/arithmetic lowering remain unknown. * Retain ASM; no draft types, headers or source-shape variants accepted.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_battle_004078EC",
-          "declaration_line": 902,
+          "declaration_line": 924,
           "lines": [
-            884
+            906
           ]
         }
       ]
@@ -217900,16 +218020,16 @@
       "path": "src/modules/battle.c",
       "symbol": "Original setup reuses the helper-selected record, sets countdown 30 and * its source-peer pointer, initializes model/flags/sounds, then derives a * translation through two matrices and local translation (0,-2,0). * DOBJ24 precedes copying the submitted matrix row into the record. SND48 * returns 1.0f here and its returned scalar is forwarded to SND08/ID128. * RE_ORIGINAL_QUIRK: the selector can reuse an active minimum-countdown * record; this call does not establish a new allocation or ownership. * RE_UNKNOWN: input/link/handle domains, complete storage, countdown units, * aliases and module/callback replacement lifetimes need original writers * and callers. DOBJ28 rejection may leave the original matrix unwritten. * Matching debt: the first 348B draft had 12 differing words, including a * wrong SND4C view. The corrected SND48 draft has 11 differing matrix-home * words (SP2C/SP6C exchanged); all 16 ordered relocation records match. * Retain ASM; historical local storage/declarations remain unresolved.",
       "lines": [
-        952
+        974
       ],
       "evidence": "Original setup reuses the helper-selected record, sets countdown 30 and * its source-peer pointer, initializes model/flags/sounds, then derives a * translation through two matrices and local translation (0,-2,0). * DOBJ24 precedes copying the submitted matrix row into the record. SND48 * returns 1.0f here and its returned scalar is forwarded to SND08/ID128. * RE_ORIGINAL_QUIRK: the selector can reuse an active minimum-countdown * record; this call does not establish a new allocation or ownership. * RE_UNKNOWN: input/link/handle domains, complete storage, countdown units, * aliases and module/callback replacement lifetimes need original writers * and callers. DOBJ28 rejection may leave the original matrix unwritten. * Matching debt: the first 348B draft had 12 differing words, including a * wrong SND4C view. The corrected SND48 draft has 11 differing matrix-home * words (SP2C/SP6C exchanged); all 16 ordered relocation records match. * Retain ASM; historical local storage/declarations remain unresolved.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_battle_0040807C",
-          "declaration_line": 967,
+          "declaration_line": 989,
           "lines": [
-            952
+            974
           ]
         }
       ]
@@ -217920,16 +218040,16 @@
       "path": "src/modules/battle.c",
       "symbol": "Query with the original scene signed-byte filter, then inspect kind 2's * low-24-bit identifier: self match returns 0; the first peer match returns * its one-based index. Query failure/absent peer return 0; other kinds -1. * RE_ORIGINAL_QUIRK: this caller leaves the output local uninitialized, * although original lower-isct slot 54 reads its first two words before * delegation. The observed 88-byte copy span is not a historical type or * complete allocation guarantee; do not invent zero/default prefix values. * RE_UNKNOWN: prefix provenance, caller pointer/identifier/count domains, * peer-array extent and pointer/module replacement lifetimes need original * producers, entry callers and full callback-path evidence. No reachable * invalid-input or player bug is established by this bounded native review. * Readable C remains parked: native 252 versus draft 248 bytes, 27 differing * instruction positions. Frame 160 becomes 152; result/output SP+68/72 become * SP+136/48. Native signed SLT/BNEZ termination becomes BNE after the draft's * positive-count gate and zero index; count capture and scan effects agree. * The two eight-record relocation lists differ at peer-array address sites; * all eight type/target roles remain represented. Full review supports no * missing effect, width or ABI correction. Historical local declarations, * stack storage and lowering need exact instruction and packed/ROM proof.",
       "lines": [
-        1028
+        1050
       ],
       "evidence": "Query with the original scene signed-byte filter, then inspect kind 2's * low-24-bit identifier: self match returns 0; the first peer match returns * its one-based index. Query failure/absent peer return 0; other kinds -1. * RE_ORIGINAL_QUIRK: this caller leaves the output local uninitialized, * although original lower-isct slot 54 reads its first two words before * delegation. The observed 88-byte copy span is not a historical type or * complete allocation guarantee; do not invent zero/default prefix values. * RE_UNKNOWN: prefix provenance, caller pointer/identifier/count domains, * peer-array extent and pointer/module replacement lifetimes need original * producers, entry callers and full callback-path evidence. No reachable * invalid-input or player bug is established by this bounded native review. * Readable C remains parked: native 252 versus draft 248 bytes, 27 differing * instruction positions. Frame 160 becomes 152; result/output SP+68/72 become * SP+136/48. Native signed SLT/BNEZ termination becomes BNE after the draft's * positive-count gate and zero index; count capture and scan effects agree. * The two eight-record relocation lists differ at peer-array address sites; * all eight type/target roles remain represented. Full review supports no * missing effect, width or ABI correction. Historical local declarations, * stack storage and lowering need exact instruction and packed/ROM proof.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_battle_00409314",
-          "declaration_line": 1048,
+          "declaration_line": 1070,
           "lines": [
-            1028
+            1050
           ]
         }
       ]

@@ -29,18 +29,18 @@ void uvCallbackUnused(void) {
 }
 
 /*
- * Creates a callback list
+ * Allocate and clear a four-byte header plus capacity eight-byte entries.
  *
- * @param capacity Capacity of the callback list
- * @param routineArg Argument for the callback routine
+ * @param capacity Signed entry count; the original stores it unchanged.
+ * RE_UNKNOWN: valid count/range and allocation-failure contracts need callers.
  */
 void *uvCreateCallbackList(s32 capacity) {
     CallbackList *callbackList;
-    u32 size;
+    u32 allocationBytes; /* RE_UNKNOWN: signed capacity/size domains, allocation success and list ownership/lifetime need original callers and allocator failure paths. */
 
-    size = (capacity * sizeof(CallbackEntry)) + sizeof(CallbackList);
-    callbackList = _uvMemAllocAlign8(size);
-    uvMemSet(callbackList, 0, size);
+    allocationBytes = (capacity * sizeof(CallbackEntry)) + sizeof(CallbackList);
+    callbackList = _uvMemAllocAlign8(allocationBytes);
+    uvMemSet(callbackList, 0, allocationBytes); /* Preserve clearing the returned pointer before publishing capacity, without adding a null-result gate. */
     callbackList->capacity = capacity;
     return callbackList;
 }
@@ -55,21 +55,21 @@ void uvCallbackFree(void *ptr) {
 }
 
 /*
- * Executes all the callbacks from a callback list
+ * Walk callback slots in order, skipping null routines.
  *
- * @param callbackList Callback List
- * @param routineArg Argument for the callback routine
+ * @param callbackList List whose capacity is reloaded after callback calls.
+ * @param routineArg Unchanged 32-bit word forwarded to each called routine.
  */
 void uvExecuteCallbacks(CallbackList *callbackList, s32 routineArg) {
-    s32 i;
+    s32 entryIndex; /* RE_UNKNOWN: capacity/storage validity, mutation, reentrancy and list lifetime need actual callbacks and lifecycle callers. */
 
     if (callbackList == NULL) {
         return;
     }
 
-    for (i = 0; i < callbackList->capacity; i++) {
-        if (callbackList->entries[i].callback != NULL) {
-            callbackList->entries[i].callback(routineArg);
+    for (entryIndex = 0; entryIndex < callbackList->capacity; entryIndex++) { /* Preserve the live capacity reload after callback calls. */
+        if (callbackList->entries[entryIndex].callback != NULL) {
+            callbackList->entries[entryIndex].callback(routineArg);
         }
     }
 }
