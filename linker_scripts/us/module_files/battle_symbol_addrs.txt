@@ -338,3 +338,4 @@ battleCollectModelVertexHandlesAndScaledZ = 0x00404580; // type:func
 battleResetNodePlaySoundAndClearObjectFlags = 0x00406804; // type:func
 battleInitializeNodeAndCollectVertexHandles = 0x00404438; // type:func
 battlePlayRandomThreeSoundVariant = 0x00409910; // type:func
+battleProcessKindSoundVariant = 0x00407A68; // type:func

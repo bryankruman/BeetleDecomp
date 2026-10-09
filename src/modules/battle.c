@@ -185,6 +185,22 @@ typedef struct {
     f32 (*getScalar)(void);
 } BattleThreeSoundExports;
 void battlePlayRandomThreeSoundVariant(BattleObj_407E78 *);
+
+/* Focused consumed fields/slots only; historical complete types, ownership,
+ * callback lifetimes and caller domains remain unproved. */
+typedef struct {
+    u8 unknown00[0x10];
+    s32 kind;
+    u8 unknown14[0xC];
+    u8 soundHandle[8];
+} BattleKindSoundRecord;
+
+typedef struct {
+    u8 unknown00[0x70];
+    void (*processHandle)(void *);
+} BattleKindHandleSoundExports;
+
+void battleProcessKindSoundVariant(BattleKindSoundRecord *);
 #line 177 "src/modules/battle.c"
 typedef struct {
     u8 prefix[0x1A34];
@@ -923,8 +939,73 @@ void battleResetNodeAndIncrementSecondCount(BattleNode_40733C *node) {
 #line 360 "src/modules/battle.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_004078EC.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00407A68.s")
+#line 362 "src/modules/battle.c"
+/* Process SND slot 0x70, initialize the handle at +0x20, then choose the
+ * kind-specific sound ID through a signed truncation of MATH slot 0x34.
+ * RE_ORIGINAL_QUIRK: the fraction is truncated directly, with no multiplier;
+ * retain both zero/one arms rather than guessing intended random variation.
+ * RE_UNKNOWN: kind/handle validity, module replacement and lifetime contracts
+ * need original producers/callers. SND slot 0x4C supplies the scalar; no
+ * deallocation, position or physical meaning is inferred from these calls. */
+void battleProcessKindSoundVariant(BattleKindSoundRecord *record)
+{
+    void *soundHandle;
+    s32 selection;
+    f32 scalar;
 
+    soundHandle = record->soundHandle;
+    ((BattleKindHandleSoundExports *)gSndExports)->processHandle(soundHandle);
+    gSndExports->unkCC(soundHandle);
+    switch (record->kind) {
+    case 0:
+        selection = (s32)gUvMathExports->uvRandFLcg();
+        switch (selection) {
+        case 0:
+            scalar = ((BattleThreeSoundExports *)gSndExports)->getScalar();
+            ((BattleThreeSoundExports *)gSndExports)->setupHandle(soundHandle, 134, 0x7FEB, scalar, 0.5f);
+            break;
+        case 1:
+            scalar = ((BattleThreeSoundExports *)gSndExports)->getScalar();
+            ((BattleThreeSoundExports *)gSndExports)->setupHandle(soundHandle, 172, 0x7FEB, scalar, 0.5f);
+            break;
+        }
+        break;
+    case 1:
+        break;
+    case 2:
+        selection = (s32)gUvMathExports->uvRandFLcg();
+        switch (selection) {
+        case 0:
+            scalar = ((BattleThreeSoundExports *)gSndExports)->getScalar();
+            ((BattleThreeSoundExports *)gSndExports)->setupHandle(soundHandle, 173, 0x7FEB, scalar, 0.5f);
+            break;
+        case 1:
+            scalar = ((BattleThreeSoundExports *)gSndExports)->getScalar();
+            ((BattleThreeSoundExports *)gSndExports)->setupHandle(soundHandle, 174, 0x7FEB, scalar, 0.5f);
+            break;
+        }
+        break;
+    }
+}
+#line 363 "src/modules/battle.c"
+
+/* Original 7C58 initializes twenty 60-byte records using an identity matrix.
+ * It clears words 0/0x10/0x0C, creates an object, reloads word 0 for the numeric
+ * model table, submits tag 4's callback/context and the matrix, then invokes
+ * the direct effect/sound helper with fresh handle reads between callbacks.
+ * RE_ORIGINAL_QUIRK: that helper initializes both embedded sound handles,
+ * then this caller initializes them again; preserve intervening callbacks.
+ * RE_UNKNOWN: other caller spans, object exhaustion/handle/index domains,
+ * DATA+0x278 historical element type, callback aliases/ownership/lifetimes
+ * require original producers/readers. The original initializer supplies
+ * BSS+0x1DC4; its observed 1200-byte span fits BSS, without proving other callers.
+ * Retain ASM: first draft 364->364 bytes, 13 differing words; frame 168->160
+ * bytes, handle/counter S2/S4 roles and preloop zero/address scheduling differ.
+ * Matrix stays at SP+0x60. The 11-reference-object/11-draft relocation lists
+ * differ in low-half sites/order; callback/helper identities remain present.
+ * No omitted operation/ABI/reload was found. Historical declarations and
+ * allocation remain unresolved; no trial C, focused types or prototypes accepted. */
+#line 364 "src/modules/battle.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00407C58.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00407DC4.s")

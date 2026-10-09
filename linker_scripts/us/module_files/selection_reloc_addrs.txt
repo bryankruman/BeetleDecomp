@@ -5182,7 +5182,7 @@ rom:0x210C4 reloc:MIPS_32 symbol:func_selection_00416028
 rom:0x210C8 reloc:MIPS_32 symbol:func_selection_004162D4
 rom:0x210CC reloc:MIPS_32 symbol:selectionUpdateMenuAndPlayerObjects
 rom:0x210D0 reloc:MIPS_32 symbol:func_selection_0040B52C
-rom:0x210D4 reloc:MIPS_32 symbol:func_selection_0040B608
+rom:0x210D4 reloc:MIPS_32 symbol:selectionApplyEightObjectPropertyFlagsForChoice
 rom:0x210D8 reloc:MIPS_32 symbol:selectionApplyNegativeTenRotationOffset
 rom:0x210DC reloc:MIPS_32 symbol:func_selection_0040B534
 rom:0x210E0 reloc:MIPS_32 symbol:func_selection_0040B600

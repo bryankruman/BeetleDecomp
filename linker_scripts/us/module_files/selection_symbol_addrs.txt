@@ -3219,3 +3219,4 @@ selectionLatchMenuActionsWithRecordGuard = 0x00419FB8; // type:func
 selectionUpdateMenuActionAndPendingNodeChange = 0x00419194; // type:func
 selectionUpdateSharedObjectMatrixAndArrows = 0x0040611C; // type:func
 selectionUpdateMenuAndScheduleLatchedActions = 0x0041A7D0; // type:func
+selectionApplyEightObjectPropertyFlagsForChoice = 0x0040B608; // type:func

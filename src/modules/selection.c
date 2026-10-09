@@ -648,7 +648,7 @@ void func_selection_0040B070();
 void func_selection_0040B144();
 void selectionUpdateMenuAndPlayerObjects(void);
 void func_selection_0040B534();
-void func_selection_0040B608();
+void selectionApplyEightObjectPropertyFlagsForChoice();
 void selectionApplyNegativeTenRotationOffset(void);
 void func_selection_0040B74C();
 void func_selection_0040BB14();
@@ -2209,7 +2209,57 @@ void func_selection_0040B600(void) {
 }
 #line 1224 "src/modules/selection.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040B608.s")
+#line 1225 "src/modules/selection.c"
+/* Apply menu actions, then send property 27 words to eight object slots.
+ * Choice 0 sends one to all eight; choice 1 sends one to the first two and
+ * zero to the rest; choice 2 sends one only to the first. Other choices
+ * make no object calls. Mark shared word 0x420E88 when the signed choice
+ * changes. Reload the node after the menu helper, retain that node pointer,
+ * and reread its choice fields after the shared-word store.
+ * RE_UNKNOWN: historical declarations, caller/menu and object-list domains,
+ * resource validity, change-word consumers, property 27's physical purpose
+ * and callback mutations/lifetimes. The observed list accesses do not prove
+ * an eight-element allocation. Original callers, node/list producers and
+ * allocations, change-word readers, and downstream CARANIM consumers must
+ * establish these contracts; no failure or unsupported-choice fix is added. */
+#line 1225 "src/modules/selection.c"
+void selectionApplyEightObjectPropertyFlagsForChoice(void) {
+    s16 previousChoice;
+    s16 currentChoice;
+    s32 slot;
+    AgentLanguageExpressionMenu *menu;
+
+    previousChoice = ((AgentLanguageExpressionMenu *)D_selection_00421D1C)->choices->selected;
+    func_selection_00401D04();
+    menu = (AgentLanguageExpressionMenu *)D_selection_00421D1C;
+    currentChoice = menu->choices->selected;
+    if (previousChoice != currentChoice) {
+        D_selection_00420E88 = 1;
+        currentChoice = menu->choices->selected;
+    }
+    switch (currentChoice) {
+    case 0:
+        for (slot = 0; slot != 8; slot++) {
+            func_selection_00416A50(slot, 1);
+        }
+        break;
+    case 1:
+        for (slot = 0; slot < 2; slot++) {
+            func_selection_00416A50(slot, 1);
+        }
+        for (slot = 2; slot != 8; slot++) {
+            func_selection_00416A50(slot, 0);
+        }
+        break;
+    case 2:
+        func_selection_00416A50(0, 1);
+        for (slot = 1; slot != 8; slot++) {
+            func_selection_00416A50(slot, 0);
+        }
+        break;
+    }
+}
+#line 1226 "src/modules/selection.c"
 
 #line 1227 "src/modules/selection.c"
 /* Apply the original (0, 0, -10) rotation offset. Distinct zero literal forms
