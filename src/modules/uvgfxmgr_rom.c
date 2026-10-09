@@ -38,7 +38,7 @@ typedef struct GfxMgrSettings_s {
     /* 0x16 */ u16 unk16;        /* inferred */
     s32 unk18;
     s32 unk1C[1];
-} GfxMgrSettings; /* size = 0x18 */
+} GfxMgrSettings; /* RE_UNKNOWN: partial view; native reads words at 0x1C/0x20. Full historical extent and array capacities need producer proof. */
 
 void uvGfxWaitIfRequested(void);
 
@@ -157,13 +157,15 @@ static UvCback_Exports *sUvCbackExports;
 #include "../crash_screen.c"
 #endif
 
+/* Publish graphics exports, reserve frame/task buffers, create callback lists and establish initial display state. */
+#line 160 "src/modules/uvgfxmgr_rom.c"
 void __entrypoint_func_uvgfxmgr_rom_400000(UvGfxMgr_Exports *exports) {
     GfxMgrSettings *settings;
-    s32 temp_lo;
-    u32 sp54;
-    u32 sp50;
-    s32 *var_v1;
-    s32 i;
+    s32 frameByteCount;
+    u32 reservationPrefixBytes;
+    u32 reservationSuffixBytes;
+    s32 *historicalUnusedPointer; /* RE_UNKNOWN: retain unused local storage; historical declaration form is unproved. */
+    s32 bufferIndex;
 
     uvUpdateFileAllocPtr(exports);
     exports->uvGfxBegin = uvGfxBegin;
@@ -210,9 +212,9 @@ void __entrypoint_func_uvgfxmgr_rom_400000(UvGfxMgr_Exports *exports) {
 
     sGfxDramStack = malloc16(0x400);
     sGfxTaskOutputBuffer = 0x800FDF80;
-    uvMemAllocAt(sGfxTaskOutputBuffer, 0x2080, &sp54, &sp50);
+    uvMemAllocAt(sGfxTaskOutputBuffer, 0x2080, &reservationPrefixBytes, &reservationSuffixBytes);
     sGfxYieldData = malloc16(0xC00);
-    settings = uvGetSystemProp(SYSTEM_PROPID_GFX_SETTINGS);
+    settings = uvGetSystemProp(SYSTEM_PROPID_GFX_SETTINGS); /* RE_UNKNOWN: settings extent/counts and storage ownership need producer proof; preserve the current partial view. */
     if (settings == NULL) {
         sScreenWidth = SCREEN_WIDTH;
         sScreenHeight = SCREEN_HEIGHT;
@@ -262,43 +264,43 @@ void __entrypoint_func_uvgfxmgr_rom_400000(UvGfxMgr_Exports *exports) {
             D_uvgfxmgr_rom_0040244C = 0x1068;
         }
 
-        for (i = 0; i < D_uvgfxmgr_rom_0040242C; i++) {
-            if (settings->unk0[i] != 0) {
-                sGfxFrameBuffers[i] = settings->unk0[i];
+        for (bufferIndex = 0; bufferIndex < D_uvgfxmgr_rom_0040242C; bufferIndex++) {
+            if (settings->unk0[bufferIndex] != 0) {
+                sGfxFrameBuffers[bufferIndex] = settings->unk0[bufferIndex];
             } else {
-                sGfxFrameBuffers[i] = 0;
+                sGfxFrameBuffers[bufferIndex] = 0;
             }
         }
 
-        for (i = 0; i < 2; i++) {
-            if (settings->unk1C[i] != 0) {
-                sGfxDisplayListBase[i] = settings->unk1C[i];
+        for (bufferIndex = 0; bufferIndex < 2; bufferIndex++) {
+            if (settings->unk1C[bufferIndex] != 0) {
+                sGfxDisplayListBase[bufferIndex] = settings->unk1C[bufferIndex];
             } else {
-                sGfxDisplayListBase[i] = 0;
+                sGfxDisplayListBase[bufferIndex] = 0;
             }
         }
     }
-    sGfxFrameBuffers[0] = 0x80200000 - (sScreenWidth * 2 * sScreenHeight);
+    sGfxFrameBuffers[0] = 0x80200000 - (sScreenWidth * 2 * sScreenHeight); /* RE_ORIGINAL_QUIRK: replace the first two configured framebuffers unconditionally; preserve remaining configured entries. */
     sGfxFrameBuffers[1] = 0x80200000;
-    uvMemAllocAt((u32) sGfxFrameBuffers[0], sScreenWidth * 4 * sScreenHeight, &sp54, &sp50);
+    uvMemAllocAt((u32) sGfxFrameBuffers[0], sScreenWidth * 4 * sScreenHeight, &reservationPrefixBytes, &reservationSuffixBytes); /* RE_UNKNOWN: counts, dimension arithmetic, allocation success and buffer capacities need caller/allocator proof; results stay ignored. */
 #ifdef NON_MATCHING
     uvCrashScreenInit(sGfxFrameBuffers[0]);
 #endif
     if (D_uvgfxmgr_rom_00402440 == 0) {
-        temp_lo = sScreenWidth * 2 * sScreenHeight;
-        D_uvgfxmgr_rom_00402260 = 0x80400000 - temp_lo;
-        uvMemAllocAt((u32) D_uvgfxmgr_rom_00402260, temp_lo, &sp54, &sp50);
+        frameByteCount = sScreenWidth * 2 * sScreenHeight;
+        D_uvgfxmgr_rom_00402260 = 0x80400000 - frameByteCount;
+        uvMemAllocAt((u32) D_uvgfxmgr_rom_00402260, frameByteCount, &reservationPrefixBytes, &reservationSuffixBytes);
     }
-    for (i = 0; i < 2; i++) {
-        if (sGfxDisplayListBase[i] == NULL) {
+    for (bufferIndex = 0; bufferIndex < 2; bufferIndex++) {
+        if (sGfxDisplayListBase[bufferIndex] == NULL) { /* RE_ORIGINAL_QUIRK: either absent base replaces and reserves both display lists; keep the repeated test. */
             sGfxDisplayListBase[0] = (Gfx *) 0x80300000;
             sGfxDisplayListBase[1] = (Gfx *) sGfxDisplayListBase[0] + D_uvgfxmgr_rom_0040244C;
-            uvMemAllocAt(sGfxDisplayListBase[0], D_uvgfxmgr_rom_0040244C * 8, &sp54, &sp50);
-            uvMemAllocAt(sGfxDisplayListBase[1], D_uvgfxmgr_rom_0040244C * 8, &sp54, &sp50);
+            uvMemAllocAt(sGfxDisplayListBase[0], D_uvgfxmgr_rom_0040244C * 8, &reservationPrefixBytes, &reservationSuffixBytes);
+            uvMemAllocAt(sGfxDisplayListBase[1], D_uvgfxmgr_rom_0040244C * 8, &reservationPrefixBytes, &reservationSuffixBytes);
         }
     }
 
-    sUvCbackExports = uvLoadModule('CBCK');
+    sUvCbackExports = uvLoadModule('CBCK'); /* CBCK slots 0x04/0x0C create/dispatch lists; RE_UNKNOWN: import failure and callback mutation/lifetimes remain unproved. */
     D_uvgfxmgr_rom_00402620 = sUvCbackExports->uvCreateCallbackList(D_uvgfxmgr_rom_00402446);
     D_uvgfxmgr_rom_00402624 = sUvCbackExports->uvCreateCallbackList(D_uvgfxmgr_rom_00402448);
     sGfxDisplayListIndex = 0;
@@ -314,7 +316,7 @@ void __entrypoint_func_uvgfxmgr_rom_400000(UvGfxMgr_Exports *exports) {
     osCreateMesgQueue(&D_uvgfxmgr_rom_004025B8, D_uvgfxmgr_rom_00402590, 10);
     osCreateMesgQueue(&D_uvgfxmgr_rom_004025F8, D_uvgfxmgr_rom_004025D0, 10);
     _uvScAddClient((OSSched *) gScheduler, &D_uvgfxmgr_rom_00402610, &D_uvgfxmgr_rom_004025F8);
-    if ((u32) sGfxTaskOutputBuffer & 0xF) {
+    if ((u32) sGfxTaskOutputBuffer & 0xF) { /* Preserve the original conditional +8 adjustment and end-pointer calculation; no alignment repair is inferred. */
         sGfxTaskOutputBufferStart = (u32) sGfxTaskOutputBuffer + 8;
     } else {
         sGfxTaskOutputBufferStart = (u32) sGfxTaskOutputBuffer;
@@ -326,7 +328,7 @@ void __entrypoint_func_uvgfxmgr_rom_400000(UvGfxMgr_Exports *exports) {
         osViSwapBuffer(sGfxFrameBuffers[1]);
         sGfxFrameBufferIndex = 0;
         D_uvgfxmgr_rom_00402464 = 1;
-    } else if (osViGetCurrentFramebuffer() == sGfxFrameBuffers[0]) {
+    } else if (osViGetCurrentFramebuffer() == sGfxFrameBuffers[0]) { /* Keep the second VI query; RE_UNKNOWN: concurrent display/buffer ownership needs scheduler/caller proof. */
         sGfxFrameBufferIndex = 1;
         D_uvgfxmgr_rom_00402464 = 0;
     } else {
@@ -344,14 +346,16 @@ void uvGfxModuleCleanup(void) {
     uvUnloadModule('CBCK');
 }
 
+/* Optionally rotate frame/display-list state, emit initial image commands and dispatch begin callbacks. */
+#line 139 "src/modules/uvgfxmgr_rom.c"
 void uvGfxBegin(void) {
-    void *frameBuffer;
+    void *callbackFrameBuffer;
 
-    if (D_uvgfxmgr_rom_00402478 == 1) {
-        frameBuffer = sGfxFrameBuffers[D_uvgfxmgr_rom_00402464];
+    if (D_uvgfxmgr_rom_00402478 == 1) { /* Only mode 1 rotates here; RE_UNKNOWN: other mode values and buffer/index domains need setter/caller proof. */
+        callbackFrameBuffer = sGfxFrameBuffers[D_uvgfxmgr_rom_00402464];
         if (sGfxFrameBufferCallback != NULL) {
-            sGfxFrameBufferCallback(frameBuffer, D_uvgfxmgr_rom_00402260);
-            osWritebackDCache(frameBuffer, sScreenWidth * sScreenHeight * 2);
+            sGfxFrameBufferCallback(callbackFrameBuffer, D_uvgfxmgr_rom_00402260); /* Keep the captured buffer across the callback, then reload dimensions; RE_UNKNOWN: callback mutation/lifetime remains unproved. */
+            osWritebackDCache(callbackFrameBuffer, sScreenWidth * sScreenHeight * 2);
         }
         D_uvgfxmgr_rom_00402420[sGfxFrameBufferIndex] = uvClkGetSec(103);
         uvClkReset(103);
@@ -370,7 +374,7 @@ void uvGfxBegin(void) {
         sGfxDepthBuffer = sGfxFrameBuffers[sGfxFrameBufferIndex];
         sGfxDisplayListHead = sGfxDisplayListBase[sGfxDisplayListIndex];
     }
-    gSPSegment(sGfxDisplayListHead++, 0, 0);
+    gSPSegment(sGfxDisplayListHead++, 0, 0); /* RE_UNKNOWN: display-list capacity and asynchronous buffer ownership need allocation/scheduler/caller proof. */
     gDPPipeSync(sGfxDisplayListHead++);
     gDPSetColorImage(sGfxDisplayListHead++, G_IM_FMT_RGBA, G_IM_SIZ_16b, sScreenWidth,
                      osVirtualToPhysical(sGfxDepthBuffer));
@@ -378,7 +382,7 @@ void uvGfxBegin(void) {
     gDPPipeSync(sGfxDisplayListHead++);
     D_uvgfxmgr_rom_00402450 = 0;
     if (D_uvgfxmgr_rom_00402620 != 0) {
-        sUvCbackExports->uvExecuteCallbacks(D_uvgfxmgr_rom_00402620, 0);
+        sUvCbackExports->uvExecuteCallbacks(D_uvgfxmgr_rom_00402620, 0); /* Dispatch after command publication; callback-list count is reloaded by the original provider. */
     }
 }
 
@@ -428,61 +432,63 @@ void func_uvgfxmgr_rom_00400B18(s32 arg0) {
     D_uvgfxmgr_rom_00402264 = arg0;
 }
 
+/* Finish the display list, populate and submit its graphics task, dispatch callbacks and optionally rotate buffers. */
+#line 216 "src/modules/uvgfxmgr_rom.c"
 void uvGfxEnd(void) {
-    s32 pad;
-    UvGfxStruct *temp_a3;
-    s32 pad2[2];
-    void *frameBuffer;
+    s32 historicalUnusedPad; /* RE_UNKNOWN: retain unused pad locals; historical declarations are unproved. */
+    UvGfxStruct *taskRecord;
+    s32 historicalUnusedPadWords[2];
+    void *callbackFrameBuffer;
 
     gDPFullSync(sGfxDisplayListHead++);
     gSPEndDisplayList(sGfxDisplayListHead++);
     sGfxElementCount = sGfxDisplayListHead - sGfxDisplayListBase[sGfxDisplayListIndex];
-    temp_a3 = &D_uvgfxmgr_rom_00402488[sGfxDisplayListIndex];
+    taskRecord = &D_uvgfxmgr_rom_00402488[sGfxDisplayListIndex]; /* RE_UNKNOWN: task/view extent, display-list capacity and index domains need producer/caller proof. */
     if (D_uvgfxmgr_rom_00402264 == 1) {
-        temp_a3->unkC = D_uvgfxmgr_rom_00402260;
+        taskRecord->unkC = D_uvgfxmgr_rom_00402260;
     } else {
-        temp_a3->unkC = sGfxFrameBuffers[sGfxFrameBufferIndex];
+        taskRecord->unkC = sGfxFrameBuffers[sGfxFrameBufferIndex];
     }
-    temp_a3->unk0 = 0;
-    temp_a3->unk50 = &D_uvgfxmgr_rom_004025B8;
-    temp_a3->unk54 = &D_uvgfxmgr_rom_00402268[sGfxFrameBufferIndex];
-    temp_a3->unk8 = 0x53;
-    temp_a3->task.t.type = M_GFXTASK;
-    temp_a3->task.t.flags = 0;
-    temp_a3->task.t.ucode_boot = (u64 *) rspBootTextStart;
-    temp_a3->task.t.ucode_boot_size = rspBootTextEnd - rspBootTextStart;
-    temp_a3->task.t.ucode_size = 0x1000;
-    temp_a3->task.t.ucode_data_size = 0x800;
-    temp_a3->task.t.dram_stack = sGfxDramStack;
-    temp_a3->task.t.dram_stack_size = 0x400;
-    temp_a3->task.t.data_ptr = (u64 *) sGfxDisplayListBase[sGfxDisplayListIndex];
-    temp_a3->task.t.data_size = sGfxElementCount * sizeof(Gfx);
-    temp_a3->task.t.yield_data_ptr = sGfxYieldData;
-    temp_a3->task.t.yield_data_size = 0xC00;
-    temp_a3->task.t.ucode = (u64 *) gspF3DEX2_fifoTextStart;
-    temp_a3->task.t.ucode_data = gspF3DEX2_fifoDataStart;
-    temp_a3->task.t.output_buff = sGfxTaskOutputBufferStart;
-    temp_a3->task.t.output_buff_size = sGfxTaskOutputBufferEnd;
+    taskRecord->unk0 = 0;
+    taskRecord->unk50 = &D_uvgfxmgr_rom_004025B8;
+    taskRecord->unk54 = &D_uvgfxmgr_rom_00402268[sGfxFrameBufferIndex];
+    taskRecord->unk8 = 0x53; /* RE_UNKNOWN: full historical task structure/conventions remain unproved; preserve wrapper fields and flags. */
+    taskRecord->task.t.type = M_GFXTASK;
+    taskRecord->task.t.flags = 0;
+    taskRecord->task.t.ucode_boot = (u64 *) rspBootTextStart;
+    taskRecord->task.t.ucode_boot_size = rspBootTextEnd - rspBootTextStart;
+    taskRecord->task.t.ucode_size = 0x1000;
+    taskRecord->task.t.ucode_data_size = 0x800;
+    taskRecord->task.t.dram_stack = sGfxDramStack;
+    taskRecord->task.t.dram_stack_size = 0x400;
+    taskRecord->task.t.data_ptr = (u64 *) sGfxDisplayListBase[sGfxDisplayListIndex];
+    taskRecord->task.t.data_size = sGfxElementCount * sizeof(Gfx);
+    taskRecord->task.t.yield_data_ptr = sGfxYieldData;
+    taskRecord->task.t.yield_data_size = 0xC00;
+    taskRecord->task.t.ucode = (u64 *) gspF3DEX2_fifoTextStart;
+    taskRecord->task.t.ucode_data = gspF3DEX2_fifoDataStart;
+    taskRecord->task.t.output_buff = sGfxTaskOutputBufferStart;
+    taskRecord->task.t.output_buff_size = sGfxTaskOutputBufferEnd;
     uvScRecordTraceEvent(0, 0x2B);
     if (D_uvgfxmgr_rom_00402618 != NULL) {
-        D_uvgfxmgr_rom_00402618(sGfxFrameBuffers[sGfxFrameBufferIndex], D_uvgfxmgr_rom_00402260);
+        D_uvgfxmgr_rom_00402618(sGfxFrameBuffers[sGfxFrameBufferIndex], D_uvgfxmgr_rom_00402260); /* Reload index/buffer/dimensions after this callback; RE_UNKNOWN: mutation/reentry and storage lifetime remain unproved. */
         osWritebackDCache((void *) sGfxFrameBuffers[sGfxFrameBufferIndex],
                           sScreenWidth * sScreenHeight * 2);
     }
     osWritebackDCacheAll();
-    osSendMesg(_uvScGetCmdQ(gScheduler), temp_a3, 1);
+    osSendMesg(_uvScGetCmdQ(gScheduler), taskRecord, 1); /* Blocking submission follows the full cache flush; RE_UNKNOWN: scheduler/completion ownership and failure domains need caller proof. */
     if (D_uvgfxmgr_rom_00402624 != 0) {
         sUvCbackExports->uvExecuteCallbacks(D_uvgfxmgr_rom_00402624, 0);
     }
-    if (D_uvgfxmgr_rom_00402478 == 0) {
+    if (D_uvgfxmgr_rom_00402478 == 0) { /* Only mode 0 waits/rotates here; preserve the begin/end mode split and callback sequence. */
         if (D_uvgfxmgr_rom_0040247C != 0) {
             uvGfxWaitForMesg(0U);
         }
         D_uvgfxmgr_rom_0040247C = 1;
-        frameBuffer = sGfxFrameBuffers[D_uvgfxmgr_rom_00402464];
+        callbackFrameBuffer = sGfxFrameBuffers[D_uvgfxmgr_rom_00402464];
         if (sGfxFrameBufferCallback != NULL) {
-            sGfxFrameBufferCallback(frameBuffer, D_uvgfxmgr_rom_00402260);
-            osWritebackDCache(frameBuffer, sScreenWidth * sScreenHeight * 2);
+            sGfxFrameBufferCallback(callbackFrameBuffer, D_uvgfxmgr_rom_00402260); /* This callback keeps its captured buffer for the flush while dimensions are freshly reloaded. */
+            osWritebackDCache(callbackFrameBuffer, sScreenWidth * sScreenHeight * 2);
         }
         D_uvgfxmgr_rom_00402420[sGfxFrameBufferIndex] = (f32) uvClkGetSec(0x67);
         uvClkReset(0x67);
@@ -787,20 +793,22 @@ void uvGfxWaitIfRequested(void) {
 }
 #line 532 "src/modules/uvgfxmgr_rom.c"
 
-void uvCopyFrameBuf(s32 arg0) {
-    s32 var_a1;
-    s32 var_a0;
+/* Copy between current and alternate framebuffers for selectors 0/1, preserving the optional completion wait. */
+#line 533 "src/modules/uvgfxmgr_rom.c"
+void uvCopyFrameBuf(s32 copyDirection) {
+    s32 sourceBufferAddress; /* RE_UNKNOWN: retain integer-held pointer words; historical types, overlap and storage extents need caller proof. */
+    s32 destinationBufferAddress;
 
-    if ((arg0 >= 0) && (arg0 < 2)) {
-        if (arg0 != 0) {
-            var_a1 = sGfxFrameBuffers[sGfxFrameBufferIndex];
-            var_a0 = sGfxFrameBuffers[D_uvgfxmgr_rom_00402464];
+    if ((copyDirection >= 0) && (copyDirection < 2)) {
+        if (copyDirection != 0) {
+            sourceBufferAddress = sGfxFrameBuffers[sGfxFrameBufferIndex];
+            destinationBufferAddress = sGfxFrameBuffers[D_uvgfxmgr_rom_00402464];
         } else {
-            var_a1 = sGfxFrameBuffers[D_uvgfxmgr_rom_00402464];
-            var_a0 = sGfxFrameBuffers[sGfxFrameBufferIndex];
+            sourceBufferAddress = sGfxFrameBuffers[D_uvgfxmgr_rom_00402464];
+            destinationBufferAddress = sGfxFrameBuffers[sGfxFrameBufferIndex];
         }
-        uvGfxWaitIfRequested();
-        _uvMediaCopy((void *) var_a0, (void *) var_a1, sScreenWidth * sScreenHeight * 2);
+        uvGfxWaitIfRequested(); /* Capture both addresses before waiting, then reload dimensions; RE_UNKNOWN: buffer ownership/lifetime needs caller proof. */
+        _uvMediaCopy((void *) destinationBufferAddress, (void *) sourceBufferAddress, sScreenWidth * sScreenHeight * 2);
         osWritebackDCacheAll();
     }
 }

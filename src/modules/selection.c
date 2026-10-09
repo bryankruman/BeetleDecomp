@@ -2480,13 +2480,21 @@ void selectionAdjustTrackAndReloadPreviewSprites(void) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040C454.s")
 
 void func_selection_0040C96C(void) {
-    s32 var_s0;
+/* Set object property 27 to zero for eight slots, then service the graphics
+     * wait request and release the texture-animation shared array. Unload
+     * UVTR 11 and UVEN 0; write the first object's word +0x220 to -1 and
+     * assign -1 through the terrain/environment channel callbacks.
+     * Preserve fresh first-object and provider reads across those callbacks.
+     * RE_UNKNOWN: eight-slot eligibility, complete object/channel types,
+     * file ownership, callback mutations and shared-array lifetimes. */
+#line 1254 "src/modules/selection.c"
+    s32 objectSlot;
 
-    var_s0 = 0;
+    objectSlot = 0;
     do {
-        func_selection_00416A50(var_s0, 0);
-        var_s0 += 1;
-    } while (var_s0 != 8);
+        func_selection_00416A50(objectSlot, 0);
+        objectSlot += 1;
+    } while (objectSlot != 8);
     gUvGfxMgrExports->unk74();
     gUvTexAnimExports->unk8();
     uvUnloadFile(0x55565452, 0xB);
@@ -2579,16 +2587,24 @@ void selectionChooseMenuMode3(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040CBEC.s")
 
-/* Teardown: destroy player instances, flush gfx/texanim, unload files, reset terra/env, cleanup. */
+/* Zero player object properties, unload the fixed files, and clear channel assignments. */
 void func_selection_0040D134(void) {
-    s32 var_s0;
+/* Set object property 27 to zero for each observed player slot. The
+     * positive gate and loop bound read the shared player count separately.
+     * Service the graphics wait request, release the texture-animation array,
+     * unload UVTR 3 and UVEN 18, then write word +0x220/channel assignments
+     * to -1 before the existing local 0x4017E0 callback. Preserve reloads.
+     * RE_UNKNOWN: player-count bounds, complete object/channel types, file
+     * ownership, callback mutations and the local callback's wider effects. */
+#line 1322 "src/modules/selection.c"
+    s32 objectSlot;
 
-    var_s0 = 0;
+    objectSlot = 0;
     if (gGameSettings->numPlayers > 0) {
         do {
-            func_selection_00416A50(var_s0, 0);
-            var_s0 += 1;
-        } while (var_s0 < gGameSettings->numPlayers);
+            func_selection_00416A50(objectSlot, 0);
+            objectSlot += 1;
+        } while (objectSlot < gGameSettings->numPlayers);
     }
     gUvGfxMgrExports->unk74();
     gUvTexAnimExports->unk8();
@@ -3506,18 +3522,44 @@ void func_selection_00414CEC(void) {
 #line 1807 "src/modules/selection.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0041532C.s")
 
+/* Copy four observed four-float blocks before sound and shared-state setup.
+ * Retain the original UVTR/UVEN loads and fresh channel assignments, then
+ * build each player's identity/translation/z-rotation matrix. The f32
+ * rotation factor is read once after the positive player-count gate.
+ * Apply the original object-property stream, including double tag 14,
+ * and the existing per-player property/update helper. Reload providers
+ * and the shared loop count across callbacks; finish with halfword state 3.
+ * RE_UNKNOWN: full input/shared-object/handle allocations, player/channel
+ * eligibility, resource ownership, historical types/prototypes, provider
+ * lifetimes, callback mutation rights, property meanings and physical units.
+ * The unaccepted draft views describe consumed slots without owning storage.
+ * RE_ORIGINAL_QUIRK: the shared player count indexes four copied values per
+ * block without a local upper bound; load results are not checked here.
+ * Retain assembly: the natural draft preserves the reviewed effects but
+ * differs in aggregate-copy lowering, local homes, constant construction
+ * and scheduling. Exact words and serialized module equality are required. */
+#line 1809 "src/modules/selection.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004155A0.s")
 
-/* Tear down selection screen: camera reset, clear gfx/texanim, unload files, reset track object. */
+/* Set the camera scalar, zero eight object properties, and unload the fixed files. */
 void func_selection_004158DC(void) {
-    s32 var_s0;
+/* Send camera selector 9 the original f32 constant promoted to double,
+     * followed by terminator 0; the provider stores its f32 value at +0x1C.
+     * Then zero object property 27 for eight slots, service the graphics wait
+     * request, release the texture-animation array, and unload UVTR 2/UVEN 11.
+     * Write word +0x220 and terrain/environment channel assignments to -1,
+     * preserving fresh first-object/provider reads after effectful callbacks.
+     * RE_UNKNOWN: camera-field meaning/units, eight-slot eligibility, full
+     * object/channel types, file ownership and callback/shared-array lifetimes. */
+#line 1813 "src/modules/selection.c"
+    s32 objectSlot;
 
     gCamExports->unk20(*D_selection_00421D18, 0x9, (f64) D_selection_0041F4C4, 0);
-    var_s0 = 0;
+    objectSlot = 0;
     do {
-        func_selection_00416A50(var_s0, 0);
-        var_s0 += 1;
-    } while (var_s0 != 8);
+        func_selection_00416A50(objectSlot, 0);
+        objectSlot += 1;
+    } while (objectSlot != 8);
     gUvGfxMgrExports->unk74();
     gUvTexAnimExports->unk8();
     uvUnloadFile(0x55565452, 0x2);
