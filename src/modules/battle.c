@@ -247,6 +247,18 @@ typedef struct { Vec3F position; f32 scalarC, scalar10, time; u8 gap18[0xDC]; s3
 typedef struct { BattleMotionSource *source; u8 gap4[0x14]; s32 handle; } BattleMotionLink;
 typedef struct { BattleMotionLink *link; u8 gap4[0xAC]; f32 scalarB0, scalarB4; Vec3F position; } BattleResetNode;
 typedef struct { u8 prefix[0x28]; void (*getMatrix)(s32, s32, Mtx4F *); } BattleReadMatrixExports;
+
+/* Observed969C pointer chain only; not full allocation or ownership types. */
+typedef struct { u8 unknown00[0x18]; s32 objectHandle; } BattleMatrixBlendSource;
+typedef struct { BattleMatrixBlendSource *source; } BattleMatrixBlendLink;
+typedef struct {
+    u8 unknown00[0x10];
+    BattleMatrixBlendLink *link;
+    s32 objectHandle;
+} BattleMatrixBlendNode;
+extern f32 D_80025D70;
+void func_battle_00409838(Mtx4F *, Vec3F *);
+#line 209 "src/modules/battle.c"
 typedef struct { u8 prefix[0x3C]; void (*apply)(BattleMotionSource *, Vec3F *, s32); } BattleMotionResetExports;
 extern BattleMotionResetExports *D_battle_0040A050;
 extern f32 D_80025D6C;
@@ -1261,7 +1273,41 @@ void battleSetIndexedPrimitiveColor(int *colorIndex) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00409410.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_0040969C.s")
+#line 425 "src/modules/battle.c"
+/* Blend normalized matrix-row and linked-matrix difference vectors, then
+ * rebuild the current matrix through the original direct helper.
+ * RE_ORIGINAL_QUIRK: DOBJ28 may leave a matrix output untouched for rejected
+ * IDs; this caller initializes neither matrix and adds no rejection gate.
+ * RE_UNKNOWN: link/handle validity, allocation and callback replacement
+ * lifetimes, scalar units/domain and historical formal types need original
+ * producers/callers. The focused views describe only consumed offsets. */
+void battleBlendLinkedMatrixDirection(BattleMatrixBlendNode *node, f32 scalar)
+{
+    Mtx4F currentMatrix;
+    Mtx4F linkedMatrix;
+    Vec3F currentDirection;
+    Vec3F linkedDifference;
+    Vec3F blendedDirection;
+    f32 blendScale;
+
+    if (node->link != NULL) {
+        ((BattleReadMatrixExports *)gUvDobjExports)->getMatrix(node->objectHandle, 0, &currentMatrix);
+        ((BattleReadMatrixExports *)gUvDobjExports)->getMatrix(node->link->source->objectHandle, 0, &linkedMatrix);
+        linkedMatrix.m[3][2] += 1.0f;
+        gUvFvecExports->uvVec3FCopy(&currentDirection, (Vec3F *)&currentMatrix.m[1][0]);
+        gUvFvecExports->uvVec3FNormalize(&currentDirection, &currentDirection);
+        gUvFvecExports->uvVec3FSub(&linkedDifference,
+            (Vec3F *)&linkedMatrix.m[3][0], (Vec3F *)&currentMatrix.m[3][0]);
+        gUvFvecExports->uvVec3FNormalize(&linkedDifference, &linkedDifference);
+        blendScale = scalar * D_80025D70;
+        gUvFvecExports->uvVec3FScale(&linkedDifference, &linkedDifference, blendScale);
+        gUvFvecExports->uvVec3FAdd(&blendedDirection, &currentDirection, &linkedDifference);
+        gUvFvecExports->uvVec3FNormalize(&blendedDirection, &blendedDirection);
+        func_battle_00409838(&currentMatrix, &blendedDirection);
+        ((BattleTransformExports *)gUvDobjExports)->setMatrix(node->objectHandle, 0, &currentMatrix);
+    }
+}
+#line 426 "src/modules/battle.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00409838.s")
 

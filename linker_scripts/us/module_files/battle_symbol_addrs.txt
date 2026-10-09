@@ -340,3 +340,4 @@ battleInitializeNodeAndCollectVertexHandles = 0x00404438; // type:func
 battlePlayRandomThreeSoundVariant = 0x00409910; // type:func
 battleProcessKindSoundVariant = 0x00407A68; // type:func
 battlePlayGatedIndexedSound = 0x00404074; // type:func
+battleBlendLinkedMatrixDirection = 0x0040969C; // type:func
