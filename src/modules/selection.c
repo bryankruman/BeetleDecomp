@@ -641,7 +641,13 @@ void func_selection_004099A0();
 void func_selection_00409C94();
 void func_selection_00409EA4();
 void func_selection_0040A104();
-void func_selection_0040A5E0();
+/* Observed readonly format and shared word accesses only.
+ * RE_UNKNOWN: historical declarations and complete allocations. */
+extern char D_selection_0041ECF4[];
+extern s32 D_80025E60;
+extern s32 D_selection_00420E00;
+void selectionPrepareBitmapAndSharedText(void);
+#line 580 "src/modules/selection.c"
 void selectionStoreTextAndUnloadPreview(void);
 void func_selection_0040A820();
 void func_selection_0040B070();
@@ -2139,7 +2145,50 @@ void func_selection_00409FC8(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040A104.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040A5E0.s")
+#line 1202 "src/modules/selection.c"
+/* Apply the stored sound options, load the first UVBT bitmap, and reuse
+ * or allocate the shared signed sprite ID. Set bitmap property 9, obtain
+ * its width and height, and use signed division toward zero for the two
+ * half dimensions. Set property 2 to (160 - halfWidth, 120 - halfHeight)
+ * and property 3 to 1. Reload the provider and sprite ID after callbacks.
+ * Store the observed shared words 15 and 3, copy the shared source text
+ * through the distinct original %s format, then select shared word 42 or
+ * zero according to the signed post-format word at 0x80025E60.
+ * RE_ORIGINAL_QUIRK: sprite allocation failure is not checked; a returned
+ * -1 is stored and passed onward to providers with only upper-bound tests.
+ * RE_UNKNOWN: historical call and access declarations, bitmap/sprite and
+ * shared-word domains, full table and string allocations, termination,
+ * source/destination overlap, callback mutations, ownership and lifetimes.
+ * The format proves neither destination capacity nor valid source text.
+ * Original producers, callers and downstream consumers must establish
+ * these contracts; the shared values do not identify physical resource roles. */
+#line 1202 "src/modules/selection.c"
+void selectionPrepareBitmapAndSharedText(void) {
+    s32 halfWidth;
+    s32 halfHeight;
+
+    selectionApplySoundOptions();
+    uvLoadFile(0x55564254, D_selection_00420D24[0]);
+    if (D_selection_00420DF8 == -1) {
+        D_selection_00420DF8 = ((AgentTrackPreviewSpriteExports *)gUvSprtExports)->allocate();
+    }
+    ((AgentTrackPreviewSpriteExports *)gUvSprtExports)->setProperties(
+        D_selection_00420DF8, 9, D_selection_00420D24[0], 0);
+    halfWidth = ((AgentTrackPreviewSpriteExports *)gUvSprtExports)->getWidth(D_selection_00420DF8) / 2;
+    halfHeight = ((AgentTrackPreviewSpriteExports *)gUvSprtExports)->getHeight(D_selection_00420DF8) / 2;
+    ((AgentTrackPreviewSpriteExports *)gUvSprtExports)->setProperties(
+        D_selection_00420DF8, 2, 160 - halfWidth, 120 - halfHeight, 3, 1, 0);
+    D_selection_00421CE4 = 15;
+    D_selection_00421E08 = 3;
+    ((SelectionFormatExports *)gUvStringExports)->format(
+        D_80025E40, D_selection_0041ECF4, D_80025E50);
+    if (D_80025E60 > 0) {
+        D_selection_00420E00 = 42;
+    } else {
+        D_selection_00420E00 = 0;
+    }
+}
+#line 1203 "src/modules/selection.c"
 
 #line 1204 "src/modules/selection.c"
 /* Run the original selection reset and format shared text from the saved

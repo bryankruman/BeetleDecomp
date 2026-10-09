@@ -3220,3 +3220,4 @@ selectionUpdateMenuActionAndPendingNodeChange = 0x00419194; // type:func
 selectionUpdateSharedObjectMatrixAndArrows = 0x0040611C; // type:func
 selectionUpdateMenuAndScheduleLatchedActions = 0x0041A7D0; // type:func
 selectionApplyEightObjectPropertyFlagsForChoice = 0x0040B608; // type:func
+selectionPrepareBitmapAndSharedText = 0x0040A5E0; // type:func

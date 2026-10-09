@@ -34,8 +34,8 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **796** assembly references:
-**754** ordinary functions and **42** entrypoints, with **718,564** known instruction bytes
+matching C are preserved with `#line`. The current ledger has **795** assembly references:
+**753** ordinary functions and **42** entrypoints, with **718,156** known instruction bytes
 and no unknown sizes. The broader name audit still finds **298** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
@@ -3016,10 +3016,19 @@ Totals: 404 further recoveries after the 225 upstream ordinary imports, plus 137
 Frozen wave `2800-older-fvec-component-and-selection-contracts-2800` and `accepted-older-fvec-component-and-selection-contracts-2800` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 404 further readable functions
+## Historical accepted checkpoint — 404 further readable functions
 
 Five genuinely untreated existing FVEC negation/set/sum/dot helpers gain destination/input roles and concise operation/RE_UNKNOWN comments. Preserve public names/types/macros, original component read-store interleaving, scalar word forwarding and f32 arithmetic grouping. Full112 initializer plus41 native leaf words reviewed; all41+41 reference/candidate words, all complete empty relocation arrays and10 empty compiler logs exact. Whole-source/member-aware scoped inverses preserve all308 executable FVEC rows and every physical line/directive/other definition. Two independently reviewed Battle retained-assembly comments contribute zero credit and preserve all638 executable rows/member selectors/49 pragma coordinates and all1201 original non-#line row coordinates through a separate exact whole-source inverse. Five older cleanups only, zero recoveries/types/aliases/macros/readonly changes. Require normal extraction, original packed FVEC and Battle, fresh full original ROM, all1034 source pins, complete unchanged796 remaining dictionaries/718564B/data2/address298 and fresh uncertainty index before guarded landing.
 
 Totals: 404 further recoveries after the 225 upstream ordinary imports, plus 1376 existing C semantic cleanups. Current ledger: 796 assembly references = 754 ordinary + 42 entrypoints; 718,564 known remaining instruction bytes; zero unknown sizes; 298 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `2818-older-fvec-final-leaf-and-battle-contracts-2818` and `accepted-older-fvec-final-leaf-and-battle-contracts-2818` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 405 further readable functions
+
+Recover the408-byte Selection bitmap/shared-text routine with all102 instruction words exact. Preserve stored sound options, first bitmap load, signed sprite allocation/cache, property9 and2/3 calls, signed half-dimension arithmetic, fresh callback-sensitive reloads, distinct original format and post-format shared-word branch. Keep specific unchecked-allocation, declaration, caller/index/string/overlap/ownership/lifetime unknowns. All46 ELF record dictionaries match by site; original reference tail pairs differ from candidate pairs, which exactly match all13 original native pairs. Nineteen UND kernel records resolve independently; existing27 native metadata rows reproduce exact original serialized order. Rename only the original MIPS_32 function-pointer metadata symbol at rom0x21094 consistently with the C definition; retain the original location, kind and resolved address. No text-sort metadata, header, readonly ownership, ABI or forced-body changes. Normal extraction must regenerate canonical references. Entire original packed Selection including RELA, fresh full original ROM, all source pins, complete previous remaining dictionaries minus only this408-byte target, unchanged data/address dictionaries, per-source counts and uncertainty index are mandatory before landing.
+
+Totals: 405 further recoveries after the 225 upstream ordinary imports, plus 1376 existing C semantic cleanups. Current ledger: 795 assembly references = 753 ordinary + 42 entrypoints; 718,156 known remaining instruction bytes; zero unknown sizes; 298 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `2842-selection-bitmap-shared-text-contracts-2842` and `accepted-selection-bitmap-shared-text-contracts-2842` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

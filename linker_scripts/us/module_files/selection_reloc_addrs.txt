@@ -5166,7 +5166,7 @@ rom:0x21084 reloc:MIPS_32 symbol:func_selection_00409C94
 rom:0x21088 reloc:MIPS_32 symbol:func_selection_00409EA4
 rom:0x2108C reloc:MIPS_32 symbol:func_selection_0040A820
 rom:0x21090 reloc:MIPS_32 symbol:func_selection_0040A104
-rom:0x21094 reloc:MIPS_32 symbol:func_selection_0040A5E0
+rom:0x21094 reloc:MIPS_32 symbol:selectionPrepareBitmapAndSharedText
 rom:0x21098 reloc:MIPS_32 symbol:selectionStoreTextAndUnloadPreview
 rom:0x2109C reloc:MIPS_32 symbol:func_selection_00410614
 rom:0x210A0 reloc:MIPS_32 symbol:func_selection_0040D514
