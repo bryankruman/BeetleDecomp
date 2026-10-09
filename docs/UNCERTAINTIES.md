@@ -17,8 +17,8 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 1056 |
-| Preserved RE_ORIGINAL_QUIRK notes | 294 |
+| Explicit RE_UNKNOWN notes | 1060 |
+| Preserved RE_ORIGINAL_QUIRK notes | 296 |
 | Older comments with uncertainty language | 92 |
 | Documented original-behavior audits | 30 |
 | Assembly-backed functions or data | 790 |
@@ -28,7 +28,7 @@ For every future source wave, regenerate and check this index after code and str
 | Layout padding to preserve | 272 |
 | Unresolved type names | 282 |
 | Explicit unused ABI, storage or local identifiers | 131 |
-| Decompiler parameter/local names | 756 |
+| Decompiler parameter/local names | 755 |
 | Fake, unresolved or TODO draft markers | 26 |
 | Data-dependent conditional draft guards | 4 |
 
@@ -1906,68 +1906,73 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_caraudio_004022BC` | function `func_caraudio_004022BC` | [30](../src/modules/caraudio.c#L30) |
 | address_function | `func_caraudio_004027A8` | function `func_caraudio_004027A8` | [31](../src/modules/caraudio.c#L31) |
 | address_function | `func_caraudio_004029F8` | function `func_caraudio_004029F8` | [32](../src/modules/caraudio.c#L32) |
-| address_function | `func_caraudio_00402B20` | function `carAudioUpdateSharedScalarAndEmitters`, function `func_caraudio_00402B20` | [33](../src/modules/caraudio.c#L33), [83](../src/modules/caraudio.c#L83) |
-| address_function | `func_caraudio_00402C08` | function `func_caraudio_00402C08` | [198](../src/modules/caraudio.c#L198) |
+| address_function | `func_caraudio_00402B20` | function `carAudioUpdateSharedScalarAndEmitters`, function `func_caraudio_00402B20` | [33](../src/modules/caraudio.c#L33), [105](../src/modules/caraudio.c#L105) |
+| address_function | `func_caraudio_00402C08` | function `func_caraudio_00402C08` | [235](../src/modules/caraudio.c#L235) |
 | address_function | `func_caraudio_00402CA4` | function `func_caraudio_00402CA4` | [35](../src/modules/caraudio.c#L35) |
 | address_function | `func_caraudio_00402E00` | function `func_caraudio_00402E00` | [36](../src/modules/caraudio.c#L36) |
 | address_function | `func_caraudio_004031E0` | function `func_caraudio_004031E0` | [38](../src/modules/caraudio.c#L38) |
 | address_function | `func_caraudio_0040336C` | function `func_caraudio_0040336C` | [39](../src/modules/caraudio.c#L39) |
 | address_function | `func_caraudio_0040397C` | function `func_caraudio_0040397C` | [40](../src/modules/caraudio.c#L40) |
-| address_function | `func_caraudio_00403A2C` | function `func_caraudio_00403A2C` | [295](../src/modules/caraudio.c#L295) |
-| address_global | `D_caraudio_00403EF4` | function `carAudioUpdateDualEmitterVolume`, global `D_caraudio_00403EF4` | [5](../src/modules/caraudio.c#L5), [207](../src/modules/caraudio.c#L207) |
-| address_global | `D_caraudio_00403F00` | function `carAudioStartFixedPositionSound`, global `D_caraudio_00403F00` | [237](../src/modules/caraudio.c#L237), [249](../src/modules/caraudio.c#L249) |
-| address_global | `D_caraudio_00403F04` | function `carAudioStartFixedPositionSound`, global `D_caraudio_00403F04` | [238](../src/modules/caraudio.c#L238), [250](../src/modules/caraudio.c#L250) |
-| address_global | `D_caraudio_00403F08` | function `carAudioStartFixedPositionSound`, global `D_caraudio_00403F08` | [239](../src/modules/caraudio.c#L239), [256](../src/modules/caraudio.c#L256) |
-| address_global | `D_caraudio_004040C0` | function `carAudioUpdateSharedScalarAndEmitters`, global `D_caraudio_004040C0` | [12](../src/modules/caraudio.c#L12), [82](../src/modules/caraudio.c#L82) |
-| address_global | `D_caraudio_004041E0` | function `carAudioClearSlotFlag`, global `D_caraudio_004041E0` | [41](../src/modules/caraudio.c#L41), [220](../src/modules/caraudio.c#L220) |
-| address_global | `D_caraudio_00404228` | function `carAudioPrependCommand`, global `D_caraudio_00404228` | [264](../src/modules/caraudio.c#L264), [281](../src/modules/caraudio.c#L281), [282](../src/modules/caraudio.c#L282) |
-| address_global | `D_caraudio_00404230` | function `func_caraudio_00403A2C`, global `D_caraudio_00404230` | [293](../src/modules/caraudio.c#L293), [302](../src/modules/caraudio.c#L302) |
-| address_global | `D_caraudio_00404254` | function `carAudioUpdateDualEmitterVolume`, function `carAudioUpdateSharedScalarAndEmitters`, global `D_caraudio_00404254` | [13](../src/modules/caraudio.c#L13), [82](../src/modules/caraudio.c#L82), [207](../src/modules/caraudio.c#L207) |
-| address_global | `D_caraudio_00404300` | function `carAudioStartFixedPositionSound`, global `D_caraudio_00404300` | [240](../src/modules/caraudio.c#L240), [252](../src/modules/caraudio.c#L252), [254](../src/modules/caraudio.c#L254), [255](../src/modules/caraudio.c#L255), [256](../src/modules/caraudio.c#L256), [257](../src/modules/caraudio.c#L257), [258](../src/modules/caraudio.c#L258) |
+| address_function | `func_caraudio_00403A2C` | function `func_caraudio_00403A2C` | [341](../src/modules/caraudio.c#L341) |
+| address_global | `D_caraudio_00403EF4` | function `carAudioUpdateDualEmitterVolume`, global `D_caraudio_00403EF4` | [5](../src/modules/caraudio.c#L5), [244](../src/modules/caraudio.c#L244) |
+| address_global | `D_caraudio_00403F00` | function `carAudioStartFixedPositionSound`, global `D_caraudio_00403F00` | [274](../src/modules/caraudio.c#L274), [286](../src/modules/caraudio.c#L286) |
+| address_global | `D_caraudio_00403F04` | function `carAudioStartFixedPositionSound`, global `D_caraudio_00403F04` | [275](../src/modules/caraudio.c#L275), [287](../src/modules/caraudio.c#L287) |
+| address_global | `D_caraudio_00403F08` | function `carAudioStartFixedPositionSound`, global `D_caraudio_00403F08` | [276](../src/modules/caraudio.c#L276), [293](../src/modules/caraudio.c#L293) |
+| address_global | `D_caraudio_004040C0` | function `carAudioUpdateSharedScalarAndEmitters`, global `D_caraudio_004040C0` | [12](../src/modules/caraudio.c#L12), [104](../src/modules/caraudio.c#L104) |
+| address_global | `D_caraudio_004041E0` | function `carAudioClearSlotFlag`, global `D_caraudio_004041E0` | [41](../src/modules/caraudio.c#L41), [257](../src/modules/caraudio.c#L257) |
+| address_global | `D_caraudio_00404228` | function `carAudioPrependCommand`, global `D_caraudio_00404228` | [301](../src/modules/caraudio.c#L301), [318](../src/modules/caraudio.c#L318), [319](../src/modules/caraudio.c#L319) |
+| address_global | `D_caraudio_00404230` | function `func_caraudio_00403A2C`, global `D_caraudio_00404230` | [330](../src/modules/caraudio.c#L330), [348](../src/modules/caraudio.c#L348) |
+| address_global | `D_caraudio_00404254` | function `carAudioUpdateDualEmitterVolume`, function `carAudioUpdateSharedScalarAndEmitters`, global `D_caraudio_00404254` | [13](../src/modules/caraudio.c#L13), [104](../src/modules/caraudio.c#L104), [244](../src/modules/caraudio.c#L244) |
+| address_global | `D_caraudio_00404300` | function `carAudioStartFixedPositionSound`, global `D_caraudio_00404300` | [277](../src/modules/caraudio.c#L277), [289](../src/modules/caraudio.c#L289), [291](../src/modules/caraudio.c#L291), [292](../src/modules/caraudio.c#L292), [293](../src/modules/caraudio.c#L293), [294](../src/modules/caraudio.c#L294), [295](../src/modules/caraudio.c#L295) |
 | assembly | `__entrypoint_func_caraudio_400000` | — | [43](../src/modules/caraudio.c#L43) |
-| assembly | `func_caraudio_004003B0` | — | [73](../src/modules/caraudio.c#L73) |
-| assembly | `func_caraudio_00400550` | — | [75](../src/modules/caraudio.c#L75) |
-| assembly | `func_caraudio_00400758` | — | [88](../src/modules/caraudio.c#L88) |
-| assembly | `func_caraudio_0040090C` | — | [90](../src/modules/caraudio.c#L90) |
-| assembly | `func_caraudio_00400DB4` | — | [92](../src/modules/caraudio.c#L92) |
-| assembly | `func_caraudio_004010A4` | — | [94](../src/modules/caraudio.c#L94) |
-| assembly | `func_caraudio_004015B8` | — | [96](../src/modules/caraudio.c#L96) |
-| assembly | `func_caraudio_00401698` | — | [98](../src/modules/caraudio.c#L98) |
-| assembly | `func_caraudio_0040171C` | — | [100](../src/modules/caraudio.c#L100) |
-| assembly | `func_caraudio_00401A08` | — | [102](../src/modules/caraudio.c#L102) |
-| assembly | `func_caraudio_00401F24` | — | [104](../src/modules/caraudio.c#L104) |
-| assembly | `func_caraudio_00402070` | — | [130](../src/modules/caraudio.c#L130) |
-| assembly | `func_caraudio_0040218C` | — | [145](../src/modules/caraudio.c#L145) |
-| assembly | `func_caraudio_004022BC` | — | [161](../src/modules/caraudio.c#L161) |
-| assembly | `func_caraudio_004027A8` | — | [163](../src/modules/caraudio.c#L163) |
-| assembly | `func_caraudio_004029F8` | — | [189](../src/modules/caraudio.c#L189) |
-| assembly | `func_caraudio_00402B20` | — | [191](../src/modules/caraudio.c#L191) |
-| assembly | `func_caraudio_00402CA4` | — | [214](../src/modules/caraudio.c#L214) |
-| assembly | `func_caraudio_00402E00` | — | [231](../src/modules/caraudio.c#L231) |
-| assembly | `func_caraudio_004031E0` | — | [287](../src/modules/caraudio.c#L287) |
-| assembly | `func_caraudio_0040336C` | — | [289](../src/modules/caraudio.c#L289) |
-| assembly | `func_caraudio_0040397C` | — | [291](../src/modules/caraudio.c#L291) |
-| decompiler_local | `arg0` | function `carAudioStartFixedPositionSound`, function `func_caraudio_00403A2C` | [37](../src/modules/caraudio.c#L37), [295](../src/modules/caraudio.c#L295), [303](../src/modules/caraudio.c#L303), [305](../src/modules/caraudio.c#L305) |
-| decompiler_local | `arg1` | function `func_caraudio_00403A2C` | [295](../src/modules/caraudio.c#L295), [300](../src/modules/caraudio.c#L300), [302](../src/modules/caraudio.c#L302), [304](../src/modules/caraudio.c#L304) |
+| assembly | `func_caraudio_004003B0` | — | [84](../src/modules/caraudio.c#L84) |
+| assembly | `func_caraudio_00400550` | — | [97](../src/modules/caraudio.c#L97) |
+| assembly | `func_caraudio_00400758` | — | [125](../src/modules/caraudio.c#L125) |
+| assembly | `func_caraudio_0040090C` | — | [127](../src/modules/caraudio.c#L127) |
+| assembly | `func_caraudio_00400DB4` | — | [129](../src/modules/caraudio.c#L129) |
+| assembly | `func_caraudio_004010A4` | — | [131](../src/modules/caraudio.c#L131) |
+| assembly | `func_caraudio_004015B8` | — | [133](../src/modules/caraudio.c#L133) |
+| assembly | `func_caraudio_00401698` | — | [135](../src/modules/caraudio.c#L135) |
+| assembly | `func_caraudio_0040171C` | — | [137](../src/modules/caraudio.c#L137) |
+| assembly | `func_caraudio_00401A08` | — | [139](../src/modules/caraudio.c#L139) |
+| assembly | `func_caraudio_00401F24` | — | [141](../src/modules/caraudio.c#L141) |
+| assembly | `func_caraudio_00402070` | — | [167](../src/modules/caraudio.c#L167) |
+| assembly | `func_caraudio_0040218C` | — | [182](../src/modules/caraudio.c#L182) |
+| assembly | `func_caraudio_004022BC` | — | [198](../src/modules/caraudio.c#L198) |
+| assembly | `func_caraudio_004027A8` | — | [200](../src/modules/caraudio.c#L200) |
+| assembly | `func_caraudio_004029F8` | — | [226](../src/modules/caraudio.c#L226) |
+| assembly | `func_caraudio_00402B20` | — | [228](../src/modules/caraudio.c#L228) |
+| assembly | `func_caraudio_00402CA4` | — | [251](../src/modules/caraudio.c#L251) |
+| assembly | `func_caraudio_00402E00` | — | [268](../src/modules/caraudio.c#L268) |
+| assembly | `func_caraudio_004031E0` | — | [324](../src/modules/caraudio.c#L324) |
+| assembly | `func_caraudio_0040336C` | — | [326](../src/modules/caraudio.c#L326) |
+| assembly | `func_caraudio_0040397C` | — | [328](../src/modules/caraudio.c#L328) |
+| decompiler_local | `arg0` | function `carAudioStartFixedPositionSound` | [37](../src/modules/caraudio.c#L37) |
 | explicit_unknown | `Allocate 0x50 bytes; initialize matrix at 0x10 and store sourceRecordAddress at 0xC. * handleSlotIndex selects stride-8 handles. RE_UNKNOWN: source extent/lifetime and index * b...` | function `carAudioAllocateState` | [55](../src/modules/caraudio.c#L55) |
-| explicit_unknown | `Check the first enabled matching low-byte ID in banks 0x41DC/0x41E8 * then 0x41D8/0x41E4. Release and initialize its stride-eight sound handle, * reload sound exports between ca...` | assembly `func_caraudio_0040218C` | [132](../src/modules/caraudio.c#L132) |
-| explicit_unknown | `Clear the flag byte using the supplied signed slot without a range check. * RE_UNKNOWN: valid slot domain and flag-table extent need original callers and data layout.` | function `carAudioClearSlotFlag` | [217](../src/modules/caraudio.c#L217) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_caraudio_00402C08` | [194](../src/modules/caraudio.c#L194) |
-| explicit_unknown | `Prepare sound selector 0x1D at fixed XYZ; reject returned managed-slot byte 0xFF. * Sound slot 0x80 copies matrix translation; the local matrix is not retained. * RE_UNKNOWN: ga...` | global `D_caraudio_00403F00` | [234](../src/modules/caraudio.c#L234) |
-| explicit_unknown | `Prepend kind zero; soundHandlingEnabled gates soundId/volume (SND 0x6C/0x84). * Original loader zeroes the head in fresh caud-image BSS before entry. RE_UNKNOWN: * value4/valueC...` | function `carAudioPrependCommand` | [268](../src/modules/caraudio.c#L268) |
-| explicit_unknown | `Resolve all four CARANIM material records before sequential signed16 code * tests. Priority is 4, then 5/6 (5 on track 7, otherwise 2), followed by * 12, 3, 2, 8, 9, 7, 10, 11, ...` | assembly `func_caraudio_004022BC` | [147](../src/modules/caraudio.c#L147) |
-| explicit_unknown | `Test four source words at 0x2D0..0x2DC; return one on first nonzero, else zero. * Preserve the original unchecked state/source dereferences and short-circuit order. * RE_UNKNOWN...` | function `carAudioHasAnySourceSlot` | [166](../src/modules/caraudio.c#L166) |
-| explicit_unknown | `Use source-record word 0x1EC as the unchecked shared-scalar index, * then run the original audio update and dual-emitter scalar update. * RE_UNKNOWN: index bounds, source extent...` | function `carAudioUpdateSharedScalarAndEmitters` | [78](../src/modules/caraudio.c#L78) |
-| layout_padding | `gap11` | type `CarAudioCommand` | [265](../src/modules/caraudio.c#L265) |
+| explicit_unknown | `Check the first enabled matching low-byte ID in banks 0x41DC/0x41E8 * then 0x41D8/0x41E4. Release and initialize its stride-eight sound handle, * reload sound exports between ca...` | assembly `func_caraudio_0040218C` | [169](../src/modules/caraudio.c#L169) |
+| explicit_unknown | `Clear the flag byte using the supplied signed slot without a range check. * RE_UNKNOWN: valid slot domain and flag-table extent need original callers and data layout.` | function `carAudioClearSlotFlag` | [254](../src/modules/caraudio.c#L254) |
+| explicit_unknown | `Copy screen-record matrices into matching registry entries, then run * the original setting/motion-word gates and ordered audio helpers. * RE_ORIGINAL_QUIRK: SCRN slot 0x14 copi...` | assembly `func_caraudio_00400758` | [110](../src/modules/caraudio.c#L110) |
+| explicit_unknown | `For signed slotIndex <4, store [destination word, slotIndex] in the * original 8-byte slot, then copy 64 bytes from the word loaded at * binding+0xC, plus0x1A8, to destination w...` | function `func_caraudio_00403A2C` | [332](../src/modules/caraudio.c#L332) |
+| explicit_unknown | `Initialize both indexed handles and prepare the shared sound handle; * only the first indexed handle is gated by gNumPlayers == 1. Preserve * callback reloads and each stored-ha...` | assembly `func_caraudio_004003B0` | [73](../src/modules/caraudio.c#L73) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_caraudio_00402C08` | [231](../src/modules/caraudio.c#L231) |
+| explicit_unknown | `Prepare sound selector 0x1D at fixed XYZ; reject returned managed-slot byte 0xFF. * Sound slot 0x80 copies matrix translation; the local matrix is not retained. * RE_UNKNOWN: ga...` | global `D_caraudio_00403F00` | [271](../src/modules/caraudio.c#L271) |
+| explicit_unknown | `Prepend kind zero; soundHandlingEnabled gates soundId/volume (SND 0x6C/0x84). * Original loader zeroes the head in fresh caud-image BSS before entry. RE_UNKNOWN: * value4/valueC...` | function `carAudioPrependCommand` | [305](../src/modules/caraudio.c#L305) |
+| explicit_unknown | `Resolve all four CARANIM material records before sequential signed16 code * tests. Priority is 4, then 5/6 (5 on track 7, otherwise 2), followed by * 12, 3, 2, 8, 9, 7, 10, 11, ...` | assembly `func_caraudio_004022BC` | [184](../src/modules/caraudio.c#L184) |
+| explicit_unknown | `Snapshot the inner audio-state pointer, then process/reset/recreate each * indexed sound handle; only the first handle is gated by gNumPlayers == 1. * Reload the outer slot inde...` | assembly `func_caraudio_00400550` | [86](../src/modules/caraudio.c#L86) |
+| explicit_unknown | `Test four source words at 0x2D0..0x2DC; return one on first nonzero, else zero. * Preserve the original unchecked state/source dereferences and short-circuit order. * RE_UNKNOWN...` | function `carAudioHasAnySourceSlot` | [203](../src/modules/caraudio.c#L203) |
+| explicit_unknown | `Use source-record word 0x1EC as the unchecked shared-scalar index, * then run the original audio update and dual-emitter scalar update. * RE_UNKNOWN: index bounds, source extent...` | function `carAudioUpdateSharedScalarAndEmitters` | [100](../src/modules/caraudio.c#L100) |
+| layout_padding | `gap11` | type `CarAudioCommand` | [302](../src/modules/caraudio.c#L302) |
 | offset_field | `unk00` | type `CarAudioDualVoice`, type `CarAudioVoiceIds` | [3](../src/modules/caraudio.c#L3), [4](../src/modules/caraudio.c#L4) |
 | offset_field | `unk02` | type `CarAudioVoiceIds` | [3](../src/modules/caraudio.c#L3) |
-| offset_field | `value4` | function `carAudioPrependCommand`, type `CarAudioCommand` | [265](../src/modules/caraudio.c#L265), [273](../src/modules/caraudio.c#L273), [276](../src/modules/caraudio.c#L276) |
-| offset_field | `valueC` | function `carAudioPrependCommand`, type `CarAudioCommand` | [265](../src/modules/caraudio.c#L265), [273](../src/modules/caraudio.c#L273), [278](../src/modules/caraudio.c#L278) |
-| opaque_type | `UnkStruct_004005C8` | function `carAudioReleaseHandle`, function `carAudioSetHandlePositionAndPitch`, function `carAudioSetHandlePositionAndPitch`, global `D_caraudio_00404300` | [26](../src/modules/caraudio.c#L26), [110](../src/modules/caraudio.c#L110), [123](../src/modules/caraudio.c#L123), [240](../src/modules/caraudio.c#L240) |
-| opaque_type | `UnkStruct_uvemitter_rom_004008CC` | function `carAudioSetHandlePositionAndPitch`, function `carAudioSetHandlePositionAndPitch`, function `carAudioStartFixedPositionSound` | [26](../src/modules/caraudio.c#L26), [110](../src/modules/caraudio.c#L110), [255](../src/modules/caraudio.c#L255) |
-| original_quirk | `Check the first enabled matching low-byte ID in banks 0x41DC/0x41E8 * then 0x41D8/0x41E4. Release and initialize its stride-eight sound handle, * reload sound exports between ca...` | assembly `func_caraudio_0040218C` | [132](../src/modules/caraudio.c#L132) |
-| original_quirk | `Resolve all four CARANIM material records before sequential signed16 code * tests. Priority is 4, then 5/6 (5 on track 7, otherwise 2), followed by * 12, 3, 2, 8, 9, 7, 10, 11, ...` | assembly `func_caraudio_004022BC` | [147](../src/modules/caraudio.c#L147) |
-| unused_identifier | `unused` | function `carAudioStartFixedPositionSound` | [244](../src/modules/caraudio.c#L244) |
+| offset_field | `value4` | function `carAudioPrependCommand`, type `CarAudioCommand` | [302](../src/modules/caraudio.c#L302), [310](../src/modules/caraudio.c#L310), [313](../src/modules/caraudio.c#L313) |
+| offset_field | `valueC` | function `carAudioPrependCommand`, type `CarAudioCommand` | [302](../src/modules/caraudio.c#L302), [310](../src/modules/caraudio.c#L310), [315](../src/modules/caraudio.c#L315) |
+| opaque_type | `UnkStruct_004005C8` | function `carAudioReleaseHandle`, function `carAudioSetHandlePositionAndPitch`, function `carAudioSetHandlePositionAndPitch`, global `D_caraudio_00404300` | [26](../src/modules/caraudio.c#L26), [147](../src/modules/caraudio.c#L147), [160](../src/modules/caraudio.c#L160), [277](../src/modules/caraudio.c#L277) |
+| opaque_type | `UnkStruct_uvemitter_rom_004008CC` | function `carAudioSetHandlePositionAndPitch`, function `carAudioSetHandlePositionAndPitch`, function `carAudioStartFixedPositionSound` | [26](../src/modules/caraudio.c#L26), [147](../src/modules/caraudio.c#L147), [292](../src/modules/caraudio.c#L292) |
+| original_quirk | `Check the first enabled matching low-byte ID in banks 0x41DC/0x41E8 * then 0x41D8/0x41E4. Release and initialize its stride-eight sound handle, * reload sound exports between ca...` | assembly `func_caraudio_0040218C` | [169](../src/modules/caraudio.c#L169) |
+| original_quirk | `Copy screen-record matrices into matching registry entries, then run * the original setting/motion-word gates and ordered audio helpers. * RE_ORIGINAL_QUIRK: SCRN slot 0x14 copi...` | assembly `func_caraudio_00400758` | [110](../src/modules/caraudio.c#L110) |
+| original_quirk | `Initialize both indexed handles and prepare the shared sound handle; * only the first indexed handle is gated by gNumPlayers == 1. Preserve * callback reloads and each stored-ha...` | assembly `func_caraudio_004003B0` | [73](../src/modules/caraudio.c#L73) |
+| original_quirk | `Resolve all four CARANIM material records before sequential signed16 code * tests. Priority is 4, then 5/6 (5 on track 7, otherwise 2), followed by * 12, 3, 2, 8, 9, 7, 10, 11, ...` | assembly `func_caraudio_004022BC` | [184](../src/modules/caraudio.c#L184) |
+| unused_identifier | `unused` | function `carAudioStartFixedPositionSound` | [281](../src/modules/caraudio.c#L281) |
 
 ## src/modules/cbars.c
 

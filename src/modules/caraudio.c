@@ -70,8 +70,30 @@ void *carAudioAllocateState(s32 sourceRecordAddress, s32 handleSlotIndex)
 #line 63 "src/modules/caraudio.c"
 #line 60 "src/modules/caraudio.c"
 
+/* Initialize both indexed handles and prepare the shared sound handle;
+ * only the first indexed handle is gated by gNumPlayers == 1. Preserve
+ * callback reloads and each stored-halfword test against 255.
+ * RE_ORIGINAL_QUIRK: the shared handle is prepared without a preceding reset.
+ * RE_UNKNOWN: index bounds, all table/object extents and lifetimes, callback
+ * replacement, historical formal/local declarations and tiny volume purpose
+ * remain unresolved. Two grounded C drafts both compile to 416 bytes with
+ * all ordered object relocations exact, but 13 stack words differ: frame
+ * 40 versus 48 bytes, native homes 0x20/0x24 versus draft 0x24/0x28.
+ * Retain ASM; no recovery or extra readability credit is claimed. */
+#line 61 "src/modules/caraudio.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_004003B0.s")
 
+/* Snapshot the inner audio-state pointer, then process/reset/recreate each
+ * indexed sound handle; only the first handle is gated by gNumPlayers == 1.
+ * Reload the outer slot index and sound exports after each callback, and
+ * preserve the stored halfword reads before the original 255 tests.
+ * RE_UNKNOWN: index bounds, source/handle extents and lifetimes, callback
+ * replacement/alias domains and historical declarations remain unresolved.
+ * The first natural C draft compiles to 440 bytes with all ordered object
+ * relocation records exact, but 16 instruction words swap the binding and
+ * inner-state saved-register roles. Retain ASM pending full byte recovery;
+ * no recovery or additional readability credit is claimed. */
+#line 63 "src/modules/caraudio.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_00400550.s")
 
 #line 65 "src/modules/caraudio.c"
@@ -85,6 +107,21 @@ void carAudioUpdateSharedScalarAndEmitters(void *state) {
 }
 #line 70 "src/modules/caraudio.c"
 
+/* Copy screen-record matrices into matching registry entries, then run
+ * the original setting/motion-word gates and ordered audio helpers.
+ * RE_ORIGINAL_QUIRK: SCRN slot 0x14 copies an unchecked live count into local
+ * output; neither its provider nor this caller establishes a capacity bound.
+ * RE_UNKNOWN: the shared SCRN header returns a pointer although native uses
+ * a signed count word. Original local capacity, source/registry extents,
+ * signed identifier domains, pointer overflow, callback replacement/lifetimes,
+ * setting 0x86's meaning and historical direct-helper declarations need proof.
+ * The first natural draft preserves audited effects but compiles to 428
+ * versus 436 bytes with 101 differing instruction words and different
+ * complete 25-record object relocation lists. Output starts at 0x50 versus
+ * native 0x4C; register/loop setup and final gate block placement differ.
+ * Retain ASM and old declarations; no staged C/types/prototypes are accepted
+ * and no recovery or additional readability credit is claimed. */
+#line 71 "src/modules/caraudio.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_00400758.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_0040090C.s")
@@ -292,17 +329,26 @@ void carAudioPrependCommand(s32 value4, s32 soundHandlingEnabled, s32 valueC, u8
 
 extern u8 D_caraudio_00404230[];
 
-void func_caraudio_00403A2C(void *arg0, s32 arg1)
+/* For signed slotIndex <4, store [destination word, slotIndex] in the
+ * original 8-byte slot, then copy 64 bytes from the word loaded at
+ * binding+0xC, plus0x1A8, to destination word+0x10 through FMTX slot0xC.
+ * Load the source word after slot writes; no lower-bound guard exists.
+ * RE_UNKNOWN: historical formal types/expression, negative-index validity,
+ * slot capacity/consumers and referenced storage lifetimes need evidence.
+ * The inherited all-one masks remain until an exact clean reconstruction;
+ * the reused word is first a stride, then an address, not an emitter ID. */
+#line 168 "src/modules/caraudio.c"
+void func_caraudio_00403A2C(void *binding, s32 slotIndex)
 {
-  s32 *entry;
-  s32 emitter;
-  emitter = 8;
-  if (arg1 < 4)
+  s32 *slotWords;
+  s32 strideOrDestinationWord;
+  strideOrDestinationWord = 8;
+  if (slotIndex < 4)
   {
-    entry = (s32 *) (&D_caraudio_00404230[arg1 * emitter]);
-    emitter = ((((((((((((*((s32 *) (((u8 *) arg0) + 0x8))) & 0xFFFFFFFFFFFFFFFF) & 0xFFFFFFFFFFFFFFFF) & 0xFFFFFFFFFFFFFFFF) & 0xFFFFFFFFFFFFFFFF) & 0xFFFFFFFFFFFFFFFF) & 0xFFFFFFFFFFFFFFFF) & 0xFFFFFFFFFFFFFFFF) & 0xFFFFFFFFFFFFFFFF) & 0xFFFFFFFFFFFFFFFF) & 0xFFFFFFFFFFFFFFFF) & 0xFFFFFFFFFFFFFFFF) & 0xFFFFFFFFFFFFFFFF;
- entry[1] = arg1; entry[0] = emitter;
-    (*((void (**)(s32, s32)) (((u8 *) gUvFmtxExports) + 0xC)))(emitter + 0x10, (*((s32 *) (((u8 *) arg0) + 0xC))) + 0x1A8);
+    slotWords = (s32 *) (&D_caraudio_00404230[slotIndex * strideOrDestinationWord]);
+    strideOrDestinationWord = ((((((((((((*((s32 *) (((u8 *) binding) + 0x8))) & 0xFFFFFFFFFFFFFFFF) & 0xFFFFFFFFFFFFFFFF) & 0xFFFFFFFFFFFFFFFF) & 0xFFFFFFFFFFFFFFFF) & 0xFFFFFFFFFFFFFFFF) & 0xFFFFFFFFFFFFFFFF) & 0xFFFFFFFFFFFFFFFF) & 0xFFFFFFFFFFFFFFFF) & 0xFFFFFFFFFFFFFFFF) & 0xFFFFFFFFFFFFFFFF) & 0xFFFFFFFFFFFFFFFF) & 0xFFFFFFFFFFFFFFFF;
+ slotWords[1] = slotIndex; slotWords[0] = strideOrDestinationWord;
+    (*((void (**)(s32, s32)) (((u8 *) gUvFmtxExports) + 0xC)))(strideOrDestinationWord + 0x10, (*((s32 *) (((u8 *) binding) + 0xC))) + 0x1A8);
   }
 }
 
