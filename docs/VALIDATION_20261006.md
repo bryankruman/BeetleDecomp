@@ -2739,10 +2739,19 @@ Totals: 400 further recoveries after the 225 upstream ordinary imports, plus 135
 Frozen wave `2595-older-dobj-and-release-contracts-2595` and `accepted-older-dobj-and-release-contracts-2595` verify real translation-unit instructions/full relocations, 3 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 400 further readable functions
+## Historical accepted checkpoint — 400 further readable functions
 
 One existing DOBJ model transition gains nine scoped local roles and ten same-line contract comments. All164 instructions,16 ordered relocation records and two complete empty compiler logs match. Original pre-gate model read, missing-resource PANIC, historical FAKE no-op, separately captured old/new byte counts, unguarded allocation publication, repeated free of the captured old base, fresh pointer reads, NaN inequality, final halfword/byte stores and callback order remain unchanged. Searchable unknowns name the original caller, resource producer, allocator, lifetime and transform evidence still needed. Exact full-source/member/logical/physical inverse preserves1348 executable source rows; no public ABI, type, field, alias or ownership change. One older cleanup, zero recoveries. Normal extraction, original packed DOBJ, fresh full ROM,1034source pins, uncertainty index and complete unchanged800remaining/data2/address298 dictionaries required before guarded landing.
 
 Totals: 400 further recoveries after the 225 upstream ordinary imports, plus 1356 existing C semantic cleanups. Current ledger: 800 assembly references = 758 ordinary + 42 entrypoints; 720,232 known remaining instruction bytes; zero unknown sizes; 298 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `2622-older-dobj-model-contracts-2622` and `accepted-older-dobj-model-contracts-2622` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 400 further readable functions
+
+One existing DOBJ property query gains three scoped local roles and six same-line comments. All56 instructions,4 ordered relocation records and two empty compiler logs match. Preserve the signed upper-only object gate, word consumption followed by signed-halfword selector narrowing, zero termination, unsupported-selector cursor behavior, per-case fresh output pointer and field reads, and four-byte stores including zero-extended model halfword. Five searchable unknown notes identify missing original caller, argument producer, allocator, output extent, alias and lifecycle evidence. Exact full-source/member/logical/physical inverse preserves1348 executable rows; no public ABI/type/member/ownership change. One older cleanup, zero recoveries. Normal extraction, original packed DOBJ, fresh full ROM,1034source pins, index and complete unchanged800remaining/data2/address298 dictionaries required before guarded landing.
+
+Totals: 400 further recoveries after the 225 upstream ordinary imports, plus 1357 existing C semantic cleanups. Current ledger: 800 assembly references = 758 ordinary + 42 entrypoints; 720,232 known remaining instruction bytes; zero unknown sizes; 298 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `2637-older-dobj-getter-contracts-2637` and `accepted-older-dobj-getter-contracts-2637` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

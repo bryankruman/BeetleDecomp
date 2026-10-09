@@ -277,7 +277,7 @@
     "src/modules/uvcontourld_rom.c": "41ea663b547c85255087cbba8cedc39bb964795476f0d682e11dafc61ae2d97a",
     "src/modules/uvdbg_rom.c": "20dbff47ebe571eb2b5462d238cd16c53f00157a154f22f8c051f64b8f1dce0b",
     "src/modules/uvdgeom_rom.c": "6fb52252f88afc60e053a4213e19fdebd44296f68d23ef8116e80f6460503ace",
-    "src/modules/uvdobj_rom.c": "fea252722a218bd05fadf2711a55f76a692d2027b27c86bb52ff96bd648072cd",
+    "src/modules/uvdobj_rom.c": "35953e5097846030646c7c5e8b983f82b747cbb202748c5c637654a17500eca8",
     "src/modules/uvdsetld_rom.c": "274d09695ac5beb2913e83e67baba614f43b5f52001c6d62c18a22bee027edf4",
     "src/modules/uvdyn_rom.c": "75452ccfc5179ee2ef080780960447ba028968464c3d3adf902fe7db4d2b15ac",
     "src/modules/uvear_rom.c": "83f2d9c53aac67e858f5c0af27d2d96d72a659a369fa541188f1cfa4ffaf3f1c",
@@ -330,8 +330,8 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "e5b6bc67028fcc2e66894f55ca605544e8f19b9b4da82e2a3e88ea051a6f9702",
-    "docs/VALIDATION_20261006.md": "61bf82a7614e2452b071913a52aad32e6e757fb5a3b81489709b26ad0b84481e"
+    "docs/STRATEGY_V4.md": "f794ca84a4a354d4d70c9a3bcc729e28820491f98446524a21a68d1ed9b6fae7",
+    "docs/VALIDATION_20261006.md": "9791721ab29ae6d01d977c3d26f9512b8209ed12957ec32f967b7952af71ddb1"
   },
   "counts": {
     "address_function": 939,
@@ -341,11 +341,11 @@
     "conditional_draft": 4,
     "decompiler_local": 914,
     "draft_marker": 27,
-    "explicit_unknown": 904,
+    "explicit_unknown": 909,
     "layout_padding": 274,
     "offset_field": 1585,
     "opaque_type": 282,
-    "original_quirk": 240,
+    "original_quirk": 241,
     "uncertainty_note": 91,
     "unused_identifier": 126
   },
@@ -136869,6 +136869,26 @@
       ]
     },
     {
+      "id": "Q-f713f84a2256",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdobj_rom.c",
+      "symbol": "Consume a word, then narrow to signed 16 bits. RE_UNKNOWN: historical argument types and zero termination need original argument producers.",
+      "lines": [
+        449
+      ],
+      "evidence": "Consume a word, then narrow to signed 16 bits. RE_UNKNOWN: historical argument types and zero termination need original argument producers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDobjGetProp",
+          "declaration_line": 437,
+          "lines": [
+            449
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-4dc60b3b2eb4",
       "kind": "explicit_unknown",
       "path": "src/modules/uvdobj_rom.c",
@@ -136904,6 +136924,26 @@
           "declaration_line": 478,
           "lines": [
             469
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-7ebe2b3bdd92",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdobj_rom.c",
+      "symbol": "Each case fetches its output pointer, reloads the field, then stores four bytes. RE_UNKNOWN: output writability/overlap and field roles need original producers/consumers.",
+      "lines": [
+        456
+      ],
+      "evidence": "Each case fetches its output pointer, reloads the field, then stores four bytes. RE_UNKNOWN: output writability/overlap and field roles need original producers/consumers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDobjGetProp",
+          "declaration_line": 437,
+          "lines": [
+            456
           ]
         }
       ]
@@ -137149,6 +137189,26 @@
       ]
     },
     {
+      "id": "Q-0db5d3eb2a35",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdobj_rom.c",
+      "symbol": "RE_ORIGINAL_QUIRK: signed upper-only gate. RE_UNKNOWN: negative-ID reachability needs original caller-domain evidence.",
+      "lines": [
+        442
+      ],
+      "evidence": "RE_ORIGINAL_QUIRK: signed upper-only gate. RE_UNKNOWN: negative-ID reachability needs original caller-domain evidence.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDobjGetProp",
+          "declaration_line": 437,
+          "lines": [
+            442
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-152a320e5936",
       "kind": "explicit_unknown",
       "path": "src/modules/uvdobj_rom.c",
@@ -137209,6 +137269,26 @@
       ]
     },
     {
+      "id": "Q-523bbcf4db1c",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdobj_rom.c",
+      "symbol": "RE_UNKNOWN: record/output extents, aliases and lifetime need original allocators and export 0x20 callers.",
+      "lines": [
+        438
+      ],
+      "evidence": "RE_UNKNOWN: record/output extents, aliases and lifetime need original allocators and export 0x20 callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDobjGetProp",
+          "declaration_line": 437,
+          "lines": [
+            438
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-67681e4114bc",
       "kind": "explicit_unknown",
       "path": "src/modules/uvdobj_rom.c",
@@ -137244,6 +137324,26 @@
           "declaration_line": 746,
           "lines": [
             744
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-fb77cef9acd0",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdobj_rom.c",
+      "symbol": "Unsupported nonzero selectors consume only their selector word; retain this cursor behavior. RE_UNKNOWN: valid selector streams need original export 0x20 callers.",
+      "lines": [
+        454
+      ],
+      "evidence": "Unsupported nonzero selectors consume only their selector word; retain this cursor behavior. RE_UNKNOWN: valid selector streams need original export 0x20 callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDobjGetProp",
+          "declaration_line": 437,
+          "lines": [
+            454
           ]
         }
       ]
@@ -219935,6 +220035,26 @@
           "declaration_line": 287,
           "lines": [
             297
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-01f8bd3a08c3",
+      "kind": "original_quirk",
+      "path": "src/modules/uvdobj_rom.c",
+      "symbol": "RE_ORIGINAL_QUIRK: signed upper-only gate. RE_UNKNOWN: negative-ID reachability needs original caller-domain evidence.",
+      "lines": [
+        442
+      ],
+      "evidence": "RE_ORIGINAL_QUIRK: signed upper-only gate. RE_UNKNOWN: negative-ID reachability needs original caller-domain evidence.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDobjGetProp",
+          "declaration_line": 437,
+          "lines": [
+            442
           ]
         }
       ]

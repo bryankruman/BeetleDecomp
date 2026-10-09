@@ -434,32 +434,32 @@ void uvDobjProps(s32 objId, ...) {
     va_end(args);
 }
 
-void uvDobjGetProp(s32 objId, ...) {
-    DObj *obj;
-    s16 prop;
+void uvDobjGetProp(s32 objectId, ...) {
+    DObj *object; /* RE_UNKNOWN: record/output extents, aliases and lifetime need original allocators and export 0x20 callers. */
+    s16 propertySelector;
     va_list args;
 
-    if (objId >= sUvDobjId) {
+    if (objectId >= sUvDobjId) { /* RE_ORIGINAL_QUIRK: signed upper-only gate. RE_UNKNOWN: negative-ID reachability needs original caller-domain evidence. */
         return;
     }
-    obj = &sDObjs[objId];
-    va_start(args, objId);
+    object = &sDObjs[objectId];
+    va_start(args, objectId);
 
     while (TRUE) {
-        prop = va_arg(args, s32);
-        if (prop == NULL) {
+        propertySelector = va_arg(args, s32); /* Consume a word, then narrow to signed 16 bits. RE_UNKNOWN: historical argument types and zero termination need original argument producers. */
+        if (propertySelector == NULL) {
             return;
         }
 
-        switch (prop) {
+        switch (propertySelector) { /* Unsupported nonzero selectors consume only their selector word; retain this cursor behavior. RE_UNKNOWN: valid selector streams need original export 0x20 callers. */
             case 7:
-                *va_arg(args, f32 *) = obj->unk10;
+                *va_arg(args, f32 *) = object->unk10; /* Each case fetches its output pointer, reloads the field, then stores four bytes. RE_UNKNOWN: output writability/overlap and field roles need original producers/consumers. */
                 break;
             case 8:
-                *va_arg(args, s32 *) = obj->modelId;
+                *va_arg(args, s32 *) = object->modelId; /* Preserve the zero-extended model halfword written as a full word. */
                 break;
             case 6:
-                *va_arg(args, s32 *) = obj->unk14;
+                *va_arg(args, s32 *) = object->unk14;
                 break;
         }
     }

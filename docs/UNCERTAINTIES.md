@@ -17,8 +17,8 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 904 |
-| Preserved RE_ORIGINAL_QUIRK notes | 240 |
+| Explicit RE_UNKNOWN notes | 909 |
+| Preserved RE_ORIGINAL_QUIRK notes | 241 |
 | Older comments with uncertainty language | 91 |
 | Documented original-behavior audits | 30 |
 | Assembly-backed functions or data | 802 |
@@ -5858,8 +5858,10 @@ For every future source wave, regenerate and check this index after code and str
 | explicit_unknown | `Capture this old resource byte before allocation/callbacks. RE_UNKNOWN: old/new count compatibility needs original model-transition producers.` | function `uvDobjModel` | [337](../src/modules/uvdobj_rom.c#L337) |
 | explicit_unknown | `Cases 4/5 store the first word before fetching the second. RE_UNKNOWN: word roles and pointee ownership need original consumers; do not infer them from callback-shaped uses.` | function `uvDobjProps` | [420](../src/modules/uvdobj_rom.c#L420) |
 | explicit_unknown | `Consume a word, then narrow to signed 16 bits. RE_UNKNOWN: argument types, selector domains and zero termination need original callers and historical declarations.` | function `uvDobjProps` | [385](../src/modules/uvdobj_rom.c#L385) |
+| explicit_unknown | `Consume a word, then narrow to signed 16 bits. RE_UNKNOWN: historical argument types and zero termination need original argument producers.` | function `uvDobjGetProp` | [449](../src/modules/uvdobj_rom.c#L449) |
 | explicit_unknown | `Copy a stored part matrix to the supplied destination, then apply the * original model scalar: scaling for part zero, translation division for * other parts. Retain per-componen...` | function `uvDobjGetPosm` | [521](../src/modules/uvdobj_rom.c#L521) |
 | explicit_unknown | `Copy the supplied matrix into the stored part slot, then apply the original * model scalar: reciprocal scaling for part zero, translation multiplication * for other parts. Prese...` | function `uvDobjPosm` | [469](../src/modules/uvdobj_rom.c#L469) |
+| explicit_unknown | `Each case fetches its output pointer, reloads the field, then stores four bytes. RE_UNKNOWN: output writability/overlap and field roles need original producers/consumers.` | function `uvDobjGetProp` | [456](../src/modules/uvdobj_rom.c#L456) |
 | explicit_unknown | `Extract quaternions from nonroot object matrices and write one-based joint * indices. Return max(model joint count - 1, 0). RE_UNKNOWN: object/model validity * and output capaci...` | function `uvDobjExtractJointQuaternionsFromMatrices` | [1498](../src/modules/uvdobj_rom.c#L1498) |
 | explicit_unknown | `FAKE: RE_UNKNOWN: historical compiler workaround; preserve the triple pointer no-op until original declarations/source justify a natural replacement.` | function `uvDobjModel` | [312](../src/modules/uvdobj_rom.c#L312) |
 | explicit_unknown | `For a nonnegative object index and nonsentinel model ID, update the * model only when it differs and is loaded. The upper index is unchecked. * RE_UNKNOWN: valid object-index do...` | function `uvDobjSetLoadedModel` | [268](../src/modules/uvdobj_rom.c#L268) |
@@ -5872,11 +5874,14 @@ For every future source wave, regenerate and check this index after code and str
 | explicit_unknown | `RE_ORIGINAL_QUIRK: free the same captured base after each old-matrix copy; no old/new count clamp. RE_UNKNOWN: ownership, repeat-free validity and reachability need original all...` | function `uvDobjModel` | [354](../src/modules/uvdobj_rom.c#L354) |
 | explicit_unknown | `RE_ORIGINAL_QUIRK: native checks only the signed upper bound. RE_UNKNOWN: negative-ID reachability needs original caller-domain evidence.` | function `uvDobjProps` | [387](../src/modules/uvdobj_rom.c#L387) |
 | explicit_unknown | `RE_ORIGINAL_QUIRK: native reads modelId before the signed upper-only ID gate. RE_UNKNOWN: valid IDs and pre-gate readability need original caller-domain evidence.` | function `uvDobjModel` | [297](../src/modules/uvdobj_rom.c#L297) |
+| explicit_unknown | `RE_ORIGINAL_QUIRK: signed upper-only gate. RE_UNKNOWN: negative-ID reachability needs original caller-domain evidence.` | function `uvDobjGetProp` | [442](../src/modules/uvdobj_rom.c#L442) |
 | explicit_unknown | `RE_UNKNOWN: lookup can return null, but the next read has no null gate; valid model IDs and resource lifetime need original loaders/callers.` | function `uvDobjProps` | [404](../src/modules/uvdobj_rom.c#L404) |
 | explicit_unknown | `RE_UNKNOWN: object storage extent, aliases and lifetime need original allocators and export 0x1C callers.` | function `uvDobjProps` | [382](../src/modules/uvdobj_rom.c#L382) |
 | explicit_unknown | `RE_UNKNOWN: record extents, aliases and lifetime need original allocators and export 0x14 callers; UVMD field roles need independent consumers.` | function `uvDobjModel` | [295](../src/modules/uvdobj_rom.c#L295) |
+| explicit_unknown | `RE_UNKNOWN: record/output extents, aliases and lifetime need original allocators and export 0x20 callers.` | function `uvDobjGetProp` | [438](../src/modules/uvdobj_rom.c#L438) |
 | explicit_unknown | `Reload this byte after callbacks; native flag setter stores one byte. RE_UNKNOWN: flag meanings and its different inclusive upper-ID gate need original callers/consumers.` | function `uvDobjModel` | [369](../src/modules/uvdobj_rom.c#L369) |
 | explicit_unknown | `Store 1.0f / scalar in the object-indexed array without input checks. * RE_UNKNOWN: index bounds and divisor domain; trace original callers/storage.` | function `uvDobjSetReciprocalScalar` | [744](../src/modules/uvdobj_rom.c#L744) |
+| explicit_unknown | `Unsupported nonzero selectors consume only their selector word; retain this cursor behavior. RE_UNKNOWN: valid selector streams need original export 0x20 callers.` | function `uvDobjGetProp` | [454](../src/modules/uvdobj_rom.c#L454) |
 | layout_padding | `pad` | function `func_uvdobj_rom_00402420`, function `func_uvdobj_rom_00402D68`, function `func_uvdobj_rom_004032DC`, function `uvDobjPosm` | [480](../src/modules/uvdobj_rom.c#L480), [1112](../src/modules/uvdobj_rom.c#L1112), [1328](../src/modules/uvdobj_rom.c#L1328), [1441](../src/modules/uvdobj_rom.c#L1441) |
 | layout_padding | `pad0` | type `UnkTerra_Exports` | [36](../src/modules/uvdobj_rom.c#L36) |
 | layout_padding | `pad18` | type `DObj` | [20](../src/modules/uvdobj_rom.c#L20) |
@@ -5905,6 +5910,7 @@ For every future source wave, regenerate and check this index after code and str
 | original_quirk | `RE_ORIGINAL_QUIRK: free the same captured base after each old-matrix copy; no old/new count clamp. RE_UNKNOWN: ownership, repeat-free validity and reachability need original all...` | function `uvDobjModel` | [354](../src/modules/uvdobj_rom.c#L354) |
 | original_quirk | `RE_ORIGINAL_QUIRK: native checks only the signed upper bound. RE_UNKNOWN: negative-ID reachability needs original caller-domain evidence.` | function `uvDobjProps` | [387](../src/modules/uvdobj_rom.c#L387) |
 | original_quirk | `RE_ORIGINAL_QUIRK: native reads modelId before the signed upper-only ID gate. RE_UNKNOWN: valid IDs and pre-gate readability need original caller-domain evidence.` | function `uvDobjModel` | [297](../src/modules/uvdobj_rom.c#L297) |
+| original_quirk | `RE_ORIGINAL_QUIRK: signed upper-only gate. RE_UNKNOWN: negative-ID reachability needs original caller-domain evidence.` | function `uvDobjGetProp` | [442](../src/modules/uvdobj_rom.c#L442) |
 | unused_identifier | `unused` | function `func_uvdobj_rom_00402D68` | [1338](../src/modules/uvdobj_rom.c#L1338), [1342](../src/modules/uvdobj_rom.c#L1342), [1363](../src/modules/uvdobj_rom.c#L1363) |
 | unused_identifier | `unusedMode` | function `uvDobjQueueVisibleChannelObjects` | [658](../src/modules/uvdobj_rom.c#L658) |
 
