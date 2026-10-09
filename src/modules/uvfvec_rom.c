@@ -103,10 +103,10 @@ void uvFvecModuleCleanup(void) {
     uvUnloadModule('MATH'); // Unload math module
 }
 
-void uvVec3FSet(Vec3F *vec, f32 x, f32 y, f32 z) {
-    vec->x = x;
-    vec->y = y;
-    vec->z = z;
+void uvVec3FSet(Vec3F *destination, f32 x, f32 y, f32 z) {
+    destination->x = x; /* Store supplied f32 components in x/y/z order. */
+    destination->y = y;
+    destination->z = z; /* RE_UNKNOWN: destination extent/alias/lifetime need caller/allocation evidence. */
 }
 
 #line 112 "src/modules/uvfvec_rom.c"
@@ -297,15 +297,15 @@ s32 uvVec3FIsZero(Vec3F *v) {
     return FALSE;
 }
 
-void uvVec3FNegate(Vec3F* va, Vec3F *vb) {
-    va->x = -vb->x;
-    va->y = -vb->y;
-    va->z = -vb->z;
+void uvVec3FNegate(Vec3F* destination, Vec3F *source) {
+    destination->x = -source->x; /* Retain unary f32 negation and component store order. */
+    destination->y = -source->y;
+    destination->z = -source->z; /* RE_UNKNOWN: caller alias/storage/lifetime and FP contracts remain unproved. */
 }
 
-void uvVec2FSet(Vec2F *vd, f32 x, f32 y) {
-    vd->x = x;
-    vd->y = y;
+void uvVec2FSet(Vec2F *destination, f32 x, f32 y) {
+    destination->x = x; /* Store supplied f32 components in x/y order. */
+    destination->y = y; /* RE_UNKNOWN: destination extent/alias/lifetime need caller/allocation evidence. */
 }
 
 #line 280 "src/modules/uvfvec_rom.c"
@@ -340,8 +340,8 @@ f32 uvVec2FLengthSquared(Vec2F *vector) {
 }
 #line 303 "src/modules/uvfvec_rom.c"
 
-f32 uvVec2FDot(Vec2F *va, Vec2F *vb) {
-    return (va->x * vb->x) + (va->y * vb->y);
+f32 uvVec2FDot(Vec2F *first, Vec2F *second) {
+    return (first->x * second->x) + (first->y * second->y); /* Keep f32 product grouping. RE_UNKNOWN: caller storage/lifetime and FP contracts. */
 }
 
 void uvVec2FCopy(Vec2F *destination, Vec2F *source) {
@@ -363,9 +363,9 @@ f32 uvVec2FScalarProj(Vec2F* first, Vec2F* second) {
 }
 #line 321 "src/modules/uvfvec_rom.c"
 
-void uvVec2FAdd(Vec2F *vdst, Vec2F *va, Vec2F *vb) {
-    vdst->x = va->x + vb->x;
-    vdst->y = va->y + vb->y;
+void uvVec2FAdd(Vec2F *destination, Vec2F *first, Vec2F *second) {
+    destination->x = first->x + second->x; /* Component-wise f32 sum; retain operand/store order. */
+    destination->y = first->y + second->y; /* RE_UNKNOWN: caller alias/storage/lifetime and FP contracts remain unproved. */
 }
 
 #line 327 "src/modules/uvfvec_rom.c"

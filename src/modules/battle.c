@@ -369,6 +369,21 @@ void battleRunFrameCallbacks(void) {
 }
 #line 189 "src/modules/battle.c"
 
+/* Original Battle1BB8 calls two distinct screen-width/height getter pairs,
+ * appends the viewport, builds/pushes an orthographic matrix, then pushes,
+ * sets and clears graphics-state bits before dispatching one mode snapshot.
+ * Mode 0 gates two helpers on settings +0x86/+0x709C, then calls four more;
+ * modes 1/2 share a helper, mode 3 calls the loaded PAUSE slot 0x0C.
+ * The final graphics-state pop and all intervening export reloads remain.
+ * RE_UNKNOWN: mode/settings meanings and writers, module availability and
+ * callback replacement lifetimes need original producers and entry callers.
+ * Historical declarations/local storage need original source or exact proof.
+ * Trial2792: 504/504 bytes; six words differ solely in frame 104/112 bytes,
+ * width home SP+0x20/SP+0x6C and stack restoration. The complete 35-record
+ * reference-object and draft relocation lists are identical. No missing
+ * callback, scalar conversion or control effect was identified. Retain ASM;
+ * no trial headers, types, prototypes or C body accepted. */
+#line 190 "src/modules/battle.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00401BB8.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00401DB0.s")
@@ -390,6 +405,24 @@ void battleRunFrameCallbacks(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_0040372C.s")
 
+/* Original Battle3A54 sets graphics state and a projection, then walks nodes
+ * at stride 0x5B8. A signed count/limit or ordered-positive +0x598 gate selects
+ * six texture/rectangle slots. Each slot scans all fixed +0x18 entry pointers
+ * with a signed byte counter and a 32-bit count shift, retaining every match.
+ * CHAN tag 5 supplies four word outputs; later count reads choose coordinates.
+ * Reload the outer count after an active block; skipped nodes keep its snapshot.
+ * RE_ORIGINAL_QUIRK: CHAN rejection leaves caller output words untouched;
+ * the original caller initializes none and adds no rejection check.
+ * RE_UNKNOWN: node/link/entry/texture extents, ID/count/shift domains, output
+ * meanings, aliases and callback lifetimes need original producers/callers.
+ * Historical declarations and read/storage organization remain unproved.
+ * Trial2792: 692/684 bytes, 146 differing words; frame 256/240 bytes and
+ * matrix/output homes differ. Draft merges the positive-test/bound count reads
+ * and uses distinct count/limit aliases instead of shared-base fixed offsets.
+ * The complete 20-record reference-object and 22-record draft lists differ.
+ * All observed callbacks, gates and outer-count reload paths are represented;
+ * no supported semantic correction identified. Retain ASM and trial-only types. */
+#line 204 "src/modules/battle.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00403A54.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00403D08.s")
