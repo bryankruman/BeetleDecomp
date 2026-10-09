@@ -2935,10 +2935,19 @@ Totals: 400 further recoveries after the 225 upstream ordinary imports, plus 135
 Frozen wave `2622-older-dobj-model-contracts-2622` and `accepted-older-dobj-model-contracts-2622` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 400 further readable functions
+## Historical accepted checkpoint — 400 further readable functions
 
 One existing DOBJ property query gains three scoped local roles and six same-line comments. All56 instructions,4 ordered relocation records and two empty compiler logs match. Preserve the signed upper-only object gate, word consumption followed by signed-halfword selector narrowing, zero termination, unsupported-selector cursor behavior, per-case fresh output pointer and field reads, and four-byte stores including zero-extended model halfword. Five searchable unknown notes identify missing original caller, argument producer, allocator, output extent, alias and lifecycle evidence. Exact full-source/member/logical/physical inverse preserves1348 executable rows; no public ABI/type/member/ownership change. One older cleanup, zero recoveries. Normal extraction, original packed DOBJ, fresh full ROM,1034source pins, index and complete unchanged800remaining/data2/address298 dictionaries required before guarded landing.
 
 Totals: 400 further recoveries after the 225 upstream ordinary imports, plus 1357 existing C semantic cleanups. Current ledger: 800 assembly references = 758 ordinary + 42 entrypoints; 720,232 known remaining instruction bytes; zero unknown sizes; 298 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `2637-older-dobj-getter-contracts-2637` and `accepted-older-dobj-getter-contracts-2637` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 400 further readable functions
+
+One existing DOBJ object slot creator gains a scoped index name and six same-line comments. All50 original instructions,8 ordered relocation records and two empty compiler logs match. Preserve signed count traversal, the first zero occupancy byte, publication before ordered partial reset with global-base reloads, the conditional signed ID-limit update, and fullwordFFFF failure return. Four searchable unknowns name settings/count validity, pool extents, allocation and field lifetime, release/reuse rules, aliases and displaced-buffer ownership. Exact full-source/member/logical/physical inverse preserves1348 executable rows. No field/type/ABI/algorithm change. One older cleanup, zero recoveries. Require normal extraction, original packed DOBJ, fresh fullROM,1034source pins, index and unchanged full800remaining/data2/address298 dictionaries before guarded landing.
+
+Totals: 400 further recoveries after the 225 upstream ordinary imports, plus 1358 existing C semantic cleanups. Current ledger: 800 assembly references = 758 ordinary + 42 entrypoints; 720,232 known remaining instruction bytes; zero unknown sizes; 298 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `2646-older-dobj-create-contracts-2646` and `accepted-older-dobj-create-contracts-2646` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

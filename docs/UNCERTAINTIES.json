@@ -277,7 +277,7 @@
     "src/modules/uvcontourld_rom.c": "41ea663b547c85255087cbba8cedc39bb964795476f0d682e11dafc61ae2d97a",
     "src/modules/uvdbg_rom.c": "20dbff47ebe571eb2b5462d238cd16c53f00157a154f22f8c051f64b8f1dce0b",
     "src/modules/uvdgeom_rom.c": "6fb52252f88afc60e053a4213e19fdebd44296f68d23ef8116e80f6460503ace",
-    "src/modules/uvdobj_rom.c": "35953e5097846030646c7c5e8b983f82b747cbb202748c5c637654a17500eca8",
+    "src/modules/uvdobj_rom.c": "909db73979d3b7a0a8fcb516af36e5082a7ab93e4124d73901b095632f34cb2a",
     "src/modules/uvdsetld_rom.c": "274d09695ac5beb2913e83e67baba614f43b5f52001c6d62c18a22bee027edf4",
     "src/modules/uvdyn_rom.c": "75452ccfc5179ee2ef080780960447ba028968464c3d3adf902fe7db4d2b15ac",
     "src/modules/uvear_rom.c": "83f2d9c53aac67e858f5c0af27d2d96d72a659a369fa541188f1cfa4ffaf3f1c",
@@ -330,8 +330,8 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "f794ca84a4a354d4d70c9a3bcc729e28820491f98446524a21a68d1ed9b6fae7",
-    "docs/VALIDATION_20261006.md": "9791721ab29ae6d01d977c3d26f9512b8209ed12957ec32f967b7952af71ddb1"
+    "docs/STRATEGY_V4.md": "80fbc12be960a217be35f21c57da0c505f10ceb491eb35262f5e7c97e590f686",
+    "docs/VALIDATION_20261006.md": "9c13ed6ea17e63a5b1fd08fa3bdfa8384f38895a5ed9aedb6c25c2b7a6f8ab79"
   },
   "counts": {
     "address_function": 939,
@@ -341,7 +341,7 @@
     "conditional_draft": 4,
     "decompiler_local": 914,
     "draft_marker": 27,
-    "explicit_unknown": 909,
+    "explicit_unknown": 913,
     "layout_padding": 274,
     "offset_field": 1585,
     "opaque_type": 282,
@@ -137029,6 +137029,26 @@
       ]
     },
     {
+      "id": "Q-17cbaa7c9a2c",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdobj_rom.c",
+      "symbol": "Preserve every record-base reload and store order. RE_UNKNOWN: aliasing and displaced-buffer ownership need original producers/consumers; no cleanup is inferred here.",
+      "lines": [
+        624
+      ],
+      "evidence": "Preserve every record-base reload and store order. RE_UNKNOWN: aliasing and displaced-buffer ownership need original producers/consumers; no cleanup is inferred here.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDobjCreate",
+          "declaration_line": 613,
+          "lines": [
+            624
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-030a3f80f41a",
       "kind": "explicit_unknown",
       "path": "src/modules/uvdobj_rom.c",
@@ -137129,6 +137149,26 @@
       ]
     },
     {
+      "id": "Q-1e34191f1672",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdobj_rom.c",
+      "symbol": "Publish this byte before the partial reset below; no modelId reset or full-record clear is performed. RE_UNKNOWN: valid reused-record state needs original lifecycle evidence.",
+      "lines": [
+        618
+      ],
+      "evidence": "Publish this byte before the partial reset below; no modelId reset or full-record clear is performed. RE_UNKNOWN: valid reused-record state needs original lifecycle evidence.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDobjCreate",
+          "declaration_line": 613,
+          "lines": [
+            618
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-bdb3b81fb82d",
       "kind": "explicit_unknown",
       "path": "src/modules/uvdobj_rom.c",
@@ -137204,6 +137244,26 @@
           "declaration_line": 437,
           "lines": [
             442
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-367b0c35e006",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdobj_rom.c",
+      "symbol": "RE_UNKNOWN: count validity, record extents and allocation lifetime need original settings, allocators and export 0x3C callers.",
+      "lines": [
+        614
+      ],
+      "evidence": "RE_UNKNOWN: count validity, record extents and allocation lifetime need original settings, allocators and export 0x3C callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDobjCreate",
+          "declaration_line": 613,
+          "lines": [
+            614
           ]
         }
       ]
@@ -137304,6 +137364,26 @@
           "declaration_line": 287,
           "lines": [
             369
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-337f9443c408",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdobj_rom.c",
+      "symbol": "Select the first zero byte at record +0x05. RE_UNKNOWN: occupancy/reuse rules need original release paths and callers.",
+      "lines": [
+        617
+      ],
+      "evidence": "Select the first zero byte at record +0x05. RE_UNKNOWN: occupancy/reuse rules need original release paths and callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDobjCreate",
+          "declaration_line": 613,
+          "lines": [
+            617
           ]
         }
       ]

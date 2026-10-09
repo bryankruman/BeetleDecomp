@@ -611,21 +611,21 @@ void uvDobjClearFlagBits(s32 objectId, s32 mask) {
 #line 559 "src/modules/uvdobj_rom.c"
 
 s32 uvDobjCreate(void) {
-    s32 i;
+    s32 objectIndex; /* RE_UNKNOWN: count validity, record extents and allocation lifetime need original settings, allocators and export 0x3C callers. */
 
-    for (i = 0; i < sDObjsCount; i++) {
-        if (sDObjs[i].unk5 == 0) {
-            sDObjs[i].unk5 = 1;
-            sDObjs[i].unk2 = -1;
-            sDObjs[i].unk7 = 0;
-            sDObjs[i].unk20 = 0;
-            sDObjs[i].unk24 = 0;
-            sDObjs[i].unk1A = 0;
-            sDObjs[i].unk1C = 0;
-            if (sUvDobjId < i + 1) {
-                sUvDobjId = i + 1;
+    for (objectIndex = 0; objectIndex < sDObjsCount; objectIndex++) { /* Native scans signed indices below the captured count; nonpositive counts return 0xFFFF. */
+        if (sDObjs[objectIndex].unk5 == 0) { /* Select the first zero byte at record +0x05. RE_UNKNOWN: occupancy/reuse rules need original release paths and callers. */
+            sDObjs[objectIndex].unk5 = 1; /* Publish this byte before the partial reset below; no modelId reset or full-record clear is performed. RE_UNKNOWN: valid reused-record state needs original lifecycle evidence. */
+            sDObjs[objectIndex].unk2 = -1;
+            sDObjs[objectIndex].unk7 = 0;
+            sDObjs[objectIndex].unk20 = 0;
+            sDObjs[objectIndex].unk24 = 0;
+            sDObjs[objectIndex].unk1A = 0;
+            sDObjs[objectIndex].unk1C = 0; /* Preserve every record-base reload and store order. RE_UNKNOWN: aliasing and displaced-buffer ownership need original producers/consumers; no cleanup is inferred here. */
+            if (sUvDobjId < objectIndex + 1) { /* Raise the ID limit only when lower; no full-record initialization or capacity guarantee follows. */
+                sUvDobjId = objectIndex + 1;
             }
-            return i;
+            return objectIndex;
         }
     }
 

@@ -17,7 +17,7 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 909 |
+| Explicit RE_UNKNOWN notes | 913 |
 | Preserved RE_ORIGINAL_QUIRK notes | 241 |
 | Older comments with uncertainty language | 91 |
 | Documented original-behavior audits | 30 |
@@ -5866,20 +5866,24 @@ For every future source wave, regenerate and check this index after code and str
 | explicit_unknown | `FAKE: RE_UNKNOWN: historical compiler workaround; preserve the triple pointer no-op until original declarations/source justify a natural replacement.` | function `uvDobjModel` | [312](../src/modules/uvdobj_rom.c#L312) |
 | explicit_unknown | `For a nonnegative object index and nonsentinel model ID, update the * model only when it differs and is loaded. The upper index is unchecked. * RE_UNKNOWN: valid object-index do...` | function `uvDobjSetLoadedModel` | [268](../src/modules/uvdobj_rom.c#L268) |
 | explicit_unknown | `Native copy interleaves loads/stores. RE_UNKNOWN: readable/writable extents, overlap and resource lifetime need original producers/consumers; retain these fresh pointer reads.` | function `uvDobjModel` | [360](../src/modules/uvdobj_rom.c#L360) |
+| explicit_unknown | `Preserve every record-base reload and store order. RE_UNKNOWN: aliasing and displaced-buffer ownership need original producers/consumers; no cleanup is inferred here.` | function `uvDobjCreate` | [624](../src/modules/uvdobj_rom.c#L624) |
 | explicit_unknown | `Preserve native null store, then the loop backedge if control continues; the missing-model path instead returns. RE_UNKNOWN: error-path reachability needs original callers/runti...` | function `uvDobjProps` | [428](../src/modules/uvdobj_rom.c#L428) |
 | explicit_unknown | `Preserve the native null store, then remaining control if execution continues. RE_UNKNOWN: missing-model error-path reachability needs original loaders/callers/runtime evidence.` | function `uvDobjModel` | [310](../src/modules/uvdobj_rom.c#L310) |
 | explicit_unknown | `Preserve the unequal-to-1 test, including NaN, and scale only the first three matrix rows. RE_UNKNOWN: factor units and finite/nonzero domains need original resource producers a...` | function `uvDobjModel` | [364](../src/modules/uvdobj_rom.c#L364) |
 | explicit_unknown | `Preserve this and case 3 variable shifts. RE_UNKNOWN: C shift domains and historical types need original argument producers; native SLLV alone does not establish valid C inputs.` | function `uvDobjProps` | [411](../src/modules/uvdobj_rom.c#L411) |
 | explicit_unknown | `Publish pointer/count without a success gate; native allocator can return null. RE_UNKNOWN: allocation outcomes, capacities and valid zero-count transitions need original resour...` | function `uvDobjModel` | [348](../src/modules/uvdobj_rom.c#L348) |
+| explicit_unknown | `Publish this byte before the partial reset below; no modelId reset or full-record clear is performed. RE_UNKNOWN: valid reused-record state needs original lifecycle evidence.` | function `uvDobjCreate` | [618](../src/modules/uvdobj_rom.c#L618) |
 | explicit_unknown | `RE_ORIGINAL_QUIRK: free the same captured base after each old-matrix copy; no old/new count clamp. RE_UNKNOWN: ownership, repeat-free validity and reachability need original all...` | function `uvDobjModel` | [354](../src/modules/uvdobj_rom.c#L354) |
 | explicit_unknown | `RE_ORIGINAL_QUIRK: native checks only the signed upper bound. RE_UNKNOWN: negative-ID reachability needs original caller-domain evidence.` | function `uvDobjProps` | [387](../src/modules/uvdobj_rom.c#L387) |
 | explicit_unknown | `RE_ORIGINAL_QUIRK: native reads modelId before the signed upper-only ID gate. RE_UNKNOWN: valid IDs and pre-gate readability need original caller-domain evidence.` | function `uvDobjModel` | [297](../src/modules/uvdobj_rom.c#L297) |
 | explicit_unknown | `RE_ORIGINAL_QUIRK: signed upper-only gate. RE_UNKNOWN: negative-ID reachability needs original caller-domain evidence.` | function `uvDobjGetProp` | [442](../src/modules/uvdobj_rom.c#L442) |
+| explicit_unknown | `RE_UNKNOWN: count validity, record extents and allocation lifetime need original settings, allocators and export 0x3C callers.` | function `uvDobjCreate` | [614](../src/modules/uvdobj_rom.c#L614) |
 | explicit_unknown | `RE_UNKNOWN: lookup can return null, but the next read has no null gate; valid model IDs and resource lifetime need original loaders/callers.` | function `uvDobjProps` | [404](../src/modules/uvdobj_rom.c#L404) |
 | explicit_unknown | `RE_UNKNOWN: object storage extent, aliases and lifetime need original allocators and export 0x1C callers.` | function `uvDobjProps` | [382](../src/modules/uvdobj_rom.c#L382) |
 | explicit_unknown | `RE_UNKNOWN: record extents, aliases and lifetime need original allocators and export 0x14 callers; UVMD field roles need independent consumers.` | function `uvDobjModel` | [295](../src/modules/uvdobj_rom.c#L295) |
 | explicit_unknown | `RE_UNKNOWN: record/output extents, aliases and lifetime need original allocators and export 0x20 callers.` | function `uvDobjGetProp` | [438](../src/modules/uvdobj_rom.c#L438) |
 | explicit_unknown | `Reload this byte after callbacks; native flag setter stores one byte. RE_UNKNOWN: flag meanings and its different inclusive upper-ID gate need original callers/consumers.` | function `uvDobjModel` | [369](../src/modules/uvdobj_rom.c#L369) |
+| explicit_unknown | `Select the first zero byte at record +0x05. RE_UNKNOWN: occupancy/reuse rules need original release paths and callers.` | function `uvDobjCreate` | [617](../src/modules/uvdobj_rom.c#L617) |
 | explicit_unknown | `Store 1.0f / scalar in the object-indexed array without input checks. * RE_UNKNOWN: index bounds and divisor domain; trace original callers/storage.` | function `uvDobjSetReciprocalScalar` | [744](../src/modules/uvdobj_rom.c#L744) |
 | explicit_unknown | `Unsupported nonzero selectors consume only their selector word; retain this cursor behavior. RE_UNKNOWN: valid selector streams need original export 0x20 callers.` | function `uvDobjGetProp` | [454](../src/modules/uvdobj_rom.c#L454) |
 | layout_padding | `pad` | function `func_uvdobj_rom_00402420`, function `func_uvdobj_rom_00402D68`, function `func_uvdobj_rom_004032DC`, function `uvDobjPosm` | [480](../src/modules/uvdobj_rom.c#L480), [1112](../src/modules/uvdobj_rom.c#L1112), [1328](../src/modules/uvdobj_rom.c#L1328), [1441](../src/modules/uvdobj_rom.c#L1441) |
