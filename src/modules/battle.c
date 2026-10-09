@@ -201,6 +201,19 @@ typedef struct {
 } BattleKindHandleSoundExports;
 
 void battleProcessKindSoundVariant(BattleKindSoundRecord *);
+
+/* Observed scalar words and handle addresses only. Complete historical
+ * declarations, gate purpose and storage ownership remain unproved. */
+extern s32 D_battle_00409F9C;
+extern f32 D_battle_00409BF4;
+extern f32 D_battle_00409BF8;
+extern f32 D_battle_00409BFC;
+extern f32 D_battle_00409C00;
+extern u8 D_battle_0040C5F0[];
+extern u8 D_battle_0040C5F8[];
+extern u8 D_battle_0040C600[];
+extern u8 D_battle_0040C608[];
+void battlePlayGatedIndexedSound(s32);
 #line 177 "src/modules/battle.c"
 typedef struct {
     u8 prefix[0x1A34];
@@ -381,8 +394,71 @@ void battleRunFrameCallbacks(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00403D08.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_00404074.s")
+#line 208 "src/modules/battle.c"
+/* Select one of four sound handles only while DATA+0x31C is nonzero.
+ * Each supported selector calls SND slot 0x4C, scales its result through its
+ * own original coefficient word, calls slot 0x08, then clears the gate.
+ * RE_UNKNOWN: selector producers, gate rearming/lifecycle, complete handle
+ * storage types and callback replacement/ownership need original callers
+ * and writers. Unsupported selectors leave the gate untouched. */
+void battlePlayGatedIndexedSound(s32 selector)
+{
+    f32 scalar;
 
+    switch (selector) {
+    case 0:
+        if (D_battle_00409F9C != 0) {
+            scalar = ((BattleThreeSoundExports *)gSndExports)->getScalar();
+            ((BattleThreeSoundExports *)gSndExports)->setupHandle(D_battle_0040C5F0, 162, 0x7F37,
+                scalar * D_battle_00409BF4, 0.5f);
+            D_battle_00409F9C = 0;
+        }
+        break;
+    case 1:
+        if (D_battle_00409F9C != 0) {
+            scalar = ((BattleThreeSoundExports *)gSndExports)->getScalar();
+            ((BattleThreeSoundExports *)gSndExports)->setupHandle(D_battle_0040C5F8, 163, 0x7F37,
+                scalar * D_battle_00409BF8, 0.5f);
+            D_battle_00409F9C = 0;
+        }
+        break;
+    case 2:
+        if (D_battle_00409F9C != 0) {
+            scalar = ((BattleThreeSoundExports *)gSndExports)->getScalar();
+            ((BattleThreeSoundExports *)gSndExports)->setupHandle(D_battle_0040C600, 164, 0x7F37,
+                scalar * D_battle_00409BFC, 0.5f);
+            D_battle_00409F9C = 0;
+        }
+        break;
+    case 3:
+        if (D_battle_00409F9C != 0) {
+            scalar = ((BattleThreeSoundExports *)gSndExports)->getScalar();
+            ((BattleThreeSoundExports *)gSndExports)->setupHandle(D_battle_0040C608, 165, 0x7F37,
+                scalar * D_battle_00409C00, 0.5f);
+            D_battle_00409F9C = 0;
+        }
+        break;
+    }
+}
+#line 209 "src/modules/battle.c"
+
+/* Original 425C draws a MATH slot 0x34 fraction before testing DATA+0x320.
+ * When enabled it signed-truncates fraction * 4, submits one of four managed
+ * handles through SND slot 0x4C then slot 0x08, and clears the gate afterward.
+ * RE_ORIGINAL_QUIRK: disabled calls still draw; an enabled unsupported
+ * selection still clears the gate. Preserve both paths and callback reloads.
+ * RE_UNKNOWN: gate producers/rearming, callback replacement/return domains,
+ * complete handle storage/ownership and historical declarations need original
+ * callers and writers. Eight equal-bit coefficient words stay distinct symbols.
+ * Retain ASM: draft 476 -> 476 bytes; 118 of 119 instruction words are exact.
+ * At 0x43F4 native MUL.S takes scalar F0 then coefficient F4; the draft
+ * reverses those sources. No floating exception/NaN equivalence is claimed.
+ * The 38-record reference-object and draft relocation multisets agree;
+ * enumeration differs. The draft's 20 module-local sites/kinds already follow
+ * the original packed order. Existing C10[] spelling does not prove its
+ * historical type. No operation/reload/ABI gap was identified; no trial C,
+ * types or prototype is accepted. */
+#line 210 "src/modules/battle.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/battle/func_battle_0040425C.s")
 
 #line 212 "src/modules/battle.c"
