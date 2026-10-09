@@ -1763,8 +1763,87 @@ void func_selection_00405078(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00405CB0.s")
 
+/* Capture the signed halfword at settings + selected index * 6 + 0x138
+ * before either input callback. Use the signed shared count as the upper
+ * limit, replacing values of at least 12 with 11. For a zero per-index gate
+ * byte, adjust that halfword with minimum 1, then invoke the adjacent
+ * menu-action setting routine. Reload the selected index and settings row
+ * after both calls. Compare the fresh halfword with the captured old value.
+ * On a difference, first load the signed mapping halfword at 0x420D52 +
+ * choice * 2, then set the shared change word to 1 and store the mapping at
+ * settings + fresh index * 6 + 0x13A. Clear only a result of at least 21.
+ * Send the narrowed signed value as CARANIM property 8 with zero terminator.
+ * RE_UNKNOWN: physical meanings of the two halfwords, mapping and change
+ * word; complete settings/mapping/gate/state-address storage and capacity;
+ * signed count/index/choice domains and reset producers; callback-driven
+ * index changes, aliases and provider/state allocation lifetimes; and
+ * complete historical declarations. Original callers, all count/index and
+ * settings writers, table/resource producers and deferred change-word
+ * consumers must establish those contracts. The draft mapping declaration is an
+ * unsized access view, not proof of a historical array extent. The property
+ * parser proves one word stored at state + 0x404, not that field's purpose.
+ * RE_ORIGINAL_QUIRK: the count has an upper-only limit and the mapped value
+ * has an upper-only reset. Signed indices and table choices have no local
+ * bounds tests; there are no local node/provider null tests in the callees.
+ * The old value can belong to a different selected row than the fresh value
+ * if callbacks change the index. Preserve that original comparison and
+ * load/store order. Valid-domain invariants and fault reachability remain
+ * unproved; no runtime fix or confirmed player fault is claimed.
+ * The readable draft remains unaccepted: 272 native bytes versus 264 draft
+ * bytes, 57 differing words, and 22 ELF records on each side with different
+ * sites and order. The compiler removes the native upper-cap branch/move
+ * pair, changes the frame from 32 to 40 bytes and assigns different mapping
+ * and provider registers. Native effects and callback-sensitive reloads are
+ * represented; historical expression lowering and local storage remain
+ * RE_UNKNOWN. Resolve with original declaration/source or new operation
+ * evidence, followed by complete instructions, serialized records and
+ * packed-module/ROM equality. The draft also exposes an incomplete no-input
+ * prototype for the adjacent 0x405F48 routine; its full historical declaration
+ * requires caller/provider evidence. No draft declarations or types were
+ * added here; the original ASM remains authoritative. */
+#line 1095 "src/modules/selection.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00405E38.s")
 
+/* For a zero per-index gate byte, request a MENU action using the
+ * shared latch address, signed selected index and current node's records
+ * pointer. Reload the selected index after the MENU callback. Only a zero
+ * cached action permits a step of the halfword at settings + index * 6 +
+ * 0x13A: action 4 decrements and wraps a negative narrowed result to 20;
+ * action 3 increments and wraps a narrowed result of at least 21 to zero.
+ * Send the resulting signed halfword as CARANIM property 8, followed by
+ * the original zero terminator. Reload the selected index after that
+ * callback before choosing the cache destination. Cache every returned
+ * action, including actions that do not step or invoke the property setter.
+ * RE_UNKNOWN: the halfword's physical meaning and valid initial domain;
+ * complete settings, gate, latch, action-cache, node and state-address
+ * storage declarations and capacities; selected-index producer/reset
+ * lifetimes and changes across callbacks; state allocation eligibility and
+ * provider lifetime; and complete historical call prototypes. Resolve
+ * through original callers, selection-state initialization/reset writers,
+ * allocation producers and all callback consumers. The draft export
+ * views preserve consumed word slots and declare no backing storage. The
+ * CARANIM parser proves a one-word property-8 store at state + 0x404; that
+ * offset does not establish the field's purpose or full state ownership.
+ * RE_ORIGINAL_QUIRK: indexing is signed and unchecked locally, node/provider
+ * pointers have no local null tests, and each step narrows to 16 bits before
+ * its one-sided wrap test. This is not a complete clamp for arbitrary
+ * initial values. Callback-driven index changes can select a different
+ * cache destination. Valid-domain invariants and fault reachability remain
+ * unproved; no runtime fix or confirmed player fault is claimed.
+ * The readable drafts remain unaccepted: 396 native bytes versus 396 first
+ * draft bytes with 36 differing words, then 404 snapshot draft bytes with
+ * 66 differing words. Each has 34 ELF records with differing sites/order.
+ * The snapshot draft preserves the signed load used by the wrap test and
+ * refreshes it only after a wrap store, but the compiler adds two halfword
+ * address constructions. The 32-byte frame remains; action home 24 versus
+ * native 28, cache-pointer registers and provider load scheduling differ.
+ * Historical local storage and expression lowering remain RE_UNKNOWN.
+ * Resolve with original declaration/source or new operation evidence and
+ * complete instruction, serialized-record and packed-module/ROM equality.
+ * No register forcing, extra storage or further source-shape variants are
+ * justified. Draft call views, externs and bodies were not added here; retain
+ * the original ASM. */
+#line 1097 "src/modules/selection.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00405F48.s")
 
 #line 1099 "src/modules/selection.c"

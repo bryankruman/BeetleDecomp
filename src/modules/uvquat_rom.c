@@ -217,21 +217,21 @@ void uvQuatComputeAngularDerivative(Quat *output, Quat *input, f32 angularX, f32
 #line 161 "src/modules/uvquat_rom.c"
 #line 158 "src/modules/uvquat_rom.c"
 
-void uvQuatMultiply(Quat *dest, Quat *q1, Quat *q2) {
-    Quat quat;
+void uvQuatMultiply(Quat *output, Quat *first, Quat *second) {
+    Quat product; /* Compute all four components locally before copying. RE_UNKNOWN: component conventions, normalization and valid input domains need original assets and export 0x14 callers. */
 
-    quat.x = ((q1->w * q2->x) + (q1->x * q2->w) + (q1->y * q2->z)) - (q2->y * q1->z);
-    quat.y = ((q1->w * q2->y) + (q1->y * q2->w) + (q1->z * q2->x)) - (q2->z * q1->x);
-    quat.z = ((q1->w * q2->z) + (q1->z * q2->w) + (q1->x * q2->y)) - (q2->x * q1->y);
-    quat.w = (((q1->w * q2->w) - (q1->x * q2->x)) - (q1->y * q2->y)) - (q2->x * q1->z);
-    uvQuatCopy(dest, &quat);
+    product.x = ((first->w * second->x) + (first->x * second->w) + (first->y * second->z)) - (second->y * first->z);
+    product.y = ((first->w * second->y) + (first->y * second->w) + (first->z * second->x)) - (second->z * first->x);
+    product.z = ((first->w * second->z) + (first->z * second->w) + (first->x * second->y)) - (second->x * first->y);
+    product.w = (((first->w * second->w) - (first->x * second->x)) - (first->y * second->y)) - (second->x * first->z); /* RE_ORIGINAL_QUIRK: native scalar term subtracts second.x * first.z; RE_UNKNOWN: its intended formula needs historical sources and original producers/callers. Preserve it. */
+    uvQuatCopy(output, &product); /* RE_UNKNOWN: output storage extent, lifetime and permitted aliases need original allocation and caller contracts. */
 }
 
-void uvQuatCopy(Quat *q1, Quat *q2) {
-    q1->x = q2->x;
-    q1->y = q2->y;
-    q1->z = q2->z;
-    q1->w = q2->w;
+void uvQuatCopy(Quat *destination, Quat *source) { /* Preserve interleaved component loads/stores. RE_UNKNOWN: partial-overlap rules, storage extents/lifetimes and historical declarations need original allocators and export 0x18 callers. */
+    destination->x = source->x;
+    destination->y = source->y;
+    destination->z = source->z;
+    destination->w = source->w;
 }
 
 #line 176 "src/modules/uvquat_rom.c"

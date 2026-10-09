@@ -679,7 +679,7 @@ void battleResetNodePlaySoundAndClearObjectFlags(BattleResetSoundNode *node)
 
 #line 315 "src/modules/battle.c"
 /* Set the primitive RGB color from the indexed palette, with alpha 1.0.
- * The original routine trusts its selector and palette index. */
+ * RE_UNKNOWN: selector/index bounds, retained context lifetime and actual tag4 invokers need original producers/readers. */
 void battleSetPalettePrimitiveColor(BattlePaletteSelector *selector) {
     Vec3F *color = &D_battle_00409C80[selector->paletteIndex];
     ((UvGfxMgr_Exports *)gUvGfxMgrExports)->uvGfxSetPrimColorF(color->x, color->y, color->z, 1.0f);
