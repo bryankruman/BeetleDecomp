@@ -556,7 +556,7 @@ void uvGfxEnableGamma(s32 enable) {
     osViSetSpecialFeatures(OS_VI_GAMMA_OFF);
 }
 
-void uvGfxSetPrimColorF(f32 red, f32 green, f32 blue, f32 alpha) {
+void uvGfxSetPrimColorF(f32 red, f32 green, f32 blue, f32 alpha) { /* Synchronize, scale the float channels by 255 and emit primitive color plus the repeated RGBA5551 fill value. */
     u32 r;
     u32 g;
     u32 b;
@@ -572,15 +572,15 @@ void uvGfxSetPrimColorF(f32 red, f32 green, f32 blue, f32 alpha) {
     gDPSetFillColor(sGfxDisplayListHead++,
                     GPACK_RGBA5551(r & 0xFF, g & 0xFF, (s32) b & 0xFF, a & 0xFF) << 16
                         | GPACK_RGBA5551(r & 0xFF, g & 0xFF, (s32) b & 0xFF, a & 0xFF));
-}
+/* RE_UNKNOWN: Caller channel ranges and exceptional float-to-integer conversions are unproved; preserve unsigned conversion and byte masks. */ }
 
-void uvGfxSetPrimColor(s8 red, s8 green, s8 blue, s8 alpha) {
+void uvGfxSetPrimColor(s8 red, s8 green, s8 blue, s8 alpha) { /* Emit primitive RGBA and repeat its RGBA5551 packing in both halves of the fill-color word. */
     gDPSetPrimColor(sGfxDisplayListHead++, 0, 0, red, green, blue, alpha);
     gDPSetFillColor(sGfxDisplayListHead++, GPACK_RGBA5551(red, green, blue, alpha) << 16
                                                | GPACK_RGBA5551(red, green, blue, alpha));
-}
+/* RE_UNKNOWN: Caller interpretation of the signed byte channels is unproved; preserve the inherited types and packing expressions. */ }
 
-void uvGfxSetEnvColorF(f32 red, f32 green, f32 blue, f32 alpha) {
+void uvGfxSetEnvColorF(f32 red, f32 green, f32 blue, f32 alpha) { /* Scale each float channel by 255, convert to unsigned integer and emit the masked low bytes as environment RGBA. */
     u32 r;
     u32 g;
     u32 b;
@@ -590,17 +590,17 @@ void uvGfxSetEnvColorF(f32 red, f32 green, f32 blue, f32 alpha) {
     b = blue * 255.0f;
     a = alpha * 255.0f;
     gDPSetEnvColor(sGfxDisplayListHead++, r & 0xff, g & 0xff, b & 0xff, a & 0xff);
-}
+/* RE_UNKNOWN: Caller channel ranges and exceptional conversion behavior are unproved; this source performs no explicit clamp. */ }
 
-void uvGfxSetEnvColor(s8 r, s8 g, s8 b, s8 a) {
+void uvGfxSetEnvColor(s8 r, s8 g, s8 b, s8 a) { /* Emit the supplied signed byte channels as the packed environment RGBA command. */
     gDPSetEnvColor(sGfxDisplayListHead++, r, g, b, a);
-}
+/* RE_UNKNOWN: Valid caller channel values are unproved; preserve the signed parameter types and macro packing. */ }
 
-void uvGfxSetConvert(s32 arg0, s32 arg1, u32 arg2, s32 arg3, s32 arg4, s32 arg5) {
+void uvGfxSetConvert(s32 arg0, s32 arg1, u32 arg2, s32 arg3, s32 arg4, s32 arg5) { /* Pack the six supplied conversion coefficients into the graphics command, preserving their argument order. */
     gDPSetConvert(sGfxDisplayListHead++, arg0, arg1, arg2, arg3, arg4, arg5);
-}
+/* RE_UNKNOWN: Coefficient units and caller domains are unproved; preserve the inherited unsigned third parameter and masked fields. */ }
 
-void uvGfxFillRect(u8 red, u8 green, u8 alpha) {
+void uvGfxFillRect(u8 red, u8 green, u8 alpha) { /* Emit a fill cycle over the stored clip bounds with vertically reflected Y values, then restore two-cycle mode and fill 0x10001. */
     gDPPipeSync(sGfxDisplayListHead++);
 
     gDPSetCycleType(sGfxDisplayListHead++, G_CYC_FILL);
@@ -611,9 +611,9 @@ void uvGfxFillRect(u8 red, u8 green, u8 alpha) {
     gDPPipeSync(sGfxDisplayListHead++);
     gDPSetCycleType(sGfxDisplayListHead++, G_CYC_2CYCLE);
     gDPSetFillColor(sGfxDisplayListHead++, 0x10001);
-}
+/* RE_UNKNOWN: The parameter named alpha supplies the blue packing slot with the alpha bit fixed to 1; its intended API name and valid bounds are unproved. */ }
 
-void uvGfxClearScreen(void) {
+void uvGfxClearScreen(void) { /* Emit zero fill using the literal rectangle arguments (0, width, 0, height), then restore two-cycle mode and fill 0x10001. */
     gDPPipeSync(sGfxDisplayListHead++);
     gDPSetCycleType(sGfxDisplayListHead++, G_CYC_FILL);
     gDPSetFillColor(sGfxDisplayListHead++, 0);
@@ -621,7 +621,7 @@ void uvGfxClearScreen(void) {
     gDPPipeSync(sGfxDisplayListHead++);
     gDPSetCycleType(sGfxDisplayListHead++, G_CYC_2CYCLE);
     gDPSetFillColor(sGfxDisplayListHead++, 0x10001);
-}
+/* RE_UNKNOWN: The intended rectangle coverage is unproved; preserve the unusual coordinate order rather than assuming a full-screen rectangle. */ }
 
 #line 393 "src/modules/uvgfxmgr_rom.c"
 
@@ -837,10 +837,10 @@ void uvGfxEmitCoverageFill(void) {
 }
 #line 570 "src/modules/uvgfxmgr_rom.c"
 
-void uvGfxSetDepthSource(s32 usePrimitiveDepth) {
+void uvGfxSetDepthSource(s32 usePrimitiveDepth) { /* Select primitive depth for any nonzero argument, otherwise pixel depth, and append that state command. */
     gDPSetDepthSource(sGfxDisplayListHead++, usePrimitiveDepth ? G_ZS_PRIM : G_ZS_PIXEL);
-}
+/* RE_UNKNOWN: Caller state sequencing and display-list capacity are unproved. */ }
 
-void uvGfxPrimDepth(s32 z) {
+void uvGfxPrimDepth(s32 z) { /* Append primitive depth using the low 16 bits of z and a zero depth delta. */
     gDPSetPrimDepth(sGfxDisplayListHead++, z, 0);
-}
+/* RE_UNKNOWN: Depth units and the caller value domain are unproved; preserve the existing masked packing. */ }

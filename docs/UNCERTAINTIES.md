@@ -17,7 +17,7 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 1381 |
+| Explicit RE_UNKNOWN notes | 1390 |
 | Preserved RE_ORIGINAL_QUIRK notes | 333 |
 | Older comments with uncertainty language | 93 |
 | Documented original-behavior audits | 30 |
@@ -7103,6 +7103,15 @@ For every future source wave, regenerate and check this index after code and str
 | explicit_unknown | `Keep the captured buffer across the callback, then reload dimensions; RE_UNKNOWN: callback mutation/lifetime remains unproved.` | function `uvGfxBegin` | [357](../src/modules/uvgfxmgr_rom.c#L357) |
 | explicit_unknown | `Keep the second VI query; RE_UNKNOWN: concurrent display/buffer ownership needs scheduler/caller proof.` | function `__entrypoint_func_uvgfxmgr_rom_400000` | [331](../src/modules/uvgfxmgr_rom.c#L331) |
 | explicit_unknown | `Only mode 1 rotates here; RE_UNKNOWN: other mode values and buffer/index domains need setter/caller proof.` | function `uvGfxBegin` | [354](../src/modules/uvgfxmgr_rom.c#L354) |
+| explicit_unknown | `RE_UNKNOWN: Caller channel ranges and exceptional conversion behavior are unproved; this source performs no explicit clamp.` | function `uvGfxSetEnvColorF` | [593](../src/modules/uvgfxmgr_rom.c#L593) |
+| explicit_unknown | `RE_UNKNOWN: Caller channel ranges and exceptional float-to-integer conversions are unproved; preserve unsigned conversion and byte masks.` | function `uvGfxSetPrimColorF` | [575](../src/modules/uvgfxmgr_rom.c#L575) |
+| explicit_unknown | `RE_UNKNOWN: Caller interpretation of the signed byte channels is unproved; preserve the inherited types and packing expressions.` | function `uvGfxSetPrimColor` | [581](../src/modules/uvgfxmgr_rom.c#L581) |
+| explicit_unknown | `RE_UNKNOWN: Caller state sequencing and display-list capacity are unproved.` | function `uvGfxSetDepthSource` | [842](../src/modules/uvgfxmgr_rom.c#L842) |
+| explicit_unknown | `RE_UNKNOWN: Coefficient units and caller domains are unproved; preserve the inherited unsigned third parameter and masked fields.` | function `uvGfxSetConvert` | [601](../src/modules/uvgfxmgr_rom.c#L601) |
+| explicit_unknown | `RE_UNKNOWN: Depth units and the caller value domain are unproved; preserve the existing masked packing.` | function `uvGfxPrimDepth` | [846](../src/modules/uvgfxmgr_rom.c#L846) |
+| explicit_unknown | `RE_UNKNOWN: The intended rectangle coverage is unproved; preserve the unusual coordinate order rather than assuming a full-screen rectangle.` | function `uvGfxClearScreen` | [624](../src/modules/uvgfxmgr_rom.c#L624) |
+| explicit_unknown | `RE_UNKNOWN: The parameter named alpha supplies the blue packing slot with the alpha bit fixed to 1; its intended API name and valid bounds are unproved.` | function `uvGfxFillRect` | [614](../src/modules/uvgfxmgr_rom.c#L614) |
+| explicit_unknown | `RE_UNKNOWN: Valid caller channel values are unproved; preserve the signed parameter types and macro packing.` | function `uvGfxSetEnvColor` | [597](../src/modules/uvgfxmgr_rom.c#L597) |
 | explicit_unknown | `RE_UNKNOWN: counts, dimension arithmetic, allocation success and buffer capacities need caller/allocator proof; results stay ignored.` | function `__entrypoint_func_uvgfxmgr_rom_400000` | [285](../src/modules/uvgfxmgr_rom.c#L285) |
 | explicit_unknown | `RE_UNKNOWN: display-list capacity and asynchronous buffer ownership need allocation/scheduler/caller proof.` | function `uvGfxBegin` | [377](../src/modules/uvgfxmgr_rom.c#L377) |
 | explicit_unknown | `RE_UNKNOWN: full historical task structure/conventions remain unproved; preserve wrapper fields and flags.` | function `uvGfxEnd` | [455](../src/modules/uvgfxmgr_rom.c#L455) |

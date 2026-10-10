@@ -350,7 +350,7 @@
     "src/modules/uvfvec_rom.c": "c778a230bfc390f3ca94e06bddaa9892c4fc6cf0ab2cea81cbdb030e785d7b21",
     "src/modules/uvfx_rom.c": "3700b04163745b5aea4f492e3dfabffa39b618dac447bbb5e77aca73e8a9e574",
     "src/modules/uvgeom_rom.c": "7793cd32eab51f63bd3cf8d7df3b4ad6e26d67f44cf3fd8a1ffd56fcb8860e71",
-    "src/modules/uvgfxmgr_rom.c": "37dc60b2aa958126c5541bee0575ce94ba23dd5d83d68a66adea7cf5d7b3d12e",
+    "src/modules/uvgfxmgr_rom.c": "25251bf6990faf9eb9c53ccea00b804e4565cfad63091270dafe2582d658b95c",
     "src/modules/uvgfxstate_rom.c": "fdd3fb85a696b9ae856b27698ac53901dddbb37bb1fb57179d965d1f505058a4",
     "src/modules/uvgrph_rom.c": "4b8f89334bd11814bb28529111c3bb273f7c0c82b0048216032b299b1db81d72",
     "src/modules/uvgui_rom.c": "a5a2ab78a70e7afce1604ea50a361c6d3354295416c4c51db349b8cd8afa02a7",
@@ -390,8 +390,8 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "67bedee2317cf5be410f2075febdac9b7e9c4fc28a8211082022a0ac7a63690d",
-    "docs/VALIDATION_20261006.md": "b9ccdc02e2445fefb3b23ef1c0ad8c5923f46e8c72934e589d0b82f3ab6647d8"
+    "docs/STRATEGY_V4.md": "53c2adff4112a9c73b0a8152c2231483b09ce27050c1a95467d3be2cb6ec7fcb",
+    "docs/VALIDATION_20261006.md": "91b5c4c3ed494905e36c39db765021cd352394e319ccc7effb55c7ac683d4ab0"
   },
   "counts": {
     "address_function": 906,
@@ -401,7 +401,7 @@
     "conditional_draft": 4,
     "decompiler_local": 659,
     "draft_marker": 28,
-    "explicit_unknown": 1381,
+    "explicit_unknown": 1390,
     "layout_padding": 275,
     "offset_field": 1617,
     "opaque_type": 282,
@@ -136142,6 +136142,186 @@
           "declaration_line": 351,
           "lines": [
             354
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-f2ee620e2ac1",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvgfxmgr_rom.c",
+      "symbol": "RE_UNKNOWN: Caller channel ranges and exceptional conversion behavior are unproved; this source performs no explicit clamp.",
+      "lines": [
+        593
+      ],
+      "evidence": "RE_UNKNOWN: Caller channel ranges and exceptional conversion behavior are unproved; this source performs no explicit clamp.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvGfxSetEnvColorF",
+          "declaration_line": 583,
+          "lines": [
+            593
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-981199653fbc",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvgfxmgr_rom.c",
+      "symbol": "RE_UNKNOWN: Caller channel ranges and exceptional float-to-integer conversions are unproved; preserve unsigned conversion and byte masks.",
+      "lines": [
+        575
+      ],
+      "evidence": "RE_UNKNOWN: Caller channel ranges and exceptional float-to-integer conversions are unproved; preserve unsigned conversion and byte masks.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvGfxSetPrimColorF",
+          "declaration_line": 559,
+          "lines": [
+            575
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-05252724b2fc",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvgfxmgr_rom.c",
+      "symbol": "RE_UNKNOWN: Caller interpretation of the signed byte channels is unproved; preserve the inherited types and packing expressions.",
+      "lines": [
+        581
+      ],
+      "evidence": "RE_UNKNOWN: Caller interpretation of the signed byte channels is unproved; preserve the inherited types and packing expressions.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvGfxSetPrimColor",
+          "declaration_line": 577,
+          "lines": [
+            581
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-50682a6518d5",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvgfxmgr_rom.c",
+      "symbol": "RE_UNKNOWN: Caller state sequencing and display-list capacity are unproved.",
+      "lines": [
+        842
+      ],
+      "evidence": "RE_UNKNOWN: Caller state sequencing and display-list capacity are unproved.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvGfxSetDepthSource",
+          "declaration_line": 840,
+          "lines": [
+            842
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-15a31928fba5",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvgfxmgr_rom.c",
+      "symbol": "RE_UNKNOWN: Coefficient units and caller domains are unproved; preserve the inherited unsigned third parameter and masked fields.",
+      "lines": [
+        601
+      ],
+      "evidence": "RE_UNKNOWN: Coefficient units and caller domains are unproved; preserve the inherited unsigned third parameter and masked fields.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvGfxSetConvert",
+          "declaration_line": 599,
+          "lines": [
+            601
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-ef456173332f",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvgfxmgr_rom.c",
+      "symbol": "RE_UNKNOWN: Depth units and the caller value domain are unproved; preserve the existing masked packing.",
+      "lines": [
+        846
+      ],
+      "evidence": "RE_UNKNOWN: Depth units and the caller value domain are unproved; preserve the existing masked packing.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvGfxPrimDepth",
+          "declaration_line": 844,
+          "lines": [
+            846
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-481c89c05899",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvgfxmgr_rom.c",
+      "symbol": "RE_UNKNOWN: The intended rectangle coverage is unproved; preserve the unusual coordinate order rather than assuming a full-screen rectangle.",
+      "lines": [
+        624
+      ],
+      "evidence": "RE_UNKNOWN: The intended rectangle coverage is unproved; preserve the unusual coordinate order rather than assuming a full-screen rectangle.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvGfxClearScreen",
+          "declaration_line": 616,
+          "lines": [
+            624
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-ff383e33e27f",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvgfxmgr_rom.c",
+      "symbol": "RE_UNKNOWN: The parameter named alpha supplies the blue packing slot with the alpha bit fixed to 1; its intended API name and valid bounds are unproved.",
+      "lines": [
+        614
+      ],
+      "evidence": "RE_UNKNOWN: The parameter named alpha supplies the blue packing slot with the alpha bit fixed to 1; its intended API name and valid bounds are unproved.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvGfxFillRect",
+          "declaration_line": 603,
+          "lines": [
+            614
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-219b1b7c3088",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvgfxmgr_rom.c",
+      "symbol": "RE_UNKNOWN: Valid caller channel values are unproved; preserve the signed parameter types and macro packing.",
+      "lines": [
+        597
+      ],
+      "evidence": "RE_UNKNOWN: Valid caller channel values are unproved; preserve the signed parameter types and macro packing.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvGfxSetEnvColor",
+          "declaration_line": 595,
+          "lines": [
+            597
           ]
         }
       ]
