@@ -12,3 +12,5 @@ func_misc_00403D8C = miscDrawPackedNibbleLine;
 func_misc_00402730 = miscMeasurePlanarSegmentProjection;
 func_misc_00402BFC = miscAdjustDirectionAlongNormalPreservingScaledLength;
 func_misc_00402EFC = miscApproachWithScaledDistanceCap;
+func_misc_00402874 = miscUpdateTerrainHeightLimits;
+func_misc_00403650 = miscDrawProfilerMilliseconds;

@@ -34,8 +34,8 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **769** assembly references:
-**730** ordinary functions and **39** entrypoints, with **705,284** known instruction bytes
+matching C are preserved with `#line`. The current ledger has **767** assembly references:
+**728** ordinary functions and **39** entrypoints, with **704,676** known instruction bytes
 and no unknown sizes. The broader name audit still finds **285** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
@@ -3358,10 +3358,19 @@ Totals: 431 further recoveries after the 225 upstream ordinary imports, plus 159
 Frozen wave `4158-debug-overlay-native-contracts` and `accepted-debug-overlay-native-contracts-4158` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 431 further readable functions
+## Historical accepted checkpoint — 431 further readable functions
 
 Explain observed channel scaling, graphics command packing, fill-cycle state and depth selection. Preserve every executable token, ABI and coordinate while recording inherited channel-domain and rectangle-order uncertainty.
 
 Totals: 431 further recoveries after the 225 upstream ordinary imports, plus 1605 existing C semantic cleanups. Current ledger: 769 assembly references = 730 ordinary + 39 entrypoints; 705,284 known remaining instruction bytes; zero unknown sizes; 285 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `4222-gmgr-rendering-native-contracts` and `accepted-gmgr-rendering-native-contracts-4222` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 433 further readable functions
+
+Recover two named terrain/profiler functions608B with complete unique-site five-field relocation equality and independently replayed original native operands. Preserve raw ELF emission-order differences explicitly. Document three existing angle helpers556B through same-line comments without changing any code tokens or logical coordinates. Preserve retained readonly storage, all prior callers, all prior aliases and all137 typed SDK records. Fresh original packed MISC/full relocation section, original ROM, all1147 files, exact full ledger and defined same-address aliases remain mandatory.
+
+Totals: 433 further recoveries after the 225 upstream ordinary imports, plus 1608 existing C semantic cleanups. Current ledger: 767 assembly references = 728 ordinary + 39 entrypoints; 704,676 known remaining instruction bytes; zero unknown sizes; 285 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `4306-misc-terrain-profiler-angle-contracts` and `accepted-misc-terrain-profiler-angle-contracts-4306` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

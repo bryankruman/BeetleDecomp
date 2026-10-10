@@ -124,3 +124,7 @@ func_misc_00402BFC = 0x00402BFC; // type:func
 miscAdjustDirectionAlongNormalPreservingScaledLength = 0x00402BFC; // type:func
 func_misc_00402EFC = 0x00402EFC; // type:func
 miscApproachWithScaledDistanceCap = 0x00402EFC; // type:func
+func_misc_00402874 = 0x00402874; // type:func
+miscUpdateTerrainHeightLimits = 0x00402874; // type:func
+func_misc_00403650 = 0x00403650; // type:func
+miscDrawProfilerMilliseconds = 0x00403650; // type:func

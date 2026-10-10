@@ -83,6 +83,21 @@ f32 miscEvaluateRadiusGatedPlaneCrossing(MiscPlaneRadiusView* plane, Vec3F* firs
 void * miscCreateGuiCurveValueRow(void * parent, u8* label, u8* firstText, u8* secondText, UvGrphStruct* curve, f32* valueSource, void ** widgetOutput);
 f32 miscEvaluateClampedSineAngle(f32 sine);
 s32 miscDrawPackedNibbleLine(u8* pixels, u8 color, s16 startX, s16 startY, s16 endX, s16 endY, s16 width, s16 height);
+/* Original retained readonly operands; these declarations allocate no storage.
+ * RE_UNKNOWN: Complete provider and caller contracts remain unproved. */
+extern const f32 D_misc_004042A8;
+extern const f32 D_misc_004042AC;
+extern const f64 D_misc_004042F0;
+extern const char D_misc_00404210[16];
+void uvProfilerQueryStatistics(s32, ...);
+/* Consumed terrain slots only; provider failure/list lifetime remain unknown. */
+typedef struct {
+    u8 unused00[0x14];
+    void (*sampleHeight)(s32, u32, f32, f32, f32 *, void *);
+    u8 unused18[0x10];
+    u32 (*findCells)(s32, f32, f32, s32 *);
+} MiscTerrainQueryExports;
+extern MiscTerrainQueryExports *gUvTerraExports;
 #line 61 "src/modules/misc.c"
 
 void func_misc_00400AD0();
@@ -118,7 +133,7 @@ void func_misc_0040234C();
 void func_misc_00402528();
 void miscGetMatrixDirectionAngles(Mtx4F *matrix, f32 *first, f32 *second, f32 *third);
 f32 func_misc_00402730(f32 pointX, f32 pointY, f32 startX, f32 startY, f32 endX, s32 endYInteger, f32* lengthOut, f32* signedFactorOut, f32* distanceOut);
-void func_misc_00402874();
+void func_misc_00402874(s32 terrainId, f32 x, f32 y, f32 heightLimit, f32* lowerOut, f32* upperOut);
 void miscSetTextureAxisValue(s32 fileId, const char *selector, f32 value);
 void func_misc_00402A5C();
 void func_misc_00402BFC(Vec3F* vector, Vec3F* normal, f32 coefficient);
@@ -130,7 +145,7 @@ void func_misc_00403110();
 void *miscLoadFileModule(void);
 void miscUnloadFileModule(void);
 void func_misc_00403348();
-void func_misc_00403650();
+void func_misc_00403650(s32 labelAddress, s32 profiler, s32 y);
 void func_misc_00403748();
 void *miscCreateGuiBoundScalarRow(void *parent, u8 *label, s16 valueKind, f32 lowerBound, f32 upperBound, s32 *valueSource, void **widgetOutput);
 void func_misc_00403A5C();
@@ -520,7 +535,7 @@ extern f32 D_misc_00404234;
 #line 294 "src/modules/misc.c"
 /* Compute inverse cosine after the original [-1, 1] clamp, preserving the
  * special zero-input constant and the shared math library's angle units. */
-f32 miscArcCosine(f32 cosine) {
+f32 miscArcCosine(f32 cosine) { /* Compute an angle from clamped cosine through the square-root and angle providers. RE_QUIRK: zero takes the retained readonly constant shortcut before clamping. RE_UNKNOWN: nonfinite-input contract and provider behavior at edge values. */
     if (cosine == 0.0f) {
         return D_misc_00404234;
     }
@@ -702,7 +717,7 @@ f32 miscClampFloat(f32 value, f32 upper, f32 lower) {
 #line 414 "src/modules/misc.c"
 /* Wrap a degree angle, then fold it into [-90, 90] without changing its sine.
  * Preserve the original comparisons and endpoint choices. */
-f32 miscFoldAngleDegrees(f32 angle) {
+f32 miscFoldAngleDegrees(f32 angle) { /* Reduce by repeated 360-degree turns, then mirror values beyond +/-90 degrees. RE_QUIRK: strict boundaries and repeated floating-point loops are preserved; extreme magnitudes or infinities can prevent loop progress. RE_UNKNOWN: permitted input magnitude and nonfinite-input contract. */
     f32 wrapped;
 
     wrapped = angle;
@@ -789,7 +804,7 @@ extern f32 D_misc_0040427C;
 extern f32 D_misc_00404280;
 extern f32 D_misc_00404284;
 
-f32 miscFoldAngleRadians(f32 angle) {
+f32 miscFoldAngleRadians(f32 angle) { /* Reduce and mirror the angle using the original readonly thresholds and turn values. RE_QUIRK: distinct readonly loads, strict comparisons and repeated floating-point loops are preserved; extreme magnitudes or infinities can prevent loop progress. RE_UNKNOWN: permitted input magnitude and nonfinite-input contract. */
     f32 wrapped;
     f32 fullTurn;
 
@@ -1080,7 +1095,41 @@ f32 miscMeasurePlanarSegmentProjection(f32 pointX, f32 pointY, f32 startX, f32 s
 }
 #line 510 "src/modules/misc.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00402874.s")
+/* Visit the terrain result list and update the two height outputs in the original branch order.
+ * RE_QUIRK: The upper output is updated only in the else-if branch after the lower-output comparison.
+ * RE_UNKNOWN: Terrain list lifetime, count limits, output ownership and provider failure behavior require original callers/providers. */
+#line 511 "src/modules/misc.c"
+void miscUpdateTerrainHeightLimits(s32 terrainId, f32 x, f32 y, f32 heightLimit, f32* lowerOut, f32* upperOut) {
+    char unusedStackStorage[0x8];
+    s32* cellList;
+    s32 i;
+    s32 cellCount;
+    s32 sampleStatus;
+    f32 sampledHeight;
+
+    *lowerOut = D_misc_004042A8;
+    *upperOut = D_misc_004042AC;
+    // RE_UNKNOWN: Terrain list-output ABI requires original provider/caller confirmation.
+    cellCount = gUvTerraExports->findCells(terrainId, x, y, (void*)&cellList);
+    if (cellCount == 0) {
+        return;
+    }
+
+    i = 0;
+    if (cellCount > 0) {
+        do {
+            gUvTerraExports->sampleHeight(terrainId, cellList[i], x, y, &sampledHeight, &sampleStatus);
+            if (sampledHeight <= heightLimit) {
+                if (*lowerOut < sampledHeight) {
+                    *lowerOut = sampledHeight;
+                } else if (sampledHeight < *upperOut) {
+                    *upperOut = sampledHeight;
+                }
+            }
+        } while (++i != cellCount);
+    }
+}
+#line 512 "src/modules/misc.c"
 
 #line 513 "src/modules/misc.c"
 /* Set a loaded texture parameter chosen by selector bytes 1 and 0:
@@ -1403,7 +1452,22 @@ s32 miscMeasurePlanarSegmentCircleFraction(f32 startX, f32 startY, f32 endX, f32
 }
 #line 538 "src/modules/misc.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00403650.s")
+/* Read the profiler duration, format the label/value and draw the original font display list.
+ * RE_UNKNOWN: Label storage/length, profiler selector contract and font callback lifetimes require original callers/providers. */
+#line 539 "src/modules/misc.c"
+void miscDrawProfilerMilliseconds(s32 labelAddress, s32 profiler, s32 y) {
+    f64 durationSeconds;
+    u8 text[130];
+
+    uvProfilerQueryStatistics(profiler, 3, &durationSeconds, 0);
+    sprintf(text, D_misc_00404210, labelAddress, (f32)(f64)(durationSeconds * D_misc_004042F0));
+    gUvFontExports->uvSetFont(3);
+    gUvFontExports->uvFontColor(255, 0, 0, 255);
+    gUvFontExports->uvFontScale(1.0, 1.0);
+    gUvFontExports->uvFontPrintStr(160, y, text);
+    gUvFontExports->uvFontGenDList();
+}
+#line 540 "src/modules/misc.c"
 
 /* Test the radius and plane-side conditions, then return the original signed crossing ratio.
  * RE_UNKNOWN: Only the consumed 32-byte view is represented; radius units, direction convention and overlap require original callers. */
