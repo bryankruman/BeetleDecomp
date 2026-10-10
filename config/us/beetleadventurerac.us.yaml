@@ -126,7 +126,7 @@ segments:
       - [0xC210, asm, cspgetchlvol]
       - [0xC230, asm, cspgetstate]
       - [0xC240, asm, cspgettempo]
-      - [0xC280, asm, csplayer]
+      - [0xC280, c, libultra/audio/csplayer]
       - [0xD4B0, asm, cspplay]
       - [0xD4E0, asm, cspsendmidi]
       - [0xD540, asm, cspsetbank]
@@ -139,7 +139,7 @@ segments:
       - [0xD790, asm, cspsettempo]
       - [0xD800, asm, cspsetvol]
       - [0xD840, asm, cspstop]
-      - [0xD870, asm, cseq]
+      - [0xD870, c, libultra/audio/cseq]
       - [0xE330, asm, sl]
       - [0x1A8E0, databin, rspBootTextStart]
       - [0x1A9B0, databin, gspF3DEX2_fifoTextStart]
@@ -160,6 +160,9 @@ segments:
       - [0x21C30, .rodata, clocks]
       - [0x21C50, .rodata, module]
       - [0x21C70, rodata]
+      - [0x21D70, .rodata, libultra/audio/csplayer]
+      - [0x21FB0, .rodata, libultra/audio/cseq]
+      - [0x21FC0, rodata]
       - { start: 0x237D0, type: bss, vram: 0x80022BD0, name: bss_1 }
       - { start: 0x237D0, type: .bss, vram: 0x8002D1B0, name: profiler }
       - { start: 0x237D0, type: .bss, vram: 0x8002D940, name: clocks }

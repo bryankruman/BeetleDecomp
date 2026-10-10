@@ -79,6 +79,51 @@
     "include/libc/stdio.h": "2d4f83a11a792ff666e37b6679e4a97a809098494fbdeb028f1d21486afa733b",
     "include/libc/stdlib.h": "1a29fccb7c0c43145c4381c6f3dea4ab192471fe983736ec758353a3788aec25",
     "include/libc/string.h": "8235290bf7031f3f89783f7772b122e366ff86ece22934a11cd494d7ff913d09",
+    "include/libultra-sdk/PR/abi.h": "9efe7ee3c940ff96d46f936ad95e9cc52b879ee8c4b5c264cb8f42e1cf1ce1bf",
+    "include/libultra-sdk/PR/libaudio.h": "b852721c926112f5187afad772d107bc0f0e006dbd3b54c09ae7b1ebedd77c5b",
+    "include/libultra-sdk/PR/mbi.h": "8a0b32eb3cc7844a38b1b3ed1b160036b203efac0dc3c0275c53354423e40960",
+    "include/libultra-sdk/PR/os.h": "e0af7328cadb2164b18c61717d916396741cf053d32b96b0dea06f6d664ff7e2",
+    "include/libultra-sdk/PR/os_ai.h": "933e7fe35c87702a2137b9c575022e18bd72e6ce11d8a44035a7ffbddf71aeb6",
+    "include/libultra-sdk/PR/os_cache.h": "a9455e20523c6915f26c05d5d399763f1e051c01eac85c10911b7b3a65c0d5c9",
+    "include/libultra-sdk/PR/os_cont.h": "2b95c331e2fe26f6cdfab7785af05b615a0f4ef3fa825799dca42b8f91a7c178",
+    "include/libultra-sdk/PR/os_convert.h": "6d98f19765d055a7857398cc6d7bd7a2ac2e93a4a858f1c27aa22361e4f892f1",
+    "include/libultra-sdk/PR/os_debug.h": "260815777abca616a9783db7a57cd94881586c84ef0adcce26516ba50476a523",
+    "include/libultra-sdk/PR/os_eeprom.h": "f1f0f50895c4505c3420674504b7868ff85fe08df42433389deeb407e68c5163",
+    "include/libultra-sdk/PR/os_error.h": "eae3744bf9ee921d089714e81590226b56fca5ca2f0ef866532eb788e829b120",
+    "include/libultra-sdk/PR/os_exception.h": "bd9ea719bc4dc4c6b702e4f8726ff5db18bd28f9684bec93b004227f683097f7",
+    "include/libultra-sdk/PR/os_flash.h": "44a68f18c6dcc000162daddf36041f55658c12fcb1dd80a92348a0da75b20ef7",
+    "include/libultra-sdk/PR/os_gbpak.h": "c13616c011c214aef601f6249ae12465dcb8a6edfe68df27aaf6d086e09bbc8f",
+    "include/libultra-sdk/PR/os_gio.h": "c0197b2afd220c07028a972ca0d5903af3064d48d8657935e3c57fc9a55f3b92",
+    "include/libultra-sdk/PR/os_host.h": "38befae366a3292e7e1e1871678da5f969bf357a5c59f1df20f69901175adac4",
+    "include/libultra-sdk/PR/os_internal.h": "0103aa8359ff23c9ef0b248b0721ea9df0c4557271e4146ac264d0d998b7280d",
+    "include/libultra-sdk/PR/os_internal_debug.h": "3e4f1baa87602ad77163c15990625e1fd3b9ae6cffcaabb3424dafec6d638bd0",
+    "include/libultra-sdk/PR/os_internal_error.h": "ab7537aef80c392dcf0010bde8078f1b5d1973740bc6d51e1f4df3d757e28356",
+    "include/libultra-sdk/PR/os_internal_exception.h": "29a917236f862a49065d0ff97fa1362bbb31a2810011628f7d92ac4bfd27a798",
+    "include/libultra-sdk/PR/os_internal_gio.h": "032d50b58fd0f3d8831430a7125cd039efd1f56affdd8cbeb8777ab464ecba15",
+    "include/libultra-sdk/PR/os_internal_host.h": "83dda0b09da200ab1be91aeda90c2d0f52b7a282979391e05a9f4feeff1fffd1",
+    "include/libultra-sdk/PR/os_internal_reg.h": "dde409666c4d9319e29a08f36be9156670b947ab3a50eed349ff9e9840d3846b",
+    "include/libultra-sdk/PR/os_internal_rsp.h": "77f2c0f58ebe5384970a553cabf850841a679e97dbd049926d13b0cb29f18c58",
+    "include/libultra-sdk/PR/os_internal_si.h": "2d88a8388c9211646c446bcd936606b038f80f53c10b9674f48ad6f6dede5acc",
+    "include/libultra-sdk/PR/os_internal_thread.h": "f7700e0bd2c22fb6716d656435b7431c6701cbfd518f2908d13845d11be5ddd9",
+    "include/libultra-sdk/PR/os_internal_tlb.h": "e67bca1ce07a917679abb4094b087ee70bd01399576fe9d7c4e85c82f642ccf8",
+    "include/libultra-sdk/PR/os_libc.h": "ad1cc85b23566bde17ed1d246fd7901e7ecb5df06a47042ecffce71299800966",
+    "include/libultra-sdk/PR/os_message.h": "153e099d48bc1b15faf60eec47d7cedefeab2a9a53350ea56e688298992e1808",
+    "include/libultra-sdk/PR/os_motor.h": "5427945af7af41c3b76538b1b672a3501d5b64a68a3eb924150b75b6dd021963",
+    "include/libultra-sdk/PR/os_pfs.h": "7c25656a964161b4f0b673db46fc04e97f6cc05a58313d84270d3293c7e7eb55",
+    "include/libultra-sdk/PR/os_pi.h": "81118945972f58ea944ef37a373e43602f295095e1323cf5703a10092ac04d8c",
+    "include/libultra-sdk/PR/os_rdp.h": "a85b9def6f64bf25e6aeb064e1f2626f7b2d4d0ef0821d21844a9eefb19f6e21",
+    "include/libultra-sdk/PR/os_reg.h": "2a14f15494cf3754f1fe0149a8c8cab4806e843f3be6a30ad0c726443edef52d",
+    "include/libultra-sdk/PR/os_rsp.h": "ede13674c9af25912778dd077c3dd709929d43fcb9f135f6465553d0f9e8fa26",
+    "include/libultra-sdk/PR/os_si.h": "ffd228b5b0e450efcf1756d778d701be958cce724d1912792c31b3cac26f74b9",
+    "include/libultra-sdk/PR/os_system.h": "bc8afaa3362ff4851feee1feed818dd009a13c3de19435a2e09656a64bf531d8",
+    "include/libultra-sdk/PR/os_thread.h": "b20409b6441549f5d01a58fb14d2f676461bdb215b01cb7ffe5288b948b97ca1",
+    "include/libultra-sdk/PR/os_time.h": "21bd983fa7b11daa6a06c053b5e9cd7c08420dd20657c4fd61be434389af3342",
+    "include/libultra-sdk/PR/os_tlb.h": "9bbb49127e7e2600f6dcceffe4a1d38f31d463327cfa384ce930ddfa63223893",
+    "include/libultra-sdk/PR/os_vi.h": "f59a0d52ab0e2bc2ca0b8226bc9b9c1e58d3a9eb8df8c4e6d45aaa6ac51fb2b6",
+    "include/libultra-sdk/PR/os_voice.h": "c0fb2f6f8eb68a6608a2401f6a2f4a38d1c65b5d1ae944d0b5999502a9cc432f",
+    "include/libultra-sdk/PR/ultraerror.h": "a6b2ce4f9e98e8feccdc5abd43d6de13c3afb7a00d3126ad83ff5d161b02d229",
+    "include/libultra-sdk/PR/ultratypes.h": "e25fc6df3953acbab2234ece2218ec74080cdc3e673ce1ec5896d4ce921bb4de",
+    "include/libultra-sdk/assert.h": "c4d1fce8da480af73fe15237f2068a5446477ca6a544487daa10cd4ebf938c78",
     "include/macros.h": "06a8600f7901a7deb6c75b580e9d8d3a239f753f0b4f8f13a6890de8e80d0072",
     "include/matrix_types.h": "20c451534a3846a5e14a4d522bf5c281927180770f4188a01deda43c6054dcf2",
     "include/mem_allocator.h": "7488f9a47f82c73e0c6e74c7026b149494ec1553f5c082dff46a445fcae2c3c5",
@@ -169,6 +214,11 @@
     "src/filesystem.c": "9bc5c941616a1f6305d2a298f9df633d815b0ce2dae7f3ca1bfe0a7ab8558fb8",
     "src/game_init.c": "6944f62f0433701411476dac29f9bc72d997309d6be0919a55c7e7a3b8b6e20b",
     "src/isprint.c": "0a772034f3731b8677ddd0d15e2977f08f7ef6882db5055abfbd6dd09a7df3ca",
+    "src/libultra/audio/cseq.c": "c8238075726a7a76841b60df278f6d50aee098748f9821f3492773731d38211d",
+    "src/libultra/audio/cseq.h": "c10072d9bda4da8fb617657dd78ffc481e8086509078830110fa0acb7fcf6f07",
+    "src/libultra/audio/cseqp.h": "b2f981075c1c7d9e271b621593cd5e8238888927ce33ade647eebba10b62f8ee",
+    "src/libultra/audio/csplayer.c": "090e2b2a644a27eb41828e39392adbe8529ed984f3ac9747e3be1d5205856826",
+    "src/libultra/audio/seqp.h": "cf58498fb69b10873be6b079a20eefc175365ab649ddbf306299f054ed02dd1a",
     "src/libultra/io/piread.c": "0195f296a22084659c67f28b0a4d3866327f0cc94df518000309f0dc17b20f50",
     "src/libultra/io/sptask.c": "695161e5c29ba9a20ea1cfdf89485b8d08123dd8a4c4064081b7e56ec7fa007b",
     "src/libultra/io/sptaskyield.c": "76dcc4157883ef5ef6827696be014e58042528bdf4c711fc54566794b6ff4cca",
@@ -340,10 +390,10 @@
     "audit_debt": 30,
     "conditional_draft": 4,
     "decompiler_local": 671,
-    "draft_marker": 24,
+    "draft_marker": 25,
     "explicit_unknown": 1324,
-    "layout_padding": 269,
-    "offset_field": 1605,
+    "layout_padding": 272,
+    "offset_field": 1614,
     "opaque_type": 282,
     "original_quirk": 333,
     "uncertainty_note": 93,
@@ -115752,6 +115802,16 @@
       ]
     },
     {
+      "id": "Q-9416c134183c",
+      "kind": "draft_marker",
+      "path": "src/libultra/audio/csplayer.c",
+      "symbol": "TODO",
+      "lines": [
+        46
+      ],
+      "evidence": "TODO: this comes from a header"
+    },
+    {
       "id": "Q-a35a5d7dd6ae",
       "kind": "draft_marker",
       "path": "src/libultra/io/viblack.c",
@@ -142590,6 +142650,170 @@
       ]
     },
     {
+      "id": "Q-c2f0b6097b22",
+      "kind": "layout_padding",
+      "path": "include/libultra-sdk/PR/abi.h",
+      "symbol": "pad1",
+      "lines": [
+        95,
+        101,
+        109,
+        117,
+        124,
+        153,
+        159,
+        165,
+        189,
+        197,
+        204
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "Aclearbuff",
+          "declaration_line": 99,
+          "lines": [
+            101
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "Admemmove",
+          "declaration_line": 187,
+          "lines": [
+            189
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "Aenvelope",
+          "declaration_line": 92,
+          "lines": [
+            95
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "Aenvmixer",
+          "declaration_line": 121,
+          "lines": [
+            124
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "Ainterleave",
+          "declaration_line": 107,
+          "lines": [
+            109
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "Aloadadpcm",
+          "declaration_line": 195,
+          "lines": [
+            197
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "Aloadbuff",
+          "declaration_line": 115,
+          "lines": [
+            117
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "Areverb",
+          "declaration_line": 150,
+          "lines": [
+            153
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "Asavebuff",
+          "declaration_line": 157,
+          "lines": [
+            159
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "Asegment",
+          "declaration_line": 163,
+          "lines": [
+            165
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "Asetloop",
+          "declaration_line": 202,
+          "lines": [
+            204
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-08a808f343e9",
+      "kind": "layout_padding",
+      "path": "include/libultra-sdk/PR/abi.h",
+      "symbol": "pad2",
+      "lines": [
+        103,
+        110,
+        166,
+        205
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "Aclearbuff",
+          "declaration_line": 99,
+          "lines": [
+            103
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "Ainterleave",
+          "declaration_line": 107,
+          "lines": [
+            110
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "Asegment",
+          "declaration_line": 163,
+          "lines": [
+            166
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "Asetloop",
+          "declaration_line": 202,
+          "lines": [
+            205
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-120b8021294a",
+      "kind": "layout_padding",
+      "path": "include/libultra-sdk/PR/libaudio.h",
+      "symbol": "pad",
+      "lines": [
+        257
+      ]
+    },
+    {
       "id": "Q-19a68d36a406",
       "kind": "layout_padding",
       "path": "include/structs.h",
@@ -149645,6 +149869,39 @@
             20
           ]
         }
+      ]
+    },
+    {
+      "id": "Q-3721f3bc81dd",
+      "kind": "offset_field",
+      "path": "include/libultra-sdk/PR/libaudio.h",
+      "symbol": "byte1",
+      "lines": [
+        530,
+        540,
+        834,
+        876
+      ]
+    },
+    {
+      "id": "Q-858a9cf5ccad",
+      "kind": "offset_field",
+      "path": "include/libultra-sdk/PR/libaudio.h",
+      "symbol": "byte2",
+      "lines": [
+        531,
+        541,
+        834,
+        876
+      ]
+    },
+    {
+      "id": "Q-41c5faa1ac00",
+      "kind": "offset_field",
+      "path": "include/libultra-sdk/PR/libaudio.h",
+      "symbol": "byte3",
+      "lines": [
+        542
       ]
     },
     {
@@ -157884,6 +158141,180 @@
           "declaration_line": 146,
           "lines": [
             155
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-4655bef92497",
+      "kind": "offset_field",
+      "path": "src/libultra/audio/cseq.c",
+      "symbol": "byte1",
+      "lines": [
+        153,
+        214,
+        224
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__alCSeqGetTrackEvent",
+          "declaration_line": 136,
+          "lines": [
+            153,
+            214,
+            224
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-d63948571920",
+      "kind": "offset_field",
+      "path": "src/libultra/audio/cseq.c",
+      "symbol": "byte2",
+      "lines": [
+        154,
+        230,
+        235,
+        241
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__alCSeqGetTrackEvent",
+          "declaration_line": 136,
+          "lines": [
+            154,
+            230,
+            235,
+            241
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-4f179d97c982",
+      "kind": "offset_field",
+      "path": "src/libultra/audio/cseq.c",
+      "symbol": "byte3",
+      "lines": [
+        155
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__alCSeqGetTrackEvent",
+          "declaration_line": 136,
+          "lines": [
+            155
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-d8340520ec26",
+      "kind": "offset_field",
+      "path": "src/libultra/audio/csplayer.c",
+      "symbol": "byte1",
+      "lines": [
+        427,
+        440,
+        571,
+        627,
+        636,
+        749,
+        791
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__CSPHandleMIDIMsg",
+          "declaration_line": 419,
+          "lines": [
+            427,
+            440,
+            571,
+            627,
+            636,
+            749
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "__CSPHandleMetaMsg",
+          "declaration_line": 775,
+          "lines": [
+            791
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-4ca459f63c24",
+      "kind": "offset_field",
+      "path": "src/libultra/audio/csplayer.c",
+      "symbol": "byte2",
+      "lines": [
+        428,
+        441,
+        572,
+        613,
+        639,
+        650,
+        663,
+        666,
+        671,
+        699,
+        703,
+        749,
+        791
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__CSPHandleMIDIMsg",
+          "declaration_line": 419,
+          "lines": [
+            428,
+            441,
+            572,
+            613,
+            639,
+            650,
+            663,
+            666,
+            671,
+            699,
+            703,
+            749
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "__CSPHandleMetaMsg",
+          "declaration_line": 775,
+          "lines": [
+            791
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-5448c81c3724",
+      "kind": "offset_field",
+      "path": "src/libultra/audio/csplayer.c",
+      "symbol": "byte3",
+      "lines": [
+        791
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__CSPHandleMetaMsg",
+          "declaration_line": 775,
+          "lines": [
+            791
           ]
         }
       ]

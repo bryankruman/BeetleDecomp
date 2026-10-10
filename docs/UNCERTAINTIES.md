@@ -24,12 +24,12 @@ For every future source wave, regenerate and check this index after code and str
 | Assembly-backed functions or data | 771 |
 | Address-based function identifiers | 906 |
 | Address-based global identifiers | 1460 |
-| Offset-based fields or neutral typed fields | 1605 |
-| Layout padding to preserve | 269 |
+| Offset-based fields or neutral typed fields | 1614 |
+| Layout padding to preserve | 272 |
 | Unresolved type names | 282 |
 | Explicit unused ABI, storage or local identifiers | 133 |
 | Decompiler parameter/local names | 671 |
-| Fake, unresolved or TODO draft markers | 24 |
+| Fake, unresolved or TODO draft markers | 25 |
 | Data-dependent conditional draft guards | 4 |
 
 ## docs/STRATEGY_V4.md
@@ -191,6 +191,22 @@ For every future source wave, regenerate and check this index after code and str
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
 | address_function | `func_level1_00400044` | type `Level1_Exports` | [7](../include/level1.h#L7) |
+
+## include/libultra-sdk/PR/abi.h
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| layout_padding | `pad1` | type `Aclearbuff`, type `Admemmove`, type `Aenvelope`, type `Aenvmixer`, type `Ainterleave`, type `Aloadadpcm`, type `Aloadbuff`, type `Areverb`, type `Asavebuff`, type `Asegment`, type `Asetloop` | [95](../include/libultra-sdk/PR/abi.h#L95), [101](../include/libultra-sdk/PR/abi.h#L101), [109](../include/libultra-sdk/PR/abi.h#L109), [117](../include/libultra-sdk/PR/abi.h#L117), [124](../include/libultra-sdk/PR/abi.h#L124), [153](../include/libultra-sdk/PR/abi.h#L153), [159](../include/libultra-sdk/PR/abi.h#L159), [165](../include/libultra-sdk/PR/abi.h#L165) (+3 in JSON) |
+| layout_padding | `pad2` | type `Aclearbuff`, type `Ainterleave`, type `Asegment`, type `Asetloop` | [103](../include/libultra-sdk/PR/abi.h#L103), [110](../include/libultra-sdk/PR/abi.h#L110), [166](../include/libultra-sdk/PR/abi.h#L166), [205](../include/libultra-sdk/PR/abi.h#L205) |
+
+## include/libultra-sdk/PR/libaudio.h
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| layout_padding | `pad` | — | [257](../include/libultra-sdk/PR/libaudio.h#L257) |
+| offset_field | `byte1` | — | [530](../include/libultra-sdk/PR/libaudio.h#L530), [540](../include/libultra-sdk/PR/libaudio.h#L540), [834](../include/libultra-sdk/PR/libaudio.h#L834), [876](../include/libultra-sdk/PR/libaudio.h#L876) |
+| offset_field | `byte2` | — | [531](../include/libultra-sdk/PR/libaudio.h#L531), [541](../include/libultra-sdk/PR/libaudio.h#L541), [834](../include/libultra-sdk/PR/libaudio.h#L834), [876](../include/libultra-sdk/PR/libaudio.h#L876) |
+| offset_field | `byte3` | — | [542](../include/libultra-sdk/PR/libaudio.h#L542) |
 
 ## include/macros.h
 
@@ -1011,6 +1027,23 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk94` | function `uvGameInit` | [47](../src/game_init.c#L47) |
 | offset_field | `unkC` | function `uvGameInit`, function `uvSetGameState` | [93](../src/game_init.c#L93), [155](../src/game_init.c#L155) |
 | opaque_type | `UnkStruct_8002D1A4` | global `gGameExports` | [18](../src/game_init.c#L18) |
+
+## src/libultra/audio/cseq.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| offset_field | `byte1` | function `__alCSeqGetTrackEvent` | [153](../src/libultra/audio/cseq.c#L153), [214](../src/libultra/audio/cseq.c#L214), [224](../src/libultra/audio/cseq.c#L224) |
+| offset_field | `byte2` | function `__alCSeqGetTrackEvent` | [154](../src/libultra/audio/cseq.c#L154), [230](../src/libultra/audio/cseq.c#L230), [235](../src/libultra/audio/cseq.c#L235), [241](../src/libultra/audio/cseq.c#L241) |
+| offset_field | `byte3` | function `__alCSeqGetTrackEvent` | [155](../src/libultra/audio/cseq.c#L155) |
+
+## src/libultra/audio/csplayer.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| draft_marker | `TODO` | — | [46](../src/libultra/audio/csplayer.c#L46) |
+| offset_field | `byte1` | function `__CSPHandleMIDIMsg`, function `__CSPHandleMetaMsg` | [427](../src/libultra/audio/csplayer.c#L427), [440](../src/libultra/audio/csplayer.c#L440), [571](../src/libultra/audio/csplayer.c#L571), [627](../src/libultra/audio/csplayer.c#L627), [636](../src/libultra/audio/csplayer.c#L636), [749](../src/libultra/audio/csplayer.c#L749), [791](../src/libultra/audio/csplayer.c#L791) |
+| offset_field | `byte2` | function `__CSPHandleMIDIMsg`, function `__CSPHandleMetaMsg` | [428](../src/libultra/audio/csplayer.c#L428), [441](../src/libultra/audio/csplayer.c#L441), [572](../src/libultra/audio/csplayer.c#L572), [613](../src/libultra/audio/csplayer.c#L613), [639](../src/libultra/audio/csplayer.c#L639), [650](../src/libultra/audio/csplayer.c#L650), [663](../src/libultra/audio/csplayer.c#L663), [666](../src/libultra/audio/csplayer.c#L666) (+5 in JSON) |
+| offset_field | `byte3` | function `__CSPHandleMetaMsg` | [791](../src/libultra/audio/csplayer.c#L791) |
 
 ## src/libultra/io/viblack.c
 

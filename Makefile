@@ -581,6 +581,15 @@ $(BUILD_DIR)/%.o: %.s
 	$(V)$(CPP) $(CPPFLAGS) $(BUILD_DEFINES) $(IINC) -I $(dir $*) $(COMMON_DEFINES) $(RELEASE_DEFINES) $(GBI_DEFINES) $(AS_DEFINES) $< | $(ICONV) $(ICONV_FLAGS) | $(AS) $(ASFLAGS) $(ENDIAN) $(IINC) -I $(dir $*) -o $@
 	$(V)$(OBJDUMP_CMD)
 
+# Exact VERSION_I SDK context, limited to the two proven audio translation units.
+SDK_AUDIO_SOURCES := src/libultra/audio/csplayer.c src/libultra/audio/cseq.c
+SDK_AUDIO_OBJECTS := $(addprefix $(BUILD_DIR)/,$(SDK_AUDIO_SOURCES:.c=.o))
+SDK_AUDIO_CC := $(TOOLS)/ido-static-recomp/build/5.3/out/cc
+SDK_AUDIO_FLAGS := -c -Wab,-r4300_mul -G 0 -nostdinc -Xcpluscomm -fullwarn -woff 516,649,838,712 -non_shared -mips2 -o32 -EB -O3 -D_MIPS_SZLONG=32 -DF3DEX_GBI -DBUILD_VERSION=VERSION_I -DBUILD_VERSION_STRING=\"2.0I\" -D_FINALROM -DNDEBUG -Iinclude/libultra-sdk -Iinclude/libultra-sdk/compiler/ido -Iinclude/libultra-sdk/PR -Iinclude/2.0I -Iinclude/2.0I/PR
+SDK_AUDIO_HEADERS := include/2.0I/PR/gbi.h include/2.0I/PR/os_version.h include/libultra-sdk/PR/abi.h include/libultra-sdk/PR/libaudio.h include/libultra-sdk/PR/mbi.h include/libultra-sdk/PR/os.h include/libultra-sdk/PR/os_ai.h include/libultra-sdk/PR/os_cache.h include/libultra-sdk/PR/os_cont.h include/libultra-sdk/PR/os_convert.h include/libultra-sdk/PR/os_debug.h include/libultra-sdk/PR/os_eeprom.h include/libultra-sdk/PR/os_error.h include/libultra-sdk/PR/os_exception.h include/libultra-sdk/PR/os_flash.h include/libultra-sdk/PR/os_gbpak.h include/libultra-sdk/PR/os_gio.h include/libultra-sdk/PR/os_host.h include/libultra-sdk/PR/os_internal.h include/libultra-sdk/PR/os_internal_debug.h include/libultra-sdk/PR/os_internal_error.h include/libultra-sdk/PR/os_internal_exception.h include/libultra-sdk/PR/os_internal_gio.h include/libultra-sdk/PR/os_internal_host.h include/libultra-sdk/PR/os_internal_reg.h include/libultra-sdk/PR/os_internal_rsp.h include/libultra-sdk/PR/os_internal_si.h include/libultra-sdk/PR/os_internal_thread.h include/libultra-sdk/PR/os_internal_tlb.h include/libultra-sdk/PR/os_libc.h include/libultra-sdk/PR/os_message.h include/libultra-sdk/PR/os_motor.h include/libultra-sdk/PR/os_pfs.h include/libultra-sdk/PR/os_pi.h include/libultra-sdk/PR/os_rdp.h include/libultra-sdk/PR/os_reg.h include/libultra-sdk/PR/os_rsp.h include/libultra-sdk/PR/os_si.h include/libultra-sdk/PR/os_system.h include/libultra-sdk/PR/os_thread.h include/libultra-sdk/PR/os_time.h include/libultra-sdk/PR/os_tlb.h include/libultra-sdk/PR/os_vi.h include/libultra-sdk/PR/os_voice.h include/libultra-sdk/PR/ultraerror.h include/libultra-sdk/PR/ultratypes.h include/libultra-sdk/assert.h src/libultra/audio/cseq.h src/libultra/audio/cseqp.h src/libultra/audio/seqp.h
+$(SDK_AUDIO_OBJECTS): $(BUILD_DIR)/%.o: %.c $(SDK_AUDIO_HEADERS)
+	$(V)$(SDK_AUDIO_CC) $(SDK_AUDIO_FLAGS) -o $@ $<
+
 # C
 $(BUILD_DIR)/%.o: %.c
 	$(call print,Compiling:,$<,$@)
