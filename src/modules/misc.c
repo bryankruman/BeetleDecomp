@@ -59,6 +59,29 @@ typedef struct { u8 unk00[4]; MiscTextureFields *first, *second; } MiscTextureFi
 extern f32 D_misc_0040428C;
 #include "module.h"
 
+/* Consumed provider and plane views for matrix, hierarchy and crossing helpers.
+ * RE_UNKNOWN: Complete historical declarations and provider storage contracts
+ * remain unproved; the plane view describes only the consumed 32-byte prefix. */
+extern UvQuat_Exports *gUvQuatExports;
+extern UvModel_Exports *gUvModelExports;
+typedef struct {
+    Vec3F unk0;
+    Vec3F unkC;
+    f32 unk18;
+    s32 unk1C;
+} MiscPlaneRadiusView;
+void miscInterpolateTranslationAndQuaternionMatrix(Mtx4F* output, Mtx4F* first, Mtx4F* second, f32 fraction);
+void miscBuildThreeAngleMatrix(Mtx4F *matrix, f32 firstAngle, f32 secondAngle, f32 thirdAngle);
+void miscBuildTranslationAndThreeAngleMatrix(Mtx4F* matrix, f32 x, f32 y, f32 z, f32 firstAngle, f32 secondAngle, f32 thirdAngle);
+s32 miscCopyObjectHierarchyMatrices(Mtx4F* output, s32 dobj, s32 firstNode, s32 capacity);
+s32 miscMeasurePlanarSegmentCircleFraction(f32 startX, f32 startY, f32 endX, f32 endY, f32 centerX, f32 centerY, f32 radius,
+                       f32 *fractionOut);
+f32 miscEvaluateRadiusGatedPlaneCrossing(MiscPlaneRadiusView* plane, Vec3F* firstPoint, Vec3F* secondPoint);
+void * miscCreateGuiCurveValueRow(void * parent, u8* label, u8* firstText, u8* secondText, UvGrphStruct* curve, f32* valueSource, void ** widgetOutput);
+f32 miscEvaluateClampedSineAngle(f32 sine);
+s32 miscDrawPackedNibbleLine(u8* pixels, u8 color, s16 startX, s16 startY, s16 endX, s16 endY, s16 width, s16 height);
+#line 61 "src/modules/misc.c"
+
 void func_misc_00400AD0();
 void func_misc_00401080();
 void func_misc_004012E4();
@@ -629,7 +652,35 @@ s32 miscGetMaskedFlagTransition(s32 previous, s32 current, s32 mask) {
 #line 404 "src/modules/misc.c"
 
 /* RE_UNKNOWN: valid blend-weight/input domains, matrix/quaternion frame convention and partial-overlap guarantees; trace original export callers and matrix/quaternion producers before changing interpolation or alias handling. */
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_004012E4.s")
+/* Blend translation and provider-derived quaternions, then publish the affine matrix fields.
+ * RE_UNKNOWN: Interpolation domain, quaternion convention, overlap and provider failure/storage contracts require callers and original providers. */
+#line 406 "src/modules/misc.c"
+void miscInterpolateTranslationAndQuaternionMatrix(Mtx4F* output, Mtx4F* first, Mtx4F* second, f32 fraction) {
+    f32 temp_fv0;
+    f32 sp68;
+    f32 sp64;
+    f32 sp60;
+    Quat sp50;
+    Quat sp40;
+    Quat sp30;
+
+    temp_fv0 = (1.0 - fraction);
+    sp68 =  (temp_fv0 * first->m[3][0]) + (second->m[3][0] * fraction);
+    sp64 = (temp_fv0 * first->m[3][1]) + (second->m[3][1] * fraction);
+    sp60 = (temp_fv0 * first->m[3][2]) + (second->m[3][2] * fraction);
+    gUvQuatExports->uvQuatFromRotationMatrix(&sp40, first);
+    gUvQuatExports->uvQuatFromRotationMatrix(&sp30, second);
+    gUvQuatExports->uvQuatBlendNormalized(&sp50, &sp40, &sp30, fraction);
+    gUvFmtxExports->uvMat4SetNormalizedQuaternionRotation(output, sp50.x, sp50.y, sp50.z, sp50.w);
+    output->m[0][3] = 0.0f;
+    output->m[1][3] = 0.0f;
+    output->m[2][3] = 0.0f;
+    output->m[3][0] = sp68;
+    output->m[3][1] = sp64;
+    output->m[3][2] = sp60;
+    output->m[3][3] = 1.0f;
+}
+#line 407 "src/modules/misc.c"
 
 #line 408 "src/modules/misc.c"
 /* Clamp to the upper bound first, then the lower bound. Preserve this order
@@ -926,7 +977,64 @@ void miscVec4AddScaled(f32 *output, f32 *base, f32 scale, f32 *delta) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00401FA0.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_0040213C.s")
+/* Build the three-angle matrix while preserving exact-zero shortcuts and interleaved stores.
+ * RE_UNKNOWN: Angle convention, matrix overlap and retained one-iteration scaffold require original callers/compiler evidence. */
+#line 501 "src/modules/misc.c"
+void miscBuildThreeAngleMatrix(Mtx4F *matrix, f32 firstAngle, f32 secondAngle, f32 thirdAngle) {
+    f32 var_fa0;
+    f32 var_ft4;
+    f32 var_fa1;
+    f32 var_fs1;
+    f32 var_ft5;
+    f32 var_fv1;
+    f32 var_fs2;
+    f32 var_fs3;
+
+    if (firstAngle == 0.0f) {
+        var_fs2 = 1.0f;
+        var_fs3 = 0.0f;
+    } else {
+        var_fs3 = gUvMathExports->uvSinF(firstAngle);
+        var_fs2 = gUvMathExports->uvCosF(firstAngle);
+    }
+    if (secondAngle == 0.0f) {
+        var_fa1 = 1.0f;
+        var_fs1 = 0.0f;
+    } else {
+        do {
+            var_fs1 = gUvMathExports->uvSinF(secondAngle);
+        } while (0); // RE_UNKNOWN: Retained upstream compiler scaffold; historical intent unproved.
+        var_fa1 = gUvMathExports->uvCosF(secondAngle);
+    }
+    if (thirdAngle == 0.0f) {
+        var_fa0 = 1.0f;
+        var_fv1 = 0.0f;
+        var_ft4 = 0.0f;
+        var_ft5 = var_fs1;
+    } else {
+        var_fv1 = gUvMathExports->uvSinF(thirdAngle);
+        var_fa0 = gUvMathExports->uvCosF(thirdAngle);
+        var_ft4 = var_fv1 * var_fs1;
+        var_ft5 = var_fa0 * var_fs1;
+    }
+    matrix->m[3][0] = 0.0f;
+    matrix->m[3][1] = 0.0f;
+    matrix->m[1][2] = var_fs1;
+    matrix->m[3][2] = 0.0f;
+    matrix->m[0][3] = 0.0f;
+    matrix->m[1][3] = 0.0f;
+    matrix->m[2][3] = 0.0f;
+    matrix->m[0][0] = (var_fa0 * var_fs2) - (var_ft4 * var_fs3);
+    matrix->m[1][0] = -var_fa1 * var_fs3;
+    matrix->m[2][0] = (var_fv1 * var_fs2) + (var_ft5 * var_fs3);
+    matrix->m[0][1] = (var_fa0 * var_fs3) + (var_ft4 * var_fs2);
+    matrix->m[1][1] = var_fa1 * var_fs2;
+    matrix->m[2][1] = (var_fv1 * var_fs3) - (var_ft5 * var_fs2);
+    matrix->m[0][2] = -var_fv1 * var_fa1;
+    matrix->m[2][2] = var_fa0 * var_fa1;
+    matrix->m[3][3] = 1.0f;
+}
+#line 502 "src/modules/misc.c"
 /* RE_UNKNOWN: quaternion normalization/frame convention, cached-adjustment intent, shared flag reset/lifetime/reentrancy and overlap guarantees; trace original quaternion producers, flag writers and callers before changing the cache or transform. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_0040234C.s")
 
@@ -971,7 +1079,40 @@ void miscSetTextureAxisValue(s32 fileId, const char *selector, f32 value) {
 }
 #line 514 "src/modules/misc.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00402A5C.s")
+/* Build the rotation matrix and install the three supplied translation components.
+ * RE_UNKNOWN: Angle convention, input domains and output storage require original callers/providers. */
+#line 515 "src/modules/misc.c"
+void miscBuildTranslationAndThreeAngleMatrix(Mtx4F* matrix, f32 x, f32 y, f32 z, f32 firstAngle, f32 secondAngle, f32 thirdAngle) {
+    f32 temp_fs0;
+    f32 temp_fs1;
+    f32 sp3C;
+    f32 sp38;
+    f32 sp34;
+    f32 temp_fv0;
+    temp_fs0 = gUvMathExports->uvSinF(thirdAngle);
+    temp_fs1 = gUvMathExports->uvCosF(thirdAngle);
+    sp3C = gUvMathExports->uvSinF(secondAngle);
+    sp38 = gUvMathExports->uvCosF(secondAngle);
+    sp34 = gUvMathExports->uvSinF(firstAngle);
+    temp_fv0 = gUvMathExports->uvCosF(firstAngle);
+    matrix->m[0][0] = (temp_fs1 * temp_fv0) - (temp_fs0 * (sp3C * sp34));
+    matrix->m[0][1] = (temp_fs1 * sp34) + (temp_fs0 * (sp3C * temp_fv0));
+    matrix->m[0][2] = -temp_fs0 * sp38;
+    matrix->m[0][3] = 0.0f;
+    matrix->m[1][0] = -sp38 * sp34;
+    matrix->m[1][1] = sp38 * temp_fv0;
+    matrix->m[1][2] = sp3C;
+    matrix->m[1][3] = 0.0f;
+    matrix->m[2][0] = (temp_fs0 * temp_fv0) + (temp_fs1 * (sp3C * sp34));
+    matrix->m[2][1] = (temp_fs0 * sp34) - (temp_fs1 * (sp3C * temp_fv0));
+    matrix->m[2][2] = temp_fs1 * sp38;
+    matrix->m[2][3] = 0.0f;
+    matrix->m[3][0] = x;
+    matrix->m[3][1] = y;
+    matrix->m[3][2] = z;
+    matrix->m[3][3] = 1.0f;
+}
+#line 516 "src/modules/misc.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00402BFC.s")
 
@@ -1015,7 +1156,50 @@ void miscVec3ApproachNonlinearPreserveLength(Vec3F *target, Vec3F *current, f32 
 }
 #line 526 "src/modules/misc.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00403110.s")
+/* Traverse the model hierarchy matrix stack and copy the selected object matrices to the output.
+ * RE_UNKNOWN: Output capacity, hierarchy validity, matrix-stack limits and provider failure behavior require original callers/providers. */
+#line 527 "src/modules/misc.c"
+s32 miscCopyObjectHierarchyMatrices(Mtx4F* output, s32 dobj, s32 firstNode, s32 capacity) {
+    s32 var_s5;
+    s32 j;
+    s32 var_s1;
+    s32 model;
+    s32 i;
+    s32 sp98;
+    s32 sp94;
+    s32 var_s4;
+    Mtx4F sp50;
+
+    model = gUvDobjExports->uvDobjGetModel(dobj);
+    gUvModelExports->uvModelGetProps(model, 4, &sp94, 0);
+    gUvModelExports->uvModelResetMatrixStack();
+    var_s5 = -1;
+    var_s4 = 0;
+    for (i = 0; i < sp94; i++) {
+        gUvModelExports->uvModelGetProps(model, 7, i, &sp98, 0);
+        if (var_s5 >= sp98) {
+            var_s1 = (var_s5 - sp98) + 1;
+        } else {
+            var_s1 = 0;
+        }
+        var_s5 = sp98;
+        for (j = 0; j < var_s1; j++) {
+            gUvModelExports->uvModelPopMatrix();
+        }
+        gUvDobjExports->uvDobjGetPosm(dobj, i, &sp50);
+        gUvModelExports->uvModelPushMatrix(&sp50);
+
+        if (i >= firstNode) {
+            if (var_s4 >= capacity) {
+                return var_s4;
+            }
+            gUvFmtxExports->uvMat4FCopy((u32)output + (var_s4 * sizeof(Mtx4F)), gUvModelExports->uvModelGetCurrentMatrix());
+            var_s4++;
+        }
+    }
+    return var_s4;
+}
+#line 528 "src/modules/misc.c"
 
 #line 529 "src/modules/misc.c"
 /* Load the original filr (file ROM) module using its four-character identifier. */
@@ -1035,11 +1219,130 @@ void miscUnloadFileModule(void) {
 }
 #line 536 "src/modules/misc.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00403348.s")
+/* Test the planar segment against a circle and publish the original interval-fraction result.
+ * RE_UNKNOWN: Radius/input domains, endpoint conventions and output aliasing require original callers. */
+#line 537 "src/modules/misc.c"
+s32 miscMeasurePlanarSegmentCircleFraction(f32 startX, f32 startY, f32 endX, f32 endY, f32 centerX, f32 centerY, f32 radius,
+                       f32 *fractionOut) {
+    u8 sp4F;
+    u8 sp4E;
+    f32 temp_ft5;
+    f32 sp44;
+    f32 temp_fa0_3;
+    f32 temp_fv1_5;
+    f32 ft4;
+    f32 temp_fv0;
+    f32 sp30;
+    f32 fa1;
+    f32 tmp;
+
+    sp4F = 0;
+    sp4E = 0;
+    temp_ft5 = 0;
+    if (gUvMathExports->uvSqrtf(SQ(startX - centerX) + SQ(startY - centerY)) < radius) {
+        sp4F = 1;
+    }
+
+    if (gUvMathExports->uvSqrtf(SQ(endX - centerX) + SQ(endY - centerY)) < radius) {
+        sp4E = 1;
+    }
+    if (sp4F && sp4E) {
+        *fractionOut = 1.0f;
+        return 1;
+    }
+    temp_ft5 = endX - startX;
+    sp44 = endY - startY;
+    fa1 = SQ(temp_ft5) + SQ(sp44);
+    if (fa1 == 0) {
+        *fractionOut = 0;
+        return 0;
+    }
+    tmp = ((startX - centerX) * temp_ft5) + (sp44 * (startY - centerY));
+    ft4 = 2.0f * tmp;
+    sp44 = (SQ(startX - centerX)) + (SQ(startY - centerY));
+    sp30 = SQ(ft4) - ((4.0f * fa1) * (sp44 - (radius * radius)));
+
+    if (SQ(ft4) < ((4.0f * fa1) * (((SQ(startX - centerX)) + (SQ(startY - centerY))) - SQ(radius)))) {
+        *fractionOut = 0.0f;
+        return 0;
+    }
+    temp_fv0 = gUvMathExports->uvSqrtf(sp30);
+    sp4F = 0;
+    sp4E = 0;
+    temp_fa0_3 = ((-ft4) - temp_fv0) / (2.0f * fa1);
+    if ((temp_fa0_3 >= 0.0f) && (temp_fa0_3 <= 1.0f)) {
+        sp4F = 1;
+    }
+    temp_fv1_5 = ((-ft4) + temp_fv0) / (2.0f * fa1);
+    if ((temp_fv1_5 >= 0.0f) && (temp_fv1_5 <= 1.0f)) {
+        sp4E = 1;
+    }
+    if (sp4F && sp4E) {
+        if (temp_fv1_5 < temp_fa0_3) {
+            *fractionOut = temp_fa0_3 - temp_fv1_5;
+        } else {
+            *fractionOut = temp_fv1_5 - temp_fa0_3;
+        }
+        return 1;
+    }
+    if (sp4F) {
+        *fractionOut = 1.0f - temp_fa0_3;
+        return 1;
+    }
+    if (sp4E) {
+        *fractionOut = temp_fv1_5;
+        return 1;
+    }
+    *fractionOut = 0.0f;
+    return 0;
+}
+#line 538 "src/modules/misc.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00403650.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00403748.s")
+/* Test the radius and plane-side conditions, then return the original signed crossing ratio.
+ * RE_UNKNOWN: Only the consumed 32-byte view is represented; radius units, direction convention and overlap require original callers. */
+#line 541 "src/modules/misc.c"
+f32 miscEvaluateRadiusGatedPlaneCrossing(MiscPlaneRadiusView* plane, Vec3F* firstPoint, Vec3F* secondPoint) {
+    Vec3F sp3C;
+    Vec3F sp30;
+    f32 temp_fa0;
+    f32 sp28;
+    s32 var_v0;
+    s32 var_v1;
+
+    gUvFvecExports->uvVec3FSub(&sp3C, &plane->unk0, firstPoint);
+    if (SQ(plane->unk18) < gUvFvecExports->uvVec3FLenSquared(&sp3C)) {
+        return 0.0f;
+    }
+    gUvFvecExports->uvVec3FSub(&sp30, &plane->unk0, secondPoint);
+    sp28 = gUvFvecExports->uvVec3FDot(&plane->unkC, &sp3C);
+    temp_fa0 = gUvFvecExports->uvVec3FDot(&plane->unkC, &sp30);
+    if (sp28 >= 0) {
+        var_v1 = 1;
+    } else {
+        var_v1 = -1;
+    }
+
+    if (temp_fa0 >= 0) {
+        var_v0 = 1;
+    } else {
+        var_v0 = -1;
+    }
+    if (var_v0 == var_v1) {
+        return 0.0f;
+    }
+    if ((sp28 < 0.0f) && (plane->unk1C == 0)) {
+        return 0.0f;
+    }
+    if (sp28 >= 0) {
+        var_v0 = 1;
+    } else {
+        var_v0 = -1;
+    }
+    return var_v0 * (temp_fa0 / (sp28 - temp_fa0));
+}
+#line 542 "src/modules/misc.c"
 
 #line 543 "src/modules/misc.c"
 /* Create and append a compact label row, allocate its scalar widget, then
@@ -1084,7 +1387,33 @@ void *miscCreateGuiBoundScalarRow(void *parent, u8 *label, s16 valueKind, f32 lo
 }
 #line 544 "src/modules/misc.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00403A5C.s")
+/* Append a compact label row, configure its curve-backed value widget and optionally expose that widget.
+ * RE_UNKNOWN: Curve count/bounds, value-source storage/lifetime, allocation failure and remaining widget selectors require original callers/providers. */
+#line 545 "src/modules/misc.c"
+void * miscCreateGuiCurveValueRow(void * parent, u8* label, u8* firstText, u8* secondText, UvGrphStruct* curve, f32* valueSource, void ** widgetOutput) {
+    void * row;
+    void * widget;
+    f32 initialValue;
+
+    if (valueSource != NULL) {
+        initialValue = *valueSource;
+    } else {
+        initialValue = 0.0f;
+    }
+    row = ((MiscGuiCreatorExports *)gUvGuiExports)->getCompactText(((MiscGuiCreatorExports *)gUvGuiExports)->allocateCompactText());
+    ((MiscGuiCreatorExports *)gUvGuiExports)->copyCompactText(row, label);
+    ((MiscGuiCreatorExports *)gUvGuiExports)->appendCompactTextRow(parent, row);
+    widget = ((MiscGuiCreatorExports *)gUvGuiExports)->getValueWidget(((MiscGuiCreatorExports *)gUvGuiExports)->allocateValueWidget());
+    ((MiscGuiCreatorExports *)gUvGuiExports)->attachValueWidget(row, widget);
+    ((MiscGuiCreatorExports *)gUvGuiExports)->setValueWidgetLabels(widget, secondText, firstText);
+    ((MiscGuiCreatorExports *)gUvGuiExports)->setField62Props(widget, 1, 0, 0);
+    ((MiscGuiCreatorExports *)gUvGuiExports)->configureValueWidget(widget, (s32)curve, curve->arr->unk0, curve->arr[curve->count - 1].unk0, initialValue, valueSource);
+    if (widgetOutput != NULL) {
+        *widgetOutput = widget;
+    }
+    return row;
+}
+#line 546 "src/modules/misc.c"
 
 #line 547 "src/modules/misc.c"
 
@@ -1118,9 +1447,132 @@ f32 miscEvaluateVectorDotThroughClampedHelper(Vec3F *first, Vec3F *second) {
 }
 #line 552 "src/modules/misc.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00403CD8.s")
+/* Clamp the sine input and evaluate the original atan2/square-root expression.
+ * RE_ORIGINAL_QUIRK: The exact-zero shortcut and clamp comparisons are retained, including their NaN bypass.
+ * RE_UNKNOWN: NaN/input domains and approximation/angle convention require original callers/providers. */
+#line 553 "src/modules/misc.c"
+f32 miscEvaluateClampedSineAngle(f32 sine) {
+    if (sine == 0) {
+        return 0;
+    }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00403D8C.s")
+    if (sine < -1.f) {
+        sine = -1.f;
+    } else if (sine > 1.f) {
+        sine = 1.f;
+    }
+
+    return gUvMathExports->uvAtan2F(sine, gUvMathExports->uvSqrtf(1 - SQ(sine)));
+}
+#line 554 "src/modules/misc.c"
+
+/* Clamp the endpoints and draw into packed nibbles using the original signed-short stepping.
+ * RE_ORIGINAL_QUIRK: Each endpoint is clamped independently; nibble parity and short truncations are retained.
+ * RE_UNKNOWN: Buffer extent, odd-width layout, signed overflow and retained empty conditional require original callers/compiler evidence. */
+#line 555 "src/modules/misc.c"
+s32 miscDrawPackedNibbleLine(u8* pixels, u8 color, s16 startX, s16 startY, s16 endX, s16 endY, s16 width, s16 height) {
+    s16 var_s2;
+    s16 var_t4;
+    s16 var_v0;
+    s16 var_v1;
+    s32 var_a1;
+    s32 var_t0;
+    s16 s0;
+    u8* var_s1;
+    u8* tmp;
+
+    var_s2 = width >> 1;
+    var_v0 = width - 1;
+    var_v1 = height - 1;
+    if (((startX < 0) && (endX < 0)) || ((var_v0 < startX) && (var_v0 < endX))) {
+        return 0;
+    }
+    if (((startY < 0) && (endY < 0)) || ((((var_v1 < startY))) && (var_v1 < endY))) {
+        return 0;
+    }
+    var_a1 = 1;
+    if (startX < 0) {
+        startX = 0;
+    } else if (var_v0 < startX) {
+        startX = var_v0;
+    }
+    var_t0 = 1;
+    if (startY < 0) {
+        startY = 0;
+    } else if (var_v1 < startY) {
+        startY = var_v1;
+    }
+    if (endX < 0) {
+        endX = 0;
+    } else if (var_v0 < endX) {
+        endX = var_v0;
+    }
+    if (endY < 0) {
+        endY = 0;
+    } else if (var_v1 < endY) {
+        endY = var_v1;
+    }
+    var_v0 = endX - startX;
+    var_v1 = endY - startY;
+    var_s1 = (s16) ((startY * var_s2) + (startX >> 1)) + pixels;
+    if (var_v0 < 0) {
+        var_t0 = -1;
+        var_v0 = var_v0 * -1;
+    }
+    if (var_v1 < 0) {
+        var_a1 = -1;
+        var_v1 = var_v1 * -1;
+    }
+    if (startX & 1) {
+        *var_s1 = (*var_s1 & 0xF0) | (color & 0xF);
+    } else {
+        *var_s1 = (*var_s1 & 0xF) | (color & 0xF0);
+    }
+    if (var_v0 < var_v1) {
+        var_t4 = (var_v0 * 2) - var_v1;
+        s0 = (var_v0 - var_v1) * 2;
+        while (var_v1--) {
+            startY += var_a1;
+            if (var_t4 > 0) {
+                startX += var_t0;
+                var_t4 += s0;
+            } else {
+                var_t4 += (s16)(var_v0 * 2);
+            }
+            if (startX & 1) {
+                var_s1 = (s16) ((startY * var_s2) + (startX >> 1)) + pixels;
+                *var_s1 = (*var_s1 & 0xF0) | (color & 0xF);
+            } else {
+                var_s1 = (s16) ((startY * var_s2) + (startX >> 1)) + pixels;
+                *var_s1 = (*var_s1 & 0xF) | (color & 0xF0);
+            }
+        }
+    } else {
+        var_t4 = (var_v1 * 2) - var_v0;
+        s0 = (var_v1 - var_v0) * 2;
+        while (var_v0--) {
+            // RE_UNKNOWN: Retained upstream compiler scaffold; historical intent unproved.
+            if (!var_a1) {}
+
+            startX += var_t0;
+            if (var_t4 > 0) {
+                startY += var_a1;
+                var_t4 += s0;
+            } else {
+                var_t4 += (s16)(var_v1 * 2);
+            }
+            if (startX & 1) {
+                var_s1 = (s16) ((startY * var_s2) + (startX >> 1)) + pixels;
+                *var_s1 = (*var_s1 & 0xF0) | (color & 0xF);
+            } else {
+                var_s1 = (s16) ((startY * var_s2) + (startX >> 1)) + pixels;
+                *var_s1 = (*var_s1 & 0xF) | (color & 0xF0);
+            }
+        }
+    }
+    return 1;
+}
+#line 556 "src/modules/misc.c"
 
 #line 557 "src/modules/misc.c"
 /* Set the complete 32-bit seed used by the shared linear congruential generator. */

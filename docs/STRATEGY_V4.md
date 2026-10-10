@@ -34,8 +34,8 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **781** assembly references:
-**742** ordinary functions and **39** entrypoints, with **710,776** known instruction bytes
+matching C are preserved with `#line`. The current ledger has **772** assembly references:
+**733** ordinary functions and **39** entrypoints, with **706,200** known instruction bytes
 and no unknown sizes. The broader name audit still finds **285** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
@@ -3295,10 +3295,19 @@ Totals: 419 further recoveries after the 225 upstream ordinary imports, plus 153
 Frozen wave `3800-light-emitter-native-contracts` and `accepted-light-emitter-native-contracts-3800` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 419 further readable functions
+## Historical accepted checkpoint — 419 further readable functions
 
 Name observed audio manager initialization, buffer setup, emitter playback and particle selection roles while preserving original operations and searchable ownership and layout unknowns.
 
 Totals: 419 further recoveries after the 225 upstream ordinary imports, plus 1545 existing C semantic cleanups. Current ledger: 781 assembly references = 742 ordinary + 39 entrypoints; 710,776 known remaining instruction bytes; zero unknown sizes; 285 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `3874-audio-effects-native-contracts` and `accepted-audio-effects-native-contracts-3874` verify real translation-unit instructions/full relocations, 3 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 428 further readable functions
+
+Recover nine original MISC functions as descriptive canonical definitions with exact original-symbol compatibility aliases. Preserve all 52 prior C bodies literally, all 13 remaining assembly functions and every existing relocation-map byte. Complete 4576-byte native comparison, 52 ordered five-field records and 18 empty compiler logs passed. The exact trial-to-final name and six blank-line whitespace inverse is explicit; normal extraction, fresh complete original packed MISC and entire relocation section, full original ROM, all 1036 final manifest files (exact prior 1035 plus one explicit absent-before linker input) and exact entire 781-minus-nine ledger projection remain mandatory. The dedicated misc_partial_aliases.ld input uses the existing ld-r/-T route; all nine old/canonical pairs must be defined at equal executable addresses in the final partial ELF. No readonly ownership changes.
+
+Totals: 428 further recoveries after the 225 upstream ordinary imports, plus 1545 existing C semantic cleanups. Current ledger: 772 assembly references = 733 ordinary + 39 entrypoints; 706,200 known remaining instruction bytes; zero unknown sizes; 285 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `3952-misc-core-native-recoveries` and `accepted-misc-core-native-recoveries-3952` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
