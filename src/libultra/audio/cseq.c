@@ -29,7 +29,7 @@ static u8  __getTrackByte(ALCSeq *s,u32 track);
 static u32 __alCSeqGetTrackEvent(ALCSeq *seq, u32 track, ALEvent *event); 
 
 void alCSeqNew(ALCSeq *seq, u8 *ptr)
-{
+{ /* RE_CONTRACT: Bind the compact sequence buffer, initialize 16 track cursors and read each active initial delta. RE_UNKNOWN: offsets, buffer bounds and nonzero division are input requirements; loop decoding later writes this buffer. */
     u32         i,tmpOff,flagTmp;
     
     /* load the seqence pointed to by ptr   */
@@ -61,7 +61,7 @@ void alCSeqNew(ALCSeq *seq, u8 *ptr)
 }
 
 void alCSeqNextEvent(ALCSeq *seq,ALEvent *evt)
-{
+{ /* RE_CONTRACT: Select the earliest active track, preferring its lowest index on ties. RE_UNKNOWN: a valid delta below 0xFFFFFFFF is required. Preserve the final sequence-end trailing delta read and existing unsigned countdown arithmetic. */
     u32     i;
     u32     firstTime = 0xFFFFFFFF;
     u32     firstTrack;
@@ -106,7 +106,7 @@ void alCSeqNextEvent(ALCSeq *seq,ALEvent *evt)
   to indicate that there is no next event.
 */
 char __alCSeqNextDelta(ALCSeq *seq, s32 *pDeltaTicks)
-{
+{ /* RE_CONTRACT: Return FALSE without writing the output when no tracks remain; otherwise normalize countdowns once, clear deltaFlag and return the minimum through s32. This is a state-mutating peek. */
     u32     i;
     u32	    firstTime = 0xFFFFFFFF;
     u32     lastTicks = seq->lastDeltaTicks;
@@ -134,7 +134,7 @@ char __alCSeqNextDelta(ALCSeq *seq, s32 *pDeltaTicks)
 
 /* only call alCSeqGetTrackEvent with a valid track !! */
 static u32 __alCSeqGetTrackEvent(ALCSeq *seq, u32 track, ALEvent *event) 
-{
+{ /* RE_CONTRACT: Decode one valid track event, including running status and duration. Loop-end processing writes the backing buffer. RE_UNKNOWN: supported meta types, valid back-jumps and adequate stream bytes are required. */
     u32     offset;
     u8      status, loopCt, curLpCt, *tmpPtr;
     
@@ -244,25 +244,25 @@ static u32 __alCSeqGetTrackEvent(ALCSeq *seq, u32 track, ALEvent *event)
 }
 
 f32 alCSeqTicksToSec(ALCSeq *seq, s32 ticks, u32 tempo)
-{
+{ /* RE_CONTRACT: Convert ticks and tempo using the header division and original mixed float/double expression. RE_UNKNOWN: division must be nonzero; signed tick and result-range policy is external. */
     return ((f32) (((f32)(ticks) * (f32)(tempo)) /
                      ((f32)(seq->base->division) * 1000000.0)));
 }
 
 u32 alCSeqSecToTicks(ALCSeq *seq, f32 sec, u32 tempo)
-{
+{ /* RE_CONTRACT: Convert seconds through the original double-literal expression and cast to u32. RE_UNKNOWN: tempo must be nonzero and the result must be representable; no saturation or input clamp is performed. */
     return (u32)(((sec * 1000000.0) * seq->base->division) / tempo);
 }
 
 
 s32 alCSeqGetTicks(ALCSeq *seq)
-{
+{ /* RE_CONTRACT: Return the stored u32 lastTicks through the existing s32 API. Preserve the signed conversion and wrap behavior; no sequence or range check is added. */
     return seq->lastTicks; 
 }
 
 
 void alCSeqNewMarker(ALCSeq *seq, ALCSeqMarker *m, u32 ticks)
-{
+{ /* RE_CONTRACT: Scan a temporary parser and save the state before the event that reaches the requested tick. At least one event is consumed. Markers borrow buffer pointers, and scanning may change shared loop-counter bytes. */
     ALEvent     evt;
     ALCSeq      tempSeq;
     s32         i;
@@ -294,7 +294,7 @@ void alCSeqNewMarker(ALCSeq *seq, ALCSeqMarker *m, u32 ticks)
 }
 
 void alCSeqSetLoc(ALCSeq *seq, ALCSeqMarker *m)
-{
+{ /* RE_CONTRACT: Restore marker counters and borrowed cursor/backup/status arrays. Leave base, qnpt and deltaFlag unchanged. RE_UNKNOWN: marker buffer lifetime and the caller-selected normalization phase must remain compatible. */
     s32     i;
     
     seq->validTracks    = m->validTracks;
@@ -312,7 +312,7 @@ void alCSeqSetLoc(ALCSeq *seq, ALCSeqMarker *m)
 }
 
 void alCSeqGetLoc(ALCSeq *seq, ALCSeqMarker *m)
-{
+{ /* RE_CONTRACT: Snapshot counters and borrowed cursor/backup/status arrays into the marker. No payload copy or deltaFlag snapshot is made; the caller must retain the same live sequence buffer and compatible normalization phase. */
     s32     i;
     
     m->validTracks    = seq->validTracks;
@@ -331,7 +331,7 @@ void alCSeqGetLoc(ALCSeq *seq, ALCSeqMarker *m)
 
 /* non-aligned byte reading routines */
 static u8 __getTrackByte(ALCSeq *seq,u32 track)
-{
+{ /* RE_CONTRACT: Read a raw/escaped byte or copy a back-reference byte without recursive decoding. RE_UNKNOWN: cursor/back-reference bounds and nonzero run lengths are required; a zero length wraps the u8 run counter to 255. */
     u8      theByte;
 
     
@@ -381,7 +381,7 @@ static u8 __getTrackByte(ALCSeq *seq,u32 track)
 }
 
 static u32 __readVarLen(ALCSeq *seq,u32 track)
-{
+{ /* RE_CONTRACT: Accumulate seven-bit groups until a byte clears its continuation bit. RE_UNKNOWN: input must terminate within valid storage; there is no byte-count or overflow guard, and u32 arithmetic is preserved. */
     u32 value;
     u32 c;
 

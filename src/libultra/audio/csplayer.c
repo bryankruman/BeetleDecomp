@@ -57,7 +57,7 @@ static void		__setUsptFromTempo(ALCSPlayer *seqp, f32 tempo);		/* sct 1/8/96 */
  * Sequence Player public functions
  */
 void alCSPNew(ALCSPlayer *seqp, ALSeqpConfig *c)
-{
+{ /* RE_CONTRACT: Initialize a stopped compact-sequence player, allocate its channel/voice/event storage, and register its callback with the synth. RE_UNKNOWN: heap failure handling and player teardown are external. */
     s32                 i;
     ALEventListItem     *items;
     ALVoiceState        *vs;
@@ -124,7 +124,7 @@ void alCSPNew(ALCSPlayer *seqp, ALSeqpConfig *c)
  * private routines or driver callback routines
  *************************************************************/
 static ALMicroTime __CSPVoiceHandler(void *node)
-{
+{ /* RE_CONTRACT: Dispatch queued player/voice/oscillator events until the next nonzero delay; update curTime once. RE_UNKNOWN: queue capacity, callback lifetimes and caller serialization are external. */
     ALCSPlayer      *seqp = (ALCSPlayer *) node;
     ALEvent         evt;
     ALVoice         *voice;
@@ -346,7 +346,7 @@ static ALMicroTime __CSPVoiceHandler(void *node)
  sct 11/7/95
 */
 void __CSPPostNextSeqEvent(ALCSPlayer *seqp) 
-{
+{ /* RE_CONTRACT: When playing a nonnull target, normalize/peek the next sequence delta and queue a reference event at deltaTicks * uspt. The peek mutates parser countdown state; arithmetic and queue behavior are preserved. */
     ALEvent     evt;
     s32		deltaTicks;
     
@@ -372,7 +372,7 @@ void __CSPPostNextSeqEvent(ALCSPlayer *seqp)
 */
 static void
 __CSPHandleNextSeqEvent(ALCSPlayer *seqp)
-{
+{ /* RE_CONTRACT: Consume one target event, dispatch MIDI/tempo, and post the next reference; final sequence end queues STOP. Caller must supply a live parser with a valid next event. */
     ALEvent	evt;
 
     /* sct 1/5/96 - Do nothing if we don't have a target sequence. */
@@ -417,7 +417,7 @@ __CSPHandleNextSeqEvent(ALCSPlayer *seqp)
 }
 
 static void __CSPHandleMIDIMsg(ALCSPlayer *seqp, ALEvent *event)
-{
+{ /* RE_CONTRACT: Apply MIDI to channel/voice state; zero-velocity NoteOn follows NoteOff. Failed sound/voice lookups return even in release. RE_UNKNOWN: channel/bank capacity and synth allocation guarantees are external. */
     ALVoice             *voice;
     ALVoiceState        *vs;
     s32                 status;
@@ -773,7 +773,7 @@ static void __CSPHandleMIDIMsg(ALCSPlayer *seqp, ALEvent *event)
 }
 
 static void __CSPHandleMetaMsg(ALCSPlayer *seqp, ALEvent *event)
-{
+{ /* RE_CONTRACT: On tempo change, remove queued compact note-offs and repost them using integer old/new uspt conversion. RE_UNKNOWN: oldUspt must be nonzero and queue mutation must be serialized by the caller. */
     ALTempoEvent    *tevt = &event->msg.tempo;
     ALEvent         evt;
     s32             tempo;
@@ -833,7 +833,7 @@ static void __CSPHandleMetaMsg(ALCSPlayer *seqp, ALEvent *event)
 }
 
 static void  __CSPRepostEvent(ALEventQueue *evtq, ALEventListItem *item)
-{
+{ /* RE_CONTRACT: Insert an already detached event into the relative-delay queue while interrupts are masked; equal-delay entries remain before the new entry. Restore the prior interrupt mask; do not allocate or copy the event. */
     OSIntMask           mask;
     ALLink              *node;
     ALEventListItem     *nextItem;
@@ -873,7 +873,7 @@ static void  __CSPRepostEvent(ALEventQueue *evtq, ALEventListItem *item)
   since the ALCSeq's qnpt field is at a different offset.
 */
 static void __setUsptFromTempo (ALCSPlayer *seqp, f32 tempo)
-{
+{ /* RE_CONTRACT: Convert tempo through the compact target qnpt when present, otherwise use 488. Preserve float multiplication and truncation to s32; no tempo/division/range clamp is performed. */
     if (seqp->target)
 	seqp->uspt = (s32)((f32)tempo * seqp->target->qnpt);
     else

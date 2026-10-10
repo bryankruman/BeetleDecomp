@@ -141,6 +141,14 @@ segments:
       - [0xD840, asm, cspstop]
       - [0xD870, c, libultra/audio/cseq]
       - [0xE330, asm, sl]
+      - [0x115F0, c, libultra/audio/load]
+      - [0x12140, asm, sl_resample_retained]
+      - [0x12440, c, libultra/audio/env]
+      - [0x130A0, asm, sl_aux_save_retained]
+      - [0x13310, c, libultra/audio/seqplayer]
+      - [0x14C50, asm, sl_middle_retained]
+      - [0x18290, c, libultra/audio/reverb]
+      - [0x18EE0, asm, sl_tail_retained]
       - [0x1A8E0, databin, rspBootTextStart]
       - [0x1A9B0, databin, gspF3DEX2_fifoTextStart]
       - [0x1F410, data]
@@ -154,6 +162,8 @@ segments:
       - [0x20450, data]
       - [0x215D0, .data, libultra/os/initialize]
       - [0x215F0, data]
+      - [0x219B0, .data, libultra/audio/env]
+      - [0x21AF0, data]
       - [0x21B00, rodata] # Maybe?
       - [0x21B90, .rodata, game_init]
       - [0x21C10, .rodata, profiler]
@@ -163,6 +173,11 @@ segments:
       - [0x21D70, .rodata, libultra/audio/csplayer]
       - [0x21FB0, .rodata, libultra/audio/cseq]
       - [0x21FC0, rodata]
+      - [0x22060, .rodata, libultra/audio/env]
+      - [0x220C0, .rodata, libultra/audio/seqplayer]
+      - [0x22300, rodata]
+      - [0x22410, .rodata, libultra/audio/reverb]
+      - [0x22440, rodata]
       - { start: 0x237D0, type: bss, vram: 0x80022BD0, name: bss_1 }
       - { start: 0x237D0, type: .bss, vram: 0x8002D1B0, name: profiler }
       - { start: 0x237D0, type: .bss, vram: 0x8002D940, name: clocks }

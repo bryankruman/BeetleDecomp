@@ -79,6 +79,7 @@
     "include/libc/stdio.h": "2d4f83a11a792ff666e37b6679e4a97a809098494fbdeb028f1d21486afa733b",
     "include/libc/stdlib.h": "1a29fccb7c0c43145c4381c6f3dea4ab192471fe983736ec758353a3788aec25",
     "include/libc/string.h": "8235290bf7031f3f89783f7772b122e366ff86ece22934a11cd494d7ff913d09",
+    "include/libultra-sdk/PR/R4300.h": "bb8a7702ef8dfe94c389f0c411a4f2346c506ea8766e85c332a44486a97b7b44",
     "include/libultra-sdk/PR/abi.h": "9efe7ee3c940ff96d46f936ad95e9cc52b879ee8c4b5c264cb8f42e1cf1ce1bf",
     "include/libultra-sdk/PR/libaudio.h": "b852721c926112f5187afad772d107bc0f0e006dbd3b54c09ae7b1ebedd77c5b",
     "include/libultra-sdk/PR/mbi.h": "8a0b32eb3cc7844a38b1b3ed1b160036b203efac0dc3c0275c53354423e40960",
@@ -124,6 +125,8 @@
     "include/libultra-sdk/PR/ultraerror.h": "a6b2ce4f9e98e8feccdc5abd43d6de13c3afb7a00d3126ad83ff5d161b02d229",
     "include/libultra-sdk/PR/ultratypes.h": "e25fc6df3953acbab2234ece2218ec74080cdc3e673ce1ec5896d4ce921bb4de",
     "include/libultra-sdk/assert.h": "c4d1fce8da480af73fe15237f2068a5446477ca6a544487daa10cd4ebf938c78",
+    "include/libultra-sdk/compiler/ido/math.h": "2d4f83a11a792ff666e37b6679e4a97a809098494fbdeb028f1d21486afa733b",
+    "include/libultra-sdk/compiler/ido/stdio.h": "2d4f83a11a792ff666e37b6679e4a97a809098494fbdeb028f1d21486afa733b",
     "include/macros.h": "06a8600f7901a7deb6c75b580e9d8d3a239f753f0b4f8f13a6890de8e80d0072",
     "include/matrix_types.h": "20c451534a3846a5e14a4d522bf5c281927180770f4188a01deda43c6054dcf2",
     "include/mem_allocator.h": "7488f9a47f82c73e0c6e74c7026b149494ec1553f5c082dff46a445fcae2c3c5",
@@ -214,11 +217,18 @@
     "src/filesystem.c": "9bc5c941616a1f6305d2a298f9df633d815b0ce2dae7f3ca1bfe0a7ab8558fb8",
     "src/game_init.c": "6944f62f0433701411476dac29f9bc72d997309d6be0919a55c7e7a3b8b6e20b",
     "src/isprint.c": "0a772034f3731b8677ddd0d15e2977f08f7ef6882db5055abfbd6dd09a7df3ca",
-    "src/libultra/audio/cseq.c": "c8238075726a7a76841b60df278f6d50aee098748f9821f3492773731d38211d",
+    "src/libultra/audio/cseq.c": "bd4bfeaf1182c8ab8d4a13fcb5529c51539cd1720d97b441cf53c9b7b8ad8daf",
     "src/libultra/audio/cseq.h": "c10072d9bda4da8fb617657dd78ffc481e8086509078830110fa0acb7fcf6f07",
     "src/libultra/audio/cseqp.h": "b2f981075c1c7d9e271b621593cd5e8238888927ce33ade647eebba10b62f8ee",
-    "src/libultra/audio/csplayer.c": "090e2b2a644a27eb41828e39392adbe8529ed984f3ac9747e3be1d5205856826",
+    "src/libultra/audio/csplayer.c": "a8ff47b92b7f09f64280f0abd99cebfac855b9cb6b44bb0502d4e640a0f5a169",
+    "src/libultra/audio/env.c": "2b67b2b53d38d817617ec8f75a2baf418c1dd4a4e68a12bfef3f965f5dd396c7",
+    "src/libultra/audio/initfx.h": "d95b6013b9ce5d791addb68741494271f66e71fbe96d6b6cfd912345ec72b7e4",
+    "src/libultra/audio/load.c": "ad22cbf1d909bff81bdd9baf53530920bbf5e09c8d69604a1555d44532f2bfe9",
+    "src/libultra/audio/reverb.c": "d1639576b7f8aac081170e824d6de332f05d841680dd87f47c41589c9aa84a6c",
+    "src/libultra/audio/seq.h": "5eb8402a34676e4427ec47b5318250fd71bd9f115fd0cd6a9b5e95d8d849c68a",
     "src/libultra/audio/seqp.h": "cf58498fb69b10873be6b079a20eefc175365ab649ddbf306299f054ed02dd1a",
+    "src/libultra/audio/seqplayer.c": "6b92c7ebf5a8966e7e965c050ada2a522b913ab641718def2690ac99f39c17b3",
+    "src/libultra/audio/synthInternals.h": "797c65321f3ae4ebfa83b3babdacd70495c7a80cee2a708a0b8095043f1a309b",
     "src/libultra/io/piread.c": "0195f296a22084659c67f28b0a4d3866327f0cc94df518000309f0dc17b20f50",
     "src/libultra/io/sptask.c": "695161e5c29ba9a20ea1cfdf89485b8d08123dd8a4c4064081b7e56ec7fa007b",
     "src/libultra/io/sptaskyield.c": "76dcc4157883ef5ef6827696be014e58042528bdf4c711fc54566794b6ff4cca",
@@ -390,10 +400,10 @@
     "audit_debt": 30,
     "conditional_draft": 4,
     "decompiler_local": 659,
-    "draft_marker": 25,
-    "explicit_unknown": 1329,
-    "layout_padding": 272,
-    "offset_field": 1614,
+    "draft_marker": 28,
+    "explicit_unknown": 1381,
+    "layout_padding": 275,
+    "offset_field": 1617,
     "opaque_type": 282,
     "original_quirk": 333,
     "uncertainty_note": 93,
@@ -115422,6 +115432,36 @@
       "evidence": "TODO: this comes from a header"
     },
     {
+      "id": "Q-ec5eb7610a69",
+      "kind": "draft_marker",
+      "path": "src/libultra/audio/env.c",
+      "symbol": "TODO",
+      "lines": [
+        26
+      ],
+      "evidence": "TODO: these come from headers"
+    },
+    {
+      "id": "Q-a5fd0328b034",
+      "kind": "draft_marker",
+      "path": "src/libultra/audio/reverb.c",
+      "symbol": "TODO",
+      "lines": [
+        27
+      ],
+      "evidence": "TODO: these come from headers"
+    },
+    {
+      "id": "Q-41f2b8b80270",
+      "kind": "draft_marker",
+      "path": "src/libultra/audio/seqplayer.c",
+      "symbol": "TODO",
+      "lines": [
+        43
+      ],
+      "evidence": "TODO: this comes from a header"
+    },
+    {
       "id": "Q-a35a5d7dd6ae",
       "kind": "draft_marker",
       "path": "src/libultra/io/viblack.c",
@@ -116029,6 +116069,1046 @@
           "declaration_line": 113,
           "lines": [
             102
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-1d92f78c49aa",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/cseq.c",
+      "symbol": "RE_CONTRACT: Accumulate seven-bit groups until a byte clears its continuation bit. RE_UNKNOWN: input must terminate within valid storage; there is no byte-count or overflow guard, and u32 arithmetic is preserved.",
+      "lines": [
+        384
+      ],
+      "evidence": "RE_CONTRACT: Accumulate seven-bit groups until a byte clears its continuation bit. RE_UNKNOWN: input must terminate within valid storage; there is no byte-count or overflow guard, and u32 arithmetic is preserved.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__readVarLen",
+          "declaration_line": 383,
+          "lines": [
+            384
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-e109b234f41c",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/cseq.c",
+      "symbol": "RE_CONTRACT: Bind the compact sequence buffer, initialize 16 track cursors and read each active initial delta. RE_UNKNOWN: offsets, buffer bounds and nonzero division are input requirements; loop decoding later writes this buffer.",
+      "lines": [
+        32
+      ],
+      "evidence": "RE_CONTRACT: Bind the compact sequence buffer, initialize 16 track cursors and read each active initial delta. RE_UNKNOWN: offsets, buffer bounds and nonzero division are input requirements; loop decoding later writes this buffer.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "alCSeqNew",
+          "declaration_line": 31,
+          "lines": [
+            32
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-ff70440a3b01",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/cseq.c",
+      "symbol": "RE_CONTRACT: Convert seconds through the original double-literal expression and cast to u32. RE_UNKNOWN: tempo must be nonzero and the result must be representable; no saturation or input clamp is performed.",
+      "lines": [
+        253
+      ],
+      "evidence": "RE_CONTRACT: Convert seconds through the original double-literal expression and cast to u32. RE_UNKNOWN: tempo must be nonzero and the result must be representable; no saturation or input clamp is performed.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "alCSeqSecToTicks",
+          "declaration_line": 252,
+          "lines": [
+            253
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-9c52a7552c73",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/cseq.c",
+      "symbol": "RE_CONTRACT: Convert ticks and tempo using the header division and original mixed float/double expression. RE_UNKNOWN: division must be nonzero; signed tick and result-range policy is external.",
+      "lines": [
+        247
+      ],
+      "evidence": "RE_CONTRACT: Convert ticks and tempo using the header division and original mixed float/double expression. RE_UNKNOWN: division must be nonzero; signed tick and result-range policy is external.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "alCSeqTicksToSec",
+          "declaration_line": 246,
+          "lines": [
+            247
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-b5d7254b9f16",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/cseq.c",
+      "symbol": "RE_CONTRACT: Decode one valid track event, including running status and duration. Loop-end processing writes the backing buffer. RE_UNKNOWN: supported meta types, valid back-jumps and adequate stream bytes are required.",
+      "lines": [
+        137
+      ],
+      "evidence": "RE_CONTRACT: Decode one valid track event, including running status and duration. Loop-end processing writes the backing buffer. RE_UNKNOWN: supported meta types, valid back-jumps and adequate stream bytes are required.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__alCSeqGetTrackEvent",
+          "declaration_line": 136,
+          "lines": [
+            137
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-c018bf14224a",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/cseq.c",
+      "symbol": "RE_CONTRACT: Read a raw/escaped byte or copy a back-reference byte without recursive decoding. RE_UNKNOWN: cursor/back-reference bounds and nonzero run lengths are required; a zero length wraps the u8 run counter to 255.",
+      "lines": [
+        334
+      ],
+      "evidence": "RE_CONTRACT: Read a raw/escaped byte or copy a back-reference byte without recursive decoding. RE_UNKNOWN: cursor/back-reference bounds and nonzero run lengths are required; a zero length wraps the u8 run counter to 255.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__getTrackByte",
+          "declaration_line": 333,
+          "lines": [
+            334
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-53f71b30fc3a",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/cseq.c",
+      "symbol": "RE_CONTRACT: Restore marker counters and borrowed cursor/backup/status arrays. Leave base, qnpt and deltaFlag unchanged. RE_UNKNOWN: marker buffer lifetime and the caller-selected normalization phase must remain compatible.",
+      "lines": [
+        297
+      ],
+      "evidence": "RE_CONTRACT: Restore marker counters and borrowed cursor/backup/status arrays. Leave base, qnpt and deltaFlag unchanged. RE_UNKNOWN: marker buffer lifetime and the caller-selected normalization phase must remain compatible.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "alCSeqSetLoc",
+          "declaration_line": 296,
+          "lines": [
+            297
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-034f0081f73d",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/cseq.c",
+      "symbol": "RE_CONTRACT: Select the earliest active track, preferring its lowest index on ties. RE_UNKNOWN: a valid delta below 0xFFFFFFFF is required. Preserve the final sequence-end trailing delta read and existing unsigned countdown arithmetic.",
+      "lines": [
+        64
+      ],
+      "evidence": "RE_CONTRACT: Select the earliest active track, preferring its lowest index on ties. RE_UNKNOWN: a valid delta below 0xFFFFFFFF is required. Preserve the final sequence-end trailing delta read and existing unsigned countdown arithmetic.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "alCSeqNextEvent",
+          "declaration_line": 63,
+          "lines": [
+            64
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-457967d8621f",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/csplayer.c",
+      "symbol": "RE_CONTRACT: Apply MIDI to channel/voice state; zero-velocity NoteOn follows NoteOff. Failed sound/voice lookups return even in release. RE_UNKNOWN: channel/bank capacity and synth allocation guarantees are external.",
+      "lines": [
+        420
+      ],
+      "evidence": "RE_CONTRACT: Apply MIDI to channel/voice state; zero-velocity NoteOn follows NoteOff. Failed sound/voice lookups return even in release. RE_UNKNOWN: channel/bank capacity and synth allocation guarantees are external.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__CSPHandleMIDIMsg",
+          "declaration_line": 419,
+          "lines": [
+            420
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-00b1e268e1fa",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/csplayer.c",
+      "symbol": "RE_CONTRACT: Dispatch queued player/voice/oscillator events until the next nonzero delay; update curTime once. RE_UNKNOWN: queue capacity, callback lifetimes and caller serialization are external.",
+      "lines": [
+        127
+      ],
+      "evidence": "RE_CONTRACT: Dispatch queued player/voice/oscillator events until the next nonzero delay; update curTime once. RE_UNKNOWN: queue capacity, callback lifetimes and caller serialization are external.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__CSPVoiceHandler",
+          "declaration_line": 126,
+          "lines": [
+            127
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-24cac71b2e4d",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/csplayer.c",
+      "symbol": "RE_CONTRACT: Initialize a stopped compact-sequence player, allocate its channel/voice/event storage, and register its callback with the synth. RE_UNKNOWN: heap failure handling and player teardown are external.",
+      "lines": [
+        60
+      ],
+      "evidence": "RE_CONTRACT: Initialize a stopped compact-sequence player, allocate its channel/voice/event storage, and register its callback with the synth. RE_UNKNOWN: heap failure handling and player teardown are external.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "alCSPNew",
+          "declaration_line": 59,
+          "lines": [
+            60
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-9a200b96509f",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/csplayer.c",
+      "symbol": "RE_CONTRACT: On tempo change, remove queued compact note-offs and repost them using integer old/new uspt conversion. RE_UNKNOWN: oldUspt must be nonzero and queue mutation must be serialized by the caller.",
+      "lines": [
+        776
+      ],
+      "evidence": "RE_CONTRACT: On tempo change, remove queued compact note-offs and repost them using integer old/new uspt conversion. RE_UNKNOWN: oldUspt must be nonzero and queue mutation must be serialized by the caller.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__CSPHandleMetaMsg",
+          "declaration_line": 775,
+          "lines": [
+            776
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-c0d096aa39dc",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/env.c",
+      "symbol": "RE_CONTRACT: Append an update, reset/start the mixer, set its source, or forward other parameters when a source exists; return zero. RE_UNKNOWN: appended nodes must already have suitable next links, time ordering and lifetime; this path does not detach or terminate them.",
+      "lines": [
+        311
+      ],
+      "evidence": "RE_CONTRACT: Append an update, reset/start the mixer, set its source, or forward other parameters when a source exists; return zero. RE_UNKNOWN: appended nodes must already have suitable next links, time ordering and lifetime; this path does not detach or terminate them.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "alEnvmixerParam",
+          "declaration_line": 310,
+          "lines": [
+            311
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-0f44395e9357",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/env.c",
+      "symbol": "RE_CONTRACT: Approximate the envelope rate using the original logarithm table, decomposition and exponentiation, then split integer/fractional results. RE_UNKNOWN: 1.0/count is initialized before the zero-count branch; numeric ranges and the chained a *= (a *= (a *= a)) sequencing are preserved rather than repaired.",
+      "lines": [
+        461
+      ],
+      "evidence": "RE_CONTRACT: Approximate the envelope rate using the original logarithm table, decomposition and exponentiation, then split integer/fractional results. RE_UNKNOWN: 1.0/count is initialized before the zero-count branch; numeric ranges and the chained a *= (a *= (a *= a)) sequencing are preserved rather than repaired.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "_getRate",
+          "declaration_line": 459,
+          "lines": [
+            461
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-1cb1d345ac29",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/env.c",
+      "symbol": "RE_CONTRACT: Consume timed parameter updates through the requested span, pull the intervening subframes, update voice/envelope state and recycle processed parameters. RE_UNKNOWN: ordered finite lists, buffer/count ranges, callback/voice ownership and equal-power indices are external; release assertions do not enforce them.",
+      "lines": [
+        76
+      ],
+      "evidence": "RE_CONTRACT: Consume timed parameter updates through the requested span, pull the intervening subframes, update voice/envelope state and recycle processed parameters. RE_UNKNOWN: ordered finite lists, buffer/count ranges, callback/voice ownership and equal-power indices are external; release assertions do not enforce them.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "alEnvmixerPull",
+          "declaration_line": 74,
+          "lines": [
+            76
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-4ac587b94b48",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/env.c",
+      "symbol": "RE_CONTRACT: For a playing mixer and nonzero count, pull upstream samples and emit initial or continued volume/envelope commands before advancing input and delta. RE_UNKNOWN: source/state/buffer/count validity and pan/effect indices are caller contracts; floating conversions and command order remain unchanged.",
+      "lines": [
+        356
+      ],
+      "evidence": "RE_CONTRACT: For a playing mixer and nonzero count, pull upstream samples and emit initial or continued volume/envelope commands before advancing input and delta. RE_UNKNOWN: source/state/buffer/count validity and pan/effect indices are caller contracts; floating conversions and command order remain unchanged.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "_pullSubFrame",
+          "declaration_line": 354,
+          "lines": [
+            356
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-aeb12be4c90d",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/env.c",
+      "symbol": "RE_CONTRACT: Multiply by a double conversion of signed 1 shifted by ex, or return the input for zero. RE_UNKNOWN: negative, excessive and signed-overflow shift counts are unguarded; this is not a general all-input ldexp implementation.",
+      "lines": [
+        437
+      ],
+      "evidence": "RE_CONTRACT: Multiply by a double conversion of signed 1 shifted by ex, or return the input for zero. RE_UNKNOWN: negative, excessive and signed-overflow shift counts are unguarded; this is not a general all-input ldexp implementation.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "_ldexpf",
+          "declaration_line": 435,
+          "lines": [
+            437
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-0a613b5a22d1",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/env.c",
+      "symbol": "RE_CONTRACT: Normalize a nonzero magnitude with repeated halves/doubles, track the exponent and restore its sign; return zero directly for zero. RE_UNKNOWN: finite input is required for termination; infinity can remain in the halving loop indefinitely.",
+      "lines": [
+        421
+      ],
+      "evidence": "RE_CONTRACT: Normalize a nonzero magnitude with repeated halves/doubles, track the exponent and restore its sign; return zero directly for zero. RE_UNKNOWN: finite input is required for termination; infinity can remain in the halving loop indefinitely.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "_frexpf",
+          "declaration_line": 419,
+          "lines": [
+            421
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-90af20ebe037",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/env.c",
+      "symbol": "RE_CONTRACT: Reduce the sample count by eight and apply the fixed-point rate with the original exponentiation loop, or return the initial volume for zero. RE_UNKNOWN: signed shifts, rate/sample ranges and floating rounding are unchanged; no general-purpose power-function guarantees are inferred.",
+      "lines": [
+        553
+      ],
+      "evidence": "RE_CONTRACT: Reduce the sample count by eight and apply the fixed-point rate with the original exponentiation loop, or return the initial volume for zero. RE_UNKNOWN: signed shifts, rate/sample ranges and floating rounding are unchanged; no general-purpose power-function guarantees are inferred.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "_getVol",
+          "declaration_line": 551,
+          "lines": [
+            553
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-6a5462b3549e",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/load.c",
+      "symbol": "RE_CONTRACT: DMA/load a positive compressed-byte count, select loop state when requested and emit the ADPCM command before clearing first. RE_UNKNOWN: caller-supplied book/state/DMEM capacity must be valid; decoding commands are still emitted when nbytes is nonpositive.",
+      "lines": [
+        440
+      ],
+      "evidence": "RE_CONTRACT: DMA/load a positive compressed-byte count, select loop state when requested and emit the ADPCM command before clearing first. RE_UNKNOWN: caller-supplied book/state/DMEM capacity must be valid; decoding commands are still emitted when nbytes is nonpositive.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "_decodeChunk",
+          "declaration_line": 438,
+          "lines": [
+            440
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-1fca3dac8de4",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/load.c",
+      "symbol": "RE_CONTRACT: Decode ADPCM blocks into the requested DMEM span, merge loop fragments, and zero-fill the unlooped tail. RE_UNKNOWN: valid books, DMA buffers, counts and a progressing loop span are required; finite loop count is decremented but the current while loop continues after it reaches zero.",
+      "lines": [
+        41
+      ],
+      "evidence": "RE_CONTRACT: Decode ADPCM blocks into the requested DMEM span, merge loop fragments, and zero-fill the unlooped tail. RE_UNKNOWN: valid books, DMA buffers, counts and a progressing loop span are required; finite loop count is decremented but the current while loop continues after it reaches zero.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "alAdpcmPull",
+          "declaration_line": 40,
+          "lines": [
+            41
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-e0c6c4635826",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/load.c",
+      "symbol": "RE_CONTRACT: Load aligned raw s16 samples, merge loop fragments and zero-fill past the unlooped end while advancing sample/DMA state. RE_UNKNOWN: buffer/count/alignment and positive loop-span requirements are external; the current request loop continues after a finite count is decremented to zero.",
+      "lines": [
+        210
+      ],
+      "evidence": "RE_CONTRACT: Load aligned raw s16 samples, merge loop fragments and zero-fill past the unlooped end while advancing sample/DMA state. RE_UNKNOWN: buffer/count/alignment and positive loop-span requirements are external; the current request loop continues after a finite count is decremented to zero.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "alRaw16Pull",
+          "declaration_line": 209,
+          "lines": [
+            210
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-73965ddbc68f",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/load.c",
+      "symbol": "RE_CONTRACT: Set the wavetable/decoder or reset sample, loop and first-decode state. RE_UNKNOWN: supported table type, book and loop storage are provider contracts; unknown types do not replace the handler, and this s32 function reaches its end without returning a value.",
+      "lines": [
+        355
+      ],
+      "evidence": "RE_CONTRACT: Set the wavetable/decoder or reset sample, loop and first-decode state. RE_UNKNOWN: supported table type, book and loop storage are provider contracts; unknown types do not replace the handler, and this s32 function reaches its end without returning a value.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "alLoadParam",
+          "declaration_line": 353,
+          "lines": [
+            355
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-9611a18370ec",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/reverb.c",
+      "symbol": "RE_CONTRACT: Adjust a pointer below the delay base once and load one span or two spans across the strict end boundary. RE_UNKNOWN: pointer/count bounds must need no more than one wrap; s16 pointer counts and byte command sizes are distinct.",
+      "lines": [
+        318
+      ],
+      "evidence": "RE_CONTRACT: Adjust a pointer below the delay base once and load one span or two spans across the strict end boundary. RE_UNKNOWN: pointer/count bounds must need no more than one wrap; s16 pointer counts and byte command sizes are distinct.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "_loadBuffer",
+          "declaration_line": 317,
+          "lines": [
+            318
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-5bd80b81655d",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/reverb.c",
+      "symbol": "RE_CONTRACT: Adjust a pointer below the delay base once and save one span or two spans across the strict end boundary. RE_UNKNOWN: pointer/count bounds must need no more than one wrap; the original branch-specific buffer setup is preserved.",
+      "lines": [
+        367
+      ],
+      "evidence": "RE_CONTRACT: Adjust a pointer below the delay base once and save one span or two spans across the strict end boundary. RE_UNKNOWN: pointer/count bounds must need no more than one wrap; the original branch-specific buffer setup is preserved.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "_saveBuffer",
+          "declaration_line": 366,
+          "lines": [
+            367
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-904787be903f",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/reverb.c",
+      "symbol": "RE_CONTRACT: Advance the triangular modulation phase, subtract one double-range only when strictly above the range, and scale the centered absolute phase. RE_UNKNOWN: phase increments must satisfy the single-wrap assumption; negative or multiple wraps are not normalized.",
+      "lines": [
+        425
+      ],
+      "evidence": "RE_CONTRACT: Advance the triangular modulation phase, subtract one double-range only when strictly above the range, and scale the centered absolute phase. RE_UNKNOWN: phase increments must satisfy the single-wrap assumption; negative or multiple wraps are not normalized.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "_doModFunc",
+          "declaration_line": 424,
+          "lines": [
+            425
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-057907ad3788",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/reverb.c",
+      "symbol": "RE_CONTRACT: Decode the section/field ID and update rounded tap positions, coefficients, modulation or an existing low-pass filter. RE_UNKNOWN: valid ID, section, parameter pointer, output rate and tap lengths are required; the parameter is dereferenced before validation and unsupported fields still return zero.",
+      "lines": [
+        168
+      ],
+      "evidence": "RE_CONTRACT: Decode the section/field ID and update rounded tap positions, coefficients, modulation or an existing low-pass filter. RE_UNKNOWN: valid ID, section, parameter pointer, output rate and tap lengths are required; the parameter is dereferenced before validation and unsupported fields still return zero.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "alFxParamHdl",
+          "declaration_line": 167,
+          "lines": [
+            168
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-8384d89ef565",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/reverb.c",
+      "symbol": "RE_CONTRACT: Load a plain tap or compute/quantize chorus pitch, carry its fractional position and resample the tap. RE_UNKNOWN: nonzero tap separation and valid ranges/state are required; original casts and float grouping remain. Unused source statics do not establish native storage ownership.",
+      "lines": [
+        236
+      ],
+      "evidence": "RE_CONTRACT: Load a plain tap or compute/quantize chorus pitch, carry its fractional position and resample the tap. RE_UNKNOWN: nonzero tap separation and valid ranges/state are required; original casts and float grouping remain. Unused source statics do not establish native storage ownership.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "_loadOutputBuffer",
+          "declaration_line": 235,
+          "lines": [
+            236
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-be5c7fc2e629",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/reverb.c",
+      "symbol": "RE_CONTRACT: Load the low-pass coefficients/state, emit a pole-filter command and clear first. RE_UNKNOWN: coefficient/state allocation and virtual-to-physical address validity are provider contracts.",
+      "lines": [
+        403
+      ],
+      "evidence": "RE_CONTRACT: Load the low-pass coefficients/state, emit a pole-filter command and clear first. RE_UNKNOWN: coefficient/state allocation and virtual-to-physical address validity are provider contracts.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "_filterBuffer",
+          "declaration_line": 402,
+          "lines": [
+            403
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-cafb5a4d97f2",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/reverb.c",
+      "symbol": "RE_CONTRACT: Pull the source, mix delay taps through optional modulation/low-pass filtering, save feedback and advance the shared input pointer. RE_UNKNOWN: tap/count/DMEM bounds and at most one wrap are required; wrapping uses strict greater-than, and the existing positive-offset previous-output pointer is preserved.",
+      "lines": [
+        62
+      ],
+      "evidence": "RE_CONTRACT: Pull the source, mix delay taps through optional modulation/low-pass filtering, save feedback and advance the shared input pointer. RE_UNKNOWN: tap/count/DMEM bounds and at most one wrap are required; wrapping uses strict greater-than, and the existing positive-offset previous-output pointer is preserved.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "alFxPull",
+          "declaration_line": 60,
+          "lines": [
+            62
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-1307ddecb131",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/reverb.c",
+      "symbol": "RE_CONTRACT: Set the upstream source only for AL_FILTER_SET_SOURCE and return zero for every parameter ID. RE_UNKNOWN: source callback lifetime is external; zero does not distinguish unsupported IDs.",
+      "lines": [
+        153
+      ],
+      "evidence": "RE_CONTRACT: Set the upstream source only for AL_FILTER_SET_SOURCE and return zero for every parameter ID. RE_UNKNOWN: source callback lifetime is external; zero does not distinguish unsupported IDs.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "alFxParam",
+          "declaration_line": 152,
+          "lines": [
+            153
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-1f22dc9ac974",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/seqplayer.c",
+      "symbol": "RE_CONTRACT: Apply note, controller, program and pitch events to the selected channel and matching allocated voices, including sustain and oscillator queues. RE_UNKNOWN: channel indices, bank/keymap validity, synth allocation and oscillator callbacks are not comprehensively checked; ALFailIf early returns remain active in release builds.",
+      "lines": [
+        432
+      ],
+      "evidence": "RE_CONTRACT: Apply note, controller, program and pitch events to the selected channel and matching allocated voices, including sustain and oscillator queues. RE_UNKNOWN: channel indices, bank/keymap validity, synth allocation and oscillator callbacks are not comprehensively checked; ALFailIf early returns remain active in release builds.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__handleMIDIMsg",
+          "declaration_line": 431,
+          "lines": [
+            432
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-329b9121b0db",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/seqplayer.c",
+      "symbol": "RE_CONTRACT: Assign an instrument and copy its pan, volume, priority and bend range into one channel. RE_UNKNOWN: instrument lifetime and channel bounds are caller contracts.",
+      "lines": [
+        1141
+      ],
+      "evidence": "RE_CONTRACT: Assign an instrument and copy its pan, volume, priority and bend range into one channel. RE_UNKNOWN: instrument lifetime and channel bounds are caller contracts.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__setInstChanState",
+          "declaration_line": 1140,
+          "lines": [
+            1141
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-e803969acf46",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/seqplayer.c",
+      "symbol": "RE_CONTRACT: Binary-search instrument sounds by key and velocity ranges. RE_UNKNOWN: a nonnull instrument and sorted compatible keymaps are required; soundCount is read before the assertion and release builds do not retain that assertion.",
+      "lines": [
+        898
+      ],
+      "evidence": "RE_CONTRACT: Binary-search instrument sounds by key and velocity ranges. RE_UNKNOWN: a nonnull instrument and sorted compatible keymaps are required; soundCount is read before the assertion and release builds do not retain that assertion.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__lookupSoundQuick",
+          "declaration_line": 897,
+          "lines": [
+            898
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-bcb435c26e2b",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/seqplayer.c",
+      "symbol": "RE_CONTRACT: Clear each configured channel instrument and reset its performance state. RE_UNKNOWN: maxChannels must match allocated storage; bank instrument assignment is separate.",
+      "lines": [
+        1171
+      ],
+      "evidence": "RE_CONTRACT: Clear each configured channel instrument and reset its performance state. RE_UNKNOWN: maxChannels must match allocated storage; bank instrument assignment is separate.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__initChanState",
+          "declaration_line": 1170,
+          "lines": [
+            1171
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-445252c948ae",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/seqplayer.c",
+      "symbol": "RE_CONTRACT: Combine channel and sample pan around the center and clamp the resulting pan. RE_UNKNOWN: referenced sound/channel state must be valid; the output clamp does not validate those references.",
+      "lines": [
+        970
+      ],
+      "evidence": "RE_CONTRACT: Combine channel and sample pan around the center and clamp the resulting pan. RE_UNKNOWN: referenced sound/channel state must be valid; the output clamp does not validate those references.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__vsPan",
+          "declaration_line": 969,
+          "lines": [
+            970
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-470202f919ec",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/seqplayer.c",
+      "symbol": "RE_CONTRACT: Combine sample, envelope and channel volume with the original unsigned products, shifts and s16 conversion. RE_UNKNOWN: valid referenced state and intended numeric ranges are external; this calculation does not saturate overflow.",
+      "lines": [
+        935
+      ],
+      "evidence": "RE_CONTRACT: Combine sample, envelope and channel volume with the original unsigned products, shifts and s16 conversion. RE_UNKNOWN: valid referenced state and intended numeric ranges are external; this calculation does not saturate overflow.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__vsVol",
+          "declaration_line": 934,
+          "lines": [
+            935
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-1459cd34f7c6",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/seqplayer.c",
+      "symbol": "RE_CONTRACT: Decode the three-byte tempo payload for a tempo event and update microseconds per tick. RE_UNKNOWN: event payload validity and representable tempo arithmetic are external requirements; this path does not reschedule already queued events.",
+      "lines": [
+        786
+      ],
+      "evidence": "RE_CONTRACT: Decode the three-byte tempo payload for a tempo event and update microseconds per tick. RE_UNKNOWN: event payload validity and representable tempo arithmetic are external requirements; this path does not reschedule already queued events.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__handleMetaMsg",
+          "declaration_line": 785,
+          "lines": [
+            786
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-4e378fdbd0fb",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/seqplayer.c",
+      "symbol": "RE_CONTRACT: Drain zero-delay events, dispatch playback/control events and return the next delay while advancing curTime once. STOPPING flushes reference/MIDI events and queues voice cleanup. RE_UNKNOWN: queue progress, callback lifetime and serialized mutation are external requirements; release assertions do not validate them.",
+      "lines": [
+        127
+      ],
+      "evidence": "RE_CONTRACT: Drain zero-delay events, dispatch playback/control events and return the next delay while advancing curTime once. STOPPING flushes reference/MIDI events and queues voice cleanup. RE_UNKNOWN: queue progress, callback lifetime and serialized mutation are external requirements; release assertions do not validate them.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__seqpVoiceHandler",
+          "declaration_line": 126,
+          "lines": [
+            127
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-c63f2566d207",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/seqplayer.c",
+      "symbol": "RE_CONTRACT: Find the first matching key/channel voice outside RELEASE and SUSTREL, otherwise return null. RE_UNKNOWN: allocated-list integrity and channel interpretation are caller contracts.",
+      "lines": [
+        865
+      ],
+      "evidence": "RE_CONTRACT: Find the first matching key/channel voice outside RELEASE and SUSTREL, otherwise return null. RE_UNKNOWN: allocated-list integrity and channel interpretation are caller contracts.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__lookupVoice",
+          "declaration_line": 864,
+          "lines": [
+            865
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-1d8c6cb395d6",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/seqplayer.c",
+      "symbol": "RE_CONTRACT: Initialize the stopped sequence player, channel state, voice free list and event queue, then register its handler. RE_UNKNOWN: heap results, configured capacities, callback lifetimes and later removal are caller/provider contracts; allocations are not checked here.",
+      "lines": [
+        57
+      ],
+      "evidence": "RE_CONTRACT: Initialize the stopped sequence player, channel state, voice free list and event queue, then register its handler. RE_UNKNOWN: heap results, configured capacities, callback lifetimes and later removal are caller/provider contracts; allocations are not checked here.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "alSeqpNew",
+          "declaration_line": 56,
+          "lines": [
+            57
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-636694af392f",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/seqplayer.c",
+      "symbol": "RE_CONTRACT: Move the free-list head to the allocated-list tail and bind channel, key, velocity and clientPrivate; return null when no free voice exists. RE_UNKNOWN: list ownership and serialization are external; other voice fields are not cleared here.",
+      "lines": [
+        805
+      ],
+      "evidence": "RE_CONTRACT: Move the free-list head to the allocated-list tail and bind channel, key, velocity and clientPrivate; return null when no free voice exists. RE_UNKNOWN: list ownership and serialization are external; other voice fields are not cleared here.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__mapVoice",
+          "declaration_line": 804,
+          "lines": [
+            805
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-2acd67d67e24",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/seqplayer.c",
+      "symbol": "RE_CONTRACT: Read one target event, dispatch MIDI or tempo handling, and post the following event; sequence end moves to STOPPING and queues stop. RE_UNKNOWN: target storage/event validity and queue capacity are provider contracts; the default assertion disappears with NDEBUG.",
+      "lines": [
+        393
+      ],
+      "evidence": "RE_CONTRACT: Read one target event, dispatch MIDI or tempo handling, and post the following event; sequence end moves to STOPPING and queues stop. RE_UNKNOWN: target storage/event validity and queue capacity are provider contracts; the default assertion disappears with NDEBUG.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__handleNextSeqEvent",
+          "declaration_line": 391,
+          "lines": [
+            393
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-b97df022b87c",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/seqplayer.c",
+      "symbol": "RE_CONTRACT: Remove queued attack-envelope work when applicable, set RELEASE with zero velocity/target gain, and queue NOTE_END after the release interval. RE_UNKNOWN: relative-delay queue integrity and serialized callbacks are required; oscillator shutdown occurs through the later cleanup path.",
+      "lines": [
+        993
+      ],
+      "evidence": "RE_CONTRACT: Remove queued attack-envelope work when applicable, set RELEASE with zero velocity/target gain, and queue NOTE_END after the release interval. RE_UNKNOWN: relative-delay queue integrity and serialized callbacks are required; oscillator shutdown occurs through the later cleanup path.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__seqpReleaseVoice",
+          "declaration_line": 991,
+          "lines": [
+            993
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-f4c4c8a9daa3",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/seqplayer.c",
+      "symbol": "RE_CONTRACT: Remove queued tremolo/vibrato events for the voice, repair relative delays and call stopOsc while clearing their flags. RE_UNKNOWN: oscillator flags, queued events and callback lifetime must agree; no replacement events are synthesized.",
+      "lines": [
+        1183
+      ],
+      "evidence": "RE_CONTRACT: Remove queued tremolo/vibrato events for the voice, repair relative delays and call stopOsc while clearing their flags. RE_UNKNOWN: oscillator flags, queued events and callback lifetime must agree; no replacement events are synthesized.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__seqpStopOsc",
+          "declaration_line": 1182,
+          "lines": [
+            1183
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-8a9757887113",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/seqplayer.c",
+      "symbol": "RE_CONTRACT: Remove the matching voice from the allocated list, repair its tail and return the state to the free list. RE_UNKNOWN: list integrity and exclusive ownership are required; a missing voice is only reported by the debug path.",
+      "lines": [
+        831
+      ],
+      "evidence": "RE_CONTRACT: Remove the matching voice from the allocated list, repair its tail and return the state to the free list. RE_UNKNOWN: list integrity and exclusive ownership are required; a missing voice is only reported by the debug path.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__unmapVoice",
+          "declaration_line": 830,
+          "lines": [
+            831
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-0c706d39b2ca",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/seqplayer.c",
+      "symbol": "RE_CONTRACT: Reset one channel to the original effect, pan, volume, priority, sustain and pitch defaults. RE_UNKNOWN: the channel index and channel-array capacity are not checked here.",
+      "lines": [
+        1155
+      ],
+      "evidence": "RE_CONTRACT: Reset one channel to the original effect, pan, volume, priority, sustain and pitch defaults. RE_UNKNOWN: the channel index and channel-array capacity are not checked here.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__resetPerfChanState",
+          "declaration_line": 1154,
+          "lines": [
+            1155
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-db2c37b0eec7",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/seqplayer.c",
+      "symbol": "RE_CONTRACT: Return the remaining nonnegative envelope time, or AL_GAIN_CHANGE_TIME when the end has passed. RE_UNKNOWN: signed time arithmetic must remain in the intended range; no overflow handling is added.",
+      "lines": [
+        951
+      ],
+      "evidence": "RE_CONTRACT: Return the remaining nonnegative envelope time, or AL_GAIN_CHANGE_TIME when the end has passed. RE_UNKNOWN: signed time arithmetic must remain in the intended range; no overflow handling is added.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__vsDelta",
+          "declaration_line": 950,
+          "lines": [
+            951
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-5ee569dd3946",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/seqplayer.c",
+      "symbol": "RE_CONTRACT: Search cumulative queue delays for the voice NOTE_END; keep a timely event, otherwise remove a late event and repair the next relative delay. Return true when cleanup is needed or no matching event exists. RE_UNKNOWN: queue links and delay arithmetic are external invariants.",
+      "lines": [
+        1056
+      ],
+      "evidence": "RE_CONTRACT: Search cumulative queue delays for the voice NOTE_END; keep a timely event, otherwise remove a late event and repair the next relative delay. Return true when cleanup is needed or no matching event exists. RE_UNKNOWN: queue links and delay arithmetic are external invariants.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__voiceNeedsNoteKill",
+          "declaration_line": 1055,
+          "lines": [
+            1056
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-7da38aeceb1a",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/seqplayer.c",
+      "symbol": "RE_CONTRACT: Search without an instCount bound for the first nonnull instrument and assign/reset configured channels, then apply percussion state if present. RE_UNKNOWN: the search must find an instrument; the original percussion reset uses i after the channel loop, where i equals maxChannels, before assigning channel 9.",
+      "lines": [
+        1109
+      ],
+      "evidence": "RE_CONTRACT: Search without an instCount bound for the first nonnull instrument and assign/reset configured channels, then apply percussion state if present. RE_UNKNOWN: the search must find an instrument; the original percussion reset uses i after the channel loop, where i equals maxChannels, before assigning channel 9.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__initFromBank",
+          "declaration_line": 1108,
+          "lines": [
+            1109
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-84d0b2eb71a6",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/seqplayer.c",
+      "symbol": "RE_CONTRACT: When playing with a target, obtain the next delta, apply the loop marker/count transition and post a timed sequence-reference event. RE_UNKNOWN: marker lifetime, loop ordering and tick/time arithmetic ranges are not checked; the original -1 infinite-loop convention and integer arithmetic remain.",
+      "lines": [
+        352
+      ],
+      "evidence": "RE_CONTRACT: When playing with a target, obtain the next delta, apply the loop marker/count transition and post a timed sequence-reference event. RE_UNKNOWN: marker lifetime, loop ordering and tick/time arithmetic ranges are not checked; the original -1 infinite-loop convention and integer arithmetic remain.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__postNextSeqEvent",
+          "declaration_line": 351,
+          "lines": [
+            352
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-e53208f4c98d",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/seqplayer.c",
+      "symbol": "RE_CONTRACT: With a target, convert tempo times its quarter-note scale to microseconds per tick; otherwise retain the default 488. RE_UNKNOWN: finite, representable numeric inputs and a valid target are required; casts and rounding remain unchanged.",
+      "lines": [
+        1223
+      ],
+      "evidence": "RE_CONTRACT: With a target, convert tempo times its quarter-note scale to microseconds per tick; otherwise retain the default 488. RE_UNKNOWN: finite, representable numeric inputs and a valid target are required; casts and rounding remain unchanged.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__setUsptFromTempo",
+          "declaration_line": 1222,
+          "lines": [
+            1223
           ]
         }
       ]
@@ -143950,6 +145030,63 @@
       ]
     },
     {
+      "id": "Q-8c55a880931b",
+      "kind": "layout_padding",
+      "path": "src/libultra/audio/synthInternals.h",
+      "symbol": "pad0",
+      "lines": [
+        304
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "HeapInfo",
+          "declaration_line": 298,
+          "lines": [
+            304
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-4b49860ddd75",
+      "kind": "layout_padding",
+      "path": "src/libultra/audio/synthInternals.h",
+      "symbol": "pad1",
+      "lines": [
+        305
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "HeapInfo",
+          "declaration_line": 298,
+          "lines": [
+            305
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-54f8c18bda91",
+      "kind": "layout_padding",
+      "path": "src/libultra/audio/synthInternals.h",
+      "symbol": "pad2",
+      "lines": [
+        306
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "HeapInfo",
+          "declaration_line": 298,
+          "lines": [
+            306
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-2e90559c594c",
       "kind": "layout_padding",
       "path": "src/main.c",
@@ -158025,6 +159162,113 @@
           "declaration_line": 775,
           "lines": [
             791
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-bc23e6abc162",
+      "kind": "offset_field",
+      "path": "src/libultra/audio/seqplayer.c",
+      "symbol": "byte1",
+      "lines": [
+        439,
+        457,
+        635,
+        644,
+        719,
+        755,
+        796
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__handleMIDIMsg",
+          "declaration_line": 431,
+          "lines": [
+            439,
+            457,
+            635,
+            644,
+            719,
+            755
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "__handleMetaMsg",
+          "declaration_line": 785,
+          "lines": [
+            796
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-690625fc6a34",
+      "kind": "offset_field",
+      "path": "src/libultra/audio/seqplayer.c",
+      "symbol": "byte2",
+      "lines": [
+        440,
+        458,
+        622,
+        647,
+        657,
+        670,
+        673,
+        677,
+        700,
+        703,
+        719,
+        755,
+        797
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__handleMIDIMsg",
+          "declaration_line": 431,
+          "lines": [
+            440,
+            458,
+            622,
+            647,
+            657,
+            670,
+            673,
+            677,
+            700,
+            703,
+            719,
+            755
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "__handleMetaMsg",
+          "declaration_line": 785,
+          "lines": [
+            797
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-0bcf720addfe",
+      "kind": "offset_field",
+      "path": "src/libultra/audio/seqplayer.c",
+      "symbol": "byte3",
+      "lines": [
+        798
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__handleMetaMsg",
+          "declaration_line": 785,
+          "lines": [
+            798
           ]
         }
       ]
