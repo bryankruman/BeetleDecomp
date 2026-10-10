@@ -57,6 +57,9 @@ extern void *gUvGuiExports;
 typedef struct { u8 unk00[8]; f32 u, v; } MiscTextureFields;
 typedef struct { u8 unk00[4]; MiscTextureFields *first, *second; } MiscTextureFile;
 extern f32 D_misc_0040428C;
+extern f32 D_misc_004042A4;
+extern f32 D_misc_004042B0;
+extern f32 D_misc_004042EC;
 #include "module.h"
 
 /* Consumed provider and plane views for matrix, hierarchy and crossing helpers.
@@ -114,14 +117,14 @@ void func_misc_0040213C();
 void func_misc_0040234C();
 void func_misc_00402528();
 void miscGetMatrixDirectionAngles(Mtx4F *matrix, f32 *first, f32 *second, f32 *third);
-void func_misc_00402730();
+f32 func_misc_00402730(f32 pointX, f32 pointY, f32 startX, f32 startY, f32 endX, s32 endYInteger, f32* lengthOut, f32* signedFactorOut, f32* distanceOut);
 void func_misc_00402874();
 void miscSetTextureAxisValue(s32 fileId, const char *selector, f32 value);
 void func_misc_00402A5C();
-void func_misc_00402BFC();
+void func_misc_00402BFC(Vec3F* vector, Vec3F* normal, f32 coefficient);
 void func_misc_00402D48();
 void miscVec3Interpolate(f32 *output, f32 *first, f32 *second, f32 fraction);
-f32 func_misc_00402EFC(f32, f32, f32, f32);
+f32 func_misc_00402EFC(f32 target, f32 current, f32 rate, f32 distanceCap);
 void miscVec3ApproachNonlinearPreserveLength(Vec3F *target, Vec3F *current, f32 rate, f32 distanceCap);
 void func_misc_00403110();
 void *miscLoadFileModule(void);
@@ -1050,7 +1053,32 @@ void miscGetMatrixDirectionAngles(Mtx4F *matrix, f32 *first, f32 *second, f32 *t
 }
 #line 508 "src/modules/misc.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00402730.s")
+/* Publish segment length, signed factor and absolute projected distance using the original sixth integer input.
+ * RE_ORIGINAL_QUIRK: The sixth input remains s32, including its conversions in the floating-point expressions.
+ * RE_UNKNOWN: The sixth parameter integer ABI, degenerate domains and output aliasing require original callers/provider evidence. */
+#line 509 "src/modules/misc.c"
+f32 miscMeasurePlanarSegmentProjection(f32 pointX, f32 pointY, f32 startX, f32 startY, f32 endX, s32 endYInteger, f32* lengthOut, f32* signedFactorOut, f32* distanceOut) {
+    f32 longitudinalFactor;
+    f32 segmentLengthSquared;
+
+    *lengthOut = gUvMathExports->uvLength2D(endX - startX, (endYInteger - startY));
+    segmentLengthSquared = SQ(*lengthOut);
+    if (D_misc_004042A4 < segmentLengthSquared) {
+        longitudinalFactor = (((startY - pointY) * (startY - endYInteger)) - ((startX - pointX) * (endX - startX))) / segmentLengthSquared;
+        *signedFactorOut = (((startY - pointY) * (endX - startX)) - ((startX - pointX) * (endYInteger - startY))) / segmentLengthSquared;;
+        if ((*signedFactorOut * *lengthOut) > 0.0f) {
+            *distanceOut = *signedFactorOut * *lengthOut;
+        } else {
+            *distanceOut = -(*signedFactorOut * *lengthOut);
+        }
+    } else {
+        longitudinalFactor = 1.0f;
+        *signedFactorOut = 1.0f;
+        *distanceOut = 1.0f;
+    }
+    return longitudinalFactor;
+}
+#line 510 "src/modules/misc.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00402874.s")
 
@@ -1114,7 +1142,38 @@ void miscBuildTranslationAndThreeAngleMatrix(Mtx4F* matrix, f32 x, f32 y, f32 z,
 }
 #line 516 "src/modules/misc.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00402BFC.s")
+/* Adjust the normalized direction along the normal, then restore its scaled original length.
+ * RE_UNKNOWN: Normal normalization, coefficient units and source/normal overlap require original callers/providers. */
+#line 517 "src/modules/misc.c"
+void miscAdjustDirectionAlongNormalPreservingScaledLength(Vec3F* vector, Vec3F* normal, f32 coefficient) {
+    f32 normalAdjustment;
+    Vec3F* direction;
+    f32 originalLength;
+    f32 adjustedDot;
+    Vec3F normalizedInput;
+
+    originalLength = gUvFvecExports->uvVec3FLen(vector);
+    if ((originalLength < D_misc_004042B0)) {
+        return;
+    }
+    gUvFvecExports->uvVec3FNormalize(&normalizedInput, vector);
+    adjustedDot = gUvFvecExports->uvVec3FDot(&normalizedInput, normal);
+    if (adjustedDot > 0.0f) {
+        adjustedDot = -adjustedDot;
+    }
+
+    direction = &normalizedInput;
+    normalAdjustment = (-2.0f * adjustedDot);
+    vector->x = direction->x + (normalAdjustment * normal->x);
+    vector->y = direction->y + (normalAdjustment * normal->y);
+    vector->z = direction->z + (normalAdjustment * normal->z);
+    gUvFvecExports->uvVec3FNormalize(vector, vector);
+    coefficient *= originalLength;
+    vector->x *= coefficient;
+    vector->y *= coefficient;
+    vector->z *= coefficient;
+}
+#line 518 "src/modules/misc.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00402D48.s")
 
@@ -1129,7 +1188,53 @@ void miscVec3Interpolate(f32 *output, f32 *first, f32 *second, f32 fraction) {
 }
 #line 522 "src/modules/misc.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00402EFC.s")
+/* Approach the target using the shared scale word and the original nonlinear distance cap.
+ * RE_UNKNOWN: Shared scale meaning, valid rate/cap domains and FP behavior require original writers/callers. */
+#line 523 "src/modules/misc.c"
+f32 miscApproachWithScaledDistanceCap(f32 target, f32 current, f32 rate, f32 distanceCap) {
+    f32 stepDelta;
+    f32 absoluteDelta;
+    f32 delta;
+    f32 magnitudeScratch;
+
+    if (current < target) {
+        delta = target - current;
+        magnitudeScratch = delta;
+    } else {
+        delta = target - current;
+        magnitudeScratch = -delta;
+    }
+    if (magnitudeScratch < D_misc_004042EC) {
+        return target;
+    }
+    if (delta > 0.0f) {
+        stepDelta = delta;
+    } else {
+        stepDelta = -delta;
+    }
+    if ((distanceCap > 0) && (distanceCap < stepDelta)) {
+        stepDelta = distanceCap;
+    }
+    stepDelta *= ((rate * delta) * D_80025D70);
+    if (delta > 0.0f) {
+        absoluteDelta = delta;
+    } else {
+        absoluteDelta = -delta;
+    }
+
+    if (stepDelta > 0.0f) {
+        magnitudeScratch = stepDelta;
+    } else {
+        magnitudeScratch = -stepDelta;
+    }
+    if (absoluteDelta < magnitudeScratch) {
+        current = target;
+    } else {
+        current = current + stepDelta;
+    }
+    return current;
+}
+#line 524 "src/modules/misc.c"
 
 #line 525 "src/modules/misc.c"
 /* Apply the original distance-weighted scalar approach to each component, then

@@ -9,3 +9,6 @@ func_misc_00403748 = miscEvaluateRadiusGatedPlaneCrossing;
 func_misc_00403A5C = miscCreateGuiCurveValueRow;
 func_misc_00403CD8 = miscEvaluateClampedSineAngle;
 func_misc_00403D8C = miscDrawPackedNibbleLine;
+func_misc_00402730 = miscMeasurePlanarSegmentProjection;
+func_misc_00402BFC = miscAdjustDirectionAlongNormalPreservingScaledLength;
+func_misc_00402EFC = miscApproachWithScaledDistanceCap;

@@ -221,7 +221,7 @@
     "src/modules/logo.c": "98b52c4dd4100cf937d10d704a5b1720b9ff63a628099b7215f9fbc57d364619",
     "src/modules/med.c": "388ae18d3726f26ed10f43072b63277fb5568e735cbe9ac55f27d87f235cc000",
     "src/modules/menuslct.c": "6c5d9188d9d0fbbc20982a1327e21430ed180418332a9f13ec96803877adac15",
-    "src/modules/misc.c": "1ec9d29eb3d9fa2c5ff4175b4ba0abeb1a5ae16f1cc9ae97de0014cb7cfcbef2",
+    "src/modules/misc.c": "7fa3c9486a7993ae247758562b4cd54b67ba80ad4e90cad72a560cf46cf58f2d",
     "src/modules/motion.c": "eda98b2da63a114fb0c4f29b128158df1c06717e655ae6335fc885bcc6cfb0d0",
     "src/modules/mult1.c": "fcd148eabbeb9db35e3da555b6e77e8b47903ced46b4e915dad1c4e132781ff7",
     "src/modules/mult2.c": "ad25b8e93a8307ad21fc18221aa4ab3559721814689e9a500aa5105b3e820663",
@@ -330,22 +330,22 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "434a37f76ef16c54bc83310a4bba71c1955a09132ecd8674aed4e3294174e9da",
-    "docs/VALIDATION_20261006.md": "ea4559fe7765dc4e7373c2617ce464b9d1b2e838cfe77689e1846f263f3d8d27"
+    "docs/STRATEGY_V4.md": "8571c2539f6c9cbe5a2b0d33af0fdcf8378520b5148b6727a72348ea22b15064",
+    "docs/VALIDATION_20261006.md": "eb4d4e1cea097a00b2a3616156d321602f7a2be95079d8979fbb64cbb8d21b6b"
   },
   "counts": {
     "address_function": 906,
-    "address_global": 1457,
-    "assembly": 774,
+    "address_global": 1460,
+    "assembly": 771,
     "audit_debt": 30,
     "conditional_draft": 4,
     "decompiler_local": 674,
     "draft_marker": 24,
-    "explicit_unknown": 1285,
+    "explicit_unknown": 1288,
     "layout_padding": 269,
     "offset_field": 1605,
     "opaque_type": 282,
-    "original_quirk": 332,
+    "original_quirk": 333,
     "uncertainty_note": 93,
     "unused_identifier": 133
   },
@@ -6407,15 +6407,15 @@
       "path": "src/modules/misc.c",
       "symbol": "__entrypoint_func_misc_400000",
       "lines": [
-        192
+        195
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_misc_400000",
-          "declaration_line": 192,
+          "declaration_line": 195,
           "lines": [
-            192
+            195
           ]
         }
       ]
@@ -6426,33 +6426,33 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00400390",
       "lines": [
-        184,
-        233,
-        275
+        187,
+        236,
+        278
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_misc_400000",
-          "declaration_line": 192,
+          "declaration_line": 195,
           "lines": [
-            233
+            236
           ]
         },
         {
           "kind": "function",
           "name": "func_misc_00400390",
-          "declaration_line": 184,
+          "declaration_line": 187,
           "lines": [
-            184
+            187
           ]
         },
         {
           "kind": "function",
           "name": "func_misc_00400390",
-          "declaration_line": 275,
+          "declaration_line": 278,
           "lines": [
-            275
+            278
           ]
         }
       ]
@@ -6463,24 +6463,24 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00400AD0",
       "lines": [
-        85,
-        215
+        88,
+        218
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_misc_400000",
-          "declaration_line": 192,
+          "declaration_line": 195,
           "lines": [
-            215
+            218
           ]
         },
         {
           "kind": "function",
           "name": "func_misc_00400AD0",
-          "declaration_line": 85,
+          "declaration_line": 88,
           "lines": [
-            85
+            88
           ]
         }
       ]
@@ -6491,33 +6491,33 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00401078",
       "lines": [
-        182,
-        224,
-        633
+        185,
+        227,
+        636
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_misc_400000",
-          "declaration_line": 192,
+          "declaration_line": 195,
           "lines": [
-            224
+            227
           ]
         },
         {
           "kind": "function",
           "name": "func_misc_00401078",
-          "declaration_line": 182,
+          "declaration_line": 185,
           "lines": [
-            182
+            185
           ]
         },
         {
           "kind": "function",
           "name": "func_misc_00401078",
-          "declaration_line": 633,
+          "declaration_line": 636,
           "lines": [
-            633
+            636
           ]
         }
       ]
@@ -6528,24 +6528,24 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00401080",
       "lines": [
-        86,
-        226
+        89,
+        229
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_misc_400000",
-          "declaration_line": 192,
+          "declaration_line": 195,
           "lines": [
-            226
+            229
           ]
         },
         {
           "kind": "function",
           "name": "func_misc_00401080",
-          "declaration_line": 86,
+          "declaration_line": 89,
           "lines": [
-            86
+            89
           ]
         }
       ]
@@ -6556,24 +6556,24 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_004012E4",
       "lines": [
-        87,
-        234
+        90,
+        237
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_misc_400000",
-          "declaration_line": 192,
+          "declaration_line": 195,
           "lines": [
-            234
+            237
           ]
         },
         {
           "kind": "function",
           "name": "func_misc_004012E4",
-          "declaration_line": 87,
+          "declaration_line": 90,
           "lines": [
-            87
+            90
           ]
         }
       ]
@@ -6584,37 +6584,37 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_004016CC",
       "lines": [
-        93,
-        242,
-        1047,
-        1048,
-        1049
+        96,
+        245,
+        1050,
+        1051,
+        1052
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_misc_400000",
-          "declaration_line": 192,
+          "declaration_line": 195,
           "lines": [
-            242
+            245
           ]
         },
         {
           "kind": "function",
           "name": "func_misc_004016CC",
-          "declaration_line": 93,
+          "declaration_line": 96,
           "lines": [
-            93
+            96
           ]
         },
         {
           "kind": "function",
           "name": "miscGetMatrixDirectionAngles",
-          "declaration_line": 1046,
+          "declaration_line": 1049,
           "lines": [
-            1047,
-            1048,
-            1049
+            1050,
+            1051,
+            1052
           ]
         }
       ]
@@ -6625,24 +6625,24 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_004019FC",
       "lines": [
-        105,
-        265
+        108,
+        268
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_misc_400000",
-          "declaration_line": 192,
+          "declaration_line": 195,
           "lines": [
-            265
+            268
           ]
         },
         {
           "kind": "function",
           "name": "func_misc_004019FC",
-          "declaration_line": 105,
+          "declaration_line": 108,
           "lines": [
-            105
+            108
           ]
         }
       ]
@@ -6653,24 +6653,24 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00401FA0",
       "lines": [
-        112,
-        208
+        115,
+        211
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_misc_400000",
-          "declaration_line": 192,
+          "declaration_line": 195,
           "lines": [
-            208
+            211
           ]
         },
         {
           "kind": "function",
           "name": "func_misc_00401FA0",
-          "declaration_line": 112,
+          "declaration_line": 115,
           "lines": [
-            112
+            115
           ]
         }
       ]
@@ -6681,24 +6681,24 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_0040213C",
       "lines": [
-        113,
-        209
+        116,
+        212
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_misc_400000",
-          "declaration_line": 192,
+          "declaration_line": 195,
           "lines": [
-            209
+            212
           ]
         },
         {
           "kind": "function",
           "name": "func_misc_0040213C",
-          "declaration_line": 113,
+          "declaration_line": 116,
           "lines": [
-            113
+            116
           ]
         }
       ]
@@ -6709,24 +6709,24 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_0040234C",
       "lines": [
-        114,
-        210
+        117,
+        213
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_misc_400000",
-          "declaration_line": 192,
+          "declaration_line": 195,
           "lines": [
-            210
+            213
           ]
         },
         {
           "kind": "function",
           "name": "func_misc_0040234C",
-          "declaration_line": 114,
+          "declaration_line": 117,
           "lines": [
-            114
+            117
           ]
         }
       ]
@@ -6737,24 +6737,24 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00402528",
       "lines": [
-        115,
-        211
+        118,
+        214
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_misc_400000",
-          "declaration_line": 192,
+          "declaration_line": 195,
           "lines": [
-            211
+            214
           ]
         },
         {
           "kind": "function",
           "name": "func_misc_00402528",
-          "declaration_line": 115,
+          "declaration_line": 118,
           "lines": [
-            115
+            118
           ]
         }
       ]
@@ -6765,24 +6765,24 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00402730",
       "lines": [
-        117,
-        217
+        120,
+        220
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_misc_400000",
-          "declaration_line": 192,
+          "declaration_line": 195,
           "lines": [
-            217
+            220
           ]
         },
         {
           "kind": "function",
           "name": "func_misc_00402730",
-          "declaration_line": 117,
+          "declaration_line": 120,
           "lines": [
-            117
+            120
           ]
         }
       ]
@@ -6793,24 +6793,24 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00402874",
       "lines": [
-        118,
-        219
+        121,
+        222
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_misc_400000",
-          "declaration_line": 192,
+          "declaration_line": 195,
           "lines": [
-            219
+            222
           ]
         },
         {
           "kind": "function",
           "name": "func_misc_00402874",
-          "declaration_line": 118,
+          "declaration_line": 121,
           "lines": [
-            118
+            121
           ]
         }
       ]
@@ -6821,24 +6821,24 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00402A5C",
       "lines": [
-        120,
-        223
+        123,
+        226
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_misc_400000",
-          "declaration_line": 192,
+          "declaration_line": 195,
           "lines": [
-            223
+            226
           ]
         },
         {
           "kind": "function",
           "name": "func_misc_00402A5C",
-          "declaration_line": 120,
+          "declaration_line": 123,
           "lines": [
-            120
+            123
           ]
         }
       ]
@@ -6849,24 +6849,24 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00402BFC",
       "lines": [
-        121,
-        225
+        124,
+        228
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_misc_400000",
-          "declaration_line": 192,
+          "declaration_line": 195,
           "lines": [
-            225
+            228
           ]
         },
         {
           "kind": "function",
           "name": "func_misc_00402BFC",
-          "declaration_line": 121,
+          "declaration_line": 124,
           "lines": [
-            121
+            124
           ]
         }
       ]
@@ -6877,24 +6877,24 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00402D48",
       "lines": [
-        122,
-        227
+        125,
+        230
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_misc_400000",
-          "declaration_line": 192,
+          "declaration_line": 195,
           "lines": [
-            227
+            230
           ]
         },
         {
           "kind": "function",
           "name": "func_misc_00402D48",
-          "declaration_line": 122,
+          "declaration_line": 125,
           "lines": [
-            122
+            125
           ]
         }
       ]
@@ -6905,37 +6905,37 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00402EFC",
       "lines": [
-        124,
-        230,
-        1145,
-        1146,
-        1147
+        127,
+        233,
+        1250,
+        1251,
+        1252
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_misc_400000",
-          "declaration_line": 192,
+          "declaration_line": 195,
           "lines": [
-            230
+            233
           ]
         },
         {
           "kind": "function",
           "name": "func_misc_00402EFC",
-          "declaration_line": 124,
+          "declaration_line": 127,
           "lines": [
-            124
+            127
           ]
         },
         {
           "kind": "function",
           "name": "miscVec3ApproachNonlinearPreserveLength",
-          "declaration_line": 1137,
+          "declaration_line": 1242,
           "lines": [
-            1145,
-            1146,
-            1147
+            1250,
+            1251,
+            1252
           ]
         }
       ]
@@ -6946,24 +6946,24 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403110",
       "lines": [
-        126,
-        232
+        129,
+        235
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_misc_400000",
-          "declaration_line": 192,
+          "declaration_line": 195,
           "lines": [
-            232
+            235
           ]
         },
         {
           "kind": "function",
           "name": "func_misc_00403110",
-          "declaration_line": 126,
+          "declaration_line": 129,
           "lines": [
-            126
+            129
           ]
         }
       ]
@@ -6974,24 +6974,24 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403348",
       "lines": [
-        129,
-        243
+        132,
+        246
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_misc_400000",
-          "declaration_line": 192,
+          "declaration_line": 195,
           "lines": [
-            243
+            246
           ]
         },
         {
           "kind": "function",
           "name": "func_misc_00403348",
-          "declaration_line": 129,
+          "declaration_line": 132,
           "lines": [
-            129
+            132
           ]
         }
       ]
@@ -7002,24 +7002,24 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403650",
       "lines": [
-        130,
-        245
+        133,
+        248
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_misc_400000",
-          "declaration_line": 192,
+          "declaration_line": 195,
           "lines": [
-            245
+            248
           ]
         },
         {
           "kind": "function",
           "name": "func_misc_00403650",
-          "declaration_line": 130,
+          "declaration_line": 133,
           "lines": [
-            130
+            133
           ]
         }
       ]
@@ -7030,24 +7030,24 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403748",
       "lines": [
-        131,
-        247
+        134,
+        250
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_misc_400000",
-          "declaration_line": 192,
+          "declaration_line": 195,
           "lines": [
-            247
+            250
           ]
         },
         {
           "kind": "function",
           "name": "func_misc_00403748",
-          "declaration_line": 131,
+          "declaration_line": 134,
           "lines": [
-            131
+            134
           ]
         }
       ]
@@ -7058,24 +7058,24 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403A5C",
       "lines": [
-        133,
-        250
+        136,
+        253
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_misc_400000",
-          "declaration_line": 192,
+          "declaration_line": 195,
           "lines": [
-            250
+            253
           ]
         },
         {
           "kind": "function",
           "name": "func_misc_00403A5C",
-          "declaration_line": 133,
+          "declaration_line": 136,
           "lines": [
-            133
+            136
           ]
         }
       ]
@@ -7086,24 +7086,24 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403CD8",
       "lines": [
-        135,
-        253
+        138,
+        256
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_misc_400000",
-          "declaration_line": 192,
+          "declaration_line": 195,
           "lines": [
-            253
+            256
           ]
         },
         {
           "kind": "function",
           "name": "func_misc_00403CD8",
-          "declaration_line": 135,
+          "declaration_line": 138,
           "lines": [
-            135
+            138
           ]
         }
       ]
@@ -7114,24 +7114,24 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403D8C",
       "lines": [
-        136,
-        258
+        139,
+        261
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_misc_400000",
-          "declaration_line": 192,
+          "declaration_line": 195,
           "lines": [
-            258
+            261
           ]
         },
         {
           "kind": "function",
           "name": "func_misc_00403D8C",
-          "declaration_line": 136,
+          "declaration_line": 139,
           "lines": [
-            136
+            139
           ]
         }
       ]
@@ -32319,35 +32319,44 @@
       "path": "src/modules/misc.c",
       "symbol": "D_80025D70",
       "lines": [
-        162,
-        312,
-        354,
-        356
+        165,
+        315,
+        357,
+        359,
+        1218
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscApproachLinear",
-          "declaration_line": 337,
+          "declaration_line": 340,
           "lines": [
-            354,
-            356
+            357,
+            359
           ]
         },
         {
           "kind": "function",
           "name": "miscApproachProportional",
-          "declaration_line": 296,
+          "declaration_line": 299,
           "lines": [
-            312
+            315
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "miscApproachWithScaledDistanceCap",
+          "declaration_line": 1194,
+          "lines": [
+            1218
           ]
         },
         {
           "kind": "global",
           "name": "D_80025D70",
-          "declaration_line": 162,
+          "declaration_line": 165,
           "lines": [
-            162
+            165
           ]
         }
       ]
@@ -32358,24 +32367,24 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_00404220",
       "lines": [
-        292,
-        309
+        295,
+        312
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscApproachProportional",
-          "declaration_line": 296,
+          "declaration_line": 299,
           "lines": [
-            309
+            312
           ]
         },
         {
           "kind": "global",
           "name": "D_misc_00404220",
-          "declaration_line": 292,
+          "declaration_line": 295,
           "lines": [
-            292
+            295
           ]
         }
       ]
@@ -32386,24 +32395,24 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_00404224",
       "lines": [
-        333,
-        350
+        336,
+        353
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscApproachLinear",
-          "declaration_line": 337,
+          "declaration_line": 340,
           "lines": [
-            350
+            353
           ]
         },
         {
           "kind": "global",
           "name": "D_misc_00404224",
-          "declaration_line": 333,
+          "declaration_line": 336,
           "lines": [
-            333
+            336
           ]
         }
       ]
@@ -32414,24 +32423,24 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_00404234",
       "lines": [
-        515,
-        522
+        518,
+        525
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscArcCosine",
-          "declaration_line": 520,
+          "declaration_line": 523,
           "lines": [
-            522
+            525
           ]
         },
         {
           "kind": "global",
           "name": "D_misc_00404234",
-          "declaration_line": 515,
+          "declaration_line": 518,
           "lines": [
-            515
+            518
           ]
         }
       ]
@@ -32442,24 +32451,24 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_00404238",
       "lines": [
-        573,
-        588
+        576,
+        591
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscExtractTranslationAndDirectionAngles",
-          "declaration_line": 581,
+          "declaration_line": 584,
           "lines": [
-            588
+            591
           ]
         },
         {
           "kind": "global",
           "name": "D_misc_00404238",
-          "declaration_line": 573,
+          "declaration_line": 576,
           "lines": [
-            573
+            576
           ]
         }
       ]
@@ -32470,24 +32479,24 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_0040423C",
       "lines": [
-        574,
-        590
+        577,
+        593
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscExtractTranslationAndDirectionAngles",
-          "declaration_line": 581,
+          "declaration_line": 584,
           "lines": [
-            590
+            593
           ]
         },
         {
           "kind": "global",
           "name": "D_misc_0040423C",
-          "declaration_line": 574,
+          "declaration_line": 577,
           "lines": [
-            574
+            577
           ]
         }
       ]
@@ -32498,24 +32507,24 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_00404240",
       "lines": [
-        575,
-        592
+        578,
+        595
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscExtractTranslationAndDirectionAngles",
-          "declaration_line": 581,
+          "declaration_line": 584,
           "lines": [
-            592
+            595
           ]
         },
         {
           "kind": "global",
           "name": "D_misc_00404240",
-          "declaration_line": 575,
+          "declaration_line": 578,
           "lines": [
-            575
+            578
           ]
         }
       ]
@@ -32526,26 +32535,26 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_00404260",
       "lines": [
-        751,
-        762,
-        765
+        754,
+        765,
+        768
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscWrapAngleRadians",
-          "declaration_line": 756,
+          "declaration_line": 759,
           "lines": [
-            762,
-            765
+            765,
+            768
           ]
         },
         {
           "kind": "global",
           "name": "D_misc_00404260",
-          "declaration_line": 751,
+          "declaration_line": 754,
           "lines": [
-            751
+            754
           ]
         }
       ]
@@ -32556,24 +32565,24 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_00404264",
       "lines": [
-        752,
-        764
+        755,
+        767
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscWrapAngleRadians",
-          "declaration_line": 756,
+          "declaration_line": 759,
           "lines": [
-            764
+            767
           ]
         },
         {
           "kind": "global",
           "name": "D_misc_00404264",
-          "declaration_line": 752,
+          "declaration_line": 755,
           "lines": [
-            752
+            755
           ]
         }
       ]
@@ -32584,24 +32593,24 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_00404268",
       "lines": [
-        753,
-        767
+        756,
+        770
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscWrapAngleRadians",
-          "declaration_line": 756,
+          "declaration_line": 759,
           "lines": [
-            767
+            770
           ]
         },
         {
           "kind": "global",
           "name": "D_misc_00404268",
-          "declaration_line": 753,
+          "declaration_line": 756,
           "lines": [
-            753
+            756
           ]
         }
       ]
@@ -32612,24 +32621,24 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_0040426C",
       "lines": [
-        754,
-        768
+        757,
+        771
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscWrapAngleRadians",
-          "declaration_line": 756,
+          "declaration_line": 759,
           "lines": [
-            768
+            771
           ]
         },
         {
           "kind": "global",
           "name": "D_misc_0040426C",
-          "declaration_line": 754,
+          "declaration_line": 757,
           "lines": [
-            754
+            757
           ]
         }
       ]
@@ -32640,28 +32649,28 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_00404270",
       "lines": [
-        782,
-        794,
+        785,
         797,
-        806
+        800,
+        809
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscFoldAngleRadians",
-          "declaration_line": 789,
+          "declaration_line": 792,
           "lines": [
-            794,
             797,
-            806
+            800,
+            809
           ]
         },
         {
           "kind": "global",
           "name": "D_misc_00404270",
-          "declaration_line": 782,
+          "declaration_line": 785,
           "lines": [
-            782
+            785
           ]
         }
       ]
@@ -32672,24 +32681,24 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_00404274",
       "lines": [
-        783,
-        796
+        786,
+        799
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscFoldAngleRadians",
-          "declaration_line": 789,
+          "declaration_line": 792,
           "lines": [
-            796
+            799
           ]
         },
         {
           "kind": "global",
           "name": "D_misc_00404274",
-          "declaration_line": 783,
+          "declaration_line": 786,
           "lines": [
-            783
+            786
           ]
         }
       ]
@@ -32700,24 +32709,24 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_00404278",
       "lines": [
-        784,
-        799
+        787,
+        802
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscFoldAngleRadians",
-          "declaration_line": 789,
+          "declaration_line": 792,
           "lines": [
-            799
+            802
           ]
         },
         {
           "kind": "global",
           "name": "D_misc_00404278",
-          "declaration_line": 784,
+          "declaration_line": 787,
           "lines": [
-            784
+            787
           ]
         }
       ]
@@ -32728,28 +32737,28 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_0040427C",
       "lines": [
-        785,
-        800,
+        788,
         803,
-        809
+        806,
+        812
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscFoldAngleRadians",
-          "declaration_line": 789,
+          "declaration_line": 792,
           "lines": [
-            800,
             803,
-            809
+            806,
+            812
           ]
         },
         {
           "kind": "global",
           "name": "D_misc_0040427C",
-          "declaration_line": 785,
+          "declaration_line": 788,
           "lines": [
-            785
+            788
           ]
         }
       ]
@@ -32760,24 +32769,24 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_00404280",
       "lines": [
-        786,
-        805
+        789,
+        808
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscFoldAngleRadians",
-          "declaration_line": 789,
+          "declaration_line": 792,
           "lines": [
-            805
+            808
           ]
         },
         {
           "kind": "global",
           "name": "D_misc_00404280",
-          "declaration_line": 786,
+          "declaration_line": 789,
           "lines": [
-            786
+            789
           ]
         }
       ]
@@ -32788,24 +32797,24 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_00404284",
       "lines": [
-        787,
-        808
+        790,
+        811
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscFoldAngleRadians",
-          "declaration_line": 789,
+          "declaration_line": 792,
           "lines": [
-            808
+            811
           ]
         },
         {
           "kind": "global",
           "name": "D_misc_00404284",
-          "declaration_line": 787,
+          "declaration_line": 790,
           "lines": [
-            787
+            790
           ]
         }
       ]
@@ -32817,15 +32826,15 @@
       "symbol": "D_misc_0040428C",
       "lines": [
         59,
-        836
+        839
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscVec2Normalize",
-          "declaration_line": 833,
+          "declaration_line": 836,
           "lines": [
-            836
+            839
           ]
         },
         {
@@ -32839,29 +32848,113 @@
       ]
     },
     {
+      "id": "Q-f3c53fbda2e0",
+      "kind": "address_global",
+      "path": "src/modules/misc.c",
+      "symbol": "D_misc_004042A4",
+      "lines": [
+        60,
+        1066
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "miscMeasurePlanarSegmentProjection",
+          "declaration_line": 1060,
+          "lines": [
+            1066
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_misc_004042A4",
+          "declaration_line": 60,
+          "lines": [
+            60
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-69f0ad17a107",
+      "kind": "address_global",
+      "path": "src/modules/misc.c",
+      "symbol": "D_misc_004042B0",
+      "lines": [
+        61,
+        1156
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "miscAdjustDirectionAlongNormalPreservingScaledLength",
+          "declaration_line": 1148,
+          "lines": [
+            1156
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_misc_004042B0",
+          "declaration_line": 61,
+          "lines": [
+            61
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-5ce7820c784c",
+      "kind": "address_global",
+      "path": "src/modules/misc.c",
+      "symbol": "D_misc_004042EC",
+      "lines": [
+        62,
+        1207
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "miscApproachWithScaledDistanceCap",
+          "declaration_line": 1194,
+          "lines": [
+            1207
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_misc_004042EC",
+          "declaration_line": 62,
+          "lines": [
+            62
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-759547c536b3",
       "kind": "address_global",
       "path": "src/modules/misc.c",
       "symbol": "D_misc_004042F8",
       "lines": [
-        139,
-        1591
+        142,
+        1696
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscRandomFloatLcg",
-          "declaration_line": 1587,
+          "declaration_line": 1692,
           "lines": [
-            1591
+            1696
           ]
         },
         {
           "kind": "global",
           "name": "D_misc_004042F8",
-          "declaration_line": 139,
+          "declaration_line": 142,
           "lines": [
-            139
+            142
           ]
         }
       ]
@@ -32872,35 +32965,35 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_00404300",
       "lines": [
-        138,
-        1580,
-        1589,
-        1590
+        141,
+        1685,
+        1694,
+        1695
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscRandomFloatLcg",
-          "declaration_line": 1587,
+          "declaration_line": 1692,
           "lines": [
-            1589,
-            1590
+            1694,
+            1695
           ]
         },
         {
           "kind": "function",
           "name": "miscSeedRandomLcg",
-          "declaration_line": 1579,
+          "declaration_line": 1684,
           "lines": [
-            1580
+            1685
           ]
         },
         {
           "kind": "global",
           "name": "D_misc_00404300",
-          "declaration_line": 138,
+          "declaration_line": 141,
           "lines": [
-            138
+            141
           ]
         }
       ]
@@ -78193,7 +78286,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00400AD0",
       "lines": [
-        513
+        516
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00400AD0.s"
     },
@@ -78203,7 +78296,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00401080",
       "lines": [
-        638
+        641
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00401080.s"
     },
@@ -78213,7 +78306,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_004016CC",
       "lines": [
-        815
+        818
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_004016CC.s"
     },
@@ -78223,7 +78316,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_004019FC",
       "lines": [
-        916
+        919
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_004019FC.s"
     },
@@ -78233,7 +78326,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00401FA0",
       "lines": [
-        978
+        981
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00401FA0.s"
     },
@@ -78243,7 +78336,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_0040234C",
       "lines": [
-        1039
+        1042
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_0040234C.s"
     },
@@ -78253,19 +78346,9 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00402528",
       "lines": [
-        1041
+        1044
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00402528.s"
-    },
-    {
-      "id": "Q-9342ff741f28",
-      "kind": "assembly",
-      "path": "src/modules/misc.c",
-      "symbol": "func_misc_00402730",
-      "lines": [
-        1053
-      ],
-      "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00402730.s"
     },
     {
       "id": "Q-636b2980021d",
@@ -78273,19 +78356,9 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00402874",
       "lines": [
-        1055
+        1083
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00402874.s"
-    },
-    {
-      "id": "Q-6538268453a1",
-      "kind": "assembly",
-      "path": "src/modules/misc.c",
-      "symbol": "func_misc_00402BFC",
-      "lines": [
-        1117
-      ],
-      "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00402BFC.s"
     },
     {
       "id": "Q-8e58649bc56e",
@@ -78293,19 +78366,9 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00402D48",
       "lines": [
-        1119
+        1178
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00402D48.s"
-    },
-    {
-      "id": "Q-6d4a95459874",
-      "kind": "assembly",
-      "path": "src/modules/misc.c",
-      "symbol": "func_misc_00402EFC",
-      "lines": [
-        1132
-      ],
-      "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00402EFC.s"
     },
     {
       "id": "Q-1045685b182a",
@@ -78313,7 +78376,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403650",
       "lines": [
-        1301
+        1406
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00403650.s"
     },
@@ -85618,42 +85681,42 @@
       "path": "src/modules/misc.c",
       "symbol": "arg0",
       "lines": [
-        91,
-        92,
-        165,
-        166
+        94,
+        95,
+        168,
+        169
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscCartesianToSpherical",
-          "declaration_line": 166,
+          "declaration_line": 169,
           "lines": [
-            166
+            169
           ]
         },
         {
           "kind": "function",
           "name": "miscFoldAngleRadians",
-          "declaration_line": 92,
+          "declaration_line": 95,
           "lines": [
-            92
+            95
           ]
         },
         {
           "kind": "function",
           "name": "miscRebuildOrthonormalBasisFromDirection",
-          "declaration_line": 165,
+          "declaration_line": 168,
           "lines": [
-            165
+            168
           ]
         },
         {
           "kind": "function",
           "name": "miscWrapAngleRadians",
-          "declaration_line": 91,
+          "declaration_line": 94,
           "lines": [
-            91
+            94
           ]
         }
       ]
@@ -85664,33 +85727,33 @@
       "path": "src/modules/misc.c",
       "symbol": "arg1",
       "lines": [
-        165,
-        166,
-        168
+        168,
+        169,
+        171
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscBuildRotationMatrixFromAngles",
-          "declaration_line": 168,
+          "declaration_line": 171,
           "lines": [
-            168
+            171
           ]
         },
         {
           "kind": "function",
           "name": "miscCartesianToSpherical",
-          "declaration_line": 166,
+          "declaration_line": 169,
           "lines": [
-            166
+            169
           ]
         },
         {
           "kind": "function",
           "name": "miscRebuildOrthonormalBasisFromDirection",
-          "declaration_line": 165,
+          "declaration_line": 168,
           "lines": [
-            165
+            168
           ]
         }
       ]
@@ -85701,24 +85764,24 @@
       "path": "src/modules/misc.c",
       "symbol": "arg2",
       "lines": [
-        166,
-        168
+        169,
+        171
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscBuildRotationMatrixFromAngles",
-          "declaration_line": 168,
+          "declaration_line": 171,
           "lines": [
-            168
+            171
           ]
         },
         {
           "kind": "function",
           "name": "miscCartesianToSpherical",
-          "declaration_line": 166,
+          "declaration_line": 169,
           "lines": [
-            166
+            169
           ]
         }
       ]
@@ -85729,24 +85792,24 @@
       "path": "src/modules/misc.c",
       "symbol": "arg3",
       "lines": [
-        166,
-        168
+        169,
+        171
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscBuildRotationMatrixFromAngles",
-          "declaration_line": 168,
+          "declaration_line": 171,
           "lines": [
-            168
+            171
           ]
         },
         {
           "kind": "function",
           "name": "miscCartesianToSpherical",
-          "declaration_line": 166,
+          "declaration_line": 169,
           "lines": [
-            166
+            169
           ]
         }
       ]
@@ -85757,15 +85820,15 @@
       "path": "src/modules/misc.c",
       "symbol": "arg4",
       "lines": [
-        166
+        169
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscCartesianToSpherical",
-          "declaration_line": 166,
+          "declaration_line": 169,
           "lines": [
-            166
+            169
           ]
         }
       ]
@@ -85776,15 +85839,15 @@
       "path": "src/modules/misc.c",
       "symbol": "arg5",
       "lines": [
-        166
+        169
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscCartesianToSpherical",
-          "declaration_line": 166,
+          "declaration_line": 169,
           "lines": [
-            166
+            169
           ]
         }
       ]
@@ -85795,25 +85858,25 @@
       "path": "src/modules/misc.c",
       "symbol": "sp28",
       "lines": [
-        1310,
-        1319,
-        1321,
-        1335,
-        1338,
-        1343
+        1415,
+        1424,
+        1426,
+        1440,
+        1443,
+        1448
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscEvaluateRadiusGatedPlaneCrossing",
-          "declaration_line": 1306,
+          "declaration_line": 1411,
           "lines": [
-            1310,
-            1319,
-            1321,
-            1335,
-            1338,
-            1343
+            1415,
+            1424,
+            1426,
+            1440,
+            1443,
+            1448
           ]
         }
       ]
@@ -85824,45 +85887,45 @@
       "path": "src/modules/misc.c",
       "symbol": "sp30",
       "lines": [
-        665,
-        672,
-        673,
-        1235,
-        1263,
-        1269,
-        1308,
-        1318,
-        1320
+        668,
+        675,
+        676,
+        1340,
+        1368,
+        1374,
+        1413,
+        1423,
+        1425
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscEvaluateRadiusGatedPlaneCrossing",
-          "declaration_line": 1306,
+          "declaration_line": 1411,
           "lines": [
-            1308,
-            1318,
-            1320
+            1413,
+            1423,
+            1425
           ]
         },
         {
           "kind": "function",
           "name": "miscInterpolateTranslationAndQuaternionMatrix",
-          "declaration_line": 658,
+          "declaration_line": 661,
           "lines": [
-            665,
-            672,
-            673
+            668,
+            675,
+            676
           ]
         },
         {
           "kind": "function",
           "name": "miscMeasurePlanarSegmentCircleFraction",
-          "declaration_line": 1225,
+          "declaration_line": 1330,
           "lines": [
-            1235,
-            1263,
-            1269
+            1340,
+            1368,
+            1374
           ]
         }
       ]
@@ -85873,27 +85936,27 @@
       "path": "src/modules/misc.c",
       "symbol": "sp34",
       "lines": [
-        1090,
-        1096,
-        1098,
-        1099,
-        1102,
-        1106,
-        1107
+        1118,
+        1124,
+        1126,
+        1127,
+        1130,
+        1134,
+        1135
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscBuildTranslationAndThreeAngleMatrix",
-          "declaration_line": 1085,
+          "declaration_line": 1113,
           "lines": [
-            1090,
-            1096,
-            1098,
-            1099,
-            1102,
-            1106,
-            1107
+            1118,
+            1124,
+            1126,
+            1127,
+            1130,
+            1134,
+            1135
           ]
         }
       ]
@@ -85904,25 +85967,25 @@
       "path": "src/modules/misc.c",
       "symbol": "sp38",
       "lines": [
-        1089,
-        1095,
-        1100,
-        1102,
-        1103,
-        1108
+        1117,
+        1123,
+        1128,
+        1130,
+        1131,
+        1136
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscBuildTranslationAndThreeAngleMatrix",
-          "declaration_line": 1085,
+          "declaration_line": 1113,
           "lines": [
-            1089,
-            1095,
-            1100,
-            1102,
-            1103,
-            1108
+            1117,
+            1123,
+            1128,
+            1130,
+            1131,
+            1136
           ]
         }
       ]
@@ -85933,42 +85996,42 @@
       "path": "src/modules/misc.c",
       "symbol": "sp3C",
       "lines": [
-        1088,
-        1094,
-        1098,
-        1099,
-        1104,
-        1106,
-        1107,
-        1307,
-        1314,
-        1315,
-        1319
+        1116,
+        1122,
+        1126,
+        1127,
+        1132,
+        1134,
+        1135,
+        1412,
+        1419,
+        1420,
+        1424
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscBuildTranslationAndThreeAngleMatrix",
-          "declaration_line": 1085,
+          "declaration_line": 1113,
           "lines": [
-            1088,
-            1094,
-            1098,
-            1099,
-            1104,
-            1106,
-            1107
+            1116,
+            1122,
+            1126,
+            1127,
+            1132,
+            1134,
+            1135
           ]
         },
         {
           "kind": "function",
           "name": "miscEvaluateRadiusGatedPlaneCrossing",
-          "declaration_line": 1306,
+          "declaration_line": 1411,
           "lines": [
-            1307,
-            1314,
-            1315,
-            1319
+            1412,
+            1419,
+            1420,
+            1424
           ]
         }
       ]
@@ -85979,19 +86042,19 @@
       "path": "src/modules/misc.c",
       "symbol": "sp40",
       "lines": [
-        664,
-        671,
-        673
+        667,
+        674,
+        676
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscInterpolateTranslationAndQuaternionMatrix",
-          "declaration_line": 658,
+          "declaration_line": 661,
           "lines": [
-            664,
-            671,
-            673
+            667,
+            674,
+            676
           ]
         }
       ]
@@ -86002,25 +86065,25 @@
       "path": "src/modules/misc.c",
       "symbol": "sp44",
       "lines": [
-        1230,
-        1254,
-        1255,
-        1260,
-        1262,
-        1263
+        1335,
+        1359,
+        1360,
+        1365,
+        1367,
+        1368
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscMeasurePlanarSegmentCircleFraction",
-          "declaration_line": 1225,
+          "declaration_line": 1330,
           "lines": [
-            1230,
-            1254,
-            1255,
-            1260,
-            1262,
-            1263
+            1335,
+            1359,
+            1360,
+            1365,
+            1367,
+            1368
           ]
         }
       ]
@@ -86031,29 +86094,29 @@
       "path": "src/modules/misc.c",
       "symbol": "sp4E",
       "lines": [
-        1228,
-        1240,
-        1247,
-        1249,
-        1271,
-        1278,
-        1280,
-        1292
+        1333,
+        1345,
+        1352,
+        1354,
+        1376,
+        1383,
+        1385,
+        1397
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscMeasurePlanarSegmentCircleFraction",
-          "declaration_line": 1225,
+          "declaration_line": 1330,
           "lines": [
-            1228,
-            1240,
-            1247,
-            1249,
-            1271,
-            1278,
-            1280,
-            1292
+            1333,
+            1345,
+            1352,
+            1354,
+            1376,
+            1383,
+            1385,
+            1397
           ]
         }
       ]
@@ -86064,29 +86127,29 @@
       "path": "src/modules/misc.c",
       "symbol": "sp4F",
       "lines": [
-        1227,
-        1239,
-        1243,
-        1249,
-        1270,
-        1274,
-        1280,
-        1288
+        1332,
+        1344,
+        1348,
+        1354,
+        1375,
+        1379,
+        1385,
+        1393
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscMeasurePlanarSegmentCircleFraction",
-          "declaration_line": 1225,
+          "declaration_line": 1330,
           "lines": [
-            1227,
-            1239,
-            1243,
-            1249,
-            1270,
-            1274,
-            1280,
-            1288
+            1332,
+            1344,
+            1348,
+            1354,
+            1375,
+            1379,
+            1385,
+            1393
           ]
         }
       ]
@@ -86097,32 +86160,32 @@
       "path": "src/modules/misc.c",
       "symbol": "sp50",
       "lines": [
-        663,
-        673,
-        674,
-        1171,
-        1189,
-        1190
+        666,
+        676,
+        677,
+        1276,
+        1294,
+        1295
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscCopyObjectHierarchyMatrices",
-          "declaration_line": 1162,
+          "declaration_line": 1267,
           "lines": [
-            1171,
-            1189,
-            1190
+            1276,
+            1294,
+            1295
           ]
         },
         {
           "kind": "function",
           "name": "miscInterpolateTranslationAndQuaternionMatrix",
-          "declaration_line": 658,
+          "declaration_line": 661,
           "lines": [
-            663,
-            673,
-            674
+            666,
+            676,
+            677
           ]
         }
       ]
@@ -86133,19 +86196,19 @@
       "path": "src/modules/misc.c",
       "symbol": "sp60",
       "lines": [
-        662,
-        670,
-        680
+        665,
+        673,
+        683
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscInterpolateTranslationAndQuaternionMatrix",
-          "declaration_line": 658,
+          "declaration_line": 661,
           "lines": [
-            662,
-            670,
-            680
+            665,
+            673,
+            683
           ]
         }
       ]
@@ -86156,19 +86219,19 @@
       "path": "src/modules/misc.c",
       "symbol": "sp64",
       "lines": [
-        661,
-        669,
-        679
+        664,
+        672,
+        682
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscInterpolateTranslationAndQuaternionMatrix",
-          "declaration_line": 658,
+          "declaration_line": 661,
           "lines": [
-            661,
-            669,
-            679
+            664,
+            672,
+            682
           ]
         }
       ]
@@ -86179,19 +86242,19 @@
       "path": "src/modules/misc.c",
       "symbol": "sp68",
       "lines": [
-        660,
-        668,
-        678
+        663,
+        671,
+        681
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscInterpolateTranslationAndQuaternionMatrix",
-          "declaration_line": 658,
+          "declaration_line": 661,
           "lines": [
-            660,
-            668,
-            678
+            663,
+            671,
+            681
           ]
         }
       ]
@@ -86202,19 +86265,19 @@
       "path": "src/modules/misc.c",
       "symbol": "sp94",
       "lines": [
-        1169,
-        1174,
-        1178
+        1274,
+        1279,
+        1283
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscCopyObjectHierarchyMatrices",
-          "declaration_line": 1162,
+          "declaration_line": 1267,
           "lines": [
-            1169,
-            1174,
-            1178
+            1274,
+            1279,
+            1283
           ]
         }
       ]
@@ -86225,23 +86288,23 @@
       "path": "src/modules/misc.c",
       "symbol": "sp98",
       "lines": [
-        1168,
-        1179,
-        1180,
-        1181,
-        1185
+        1273,
+        1284,
+        1285,
+        1286,
+        1290
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscCopyObjectHierarchyMatrices",
-          "declaration_line": 1162,
+          "declaration_line": 1267,
           "lines": [
-            1168,
-            1179,
-            1180,
-            1181,
-            1185
+            1273,
+            1284,
+            1285,
+            1286,
+            1290
           ]
         }
       ]
@@ -86252,21 +86315,21 @@
       "path": "src/modules/misc.c",
       "symbol": "temp_fa0",
       "lines": [
-        1309,
-        1320,
-        1327,
-        1343
+        1414,
+        1425,
+        1432,
+        1448
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscEvaluateRadiusGatedPlaneCrossing",
-          "declaration_line": 1306,
+          "declaration_line": 1411,
           "lines": [
-            1309,
-            1320,
-            1327,
-            1343
+            1414,
+            1425,
+            1432,
+            1448
           ]
         }
       ]
@@ -86277,27 +86340,27 @@
       "path": "src/modules/misc.c",
       "symbol": "temp_fa0_3",
       "lines": [
-        1231,
-        1272,
-        1273,
-        1281,
-        1282,
-        1284,
-        1289
+        1336,
+        1377,
+        1378,
+        1386,
+        1387,
+        1389,
+        1394
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscMeasurePlanarSegmentCircleFraction",
-          "declaration_line": 1225,
+          "declaration_line": 1330,
           "lines": [
-            1231,
-            1272,
-            1273,
-            1281,
-            1282,
-            1284,
-            1289
+            1336,
+            1377,
+            1378,
+            1386,
+            1387,
+            1389,
+            1394
           ]
         }
       ]
@@ -86308,27 +86371,27 @@
       "path": "src/modules/misc.c",
       "symbol": "temp_fs0",
       "lines": [
-        1086,
-        1092,
-        1098,
-        1099,
-        1100,
-        1106,
-        1107
+        1114,
+        1120,
+        1126,
+        1127,
+        1128,
+        1134,
+        1135
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscBuildTranslationAndThreeAngleMatrix",
-          "declaration_line": 1085,
+          "declaration_line": 1113,
           "lines": [
-            1086,
-            1092,
-            1098,
-            1099,
-            1100,
-            1106,
-            1107
+            1114,
+            1120,
+            1126,
+            1127,
+            1128,
+            1134,
+            1135
           ]
         }
       ]
@@ -86339,27 +86402,27 @@
       "path": "src/modules/misc.c",
       "symbol": "temp_fs1",
       "lines": [
-        1087,
-        1093,
-        1098,
-        1099,
-        1106,
-        1107,
-        1108
+        1115,
+        1121,
+        1126,
+        1127,
+        1134,
+        1135,
+        1136
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscBuildTranslationAndThreeAngleMatrix",
-          "declaration_line": 1085,
+          "declaration_line": 1113,
           "lines": [
-            1087,
-            1093,
-            1098,
-            1099,
-            1106,
-            1107,
-            1108
+            1115,
+            1121,
+            1126,
+            1127,
+            1134,
+            1135,
+            1136
           ]
         }
       ]
@@ -86370,23 +86433,23 @@
       "path": "src/modules/misc.c",
       "symbol": "temp_ft5",
       "lines": [
-        1229,
-        1241,
-        1253,
-        1255,
-        1260
+        1334,
+        1346,
+        1358,
+        1360,
+        1365
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscMeasurePlanarSegmentCircleFraction",
-          "declaration_line": 1225,
+          "declaration_line": 1330,
           "lines": [
-            1229,
-            1241,
-            1253,
-            1255,
-            1260
+            1334,
+            1346,
+            1358,
+            1360,
+            1365
           ]
         }
       ]
@@ -86397,59 +86460,59 @@
       "path": "src/modules/misc.c",
       "symbol": "temp_fv0",
       "lines": [
-        659,
-        667,
-        668,
-        669,
+        662,
         670,
-        1091,
-        1097,
-        1098,
-        1099,
-        1103,
-        1106,
-        1107,
-        1234,
-        1269,
-        1272,
-        1276
+        671,
+        672,
+        673,
+        1119,
+        1125,
+        1126,
+        1127,
+        1131,
+        1134,
+        1135,
+        1339,
+        1374,
+        1377,
+        1381
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscBuildTranslationAndThreeAngleMatrix",
-          "declaration_line": 1085,
+          "declaration_line": 1113,
           "lines": [
-            1091,
-            1097,
-            1098,
-            1099,
-            1103,
-            1106,
-            1107
+            1119,
+            1125,
+            1126,
+            1127,
+            1131,
+            1134,
+            1135
           ]
         },
         {
           "kind": "function",
           "name": "miscInterpolateTranslationAndQuaternionMatrix",
-          "declaration_line": 658,
+          "declaration_line": 661,
           "lines": [
-            659,
-            667,
-            668,
-            669,
-            670
+            662,
+            670,
+            671,
+            672,
+            673
           ]
         },
         {
           "kind": "function",
           "name": "miscMeasurePlanarSegmentCircleFraction",
-          "declaration_line": 1225,
+          "declaration_line": 1330,
           "lines": [
-            1234,
-            1269,
-            1272,
-            1276
+            1339,
+            1374,
+            1377,
+            1381
           ]
         }
       ]
@@ -86460,27 +86523,27 @@
       "path": "src/modules/misc.c",
       "symbol": "temp_fv1_5",
       "lines": [
-        1232,
-        1276,
-        1277,
-        1281,
-        1282,
-        1284,
-        1293
+        1337,
+        1381,
+        1382,
+        1386,
+        1387,
+        1389,
+        1398
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscMeasurePlanarSegmentCircleFraction",
-          "declaration_line": 1225,
+          "declaration_line": 1330,
           "lines": [
-            1232,
-            1276,
-            1277,
-            1281,
-            1282,
-            1284,
-            1293
+            1337,
+            1381,
+            1382,
+            1386,
+            1387,
+            1389,
+            1398
           ]
         }
       ]
@@ -86491,25 +86554,25 @@
       "path": "src/modules/misc.c",
       "symbol": "var_a1",
       "lines": [
-        1478,
-        1493,
-        1523,
-        1535,
-        1555,
-        1559
+        1583,
+        1598,
+        1628,
+        1640,
+        1660,
+        1664
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscDrawPackedNibbleLine",
-          "declaration_line": 1473,
+          "declaration_line": 1578,
           "lines": [
-            1478,
-            1493,
-            1523,
-            1535,
-            1555,
-            1559
+            1583,
+            1598,
+            1628,
+            1640,
+            1660,
+            1664
           ]
         }
       ]
@@ -86520,27 +86583,27 @@
       "path": "src/modules/misc.c",
       "symbol": "var_fa0",
       "lines": [
-        984,
-        1010,
-        1016,
-        1018,
-        1027,
+        987,
+        1013,
+        1019,
+        1021,
         1030,
-        1034
+        1033,
+        1037
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscBuildThreeAngleMatrix",
-          "declaration_line": 983,
+          "declaration_line": 986,
           "lines": [
-            984,
-            1010,
-            1016,
-            1018,
-            1027,
+            987,
+            1013,
+            1019,
+            1021,
             1030,
-            1034
+            1033,
+            1037
           ]
         }
       ]
@@ -86551,27 +86614,27 @@
       "path": "src/modules/misc.c",
       "symbol": "var_fa1",
       "lines": [
-        986,
-        1001,
-        1007,
-        1028,
+        989,
+        1004,
+        1010,
         1031,
-        1033,
-        1034
+        1034,
+        1036,
+        1037
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscBuildThreeAngleMatrix",
-          "declaration_line": 983,
+          "declaration_line": 986,
           "lines": [
-            986,
-            1001,
-            1007,
-            1028,
+            989,
+            1004,
+            1010,
             1031,
-            1033,
-            1034
+            1034,
+            1036,
+            1037
           ]
         }
       ]
@@ -86582,27 +86645,27 @@
       "path": "src/modules/misc.c",
       "symbol": "var_fs1",
       "lines": [
-        987,
-        1002,
+        990,
         1005,
-        1013,
-        1017,
-        1018,
-        1022
+        1008,
+        1016,
+        1020,
+        1021,
+        1025
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscBuildThreeAngleMatrix",
-          "declaration_line": 983,
+          "declaration_line": 986,
           "lines": [
-            987,
-            1002,
+            990,
             1005,
-            1013,
-            1017,
-            1018,
-            1022
+            1008,
+            1016,
+            1020,
+            1021,
+            1025
           ]
         }
       ]
@@ -86613,29 +86676,29 @@
       "path": "src/modules/misc.c",
       "symbol": "var_fs2",
       "lines": [
-        990,
-        994,
-        998,
-        1027,
-        1029,
+        993,
+        997,
+        1001,
         1030,
-        1031,
-        1032
+        1032,
+        1033,
+        1034,
+        1035
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscBuildThreeAngleMatrix",
-          "declaration_line": 983,
+          "declaration_line": 986,
           "lines": [
-            990,
-            994,
-            998,
-            1027,
-            1029,
+            993,
+            997,
+            1001,
             1030,
-            1031,
-            1032
+            1032,
+            1033,
+            1034,
+            1035
           ]
         }
       ]
@@ -86646,29 +86709,29 @@
       "path": "src/modules/misc.c",
       "symbol": "var_fs3",
       "lines": [
-        991,
-        995,
-        997,
-        1027,
-        1028,
-        1029,
+        994,
+        998,
+        1000,
         1030,
-        1032
+        1031,
+        1032,
+        1033,
+        1035
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscBuildThreeAngleMatrix",
-          "declaration_line": 983,
+          "declaration_line": 986,
           "lines": [
-            991,
-            995,
-            997,
-            1027,
-            1028,
-            1029,
+            994,
+            998,
+            1000,
             1030,
-            1032
+            1031,
+            1032,
+            1033,
+            1035
           ]
         }
       ]
@@ -86679,23 +86742,23 @@
       "path": "src/modules/misc.c",
       "symbol": "var_ft4",
       "lines": [
-        985,
-        1012,
-        1017,
-        1027,
-        1030
+        988,
+        1015,
+        1020,
+        1030,
+        1033
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscBuildThreeAngleMatrix",
-          "declaration_line": 983,
+          "declaration_line": 986,
           "lines": [
-            985,
-            1012,
-            1017,
-            1027,
-            1030
+            988,
+            1015,
+            1020,
+            1030,
+            1033
           ]
         }
       ]
@@ -86706,23 +86769,23 @@
       "path": "src/modules/misc.c",
       "symbol": "var_ft5",
       "lines": [
-        988,
-        1013,
-        1018,
-        1029,
-        1032
+        991,
+        1016,
+        1021,
+        1032,
+        1035
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscBuildThreeAngleMatrix",
-          "declaration_line": 983,
+          "declaration_line": 986,
           "lines": [
-            988,
-            1013,
-            1018,
-            1029,
-            1032
+            991,
+            1016,
+            1021,
+            1032,
+            1035
           ]
         }
       ]
@@ -86733,27 +86796,27 @@
       "path": "src/modules/misc.c",
       "symbol": "var_fv1",
       "lines": [
-        989,
-        1011,
-        1015,
-        1017,
-        1029,
+        992,
+        1014,
+        1018,
+        1020,
         1032,
-        1033
+        1035,
+        1036
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscBuildThreeAngleMatrix",
-          "declaration_line": 983,
+          "declaration_line": 986,
           "lines": [
-            989,
-            1011,
-            1015,
-            1017,
-            1029,
+            992,
+            1014,
+            1018,
+            1020,
             1032,
-            1033
+            1035,
+            1036
           ]
         }
       ]
@@ -86764,52 +86827,52 @@
       "path": "src/modules/misc.c",
       "symbol": "var_s1",
       "lines": [
-        1165,
-        1181,
-        1183,
-        1186,
-        1481,
-        1517,
-        1527,
-        1529,
-        1543,
-        1544,
-        1546,
-        1547,
-        1565,
-        1566,
-        1568,
-        1569
+        1270,
+        1286,
+        1288,
+        1291,
+        1586,
+        1622,
+        1632,
+        1634,
+        1648,
+        1649,
+        1651,
+        1652,
+        1670,
+        1671,
+        1673,
+        1674
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscCopyObjectHierarchyMatrices",
-          "declaration_line": 1162,
+          "declaration_line": 1267,
           "lines": [
-            1165,
-            1181,
-            1183,
-            1186
+            1270,
+            1286,
+            1288,
+            1291
           ]
         },
         {
           "kind": "function",
           "name": "miscDrawPackedNibbleLine",
-          "declaration_line": 1473,
+          "declaration_line": 1578,
           "lines": [
-            1481,
-            1517,
-            1527,
-            1529,
-            1543,
-            1544,
-            1546,
-            1547,
-            1565,
-            1566,
-            1568,
-            1569
+            1586,
+            1622,
+            1632,
+            1634,
+            1648,
+            1649,
+            1651,
+            1652,
+            1670,
+            1671,
+            1673,
+            1674
           ]
         }
       ]
@@ -86820,27 +86883,27 @@
       "path": "src/modules/misc.c",
       "symbol": "var_s2",
       "lines": [
-        1474,
-        1484,
-        1517,
-        1543,
-        1546,
-        1565,
-        1568
+        1579,
+        1589,
+        1622,
+        1648,
+        1651,
+        1670,
+        1673
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscDrawPackedNibbleLine",
-          "declaration_line": 1473,
+          "declaration_line": 1578,
           "lines": [
-            1474,
-            1484,
-            1517,
-            1543,
-            1546,
-            1565,
-            1568
+            1579,
+            1589,
+            1622,
+            1648,
+            1651,
+            1670,
+            1673
           ]
         }
       ]
@@ -86851,27 +86914,27 @@
       "path": "src/modules/misc.c",
       "symbol": "var_s4",
       "lines": [
-        1170,
-        1177,
-        1193,
-        1194,
-        1196,
-        1197,
-        1200
+        1275,
+        1282,
+        1298,
+        1299,
+        1301,
+        1302,
+        1305
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscCopyObjectHierarchyMatrices",
-          "declaration_line": 1162,
+          "declaration_line": 1267,
           "lines": [
-            1170,
-            1177,
-            1193,
-            1194,
-            1196,
-            1197,
-            1200
+            1275,
+            1282,
+            1298,
+            1299,
+            1301,
+            1302,
+            1305
           ]
         }
       ]
@@ -86882,23 +86945,23 @@
       "path": "src/modules/misc.c",
       "symbol": "var_s5",
       "lines": [
-        1163,
-        1176,
-        1180,
-        1181,
-        1185
+        1268,
+        1281,
+        1285,
+        1286,
+        1290
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscCopyObjectHierarchyMatrices",
-          "declaration_line": 1162,
+          "declaration_line": 1267,
           "lines": [
-            1163,
-            1176,
-            1180,
-            1181,
-            1185
+            1268,
+            1281,
+            1285,
+            1286,
+            1290
           ]
         }
       ]
@@ -86909,23 +86972,23 @@
       "path": "src/modules/misc.c",
       "symbol": "var_t0",
       "lines": [
-        1479,
-        1499,
-        1519,
-        1537,
-        1557
+        1584,
+        1604,
+        1624,
+        1642,
+        1662
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscDrawPackedNibbleLine",
-          "declaration_line": 1473,
+          "declaration_line": 1578,
           "lines": [
-            1479,
-            1499,
-            1519,
-            1537,
-            1557
+            1584,
+            1604,
+            1624,
+            1642,
+            1662
           ]
         }
       ]
@@ -86936,31 +86999,31 @@
       "path": "src/modules/misc.c",
       "symbol": "var_t4",
       "lines": [
-        1475,
-        1532,
-        1536,
-        1538,
-        1540,
-        1551,
-        1558,
-        1560,
-        1562
+        1580,
+        1637,
+        1641,
+        1643,
+        1645,
+        1656,
+        1663,
+        1665,
+        1667
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscDrawPackedNibbleLine",
-          "declaration_line": 1473,
+          "declaration_line": 1578,
           "lines": [
-            1475,
-            1532,
-            1536,
-            1538,
-            1540,
-            1551,
-            1558,
-            1560,
-            1562
+            1580,
+            1637,
+            1641,
+            1643,
+            1645,
+            1656,
+            1663,
+            1665,
+            1667
           ]
         }
       ]
@@ -86971,68 +87034,68 @@
       "path": "src/modules/misc.c",
       "symbol": "var_v0",
       "lines": [
-        1311,
-        1328,
-        1330,
-        1332,
-        1339,
-        1341,
-        1343,
-        1476,
-        1485,
-        1487,
-        1496,
-        1497,
-        1507,
-        1508,
-        1515,
-        1518,
-        1520,
-        1531,
-        1532,
-        1533,
-        1540,
-        1551,
-        1552,
-        1553
+        1416,
+        1433,
+        1435,
+        1437,
+        1444,
+        1446,
+        1448,
+        1581,
+        1590,
+        1592,
+        1601,
+        1602,
+        1612,
+        1613,
+        1620,
+        1623,
+        1625,
+        1636,
+        1637,
+        1638,
+        1645,
+        1656,
+        1657,
+        1658
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscDrawPackedNibbleLine",
-          "declaration_line": 1473,
+          "declaration_line": 1578,
           "lines": [
-            1476,
-            1485,
-            1487,
-            1496,
-            1497,
-            1507,
-            1508,
-            1515,
-            1518,
-            1520,
-            1531,
-            1532,
-            1533,
-            1540,
-            1551,
-            1552,
-            1553
+            1581,
+            1590,
+            1592,
+            1601,
+            1602,
+            1612,
+            1613,
+            1620,
+            1623,
+            1625,
+            1636,
+            1637,
+            1638,
+            1645,
+            1656,
+            1657,
+            1658
           ]
         },
         {
           "kind": "function",
           "name": "miscEvaluateRadiusGatedPlaneCrossing",
-          "declaration_line": 1306,
+          "declaration_line": 1411,
           "lines": [
-            1311,
-            1328,
-            1330,
-            1332,
-            1339,
-            1341,
-            1343
+            1416,
+            1433,
+            1435,
+            1437,
+            1444,
+            1446,
+            1448
           ]
         }
       ]
@@ -87043,62 +87106,62 @@
       "path": "src/modules/misc.c",
       "symbol": "var_v1",
       "lines": [
-        1312,
-        1322,
-        1324,
-        1332,
-        1477,
-        1486,
-        1490,
-        1502,
-        1503,
-        1512,
-        1513,
-        1516,
-        1522,
-        1524,
-        1531,
-        1532,
-        1533,
-        1534,
-        1551,
-        1552,
-        1562
+        1417,
+        1427,
+        1429,
+        1437,
+        1582,
+        1591,
+        1595,
+        1607,
+        1608,
+        1617,
+        1618,
+        1621,
+        1627,
+        1629,
+        1636,
+        1637,
+        1638,
+        1639,
+        1656,
+        1657,
+        1667
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscDrawPackedNibbleLine",
-          "declaration_line": 1473,
+          "declaration_line": 1578,
           "lines": [
-            1477,
-            1486,
-            1490,
-            1502,
-            1503,
-            1512,
-            1513,
-            1516,
-            1522,
-            1524,
-            1531,
-            1532,
-            1533,
-            1534,
-            1551,
-            1552,
-            1562
+            1582,
+            1591,
+            1595,
+            1607,
+            1608,
+            1617,
+            1618,
+            1621,
+            1627,
+            1629,
+            1636,
+            1637,
+            1638,
+            1639,
+            1656,
+            1657,
+            1667
           ]
         },
         {
           "kind": "function",
           "name": "miscEvaluateRadiusGatedPlaneCrossing",
-          "declaration_line": 1306,
+          "declaration_line": 1411,
           "lines": [
-            1312,
-            1322,
-            1324,
-            1332
+            1417,
+            1427,
+            1429,
+            1437
           ]
         }
       ]
@@ -122080,21 +122143,41 @@
       ]
     },
     {
+      "id": "Q-4056b40f9904",
+      "kind": "explicit_unknown",
+      "path": "src/modules/misc.c",
+      "symbol": "Adjust the normalized direction along the normal, then restore its scaled original length. * RE_UNKNOWN: Normal normalization, coefficient units and source/normal overlap require original callers/providers.",
+      "lines": [
+        1145
+      ],
+      "evidence": "Adjust the normalized direction along the normal, then restore its scaled original length. * RE_UNKNOWN: Normal normalization, coefficient units and source/normal overlap require original callers/providers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "miscAdjustDirectionAlongNormalPreservingScaledLength",
+          "declaration_line": 1148,
+          "lines": [
+            1145
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-729ffbe63154",
       "kind": "explicit_unknown",
       "path": "src/modules/misc.c",
       "symbol": "Allocate/get a compact-text row through original GUI slots0x40/44, copy * twelve bytes through slot0x48, append through0xA8 and set property3 through * slot0x5C. The property selector is consumed as signed16 by its target. * RE_UNKNOWN: caller text extent and pool/parent validity are not established * by this wrapper. Check original callers and pool allocation before rewrite.",
       "lines": [
-        1421
+        1526
       ],
       "evidence": "Allocate/get a compact-text row through original GUI slots0x40/44, copy * twelve bytes through slot0x48, append through0xA8 and set property3 through * slot0x5C. The property selector is consumed as signed16 by its target. * RE_UNKNOWN: caller text extent and pool/parent validity are not established * by this wrapper. Check original callers and pool allocation before rewrite.",
       "owners": [
         {
           "kind": "function",
           "name": "miscCreateGuiTextRow",
-          "declaration_line": 1426,
+          "declaration_line": 1531,
           "lines": [
-            1421
+            1526
           ]
         }
       ]
@@ -122105,16 +122188,36 @@
       "path": "src/modules/misc.c",
       "symbol": "Append a compact label row, configure its curve-backed value widget and optionally expose that widget. * RE_UNKNOWN: Curve count/bounds, value-source storage/lifetime, allocation failure and remaining widget selectors require original callers/providers.",
       "lines": [
-        1390
+        1495
       ],
       "evidence": "Append a compact label row, configure its curve-backed value widget and optionally expose that widget. * RE_UNKNOWN: Curve count/bounds, value-source storage/lifetime, allocation failure and remaining widget selectors require original callers/providers.",
       "owners": [
         {
           "kind": "function",
           "name": "miscCreateGuiCurveValueRow",
-          "declaration_line": 1393,
+          "declaration_line": 1498,
           "lines": [
-            1390
+            1495
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-4dce92a0a139",
+      "kind": "explicit_unknown",
+      "path": "src/modules/misc.c",
+      "symbol": "Approach the target using the shared scale word and the original nonlinear distance cap. * RE_UNKNOWN: Shared scale meaning, valid rate/cap domains and FP behavior require original writers/callers.",
+      "lines": [
+        1191
+      ],
+      "evidence": "Approach the target using the shared scale word and the original nonlinear distance cap. * RE_UNKNOWN: Shared scale meaning, valid rate/cap domains and FP behavior require original writers/callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "miscApproachWithScaledDistanceCap",
+          "declaration_line": 1194,
+          "lines": [
+            1191
           ]
         }
       ]
@@ -122125,16 +122228,16 @@
       "path": "src/modules/misc.c",
       "symbol": "Blend translation and provider-derived quaternions, then publish the affine matrix fields. * RE_UNKNOWN: Interpolation domain, quaternion convention, overlap and provider failure/storage contracts require callers and original providers.",
       "lines": [
-        655
+        658
       ],
       "evidence": "Blend translation and provider-derived quaternions, then publish the affine matrix fields. * RE_UNKNOWN: Interpolation domain, quaternion convention, overlap and provider failure/storage contracts require callers and original providers.",
       "owners": [
         {
           "kind": "function",
           "name": "miscInterpolateTranslationAndQuaternionMatrix",
-          "declaration_line": 658,
+          "declaration_line": 661,
           "lines": [
-            655
+            658
           ]
         }
       ]
@@ -122145,16 +122248,16 @@
       "path": "src/modules/misc.c",
       "symbol": "Build the rotation matrix and install the three supplied translation components. * RE_UNKNOWN: Angle convention, input domains and output storage require original callers/providers.",
       "lines": [
-        1082
+        1110
       ],
       "evidence": "Build the rotation matrix and install the three supplied translation components. * RE_UNKNOWN: Angle convention, input domains and output storage require original callers/providers.",
       "owners": [
         {
           "kind": "function",
           "name": "miscBuildTranslationAndThreeAngleMatrix",
-          "declaration_line": 1085,
+          "declaration_line": 1113,
           "lines": [
-            1082
+            1110
           ]
         }
       ]
@@ -122165,16 +122268,16 @@
       "path": "src/modules/misc.c",
       "symbol": "Build the three-angle matrix while preserving exact-zero shortcuts and interleaved stores. * RE_UNKNOWN: Angle convention, matrix overlap and retained one-iteration scaffold require original callers/compiler evidence.",
       "lines": [
-        980
+        983
       ],
       "evidence": "Build the three-angle matrix while preserving exact-zero shortcuts and interleaved stores. * RE_UNKNOWN: Angle convention, matrix overlap and retained one-iteration scaffold require original callers/compiler evidence.",
       "owners": [
         {
           "kind": "function",
           "name": "miscBuildThreeAngleMatrix",
-          "declaration_line": 983,
+          "declaration_line": 986,
           "lines": [
-            980
+            983
           ]
         }
       ]
@@ -122185,16 +122288,16 @@
       "path": "src/modules/misc.c",
       "symbol": "Clamp the endpoints and draw into packed nibbles using the original signed-short stepping. * RE_ORIGINAL_QUIRK: Each endpoint is clamped independently; nibble parity and short truncations are retained. * RE_UNKNOWN: Buffer extent, odd-width layout, signed overflow and retained empty conditional require original callers/compiler evidence.",
       "lines": [
-        1469
+        1574
       ],
       "evidence": "Clamp the endpoints and draw into packed nibbles using the original signed-short stepping. * RE_ORIGINAL_QUIRK: Each endpoint is clamped independently; nibble parity and short truncations are retained. * RE_UNKNOWN: Buffer extent, odd-width layout, signed overflow and retained empty conditional require original callers/compiler evidence.",
       "owners": [
         {
           "kind": "function",
           "name": "miscDrawPackedNibbleLine",
-          "declaration_line": 1473,
+          "declaration_line": 1578,
           "lines": [
-            1469
+            1574
           ]
         }
       ]
@@ -122205,16 +122308,16 @@
       "path": "src/modules/misc.c",
       "symbol": "Clamp the sine input and evaluate the original atan2/square-root expression. * RE_ORIGINAL_QUIRK: The exact-zero shortcut and clamp comparisons are retained, including their NaN bypass. * RE_UNKNOWN: NaN/input domains and approximation/angle convention require original callers/providers.",
       "lines": [
-        1450
+        1555
       ],
       "evidence": "Clamp the sine input and evaluate the original atan2/square-root expression. * RE_ORIGINAL_QUIRK: The exact-zero shortcut and clamp comparisons are retained, including their NaN bypass. * RE_UNKNOWN: NaN/input domains and approximation/angle convention require original callers/providers.",
       "owners": [
         {
           "kind": "function",
           "name": "miscEvaluateClampedSineAngle",
-          "declaration_line": 1454,
+          "declaration_line": 1559,
           "lines": [
-            1450
+            1555
           ]
         }
       ]
@@ -122225,16 +122328,16 @@
       "path": "src/modules/misc.c",
       "symbol": "Consumed provider and plane views for matrix, hierarchy and crossing helpers. * RE_UNKNOWN: Complete historical declarations and provider storage contracts * remain unproved; the plane view describes only the consumed 32-byte prefix.",
       "lines": [
-        62
+        65
       ],
       "evidence": "Consumed provider and plane views for matrix, hierarchy and crossing helpers. * RE_UNKNOWN: Complete historical declarations and provider storage contracts * remain unproved; the plane view describes only the consumed 32-byte prefix.",
       "owners": [
         {
           "kind": "global",
           "name": "gUvQuatExports",
-          "declaration_line": 65,
+          "declaration_line": 68,
           "lines": [
-            62
+            65
           ]
         }
       ]
@@ -122245,16 +122348,16 @@
       "path": "src/modules/misc.c",
       "symbol": "Create and append a compact label row, allocate its scalar widget, then * configure the original bounds/source and attach the centered upper child. * Flag two in the signed kind short selects integer conversion; other kinds * read the source as a float. Return the row and optionally expose its widget. * RE_ORIGINAL_QUIRK: allocation results remain unchecked, and label copies * retain the original fixed-width reads rather than NUL-string handling. * RE_UNKNOWN: remaining kind bits, bound units and value-source ownership/ * lifetime. The source address is forwarded to widget configuration; trace * original widget consumers, caller storage and teardown before assigning * ownership or deciding how long that storage must remain readable.",
       "lines": [
-        1348
+        1453
       ],
       "evidence": "Create and append a compact label row, allocate its scalar widget, then * configure the original bounds/source and attach the centered upper child. * Flag two in the signed kind short selects integer conversion; other kinds * read the source as a float. Return the row and optionally expose its widget. * RE_ORIGINAL_QUIRK: allocation results remain unchecked, and label copies * retain the original fixed-width reads rather than NUL-string handling. * RE_UNKNOWN: remaining kind bits, bound units and value-source ownership/ * lifetime. The source address is forwarded to widget configuration; trace * original widget consumers, caller storage and teardown before assigning * ownership or deciding how long that storage must remain readable.",
       "owners": [
         {
           "kind": "function",
           "name": "miscCreateGuiBoundScalarRow",
-          "declaration_line": 1359,
+          "declaration_line": 1464,
           "lines": [
-            1348
+            1453
           ]
         }
       ]
@@ -122265,16 +122368,16 @@
       "path": "src/modules/misc.c",
       "symbol": "Evaluate the clamped scalar helper on the three-component dot product. * Original native F0 returns unchanged and Motion66E4 consumes that result. * RE_UNKNOWN: historical declarations, intended input lengths, normalization * guarantees and result units need original caller/provider evidence. This * focused f32 return preserves the observed native result; it does not prove * the complete historical module ABI or establish a unit-vector precondition.",
       "lines": [
-        1438
+        1543
       ],
       "evidence": "Evaluate the clamped scalar helper on the three-component dot product. * Original native F0 returns unchanged and Motion66E4 consumes that result. * RE_UNKNOWN: historical declarations, intended input lengths, normalization * guarantees and result units need original caller/provider evidence. This * focused f32 return preserves the observed native result; it does not prove * the complete historical module ABI or establish a unit-vector precondition.",
       "owners": [
         {
           "kind": "function",
           "name": "miscEvaluateVectorDotThroughClampedHelper",
-          "declaration_line": 1445,
+          "declaration_line": 1550,
           "lines": [
-            1438
+            1543
           ]
         }
       ]
@@ -122285,16 +122388,16 @@
       "path": "src/modules/misc.c",
       "symbol": "Export addresses only: declarations repeat existing definitions. * RE_UNKNOWN: these declarations do not establish complete callable ABIs.",
       "lines": [
-        169
+        172
       ],
       "evidence": "Export addresses only: declarations repeat existing definitions. * RE_UNKNOWN: these declarations do not establish complete callable ABIs.",
       "owners": [
         {
           "kind": "function",
           "name": "miscBusyWaitSeconds",
-          "declaration_line": 171,
+          "declaration_line": 174,
           "lines": [
-            169
+            172
           ]
         }
       ]
@@ -122345,16 +122448,16 @@
       "path": "src/modules/misc.c",
       "symbol": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "lines": [
-        271
+        274
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "owners": [
         {
           "kind": "function",
           "name": "func_misc_00400390",
-          "declaration_line": 275,
+          "declaration_line": 278,
           "lines": [
-            271
+            274
           ]
         }
       ]
@@ -122380,21 +122483,41 @@
       ]
     },
     {
+      "id": "Q-1c1256df3ad6",
+      "kind": "explicit_unknown",
+      "path": "src/modules/misc.c",
+      "symbol": "Publish segment length, signed factor and absolute projected distance using the original sixth integer input. * RE_ORIGINAL_QUIRK: The sixth input remains s32, including its conversions in the floating-point expressions. * RE_UNKNOWN: The sixth parameter integer ABI, degenerate domains and output aliasing require original callers/provider evidence.",
+      "lines": [
+        1056
+      ],
+      "evidence": "Publish segment length, signed factor and absolute projected distance using the original sixth integer input. * RE_ORIGINAL_QUIRK: The sixth input remains s32, including its conversions in the floating-point expressions. * RE_UNKNOWN: The sixth parameter integer ABI, degenerate domains and output aliasing require original callers/provider evidence.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "miscMeasurePlanarSegmentProjection",
+          "declaration_line": 1060,
+          "lines": [
+            1056
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-dba72c6d0cc2",
       "kind": "explicit_unknown",
       "path": "src/modules/misc.c",
       "symbol": "RE_ORIGINAL_QUIRK: original overlapping vertical-segment path reads an unwritten intercept stack word. RE_UNKNOWN: caller reachability/input limits; trace original export callers before changing collinear behavior.",
       "lines": [
-        915
+        918
       ],
       "evidence": "RE_ORIGINAL_QUIRK: original overlapping vertical-segment path reads an unwritten intercept stack word. RE_UNKNOWN: caller reachability/input limits; trace original export callers before changing collinear behavior.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_misc_004019FC",
-          "declaration_line": 916,
+          "declaration_line": 919,
           "lines": [
-            915
+            918
           ]
         }
       ]
@@ -122405,25 +122528,25 @@
       "path": "src/modules/misc.c",
       "symbol": "RE_UNKNOWN: Retained upstream compiler scaffold; historical intent unproved.",
       "lines": [
-        1006,
-        1554
+        1009,
+        1659
       ],
       "evidence": "RE_UNKNOWN: Retained upstream compiler scaffold; historical intent unproved.",
       "owners": [
         {
           "kind": "function",
           "name": "miscBuildThreeAngleMatrix",
-          "declaration_line": 983,
+          "declaration_line": 986,
           "lines": [
-            1006
+            1009
           ]
         },
         {
           "kind": "function",
           "name": "miscDrawPackedNibbleLine",
-          "declaration_line": 1473,
+          "declaration_line": 1578,
           "lines": [
-            1554
+            1659
           ]
         }
       ]
@@ -122434,16 +122557,16 @@
       "path": "src/modules/misc.c",
       "symbol": "RE_UNKNOWN: quaternion normalization/frame convention, cached-adjustment intent, shared flag reset/lifetime/reentrancy and overlap guarantees; trace original quaternion producers, flag writers and callers before changing the cache or transform.",
       "lines": [
-        1038
+        1041
       ],
       "evidence": "RE_UNKNOWN: quaternion normalization/frame convention, cached-adjustment intent, shared flag reset/lifetime/reentrancy and overlap guarantees; trace original quaternion producers, flag writers and callers before changing the cache or transform.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_misc_0040234C",
-          "declaration_line": 1039,
+          "declaration_line": 1042,
           "lines": [
-            1038
+            1041
           ]
         }
       ]
@@ -122454,7 +122577,7 @@
       "path": "src/modules/misc.c",
       "symbol": "RE_UNKNOWN: valid blend-weight/input domains, matrix/quaternion frame convention and partial-overlap guarantees; trace original export callers and matrix/quaternion producers before changing interpolation or alias handling.",
       "lines": [
-        654
+        657
       ],
       "evidence": "RE_UNKNOWN: valid blend-weight/input domains, matrix/quaternion frame convention and partial-overlap guarantees; trace original export callers and matrix/quaternion producers before changing interpolation or alias handling."
     },
@@ -122464,16 +122587,16 @@
       "path": "src/modules/misc.c",
       "symbol": "Register the MISC module's 73 export addresses after updating its * allocation pointer. Preserve the original store order, including slot zero. * RE_UNKNOWN: complete public export ABI and table ownership are unproven; * the word table describes address storage, not callable function types.",
       "lines": [
-        188
+        191
       ],
       "evidence": "Register the MISC module's 73 export addresses after updating its * allocation pointer. Preserve the original store order, including slot zero. * RE_UNKNOWN: complete public export ABI and table ownership are unproven; * the word table describes address storage, not callable function types.",
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_misc_400000",
-          "declaration_line": 192,
+          "declaration_line": 195,
           "lines": [
-            188
+            191
           ]
         }
       ]
@@ -122484,16 +122607,16 @@
       "path": "src/modules/misc.c",
       "symbol": "Set a loaded texture parameter chosen by selector bytes 1 and 0: * byte 1 equal to character 1 selects the first record, otherwise the second; * byte 0 equal to u selects offset 8, otherwise offset 12. Missing files or * selected records skip the write. Selector reads are conditional on those * preceding lookups and are not preceded by pointer/length checks here. * RE_UNKNOWN: whether all original callers guarantee two readable selector * bytes and which other encodings are intended. Trace caller storage and * original selector data before claiming a validated two-character string * contract or adding validation.",
       "lines": [
-        1058
+        1086
       ],
       "evidence": "Set a loaded texture parameter chosen by selector bytes 1 and 0: * byte 1 equal to character 1 selects the first record, otherwise the second; * byte 0 equal to u selects offset 8, otherwise offset 12. Missing files or * selected records skip the write. Selector reads are conditional on those * preceding lookups and are not preceded by pointer/length checks here. * RE_UNKNOWN: whether all original callers guarantee two readable selector * bytes and which other encodings are intended. Trace caller storage and * original selector data before claiming a validated two-character string * contract or adding validation.",
       "owners": [
         {
           "kind": "function",
           "name": "miscSetTextureAxisValue",
-          "declaration_line": 1068,
+          "declaration_line": 1096,
           "lines": [
-            1058
+            1086
           ]
         }
       ]
@@ -122504,16 +122627,16 @@
       "path": "src/modules/misc.c",
       "symbol": "Test the planar segment against a circle and publish the original interval-fraction result. * RE_UNKNOWN: Radius/input domains, endpoint conventions and output aliasing require original callers.",
       "lines": [
-        1222
+        1327
       ],
       "evidence": "Test the planar segment against a circle and publish the original interval-fraction result. * RE_UNKNOWN: Radius/input domains, endpoint conventions and output aliasing require original callers.",
       "owners": [
         {
           "kind": "function",
           "name": "miscMeasurePlanarSegmentCircleFraction",
-          "declaration_line": 1225,
+          "declaration_line": 1330,
           "lines": [
-            1222
+            1327
           ]
         }
       ]
@@ -122524,16 +122647,16 @@
       "path": "src/modules/misc.c",
       "symbol": "Test the radius and plane-side conditions, then return the original signed crossing ratio. * RE_UNKNOWN: Only the consumed 32-byte view is represented; radius units, direction convention and overlap require original callers.",
       "lines": [
-        1303
+        1408
       ],
       "evidence": "Test the radius and plane-side conditions, then return the original signed crossing ratio. * RE_UNKNOWN: Only the consumed 32-byte view is represented; radius units, direction convention and overlap require original callers.",
       "owners": [
         {
           "kind": "function",
           "name": "miscEvaluateRadiusGatedPlaneCrossing",
-          "declaration_line": 1306,
+          "declaration_line": 1411,
           "lines": [
-            1303
+            1408
           ]
         }
       ]
@@ -122544,16 +122667,16 @@
       "path": "src/modules/misc.c",
       "symbol": "The current body stores integer zero through a null pointer. * RE_UNKNOWN: deliberate trap intent, caller/export reachability and runtime * contract. No C/header caller was found; this does not prove unreachable * behavior. Preserve the body pending original assembly/caller evidence.",
       "lines": [
-        629
+        632
       ],
       "evidence": "The current body stores integer zero through a null pointer. * RE_UNKNOWN: deliberate trap intent, caller/export reachability and runtime * contract. No C/header caller was found; this does not prove unreachable * behavior. Preserve the body pending original assembly/caller evidence.",
       "owners": [
         {
           "kind": "function",
           "name": "func_misc_00401078",
-          "declaration_line": 633,
+          "declaration_line": 636,
           "lines": [
-            629
+            632
           ]
         }
       ]
@@ -122564,16 +122687,16 @@
       "path": "src/modules/misc.c",
       "symbol": "Traverse the model hierarchy matrix stack and copy the selected object matrices to the output. * RE_UNKNOWN: Output capacity, hierarchy validity, matrix-stack limits and provider failure behavior require original callers/providers.",
       "lines": [
-        1159
+        1264
       ],
       "evidence": "Traverse the model hierarchy matrix stack and copy the selected object matrices to the output. * RE_UNKNOWN: Output capacity, hierarchy validity, matrix-stack limits and provider failure behavior require original callers/providers.",
       "owners": [
         {
           "kind": "function",
           "name": "miscCopyObjectHierarchyMatrices",
-          "declaration_line": 1162,
+          "declaration_line": 1267,
           "lines": [
-            1159
+            1264
           ]
         }
       ]
@@ -166069,55 +166192,55 @@
       "path": "src/modules/misc.c",
       "symbol": "unk0",
       "lines": [
-        68,
-        145,
-        428,
-        435,
-        1314,
-        1318,
-        1410
+        71,
+        148,
+        431,
+        438,
+        1419,
+        1423,
+        1515
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscCreateGuiCurveValueRow",
-          "declaration_line": 1393,
+          "declaration_line": 1498,
           "lines": [
-            1410
+            1515
           ]
         },
         {
           "kind": "function",
           "name": "miscEvaluateRadiusGatedPlaneCrossing",
-          "declaration_line": 1306,
+          "declaration_line": 1411,
           "lines": [
-            1314,
-            1318
+            1419,
+            1423
           ]
         },
         {
           "kind": "function",
           "name": "miscRebuildOrthonormalBasisFromDirection",
-          "declaration_line": 421,
+          "declaration_line": 424,
           "lines": [
-            428,
-            435
+            431,
+            438
           ]
         },
         {
           "kind": "type",
           "name": "MiscPlaneRadiusView",
-          "declaration_line": 67,
+          "declaration_line": 70,
           "lines": [
-            68
+            71
           ]
         },
         {
           "kind": "type",
           "name": "UnkStruct_misc_004006A0",
-          "declaration_line": 144,
+          "declaration_line": 147,
           "lines": [
-            145
+            148
           ]
         }
       ]
@@ -166156,35 +166279,35 @@
       "path": "src/modules/misc.c",
       "symbol": "unk10",
       "lines": [
-        149,
-        438,
-        587,
-        602
+        152,
+        441,
+        590,
+        605
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscExtractTranslationAndDirectionAngles",
-          "declaration_line": 581,
+          "declaration_line": 584,
           "lines": [
-            587,
-            602
+            590,
+            605
           ]
         },
         {
           "kind": "function",
           "name": "miscRebuildOrthonormalBasisFromDirection",
-          "declaration_line": 421,
+          "declaration_line": 424,
           "lines": [
-            438
+            441
           ]
         },
         {
           "kind": "type",
           "name": "UnkStruct_misc_004006A0",
-          "declaration_line": 144,
+          "declaration_line": 147,
           "lines": [
-            149
+            152
           ]
         }
       ]
@@ -166195,35 +166318,35 @@
       "path": "src/modules/misc.c",
       "symbol": "unk14",
       "lines": [
-        150,
-        439,
-        587,
-        601
+        153,
+        442,
+        590,
+        604
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscExtractTranslationAndDirectionAngles",
-          "declaration_line": 581,
+          "declaration_line": 584,
           "lines": [
-            587,
-            601
+            590,
+            604
           ]
         },
         {
           "kind": "function",
           "name": "miscRebuildOrthonormalBasisFromDirection",
-          "declaration_line": 421,
+          "declaration_line": 424,
           "lines": [
-            439
+            442
           ]
         },
         {
           "kind": "type",
           "name": "UnkStruct_misc_004006A0",
-          "declaration_line": 144,
+          "declaration_line": 147,
           "lines": [
-            150
+            153
           ]
         }
       ]
@@ -166234,51 +166357,51 @@
       "path": "src/modules/misc.c",
       "symbol": "unk18",
       "lines": [
-        70,
-        151,
-        440,
-        586,
-        1315
+        73,
+        154,
+        443,
+        589,
+        1420
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscEvaluateRadiusGatedPlaneCrossing",
-          "declaration_line": 1306,
+          "declaration_line": 1411,
           "lines": [
-            1315
+            1420
           ]
         },
         {
           "kind": "function",
           "name": "miscExtractTranslationAndDirectionAngles",
-          "declaration_line": 581,
+          "declaration_line": 584,
           "lines": [
-            586
+            589
           ]
         },
         {
           "kind": "function",
           "name": "miscRebuildOrthonormalBasisFromDirection",
-          "declaration_line": 421,
+          "declaration_line": 424,
           "lines": [
-            440
+            443
           ]
         },
         {
           "kind": "type",
           "name": "MiscPlaneRadiusView",
-          "declaration_line": 67,
+          "declaration_line": 70,
           "lines": [
-            70
+            73
           ]
         },
         {
           "kind": "type",
           "name": "UnkStruct_misc_004006A0",
-          "declaration_line": 144,
+          "declaration_line": 147,
           "lines": [
-            151
+            154
           ]
         }
       ]
@@ -166289,42 +166412,42 @@
       "path": "src/modules/misc.c",
       "symbol": "unk1C",
       "lines": [
-        71,
-        152,
-        445,
-        1335
+        74,
+        155,
+        448,
+        1440
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscEvaluateRadiusGatedPlaneCrossing",
-          "declaration_line": 1306,
+          "declaration_line": 1411,
           "lines": [
-            1335
+            1440
           ]
         },
         {
           "kind": "function",
           "name": "miscRebuildOrthonormalBasisFromDirection",
-          "declaration_line": 421,
+          "declaration_line": 424,
           "lines": [
-            445
+            448
           ]
         },
         {
           "kind": "type",
           "name": "MiscPlaneRadiusView",
-          "declaration_line": 67,
+          "declaration_line": 70,
           "lines": [
-            71
+            74
           ]
         },
         {
           "kind": "type",
           "name": "UnkStruct_misc_004006A0",
-          "declaration_line": 144,
+          "declaration_line": 147,
           "lines": [
-            152
+            155
           ]
         }
       ]
@@ -166335,24 +166458,24 @@
       "path": "src/modules/misc.c",
       "symbol": "unk20",
       "lines": [
-        153,
-        441
+        156,
+        444
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscRebuildOrthonormalBasisFromDirection",
-          "declaration_line": 421,
+          "declaration_line": 424,
           "lines": [
-            441
+            444
           ]
         },
         {
           "kind": "type",
           "name": "UnkStruct_misc_004006A0",
-          "declaration_line": 144,
+          "declaration_line": 147,
           "lines": [
-            153
+            156
           ]
         }
       ]
@@ -166363,24 +166486,24 @@
       "path": "src/modules/misc.c",
       "symbol": "unk24",
       "lines": [
-        154,
-        442
+        157,
+        445
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscRebuildOrthonormalBasisFromDirection",
-          "declaration_line": 421,
+          "declaration_line": 424,
           "lines": [
-            442
+            445
           ]
         },
         {
           "kind": "type",
           "name": "UnkStruct_misc_004006A0",
-          "declaration_line": 144,
+          "declaration_line": 147,
           "lines": [
-            154
+            157
           ]
         }
       ]
@@ -166391,33 +166514,33 @@
       "path": "src/modules/misc.c",
       "symbol": "unk28",
       "lines": [
-        155,
-        443,
-        604
+        158,
+        446,
+        607
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscExtractTranslationAndDirectionAngles",
-          "declaration_line": 581,
+          "declaration_line": 584,
           "lines": [
-            604
+            607
           ]
         },
         {
           "kind": "function",
           "name": "miscRebuildOrthonormalBasisFromDirection",
-          "declaration_line": 421,
+          "declaration_line": 424,
           "lines": [
-            443
+            446
           ]
         },
         {
           "kind": "type",
           "name": "UnkStruct_misc_004006A0",
-          "declaration_line": 144,
+          "declaration_line": 147,
           "lines": [
-            155
+            158
           ]
         }
       ]
@@ -166428,24 +166551,24 @@
       "path": "src/modules/misc.c",
       "symbol": "unk2C",
       "lines": [
-        156,
-        446
+        159,
+        449
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscRebuildOrthonormalBasisFromDirection",
-          "declaration_line": 421,
+          "declaration_line": 424,
           "lines": [
-            446
+            449
           ]
         },
         {
           "kind": "type",
           "name": "UnkStruct_misc_004006A0",
-          "declaration_line": 144,
+          "declaration_line": 147,
           "lines": [
-            156
+            159
           ]
         }
       ]
@@ -166456,33 +166579,33 @@
       "path": "src/modules/misc.c",
       "symbol": "unk30",
       "lines": [
-        157,
-        411,
-        608
+        160,
+        414,
+        611
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscApproachTransformTranslation",
-          "declaration_line": 410,
+          "declaration_line": 413,
           "lines": [
-            411
+            414
           ]
         },
         {
           "kind": "function",
           "name": "miscExtractTranslationAndDirectionAngles",
-          "declaration_line": 581,
+          "declaration_line": 584,
           "lines": [
-            608
+            611
           ]
         },
         {
           "kind": "type",
           "name": "UnkStruct_misc_004006A0",
-          "declaration_line": 144,
+          "declaration_line": 147,
           "lines": [
-            157
+            160
           ]
         }
       ]
@@ -166493,33 +166616,33 @@
       "path": "src/modules/misc.c",
       "symbol": "unk34",
       "lines": [
-        158,
-        412,
-        609
+        161,
+        415,
+        612
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscApproachTransformTranslation",
-          "declaration_line": 410,
+          "declaration_line": 413,
           "lines": [
-            412
+            415
           ]
         },
         {
           "kind": "function",
           "name": "miscExtractTranslationAndDirectionAngles",
-          "declaration_line": 581,
+          "declaration_line": 584,
           "lines": [
-            609
+            612
           ]
         },
         {
           "kind": "type",
           "name": "UnkStruct_misc_004006A0",
-          "declaration_line": 144,
+          "declaration_line": 147,
           "lines": [
-            158
+            161
           ]
         }
       ]
@@ -166530,33 +166653,33 @@
       "path": "src/modules/misc.c",
       "symbol": "unk38",
       "lines": [
-        159,
-        413,
-        610
+        162,
+        416,
+        613
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscApproachTransformTranslation",
-          "declaration_line": 410,
+          "declaration_line": 413,
           "lines": [
-            413
+            416
           ]
         },
         {
           "kind": "function",
           "name": "miscExtractTranslationAndDirectionAngles",
-          "declaration_line": 581,
+          "declaration_line": 584,
           "lines": [
-            610
+            613
           ]
         },
         {
           "kind": "type",
           "name": "UnkStruct_misc_004006A0",
-          "declaration_line": 144,
+          "declaration_line": 147,
           "lines": [
-            159
+            162
           ]
         }
       ]
@@ -166567,26 +166690,26 @@
       "path": "src/modules/misc.c",
       "symbol": "unk4",
       "lines": [
-        146,
-        429,
-        436
+        149,
+        432,
+        439
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscRebuildOrthonormalBasisFromDirection",
-          "declaration_line": 421,
+          "declaration_line": 424,
           "lines": [
-            429,
-            436
+            432,
+            439
           ]
         },
         {
           "kind": "type",
           "name": "UnkStruct_misc_004006A0",
-          "declaration_line": 144,
+          "declaration_line": 147,
           "lines": [
-            146
+            149
           ]
         }
       ]
@@ -166597,35 +166720,35 @@
       "path": "src/modules/misc.c",
       "symbol": "unk8",
       "lines": [
-        147,
-        430,
-        437,
-        605
+        150,
+        433,
+        440,
+        608
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscExtractTranslationAndDirectionAngles",
-          "declaration_line": 581,
+          "declaration_line": 584,
           "lines": [
-            605
+            608
           ]
         },
         {
           "kind": "function",
           "name": "miscRebuildOrthonormalBasisFromDirection",
-          "declaration_line": 421,
+          "declaration_line": 424,
           "lines": [
-            430,
-            437
+            433,
+            440
           ]
         },
         {
           "kind": "type",
           "name": "UnkStruct_misc_004006A0",
-          "declaration_line": 144,
+          "declaration_line": 147,
           "lines": [
-            147
+            150
           ]
         }
       ]
@@ -166636,44 +166759,44 @@
       "path": "src/modules/misc.c",
       "symbol": "unkC",
       "lines": [
-        69,
-        148,
-        444,
-        1319,
-        1320
+        72,
+        151,
+        447,
+        1424,
+        1425
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscEvaluateRadiusGatedPlaneCrossing",
-          "declaration_line": 1306,
+          "declaration_line": 1411,
           "lines": [
-            1319,
-            1320
+            1424,
+            1425
           ]
         },
         {
           "kind": "function",
           "name": "miscRebuildOrthonormalBasisFromDirection",
-          "declaration_line": 421,
+          "declaration_line": 424,
           "lines": [
-            444
+            447
           ]
         },
         {
           "kind": "type",
           "name": "MiscPlaneRadiusView",
-          "declaration_line": 67,
+          "declaration_line": 70,
           "lines": [
-            69
+            72
           ]
         },
         {
           "kind": "type",
           "name": "UnkStruct_misc_004006A0",
-          "declaration_line": 144,
+          "declaration_line": 147,
           "lines": [
-            148
+            151
           ]
         }
       ]
@@ -209972,69 +210095,69 @@
       "path": "src/modules/misc.c",
       "symbol": "UnkStruct_misc_004006A0",
       "lines": [
-        160,
-        165,
-        175,
-        180,
-        410,
-        421,
-        581
+        163,
+        168,
+        178,
+        183,
+        413,
+        424,
+        584
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscApproachTransformTranslation",
-          "declaration_line": 175,
+          "declaration_line": 178,
           "lines": [
-            175
+            178
           ]
         },
         {
           "kind": "function",
           "name": "miscApproachTransformTranslation",
-          "declaration_line": 410,
+          "declaration_line": 413,
           "lines": [
-            410
+            413
           ]
         },
         {
           "kind": "function",
           "name": "miscExtractTranslationAndDirectionAngles",
-          "declaration_line": 180,
+          "declaration_line": 183,
           "lines": [
-            180
+            183
           ]
         },
         {
           "kind": "function",
           "name": "miscExtractTranslationAndDirectionAngles",
-          "declaration_line": 581,
+          "declaration_line": 584,
           "lines": [
-            581
+            584
           ]
         },
         {
           "kind": "function",
           "name": "miscRebuildOrthonormalBasisFromDirection",
-          "declaration_line": 165,
+          "declaration_line": 168,
           "lines": [
-            165
+            168
           ]
         },
         {
           "kind": "function",
           "name": "miscRebuildOrthonormalBasisFromDirection",
-          "declaration_line": 421,
+          "declaration_line": 424,
           "lines": [
-            421
+            424
           ]
         },
         {
           "kind": "type",
           "name": "UnkStruct_misc_004006A0",
-          "declaration_line": 144,
+          "declaration_line": 147,
           "lines": [
-            160
+            163
           ]
         }
       ]
@@ -210045,15 +210168,15 @@
       "path": "src/modules/misc.c",
       "symbol": "UnkStruct_misc_004006A0_s",
       "lines": [
-        144
+        147
       ],
       "owners": [
         {
           "kind": "type",
           "name": "UnkStruct_misc_004006A0",
-          "declaration_line": 144,
+          "declaration_line": 147,
           "lines": [
-            144
+            147
           ]
         }
       ]
@@ -216943,16 +217066,16 @@
       "path": "src/modules/misc.c",
       "symbol": "Clamp the endpoints and draw into packed nibbles using the original signed-short stepping. * RE_ORIGINAL_QUIRK: Each endpoint is clamped independently; nibble parity and short truncations are retained. * RE_UNKNOWN: Buffer extent, odd-width layout, signed overflow and retained empty conditional require original callers/compiler evidence.",
       "lines": [
-        1469
+        1574
       ],
       "evidence": "Clamp the endpoints and draw into packed nibbles using the original signed-short stepping. * RE_ORIGINAL_QUIRK: Each endpoint is clamped independently; nibble parity and short truncations are retained. * RE_UNKNOWN: Buffer extent, odd-width layout, signed overflow and retained empty conditional require original callers/compiler evidence.",
       "owners": [
         {
           "kind": "function",
           "name": "miscDrawPackedNibbleLine",
-          "declaration_line": 1473,
+          "declaration_line": 1578,
           "lines": [
-            1469
+            1574
           ]
         }
       ]
@@ -216963,16 +217086,16 @@
       "path": "src/modules/misc.c",
       "symbol": "Clamp the sine input and evaluate the original atan2/square-root expression. * RE_ORIGINAL_QUIRK: The exact-zero shortcut and clamp comparisons are retained, including their NaN bypass. * RE_UNKNOWN: NaN/input domains and approximation/angle convention require original callers/providers.",
       "lines": [
-        1450
+        1555
       ],
       "evidence": "Clamp the sine input and evaluate the original atan2/square-root expression. * RE_ORIGINAL_QUIRK: The exact-zero shortcut and clamp comparisons are retained, including their NaN bypass. * RE_UNKNOWN: NaN/input domains and approximation/angle convention require original callers/providers.",
       "owners": [
         {
           "kind": "function",
           "name": "miscEvaluateClampedSineAngle",
-          "declaration_line": 1454,
+          "declaration_line": 1559,
           "lines": [
-            1450
+            1555
           ]
         }
       ]
@@ -216983,16 +217106,36 @@
       "path": "src/modules/misc.c",
       "symbol": "Create and append a compact label row, allocate its scalar widget, then * configure the original bounds/source and attach the centered upper child. * Flag two in the signed kind short selects integer conversion; other kinds * read the source as a float. Return the row and optionally expose its widget. * RE_ORIGINAL_QUIRK: allocation results remain unchecked, and label copies * retain the original fixed-width reads rather than NUL-string handling. * RE_UNKNOWN: remaining kind bits, bound units and value-source ownership/ * lifetime. The source address is forwarded to widget configuration; trace * original widget consumers, caller storage and teardown before assigning * ownership or deciding how long that storage must remain readable.",
       "lines": [
-        1348
+        1453
       ],
       "evidence": "Create and append a compact label row, allocate its scalar widget, then * configure the original bounds/source and attach the centered upper child. * Flag two in the signed kind short selects integer conversion; other kinds * read the source as a float. Return the row and optionally expose its widget. * RE_ORIGINAL_QUIRK: allocation results remain unchecked, and label copies * retain the original fixed-width reads rather than NUL-string handling. * RE_UNKNOWN: remaining kind bits, bound units and value-source ownership/ * lifetime. The source address is forwarded to widget configuration; trace * original widget consumers, caller storage and teardown before assigning * ownership or deciding how long that storage must remain readable.",
       "owners": [
         {
           "kind": "function",
           "name": "miscCreateGuiBoundScalarRow",
-          "declaration_line": 1359,
+          "declaration_line": 1464,
           "lines": [
-            1348
+            1453
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-f0a2a9cfee43",
+      "kind": "original_quirk",
+      "path": "src/modules/misc.c",
+      "symbol": "Publish segment length, signed factor and absolute projected distance using the original sixth integer input. * RE_ORIGINAL_QUIRK: The sixth input remains s32, including its conversions in the floating-point expressions. * RE_UNKNOWN: The sixth parameter integer ABI, degenerate domains and output aliasing require original callers/provider evidence.",
+      "lines": [
+        1056
+      ],
+      "evidence": "Publish segment length, signed factor and absolute projected distance using the original sixth integer input. * RE_ORIGINAL_QUIRK: The sixth input remains s32, including its conversions in the floating-point expressions. * RE_UNKNOWN: The sixth parameter integer ABI, degenerate domains and output aliasing require original callers/provider evidence.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "miscMeasurePlanarSegmentProjection",
+          "declaration_line": 1060,
+          "lines": [
+            1056
           ]
         }
       ]
@@ -217003,16 +217146,16 @@
       "path": "src/modules/misc.c",
       "symbol": "RE_ORIGINAL_QUIRK: original overlapping vertical-segment path reads an unwritten intercept stack word. RE_UNKNOWN: caller reachability/input limits; trace original export callers before changing collinear behavior.",
       "lines": [
-        915
+        918
       ],
       "evidence": "RE_ORIGINAL_QUIRK: original overlapping vertical-segment path reads an unwritten intercept stack word. RE_UNKNOWN: caller reachability/input limits; trace original export callers before changing collinear behavior.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_misc_004019FC",
-          "declaration_line": 916,
+          "declaration_line": 919,
           "lines": [
-            915
+            918
           ]
         }
       ]
@@ -224691,15 +224834,15 @@
       "path": "src/modules/misc.c",
       "symbol": "unusedAngle",
       "lines": [
-        472
+        475
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscCartesianToSpherical",
-          "declaration_line": 470,
+          "declaration_line": 473,
           "lines": [
-            472
+            475
           ]
         }
       ]
@@ -224805,24 +224948,24 @@
       "path": "src/modules/misc.c",
       "symbol": "unusedScalar",
       "lines": [
-        471,
-        583
+        474,
+        586
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscCartesianToSpherical",
-          "declaration_line": 470,
+          "declaration_line": 473,
           "lines": [
-            471
+            474
           ]
         },
         {
           "kind": "function",
           "name": "miscExtractTranslationAndDirectionAngles",
-          "declaration_line": 581,
+          "declaration_line": 584,
           "lines": [
-            583
+            586
           ]
         }
       ]
@@ -224833,15 +224976,15 @@
       "path": "src/modules/misc.c",
       "symbol": "unusedWord",
       "lines": [
-        473
+        476
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscCartesianToSpherical",
-          "declaration_line": 470,
+          "declaration_line": 473,
           "lines": [
-            473
+            476
           ]
         }
       ]
