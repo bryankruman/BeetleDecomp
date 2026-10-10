@@ -134,8 +134,8 @@ extern u16 D_uvemitter_rom_00402BD4;
 extern u32 D_uvemitter_rom_00402BD8;
 extern EmitterSettings *D_uvemitter_rom_00402BF4;
 
-void __entrypoint_func_uvemitter_rom_400000(UvEmitter_Exports *exports) {
-    s32 i;
+void __entrypoint_func_uvemitter_rom_400000(UvEmitter_Exports *exports) { /* Publish callbacks, configure defaults, and allocate and initialize emitter, voice and sound-player storage. */
+    s32 slotIndex;
 
     uvUpdateFileAllocPtr(exports);
     exports->uvGetEmitter = uvGetEmitter;
@@ -222,14 +222,14 @@ void __entrypoint_func_uvemitter_rom_400000(UvEmitter_Exports *exports) {
     D_uvemitter_rom_00402B94 = _uvMemAlloc(D_uvemitter_rom_00402BD0 * 0x90, 0x10U);
     uvMemSet(D_uvemitter_rom_00402B94, 0U, D_uvemitter_rom_00402BD0 * 0x90);
 
-    for (i = 0; i < D_uvemitter_rom_00402BD0; i++) {
-        uvEmitterInit(&D_uvemitter_rom_00402B94[i]);
-        D_uvemitter_rom_00402C08[i] = 1;
+    for (slotIndex = 0; slotIndex < D_uvemitter_rom_00402BD0; slotIndex++) {
+        uvEmitterInit(&D_uvemitter_rom_00402B94[slotIndex]);
+        D_uvemitter_rom_00402C08[slotIndex] = 1;
     }
 
-    for (i = 0; i < sMaxVoices; i++) {
-        D_uvemitter_rom_00402A74[i] = 0xFF;
-        D_uvemitter_rom_00402A7C[i] = 0xFF;
+    for (slotIndex = 0; slotIndex < sMaxVoices; slotIndex++) {
+        D_uvemitter_rom_00402A74[slotIndex] = 0xFF;
+        D_uvemitter_rom_00402A7C[slotIndex] = 0xFF;
     }
 
     D_uvemitter_rom_00402A80 = 0;
@@ -242,7 +242,7 @@ void __entrypoint_func_uvemitter_rom_400000(UvEmitter_Exports *exports) {
     alSndpNew(D_uvemitter_rom_00402A10, &D_uvemitter_rom_00402BA8);
     uvClkReset(0x6A);
     D_uvemitter_rom_00402C00 = uvClkGetSec(0x6A);
-}
+/* RE_UNKNOWN: Configuration limits, repeated initialization and allocation failure are unchecked. Null configuration uses 256 voices; a nonnull configuration with zero voices uses 16. The null branch does not assign the event-capacity word. */ }
 
 #line 247 "src/modules/uvemitter_rom.c"
 /* Stop all voices, destroy the sound player, free owned voice/bank/emitter
@@ -265,56 +265,56 @@ void uvEmitterModuleCleanup(void) {
 }
 #line 263 "src/modules/uvemitter_rom.c"
 
-void uvEmitterInit(Emitter *obj) {
-    obj->playVoice = sMaxVoices + 1;
-    obj->unk78 = 0;
-    obj->playVolume = 0x7FFF;
-    obj->playPan = 0x40;
-    obj->playMix = 0;
-    obj->unk83 = 0;
-    obj->active = 0;
-    obj->soundId = -1;
-    obj->vol = 0;
-    obj->unk64 = 0;
-    obj->unk84 = 0;
-    obj->unk58 = 0;
-    obj->playPitch = 1.0f;
-    obj->unk30 = 1.0f;
-    obj->unk68 = 1.0f;
-    obj->unk54 = 1.0f;
-    obj->unk0.x = 0.0f;
-    obj->unk0.y = 0.0f;
-    obj->unk0.z = 0.0f;
-    obj->unkC = 0.0f;
-    obj->unk10 = 0.0f;
-    obj->unk14 = 0.0f;
-    obj->unk18 = 0.0f;
-    obj->unk1C = 0.0f;
-    obj->unk20 = 0.0f;
-    obj->unk24.x = 0.0f;
-    obj->unk24.y = 0.0f;
-    obj->unk24.z = 0.0f;
-    obj->unk48.x = 0.0f;
-    obj->unk48.y = 0.0f;
-    obj->unk48.z = 0.0f;
-    obj->unk6C = 0.0f;
-    obj->unk70 = 0.0f;
-    obj->unk5C = 0.0f;
-    obj->far = 1000.0f;
-    obj->unk40 = -1.0;
-}
+void uvEmitterInit(Emitter *emitter) { /* Reset the observed emitter fields and store the byte-narrowed voice sentinel sMaxVoices + 1. */
+    emitter->playVoice = sMaxVoices + 1;
+    emitter->unk78 = 0;
+    emitter->playVolume = 0x7FFF;
+    emitter->playPan = 0x40;
+    emitter->playMix = 0;
+    emitter->unk83 = 0;
+    emitter->active = 0;
+    emitter->soundId = -1;
+    emitter->vol = 0;
+    emitter->unk64 = 0;
+    emitter->unk84 = 0;
+    emitter->unk58 = 0;
+    emitter->playPitch = 1.0f;
+    emitter->unk30 = 1.0f;
+    emitter->unk68 = 1.0f;
+    emitter->unk54 = 1.0f;
+    emitter->unk0.x = 0.0f;
+    emitter->unk0.y = 0.0f;
+    emitter->unk0.z = 0.0f;
+    emitter->unkC = 0.0f;
+    emitter->unk10 = 0.0f;
+    emitter->unk14 = 0.0f;
+    emitter->unk18 = 0.0f;
+    emitter->unk1C = 0.0f;
+    emitter->unk20 = 0.0f;
+    emitter->unk24.x = 0.0f;
+    emitter->unk24.y = 0.0f;
+    emitter->unk24.z = 0.0f;
+    emitter->unk48.x = 0.0f;
+    emitter->unk48.y = 0.0f;
+    emitter->unk48.z = 0.0f;
+    emitter->unk6C = 0.0f;
+    emitter->unk70 = 0.0f;
+    emitter->unk5C = 0.0f;
+    emitter->far = 1000.0f;
+    emitter->unk40 = -1.0;
+/* RE_UNKNOWN: Untouched record bytes and the valid voice-count domain are unproved; this is not whole-record zeroing. */ }
 
-u8 uvGetEmitter(void) {
-    u8 i;
+u8 uvGetEmitter(void) { /* Mark the first emitter with a zero active byte and return its byte index; exhaustion returns 0xFF. */
+    u8 emitterIndex;
 
-    for (i = 0; i < D_uvemitter_rom_00402BD0; i++) {
-        if (D_uvemitter_rom_00402B94[i].active == 0) {
-            D_uvemitter_rom_00402B94[i].active = 1;
-            return i;
+    for (emitterIndex = 0; emitterIndex < D_uvemitter_rom_00402BD0; emitterIndex++) {
+        if (D_uvemitter_rom_00402B94[emitterIndex].active == 0) {
+            D_uvemitter_rom_00402B94[emitterIndex].active = 1;
+            return emitterIndex;
         }
     }
     return 0xFF;
-}
+/* RE_UNKNOWN: Capacity and byte-index wrap domains are unproved. If index 255 is reachable, its successful return collides with 0xFF; no capacity guarantee is added. */ }
 
 #line 315 "src/modules/uvemitter_rom.c"
 /* For an in-range byte index, stop its voice and restore emitter defaults. */
@@ -551,51 +551,51 @@ void uvEmitterSetVol(u8 playVoice, s32 vol) {
     }
 }
 
-void uvEmitterProps(u8 objId, ...) {
-    f32 temp_fv0;
-    va_list args;
-    Emitter *obj;
-    s32 prop;
+void uvEmitterProps(u8 objId, ...) { /* Consume property tags: 1 and 2 store squared narrowed doubles at offsets 0x5C and 0x60; 5 stores a word at 0x64; 0 and unknown tags return. */
+    f32 propertyValue;
+    va_list propertyArgs;
+    Emitter *emitter;
+    s32 propertyTag;
 
     if ((objId >= D_uvemitter_rom_00402BD0) || (objId == 0xFF)) {
         return;
     }
 
-    if (args) {
+    if (propertyArgs) {
     }
-    obj = &D_uvemitter_rom_00402B94[objId];
+    emitter = &D_uvemitter_rom_00402B94[objId];
     // passing an object that undergoes default argument promotion to 'va_start'
     // has undefined behavior (e.g. u8, u16, f32)
 #if defined(__clang__)
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wvarargs"
 #endif
-    va_start(args, objId);
+    va_start(propertyArgs, objId);
 #if defined(__clang__)
 #pragma GCC diagnostic pop
 #endif
 
     while (TRUE) {
-        prop = va_arg(args, s32);
-        switch (prop) { /* irregular */
+        propertyTag = va_arg(propertyArgs, s32);
+        switch (propertyTag) { /* irregular */
             case 0:
                 return;
             case 1:
-                temp_fv0 = va_arg(args, f64);
-                obj->unk5C = SQ(temp_fv0);
+                propertyValue = va_arg(propertyArgs, f64);
+                emitter->unk5C = SQ(propertyValue);
                 break;
             case 2:
-                temp_fv0 = va_arg(args, f64);
-                obj->far = SQ(temp_fv0);
+                propertyValue = va_arg(propertyArgs, f64);
+                emitter->far = SQ(propertyValue);
                 break;
             case 5:
-                obj->unk64 = va_arg(args, s32);
+                emitter->unk64 = va_arg(propertyArgs, s32);
                 break;
             default:
                 return;
         }
     }
-}
+/* RE_UNKNOWN: Vararg termination, input domains and the inherited narrow last-parameter ABI are unproved. The inherited pre-va_start read of the uninitialized argument-list local remains; no portable vararg behavior is claimed. */ }
 
 #line 538 "src/modules/uvemitter_rom.c"
 /* When globally enabled and the sound ID is valid, set playback request 0x10. */
@@ -1046,13 +1046,13 @@ void _uvaUpdateVoice(Emitter *emitter) {
     alSndpSetPan(D_uvemitter_rom_00402A10, emitter->playPan);
 }
 
-void _uvaStopVoice(Emitter *arg0) {
+void _uvaStopVoice(Emitter *emitter) { /* When word 0x78 is nonzero, process an in-range assigned sound, conditionally zero its volume, invoke stop, then reset the voice sentinel, word 0x78 and byte 0x83. */
     u16 temp_v0;
     u8 temp_v1;
 
-    if (arg0->unk78 != 0) {
-        if (arg0->playVoice < sMaxVoices) {
-            alSndpSetSound(D_uvemitter_rom_00402A10, sVoiceTable[arg0->playVoice]);
+    if (emitter->unk78 != 0) {
+        if (emitter->playVoice < sMaxVoices) {
+            alSndpSetSound(D_uvemitter_rom_00402A10, sVoiceTable[emitter->playVoice]);
             if (D_uvemitter_rom_00402A10->target == -1) {
                 *(s32 *) 0 = 0;
             }
@@ -1061,11 +1061,11 @@ void _uvaStopVoice(Emitter *arg0) {
             }
             alSndpStop(D_uvemitter_rom_00402A10);
         }
-        arg0->playVoice = sMaxVoices + 1;
-        arg0->unk78 = 0;
-        arg0->unk83 = 0;
+        emitter->playVoice = sMaxVoices + 1;
+        emitter->unk78 = 0;
+        emitter->unk83 = 0;
     }
-}
+/* RE_UNKNOWN: Meanings of fields 0x78 and 0x83 and caller lifetime are unproved. Preserve the explicit null-address store when the selected sound target is -1; its reachability is unknown. */ }
 
 #line 969 "src/modules/uvemitter_rom.c"
 /* Read UVSX .CTL/.TBL, relocate the copied bank, select the first instrument

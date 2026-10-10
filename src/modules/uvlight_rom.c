@@ -72,13 +72,13 @@ void __entrypoint_func_uvlight_rom_400000(UvLights_Exports *exports);
         gMoveWd(pkt, G_MW_LIGHTCOL, n + 4, col);                                                       \
     }
 
-void __entrypoint_func_uvlight_rom_400000(UvLights_Exports *exports) {
-    s32 pad;
-    s32 i;
-    s32 j;
-    LightsSettings *settings;
-    Vec3F sp54;
-    Vec3F sp48;
+void __entrypoint_func_uvlight_rom_400000(UvLights_Exports *exports) { /* Publish the thirteen light exports, load settings with per-field defaults, allocate the original buffers, initialize record/channel state and register two callbacks. RE_UNKNOWN: Full settings ownership, allocation success/capacities and dependency lifetimes remain unproved. */
+    s32 pad; /* RE_ORIGINAL_QUIRK: Keep the inherited unused local and allocation order. */
+    s32 entryIndex;
+    s32 channelIndex;
+    LightsSettings *lightSettings;
+    Vec3F defaultDirection;
+    Vec3F zeroColorVector;
 
     uvUpdateFileAllocPtr(exports);
     exports->uvLightModuleCleanup = uvLightModuleCleanup;
@@ -97,26 +97,26 @@ void __entrypoint_func_uvlight_rom_400000(UvLights_Exports *exports) {
 #ifdef __sgi
 #line 1
 #endif
-    sp54 = D_uvlight_rom_004016E4;
-    sp48 = D_uvlight_rom_004016F0;
-    settings = uvGetSystemProp(SYSTEM_PROPID_LIGHTS_SETTINGS);
-    if (settings == NULL) {
+    defaultDirection = D_uvlight_rom_004016E4;
+    zeroColorVector = D_uvlight_rom_004016F0;
+    lightSettings = uvGetSystemProp(SYSTEM_PROPID_LIGHTS_SETTINGS);
+    if (lightSettings == NULL) {
         D_uvlight_rom_00401794 = 0xA;
         D_uvlight_rom_00401748 = 0x28;
         D_uvlight_rom_00401751 = 7;
     } else {
-        if (settings->unk0 != 0) {
-            D_uvlight_rom_00401794 = settings->unk0;
+        if (lightSettings->unk0 != 0) { /* Test the complete word before the original byte store; do not add range validation. */
+            D_uvlight_rom_00401794 = lightSettings->unk0;
         } else {
             D_uvlight_rom_00401794 = 0xA;
         }
-        if (settings->unk4 != 0) {
-            D_uvlight_rom_00401748 = settings->unk4;
+        if (lightSettings->unk4 != 0) {
+            D_uvlight_rom_00401748 = lightSettings->unk4;
         } else {
             D_uvlight_rom_00401748 = 0x28;
         }
-        if (settings->unk8 != 0) {
-            D_uvlight_rom_00401751 = settings->unk8;
+        if (lightSettings->unk8 != 0) {
+            D_uvlight_rom_00401751 = lightSettings->unk8;
         } else {
             D_uvlight_rom_00401751 = 7;
         }
@@ -134,19 +134,19 @@ void __entrypoint_func_uvlight_rom_400000(UvLights_Exports *exports) {
         _uvMemAllocAlign8(D_uvlight_rom_00401748 * D_uvlight_rom_00401794 * 4 * D_uvlight_rom_00401751);
     D_uvlight_rom_004017C4 = _uvMemAllocAlign8(D_uvlight_rom_00401794 * 4);
     D_uvlight_rom_004017C8 = _uvMemAllocAlign8(D_uvlight_rom_00401794 * 4);
-    for (i = 0; i < D_uvlight_rom_00401794; i++) {
-        D_uvlight_rom_00401758[i].refCount = 0;
+    for (entryIndex = 0; entryIndex < D_uvlight_rom_00401794; entryIndex++) { /* Only each record reference count is initialized here. */
+        D_uvlight_rom_00401758[entryIndex].refCount = 0;
     }
 
-    for (j = 0; j < D_uvlight_rom_00401748; j++) {
-        for (i = 0; i < D_uvlight_rom_00401751; i++) {
-            uvLightUpdateSetChannelDiffuse(i, j, 0.0f, 0.0f, 0.0f);
-            uvLightSetChannelDirection(i, j, &sp54);
+    for (channelIndex = 0; channelIndex < D_uvlight_rom_00401748; channelIndex++) {
+        for (entryIndex = 0; entryIndex < D_uvlight_rom_00401751; entryIndex++) {
+            uvLightUpdateSetChannelDiffuse(entryIndex, channelIndex, 0.0f, 0.0f, 0.0f);
+            uvLightSetChannelDirection(entryIndex, channelIndex, &defaultDirection);
         }
-        uvLightUpdateChannelAmbient(j, 0.0f, 0.0f, 0.0f);
+        uvLightUpdateChannelAmbient(channelIndex, 0.0f, 0.0f, 0.0f);
     }
 
-    uvLightSetDefaultDirectionAndColors(&sp54, (f32*)&sp48, (f32*)&sp48);
+    uvLightSetDefaultDirectionAndColors(&defaultDirection, (f32*)&zeroColorVector, (f32*)&zeroColorVector);
     D_uvlight_rom_00401750 = 0;
     sNumLights = 0;
     D_uvlight_rom_00401753 = 0;
@@ -248,58 +248,58 @@ void uvLightEmitDefaultLights(void) {
 }
 #line 137 "src/modules/uvlight_rom.c"
 
-void func_uvlight_rom_004008D4(s32 arg0) {
-    UnkStruct_uvlight_rom_00401758 *sp34;
-    s32 temp_s1;
-    s32 i;
-    void *temp_v0;
+void func_uvlight_rom_004008D4(s32 recordIndex) { /* Resolve the selected-record sentinel, reject invalid IDs and refresh packed color output only when the compared record words or shared dirty flag require it. RE_UNKNOWN: Record ownership, backing extents, selector reachability and cache lifetimes remain unproved. */
+    UnkStruct_uvlight_rom_00401758 *lightRecord;
+    s32 packedColorIndex;
+    s32 lightIndex;
+    void *temp_v0; /* RE_ORIGINAL_QUIRK: Preserve the inherited unused local. */
 
-    if (arg0 == -2) {
-        arg0 = D_uvlight_rom_004016E0;
+    if (recordIndex == -2) {
+        recordIndex = D_uvlight_rom_004016E0;
     }
-    if ((arg0 < 0) || (arg0 >= D_uvlight_rom_00401794)) {
+    if ((recordIndex < 0) || (recordIndex >= D_uvlight_rom_00401794)) {
         return;
     }
 
-    // FAKE
-    if (arg0) {}
+    // RE_ORIGINAL_QUIRK: Preserve the inherited empty nonzero-selector branch.
+    if (recordIndex) {}
 
     if (((D_uvlight_rom_0040174C < 0) || (sNumLights == 0))
         && (D_uvlight_rom_00401754 == 0)) {
         uvLightEmitDefaultLights();
     }
-    if ((arg0 == D_uvlight_rom_00401798) && (D_uvlight_rom_00401753 == 0)) {
+    if ((recordIndex == D_uvlight_rom_00401798) && (D_uvlight_rom_00401753 == 0)) {
         return;
     }
 
-    sp34 = uvLightGetRecord(arg0);
-    if ((sp34->unk28 != D_uvlight_rom_00401760.unk28) || ((u8) D_uvlight_rom_00401753 != 0)) {
+    lightRecord = uvLightGetRecord(recordIndex);
+    if ((lightRecord->unk28 != D_uvlight_rom_00401760.unk28) || ((u8) D_uvlight_rom_00401753 != 0)) {
         if (D_uvlight_rom_00401754 == 0) {
-            temp_s1 =
-                ((D_uvlight_rom_00401794 * D_uvlight_rom_0040174C * D_uvlight_rom_00401751) + arg0);
-            for (i = 0; i < sNumLights; i++) {
+            packedColorIndex =
+                ((D_uvlight_rom_00401794 * D_uvlight_rom_0040174C * D_uvlight_rom_00401751) + recordIndex);
+            for (lightIndex = 0; lightIndex < sNumLights; lightIndex++) {
                 uvSetLightColor(
-                    i, (&D_uvlight_rom_004017A0[D_uvlight_rom_00401794 * i])[temp_s1]);
+                    lightIndex, (&D_uvlight_rom_004017A0[D_uvlight_rom_00401794 * lightIndex])[packedColorIndex]);
             }
         } else {
-            // 0?
-            uvSetLightColor(0, D_uvlight_rom_004017C8[arg0]);
+            // Send this record's cached packed color to light index zero.
+            uvSetLightColor(0, D_uvlight_rom_004017C8[recordIndex]);
         }
-        D_uvlight_rom_00401760.unk28 = sp34->unk28;
+        D_uvlight_rom_00401760.unk28 = lightRecord->unk28; /* Reload after the color-helper calls before publishing this cache word. */
     }
-    if ((sp34->unk2C != D_uvlight_rom_00401760.unk2C) || (sp34->unk24 != D_uvlight_rom_00401760.unk24)
+    if ((lightRecord->unk2C != D_uvlight_rom_00401760.unk2C) || (lightRecord->unk24 != D_uvlight_rom_00401760.unk24)
         || (D_uvlight_rom_00401753 != 0)) {
         if (D_uvlight_rom_00401754 == 0) {
             uvSetLightColor(
                 sNumLights,
-                D_uvlight_rom_0040179C[D_uvlight_rom_00401794 * D_uvlight_rom_0040174C + arg0]);
+                D_uvlight_rom_0040179C[D_uvlight_rom_00401794 * D_uvlight_rom_0040174C + recordIndex]);
         } else {
-            uvSetLightColor(LIGHT_1, D_uvlight_rom_004017C4[arg0]);
+            uvSetLightColor(LIGHT_1, D_uvlight_rom_004017C4[recordIndex]);
         }
-        D_uvlight_rom_00401760.unk2C = sp34->unk2C;
-        D_uvlight_rom_00401760.unk24 = sp34->unk24;
+        D_uvlight_rom_00401760.unk2C = lightRecord->unk2C; /* These final cache writes likewise retain their fresh record reads. */
+        D_uvlight_rom_00401760.unk24 = lightRecord->unk24;
     }
-    D_uvlight_rom_00401798 = arg0;
+    D_uvlight_rom_00401798 = recordIndex;
     D_uvlight_rom_00401753 = 0;
 }
 
