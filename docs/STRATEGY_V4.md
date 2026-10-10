@@ -3331,10 +3331,19 @@ Totals: 431 further recoveries after the 225 upstream ordinary imports, plus 155
 Frozen wave `4040-misc-three-native-recoveries` and `accepted-misc-three-native-recoveries-4040` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 431 further readable functions
+## Historical accepted checkpoint — 431 further readable functions
 
 Name observed sequence, frame, file and parser roles and document update order, signed remainder, shared frame-table ownership and unresolved caller domains while preserving every operation and inherited ABI.
 
 Totals: 431 further recoveries after the 225 upstream ordinary imports, plus 1571 existing C semantic cleanups. Current ledger: 769 assembly references = 730 ordinary + 39 entrypoints; 705,284 known remaining instruction bytes; zero unknown sizes; 285 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `4060-texture-sequence-native-contracts` and `accepted-texture-sequence-native-contracts-4060` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 431 further readable functions
+
+Name observed bank, sequence and channel roles and document heap ownership, captured lengths, callback sampling order, conversion widths and inherited return-contract uncertainty while preserving every operation and ABI.
+
+Totals: 431 further recoveries after the 225 upstream ordinary imports, plus 1591 existing C semantic cleanups. Current ledger: 769 assembly references = 730 ordinary + 39 entrypoints; 705,284 known remaining instruction bytes; zero unknown sizes; 285 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `4076-cmidi-runtime-native-contracts` and `accepted-cmidi-runtime-native-contracts-4076` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

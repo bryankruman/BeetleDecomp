@@ -70,7 +70,7 @@ extern ALHeap D_uvcmidi_rom_004010B0;
 extern MidiSettings *D_uvcmidi_rom_004011E8;
 extern s32 D_uvcmidi_rom_004011F4;
 
-void __entrypoint_func_uvcmidi_rom_400000(UvCMidi_Exports *exports) {
+void __entrypoint_func_uvcmidi_rom_400000(UvCMidi_Exports *exports) { /* Publish 37 callbacks, read property 3 and choose nonzero limits or defaults 16, 256 and 16. Establish and clear heap storage, initialize the heap and player, save the initial free-list pointer and load AMGR. */
     uvUpdateFileAllocPtr(exports);
     exports->uvaLoadBank = uvaLoadBank;
     exports->uvaSetSeq = uvaSetSeq;
@@ -153,10 +153,10 @@ void __entrypoint_func_uvcmidi_rom_400000(UvCMidi_Exports *exports) {
     alCSPNew((ALCSPlayer *) sAudioSeqPlayer, &sAudioSeqPlayerConfig);
     D_uvcmidi_rom_004011EC = sAudioSeqPlayer->vFreeList;
     D_uvcmidi_rom_004011FC = uvLoadModule('AMGR');
-}
+/* RE_UNKNOWN: Settings layout and limits, player storage, failed allocation and repeated initialization remain unproved. Preserve the inherited player-allocation warning, ownership flags and all reads and stores. */ }
 
 // Module cleanup
-void uvaCleanup(void) {
+void uvaCleanup(void) { /* Call the stop wrapper when the state result is nonzero, delete the player, free the heap buffer for flag bit 1 and three bank or sequence buffers for bit 2, then unload AMGR. */
     if (alSeqpGetState(sAudioSeqPlayer) != 0) {
         uvaSeqStop();
     }
@@ -170,107 +170,107 @@ void uvaCleanup(void) {
         _uvMemFree(sAudioSequencesData);
     }
     uvUnloadModule('AMGR');
-}
+/* RE_UNKNOWN: Ownership and repeated teardown are unproved. Preserve the flag reread after the first free; this body clears no global pointer or flag. */ }
 
-void uvaLoadBank(s32 bankId) {
-    void *bankData;
-    void *tblSize;
-    u32 bankSize;
-    s32 fileId;
-    ALSeqFile sp4C;
-    s32 sp48;
-    s32 maxSeqLen;
-    s32 i;
-    void *seqsData;
+void uvaLoadBank(s32 bankId) { /* Read UVMB control and table blocks, copy the control block and install its bank. Read UVMS file 0, copy the signed-count sequence table, scan its lengths and allocate scratch space rounded up to an even byte count. */
+    void *controlData;
+    void *tableBlockData;
+    u32 controlBytes;
+    s32 fileHandle;
+    ALSeqFile sequenceFileHeader;
+    s32 sequenceTableBytes;
+    s32 maximumSequenceBytes;
+    s32 sequenceCountOrIndex;
+    void *sequenceBlockData;
 
-    fileId = uvFileReadHeader(uvGetFileData('UVMB', bankId));
-    uvFileSearchTag(fileId, &bankSize, &bankData, '.CTL', 0);
-    uvFileSearchTag(fileId, NULL, &tblSize, '.TBL', 0);
-    uvFileFree(fileId);
+    fileHandle = uvFileReadHeader(uvGetFileData('UVMB', bankId));
+    uvFileSearchTag(fileHandle, &controlBytes, &controlData, '.CTL', 0);
+    uvFileSearchTag(fileHandle, NULL, &tableBlockData, '.TBL', 0);
+    uvFileFree(fileHandle);
     D_uvcmidi_rom_004011F8 |= 2;
-    sAudioBankFile = malloc16(bankSize);
-    _uvMediaCopy(sAudioBankFile, bankData, bankSize);
-    alBnkfNew(sAudioBankFile, (u8 *) tblSize);
+    sAudioBankFile = malloc16(controlBytes);
+    _uvMediaCopy(sAudioBankFile, controlData, controlBytes);
+    alBnkfNew(sAudioBankFile, (u8 *) tableBlockData);
     sAudioBank = sAudioBankFile->bankArray[0];
     alSeqpSetBank(sAudioSeqPlayer, sAudioBank);
-    fileId = uvFileReadHeader(uvGetFileData('UVMS', 0));
-    uvFileSearchTag(fileId, NULL, &seqsData, 'SEQS', 0);
-    uvFileFree(fileId);
-    _uvMediaCopy(&sp4C, seqsData, 4);
-    i = sp4C.seqCount;
-    sp48 = (i * 8) + 4;
-    sAudioSeqFile = malloc16(sp48);
-    _uvMediaCopy(sAudioSeqFile, seqsData, sp48);
-    alSeqFileNew(sAudioSeqFile, (u8 *) seqsData);
-    maxSeqLen = 0;
-    for (i = 0; i < sAudioSeqFile->seqCount; i++) {
-        if (sAudioSeqFile->seqArray[i].len >= maxSeqLen) {
-            maxSeqLen = sAudioSeqFile->seqArray[i].len;
+    fileHandle = uvFileReadHeader(uvGetFileData('UVMS', 0));
+    uvFileSearchTag(fileHandle, NULL, &sequenceBlockData, 'SEQS', 0);
+    uvFileFree(fileHandle);
+    _uvMediaCopy(&sequenceFileHeader, sequenceBlockData, 4);
+    sequenceCountOrIndex = sequenceFileHeader.seqCount;
+    sequenceTableBytes = (sequenceCountOrIndex * 8) + 4;
+    sAudioSeqFile = malloc16(sequenceTableBytes);
+    _uvMediaCopy(sAudioSeqFile, sequenceBlockData, sequenceTableBytes);
+    alSeqFileNew(sAudioSeqFile, (u8 *) sequenceBlockData);
+    maximumSequenceBytes = 0;
+    for (sequenceCountOrIndex = 0; sequenceCountOrIndex < sAudioSeqFile->seqCount; sequenceCountOrIndex++) {
+        if (sAudioSeqFile->seqArray[sequenceCountOrIndex].len >= maximumSequenceBytes) {
+            maximumSequenceBytes = sAudioSeqFile->seqArray[sequenceCountOrIndex].len;
         }
     }
 
-    if (maxSeqLen & 1) {
-        maxSeqLen += 1;
+    if (maximumSequenceBytes & 1) {
+        maximumSequenceBytes += 1;
     }
-    sAudioSequencesData = malloc16((u32) maxSeqLen);
-}
+    sAudioSequencesData = malloc16((u32) maximumSequenceBytes);
+/* RE_UNKNOWN: Missing blocks, signed counts and lengths, allocation failures and replacement ownership are unproved. Keep both file-release points, the table pointer argument, signed scan and even-byte rounding; no bounds or failure checks are added. */ }
 
-void uvaSetSeq(s32 seqId) {
-    s32 seqLen;
-    s32 seqAlign;
+void uvaSetSeq(s32 sequenceIndex) { /* Capture the selected length and round it to an even byte count before querying state. Stop on a nonzero state, copy from the freshly read sequence table, then initialize the compressed sequence and install its bank and sequence. */
+    s32 sequenceBytes;
+    s32 alignedSequenceBytes;
 
-    seqLen = sAudioSeqFile->seqArray[seqId].len;
-    seqAlign = seqLen;
-    if (seqLen & 1) {
-        seqAlign = seqLen + 1;
+    sequenceBytes = sAudioSeqFile->seqArray[sequenceIndex].len;
+    alignedSequenceBytes = sequenceBytes;
+    if (sequenceBytes & 1) {
+        alignedSequenceBytes = sequenceBytes + 1;
     }
     if (alSeqpGetState(sAudioSeqPlayer) != AL_STOPPED) {
         uvaSeqStop();
     }
-    _uvMediaCopy(sAudioSequencesData, sAudioSeqFile->seqArray[seqId].offset,
-                 (u32) seqAlign);
+    _uvMediaCopy(sAudioSequencesData, sAudioSeqFile->seqArray[sequenceIndex].offset,
+                 (u32) alignedSequenceBytes);
     alCSeqNew(&sAudioCurrentSequence, (u8 *) sAudioSequencesData);
     alSeqpSetBank(sAudioSeqPlayer, sAudioBank);
     alSeqpSetSeq(sAudioSeqPlayer, (ALSeq*)&sAudioCurrentSequence);
-}
+/* RE_UNKNOWN: Index, scratch capacity and the extra source byte for odd lengths are unproved. Preserve the captured length across stop and the later table and source-pointer reads. */ }
 
-void uvaSeqPlay(void) {
-    f32 vol;
+void uvaSeqPlay(void) { /* Call AMGR slot 0x20 with a float output address, stop on a nonzero state and invoke playback. Then scale the output by the existing constant and convert through signed word and halfword for the volume setter. */
+    f32 volumeOutput;
 
-    D_uvcmidi_rom_004011FC->uvAudioMgrGetSequenceVolume(&vol);
+    D_uvcmidi_rom_004011FC->uvAudioMgrGetSequenceVolume(&volumeOutput);
     if (alSeqpGetState(sAudioSeqPlayer) != AL_STOPPED) {
         uvaSeqStop();
     }
     alSeqpPlay(sAudioSeqPlayer);
-    alSeqpSetVol(sAudioSeqPlayer, (s16) (s32) (vol * D_uvcmidi_rom_00401000));
-}
+    alSeqpSetVol(sAudioSeqPlayer, (s16) (s32) (volumeOutput * D_uvcmidi_rom_00401000));
+/* RE_UNKNOWN: Callback output initialization, volume range and player lifetime are unproved. Preserve the callback before state sampling and the conversion sequence. */ }
 
-void uvaSeqSetPosition(u32 pos) {
-    ALCSeqMarker marker;
+void uvaSeqSetPosition(u32 sequencePosition) { /* Create a marker for the supplied sequence position, then pass the same local marker to the location setter. */
+    ALCSeqMarker positionMarker;
 
-    alCSeqNewMarker(&sAudioCurrentSequence, &marker, pos);
-    alCSeqSetLoc(&sAudioCurrentSequence, &marker);
-}
+    alCSeqNewMarker(&sAudioCurrentSequence, &positionMarker, sequencePosition);
+    alCSeqSetLoc(&sAudioCurrentSequence, &positionMarker);
+/* RE_UNKNOWN: Position units, stream bounds and marker validity are unproved. Preserve the unsigned input, real local storage and call order. */ }
 
-void uvaSeqSetTempo(f32 arg0) {
+void uvaSeqSetTempo(f32 tempoInput) { /* Only for a nonzero state result, divide the existing double constant by the promoted float input and truncate the quotient to a signed word for the tempo setter. */
     if (alSeqpGetState(sAudioSeqPlayer) != AL_STOPPED) {
-        alSeqpSetTempo(sAudioSeqPlayer, (s32) (D_uvcmidi_rom_00401008 / (f64) arg0));
+        alSeqpSetTempo(sAudioSeqPlayer, (s32) (D_uvcmidi_rom_00401008 / (f64) tempoInput));
     }
-}
+/* RE_UNKNOWN: Input units, zero, negative or nonfinite values and conversion range are unproved. Preserve the state gate and double-precision arithmetic. */ }
 
-f32 uvaSeqGetTempo(void) {
-    s32 temp_v0;
+f32 uvaSeqGetTempo(void) { /* Return zero for a zero integer tempo result; otherwise divide the existing float constant by the signed-word result converted to float. */
+    s32 playerTempo;
 
-    temp_v0 = alCSPGetTempo((ALCSPlayer *) sAudioSeqPlayer);
-    if (temp_v0 == 0) {
+    playerTempo = alCSPGetTempo((ALCSPlayer *) sAudioSeqPlayer);
+    if (playerTempo == 0) {
         return 0.0f;
     }
-    return D_uvcmidi_rom_00401010 / (f32) temp_v0;
-}
+    return D_uvcmidi_rom_00401010 / (f32) playerTempo;
+/* RE_UNKNOWN: Constant units and player validity are unproved. Preserve the explicit zero gate and single-precision division. */ }
 
-void uvaSeqGetTicks(void) {
+void uvaSeqGetTicks(void) { /* Call the compressed-sequence tick query through the current void wrapper. */
     alCSeqGetTicks(&sAudioCurrentSequence);
-}
+/* RE_UNKNOWN: Native V0 is not overwritten after the call. Historical return ABI and caller use remain unproved; the current void interface is retained. */ }
 
 #line 275 "src/modules/uvcmidi_rom.c"
 /* Convert the current compressed-sequence tick position to seconds using
@@ -284,17 +284,17 @@ void uvaVisitSequenceElapsedSeconds(void) {
 }
 #line 282 "src/modules/uvcmidi_rom.c"
 
-void uvaSeqGetState(void) {
+void uvaSeqGetState(void) { /* Call the current player state query through the current void wrapper. */
     alSeqpGetState(sAudioSeqPlayer);
-}
+/* RE_UNKNOWN: Native V0 is not overwritten after the call. Historical return ABI and caller use remain unproved; the current void interface is retained. */ }
 
-void uvaSeqSetVol(f32 vol) {
+void uvaSeqSetVol(f32 volume) { /* Only for a nonzero state result, multiply the input by the existing float constant and convert through signed word and halfword for the volume setter. */
     if (alSeqpGetState(sAudioSeqPlayer) != AL_STOPPED) {
-        alSeqpSetVol(sAudioSeqPlayer, (s16) (s32) (vol * D_uvcmidi_rom_00401014));
+        alSeqpSetVol(sAudioSeqPlayer, (s16) (s32) (volume * D_uvcmidi_rom_00401014));
     }
-}
+/* RE_UNKNOWN: Input range, scale units and exceptional conversion behavior are unproved. Preserve the state gate, player reread and both conversions. */ }
 
-void uvaSeqStop(void) {
+void uvaSeqStop(void) { /* Request stop, reset clock 106 and poll state. Return when the state becomes zero or the clock result is strictly greater than 2.0. */
     alSeqpStop(sAudioSeqPlayer);
     uvClkReset(0x6A);
     while (alSeqpGetState(sAudioSeqPlayer) != AL_STOPPED) {
@@ -302,15 +302,15 @@ void uvaSeqStop(void) {
             return;
         }
     }
-}
+/* RE_UNKNOWN: Clock units, asynchronous completion and termination guarantees are unproved. Preserve the state and clock call order and ordered double comparison. */ }
 
-f32 uvaGetChannelPriority(u8 chan) {
-    return alSeqpGetChlPriority(sAudioSeqPlayer, chan);
-}
+f32 uvaGetChannelPriority(u8 channel) { /* Pass the channel byte to the priority query and convert its returned unsigned word to float. */
+    return alSeqpGetChlPriority(sAudioSeqPlayer, channel);
+/* RE_UNKNOWN: Valid channel and result domains are unproved. Preserve the native unsigned-word conversion and current float return interface. */ }
 
-void uvaSetChannelPriority(u8 chan, u8 priority) {
-    alSeqpSetChlPriority(sAudioSeqPlayer, chan, priority);
-}
+void uvaSetChannelPriority(u8 channel, u8 priority) { /* Pass the channel and priority bytes to the current player priority setter. */
+    alSeqpSetChlPriority(sAudioSeqPlayer, channel, priority);
+/* RE_UNKNOWN: Valid channel and priority domains and player lifetime are unproved; retain both byte arguments and the call. */ }
 
 #line 311 "src/modules/uvcmidi_rom.c"
 /* Send immediate MIDI control change 0x10 on the supplied channel. RE_UNKNOWN:
@@ -348,9 +348,9 @@ f32 uvaGetChannelPan(u8 channel) {
 }
 #line 330 "src/modules/uvcmidi_rom.c"
 
-void uvaSetChannelPan(u8 channel, s32 pan) {
+void uvaSetChannelPan(u8 channel, s32 pan) { /* Pass the channel byte and low byte of the signed pan argument to the current player pan setter. */
     alSeqpSetChlPan(sAudioSeqPlayer, channel, pan);
-}
+/* RE_UNKNOWN: Permitted channel and pan domains are unproved. Preserve the current signed formal type and native narrowing at the call boundary. */ }
 
 #line 335 "src/modules/uvcmidi_rom.c"
 /* Send immediate MIDI control change 0x0A on the supplied channel. */
@@ -380,9 +380,9 @@ void uvaSendChannelProgram(u8 channel, s32 program) {
 }
 #line 350 "src/modules/uvcmidi_rom.c"
 
-f32 uvaGetChannelVolume(u8 channel) {
+f32 uvaGetChannelVolume(u8 channel) { /* Pass the channel byte to the volume query and convert its returned unsigned word to float. */
     return alSeqpGetChlVol(sAudioSeqPlayer, channel);
-}
+/* RE_UNKNOWN: Valid channel and result domains are unproved. Preserve the native unsigned-word conversion and current float return interface. */ }
 
 #line 355 "src/modules/uvcmidi_rom.c"
 /* Set the sequence channel volume through the player API. */
@@ -440,14 +440,14 @@ void uvaCollectAllocatedVoicePhases(u8 *phases, s32 capacity, s32 *count) {
 }
 #line 391 "src/modules/uvcmidi_rom.c"
 
-ALVoiceState *uvaGetFreeVoiceList(void) {
+ALVoiceState *uvaGetFreeVoiceList(void) { /* Return the pointer read from the current player free-list field at offset 0x6C. */
     return sAudioSeqPlayer->vFreeList;
-}
+/* RE_UNKNOWN: Player validity and list ownership are unproved; no traversal, allocation or snapshot is added. */ }
 
-void uvaGetAllocatedVoiceList(ALVoiceState **head, ALVoiceState **tail) {
+void uvaGetAllocatedVoiceList(ALVoiceState **head, ALVoiceState **tail) { /* Write the allocated-list head to the first output, read the player pointer again, then write the tail to the second output. */
     *head = sAudioSeqPlayer->vAllocHead;
     *tail = sAudioSeqPlayer->vAllocTail;
-}
+/* RE_UNKNOWN: Output aliasing and player or list mutation are unproved. Preserve the two player reads and ordered output stores. */ }
 
 #line 401 "src/modules/uvcmidi_rom.c"
 /* Return the initial free-voice-list address through the original word ABI. */
@@ -483,13 +483,13 @@ void uvaCollectVoicePoolPhases(u8 *phases) {
 }
 #line 427 "src/modules/uvcmidi_rom.c"
 
-ALSeqPlayer *uvaGetSeqPlayer(void) {
+ALSeqPlayer *uvaGetSeqPlayer(void) { /* Return the captured current player pointer through the existing explicit null branch. */
     if (sAudioSeqPlayer != NULL) {
         return sAudioSeqPlayer;
     }
     return NULL;
-}
+/* RE_UNKNOWN: Player allocation and lifetime are unproved; preserve the branch and pointer result. */ }
 
-s16 uvaGetSeqCount(void) {
+s16 uvaGetSeqCount(void) { /* Return the sequence-file count with the native signed-halfword load. */
     return sAudioSeqFile->seqCount;
-}
+/* RE_UNKNOWN: Sequence-file validity and count domain are unproved. The 16-byte function ends before a separate four-byte unassigned zero tail; its historical alignment purpose is unknown. */ }
