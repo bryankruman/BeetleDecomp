@@ -3205,10 +3205,19 @@ Totals: 414 further recoveries after the 225 upstream ordinary imports, plus 141
 Frozen wave `3264-older-color-audio-contracts-3264` and `accepted-older-color-audio-contracts-3264` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 415 further readable functions
+## Historical accepted checkpoint — 415 further readable functions
 
 Recover the 400-byte camera basis blend/rebuild function as camBlendAndRebuildBasisRows using the measured original vector layout, retaining the original third.z-from-scaled-third.y quirk and fresh FVEC calls. Clarify the existing 1276-byte graphics-state draw function with scoped local roles and a provider-grounded LIGHT comment; add two zero-credit retained CARAUDIO notes. Full 100+319 instruction words and 8+26 ordered five-field records match, with four empty compiler logs. Preserve all 1448 prior assessed body tokens literally. Normal extraction, fresh complete original CAM/GFXSTATE/CARAUDIO packed modules and USA ROM, all 1035 manifest files, entire prior 786-minus-only-CAM400 remaining dictionaries, all data2/address282/per-source dictionaries and index are mandatory before acceptance. No readonly or text-sort ownership changes.
 
 Totals: 415 further recoveries after the 225 upstream ordinary imports, plus 1416 existing C semantic cleanups. Current ledger: 785 assembly references = 743 ordinary + 42 entrypoints; 713,320 known remaining instruction bytes; zero unknown sizes; 282 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `3312-camera-graphics-state-audio-contracts-3312` and `accepted-camera-graphics-state-audio-contracts-3312` verify real translation-unit instructions/full relocations, 3 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 415 further readable functions
+
+Clarify the existing 912-byte graphics-state initializer and 1016-byte LookAt direction packer with scoped local roles and concise native-grounded unknowns. Preserve all export stores, allocation and callback order, historical empty-if scaffold, grouped floating-point evaluation, distinct zero-length fallbacks, upper-only limits, byte stores and public types. All 482 native/reference instruction words and 119 complete ordered five-field relocation records match, with four empty compiler logs. Preserve all 1450 previously assessed identities and all 26 prior GFX bodies literally; the two distinct intervals total 1928 bytes and earn no credit until accepted. Normal extraction, fresh full original GFXSTATE packed module and USA ROM, all 1035 source pins, entire785 remaining dictionaries/data2/address282/per-source equality and the uncertainty index remain mandatory.
+
+Totals: 415 further recoveries after the 225 upstream ordinary imports, plus 1418 existing C semantic cleanups. Current ledger: 785 assembly references = 743 ordinary + 42 entrypoints; 713,320 known remaining instruction bytes; zero unknown sizes; 282 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `3346-older-graphics-state-init-clamp-contracts-3346` and `accepted-older-graphics-state-init-clamp-contracts-3346` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

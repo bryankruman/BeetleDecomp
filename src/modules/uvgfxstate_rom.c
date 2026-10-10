@@ -119,73 +119,75 @@ extern s32 D_uvgfxstate_rom_00402D04;
 extern s32 D_uvgfxstate_rom_00402D08;
 extern void* D_uvgfxstate_rom_00402D10;
 
-void __entrypoint_func_uvgfxstate_rom_400000(UvGfxState_Rom_Exports* exports) {
-    s32 i;
-    s32* temp_v0;
+/* Publish graphics-state exports, choose allocation counts for two buffers, import providers, and register the frame callback. */
+#line 122 "src/modules/uvgfxstate_rom.c"
+void __entrypoint_func_uvgfxstate_rom_400000(UvGfxState_Rom_Exports* moduleExports) {
+    s32 bufferIndex;
+    s32* allocationCounts;
 
-    uvUpdateFileAllocPtr(exports);
-    exports->uvGfxSetColorDither = uvGfxSetColorDither;
-    exports->uvGfxEmitLookAtAndOptionalHilites = uvGfxEmitLookAtAndOptionalHilites;
-    exports->uvGfxStateSetFlags = uvGfxStateSetFlags;
-    exports->uvGfxClearCurrentStateBits = uvGfxClearCurrentStateBits;
-    exports->uvGfxStateBindTexture = uvGfxStateBindTexture;
-    exports->uvGfxStateClearBits = uvGfxStateClearBits;
-    exports->uvGfxStateSetBits = uvGfxStateSetBits;
-    exports->uvGfxStateSetTextureId = uvGfxStateSetTextureId;
-    exports->uvGfxStateReplaceTextureId = uvGfxStateReplaceTextureId;
-    exports->uvGfxStateCleanup = uvGfxStateCleanup;
-    exports->uvGfxStateHasTextureId = uvGfxStateHasTextureId;
-    exports->uvGfxStatePush = uvGfxStatePush;
-    exports->uvGfxSetSharedStateWord50 = uvGfxSetSharedStateWord50;
-    exports->uvGfxStatePop = uvGfxStatePop;
-    exports->uvGfxSetSharedStateWord4C = uvGfxSetSharedStateWord4C;
-    exports->uvGfxResetShadeCombineMode = uvGfxResetShadeCombineMode;
-    exports->uvGfxDrawStateThroughDepthAndColorPasses = uvGfxDrawStateThroughDepthAndColorPasses;
-    exports->uvGfxDrawTextureRectangleWithUvRange = uvGfxDrawTextureRectangleWithUvRange;
-    exports->uvGfxStateDraw = uvGfxStateDraw;
-    exports->uvGfxGetPreviousBufferCounter = uvGfxGetPreviousBufferCounter;
-    exports->uvGfxResetDefaultRenderState = uvGfxResetDefaultRenderState;
-    exports->uvGfxSetSharedStateWords = uvGfxSetSharedStateWords;
-    exports->uvGfxSetTerrainDepthBufferEnabled = uvGfxSetTerrainDepthBufferEnabled;
-    exports->uvGfxSetHiliteVector = uvGfxSetHiliteVector;
-    exports->uvGfxSetFogParameters = uvGfxSetFogParameters;
-    exports->uvGfxSync = uvGfxSync;
-    exports->uvGfxGetFogParameters = uvGfxGetFogParameters;
-    exports->uvGfxSetCullFaces = uvGfxSetCullFaces;
-    exports->unk70 = &D_uvgfxstate_rom_00402D00;
-    exports->unk74 = &D_uvgfxstate_rom_00402D04;
-    exports->unk78 = &D_uvgfxstate_rom_00402D08;
+    uvUpdateFileAllocPtr(moduleExports);
+    moduleExports->uvGfxSetColorDither = uvGfxSetColorDither;
+    moduleExports->uvGfxEmitLookAtAndOptionalHilites = uvGfxEmitLookAtAndOptionalHilites;
+    moduleExports->uvGfxStateSetFlags = uvGfxStateSetFlags;
+    moduleExports->uvGfxClearCurrentStateBits = uvGfxClearCurrentStateBits;
+    moduleExports->uvGfxStateBindTexture = uvGfxStateBindTexture;
+    moduleExports->uvGfxStateClearBits = uvGfxStateClearBits;
+    moduleExports->uvGfxStateSetBits = uvGfxStateSetBits;
+    moduleExports->uvGfxStateSetTextureId = uvGfxStateSetTextureId;
+    moduleExports->uvGfxStateReplaceTextureId = uvGfxStateReplaceTextureId;
+    moduleExports->uvGfxStateCleanup = uvGfxStateCleanup;
+    moduleExports->uvGfxStateHasTextureId = uvGfxStateHasTextureId;
+    moduleExports->uvGfxStatePush = uvGfxStatePush;
+    moduleExports->uvGfxSetSharedStateWord50 = uvGfxSetSharedStateWord50;
+    moduleExports->uvGfxStatePop = uvGfxStatePop;
+    moduleExports->uvGfxSetSharedStateWord4C = uvGfxSetSharedStateWord4C;
+    moduleExports->uvGfxResetShadeCombineMode = uvGfxResetShadeCombineMode;
+    moduleExports->uvGfxDrawStateThroughDepthAndColorPasses = uvGfxDrawStateThroughDepthAndColorPasses;
+    moduleExports->uvGfxDrawTextureRectangleWithUvRange = uvGfxDrawTextureRectangleWithUvRange;
+    moduleExports->uvGfxStateDraw = uvGfxStateDraw;
+    moduleExports->uvGfxGetPreviousBufferCounter = uvGfxGetPreviousBufferCounter;
+    moduleExports->uvGfxResetDefaultRenderState = uvGfxResetDefaultRenderState;
+    moduleExports->uvGfxSetSharedStateWords = uvGfxSetSharedStateWords;
+    moduleExports->uvGfxSetTerrainDepthBufferEnabled = uvGfxSetTerrainDepthBufferEnabled;
+    moduleExports->uvGfxSetHiliteVector = uvGfxSetHiliteVector;
+    moduleExports->uvGfxSetFogParameters = uvGfxSetFogParameters;
+    moduleExports->uvGfxSync = uvGfxSync;
+    moduleExports->uvGfxGetFogParameters = uvGfxGetFogParameters;
+    moduleExports->uvGfxSetCullFaces = uvGfxSetCullFaces;
+    moduleExports->unk70 = &D_uvgfxstate_rom_00402D00;
+    moduleExports->unk74 = &D_uvgfxstate_rom_00402D04;
+    moduleExports->unk78 = &D_uvgfxstate_rom_00402D08;
     #line 1
-    temp_v0 = uvGetSystemProp(0x14);
+    allocationCounts = uvGetSystemProp(0x14); /* Read two count words with independent defaults; RE_UNKNOWN: property extent and signed count domains need producer proof. */
     #line 45
-    if (temp_v0 == NULL) {
+    if (allocationCounts == NULL) {
         D_uvgfxstate_rom_00402DEC = 30;
-        if (D_uvgfxstate_rom_00402E00) {} // FAKE
+        if (D_uvgfxstate_rom_00402E00) {} // FAKE; RE_UNKNOWN: historical source/scaffold shape is unproved; retain exact lowering.
         D_uvgfxstate_rom_00402E00 = 1;
     } else {
-        if (temp_v0[0] != 0) {
-            D_uvgfxstate_rom_00402DEC = temp_v0[0];
+        if (allocationCounts[0] != 0) {
+            D_uvgfxstate_rom_00402DEC = allocationCounts[0];
         } else {
             D_uvgfxstate_rom_00402DEC = 0x1E;
         }
 
-        if (temp_v0[1] != 0) {
-            D_uvgfxstate_rom_00402E00 = temp_v0[1];
+        if (allocationCounts[1] != 0) {
+            D_uvgfxstate_rom_00402E00 = allocationCounts[1];
         } else {
             D_uvgfxstate_rom_00402E00 = 1;
         }
     }
 
-    for (i = 0; i < 2; i++) {
+    for (bufferIndex = 0; bufferIndex < 2; bufferIndex++) { /* Allocate only for positive counts; preserve existing slots otherwise. */
         if (D_uvgfxstate_rom_00402DEC > 0) {
-            D_uvgfxstate_rom_00402DF8[i] = _uvMemAlloc(D_uvgfxstate_rom_00402DEC * 0x20, 8U);
+            D_uvgfxstate_rom_00402DF8[bufferIndex] = _uvMemAlloc(D_uvgfxstate_rom_00402DEC * 0x20, 8U); /* RE_UNKNOWN: scaled sizes, allocation failure, storage extent/lifetime need allocator/caller proof. */
         }
         if (D_uvgfxstate_rom_00402E00 > 0) {
-            D_uvgfxstate_rom_00402E08[i] = _uvMemAlloc(D_uvgfxstate_rom_00402E00 * 0x10, 8U);
+            D_uvgfxstate_rom_00402E08[bufferIndex] = _uvMemAlloc(D_uvgfxstate_rom_00402E00 * 0x10, 8U);
         }
     }
 
-    sUvGfxMgrExports = uvLoadModule('GMGR');
+    sUvGfxMgrExports = uvLoadModule('GMGR'); /* Keep all eight provider loads in order; RE_UNKNOWN: replacement/export lifetimes need module-loader/caller proof. */
     D_uvgfxstate_rom_00402D10 = uvLoadModule('GEOM');
     D_uvgfxstate_rom_00402D14 = uvLoadModule('TEXT');
     D_uvgfxstate_rom_00402D18 = uvLoadModule('LGHT');
@@ -195,7 +197,7 @@ void __entrypoint_func_uvgfxstate_rom_400000(UvGfxState_Rom_Exports* exports) {
     sUvMathExports = uvLoadModule('MATH');
     D_uvgfxstate_rom_00402C4C = 0;
     D_uvgfxstate_rom_00402C50 = 0;
-    sUvCbackExports->uvAddCallback(sUvGfxMgrExports->uvGfxGetCallbackList(1), uvGfxBeginStateFrame, 0, 0);
+    sUvCbackExports->uvAddCallback(sUvGfxMgrExports->uvGfxGetCallbackList(1), uvGfxBeginStateFrame, 0, 0); /* Register after the callback-list lookup; RE_UNKNOWN: callback/list capacity and invocation lifetime need owner proof. */
 }
 
 // Module cleanup function
@@ -268,81 +270,83 @@ void uvGfxEmitLookAtAndOptionalHilites(Mtx4F *modelTransform, s32 lookAtOnly) {
 }
 #line 251 "src/modules/uvgfxstate_rom.c"
 
-void uvGfxClampLook(LookAt *arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6, f32 arg7,
-                    f32 arg8, f32 arg9) {
-    f32 len;
-    f32 sp58;
-    f32 sp54;
-    f32 sp50;
-    f32 sp4C;
-    f32 sp48;
-    f32 sp44;
+/* Build and pack two LookAt directions from a point difference and successive cross products. */
+#line 252 "src/modules/uvgfxstate_rom.c"
+void uvGfxClampLook(LookAt *outputLookAt, f32 pointAX, f32 pointAY, f32 pointAZ, f32 pointBX, f32 pointBY, f32 pointBZ, f32 referenceAxisX,
+                    f32 referenceAxisY, f32 referenceAxisZ) {
+    f32 lengthScale;
+    f32 directionX;
+    f32 directionY;
+    f32 directionZ;
+    f32 crossAxisX;
+    f32 crossAxisY;
+    f32 crossAxisZ;
 
-    sp58 = arg4 - arg1;
-    sp54 = arg5 - arg2;
-    sp50 = arg6 - arg3;
+    directionX = pointBX - pointAX; /* Use the point difference and retain grouped FP operations; RE_UNKNOWN: input/FPU-exception contracts need callers. */
+    directionY = pointBY - pointAY;
+    directionZ = pointBZ - pointAZ;
 
-    len = sqrtf(SQ(sp58) + SQ(sp54) + SQ(sp50));
-    if (len != 0.0f) {
-        len = -1.0f / len;
+    lengthScale = sqrtf(SQ(directionX) + SQ(directionY) + SQ(directionZ));
+    if (lengthScale != 0.0f) {
+        lengthScale = -1.0f / lengthScale;
     } else {
-        len = -255.0f;
+        lengthScale = -255.0f; /* Keep the zero-length fallback, distinct from the later positive fallbacks. */
     }
-    sp58 *= len;
-    sp54 *= len;
-    sp50 *= len;
+    directionX *= lengthScale;
+    directionY *= lengthScale;
+    directionZ *= lengthScale;
 
-    sp4C = (arg8 * sp50) - (arg9 * sp54);
-    sp48 = (arg9 * sp58) - (arg7 * sp50);
-    sp44 = (arg7 * sp54) - (arg8 * sp58);
+    crossAxisX = (referenceAxisY * directionZ) - (referenceAxisZ * directionY);
+    crossAxisY = (referenceAxisZ * directionX) - (referenceAxisX * directionZ);
+    crossAxisZ = (referenceAxisX * directionY) - (referenceAxisY * directionX);
 
-    len = sqrtf(SQ(sp4C) + SQ(sp48) + SQ(sp44));
-    if (len != 0.0f) {
-        len = 1.0f / len;
+    lengthScale = sqrtf(SQ(crossAxisX) + SQ(crossAxisY) + SQ(crossAxisZ));
+    if (lengthScale != 0.0f) {
+        lengthScale = 1.0f / lengthScale;
     } else {
-        len = 255.0f;
+        lengthScale = 255.0f;
     }
-    sp4C *= len;
-    sp48 *= len;
-    sp44 *= len;
+    crossAxisX *= lengthScale;
+    crossAxisY *= lengthScale;
+    crossAxisZ *= lengthScale;
 
-    arg7 = (sp54 * sp44) - (sp50 * sp48);
-    arg8 = (sp50 * sp4C) - (sp58 * sp44);
-    arg9 = (sp58 * sp48) - (sp54 * sp4C);
+    referenceAxisX = (directionY * crossAxisZ) - (directionZ * crossAxisY); /* Reuse the input components for the second cross-axis; retain component order. */
+    referenceAxisY = (directionZ * crossAxisX) - (directionX * crossAxisZ);
+    referenceAxisZ = (directionX * crossAxisY) - (directionY * crossAxisX);
 
-    len = sqrtf(SQ(arg7) + SQ(arg8) + SQ(arg9));
-    if (len != 0.0f) {
-        len = 1.0f / len;
+    lengthScale = sqrtf(SQ(referenceAxisX) + SQ(referenceAxisY) + SQ(referenceAxisZ));
+    if (lengthScale != 0.0f) {
+        lengthScale = 1.0f / lengthScale;
     } else {
-        len = 255.0f;
+        lengthScale = 255.0f;
     }
-    arg7 *= len;
-    arg8 *= len;
-    arg9 *= len;
+    referenceAxisX *= lengthScale;
+    referenceAxisY *= lengthScale;
+    referenceAxisZ *= lengthScale;
 
-    arg0->l[0].l.dir[0] = (s32) MIN(sp4C * 128.0f, 127.0f) & 0xFF;
-    arg0->l[0].l.dir[1] = (s32) MIN(sp48 * 128.0f, 127.0f) & 0xFF;
-    arg0->l[0].l.dir[2] = (s32) MIN(sp44 * 128.0f, 127.0f) & 0xFF;
+    outputLookAt->l[0].l.dir[0] = (s32) MIN(crossAxisX * 128.0f, 127.0f) & 0xFF; /* Retain upper-only limits, truncation and byte stores; RE_UNKNOWN: axis convention and output storage/lifetime need consumers/callers. */
+    outputLookAt->l[0].l.dir[1] = (s32) MIN(crossAxisY * 128.0f, 127.0f) & 0xFF;
+    outputLookAt->l[0].l.dir[2] = (s32) MIN(crossAxisZ * 128.0f, 127.0f) & 0xFF;
 
-    arg0->l[1].l.dir[0] = (s32) MIN(arg7 * 128.0f, 127.0f) & 0xFF;
-    arg0->l[1].l.dir[1] = (s32) MIN(arg8 * 128.0f, 127.0f) & 0xFF;
-    arg0->l[1].l.dir[2] = (s32) MIN(arg9 * 128.0f, 127.0f) & 0xFF;
-    arg0->l[0].l.col[0] = 0;
-    arg0->l[0].l.col[1] = 0;
-    arg0->l[0].l.col[2] = 0;
-    arg0->l[0].l.pad1 = 0;
-    arg0->l[0].l.colc[0] = 0;
-    arg0->l[0].l.colc[1] = 0;
-    arg0->l[0].l.colc[2] = 0;
-    arg0->l[0].l.pad2 = 0;
-    arg0->l[1].l.col[0] = 0;
-    arg0->l[1].l.col[1] = 0x80;
-    arg0->l[1].l.col[2] = 0;
-    arg0->l[1].l.pad1 = 0;
-    arg0->l[1].l.colc[0] = 0;
-    arg0->l[1].l.colc[1] = 0x80;
-    arg0->l[1].l.colc[2] = 0;
-    arg0->l[1].l.pad2 = 0;
+    outputLookAt->l[1].l.dir[0] = (s32) MIN(referenceAxisX * 128.0f, 127.0f) & 0xFF;
+    outputLookAt->l[1].l.dir[1] = (s32) MIN(referenceAxisY * 128.0f, 127.0f) & 0xFF;
+    outputLookAt->l[1].l.dir[2] = (s32) MIN(referenceAxisZ * 128.0f, 127.0f) & 0xFF;
+    outputLookAt->l[0].l.col[0] = 0;
+    outputLookAt->l[0].l.col[1] = 0;
+    outputLookAt->l[0].l.col[2] = 0;
+    outputLookAt->l[0].l.pad1 = 0;
+    outputLookAt->l[0].l.colc[0] = 0;
+    outputLookAt->l[0].l.colc[1] = 0;
+    outputLookAt->l[0].l.colc[2] = 0;
+    outputLookAt->l[0].l.pad2 = 0;
+    outputLookAt->l[1].l.col[0] = 0;
+    outputLookAt->l[1].l.col[1] = 0x80;
+    outputLookAt->l[1].l.col[2] = 0;
+    outputLookAt->l[1].l.pad1 = 0;
+    outputLookAt->l[1].l.colc[0] = 0;
+    outputLookAt->l[1].l.colc[1] = 0x80;
+    outputLookAt->l[1].l.colc[2] = 0;
+    outputLookAt->l[1].l.pad2 = 0;
 }
 
 #if 0

@@ -291,7 +291,7 @@
     "src/modules/uvfx_rom.c": "3700b04163745b5aea4f492e3dfabffa39b618dac447bbb5e77aca73e8a9e574",
     "src/modules/uvgeom_rom.c": "7793cd32eab51f63bd3cf8d7df3b4ad6e26d67f44cf3fd8a1ffd56fcb8860e71",
     "src/modules/uvgfxmgr_rom.c": "37dc60b2aa958126c5541bee0575ce94ba23dd5d83d68a66adea7cf5d7b3d12e",
-    "src/modules/uvgfxstate_rom.c": "c2a1852f8ad71ef63bce8500f41d171093214d1b3ef85ddd026867f029378594",
+    "src/modules/uvgfxstate_rom.c": "fdd3fb85a696b9ae856b27698ac53901dddbb37bb1fb57179d965d1f505058a4",
     "src/modules/uvgrph_rom.c": "4b8f89334bd11814bb28529111c3bb273f7c0c82b0048216032b299b1db81d72",
     "src/modules/uvgui_rom.c": "a5a2ab78a70e7afce1604ea50a361c6d3354295416c4c51db349b8cd8afa02a7",
     "src/modules/uvimtx_rom.c": "5e219312b182bbfbd43795ff8359542e6909be47a6416c4470c8ab071aa0b02c",
@@ -330,8 +330,8 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "fc1756d240257b71d09c9a7db3a90d29790238ce1cfd5d2b41308e0ab4f2f7fa",
-    "docs/VALIDATION_20261006.md": "813b4a868fecb37ed1d1596a619115c73a3e2c19449ab21fc7445ad9c439760c"
+    "docs/STRATEGY_V4.md": "46d15657a4c449e5918d3607e2128ac6c6c1d09733a635859db6f5e25eec508e",
+    "docs/VALIDATION_20261006.md": "720296db827c3400e77eaba00a32b8c612f966acef5d71c44d5e9660fd3f33d3"
   },
   "counts": {
     "address_function": 903,
@@ -339,9 +339,9 @@
     "assembly": 787,
     "audit_debt": 30,
     "conditional_draft": 4,
-    "decompiler_local": 701,
+    "decompiler_local": 697,
     "draft_marker": 25,
-    "explicit_unknown": 1116,
+    "explicit_unknown": 1123,
     "layout_padding": 269,
     "offset_field": 1601,
     "opaque_type": 282,
@@ -19666,7 +19666,7 @@
       "symbol": "__entrypoint_func_uvgfxstate_rom_400000",
       "lines": [
         39,
-        122
+        124
       ],
       "owners": [
         {
@@ -19680,9 +19680,9 @@
         {
           "kind": "function",
           "name": "__entrypoint_func_uvgfxstate_rom_400000",
-          "declaration_line": 122,
+          "declaration_line": 124,
           "lines": [
-            122
+            124
           ]
         }
       ]
@@ -19694,8 +19694,8 @@
       "symbol": "func_uvgfxstate_rom_00400C68",
       "lines": [
         43,
-        251,
-        352
+        253,
+        356
       ],
       "owners": [
         {
@@ -19709,17 +19709,17 @@
         {
           "kind": "function",
           "name": "func_uvgfxstate_rom_00400C68",
-          "declaration_line": 352,
+          "declaration_line": 356,
           "lines": [
-            352
+            356
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxEmitLookAtAndOptionalHilites",
-          "declaration_line": 233,
+          "declaration_line": 235,
           "lines": [
-            251
+            253
           ]
         }
       ]
@@ -61109,24 +61109,24 @@
       "symbol": "D_uvgfxstate_rom_00402C00",
       "lines": [
         13,
-        349,
-        407
+        353,
+        411
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvgfxstate_rom_00400C68",
-          "declaration_line": 352,
+          "declaration_line": 356,
           "lines": [
-            407
+            411
           ]
         },
         {
           "kind": "global",
           "name": "D_uvgfxstate_rom_00402C00",
-          "declaration_line": 349,
+          "declaration_line": 353,
           "lines": [
-            349
+            353
           ]
         }
       ]
@@ -61138,24 +61138,24 @@
       "symbol": "D_uvgfxstate_rom_00402C08",
       "lines": [
         14,
-        350,
-        429
+        354,
+        433
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvgfxstate_rom_00400C68",
-          "declaration_line": 352,
+          "declaration_line": 356,
           "lines": [
-            429
+            433
           ]
         },
         {
           "kind": "global",
           "name": "D_uvgfxstate_rom_00402C08",
-          "declaration_line": 350,
+          "declaration_line": 354,
           "lines": [
-            350
+            354
           ]
         }
       ]
@@ -61167,15 +61167,15 @@
       "symbol": "D_uvgfxstate_rom_00402C40",
       "lines": [
         115,
-        1064
+        1068
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxSetSharedStateWords",
-          "declaration_line": 1062,
+          "declaration_line": 1066,
           "lines": [
-            1064
+            1068
           ]
         },
         {
@@ -61195,116 +61195,116 @@
       "symbol": "D_uvgfxstate_rom_00402C48",
       "lines": [
         37,
-        474,
-        475,
-        492,
-        493,
-        509,
-        638,
-        641,
-        648,
-        724,
-        759,
-        785,
-        818,
+        478,
+        479,
+        496,
+        497,
+        513,
+        642,
+        645,
+        652,
+        728,
+        763,
+        789,
         822,
-        887,
-        890,
+        826,
+        891,
         894,
-        897,
-        904,
-        935,
-        960
+        898,
+        901,
+        908,
+        939,
+        964
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxClearCurrentStateBits",
-          "declaration_line": 488,
+          "declaration_line": 492,
           "lines": [
-            492,
-            493
+            496,
+            497
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxDrawTextureRectangleWithUvRange",
-          "declaration_line": 944,
+          "declaration_line": 948,
           "lines": [
-            960
+            964
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxResetDefaultRenderState",
-          "declaration_line": 775,
+          "declaration_line": 779,
           "lines": [
-            785
+            789
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxResetShadeCombineMode",
-          "declaration_line": 929,
+          "declaration_line": 933,
           "lines": [
-            935
+            939
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxSetCullFaces",
-          "declaration_line": 881,
+          "declaration_line": 885,
           "lines": [
-            887,
-            890,
+            891,
             894,
-            897
+            898,
+            901
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxSetTerrainDepthBufferEnabled",
-          "declaration_line": 811,
+          "declaration_line": 815,
           "lines": [
-            818,
-            822
+            822,
+            826
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxStateBindTexture",
-          "declaration_line": 504,
+          "declaration_line": 508,
           "lines": [
-            509
+            513
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxStateDraw",
-          "declaration_line": 616,
+          "declaration_line": 620,
           "lines": [
-            638,
-            641,
-            648,
-            724,
-            759
+            642,
+            645,
+            652,
+            728,
+            763
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxStatePush",
-          "declaration_line": 902,
+          "declaration_line": 906,
           "lines": [
-            904
+            908
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxStateSetFlags",
-          "declaration_line": 471,
+          "declaration_line": 475,
           "lines": [
-            474,
-            475
+            478,
+            479
           ]
         },
         {
@@ -61324,26 +61324,26 @@
       "symbol": "D_uvgfxstate_rom_00402C4C",
       "lines": [
         101,
-        196,
-        565,
-        569
+        198,
+        569,
+        573
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_uvgfxstate_rom_400000",
-          "declaration_line": 122,
+          "declaration_line": 124,
           "lines": [
-            196
+            198
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxSetSharedStateWord4C",
-          "declaration_line": 563,
+          "declaration_line": 567,
           "lines": [
-            565,
-            569
+            569,
+            573
           ]
         },
         {
@@ -61363,33 +61363,33 @@
       "symbol": "D_uvgfxstate_rom_00402C50",
       "lines": [
         100,
-        197,
-        557,
-        566
+        199,
+        561,
+        570
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_uvgfxstate_rom_400000",
-          "declaration_line": 122,
+          "declaration_line": 124,
           "lines": [
-            197
+            199
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxSetSharedStateWord4C",
-          "declaration_line": 563,
+          "declaration_line": 567,
           "lines": [
-            566
+            570
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxSetSharedStateWord50",
-          "declaration_line": 556,
+          "declaration_line": 560,
           "lines": [
-            557
+            561
           ]
         },
         {
@@ -61409,35 +61409,35 @@
       "symbol": "D_uvgfxstate_rom_00402C54",
       "lines": [
         108,
-        779,
-        787,
-        851,
-        874
+        783,
+        791,
+        855,
+        878
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxGetFogParameters",
-          "declaration_line": 873,
+          "declaration_line": 877,
           "lines": [
-            874
+            878
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxResetDefaultRenderState",
-          "declaration_line": 775,
+          "declaration_line": 779,
           "lines": [
-            779,
-            787
+            783,
+            791
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxSetFogParameters",
-          "declaration_line": 836,
+          "declaration_line": 840,
           "lines": [
-            851
+            855
           ]
         },
         {
@@ -61457,33 +61457,33 @@
       "symbol": "D_uvgfxstate_rom_00402C58",
       "lines": [
         109,
-        787,
-        852,
-        875
+        791,
+        856,
+        879
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxGetFogParameters",
-          "declaration_line": 873,
+          "declaration_line": 877,
           "lines": [
-            875
+            879
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxResetDefaultRenderState",
-          "declaration_line": 775,
+          "declaration_line": 779,
           "lines": [
-            787
+            791
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxSetFogParameters",
-          "declaration_line": 836,
+          "declaration_line": 840,
           "lines": [
-            852
+            856
           ]
         },
         {
@@ -61503,17 +61503,17 @@
       "symbol": "D_uvgfxstate_rom_00402C5C",
       "lines": [
         107,
-        644,
-        647
+        648,
+        651
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxStateDraw",
-          "declaration_line": 616,
+          "declaration_line": 620,
           "lines": [
-            644,
-            647
+            648,
+            651
           ]
         },
         {
@@ -61533,28 +61533,28 @@
       "symbol": "D_uvgfxstate_rom_00402C60",
       "lines": [
         84,
-        255,
-        256,
         257,
-        1073
+        258,
+        259,
+        1077
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxEmitLookAtAndOptionalHilites",
-          "declaration_line": 233,
+          "declaration_line": 235,
           "lines": [
-            255,
-            256,
-            257
+            257,
+            258,
+            259
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxSetHiliteVector",
-          "declaration_line": 1071,
+          "declaration_line": 1075,
           "lines": [
-            1073
+            1077
           ]
         },
         {
@@ -61574,15 +61574,15 @@
       "symbol": "D_uvgfxstate_rom_00402C78",
       "lines": [
         110,
-        784
+        788
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxResetDefaultRenderState",
-          "declaration_line": 775,
+          "declaration_line": 779,
           "lines": [
-            784
+            788
           ]
         },
         {
@@ -61602,24 +61602,24 @@
       "symbol": "D_uvgfxstate_rom_00402D00",
       "lines": [
         97,
-        155,
-        1082
+        157,
+        1086
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_uvgfxstate_rom_400000",
-          "declaration_line": 122,
+          "declaration_line": 124,
           "lines": [
-            155
+            157
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxSync",
-          "declaration_line": 1078,
+          "declaration_line": 1082,
           "lines": [
-            1082
+            1086
           ]
         },
         {
@@ -61639,15 +61639,15 @@
       "symbol": "D_uvgfxstate_rom_00402D04",
       "lines": [
         118,
-        156
+        158
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_uvgfxstate_rom_400000",
-          "declaration_line": 122,
+          "declaration_line": 124,
           "lines": [
-            156
+            158
           ]
         },
         {
@@ -61667,15 +61667,15 @@
       "symbol": "D_uvgfxstate_rom_00402D08",
       "lines": [
         119,
-        157
+        159
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_uvgfxstate_rom_400000",
-          "declaration_line": 122,
+          "declaration_line": 124,
           "lines": [
-            157
+            159
           ]
         },
         {
@@ -61695,15 +61695,15 @@
       "symbol": "D_uvgfxstate_rom_00402D10",
       "lines": [
         120,
-        189
+        191
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_uvgfxstate_rom_400000",
-          "declaration_line": 122,
+          "declaration_line": 124,
           "lines": [
-            189
+            191
           ]
         },
         {
@@ -61723,51 +61723,51 @@
       "symbol": "D_uvgfxstate_rom_00402D14",
       "lines": [
         111,
-        190,
-        644,
-        786,
-        936,
-        1049
+        192,
+        648,
+        790,
+        940,
+        1053
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_uvgfxstate_rom_400000",
-          "declaration_line": 122,
+          "declaration_line": 124,
           "lines": [
-            190
+            192
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxGetPreviousBufferCounter",
-          "declaration_line": 1034,
+          "declaration_line": 1038,
           "lines": [
-            1049
+            1053
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxResetDefaultRenderState",
-          "declaration_line": 775,
+          "declaration_line": 779,
           "lines": [
-            786
+            790
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxResetShadeCombineMode",
-          "declaration_line": 929,
+          "declaration_line": 933,
           "lines": [
-            936
+            940
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxStateDraw",
-          "declaration_line": 616,
+          "declaration_line": 620,
           "lines": [
-            644
+            648
           ]
         },
         {
@@ -61787,24 +61787,24 @@
       "symbol": "D_uvgfxstate_rom_00402D18",
       "lines": [
         112,
-        191,
-        634
+        193,
+        638
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_uvgfxstate_rom_400000",
-          "declaration_line": 122,
+          "declaration_line": 124,
           "lines": [
-            191
+            193
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxStateDraw",
-          "declaration_line": 616,
+          "declaration_line": 620,
           "lines": [
-            634
+            638
           ]
         },
         {
@@ -61824,15 +61824,15 @@
       "symbol": "D_uvgfxstate_rom_00402D2C",
       "lines": [
         116,
-        1063
+        1067
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxSetSharedStateWords",
-          "declaration_line": 1062,
+          "declaration_line": 1066,
           "lines": [
-            1063
+            1067
           ]
         },
         {
@@ -61853,108 +61853,108 @@
       "lines": [
         85,
         98,
-        245,
-        252,
-        253,
-        258,
-        259,
-        264,
-        605,
-        606,
-        607,
-        608,
+        247,
+        254,
+        255,
+        260,
+        261,
+        266,
         609,
-        763,
-        764,
-        765,
-        766,
+        610,
+        611,
+        612,
+        613,
         767,
-        797,
-        798,
-        799,
-        800,
+        768,
+        769,
+        770,
+        771,
         801,
         802,
         803,
-        1037,
-        1039,
+        804,
+        805,
+        806,
+        807,
         1041,
         1043,
         1045,
         1047,
-        1083
+        1049,
+        1051,
+        1087
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxBeginStateFrame",
-          "declaration_line": 794,
+          "declaration_line": 798,
           "lines": [
-            797,
-            798,
-            799,
-            800,
             801,
             802,
-            803
+            803,
+            804,
+            805,
+            806,
+            807
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxDrawStateThroughDepthAndColorPasses",
-          "declaration_line": 577,
+          "declaration_line": 581,
           "lines": [
-            605,
-            606,
-            607,
-            608,
-            609
+            609,
+            610,
+            611,
+            612,
+            613
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxEmitLookAtAndOptionalHilites",
-          "declaration_line": 233,
+          "declaration_line": 235,
           "lines": [
-            245,
-            252,
-            253,
-            258,
-            259,
-            264
+            247,
+            254,
+            255,
+            260,
+            261,
+            266
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxGetPreviousBufferCounter",
-          "declaration_line": 1034,
+          "declaration_line": 1038,
           "lines": [
-            1037,
-            1039,
             1041,
             1043,
             1045,
-            1047
+            1047,
+            1049,
+            1051
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxStateDraw",
-          "declaration_line": 616,
+          "declaration_line": 620,
           "lines": [
-            763,
-            764,
-            765,
-            766,
-            767
+            767,
+            768,
+            769,
+            770,
+            771
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxSync",
-          "declaration_line": 1078,
+          "declaration_line": 1082,
           "lines": [
-            1083
+            1087
           ]
         },
         {
@@ -61982,33 +61982,33 @@
       "symbol": "D_uvgfxstate_rom_00402D38",
       "lines": [
         102,
-        605,
-        763,
-        798
+        609,
+        767,
+        802
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxBeginStateFrame",
-          "declaration_line": 794,
+          "declaration_line": 798,
           "lines": [
-            798
+            802
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxDrawStateThroughDepthAndColorPasses",
-          "declaration_line": 577,
+          "declaration_line": 581,
           "lines": [
-            605
+            609
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxStateDraw",
-          "declaration_line": 616,
+          "declaration_line": 620,
           "lines": [
-            763
+            767
           ]
         },
         {
@@ -62027,24 +62027,24 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402D3C",
       "lines": [
-        1018,
-        1037
+        1022,
+        1041
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxGetPreviousBufferCounter",
-          "declaration_line": 1034,
+          "declaration_line": 1038,
           "lines": [
-            1037
+            1041
           ]
         },
         {
           "kind": "global",
           "name": "D_uvgfxstate_rom_00402D3C",
-          "declaration_line": 1018,
+          "declaration_line": 1022,
           "lines": [
-            1018
+            1022
           ]
         }
       ]
@@ -62056,33 +62056,33 @@
       "symbol": "D_uvgfxstate_rom_00402D40",
       "lines": [
         103,
-        608,
-        766,
-        802
+        612,
+        770,
+        806
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxBeginStateFrame",
-          "declaration_line": 794,
+          "declaration_line": 798,
           "lines": [
-            802
+            806
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxDrawStateThroughDepthAndColorPasses",
-          "declaration_line": 577,
+          "declaration_line": 581,
           "lines": [
-            608
+            612
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxStateDraw",
-          "declaration_line": 616,
+          "declaration_line": 620,
           "lines": [
-            766
+            770
           ]
         },
         {
@@ -62101,24 +62101,24 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402D44",
       "lines": [
-        1019,
-        1039
+        1023,
+        1043
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxGetPreviousBufferCounter",
-          "declaration_line": 1034,
+          "declaration_line": 1038,
           "lines": [
-            1039
+            1043
           ]
         },
         {
           "kind": "global",
           "name": "D_uvgfxstate_rom_00402D44",
-          "declaration_line": 1019,
+          "declaration_line": 1023,
           "lines": [
-            1019
+            1023
           ]
         }
       ]
@@ -62130,33 +62130,33 @@
       "symbol": "D_uvgfxstate_rom_00402D48",
       "lines": [
         104,
-        609,
-        767,
-        803
+        613,
+        771,
+        807
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxBeginStateFrame",
-          "declaration_line": 794,
+          "declaration_line": 798,
           "lines": [
-            803
+            807
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxDrawStateThroughDepthAndColorPasses",
-          "declaration_line": 577,
+          "declaration_line": 581,
           "lines": [
-            609
+            613
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxStateDraw",
-          "declaration_line": 616,
+          "declaration_line": 620,
           "lines": [
-            767
+            771
           ]
         },
         {
@@ -62175,24 +62175,24 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402D4C",
       "lines": [
-        1020,
-        1041
+        1024,
+        1045
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxGetPreviousBufferCounter",
-          "declaration_line": 1034,
+          "declaration_line": 1038,
           "lines": [
-            1041
+            1045
           ]
         },
         {
           "kind": "global",
           "name": "D_uvgfxstate_rom_00402D4C",
-          "declaration_line": 1020,
+          "declaration_line": 1024,
           "lines": [
-            1020
+            1024
           ]
         }
       ]
@@ -62204,33 +62204,33 @@
       "symbol": "D_uvgfxstate_rom_00402D50",
       "lines": [
         105,
-        606,
-        764,
-        799
+        610,
+        768,
+        803
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxBeginStateFrame",
-          "declaration_line": 794,
+          "declaration_line": 798,
           "lines": [
-            799
+            803
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxDrawStateThroughDepthAndColorPasses",
-          "declaration_line": 577,
+          "declaration_line": 581,
           "lines": [
-            606
+            610
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxStateDraw",
-          "declaration_line": 616,
+          "declaration_line": 620,
           "lines": [
-            764
+            768
           ]
         },
         {
@@ -62249,24 +62249,24 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402D54",
       "lines": [
-        1021,
-        1043
+        1025,
+        1047
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxGetPreviousBufferCounter",
-          "declaration_line": 1034,
+          "declaration_line": 1038,
           "lines": [
-            1043
+            1047
           ]
         },
         {
           "kind": "global",
           "name": "D_uvgfxstate_rom_00402D54",
-          "declaration_line": 1021,
+          "declaration_line": 1025,
           "lines": [
-            1021
+            1025
           ]
         }
       ]
@@ -62278,33 +62278,33 @@
       "symbol": "D_uvgfxstate_rom_00402D58",
       "lines": [
         106,
-        607,
-        765,
-        800
+        611,
+        769,
+        804
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxBeginStateFrame",
-          "declaration_line": 794,
+          "declaration_line": 798,
           "lines": [
-            800
+            804
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxDrawStateThroughDepthAndColorPasses",
-          "declaration_line": 577,
+          "declaration_line": 581,
           "lines": [
-            607
+            611
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxStateDraw",
-          "declaration_line": 616,
+          "declaration_line": 620,
           "lines": [
-            765
+            769
           ]
         },
         {
@@ -62323,24 +62323,24 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402D5C",
       "lines": [
-        1022,
-        1045
+        1026,
+        1049
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxGetPreviousBufferCounter",
-          "declaration_line": 1034,
+          "declaration_line": 1038,
           "lines": [
-            1045
+            1049
           ]
         },
         {
           "kind": "global",
           "name": "D_uvgfxstate_rom_00402D5C",
-          "declaration_line": 1022,
+          "declaration_line": 1026,
           "lines": [
-            1022
+            1026
           ]
         }
       ]
@@ -62352,24 +62352,24 @@
       "symbol": "D_uvgfxstate_rom_00402D60",
       "lines": [
         99,
-        801,
-        1083
+        805,
+        1087
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxBeginStateFrame",
-          "declaration_line": 794,
+          "declaration_line": 798,
           "lines": [
-            801
+            805
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxSync",
-          "declaration_line": 1078,
+          "declaration_line": 1082,
           "lines": [
-            1083
+            1087
           ]
         },
         {
@@ -62388,24 +62388,24 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402D64",
       "lines": [
-        1023,
-        1047
+        1027,
+        1051
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxGetPreviousBufferCounter",
-          "declaration_line": 1034,
+          "declaration_line": 1038,
           "lines": [
-            1047
+            1051
           ]
         },
         {
           "kind": "global",
           "name": "D_uvgfxstate_rom_00402D64",
-          "declaration_line": 1023,
+          "declaration_line": 1027,
           "lines": [
-            1023
+            1027
           ]
         }
       ]
@@ -62417,24 +62417,24 @@
       "symbol": "D_uvgfxstate_rom_00402D68",
       "lines": [
         113,
-        904,
-        917
+        908,
+        921
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxStatePop",
-          "declaration_line": 911,
+          "declaration_line": 915,
           "lines": [
-            917
+            921
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxStatePush",
-          "declaration_line": 902,
+          "declaration_line": 906,
           "lines": [
-            904
+            908
           ]
         },
         {
@@ -62454,30 +62454,30 @@
       "symbol": "D_uvgfxstate_rom_00402DE8",
       "lines": [
         114,
-        903,
-        904,
-        915,
-        916,
-        917
+        907,
+        908,
+        919,
+        920,
+        921
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxStatePop",
-          "declaration_line": 911,
+          "declaration_line": 915,
           "lines": [
-            915,
-            916,
-            917
+            919,
+            920,
+            921
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxStatePush",
-          "declaration_line": 902,
+          "declaration_line": 906,
           "lines": [
-            903,
-            904
+            907,
+            908
           ]
         },
         {
@@ -62497,32 +62497,32 @@
       "symbol": "D_uvgfxstate_rom_00402DEC",
       "lines": [
         86,
-        162,
-        167,
+        164,
         169,
-        180,
-        181,
-        240
+        171,
+        182,
+        183,
+        242
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_uvgfxstate_rom_400000",
-          "declaration_line": 122,
+          "declaration_line": 124,
           "lines": [
-            162,
-            167,
+            164,
             169,
-            180,
-            181
+            171,
+            182,
+            183
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxEmitLookAtAndOptionalHilites",
-          "declaration_line": 233,
+          "declaration_line": 235,
           "lines": [
-            240
+            242
           ]
         },
         {
@@ -62542,32 +62542,32 @@
       "symbol": "D_uvgfxstate_rom_00402DF0",
       "lines": [
         87,
-        240,
-        245,
-        252,
-        264,
-        265,
-        795
+        242,
+        247,
+        254,
+        266,
+        267,
+        799
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxBeginStateFrame",
-          "declaration_line": 794,
+          "declaration_line": 798,
           "lines": [
-            795
+            799
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxEmitLookAtAndOptionalHilites",
-          "declaration_line": 233,
+          "declaration_line": 235,
           "lines": [
-            240,
-            245,
-            252,
-            264,
-            265
+            242,
+            247,
+            254,
+            266,
+            267
           ]
         },
         {
@@ -62587,28 +62587,28 @@
       "symbol": "D_uvgfxstate_rom_00402DF8",
       "lines": [
         88,
-        181,
-        245,
-        252,
-        264
+        183,
+        247,
+        254,
+        266
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_uvgfxstate_rom_400000",
-          "declaration_line": 122,
+          "declaration_line": 124,
           "lines": [
-            181
+            183
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxEmitLookAtAndOptionalHilites",
-          "declaration_line": 233,
+          "declaration_line": 235,
           "lines": [
-            245,
-            252,
-            264
+            247,
+            254,
+            266
           ]
         },
         {
@@ -62628,34 +62628,34 @@
       "symbol": "D_uvgfxstate_rom_00402E00",
       "lines": [
         89,
-        163,
-        164,
-        173,
+        165,
+        166,
         175,
-        183,
-        184,
-        250
+        177,
+        185,
+        186,
+        252
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_uvgfxstate_rom_400000",
-          "declaration_line": 122,
+          "declaration_line": 124,
           "lines": [
-            163,
-            164,
-            173,
+            165,
+            166,
             175,
-            183,
-            184
+            177,
+            185,
+            186
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxEmitLookAtAndOptionalHilites",
-          "declaration_line": 233,
+          "declaration_line": 235,
           "lines": [
-            250
+            252
           ]
         },
         {
@@ -62675,32 +62675,32 @@
       "symbol": "D_uvgfxstate_rom_00402E04",
       "lines": [
         90,
-        250,
-        253,
-        258,
-        259,
+        252,
+        255,
         260,
-        796
+        261,
+        262,
+        800
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxBeginStateFrame",
-          "declaration_line": 794,
+          "declaration_line": 798,
           "lines": [
-            796
+            800
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxEmitLookAtAndOptionalHilites",
-          "declaration_line": 233,
+          "declaration_line": 235,
           "lines": [
-            250,
-            253,
-            258,
-            259,
-            260
+            252,
+            255,
+            260,
+            261,
+            262
           ]
         },
         {
@@ -62720,28 +62720,28 @@
       "symbol": "D_uvgfxstate_rom_00402E08",
       "lines": [
         91,
-        184,
-        253,
-        258,
-        259
+        186,
+        255,
+        260,
+        261
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_uvgfxstate_rom_400000",
-          "declaration_line": 122,
+          "declaration_line": 124,
           "lines": [
-            184
+            186
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxEmitLookAtAndOptionalHilites",
-          "declaration_line": 233,
+          "declaration_line": 235,
           "lines": [
-            253,
-            258,
-            259
+            255,
+            260,
+            261
           ]
         },
         {
@@ -81864,7 +81864,7 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "func_uvgfxstate_rom_00400C68",
       "lines": [
-        466
+        470
       ],
       "evidence": "asm/us/nonmatchings/modules/uvgfxstate_rom/func_uvgfxstate_rom_00400C68.s"
     },
@@ -98695,34 +98695,7 @@
         72,
         73,
         75,
-        271,
-        323,
-        324,
-        325,
-        327,
-        328,
-        329,
-        330,
-        331,
-        332,
-        333,
-        334,
-        335,
-        336,
-        337,
-        338,
-        339,
-        340,
-        341,
-        342,
-        343,
-        344,
-        345,
-        352,
-        442,
-        443,
-        444,
-        445,
+        356,
         446,
         447,
         448,
@@ -98740,7 +98713,11 @@
         460,
         461,
         462,
-        463
+        463,
+        464,
+        465,
+        466,
+        467
       ],
       "owners": [
         {
@@ -98754,13 +98731,9 @@
         {
           "kind": "function",
           "name": "func_uvgfxstate_rom_00400C68",
-          "declaration_line": 352,
+          "declaration_line": 356,
           "lines": [
-            352,
-            442,
-            443,
-            444,
-            445,
+            356,
             446,
             447,
             448,
@@ -98778,7 +98751,11 @@
             460,
             461,
             462,
-            463
+            463,
+            464,
+            465,
+            466,
+            467
           ]
         },
         {
@@ -98795,36 +98772,6 @@
           "declaration_line": 41,
           "lines": [
             41
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvGfxClampLook",
-          "declaration_line": 271,
-          "lines": [
-            271,
-            323,
-            324,
-            325,
-            327,
-            328,
-            329,
-            330,
-            331,
-            332,
-            333,
-            334,
-            335,
-            336,
-            337,
-            338,
-            339,
-            340,
-            341,
-            342,
-            343,
-            344,
-            345
           ]
         },
         {
@@ -98977,17 +98924,15 @@
         72,
         73,
         75,
-        271,
-        281,
-        352,
-        412,
-        413,
-        415,
+        356,
         416,
-        434,
-        435,
-        437,
-        438
+        417,
+        419,
+        420,
+        438,
+        439,
+        441,
+        442
       ],
       "owners": [
         {
@@ -99001,17 +98946,17 @@
         {
           "kind": "function",
           "name": "func_uvgfxstate_rom_00400C68",
-          "declaration_line": 352,
+          "declaration_line": 356,
           "lines": [
-            352,
-            412,
-            413,
-            415,
+            356,
             416,
-            434,
-            435,
-            437,
-            438
+            417,
+            419,
+            420,
+            438,
+            439,
+            441,
+            442
           ]
         },
         {
@@ -99020,15 +98965,6 @@
           "declaration_line": 41,
           "lines": [
             41
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvGfxClampLook",
-          "declaration_line": 271,
-          "lines": [
-            271,
-            281
           ]
         },
         {
@@ -99136,15 +99072,15 @@
       "symbol": "arg10",
       "lines": [
         44,
-        352,
-        378,
-        379,
-        390,
-        392,
-        395,
-        413,
-        435,
-        447
+        356,
+        382,
+        383,
+        394,
+        396,
+        399,
+        417,
+        439,
+        451
       ],
       "owners": [
         {
@@ -99158,17 +99094,17 @@
         {
           "kind": "function",
           "name": "func_uvgfxstate_rom_00400C68",
-          "declaration_line": 352,
+          "declaration_line": 356,
           "lines": [
-            352,
-            378,
-            379,
-            390,
-            392,
-            395,
-            413,
-            435,
-            447
+            356,
+            382,
+            383,
+            394,
+            396,
+            399,
+            417,
+            439,
+            451
           ]
         }
       ]
@@ -99180,10 +99116,10 @@
       "symbol": "arg11",
       "lines": [
         44,
-        352,
-        397,
-        398,
-        402
+        356,
+        401,
+        402,
+        406
       ],
       "owners": [
         {
@@ -99197,12 +99133,12 @@
         {
           "kind": "function",
           "name": "func_uvgfxstate_rom_00400C68",
-          "declaration_line": 352,
+          "declaration_line": 356,
           "lines": [
-            352,
-            397,
-            398,
-            402
+            356,
+            401,
+            402,
+            406
           ]
         }
       ]
@@ -99214,10 +99150,10 @@
       "symbol": "arg12",
       "lines": [
         45,
-        352,
-        397,
-        399,
-        403
+        356,
+        401,
+        403,
+        407
       ],
       "owners": [
         {
@@ -99231,12 +99167,12 @@
         {
           "kind": "function",
           "name": "func_uvgfxstate_rom_00400C68",
-          "declaration_line": 352,
+          "declaration_line": 356,
           "lines": [
-            352,
-            397,
-            399,
-            403
+            356,
+            401,
+            403,
+            407
           ]
         }
       ]
@@ -99248,10 +99184,10 @@
       "symbol": "arg13",
       "lines": [
         45,
-        352,
-        397,
-        400,
-        404
+        356,
+        401,
+        404,
+        408
       ],
       "owners": [
         {
@@ -99265,12 +99201,12 @@
         {
           "kind": "function",
           "name": "func_uvgfxstate_rom_00400C68",
-          "declaration_line": 352,
+          "declaration_line": 356,
           "lines": [
-            352,
-            397,
-            400,
-            404
+            356,
+            401,
+            404,
+            408
           ]
         }
       ]
@@ -99282,10 +99218,10 @@
       "symbol": "arg14",
       "lines": [
         45,
-        352,
-        418,
-        420,
-        424
+        356,
+        422,
+        424,
+        428
       ],
       "owners": [
         {
@@ -99299,12 +99235,12 @@
         {
           "kind": "function",
           "name": "func_uvgfxstate_rom_00400C68",
-          "declaration_line": 352,
+          "declaration_line": 356,
           "lines": [
-            352,
-            418,
-            420,
-            424
+            356,
+            422,
+            424,
+            428
           ]
         }
       ]
@@ -99316,10 +99252,10 @@
       "symbol": "arg15",
       "lines": [
         45,
-        352,
-        418,
-        421,
-        425
+        356,
+        422,
+        425,
+        429
       ],
       "owners": [
         {
@@ -99333,12 +99269,12 @@
         {
           "kind": "function",
           "name": "func_uvgfxstate_rom_00400C68",
-          "declaration_line": 352,
+          "declaration_line": 356,
           "lines": [
-            352,
-            418,
-            421,
-            425
+            356,
+            422,
+            425,
+            429
           ]
         }
       ]
@@ -99350,10 +99286,10 @@
       "symbol": "arg16",
       "lines": [
         45,
-        352,
-        418,
+        356,
         422,
-        426
+        426,
+        430
       ],
       "owners": [
         {
@@ -99367,12 +99303,12 @@
         {
           "kind": "function",
           "name": "func_uvgfxstate_rom_00400C68",
-          "declaration_line": 352,
+          "declaration_line": 356,
           "lines": [
-            352,
-            418,
+            356,
             422,
-            426
+            426,
+            430
           ]
         }
       ]
@@ -99384,11 +99320,11 @@
       "symbol": "arg17",
       "lines": [
         45,
-        352,
-        412,
-        415,
-        434,
-        437
+        356,
+        416,
+        419,
+        438,
+        441
       ],
       "owners": [
         {
@@ -99402,13 +99338,13 @@
         {
           "kind": "function",
           "name": "func_uvgfxstate_rom_00400C68",
-          "declaration_line": 352,
+          "declaration_line": 356,
           "lines": [
-            352,
-            412,
-            415,
-            434,
-            437
+            356,
+            416,
+            419,
+            438,
+            441
           ]
         }
       ]
@@ -99420,11 +99356,11 @@
       "symbol": "arg18",
       "lines": [
         46,
-        352,
-        413,
-        416,
-        435,
-        438
+        356,
+        417,
+        420,
+        439,
+        442
       ],
       "owners": [
         {
@@ -99438,13 +99374,13 @@
         {
           "kind": "function",
           "name": "func_uvgfxstate_rom_00400C68",
-          "declaration_line": 352,
+          "declaration_line": 356,
           "lines": [
-            352,
-            413,
-            416,
-            435,
-            438
+            356,
+            417,
+            420,
+            439,
+            442
           ]
         }
       ]
@@ -99459,10 +99395,8 @@
         43,
         57,
         75,
-        271,
-        282,
-        352,
-        369
+        356,
+        373
       ],
       "owners": [
         {
@@ -99476,10 +99410,10 @@
         {
           "kind": "function",
           "name": "func_uvgfxstate_rom_00400C68",
-          "declaration_line": 352,
+          "declaration_line": 356,
           "lines": [
-            352,
-            369
+            356,
+            373
           ]
         },
         {
@@ -99488,15 +99422,6 @@
           "declaration_line": 41,
           "lines": [
             41
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvGfxClampLook",
-          "declaration_line": 271,
-          "lines": [
-            271,
-            282
           ]
         },
         {
@@ -99526,10 +99451,8 @@
         41,
         43,
         75,
-        271,
-        283,
-        352,
-        370
+        356,
+        374
       ],
       "owners": [
         {
@@ -99543,10 +99466,10 @@
         {
           "kind": "function",
           "name": "func_uvgfxstate_rom_00400C68",
-          "declaration_line": 352,
+          "declaration_line": 356,
           "lines": [
-            352,
-            370
+            356,
+            374
           ]
         },
         {
@@ -99555,15 +99478,6 @@
           "declaration_line": 41,
           "lines": [
             41
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvGfxClampLook",
-          "declaration_line": 271,
-          "lines": [
-            271,
-            283
           ]
         },
         {
@@ -99585,10 +99499,8 @@
         41,
         43,
         75,
-        271,
-        281,
-        352,
-        371
+        356,
+        375
       ],
       "owners": [
         {
@@ -99602,10 +99514,10 @@
         {
           "kind": "function",
           "name": "func_uvgfxstate_rom_00400C68",
-          "declaration_line": 352,
+          "declaration_line": 356,
           "lines": [
-            352,
-            371
+            356,
+            375
           ]
         },
         {
@@ -99614,15 +99526,6 @@
           "declaration_line": 41,
           "lines": [
             41
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvGfxClampLook",
-          "declaration_line": 271,
-          "lines": [
-            271,
-            281
           ]
         },
         {
@@ -99644,10 +99547,8 @@
         41,
         43,
         75,
-        271,
-        282,
-        352,
-        369
+        356,
+        373
       ],
       "owners": [
         {
@@ -99661,10 +99562,10 @@
         {
           "kind": "function",
           "name": "func_uvgfxstate_rom_00400C68",
-          "declaration_line": 352,
+          "declaration_line": 356,
           "lines": [
-            352,
-            369
+            356,
+            373
           ]
         },
         {
@@ -99673,15 +99574,6 @@
           "declaration_line": 41,
           "lines": [
             41
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvGfxClampLook",
-          "declaration_line": 271,
-          "lines": [
-            271,
-            282
           ]
         },
         {
@@ -99703,10 +99595,8 @@
         41,
         44,
         75,
-        271,
-        283,
-        352,
-        370
+        356,
+        374
       ],
       "owners": [
         {
@@ -99720,10 +99610,10 @@
         {
           "kind": "function",
           "name": "func_uvgfxstate_rom_00400C68",
-          "declaration_line": 352,
+          "declaration_line": 356,
           "lines": [
-            352,
-            370
+            356,
+            374
           ]
         },
         {
@@ -99732,15 +99622,6 @@
           "declaration_line": 41,
           "lines": [
             41
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvGfxClampLook",
-          "declaration_line": 271,
-          "lines": [
-            271,
-            283
           ]
         },
         {
@@ -99762,15 +99643,8 @@
         41,
         44,
         76,
-        271,
-        296,
-        297,
-        309,
-        313,
-        319,
-        327,
-        352,
-        371
+        356,
+        375
       ],
       "owners": [
         {
@@ -99784,10 +99658,10 @@
         {
           "kind": "function",
           "name": "func_uvgfxstate_rom_00400C68",
-          "declaration_line": 352,
+          "declaration_line": 356,
           "lines": [
-            352,
-            371
+            356,
+            375
           ]
         },
         {
@@ -99796,20 +99670,6 @@
           "declaration_line": 41,
           "lines": [
             41
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvGfxClampLook",
-          "declaration_line": 271,
-          "lines": [
-            271,
-            296,
-            297,
-            309,
-            313,
-            319,
-            327
           ]
         },
         {
@@ -99830,22 +99690,15 @@
       "lines": [
         42,
         44,
-        272,
-        295,
-        297,
-        310,
-        313,
-        320,
-        328,
-        352,
-        379,
-        380,
-        388,
+        356,
+        383,
+        384,
         392,
-        393,
-        413,
-        435,
-        445
+        396,
+        397,
+        417,
+        439,
+        449
       ],
       "owners": [
         {
@@ -99859,17 +99712,17 @@
         {
           "kind": "function",
           "name": "func_uvgfxstate_rom_00400C68",
-          "declaration_line": 352,
+          "declaration_line": 356,
           "lines": [
-            352,
-            379,
-            380,
-            388,
+            356,
+            383,
+            384,
             392,
-            393,
-            413,
-            435,
-            445
+            396,
+            397,
+            417,
+            439,
+            449
           ]
         },
         {
@@ -99878,20 +99731,6 @@
           "declaration_line": 41,
           "lines": [
             42
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvGfxClampLook",
-          "declaration_line": 271,
-          "lines": [
-            272,
-            295,
-            297,
-            310,
-            313,
-            320,
-            328
           ]
         }
       ]
@@ -99904,22 +99743,15 @@
       "lines": [
         42,
         44,
-        272,
-        295,
-        296,
-        311,
-        313,
-        321,
-        329,
-        352,
-        378,
-        380,
-        389,
-        392,
-        394,
-        413,
-        435,
-        446
+        356,
+        382,
+        384,
+        393,
+        396,
+        398,
+        417,
+        439,
+        450
       ],
       "owners": [
         {
@@ -99933,17 +99765,17 @@
         {
           "kind": "function",
           "name": "func_uvgfxstate_rom_00400C68",
-          "declaration_line": 352,
+          "declaration_line": 356,
           "lines": [
-            352,
-            378,
-            380,
-            389,
-            392,
-            394,
-            413,
-            435,
-            446
+            356,
+            382,
+            384,
+            393,
+            396,
+            398,
+            417,
+            439,
+            450
           ]
         },
         {
@@ -99952,20 +99784,6 @@
           "declaration_line": 41,
           "lines": [
             42
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvGfxClampLook",
-          "declaration_line": 271,
-          "lines": [
-            272,
-            295,
-            296,
-            311,
-            313,
-            321,
-            329
           ]
         }
       ]
@@ -99976,48 +99794,27 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "sp44",
       "lines": [
-        279,
-        297,
-        299,
-        307,
-        309,
-        310,
-        325,
-        366,
-        404,
-        406,
-        411,
-        426,
-        428,
-        433
+        370,
+        408,
+        410,
+        415,
+        430,
+        432,
+        437
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvgfxstate_rom_00400C68",
-          "declaration_line": 352,
+          "declaration_line": 356,
           "lines": [
-            366,
-            404,
-            406,
-            411,
-            426,
-            428,
-            433
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvGfxClampLook",
-          "declaration_line": 271,
-          "lines": [
-            279,
-            297,
-            299,
-            307,
-            309,
-            310,
-            325
+            370,
+            408,
+            410,
+            415,
+            430,
+            432,
+            437
           ]
         }
       ]
@@ -100028,48 +99825,27 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "sp48",
       "lines": [
-        278,
-        296,
-        299,
-        306,
-        309,
-        311,
-        324,
-        365,
-        403,
-        406,
+        369,
+        407,
         410,
-        425,
-        428,
-        432
+        414,
+        429,
+        432,
+        436
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvgfxstate_rom_00400C68",
-          "declaration_line": 352,
+          "declaration_line": 356,
           "lines": [
-            365,
-            403,
-            406,
+            369,
+            407,
             410,
-            425,
-            428,
-            432
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvGfxClampLook",
-          "declaration_line": 271,
-          "lines": [
-            278,
-            296,
-            299,
-            306,
-            309,
-            311,
-            324
+            414,
+            429,
+            432,
+            436
           ]
         }
       ]
@@ -100080,147 +99856,27 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "sp4C",
       "lines": [
-        277,
-        295,
-        299,
-        305,
-        310,
-        311,
-        323,
-        364,
-        402,
+        368,
         406,
-        409,
-        424,
+        410,
+        413,
         428,
-        431
+        432,
+        435
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvgfxstate_rom_00400C68",
-          "declaration_line": 352,
+          "declaration_line": 356,
           "lines": [
-            364,
-            402,
+            368,
             406,
-            409,
-            424,
+            410,
+            413,
             428,
-            431
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvGfxClampLook",
-          "declaration_line": 271,
-          "lines": [
-            277,
-            295,
-            299,
-            305,
-            310,
-            311,
-            323
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-d0d29e05b7a8",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvgfxstate_rom.c",
-      "symbol": "sp50",
-      "lines": [
-        276,
-        283,
-        285,
-        293,
-        295,
-        296,
-        309,
-        310
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvGfxClampLook",
-          "declaration_line": 271,
-          "lines": [
-            276,
-            283,
-            285,
-            293,
-            295,
-            296,
-            309,
-            310
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-643dc36481c2",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvgfxstate_rom.c",
-      "symbol": "sp54",
-      "lines": [
-        275,
-        282,
-        285,
-        292,
-        295,
-        297,
-        309,
-        311
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvGfxClampLook",
-          "declaration_line": 271,
-          "lines": [
-            275,
-            282,
-            285,
-            292,
-            295,
-            297,
-            309,
-            311
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-fd4f90bf0969",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvgfxstate_rom.c",
-      "symbol": "sp58",
-      "lines": [
-        274,
-        281,
-        285,
-        291,
-        296,
-        297,
-        310,
-        311
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvGfxClampLook",
-          "declaration_line": 271,
-          "lines": [
-            274,
-            281,
-            285,
-            291,
-            296,
-            297,
-            310,
-            311
+            432,
+            435
           ]
         }
       ]
@@ -100231,31 +99887,31 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "sp6C",
       "lines": [
-        359,
-        380,
-        382,
+        363,
+        384,
         386,
-        388,
-        389,
-        412,
-        434,
-        444
+        390,
+        392,
+        393,
+        416,
+        438,
+        448
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvgfxstate_rom_00400C68",
-          "declaration_line": 352,
+          "declaration_line": 356,
           "lines": [
-            359,
-            380,
-            382,
+            363,
+            384,
             386,
-            388,
-            389,
-            412,
-            434,
-            444
+            390,
+            392,
+            393,
+            416,
+            438,
+            448
           ]
         }
       ]
@@ -100266,31 +99922,31 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "sp70",
       "lines": [
-        358,
-        379,
-        382,
-        385,
-        388,
-        390,
-        412,
-        434,
-        443
+        362,
+        383,
+        386,
+        389,
+        392,
+        394,
+        416,
+        438,
+        447
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvgfxstate_rom_00400C68",
-          "declaration_line": 352,
+          "declaration_line": 356,
           "lines": [
-            358,
-            379,
-            382,
-            385,
-            388,
-            390,
-            412,
-            434,
-            443
+            362,
+            383,
+            386,
+            389,
+            392,
+            394,
+            416,
+            438,
+            447
           ]
         }
       ]
@@ -100301,31 +99957,31 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "sp74",
       "lines": [
-        357,
-        378,
+        361,
         382,
-        384,
-        389,
-        390,
-        412,
-        434,
-        442
+        386,
+        388,
+        393,
+        394,
+        416,
+        438,
+        446
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvgfxstate_rom_00400C68",
-          "declaration_line": 352,
+          "declaration_line": 356,
           "lines": [
-            357,
-            378,
+            361,
             382,
-            384,
-            389,
-            390,
-            412,
-            434,
-            442
+            386,
+            388,
+            393,
+            394,
+            416,
+            438,
+            446
           ]
         }
       ]
@@ -100336,40 +99992,40 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "temp_fa0",
       "lines": [
-        353,
-        408,
-        409,
-        410,
-        411,
-        430,
-        431,
-        432,
-        433,
-        946
+        357,
+        412,
+        413,
+        414,
+        415,
+        434,
+        435,
+        436,
+        437,
+        950
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvgfxstate_rom_00400C68",
-          "declaration_line": 352,
+          "declaration_line": 356,
           "lines": [
-            353,
-            408,
-            409,
-            410,
-            411,
-            430,
-            431,
-            432,
-            433
+            357,
+            412,
+            413,
+            414,
+            415,
+            434,
+            435,
+            436,
+            437
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxDrawTextureRectangleWithUvRange",
-          "declaration_line": 944,
+          "declaration_line": 948,
           "lines": [
-            946
+            950
           ]
         }
       ]
@@ -100380,27 +100036,27 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "temp_fa1_3",
       "lines": [
-        354,
-        409,
-        412,
+        358,
         413,
-        431,
-        434,
-        435
+        416,
+        417,
+        435,
+        438,
+        439
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvgfxstate_rom_00400C68",
-          "declaration_line": 352,
+          "declaration_line": 356,
           "lines": [
-            354,
-            409,
-            412,
+            358,
             413,
-            431,
-            434,
-            435
+            416,
+            417,
+            435,
+            438,
+            439
           ]
         }
       ]
@@ -100411,33 +100067,33 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "temp_fs1",
       "lines": [
-        355,
-        369,
+        359,
         373,
-        374,
-        379,
-        380,
-        389,
-        390,
-        402,
-        424
+        377,
+        378,
+        383,
+        384,
+        393,
+        394,
+        406,
+        428
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvgfxstate_rom_00400C68",
-          "declaration_line": 352,
+          "declaration_line": 356,
           "lines": [
-            355,
-            369,
+            359,
             373,
-            374,
-            379,
-            380,
-            389,
-            390,
-            402,
-            424
+            377,
+            378,
+            383,
+            384,
+            393,
+            394,
+            406,
+            428
           ]
         }
       ]
@@ -100448,33 +100104,33 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "temp_fs2",
       "lines": [
-        356,
-        370,
-        373,
-        375,
-        378,
-        380,
-        388,
-        390,
-        403,
-        425
+        360,
+        374,
+        377,
+        379,
+        382,
+        384,
+        392,
+        394,
+        407,
+        429
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvgfxstate_rom_00400C68",
-          "declaration_line": 352,
+          "declaration_line": 356,
           "lines": [
-            356,
-            370,
-            373,
-            375,
-            378,
-            380,
-            388,
-            390,
-            403,
-            425
+            360,
+            374,
+            377,
+            379,
+            382,
+            384,
+            392,
+            394,
+            407,
+            429
           ]
         }
       ]
@@ -100485,33 +100141,33 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "temp_fs3",
       "lines": [
-        360,
-        371,
-        373,
-        376,
-        378,
-        379,
-        388,
-        389,
-        404,
-        426
+        364,
+        375,
+        377,
+        380,
+        382,
+        383,
+        392,
+        393,
+        408,
+        430
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvgfxstate_rom_00400C68",
-          "declaration_line": 352,
+          "declaration_line": 356,
           "lines": [
-            360,
-            371,
-            373,
-            376,
-            378,
-            379,
-            388,
-            389,
-            404,
-            426
+            364,
+            375,
+            377,
+            380,
+            382,
+            383,
+            392,
+            393,
+            408,
+            430
           ]
         }
       ]
@@ -100522,15 +100178,15 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "temp_ft4",
       "lines": [
-        947
+        951
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxDrawTextureRectangleWithUvRange",
-          "declaration_line": 944,
+          "declaration_line": 948,
           "lines": [
-            947
+            951
           ]
         }
       ]
@@ -100541,27 +100197,27 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "temp_ft4_3",
       "lines": [
-        361,
-        410,
-        412,
-        413,
-        432,
-        434,
-        435
+        365,
+        414,
+        416,
+        417,
+        436,
+        438,
+        439
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvgfxstate_rom_00400C68",
-          "declaration_line": 352,
+          "declaration_line": 356,
           "lines": [
-            361,
-            410,
-            412,
-            413,
-            432,
-            434,
-            435
+            365,
+            414,
+            416,
+            417,
+            436,
+            438,
+            439
           ]
         }
       ]
@@ -100572,27 +100228,27 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "temp_ft5_3",
       "lines": [
-        362,
-        411,
-        412,
-        413,
-        433,
-        434,
-        435
+        366,
+        415,
+        416,
+        417,
+        437,
+        438,
+        439
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvgfxstate_rom_00400C68",
-          "declaration_line": 352,
+          "declaration_line": 356,
           "lines": [
-            362,
-            411,
-            412,
-            413,
-            433,
-            434,
-            435
+            366,
+            415,
+            416,
+            417,
+            437,
+            438,
+            439
           ]
         }
       ]
@@ -100603,98 +100259,67 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "temp_fv1",
       "lines": [
-        367,
-        373,
-        374,
-        375,
-        376,
-        382,
-        384,
-        385,
+        371,
+        377,
+        378,
+        379,
+        380,
         386,
-        392,
-        393,
-        394,
-        395,
+        388,
+        389,
+        390,
+        396,
         397,
         398,
         399,
-        400,
-        406,
-        407,
-        408,
-        418,
-        420,
-        421,
+        401,
+        402,
+        403,
+        404,
+        410,
+        411,
+        412,
         422,
-        428,
-        429,
-        430
+        424,
+        425,
+        426,
+        432,
+        433,
+        434
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvgfxstate_rom_00400C68",
-          "declaration_line": 352,
+          "declaration_line": 356,
           "lines": [
-            367,
-            373,
-            374,
-            375,
-            376,
-            382,
-            384,
-            385,
+            371,
+            377,
+            378,
+            379,
+            380,
             386,
-            392,
-            393,
-            394,
-            395,
+            388,
+            389,
+            390,
+            396,
             397,
             398,
             399,
-            400,
-            406,
-            407,
-            408,
-            418,
-            420,
-            421,
+            401,
+            402,
+            403,
+            404,
+            410,
+            411,
+            412,
             422,
-            428,
-            429,
-            430
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-ad04fc38d11d",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvgfxstate_rom.c",
-      "symbol": "temp_v0",
-      "lines": [
-        124,
-        159,
-        161,
-        166,
-        167,
-        172,
-        173
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "__entrypoint_func_uvgfxstate_rom_400000",
-          "declaration_line": 122,
-          "lines": [
-            124,
-            159,
-            161,
-            166,
-            167,
-            172,
-            173
+            424,
+            425,
+            426,
+            432,
+            433,
+            434
           ]
         }
       ]
@@ -116809,16 +116434,16 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "FAKE",
       "lines": [
-        163
+        165
       ],
-      "evidence": "FAKE",
+      "evidence": "FAKE; RE_UNKNOWN: historical source/scaffold shape is unproved; retain exact lowering.",
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_uvgfxstate_rom_400000",
-          "declaration_line": 122,
+          "declaration_line": 124,
           "lines": [
-            163
+            165
           ]
         }
       ]
@@ -133876,16 +133501,56 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "Clamp both fog controls to [0, 1] and retain their shared values. * A positive first control enables fog and derives the display-list * multiplier from 255 * secondControl / (1 - firstControl), clamped to * the original coefficient limits; zero disables fog geometry mode. * RE_UNKNOWN: the two controls' physical interpretation and caller domain. * Trace original STAT export0x44 callers and the paired export0x48 getter * before describing these controls as world-space near/far distances.",
       "lines": [
-        829
+        833
       ],
       "evidence": "Clamp both fog controls to [0, 1] and retain their shared values. * A positive first control enables fog and derives the display-list * multiplier from 255 * secondControl / (1 - firstControl), clamped to * the original coefficient limits; zero disables fog geometry mode. * RE_UNKNOWN: the two controls' physical interpretation and caller domain. * Trace original STAT export0x44 callers and the paired export0x48 getter * before describing these controls as world-space near/far distances.",
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxSetFogParameters",
-          "declaration_line": 836,
+          "declaration_line": 840,
           "lines": [
-            829
+            833
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-a55719bc8438",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvgfxstate_rom.c",
+      "symbol": "FAKE; RE_UNKNOWN: historical source/scaffold shape is unproved; retain exact lowering.",
+      "lines": [
+        165
+      ],
+      "evidence": "FAKE; RE_UNKNOWN: historical source/scaffold shape is unproved; retain exact lowering.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_uvgfxstate_rom_400000",
+          "declaration_line": 124,
+          "lines": [
+            165
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-b884338c73bb",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvgfxstate_rom.c",
+      "symbol": "Keep all eight provider loads in order; RE_UNKNOWN: replacement/export lifetimes need module-loader/caller proof.",
+      "lines": [
+        190
+      ],
+      "evidence": "Keep all eight provider loads in order; RE_UNKNOWN: replacement/export lifetimes need module-loader/caller proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_uvgfxstate_rom_400000",
+          "declaration_line": 124,
+          "lines": [
+            190
           ]
         }
       ]
@@ -133896,16 +133561,16 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "Keep signed halfword contributions and fresh buffer-index loads; RE_UNKNOWN: counter units/index/overflow domains need writer/consumer proof.",
       "lines": [
-        763
+        767
       ],
       "evidence": "Keep signed halfword contributions and fresh buffer-index loads; RE_UNKNOWN: counter units/index/overflow domains need writer/consumer proof.",
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxStateDraw",
-          "declaration_line": 616,
+          "declaration_line": 620,
           "lines": [
-            763
+            767
           ]
         }
       ]
@@ -133916,16 +133581,16 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "Keep the pre-callback snapshot and later member/cache reloads; RE_UNKNOWN: callback mutation and cache coherence need writer/caller proof.",
       "lines": [
-        627
+        631
       ],
       "evidence": "Keep the pre-callback snapshot and later member/cache reloads; RE_UNKNOWN: callback mutation and cache coherence need writer/caller proof.",
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxStateDraw",
-          "declaration_line": 616,
+          "declaration_line": 620,
           "lines": [
-            627
+            631
           ]
         }
       ]
@@ -133936,16 +133601,16 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "LGHT slot04 validates/caches the signed member+0C record selector; RE_UNKNOWN: record/storage domains need caller/allocation proof.",
       "lines": [
-        634
+        638
       ],
       "evidence": "LGHT slot04 validates/caches the signed member+0C record selector; RE_UNKNOWN: record/storage domains need caller/allocation proof.",
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxStateDraw",
-          "declaration_line": 616,
+          "declaration_line": 620,
           "lines": [
-            634
+            638
           ]
         }
       ]
@@ -133956,16 +133621,16 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "On a low-twelve-bit ID match, OR the unmasked new ID into retained high bits; RE_UNKNOWN: caller ID domain needs original callers.",
       "lines": [
-        536
+        540
       ],
       "evidence": "On a low-twelve-bit ID match, OR the unmasked new ID into retained high bits; RE_UNKNOWN: caller ID domain needs original callers.",
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxStateReplaceTextureId",
-          "declaration_line": 537,
+          "declaration_line": 541,
           "lines": [
-            536
+            540
           ]
         }
       ]
@@ -133976,16 +133641,16 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "RE_UNKNOWN: display-list extent/lifetime and cursor capacity require allocation/caller proof.",
       "lines": [
-        761
+        765
       ],
       "evidence": "RE_UNKNOWN: display-list extent/lifetime and cursor capacity require allocation/caller proof.",
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxStateDraw",
-          "declaration_line": 616,
+          "declaration_line": 620,
           "lines": [
-            761
+            765
           ]
         }
       ]
@@ -133996,16 +133661,96 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "RE_UNKNOWN: retain unused storage; historical declarations remain unproved.",
       "lines": [
-        617
+        621
       ],
       "evidence": "RE_UNKNOWN: retain unused storage; historical declarations remain unproved.",
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxStateDraw",
-          "declaration_line": 616,
+          "declaration_line": 620,
           "lines": [
-            617
+            621
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-81675ef5669b",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvgfxstate_rom.c",
+      "symbol": "RE_UNKNOWN: scaled sizes, allocation failure, storage extent/lifetime need allocator/caller proof.",
+      "lines": [
+        183
+      ],
+      "evidence": "RE_UNKNOWN: scaled sizes, allocation failure, storage extent/lifetime need allocator/caller proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_uvgfxstate_rom_400000",
+          "declaration_line": 124,
+          "lines": [
+            183
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-f005a6c7445a",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvgfxstate_rom.c",
+      "symbol": "Read two count words with independent defaults; RE_UNKNOWN: property extent and signed count domains need producer proof.",
+      "lines": [
+        161
+      ],
+      "evidence": "Read two count words with independent defaults; RE_UNKNOWN: property extent and signed count domains need producer proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_uvgfxstate_rom_400000",
+          "declaration_line": 124,
+          "lines": [
+            161
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-c88f040c070e",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvgfxstate_rom.c",
+      "symbol": "Register after the callback-list lookup; RE_UNKNOWN: callback/list capacity and invocation lifetime need owner proof.",
+      "lines": [
+        200
+      ],
+      "evidence": "Register after the callback-list lookup; RE_UNKNOWN: callback/list capacity and invocation lifetime need owner proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_uvgfxstate_rom_400000",
+          "declaration_line": 124,
+          "lines": [
+            200
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-9d47733b2aa6",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvgfxstate_rom.c",
+      "symbol": "Retain upper-only limits, truncation and byte stores; RE_UNKNOWN: axis convention and output storage/lifetime need consumers/callers.",
+      "lines": [
+        327
+      ],
+      "evidence": "Retain upper-only limits, truncation and byte stores; RE_UNKNOWN: axis convention and output storage/lifetime need consumers/callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvGfxClampLook",
+          "declaration_line": 275,
+          "lines": [
+            327
           ]
         }
       ]
@@ -134016,16 +133761,16 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "Return the selected graphics statistic from the other buffer bank, * delegating matrix and texture counters to their modules. Selectors * 0..8 follow the original jump table and debug labels: VXFM, TRI, MLD, * MMU, TXL, GFX, VCL, VTX and SYNC; other values return zero. * RE_ORIGINAL_QUIRK: counter aliases address slot one and subtract the * current bank, preserving the original address calculation. * RE_UNKNOWN: retain the displayed abbreviations where a more detailed * counter definition has not been independently established.",
       "lines": [
-        1026
+        1030
       ],
       "evidence": "Return the selected graphics statistic from the other buffer bank, * delegating matrix and texture counters to their modules. Selectors * 0..8 follow the original jump table and debug labels: VXFM, TRI, MLD, * MMU, TXL, GFX, VCL, VTX and SYNC; other values return zero. * RE_ORIGINAL_QUIRK: counter aliases address slot one and subtract the * current bank, preserving the original address calculation. * RE_UNKNOWN: retain the displayed abbreviations where a more detailed * counter definition has not been independently established.",
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxGetPreviousBufferCounter",
-          "declaration_line": 1034,
+          "declaration_line": 1038,
           "lines": [
-            1026
+            1030
           ]
         }
       ]
@@ -134036,16 +133781,36 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "Store a shared highlight vector when index<3; preserve that upper-only guard. * RE_UNKNOWN: negative-index exclusion and vector storage extent need original producers/callers.",
       "lines": [
-        1069
+        1073
       ],
       "evidence": "Store a shared highlight vector when index<3; preserve that upper-only guard. * RE_UNKNOWN: negative-index exclusion and vector storage extent need original producers/callers.",
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxSetHiliteVector",
-          "declaration_line": 1071,
+          "declaration_line": 1075,
           "lines": [
-            1069
+            1073
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-f7c10583baa5",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvgfxstate_rom.c",
+      "symbol": "Use the point difference and retain grouped FP operations; RE_UNKNOWN: input/FPU-exception contracts need callers.",
+      "lines": [
+        285
+      ],
+      "evidence": "Use the point difference and retain grouped FP operations; RE_UNKNOWN: input/FPU-exception contracts need callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvGfxClampLook",
+          "declaration_line": 275,
+          "lines": [
+            285
           ]
         }
       ]
@@ -146125,33 +145890,33 @@
       "lines": [
         19,
         24,
-        363,
-        617,
-        955
+        367,
+        621,
+        959
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvgfxstate_rom_00400C68",
-          "declaration_line": 352,
+          "declaration_line": 356,
           "lines": [
-            363
+            367
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxDrawTextureRectangleWithUvRange",
-          "declaration_line": 944,
+          "declaration_line": 948,
           "lines": [
-            955
+            959
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxStateDraw",
-          "declaration_line": 616,
+          "declaration_line": 620,
           "lines": [
-            617
+            621
           ]
         },
         {
@@ -146197,28 +145962,28 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "pad1",
       "lines": [
-        333,
-        341,
-        451,
-        459
+        337,
+        345,
+        455,
+        463
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvgfxstate_rom_00400C68",
-          "declaration_line": 352,
+          "declaration_line": 356,
           "lines": [
-            451,
-            459
+            455,
+            463
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxClampLook",
-          "declaration_line": 271,
+          "declaration_line": 275,
           "lines": [
-            333,
-            341
+            337,
+            345
           ]
         }
       ]
@@ -146248,28 +146013,28 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "pad2",
       "lines": [
-        337,
-        345,
-        455,
-        463
+        341,
+        349,
+        459,
+        467
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvgfxstate_rom_00400C68",
-          "declaration_line": 352,
+          "declaration_line": 356,
           "lines": [
-            455,
-            463
+            459,
+            467
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxClampLook",
-          "declaration_line": 271,
+          "declaration_line": 275,
           "lines": [
-            337,
-            345
+            341,
+            349
           ]
         }
       ]
@@ -190885,26 +190650,26 @@
       "symbol": "unk10",
       "lines": [
         25,
-        605,
-        644,
-        763
+        609,
+        648,
+        767
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxDrawStateThroughDepthAndColorPasses",
-          "declaration_line": 577,
+          "declaration_line": 581,
           "lines": [
-            605
+            609
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxStateDraw",
-          "declaration_line": 616,
+          "declaration_line": 620,
           "lines": [
-            644,
-            763
+            648,
+            767
           ]
         },
         {
@@ -190923,24 +190688,24 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "unk12",
       "lines": [
-        608,
-        766
+        612,
+        770
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxDrawStateThroughDepthAndColorPasses",
-          "declaration_line": 577,
+          "declaration_line": 581,
           "lines": [
-            608
+            612
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxStateDraw",
-          "declaration_line": 616,
+          "declaration_line": 620,
           "lines": [
-            766
+            770
           ]
         }
       ]
@@ -190953,51 +190718,51 @@
       "lines": [
         26,
         31,
-        606,
-        764,
-        786,
-        936,
-        989
+        610,
+        768,
+        790,
+        940,
+        993
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxDrawStateThroughDepthAndColorPasses",
-          "declaration_line": 577,
+          "declaration_line": 581,
           "lines": [
-            606
+            610
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxDrawTextureRectangleWithUvRange",
-          "declaration_line": 944,
+          "declaration_line": 948,
           "lines": [
-            989
+            993
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxResetDefaultRenderState",
-          "declaration_line": 775,
+          "declaration_line": 779,
           "lines": [
-            786
+            790
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxResetShadeCombineMode",
-          "declaration_line": 929,
+          "declaration_line": 933,
           "lines": [
-            936
+            940
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxStateDraw",
-          "declaration_line": 616,
+          "declaration_line": 620,
           "lines": [
-            764
+            768
           ]
         },
         {
@@ -191025,21 +190790,21 @@
       "symbol": "unk1C",
       "lines": [
         33,
-        973,
-        975,
-        976,
-        978
+        977,
+        979,
+        980,
+        982
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxDrawTextureRectangleWithUvRange",
-          "declaration_line": 944,
+          "declaration_line": 948,
           "lines": [
-            973,
-            975,
-            976,
-            978
+            977,
+            979,
+            980,
+            982
           ]
         },
         {
@@ -191059,15 +190824,15 @@
       "symbol": "unk1E",
       "lines": [
         34,
-        974
+        978
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxDrawTextureRectangleWithUvRange",
-          "declaration_line": 944,
+          "declaration_line": 948,
           "lines": [
-            974
+            978
           ]
         },
         {
@@ -191087,15 +190852,15 @@
       "symbol": "unk4",
       "lines": [
         20,
-        634
+        638
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxStateDraw",
-          "declaration_line": 616,
+          "declaration_line": 620,
           "lines": [
-            634
+            638
           ]
         },
         {
@@ -191114,15 +190879,15 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "unk70",
       "lines": [
-        155
+        157
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_uvgfxstate_rom_400000",
-          "declaration_line": 122,
+          "declaration_line": 124,
           "lines": [
-            155
+            157
           ]
         }
       ]
@@ -191133,15 +190898,15 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "unk74",
       "lines": [
-        156
+        158
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_uvgfxstate_rom_400000",
-          "declaration_line": 122,
+          "declaration_line": 124,
           "lines": [
-            156
+            158
           ]
         }
       ]
@@ -191152,15 +190917,15 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "unk78",
       "lines": [
-        157
+        159
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_uvgfxstate_rom_400000",
-          "declaration_line": 122,
+          "declaration_line": 124,
           "lines": [
-            157
+            159
           ]
         }
       ]
@@ -191171,51 +190936,51 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "unkC",
       "lines": [
-        478,
-        495,
-        508,
-        634,
-        918
+        482,
+        499,
+        512,
+        638,
+        922
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxClearCurrentStateBits",
-          "declaration_line": 488,
+          "declaration_line": 492,
           "lines": [
-            495
+            499
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxStateBindTexture",
-          "declaration_line": 504,
+          "declaration_line": 508,
           "lines": [
-            508
+            512
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxStateDraw",
-          "declaration_line": 616,
+          "declaration_line": 620,
           "lines": [
-            634
+            638
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxStatePop",
-          "declaration_line": 911,
+          "declaration_line": 915,
           "lines": [
-            918
+            922
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxStateSetFlags",
-          "declaration_line": 471,
+          "declaration_line": 475,
           "lines": [
-            478
+            482
           ]
         }
       ]
@@ -191226,24 +190991,24 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "unkE",
       "lines": [
-        607,
-        765
+        611,
+        769
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxDrawStateThroughDepthAndColorPasses",
-          "declaration_line": 577,
+          "declaration_line": 581,
           "lines": [
-            607
+            611
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxStateDraw",
-          "declaration_line": 616,
+          "declaration_line": 620,
           "lines": [
-            765
+            769
           ]
         }
       ]
@@ -211072,15 +210837,15 @@
       "symbol": "UnkStruct_80001724",
       "lines": [
         35,
-        954
+        958
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxDrawTextureRectangleWithUvRange",
-          "declaration_line": 944,
+          "declaration_line": 948,
           "lines": [
-            954
+            958
           ]
         },
         {
@@ -218059,16 +217824,16 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "Return the selected graphics statistic from the other buffer bank, * delegating matrix and texture counters to their modules. Selectors * 0..8 follow the original jump table and debug labels: VXFM, TRI, MLD, * MMU, TXL, GFX, VCL, VTX and SYNC; other values return zero. * RE_ORIGINAL_QUIRK: counter aliases address slot one and subtract the * current bank, preserving the original address calculation. * RE_UNKNOWN: retain the displayed abbreviations where a more detailed * counter definition has not been independently established.",
       "lines": [
-        1026
+        1030
       ],
       "evidence": "Return the selected graphics statistic from the other buffer bank, * delegating matrix and texture counters to their modules. Selectors * 0..8 follow the original jump table and debug labels: VXFM, TRI, MLD, * MMU, TXL, GFX, VCL, VTX and SYNC; other values return zero. * RE_ORIGINAL_QUIRK: counter aliases address slot one and subtract the * current bank, preserving the original address calculation. * RE_UNKNOWN: retain the displayed abbreviations where a more detailed * counter definition has not been independently established.",
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxGetPreviousBufferCounter",
-          "declaration_line": 1034,
+          "declaration_line": 1038,
           "lines": [
-            1026
+            1030
           ]
         }
       ]
@@ -223838,15 +223603,15 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "unused",
       "lines": [
-        794
+        798
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxBeginStateFrame",
-          "declaration_line": 794,
+          "declaration_line": 798,
           "lines": [
-            794
+            798
           ]
         }
       ]
