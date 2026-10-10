@@ -87,7 +87,83 @@ s32 caranimFindRegisteredStateByObjectHandle(s32 objectHandle);
 s32 func_caranim_00406094();
 void caranimApplyColorAndCallback(s32 objectId, CarAnimColorContext *state);
 extern s32 D_caranim_00407368;
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/__entrypoint_func_caranim_400000.s")
+/* Initializer-only storage views; seven words copied without interpreting them.
+ * RE_UNKNOWN: table extent, selector domain, storage ownership and full export ABI. */
+#include "uvgfxmgr_rom.h"
+extern UvGfxMgr_Exports *gUvGfxMgrExports;
+extern s32 gNumPlayers;
+extern s32 D_caranim_00407390;
+extern u32 D_caranim_00407370[7];
+extern void *D_caranim_00406B8C;
+extern void *gSkidExports, *gSprayExports, *gSparksExports;
+typedef struct { u32 words[7]; } CarAnimInitializerSevenWords;
+void caranimUnloadEffectModules(void);
+void caranimDrawLoadedTextureOverlay(s32 unused);
+void *caranimGetMaterialRecord(s32 materialId);
+void caranimInitializeState(void *state);
+void caranimRegisterChannelCallback(s32 channelId);
+s32 caranimGetLocalizedLabel(s32 labelId);
+s32 caranimFindRegisteredStateByObjectHandle(s32 objectHandle);
+void caranimSetStateByte24(void *state, s32 value);
+s32 caranimGetRegisteredStateCount(void);
+void caranimSetStateByte25(void *state, s32 value);
+void caranimApplyColorAndCallback(s32 objectId, CarAnimColorContext *state);
+void caranimAcquireParticleEffectAndReadProperties(s32 kind, f32 *firstOutput, f32 *secondOutput);
+void func_caranim_00404074(s32 mode);
+#line 90 "src/modules/caranim.c"
+/* Publish the 19 original export addresses, load effect modules and assets,
+ * copy the selected seven-word record and cache four particle property pairs.
+ * Register the original callback on graphics callback list one.
+ * RE_UNKNOWN: export/table capacity, selector validity, asset and callback
+ * lifetimes and complete callable ABIs need producer and caller evidence. */
+void __entrypoint_func_caranim_400000(u32 *exports) {
+    uvUpdateFileAllocPtr(exports);
+    exports[0x0 / 4] = (u32)caranimUnloadEffectModules;
+    exports[0x28 / 4] = (u32)caranimDrawLoadedTextureOverlay;
+    exports[0x4 / 4] = (u32)func_caranim_004003AC;
+    exports[0x2C / 4] = (u32)caranimGetMaterialRecord;
+    exports[0x8 / 4] = (u32)caranimInitializeState;
+    exports[0x30 / 4] = (u32)func_caranim_00401C04;
+    exports[0xC / 4] = (u32)func_caranim_004007B0;
+    exports[0x34 / 4] = (u32)caranimRegisterChannelCallback;
+    exports[0x10 / 4] = (u32)func_caranim_00400B08;
+    exports[0x38 / 4] = (u32)caranimGetLocalizedLabel;
+    exports[0x14 / 4] = (u32)func_caranim_00400C8C;
+    exports[0x3C / 4] = (u32)caranimFindRegisteredStateByObjectHandle;
+    exports[0x18 / 4] = (u32)func_caranim_00401420;
+    exports[0x40 / 4] = (u32)func_caranim_00406094;
+    exports[0x1C / 4] = (u32)caranimSetStateByte24;
+    exports[0x44 / 4] = (u32)caranimGetRegisteredStateCount;
+    exports[0x20 / 4] = (u32)caranimSetStateByte25;
+    exports[0x48 / 4] = (u32)caranimApplyColorAndCallback;
+    exports[0x24 / 4] = (u32)func_caranim_00401564;
+    D_caranim_00407368 = 0;
+    gSkidExports = uvLoadModule('skid');
+    gSprayExports = uvLoadModule('spry');
+    gSparksExports = uvLoadModule('spar');
+    D_caranim_00406B8C = uvLoadModule('shad');
+    uvLoadFile('UVMD', 0x6C);
+    uvLoadFile('UVMD', 0x5E);
+    uvLoadFile('UVTX', 0xB5);
+    uvLoadFile('UVPX', 0xB);
+    uvLoadFile('UVPX', 0xD);
+    uvLoadFile('UVPX', 0xA);
+    uvLoadFile('UVPX', 0xE);
+    uvLoadFile('UVPX', 0xC);
+    *(CarAnimInitializerSevenWords *)D_caranim_00407370 =
+        ((CarAnimInitializerSevenWords *)&D_caranim_00406830)[D_caranim_00407390];
+    caranimAcquireParticleEffectAndReadProperties(0xB, D_caranim_00407398, D_caranim_004073A8);
+    caranimAcquireParticleEffectAndReadProperties(0xD, D_caranim_004073B8, D_caranim_004073C8);
+    caranimAcquireParticleEffectAndReadProperties(0xA, D_caranim_004073D8, D_caranim_004073E8);
+    caranimAcquireParticleEffectAndReadProperties(0xE, D_caranim_004073F8, D_caranim_00407408);
+    uvLoadFile('UVTX', 0x1A7);
+    if (gNumPlayers >= 2) {
+        func_caranim_00404074(0);
+    }
+    (*(void (**)(s32, void *, s32, s32))((u8 *)gUvCbckExports + 0x10))(
+        gUvGfxMgrExports->uvGfxGetCallbackList(1), &func_caranim_004014A4, 0, 0);
+}
+#line 91 "src/modules/caranim.c"
 
 #line 59 "src/modules/caranim.c"
 /* Unload loaded skid, spray, sparks and shadow effect modules, then clear

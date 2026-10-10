@@ -82,183 +82,188 @@ void uvContourWritePackedTriangles(Gfx *gdl, u16 firstTriangle, u16 secondTriang
 }
 #line 61 "src/modules/uvcontourld_rom.c"
 
-ParsedUVCT *_uvParseUVCT(u8 *arg0) {
-    Vtx *sp114;
-    ParsedUVMD *uvmd;
-    Vtx *sp10C;
-    Unk80225FBC_0x28_UnkC *sp108;
-    Unk80225FBC_0x28 *sp104;
-    s32 l;
-    UnkSobjDraw *spFC; /* RE_ORIGINAL_QUIRK: native 0x40033C skips the sole
+/* Decode the contour stream into vertex, model, render-record and display-list storage.
+ * Preserve packed command decoding, partial light input and existing zero-model publication.
+ * RE_UNKNOWN: stream lengths, count/index limits, allocation failure, shared-storage lifetime,
+ * metadata meanings and historical record declarations need original assets/caller proof. */
+#line 62 "src/modules/uvcontourld_rom.c"
+ParsedUVCT *_uvParseUVCT(u8 *streamCursor) {
+    Vtx *currentVertexBlock;
+    ParsedUVMD *modelResource;
+    Vtx *vertexBase;
+    Unk80225FBC_0x28_UnkC *sharedRecords;
+    Unk80225FBC_0x28 *renderRecords;
+    s32 displayListIndex;
+    UnkSobjDraw *modelRecords; /* RE_ORIGINAL_QUIRK: native 0x40033C skips the sole
      * SP+0xFC pointer store when model count is zero; 0x4009E4/0x4009E8 still
      * copy that stack word to parsed-contour offset 0x10. RE_UNKNOWN: valid
      * zero-model UVCT assets and whether callers use that pointer at count zero.
      * Trace original assets/callers before assigning a default or changing behavior. */
 #line 70 "src/modules/uvcontourld_rom.c"
-    ParsedUVCT *temp_v0;
-    Unk80225FBC_0x28 *var_s5;
-    UnkSobjDraw *temp_s0;
-    Vtx *t;
-    u16 spEA;
-    u16 spE8;
-    u16 spE6;
-    u16 var_s3_2;
-    Gfx *temp_s2;
-    s32 i; // spDC
-    s32 j;
-    s32 k;
-    s32 temp_a0;
-    u8 spCF;
-    u8 spCE;
-    u16 spCC;
-    u16 spCA;
-    u16 spC8;
-    u16 spC6;
-    f32 spC0;
-    f32 spBC;
-    f32 spB8;
-    UnkStruct_uvlight_rom_00401758 sp84;
-    s32 sp80;
+    ParsedUVCT *parsedContour;
+    Unk80225FBC_0x28 *renderRecord;
+    UnkSobjDraw *modelRecord;
+    Vtx *vertexBlock;
+    u16 sharedRecordCount;
+    u16 renderRecordCount;
+    u16 modelCount;
+    u16 pendingTriangle;
+    Gfx *displayList;
+    s32 recordIndex; // spDC
+    s32 vertexIndex;
+    s32 commandIndex;
+    s32 encodedVertexCountMinusOne;
+    u8 matrixCount;
+    u8 vertexCommandByte;
+    u16 totalVertexCount;
+    u16 commandCount;
+    u16 displayListEntryCount;
+    u16 streamWord;
+    f32 metadata30;
+    f32 metadata2C;
+    f32 metadata28;
+    UnkStruct_uvlight_rom_00401758 lightRecord;
+    s32 consumedVertexCount;
 
-    uvConsumeBytes(&spCC, (u8 **) &arg0, sizeof(u16));
-    uvConsumeBytes(&spEA, (u8 **) &arg0, sizeof(u16));
-    uvConsumeBytes(&spE6, (u8 **) &arg0, sizeof(u16));
-    uvConsumeBytes(&spE8, (u8 **) &arg0, sizeof(u16));
-    uvConsumeBytes(&spBC, (u8 **) &arg0, sizeof(s32));
-    uvConsumeBytes(&spC0, (u8 **) &arg0, sizeof(s32));
-    uvConsumeBytes(&spB8, (u8 **) &arg0, sizeof(s32));
-    sp10C = _uvMemAlloc(spCC * sizeof(Vtx), 8);
-    sp114 = sp10C;
+    uvConsumeBytes(&totalVertexCount, (u8 **) &streamCursor, sizeof(u16));
+    uvConsumeBytes(&sharedRecordCount, (u8 **) &streamCursor, sizeof(u16));
+    uvConsumeBytes(&modelCount, (u8 **) &streamCursor, sizeof(u16));
+    uvConsumeBytes(&renderRecordCount, (u8 **) &streamCursor, sizeof(u16));
+    uvConsumeBytes(&metadata2C, (u8 **) &streamCursor, sizeof(s32));
+    uvConsumeBytes(&metadata30, (u8 **) &streamCursor, sizeof(s32));
+    uvConsumeBytes(&metadata28, (u8 **) &streamCursor, sizeof(s32));
+    vertexBase = _uvMemAlloc(totalVertexCount * sizeof(Vtx), 8);
+    currentVertexBlock = vertexBase;
 
-    sp80 = 0;
-    sp108 = _uvMemAllocAlign8(spEA * 8);
-    _uvMediaCopy(sp108, arg0, spEA * 8);
-    arg0 += spEA * 8;
-    if (spE6 != 0) {
-        spFC = _uvMemAllocAlign8(spE6 * sizeof(UnkSobjDraw));
+    consumedVertexCount = 0;
+    sharedRecords = _uvMemAllocAlign8(sharedRecordCount * 8);
+    _uvMediaCopy(sharedRecords, streamCursor, sharedRecordCount * 8); /* Copy the shared eight-byte records without interpreting their fields. */
+    streamCursor += sharedRecordCount * 8;
+    if (modelCount != 0) {
+        modelRecords = _uvMemAllocAlign8(modelCount * sizeof(UnkSobjDraw));
     }
-    for (i = 0; i < spE6; i++) {
-        temp_s0 = &spFC[i];
-        uvConsumeBytes(&spCF, (u8 **) &arg0, sizeof(u8));
-        temp_s0->unk4 = _uvMemAllocAlign8(spCF * sizeof(Mtx4F));
-        uvConsumeBytes(temp_s0->unk4, (u8 **) &arg0, spCF * sizeof(Mtx4F));
-        temp_s0->unk2 = spCF;
-        temp_s0->unk38 = 0;
-        uvConsumeBytes(&temp_s0->modelId, (u8 **) &arg0, sizeof(u16));
-        uvConsumeBytes(&temp_s0->unk8, (u8 **) &arg0, sizeof(s32));
-        uvConsumeBytes(&temp_s0->unkC, (u8 **) &arg0, sizeof(s32));
-        uvConsumeBytes(&temp_s0->unk10, (u8 **) &arg0, sizeof(s32));
-        uvConsumeBytes(&temp_s0->unk14, (u8 **) &arg0, sizeof(s32));
-        uvConsumeBytes(&temp_s0->unk18, (u8 **) &arg0, sizeof(u16));
-        uvConsumeBytes(&temp_s0->unk1A, (u8 **) &arg0, sizeof(u16));
-        temp_s0->unk30 = spBC;
-        temp_s0->unk34 = spC0;
-        uvmd = uvLoadFile('UVMD', temp_s0->modelId);
-        if (uvmd->unk5 & 0x76) {
-            temp_s0->unk40 = 1;
+    for (recordIndex = 0; recordIndex < modelCount; recordIndex++) {
+        modelRecord = &modelRecords[recordIndex];
+        uvConsumeBytes(&matrixCount, (u8 **) &streamCursor, sizeof(u8));
+        modelRecord->unk4 = _uvMemAllocAlign8(matrixCount * sizeof(Mtx4F));
+        uvConsumeBytes(modelRecord->unk4, (u8 **) &streamCursor, matrixCount * sizeof(Mtx4F));
+        modelRecord->unk2 = matrixCount;
+        modelRecord->unk38 = 0;
+        uvConsumeBytes(&modelRecord->modelId, (u8 **) &streamCursor, sizeof(u16));
+        uvConsumeBytes(&modelRecord->unk8, (u8 **) &streamCursor, sizeof(s32));
+        uvConsumeBytes(&modelRecord->unkC, (u8 **) &streamCursor, sizeof(s32));
+        uvConsumeBytes(&modelRecord->unk10, (u8 **) &streamCursor, sizeof(s32));
+        uvConsumeBytes(&modelRecord->unk14, (u8 **) &streamCursor, sizeof(s32));
+        uvConsumeBytes(&modelRecord->unk18, (u8 **) &streamCursor, sizeof(u16));
+        uvConsumeBytes(&modelRecord->unk1A, (u8 **) &streamCursor, sizeof(u16));
+        modelRecord->unk30 = metadata2C;
+        modelRecord->unk34 = metadata30;
+        modelResource = uvLoadFile('UVMD', modelRecord->modelId);
+        if (modelResource->unk5 & 0x76) {
+            modelRecord->unk40 = 1;
         } else {
-            temp_s0->unk40 = 0;
+            modelRecord->unk40 = 0;
         }
-        temp_s0->unk3C = 1000000.0f;
-        temp_s0->unk1C = 0;
+        modelRecord->unk3C = 1000000.0f;
+        modelRecord->unk1C = 0;
     }
-    sp104 = _uvMemAllocAlign8(spE8 * sizeof(Unk80225FBC_0x28));
-    for (i = 0; i < spE8; i++) {
-        var_s5 = &sp104[i];
-        var_s5->unk0 = NULL;
-        uvConsumeBytes(&var_s5->texture, (u8 **) &arg0, sizeof(s32));
-        uvConsumeBytes(&sp84.unk2C, (u8 **) &arg0, sizeof(s32));
-        uvConsumeBytes(&sp84.unk28, (u8 **) &arg0, sizeof(s32));
-        uvConsumeBytes(&sp84.unk24, (u8 **) &arg0, sizeof(s32));
-        uvConsumeBytes(&var_s5->unkE, (u8 **) &arg0, sizeof(u16));
-        uvConsumeBytes(&var_s5->unk12, (u8 **) &arg0, sizeof(u16));
-        uvConsumeBytes(&var_s5->unk10, (u8 **) &arg0, sizeof(u16));
-        uvConsumeBytes(&var_s5->unk14, (u8 **) &arg0, sizeof(u16));
-        if ((var_s5->texture & 0xFFF) != 0xFFF) {
-            uvLoadFile('UVTX', (var_s5->texture & 0xFFF));
+    renderRecords = _uvMemAllocAlign8(renderRecordCount * sizeof(Unk80225FBC_0x28));
+    for (recordIndex = 0; recordIndex < renderRecordCount; recordIndex++) {
+        renderRecord = &renderRecords[recordIndex];
+        renderRecord->unk0 = NULL;
+        uvConsumeBytes(&renderRecord->texture, (u8 **) &streamCursor, sizeof(s32));
+        uvConsumeBytes(&lightRecord.unk2C, (u8 **) &streamCursor, sizeof(s32));
+        uvConsumeBytes(&lightRecord.unk28, (u8 **) &streamCursor, sizeof(s32));
+        uvConsumeBytes(&lightRecord.unk24, (u8 **) &streamCursor, sizeof(s32));
+        uvConsumeBytes(&renderRecord->unkE, (u8 **) &streamCursor, sizeof(u16));
+        uvConsumeBytes(&renderRecord->unk12, (u8 **) &streamCursor, sizeof(u16));
+        uvConsumeBytes(&renderRecord->unk10, (u8 **) &streamCursor, sizeof(u16));
+        uvConsumeBytes(&renderRecord->unk14, (u8 **) &streamCursor, sizeof(u16));
+        if ((renderRecord->texture & 0xFFF) != 0xFFF) {
+            uvLoadFile('UVTX', (renderRecord->texture & 0xFFF));
         }
-        if (var_s5->texture & 0x40000) {
-            var_s5->unkC = sLightsExport->uvLightAcquireMatchingColorRecord(&sp84);
+        if (renderRecord->texture & 0x40000) {
+            renderRecord->unkC = sLightsExport->uvLightAcquireMatchingColorRecord(&lightRecord); /* LGHT slot 0x28 consumes the three initialized words at 0x24/0x28/0x2C. */
         } else {
-            var_s5->unkC = -1;
+            renderRecord->unkC = -1;
         }
-        uvConsumeBytes(&spCA, (u8 **) &arg0, sizeof(u16));
-        uvConsumeBytes(&spC8, (u8 **) &arg0, sizeof(u16));
-        _uvMediaCopy(sp114, arg0, (s16) var_s5->unkE * 0x10);
-        var_s5->unk0 = sp114;
-        arg0 += var_s5->unkE * 0x10;
-        sp80 += var_s5->unkE;
-        var_s5->unk34 = 0.0f;
+        uvConsumeBytes(&commandCount, (u8 **) &streamCursor, sizeof(u16));
+        uvConsumeBytes(&displayListEntryCount, (u8 **) &streamCursor, sizeof(u16));
+        _uvMediaCopy(currentVertexBlock, streamCursor, (s16) renderRecord->unkE * 0x10); /* Preserve the signed count and all following cursor/count arithmetic. */
+        renderRecord->unk0 = currentVertexBlock;
+        streamCursor += renderRecord->unkE * 0x10;
+        consumedVertexCount += renderRecord->unkE;
+        renderRecord->unk34 = 0.0f;
 
-        for (j = 0; j < var_s5->unkE; j++) {
-            if (var_s5->unk34 < sp114[j].v.ob[2]) {
-                var_s5->unk34 = sp114[j].v.ob[2];
+        for (vertexIndex = 0; vertexIndex < renderRecord->unkE; vertexIndex++) {
+            if (renderRecord->unk34 < currentVertexBlock[vertexIndex].v.ob[2]) {
+                renderRecord->unk34 = currentVertexBlock[vertexIndex].v.ob[2];
             }
         }
-        var_s5->unk34 /= spC0;
-        temp_s2 = _uvMemAlloc(spC8 * sizeof(Gfx), 8);
-        l = 0;
-        var_s3_2 = 0;
-        for (k = 0; k < spCA; k++) {
-            uvConsumeBytes(&spC6, (u8 **) &arg0, sizeof(u16));
-            if (spC6 & 0x8000) {
-                if (var_s3_2 == 0) {
-                    var_s3_2 = spC6;
+        renderRecord->unk34 /= metadata30; /* RE_ORIGINAL_QUIRK: retain this scan/divide before the later 1000000.0f overwrite. */
+        displayList = _uvMemAlloc(displayListEntryCount * sizeof(Gfx), 8);
+        displayListIndex = 0;
+        pendingTriangle = 0;
+        for (commandIndex = 0; commandIndex < commandCount; commandIndex++) {
+            uvConsumeBytes(&streamWord, (u8 **) &streamCursor, sizeof(u16));
+            if (streamWord & 0x8000) {
+                if (pendingTriangle == 0) {
+                    pendingTriangle = streamWord;
                 } else {
-                    uvContourWritePackedTriangles(&temp_s2[l], var_s3_2, spC6);
-                    l++;
-                    var_s3_2 = 0;
+                    uvContourWritePackedTriangles(&displayList[displayListIndex], pendingTriangle, streamWord);
+                    displayListIndex++;
+                    pendingTriangle = 0;
                 }
                 continue;
             }
-            if (var_s3_2 != 0) {
-                uvContourWritePackedTriangles(&temp_s2[l], var_s3_2, 0);
-                l++;
-                var_s3_2 = 0;
+            if (pendingTriangle != 0) {
+                uvContourWritePackedTriangles(&displayList[displayListIndex], pendingTriangle, 0);
+                displayListIndex++;
+                pendingTriangle = 0;
             }
-            uvConsumeBytes(&spCE, (u8 **) &arg0, 1U);
-            t = &sp114[spC6 & 0x1FFF];
-            temp_a0 = (((s32) (spC6 & 0x6000) >> 0xA) | ((s32) (spCE & 0xE0) >> 5));
-            gSPVertex(&temp_s2[l], OS_PHYSICAL_TO_K0(t), temp_a0 + 1, spCE & 0x1F);
-            l++;
+            uvConsumeBytes(&vertexCommandByte, (u8 **) &streamCursor, 1U);
+            vertexBlock = &currentVertexBlock[streamWord & 0x1FFF];
+            encodedVertexCountMinusOne = (((s32) (streamWord & 0x6000) >> 0xA) | ((s32) (vertexCommandByte & 0xE0) >> 5));
+            gSPVertex(&displayList[displayListIndex], OS_PHYSICAL_TO_K0(vertexBlock), encodedVertexCountMinusOne + 1, vertexCommandByte & 0x1F); /* RE_UNKNOWN: stream index bounds and allocated command capacity need asset proof. */
+            displayListIndex++;
         }
 
-        sp114 = &sp10C[sp80];
-        if (var_s3_2 != 0) {
-            uvContourWritePackedTriangles(&temp_s2[l], var_s3_2, 0);
-            l++;
+        currentVertexBlock = &vertexBase[consumedVertexCount];
+        if (pendingTriangle != 0) {
+            uvContourWritePackedTriangles(&displayList[displayListIndex], pendingTriangle, 0);
+            displayListIndex++;
         }
-        gSPEndDisplayList(&temp_s2[l]);
-        l++;
+        gSPEndDisplayList(&displayList[displayListIndex]);
+        displayListIndex++;
 
-        var_s5->unk8 = temp_s2;
-        uvConsumeBytes(&spC6, (u8 **) &arg0, sizeof(u16));
-        var_s5->unk18 = &sp108[spC6];
-        uvConsumeBytes(&spC6, (u8 **) &arg0, sizeof(u16));
-        var_s5->unk1C = spC6;
-        uvConsumeBytes(&var_s5->unk1E, (u8 **) &arg0, sizeof(u16));
-        uvConsumeBytes(&var_s5->unk20, (u8 **) &arg0, sizeof(u16));
-        uvConsumeBytes(&var_s5->unk24, (u8 **) &arg0, sizeof(s32));
-        uvConsumeBytes(&var_s5->unk28, (u8 **) &arg0, sizeof(s32));
-        uvConsumeBytes(&var_s5->unk2C, (u8 **) &arg0, sizeof(s32));
-        uvConsumeBytes(&var_s5->unk30, (u8 **) &arg0, sizeof(s32));
-        var_s5->unk34 = 1000000.0f;
+        renderRecord->unk8 = displayList;
+        uvConsumeBytes(&streamWord, (u8 **) &streamCursor, sizeof(u16));
+        renderRecord->unk18 = &sharedRecords[streamWord];
+        uvConsumeBytes(&streamWord, (u8 **) &streamCursor, sizeof(u16));
+        renderRecord->unk1C = streamWord;
+        uvConsumeBytes(&renderRecord->unk1E, (u8 **) &streamCursor, sizeof(u16));
+        uvConsumeBytes(&renderRecord->unk20, (u8 **) &streamCursor, sizeof(u16));
+        uvConsumeBytes(&renderRecord->unk24, (u8 **) &streamCursor, sizeof(s32));
+        uvConsumeBytes(&renderRecord->unk28, (u8 **) &streamCursor, sizeof(s32));
+        uvConsumeBytes(&renderRecord->unk2C, (u8 **) &streamCursor, sizeof(s32));
+        uvConsumeBytes(&renderRecord->unk30, (u8 **) &streamCursor, sizeof(s32));
+        renderRecord->unk34 = 1000000.0f;
     }
-    temp_v0 = _uvMemAllocAlign8(sizeof(ParsedUVCT));
-    temp_v0->vtxTable = sp10C;
-    temp_v0->vtxCount = spCC;
-    temp_v0->unk8 = sp104;
-    temp_v0->unkC = spE8;
-    temp_v0->unk10 = spFC;
-    temp_v0->unk14 = spE6;
-    uvConsumeBytes(&temp_v0->unk18, (u8 **) &arg0, sizeof(s32));
-    uvConsumeBytes(&temp_v0->unk1C, (u8 **) &arg0, sizeof(s32));
-    uvConsumeBytes(&temp_v0->unk20, (u8 **) &arg0, sizeof(s32));
-    uvConsumeBytes(&temp_v0->unk24, (u8 **) &arg0, sizeof(s32));
-    temp_v0->unk2C = spBC;
-    temp_v0->unk30 = spC0;
-    temp_v0->unk28 = spB8;
-    return temp_v0;
+    parsedContour = _uvMemAllocAlign8(sizeof(ParsedUVCT));
+    parsedContour->vtxTable = vertexBase;
+    parsedContour->vtxCount = totalVertexCount;
+    parsedContour->unk8 = renderRecords;
+    parsedContour->unkC = renderRecordCount;
+    parsedContour->unk10 = modelRecords;
+    parsedContour->unk14 = modelCount;
+    uvConsumeBytes(&parsedContour->unk18, (u8 **) &streamCursor, sizeof(s32));
+    uvConsumeBytes(&parsedContour->unk1C, (u8 **) &streamCursor, sizeof(s32));
+    uvConsumeBytes(&parsedContour->unk20, (u8 **) &streamCursor, sizeof(s32));
+    uvConsumeBytes(&parsedContour->unk24, (u8 **) &streamCursor, sizeof(s32));
+    parsedContour->unk2C = metadata2C;
+    parsedContour->unk30 = metadata30;
+    parsedContour->unk28 = metadata28;
+    return parsedContour;
 }
 
 #line 236 "src/modules/uvcontourld_rom.c"

@@ -17,18 +17,18 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 1125 |
-| Preserved RE_ORIGINAL_QUIRK notes | 312 |
+| Explicit RE_UNKNOWN notes | 1129 |
+| Preserved RE_ORIGINAL_QUIRK notes | 313 |
 | Older comments with uncertainty language | 92 |
 | Documented original-behavior audits | 30 |
-| Assembly-backed functions or data | 786 |
-| Address-based function identifiers | 904 |
-| Address-based global identifiers | 1451 |
+| Assembly-backed functions or data | 785 |
+| Address-based function identifiers | 905 |
+| Address-based global identifiers | 1453 |
 | Offset-based fields or neutral typed fields | 1601 |
 | Layout padding to preserve | 269 |
 | Unresolved type names | 282 |
 | Explicit unused ABI, storage or local identifiers | 133 |
-| Decompiler parameter/local names | 697 |
+| Decompiler parameter/local names | 672 |
 | Fake, unresolved or TODO draft markers | 25 |
 | Data-dependent conditional draft guards | 4 |
 
@@ -1752,115 +1752,119 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
-| address_function | `func_caranim_004003AC` | function `func_caranim_004003AC` | [53](../src/modules/caranim.c#L53) |
-| address_function | `func_caranim_004007B0` | function `caranimInitializeState`, function `func_caranim_004007B0`, function `func_caranim_004007B0` | [50](../src/modules/caranim.c#L50), [55](../src/modules/caranim.c#L55), [128](../src/modules/caranim.c#L128) |
-| address_function | `func_caranim_00400B08` | function `caranimInitializeState`, function `func_caranim_00400B08`, function `func_caranim_00400B08` | [51](../src/modules/caranim.c#L51), [56](../src/modules/caranim.c#L56), [129](../src/modules/caranim.c#L129) |
-| address_function | `func_caranim_00400C8C` | function `func_caranim_00400C8C` | [57](../src/modules/caranim.c#L57) |
-| address_function | `func_caranim_00401420` | function `func_caranim_00401420` | [58](../src/modules/caranim.c#L58) |
-| address_function | `func_caranim_004014A4` | function `func_caranim_004014A4` | [59](../src/modules/caranim.c#L59) |
+| address_function | `__entrypoint_func_caranim_400000` | function `__entrypoint_func_caranim_400000` | [119](../src/modules/caranim.c#L119) |
+| address_function | `func_caranim_004003AC` | function `__entrypoint_func_caranim_400000`, function `func_caranim_004003AC` | [53](../src/modules/caranim.c#L53), [123](../src/modules/caranim.c#L123) |
+| address_function | `func_caranim_004007B0` | function `__entrypoint_func_caranim_400000`, function `caranimInitializeState`, function `func_caranim_004007B0`, function `func_caranim_004007B0` | [50](../src/modules/caranim.c#L50), [55](../src/modules/caranim.c#L55), [127](../src/modules/caranim.c#L127), [204](../src/modules/caranim.c#L204) |
+| address_function | `func_caranim_00400B08` | function `__entrypoint_func_caranim_400000`, function `caranimInitializeState`, function `func_caranim_00400B08`, function `func_caranim_00400B08` | [51](../src/modules/caranim.c#L51), [56](../src/modules/caranim.c#L56), [129](../src/modules/caranim.c#L129), [205](../src/modules/caranim.c#L205) |
+| address_function | `func_caranim_00400C8C` | function `__entrypoint_func_caranim_400000`, function `func_caranim_00400C8C` | [57](../src/modules/caranim.c#L57), [131](../src/modules/caranim.c#L131) |
+| address_function | `func_caranim_00401420` | function `__entrypoint_func_caranim_400000`, function `func_caranim_00401420` | [58](../src/modules/caranim.c#L58), [133](../src/modules/caranim.c#L133) |
+| address_function | `func_caranim_004014A4` | function `__entrypoint_func_caranim_400000`, function `func_caranim_004014A4` | [59](../src/modules/caranim.c#L59), [164](../src/modules/caranim.c#L164) |
 | address_function | `func_caranim_004014DC` | function `func_caranim_004014DC` | [60](../src/modules/caranim.c#L60) |
-| address_function | `func_caranim_00401564` | function `func_caranim_00401564` | [61](../src/modules/caranim.c#L61) |
-| address_function | `func_caranim_00401C04` | function `func_caranim_00401C04` | [63](../src/modules/caranim.c#L63) |
+| address_function | `func_caranim_00401564` | function `__entrypoint_func_caranim_400000`, function `func_caranim_00401564` | [61](../src/modules/caranim.c#L61), [139](../src/modules/caranim.c#L139) |
+| address_function | `func_caranim_00401C04` | function `__entrypoint_func_caranim_400000`, function `func_caranim_00401C04` | [63](../src/modules/caranim.c#L63), [126](../src/modules/caranim.c#L126) |
 | address_function | `func_caranim_00401D6C` | function `func_caranim_00401D6C` | [65](../src/modules/caranim.c#L65) |
 | address_function | `func_caranim_00402FD4` | function `func_caranim_00402FD4` | [66](../src/modules/caranim.c#L66) |
 | address_function | `func_caranim_004033F4` | function `func_caranim_004033F4` | [67](../src/modules/caranim.c#L67) |
-| address_function | `func_caranim_0040371C` | function `caranimAcquireConfiguredParticleEffect`, function `func_caranim_0040371C`, function `func_caranim_0040371C` | [12](../src/modules/caranim.c#L12), [69](../src/modules/caranim.c#L69), [374](../src/modules/caranim.c#L374), [377](../src/modules/caranim.c#L377), [380](../src/modules/caranim.c#L380), [383](../src/modules/caranim.c#L383) |
+| address_function | `func_caranim_0040371C` | function `caranimAcquireConfiguredParticleEffect`, function `func_caranim_0040371C`, function `func_caranim_0040371C` | [12](../src/modules/caranim.c#L12), [69](../src/modules/caranim.c#L69), [450](../src/modules/caranim.c#L450), [453](../src/modules/caranim.c#L453), [456](../src/modules/caranim.c#L456), [459](../src/modules/caranim.c#L459) |
 | address_function | `func_caranim_00403A80` | function `func_caranim_00403A80` | [70](../src/modules/caranim.c#L70) |
 | address_function | `func_caranim_00403BDC` | function `func_caranim_00403BDC` | [71](../src/modules/caranim.c#L71) |
-| address_function | `func_caranim_00404074` | function `func_caranim_00404074` | [72](../src/modules/caranim.c#L72) |
+| address_function | `func_caranim_00404074` | function `__entrypoint_func_caranim_400000`, function `func_caranim_00404074`, function `func_caranim_00404074` | [72](../src/modules/caranim.c#L72), [112](../src/modules/caranim.c#L112), [161](../src/modules/caranim.c#L161) |
 | address_function | `func_caranim_004042C4` | function `func_caranim_004042C4` | [74](../src/modules/caranim.c#L74) |
 | address_function | `func_caranim_00404568` | function `func_caranim_00404568` | [75](../src/modules/caranim.c#L75) |
 | address_function | `func_caranim_00404A40` | function `func_caranim_00404A40` | [76](../src/modules/caranim.c#L76) |
 | address_function | `func_caranim_00404ACC` | function `func_caranim_00404ACC` | [77](../src/modules/caranim.c#L77) |
-| address_function | `func_caranim_00404CA0` | function `caranimRefreshChangedSelection`, function `func_caranim_00404CA0` | [78](../src/modules/caranim.c#L78), [540](../src/modules/caranim.c#L540) |
+| address_function | `func_caranim_00404CA0` | function `caranimRefreshChangedSelection`, function `func_caranim_00404CA0` | [78](../src/modules/caranim.c#L78), [616](../src/modules/caranim.c#L616) |
 | address_function | `func_caranim_00405304` | function `func_caranim_00405304` | [80](../src/modules/caranim.c#L80) |
 | address_function | `func_caranim_004054B4` | function `func_caranim_004054B4` | [81](../src/modules/caranim.c#L81) |
 | address_function | `func_caranim_00405910` | function `func_caranim_00405910` | [82](../src/modules/caranim.c#L82) |
-| address_function | `func_caranim_00405B7C` | function `caranimRegisterChannelCallback`, function `func_caranim_00405B7C`, function `func_caranim_00405B7C` | [39](../src/modules/caranim.c#L39), [83](../src/modules/caranim.c#L83), [621](../src/modules/caranim.c#L621) |
+| address_function | `func_caranim_00405B7C` | function `caranimRegisterChannelCallback`, function `func_caranim_00405B7C`, function `func_caranim_00405B7C` | [39](../src/modules/caranim.c#L39), [83](../src/modules/caranim.c#L83), [697](../src/modules/caranim.c#L697) |
 | address_function | `func_caranim_00405DE4` | function `func_caranim_00405DE4` | [84](../src/modules/caranim.c#L84) |
-| address_function | `func_caranim_00406094` | function `func_caranim_00406094` | [87](../src/modules/caranim.c#L87) |
-| address_function | `func_uvpfx_rom_004004D0` | function `caranimAcquireConfiguredParticleEffect` | [370](../src/modules/caranim.c#L370) |
-| address_global | `D_caranim_004066A0` | function `caranimGetLocalizedLabel`, global `D_caranim_004066A0` | [43](../src/modules/caranim.c#L43), [665](../src/modules/caranim.c#L665) |
-| address_global | `D_caranim_0040673C` | function `caranimScaleObjectAxisForCheat` | [19](../src/modules/caranim.c#L19), [283](../src/modules/caranim.c#L283) |
-| address_global | `D_caranim_00406740` | function `caranimScaleObjectAxisForCheat` | [19](../src/modules/caranim.c#L19), [287](../src/modules/caranim.c#L287) |
-| address_global | `D_caranim_00406744` | function `caranimScaleObjectAxisForCheat` | [19](../src/modules/caranim.c#L19), [291](../src/modules/caranim.c#L291) |
-| address_global | `D_caranim_00406830` | function `caranimAdjustScalarAndGetMaterialOffset`, function `caranimGetMaterialRecord`, global `D_caranim_00406830` | [47](../src/modules/caranim.c#L47), [262](../src/modules/caranim.c#L262), [475](../src/modules/caranim.c#L475) |
-| address_global | `D_caranim_00406A28` | function `caranimAdjustScalarAndGetMaterialOffset`, global `D_caranim_00406A28` | [24](../src/modules/caranim.c#L24), [478](../src/modules/caranim.c#L478) |
-| address_global | `D_caranim_00406B84` | function `caranimScaleObjectAxisForCheat`, global `D_caranim_00406B84` | [20](../src/modules/caranim.c#L20), [295](../src/modules/caranim.c#L295), [298](../src/modules/caranim.c#L298) |
-| address_global | `D_caranim_00406B8C` | function `caranimUnloadEffectModules`, global `D_caranim_00406B8C` | [95](../src/modules/caranim.c#L95), [103](../src/modules/caranim.c#L103) |
-| address_global | `D_caranim_00406BF8` | function `caranimRefreshChangedSelection`, global `D_caranim_00406BF8` | [527](../src/modules/caranim.c#L527), [543](../src/modules/caranim.c#L543) |
-| address_global | `D_caranim_00407178` | function `caranimApplyColorAndCallback`, global `D_caranim_00407178` | [48](../src/modules/caranim.c#L48), [726](../src/modules/caranim.c#L726) |
-| address_global | `D_caranim_004071FC` | function `caranimAcquireConfiguredParticleEffect`, global `D_caranim_004071FC` | [7](../src/modules/caranim.c#L7), [369](../src/modules/caranim.c#L369) |
-| address_global | `D_caranim_00407228` | function `caranimGetLocalizedLabel`, global `D_caranim_00407228` | [44](../src/modules/caranim.c#L44), [667](../src/modules/caranim.c#L667) |
-| address_global | `D_caranim_00407334` | function `caranimRefreshChangedSelection`, global `D_caranim_00407334` | [526](../src/modules/caranim.c#L526), [536](../src/modules/caranim.c#L536), [539](../src/modules/caranim.c#L539), [540](../src/modules/caranim.c#L540), [543](../src/modules/caranim.c#L543) |
-| address_global | `D_caranim_00407348` | function `caranimFindRegisteredStateByObjectHandle`, global `D_caranim_00407348` | [46](../src/modules/caranim.c#L46), [679](../src/modules/caranim.c#L679) |
-| address_global | `D_caranim_00407368` | function `caranimFindRegisteredStateByObjectHandle`, function `caranimGetRegisteredStateCount`, global `D_caranim_00407368` | [89](../src/modules/caranim.c#L89), [678](../src/modules/caranim.c#L678), [693](../src/modules/caranim.c#L693) |
-| address_global | `D_caranim_00407398` | function `caranimAcquireConfiguredParticleEffect`, global `D_caranim_00407398` | [8](../src/modules/caranim.c#L8), [374](../src/modules/caranim.c#L374) |
-| address_global | `D_caranim_004073A8` | function `caranimAcquireConfiguredParticleEffect`, global `D_caranim_00407398` | [8](../src/modules/caranim.c#L8), [374](../src/modules/caranim.c#L374) |
-| address_global | `D_caranim_004073B8` | function `caranimAcquireConfiguredParticleEffect`, global `D_caranim_004073B8` | [9](../src/modules/caranim.c#L9), [377](../src/modules/caranim.c#L377) |
-| address_global | `D_caranim_004073C8` | function `caranimAcquireConfiguredParticleEffect`, global `D_caranim_004073B8` | [9](../src/modules/caranim.c#L9), [377](../src/modules/caranim.c#L377) |
-| address_global | `D_caranim_004073D8` | function `caranimAcquireConfiguredParticleEffect`, global `D_caranim_004073D8` | [10](../src/modules/caranim.c#L10), [380](../src/modules/caranim.c#L380) |
-| address_global | `D_caranim_004073E8` | function `caranimAcquireConfiguredParticleEffect`, global `D_caranim_004073D8` | [10](../src/modules/caranim.c#L10), [380](../src/modules/caranim.c#L380) |
-| address_global | `D_caranim_004073F8` | function `caranimAcquireConfiguredParticleEffect`, global `D_caranim_004073F8` | [11](../src/modules/caranim.c#L11), [383](../src/modules/caranim.c#L383) |
-| address_global | `D_caranim_00407408` | function `caranimAcquireConfiguredParticleEffect`, global `D_caranim_004073F8` | [11](../src/modules/caranim.c#L11), [383](../src/modules/caranim.c#L383) |
-| assembly | `__entrypoint_func_caranim_400000` | — | [90](../src/modules/caranim.c#L90) |
-| assembly | `func_caranim_004003AC` | — | [122](../src/modules/caranim.c#L122) |
-| assembly | `func_caranim_004007B0` | — | [149](../src/modules/caranim.c#L149) |
-| assembly | `func_caranim_00400B08` | — | [151](../src/modules/caranim.c#L151) |
-| assembly | `func_caranim_00400C8C` | — | [171](../src/modules/caranim.c#L171) |
-| assembly | `func_caranim_00401420` | — | [184](../src/modules/caranim.c#L184) |
-| assembly | `func_caranim_004014A4` | — | [206](../src/modules/caranim.c#L206) |
-| assembly | `func_caranim_004014DC` | — | [209](../src/modules/caranim.c#L209) |
-| assembly | `func_caranim_00401564` | — | [225](../src/modules/caranim.c#L225) |
-| assembly | `func_caranim_00401C04` | — | [266](../src/modules/caranim.c#L266) |
-| assembly | `func_caranim_00401D6C` | — | [330](../src/modules/caranim.c#L330) |
-| assembly | `func_caranim_00402FD4` | — | [346](../src/modules/caranim.c#L346) |
-| assembly | `func_caranim_004033F4` | — | [348](../src/modules/caranim.c#L348) |
-| assembly | `func_caranim_0040371C` | — | [402](../src/modules/caranim.c#L402) |
-| assembly | `func_caranim_00403A80` | — | [443](../src/modules/caranim.c#L443) |
-| assembly | `func_caranim_00403BDC` | — | [458](../src/modules/caranim.c#L458) |
-| assembly | `func_caranim_00404074` | — | [460](../src/modules/caranim.c#L460) |
-| assembly | `func_caranim_004042C4` | — | [487](../src/modules/caranim.c#L487) |
-| assembly | `func_caranim_00404568` | — | [503](../src/modules/caranim.c#L503) |
-| assembly | `func_caranim_00404A40` | — | [505](../src/modules/caranim.c#L505) |
-| assembly | `func_caranim_00404ACC` | — | [507](../src/modules/caranim.c#L507) |
-| assembly | `func_caranim_00404CA0` | — | [524](../src/modules/caranim.c#L524) |
-| assembly | `func_caranim_00405304` | — | [578](../src/modules/caranim.c#L578) |
-| assembly | `func_caranim_004054B4` | — | [593](../src/modules/caranim.c#L593) |
-| assembly | `func_caranim_00405910` | — | [610](../src/modules/caranim.c#L610) |
-| assembly | `func_caranim_00405B7C` | — | [641](../src/modules/caranim.c#L641) |
-| assembly | `func_caranim_00405DE4` | — | [657](../src/modules/caranim.c#L657) |
-| assembly | `func_caranim_00406094` | — | [688](../src/modules/caranim.c#L688) |
+| address_function | `func_caranim_00406094` | function `__entrypoint_func_caranim_400000`, function `func_caranim_00406094` | [87](../src/modules/caranim.c#L87), [134](../src/modules/caranim.c#L134) |
+| address_function | `func_uvpfx_rom_004004D0` | function `caranimAcquireConfiguredParticleEffect` | [446](../src/modules/caranim.c#L446) |
+| address_global | `D_caranim_004066A0` | function `caranimGetLocalizedLabel`, global `D_caranim_004066A0` | [43](../src/modules/caranim.c#L43), [741](../src/modules/caranim.c#L741) |
+| address_global | `D_caranim_0040673C` | function `caranimScaleObjectAxisForCheat` | [19](../src/modules/caranim.c#L19), [359](../src/modules/caranim.c#L359) |
+| address_global | `D_caranim_00406740` | function `caranimScaleObjectAxisForCheat` | [19](../src/modules/caranim.c#L19), [363](../src/modules/caranim.c#L363) |
+| address_global | `D_caranim_00406744` | function `caranimScaleObjectAxisForCheat` | [19](../src/modules/caranim.c#L19), [367](../src/modules/caranim.c#L367) |
+| address_global | `D_caranim_00406830` | function `__entrypoint_func_caranim_400000`, function `caranimAdjustScalarAndGetMaterialOffset`, function `caranimGetMaterialRecord`, global `D_caranim_00406830` | [47](../src/modules/caranim.c#L47), [154](../src/modules/caranim.c#L154), [338](../src/modules/caranim.c#L338), [551](../src/modules/caranim.c#L551) |
+| address_global | `D_caranim_00406A28` | function `caranimAdjustScalarAndGetMaterialOffset`, global `D_caranim_00406A28` | [24](../src/modules/caranim.c#L24), [554](../src/modules/caranim.c#L554) |
+| address_global | `D_caranim_00406B84` | function `caranimScaleObjectAxisForCheat`, global `D_caranim_00406B84` | [20](../src/modules/caranim.c#L20), [371](../src/modules/caranim.c#L371), [374](../src/modules/caranim.c#L374) |
+| address_global | `D_caranim_00406B8C` | function `__entrypoint_func_caranim_400000`, function `caranimUnloadEffectModules`, global `D_caranim_00406B8C`, global `D_caranim_00406B8C` | [97](../src/modules/caranim.c#L97), [144](../src/modules/caranim.c#L144), [171](../src/modules/caranim.c#L171), [179](../src/modules/caranim.c#L179) |
+| address_global | `D_caranim_00406BF8` | function `caranimRefreshChangedSelection`, global `D_caranim_00406BF8` | [603](../src/modules/caranim.c#L603), [619](../src/modules/caranim.c#L619) |
+| address_global | `D_caranim_00407178` | function `caranimApplyColorAndCallback`, global `D_caranim_00407178` | [48](../src/modules/caranim.c#L48), [802](../src/modules/caranim.c#L802) |
+| address_global | `D_caranim_004071FC` | function `caranimAcquireConfiguredParticleEffect`, global `D_caranim_004071FC` | [7](../src/modules/caranim.c#L7), [445](../src/modules/caranim.c#L445) |
+| address_global | `D_caranim_00407228` | function `caranimGetLocalizedLabel`, global `D_caranim_00407228` | [44](../src/modules/caranim.c#L44), [743](../src/modules/caranim.c#L743) |
+| address_global | `D_caranim_00407334` | function `caranimRefreshChangedSelection`, global `D_caranim_00407334` | [602](../src/modules/caranim.c#L602), [612](../src/modules/caranim.c#L612), [615](../src/modules/caranim.c#L615), [616](../src/modules/caranim.c#L616), [619](../src/modules/caranim.c#L619) |
+| address_global | `D_caranim_00407348` | function `caranimFindRegisteredStateByObjectHandle`, global `D_caranim_00407348` | [46](../src/modules/caranim.c#L46), [755](../src/modules/caranim.c#L755) |
+| address_global | `D_caranim_00407368` | function `__entrypoint_func_caranim_400000`, function `caranimFindRegisteredStateByObjectHandle`, function `caranimGetRegisteredStateCount`, global `D_caranim_00407368` | [89](../src/modules/caranim.c#L89), [140](../src/modules/caranim.c#L140), [754](../src/modules/caranim.c#L754), [769](../src/modules/caranim.c#L769) |
+| address_global | `D_caranim_00407370` | function `__entrypoint_func_caranim_400000`, global `D_caranim_00407370` | [96](../src/modules/caranim.c#L96), [153](../src/modules/caranim.c#L153) |
+| address_global | `D_caranim_00407390` | function `__entrypoint_func_caranim_400000`, global `D_caranim_00407390` | [95](../src/modules/caranim.c#L95), [154](../src/modules/caranim.c#L154) |
+| address_global | `D_caranim_00407398` | function `__entrypoint_func_caranim_400000`, function `caranimAcquireConfiguredParticleEffect`, global `D_caranim_00407398` | [8](../src/modules/caranim.c#L8), [155](../src/modules/caranim.c#L155), [450](../src/modules/caranim.c#L450) |
+| address_global | `D_caranim_004073A8` | function `__entrypoint_func_caranim_400000`, function `caranimAcquireConfiguredParticleEffect`, global `D_caranim_00407398` | [8](../src/modules/caranim.c#L8), [155](../src/modules/caranim.c#L155), [450](../src/modules/caranim.c#L450) |
+| address_global | `D_caranim_004073B8` | function `__entrypoint_func_caranim_400000`, function `caranimAcquireConfiguredParticleEffect`, global `D_caranim_004073B8` | [9](../src/modules/caranim.c#L9), [156](../src/modules/caranim.c#L156), [453](../src/modules/caranim.c#L453) |
+| address_global | `D_caranim_004073C8` | function `__entrypoint_func_caranim_400000`, function `caranimAcquireConfiguredParticleEffect`, global `D_caranim_004073B8` | [9](../src/modules/caranim.c#L9), [156](../src/modules/caranim.c#L156), [453](../src/modules/caranim.c#L453) |
+| address_global | `D_caranim_004073D8` | function `__entrypoint_func_caranim_400000`, function `caranimAcquireConfiguredParticleEffect`, global `D_caranim_004073D8` | [10](../src/modules/caranim.c#L10), [157](../src/modules/caranim.c#L157), [456](../src/modules/caranim.c#L456) |
+| address_global | `D_caranim_004073E8` | function `__entrypoint_func_caranim_400000`, function `caranimAcquireConfiguredParticleEffect`, global `D_caranim_004073D8` | [10](../src/modules/caranim.c#L10), [157](../src/modules/caranim.c#L157), [456](../src/modules/caranim.c#L456) |
+| address_global | `D_caranim_004073F8` | function `__entrypoint_func_caranim_400000`, function `caranimAcquireConfiguredParticleEffect`, global `D_caranim_004073F8` | [11](../src/modules/caranim.c#L11), [158](../src/modules/caranim.c#L158), [459](../src/modules/caranim.c#L459) |
+| address_global | `D_caranim_00407408` | function `__entrypoint_func_caranim_400000`, function `caranimAcquireConfiguredParticleEffect`, global `D_caranim_004073F8` | [11](../src/modules/caranim.c#L11), [158](../src/modules/caranim.c#L158), [459](../src/modules/caranim.c#L459) |
+| assembly | `func_caranim_004003AC` | — | [198](../src/modules/caranim.c#L198) |
+| assembly | `func_caranim_004007B0` | — | [225](../src/modules/caranim.c#L225) |
+| assembly | `func_caranim_00400B08` | — | [227](../src/modules/caranim.c#L227) |
+| assembly | `func_caranim_00400C8C` | — | [247](../src/modules/caranim.c#L247) |
+| assembly | `func_caranim_00401420` | — | [260](../src/modules/caranim.c#L260) |
+| assembly | `func_caranim_004014A4` | — | [282](../src/modules/caranim.c#L282) |
+| assembly | `func_caranim_004014DC` | — | [285](../src/modules/caranim.c#L285) |
+| assembly | `func_caranim_00401564` | — | [301](../src/modules/caranim.c#L301) |
+| assembly | `func_caranim_00401C04` | — | [342](../src/modules/caranim.c#L342) |
+| assembly | `func_caranim_00401D6C` | — | [406](../src/modules/caranim.c#L406) |
+| assembly | `func_caranim_00402FD4` | — | [422](../src/modules/caranim.c#L422) |
+| assembly | `func_caranim_004033F4` | — | [424](../src/modules/caranim.c#L424) |
+| assembly | `func_caranim_0040371C` | — | [478](../src/modules/caranim.c#L478) |
+| assembly | `func_caranim_00403A80` | — | [519](../src/modules/caranim.c#L519) |
+| assembly | `func_caranim_00403BDC` | — | [534](../src/modules/caranim.c#L534) |
+| assembly | `func_caranim_00404074` | — | [536](../src/modules/caranim.c#L536) |
+| assembly | `func_caranim_004042C4` | — | [563](../src/modules/caranim.c#L563) |
+| assembly | `func_caranim_00404568` | — | [579](../src/modules/caranim.c#L579) |
+| assembly | `func_caranim_00404A40` | — | [581](../src/modules/caranim.c#L581) |
+| assembly | `func_caranim_00404ACC` | — | [583](../src/modules/caranim.c#L583) |
+| assembly | `func_caranim_00404CA0` | — | [600](../src/modules/caranim.c#L600) |
+| assembly | `func_caranim_00405304` | — | [654](../src/modules/caranim.c#L654) |
+| assembly | `func_caranim_004054B4` | — | [669](../src/modules/caranim.c#L669) |
+| assembly | `func_caranim_00405910` | — | [686](../src/modules/caranim.c#L686) |
+| assembly | `func_caranim_00405B7C` | — | [717](../src/modules/caranim.c#L717) |
+| assembly | `func_caranim_00405DE4` | — | [733](../src/modules/caranim.c#L733) |
+| assembly | `func_caranim_00406094` | — | [764](../src/modules/caranim.c#L764) |
 | decompiler_local | `arg0` | function `caranimGetLocalizedLabel` | [85](../src/modules/caranim.c#L85) |
-| explicit_unknown | `Acquire an inactive particle effect of the requested kind, configure it, * then restart it. The shared-data address and requested count ten go through * export 0x3C; the scalar ...` | function `caranimAcquireConfiguredParticleEffect` | [351](../src/modules/caranim.c#L351) |
-| explicit_unknown | `Acquire an inactive particle effect of the requested kind, then read * properties 0x1005 and 0x4026 into two four-float output regions. * The actual getter at export 0x18 writes...` | function `caranimAcquireParticleEffectAndReadProperties` | [420](../src/modules/caranim.c#L420) |
-| explicit_unknown | `Add byte-derived offsets to both palettes' first three components and clamp * with ordered comparisons; both fourth components use the same byte/255 value. * Original setup quer...` | assembly `func_caranim_0040371C` | [392](../src/modules/caranim.c#L392) |
-| explicit_unknown | `Apply a variadic property list using signed-low-half tags 0..30; zero or an * invalid tag ends processing. Doubles narrow to f32, vectors copy component * by component, and tag ...` | assembly `func_caranim_00400C8C` | [153](../src/modules/caranim.c#L153) |
-| explicit_unknown | `Apply color and register property-four callback; the object retains state. * RE_UNKNOWN: color-index bounds and retained-state lifetime need producers/teardown.` | function `caranimApplyColorAndCallback` | [722](../src/modules/caranim.c#L722) |
-| explicit_unknown | `Apply shared controls to selection words 0x408/0x410, set or clear a * table-word object mask, then update packed light words and gated transforms. * The random path updates thr...` | assembly `func_caranim_004007B0` | [133](../src/modules/caranim.c#L133) |
-| explicit_unknown | `Approach two bounded state scalars, then apply X/Y matrix operations and * publish selected object matrices. The disabled path copies/publishes only. * Preserve double-precision...` | assembly `func_caranim_00404568` | [489](../src/modules/caranim.c#L489) |
-| explicit_unknown | `Build Y from direction, X from Y cross Z, then Z from X cross Y. * RE_ORIGINAL_QUIRK: a nonzero Y parallel to identity Z produces zero X/Z. * RE_UNKNOWN: producer direction cons...` | function `caranimBuildOrientationBasis` | [550](../src/modules/caranim.c#L550) |
-| explicit_unknown | `Compute the material offset and conditionally update the caller's scalar. * Kinds two/three add 0.125; the special record adds 0.5 when suppressSpecialCase * is zero, raising on...` | function `caranimAdjustScalarAndGetMaterialOffset` | [463](../src/modules/caranim.c#L463) |
-| explicit_unknown | `Copy four words from each stride-0x70 shared record, then construct a text * list and fifteen bound scalar rows, including state-dependent controls. * Preserve signed-16 allocat...` | assembly `func_caranim_00401564` | [211](../src/modules/caranim.c#L211) |
-| explicit_unknown | `Disable light-buffer selection with -1 before checking state selection 0x410. * Snapshot selected record words 0x14/0x10 as old/new texture IDs, query the * object's model and w...` | assembly `func_caranim_00405910` | [595](../src/modules/caranim.c#L595) |
-| explicit_unknown | `Find the first registered state for this DOBJ handle with unsigned 16-bit traversal. RE_ORIGINAL_QUIRK: constructor0x003AC increments count even when all eight slots are full. *...` | function `caranimFindRegisteredStateByObjectHandle` | [672](../src/modules/caranim.c#L672) |
-| explicit_unknown | `For cheat four/five/six, scale all four components of matrix row X/Y/Z * and publish axis plus one; other values clear the byte. Reload the handle. * RE_ORIGINAL_QUIRK: the loca...` | function `caranimScaleObjectAxisForCheat` | [269](../src/modules/caranim.c#L269) |
-| explicit_unknown | `Native callback consumes channel A0. When the default state and UVTX0x436 * are available, reread the state and set texture selectors u2/v2 from its * scaled float 0x3A8: first ...` | assembly `func_caranim_00405B7C` | [625](../src/modules/caranim.c#L625) |
-| explicit_unknown | `On selection change, update, reread selection and copy 30 bytes via its text pointer. * GUI slot 0xC4 uppercases bytes >= 97 without NUL-scanning or retaining source. * RE_UNKNO...` | function `caranimRefreshChangedSelection` | [531](../src/modules/caranim.c#L531) |
-| explicit_unknown | `Read camera pointer cell CAM0x30; its signed word0x220 selects state light slot0x248 * when nonnegative, otherwise -1. RE_UNKNOWN: camera/state pointer lifetime, slot bounds * a...` | function `caranimSelectCameraLightBufferSlot` | [701](../src/modules/caranim.c#L701) |
-| explicit_unknown | `Register the animation callback at priority 0x14; zero means no insert-before callback. * RE_UNKNOWN: caller channel/list validity and ignored failure need caller/pool audit.` | function `caranimRegisterChannelCallback` | [613](../src/modules/caranim.c#L613) |
-| explicit_unknown | `Return an address in the module's 0x1C-stride table without allocating. * Sentinel 0xFFF and the debug override select record zero. RE_UNKNOWN: caller * index bounds and mutatio...` | function `caranimGetMaterialRecord` | [252](../src/modules/caranim.c#L252) |
-| explicit_unknown | `Select a model from the record indexed by state word 0x410, using the * channel vector's projections onto queried object matrix rows. Preserve * ordered ratio tests, positive-co...` | assembly `func_caranim_00405DE4` | [643](../src/modules/caranim.c#L643) |
-| explicit_unknown | `Snapshot selections 0x410/0x408 before waiting on graphics and releasing * texture-animation storage. Copy saved matrices into the old object, load the * requested models/textur...` | assembly `func_caranim_00404CA0` | [509](../src/modules/caranim.c#L509) |
-| explicit_unknown | `Stored rows 0..2 each hold 21 label addresses; IDs outside -1..20 return "INVALID". * RE_ORIGINAL_QUIRK: ID -1 yields 0x01020000 for row0, or the preceding row's last label. * R...` | function `caranimGetLocalizedLabel` | [660](../src/modules/caranim.c#L660) |
-| explicit_unknown | `Update four descriptor-driven effect slots from transformed local points. * Snapshot the optional source pointer, selector word and selected scalar; * preserve callback-dependen...` | assembly `func_caranim_00401D6C` | [309](../src/modules/caranim.c#L309) |
-| explicit_unknown | `Update two configured particle positions using selected object matrices. * Ordered scalar >= 3 clears object flag mask 0x02, begins final intervals * for existing effects, then ...` | assembly `func_caranim_00402FD4` | [332](../src/modules/caranim.c#L332) |
-| explicit_unknown | `Update two scalar accumulators and three configured object matrices after * matching the selected record's model words. Preserve single/double arithmetic, * scalar folds, ordere...` | assembly `func_caranim_00403BDC` | [445](../src/modules/caranim.c#L445) |
-| explicit_unknown | `Walk at most eight registry entries, stopping at the first null, and clear * byte0x23C: callback0x054B4 skips light/shadow helper0x05304 while nonzero. * Constructor0x003AC clea...` | assembly `func_caranim_004014A4` | [201](../src/modules/caranim.c#L201) |
-| explicit_unknown | `When unsigned byte 0x240 is nonzero, scan four pointer slots at 0x2C0 * for the first null. A full list makes no call; otherwise SPARKS slot 0x0C * consumes the supplied three-f...` | assembly `func_caranim_00401420` | [173](../src/modules/caranim.c#L173) |
-| explicit_unknown | `func_caranim_004003AC consumes three incoming words and returns its * 0x45C-byte allocation. It publishes the first-free registry pointer before * clearing storage, initializes ...` | assembly `func_caranim_004003AC` | [107](../src/modules/caranim.c#L107) |
-| explicit_unknown | `func_caranim_00405304 applies light records using the object's saved position * or a query word, then conditionally updates shadow state and three scene records. * Snapshot matr...` | assembly `func_caranim_00405304` | [568](../src/modules/caranim.c#L568) |
-| explicit_unknown | `func_caranim_004054B4 gates helper5304 by camera query220 and byte23C, * selects a UVLIGHT buffer, optionally draws shadow state, then emits conversion * coefficients from an or...` | assembly `func_caranim_004054B4` | [580](../src/modules/caranim.c#L580) |
+| explicit_unknown | `Acquire an inactive particle effect of the requested kind, configure it, * then restart it. The shared-data address and requested count ten go through * export 0x3C; the scalar ...` | function `caranimAcquireConfiguredParticleEffect` | [427](../src/modules/caranim.c#L427) |
+| explicit_unknown | `Acquire an inactive particle effect of the requested kind, then read * properties 0x1005 and 0x4026 into two four-float output regions. * The actual getter at export 0x18 writes...` | function `caranimAcquireParticleEffectAndReadProperties` | [496](../src/modules/caranim.c#L496) |
+| explicit_unknown | `Add byte-derived offsets to both palettes' first three components and clamp * with ordered comparisons; both fourth components use the same byte/255 value. * Original setup quer...` | assembly `func_caranim_0040371C` | [468](../src/modules/caranim.c#L468) |
+| explicit_unknown | `Apply a variadic property list using signed-low-half tags 0..30; zero or an * invalid tag ends processing. Doubles narrow to f32, vectors copy component * by component, and tag ...` | assembly `func_caranim_00400C8C` | [229](../src/modules/caranim.c#L229) |
+| explicit_unknown | `Apply color and register property-four callback; the object retains state. * RE_UNKNOWN: color-index bounds and retained-state lifetime need producers/teardown.` | function `caranimApplyColorAndCallback` | [798](../src/modules/caranim.c#L798) |
+| explicit_unknown | `Apply shared controls to selection words 0x408/0x410, set or clear a * table-word object mask, then update packed light words and gated transforms. * The random path updates thr...` | assembly `func_caranim_004007B0` | [209](../src/modules/caranim.c#L209) |
+| explicit_unknown | `Approach two bounded state scalars, then apply X/Y matrix operations and * publish selected object matrices. The disabled path copies/publishes only. * Preserve double-precision...` | assembly `func_caranim_00404568` | [565](../src/modules/caranim.c#L565) |
+| explicit_unknown | `Build Y from direction, X from Y cross Z, then Z from X cross Y. * RE_ORIGINAL_QUIRK: a nonzero Y parallel to identity Z produces zero X/Z. * RE_UNKNOWN: producer direction cons...` | function `caranimBuildOrientationBasis` | [626](../src/modules/caranim.c#L626) |
+| explicit_unknown | `Compute the material offset and conditionally update the caller's scalar. * Kinds two/three add 0.125; the special record adds 0.5 when suppressSpecialCase * is zero, raising on...` | function `caranimAdjustScalarAndGetMaterialOffset` | [539](../src/modules/caranim.c#L539) |
+| explicit_unknown | `Copy four words from each stride-0x70 shared record, then construct a text * list and fifteen bound scalar rows, including state-dependent controls. * Preserve signed-16 allocat...` | assembly `func_caranim_00401564` | [287](../src/modules/caranim.c#L287) |
+| explicit_unknown | `Disable light-buffer selection with -1 before checking state selection 0x410. * Snapshot selected record words 0x14/0x10 as old/new texture IDs, query the * object's model and w...` | assembly `func_caranim_00405910` | [671](../src/modules/caranim.c#L671) |
+| explicit_unknown | `Find the first registered state for this DOBJ handle with unsigned 16-bit traversal. RE_ORIGINAL_QUIRK: constructor0x003AC increments count even when all eight slots are full. *...` | function `caranimFindRegisteredStateByObjectHandle` | [748](../src/modules/caranim.c#L748) |
+| explicit_unknown | `For cheat four/five/six, scale all four components of matrix row X/Y/Z * and publish axis plus one; other values clear the byte. Reload the handle. * RE_ORIGINAL_QUIRK: the loca...` | function `caranimScaleObjectAxisForCheat` | [345](../src/modules/caranim.c#L345) |
+| explicit_unknown | `Initializer-only storage views; seven words copied without interpreting them. * RE_UNKNOWN: table extent, selector domain, storage ownership and full export ABI.` | — | [90](../src/modules/caranim.c#L90) |
+| explicit_unknown | `Native callback consumes channel A0. When the default state and UVTX0x436 * are available, reread the state and set texture selectors u2/v2 from its * scaled float 0x3A8: first ...` | assembly `func_caranim_00405B7C` | [701](../src/modules/caranim.c#L701) |
+| explicit_unknown | `On selection change, update, reread selection and copy 30 bytes via its text pointer. * GUI slot 0xC4 uppercases bytes >= 97 without NUL-scanning or retaining source. * RE_UNKNO...` | function `caranimRefreshChangedSelection` | [607](../src/modules/caranim.c#L607) |
+| explicit_unknown | `Publish the 19 original export addresses, load effect modules and assets, * copy the selected seven-word record and cache four particle property pairs. * Register the original c...` | function `__entrypoint_func_caranim_400000` | [114](../src/modules/caranim.c#L114) |
+| explicit_unknown | `Read camera pointer cell CAM0x30; its signed word0x220 selects state light slot0x248 * when nonnegative, otherwise -1. RE_UNKNOWN: camera/state pointer lifetime, slot bounds * a...` | function `caranimSelectCameraLightBufferSlot` | [777](../src/modules/caranim.c#L777) |
+| explicit_unknown | `Register the animation callback at priority 0x14; zero means no insert-before callback. * RE_UNKNOWN: caller channel/list validity and ignored failure need caller/pool audit.` | function `caranimRegisterChannelCallback` | [689](../src/modules/caranim.c#L689) |
+| explicit_unknown | `Return an address in the module's 0x1C-stride table without allocating. * Sentinel 0xFFF and the debug override select record zero. RE_UNKNOWN: caller * index bounds and mutatio...` | function `caranimGetMaterialRecord` | [328](../src/modules/caranim.c#L328) |
+| explicit_unknown | `Select a model from the record indexed by state word 0x410, using the * channel vector's projections onto queried object matrix rows. Preserve * ordered ratio tests, positive-co...` | assembly `func_caranim_00405DE4` | [719](../src/modules/caranim.c#L719) |
+| explicit_unknown | `Snapshot selections 0x410/0x408 before waiting on graphics and releasing * texture-animation storage. Copy saved matrices into the old object, load the * requested models/textur...` | assembly `func_caranim_00404CA0` | [585](../src/modules/caranim.c#L585) |
+| explicit_unknown | `Stored rows 0..2 each hold 21 label addresses; IDs outside -1..20 return "INVALID". * RE_ORIGINAL_QUIRK: ID -1 yields 0x01020000 for row0, or the preceding row's last label. * R...` | function `caranimGetLocalizedLabel` | [736](../src/modules/caranim.c#L736) |
+| explicit_unknown | `Update four descriptor-driven effect slots from transformed local points. * Snapshot the optional source pointer, selector word and selected scalar; * preserve callback-dependen...` | assembly `func_caranim_00401D6C` | [385](../src/modules/caranim.c#L385) |
+| explicit_unknown | `Update two configured particle positions using selected object matrices. * Ordered scalar >= 3 clears object flag mask 0x02, begins final intervals * for existing effects, then ...` | assembly `func_caranim_00402FD4` | [408](../src/modules/caranim.c#L408) |
+| explicit_unknown | `Update two scalar accumulators and three configured object matrices after * matching the selected record's model words. Preserve single/double arithmetic, * scalar folds, ordere...` | assembly `func_caranim_00403BDC` | [521](../src/modules/caranim.c#L521) |
+| explicit_unknown | `Walk at most eight registry entries, stopping at the first null, and clear * byte0x23C: callback0x054B4 skips light/shadow helper0x05304 while nonzero. * Constructor0x003AC clea...` | assembly `func_caranim_004014A4` | [277](../src/modules/caranim.c#L277) |
+| explicit_unknown | `When unsigned byte 0x240 is nonzero, scan four pointer slots at 0x2C0 * for the first null. A full list makes no call; otherwise SPARKS slot 0x0C * consumes the supplied three-f...` | assembly `func_caranim_00401420` | [249](../src/modules/caranim.c#L249) |
+| explicit_unknown | `func_caranim_004003AC consumes three incoming words and returns its * 0x45C-byte allocation. It publishes the first-free registry pointer before * clearing storage, initializes ...` | assembly `func_caranim_004003AC` | [183](../src/modules/caranim.c#L183) |
+| explicit_unknown | `func_caranim_00405304 applies light records using the object's saved position * or a query word, then conditionally updates shadow state and three scene records. * Snapshot matr...` | assembly `func_caranim_00405304` | [644](../src/modules/caranim.c#L644) |
+| explicit_unknown | `func_caranim_004054B4 gates helper5304 by camera query220 and byte23C, * selects a UVLIGHT buffer, optionally draws shadow state, then emits conversion * coefficients from an or...` | assembly `func_caranim_004054B4` | [656](../src/modules/caranim.c#L656) |
 | layout_padding | `gap0A` | type `CarAnimMaterialOffset` | [23](../src/modules/caranim.c#L23) |
 | layout_padding | `prefix` | type `CarAnimMaterialOffset` | [23](../src/modules/caranim.c#L23) |
 | offset_field | `flag23C` | type `CarAnimRegisteredState` | [35](../src/modules/caranim.c#L35) |
@@ -1868,26 +1872,26 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk00` | type `CarAnimBasisState`, type `CarAnimColorContext`, type `CarAnimRegisteredState` | [27](../src/modules/caranim.c#L27), [34](../src/modules/caranim.c#L34), [35](../src/modules/caranim.c#L35) |
 | offset_field | `unk0C` | type `CarAnimRegisteredState` | [35](../src/modules/caranim.c#L35) |
 | offset_field | `unk2A0` | type `CarAnimBasisState` | [27](../src/modules/caranim.c#L27) |
-| original_quirk | `Acquire an inactive particle effect of the requested kind, then read * properties 0x1005 and 0x4026 into two four-float output regions. * The actual getter at export 0x18 writes...` | function `caranimAcquireParticleEffectAndReadProperties` | [420](../src/modules/caranim.c#L420) |
-| original_quirk | `Apply a variadic property list using signed-low-half tags 0..30; zero or an * invalid tag ends processing. Doubles narrow to f32, vectors copy component * by component, and tag ...` | assembly `func_caranim_00400C8C` | [153](../src/modules/caranim.c#L153) |
-| original_quirk | `Apply shared controls to selection words 0x408/0x410, set or clear a * table-word object mask, then update packed light words and gated transforms. * The random path updates thr...` | assembly `func_caranim_004007B0` | [133](../src/modules/caranim.c#L133) |
-| original_quirk | `Approach two bounded state scalars, then apply X/Y matrix operations and * publish selected object matrices. The disabled path copies/publishes only. * Preserve double-precision...` | assembly `func_caranim_00404568` | [489](../src/modules/caranim.c#L489) |
-| original_quirk | `Build Y from direction, X from Y cross Z, then Z from X cross Y. * RE_ORIGINAL_QUIRK: a nonzero Y parallel to identity Z produces zero X/Z. * RE_UNKNOWN: producer direction cons...` | function `caranimBuildOrientationBasis` | [550](../src/modules/caranim.c#L550) |
-| original_quirk | `Copy four words from each stride-0x70 shared record, then construct a text * list and fifteen bound scalar rows, including state-dependent controls. * Preserve signed-16 allocat...` | assembly `func_caranim_00401564` | [211](../src/modules/caranim.c#L211) |
-| original_quirk | `Disable light-buffer selection with -1 before checking state selection 0x410. * Snapshot selected record words 0x14/0x10 as old/new texture IDs, query the * object's model and w...` | assembly `func_caranim_00405910` | [595](../src/modules/caranim.c#L595) |
-| original_quirk | `Find the first registered state for this DOBJ handle with unsigned 16-bit traversal. RE_ORIGINAL_QUIRK: constructor0x003AC increments count even when all eight slots are full. *...` | function `caranimFindRegisteredStateByObjectHandle` | [672](../src/modules/caranim.c#L672) |
-| original_quirk | `For cheat four/five/six, scale all four components of matrix row X/Y/Z * and publish axis plus one; other values clear the byte. Reload the handle. * RE_ORIGINAL_QUIRK: the loca...` | function `caranimScaleObjectAxisForCheat` | [269](../src/modules/caranim.c#L269) |
-| original_quirk | `Native callback consumes channel A0. When the default state and UVTX0x436 * are available, reread the state and set texture selectors u2/v2 from its * scaled float 0x3A8: first ...` | assembly `func_caranim_00405B7C` | [625](../src/modules/caranim.c#L625) |
-| original_quirk | `Select a model from the record indexed by state word 0x410, using the * channel vector's projections onto queried object matrix rows. Preserve * ordered ratio tests, positive-co...` | assembly `func_caranim_00405DE4` | [643](../src/modules/caranim.c#L643) |
-| original_quirk | `Snapshot selections 0x410/0x408 before waiting on graphics and releasing * texture-animation storage. Copy saved matrices into the old object, load the * requested models/textur...` | assembly `func_caranim_00404CA0` | [509](../src/modules/caranim.c#L509) |
-| original_quirk | `Stored rows 0..2 each hold 21 label addresses; IDs outside -1..20 return "INVALID". * RE_ORIGINAL_QUIRK: ID -1 yields 0x01020000 for row0, or the preceding row's last label. * R...` | function `caranimGetLocalizedLabel` | [660](../src/modules/caranim.c#L660) |
-| original_quirk | `Update four descriptor-driven effect slots from transformed local points. * Snapshot the optional source pointer, selector word and selected scalar; * preserve callback-dependen...` | assembly `func_caranim_00401D6C` | [309](../src/modules/caranim.c#L309) |
-| original_quirk | `Update two configured particle positions using selected object matrices. * Ordered scalar >= 3 clears object flag mask 0x02, begins final intervals * for existing effects, then ...` | assembly `func_caranim_00402FD4` | [332](../src/modules/caranim.c#L332) |
-| original_quirk | `Update two scalar accumulators and three configured object matrices after * matching the selected record's model words. Preserve single/double arithmetic, * scalar folds, ordere...` | assembly `func_caranim_00403BDC` | [445](../src/modules/caranim.c#L445) |
-| original_quirk | `func_caranim_004003AC consumes three incoming words and returns its * 0x45C-byte allocation. It publishes the first-free registry pointer before * clearing storage, initializes ...` | assembly `func_caranim_004003AC` | [107](../src/modules/caranim.c#L107) |
-| original_quirk | `func_caranim_00405304 applies light records using the object's saved position * or a query word, then conditionally updates shadow state and three scene records. * Snapshot matr...` | assembly `func_caranim_00405304` | [568](../src/modules/caranim.c#L568) |
-| original_quirk | `func_caranim_004054B4 gates helper5304 by camera query220 and byte23C, * selects a UVLIGHT buffer, optionally draws shadow state, then emits conversion * coefficients from an or...` | assembly `func_caranim_004054B4` | [580](../src/modules/caranim.c#L580) |
-| unused_identifier | `unused` | function `caranimDrawLoadedTextureOverlay` | [231](../src/modules/caranim.c#L231) |
+| original_quirk | `Acquire an inactive particle effect of the requested kind, then read * properties 0x1005 and 0x4026 into two four-float output regions. * The actual getter at export 0x18 writes...` | function `caranimAcquireParticleEffectAndReadProperties` | [496](../src/modules/caranim.c#L496) |
+| original_quirk | `Apply a variadic property list using signed-low-half tags 0..30; zero or an * invalid tag ends processing. Doubles narrow to f32, vectors copy component * by component, and tag ...` | assembly `func_caranim_00400C8C` | [229](../src/modules/caranim.c#L229) |
+| original_quirk | `Apply shared controls to selection words 0x408/0x410, set or clear a * table-word object mask, then update packed light words and gated transforms. * The random path updates thr...` | assembly `func_caranim_004007B0` | [209](../src/modules/caranim.c#L209) |
+| original_quirk | `Approach two bounded state scalars, then apply X/Y matrix operations and * publish selected object matrices. The disabled path copies/publishes only. * Preserve double-precision...` | assembly `func_caranim_00404568` | [565](../src/modules/caranim.c#L565) |
+| original_quirk | `Build Y from direction, X from Y cross Z, then Z from X cross Y. * RE_ORIGINAL_QUIRK: a nonzero Y parallel to identity Z produces zero X/Z. * RE_UNKNOWN: producer direction cons...` | function `caranimBuildOrientationBasis` | [626](../src/modules/caranim.c#L626) |
+| original_quirk | `Copy four words from each stride-0x70 shared record, then construct a text * list and fifteen bound scalar rows, including state-dependent controls. * Preserve signed-16 allocat...` | assembly `func_caranim_00401564` | [287](../src/modules/caranim.c#L287) |
+| original_quirk | `Disable light-buffer selection with -1 before checking state selection 0x410. * Snapshot selected record words 0x14/0x10 as old/new texture IDs, query the * object's model and w...` | assembly `func_caranim_00405910` | [671](../src/modules/caranim.c#L671) |
+| original_quirk | `Find the first registered state for this DOBJ handle with unsigned 16-bit traversal. RE_ORIGINAL_QUIRK: constructor0x003AC increments count even when all eight slots are full. *...` | function `caranimFindRegisteredStateByObjectHandle` | [748](../src/modules/caranim.c#L748) |
+| original_quirk | `For cheat four/five/six, scale all four components of matrix row X/Y/Z * and publish axis plus one; other values clear the byte. Reload the handle. * RE_ORIGINAL_QUIRK: the loca...` | function `caranimScaleObjectAxisForCheat` | [345](../src/modules/caranim.c#L345) |
+| original_quirk | `Native callback consumes channel A0. When the default state and UVTX0x436 * are available, reread the state and set texture selectors u2/v2 from its * scaled float 0x3A8: first ...` | assembly `func_caranim_00405B7C` | [701](../src/modules/caranim.c#L701) |
+| original_quirk | `Select a model from the record indexed by state word 0x410, using the * channel vector's projections onto queried object matrix rows. Preserve * ordered ratio tests, positive-co...` | assembly `func_caranim_00405DE4` | [719](../src/modules/caranim.c#L719) |
+| original_quirk | `Snapshot selections 0x410/0x408 before waiting on graphics and releasing * texture-animation storage. Copy saved matrices into the old object, load the * requested models/textur...` | assembly `func_caranim_00404CA0` | [585](../src/modules/caranim.c#L585) |
+| original_quirk | `Stored rows 0..2 each hold 21 label addresses; IDs outside -1..20 return "INVALID". * RE_ORIGINAL_QUIRK: ID -1 yields 0x01020000 for row0, or the preceding row's last label. * R...` | function `caranimGetLocalizedLabel` | [736](../src/modules/caranim.c#L736) |
+| original_quirk | `Update four descriptor-driven effect slots from transformed local points. * Snapshot the optional source pointer, selector word and selected scalar; * preserve callback-dependen...` | assembly `func_caranim_00401D6C` | [385](../src/modules/caranim.c#L385) |
+| original_quirk | `Update two configured particle positions using selected object matrices. * Ordered scalar >= 3 clears object flag mask 0x02, begins final intervals * for existing effects, then ...` | assembly `func_caranim_00402FD4` | [408](../src/modules/caranim.c#L408) |
+| original_quirk | `Update two scalar accumulators and three configured object matrices after * matching the selected record's model words. Preserve single/double arithmetic, * scalar folds, ordere...` | assembly `func_caranim_00403BDC` | [521](../src/modules/caranim.c#L521) |
+| original_quirk | `func_caranim_004003AC consumes three incoming words and returns its * 0x45C-byte allocation. It publishes the first-free registry pointer before * clearing storage, initializes ...` | assembly `func_caranim_004003AC` | [183](../src/modules/caranim.c#L183) |
+| original_quirk | `func_caranim_00405304 applies light records using the object's saved position * or a query word, then conditionally updates shadow state and three scene records. * Snapshot matr...` | assembly `func_caranim_00405304` | [644](../src/modules/caranim.c#L644) |
+| original_quirk | `func_caranim_004054B4 gates helper5304 by camera query220 and byte23C, * selects a UVLIGHT buffer, optionally draws shadow state, then emits conversion * coefficients from an or...` | assembly `func_caranim_004054B4` | [656](../src/modules/caranim.c#L656) |
+| unused_identifier | `unused` | function `caranimDrawLoadedTextureOverlay`, function `caranimDrawLoadedTextureOverlay` | [101](../src/modules/caranim.c#L101), [307](../src/modules/caranim.c#L307) |
 
 ## src/modules/caraudio.c
 
@@ -5672,66 +5676,44 @@ For every future source wave, regenerate and check this index after code and str
 | --- | --- | --- | --- |
 | address_function | `__entrypoint_func_uvcontourld_rom_400000` | function `__entrypoint_func_uvcontourld_rom_400000`, function `__entrypoint_func_uvcontourld_rom_400000` | [8](../src/modules/uvcontourld_rom.c#L8), [15](../src/modules/uvcontourld_rom.c#L15), [17](../src/modules/uvcontourld_rom.c#L17) |
 | address_global | `D_uvcontourld_rom_00400C30` | — | [15](../src/modules/uvcontourld_rom.c#L15) |
-| decompiler_local | `arg0` | function `_uvParseUVCT`, function `_uvParseUVCT`, function `uvParseUVCT` | [10](../src/modules/uvcontourld_rom.c#L10), [12](../src/modules/uvcontourld_rom.c#L12), [85](../src/modules/uvcontourld_rom.c#L85), [123](../src/modules/uvcontourld_rom.c#L123), [124](../src/modules/uvcontourld_rom.c#L124), [125](../src/modules/uvcontourld_rom.c#L125), [126](../src/modules/uvcontourld_rom.c#L126), [127](../src/modules/uvcontourld_rom.c#L127) (+39 in JSON) |
+| decompiler_local | `arg0` | function `_uvParseUVCT`, function `uvParseUVCT` | [10](../src/modules/uvcontourld_rom.c#L10), [12](../src/modules/uvcontourld_rom.c#L12) |
 | decompiler_local | `arg1` | function `uvContourWritePackedTriangles` | [11](../src/modules/uvcontourld_rom.c#L11) |
 | decompiler_local | `arg2` | function `uvContourWritePackedTriangles` | [11](../src/modules/uvcontourld_rom.c#L11) |
-| decompiler_local | `sp104` | function `_uvParseUVCT` | [90](../src/modules/uvcontourld_rom.c#L90), [165](../src/modules/uvcontourld_rom.c#L165), [167](../src/modules/uvcontourld_rom.c#L167), [250](../src/modules/uvcontourld_rom.c#L250) |
-| decompiler_local | `sp108` | function `_uvParseUVCT` | [89](../src/modules/uvcontourld_rom.c#L89), [134](../src/modules/uvcontourld_rom.c#L134), [135](../src/modules/uvcontourld_rom.c#L135), [236](../src/modules/uvcontourld_rom.c#L236) |
-| decompiler_local | `sp10C` | function `_uvParseUVCT` | [88](../src/modules/uvcontourld_rom.c#L88), [130](../src/modules/uvcontourld_rom.c#L130), [131](../src/modules/uvcontourld_rom.c#L131), [226](../src/modules/uvcontourld_rom.c#L226), [248](../src/modules/uvcontourld_rom.c#L248) |
-| decompiler_local | `sp114` | function `_uvParseUVCT` | [86](../src/modules/uvcontourld_rom.c#L86), [131](../src/modules/uvcontourld_rom.c#L131), [187](../src/modules/uvcontourld_rom.c#L187), [188](../src/modules/uvcontourld_rom.c#L188), [194](../src/modules/uvcontourld_rom.c#L194), [195](../src/modules/uvcontourld_rom.c#L195), [220](../src/modules/uvcontourld_rom.c#L220), [226](../src/modules/uvcontourld_rom.c#L226) |
-| decompiler_local | `sp80` | function `_uvParseUVCT` | [121](../src/modules/uvcontourld_rom.c#L121), [133](../src/modules/uvcontourld_rom.c#L133), [190](../src/modules/uvcontourld_rom.c#L190), [226](../src/modules/uvcontourld_rom.c#L226) |
-| decompiler_local | `sp84` | function `_uvParseUVCT` | [120](../src/modules/uvcontourld_rom.c#L120), [170](../src/modules/uvcontourld_rom.c#L170), [171](../src/modules/uvcontourld_rom.c#L171), [172](../src/modules/uvcontourld_rom.c#L172), [181](../src/modules/uvcontourld_rom.c#L181) |
-| decompiler_local | `spB8` | function `_uvParseUVCT` | [119](../src/modules/uvcontourld_rom.c#L119), [129](../src/modules/uvcontourld_rom.c#L129), [260](../src/modules/uvcontourld_rom.c#L260) |
-| decompiler_local | `spBC` | function `_uvParseUVCT` | [118](../src/modules/uvcontourld_rom.c#L118), [127](../src/modules/uvcontourld_rom.c#L127), [154](../src/modules/uvcontourld_rom.c#L154), [258](../src/modules/uvcontourld_rom.c#L258) |
-| decompiler_local | `spC0` | function `_uvParseUVCT` | [117](../src/modules/uvcontourld_rom.c#L117), [128](../src/modules/uvcontourld_rom.c#L128), [155](../src/modules/uvcontourld_rom.c#L155), [198](../src/modules/uvcontourld_rom.c#L198), [259](../src/modules/uvcontourld_rom.c#L259) |
-| decompiler_local | `spC6` | function `_uvParseUVCT` | [116](../src/modules/uvcontourld_rom.c#L116), [203](../src/modules/uvcontourld_rom.c#L203), [204](../src/modules/uvcontourld_rom.c#L204), [206](../src/modules/uvcontourld_rom.c#L206), [208](../src/modules/uvcontourld_rom.c#L208), [220](../src/modules/uvcontourld_rom.c#L220), [221](../src/modules/uvcontourld_rom.c#L221), [235](../src/modules/uvcontourld_rom.c#L235) (+3 in JSON) |
-| decompiler_local | `spC8` | function `_uvParseUVCT` | [115](../src/modules/uvcontourld_rom.c#L115), [186](../src/modules/uvcontourld_rom.c#L186), [199](../src/modules/uvcontourld_rom.c#L199) |
-| decompiler_local | `spCA` | function `_uvParseUVCT` | [114](../src/modules/uvcontourld_rom.c#L114), [185](../src/modules/uvcontourld_rom.c#L185), [202](../src/modules/uvcontourld_rom.c#L202) |
-| decompiler_local | `spCC` | function `_uvParseUVCT` | [113](../src/modules/uvcontourld_rom.c#L113), [123](../src/modules/uvcontourld_rom.c#L123), [130](../src/modules/uvcontourld_rom.c#L130), [249](../src/modules/uvcontourld_rom.c#L249) |
-| decompiler_local | `spCE` | function `_uvParseUVCT` | [112](../src/modules/uvcontourld_rom.c#L112), [219](../src/modules/uvcontourld_rom.c#L219), [221](../src/modules/uvcontourld_rom.c#L221), [222](../src/modules/uvcontourld_rom.c#L222) |
-| decompiler_local | `spCF` | function `_uvParseUVCT` | [111](../src/modules/uvcontourld_rom.c#L111), [142](../src/modules/uvcontourld_rom.c#L142), [143](../src/modules/uvcontourld_rom.c#L143), [144](../src/modules/uvcontourld_rom.c#L144), [145](../src/modules/uvcontourld_rom.c#L145) |
-| decompiler_local | `spE6` | function `_uvParseUVCT` | [104](../src/modules/uvcontourld_rom.c#L104), [125](../src/modules/uvcontourld_rom.c#L125), [137](../src/modules/uvcontourld_rom.c#L137), [138](../src/modules/uvcontourld_rom.c#L138), [140](../src/modules/uvcontourld_rom.c#L140), [253](../src/modules/uvcontourld_rom.c#L253) |
-| decompiler_local | `spE8` | function `_uvParseUVCT` | [103](../src/modules/uvcontourld_rom.c#L103), [126](../src/modules/uvcontourld_rom.c#L126), [165](../src/modules/uvcontourld_rom.c#L165), [166](../src/modules/uvcontourld_rom.c#L166), [251](../src/modules/uvcontourld_rom.c#L251) |
-| decompiler_local | `spEA` | function `_uvParseUVCT` | [102](../src/modules/uvcontourld_rom.c#L102), [124](../src/modules/uvcontourld_rom.c#L124), [134](../src/modules/uvcontourld_rom.c#L134), [135](../src/modules/uvcontourld_rom.c#L135), [136](../src/modules/uvcontourld_rom.c#L136) |
-| decompiler_local | `spFC` | function `_uvParseUVCT` | [92](../src/modules/uvcontourld_rom.c#L92), [138](../src/modules/uvcontourld_rom.c#L138), [141](../src/modules/uvcontourld_rom.c#L141), [252](../src/modules/uvcontourld_rom.c#L252) |
-| decompiler_local | `temp_a0` | function `_uvParseUVCT` | [110](../src/modules/uvcontourld_rom.c#L110), [221](../src/modules/uvcontourld_rom.c#L221), [222](../src/modules/uvcontourld_rom.c#L222) |
-| decompiler_local | `temp_s0` | function `_uvParseUVCT` | [100](../src/modules/uvcontourld_rom.c#L100), [141](../src/modules/uvcontourld_rom.c#L141), [143](../src/modules/uvcontourld_rom.c#L143), [144](../src/modules/uvcontourld_rom.c#L144), [145](../src/modules/uvcontourld_rom.c#L145), [146](../src/modules/uvcontourld_rom.c#L146), [147](../src/modules/uvcontourld_rom.c#L147), [148](../src/modules/uvcontourld_rom.c#L148) (+12 in JSON) |
-| decompiler_local | `temp_s2` | function `_uvParseUVCT` | [106](../src/modules/uvcontourld_rom.c#L106), [199](../src/modules/uvcontourld_rom.c#L199), [208](../src/modules/uvcontourld_rom.c#L208), [215](../src/modules/uvcontourld_rom.c#L215), [222](../src/modules/uvcontourld_rom.c#L222), [228](../src/modules/uvcontourld_rom.c#L228), [231](../src/modules/uvcontourld_rom.c#L231), [234](../src/modules/uvcontourld_rom.c#L234) |
-| decompiler_local | `temp_v0` | function `_uvParseUVCT` | [98](../src/modules/uvcontourld_rom.c#L98), [247](../src/modules/uvcontourld_rom.c#L247), [248](../src/modules/uvcontourld_rom.c#L248), [249](../src/modules/uvcontourld_rom.c#L249), [250](../src/modules/uvcontourld_rom.c#L250), [251](../src/modules/uvcontourld_rom.c#L251), [252](../src/modules/uvcontourld_rom.c#L252), [253](../src/modules/uvcontourld_rom.c#L253) (+8 in JSON) |
-| decompiler_local | `var_s3_2` | function `_uvParseUVCT` | [105](../src/modules/uvcontourld_rom.c#L105), [201](../src/modules/uvcontourld_rom.c#L201), [205](../src/modules/uvcontourld_rom.c#L205), [206](../src/modules/uvcontourld_rom.c#L206), [208](../src/modules/uvcontourld_rom.c#L208), [210](../src/modules/uvcontourld_rom.c#L210), [214](../src/modules/uvcontourld_rom.c#L214), [215](../src/modules/uvcontourld_rom.c#L215) (+3 in JSON) |
-| decompiler_local | `var_s5` | function `_uvParseUVCT` | [99](../src/modules/uvcontourld_rom.c#L99), [167](../src/modules/uvcontourld_rom.c#L167), [168](../src/modules/uvcontourld_rom.c#L168), [169](../src/modules/uvcontourld_rom.c#L169), [173](../src/modules/uvcontourld_rom.c#L173), [174](../src/modules/uvcontourld_rom.c#L174), [175](../src/modules/uvcontourld_rom.c#L175), [176](../src/modules/uvcontourld_rom.c#L176) (+24 in JSON) |
-| explicit_unknown | `RE_ORIGINAL_QUIRK: native 0x40033C skips the sole * SP+0xFC pointer store when model count is zero; 0x4009E4/0x4009E8 still * copy that stack word to parsed-contour offset 0x10....` | function `_uvParseUVCT` | [92](../src/modules/uvcontourld_rom.c#L92) |
-| explicit_unknown | `Release parsed contour vertices, referenced UVTX/UVMD files, model * payloads, texture payloads and light records before freeing the contour. * Retain low-12-bit texture identif...` | function `uvContourLoaderReleaseParsedContour` | [265](../src/modules/uvcontourld_rom.c#L265) |
+| explicit_unknown | `Decode the contour stream into vertex, model, render-record and display-list storage. * Preserve packed command decoding, partial light input and existing zero-model publication...` | function `_uvParseUVCT` | [85](../src/modules/uvcontourld_rom.c#L85) |
+| explicit_unknown | `RE_ORIGINAL_QUIRK: native 0x40033C skips the sole * SP+0xFC pointer store when model count is zero; 0x4009E4/0x4009E8 still * copy that stack word to parsed-contour offset 0x10....` | function `_uvParseUVCT` | [97](../src/modules/uvcontourld_rom.c#L97) |
+| explicit_unknown | `RE_UNKNOWN: stream index bounds and allocated command capacity need asset proof.` | function `_uvParseUVCT` | [227](../src/modules/uvcontourld_rom.c#L227) |
+| explicit_unknown | `Release parsed contour vertices, referenced UVTX/UVMD files, model * payloads, texture payloads and light records before freeing the contour. * Retain low-12-bit texture identif...` | function `uvContourLoaderReleaseParsedContour` | [270](../src/modules/uvcontourld_rom.c#L270) |
 | explicit_unknown | `Scan file blocks and decode each COMM block through the original parser. * Free each consumed COMM block and the file reader; return the last parsed * contour, or NULL if no COM...` | function `uvParseUVCT` | [36](../src/modules/uvcontourld_rom.c#L36) |
 | explicit_unknown | `Unload the contour loader's LGHT dependency. * RE_UNKNOWN: initialized module lifetime remains a caller contract.` | function `uvContourLoaderCleanup` | [29](../src/modules/uvcontourld_rom.c#L29) |
-| offset_field | `unk0` | function `_uvParseUVCT` | [168](../src/modules/uvcontourld_rom.c#L168), [188](../src/modules/uvcontourld_rom.c#L188) |
-| offset_field | `unk10` | function `_uvParseUVCT`, function `uvContourLoaderReleaseParsedContour` | [150](../src/modules/uvcontourld_rom.c#L150), [175](../src/modules/uvcontourld_rom.c#L175), [252](../src/modules/uvcontourld_rom.c#L252), [289](../src/modules/uvcontourld_rom.c#L289), [297](../src/modules/uvcontourld_rom.c#L297) |
-| offset_field | `unk12` | function `_uvParseUVCT` | [174](../src/modules/uvcontourld_rom.c#L174) |
-| offset_field | `unk14` | function `_uvParseUVCT`, function `uvContourLoaderReleaseParsedContour` | [151](../src/modules/uvcontourld_rom.c#L151), [176](../src/modules/uvcontourld_rom.c#L176), [253](../src/modules/uvcontourld_rom.c#L253), [288](../src/modules/uvcontourld_rom.c#L288), [296](../src/modules/uvcontourld_rom.c#L296) |
-| offset_field | `unk18` | function `_uvParseUVCT`, function `uvContourLoaderReleaseParsedContour` | [152](../src/modules/uvcontourld_rom.c#L152), [236](../src/modules/uvcontourld_rom.c#L236), [254](../src/modules/uvcontourld_rom.c#L254), [303](../src/modules/uvcontourld_rom.c#L303) |
-| offset_field | `unk1A` | function `_uvParseUVCT` | [153](../src/modules/uvcontourld_rom.c#L153) |
-| offset_field | `unk1C` | function `_uvParseUVCT` | [163](../src/modules/uvcontourld_rom.c#L163), [238](../src/modules/uvcontourld_rom.c#L238), [255](../src/modules/uvcontourld_rom.c#L255) |
-| offset_field | `unk1E` | function `_uvParseUVCT` | [239](../src/modules/uvcontourld_rom.c#L239) |
-| offset_field | `unk2` | function `_uvParseUVCT` | [145](../src/modules/uvcontourld_rom.c#L145) |
-| offset_field | `unk20` | function `_uvParseUVCT` | [240](../src/modules/uvcontourld_rom.c#L240), [256](../src/modules/uvcontourld_rom.c#L256) |
-| offset_field | `unk24` | function `_uvParseUVCT` | [172](../src/modules/uvcontourld_rom.c#L172), [241](../src/modules/uvcontourld_rom.c#L241), [257](../src/modules/uvcontourld_rom.c#L257) |
-| offset_field | `unk28` | function `_uvParseUVCT` | [171](../src/modules/uvcontourld_rom.c#L171), [242](../src/modules/uvcontourld_rom.c#L242), [260](../src/modules/uvcontourld_rom.c#L260) |
-| offset_field | `unk2C` | function `_uvParseUVCT` | [170](../src/modules/uvcontourld_rom.c#L170), [243](../src/modules/uvcontourld_rom.c#L243), [258](../src/modules/uvcontourld_rom.c#L258) |
-| offset_field | `unk30` | function `_uvParseUVCT` | [154](../src/modules/uvcontourld_rom.c#L154), [244](../src/modules/uvcontourld_rom.c#L244), [259](../src/modules/uvcontourld_rom.c#L259) |
-| offset_field | `unk34` | function `_uvParseUVCT` | [155](../src/modules/uvcontourld_rom.c#L155), [191](../src/modules/uvcontourld_rom.c#L191), [194](../src/modules/uvcontourld_rom.c#L194), [195](../src/modules/uvcontourld_rom.c#L195), [198](../src/modules/uvcontourld_rom.c#L198), [245](../src/modules/uvcontourld_rom.c#L245) |
-| offset_field | `unk38` | function `_uvParseUVCT` | [146](../src/modules/uvcontourld_rom.c#L146) |
-| offset_field | `unk3C` | function `_uvParseUVCT` | [162](../src/modules/uvcontourld_rom.c#L162) |
-| offset_field | `unk4` | function `_uvParseUVCT`, function `uvContourLoaderReleaseParsedContour` | [143](../src/modules/uvcontourld_rom.c#L143), [144](../src/modules/uvcontourld_rom.c#L144), [294](../src/modules/uvcontourld_rom.c#L294) |
-| offset_field | `unk40` | function `_uvParseUVCT` | [158](../src/modules/uvcontourld_rom.c#L158), [160](../src/modules/uvcontourld_rom.c#L160) |
-| offset_field | `unk5` | function `_uvParseUVCT` | [157](../src/modules/uvcontourld_rom.c#L157) |
-| offset_field | `unk8` | function `_uvParseUVCT`, function `uvContourLoaderReleaseParsedContour` | [148](../src/modules/uvcontourld_rom.c#L148), [234](../src/modules/uvcontourld_rom.c#L234), [250](../src/modules/uvcontourld_rom.c#L250), [281](../src/modules/uvcontourld_rom.c#L281), [301](../src/modules/uvcontourld_rom.c#L301), [305](../src/modules/uvcontourld_rom.c#L305), [311](../src/modules/uvcontourld_rom.c#L311) |
-| offset_field | `unkC` | function `_uvParseUVCT`, function `uvContourLoaderReleaseParsedContour` | [149](../src/modules/uvcontourld_rom.c#L149), [181](../src/modules/uvcontourld_rom.c#L181), [183](../src/modules/uvcontourld_rom.c#L183), [251](../src/modules/uvcontourld_rom.c#L251), [280](../src/modules/uvcontourld_rom.c#L280), [300](../src/modules/uvcontourld_rom.c#L300), [306](../src/modules/uvcontourld_rom.c#L306), [307](../src/modules/uvcontourld_rom.c#L307) (+1 in JSON) |
-| offset_field | `unkE` | function `_uvParseUVCT` | [173](../src/modules/uvcontourld_rom.c#L173), [187](../src/modules/uvcontourld_rom.c#L187), [189](../src/modules/uvcontourld_rom.c#L189), [190](../src/modules/uvcontourld_rom.c#L190), [193](../src/modules/uvcontourld_rom.c#L193) |
-| opaque_type | `Unk80225FBC_0x28` | function `_uvParseUVCT`, function `uvContourLoaderReleaseParsedContour` | [90](../src/modules/uvcontourld_rom.c#L90), [99](../src/modules/uvcontourld_rom.c#L99), [165](../src/modules/uvcontourld_rom.c#L165), [281](../src/modules/uvcontourld_rom.c#L281), [301](../src/modules/uvcontourld_rom.c#L301) |
-| opaque_type | `Unk80225FBC_0x28_UnkC` | function `_uvParseUVCT` | [89](../src/modules/uvcontourld_rom.c#L89) |
-| opaque_type | `UnkSobjDraw` | function `_uvParseUVCT`, function `uvContourLoaderReleaseParsedContour` | [92](../src/modules/uvcontourld_rom.c#L92), [100](../src/modules/uvcontourld_rom.c#L100), [138](../src/modules/uvcontourld_rom.c#L138), [273](../src/modules/uvcontourld_rom.c#L273) |
-| opaque_type | `UnkStruct_uvlight_rom_00401758` | function `_uvParseUVCT` | [120](../src/modules/uvcontourld_rom.c#L120) |
-| original_quirk | `RE_ORIGINAL_QUIRK: native 0x40033C skips the sole * SP+0xFC pointer store when model count is zero; 0x4009E4/0x4009E8 still * copy that stack word to parsed-contour offset 0x10....` | function `_uvParseUVCT` | [92](../src/modules/uvcontourld_rom.c#L92) |
+| offset_field | `unk0` | function `_uvParseUVCT` | [173](../src/modules/uvcontourld_rom.c#L173), [193](../src/modules/uvcontourld_rom.c#L193) |
+| offset_field | `unk10` | function `_uvParseUVCT`, function `uvContourLoaderReleaseParsedContour` | [155](../src/modules/uvcontourld_rom.c#L155), [180](../src/modules/uvcontourld_rom.c#L180), [257](../src/modules/uvcontourld_rom.c#L257), [294](../src/modules/uvcontourld_rom.c#L294), [302](../src/modules/uvcontourld_rom.c#L302) |
+| offset_field | `unk12` | function `_uvParseUVCT` | [179](../src/modules/uvcontourld_rom.c#L179) |
+| offset_field | `unk14` | function `_uvParseUVCT`, function `uvContourLoaderReleaseParsedContour` | [156](../src/modules/uvcontourld_rom.c#L156), [181](../src/modules/uvcontourld_rom.c#L181), [258](../src/modules/uvcontourld_rom.c#L258), [293](../src/modules/uvcontourld_rom.c#L293), [301](../src/modules/uvcontourld_rom.c#L301) |
+| offset_field | `unk18` | function `_uvParseUVCT`, function `uvContourLoaderReleaseParsedContour` | [157](../src/modules/uvcontourld_rom.c#L157), [241](../src/modules/uvcontourld_rom.c#L241), [259](../src/modules/uvcontourld_rom.c#L259), [308](../src/modules/uvcontourld_rom.c#L308) |
+| offset_field | `unk1A` | function `_uvParseUVCT` | [158](../src/modules/uvcontourld_rom.c#L158) |
+| offset_field | `unk1C` | function `_uvParseUVCT` | [168](../src/modules/uvcontourld_rom.c#L168), [243](../src/modules/uvcontourld_rom.c#L243), [260](../src/modules/uvcontourld_rom.c#L260) |
+| offset_field | `unk1E` | function `_uvParseUVCT` | [244](../src/modules/uvcontourld_rom.c#L244) |
+| offset_field | `unk2` | function `_uvParseUVCT` | [150](../src/modules/uvcontourld_rom.c#L150) |
+| offset_field | `unk20` | function `_uvParseUVCT` | [245](../src/modules/uvcontourld_rom.c#L245), [261](../src/modules/uvcontourld_rom.c#L261) |
+| offset_field | `unk24` | function `_uvParseUVCT` | [177](../src/modules/uvcontourld_rom.c#L177), [246](../src/modules/uvcontourld_rom.c#L246), [262](../src/modules/uvcontourld_rom.c#L262) |
+| offset_field | `unk28` | function `_uvParseUVCT` | [176](../src/modules/uvcontourld_rom.c#L176), [247](../src/modules/uvcontourld_rom.c#L247), [265](../src/modules/uvcontourld_rom.c#L265) |
+| offset_field | `unk2C` | function `_uvParseUVCT` | [175](../src/modules/uvcontourld_rom.c#L175), [248](../src/modules/uvcontourld_rom.c#L248), [263](../src/modules/uvcontourld_rom.c#L263) |
+| offset_field | `unk30` | function `_uvParseUVCT` | [159](../src/modules/uvcontourld_rom.c#L159), [249](../src/modules/uvcontourld_rom.c#L249), [264](../src/modules/uvcontourld_rom.c#L264) |
+| offset_field | `unk34` | function `_uvParseUVCT` | [160](../src/modules/uvcontourld_rom.c#L160), [196](../src/modules/uvcontourld_rom.c#L196), [199](../src/modules/uvcontourld_rom.c#L199), [200](../src/modules/uvcontourld_rom.c#L200), [203](../src/modules/uvcontourld_rom.c#L203), [250](../src/modules/uvcontourld_rom.c#L250) |
+| offset_field | `unk38` | function `_uvParseUVCT` | [151](../src/modules/uvcontourld_rom.c#L151) |
+| offset_field | `unk3C` | function `_uvParseUVCT` | [167](../src/modules/uvcontourld_rom.c#L167) |
+| offset_field | `unk4` | function `_uvParseUVCT`, function `uvContourLoaderReleaseParsedContour` | [148](../src/modules/uvcontourld_rom.c#L148), [149](../src/modules/uvcontourld_rom.c#L149), [299](../src/modules/uvcontourld_rom.c#L299) |
+| offset_field | `unk40` | function `_uvParseUVCT` | [163](../src/modules/uvcontourld_rom.c#L163), [165](../src/modules/uvcontourld_rom.c#L165) |
+| offset_field | `unk5` | function `_uvParseUVCT` | [162](../src/modules/uvcontourld_rom.c#L162) |
+| offset_field | `unk8` | function `_uvParseUVCT`, function `uvContourLoaderReleaseParsedContour` | [153](../src/modules/uvcontourld_rom.c#L153), [239](../src/modules/uvcontourld_rom.c#L239), [255](../src/modules/uvcontourld_rom.c#L255), [286](../src/modules/uvcontourld_rom.c#L286), [306](../src/modules/uvcontourld_rom.c#L306), [310](../src/modules/uvcontourld_rom.c#L310), [316](../src/modules/uvcontourld_rom.c#L316) |
+| offset_field | `unkC` | function `_uvParseUVCT`, function `uvContourLoaderReleaseParsedContour` | [154](../src/modules/uvcontourld_rom.c#L154), [186](../src/modules/uvcontourld_rom.c#L186), [188](../src/modules/uvcontourld_rom.c#L188), [256](../src/modules/uvcontourld_rom.c#L256), [285](../src/modules/uvcontourld_rom.c#L285), [305](../src/modules/uvcontourld_rom.c#L305), [311](../src/modules/uvcontourld_rom.c#L311), [312](../src/modules/uvcontourld_rom.c#L312) (+1 in JSON) |
+| offset_field | `unkE` | function `_uvParseUVCT` | [178](../src/modules/uvcontourld_rom.c#L178), [192](../src/modules/uvcontourld_rom.c#L192), [194](../src/modules/uvcontourld_rom.c#L194), [195](../src/modules/uvcontourld_rom.c#L195), [198](../src/modules/uvcontourld_rom.c#L198) |
+| opaque_type | `Unk80225FBC_0x28` | function `_uvParseUVCT`, function `uvContourLoaderReleaseParsedContour` | [95](../src/modules/uvcontourld_rom.c#L95), [104](../src/modules/uvcontourld_rom.c#L104), [170](../src/modules/uvcontourld_rom.c#L170), [286](../src/modules/uvcontourld_rom.c#L286), [306](../src/modules/uvcontourld_rom.c#L306) |
+| opaque_type | `Unk80225FBC_0x28_UnkC` | function `_uvParseUVCT` | [94](../src/modules/uvcontourld_rom.c#L94) |
+| opaque_type | `UnkSobjDraw` | function `_uvParseUVCT`, function `uvContourLoaderReleaseParsedContour` | [97](../src/modules/uvcontourld_rom.c#L97), [105](../src/modules/uvcontourld_rom.c#L105), [143](../src/modules/uvcontourld_rom.c#L143), [278](../src/modules/uvcontourld_rom.c#L278) |
+| opaque_type | `UnkStruct_uvlight_rom_00401758` | function `_uvParseUVCT` | [125](../src/modules/uvcontourld_rom.c#L125) |
+| original_quirk | `RE_ORIGINAL_QUIRK: native 0x40033C skips the sole * SP+0xFC pointer store when model count is zero; 0x4009E4/0x4009E8 still * copy that stack word to parsed-contour offset 0x10....` | function `_uvParseUVCT` | [97](../src/modules/uvcontourld_rom.c#L97) |
+| original_quirk | `RE_ORIGINAL_QUIRK: retain this scan/divide before the later 1000000.0f overwrite.` | function `_uvParseUVCT` | [203](../src/modules/uvcontourld_rom.c#L203) |
 
 ## src/modules/uvdbg_rom.c
 
