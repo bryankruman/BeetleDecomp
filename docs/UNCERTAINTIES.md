@@ -17,12 +17,12 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 1123 |
+| Explicit RE_UNKNOWN notes | 1125 |
 | Preserved RE_ORIGINAL_QUIRK notes | 312 |
 | Older comments with uncertainty language | 92 |
 | Documented original-behavior audits | 30 |
-| Assembly-backed functions or data | 787 |
-| Address-based function identifiers | 903 |
+| Assembly-backed functions or data | 786 |
+| Address-based function identifiers | 904 |
 | Address-based global identifiers | 1451 |
 | Offset-based fields or neutral typed fields | 1601 |
 | Layout padding to preserve | 269 |
@@ -2810,111 +2810,113 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
-| address_function | `func_misc_00400390` | function `func_misc_00400390` | [153](../src/modules/misc.c#L153) |
-| address_function | `func_misc_00400AD0` | function `func_misc_00400AD0` | [62](../src/modules/misc.c#L62) |
-| address_function | `func_misc_00401078` | function `func_misc_00401078` | [511](../src/modules/misc.c#L511) |
-| address_function | `func_misc_00401080` | function `func_misc_00401080` | [63](../src/modules/misc.c#L63) |
-| address_function | `func_misc_004012E4` | function `func_misc_004012E4` | [64](../src/modules/misc.c#L64) |
-| address_function | `func_misc_004016CC` | function `func_misc_004016CC`, function `miscGetMatrixDirectionAngles` | [70](../src/modules/misc.c#L70), [840](../src/modules/misc.c#L840), [841](../src/modules/misc.c#L841), [842](../src/modules/misc.c#L842) |
-| address_function | `func_misc_004019FC` | function `func_misc_004019FC` | [82](../src/modules/misc.c#L82) |
-| address_function | `func_misc_00401FA0` | function `func_misc_00401FA0` | [89](../src/modules/misc.c#L89) |
-| address_function | `func_misc_0040213C` | function `func_misc_0040213C` | [90](../src/modules/misc.c#L90) |
-| address_function | `func_misc_0040234C` | function `func_misc_0040234C` | [91](../src/modules/misc.c#L91) |
-| address_function | `func_misc_00402528` | function `func_misc_00402528` | [92](../src/modules/misc.c#L92) |
-| address_function | `func_misc_00402730` | function `func_misc_00402730` | [94](../src/modules/misc.c#L94) |
-| address_function | `func_misc_00402874` | function `func_misc_00402874` | [95](../src/modules/misc.c#L95) |
-| address_function | `func_misc_00402A5C` | function `func_misc_00402A5C` | [97](../src/modules/misc.c#L97) |
-| address_function | `func_misc_00402BFC` | function `func_misc_00402BFC` | [98](../src/modules/misc.c#L98) |
-| address_function | `func_misc_00402D48` | function `func_misc_00402D48` | [99](../src/modules/misc.c#L99) |
-| address_function | `func_misc_00402EFC` | function `func_misc_00402EFC`, function `miscVec3ApproachNonlinearPreserveLength` | [101](../src/modules/misc.c#L101), [905](../src/modules/misc.c#L905), [906](../src/modules/misc.c#L906), [907](../src/modules/misc.c#L907) |
-| address_function | `func_misc_00403110` | function `func_misc_00403110` | [103](../src/modules/misc.c#L103) |
-| address_function | `func_misc_00403348` | function `func_misc_00403348` | [106](../src/modules/misc.c#L106) |
-| address_function | `func_misc_00403650` | function `func_misc_00403650` | [107](../src/modules/misc.c#L107) |
-| address_function | `func_misc_00403748` | function `func_misc_00403748` | [108](../src/modules/misc.c#L108) |
-| address_function | `func_misc_00403A5C` | function `func_misc_00403A5C` | [110](../src/modules/misc.c#L110) |
-| address_function | `func_misc_00403CD8` | function `func_misc_00403CD8` | [112](../src/modules/misc.c#L112) |
-| address_function | `func_misc_00403D8C` | function `func_misc_00403D8C` | [113](../src/modules/misc.c#L113) |
-| address_global | `D_80025D70` | function `miscApproachLinear`, function `miscApproachProportional`, global `D_80025D70` | [139](../src/modules/misc.c#L139), [190](../src/modules/misc.c#L190), [232](../src/modules/misc.c#L232), [234](../src/modules/misc.c#L234) |
-| address_global | `D_misc_00404220` | function `miscApproachProportional`, global `D_misc_00404220` | [170](../src/modules/misc.c#L170), [187](../src/modules/misc.c#L187) |
-| address_global | `D_misc_00404224` | function `miscApproachLinear`, global `D_misc_00404224` | [211](../src/modules/misc.c#L211), [228](../src/modules/misc.c#L228) |
-| address_global | `D_misc_00404234` | function `miscArcCosine`, global `D_misc_00404234` | [393](../src/modules/misc.c#L393), [400](../src/modules/misc.c#L400) |
-| address_global | `D_misc_00404238` | function `miscExtractTranslationAndDirectionAngles`, global `D_misc_00404238` | [451](../src/modules/misc.c#L451), [466](../src/modules/misc.c#L466) |
-| address_global | `D_misc_0040423C` | function `miscExtractTranslationAndDirectionAngles`, global `D_misc_0040423C` | [452](../src/modules/misc.c#L452), [468](../src/modules/misc.c#L468) |
-| address_global | `D_misc_00404240` | function `miscExtractTranslationAndDirectionAngles`, global `D_misc_00404240` | [453](../src/modules/misc.c#L453), [470](../src/modules/misc.c#L470) |
-| address_global | `D_misc_00404260` | function `miscWrapAngleRadians`, global `D_misc_00404260` | [601](../src/modules/misc.c#L601), [612](../src/modules/misc.c#L612), [615](../src/modules/misc.c#L615) |
-| address_global | `D_misc_00404264` | function `miscWrapAngleRadians`, global `D_misc_00404264` | [602](../src/modules/misc.c#L602), [614](../src/modules/misc.c#L614) |
-| address_global | `D_misc_00404268` | function `miscWrapAngleRadians`, global `D_misc_00404268` | [603](../src/modules/misc.c#L603), [617](../src/modules/misc.c#L617) |
-| address_global | `D_misc_0040426C` | function `miscWrapAngleRadians`, global `D_misc_0040426C` | [604](../src/modules/misc.c#L604), [618](../src/modules/misc.c#L618) |
-| address_global | `D_misc_00404270` | function `miscFoldAngleRadians`, global `D_misc_00404270` | [632](../src/modules/misc.c#L632), [644](../src/modules/misc.c#L644), [647](../src/modules/misc.c#L647), [656](../src/modules/misc.c#L656) |
-| address_global | `D_misc_00404274` | function `miscFoldAngleRadians`, global `D_misc_00404274` | [633](../src/modules/misc.c#L633), [646](../src/modules/misc.c#L646) |
-| address_global | `D_misc_00404278` | function `miscFoldAngleRadians`, global `D_misc_00404278` | [634](../src/modules/misc.c#L634), [649](../src/modules/misc.c#L649) |
-| address_global | `D_misc_0040427C` | function `miscFoldAngleRadians`, global `D_misc_0040427C` | [635](../src/modules/misc.c#L635), [650](../src/modules/misc.c#L650), [653](../src/modules/misc.c#L653), [659](../src/modules/misc.c#L659) |
-| address_global | `D_misc_00404280` | function `miscFoldAngleRadians`, global `D_misc_00404280` | [636](../src/modules/misc.c#L636), [655](../src/modules/misc.c#L655) |
-| address_global | `D_misc_00404284` | function `miscFoldAngleRadians`, global `D_misc_00404284` | [637](../src/modules/misc.c#L637), [658](../src/modules/misc.c#L658) |
-| address_global | `D_misc_0040428C` | function `miscVec2Normalize`, global `D_misc_0040428C` | [59](../src/modules/misc.c#L59), [686](../src/modules/misc.c#L686) |
-| address_global | `D_misc_004042F8` | function `miscRandomFloatLcg`, global `D_misc_004042F8` | [116](../src/modules/misc.c#L116), [1040](../src/modules/misc.c#L1040) |
-| address_global | `D_misc_00404300` | function `miscRandomFloatLcg`, function `miscSeedRandomLcg`, global `D_misc_00404300` | [115](../src/modules/misc.c#L115), [1029](../src/modules/misc.c#L1029), [1038](../src/modules/misc.c#L1038), [1039](../src/modules/misc.c#L1039) |
-| assembly | `__entrypoint_func_misc_400000` | — | [146](../src/modules/misc.c#L146) |
-| assembly | `func_misc_00400AD0` | — | [391](../src/modules/misc.c#L391) |
-| assembly | `func_misc_00401080` | — | [516](../src/modules/misc.c#L516) |
-| assembly | `func_misc_004012E4` | — | [533](../src/modules/misc.c#L533) |
-| assembly | `func_misc_004016CC` | — | [665](../src/modules/misc.c#L665) |
-| assembly | `func_misc_004019FC` | — | [766](../src/modules/misc.c#L766) |
-| assembly | `func_misc_00401FA0` | — | [828](../src/modules/misc.c#L828) |
-| assembly | `func_misc_0040213C` | — | [830](../src/modules/misc.c#L830) |
-| assembly | `func_misc_0040234C` | — | [832](../src/modules/misc.c#L832) |
-| assembly | `func_misc_00402528` | — | [834](../src/modules/misc.c#L834) |
-| assembly | `func_misc_00402730` | — | [846](../src/modules/misc.c#L846) |
-| assembly | `func_misc_00402874` | — | [848](../src/modules/misc.c#L848) |
-| assembly | `func_misc_00402A5C` | — | [875](../src/modules/misc.c#L875) |
-| assembly | `func_misc_00402BFC` | — | [877](../src/modules/misc.c#L877) |
-| assembly | `func_misc_00402D48` | — | [879](../src/modules/misc.c#L879) |
-| assembly | `func_misc_00402EFC` | — | [892](../src/modules/misc.c#L892) |
-| assembly | `func_misc_00403110` | — | [919](../src/modules/misc.c#L919) |
-| assembly | `func_misc_00403348` | — | [939](../src/modules/misc.c#L939) |
-| assembly | `func_misc_00403650` | — | [941](../src/modules/misc.c#L941) |
-| assembly | `func_misc_00403748` | — | [943](../src/modules/misc.c#L943) |
-| assembly | `func_misc_00403A5C` | — | [988](../src/modules/misc.c#L988) |
-| assembly | `func_misc_00403CD8` | — | [1022](../src/modules/misc.c#L1022) |
-| assembly | `func_misc_00403D8C` | — | [1024](../src/modules/misc.c#L1024) |
+| address_function | `__entrypoint_func_misc_400000` | function `__entrypoint_func_misc_400000` | [169](../src/modules/misc.c#L169) |
+| address_function | `func_misc_00400390` | function `__entrypoint_func_misc_400000`, function `func_misc_00400390`, function `func_misc_00400390` | [161](../src/modules/misc.c#L161), [210](../src/modules/misc.c#L210), [252](../src/modules/misc.c#L252) |
+| address_function | `func_misc_00400AD0` | function `__entrypoint_func_misc_400000`, function `func_misc_00400AD0` | [62](../src/modules/misc.c#L62), [192](../src/modules/misc.c#L192) |
+| address_function | `func_misc_00401078` | function `__entrypoint_func_misc_400000`, function `func_misc_00401078`, function `func_misc_00401078` | [159](../src/modules/misc.c#L159), [201](../src/modules/misc.c#L201), [610](../src/modules/misc.c#L610) |
+| address_function | `func_misc_00401080` | function `__entrypoint_func_misc_400000`, function `func_misc_00401080` | [63](../src/modules/misc.c#L63), [203](../src/modules/misc.c#L203) |
+| address_function | `func_misc_004012E4` | function `__entrypoint_func_misc_400000`, function `func_misc_004012E4` | [64](../src/modules/misc.c#L64), [211](../src/modules/misc.c#L211) |
+| address_function | `func_misc_004016CC` | function `__entrypoint_func_misc_400000`, function `func_misc_004016CC`, function `miscGetMatrixDirectionAngles` | [70](../src/modules/misc.c#L70), [219](../src/modules/misc.c#L219), [939](../src/modules/misc.c#L939), [940](../src/modules/misc.c#L940), [941](../src/modules/misc.c#L941) |
+| address_function | `func_misc_004019FC` | function `__entrypoint_func_misc_400000`, function `func_misc_004019FC` | [82](../src/modules/misc.c#L82), [242](../src/modules/misc.c#L242) |
+| address_function | `func_misc_00401FA0` | function `__entrypoint_func_misc_400000`, function `func_misc_00401FA0` | [89](../src/modules/misc.c#L89), [185](../src/modules/misc.c#L185) |
+| address_function | `func_misc_0040213C` | function `__entrypoint_func_misc_400000`, function `func_misc_0040213C` | [90](../src/modules/misc.c#L90), [186](../src/modules/misc.c#L186) |
+| address_function | `func_misc_0040234C` | function `__entrypoint_func_misc_400000`, function `func_misc_0040234C` | [91](../src/modules/misc.c#L91), [187](../src/modules/misc.c#L187) |
+| address_function | `func_misc_00402528` | function `__entrypoint_func_misc_400000`, function `func_misc_00402528` | [92](../src/modules/misc.c#L92), [188](../src/modules/misc.c#L188) |
+| address_function | `func_misc_00402730` | function `__entrypoint_func_misc_400000`, function `func_misc_00402730` | [94](../src/modules/misc.c#L94), [194](../src/modules/misc.c#L194) |
+| address_function | `func_misc_00402874` | function `__entrypoint_func_misc_400000`, function `func_misc_00402874` | [95](../src/modules/misc.c#L95), [196](../src/modules/misc.c#L196) |
+| address_function | `func_misc_00402A5C` | function `__entrypoint_func_misc_400000`, function `func_misc_00402A5C` | [97](../src/modules/misc.c#L97), [200](../src/modules/misc.c#L200) |
+| address_function | `func_misc_00402BFC` | function `__entrypoint_func_misc_400000`, function `func_misc_00402BFC` | [98](../src/modules/misc.c#L98), [202](../src/modules/misc.c#L202) |
+| address_function | `func_misc_00402D48` | function `__entrypoint_func_misc_400000`, function `func_misc_00402D48` | [99](../src/modules/misc.c#L99), [204](../src/modules/misc.c#L204) |
+| address_function | `func_misc_00402EFC` | function `__entrypoint_func_misc_400000`, function `func_misc_00402EFC`, function `miscVec3ApproachNonlinearPreserveLength` | [101](../src/modules/misc.c#L101), [207](../src/modules/misc.c#L207), [1004](../src/modules/misc.c#L1004), [1005](../src/modules/misc.c#L1005), [1006](../src/modules/misc.c#L1006) |
+| address_function | `func_misc_00403110` | function `__entrypoint_func_misc_400000`, function `func_misc_00403110` | [103](../src/modules/misc.c#L103), [209](../src/modules/misc.c#L209) |
+| address_function | `func_misc_00403348` | function `__entrypoint_func_misc_400000`, function `func_misc_00403348` | [106](../src/modules/misc.c#L106), [220](../src/modules/misc.c#L220) |
+| address_function | `func_misc_00403650` | function `__entrypoint_func_misc_400000`, function `func_misc_00403650` | [107](../src/modules/misc.c#L107), [222](../src/modules/misc.c#L222) |
+| address_function | `func_misc_00403748` | function `__entrypoint_func_misc_400000`, function `func_misc_00403748` | [108](../src/modules/misc.c#L108), [224](../src/modules/misc.c#L224) |
+| address_function | `func_misc_00403A5C` | function `__entrypoint_func_misc_400000`, function `func_misc_00403A5C` | [110](../src/modules/misc.c#L110), [227](../src/modules/misc.c#L227) |
+| address_function | `func_misc_00403CD8` | function `__entrypoint_func_misc_400000`, function `func_misc_00403CD8` | [112](../src/modules/misc.c#L112), [230](../src/modules/misc.c#L230) |
+| address_function | `func_misc_00403D8C` | function `__entrypoint_func_misc_400000`, function `func_misc_00403D8C` | [113](../src/modules/misc.c#L113), [235](../src/modules/misc.c#L235) |
+| address_global | `D_80025D70` | function `miscApproachLinear`, function `miscApproachProportional`, global `D_80025D70` | [139](../src/modules/misc.c#L139), [289](../src/modules/misc.c#L289), [331](../src/modules/misc.c#L331), [333](../src/modules/misc.c#L333) |
+| address_global | `D_misc_00404220` | function `miscApproachProportional`, global `D_misc_00404220` | [269](../src/modules/misc.c#L269), [286](../src/modules/misc.c#L286) |
+| address_global | `D_misc_00404224` | function `miscApproachLinear`, global `D_misc_00404224` | [310](../src/modules/misc.c#L310), [327](../src/modules/misc.c#L327) |
+| address_global | `D_misc_00404234` | function `miscArcCosine`, global `D_misc_00404234` | [492](../src/modules/misc.c#L492), [499](../src/modules/misc.c#L499) |
+| address_global | `D_misc_00404238` | function `miscExtractTranslationAndDirectionAngles`, global `D_misc_00404238` | [550](../src/modules/misc.c#L550), [565](../src/modules/misc.c#L565) |
+| address_global | `D_misc_0040423C` | function `miscExtractTranslationAndDirectionAngles`, global `D_misc_0040423C` | [551](../src/modules/misc.c#L551), [567](../src/modules/misc.c#L567) |
+| address_global | `D_misc_00404240` | function `miscExtractTranslationAndDirectionAngles`, global `D_misc_00404240` | [552](../src/modules/misc.c#L552), [569](../src/modules/misc.c#L569) |
+| address_global | `D_misc_00404260` | function `miscWrapAngleRadians`, global `D_misc_00404260` | [700](../src/modules/misc.c#L700), [711](../src/modules/misc.c#L711), [714](../src/modules/misc.c#L714) |
+| address_global | `D_misc_00404264` | function `miscWrapAngleRadians`, global `D_misc_00404264` | [701](../src/modules/misc.c#L701), [713](../src/modules/misc.c#L713) |
+| address_global | `D_misc_00404268` | function `miscWrapAngleRadians`, global `D_misc_00404268` | [702](../src/modules/misc.c#L702), [716](../src/modules/misc.c#L716) |
+| address_global | `D_misc_0040426C` | function `miscWrapAngleRadians`, global `D_misc_0040426C` | [703](../src/modules/misc.c#L703), [717](../src/modules/misc.c#L717) |
+| address_global | `D_misc_00404270` | function `miscFoldAngleRadians`, global `D_misc_00404270` | [731](../src/modules/misc.c#L731), [743](../src/modules/misc.c#L743), [746](../src/modules/misc.c#L746), [755](../src/modules/misc.c#L755) |
+| address_global | `D_misc_00404274` | function `miscFoldAngleRadians`, global `D_misc_00404274` | [732](../src/modules/misc.c#L732), [745](../src/modules/misc.c#L745) |
+| address_global | `D_misc_00404278` | function `miscFoldAngleRadians`, global `D_misc_00404278` | [733](../src/modules/misc.c#L733), [748](../src/modules/misc.c#L748) |
+| address_global | `D_misc_0040427C` | function `miscFoldAngleRadians`, global `D_misc_0040427C` | [734](../src/modules/misc.c#L734), [749](../src/modules/misc.c#L749), [752](../src/modules/misc.c#L752), [758](../src/modules/misc.c#L758) |
+| address_global | `D_misc_00404280` | function `miscFoldAngleRadians`, global `D_misc_00404280` | [735](../src/modules/misc.c#L735), [754](../src/modules/misc.c#L754) |
+| address_global | `D_misc_00404284` | function `miscFoldAngleRadians`, global `D_misc_00404284` | [736](../src/modules/misc.c#L736), [757](../src/modules/misc.c#L757) |
+| address_global | `D_misc_0040428C` | function `miscVec2Normalize`, global `D_misc_0040428C` | [59](../src/modules/misc.c#L59), [785](../src/modules/misc.c#L785) |
+| address_global | `D_misc_004042F8` | function `miscRandomFloatLcg`, global `D_misc_004042F8` | [116](../src/modules/misc.c#L116), [1139](../src/modules/misc.c#L1139) |
+| address_global | `D_misc_00404300` | function `miscRandomFloatLcg`, function `miscSeedRandomLcg`, global `D_misc_00404300` | [115](../src/modules/misc.c#L115), [1128](../src/modules/misc.c#L1128), [1137](../src/modules/misc.c#L1137), [1138](../src/modules/misc.c#L1138) |
+| assembly | `func_misc_00400AD0` | — | [490](../src/modules/misc.c#L490) |
+| assembly | `func_misc_00401080` | — | [615](../src/modules/misc.c#L615) |
+| assembly | `func_misc_004012E4` | — | [632](../src/modules/misc.c#L632) |
+| assembly | `func_misc_004016CC` | — | [764](../src/modules/misc.c#L764) |
+| assembly | `func_misc_004019FC` | — | [865](../src/modules/misc.c#L865) |
+| assembly | `func_misc_00401FA0` | — | [927](../src/modules/misc.c#L927) |
+| assembly | `func_misc_0040213C` | — | [929](../src/modules/misc.c#L929) |
+| assembly | `func_misc_0040234C` | — | [931](../src/modules/misc.c#L931) |
+| assembly | `func_misc_00402528` | — | [933](../src/modules/misc.c#L933) |
+| assembly | `func_misc_00402730` | — | [945](../src/modules/misc.c#L945) |
+| assembly | `func_misc_00402874` | — | [947](../src/modules/misc.c#L947) |
+| assembly | `func_misc_00402A5C` | — | [974](../src/modules/misc.c#L974) |
+| assembly | `func_misc_00402BFC` | — | [976](../src/modules/misc.c#L976) |
+| assembly | `func_misc_00402D48` | — | [978](../src/modules/misc.c#L978) |
+| assembly | `func_misc_00402EFC` | — | [991](../src/modules/misc.c#L991) |
+| assembly | `func_misc_00403110` | — | [1018](../src/modules/misc.c#L1018) |
+| assembly | `func_misc_00403348` | — | [1038](../src/modules/misc.c#L1038) |
+| assembly | `func_misc_00403650` | — | [1040](../src/modules/misc.c#L1040) |
+| assembly | `func_misc_00403748` | — | [1042](../src/modules/misc.c#L1042) |
+| assembly | `func_misc_00403A5C` | — | [1087](../src/modules/misc.c#L1087) |
+| assembly | `func_misc_00403CD8` | — | [1121](../src/modules/misc.c#L1121) |
+| assembly | `func_misc_00403D8C` | — | [1123](../src/modules/misc.c#L1123) |
 | decompiler_local | `arg0` | function `miscCartesianToSpherical`, function `miscFoldAngleRadians`, function `miscRebuildOrthonormalBasisFromDirection`, function `miscWrapAngleRadians` | [68](../src/modules/misc.c#L68), [69](../src/modules/misc.c#L69), [142](../src/modules/misc.c#L142), [143](../src/modules/misc.c#L143) |
 | decompiler_local | `arg1` | function `miscBuildRotationMatrixFromAngles`, function `miscCartesianToSpherical`, function `miscRebuildOrthonormalBasisFromDirection` | [142](../src/modules/misc.c#L142), [143](../src/modules/misc.c#L143), [145](../src/modules/misc.c#L145) |
 | decompiler_local | `arg2` | function `miscBuildRotationMatrixFromAngles`, function `miscCartesianToSpherical` | [143](../src/modules/misc.c#L143), [145](../src/modules/misc.c#L145) |
 | decompiler_local | `arg3` | function `miscBuildRotationMatrixFromAngles`, function `miscCartesianToSpherical` | [143](../src/modules/misc.c#L143), [145](../src/modules/misc.c#L145) |
 | decompiler_local | `arg4` | function `miscCartesianToSpherical` | [143](../src/modules/misc.c#L143) |
 | decompiler_local | `arg5` | function `miscCartesianToSpherical` | [143](../src/modules/misc.c#L143) |
-| explicit_unknown | `Allocate/get a compact-text row through original GUI slots0x40/44, copy * twelve bytes through slot0x48, append through0xA8 and set property3 through * slot0x5C. The property se...` | function `miscCreateGuiTextRow` | [993](../src/modules/misc.c#L993) |
-| explicit_unknown | `Create and append a compact label row, allocate its scalar widget, then * configure the original bounds/source and attach the centered upper child. * Flag two in the signed kind...` | function `miscCreateGuiBoundScalarRow` | [946](../src/modules/misc.c#L946) |
-| explicit_unknown | `Evaluate the clamped scalar helper on the three-component dot product. * Original native F0 returns unchanged and Motion66E4 consumes that result. * RE_UNKNOWN: historical decla...` | function `miscEvaluateVectorDotThroughClampedHelper` | [1010](../src/modules/misc.c#L1010) |
+| explicit_unknown | `Allocate/get a compact-text row through original GUI slots0x40/44, copy * twelve bytes through slot0x48, append through0xA8 and set property3 through * slot0x5C. The property se...` | function `miscCreateGuiTextRow` | [1092](../src/modules/misc.c#L1092) |
+| explicit_unknown | `Create and append a compact label row, allocate its scalar widget, then * configure the original bounds/source and attach the centered upper child. * Flag two in the signed kind...` | function `miscCreateGuiBoundScalarRow` | [1045](../src/modules/misc.c#L1045) |
+| explicit_unknown | `Evaluate the clamped scalar helper on the three-component dot product. * Original native F0 returns unchanged and Motion66E4 consumes that result. * RE_UNKNOWN: historical decla...` | function `miscEvaluateVectorDotThroughClampedHelper` | [1109](../src/modules/misc.c#L1109) |
+| explicit_unknown | `Export addresses only: declarations repeat existing definitions. * RE_UNKNOWN: these declarations do not establish complete callable ABIs.` | function `miscBusyWaitSeconds` | [146](../src/modules/misc.c#L146) |
 | explicit_unknown | `Only the table prefix and last-bound address are established here. * RE_UNKNOWN: interior record fields, bound units and full table size.` | type `MiscGuiCurveTablePrefix` | [36](../src/modules/misc.c#L36) |
 | explicit_unknown | `Original GUI slots 0x40/44/48/5C/A8. The consumed property selector is * signed16; text and row arguments are addresses, not scalar identifiers. * RE_UNKNOWN: historical caller ...` | type `MiscGuiChildExports` | [42](../src/modules/misc.c#L42) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_misc_00400390` | [149](../src/modules/misc.c#L149) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_misc_00400390` | [248](../src/modules/misc.c#L248) |
 | explicit_unknown | `Partial export-table view grounded in the original GUI initializer. * Unused spans preserve verified slot offsets; they are not object padding. * RE_UNKNOWN: complete export typ...` | type `MiscGuiCreatorExports` | [3](../src/modules/misc.c#L3) |
-| explicit_unknown | `RE_ORIGINAL_QUIRK: original overlapping vertical-segment path reads an unwritten intercept stack word. RE_UNKNOWN: caller reachability/input limits; trace original export caller...` | assembly `func_misc_004019FC` | [765](../src/modules/misc.c#L765) |
-| explicit_unknown | `RE_UNKNOWN: quaternion normalization/frame convention, cached-adjustment intent, shared flag reset/lifetime/reentrancy and overlap guarantees; trace original quaternion producer...` | assembly `func_misc_0040234C` | [831](../src/modules/misc.c#L831) |
-| explicit_unknown | `RE_UNKNOWN: valid blend-weight/input domains, matrix/quaternion frame convention and partial-overlap guarantees; trace original export callers and matrix/quaternion producers be...` | assembly `func_misc_004012E4` | [532](../src/modules/misc.c#L532) |
-| explicit_unknown | `Set a loaded texture parameter chosen by selector bytes 1 and 0: * byte 1 equal to character 1 selects the first record, otherwise the second; * byte 0 equal to u selects offset...` | function `miscSetTextureAxisValue` | [851](../src/modules/misc.c#L851) |
-| explicit_unknown | `The current body stores integer zero through a null pointer. * RE_UNKNOWN: deliberate trap intent, caller/export reachability and runtime * contract. No C/header caller was foun...` | function `func_misc_00401078` | [507](../src/modules/misc.c#L507) |
-| offset_field | `unk0` | function `miscRebuildOrthonormalBasisFromDirection`, type `UnkStruct_misc_004006A0` | [122](../src/modules/misc.c#L122), [306](../src/modules/misc.c#L306), [313](../src/modules/misc.c#L313) |
+| explicit_unknown | `RE_ORIGINAL_QUIRK: original overlapping vertical-segment path reads an unwritten intercept stack word. RE_UNKNOWN: caller reachability/input limits; trace original export caller...` | assembly `func_misc_004019FC` | [864](../src/modules/misc.c#L864) |
+| explicit_unknown | `RE_UNKNOWN: quaternion normalization/frame convention, cached-adjustment intent, shared flag reset/lifetime/reentrancy and overlap guarantees; trace original quaternion producer...` | assembly `func_misc_0040234C` | [930](../src/modules/misc.c#L930) |
+| explicit_unknown | `RE_UNKNOWN: valid blend-weight/input domains, matrix/quaternion frame convention and partial-overlap guarantees; trace original export callers and matrix/quaternion producers be...` | assembly `func_misc_004012E4` | [631](../src/modules/misc.c#L631) |
+| explicit_unknown | `Register the MISC module's 73 export addresses after updating its * allocation pointer. Preserve the original store order, including slot zero. * RE_UNKNOWN: complete public exp...` | function `__entrypoint_func_misc_400000` | [165](../src/modules/misc.c#L165) |
+| explicit_unknown | `Set a loaded texture parameter chosen by selector bytes 1 and 0: * byte 1 equal to character 1 selects the first record, otherwise the second; * byte 0 equal to u selects offset...` | function `miscSetTextureAxisValue` | [950](../src/modules/misc.c#L950) |
+| explicit_unknown | `The current body stores integer zero through a null pointer. * RE_UNKNOWN: deliberate trap intent, caller/export reachability and runtime * contract. No C/header caller was foun...` | function `func_misc_00401078` | [606](../src/modules/misc.c#L606) |
+| offset_field | `unk0` | function `miscRebuildOrthonormalBasisFromDirection`, type `UnkStruct_misc_004006A0` | [122](../src/modules/misc.c#L122), [405](../src/modules/misc.c#L405), [412](../src/modules/misc.c#L412) |
 | offset_field | `unk00` | type `MiscTextureFields`, type `MiscTextureFile` | [57](../src/modules/misc.c#L57), [58](../src/modules/misc.c#L58) |
-| offset_field | `unk10` | function `miscExtractTranslationAndDirectionAngles`, function `miscRebuildOrthonormalBasisFromDirection`, type `UnkStruct_misc_004006A0` | [126](../src/modules/misc.c#L126), [316](../src/modules/misc.c#L316), [465](../src/modules/misc.c#L465), [480](../src/modules/misc.c#L480) |
-| offset_field | `unk14` | function `miscExtractTranslationAndDirectionAngles`, function `miscRebuildOrthonormalBasisFromDirection`, type `UnkStruct_misc_004006A0` | [127](../src/modules/misc.c#L127), [317](../src/modules/misc.c#L317), [465](../src/modules/misc.c#L465), [479](../src/modules/misc.c#L479) |
-| offset_field | `unk18` | function `miscExtractTranslationAndDirectionAngles`, function `miscRebuildOrthonormalBasisFromDirection`, type `UnkStruct_misc_004006A0` | [128](../src/modules/misc.c#L128), [318](../src/modules/misc.c#L318), [464](../src/modules/misc.c#L464) |
-| offset_field | `unk1C` | function `miscRebuildOrthonormalBasisFromDirection`, type `UnkStruct_misc_004006A0` | [129](../src/modules/misc.c#L129), [323](../src/modules/misc.c#L323) |
-| offset_field | `unk20` | function `miscRebuildOrthonormalBasisFromDirection`, type `UnkStruct_misc_004006A0` | [130](../src/modules/misc.c#L130), [319](../src/modules/misc.c#L319) |
-| offset_field | `unk24` | function `miscRebuildOrthonormalBasisFromDirection`, type `UnkStruct_misc_004006A0` | [131](../src/modules/misc.c#L131), [320](../src/modules/misc.c#L320) |
-| offset_field | `unk28` | function `miscExtractTranslationAndDirectionAngles`, function `miscRebuildOrthonormalBasisFromDirection`, type `UnkStruct_misc_004006A0` | [132](../src/modules/misc.c#L132), [321](../src/modules/misc.c#L321), [482](../src/modules/misc.c#L482) |
-| offset_field | `unk2C` | function `miscRebuildOrthonormalBasisFromDirection`, type `UnkStruct_misc_004006A0` | [133](../src/modules/misc.c#L133), [324](../src/modules/misc.c#L324) |
-| offset_field | `unk30` | function `miscApproachTransformTranslation`, function `miscExtractTranslationAndDirectionAngles`, type `UnkStruct_misc_004006A0` | [134](../src/modules/misc.c#L134), [289](../src/modules/misc.c#L289), [486](../src/modules/misc.c#L486) |
-| offset_field | `unk34` | function `miscApproachTransformTranslation`, function `miscExtractTranslationAndDirectionAngles`, type `UnkStruct_misc_004006A0` | [135](../src/modules/misc.c#L135), [290](../src/modules/misc.c#L290), [487](../src/modules/misc.c#L487) |
-| offset_field | `unk38` | function `miscApproachTransformTranslation`, function `miscExtractTranslationAndDirectionAngles`, type `UnkStruct_misc_004006A0` | [136](../src/modules/misc.c#L136), [291](../src/modules/misc.c#L291), [488](../src/modules/misc.c#L488) |
-| offset_field | `unk4` | function `miscRebuildOrthonormalBasisFromDirection`, type `UnkStruct_misc_004006A0` | [123](../src/modules/misc.c#L123), [307](../src/modules/misc.c#L307), [314](../src/modules/misc.c#L314) |
-| offset_field | `unk8` | function `miscExtractTranslationAndDirectionAngles`, function `miscRebuildOrthonormalBasisFromDirection`, type `UnkStruct_misc_004006A0` | [124](../src/modules/misc.c#L124), [308](../src/modules/misc.c#L308), [315](../src/modules/misc.c#L315), [483](../src/modules/misc.c#L483) |
-| offset_field | `unkC` | function `miscRebuildOrthonormalBasisFromDirection`, type `UnkStruct_misc_004006A0` | [125](../src/modules/misc.c#L125), [322](../src/modules/misc.c#L322) |
-| opaque_type | `UnkStruct_misc_004006A0` | function `miscApproachTransformTranslation`, function `miscExtractTranslationAndDirectionAngles`, function `miscRebuildOrthonormalBasisFromDirection`, function `miscRebuildOrthonormalBasisFromDirection`, type `UnkStruct_misc_004006A0` | [137](../src/modules/misc.c#L137), [142](../src/modules/misc.c#L142), [288](../src/modules/misc.c#L288), [299](../src/modules/misc.c#L299), [459](../src/modules/misc.c#L459) |
+| offset_field | `unk10` | function `miscExtractTranslationAndDirectionAngles`, function `miscRebuildOrthonormalBasisFromDirection`, type `UnkStruct_misc_004006A0` | [126](../src/modules/misc.c#L126), [415](../src/modules/misc.c#L415), [564](../src/modules/misc.c#L564), [579](../src/modules/misc.c#L579) |
+| offset_field | `unk14` | function `miscExtractTranslationAndDirectionAngles`, function `miscRebuildOrthonormalBasisFromDirection`, type `UnkStruct_misc_004006A0` | [127](../src/modules/misc.c#L127), [416](../src/modules/misc.c#L416), [564](../src/modules/misc.c#L564), [578](../src/modules/misc.c#L578) |
+| offset_field | `unk18` | function `miscExtractTranslationAndDirectionAngles`, function `miscRebuildOrthonormalBasisFromDirection`, type `UnkStruct_misc_004006A0` | [128](../src/modules/misc.c#L128), [417](../src/modules/misc.c#L417), [563](../src/modules/misc.c#L563) |
+| offset_field | `unk1C` | function `miscRebuildOrthonormalBasisFromDirection`, type `UnkStruct_misc_004006A0` | [129](../src/modules/misc.c#L129), [422](../src/modules/misc.c#L422) |
+| offset_field | `unk20` | function `miscRebuildOrthonormalBasisFromDirection`, type `UnkStruct_misc_004006A0` | [130](../src/modules/misc.c#L130), [418](../src/modules/misc.c#L418) |
+| offset_field | `unk24` | function `miscRebuildOrthonormalBasisFromDirection`, type `UnkStruct_misc_004006A0` | [131](../src/modules/misc.c#L131), [419](../src/modules/misc.c#L419) |
+| offset_field | `unk28` | function `miscExtractTranslationAndDirectionAngles`, function `miscRebuildOrthonormalBasisFromDirection`, type `UnkStruct_misc_004006A0` | [132](../src/modules/misc.c#L132), [420](../src/modules/misc.c#L420), [581](../src/modules/misc.c#L581) |
+| offset_field | `unk2C` | function `miscRebuildOrthonormalBasisFromDirection`, type `UnkStruct_misc_004006A0` | [133](../src/modules/misc.c#L133), [423](../src/modules/misc.c#L423) |
+| offset_field | `unk30` | function `miscApproachTransformTranslation`, function `miscExtractTranslationAndDirectionAngles`, type `UnkStruct_misc_004006A0` | [134](../src/modules/misc.c#L134), [388](../src/modules/misc.c#L388), [585](../src/modules/misc.c#L585) |
+| offset_field | `unk34` | function `miscApproachTransformTranslation`, function `miscExtractTranslationAndDirectionAngles`, type `UnkStruct_misc_004006A0` | [135](../src/modules/misc.c#L135), [389](../src/modules/misc.c#L389), [586](../src/modules/misc.c#L586) |
+| offset_field | `unk38` | function `miscApproachTransformTranslation`, function `miscExtractTranslationAndDirectionAngles`, type `UnkStruct_misc_004006A0` | [136](../src/modules/misc.c#L136), [390](../src/modules/misc.c#L390), [587](../src/modules/misc.c#L587) |
+| offset_field | `unk4` | function `miscRebuildOrthonormalBasisFromDirection`, type `UnkStruct_misc_004006A0` | [123](../src/modules/misc.c#L123), [406](../src/modules/misc.c#L406), [413](../src/modules/misc.c#L413) |
+| offset_field | `unk8` | function `miscExtractTranslationAndDirectionAngles`, function `miscRebuildOrthonormalBasisFromDirection`, type `UnkStruct_misc_004006A0` | [124](../src/modules/misc.c#L124), [407](../src/modules/misc.c#L407), [414](../src/modules/misc.c#L414), [582](../src/modules/misc.c#L582) |
+| offset_field | `unkC` | function `miscRebuildOrthonormalBasisFromDirection`, type `UnkStruct_misc_004006A0` | [125](../src/modules/misc.c#L125), [421](../src/modules/misc.c#L421) |
+| opaque_type | `UnkStruct_misc_004006A0` | function `miscApproachTransformTranslation`, function `miscApproachTransformTranslation`, function `miscExtractTranslationAndDirectionAngles`, function `miscExtractTranslationAndDirectionAngles`, function `miscRebuildOrthonormalBasisFromDirection`, function `miscRebuildOrthonormalBasisFromDirection`, type `UnkStruct_misc_004006A0` | [137](../src/modules/misc.c#L137), [142](../src/modules/misc.c#L142), [152](../src/modules/misc.c#L152), [157](../src/modules/misc.c#L157), [387](../src/modules/misc.c#L387), [398](../src/modules/misc.c#L398), [558](../src/modules/misc.c#L558) |
 | opaque_type | `UnkStruct_misc_004006A0_s` | type `UnkStruct_misc_004006A0` | [121](../src/modules/misc.c#L121) |
-| original_quirk | `Create and append a compact label row, allocate its scalar widget, then * configure the original bounds/source and attach the centered upper child. * Flag two in the signed kind...` | function `miscCreateGuiBoundScalarRow` | [946](../src/modules/misc.c#L946) |
-| original_quirk | `RE_ORIGINAL_QUIRK: original overlapping vertical-segment path reads an unwritten intercept stack word. RE_UNKNOWN: caller reachability/input limits; trace original export caller...` | assembly `func_misc_004019FC` | [765](../src/modules/misc.c#L765) |
+| original_quirk | `Create and append a compact label row, allocate its scalar widget, then * configure the original bounds/source and attach the centered upper child. * Flag two in the signed kind...` | function `miscCreateGuiBoundScalarRow` | [1045](../src/modules/misc.c#L1045) |
+| original_quirk | `RE_ORIGINAL_QUIRK: original overlapping vertical-segment path reads an unwritten intercept stack word. RE_UNKNOWN: caller reachability/input limits; trace original export caller...` | assembly `func_misc_004019FC` | [864](../src/modules/misc.c#L864) |
 | unused_identifier | `unused00` | type `MiscGuiChildExports`, type `MiscGuiCreatorExports` | [7](../src/modules/misc.c#L7), [47](../src/modules/misc.c#L47) |
 | unused_identifier | `unused104` | type `MiscGuiCreatorExports` | [32](../src/modules/misc.c#L32) |
 | unused_identifier | `unused4C` | type `MiscGuiChildExports`, type `MiscGuiCreatorExports` | [11](../src/modules/misc.c#L11), [51](../src/modules/misc.c#L51) |
@@ -2922,14 +2924,14 @@ For every future source wave, regenerate and check this index after code and str
 | unused_identifier | `unused64` | type `MiscGuiCreatorExports` | [13](../src/modules/misc.c#L13) |
 | unused_identifier | `unused6C` | type `MiscGuiCreatorExports` | [15](../src/modules/misc.c#L15) |
 | unused_identifier | `unusedAC` | type `MiscGuiCreatorExports` | [17](../src/modules/misc.c#L17) |
-| unused_identifier | `unusedAngle` | function `miscCartesianToSpherical` | [350](../src/modules/misc.c#L350) |
+| unused_identifier | `unusedAngle` | function `miscCartesianToSpherical` | [449](../src/modules/misc.c#L449) |
 | unused_identifier | `unusedBC` | type `MiscGuiCreatorExports` | [19](../src/modules/misc.c#L19) |
 | unused_identifier | `unusedC8` | type `MiscGuiCreatorExports` | [22](../src/modules/misc.c#L22) |
 | unused_identifier | `unusedDC` | type `MiscGuiCreatorExports` | [25](../src/modules/misc.c#L25) |
 | unused_identifier | `unusedF0` | type `MiscGuiCreatorExports` | [27](../src/modules/misc.c#L27) |
 | unused_identifier | `unusedF8` | type `MiscGuiCreatorExports` | [29](../src/modules/misc.c#L29) |
-| unused_identifier | `unusedScalar` | function `miscCartesianToSpherical`, function `miscExtractTranslationAndDirectionAngles` | [349](../src/modules/misc.c#L349), [461](../src/modules/misc.c#L461) |
-| unused_identifier | `unusedWord` | function `miscCartesianToSpherical` | [351](../src/modules/misc.c#L351) |
+| unused_identifier | `unusedScalar` | function `miscCartesianToSpherical`, function `miscExtractTranslationAndDirectionAngles` | [448](../src/modules/misc.c#L448), [560](../src/modules/misc.c#L560) |
+| unused_identifier | `unusedWord` | function `miscCartesianToSpherical` | [450](../src/modules/misc.c#L450) |
 
 ## src/modules/motion.c
 

@@ -34,9 +34,9 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **785** assembly references:
-**743** ordinary functions and **42** entrypoints, with **713,320** known instruction bytes
-and no unknown sizes. The broader name audit still finds **282** address-named C definitions.
+matching C are preserved with `#line`. The current ledger has **784** assembly references:
+**743** ordinary functions and **41** entrypoints, with **712,408** known instruction bytes
+and no unknown sizes. The broader name audit still finds **283** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
 Two further accepted waves recover nine functions. Commit `06bf51c` implements
@@ -3214,10 +3214,19 @@ Totals: 415 further recoveries after the 225 upstream ordinary imports, plus 141
 Frozen wave `3312-camera-graphics-state-audio-contracts-3312` and `accepted-camera-graphics-state-audio-contracts-3312` verify real translation-unit instructions/full relocations, 3 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 415 further readable functions
+## Historical accepted checkpoint — 415 further readable functions
 
 Clarify the existing 912-byte graphics-state initializer and 1016-byte LookAt direction packer with scoped local roles and concise native-grounded unknowns. Preserve all export stores, allocation and callback order, historical empty-if scaffold, grouped floating-point evaluation, distinct zero-length fallbacks, upper-only limits, byte stores and public types. All 482 native/reference instruction words and 119 complete ordered five-field relocation records match, with four empty compiler logs. Preserve all 1450 previously assessed identities and all 26 prior GFX bodies literally; the two distinct intervals total 1928 bytes and earn no credit until accepted. Normal extraction, fresh full original GFXSTATE packed module and USA ROM, all 1035 source pins, entire785 remaining dictionaries/data2/address282/per-source equality and the uncertainty index remain mandatory.
 
 Totals: 415 further recoveries after the 225 upstream ordinary imports, plus 1418 existing C semantic cleanups. Current ledger: 785 assembly references = 743 ordinary + 42 entrypoints; 713,320 known remaining instruction bytes; zero unknown sizes; 282 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `3346-older-graphics-state-init-clamp-contracts-3346` and `accepted-older-graphics-state-init-clamp-contracts-3346` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 416 further readable functions
+
+Recover the original 912-byte MISC initializer with its reserved extraction identity. Preserve the allocation-pointer callback, all73 export-address stores in native order and exact32-bit address storage. The16 declarations repeat accepted definition signatures without claiming complete callable ABIs; all20 prior MISC assessed bodies and all1452 prior identity tokens remain literal. Complete228 words and147 ordered five-field object relocation records match, with both compiler logs empty. Remove only the exact MISC entrypoint assembly row:785 to784 references,42 to41 entrypoints, ordinary743 unchanged and713320 to712408 remaining bytes. Add only the newly defined reserved entrypoint to address-named C rows at original source order:282 to283. Both retained data rows and every other address/remaining/per-source dictionary follow the explicit projection. Normal extraction, fresh whole original MISC packed module and USA ROM, all1035 source pins and uncertainty-index validation remain mandatory.
+
+Totals: 416 further recoveries after the 225 upstream ordinary imports, plus 1418 existing C semantic cleanups. Current ledger: 784 assembly references = 743 ordinary + 41 entrypoints; 712,408 known remaining instruction bytes; zero unknown sizes; 283 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `3374-misc-initializer-contracts-3374` and `accepted-misc-initializer-contracts-3374` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

@@ -143,7 +143,106 @@ void miscRebuildOrthonormalBasisFromDirection(Vec3F *arg0, UnkStruct_misc_004006
 void miscCartesianToSpherical(f32 arg0, f32 arg1, f32 arg2, f32* arg3, f32* arg4, f32* arg5);
 void miscSphericalToCartesian(f32 radius, f32 azimuth, f32 elevation, f32* x, f32* y, f32* z);
 void miscBuildRotationMatrixFromAngles(Mtx4F *mtx, f32 arg1, f32 arg2, f32 arg3);
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/__entrypoint_func_misc_400000.s")
+/* Export addresses only: declarations repeat existing definitions.
+ * RE_UNKNOWN: these declarations do not establish complete callable ABIs. */
+void miscBusyWaitSeconds(f32 delay);
+f32 miscApproachProportional(f32 target, f32 current, f32 rate);
+f32 miscApproachLinear(f32 target, f32 current, f32 speed);
+void miscVec3ApproachPreserveLength(Vec3F* target, Vec3F* current, f32 rate);
+void miscApproachTransformTranslation(UnkStruct_misc_004006A0* target, UnkStruct_misc_004006A0* current, f32 rate);
+void miscVec3ToSpherical(Vec3F vector, f32* radius, f32* azimuth, f32* elevation);
+void miscSphericalToVec3(f32 radius, f32 azimuth, f32 elevation, f32* output);
+f32 miscTangent(f32 angle);
+f32 miscArcCosine(f32 cosine);
+void miscExtractTranslationAndDirectionAngles(UnkStruct_misc_004006A0* basis, f32* translationX, f32* translationY, f32* translationZ, f32* firstAngle, f32* middleAngle, f32* lastAngle);
+void miscSetTranslationAndRotation(f32 x, f32 y, f32 z, f32 zAngle, f32 xAngle, f32 yAngle, Mtx4F* matrix);
+void func_misc_00401078(void);
+s32 miscGetMaskedFlagTransition(s32 previous, s32 current, s32 mask);
+void func_misc_00400390(void);
+f32 miscEvaluateVectorDotThroughClampedHelper(Vec3F *first, Vec3F *second);
+void miscSeedRandomLcg(s32 seed);
+#line 146 "src/modules/misc.c"
+/* Register the MISC module's 73 export addresses after updating its
+ * allocation pointer. Preserve the original store order, including slot zero.
+ * RE_UNKNOWN: complete public export ABI and table ownership are unproven;
+ * the word table describes address storage, not callable function types. */
+void __entrypoint_func_misc_400000(u32 *exports) {
+    uvUpdateFileAllocPtr(exports);
+    exports[0x4 / 4] = (u32)miscBusyWaitSeconds;
+    exports[0x8 / 4] = (u32)miscApproachProportional;
+    exports[0xC / 4] = (u32)miscApproachLinear;
+    exports[0x10 / 4] = (u32)miscVec3ApproachPreserveLength;
+    exports[0x14 / 4] = (u32)miscApproachTransformTranslation;
+    exports[0x18 / 4] = (u32)miscRebuildOrthonormalBasisFromDirection;
+    exports[0x1C / 4] = (u32)miscVec3ToSpherical;
+    exports[0x20 / 4] = (u32)miscSphericalToVec3;
+    exports[0x24 / 4] = (u32)miscCartesianToSpherical;
+    exports[0xA0 / 4] = (u32)miscVec3Subtract;
+    exports[0xA4 / 4] = (u32)miscVec3Scale;
+    exports[0xA8 / 4] = (u32)miscVec3TransformInPlace;
+    exports[0xAC / 4] = (u32)miscVec3Copy;
+    exports[0xB0 / 4] = (u32)miscVec4AddScaled;
+    exports[0xB4 / 4] = (u32)func_misc_00401FA0;
+    exports[0xB8 / 4] = (u32)func_misc_0040213C;
+    exports[0xBC / 4] = (u32)func_misc_0040234C;
+    exports[0xC0 / 4] = (u32)func_misc_00402528;
+    exports[0xC4 / 4] = (u32)miscGetMatrixDirectionAngles;
+    exports[0x28 / 4] = (u32)miscSphericalToCartesian;
+    exports[0x2C / 4] = (u32)miscTangent;
+    exports[0x30 / 4] = (u32)func_misc_00400AD0;
+    exports[0x34 / 4] = (u32)miscArcCosine;
+    exports[0xC8 / 4] = (u32)func_misc_00402730;
+    exports[0x38 / 4] = (u32)miscBuildRotationMatrixFromAngles;
+    exports[0xCC / 4] = (u32)func_misc_00402874;
+    exports[0x3C / 4] = (u32)miscExtractTranslationAndDirectionAngles;
+    exports[0xD0 / 4] = (u32)miscSetTextureAxisValue;
+    exports[0x40 / 4] = (u32)miscSetTranslationAndRotation;
+    exports[0xD4 / 4] = (u32)func_misc_00402A5C;
+    exports[0x44 / 4] = (u32)func_misc_00401078;
+    exports[0xD8 / 4] = (u32)func_misc_00402BFC;
+    exports[0x48 / 4] = (u32)func_misc_00401080;
+    exports[0xDC / 4] = (u32)func_misc_00402D48;
+    exports[0x4C / 4] = (u32)miscGetMaskedFlagTransition;
+    exports[0xE0 / 4] = (u32)miscVec3Interpolate;
+    exports[0xE4 / 4] = (u32)func_misc_00402EFC;
+    exports[0xE8 / 4] = (u32)miscVec3ApproachNonlinearPreserveLength;
+    exports[0xEC / 4] = (u32)func_misc_00403110;
+    exports[0x0 / 4] = (u32)func_misc_00400390;
+    exports[0x50 / 4] = (u32)func_misc_004012E4;
+    exports[0x54 / 4] = (u32)miscClampFloat;
+    exports[0x58 / 4] = (u32)miscFoldAngleDegrees;
+    exports[0x5C / 4] = (u32)miscWrapAngleDegrees;
+    exports[0x60 / 4] = (u32)miscWrapAngleRadians;
+    exports[0xF0 / 4] = (u32)miscLoadFileModule;
+    exports[0x64 / 4] = (u32)miscFoldAngleRadians;
+    exports[0xF4 / 4] = (u32)miscUnloadFileModule;
+    exports[0x68 / 4] = (u32)func_misc_004016CC;
+    exports[0xF8 / 4] = (u32)func_misc_00403348;
+    exports[0x6C / 4] = (u32)miscVec2LengthSquared;
+    exports[0xFC / 4] = (u32)func_misc_00403650;
+    exports[0x70 / 4] = (u32)miscVec2Length;
+    exports[0x100 / 4] = (u32)func_misc_00403748;
+    exports[0x74 / 4] = (u32)miscVec2Normalize;
+    exports[0x104 / 4] = (u32)miscCreateGuiBoundScalarRow;
+    exports[0x108 / 4] = (u32)func_misc_00403A5C;
+    exports[0x10C / 4] = (u32)miscCreateGuiTextRow;
+    exports[0x110 / 4] = (u32)miscEvaluateVectorDotThroughClampedHelper;
+    exports[0x114 / 4] = (u32)func_misc_00403CD8;
+    exports[0x78 / 4] = (u32)miscVec2AddScaled;
+    exports[0x7C / 4] = (u32)miscVec2Dot;
+    exports[0x80 / 4] = (u32)miscVec2Add;
+    exports[0x84 / 4] = (u32)miscVec2Subtract;
+    exports[0x118 / 4] = (u32)func_misc_00403D8C;
+    exports[0x88 / 4] = (u32)miscVec2Scale;
+    exports[0x11C / 4] = (u32)miscSeedRandomLcg;
+    exports[0x8C / 4] = (u32)miscVec2TransformInPlace;
+    exports[0x120 / 4] = (u32)miscRandomFloatLcg;
+    exports[0x90 / 4] = (u32)miscVec2Copy;
+    exports[0x94 / 4] = (u32)miscVec2ReflectScaled;
+    exports[0x98 / 4] = (u32)func_misc_004019FC;
+    exports[0x9C / 4] = (u32)miscVec3Add;
+}
+#line 147 "src/modules/misc.c"
 
 #line 135 "src/modules/misc.c"
 /* Original empty function; preserve its separate identity and argument ABI.

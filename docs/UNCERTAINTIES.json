@@ -221,7 +221,7 @@
     "src/modules/logo.c": "98b52c4dd4100cf937d10d704a5b1720b9ff63a628099b7215f9fbc57d364619",
     "src/modules/med.c": "388ae18d3726f26ed10f43072b63277fb5568e735cbe9ac55f27d87f235cc000",
     "src/modules/menuslct.c": "6c5d9188d9d0fbbc20982a1327e21430ed180418332a9f13ec96803877adac15",
-    "src/modules/misc.c": "7bd64fd225a3d1ad82e6d0eb1d987f5d92a232c94f609b97313e6d4fbc21e368",
+    "src/modules/misc.c": "d1bb6b39a53944e9a535f3b71b1ae1459cf46d8c95d5a71871c051d139705191",
     "src/modules/motion.c": "ccb8d0f94ce7462025ce8722031ba3730635533d58fa786b0cc44a82a27ccc6a",
     "src/modules/mult1.c": "fcd148eabbeb9db35e3da555b6e77e8b47903ced46b4e915dad1c4e132781ff7",
     "src/modules/mult2.c": "ad25b8e93a8307ad21fc18221aa4ab3559721814689e9a500aa5105b3e820663",
@@ -330,18 +330,18 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "46d15657a4c449e5918d3607e2128ac6c6c1d09733a635859db6f5e25eec508e",
-    "docs/VALIDATION_20261006.md": "720296db827c3400e77eaba00a32b8c612f966acef5d71c44d5e9660fd3f33d3"
+    "docs/STRATEGY_V4.md": "94bbaa42566128ca9ef07a5ac19a6ffd805ba1621dd2453c5114fb9af398d219",
+    "docs/VALIDATION_20261006.md": "fcf61846af5813155776c5b9504b7dfdd3b0bf06a93a7d07d60a8e1fb4191c3f"
   },
   "counts": {
-    "address_function": 903,
+    "address_function": 904,
     "address_global": 1451,
-    "assembly": 787,
+    "assembly": 786,
     "audit_debt": 30,
     "conditional_draft": 4,
     "decompiler_local": 697,
     "draft_marker": 25,
-    "explicit_unknown": 1123,
+    "explicit_unknown": 1125,
     "layout_padding": 269,
     "offset_field": 1601,
     "opaque_type": 282,
@@ -6284,20 +6284,57 @@
       ]
     },
     {
+      "id": "Q-110c78487627",
+      "kind": "address_function",
+      "path": "src/modules/misc.c",
+      "symbol": "__entrypoint_func_misc_400000",
+      "lines": [
+        169
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_misc_400000",
+          "declaration_line": 169,
+          "lines": [
+            169
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-e600452bdcfc",
       "kind": "address_function",
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00400390",
       "lines": [
-        153
+        161,
+        210,
+        252
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_misc_00400390",
-          "declaration_line": 153,
+          "name": "__entrypoint_func_misc_400000",
+          "declaration_line": 169,
           "lines": [
-            153
+            210
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "func_misc_00400390",
+          "declaration_line": 161,
+          "lines": [
+            161
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "func_misc_00400390",
+          "declaration_line": 252,
+          "lines": [
+            252
           ]
         }
       ]
@@ -6308,9 +6345,18 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00400AD0",
       "lines": [
-        62
+        62,
+        192
       ],
       "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_misc_400000",
+          "declaration_line": 169,
+          "lines": [
+            192
+          ]
+        },
         {
           "kind": "function",
           "name": "func_misc_00400AD0",
@@ -6327,15 +6373,33 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00401078",
       "lines": [
-        511
+        159,
+        201,
+        610
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_misc_00401078",
-          "declaration_line": 511,
+          "name": "__entrypoint_func_misc_400000",
+          "declaration_line": 169,
           "lines": [
-            511
+            201
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "func_misc_00401078",
+          "declaration_line": 159,
+          "lines": [
+            159
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "func_misc_00401078",
+          "declaration_line": 610,
+          "lines": [
+            610
           ]
         }
       ]
@@ -6346,9 +6410,18 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00401080",
       "lines": [
-        63
+        63,
+        203
       ],
       "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_misc_400000",
+          "declaration_line": 169,
+          "lines": [
+            203
+          ]
+        },
         {
           "kind": "function",
           "name": "func_misc_00401080",
@@ -6365,9 +6438,18 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_004012E4",
       "lines": [
-        64
+        64,
+        211
       ],
       "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_misc_400000",
+          "declaration_line": 169,
+          "lines": [
+            211
+          ]
+        },
         {
           "kind": "function",
           "name": "func_misc_004012E4",
@@ -6385,11 +6467,20 @@
       "symbol": "func_misc_004016CC",
       "lines": [
         70,
-        840,
-        841,
-        842
+        219,
+        939,
+        940,
+        941
       ],
       "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_misc_400000",
+          "declaration_line": 169,
+          "lines": [
+            219
+          ]
+        },
         {
           "kind": "function",
           "name": "func_misc_004016CC",
@@ -6401,11 +6492,11 @@
         {
           "kind": "function",
           "name": "miscGetMatrixDirectionAngles",
-          "declaration_line": 839,
+          "declaration_line": 938,
           "lines": [
-            840,
-            841,
-            842
+            939,
+            940,
+            941
           ]
         }
       ]
@@ -6416,9 +6507,18 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_004019FC",
       "lines": [
-        82
+        82,
+        242
       ],
       "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_misc_400000",
+          "declaration_line": 169,
+          "lines": [
+            242
+          ]
+        },
         {
           "kind": "function",
           "name": "func_misc_004019FC",
@@ -6435,9 +6535,18 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00401FA0",
       "lines": [
-        89
+        89,
+        185
       ],
       "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_misc_400000",
+          "declaration_line": 169,
+          "lines": [
+            185
+          ]
+        },
         {
           "kind": "function",
           "name": "func_misc_00401FA0",
@@ -6454,9 +6563,18 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_0040213C",
       "lines": [
-        90
+        90,
+        186
       ],
       "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_misc_400000",
+          "declaration_line": 169,
+          "lines": [
+            186
+          ]
+        },
         {
           "kind": "function",
           "name": "func_misc_0040213C",
@@ -6473,9 +6591,18 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_0040234C",
       "lines": [
-        91
+        91,
+        187
       ],
       "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_misc_400000",
+          "declaration_line": 169,
+          "lines": [
+            187
+          ]
+        },
         {
           "kind": "function",
           "name": "func_misc_0040234C",
@@ -6492,9 +6619,18 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00402528",
       "lines": [
-        92
+        92,
+        188
       ],
       "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_misc_400000",
+          "declaration_line": 169,
+          "lines": [
+            188
+          ]
+        },
         {
           "kind": "function",
           "name": "func_misc_00402528",
@@ -6511,9 +6647,18 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00402730",
       "lines": [
-        94
+        94,
+        194
       ],
       "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_misc_400000",
+          "declaration_line": 169,
+          "lines": [
+            194
+          ]
+        },
         {
           "kind": "function",
           "name": "func_misc_00402730",
@@ -6530,9 +6675,18 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00402874",
       "lines": [
-        95
+        95,
+        196
       ],
       "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_misc_400000",
+          "declaration_line": 169,
+          "lines": [
+            196
+          ]
+        },
         {
           "kind": "function",
           "name": "func_misc_00402874",
@@ -6549,9 +6703,18 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00402A5C",
       "lines": [
-        97
+        97,
+        200
       ],
       "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_misc_400000",
+          "declaration_line": 169,
+          "lines": [
+            200
+          ]
+        },
         {
           "kind": "function",
           "name": "func_misc_00402A5C",
@@ -6568,9 +6731,18 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00402BFC",
       "lines": [
-        98
+        98,
+        202
       ],
       "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_misc_400000",
+          "declaration_line": 169,
+          "lines": [
+            202
+          ]
+        },
         {
           "kind": "function",
           "name": "func_misc_00402BFC",
@@ -6587,9 +6759,18 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00402D48",
       "lines": [
-        99
+        99,
+        204
       ],
       "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_misc_400000",
+          "declaration_line": 169,
+          "lines": [
+            204
+          ]
+        },
         {
           "kind": "function",
           "name": "func_misc_00402D48",
@@ -6607,11 +6788,20 @@
       "symbol": "func_misc_00402EFC",
       "lines": [
         101,
-        905,
-        906,
-        907
+        207,
+        1004,
+        1005,
+        1006
       ],
       "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_misc_400000",
+          "declaration_line": 169,
+          "lines": [
+            207
+          ]
+        },
         {
           "kind": "function",
           "name": "func_misc_00402EFC",
@@ -6623,11 +6813,11 @@
         {
           "kind": "function",
           "name": "miscVec3ApproachNonlinearPreserveLength",
-          "declaration_line": 897,
+          "declaration_line": 996,
           "lines": [
-            905,
-            906,
-            907
+            1004,
+            1005,
+            1006
           ]
         }
       ]
@@ -6638,9 +6828,18 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403110",
       "lines": [
-        103
+        103,
+        209
       ],
       "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_misc_400000",
+          "declaration_line": 169,
+          "lines": [
+            209
+          ]
+        },
         {
           "kind": "function",
           "name": "func_misc_00403110",
@@ -6657,9 +6856,18 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403348",
       "lines": [
-        106
+        106,
+        220
       ],
       "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_misc_400000",
+          "declaration_line": 169,
+          "lines": [
+            220
+          ]
+        },
         {
           "kind": "function",
           "name": "func_misc_00403348",
@@ -6676,9 +6884,18 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403650",
       "lines": [
-        107
+        107,
+        222
       ],
       "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_misc_400000",
+          "declaration_line": 169,
+          "lines": [
+            222
+          ]
+        },
         {
           "kind": "function",
           "name": "func_misc_00403650",
@@ -6695,9 +6912,18 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403748",
       "lines": [
-        108
+        108,
+        224
       ],
       "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_misc_400000",
+          "declaration_line": 169,
+          "lines": [
+            224
+          ]
+        },
         {
           "kind": "function",
           "name": "func_misc_00403748",
@@ -6714,9 +6940,18 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403A5C",
       "lines": [
-        110
+        110,
+        227
       ],
       "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_misc_400000",
+          "declaration_line": 169,
+          "lines": [
+            227
+          ]
+        },
         {
           "kind": "function",
           "name": "func_misc_00403A5C",
@@ -6733,9 +6968,18 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403CD8",
       "lines": [
-        112
+        112,
+        230
       ],
       "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_misc_400000",
+          "declaration_line": 169,
+          "lines": [
+            230
+          ]
+        },
         {
           "kind": "function",
           "name": "func_misc_00403CD8",
@@ -6752,9 +6996,18 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403D8C",
       "lines": [
-        113
+        113,
+        235
       ],
       "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_misc_400000",
+          "declaration_line": 169,
+          "lines": [
+            235
+          ]
+        },
         {
           "kind": "function",
           "name": "func_misc_00403D8C",
@@ -31721,26 +31974,26 @@
       "symbol": "D_80025D70",
       "lines": [
         139,
-        190,
-        232,
-        234
+        289,
+        331,
+        333
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscApproachLinear",
-          "declaration_line": 215,
+          "declaration_line": 314,
           "lines": [
-            232,
-            234
+            331,
+            333
           ]
         },
         {
           "kind": "function",
           "name": "miscApproachProportional",
-          "declaration_line": 174,
+          "declaration_line": 273,
           "lines": [
-            190
+            289
           ]
         },
         {
@@ -31759,24 +32012,24 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_00404220",
       "lines": [
-        170,
-        187
+        269,
+        286
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscApproachProportional",
-          "declaration_line": 174,
+          "declaration_line": 273,
           "lines": [
-            187
+            286
           ]
         },
         {
           "kind": "global",
           "name": "D_misc_00404220",
-          "declaration_line": 170,
+          "declaration_line": 269,
           "lines": [
-            170
+            269
           ]
         }
       ]
@@ -31787,24 +32040,24 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_00404224",
       "lines": [
-        211,
-        228
+        310,
+        327
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscApproachLinear",
-          "declaration_line": 215,
+          "declaration_line": 314,
           "lines": [
-            228
+            327
           ]
         },
         {
           "kind": "global",
           "name": "D_misc_00404224",
-          "declaration_line": 211,
+          "declaration_line": 310,
           "lines": [
-            211
+            310
           ]
         }
       ]
@@ -31815,24 +32068,24 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_00404234",
       "lines": [
-        393,
-        400
+        492,
+        499
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscArcCosine",
-          "declaration_line": 398,
+          "declaration_line": 497,
           "lines": [
-            400
+            499
           ]
         },
         {
           "kind": "global",
           "name": "D_misc_00404234",
-          "declaration_line": 393,
+          "declaration_line": 492,
           "lines": [
-            393
+            492
           ]
         }
       ]
@@ -31843,24 +32096,24 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_00404238",
       "lines": [
-        451,
-        466
+        550,
+        565
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscExtractTranslationAndDirectionAngles",
-          "declaration_line": 459,
+          "declaration_line": 558,
           "lines": [
-            466
+            565
           ]
         },
         {
           "kind": "global",
           "name": "D_misc_00404238",
-          "declaration_line": 451,
+          "declaration_line": 550,
           "lines": [
-            451
+            550
           ]
         }
       ]
@@ -31871,24 +32124,24 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_0040423C",
       "lines": [
-        452,
-        468
+        551,
+        567
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscExtractTranslationAndDirectionAngles",
-          "declaration_line": 459,
+          "declaration_line": 558,
           "lines": [
-            468
+            567
           ]
         },
         {
           "kind": "global",
           "name": "D_misc_0040423C",
-          "declaration_line": 452,
+          "declaration_line": 551,
           "lines": [
-            452
+            551
           ]
         }
       ]
@@ -31899,24 +32152,24 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_00404240",
       "lines": [
-        453,
-        470
+        552,
+        569
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscExtractTranslationAndDirectionAngles",
-          "declaration_line": 459,
+          "declaration_line": 558,
           "lines": [
-            470
+            569
           ]
         },
         {
           "kind": "global",
           "name": "D_misc_00404240",
-          "declaration_line": 453,
+          "declaration_line": 552,
           "lines": [
-            453
+            552
           ]
         }
       ]
@@ -31927,26 +32180,26 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_00404260",
       "lines": [
-        601,
-        612,
-        615
+        700,
+        711,
+        714
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscWrapAngleRadians",
-          "declaration_line": 606,
+          "declaration_line": 705,
           "lines": [
-            612,
-            615
+            711,
+            714
           ]
         },
         {
           "kind": "global",
           "name": "D_misc_00404260",
-          "declaration_line": 601,
+          "declaration_line": 700,
           "lines": [
-            601
+            700
           ]
         }
       ]
@@ -31957,24 +32210,24 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_00404264",
       "lines": [
-        602,
-        614
+        701,
+        713
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscWrapAngleRadians",
-          "declaration_line": 606,
+          "declaration_line": 705,
           "lines": [
-            614
+            713
           ]
         },
         {
           "kind": "global",
           "name": "D_misc_00404264",
-          "declaration_line": 602,
+          "declaration_line": 701,
           "lines": [
-            602
+            701
           ]
         }
       ]
@@ -31985,24 +32238,24 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_00404268",
       "lines": [
-        603,
-        617
+        702,
+        716
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscWrapAngleRadians",
-          "declaration_line": 606,
+          "declaration_line": 705,
           "lines": [
-            617
+            716
           ]
         },
         {
           "kind": "global",
           "name": "D_misc_00404268",
-          "declaration_line": 603,
+          "declaration_line": 702,
           "lines": [
-            603
+            702
           ]
         }
       ]
@@ -32013,24 +32266,24 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_0040426C",
       "lines": [
-        604,
-        618
+        703,
+        717
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscWrapAngleRadians",
-          "declaration_line": 606,
+          "declaration_line": 705,
           "lines": [
-            618
+            717
           ]
         },
         {
           "kind": "global",
           "name": "D_misc_0040426C",
-          "declaration_line": 604,
+          "declaration_line": 703,
           "lines": [
-            604
+            703
           ]
         }
       ]
@@ -32041,28 +32294,28 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_00404270",
       "lines": [
-        632,
-        644,
-        647,
-        656
+        731,
+        743,
+        746,
+        755
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscFoldAngleRadians",
-          "declaration_line": 639,
+          "declaration_line": 738,
           "lines": [
-            644,
-            647,
-            656
+            743,
+            746,
+            755
           ]
         },
         {
           "kind": "global",
           "name": "D_misc_00404270",
-          "declaration_line": 632,
+          "declaration_line": 731,
           "lines": [
-            632
+            731
           ]
         }
       ]
@@ -32073,24 +32326,24 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_00404274",
       "lines": [
-        633,
-        646
+        732,
+        745
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscFoldAngleRadians",
-          "declaration_line": 639,
+          "declaration_line": 738,
           "lines": [
-            646
+            745
           ]
         },
         {
           "kind": "global",
           "name": "D_misc_00404274",
-          "declaration_line": 633,
+          "declaration_line": 732,
           "lines": [
-            633
+            732
           ]
         }
       ]
@@ -32101,24 +32354,24 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_00404278",
       "lines": [
-        634,
-        649
+        733,
+        748
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscFoldAngleRadians",
-          "declaration_line": 639,
+          "declaration_line": 738,
           "lines": [
-            649
+            748
           ]
         },
         {
           "kind": "global",
           "name": "D_misc_00404278",
-          "declaration_line": 634,
+          "declaration_line": 733,
           "lines": [
-            634
+            733
           ]
         }
       ]
@@ -32129,28 +32382,28 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_0040427C",
       "lines": [
-        635,
-        650,
-        653,
-        659
+        734,
+        749,
+        752,
+        758
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscFoldAngleRadians",
-          "declaration_line": 639,
+          "declaration_line": 738,
           "lines": [
-            650,
-            653,
-            659
+            749,
+            752,
+            758
           ]
         },
         {
           "kind": "global",
           "name": "D_misc_0040427C",
-          "declaration_line": 635,
+          "declaration_line": 734,
           "lines": [
-            635
+            734
           ]
         }
       ]
@@ -32161,24 +32414,24 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_00404280",
       "lines": [
-        636,
-        655
+        735,
+        754
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscFoldAngleRadians",
-          "declaration_line": 639,
+          "declaration_line": 738,
           "lines": [
-            655
+            754
           ]
         },
         {
           "kind": "global",
           "name": "D_misc_00404280",
-          "declaration_line": 636,
+          "declaration_line": 735,
           "lines": [
-            636
+            735
           ]
         }
       ]
@@ -32189,24 +32442,24 @@
       "path": "src/modules/misc.c",
       "symbol": "D_misc_00404284",
       "lines": [
-        637,
-        658
+        736,
+        757
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscFoldAngleRadians",
-          "declaration_line": 639,
+          "declaration_line": 738,
           "lines": [
-            658
+            757
           ]
         },
         {
           "kind": "global",
           "name": "D_misc_00404284",
-          "declaration_line": 637,
+          "declaration_line": 736,
           "lines": [
-            637
+            736
           ]
         }
       ]
@@ -32218,15 +32471,15 @@
       "symbol": "D_misc_0040428C",
       "lines": [
         59,
-        686
+        785
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscVec2Normalize",
-          "declaration_line": 683,
+          "declaration_line": 782,
           "lines": [
-            686
+            785
           ]
         },
         {
@@ -32246,15 +32499,15 @@
       "symbol": "D_misc_004042F8",
       "lines": [
         116,
-        1040
+        1139
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscRandomFloatLcg",
-          "declaration_line": 1036,
+          "declaration_line": 1135,
           "lines": [
-            1040
+            1139
           ]
         },
         {
@@ -32274,26 +32527,26 @@
       "symbol": "D_misc_00404300",
       "lines": [
         115,
-        1029,
-        1038,
-        1039
+        1128,
+        1137,
+        1138
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscRandomFloatLcg",
-          "declaration_line": 1036,
+          "declaration_line": 1135,
           "lines": [
-            1038,
-            1039
+            1137,
+            1138
           ]
         },
         {
           "kind": "function",
           "name": "miscSeedRandomLcg",
-          "declaration_line": 1028,
+          "declaration_line": 1127,
           "lines": [
-            1029
+            1128
           ]
         },
         {
@@ -77449,22 +77702,12 @@
       "evidence": "asm/us/nonmatchings/modules/menuslct/func_menuslct_00401320.s"
     },
     {
-      "id": "Q-d6191069944b",
-      "kind": "assembly",
-      "path": "src/modules/misc.c",
-      "symbol": "__entrypoint_func_misc_400000",
-      "lines": [
-        146
-      ],
-      "evidence": "asm/us/nonmatchings/modules/misc/__entrypoint_func_misc_400000.s"
-    },
-    {
       "id": "Q-848a2bff3d27",
       "kind": "assembly",
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00400AD0",
       "lines": [
-        391
+        490
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00400AD0.s"
     },
@@ -77474,7 +77717,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00401080",
       "lines": [
-        516
+        615
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00401080.s"
     },
@@ -77484,7 +77727,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_004012E4",
       "lines": [
-        533
+        632
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_004012E4.s"
     },
@@ -77494,7 +77737,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_004016CC",
       "lines": [
-        665
+        764
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_004016CC.s"
     },
@@ -77504,7 +77747,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_004019FC",
       "lines": [
-        766
+        865
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_004019FC.s"
     },
@@ -77514,7 +77757,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00401FA0",
       "lines": [
-        828
+        927
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00401FA0.s"
     },
@@ -77524,7 +77767,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_0040213C",
       "lines": [
-        830
+        929
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_0040213C.s"
     },
@@ -77534,7 +77777,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_0040234C",
       "lines": [
-        832
+        931
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_0040234C.s"
     },
@@ -77544,7 +77787,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00402528",
       "lines": [
-        834
+        933
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00402528.s"
     },
@@ -77554,7 +77797,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00402730",
       "lines": [
-        846
+        945
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00402730.s"
     },
@@ -77564,7 +77807,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00402874",
       "lines": [
-        848
+        947
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00402874.s"
     },
@@ -77574,7 +77817,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00402A5C",
       "lines": [
-        875
+        974
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00402A5C.s"
     },
@@ -77584,7 +77827,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00402BFC",
       "lines": [
-        877
+        976
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00402BFC.s"
     },
@@ -77594,7 +77837,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00402D48",
       "lines": [
-        879
+        978
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00402D48.s"
     },
@@ -77604,7 +77847,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00402EFC",
       "lines": [
-        892
+        991
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00402EFC.s"
     },
@@ -77614,7 +77857,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403110",
       "lines": [
-        919
+        1018
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00403110.s"
     },
@@ -77624,7 +77867,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403348",
       "lines": [
-        939
+        1038
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00403348.s"
     },
@@ -77634,7 +77877,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403650",
       "lines": [
-        941
+        1040
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00403650.s"
     },
@@ -77644,7 +77887,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403748",
       "lines": [
-        943
+        1042
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00403748.s"
     },
@@ -77654,7 +77897,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403A5C",
       "lines": [
-        988
+        1087
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00403A5C.s"
     },
@@ -77664,7 +77907,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403CD8",
       "lines": [
-        1022
+        1121
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00403CD8.s"
     },
@@ -77674,7 +77917,7 @@
       "path": "src/modules/misc.c",
       "symbol": "func_misc_00403D8C",
       "lines": [
-        1024
+        1123
       ],
       "evidence": "asm/us/nonmatchings/modules/misc/func_misc_00403D8C.s"
     },
@@ -122339,16 +122582,16 @@
       "path": "src/modules/misc.c",
       "symbol": "Allocate/get a compact-text row through original GUI slots0x40/44, copy * twelve bytes through slot0x48, append through0xA8 and set property3 through * slot0x5C. The property selector is consumed as signed16 by its target. * RE_UNKNOWN: caller text extent and pool/parent validity are not established * by this wrapper. Check original callers and pool allocation before rewrite.",
       "lines": [
-        993
+        1092
       ],
       "evidence": "Allocate/get a compact-text row through original GUI slots0x40/44, copy * twelve bytes through slot0x48, append through0xA8 and set property3 through * slot0x5C. The property selector is consumed as signed16 by its target. * RE_UNKNOWN: caller text extent and pool/parent validity are not established * by this wrapper. Check original callers and pool allocation before rewrite.",
       "owners": [
         {
           "kind": "function",
           "name": "miscCreateGuiTextRow",
-          "declaration_line": 998,
+          "declaration_line": 1097,
           "lines": [
-            993
+            1092
           ]
         }
       ]
@@ -122359,16 +122602,16 @@
       "path": "src/modules/misc.c",
       "symbol": "Create and append a compact label row, allocate its scalar widget, then * configure the original bounds/source and attach the centered upper child. * Flag two in the signed kind short selects integer conversion; other kinds * read the source as a float. Return the row and optionally expose its widget. * RE_ORIGINAL_QUIRK: allocation results remain unchecked, and label copies * retain the original fixed-width reads rather than NUL-string handling. * RE_UNKNOWN: remaining kind bits, bound units and value-source ownership/ * lifetime. The source address is forwarded to widget configuration; trace * original widget consumers, caller storage and teardown before assigning * ownership or deciding how long that storage must remain readable.",
       "lines": [
-        946
+        1045
       ],
       "evidence": "Create and append a compact label row, allocate its scalar widget, then * configure the original bounds/source and attach the centered upper child. * Flag two in the signed kind short selects integer conversion; other kinds * read the source as a float. Return the row and optionally expose its widget. * RE_ORIGINAL_QUIRK: allocation results remain unchecked, and label copies * retain the original fixed-width reads rather than NUL-string handling. * RE_UNKNOWN: remaining kind bits, bound units and value-source ownership/ * lifetime. The source address is forwarded to widget configuration; trace * original widget consumers, caller storage and teardown before assigning * ownership or deciding how long that storage must remain readable.",
       "owners": [
         {
           "kind": "function",
           "name": "miscCreateGuiBoundScalarRow",
-          "declaration_line": 957,
+          "declaration_line": 1056,
           "lines": [
-            946
+            1045
           ]
         }
       ]
@@ -122379,16 +122622,36 @@
       "path": "src/modules/misc.c",
       "symbol": "Evaluate the clamped scalar helper on the three-component dot product. * Original native F0 returns unchanged and Motion66E4 consumes that result. * RE_UNKNOWN: historical declarations, intended input lengths, normalization * guarantees and result units need original caller/provider evidence. This * focused f32 return preserves the observed native result; it does not prove * the complete historical module ABI or establish a unit-vector precondition.",
       "lines": [
-        1010
+        1109
       ],
       "evidence": "Evaluate the clamped scalar helper on the three-component dot product. * Original native F0 returns unchanged and Motion66E4 consumes that result. * RE_UNKNOWN: historical declarations, intended input lengths, normalization * guarantees and result units need original caller/provider evidence. This * focused f32 return preserves the observed native result; it does not prove * the complete historical module ABI or establish a unit-vector precondition.",
       "owners": [
         {
           "kind": "function",
           "name": "miscEvaluateVectorDotThroughClampedHelper",
-          "declaration_line": 1017,
+          "declaration_line": 1116,
           "lines": [
-            1010
+            1109
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-f4e34196fcf7",
+      "kind": "explicit_unknown",
+      "path": "src/modules/misc.c",
+      "symbol": "Export addresses only: declarations repeat existing definitions. * RE_UNKNOWN: these declarations do not establish complete callable ABIs.",
+      "lines": [
+        146
+      ],
+      "evidence": "Export addresses only: declarations repeat existing definitions. * RE_UNKNOWN: these declarations do not establish complete callable ABIs.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "miscBusyWaitSeconds",
+          "declaration_line": 148,
+          "lines": [
+            146
           ]
         }
       ]
@@ -122439,16 +122702,16 @@
       "path": "src/modules/misc.c",
       "symbol": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "lines": [
-        149
+        248
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "owners": [
         {
           "kind": "function",
           "name": "func_misc_00400390",
-          "declaration_line": 153,
+          "declaration_line": 252,
           "lines": [
-            149
+            248
           ]
         }
       ]
@@ -122479,16 +122742,16 @@
       "path": "src/modules/misc.c",
       "symbol": "RE_ORIGINAL_QUIRK: original overlapping vertical-segment path reads an unwritten intercept stack word. RE_UNKNOWN: caller reachability/input limits; trace original export callers before changing collinear behavior.",
       "lines": [
-        765
+        864
       ],
       "evidence": "RE_ORIGINAL_QUIRK: original overlapping vertical-segment path reads an unwritten intercept stack word. RE_UNKNOWN: caller reachability/input limits; trace original export callers before changing collinear behavior.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_misc_004019FC",
-          "declaration_line": 766,
+          "declaration_line": 865,
           "lines": [
-            765
+            864
           ]
         }
       ]
@@ -122499,16 +122762,16 @@
       "path": "src/modules/misc.c",
       "symbol": "RE_UNKNOWN: quaternion normalization/frame convention, cached-adjustment intent, shared flag reset/lifetime/reentrancy and overlap guarantees; trace original quaternion producers, flag writers and callers before changing the cache or transform.",
       "lines": [
-        831
+        930
       ],
       "evidence": "RE_UNKNOWN: quaternion normalization/frame convention, cached-adjustment intent, shared flag reset/lifetime/reentrancy and overlap guarantees; trace original quaternion producers, flag writers and callers before changing the cache or transform.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_misc_0040234C",
-          "declaration_line": 832,
+          "declaration_line": 931,
           "lines": [
-            831
+            930
           ]
         }
       ]
@@ -122519,16 +122782,36 @@
       "path": "src/modules/misc.c",
       "symbol": "RE_UNKNOWN: valid blend-weight/input domains, matrix/quaternion frame convention and partial-overlap guarantees; trace original export callers and matrix/quaternion producers before changing interpolation or alias handling.",
       "lines": [
-        532
+        631
       ],
       "evidence": "RE_UNKNOWN: valid blend-weight/input domains, matrix/quaternion frame convention and partial-overlap guarantees; trace original export callers and matrix/quaternion producers before changing interpolation or alias handling.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_misc_004012E4",
-          "declaration_line": 533,
+          "declaration_line": 632,
           "lines": [
-            532
+            631
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-b1f6ce32dd7d",
+      "kind": "explicit_unknown",
+      "path": "src/modules/misc.c",
+      "symbol": "Register the MISC module's 73 export addresses after updating its * allocation pointer. Preserve the original store order, including slot zero. * RE_UNKNOWN: complete public export ABI and table ownership are unproven; * the word table describes address storage, not callable function types.",
+      "lines": [
+        165
+      ],
+      "evidence": "Register the MISC module's 73 export addresses after updating its * allocation pointer. Preserve the original store order, including slot zero. * RE_UNKNOWN: complete public export ABI and table ownership are unproven; * the word table describes address storage, not callable function types.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_misc_400000",
+          "declaration_line": 169,
+          "lines": [
+            165
           ]
         }
       ]
@@ -122539,16 +122822,16 @@
       "path": "src/modules/misc.c",
       "symbol": "Set a loaded texture parameter chosen by selector bytes 1 and 0: * byte 1 equal to character 1 selects the first record, otherwise the second; * byte 0 equal to u selects offset 8, otherwise offset 12. Missing files or * selected records skip the write. Selector reads are conditional on those * preceding lookups and are not preceded by pointer/length checks here. * RE_UNKNOWN: whether all original callers guarantee two readable selector * bytes and which other encodings are intended. Trace caller storage and * original selector data before claiming a validated two-character string * contract or adding validation.",
       "lines": [
-        851
+        950
       ],
       "evidence": "Set a loaded texture parameter chosen by selector bytes 1 and 0: * byte 1 equal to character 1 selects the first record, otherwise the second; * byte 0 equal to u selects offset 8, otherwise offset 12. Missing files or * selected records skip the write. Selector reads are conditional on those * preceding lookups and are not preceded by pointer/length checks here. * RE_UNKNOWN: whether all original callers guarantee two readable selector * bytes and which other encodings are intended. Trace caller storage and * original selector data before claiming a validated two-character string * contract or adding validation.",
       "owners": [
         {
           "kind": "function",
           "name": "miscSetTextureAxisValue",
-          "declaration_line": 861,
+          "declaration_line": 960,
           "lines": [
-            851
+            950
           ]
         }
       ]
@@ -122559,16 +122842,16 @@
       "path": "src/modules/misc.c",
       "symbol": "The current body stores integer zero through a null pointer. * RE_UNKNOWN: deliberate trap intent, caller/export reachability and runtime * contract. No C/header caller was found; this does not prove unreachable * behavior. Preserve the body pending original assembly/caller evidence.",
       "lines": [
-        507
+        606
       ],
       "evidence": "The current body stores integer zero through a null pointer. * RE_UNKNOWN: deliberate trap intent, caller/export reachability and runtime * contract. No C/header caller was found; this does not prove unreachable * behavior. Preserve the body pending original assembly/caller evidence.",
       "owners": [
         {
           "kind": "function",
           "name": "func_misc_00401078",
-          "declaration_line": 511,
+          "declaration_line": 610,
           "lines": [
-            507
+            606
           ]
         }
       ]
@@ -164176,17 +164459,17 @@
       "symbol": "unk0",
       "lines": [
         122,
-        306,
-        313
+        405,
+        412
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscRebuildOrthonormalBasisFromDirection",
-          "declaration_line": 299,
+          "declaration_line": 398,
           "lines": [
-            306,
-            313
+            405,
+            412
           ]
         },
         {
@@ -164234,26 +164517,26 @@
       "symbol": "unk10",
       "lines": [
         126,
-        316,
-        465,
-        480
+        415,
+        564,
+        579
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscExtractTranslationAndDirectionAngles",
-          "declaration_line": 459,
+          "declaration_line": 558,
           "lines": [
-            465,
-            480
+            564,
+            579
           ]
         },
         {
           "kind": "function",
           "name": "miscRebuildOrthonormalBasisFromDirection",
-          "declaration_line": 299,
+          "declaration_line": 398,
           "lines": [
-            316
+            415
           ]
         },
         {
@@ -164273,26 +164556,26 @@
       "symbol": "unk14",
       "lines": [
         127,
-        317,
-        465,
-        479
+        416,
+        564,
+        578
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscExtractTranslationAndDirectionAngles",
-          "declaration_line": 459,
+          "declaration_line": 558,
           "lines": [
-            465,
-            479
+            564,
+            578
           ]
         },
         {
           "kind": "function",
           "name": "miscRebuildOrthonormalBasisFromDirection",
-          "declaration_line": 299,
+          "declaration_line": 398,
           "lines": [
-            317
+            416
           ]
         },
         {
@@ -164312,24 +164595,24 @@
       "symbol": "unk18",
       "lines": [
         128,
-        318,
-        464
+        417,
+        563
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscExtractTranslationAndDirectionAngles",
-          "declaration_line": 459,
+          "declaration_line": 558,
           "lines": [
-            464
+            563
           ]
         },
         {
           "kind": "function",
           "name": "miscRebuildOrthonormalBasisFromDirection",
-          "declaration_line": 299,
+          "declaration_line": 398,
           "lines": [
-            318
+            417
           ]
         },
         {
@@ -164349,15 +164632,15 @@
       "symbol": "unk1C",
       "lines": [
         129,
-        323
+        422
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscRebuildOrthonormalBasisFromDirection",
-          "declaration_line": 299,
+          "declaration_line": 398,
           "lines": [
-            323
+            422
           ]
         },
         {
@@ -164377,15 +164660,15 @@
       "symbol": "unk20",
       "lines": [
         130,
-        319
+        418
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscRebuildOrthonormalBasisFromDirection",
-          "declaration_line": 299,
+          "declaration_line": 398,
           "lines": [
-            319
+            418
           ]
         },
         {
@@ -164405,15 +164688,15 @@
       "symbol": "unk24",
       "lines": [
         131,
-        320
+        419
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscRebuildOrthonormalBasisFromDirection",
-          "declaration_line": 299,
+          "declaration_line": 398,
           "lines": [
-            320
+            419
           ]
         },
         {
@@ -164433,24 +164716,24 @@
       "symbol": "unk28",
       "lines": [
         132,
-        321,
-        482
+        420,
+        581
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscExtractTranslationAndDirectionAngles",
-          "declaration_line": 459,
+          "declaration_line": 558,
           "lines": [
-            482
+            581
           ]
         },
         {
           "kind": "function",
           "name": "miscRebuildOrthonormalBasisFromDirection",
-          "declaration_line": 299,
+          "declaration_line": 398,
           "lines": [
-            321
+            420
           ]
         },
         {
@@ -164470,15 +164753,15 @@
       "symbol": "unk2C",
       "lines": [
         133,
-        324
+        423
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscRebuildOrthonormalBasisFromDirection",
-          "declaration_line": 299,
+          "declaration_line": 398,
           "lines": [
-            324
+            423
           ]
         },
         {
@@ -164498,24 +164781,24 @@
       "symbol": "unk30",
       "lines": [
         134,
-        289,
-        486
+        388,
+        585
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscApproachTransformTranslation",
-          "declaration_line": 288,
+          "declaration_line": 387,
           "lines": [
-            289
+            388
           ]
         },
         {
           "kind": "function",
           "name": "miscExtractTranslationAndDirectionAngles",
-          "declaration_line": 459,
+          "declaration_line": 558,
           "lines": [
-            486
+            585
           ]
         },
         {
@@ -164535,24 +164818,24 @@
       "symbol": "unk34",
       "lines": [
         135,
-        290,
-        487
+        389,
+        586
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscApproachTransformTranslation",
-          "declaration_line": 288,
+          "declaration_line": 387,
           "lines": [
-            290
+            389
           ]
         },
         {
           "kind": "function",
           "name": "miscExtractTranslationAndDirectionAngles",
-          "declaration_line": 459,
+          "declaration_line": 558,
           "lines": [
-            487
+            586
           ]
         },
         {
@@ -164572,24 +164855,24 @@
       "symbol": "unk38",
       "lines": [
         136,
-        291,
-        488
+        390,
+        587
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscApproachTransformTranslation",
-          "declaration_line": 288,
+          "declaration_line": 387,
           "lines": [
-            291
+            390
           ]
         },
         {
           "kind": "function",
           "name": "miscExtractTranslationAndDirectionAngles",
-          "declaration_line": 459,
+          "declaration_line": 558,
           "lines": [
-            488
+            587
           ]
         },
         {
@@ -164609,17 +164892,17 @@
       "symbol": "unk4",
       "lines": [
         123,
-        307,
-        314
+        406,
+        413
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscRebuildOrthonormalBasisFromDirection",
-          "declaration_line": 299,
+          "declaration_line": 398,
           "lines": [
-            307,
-            314
+            406,
+            413
           ]
         },
         {
@@ -164639,26 +164922,26 @@
       "symbol": "unk8",
       "lines": [
         124,
-        308,
-        315,
-        483
+        407,
+        414,
+        582
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscExtractTranslationAndDirectionAngles",
-          "declaration_line": 459,
+          "declaration_line": 558,
           "lines": [
-            483
+            582
           ]
         },
         {
           "kind": "function",
           "name": "miscRebuildOrthonormalBasisFromDirection",
-          "declaration_line": 299,
+          "declaration_line": 398,
           "lines": [
-            308,
-            315
+            407,
+            414
           ]
         },
         {
@@ -164678,15 +164961,15 @@
       "symbol": "unkC",
       "lines": [
         125,
-        322
+        421
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscRebuildOrthonormalBasisFromDirection",
-          "declaration_line": 299,
+          "declaration_line": 398,
           "lines": [
-            322
+            421
           ]
         },
         {
@@ -207843,25 +208126,43 @@
       "lines": [
         137,
         142,
-        288,
-        299,
-        459
+        152,
+        157,
+        387,
+        398,
+        558
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscApproachTransformTranslation",
-          "declaration_line": 288,
+          "declaration_line": 152,
           "lines": [
-            288
+            152
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "miscApproachTransformTranslation",
+          "declaration_line": 387,
+          "lines": [
+            387
           ]
         },
         {
           "kind": "function",
           "name": "miscExtractTranslationAndDirectionAngles",
-          "declaration_line": 459,
+          "declaration_line": 157,
           "lines": [
-            459
+            157
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "miscExtractTranslationAndDirectionAngles",
+          "declaration_line": 558,
+          "lines": [
+            558
           ]
         },
         {
@@ -207875,9 +208176,9 @@
         {
           "kind": "function",
           "name": "miscRebuildOrthonormalBasisFromDirection",
-          "declaration_line": 299,
+          "declaration_line": 398,
           "lines": [
-            299
+            398
           ]
         },
         {
@@ -214784,16 +215085,16 @@
       "path": "src/modules/misc.c",
       "symbol": "Create and append a compact label row, allocate its scalar widget, then * configure the original bounds/source and attach the centered upper child. * Flag two in the signed kind short selects integer conversion; other kinds * read the source as a float. Return the row and optionally expose its widget. * RE_ORIGINAL_QUIRK: allocation results remain unchecked, and label copies * retain the original fixed-width reads rather than NUL-string handling. * RE_UNKNOWN: remaining kind bits, bound units and value-source ownership/ * lifetime. The source address is forwarded to widget configuration; trace * original widget consumers, caller storage and teardown before assigning * ownership or deciding how long that storage must remain readable.",
       "lines": [
-        946
+        1045
       ],
       "evidence": "Create and append a compact label row, allocate its scalar widget, then * configure the original bounds/source and attach the centered upper child. * Flag two in the signed kind short selects integer conversion; other kinds * read the source as a float. Return the row and optionally expose its widget. * RE_ORIGINAL_QUIRK: allocation results remain unchecked, and label copies * retain the original fixed-width reads rather than NUL-string handling. * RE_UNKNOWN: remaining kind bits, bound units and value-source ownership/ * lifetime. The source address is forwarded to widget configuration; trace * original widget consumers, caller storage and teardown before assigning * ownership or deciding how long that storage must remain readable.",
       "owners": [
         {
           "kind": "function",
           "name": "miscCreateGuiBoundScalarRow",
-          "declaration_line": 957,
+          "declaration_line": 1056,
           "lines": [
-            946
+            1045
           ]
         }
       ]
@@ -214804,16 +215105,16 @@
       "path": "src/modules/misc.c",
       "symbol": "RE_ORIGINAL_QUIRK: original overlapping vertical-segment path reads an unwritten intercept stack word. RE_UNKNOWN: caller reachability/input limits; trace original export callers before changing collinear behavior.",
       "lines": [
-        765
+        864
       ],
       "evidence": "RE_ORIGINAL_QUIRK: original overlapping vertical-segment path reads an unwritten intercept stack word. RE_UNKNOWN: caller reachability/input limits; trace original export callers before changing collinear behavior.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_misc_004019FC",
-          "declaration_line": 766,
+          "declaration_line": 865,
           "lines": [
-            765
+            864
           ]
         }
       ]
@@ -222193,15 +222494,15 @@
       "path": "src/modules/misc.c",
       "symbol": "unusedAngle",
       "lines": [
-        350
+        449
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscCartesianToSpherical",
-          "declaration_line": 348,
+          "declaration_line": 447,
           "lines": [
-            350
+            449
           ]
         }
       ]
@@ -222307,24 +222608,24 @@
       "path": "src/modules/misc.c",
       "symbol": "unusedScalar",
       "lines": [
-        349,
-        461
+        448,
+        560
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscCartesianToSpherical",
-          "declaration_line": 348,
+          "declaration_line": 447,
           "lines": [
-            349
+            448
           ]
         },
         {
           "kind": "function",
           "name": "miscExtractTranslationAndDirectionAngles",
-          "declaration_line": 459,
+          "declaration_line": 558,
           "lines": [
-            461
+            560
           ]
         }
       ]
@@ -222335,15 +222636,15 @@
       "path": "src/modules/misc.c",
       "symbol": "unusedWord",
       "lines": [
-        351
+        450
       ],
       "owners": [
         {
           "kind": "function",
           "name": "miscCartesianToSpherical",
-          "declaration_line": 348,
+          "declaration_line": 447,
           "lines": [
-            351
+            450
           ]
         }
       ]
