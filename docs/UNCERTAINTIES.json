@@ -325,7 +325,7 @@
     "src/modules/uvcolor_rom.c": "1ab5fe18292fe69dfc37467c523cf93cd2f45f38218f821731c0ee9e4cd698fb",
     "src/modules/uvcont_rom.c": "7e2bfec28bdb1921f0d141f3f9ae8d59a1a3640164b8345d2cc6f7d6b264103c",
     "src/modules/uvcontourld_rom.c": "213aadd783750bac46c8961530c2cb8553a56d154fab7bf36d097d7d585a15d5",
-    "src/modules/uvdbg_rom.c": "20dbff47ebe571eb2b5462d238cd16c53f00157a154f22f8c051f64b8f1dce0b",
+    "src/modules/uvdbg_rom.c": "4ddd0efed14387bb6e822a439c0903a54671a7496d8d2dce153a9b06f3d0887e",
     "src/modules/uvdgeom_rom.c": "6fb52252f88afc60e053a4213e19fdebd44296f68d23ef8116e80f6460503ace",
     "src/modules/uvdobj_rom.c": "e976d674c6ade4f3e72a981e0dd5067a529cb5e824edccbd28148f1d9e1f3efb",
     "src/modules/uvdsetld_rom.c": "274d09695ac5beb2913e83e67baba614f43b5f52001c6d62c18a22bee027edf4",
@@ -380,8 +380,8 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "091360d0ae1149429b5340d5833f63a2b8cf669cd4cff92aba035aa422d33425",
-    "docs/VALIDATION_20261006.md": "2d7caa02c5d7273ecef6866db186dcd6739356f849fadf9574d5c4f9061a9823"
+    "docs/STRATEGY_V4.md": "67bedee2317cf5be410f2075febdac9b7e9c4fc28a8211082022a0ac7a63690d",
+    "docs/VALIDATION_20261006.md": "b9ccdc02e2445fefb3b23ef1c0ad8c5923f46e8c72934e589d0b82f3ab6647d8"
   },
   "counts": {
     "address_function": 906,
@@ -389,9 +389,9 @@
     "assembly": 771,
     "audit_debt": 30,
     "conditional_draft": 4,
-    "decompiler_local": 671,
+    "decompiler_local": 659,
     "draft_marker": 25,
-    "explicit_unknown": 1324,
+    "explicit_unknown": 1329,
     "layout_padding": 272,
     "offset_field": 1614,
     "opaque_type": 282,
@@ -92520,13 +92520,6 @@
         145,
         146,
         154,
-        552,
-        567,
-        587,
-        593,
-        599,
-        607,
-        613,
         626,
         632
       ],
@@ -92541,31 +92534,10 @@
         },
         {
           "kind": "function",
-          "name": "func_uvdbg_rom_00400D74",
-          "declaration_line": 552,
-          "lines": [
-            552
-          ]
-        },
-        {
-          "kind": "function",
           "name": "func_uvdbg_rom_00400E74",
           "declaration_line": 124,
           "lines": [
             124
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvdbg_rom_00400E74",
-          "declaration_line": 567,
-          "lines": [
-            567,
-            587,
-            593,
-            599,
-            607,
-            613
           ]
         },
         {
@@ -92874,8 +92846,6 @@
         141,
         146,
         154,
-        567,
-        575,
         632
       ],
       "owners": [
@@ -92885,15 +92855,6 @@
           "declaration_line": 124,
           "lines": [
             124
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvdbg_rom_00400E74",
-          "declaration_line": 567,
-          "lines": [
-            567,
-            575
           ]
         },
         {
@@ -93163,317 +93124,20 @@
       ]
     },
     {
-      "id": "Q-d2493fc4bcca",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvdbg_rom.c",
-      "symbol": "sp114",
-      "lines": [
-        1030,
-        1044,
-        1047,
-        1062
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvdbg_rom_00402128",
-          "declaration_line": 1026,
-          "lines": [
-            1030,
-            1044,
-            1047,
-            1062
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-f887477cd1d5",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvdbg_rom.c",
-      "symbol": "sp1DC",
-      "lines": [
-        1029,
-        1037,
-        1038,
-        1040,
-        1041,
-        1043,
-        1048,
-        1050,
-        1054,
-        1055,
-        1056,
-        1070,
-        1073
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvdbg_rom_00402128",
-          "declaration_line": 1026,
-          "lines": [
-            1029,
-            1037,
-            1038,
-            1040,
-            1041,
-            1043,
-            1048,
-            1050,
-            1054,
-            1055,
-            1056,
-            1070,
-            1073
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-c2cb1914ec4f",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvdbg_rom.c",
-      "symbol": "sp1F8",
-      "lines": [
-        1028,
-        1036
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvdbg_rom_00402128",
-          "declaration_line": 1026,
-          "lines": [
-            1028,
-            1036
-          ]
-        }
-      ]
-    },
-    {
       "id": "Q-3f3403273248",
       "kind": "decompiler_local",
       "path": "src/modules/uvdbg_rom.c",
       "symbol": "sp20",
       "lines": [
-        643,
-        1090,
-        1111,
-        1112
+        643
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvdbg_rom_00402490",
-          "declaration_line": 1080,
-          "lines": [
-            1090,
-            1111,
-            1112
-          ]
-        },
         {
           "kind": "function",
           "name": "uvDbgPrintGraphicsCounterRow",
           "declaration_line": 640,
           "lines": [
             643
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-5e6c8c434483",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvdbg_rom.c",
-      "symbol": "sp24",
-      "lines": [
-        1089,
-        1111
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvdbg_rom_00402490",
-          "declaration_line": 1080,
-          "lines": [
-            1089,
-            1111
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-4e4e27245247",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvdbg_rom.c",
-      "symbol": "sp30",
-      "lines": [
-        572,
-        588,
-        590,
-        594,
-        596,
-        600,
-        602,
-        608,
-        610,
-        614,
-        616
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvdbg_rom_00400E74",
-          "declaration_line": 567,
-          "lines": [
-            572,
-            588,
-            590,
-            594,
-            596,
-            600,
-            602,
-            608,
-            610,
-            614,
-            616
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-56063fc2b7a2",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvdbg_rom.c",
-      "symbol": "sp40",
-      "lines": [
-        1034,
-        1066,
-        1067
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvdbg_rom_00402128",
-          "declaration_line": 1026,
-          "lines": [
-            1034,
-            1066,
-            1067
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-9401aa31c0cb",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvdbg_rom.c",
-      "symbol": "sp44",
-      "lines": [
-        1033,
-        1044,
-        1046,
-        1061
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvdbg_rom_00402128",
-          "declaration_line": 1026,
-          "lines": [
-            1033,
-            1044,
-            1046,
-            1061
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-f8e33a3a6d41",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvdbg_rom.c",
-      "symbol": "sp4C",
-      "lines": [
-        1031,
-        1044,
-        1048,
-        1050
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvdbg_rom_00402128",
-          "declaration_line": 1026,
-          "lines": [
-            1031,
-            1044,
-            1048,
-            1050
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-c6b07fd7291b",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvdbg_rom.c",
-      "symbol": "sp88",
-      "lines": [
-        570,
-        574,
-        591,
-        596,
-        597,
-        602,
-        606,
-        611,
-        616
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvdbg_rom_00400E74",
-          "declaration_line": 567,
-          "lines": [
-            570,
-            574,
-            591,
-            596,
-            597,
-            602,
-            606,
-            611,
-            616
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-100c267788ab",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvdbg_rom.c",
-      "symbol": "sp8A",
-      "lines": [
-        569,
-        605,
-        610,
-        616,
-        619
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvdbg_rom_00400E74",
-          "declaration_line": 567,
-          "lines": [
-            569,
-            605,
-            610,
-            616,
-            619
           ]
         }
       ]
@@ -93493,27 +93157,6 @@
           "declaration_line": 1080,
           "lines": [
             1084
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-fc20d3655cde",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvdbg_rom.c",
-      "symbol": "spEC",
-      "lines": [
-        1085,
-        1111
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvdbg_rom_00402490",
-          "declaration_line": 1080,
-          "lines": [
-            1085,
-            1111
           ]
         }
       ]
@@ -93560,39 +93203,6 @@
           "declaration_line": 358,
           "lines": [
             360
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-e952a54ea797",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvdbg_rom.c",
-      "symbol": "var_fs0",
-      "lines": [
-        571,
-        576,
-        578,
-        589,
-        595,
-        601,
-        609,
-        615
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvdbg_rom_00400E74",
-          "declaration_line": 567,
-          "lines": [
-            571,
-            576,
-            578,
-            589,
-            595,
-            601,
-            609,
-            615
           ]
         }
       ]
@@ -130651,6 +130261,106 @@
           "declaration_line": 1119,
           "lines": [
             1117
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-23281536c051",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdbg_rom.c",
+      "symbol": "RE_UNKNOWN: Failed loads, repeated initialization and dependency ownership are unproved. Preserve all callback stores, literal module tags and the existing line directive.",
+      "lines": [
+        325
+      ],
+      "evidence": "RE_UNKNOWN: Failed loads, repeated initialization and dependency ownership are unproved. Preserve all callback stores, literal module tags and the existing line directive.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_uvdbg_rom_400318",
+          "declaration_line": 300,
+          "lines": [
+            325
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-1cbbc9c19924",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdbg_rom.c",
+      "symbol": "RE_UNKNOWN: Output layout, capacity and count guarantees are unproved. The current interface is void but native V0 retains scan state at return; historical return ABI and caller use remain unresolved.",
+      "lines": [
+        1114
+      ],
+      "evidence": "RE_UNKNOWN: Output layout, capacity and count guarantees are unproved. The current interface is void but native V0 retains scan state at return; historical return ABI and caller use remain unresolved.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "func_uvdbg_rom_00402490",
+          "declaration_line": 1080,
+          "lines": [
+            1114
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-f0e40ca6818d",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdbg_rom.c",
+      "symbol": "RE_UNKNOWN: Provider output counts and bounds, resource lifetime and the purpose of the discarded calculations are unproved. Preserve both source audio-heap subtractions; the GMGR subtraction is not retained as arithmetic in native code.",
+      "lines": [
+        1078
+      ],
+      "evidence": "RE_UNKNOWN: Provider output counts and bounds, resource lifetime and the purpose of the discarded calculations are unproved. Preserve both source audio-heap subtractions; the GMGR subtraction is not retained as arithmetic in native code.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "func_uvdbg_rom_00402128",
+          "declaration_line": 1026,
+          "lines": [
+            1078
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-99a601350fd3",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdbg_rom.c",
+      "symbol": "RE_UNKNOWN: Query units and formatter bounds are unproved. Preserve the inherited arrays and textBuffer - 8 expression; the historical buffer object and capacity are unresolved.",
+      "lines": [
+        565
+      ],
+      "evidence": "RE_UNKNOWN: Query units and formatter bounds are unproved. Preserve the inherited arrays and textBuffer - 8 expression; the historical buffer object and capacity are unresolved.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "func_uvdbg_rom_00400D74",
+          "declaration_line": 552,
+          "lines": [
+            565
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-a2cde7387710",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdbg_rom.c",
+      "symbol": "RE_UNKNOWN: Timing units, conversion range and formatter bounds are unproved. Preserve signed-halfword coordinates, callback order, textBuffer - 8 and the inherited address-use statement; the historical buffer layout remains unresolved.",
+      "lines": [
+        622
+      ],
+      "evidence": "RE_UNKNOWN: Timing units, conversion range and formatter bounds are unproved. Preserve signed-halfword coordinates, callback order, textBuffer - 8 and the inherited address-use statement; the historical buffer layout remains unresolved.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "func_uvdbg_rom_00400E74",
+          "declaration_line": 567,
+          "lines": [
+            622
           ]
         }
       ]
@@ -226812,10 +226522,19 @@
         279,
         287,
         295,
+        552,
         903,
         1024
       ],
       "owners": [
+        {
+          "kind": "function",
+          "name": "func_uvdbg_rom_00400D74",
+          "declaration_line": 552,
+          "lines": [
+            552
+          ]
+        },
         {
           "kind": "function",
           "name": "uvDbgDrawTimingOverlay",

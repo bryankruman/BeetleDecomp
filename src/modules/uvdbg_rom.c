@@ -297,7 +297,7 @@ void uvDbgStampProfileSlot17(s32 unused) {
 }
 #line 227 "src/modules/uvdbg_rom.c"
 
-void __entrypoint_func_uvdbg_rom_400318(UvDbgRom_Exports *exports) {
+void __entrypoint_func_uvdbg_rom_400318(UvDbgRom_Exports *exports) { /* Publish eleven callbacks, load FONT, STRG, AMGR, STAT, GMGR, GEOM, CONT, FMTX, CHAN and CBCK in that order, then reset clock 0. */
     uvUpdateFileAllocPtr(exports);
     exports->uvDbgModuleCleanup = uvDbgModuleCleanup;
     exports->uvDbgDrawResourceStatistics = uvDbgDrawResourceStatistics;
@@ -322,7 +322,7 @@ void __entrypoint_func_uvdbg_rom_400318(UvDbgRom_Exports *exports) {
     D_uvdbg_rom_00402FF8 = uvLoadModule('CHAN');
     D_uvdbg_rom_00402FFC = uvLoadModule('CBCK');
     uvClkReset(0);
-}
+/* RE_UNKNOWN: Failed loads, repeated initialization and dependency ownership are unproved. Preserve all callback stores, literal module tags and the existing line directive. */ }
 
 #line 255 "src/modules/uvdbg_rom.c"
 /* Unload the ten original debug-module dependencies in their original order. */
@@ -549,9 +549,9 @@ void uvDbgDrawTimeIntervalBar(f32 startTime, f32 endTime, s16 y, u8 red, u8 gree
 }
 #line 447 "src/modules/uvdbg_rom.c"
 
-void func_uvdbg_rom_00400D74(s32 arg0) {
+void func_uvdbg_rom_00400D74(s32 unused) { /* Set the font and red color, push graphics state and apply the existing flags. Format the memory-block query as the MEM row, print at (40, 200) and pop state. */
     UNUSED char pad[40];
-    char dest[40];
+    char textBuffer[40];
 
     D_uvdbg_rom_00402FD8->uvSetFont(D_uvdbg_rom_00402F30);
     D_uvdbg_rom_00402FD8->uvFontColor(0xFF, 0, 0, 0xFF);
@@ -559,23 +559,23 @@ void func_uvdbg_rom_00400D74(s32 arg0) {
     D_uvdbg_rom_00402FE4->uvGfxStateSetFlags(0xFFF);
     D_uvdbg_rom_00402FE4->uvGfxClearCurrentStateBits(0x80F00000);
 
-    D_uvdbg_rom_00402FDC->uvSprintf(dest - 8, "MEM  %d", _uvMemGetBlocksSize());
-    D_uvdbg_rom_00402FD8->uvFontPrintStr(0x28, 0xC8, dest - 8);
+    D_uvdbg_rom_00402FDC->uvSprintf(textBuffer - 8, "MEM  %d", _uvMemGetBlocksSize());
+    D_uvdbg_rom_00402FD8->uvFontPrintStr(0x28, 0xC8, textBuffer - 8);
     D_uvdbg_rom_00402FE4->uvGfxStatePop();
-}
+/* RE_UNKNOWN: Query units and formatter bounds are unproved. Preserve the inherited arrays and textBuffer - 8 expression; the historical buffer object and capacity are unresolved. */ }
 
-void func_uvdbg_rom_00400E74(u8 arg0, u8 arg1) {
+void func_uvdbg_rom_00400E74(u8 timingMask, u8 scaleSelector) { /* Select RET, GFX, CPU, AUD and ACPU rows with mask bits 1, 2, 4, 8 and 16. Scale the timing query results by 1000.0 for selector 1 or 1000000.0 otherwise, then truncate for formatting and draw the two columns. */
     s32 pad;
-    s16 sp8A;
-    s16 sp88;
-    f64 var_fs0;
-    char sp30[70];
+    s16 rightColumnX;
+    s16 rowY;
+    f64 timeScale;
+    char textBuffer[70];
 
-    sp88 = 0x46;
-    if (arg1 == 1) {
-        var_fs0 = 1000.0;
+    rowY = 0x46;
+    if (scaleSelector == 1) {
+        timeScale = 1000.0;
     } else {
-        var_fs0 = 1000000.0;
+        timeScale = 1000000.0;
         ;
     }
     D_uvdbg_rom_00402FD8->uvSetFont(D_uvdbg_rom_00402F30);
@@ -584,42 +584,42 @@ void func_uvdbg_rom_00400E74(u8 arg0, u8 arg1) {
     D_uvdbg_rom_00402FE4->uvGfxStateSetFlags(0xFFF);
     D_uvdbg_rom_00402FE4->uvGfxClearCurrentStateBits(0x80F00000);
 
-    if (arg0 & 1) {
-        D_uvdbg_rom_00402FDC->uvSprintf(sp30 - 8, "RET  %d",
-                                        (s32) (uvDbgGetAdjacentFrameInterval() * var_fs0));
-        D_uvdbg_rom_00402FD8->uvFontPrintStr(0x19, 0x46, sp30 - 8);
-        sp88 = D_uvdbg_rom_00402FD8->uvFontHeight() + 0x49;
+    if (timingMask & 1) {
+        D_uvdbg_rom_00402FDC->uvSprintf(textBuffer - 8, "RET  %d",
+                                        (s32) (uvDbgGetAdjacentFrameInterval() * timeScale));
+        D_uvdbg_rom_00402FD8->uvFontPrintStr(0x19, 0x46, textBuffer - 8);
+        rowY = D_uvdbg_rom_00402FD8->uvFontHeight() + 0x49;
     }
-    if (arg0 & 2) {
-        D_uvdbg_rom_00402FDC->uvSprintf(sp30 - 8, "GFX  %d",
-                                        (s32) (uvDbgGetTaskCompletionInterval() * var_fs0));
-        D_uvdbg_rom_00402FD8->uvFontPrintStr(0x19, sp88, sp30 - 8);
-        sp88 += D_uvdbg_rom_00402FD8->uvFontHeight() + 3;
+    if (timingMask & 2) {
+        D_uvdbg_rom_00402FDC->uvSprintf(textBuffer - 8, "GFX  %d",
+                                        (s32) (uvDbgGetTaskCompletionInterval() * timeScale));
+        D_uvdbg_rom_00402FD8->uvFontPrintStr(0x19, rowY, textBuffer - 8);
+        rowY += D_uvdbg_rom_00402FD8->uvFontHeight() + 3;
     }
-    if (arg0 & 4) {
-        D_uvdbg_rom_00402FDC->uvSprintf(sp30 - 8, "CPU  %d",
-                                        (s32) (uvDbgGetSecondaryTask2ATo2BInterval() * var_fs0));
-        D_uvdbg_rom_00402FD8->uvFontPrintStr(0x19, sp88, sp30 - 8);
+    if (timingMask & 4) {
+        D_uvdbg_rom_00402FDC->uvSprintf(textBuffer - 8, "CPU  %d",
+                                        (s32) (uvDbgGetSecondaryTask2ATo2BInterval() * timeScale));
+        D_uvdbg_rom_00402FD8->uvFontPrintStr(0x19, rowY, textBuffer - 8);
         D_uvdbg_rom_00402FD8->uvFontHeight();
     }
-    sp8A = 0x5F;
-    sp88 = 0x46;
-    if (arg0 & 8) {
-        D_uvdbg_rom_00402FDC->uvSprintf(sp30 - 8, "AUD  %d",
-                                        (s32) (uvDbgGetTask29To2CInterval() * var_fs0));
-        D_uvdbg_rom_00402FD8->uvFontPrintStr(sp8A, 0x46, sp30 - 8);
-        sp88 = D_uvdbg_rom_00402FD8->uvFontHeight() + 0x49;
+    rightColumnX = 0x5F;
+    rowY = 0x46;
+    if (timingMask & 8) {
+        D_uvdbg_rom_00402FDC->uvSprintf(textBuffer - 8, "AUD  %d",
+                                        (s32) (uvDbgGetTask29To2CInterval() * timeScale));
+        D_uvdbg_rom_00402FD8->uvFontPrintStr(rightColumnX, 0x46, textBuffer - 8);
+        rowY = D_uvdbg_rom_00402FD8->uvFontHeight() + 0x49;
     }
-    if (arg0 & 0x10) {
-        D_uvdbg_rom_00402FDC->uvSprintf(sp30 - 8, "ACPU %d",
-                                        (s32) (uvDbgGetSecondaryTask29To2CInterval() * var_fs0));
-        D_uvdbg_rom_00402FD8->uvFontPrintStr(sp8A, sp88, sp30 - 8);
+    if (timingMask & 0x10) {
+        D_uvdbg_rom_00402FDC->uvSprintf(textBuffer - 8, "ACPU %d",
+                                        (s32) (uvDbgGetSecondaryTask29To2CInterval() * timeScale));
+        D_uvdbg_rom_00402FD8->uvFontPrintStr(rightColumnX, rowY, textBuffer - 8);
         D_uvdbg_rom_00402FD8->uvFontHeight();
     }
-    if (&sp8A)
+    if (&rightColumnX)
         ; // Fake: Put sp8A on the stack
     D_uvdbg_rom_00402FE4->uvGfxStatePop();
-}
+/* RE_UNKNOWN: Timing units, conversion range and formatter bounds are unproved. Preserve signed-halfword coordinates, callback order, textBuffer - 8 and the inherited address-use statement; the historical buffer layout remains unresolved. */ }
 
 #line 520 "src/modules/uvdbg_rom.c"
 /* Original empty debug callback; retain its arguments and entry point. */
@@ -1023,95 +1023,95 @@ UnusedDebugStrings1 D_uvdbg_rom_00402F50 = { { gStr_Unknown1, gStr_StaticCode1, 
 
 s32 unused[] = { 0x002C0000, &__entrypoint_func_uvdbg_rom_400318 };
 
-void func_uvdbg_rom_00402128(void) {
-    int v0;
-    UnkStruct_00402F34 sp1F8;
-    UnkStruct_UvDbg_Rom_00402128 sp1DC;
-    s32 sp114[0x32];
-    s32 sp4C[0x32];
-    s32 i; // var_s0
-    s32 sp44;
-    s32 sp40;
+void func_uvdbg_rom_00402128(void) { /* Gather local RAM totals from screen, audio and memory queries; partition form totals by UVMO and visit each module file-info query. Keep the inherited empty loops and unconsumed local calculations; this body makes no print call. */
+    int fileBytes;
+    UnkStruct_00402F34 labels;
+    UnkStruct_UvDbg_Rom_00402128 totals;
+    s32 formTags[0x32];
+    s32 formBytes[0x32];
+    s32 entryIndex; // var_s0
+    s32 formCount;
+    s32 moduleCount;
 
-    sp1F8 = D_uvdbg_rom_00402F34;
-    sp1DC.unk0 = gMemBlock - main_VRAM;
-    sp1DC.unk4 =
+    labels = D_uvdbg_rom_00402F34;
+    totals.unk0 = gMemBlock - main_VRAM;
+    totals.unk4 =
         D_uvdbg_rom_00402FE8->uvGetScreenWidth() * D_uvdbg_rom_00402FE8->uvGetScreenHeight() * 6;
-    sp1DC.audioHeapSize = D_uvdbg_rom_00402FE0->uvGetAudioHeapSize();
-    sp1DC.unkC[0] = sp1DC.unkC[1] = sp1DC.unk14 = 0;
+    totals.audioHeapSize = D_uvdbg_rom_00402FE0->uvGetAudioHeapSize();
+    totals.unkC[0] = totals.unkC[1] = totals.unk14 = 0;
 
-    sp1DC.unk18 = _uvMemGetBlocksSize();
-    uvListFormDebugTotals(sp114, sp4C, &sp44, 0x32);
+    totals.unk18 = _uvMemGetBlocksSize();
+    uvListFormDebugTotals(formTags, formBytes, &formCount, 0x32);
 
-    for (i = 0; i < sp44; i++) {
-        if (sp114[i] == 'UVMO') {
-            sp1DC.unkC[0] += sp4C[i];
+    for (entryIndex = 0; entryIndex < formCount; entryIndex++) {
+        if (formTags[entryIndex] == 'UVMO') {
+            totals.unkC[0] += formBytes[entryIndex];
         } else {
-            sp1DC.unkC[1] += sp4C[i];
+            totals.unkC[1] += formBytes[entryIndex];
         }
     }
 
-    sp1DC.unkC[0] = (sp1DC.unkC[0] - sp1DC.audioHeapSize) - sp1DC.unk4;
-    sp1DC.unk14 =
-        osMemSize - sp1DC.unk0 - sp1DC.unk4 - sp1DC.audioHeapSize - sp1DC.unkC[0] - sp1DC.unkC[1] - sp1DC.unk18;
+    totals.unkC[0] = (totals.unkC[0] - totals.audioHeapSize) - totals.unk4;
+    totals.unk14 =
+        osMemSize - totals.unk0 - totals.unk4 - totals.audioHeapSize - totals.unkC[0] - totals.unkC[1] - totals.unk18;
 
-    for (i = 0; i < 7; i++) {
+    for (entryIndex = 0; entryIndex < 7; entryIndex++) {
     }
 
-    for (i = 0; i < sp44; i++) {
-        if (sp114[i]) {
+    for (entryIndex = 0; entryIndex < formCount; entryIndex++) {
+        if (formTags[entryIndex]) {
         }
     }
 
-    sp40 = uvGetFilesCount('UVMO');
-    for (i = 0; i < sp40; i++) {
-        v0 = uvGetUnusedFileInfo('UVMO', i);
-        if (gModuleNameTags[i] == 'AMGR') {
-            v0 -= sp1DC.audioHeapSize;
+    moduleCount = uvGetFilesCount('UVMO');
+    for (entryIndex = 0; entryIndex < moduleCount; entryIndex++) {
+        fileBytes = uvGetUnusedFileInfo('UVMO', entryIndex);
+        if (gModuleNameTags[entryIndex] == 'AMGR') {
+            fileBytes -= totals.audioHeapSize;
         }
-        if (gModuleNameTags[i] == 'GMGR') {
-            v0 -= sp1DC.audioHeapSize;
+        if (gModuleNameTags[entryIndex] == 'GMGR') {
+            fileBytes -= totals.audioHeapSize;
         }
-        if (v0) {
+        if (fileBytes) {
         }
     }
-}
+/* RE_UNKNOWN: Provider output counts and bounds, resource lifetime and the purpose of the discarded calculations are unproved. Preserve both source audio-heap subtractions; the GMGR subtraction is not retained as arithmetic in native code. */ }
 
-void func_uvdbg_rom_00402490(void) {
+void func_uvdbg_rom_00402490(void) { /* Copy six debug-string pointers, calculate six ROM-related words and query form ROM spans with three output addresses and limit 50. Preserve the inherited empty loops and local storage; this body makes no print call. */
     s32 pad2;
     UnusedDebugStrings1 dbgStrings;
-    s32 info[6];
+    s32 romInfo[6];
     char spD0[0xC4];
-    s32 spEC;
+    s32 firstOutput;
     char pad[0xBC];
-    s32 i;
+    s32 entryIndex;
     s32 pad24;
-    s32 sp24;
-    s32 sp20;
+    s32 secondOutput;
+    s32 spanCount;
 
     dbgStrings = D_uvdbg_rom_00402F50;
     // code
-    info[0] = main_ROM_START;
+    romInfo[0] = main_ROM_START;
     // codeSize
-    info[1] = FORM0_ROM_START - main_ROM_START;
+    romInfo[1] = FORM0_ROM_START - main_ROM_START;
     
     // file table size
-    info[2] = gModuleFilesSize;
+    romInfo[2] = gModuleFilesSize;
 
     // form files size
-    info[3] = gFormFilesSize;
-    info[4] = (u8 *) 0x800000 - gRomEnd;
-    info[5] = (u8 *) 0x01000000 - gRomEnd;
+    romInfo[3] = gFormFilesSize;
+    romInfo[4] = (u8 *) 0x800000 - gRomEnd;
+    romInfo[5] = (u8 *) 0x01000000 - gRomEnd;
 
-    i = 0;
-    while (i < 6) {
-        i++;
+    entryIndex = 0;
+    while (entryIndex < 6) {
+        entryIndex++;
     }
 
-    uvListFormRomSpans(&spEC, &sp24, &sp20, 0x32);
-    for (i = 0; i < sp20; i++) {
+    uvListFormRomSpans(&firstOutput, &secondOutput, &spanCount, 0x32);
+    for (entryIndex = 0; entryIndex < spanCount; entryIndex++) {
     }
-}
+/* RE_UNKNOWN: Output layout, capacity and count guarantees are unproved. The current interface is void but native V0 retains scan state at return; historical return ABI and caller use remain unresolved. */ }
 
 #line 961 "src/modules/uvdbg_rom.c"
 /* Clear the indexed shared debug word when nonzero; preserve linear indexing.
