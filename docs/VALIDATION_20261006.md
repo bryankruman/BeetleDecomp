@@ -3000,10 +3000,19 @@ Totals: 412 further recoveries after the 225 upstream ordinary imports, plus 141
 Frozen wave `3197-older-selection-graphics-manager-contracts-3197` and `accepted-older-selection-graphics-manager-contracts-3197` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 414 further readable functions
+## Historical accepted checkpoint — 414 further readable functions
 
 Recover two original TED selector-label routines (528 instruction bytes) with natural C and exact original readonly ownership: three real compiler tables, 788-byte retained prefix and 64-byte retained middle, with terminal table at the exact section end and no fabricated host. Clarify three existing ENV routines (9160 bytes) with scoped local roles and original-contract comments; add three zero-credit CARAUDIO retained-ASM notes. Extend only the two reviewed V3 terminal-layout functions and four pure tests. Preserve raw object-order differences in evidence; require exact original packed TED/ENV/CARAUDIO and a fresh original USA ROM after normal extraction and four-job build. Complete1035 frozen source hashes, exact788-minus2 remaining dictionaries, exact2 data entries with only proven TED44-byte ownership transfer, all283 address-name dictionaries, per-source counts and uncertainty index are mandatory. Two recoveries, three older cleanups; comments and tooling receive no code credit.
 
 Totals: 414 further recoveries after the 225 upstream ordinary imports, plus 1414 existing C semantic cleanups. Current ledger: 786 assembly references = 744 ordinary + 42 entrypoints; 713,720 known remaining instruction bytes; zero unknown sizes; 283 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `3236-ted-environment-audio-contracts-3236` and `accepted-ted-environment-audio-contracts-3236` verify real translation-unit instructions/full relocations, 3 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 414 further readable functions
+
+Clarify the existing UVCL texture HSV blend routine (6544 native bytes) with scoped local names and truthful original-contract comments; rename its prototype, sole C caller and definition to uvColorBlendTextureHsv with one exact appended original-address alias. Add two zero-credit CARAUDIO retained-ASM notes, preserving the three previously accepted notes. The complete1636 words and six ordered five-field ELF records match exactly, with all original native sites/extents and two empty compiler logs. One older cleanup, zero recoveries. No relocation metadata, readonly ownership, headers, types, runtime operations or ASM pragmas change. Normal extraction, fresh full original UVCL/CARAUDIO packed modules and USA ROM, all1035 files, entire786 remaining and2data dictionaries, exact283-minus-only-one address-name dictionaries, all per-source counts and index are required before acceptance.
+
+Totals: 414 further recoveries after the 225 upstream ordinary imports, plus 1415 existing C semantic cleanups. Current ledger: 786 assembly references = 744 ordinary + 42 entrypoints; 713,720 known remaining instruction bytes; zero unknown sizes; 282 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `3264-older-color-audio-contracts-3264` and `accepted-older-color-audio-contracts-3264` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

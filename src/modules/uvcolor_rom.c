@@ -30,7 +30,7 @@ void uvColorScaleTextureHsv(s32 arg0, s32 arg1, s32 arg2, void *arg3, f32 arg4, 
 void uvColorScaleTextureRgb(s32 arg0, s32 arg1, s32 arg2, void *arg3, f32 arg4, f32 arg5, f32 arg6);
 void uvColorBlendVertexRgbByFlag(Vtx *arg0, s32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6,
                                f32 arg7);
-void func_uvcolor_rom_00404C54(s32 arg0, s32 arg1, s32 arg2, void *arg3, f32 arg4, f32 arg5, f32 arg6,
+void uvColorBlendTextureHsv(s32 arg0, s32 arg1, s32 arg2, void *arg3, f32 arg4, f32 arg5, f32 arg6,
                                f32 arg7, f32 arg8, f32 arg9);
 void uvColorBlendTextureRgb(s32 arg0, s32 arg1, s32 arg2, void *arg3, f32 arg4, f32 arg5, f32 arg6,
                                f32 arg7, f32 arg8, f32 arg9);
@@ -263,7 +263,7 @@ void uvColorBlendLoadedAssetColors(s32 useHsv, f32 targetFirst, f32 targetSecond
                                               texture->unk2C, targetFirst, targetSecond, targetThird, firstRetainedWeight, secondRetainedWeight,
                                               thirdRetainedWeight);
                 } else {
-                    func_uvcolor_rom_00404C54((s32) texture->unk22, (s32) texture->data.bytes[1], (s32) texture->as_u16,
+                    uvColorBlendTextureHsv((s32) texture->unk22, (s32) texture->data.bytes[1], (s32) texture->as_u16,
                                               texture->unk2C, targetFirst, targetSecond, targetThird, firstRetainedWeight, secondRetainedWeight,
                                               thirdRetainedWeight);
                 }
@@ -596,106 +596,108 @@ void uvColorBlendVertexRgbByFlag(Vtx *vertices, s32 vertexCount, f32 targetRed, 
 #line 531 "src/modules/uvcolor_rom.c"
 #line 528 "src/modules/uvcolor_rom.c"
 
-void func_uvcolor_rom_00404C54(s32 arg0, s32 arg1, s32 arg2, void *arg3, f32 arg4, f32 arg5, f32 arg6,
-                               f32 arg7, f32 arg8, f32 arg9) {
-    s32 i;
-    f32 spB0;
-    f32 spAC;
-    f32 spA8;
-    f32 sp50;
-    f32 sp4C;
-    f32 sp48;
-    u16 *var_s0;
-    u8 *var_v0;
-    f32 temp_fv1;
-    f32 temp_fa0;
-    s32 pad;
-    f32 sp84;
-    f32 sp80;
-    f32 sp7C;
-    f32 sp78;
-    s32 pad2[2];
+/* Blend packed texture color in HSV or intensity components using format/size selectors, preserving the original conversions and selector quirks. */
+#line 529 "src/modules/uvcolor_rom.c"
+void uvColorBlendTextureHsv(s32 formatSelector, s32 sizeSelector, s32 byteCount, void *textureData, f32 targetHue, f32 targetSaturation, f32 targetValue,
+                               f32 retainedHueWeight, f32 retainedSaturationWeight, f32 retainedValueWeight) {
+    s32 elementIndex;
+    f32 hue;
+    f32 saturation;
+    f32 value;
+    f32 hueOffset;
+    f32 saturationOffset;
+    f32 valueOffset;
+    u16 *elements16;
+    u8 *elements8;
+    f32 intensityOffset;
+    f32 intensity;
+    s32 pad; /* RE_UNKNOWN: retain unused storage; historical declarations are unproved. */
+    f32 uninitializedHighIntensityOffset;
+    f32 red;
+    f32 green;
+    f32 blue;
+    s32 pad2[2]; /* RE_UNKNOWN: retain the matching storage shape; the historical layout is unproved. */
 
-    switch (arg0) {
-        case 4:
-            var_s0 = arg3;
-            sp50 = (1.0f - arg7) * arg4;
-            sp4C = (1.0f - arg8) * arg5;
-            sp48 = (1.0f - arg9) * arg6;
-            for (i = 0; i < arg2 / 2; i++) {
-                uvColorRgbToHsv((f32) ((s32) (var_s0[i] & 0xF800) >> 0xB) / 31.0f,
-                                          (f32) ((s32) (var_s0[i] & 0x7C0) >> 6) / 31.0f,
-                                          (f32) ((s32) (var_s0[i] & 0x3E) >> 1) / 31.0f, &spB0, &spAC,
-                                          &spA8);
-                uvColorHsvToRgb((arg7 * spB0) + sp50, (arg8 * spAC) + sp4C,
-                                          (arg9 * spA8) + sp48, &sp80, &sp7C, &sp78);
-                sp80 *= 31.0f;
-                sp7C *= 31.0f;
-                sp78 *= 31.0f;
-                var_s0[i] =
-                    ((s32) sp80 << 11) | ((s32) sp7C << 6) | ((s32) sp78 << 1) | (var_s0[i] & 1);
+    switch (formatSelector) { /* RE_UNKNOWN: selector domains, buffer extent/alignment and lifetime need asset/caller proof. */
+        case 4: /* Blend packed 5/5/5 color channels in HSV and retain the low alpha bit; sizeSelector is not tested here. */
+            elements16 = textureData;
+            hueOffset = (1.0f - retainedHueWeight) * targetHue;
+            saturationOffset = (1.0f - retainedSaturationWeight) * targetSaturation;
+            valueOffset = (1.0f - retainedValueWeight) * targetValue;
+            for (elementIndex = 0; elementIndex < byteCount / 2; elementIndex++) {
+                uvColorRgbToHsv((f32) ((s32) (elements16[elementIndex] & 0xF800) >> 0xB) / 31.0f,
+                                          (f32) ((s32) (elements16[elementIndex] & 0x7C0) >> 6) / 31.0f,
+                                          (f32) ((s32) (elements16[elementIndex] & 0x3E) >> 1) / 31.0f, &hue, &saturation,
+                                          &value); /* Keep RGB-to-HSV output and arithmetic order; achromatic hue remains the provider's -1 sentinel. */
+                uvColorHsvToRgb((retainedHueWeight * hue) + hueOffset, (retainedSaturationWeight * saturation) + saturationOffset,
+                                          (retainedValueWeight * value) + valueOffset, &red, &green, &blue); /* RE_UNKNOWN: finite/range contracts and complete provider outputs need caller proof; no clamping is added. */
+                red *= 31.0f;
+                green *= 31.0f;
+                blue *= 31.0f;
+                elements16[elementIndex] =
+                    ((s32) red << 11) | ((s32) green << 6) | ((s32) blue << 1) | (elements16[elementIndex] & 1);
             }
             break;
-        case 2:
-            switch (arg1) {
+        case 2: /* Blend intensity components using the value controls; preserve every read/modify/write. */
+            switch (sizeSelector) {
                 case 4:
-                    temp_fv1 = (1.0f - arg9) * arg6 * 7.0f;
-                    var_v0 = arg3;
-                    for (i = 0; i < arg2; i++) {
-                        temp_fa0 = (var_v0[i] & 0xE) >> 1;
-                        var_v0[i] = (var_v0[i] & 0xF1) | (((s32) ((arg9 * temp_fa0) + temp_fv1)) << 1);
-                        temp_fa0 = (var_v0[i] & 0xE0) >> 5;
-                        //! @bug sp84 uninitialised!
-                        var_v0[i] = (((s32) ((arg9 * temp_fa0) + sp84)) << 5) | (var_v0[i] & 0x1F);
+                    intensityOffset = (1.0f - retainedValueWeight) * targetValue * 7.0f;
+                    elements8 = textureData;
+                    for (elementIndex = 0; elementIndex < byteCount; elementIndex++) {
+                        intensity = (elements8[elementIndex] & 0xE) >> 1;
+                        elements8[elementIndex] = (elements8[elementIndex] & 0xF1) | (((s32) ((retainedValueWeight * intensity) + intensityOffset)) << 1);
+                        intensity = (elements8[elementIndex] & 0xE0) >> 5;
+                        // RE_ORIGINAL_QUIRK: native reads unwritten SP+0x84; RE_UNKNOWN: prove caller reachability/storage provenance before any repair.
+                        elements8[elementIndex] = (((s32) ((retainedValueWeight * intensity) + uninitializedHighIntensityOffset)) << 5) | (elements8[elementIndex] & 0x1F);
                     }
                     break;
                 case 8:
-                    temp_fv1 = (1.0f - arg9) * arg6 * 15.0f;
-                    var_v0 = arg3;
-                    for (i = 0; i < arg2; i++) {
-                        temp_fa0 = (var_v0[i] & 0xF0) >> 4;
-                        var_v0[i] =
-                            ((((s32) ((arg9 * temp_fa0) + temp_fv1)) & 0xF) << 4) | (var_v0[i] & 0xF);
+                    intensityOffset = (1.0f - retainedValueWeight) * targetValue * 15.0f;
+                    elements8 = textureData;
+                    for (elementIndex = 0; elementIndex < byteCount; elementIndex++) {
+                        intensity = (elements8[elementIndex] & 0xF0) >> 4;
+                        elements8[elementIndex] =
+                            ((((s32) ((retainedValueWeight * intensity) + intensityOffset)) & 0xF) << 4) | (elements8[elementIndex] & 0xF);
                     }
                     break;
                 case 16:
-                    temp_fv1 = (1.0f - arg9) * arg6 * 255.0f;
-                    var_s0 = arg3;
-                    for (i = 0; i < arg2 / 2; i++) {
-                        temp_fa0 = (var_s0[i] & 0xFF00) >> 8;
-                        var_s0[i] =
-                            ((((s32) ((arg9 * temp_fa0) + temp_fv1)) & 0xFF) << 8) | (var_s0[i] & 0xFF);
+                    intensityOffset = (1.0f - retainedValueWeight) * targetValue * 255.0f;
+                    elements16 = textureData;
+                    for (elementIndex = 0; elementIndex < byteCount / 2; elementIndex++) {
+                        intensity = (elements16[elementIndex] & 0xFF00) >> 8;
+                        elements16[elementIndex] =
+                            ((((s32) ((retainedValueWeight * intensity) + intensityOffset)) & 0xFF) << 8) | (elements16[elementIndex] & 0xFF);
                     }
                     break;
 
-                case 1:
-                    switch (arg1) {
+                case 1: /* RE_ORIGINAL_QUIRK: this sizeSelector==1 path retests the unchanged selector for 4/8/16; keep the unreachable branches. */
+                    switch (sizeSelector) {
                         case 4:
-                            temp_fv1 = (1.0f - arg9) * arg6 * 15.0f;
-                            var_v0 = arg3;
-                            for (i = 0; i < arg2; i++) {
-                                temp_fa0 = var_v0[i] & 0xF;
-                                var_v0[i] =
-                                    (var_v0[i] & 0xF0) | (((s32) ((arg9 * temp_fa0) + temp_fv1)) & 0xF);
-                                temp_fa0 = (var_v0[i] & 0xF0) >> 4;
-                                var_v0[i] = ((((s32) ((arg9 * temp_fa0) + temp_fv1)) & 0xF) << 4)
-                                            | (var_v0[i] & 0xF);
+                            intensityOffset = (1.0f - retainedValueWeight) * targetValue * 15.0f;
+                            elements8 = textureData;
+                            for (elementIndex = 0; elementIndex < byteCount; elementIndex++) {
+                                intensity = elements8[elementIndex] & 0xF;
+                                elements8[elementIndex] =
+                                    (elements8[elementIndex] & 0xF0) | (((s32) ((retainedValueWeight * intensity) + intensityOffset)) & 0xF);
+                                intensity = (elements8[elementIndex] & 0xF0) >> 4;
+                                elements8[elementIndex] = ((((s32) ((retainedValueWeight * intensity) + intensityOffset)) & 0xF) << 4)
+                                            | (elements8[elementIndex] & 0xF);
                             }
                             break;
                         case 8:
-                            temp_fv1 = (1.0f - arg9) * arg6 * 255.0f;
-                            var_v0 = arg3;
-                            for (i = 0; i < arg2; i++) {
-                                temp_fa0 = var_v0[i];
-                                var_v0[i] = (arg9 * temp_fa0) + temp_fv1;
+                            intensityOffset = (1.0f - retainedValueWeight) * targetValue * 255.0f;
+                            elements8 = textureData;
+                            for (elementIndex = 0; elementIndex < byteCount; elementIndex++) {
+                                intensity = elements8[elementIndex];
+                                elements8[elementIndex] = (retainedValueWeight * intensity) + intensityOffset;
                             }
                             break;
                         case 16:
-                            temp_fv1 = (1.0f - arg9) * arg6 * 65535.0f;
-                            var_s0 = arg3;
-                            for (i = 0; i < arg2 / 2; i++) {
-                                temp_fa0 = var_s0[i];
-                                var_s0[i] = (arg9 * temp_fa0) + temp_fv1;
+                            intensityOffset = (1.0f - retainedValueWeight) * targetValue * 65535.0f;
+                            elements16 = textureData;
+                            for (elementIndex = 0; elementIndex < byteCount / 2; elementIndex++) {
+                                intensity = elements16[elementIndex];
+                                elements16[elementIndex] = (retainedValueWeight * intensity) + intensityOffset;
                             }
                             break;
                     }

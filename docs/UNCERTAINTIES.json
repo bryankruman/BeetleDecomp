@@ -200,7 +200,7 @@
     "src/modules/bubble.c": "8a3c733b7f0370b5b2e51cc123470d44edcf1bf2a2ca8fe481170fd858f9c904",
     "src/modules/cam.c": "95d22d3a7536150c4e84fd508381b424b67a127129ab9b7e2d99da3dfa2addcc",
     "src/modules/caranim.c": "649683b571cd247da0f98e863c6329dd3c815c3f80fe5131eb21ee32c752b94b",
-    "src/modules/caraudio.c": "adcbd64333ff75a5c7741aac7b20e0f0aa537f1098be10d48a0f60186a00530b",
+    "src/modules/caraudio.c": "dad094cfc852013265c1d21dde034a3b805f043ca82b6efea8e5c01701ed9592",
     "src/modules/cbars.c": "a7d8817dc1873793aa3e2ef6cafcd98c4a92d2fe91251b54ed8e2b09bbb9becb",
     "src/modules/demo.c": "8e19de1cafc6a5ebde83a3020c92b2b17b3de91fc4abe245a5c53d96de69065f",
     "src/modules/dledit.c": "a2a3807d331e3196eb00bbc5dbfca4a4161a989e8eadbfa7678a2cb49ff51490",
@@ -272,7 +272,7 @@
     "src/modules/uvcback_rom.c": "757b149d9e0e2b3226f23c884936b35583aa6b86186c5c3cc2863fbcbffac679",
     "src/modules/uvchannel_rom.c": "d1d84742ed487ab38a82ac3879558c9f847fab70797a031463f9c011a77cd811",
     "src/modules/uvcmidi_rom.c": "8b011e44de82abbe27ef9df39397058c4323d2be5dcf08df447558cce0044255",
-    "src/modules/uvcolor_rom.c": "f5d5fe7883be4cf747d95911339e084b69c2374ed09635c70d58528dcca374ef",
+    "src/modules/uvcolor_rom.c": "1ab5fe18292fe69dfc37467c523cf93cd2f45f38218f821731c0ee9e4cd698fb",
     "src/modules/uvcont_rom.c": "353b91ed7beb73cb8a8a77db2514ea18a4d44afb0297d68e6999fb5a33be7b58",
     "src/modules/uvcontourld_rom.c": "41ea663b547c85255087cbba8cedc39bb964795476f0d682e11dafc61ae2d97a",
     "src/modules/uvdbg_rom.c": "20dbff47ebe571eb2b5462d238cd16c53f00157a154f22f8c051f64b8f1dce0b",
@@ -330,22 +330,22 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "bedad423fdf0fdd763991407bee7b5d03231bacf1462091920b366a3987fd505",
-    "docs/VALIDATION_20261006.md": "a961fd0821123c4ec058a41b8cb010c2f34f7808c215f436ffe85f7fb4fbd810"
+    "docs/STRATEGY_V4.md": "ba39dd5f6f0e8607c221d9a7aab9a23531a77d807219026fef27a14cf1de0d53",
+    "docs/VALIDATION_20261006.md": "06040f5b58e3b4073a3a4f6728baed33bf6f938268076adfffeebb5936cca146"
   },
   "counts": {
-    "address_function": 904,
+    "address_function": 903,
     "address_global": 1451,
     "assembly": 788,
     "audit_debt": 30,
     "conditional_draft": 4,
-    "decompiler_local": 717,
+    "decompiler_local": 704,
     "draft_marker": 25,
-    "explicit_unknown": 1101,
+    "explicit_unknown": 1108,
     "layout_padding": 269,
     "offset_field": 1599,
     "opaque_type": 282,
-    "original_quirk": 307,
+    "original_quirk": 310,
     "uncertainty_note": 92,
     "unused_identifier": 133
   },
@@ -3787,15 +3787,15 @@
       "path": "src/modules/caraudio.c",
       "symbol": "func_caraudio_00402C08",
       "lines": [
-        278
+        305
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_caraudio_00402C08",
-          "declaration_line": 278,
+          "declaration_line": 305,
           "lines": [
-            278
+            305
           ]
         }
       ]
@@ -3901,15 +3901,15 @@
       "path": "src/modules/caraudio.c",
       "symbol": "func_caraudio_00403A2C",
       "lines": [
-        384
+        411
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_caraudio_00403A2C",
-          "declaration_line": 384,
+          "declaration_line": 411,
           "lines": [
-            384
+            411
           ]
         }
       ]
@@ -17671,43 +17671,6 @@
       ]
     },
     {
-      "id": "Q-c9960f2cf353",
-      "kind": "address_function",
-      "path": "src/modules/uvcolor_rom.c",
-      "symbol": "func_uvcolor_rom_00404C54",
-      "lines": [
-        33,
-        266,
-        599
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvcolor_rom_00404C54",
-          "declaration_line": 33,
-          "lines": [
-            33
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvcolor_rom_00404C54",
-          "declaration_line": 599,
-          "lines": [
-            599
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvColorBlendLoadedAssetColors",
-          "declaration_line": 196,
-          "lines": [
-            266
-          ]
-        }
-      ]
-    },
-    {
       "id": "Q-2115ddf3f694",
       "kind": "address_function",
       "path": "src/modules/uvcont_rom.c",
@@ -26713,15 +26676,15 @@
       "symbol": "D_caraudio_00403EF4",
       "lines": [
         5,
-        287
+        314
       ],
       "owners": [
         {
           "kind": "function",
           "name": "carAudioUpdateDualEmitterVolume",
-          "declaration_line": 286,
+          "declaration_line": 313,
           "lines": [
-            287
+            314
           ]
         },
         {
@@ -26740,24 +26703,24 @@
       "path": "src/modules/caraudio.c",
       "symbol": "D_caraudio_00403F00",
       "lines": [
-        317,
-        329
+        344,
+        356
       ],
       "owners": [
         {
           "kind": "function",
           "name": "carAudioStartFixedPositionSound",
-          "declaration_line": 324,
+          "declaration_line": 351,
           "lines": [
-            329
+            356
           ]
         },
         {
           "kind": "global",
           "name": "D_caraudio_00403F00",
-          "declaration_line": 317,
+          "declaration_line": 344,
           "lines": [
-            317
+            344
           ]
         }
       ]
@@ -26768,24 +26731,24 @@
       "path": "src/modules/caraudio.c",
       "symbol": "D_caraudio_00403F04",
       "lines": [
-        318,
-        330
+        345,
+        357
       ],
       "owners": [
         {
           "kind": "function",
           "name": "carAudioStartFixedPositionSound",
-          "declaration_line": 324,
+          "declaration_line": 351,
           "lines": [
-            330
+            357
           ]
         },
         {
           "kind": "global",
           "name": "D_caraudio_00403F04",
-          "declaration_line": 318,
+          "declaration_line": 345,
           "lines": [
-            318
+            345
           ]
         }
       ]
@@ -26796,24 +26759,24 @@
       "path": "src/modules/caraudio.c",
       "symbol": "D_caraudio_00403F08",
       "lines": [
-        319,
-        336
+        346,
+        363
       ],
       "owners": [
         {
           "kind": "function",
           "name": "carAudioStartFixedPositionSound",
-          "declaration_line": 324,
+          "declaration_line": 351,
           "lines": [
-            336
+            363
           ]
         },
         {
           "kind": "global",
           "name": "D_caraudio_00403F08",
-          "declaration_line": 319,
+          "declaration_line": 346,
           "lines": [
-            319
+            346
           ]
         }
       ]
@@ -26853,15 +26816,15 @@
       "symbol": "D_caraudio_004041E0",
       "lines": [
         41,
-        300
+        327
       ],
       "owners": [
         {
           "kind": "function",
           "name": "carAudioClearSlotFlag",
-          "declaration_line": 299,
+          "declaration_line": 326,
           "lines": [
-            300
+            327
           ]
         },
         {
@@ -26880,26 +26843,26 @@
       "path": "src/modules/caraudio.c",
       "symbol": "D_caraudio_00404228",
       "lines": [
-        344,
-        361,
-        362
+        371,
+        388,
+        389
       ],
       "owners": [
         {
           "kind": "function",
           "name": "carAudioPrependCommand",
-          "declaration_line": 353,
+          "declaration_line": 380,
           "lines": [
-            361,
-            362
+            388,
+            389
           ]
         },
         {
           "kind": "global",
           "name": "D_caraudio_00404228",
-          "declaration_line": 344,
+          "declaration_line": 371,
           "lines": [
-            344
+            371
           ]
         }
       ]
@@ -26910,24 +26873,24 @@
       "path": "src/modules/caraudio.c",
       "symbol": "D_caraudio_00404230",
       "lines": [
-        373,
-        391
+        400,
+        418
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_caraudio_00403A2C",
-          "declaration_line": 384,
+          "declaration_line": 411,
           "lines": [
-            391
+            418
           ]
         },
         {
           "kind": "global",
           "name": "D_caraudio_00404230",
-          "declaration_line": 373,
+          "declaration_line": 400,
           "lines": [
-            373
+            400
           ]
         }
       ]
@@ -26940,15 +26903,15 @@
       "lines": [
         13,
         104,
-        287
+        314
       ],
       "owners": [
         {
           "kind": "function",
           "name": "carAudioUpdateDualEmitterVolume",
-          "declaration_line": 286,
+          "declaration_line": 313,
           "lines": [
-            287
+            314
           ]
         },
         {
@@ -26975,34 +26938,34 @@
       "path": "src/modules/caraudio.c",
       "symbol": "D_caraudio_00404300",
       "lines": [
-        320,
-        332,
-        334,
-        335,
-        336,
-        337,
-        338
+        347,
+        359,
+        361,
+        362,
+        363,
+        364,
+        365
       ],
       "owners": [
         {
           "kind": "function",
           "name": "carAudioStartFixedPositionSound",
-          "declaration_line": 324,
+          "declaration_line": 351,
           "lines": [
-            332,
-            334,
-            335,
-            336,
-            337,
-            338
+            359,
+            361,
+            362,
+            363,
+            364,
+            365
           ]
         },
         {
           "kind": "global",
           "name": "D_caraudio_00404300",
-          "declaration_line": 320,
+          "declaration_line": 347,
           "lines": [
-            320
+            347
           ]
         }
       ]
@@ -76681,7 +76644,7 @@
       "path": "src/modules/caraudio.c",
       "symbol": "func_caraudio_0040171C",
       "lines": [
-        180
+        193
       ],
       "evidence": "asm/us/nonmatchings/modules/caraudio/func_caraudio_0040171C.s"
     },
@@ -76691,7 +76654,7 @@
       "path": "src/modules/caraudio.c",
       "symbol": "func_caraudio_00401A08",
       "lines": [
-        182
+        209
       ],
       "evidence": "asm/us/nonmatchings/modules/caraudio/func_caraudio_00401A08.s"
     },
@@ -76701,7 +76664,7 @@
       "path": "src/modules/caraudio.c",
       "symbol": "func_caraudio_00401F24",
       "lines": [
-        184
+        211
       ],
       "evidence": "asm/us/nonmatchings/modules/caraudio/func_caraudio_00401F24.s"
     },
@@ -76711,7 +76674,7 @@
       "path": "src/modules/caraudio.c",
       "symbol": "func_caraudio_00402070",
       "lines": [
-        210
+        237
       ],
       "evidence": "asm/us/nonmatchings/modules/caraudio/func_caraudio_00402070.s"
     },
@@ -76721,7 +76684,7 @@
       "path": "src/modules/caraudio.c",
       "symbol": "func_caraudio_0040218C",
       "lines": [
-        225
+        252
       ],
       "evidence": "asm/us/nonmatchings/modules/caraudio/func_caraudio_0040218C.s"
     },
@@ -76731,7 +76694,7 @@
       "path": "src/modules/caraudio.c",
       "symbol": "func_caraudio_004022BC",
       "lines": [
-        241
+        268
       ],
       "evidence": "asm/us/nonmatchings/modules/caraudio/func_caraudio_004022BC.s"
     },
@@ -76741,7 +76704,7 @@
       "path": "src/modules/caraudio.c",
       "symbol": "func_caraudio_004027A8",
       "lines": [
-        243
+        270
       ],
       "evidence": "asm/us/nonmatchings/modules/caraudio/func_caraudio_004027A8.s"
     },
@@ -76751,7 +76714,7 @@
       "path": "src/modules/caraudio.c",
       "symbol": "func_caraudio_004029F8",
       "lines": [
-        269
+        296
       ],
       "evidence": "asm/us/nonmatchings/modules/caraudio/func_caraudio_004029F8.s"
     },
@@ -76761,7 +76724,7 @@
       "path": "src/modules/caraudio.c",
       "symbol": "func_caraudio_00402B20",
       "lines": [
-        271
+        298
       ],
       "evidence": "asm/us/nonmatchings/modules/caraudio/func_caraudio_00402B20.s"
     },
@@ -76771,7 +76734,7 @@
       "path": "src/modules/caraudio.c",
       "symbol": "func_caraudio_00402CA4",
       "lines": [
-        294
+        321
       ],
       "evidence": "asm/us/nonmatchings/modules/caraudio/func_caraudio_00402CA4.s"
     },
@@ -76781,7 +76744,7 @@
       "path": "src/modules/caraudio.c",
       "symbol": "func_caraudio_00402E00",
       "lines": [
-        311
+        338
       ],
       "evidence": "asm/us/nonmatchings/modules/caraudio/func_caraudio_00402E00.s"
     },
@@ -76791,7 +76754,7 @@
       "path": "src/modules/caraudio.c",
       "symbol": "func_caraudio_004031E0",
       "lines": [
-        367
+        394
       ],
       "evidence": "asm/us/nonmatchings/modules/caraudio/func_caraudio_004031E0.s"
     },
@@ -76801,7 +76764,7 @@
       "path": "src/modules/caraudio.c",
       "symbol": "func_caraudio_0040336C",
       "lines": [
-        369
+        396
       ],
       "evidence": "asm/us/nonmatchings/modules/caraudio/func_caraudio_0040336C.s"
     },
@@ -76811,7 +76774,7 @@
       "path": "src/modules/caraudio.c",
       "symbol": "func_caraudio_0040397C",
       "lines": [
-        371
+        398
       ],
       "evidence": "asm/us/nonmatchings/modules/caraudio/func_caraudio_0040397C.s"
     },
@@ -88901,28 +88864,9 @@
         35,
         37,
         38,
-        39,
-        599,
-        619
+        39
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvcolor_rom_00404C54",
-          "declaration_line": 33,
-          "lines": [
-            33
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvcolor_rom_00404C54",
-          "declaration_line": 599,
-          "lines": [
-            599,
-            619
-          ]
-        },
         {
           "kind": "function",
           "name": "uvColorApplyStoredChannelTriple",
@@ -88937,6 +88881,14 @@
           "declaration_line": 26,
           "lines": [
             26
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvColorBlendTextureHsv",
+          "declaration_line": 33,
+          "lines": [
+            33
           ]
         },
         {
@@ -89056,30 +89008,9 @@
         35,
         37,
         38,
-        39,
-        599,
-        640,
-        672
+        39
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvcolor_rom_00404C54",
-          "declaration_line": 33,
-          "lines": [
-            33
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvcolor_rom_00404C54",
-          "declaration_line": 599,
-          "lines": [
-            599,
-            640,
-            672
-          ]
-        },
         {
           "kind": "function",
           "name": "uvColorApplyStoredChannelTriple",
@@ -89094,6 +89025,14 @@
           "declaration_line": 26,
           "lines": [
             26
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvColorBlendTextureHsv",
+          "declaration_line": 33,
+          "lines": [
+            33
           ]
         },
         {
@@ -89205,40 +89144,9 @@
         35,
         37,
         38,
-        39,
-        599,
-        625,
-        644,
-        655,
-        664,
-        676,
-        688,
-        696
+        39
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvcolor_rom_00404C54",
-          "declaration_line": 33,
-          "lines": [
-            33
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvcolor_rom_00404C54",
-          "declaration_line": 599,
-          "lines": [
-            599,
-            625,
-            644,
-            655,
-            664,
-            676,
-            688,
-            696
-          ]
-        },
         {
           "kind": "function",
           "name": "uvColorApplyStoredChannelTriple",
@@ -89253,6 +89161,14 @@
           "declaration_line": 26,
           "lines": [
             26
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvColorBlendTextureHsv",
+          "declaration_line": 33,
+          "lines": [
+            33
           ]
         },
         {
@@ -89364,40 +89280,9 @@
         35,
         37,
         38,
-        39,
-        599,
-        621,
-        643,
-        654,
-        663,
-        675,
-        687,
-        695
+        39
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvcolor_rom_00404C54",
-          "declaration_line": 33,
-          "lines": [
-            33
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvcolor_rom_00404C54",
-          "declaration_line": 599,
-          "lines": [
-            599,
-            621,
-            643,
-            654,
-            663,
-            675,
-            687,
-            695
-          ]
-        },
         {
           "kind": "function",
           "name": "uvColorApplyStoredChannelTriple",
@@ -89412,6 +89297,14 @@
           "declaration_line": 26,
           "lines": [
             26
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvColorBlendTextureHsv",
+          "declaration_line": 33,
+          "lines": [
+            33
           ]
         },
         {
@@ -89521,34 +89414,23 @@
         35,
         37,
         38,
-        39,
-        599,
-        622
+        39
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvcolor_rom_00404C54",
-          "declaration_line": 33,
-          "lines": [
-            33
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvcolor_rom_00404C54",
-          "declaration_line": 599,
-          "lines": [
-            599,
-            622
-          ]
-        },
         {
           "kind": "function",
           "name": "uvColorBlendLoadedAssetColors",
           "declaration_line": 26,
           "lines": [
             26
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvColorBlendTextureHsv",
+          "declaration_line": 33,
+          "lines": [
+            33
           ]
         },
         {
@@ -89647,34 +89529,23 @@
         35,
         37,
         38,
-        39,
-        599,
-        623
+        39
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvcolor_rom_00404C54",
-          "declaration_line": 33,
-          "lines": [
-            33
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvcolor_rom_00404C54",
-          "declaration_line": 599,
-          "lines": [
-            599,
-            623
-          ]
-        },
         {
           "kind": "function",
           "name": "uvColorBlendLoadedAssetColors",
           "declaration_line": 26,
           "lines": [
             26
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvColorBlendTextureHsv",
+          "declaration_line": 33,
+          "lines": [
+            33
           ]
         },
         {
@@ -89747,46 +89618,23 @@
         31,
         33,
         35,
-        39,
-        599,
-        624,
-        642,
-        653,
-        662,
-        674,
-        686,
-        694
+        39
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvcolor_rom_00404C54",
-          "declaration_line": 33,
-          "lines": [
-            33
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvcolor_rom_00404C54",
-          "declaration_line": 599,
-          "lines": [
-            599,
-            624,
-            642,
-            653,
-            662,
-            674,
-            686,
-            694
-          ]
-        },
         {
           "kind": "function",
           "name": "uvColorBlendLoadedAssetColors",
           "declaration_line": 26,
           "lines": [
             26
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvColorBlendTextureHsv",
+          "declaration_line": 33,
+          "lines": [
+            33
           ]
         },
         {
@@ -89840,28 +89688,15 @@
         32,
         34,
         36,
-        40,
-        600,
-        622,
-        630
+        40
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvcolor_rom_00404C54",
+          "name": "uvColorBlendTextureHsv",
           "declaration_line": 33,
           "lines": [
             34
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvcolor_rom_00404C54",
-          "declaration_line": 599,
-          "lines": [
-            600,
-            622,
-            630
           ]
         },
         {
@@ -89897,28 +89732,15 @@
       "symbol": "arg8",
       "lines": [
         34,
-        36,
-        600,
-        623,
-        630
+        36
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvcolor_rom_00404C54",
+          "name": "uvColorBlendTextureHsv",
           "declaration_line": 33,
           "lines": [
             34
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvcolor_rom_00404C54",
-          "declaration_line": 599,
-          "lines": [
-            600,
-            623,
-            630
           ]
         },
         {
@@ -89938,56 +89760,15 @@
       "symbol": "arg9",
       "lines": [
         34,
-        36,
-        600,
-        624,
-        631,
-        642,
-        646,
-        649,
-        653,
-        658,
-        662,
-        667,
-        674,
-        679,
-        681,
-        686,
-        690,
-        694,
-        698
+        36
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvcolor_rom_00404C54",
+          "name": "uvColorBlendTextureHsv",
           "declaration_line": 33,
           "lines": [
             34
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvcolor_rom_00404C54",
-          "declaration_line": 599,
-          "lines": [
-            600,
-            624,
-            631,
-            642,
-            646,
-            649,
-            653,
-            658,
-            662,
-            667,
-            674,
-            679,
-            681,
-            686,
-            690,
-            694,
-            698
           ]
         },
         {
@@ -90001,442 +89782,20 @@
       ]
     },
     {
-      "id": "Q-9cda07f6f037",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvcolor_rom.c",
-      "symbol": "sp48",
-      "lines": [
-        607,
-        624,
-        631
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvcolor_rom_00404C54",
-          "declaration_line": 599,
-          "lines": [
-            607,
-            624,
-            631
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-ddb7b6b8a19c",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvcolor_rom.c",
-      "symbol": "sp4C",
-      "lines": [
-        606,
-        623,
-        630
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvcolor_rom_00404C54",
-          "declaration_line": 599,
-          "lines": [
-            606,
-            623,
-            630
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-deebf3be408d",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvcolor_rom.c",
-      "symbol": "sp50",
-      "lines": [
-        605,
-        622,
-        630
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvcolor_rom_00404C54",
-          "declaration_line": 599,
-          "lines": [
-            605,
-            622,
-            630
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-c7e76c0b930c",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvcolor_rom.c",
-      "symbol": "sp78",
-      "lines": [
-        616,
-        631,
-        634,
-        636
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvcolor_rom_00404C54",
-          "declaration_line": 599,
-          "lines": [
-            616,
-            631,
-            634,
-            636
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-3b0e6c1bf153",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvcolor_rom.c",
-      "symbol": "sp7C",
-      "lines": [
-        615,
-        631,
-        633,
-        636
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvcolor_rom_00404C54",
-          "declaration_line": 599,
-          "lines": [
-            615,
-            631,
-            633,
-            636
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-2874e5bef881",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvcolor_rom.c",
-      "symbol": "sp80",
-      "lines": [
-        614,
-        631,
-        632,
-        636
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvcolor_rom_00404C54",
-          "declaration_line": 599,
-          "lines": [
-            614,
-            631,
-            632,
-            636
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-99d215d83f40",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvcolor_rom.c",
-      "symbol": "sp84",
-      "lines": [
-        613,
-        649
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvcolor_rom_00404C54",
-          "declaration_line": 599,
-          "lines": [
-            613,
-            649
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-cdd27a5c3570",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvcolor_rom.c",
-      "symbol": "spA8",
-      "lines": [
-        604,
-        629,
-        631
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvcolor_rom_00404C54",
-          "declaration_line": 599,
-          "lines": [
-            604,
-            629,
-            631
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-df51b8d98afd",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvcolor_rom.c",
-      "symbol": "spAC",
-      "lines": [
-        603,
-        628,
-        630
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvcolor_rom_00404C54",
-          "declaration_line": 599,
-          "lines": [
-            603,
-            628,
-            630
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-ba7f2a7aae96",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvcolor_rom.c",
-      "symbol": "spB0",
-      "lines": [
-        602,
-        628,
-        630
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvcolor_rom_00404C54",
-          "declaration_line": 599,
-          "lines": [
-            602,
-            628,
-            630
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-2b5f17d50792",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvcolor_rom.c",
-      "symbol": "temp_fa0",
-      "lines": [
-        611,
-        645,
-        646,
-        647,
-        649,
-        656,
-        658,
-        665,
-        667,
-        677,
-        679,
-        680,
-        681,
-        689,
-        690,
-        697,
-        698
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvcolor_rom_00404C54",
-          "declaration_line": 599,
-          "lines": [
-            611,
-            645,
-            646,
-            647,
-            649,
-            656,
-            658,
-            665,
-            667,
-            677,
-            679,
-            680,
-            681,
-            689,
-            690,
-            697,
-            698
-          ]
-        }
-      ]
-    },
-    {
       "id": "Q-3ffce6111a56",
       "kind": "decompiler_local",
       "path": "src/modules/uvcolor_rom.c",
       "symbol": "temp_fv1",
       "lines": [
-        362,
-        610,
-        642,
-        646,
-        653,
-        658,
-        662,
-        667,
-        674,
-        679,
-        681,
-        686,
-        690,
-        694,
-        698
+        362
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvcolor_rom_00404C54",
-          "declaration_line": 599,
-          "lines": [
-            610,
-            642,
-            646,
-            653,
-            658,
-            662,
-            667,
-            674,
-            679,
-            681,
-            686,
-            690,
-            694,
-            698
-          ]
-        },
         {
           "kind": "function",
           "name": "uvColorScaleTextureHsv",
           "declaration_line": 355,
           "lines": [
             362
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-20038ae69b35",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvcolor_rom.c",
-      "symbol": "var_s0",
-      "lines": [
-        608,
-        621,
-        626,
-        627,
-        628,
-        635,
-        636,
-        663,
-        665,
-        666,
-        667,
-        695,
-        697,
-        698
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvcolor_rom_00404C54",
-          "declaration_line": 599,
-          "lines": [
-            608,
-            621,
-            626,
-            627,
-            628,
-            635,
-            636,
-            663,
-            665,
-            666,
-            667,
-            695,
-            697,
-            698
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-1d0f70e022af",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvcolor_rom.c",
-      "symbol": "var_v0",
-      "lines": [
-        609,
-        643,
-        645,
-        646,
-        647,
-        649,
-        654,
-        656,
-        657,
-        658,
-        675,
-        677,
-        678,
-        679,
-        680,
-        681,
-        682,
-        687,
-        689,
-        690
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvcolor_rom_00404C54",
-          "declaration_line": 599,
-          "lines": [
-            609,
-            643,
-            645,
-            646,
-            647,
-            649,
-            654,
-            656,
-            657,
-            658,
-            675,
-            677,
-            678,
-            679,
-            680,
-            681,
-            682,
-            687,
-            689,
-            690
           ]
         }
       ]
@@ -120771,16 +120130,16 @@
       "path": "src/modules/caraudio.c",
       "symbol": "Check the first enabled matching low-byte ID in banks 0x41DC/0x41E8 * then 0x41D8/0x41E4. Release and initialize its stride-eight sound handle, * reload sound exports between calls, then clear its flag and store ID 0xFF. * RE_ORIGINAL_QUIRK: explicit initialize follows release even though release * initializes a current identity; first-bank success skips the second bank. * RE_UNKNOWN: caller slot bounds, stored-ID meanings, table extents and * provider/handle lifetime guarantees need original producers and callers. * Historical formal/local storage remains unproved: the byte-formal draft * has 15 stack/frame-only differences (304 bytes, all ordered records exact). * The explicit word-to-byte draft has 75 differences (300/304 bytes) and * differing relocation sites; no omitted callback effect was identified. * Retain original assembly until complete instructions/records match.",
       "lines": [
-        212
+        239
       ],
       "evidence": "Check the first enabled matching low-byte ID in banks 0x41DC/0x41E8 * then 0x41D8/0x41E4. Release and initialize its stride-eight sound handle, * reload sound exports between calls, then clear its flag and store ID 0xFF. * RE_ORIGINAL_QUIRK: explicit initialize follows release even though release * initializes a current identity; first-bank success skips the second bank. * RE_UNKNOWN: caller slot bounds, stored-ID meanings, table extents and * provider/handle lifetime guarantees need original producers and callers. * Historical formal/local storage remains unproved: the byte-formal draft * has 15 stack/frame-only differences (304 bytes, all ordered records exact). * The explicit word-to-byte draft has 75 differences (300/304 bytes) and * differing relocation sites; no omitted callback effect was identified. * Retain original assembly until complete instructions/records match.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_caraudio_0040218C",
-          "declaration_line": 225,
+          "declaration_line": 252,
           "lines": [
-            212
+            239
           ]
         }
       ]
@@ -120791,16 +120150,16 @@
       "path": "src/modules/caraudio.c",
       "symbol": "Clear the flag byte using the supplied signed slot without a range check. * RE_UNKNOWN: valid slot domain and flag-table extent need original callers and data layout.",
       "lines": [
-        297
+        324
       ],
       "evidence": "Clear the flag byte using the supplied signed slot without a range check. * RE_UNKNOWN: valid slot domain and flag-table extent need original callers and data layout.",
       "owners": [
         {
           "kind": "function",
           "name": "carAudioClearSlotFlag",
-          "declaration_line": 299,
+          "declaration_line": 326,
           "lines": [
-            297
+            324
           ]
         }
       ]
@@ -120831,16 +120190,16 @@
       "path": "src/modules/caraudio.c",
       "symbol": "For signed slotIndex <4, store [destination word, slotIndex] in the * original 8-byte slot, then copy 64 bytes from the word loaded at * binding+0xC, plus0x1A8, to destination word+0x10 through FMTX slot0xC. * Load the source word after slot writes; no lower-bound guard exists. * RE_UNKNOWN: historical formal types/expression, negative-index validity, * slot capacity/consumers and referenced storage lifetimes need evidence. * The inherited all-one masks remain until an exact clean reconstruction; * the reused word is first a stride, then an address, not an emitter ID.",
       "lines": [
-        375
+        402
       ],
       "evidence": "For signed slotIndex <4, store [destination word, slotIndex] in the * original 8-byte slot, then copy 64 bytes from the word loaded at * binding+0xC, plus0x1A8, to destination word+0x10 through FMTX slot0xC. * Load the source word after slot writes; no lower-bound guard exists. * RE_UNKNOWN: historical formal types/expression, negative-index validity, * slot capacity/consumers and referenced storage lifetimes need evidence. * The inherited all-one masks remain until an exact clean reconstruction; * the reused word is first a stride, then an address, not an emitter ID.",
       "owners": [
         {
           "kind": "function",
           "name": "func_caraudio_00403A2C",
-          "declaration_line": 384,
+          "declaration_line": 411,
           "lines": [
-            375
+            402
           ]
         }
       ]
@@ -120871,16 +120230,16 @@
       "path": "src/modules/caraudio.c",
       "symbol": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "lines": [
-        274
+        301
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "owners": [
         {
           "kind": "function",
           "name": "func_caraudio_00402C08",
-          "declaration_line": 278,
+          "declaration_line": 305,
           "lines": [
-            274
+            301
           ]
         }
       ]
@@ -120891,16 +120250,36 @@
       "path": "src/modules/caraudio.c",
       "symbol": "Prepare sound selector 0x1D at fixed XYZ; reject returned managed-slot byte 0xFF. * Sound slot 0x80 copies matrix translation; the local matrix is not retained. * RE_UNKNOWN: gameplay identity and shared-handle setup need assets/callers.",
       "lines": [
-        314
+        341
       ],
       "evidence": "Prepare sound selector 0x1D at fixed XYZ; reject returned managed-slot byte 0xFF. * Sound slot 0x80 copies matrix translation; the local matrix is not retained. * RE_UNKNOWN: gameplay identity and shared-handle setup need assets/callers.",
       "owners": [
         {
           "kind": "global",
           "name": "D_caraudio_00403F00",
-          "declaration_line": 317,
+          "declaration_line": 344,
           "lines": [
-            314
+            341
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-31fd5817e34f",
+      "kind": "explicit_unknown",
+      "path": "src/modules/caraudio.c",
+      "symbol": "Prepare the selected managed sound, apply ordered volume/pitch clamps and * request playback; keep fresh export/shared-scale reads around callbacks. * Current-track and sound-ID tests independently invoke the extra sound helper. * RE_UNKNOWN: full historical formals (only the first of three homed words is * consumed), selector/handle/sample bounds, callback lifetimes and scalar units * require original producers and consumers. No omitted effect is established. * The natural C trial retains 748 bytes and the native 64-byte frame but differs * in 25 words: stack/FPR/register/address and one opcode lowering difference. * The two complete object relocation lists have 50 records and differ by site; * nonlocal symbol identities/counts and call counts agree. Packed native records * are a separate 32-record view. Retain ASM pending exact body/packed-ROM proof; * no recovery or readability credit is claimed.",
+      "lines": [
+        180
+      ],
+      "evidence": "Prepare the selected managed sound, apply ordered volume/pitch clamps and * request playback; keep fresh export/shared-scale reads around callbacks. * Current-track and sound-ID tests independently invoke the extra sound helper. * RE_UNKNOWN: full historical formals (only the first of three homed words is * consumed), selector/handle/sample bounds, callback lifetimes and scalar units * require original producers and consumers. No omitted effect is established. * The natural C trial retains 748 bytes and the native 64-byte frame but differs * in 25 words: stack/FPR/register/address and one opcode lowering difference. * The two complete object relocation lists have 50 records and differ by site; * nonlocal symbol identities/counts and call counts agree. Packed native records * are a separate 32-record view. Retain ASM pending exact body/packed-ROM proof; * no recovery or readability credit is claimed.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_caraudio_0040171C",
+          "declaration_line": 193,
+          "lines": [
+            180
           ]
         }
       ]
@@ -120911,16 +120290,16 @@
       "path": "src/modules/caraudio.c",
       "symbol": "Prepend kind zero; soundHandlingEnabled gates soundId/volume (SND 0x6C/0x84). * Original loader zeroes the head in fresh caud-image BSS before entry. RE_UNKNOWN: * value4/valueC roles, caller capacity and reset/freeing; trace callers and VOLT 0x0C.",
       "lines": [
-        348
+        375
       ],
       "evidence": "Prepend kind zero; soundHandlingEnabled gates soundId/volume (SND 0x6C/0x84). * Original loader zeroes the head in fresh caud-image BSS before entry. RE_UNKNOWN: * value4/valueC roles, caller capacity and reset/freeing; trace callers and VOLT 0x0C.",
       "owners": [
         {
           "kind": "function",
           "name": "carAudioPrependCommand",
-          "declaration_line": 353,
+          "declaration_line": 380,
           "lines": [
-            348
+            375
           ]
         }
       ]
@@ -120951,16 +120330,36 @@
       "path": "src/modules/caraudio.c",
       "symbol": "Resolve all four CARANIM material records before sequential signed16 code * tests. Priority is 4, then 5/6 (5 on track 7, otherwise 2), followed by * 12, 3, 2, 8, 9, 7, 10, 11, 1, then zero. CARANIM slot2C remaps * sentinel/shared-gate IDs to zero, then returns base + index * 0x1C. * RE_ORIGINAL_QUIRK: the first record's code-5 test appears twice in native. * RE_UNKNOWN: actual caller ID/record extent guarantees, material/code meanings, * record ownership/lifetime and historical local organization need original * material producers/callers. Drafts are 1252/1256 versus 1260 native bytes; * both have 162 differing words. Common-code registers, equality operand * order and branch/return lowering differ. All 17 record sites/identities * agree; downstream getter symbol values move with the shorter draft. * No supported missing callback, code width or priority effect was found. * Retain original assembly until complete instructions/records match.",
       "lines": [
-        227
+        254
       ],
       "evidence": "Resolve all four CARANIM material records before sequential signed16 code * tests. Priority is 4, then 5/6 (5 on track 7, otherwise 2), followed by * 12, 3, 2, 8, 9, 7, 10, 11, 1, then zero. CARANIM slot2C remaps * sentinel/shared-gate IDs to zero, then returns base + index * 0x1C. * RE_ORIGINAL_QUIRK: the first record's code-5 test appears twice in native. * RE_UNKNOWN: actual caller ID/record extent guarantees, material/code meanings, * record ownership/lifetime and historical local organization need original * material producers/callers. Drafts are 1252/1256 versus 1260 native bytes; * both have 162 differing words. Common-code registers, equality operand * order and branch/return lowering differ. All 17 record sites/identities * agree; downstream getter symbol values move with the shorter draft. * No supported missing callback, code width or priority effect was found. * Retain original assembly until complete instructions/records match.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_caraudio_004022BC",
-          "declaration_line": 241,
+          "declaration_line": 268,
           "lines": [
-            227
+            254
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-96344c643e95",
+      "kind": "explicit_unknown",
+      "path": "src/modules/caraudio.c",
+      "symbol": "Select a signed sound ID from the selector's eight-byte choice record, * preserving random indexing, the last-index correction and -1 success return. * Release/reset the chosen handle, reload its ID table after callbacks and * preserve the scalar<10 / scalar<20 ordered branches, including NaN behavior. * RE_ORIGINAL_QUIRK: an empty choice count has no guard before the index load. * RE_UNKNOWN: table capacities/writers, selector/index domains, shared handle * ownership, callback replacement/lifetimes, units and historical declarations * remain unresolved. The natural C trial expands 1308 to 1324 bytes and the * frame from 64 to 80 bytes; 264 words differ, including four added words. * Both object lists have 54 records with the same nonlocal identities/counts * and call counts but different sites. Packed native records separately number * 48. No new omitted effect is established by reduced diagnostics. Retain ASM * pending exact body/packed-ROM proof; no recovery/readability credit claimed.",
+      "lines": [
+        195
+      ],
+      "evidence": "Select a signed sound ID from the selector's eight-byte choice record, * preserving random indexing, the last-index correction and -1 success return. * Release/reset the chosen handle, reload its ID table after callbacks and * preserve the scalar<10 / scalar<20 ordered branches, including NaN behavior. * RE_ORIGINAL_QUIRK: an empty choice count has no guard before the index load. * RE_UNKNOWN: table capacities/writers, selector/index domains, shared handle * ownership, callback replacement/lifetimes, units and historical declarations * remain unresolved. The natural C trial expands 1308 to 1324 bytes and the * frame from 64 to 80 bytes; 264 words differ, including four added words. * Both object lists have 54 records with the same nonlocal identities/counts * and call counts but different sites. Packed native records separately number * 48. No new omitted effect is established by reduced diagnostics. Retain ASM * pending exact body/packed-ROM proof; no recovery/readability credit claimed.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_caraudio_00401A08",
+          "declaration_line": 209,
+          "lines": [
+            195
           ]
         }
       ]
@@ -120991,16 +120390,16 @@
       "path": "src/modules/caraudio.c",
       "symbol": "Test four source words at 0x2D0..0x2DC; return one on first nonzero, else zero. * Preserve the original unchecked state/source dereferences and short-circuit order. * RE_UNKNOWN: valid state/source extent/lifetime and word meanings need original producers/callers.",
       "lines": [
-        246
+        273
       ],
       "evidence": "Test four source words at 0x2D0..0x2DC; return one on first nonzero, else zero. * Preserve the original unchecked state/source dereferences and short-circuit order. * RE_UNKNOWN: valid state/source extent/lifetime and word meanings need original producers/callers.",
       "owners": [
         {
           "kind": "function",
           "name": "carAudioHasAnySourceSlot",
-          "declaration_line": 249,
+          "declaration_line": 276,
           "lines": [
-            246
+            273
           ]
         }
       ]
@@ -130365,6 +129764,106 @@
           "declaration_line": 318,
           "lines": [
             316
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-d9cb47d5c1af",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvcolor_rom.c",
+      "symbol": "RE_ORIGINAL_QUIRK: native reads unwritten SP+0x84; RE_UNKNOWN: prove caller reachability/storage provenance before any repair.",
+      "lines": [
+        650
+      ],
+      "evidence": "RE_ORIGINAL_QUIRK: native reads unwritten SP+0x84; RE_UNKNOWN: prove caller reachability/storage provenance before any repair.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvColorBlendTextureHsv",
+          "declaration_line": 601,
+          "lines": [
+            650
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-eb58b697f0d0",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvcolor_rom.c",
+      "symbol": "RE_UNKNOWN: finite/range contracts and complete provider outputs need caller proof; no clamping is added.",
+      "lines": [
+        633
+      ],
+      "evidence": "RE_UNKNOWN: finite/range contracts and complete provider outputs need caller proof; no clamping is added.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvColorBlendTextureHsv",
+          "declaration_line": 601,
+          "lines": [
+            633
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-dc6e2967a471",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvcolor_rom.c",
+      "symbol": "RE_UNKNOWN: retain the matching storage shape; the historical layout is unproved.",
+      "lines": [
+        619
+      ],
+      "evidence": "RE_UNKNOWN: retain the matching storage shape; the historical layout is unproved.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvColorBlendTextureHsv",
+          "declaration_line": 601,
+          "lines": [
+            619
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-5f6ba339bb0c",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvcolor_rom.c",
+      "symbol": "RE_UNKNOWN: retain unused storage; historical declarations are unproved.",
+      "lines": [
+        614
+      ],
+      "evidence": "RE_UNKNOWN: retain unused storage; historical declarations are unproved.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvColorBlendTextureHsv",
+          "declaration_line": 601,
+          "lines": [
+            614
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-2bc9c755d72a",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvcolor_rom.c",
+      "symbol": "RE_UNKNOWN: selector domains, buffer extent/alignment and lifetime need asset/caller proof.",
+      "lines": [
+        621
+      ],
+      "evidence": "RE_UNKNOWN: selector domains, buffer extent/alignment and lifetime need asset/caller proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvColorBlendTextureHsv",
+          "declaration_line": 601,
+          "lines": [
+            621
           ]
         }
       ]
@@ -142950,15 +142449,15 @@
       "path": "src/modules/caraudio.c",
       "symbol": "gap11",
       "lines": [
-        345
+        372
       ],
       "owners": [
         {
           "kind": "type",
           "name": "CarAudioCommand",
-          "declaration_line": 345,
+          "declaration_line": 372,
           "lines": [
-            345
+            372
           ]
         }
       ]
@@ -146044,24 +145543,24 @@
       "symbol": "pad",
       "lines": [
         364,
-        612,
-        954
+        614,
+        956
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvcolor_rom_00404C54",
-          "declaration_line": 599,
+          "name": "uvColorBlendTextureHsv",
+          "declaration_line": 601,
           "lines": [
-            612
+            614
           ]
         },
         {
           "kind": "function",
           "name": "uvColorBlendVertexHsvByFlag",
-          "declaration_line": 937,
+          "declaration_line": 939,
           "lines": [
-            954
+            956
           ]
         },
         {
@@ -146081,15 +145580,15 @@
       "symbol": "pad2",
       "lines": [
         368,
-        617
+        619
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvcolor_rom_00404C54",
-          "declaration_line": 599,
+          "name": "uvColorBlendTextureHsv",
+          "declaration_line": 601,
           "lines": [
-            617
+            619
           ]
         },
         {
@@ -160537,26 +160036,26 @@
       "path": "src/modules/caraudio.c",
       "symbol": "value4",
       "lines": [
-        345,
-        353,
-        356
+        372,
+        380,
+        383
       ],
       "owners": [
         {
           "kind": "function",
           "name": "carAudioPrependCommand",
-          "declaration_line": 353,
+          "declaration_line": 380,
           "lines": [
-            353,
-            356
+            380,
+            383
           ]
         },
         {
           "kind": "type",
           "name": "CarAudioCommand",
-          "declaration_line": 345,
+          "declaration_line": 372,
           "lines": [
-            345
+            372
           ]
         }
       ]
@@ -160567,26 +160066,26 @@
       "path": "src/modules/caraudio.c",
       "symbol": "valueC",
       "lines": [
-        345,
-        353,
-        358
+        372,
+        380,
+        385
       ],
       "owners": [
         {
           "kind": "function",
           "name": "carAudioPrependCommand",
-          "declaration_line": 353,
+          "declaration_line": 380,
           "lines": [
-            353,
-            358
+            380,
+            385
           ]
         },
         {
           "kind": "type",
           "name": "CarAudioCommand",
-          "declaration_line": 345,
+          "declaration_line": 372,
           "lines": [
-            345
+            372
           ]
         }
       ]
@@ -207388,17 +206887,17 @@
       "symbol": "UnkStruct_004005C8",
       "lines": [
         26,
-        190,
-        203,
-        320
+        217,
+        230,
+        347
       ],
       "owners": [
         {
           "kind": "function",
           "name": "carAudioReleaseHandle",
-          "declaration_line": 203,
+          "declaration_line": 230,
           "lines": [
-            203
+            230
           ]
         },
         {
@@ -207412,17 +206911,17 @@
         {
           "kind": "function",
           "name": "carAudioSetHandlePositionAndPitch",
-          "declaration_line": 190,
+          "declaration_line": 217,
           "lines": [
-            190
+            217
           ]
         },
         {
           "kind": "global",
           "name": "D_caraudio_00404300",
-          "declaration_line": 320,
+          "declaration_line": 347,
           "lines": [
-            320
+            347
           ]
         }
       ]
@@ -207434,8 +206933,8 @@
       "symbol": "UnkStruct_uvemitter_rom_004008CC",
       "lines": [
         26,
-        190,
-        335
+        217,
+        362
       ],
       "owners": [
         {
@@ -207449,17 +206948,17 @@
         {
           "kind": "function",
           "name": "carAudioSetHandlePositionAndPitch",
-          "declaration_line": 190,
+          "declaration_line": 217,
           "lines": [
-            190
+            217
           ]
         },
         {
           "kind": "function",
           "name": "carAudioStartFixedPositionSound",
-          "declaration_line": 324,
+          "declaration_line": 351,
           "lines": [
-            335
+            362
           ]
         }
       ]
@@ -214911,16 +214410,16 @@
       "path": "src/modules/caraudio.c",
       "symbol": "Check the first enabled matching low-byte ID in banks 0x41DC/0x41E8 * then 0x41D8/0x41E4. Release and initialize its stride-eight sound handle, * reload sound exports between calls, then clear its flag and store ID 0xFF. * RE_ORIGINAL_QUIRK: explicit initialize follows release even though release * initializes a current identity; first-bank success skips the second bank. * RE_UNKNOWN: caller slot bounds, stored-ID meanings, table extents and * provider/handle lifetime guarantees need original producers and callers. * Historical formal/local storage remains unproved: the byte-formal draft * has 15 stack/frame-only differences (304 bytes, all ordered records exact). * The explicit word-to-byte draft has 75 differences (300/304 bytes) and * differing relocation sites; no omitted callback effect was identified. * Retain original assembly until complete instructions/records match.",
       "lines": [
-        212
+        239
       ],
       "evidence": "Check the first enabled matching low-byte ID in banks 0x41DC/0x41E8 * then 0x41D8/0x41E4. Release and initialize its stride-eight sound handle, * reload sound exports between calls, then clear its flag and store ID 0xFF. * RE_ORIGINAL_QUIRK: explicit initialize follows release even though release * initializes a current identity; first-bank success skips the second bank. * RE_UNKNOWN: caller slot bounds, stored-ID meanings, table extents and * provider/handle lifetime guarantees need original producers and callers. * Historical formal/local storage remains unproved: the byte-formal draft * has 15 stack/frame-only differences (304 bytes, all ordered records exact). * The explicit word-to-byte draft has 75 differences (300/304 bytes) and * differing relocation sites; no omitted callback effect was identified. * Retain original assembly until complete instructions/records match.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_caraudio_0040218C",
-          "declaration_line": 225,
+          "declaration_line": 252,
           "lines": [
-            212
+            239
           ]
         }
       ]
@@ -214991,16 +214490,36 @@
       "path": "src/modules/caraudio.c",
       "symbol": "Resolve all four CARANIM material records before sequential signed16 code * tests. Priority is 4, then 5/6 (5 on track 7, otherwise 2), followed by * 12, 3, 2, 8, 9, 7, 10, 11, 1, then zero. CARANIM slot2C remaps * sentinel/shared-gate IDs to zero, then returns base + index * 0x1C. * RE_ORIGINAL_QUIRK: the first record's code-5 test appears twice in native. * RE_UNKNOWN: actual caller ID/record extent guarantees, material/code meanings, * record ownership/lifetime and historical local organization need original * material producers/callers. Drafts are 1252/1256 versus 1260 native bytes; * both have 162 differing words. Common-code registers, equality operand * order and branch/return lowering differ. All 17 record sites/identities * agree; downstream getter symbol values move with the shorter draft. * No supported missing callback, code width or priority effect was found. * Retain original assembly until complete instructions/records match.",
       "lines": [
-        227
+        254
       ],
       "evidence": "Resolve all four CARANIM material records before sequential signed16 code * tests. Priority is 4, then 5/6 (5 on track 7, otherwise 2), followed by * 12, 3, 2, 8, 9, 7, 10, 11, 1, then zero. CARANIM slot2C remaps * sentinel/shared-gate IDs to zero, then returns base + index * 0x1C. * RE_ORIGINAL_QUIRK: the first record's code-5 test appears twice in native. * RE_UNKNOWN: actual caller ID/record extent guarantees, material/code meanings, * record ownership/lifetime and historical local organization need original * material producers/callers. Drafts are 1252/1256 versus 1260 native bytes; * both have 162 differing words. Common-code registers, equality operand * order and branch/return lowering differ. All 17 record sites/identities * agree; downstream getter symbol values move with the shorter draft. * No supported missing callback, code width or priority effect was found. * Retain original assembly until complete instructions/records match.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_caraudio_004022BC",
-          "declaration_line": 241,
+          "declaration_line": 268,
           "lines": [
-            227
+            254
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-66e8271dfafe",
+      "kind": "original_quirk",
+      "path": "src/modules/caraudio.c",
+      "symbol": "Select a signed sound ID from the selector's eight-byte choice record, * preserving random indexing, the last-index correction and -1 success return. * Release/reset the chosen handle, reload its ID table after callbacks and * preserve the scalar<10 / scalar<20 ordered branches, including NaN behavior. * RE_ORIGINAL_QUIRK: an empty choice count has no guard before the index load. * RE_UNKNOWN: table capacities/writers, selector/index domains, shared handle * ownership, callback replacement/lifetimes, units and historical declarations * remain unresolved. The natural C trial expands 1308 to 1324 bytes and the * frame from 64 to 80 bytes; 264 words differ, including four added words. * Both object lists have 54 records with the same nonlocal identities/counts * and call counts but different sites. Packed native records separately number * 48. No new omitted effect is established by reduced diagnostics. Retain ASM * pending exact body/packed-ROM proof; no recovery/readability credit claimed.",
+      "lines": [
+        195
+      ],
+      "evidence": "Select a signed sound ID from the selector's eight-byte choice record, * preserving random indexing, the last-index correction and -1 success return. * Release/reset the chosen handle, reload its ID table after callbacks and * preserve the scalar<10 / scalar<20 ordered branches, including NaN behavior. * RE_ORIGINAL_QUIRK: an empty choice count has no guard before the index load. * RE_UNKNOWN: table capacities/writers, selector/index domains, shared handle * ownership, callback replacement/lifetimes, units and historical declarations * remain unresolved. The natural C trial expands 1308 to 1324 bytes and the * frame from 64 to 80 bytes; 264 words differ, including four added words. * Both object lists have 54 records with the same nonlocal identities/counts * and call counts but different sites. Packed native records separately number * 48. No new omitted effect is established by reduced diagnostics. Retain ASM * pending exact body/packed-ROM proof; no recovery/readability credit claimed.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_caraudio_00401A08",
+          "declaration_line": 209,
+          "lines": [
+            195
           ]
         }
       ]
@@ -217330,6 +216849,46 @@
           "declaration_line": 345,
           "lines": [
             383
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-67ec8ca9e73d",
+      "kind": "original_quirk",
+      "path": "src/modules/uvcolor_rom.c",
+      "symbol": "RE_ORIGINAL_QUIRK: native reads unwritten SP+0x84; RE_UNKNOWN: prove caller reachability/storage provenance before any repair.",
+      "lines": [
+        650
+      ],
+      "evidence": "RE_ORIGINAL_QUIRK: native reads unwritten SP+0x84; RE_UNKNOWN: prove caller reachability/storage provenance before any repair.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvColorBlendTextureHsv",
+          "declaration_line": 601,
+          "lines": [
+            650
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-7006f03a70d2",
+      "kind": "original_quirk",
+      "path": "src/modules/uvcolor_rom.c",
+      "symbol": "RE_ORIGINAL_QUIRK: this sizeSelector==1 path retests the unchanged selector for 4/8/16; keep the unreachable branches.",
+      "lines": [
+        673
+      ],
+      "evidence": "RE_ORIGINAL_QUIRK: this sizeSelector==1 path retests the unchanged selector for 4/8/16; keep the unreachable branches.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvColorBlendTextureHsv",
+          "declaration_line": 601,
+          "lines": [
+            673
           ]
         }
       ]
@@ -222097,15 +221656,15 @@
       "path": "src/modules/caraudio.c",
       "symbol": "unused",
       "lines": [
-        324
+        351
       ],
       "owners": [
         {
           "kind": "function",
           "name": "carAudioStartFixedPositionSound",
-          "declaration_line": 324,
+          "declaration_line": 351,
           "lines": [
-            324
+            351
           ]
         }
       ]

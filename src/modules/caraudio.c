@@ -177,8 +177,35 @@ void carAudioUpdateSharedScalarAndEmitters(void *state) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_00401698.s")
 
+/* Prepare the selected managed sound, apply ordered volume/pitch clamps and
+ * request playback; keep fresh export/shared-scale reads around callbacks.
+ * Current-track and sound-ID tests independently invoke the extra sound helper.
+ * RE_UNKNOWN: full historical formals (only the first of three homed words is
+ * consumed), selector/handle/sample bounds, callback lifetimes and scalar units
+ * require original producers and consumers. No omitted effect is established.
+ * The natural C trial retains 748 bytes and the native 64-byte frame but differs
+ * in 25 words: stack/FPR/register/address and one opcode lowering difference.
+ * The two complete object relocation lists have 50 records and differ by site;
+ * nonlocal symbol identities/counts and call counts agree. Packed native records
+ * are a separate 32-record view. Retain ASM pending exact body/packed-ROM proof;
+ * no recovery or readability credit is claimed. */
+#line 83 "src/modules/caraudio.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_0040171C.s")
 
+/* Select a signed sound ID from the selector's eight-byte choice record,
+ * preserving random indexing, the last-index correction and -1 success return.
+ * Release/reset the chosen handle, reload its ID table after callbacks and
+ * preserve the scalar<10 / scalar<20 ordered branches, including NaN behavior.
+ * RE_ORIGINAL_QUIRK: an empty choice count has no guard before the index load.
+ * RE_UNKNOWN: table capacities/writers, selector/index domains, shared handle
+ * ownership, callback replacement/lifetimes, units and historical declarations
+ * remain unresolved. The natural C trial expands 1308 to 1324 bytes and the
+ * frame from 64 to 80 bytes; 264 words differ, including four added words.
+ * Both object lists have 54 records with the same nonlocal identities/counts
+ * and call counts but different sites. Packed native records separately number
+ * 48. No new omitted effect is established by reduced diagnostics. Retain ASM
+ * pending exact body/packed-ROM proof; no recovery/readability credit claimed. */
+#line 85 "src/modules/caraudio.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_00401A08.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_00401F24.s")

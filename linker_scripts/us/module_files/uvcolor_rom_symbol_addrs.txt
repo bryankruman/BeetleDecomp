@@ -54,3 +54,4 @@ uvColorScaleTextureRgb = 0x00402B10; // type:func
 uvColorBlendVertexRgbByFlag = 0x00404354; // type:func
 uvColorBlendTextureRgb = 0x004065E4; // type:func
 uvColorBlendVertexHsvByFlag = 0x004083F0; // type:func
+uvColorBlendTextureHsv = 0x00404C54; // type:func
