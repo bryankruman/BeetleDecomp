@@ -550,6 +550,11 @@ f32 *uvDynGetGlobalScalarAddress(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040071C.s")
 
+/* RE_UNKNOWN: Valid matrix domains and caller overlap are not established.
+ * The imported inverse helper transposes the linear component and adjusts
+ * translation; its name does not establish a general matrix inverse. The
+ * original reloads FMTX before the multiply and passes output again as its
+ * third argument, so preserve that ordered, in-place composition. */
 #line 307 "src/modules/uvdyn_rom.c"
 /* Invert the second matrix's translation/rotation into output, then multiply
  * first by that result using the original matrix-export order. Output is reused
@@ -688,6 +693,10 @@ void uvDynInitNodeRegistry(void) {
 }
 #line 335 "src/modules/uvdyn_rom.c"
 
+/* RE_UNKNOWN: Registry capacity, allocation failure and node ownership are
+ * not established. The 0x15A0 allocation and observed field writes do not
+ * recover a complete historical structure or physical units for properties
+ * 2, 10 and 14. Registration precedes the property and matrix setup calls. */
 #line 336 "src/modules/uvdyn_rom.c"
 /* Allocate and register a zeroed 0x15A0-byte node, then initialize the original
  * scalar/vector properties, three matrices and state flags in order. Preserve
@@ -761,6 +770,11 @@ void uvDynPrepareRegisteredNodeState(void) {
 }
 #line 341 "src/modules/uvdyn_rom.c"
 
+/* RE_UNKNOWN: Attachment/child ownership and nested record validity are
+ * unknown beyond the two explicit null checks. Imported slot 0x20 and the
+ * attachment helper may affect shared state; their complete effects are
+ * not proved by this wrapper. Preserve the live counts and preparation-flag
+ * reload after those calls; flag bit zero has no proved gameplay meaning. */
 #line 342 "src/modules/uvdyn_rom.c"
 /* Copy the node's original companion vectors/matrix, update each nonnull
  * attachment's intersection transform and invoke its original attachment helper.
@@ -892,6 +906,12 @@ f32 uvDynGetNodeScalarProperty(DynResetState *state, s32 property) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00403F98.s")
 #line 351 "src/modules/uvdyn_rom.c"
 
+/* RE_ORIGINAL_QUIRK: Null state and unsupported selectors leave output
+ * untouched; this is not an unconditional output initializer. Selector 19
+ * transforms vector14BC through the linear matrix component, while the
+ * other handled selectors copy their observed three-word fields.
+ * RE_UNKNOWN: Output validity, allowed overlap, units and the physical
+ * meanings of these selectors are not established by this getter. */
 #line 352 "src/modules/uvdyn_rom.c"
 
 /* Copy the original selected node vector into output. Property 19 instead
@@ -940,6 +960,12 @@ void uvDynGetNodeVectorProperty(DynResetState *state, s32 property, Vec3F *outpu
 }
 #line 353 "src/modules/uvdyn_rom.c"
 
+/* RE_ORIGINAL_QUIRK: Only selector 6 performs the relative-transform and
+ * external DOBJ update. Selectors 15 and 16 update the observed matrix
+ * components and translation vector without those two calls. Preserve the
+ * ordered input reads and helper calls when input aliases node storage.
+ * RE_UNKNOWN: Valid matrix domains, units and allowed overlap are unproved;
+ * only state has a null guard, and input validity remains a caller contract. */
 #line 354 "src/modules/uvdyn_rom.c"
 /* Matrix properties 6, 16 and 15 update the node's related transform caches.
  * Property 6 also clears the orientation translation, rebuilds the relative
@@ -1439,6 +1465,9 @@ void uvDynInvokeStateCallback1568(DynStateCallbacks *state) {
 }
 #line 399 "src/modules/uvdyn_rom.c"
 
+/* RE_UNKNOWN: The callback result is an opaque u16, not a proved boolean.
+ * Callback/context ownership and request retention are unknown; the request
+ * itself is a stack object whose storage ends with this invocation. */
 #line 400 "src/modules/uvdyn_rom.c"
 /* Invoke the optional value callback with the original 12-byte request:
  * value, -1, zero and an initial result of one. Return its 16-bit result,
@@ -1459,6 +1488,9 @@ u16 uvDynInvokeValueCallback(DynCallbackPrefix *record, s32 value) {
 }
 #line 401 "src/modules/uvdyn_rom.c"
 
+/* RE_UNKNOWN: Callback installation, ownership and reentrancy are unknown.
+ * The original loads slot 0x1560 once and reads the opaque context word at
+ * 0x1588 only on the nonnull path; neither word is reloaded after the call. */
 #line 402 "src/modules/uvdyn_rom.c"
 /* Invoke callback slot 0x1560 with this state and the opaque context word
  * at 0x1588. Cache the pointer once; an absent callback has no effect. */
@@ -1533,6 +1565,9 @@ void uvDynInvokeValueCallback1570(DynStateCallbacks *state, s32 value) {
 #line 424 "src/modules/uvdyn_rom.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_004079B8.s")
 
+/* RE_UNKNOWN: The units, valid domain and purpose of value1488 and its
+ * thresholds are unknown. Caller state validity and allowed matrix/vector
+ * overlap are not established here; preserve the ordered NaN-sensitive gate. */
 #line 426 "src/modules/uvdyn_rom.c"
 /* Update vector146C through the original matrix export unless value1488 is
  * strictly between the original double-precision thresholds -0.00001 and
@@ -1661,6 +1696,9 @@ void uvDynUpdateNodeTranslationVector(DynResetState *state) {
 #line 440 "src/modules/uvdyn_rom.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00409318.s")
 
+/* RE_UNKNOWN: Coordinate units, state ownership and valid DOBJ handle
+ * domains are not established by this wrapper. It adds no validation before
+ * forwarding the translated matrix and part zero to the imported provider. */
 #line 442 "src/modules/uvdyn_rom.c"
 /* Copy the base matrix, apply the local translation at 0x1490, and send the
  * temporary matrix to part zero of the DOBJ handle. The entrypoint imports
@@ -1755,6 +1793,10 @@ void uvDynClearSharedPairCounters(void) {
 }
 #line 469 "src/modules/uvdyn_rom.c"
 
+/* RE_UNKNOWN: Allocation failure, both registry capacities and attachment
+ * ownership are unchecked here. Property zero with value one also updates
+ * a separate pointer registry in the original setter; the master registry
+ * and that property-controlled registry must not be treated as one list. */
 #line 470 "src/modules/uvdyn_rom.c"
 /* Allocate and zero the original 0x270-byte attachment, register its index,
  * then initialize property zero to one. The prefix type does not claim all fields;
@@ -1771,6 +1813,11 @@ DynAttachmentPrefix *uvDynCreateAttachment(void) {
 }
 #line 471 "src/modules/uvdyn_rom.c"
 
+/* RE_ORIGINAL_QUIRK: Disable property zero before snapshotting the master
+ * scan count; the later compaction loop reloads the live master count. The
+ * removed object index and the final vacated array slot are left unchanged.
+ * RE_UNKNOWN: Remaining links and ownership are unknown; this routine does
+ * not free the object or establish that other users have released it. */
 #line 472 "src/modules/uvdyn_rom.c"
 /* Set attachment property zero to zero, then remove it from the registry and
  * repair later indices. Preserve the original separate 16-bit scan/shift loops.

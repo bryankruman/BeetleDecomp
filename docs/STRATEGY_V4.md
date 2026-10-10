@@ -3232,10 +3232,19 @@ Totals: 416 further recoveries after the 225 upstream ordinary imports, plus 141
 Frozen wave `3374-misc-initializer-contracts-3374` and `accepted-misc-initializer-contracts-3374` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 417 further readable functions
+## Historical accepted checkpoint — 417 further readable functions
 
 Recover the776-byte CARANIM initializer with19 native-ordered export stores, resource loads, seven-word copy, four particle property pairs and original callback registration. Preserve the reserved identity; twelve declarations repeat accepted signatures, and4074 is a focused consumed-word view with historical ABI unknown. All194 instruction words and97 complete five-field relocation records match at unique sites; raw ELF emission order differs explicitly. The original71-entry native sort map and26 actual undefined imports are preserved without metadata edits; only inherited4CA0 IDO835 remains. Clarify the existing2108-byte UVCT parser with32 scoped roles and concise original-contract/unknown comments; all527 words and60 raw ordered records match with empty logs. Preserve all1453 prior assessed bodies literally and all83 unresolved entries; two nonoverlapping intervals total2884 bytes and earn credit only after acceptance. Remove only the CARANIM entrypoint row and add its reserved C identity at exact source order:784→783 ASM,41→40 entrypoints,743ordinary unchanged,712408→711632 remaining bytes,address283→284,data2 unchanged. Normal extraction,fresh whole original CARANIM and UVCT packed modules, full USA ROM,all1035 source pins,entire explicit ordered ledger and uncertainty index remain mandatory.
 
 Totals: 417 further recoveries after the 225 upstream ordinary imports, plus 1419 existing C semantic cleanups. Current ledger: 783 assembly references = 743 ordinary + 40 entrypoints; 711,632 known remaining instruction bytes; zero unknown sizes; 284 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `3426-caranim-contour-contracts-3426` and `accepted-caranim-contour-contracts-3426` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 417 further readable functions
+
+Clarify original scene release ordering, callback lifetimes, node lifecycle and property boundaries in sixteen existing C functions. All statements and logical coordinates stay literal; actual unchanged-source warning provenance, complete original words and raw ordered relocations are proved. Full packed modules and ROM remain mandatory.
+
+Totals: 417 further recoveries after the 225 upstream ordinary imports, plus 1435 existing C semantic cleanups. Current ledger: 783 assembly references = 743 ordinary + 40 entrypoints; 711,632 known remaining instruction bytes; zero unknown sizes; 284 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `3496-selection-dynamics-literal-contracts-3496` and `accepted-selection-dynamics-literal-contracts-3496` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

@@ -1269,6 +1269,13 @@ void func_selection_004032EC(void) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00403338.s")
 
 /* Tear down the selection screen: clear gfx/texanim, unload files, reset track object. */
+/* Call local helper 0x16A50(0, 0), call graphics slot 0x74, then
+ * call texture-animation slot 0x08. Unload UVTR 9 and UVEN 11 before
+ * writing the shared object's word +0x220 to -1 and passing its freshly read
+ * signed handle with -1 to the terrain and environment callbacks, in that order.
+ * RE_UNKNOWN: full 0x16A50 effects, object/handle domains, callback mutation,
+ * file ownership and teardown/storage lifetimes need producers and callers. */
+#line 830 "src/modules/selection.c"
 void func_selection_0040372C(void) {
     func_selection_00416A50(0, 0);
     gUvGfxMgrExports->unk74();
@@ -1279,6 +1286,7 @@ void func_selection_0040372C(void) {
     gUvTerraExports->unk8((*D_selection_00421D18)->unk0, -1);
     gUvEnvExports->unk18((*D_selection_00421D18)->unk0, -1);
 }
+#line 840 "src/modules/selection.c"
 
 #line 841 "src/modules/selection.c"
 /* Select tournament 0 with 3 races, play its voice and continue
@@ -1834,6 +1842,13 @@ void func_selection_00404C1C(void) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00404C24.s")
 
 /* Tear down the selection screen (variant B): reset gfx/texanim, clear object flag, unload terra/env, then unload files 0xA and 0xB. */
+/* Call local helper 0x16A50(0, 0), call graphics slot 0x74, then
+ * call texture-animation slot 0x08. Write the shared object's word
+ * +0x220 to -1, then pass its freshly read signed handle with -1 to terrain
+ * and environment callbacks before unloading UVTR 10 and UVEN 11.
+ * RE_UNKNOWN: full 0x16A50 effects, object/handle domains, callback mutation,
+ * file ownership and teardown/storage lifetimes need producers and callers. */
+#line 1078 "src/modules/selection.c"
 void func_selection_00405078(void) {
     func_selection_00416A50(0, 0);
     gUvGfxMgrExports->unk74();
@@ -1844,6 +1859,7 @@ void func_selection_00405078(void) {
     uvUnloadFile(0x55565452, 0xA);
     uvUnloadFile(0x5556454E, 0xB);
 }
+#line 1088 "src/modules/selection.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00405140.s")
 
@@ -2876,6 +2892,13 @@ void func_selection_0040F6E0(void) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004103CC.s")
 
 /* Teardown: flush GFX, stop tex-anim, unload files, clear sprite sheet. */
+/* Call graphics slot 0x74 and texture-animation slot 0x08,
+ * then unload UVBT 87 and UVTX 1462/1463. Write shared word 0x421CE0 to one,
+ * reload the signed sprite handle at 0x421E38 and invoke sprite
+ * slot 0x08. Preserve that order and every fresh provider/handle read.
+ * RE_UNKNOWN: resource ownership, sprite-handle domains, shared-word policy,
+ * callback mutation and teardown/storage lifetimes need producers and callers. */
+#line 1507 "src/modules/selection.c"
 void func_selection_0041057C(void) {
     gUvGfxMgrExports->unk74();
     gUvTexAnimExports->unk8();
@@ -2885,6 +2908,7 @@ void func_selection_0041057C(void) {
     D_selection_00421CE0 = 1;
     gUvSprtExports->unk8(D_selection_00421E38);
 }
+#line 1516 "src/modules/selection.c"
 
 /* Capture the current node and mark the two original controller flag bytes.
  * Request a MENU action; only a previously zero action latch changes the
@@ -3755,6 +3779,13 @@ void selectionPlayPlayerCountVoiceIndex(s32 option) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00416028.s")
 
 /* Tear down the selection screen: clear gfx/texanim, unload files, reset track object. */
+/* Call local helper 0x16A50(0, 0), call graphics slot 0x74, then
+ * call texture-animation slot 0x08. Unload UVTR 8 and UVEN 18 before
+ * writing the shared object's word +0x220 to -1 and passing its freshly read
+ * signed handle with -1 to the terrain and environment callbacks, in that order.
+ * RE_UNKNOWN: full 0x16A50 effects, object/handle domains, callback mutation,
+ * file ownership and teardown/storage lifetimes need producers and callers. */
+#line 1903 "src/modules/selection.c"
 void func_selection_004162D4(void) {
     func_selection_00416A50(0, 0);
     gUvGfxMgrExports->unk74();
@@ -3765,10 +3796,18 @@ void func_selection_004162D4(void) {
     gUvTerraExports->unk8((*D_selection_00421D18)->unk0, -1);
     gUvEnvExports->unk18((*D_selection_00421D18)->unk0, -1);
 }
+#line 1913 "src/modules/selection.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0041639C.s")
 
 /* Tear-down: resets selection render state, unloads track/env files, clears terrain and env. */
+/* Call local helper 0x16A50(0, 0), call graphics slot 0x74, then
+ * call texture-animation slot 0x08. Unload UVTR 9 and UVEN 11 before
+ * writing the shared object's word +0x220 to -1 and passing its freshly read
+ * signed handle with -1 to the terrain and environment callbacks, in that order.
+ * RE_UNKNOWN: full 0x16A50 effects, object/handle domains, callback mutation,
+ * file ownership and teardown/storage lifetimes need producers and callers. */
+#line 1917 "src/modules/selection.c"
 void func_selection_004166CC(void) {
     func_selection_00416A50(0, 0);
     gUvGfxMgrExports->unk74();
@@ -3779,6 +3818,7 @@ void func_selection_004166CC(void) {
     gUvTerraExports->unk8((**D_selection_00421D18).unk0, -1);
     gUvEnvExports->unk18((**D_selection_00421D18).unk0, -1);
 }
+#line 1927 "src/modules/selection.c"
 
 #line 1928 "src/modules/selection.c"
 /* Translate the current preview matrix around X/Z and its stored Y,
