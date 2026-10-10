@@ -179,3 +179,9 @@ D_800213C0 = 0x800213C0;
 jtbl_800213C8 = 0x800213C8;
 D_800213F0 = 0x800213F0;
 D_800213F8 = 0x800213F8;
+
+/* Original native bindings for four stock AI/libc units; no storage allocation. */
+__ll_div = 0x8000582C;
+__ll_mul = 0x80005888;
+_Printf = 0x80016F80;
+func_8000FFD0 = 0x8000FFD0;

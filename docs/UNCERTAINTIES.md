@@ -29,7 +29,7 @@ For every future source wave, regenerate and check this index after code and str
 | Unresolved type names | 282 |
 | Explicit unused ABI, storage or local identifiers | 133 |
 | Decompiler parameter/local names | 659 |
-| Fake, unresolved or TODO draft markers | 33 |
+| Fake, unresolved or TODO draft markers | 37 |
 | Data-dependent conditional draft guards | 4 |
 
 ## docs/STRATEGY_V4.md
@@ -1216,6 +1216,12 @@ For every future source wave, regenerate and check this index after code and str
 | layout_padding | `pad1` | type `HeapInfo` | [305](../src/libultra/audio/synthInternals.h#L305) |
 | layout_padding | `pad2` | type `HeapInfo` | [306](../src/libultra/audio/synthInternals.h#L306) |
 
+## src/libultra/io/ai.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| draft_marker | `TODO` | — | [4](../src/libultra/io/ai.c#L4) |
+
 ## src/libultra/io/viblack.c
 
 | Kind | Identifier or note | Declaration context | Physical lines |
@@ -1245,6 +1251,24 @@ For every future source wave, regenerate and check this index after code and str
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
 | draft_marker | `TODO` | — | [50](../src/libultra/io/viswapbuf.c#L50) |
+
+## src/libultra/libc/ldiv.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| draft_marker | `TODO` | — | [4](../src/libultra/libc/ldiv.c#L4) |
+
+## src/libultra/libc/sprintf.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| draft_marker | `TODO` | — | [5](../src/libultra/libc/sprintf.c#L5) |
+
+## src/libultra/libc/string.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| draft_marker | `TODO` | — | [4](../src/libultra/libc/string.c#L4) |
 
 ## src/main.c
 

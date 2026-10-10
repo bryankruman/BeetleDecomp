@@ -617,3 +617,14 @@ build/src/libultra/libc/ll.o: src/libultra/libc/ll.c
 print-% : ; $(info $* is a $(flavor $*) variable set to [$($*)]) @true
 
 .PHONY: all finalrom clean init extract expected format checkformat assets context disasm toolchain
+
+# Four additional stock VERSION_I units: IO uses O1; libc uses O3.
+SDK_NONAUDIO_LIBC_SOURCES := src/libultra/libc/ldiv.c src/libultra/libc/sprintf.c src/libultra/libc/string.c
+SDK_NONAUDIO_LIBC_OBJECTS := $(addprefix $(BUILD_DIR)/,$(SDK_NONAUDIO_LIBC_SOURCES:.c=.o))
+SDK_NONAUDIO_HEADERS := include/libultra-sdk/PR/rcp.h include/libultra-sdk/compiler/ido/memory.h include/libultra-sdk/compiler/ido/stdarg.h include/libultra-sdk/compiler/ido/stdlib.h include/libultra-sdk/compiler/ido/string.h src/libultra/libc/xstdio.h
+$(SDK_NONAUDIO_LIBC_OBJECTS): $(BUILD_DIR)/%.o: %.c $(SDK_AUDIO_HEADERS) $(SDK_NONAUDIO_HEADERS)
+	$(V)mkdir -p $(dir $@)
+	$(V)$(SDK_AUDIO_CC) $(SDK_AUDIO_FLAGS) -o $@ $<
+$(BUILD_DIR)/src/libultra/io/ai.o: src/libultra/io/ai.c $(SDK_AUDIO_HEADERS) $(SDK_NONAUDIO_HEADERS)
+	$(V)mkdir -p $(dir $@)
+	$(V)$(SDK_AUDIO_CC) $(subst -O3,-O1,$(SDK_AUDIO_FLAGS)) -o $@ $<

@@ -122,11 +122,16 @@
     "include/libultra-sdk/PR/os_tlb.h": "9bbb49127e7e2600f6dcceffe4a1d38f31d463327cfa384ce930ddfa63223893",
     "include/libultra-sdk/PR/os_vi.h": "f59a0d52ab0e2bc2ca0b8226bc9b9c1e58d3a9eb8df8c4e6d45aaa6ac51fb2b6",
     "include/libultra-sdk/PR/os_voice.h": "c0fb2f6f8eb68a6608a2401f6a2f4a38d1c65b5d1ae944d0b5999502a9cc432f",
+    "include/libultra-sdk/PR/rcp.h": "a5dba6d666628ab55ef2ba54ef12d547346e88c9226c1de9d6b7de95e1ade95f",
     "include/libultra-sdk/PR/ultraerror.h": "a6b2ce4f9e98e8feccdc5abd43d6de13c3afb7a00d3126ad83ff5d161b02d229",
     "include/libultra-sdk/PR/ultratypes.h": "e25fc6df3953acbab2234ece2218ec74080cdc3e673ce1ec5896d4ce921bb4de",
     "include/libultra-sdk/assert.h": "c4d1fce8da480af73fe15237f2068a5446477ca6a544487daa10cd4ebf938c78",
     "include/libultra-sdk/compiler/ido/math.h": "2d4f83a11a792ff666e37b6679e4a97a809098494fbdeb028f1d21486afa733b",
+    "include/libultra-sdk/compiler/ido/memory.h": "15e3c8fdc512418f26b716cbeaff56d21ba5e6745dc5109b2843ff3d768c7feb",
+    "include/libultra-sdk/compiler/ido/stdarg.h": "656dc702ee6d9487667210fcab90b41f7d1188251713e6893a2c2da71cc4d035",
     "include/libultra-sdk/compiler/ido/stdio.h": "2d4f83a11a792ff666e37b6679e4a97a809098494fbdeb028f1d21486afa733b",
+    "include/libultra-sdk/compiler/ido/stdlib.h": "1a29fccb7c0c43145c4381c6f3dea4ab192471fe983736ec758353a3788aec25",
+    "include/libultra-sdk/compiler/ido/string.h": "8235290bf7031f3f89783f7772b122e366ff86ece22934a11cd494d7ff913d09",
     "include/macros.h": "06a8600f7901a7deb6c75b580e9d8d3a239f753f0b4f8f13a6890de8e80d0072",
     "include/matrix_types.h": "20c451534a3846a5e14a4d522bf5c281927180770f4188a01deda43c6054dcf2",
     "include/mem_allocator.h": "7488f9a47f82c73e0c6e74c7026b149494ec1553f5c082dff46a445fcae2c3c5",
@@ -270,6 +275,7 @@
     "src/libultra/audio/synstartvoiceparam.c": "9ae472b3aa6ca721c471896e38ac82a9a4053440792a1a54cc7eef22cd72a267",
     "src/libultra/audio/synstopvoice.c": "ae57c91896402afa8b6929dd0e06b7cc341f6bc8c21e07192988c84b1eed0b04",
     "src/libultra/audio/synthInternals.h": "797c65321f3ae4ebfa83b3babdacd70495c7a80cee2a708a0b8095043f1a309b",
+    "src/libultra/io/ai.c": "e2757d2319d2b9eca70284cc98501741565a27bc9216f7bcb58d691da85fc40a",
     "src/libultra/io/piread.c": "0195f296a22084659c67f28b0a4d3866327f0cc94df518000309f0dc17b20f50",
     "src/libultra/io/sptask.c": "695161e5c29ba9a20ea1cfdf89485b8d08123dd8a4c4064081b7e56ec7fa007b",
     "src/libultra/io/sptaskyield.c": "76dcc4157883ef5ef6827696be014e58042528bdf4c711fc54566794b6ff4cca",
@@ -282,6 +288,10 @@
     "src/libultra/io/visetmode.c": "2e537647514187dadae16f691afcbe9097c04b5f53e4f708b9f0d56bef0383af",
     "src/libultra/io/visetspecial.c": "f7a809bbce88cff70f702b42564469dcb10524b9691d3fe396b57135dace17b7",
     "src/libultra/io/viswapbuf.c": "b47f45e39e7bda4bc73600384b888b3e80bad41afa78993227a65ca18951dd6d",
+    "src/libultra/libc/ldiv.c": "636e95d6b62a4724e61310fdf9dfe7d6e793b5a3f910ac25885af9ab7b0d6bf9",
+    "src/libultra/libc/sprintf.c": "f1584ae189f76359486b77a81853b0d136a6ffcc4570bd885d61f4072192fb8b",
+    "src/libultra/libc/string.c": "a7be1ea68dbbd91bd78b5dffecc3c7dbe487a67e1571b5f15722f0743350a460",
+    "src/libultra/libc/xstdio.h": "f12e01b05a22622e42efff0fa2f72533b1086fe8cbb0825a601f450d79a02d36",
     "src/libultra/os/createmesgqueue.c": "a22ee9bd7b578ae677d9628ab42333751306d49f974cc9dbcb681973f4aaba9a",
     "src/libultra/os/createthread.c": "580041ed889963b87f5e5d59ba56eb495a650f7c3237eb9aa60d27b1502fca44",
     "src/libultra/os/initialize.c": "848d491370e6711a98675cd8968d6ef3022bf3459d23bb276296836ff36cb500",
@@ -441,7 +451,7 @@
     "audit_debt": 30,
     "conditional_draft": 4,
     "decompiler_local": 659,
-    "draft_marker": 33,
+    "draft_marker": 37,
     "explicit_unknown": 1407,
     "layout_padding": 275,
     "offset_field": 1620,
@@ -115563,6 +115573,16 @@
       "evidence": "TODO: this comes from a header"
     },
     {
+      "id": "Q-a1183d8af7f6",
+      "kind": "draft_marker",
+      "path": "src/libultra/io/ai.c",
+      "symbol": "TODO",
+      "lines": [
+        4
+      ],
+      "evidence": "TODO: this comes from a header"
+    },
+    {
       "id": "Q-a35a5d7dd6ae",
       "kind": "draft_marker",
       "path": "src/libultra/io/viblack.c",
@@ -115609,6 +115629,36 @@
       "symbol": "TODO",
       "lines": [
         50
+      ],
+      "evidence": "TODO: this comes from a header"
+    },
+    {
+      "id": "Q-9af2477cf984",
+      "kind": "draft_marker",
+      "path": "src/libultra/libc/ldiv.c",
+      "symbol": "TODO",
+      "lines": [
+        4
+      ],
+      "evidence": "TODO: these come from headers"
+    },
+    {
+      "id": "Q-3e63d46c0f19",
+      "kind": "draft_marker",
+      "path": "src/libultra/libc/sprintf.c",
+      "symbol": "TODO",
+      "lines": [
+        5
+      ],
+      "evidence": "TODO: this comes from a header"
+    },
+    {
+      "id": "Q-602544b8d740",
+      "kind": "draft_marker",
+      "path": "src/libultra/libc/string.c",
+      "symbol": "TODO",
+      "lines": [
+        4
       ],
       "evidence": "TODO: this comes from a header"
     },
