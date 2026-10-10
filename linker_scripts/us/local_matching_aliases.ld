@@ -83,7 +83,7 @@ jtbl_80021354 = 0x80021354;
 D_800213A4 = 0x800213A4;
 D_800213B0 = 0x800213B0;
 D_800213B8 = 0x800213B8;
-alGlobals = D_80020C00;
+D_80020C00 = alGlobals;
 
 /* Four additional byte-proven SDK owners; no additional storage.
  * FUNC type/size restoration and updated N64Recomp discovery remain mandatory. */
@@ -149,3 +149,33 @@ jtbl_800214C0 = 0x800214C0;
 jtbl_80021644 = 0x80021644;
 jtbl_80021698 = 0x80021698;
 jtbl_80021810 = 0x80021810;
+
+/* Forty additional byte-proven SDK owners. Original private FUNC extents
+ * require explicit recompiler metadata; storage aliases allocate no bytes. */
+func_8000D9E0 = 0x8000D9E0;
+func_8000DA6C = 0x8000DA6C;
+.L8000DF60 = 0x8000DF60;
+.L80011600 = alResampleParam + 0xC0;
+func_800183A0 = alSeqGetLoc + 0x40;
+func_800183A8 = alSeqGetLoc + 0x48;
+func_80018828 = alSeqGetLoc + 0x4C8;
+func_80018878 = alSeqGetLoc + 0x518;
+D_80021700 = 0x80021700;
+D_80021704 = 0x80021704;
+jtbl_80021400 = 0x80021400;
+D_80021418 = 0x80021418;
+D_80020C20 = 0x80020C20;
+D_80020C88 = 0x80020C88;
+D_80020D10 = 0x80020D10;
+D_80020D38 = 0x80020D38;
+D_80020D60 = 0x80020D60;
+D_80020D88 = 0x80020D88;
+jtbl_80021420 = 0x80021420;
+D_80021448 = 0x80021448;
+D_80021450 = 0x80021450;
+D_80021840 = 0x80021840;
+D_80021848 = 0x80021848;
+D_800213C0 = 0x800213C0;
+jtbl_800213C8 = 0x800213C8;
+D_800213F0 = 0x800213F0;
+D_800213F8 = 0x800213F8;

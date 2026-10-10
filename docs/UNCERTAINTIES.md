@@ -17,19 +17,19 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 1390 |
+| Explicit RE_UNKNOWN notes | 1407 |
 | Preserved RE_ORIGINAL_QUIRK notes | 333 |
 | Older comments with uncertainty language | 93 |
 | Documented original-behavior audits | 30 |
 | Assembly-backed functions or data | 771 |
 | Address-based function identifiers | 906 |
 | Address-based global identifiers | 1460 |
-| Offset-based fields or neutral typed fields | 1617 |
+| Offset-based fields or neutral typed fields | 1620 |
 | Layout padding to preserve | 275 |
 | Unresolved type names | 282 |
 | Explicit unused ABI, storage or local identifiers | 133 |
 | Decompiler parameter/local names | 659 |
-| Fake, unresolved or TODO draft markers | 28 |
+| Fake, unresolved or TODO draft markers | 33 |
 | Data-dependent conditional draft guards | 4 |
 
 ## docs/STRATEGY_V4.md
@@ -1057,6 +1057,14 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `byte2` | function `__CSPHandleMIDIMsg`, function `__CSPHandleMetaMsg` | [428](../src/libultra/audio/csplayer.c#L428), [441](../src/libultra/audio/csplayer.c#L441), [572](../src/libultra/audio/csplayer.c#L572), [613](../src/libultra/audio/csplayer.c#L613), [639](../src/libultra/audio/csplayer.c#L639), [650](../src/libultra/audio/csplayer.c#L650), [663](../src/libultra/audio/csplayer.c#L663), [666](../src/libultra/audio/csplayer.c#L666) (+5 in JSON) |
 | offset_field | `byte3` | function `__CSPHandleMetaMsg` | [791](../src/libultra/audio/csplayer.c#L791) |
 
+## src/libultra/audio/drvrnew.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| draft_marker | `TODO` | — | [25](../src/libultra/audio/drvrnew.c#L25) |
+| explicit_unknown | `RE_CONTRACT: Initialize the ADPCM filter, allocate current and loop decoder states, obtain the DMA callback and reset its initial sample/input state. RE_UNKNOWN: allocator and d...` | function `alLoadNew` | [229](../src/libultra/audio/drvrnew.c#L229) |
+| explicit_unknown | `RE_CONTRACT: Select a built-in or custom effect parameter block, allocate and clear its delay storage, then construct optional chorus resamplers and low-pass filters. RE_UNKNOWN...` | function `alFxNew` | [116](../src/libultra/audio/drvrnew.c#L116) |
+
 ## src/libultra/audio/env.c
 
 | Kind | Identifier or note | Declaration context | Physical lines |
@@ -1070,6 +1078,12 @@ For every future source wave, regenerate and check this index after code and str
 | explicit_unknown | `RE_CONTRACT: Normalize a nonzero magnitude with repeated halves/doubles, track the exponent and restore its sign; return zero directly for zero. RE_UNKNOWN: finite input is requ...` | function `_frexpf` | [421](../src/libultra/audio/env.c#L421) |
 | explicit_unknown | `RE_CONTRACT: Reduce the sample count by eight and apply the fixed-point rate with the original exponentiation loop, or return the initial volume for zero. RE_UNKNOWN: signed shi...` | function `_getVol` | [553](../src/libultra/audio/env.c#L553) |
 
+## src/libultra/audio/event.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| explicit_unknown | `RE_CONTRACT: Initialize empty relative-delay and free lists, then link the supplied event nodes onto the free list. RE_UNKNOWN: node storage and itemCount validity belong to the...` | function `alEvtqNew` | [27](../src/libultra/audio/event.c#L27) |
+
 ## src/libultra/audio/load.c
 
 | Kind | Identifier or note | Declaration context | Physical lines |
@@ -1078,6 +1092,13 @@ For every future source wave, regenerate and check this index after code and str
 | explicit_unknown | `RE_CONTRACT: Decode ADPCM blocks into the requested DMEM span, merge loop fragments, and zero-fill the unlooped tail. RE_UNKNOWN: valid books, DMA buffers, counts and a progress...` | function `alAdpcmPull` | [41](../src/libultra/audio/load.c#L41) |
 | explicit_unknown | `RE_CONTRACT: Load aligned raw s16 samples, merge loop fragments and zero-fill past the unlooped end while advancing sample/DMA state. RE_UNKNOWN: buffer/count/alignment and posi...` | function `alRaw16Pull` | [210](../src/libultra/audio/load.c#L210) |
 | explicit_unknown | `RE_CONTRACT: Set the wavetable/decoder or reset sample, loop and first-decode state. RE_UNKNOWN: supported table type, book and loop storage are provider contracts; unknown type...` | function `alLoadParam` | [355](../src/libultra/audio/load.c#L355) |
+
+## src/libultra/audio/resample.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| draft_marker | `FIXME` | function `alResamplePull` | [67](../src/libultra/audio/resample.c#L67) |
+| draft_marker | `TODO` | — | [26](../src/libultra/audio/resample.c#L26) |
 
 ## src/libultra/audio/reverb.c
 
@@ -1092,6 +1113,26 @@ For every future source wave, regenerate and check this index after code and str
 | explicit_unknown | `RE_CONTRACT: Load the low-pass coefficients/state, emit a pole-filter command and clear first. RE_UNKNOWN: coefficient/state allocation and virtual-to-physical address validity ...` | function `_filterBuffer` | [403](../src/libultra/audio/reverb.c#L403) |
 | explicit_unknown | `RE_CONTRACT: Pull the source, mix delay taps through optional modulation/low-pass filtering, save feedback and advance the shared input pointer. RE_UNKNOWN: tap/count/DMEM bound...` | function `alFxPull` | [62](../src/libultra/audio/reverb.c#L62) |
 | explicit_unknown | `RE_CONTRACT: Set the upstream source only for AL_FILTER_SET_SOURCE and return zero for every parameter ID. RE_UNKNOWN: source callback lifetime is external; zero does not distin...` | function `alFxParam` | [153](../src/libultra/audio/reverb.c#L153) |
+
+## src/libultra/audio/save.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| draft_marker | `TODO` | — | [23](../src/libultra/audio/save.c#L23) |
+| explicit_unknown | `RE_CONTRACT: Pull the upstream filter, emit stereo interleave and DRAM-save commands, and return the advanced command pointer. RE_UNKNOWN: a valid upstream source and output buf...` | function `alSavePull` | [28](../src/libultra/audio/save.c#L28) |
+
+## src/libultra/audio/seq.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| explicit_unknown | `RE_CONTRACT: Convert seconds to ticks using the stored division and supplied tempo, preserving the original float expression and u32 conversion. RE_UNKNOWN: zero tempo and numer...` | function `alSeqSecToTicks` | [214](../src/libultra/audio/seq.c#L214) |
+| explicit_unknown | `RE_CONTRACT: Convert ticks to seconds using tempo in microseconds per quarter note and the stored division. RE_UNKNOWN: zero division and numeric range are not checked here.` | function `alSeqTicksToSec` | [208](../src/libultra/audio/seq.c#L208) |
+| explicit_unknown | `RE_CONTRACT: Read four unaligned bytes in big-endian order and advance the cursor, preserving the original signed32 shifts and combination. RE_UNKNOWN: available input length is...` | function `read32` | [307](../src/libultra/audio/seq.c#L307) |
+| explicit_unknown | `RE_CONTRACT: Read one byte and advance the sequence cursor. RE_UNKNOWN: available input length is not checked here.` | function `read8` | [292](../src/libultra/audio/seq.c#L292) |
+| explicit_unknown | `RE_CONTRACT: Read two unaligned bytes in big-endian order and advance the cursor, preserving the signed16 result. RE_UNKNOWN: available input length is not checked here.` | function `read16` | [297](../src/libultra/audio/seq.c#L297) |
+| offset_field | `byte1` | function `alSeqNextEvent` | [136](../src/libultra/audio/seq.c#L136), [164](../src/libultra/audio/seq.c#L164), [169](../src/libultra/audio/seq.c#L169) |
+| offset_field | `byte2` | function `alSeqNextEvent` | [137](../src/libultra/audio/seq.c#L137), [174](../src/libultra/audio/seq.c#L174), [176](../src/libultra/audio/seq.c#L176) |
+| offset_field | `byte3` | function `alSeqNextEvent` | [138](../src/libultra/audio/seq.c#L138) |
 
 ## src/libultra/audio/seqplayer.c
 
@@ -1122,6 +1163,50 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `byte1` | function `__handleMIDIMsg`, function `__handleMetaMsg` | [439](../src/libultra/audio/seqplayer.c#L439), [457](../src/libultra/audio/seqplayer.c#L457), [635](../src/libultra/audio/seqplayer.c#L635), [644](../src/libultra/audio/seqplayer.c#L644), [719](../src/libultra/audio/seqplayer.c#L719), [755](../src/libultra/audio/seqplayer.c#L755), [796](../src/libultra/audio/seqplayer.c#L796) |
 | offset_field | `byte2` | function `__handleMIDIMsg`, function `__handleMetaMsg` | [440](../src/libultra/audio/seqplayer.c#L440), [458](../src/libultra/audio/seqplayer.c#L458), [622](../src/libultra/audio/seqplayer.c#L622), [647](../src/libultra/audio/seqplayer.c#L647), [657](../src/libultra/audio/seqplayer.c#L657), [670](../src/libultra/audio/seqplayer.c#L670), [673](../src/libultra/audio/seqplayer.c#L673), [677](../src/libultra/audio/seqplayer.c#L677) (+5 in JSON) |
 | offset_field | `byte3` | function `__handleMetaMsg` | [798](../src/libultra/audio/seqplayer.c#L798) |
+
+## src/libultra/audio/sl.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| explicit_unknown | `RE_CONTRACT: Insert ln immediately after to and repair the neighboring back link. RE_UNKNOWN: both nodes must be valid and existing membership is not checked.` | function `alLink` | [46](../src/libultra/audio/sl.c#L46) |
+
+## src/libultra/audio/sndpgetstate.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| explicit_unknown | `RE_CONTRACT: Return the selected sound slot's stored state. RE_UNKNOWN: target bounds and slot lifetime are not checked here.` | function `alSndpGetState` | [24](../src/libultra/audio/sndpgetstate.c#L24) |
+
+## src/libultra/audio/sndplayer.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| draft_marker | `TODO` | — | [24](../src/libultra/audio/sndplayer.c#L24) |
+| explicit_unknown | `RE_CONTRACT: Allocate sound slots and an event queue, register the player with the global synthesizer and schedule its first API tick. RE_UNKNOWN: heap success, global initializ...` | function `alSndpNew` | [28](../src/libultra/audio/sndplayer.c#L28) |
+| explicit_unknown | `RE_CONTRACT: Dispatch all zero-delay pending events, reschedule API ticks, then advance curTime and return the next nonzero delay. RE_UNKNOWN: the event queue must continue to p...` | function `_sndpVoiceHandler` | [75](../src/libultra/audio/sndplayer.c#L75) |
+
+## src/libultra/audio/sndpplay.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| explicit_unknown | `RE_CONTRACT: Queue an immediate play event for the selected sound only while its state is AL_STOPPED; preserve the ALFailIf early return. RE_UNKNOWN: target bounds and queued-st...` | function `alSndpPlay` | [26](../src/libultra/audio/sndpplay.c#L26) |
+
+## src/libultra/audio/sndpstop.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| explicit_unknown | `RE_CONTRACT: Queue an immediate stop event for the selected sound, requesting its release phase. RE_UNKNOWN: target bounds, state lifetime and available queue nodes are external.` | function `alSndpStop` | [24](../src/libultra/audio/sndpstop.c#L24) |
+
+## src/libultra/audio/synallocfx.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| explicit_unknown | `RE_CONTRACT: Initialize effect zero on the selected auxiliary bus, connect that bus as its source, append the effect to the main bus and return its reference. RE_UNKNOWN: bus bo...` | function `alSynAllocFX` | [24](../src/libultra/audio/synallocfx.c#L24) |
+
+## src/libultra/audio/synsetfxparam.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| explicit_unknown | `RE_CONTRACT: Pass the sign-extended parameter ID and payload to the effect parameter callback. RE_UNKNOWN: payload type and validity depend on the selected effect.` | function `alSynSetFXParam` | [24](../src/libultra/audio/synsetfxparam.c#L24) |
 
 ## src/libultra/audio/synthInternals.h
 
