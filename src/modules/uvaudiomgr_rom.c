@@ -154,9 +154,9 @@ s32 uvGetAudioHeapSize(void) {
     return sAudioHeapSize;
 }
 
-void __entrypoint_func_uvaudiomgr_rom_40000c(UvAudioMgr_Exports *exports) {
-    AudioMgr_Settings *settings;
-    s32 audioHeapSize;
+void __entrypoint_func_uvaudiomgr_rom_40000c(UvAudioMgr_Exports *exports) { /* Publish seventeen audio exports, apply default-backed settings, initialize heap and DMA storage, start the audio manager and create the optional callback lists. RE_UNKNOWN: Settings ownership, full configuration layouts, allocation success, capacities and callback lifetime remain unproved. */
+    AudioMgr_Settings *audioSettings;
+    s32 heapBytes;
 
     uvUpdateFileAllocPtr(exports);
     exports->uvAudioMgrCleanup = uvAudioMgrCleanup;
@@ -180,8 +180,8 @@ void __entrypoint_func_uvaudiomgr_rom_40000c(UvAudioMgr_Exports *exports) {
     D_uvaudiomgr_rom_00405738 = 1.0f;
     D_uvaudiomgr_rom_0040573C = 2;
     D_uvaudiomgr_rom_00405740 = 0.0f;
-    settings = uvGetSystemProp(SYSTEM_PROPID_AUDIOMGR_SETTINGS);
-    if (settings == NULL) {
+    audioSettings = uvGetSystemProp(SYSTEM_PROPID_AUDIOMGR_SETTINGS);
+    if (audioSettings == NULL) { /* Each zero settings field also selects its own default in the nonnull path. */
         sAudioDmaBufCount = AUDIO_DEFAULT_DMA_BUF_COUNT;
         sAudioDmaBufSize = 0x800;
         sAudioCmdListCount = 0x3E8;
@@ -194,81 +194,81 @@ void __entrypoint_func_uvaudiomgr_rom_40000c(UvAudioMgr_Exports *exports) {
         sAudioHeapSize = 0;
         sAudioHeapBase = NULL;
     } else {
-        if (settings->dmaBufCount != 0) {
-            sAudioDmaBufCount = settings->dmaBufCount;
+        if (audioSettings->dmaBufCount != 0) {
+            sAudioDmaBufCount = audioSettings->dmaBufCount;
         } else {
             sAudioDmaBufCount = AUDIO_DEFAULT_DMA_BUF_COUNT;
         }
-        if (settings->dmaBufSize != 0) {
-            sAudioDmaBufSize = settings->dmaBufSize;
+        if (audioSettings->dmaBufSize != 0) {
+            sAudioDmaBufSize = audioSettings->dmaBufSize;
         } else {
             sAudioDmaBufSize = AUDIO_DEFAULT_DMA_BUF_SIZE;
         }
-        if (settings->aCmdListCount != 0) {
-            sAudioCmdListCount = settings->aCmdListCount;
+        if (audioSettings->aCmdListCount != 0) {
+            sAudioCmdListCount = audioSettings->aCmdListCount;
         } else {
             sAudioCmdListCount = AUDIO_DEFAULT_CMD_LIST_COUNT;
         }
-        if (settings->maxUpdates != 0) {
-            sAudioMaxUpdates = settings->maxUpdates;
+        if (audioSettings->maxUpdates != 0) {
+            sAudioMaxUpdates = audioSettings->maxUpdates;
         } else {
             sAudioMaxUpdates = AUDIO_DEFAULT_MAX_UPDATES;
         }
-        if (settings->unk14 != 0) {
-            D_uvaudiomgr_rom_00405728 = settings->unk14;
+        if (audioSettings->unk14 != 0) {
+            D_uvaudiomgr_rom_00405728 = audioSettings->unk14;
         } else {
             D_uvaudiomgr_rom_00405728 = 0x100;
         }
-        if (settings->maxVoices != 0) {
-            sAudioMaxVoices = settings->maxVoices;
+        if (audioSettings->maxVoices != 0) {
+            sAudioMaxVoices = audioSettings->maxVoices;
         } else {
             sAudioMaxVoices = AUDIO_DEFAULT_MAX_VOICES;
         }
-        if (settings->sampleRate != 0) {
-            sAudioSampleRate = settings->sampleRate;
+        if (audioSettings->sampleRate != 0) {
+            sAudioSampleRate = audioSettings->sampleRate;
         } else {
             sAudioSampleRate = AUDIO_DEFAULT_SAMPLE_RATE;
         }
-        if (settings->unk1C != 0) {
-            D_uvaudiomgr_rom_00405730 = settings->unk1C;
+        if (audioSettings->unk1C != 0) {
+            D_uvaudiomgr_rom_00405730 = audioSettings->unk1C;
         } else {
             D_uvaudiomgr_rom_00405730 = 0xA;
         }
-        if (settings->unk1E != 0) {
-            D_uvaudiomgr_rom_00405732 = settings->unk1E;
+        if (audioSettings->unk1E != 0) {
+            D_uvaudiomgr_rom_00405732 = audioSettings->unk1E;
         } else {
             D_uvaudiomgr_rom_00405732 = 0xA;
         }
-        sAudioHeapSize = settings->heapSize;
-        sAudioHeapBase = settings->heapBase;
+        sAudioHeapSize = audioSettings->heapSize;
+        sAudioHeapBase = audioSettings->heapBase;
     }
     uvAudioMgrConfigureFrameSampleCounts();
-    if (sAudioHeapBase == NULL) {
-        audioHeapSize = sAudioHeapSize;
-        if (audioHeapSize == 0) {
-            audioHeapSize = sAudioHeapSize =
+    if (sAudioHeapBase == NULL) { /* Only an absent heap base sets the original allocation flag; preserve supplied heap storage. */
+        heapBytes = sAudioHeapSize;
+        if (heapBytes == 0) { /* Keep the original size arithmetic, including its existing casts and unchecked overflow. */
+            heapBytes = sAudioHeapSize =
                 ((sAudioDmaBufCount) * (sAudioDmaBufSize)) + ((sAudioCmdListCount & 0xFFFF) * 0x10)
                 + (D_uvaudiomgr_rom_004056CC * 0xC) + (sAudioMaxUpdates * 0x1C)
                 + (sAudioMaxVoices * 0x214) + 0x322C;
         }
         D_uvaudiomgr_rom_0040577C |= 1;
-        sAudioHeapBase = _uvMemAllocAlign8((u32) audioHeapSize);
+        sAudioHeapBase = _uvMemAllocAlign8((u32) heapBytes);
     }
 
-    D_uvaudiomgr_rom_00405716 = (u16) (s32) (sAudioDmaBufCount * 1.5);
+    D_uvaudiomgr_rom_00405716 = (u16) (s32) (sAudioDmaBufCount * 1.5); /* Preserve the double multiply, truncation and final halfword conversion. */
     sAudioDmaBuffers = _uvMemAllocAlign8(sAudioDmaBufCount * 0x14);
     uvMemSet(sAudioDmaBuffers, 0U, sAudioDmaBufCount * 0x14);
     D_uvaudiomgr_rom_004056D0 = _uvMemAllocAlign8(D_uvaudiomgr_rom_00405716 * 0x18);
     uvMemSet(D_uvaudiomgr_rom_004056D0, 0U, D_uvaudiomgr_rom_00405716 * 0x18);
     D_uvaudiomgr_rom_004056F0 = _uvMemAllocAlign8(D_uvaudiomgr_rom_00405716 * 4);
     uvMemSet(D_uvaudiomgr_rom_004056F0, 0U, D_uvaudiomgr_rom_00405716 * 4);
-    uvMemSet(sAudioHeapBase, 0U, (u32) sAudioHeapSize);
+    uvMemSet(sAudioHeapBase, 0U, (u32) sAudioHeapSize); /* The original clears supplied heap storage too; no allocation-result checks are added. */
     alHeapInit((ALHeap *) &D_uvaudiomgr_rom_00405748, (u8 *) sAudioHeapBase,
                sAudioHeapSize);
     sAudioSynthConf.heap = (ALHeap *) &D_uvaudiomgr_rom_00405748;
-    uvCreateAudioMgr(&sAudioSynthConf, 0x6E);
+    uvCreateAudioMgr(&sAudioSynthConf, 0x6E); /* Preserve manager creation before the following message send. */
     osSendMesg(&D_uvaudiomgr_rom_004056F8, NULL, 1);
-    if (((s32) D_uvaudiomgr_rom_00405730 > 0) || ((s32) D_uvaudiomgr_rom_00405732 > 0)) {
+    if (((s32) D_uvaudiomgr_rom_00405730 > 0) || ((s32) D_uvaudiomgr_rom_00405732 > 0)) { /* Either positive count triggers both list calls, even when the other count is zero. */
         sUvCbackExports_audiomgr = uvLoadModule('CBCK');
         D_uvaudiomgr_rom_00405784 =
             sUvCbackExports_audiomgr->uvCreateCallbackList(D_uvaudiomgr_rom_00405730);
@@ -277,47 +277,47 @@ void __entrypoint_func_uvaudiomgr_rom_40000c(UvAudioMgr_Exports *exports) {
     }
 }
 
-void uvCreateAudioMgr(ALSynConfig *config, s32 pri) {
-    s32 i;
+void uvCreateAudioMgr(ALSynConfig *synthConfig, s32 threadPriority) { /* Configure the audio synthesizer, link and allocate DMA buffers, allocate command and frame buffers, create four message queues, then create and start thread 3. RE_UNKNOWN: Heap ownership, allocation success, full configuration and buffer layouts, and the supported DMA count domain remain unproved. */
+    s32 bufferIndex;
 
-    config->maxVVoices = sAudioMaxVoices;
-    config->maxPVoices = sAudioMaxVoices;
-    config->maxUpdates = sAudioMaxUpdates;
-    config->dmaproc = NULL;
-    config->maxFXbusses = 8;
-    config->fxType = 6;
-    config->outputRate = 0;
+    synthConfig->maxVVoices = sAudioMaxVoices;
+    synthConfig->maxPVoices = sAudioMaxVoices;
+    synthConfig->maxUpdates = sAudioMaxUpdates;
+    synthConfig->dmaproc = NULL;
+    synthConfig->maxFXbusses = 8;
+    synthConfig->fxType = 6;
+    synthConfig->outputRate = 0;
 
-    // @redundant check
-    if (config->fxType == 6) {
-        config->params = &D_uvaudiomgr_rom_00401310;
+    // Preserve the original check after storing effect type 6; do not fold the branch.
+    if (synthConfig->fxType == 6) {
+        synthConfig->params = &D_uvaudiomgr_rom_00401310;
     }
 
-    config->dmaproc = &uvAudioMgrDmaNew;
-    config->outputRate = osAiSetFrequency(sAudioSampleRate);
-    alInit(&sAudioGlobals, config);
+    synthConfig->dmaproc = &uvAudioMgrDmaNew;
+    synthConfig->outputRate = osAiSetFrequency(sAudioSampleRate); /* Preserve the frequency call return as the configured output rate. */
+    alInit(&sAudioGlobals, synthConfig);
     D_uvaudiomgr_rom_0040130C = alSynGetFXRef(&sAudioGlobals.drvr, 0, 0);
     sAudioDmaBuffers->node.prev = NULL;
     sAudioDmaBuffers->node.next = NULL;
 
-    for (i = 0; i < sAudioDmaBufCount - 1; i++) {
-        alLink(&sAudioDmaBuffers[i + 1].node, &sAudioDmaBuffers[i].node);
-        sAudioDmaBuffers[i].ptr = alHeapDBAlloc(NULL, 0, config->heap, 1, sAudioDmaBufSize);
+    for (bufferIndex = 0; bufferIndex < sAudioDmaBufCount - 1; bufferIndex++) { /* Keep the fresh DMA count and heap reads around each link and allocation call. */
+        alLink(&sAudioDmaBuffers[bufferIndex + 1].node, &sAudioDmaBuffers[bufferIndex].node);
+        sAudioDmaBuffers[bufferIndex].ptr = alHeapDBAlloc(NULL, 0, synthConfig->heap, 1, sAudioDmaBufSize);
     }
 
-    sAudioDmaBuffers[i].ptr = alHeapDBAlloc(NULL, 0, config->heap, 1, (s32) sAudioDmaBufSize);
+    sAudioDmaBuffers[bufferIndex].ptr = alHeapDBAlloc(NULL, 0, synthConfig->heap, 1, (s32) sAudioDmaBufSize); /* The tail allocation remains unconditional even when the preceding loop does not run. */
 
-    for (i = 0; i < 2; i++) {
-        sAudioMgrInfo.ACMDList[i] =
-            alHeapDBAlloc(NULL, 0, config->heap, 1, sAudioCmdListCount * 8);
+    for (bufferIndex = 0; bufferIndex < 2; bufferIndex++) { /* Allocate two command buffers using the existing count times eight expression. */
+        sAudioMgrInfo.ACMDList[bufferIndex] =
+            alHeapDBAlloc(NULL, 0, synthConfig->heap, 1, sAudioCmdListCount * 8);
     }
 
-    for (i = 0; i < 3; i++) {
-        sAudioMgrInfo.audioInfo[i] = alHeapDBAlloc(NULL, 0, config->heap, 1, 0x80);
-        sAudioMgrInfo.audioInfo[i]->msg.done.type = 2;
-        sAudioMgrInfo.audioInfo[i]->msg.done.info = sAudioMgrInfo.audioInfo[i];
-        sAudioMgrInfo.audioInfo[i]->data =
-            alHeapDBAlloc(NULL, 0, config->heap, 1, D_uvaudiomgr_rom_004056CC * 4);
+    for (bufferIndex = 0; bufferIndex < 3; bufferIndex++) { /* Each frame block is 0x80 bytes; retain its completion type, self-pointer and separate sample allocation. */
+        sAudioMgrInfo.audioInfo[bufferIndex] = alHeapDBAlloc(NULL, 0, synthConfig->heap, 1, 0x80);
+        sAudioMgrInfo.audioInfo[bufferIndex]->msg.done.type = 2;
+        sAudioMgrInfo.audioInfo[bufferIndex]->msg.done.info = sAudioMgrInfo.audioInfo[bufferIndex];
+        sAudioMgrInfo.audioInfo[bufferIndex]->data =
+            alHeapDBAlloc(NULL, 0, synthConfig->heap, 1, D_uvaudiomgr_rom_004056CC * 4);
     }
 
     osCreateMesgQueue(&D_uvaudiomgr_rom_00405628, &D_uvaudiomgr_rom_00405640, 8);
@@ -325,8 +325,8 @@ void uvCreateAudioMgr(ALSynConfig *config, s32 pri) {
     osCreateMesgQueue(&D_uvaudiomgr_rom_004056D8, D_uvaudiomgr_rom_004056F0,
                       (s32) D_uvaudiomgr_rom_00405716);
     osCreateMesgQueue(&D_uvaudiomgr_rom_004056F8, &D_uvaudiomgr_rom_00405710, 1);
-    osCreateThread(&sAudioMgrInfo.thread, 3, uvAudioMgrThreadFunc, NULL, &D_uvaudiomgr_rom_00405418, pri);
-    osStartThread(&sAudioMgrInfo.thread);
+    osCreateThread(&sAudioMgrInfo.thread, 3, uvAudioMgrThreadFunc, NULL, &D_uvaudiomgr_rom_00405418, threadPriority);
+    osStartThread(&sAudioMgrInfo.thread); /* All four queue creations and the caller-priority thread creation precede the start call. */
 }
 
 #line 332 "src/modules/uvaudiomgr_rom.c"

@@ -539,17 +539,17 @@ void uvEmitterSetMix(u8 emitterId, f32 mix) {
 }
 #line 479 "src/modules/uvemitter_rom.c"
 
-void uvEmitterSetVol(u8 playVoice, s32 vol) {
-    if (vol < 0) {
-        vol = 0;
+void uvEmitterSetVol(u8 emitterIndex, s32 volume) { /* Clamp volume to 0 through 0x7FFF, then write emitter field 0x34 only when the byte index is below the configured emitter count. */
+    if (volume < 0) {
+        volume = 0;
     }
-    if (vol >= 0x8000) {
-        vol = 0x7FFF;
+    if (volume >= 0x8000) {
+        volume = 0x7FFF;
     }
-    if (playVoice < D_uvemitter_rom_00402BD0) {
-        D_uvemitter_rom_00402B94[playVoice].vol = vol;
+    if (emitterIndex < D_uvemitter_rom_00402BD0) {
+        D_uvemitter_rom_00402B94[emitterIndex].vol = volume;
     }
-}
+/* RE_UNKNOWN: The configured count versus allocated capacity is unproved. This stores a requested emitter value; it does not invoke a sound-player callback. */ }
 
 void uvEmitterProps(u8 objId, ...) { /* Consume property tags: 1 and 2 store squared narrowed doubles at offsets 0x5C and 0x60; 5 stores a word at 0x64; 0 and unknown tags return. */
     f32 propertyValue;
@@ -718,107 +718,107 @@ void uvEmitterUpdateAndQueueActiveVoices(s32 listenerSelection) {
 }
 #line 638 "src/modules/uvemitter_rom.c"
 
-void func_uvemitter_rom_0040156C(u8 arg0, s16 arg1) {
-    s32 var_v1;
-    f32 var_fa1;
-    f32 var_ft4;
-    f32 var_fa0;
-    Vec3F sp8C;
-    Vec3F sp80;
-    Vec3F sp74;
-    Vec3F sp68;
-    f32 sp64;
-    s32 sp48;
-    Emitter *obj;
-    s32 sp58;
-    s32 i;
+void func_uvemitter_rom_0040156C(u8 emitterIndex, s16 earSelection) { /* Compute the selected emitter playback volume, pan, pitch and mix from its flags, ear callbacks and current global factors; a matching sound-ID list entry overrides volume with 3. */
+    s32 panValue;
+    f32 volumeFactor;
+    f32 distanceSquared;
+    f32 directionProjection;
+    Vec3F earPosition;
+    Vec3F earSecondaryVector;
+    Vec3F earVelocity;
+    Vec3F displacement;
+    f32 pitchFactor;
+    s32 earSlot;
+    Emitter *emitter;
+    s32 flags;
+    s32 soundListIndex;
 
-    sp64 = 1.0f;
-    obj = &D_uvemitter_rom_00402B94[arg0];
-    sp58 = obj->unk64;
-    if (sp58 & 8) {
-        if (arg1 == 0) {
+    pitchFactor = 1.0f;
+    emitter = &D_uvemitter_rom_00402B94[emitterIndex];
+    flags = emitter->unk64;
+    if (flags & 8) {
+        if (earSelection == 0) {
             *(s32 *) 0 = 0; // fault
         }
 
-        sp48 = sUvEarExports->uvEarFindNearestSlot(arg1, &obj->unk0);
-        sUvEarExports->uvEarGetPosition(sp48, &sp8C);
-        sUvEarExports->uvEarGetSecondaryVector(sp48, &sp80);
-        sUvEarExports->uvEarGetVelocity(sp48, &sp74);
-        if (sp58 & 2) {
-            var_ft4 = uvEmitterGetLineDistanceSquared(sp8C, obj, &sp68);
-        } else if (sp58 & 1) {
+        earSlot = sUvEarExports->uvEarFindNearestSlot(earSelection, &emitter->unk0);
+        sUvEarExports->uvEarGetPosition(earSlot, &earPosition);
+        sUvEarExports->uvEarGetSecondaryVector(earSlot, &earSecondaryVector);
+        sUvEarExports->uvEarGetVelocity(earSlot, &earVelocity);
+        if (flags & 2) {
+            distanceSquared = uvEmitterGetLineDistanceSquared(earPosition, emitter, &displacement);
+        } else if (flags & 1) {
             /* Empty */
         } else {
-            sp68.x = sp8C.x - obj->unk0.x;
-            sp68.y = sp8C.y - obj->unk0.y;
-            sp68.z = sp8C.z - obj->unk0.z;
-            var_ft4 = SQ(sp68.x) + SQ(sp68.y) + SQ(sp68.z);
-            sp64 = obj->unk54;
-            if ((sp58 & 0x40) && (var_ft4 > 0.0f)) {
-                sp64 *= uvEmitterComputeDopplerRatio(sp68, sp74, obj->unk24, 330.0f);
+            displacement.x = earPosition.x - emitter->unk0.x;
+            displacement.y = earPosition.y - emitter->unk0.y;
+            displacement.z = earPosition.z - emitter->unk0.z;
+            distanceSquared = SQ(displacement.x) + SQ(displacement.y) + SQ(displacement.z);
+            pitchFactor = emitter->unk54;
+            if ((flags & 0x40) && (distanceSquared > 0.0f)) {
+                pitchFactor *= uvEmitterComputeDopplerRatio(displacement, earVelocity, emitter->unk24, 330.0f);
             }
         }
-        if (obj->far < var_ft4) {
-            obj->playPan = 0x40;
-            obj->playVolume = 0;
-            obj->playPitch = obj->unk68;
+        if (emitter->far < distanceSquared) {
+            emitter->playPan = 0x40;
+            emitter->playVolume = 0;
+            emitter->playPitch = emitter->unk68;
             return;
         }
-        if (var_ft4 <= obj->unk5C) {
-            var_fa1 = D_uvemitter_rom_00402B94[arg0].unk30;
+        if (distanceSquared <= emitter->unk5C) {
+            volumeFactor = D_uvemitter_rom_00402B94[emitterIndex].unk30;
         } else {
-            var_fa1 = (obj->unk30 * (obj->far - var_ft4)) / (obj->far - obj->unk5C);
+            volumeFactor = (emitter->unk30 * (emitter->far - distanceSquared)) / (emitter->far - emitter->unk5C);
         }
-        if ((D_uvemitter_rom_00402BC4 != 1) && (var_ft4 != 0.0f)) {
-            var_fa0 = sFvecExports->uvVec3FScalarProj((Vec3F *) &sp68, &sp80);
-            if (var_ft4 < obj->unk5C) {
-                var_fa0 *= (var_ft4 / obj->unk5C);
+        if ((D_uvemitter_rom_00402BC4 != 1) && (distanceSquared != 0.0f)) {
+            directionProjection = sFvecExports->uvVec3FScalarProj((Vec3F *) &displacement, &earSecondaryVector);
+            if (distanceSquared < emitter->unk5C) {
+                directionProjection *= (distanceSquared / emitter->unk5C);
             }
 
-            var_v1 = (s32) ((1.0f - var_fa0) * 64.0f);
-            if (var_v1 == 0x80) {
-                var_v1 = 0x7F;
+            panValue = (s32) ((1.0f - directionProjection) * 64.0f);
+            if (panValue == 0x80) {
+                panValue = 0x7F;
             }
         } else {
-            var_v1 = 0x40;
+            panValue = 0x40;
         }
     } else {
-        var_fa1 = obj->unk30;
+        volumeFactor = emitter->unk30;
         if (D_uvemitter_rom_00402BC4 != 1) {
-            var_v1 = (s32) ((obj->unk6C + 1.0f) * 64.0f);
-            if (var_v1 == 0x80) {
-                var_v1 = 0x7F;
+            panValue = (s32) ((emitter->unk6C + 1.0f) * 64.0f);
+            if (panValue == 0x80) {
+                panValue = 0x7F;
             }
         } else {
-            var_v1 = 0x40;
+            panValue = 0x40;
         }
     }
-    if (sp58 & 4) {
-        obj->playMix = (s8) (s32) (D_uvemitter_rom_00402BCC * 127.0f);
+    if (flags & 4) {
+        emitter->playMix = (s8) (s32) (D_uvemitter_rom_00402BCC * 127.0f);
     } else {
-        obj->playMix = (s8) (s32) (obj->unk70 * 127.0f);
+        emitter->playMix = (s8) (s32) (emitter->unk70 * 127.0f);
     }
-    obj->playPitch = obj->unk68 * sp64;
-    obj->playPan = (s8) var_v1;
+    emitter->playPitch = emitter->unk68 * pitchFactor;
+    emitter->playPan = (s8) panValue;
 
-    obj->playVolume = (s32) (D_uvemitter_rom_00402B88[D_uvemitter_rom_00402A88[obj->soundId]] * var_fa1
+    emitter->playVolume = (s32) (D_uvemitter_rom_00402B88[D_uvemitter_rom_00402A88[emitter->soundId]] * volumeFactor
                         * D_uvemitter_rom_00402BC8 * D_uvemitter_rom_00402A04);
 
     if (D_uvemitter_rom_00403008 == NULL) {
         return;
     }
 
-    for (i = 0; D_uvemitter_rom_00403008[i] != 0xFF; i++) {
-        if (D_uvemitter_rom_00403008[i] == obj->soundId) {
+    for (soundListIndex = 0; D_uvemitter_rom_00403008[soundListIndex] != 0xFF; soundListIndex++) {
+        if (D_uvemitter_rom_00403008[soundListIndex] == emitter->soundId) {
             break;
         }
     }
 
-    if (D_uvemitter_rom_00403008[i] != 0xFF) {
-        obj->playVolume = 3;
+    if (D_uvemitter_rom_00403008[soundListIndex] != 0xFF) {
+        emitter->playVolume = 3;
     }
-}
+/* RE_UNKNOWN: Flag bit 1 without bit 2 leaves distance and displacement unwritten on the spatial path. Ear-output validity, flag domains, float conversion ranges, table capacities and list termination are unproved; preserve the explicit null-address store for zero ear selection. */ }
 
 #line 741 "src/modules/uvemitter_rom.c"
 /* For playback state eight, inspect the underlying sound-player state.
@@ -985,47 +985,47 @@ void uvEmitterApplyQueuedVoicesAndRotateLists(void) {
 }
 #line 886 "src/modules/uvemitter_rom.c"
 
-void _uvaStartVoice(Emitter *arg0) {
-    ALSound *temp_a1;
-    ALInstrument *temp_a0;
+void _uvaStartVoice(Emitter *emitter) { /* Select the assigned sound; if it is running, set word 0x78 to 1 and stop it. Otherwise deallocate, allocate the instrument first sound, update playback properties, and start immediately or at word 0x58 when word 0x84 is 0x20. */
+    ALSound *sound;
+    ALInstrument *instrument;
 
-    alSndpSetSound(D_uvemitter_rom_00402A10, sVoiceTable[arg0->playVoice]);
+    alSndpSetSound(D_uvemitter_rom_00402A10, sVoiceTable[emitter->playVoice]);
     if (D_uvemitter_rom_00402A10->target == -1) {
         *(s32 *) 0 = 0;
     }
     if (alSndpGetState(D_uvemitter_rom_00402A10) != 0) {
-        arg0->unk78 = 1;
+        emitter->unk78 = 1;
         alSndpStop(D_uvemitter_rom_00402A10);
         return;
     }
-    alSndpDeallocate(D_uvemitter_rom_00402A10, sVoiceTable[arg0->playVoice]);
-    if ((s32) arg0->soundId >= D_uvemitter_rom_00402BB4->instCount) {
+    alSndpDeallocate(D_uvemitter_rom_00402A10, sVoiceTable[emitter->playVoice]);
+    if ((s32) emitter->soundId >= D_uvemitter_rom_00402BB4->instCount) {
         *(s32 *) 0 = 0;
     }
 
-    temp_a0 = D_uvemitter_rom_00402BB4->instArray[arg0->soundId];
-    temp_a1 = temp_a0->soundArray[0];
-    if (temp_a1 == NULL) {
+    instrument = D_uvemitter_rom_00402BB4->instArray[emitter->soundId];
+    sound = instrument->soundArray[0];
+    if (sound == NULL) {
         *(s32 *) 0 = 0;
     }
-    sVoiceTable[arg0->playVoice] = alSndpAllocate(D_uvemitter_rom_00402A10, temp_a1);
-    alSndpSetSound(D_uvemitter_rom_00402A10, sVoiceTable[arg0->playVoice]);
+    sVoiceTable[emitter->playVoice] = alSndpAllocate(D_uvemitter_rom_00402A10, sound);
+    alSndpSetSound(D_uvemitter_rom_00402A10, sVoiceTable[emitter->playVoice]);
     if (D_uvemitter_rom_00402A10->target == -1) {
         *(s32 *) 0 = 0;
     }
-    if (sVoiceTable[arg0->playVoice] >= 0) {
-        _uvaUpdateVoice(arg0);
-        if (arg0->unk84 == 0x20) {
-            alSndpPlayAt(D_uvemitter_rom_00402A10, arg0->unk58);
+    if (sVoiceTable[emitter->playVoice] >= 0) {
+        _uvaUpdateVoice(emitter);
+        if (emitter->unk84 == 0x20) {
+            alSndpPlayAt(D_uvemitter_rom_00402A10, emitter->unk58);
         } else {
             alSndpPlay(D_uvemitter_rom_00402A10);
         }
-        arg0->unk78 = 2;
-        arg0->unk84 = 0;
+        emitter->unk78 = 2;
+        emitter->unk84 = 0;
     }
-}
+/* RE_UNKNOWN: Caller lifetime, instrument and voice-table bounds, allocation success, and meanings of words 0x78 and 0x84 are unproved. Preserve the native null-address stores for invalid sound target, instrument index and null sound; successful start writes 2 and 0 to those words. */ }
 
-void _uvaUpdateVoice(Emitter *emitter) {
+void _uvaUpdateVoice(Emitter *emitter) { /* Check the byte voice index, assigned signed sound ID and pan; select that sound, then invoke volume, pitch, effect-mix and pan callbacks in native order with fresh sound-player pointer reads. */
     if (emitter->playVoice >= sMaxVoices) {
         *(s32 *) 0 = 0;
     }
@@ -1044,7 +1044,7 @@ void _uvaUpdateVoice(Emitter *emitter) {
     alSndpSetPitch(D_uvemitter_rom_00402A10, emitter->playPitch);
     alSndpSetFXMix(D_uvemitter_rom_00402A10, emitter->playMix);
     alSndpSetPan(D_uvemitter_rom_00402A10, emitter->playPan);
-}
+/* RE_UNKNOWN: Table capacity and object lifetime are unproved. Each failing guard performs the inherited null-address store; no recovery or safe continuation is added. */ }
 
 void _uvaStopVoice(Emitter *emitter) { /* When word 0x78 is nonzero, process an in-range assigned sound, conditionally zero its volume, invoke stop, then reset the voice sentinel, word 0x78 and byte 0x83. */
     u16 temp_v0;

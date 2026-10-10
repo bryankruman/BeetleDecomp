@@ -3099,10 +3099,19 @@ Totals: 419 further recoveries after the 225 upstream ordinary imports, plus 153
 Frozen wave `3730-sprite-vehicle-native-contracts` and `accepted-sprite-vehicle-native-contracts-3730` verify real translation-unit instructions/full relocations, 7 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 419 further readable functions
+## Historical accepted checkpoint — 419 further readable functions
 
 Name observed local roles and document light setup, color-record selection, emitter allocation, property dispatch and voice-stop behavior with explicit unresolved domains.
 
 Totals: 419 further recoveries after the 225 upstream ordinary imports, plus 1538 existing C semantic cleanups. Current ledger: 781 assembly references = 742 ordinary + 39 entrypoints; 710,776 known remaining instruction bytes; zero unknown sizes; 285 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `3800-light-emitter-native-contracts` and `accepted-light-emitter-native-contracts-3800` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 419 further readable functions
+
+Name observed audio manager initialization, buffer setup, emitter playback and particle selection roles while preserving original operations and searchable ownership and layout unknowns.
+
+Totals: 419 further recoveries after the 225 upstream ordinary imports, plus 1545 existing C semantic cleanups. Current ledger: 781 assembly references = 742 ordinary + 39 entrypoints; 710,776 known remaining instruction bytes; zero unknown sizes; 285 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `3874-audio-effects-native-contracts` and `accepted-audio-effects-native-contracts-3874` verify real translation-unit instructions/full relocations, 3 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

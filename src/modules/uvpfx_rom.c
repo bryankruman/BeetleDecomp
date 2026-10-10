@@ -160,42 +160,42 @@ s32 uvPfxAcquireInactiveByKind(s32 kind) {
 #line 148 "src/modules/uvpfx_rom.c"
 
 extern f32 D_uvpfx_rom_00404D44;
-s32 func_uvpfx_rom_00400398(s32 arg0) {
-    UnkStruct_uvpfx_rom_00404FA0_unk0 *a1;
-    s32 sp28;
-    s32 var_a3;
-    UnkStruct_uvpfx_rom_00404FA0_unk4 *temp_v1;
-    f32 var_fv1;
-    s32 i;
+s32 func_uvpfx_rom_00400398(s32 requestedKey) { /* Scan the captured record count for the requested signed definition key. Prefer the last matching zero halfword at state offset 0x24; otherwise use the first strict maximum of state float 0x08 above the initial sentinel, then dispatch the selected record reset by definition kind. */
+    UnkStruct_uvpfx_rom_00404FA0_unk0 *definition;
+    s32 greatestValueIndex;
+    s32 selectedIndex;
+    UnkStruct_uvpfx_rom_00404FA0_unk4 *state;
+    f32 greatestValue;
+    s32 effectIndex;
 
-    var_a3 = -1;
-    var_fv1 = D_uvpfx_rom_00404D44 /* -2000000.0f */;
+    selectedIndex = -1;
+    greatestValue = D_uvpfx_rom_00404D44 /* -2000000.0f */;
     
-    for (i = 0; i < D_uvpfx_rom_00404FA8; i++) {
-        a1 = D_uvpfx_rom_00404FA0[i].unk0;
-        temp_v1 = D_uvpfx_rom_00404FA0[i].unk4;
-        if (arg0 == a1->unk2) {
-            if (var_fv1 < temp_v1->unk8) {
-                var_fv1 = temp_v1->unk8;
-                sp28 = i;
+    for (effectIndex = 0; effectIndex < D_uvpfx_rom_00404FA8; effectIndex++) {
+        definition = D_uvpfx_rom_00404FA0[effectIndex].unk0;
+        state = D_uvpfx_rom_00404FA0[effectIndex].unk4;
+        if (requestedKey == definition->unk2) {
+            if (greatestValue < state->unk8) {
+                greatestValue = state->unk8;
+                greatestValueIndex = effectIndex;
             }
-            if (temp_v1->unk24 == 0) {
-                var_a3 = i;
+            if (state->unk24 == 0) {
+                selectedIndex = effectIndex;
             }
         }
     }
-    if (var_a3 < 0) {
-        var_a3 = sp28;
+    if (selectedIndex < 0) {
+        selectedIndex = greatestValueIndex;
     }
     
-    a1 = D_uvpfx_rom_00404FA0[var_a3].unk0;
-    if (a1->unk4 == 1) {
-        uvPfxResetTypeOneState(var_a3);
+    definition = D_uvpfx_rom_00404FA0[selectedIndex].unk0;
+    if (definition->unk4 == 1) {
+        uvPfxResetTypeOneState(selectedIndex);
     } else {
-        uvPfxResetTypeTwoState(var_a3);
+        uvPfxResetTypeTwoState(selectedIndex);
     }
-    return var_a3;
-}
+    return selectedIndex;
+/* RE_UNKNOWN: A valid matching definition and a written fallback index are assumed by the native body. Empty scans, null definitions, values not exceeding the sentinel and NaNs can leave the fallback index unwritten; allocation and field meaning remain unproved. */ }
 
 #line 187 "src/modules/uvpfx_rom.c"
 /* Copy the supplied matrix into the selected effect state. RE_UNKNOWN: effect index,
