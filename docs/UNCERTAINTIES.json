@@ -366,7 +366,7 @@
     "src/modules/spray.c": "3a6a7bc4a0e1ce4845a751557b3d1802799b878be200aeced8a2fe09d0221a1f",
     "src/modules/tdata.c": "101fe5628ca156a57fb08248f1a567862ee709e59fce2e1f2dc3115d18185c30",
     "src/modules/ted.c": "f151bb01b724425e01a04df175f9a2a7df9dcaa4149e54482211f422e58b769c",
-    "src/modules/track1.c": "0556fb4aabcd27b156ca9f36a0e285d6da22fd54a581c1a113e6bd0c7d841378",
+    "src/modules/track1.c": "9f42d96faa7326620c3e65bb88db347e5203a3fab9e952c1f5ffb4e793a7097b",
     "src/modules/track2.c": "cc484d92c7b2699434f673c268e92d060474552e04aa70fab1b45939c406ebc3",
     "src/modules/track3.c": "d791b6616a5ec2413ef8e2c636e0a255b1a97751fb3f0528c42f715615bcb218",
     "src/modules/track4.c": "589ceab566fbbd17131d7ac7ce94244d59ee86699583c46f62f2f81819b0d107",
@@ -386,7 +386,7 @@
     "src/modules/uvcolor_rom.c": "1ab5fe18292fe69dfc37467c523cf93cd2f45f38218f821731c0ee9e4cd698fb",
     "src/modules/uvcont_rom.c": "7e2bfec28bdb1921f0d141f3f9ae8d59a1a3640164b8345d2cc6f7d6b264103c",
     "src/modules/uvcontourld_rom.c": "213aadd783750bac46c8961530c2cb8553a56d154fab7bf36d097d7d585a15d5",
-    "src/modules/uvdbg_rom.c": "4ddd0efed14387bb6e822a439c0903a54671a7496d8d2dce153a9b06f3d0887e",
+    "src/modules/uvdbg_rom.c": "2d38d31059a5011be9f4b572779a19755b25a5ba02358e9ab20086af8b787091",
     "src/modules/uvdgeom_rom.c": "6fb52252f88afc60e053a4213e19fdebd44296f68d23ef8116e80f6460503ace",
     "src/modules/uvdobj_rom.c": "e976d674c6ade4f3e72a981e0dd5067a529cb5e824edccbd28148f1d9e1f3efb",
     "src/modules/uvdsetld_rom.c": "274d09695ac5beb2913e83e67baba614f43b5f52001c6d62c18a22bee027edf4",
@@ -408,7 +408,7 @@
     "src/modules/uvimtx_rom.c": "5e219312b182bbfbd43795ff8359542e6909be47a6416c4470c8ab071aa0b02c",
     "src/modules/uvintersect_rom.c": "c6ddf7edc61bcd4ee281b519034d98f779a6268f3e21bd2e70a77393951e2523",
     "src/modules/uvisect_rom.c": "4edc352b5ed85cc01e783aa37afed966e70ea822da933341d27c358fe0eebe6f",
-    "src/modules/uvjanim_rom.c": "51e36fdbe99283a1561a9e4d03232b9dc890042bf2502c00f6f43bd5cf79b306",
+    "src/modules/uvjanim_rom.c": "95a464dee84ddc7a37ee929d4e9380a7f6a03803ee3cd25ae6a44bc73830216a",
     "src/modules/uvjanimld_rom.c": "c9c56d3aa9e0c809d838b7194c89ac03ffe5f53cbcf5a3bdb2b6a0516953d7e1",
     "src/modules/uvled_rom.c": "b6791573015515d6d67a778e8b9a834783f13a18a1e9d7ac6b6b79fbe8060bee",
     "src/modules/uvlight_rom.c": "f65988f44a625ec4e76be6b20f88821b1768fbec95fdc53c1ab7bb4ef0c384cf",
@@ -441,8 +441,8 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "4ea513f9c126e1190a877c99cfedf7f919f4da7389227d626ff64e484389ad56",
-    "docs/VALIDATION_20261006.md": "8320cac72366f10f58b9b5378648356f5080886dda22bb8e1c5b3c956e3e1b8b"
+    "docs/STRATEGY_V4.md": "f5bbf61894e29f2556637115515a666467e9315ba55c7b8c490c0f4de4a11b6f",
+    "docs/VALIDATION_20261006.md": "e7c9338d17bed53983d8e191d85290fd16f2c4c9b2958c057ec869bc9f99c331"
   },
   "counts": {
     "address_function": 906,

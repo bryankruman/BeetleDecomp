@@ -1233,7 +1233,7 @@ void uvDbgDispatchMemoryOverlay(u8 context, u8 mode) {
 #line 1051 "src/modules/uvdbg_rom.c"
 
 #line 1052 "src/modules/uvdbg_rom.c"
-/* Forward to the original resource-statistics routine. */
+/* Forward to the render-stage duration display. */
 void uvDbgDrawResourceStatistics(void) {
     uvDbgPrintRenderStageDurations();
 }

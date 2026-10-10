@@ -640,8 +640,8 @@ void uvJanimSamplePoseAcrossTwoNormalizedAxes(UnkStruct_UvJanim_rom_00400144 *po
 #line 605 "src/modules/uvjanim_rom.c"
 
 #line 606 "src/modules/uvjanim_rom.c"
-/* Write joint matrices from the supplied quaternion/joint-ID arrays
- * and store the returned count in the original pose state. */
+/* Extract joint quaternions and joint IDs from the object matrices
+ * into the supplied pose arrays, then store the returned count. */
 void uvJanimWriteJointMatrices(s32 objectId, UnkStruct_uvjanim_rom_00401704 *pose) {
     s32 rotations;
     s32 jointIds;
