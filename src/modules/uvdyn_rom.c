@@ -2099,6 +2099,9 @@ void uvDynBindGlobalScalarAndResetCounts(void) {
 }
 #line 533 "src/modules/uvdyn_rom.c"
 
+/* RE_UNKNOWN: Allocation failure, registry extent/count overflow and ownership
+ * are unchecked. Registration precedes both opaque BD14 property calls;
+ * those calls do not establish the collection's gameplay lifecycle here. */
 #line 534 "src/modules/uvdyn_rom.c"
 /* Allocate and zero the original 0xF7A4-byte collection, append it to the
  * registry, and initialize properties zero and one. Preserve the original
@@ -2116,50 +2119,59 @@ DynLinkedCollection *uvDynCreateCollection(void) {
 }
 #line 535 "src/modules/uvdyn_rom.c"
 
+/* RE_UNKNOWN: BD14 runs before the registry-count snapshot. Only a found
+ * entry is freed; separately allocated work buffers are not explicitly freed
+ * here. Nested cleanup, ownership and repeat-destruction validity are unproved. */
 #line 536 "src/modules/uvdyn_rom.c"
 /* Set collection property zero to zero, find its registry entry, free the
  * collection and compact later pointers/indices. An absent entry is not freed.
  * Preserve the original separate 16-bit loops and live count reloads. This routine
  * makes no explicit frees of the collection's separately allocated work buffers. */
 void uvDynDestroyCollection(DynLinkedCollection *collection) {
-    u16 index;
-    u16 shiftIndex;
-    s32 count;
+    u16 registryScanIndex;
+    u16 registryShiftIndex;
+    s32 registryCountSnapshot;
     func_uvdyn_rom_0040BD14(collection, 0, 0.0f);
-    count = D_uvdyn_rom_00411F18;
-    for (index = 0; index < count; index++) {
-        if (collection == D_uvdyn_rom_00411EC8[index]) {
+    registryCountSnapshot = D_uvdyn_rom_00411F18;
+    for (registryScanIndex = 0; registryScanIndex < registryCountSnapshot; registryScanIndex++) {
+        if (collection == D_uvdyn_rom_00411EC8[registryScanIndex]) {
             break;
         }
     }
-    if (index != count) {
+    if (registryScanIndex != registryCountSnapshot) {
         _uvMemFree(collection);
         D_uvdyn_rom_00411F18--;
-        for (shiftIndex = index; shiftIndex < D_uvdyn_rom_00411F18; shiftIndex++) {
-            D_uvdyn_rom_00411EC8[shiftIndex] = D_uvdyn_rom_00411EC8[shiftIndex + 1];
-            D_uvdyn_rom_00411EC8[shiftIndex]->registryIndex = shiftIndex;
+        for (registryShiftIndex = registryScanIndex; registryShiftIndex < D_uvdyn_rom_00411F18; registryShiftIndex++) {
+            D_uvdyn_rom_00411EC8[registryShiftIndex] = D_uvdyn_rom_00411EC8[registryShiftIndex + 1];
+            D_uvdyn_rom_00411EC8[registryShiftIndex]->registryIndex = registryShiftIndex;
         }
     }
 }
 #line 537 "src/modules/uvdyn_rom.c"
 
+/* RE_UNKNOWN: Allocation failure and repeated initialization are unchecked;
+ * old work storage is overwritten without an explicit release here. Twenty
+ * rows of 0x50 bytes are observed, not a general ownership/lifecycle guarantee. */
 #line 538 "src/modules/uvdyn_rom.c"
 /* Allocate the collection's two 80-byte work buffers and twenty zeroed
  * 80-byte rows, then set its work flag. The original does not check allocation
  * results or release previous buffers; callers must satisfy its init contract. */
 void uvDynAllocateCollectionWorkBuffers(DynLinkedCollection *collection) {
-    u16 index;
+    u16 workRowIndex;
     collection->workCount = 0;
     collection->workBuffer = _uvMemAllocAlign8(0x50);
     collection->workRows = _uvMemAllocAlign8(0x50);
-    for (index = 0; index < 20; index++) {
-        collection->workRows[index] = _uvMemAllocAlign8(0x50);
-        uvMemSet(collection->workRows[index], 0, 0x50);
+    for (workRowIndex = 0; workRowIndex < 20; workRowIndex++) {
+        collection->workRows[workRowIndex] = _uvMemAllocAlign8(0x50);
+        uvMemSet(collection->workRows[workRowIndex], 0, 0x50);
     }
     collection->workFlag = 1;
 }
 #line 539 "src/modules/uvdyn_rom.c"
 
+/* RE_UNKNOWN: The middle C570 helper's effects remain opaque. Preserve the
+ * transforms/C570/resets call order and argument reloads without assigning
+ * a physical integration role or assuming the calls cannot mutate members. */
 #line 540 "src/modules/uvdyn_rom.c"
 /* Update member transforms, execute the original collection work helper,
  * then reset member state in the observed order. The middle helper remains
@@ -2192,6 +2204,9 @@ f32 uvDynGetCollectionScalarProperty(DynLinkedCollection *collection, s32 proper
 }
 #line 549 "src/modules/uvdyn_rom.c"
 
+/* RE_UNKNOWN: value04 meaning, valid signed counts and storage capacity are
+ * unproved. Duplicate identity exits before insertion; the first value04
+ * other than -1 chooses the insertion point. This helper adds no bound check. */
 #line 550 "src/modules/uvdyn_rom.c"
 /* Insert a unique node before the first member whose value04 is not -1,
  * or append if none qualifies. Preserve member order while shifting the tail.
@@ -2199,41 +2214,44 @@ f32 uvDynGetCollectionScalarProperty(DynLinkedCollection *collection, s32 proper
  * the association setter rejects a destination count of ten. */
 void uvDynInsertUniqueLinkedNode(DynLinkedCollection *collection, DynLinkedNode *node) {
     s32 insertionIndex;
-    s32 index;
+    s32 memberIndex;
     insertionIndex = collection->count;
-    for (index = 0; index < collection->count; index++) {
-        if (node == collection->members[index]) {
+    for (memberIndex = 0; memberIndex < collection->count; memberIndex++) {
+        if (node == collection->members[memberIndex]) {
             return;
         }
-        if (insertionIndex == collection->count && collection->members[index]->value04 != -1) {
-            insertionIndex = index;
+        if (insertionIndex == collection->count && collection->members[memberIndex]->value04 != -1) {
+            insertionIndex = memberIndex;
         }
     }
-    for (index = collection->count - 1; index >= insertionIndex; index--) {
-        collection->members[index + 1] = collection->members[index];
+    for (memberIndex = collection->count - 1; memberIndex >= insertionIndex; memberIndex--) {
+        collection->members[memberIndex + 1] = collection->members[memberIndex];
     }
     collection->members[insertionIndex] = node;
     collection->count++;
 }
 #line 551 "src/modules/uvdyn_rom.c"
 
+/* RE_UNKNOWN: Member validity, capacity and signed-count/u16-index domains
+ * remain caller contracts. Preserve first-match removal and the count reload
+ * while shifting; an absent pointer leaves the collection unchanged. */
 #line 552 "src/modules/uvdyn_rom.c"
 /* Remove the first matching node and compact the remaining members.
  * Both scans use the original 16-bit index; the shifting loop reloads the count.
  * An absent node leaves the collection unchanged. */
 void uvDynRemoveLinkedNode(DynLinkedCollection *collection, DynLinkedNode *node) {
     s32 foundIndex;
-    u16 index;
+    u16 memberIndex;
     foundIndex = -1;
-    for (index = 0; index < collection->count; index++) {
-        if (node == collection->members[index]) {
-            foundIndex = index;
+    for (memberIndex = 0; memberIndex < collection->count; memberIndex++) {
+        if (node == collection->members[memberIndex]) {
+            foundIndex = memberIndex;
             break;
         }
     }
     if (foundIndex != -1) {
-        for (index = foundIndex; index < collection->count - 1; index++) {
-            collection->members[index] = collection->members[index + 1];
+        for (memberIndex = foundIndex; memberIndex < collection->count - 1; memberIndex++) {
+            collection->members[memberIndex] = collection->members[memberIndex + 1];
         }
         collection->count--;
     }
@@ -2282,39 +2300,46 @@ void uvDynRemoveSecondaryValue(DynSecondaryCollection *collection, void *value) 
 }
 #line 557 "src/modules/uvdyn_rom.c"
 
+/* RE_UNKNOWN: Both member views address one containing collection, without
+ * proving historical whole-object types/capacities. Counts and the shared
+ * scalar pointer/value are reloaded after calls. Coordinate frames, scalar
+ * units/lifetime and nested update effects remain unresolved. */
 #line 558 "src/modules/uvdyn_rom.c"
 /* Rebuild each linked node's matrix at 0x136C and run its original follow-up
  * update. Then rebuild each secondary member's matrix at 0x98 and pass the
  * shared scalar to its update routine. Preserve 16-bit indices and count reloads;
  * the follow-up routines' broader gameplay meanings remain unresolved. */
 void uvDynUpdateCollectionMemberTransforms(DynLinkedCollection *collection) {
-    DynResetState *node;
-    DynSecondaryState *secondary;
-    u16 index;
-    for (index = 0; index < collection->count; index++) {
-        node = (DynResetState *)collection->members[index];
-        uvDynComposeRelativeTransform(&node->matrix136C, &node->matrix12EC, &node->matrix132C);
-        uvDynApplyTranslatedDobjTransform(node);
+    DynResetState *linkedMember;
+    DynSecondaryState *secondaryMember;
+    u16 memberIndex;
+    for (memberIndex = 0; memberIndex < collection->count; memberIndex++) {
+        linkedMember = (DynResetState *)collection->members[memberIndex];
+        uvDynComposeRelativeTransform(&linkedMember->matrix136C, &linkedMember->matrix12EC, &linkedMember->matrix132C);
+        uvDynApplyTranslatedDobjTransform(linkedMember);
     }
-    for (index = 0; index < ((DynSecondaryCollection *)collection)->count; index++) {
-        secondary = ((DynSecondaryCollection *)collection)->members[index];
-        uvDynComposeRelativeTransform(&secondary->matrix98, &secondary->matrix18, &secondary->matrix58);
-        uvDynUpdateSecondaryStateOnce(secondary, *D_uvdyn_rom_00411DB8);
+    for (memberIndex = 0; memberIndex < ((DynSecondaryCollection *)collection)->count; memberIndex++) {
+        secondaryMember = ((DynSecondaryCollection *)collection)->members[memberIndex];
+        uvDynComposeRelativeTransform(&secondaryMember->matrix98, &secondaryMember->matrix18, &secondaryMember->matrix58);
+        uvDynUpdateSecondaryStateOnce(secondaryMember, *D_uvdyn_rom_00411DB8);
     }
 }
 #line 559 "src/modules/uvdyn_rom.c"
 
+/* RE_UNKNOWN: Reset names identify the invoked helpers, not a complete
+ * lifecycle guarantee. Preserve linked-before-secondary order, u16 iteration
+ * and live count reads; member validity and callback mutation are unproved. */
 #line 560 "src/modules/uvdyn_rom.c"
 /* Run the original per-member state reset for each linked node, then each
  * secondary value. Both collections are views of the same containing object;
  * the original 16-bit loops re-read their counts after each external call. */
 void uvDynResetCollectionMemberState(DynLinkedCollection *collection) {
-    u16 index;
-    for (index = 0; index < collection->count; index++) {
-        uvDynResetLinkedNodeState((DynResetState *)collection->members[index]);
+    u16 memberIndex;
+    for (memberIndex = 0; memberIndex < collection->count; memberIndex++) {
+        uvDynResetLinkedNodeState((DynResetState *)collection->members[memberIndex]);
     }
-    for (index = 0; index < ((DynSecondaryCollection *)collection)->count; index++) {
-        uvDynResetSecondaryState(((DynSecondaryCollection *)collection)->members[index]);
+    for (memberIndex = 0; memberIndex < ((DynSecondaryCollection *)collection)->count; memberIndex++) {
+        uvDynResetSecondaryState(((DynSecondaryCollection *)collection)->members[memberIndex]);
     }
 }
 #line 561 "src/modules/uvdyn_rom.c"
@@ -2417,45 +2442,51 @@ void uvDynBindGlobalScalarAndClearFlag(void) {
 }
 #line 588 "src/modules/uvdyn_rom.c"
 
+/* RE_UNKNOWN: The observed 0x1A8 allocation is registered before matrix
+ * initialization. Allocation failure, registry capacity/overflow, ownership
+ * and the physical meanings of the secondary fields remain unchecked. */
 #line 589 "src/modules/uvdyn_rom.c"
 /* Allocate and zero the original 0x1A8-byte secondary state, register it,
  * initialize matrices 0x18 and 0xD8 to identity and explicitly clear scalar 0x134.
  * Preserve the original unchecked allocation and registry-capacity contract. */
 DynSecondaryState *uvDynCreateSecondaryState(void) {
-    DynSecondaryState *state;
-    state = _uvMemAllocAlign8(sizeof(DynSecondaryState));
-    uvMemSet(state, 0, sizeof(DynSecondaryState));
-    D_uvdyn_rom_00411DF0[D_uvdyn_rom_00411E68] = state;
-    state->registryIndex = D_uvdyn_rom_00411E68;
+    DynSecondaryState *secondaryState;
+    secondaryState = _uvMemAllocAlign8(sizeof(DynSecondaryState));
+    uvMemSet(secondaryState, 0, sizeof(DynSecondaryState));
+    D_uvdyn_rom_00411DF0[D_uvdyn_rom_00411E68] = secondaryState;
+    secondaryState->registryIndex = D_uvdyn_rom_00411E68;
     D_uvdyn_rom_00411E68++;
-    D_uvdyn_rom_00411F70->uvMat4SetIdentity(&state->matrix18);
-    D_uvdyn_rom_00411F70->uvMat4SetIdentity(&state->matrixD8);
-    state->value134 = 0.0f;
-    return state;
+    D_uvdyn_rom_00411F70->uvMat4SetIdentity(&secondaryState->matrix18);
+    D_uvdyn_rom_00411F70->uvMat4SetIdentity(&secondaryState->matrixD8);
+    secondaryState->value134 = 0.0f;
+    return secondaryState;
 }
 #line 590 "src/modules/uvdyn_rom.c"
 
+/* RE_UNKNOWN: Collection removal precedes the registry-count snapshot. This
+ * function does not free the state, and unregistering does not prove ownership
+ * transfer. Preserve u16 scans and the live count during pointer compaction. */
 #line 591 "src/modules/uvdyn_rom.c"
 /* Clear collection membership, find this state in the global registry, and
  * compact later pointers while repairing their registry indices. Preserve
  * separate original 16-bit scan and shift indices. This routine does not free
  * the state; an absent registry entry leaves the registry unchanged. */
-void uvDynUnregisterSecondaryState(DynSecondaryState *state) {
-    u16 index;
-    u16 shiftIndex;
-    s32 count;
-    uvDynSetSecondaryCollection(state, NULL);
-    count = D_uvdyn_rom_00411E68;
-    for (index = 0; index < count; index++) {
-        if (state == D_uvdyn_rom_00411DF0[index]) {
+void uvDynUnregisterSecondaryState(DynSecondaryState *secondaryState) {
+    u16 registryScanIndex;
+    u16 registryShiftIndex;
+    s32 registryCountSnapshot;
+    uvDynSetSecondaryCollection(secondaryState, NULL);
+    registryCountSnapshot = D_uvdyn_rom_00411E68;
+    for (registryScanIndex = 0; registryScanIndex < registryCountSnapshot; registryScanIndex++) {
+        if (secondaryState == D_uvdyn_rom_00411DF0[registryScanIndex]) {
             break;
         }
     }
-    if (index != count) {
+    if (registryScanIndex != registryCountSnapshot) {
         D_uvdyn_rom_00411E68--;
-        for (shiftIndex = index; shiftIndex < D_uvdyn_rom_00411E68; shiftIndex++) {
-            D_uvdyn_rom_00411DF0[shiftIndex] = D_uvdyn_rom_00411DF0[shiftIndex + 1];
-            D_uvdyn_rom_00411DF0[shiftIndex]->registryIndex = shiftIndex;
+        for (registryShiftIndex = registryScanIndex; registryShiftIndex < D_uvdyn_rom_00411E68; registryShiftIndex++) {
+            D_uvdyn_rom_00411DF0[registryShiftIndex] = D_uvdyn_rom_00411DF0[registryShiftIndex + 1];
+            D_uvdyn_rom_00411DF0[registryShiftIndex]->registryIndex = registryShiftIndex;
         }
     }
 }
@@ -2486,33 +2517,39 @@ void uvDynCopySecondaryCompanionFields(DynSecondaryState *state) {
 }
 #line 596 "src/modules/uvdyn_rom.c"
 
+/* RE_UNKNOWN: Selector/value domains and physical units are unproved. Keep
+ * selector 0's signed-word conversion and selector 9's unsigned-word then
+ * halfword truncation; NaN/out-of-range conversion behavior is not repaired. */
 #line 597 "src/modules/uvdyn_rom.c"
 /* Scalar property zero converts to the opaque signed value at 0x0C;
  * property nine converts through the original unsigned-word/signed-halfword
  * sequence into the 16-bit kind. Null and unsupported properties do nothing. */
-void uvDynSetSecondaryScalarProperty(DynSecondaryState *state, s32 property, f32 value) {
+void uvDynSetSecondaryScalarProperty(DynSecondaryState *state, s32 selector, f32 inputValue) {
     if (state != NULL) {
-        switch (property) {
+        switch (selector) {
             case 0:
-                state->value0C = (s32)value;
+                state->value0C = (s32)inputValue;
                 return;
             case 9:
-                state->kind = (s16)(u32)value;
+                state->kind = (s16)(u32)inputValue;
                 break;
         }
     }
 }
 #line 609 "src/modules/uvdyn_rom.c"
 
+/* RE_UNKNOWN: The -1.0 return does not establish an error protocol or valid
+ * scalar domain. Preserve signed word0C versus unsigned halfword4 conversion;
+ * selector meanings and physical units remain unresolved. */
 #line 610 "src/modules/uvdyn_rom.c"
 /* Property zero converts the signed value at 0x0C to float; property nine
  * converts the unsigned 16-bit kind. Null or unsupported properties return -1.
  * More specific meanings of the value and kind remain unresolved. */
-f32 uvDynGetSecondaryScalarProperty(DynSecondaryState *state, s32 property) {
+f32 uvDynGetSecondaryScalarProperty(DynSecondaryState *state, s32 selector) {
     if (state == NULL) {
         return -1.0f;
     }
-    switch (property) {
+    switch (selector) {
         case 0:
             return state->value0C;
         case 9:
@@ -2523,41 +2560,44 @@ f32 uvDynGetSecondaryScalarProperty(DynSecondaryState *state, s32 property) {
 }
 #line 611 "src/modules/uvdyn_rom.c"
 
+/* RE_UNKNOWN: Vector frames/units, overlap and the length/threshold domains
+ * are unproved. Keep the by-value vector ABI and strict double comparisons:
+ * unordered values use the matrix helper. Selectors 7/8 require kind zero. */
 #line 612 "src/modules/uvdyn_rom.c"
 /* Set secondary vector properties 2, 3, 7 and 8 from a vector passed by value.
  * Property 2 stores vector194, caches its length at 0x134 and runs the original
  * matrix export. Property 3 updates translation and the related vector cache;
  * the strict double-threshold predicate preserves its original NaN path.
  * Properties 7 and 8 only change kind-zero states; other cases do nothing. */
-void uvDynSetSecondaryVectorProperty(DynSecondaryState *state, s32 property, Vec3F vector) {
+void uvDynSetSecondaryVectorProperty(DynSecondaryState *state, s32 selector, Vec3F inputVector) {
     if (state == NULL) {
         return;
     }
-    switch (property) {
+    switch (selector) {
         case 2:
-            D_uvdyn_rom_00411F74->uvVec3FCopy(&state->vector194, &vector);
+            D_uvdyn_rom_00411F74->uvVec3FCopy(&state->vector194, &inputVector);
             state->value134 = D_uvdyn_rom_00411F74->uvVec3FLen(&state->vector194);
             D_uvdyn_rom_00411F70->uvMat4TransformPoint(&state->matrix18, &state->vector118, &state->vector194);
             break;
         case 3:
-            state->matrix18.xw = vector.x;
-            state->matrix18.yw = vector.y;
-            state->matrix18.zw = vector.z;
+            state->matrix18.xw = inputVector.x;
+            state->matrix18.yw = inputVector.y;
+            state->matrix18.zw = inputVector.z;
             if (!(state->value134 < D_uvdyn_rom_00411D38 && D_uvdyn_rom_00411D40 < state->value134)) {
                 D_uvdyn_rom_00411F70->uvMat4TransformPoint(&state->matrix18, &state->vector118, &state->vector194);
             } else {
-                D_uvdyn_rom_00411F74->uvVec3FCopy(&state->vector118, &vector);
+                D_uvdyn_rom_00411F74->uvVec3FCopy(&state->vector118, &inputVector);
 
             }
             break;
         case 7:
             if (state->kind == 0) {
-                D_uvdyn_rom_00411F74->uvVec3FCopy(&state->vector14C, &vector);
+                D_uvdyn_rom_00411F74->uvVec3FCopy(&state->vector14C, &inputVector);
             }
             break;
         case 8:
             if (state->kind == 0) {
-                D_uvdyn_rom_00411F74->uvVec3FCopy(&state->vector17C, &vector);
+                D_uvdyn_rom_00411F74->uvVec3FCopy(&state->vector17C, &inputVector);
             }
             break;
     }
@@ -2582,46 +2622,53 @@ void uvDynSetSecondaryVectorProperty(DynSecondaryState *state, s32 property, Vec
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00411300.s")
 #line 615 "src/modules/uvdyn_rom.c"
 
+/* RE_ORIGINAL_QUIRK: Unlike the setter, selectors 7/8 have no kind-zero gate.
+ * RE_UNKNOWN: Null/unsupported selectors leave output untouched; output
+ * validity, allowed overlap and vector frames/units remain caller contracts. */
 #line 616 "src/modules/uvdyn_rom.c"
 /* Copy secondary vector properties 2, 7 and 8 through the vector export;
  * property 3 reads matrix18's translation components directly. A null state or
  * unsupported property leaves the output unchanged. */
-void uvDynGetSecondaryVectorProperty(DynSecondaryState *state, s32 property, Vec3F *output) {
+void uvDynGetSecondaryVectorProperty(DynSecondaryState *state, s32 selector, Vec3F *outputVector) {
     if (state == NULL) {
         return;
     }
-    switch (property) {
+    switch (selector) {
         case 2:
-            D_uvdyn_rom_00411F74->uvVec3FCopy(output, &state->vector194);
+            D_uvdyn_rom_00411F74->uvVec3FCopy(outputVector, &state->vector194);
             break;
         case 3:
-            output->x = state->matrix18.xw;
-            output->y = state->matrix18.yw;
-            output->z = state->matrix18.zw;
+            outputVector->x = state->matrix18.xw;
+            outputVector->y = state->matrix18.yw;
+            outputVector->z = state->matrix18.zw;
             break;
         case 7:
-            D_uvdyn_rom_00411F74->uvVec3FCopy(output, &state->vector14C);
+            D_uvdyn_rom_00411F74->uvVec3FCopy(outputVector, &state->vector14C);
             break;
         case 8:
-            D_uvdyn_rom_00411F74->uvVec3FCopy(output, &state->vector17C);
+            D_uvdyn_rom_00411F74->uvVec3FCopy(outputVector, &state->vector17C);
             break;
     }
 }
 #line 617 "src/modules/uvdyn_rom.c"
 
+/* RE_UNKNOWN: Selector 4 consumes only the temporary's linear components;
+ * no whole-matrix initialization or general inverse is established. Preserve
+ * partial copies, distinct double thresholds, NaN paths and callback order.
+ * Matrix domains, coordinate frames and caller overlap remain unresolved. */
 #line 618 "src/modules/uvdyn_rom.c"
 /* Matrix properties 3 and 4 synchronize the secondary transform pair,
  * refresh vector118 and set the copy flag. Property 4 uses a temporary matrix
  * for the exported conversion. Preserve strict double near-zero comparisons:
  * NaN takes the exported vector-update path. Null/unsupported properties do nothing. */
-void uvDynSetSecondaryMatrixProperty(DynSecondaryState *state, s32 property, Mtx4F *input) {
-    Mtx4F temporary;
+void uvDynSetSecondaryMatrixProperty(DynSecondaryState *state, s32 selector, Mtx4F *inputMatrix) {
+    Mtx4F linearTranspose;
     if (state == NULL) {
         return;
     }
-    switch (property) {
+    switch (selector) {
         case 3:
-            D_uvdyn_rom_00411F70->uvMat4FCopy(&state->matrix18, input);
+            D_uvdyn_rom_00411F70->uvMat4FCopy(&state->matrix18, inputMatrix);
             if (!(state->value134 < D_uvdyn_rom_00411D68 && D_uvdyn_rom_00411D70 < state->value134)) {
                 D_uvdyn_rom_00411F70->uvMat4TransformPoint(&state->matrix18, &state->vector118, &state->vector194);
             } else {
@@ -2633,9 +2680,9 @@ void uvDynSetSecondaryMatrixProperty(DynSecondaryState *state, s32 property, Mtx
             state->copyFlag = 1;
             break;
         case 4:
-            D_uvdyn_rom_00411F70->uvMat4CopyLinear3x3(&state->matrixD8, input);
-            D_uvdyn_rom_00411F70->uvMat4TransposeLinear3x3PreservingRest(&temporary, &state->matrixD8);
-            D_uvdyn_rom_00411F70->uvMat4CopyLinear3x3(&state->matrix18, &temporary);
+            D_uvdyn_rom_00411F70->uvMat4CopyLinear3x3(&state->matrixD8, inputMatrix);
+            D_uvdyn_rom_00411F70->uvMat4TransposeLinear3x3PreservingRest(&linearTranspose, &state->matrixD8);
+            D_uvdyn_rom_00411F70->uvMat4CopyLinear3x3(&state->matrix18, &linearTranspose);
             if (!(state->value134 < D_uvdyn_rom_00411D78 && D_uvdyn_rom_00411D80 < state->value134)) {
                 D_uvdyn_rom_00411F70->uvMat4TransformPoint(&state->matrix18, &state->vector118, &state->vector194);
             } else {
@@ -2669,21 +2716,24 @@ s32 func_uvdyn_rom_00411644(s32 arg0, s32 arg1) {
     return sp4;
 }
 
+/* RE_UNKNOWN: Null/unsupported selectors leave output untouched. The three
+ * source matrices' coordinate frames and lifecycle roles are unproved; valid
+ * output storage and overlap remain caller contracts for the copy helper. */
 #line 640 "src/modules/uvdyn_rom.c"
 /* Copy the selected secondary-state matrix: property three selects 0x18,
  * four selects 0xD8 and five selects 0x98. Null states or unsupported properties
  * leave output unchanged; the original requires a valid output when copying. */
-void uvDynGetSecondaryMatrixProperty(DynSecondaryState *state, s32 property, Mtx4F *output) {
+void uvDynGetSecondaryMatrixProperty(DynSecondaryState *state, s32 selector, Mtx4F *outputMatrix) {
     if (state != NULL) {
-        switch (property) {
+        switch (selector) {
             case 3:
-                D_uvdyn_rom_00411F70->uvMat4FCopy(output, &state->matrix18);
+                D_uvdyn_rom_00411F70->uvMat4FCopy(outputMatrix, &state->matrix18);
                 break;
             case 4:
-                D_uvdyn_rom_00411F70->uvMat4FCopy(output, &state->matrixD8);
+                D_uvdyn_rom_00411F70->uvMat4FCopy(outputMatrix, &state->matrixD8);
                 break;
             case 5:
-                D_uvdyn_rom_00411F70->uvMat4FCopy(output, &state->matrix98);
+                D_uvdyn_rom_00411F70->uvMat4FCopy(outputMatrix, &state->matrix98);
                 break;
         }
     }

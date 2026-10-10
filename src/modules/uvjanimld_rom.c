@@ -25,126 +25,131 @@ void uvJanimLdNoOpModuleCleanup(void) {
 #line 19 "src/modules/uvjanimld_rom.c"
 
 // uvJanimParse
-UvParsedAN *func_uvjanimld_rom_00400050(u8 *arg0) {
-    UvParsedAN *spA4;
-    UvParsedAN_2 *temp_v0_4;
-    s32 var_a0;
-    u32 sp98;
-    void *sp94;
-    void *sp90;
-    s32 sp8C;
-    s32 sp88;
-    UvParsedAN_2 *var_s6;
-    u32 var_v0;
-    void *sp7C;
-    s32 var_s3;
-    u8 sp77;
-    s32 s4, s7, v1;
-    u16 sp66;
+/* Parse COMM blocks into linked animation nodes and optional quaternion,
+ * offset-0x10 vector and offset-0x14 vector arrays, preserving entry flags
+ * and default component stores. RE_UNKNOWN: historical field meanings,
+ * complete input format and caller/storage lifetimes remain unproved. */
+#line 21 "src/modules/uvjanimld_rom.c"
+UvParsedAN *func_uvjanimld_rom_00400050(u8 *fileData) {
+    UvParsedAN *animation; /* RE_ORIGINAL_QUIRK: no COMM leaves this result uninitialized; RE_UNKNOWN: permitted block sequence. */
+    UvParsedAN_2 *newNode;
+    s32 lookupIndex;
+    u32 blockBytes; /* RE_UNKNOWN: stream bounds and provider failure contracts. */
+    void *blockData;
+    void *commBlock;
+    s32 fileId;
+    s32 nodeIndex;
+    UvParsedAN_2 *tailNode;
+    u32 blockTag;
+    void *cursor;
+    s32 entryIndex;
+    u8 channelFlags;
+    s32 hasVector10Entry, hasVector14Entry, hasQuaternionEntry;
+    u16 packedEntry;
 
-    var_s6 = NULL;
-    sp8C = uvFileReadHeader(arg0);
-    while ((var_v0 = uvFileReadBlock(sp8C, &sp98, &sp94, 1)) != 0) {
-        switch (var_v0) {
+    tailNode = NULL; /* RE_ORIGINAL_QUIRK: the tail persists across COMM blocks. */
+    fileId = uvFileReadHeader(fileData);
+    while ((blockTag = uvFileReadBlock(fileId, &blockBytes, &blockData, 1)) != 0) {
+        switch (blockTag) {
             case 'COMM':
-                sp90 = sp94;
-                sp7C = sp94;
-                spA4 = _uvMemAllocAlign8(sizeof(UvParsedAN));
-                uvConsumeBytes(&spA4->unk0, (u8 **) &sp7C, sizeof(u16));
-                uvConsumeBytes(&spA4->unk2, (u8 **) &sp7C, sizeof(u16));
-                uvConsumeBytes(&spA4->unk4, (u8 **) &sp7C, sizeof(u16));
-                uvConsumeBytes(spA4->unk8, (u8 **) &sp7C, sizeof(u8));
-                uvConsumeBytes(&spA4->unk9, (u8 **) &sp7C, sizeof(u8));
-                spA4->unk6 = spA4->unk2 / spA4->unk4;
-                for (sp88 = 0; sp88 < spA4->unk9; sp88++) {
-                    temp_v0_4 = _uvMemAllocAlign8(sizeof(UvParsedAN_2));
-                    if (var_s6 != NULL) {
-                        var_s6->unk0 = temp_v0_4;
-                        var_s6 = temp_v0_4;
+                commBlock = blockData;
+                cursor = blockData;
+                animation = _uvMemAllocAlign8(sizeof(UvParsedAN)); /* RE_UNKNOWN: allocation failure and partial-result ownership. */
+                uvConsumeBytes(&animation->unk0, (u8 **) &cursor, sizeof(u16));
+                uvConsumeBytes(&animation->unk2, (u8 **) &cursor, sizeof(u16));
+                uvConsumeBytes(&animation->unk4, (u8 **) &cursor, sizeof(u16));
+                uvConsumeBytes(animation->unk8, (u8 **) &cursor, sizeof(u8));
+                uvConsumeBytes(&animation->unk9, (u8 **) &cursor, sizeof(u8));
+                animation->unk6 = animation->unk2 / animation->unk4; /* RE_UNKNOWN: divisor validity; retain native divide/trap behavior. */
+                for (nodeIndex = 0; nodeIndex < animation->unk9; nodeIndex++) {
+                    newNode = _uvMemAllocAlign8(sizeof(UvParsedAN_2));
+                    if (tailNode != NULL) {
+                        tailNode->unk0 = newNode;
+                        tailNode = newNode;
                     } else {
-                        var_s6 = temp_v0_4;
-                        spA4->unkC = temp_v0_4;
+                        tailNode = newNode;
+                        animation->unkC = newNode;
                     }
-                    uvConsumeBytes(&var_s6->unk6, (u8 **) &sp7C, sizeof(u16));
-                    uvConsumeBytes(&var_s6->unk4, (u8 **) &sp7C, sizeof(u16));
-                    uvConsumeBytes(&sp77, (u8 **) &sp7C, sizeof(u8));
-                    var_s6->unk10 = NULL;
-                    var_s6->unk0 = NULL;
-                    var_s6->unk18 = NULL;
-                    var_s6->unk14 = NULL;
-                    var_s6->unk8 = 0;
-                    var_s6->unk1C = NULL;
-                    var_s6->unkC = _uvMemAllocAlign8(var_s6->unk6 * sizeof(u16));
-                    if (sp77 & 1) {
-                        var_s6->unk18 = _uvMemAllocAlign8(var_s6->unk6 * sizeof(Quat));
-                        var_s6->unk1C = _uvMemAllocAlign8(var_s6->unk6);
+                    uvConsumeBytes(&tailNode->unk6, (u8 **) &cursor, sizeof(u16));
+                    uvConsumeBytes(&tailNode->unk4, (u8 **) &cursor, sizeof(u16));
+                    uvConsumeBytes(&channelFlags, (u8 **) &cursor, sizeof(u8));
+                    tailNode->unk10 = NULL;
+                    tailNode->unk0 = NULL;
+                    tailNode->unk18 = NULL;
+                    tailNode->unk14 = NULL;
+                    tailNode->unk8 = 0;
+                    tailNode->unk1C = NULL;
+                    tailNode->unkC = _uvMemAllocAlign8(tailNode->unk6 * sizeof(u16));
+                    if (channelFlags & 1) {
+                        tailNode->unk18 = _uvMemAllocAlign8(tailNode->unk6 * sizeof(Quat));
+                        tailNode->unk1C = _uvMemAllocAlign8(tailNode->unk6);
                     }
-                    if (sp77 & 2) {
-                        var_s6->unk10 = _uvMemAllocAlign8(var_s6->unk6 * sizeof(Vec3F));
+                    if (channelFlags & 2) {
+                        tailNode->unk10 = _uvMemAllocAlign8(tailNode->unk6 * sizeof(Vec3F));
                     }
-                    if (sp77 & 4) {
-                        var_s6->unk14 = _uvMemAllocAlign8(var_s6->unk6 * sizeof(Vec3F));
+                    if (channelFlags & 4) {
+                        tailNode->unk14 = _uvMemAllocAlign8(tailNode->unk6 * sizeof(Vec3F));
                     }
-                    for (var_s3 = 0; var_s3 < var_s6->unk6; var_s3++) {
-                        uvConsumeBytes(&sp66, (u8 **) &sp7C, sizeof(u16));
-                        if (var_s6->unk1C != NULL) {
-                            var_s6->unk1C[var_s3] = (sp66 & 0x8000) != 0;
+                    for (entryIndex = 0; entryIndex < tailNode->unk6; entryIndex++) {
+                        uvConsumeBytes(&packedEntry, (u8 **) &cursor, sizeof(u16));
+                        if (tailNode->unk1C != NULL) {
+                            tailNode->unk1C[entryIndex] = (packedEntry & 0x8000) != 0;
                         }
-                        v1 = (sp66 & 0x4000) != 0;
-                        s4 = (sp66 & 0x2000) != 0;
-                        s7 = (sp66 & 0x1000) != 0;
-                        var_s6->unkC[var_s3] = sp66 & 0xFFF;
-                        if (v1) {
-                            uvConsumeBytes(&var_s6->unk18[var_s3].x, (u8 **) &sp7C, sizeof(f32));
-                            uvConsumeBytes(&var_s6->unk18[var_s3].y, (u8 **) &sp7C, sizeof(f32));
-                            uvConsumeBytes(&var_s6->unk18[var_s3].z, (u8 **) &sp7C, sizeof(f32));
-                            uvConsumeBytes(&var_s6->unk18[var_s3].w, (u8 **) &sp7C, sizeof(f32));
+                        hasQuaternionEntry = (packedEntry & 0x4000) != 0;
+                        hasVector10Entry = (packedEntry & 0x2000) != 0;
+                        hasVector14Entry = (packedEntry & 0x1000) != 0;
+                        tailNode->unkC[entryIndex] = packedEntry & 0xFFF;
+                        if (hasQuaternionEntry) { /* RE_UNKNOWN: entry bits must agree with allocated channel arrays. */
+                            uvConsumeBytes(&tailNode->unk18[entryIndex].x, (u8 **) &cursor, sizeof(f32));
+                            uvConsumeBytes(&tailNode->unk18[entryIndex].y, (u8 **) &cursor, sizeof(f32));
+                            uvConsumeBytes(&tailNode->unk18[entryIndex].z, (u8 **) &cursor, sizeof(f32));
+                            uvConsumeBytes(&tailNode->unk18[entryIndex].w, (u8 **) &cursor, sizeof(f32));
                         } else {
-                            if (var_s6->unk18 != NULL) {
-                                var_s6->unk18[var_s3].x = 0.0f;
-                                var_s6->unk18[var_s3].y = 0.0f;
-                                var_s6->unk18[var_s3].z = 0.0f;
-                                var_s6->unk18[var_s3].w = 1.0f;
+                            if (tailNode->unk18 != NULL) {
+                                tailNode->unk18[entryIndex].x = 0.0f;
+                                tailNode->unk18[entryIndex].y = 0.0f;
+                                tailNode->unk18[entryIndex].z = 0.0f;
+                                tailNode->unk18[entryIndex].w = 1.0f;
                             }
                         }
-                        if (s4) {
-                            uvConsumeBytes(&var_s6->unk10[var_s3].x, (u8 **) &sp7C, sizeof(f32));
-                            uvConsumeBytes(&var_s6->unk10[var_s3].y, (u8 **) &sp7C, sizeof(f32));
-                            uvConsumeBytes(&var_s6->unk10[var_s3].z, (u8 **) &sp7C, sizeof(f32));
+                        if (hasVector10Entry) {
+                            uvConsumeBytes(&tailNode->unk10[entryIndex].x, (u8 **) &cursor, sizeof(f32));
+                            uvConsumeBytes(&tailNode->unk10[entryIndex].y, (u8 **) &cursor, sizeof(f32));
+                            uvConsumeBytes(&tailNode->unk10[entryIndex].z, (u8 **) &cursor, sizeof(f32));
                         } else {
-                            if (var_s6->unk10 != NULL) {
-                                var_s6->unk10[var_s3].x = 0.0f;
-                                var_s6->unk10[var_s3].y = 0.0f;
-                                var_s6->unk10[var_s3].z = 0.0f;
+                            if (tailNode->unk10 != NULL) {
+                                tailNode->unk10[entryIndex].x = 0.0f;
+                                tailNode->unk10[entryIndex].y = 0.0f;
+                                tailNode->unk10[entryIndex].z = 0.0f;
                             }
                         }
-                        if (s7) {
-                            uvConsumeBytes(&var_s6->unk14[var_s3].x, (u8 **) &sp7C, sizeof(f32));
-                            uvConsumeBytes(&var_s6->unk14[var_s3].y, (u8 **) &sp7C, sizeof(f32));
-                            uvConsumeBytes(&var_s6->unk14[var_s3].z, (u8 **) &sp7C, sizeof(f32));
+                        if (hasVector14Entry) {
+                            uvConsumeBytes(&tailNode->unk14[entryIndex].x, (u8 **) &cursor, sizeof(f32));
+                            uvConsumeBytes(&tailNode->unk14[entryIndex].y, (u8 **) &cursor, sizeof(f32));
+                            uvConsumeBytes(&tailNode->unk14[entryIndex].z, (u8 **) &cursor, sizeof(f32));
                         } else {
-                            if (var_s6->unk14 != NULL) {
-                                var_s6->unk14[var_s3].x = 1.0f;
-                                var_s6->unk14[var_s3].y = 1.0f;
-                                var_s6->unk14[var_s3].z = 1.0f;
+                            if (tailNode->unk14 != NULL) {
+                                tailNode->unk14[entryIndex].x = 1.0f;
+                                tailNode->unk14[entryIndex].y = 1.0f;
+                                tailNode->unk14[entryIndex].z = 1.0f;
                             }
                         }
                     }
-                    if (var_s6->unk8 != NULL) {
-                        for (var_a0 = 0, var_s3 = 0; var_a0 < spA4->unk2; var_a0++) {
-                            while (var_a0 >= var_s6->unkC[var_s3 + 1] && (var_s3 + 1) < var_s6->unk6) {
-                                var_s3++;
+                    if (tailNode->unk8 != NULL) { /* RE_ORIGINAL_QUIRK: +8 was cleared above; RE_UNKNOWN: reachability. */
+                        for (lookupIndex = 0, entryIndex = 0; lookupIndex < animation->unk2; lookupIndex++) {
+                            while (lookupIndex >= tailNode->unkC[entryIndex + 1] && (entryIndex + 1) < tailNode->unk6) { /* RE_ORIGINAL_QUIRK: read precedes bounds test; RE_UNKNOWN: sentinel/capacity. */
+                                entryIndex++;
                             }
-                            var_s6->unk8[var_a0] = var_s3;
+                            tailNode->unk8[lookupIndex] = entryIndex;
                         }
                     }
                 }
-                _uvMemFree(sp90);
+                _uvMemFree(commBlock); /* RE_UNKNOWN: ownership of ignored block payloads. */
                 break;
         }
     }
-    uvFileFree(sp8C);
-    return spA4;
+    uvFileFree(fileId);
+    return animation;
 }
 
 #line 143 "src/modules/uvjanimld_rom.c"

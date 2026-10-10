@@ -232,21 +232,26 @@ void func_ai_00400E38(void) {
 }
 #line 96 "src/modules/ai.c"
 
+/* RE_ORIGINAL_QUIRK: The first cross reads the existing destination row 1;
+ * it is not initialized here. Three in-place normalization returns are ignored.
+ * RE_UNKNOWN: The inherited orthonormal name requires suitable inputs and
+ * existing row 1. Degenerate vectors, overlap, coordinate frames and the
+ * untouched fourth words/full-matrix contents remain caller contracts. */
 #line 88 "src/modules/ai.c"
 /* Set X from direction, cross existing Y to rebuild Z/Y, then normalize; zero-length normalization leaves output unchanged.
  * RE_UNKNOWN: audit callers' nonzero/nonparallel direction/existing-Y initialization before assuming orthonormality; translation/W stay intact. */
-void aiBuildOrthonormalBasisFromX(Mtx4F *basis, Vec3F *direction) {
-    Vec3F *axisZ;
-    Vec3F *axisY;
+void aiBuildOrthonormalBasisFromX(Mtx4F *destinationBasis, Vec3F *inputDirection) {
+    Vec3F *destinationRowZ;
+    Vec3F *destinationRowY;
 
-    gUvFvecExports->uvVec3FCopy((Vec3F *)&basis->m[0][0], direction);
-    axisZ = (Vec3F *)&basis->m[2][0];
-    axisY = (Vec3F *)&basis->m[1][0];
-    gUvFvecExports->uvVec3FCross(axisZ, direction, axisY);
-    gUvFvecExports->uvVec3FCross(axisY, axisZ, direction);
-    gUvFvecExports->uvVec3FNormalize((Vec3F *)&basis->m[0][0], (Vec3F *)&basis->m[0][0]);
-    gUvFvecExports->uvVec3FNormalize(axisY, axisY);
-    gUvFvecExports->uvVec3FNormalize(axisZ, axisZ);
+    gUvFvecExports->uvVec3FCopy((Vec3F *)&destinationBasis->m[0][0], inputDirection);
+    destinationRowZ = (Vec3F *)&destinationBasis->m[2][0];
+    destinationRowY = (Vec3F *)&destinationBasis->m[1][0];
+    gUvFvecExports->uvVec3FCross(destinationRowZ, inputDirection, destinationRowY);
+    gUvFvecExports->uvVec3FCross(destinationRowY, destinationRowZ, inputDirection);
+    gUvFvecExports->uvVec3FNormalize((Vec3F *)&destinationBasis->m[0][0], (Vec3F *)&destinationBasis->m[0][0]);
+    gUvFvecExports->uvVec3FNormalize(destinationRowY, destinationRowY);
+    gUvFvecExports->uvVec3FNormalize(destinationRowZ, destinationRowZ);
 }
 #line 89 "src/modules/ai.c"
 
@@ -710,6 +715,10 @@ void aiInsertRecordBetweenNeighbors(void *record, void *previous, void *next) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00405D50.s")
 
+/* RE_UNKNOWN: The signed registry count is read once for this scan;
+ * recordIndex wraps to u16 after each miss. A count above 65535 can
+ * repeat indices rather than terminate. Allocation extent, count
+ * producer and whether such a count is reachable remain unproved. */
 #line 229 "src/modules/ai.c"
 /* aiFindActiveRecordByKey: first active match or -1. RE_ORIGINAL_QUIRK: loop index wraps to u16.
  * RE_UNKNOWN: full signed count/array extent and termination need original allocation/count writers/callers. */
@@ -720,11 +729,11 @@ typedef struct {
     s16 active;
     u8 padB6[0x132];
 } AiLookupRecord;
-s32 aiFindActiveRecordByKey(s32 value) {
-    s32 index;
-    for (index = 0; index < D_ai_00408E4C; index = (index + 1) & 0xFFFF) {
-        AiLookupRecord *record = &((AiLookupRecord *)&D_ai_00408008)[index];
-        if (record->active != 0 && value == record->key) return index;
+s32 aiFindActiveRecordByKey(s32 searchKey) {
+    s32 recordIndex;
+    for (recordIndex = 0; recordIndex < D_ai_00408E4C; recordIndex = (recordIndex + 1) & 0xFFFF) {
+        AiLookupRecord *candidate = &((AiLookupRecord *)&D_ai_00408008)[recordIndex];
+        if (candidate->active != 0 && searchKey == candidate->key) return recordIndex;
     }
     return -1;
 }

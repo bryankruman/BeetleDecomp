@@ -3054,10 +3054,19 @@ Totals: 417 further recoveries after the 225 upstream ordinary imports, plus 141
 Frozen wave `3426-caranim-contour-contracts-3426` and `accepted-caranim-contour-contracts-3426` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 417 further readable functions
+## Historical accepted checkpoint — 417 further readable functions
 
 Clarify original scene release ordering, callback lifetimes, node lifecycle and property boundaries in sixteen existing C functions. All statements and logical coordinates stay literal; actual unchanged-source warning provenance, complete original words and raw ordered relocations are proved. Full packed modules and ROM remain mandatory.
 
 Totals: 417 further recoveries after the 225 upstream ordinary imports, plus 1435 existing C semantic cleanups. Current ledger: 783 assembly references = 743 ordinary + 40 entrypoints; 711,632 known remaining instruction bytes; zero unknown sizes; 284 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `3496-selection-dynamics-literal-contracts-3496` and `accepted-selection-dynamics-literal-contracts-3496` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 418 further readable functions
+
+Give nineteen existing AI, dynamics and animation-loader functions descriptive local roles and precise original-behavior comments. Recover the profile-game initializer with minimum observed views; preserve its two raw symbol/addend differences while requiring full original packed module and relocation equality. Keep canonical function names, public APIs, arithmetic and store ordering unchanged. Full normal packed modules, ROM, source manifest and complete ledger are mandatory.
+
+Totals: 418 further recoveries after the 225 upstream ordinary imports, plus 1454 existing C semantic cleanups. Current ledger: 782 assembly references = 743 ordinary + 39 entrypoints; 710,904 known remaining instruction bytes; zero unknown sizes; 285 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `3560-engine-role-recovery-cohort-3560` and `accepted-engine-role-recovery-cohort-3560` verify real translation-unit instructions/full relocations, 4 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
