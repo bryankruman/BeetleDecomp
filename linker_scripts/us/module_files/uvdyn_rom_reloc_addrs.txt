@@ -118,8 +118,8 @@ rom:0x2F8 reloc:MIPS_HI16 symbol:uvDynUnloadImportedModules
 rom:0x320 reloc:MIPS_LO16 symbol:uvDynUnloadImportedModules
 rom:0x2FC reloc:MIPS_HI16 symbol:func_uvdyn_rom_00403D90
 rom:0x324 reloc:MIPS_LO16 symbol:func_uvdyn_rom_00403D90
-rom:0x300 reloc:MIPS_HI16 symbol:func_uvdyn_rom_00403F98
-rom:0x328 reloc:MIPS_LO16 symbol:func_uvdyn_rom_00403F98
+rom:0x300 reloc:MIPS_HI16 symbol:uvDynGetNodePropertyAddress
+rom:0x328 reloc:MIPS_LO16 symbol:uvDynGetNodePropertyAddress
 rom:0x304 reloc:MIPS_HI16 symbol:uvDynGetNodeVectorProperty
 rom:0x32C reloc:MIPS_LO16 symbol:uvDynGetNodeVectorProperty
 rom:0x308 reloc:MIPS_HI16 symbol:uvDynSetNodeMatrixProperty

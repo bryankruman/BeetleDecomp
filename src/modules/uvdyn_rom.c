@@ -336,7 +336,7 @@ typedef struct {
     void *callbackContext;
 } DynCallbackPrefix;
 
-extern s32 D_uvdyn_rom_00411BDC[];
+
 extern s32 D_uvdyn_rom_00411D48[];
 
 extern f32 *D_uvdyn_rom_00411DB8;
@@ -373,7 +373,7 @@ void uvDynPrepareLinkedNodeState(DynResetState *state);
 void func_uvdyn_rom_00403A1C(DynResetState *, s32, f32);
 f32 uvDynGetNodeScalarProperty(DynResetState *state, s32 property);
 void func_uvdyn_rom_00403D90(DynResetState *, s32, Vec3F);
-void func_uvdyn_rom_00403F98();
+void *uvDynGetNodePropertyAddress(void *state, s32 property);
 void uvDynGetNodeVectorProperty(DynResetState *state, s32 property, Vec3F *output);
 void uvDynSetNodeMatrixProperty(DynResetState *, s32, Mtx4F *);
 s32 func_uvdyn_rom_00404384(s32 arg0, s32 arg1);
@@ -480,6 +480,10 @@ extern DynAttachmentPrefix *D_uvdyn_rom_00411E70[];
 extern u16 D_uvdyn_rom_00411EC2;
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/__entrypoint_func_uvdyn_rom_400000.s")
 
+/* Call the unload entry with the ten literal module IDs in the original order;
+ * ignore each return value. The body does not clear the cached export words.
+ * RE_UNKNOWN: Reference-count behavior, users retaining exports and legal
+ * unload timing are not established here. */
 #line 383 "src/modules/uvdyn_rom.c"
 /* Unload the ten modules imported by the dynamic-object module, preserving
  * the original order and the distinct lowercase isct / uppercase ISCT tags. */
@@ -497,49 +501,66 @@ void uvDynUnloadImportedModules(void) {
 }
 #line 395 "src/modules/uvdyn_rom.c"
 
+/* Walk the registered collection pointers using a halfword index and reload
+ * the global halfword count after each work-buffer allocation call.
+ * RE_UNKNOWN: Registry capacity, pointer validity and count mutation across
+ * those calls are unchecked. */
 #line 325 "src/modules/uvdyn_rom.c"
 /* Allocate work buffers for every registered collection. Preserve the original
  * 16-bit index and reload the registry count after each allocation helper. */
 void uvDynAllocateRegisteredCollectionWorkBuffers(void) {
-    u16 index;
-    for (index = 0; index < D_uvdyn_rom_00411F18; index++) {
-        uvDynAllocateCollectionWorkBuffers(D_uvdyn_rom_00411EC8[index]);
+    u16 registeredCollectionIndex;
+    for (registeredCollectionIndex = 0; registeredCollectionIndex < D_uvdyn_rom_00411F18; registeredCollectionIndex++) {
+        uvDynAllocateCollectionWorkBuffers(D_uvdyn_rom_00411EC8[registeredCollectionIndex]);
     }
 }
 #line 326 "src/modules/uvdyn_rom.c"
 
+/* Walk the active collection pointers using a halfword index and reload the
+ * global halfword count after every collection update. RE_UNKNOWN: Registry
+ * capacity and callback-driven membership changes are unchecked; the loop
+ * takes no count snapshot. */
 #line 327 "src/modules/uvdyn_rom.c"
 /* Update each active collection in registry order. Preserve the live registry
  * count and original 16-bit iteration because callees may change shared state. */
 void uvDynUpdateActiveCollections(void) {
-    u16 index;
-    for (index = 0; index < D_uvdyn_rom_00411F1A; index++) {
-        uvDynUpdateCollection(D_uvdyn_rom_00411EF0[index]);
+    u16 activeCollectionIndex;
+    for (activeCollectionIndex = 0; activeCollectionIndex < D_uvdyn_rom_00411F1A; activeCollectionIndex++) {
+        uvDynUpdateCollection(D_uvdyn_rom_00411EF0[activeCollectionIndex]);
     }
 }
 #line 328 "src/modules/uvdyn_rom.c"
 
+/* Selector0 writes the shared scalar word; other selectors perform no store.
+ * RE_UNKNOWN: The scalar units and supported caller selector domain are
+ * unproved. */
 #line 329 "src/modules/uvdyn_rom.c"
 /* Store global scalar property zero; unsupported property numbers are ignored.
  * The scalar's gameplay meaning remains unresolved. */
-void uvDynSetGlobalScalarProperty(s32 property, f32 value) {
-    if (property == 0) {
-        D_uvdyn_rom_00411DB4 = value;
+void uvDynSetGlobalScalarProperty(s32 propertySelector, f32 storedScalar) {
+    if (propertySelector == 0) {
+        D_uvdyn_rom_00411DB4 = storedScalar;
     }
 }
 #line 334 "src/modules/uvdyn_rom.c"
 
+/* Selector0 returns the shared scalar; other selectors return -1.0f.
+ * RE_UNKNOWN: The scalar units and interpretation of the fallback value are
+ * unproved. */
 #line 335 "src/modules/uvdyn_rom.c"
 /* Return global scalar property zero, or -1 for an unsupported property.
  * The scalar's gameplay meaning remains unresolved. */
-f32 uvDynGetGlobalScalarProperty(s32 property) {
-    if (property == 0) {
+f32 uvDynGetGlobalScalarProperty(s32 propertySelector) {
+    if (propertySelector == 0) {
         return D_uvdyn_rom_00411DB4;
     }
     return -1.0f;
 }
 #line 341 "src/modules/uvdyn_rom.c"
 
+/* Return the address of the same shared scalar used by the selector0 setter
+ * and getter. RE_UNKNOWN: The returned address permits external mutation; its
+ * producer and lifecycle are not established here. */
 #line 342 "src/modules/uvdyn_rom.c"
 /* Return the shared scalar's address for original consumers that retain its
  * live value rather than taking a scalar snapshot. */
@@ -672,18 +693,26 @@ void uvDynSolveFactoredSystemInPlace(f32 **matrix, s32 count, s32 *permutation, 
 #line 327 "src/modules/uvdyn_rom.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_004033F4.s")
 
+/* Subtract firstPoint from secondPoint, scale the resulting center by0.5,
+ * store its length plus the supplied radius addition, then add firstPoint to
+ * the center. Reload the vector provider for each call. RE_UNKNOWN:
+ * Point/output alias domains, radius sign and vector units are unchecked;
+ * preserve the radius store before the final vector call. */
 #line 329 "src/modules/uvdyn_rom.c"
 /* Build a sphere centered at the point-pair midpoint, with radius equal to
  * half the separation plus extraRadius. Preserve the original vector-export
  * order and in-place output aliases; the original does not clamp extraRadius. */
-void uvDynBuildPointPairSphere(DynSphere *sphere, Vec3F *first, Vec3F *second, f32 extraRadius) {
-    D_uvdyn_rom_00411F74->uvVec3FSub(&sphere->center, second, first);
-    D_uvdyn_rom_00411F74->uvVec3FScale(&sphere->center, &sphere->center, 0.5f);
-    sphere->radius = D_uvdyn_rom_00411F74->uvVec3FLen(&sphere->center) + extraRadius;
-    D_uvdyn_rom_00411F74->uvVec3FAdd(&sphere->center, first, &sphere->center);
+void uvDynBuildPointPairSphere(DynSphere *outputSphere, Vec3F *firstPoint, Vec3F *secondPoint, f32 radiusAddition) {
+    D_uvdyn_rom_00411F74->uvVec3FSub(&outputSphere->center, secondPoint, firstPoint);
+    D_uvdyn_rom_00411F74->uvVec3FScale(&outputSphere->center, &outputSphere->center, 0.5f);
+    outputSphere->radius = D_uvdyn_rom_00411F74->uvVec3FLen(&outputSphere->center) + radiusAddition;
+    D_uvdyn_rom_00411F74->uvVec3FAdd(&outputSphere->center, firstPoint, &outputSphere->center);
 }
 #line 330 "src/modules/uvdyn_rom.c"
 
+/* Store the shared-scalar address returned by the accessor and clear only the
+ * registry count halfword. RE_UNKNOWN: Existing registry slots are not cleared
+ * here; registration and reset timing remain unproved. */
 #line 331 "src/modules/uvdyn_rom.c"
 /* Cache the shared scalar's address and clear the node-registry count.
  * This original initializer does not free or clear registry entries. */
@@ -734,38 +763,46 @@ DynResetState *uvDynCreateLinkedNodeState(void) {
 }
 #line 337 "src/modules/uvdyn_rom.c"
 
+/* First detach the linked collection, then snapshot the registry count and
+ * find the first matching node. Decrement the halfword count, shift later
+ * entries with live count reads, and write each moved node registry index.
+ * RE_UNKNOWN: Pointer validity and registry capacity are unchecked; the former
+ * final slot is not cleared and the node is not freed here. */
 #line 338 "src/modules/uvdyn_rom.c"
 /* Clear linked-collection membership, remove the node from its registry and
  * repair later registry indices. Preserve separate 16-bit scan/shift indices and
  * live count reloads. This unregister routine does not free the node. */
-void uvDynUnregisterLinkedNodeState(DynResetState *state) {
-    u16 index;
-    u16 shiftIndex;
-    s32 count;
-    uvDynSetLinkedCollection((DynLinkedNode *)state, NULL);
-    count = D_uvdyn_rom_00411DE8;
-    for (index = 0; index < count; index++) {
-        if (state == D_uvdyn_rom_00411DC0[index]) {
+void uvDynUnregisterLinkedNodeState(DynResetState *removedNodeState) {
+    u16 foundRegistryIndex;
+    u16 registryShiftIndex;
+    s32 registryCountSnapshot;
+    uvDynSetLinkedCollection((DynLinkedNode *)removedNodeState, NULL);
+    registryCountSnapshot = D_uvdyn_rom_00411DE8;
+    for (foundRegistryIndex = 0; foundRegistryIndex < registryCountSnapshot; foundRegistryIndex++) {
+        if (removedNodeState == D_uvdyn_rom_00411DC0[foundRegistryIndex]) {
             break;
         }
     }
-    if (index != count) {
+    if (foundRegistryIndex != registryCountSnapshot) {
         D_uvdyn_rom_00411DE8--;
-        for (shiftIndex = index; shiftIndex < D_uvdyn_rom_00411DE8; shiftIndex++) {
-            D_uvdyn_rom_00411DC0[shiftIndex] = D_uvdyn_rom_00411DC0[shiftIndex + 1];
-            D_uvdyn_rom_00411DC0[shiftIndex]->registryIndex = shiftIndex;
+        for (registryShiftIndex = foundRegistryIndex; registryShiftIndex < D_uvdyn_rom_00411DE8; registryShiftIndex++) {
+            D_uvdyn_rom_00411DC0[registryShiftIndex] = D_uvdyn_rom_00411DC0[registryShiftIndex + 1];
+            D_uvdyn_rom_00411DC0[registryShiftIndex]->registryIndex = registryShiftIndex;
         }
     }
 }
 #line 339 "src/modules/uvdyn_rom.c"
 
+/* Walk registered nodes with a halfword index and reload the global halfword
+ * count after every preparation call. RE_UNKNOWN: Registry capacity, node
+ * validity and count mutation across calls are unchecked. */
 #line 340 "src/modules/uvdyn_rom.c"
 /* Prepare every registered node through the original state-copy/flag helper.
  * Keep the live count reload and original 16-bit registry index. */
 void uvDynPrepareRegisteredNodeState(void) {
-    u16 index;
-    for (index = 0; index < D_uvdyn_rom_00411DE8; index++) {
-        uvDynPrepareLinkedNodeState(D_uvdyn_rom_00411DC0[index]);
+    u16 registeredNodeIndex;
+    for (registeredNodeIndex = 0; registeredNodeIndex < D_uvdyn_rom_00411DE8; registeredNodeIndex++) {
+        uvDynPrepareLinkedNodeState(D_uvdyn_rom_00411DC0[registeredNodeIndex]);
     }
 }
 #line 341 "src/modules/uvdyn_rom.c"
@@ -903,7 +940,44 @@ f32 uvDynGetNodeScalarProperty(DynResetState *state, s32 property) {
  * property domains before proposing a separate runtime correction.
  * RE_UNKNOWN: vector-property meanings, coordinate frames, lifetime/ownership
  * and allowed aliases. Trace returned-address consumers before semantic naming. */
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00403F98.s")
+#line 362 "src/modules/uvdyn_rom.c"
+/* Return the observed node-relative address selected by the property word.
+ * RE_ORIGINAL_QUIRK: unhandled nonnull selectors leave result unassigned,
+ * matching the original untouched-stack read; this is not a safe fallback.
+ * RE_UNKNOWN: full node layout, property meanings, valid selector domains,
+ * historical pointer ABI and returned storage ownership remain unproved. */
+void *uvDynGetNodePropertyAddress(void *state, s32 property) {
+    void *result;
+
+    if (state == NULL) {
+        return NULL;
+    }
+    switch (property) {
+        case 2:
+        case 3:
+        case 5:
+            return NULL;
+        case 6:
+            result = (u8 *)state + 0x131C;
+            break;
+        case 7:
+            result = (u8 *)state + 0x149C;
+            break;
+        case 17:
+            result = (u8 *)state + 0x14BC;
+            break;
+        case 18:
+            result = (u8 *)state + 0x14E0;
+            break;
+        case 4:
+            result = (u8 *)state + 0x1490;
+            break;
+        default:
+            break;
+    }
+    return result;
+}
+#line 363 "src/modules/uvdyn_rom.c"
 #line 351 "src/modules/uvdyn_rom.c"
 
 /* RE_ORIGINAL_QUIRK: Null state and unsupported selectors leave output
@@ -1001,26 +1075,31 @@ void uvDynSetNodeMatrixProperty(DynResetState *state, s32 property, Mtx4F *input
             break;
     }
 }
+/* A zero base returns0. Selectors6,15 and16 return base plus0x12EC,0x13EC
+ * and0x142C respectively through the existing signed-word interface.
+ * RE_UNKNOWN: Unsupported nonzero-base selectors read an unassigned stack word
+ * in the original; callers, historical pointer type and return contract are
+ * unproved. Preserve the original default path. */
 #line 355 "src/modules/uvdyn_rom.c"
 
-s32 func_uvdyn_rom_00404384(s32 arg0, s32 arg1) {
-    s32 sp4;
+s32 func_uvdyn_rom_00404384(s32 baseAddressWord, s32 memberSelector) {
+    s32 selectedAddressWord;
 
-    if (arg0 == 0) {
+    if (baseAddressWord == 0) {
         return 0;
     }
-    switch (arg1) {                                 /* irregular */
+    switch (memberSelector) {                                 /* irregular */
     case 6:
-        sp4 = arg0 + 0x12EC;
+        selectedAddressWord = baseAddressWord + 0x12EC;
         break;
     case 16:
-        sp4 = arg0 + 0x142C;
+        selectedAddressWord = baseAddressWord + 0x142C;
         break;
     case 15:
-        sp4 = arg0 + 0x13EC;
+        selectedAddressWord = baseAddressWord + 0x13EC;
         break;
     }
-    return sp4;
+    return selectedAddressWord;
 }
 
 #line 376 "src/modules/uvdyn_rom.c"
@@ -1054,23 +1133,30 @@ void uvDynGetNodeMatrixProperty(DynResetState *state, s32 property, Mtx4F *outpu
 }
 #line 377 "src/modules/uvdyn_rom.c"
 
+/* For a nonnull node, store the supplied word at field14B8; a null node
+ * performs no store. RE_UNKNOWN: The stored word meaning and node lifetime are
+ * unproved. */
 #line 378 "src/modules/uvdyn_rom.c"
 /* Store the opaque value at 0x14B8; null state is an original no-op. */
-void uvDynSetValue14B8(DynResetState *state, s32 value) {
-    if (state == NULL) {
+void uvDynSetValue14B8(DynResetState *nodeState, s32 storedWord) {
+    if (nodeState == NULL) {
         return;
     }
-    state->value14B8 = value;
+    nodeState->value14B8 = storedWord;
 }
 #line 384 "src/modules/uvdyn_rom.c"
 
+/* For a nonnull source, copy vector12DC before freshly reading scalar12E8 into
+ * the destination. A null source leaves the destination untouched. RE_UNKNOWN:
+ * Source/destination alias domains and output validity are unchecked; the
+ * vector provider may affect the subsequent scalar read. */
 #line 279 "src/modules/uvdyn_rom.c"
 /* Copy the vector at 0x12DC and scalar at 0x12E8 into the output. Null
  * records leave output unchanged; the values have no established gameplay names. */
-void uvDynGetVectorScalar12DC(DynVectorFields *record, DynVectorScalar *output) {
-    if (record != NULL) {
-        D_uvdyn_rom_00411F74->uvVec3FCopy(&output->vector, &record->vector12DC);
-        output->scalar = record->value12E8;
+void uvDynGetVectorScalar12DC(DynVectorFields *sourceRecord, DynVectorScalar *destination) {
+    if (sourceRecord != NULL) {
+        D_uvdyn_rom_00411F74->uvVec3FCopy(&destination->vector, &sourceRecord->vector12DC);
+        destination->scalar = sourceRecord->value12E8;
     }
 }
 #line 280 "src/modules/uvdyn_rom.c"
@@ -1499,38 +1585,47 @@ void uvDynResetLinkedNodeState(DynResetState *nodeState) {
 }
 #line 378 "src/modules/uvdyn_rom.c"
 
+/* Snapshot callback1574; when nonnull, pass the node and its context159C.
+ * RE_UNKNOWN: Callback registration, object lifetime and the full historical
+ * callback contract remain unproved. */
 #line 379 "src/modules/uvdyn_rom.c"
 /* Invoke callback slot 0x1574 with this state and the opaque context word
  * at 0x159C. Cache the pointer once; an absent callback has no effect. */
-void uvDynInvokeStateCallback1574(DynStateCallbacks *state) {
+void uvDynInvokeStateCallback1574(DynStateCallbacks *nodeState) {
     void (*callback)(void *, s32);
-    callback = state->callback1574;
+    callback = nodeState->callback1574;
     if (callback != NULL) {
-        callback(state, state->context159C);
+        callback(nodeState, nodeState->context159C);
     }
 }
 #line 385 "src/modules/uvdyn_rom.c"
 
+/* Snapshot callback1558; when nonnull, pass the node and its context1580.
+ * RE_UNKNOWN: Callback registration, object lifetime and the full historical
+ * callback contract remain unproved. */
 #line 386 "src/modules/uvdyn_rom.c"
 /* Invoke callback slot 0x1558 with this state and the opaque context word
  * at 0x1580. Cache the pointer once; an absent callback has no effect. */
-void uvDynInvokeStateCallback1558(DynStateCallbacks *state) {
+void uvDynInvokeStateCallback1558(DynStateCallbacks *nodeState) {
     void (*callback)(void *, s32);
-    callback = state->callback1558;
+    callback = nodeState->callback1558;
     if (callback != NULL) {
-        callback(state, state->context1580);
+        callback(nodeState, nodeState->context1580);
     }
 }
 #line 392 "src/modules/uvdyn_rom.c"
 
+/* Snapshot callback1568; when nonnull, pass the node and its context1590.
+ * RE_UNKNOWN: Callback registration, object lifetime and the full historical
+ * callback contract remain unproved. */
 #line 393 "src/modules/uvdyn_rom.c"
 /* Invoke callback slot 0x1568 with this state and the opaque context word
  * at 0x1590. Cache the pointer once; an absent callback has no effect. */
-void uvDynInvokeStateCallback1568(DynStateCallbacks *state) {
+void uvDynInvokeStateCallback1568(DynStateCallbacks *nodeState) {
     void (*callback)(void *, s32);
-    callback = state->callback1568;
+    callback = nodeState->callback1568;
     if (callback != NULL) {
-        callback(state, state->context1590);
+        callback(nodeState, nodeState->context1590);
     }
 }
 #line 399 "src/modules/uvdyn_rom.c"
@@ -1573,14 +1668,17 @@ void uvDynInvokeStateCallback1560(DynStateCallbacks *state) {
 }
 #line 408 "src/modules/uvdyn_rom.c"
 
+/* When callback1570 is nonnull, forward the supplied word and context1598.
+ * RE_UNKNOWN: The forwarded word and context are opaque; callback ownership
+ * and lifetime are unproved. */
 #line 409 "src/modules/uvdyn_rom.c"
 /* Invoke callback slot 0x1570 with the supplied value and the opaque context
  * word at 0x1598. The state itself is not passed; an absent callback has no effect. */
-void uvDynInvokeValueCallback1570(DynStateCallbacks *state, s32 value) {
+void uvDynInvokeValueCallback1570(DynStateCallbacks *nodeState, s32 callbackValue) {
     void (*callback)(s32, s32);
-    callback = state->callback1570;
+    callback = nodeState->callback1570;
     if (callback != NULL) {
-        callback(value, state->context1598);
+        callback(callbackValue, nodeState->context1598);
     }
 }
 #line 415 "src/modules/uvdyn_rom.c"
@@ -1808,36 +1906,45 @@ void uvDynApplyTranslatedDobjTransform(DynResetState *state) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040981C.s")
 
+/* Require candidate value strictly below the best value and strictly above
+ * zero. An optional first-attachment callback may veto through its result
+ * halfword; otherwise reload the candidate value, update the best value, and
+ * copy the record. RE_UNKNOWN: NaN comparisons reject the candidate. The first
+ * attachment is unchecked, callback mutation is not revalidated, and
+ * alias/record-storage domains are unproved. */
 #line 448 "src/modules/uvdyn_rom.c"
 /* Accept a lower positive record value unless the first attachment's callback
  * clears request.result. Return 1 after the original 88-byte intersection copy,
  * -1 for callback rejection, or 0 for an ineligible value. Reload the record value
  * after the callback without repeating the eligibility test, as in the original. */
-s32 uvDynTryAcceptLowerPositiveRecord(DynResetState *state, void *output, f32 *bestValue, DynCandidateRecord *candidate) {
+s32 uvDynTryAcceptLowerPositiveRecord(DynResetState *nodeState, void *outputRecord, f32 *bestAcceptedValue, DynCandidateRecord *candidateRecord) {
     void (*callback)(DynCandidateRequest *, s32);
-    DynCandidateRequest request;
-    if (candidate->value < *bestValue && 0.0f < candidate->value) {
-        callback = ((DynCandidateCallbacks *)state->attachments[0])->callback;
+    DynCandidateRequest callbackRequest;
+    if (candidateRecord->value < *bestAcceptedValue && 0.0f < candidateRecord->value) {
+        callback = ((DynCandidateCallbacks *)nodeState->attachments[0])->callback;
         if (callback != NULL) {
-            request.result = 1;
-            request.record = candidate;
-            request.value = -1;
-            request.value08 = 0;
-            callback(&request, ((DynCandidateCallbacks *)state->attachments[0])->callbackContext);
-            if (request.result == 0) {
+            callbackRequest.result = 1;
+            callbackRequest.record = candidateRecord;
+            callbackRequest.value = -1;
+            callbackRequest.value08 = 0;
+            callback(&callbackRequest, ((DynCandidateCallbacks *)nodeState->attachments[0])->callbackContext);
+            if (callbackRequest.result == 0) {
                 return -1;
             }
         }
-        *bestValue = candidate->value;
-        D_uvdyn_rom_00411F7C->copyRecord(output, candidate);
+        *bestAcceptedValue = candidateRecord->value;
+        D_uvdyn_rom_00411F7C->copyRecord(outputRecord, candidateRecord);
         return 1;
     }
     return 0;
 }
+/* Return the unsigned halfword at byte offset0x12D6 without a null-pointer
+ * gate. RE_UNKNOWN: The concrete object type and field meaning are unproved;
+ * retain the current interface. */
 #line 449 "src/modules/uvdyn_rom.c"
 
-u16 func_uvdyn_rom_00409A40(void *arg0) {
-    return *(u16 *)((u8 *)arg0 + 0x12D6);
+u16 func_uvdyn_rom_00409A40(void *recordBytes) {
+    return *(u16 *)((u8 *)recordBytes + 0x12D6);
 }
 
 #line 454 "src/modules/uvdyn_rom.c"
@@ -1911,66 +2018,81 @@ void uvDynUnregisterAttachment(DynAttachmentPrefix *state) {
         }
     }
 }
+/* Write halfword1 at byte offset0x23C without a null-pointer gate. RE_UNKNOWN:
+ * The concrete object type, flag meaning and lifecycle are unproved; retain
+ * the current interface. */
 #line 473 "src/modules/uvdyn_rom.c"
 
-void func_uvdyn_rom_00409BC0(void *arg0) {
-    *(s16 *)((u8 *)arg0 + 0x23C) = 1;
+void func_uvdyn_rom_00409BC0(void *stateBytes) {
+    *(s16 *)((u8 *)stateBytes + 0x23C) = 1;
 }
 
+/* Return the attachment owner pointer without a null-attachment gate.
+ * RE_UNKNOWN: This accessor does not establish ownership or owner lifetime. */
 #line 478 "src/modules/uvdyn_rom.c"
 /* Return the owner of a valid attachment; an unattached owner may be null. */
-DynResetState *uvDynGetAttachmentOwner(DynAttachmentPrefix *attachment) {
-    return attachment->owner;
+DynResetState *uvDynGetAttachmentOwner(DynAttachmentPrefix *attachmentState) {
+    return attachmentState->owner;
 }
 #line 481 "src/modules/uvdyn_rom.c"
 
+/* Refresh vectors and forward owner matrix12EC to intersection property3. For
+ * kind1, subtract the value vector, store its length, and scale the delta by
+ * its reciprocal only above the original threshold; then invoke a nonnull
+ * callback. RE_UNKNOWN: Pointer validity, vector units, threshold meaning and
+ * callback mutation are unproved; preserve fresh field/provider reads around
+ * calls. */
 #line 482 "src/modules/uvdyn_rom.c"
 /* Refresh the attachment and its intersection transform. For a kind-one
  * value record, store vector1C minus the record vector, cache its original
  * length, and normalize the delta only above the original threshold. Invoke
  * the optional attachment callback afterward for every kind. Preserve the
  * original valid-owner/intersection preconditions and live field reloads. */
-void uvDynUpdateAttachmentDelta(DynAttachmentUpdateState *attachment) {
+void uvDynUpdateAttachmentDelta(DynAttachmentUpdateState *attachmentState) {
     DynAttachmentDeltaFields *vectors;
     Vec3F *delta;
-    uvDynRefreshAttachmentVectors((DynAttachmentPrefix *)attachment);
-    D_uvdyn_rom_00411F7C->setTransformProperty(attachment->intersectionRecord, 3, &attachment->owner->matrix12EC);
-    if (((DynIsectKindOneValue *)attachment->intersectionRecord->valueRecord)->kind == 1) {
-        vectors = &attachment->vectors;
-        D_uvdyn_rom_00411F74->uvVec3FSub(&attachment->vectors.delta, &vectors->first, &((DynIsectKindOneValue *)attachment->intersectionRecord->valueRecord)->vector18);
+    uvDynRefreshAttachmentVectors((DynAttachmentPrefix *)attachmentState);
+    D_uvdyn_rom_00411F7C->setTransformProperty(attachmentState->intersectionRecord, 3, &attachmentState->owner->matrix12EC);
+    if (((DynIsectKindOneValue *)attachmentState->intersectionRecord->valueRecord)->kind == 1) {
+        vectors = &attachmentState->vectors;
+        D_uvdyn_rom_00411F74->uvVec3FSub(&attachmentState->vectors.delta, &vectors->first, &((DynIsectKindOneValue *)attachmentState->intersectionRecord->valueRecord)->vector18);
         delta = &vectors->delta;
         vectors->length = D_uvdyn_rom_00411F74->uvVec3FLen(delta);
         if (D_uvdyn_rom_00411D00 < vectors->length) {
             D_uvdyn_rom_00411F74->uvVec3FScale(delta, delta, 1.0f / vectors->length);
         }
     }
-    if (attachment->callback != NULL) {
-        attachment->callback(attachment, attachment->callbackContext);
+    if (attachmentState->callback != NULL) {
+        attachmentState->callback(attachmentState, attachmentState->callbackContext);
     }
 }
 #line 483 "src/modules/uvdyn_rom.c"
 
+/* Kind0 copies each live-count vector pair into consecutive attachment vectors
+ * using a halfword index; kind1 copies one vector. Other kinds perform no
+ * copy. RE_UNKNOWN: Value/list pointers, count range and destination capacity
+ * are unchecked; vector-copy callbacks may change the live count. */
 #line 484 "src/modules/uvdyn_rom.c"
 /* Refresh attachment vectors from the intersection value record. Kind zero
  * copies each 28-byte record's two vectors into consecutive attachment vectors,
  * preserving 16-bit iteration and live count reloads after export callbacks.
  * Kind one copies only its single vector. Other kinds leave vectors unchanged;
  * the original requires valid intersection pointers and adequate storage. */
-void uvDynRefreshAttachmentVectors(DynAttachmentPrefix *attachment) {
-    DynIsectValuePrefix *value;
-    DynIsectVectorPairList *list;
-    u16 index;
-    value = ((DynIsectRecordPrefix *)attachment->intersectionRecord)->valueRecord;
-    switch (value->kind) {
+void uvDynRefreshAttachmentVectors(DynAttachmentPrefix *attachmentState) {
+    DynIsectValuePrefix *intersectionValue;
+    DynIsectVectorPairList *vectorPairList;
+    u16 pairIndex;
+    intersectionValue = ((DynIsectRecordPrefix *)attachmentState->intersectionRecord)->valueRecord;
+    switch (intersectionValue->kind) {
         case 0:
-            list = (DynIsectVectorPairList *)&value->children;
-            for (index = 0; index < list->count; index++) {
-                D_uvdyn_rom_00411F74->uvVec3FCopy(&((DynAttachmentVectorSequence *)attachment)->vectors[index * 2], &list->records[index].first);
-                D_uvdyn_rom_00411F74->uvVec3FCopy(&((DynAttachmentVectorSequence *)attachment)->vectors[index * 2 + 1], &list->records[index].second);
+            vectorPairList = (DynIsectVectorPairList *)&intersectionValue->children;
+            for (pairIndex = 0; pairIndex < vectorPairList->count; pairIndex++) {
+                D_uvdyn_rom_00411F74->uvVec3FCopy(&((DynAttachmentVectorSequence *)attachmentState)->vectors[pairIndex * 2], &vectorPairList->records[pairIndex].first);
+                D_uvdyn_rom_00411F74->uvVec3FCopy(&((DynAttachmentVectorSequence *)attachmentState)->vectors[pairIndex * 2 + 1], &vectorPairList->records[pairIndex].second);
             }
             break;
         case 1:
-            D_uvdyn_rom_00411F74->uvVec3FCopy(&((DynAttachmentVectorSequence *)attachment)->vectors[0], &((DynIsectKindOneValue *)value)->vector18);
+            D_uvdyn_rom_00411F74->uvVec3FCopy(&((DynAttachmentVectorSequence *)attachmentState)->vectors[0], &((DynIsectKindOneValue *)intersectionValue)->vector18);
             break;
     }
 }
@@ -1994,92 +2116,113 @@ void uvDynRefreshAttachmentVectors(DynAttachmentPrefix *attachment) {
 #line 486 "src/modules/uvdyn_rom.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00409E18.s")
 
+/* Return -1 for null or unsupported selectors; selector0 converts the unsigned
+ * kind halfword to float, while1 and2 return fields14 and18. RE_UNKNOWN:
+ * Numeric meanings, units and caller handling of the -1 sentinel are unproved. */
 #line 488 "src/modules/uvdyn_rom.c"
 /* Return the attachment's unsigned kind or scalar fields 0x14/0x18.
  * Their gameplay meanings remain unresolved. Null attachments or unsupported
  * properties return -1; preserve the original unsigned kind conversion. */
-f32 uvDynGetAttachmentScalarProperty(DynAttachmentPrefix *attachment, s32 property) {
-    if (attachment == NULL) {
+f32 uvDynGetAttachmentScalarProperty(DynAttachmentPrefix *attachmentState, s32 propertySelector) {
+    if (attachmentState == NULL) {
         return -1.0f;
     }
-    switch (property) {
+    switch (propertySelector) {
         case 0:
-            return (u32)attachment->kind;
+            return (u32)attachmentState->kind;
         case 1:
-            return attachment->value14;
+            return attachmentState->value14;
         case 2:
-            return attachment->value18;
+            return attachmentState->value18;
         default:
             return -1.0f;
     }
 }
 #line 489 "src/modules/uvdyn_rom.c"
 
+/* Skip only a repeated nonnull intersection. Store the new pointer before
+ * querying value10, then read the current owner and forward its DOBJ handle
+ * only in mode0. A null intersection clears value10. RE_UNKNOWN: Query
+ * callbacks may alter attachment state; intersection ownership, provider
+ * availability and owner/DOBJ validity are unproved. */
 #line 490 "src/modules/uvdyn_rom.c"
 /* Replace the attachment's intersection link and refresh field 0x10 through
  * the original intersection export. For an owner in mode zero, propagate its
  * DOBJ handle. Null clears the cached word; an unchanged nonnull link is skipped.
  * The cached word's meaning remains unresolved. */
-void uvDynSetAttachmentIntersection(DynAttachmentPrefix *attachment, void *intersectionRecord) {
-    if (attachment->intersectionRecord != NULL && intersectionRecord == attachment->intersectionRecord) {
+void uvDynSetAttachmentIntersection(DynAttachmentPrefix *attachmentState, void *intersectionRecord) {
+    if (attachmentState->intersectionRecord != NULL && intersectionRecord == attachmentState->intersectionRecord) {
         return;
     }
-    attachment->intersectionRecord = intersectionRecord;
+    attachmentState->intersectionRecord = intersectionRecord;
     if (intersectionRecord != NULL) {
-        attachment->value10 = D_uvdyn_rom_00411F7C->getValue10(intersectionRecord);
-        if (attachment->owner != NULL && attachment->owner->dobjUpdateMode == 0) {
-            D_uvdyn_rom_00411F7C->setDobjHandle(intersectionRecord, attachment->owner->dobjHandle);
+        attachmentState->value10 = D_uvdyn_rom_00411F7C->getValue10(intersectionRecord);
+        if (attachmentState->owner != NULL && attachmentState->owner->dobjUpdateMode == 0) {
+            D_uvdyn_rom_00411F7C->setDobjHandle(intersectionRecord, attachmentState->owner->dobjHandle);
         }
     } else {
-        attachment->value10 = 0;
+        attachmentState->value10 = 0;
     }
 }
 #line 491 "src/modules/uvdyn_rom.c"
 
+/* Return the current intersection pointer without a null-attachment gate.
+ * RE_UNKNOWN: This accessor does not establish intersection ownership,
+ * lifetime or concrete full type. */
 #line 492 "src/modules/uvdyn_rom.c"
 /* Return the intersection record of a valid attachment; the record may be null. */
-void *uvDynGetAttachmentIntersection(DynAttachmentPrefix *attachment) {
-    return attachment->intersectionRecord;
+void *uvDynGetAttachmentIntersection(DynAttachmentPrefix *attachmentState) {
+    return attachmentState->intersectionRecord;
 }
 #line 495 "src/modules/uvdyn_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040A188.s")
 
+/* Snapshot callback244; when nonnull, pass the attachment and context25C.
+ * RE_UNKNOWN: Callback registration and the full historical callback contract
+ * remain unproved. */
 #line 498 "src/modules/uvdyn_rom.c"
 /* Invoke attachment callback slot 0x244 with the attachment and its paired
  * context at 0x25C. A missing callback is an original no-op. */
-void uvDynInvokeAttachmentCallback244(DynAttachmentCallbackSlots *attachment) {
-    void (*callback)(void *, s32) = attachment->callback244;
+void uvDynInvokeAttachmentCallback244(DynAttachmentCallbackSlots *attachmentState) {
+    void (*callback)(void *, s32) = attachmentState->callback244;
     if (callback != NULL) {
-        callback(attachment, attachment->context25C);
+        callback(attachmentState, attachmentState->context25C);
     }
 }
 #line 504 "src/modules/uvdyn_rom.c"
 
+/* When callback248 is nonnull, forward the supplied word and context260.
+ * RE_UNKNOWN: The word/context domains and callback lifetime remain unproved. */
 #line 505 "src/modules/uvdyn_rom.c"
 /* Invoke attachment callback slot 0x248 with the supplied opaque value and
  * its paired context at 0x260. Keep this distinct from the pointer callback ABI. */
-void uvDynInvokeAttachmentValueCallback248(DynAttachmentCallbackSlots *attachment, s32 value) {
-    void (*callback)(s32, s32) = attachment->callback248;
+void uvDynInvokeAttachmentValueCallback248(DynAttachmentCallbackSlots *attachmentState, s32 callbackValue) {
+    void (*callback)(s32, s32) = attachmentState->callback248;
     if (callback != NULL) {
-        callback(value, attachment->context260);
+        callback(callbackValue, attachmentState->context260);
     }
 }
 #line 511 "src/modules/uvdyn_rom.c"
 
+/* When the callback is nonnull, fetch an indexed word and kind halfword
+ * through separate values-pointer reads, then pass the temporary request and
+ * callback context. RE_UNKNOWN: The halfword index is unchecked, the remaining
+ * request bytes are unspecified, and callback retention of the stack request
+ * is unproved. */
 #line 512 "src/modules/uvdyn_rom.c"
 /* If installed, invoke the attachment callback with the indexed intersection
  * word and unsigned kind in the original request layout, plus its opaque context
  * word. Preserve the cached callback and original unchecked index/data contract;
  * no narrower gameplay meaning is established for the request values. */
-void uvDynInvokeAttachmentValueCallback(DynAttachmentCallbackFields *attachment, u16 index) {
+void uvDynInvokeAttachmentValueCallback(DynAttachmentCallbackFields *attachmentState, u16 valueIndex) {
     void (*callback)(DynAttachmentCallbackRequest *, s32);
-    DynAttachmentCallbackRequest request;
-    callback = attachment->callback;
+    DynAttachmentCallbackRequest callbackRequest;
+    callback = attachmentState->callback;
     if (callback != NULL) {
-        request.word = attachment->values->words[index];
-        request.kind = attachment->values->kinds[index];
-        callback(&request, attachment->callbackContext);
+        callbackRequest.word = attachmentState->values->words[valueIndex];
+        callbackRequest.kind = attachmentState->values->kinds[valueIndex];
+        callback(&callbackRequest, attachmentState->callbackContext);
     }
 }
 #line 513 "src/modules/uvdyn_rom.c"
@@ -2099,30 +2242,36 @@ void uvDynSetPairedRecordWords(void *state, s32 index, s32 first, s32 second) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040B08C.s")
 
+/* Require a strictly lower positive candidate value. A nonnegative input word
+ * enables the optional callback veto; a negative word bypasses it. After any
+ * permitted callback, reload the candidate value, update the best value, and
+ * copy the record. RE_UNKNOWN: NaN comparisons reject the candidate; callback
+ * mutation is not revalidated. Record aliases, output extent and request-field
+ * meanings are unproved. */
 #line 524 "src/modules/uvdyn_rom.c"
 /* Accept a lower positive record value, allowing an attachment callback to
  * reject it when value is nonnegative. A negative value bypasses the callback.
  * Return 1 for the original 88-byte copy, -1 for rejection, otherwise 0. Preserve
  * callback mutations and the original post-callback value reload. */
-s32 uvDynTryAcceptAttachmentRecord(DynCandidateCallbacks *attachment, void *output, f32 *bestValue, DynCandidateRecord *candidate, s32 value, u16 value08) {
+s32 uvDynTryAcceptAttachmentRecord(DynCandidateCallbacks *attachmentState, void *outputRecord, f32 *bestAcceptedValue, DynCandidateRecord *candidateRecord, s32 value, u16 value08) {
     void (*callback)(DynCandidateRequest *, s32);
-    DynCandidateRequest request;
-    if (candidate->value < *bestValue && 0.0f < candidate->value) {
+    DynCandidateRequest callbackRequest;
+    if (candidateRecord->value < *bestAcceptedValue && 0.0f < candidateRecord->value) {
         if (value >= 0) {
-            callback = attachment->callback;
+            callback = attachmentState->callback;
             if (callback != NULL) {
-                request.result = 1;
-                request.record = candidate;
-                request.value = value;
-                request.value08 = value08;
-                callback(&request, attachment->callbackContext);
-                if (request.result == 0) {
+                callbackRequest.result = 1;
+                callbackRequest.record = candidateRecord;
+                callbackRequest.value = value;
+                callbackRequest.value08 = value08;
+                callback(&callbackRequest, attachmentState->callbackContext);
+                if (callbackRequest.result == 0) {
                     return -1;
                 }
             }
         }
-        *bestValue = candidate->value;
-        D_uvdyn_rom_00411F7C->copyRecord(output, candidate);
+        *bestAcceptedValue = candidateRecord->value;
+        D_uvdyn_rom_00411F7C->copyRecord(outputRecord, candidateRecord);
         return 1;
     }
     return 0;
@@ -2255,19 +2404,22 @@ void uvDynUpdateCollection(DynLinkedCollection *collection) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040BD14.s")
 
+/* Return -1 for null or unsupported selectors. Selectors0 and1 convert the
+ * unsigned halfwords active and valueF79E to float. RE_UNKNOWN: The field
+ * meanings and caller interpretation of the -1 sentinel remain unproved. */
 #line 548 "src/modules/uvdyn_rom.c"
 /* Return collection property zero (active state) or one (field 0xF79E),
  * converting the unsigned 16-bit field through u32 as in the original.
  * Null collections and unsupported properties return -1. */
-f32 uvDynGetCollectionScalarProperty(DynLinkedCollection *collection, s32 property) {
-    if (collection == NULL) {
+f32 uvDynGetCollectionScalarProperty(DynLinkedCollection *linkedCollection, s32 propertySelector) {
+    if (linkedCollection == NULL) {
         return -1.0f;
     }
-    switch (property) {
+    switch (propertySelector) {
         case 0:
-            return (u32)collection->active;
+            return (u32)linkedCollection->active;
         case 1:
-            return (u32)collection->valueF79E;
+            return (u32)linkedCollection->valueF79E;
         default:
             return -1.0f;
     }
@@ -2328,44 +2480,52 @@ void uvDynRemoveLinkedNode(DynLinkedCollection *collection, DynLinkedNode *node)
 }
 #line 553 "src/modules/uvdyn_rom.c"
 
+/* Scan for pointer equality with a halfword index, reject duplicates and
+ * exactly count20, then append and increment the current count. RE_UNKNOWN:
+ * Counts above20, negative counts, storage capacity and ownership are
+ * unchecked; do not strengthen the original equality-only limit. */
 #line 554 "src/modules/uvdyn_rom.c"
 /* Append a unique opaque secondary value unless the count equals twenty.
  * Preserve the original 16-bit scan and equality-only capacity guard; the
  * surrounding object's full size and the values' gameplay meaning are unknown. */
-void uvDynAppendUniqueSecondaryValue(DynSecondaryCollection *collection, void *value) {
-    u16 index;
-    for (index = 0; index < collection->count; index++) {
-        if (value == collection->members[index]) {
+void uvDynAppendUniqueSecondaryValue(DynSecondaryCollection *secondaryCollection, void *newMemberValue) {
+    u16 memberScanIndex;
+    for (memberScanIndex = 0; memberScanIndex < secondaryCollection->count; memberScanIndex++) {
+        if (newMemberValue == secondaryCollection->members[memberScanIndex]) {
             return;
         }
     }
-    if (collection->count == 20) {
+    if (secondaryCollection->count == 20) {
         return;
     }
-    collection->members[collection->count] = value;
-    collection->count++;
+    secondaryCollection->members[secondaryCollection->count] = newMemberValue;
+    secondaryCollection->count++;
 }
 #line 555 "src/modules/uvdyn_rom.c"
 
+/* Find the first matching pointer, shift later entries with a halfword index
+ * and live count reads, then decrement count. An absent pointer leaves storage
+ * unchanged. RE_UNKNOWN: Count/storage domains are unchecked; the former final
+ * slot is not cleared and ownership is not released here. */
 #line 556 "src/modules/uvdyn_rom.c"
 /* Remove the first matching secondary value and compact the remaining list.
  * Preserve original 16-bit indices and live count reloads while shifting.
  * A missing value leaves the collection unchanged. */
-void uvDynRemoveSecondaryValue(DynSecondaryCollection *collection, void *value) {
-    s32 foundIndex;
-    u16 index;
-    foundIndex = -1;
-    for (index = 0; index < collection->count; index++) {
-        if (value == collection->members[index]) {
-            foundIndex = index;
+void uvDynRemoveSecondaryValue(DynSecondaryCollection *secondaryCollection, void *removedMemberValue) {
+    s32 foundMemberIndex;
+    u16 memberShiftIndex;
+    foundMemberIndex = -1;
+    for (memberShiftIndex = 0; memberShiftIndex < secondaryCollection->count; memberShiftIndex++) {
+        if (removedMemberValue == secondaryCollection->members[memberShiftIndex]) {
+            foundMemberIndex = memberShiftIndex;
             break;
         }
     }
-    if (foundIndex != -1) {
-        for (index = foundIndex; index < collection->count - 1; index++) {
-            collection->members[index] = collection->members[index + 1];
+    if (foundMemberIndex != -1) {
+        for (memberShiftIndex = foundMemberIndex; memberShiftIndex < secondaryCollection->count - 1; memberShiftIndex++) {
+            secondaryCollection->members[memberShiftIndex] = secondaryCollection->members[memberShiftIndex + 1];
         }
-        collection->count--;
+        secondaryCollection->count--;
     }
 }
 #line 557 "src/modules/uvdyn_rom.c"
@@ -2414,31 +2574,37 @@ void uvDynResetCollectionMemberState(DynLinkedCollection *collection) {
 }
 #line 561 "src/modules/uvdyn_rom.c"
 
+/* For primary members, move14B0 to14B4, load14AC into14B0 and replace14B4 only
+ * under strict less-than before building the sphere; clear value04 except its
+ * -1 sentinel. Then build secondary spheres in a separate live-count loop.
+ * RE_UNKNOWN: Both loops use halfword indices and reload counts after calls.
+ * Capacity, field units and phase meaning are unproved; preserve strict
+ * comparisons and all field/provider reloads. */
 #line 562 "src/modules/uvdyn_rom.c"
 /* Build enclosing spheres from each member's previous/current translations.
  * Node spheres use the greater of the old and new extra-radius values; preserve
  * the original ordered comparison and retain value04 == -1 while clearing other
  * values. Secondary spheres use their stored radius. Reload both collection
  * counts after calls and keep the original 16-bit iteration. */
-void uvDynBuildCollectionMemberSpheres(DynLinkedCollection *collection) {
-    u16 index;
-    DynResetState *state;
-    DynSecondaryState *secondary;
-    for (index = 0; index < collection->count; index++) {
-        state = (DynResetState *)collection->members[index];
-        state->value14B4 = state->value14B0;
-        state->value14B0 = state->value14AC;
-        if (state->value14B4 < state->value14AC) {
-            state->value14B4 = state->value14AC;
+void uvDynBuildCollectionMemberSpheres(DynLinkedCollection *linkedCollection) {
+    u16 memberIndex;
+    DynResetState *memberState;
+    DynSecondaryState *secondaryState;
+    for (memberIndex = 0; memberIndex < linkedCollection->count; memberIndex++) {
+        memberState = (DynResetState *)linkedCollection->members[memberIndex];
+        memberState->value14B4 = memberState->value14B0;
+        memberState->value14B0 = memberState->value14AC;
+        if (memberState->value14B4 < memberState->value14AC) {
+            memberState->value14B4 = memberState->value14AC;
         }
-        uvDynBuildPointPairSphere(&state->sphere12DC, (Vec3F *)&state->matrix132C.xw, (Vec3F *)&state->matrix12EC.xw, state->value14B4);
-        if (state->value04 != -1) {
-            state->value04 = 0;
+        uvDynBuildPointPairSphere(&memberState->sphere12DC, (Vec3F *)&memberState->matrix132C.xw, (Vec3F *)&memberState->matrix12EC.xw, memberState->value14B4);
+        if (memberState->value04 != -1) {
+            memberState->value04 = 0;
         }
     }
-    for (index = 0; index < collection->secondaryCount; index++) {
-        secondary = collection->secondaryMembers[index];
-        uvDynBuildPointPairSphere(&secondary->sphere13C, (Vec3F *)&secondary->matrix58.xw, (Vec3F *)&secondary->matrix18.xw, secondary->radius138);
+    for (memberIndex = 0; memberIndex < linkedCollection->secondaryCount; memberIndex++) {
+        secondaryState = linkedCollection->secondaryMembers[memberIndex];
+        uvDynBuildPointPairSphere(&secondaryState->sphere13C, (Vec3F *)&secondaryState->matrix58.xw, (Vec3F *)&secondaryState->matrix18.xw, secondaryState->radius138);
     }
 }
 #line 563 "src/modules/uvdyn_rom.c"
@@ -2475,12 +2641,16 @@ void uvDynBuildCollectionMemberSpheres(DynLinkedCollection *collection) {
 #line 576 "src/modules/uvdyn_rom.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_004107FC.s")
 
+/* Forward the unsigned halfword value and the indexed record plus its two word
+ * addresses to intersection slot0x40. RE_UNKNOWN: The unsigned halfword index
+ * is unchecked; bank storage capacity and provider retention of the supplied
+ * addresses are unproved. */
 #line 578 "src/modules/uvdyn_rom.c"
 /* Select the indexed opaque 120-byte intersection record and corresponding
  * word outputs through the lowercase isct module's query-bank setter. Pass the
  * opaque 16-bit value unchanged; the original does not check index or pointers. */
-void uvDynSetIndexedQueryRecordBank(DynIntersectionQueryBanks *banks, u16 index, u16 value) {
-    D_uvdyn_rom_00411F7C->setQueryRecordBank(value, &banks->records[index], &banks->firstWords[index], &banks->secondWords[index]);
+void uvDynSetIndexedQueryRecordBank(DynIntersectionQueryBanks *queryBanks, u16 recordIndex, u16 bankValue) {
+    D_uvdyn_rom_00411F7C->setQueryRecordBank(bankValue, &queryBanks->records[recordIndex], &queryBanks->firstWords[recordIndex], &queryBanks->secondWords[recordIndex]);
 }
 #line 579 "src/modules/uvdyn_rom.c"
 
@@ -2562,28 +2732,36 @@ void uvDynUnregisterSecondaryState(DynSecondaryState *secondaryState) {
 }
 #line 592 "src/modules/uvdyn_rom.c"
 
+/* Walk the registered secondary pointers with a halfword index and reload the
+ * global halfword count after every companion-copy call. RE_UNKNOWN: Registry
+ * capacity, pointer validity and count mutation across callbacks remain
+ * unchecked. */
 #line 593 "src/modules/uvdyn_rom.c"
 /* Copy companion fields for every registered secondary state. Preserve the
  * original 16-bit index and reload the registry count after each copy. */
 void uvDynCopyRegisteredSecondaryCompanions(void) {
-    u16 index;
-    for (index = 0; index < D_uvdyn_rom_00411E68; index++) {
-        uvDynCopySecondaryCompanionFields(D_uvdyn_rom_00411DF0[index]);
+    u16 registryIndex;
+    for (registryIndex = 0; registryIndex < D_uvdyn_rom_00411E68; registryIndex++) {
+        uvDynCopySecondaryCompanionFields(D_uvdyn_rom_00411DF0[registryIndex]);
     }
 }
 #line 594 "src/modules/uvdyn_rom.c"
 
+/* Copy vector118 to124, matrix18 to58, then vectors14C/164/17C to158/170/188
+ * in order; set flag1A0 after all five calls. RE_UNKNOWN: The paired fields do
+ * not establish previous/current-frame meaning, units or lifecycle; provider
+ * callbacks and object alias domains remain unproved. */
 #line 595 "src/modules/uvdyn_rom.c"
 /* Copy the four original vector pairs and matrix into companion fields in
  * the observed order, then set the 16-bit flag at 0x1A0 to one. This copy is
  * unconditional; the flag's remaining consumers are not yet fully recovered. */
-void uvDynCopySecondaryCompanionFields(DynSecondaryState *state) {
-    D_uvdyn_rom_00411F74->uvVec3FCopy(&state->vector124, &state->vector118);
-    D_uvdyn_rom_00411F70->uvMat4FCopy(&state->matrix58, &state->matrix18);
-    D_uvdyn_rom_00411F74->uvVec3FCopy(&state->vector158, &state->vector14C);
-    D_uvdyn_rom_00411F74->uvVec3FCopy(&state->vector170, &state->vector164);
-    D_uvdyn_rom_00411F74->uvVec3FCopy(&state->vector188, &state->vector17C);
-    state->flag1A0 = 1;
+void uvDynCopySecondaryCompanionFields(DynSecondaryState *secondaryState) {
+    D_uvdyn_rom_00411F74->uvVec3FCopy(&secondaryState->vector124, &secondaryState->vector118);
+    D_uvdyn_rom_00411F70->uvMat4FCopy(&secondaryState->matrix58, &secondaryState->matrix18);
+    D_uvdyn_rom_00411F74->uvVec3FCopy(&secondaryState->vector158, &secondaryState->vector14C);
+    D_uvdyn_rom_00411F74->uvVec3FCopy(&secondaryState->vector170, &secondaryState->vector164);
+    D_uvdyn_rom_00411F74->uvVec3FCopy(&secondaryState->vector188, &secondaryState->vector17C);
+    secondaryState->flag1A0 = 1;
 }
 #line 596 "src/modules/uvdyn_rom.c"
 
@@ -2764,26 +2942,31 @@ void uvDynSetSecondaryMatrixProperty(DynSecondaryState *state, s32 selector, Mtx
             break;
     }
 }
+/* A zero base returns0. Selectors3,4 and5 return base plus0x18,0xD8 and0x98
+ * respectively through the existing signed-word interface. RE_UNKNOWN:
+ * Unsupported nonzero-base selectors read an unassigned stack word in the
+ * original; callers, historical pointer type and return contract are unproved.
+ * Preserve the original default path. */
 #line 619 "src/modules/uvdyn_rom.c"
 
-s32 func_uvdyn_rom_00411644(s32 arg0, s32 arg1) {
-    s32 sp4;
+s32 func_uvdyn_rom_00411644(s32 baseAddressWord, s32 memberSelector) {
+    s32 selectedAddressWord;
 
-    if (arg0 == 0) {
+    if (baseAddressWord == 0) {
         return 0;
     }
-    switch (arg1) {                                 /* irregular */
+    switch (memberSelector) {                                 /* irregular */
     case 3:
-        sp4 = arg0 + 0x18;
+        selectedAddressWord = baseAddressWord + 0x18;
         break;
     case 4:
-        sp4 = arg0 + 0xD8;
+        selectedAddressWord = baseAddressWord + 0xD8;
         break;
     case 5:
-        sp4 = arg0 + 0x98;
+        selectedAddressWord = baseAddressWord + 0x98;
         break;
     }
-    return sp4;
+    return selectedAddressWord;
 }
 
 /* RE_UNKNOWN: Null/unsupported selectors leave output untouched. The three
@@ -2810,98 +2993,126 @@ void uvDynGetSecondaryMatrixProperty(DynSecondaryState *state, s32 selector, Mtx
 }
 #line 641 "src/modules/uvdyn_rom.c"
 
+/* Reject a nonnull destination with count exactly20 before checking whether it
+ * already matches. Otherwise remove the old membership, store the new
+ * collection and append to a nonnull destination. RE_UNKNOWN: Counts above20
+ * and storage/ownership domains remain unchecked. Removal and append effects
+ * retain their original order; no allocation or free is performed here. */
 #line 642 "src/modules/uvdyn_rom.c"
 /* Reassign secondary collection membership, removing the old membership
  * before adding the new one. Null clears the link. A destination count equal
  * to twenty is rejected before the unchanged-link test, as in the original. */
-void uvDynSetSecondaryCollection(DynSecondaryState *state, DynSecondaryCollection *collection) {
+void uvDynSetSecondaryCollection(DynSecondaryState *secondaryState, DynSecondaryCollection *collection) {
     if (collection != NULL && collection->count == 20) {
         return;
     }
-    if (state->collection != NULL) {
-        if (collection == state->collection) {
+    if (secondaryState->collection != NULL) {
+        if (collection == secondaryState->collection) {
             return;
         }
-        uvDynRemoveSecondaryValue(state->collection, state);
+        uvDynRemoveSecondaryValue(secondaryState->collection, secondaryState);
     }
-    state->collection = collection;
+    secondaryState->collection = collection;
     if (collection != NULL) {
-        uvDynAppendUniqueSecondaryValue(collection, state);
+        uvDynAppendUniqueSecondaryValue(collection, secondaryState);
     }
 }
 #line 643 "src/modules/uvdyn_rom.c"
 
+/* Return the collection pointer from the secondary state without a null-state
+ * gate. RE_UNKNOWN: The accessor does not establish collection ownership or
+ * lifetime. */
 #line 644 "src/modules/uvdyn_rom.c"
 /* Return this secondary state's linked collection. The original requires
  * a valid state and may return null when no collection is linked. */
-DynSecondaryCollection *uvDynGetSecondaryCollection(DynSecondaryState *state) {
-    return state->collection;
+DynSecondaryCollection *uvDynGetSecondaryCollection(DynSecondaryState *secondaryState) {
+    return secondaryState->collection;
 }
 #line 647 "src/modules/uvdyn_rom.c"
 
+/* Store the DOBJ handle and LOD index before model lookup. Use the
+ * selected44-byte entry to evaluate two ordered three-component squared sums,
+ * storing the first provider result and replacing it only when strictly below
+ * the second. RE_UNKNOWN: Model availability and LOD bounds are unchecked;
+ * corner interpretation and units are unproved. Preserve both calls,
+ * arithmetic grouping, fresh provider reads and NaN-sensitive strict
+ * comparison. */
 #line 648 "src/modules/uvdyn_rom.c"
 /* Store the DOBJ handle and model level-of-detail index, look up the loaded
  * UVMD model, and cache the larger length of its two LOD vector triplets as the
  * secondary sphere radius. Preserve reloads after the first square-root export,
  * the ordered comparison and the original valid-model/index preconditions. */
-void uvDynSetSecondaryModelLod(DynSecondaryState *state, s32 dobjHandle, s32 lodIndex) {
-    ParsedUVMD *model;
-    u16 modelId;
-    uvModelLOD_inner *bounds;
-    f32 secondRadius;
-    state->dobjHandle = dobjHandle;
-    state->lodIndex = lodIndex;
-    modelId = D_uvdyn_rom_00411F84->uvDobjGetModel(dobjHandle);
-    model = uvGetLoadedFile(0x55564D44, modelId);
-    bounds = &model->unk0->unk0[lodIndex].unk8;
-    state->radius138 = D_uvdyn_rom_00411F80->uvSqrtf((bounds->unk0 * bounds->unk0 + bounds->unk4 * bounds->unk4) + bounds->unk8 * bounds->unk8);
-    secondRadius = D_uvdyn_rom_00411F80->uvSqrtf((bounds->unkC * bounds->unkC + bounds->unk10 * bounds->unk10) + bounds->unk14 * bounds->unk14);
-    if (state->radius138 < secondRadius) {
-        state->radius138 = secondRadius;
+void uvDynSetSecondaryModelLod(DynSecondaryState *secondaryState, s32 dobjHandle, s32 lodIndex) {
+    ParsedUVMD *loadedModel;
+    u16 loadedModelId;
+    uvModelLOD_inner *lodBounds;
+    f32 secondCornerLength;
+    secondaryState->dobjHandle = dobjHandle;
+    secondaryState->lodIndex = lodIndex;
+    loadedModelId = D_uvdyn_rom_00411F84->uvDobjGetModel(dobjHandle);
+    loadedModel = uvGetLoadedFile(0x55564D44, loadedModelId);
+    lodBounds = &loadedModel->unk0->unk0[lodIndex].unk8;
+    secondaryState->radius138 = D_uvdyn_rom_00411F80->uvSqrtf((lodBounds->unk0 * lodBounds->unk0 + lodBounds->unk4 * lodBounds->unk4) + lodBounds->unk8 * lodBounds->unk8);
+    secondCornerLength = D_uvdyn_rom_00411F80->uvSqrtf((lodBounds->unkC * lodBounds->unkC + lodBounds->unk10 * lodBounds->unk10) + lodBounds->unk14 * lodBounds->unk14);
+    if (secondaryState->radius138 < secondCornerLength) {
+        secondaryState->radius138 = secondCornerLength;
     }
 }
 #line 649 "src/modules/uvdyn_rom.c"
 
+/* Return the DOBJ handle word from the secondary state without a null-state
+ * gate. RE_UNKNOWN: The accessor does not validate handle registration or
+ * lifetime. */
 #line 650 "src/modules/uvdyn_rom.c"
 /* Return the stored secondary-state DOBJ handle from a valid state. */
-s32 uvDynGetSecondaryDobjHandle(DynSecondaryState *state) {
-    return state->dobjHandle;
+s32 uvDynGetSecondaryDobjHandle(DynSecondaryState *secondaryState) {
+    return secondaryState->dobjHandle;
 }
 #line 653 "src/modules/uvdyn_rom.c"
 
+/* Skip an already-set updateFlag. Otherwise call the direct helper only when
+ * copyFlag is nonzero and kind is1, then set updateFlag to1 even when no
+ * helper ran. RE_UNKNOWN: The supplied scalar units, helper side effects and
+ * reset timing are unproved; the existing flags do not establish a frame
+ * boundary. */
 #line 654 "src/modules/uvdyn_rom.c"
 /* Skip an already updated state. When the copy flag is set and kind is one,
  * run the original matrix/vector update with the supplied scalar. Mark the
  * state updated even when that call is skipped; reset clears the flag.
  * The kind and update scalar's broader gameplay meanings remain unresolved. */
-void uvDynUpdateSecondaryStateOnce(DynSecondaryState *state, f32 value) {
-    if (state->updateFlag == 0) {
-        if (state->copyFlag != 0) {
-            if (state->kind == 1) {
-                func_uvdyn_rom_00400A14(&state->matrix18, &state->matrix58,
-                    &state->vector14C, &state->vector164, &state->vector17C,
-                    &state->vector170, &state->vector188, value);
+void uvDynUpdateSecondaryStateOnce(DynSecondaryState *secondaryState, f32 updateScalar) {
+    if (secondaryState->updateFlag == 0) {
+        if (secondaryState->copyFlag != 0) {
+            if (secondaryState->kind == 1) {
+                func_uvdyn_rom_00400A14(&secondaryState->matrix18, &secondaryState->matrix58,
+                    &secondaryState->vector14C, &secondaryState->vector164, &secondaryState->vector17C,
+                    &secondaryState->vector170, &secondaryState->vector188, updateScalar);
             }
         }
-        state->updateFlag = 1;
+        secondaryState->updateFlag = 1;
     }
 }
 #line 655 "src/modules/uvdyn_rom.c"
 
+/* When copyFlag is nonzero, copy vectors17C to188,14C to158,164 to170,
+ * matrix18 to58 and vector118 to124 in that order. After the calls, always
+ * clear copyFlag and updateFlag; flag1A0 is untouched. RE_UNKNOWN: Pair
+ * naming, units and lifecycle are unproved. Provider callbacks may mutate
+ * state; preserve the ordered five calls and final two halfword stores. */
 #line 656 "src/modules/uvdyn_rom.c"
 /* When the copy flag is set, copy the original four vector pairs and matrix
  * into their companion fields in the observed order. Clear both 16-bit flags
  * afterward. More specific gameplay meanings are not yet established. */
-void uvDynResetSecondaryState(DynSecondaryState *state) {
-    if (state->copyFlag != 0) {
-        D_uvdyn_rom_00411F74->uvVec3FCopy(&state->vector188, &state->vector17C);
-        D_uvdyn_rom_00411F74->uvVec3FCopy(&state->vector158, &state->vector14C);
-        D_uvdyn_rom_00411F74->uvVec3FCopy(&state->vector170, &state->vector164);
-        D_uvdyn_rom_00411F70->uvMat4FCopy(&state->matrix58, &state->matrix18);
-        D_uvdyn_rom_00411F74->uvVec3FCopy(&state->vector124, &state->vector118);
+void uvDynResetSecondaryState(DynSecondaryState *secondaryState) {
+    if (secondaryState->copyFlag != 0) {
+        D_uvdyn_rom_00411F74->uvVec3FCopy(&secondaryState->vector188, &secondaryState->vector17C);
+        D_uvdyn_rom_00411F74->uvVec3FCopy(&secondaryState->vector158, &secondaryState->vector14C);
+        D_uvdyn_rom_00411F74->uvVec3FCopy(&secondaryState->vector170, &secondaryState->vector164);
+        D_uvdyn_rom_00411F70->uvMat4FCopy(&secondaryState->matrix58, &secondaryState->matrix18);
+        D_uvdyn_rom_00411F74->uvVec3FCopy(&secondaryState->vector124, &secondaryState->vector118);
     }
-    state->copyFlag = 0;
-    state->updateFlag = 0;
+    secondaryState->copyFlag = 0;
+    secondaryState->updateFlag = 0;
 }
 #line 657 "src/modules/uvdyn_rom.c"
 

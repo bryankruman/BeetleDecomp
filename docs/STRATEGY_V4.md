@@ -34,8 +34,8 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **782** assembly references:
-**743** ordinary functions and **39** entrypoints, with **710,904** known instruction bytes
+matching C are preserved with `#line`. The current ledger has **781** assembly references:
+**742** ordinary functions and **39** entrypoints, with **710,776** known instruction bytes
 and no unknown sizes. The broader name audit still finds **285** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
@@ -3259,10 +3259,19 @@ Totals: 418 further recoveries after the 225 upstream ordinary imports, plus 145
 Frozen wave `3560-engine-role-recovery-cohort-3560` and `accepted-engine-role-recovery-cohort-3560` verify real translation-unit instructions/full relocations, 4 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 418 further readable functions
+## Historical accepted checkpoint — 418 further readable functions
 
 Give twenty existing dynamics functions precise parameter and local roles and source comments describing original callback ordering, signed bounds, live reads and untouched outputs. Keep the current interfaces, field names, expressions and native instructions unchanged. Historical return use and unchecked domains remain explicitly unknown. Full normal module packing, original ROM, source manifest, index and unchanged complete ledger are required.
 
 Totals: 418 further recoveries after the 225 upstream ordinary imports, plus 1474 existing C semantic cleanups. Current ledger: 782 assembly references = 743 ordinary + 39 entrypoints; 710,904 known remaining instruction bytes; zero unknown sizes; 285 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `3630-dynamics-node-boundary-contracts-3630` and `accepted-dynamics-node-boundary-contracts-3630` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 419 further readable functions
+
+Recover the original128-byte node-property selector with its17-entry compiler-owned jump table; preserve its unassigned fallback quirk. Clarify44 existing-C contracts through scoped local roles and bounded uncertainty comments. All original readonly bytes, serialized module relocations, prior assessed code and final ROM must remain exact.
+
+Totals: 419 further recoveries after the 225 upstream ordinary imports, plus 1518 existing C semantic cleanups. Current ledger: 781 assembly references = 742 ordinary + 39 entrypoints; 710,776 known remaining instruction bytes; zero unknown sizes; 285 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `3684-dynamics-property-and-native-contracts-3684` and `accepted-dynamics-property-and-native-contracts-3684` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
