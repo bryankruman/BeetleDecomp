@@ -172,12 +172,12 @@ extern void *D_caranim_00406B8C;
 extern void *gSkidExports;
 extern void *gSparksExports;
 extern void *gSprayExports;
-void caranimUnloadEffectModules(void) {
+void caranimUnloadEffectModules(void) { /* For each nonzero cached export, unload its literal tag and clear that export afterward. */
     if (gSkidExports != 0) { uvUnloadModule(0x736B6964); gSkidExports = 0; }
     if (gSprayExports != 0) { uvUnloadModule(0x73707279); gSprayExports = 0; }
     if (gSparksExports != 0) { uvUnloadModule(0x73706172); gSparksExports = 0; }
     if (D_caranim_00406B8C != 0) { uvUnloadModule(0x73686164); D_caranim_00406B8C = 0; }
-}
+/* RE_UNKNOWN: Shared users and unload reference-count/lifetime rules. */ }
 #line 60 "src/modules/caranim.c"
 
 /* func_caranim_004003AC consumes three incoming words and returns its
@@ -797,11 +797,11 @@ void caranimSelectCameraLightBufferSlot(void *state)
 #line 233 "src/modules/caranim.c"
 /* Apply color and register property-four callback; the object retains state.
  * RE_UNKNOWN: color-index bounds and retained-state lifetime need producers/teardown. */
-void caranimApplyColorAndCallback(s32 objectId, CarAnimColorContext *state) {
-    s32 index = state->colorIndex;
-    s32 color = ((s32 *)&D_caranim_00407178)[index];
-    gUvDobjExports->uvDobjReplaceLightColorRecord(objectId, color, color, 0);
-    gUvDobjExports->uvDobjProps(objectId, 4, caranimSelectCameraLightBufferSlot, state, 0);
-}
+void caranimApplyColorAndCallback(s32 objectId, CarAnimColorContext *colorContext) { /* Use one unchecked color-table word twice, then register the callback with the same context. */
+    s32 colorTableIndex = colorContext->colorIndex;
+    s32 selectedColorWord = ((s32 *)&D_caranim_00407178)[colorTableIndex];
+    gUvDobjExports->uvDobjReplaceLightColorRecord(objectId, selectedColorWord, selectedColorWord, 0);
+    gUvDobjExports->uvDobjProps(objectId, 4, caranimSelectCameraLightBufferSlot, colorContext, 0);
+/* RE_UNKNOWN: Color-word packing, table bounds and callback context lifetime. */ }
 #line 234 "src/modules/caranim.c"
 

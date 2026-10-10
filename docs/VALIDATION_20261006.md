@@ -3081,10 +3081,19 @@ Totals: 418 further recoveries after the 225 upstream ordinary imports, plus 147
 Frozen wave `3630-dynamics-node-boundary-contracts-3630` and `accepted-dynamics-node-boundary-contracts-3630` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 419 further readable functions
+## Historical accepted checkpoint — 419 further readable functions
 
 Recover the original128-byte node-property selector with its17-entry compiler-owned jump table; preserve its unassigned fallback quirk. Clarify44 existing-C contracts through scoped local roles and bounded uncertainty comments. All original readonly bytes, serialized module relocations, prior assessed code and final ROM must remain exact.
 
 Totals: 419 further recoveries after the 225 upstream ordinary imports, plus 1518 existing C semantic cleanups. Current ledger: 781 assembly references = 742 ordinary + 39 entrypoints; 710,776 known remaining instruction bytes; zero unknown sizes; 285 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `3684-dynamics-property-and-native-contracts-3684` and `accepted-dynamics-property-and-native-contracts-3684` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 419 further readable functions
+
+Name observed local roles and document original callback, drawing, cleanup and lookup behavior with explicit unresolved domains.
+
+Totals: 419 further recoveries after the 225 upstream ordinary imports, plus 1531 existing C semantic cleanups. Current ledger: 781 assembly references = 742 ordinary + 39 entrypoints; 710,776 known remaining instruction bytes; zero unknown sizes; 285 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `3730-sprite-vehicle-native-contracts` and `accepted-sprite-vehicle-native-contracts-3730` verify real translation-unit instructions/full relocations, 7 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

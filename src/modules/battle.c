@@ -435,7 +435,7 @@ void battleSubmitFiveDebugRecords(void) {
 /* Run the optional callback, bracket the main battle callback with the
  * original two engine helpers, then submit diagnostics only when debug
  * output is enabled and its display selector is two. Preserve callback order. */
-void battleRunFrameCallbacks(void) {
+void battleRunFrameCallbacks(void) { /* Preserve the optional pre-call, profiler bracket and conditional debug submission order. */
     if (D_80025D76 != 0) {
         D_battle_0040A044->unkC();
     }
@@ -445,7 +445,7 @@ void battleRunFrameCallbacks(void) {
     if ((D_debugEnable != 0) && (gDebugFrateDisp == 2)) {
         battleSubmitFiveDebugRecords();
     }
-}
+/* RE_UNKNOWN: Meaning of the signed-halfword pre-call gate and legal callback lifetime. */ }
 #line 189 "src/modules/battle.c"
 
 /* Original Battle1BB8 calls two distinct screen-width/height getter pairs,

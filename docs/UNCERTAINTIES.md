@@ -17,8 +17,8 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 1238 |
-| Preserved RE_ORIGINAL_QUIRK notes | 326 |
+| Explicit RE_UNKNOWN notes | 1252 |
+| Preserved RE_ORIGINAL_QUIRK notes | 327 |
 | Older comments with uncertainty language | 92 |
 | Documented original-behavior audits | 30 |
 | Assembly-backed functions or data | 783 |
@@ -28,7 +28,7 @@ For every future source wave, regenerate and check this index after code and str
 | Layout padding to preserve | 269 |
 | Unresolved type names | 282 |
 | Explicit unused ABI, storage or local identifiers | 133 |
-| Decompiler parameter/local names | 657 |
+| Decompiler parameter/local names | 656 |
 | Fake, unresolved or TODO draft markers | 25 |
 | Data-dependent conditional draft guards | 4 |
 
@@ -1534,6 +1534,7 @@ For every future source wave, regenerate and check this index after code and str
 | explicit_unknown | `Original update stores/reloads the countdown and tests ordered <=0. * Expiry submits sound 44, the matrix translation to EXPL/75, then clears. * Otherwise 9144 receives 27.0f; a...` | assembly `func_battle_004081D8` | [1297](../src/modules/battle.c#L1297) |
 | explicit_unknown | `Process SND slot 0x70, initialize the handle at +0x20, then choose the * kind-specific sound ID through a signed truncation of MATH slot 0x34. * RE_ORIGINAL_QUIRK: the fraction ...` | function `battleProcessKindSoundVariant` | [1168](../src/modules/battle.c#L1168) |
 | explicit_unknown | `Query with the original scene signed-byte filter, then inspect kind 2's * low-24-bit identifier: self match returns 0; the first peer match returns * its one-based index. Query ...` | assembly `func_battle_00409314` | [1443](../src/modules/battle.c#L1443) |
+| explicit_unknown | `RE_UNKNOWN: Meaning of the signed-halfword pre-call gate and legal callback lifetime.` | function `battleRunFrameCallbacks` | [448](../src/modules/battle.c#L448) |
 | explicit_unknown | `RE_UNKNOWN: linked field 0x1C supplies a camera scalar; its physical meaning and units require caller/callee evidence.` | — | [722](../src/modules/battle.c#L722) |
 | explicit_unknown | `RE_UNKNOWN: native DOBJ consumes this word as a signed pool index; historical pointer spelling and upstream producer/caller contract need original evidence.` | type `Node_00407F30` | [18](../src/modules/battle.c#L18) |
 | explicit_unknown | `Read the indexed twelve-byte color record and call the primitive * color export; last channel and alpha 0.5 keep their original raw-word ABI. * RE_UNKNOWN: input/index validity ...` | function `battleSetIndexedPrimitiveColor` | [1414](../src/modules/battle.c#L1414) |
@@ -1854,6 +1855,8 @@ For every future source wave, regenerate and check this index after code and str
 | explicit_unknown | `Native callback consumes channel A0. When the default state and UVTX0x436 * are available, reread the state and set texture selectors u2/v2 from its * scaled float 0x3A8: first ...` | assembly `func_caranim_00405B7C` | [701](../src/modules/caranim.c#L701) |
 | explicit_unknown | `On selection change, update, reread selection and copy 30 bytes via its text pointer. * GUI slot 0xC4 uppercases bytes >= 97 without NUL-scanning or retaining source. * RE_UNKNO...` | function `caranimRefreshChangedSelection` | [607](../src/modules/caranim.c#L607) |
 | explicit_unknown | `Publish the 19 original export addresses, load effect modules and assets, * copy the selected seven-word record and cache four particle property pairs. * Register the original c...` | function `__entrypoint_func_caranim_400000` | [114](../src/modules/caranim.c#L114) |
+| explicit_unknown | `RE_UNKNOWN: Color-word packing, table bounds and callback context lifetime.` | function `caranimApplyColorAndCallback` | [805](../src/modules/caranim.c#L805) |
+| explicit_unknown | `RE_UNKNOWN: Shared users and unload reference-count/lifetime rules.` | function `caranimUnloadEffectModules` | [180](../src/modules/caranim.c#L180) |
 | explicit_unknown | `Read camera pointer cell CAM0x30; its signed word0x220 selects state light slot0x248 * when nonnegative, otherwise -1. RE_UNKNOWN: camera/state pointer lifetime, slot bounds * a...` | function `caranimSelectCameraLightBufferSlot` | [777](../src/modules/caranim.c#L777) |
 | explicit_unknown | `Register the animation callback at priority 0x14; zero means no insert-before callback. * RE_UNKNOWN: caller channel/list validity and ignored failure need caller/pool audit.` | function `caranimRegisterChannelCallback` | [689](../src/modules/caranim.c#L689) |
 | explicit_unknown | `Return an address in the module's 0x1C-stride table without allocating. * Sentinel 0xFFF and the debug override select record zero. RE_UNKNOWN: caller * index bounds and mutatio...` | function `caranimGetMaterialRecord` | [328](../src/modules/caranim.c#L328) |
@@ -1969,6 +1972,8 @@ For every future source wave, regenerate and check this index after code and str
 | explicit_unknown | `Prepare the selected managed sound, apply ordered volume/pitch clamps and * request playback; keep fresh export/shared-scale reads around callbacks. * Current-track and sound-ID...` | assembly `func_caraudio_0040171C` | [180](../src/modules/caraudio.c#L180) |
 | explicit_unknown | `Prepend kind zero; soundHandlingEnabled gates soundId/volume (SND 0x6C/0x84). * Original loader zeroes the head in fresh caud-image BSS before entry. RE_UNKNOWN: * value4/valueC...` | function `carAudioPrependCommand` | [375](../src/modules/caraudio.c#L375) |
 | explicit_unknown | `Process indexed source gates, shared last-ID/scalar storage and handles. * Preserve callback/index reloads, the stored-byte 255 test and ordered * floating comparisons, includin...` | assembly `func_caraudio_004010A4` | [159](../src/modules/caraudio.c#L159) |
+| explicit_unknown | `RE_UNKNOWN: Descriptor/table bounds, scalar units and incoming pointer validity.` | function `carAudioUpdateSharedScalarAndEmitters` | [107](../src/modules/caraudio.c#L107) |
+| explicit_unknown | `RE_UNKNOWN: Legal shared-sound/module teardown timing and remaining export users.` | function `carAudioModuleCleanup` | [51](../src/modules/caraudio.c#L51) |
 | explicit_unknown | `Resolve all four CARANIM material records before sequential signed16 code * tests. Priority is 4, then 5/6 (5 on track 7, otherwise 2), followed by * 12, 3, 2, 8, 9, 7, 10, 11, ...` | assembly `func_caraudio_004022BC` | [254](../src/modules/caraudio.c#L254) |
 | explicit_unknown | `Select a signed sound ID from the selector's eight-byte choice record, * preserving random indexing, the last-index correction and -1 success return. * Release/reset the chosen ...` | assembly `func_caraudio_00401A08` | [195](../src/modules/caraudio.c#L195) |
 | explicit_unknown | `Snapshot the inner audio-state pointer, then process/reset/recreate each * indexed sound handle; only the first handle is gated by gNumPlayers == 1. * Reload the outer slot inde...` | assembly `func_caraudio_00400550` | [86](../src/modules/caraudio.c#L86) |
@@ -3138,6 +3143,9 @@ For every future source wave, regenerate and check this index after code and str
 | explicit_unknown | `Query between matrix translations and retain the original drawing calls. * Original matrix-row aliases, three single-precision component divisions, * MISC110 returned scalar, qu...` | assembly `func_motion_004066E4` | [832](../src/modules/motion.c#L832) |
 | explicit_unknown | `Query four 0x130-stride sample views after stores at 0x12A/0x12E/0x12C. * ISCT 0xA4 mode 2 outputs key/scalar/XYZ; misses or loaded texture flag 4 * trigger ISCT 0xA0 mask 0xFE,...` | assembly `func_motion_004017E4` | [392](../src/modules/motion.c#L392) |
 | explicit_unknown | `Query the descriptor's dynamic word, forward CAM tag 18 and copy the two * vectors in their original order; the store at 10C4 also occurs when signed E50=-1. * Preserve the orde...` | assembly `func_motion_00409734` | [959](../src/modules/motion.c#L959) |
+| explicit_unknown | `RE_UNKNOWN: Caller pointer validity and permitted source/output overlap.` | function `motionCopyMatrix5E8` | [602](../src/modules/motion.c#L602) |
+| explicit_unknown | `RE_UNKNOWN: Emitter ID validity and teardown ownership; neither stored byte is cleared here.` | function `motionUnloadModulesAndStopEmitters` | [340](../src/modules/motion.c#L340) |
+| explicit_unknown | `RE_UNKNOWN: Meaning of the unused incoming word and unchecked state/callback lifetime.` | function `motionRunBattleAndHotLavaUpdate` | [1012](../src/modules/motion.c#L1012) |
 | explicit_unknown | `RE_UNKNOWN: The s32 snapshot preserves promoted byte values; original lexical local type/order and complete historical allocation types remain unproved. * Runtime module availab...` | — | [1210](../src/modules/motion.c#L1210) |
 | explicit_unknown | `Read the unsigned halfword at state offset 0x70C without modifying the caller object. RE_UNKNOWN: the field role requires its writers and consumers; no status or identifier mean...` | function `func_motion_00415870` | [1395](../src/modules/motion.c#L1395) |
 | explicit_unknown | `Reset scalar/history state, build matrix5E8, then copy the source vector * to618 and ten 24-byte history rows with a fresh settings7C read per row. * Matrix5E8 and vector618 ove...` | assembly `func_motion_00400F54` | [365](../src/modules/motion.c#L365) |
@@ -3516,13 +3524,14 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_plyr_004050AC` | — | [198](../src/modules/plyr.c#L198) |
 | assembly | `func_plyr_00405688` | — | [217](../src/modules/plyr.c#L217) |
 | assembly | `func_plyr_00405C1C` | — | [219](../src/modules/plyr.c#L219) |
-| decompiler_local | `arg0` | function `func_plyr_004022E0`, function `func_plyr_004022E0` | [50](../src/modules/plyr.c#L50), [130](../src/modules/plyr.c#L130), [133](../src/modules/plyr.c#L133), [139](../src/modules/plyr.c#L139) |
-| decompiler_local | `var_v1` | function `func_plyr_004022E0` | [132](../src/modules/plyr.c#L132), [133](../src/modules/plyr.c#L133), [134](../src/modules/plyr.c#L134), [136](../src/modules/plyr.c#L136), [138](../src/modules/plyr.c#L138) |
+| decompiler_local | `arg0` | function `func_plyr_004022E0` | [50](../src/modules/plyr.c#L50) |
 | explicit_unknown | `Draw the red arrow and translucent black shadow using current screen dimensions. * Apply local-Y displacement -14 directly to the caller's matrix; popping graphics state does no...` | function `plyrDrawRedArrowWithShadow` | [166](../src/modules/plyr.c#L166) |
 | explicit_unknown | `Invoke motion export 0x30, then pass the supplied * word to car-audio export 0x24. Original player initialization binds these * dependencies to tags 'motn' and 'cara', respectiv...` | function `plyrInvokeMotionNoopAndCarAudioCallback` | [92](../src/modules/plyr.c#L92) |
 | explicit_unknown | `Invoke motionUpdateSharedState through proven motion export 0x34, * then run the original player helper when shared word 0x0040690C is below * three and the shared halfword is z...` | function `plyrUpdateMotionAndConditionallyDispatch` | [107](../src/modules/plyr.c#L107) |
 | explicit_unknown | `Original MOTN slots: 0x30 -> func_motion_00405E5C; * 0x34 -> motionUpdateSharedState(void). * Slot 0x30 returns immediately, storing incoming a0 in its argument home * at 0(sp) ...` | type `PlyrMotionExports` | [24](../src/modules/plyr.c#L24) |
 | explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_plyr_00402338` | [145](../src/modules/plyr.c#L145) |
+| explicit_unknown | `RE_UNKNOWN: Registry bounds, record layout and key meaning. Inherited nested casts and self-assignment remain; historical types are unproved.` | function `func_plyr_004022E0` | [142](../src/modules/plyr.c#L142) |
+| explicit_unknown | `RE_UNKNOWN: Screen-size domain and caller matrix ownership; input translation persists and bit 0x400000 ends cleared.` | function `plyrDrawRedArrowWithShadow` | [191](../src/modules/plyr.c#L191) |
 | explicit_unknown | `Release eight shared player sound handles in their original order. * RE_UNKNOWN: storage ownership and safe handle lifetime require original initialization, users and release pa...` | function `plyrReleaseSharedSoundHandles` | [69](../src/modules/plyr.c#L69) |
 | explicit_unknown | `Release the sound handle selected by the caller record word at 0x14 * from shared storage D_plyr_00406B48, using the original eight-byte stride. * RE_UNKNOWN: shared handle-arra...` | function `plyrReleaseIndexedSoundHandle` | [222](../src/modules/plyr.c#L222) |
 | explicit_unknown | `Return the caller-indexed word from D_plyr_00406B28. RE_UNKNOWN: entry meaning and valid index domain require original table producers and callers; preserve its s32 result ABI.` | function `plyrGetIndexedEntryWord` | [125](../src/modules/plyr.c#L125) |
@@ -3680,6 +3689,7 @@ For every future source wave, regenerate and check this index after code and str
 | explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_race_00403350` | [187](../src/modules/race.c#L187) |
 | explicit_unknown | `Original pause pass checks signed settings halfwords 0x9C/0x86/0x88 and * player gates 0x58/0x1D; REPLAY 0x0C stores a shared byte, not pauseFlag. * While paused, PAUS 0x08 disp...` | assembly `func_race_00400CC0` | [116](../src/modules/race.c#L116) |
 | explicit_unknown | `Pass the first stored player to PLYR 0x20, releasing its word-0x14 indexed sound handle. * RE_UNKNOWN: nonnull player, valid handle index and lifetime need original callers/PLYR...` | function `raceReleaseFirstPlayerSoundHandle` | [309](../src/modules/race.c#L309) |
+| explicit_unknown | `RE_UNKNOWN: Pending producer and sound-ID meaning; unsupported selectors leave pending unchanged.` | function `racePlayPendingSoundByKind` | [305](../src/modules/race.c#L305) |
 | explicit_unknown | `Select the shared GAMEGUI widget at debug-byte address+0x10 before the * original GAMEGUI14 initialization call, then allocate and label a child * group and attach it. Forward t...` | function `raceCreateModuleGui` | [211](../src/modules/race.c#L211) |
 | explicit_unknown | `Store the shared entry count, value-array address and opaque third * parameter used by the race module. * RE_UNKNOWN: ownership/lifetime of the retained value array. Trace origi...` | function `raceSetEntryTable` | [247](../src/modules/race.c#L247) |
 | explicit_unknown | `Update parallel player-gate bytes and count word-5C and byte-1D gates. * Word5C calls CARAUDIO34, PLYR20 and SND E4 before reloading player/count. * Byte1D uses a mode snapshot,...` | assembly `func_race_00402E98` | [152](../src/modules/race.c#L152) |
@@ -8168,21 +8178,24 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `arg0` | function `uvGetSpriteHeight`, function `uvGetSpriteWidth`, function `uvSpriteClearStateBytes`, function `uvSpriteRender`, function `uvSpriteRender`, function `uvSprtProps` | [39](../src/modules/uvsprt_rom.c#L39), [43](../src/modules/uvsprt_rom.c#L43), [45](../src/modules/uvsprt_rom.c#L45), [46](../src/modules/uvsprt_rom.c#L46), [47](../src/modules/uvsprt_rom.c#L47), [260](../src/modules/uvsprt_rom.c#L260), [264](../src/modules/uvsprt_rom.c#L264), [265](../src/modules/uvsprt_rom.c#L265) |
 | decompiler_local | `temp_a1` | function `uvSpriteDrawAll` | [239](../src/modules/uvsprt_rom.c#L239), [244](../src/modules/uvsprt_rom.c#L244), [245](../src/modules/uvsprt_rom.c#L245), [247](../src/modules/uvsprt_rom.c#L247), [250](../src/modules/uvsprt_rom.c#L250) |
 | explicit_unknown | `Clear both leading bytes in the selected sprite. RE_UNKNOWN: sprite * index/backing validity need original pool, ID producers and callers.` | function `uvSpriteClearStateBytes` | [168](../src/modules/uvsprt_rom.c#L168) |
-| explicit_unknown | `Clip endpoints and adjust texture coordinates. RE_UNKNOWN: valid signed ranges and packed truncation intent need original callers/assets and command-format evidence.` | function `uvDrawBitmap` | [489](../src/modules/uvsprt_rom.c#L489) |
-| explicit_unknown | `Preserve native split-load addressing and inclusive row loop. RE_UNKNOWN: split-data layout and readable extent need original resource producers.` | function `uvDrawBitmap` | [580](../src/modules/uvsprt_rom.c#L580) |
+| explicit_unknown | `Clip endpoints and adjust texture coordinates. RE_UNKNOWN: valid signed ranges and packed truncation intent need original callers/assets and command-format evidence.` | function `uvDrawBitmap` | [497](../src/modules/uvsprt_rom.c#L497) |
+| explicit_unknown | `Clip the bitmap rectangle to the shared scissor, advancing S/T for the * clipped left/top edges. Load the selected texture format only when its * buffer address changes, then em...` | function `uvDrawBitmap` | [472](../src/modules/uvsprt_rom.c#L472) |
+| explicit_unknown | `Preserve native split-load addressing and inclusive row loop. RE_UNKNOWN: split-data layout and readable extent need original resource producers.` | function `uvDrawBitmap` | [588](../src/modules/uvsprt_rom.c#L588) |
 | explicit_unknown | `RE_ORIGINAL_QUIRK: allocator result is used without a local null check. RE_UNKNOWN: allocation success, backing, aliases and lifetimes need original allocator, producer and call...` | function `uvSpriteFromBitmap` | [72](../src/modules/uvsprt_rom.c#L72) |
+| explicit_unknown | `RE_UNKNOWN: Zero, negative or nonfinite scale and integer-conversion range are not checked here.` | function `uvSpriteDraw` | [837](../src/modules/uvsprt_rom.c#L837) |
 | explicit_unknown | `RE_UNKNOWN: asset extents, aliasing, ownership and historical declarations need original producer/caller proof.` | function `uvSpriteSetBlit` | [282](../src/modules/uvsprt_rom.c#L282) |
-| explicit_unknown | `RE_UNKNOWN: buffer-address cache validity across data/format changes needs original resource lifetimes and render-order proof.` | function `uvDrawBitmap` | [654](../src/modules/uvsprt_rom.c#L654) |
+| explicit_unknown | `RE_UNKNOWN: buffer-address cache validity across data/format changes needs original resource lifetimes and render-order proof.` | function `uvDrawBitmap` | [662](../src/modules/uvsprt_rom.c#L662) |
 | explicit_unknown | `RE_UNKNOWN: copied texture-data extent, ownership and lifetime need original producer/consumer proof.` | function `uvSpriteFromBitmap` | [85](../src/modules/uvsprt_rom.c#L85) |
 | explicit_unknown | `RE_UNKNOWN: count domain, allocation/module success and pool lifetime need original property producers, allocators and callers.` | function `__entrypoint_func_uvsprt_rom_400298` | [184](../src/modules/uvsprt_rom.c#L184) |
 | explicit_unknown | `RE_UNKNOWN: cursor/sprite backing, writable capacity, aliases and lifetimes need original caller/producer proof.` | function `uvSpriteDisplayList` | [225](../src/modules/uvsprt_rom.c#L225) |
-| explicit_unknown | `RE_UNKNOWN: display-list capacity, aliasing, resource lifetime and shared-state call ordering need caller proof.` | function `uvSpriteDrawFinish`, function `uvSpriteDrawInit` | [689](../src/modules/uvsprt_rom.c#L689), [991](../src/modules/uvsprt_rom.c#L991) |
-| explicit_unknown | `RE_UNKNOWN: duplicated IA combine arms retain current C; historical source intent needs original source/compiler proof.` | function `uvSpriteDraw` | [775](../src/modules/uvsprt_rom.c#L775) |
+| explicit_unknown | `RE_UNKNOWN: display-list capacity, aliasing, resource lifetime and shared-state call ordering need caller proof.` | function `uvSpriteDrawFinish`, function `uvSpriteDrawInit` | [698](../src/modules/uvsprt_rom.c#L698), [1010](../src/modules/uvsprt_rom.c#L1010) |
+| explicit_unknown | `RE_UNKNOWN: duplicated IA combine arms retain current C; historical source intent needs original source/compiler proof.` | function `uvSpriteDraw` | [793](../src/modules/uvsprt_rom.c#L793) |
 | explicit_unknown | `RE_UNKNOWN: lower index bound, argument-stream extents, asset validity and lifetimes need original caller/producer proof.` | function `uvSprtProps` | [366](../src/modules/uvsprt_rom.c#L366) |
 | explicit_unknown | `RE_UNKNOWN: native reads two f32 words; original variadic declarations and caller packing need proof.` | function `uvSprtProps` | [405](../src/modules/uvsprt_rom.c#L405) |
-| explicit_unknown | `RE_UNKNOWN: sprite/bitmap backing, display-list capacity, aliases, numeric domains and shared-state lifetimes need original producers/callers and runtime-format proof.` | function `uvSpriteDraw` | [720](../src/modules/uvsprt_rom.c#L720) |
+| explicit_unknown | `RE_UNKNOWN: sprite/bitmap backing, display-list capacity, aliases, numeric domains and shared-state lifetimes need original producers/callers and runtime-format proof.` | function `uvSpriteDraw` | [738](../src/modules/uvsprt_rom.c#L738) |
 | explicit_unknown | `RE_UNKNOWN: unsupported formats retain attributes; asset validity and resource lifetime need producer proof.` | function `uvSpriteSetBlit` | [324](../src/modules/uvsprt_rom.c#L324) |
-| explicit_unknown | `RE_UNKNOWN: writable command capacity, backing extents, aliases and lifetimes need original allocators/producers and full caller contracts; macro overhead estimates are not bounds.` | function `uvDrawBitmap` | [488](../src/modules/uvsprt_rom.c#L488) |
+| explicit_unknown | `RE_UNKNOWN: writable command capacity, backing extents, aliases and lifetimes need original allocators/producers and full caller contracts; macro overhead estimates are not bounds.` | function `uvDrawBitmap` | [496](../src/modules/uvsprt_rom.c#L496) |
+| explicit_unknown | `Return NULL for hidden sprites. Otherwise emit attribute/color state, * walk bitmap segments with row wrapping and expansion offsets, or draw * a clipped solid fill when the bit...` | function `uvSpriteDraw` | [714](../src/modules/uvsprt_rom.c#L714) |
 | layout_padding | `pad` | type `UnkStruct_uvsprt_rom_004033CC` | [31](../src/modules/uvsprt_rom.c#L31) |
 | offset_field | `unk0` | function `__entrypoint_func_uvsprt_rom_400298`, function `uvSpriteClearStateBytes`, function `uvSpriteDrawAll`, function `uvSprtProps`, type `uvSprite_t` | [18](../src/modules/uvsprt_rom.c#L18), [171](../src/modules/uvsprt_rom.c#L171), [214](../src/modules/uvsprt_rom.c#L214), [245](../src/modules/uvsprt_rom.c#L245), [425](../src/modules/uvsprt_rom.c#L425) |
 | offset_field | `unk1` | function `__entrypoint_func_uvsprt_rom_400298`, function `uvSpriteAllocateFirstFree`, function `uvSpriteClearStateBytes`, type `uvSprite_t` | [19](../src/modules/uvsprt_rom.c#L19), [157](../src/modules/uvsprt_rom.c#L157), [158](../src/modules/uvsprt_rom.c#L158), [172](../src/modules/uvsprt_rom.c#L172), [215](../src/modules/uvsprt_rom.c#L215) |
@@ -8193,9 +8206,10 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unkA` | type `uvSprite_t` | [24](../src/modules/uvsprt_rom.c#L24) |
 | opaque_type | `UnkStruct_uvsprt_rom_004033CC` | global `sUvGfxStateExports_uvsprt`, type `UnkStruct_uvsprt_rom_004033CC` | [33](../src/modules/uvsprt_rom.c#L33), [66](../src/modules/uvsprt_rom.c#L66) |
 | opaque_type | `UnkStruct_uvsprt_rom_004033CC_s` | type `UnkStruct_uvsprt_rom_004033CC` | [30](../src/modules/uvsprt_rom.c#L30) |
+| original_quirk | `RE_ORIGINAL_QUIRK: Initial Y uses0.99999F; later wrapped rows use0.9999F. Preserve both literals.` | function `uvSpriteDraw` | [848](../src/modules/uvsprt_rom.c#L848) |
 | original_quirk | `RE_ORIGINAL_QUIRK: allocator result is used without a local null check. RE_UNKNOWN: allocation success, backing, aliases and lifetimes need original allocator, producer and call...` | function `uvSpriteFromBitmap` | [72](../src/modules/uvsprt_rom.c#L72) |
-| original_quirk | `RE_ORIGINAL_QUIRK: native publishes buf to the cache even when bmsiz is outside 0..3 and no load case runs; caller reachability remains unknown.` | function `uvDrawBitmap` | [651](../src/modules/uvsprt_rom.c#L651) |
-| uncertainty_note | `Select opaque surface rendering when the current attribute requests it.` | function `uvSpriteDrawFinish` | [996](../src/modules/uvsprt_rom.c#L996) |
+| original_quirk | `RE_ORIGINAL_QUIRK: native publishes buf to the cache even when bmsiz is outside 0..3 and no load case runs; caller reachability remains unknown.` | function `uvDrawBitmap` | [659](../src/modules/uvsprt_rom.c#L659) |
+| uncertainty_note | `Select opaque surface rendering when the current attribute requests it.` | function `uvSpriteDrawFinish` | [1015](../src/modules/uvsprt_rom.c#L1015) |
 | unused_identifier | `unusedHalfwordA` | function `uvSpriteSetBlit` | [280](../src/modules/uvsprt_rom.c#L280) |
 | unused_identifier | `unusedHalfwordB` | function `uvSpriteSetBlit` | [281](../src/modules/uvsprt_rom.c#L281) |
 

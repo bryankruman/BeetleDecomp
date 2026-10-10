@@ -469,20 +469,28 @@ void uvSprtProps(s32 spriteId, ...) {
     }
 }
 
+/* Clip the bitmap rectangle to the shared scissor, advancing S/T for the
+ * clipped left/top edges. Load the selected texture format only when its
+ * buffer address changes, then emit the rectangle and publish the cursor.
+ * RE_UNKNOWN: Command/backing capacities, signed arithmetic domains and
+ * cache validity require original allocators, asset producers and callers.
+ * The split-YUV inclusive row loop and unknown-size cache update remain
+ * unchanged; these paths do not establish valid resource domains. */
+#line 457 "src/modules/uvsprt_rom.c"
 void uvDrawBitmap(Gfx **outDisplayList, Sprite *spriteState, Bitmap *bitmapState, s32 startX, s32 startY, s32 endX, s32 endY, s32 textureOffsetS,
                               s32 textureOffsetT, s32 textureStepS, s32 textureStepT) {
     s32 clippedS, clippedT;
-    s32 rectangleXh, rectangleYh;
-    s32 rectangleXl, rectangleYl;
+    s32 rectangleLeftQ2, rectangleTopQ2;
+    s32 rectangleRightQ2, rectangleBottomQ2;
     Gfx *displayListCursor;
     s32 textureWidth, textureHeight;
     Gtexrect rectangleFields, *rectangleFieldView;
-    s32 s_clamp, t_clamp, s_mask, t_mask, s_lod, t_lod;
+    s32 clampS, clampT, maskS, maskT, lodS, lodT;
 
     rectangleFieldView = &rectangleFields;
 
     textureWidth = bitmapState->width_img;
-    textureHeight = spriteState->bmHreal;
+    textureHeight = spriteState->bmHreal; /* Snapshot bitmap width and sprite real height before either scissor early return. */
 
     displayListCursor = *outDisplayList;
     /* RE_UNKNOWN: writable command capacity, backing extents, aliases and lifetimes need original allocators/producers and full caller contracts; macro overhead estimates are not bounds. */
@@ -496,86 +504,86 @@ void uvDrawBitmap(Gfx **outDisplayList, Sprite *spriteState, Bitmap *bitmapState
     }
 
     if (startX < sScissorXmin) {
-        rectangleXh = sScissorXmin * 4;
+        rectangleLeftQ2 = sScissorXmin * 4;
         clippedS = (bitmapState->s << 5) + textureOffsetS + (((sScissorXmin - startX) * textureStepS) >> 5);
 #ifdef DEBUG_SCISSOR
         emPrintf("Sprite Scissoring: Left Edge (%d) not in range (%d,%d)\n", startX, sScissorXmin,
                  sScissorXmax);
 #endif
     } else {
-        rectangleXh = startX * 4;
+        rectangleLeftQ2 = startX * 4;
         clippedS = (bitmapState->s << 5) + textureOffsetS;
     };
 
     if (startY < sScissorYmin) {
-        rectangleYh = sScissorYmin * 4;
+        rectangleTopQ2 = sScissorYmin * 4;
         clippedT = (bitmapState->t << 5) + textureOffsetT + (((sScissorYmin - startY) * textureStepT) >> 5);
 #ifdef DEBUG_SCISSOR
         emPrintf("Sprite Scissoring: Top Edge (%d) not in range (%d,%d)\n", startY, sScissorYmin,
                  sScissorYmax);
 #endif
     } else {
-        rectangleYh = startY * 4;
+        rectangleTopQ2 = startY * 4;
         clippedT = (bitmapState->t << 5) + textureOffsetT;
     }
 
     if (endX >= sScissorXmax) {
-        rectangleXl = sScissorXmax * 4;
+        rectangleRightQ2 = sScissorXmax * 4;
 #ifdef DEBUG_SCISSOR
         emPrintf("Sprite Scissoring: Right Edge (%d) not in range (%d,%d)\n", endX, sScissorXmin,
                  sScissorXmax);
 #endif
     } else {
-        rectangleXl = endX * 4;
+        rectangleRightQ2 = endX * 4;
     };
 
     if (endY >= sScissorYmax) {
-        rectangleYl = sScissorYmax * 4;
+        rectangleBottomQ2 = sScissorYmax * 4;
 #ifdef DEBUG_SCISSOR
         emPrintf("Sprite Scissoring: Bottom Edge (%d) not in range (%d,%d)\n", endY, sScissorYmin,
                  sScissorYmax);
 #endif
     } else {
-        rectangleYl = endY * 4;
+        rectangleBottomQ2 = endY * 4;
     };
 
-    s_clamp = G_TX_CLAMP;
-    t_clamp = G_TX_CLAMP;
-    s_mask = G_TX_NOMASK;
-    t_mask = G_TX_NOMASK;
-    s_lod = G_TX_NOLOD;
-    t_lod = G_TX_NOLOD;
+    clampS = G_TX_CLAMP;
+    clampT = G_TX_CLAMP;
+    maskS = G_TX_NOMASK;
+    maskT = G_TX_NOMASK;
+    lodS = G_TX_NOLOD;
+    lodT = G_TX_NOLOD;
 
 #define LOAD_TEX
 
 #ifdef LOAD_TEX
-    if (bitmapState->buf != sPrevBitmapBuf) {
+    if (bitmapState->buf != sPrevBitmapBuf) { /* The native cache key compares only the buffer word; format and dimensions are not separate keys. */
         switch (spriteState->bmsiz) {
             case G_IM_SIZ_4b:
                 if (spriteState->attr & SP_TEXSHUF) {
-                    gDPLoadTextureBlock_4bS(displayListCursor++, bitmapState->buf, spriteState->bmfmt, textureWidth, textureHeight, 0, s_clamp,
-                                            t_clamp, s_mask, t_mask, s_lod, t_lod);
+                    gDPLoadTextureBlock_4bS(displayListCursor++, bitmapState->buf, spriteState->bmfmt, textureWidth, textureHeight, 0, clampS,
+                                            clampT, maskS, maskT, lodS, lodT);
                 } else {
-                    gDPLoadTextureBlock_4b(displayListCursor++, bitmapState->buf, spriteState->bmfmt, textureWidth, textureHeight, 0, s_clamp,
-                                           t_clamp, s_mask, t_mask, s_lod, t_lod);
+                    gDPLoadTextureBlock_4b(displayListCursor++, bitmapState->buf, spriteState->bmfmt, textureWidth, textureHeight, 0, clampS,
+                                           clampT, maskS, maskT, lodS, lodT);
                 };
                 break;
 
             case G_IM_SIZ_8b:
                 if (spriteState->attr & SP_TEXSHUF) {
                     gDPLoadTextureBlockS(displayListCursor++, bitmapState->buf, spriteState->bmfmt, G_IM_SIZ_8b, textureWidth, textureHeight, 0,
-                                         s_clamp, t_clamp, s_mask, t_mask, s_lod, t_lod);
+                                         clampS, clampT, maskS, maskT, lodS, lodT);
                 } else {
                     gDPLoadTextureBlock(displayListCursor++, bitmapState->buf, spriteState->bmfmt, G_IM_SIZ_8b, textureWidth, textureHeight, 0,
-                                        s_clamp, t_clamp, s_mask, t_mask, s_lod, t_lod);
+                                        clampS, clampT, maskS, maskT, lodS, lodT);
                 };
                 break;
             case G_IM_SIZ_16b:
                 if (spriteState->bmfmt == G_IM_FMT_YUV) {
                     if (spriteState->attr & SP_TEXSHUF) {
                         gDPLoadTextureBlockYuvS(displayListCursor++, bitmapState->buf, spriteState->bmfmt, G_IM_SIZ_16b, textureWidth,
-                                                textureHeight, 0, s_clamp, t_clamp, s_mask, t_mask, s_lod,
-                                                t_lod);
+                                                textureHeight, 0, clampS, clampT, maskS, maskT, lodS,
+                                                lodT);
                     } else {
                         if (bitmapState->LUToffset != 0) { /* Preserve native split-load addressing and inclusive row loop. RE_UNKNOWN: split-data layout and readable extent need original resource producers. */
                             unsigned char *splitDataBase, *rowDataAddress;
@@ -583,8 +591,8 @@ void uvDrawBitmap(Gfx **outDisplayList, Sprite *spriteState, Bitmap *bitmapState
                             s32 tileMemoryOffset, loadCount;
 
                             gDPSetTextureImage(displayListCursor++, G_IM_FMT_I, G_IM_SIZ_8b, 1, bitmapState->buf);
-                            gDPSetTile(displayListCursor++, G_IM_FMT_I, G_IM_SIZ_8b, 0, 256, G_TX_LOADTILE, 0, t_clamp,
-                                       t_mask, t_lod, s_clamp, s_mask, s_lod);
+                            gDPSetTile(displayListCursor++, G_IM_FMT_I, G_IM_SIZ_8b, 0, 256, G_TX_LOADTILE, 0, clampT,
+                                       maskT, lodT, clampS, maskS, lodS);
                             gDPLoadSync(displayListCursor++);
                             gDPLoadBlock(displayListCursor++, G_TX_LOADTILE, 0, 0, textureWidth * textureHeight - 1,
                                          CALC_DXT(textureWidth, 1));
@@ -607,7 +615,7 @@ void uvDrawBitmap(Gfx **outDisplayList, Sprite *spriteState, Bitmap *bitmapState
 
                                 gDPSetTextureImage(displayListCursor++, G_IM_FMT_I, G_IM_SIZ_8b, 1, rowDataAddress);
                                 gDPSetTile(displayListCursor++, G_IM_FMT_I, G_IM_SIZ_8b, 0, tileMemoryOffset, G_TX_LOADTILE, 0,
-                                           t_clamp, t_mask, t_lod, s_clamp, s_mask, s_lod);
+                                           clampT, maskT, lodT, clampS, maskS, lodS);
                                 gDPLoadSync(displayListCursor++);
                                 gDPLoadBlock(displayListCursor++, G_TX_LOADTILE, 0, 0, loadCount - 1,
                                              CALC_DXT(textureWidth, 1));
@@ -615,36 +623,36 @@ void uvDrawBitmap(Gfx **outDisplayList, Sprite *spriteState, Bitmap *bitmapState
                             };
 
                             gDPSetTile(displayListCursor++, spriteState->bmfmt, G_IM_SIZ_16b, (((textureWidth) * 1) + 7) >> 3, 0,
-                                       G_TX_RENDERTILE, 0, t_clamp, t_mask, t_lod, s_clamp, s_mask,
-                                       s_lod);
+                                       G_TX_RENDERTILE, 0, clampT, maskT, lodT, clampS, maskS,
+                                       lodS);
                             gDPSetTileSize(displayListCursor++, G_TX_RENDERTILE, 0, 0,
                                            ((textureWidth) -1) << G_TEXTURE_IMAGE_FRAC,
                                            ((textureHeight) -1) << G_TEXTURE_IMAGE_FRAC);
 
                         } else {
                             gDPLoadTextureBlockYuv(displayListCursor++, bitmapState->buf, spriteState->bmfmt, G_IM_SIZ_16b, textureWidth,
-                                                   textureHeight, 0, s_clamp, t_clamp, s_mask, t_mask,
-                                                   s_lod, t_lod);
+                                                   textureHeight, 0, clampS, clampT, maskS, maskT,
+                                                   lodS, lodT);
                         };
                     };
                 } else {
                     if (spriteState->attr & SP_TEXSHUF) {
                         gDPLoadTextureBlockS(displayListCursor++, bitmapState->buf, spriteState->bmfmt, G_IM_SIZ_16b, textureWidth,
-                                             textureHeight, 0, s_clamp, t_clamp, s_mask, t_mask, s_lod,
-                                             t_lod);
+                                             textureHeight, 0, clampS, clampT, maskS, maskT, lodS,
+                                             lodT);
                     } else {
                         gDPLoadTextureBlock(displayListCursor++, bitmapState->buf, spriteState->bmfmt, G_IM_SIZ_16b, textureWidth, textureHeight,
-                                            0, s_clamp, t_clamp, s_mask, t_mask, s_lod, t_lod);
+                                            0, clampS, clampT, maskS, maskT, lodS, lodT);
                     };
                 };
                 break;
             case G_IM_SIZ_32b:
                 if (spriteState->attr & SP_TEXSHUF) {
                     gDPLoadTextureBlockS(displayListCursor++, bitmapState->buf, spriteState->bmfmt, G_IM_SIZ_32b, textureWidth, textureHeight, 0,
-                                         s_clamp, t_clamp, s_mask, t_mask, s_lod, t_lod);
+                                         clampS, clampT, maskS, maskT, lodS, lodT);
                 } else {
                     gDPLoadTextureBlock(displayListCursor++, bitmapState->buf, spriteState->bmfmt, G_IM_SIZ_32b, textureWidth, textureHeight, 0,
-                                        s_clamp, t_clamp, s_mask, t_mask, s_lod, t_lod);
+                                        clampS, clampT, maskS, maskT, lodS, lodT);
                 };
                 break;
         }
@@ -653,12 +661,12 @@ void uvDrawBitmap(Gfx **outDisplayList, Sprite *spriteState, Bitmap *bitmapState
 #endif /* LOAD_TEX */
     /* RE_UNKNOWN: buffer-address cache validity across data/format changes needs original resource lifetimes and render-order proof. */
     rectangleFieldView->cmd = G_TEXRECT;
-    rectangleFieldView->tile = 0;
+    rectangleFieldView->tile = 0; /* Rectangle coordinates retain the original multiply-by-four and packed-field conversions. */
 
-    rectangleFieldView->xh = rectangleXh;
-    rectangleFieldView->xl = rectangleXl;
-    rectangleFieldView->yh = rectangleYh;
-    rectangleFieldView->yl = rectangleYl;
+    rectangleFieldView->xh = rectangleLeftQ2;
+    rectangleFieldView->xl = rectangleRightQ2;
+    rectangleFieldView->yh = rectangleTopQ2;
+    rectangleFieldView->yl = rectangleBottomQ2;
 
     rectangleFieldView->s = clippedS;
     rectangleFieldView->t = clippedT;
@@ -676,6 +684,7 @@ void uvDrawBitmap(Gfx **outDisplayList, Sprite *spriteState, Bitmap *bitmapState
 
     *outDisplayList = displayListCursor;
 }
+#line 664 "src/modules/uvsprt_rom.c"
 
 void uvSpriteDrawInit(Gfx **outDisplayList) {
     Gfx *displayListCursor;
@@ -702,20 +711,29 @@ void uvSpriteDrawInit(Gfx **outDisplayList) {
     *outDisplayList = displayListCursor;
 }
 
+/* Return NULL for hidden sprites. Otherwise emit attribute/color state,
+ * walk bitmap segments with row wrapping and expansion offsets, or draw
+ * a clipped solid fill when the bitmap pointer is null. Finish the list,
+ * publish its next cursor and return its captured start.
+ * RE_UNKNOWN: Bitmap/list capacities, scale/conversion domains, aliases
+ * and shared render-state lifetimes require producers and all callers.
+ * Preserve fresh field reads and the differing initial/wrapped Y biases;
+ * null bitmap buffers still advance geometry without emitting a tile. */
+#line 690 "src/modules/uvsprt_rom.c"
 Gfx* uvSpriteDraw(Sprite* inputSprite) {
     int bitmapIndex;
-    s32 x, y;
+    s32 bitmapX, bitmapY;
     float scaleX, scaleY;
     Bitmap* bitmapCursor;
     Gfx* displayListCursor;
     Gfx* displayListStart;
-    s32 isx, isy;
-    s32 tx, ty;
-    s32 tx2, ty2;
-    s32 x2, y2;
-    float ftx, fty;
-    s32 fs, ft;
-    s32 ex, ey;
+    s32 textureStepS, textureStepT;
+    s32 screenLeft, screenTop;
+    s32 screenRight, screenBottom;
+    s32 bitmapRight, bitmapBottom;
+    float scaledLeft, scaledTop;
+    s32 fractionS, fractionT;
+    s32 extraX, extraY;
     Sprite* spriteState = inputSprite;
     /* RE_UNKNOWN: sprite/bitmap backing, display-list capacity, aliases, numeric domains and shared-state lifetimes need original producers/callers and runtime-format proof. */
     if (spriteState->attr & SP_HIDDEN) {
@@ -731,8 +749,8 @@ Gfx* uvSpriteDraw(Sprite* inputSprite) {
     displayListStart = displayListCursor;
 
     bitmapCursor = spriteState->bitmap;
-    ex = 0;
-    ey = 0;
+    extraX = 0;
+    extraY = 0;
 
     if (sSpriteAttribute & SP_EXTERN) { /* previous attr was extern? */
         sSpriteAttribute = ~spriteState->attr;  /* Assume previous modes are all different from new ones */
@@ -816,111 +834,111 @@ Gfx* uvSpriteDraw(Sprite* inputSprite) {
         scaleY = 1.0F;
     }
 
-    isx = (int)((1 << 10) / scaleX + 0.5F);
-    isy = (int)((1 << 10) / scaleY + 0.5F);
+    textureStepS = (int)((1 << 10) / scaleX + 0.5F); /* RE_UNKNOWN: Zero, negative or nonfinite scale and integer-conversion range are not checked here. */
+    textureStepT = (int)((1 << 10) / scaleY + 0.5F);
 
     if (bitmapCursor) {
         if ((spriteState->attr & SP_FASTCOPY) && (spriteState->bmfmt != G_IM_FMT_YUV))
             gDPSetCycleType(displayListCursor++, G_CYC_COPY);
 
-        x = 0.0F;
-        y = 0.0F;
+        bitmapX = 0.0F;
+        bitmapY = 0.0F;
 
-        fty = spriteState->y + y * scaleY;
-        ty = (int)(fty + 0.99999F);
-        ft = (int)(isy * (ty - fty));
-        ft = (ft + 16) >> 5;
+        scaledTop = spriteState->y + bitmapY * scaleY;
+        screenTop = (int)(scaledTop + 0.99999F); /* RE_ORIGINAL_QUIRK: Initial Y uses0.99999F; later wrapped rows use0.9999F. Preserve both literals. */
+        fractionT = (int)(textureStepT * (screenTop - scaledTop));
+        fractionT = (fractionT + 16) >> 5;
         if (spriteState->attr & SP_TEXSHIFT)
-            ft += 16; /* 1/2 Texel for AntiAliasing */
+            fractionT += 16; /* 1/2 Texel for AntiAliasing */
 
         if (spriteState->attr & SP_FRACPOS)
-            ft += spriteState->frac_t; /* Micro-positioning */
+            fractionT += spriteState->frac_t; /* Micro-positioning */
 
-        y2 = y + spriteState->bmheight;
-        ty2 = (int)(spriteState->y + y2 * scaleY + 0.99999F);
+        bitmapBottom = bitmapY + spriteState->bmheight;
+        screenBottom = (int)(spriteState->y + bitmapBottom * scaleY + 0.99999F);
 
         if ((spriteState->attr & SP_FASTCOPY) && (spriteState->bmfmt != G_IM_FMT_YUV))
-            ty2--;
+            screenBottom--;
 
         //rmonPrintf("\tiscale=(%d,%d), %d bitmaps, sprite_size=(%d,%d)\n", isx, isy, s->nbitmaps, s->width, s->height);
 
         for (bitmapIndex = 0; (bitmapIndex < spriteState->nbitmaps) && (bitmapCursor->width > 0); bitmapIndex++, bitmapCursor++) {
-            if ((x + bitmapCursor->width) > spriteState->width) { /* Next bitmap hits edge? */
-                int bh;
+            if ((bitmapX + bitmapCursor->width) > spriteState->width) { /* Next bitmap hits edge? */
+                int rowBitmapHeight;
 
-                x = 0;
-                fs = 0;
-                ex = 0;
-                ey += spriteState->expy;
-                y += spriteState->bmheight;     /* Wrap to next line */
-                y2 = y + spriteState->bmheight; /* Wrap to next line */
+                bitmapX = 0;
+                fractionS = 0;
+                extraX = 0;
+                extraY += spriteState->expy;
+                bitmapY += spriteState->bmheight;     /* Wrap to next line */
+                bitmapBottom = bitmapY + spriteState->bmheight; /* Wrap to next line */
 
-                fty = spriteState->y + y * scaleY;
-                ty = (int)(fty + 0.9999F);
-                ft = (int)(isy * (ty - fty));
-                ft = (ft + 16) >> 5;
+                scaledTop = spriteState->y + bitmapY * scaleY;
+                screenTop = (int)(scaledTop + 0.9999F);
+                fractionT = (int)(textureStepT * (screenTop - scaledTop));
+                fractionT = (fractionT + 16) >> 5;
                 if (spriteState->attr & SP_TEXSHIFT)
-                    ft += 16; /* 1/2 Texel for AntiAliasing */
+                    fractionT += 16; /* 1/2 Texel for AntiAliasing */
 
                 if (spriteState->attr & SP_FRACPOS)
-                    ft += spriteState->frac_t; /* Micro-positioning */
+                    fractionT += spriteState->frac_t; /* Micro-positioning */
 
-                ty2 = (int)(spriteState->y + y2 * scaleY + 0.9999F);
+                screenBottom = (int)(spriteState->y + bitmapBottom * scaleY + 0.9999F);
 
-                ty += ey;
-                ty2 += ey;
+                screenTop += extraY;
+                screenBottom += extraY;
 
                 if ((spriteState->attr & SP_FASTCOPY) && (spriteState->bmfmt != G_IM_FMT_YUV))
-                    ty2--;
+                    screenBottom--;
 
                 /* Fill out to rect. bdy? */
 
                 if ((bitmapCursor->actualHeight != 0))
-                    bh = bitmapCursor->actualHeight;
+                    rowBitmapHeight = bitmapCursor->actualHeight;
                 else
-                    bh = spriteState->bmheight;
+                    rowBitmapHeight = spriteState->bmheight;
 
-                if ((y + bh) > spriteState->height) /* Can't wrap any more? */
+                if ((bitmapY + rowBitmapHeight) > spriteState->height) /* Can't wrap any more? */
                     break;
             };
 
             //rmonPrintf("bm# %d, x,y=(%d,%d) width=%d \n", i, x, y, bitmap->width);
 
-            ftx = spriteState->x + x * scaleX;
-            tx = (s32)(ftx + 0.9999F);
-            fs = (s32)(isx * (tx - ftx));
-            fs = (fs + 16) >> 5;
+            scaledLeft = spriteState->x + bitmapX * scaleX;
+            screenLeft = (s32)(scaledLeft + 0.9999F);
+            fractionS = (s32)(textureStepS * (screenLeft - scaledLeft));
+            fractionS = (fractionS + 16) >> 5;
             if (spriteState->attr & SP_TEXSHIFT)
-                fs += 16; /* 1/2 Texel for AntiAliasing */
+                fractionS += 16; /* 1/2 Texel for AntiAliasing */
 
             if (spriteState->attr & SP_FRACPOS)
-                fs += spriteState->frac_s; /* Micro-positioning */
+                fractionS += spriteState->frac_s; /* Micro-positioning */
 
-            x2 = x + bitmapCursor->width;
-            tx2 = (int)(spriteState->x + x2 * scaleX + 0.9999F);
+            bitmapRight = bitmapX + bitmapCursor->width;
+            screenRight = (int)(spriteState->x + bitmapRight * scaleX + 0.9999F);
 
             if ((bitmapCursor->actualHeight != 0)) {
-                y2 = y + bitmapCursor->actualHeight;
-                ty2 = (s32)(spriteState->y + y2 * scaleY + 0.9999F);
-                ty2 += ey;
+                bitmapBottom = bitmapY + bitmapCursor->actualHeight;
+                screenBottom = (s32)(spriteState->y + bitmapBottom * scaleY + 0.9999F);
+                screenBottom += extraY;
 
                 if ((spriteState->attr & SP_FASTCOPY) && (spriteState->bmfmt != G_IM_FMT_YUV))
-                    ty2--;
+                    screenBottom--;
             }
 
             //rmonPrintf("\tfull(%g,%g) = int(%d,%d) + frac(%d,%d)\n", ftx, fty, tx, ty, fs, ft);
 
-            tx += ex;
-            tx2 += ex;
+            screenLeft += extraX;
+            screenRight += extraX;
             if ((spriteState->attr & SP_FASTCOPY) && (spriteState->bmfmt != G_IM_FMT_YUV))
-                tx2--;
+                screenRight--;
 
             if (bitmapCursor->buf != NULL) { /* Skip over null bitmaps (blanks) */
-                uvDrawBitmap(&displayListCursor, spriteState, bitmapCursor, tx, ty, tx2, ty2, fs, ft, isx, isy);
+                uvDrawBitmap(&displayListCursor, spriteState, bitmapCursor, screenLeft, screenTop, screenRight, screenBottom, fractionS, fractionT, textureStepS, textureStepT);
             }
 
-            x += bitmapCursor->width;
-            ex += spriteState->expx;
+            bitmapX += bitmapCursor->width; /* Advance geometry even when a null bitmap buffer skipped the draw call. */
+            extraX += spriteState->expx;
         }
 
         if (spriteState->attr & SP_FASTCOPY)
@@ -933,41 +951,41 @@ Gfx* uvSpriteDraw(Sprite* inputSprite) {
         };
 
     } else {
-        int rgba;
+        int fillColorRgba5551;
 
-        x = (s32)spriteState->x;
-        y = (s32)spriteState->y;
-        x2 = spriteState->x + (spriteState->width * scaleX) - 1;
-        y2 = spriteState->y + (spriteState->height * scaleY) - 1;
+        bitmapX = (s32)spriteState->x;
+        bitmapY = (s32)spriteState->y;
+        bitmapRight = spriteState->x + (spriteState->width * scaleX) - 1;
+        bitmapBottom = spriteState->y + (spriteState->height * scaleY) - 1;
 
-        if ((x >= sScissorXmax) || (y >= sScissorYmax)) {
+        if ((bitmapX >= sScissorXmax) || (bitmapY >= sScissorYmax)) {
             //emPrintf("Sprite Scissoring: FILL Upper Left corner (%d,%d) beyond range (%d,%d)\n", x, y, scissor_xmax, scissor_ymax);
-        } else if ((x2 < sScissorXmin) || (y2 < sScissorYmin)) {
+        } else if ((bitmapRight < sScissorXmin) || (bitmapBottom < sScissorYmin)) {
             //emPrintf("Sprite Scissoring: FILL Lower Right corner (%d,%d) below range (%d,%d)\n", x2, y2, scissor_xmin, scissor_ymin);
         } else {
-            if (x < sScissorXmin) {
-                x = sScissorXmin;
+            if (bitmapX < sScissorXmin) {
+                bitmapX = sScissorXmin;
             }
 
-            if (x2 >= sScissorXmax) {
-                x2 = sScissorXmax - 1;
+            if (bitmapRight >= sScissorXmax) {
+                bitmapRight = sScissorXmax - 1;
             }
 
-            if (y < sScissorYmin) {
-                y = sScissorYmin;
+            if (bitmapY < sScissorYmin) {
+                bitmapY = sScissorYmin;
             }
 
-            if (y2 >= sScissorYmax) {
-                y2 = sScissorYmax - 1;
+            if (bitmapBottom >= sScissorYmax) {
+                bitmapBottom = sScissorYmax - 1;
             }
 
-            rgba = GPACK_RGBA5551((spriteState->red), (spriteState->green), (spriteState->blue), (spriteState->alpha >> 7));
+            fillColorRgba5551 = GPACK_RGBA5551((spriteState->red), (spriteState->green), (spriteState->blue), (spriteState->alpha >> 7));
 
             gSPTexture(displayListCursor++, 0x8000, 0x8000, 0, G_TX_RENDERTILE, G_OFF);
             gDPSetCycleType(displayListCursor++, G_CYC_FILL);
-            gDPSetFillColor(displayListCursor++, (rgba << 16) | (rgba));
+            gDPSetFillColor(displayListCursor++, (fillColorRgba5551 << 16) | (fillColorRgba5551));
 
-            gDPFillRectangle(displayListCursor++, x, y, x2, y2);
+            gDPFillRectangle(displayListCursor++, bitmapX, bitmapY, bitmapRight, bitmapBottom);
             gDPSetCycleType(displayListCursor++, G_CYC_1CYCLE);
             gSPTexture(displayListCursor++, 0x8000, 0x8000, 0, G_TX_RENDERTILE, G_ON);
         }
@@ -979,9 +997,10 @@ Gfx* uvSpriteDraw(Sprite* inputSprite) {
 
     gSPEndDisplayList(displayListCursor++);
 
-    spriteState->rsp_dl_next = displayListCursor;
+    spriteState->rsp_dl_next = displayListCursor; /* Publish the cursor after the end command; the returned pointer is the earlier list start. */
     return (displayListStart);
 }
+#line 970 "src/modules/uvsprt_rom.c"
 
 void uvSpriteDrawFinish(Gfx **outDisplayList) {
     Gfx *displayListCursor;

@@ -196,11 +196,11 @@
     "src/modules/ai.c": "d9c685beae499950e225991b618448dc40fc6508d0bcabbb2806947639492270",
     "src/modules/aiedit.c": "1cd4bd3cfe12abd4393b00506ecd6c734413212333dc24ae6faeb2f9af9f56d4",
     "src/modules/airec.c": "8a6f864feb619fdf9fb677a704d09ed6fca688ddb6ec3f5fd2b73c370b3f6eb6",
-    "src/modules/battle.c": "51120356cf7fb62e76b4eeddfadd9369b2a7853fb79d8c087ceae2c67686b208",
+    "src/modules/battle.c": "53c2276cff1805ba17567a40a2c43a561ef5f6cc89c510e459302398341730cc",
     "src/modules/bubble.c": "8a3c733b7f0370b5b2e51cc123470d44edcf1bf2a2ca8fe481170fd858f9c904",
     "src/modules/cam.c": "497d9d798f3a7207b55ea6a082a51b4fdff561fb8ed8786945326dc78f0af760",
-    "src/modules/caranim.c": "32abb6c0565e7e6abfce20211e236d36a1959dab03c27c631f70598b953c437a",
-    "src/modules/caraudio.c": "458b077d1d9fa68ca7c40efbbc4eca5cf64aa107de60654ffb1117bb55436e25",
+    "src/modules/caranim.c": "2dd26cb778eacb267c3cf783ab7cec14c5b0934b3cdd93336aa93bb6f23d30b2",
+    "src/modules/caraudio.c": "0b5c00cb4a97a368aaa7e010b96ee80e8895f4f1f705d4d944f8f3f630bf5480",
     "src/modules/cbars.c": "a7d8817dc1873793aa3e2ef6cafcd98c4a92d2fe91251b54ed8e2b09bbb9becb",
     "src/modules/demo.c": "8e19de1cafc6a5ebde83a3020c92b2b17b3de91fc4abe245a5c53d96de69065f",
     "src/modules/dledit.c": "a2a3807d331e3196eb00bbc5dbfca4a4161a989e8eadbfa7678a2cb49ff51490",
@@ -222,7 +222,7 @@
     "src/modules/med.c": "388ae18d3726f26ed10f43072b63277fb5568e735cbe9ac55f27d87f235cc000",
     "src/modules/menuslct.c": "6c5d9188d9d0fbbc20982a1327e21430ed180418332a9f13ec96803877adac15",
     "src/modules/misc.c": "d1bb6b39a53944e9a535f3b71b1ae1459cf46d8c95d5a71871c051d139705191",
-    "src/modules/motion.c": "ccb8d0f94ce7462025ce8722031ba3730635533d58fa786b0cc44a82a27ccc6a",
+    "src/modules/motion.c": "eda98b2da63a114fb0c4f29b128158df1c06717e655ae6335fc885bcc6cfb0d0",
     "src/modules/mult1.c": "fcd148eabbeb9db35e3da555b6e77e8b47903ced46b4e915dad1c4e132781ff7",
     "src/modules/mult2.c": "ad25b8e93a8307ad21fc18221aa4ab3559721814689e9a500aa5105b3e820663",
     "src/modules/mult3.c": "379be2535d6acd8e5818d04f5e6175105d6a77eb40738488d31dd0efad16f05b",
@@ -234,10 +234,10 @@
     "src/modules/mult9.c": "d9d8a40d49ee946a1636d807275e472d3b7d08390db4b6b99bb49cd0911f954b",
     "src/modules/pause.c": "ae5a5c18f16e6e9de21b3206ecdd990f80d6399a949edf21175e052325ea7ea4",
     "src/modules/piece.c": "4e584848296c0f3dae0dcf7df078295f32e9e8ebf9ea5b11084b60dabc51bce8",
-    "src/modules/plyr.c": "80fc30d1c8269e971eae346e5c2a083cfcb3572659650d93ed8e1f0deb78adea",
+    "src/modules/plyr.c": "e183b1f2e04706dfdd6315909a2d81b1ac11db7e5a2693b3d9af7cbe83619e6e",
     "src/modules/powerup.c": "b01918a9f9daf9ccb5e551c3920e16a76036dac54c07ef12712b4277dc7393f2",
     "src/modules/profgame.c": "86896bf5e286cd79b0c9dce0d64418674a94de658ef0682cecc8e8a461ede9ed",
-    "src/modules/race.c": "1e94c8010c13cee766b60344cede7d8784834d3be5530b681d8e6c8526aa9e97",
+    "src/modules/race.c": "cc77ed421e2ae9892d424edb4d4c76ea42904696b828ed5c9a4dcdcb2c4e6bdb",
     "src/modules/rain.c": "8a5c8ebebd3df2400a2c4cfcc8d0aab8a9f4bd5abb27bc3e3ceaf82d138639da",
     "src/modules/replay.c": "baf160c09aaa1cf61d130f4f2ef84ed21d8249f16f8386a0f5f54240907880dd",
     "src/modules/results.c": "8f9e9ae069b05eb8795188f1bcddc1cd5df6ccfeb9d4eacf58f08831853d2878",
@@ -309,7 +309,7 @@
     "src/modules/uvquat_rom.c": "2a759d4e3bbdf0d37127fe0945ed941e7cbab73d40a5a3708218451f2f645c23",
     "src/modules/uvquery_rom.c": "5af6f38d546de67c02228242a6578a86925d0c0792c0a330437b3cd35e19b586",
     "src/modules/uvsort_rom.c": "bb146bf878382c9939ff7cd9073bcc55ba8152f56c5eb76298a023162e156f34",
-    "src/modules/uvsprt_rom.c": "612e86b41399a9401a50b0d6cdd87464098df042e326a4dc1027d7adab095d86",
+    "src/modules/uvsprt_rom.c": "fc520fdcfa0d2fafe41ca35ad6af76fd64c9f827052e2ff137427db9a80108db",
     "src/modules/uvstring_rom.c": "94b9208341f1faf5aee2e8bd9e6e2c6336878522d977776684d4d7ffa5473720",
     "src/modules/uvterra_rom.c": "212d749a78b4a0059eec21fdaa6774e93f94f0d853dffa73e48c5fddac79121e",
     "src/modules/uvterrald_rom.c": "4f51d82aed1fc59eefc7e9d161b1d29601c1af7be11b928c5265f14d489d2596",
@@ -330,8 +330,8 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "24c9317ab91e0da45563a2946ecd810360814568b4f4257acf75bed10f8032b9",
-    "docs/VALIDATION_20261006.md": "c206d3c7aa2f976aa4b0f6bae4fc2775e7ad3900aef48c18e11bdad67d6a44ee"
+    "docs/STRATEGY_V4.md": "e8a0668409f751318bbdc45eb65f1b0c603d207ea55843df8259b76038bcf108",
+    "docs/VALIDATION_20261006.md": "5aebff04f961c90fad88f76c38865a5c327345dbeed9a06380848aa9d268ca56"
   },
   "counts": {
     "address_function": 906,
@@ -339,13 +339,13 @@
     "assembly": 783,
     "audit_debt": 30,
     "conditional_draft": 4,
-    "decompiler_local": 657,
+    "decompiler_local": 656,
     "draft_marker": 25,
-    "explicit_unknown": 1238,
+    "explicit_unknown": 1252,
     "layout_padding": 269,
     "offset_field": 1605,
     "opaque_type": 282,
-    "original_quirk": 326,
+    "original_quirk": 327,
     "uncertainty_note": 92,
     "unused_identifier": 133
   },
@@ -86148,10 +86148,7 @@
       "path": "src/modules/plyr.c",
       "symbol": "arg0",
       "lines": [
-        50,
-        130,
-        133,
-        139
+        50
       ],
       "owners": [
         {
@@ -86160,43 +86157,6 @@
           "declaration_line": 50,
           "lines": [
             50
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_plyr_004022E0",
-          "declaration_line": 130,
-          "lines": [
-            130,
-            133,
-            139
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-fe24cd08308d",
-      "kind": "decompiler_local",
-      "path": "src/modules/plyr.c",
-      "symbol": "var_v1",
-      "lines": [
-        132,
-        133,
-        134,
-        136,
-        138
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_plyr_004022E0",
-          "declaration_line": 130,
-          "lines": [
-            132,
-            133,
-            134,
-            136,
-            138
           ]
         }
       ]
@@ -117723,6 +117683,26 @@
       ]
     },
     {
+      "id": "Q-c48bb6a55944",
+      "kind": "explicit_unknown",
+      "path": "src/modules/battle.c",
+      "symbol": "RE_UNKNOWN: Meaning of the signed-halfword pre-call gate and legal callback lifetime.",
+      "lines": [
+        448
+      ],
+      "evidence": "RE_UNKNOWN: Meaning of the signed-halfword pre-call gate and legal callback lifetime.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "battleRunFrameCallbacks",
+          "declaration_line": 438,
+          "lines": [
+            448
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-6a666c9b8c4f",
       "kind": "explicit_unknown",
       "path": "src/modules/battle.c",
@@ -118483,6 +118463,46 @@
       ]
     },
     {
+      "id": "Q-0a1b1ae16ea1",
+      "kind": "explicit_unknown",
+      "path": "src/modules/caranim.c",
+      "symbol": "RE_UNKNOWN: Color-word packing, table bounds and callback context lifetime.",
+      "lines": [
+        805
+      ],
+      "evidence": "RE_UNKNOWN: Color-word packing, table bounds and callback context lifetime.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "caranimApplyColorAndCallback",
+          "declaration_line": 800,
+          "lines": [
+            805
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-53caaa862aaf",
+      "kind": "explicit_unknown",
+      "path": "src/modules/caranim.c",
+      "symbol": "RE_UNKNOWN: Shared users and unload reference-count/lifetime rules.",
+      "lines": [
+        180
+      ],
+      "evidence": "RE_UNKNOWN: Shared users and unload reference-count/lifetime rules.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "caranimUnloadEffectModules",
+          "declaration_line": 175,
+          "lines": [
+            180
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-a84447297841",
       "kind": "explicit_unknown",
       "path": "src/modules/caranim.c",
@@ -118978,6 +118998,46 @@
           "declaration_line": 174,
           "lines": [
             159
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-872b92257d50",
+      "kind": "explicit_unknown",
+      "path": "src/modules/caraudio.c",
+      "symbol": "RE_UNKNOWN: Descriptor/table bounds, scalar units and incoming pointer validity.",
+      "lines": [
+        107
+      ],
+      "evidence": "RE_UNKNOWN: Descriptor/table bounds, scalar units and incoming pointer validity.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "carAudioUpdateSharedScalarAndEmitters",
+          "declaration_line": 103,
+          "lines": [
+            107
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-fac5999f5a44",
+      "kind": "explicit_unknown",
+      "path": "src/modules/caraudio.c",
+      "symbol": "RE_UNKNOWN: Legal shared-sound/module teardown timing and remaining export users.",
+      "lines": [
+        51
+      ],
+      "evidence": "RE_UNKNOWN: Legal shared-sound/module teardown timing and remaining export users.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "carAudioModuleCleanup",
+          "declaration_line": 48,
+          "lines": [
+            51
           ]
         }
       ]
@@ -122402,6 +122462,66 @@
       ]
     },
     {
+      "id": "Q-ed5ba8283331",
+      "kind": "explicit_unknown",
+      "path": "src/modules/motion.c",
+      "symbol": "RE_UNKNOWN: Caller pointer validity and permitted source/output overlap.",
+      "lines": [
+        602
+      ],
+      "evidence": "RE_UNKNOWN: Caller pointer validity and permitted source/output overlap.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "motionCopyMatrix5E8",
+          "declaration_line": 600,
+          "lines": [
+            602
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-fac60ed095ea",
+      "kind": "explicit_unknown",
+      "path": "src/modules/motion.c",
+      "symbol": "RE_UNKNOWN: Emitter ID validity and teardown ownership; neither stored byte is cleared here.",
+      "lines": [
+        340
+      ],
+      "evidence": "RE_UNKNOWN: Emitter ID validity and teardown ownership; neither stored byte is cleared here.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "motionUnloadModulesAndStopEmitters",
+          "declaration_line": 335,
+          "lines": [
+            340
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-d17d142edc6e",
+      "kind": "explicit_unknown",
+      "path": "src/modules/motion.c",
+      "symbol": "RE_UNKNOWN: Meaning of the unused incoming word and unchecked state/callback lifetime.",
+      "lines": [
+        1012
+      ],
+      "evidence": "RE_UNKNOWN: Meaning of the unused incoming word and unchecked state/callback lifetime.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "motionRunBattleAndHotLavaUpdate",
+          "declaration_line": 1006,
+          "lines": [
+            1012
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-eb7f52c09f97",
       "kind": "explicit_unknown",
       "path": "src/modules/motion.c",
@@ -123611,6 +123731,46 @@
       ]
     },
     {
+      "id": "Q-79b4e5c06767",
+      "kind": "explicit_unknown",
+      "path": "src/modules/plyr.c",
+      "symbol": "RE_UNKNOWN: Registry bounds, record layout and key meaning. Inherited nested casts and self-assignment remain; historical types are unproved.",
+      "lines": [
+        142
+      ],
+      "evidence": "RE_UNKNOWN: Registry bounds, record layout and key meaning. Inherited nested casts and self-assignment remain; historical types are unproved.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "func_plyr_004022E0",
+          "declaration_line": 130,
+          "lines": [
+            142
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-ca6322e45881",
+      "kind": "explicit_unknown",
+      "path": "src/modules/plyr.c",
+      "symbol": "RE_UNKNOWN: Screen-size domain and caller matrix ownership; input translation persists and bit 0x400000 ends cleared.",
+      "lines": [
+        191
+      ],
+      "evidence": "RE_UNKNOWN: Screen-size domain and caller matrix ownership; input translation persists and bit 0x400000 ends cleared.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "plyrDrawRedArrowWithShadow",
+          "declaration_line": 169,
+          "lines": [
+            191
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-941ea2bf50f9",
       "kind": "explicit_unknown",
       "path": "src/modules/plyr.c",
@@ -123875,6 +124035,26 @@
           "declaration_line": 313,
           "lines": [
             309
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-f8cac46c5b77",
+      "kind": "explicit_unknown",
+      "path": "src/modules/race.c",
+      "symbol": "RE_UNKNOWN: Pending producer and sound-ID meaning; unsupported selectors leave pending unchanged.",
+      "lines": [
+        305
+      ],
+      "evidence": "RE_UNKNOWN: Pending producer and sound-ID meaning; unsupported selectors leave pending unchanged.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "racePlayPendingSoundByKind",
+          "declaration_line": 284,
+          "lines": [
+            305
           ]
         }
       ]
@@ -138041,16 +138221,36 @@
       "path": "src/modules/uvsprt_rom.c",
       "symbol": "Clip endpoints and adjust texture coordinates. RE_UNKNOWN: valid signed ranges and packed truncation intent need original callers/assets and command-format evidence.",
       "lines": [
-        489
+        497
       ],
       "evidence": "Clip endpoints and adjust texture coordinates. RE_UNKNOWN: valid signed ranges and packed truncation intent need original callers/assets and command-format evidence.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDrawBitmap",
-          "declaration_line": 472,
+          "declaration_line": 480,
           "lines": [
-            489
+            497
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-d72031a63761",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvsprt_rom.c",
+      "symbol": "Clip the bitmap rectangle to the shared scissor, advancing S/T for the * clipped left/top edges. Load the selected texture format only when its * buffer address changes, then emit the rectangle and publish the cursor. * RE_UNKNOWN: Command/backing capacities, signed arithmetic domains and * cache validity require original allocators, asset producers and callers. * The split-YUV inclusive row loop and unknown-size cache update remain * unchanged; these paths do not establish valid resource domains.",
+      "lines": [
+        472
+      ],
+      "evidence": "Clip the bitmap rectangle to the shared scissor, advancing S/T for the * clipped left/top edges. Load the selected texture format only when its * buffer address changes, then emit the rectangle and publish the cursor. * RE_UNKNOWN: Command/backing capacities, signed arithmetic domains and * cache validity require original allocators, asset producers and callers. * The split-YUV inclusive row loop and unknown-size cache update remain * unchanged; these paths do not establish valid resource domains.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDrawBitmap",
+          "declaration_line": 480,
+          "lines": [
+            472
           ]
         }
       ]
@@ -138061,16 +138261,16 @@
       "path": "src/modules/uvsprt_rom.c",
       "symbol": "Preserve native split-load addressing and inclusive row loop. RE_UNKNOWN: split-data layout and readable extent need original resource producers.",
       "lines": [
-        580
+        588
       ],
       "evidence": "Preserve native split-load addressing and inclusive row loop. RE_UNKNOWN: split-data layout and readable extent need original resource producers.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDrawBitmap",
-          "declaration_line": 472,
+          "declaration_line": 480,
           "lines": [
-            580
+            588
           ]
         }
       ]
@@ -138091,6 +138291,26 @@
           "declaration_line": 70,
           "lines": [
             72
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-55026e68844f",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvsprt_rom.c",
+      "symbol": "RE_UNKNOWN: Zero, negative or nonfinite scale and integer-conversion range are not checked here.",
+      "lines": [
+        837
+      ],
+      "evidence": "RE_UNKNOWN: Zero, negative or nonfinite scale and integer-conversion range are not checked here.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvSpriteDraw",
+          "declaration_line": 723,
+          "lines": [
+            837
           ]
         }
       ]
@@ -138121,16 +138341,16 @@
       "path": "src/modules/uvsprt_rom.c",
       "symbol": "RE_UNKNOWN: buffer-address cache validity across data/format changes needs original resource lifetimes and render-order proof.",
       "lines": [
-        654
+        662
       ],
       "evidence": "RE_UNKNOWN: buffer-address cache validity across data/format changes needs original resource lifetimes and render-order proof.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDrawBitmap",
-          "declaration_line": 472,
+          "declaration_line": 480,
           "lines": [
-            654
+            662
           ]
         }
       ]
@@ -138201,25 +138421,25 @@
       "path": "src/modules/uvsprt_rom.c",
       "symbol": "RE_UNKNOWN: display-list capacity, aliasing, resource lifetime and shared-state call ordering need caller proof.",
       "lines": [
-        689,
-        991
+        698,
+        1010
       ],
       "evidence": "RE_UNKNOWN: display-list capacity, aliasing, resource lifetime and shared-state call ordering need caller proof.",
       "owners": [
         {
           "kind": "function",
           "name": "uvSpriteDrawFinish",
-          "declaration_line": 986,
+          "declaration_line": 1005,
           "lines": [
-            991
+            1010
           ]
         },
         {
           "kind": "function",
           "name": "uvSpriteDrawInit",
-          "declaration_line": 680,
+          "declaration_line": 689,
           "lines": [
-            689
+            698
           ]
         }
       ]
@@ -138230,16 +138450,16 @@
       "path": "src/modules/uvsprt_rom.c",
       "symbol": "RE_UNKNOWN: duplicated IA combine arms retain current C; historical source intent needs original source/compiler proof.",
       "lines": [
-        775
+        793
       ],
       "evidence": "RE_UNKNOWN: duplicated IA combine arms retain current C; historical source intent needs original source/compiler proof.",
       "owners": [
         {
           "kind": "function",
           "name": "uvSpriteDraw",
-          "declaration_line": 705,
+          "declaration_line": 723,
           "lines": [
-            775
+            793
           ]
         }
       ]
@@ -138290,16 +138510,16 @@
       "path": "src/modules/uvsprt_rom.c",
       "symbol": "RE_UNKNOWN: sprite/bitmap backing, display-list capacity, aliases, numeric domains and shared-state lifetimes need original producers/callers and runtime-format proof.",
       "lines": [
-        720
+        738
       ],
       "evidence": "RE_UNKNOWN: sprite/bitmap backing, display-list capacity, aliases, numeric domains and shared-state lifetimes need original producers/callers and runtime-format proof.",
       "owners": [
         {
           "kind": "function",
           "name": "uvSpriteDraw",
-          "declaration_line": 705,
+          "declaration_line": 723,
           "lines": [
-            720
+            738
           ]
         }
       ]
@@ -138330,16 +138550,36 @@
       "path": "src/modules/uvsprt_rom.c",
       "symbol": "RE_UNKNOWN: writable command capacity, backing extents, aliases and lifetimes need original allocators/producers and full caller contracts; macro overhead estimates are not bounds.",
       "lines": [
-        488
+        496
       ],
       "evidence": "RE_UNKNOWN: writable command capacity, backing extents, aliases and lifetimes need original allocators/producers and full caller contracts; macro overhead estimates are not bounds.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDrawBitmap",
-          "declaration_line": 472,
+          "declaration_line": 480,
           "lines": [
-            488
+            496
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-84fdb53a310c",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvsprt_rom.c",
+      "symbol": "Return NULL for hidden sprites. Otherwise emit attribute/color state, * walk bitmap segments with row wrapping and expansion offsets, or draw * a clipped solid fill when the bitmap pointer is null. Finish the list, * publish its next cursor and return its captured start. * RE_UNKNOWN: Bitmap/list capacities, scale/conversion domains, aliases * and shared render-state lifetimes require producers and all callers. * Preserve fresh field reads and the differing initial/wrapped Y biases; * null bitmap buffers still advance geometry without emitting a tile.",
+      "lines": [
+        714
+      ],
+      "evidence": "Return NULL for hidden sprites. Otherwise emit attribute/color state, * walk bitmap segments with row wrapping and expansion offsets, or draw * a clipped solid fill when the bitmap pointer is null. Finish the list, * publish its next cursor and return its captured start. * RE_UNKNOWN: Bitmap/list capacities, scale/conversion domains, aliases * and shared render-state lifetimes require producers and all callers. * Preserve fresh field reads and the differing initial/wrapped Y biases; * null bitmap buffers still advance geometry without emitting a tile.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvSpriteDraw",
+          "declaration_line": 723,
+          "lines": [
+            714
           ]
         }
       ]
@@ -219780,6 +220020,26 @@
       ]
     },
     {
+      "id": "Q-692048f6ae7f",
+      "kind": "original_quirk",
+      "path": "src/modules/uvsprt_rom.c",
+      "symbol": "RE_ORIGINAL_QUIRK: Initial Y uses0.99999F; later wrapped rows use0.9999F. Preserve both literals.",
+      "lines": [
+        848
+      ],
+      "evidence": "RE_ORIGINAL_QUIRK: Initial Y uses0.99999F; later wrapped rows use0.9999F. Preserve both literals.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvSpriteDraw",
+          "declaration_line": 723,
+          "lines": [
+            848
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-a9f096fc191e",
       "kind": "original_quirk",
       "path": "src/modules/uvsprt_rom.c",
@@ -219805,16 +220065,16 @@
       "path": "src/modules/uvsprt_rom.c",
       "symbol": "RE_ORIGINAL_QUIRK: native publishes buf to the cache even when bmsiz is outside 0..3 and no load case runs; caller reachability remains unknown.",
       "lines": [
-        651
+        659
       ],
       "evidence": "RE_ORIGINAL_QUIRK: native publishes buf to the cache even when bmsiz is outside 0..3 and no load case runs; caller reachability remains unknown.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDrawBitmap",
-          "declaration_line": 472,
+          "declaration_line": 480,
           "lines": [
-            651
+            659
           ]
         }
       ]
@@ -221986,16 +222246,16 @@
       "path": "src/modules/uvsprt_rom.c",
       "symbol": "Select opaque surface rendering when the current attribute requests it.",
       "lines": [
-        996
+        1015
       ],
       "evidence": "Select opaque surface rendering when the current attribute requests it.",
       "owners": [
         {
           "kind": "function",
           "name": "uvSpriteDrawFinish",
-          "declaration_line": 986,
+          "declaration_line": 1005,
           "lines": [
-            996
+            1015
           ]
         }
       ]

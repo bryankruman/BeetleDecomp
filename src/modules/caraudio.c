@@ -45,10 +45,10 @@ extern s32 gCurrentTrack;
 #line 45 "src/modules/caraudio.c"
 /* Run the original sound cleanup hook and unload the motion module
  * in the original order. */
-void carAudioModuleCleanup(void) {
+void carAudioModuleCleanup(void) { /* Call the sound cleanup entry before unloading the imported Motion module. */
     gSndExports->sndStopAllAndRefreshReplacement();
     uvUnloadModule('motn');
-}
+/* RE_UNKNOWN: Legal shared-sound/module teardown timing and remaining export users. */ }
 #line 49 "src/modules/caraudio.c"
 
 #line 50 "src/modules/caraudio.c"
@@ -100,11 +100,11 @@ void *carAudioAllocateState(s32 sourceRecordAddress, s32 handleSlotIndex)
 /* Use source-record word 0x1EC as the unchecked shared-scalar index,
  * then run the original audio update and dual-emitter scalar update.
  * RE_UNKNOWN: index bounds, source extent/lifetime and selector meaning need original writers/callers. */
-void carAudioUpdateSharedScalarAndEmitters(void *state) {
-    D_caraudio_00404254 = D_caraudio_004040C0[*(s32 *)(*(s32 *)((u8 *)state + 0xC) + 0x1EC)];
-    func_caraudio_00402B20(*(s32 *)((u8 *)state + 0x14), state);
-    carAudioUpdateDualEmitterVolume(state);
-}
+void carAudioUpdateSharedScalarAndEmitters(void *audioState) { /* Select the shared scalar through the linked object before the two ordered helper calls. */
+    D_caraudio_00404254 = D_caraudio_004040C0[*(s32 *)(*(s32 *)((u8 *)audioState + 0xC) + 0x1EC)];
+    func_caraudio_00402B20(*(s32 *)((u8 *)audioState + 0x14), audioState);
+    carAudioUpdateDualEmitterVolume(audioState);
+/* RE_UNKNOWN: Descriptor/table bounds, scalar units and incoming pointer validity. */ }
 #line 70 "src/modules/caraudio.c"
 
 /* Copy screen-record matrices into matching registry entries, then run

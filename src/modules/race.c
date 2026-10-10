@@ -281,8 +281,8 @@ void raceMarkMatchingEntries(s32 value) {
 /* Consume the pending race sound request for kinds 0, 1 and 2.
  * Select the original sound IDs and shared sound level; other kinds leave
  * the pending flag unchanged. The specific in-game cue meanings are unproven. */
-void racePlayPendingSoundByKind(s32 kind) {
-    switch (kind) {
+void racePlayPendingSoundByKind(s32 soundKind) { /* Select one of three consecutive sound IDs from kinds 0, 1 and 2; clear pending after the playback call. */
+    switch (soundKind) {
     case 0:
         if (D_race_00404888 != 0) {
             gSndExports->sndPlayManagedSound(&D_race_00404A90, 0xD4, 0x7FFF, gSndExports->sndGetSpeechVolumeScale(), 0.5f);
@@ -302,7 +302,7 @@ void racePlayPendingSoundByKind(s32 kind) {
         }
         break;
     }
-}
+/* RE_UNKNOWN: Pending producer and sound-ID meaning; unsupported selectors leave pending unchanged. */ }
 #line 130 "src/modules/race.c"
 
 #line 131 "src/modules/race.c"

@@ -332,12 +332,12 @@ void func_motion_00411C64(void *a0, s32 a1, void *a2, s32 a3);
 extern UvEmitter_Exports *gUvEmitterExports;
 extern u8 D_motion_00416AF0;
 extern u8 D_motion_00416AF1;
-void motionUnloadModulesAndStopEmitters(void) {
+void motionUnloadModulesAndStopEmitters(void) { /* Unload trck then plyr; stop the first byte ID, and stop the second only when it is not 255. */
     uvUnloadModule(0x7472636B);
     uvUnloadModule(0x706C7972);
     gUvEmitterExports->uvEmitterStop(D_motion_00416AF0);
     if (D_motion_00416AF1 != 0xFF) gUvEmitterExports->uvEmitterStop(D_motion_00416AF1);
-}
+/* RE_UNKNOWN: Emitter ID validity and teardown ownership; neither stored byte is cleared here. */ }
 #line 95 "src/modules/motion.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_004002EC.s")
@@ -597,9 +597,9 @@ void motionClearValueForFlaggedLookup(MotionFlagState *state, MotionFlagOutput *
 
 #line 153 "src/modules/motion.c"
 /* Copy the motion matrix at 0x5E8 into the caller-provided output matrix. */
-void motionCopyMatrix5E8(MotionMatrixState *state, Mtx4F *output) {
-    gUvFmtxExports->uvMat4FCopy(output, &state->matrix);
-}
+void motionCopyMatrix5E8(MotionMatrixState *matrixState, Mtx4F *outputMatrix) { /* Copy the state's matrix through the current matrix-copy callback. */
+    gUvFmtxExports->uvMat4FCopy(outputMatrix, &matrixState->matrix);
+/* RE_UNKNOWN: Caller pointer validity and permitted source/output overlap. */ }
 #line 154 "src/modules/motion.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00404C24.s")
@@ -1003,13 +1003,13 @@ void motionTransformSelectedPointVelocity(MotionVelocityState *state, Vec3F *out
 /* In game state six, forward the stored word to BATTLE's identity scan.
  * Always call helper130E4(state, state+618, 1), then the voice helper.
  * RE_UNKNOWN: identity/phase roles and lifetimes need producers/callers; the second incoming word is unused. */
-void motionRunBattleAndHotLavaUpdate(MotionBattleState *state, s32 unusedIncomingWord) {
+void motionRunBattleAndHotLavaUpdate(MotionBattleState *motionState, s32 unusedIncomingWord) { /* Notify the battle callback in game state 6, then invoke the state helper before checking the voice cue. */
     if (gCurrentGameState == 6) {
-        gBattleExports->notify(state->battleIdentityWord);
+        gBattleExports->notify(motionState->battleIdentityWord);
     }
-    func_motion_004130E4(state, (u8 *)state + 0x618, 1);
+    func_motion_004130E4(motionState, (u8 *)motionState + 0x618, 1);
     motionTryPlayHotLavaVoice();
-}
+/* RE_UNKNOWN: Meaning of the unused incoming word and unchecked state/callback lifetime. */ }
 #line 224 "src/modules/motion.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/motion/func_motion_00409B3C.s")

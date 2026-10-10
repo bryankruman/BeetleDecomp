@@ -127,19 +127,19 @@ s32 plyrGetIndexedEntryWord(s32 index) { /* Return the caller-indexed word from 
 }
 #line 92 "src/modules/plyr.c"
 
-s32 func_plyr_004022E0(s32 arg0)
-{
-  s32 var_v1;
- var_v1 = 0; if (D_plyr_0040690C > 0) { do { if (arg0 == (*((s32 *) (((u8 *) (*((void **) (((u8 *) (&D_plyr_00406B28)) + (var_v1 * 4))))) + 0x18)))) {
-        return var_v1;
+s32 func_plyr_004022E0(s32 identityWord)
+{ /* Search the registered records by their word at offset 0x18; return the first index or -1, preserving the 16-bit wrap. */
+  s32 recordIndex;
+ recordIndex = 0; if (D_plyr_0040690C > 0) { do { if (identityWord == (*((s32 *) (((u8 *) (*((void **) (((u8 *) (&D_plyr_00406B28)) + (recordIndex * 4))))) + 0x18)))) {
+        return recordIndex;
       }
-      var_v1 = (var_v1 + 1) & 0xFFFF;
+      recordIndex = (recordIndex + 1) & 0xFFFF;
     }
-    while (((s32) var_v1) < D_plyr_0040690C);
-    arg0 = arg0;
+    while (((s32) recordIndex) < D_plyr_0040690C);
+    identityWord = identityWord;
   }
   return -1;
-}
+/* RE_UNKNOWN: Registry bounds, record layout and key meaning. Inherited nested casts and self-assignment remain; historical types are unproved. */ }
 
 #line 107 "src/modules/plyr.c"
 /* Original empty function; preserve its separate identity and argument ABI.
@@ -166,16 +166,16 @@ void func_plyr_00402338(void) {
 /* Draw the red arrow and translucent black shadow using current screen dimensions.
  * Apply local-Y displacement -14 directly to the caller's matrix; popping graphics state does not restore its translation row.
  * RE_UNKNOWN: caller matrix reuse and coordinate units require original callsites and input-matrix construction; preserve the original stack operations. */
-void plyrDrawRedArrowWithShadow(Mtx4F *matrix) {
-    Mtx4F projection;
-    s32 width;
-    width = gUvGfxMgrExports->uvGetScreenWidth();
-    gUvFmtxExports->uvMat4SetOrtho(&projection,0.0f,(f32)(width - 1),0.0f,(f32)(gUvGfxMgrExports->uvGetScreenHeight() - 1));
-    gUvFmtxExports->uvGfxMtxProjPushF(&projection);
+void plyrDrawRedArrowWithShadow(Mtx4F *arrowMatrix) { /* Query screen extents, mutate the input by local y=-14, and emit the two fixed triangles. */
+    Mtx4F screenProjection;
+    s32 screenWidth;
+    screenWidth = gUvGfxMgrExports->uvGetScreenWidth();
+    gUvFmtxExports->uvMat4SetOrtho(&screenProjection,0.0f,(f32)(screenWidth - 1),0.0f,(f32)(gUvGfxMgrExports->uvGetScreenHeight() - 1));
+    gUvFmtxExports->uvGfxMtxProjPushF(&screenProjection);
     gUvGfxStateExports->uvGfxStateBindTexture(0xFFF);
     gUvGfxStateExports->uvGfxStateSetFlags(0x400000);
-    gUvFmtxExports->uvMat4LocalTranslate(matrix,0.0f,-14.0f,0.0f);
-    gUvFmtxExports->uvGfxMtxLoadProjectionWithQuarterTurn(matrix);
+    gUvFmtxExports->uvMat4LocalTranslate(arrowMatrix,0.0f,-14.0f,0.0f);
+    gUvFmtxExports->uvGfxMtxLoadProjectionWithQuarterTurn(arrowMatrix);
     gUvDGeomExports->uvVtxBeginPoly();
     gUvDGeomExports->uvVtx(-1,0,0,0,0,0,0,0,128);
     gUvDGeomExports->uvVtx(-3,0,0,0,0,0,0,0,128);
@@ -188,7 +188,7 @@ void plyrDrawRedArrowWithShadow(Mtx4F *matrix) {
     gUvDGeomExports->uvVtxEndPoly();
     gUvFmtxExports->uvGfxMtxFViewPop();
     gUvGfxStateExports->uvGfxClearCurrentStateBits(0x400000);
-}
+/* RE_UNKNOWN: Screen-size domain and caller matrix ownership; input translation persists and bit 0x400000 ends cleared. */ }
 #line 123 "src/modules/plyr.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/plyr/func_plyr_004047C8.s")
