@@ -198,9 +198,9 @@
     "src/modules/airec.c": "8a6f864feb619fdf9fb677a704d09ed6fca688ddb6ec3f5fd2b73c370b3f6eb6",
     "src/modules/battle.c": "51120356cf7fb62e76b4eeddfadd9369b2a7853fb79d8c087ceae2c67686b208",
     "src/modules/bubble.c": "8a3c733b7f0370b5b2e51cc123470d44edcf1bf2a2ca8fe481170fd858f9c904",
-    "src/modules/cam.c": "95d22d3a7536150c4e84fd508381b424b67a127129ab9b7e2d99da3dfa2addcc",
+    "src/modules/cam.c": "497d9d798f3a7207b55ea6a082a51b4fdff561fb8ed8786945326dc78f0af760",
     "src/modules/caranim.c": "649683b571cd247da0f98e863c6329dd3c815c3f80fe5131eb21ee32c752b94b",
-    "src/modules/caraudio.c": "dad094cfc852013265c1d21dde034a3b805f043ca82b6efea8e5c01701ed9592",
+    "src/modules/caraudio.c": "458b077d1d9fa68ca7c40efbbc4eca5cf64aa107de60654ffb1117bb55436e25",
     "src/modules/cbars.c": "a7d8817dc1873793aa3e2ef6cafcd98c4a92d2fe91251b54ed8e2b09bbb9becb",
     "src/modules/demo.c": "8e19de1cafc6a5ebde83a3020c92b2b17b3de91fc4abe245a5c53d96de69065f",
     "src/modules/dledit.c": "a2a3807d331e3196eb00bbc5dbfca4a4161a989e8eadbfa7678a2cb49ff51490",
@@ -291,7 +291,7 @@
     "src/modules/uvfx_rom.c": "3700b04163745b5aea4f492e3dfabffa39b618dac447bbb5e77aca73e8a9e574",
     "src/modules/uvgeom_rom.c": "7793cd32eab51f63bd3cf8d7df3b4ad6e26d67f44cf3fd8a1ffd56fcb8860e71",
     "src/modules/uvgfxmgr_rom.c": "37dc60b2aa958126c5541bee0575ce94ba23dd5d83d68a66adea7cf5d7b3d12e",
-    "src/modules/uvgfxstate_rom.c": "f2ac7bdad30243e6bec45faa1438be25934cece6413a0e6016fe445d9fbd4b36",
+    "src/modules/uvgfxstate_rom.c": "c2a1852f8ad71ef63bce8500f41d171093214d1b3ef85ddd026867f029378594",
     "src/modules/uvgrph_rom.c": "4b8f89334bd11814bb28529111c3bb273f7c0c82b0048216032b299b1db81d72",
     "src/modules/uvgui_rom.c": "a5a2ab78a70e7afce1604ea50a361c6d3354295416c4c51db349b8cd8afa02a7",
     "src/modules/uvimtx_rom.c": "5e219312b182bbfbd43795ff8359542e6909be47a6416c4470c8ab071aa0b02c",
@@ -330,22 +330,22 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "ba39dd5f6f0e8607c221d9a7aab9a23531a77d807219026fef27a14cf1de0d53",
-    "docs/VALIDATION_20261006.md": "06040f5b58e3b4073a3a4f6728baed33bf6f938268076adfffeebb5936cca146"
+    "docs/STRATEGY_V4.md": "fc1756d240257b71d09c9a7db3a90d29790238ce1cfd5d2b41308e0ab4f2f7fa",
+    "docs/VALIDATION_20261006.md": "813b4a868fecb37ed1d1596a619115c73a3e2c19449ab21fc7445ad9c439760c"
   },
   "counts": {
     "address_function": 903,
     "address_global": 1451,
-    "assembly": 788,
+    "assembly": 787,
     "audit_debt": 30,
     "conditional_draft": 4,
-    "decompiler_local": 704,
+    "decompiler_local": 701,
     "draft_marker": 25,
-    "explicit_unknown": 1108,
+    "explicit_unknown": 1116,
     "layout_padding": 269,
-    "offset_field": 1599,
+    "offset_field": 1601,
     "opaque_type": 282,
-    "original_quirk": 310,
+    "original_quirk": 312,
     "uncertainty_note": 92,
     "unused_identifier": 133
   },
@@ -2576,33 +2576,33 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_00400128",
       "lines": [
-        48,
-        71,
-        99
+        57,
+        80,
+        108
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_camInitializeModuleState",
-          "declaration_line": 69,
+          "declaration_line": 78,
           "lines": [
-            71
+            80
           ]
         },
         {
           "kind": "function",
           "name": "func_cam_00400128",
-          "declaration_line": 48,
+          "declaration_line": 57,
           "lines": [
-            48
+            57
           ]
         },
         {
           "kind": "function",
           "name": "func_cam_00400128",
-          "declaration_line": 99,
+          "declaration_line": 108,
           "lines": [
-            99
+            108
           ]
         }
       ]
@@ -2613,24 +2613,24 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_00400190",
       "lines": [
-        53,
-        73
+        62,
+        82
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_camInitializeModuleState",
-          "declaration_line": 69,
+          "declaration_line": 78,
           "lines": [
-            73
+            82
           ]
         },
         {
           "kind": "global",
           "name": "func_cam_00400190",
-          "declaration_line": 53,
+          "declaration_line": 62,
           "lines": [
-            53
+            62
           ]
         }
       ]
@@ -2641,24 +2641,24 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_00400E80",
       "lines": [
-        54,
-        76
+        63,
+        85
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_camInitializeModuleState",
-          "declaration_line": 69,
+          "declaration_line": 78,
           "lines": [
-            76
+            85
           ]
         },
         {
           "kind": "global",
           "name": "func_cam_00400E80",
-          "declaration_line": 54,
+          "declaration_line": 63,
           "lines": [
-            54
+            63
           ]
         }
       ]
@@ -2669,24 +2669,24 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_0040116C",
       "lines": [
-        55,
-        77
+        64,
+        86
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_camInitializeModuleState",
-          "declaration_line": 69,
+          "declaration_line": 78,
           "lines": [
-            77
+            86
           ]
         },
         {
           "kind": "global",
           "name": "func_cam_0040116C",
-          "declaration_line": 55,
+          "declaration_line": 64,
           "lines": [
-            55
+            64
           ]
         }
       ]
@@ -2697,24 +2697,24 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_004031B4",
       "lines": [
-        56,
-        80
+        65,
+        89
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_camInitializeModuleState",
-          "declaration_line": 69,
+          "declaration_line": 78,
           "lines": [
-            80
+            89
           ]
         },
         {
           "kind": "global",
           "name": "func_cam_004031B4",
-          "declaration_line": 56,
+          "declaration_line": 65,
           "lines": [
-            56
+            65
           ]
         }
       ]
@@ -2725,42 +2725,42 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_00403394",
       "lines": [
-        47,
-        81,
-        164,
-        224
+        56,
+        90,
+        173,
+        233
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_camInitializeModuleState",
-          "declaration_line": 69,
+          "declaration_line": 78,
           "lines": [
-            81
+            90
           ]
         },
         {
           "kind": "function",
           "name": "camAccumulateScalarAndQueryProperty",
-          "declaration_line": 200,
+          "declaration_line": 209,
           "lines": [
-            224
+            233
           ]
         },
         {
           "kind": "function",
           "name": "func_cam_00403394",
-          "declaration_line": 47,
+          "declaration_line": 56,
           "lines": [
-            47
+            56
           ]
         },
         {
           "kind": "function",
           "name": "func_cam_00403394",
-          "declaration_line": 164,
+          "declaration_line": 173,
           "lines": [
-            164
+            173
           ]
         }
       ]
@@ -2771,24 +2771,24 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_00403A20",
       "lines": [
-        57,
-        82
+        66,
+        91
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_camInitializeModuleState",
-          "declaration_line": 69,
+          "declaration_line": 78,
           "lines": [
-            82
+            91
           ]
         },
         {
           "kind": "global",
           "name": "func_cam_00403A20",
-          "declaration_line": 57,
+          "declaration_line": 66,
           "lines": [
-            57
+            66
           ]
         }
       ]
@@ -2799,24 +2799,24 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_00403ACC",
       "lines": [
-        58,
-        74
+        67,
+        83
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_camInitializeModuleState",
-          "declaration_line": 69,
+          "declaration_line": 78,
           "lines": [
-            74
+            83
           ]
         },
         {
           "kind": "global",
           "name": "func_cam_00403ACC",
-          "declaration_line": 58,
+          "declaration_line": 67,
           "lines": [
-            58
+            67
           ]
         }
       ]
@@ -3901,15 +3901,15 @@
       "path": "src/modules/caraudio.c",
       "symbol": "func_caraudio_00403A2C",
       "lines": [
-        411
+        437
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_caraudio_00403A2C",
-          "declaration_line": 411,
+          "declaration_line": 437,
           "lines": [
-            411
+            437
           ]
         }
       ]
@@ -25645,24 +25645,24 @@
       "path": "src/modules/cam.c",
       "symbol": "D_cam_00404810",
       "lines": [
-        42,
-        89
+        51,
+        98
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_camInitializeModuleState",
-          "declaration_line": 69,
+          "declaration_line": 78,
           "lines": [
-            89
+            98
           ]
         },
         {
           "kind": "global",
           "name": "D_cam_00404810",
-          "declaration_line": 42,
+          "declaration_line": 51,
           "lines": [
-            42
+            51
           ]
         }
       ]
@@ -25673,24 +25673,24 @@
       "path": "src/modules/cam.c",
       "symbol": "D_cam_0040481C",
       "lines": [
-        42,
-        90
+        51,
+        99
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_camInitializeModuleState",
-          "declaration_line": 69,
+          "declaration_line": 78,
           "lines": [
-            90
+            99
           ]
         },
         {
           "kind": "global",
           "name": "D_cam_00404810",
-          "declaration_line": 42,
+          "declaration_line": 51,
           "lines": [
-            42
+            51
           ]
         }
       ]
@@ -25701,24 +25701,24 @@
       "path": "src/modules/cam.c",
       "symbol": "D_cam_004048D0",
       "lines": [
-        165,
-        220
+        174,
+        229
       ],
       "owners": [
         {
           "kind": "function",
           "name": "camAccumulateScalarAndQueryProperty",
-          "declaration_line": 200,
+          "declaration_line": 209,
           "lines": [
-            220
+            229
           ]
         },
         {
           "kind": "global",
           "name": "D_cam_004048D0",
-          "declaration_line": 165,
+          "declaration_line": 174,
           "lines": [
-            165
+            174
           ]
         }
       ]
@@ -25730,15 +25730,15 @@
       "symbol": "D_cam_004048D4",
       "lines": [
         7,
-        235
+        244
       ],
       "owners": [
         {
           "kind": "function",
           "name": "camUpdateAlternatingOffset",
-          "declaration_line": 234,
+          "declaration_line": 243,
           "lines": [
-            235
+            244
           ]
         }
       ]
@@ -25750,15 +25750,15 @@
       "symbol": "D_cam_004048D8",
       "lines": [
         7,
-        236
+        245
       ],
       "owners": [
         {
           "kind": "function",
           "name": "camUpdateAlternatingOffset",
-          "declaration_line": 234,
+          "declaration_line": 243,
           "lines": [
-            236
+            245
           ]
         }
       ]
@@ -25769,24 +25769,24 @@
       "path": "src/modules/cam.c",
       "symbol": "D_cam_00404958",
       "lines": [
-        12,
-        310
+        21,
+        345
       ],
       "owners": [
         {
           "kind": "function",
           "name": "camArmSharedScaledValue",
-          "declaration_line": 309,
+          "declaration_line": 344,
           "lines": [
-            310
+            345
           ]
         },
         {
           "kind": "global",
           "name": "D_cam_00404958",
-          "declaration_line": 12,
+          "declaration_line": 21,
           "lines": [
-            12
+            21
           ]
         }
       ]
@@ -25797,33 +25797,33 @@
       "path": "src/modules/cam.c",
       "symbol": "D_cam_00404DF4",
       "lines": [
-        13,
-        83,
-        266
+        22,
+        92,
+        301
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_camInitializeModuleState",
-          "declaration_line": 69,
+          "declaration_line": 78,
           "lines": [
-            83
+            92
           ]
         },
         {
           "kind": "function",
           "name": "camRememberCameraAndRenderChannel",
-          "declaration_line": 265,
+          "declaration_line": 300,
           "lines": [
-            266
+            301
           ]
         },
         {
           "kind": "global",
           "name": "D_cam_00404DF4",
-          "declaration_line": 13,
+          "declaration_line": 22,
           "lines": [
-            13
+            22
           ]
         }
       ]
@@ -25834,26 +25834,26 @@
       "path": "src/modules/cam.c",
       "symbol": "D_cam_00404DF8",
       "lines": [
-        39,
-        84,
-        85
+        48,
+        93,
+        94
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_camInitializeModuleState",
-          "declaration_line": 69,
+          "declaration_line": 78,
           "lines": [
-            84,
-            85
+            93,
+            94
           ]
         },
         {
           "kind": "global",
           "name": "D_cam_00404DF8",
-          "declaration_line": 39,
+          "declaration_line": 48,
           "lines": [
-            39
+            48
           ]
         }
       ]
@@ -25864,24 +25864,24 @@
       "path": "src/modules/cam.c",
       "symbol": "D_cam_00404DFC",
       "lines": [
-        40,
-        88
+        49,
+        97
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_camInitializeModuleState",
-          "declaration_line": 69,
+          "declaration_line": 78,
           "lines": [
-            88
+            97
           ]
         },
         {
           "kind": "global",
           "name": "D_cam_00404DFC",
-          "declaration_line": 40,
+          "declaration_line": 49,
           "lines": [
-            40
+            49
           ]
         }
       ]
@@ -25892,16 +25892,16 @@
       "path": "src/modules/cam.c",
       "symbol": "D_cam_00404E00",
       "lines": [
-        41,
-        89
+        50,
+        98
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_camInitializeModuleState",
-          "declaration_line": 69,
+          "declaration_line": 78,
           "lines": [
-            89
+            98
           ]
         }
       ]
@@ -25912,16 +25912,16 @@
       "path": "src/modules/cam.c",
       "symbol": "D_cam_00404E04",
       "lines": [
-        41,
-        90
+        50,
+        99
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_camInitializeModuleState",
-          "declaration_line": 69,
+          "declaration_line": 78,
           "lines": [
-            90
+            99
           ]
         }
       ]
@@ -25932,24 +25932,24 @@
       "path": "src/modules/cam.c",
       "symbol": "D_cam_00404E08",
       "lines": [
-        17,
-        299
+        26,
+        334
       ],
       "owners": [
         {
           "kind": "function",
           "name": "camClearSharedRecordWord1EC",
-          "declaration_line": 298,
+          "declaration_line": 333,
           "lines": [
-            299
+            334
           ]
         },
         {
           "kind": "global",
           "name": "D_cam_00404E08",
-          "declaration_line": 17,
+          "declaration_line": 26,
           "lines": [
-            17
+            26
           ]
         }
       ]
@@ -25960,28 +25960,28 @@
       "path": "src/modules/cam.c",
       "symbol": "D_cam_00404E28",
       "lines": [
-        11,
-        310,
-        311,
-        312
+        20,
+        345,
+        346,
+        347
       ],
       "owners": [
         {
           "kind": "function",
           "name": "camArmSharedScaledValue",
-          "declaration_line": 309,
+          "declaration_line": 344,
           "lines": [
-            310,
-            311,
-            312
+            345,
+            346,
+            347
           ]
         },
         {
           "kind": "global",
           "name": "D_cam_00404E28",
-          "declaration_line": 11,
+          "declaration_line": 20,
           "lines": [
-            11
+            20
           ]
         }
       ]
@@ -25992,33 +25992,33 @@
       "path": "src/modules/cam.c",
       "symbol": "D_cam_00404E2C",
       "lines": [
-        14,
-        86,
-        130
+        23,
+        95,
+        139
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_camInitializeModuleState",
-          "declaration_line": 69,
+          "declaration_line": 78,
           "lines": [
-            86
+            95
           ]
         },
         {
           "kind": "function",
           "name": "camReleaseChannelHandle",
-          "declaration_line": 129,
+          "declaration_line": 138,
           "lines": [
-            130
+            139
           ]
         },
         {
           "kind": "global",
           "name": "D_cam_00404E2C",
-          "declaration_line": 14,
+          "declaration_line": 23,
           "lines": [
-            14
+            23
           ]
         }
       ]
@@ -26873,24 +26873,24 @@
       "path": "src/modules/caraudio.c",
       "symbol": "D_caraudio_00404230",
       "lines": [
-        400,
-        418
+        426,
+        444
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_caraudio_00403A2C",
-          "declaration_line": 411,
+          "declaration_line": 437,
           "lines": [
-            418
+            444
           ]
         },
         {
           "kind": "global",
           "name": "D_caraudio_00404230",
-          "declaration_line": 400,
+          "declaration_line": 426,
           "lines": [
-            400
+            426
           ]
         }
       ]
@@ -61167,15 +61167,15 @@
       "symbol": "D_uvgfxstate_rom_00402C40",
       "lines": [
         115,
-        1062
+        1064
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxSetSharedStateWords",
-          "declaration_line": 1060,
+          "declaration_line": 1062,
           "lines": [
-            1062
+            1064
           ]
         },
         {
@@ -61200,21 +61200,21 @@
         492,
         493,
         509,
-        636,
-        639,
-        646,
-        722,
-        757,
-        783,
-        816,
-        820,
-        885,
-        888,
-        892,
-        895,
-        902,
-        933,
-        958
+        638,
+        641,
+        648,
+        724,
+        759,
+        785,
+        818,
+        822,
+        887,
+        890,
+        894,
+        897,
+        904,
+        935,
+        960
       ],
       "owners": [
         {
@@ -61229,45 +61229,45 @@
         {
           "kind": "function",
           "name": "uvGfxDrawTextureRectangleWithUvRange",
-          "declaration_line": 942,
+          "declaration_line": 944,
           "lines": [
-            958
+            960
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxResetDefaultRenderState",
-          "declaration_line": 773,
+          "declaration_line": 775,
           "lines": [
-            783
+            785
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxResetShadeCombineMode",
-          "declaration_line": 927,
+          "declaration_line": 929,
           "lines": [
-            933
+            935
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxSetCullFaces",
-          "declaration_line": 879,
+          "declaration_line": 881,
           "lines": [
-            885,
-            888,
-            892,
-            895
+            887,
+            890,
+            894,
+            897
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxSetTerrainDepthBufferEnabled",
-          "declaration_line": 809,
+          "declaration_line": 811,
           "lines": [
-            816,
-            820
+            818,
+            822
           ]
         },
         {
@@ -61281,21 +61281,21 @@
         {
           "kind": "function",
           "name": "uvGfxStateDraw",
-          "declaration_line": 614,
+          "declaration_line": 616,
           "lines": [
-            636,
-            639,
-            646,
-            722,
-            757
+            638,
+            641,
+            648,
+            724,
+            759
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxStatePush",
-          "declaration_line": 900,
+          "declaration_line": 902,
           "lines": [
-            902
+            904
           ]
         },
         {
@@ -61409,35 +61409,35 @@
       "symbol": "D_uvgfxstate_rom_00402C54",
       "lines": [
         108,
-        777,
-        785,
-        849,
-        872
+        779,
+        787,
+        851,
+        874
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxGetFogParameters",
-          "declaration_line": 871,
+          "declaration_line": 873,
           "lines": [
-            872
+            874
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxResetDefaultRenderState",
-          "declaration_line": 773,
+          "declaration_line": 775,
           "lines": [
-            777,
-            785
+            779,
+            787
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxSetFogParameters",
-          "declaration_line": 834,
+          "declaration_line": 836,
           "lines": [
-            849
+            851
           ]
         },
         {
@@ -61457,33 +61457,33 @@
       "symbol": "D_uvgfxstate_rom_00402C58",
       "lines": [
         109,
-        785,
-        850,
-        873
+        787,
+        852,
+        875
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxGetFogParameters",
-          "declaration_line": 871,
+          "declaration_line": 873,
           "lines": [
-            873
+            875
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxResetDefaultRenderState",
-          "declaration_line": 773,
+          "declaration_line": 775,
           "lines": [
-            785
+            787
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxSetFogParameters",
-          "declaration_line": 834,
+          "declaration_line": 836,
           "lines": [
-            850
+            852
           ]
         },
         {
@@ -61503,17 +61503,17 @@
       "symbol": "D_uvgfxstate_rom_00402C5C",
       "lines": [
         107,
-        642,
-        645
+        644,
+        647
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxStateDraw",
-          "declaration_line": 614,
+          "declaration_line": 616,
           "lines": [
-            642,
-            645
+            644,
+            647
           ]
         },
         {
@@ -61536,7 +61536,7 @@
         255,
         256,
         257,
-        1071
+        1073
       ],
       "owners": [
         {
@@ -61552,9 +61552,9 @@
         {
           "kind": "function",
           "name": "uvGfxSetHiliteVector",
-          "declaration_line": 1069,
+          "declaration_line": 1071,
           "lines": [
-            1071
+            1073
           ]
         },
         {
@@ -61574,15 +61574,15 @@
       "symbol": "D_uvgfxstate_rom_00402C78",
       "lines": [
         110,
-        782
+        784
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxResetDefaultRenderState",
-          "declaration_line": 773,
+          "declaration_line": 775,
           "lines": [
-            782
+            784
           ]
         },
         {
@@ -61603,7 +61603,7 @@
       "lines": [
         97,
         155,
-        1080
+        1082
       ],
       "owners": [
         {
@@ -61617,9 +61617,9 @@
         {
           "kind": "function",
           "name": "uvGfxSync",
-          "declaration_line": 1076,
+          "declaration_line": 1078,
           "lines": [
-            1080
+            1082
           ]
         },
         {
@@ -61724,10 +61724,10 @@
       "lines": [
         111,
         190,
-        642,
-        784,
-        934,
-        1047
+        644,
+        786,
+        936,
+        1049
       ],
       "owners": [
         {
@@ -61741,33 +61741,33 @@
         {
           "kind": "function",
           "name": "uvGfxGetPreviousBufferCounter",
-          "declaration_line": 1032,
+          "declaration_line": 1034,
           "lines": [
-            1047
+            1049
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxResetDefaultRenderState",
-          "declaration_line": 773,
+          "declaration_line": 775,
           "lines": [
-            784
+            786
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxResetShadeCombineMode",
-          "declaration_line": 927,
+          "declaration_line": 929,
           "lines": [
-            934
+            936
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxStateDraw",
-          "declaration_line": 614,
+          "declaration_line": 616,
           "lines": [
-            642
+            644
           ]
         },
         {
@@ -61788,7 +61788,7 @@
       "lines": [
         112,
         191,
-        632
+        634
       ],
       "owners": [
         {
@@ -61802,9 +61802,9 @@
         {
           "kind": "function",
           "name": "uvGfxStateDraw",
-          "declaration_line": 614,
+          "declaration_line": 616,
           "lines": [
-            632
+            634
           ]
         },
         {
@@ -61824,15 +61824,15 @@
       "symbol": "D_uvgfxstate_rom_00402D2C",
       "lines": [
         116,
-        1061
+        1063
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxSetSharedStateWords",
-          "declaration_line": 1060,
+          "declaration_line": 1062,
           "lines": [
-            1061
+            1063
           ]
         },
         {
@@ -61864,39 +61864,39 @@
         607,
         608,
         609,
-        761,
-        762,
         763,
         764,
         765,
-        795,
-        796,
+        766,
+        767,
         797,
         798,
         799,
         800,
         801,
-        1035,
+        802,
+        803,
         1037,
         1039,
         1041,
         1043,
         1045,
-        1081
+        1047,
+        1083
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxBeginStateFrame",
-          "declaration_line": 792,
+          "declaration_line": 794,
           "lines": [
-            795,
-            796,
             797,
             798,
             799,
             800,
-            801
+            801,
+            802,
+            803
           ]
         },
         {
@@ -61927,34 +61927,34 @@
         {
           "kind": "function",
           "name": "uvGfxGetPreviousBufferCounter",
-          "declaration_line": 1032,
+          "declaration_line": 1034,
           "lines": [
-            1035,
             1037,
             1039,
             1041,
             1043,
-            1045
+            1045,
+            1047
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxStateDraw",
-          "declaration_line": 614,
+          "declaration_line": 616,
           "lines": [
-            761,
-            762,
             763,
             764,
-            765
+            765,
+            766,
+            767
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxSync",
-          "declaration_line": 1076,
+          "declaration_line": 1078,
           "lines": [
-            1081
+            1083
           ]
         },
         {
@@ -61983,16 +61983,16 @@
       "lines": [
         102,
         605,
-        761,
-        796
+        763,
+        798
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxBeginStateFrame",
-          "declaration_line": 792,
+          "declaration_line": 794,
           "lines": [
-            796
+            798
           ]
         },
         {
@@ -62006,9 +62006,9 @@
         {
           "kind": "function",
           "name": "uvGfxStateDraw",
-          "declaration_line": 614,
+          "declaration_line": 616,
           "lines": [
-            761
+            763
           ]
         },
         {
@@ -62027,24 +62027,24 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402D3C",
       "lines": [
-        1016,
-        1035
+        1018,
+        1037
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxGetPreviousBufferCounter",
-          "declaration_line": 1032,
+          "declaration_line": 1034,
           "lines": [
-            1035
+            1037
           ]
         },
         {
           "kind": "global",
           "name": "D_uvgfxstate_rom_00402D3C",
-          "declaration_line": 1016,
+          "declaration_line": 1018,
           "lines": [
-            1016
+            1018
           ]
         }
       ]
@@ -62057,16 +62057,16 @@
       "lines": [
         103,
         608,
-        764,
-        800
+        766,
+        802
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxBeginStateFrame",
-          "declaration_line": 792,
+          "declaration_line": 794,
           "lines": [
-            800
+            802
           ]
         },
         {
@@ -62080,9 +62080,9 @@
         {
           "kind": "function",
           "name": "uvGfxStateDraw",
-          "declaration_line": 614,
+          "declaration_line": 616,
           "lines": [
-            764
+            766
           ]
         },
         {
@@ -62101,24 +62101,24 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402D44",
       "lines": [
-        1017,
-        1037
+        1019,
+        1039
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxGetPreviousBufferCounter",
-          "declaration_line": 1032,
+          "declaration_line": 1034,
           "lines": [
-            1037
+            1039
           ]
         },
         {
           "kind": "global",
           "name": "D_uvgfxstate_rom_00402D44",
-          "declaration_line": 1017,
+          "declaration_line": 1019,
           "lines": [
-            1017
+            1019
           ]
         }
       ]
@@ -62131,16 +62131,16 @@
       "lines": [
         104,
         609,
-        765,
-        801
+        767,
+        803
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxBeginStateFrame",
-          "declaration_line": 792,
+          "declaration_line": 794,
           "lines": [
-            801
+            803
           ]
         },
         {
@@ -62154,9 +62154,9 @@
         {
           "kind": "function",
           "name": "uvGfxStateDraw",
-          "declaration_line": 614,
+          "declaration_line": 616,
           "lines": [
-            765
+            767
           ]
         },
         {
@@ -62175,24 +62175,24 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402D4C",
       "lines": [
-        1018,
-        1039
+        1020,
+        1041
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxGetPreviousBufferCounter",
-          "declaration_line": 1032,
+          "declaration_line": 1034,
           "lines": [
-            1039
+            1041
           ]
         },
         {
           "kind": "global",
           "name": "D_uvgfxstate_rom_00402D4C",
-          "declaration_line": 1018,
+          "declaration_line": 1020,
           "lines": [
-            1018
+            1020
           ]
         }
       ]
@@ -62205,16 +62205,16 @@
       "lines": [
         105,
         606,
-        762,
-        797
+        764,
+        799
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxBeginStateFrame",
-          "declaration_line": 792,
+          "declaration_line": 794,
           "lines": [
-            797
+            799
           ]
         },
         {
@@ -62228,9 +62228,9 @@
         {
           "kind": "function",
           "name": "uvGfxStateDraw",
-          "declaration_line": 614,
+          "declaration_line": 616,
           "lines": [
-            762
+            764
           ]
         },
         {
@@ -62249,24 +62249,24 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402D54",
       "lines": [
-        1019,
-        1041
+        1021,
+        1043
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxGetPreviousBufferCounter",
-          "declaration_line": 1032,
+          "declaration_line": 1034,
           "lines": [
-            1041
+            1043
           ]
         },
         {
           "kind": "global",
           "name": "D_uvgfxstate_rom_00402D54",
-          "declaration_line": 1019,
+          "declaration_line": 1021,
           "lines": [
-            1019
+            1021
           ]
         }
       ]
@@ -62279,16 +62279,16 @@
       "lines": [
         106,
         607,
-        763,
-        798
+        765,
+        800
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxBeginStateFrame",
-          "declaration_line": 792,
+          "declaration_line": 794,
           "lines": [
-            798
+            800
           ]
         },
         {
@@ -62302,9 +62302,9 @@
         {
           "kind": "function",
           "name": "uvGfxStateDraw",
-          "declaration_line": 614,
+          "declaration_line": 616,
           "lines": [
-            763
+            765
           ]
         },
         {
@@ -62323,24 +62323,24 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402D5C",
       "lines": [
-        1020,
-        1043
+        1022,
+        1045
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxGetPreviousBufferCounter",
-          "declaration_line": 1032,
+          "declaration_line": 1034,
           "lines": [
-            1043
+            1045
           ]
         },
         {
           "kind": "global",
           "name": "D_uvgfxstate_rom_00402D5C",
-          "declaration_line": 1020,
+          "declaration_line": 1022,
           "lines": [
-            1020
+            1022
           ]
         }
       ]
@@ -62352,24 +62352,24 @@
       "symbol": "D_uvgfxstate_rom_00402D60",
       "lines": [
         99,
-        799,
-        1081
+        801,
+        1083
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxBeginStateFrame",
-          "declaration_line": 792,
+          "declaration_line": 794,
           "lines": [
-            799
+            801
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxSync",
-          "declaration_line": 1076,
+          "declaration_line": 1078,
           "lines": [
-            1081
+            1083
           ]
         },
         {
@@ -62388,24 +62388,24 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "D_uvgfxstate_rom_00402D64",
       "lines": [
-        1021,
-        1045
+        1023,
+        1047
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxGetPreviousBufferCounter",
-          "declaration_line": 1032,
+          "declaration_line": 1034,
           "lines": [
-            1045
+            1047
           ]
         },
         {
           "kind": "global",
           "name": "D_uvgfxstate_rom_00402D64",
-          "declaration_line": 1021,
+          "declaration_line": 1023,
           "lines": [
-            1021
+            1023
           ]
         }
       ]
@@ -62417,24 +62417,24 @@
       "symbol": "D_uvgfxstate_rom_00402D68",
       "lines": [
         113,
-        902,
-        915
+        904,
+        917
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxStatePop",
-          "declaration_line": 909,
+          "declaration_line": 911,
           "lines": [
-            915
+            917
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxStatePush",
-          "declaration_line": 900,
+          "declaration_line": 902,
           "lines": [
-            902
+            904
           ]
         },
         {
@@ -62454,30 +62454,30 @@
       "symbol": "D_uvgfxstate_rom_00402DE8",
       "lines": [
         114,
-        901,
-        902,
-        913,
-        914,
-        915
+        903,
+        904,
+        915,
+        916,
+        917
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxStatePop",
-          "declaration_line": 909,
+          "declaration_line": 911,
           "lines": [
-            913,
-            914,
-            915
+            915,
+            916,
+            917
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxStatePush",
-          "declaration_line": 900,
+          "declaration_line": 902,
           "lines": [
-            901,
-            902
+            903,
+            904
           ]
         },
         {
@@ -62547,15 +62547,15 @@
         252,
         264,
         265,
-        793
+        795
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxBeginStateFrame",
-          "declaration_line": 792,
+          "declaration_line": 794,
           "lines": [
-            793
+            795
           ]
         },
         {
@@ -62680,15 +62680,15 @@
         258,
         259,
         260,
-        794
+        796
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxBeginStateFrame",
-          "declaration_line": 792,
+          "declaration_line": 794,
           "lines": [
-            794
+            796
           ]
         },
         {
@@ -76064,7 +76064,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_00400190",
       "lines": [
-        124
+        133
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_00400190.s"
     },
@@ -76074,7 +76074,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_004007C0",
       "lines": [
-        136
+        145
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_004007C0.s"
     },
@@ -76084,7 +76084,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_00400C0C",
       "lines": [
-        138
+        147
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_00400C0C.s"
     },
@@ -76094,7 +76094,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_00400E80",
       "lines": [
-        140
+        149
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_00400E80.s"
     },
@@ -76104,7 +76104,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_0040116C",
       "lines": [
-        142
+        151
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_0040116C.s"
     },
@@ -76114,7 +76114,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_004015C0",
       "lines": [
-        156
+        165
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_004015C0.s"
     },
@@ -76124,7 +76124,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_004018E0",
       "lines": [
-        158
+        167
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_004018E0.s"
     },
@@ -76134,7 +76134,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_00401B2C",
       "lines": [
-        160
+        169
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_00401B2C.s"
     },
@@ -76144,7 +76144,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_00401D3C",
       "lines": [
-        162
+        171
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_00401D3C.s"
     },
@@ -76154,7 +76154,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_004022E0",
       "lines": [
-        249
+        258
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_004022E0.s"
     },
@@ -76164,7 +76164,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_0040263C",
       "lines": [
-        251
+        260
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_0040263C.s"
     },
@@ -76174,7 +76174,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_00402934",
       "lines": [
-        253
+        262
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_00402934.s"
     },
@@ -76184,19 +76184,9 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_00402E08",
       "lines": [
-        255
+        264
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_00402E08.s"
-    },
-    {
-      "id": "Q-2b474366fe40",
-      "kind": "assembly",
-      "path": "src/modules/cam.c",
-      "symbol": "func_cam_00402FEC",
-      "lines": [
-        257
-      ],
-      "evidence": "asm/us/nonmatchings/modules/cam/func_cam_00402FEC.s"
     },
     {
       "id": "Q-6cbef5edb442",
@@ -76204,7 +76194,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_004031B4",
       "lines": [
-        271
+        306
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_004031B4.s"
     },
@@ -76214,7 +76204,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_00403394",
       "lines": [
-        273
+        308
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_00403394.s"
     },
@@ -76224,7 +76214,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_00403A20",
       "lines": [
-        275
+        310
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_00403A20.s"
     },
@@ -76234,7 +76224,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_00403ACC",
       "lines": [
-        291
+        326
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_00403ACC.s"
     },
@@ -76244,7 +76234,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_004040D0",
       "lines": [
-        316
+        351
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_004040D0.s"
     },
@@ -76254,7 +76244,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_004042FC",
       "lines": [
-        318
+        353
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_004042FC.s"
     },
@@ -76264,7 +76254,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_00404558",
       "lines": [
-        320
+        355
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_00404558.s"
     },
@@ -76754,7 +76744,7 @@
       "path": "src/modules/caraudio.c",
       "symbol": "func_caraudio_004031E0",
       "lines": [
-        394
+        405
       ],
       "evidence": "asm/us/nonmatchings/modules/caraudio/func_caraudio_004031E0.s"
     },
@@ -76764,7 +76754,7 @@
       "path": "src/modules/caraudio.c",
       "symbol": "func_caraudio_0040336C",
       "lines": [
-        396
+        422
       ],
       "evidence": "asm/us/nonmatchings/modules/caraudio/func_caraudio_0040336C.s"
     },
@@ -76774,7 +76764,7 @@
       "path": "src/modules/caraudio.c",
       "symbol": "func_caraudio_0040397C",
       "lines": [
-        398
+        424
       ],
       "evidence": "asm/us/nonmatchings/modules/caraudio/func_caraudio_0040397C.s"
     },
@@ -100103,11 +100093,7 @@
         409,
         424,
         428,
-        431,
-        619,
-        639,
-        640,
-        646
+        431
       ],
       "owners": [
         {
@@ -100136,17 +100122,6 @@
             310,
             311,
             323
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvGfxStateDraw",
-          "declaration_line": 614,
-          "lines": [
-            619,
-            639,
-            640,
-            646
           ]
         }
       ]
@@ -100197,37 +100172,7 @@
         295,
         297,
         309,
-        311,
-        617,
-        650,
-        653,
-        656,
-        659,
-        666,
-        668,
-        670,
-        672,
-        677,
-        679,
-        681,
-        686,
-        688,
-        690,
-        695,
-        697,
-        704,
-        707,
-        710,
-        713,
-        720,
-        723,
-        726,
-        731,
-        736,
-        741,
-        746,
-        753,
-        754
+        311
       ],
       "owners": [
         {
@@ -100243,43 +100188,6 @@
             297,
             309,
             311
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvGfxStateDraw",
-          "declaration_line": 614,
-          "lines": [
-            617,
-            650,
-            653,
-            656,
-            659,
-            666,
-            668,
-            670,
-            672,
-            677,
-            679,
-            681,
-            686,
-            688,
-            690,
-            695,
-            697,
-            704,
-            707,
-            710,
-            713,
-            720,
-            723,
-            726,
-            731,
-            736,
-            741,
-            746,
-            753,
-            754
           ]
         }
       ]
@@ -100423,68 +100331,6 @@
       ]
     },
     {
-      "id": "Q-ef1275273e2e",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvgfxstate_rom.c",
-      "symbol": "temp_a0",
-      "lines": [
-        623,
-        645,
-        667,
-        669,
-        678,
-        687
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvGfxStateDraw",
-          "declaration_line": 614,
-          "lines": [
-            623,
-            645,
-            667,
-            669,
-            678,
-            687
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-5c0f8f0e0247",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvgfxstate_rom.c",
-      "symbol": "temp_a2",
-      "lines": [
-        621,
-        638,
-        640,
-        646,
-        665,
-        676,
-        685,
-        694
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvGfxStateDraw",
-          "declaration_line": 614,
-          "lines": [
-            621,
-            638,
-            640,
-            646,
-            665,
-            676,
-            685,
-            694
-          ]
-        }
-      ]
-    },
-    {
       "id": "Q-6c3c3470b9f9",
       "kind": "decompiler_local",
       "path": "src/modules/uvgfxstate_rom.c",
@@ -100499,7 +100345,7 @@
         431,
         432,
         433,
-        944
+        946
       ],
       "owners": [
         {
@@ -100521,9 +100367,9 @@
         {
           "kind": "function",
           "name": "uvGfxDrawTextureRectangleWithUvRange",
-          "declaration_line": 942,
+          "declaration_line": 944,
           "lines": [
-            944
+            946
           ]
         }
       ]
@@ -100676,15 +100522,15 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "temp_ft4",
       "lines": [
-        945
+        947
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxDrawTextureRectangleWithUvRange",
-          "declaration_line": 942,
+          "declaration_line": 944,
           "lines": [
-            945
+            947
           ]
         }
       ]
@@ -100849,41 +100695,6 @@
             167,
             172,
             173
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-56000f70b34c",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvgfxstate_rom.c",
-      "symbol": "var_v1",
-      "lines": [
-        618,
-        724,
-        728,
-        733,
-        738,
-        743,
-        748,
-        750,
-        751
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvGfxStateDraw",
-          "declaration_line": 614,
-          "lines": [
-            618,
-            724,
-            728,
-            733,
-            738,
-            743,
-            748,
-            750,
-            751
           ]
         }
       ]
@@ -119350,16 +119161,36 @@
       "path": "src/modules/cam.c",
       "symbol": "Accumulate camera scalar 0x15C, build/offset a point and forward a successful * query value to camera property selector0x12/index3 as a promoted double. * RE_ORIGINAL_QUIRK: the ordered >0 test negates nonpositive values and NaNs; * preserve this operation rather than substituting an absolute-value helper. * RE_UNKNOWN: scalar units, query role, export types and camera effect need * original providers/callers; offset-based local names imply no physical role.",
       "lines": [
-        192
+        201
       ],
       "evidence": "Accumulate camera scalar 0x15C, build/offset a point and forward a successful * query value to camera property selector0x12/index3 as a promoted double. * RE_ORIGINAL_QUIRK: the ordered >0 test negates nonpositive values and NaNs; * preserve this operation rather than substituting an absolute-value helper. * RE_UNKNOWN: scalar units, query role, export types and camera effect need * original providers/callers; offset-based local names imply no physical role.",
       "owners": [
         {
           "kind": "function",
           "name": "camAccumulateScalarAndQueryProperty",
-          "declaration_line": 200,
+          "declaration_line": 209,
           "lines": [
-            192
+            201
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-1ceee66cc7ba",
+      "kind": "explicit_unknown",
+      "path": "src/modules/cam.c",
+      "symbol": "Blend the third three-component row, then rebuild and normalize the first * and third rows using FVEC slots24 and08. The row's fourth components and the * matrix translation remain untouched; normalization return values are ignored. * RE_ORIGINAL_QUIRK: third.z uses the already-scaled third.y, not old third.z. * RE_UNKNOWN: blend domain, matrix frame, degenerate-vector policy and caller * ownership remain unresolved. Preserve the original arithmetic and call order.",
+      "lines": [
+        267
+      ],
+      "evidence": "Blend the third three-component row, then rebuild and normalize the first * and third rows using FVEC slots24 and08. The row's fourth components and the * matrix translation remain untouched; normalization return values are ignored. * RE_ORIGINAL_QUIRK: third.z uses the already-scaled third.y, not old third.z. * RE_UNKNOWN: blend domain, matrix frame, degenerate-vector policy and caller * ownership remain unresolved. Preserve the original arithmetic and call order.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "camBlendAndRebuildBasisRows",
+          "declaration_line": 273,
+          "lines": [
+            267
           ]
         }
       ]
@@ -119370,16 +119201,16 @@
       "path": "src/modules/cam.c",
       "symbol": "Clear the shared camera record word at offset 0x1EC; the argument is unused. * RE_UNKNOWN: word purpose, callback role and shared record layout.",
       "lines": [
-        294
+        329
       ],
       "evidence": "Clear the shared camera record word at offset 0x1EC; the argument is unused. * RE_UNKNOWN: word purpose, callback role and shared record layout.",
       "owners": [
         {
           "kind": "function",
           "name": "camClearSharedRecordWord1EC",
-          "declaration_line": 298,
+          "declaration_line": 333,
           "lines": [
-            294
+            329
           ]
         }
       ]
@@ -119390,16 +119221,16 @@
       "path": "src/modules/cam.c",
       "symbol": "Copy sixteen floats from the incoming source into camera offset 0x1A8. * Original wrapper forwards A1 unchanged; actual FMTX slot0C consumes that * source pointer. RE_UNKNOWN: matrix frame/role, camera layout and valid source * lifetime/aliasing; trace original callback callers before generalizing.",
       "lines": [
-        279
+        314
       ],
       "evidence": "Copy sixteen floats from the incoming source into camera offset 0x1A8. * Original wrapper forwards A1 unchanged; actual FMTX slot0C consumes that * source pointer. RE_UNKNOWN: matrix frame/role, camera layout and valid source * lifetime/aliasing; trace original callback callers before generalizing.",
       "owners": [
         {
           "kind": "function",
           "name": "camCopyMatrixIntoRecordOffset1A8",
-          "declaration_line": 285,
+          "declaration_line": 320,
           "lines": [
-            279
+            314
           ]
         }
       ]
@@ -119410,16 +119241,16 @@
       "path": "src/modules/cam.c",
       "symbol": "Initializer-only original address registry, not a callable API. * Existing unresolved prototypes remain unchanged; opaque linker code labels * below are only addresses and are never dereferenced or invoked here. * RE_UNKNOWN: original target/caller evidence must establish their complete * callback contracts before replacing unresolved declarations.",
       "lines": [
-        18
+        27
       ],
       "evidence": "Initializer-only original address registry, not a callable API. * Existing unresolved prototypes remain unchanged; opaque linker code labels * below are only addresses and are never dereferenced or invoked here. * RE_UNKNOWN: original target/caller evidence must establish their complete * callback contracts before replacing unresolved declarations.",
       "owners": [
         {
           "kind": "type",
           "name": "CameraExportAddresses",
-          "declaration_line": 23,
+          "declaration_line": 32,
           "lines": [
-            18
+            27
           ]
         }
       ]
@@ -119430,16 +119261,16 @@
       "path": "src/modules/cam.c",
       "symbol": "Multiply the shared record scalar at 0x14 by the original constant * into field 0x18, then set its flags at 0x10 and 0xC. Preserve the * unused callback parameter. RE_UNKNOWN: the scalar unit and effect role * have not been established, so no physical camera-effect name is inferred.",
       "lines": [
-        305
+        340
       ],
       "evidence": "Multiply the shared record scalar at 0x14 by the original constant * into field 0x18, then set its flags at 0x10 and 0xC. Preserve the * unused callback parameter. RE_UNKNOWN: the scalar unit and effect role * have not been established, so no physical camera-effect name is inferred.",
       "owners": [
         {
           "kind": "function",
           "name": "camArmSharedScaledValue",
-          "declaration_line": 309,
+          "declaration_line": 344,
           "lines": [
-            305
+            340
           ]
         }
       ]
@@ -119450,16 +119281,16 @@
       "path": "src/modules/cam.c",
       "symbol": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "lines": [
-        95
+        104
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "owners": [
         {
           "kind": "function",
           "name": "func_cam_00400128",
-          "declaration_line": 99,
+          "declaration_line": 108,
           "lines": [
-            95
+            104
           ]
         }
       ]
@@ -119470,16 +119301,16 @@
       "path": "src/modules/cam.c",
       "symbol": "Register twelve original camera callback addresses and two shared-data * addresses in their original interleaved order; slot0x28 copies the incoming * matrix into camera offset0x1A8. Set shared scalar1/count0, load font file3 and * cara, then create the two original profiler entries and retain their IDs. * RE_UNKNOWN: callbacks 0x04/0C/10/1C/20/24/2C, shared pointer/scalar roles, * dependency ownership and safe initialization/reload require original target * bodies, data consumers and loader callers. Preserve unchecked dependency * loads and profiler results; changing failure handling needs caller evidence.",
       "lines": [
-        61
+        70
       ],
       "evidence": "Register twelve original camera callback addresses and two shared-data * addresses in their original interleaved order; slot0x28 copies the incoming * matrix into camera offset0x1A8. Set shared scalar1/count0, load font file3 and * cara, then create the two original profiler entries and retain their IDs. * RE_UNKNOWN: callbacks 0x04/0C/10/1C/20/24/2C, shared pointer/scalar roles, * dependency ownership and safe initialization/reload require original target * bodies, data consumers and loader callers. Preserve unchecked dependency * loads and profiler results; changing failure handling needs caller evidence.",
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_camInitializeModuleState",
-          "declaration_line": 69,
+          "declaration_line": 78,
           "lines": [
-            61
+            70
           ]
         }
       ]
@@ -119490,16 +119321,16 @@
       "path": "src/modules/cam.c",
       "symbol": "Store the selected camera and render its signed-short channel * through the channel export. * RE_UNKNOWN: ownership/lifetime of the retained camera pointer. Trace * camera creators/releases and readers of D_cam_00404DF4 to establish when * the pointer can be released; retaining it does not prove caller ownership.",
       "lines": [
-        260
+        295
       ],
       "evidence": "Store the selected camera and render its signed-short channel * through the channel export. * RE_UNKNOWN: ownership/lifetime of the retained camera pointer. Trace * camera creators/releases and readers of D_cam_00404DF4 to establish when * the pointer can be released; retaining it does not prove caller ownership.",
       "owners": [
         {
           "kind": "function",
           "name": "camRememberCameraAndRenderChannel",
-          "declaration_line": 265,
+          "declaration_line": 300,
           "lines": [
-            260
+            295
           ]
         }
       ]
@@ -119510,16 +119341,16 @@
       "path": "src/modules/cam.c",
       "symbol": "Unless sourceFileId is -1, copy that loaded UVEN record into the file ID * at camera+0x220. Then assign that destination file to the signed-short slot * at camera+0, reloading both camera fields after the optional copy callback. * Native A1 retains sourceFileId at slot0x1C; both original providers take two * integer arguments. RE_UNKNOWN: camera layout, valid IDs/slots, ownership, * aliasing and callback lifecycle need original producers and callers.",
       "lines": [
-        104
+        113
       ],
       "evidence": "Unless sourceFileId is -1, copy that loaded UVEN record into the file ID * at camera+0x220. Then assign that destination file to the signed-short slot * at camera+0, reloading both camera fields after the optional copy callback. * Native A1 retains sourceFileId at slot0x1C; both original providers take two * integer arguments. RE_UNKNOWN: camera layout, valid IDs/slots, ownership, * aliasing and callback lifecycle need original producers and callers.",
       "owners": [
         {
           "kind": "function",
           "name": "camAssignEnvironmentFileWithOptionalCopy",
-          "declaration_line": 112,
+          "declaration_line": 121,
           "lines": [
-            104
+            113
           ]
         }
       ]
@@ -120190,16 +120021,16 @@
       "path": "src/modules/caraudio.c",
       "symbol": "For signed slotIndex <4, store [destination word, slotIndex] in the * original 8-byte slot, then copy 64 bytes from the word loaded at * binding+0xC, plus0x1A8, to destination word+0x10 through FMTX slot0xC. * Load the source word after slot writes; no lower-bound guard exists. * RE_UNKNOWN: historical formal types/expression, negative-index validity, * slot capacity/consumers and referenced storage lifetimes need evidence. * The inherited all-one masks remain until an exact clean reconstruction; * the reused word is first a stride, then an address, not an emitter ID.",
       "lines": [
-        402
+        428
       ],
       "evidence": "For signed slotIndex <4, store [destination word, slotIndex] in the * original 8-byte slot, then copy 64 bytes from the word loaded at * binding+0xC, plus0x1A8, to destination word+0x10 through FMTX slot0xC. * Load the source word after slot writes; no lower-bound guard exists. * RE_UNKNOWN: historical formal types/expression, negative-index validity, * slot capacity/consumers and referenced storage lifetimes need evidence. * The inherited all-one masks remain until an exact clean reconstruction; * the reused word is first a stride, then an address, not an emitter ID.",
       "owners": [
         {
           "kind": "function",
           "name": "func_caraudio_00403A2C",
-          "declaration_line": 411,
+          "declaration_line": 437,
           "lines": [
-            402
+            428
           ]
         }
       ]
@@ -120400,6 +120231,46 @@
           "declaration_line": 276,
           "lines": [
             273
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-71f03fc40d38",
+      "kind": "explicit_unknown",
+      "path": "src/modules/caraudio.c",
+      "symbol": "Traverse the existing command list and process kind-zero records through * cached query kind 2. Preserve handle preparation, ordered pitch clamps, * fresh slot/ID reads, independent routing gates and the wrapping byte counter. * RE_ORIGINAL_QUIRK: commandIndex advances for every node without a four-slot * guard; native initializes four matrices and four two-byte rows before traversal. * A prepared byte of 255 exits the whole routine before later command effects. * RE_UNKNOWN: list/handle/flag capacities, slot domains, query meaning, scalar * units, callback lifetimes/replacement and historical declarations need producers. * The first natural trial expands 1552 to 1556 bytes, retaining the 504-byte * frame; 368 words differ, including one added word. Both 54-record object lists * retain nonlocal identities/type counts and call counts but differ by site. * Packed native records separately number 38. Complete diagnostics remain on * the worker; reduced review identifies no new omitted effect. Retain ASM pending * exact body/packed-ROM equality; no recovery or readability credit is claimed.",
+      "lines": [
+        407
+      ],
+      "evidence": "Traverse the existing command list and process kind-zero records through * cached query kind 2. Preserve handle preparation, ordered pitch clamps, * fresh slot/ID reads, independent routing gates and the wrapping byte counter. * RE_ORIGINAL_QUIRK: commandIndex advances for every node without a four-slot * guard; native initializes four matrices and four two-byte rows before traversal. * A prepared byte of 255 exits the whole routine before later command effects. * RE_UNKNOWN: list/handle/flag capacities, slot domains, query meaning, scalar * units, callback lifetimes/replacement and historical declarations need producers. * The first natural trial expands 1552 to 1556 bytes, retaining the 504-byte * frame; 368 words differ, including one added word. Both 54-record object lists * retain nonlocal identities/type counts and call counts but differ by site. * Packed native records separately number 38. Complete diagnostics remain on * the worker; reduced review identifies no new omitted effect. Retain ASM pending * exact body/packed-ROM equality; no recovery or readability credit is claimed.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_caraudio_0040336C",
+          "declaration_line": 422,
+          "lines": [
+            407
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-2fa8632097bd",
+      "kind": "explicit_unknown",
+      "path": "src/modules/caraudio.c",
+      "symbol": "Under the kernel player-count word == 1 gate, apply the captured f32 scalar * to seven original emitter-ID bytes, skipping 255 and retaining callback reads. * RE_UNKNOWN: slot/array bounds, scalar units, callback replacement/lifetimes, * historical formals/declarations and complete storage ownership need producers. * The natural C trial expands 396 to 416 bytes and changes the 40-byte frame to * 32 bytes; 92 words differ, including five added words. Both 30-record object * lists retain nonlocal identities/type counts and call counts but differ by site. * Packed native relocation records separately number 14. Reduced diagnostics * establish no new omitted effect; exact compiler lowering remains unresolved. * Retain ASM pending complete body/packed-ROM equality; no C credit is claimed.",
+      "lines": [
+        394
+      ],
+      "evidence": "Under the kernel player-count word == 1 gate, apply the captured f32 scalar * to seven original emitter-ID bytes, skipping 255 and retaining callback reads. * RE_UNKNOWN: slot/array bounds, scalar units, callback replacement/lifetimes, * historical formals/declarations and complete storage ownership need producers. * The natural C trial expands 396 to 416 bytes and changes the 40-byte frame to * 32 bytes; 92 words differ, including five added words. Both 30-record object * lists retain nonlocal identities/type counts and call counts but differ by site. * Packed native relocation records separately number 14. Reduced diagnostics * establish no new omitted effect; exact compiler lowering remains unresolved. * Retain ASM pending complete body/packed-ROM equality; no C credit is claimed.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_caraudio_004031E0",
+          "declaration_line": 405,
+          "lines": [
+            394
           ]
         }
       ]
@@ -134005,16 +133876,76 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "Clamp both fog controls to [0, 1] and retain their shared values. * A positive first control enables fog and derives the display-list * multiplier from 255 * secondControl / (1 - firstControl), clamped to * the original coefficient limits; zero disables fog geometry mode. * RE_UNKNOWN: the two controls' physical interpretation and caller domain. * Trace original STAT export0x44 callers and the paired export0x48 getter * before describing these controls as world-space near/far distances.",
       "lines": [
-        827
+        829
       ],
       "evidence": "Clamp both fog controls to [0, 1] and retain their shared values. * A positive first control enables fog and derives the display-list * multiplier from 255 * secondControl / (1 - firstControl), clamped to * the original coefficient limits; zero disables fog geometry mode. * RE_UNKNOWN: the two controls' physical interpretation and caller domain. * Trace original STAT export0x44 callers and the paired export0x48 getter * before describing these controls as world-space near/far distances.",
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxSetFogParameters",
-          "declaration_line": 834,
+          "declaration_line": 836,
           "lines": [
-            827
+            829
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-06613c78349a",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvgfxstate_rom.c",
+      "symbol": "Keep signed halfword contributions and fresh buffer-index loads; RE_UNKNOWN: counter units/index/overflow domains need writer/consumer proof.",
+      "lines": [
+        763
+      ],
+      "evidence": "Keep signed halfword contributions and fresh buffer-index loads; RE_UNKNOWN: counter units/index/overflow domains need writer/consumer proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvGfxStateDraw",
+          "declaration_line": 616,
+          "lines": [
+            763
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-d900ae3a9d62",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvgfxstate_rom.c",
+      "symbol": "Keep the pre-callback snapshot and later member/cache reloads; RE_UNKNOWN: callback mutation and cache coherence need writer/caller proof.",
+      "lines": [
+        627
+      ],
+      "evidence": "Keep the pre-callback snapshot and later member/cache reloads; RE_UNKNOWN: callback mutation and cache coherence need writer/caller proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvGfxStateDraw",
+          "declaration_line": 616,
+          "lines": [
+            627
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-5363c969cdf7",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvgfxstate_rom.c",
+      "symbol": "LGHT slot04 validates/caches the signed member+0C record selector; RE_UNKNOWN: record/storage domains need caller/allocation proof.",
+      "lines": [
+        634
+      ],
+      "evidence": "LGHT slot04 validates/caches the signed member+0C record selector; RE_UNKNOWN: record/storage domains need caller/allocation proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvGfxStateDraw",
+          "declaration_line": 616,
+          "lines": [
+            634
           ]
         }
       ]
@@ -134040,21 +133971,61 @@
       ]
     },
     {
+      "id": "Q-650268b579ed",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvgfxstate_rom.c",
+      "symbol": "RE_UNKNOWN: display-list extent/lifetime and cursor capacity require allocation/caller proof.",
+      "lines": [
+        761
+      ],
+      "evidence": "RE_UNKNOWN: display-list extent/lifetime and cursor capacity require allocation/caller proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvGfxStateDraw",
+          "declaration_line": 616,
+          "lines": [
+            761
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-c5f3ecf5bc0d",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvgfxstate_rom.c",
+      "symbol": "RE_UNKNOWN: retain unused storage; historical declarations remain unproved.",
+      "lines": [
+        617
+      ],
+      "evidence": "RE_UNKNOWN: retain unused storage; historical declarations remain unproved.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvGfxStateDraw",
+          "declaration_line": 616,
+          "lines": [
+            617
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-bac4c53dbf5c",
       "kind": "explicit_unknown",
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "Return the selected graphics statistic from the other buffer bank, * delegating matrix and texture counters to their modules. Selectors * 0..8 follow the original jump table and debug labels: VXFM, TRI, MLD, * MMU, TXL, GFX, VCL, VTX and SYNC; other values return zero. * RE_ORIGINAL_QUIRK: counter aliases address slot one and subtract the * current bank, preserving the original address calculation. * RE_UNKNOWN: retain the displayed abbreviations where a more detailed * counter definition has not been independently established.",
       "lines": [
-        1024
+        1026
       ],
       "evidence": "Return the selected graphics statistic from the other buffer bank, * delegating matrix and texture counters to their modules. Selectors * 0..8 follow the original jump table and debug labels: VXFM, TRI, MLD, * MMU, TXL, GFX, VCL, VTX and SYNC; other values return zero. * RE_ORIGINAL_QUIRK: counter aliases address slot one and subtract the * current bank, preserving the original address calculation. * RE_UNKNOWN: retain the displayed abbreviations where a more detailed * counter definition has not been independently established.",
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxGetPreviousBufferCounter",
-          "declaration_line": 1032,
+          "declaration_line": 1034,
           "lines": [
-            1024
+            1026
           ]
         }
       ]
@@ -134065,16 +134036,16 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "Store a shared highlight vector when index<3; preserve that upper-only guard. * RE_UNKNOWN: negative-index exclusion and vector storage extent need original producers/callers.",
       "lines": [
-        1067
+        1069
       ],
       "evidence": "Store a shared highlight vector when index<3; preserve that upper-only guard. * RE_UNKNOWN: negative-index exclusion and vector storage extent need original producers/callers.",
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxSetHiliteVector",
-          "declaration_line": 1069,
+          "declaration_line": 1071,
           "lines": [
-            1067
+            1069
           ]
         }
       ]
@@ -142365,42 +142336,42 @@
       "path": "src/modules/cam.c",
       "symbol": "pad",
       "lines": [
-        9,
-        168,
-        174,
-        186
+        18,
+        177,
+        183,
+        195
       ],
       "owners": [
         {
           "kind": "type",
           "name": "ExplExp_00402158",
-          "declaration_line": 166,
+          "declaration_line": 175,
           "lines": [
-            168
+            177
           ]
         },
         {
           "kind": "type",
           "name": "MiscExp_00402158",
-          "declaration_line": 172,
+          "declaration_line": 181,
           "lines": [
-            174
+            183
           ]
         },
         {
           "kind": "type",
           "name": "UvFMtxExp_00403A9C",
-          "declaration_line": 9,
+          "declaration_line": 18,
           "lines": [
-            9
+            18
           ]
         },
         {
           "kind": "type",
           "name": "UvFVecExp_00402158",
-          "declaration_line": 184,
+          "declaration_line": 193,
           "lines": [
-            186
+            195
           ]
         }
       ]
@@ -146155,8 +146126,8 @@
         19,
         24,
         363,
-        615,
-        953
+        617,
+        955
       ],
       "owners": [
         {
@@ -146170,17 +146141,17 @@
         {
           "kind": "function",
           "name": "uvGfxDrawTextureRectangleWithUvRange",
-          "declaration_line": 942,
+          "declaration_line": 944,
           "lines": [
-            953
+            955
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxStateDraw",
-          "declaration_line": 614,
+          "declaration_line": 616,
           "lines": [
-            615
+            617
           ]
         },
         {
@@ -159587,24 +159558,24 @@
       "path": "src/modules/cam.c",
       "symbol": "unk20",
       "lines": [
-        175,
-        220
+        184,
+        229
       ],
       "owners": [
         {
           "kind": "function",
           "name": "camAccumulateScalarAndQueryProperty",
-          "declaration_line": 200,
+          "declaration_line": 209,
           "lines": [
-            220
+            229
           ]
         },
         {
           "kind": "type",
           "name": "MiscExp_00402158",
-          "declaration_line": 172,
+          "declaration_line": 181,
           "lines": [
-            175
+            184
           ]
         }
       ]
@@ -159616,16 +159587,16 @@
       "symbol": "unk28",
       "lines": [
         4,
-        187,
-        221
+        196,
+        230
       ],
       "owners": [
         {
           "kind": "function",
           "name": "camAccumulateScalarAndQueryProperty",
-          "declaration_line": 200,
+          "declaration_line": 209,
           "lines": [
-            221
+            230
           ]
         },
         {
@@ -159639,9 +159610,9 @@
         {
           "kind": "type",
           "name": "UvFVecExp_00402158",
-          "declaration_line": 184,
+          "declaration_line": 193,
           "lines": [
-            187
+            196
           ]
         }
       ]
@@ -159652,24 +159623,62 @@
       "path": "src/modules/cam.c",
       "symbol": "unkC",
       "lines": [
-        169,
-        222
+        178,
+        231
       ],
       "owners": [
         {
           "kind": "function",
           "name": "camAccumulateScalarAndQueryProperty",
-          "declaration_line": 200,
+          "declaration_line": 209,
           "lines": [
-            222
+            231
           ]
         },
         {
           "kind": "type",
           "name": "ExplExp_00402158",
-          "declaration_line": 166,
+          "declaration_line": 175,
           "lines": [
-            169
+            178
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-ee97fb14bfa1",
+      "kind": "offset_field",
+      "path": "src/modules/cam.c",
+      "symbol": "unknown00",
+      "lines": [
+        12
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "CameraBasisVectorExports",
+          "declaration_line": 11,
+          "lines": [
+            12
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-d02c0a3a1c32",
+      "kind": "offset_field",
+      "path": "src/modules/cam.c",
+      "symbol": "unknown0C",
+      "lines": [
+        14
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "CameraBasisVectorExports",
+          "declaration_line": 11,
+          "lines": [
+            14
           ]
         }
       ]
@@ -159680,24 +159689,24 @@
       "path": "src/modules/cam.c",
       "symbol": "unknownCallback04Address",
       "lines": [
-        25,
-        73
+        34,
+        82
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_camInitializeModuleState",
-          "declaration_line": 69,
+          "declaration_line": 78,
           "lines": [
-            73
+            82
           ]
         },
         {
           "kind": "type",
           "name": "CameraExportAddresses",
-          "declaration_line": 23,
+          "declaration_line": 32,
           "lines": [
-            25
+            34
           ]
         }
       ]
@@ -159708,24 +159717,24 @@
       "path": "src/modules/cam.c",
       "symbol": "unknownCallback0CAddress",
       "lines": [
-        27,
-        76
+        36,
+        85
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_camInitializeModuleState",
-          "declaration_line": 69,
+          "declaration_line": 78,
           "lines": [
-            76
+            85
           ]
         },
         {
           "kind": "type",
           "name": "CameraExportAddresses",
-          "declaration_line": 23,
+          "declaration_line": 32,
           "lines": [
-            27
+            36
           ]
         }
       ]
@@ -159736,24 +159745,24 @@
       "path": "src/modules/cam.c",
       "symbol": "unknownCallback10Address",
       "lines": [
-        28,
-        77
+        37,
+        86
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_camInitializeModuleState",
-          "declaration_line": 69,
+          "declaration_line": 78,
           "lines": [
-            77
+            86
           ]
         },
         {
           "kind": "type",
           "name": "CameraExportAddresses",
-          "declaration_line": 23,
+          "declaration_line": 32,
           "lines": [
-            28
+            37
           ]
         }
       ]
@@ -159764,24 +159773,24 @@
       "path": "src/modules/cam.c",
       "symbol": "unknownCallback1CAddress",
       "lines": [
-        31,
-        80
+        40,
+        89
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_camInitializeModuleState",
-          "declaration_line": 69,
+          "declaration_line": 78,
           "lines": [
-            80
+            89
           ]
         },
         {
           "kind": "type",
           "name": "CameraExportAddresses",
-          "declaration_line": 23,
+          "declaration_line": 32,
           "lines": [
-            31
+            40
           ]
         }
       ]
@@ -159792,24 +159801,24 @@
       "path": "src/modules/cam.c",
       "symbol": "unknownCallback20Address",
       "lines": [
-        32,
-        81
+        41,
+        90
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_camInitializeModuleState",
-          "declaration_line": 69,
+          "declaration_line": 78,
           "lines": [
-            81
+            90
           ]
         },
         {
           "kind": "type",
           "name": "CameraExportAddresses",
-          "declaration_line": 23,
+          "declaration_line": 32,
           "lines": [
-            32
+            41
           ]
         }
       ]
@@ -159820,24 +159829,24 @@
       "path": "src/modules/cam.c",
       "symbol": "unknownCallback24Address",
       "lines": [
-        33,
-        82
+        42,
+        91
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_camInitializeModuleState",
-          "declaration_line": 69,
+          "declaration_line": 78,
           "lines": [
-            82
+            91
           ]
         },
         {
           "kind": "type",
           "name": "CameraExportAddresses",
-          "declaration_line": 23,
+          "declaration_line": 32,
           "lines": [
-            33
+            42
           ]
         }
       ]
@@ -159848,24 +159857,24 @@
       "path": "src/modules/cam.c",
       "symbol": "unknownCallback2CAddress",
       "lines": [
-        35,
-        74
+        44,
+        83
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_camInitializeModuleState",
-          "declaration_line": 69,
+          "declaration_line": 78,
           "lines": [
-            74
+            83
           ]
         },
         {
           "kind": "type",
           "name": "CameraExportAddresses",
-          "declaration_line": 23,
+          "declaration_line": 32,
           "lines": [
-            35
+            44
           ]
         }
       ]
@@ -190877,8 +190886,8 @@
       "lines": [
         25,
         605,
-        642,
-        761
+        644,
+        763
       ],
       "owners": [
         {
@@ -190892,10 +190901,10 @@
         {
           "kind": "function",
           "name": "uvGfxStateDraw",
-          "declaration_line": 614,
+          "declaration_line": 616,
           "lines": [
-            642,
-            761
+            644,
+            763
           ]
         },
         {
@@ -190915,7 +190924,7 @@
       "symbol": "unk12",
       "lines": [
         608,
-        764
+        766
       ],
       "owners": [
         {
@@ -190929,9 +190938,9 @@
         {
           "kind": "function",
           "name": "uvGfxStateDraw",
-          "declaration_line": 614,
+          "declaration_line": 616,
           "lines": [
-            764
+            766
           ]
         }
       ]
@@ -190945,10 +190954,10 @@
         26,
         31,
         606,
-        762,
-        784,
-        934,
-        987
+        764,
+        786,
+        936,
+        989
       ],
       "owners": [
         {
@@ -190962,33 +190971,33 @@
         {
           "kind": "function",
           "name": "uvGfxDrawTextureRectangleWithUvRange",
-          "declaration_line": 942,
+          "declaration_line": 944,
           "lines": [
-            987
+            989
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxResetDefaultRenderState",
-          "declaration_line": 773,
+          "declaration_line": 775,
           "lines": [
-            784
+            786
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxResetShadeCombineMode",
-          "declaration_line": 927,
+          "declaration_line": 929,
           "lines": [
-            934
+            936
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxStateDraw",
-          "declaration_line": 614,
+          "declaration_line": 616,
           "lines": [
-            762
+            764
           ]
         },
         {
@@ -191016,21 +191025,21 @@
       "symbol": "unk1C",
       "lines": [
         33,
-        971,
         973,
-        974,
-        976
+        975,
+        976,
+        978
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxDrawTextureRectangleWithUvRange",
-          "declaration_line": 942,
+          "declaration_line": 944,
           "lines": [
-            971,
             973,
-            974,
-            976
+            975,
+            976,
+            978
           ]
         },
         {
@@ -191050,15 +191059,15 @@
       "symbol": "unk1E",
       "lines": [
         34,
-        972
+        974
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxDrawTextureRectangleWithUvRange",
-          "declaration_line": 942,
+          "declaration_line": 944,
           "lines": [
-            972
+            974
           ]
         },
         {
@@ -191078,15 +191087,15 @@
       "symbol": "unk4",
       "lines": [
         20,
-        632
+        634
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxStateDraw",
-          "declaration_line": 614,
+          "declaration_line": 616,
           "lines": [
-            632
+            634
           ]
         },
         {
@@ -191165,8 +191174,8 @@
         478,
         495,
         508,
-        632,
-        916
+        634,
+        918
       ],
       "owners": [
         {
@@ -191188,17 +191197,17 @@
         {
           "kind": "function",
           "name": "uvGfxStateDraw",
-          "declaration_line": 614,
+          "declaration_line": 616,
           "lines": [
-            632
+            634
           ]
         },
         {
           "kind": "function",
           "name": "uvGfxStatePop",
-          "declaration_line": 909,
+          "declaration_line": 911,
           "lines": [
-            916
+            918
           ]
         },
         {
@@ -191218,7 +191227,7 @@
       "symbol": "unkE",
       "lines": [
         607,
-        763
+        765
       ],
       "owners": [
         {
@@ -191232,9 +191241,9 @@
         {
           "kind": "function",
           "name": "uvGfxStateDraw",
-          "declaration_line": 614,
+          "declaration_line": 616,
           "lines": [
-            763
+            765
           ]
         }
       ]
@@ -211063,15 +211072,15 @@
       "symbol": "UnkStruct_80001724",
       "lines": [
         35,
-        952
+        954
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxDrawTextureRectangleWithUvRange",
-          "declaration_line": 942,
+          "declaration_line": 944,
           "lines": [
-            952
+            954
           ]
         },
         {
@@ -214010,16 +214019,36 @@
       "path": "src/modules/cam.c",
       "symbol": "Accumulate camera scalar 0x15C, build/offset a point and forward a successful * query value to camera property selector0x12/index3 as a promoted double. * RE_ORIGINAL_QUIRK: the ordered >0 test negates nonpositive values and NaNs; * preserve this operation rather than substituting an absolute-value helper. * RE_UNKNOWN: scalar units, query role, export types and camera effect need * original providers/callers; offset-based local names imply no physical role.",
       "lines": [
-        192
+        201
       ],
       "evidence": "Accumulate camera scalar 0x15C, build/offset a point and forward a successful * query value to camera property selector0x12/index3 as a promoted double. * RE_ORIGINAL_QUIRK: the ordered >0 test negates nonpositive values and NaNs; * preserve this operation rather than substituting an absolute-value helper. * RE_UNKNOWN: scalar units, query role, export types and camera effect need * original providers/callers; offset-based local names imply no physical role.",
       "owners": [
         {
           "kind": "function",
           "name": "camAccumulateScalarAndQueryProperty",
-          "declaration_line": 200,
+          "declaration_line": 209,
           "lines": [
-            192
+            201
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-c3b1a6052c25",
+      "kind": "original_quirk",
+      "path": "src/modules/cam.c",
+      "symbol": "Blend the third three-component row, then rebuild and normalize the first * and third rows using FVEC slots24 and08. The row's fourth components and the * matrix translation remain untouched; normalization return values are ignored. * RE_ORIGINAL_QUIRK: third.z uses the already-scaled third.y, not old third.z. * RE_UNKNOWN: blend domain, matrix frame, degenerate-vector policy and caller * ownership remain unresolved. Preserve the original arithmetic and call order.",
+      "lines": [
+        267
+      ],
+      "evidence": "Blend the third three-component row, then rebuild and normalize the first * and third rows using FVEC slots24 and08. The row's fourth components and the * matrix translation remain untouched; normalization return values are ignored. * RE_ORIGINAL_QUIRK: third.z uses the already-scaled third.y, not old third.z. * RE_UNKNOWN: blend domain, matrix frame, degenerate-vector policy and caller * ownership remain unresolved. Preserve the original arithmetic and call order.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "camBlendAndRebuildBasisRows",
+          "declaration_line": 273,
+          "lines": [
+            267
           ]
         }
       ]
@@ -214520,6 +214549,26 @@
           "declaration_line": 209,
           "lines": [
             195
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-abac3568832c",
+      "kind": "original_quirk",
+      "path": "src/modules/caraudio.c",
+      "symbol": "Traverse the existing command list and process kind-zero records through * cached query kind 2. Preserve handle preparation, ordered pitch clamps, * fresh slot/ID reads, independent routing gates and the wrapping byte counter. * RE_ORIGINAL_QUIRK: commandIndex advances for every node without a four-slot * guard; native initializes four matrices and four two-byte rows before traversal. * A prepared byte of 255 exits the whole routine before later command effects. * RE_UNKNOWN: list/handle/flag capacities, slot domains, query meaning, scalar * units, callback lifetimes/replacement and historical declarations need producers. * The first natural trial expands 1552 to 1556 bytes, retaining the 504-byte * frame; 368 words differ, including one added word. Both 54-record object lists * retain nonlocal identities/type counts and call counts but differ by site. * Packed native records separately number 38. Complete diagnostics remain on * the worker; reduced review identifies no new omitted effect. Retain ASM pending * exact body/packed-ROM equality; no recovery or readability credit is claimed.",
+      "lines": [
+        407
+      ],
+      "evidence": "Traverse the existing command list and process kind-zero records through * cached query kind 2. Preserve handle preparation, ordered pitch clamps, * fresh slot/ID reads, independent routing gates and the wrapping byte counter. * RE_ORIGINAL_QUIRK: commandIndex advances for every node without a four-slot * guard; native initializes four matrices and four two-byte rows before traversal. * A prepared byte of 255 exits the whole routine before later command effects. * RE_UNKNOWN: list/handle/flag capacities, slot domains, query meaning, scalar * units, callback lifetimes/replacement and historical declarations need producers. * The first natural trial expands 1552 to 1556 bytes, retaining the 504-byte * frame; 368 words differ, including one added word. Both 54-record object lists * retain nonlocal identities/type counts and call counts but differ by site. * Packed native records separately number 38. Complete diagnostics remain on * the worker; reduced review identifies no new omitted effect. Retain ASM pending * exact body/packed-ROM equality; no recovery or readability credit is claimed.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "func_caraudio_0040336C",
+          "declaration_line": 422,
+          "lines": [
+            407
           ]
         }
       ]
@@ -218010,16 +218059,16 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "Return the selected graphics statistic from the other buffer bank, * delegating matrix and texture counters to their modules. Selectors * 0..8 follow the original jump table and debug labels: VXFM, TRI, MLD, * MMU, TXL, GFX, VCL, VTX and SYNC; other values return zero. * RE_ORIGINAL_QUIRK: counter aliases address slot one and subtract the * current bank, preserving the original address calculation. * RE_UNKNOWN: retain the displayed abbreviations where a more detailed * counter definition has not been independently established.",
       "lines": [
-        1024
+        1026
       ],
       "evidence": "Return the selected graphics statistic from the other buffer bank, * delegating matrix and texture counters to their modules. Selectors * 0..8 follow the original jump table and debug labels: VXFM, TRI, MLD, * MMU, TXL, GFX, VCL, VTX and SYNC; other values return zero. * RE_ORIGINAL_QUIRK: counter aliases address slot one and subtract the * current bank, preserving the original address calculation. * RE_UNKNOWN: retain the displayed abbreviations where a more detailed * counter definition has not been independently established.",
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxGetPreviousBufferCounter",
-          "declaration_line": 1032,
+          "declaration_line": 1034,
           "lines": [
-            1024
+            1026
           ]
         }
       ]
@@ -219700,16 +219749,16 @@
       "path": "src/modules/cam.c",
       "symbol": "Copy the existing unresolved declaration here so the original * code-label address is visible before the initializer.",
       "lines": [
-        45
+        54
       ],
       "evidence": "Copy the existing unresolved declaration here so the original * code-label address is visible before the initializer.",
       "owners": [
         {
           "kind": "function",
           "name": "func_cam_00403394",
-          "declaration_line": 47,
+          "declaration_line": 56,
           "lines": [
-            45
+            54
           ]
         }
       ]
@@ -223789,15 +223838,15 @@
       "path": "src/modules/uvgfxstate_rom.c",
       "symbol": "unused",
       "lines": [
-        792
+        794
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGfxBeginStateFrame",
-          "declaration_line": 792,
+          "declaration_line": 794,
           "lines": [
-            792
+            794
           ]
         }
       ]

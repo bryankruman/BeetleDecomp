@@ -611,160 +611,162 @@ void uvGfxDrawStateThroughDepthAndColorPasses(uvGfxState *state) {
 }
 #line 558 "src/modules/uvgfxstate_rom.c"
 
-void uvGfxStateDraw(uvGfxState *gs) {
-    s32 pad;
-    Gfx *gdlh;
-    s32 sp54;
-    s32 var_v1;
-    s32 sp4C;
-    s32 state;
-    s32 temp_a2;
-    Gfx **gdl;
-    s32 temp_a0;
+/* Apply changed texture/render/geometry state, append the optional display list, and accumulate the active-buffer counters. */
+#line 559 "src/modules/uvgfxstate_rom.c"
+void uvGfxStateDraw(uvGfxState *drawState) {
+    s32 pad; /* RE_UNKNOWN: retain unused storage; historical declarations remain unproved. */
+    Gfx *cursor;
+    s32 modeBits;
+    s32 geometryBitsToClear;
+    s32 previousTextureIdBits;
+    s32 snapshotStateBits;
+    s32 textureIdBits;
+    Gfx **displayListHead;
+    s32 returnedTextureStateBits;
 
-    state = gs->state;
+    snapshotStateBits = drawState->state; /* Keep the pre-callback snapshot and later member/cache reloads; RE_UNKNOWN: callback mutation and cache coherence need writer/caller proof. */
 
-    gdl = sUvGfxMgrExports->uvGetDisplayListHead();
-    gdlh = *gdl;
+    displayListHead = sUvGfxMgrExports->uvGetDisplayListHead();
+    cursor = *displayListHead;
 
-    if (state & 0x40000) {
-        *gdl = gdlh;
-        D_uvgfxstate_rom_00402D18->unk4(gs->unkC);
-        gdlh = *gdl;
+    if (snapshotStateBits & 0x40000) {
+        *displayListHead = cursor;
+        D_uvgfxstate_rom_00402D18->unk4(drawState->unkC); /* LGHT slot04 validates/caches the signed member+0C record selector; RE_UNKNOWN: record/storage domains need caller/allocation proof. */
+        cursor = *displayListHead;
     }
 
-    if (state != D_uvgfxstate_rom_00402C48) {
-        gDPPipeSync(gdlh++);
-        temp_a2 = state & 0xFFF;
-        sp4C = D_uvgfxstate_rom_00402C48 & 0xFFF;
-        if (sp4C != temp_a2) {
-            *gdl = gdlh;
-            D_uvgfxstate_rom_00402C5C = D_uvgfxstate_rom_00402D14->unk10(state);
-            gdlh = *gdl;
+    if (snapshotStateBits != D_uvgfxstate_rom_00402C48) {
+        gDPPipeSync(cursor++);
+        textureIdBits = snapshotStateBits & 0xFFF;
+        previousTextureIdBits = D_uvgfxstate_rom_00402C48 & 0xFFF;
+        if (previousTextureIdBits != textureIdBits) {
+            *displayListHead = cursor;
+            D_uvgfxstate_rom_00402C5C = D_uvgfxstate_rom_00402D14->unk10(snapshotStateBits); /* TEXT slot10 returns packed texture state; publish/reload the shared cursor around the callback. */
+            cursor = *displayListHead;
         }
-        temp_a0 = D_uvgfxstate_rom_00402C5C;
-        if (((state & 0x01E00000) != (D_uvgfxstate_rom_00402C48 & 0x01E00000)) || (temp_a2 != sp4C)) {
-            if (state & 0x01000000) {
-                switch (state & 0xC00000) {
+        returnedTextureStateBits = D_uvgfxstate_rom_00402C5C;
+        if (((snapshotStateBits & 0x01E00000) != (D_uvgfxstate_rom_00402C48 & 0x01E00000)) || (textureIdBits != previousTextureIdBits)) {
+            if (snapshotStateBits & 0x01000000) {
+                switch (snapshotStateBits & 0xC00000) {
                     case 0x400000:
-                        sp54 = 0x112D58;
+                        modeBits = 0x112D58;
                         break;
                     case 0xC00000:
-                        sp54 = 0x104DD8;
+                        modeBits = 0x104DD8;
                         break;
                     case 0x800000:
-                        sp54 = 0x104E50;
+                        modeBits = 0x104E50;
                         break;
                     case 0x0:
-                        sp54 = 0x112E10;
+                        modeBits = 0x112E10;
                         break;
                 }
-            } else if (state & 0x800000) {
-                switch (state & 0x600000) {
+            } else if (snapshotStateBits & 0x800000) {
+                switch (snapshotStateBits & 0x600000) {
                     case 0x600000:
-                        if (temp_a2 == 0xFFF) {
-                            sp54 = 0x1045D8;
-                        } else if (temp_a0 & 0x10000) {
-                            sp54 = 0x105278;
-                        } else if ((temp_a0 & 0x8000) || (temp_a0 & 0x4000) || (state & 0x04000000)) {
-                            sp54 = 0x1049D8;
+                        if (textureIdBits == 0xFFF) {
+                            modeBits = 0x1045D8;
+                        } else if (returnedTextureStateBits & 0x10000) {
+                            modeBits = 0x105278;
+                        } else if ((returnedTextureStateBits & 0x8000) || (returnedTextureStateBits & 0x4000) || (snapshotStateBits & 0x04000000)) {
+                            modeBits = 0x1049D8;
                         } else {
-                            sp54 = 0x103078;
+                            modeBits = 0x103078;
                         }
                         break;
                     case 0x400000:
-                        if (temp_a2 == 0xFFF) {
-                            sp54 = 0x1041C8;
-                        } else if ((temp_a0 & 0x8000) || (temp_a0 & 0x4000) || (state & 0x04000000)) {
-                            sp54 = 0x1041C8;
+                        if (textureIdBits == 0xFFF) {
+                            modeBits = 0x1041C8;
+                        } else if ((returnedTextureStateBits & 0x8000) || (returnedTextureStateBits & 0x4000) || (snapshotStateBits & 0x04000000)) {
+                            modeBits = 0x1041C8;
                         } else {
-                            sp54 = 0x103048;
+                            modeBits = 0x103048;
                         }
                         break;
                     case 0x200000:
-                        if (temp_a2 == 0xFFF) {
-                            sp54 = 0x104B50;
-                        } else if (temp_a0 & 0x10000) {
-                            sp54 = 0x105278;
+                        if (textureIdBits == 0xFFF) {
+                            modeBits = 0x104B50;
+                        } else if (returnedTextureStateBits & 0x10000) {
+                            modeBits = 0x105278;
                         } else {
-                            sp54 = 0x104A50;
+                            modeBits = 0x104A50;
                         }
                         break;
                     case 0:
-                        if (temp_a2 == 0xFFF) {
-                            sp54 = 0x104340;
+                        if (textureIdBits == 0xFFF) {
+                            modeBits = 0x104340;
                         } else {
-                            sp54 = 0x104240;
+                            modeBits = 0x104240;
                         }
                         break;
                 }
             } else {
-                switch (state & 0x600000) {
+                switch (snapshotStateBits & 0x600000) {
                     case 0x200000:
-                        sp54 = 0x112230;
+                        modeBits = 0x112230;
                         break;
                     case 0x400000:
-                        sp54 = 0x102048;
+                        modeBits = 0x102048;
                         break;
                     case 0x600000:
-                        sp54 = 0x102078;
+                        modeBits = 0x102078;
                         break;
                     case 0x0:
-                        sp54 = 0x03024000;
+                        modeBits = 0x03024000;
                         break;
                     default:
                         break;
                 }
             }
 
-            gDPSetRenderMode(gdlh++, G_RM_PASS, sp54);
+            gDPSetRenderMode(cursor++, G_RM_PASS, modeBits); /* Retain the literal render-mode table and all masked selector branches. */
         }
-        if ((state & 0x887C0000) != (D_uvgfxstate_rom_00402C48 & 0x887C0000)) {
-            sp54 = 0;
-            var_v1 = 0;
-            if (state & 0x08000000) {
-                sp54 |= 0x40000;
+        if ((snapshotStateBits & 0x887C0000) != (D_uvgfxstate_rom_00402C48 & 0x887C0000)) {
+            modeBits = 0; /* Reuse this local for geometry bits to set; keep clear-before-set emission order. */
+            geometryBitsToClear = 0;
+            if (snapshotStateBits & 0x08000000) {
+                modeBits |= 0x40000;
             } else {
-                var_v1 |= 0x40000;
+                geometryBitsToClear |= 0x40000;
             }
-            if (state & 0x100000) {
-                sp54 |= 0x400;
+            if (snapshotStateBits & 0x100000) {
+                modeBits |= 0x400;
             } else {
-                var_v1 |= 0x400;
+                geometryBitsToClear |= 0x400;
             }
-            if (state & 0x80000) {
-                sp54 |= 0x200;
+            if (snapshotStateBits & 0x80000) {
+                modeBits |= 0x200;
             } else {
-                var_v1 |= 0x200;
+                geometryBitsToClear |= 0x200;
             }
-            if (state & 0x08040000) {
-                sp54 |= 0x20000;
+            if (snapshotStateBits & 0x08040000) {
+                modeBits |= 0x20000;
             } else {
-                var_v1 |= 0x20000;
+                geometryBitsToClear |= 0x20000;
             }
-            if (state & 0x200000) {
-                sp54 |= 1;
+            if (snapshotStateBits & 0x200000) {
+                modeBits |= 1;
             } else {
-                var_v1 |= 1;
+                geometryBitsToClear |= 1;
             }
-            if (var_v1 != 0) {
-                gSPClearGeometryMode(gdlh++, var_v1);
+            if (geometryBitsToClear != 0) {
+                gSPClearGeometryMode(cursor++, geometryBitsToClear);
             }
-            if (sp54 != 0) {
-                gSPSetGeometryMode(gdlh++, sp54);
+            if (modeBits != 0) {
+                gSPSetGeometryMode(cursor++, modeBits);
             }
         }
-        D_uvgfxstate_rom_00402C48 = state;
+        D_uvgfxstate_rom_00402C48 = snapshotStateBits;
     }
-    if (gs->displayList != NULL) {
-        gSPDisplayList(gdlh++, gs->displayList);
-        D_uvgfxstate_rom_00402D38[D_uvgfxstate_rom_00402D30] += gs->unk10;
-        D_uvgfxstate_rom_00402D50[D_uvgfxstate_rom_00402D30] += gs->unk14;
-        D_uvgfxstate_rom_00402D58[D_uvgfxstate_rom_00402D30] += gs->unkE;
-        D_uvgfxstate_rom_00402D40[D_uvgfxstate_rom_00402D30] += gs->unk12;
+    if (drawState->displayList != NULL) { /* RE_UNKNOWN: display-list extent/lifetime and cursor capacity require allocation/caller proof. */
+        gSPDisplayList(cursor++, drawState->displayList);
+        D_uvgfxstate_rom_00402D38[D_uvgfxstate_rom_00402D30] += drawState->unk10; /* Keep signed halfword contributions and fresh buffer-index loads; RE_UNKNOWN: counter units/index/overflow domains need writer/consumer proof. */
+        D_uvgfxstate_rom_00402D50[D_uvgfxstate_rom_00402D30] += drawState->unk14;
+        D_uvgfxstate_rom_00402D58[D_uvgfxstate_rom_00402D30] += drawState->unkE;
+        D_uvgfxstate_rom_00402D40[D_uvgfxstate_rom_00402D30] += drawState->unk12;
         D_uvgfxstate_rom_00402D48[D_uvgfxstate_rom_00402D30] += 1;
     }
-    *gdl = gdlh;
+    *displayListHead = cursor;
 }
 
 #line 715 "src/modules/uvgfxstate_rom.c"

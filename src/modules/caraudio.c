@@ -391,8 +391,34 @@ void carAudioPrependCommand(s32 value4, s32 soundHandlingEnabled, s32 valueC, u8
 #line 160 "src/modules/caraudio.c"
 #line 159 "src/modules/caraudio.c"
 
+/* Under the kernel player-count word == 1 gate, apply the captured f32 scalar
+ * to seven original emitter-ID bytes, skipping 255 and retaining callback reads.
+ * RE_UNKNOWN: slot/array bounds, scalar units, callback replacement/lifetimes,
+ * historical formals/declarations and complete storage ownership need producers.
+ * The natural C trial expands 396 to 416 bytes and changes the 40-byte frame to
+ * 32 bytes; 92 words differ, including five added words. Both 30-record object
+ * lists retain nonlocal identities/type counts and call counts but differ by site.
+ * Packed native relocation records separately number 14. Reduced diagnostics
+ * establish no new omitted effect; exact compiler lowering remains unresolved.
+ * Retain ASM pending complete body/packed-ROM equality; no C credit is claimed. */
+#line 160 "src/modules/caraudio.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_004031E0.s")
 
+/* Traverse the existing command list and process kind-zero records through
+ * cached query kind 2. Preserve handle preparation, ordered pitch clamps,
+ * fresh slot/ID reads, independent routing gates and the wrapping byte counter.
+ * RE_ORIGINAL_QUIRK: commandIndex advances for every node without a four-slot
+ * guard; native initializes four matrices and four two-byte rows before traversal.
+ * A prepared byte of 255 exits the whole routine before later command effects.
+ * RE_UNKNOWN: list/handle/flag capacities, slot domains, query meaning, scalar
+ * units, callback lifetimes/replacement and historical declarations need producers.
+ * The first natural trial expands 1552 to 1556 bytes, retaining the 504-byte
+ * frame; 368 words differ, including one added word. Both 54-record object lists
+ * retain nonlocal identities/type counts and call counts but differ by site.
+ * Packed native records separately number 38. Complete diagnostics remain on
+ * the worker; reduced review identifies no new omitted effect. Retain ASM pending
+ * exact body/packed-ROM equality; no recovery or readability credit is claimed. */
+#line 162 "src/modules/caraudio.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_0040336C.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caraudio/func_caraudio_0040397C.s")

@@ -6,6 +6,15 @@ extern void *gSceneExports;
 typedef struct { u8 unk00[0x158]; f32 component158; u8 unk15C[0x39]; u8 active; u8 unk196[2]; s32 remaining; f32 direction; f32 amplitude; } CameraShakeState;
 extern f32 D_cam_004048D4, D_cam_004048D8;
 /*__SEEDEXTERNS__*/
+/* Consumed vector/export views only; no complete camera or matrix ABI inferred. */
+typedef struct { f32 x, y, z; } CameraBasisVector;
+typedef struct {
+    u8 unknown00[8];
+    s32 (*normalize)(CameraBasisVector *, CameraBasisVector *);
+    u8 unknown0C[0x18];
+    void (*cross)(CameraBasisVector *, CameraBasisVector *, CameraBasisVector *);
+} CameraBasisVectorExports;
+#line 9 "src/modules/cam.c"
 typedef struct { char pad[0xC]; void (*copyMatrix)(Mtx4F *, Mtx4F *); } UvFMtxExp_00403A9C;
 extern UvFMtxExp_00403A9C *gUvFmtxExports;
 extern void *D_cam_00404E28;
@@ -254,7 +263,33 @@ void camUpdateAlternatingOffset(CameraShakeState *state) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/cam/func_cam_00402E08.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/cam/func_cam_00402FEC.s")
+#line 121 "src/modules/cam.c"
+/* Blend the third three-component row, then rebuild and normalize the first
+ * and third rows using FVEC slots24 and08. The row's fourth components and the
+ * matrix translation remain untouched; normalization return values are ignored.
+ * RE_ORIGINAL_QUIRK: third.z uses the already-scaled third.y, not old third.z.
+ * RE_UNKNOWN: blend domain, matrix frame, degenerate-vector policy and caller
+ * ownership remain unresolved. Preserve the original arithmetic and call order. */
+void camBlendAndRebuildBasisRows(Mtx4F *matrix, f32 amount) {
+    CameraBasisVector second;
+    CameraBasisVector first;
+    CameraBasisVector third;
+
+    first = *(CameraBasisVector *)((u8 *)matrix + 0x00);
+    second = *(CameraBasisVector *)((u8 *)matrix + 0x10);
+    third = *(CameraBasisVector *)((u8 *)matrix + 0x20);
+    third.x *= amount;
+    third.y *= amount;
+    third.z = third.y * amount + (1.0f - amount);
+    ((CameraBasisVectorExports *)gUvFvecExports)->cross(&first, &second, &third);
+    ((CameraBasisVectorExports *)gUvFvecExports)->normalize(&first, &first);
+    ((CameraBasisVectorExports *)gUvFvecExports)->cross(&third, &first, &second);
+    ((CameraBasisVectorExports *)gUvFvecExports)->normalize(&third, &third);
+    *(CameraBasisVector *)((u8 *)matrix + 0x00) = first;
+    *(CameraBasisVector *)((u8 *)matrix + 0x10) = second;
+    *(CameraBasisVector *)((u8 *)matrix + 0x20) = third;
+}
+#line 122 "src/modules/cam.c"
 
 #line 123 "src/modules/cam.c"
 /* Store the selected camera and render its signed-short channel
