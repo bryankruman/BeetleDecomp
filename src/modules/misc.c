@@ -834,12 +834,12 @@ f32 miscFoldAngleRadians(f32 angle) { /* Reduce and mirror the angle using the o
 
 #line 424 "src/modules/misc.c"
 /* Return a two-component vector's squared length. */
-f32 miscVec2LengthSquared(f32 *vector) { return vector[0]*vector[0] + vector[1]*vector[1]; }
+f32 miscVec2LengthSquared(f32 *vector) { /* Sum the two squared components in the original expression order. RE_UNKNOWN: Input finiteness and overflow behavior are caller constraints, not checked here. */ return vector[0]*vector[0] + vector[1]*vector[1]; }
 #line 425 "src/modules/misc.c"
 
 #line 426 "src/modules/misc.c"
 /* Return the Euclidean length of a two-component vector. */
-f32 miscVec2Length(f32 *vector) {
+f32 miscVec2Length(f32 *vector) { /* Pass the two-component squared sum to the original square-root provider. RE_UNKNOWN: Provider behavior for nonfinite or overflowed sums remains unproved. */
     return gUvMathExports->uvSqrtf(miscVec2LengthSquared(vector));
 }
 #line 427 "src/modules/misc.c"
@@ -848,7 +848,7 @@ f32 miscVec2Length(f32 *vector) {
 /* Normalize a two-component vector using its reciprocal length. Lengths
  * below the original threshold produce two zero components. Preserve the
  * ordered comparison and sequential stores, including aliased-pointer behavior. */
-void miscVec2Normalize(f32 *output, f32 *input) {
+void miscVec2Normalize(f32 *output, f32 *input) { /* Write zero for lengths strictly below the retained threshold; otherwise multiply each component by the reciprocal length. RE_QUIRK: Equality takes the reciprocal path. RE_UNKNOWN: Nonfinite inputs and partially overlapping buffers are not validated. */
     f32 length = miscVec2Length(input);
     f32 reciprocal;
     if (length < D_misc_0040428C) {
@@ -864,7 +864,7 @@ void miscVec2Normalize(f32 *output, f32 *input) {
 
 #line 430 "src/modules/misc.c"
 /* Add a scaled delta to the base vector, preserving component-store order. */
-void miscVec2AddScaled(f32 *output, f32 *base, f32 scale, f32 *delta) {
+void miscVec2AddScaled(f32 *output, f32 *base, f32 scale, f32 *delta) { /* Write base plus delta times scale, first component then second. RE_UNKNOWN: Partially overlapping input/output buffers require a caller contract. */
     output[0] = base[0] + delta[0] * scale;
     output[1] = base[1] + delta[1] * scale;
 }
@@ -872,14 +872,14 @@ void miscVec2AddScaled(f32 *output, f32 *base, f32 scale, f32 *delta) {
 
 #line 438 "src/modules/misc.c"
 /* Return the two-component dot product with the original floating-point order. */
-f32 miscVec2Dot(f32 *first, f32 *second) {
+f32 miscVec2Dot(f32 *first, f32 *second) { /* Return the two ordered component products and their sum. RE_UNKNOWN: Input finiteness and overflow behavior are not validated. */
     return first[0] * second[0] + first[1] * second[1];
 }
 #line 443 "src/modules/misc.c"
 
 #line 444 "src/modules/misc.c"
 /* Add two two-component vectors in X/Y order. */
-void miscVec2Add(f32 *output, f32 *first, f32 *second) {
+void miscVec2Add(f32 *output, f32 *first, f32 *second) { /* Write the two component sums in index order. RE_UNKNOWN: Partially overlapping buffers require caller evidence. */
     output[0] = first[0] + second[0];
     output[1] = first[1] + second[1];
 }
@@ -887,7 +887,7 @@ void miscVec2Add(f32 *output, f32 *first, f32 *second) {
 
 #line 450 "src/modules/misc.c"
 /* Subtract the second two-component vector from the first in X/Y order. */
-void miscVec2Subtract(f32 *output, f32 *first, f32 *second) {
+void miscVec2Subtract(f32 *output, f32 *first, f32 *second) { /* Write first minus second component by component. RE_UNKNOWN: Partially overlapping buffers require caller evidence. */
     output[0] = first[0] - second[0];
     output[1] = first[1] - second[1];
 }
@@ -895,7 +895,7 @@ void miscVec2Subtract(f32 *output, f32 *first, f32 *second) {
 
 #line 455 "src/modules/misc.c"
 /* Scale a two-component vector, preserving the original load/store order. */
-void miscVec2Scale(f32 *output, f32 scale, f32 *input) {
+void miscVec2Scale(f32 *output, f32 scale, f32 *input) { /* Write the two input components multiplied by scale. RE_UNKNOWN: Partially overlapping buffers require caller evidence. */
     output[0] = input[0] * scale;
     output[1] = input[1] * scale;
 }
@@ -904,7 +904,7 @@ void miscVec2Scale(f32 *output, f32 scale, f32 *input) {
 #line 460 "src/modules/misc.c"
 /* Transform the vector in place by the matrix's upper-left 2x2 block.
  * Preserve the original multiplication order and cache both input components. */
-void miscVec2TransformInPlace(f32 *vector, f32 matrix[4][4]) {
+void miscVec2TransformInPlace(f32 *vector, f32 matrix[4][4]) { /* Snapshot x/y and apply only the upper-left two-by-two matrix entries in the original grouping. RE_QUIRK: Translation is not applied. RE_UNKNOWN: Matrix convention and matrix/vector overlap require caller evidence. */
     f32 x = vector[0];
     f32 y = vector[1];
     vector[0] = x * matrix[0][0] + matrix[1][0] * y;
@@ -914,7 +914,7 @@ void miscVec2TransformInPlace(f32 *vector, f32 matrix[4][4]) {
 
 #line 462 "src/modules/misc.c"
 /* Copy the X/Y components; retain the original behavior for aliased pointers. */
-void miscVec2Copy(f32 *output, f32 *input) {
+void miscVec2Copy(f32 *output, f32 *input) { /* Copy component zero before component one. RE_UNKNOWN: This is not a general overlapping-memory copy contract. */
     output[0] = input[0];
     output[1] = input[1];
 }
@@ -924,7 +924,7 @@ void miscVec2Copy(f32 *output, f32 *input) {
 /* Subtract normal * dot(normal, input) * (1 + coefficient) from the input.
  * With a unit normal, coefficient one gives ordinary reflection and zero
  * removes the normal component. Preserve the original two-component scratch. */
-void miscVec2ReflectScaled(f32 *output, f32 *normal, f32 *input, f32 coefficient) {
+void miscVec2ReflectScaled(f32 *output, f32 *normal, f32 *input, f32 coefficient) { /* Subtract normal times dot(normal,input) times one plus coefficient from the input. RE_UNKNOWN: Unit-normal, coefficient-domain and overlapping-buffer contracts remain unproved; no normalization is added. */
     f32 scaledNormal[2];
     miscVec2Scale(scaledNormal, miscVec2Dot(normal, input) * (1.0f + coefficient), normal);
     miscVec2Subtract(output, input, scaledNormal);
@@ -935,7 +935,7 @@ void miscVec2ReflectScaled(f32 *output, f32 *normal, f32 *input, f32 coefficient
 
 #line 471 "src/modules/misc.c"
 /* Add two three-component vectors in X/Y/Z order. */
-void miscVec3Add(f32 *output, f32 *first, f32 *second) {
+void miscVec3Add(f32 *output, f32 *first, f32 *second) { /* Write three component sums in index order. RE_UNKNOWN: Partially overlapping buffers require caller evidence. */
     output[0] = first[0] + second[0];
     output[1] = first[1] + second[1];
     output[2] = first[2] + second[2];
@@ -944,7 +944,7 @@ void miscVec3Add(f32 *output, f32 *first, f32 *second) {
 
 #line 477 "src/modules/misc.c"
 /* Subtract the second three-component vector from the first in X/Y/Z order. */
-void miscVec3Subtract(f32 *output, f32 *first, f32 *second) {
+void miscVec3Subtract(f32 *output, f32 *first, f32 *second) { /* Write first minus second for three components in index order. RE_UNKNOWN: Partially overlapping buffers require caller evidence. */
     output[0] = first[0] - second[0];
     output[1] = first[1] - second[1];
     output[2] = first[2] - second[2];
@@ -953,7 +953,7 @@ void miscVec3Subtract(f32 *output, f32 *first, f32 *second) {
 
 #line 483 "src/modules/misc.c"
 /* Scale a three-component vector, preserving the original load/store order. */
-void miscVec3Scale(f32 *output, f32 scale, f32 *input) {
+void miscVec3Scale(f32 *output, f32 scale, f32 *input) { /* Write three components multiplied by scale in index order. RE_UNKNOWN: Partially overlapping buffers require caller evidence. */
     output[0] = input[0] * scale;
     output[1] = input[1] * scale;
     output[2] = input[2] * scale;
@@ -963,7 +963,7 @@ void miscVec3Scale(f32 *output, f32 scale, f32 *input) {
 #line 489 "src/modules/misc.c"
 /* Transform three components in place using the upper-left matrix block.
  * Cache all input components and preserve the original multiplication/addition order. */
-void miscVec3TransformInPlace(f32 *vector, f32 matrix[4][4]) {
+void miscVec3TransformInPlace(f32 *vector, f32 matrix[4][4]) { /* Snapshot x/y/z and apply only the three-by-three matrix entries with the original product grouping. RE_QUIRK: Translation is not applied. RE_UNKNOWN: Matrix convention and matrix/vector overlap require caller evidence. */
     f32 x = vector[0];
     f32 y = vector[1];
     f32 z = vector[2];
@@ -975,7 +975,7 @@ void miscVec3TransformInPlace(f32 *vector, f32 matrix[4][4]) {
 
 #line 491 "src/modules/misc.c"
 /* Copy the X/Y/Z components; retain the original behavior for aliased pointers. */
-void miscVec3Copy(f32 *output, f32 *input) {
+void miscVec3Copy(f32 *output, f32 *input) { /* Copy the three components in increasing index order. RE_UNKNOWN: Partially overlapping buffers are not a general memory-copy guarantee. */
     output[0] = input[0];
     output[1] = input[1];
     output[2] = input[2];
@@ -985,7 +985,7 @@ void miscVec3Copy(f32 *output, f32 *input) {
 #line 497 "src/modules/misc.c"
 /* Add a scaled four-component delta to the base vector in component order.
  * The original sequential loads/stores also define aliased-pointer behavior. */
-void miscVec4AddScaled(f32 *output, f32 *base, f32 scale, f32 *delta) {
+void miscVec4AddScaled(f32 *output, f32 *base, f32 scale, f32 *delta) { /* Write base plus delta times scale for all four components in index order. RE_UNKNOWN: Fourth-component meaning and partially overlapping buffers require caller evidence. */
     output[0] = base[0] + delta[0] * scale;
     output[1] = base[1] + delta[1] * scale;
     output[2] = base[2] + delta[2] * scale;

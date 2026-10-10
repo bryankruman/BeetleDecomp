@@ -332,7 +332,7 @@
     "src/modules/logo.c": "98b52c4dd4100cf937d10d704a5b1720b9ff63a628099b7215f9fbc57d364619",
     "src/modules/med.c": "388ae18d3726f26ed10f43072b63277fb5568e735cbe9ac55f27d87f235cc000",
     "src/modules/menuslct.c": "6c5d9188d9d0fbbc20982a1327e21430ed180418332a9f13ec96803877adac15",
-    "src/modules/misc.c": "65353d61ef4dfa7e5fd4427d82509fbcead2d96378a13a460f9f93310449cf35",
+    "src/modules/misc.c": "38d5f95b44910079fa5334e7c2fc016be86a9f1d701d3b822ab5ad0b33b03828",
     "src/modules/motion.c": "eda98b2da63a114fb0c4f29b128158df1c06717e655ae6335fc885bcc6cfb0d0",
     "src/modules/mult1.c": "fcd148eabbeb9db35e3da555b6e77e8b47903ced46b4e915dad1c4e132781ff7",
     "src/modules/mult2.c": "ad25b8e93a8307ad21fc18221aa4ab3559721814689e9a500aa5105b3e820663",
@@ -441,8 +441,8 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "616258c42ef4118513599b79e48fb8816334a79dac32b5b35fcb62ec7753ec9f",
-    "docs/VALIDATION_20261006.md": "d56fb018c88e539c50a6e5dc5ab3bdc68f52874afaca91a622adaa7693c7a941"
+    "docs/STRATEGY_V4.md": "4ea513f9c126e1190a877c99cfedf7f919f4da7389227d626ff64e484389ad56",
+    "docs/VALIDATION_20261006.md": "8320cac72366f10f58b9b5378648356f5080886dda22bb8e1c5b3c956e3e1b8b"
   },
   "counts": {
     "address_function": 906,
@@ -452,7 +452,7 @@
     "conditional_draft": 4,
     "decompiler_local": 659,
     "draft_marker": 37,
-    "explicit_unknown": 1414,
+    "explicit_unknown": 1431,
     "layout_padding": 275,
     "offset_field": 1620,
     "opaque_type": 282,
@@ -123592,6 +123592,46 @@
       ]
     },
     {
+      "id": "Q-55aaf90444d0",
+      "kind": "explicit_unknown",
+      "path": "src/modules/misc.c",
+      "symbol": "Copy component zero before component one. RE_UNKNOWN: This is not a general overlapping-memory copy contract.",
+      "lines": [
+        917
+      ],
+      "evidence": "Copy component zero before component one. RE_UNKNOWN: This is not a general overlapping-memory copy contract.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "miscVec2Copy",
+          "declaration_line": 917,
+          "lines": [
+            917
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-8d8cb62cb3f2",
+      "kind": "explicit_unknown",
+      "path": "src/modules/misc.c",
+      "symbol": "Copy the three components in increasing index order. RE_UNKNOWN: Partially overlapping buffers are not a general memory-copy guarantee.",
+      "lines": [
+        978
+      ],
+      "evidence": "Copy the three components in increasing index order. RE_UNKNOWN: Partially overlapping buffers are not a general memory-copy guarantee.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "miscVec3Copy",
+          "declaration_line": 978,
+          "lines": [
+            978
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-1b7125f87f91",
       "kind": "explicit_unknown",
       "path": "src/modules/misc.c",
@@ -123747,6 +123787,26 @@
           "declaration_line": 6,
           "lines": [
             3
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-11176e717db9",
+      "kind": "explicit_unknown",
+      "path": "src/modules/misc.c",
+      "symbol": "Pass the two-component squared sum to the original square-root provider. RE_UNKNOWN: Provider behavior for nonfinite or overflowed sums remains unproved.",
+      "lines": [
+        842
+      ],
+      "evidence": "Pass the two-component squared sum to the original square-root provider. RE_UNKNOWN: Provider behavior for nonfinite or overflowed sums remains unproved.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "miscVec2Length",
+          "declaration_line": 842,
+          "lines": [
+            842
           ]
         }
       ]
@@ -123951,6 +124011,26 @@
       ]
     },
     {
+      "id": "Q-e7e33d291d03",
+      "kind": "explicit_unknown",
+      "path": "src/modules/misc.c",
+      "symbol": "Return the two ordered component products and their sum. RE_UNKNOWN: Input finiteness and overflow behavior are not validated.",
+      "lines": [
+        875
+      ],
+      "evidence": "Return the two ordered component products and their sum. RE_UNKNOWN: Input finiteness and overflow behavior are not validated.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "miscVec2Dot",
+          "declaration_line": 875,
+          "lines": [
+            875
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-d6ac27fdeb1c",
       "kind": "explicit_unknown",
       "path": "src/modules/misc.c",
@@ -123966,6 +124046,86 @@
           "declaration_line": 1145,
           "lines": [
             1135
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-aa1c1f957ffc",
+      "kind": "explicit_unknown",
+      "path": "src/modules/misc.c",
+      "symbol": "Snapshot x/y and apply only the upper-left two-by-two matrix entries in the original grouping. RE_QUIRK: Translation is not applied. RE_UNKNOWN: Matrix convention and matrix/vector overlap require caller evidence.",
+      "lines": [
+        907
+      ],
+      "evidence": "Snapshot x/y and apply only the upper-left two-by-two matrix entries in the original grouping. RE_QUIRK: Translation is not applied. RE_UNKNOWN: Matrix convention and matrix/vector overlap require caller evidence.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "miscVec2TransformInPlace",
+          "declaration_line": 907,
+          "lines": [
+            907
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-585333d5316d",
+      "kind": "explicit_unknown",
+      "path": "src/modules/misc.c",
+      "symbol": "Snapshot x/y/z and apply only the three-by-three matrix entries with the original product grouping. RE_QUIRK: Translation is not applied. RE_UNKNOWN: Matrix convention and matrix/vector overlap require caller evidence.",
+      "lines": [
+        966
+      ],
+      "evidence": "Snapshot x/y/z and apply only the three-by-three matrix entries with the original product grouping. RE_QUIRK: Translation is not applied. RE_UNKNOWN: Matrix convention and matrix/vector overlap require caller evidence.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "miscVec3TransformInPlace",
+          "declaration_line": 966,
+          "lines": [
+            966
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-0756d3429c8a",
+      "kind": "explicit_unknown",
+      "path": "src/modules/misc.c",
+      "symbol": "Subtract normal times dot(normal,input) times one plus coefficient from the input. RE_UNKNOWN: Unit-normal, coefficient-domain and overlapping-buffer contracts remain unproved; no normalization is added.",
+      "lines": [
+        927
+      ],
+      "evidence": "Subtract normal times dot(normal,input) times one plus coefficient from the input. RE_UNKNOWN: Unit-normal, coefficient-domain and overlapping-buffer contracts remain unproved; no normalization is added.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "miscVec2ReflectScaled",
+          "declaration_line": 927,
+          "lines": [
+            927
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-a15eaac7bb7a",
+      "kind": "explicit_unknown",
+      "path": "src/modules/misc.c",
+      "symbol": "Sum the two squared components in the original expression order. RE_UNKNOWN: Input finiteness and overflow behavior are caller constraints, not checked here.",
+      "lines": [
+        837
+      ],
+      "evidence": "Sum the two squared components in the original expression order. RE_UNKNOWN: Input finiteness and overflow behavior are caller constraints, not checked here.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "miscVec2LengthSquared",
+          "declaration_line": 837,
+          "lines": [
+            837
           ]
         }
       ]
@@ -124066,6 +124226,186 @@
           "declaration_line": 1102,
           "lines": [
             1098
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-f2228b343292",
+      "kind": "explicit_unknown",
+      "path": "src/modules/misc.c",
+      "symbol": "Write base plus delta times scale for all four components in index order. RE_UNKNOWN: Fourth-component meaning and partially overlapping buffers require caller evidence.",
+      "lines": [
+        988
+      ],
+      "evidence": "Write base plus delta times scale for all four components in index order. RE_UNKNOWN: Fourth-component meaning and partially overlapping buffers require caller evidence.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "miscVec4AddScaled",
+          "declaration_line": 988,
+          "lines": [
+            988
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-05d851eb2dcd",
+      "kind": "explicit_unknown",
+      "path": "src/modules/misc.c",
+      "symbol": "Write base plus delta times scale, first component then second. RE_UNKNOWN: Partially overlapping input/output buffers require a caller contract.",
+      "lines": [
+        867
+      ],
+      "evidence": "Write base plus delta times scale, first component then second. RE_UNKNOWN: Partially overlapping input/output buffers require a caller contract.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "miscVec2AddScaled",
+          "declaration_line": 867,
+          "lines": [
+            867
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-374e29fea303",
+      "kind": "explicit_unknown",
+      "path": "src/modules/misc.c",
+      "symbol": "Write first minus second component by component. RE_UNKNOWN: Partially overlapping buffers require caller evidence.",
+      "lines": [
+        890
+      ],
+      "evidence": "Write first minus second component by component. RE_UNKNOWN: Partially overlapping buffers require caller evidence.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "miscVec2Subtract",
+          "declaration_line": 890,
+          "lines": [
+            890
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-3237cc7cc07f",
+      "kind": "explicit_unknown",
+      "path": "src/modules/misc.c",
+      "symbol": "Write first minus second for three components in index order. RE_UNKNOWN: Partially overlapping buffers require caller evidence.",
+      "lines": [
+        947
+      ],
+      "evidence": "Write first minus second for three components in index order. RE_UNKNOWN: Partially overlapping buffers require caller evidence.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "miscVec3Subtract",
+          "declaration_line": 947,
+          "lines": [
+            947
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-3fa5483f4cf1",
+      "kind": "explicit_unknown",
+      "path": "src/modules/misc.c",
+      "symbol": "Write the two component sums in index order. RE_UNKNOWN: Partially overlapping buffers require caller evidence.",
+      "lines": [
+        882
+      ],
+      "evidence": "Write the two component sums in index order. RE_UNKNOWN: Partially overlapping buffers require caller evidence.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "miscVec2Add",
+          "declaration_line": 882,
+          "lines": [
+            882
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-a0ff1cffabdc",
+      "kind": "explicit_unknown",
+      "path": "src/modules/misc.c",
+      "symbol": "Write the two input components multiplied by scale. RE_UNKNOWN: Partially overlapping buffers require caller evidence.",
+      "lines": [
+        898
+      ],
+      "evidence": "Write the two input components multiplied by scale. RE_UNKNOWN: Partially overlapping buffers require caller evidence.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "miscVec2Scale",
+          "declaration_line": 898,
+          "lines": [
+            898
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-3bbc9828bc80",
+      "kind": "explicit_unknown",
+      "path": "src/modules/misc.c",
+      "symbol": "Write three component sums in index order. RE_UNKNOWN: Partially overlapping buffers require caller evidence.",
+      "lines": [
+        938
+      ],
+      "evidence": "Write three component sums in index order. RE_UNKNOWN: Partially overlapping buffers require caller evidence.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "miscVec3Add",
+          "declaration_line": 938,
+          "lines": [
+            938
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-374ae4d81519",
+      "kind": "explicit_unknown",
+      "path": "src/modules/misc.c",
+      "symbol": "Write three components multiplied by scale in index order. RE_UNKNOWN: Partially overlapping buffers require caller evidence.",
+      "lines": [
+        956
+      ],
+      "evidence": "Write three components multiplied by scale in index order. RE_UNKNOWN: Partially overlapping buffers require caller evidence.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "miscVec3Scale",
+          "declaration_line": 956,
+          "lines": [
+            956
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-5e1b0e98d8c3",
+      "kind": "explicit_unknown",
+      "path": "src/modules/misc.c",
+      "symbol": "Write zero for lengths strictly below the retained threshold; otherwise multiply each component by the reciprocal length. RE_QUIRK: Equality takes the reciprocal path. RE_UNKNOWN: Nonfinite inputs and partially overlapping buffers are not validated.",
+      "lines": [
+        851
+      ],
+      "evidence": "Write zero for lengths strictly below the retained threshold; otherwise multiply each component by the reciprocal length. RE_QUIRK: Equality takes the reciprocal path. RE_UNKNOWN: Nonfinite inputs and partially overlapping buffers are not validated.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "miscVec2Normalize",
+          "declaration_line": 851,
+          "lines": [
+            851
           ]
         }
       ]
