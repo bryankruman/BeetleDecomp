@@ -3250,10 +3250,19 @@ Totals: 417 further recoveries after the 225 upstream ordinary imports, plus 143
 Frozen wave `3496-selection-dynamics-literal-contracts-3496` and `accepted-selection-dynamics-literal-contracts-3496` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 418 further readable functions
+## Historical accepted checkpoint — 418 further readable functions
 
 Give nineteen existing AI, dynamics and animation-loader functions descriptive local roles and precise original-behavior comments. Recover the profile-game initializer with minimum observed views; preserve its two raw symbol/addend differences while requiring full original packed module and relocation equality. Keep canonical function names, public APIs, arithmetic and store ordering unchanged. Full normal packed modules, ROM, source manifest and complete ledger are mandatory.
 
 Totals: 418 further recoveries after the 225 upstream ordinary imports, plus 1454 existing C semantic cleanups. Current ledger: 782 assembly references = 743 ordinary + 39 entrypoints; 710,904 known remaining instruction bytes; zero unknown sizes; 285 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `3560-engine-role-recovery-cohort-3560` and `accepted-engine-role-recovery-cohort-3560` verify real translation-unit instructions/full relocations, 4 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 418 further readable functions
+
+Give twenty existing dynamics functions precise parameter and local roles and source comments describing original callback ordering, signed bounds, live reads and untouched outputs. Keep the current interfaces, field names, expressions and native instructions unchanged. Historical return use and unchecked domains remain explicitly unknown. Full normal module packing, original ROM, source manifest, index and unchanged complete ledger are required.
+
+Totals: 418 further recoveries after the 225 upstream ordinary imports, plus 1474 existing C semantic cleanups. Current ledger: 782 assembly references = 743 ordinary + 39 entrypoints; 710,904 known remaining instruction bytes; zero unknown sizes; 285 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `3630-dynamics-node-boundary-contracts-3630` and `accepted-dynamics-node-boundary-contracts-3630` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

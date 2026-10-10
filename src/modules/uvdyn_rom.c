@@ -1075,73 +1075,91 @@ void uvDynGetVectorScalar12DC(DynVectorFields *record, DynVectorScalar *output) 
 }
 #line 280 "src/modules/uvdyn_rom.c"
 
+/* Checks destination count for equality to10 before examining prior
+ * membership; removes from the old collection before assigning and inserting
+ * the new collection. RE_UNKNOWN: Count validity/capacity and ownership across
+ * callbacks remain unproven; equality-to10 must not become a stronger range
+ * check. */
 #line 281 "src/modules/uvdyn_rom.c"
 /* Change the node's linked collection, removing its old membership first.
  * A nonnull destination whose count equals ten is rejected before checking for
  * an unchanged link. Null clears the link; original count invariants are required. */
-void uvDynSetLinkedCollection(DynLinkedNode *node, DynLinkedCollection *collection) {
-    if (collection != NULL && collection->count == 10) {
+void uvDynSetLinkedCollection(DynLinkedNode *memberNode, DynLinkedCollection *destinationCollection) {
+    if (destinationCollection != NULL && destinationCollection->count == 10) {
         return;
     }
-    if (node->linkedCollection != NULL) {
-        if (collection == node->linkedCollection) {
+    if (memberNode->linkedCollection != NULL) {
+        if (destinationCollection == memberNode->linkedCollection) {
             return;
         }
-        uvDynRemoveLinkedNode(node->linkedCollection, node);
+        uvDynRemoveLinkedNode(memberNode->linkedCollection, memberNode);
     }
-    node->linkedCollection = collection;
-    if (collection != NULL) {
-        uvDynInsertUniqueLinkedNode(collection, node);
+    memberNode->linkedCollection = destinationCollection;
+    if (destinationCollection != NULL) {
+        uvDynInsertUniqueLinkedNode(destinationCollection, memberNode);
     }
 }
 #line 282 "src/modules/uvdyn_rom.c"
 
+/* Returns the linkedCollection field directly. RE_UNKNOWN: Input validity,
+ * lifetime and whether the returned collection is owned or borrowed remain
+ * unproven. */
 #line 283 "src/modules/uvdyn_rom.c"
 /* Return the node's linked collection. The original requires a valid node. */
-DynLinkedCollection *uvDynGetLinkedCollection(DynLinkedNode *node) {
-    return node->linkedCollection;
+DynLinkedCollection *uvDynGetLinkedCollection(DynLinkedNode *memberNode) {
+    return memberNode->linkedCollection;
 }
 #line 286 "src/modules/uvdyn_rom.c"
 
+/* Rejects null/duplicate candidates and count==2; appends before scanning the
+ * prior owner, then assigns owner and conditionally forwards the DOBJ handle.
+ * RE_UNKNOWN: The scan helper performs no removal; do not infer detachment or
+ * repair owner/count consistency. Count bounds and provider object validity
+ * remain unproven. */
 #line 287 "src/modules/uvdyn_rom.c"
 /* Add a unique nonnull attachment unless count equals two, set its owner,
  * and in mode zero propagate the DOBJ handle to its intersection record.
  * The previous-owner helper only scans: original code does not remove old
  * membership. Preserve that behavior and the original valid-count contract. */
-void uvDynAddUniqueAttachment(DynResetState *state, DynAttachmentPrefix *attachment) {
-    u16 index;
-    if (attachment == NULL) {
+void uvDynAddUniqueAttachment(DynResetState *destinationOwner, DynAttachmentPrefix *candidateAttachment) {
+    u16 attachmentIndex;
+    if (candidateAttachment == NULL) {
         return;
     }
-    for (index = 0; index < state->attachmentCount; index++) {
-        if (attachment == state->attachments[index]) {
+    for (attachmentIndex = 0; attachmentIndex < destinationOwner->attachmentCount; attachmentIndex++) {
+        if (candidateAttachment == destinationOwner->attachments[attachmentIndex]) {
             return;
         }
     }
-    if (state->attachmentCount == 2) {
+    if (destinationOwner->attachmentCount == 2) {
         return;
     }
-    state->attachments[state->attachmentCount] = attachment;
-    state->attachmentCount++;
-    if (attachment->owner != NULL) {
-        uvDynScanAttachmentMembership(attachment->owner, attachment);
+    destinationOwner->attachments[destinationOwner->attachmentCount] = candidateAttachment;
+    destinationOwner->attachmentCount++;
+    if (candidateAttachment->owner != NULL) {
+        uvDynScanAttachmentMembership(candidateAttachment->owner, candidateAttachment);
     }
-    attachment->owner = state;
-    if (attachment->intersectionRecord != NULL && state->dobjUpdateMode == 0) {
-        D_uvdyn_rom_00411F7C->setDobjHandle(attachment->intersectionRecord, state->dobjHandle);
+    candidateAttachment->owner = destinationOwner;
+    if (candidateAttachment->intersectionRecord != NULL && destinationOwner->dobjUpdateMode == 0) {
+        D_uvdyn_rom_00411F7C->setDobjHandle(candidateAttachment->intersectionRecord, destinationOwner->dobjHandle);
     }
 }
 #line 288 "src/modules/uvdyn_rom.c"
 
+/* RE_ORIGINAL_QUIRK: Scans a nonnull owner for pointer equality without field
+ * writes. The current C interface is void; native V0 carries scan state at
+ * return. RE_UNKNOWN: The historical return contract and caller use of that
+ * register are unproved; any intended unlinking role is unknown. Preserve the
+ * scan without inventing removal or membership mutation. */
 #line 289 "src/modules/uvdyn_rom.c"
 /* Preserve the original non-mutating membership scan and early return.
  * This routine neither removes the attachment nor changes its owner, even
  * though the original add routine calls it for a previous owner. */
-void uvDynScanAttachmentMembership(DynResetState *state, DynAttachmentPrefix *attachment) {
-    u16 index;
-    if (state != NULL) {
-        for (index = 0; index < state->attachmentCount; index++) {
-            if (attachment == state->attachments[index]) {
+void uvDynScanAttachmentMembership(DynResetState *owner, DynAttachmentPrefix *candidateAttachment) {
+    u16 attachmentIndex;
+    if (owner != NULL) {
+        for (attachmentIndex = 0; attachmentIndex < owner->attachmentCount; attachmentIndex++) {
+            if (candidateAttachment == owner->attachments[attachmentIndex]) {
                 return;
             }
         }
@@ -1149,25 +1167,32 @@ void uvDynScanAttachmentMembership(DynResetState *state, DynAttachmentPrefix *at
 }
 #line 290 "src/modules/uvdyn_rom.c"
 
+/* RE_ORIGINAL_QUIRK: Returns null only when attachmentCount<index; otherwise
+ * indexes the attachment array. RE_UNKNOWN: Equality-to-count and negative
+ * indices are not rejected in the native path; caller domain/full storage
+ * extent remain unproved. */
 #line 291 "src/modules/uvdyn_rom.c"
 /* Return the indexed attachment unless index is greater than the live count.
  * Preserve the original inclusive test and missing negative-index check; callers
  * must still supply a valid index. Null state is not supported by the original. */
-DynAttachmentPrefix *uvDynGetAttachmentByIndex(DynResetState *state, s32 index) {
-    if (state->attachmentCount < index) {
+DynAttachmentPrefix *uvDynGetAttachmentByIndex(DynResetState *owner, s32 attachmentIndex) {
+    if (owner->attachmentCount < attachmentIndex) {
         return NULL;
     }
-    return state->attachments[index];
+    return owner->attachments[attachmentIndex];
 }
 #line 297 "src/modules/uvdyn_rom.c"
 
+/* Returns0 for null owner, otherwise its attachmentCount. RE_UNKNOWN: A
+ * nonnull count is not validated against the two-pointer focused view;
+ * allocation and corruption domains are unknown. */
 #line 298 "src/modules/uvdyn_rom.c"
 /* Return the live attachment count, or zero for a null state. */
-s32 uvDynGetAttachmentCount(DynResetState *state) {
-    if (state == NULL) {
+s32 uvDynGetAttachmentCount(DynResetState *owner) {
+    if (owner == NULL) {
         return 0;
     }
-    return state->attachmentCount;
+    return owner->attachmentCount;
 }
 #line 304 "src/modules/uvdyn_rom.c"
 
@@ -1194,46 +1219,57 @@ s32 uvDynGetNestedRecordCount(void *state) {
 }
 #line 318 "src/modules/uvdyn_rom.c"
 
+/* Stores the handle first; only mode0 queries property7, copies the resulting
+ * scalar and forwards the handle to each nonnull intersection record.
+ * RE_UNKNOWN: Provider may leave a property output unchanged outside its
+ * domain; preserve the current read rather than introducing an initializer.
+ * Callback mutation/count domains remain unknown. */
 #line 319 "src/modules/uvdyn_rom.c"
 /* Store the DOBJ handle. In mode zero, read DOBJ property seven into the
  * original scalar pair and propagate the handle to nonnull attachment
  * intersection records. Preserve 16-bit iteration and live count reloads. */
-void uvDynSetDobjHandle(DynResetState *state, s32 handle) {
-    u16 index;
-    DynAttachmentPrefix *attachment;
-    state->dobjHandle = handle;
-    if (state->dobjUpdateMode == 0) {
-        D_uvdyn_rom_00411F84->uvDobjGetProp(handle, 7, &state->value14AC, 0);
-        state->value14B0 = state->value14AC;
-        for (index = 0; index < state->attachmentCount; index++) {
-            attachment = state->attachments[index];
-            if (attachment->intersectionRecord != NULL) {
-                D_uvdyn_rom_00411F7C->setDobjHandle(attachment->intersectionRecord, handle);
+void uvDynSetDobjHandle(DynResetState *owner, s32 inputDobjHandle) {
+    u16 attachmentIndex;
+    DynAttachmentPrefix *boundAttachment;
+    owner->dobjHandle = inputDobjHandle;
+    if (owner->dobjUpdateMode == 0) {
+        D_uvdyn_rom_00411F84->uvDobjGetProp(inputDobjHandle, 7, &owner->value14AC, 0);
+        owner->value14B0 = owner->value14AC;
+        for (attachmentIndex = 0; attachmentIndex < owner->attachmentCount; attachmentIndex++) {
+            boundAttachment = owner->attachments[attachmentIndex];
+            if (boundAttachment->intersectionRecord != NULL) {
+                D_uvdyn_rom_00411F7C->setDobjHandle(boundAttachment->intersectionRecord, inputDobjHandle);
             }
         }
     }
 }
 #line 320 "src/modules/uvdyn_rom.c"
 
+/* Returns dobjHandle directly. RE_UNKNOWN: Handle sentinel/validity, state
+ * lifetime and ownership remain unknown. */
 #line 321 "src/modules/uvdyn_rom.c"
 /* Return the stored DOBJ handle; the original requires a valid state. */
-s32 uvDynGetDobjHandle(DynResetState *state) {
-    return state->dobjHandle;
+s32 uvDynGetDobjHandle(DynResetState *owner) {
+    return owner->dobjHandle;
 }
 #line 324 "src/modules/uvdyn_rom.c"
 
+/* Stores the supplied signed word at value2C. RE_UNKNOWN: The physical meaning
+ * and allowed numeric domain of this field remain unknown. */
 #line 325 "src/modules/uvdyn_rom.c"
 /* Store the opaque signed word at 0x2C. The original requires a valid state;
  * a more specific gameplay meaning has not been established. */
-void uvDynSetValue2C(DynResetState *state, s32 value) {
-    state->value2C = value;
+void uvDynSetValue2C(DynResetState *owner, s32 inputValue2C) {
+    owner->value2C = inputValue2C;
 }
 #line 328 "src/modules/uvdyn_rom.c"
 
+/* Returns value2C directly. RE_UNKNOWN: The physical meaning and allowed
+ * numeric domain of this field remain unknown. */
 #line 329 "src/modules/uvdyn_rom.c"
 /* Return the opaque signed word at 0x2C from a valid state. */
-s32 uvDynGetValue2C(DynResetState *state) {
-    return state->value2C;
+s32 uvDynGetValue2C(DynResetState *owner) {
+    return owner->value2C;
 }
 #line 332 "src/modules/uvdyn_rom.c"
 
@@ -1260,131 +1296,160 @@ void func_uvdyn_rom_0040492C(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
 }
 #line 337 "src/modules/uvdyn_rom.c"
 
+/* Returns0 on null state, otherwise firstParameterCount. RE_UNKNOWN: Count
+ * initialization, full bank capacity and valid state extent remain unknown. */
 #line 338 "src/modules/uvdyn_rom.c"
 /* Return the first parameter-bank count, or zero for a null state. This field
  * is the count consumed by the recovered first-bank indexed output helper. */
-s32 uvDynGetFirstParameterCount(DynResetState *state) {
-    if (state == NULL) {
+s32 uvDynGetFirstParameterCount(DynResetState *parameterState) {
+    if (parameterState == NULL) {
         return 0;
     }
-    return state->firstParameterCount;
+    return parameterState->firstParameterCount;
 }
 #line 344 "src/modules/uvdyn_rom.c"
 
+/* Null or index>=firstCount returns before outputs; valid path writes
+ * key/value/kind then invokes vector-copy. RE_UNKNOWN: Output pointer
+ * validity/aliasing, bank capacity and key/kind semantics remain unknown.
+ * Rejected calls do not initialize outputs. */
 #line 345 "src/modules/uvdyn_rom.c"
 /* Copy the indexed first-bank key/value, unsigned kind and vector outputs.
  * Null state or index at/above the live count leaves every output unchanged.
  * RE_UNKNOWN: count validity for the four observed slots and key/value/kind
  * meanings; trace bank producers and original callers before assuming bounds. */
-void uvDynGetFirstParameterEntry(DynParameterBanks *state, u16 index, u32 *key, u32 *value, u16 *kind, Vec3F *vector) {
-    if (state == NULL) {
+void uvDynGetFirstParameterEntry(DynParameterBanks *parameterBanks, u16 parameterIndex, u32 *outKey, u32 *outValue, u16 *outKind, Vec3F *outVector) {
+    if (parameterBanks == NULL) {
         return;
     }
-    if (index >= state->firstCount) {
+    if (parameterIndex >= parameterBanks->firstCount) {
         return;
     }
-    *key = state->firstKeys[index];
-    *value = state->firstValues[index];
-    *kind = state->firstKinds[index];
-    D_uvdyn_rom_00411F74->uvVec3FCopy(vector, &state->firstVectors[index]);
+    *outKey = parameterBanks->firstKeys[parameterIndex];
+    *outValue = parameterBanks->firstValues[parameterIndex];
+    *outKind = parameterBanks->firstKinds[parameterIndex];
+    D_uvdyn_rom_00411F74->uvVec3FCopy(outVector, &parameterBanks->firstVectors[parameterIndex]);
 }
 #line 346 "src/modules/uvdyn_rom.c"
 
+/* Sets the parameter flag before vector-copy, then writes the two scalar
+ * fields. RE_UNKNOWN: Flag meaning, scalar units, record extent and callback-
+ * visible aliasing remain unknown; preserve write/call order. */
 #line 347 "src/modules/uvdyn_rom.c"
 /* Enable the parameter flag, copy the input vector and store the two scalar
  * parameters at their original offsets. The original requires a valid record. */
-void uvDynSetVectorParameters(DynVectorFields *record, Vec3F *vector, f32 first, f32 second) {
-    record->parameterFlag = 1;
-    D_uvdyn_rom_00411F74->uvVec3FCopy(&record->vector12C0, vector);
-    record->value12B8 = first;
-    record->value12BC = second;
+void uvDynSetVectorParameters(DynVectorFields *parameterRecord, Vec3F *inputVector, f32 scalar12B8, f32 scalar12BC) {
+    parameterRecord->parameterFlag = 1;
+    D_uvdyn_rom_00411F74->uvVec3FCopy(&parameterRecord->vector12C0, inputVector);
+    parameterRecord->value12B8 = scalar12B8;
+    parameterRecord->value12BC = scalar12BC;
 }
 #line 348 "src/modules/uvdyn_rom.c"
 
+/* Snapshots the flag; nonzero path copies vector, writes both scalars and
+ * reloads the flag afterward. RE_UNKNOWN: Do not replace the final reload with
+ * the initial snapshot; output aliasing and provider effects are unproven.
+ * Flag0 leaves outputs untouched. */
 #line 349 "src/modules/uvdyn_rom.c"
 /* Return the original parameter flag. Only when nonzero, copy the vector
  * and two scalars; reload the flag after the external copy as the original does. */
-u16 uvDynGetVectorParameters(DynVectorFields *record, Vec3F *vector, f32 *first, f32 *second) {
-    u16 flag;
-    flag = record->parameterFlag;
-    if (flag != 0) {
-        D_uvdyn_rom_00411F74->uvVec3FCopy(vector, &record->vector12C0);
-        *first = record->value12B8;
-        *second = record->value12BC;
-        flag = record->parameterFlag;
+u16 uvDynGetVectorParameters(DynVectorFields *parameterRecord, Vec3F *outVector, f32 *outScalar12B8, f32 *outScalar12BC) {
+    u16 returnedParameterFlag;
+    returnedParameterFlag = parameterRecord->parameterFlag;
+    if (returnedParameterFlag != 0) {
+        D_uvdyn_rom_00411F74->uvVec3FCopy(outVector, &parameterRecord->vector12C0);
+        *outScalar12B8 = parameterRecord->value12B8;
+        *outScalar12BC = parameterRecord->value12BC;
+        returnedParameterFlag = parameterRecord->parameterFlag;
     }
-    return flag;
+    return returnedParameterFlag;
 }
 #line 350 "src/modules/uvdyn_rom.c"
 
+/* Writes0 to parameterFlag. RE_UNKNOWN: Meaning and lifecycle of the flag
+ * remain unknown; no other fields are reset. */
 #line 351 "src/modules/uvdyn_rom.c"
 /* Clear the vector-parameter flag in a valid node state. */
-void uvDynClearParameterFlag(DynResetState *state) {
-    state->parameterFlag = 0;
+void uvDynClearParameterFlag(DynResetState *parameterState) {
+    parameterState->parameterFlag = 0;
 }
 #line 354 "src/modules/uvdyn_rom.c"
 
+/* Returns0 on null banks, otherwise secondCount. RE_UNKNOWN: Count
+ * initialization, full bank capacity and valid state extent remain unknown. */
 #line 355 "src/modules/uvdyn_rom.c"
 /* Return the second parameter-bank count, or zero for a null state. */
-s32 uvDynGetSecondParameterCount(DynParameterBanks *state) {
-    if (state == NULL) {
+s32 uvDynGetSecondParameterCount(DynParameterBanks *parameterBanks) {
+    if (parameterBanks == NULL) {
         return 0;
     }
-    return state->secondCount;
+    return parameterBanks->secondCount;
 }
 #line 361 "src/modules/uvdyn_rom.c"
 
+/* Rejected calls leave outputs unchanged; valid path writes key/value/kind,
+ * copies payload vector and freshly reads payload08/0C afterward. RE_UNKNOWN:
+ * Payload pointer lifetime, output aliasing, bank capacity and physical field
+ * meanings remain unknown; preserve callback/reload ordering. */
 #line 362 "src/modules/uvdyn_rom.c"
 /* Copy the second-bank key/value/kind and payload vector/words. Null state
  * or index at/above count leaves outputs unchanged; preserve payload reloads.
  * RE_UNKNOWN: four-slot count validity and payload lifetime/aliasing; trace
  * bank producers and callers before treating those input guarantees as proven. */
-void uvDynGetSecondParameterEntry(DynParameterBanks *state, u16 index, u32 *key, u32 *value, u16 *kind, Vec3F *vector, u32 *payloadValue08, u32 *payloadValue0C) {
-    if (state == NULL) {
+void uvDynGetSecondParameterEntry(DynParameterBanks *parameterBanks, u16 parameterIndex, u32 *outKey, u32 *outValue, u16 *outKind, Vec3F *outVector, u32 *outPayloadValue08, u32 *outPayloadValue0C) {
+    if (parameterBanks == NULL) {
         return;
     }
-    if (index >= state->secondCount) {
+    if (parameterIndex >= parameterBanks->secondCount) {
         return;
     }
-    *key = state->secondKeys[index];
-    *value = state->secondValues[index];
-    *kind = state->secondKinds[index];
-    D_uvdyn_rom_00411F74->uvVec3FCopy(vector, &state->secondPayloads[index]->vector34);
-    *payloadValue08 = state->secondPayloads[index]->value08;
-    *payloadValue0C = state->secondPayloads[index]->value0C;
+    *outKey = parameterBanks->secondKeys[parameterIndex];
+    *outValue = parameterBanks->secondValues[parameterIndex];
+    *outKind = parameterBanks->secondKinds[parameterIndex];
+    D_uvdyn_rom_00411F74->uvVec3FCopy(outVector, &parameterBanks->secondPayloads[parameterIndex]->vector34);
+    *outPayloadValue08 = parameterBanks->secondPayloads[parameterIndex]->value08;
+    *outPayloadValue0C = parameterBanks->secondPayloads[parameterIndex]->value0C;
 }
 #line 363 "src/modules/uvdyn_rom.c"
 
+/* Returns0 on null state, otherwise the unsigned halfword entryCount.
+ * RE_UNKNOWN: The count alone does not establish full collection or array
+ * capacity. */
 #line 364 "src/modules/uvdyn_rom.c"
 /* Return the indexed entry count, or zero for a null state. */
-u16 uvDynGetIndexedEntryCount(DynIndexedNodeFields *state) {
-    if (state == NULL) {
+u16 uvDynGetIndexedEntryCount(DynIndexedNodeFields *indexedState) {
+    if (indexedState == NULL) {
         return 0;
     }
-    return state->entryCount;
+    return indexedState->entryCount;
 }
 #line 370 "src/modules/uvdyn_rom.c"
 
+/* Rejects null or index>=entryCount; forms an unsigned16-bit collection index
+ * from offset+index, then writes the three outputs and returns1. RE_UNKNOWN:
+ * Offset addition wraps to16bits in the native path; storage capacity, null
+ * collection and output aliasing remain unproven. Rejected calls return0
+ * without output initialization. */
 #line 371 "src/modules/uvdyn_rom.c"
 /* Copy the node-relative indexed collection value, unsigned kind and opaque
  * four-byte aggregate. Null state or index at/above its entry count returns zero
  * without changing outputs; success returns one. The combined collection index
  * wraps to sixteen bits and is not checked against the collection arrays.
  * Preserve the original cached collection pointer and aggregate-copy ABI. */
-s32 uvDynGetIndexedCollectionEntry(DynIndexedNodeFields *state, u16 index, u32 *value, u16 *kind, DynCollectionWord *word) {
-    u16 collectionIndex;
+s32 uvDynGetIndexedCollectionEntry(DynIndexedNodeFields *indexedState, u16 entryIndex, u32 *outValue, u16 *outKind, DynCollectionWord *outWord) {
+    u16 wrappedCollectionIndex;
     DynIndexedCollectionFields *collection;
-    if (state == NULL) {
+    if (indexedState == NULL) {
         return 0;
     }
-    if (index >= state->entryCount) {
+    if (entryIndex >= indexedState->entryCount) {
         return 0;
     }
-    collectionIndex = state->entryOffset + index;
-    collection = state->collection;
-    *value = collection->values[collectionIndex];
-    *kind = collection->kinds[collectionIndex];
-    *word = collection->words[collectionIndex];
+    wrappedCollectionIndex = indexedState->entryOffset + entryIndex;
+    collection = indexedState->collection;
+    *outValue = collection->values[wrappedCollectionIndex];
+    *outKind = collection->kinds[wrappedCollectionIndex];
+    *outWord = collection->words[wrappedCollectionIndex];
     return 1;
 }
 #line 372 "src/modules/uvdyn_rom.c"
@@ -1404,28 +1469,33 @@ u16 uvDynGetIndexedRangeLength(DynIndexedNodeFields *state, u16 index) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00404CE8.s")
 
+/* Invokes optional callback before clearing first count; copies saved vectors,
+ * updates attachment transforms, copies matrix/vector state and sets
+ * value14A8=-1. RE_UNKNOWN: Callback lifetime/mutation, live attachment-count
+ * validity, null intersection record reachability and scalar physical units
+ * remain unknown. Do not infer full-state reset or ownership. */
 #line 377 "src/modules/uvdyn_rom.c"
 /* Invoke the optional reset callback, clear firstParameterCount, copy the observed
  * vector pairs and matrix, and update each attachment's intersection transform
  * using property three. Finish with the original scalar and -1 sentinel.
  * Preserve the 16-bit attachment loop and unknown gameplay field meanings. */
-void uvDynResetLinkedNodeState(DynResetState *state) {
-    u16 index;
+void uvDynResetLinkedNodeState(DynResetState *nodeState) {
+    u16 attachmentIndex;
     void (*callback)(DynResetState *, void *);
-    callback = state->callback;
+    callback = nodeState->callback;
     if (callback != NULL) {
-        callback(state, state->callbackContext);
+        callback(nodeState, nodeState->callbackContext);
     }
-    state->firstParameterCount = 0;
-    D_uvdyn_rom_00411F74->uvVec3FCopy(&state->vector14EC, &state->vector14E0);
-    D_uvdyn_rom_00411F74->uvVec3FCopy(&state->vector14C8, &state->vector14BC);
-    for (index = 0; index < state->attachmentCount; index++) {
-        D_uvdyn_rom_00411F7C->setTransformProperty(state->attachments[index]->intersectionRecord, 3, &state->matrix12EC);
+    nodeState->firstParameterCount = 0;
+    D_uvdyn_rom_00411F74->uvVec3FCopy(&nodeState->vector14EC, &nodeState->vector14E0);
+    D_uvdyn_rom_00411F74->uvVec3FCopy(&nodeState->vector14C8, &nodeState->vector14BC);
+    for (attachmentIndex = 0; attachmentIndex < nodeState->attachmentCount; attachmentIndex++) {
+        D_uvdyn_rom_00411F7C->setTransformProperty(nodeState->attachments[attachmentIndex]->intersectionRecord, 3, &nodeState->matrix12EC);
     }
-    D_uvdyn_rom_00411F70->uvMat4FCopy(&state->matrix132C, &state->matrix12EC);
-    D_uvdyn_rom_00411F74->uvVec3FCopy(&state->vector1478, &state->vector146C);
-    state->value148C = D_uvdyn_rom_00411CBC;
-    state->value14A8 = -1;
+    D_uvdyn_rom_00411F70->uvMat4FCopy(&nodeState->matrix132C, &nodeState->matrix12EC);
+    D_uvdyn_rom_00411F74->uvVec3FCopy(&nodeState->vector1478, &nodeState->vector146C);
+    nodeState->value148C = D_uvdyn_rom_00411CBC;
+    nodeState->value14A8 = -1;
 }
 #line 378 "src/modules/uvdyn_rom.c"
 
