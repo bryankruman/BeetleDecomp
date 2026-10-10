@@ -90,8 +90,8 @@ extern s32 gNmiAsserted;
 
 void uvControllerReinitializeAndStopAllRumble(void);
 
-void __entrypoint_func_uvcont_rom_400000(UvCont_Exports *exports) {
-    s32 i;
+void __entrypoint_func_uvcont_rom_400000(UvCont_Exports *exports) { /* Publish 28 controller callbacks, query and wait for device status, then scan four ports. Failed ports lose their presence bit and peripheral state; successful ports are initialized, with fresh status reads before the pak paths. Finally select four channels. */
+    s32 controllerIndex;
 
     uvUpdateFileAllocPtr(exports);
     exports->uvIOUpdate = uvIOUpdate;
@@ -130,27 +130,27 @@ void __entrypoint_func_uvcont_rom_400000(UvCont_Exports *exports) {
     osRecvMesg(sPfsMQ, &D_uvcont_rom_00401AE0, 1);
     osContGetQuery(D_uvcont_rom_00401AD8);
 
-    for (i = 0; i < 4; i++) {
-        if (D_uvcont_rom_00401AD8[i].errno == 0) {
-            sContBitPattern |= 1 << i;
+    for (controllerIndex = 0; controllerIndex < 4; controllerIndex++) {
+        if (D_uvcont_rom_00401AD8[controllerIndex].errno == 0) {
+            sContBitPattern |= 1 << controllerIndex;
             goto success; // this confused m2c
         } else {
-            sContBitPattern &= ~(1 << i);
-            sControllers[i].periphState = 0;
+            sContBitPattern &= ~(1 << controllerIndex);
+            sControllers[controllerIndex].periphState = 0;
             continue;
         }
 
     success:
-        D_uvcont_rom_00401B10 = i;
-        uvControllerInit(i);
-        if (D_uvcont_rom_00401AD8[i].status & 1) {
-            uvControllerInitPak(i);
-            uvControllerRumbleInit(i);
+        D_uvcont_rom_00401B10 = controllerIndex;
+        uvControllerInit(controllerIndex);
+        if (D_uvcont_rom_00401AD8[controllerIndex].status & 1) {
+            uvControllerInitPak(controllerIndex);
+            uvControllerRumbleInit(controllerIndex);
         }
     }
 
     osContSetCh(4);
-}
+/* RE_UNKNOWN: Queue/query failure handling, repeated initialization and the full lifecycle of the successful-port index word remain unproved. Preserve the existing branches, SDK calls and status rereads after initialization. */ }
 
 #line 29 "src/modules/uvcont_rom.c"
 /* Delegate to the existing controller reinitialization and all-port
@@ -383,39 +383,39 @@ u8 uvControllerDecodePakNameCharacter(u8 encodedCharacter) {
 }
 #line 219 "src/modules/uvcont_rom.c"
 
-void uvControllerInit(s32 contNo) {
-    s32 i;
+void uvControllerInit(s32 controllerIndex) { /* Clear three normalized axes, both button fields and peripheral state; copy query status/error and clear the sampled pad fields. The controller raw-stick bytes are left untouched. */
+    s32 axisIndex;
 
-    for (i = 0; i < 3; i++) {
-        sControllers[contNo].stickAxes[i] = 0.0f;
+    for (axisIndex = 0; axisIndex < 3; axisIndex++) {
+        sControllers[controllerIndex].stickAxes[axisIndex] = 0.0f;
     }
 
-    sControllers[contNo].button = 0;
-    sControllers[contNo].prevButton = 0;
-    sControllers[contNo].periphState = 0;
-    sControllers[contNo].prevStatus = D_uvcont_rom_00401AD8[contNo].status;
-    sControllers[contNo].prevErrno = D_uvcont_rom_00401AD8[contNo].errno;
-    sContPads[contNo].button = 0;
-    sContPads[contNo].stick_x = 0;
-    sContPads[contNo].stick_y = 0;
-    sContPads[contNo].errno = 0;
-}
+    sControllers[controllerIndex].button = 0;
+    sControllers[controllerIndex].prevButton = 0;
+    sControllers[controllerIndex].periphState = 0;
+    sControllers[controllerIndex].prevStatus = D_uvcont_rom_00401AD8[controllerIndex].status;
+    sControllers[controllerIndex].prevErrno = D_uvcont_rom_00401AD8[controllerIndex].errno;
+    sContPads[controllerIndex].button = 0;
+    sContPads[controllerIndex].stick_x = 0;
+    sContPads[controllerIndex].stick_y = 0;
+    sContPads[controllerIndex].errno = 0;
+/* RE_UNKNOWN: The caller must supply a usable controller index; the native body has no range check. Preserve the query-byte reads and the distinct controller and pad resets. */ }
 
-void uvControllerUpdate(s32 contNo) {
+void uvControllerUpdate(s32 controllerIndex) { /* Normalize signed sampled stick bytes into the captured controller record, then save the old buttons and read the current buttons/raw sticks. Query status and error are read afterward through the current status pointer. */
     Controller *controller;
-    controller = &sControllers[contNo];
-    uvContNormalizeStick(sContPads[contNo].stick_x, sContPads[contNo].stick_y,
+    controller = &sControllers[controllerIndex];
+    uvContNormalizeStick(sContPads[controllerIndex].stick_x, sContPads[controllerIndex].stick_y,
                          &controller->stickAxes[0], &controller->stickAxes[1]);
 
     controller->prevButton = controller->button;
-    controller->button = sContPads[contNo].button;
-    controller->stickX = sContPads[contNo].stick_x;
-    controller->stickY = sContPads[contNo].stick_y;
-    controller->prevStatus = D_uvcont_rom_00401AD8[contNo].status;
-    controller->prevErrno = D_uvcont_rom_00401AD8[contNo].errno;
-}
+    controller->button = sContPads[controllerIndex].button;
+    controller->stickX = sContPads[controllerIndex].stick_x;
+    controller->stickY = sContPads[controllerIndex].stick_y;
+    controller->prevStatus = D_uvcont_rom_00401AD8[controllerIndex].status;
+    controller->prevErrno = D_uvcont_rom_00401AD8[controllerIndex].errno;
+/* RE_UNKNOWN: Controller-index bounds and concurrent input/status mutation are unproved. Preserve the signed input conversion, post-normalization pad reads and separate query-pointer reads rather than taking an earlier snapshot. */ }
 
-void uvContNormalizeStick(s8 stickX, s8 stickY, f32 *outX, f32 *outY) {
+void uvContNormalizeStick(s8 stickX, s8 stickY, f32 *outX, f32 *outY) { /* Map each signed axis independently: the inclusive range -7 through 7 yields zero; X saturates at -68/68 and divides by 61.0f, while Y saturates at -70/70 and divides by 63.0f. Store X before Y. */
     if (stickX < 0) {
         if (stickX < -68) {
             stickX = -68;
@@ -446,23 +446,23 @@ void uvContNormalizeStick(s8 stickX, s8 stickY, f32 *outX, f32 *outY) {
         }
         *outY = (stickY - 7) / 63.0f;
     }
-}
+/* RE_UNKNOWN: Calibration rationale and the caller output-pointer validity/aliasing contract are unproved. Retain the axis-specific branches, signed-byte inputs, single-precision divisions and output-store order. */ }
 
-s32 uvControllerRepairPfs(s32 contNo) {
+s32 uvControllerRepairPfs(s32 controllerIndex) { /* Require the controller-pak state bit, initialize its PFS record and attempt ID repair. Only a zero repair result triggers a second initialization, replaces peripheral state with the controller-pak bit and returns true. */
     Controller *controller;
 
-    controller = &sControllers[contNo];
+    controller = &sControllers[controllerIndex];
     if (!(controller->periphState & CONT_PERIPH_STATE_CONT_PAK)) {
         return FALSE;
     }
-    osPfsInitPak(sPfsMQ, &sControllersPfs[contNo], contNo);
-    if (osPfsRepairId(&sControllersPfs[contNo]) == 0) {
-        osPfsInitPak(sPfsMQ, &sControllersPfs[contNo], contNo);
+    osPfsInitPak(sPfsMQ, &sControllersPfs[controllerIndex], controllerIndex);
+    if (osPfsRepairId(&sControllersPfs[controllerIndex]) == 0) {
+        osPfsInitPak(sPfsMQ, &sControllersPfs[controllerIndex], controllerIndex);
         controller->periphState = CONT_PERIPH_STATE_CONT_PAK;
         return TRUE;
     }
     return FALSE;
-}
+/* RE_UNKNOWN: Controller-index and SDK lifecycle domains are unproved. Both initialization results are ignored in the native body; do not treat either call as a checked success condition. */ }
 
 #line 301 "src/modules/uvcont_rom.c"
 /* Set the shared company/game identity used by later Controller Pak file
@@ -713,11 +713,11 @@ void uvControllerContPakNoOpHook(s32 unusedController) {
 }
 #line 481 "src/modules/uvcont_rom.c"
 
-s32 uvControllerStartRumblePak(s32 contNo) {
-    if (!(sControllers[contNo].periphState & CONT_PERIPH_STATE_RUMBLE_PAK)) {
+s32 uvControllerStartRumblePak(s32 controllerIndex) { /* Require the rumble-pak bit, reject peripheral bit 8 and a nonzero NMI flag, then send motor command 1. A zero result returns true; failure rereads the peripheral byte and sets bit 8 before returning false. */
+    if (!(sControllers[controllerIndex].periphState & CONT_PERIPH_STATE_RUMBLE_PAK)) {
         return FALSE;
     }
-    if (sControllers[contNo].periphState & 8) {
+    if (sControllers[controllerIndex].periphState & 8) {
         return FALSE;
     }
     if (gNmiAsserted != 0) {
@@ -725,25 +725,25 @@ s32 uvControllerStartRumblePak(s32 contNo) {
     }
 
     // Start the motor
-    if (__osMotorAccess(&sControllersPfs[contNo], 1) == 0) {
+    if (__osMotorAccess(&sControllersPfs[controllerIndex], 1) == 0) {
         return TRUE;
     }
-    sControllers[contNo].periphState |= 8;
+    sControllers[controllerIndex].periphState |= 8;
     return FALSE;
-}
+/* RE_UNKNOWN: The index domain and bit-8 clearing/retry lifecycle are unproved. Keep the peripheral-byte reread after the motor call so callback-visible changes are retained. */ }
 
-s32 uvControllerStopRumblePak(s32 contNo) {
-    if (!(sControllers[contNo].periphState & CONT_PERIPH_STATE_RUMBLE_PAK)) {
+s32 uvControllerStopRumblePak(s32 controllerIndex) { /* Require the rumble-pak bit to be set and peripheral bit 8 to be clear, send motor command 0 and return true. The native body ignores the motor result and performs no NMI test. */
+    if (!(sControllers[controllerIndex].periphState & CONT_PERIPH_STATE_RUMBLE_PAK)) {
         return FALSE;
     }
-    if (sControllers[contNo].periphState & 8) {
+    if (sControllers[controllerIndex].periphState & 8) {
         return FALSE;
     }
 
     // Stop the motor
-    __osMotorAccess(&sControllersPfs[contNo], 0);
+    __osMotorAccess(&sControllersPfs[controllerIndex], 0);
     return TRUE;
-}
+/* RE_UNKNOWN: The index domain and motor-failure handling contract remain unproved. Preserve the unconditional true result after the call and the absence of a peripheral-state write. */ }
 
 #line 514 "src/modules/uvcont_rom.c"
 /* For a rumble peripheral, initialize Pak/motor state and send four stop requests.

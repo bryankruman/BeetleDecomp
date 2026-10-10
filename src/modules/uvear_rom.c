@@ -23,9 +23,9 @@ void uvEarUpdateVelocityHistory(u16 arg0);
 f32 uvEarMaxAxisDistance(Vec3F *v1, Vec3F *v2);
 s32 uvEarFindNearestSlot(s32 arg0, Vec3F *arg1);
 
-void __entrypoint_func_uvear_rom_400000(UvEar_Rom_Exports *exports) {
-    u16 i;
-    u16 *size;
+void __entrypoint_func_uvear_rom_400000(UvEar_Rom_Exports *exports) { /* Publish ten ear callbacks, use the nonzero unsigned halfword from system property 5 or default 4, allocate count times 0x48 bytes, and reset slots while marking their separate words as 1. Then reset/query clock 0x6A and load FVEC. */
+    u16 earSlot;
+    u16 *countProperty;
 
     uvUpdateFileAllocPtr(exports);
     exports->uvEarModuleCleanup = uvEarModuleCleanup;
@@ -39,27 +39,27 @@ void __entrypoint_func_uvear_rom_400000(UvEar_Rom_Exports *exports) {
     exports->uvEarUpdateVelocityHistory = uvEarUpdateVelocityHistory;
     exports->uvEarFindNearestSlot = uvEarFindNearestSlot;
 #line 33
-    size = uvGetSystemProp(5);
-    if (size == NULL) {
+    countProperty = uvGetSystemProp(5);
+    if (countProperty == NULL) {
         D_uvear_rom_00400850 = 4;
     } else {
-        if (*size != 0) {
-            D_uvear_rom_00400850 = *size;
+        if (*countProperty != 0) {
+            D_uvear_rom_00400850 = *countProperty;
         } else {
             D_uvear_rom_00400850 = 4;
         }
     }
     D_uvear_rom_00400854 =
         _uvMemAllocAlign8(D_uvear_rom_00400850 * sizeof(UnkStruct_uvear_rom_0040085));
-    for (i = 0; i < D_uvear_rom_00400850; i++) {
-        uvEarResetSlot(i);
-        D_uvear_rom_00400860[i] = 1;
+    for (earSlot = 0; earSlot < D_uvear_rom_00400850; earSlot++) {
+        uvEarResetSlot(earSlot);
+        D_uvear_rom_00400860[earSlot] = 1;
     }
 
     uvClkReset(0x6A);
     D_uvear_rom_00400858 = uvClkGetSec(0x6A);
     sUvFvecExports = uvLoadModule('FVEC');
-}
+/* RE_UNKNOWN: Allocation failure, separate word-table capacity, callback mutation of the live count, repeated initialization and the clock-query domain are unproved. Keep the unsigned 16-bit loop index and fresh count reads after each reset callback. */ }
 
 #line 55 "src/modules/uvear_rom.c"
 /* Free the listener table and unload the floating-vector module. */

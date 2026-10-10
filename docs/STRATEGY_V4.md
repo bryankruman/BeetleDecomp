@@ -3304,10 +3304,19 @@ Totals: 419 further recoveries after the 225 upstream ordinary imports, plus 154
 Frozen wave `3874-audio-effects-native-contracts` and `accepted-audio-effects-native-contracts-3874` verify real translation-unit instructions/full relocations, 3 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 428 further readable functions
+## Historical accepted checkpoint — 428 further readable functions
 
 Recover nine original MISC functions as descriptive canonical definitions with exact original-symbol compatibility aliases. Preserve all 52 prior C bodies literally, all 13 remaining assembly functions and every existing relocation-map byte. Complete 4576-byte native comparison, 52 ordered five-field records and 18 empty compiler logs passed. The exact trial-to-final name and six blank-line whitespace inverse is explicit; normal extraction, fresh complete original packed MISC and entire relocation section, full original ROM, all 1036 final manifest files (exact prior 1035 plus one explicit absent-before linker input) and exact entire 781-minus-nine ledger projection remain mandatory. The dedicated misc_partial_aliases.ld input uses the existing ld-r/-T route; all nine old/canonical pairs must be defined at equal executable addresses in the final partial ELF. No readonly ownership changes.
 
 Totals: 428 further recoveries after the 225 upstream ordinary imports, plus 1545 existing C semantic cleanups. Current ledger: 772 assembly references = 733 ordinary + 39 entrypoints; 706,200 known remaining instruction bytes; zero unknown sizes; 285 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `3952-misc-core-native-recoveries` and `accepted-misc-core-native-recoveries-3952` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 428 further readable functions
+
+Name observed local roles and document controller sampling, stick normalization, pak repair, rumble state and ear allocation behavior while preserving native order, ABI and searchable unknowns.
+
+Totals: 428 further recoveries after the 225 upstream ordinary imports, plus 1553 existing C semantic cleanups. Current ledger: 772 assembly references = 733 ordinary + 39 entrypoints; 706,200 known remaining instruction bytes; zero unknown sizes; 285 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `4018-controller-ear-native-contracts` and `accepted-controller-ear-native-contracts-4018` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

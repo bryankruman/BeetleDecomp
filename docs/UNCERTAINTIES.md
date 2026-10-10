@@ -17,7 +17,7 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 1277 |
+| Explicit RE_UNKNOWN notes | 1285 |
 | Preserved RE_ORIGINAL_QUIRK notes | 332 |
 | Older comments with uncertainty language | 93 |
 | Documented original-behavior audits | 30 |
@@ -5734,6 +5734,13 @@ For every future source wave, regenerate and check this index after code and str
 | explicit_unknown | `Encode the fixed-width Pak name and zero-fill output after the first input zero. RE_UNKNOWN: * full input/output extents need original buffers/callers; input[i] is still read af...` | function `uvControllerEncodePakName` | [663](../src/modules/uvcont_rom.c#L663) |
 | explicit_unknown | `Original no-op hook called for a controller whose peripheral state includes * CONT_PERIPH_STATE_CONT_PAK. The controller index is unused; preserve the * original s32 argument AB...` | function `uvControllerContPakNoOpHook` | [708](../src/modules/uvcont_rom.c#L708) |
 | explicit_unknown | `Original no-op hook called for a controller whose peripheral state includes * CONT_PERIPH_STATE_RUMBLE_PAK. The controller index is unused; preserve the * original s32 argument ...` | function `uvControllerRumblePakNoOpHook` | [812](../src/modules/uvcont_rom.c#L812) |
+| explicit_unknown | `RE_UNKNOWN: Calibration rationale and the caller output-pointer validity/aliasing contract are unproved. Retain the axis-specific branches, signed-byte inputs, single-precision ...` | function `uvContNormalizeStick` | [449](../src/modules/uvcont_rom.c#L449) |
+| explicit_unknown | `RE_UNKNOWN: Controller-index and SDK lifecycle domains are unproved. Both initialization results are ignored in the native body; do not treat either call as a checked success co...` | function `uvControllerRepairPfs` | [465](../src/modules/uvcont_rom.c#L465) |
+| explicit_unknown | `RE_UNKNOWN: Controller-index bounds and concurrent input/status mutation are unproved. Preserve the signed input conversion, post-normalization pad reads and separate query-poin...` | function `uvControllerUpdate` | [416](../src/modules/uvcont_rom.c#L416) |
+| explicit_unknown | `RE_UNKNOWN: Queue/query failure handling, repeated initialization and the full lifecycle of the successful-port index word remain unproved. Preserve the existing branches, SDK c...` | function `__entrypoint_func_uvcont_rom_400000` | [153](../src/modules/uvcont_rom.c#L153) |
+| explicit_unknown | `RE_UNKNOWN: The caller must supply a usable controller index; the native body has no range check. Preserve the query-byte reads and the distinct controller and pad resets.` | function `uvControllerInit` | [402](../src/modules/uvcont_rom.c#L402) |
+| explicit_unknown | `RE_UNKNOWN: The index domain and bit-8 clearing/retry lifecycle are unproved. Keep the peripheral-byte reread after the motor call so callback-visible changes are retained.` | function `uvControllerStartRumblePak` | [733](../src/modules/uvcont_rom.c#L733) |
+| explicit_unknown | `RE_UNKNOWN: The index domain and motor-failure handling contract remain unproved. Preserve the unconditional true result after the call and the absence of a peripheral-state write.` | function `uvControllerStopRumblePak` | [746](../src/modules/uvcont_rom.c#L746) |
 | explicit_unknown | `Read controller pads and refresh queried device status on countdown expiry * or NMI. Preserve reconnection setup, old/new peripheral-state callback * arguments and the post-call...` | function `uvIOUpdate` | [165](../src/modules/uvcont_rom.c#L165) |
 | explicit_unknown | `Read the selected controller/file metadata first, then delete using the * shared cached company/game/name identity. The local metadata output is not * substituted for that share...` | function `uvControllerPakDeleteFile` | [600](../src/modules/uvcont_rom.c#L600) |
 | explicit_unknown | `Refresh controller query status and initialize the selected memory Pak. * Preserve the original result-to-peripheral-state assignments and leave * state unchanged for unhandled ...` | function `uvControllerInitPak` | [625](../src/modules/uvcont_rom.c#L625) |
@@ -6507,6 +6514,7 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `arg1` | function `uvEarFindNearestSlot`, function `uvEarGetPosition`, function `uvEarGetSecondaryVector`, function `uvEarGetVelocity`, function `uvEarSetSecondaryVector`, function `uvEarSetVectorsFromState`, function `uvEarSetVelocity` | [16](../src/modules/uvear_rom.c#L16), [17](../src/modules/uvear_rom.c#L17), [18](../src/modules/uvear_rom.c#L18), [19](../src/modules/uvear_rom.c#L19), [20](../src/modules/uvear_rom.c#L20), [21](../src/modules/uvear_rom.c#L21), [24](../src/modules/uvear_rom.c#L24) |
 | decompiler_local | `temp_t0` | function `uvEarSetSecondaryVector` | [122](../src/modules/uvear_rom.c#L122) |
 | decompiler_local | `var_s0` | function `uvEarFindNearestSlot` | [249](../src/modules/uvear_rom.c#L249) |
+| explicit_unknown | `RE_UNKNOWN: Allocation failure, separate word-table capacity, callback mutation of the live count, repeated initialization and the clock-query domain are unproved. Keep the unsi...` | function `__entrypoint_func_uvear_rom_400000` | [62](../src/modules/uvear_rom.c#L62) |
 | explicit_unknown | `Reset listener vectors/history/scalars and set timestamp to -1. RE_UNKNOWN: slot * index/backing extent needs original listener-table allocation and selection callers.` | function `uvEarResetSlot` | [73](../src/modules/uvear_rom.c#L73) |
 | explicit_unknown | `Return the nearest listener below maximum-axis distance 200000; * first wins ties, zero is the fallback when none qualifies. * RE_UNKNOWN: count/table/position domains need orig...` | function `uvEarFindNearestSlot` | [243](../src/modules/uvear_rom.c#L243) |
 | offset_field | `unk18` | function `uvEarResetSlot`, function `uvEarUpdateVelocityHistory` | [85](../src/modules/uvear_rom.c#L85), [197](../src/modules/uvear_rom.c#L197), [202](../src/modules/uvear_rom.c#L202) |
