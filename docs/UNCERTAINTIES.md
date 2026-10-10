@@ -17,7 +17,7 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 1288 |
+| Explicit RE_UNKNOWN notes | 1306 |
 | Preserved RE_ORIGINAL_QUIRK notes | 333 |
 | Older comments with uncertainty language | 93 |
 | Documented original-behavior audits | 30 |
@@ -8726,8 +8726,20 @@ For every future source wave, regenerate and check this index after code and str
 | address_global | `D_uvtseq_rom_00400A88` | function `__entrypoint_func_uvtseq_rom_400000`, global `D_uvtseq_rom_00400A88` | [47](../src/modules/uvtseq_rom.c#L47), [67](../src/modules/uvtseq_rom.c#L67), [75](../src/modules/uvtseq_rom.c#L75), [77](../src/modules/uvtseq_rom.c#L77) |
 | address_global | `D_uvtseq_rom_00400A90` | function `__entrypoint_func_uvtseq_rom_400000`, function `uvTexSeqDestroy`, function `uvTexSeqUpdate`, global `D_uvtseq_rom_00400A90` | [27](../src/modules/uvtseq_rom.c#L27), [80](../src/modules/uvtseq_rom.c#L80), [99](../src/modules/uvtseq_rom.c#L99), [109](../src/modules/uvtseq_rom.c#L109), [242](../src/modules/uvtseq_rom.c#L242) |
 | address_global | `D_uvtseq_rom_00400A94` | function `__entrypoint_func_uvtseq_rom_400000`, function `uvTexSeqDestroy`, global `D_uvtseq_rom_00400A94` | [28](../src/modules/uvtseq_rom.c#L28), [81](../src/modules/uvtseq_rom.c#L81), [98](../src/modules/uvtseq_rom.c#L98), [108](../src/modules/uvtseq_rom.c#L108) |
-| decompiler_local | `arg0` | function `uvTexSeqCallBack`, function `uvTexSeqCallBack`, function `uvTexSeqFree`, function `uvTexSeqGetActive`, function `uvTexSeqGetCurFrameTexture`, function `uvTexSeqGetCurrentFrameProgress`, function `uvTexSeqGetFrameCount`, function `uvTexSeqGetFrameCount`, function `uvTexSeqGetFrameTexture`, function `uvTexSeqModel`, function `uvTexSeqProps`, function `uvTexSeqUpdate` | [33](../src/modules/uvtseq_rom.c#L33), [34](../src/modules/uvtseq_rom.c#L34), [36](../src/modules/uvtseq_rom.c#L36), [37](../src/modules/uvtseq_rom.c#L37), [39](../src/modules/uvtseq_rom.c#L39), [40](../src/modules/uvtseq_rom.c#L40), [41](../src/modules/uvtseq_rom.c#L41), [42](../src/modules/uvtseq_rom.c#L42) (+5 in JSON) |
+| decompiler_local | `arg0` | function `uvTexSeqCallBack`, function `uvTexSeqFree`, function `uvTexSeqGetActive`, function `uvTexSeqGetCurFrameTexture`, function `uvTexSeqGetCurrentFrameProgress`, function `uvTexSeqGetFrameCount`, function `uvTexSeqGetFrameTexture`, function `uvTexSeqModel`, function `uvTexSeqProps`, function `uvTexSeqUpdate` | [33](../src/modules/uvtseq_rom.c#L33), [34](../src/modules/uvtseq_rom.c#L34), [36](../src/modules/uvtseq_rom.c#L36), [37](../src/modules/uvtseq_rom.c#L37), [39](../src/modules/uvtseq_rom.c#L39), [40](../src/modules/uvtseq_rom.c#L40), [41](../src/modules/uvtseq_rom.c#L41), [42](../src/modules/uvtseq_rom.c#L42) (+2 in JSON) |
 | decompiler_local | `arg1` | function `uvTexSeqGetFrameTexture`, function `uvTexSeqModel` | [33](../src/modules/uvtseq_rom.c#L33), [42](../src/modules/uvtseq_rom.c#L42) |
+| explicit_unknown | `RE_UNKNOWN: Allocation failure, settings limits and repeated initialization are unproved. Preserve both setting defaults, the pool-pointer rereads and live count reads during re...` | function `__entrypoint_func_uvtseq_rom_400000` | [101](../src/modules/uvtseq_rom.c#L101) |
+| explicit_unknown | `RE_UNKNOWN: External ownership of the parsed frame table and reuse/reset ordering remain unproved.` | function `uvTexSeqFree` | [216](../src/modules/uvtseq_rom.c#L216) |
+| explicit_unknown | `RE_UNKNOWN: Historical mode intent, valid sequence/frame bounds and termination with zero or negative durations are unproved. Keep the inherited mode labels, byte wrapping, off-...` | function `uvTexSeqUpdate` | [291](../src/modules/uvtseq_rom.c#L291) |
+| explicit_unknown | `RE_UNKNOWN: Index and vararg domains remain unproved. Preserve the signed upper-bound-only frame check, double rate argument, byte truncations, existing null tests and continued...` | function `uvTexSeqProps` | [196](../src/modules/uvtseq_rom.c#L196) |
+| explicit_unknown | `RE_UNKNOWN: Mutation of the pool, count or active fields during an update is unproved. Preserve the count reloads and exact flag equality gate.` | function `uvTexSeqUpdateAll` | [234](../src/modules/uvtseq_rom.c#L234) |
+| explicit_unknown | `RE_UNKNOWN: Negative offsets, zero frame counts and resulting frame-table bounds are unproved. Preserve signed remainder and the lack of a normalization or validity gate.` | function `uvTexSeqGetFrameTexture` | [313](../src/modules/uvtseq_rom.c#L313) |
+| explicit_unknown | `RE_UNKNOWN: Pool validity and the configured count domain are unproved. Preserve the separate pool-pointer read before marking the selected sequence active.` | function `uvTexSeqFindFree` | [209](../src/modules/uvtseq_rom.c#L209) |
+| explicit_unknown | `RE_UNKNOWN: Sequence and file ID bounds, failed-load state, frame-table ownership and zero frame counts are unproved. The copied frame-table pointer is shared; no deep copy or a...` | function `uvTexSeqModel` | [149](../src/modules/uvtseq_rom.c#L149) |
+| explicit_unknown | `RE_UNKNOWN: Sequence index, current frame and frame-table validity are unchecked; their caller guarantees are unproved.` | function `uvTexSeqGetCurFrameTexture` | [298](../src/modules/uvtseq_rom.c#L298) |
+| explicit_unknown | `RE_UNKNOWN: Sequence-index and pool validity are unproved; retain the unchecked access and byte result.` | function `uvTexSeqGetFrameCount` | [305](../src/modules/uvtseq_rom.c#L305) |
+| explicit_unknown | `RE_UNKNOWN: Sequence-index and pool validity remain unproved; do not add a used-state gate.` | function `uvTexSeqGetActive` | [320](../src/modules/uvtseq_rom.c#L320) |
+| explicit_unknown | `RE_UNKNOWN: The historical callback argument contract is unproved. Preserve the current formal type and unconditional call.` | function `uvTexSeqCallBack` | [220](../src/modules/uvtseq_rom.c#L220) |
 | layout_padding | `pad3` | type `TextureSequence` | [11](../src/modules/uvtseq_rom.c#L11) |
 | offset_field | `unk_4` | function `__entrypoint_func_uvtseq_rom_400000`, type `TexSequenceSettings` | [18](../src/modules/uvtseq_rom.c#L18), [74](../src/modules/uvtseq_rom.c#L74), [75](../src/modules/uvtseq_rom.c#L75) |
 
@@ -8738,6 +8750,12 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `__entrypoint_func_uvtseqld_rom_400000` | function `__entrypoint_func_uvtseqld_rom_400000`, function `__entrypoint_func_uvtseqld_rom_400000` | [11](../src/modules/uvtseqld_rom.c#L11), [14](../src/modules/uvtseqld_rom.c#L14), [19](../src/modules/uvtseqld_rom.c#L19) |
 | address_global | `D_uvtseqld_rom_00400310` | — | [14](../src/modules/uvtseqld_rom.c#L14) |
 | decompiler_local | `arg0` | function `_uvParseUVTS`, function `uvFreeUVTS`, function `uvGetFirstFrameTexture`, function `uvParseUVTS` | [7](../src/modules/uvtseqld_rom.c#L7), [8](../src/modules/uvtseqld_rom.c#L8), [9](../src/modules/uvtseqld_rom.c#L9), [10](../src/modules/uvtseqld_rom.c#L10) |
+| explicit_unknown | `RE_UNKNOWN: Export-table ownership and repeated initialization are unproved; preserve callback identities and store order.` | function `__entrypoint_func_uvtseqld_rom_400000` | [25](../src/modules/uvtseqld_rom.c#L25) |
+| explicit_unknown | `RE_UNKNOWN: Input length, allocation failure and frame-table ownership are unproved. Keep the unsigned 16-bit index, byte count, field-consumption order, 255 marker and fresh gl...` | function `_uvParseUVTS` | [81](../src/modules/uvtseqld_rom.c#L81) |
+| explicit_unknown | `RE_UNKNOWN: Parsing failure, empty frame tables, nested suppression users and frame-table ownership are unproved. Preserve both global flag writes and the unchecked first-frame ...` | function `uvGetFirstFrameTexture` | [104](../src/modules/uvtseqld_rom.c#L104) |
+| explicit_unknown | `RE_UNKNOWN: Stream bounds, multiple COMM blocks and non-COMM buffer ownership are unproved. Preserve the initial null result, original block loop and last-result behavior.` | function `uvParseUVTS` | [54](../src/modules/uvtseqld_rom.c#L54) |
+| explicit_unknown | `RE_UNKNOWN: The frame table has a separate allocation; its ownership and release lifecycle are unproved. Preserve this single-pointer free.` | function `uvFreeUVTS` | [86](../src/modules/uvtseqld_rom.c#L86) |
+| explicit_unknown | `RE_UNKNOWN: The historical purpose of this exported empty hook is unproved; retain its current void interface.` | function `uvTexSeqLd_stub` | [29](../src/modules/uvtseqld_rom.c#L29) |
 | offset_field | `unk2` | function `_uvParseUVTS` | [69](../src/modules/uvtseqld_rom.c#L69) |
 
 ## src/modules/uvufileld_rom.c

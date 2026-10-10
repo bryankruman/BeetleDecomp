@@ -3322,10 +3322,19 @@ Totals: 428 further recoveries after the 225 upstream ordinary imports, plus 155
 Frozen wave `4018-controller-ear-native-contracts` and `accepted-controller-ear-native-contracts-4018` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 431 further readable functions
+## Historical accepted checkpoint — 431 further readable functions
 
 Recover planar segment projection, direction adjustment and scaled distance approach with descriptive local roles and canonical definitions. Preserve every prior C body literally through same-address aliases in the existing partial linker input. All916 native bytes,18 complete ordered five-field records and six empty compiler logs passed; the name/comment inverse and minimal declaration reduction are explicit. Fresh normal original packed MISC, complete relocation section, original ROM, all1036 manifest files and exact full ledger remain mandatory. No readonly ownership change.
 
 Totals: 431 further recoveries after the 225 upstream ordinary imports, plus 1553 existing C semantic cleanups. Current ledger: 769 assembly references = 730 ordinary + 39 entrypoints; 705,284 known remaining instruction bytes; zero unknown sizes; 285 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `4040-misc-three-native-recoveries` and `accepted-misc-three-native-recoveries-4040` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 431 further readable functions
+
+Name observed sequence, frame, file and parser roles and document update order, signed remainder, shared frame-table ownership and unresolved caller domains while preserving every operation and inherited ABI.
+
+Totals: 431 further recoveries after the 225 upstream ordinary imports, plus 1571 existing C semantic cleanups. Current ledger: 769 assembly references = 730 ordinary + 39 entrypoints; 705,284 known remaining instruction bytes; zero unknown sizes; 285 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `4060-texture-sequence-native-contracts` and `accepted-texture-sequence-native-contracts-4060` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

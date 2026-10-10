@@ -318,8 +318,8 @@
     "src/modules/uvtextureld_rom.c": "331b3e88ab93dfb2b0b1a651e319e0b33c6baf43592b3f6fc0d78e478a75a5d4",
     "src/modules/uvtexturexref_rom.c": "577aab3dd5d687ae34a45e8a597bbe52f7cb8865940f96c94bfb8215534d25d9",
     "src/modules/uvtrackld_rom.c": "0f7419fee6956a5165b1f1a33316e9abaedfea222e489a0042a104b37159109b",
-    "src/modules/uvtseq_rom.c": "e81cab2d9d8d943c1d6327e319588cbca905560d703d5ae8f849065cd582ca9c",
-    "src/modules/uvtseqld_rom.c": "810c3b613397cb498e462e6976949626161e3232ebd6bcddbc47396dfa8772d2",
+    "src/modules/uvtseq_rom.c": "fe135c738feac9ab50f7cb326fe8dae821a7339655f0acaaed31808519f97a96",
+    "src/modules/uvtseqld_rom.c": "09dab8b184a2b730228320f156217d5eb629b697213480228934af104fd751c0",
     "src/modules/uvufileld_rom.c": "1182bdc9529006a8b15c12c92fb85ff91140eb6b74c6bedb19874cfc57a264cd",
     "src/modules/uvvattr_rom.c": "b204a55d1dc5b39bf3e9d6a6f541d8847ea11d9dfbaac2f4778d12df586a3a32",
     "src/modules/uvvolumeld_rom.c": "252fbfd5cb1782c7b7b68bb969cc6b2bfcefac85aaf0bdeea39e67fbf8184d6b",
@@ -330,8 +330,8 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "8571c2539f6c9cbe5a2b0d33af0fdcf8378520b5148b6727a72348ea22b15064",
-    "docs/VALIDATION_20261006.md": "eb4d4e1cea097a00b2a3616156d321602f7a2be95079d8979fbb64cbb8d21b6b"
+    "docs/STRATEGY_V4.md": "91d434a30403c967a9203e98929a8b7f1dddc1a1a2a3638ed7aa9e412a948284",
+    "docs/VALIDATION_20261006.md": "7661cb770c3452123a10526b588fa9dee3cad4a897a7b98142ca669d08eb429c"
   },
   "counts": {
     "address_function": 906,
@@ -341,7 +341,7 @@
     "conditional_draft": 4,
     "decompiler_local": 674,
     "draft_marker": 24,
-    "explicit_unknown": 1288,
+    "explicit_unknown": 1306,
     "layout_padding": 269,
     "offset_field": 1605,
     "opaque_type": 282,
@@ -114499,10 +114499,7 @@
         41,
         42,
         43,
-        44,
-        218,
-        300,
-        303
+        44
       ],
       "owners": [
         {
@@ -114511,14 +114508,6 @@
           "declaration_line": 37,
           "lines": [
             37
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvTexSeqCallBack",
-          "declaration_line": 218,
-          "lines": [
-            218
           ]
         },
         {
@@ -114559,15 +114548,6 @@
           "declaration_line": 41,
           "lines": [
             41
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvTexSeqGetFrameCount",
-          "declaration_line": 300,
-          "lines": [
-            300,
-            303
           ]
         },
         {
@@ -140916,6 +140896,366 @@
           "declaration_line": 132,
           "lines": [
             160
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-a9bdb2132863",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvtseq_rom.c",
+      "symbol": "RE_UNKNOWN: Allocation failure, settings limits and repeated initialization are unproved. Preserve both setting defaults, the pool-pointer rereads and live count reads during record initialization.",
+      "lines": [
+        101
+      ],
+      "evidence": "RE_UNKNOWN: Allocation failure, settings limits and repeated initialization are unproved. Preserve both setting defaults, the pool-pointer rereads and live count reads during record initialization.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_uvtseq_rom_400000",
+          "declaration_line": 49,
+          "lines": [
+            101
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-a863a86ce5e4",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvtseq_rom.c",
+      "symbol": "RE_UNKNOWN: External ownership of the parsed frame table and reuse/reset ordering remain unproved.",
+      "lines": [
+        216
+      ],
+      "evidence": "RE_UNKNOWN: External ownership of the parsed frame table and reuse/reset ordering remain unproved.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvTexSeqFree",
+          "declaration_line": 211,
+          "lines": [
+            216
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-19aedd5d9693",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvtseq_rom.c",
+      "symbol": "RE_UNKNOWN: Historical mode intent, valid sequence/frame bounds and termination with zero or negative durations are unproved. Keep the inherited mode labels, byte wrapping, off-by-one tests, modulo traps and ordered floating-point tests, including NaN behavior.",
+      "lines": [
+        291
+      ],
+      "evidence": "RE_UNKNOWN: Historical mode intent, valid sequence/frame bounds and termination with zero or negative durations are unproved. Keep the inherited mode labels, byte wrapping, off-by-one tests, modulo traps and ordered floating-point tests, including NaN behavior.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvTexSeqUpdate",
+          "declaration_line": 236,
+          "lines": [
+            291
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-239c1245bfcc",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvtseq_rom.c",
+      "symbol": "RE_UNKNOWN: Index and vararg domains remain unproved. Preserve the signed upper-bound-only frame check, double rate argument, byte truncations, existing null tests and continued scanning after unsupported tags.",
+      "lines": [
+        196
+      ],
+      "evidence": "RE_UNKNOWN: Index and vararg domains remain unproved. Preserve the signed upper-bound-only frame check, double rate argument, byte truncations, existing null tests and continued scanning after unsupported tags.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvTexSeqProps",
+          "declaration_line": 151,
+          "lines": [
+            196
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-602659f34f3a",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvtseq_rom.c",
+      "symbol": "RE_UNKNOWN: Mutation of the pool, count or active fields during an update is unproved. Preserve the count reloads and exact flag equality gate.",
+      "lines": [
+        234
+      ],
+      "evidence": "RE_UNKNOWN: Mutation of the pool, count or active fields during an update is unproved. Preserve the count reloads and exact flag equality gate.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvTexSeqUpdateAll",
+          "declaration_line": 222,
+          "lines": [
+            234
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-2caf0da1fb7e",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvtseq_rom.c",
+      "symbol": "RE_UNKNOWN: Negative offsets, zero frame counts and resulting frame-table bounds are unproved. Preserve signed remainder and the lack of a normalization or validity gate.",
+      "lines": [
+        313
+      ],
+      "evidence": "RE_UNKNOWN: Negative offsets, zero frame counts and resulting frame-table bounds are unproved. Preserve signed remainder and the lack of a normalization or validity gate.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvTexSeqGetFrameTexture",
+          "declaration_line": 307,
+          "lines": [
+            313
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-eb47233d4b23",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvtseq_rom.c",
+      "symbol": "RE_UNKNOWN: Pool validity and the configured count domain are unproved. Preserve the separate pool-pointer read before marking the selected sequence active.",
+      "lines": [
+        209
+      ],
+      "evidence": "RE_UNKNOWN: Pool validity and the configured count domain are unproved. Preserve the separate pool-pointer read before marking the selected sequence active.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvTexSeqFindFree",
+          "declaration_line": 198,
+          "lines": [
+            209
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-1a6fbae8906b",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvtseq_rom.c",
+      "symbol": "RE_UNKNOWN: Sequence and file ID bounds, failed-load state, frame-table ownership and zero frame counts are unproved. The copied frame-table pointer is shared; no deep copy or additional reset is performed.",
+      "lines": [
+        149
+      ],
+      "evidence": "RE_UNKNOWN: Sequence and file ID bounds, failed-load state, frame-table ownership and zero frame counts are unproved. The copied frame-table pointer is shared; no deep copy or additional reset is performed.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvTexSeqModel",
+          "declaration_line": 124,
+          "lines": [
+            149
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-cbb6209b2f02",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvtseq_rom.c",
+      "symbol": "RE_UNKNOWN: Sequence index, current frame and frame-table validity are unchecked; their caller guarantees are unproved.",
+      "lines": [
+        298
+      ],
+      "evidence": "RE_UNKNOWN: Sequence index, current frame and frame-table validity are unchecked; their caller guarantees are unproved.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvTexSeqGetCurFrameTexture",
+          "declaration_line": 293,
+          "lines": [
+            298
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-086f11cd4c56",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvtseq_rom.c",
+      "symbol": "RE_UNKNOWN: Sequence-index and pool validity are unproved; retain the unchecked access and byte result.",
+      "lines": [
+        305
+      ],
+      "evidence": "RE_UNKNOWN: Sequence-index and pool validity are unproved; retain the unchecked access and byte result.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvTexSeqGetFrameCount",
+          "declaration_line": 300,
+          "lines": [
+            305
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-72caa7dcf35b",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvtseq_rom.c",
+      "symbol": "RE_UNKNOWN: Sequence-index and pool validity remain unproved; do not add a used-state gate.",
+      "lines": [
+        320
+      ],
+      "evidence": "RE_UNKNOWN: Sequence-index and pool validity remain unproved; do not add a used-state gate.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvTexSeqGetActive",
+          "declaration_line": 315,
+          "lines": [
+            320
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-73cdd379fb7b",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvtseq_rom.c",
+      "symbol": "RE_UNKNOWN: The historical callback argument contract is unproved. Preserve the current formal type and unconditional call.",
+      "lines": [
+        220
+      ],
+      "evidence": "RE_UNKNOWN: The historical callback argument contract is unproved. Preserve the current formal type and unconditional call.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvTexSeqCallBack",
+          "declaration_line": 218,
+          "lines": [
+            220
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-a1e3bc01763c",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvtseqld_rom.c",
+      "symbol": "RE_UNKNOWN: Export-table ownership and repeated initialization are unproved; preserve callback identities and store order.",
+      "lines": [
+        25
+      ],
+      "evidence": "RE_UNKNOWN: Export-table ownership and repeated initialization are unproved; preserve callback identities and store order.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_uvtseqld_rom_400000",
+          "declaration_line": 19,
+          "lines": [
+            25
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-294191e2774c",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvtseqld_rom.c",
+      "symbol": "RE_UNKNOWN: Input length, allocation failure and frame-table ownership are unproved. Keep the unsigned 16-bit index, byte count, field-consumption order, 255 marker and fresh global suppression-flag reads.",
+      "lines": [
+        81
+      ],
+      "evidence": "RE_UNKNOWN: Input length, allocation failure and frame-table ownership are unproved. Keep the unsigned 16-bit index, byte count, field-consumption order, 255 marker and fresh global suppression-flag reads.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "_uvParseUVTS",
+          "declaration_line": 56,
+          "lines": [
+            81
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-3e49fdf9ffd7",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvtseqld_rom.c",
+      "symbol": "RE_UNKNOWN: Parsing failure, empty frame tables, nested suppression users and frame-table ownership are unproved. Preserve both global flag writes and the unchecked first-frame read.",
+      "lines": [
+        104
+      ],
+      "evidence": "RE_UNKNOWN: Parsing failure, empty frame tables, nested suppression users and frame-table ownership are unproved. Preserve both global flag writes and the unchecked first-frame read.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvGetFirstFrameTexture",
+          "declaration_line": 88,
+          "lines": [
+            104
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-da8eda70f820",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvtseqld_rom.c",
+      "symbol": "RE_UNKNOWN: Stream bounds, multiple COMM blocks and non-COMM buffer ownership are unproved. Preserve the initial null result, original block loop and last-result behavior.",
+      "lines": [
+        54
+      ],
+      "evidence": "RE_UNKNOWN: Stream bounds, multiple COMM blocks and non-COMM buffer ownership are unproved. Preserve the initial null result, original block loop and last-result behavior.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvParseUVTS",
+          "declaration_line": 31,
+          "lines": [
+            54
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-22a50391c72e",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvtseqld_rom.c",
+      "symbol": "RE_UNKNOWN: The frame table has a separate allocation; its ownership and release lifecycle are unproved. Preserve this single-pointer free.",
+      "lines": [
+        86
+      ],
+      "evidence": "RE_UNKNOWN: The frame table has a separate allocation; its ownership and release lifecycle are unproved. Preserve this single-pointer free.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvFreeUVTS",
+          "declaration_line": 84,
+          "lines": [
+            86
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-553ab532a712",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvtseqld_rom.c",
+      "symbol": "RE_UNKNOWN: The historical purpose of this exported empty hook is unproved; retain its current void interface.",
+      "lines": [
+        29
+      ],
+      "evidence": "RE_UNKNOWN: The historical purpose of this exported empty hook is unproved; retain its current void interface.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvTexSeqLd_stub",
+          "declaration_line": 27,
+          "lines": [
+            29
           ]
         }
       ]

@@ -46,9 +46,9 @@ void __entrypoint_func_uvtseq_rom_400000(UvTSeq_Exports *exports);
 
 extern s32 D_uvtseq_rom_00400A88;
 
-void __entrypoint_func_uvtseq_rom_400000(UvTSeq_Exports *exports) {
-    s32 i;
-    TexSequenceSettings *settings;
+void __entrypoint_func_uvtseq_rom_400000(UvTSeq_Exports *exports) { /* Publish ten callbacks, choose nonzero settings or defaults 20 and 16, load GMGR and CBCK, allocate and clear the sequence pool, initialize its records, register the update callback and clear the update flag. */
+    s32 sequenceIndex;
+    TexSequenceSettings *sequenceSettings;
 
     uvUpdateFileAllocPtr(exports);
     exports->uvTexSeqDestroy = uvTexSeqDestroy;
@@ -61,18 +61,18 @@ void __entrypoint_func_uvtseq_rom_400000(UvTSeq_Exports *exports) {
     exports->uvTexSeqGetFrameTexture = uvTexSeqGetFrameTexture;
     exports->uvTexSeqGetActive = uvTexSeqGetActive;
     exports->uvTexSeqGetCurrentFrameProgress = uvTexSeqGetCurrentFrameProgress;
-    settings = uvGetSystemProp(SYSTEM_PROPID_TEX_SEQ_SETTINGS);
-    if (settings == NULL) {
+    sequenceSettings = uvGetSystemProp(SYSTEM_PROPID_TEX_SEQ_SETTINGS);
+    if (sequenceSettings == NULL) {
         sTextureSequencesCount = TEXTURE_SEQUENCE_POOL_COUNT_DEFAULT;
         D_uvtseq_rom_00400A88 = 0x10;
     } else {
-        if (settings->texSeqCount != 0) {
-            sTextureSequencesCount = settings->texSeqCount;
+        if (sequenceSettings->texSeqCount != 0) {
+            sTextureSequencesCount = sequenceSettings->texSeqCount;
         } else {
             sTextureSequencesCount = TEXTURE_SEQUENCE_POOL_COUNT_DEFAULT;
         }
-        if (settings->unk_4 != 0) {
-            D_uvtseq_rom_00400A88 = settings->unk_4;
+        if (sequenceSettings->unk_4 != 0) {
+            D_uvtseq_rom_00400A88 = sequenceSettings->unk_4;
         } else {
             D_uvtseq_rom_00400A88 = 0x10;
         }
@@ -83,22 +83,22 @@ void __entrypoint_func_uvtseq_rom_400000(UvTSeq_Exports *exports) {
         _uvMemAllocAlign8(sTextureSequencesCount * sizeof(TextureSequence));
     uvMemSet(sTextureSequencePool, 0, sTextureSequencesCount * sizeof(TextureSequence));
 
-    for (i = 0; i < sTextureSequencesCount; i++) {
-        sTextureSequencePool[i].active = FALSE;
-        sTextureSequencePool[i].used = 0;
-        sTextureSequencePool[i].curFrame = 0;
-        sTextureSequencePool[i].frameTime = 0.0f;
-        sTextureSequencePool[i].uvts.frameCount = 0;
-        sTextureSequencePool[i].uvts.frameTable = NULL;
-        sTextureSequencePool[i].uvts.mode = 1;
-        sTextureSequencePool[i].uvts.reverse = 0;
-        sTextureSequencePool[i].uvts.frameRate = 1.0f;
+    for (sequenceIndex = 0; sequenceIndex < sTextureSequencesCount; sequenceIndex++) {
+        sTextureSequencePool[sequenceIndex].active = FALSE;
+        sTextureSequencePool[sequenceIndex].used = 0;
+        sTextureSequencePool[sequenceIndex].curFrame = 0;
+        sTextureSequencePool[sequenceIndex].frameTime = 0.0f;
+        sTextureSequencePool[sequenceIndex].uvts.frameCount = 0;
+        sTextureSequencePool[sequenceIndex].uvts.frameTable = NULL;
+        sTextureSequencePool[sequenceIndex].uvts.mode = 1;
+        sTextureSequencePool[sequenceIndex].uvts.reverse = 0;
+        sTextureSequencePool[sequenceIndex].uvts.frameRate = 1.0f;
     }
 
     D_uvtseq_rom_00400A94->uvAddCallback(
         D_uvtseq_rom_00400A90->uvGfxGetCallbackList(1), (s32) uvTexSeqCallBack, 0, 0);
     sUpdateTexSequencesFlag = 0;
-}
+/* RE_UNKNOWN: Allocation failure, settings limits and repeated initialization are unproved. Preserve both setting defaults, the pool-pointer rereads and live count reads during record initialization. */ }
 
 void uvTexSeqDestroy(void) {
 
@@ -121,203 +121,203 @@ void uvTexSeqDestroy(void) {
     uvUnloadModule('CBCK');
 }
 
-void uvTexSeqModel(s32 texSeq, s32 uvts) {
-    TextureSequence *texSequence;
-    ParsedUVTS *vts;
+void uvTexSeqModel(s32 sequenceIndex, s32 sequenceFileId) { /* File ID 255 only disables the selected sequence. Otherwise try the loaded file before loading it, set the direction-dependent current frame, copy its duration only for a nonzero frame count, then copy the 16-byte parsed sequence record. */
+    TextureSequence *sequence;
+    ParsedUVTS *loadedSequence;
 
-    texSequence = &sTextureSequencePool[texSeq];
-    if (uvts == 0xFF) {
-        texSequence->active = FALSE;
+    sequence = &sTextureSequencePool[sequenceIndex];
+    if (sequenceFileId == 0xFF) {
+        sequence->active = FALSE;
         return;
     }
-    vts = uvGetLoadedFile('UVTS', uvts);
-    if ((vts != NULL) || (((vts = uvLoadFile('UVTS', uvts)) != NULL))) {
-        texSequence->active = TRUE;
+    loadedSequence = uvGetLoadedFile('UVTS', sequenceFileId);
+    if ((loadedSequence != NULL) || (((loadedSequence = uvLoadFile('UVTS', sequenceFileId)) != NULL))) {
+        sequence->active = TRUE;
 
-        if (vts->reverse == 1) {
-            texSequence->curFrame = vts->frameCount - 1;
+        if (loadedSequence->reverse == 1) {
+            sequence->curFrame = loadedSequence->frameCount - 1;
         } else {
-            texSequence->curFrame = 0;
+            sequence->curFrame = 0;
         }
 
-        if (vts->frameCount != 0) {
-            texSequence->frameTime = vts->frameTable[texSequence->curFrame].frameTime;
+        if (loadedSequence->frameCount != 0) {
+            sequence->frameTime = loadedSequence->frameTable[sequence->curFrame].frameTime;
         }
 
-        _uvMediaCopy(&texSequence->uvts, vts, sizeof(ParsedUVTS));
+        _uvMediaCopy(&sequence->uvts, loadedSequence, sizeof(ParsedUVTS));
     }
-}
+/* RE_UNKNOWN: Sequence and file ID bounds, failed-load state, frame-table ownership and zero frame counts are unproved. The copied frame-table pointer is shared; no deep copy or additional reset is performed. */ }
 
-void uvTexSeqProps(s32 texSeq, ...) {
-    ParsedUVTS *uvts;
-    TextureSequence *texSequence;
-    int prop;
-    va_list args;
+void uvTexSeqProps(s32 sequenceIndex, ...) { /* Consume tagged values for active state, current frame, mode, reverse, rate and the global update flag until the end tag. The frame case reuses the selector word as the index; setting reverse always selects frameCount minus one. */
+    ParsedUVTS *sequenceData;
+    TextureSequence *sequence;
+    int propertyOrFrameIndex;
+    va_list arguments;
 
-    texSequence = &sTextureSequencePool[texSeq];
-    uvts = &texSequence->uvts;
-    if (texSequence == NULL) {
+    sequence = &sTextureSequencePool[sequenceIndex];
+    sequenceData = &sequence->uvts;
+    if (sequence == NULL) {
         return;
     }
-    va_start(args, texSeq);
-    if (uvts == NULL) {
+    va_start(arguments, sequenceIndex);
+    if (sequenceData == NULL) {
         return;
     }
 
     while (TRUE) {
-        prop = va_arg(args, s32);
-        switch (prop) {
+        propertyOrFrameIndex = va_arg(arguments, s32);
+        switch (propertyOrFrameIndex) {
             case TSEQ_PROPID_ACTIVE:
-                texSequence->active = va_arg(args, s32);
+                sequence->active = va_arg(arguments, s32);
                 break;
             case TSEQ_PROPID_CURR_FRAME:
-                prop = va_arg(args, s32);
-                if (prop < uvts->frameCount) {
-                    texSequence->curFrame = prop;
+                propertyOrFrameIndex = va_arg(arguments, s32);
+                if (propertyOrFrameIndex < sequenceData->frameCount) {
+                    sequence->curFrame = propertyOrFrameIndex;
                 }
                 break;
             case TSEQ_PROPID_MODE:
-                uvts->mode = va_arg(args, s32);
+                sequenceData->mode = va_arg(arguments, s32);
                 break;
             case TSEQ_PROPID_REVERSE:
-                uvts->reverse = va_arg(args, s32);
-                texSequence->curFrame = uvts->frameCount - 1;
+                sequenceData->reverse = va_arg(arguments, s32);
+                sequence->curFrame = sequenceData->frameCount - 1;
                 break;
             case TSEQ_PROPID_FRAMERATE:
-                uvts->frameRate = va_arg(args, f64);
+                sequenceData->frameRate = va_arg(arguments, f64);
                 break;
             case TSEQ_PROPID_UPDATE:
-                sUpdateTexSequencesFlag = va_arg(args, s32);
+                sUpdateTexSequencesFlag = va_arg(arguments, s32);
                 break;
             case TSEQ_PROPID_END:
                 return;
         }
     }
-}
+/* RE_UNKNOWN: Index and vararg domains remain unproved. Preserve the signed upper-bound-only frame check, double rate argument, byte truncations, existing null tests and continued scanning after unsupported tags. */ }
 
-s32 uvTexSeqFindFree(void) {
-    s32 i;
+s32 uvTexSeqFindFree(void) { /* Scan the captured count for the first unused sequence, mark it used and active, and return its index; return 255 if none is found. No frame or parsed-data fields are reset. */
+    s32 sequenceIndex;
 
-    for (i = 0; i < sTextureSequencesCount; i++) {
-        if (!sTextureSequencePool[i].used) {
-            sTextureSequencePool[i].used = TRUE;
-            sTextureSequencePool[i].active = TRUE;
-            return i;
+    for (sequenceIndex = 0; sequenceIndex < sTextureSequencesCount; sequenceIndex++) {
+        if (!sTextureSequencePool[sequenceIndex].used) {
+            sTextureSequencePool[sequenceIndex].used = TRUE;
+            sTextureSequencePool[sequenceIndex].active = TRUE;
+            return sequenceIndex;
         }
     }
     return 0xFF;
-}
+/* RE_UNKNOWN: Pool validity and the configured count domain are unproved. Preserve the separate pool-pointer read before marking the selected sequence active. */ }
 
-void uvTexSeqFree(s32 texSeq) {
-    if ((texSeq >= 0) && (texSeq < sTextureSequencesCount)) {
-        sTextureSequencePool[texSeq].active = FALSE;
-        sTextureSequencePool[texSeq].used = FALSE;
+void uvTexSeqFree(s32 sequenceIndex) { /* For a nonnegative index below the current count, clear active and used; leave all parsed data and frame state untouched. */
+    if ((sequenceIndex >= 0) && (sequenceIndex < sTextureSequencesCount)) {
+        sTextureSequencePool[sequenceIndex].active = FALSE;
+        sTextureSequencePool[sequenceIndex].used = FALSE;
     }
-}
+/* RE_UNKNOWN: External ownership of the parsed frame table and reuse/reset ordering remain unproved. */ }
 
-void uvTexSeqCallBack(s32 arg0) {
+void uvTexSeqCallBack(s32 callbackArgument) { /* Call the sequence update-all routine without inspecting the callback argument. */
     uvTexSeqUpdateAll();
-}
+/* RE_UNKNOWN: The historical callback argument contract is unproved. Preserve the current formal type and unconditional call. */ }
 
-void uvTexSeqUpdateAll(void) {
-    s32 i;
+void uvTexSeqUpdateAll(void) { /* Skip updates only when the global flag equals 1; otherwise visit active sequences. Reload the count after each update call and read the current pool pointer for the next sequence. */
+    s32 sequenceIndex;
 
     if (sUpdateTexSequencesFlag == 1) {
         return;
     }
 
-    for (i = 0; i < sTextureSequencesCount; i++) {
-        if (sTextureSequencePool[i].active) {
-            uvTexSeqUpdate(i);
+    for (sequenceIndex = 0; sequenceIndex < sTextureSequencesCount; sequenceIndex++) {
+        if (sTextureSequencePool[sequenceIndex].active) {
+            uvTexSeqUpdate(sequenceIndex);
         }
     }
-}
+/* RE_UNKNOWN: Mutation of the pool, count or active fields during an update is unproved. Preserve the count reloads and exact flag equality gate. */ }
 
-void uvTexSeqUpdate(s32 texSeq) {
-    TextureSequence *texSequence;
-    ParsedUVTS *uvts;
+void uvTexSeqUpdate(s32 sequenceIndex) { /* Subtract the frame rate times the GMGR scalar result. For expired frames, numeric mode 1 wraps by signed remainder, mode 0 may deactivate playback, and mode 2 changes direction; then add the selected frame duration and repeat while time remains nonpositive. */
+    TextureSequence *sequence;
+    ParsedUVTS *sequenceData;
 
-    texSequence = &sTextureSequencePool[texSeq];
-    uvts = &texSequence->uvts;
-    texSequence->frameTime -= uvts->frameRate * D_uvtseq_rom_00400A90->uvGfxMgrGetScalarOverrideOrCurrent();
+    sequence = &sTextureSequencePool[sequenceIndex];
+    sequenceData = &sequence->uvts;
+    sequence->frameTime -= sequenceData->frameRate * D_uvtseq_rom_00400A90->uvGfxMgrGetScalarOverrideOrCurrent();
 
-    if (!(texSequence->frameTime > 0.0f) && (texSequence->frameTime <= 0.0f)) {
+    if (!(sequence->frameTime > 0.0f) && (sequence->frameTime <= 0.0f)) {
         while (TRUE) {
-            switch (uvts->mode) { /* irregular */
+            switch (sequenceData->mode) { /* irregular */
                 case UVTSEQ_MODE_ONESHOT:
-                    if (uvts->reverse == 0) {
-                        texSequence->curFrame = ((texSequence->curFrame + 1) % uvts->frameCount);
+                    if (sequenceData->reverse == 0) {
+                        sequence->curFrame = ((sequence->curFrame + 1) % sequenceData->frameCount);
                     } else {
-                        texSequence->curFrame =
-                            (u8) ((s32) ((texSequence->curFrame + uvts->frameCount) - 1) % (s32) uvts->frameCount);
+                        sequence->curFrame =
+                            (u8) ((s32) ((sequence->curFrame + sequenceData->frameCount) - 1) % (s32) sequenceData->frameCount);
                     }
                     break;
                 case UVTSEQ_MODE_REPEAT:
-                    if (uvts->reverse == 0) {
-                        texSequence->curFrame++;
-                        if ((texSequence->curFrame + 1) == uvts->frameCount) {
-                            texSequence->active = 0;
+                    if (sequenceData->reverse == 0) {
+                        sequence->curFrame++;
+                        if ((sequence->curFrame + 1) == sequenceData->frameCount) {
+                            sequence->active = 0;
                             return;
                         }
                     } else {
-                        if (texSequence->curFrame == 0) {
-                            texSequence->active = 0;
+                        if (sequence->curFrame == 0) {
+                            sequence->active = 0;
                             return;
                         }
-                        texSequence->curFrame--;
+                        sequence->curFrame--;
                     }
                     break;
                 case UVTSEQ_MODE_STROBE:
-                    if (uvts->reverse == 0) {
-                        texSequence->curFrame++;
-                        if ((texSequence->curFrame + 1) == uvts->frameCount) {
-                            uvts->reverse = 1;
+                    if (sequenceData->reverse == 0) {
+                        sequence->curFrame++;
+                        if ((sequence->curFrame + 1) == sequenceData->frameCount) {
+                            sequenceData->reverse = 1;
                         }
                     } else {
-                        texSequence->curFrame--;
-                        if (texSequence->curFrame == 0) {
-                            uvts->reverse = 0;
+                        sequence->curFrame--;
+                        if (sequence->curFrame == 0) {
+                            sequenceData->reverse = 0;
                         }
                     }
                     break;
             }
 
-            texSequence->frameTime += uvts->frameTable[texSequence->curFrame].frameTime;
-            if (!(texSequence->frameTime <= 0.0f)) {
+            sequence->frameTime += sequenceData->frameTable[sequence->curFrame].frameTime;
+            if (!(sequence->frameTime <= 0.0f)) {
                 return;
             }
         }
     }
-}
+/* RE_UNKNOWN: Historical mode intent, valid sequence/frame bounds and termination with zero or negative durations are unproved. Keep the inherited mode labels, byte wrapping, off-by-one tests, modulo traps and ordered floating-point tests, including NaN behavior. */ }
 
-u16 uvTexSeqGetCurFrameTexture(s32 texSeq) {
-    TextureSequence *textureSequence;
+u16 uvTexSeqGetCurFrameTexture(s32 sequenceIndex) { /* Return the texture halfword from the selected sequence current frame. */
+    TextureSequence *sequence;
 
-    textureSequence = &sTextureSequencePool[texSeq];
-    return textureSequence->uvts.frameTable[textureSequence->curFrame].texture;
-}
+    sequence = &sTextureSequencePool[sequenceIndex];
+    return sequence->uvts.frameTable[sequence->curFrame].texture;
+/* RE_UNKNOWN: Sequence index, current frame and frame-table validity are unchecked; their caller guarantees are unproved. */ }
 
-u8 uvTexSeqGetFrameCount(s32 arg0) {
-    TextureSequence *textureSequence;
+u8 uvTexSeqGetFrameCount(s32 sequenceIndex) { /* Return the selected sequence frame-count byte. */
+    TextureSequence *sequence;
 
-    textureSequence = &sTextureSequencePool[arg0];
-    return textureSequence->uvts.frameCount;
-}
+    sequence = &sTextureSequencePool[sequenceIndex];
+    return sequence->uvts.frameCount;
+/* RE_UNKNOWN: Sequence-index and pool validity are unproved; retain the unchecked access and byte result. */ }
 
-u16 uvTexSeqGetFrameTexture(s32 texSeq, s32 frame) {
-    TextureSequence *textureSequence;
+u16 uvTexSeqGetFrameTexture(s32 sequenceIndex, s32 frameOffsetOrIndex) { /* Add the requested frame offset to the current frame, take signed remainder by the frame count and return that frame texture. */
+    TextureSequence *sequence;
 
-    textureSequence = &sTextureSequencePool[texSeq];
-    frame = (s32) (textureSequence->curFrame + frame) % (s32) textureSequence->uvts.frameCount;
-    return textureSequence->uvts.frameTable[frame].texture;
-}
+    sequence = &sTextureSequencePool[sequenceIndex];
+    frameOffsetOrIndex = (s32) (sequence->curFrame + frameOffsetOrIndex) % (s32) sequence->uvts.frameCount;
+    return sequence->uvts.frameTable[frameOffsetOrIndex].texture;
+/* RE_UNKNOWN: Negative offsets, zero frame counts and resulting frame-table bounds are unproved. Preserve signed remainder and the lack of a normalization or validity gate. */ }
 
-u8 uvTexSeqGetActive(s32 texSeq) {
-    TextureSequence *textureSequence;
+u8 uvTexSeqGetActive(s32 sequenceIndex) { /* Return the selected sequence active byte without consulting its used flag. */
+    TextureSequence *sequence;
 
-    textureSequence = &sTextureSequencePool[texSeq];
-    return textureSequence->active;
-}
+    sequence = &sTextureSequencePool[sequenceIndex];
+    return sequence->active;
+/* RE_UNKNOWN: Sequence-index and pool validity remain unproved; do not add a used-state gate. */ }
 
 #line 322 "src/modules/uvtseq_rom.c"
 /* Return elapsed time divided by the current texture-frame duration.
