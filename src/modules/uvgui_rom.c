@@ -909,10 +909,12 @@ void uvGuiResetMenuItemPool(void) {
 #line 175 "src/modules/uvgui_rom.c"
 
 #line 170 "src/modules/uvgui_rom.c"
-/* Claim the first inactive 0x34-byte slot among 120 scanned entries.
- * RE_ORIGINAL_QUIRK: if all scanned entries are active, mark entry 120 active
- * and return 120. RE_UNKNOWN: backing extent, exhaustion reachability and
- * widget role need original pool layout, slot users and allocation callers. */
+/* Scan 120 slots at stride 0x34 for the first zero active halfword, set only
+ * that halfword to one and return its index. The inherited full-pool path
+ * still writes slot 120, beyond the scanned range. RE_UNKNOWN: callers must
+ * establish spare capacity, backing storage and reuse initialization; no
+ * exhaustion repair is made here. */
+#line 174 "src/modules/uvgui_rom.c"
 s16 uvGuiAllocatePool34Slot(void) {
     GuiPoolSlot34 *slot;
     s32 index;
@@ -925,6 +927,7 @@ s16 uvGuiAllocatePool34Slot(void) {
     slot->active = 1;
     return (s16) index;
 }
+#line 186 "src/modules/uvgui_rom.c"
 #line 171 "src/modules/uvgui_rom.c"
 
 #line 172 "src/modules/uvgui_rom.c"
@@ -1263,8 +1266,12 @@ void uvGuiResetMenuPool(void) {
 #line 242 "src/modules/uvgui_rom.c"
 
 #line 243 "src/modules/uvgui_rom.c"
-/* Claim an inactive slot in the eight-entry GUI pool, or return -1 without
- * writing when full. This pool checks exhaustion unlike the other GUI allocators. */
+/* Find the first inactive slot in the eight-slot, 0x5C-stride pool and set
+ * only its active halfword. Return -1 without a write when all eight are
+ * active. RE_UNKNOWN: callers must handle exhaustion and initialize any stale
+ * fields before reuse; allocation ownership and release discipline need pool
+ * consumers. */
+#line 245 "src/modules/uvgui_rom.c"
 s16 uvGuiAllocatePool5CSlot(void) {
     GuiPoolSlot5C *slot;
     s32 index;
@@ -1275,6 +1282,7 @@ s16 uvGuiAllocatePool5CSlot(void) {
     slot->active = 1;
     return (s16) index;
 }
+#line 255 "src/modules/uvgui_rom.c"
 #line 244 "src/modules/uvgui_rom.c"
 
 #line 245 "src/modules/uvgui_rom.c"
@@ -1456,10 +1464,12 @@ void uvGuiResetMenuOptionPool(void) {
 #line 313 "src/modules/uvgui_rom.c"
 
 #line 314 "src/modules/uvgui_rom.c"
-/* Claim the first inactive 0x170-byte slot among 50 scanned entries.
- * RE_ORIGINAL_QUIRK: if all scanned entries are active, mark entry 50 active
- * and return 50. RE_UNKNOWN: backing extent, exhaustion reachability and
- * widget role need original pool layout, slot users and allocation callers. */
+/* Scan 50 slots at stride 0x170 for the first zero active halfword, set only
+ * that halfword to one and return its index. The inherited full-pool path
+ * still writes slot 50, beyond the scanned range. RE_UNKNOWN: callers must
+ * establish spare capacity, backing storage and reuse initialization; no
+ * exhaustion repair is made here. */
+#line 318 "src/modules/uvgui_rom.c"
 s16 uvGuiAllocatePool170Slot(void) {
     GuiPoolSlot170 *slot;
     s32 index;
@@ -1472,6 +1482,7 @@ s16 uvGuiAllocatePool170Slot(void) {
     slot->active = 1;
     return (s16) index;
 }
+#line 330 "src/modules/uvgui_rom.c"
 #line 315 "src/modules/uvgui_rom.c"
 
 #line 316 "src/modules/uvgui_rom.c"
@@ -1691,10 +1702,12 @@ void uvGuiResetScalarWidgetPool(void) {
 #line 392 "src/modules/uvgui_rom.c"
 
 #line 393 "src/modules/uvgui_rom.c"
-/* Claim the first inactive 0x48-byte slot among 135 scanned entries.
- * RE_ORIGINAL_QUIRK: if all scanned entries are active, mark entry 135 active
- * and return 135. RE_UNKNOWN: backing extent, exhaustion reachability and
- * widget role need original pool layout, slot users and allocation callers. */
+/* Scan 135 slots at stride 0x48 for the first zero active halfword, set only
+ * that halfword to one and return its index. The inherited full-pool path
+ * still writes slot 135, beyond the scanned range. RE_UNKNOWN: callers must
+ * establish spare capacity, backing storage and reuse initialization; no
+ * exhaustion repair is made here. */
+#line 397 "src/modules/uvgui_rom.c"
 s16 uvGuiAllocatePool48Slot(void) {
     GuiPoolSlot48 *slot;
     s32 index;
@@ -1707,6 +1720,7 @@ s16 uvGuiAllocatePool48Slot(void) {
     slot->active = 1;
     return (s16) index;
 }
+#line 409 "src/modules/uvgui_rom.c"
 #line 394 "src/modules/uvgui_rom.c"
 
 #line 395 "src/modules/uvgui_rom.c"
@@ -2006,8 +2020,12 @@ void uvGuiUpdateScalarWidget(Inner28 *arg0, u8 arg1, f32 arg2) {
 #line 453 "src/modules/uvgui_rom.c"
 
 #line 454 "src/modules/uvgui_rom.c"
-/* Notify the optional callback before changing the slot active value. The
- * callback runs only on a change; the original assignment still occurs every time. */
+/* Notify the optional callback only when the signed active halfword changes,
+ * then store the requested value after the callback returns. The final store
+ * also occurs when no callback runs. RE_UNKNOWN: valid slot storage, callback
+ * lifetime and reentrancy must come from pool users; callback writes to active
+ * can be overwritten. */
+#line 456 "src/modules/uvgui_rom.c"
 void uvGuiSetPool48Active(GuiPoolSlot48 *slot, s16 active) {
     if (active != slot->active) {
         if (slot->onActiveChanged != NULL) {
@@ -2016,6 +2034,7 @@ void uvGuiSetPool48Active(GuiPoolSlot48 *slot, s16 active) {
     }
     slot->active = active;
 }
+#line 464 "src/modules/uvgui_rom.c"
 #line 455 "src/modules/uvgui_rom.c"
 
 #line 456 "src/modules/uvgui_rom.c"
@@ -2060,10 +2079,12 @@ void uvGuiResetValueWidgetPool(void) {
 #line 461 "src/modules/uvgui_rom.c"
 
 #line 462 "src/modules/uvgui_rom.c"
-/* Claim the first inactive 0x90-byte slot among 20 scanned entries.
- * RE_ORIGINAL_QUIRK: if all scanned entries are active, mark entry 20 active
- * and return 20. RE_UNKNOWN: backing extent, exhaustion reachability and
- * widget role need original pool layout, slot users and allocation callers. */
+/* Scan 20 slots at stride 0x90 for the first zero active halfword, set only
+ * that halfword to one and return its index. The inherited full-pool path
+ * still writes slot 20, beyond the scanned range. RE_UNKNOWN: callers must
+ * establish spare capacity, backing storage and reuse initialization; no
+ * exhaustion repair is made here. */
+#line 466 "src/modules/uvgui_rom.c"
 s16 uvGuiAllocatePool90Slot(void) {
     GuiPoolSlot90 *slot;
     s32 index;
@@ -2076,6 +2097,7 @@ s16 uvGuiAllocatePool90Slot(void) {
     slot->active = 1;
     return (s16) index;
 }
+#line 478 "src/modules/uvgui_rom.c"
 #line 463 "src/modules/uvgui_rom.c"
 
 #line 464 "src/modules/uvgui_rom.c"
@@ -2614,9 +2636,12 @@ void uvGuiSetValueWidgetState(void *widget, s16 state) {
 #line 514 "src/modules/uvgui_rom.c"
 
 #line 515 "src/modules/uvgui_rom.c"
-/* Process signed 16-bit option selectors from promoted integer arguments.
- * Option 1 stores a narrowed integer at offset 0x62; zero or an unsupported
- * selector ends parsing. The field purpose and complete target layout are unknown. */
+/* Read promoted property words until zero or an unsupported selector; selector
+ * one reads another word and stores its low halfword at target+0x62. Preserve
+ * the inherited early returns without va_end. RE_UNKNOWN: target extent and
+ * complete argument lists must be supplied by callers; the remaining object
+ * layout is unproven. */
+#line 518 "src/modules/uvgui_rom.c"
 void uvGuiSetField62Props(GuiField62Target *target, ...) {
     va_list args;
     s16 property;
@@ -2634,6 +2659,7 @@ void uvGuiSetField62Props(GuiField62Target *target, ...) {
         }
     }
 }
+#line 535 "src/modules/uvgui_rom.c"
 #line 516 "src/modules/uvgui_rom.c"
 
 #line 517 "src/modules/uvgui_rom.c"
@@ -2665,10 +2691,12 @@ void uvGuiResetVectorWidgetPool(void) {
 #line 518 "src/modules/uvgui_rom.c"
 
 #line 519 "src/modules/uvgui_rom.c"
-/* Claim the first inactive 0x4C-byte slot among 10 scanned entries.
- * RE_ORIGINAL_QUIRK: if all scanned entries are active, mark entry 10 active
- * and return 10. RE_UNKNOWN: backing extent, exhaustion reachability and
- * widget role need original pool layout, slot users and allocation callers. */
+/* Scan 10 slots at stride 0x4C for the first zero active halfword, set only
+ * that halfword to one and return its index. The inherited full-pool path
+ * still writes slot 10, beyond the scanned range. RE_UNKNOWN: callers must
+ * establish spare capacity, backing storage and reuse initialization; no
+ * exhaustion repair is made here. */
+#line 523 "src/modules/uvgui_rom.c"
 s16 uvGuiAllocatePool4CSlot(void) {
     GuiPoolSlot4C *slot;
     s32 index;
@@ -2681,6 +2709,7 @@ s16 uvGuiAllocatePool4CSlot(void) {
     slot->active = 1;
     return (s16) index;
 }
+#line 535 "src/modules/uvgui_rom.c"
 #line 520 "src/modules/uvgui_rom.c"
 
 #line 521 "src/modules/uvgui_rom.c"

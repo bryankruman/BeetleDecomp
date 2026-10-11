@@ -20,9 +20,12 @@ u8 *fileromFindAfterLastDelimiter(u8 *, u8);
 s32 fileromGetFilenameExtensionIndex(u8 *);
 s32 fileromGetFilenameFourCC(u8 *);
 #line 22 "src/modules/filerom.c"
-/* Register the ROM-file module's five original callbacks after updating
- * the loader's allocation pointer. Keep the shutdown and write callbacks'
- * original inactive implementations; no new file behavior is introduced. */
+/* Publish the five original ROM-file exports after the allocation-pointer hook:
+ * shutdown, write, read, open and close in their existing order. Publishing these
+ * addresses does not open a file or reset the shared source address.
+ * RE_UNKNOWN: writable export storage, loader lifetime and the opaque open/read
+ * contracts remain caller obligations; the write export is a zero-return stub. */
+#line 25 "src/modules/filerom.c"
 void __entrypoint_func_filerom_400000(FileromExports *exports) {
     uvUpdateFileAllocPtr(exports);
     exports->shutdown = fileRomNoOpModuleCleanup;
@@ -31,6 +34,7 @@ void __entrypoint_func_filerom_400000(FileromExports *exports) {
     exports->open = func_filerom_00400364;
     exports->close = fileRomClearSharedSourceAddress;
 }
+#line 33 "src/modules/filerom.c"
 #line 23 "src/modules/filerom.c"
 
 #line 24 "src/modules/filerom.c"
@@ -55,10 +59,12 @@ s32 fileRomReturnZeroForWrite(u8 unusedFirstByte, u8 unusedSecondByte, u8 unused
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/filerom/func_filerom_0040007C.s")
 
 #line 21 "src/modules/filerom.c"
-/* Return the byte after the last matching non-NUL delimiter, or the
- * original text when no delimiter occurs. The terminator is never matched.
- * A zero XOR expresses byte equality while retaining IDO's original branch
- * operand order; the indexed loop reproduces the original register allocation. */
+/* Scan unsigned bytes through the first NUL and return the byte after the last
+ * matching delimiter, or the original pointer when none matches. Delimiter zero
+ * cannot match because the loop stops before testing the terminator.
+ * RE_UNKNOWN: the caller must provide a readable NUL-terminated byte sequence;
+ * there is no NULL, length or capacity check. */
+#line 25 "src/modules/filerom.c"
 u8 *fileromFindAfterLastDelimiter(u8 *text, u8 delimiter) {
     u8 *afterLast;
     s32 index;
@@ -71,12 +77,16 @@ u8 *fileromFindAfterLastDelimiter(u8 *text, u8 delimiter) {
     }
     return afterLast;
 }
+#line 37 "src/modules/filerom.c"
 #line 22 "src/modules/filerom.c"
 
 #line 23 "src/modules/filerom.c"
-/* Compare the text after the last period against the three original
- * extensions (TED, AIPATH and REPLAY), returning its table index or -1.
- * Matching is case sensitive; no period means the complete path is compared. */
+/* Compare the suffix after the last dot against TED, AIPATH and REPLAY using
+ * the string provider's case-sensitive uvStrcmp; return the first index 0..2
+ * or -1. With no dot, compare the whole input.
+ * RE_UNKNOWN: path validity and provider/table lifetime need callers. Preserve
+ * the unchecked NUL-terminated scan and original table order. */
+#line 26 "src/modules/filerom.c"
 s32 fileromGetFilenameExtensionIndex(u8 *path) {
     s32 index;
     u8 *extension;
@@ -88,13 +98,16 @@ s32 fileromGetFilenameExtensionIndex(u8 *path) {
     }
     return -1;
 }
+#line 37 "src/modules/filerom.c"
 #line 24 "src/modules/filerom.c"
 
 #line 25 "src/modules/filerom.c"
-/* Select the basename after the last slash; test byte4 for a period, then
- * pack bytes0..3 as a big-endian asset name; otherwise return -1. RE_UNKNOWN:
- * readable path/basename extents and validity guarantees require original
- * filename producers and all callers; no shorter-name scan is performed. */
+/* Use the bytes after the last slash. Require a dot at byte four, then combine
+ * bytes zero through three in big-endian order; otherwise return -1.
+ * RE_ORIGINAL_QUIRK: byte four is read without checking the component length.
+ * RE_UNKNOWN: callers must supply sufficient readable storage and a terminated
+ * path. Preserve the original signed shift expression and unchecked short names. */
+#line 29 "src/modules/filerom.c"
 s32 fileromGetFilenameFourCC(u8 *path) {
     u8 *name;
     name = fileromFindAfterLastDelimiter(path, '/');
@@ -103,6 +116,7 @@ s32 fileromGetFilenameFourCC(u8 *path) {
     }
     return (name[0] << 24) | (name[1] << 16) | (name[2] << 8) | name[3];
 }
+#line 37 "src/modules/filerom.c"
 #line 26 "src/modules/filerom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/filerom/func_filerom_00400364.s")

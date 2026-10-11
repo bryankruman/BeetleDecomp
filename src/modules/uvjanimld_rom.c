@@ -6,12 +6,18 @@ UvParsedAN *func_uvjanimld_rom_00400050(u8 *arg0);
 void uvJanimLdNoOpModuleCleanup(void);
 void uvJAnimLoaderReleaseParsedAnimation(UvParsedAN* parsedAnimation);
 
+/* Publish the original animation parser, empty module-cleanup export and parsed
+ * animation release export after the allocation hook. No animation is parsed here.
+ * RE_UNKNOWN: opaque parser format, export storage and parsed-buffer ownership
+ * remain unresolved; retain the original callable slot assignments and ABI. */
+#line 9 "src/modules/uvjanimld_rom.c"
 void __entrypoint_func_uvjanimld_rom_400000(UvJanimLd_Exports* exports) {
     uvUpdateFileAllocPtr(exports);
     exports->uvParseAnimationData = func_uvjanimld_rom_00400050;
     exports->stub = uvJanimLdNoOpModuleCleanup;
     exports->uvFreeParsedAnimationData = uvJAnimLoaderReleaseParsedAnimation;
 }
+#line 15 "src/modules/uvjanimld_rom.c"
 
 #line 16 "src/modules/uvjanimld_rom.c"
 /* Original no-op cleanup hook in module export slot zero. The generic

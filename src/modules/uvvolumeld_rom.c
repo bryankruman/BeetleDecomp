@@ -6,12 +6,18 @@ void uvVolumeLoaderCleanup(void);
 void* uvVolumeLoadResource(u8* arg0);
 void uvVolumeFreeResource(UnkStruct_UvVolumeLd_rom_00400050 *arg0);
 
+/* Publish volume load, module-cleanup and resource-release exports after the
+ * allocation hook. No volume resource is loaded or existing data reset here.
+ * RE_UNKNOWN: export storage, resource format and allocation ownership remain
+ * loader and later load/release caller obligations. */
+#line 9 "src/modules/uvvolumeld_rom.c"
 void __entrypoint_func_uvvolumeld_rom_400000(UvVolumeLd_Rom_Exports* exports) {
     uvUpdateFileAllocPtr(exports);
     exports->uvVolumeLoadResource = uvVolumeLoadResource;
     exports->uvVolumeLoaderCleanup = uvVolumeLoaderCleanup;
     exports->uvVolumeFreeResource = uvVolumeFreeResource;
 }
+#line 15 "src/modules/uvvolumeld_rom.c"
 
 #line 16 "src/modules/uvvolumeld_rom.c"
 /* Original empty loader cleanup hook; resource release is performed

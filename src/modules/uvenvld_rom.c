@@ -17,12 +17,18 @@ void uvEnvLdCleanup(ParsedUVEN *parsedUvEnv);
 // .data
 s32 D_uvenvld_rom_00400320[] = {0x000C0000, __entrypoint_func_uvenvld_rom_400000, 0, 0};
 
+/* Publish environment parse, reserved-callback and cleanup exports after the
+ * allocation hook. No environment is parsed and no shared environment data is
+ * reset here. RE_UNKNOWN: export storage and parsed-resource lifetime remain
+ * contracts of the loader and later parse/cleanup callers. */
+#line 20 "src/modules/uvenvld_rom.c"
 void __entrypoint_func_uvenvld_rom_400000(UvEnvLd_Exports *exports) {
     uvUpdateFileAllocPtr(exports);
     exports->uvParseUVEN = uvParseUVEN;
     exports->uvEnvironmentLoaderReservedCallback = uvEnvironmentLoaderReservedCallback;
     exports->uvEnvLdCleanup = uvEnvLdCleanup;
 }
+#line 26 "src/modules/uvenvld_rom.c"
 
 // stub
 #line 28 "src/modules/uvenvld_rom.c"

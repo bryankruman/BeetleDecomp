@@ -14,6 +14,11 @@ s32 uvContainsCallback(CallbackList *callbackList, CallbackRoutine arg1, u8 arg2
 // .data
 s32 D_uvcback_rom_00400440[] = { 0x001C0000, __entrypoint_func_uvcback_rom_400000, 0, 0 };
 
+/* Publish the seven original callback-list operations after the allocation hook,
+ * retaining their store order. This entrypoint creates no callback list itself.
+ * RE_UNKNOWN: export storage and callback/list lifetime belong to the loader and
+ * users of these operations; publishing the free export does not free a list. */
+#line 17 "src/modules/uvcback_rom.c"
 void __entrypoint_func_uvcback_rom_400000(UvCback_Exports *exports) {
     uvUpdateFileAllocPtr(exports);
     exports->uvRemoveCallback = uvRemoveCallback;
@@ -24,6 +29,7 @@ void __entrypoint_func_uvcback_rom_400000(UvCback_Exports *exports) {
     exports->uvExecuteCallbacks = uvExecuteCallbacks;
     exports->uvAddCallback = uvAddCallback;
 }
+#line 27 "src/modules/uvcback_rom.c"
 
 void uvCallbackUnused(void) {
 }
@@ -45,14 +51,15 @@ void *uvCreateCallbackList(s32 capacity) {
     return callbackList;
 }
 
-/*
- * Free the a callback list
- *
- * @param ptr Callback list pointer
- */
+/* Forward the supplied pointer directly to the original memory-free service.
+ * This body does not unlink callbacks, traverse a list or clear the caller's pointer.
+ * RE_UNKNOWN: allocation ownership, outstanding callback references and NULL
+ * handling must be supplied by the allocator/callers before this wrapper is used. */
+#line 53 "src/modules/uvcback_rom.c"
 void uvCallbackFree(void *ptr) {
     _uvMemFree(ptr);
 }
+#line 56 "src/modules/uvcback_rom.c"
 
 /*
  * Walk callback slots in order, skipping null routines.

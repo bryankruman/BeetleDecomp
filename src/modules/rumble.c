@@ -24,12 +24,18 @@ u8 D_rumble_004003E0[8][12] = {
 
 void __entrypoint_func_rumble_400000(Rumble_Exports *exports);
 
+/* Publish the no-op cleanup, pattern-merge and controller-update exports after
+ * the allocation hook. Existing pattern/controller state is not cleared here.
+ * RE_UNKNOWN: export storage, initialization timing and controller state lifetime
+ * belong to the loader/callers; no hardware setup is inferred from publication. */
+#line 27 "src/modules/rumble.c"
 void __entrypoint_func_rumble_400000(Rumble_Exports *exports) {
     uvUpdateFileAllocPtr(exports);
     exports->rumbleNoOpModuleCleanup = rumbleNoOpModuleCleanup;
     exports->rumbleMergeQuantizedPatternValues = rumbleMergeQuantizedPatternValues;
     exports->rumbleUpdateControllerPatterns = rumbleUpdateControllerPatterns;
 }
+#line 33 "src/modules/rumble.c"
 
 #line 34 "src/modules/rumble.c"
 /* Original no-op cleanup hook in module export slot zero. The generic

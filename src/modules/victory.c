@@ -21,12 +21,19 @@ extern UnkStruct_004005C8 D_victory_00401248;
 extern u8 D_victory_00401250;
 extern u8 D_victory_00401251;
 
+/* Release the two sound handles first, then stop the two byte-sized emitter IDs,
+ * retaining the original sound/emitter call and field-load order.
+ * RE_ORIGINAL_QUIRK: no validity or sentinel checks and no local resets occur.
+ * RE_UNKNOWN: provider ownership, repeated-stop behavior and ID lifetime require
+ * caller and sound/emitter contracts before changing cleanup behavior. */
+#line 14 "src/modules/victory.c"
 void victoryStopSoundsAndEmitters(void) {
     gSndExports->sndReleaseHandle(&D_victory_00401240);
     gSndExports->sndReleaseHandle(&D_victory_00401248);
     gUvEmitterExports->uvEmitterStop(D_victory_00401250);
     gUvEmitterExports->uvEmitterStop(D_victory_00401251);
 }
+#line 20 "src/modules/victory.c"
 #line 9 "src/modules/victory.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/victory/func_victory_004003B8.s")

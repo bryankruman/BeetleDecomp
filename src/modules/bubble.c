@@ -32,11 +32,16 @@ void func_bubble_00400068(void) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/bubble/func_bubble_00400070.s")
 
 #line 23 "src/modules/bubble.c"
-/* Set primitive RGB from the referenced color and alpha from the bubble state. */
+/* Load RGB through the state color pointer at offset 0x24 and alpha from offset
+ * 0x20, then forward them to the graphics primitive-color export.
+ * RE_UNKNOWN: state/color storage lifetime and component ranges are unproved.
+ * There is no NULL check, clamping or implied ownership transfer. */
+#line 24 "src/modules/bubble.c"
 void bubbleSetPrimitiveColor(BubbleState *state) {
     BubbleRgb *color = state->color;
     gUvGfxMgrExports->uvGfxSetPrimColorF(color->r, color->g, color->b, state->alpha);
 }
+#line 28 "src/modules/bubble.c"
 #line 24 "src/modules/bubble.c"
 
 #line 25 "src/modules/bubble.c"
@@ -73,8 +78,12 @@ void bubbleUpdateLifetimeAndTransform(BubbleObjectState *state) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/bubble/func_bubble_004004C8.s")
 
 #line 31 "src/modules/bubble.c"
-/* After the scheduled time, attempt emission. A successful attempt schedules
- * the next time using the original random fraction, interval and current time. */
+/* Only when nextTime is strictly less than the shared time, try the original
+ * emission helper. On nonzero success, set nextTime to random*interval plus the
+ * shared time reloaded after the helper and random call; failure leaves it unchanged.
+ * RE_UNKNOWN: time/interval units, random range and helper lifetime are unproved.
+ * Preserve equality/NaN behavior, provider side effects and the later time reload. */
+#line 33 "src/modules/bubble.c"
 void bubbleTryEmitAndSchedule(BubbleState *state) {
     if (state->nextTime < D_80025D6C) {
         if (func_bubble_004004C8(state) != 0) {
@@ -82,6 +91,7 @@ void bubbleTryEmitAndSchedule(BubbleState *state) {
         }
     }
 }
+#line 40 "src/modules/bubble.c"
 #line 32 "src/modules/bubble.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/bubble/func_bubble_00400820.s")

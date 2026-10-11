@@ -125,10 +125,15 @@ void func_results_00401AF8(void) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/results/func_results_00405608.s")
 
 #line 110 "src/modules/results.c"
-/* Pass integer 100 to menu export 0x3C. RE_UNKNOWN: the action and argument units require the original menu slot0x3C target and its callers; the original results initializer proves the stored provider is MENU. */
+/* Call the MENU provider callback at shared table +0x3C with the literal word
+ * 100. The results initializer loads the 'menu' module into this table pointer.
+ * RE_UNKNOWN: callback action, argument units, full historical declaration and
+ * provider lifetime need consumers; pointer and slot checks are absent. */
+#line 111 "src/modules/results.c"
 void resultsCallMenuCallbackWith100(void) {
     (*(void (**)(s32))((u8 *)D_results_00407718 + 0x3C))(0x64);
 }
+#line 114 "src/modules/results.c"
 #line 113 "src/modules/results.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/results/func_results_00405E18.s")

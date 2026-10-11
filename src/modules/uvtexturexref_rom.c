@@ -10,11 +10,17 @@ ParsedUVTP *_uvParseUVTP(u8 *data);
 
 s32 D_uvtexturexref_rom_00400200[] = { 0x00080000, __entrypoint_func_uvtexturexref_rom_400000, 0, 0 };
 
+/* Publish the UVTP release and parse exports, in that order, after the allocation
+ * hook. This entrypoint parses no texture-reference data and resets no resources.
+ * RE_UNKNOWN: export storage, UVTP format and referenced texture ownership remain
+ * contracts of the later parse/release callers and loader. */
+#line 13 "src/modules/uvtexturexref_rom.c"
 void __entrypoint_func_uvtexturexref_rom_400000(UvTexturexref_Exports *exports) {
     uvUpdateFileAllocPtr(exports);
     exports->uvParseFreeUVTP = uvParseFreeUVTP;
     exports->uvParseUVTP = uvParseUVTP;
 }
+#line 18 "src/modules/uvtexturexref_rom.c"
 
 void uvParseFreeUVTP(void) {
 }

@@ -8,7 +8,10 @@ extern void track7NoOpModuleCleanup(void);
 extern void func_track7_0040009C(void);
 extern UnkStruct_80025CF0 gGameSettings[];
 extern s32 D_80025DE0;
-
+/* Publish two callbacks and shared track data. Load tdta; call its slot 0x24
+ * outside TASK_EDITOR, then unload tdta and clear the provider pointer.
+ * RE_UNKNOWN: slot 0x24's purpose and shared-data lifetime need provider/callers. */
+#line 12 "src/modules/track7.c"
 void __entrypoint_func_track7_400000(Track7_Exports *exports) {
     uvUpdateFileAllocPtr(exports);
     exports->track7NoOpModuleCleanup = &track7NoOpModuleCleanup;

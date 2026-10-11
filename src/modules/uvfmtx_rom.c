@@ -422,6 +422,10 @@ void uvMat4CopyF2L(Mtx *destination, Mtx4F *source) {
 #line 379 "src/modules/uvfmtx_rom.c"
 #line 372 "src/modules/uvfmtx_rom.c"
 
+/* Write all sixteen floats of a 4x4 identity matrix into the destination. No
+ * allocation or matrix-stack operation occurs. RE_UNKNOWN: callers must
+ * provide a valid writable 64-byte matrix span and establish its lifetime. */
+#line 373 "src/modules/uvfmtx_rom.c"
 void uvMat4SetIdentity(Mtx4F *dst) {
     dst->m[0][0] = 1.0f;
     dst->m[0][1] = 0.0f;
@@ -440,6 +444,7 @@ void uvMat4SetIdentity(Mtx4F *dst) {
     dst->m[3][2] = 0.0f;
     dst->m[3][3] = 1.0f;
 }
+#line 391 "src/modules/uvfmtx_rom.c"
 
 #line 392 "src/modules/uvfmtx_rom.c"
 /* Multiply left by right into destination, preserving the established
@@ -1071,9 +1076,15 @@ void uvMat4PushFloatMatrix(Mtx4F *mtxF) {
 }
 #line 915 "src/modules/uvfmtx_rom.c"
 
+/* Forward to the cached integer-matrix provider view-pop callback. The
+ * provider appends a model-view pop command through its shared display-list
+ * cursor. RE_UNKNOWN: provider lifetime, command capacity and valid stack
+ * depth must be established externally; this wrapper performs no checks. */
+#line 916 "src/modules/uvfmtx_rom.c"
 void uvGfxMtxFViewPop(void) {
     sUvImtxExports->uvGfxMtxViewPop();
 }
+#line 919 "src/modules/uvfmtx_rom.c"
 
 #line 920 "src/modules/uvfmtx_rom.c"
 

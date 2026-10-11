@@ -18,6 +18,11 @@ extern UvMath_Exports *D_uvquat_rom_00400B50;
 extern UvFMtx_Rom_Exports *D_uvquat_rom_00400B54;
 extern Mtx4F D_uvquat_rom_00400B58;
 
+/* Publish the eight quaternion operations, then load MATH followed by FMTX
+ * and save both provider pointers. This body resets no quaternion records.
+ * RE_UNKNOWN: repeated initialization, load failure and provider/reference lifetime
+ * remain unproved. Preserve the existing publication/load order and #line. */
+#line 21 "src/modules/uvquat_rom.c"
 void __entrypoint_func_uvquat_rom_400000(UvQuat_Exports *exports) {
     uvUpdateFileAllocPtr(exports);
     exports->uvQuatModuleCleanup = uvQuatModuleCleanup;
@@ -32,11 +37,17 @@ void __entrypoint_func_uvquat_rom_400000(UvQuat_Exports *exports) {
     D_uvquat_rom_00400B50 = uvLoadModule('MATH');
     D_uvquat_rom_00400B54 = uvLoadModule('FMTX');
 }
+#line 4 "src/modules/uvquat_rom.c"
 
+/* Unload MATH followed by FMTX, without clearing either stored export pointer.
+ * RE_UNKNOWN: reference counts, outstanding calls and repeated cleanup behavior
+ * belong to the module loader/callers; no guard or pointer reset is added. */
+#line 5 "src/modules/uvquat_rom.c"
 void uvQuatModuleCleanup(void) {
     uvUnloadModule('MATH');
     uvUnloadModule('FMTX');
 }
+#line 9 "src/modules/uvquat_rom.c"
 
 #line 10 "src/modules/uvquat_rom.c"
 /* Convert the 3x3 rotation block to a quaternion using the trace path

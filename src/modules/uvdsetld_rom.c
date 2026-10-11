@@ -11,12 +11,18 @@ void uvDataSetVisitFileBlocks(u8* filePtr, void (*routine)(s32, s32));
 u8 *uvDataSetLoadReferences(u8 *arg0);
 void uvDataSetUnloadReferences(void* arg0);
 
+/* Publish dataset reference-load, module-cleanup and reference-unload exports
+ * after the allocation hook. This entrypoint loads no referenced dataset itself.
+ * RE_UNKNOWN: writable export storage, referenced-resource ownership and repeat
+ * initialization belong to the loader and later resource operations. */
+#line 14 "src/modules/uvdsetld_rom.c"
 void __entrypoint_func_uvdsetld_rom_400000(UvDSetLd_Rom_Exports *exports) {
     uvUpdateFileAllocPtr(exports);
     exports->uvDataSetLoadReferences = uvDataSetLoadReferences;
     exports->uvDataSetLoaderCleanup = uvDataSetLoaderCleanup;
     exports->uvDataSetUnloadReferences = uvDataSetUnloadReferences;
 }
+#line 20 "src/modules/uvdsetld_rom.c"
 
 #line 21 "src/modules/uvdsetld_rom.c"
 /* Original empty loader cleanup hook; resource release is performed

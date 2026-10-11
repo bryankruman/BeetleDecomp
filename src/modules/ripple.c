@@ -117,6 +117,12 @@ void rippleAdvanceFadeAndSize(void) {
 }
 #line 93 "src/modules/ripple.c"
 
+/* Claim the first inactive slot in the 48-record ripple pool, or return when
+ * all slots are active. Copy and uniformly scale its matrix by 0.01, save the
+ * input size, reset current size/fade to 0/1, activate it and increment the count.
+ * RE_UNKNOWN: matrix/provider lifetime and size units/domain remain unproved.
+ * No allocation, replacement policy or validation is added when the pool is full. */
+#line 94 "src/modules/ripple.c"
 void addRipple(Mtx4F *mtx, f32 initSize) {
     s32 i;
     Ripple *ripple;
@@ -140,6 +146,7 @@ void addRipple(Mtx4F *mtx, f32 initSize) {
     ripple->active = TRUE;
     sActiveRippleCount++;
 }
+#line 117 "src/modules/ripple.c"
 
 #line 118 "src/modules/ripple.c"
 /* Query channel property six and attach the ripple callback at priority
@@ -154,6 +161,11 @@ void rippleAttachDrawCallbackToChannel(s32 channel) {
 }
 #line 126 "src/modules/ripple.c"
 
+/* Publish six ripple exports, load UVTX file 125, then clear all 48 active flags
+ * and the stored count. Matrices, size values and fade values are left untouched.
+ * RE_UNKNOWN: repeated initialization, texture reference ownership and loader
+ * lifetime are not checked here. Preserve the load-before-reset order and #line. */
+#line 127 "src/modules/ripple.c"
 void __entrypoint_func_ripple_400604(Ripple_Exports *exports) {
     int i;
     uvUpdateFileAllocPtr(exports);
@@ -170,10 +182,16 @@ void __entrypoint_func_ripple_400604(Ripple_Exports *exports) {
     // clang-format on
     sActiveRippleCount = 0;
 }
+#line 138 "src/modules/ripple.c"
 
+/* Return the stored active-ripple count without scanning or repairing the pool.
+ * RE_UNKNOWN: consistency depends on the original add, reset and fade-update
+ * paths; this accessor supplies no synchronization or independent recount. */
+#line 139 "src/modules/ripple.c"
 s32 getActiveRippleCount(void) {
     return sActiveRippleCount;
 }
+#line 142 "src/modules/ripple.c"
 
 #line 143 "src/modules/ripple.c"
 /* Unload the shared ripple texture, UVTX file 125, through the
@@ -183,6 +201,11 @@ void rippleUnloadSharedTexture(void) {
 }
 #line 146 "src/modules/ripple.c"
 
+/* Clear the 48 ripple active flags and set the stored count to zero. Retain all
+ * matrix, size and fade fields, and leave the shared texture loaded.
+ * RE_UNKNOWN: callers must coordinate draw/update use; this reset does not
+ * establish texture ownership or release any resource. */
+#line 147 "src/modules/ripple.c"
 void resetRipple(void) {
     int i;
     // clang-format off
@@ -190,5 +213,6 @@ void resetRipple(void) {
     // clang-format on
     sActiveRippleCount = 0;
 }
+#line 154 "src/modules/ripple.c"
 
 s32 D_ripple_00400730[] = {0x00180000, __entrypoint_func_ripple_400604, 0, 0};

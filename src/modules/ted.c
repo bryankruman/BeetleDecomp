@@ -509,9 +509,12 @@ void tedWriteSelectedRecords(s32 file) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_004047DC.s")
 
 #line 178 "src/modules/ted.c"
-/* Apply the pending editor scalar to selected record field 0x18.
- * A negative index leaves the record array unchanged. Retain the original
- * 0x2C stride and offset name until consumers establish the scalar meaning. */
+/* For a nonnegative selected index, copy editor scalar +0x94 to record +0x18
+ * in the 0x2C-stride selected-record array. Ignore the callback argument.
+ * RE_UNKNOWN: the selected index has no upper-bound check here; record
+ * capacity, scalar units and editor state lifetime require writers and
+ * callback registrations. */
+#line 181 "src/modules/ted.c"
 void tedApplySelectedScalar18(s32 unused) {
     s32 selectedIndex;
 
@@ -520,12 +523,16 @@ void tedApplySelectedScalar18(s32 unused) {
         D_ted_00407288[selectedIndex].unk18 = D_ted_004071C0.unk94;
     }
 }
+#line 189 "src/modules/ted.c"
 #line 179 "src/modules/ted.c"
 
 #line 180 "src/modules/ted.c"
-/* Apply the pending editor scalar to selected record field 0x1C.
- * A negative index leaves the record array unchanged. Retain the original
- * 0x2C stride and offset name until consumers establish the scalar meaning. */
+/* For a nonnegative selected index, copy editor scalar +0x98 to record +0x1C
+ * in the 0x2C-stride selected-record array. Ignore the callback argument.
+ * RE_UNKNOWN: the selected index has no upper-bound check here; record
+ * capacity, scalar units and editor state lifetime require writers and
+ * callback registrations. */
+#line 183 "src/modules/ted.c"
 void tedApplySelectedScalar1C(s32 unused) {
     s32 selectedIndex;
 
@@ -534,12 +541,16 @@ void tedApplySelectedScalar1C(s32 unused) {
         D_ted_00407288[selectedIndex].unk1C = D_ted_004071C0.unk98;
     }
 }
+#line 191 "src/modules/ted.c"
 #line 181 "src/modules/ted.c"
 
 #line 182 "src/modules/ted.c"
-/* Apply the pending editor scalar to selected record field 0x20.
- * A negative index leaves the record array unchanged. Retain the original
- * 0x2C stride and offset name until consumers establish the scalar meaning. */
+/* For a nonnegative selected index, copy editor scalar +0x9C to record +0x20
+ * in the 0x2C-stride selected-record array. Ignore the callback argument.
+ * RE_UNKNOWN: the selected index has no upper-bound check here; record
+ * capacity, scalar units and editor state lifetime require writers and
+ * callback registrations. */
+#line 185 "src/modules/ted.c"
 void tedApplySelectedScalar20(s32 unused) {
     s32 selectedIndex;
 
@@ -548,12 +559,16 @@ void tedApplySelectedScalar20(s32 unused) {
         D_ted_00407288[selectedIndex].unk20 = D_ted_004071C0.unk9C;
     }
 }
+#line 193 "src/modules/ted.c"
 #line 183 "src/modules/ted.c"
 
 #line 184 "src/modules/ted.c"
-/* Apply the pending editor scalar to selected record field 0x24.
- * A negative index leaves the record array unchanged. Retain the original
- * 0x2C stride and offset name until consumers establish the scalar meaning. */
+/* For a nonnegative selected index, copy editor scalar +0xA0 to record +0x24
+ * in the 0x2C-stride selected-record array. Ignore the callback argument.
+ * RE_UNKNOWN: the selected index has no upper-bound check here; record
+ * capacity, scalar units and editor state lifetime require writers and
+ * callback registrations. */
+#line 187 "src/modules/ted.c"
 void tedApplySelectedScalar24(s32 unused) {
     s32 selectedIndex;
 
@@ -562,14 +577,18 @@ void tedApplySelectedScalar24(s32 unused) {
         D_ted_00407288[selectedIndex].unk24 = D_ted_004071C0.unkA0;
     }
 }
+#line 195 "src/modules/ted.c"
 #line 185 "src/modules/ted.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00404C28.s")
 
 #line 188 "src/modules/ted.c"
-/* Apply the pending editor scalar to selected record field 0x0C.
- * A negative index leaves the record array unchanged. Retain the original
- * 0x2C stride and offset name until consumers establish the scalar meaning. */
+/* For a nonnegative selected index, copy editor scalar +0xA4 to record +0x0C
+ * in the 0x2C-stride selected-record array. Ignore the callback argument.
+ * RE_UNKNOWN: the selected index has no upper-bound check here; record
+ * capacity, scalar units and editor state lifetime require writers and
+ * callback registrations. */
+#line 191 "src/modules/ted.c"
 void tedApplySelectedScalar0C(s32 unused) {
     s32 selectedIndex;
 
@@ -578,12 +597,16 @@ void tedApplySelectedScalar0C(s32 unused) {
         D_ted_00407288[selectedIndex].unk0C = D_ted_004071C0.unkA4;
     }
 }
+#line 199 "src/modules/ted.c"
 #line 189 "src/modules/ted.c"
 
 #line 190 "src/modules/ted.c"
-/* Apply the pending editor scalar to selected record field 0x10.
- * A negative index leaves the record array unchanged. Retain the original
- * 0x2C stride and offset name until consumers establish the scalar meaning. */
+/* For a nonnegative selected index, copy editor scalar +0xA8 to record +0x10
+ * in the 0x2C-stride selected-record array. Ignore the callback argument.
+ * RE_UNKNOWN: the selected index has no upper-bound check here; record
+ * capacity, scalar units and editor state lifetime require writers and
+ * callback registrations. */
+#line 193 "src/modules/ted.c"
 void tedApplySelectedScalar10(s32 unused) {
     s32 selectedIndex;
 
@@ -592,12 +615,16 @@ void tedApplySelectedScalar10(s32 unused) {
         D_ted_00407288[selectedIndex].unk10 = D_ted_004071C0.unkA8;
     }
 }
+#line 201 "src/modules/ted.c"
 #line 191 "src/modules/ted.c"
 
 #line 192 "src/modules/ted.c"
-/* Apply the pending editor scalar to selected record field 0x14.
- * A negative index leaves the record array unchanged. Retain the original
- * 0x2C stride and offset name until consumers establish the scalar meaning. */
+/* For a nonnegative selected index, copy editor scalar +0xAC to record +0x14
+ * in the 0x2C-stride selected-record array. Ignore the callback argument.
+ * RE_UNKNOWN: the selected index has no upper-bound check here; record
+ * capacity, scalar units and editor state lifetime require writers and
+ * callback registrations. */
+#line 195 "src/modules/ted.c"
 void tedApplySelectedScalar14(s32 unused) {
     s32 selectedIndex;
 
@@ -606,6 +633,7 @@ void tedApplySelectedScalar14(s32 unused) {
         D_ted_00407288[selectedIndex].unk14 = D_ted_004071C0.unkAC;
     }
 }
+#line 203 "src/modules/ted.c"
 #line 193 "src/modules/ted.c"
 /* RE_UNKNOWN: record/object bounds and callback mutations, rotation units/frames, SMACK model-word meaning and DOBJ tag-one scalar units; trace original record creators, SMACK table writers and model-scalar consumers before changing transforms or properties. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00404DA8.s")
@@ -957,9 +985,12 @@ void tedResetRecordPool(TedRecordPool *pool) {
 #line 244 "src/modules/ted.c"
 
 #line 210 "src/modules/ted.c"
-/* For a non-null record, reset the nested GUI state referenced by field 0x28,
- * then restore the original halfword defaults and clear the six word fields.
- * Unknown fields retain offset names rather than speculative editor meanings. */
+/* If the record is nonnull, reset its +0x28 GUI state first, then write the
+ * original halfword defaults and clear the words at +0x1C through +0x30. Other
+ * fields remain untouched; the GUI pointer is cleared after the call.
+ * RE_UNKNOWN: complete record ownership and reuse lifetime need allocation
+ * callers; this helper does not free the record. */
+#line 213 "src/modules/ted.c"
 void tedResetRecord(TedResetRecord *record) {
     if (record != NULL) {
         tedResetGuiState(record->unk28);
@@ -976,6 +1007,7 @@ void tedResetRecord(TedResetRecord *record) {
         record->unk30 = 0;
     }
 }
+#line 229 "src/modules/ted.c"
 #line 211 "src/modules/ted.c"
 
 #line 212 "src/modules/ted.c"

@@ -147,6 +147,12 @@ void uvBillboardAttachChannelCallback(s32 channel) {
 }
 #line 134 "src/modules/uvbill_rom.c"
 
+/* Free the three auxiliary allocations and then the billboard pool. Unload STAT,
+ * CHAN, FMTX, MATH, TSEQ, DGEO and CBCK in that order; retain the original omission
+ * of GMGR and TERR from this cleanup despite their initialization-time loads.
+ * RE_ORIGINAL_QUIRK: pointers/count are not cleared and allocation validity is not
+ * checked. RE_UNKNOWN: outstanding callbacks and module/allocation ownership. */
+#line 135 "src/modules/uvbill_rom.c"
 void uvBillDestroy(void) {
     _uvMemFree(D_uvbill_rom_0040200C);
     _uvMemFree(D_uvbill_rom_00402008);
@@ -160,6 +166,7 @@ void uvBillDestroy(void) {
     uvUnloadModule('DGEO');
     uvUnloadModule('CBCK');
 }
+#line 148 "src/modules/uvbill_rom.c"
 
 /* Draw one billboard using texture coordinates, a scaled matrix and a cached four-vertex range. */
 #line 149 "src/modules/uvbill_rom.c"
@@ -462,12 +469,18 @@ s32 uvBillboardQuerySphere(f32 x, f32 y, f32 z, f32 radius, s32 mask, s32 **outp
 }
 #line 432 "src/modules/uvbill_rom.c"
 
+/* For a signed index in [0, sBillBoardCount), copy the input matrix to that
+ * billboard's translation-matrix field through FMTX. Retain the unused local.
+ * RE_UNKNOWN: pool/provider/matrix lifetime and slot activity are not validated;
+ * being in range does not prove the slot is active or owns a live allocation. */
+#line 433 "src/modules/uvbill_rom.c"
 void uvBillSetTransMtx(s32 bill, Mtx4F *mtx) {
     BillBoard *a0;
     if ((bill >= 0) && (bill < sBillBoardCount)) {
         sUvFmtxExports->uvMat4FCopy(&GET_ITEM(BillBoard, sBillBoardPool, bill)->trans, mtx);
     }
 }
+#line 439 "src/modules/uvbill_rom.c"
 
 /* Consume tagged billboard properties, retaining selector termination, narrowing and radius recomputation. */
 #line 440 "src/modules/uvbill_rom.c"

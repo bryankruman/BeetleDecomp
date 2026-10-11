@@ -10,6 +10,11 @@ void uvSetCopyFileDataFlag(s32 arg0);
 
 extern s32 sCopyFileDataFlag;
 
+/* Publish file-copy, stub, release and copy-flag setter exports, then reset the
+ * shared copy-data flag to FALSE. No existing file pointer is released here.
+ * RE_UNKNOWN: loader export storage, flag meaning and copied/borrowed resource
+ * ownership require the later copy/release paths; preserve the post-publication reset. */
+#line 13 "src/modules/uvufileld_rom.c"
 void __entrypoint_func_uvufileld_rom_400000(UvuFileLd_Rom_Exports *exports) {
     uvUpdateFileAllocPtr(exports);
     exports->uvFileCopy = uvFileCopy;
@@ -18,6 +23,7 @@ void __entrypoint_func_uvufileld_rom_400000(UvuFileLd_Rom_Exports *exports) {
     exports->uvSetCopyFileDataFlag = uvSetCopyFileDataFlag;
     sCopyFileDataFlag = FALSE;
 }
+#line 21 "src/modules/uvufileld_rom.c"
 
 void uvuFileldStub(void) {
 }

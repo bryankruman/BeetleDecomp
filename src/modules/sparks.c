@@ -29,12 +29,18 @@ void sparksModuleCleanup(void) {
 #line 26 "src/modules/sparks.c"
 
 #line 27 "src/modules/sparks.c"
-/* Register the spark update callback on channel property six at priority 0x2E. */
+/* Request channel property 6, then add the object-transform callback with NULL
+ * context and priority 0x2E. Preserve the two provider calls in that order.
+ * RE_ORIGINAL_QUIRK: the local list pointer is not initialized or checked here.
+ * RE_UNKNOWN: the channel must populate it, and list/callback lifetime and duplicate
+ * registration behavior remain provider/caller obligations. */
+#line 28 "src/modules/sparks.c"
 void sparksRegisterChannelCallback(s32 channel) {
     CallbackList *callbacks;
     gUvChanExports->uvChannelGetProperties(channel, 6, &callbacks, 0);
     gUvCbckExports->uvAddCallback(callbacks, sparksUpdateObjectTransform, NULL, 0x2E);
 }
+#line 33 "src/modules/sparks.c"
 #line 28 "src/modules/sparks.c"
 
 /* Reset all four 20-byte slots in the original 0x50-byte allocation.

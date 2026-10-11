@@ -105,30 +105,43 @@ void aieditInvokeTrackDataRefreshCallback(s32 context) {
 #line 43 "src/modules/aiedit.c"
 
 #line 44 "src/modules/aiedit.c"
-/* Find channel property six and register the track-data refresh
- * callback with no insert-before routine and original priority 0xC8. */
+/* Request channel property 6 into the local callback-list word, then register
+ * the track-data refresh callback with context zero and priority 0xC8.
+ * RE_ORIGINAL_QUIRK: the local output has no initializer or post-query NULL check.
+ * RE_UNKNOWN: the channel provider must write a valid callback-list value; list
+ * and callback lifetime, channel validity and registration failure remain unproved. */
+#line 46 "src/modules/aiedit.c"
 void aieditRegisterTrackDataRefreshCallback(s32 channel) {
     s32 callbackList;
     gUvChanExports->unk4(channel, 6, &callbackList, 0);
     gUvCbckExports->unk10(callbackList, aieditInvokeTrackDataRefreshCallback, 0, 0xC8);
 }
+#line 51 "src/modules/aiedit.c"
 #line 49 "src/modules/aiedit.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/aiedit/func_aiedit_004009E4.s")
 
 #line 49 "src/modules/aiedit.c"
-/* Forward to track-data export 0x1C, whose original implementation is a no-op.
- * Preserve the original ignored callback context and argument-home store. */
+/* Ignore the incoming context and call track-data export 0x1C with no arguments.
+ * The reviewed export table binds the currently empty func_tdata_004008C4.
+ * RE_UNKNOWN: why this callback is scheduled and the track-data provider lifetime
+ * remain unresolved; an empty provider does not authorize removing the call. */
+#line 51 "src/modules/aiedit.c"
 void aieditRunTdataNoopCallback(s32 context) {
     gTdataExports->unk1C();
 }
+#line 54 "src/modules/aiedit.c"
 #line 50 "src/modules/aiedit.c"
 
 #line 51 "src/modules/aiedit.c"
-/* Invoke track-data export 0x20, whose original implementation returns zero.
- * The callback ignores its context and does not use the query result. */
+/* Ignore the incoming context and call track-data export 0x20 with no arguments,
+ * discarding its result. The reviewed provider func_tdata_004009A8 returns zero.
+ * RE_UNKNOWN: callback purpose and track-data provider lifetime remain unresolved.
+ * Preserve the discarded return and the original separate callback identity. */
+#line 53 "src/modules/aiedit.c"
 void aieditRunTdataZeroCallback(s32 context) {
     gTdataExports->unk20();
 }
+#line 56 "src/modules/aiedit.c"
 #line 52 "src/modules/aiedit.c"
 

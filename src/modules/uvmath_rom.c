@@ -72,9 +72,15 @@ void uvMathNoOpModuleCleanup(void) {
 }
 #line 63 "src/modules/uvmath_rom.c"
 
+/* Return zero for a negative input; otherwise forward the input to sqrtf,
+ * including values for which the negative comparison is unordered. RE_UNKNOWN:
+ * library exceptional-value behavior and the caller numerical domain remain
+ * unchanged. */
+#line 64 "src/modules/uvmath_rom.c"
 f32 uvSqrtF(f32 arg0) {
     return arg0 < 0.0f ? 0.0f : sqrtf(arg0);
 }
+#line 67 "src/modules/uvmath_rom.c"
 
 // Already matched but needs rodata migration
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvmath_rom/uvSinF.s")
@@ -290,6 +296,10 @@ extern f32 D_uvmath_rom_00400AD0;
 extern f32 D_uvmath_rom_00400AD4;
 extern f32 D_uvmath_rom_00400AD8;
 
+/* Run the original subtraction and addition loops with the stored pi/full-turn
+ * float words and inclusive endpoints. RE_UNKNOWN: caller values must permit
+ * float progress; no nonfinite or excessive-magnitude guard exists. */
+#line 236 "src/modules/uvmath_rom.c"
 f32 uvWrapAngleRadians(f32 angle) {
     f32 wrapped;
     f32 lowerBound;
@@ -310,6 +320,7 @@ f32 uvWrapAngleRadians(f32 angle) {
     }
     return wrapped;
 }
+#line 256 "src/modules/uvmath_rom.c"
 #line 230 "src/modules/uvmath_rom.c"
 
 // Matched but eeds rodata migration
@@ -322,6 +333,12 @@ extern f32 D_uvmath_rom_00400AE0;
 extern f32 D_uvmath_rom_00400AE4;
 extern f32 D_uvmath_rom_00400AE8;
 
+/* Wrap through uvWrapAngleRadians, then reflect values beyond the stored
+ * positive or negative half-pi thresholds using the original pi words.
+ * Preserve the exact threshold bits, which are not recomputed from pi.
+ * RE_UNKNOWN: angle-domain/progress assumptions follow the wrapper; the
+ * four-byte original tail remains excluded. */
+#line 238 "src/modules/uvmath_rom.c"
 f32 uvFoldAngleRadians(f32 angle) {
     f32 wrapped;
 
@@ -334,4 +351,5 @@ f32 uvFoldAngleRadians(f32 angle) {
     }
     return wrapped;
 }
+#line 250 "src/modules/uvmath_rom.c"
 #line 231 "src/modules/uvmath_rom.c"

@@ -106,7 +106,7 @@ void __entrypoint_func_uvfvec_rom_400000(UvFVec_Rom_Exports* moduleExports) {
     #line 2
     sUvMathRomExports = uvLoadModule('MATH');
 }
-
+/* Unload the MATH module. The stored math-provider pointer is not cleared here.  * RE_UNKNOWN: loader reference ownership and outstanding vector operations must  * be coordinated by callers; this body performs no vector-storage cleanup. */
 void uvFvecModuleCleanup(void) {
     uvUnloadModule('MATH'); // Unload math module
 }

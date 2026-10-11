@@ -339,12 +339,19 @@ void __entrypoint_func_uvgfxmgr_rom_400000(UvGfxMgr_Exports *exports) {
     D_uvgfxmgr_rom_00402264 = 0;
 }
 
+/* Honor the existing pending-wait request, free the two stored callback pointers
+ * in their original order through CBCK, then unload CBCK.
+ * RE_ORIGINAL_QUIRK: neither pointer is checked, cleared or unlinked here.
+ * RE_UNKNOWN: list allocation ownership, pending callbacks and safe cleanup timing
+ * must follow the existing wait/callback-provider contracts. */
+#line 132 "src/modules/uvgfxmgr_rom.c"
 void uvGfxModuleCleanup(void) {
     uvGfxWaitIfRequested();
     sUvCbackExports->uvCallbackFree(D_uvgfxmgr_rom_00402620);
     sUvCbackExports->uvCallbackFree(D_uvgfxmgr_rom_00402624);
     uvUnloadModule('CBCK');
 }
+#line 138 "src/modules/uvgfxmgr_rom.c"
 
 /* Optionally rotate frame/display-list state, emit initial image commands and dispatch begin callbacks. */
 #line 139 "src/modules/uvgfxmgr_rom.c"

@@ -5,10 +5,14 @@ extern UvGfxMgr_Exports *gUvGfxMgrExports;
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/track2/__entrypoint_func_track2_400000.s")
 
 #line 7 "src/modules/track2.c"
-/* Apply the original white environment color with a blue component of 0.8. */
+/* Forward the fixed environment color (1, 1, 0.8, 1) to the graphics manager.
+ * RE_UNKNOWN: its scene role and graphics-provider lifetime remain unresolved;
+ * this wrapper changes no local state and performs no resource initialization. */
+#line 8 "src/modules/track2.c"
 void track2SetEnvironmentColor(void) {
     gUvGfxMgrExports->uvGfxSetEnvColorF(1.0f, 1.0f, 0.8f, 1.0f);
 }
+#line 11 "src/modules/track2.c"
 #line 8 "src/modules/track2.c"
 
 #line 9 "src/modules/track2.c"

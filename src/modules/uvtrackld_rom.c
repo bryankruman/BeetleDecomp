@@ -10,12 +10,18 @@ void __entrypoint_func_uvtrackld_rom_400000(UvTrackLd_Exports *exports);
 
 s32 D_uvtrackld_rom_00400220[] = { 0x000C0000, __entrypoint_func_uvtrackld_rom_400000, 0, 0 };
 
+/* Publish track parse, reserved-callback and parsed-track release exports after
+ * the allocation hook. This entrypoint allocates or parses no track resource.
+ * RE_UNKNOWN: export storage, track format and parse/release ownership remain
+ * loader/caller contracts; retain the reserved callback rather than guessing a role. */
+#line 13 "src/modules/uvtrackld_rom.c"
 void __entrypoint_func_uvtrackld_rom_400000(UvTrackLd_Exports *exports) {
     uvUpdateFileAllocPtr(exports);
     exports->uvParseUVTT = uvParseUVTT;
     exports->uvTrackLoaderReservedCallback = uvTrackLoaderReservedCallback;
     exports->uvParseFreeUVTT = uvParseFreeUVTT;
 }
+#line 19 "src/modules/uvtrackld_rom.c"
 
 #line 20 "src/modules/uvtrackld_rom.c"
 /* Original empty track-loader callback; retain its entry point. */

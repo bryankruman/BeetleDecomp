@@ -9,12 +9,18 @@ void uvFontLoaderCleanup(void);
 ParsedUVFT* uvFontLoadResource(u8* data);
 void uvFontFreeResource(ParsedUVFT* arg0);
 
+/* Publish font load, module-cleanup and font-release exports after the allocation
+ * hook. This body does not load a font or clear existing font resources.
+ * RE_UNKNOWN: export storage, font ownership and repeated initialization must be
+ * established by the loader and resource callers. */
+#line 12 "src/modules/uvfontld_rom.c"
 void __entrypoint_func_uvfontld_rom_400000(UvFontLd_Exports *exports) {
     uvUpdateFileAllocPtr(exports);
     exports->uvFontLoadResource = uvFontLoadResource;
     exports->uvFontLoaderCleanup = uvFontLoaderCleanup;
     exports->uvFontFreeResource = uvFontFreeResource;
 }
+#line 18 "src/modules/uvfontld_rom.c"
 
 #line 19 "src/modules/uvfontld_rom.c"
 /* Original empty loader cleanup hook; resource release is performed

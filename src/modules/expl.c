@@ -21,7 +21,11 @@ extern s32 gNumPlayers;
 s32 B_expl_004004B0[2]; // unreferenced padding
 UnkStruct_expl_004004B8 D_expl_004004B8[20];
 s32 D_expl_00400648[2];
-
+/* After updating the allocation pointer, publish four effect callbacks and load
+ * UVPX file 3. Set the first word of each of 20 records to -1, then initialize
+ * the shared sound handle.
+ * RE_UNKNOWN: file ownership and repeated initialization need loader/callers. */
+#line 25 "src/modules/expl.c"
 void __entrypoint_func_expl_400000(Expl_Exports* exports) {
     s32 i;
 

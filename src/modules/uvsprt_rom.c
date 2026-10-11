@@ -173,9 +173,14 @@ void uvSpriteClearStateBytes(s32 spriteId) {
 }
 #line 160 "src/modules/uvsprt_rom.c"
 
+/* Unload GMGR without clearing the stored provider pointer or freeing sprite
+ * records in this body. RE_UNKNOWN: module reference ownership, outstanding
+ * callbacks and repeated cleanup remain caller/loader lifecycle obligations. */
+#line 161 "src/modules/uvsprt_rom.c"
 void uvSprtModuleCleanup(void) {
     uvUnloadModule('GMGR');
 }
+#line 164 "src/modules/uvsprt_rom.c"
 
 void __entrypoint_func_uvsprt_rom_400298(UvSprt_Rom_Exports* exports) {
     s32 *configuredCount;
@@ -360,19 +365,31 @@ void uvSpriteSetBlit(uvSprite_t *spriteRecord, s32 bitmapResourceId) {
     }
 }
 
+/* Return zero when spriteId is at least the configured count; otherwise return
+ * the signed width halfword from the 0x54-stride sprite record. Negative
+ * indices remain unchecked. RE_UNKNOWN: sprite storage lifetime, count
+ * consistency and nonnegative indices require callers and pool initialization. */
+#line 329 "src/modules/uvsprt_rom.c"
 s16 uvGetSpriteWidth(s32 spriteId) {
     if (spriteId >= sMaxSprites) {
         return 0;
     }
     return sSprites[spriteId].sprite.width;
 }
+#line 335 "src/modules/uvsprt_rom.c"
 
+/* Return zero when spriteId is at least the configured count; otherwise return
+ * the signed height halfword from the 0x54-stride sprite record. Negative
+ * indices remain unchecked. RE_UNKNOWN: sprite storage lifetime, count
+ * consistency and nonnegative indices require callers and pool initialization. */
+#line 336 "src/modules/uvsprt_rom.c"
 s16 uvGetSpriteHeight(s32 spriteId) {
     if (spriteId >= sMaxSprites) {
         return 0;
     }
     return sSprites[spriteId].sprite.height;
 }
+#line 342 "src/modules/uvsprt_rom.c"
 
 /*
  * Consume sprite property codes through code zero. Set dimensions/scales,

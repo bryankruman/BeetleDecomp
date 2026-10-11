@@ -366,44 +366,67 @@ void func_pause_00400C6C(void) {
 #line 232 "src/modules/pause.c"
 #line 232 "src/modules/pause.c"
 
-/* Store (signed shared halfword D_80025D76 == 0) through REPLAY export 0x0C, the low-byte setter for D_replay_00401B7C. RE_UNKNOWN: both shared values' gameplay meaning and lifetime require original writers/readers and callback caller/domain evidence. */
+/* Pass the signed shared-halfword zero test to REPLAY slot +0x0C, whose
+ * provider stores the low byte. RE_UNKNOWN: the meanings and lifetimes of both
+ * shared values require their writers/readers and the original callback
+ * domain. */
+#line 234 "src/modules/pause.c"
 void pauseStoreSharedZeroTestInReplayByte(void) {
     gReplayExports->setSharedByte(D_80025D76 == 0);
 }
+#line 237 "src/modules/pause.c"
 #line 236 "src/modules/pause.c"
 #line 235 "src/modules/pause.c"
 
 #line 233 "src/modules/pause.c"
-/* Ask for confirmation before restarting the current race.
- * Save the previous menu for Back and initially select the second choice (No). */
+/* Publish fixed node D_pause_00405618 as current, link its +4 field to the
+ * previous node, then set the halfword at its payload+4 to one. Preserve this
+ * store order and inherited node reuse.
+ * RE_UNKNOWN: the retained name pauseOpenRestartConfirmation does not alone
+ * prove the screen's role. Payload flag meaning and node/payload lifetime need
+ * menu consumers; null and nesting checks are absent. */
+#line 235 "src/modules/pause.c"
 void pauseOpenRestartConfirmation(void) {
     MenuNode *previous = D_pause_00405E50;
     D_pause_00405E50 = &D_pause_00405618;
     D_pause_00405E50->unk4 = previous;
     *(s16 *)((u8 *)D_pause_00405E50->unk8 + 4) = 1;
 }
+#line 241 "src/modules/pause.c"
 #line 234 "src/modules/pause.c"
 
 #line 235 "src/modules/pause.c"
-/* Ask for confirmation before trying again with a continue.
- * Save the previous menu for Back and initially select the second choice (No). */
+/* Publish fixed node D_pause_00405AA0 as current, link its +4 field to the
+ * previous node, then set the halfword at its payload+4 to one. Preserve this
+ * store order and inherited node reuse.
+ * RE_UNKNOWN: the retained name pauseOpenContinueConfirmation does not alone
+ * prove the screen's role. Payload flag meaning and node/payload lifetime need
+ * menu consumers; null and nesting checks are absent. */
+#line 237 "src/modules/pause.c"
 void pauseOpenContinueConfirmation(void) {
     MenuNode *previous = D_pause_00405E50;
     D_pause_00405E50 = &D_pause_00405AA0;
     D_pause_00405E50->unk4 = previous;
     *(s16 *)((u8 *)D_pause_00405E50->unk8 + 4) = 1;
 }
+#line 243 "src/modules/pause.c"
 #line 236 "src/modules/pause.c"
 
 #line 237 "src/modules/pause.c"
-/* Ask for confirmation before quitting the game.
- * Save the previous menu for Back and initially select the second choice (No). */
+/* Publish fixed node D_pause_004055BC as current, link its +4 field to the
+ * previous node, then set the halfword at its payload+4 to one. Preserve this
+ * store order and inherited node reuse.
+ * RE_UNKNOWN: the retained name pauseOpenQuitConfirmation does not alone
+ * prove the screen's role. Payload flag meaning and node/payload lifetime need
+ * menu consumers; null and nesting checks are absent. */
+#line 239 "src/modules/pause.c"
 void pauseOpenQuitConfirmation(void) {
     MenuNode *previous = D_pause_00405E50;
     D_pause_00405E50 = &D_pause_004055BC;
     D_pause_00405E50->unk4 = previous;
     *(s16 *)((u8 *)D_pause_00405E50->unk8 + 4) = 1;
 }
+#line 245 "src/modules/pause.c"
 #line 238 "src/modules/pause.c"
 
 #line 239 "src/modules/pause.c"
@@ -619,14 +642,20 @@ void pauseCopyOptionsToSaveData(void) {
 #line 345 "src/modules/pause.c"
 
 #line 346 "src/modules/pause.c"
-/* Ask for confirmation before choosing a new track.
- * Save the previous menu for Back and initially select the second choice (No). */
+/* Publish fixed node D_pause_00405950 as current, link its +4 field to the
+ * previous node, then set the halfword at its payload+4 to one. Preserve this
+ * store order and inherited node reuse.
+ * RE_UNKNOWN: the retained name pauseOpenNewTrackConfirmation does not alone
+ * prove the screen's role. Payload flag meaning and node/payload lifetime need
+ * menu consumers; null and nesting checks are absent. */
+#line 348 "src/modules/pause.c"
 void pauseOpenNewTrackConfirmation(void) {
     MenuNode *previous = D_pause_00405E50;
     D_pause_00405E50 = &D_pause_00405950;
     D_pause_00405E50->unk4 = previous;
     *(s16 *)((u8 *)D_pause_00405E50->unk8 + 4) = 1;
 }
+#line 354 "src/modules/pause.c"
 #line 347 "src/modules/pause.c"
 
 #line 348 "src/modules/pause.c"

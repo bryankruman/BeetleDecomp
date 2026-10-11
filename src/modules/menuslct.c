@@ -312,8 +312,11 @@ void menuslctDrawGradientRectangle(s32 firstX, s32 firstY, s32 secondX, s32 seco
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/menuslct/func_menuslct_004010C4.s")
 
 #line 90 "src/modules/menuslct.c"
-/* Draw a black, opaque label centered at X=159 above the menu's bottom edge.
- * Font metrics determine the horizontal center and baseline. */
+/* Select opaque black and font zero, measure the label, then queue it at
+ * (159-width/2,218-height) in that call order. Font state is not restored.
+ * RE_UNKNOWN: font availability and label storage/lifetime need callers; the
+ * print provider can write a truncation terminator into a long label. */
+#line 92 "src/modules/menuslct.c"
 void menuslctDrawBottomLabel(s8 *label) {
     s32 height;
     s32 width;
@@ -324,6 +327,7 @@ void menuslctDrawBottomLabel(s8 *label) {
     height = gUvFontExports->uvFontHeight();
     gUvFontExports->uvFontPrintStr(159 - (width / 2), 218 - height, label);
 }
+#line 102 "src/modules/menuslct.c"
 #line 91 "src/modules/menuslct.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/menuslct/func_menuslct_0040126C.s")

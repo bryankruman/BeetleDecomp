@@ -296,14 +296,18 @@ void func_misc_00400390(void) {
 #line 138 "src/modules/misc.c"
 
 #line 96 "src/modules/misc.c"
-/* Busy-wait on clock zero until the double-precision seconds deadline.
- * Preserve the original clock calls and float-to-double delay arithmetic. */
+/* Spin until clock zero reaches its initial seconds value plus the requested
+ * delay, using the inherited double-precision deadline and repeated clock
+ * updates. RE_UNKNOWN: clock calibration and forward progress determine
+ * completion; there is no yield, timeout or input-domain guard. */
+#line 98 "src/modules/misc.c"
 void miscBusyWaitSeconds(f32 delay) {
     f64 deadline;
     deadline = uvClkGetSec(0) + delay;
     while (uvClkGetSec(0) < deadline) {
     }
 }
+#line 104 "src/modules/misc.c"
 #line 104 "src/modules/misc.c"
 
 // .rodata
@@ -522,7 +526,11 @@ void miscSphericalToCartesian(f32 radius, f32 azimuth, f32 elevation, f32* x, f3
 #line 280 "src/modules/misc.c"
 
 #line 281 "src/modules/misc.c"
-/* Return sine divided by cosine, preserving the original two-call order. */
+/* Call the math provider sine first and cosine second, then divide the two
+ * returned floats. RE_UNKNOWN: provider lifetime, argument domain and
+ * zero-cosine behavior require provider and caller contracts; no denominator
+ * check is added. */
+#line 282 "src/modules/misc.c"
 f32 miscTangent(f32 angle) {
     f32 cosine;
     f32 sine;
@@ -530,6 +538,7 @@ f32 miscTangent(f32 angle) {
     cosine = gUvMathExports->uvCosF(angle);
     return sine / cosine;
 }
+#line 289 "src/modules/misc.c"
 #line 288 "src/modules/misc.c"
 
 
@@ -661,8 +670,11 @@ void func_misc_00401078(void) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00401080.s")
 
 #line 395 "src/modules/misc.c"
-/* Report +1 when masked bits change from none to some, -1 from some to none,
- * and zero otherwise. Changes between two nonzero masked values count as zero. */
+/* Return +1 when any masked bit becomes nonzero from an all-zero masked value,
+ * -1 for the reverse, otherwise zero. This tests aggregate masked presence,
+ * not individual bit changes; a zero mask returns zero. RE_UNKNOWN: flag
+ * meanings and caller mask domains remain unspecified. */
+#line 397 "src/modules/misc.c"
 s32 miscGetMaskedFlagTransition(s32 previous, s32 current, s32 mask) {
     if ((current & mask) && !(previous & mask)) {
         return 1;
@@ -672,6 +684,7 @@ s32 miscGetMaskedFlagTransition(s32 previous, s32 current, s32 mask) {
     }
     return 0;
 }
+#line 406 "src/modules/misc.c"
 #line 404 "src/modules/misc.c"
 
 /* RE_UNKNOWN: valid blend-weight/input domains, matrix/quaternion frame convention and partial-overlap guarantees; trace original export callers and matrix/quaternion producers before changing interpolation or alias handling. */
@@ -706,8 +719,12 @@ void miscInterpolateTranslationAndQuaternionMatrix(Mtx4F* output, Mtx4F* first, 
 #line 407 "src/modules/misc.c"
 
 #line 408 "src/modules/misc.c"
-/* Clamp to the upper bound first, then the lower bound. Preserve this order
- * even when a caller supplies inverted bounds or non-finite values. */
+/* Compare against the upper argument first, then the lower argument, returning
+ * the original value if neither comparison succeeds. Preserve this
+ * upper-before-lower argument order and behavior for reversed bounds or
+ * unordered comparisons. RE_UNKNOWN: callers must establish the intended bound
+ * and floating-point domains. */
+#line 410 "src/modules/misc.c"
 f32 miscClampFloat(f32 value, f32 upper, f32 lower) {
     if (upper < value) {
         return upper;
@@ -717,6 +734,7 @@ f32 miscClampFloat(f32 value, f32 upper, f32 lower) {
     }
     return value;
 }
+#line 419 "src/modules/misc.c"
 #line 417 "src/modules/misc.c"
 
 #line 414 "src/modules/misc.c"
@@ -747,8 +765,12 @@ f32 miscFoldAngleDegrees(f32 angle) { /* Reduce by repeated 360-degree turns, th
 #line 415 "src/modules/misc.c"
 
 #line 416 "src/modules/misc.c"
-/* Wrap a degree angle into [-180, 180], preserving both endpoints and the
- * original repeated-add/subtract behavior. */
+/* Repeatedly subtract or add 360 to bring progressing values into the
+ * inclusive -180 to +180 interval, keeping the original subtraction loop
+ * before the addition loop. RE_UNKNOWN: finite/progress assumptions belong to
+ * callers; infinities or floats too large to change can loop forever, while
+ * NaN passes through the comparisons. */
+#line 418 "src/modules/misc.c"
 f32 miscWrapAngleDegrees(f32 angle) {
     f32 wrapped;
 
@@ -765,6 +787,7 @@ f32 miscWrapAngleDegrees(f32 angle) {
     }
     return wrapped;
 }
+#line 434 "src/modules/misc.c"
 #line 417 "src/modules/misc.c"
 
 #line 418 "src/modules/misc.c"
@@ -776,6 +799,11 @@ extern f32 D_misc_00404264;
 extern f32 D_misc_00404268;
 extern f32 D_misc_0040426C;
 
+/* Apply the two inherited loops using the original positive/negative pi and
+ * full-turn float words, with endpoints included. RE_UNKNOWN: callers must
+ * supply values for which repeated float addition or subtraction progresses;
+ * no nonfinite or magnitude guard is present. */
+#line 426 "src/modules/misc.c"
 f32 miscWrapAngleRadians(f32 angle) {
     f32 wrapped;
     f32 lowerBound;
@@ -796,6 +824,7 @@ f32 miscWrapAngleRadians(f32 angle) {
     }
     return wrapped;
 }
+#line 446 "src/modules/misc.c"
 #line 419 "src/modules/misc.c"
 
 #line 420 "src/modules/misc.c"
@@ -1064,13 +1093,18 @@ void miscBuildThreeAngleMatrix(Mtx4F *matrix, f32 firstAngle, f32 secondAngle, f
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00402528.s")
 
 #line 507 "src/modules/misc.c"
-/* Extract three direction angles from the original matrix components.
- * The shared angle helper and math library determine the original angle units. */
+/* Store three provider results in order: (-m10,m11), then
+ * (m12,sqrt(m10*m10+m11*m11)), then (-m02,m22). Preserve each store before
+ * subsequent matrix reads. RE_UNKNOWN: angle convention, provider lifetime and
+ * output/input aliasing guarantees need callers; the retained private provider
+ * is not replaced with a guessed atan2 contract. */
+#line 509 "src/modules/misc.c"
 void miscGetMatrixDirectionAngles(Mtx4F *matrix, f32 *first, f32 *second, f32 *third) {
     *first = func_misc_004016CC(-matrix->m[1][0], matrix->m[1][1]);
     *second = func_misc_004016CC(matrix->m[1][2], gUvMathExports->uvSqrtf(matrix->m[1][0] * matrix->m[1][0] + matrix->m[1][1] * matrix->m[1][1]));
     *third = func_misc_004016CC(-matrix->m[0][2], matrix->m[2][2]);
 }
+#line 514 "src/modules/misc.c"
 #line 508 "src/modules/misc.c"
 
 /* Publish segment length, signed factor and absolute projected distance using the original sixth integer input.
@@ -1232,14 +1266,18 @@ void miscAdjustDirectionAlongNormalPreservingScaledLength(Vec3F* vector, Vec3F* 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00402D48.s")
 
 #line 521 "src/modules/misc.c"
-/* Interpolate three components with the original complement, product and sum
- * order. The fraction is not clamped; callers may intentionally extrapolate. */
+/* Write three components in order as fraction*second + first*(1-fraction). Do
+ * not clamp the fraction or normalize the result. RE_UNKNOWN: all three spans
+ * must be valid, and overlapping output writes may change later input reads;
+ * caller alias and interpolation domains are unproven. */
+#line 523 "src/modules/misc.c"
 void miscVec3Interpolate(f32 *output, f32 *first, f32 *second, f32 fraction) {
     f32 complement = 1.0f - fraction;
     output[0] = fraction * second[0] + first[0] * complement;
     output[1] = fraction * second[1] + first[1] * complement;
     output[2] = fraction * second[2] + first[2] * complement;
 }
+#line 529 "src/modules/misc.c"
 #line 522 "src/modules/misc.c"
 
 /* Approach the target using the shared scale word and the original nonlinear distance cap.
@@ -1749,19 +1787,28 @@ s32 miscDrawPackedNibbleLine(u8* pixels, u8 color, s16 startX, s16 startY, s16 e
 #line 556 "src/modules/misc.c"
 
 #line 557 "src/modules/misc.c"
-/* Set the complete 32-bit seed used by the shared linear congruential generator. */
+/* Replace the shared generator word with the supplied seed bits; no validation
+ * or other state initialization occurs. RE_UNKNOWN: seed policy and
+ * synchronization between users of the shared state require callers. */
+#line 558 "src/modules/misc.c"
 void miscSeedRandomLcg(s32 seed) {
     D_misc_00404300 = seed;
 }
+#line 561 "src/modules/misc.c"
 #line 560 "src/modules/misc.c"
 
 #line 561 "src/modules/misc.c"
-/* Advance the original 32-bit linear congruential generator, select its upper
- * 15 bits and divide by the original float scale. Keep unsigned wrap/conversion. */
+/* Advance the shared word modulo 2^32 with multiplier 0x41C64E6D and increment
+ * 0x3039, extract bits 16..30 and divide by the original 32767.0f word. Both
+ * zero and one are possible outputs. RE_UNKNOWN: seeding, synchronization and
+ * statistical suitability are caller concerns; the native four-byte tail is
+ * not part of this body. */
+#line 563 "src/modules/misc.c"
 f32 miscRandomFloatLcg(void) {
     u32 sample;
     D_misc_00404300 = (u32)D_misc_00404300 * 0x41C64E6Du + 0x3039u;
     sample = ((u32)D_misc_00404300 >> 16) & 0x7FFFu;
     return sample / D_misc_004042F8;
 }
+#line 569 "src/modules/misc.c"
 #line 562 "src/modules/misc.c"

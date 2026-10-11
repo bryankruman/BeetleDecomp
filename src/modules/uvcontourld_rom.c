@@ -14,6 +14,11 @@ void uvContourLoaderReleaseParsedContour(ParsedUVCT *uvct);
 
 s32 D_uvcontourld_rom_00400C30[] = {0x000C0000, __entrypoint_func_uvcontourld_rom_400000, 0, 0};
 
+/* Publish contour parse, module-cleanup and parsed-resource release exports,
+ * then load and save LGHT. No contour is parsed or configuration reset here.
+ * RE_UNKNOWN: writable export storage, load failure and retained light-provider
+ * ownership remain loader/caller contracts. Preserve the conditional #line. */
+#line 17 "src/modules/uvcontourld_rom.c"
 void __entrypoint_func_uvcontourld_rom_400000(UvContourLd_Exports *exports) {
     uvUpdateFileAllocPtr(exports);
     exports->uvParseUVCT = uvParseUVCT;
@@ -24,6 +29,7 @@ void __entrypoint_func_uvcontourld_rom_400000(UvContourLd_Exports *exports) {
 #endif
     sLightsExport = uvLoadModule('LGHT');
 }
+#line 21 "src/modules/uvcontourld_rom.c"
 
 #line 22 "src/modules/uvcontourld_rom.c"
 /* Unload the contour loader's LGHT dependency.

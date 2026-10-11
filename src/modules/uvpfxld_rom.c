@@ -137,12 +137,17 @@ void uvPfxLoaderApplyHeaderConfiguration(PfxLoaderHeaderFields *header) {
 #line 26 "src/modules/uvpfxld_rom.c"
 
 #line 27 "src/modules/uvpfxld_rom.c"
-/* Copy 2*shared-count bytes to the pointer stored at loader+0x30 from the
- * supplied source. RE_UNKNOWN: count units, source/device address and destination
- * extent/alignment need original configuration/buffer producers and media-copy callers. */
+/* Copy sharedCount*2 bytes to the address stored at shared configuration offset
+ * 0x30. The reviewed header-configuration producer allocates the same count*2
+ * byte size; this wrapper independently reads the current shared count and pointer.
+ * RE_UNKNOWN: valid signed counts, overflow, capacity, producer-before-copy order
+ * and source/destination lifetime are unproved. Preserve the raw destination word
+ * and arithmetic; the historical word-buffer name does not establish element type. */
+#line 30 "src/modules/uvpfxld_rom.c"
 void uvPfxLoaderCopyIntoSharedWordBuffer(void *sourceWords) {
     _uvMediaCopy(*(s32 *)((u8 *)D_uvpfxld_rom_00400EE4 + 0x30), sourceWords, D_uvpfxld_rom_00400EC0 * 2);
 }
+#line 33 "src/modules/uvpfxld_rom.c"
 #line 30 "src/modules/uvpfxld_rom.c"
 
 #line 31 "src/modules/uvpfxld_rom.c"
