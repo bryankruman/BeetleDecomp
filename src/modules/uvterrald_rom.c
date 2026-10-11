@@ -44,67 +44,79 @@ s32 uvTerraLoaderParseCommonBlock(u8* fileData) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterrald_rom/func_uvterrald_rom_00400120.s")
 
-void func_uvterrald_rom_004008C8(ParsedUVTR *arg0) {
-    s32 temp_lo;
+/*
+ * Use the two byte-sized grid dimensions to visit the terrain tile array.
+ * When field 0x2C is nonzero, free each non-NULL tile configuration's two
+ * child-allocation lists using its halfword counts. In a separate pass unload
+ * UVCT for every non-NULL tile configuration, then free the grid and root.
+ * RE_ORIGINAL_QUIRK: Preserve the redundant tile-pointer NULL test, repeated
+ * configuration loads, do/while continue increments and inherited if(1) shim.
+ * The two child-list passes are skipped entirely when field 0x2C is zero.
+ * RE_UNKNOWN: Grid/count extents, shared child allocations, UVCT reference
+ * ownership and repeated cleanup are unchecked caller/loader obligations.
+ */
+#line 39 "src/modules/uvterrald_rom.c"
+void func_uvterrald_rom_004008C8(ParsedUVTR *terrainRecord) {
+    s32 tileCount;
     s32 j;
     s32 i;
-    s32 temp_s1;
-    s32 temp_s4;
+    s32 firstChildCount;
+    s32 secondChildCount;
     void *temp_a0;
-    uvUnkTileStruct *temp_s2;
-    ParsedUVCT *temp_v0;
-    uvUnkTileStruct *temp_v0_2;
-    ParsedUVTR* s6 = arg0;
+    uvUnkTileStruct *tile;
+    ParsedUVCT *tileConfig;
+    uvUnkTileStruct *tileToUnload;
+    ParsedUVTR* terrain = terrainRecord;
 
-    temp_lo = s6->unk18 * s6->unk19;
-    if (s6->unk2C != 0) {
+    tileCount = terrain->unk18 * terrain->unk19;
+    if (terrain->unk2C != 0) {
         i = 0;
-        if (temp_lo > 0) {
+        if (tileCount > 0) {
             do {
-                temp_v0 = s6->unk28[i].unk40;
-                temp_s2 = s6->unk28 + i;
-                if (temp_v0 == NULL) {
+                tileConfig = terrain->unk28[i].unk40;
+                tile = terrain->unk28 + i;
+                if (tileConfig == NULL) {
                     continue;
                 }
 
-                temp_s4 = temp_v0->unk14;
-                if (temp_s2 == NULL) {
+                secondChildCount = tileConfig->unk14;
+                if (tile == NULL) {
                     continue;
                 }
 
                 j = 0;
-                temp_s1 = temp_v0->unkC;
-                if (temp_s1 > 0) {
+                firstChildCount = tileConfig->unkC;
+                if (firstChildCount > 0) {
                     do {
-                        Unk80225FBC_0x28* v0 = &temp_s2->unk40->unk8[j];
+                        Unk80225FBC_0x28* v0 = &tile->unk40->unk8[j];
                         _uvMemFree(v0->unk38);
-                    } while (++j != temp_s1);
+                    } while (++j != firstChildCount);
                 }
 
                 j = 0;
-                if (temp_s4 > 0) {
+                if (secondChildCount > 0) {
                     do {
-                        struct UnkSobjDraw* v0 = &temp_s2->unk40->unk10[j];
+                        struct UnkSobjDraw* v0 = &tile->unk40->unk10[j];
                         _uvMemFree(v0->unk48);
-                    } while (++j != temp_s4);
+                    } while (++j != secondChildCount);
                 }
-            } while (++i != temp_lo);
+            } while (++i != tileCount);
         }
     }
 
     i = 0;
-    if (temp_lo > 0) {
+    if (tileCount > 0) {
         do {
-            temp_v0_2 = &s6->unk28[i];
-            if (temp_v0_2->unk40 != 0) {
+            tileToUnload = &terrain->unk28[i];
+            if (tileToUnload->unk40 != 0) {
                 // FAKE
                 if (1) {
-                    uvUnloadFile('UVCT', temp_v0_2->unk44);
+                    uvUnloadFile('UVCT', tileToUnload->unk44);
                 }
             }
-        } while (++i != temp_lo);
+        } while (++i != tileCount);
     }
 
-    _uvMemFree(s6->unk28);
-    _uvMemFree(arg0);
+    _uvMemFree(terrain->unk28);
+    _uvMemFree(terrainRecord);
 }

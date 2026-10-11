@@ -18,6 +18,17 @@ s32 D_logo_004002E0[2]; //padding?
 s32 D_logo_004002E8[2];
 s32 D_logo_004002D0[] = {0x01000000, 0x000C0000, __entrypoint_func_logo_400000, 0};
 
+/*
+ * Install the three logo exports, allocate one sprite and clear its companion
+ * word. Load UVBT 40, configure the sprite with the original property list,
+ * append a viewport from zero to current screen width/height, reset the
+ * GameGUI mode/handler and send screen property 0 with a NULL argument.
+ * RE_ORIGINAL_QUIRK: Keep the unused render export and empty cleanup provider;
+ * this initializer does not check resource/sprite allocation or import results.
+ * RE_UNKNOWN: Property-list meanings beyond the existing provider contract,
+ * handler lifetime, viewport capacity and resource release require callers.
+ */
+#line 21 "src/modules/logo.c"
 void __entrypoint_func_logo_400000(Logo_Exports* exports) {
     uvUpdateFileAllocPtr(exports);
 

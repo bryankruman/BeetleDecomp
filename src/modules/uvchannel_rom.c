@@ -66,6 +66,17 @@ static UvGfxState_Rom_Exports *sUvGfxStateExports;
 static UvDGeom_Rom_Exports *sUvDGeomExports;
 static UvGeom_Exports *sUvGeomExports;
 
+/*
+ * Install the twelve channel exports and load the eight render/math providers.
+ * Read system property 11 as the channel count, default to four when absent,
+ * allocate and zero the channel array, then clear the shared channel word.
+ * RE_ORIGINAL_QUIRK: The signed caller-supplied count is multiplied by the
+ * current 0x228-byte record size with no local range or overflow check.
+ * RE_UNKNOWN: Allocation/import success, repeat initialization, array lifetime
+ * and the inferred channel-record layout require the system and consumers.
+ * Preserve the existing conditional compiler line directive inside the body.
+ */
+#line 69 "src/modules/uvchannel_rom.c"
 void __entrypoint_func_uvchannel_rom_400000(UvChannel_Exports *exports) {
     s32 *channelCount;
 

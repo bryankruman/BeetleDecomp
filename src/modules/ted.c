@@ -982,6 +982,16 @@ void tedResetRecord(TedResetRecord *record) {
 /* Restore the nested GUI state's original defaults and request a centered
  * 180-by-40 rectangle. Preserve all four original screen-size queries and
  * signed half-coordinate conversions rather than replacing them with shifts. */
+/*
+ * For a non-NULL GUI state, reset the original flags/scalars, then request a
+ * centered 180-by-40 rectangle from the GUI provider and clear field 0x40.
+ * RE_ORIGINAL_QUIRK: Query screen width twice and height twice in that order.
+ * The left, right and top bounds are narrowed to signed halfwords; the bottom
+ * argument remains a signed word. Preserve integer division and all casts.
+ * RE_UNKNOWN: State-field meanings, live screen-query stability and provider
+ * ownership/layout obligations are not established by this reset wrapper.
+ */
+#line 215 "src/modules/ted.c"
 void tedResetGuiState(TedGuiState *state) {
     s32 screenHeightForBottom;
     s32 screenHeightForTop;

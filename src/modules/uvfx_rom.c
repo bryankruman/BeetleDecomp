@@ -75,8 +75,19 @@ static UvIntersect_Exports *sUvIntersectExports;
 static UnkTerraExports *sUvTerraExports;
 
 
+/*
+ * Install seven effect exports, load eleven providers and clear field 0x8E
+ * in each of the ten effect records. Register uvFxResetFrameCaches on graphics
+ * callback list 1 with both user arguments zero, then clear the shared byte.
+ * RE_ORIGINAL_QUIRK: Initialization clears only that per-slot byte and the
+ * shared byte; the remaining record fields retain their prior contents.
+ * RE_UNKNOWN: Import failure, duplicate registration, callback scheduling and
+ * slot ownership/lifetime require the manager and cleanup providers.
+ * Preserve the original conditional compiler directive and loop scaffolding.
+ */
+#line 78 "src/modules/uvfx_rom.c"
 void __entrypoint_func_uvfx_rom_400000(UvFx_Exports* exports) {
-    s32 i;
+    s32 effectIndex;
 
     uvUpdateFileAllocPtr(exports);
     exports->uvFxModel = uvFxModel;
@@ -101,7 +112,7 @@ void __entrypoint_func_uvfx_rom_400000(UvFx_Exports* exports) {
     sUvTextureSequenceExports = uvLoadModule('TSEQ');
     sUvTerraExports = uvLoadModule('TERR');
     // clang-format off
-    for (i = 0; i < FX_COUNT; i++) { D_uvfx_rom_00401120[i].unk8E = 0; }
+    for (effectIndex = 0; effectIndex < FX_COUNT; effectIndex++) { D_uvfx_rom_00401120[effectIndex].unk8E = 0; }
     // clang-format on
     
     sUvCbackExports->uvAddCallback(sUvGfxMgrExports->uvGfxGetCallbackList(1), uvFxResetFrameCaches, 0, 0);
@@ -432,50 +443,63 @@ void uvFxUpdateAndQueueVisible(s32 channel) {
 }
 #line 384 "src/modules/uvfx_rom.c"
 
-void func_uvfx_rom_00400E90(s32 arg0, UnkStruct_uvfx_rom_00401120 *arg1) {
-    f32 temp_fv1;
-    f32 temp_fa1;
-    f32 temp_fv0;
-    f32 var_fa0;
+/*
+ * Push graphics state, apply the existing state masks and fetch channel
+ * property 3 into a matrix. Kind 2 replaces the effect linear matrix using its
+ * XY displacement from the channel; zero length uses reciprocal factor one.
+ * Kind 3 copies the channel linear 3x3. Subtypes 6/7 draw the textured quad
+ * using the effect array index; all paths then pop graphics state.
+ * RE_ORIGINAL_QUIRK: The inherited FAKE increment/decrement reads an
+ * uninitialized float local. Preserve that compiler scaffold without treating
+ * it as an effect-state operation or repairing the source expression.
+ * RE_UNKNOWN: Kind/subtype domain, array membership, finite coordinates and
+ * property output initialization are provider/caller contracts.
+ */
+#line 385 "src/modules/uvfx_rom.c"
+void func_uvfx_rom_00400E90(s32 channelId, UnkStruct_uvfx_rom_00401120 *effectRecord) {
+    f32 deltaX;
+    f32 deltaY;
+    f32 distanceXY;
+    f32 inverseDistanceXY;
     f32 temp;
     s32 pad;
-    Mtx4F sp28;
+    Mtx4F channelMatrix;
 
     sUvGfxStateExports->uvGfxStatePush();
     sUvGfxStateExports->uvGfxStateSetFlags(0x04E20FFF);
     sUvGfxStateExports->uvGfxClearCurrentStateBits(0x9B1C0000);
-    sUvChannel_Exports->uvChannelGetProperties(arg0, 3, &sp28, 0);
-    if (arg1->unk0 == 2) {
-        temp_fv1 = arg1->unk48.m[3][0] - sp28.m[3][0];
-        temp_fa1 = arg1->unk48.m[3][1] - sp28.m[3][1];
-        temp_fv0 = sUvMathExports->uvSqrtf(SQ(temp_fv1) + SQ(temp_fa1));
-        if (temp_fv0 != 0.0f) {
-            var_fa0 = 1.0f / temp_fv0;
+    sUvChannel_Exports->uvChannelGetProperties(channelId, 3, &channelMatrix, 0);
+    if (effectRecord->unk0 == 2) {
+        deltaX = effectRecord->unk48.m[3][0] - channelMatrix.m[3][0];
+        deltaY = effectRecord->unk48.m[3][1] - channelMatrix.m[3][1];
+        distanceXY = sUvMathExports->uvSqrtf(SQ(deltaX) + SQ(deltaY));
+        if (distanceXY != 0.0f) {
+            inverseDistanceXY = 1.0f / distanceXY;
         } else {
-            var_fa0 = 1.0f;
+            inverseDistanceXY = 1.0f;
         }
-        temp_fa1 *= var_fa0;
-        temp_fv1 *= var_fa0;
+        deltaY *= inverseDistanceXY;
+        deltaX *= inverseDistanceXY;
 
         // FAKE
         temp++;
         temp--;
 
-        arg1->unk48.m[0][0] = -temp_fa1;
-        arg1->unk48.m[0][1] = temp_fv1;
-        arg1->unk48.m[0][2] = 0.0f;
-        arg1->unk48.m[1][0] = temp_fv1;
-        arg1->unk48.m[1][1] = temp_fa1;
-        arg1->unk48.m[1][2] = 0.0f;
-        arg1->unk48.m[2][0] = 0.0f;
-        arg1->unk48.m[2][1] = 0.0f;
-        arg1->unk48.m[2][2] = 1.0f;
-    } else if (arg1->unk0 == 3) {
-        sUvFMtxExports->uvMat4CopyLinear3x3(&arg1->unk48, &sp28);
+        effectRecord->unk48.m[0][0] = -deltaY;
+        effectRecord->unk48.m[0][1] = deltaX;
+        effectRecord->unk48.m[0][2] = 0.0f;
+        effectRecord->unk48.m[1][0] = deltaX;
+        effectRecord->unk48.m[1][1] = deltaY;
+        effectRecord->unk48.m[1][2] = 0.0f;
+        effectRecord->unk48.m[2][0] = 0.0f;
+        effectRecord->unk48.m[2][1] = 0.0f;
+        effectRecord->unk48.m[2][2] = 1.0f;
+    } else if (effectRecord->unk0 == 3) {
+        sUvFMtxExports->uvMat4CopyLinear3x3(&effectRecord->unk48, &channelMatrix);
     }
 
-    if ((arg1->unk1 == 6) || (arg1->unk1 == 7)) {
-        uvFxDrawTexturedQuad(arg1 - D_uvfx_rom_00401120);
+    if ((effectRecord->unk1 == 6) || (effectRecord->unk1 == 7)) {
+        uvFxDrawTexturedQuad(effectRecord - D_uvfx_rom_00401120);
     }
     sUvGfxStateExports->uvGfxStatePop();
 }

@@ -3457,10 +3457,19 @@ Totals: 437 further recoveries after the 225 upstream ordinary imports, plus 175
 Frozen wave `5002-sparks-graphics-native-contracts` and `accepted-sparks-graphics-native-contracts-5002` verify real translation-unit instructions/full relocations, 8 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 438 further readable functions
+## Historical accepted checkpoint — 438 further readable functions
 
 Recover344-byte TRIGANIM dynamic-attachment function and clarify13 existing resource-loader functions2244B. TRIGANIM final TU is literal retained actual compile; closed undefined HI/LO pairs replay native operands while raw ELF record identity remains explicitly false. Preserve actual source/header/caller context and all1954 prior assessments,140 SDK intervals and83 historical attempts. Loader561 native words/76 current ordered records and native/reference association are exact; all13 original/current raw hashes equal. No readonly, aliases, ABI or storage migration. Require fresh entire original packed modules including complete RELA, full original ROM, whole-ledger and current Git/source proofs.
 
 Totals: 438 further recoveries after the 225 upstream ordinary imports, plus 1770 existing C semantic cleanups. Current ledger: 762 assembly references = 723 ordinary + 39 entrypoints; 700,796 known remaining instruction bytes; zero unknown sizes; 287 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `5132-resource-loader-triganim-native-contracts` and `accepted-resource-loader-triganim-native-contracts-5132` verify real translation-unit instructions/full relocations, 7 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 438 further readable functions
+
+Clarify ten existing functions5032B across nine UI/render owners with native-grounded local roles and wrapped readable contracts. Preserve inferred provider types, uninitialized FAKE float scaffold, exact count/allocation/query and resource-lifetime quirks. No ABI, expression, storage or global-name changes. Actual1258 native words, all complete current ordered records/site associations and warning/logical-coordinate proof required. Original terrain12B and TED8B tail padding excluded. Preserve every actual prior ordinary record,140 typed SDK intervals and83 historical attempts. Require fresh whole original packed/native, original ROM, whole-ledger and Git/source proofs.
+
+Totals: 438 further recoveries after the 225 upstream ordinary imports, plus 1780 existing C semantic cleanups. Current ledger: 762 assembly references = 723 ordinary + 39 entrypoints; 700,796 known remaining instruction bytes; zero unknown sizes; 287 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `5154-larger-ui-render-native-contracts` and `accepted-larger-ui-render-native-contracts-5154` verify real translation-unit instructions/full relocations, 9 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

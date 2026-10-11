@@ -168,17 +168,31 @@ extern UnkStruct_intro_004009C0 D_intro_004009C0;
 extern UnkStruct_80025C84* gSceneExports;
 
 // init "intro" game state
-void __entrypoint_func_intro_400000(Intro_Exports *arg0) {
+/*
+ * Install the three intro exports, save the AI-car count and both 36-byte
+ * player settings records plus their companion words, then install the intro
+ * defaults. Load player/motion providers, obtain the car-audio provider and
+ * configure player zero, screen property 6 and the two intro bitmap sprites.
+ * Center both sprites using the first sprite width, register model/UI hooks,
+ * initialize replay state when recording is disabled, reset clock 1 and set
+ * the selected music after stopping the MIDI sequence.
+ * RE_ORIGINAL_QUIRK: finishedIntroCount indexes every resource/settings table
+ * without a bounds check. The screen pointer passes through an s32 local.
+ * RE_UNKNOWN: Provider field meanings, import/allocation failure, initialization
+ * order and restoration/resource lifetime require their callers and owners.
+ */
+#line 171 "src/modules/intro.c"
+void __entrypoint_func_intro_400000(Intro_Exports *exports) {
     s32 pad[3];
-    s32 sp70;
-    s32 temp_a2;
+    s32 screenBindingWord;
+    s32 spriteLeft;
     s32 i;
     s32 j;
 
-    uvUpdateFileAllocPtr(arg0);
-    arg0->introRestoreSavedRaceSettings = introRestoreSavedRaceSettings;
-    arg0->introUpdatePlaybackAndAdvanceTrack = &introUpdatePlaybackAndAdvanceTrack;
-    arg0->introRenderEnabledSpritePair = introRenderEnabledSpritePair;
+    uvUpdateFileAllocPtr(exports);
+    exports->introRestoreSavedRaceSettings = introRestoreSavedRaceSettings;
+    exports->introUpdatePlaybackAndAdvanceTrack = &introUpdatePlaybackAndAdvanceTrack;
+    exports->introRenderEnabledSpritePair = introRenderEnabledSpritePair;
 
     D_intro_00400A90.unk4  = gGameSettings->numAiCars;
     gGameSettings->numAiCars = 0;
@@ -195,8 +209,8 @@ void __entrypoint_func_intro_400000(Intro_Exports *arg0) {
         gUvDynExports->unk128(gGameSettings->unkPtr90, 0, 1.0f);
     }
     D_intro_00400A90.unk0 = D_intro_00400A84->unk4(0);
-    sp70 = D_intro_00400A90.unk0->unkC;
-    gScrnExports->unk4(6, &sp70);
+    screenBindingWord = D_intro_00400A90.unk0->unkC;
+    gScrnExports->unk4(6, &screenBindingWord);
     D_intro_00400A90.unk0->unkC->unk140 = 3;
     D_intro_00400A90.unk0->unk4->unk408 = D_intro_00400A04[gGameSettings->finishedIntroCount];
     D_intro_00400A90.unk0->unk4->unk404 = D_intro_00400A0C[gGameSettings->finishedIntroCount];
@@ -214,9 +228,9 @@ void __entrypoint_func_intro_400000(Intro_Exports *arg0) {
         gUvSprtExports->uvSprtProps(D_intro_00400A90.unk8[i], 9, D_intro_00400A20[gGameSettings->finishedIntroCount][i], 3, 1, 0xB, 1, 0xC, 0, 6, 0, 0);
     }
 
-    temp_a2 = 0xA0 - (gUvSprtExports->uvGetSpriteWidth(D_intro_00400A90.unk8[0]) / 2); // This broke the entire function lol
-    gUvSprtExports->uvSprtProps(D_intro_00400A90.unk8[0], 2, temp_a2, 0x64, 0);
-    gUvSprtExports->uvSprtProps(D_intro_00400A90.unk8[1], 2, temp_a2, 0x64, 0);
+    spriteLeft = 0xA0 - (gUvSprtExports->uvGetSpriteWidth(D_intro_00400A90.unk8[0]) / 2); // This broke the entire function lol
+    gUvSprtExports->uvSprtProps(D_intro_00400A90.unk8[0], 2, spriteLeft, 0x64, 0);
+    gUvSprtExports->uvSprtProps(D_intro_00400A90.unk8[1], 2, spriteLeft, 0x64, 0);
     uvLoadFile('UVMD', 0x116);
     gUvModelExports->unk4C(0x116, introForwardEventValue);
     gGameGuiExports->unk1C((s32) introCreateReplayDebugPanel);

@@ -2036,6 +2036,17 @@ void func_selection_00406114(void) {
  * has no local node/position/provider null tests or allocation checks.
  * Reachable fault domains remain unproved; no runtime fix is claimed. */
 #line 1106 "src/modules/selection.c"
+/*
+ * Subtract 0.5 from the shared angle and add 360 once if it becomes negative.
+ * Build an identity matrix, apply the fixed X rotation and angle-scaled Z
+ * rotation, then assign it to object matrix slot zero. Read the signed
+ * halfword pair through field 0x0C and forward it to the arrow helper with zero.
+ * RE_ORIGINAL_QUIRK: Keep the otherwise-unused 24-byte record copy, single
+ * wrap test, original scale constant and private matrix-provider casts.
+ * RE_UNKNOWN: Object/position lifetime, angle range and the inferred private
+ * provider layout require the selection owners; this is not general wrapping.
+ */
+#line 1106 "src/modules/selection.c"
 void selectionUpdateSharedObjectMatrixAndArrows(void) {
     Mtx4F matrix;
     SelectionCopiedWords24 copiedWords = D_selection_00421470;

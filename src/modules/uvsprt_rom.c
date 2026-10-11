@@ -282,6 +282,17 @@ void uvSpriteRender(s32 arg0) {
     }
 }
 
+/*
+ * Find the loaded UVBT resource or load it; leave the sprite unchanged if both
+ * attempts fail. On success copy bitmap geometry/format, map bit depths
+ * 4/8/16/32 to size codes 0/1/2/3, choose the existing texture-shuffle attribute
+ * for RGBA16 or IA/I, then reset color, depth, scale and lookup-table fields.
+ * RE_ORIGINAL_QUIRK: Keep the duplicate bitmap store. Other bit depths retain
+ * the old size code, and unsupported formats retain the old attributes.
+ * RE_UNKNOWN: Asset dimensions/extents, display-list capacity, borrowed bitmap
+ * lifetime and resource aliasing require the asset/provider and render paths.
+ */
+#line 262 "src/modules/uvsprt_rom.c"
 void uvSpriteSetBlit(uvSprite_t *spriteRecord, s32 bitmapResourceId) {
     ParsedUVBT *bitmapConfig;
     Sprite *spriteState = &spriteRecord->sprite;

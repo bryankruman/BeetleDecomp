@@ -29,22 +29,33 @@ s32 B_ripple_00400740[2]; // unreferenced padding
 Ripple sRipples[MAX_RIPPLE];
 s32 sActiveRippleCount;
 
+/*
+ * Draw one XY quad at Z zero using the shared inverse-translation matrix and
+ * a pushed view matrix. Convert fade times 255 and size product times 100 to
+ * integers, emit four white vertices with texture coordinates +/-1024, then
+ * end the polygon and pop the view matrix in the original order.
+ * RE_ORIGINAL_QUIRK: Alpha and size are truncated without clamping; retain
+ * negative/out-of-range values and the exact floating-point product order.
+ * RE_UNKNOWN: Ripple validity, finite ranges and matrix/vertex capacity are
+ * caller/provider preconditions; no clipping or allocation recovery is added.
+ */
+#line 32 "src/modules/ripple.c"
 void drawRipple(Ripple *ripple) {
-    s32 nSize;
-    s32 pSize;
-    Mtx4F mtx;
-    s32 alpha;
+    s32 negatedSize;
+    s32 scaledSize;
+    Mtx4F translatedMatrix;
+    s32 vertexAlpha;
 
-    alpha = (s32) (ripple->fade * 255.0f);
-    pSize = (s32) (ripple->initSize * ripple->curSize * 100.0f);
-    gUvFmtxExports->uvMat4ApplySharedInverseTranslation(&mtx, &ripple->mtx);
-    gUvFmtxExports->uvGfxMtxViewLoad(&mtx, 1U);
+    vertexAlpha = (s32) (ripple->fade * 255.0f);
+    scaledSize = (s32) (ripple->initSize * ripple->curSize * 100.0f);
+    gUvFmtxExports->uvMat4ApplySharedInverseTranslation(&translatedMatrix, &ripple->mtx);
+    gUvFmtxExports->uvGfxMtxViewLoad(&translatedMatrix, 1U);
     gUvDGeomExports->uvVtxBeginPoly();
-    nSize = -pSize;
-    gUvDGeomExports->uvVtx(nSize, nSize, 0, -1024, -1024, 255, 255, 255, alpha);
-    gUvDGeomExports->uvVtx(pSize, nSize, 0, 1024, -1024, 255, 255, 255, alpha);
-    gUvDGeomExports->uvVtx(pSize, pSize, 0, 1024, 1024, 255, 255, 255, alpha);
-    gUvDGeomExports->uvVtx(nSize, pSize, 0, -1024, 1024, 255, 255, 255, alpha);
+    negatedSize = -scaledSize;
+    gUvDGeomExports->uvVtx(negatedSize, negatedSize, 0, -1024, -1024, 255, 255, 255, vertexAlpha);
+    gUvDGeomExports->uvVtx(scaledSize, negatedSize, 0, 1024, -1024, 255, 255, 255, vertexAlpha);
+    gUvDGeomExports->uvVtx(scaledSize, scaledSize, 0, 1024, 1024, 255, 255, 255, vertexAlpha);
+    gUvDGeomExports->uvVtx(negatedSize, scaledSize, 0, -1024, 1024, 255, 255, 255, vertexAlpha);
     gUvDGeomExports->uvVtxEndPoly();
     gUvFmtxExports->uvGfxMtxFViewPop();
 }
