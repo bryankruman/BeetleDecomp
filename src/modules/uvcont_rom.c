@@ -248,13 +248,22 @@ s32 uvIOUpdate(void) {
 }
 #line 109 "src/modules/uvcont_rom.c"
 
+/* Extract one bit from the shared controller-presence pattern using the supplied
+ * shift count. RE_UNKNOWN: valid controller indices and refresh timing require
+ * callers; no shift-range check is present. */
+#line 110 "src/modules/uvcont_rom.c"
 s32 uvControllerPlugged(s32 contNo) {
     return ((s32) sContBitPattern >> contNo) & 1;
 }
+#line 113 "src/modules/uvcont_rom.c"
 
+/* Return the stored stick-axis float for the supplied controller and axis.
+ * RE_UNKNOWN: index bounds, axis convention and refresh timing require callers. */
+#line 114 "src/modules/uvcont_rom.c"
 f32 uvControllerGetStick(s32 contNo, s32 axis) {
     return sControllers[contNo].stickAxes[axis];
 }
+#line 117 "src/modules/uvcont_rom.c"
 
 #line 118 "src/modules/uvcont_rom.c"
 /* Return whether requested controller-button bits are held. RE_UNKNOWN:
@@ -264,23 +273,37 @@ s32 uvControllerHasButtons(s32 controller, s32 mask) {
 }
 #line 121 "src/modules/uvcont_rom.c"
 
+/* Return the stored controller button halfword.
+ * RE_UNKNOWN: index bounds and sampling timing require callers. */
+#line 122 "src/modules/uvcont_rom.c"
 u16 uvControllerGetButton(s32 contNo) {
     return sControllers[contNo].button;
 }
+#line 125 "src/modules/uvcont_rom.c"
 
+/* Return true when any masked current button is set and no masked previous
+ * button was set. RE_ORIGINAL_QUIRK: a multi-bit mask tests the group as a whole,
+ * not each bit independently. RE_UNKNOWN: index bounds and sampling timing need callers. */
+#line 126 "src/modules/uvcont_rom.c"
 s32 uvControllerButtonPress(s32 contNo, s32 button) {
     if ((sControllers[contNo].button & button) && !(sControllers[contNo].prevButton & button)) {
         return TRUE;
     }
     return FALSE;
 }
+#line 132 "src/modules/uvcont_rom.c"
 
+/* Return true when no masked current button is set and any masked previous
+ * button was set. RE_ORIGINAL_QUIRK: a multi-bit mask tests the group as a whole.
+ * RE_UNKNOWN: index bounds and sampling timing require callers. */
+#line 133 "src/modules/uvcont_rom.c"
 s32 uvControllerButtonRelease(s32 contNo, s32 button) {
     if (!(sControllers[contNo].button & button) && (sControllers[contNo].prevButton & button)) {
         return TRUE;
     }
     return FALSE;
 }
+#line 139 "src/modules/uvcont_rom.c"
 
 #line 140 "src/modules/uvcont_rom.c"
 /* Store previous/current button words and already normalized stick axes.
@@ -313,17 +336,29 @@ void uvControllerSetRawState(s32 controller, u16 previousButtons, u16 buttons, s
 }
 #line 158 "src/modules/uvcont_rom.c"
 
+/* Return the stored peripheral-state byte for the supplied controller index.
+ * RE_UNKNOWN: state values, index bounds and update timing require consumers. */
+#line 159 "src/modules/uvcont_rom.c"
 u8 uvControllerGetPeriphState(s32 arg0) {
     return sControllers[arg0].periphState;
 }
+#line 162 "src/modules/uvcont_rom.c"
 
+/* Replace the shared pak-state callback pointer without invoking it.
+ * RE_UNKNOWN: callback arguments, invocation timing and lifetime require consumers. */
+#line 163 "src/modules/uvcont_rom.c"
 void uvControllerSetPakStateCallback(void (*pakStateCallback)(s32, u16, u8)) {
     sPakStateCallback = pakStateCallback;
 }
+#line 166 "src/modules/uvcont_rom.c"
 
+/* Replace the shared controller-status callback pointer without invoking it.
+ * RE_UNKNOWN: status values, invocation timing and lifetime require consumers. */
+#line 167 "src/modules/uvcont_rom.c"
 void uvSetContStatusCallback(void (*contStatusCallback)(s32, u8)) {
     sContStatusCallback = contStatusCallback;
 }
+#line 170 "src/modules/uvcont_rom.c"
 
 u8 D_uvcont_rom_00401884[15] = {
     0x21, 0x22, 0x23, 0x27, 0x2A, 0x2B, 0x2C, 0x2D, 0x2E, 0x2F, 0x3A, 0x3D, 0x3F, 0x40, 0,

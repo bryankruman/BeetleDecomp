@@ -33,8 +33,11 @@ void func_shadow_00400100(void) {
 #line 28 "src/modules/shadow.c"
 
 #line 29 "src/modules/shadow.c"
-/* Reserve the first inactive state in the eight-record shadow pool.
- * Preserve the source handle, zero the scalar at 0xD0 and return null when full. */
+/* Choose the first inactive record among eight, returning null if all are active.
+ * Store the source handle, mark the record active and clear valueD0; retain other
+ * fields. RE_UNKNOWN: handle validity, record ownership and later initialization
+ * require consumers; no allocation beyond this fixed pool occurs. */
+#line 31 "src/modules/shadow.c"
 CarShadowState *shadowAllocateState(CarShadowSource *source) {
     CarShadowState *state;
     s32 offset;
@@ -52,17 +55,21 @@ CarShadowState *shadowAllocateState(CarShadowSource *source) {
     state->valueD0 = 0.0f;
     return state;
 }
+#line 48 "src/modules/shadow.c"
 #line 30 "src/modules/shadow.c"
 
 #line 31 "src/modules/shadow.c"
-/* Release a non-null shadow state by invalidating its source handle and
- * clearing its active flag. The remaining pooled fields are intentionally retained. */
+/* If the state pointer is nonnull, set its source handle to -1 and clear active.
+ * Other fields remain unchanged. RE_UNKNOWN: pointer provenance and outstanding
+ * references require consumers; this does not free separate storage. */
+#line 33 "src/modules/shadow.c"
 void shadowReleaseState(CarShadowState *state) {
     if (state != NULL) {
         state->sourceHandle = -1;
         state->active = 0;
     }
 }
+#line 39 "src/modules/shadow.c"
 #line 37 "src/modules/shadow.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/shadow/func_shadow_00400180.s")

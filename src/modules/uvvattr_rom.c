@@ -22,6 +22,10 @@ s32 func_uvvattr_rom_00400514(s32 capacity, s32 *vertexHandles, s32 flags, ...);
 
 void __entrypoint_func_uvvattr_rom_400000(UvVAttr_Exports *exports);
 
+/* Update the allocation pointer and publish five vertex-attribute callbacks,
+ * then load TEXT into the shared provider pointer. RE_UNKNOWN: provider reference
+ * ownership, callback domains and repeated initialization require consumers. */
+#line 25 "src/modules/uvvattr_rom.c"
 void __entrypoint_func_uvvattr_rom_400000(UvVAttr_Exports *exports) {
     uvUpdateFileAllocPtr(exports);
     exports->uvVattrUnloadTextureModule = uvVattrUnloadTextureModule;

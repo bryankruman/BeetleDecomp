@@ -25,8 +25,12 @@ void __entrypoint_func_uvufileld_rom_400000(UvuFileLd_Rom_Exports *exports) {
 }
 #line 21 "src/modules/uvufileld_rom.c"
 
+/* Return without performing a file-loader operation.
+ * RE_UNKNOWN: the historical callback purpose remains unresolved. */
+#line 22 "src/modules/uvufileld_rom.c"
 void uvuFileldStub(void) {
 }
+#line 24 "src/modules/uvufileld_rom.c"
 
 /*
  * Open the file and obtain its size. For UVRW header type, search COMM entry

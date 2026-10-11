@@ -129,9 +129,13 @@ void fileuxNoOpHostBufferHook(void *unusedBuffer, s32 unusedByteCount) {
 }
 #line 97 "src/modules/fileux.c"
 
+/* Return the constant one.
+ * RE_UNKNOWN: the caller's interpretation of this status value remains unresolved. */
+#line 98 "src/modules/fileux.c"
 s32 func_fileux_00400144(void) {
     return 1;
 }
+#line 101 "src/modules/fileux.c"
 
 /*
  * Call GMGR slot 0x74, fill a 256-byte ascending probe, then scan the shared

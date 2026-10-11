@@ -114,25 +114,41 @@ void uvSetFont(s32 fontId) {
 }
 #line 83 "src/modules/uvfont_rom.c"
 
+/* Store the two supplied double-precision font scales in x-then-y order.
+ * RE_UNKNOWN: scale units, valid values and shared font-state lifetime need consumers. */
+#line 84 "src/modules/uvfont_rom.c"
 void uvFontScale(f64 x, f64 y) {
     sFontScaleX = x;
     sFontScaleY = y;
 }
+#line 88 "src/modules/uvfont_rom.c"
 
+/* Store the four supplied color bytes in red, green, blue, alpha order.
+ * RE_UNKNOWN: rendering interpretation and shared font-state lifetime need consumers. */
+#line 89 "src/modules/uvfont_rom.c"
 void uvFontColor(u8 red, u8 green, u8 blue, u8 alpha) {
     sFontColorRed = red;
     sFontColorGreen = green;
     sFontColorBlue = blue;
     sFontColorAlpha = alpha;
 }
+#line 95 "src/modules/uvfont_rom.c"
 
+/* Return zero without reading the supplied argument.
+ * RE_UNKNOWN: the unimplemented string operation and historical argument domain remain unresolved. */
+#line 96 "src/modules/uvfont_rom.c"
 s32 uvFontStrlLen(s32 arg0) {
     return 0;
 }
+#line 99 "src/modules/uvfont_rom.c"
 
+/* Return zero without reading the supplied argument.
+ * RE_UNKNOWN: the unimplemented width operation and historical argument domain remain unresolved. */
+#line 100 "src/modules/uvfont_rom.c"
 s32 uvFontStr16WidthFont(s32 arg0) {
     return 0;
 }
+#line 103 "src/modules/uvfont_rom.c"
 
 #line 104 "src/modules/uvfont_rom.c"
 /* Sum mapped glyph widths, using the current fallback for missing
@@ -190,9 +206,13 @@ s32 uvFontHeight(void) {
     return (s32) ((f32) sParsedFont->bitmap->actualHeight * sFontScaleY);
 }
 
+/* Return zero without reading any of the four arguments.
+ * RE_UNKNOWN: the intended print operation and historical argument meanings remain unresolved. */
+#line 140 "src/modules/uvfont_rom.c"
 s32 uvFontPrintStr16(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
     return 0;
 }
+#line 143 "src/modules/uvfont_rom.c"
 
 #if 0
 void uvFontPrintStr(s32 x, s32 y, char *str) {

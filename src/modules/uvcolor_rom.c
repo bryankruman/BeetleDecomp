@@ -41,6 +41,10 @@ void uvColorBlendVertexHsvByFlag(Vtx *arg0, s32 arg1, f32 arg2, f32 arg3, f32 ar
 
 void __entrypoint_func_uvcolor_rom_400000(UvColor_Exports *exports);
 
+/* Update the allocation pointer and publish five color callbacks, then load GMGR
+ * into the shared provider pointer. RE_UNKNOWN: provider reference ownership,
+ * callback domains and repeated initialization require module consumers. */
+#line 44 "src/modules/uvcolor_rom.c"
 void __entrypoint_func_uvcolor_rom_400000(UvColor_Exports *exports) {
     uvUpdateFileAllocPtr(exports);
     exports->uvColorModuleCleanup = uvColorModuleCleanup;

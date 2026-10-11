@@ -7,15 +7,24 @@ ParsedUVBT* uvParseBlit(u8 *data);
 void uvBlitStub(void);
 void uvFreeBlit(ParsedUVBT *uvbt);
 
+/* Update the allocation pointer, then publish parse, stub and free callbacks
+ * in original slot order. RE_UNKNOWN: asset ownership, export-table lifetime and
+ * repeated initialization require module consumers. */
+#line 10 "src/modules/uvblit_rom.c"
 void __entrypoint_func_uvblit_rom_400000(UvBlit_Rom_Exports *exports) {
     uvUpdateFileAllocPtr(exports);
     exports->uvParseBlit = uvParseBlit;
     exports->uvBlitStub = uvBlitStub;
     exports->uvFreeBlit = uvFreeBlit;
 }
+#line 16 "src/modules/uvblit_rom.c"
 
+/* Return without performing an operation.
+ * RE_UNKNOWN: the historical callback purpose and any intended future work are unresolved. */
+#line 17 "src/modules/uvblit_rom.c"
 void uvBlitStub(void) {
 }
+#line 19 "src/modules/uvblit_rom.c"
 
 /*
  * Visit bitmap-file blocks with decode flag 1. For each COMM block, call the

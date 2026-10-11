@@ -31,8 +31,12 @@ void __entrypoint_func_uvcback_rom_400000(UvCback_Exports *exports) {
 }
 #line 27 "src/modules/uvcback_rom.c"
 
+/* Return without performing a callback operation.
+ * RE_UNKNOWN: the historical callback purpose remains unresolved. */
+#line 28 "src/modules/uvcback_rom.c"
 void uvCallbackUnused(void) {
 }
+#line 30 "src/modules/uvcback_rom.c"
 
 /*
  * Allocate and clear a four-byte header plus capacity eight-byte entries.

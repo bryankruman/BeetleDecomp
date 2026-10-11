@@ -22,8 +22,12 @@ void __entrypoint_func_uvtexturexref_rom_400000(UvTexturexref_Exports *exports) 
 }
 #line 18 "src/modules/uvtexturexref_rom.c"
 
+/* Return without parsing or freeing an asset.
+ * RE_UNKNOWN: the historical asset callback contract and ownership remain unresolved. */
+#line 19 "src/modules/uvtexturexref_rom.c"
 void uvParseFreeUVTP(void) {
 }
+#line 21 "src/modules/uvtexturexref_rom.c"
 
 /*
  * Enumerate file entries and, for each COMM entry, copy its advertised bytes

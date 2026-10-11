@@ -161,9 +161,13 @@ void uvIMtxSetIdentity(Mtx* output) { /* Write the original sixteen packed words
     output->m[3][3] = 0;
 }
 
+/* Return without reading any of the four arguments.
+ * RE_UNKNOWN: the historical matrix operation and argument domains remain unresolved. */
+#line 137 "src/modules/uvimtx_rom.c"
 void uvImtxStub(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
 
 }
+#line 140 "src/modules/uvimtx_rom.c"
 
 #line 141 "src/modules/uvimtx_rom.c"
 

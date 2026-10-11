@@ -393,13 +393,21 @@ void uvGfxBegin(void) {
     }
 }
 
+/* Return the address of the shared display-list cursor so callers can change it.
+ * RE_UNKNOWN: command-buffer bounds and cursor lifetime require frame setup/callers. */
+#line 177 "src/modules/uvgfxmgr_rom.c"
 Gfx **uvGetDisplayListHead(void) {
     return &sGfxDisplayListHead;
 }
+#line 180 "src/modules/uvgfxmgr_rom.c"
 
+/* Append one display-list call and advance the shared command cursor.
+ * RE_UNKNOWN: capacity and the supplied list's lifetime require the graphics caller. */
+#line 181 "src/modules/uvgfxmgr_rom.c"
 void uvGfxDisplayList(Gfx *dl) {
     gSPDisplayList(sGfxDisplayListHead++, dl);
 }
+#line 184 "src/modules/uvgfxmgr_rom.c"
 
 #line 185 "src/modules/uvgfxmgr_rom.c"
 /* Return graphics callback list one or two, or zero for an unsupported selector. */
@@ -415,6 +423,9 @@ s32 uvGfxGetCallbackList(s32 selector) {
 }
 #line 195 "src/modules/uvgfxmgr_rom.c"
 
+/* Replace the shared framebuffer callback and return the previous callback.
+ * RE_UNKNOWN: callback arguments, invocation timing and ownership need the caller. */
+#line 196 "src/modules/uvgfxmgr_rom.c"
 void (*func_uvgfxmgr_rom_00400AF0(void (*arg0)(void *, void *)))(void *, void *) {
     void (*temp_v0)(void *, void *);
 
@@ -422,6 +433,7 @@ void (*func_uvgfxmgr_rom_00400AF0(void (*arg0)(void *, void *)))(void *, void *)
     sGfxFrameBufferCallback = arg0;
     return temp_v0;
 }
+#line 203 "src/modules/uvgfxmgr_rom.c"
 
 #line 204 "src/modules/uvgfxmgr_rom.c"
 /* Exchange the shared word used by graphics submission as an optional callback address.
@@ -435,9 +447,13 @@ s32 uvGfxMgrExchangeSharedWord(s32 value) {
 }
 #line 211 "src/modules/uvgfxmgr_rom.c"
 
+/* Store the supplied word in D_uvgfxmgr_rom_00402264.
+ * RE_UNKNOWN: this setting's meaning and valid values require its consumers. */
+#line 212 "src/modules/uvgfxmgr_rom.c"
 void func_uvgfxmgr_rom_00400B18(s32 arg0) {
     D_uvgfxmgr_rom_00402264 = arg0;
 }
+#line 215 "src/modules/uvgfxmgr_rom.c"
 
 /* Finish the display list, populate and submit its graphics task, dispatch callbacks and optionally rotate buffers. */
 #line 216 "src/modules/uvgfxmgr_rom.c"
@@ -513,15 +529,24 @@ void uvGfxEnd(void) {
     }
 }
 
+/* When the supplied halfword is zero, block for a message on the shared queue.
+ * Nonzero values skip the receive. RE_UNKNOWN: queue lifetime and message purpose
+ * require the graphics scheduler; the receive result is ignored. */
+#line 288 "src/modules/uvgfxmgr_rom.c"
 void uvGfxWaitForMesg(u16 arg0) {
     if (!arg0) {
         osRecvMesg(&D_uvgfxmgr_rom_004025B8, NULL, OS_MESG_BLOCK);
     }
 }
+#line 293 "src/modules/uvgfxmgr_rom.c"
 
+/* Store the supplied word in D_uvgfxmgr_rom_00402478.
+ * RE_UNKNOWN: this setting's meaning and valid values require its consumers. */
+#line 294 "src/modules/uvgfxmgr_rom.c"
 void func_uvgfxmgr_rom_00400F58(s32 arg0) {
     D_uvgfxmgr_rom_00402478 = arg0;
 }
+#line 297 "src/modules/uvgfxmgr_rom.c"
 
 #line 298 "src/modules/uvgfxmgr_rom.c"
 /* Poll the current task completion queue without blocking, clear its pending
@@ -555,6 +580,9 @@ f32 uvGfxMgrGetScalarOverrideOrCurrent(void) {
 }
 #line 317 "src/modules/uvgfxmgr_rom.c"
 
+/* Select OS_VI_GAMMA_ON for nonzero input and OS_VI_GAMMA_OFF for zero.
+ * RE_UNKNOWN: video-interface initialization and scheduling belong to callers. */
+#line 318 "src/modules/uvgfxmgr_rom.c"
 void uvGfxEnableGamma(s32 enable) {
     if (enable) {
         osViSetSpecialFeatures(OS_VI_GAMMA_ON);
@@ -562,6 +590,7 @@ void uvGfxEnableGamma(s32 enable) {
     }
     osViSetSpecialFeatures(OS_VI_GAMMA_OFF);
 }
+#line 325 "src/modules/uvgfxmgr_rom.c"
 
 void uvGfxSetPrimColorF(f32 red, f32 green, f32 blue, f32 alpha) { /* Synchronize, scale the float channels by 255 and emit primitive color plus the repeated RGBA5551 fill value. */
     u32 r;
@@ -731,9 +760,14 @@ void uvGfxApplyViewport(s32 vp_id) {
 }
 #line 482 "src/modules/uvgfxmgr_rom.c"
 
+/* Append perspective normalization with the supplied signed halfword and advance
+ * the shared command cursor. RE_UNKNOWN: buffer capacity and valid normalization
+ * values require the graphics caller. */
+#line 483 "src/modules/uvgfxmgr_rom.c"
 void uvGfxPersp(s16 persp) {
     gSPPerspNormalize(sGfxDisplayListHead++, persp);
 }
+#line 486 "src/modules/uvgfxmgr_rom.c"
 
 #line 487 "src/modules/uvgfxmgr_rom.c"
 /* Fill the current viewport of the depth-image buffer with 0xFFFC,
@@ -820,21 +854,37 @@ void uvCopyFrameBuf(s32 copyDirection) {
     }
 }
 
+/* Store the screen-height word without validation.
+ * RE_UNKNOWN: accepted dimensions and reconfiguration timing require consumers. */
+#line 551 "src/modules/uvgfxmgr_rom.c"
 void uvSetScreenHeight(s32 height) {
     sScreenHeight = height;
 }
+#line 554 "src/modules/uvgfxmgr_rom.c"
 
+/* Store the screen-width word without validation.
+ * RE_UNKNOWN: accepted dimensions and reconfiguration timing require consumers. */
+#line 555 "src/modules/uvgfxmgr_rom.c"
 void uvSetScreenWidth(s32 width) {
     sScreenWidth = width;
 }
+#line 558 "src/modules/uvgfxmgr_rom.c"
 
+/* Return the stored screen-height word.
+ * RE_UNKNOWN: initialization and correspondence to the active video mode need setup. */
+#line 559 "src/modules/uvgfxmgr_rom.c"
 s32 uvGetScreenHeight(void) {
     return sScreenHeight;
 }
+#line 562 "src/modules/uvgfxmgr_rom.c"
 
+/* Return the stored screen-width word.
+ * RE_UNKNOWN: initialization and correspondence to the active video mode need setup. */
+#line 563 "src/modules/uvgfxmgr_rom.c"
 s32 uvGetScreenWidth(void) {
     return sScreenWidth;
 }
+#line 566 "src/modules/uvgfxmgr_rom.c"
 
 #line 567 "src/modules/uvgfxmgr_rom.c"
 /* Append the shared visibility-coverage display list, including its original

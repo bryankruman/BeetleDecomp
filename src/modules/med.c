@@ -283,8 +283,10 @@ void medSetNormalizedColor(s32 rgba) {
 #line 193 "src/modules/med.c"
 #line 193 "src/modules/med.c"
 
-/* If shared word 0 is nonzero, copy the low byte of shared word +0x2C to referenced byte +0x23; preserve the unused argument and load order.
- * RE_UNKNOWN: source/target backing extent, byte role/encoding, pointer producer and alias/lifetime require original shared-address writers, byte readers and callers; other scalar-window consumers do not establish an allocation type. */
+/* If the shared target pointer is nonnull, copy the low byte of the shared word
+ * at D_med_00407F28+0x2C to target offset 0x23. The argument is unused.
+ * RE_UNKNOWN: target layout, byte meaning and pointer lifetime require consumers. */
+#line 196 "src/modules/med.c"
 void medCopySharedLowByteToOptionalTarget(s32 unused) {
     u8 *targetBytes;
     targetBytes = (u8 *)(u32)D_med_00407F28;
@@ -292,6 +294,7 @@ void medCopySharedLowByteToOptionalTarget(s32 unused) {
         targetBytes[0x23] = (u8)*(s32 *)((u32)&D_med_00407F28 + 0x2C);
     }
 }
+#line 203 "src/modules/med.c"
 #line 202 "src/modules/med.c"
 #line 200 "src/modules/med.c"
 /* RE_UNKNOWN: shared word-window and referenced-record extents/ownership, four interleaved scalar-pair meanings and historical unused-argument type require original D_med_00407F28 producers, record readers and source/caller declarations; preserve the initial reference gate, two-pointer snapshot, four-byte source step and separate original load/store order without assuming complete object layouts. */

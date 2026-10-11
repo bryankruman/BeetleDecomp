@@ -768,6 +768,9 @@ void uvTerraSetReciprocalByIndex(s32 index, f32 value)
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_004076A8.s")
 #line 469 "src/modules/uvterra_rom.c"
 
+/* Copy the three arguments into the retained local words, then return zero.
+ * RE_UNKNOWN: the historical terrain operation and intended use of those locals remain unresolved. */
+#line 470 "src/modules/uvterra_rom.c"
 s32 func_uvterra_rom_00407A80(s32 arg0, s32 arg1, s32 arg2) {
     s32 sp0;
     s32 sp4;
@@ -777,6 +780,7 @@ s32 func_uvterra_rom_00407A80(s32 arg0, s32 arg1, s32 arg2) {
     sp8 = arg2;
     return 0;
 }
+#line 479 "src/modules/uvterra_rom.c"
 
 #line 480 "src/modules/uvterra_rom.c"
 /* Apply the shared inverse translation to the matrix pointer at object

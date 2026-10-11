@@ -1645,9 +1645,13 @@ void selectionAdjustSpeedOption(void) {
 }
 #line 957 "src/modules/selection.c"
 
+/* Pass the address of D_80025E6A to the retained selection helper.
+ * RE_UNKNOWN: the helper's state transition and shared object lifetime need consumers. */
+#line 958 "src/modules/selection.c"
 void func_selection_00403E04(void) {
     func_selection_0040189C(&D_80025E6A);
 }
+#line 961 "src/modules/selection.c"
 
 #line 962 "src/modules/selection.c"
 /* Apply the current horizontal menu action to gOptionsMap within zero
@@ -2594,11 +2598,13 @@ void selectionApplyEightObjectPropertyFlagsForChoice(void) {
 #line 1226 "src/modules/selection.c"
 
 #line 1227 "src/modules/selection.c"
-/* Apply the original (0, 0, -10) rotation offset. Distinct zero literal forms
- * preserve IDO's separate argument materialization without extra operations. */
+/* Call the retained pivot-rotation helper with offsets 0, 0 and -10.
+ * RE_UNKNOWN: angle units and the active view's lifetime require the helper/caller. */
+#line 1229 "src/modules/selection.c"
 void selectionApplyNegativeTenRotationOffset(void) {
     selectionRotateViewMatrixAroundPivot(0.0f, 0, -10.0f);
 }
+#line 1232 "src/modules/selection.c"
 #line 1228 "src/modules/selection.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040B74C.s")
@@ -3080,9 +3086,13 @@ void func_selection_0040F64C(s32 arg0)
 }
 #line 1493 "src/modules/selection.c"
 
+/* Forward D_selection_00420DF0 to the retained selection helper.
+ * RE_UNKNOWN: the shared value's domain and helper action require consumers. */
+#line 1494 "src/modules/selection.c"
 void func_selection_0040F6E0(void) {
     func_selection_0040F4BC(D_selection_00420DF0);
 }
+#line 1497 "src/modules/selection.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040F704.s")
 
@@ -3652,10 +3662,14 @@ void selectionPrepareControllerPakFileChoice(void) {
 }
 #line 1736 "src/modules/selection.c"
 
+/* Set D_selection_00420DFC to one, then call the retained selection helper.
+ * RE_UNKNOWN: flag meaning and helper action require consumers; preserve store order. */
+#line 1737 "src/modules/selection.c"
 void func_selection_004134F4(void) {
     D_selection_00420DFC = 1;
     func_selection_004017E0();
 }
+#line 1741 "src/modules/selection.c"
 
 #line 1742 "src/modules/selection.c"
 /* When the stored Pak file number is nonnegative, exit the current
@@ -4398,9 +4412,13 @@ void selectionDeleteTrackedPakFileOnControllerZero(void) { /* Request Controller
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004181D0.s")
 
+/* Set D_selection_00420E28 to -1.
+ * RE_UNKNOWN: the sentinel's domain and state-transition meaning need consumers. */
+#line 1997 "src/modules/selection.c"
 void func_selection_0041843C(void) {
     D_selection_00420E28 = -1;
 }
+#line 2000 "src/modules/selection.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0041844C.s")
 
@@ -4408,10 +4426,14 @@ void func_selection_0041843C(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00418E98.s")
 
+/* Set the halfwords at shared object offsets 0x16 and 0x2A to one, in that order.
+ * RE_UNKNOWN: the two flags' meaning and object lifetime require consumers. */
+#line 2007 "src/modules/selection.c"
 void func_selection_00419020(void) {
     *(s16 *)((u8 *)&D_selection_0041F794 + 0x16) = 1;
     *(s16 *)((u8 *)&D_selection_0041F794 + 0x2A) = 1;
 }
+#line 2011 "src/modules/selection.c"
 
 #line 2012 "src/modules/selection.c"
 /* Mark shared state, clear words 0x16/0x2A and reset the nested word if 1 or 2.
@@ -4572,15 +4594,23 @@ void selectionFindControllerPakFileForCurrentMenu(void) {
 }
 #line 2042 "src/modules/selection.c"
 
+/* Clear D_selection_00421D28, then call the retained selection helper.
+ * RE_UNKNOWN: flag meaning and helper action require consumers; preserve store order. */
+#line 2043 "src/modules/selection.c"
 void func_selection_00419B78(void) {
     D_selection_00421D28 = 0;
     func_selection_004017E0();
 }
+#line 2047 "src/modules/selection.c"
 
+/* Run the current menu exit callback, then activate fixed node D_selection_0041F5B4.
+ * RE_UNKNOWN: the destination node's screen role and lifetime need menu consumers. */
+#line 2048 "src/modules/selection.c"
 void func_selection_00419B9C(void) {
     selectionRunCurrentMenuExitCallback();
     selectionActivateMenuNode(&D_selection_0041F5B4);
 }
+#line 2052 "src/modules/selection.c"
 
 /* Request a graphics-state push, set bits 0x04800000 and clear bits
  * 0x00600000, render the shared signed sprite index, then request a pop.

@@ -6,11 +6,16 @@
 extern void level1NoOpModuleCleanup(void);
 extern void func_level1_00400044(void);
 
+/* Update the allocation pointer, then publish the cleanup and retained callback.
+ * RE_UNKNOWN: the retained callback's purpose, export lifetime and repeated
+ * initialization require module consumers. */
+#line 9 "src/modules/level1.c"
 void __entrypoint_func_level1_400000(Level1_Exports* arg0) {
     uvUpdateFileAllocPtr(arg0);
     arg0->level1NoOpModuleCleanup = &level1NoOpModuleCleanup;
     arg0->func_level1_00400044 = &func_level1_00400044;
 }
+#line 14 "src/modules/level1.c"
 
 
 #line 16 "src/modules/level1.c"

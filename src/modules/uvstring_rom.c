@@ -28,9 +28,13 @@ void MODULE_ENTRY_POINT(func_uvStringEntryPoint)(UvString_Exports *exports) {
     exports->uvSprintf = uvSprintf;
 }
 
+/* Return without performing a string operation.
+ * RE_UNKNOWN: the historical callback purpose remains unresolved. */
+#line 31 "src/modules/uvstring_rom.c"
 void uvStrStub(void) {
 
 }
+#line 34 "src/modules/uvstring_rom.c"
 
 #line 35 "src/modules/uvstring_rom.c"
 /* Find the first matching character before the string terminator.
@@ -47,6 +51,10 @@ char* uvStrChr(const char* text, const char character) {
 }
 #line 44 "src/modules/uvstring_rom.c"
 
+/* Count bytes up to the first NUL, advancing the input pointer once per test.
+ * RE_UNKNOWN: pointer validity, termination and counts beyond the signed local
+ * range require callers; no length limit is checked. */
+#line 45 "src/modules/uvstring_rom.c"
 u32 uvStrlen(const char* s) {
     s32 len;
 
@@ -56,6 +64,7 @@ u32 uvStrlen(const char* s) {
     }
     return len;
 }
+#line 54 "src/modules/uvstring_rom.c"
 
 #line 55 "src/modules/uvstring_rom.c"
 /* Compare string lengths first; only equal-length strings are then

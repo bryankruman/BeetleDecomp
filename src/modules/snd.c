@@ -655,9 +655,13 @@ void sndUpdateManagedEmittersAndListeners(void) {
 }
 #line 587 "src/modules/snd.c"
 
+/* Store the supplied halfword as the current music identifier without starting playback.
+ * RE_UNKNOWN: identifier validity and when the stored choice is consumed require callers. */
+#line 588 "src/modules/snd.c"
 void sndSetMusic(u16 musicId) {
     sCurrentMusicId = musicId;
 }
+#line 591 "src/modules/snd.c"
 
 /*
  * States 0 and 3 apply routing table 0, stop an already-playing sequence,

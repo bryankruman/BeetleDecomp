@@ -77,10 +77,14 @@ void smackDetachActiveRecord(void *record) {
 
 #line 47 "src/modules/smack.c"
 extern s16 D_smack_00401630[];
-/* Read one of the four signed per-player values; invalid slots return zero. */
+/* Return zero for player indices at least four; otherwise return the selected
+ * signed halfword from the shared four-entry table.
+ * RE_UNKNOWN: table meaning and refresh lifetime require consumers. */
+#line 49 "src/modules/smack.c"
 s32 smackGetPlayerValue(u8 player) {
     if (player >= 4) { return 0; }
     return D_smack_00401630[player];
 }
+#line 53 "src/modules/smack.c"
 #line 48 "src/modules/smack.c"
 

@@ -168,9 +168,13 @@ void uvVtxFlip(u8 flip) {
     }
 }
 
+/* Ignore the argument and call uvVtxFlip with TRUE.
+ * RE_UNKNOWN: the affected vertex range and flip convention require that provider. */
+#line 127 "src/modules/uvdgeom_rom.c"
 void uvFlipVtx(s32 arg0) {
     uvVtxFlip(TRUE);
 }
+#line 130 "src/modules/uvdgeom_rom.c"
 
 #line 131 "src/modules/uvdgeom_rom.c"
 /* Store the requested first vertex and exclusive end as signed halfwords,
@@ -193,13 +197,21 @@ void uvVtxBeginPoly(void) {
     sFirstPoly = sVertexCount;
 }
 
+/* Record the current vertex count as the first grid vertex.
+ * RE_UNKNOWN: vertex-buffer capacity and grid construction lifetime require consumers. */
+#line 140 "src/modules/uvdgeom_rom.c"
 void uvBeginGrid(void) {
     sFirstGrid = sVertexCount;
 }
+#line 143 "src/modules/uvdgeom_rom.c"
 
+/* Record the current vertex count as the first triangle-mesh vertex.
+ * RE_UNKNOWN: vertex-buffer capacity and mesh construction lifetime require consumers. */
+#line 144 "src/modules/uvdgeom_rom.c"
 void uvBeginTmesh(void) {
     sFirstTmesh = sVertexCount;
 }
+#line 147 "src/modules/uvdgeom_rom.c"
 
 #line 148 "src/modules/uvdgeom_rom.c"
 /* Submit the current triangle-mesh vertex range, honoring the stored override. RE_UNKNOWN:

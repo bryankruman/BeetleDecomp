@@ -215,9 +215,13 @@ void uvDobjSetSharedQueryIndexPair(s32 first, s32 second) {
 }
 #line 214 "src/modules/uvdobj_rom.c"
 
+/* Return zero without reading any of the three arguments.
+ * RE_UNKNOWN: the historical operation and argument domains remain unresolved. */
+#line 215 "src/modules/uvdobj_rom.c"
 s32 func_uvdobj_rom_00400558(s32 arg0, s32 arg1, s32 arg2) {
     return 0;
 }
+#line 218 "src/modules/uvdobj_rom.c"
 
 #line 219 "src/modules/uvdobj_rom.c"
 /*
@@ -379,9 +383,13 @@ void uvDobjModel(s32 objId, s32 modelId) { /* Replace or clear the selected mode
     }
 }
 
+/* Return the stored model identifier for the supplied dynamic-object index.
+ * RE_UNKNOWN: index bounds, object activity and model validity require consumers. */
+#line 359 "src/modules/uvdobj_rom.c"
 u16 uvDobjGetModel(s32 objId) {
     return sDObjs[objId].modelId;
 }
+#line 362 "src/modules/uvdobj_rom.c"
 
 void uvDobjProps(s32 objId, ...) { /* Apply the zero-terminated property stream, retaining each selector-specific argument fetch and write. */
     va_list args;

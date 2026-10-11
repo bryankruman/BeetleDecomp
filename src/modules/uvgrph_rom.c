@@ -13,6 +13,10 @@ void __entrypoint_func_uvgrph_rom_400000(UvGrph_Exports *exports);
 
 s32 D_uvgrph_rom_004006C0[] = {0x1C0000, __entrypoint_func_uvgrph_rom_400000, 0};
 
+/* Update the allocation pointer, then publish seven graph callbacks in their
+ * original slot order. RE_UNKNOWN: export-table lifetime, graph ownership and
+ * repeated initialization require module consumers. */
+#line 16 "src/modules/uvgrph_rom.c"
 void __entrypoint_func_uvgrph_rom_400000(UvGrph_Exports *exports) {
     uvUpdateFileAllocPtr(exports);
     exports->func_uvgrph_rom_0040033C = func_uvgrph_rom_0040033C;
@@ -23,6 +27,7 @@ void __entrypoint_func_uvgrph_rom_400000(UvGrph_Exports *exports) {
     exports->uvGrphInsertPointAfter = uvGrphInsertPointAfter;
     exports->uvGrphRemovePoint = uvGrphRemovePoint;
 }
+#line 26 "src/modules/uvgrph_rom.c"
 
 #line 27 "src/modules/uvgrph_rom.c"
 /* Original no-op cleanup hook in module export slot zero. The generic
@@ -152,9 +157,13 @@ s32 uvGrphRemovePoint(UvGrphStruct *grph, s32 selected) {
 }
 #line 127 "src/modules/uvgrph_rom.c"
 
+/* Call uvGrphEvaluateInverseRange with the graph and input plus two zero bounds.
+ * RE_UNKNOWN: the zero-bound convention and graph validity require that provider. */
+#line 128 "src/modules/uvgrph_rom.c"
 void func_uvgrph_rom_0040033C(UvGrphStruct *arg0, f32 arg1) {
     uvGrphEvaluateInverseRange(arg0, arg1, 0.0f, 0.0f);
 }
+#line 131 "src/modules/uvgrph_rom.c"
 
 #line 132 "src/modules/uvgrph_rom.c"
 /* Find X for Y on the original ascending/descending branch; equal range edges

@@ -74,12 +74,17 @@ void func_airec_00400598(void) {
 #line 24 "src/modules/airec.c"
 
 #line 18 "src/modules/airec.c"
-/* Legacy record-count loop; no per-record operation remains in the original. */
+/* Retain the empty count loop; native code loads the pointed-to signed bound
+ * once before testing and incrementing its local counter. The context argument
+ * is unused. RE_UNKNOWN: the intended effect, pointer validity and supported
+ * count domain require callers; no meaningful return value is established. */
+#line 19 "src/modules/airec.c"
 void airecRunLegacyCountLoop(void *context, int *record_count) {
     int index;
     for (index = 0; index < *record_count; index++) {
     }
 }
+#line 24 "src/modules/airec.c"
 #line 19 "src/modules/airec.c"
 
 #line 20 "src/modules/airec.c"

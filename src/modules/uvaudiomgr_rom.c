@@ -150,9 +150,13 @@ s32 uvAudioMgrGetEffectsMatrixParameter(s32 arg0, s32 arg1);
 void uvAudioMgrLatchShutdown(void);
 void __entrypoint_func_uvaudiomgr_rom_40000c(UvAudioMgr_Exports *exports);
 
+/* Return the stored audio-heap size word.
+ * RE_UNKNOWN: heap initialization, size units and lifetime require audio setup. */
+#line 153 "src/modules/uvaudiomgr_rom.c"
 s32 uvGetAudioHeapSize(void) {
     return sAudioHeapSize;
 }
+#line 156 "src/modules/uvaudiomgr_rom.c"
 
 void __entrypoint_func_uvaudiomgr_rom_40000c(UvAudioMgr_Exports *exports) { /* Publish seventeen audio exports, apply default-backed settings, initialize heap and DMA storage, start the audio manager and create the optional callback lists. RE_UNKNOWN: Settings ownership, full configuration layouts, allocation success, capacities and callback lifetime remain unproved. */
     AudioMgr_Settings *audioSettings;
@@ -517,8 +521,12 @@ s32 uvAudioMgrHandleFrameMesg(AudioInfo *info, AudioInfo *previousInfo) {
 }
 
 // stubbed
+/* Return without reading the argument or processing a completion message.
+ * RE_UNKNOWN: the intended completion handling and historical message domain remain unresolved. */
+#line 483 "src/modules/uvaudiomgr_rom.c"
 void uvAudioMgrHandleDoneMesg(s32 arg0) {
 }
+#line 485 "src/modules/uvaudiomgr_rom.c"
 
 /*
  * Search the used-buffer list until its start exceeds the unsigned request
@@ -591,6 +599,11 @@ s32 uvAudioMgrDma(s32 addr, s32 len, UNUSED void *state) {
     return osVirtualToPhysical(bufferAddress) + delta;
 }
 
+/* On first use, clear the used-list head, point the free list at the static DMA
+ * buffers and mark initialization complete. Always publish the shared state pointer
+ * and return uvAudioMgrDma. RE_UNKNOWN: buffer ownership, synchronization and output
+ * pointer validity require consumers; initialization is not repeated. */
+#line 542 "src/modules/uvaudiomgr_rom.c"
 s32 (*uvAudioMgrDmaNew(AMDMAState **state))(s32, s32, void *) {
     if (sAudioDmaState.initialized == 0) {
         sAudioDmaState.firstUsed = NULL;
@@ -600,6 +613,7 @@ s32 (*uvAudioMgrDmaNew(AMDMAState **state))(s32, s32, void *) {
     *state = &sAudioDmaState;
     return uvAudioMgrDma;
 }
+#line 551 "src/modules/uvaudiomgr_rom.c"
 
 /*
  * Attempt one nonblocking receive per current DMA message count, ignoring
