@@ -17,7 +17,7 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 1622 |
+| Explicit RE_UNKNOWN notes | 1623 |
 | Preserved RE_ORIGINAL_QUIRK notes | 449 |
 | Older comments with uncertainty language | 87 |
 | Documented original-behavior audits | 30 |
@@ -1319,6 +1319,12 @@ For every future source wave, regenerate and check this index after code and str
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
 | draft_marker | `TODO` | — | [4](../src/libultra/libc/ldiv.c#L4) |
+
+## src/libultra/libc/ll.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| explicit_unknown | `* Stores the quotient through div, then stores the remainder through rem. The * original body performs the stores in that order and reloads operands * between divisions; pointer...` | function `__ull_divremi` | [68](../src/libultra/libc/ll.c#L68) |
 
 ## src/libultra/libc/sprintf.c
 

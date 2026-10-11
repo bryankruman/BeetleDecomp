@@ -313,6 +313,7 @@
     "src/libultra/io/visetspecial.c": "f7a809bbce88cff70f702b42564469dcb10524b9691d3fe396b57135dace17b7",
     "src/libultra/io/viswapbuf.c": "b47f45e39e7bda4bc73600384b888b3e80bad41afa78993227a65ca18951dd6d",
     "src/libultra/libc/ldiv.c": "636e95d6b62a4724e61310fdf9dfe7d6e793b5a3f910ac25885af9ab7b0d6bf9",
+    "src/libultra/libc/ll.c": "1da6e00d1364e19791a2b51074fe19eafac9a92f595d267d7cbdbe8379149142",
     "src/libultra/libc/sprintf.c": "f1584ae189f76359486b77a81853b0d136a6ffcc4570bd885d61f4072192fb8b",
     "src/libultra/libc/string.c": "a7be1ea68dbbd91bd78b5dffecc3c7dbe487a67e1571b5f15722f0743350a460",
     "src/libultra/libc/xstdio.h": "f12e01b05a22622e42efff0fa2f72533b1086fe8cbb0825a601f450d79a02d36",
@@ -476,7 +477,7 @@
     "conditional_draft": 4,
     "decompiler_local": 619,
     "draft_marker": 37,
-    "explicit_unknown": 1622,
+    "explicit_unknown": 1623,
     "layout_padding": 275,
     "offset_field": 1662,
     "opaque_type": 282,
@@ -116912,6 +116913,26 @@
           "declaration_line": 9,
           "lines": [
             9
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-8ccc548f5f4b",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/libc/ll.c",
+      "symbol": "* Stores the quotient through div, then stores the remainder through rem. The * original body performs the stores in that order and reloads operands * between divisions; pointer aliasing is not rewritten. * * RE_UNKNOWN: The stock declaration says unsigned short, but both the * original and the matched compiler output load its argument home slot with * signed LH. High-bit divisor usage and the historical caller domain remain * unresolved; the declaration and machine behavior are preserved.",
+      "lines": [
+        68
+      ],
+      "evidence": "* Stores the quotient through div, then stores the remainder through rem. The * original body performs the stores in that order and reloads operands * between divisions; pointer aliasing is not rewritten. * * RE_UNKNOWN: The stock declaration says unsigned short, but both the * original and the matched compiler output load its argument home slot with * signed LH. High-bit divisor usage and the historical caller domain remain * unresolved; the declaration and machine behavior are preserved.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__ull_divremi",
+          "declaration_line": 79,
+          "lines": [
+            68
           ]
         }
       ]

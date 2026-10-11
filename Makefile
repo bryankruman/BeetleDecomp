@@ -608,10 +608,10 @@ $(BUILD_DIR)/%.o: %.c
 	$(V)$(RM_MDEBUG)
 
 # Patch ll.o
-build/src/libultra/libc/ll.o: src/libultra/libc/ll.c
+build/src/libultra/libc/ll.o: src/libultra/libc/ll.c $(TOOLS)/set_o32abi_bit.py
 	$(call print,Patching:,$<,$@)
 	@$(CC_CHECK) $(CC_CHECK_FLAGS) $(IINC) -I $(dir $*) $(CHECK_WARNINGS) $(BUILD_DEFINES) $(COMMON_DEFINES) $(RELEASE_DEFINES) $(GBI_DEFINES) $(C_DEFINES) $(MIPS_BUILTIN_DEFS) -o $@ $<
-	$(V)$(CC) -c $(CFLAGS) $(BUILD_DEFINES) $(IINC) $(WARNINGS) $(MIPS_VERSION) $(ENDIAN) $(COMMON_DEFINES) $(RELEASE_DEFINES) $(GBI_DEFINES) $(C_DEFINES) $(OPTFLAGS) -o $@ $<
+	$(V)$(SDK_AUDIO_CC) $(SDK_LL_FLAGS) -o $@ $<
 	$(V)$(PYTHON) $(TOOLS)/set_o32abi_bit.py $@
 	$(V)$(OBJDUMP_CMD)
 	$(V)$(RM_MDEBUG)
@@ -649,3 +649,6 @@ SDK_COMPACT_SEQUENCE_HEADERS := include/2.0I/PR/gbi.h include/libultra-sdk/PR/ab
 $(SDK_COMPACT_SEQUENCE_OBJECTS): $(BUILD_DIR)/%.o: %.c $(SDK_COMPACT_SEQUENCE_HEADERS)
 	$(V)mkdir -p $(dir $@)
 	$(V)$(SDK_AUDIO_CC) $(SDK_AUDIO_FLAGS) -o $@ $<
+
+# Stock LL special rule: retain the original O1/MIPS3/o32 recipe.
+SDK_LL_FLAGS := $(subst -O3,-O1,$(subst -mips2,-mips3,$(subst -o32,-32,$(SDK_AUDIO_FLAGS))))

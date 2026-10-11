@@ -94,7 +94,7 @@ segments:
       - [0x6230, hasm, setintmask]
       - [0x62D0, hasm, getcount]
       - [0x62E0, c, libultra/io/piread]
-      - [0x6320, asm, ll]
+      - [0x6320, c, libultra/libc/ll]
       - [0x65E0, hasm, writebackdcache]
       - [0x6660, hasm, invaldcache]
       - [0x6710, hasm, invalicache]
