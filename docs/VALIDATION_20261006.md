@@ -3315,10 +3315,19 @@ Totals: 440 further recoveries after the 225 upstream ordinary imports, plus 187
 Frozen wave `5644-selection-menu-native-contracts` and `accepted-selection-menu-native-contracts-5644` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 440 further readable functions
+## Historical accepted checkpoint — 440 further readable functions
 
 Clarify80 existing lifecycle/resource/UI functions6816B across35 sources. Preserve literal executable definitions, original ABI/types, native quirks, callbacks, state-store order and precise remaining unknowns; restore proved MENU and TED/AIPATH/REPLAY facts. Actual80 candidate/36 baseline trials and native/ordered-record/site/warning/whole-TU-coordinate observations required. Preserve2104 prior assessments,169 typed SDK records and83 historical attempts; fresh full packed modules/ROM/full ledger/Git proofs remain mandatory.
 
 Totals: 440 further recoveries after the 225 upstream ordinary imports, plus 1955 existing C semantic cleanups. Current ledger: 760 assembly references = 721 ordinary + 39 entrypoints; 699,908 known remaining instruction bytes; zero unknown sizes; 289 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `6442-lifecycle-ui-native-contracts` and `accepted-lifecycle-ui-native-contracts-6442` verify real translation-unit instructions/full relocations, 35 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 440 further readable functions
+
+Clarify31 existing kernel file/module/resource functions5284B across exactly3 source paths. Preserve literal bodies, ABI/types, allocation ownership and known native quirks. Actual31 candidate/3 baseline trials and complete native/ordered-record/site/warning/whole-TU-coordinate observations required. Preserve2184 prior assessments,169 typed SDK records and83 historical attempts. All133 original packed modules, full original ROM and complete literal ledger remain mandatory.
+
+Totals: 440 further recoveries after the 225 upstream ordinary imports, plus 1986 existing C semantic cleanups. Current ledger: 760 assembly references = 721 ordinary + 39 entrypoints; 699,908 known remaining instruction bytes; zero unknown sizes; 289 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `6572-kernel-resource-native-contracts` and `accepted-kernel-resource-native-contracts-6572` verify real translation-unit instructions/full relocations, 133 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

@@ -50,6 +50,13 @@ s32 *gModuleNameTags;
 s32 *gModuleExportsSize;
 s16 gModuleCount;
 
+/*
+ * Build module-tag and export-header-size arrays from each UVMO COMM block,
+ * storing zeros for absent files. Preserve signed 16-bit module count storage
+ * and the original payload-sized COMM copy. The body already records the
+ * unresolved scratch-layout evidence.
+ */
+#line 53 "src/module.c"
 void uvModuleInit(void) {
     s32 i;
     s32 fileId;
@@ -76,6 +83,11 @@ void uvModuleInit(void) {
     }
 }
 
+/*
+ * Return the first module-table index with the requested name tag, or -1 when
+ * none matches.
+ */
+#line 79 "src/module.c"
 s32 uvGetModuleFileId(s32 tag) {
     s32 i;
 
@@ -88,6 +100,11 @@ s32 uvGetModuleFileId(s32 tag) {
     return -1;
 }
 
+/*
+ * Resolve a module tag and return its existing UVMO allocation without
+ * acquiring a file reference. Unknown tags return NULL.
+ */
+#line 91 "src/module.c"
 void *uvGetLoadedModule(s32 tag) {
     s32 ret;
 
@@ -98,6 +115,11 @@ void *uvGetLoadedModule(s32 tag) {
     return uvGetLoadedFile('UVMO', ret);
 }
 
+/*
+ * Resolve a module tag and acquire its UVMO file through the normal reference-
+ * counted load path. Unknown tags return NULL.
+ */
+#line 101 "src/module.c"
 void *uvLoadModule(s32 tag) {
     s32 fileId;
 
@@ -108,10 +130,23 @@ void *uvLoadModule(s32 tag) {
     return _uvAllocModule(fileId);
 }
 
+/*
+ * Acquire the specified UVMO file index through uvLoadFile; this wrapper does
+ * not directly allocate a new buffer.
+ */
+#line 111 "src/module.c"
 void *_uvAllocModule(s32 fileId) {
     return uvLoadFile('UVMO', fileId);
 }
 
+/*
+ * Read COMM, CODE and RELA blocks, allocate the export header plus code and
+ * BSS, relocate the module, maintain caches, and call its entrypoint with the
+ * header pointer. Free relocation storage before the entrypoint call.
+ * RE_UNKNOWN: original guarantees for required block order, sizes and
+ * entrypoint bounds; preserve the existing parser assumptions.
+ */
+#line 115 "src/module.c"
 void *uvLoadModuleCode(u8 *data) {
     s32 fileId;
     u32 tag;
@@ -177,10 +212,25 @@ void *uvLoadModuleCode(u8 *data) {
     return headeredStartPtr;
 }
 
+/*
+ * Resolve the module tag and pass its file index to the UVMO unload path.
+ * Preserve delegation of missing-index handling to uvUnloadFile.
+ */
+#line 180 "src/module.c"
 void uvUnloadModule(s32 tag) {
     uvUnloadFile('UVMO', uvGetModuleFileId(tag));
 }
 
+/*
+ * Decode the packed symbol section, instruction section, relocation kind and
+ * halfword-scaled offset, then patch the selected module word. Preserve the
+ * original single pending HI16 path, conditional FIX_MODULE_RELOCS queue
+ * implementation, signed-low carry adjustments, and ignored relocation kinds.
+ * RE_UNKNOWN: producer guarantees for valid section/kind fields and HI/LO
+ * ordering; establish the active native build branch before claiming the
+ * conditional fix executes.
+ */
+#line 184 "src/module.c"
 void uvDoModuleRelocs(u8 *ovlStartPtr, ModuleCommInfo *info) {
     u32 symBase;
     s32 instructionOffset;

@@ -48,6 +48,14 @@ void uvUnloadFile(s32 tag, s32 fileId);
 
 #define __FORM0_START main_ROM_END
 
+/*
+ * Scan FORM0 twice to count tables and entries, allocate their contiguous
+ * views, and initialize each ROM pointer and unloaded entry. Preserve the
+ * 16-bit counters, -1 absent-entry marker, ROM offset base, and inherited
+ * empty matching conditionals. RE_UNKNOWN: producer size/count limits and the
+ * original source purpose of the matching scaffolding.
+ */
+#line 51 "src/file_manager.c"
 void uvLoadFormFiles(void) {
     s32 fileId;
     FormFileEntry *formTagsPtr;
@@ -109,6 +117,12 @@ void uvLoadFormFiles(void) {
     }
 }
 
+/*
+ * Return the 16-bit reference count for a valid tag and file index; return
+ * zero when either lookup fails. Zero therefore also represents a valid
+ * unloaded file.
+ */
+#line 112 "src/file_manager.c"
 u16 uvGetFileInstanceCount(s32 tag, s32 fileId) {
     s32 formFileId;
 
@@ -122,6 +136,11 @@ u16 uvGetFileInstanceCount(s32 tag, s32 fileId) {
     return gFormFiles[formFileId].fileEntry[fileId].instanceCount;
 }
 
+/*
+ * Return the entry count for the matching form tag, or zero when no form
+ * matches.
+ */
+#line 125 "src/file_manager.c"
 s32 uvGetFilesCount(s32 tag) {
     s32 formFileId;
 
@@ -132,6 +151,11 @@ s32 uvGetFilesCount(s32 tag) {
     return gFormFiles[formFileId].filesCount;
 }
 
+/*
+ * Return the stored ROM pointer for a valid form/file pair, independently of
+ * whether the file has a loaded allocation. Return NULL on failed lookup.
+ */
+#line 135 "src/file_manager.c"
 u8 *uvGetFileData(s32 formFileTag, s32 fileId) {
     s32 formFileId;
 
@@ -145,6 +169,11 @@ u8 *uvGetFileData(s32 formFileTag, s32 fileId) {
     return gFormFiles[formFileId].fileEntry[fileId].romPtr;
 }
 
+/*
+ * Return the current allocation pointer without acquiring a reference or
+ * loading data. Failed form/file lookup returns NULL.
+ */
+#line 148 "src/file_manager.c"
 void *uvGetLoadedFile(s32 formFileTag, s32 fileId) {
     s32 formFileId;
 
@@ -158,6 +187,13 @@ void *uvGetLoadedFile(s32 formFileTag, s32 fileId) {
     return (void *) gFormFiles[formFileId].fileEntry[fileId].allocPtr;
 }
 
+/*
+ * Return the retained per-file debug field after validating the form and file
+ * index. Failed lookup returns zero. RE_UNKNOWN: the field's nonzero producer
+ * and exact units; keep its existing identity until original writers establish
+ * a more specific name.
+ */
+#line 161 "src/file_manager.c"
 s32 uvGetUnusedFileInfo(s32 tag, s32 fileId) {
     s32 formFileId;
 
@@ -171,6 +207,15 @@ s32 uvGetUnusedFileInfo(s32 tag, s32 fileId) {
     return gFormFiles[formFileId].fileEntry[fileId].unused;
 }
 
+/*
+ * Allocate or parse a file selected by form tag. UVTX may acquire a mapped
+ * texture through the borrowed redirect table; UVMO exposes the current file
+ * entry while its module entrypoint runs. Other forms temporarily load their
+ * parser module, while tag 0xFFFF keeps the raw ROM pointer. RE_UNKNOWN:
+ * caller guarantees for the unchecked file index and redirect-table lifetime;
+ * no new ownership or validation rule is introduced.
+ */
+#line 174 "src/file_manager.c"
 void *uvAllocFile(s32 formFileTag, s32 fileId) {
     FormFileEntry *fileEntry;
     s32 formFileId;
@@ -214,10 +259,22 @@ void *uvAllocFile(s32 formFileTag, s32 fileId) {
     return fileEntry->allocPtr;
 }
 
+/*
+ * Replace the allocation pointer of the current module-loading file entry. The
+ * caller must run while the UVMO load path has installed that global entry;
+ * this helper performs no NULL check.
+ */
+#line 217 "src/file_manager.c"
 void uvUpdateFileAllocPtr(void *allocPtr) {
     sCurrentFileEntry->allocPtr = allocPtr;
 }
 
+/*
+ * Increment the 16-bit file reference count and allocate only on the
+ * transition to one, then return the stored allocation. Preserve counter
+ * truncation and the retained reference even if allocation returns NULL.
+ */
+#line 221 "src/file_manager.c"
 void *uvLoadFile(s32 formFileTag, s32 fileId) {
     FormFileEntry *fileEntry;
     s32 formFileId;
@@ -237,6 +294,14 @@ void *uvLoadFile(s32 formFileTag, s32 fileId) {
     return fileEntry->allocPtr;
 }
 
+/*
+ * Ignore invalid or unloaded files, decrement their 16-bit reference count,
+ * and release only on transition to zero. A redirected UVTX releases its
+ * mapped texture; other files use the form-specific release path. Clear the
+ * allocation and debug field after release, preserving the inherited pointer-
+ * through-integer matching statement.
+ */
+#line 240 "src/file_manager.c"
 void uvUnloadFile(s32 formFileTag, s32 fileId) {
     FormFileEntry *ptr;
     s32 formFileId;
@@ -286,6 +351,13 @@ void uvUnloadFile(s32 formFileTag, s32 fileId) {
     ptr->unused = 0;
 }
 
+/*
+ * Release a loaded asset through its form parser. UVMO instead calls the
+ * export header's cleanup callback and frees that header allocation. Preserve
+ * callback order and existing assumptions about valid exports and parser
+ * availability.
+ */
+#line 289 "src/file_manager.c"
 STATIC_FUNC void uvFreeFile(s32 formFileTag, ModuleExports *exports) {
     s32 formFileId;
     ParsedAsset *parsedAsset;
@@ -306,6 +378,12 @@ STATIC_FUNC void uvFreeFile(s32 formFileTag, ModuleExports *exports) {
     uvUnloadModule(gFormFiles[formFileId].tag);
 }
 
+/*
+ * Set every registered file reference count to zero without invoking release
+ * callbacks or clearing allocation pointers. This is a count reset, not a
+ * resource teardown.
+ */
+#line 309 "src/file_manager.c"
 void uvResetAllFilesInstanceCount(void) {
     s32 i;
     s32 j;
@@ -317,6 +395,13 @@ void uvResetAllFilesInstanceCount(void) {
     }
 }
 
+/*
+ * Read and copy a FORM entry. For a GZIP wrapper, return its inner tag and
+ * advertised decoded size; flag bit 0x2 retains the encoded wrapper instead of
+ * calling MIO0. Preserve the existing length and allocation assumptions
+ * documented in the body.
+ */
+#line 320 "src/file_manager.c"
 u32 uvFileReadBlock(s32 fileId, u32 *sizeOut, void **data, s32 decodeFlag) {
     u32 tag;
     u8 *allocPtr;
@@ -343,6 +428,13 @@ u32 uvFileReadBlock(s32 fileId, u32 *sizeOut, void **data, s32 decodeFlag) {
     return tag;
 }
 
+/*
+ * Advance the input cursor by the requested size. Sizes 1, 2, 4 and 8 store a
+ * scalar result; other sizes up to eight perform the scalar read and cursor
+ * advance without storing to the destination. Larger sizes copy raw bytes.
+ * Preserve that unusual small-size behavior.
+ */
+#line 346 "src/file_manager.c"
 void uvConsumeBytes(void *dst, u8 **ptr, u32 size) {
     u64 mem;
 
@@ -369,6 +461,13 @@ void uvConsumeBytes(void *dst, u8 **ptr, u32 size) {
     }
 }
 
+/*
+ * Probe this function's saved form index before searching all tags, returning
+ * -1 on a miss. A failed search leaves the saved index at the form count.
+ * RE_ORIGINAL_QUIRK: the next cached probe has no range check; preserve the
+ * original behavior rather than silently repairing it.
+ */
+#line 372 "src/file_manager.c"
 s32 uvGetFormFileIdByTag(s32 tag) {
     static s32 i = 0;
 
@@ -385,6 +484,12 @@ s32 uvGetFormFileIdByTag(s32 tag) {
     return FILE_NOT_FOUND;
 }
 
+/*
+ * Perform the second tag lookup with its own independent saved index. Preserve
+ * the same cached-probe order and failed-search index behavior as the first
+ * lookup; do not merge their static state.
+ */
+#line 388 "src/file_manager.c"
 s32 uvGetFormFileIdByTagDup(s32 tag) {
     static s32 i = 0;
 
@@ -400,6 +505,12 @@ s32 uvGetFormFileIdByTagDup(s32 tag) {
     return FILE_NOT_FOUND;
 }
 
+/*
+ * Check the signed file index against the entry count of the supplied form-
+ * table index. The first argument is an already-resolved table index, not a
+ * four-character form tag; this helper does not validate that table index.
+ */
+#line 403 "src/file_manager.c"
 s32 uvCheckValidFileId(s32 tag, s32 fileId) {
     if ((fileId < 0) || (fileId >= gFormFiles[tag].filesCount)) {
         return FILE_INVALID;
@@ -407,6 +518,12 @@ s32 uvCheckValidFileId(s32 tag, s32 fileId) {
     return FILE_VALID;
 }
 
+/*
+ * Find the first non-NULL file ROM pointer starting at the supplied form-table
+ * index and continuing through later forms. Return UVTS_25_ROM_END if none
+ * exists. This lookup does not compute a file allocation extent.
+ */
+#line 410 "src/file_manager.c"
 u8 *uvGetFileRomPtr(s32 formFileId) {
     s32 i;
     s32 j;

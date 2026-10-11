@@ -221,8 +221,8 @@
     "include/weapon.h": "1144bab7321fe6c83d740bea9a102b2ab82c6b765dd4b4a1ba4c27de719845d0",
     "src/clocks.c": "cef2d5b3063fa7eae317005e88a9de413a4475b340dbf83c2a6637b917f7b1d1",
     "src/crash_screen.c": "7e78df2fb86123fd4f921d55d25a459dd6bdd2e1dd9f7372ac91bc98294ab36e",
-    "src/file_manager.c": "c149060309cad8a6ca82ed0af045e03c574ad254c50d180d3bed718a393ea286",
-    "src/filesystem.c": "9bc5c941616a1f6305d2a298f9df633d815b0ce2dae7f3ca1bfe0a7ab8558fb8",
+    "src/file_manager.c": "b99a84700b406cbd121dc0ee9fe1fd0ca961c1d976116215a623c2e0e667e7e4",
+    "src/filesystem.c": "c85a1bbbe4cead20c69e04da5cb5ca0698943d3805a0dfcfbf3d546957be86ec",
     "src/game_init.c": "6944f62f0433701411476dac29f9bc72d997309d6be0919a55c7e7a3b8b6e20b",
     "src/isprint.c": "0a772034f3731b8677ddd0d15e2977f08f7ef6882db5055abfbd6dd09a7df3ca",
     "src/libultra/audio/auxbus.c": "6df923275b93b794690cf9763d60112b49454f388c87314ea57836cceb043dc3",
@@ -328,7 +328,7 @@
     "src/mem_allocator.c": "5554fdc8f5a8e9918a7058897493e46a1c41cd75ce268adf0edb61bf197a8b3c",
     "src/mem_block.c": "b6e363010c6efbe986f1574e9bca20d849b80fbab803c44ce872ef258e3bdf7c",
     "src/memory.c": "ba32d6e4f4bc044fc7233a90a017099c3d69a98ca9543f2896fa8778e98d1ae2",
-    "src/module.c": "5ba7eb9645ad9347a96527e105f1d60a413ed3c051b28fa8d8b38a2d123eb01e",
+    "src/module.c": "12b66dab4fb25996959127f017b6a585395d9a4dd6933df839776e2b0e74cc3c",
     "src/modules/ai.c": "d9c685beae499950e225991b618448dc40fc6508d0bcabbb2806947639492270",
     "src/modules/aiedit.c": "d96bd5cec62df33dd0757616b78a91e042bc81768aa3eadd7ab5b34cea26425f",
     "src/modules/airec.c": "18ba7e4637ffd5f686625fb09427e995b2b2ef79dc594f86f16704d0252349a4",
@@ -466,8 +466,8 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "5246a09b619632ea5943abc16f9f302f662b468c0f562bc71fe3792ed7c97f25",
-    "docs/VALIDATION_20261006.md": "1ad5e9a0643c4fb2bd0bd2198a5235dfe0c30934669f94b9f7bfb36c271c8c2e"
+    "docs/STRATEGY_V4.md": "8d4eb65fd1c7ed5f580a3a399494cac2e46e3d2a29331d4177aed65d03fa7ef3",
+    "docs/VALIDATION_20261006.md": "a91f2c996e17f0abfb67554ce96ee03254a086c0d74056e2251b0db15a3e5ab6"
   },
   "counts": {
     "address_function": 909,
@@ -477,12 +477,12 @@
     "conditional_draft": 4,
     "decompiler_local": 619,
     "draft_marker": 37,
-    "explicit_unknown": 1694,
+    "explicit_unknown": 1699,
     "layout_padding": 275,
     "offset_field": 1662,
     "opaque_type": 282,
-    "original_quirk": 450,
-    "uncertainty_note": 84,
+    "original_quirk": 451,
+    "uncertainty_note": 87,
     "unused_identifier": 137
   },
   "items": [
@@ -22640,58 +22640,58 @@
       "symbol": "D_8002D9BC",
       "lines": [
         40,
-        64,
-        192,
-        193,
-        194,
-        195,
-        267,
-        269,
-        270,
-        271,
-        526,
-        528,
-        530
+        72,
+        237,
+        238,
+        239,
+        240,
+        332,
+        334,
+        335,
+        336,
+        643,
+        645,
+        647
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvAllocFile",
-          "declaration_line": 174,
+          "declaration_line": 219,
           "lines": [
-            192,
-            193,
-            194,
-            195
+            237,
+            238,
+            239,
+            240
           ]
         },
         {
           "kind": "function",
           "name": "uvLoadFormFiles",
-          "declaration_line": 51,
+          "declaration_line": 59,
           "lines": [
-            64
+            72
           ]
         },
         {
           "kind": "function",
           "name": "uvSelectTextureRedirectTable",
-          "declaration_line": 524,
+          "declaration_line": 641,
           "lines": [
-            526,
-            528,
-            530
+            643,
+            645,
+            647
           ]
         },
         {
           "kind": "function",
           "name": "uvUnloadFile",
-          "declaration_line": 240,
+          "declaration_line": 305,
           "lines": [
-            267,
-            269,
-            270,
-            271
+            332,
+            334,
+            335,
+            336
           ]
         },
         {
@@ -85218,15 +85218,15 @@
       "path": "src/file_manager.c",
       "symbol": "temp_v1",
       "lines": [
-        55
+        63
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvLoadFormFiles",
-          "declaration_line": 51,
+          "declaration_line": 59,
           "lines": [
-            55
+            63
           ]
         }
       ]
@@ -85237,15 +85237,15 @@
       "path": "src/file_manager.c",
       "symbol": "var_v0",
       "lines": [
-        54
+        62
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvLoadFormFiles",
-          "declaration_line": 51,
+          "declaration_line": 59,
           "lines": [
-            54
+            62
           ]
         }
       ]
@@ -85256,15 +85256,15 @@
       "path": "src/file_manager.c",
       "symbol": "var_v1",
       "lines": [
-        61
+        69
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvLoadFormFiles",
-          "declaration_line": 51,
+          "declaration_line": 59,
           "lines": [
-            61
+            69
           ]
         }
       ]
@@ -114674,18 +114674,18 @@
       "path": "src/file_manager.c",
       "symbol": "FAKE",
       "lines": [
-        522,
-        531
+        639,
+        648
       ],
       "evidence": "Select an already-loaded UVTP table used by UVTX load/unload redirection, * or clear the table when passed 0xFFFF. This function acquires no file reference. * RE_UNKNOWN: table lifetime and which callers enable redirection; trace * original references and UVTP load/unload ordering before changing ownership. * The existing empty FAKE conditional is retained for binary matching; * its original source-level purpose remains unresolved.",
       "owners": [
         {
           "kind": "function",
           "name": "uvSelectTextureRedirectTable",
-          "declaration_line": 524,
+          "declaration_line": 641,
           "lines": [
-            522,
-            531
+            639,
+            648
           ]
         }
       ]
@@ -114696,25 +114696,25 @@
       "path": "src/file_manager.c",
       "symbol": "TODO",
       "lines": [
-        191,
-        280
+        236,
+        345
       ],
       "evidence": "TODO: Is this true in normal game conditions?",
       "owners": [
         {
           "kind": "function",
           "name": "uvAllocFile",
-          "declaration_line": 174,
+          "declaration_line": 219,
           "lines": [
-            191
+            236
           ]
         },
         {
           "kind": "function",
           "name": "uvUnloadFile",
-          "declaration_line": 240,
+          "declaration_line": 305,
           "lines": [
-            280
+            345
           ]
         }
       ]
@@ -115318,21 +115318,81 @@
       ]
     },
     {
+      "id": "Q-b796a840c611",
+      "kind": "explicit_unknown",
+      "path": "src/file_manager.c",
+      "symbol": "* Allocate or parse a file selected by form tag. UVTX may acquire a mapped * texture through the borrowed redirect table; UVMO exposes the current file * entry while its module entrypoint runs. Other forms temporarily load their * parser module, while tag 0xFFFF keeps the raw ROM pointer. RE_UNKNOWN: * caller guarantees for the unchecked file index and redirect-table lifetime; * no new ownership or validation rule is introduced.",
+      "lines": [
+        210
+      ],
+      "evidence": "* Allocate or parse a file selected by form tag. UVTX may acquire a mapped * texture through the borrowed redirect table; UVMO exposes the current file * entry while its module entrypoint runs. Other forms temporarily load their * parser module, while tag 0xFFFF keeps the raw ROM pointer. RE_UNKNOWN: * caller guarantees for the unchecked file index and redirect-table lifetime; * no new ownership or validation rule is introduced.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvAllocFile",
+          "declaration_line": 219,
+          "lines": [
+            210
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-a1083087c871",
+      "kind": "explicit_unknown",
+      "path": "src/file_manager.c",
+      "symbol": "* Return the retained per-file debug field after validating the form and file * index. Failed lookup returns zero. RE_UNKNOWN: the field's nonzero producer * and exact units; keep its existing identity until original writers establish * a more specific name.",
+      "lines": [
+        190
+      ],
+      "evidence": "* Return the retained per-file debug field after validating the form and file * index. Failed lookup returns zero. RE_UNKNOWN: the field's nonzero producer * and exact units; keep its existing identity until original writers establish * a more specific name.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvGetUnusedFileInfo",
+          "declaration_line": 197,
+          "lines": [
+            190
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-21599b710ade",
+      "kind": "explicit_unknown",
+      "path": "src/file_manager.c",
+      "symbol": "* Scan FORM0 twice to count tables and entries, allocate their contiguous * views, and initialize each ROM pointer and unloaded entry. Preserve the * 16-bit counters, -1 absent-entry marker, ROM offset base, and inherited * empty matching conditionals. RE_UNKNOWN: producer size/count limits and the * original source purpose of the matching scaffolding.",
+      "lines": [
+        51
+      ],
+      "evidence": "* Scan FORM0 twice to count tables and entries, allocate their contiguous * views, and initialize each ROM pointer and unloaded entry. Preserve the * 16-bit counters, -1 absent-entry marker, ROM offset base, and inherited * empty matching conditionals. RE_UNKNOWN: producer size/count limits and the * original source purpose of the matching scaffolding.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvLoadFormFiles",
+          "declaration_line": 59,
+          "lines": [
+            51
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-0ccd6fb495c5",
       "kind": "explicit_unknown",
       "path": "src/file_manager.c",
       "symbol": "Find the highest file allocation base strictly below the supplied address, * then return its form tag, file index and offset. Fall back to CODE at * 0x80000000 when no higher preceding base is found. * RE_UNKNOWN: actual allocation ownership of the address; this debug lookup * checks no end bound and excludes equality with a base. Resolve ownership * with allocation extents rather than treating this heuristic as containment.",
       "lines": [
-        475
+        592
       ],
       "evidence": "Find the highest file allocation base strictly below the supplied address, * then return its form tag, file index and offset. Fall back to CODE at * 0x80000000 when no higher preceding base is found. * RE_UNKNOWN: actual allocation ownership of the address; this debug lookup * checks no end bound and excludes equality with a base. Resolve ownership * with allocation extents rather than treating this heuristic as containment.",
       "owners": [
         {
           "kind": "function",
           "name": "uvFindFileBaseBeforeAddress",
-          "declaration_line": 481,
+          "declaration_line": 598,
           "lines": [
-            475
+            592
           ]
         }
       ]
@@ -115343,16 +115403,16 @@
       "path": "src/file_manager.c",
       "symbol": "List form tags and ROM spans between consecutive form lookup starts, up to * the caller-provided capacity. uvGetFileRomPtr skips absent ROM entries. * RE_UNKNOWN: whether these spans equal each form's encoded payload size; * resolve against the ROM table and the debug report's intended accounting.",
       "lines": [
-        427
+        544
       ],
       "evidence": "List form tags and ROM spans between consecutive form lookup starts, up to * the caller-provided capacity. uvGetFileRomPtr skips absent ROM entries. * RE_UNKNOWN: whether these spans equal each form's encoded payload size; * resolve against the ROM table and the debug report's intended accounting.",
       "owners": [
         {
           "kind": "function",
           "name": "uvListFormRomSpans",
-          "declaration_line": 431,
+          "declaration_line": 548,
           "lines": [
-            427
+            544
           ]
         }
       ]
@@ -115363,16 +115423,16 @@
       "path": "src/file_manager.c",
       "symbol": "List form tags and sums of their per-file debug field for the memory * accounting report. Keep the existing capacity limit and accumulation order. * RE_UNKNOWN: the debug field's nonzero producer and exact units; visible C * initializes/clears it, while the report treats totals as memory sizes. * Resolve the original writers before renaming the field or claiming live bytes.",
       "lines": [
-        449
+        566
       ],
       "evidence": "List form tags and sums of their per-file debug field for the memory * accounting report. Keep the existing capacity limit and accumulation order. * RE_UNKNOWN: the debug field's nonzero producer and exact units; visible C * initializes/clears it, while the report treats totals as memory sizes. * Resolve the original writers before renaming the field or claiming live bytes.",
       "owners": [
         {
           "kind": "function",
           "name": "uvListFormDebugTotals",
-          "declaration_line": 454,
+          "declaration_line": 571,
           "lines": [
-            449
+            566
           ]
         }
       ]
@@ -115383,16 +115443,16 @@
       "path": "src/file_manager.c",
       "symbol": "RE_UNKNOWN: caller validation; MIO0 output length is not checked against this wrapper-sized allocation.",
       "lines": [
-        336
+        421
       ],
       "evidence": "RE_UNKNOWN: caller validation; MIO0 output length is not checked against this wrapper-sized allocation.",
       "owners": [
         {
           "kind": "function",
           "name": "uvFileReadBlock",
-          "declaration_line": 320,
+          "declaration_line": 405,
           "lines": [
-            336
+            421
           ]
         }
       ]
@@ -115403,16 +115463,16 @@
       "path": "src/file_manager.c",
       "symbol": "Select an already-loaded UVTP table used by UVTX load/unload redirection, * or clear the table when passed 0xFFFF. This function acquires no file reference. * RE_UNKNOWN: table lifetime and which callers enable redirection; trace * original references and UVTP load/unload ordering before changing ownership. * The existing empty FAKE conditional is retained for binary matching; * its original source-level purpose remains unresolved.",
       "lines": [
-        518
+        635
       ],
       "evidence": "Select an already-loaded UVTP table used by UVTX load/unload redirection, * or clear the table when passed 0xFFFF. This function acquires no file reference. * RE_UNKNOWN: table lifetime and which callers enable redirection; trace * original references and UVTP load/unload ordering before changing ownership. * The existing empty FAKE conditional is retained for binary matching; * its original source-level purpose remains unresolved.",
       "owners": [
         {
           "kind": "function",
           "name": "uvSelectTextureRedirectTable",
-          "declaration_line": 524,
+          "declaration_line": 641,
           "lines": [
-            518
+            635
           ]
         }
       ]
@@ -115423,16 +115483,16 @@
       "path": "src/filesystem.c",
       "symbol": "* Read a tag, payload size and payload address from the current FORM entry, * advance the cursor by the declared size plus eight, and skip PAD entries. * Use a local size sink when the caller omits that output; preserve the separate * mandatory address output and the original initial cursor-limit test. * RE_UNKNOWN: valid file-index/address-output domains, full file/chunk capacities, * PAD-chain termination, declared-size arithmetic and cursor lifetimes. Resolve * original producers, callers and allocation bounds before claiming this reader * validates complete chunks or changing its output/failure contract. * RE_UNKNOWN: the historical purpose of the original unused pad declaration is * unresolved. Retain that declaration because its removal changes the observed * stack address of the ignored size sink; recover original source/layout evidence * before removing it from a matching build.",
       "lines": [
-        64
+        84
       ],
       "evidence": "* Read a tag, payload size and payload address from the current FORM entry, * advance the cursor by the declared size plus eight, and skip PAD entries. * Use a local size sink when the caller omits that output; preserve the separate * mandatory address output and the original initial cursor-limit test. * RE_UNKNOWN: valid file-index/address-output domains, full file/chunk capacities, * PAD-chain termination, declared-size arithmetic and cursor lifetimes. Resolve * original producers, callers and allocation bounds before claiming this reader * validates complete chunks or changing its output/failure contract. * RE_UNKNOWN: the historical purpose of the original unused pad declaration is * unresolved. Retain that declaration because its removal changes the observed * stack address of the ignored size sink; recover original source/layout evidence * before removing it from a matching build.",
       "owners": [
         {
           "kind": "function",
           "name": "uvFileGetEntryTag",
-          "declaration_line": 79,
+          "declaration_line": 99,
           "lines": [
-            64
+            84
           ]
         }
       ]
@@ -115463,16 +115523,16 @@
       "path": "src/filesystem.c",
       "symbol": "* Search from the FORM entry start for the requested tag and occurrence * threshold, then restore the original entry cursor on success or exhaustion. * Preserve the matching-only postincrement, signed candidate-tag word view and * every output from the underlying entry reader, including on failed searches. * RE_UNKNOWN: caller occurrence-index domain, required outputs on misses, valid * file indices, complete chunk capacities/termination and concurrent cursor * lifetimes. Resolve original callers, producers and failure consumers before * changing indexing, bounds, outputs or cursor ownership.",
       "lines": [
-        102
+        122
       ],
       "evidence": "* Search from the FORM entry start for the requested tag and occurrence * threshold, then restore the original entry cursor on success or exhaustion. * Preserve the matching-only postincrement, signed candidate-tag word view and * every output from the underlying entry reader, including on failed searches. * RE_UNKNOWN: caller occurrence-index domain, required outputs on misses, valid * file indices, complete chunk capacities/termination and concurrent cursor * lifetimes. Resolve original callers, producers and failure consumers before * changing indexing, bounds, outputs or cursor ownership.",
       "owners": [
         {
           "kind": "function",
           "name": "uvFileSearchTag",
-          "declaration_line": 113,
+          "declaration_line": 133,
           "lines": [
-            102
+            122
           ]
         }
       ]
@@ -117198,21 +117258,61 @@
       ]
     },
     {
+      "id": "Q-b9a20f7f41b9",
+      "kind": "explicit_unknown",
+      "path": "src/module.c",
+      "symbol": "* Decode the packed symbol section, instruction section, relocation kind and * halfword-scaled offset, then patch the selected module word. Preserve the * original single pending HI16 path, conditional FIX_MODULE_RELOCS queue * implementation, signed-low carry adjustments, and ignored relocation kinds. * RE_UNKNOWN: producer guarantees for valid section/kind fields and HI/LO * ordering; establish the active native build branch before claiming the * conditional fix executes.",
+      "lines": [
+        224
+      ],
+      "evidence": "* Decode the packed symbol section, instruction section, relocation kind and * halfword-scaled offset, then patch the selected module word. Preserve the * original single pending HI16 path, conditional FIX_MODULE_RELOCS queue * implementation, signed-low carry adjustments, and ignored relocation kinds. * RE_UNKNOWN: producer guarantees for valid section/kind fields and HI/LO * ordering; establish the active native build branch before claiming the * conditional fix executes.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDoModuleRelocs",
+          "declaration_line": 234,
+          "lines": [
+            224
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-b44c93ac6699",
+      "kind": "explicit_unknown",
+      "path": "src/module.c",
+      "symbol": "* Read COMM, CODE and RELA blocks, allocate the export header plus code and * BSS, relocate the module, maintain caches, and call its entrypoint with the * header pointer. Free relocation storage before the entrypoint call. * RE_UNKNOWN: original guarantees for required block order, sizes and * entrypoint bounds; preserve the existing parser assumptions.",
+      "lines": [
+        142
+      ],
+      "evidence": "* Read COMM, CODE and RELA blocks, allocate the export header plus code and * BSS, relocate the module, maintain caches, and call its entrypoint with the * header pointer. Free relocation storage before the entrypoint call. * RE_UNKNOWN: original guarantees for required block order, sizes and * entrypoint bounds; preserve the existing parser assumptions.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvLoadModuleCode",
+          "declaration_line": 150,
+          "lines": [
+            142
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-a0c984210b29",
       "kind": "explicit_unknown",
       "path": "src/module.c",
       "symbol": "RE_UNKNOWN: historical COMM scratch extent; the current info view is 36 bytes, while the observed original VOLTEST payload copy is 40. Resolve original headers and scratch lifetimes before changing layout.",
       "lines": [
-        57
+        64
       ],
       "evidence": "RE_UNKNOWN: historical COMM scratch extent; the current info view is 36 bytes, while the observed original VOLTEST payload copy is 40. Resolve original headers and scratch lifetimes before changing layout.",
       "owners": [
         {
           "kind": "function",
           "name": "uvModuleInit",
-          "declaration_line": 53,
+          "declaration_line": 60,
           "lines": [
-            57
+            64
           ]
         }
       ]
@@ -117223,16 +117323,16 @@
       "path": "src/module.c",
       "symbol": "Return the tag of the loaded UVMO file with the highest base strictly * below the supplied address; optionally write its file index, or -1 * when no candidate exists. The fault-display caller uses this to form * a module-relative address after subtracting the export-header size. * RE_UNKNOWN: actual module containment; no upper extent is checked and * equality with a module base is excluded. Resolve from loaded module * sizes before using this diagnostic heuristic as an ownership test.",
       "lines": [
-        331
+        381
       ],
       "evidence": "Return the tag of the loaded UVMO file with the highest base strictly * below the supplied address; optionally write its file index, or -1 * when no candidate exists. The fault-display caller uses this to form * a module-relative address after subtracting the export-header size. * RE_UNKNOWN: actual module containment; no upper extent is checked and * equality with a module base is excluded. Resolve from loaded module * sizes before using this diagnostic heuristic as an ownership test.",
       "owners": [
         {
           "kind": "function",
           "name": "uvFindModuleTagBeforeAddress",
-          "declaration_line": 338,
+          "declaration_line": 388,
           "lines": [
-            331
+            381
           ]
         }
       ]
@@ -150521,15 +150621,15 @@
       "path": "src/filesystem.c",
       "symbol": "pad",
       "lines": [
-        81
+        101
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvFileGetEntryTag",
-          "declaration_line": 79,
+          "declaration_line": 99,
           "lines": [
-            81
+            101
           ]
         }
       ]
@@ -223963,6 +224063,26 @@
       ]
     },
     {
+      "id": "Q-6ef81b4fff7a",
+      "kind": "original_quirk",
+      "path": "src/file_manager.c",
+      "symbol": "* Probe this function's saved form index before searching all tags, returning * -1 on a miss. A failed search leaves the saved index at the form count. * RE_ORIGINAL_QUIRK: the next cached probe has no range check; preserve the * original behavior rather than silently repairing it.",
+      "lines": [
+        464
+      ],
+      "evidence": "* Probe this function's saved form index before searching all tags, returning * -1 on a miss. A failed search leaves the saved index at the form count. * RE_ORIGINAL_QUIRK: the next cached probe has no range check; preserve the * original behavior rather than silently repairing it.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvGetFormFileIdByTag",
+          "declaration_line": 471,
+          "lines": [
+            464
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-2548e19a26ec",
       "kind": "original_quirk",
       "path": "src/filesystem.c",
@@ -232833,6 +232953,66 @@
       ]
     },
     {
+      "id": "Q-1dec50d6dbec",
+      "kind": "uncertainty_note",
+      "path": "src/module.c",
+      "symbol": "* Build module-tag and export-header-size arrays from each UVMO COMM block, * storing zeros for absent files. Preserve signed 16-bit module count storage * and the original payload-sized COMM copy. The body already records the * unresolved scratch-layout evidence.",
+      "lines": [
+        53
+      ],
+      "evidence": "* Build module-tag and export-header-size arrays from each UVMO COMM block, * storing zeros for absent files. Preserve signed 16-bit module count storage * and the original payload-sized COMM copy. The body already records the * unresolved scratch-layout evidence.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvModuleInit",
+          "declaration_line": 60,
+          "lines": [
+            53
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-0c92298a93da",
+      "kind": "uncertainty_note",
+      "path": "src/module.c",
+      "symbol": "* Resolve a module tag and acquire its UVMO file through the normal reference- * counted load path. Unknown tags return NULL.",
+      "lines": [
+        118
+      ],
+      "evidence": "* Resolve a module tag and acquire its UVMO file through the normal reference- * counted load path. Unknown tags return NULL.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvLoadModule",
+          "declaration_line": 123,
+          "lines": [
+            118
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-a7f717c57546",
+      "kind": "uncertainty_note",
+      "path": "src/module.c",
+      "symbol": "* Resolve a module tag and return its existing UVMO allocation without * acquiring a file reference. Unknown tags return NULL.",
+      "lines": [
+        103
+      ],
+      "evidence": "* Resolve a module tag and return its existing UVMO allocation without * acquiring a file reference. Unknown tags return NULL.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvGetLoadedModule",
+          "declaration_line": 108,
+          "lines": [
+            103
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-2e39f61cd02a",
       "kind": "uncertainty_note",
       "path": "src/modules/ai.c",
@@ -234475,44 +234655,44 @@
       "path": "src/file_manager.c",
       "symbol": "unused",
       "lines": [
-        98,
-        171,
-        273,
-        286,
-        466
+        106,
+        207,
+        338,
+        351,
+        583
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGetUnusedFileInfo",
-          "declaration_line": 161,
+          "declaration_line": 197,
           "lines": [
-            171
+            207
           ]
         },
         {
           "kind": "function",
           "name": "uvListFormDebugTotals",
-          "declaration_line": 454,
+          "declaration_line": 571,
           "lines": [
-            466
+            583
           ]
         },
         {
           "kind": "function",
           "name": "uvLoadFormFiles",
-          "declaration_line": 51,
+          "declaration_line": 59,
           "lines": [
-            98
+            106
           ]
         },
         {
           "kind": "function",
           "name": "uvUnloadFile",
-          "declaration_line": 240,
+          "declaration_line": 305,
           "lines": [
-            273,
-            286
+            338,
+            351
           ]
         }
       ]

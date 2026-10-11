@@ -43,20 +43,40 @@ s32 uvFileReadHeader(u8* fileBytes) {
 }
 #line 33 "src/filesystem.c"
 
+/*
+ * Release a valid FORM slot by clearing only its file-data pointer. Preserve
+ * the other slot fields and ignore indices outside the ten-slot range.
+ */
+#line 34 "src/filesystem.c"
 void uvFileFree(s32 id) {
     if ((id >= 0) && (id < 10)) {
         sCurrentFiles[id].fileData = NULL;
     }
 }
 
+/*
+ * Return the FORM slot's file-data pointer. The slot index is used directly
+ * without a bounds or registration check.
+ */
+#line 40 "src/filesystem.c"
 u8* uvFileGetDataPtr(s32 id) {
     return sCurrentFiles[id].fileData;
 }
 
+/*
+ * Return the stored FORM slot size directly; the slot index is not validated
+ * here.
+ */
+#line 44 "src/filesystem.c"
 s32 uvFileGetSize(s32 id) {
     return sCurrentFiles[id].fileSize;
 }
 
+/*
+ * Return the stored FORM type word directly; the slot index is not validated
+ * here.
+ */
+#line 48 "src/filesystem.c"
 s32 uvFileGetPadType(s32 id) {
     return sCurrentFiles[id].padType;
 }
@@ -131,6 +151,11 @@ u32 uvFileSearchTag(s32 fileIndex, u32* outPayloadSize, void** outPayloadAddress
 }
 #line 93 "src/filesystem.c"
 
+/*
+ * Reset the FORM entry cursor to byte offset 0xC. The slot index is used
+ * directly and no payload is read.
+ */
+#line 94 "src/filesystem.c"
 void uvFileSetPadTagStart(s32 id) {
     sCurrentFiles[id].padTagStart = PAD_TAG_START;
 }

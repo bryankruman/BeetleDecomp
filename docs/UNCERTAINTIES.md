@@ -17,9 +17,9 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 1694 |
-| Preserved RE_ORIGINAL_QUIRK notes | 450 |
-| Older comments with uncertainty language | 84 |
+| Explicit RE_UNKNOWN notes | 1699 |
+| Preserved RE_ORIGINAL_QUIRK notes | 451 |
+| Older comments with uncertainty language | 87 |
 | Documented original-behavior audits | 30 |
 | Assembly-backed functions or data | 764 |
 | Address-based function identifiers | 909 |
@@ -961,29 +961,33 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
-| address_global | `D_8002D9BC` | function `uvAllocFile`, function `uvLoadFormFiles`, function `uvSelectTextureRedirectTable`, function `uvUnloadFile`, global `D_8002D9BC` | [40](../src/file_manager.c#L40), [64](../src/file_manager.c#L64), [192](../src/file_manager.c#L192), [193](../src/file_manager.c#L193), [194](../src/file_manager.c#L194), [195](../src/file_manager.c#L195), [267](../src/file_manager.c#L267), [269](../src/file_manager.c#L269) (+5 in JSON) |
-| decompiler_local | `temp_v1` | function `uvLoadFormFiles` | [55](../src/file_manager.c#L55) |
-| decompiler_local | `var_v0` | function `uvLoadFormFiles` | [54](../src/file_manager.c#L54) |
-| decompiler_local | `var_v1` | function `uvLoadFormFiles` | [61](../src/file_manager.c#L61) |
-| draft_marker | `FAKE` | function `uvSelectTextureRedirectTable` | [522](../src/file_manager.c#L522), [531](../src/file_manager.c#L531) |
-| draft_marker | `TODO` | function `uvAllocFile`, function `uvUnloadFile` | [191](../src/file_manager.c#L191), [280](../src/file_manager.c#L280) |
-| explicit_unknown | `Find the highest file allocation base strictly below the supplied address, * then return its form tag, file index and offset. Fall back to CODE at * 0x80000000 when no higher pr...` | function `uvFindFileBaseBeforeAddress` | [475](../src/file_manager.c#L475) |
-| explicit_unknown | `List form tags and ROM spans between consecutive form lookup starts, up to * the caller-provided capacity. uvGetFileRomPtr skips absent ROM entries. * RE_UNKNOWN: whether these ...` | function `uvListFormRomSpans` | [427](../src/file_manager.c#L427) |
-| explicit_unknown | `List form tags and sums of their per-file debug field for the memory * accounting report. Keep the existing capacity limit and accumulation order. * RE_UNKNOWN: the debug field'...` | function `uvListFormDebugTotals` | [449](../src/file_manager.c#L449) |
-| explicit_unknown | `RE_UNKNOWN: caller validation; MIO0 output length is not checked against this wrapper-sized allocation.` | function `uvFileReadBlock` | [336](../src/file_manager.c#L336) |
-| explicit_unknown | `Select an already-loaded UVTP table used by UVTX load/unload redirection, * or clear the table when passed 0xFFFF. This function acquires no file reference. * RE_UNKNOWN: table ...` | function `uvSelectTextureRedirectTable` | [518](../src/file_manager.c#L518) |
+| address_global | `D_8002D9BC` | function `uvAllocFile`, function `uvLoadFormFiles`, function `uvSelectTextureRedirectTable`, function `uvUnloadFile`, global `D_8002D9BC` | [40](../src/file_manager.c#L40), [72](../src/file_manager.c#L72), [237](../src/file_manager.c#L237), [238](../src/file_manager.c#L238), [239](../src/file_manager.c#L239), [240](../src/file_manager.c#L240), [332](../src/file_manager.c#L332), [334](../src/file_manager.c#L334) (+5 in JSON) |
+| decompiler_local | `temp_v1` | function `uvLoadFormFiles` | [63](../src/file_manager.c#L63) |
+| decompiler_local | `var_v0` | function `uvLoadFormFiles` | [62](../src/file_manager.c#L62) |
+| decompiler_local | `var_v1` | function `uvLoadFormFiles` | [69](../src/file_manager.c#L69) |
+| draft_marker | `FAKE` | function `uvSelectTextureRedirectTable` | [639](../src/file_manager.c#L639), [648](../src/file_manager.c#L648) |
+| draft_marker | `TODO` | function `uvAllocFile`, function `uvUnloadFile` | [236](../src/file_manager.c#L236), [345](../src/file_manager.c#L345) |
+| explicit_unknown | `* Allocate or parse a file selected by form tag. UVTX may acquire a mapped * texture through the borrowed redirect table; UVMO exposes the current file * entry while its module ...` | function `uvAllocFile` | [210](../src/file_manager.c#L210) |
+| explicit_unknown | `* Return the retained per-file debug field after validating the form and file * index. Failed lookup returns zero. RE_UNKNOWN: the field's nonzero producer * and exact units; ke...` | function `uvGetUnusedFileInfo` | [190](../src/file_manager.c#L190) |
+| explicit_unknown | `* Scan FORM0 twice to count tables and entries, allocate their contiguous * views, and initialize each ROM pointer and unloaded entry. Preserve the * 16-bit counters, -1 absent-...` | function `uvLoadFormFiles` | [51](../src/file_manager.c#L51) |
+| explicit_unknown | `Find the highest file allocation base strictly below the supplied address, * then return its form tag, file index and offset. Fall back to CODE at * 0x80000000 when no higher pr...` | function `uvFindFileBaseBeforeAddress` | [592](../src/file_manager.c#L592) |
+| explicit_unknown | `List form tags and ROM spans between consecutive form lookup starts, up to * the caller-provided capacity. uvGetFileRomPtr skips absent ROM entries. * RE_UNKNOWN: whether these ...` | function `uvListFormRomSpans` | [544](../src/file_manager.c#L544) |
+| explicit_unknown | `List form tags and sums of their per-file debug field for the memory * accounting report. Keep the existing capacity limit and accumulation order. * RE_UNKNOWN: the debug field'...` | function `uvListFormDebugTotals` | [566](../src/file_manager.c#L566) |
+| explicit_unknown | `RE_UNKNOWN: caller validation; MIO0 output length is not checked against this wrapper-sized allocation.` | function `uvFileReadBlock` | [421](../src/file_manager.c#L421) |
+| explicit_unknown | `Select an already-loaded UVTP table used by UVTX load/unload redirection, * or clear the table when passed 0xFFFF. This function acquires no file reference. * RE_UNKNOWN: table ...` | function `uvSelectTextureRedirectTable` | [635](../src/file_manager.c#L635) |
 | opaque_type | `UnkStruct_8002D9BC` | global `D_8002D9BC`, type `UnkStruct_8002D9BC` | [20](../src/file_manager.c#L20), [40](../src/file_manager.c#L40) |
 | opaque_type | `UnkStruct_8002D9BC_s` | type `UnkStruct_8002D9BC` | [16](../src/file_manager.c#L16) |
-| unused_identifier | `unused` | function `uvGetUnusedFileInfo`, function `uvListFormDebugTotals`, function `uvLoadFormFiles`, function `uvUnloadFile` | [98](../src/file_manager.c#L98), [171](../src/file_manager.c#L171), [273](../src/file_manager.c#L273), [286](../src/file_manager.c#L286), [466](../src/file_manager.c#L466) |
+| original_quirk | `* Probe this function's saved form index before searching all tags, returning * -1 on a miss. A failed search leaves the saved index at the form count. * RE_ORIGINAL_QUIRK: the ...` | function `uvGetFormFileIdByTag` | [464](../src/file_manager.c#L464) |
+| unused_identifier | `unused` | function `uvGetUnusedFileInfo`, function `uvListFormDebugTotals`, function `uvLoadFormFiles`, function `uvUnloadFile` | [106](../src/file_manager.c#L106), [207](../src/file_manager.c#L207), [338](../src/file_manager.c#L338), [351](../src/file_manager.c#L351), [583](../src/file_manager.c#L583) |
 
 ## src/filesystem.c
 
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
-| explicit_unknown | `* Read a tag, payload size and payload address from the current FORM entry, * advance the cursor by the declared size plus eight, and skip PAD entries. * Use a local size sink w...` | function `uvFileGetEntryTag` | [64](../src/filesystem.c#L64) |
+| explicit_unknown | `* Read a tag, payload size and payload address from the current FORM entry, * advance the cursor by the declared size plus eight, and skip PAD entries. * Use a local size sink w...` | function `uvFileGetEntryTag` | [84](../src/filesystem.c#L84) |
 | explicit_unknown | `* Register the file in the first unused one of ten FORM slots, read its declared * size and type, and reset its entry cursor. Preserve the original header reads, * size-plus-eig...` | function `uvFileReadHeader` | [12](../src/filesystem.c#L12) |
-| explicit_unknown | `* Search from the FORM entry start for the requested tag and occurrence * threshold, then restore the original entry cursor on success or exhaustion. * Preserve the matching-onl...` | function `uvFileSearchTag` | [102](../src/filesystem.c#L102) |
-| layout_padding | `pad` | function `uvFileGetEntryTag` | [81](../src/filesystem.c#L81) |
+| explicit_unknown | `* Search from the FORM entry start for the requested tag and occurrence * threshold, then restore the original entry cursor on success or exhaustion. * Preserve the matching-onl...` | function `uvFileSearchTag` | [122](../src/filesystem.c#L122) |
+| layout_padding | `pad` | function `uvFileGetEntryTag` | [101](../src/filesystem.c#L101) |
 | original_quirk | `* Register the file in the first unused one of ten FORM slots, read its declared * size and type, and reset its entry cursor. Preserve the original header reads, * size-plus-eig...` | function `uvFileReadHeader` | [12](../src/filesystem.c#L12) |
 
 ## src/game_init.c
@@ -1421,8 +1425,13 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
-| explicit_unknown | `RE_UNKNOWN: historical COMM scratch extent; the current info view is 36 bytes, while the observed original VOLTEST payload copy is 40. Resolve original headers and scratch lifet...` | function `uvModuleInit` | [57](../src/module.c#L57) |
-| explicit_unknown | `Return the tag of the loaded UVMO file with the highest base strictly * below the supplied address; optionally write its file index, or -1 * when no candidate exists. The fault-...` | function `uvFindModuleTagBeforeAddress` | [331](../src/module.c#L331) |
+| explicit_unknown | `* Decode the packed symbol section, instruction section, relocation kind and * halfword-scaled offset, then patch the selected module word. Preserve the * original single pendin...` | function `uvDoModuleRelocs` | [224](../src/module.c#L224) |
+| explicit_unknown | `* Read COMM, CODE and RELA blocks, allocate the export header plus code and * BSS, relocate the module, maintain caches, and call its entrypoint with the * header pointer. Free ...` | function `uvLoadModuleCode` | [142](../src/module.c#L142) |
+| explicit_unknown | `RE_UNKNOWN: historical COMM scratch extent; the current info view is 36 bytes, while the observed original VOLTEST payload copy is 40. Resolve original headers and scratch lifet...` | function `uvModuleInit` | [64](../src/module.c#L64) |
+| explicit_unknown | `Return the tag of the loaded UVMO file with the highest base strictly * below the supplied address; optionally write its file index, or -1 * when no candidate exists. The fault-...` | function `uvFindModuleTagBeforeAddress` | [381](../src/module.c#L381) |
+| uncertainty_note | `* Build module-tag and export-header-size arrays from each UVMO COMM block, * storing zeros for absent files. Preserve signed 16-bit module count storage * and the original payl...` | function `uvModuleInit` | [53](../src/module.c#L53) |
+| uncertainty_note | `* Resolve a module tag and acquire its UVMO file through the normal reference- * counted load path. Unknown tags return NULL.` | function `uvLoadModule` | [118](../src/module.c#L118) |
+| uncertainty_note | `* Resolve a module tag and return its existing UVMO allocation without * acquiring a file reference. Unknown tags return NULL.` | function `uvGetLoadedModule` | [103](../src/module.c#L103) |
 
 ## src/modules/ai.c
 
