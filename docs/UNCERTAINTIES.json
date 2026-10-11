@@ -127,6 +127,7 @@
     "include/libultra-sdk/PR/ultratypes.h": "e25fc6df3953acbab2234ece2218ec74080cdc3e673ce1ec5896d4ce921bb4de",
     "include/libultra-sdk/PRinternal/controller.h": "a96f974223530e51b7b6f02a662a4665cd0d3f3d1e95f52f37240be4c493b42b",
     "include/libultra-sdk/PRinternal/macros.h": "a8931d15afa699dafd26f6a0be1b20995c223952bb10cb7845ea6e3ca62da794",
+    "include/libultra-sdk/PRinternal/osint.h": "a1409372ead900ab42129ed889bde53762274514bbfb39ba0571aff7f813bd90",
     "include/libultra-sdk/PRinternal/siint.h": "9f0c99c8652d36023162bfd8722dbb5117ca03f6b97d958af81b883f7a12de87",
     "include/libultra-sdk/assert.h": "c4d1fce8da480af73fe15237f2068a5446477ca6a544487daa10cd4ebf938c78",
     "include/libultra-sdk/compiler/ido/math.h": "2d4f83a11a792ff666e37b6679e4a97a809098494fbdeb028f1d21486afa733b",
@@ -298,8 +299,10 @@
     "src/libultra/audio/synstopvoice.c": "ae57c91896402afa8b6929dd0e06b7cc341f6bc8c21e07192988c84b1eed0b04",
     "src/libultra/audio/synthInternals.h": "797c65321f3ae4ebfa83b3babdacd70495c7a80cee2a708a0b8095043f1a309b",
     "src/libultra/io/ai.c": "e2757d2319d2b9eca70284cc98501741565a27bc9216f7bcb58d691da85fc40a",
+    "src/libultra/io/aisetnextbuf.c": "a56af1027e3d9c8fac23d75361e9a8d92cc4578d83a3bb4d3b9c4dc1cf288a78",
     "src/libultra/io/contquery.c": "a6c202027824498463298d5ccb6ebee06322e6a1cb18872d549dd57cbb9a7033",
     "src/libultra/io/contsetch.c": "0c5bc528e0c93168789d1e8a84ddb88d386d06948cfd760c6104b40e04a24caa",
+    "src/libultra/io/pfsisplug.c": "c0c2eae5a8b136e9dbc156c18a291f4ca6fcfbb8c11f8fe0ef01a2ed037a2eca",
     "src/libultra/io/piread.c": "0195f296a22084659c67f28b0a4d3866327f0cc94df518000309f0dc17b20f50",
     "src/libultra/io/sptask.c": "695161e5c29ba9a20ea1cfdf89485b8d08123dd8a4c4064081b7e56ec7fa007b",
     "src/libultra/io/sptaskyield.c": "76dcc4157883ef5ef6827696be014e58042528bdf4c711fc54566794b6ff4cca",
@@ -476,8 +479,8 @@
     "audit_debt": 30,
     "conditional_draft": 4,
     "decompiler_local": 619,
-    "draft_marker": 37,
-    "explicit_unknown": 1701,
+    "draft_marker": 38,
+    "explicit_unknown": 1704,
     "layout_padding": 275,
     "offset_field": 1673,
     "opaque_type": 282,
@@ -114848,6 +114851,16 @@
       "evidence": "TODO: this comes from a header"
     },
     {
+      "id": "Q-ba8c8a9c1e1d",
+      "kind": "draft_marker",
+      "path": "src/libultra/io/aisetnextbuf.c",
+      "symbol": "TODO",
+      "lines": [
+        6
+      ],
+      "evidence": "TODO: this comes from a header"
+    },
+    {
       "id": "Q-a35a5d7dd6ae",
       "kind": "draft_marker",
       "path": "src/libultra/io/viblack.c",
@@ -116976,6 +116989,26 @@
       ]
     },
     {
+      "id": "Q-d87be017dd9f",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/io/aisetnextbuf.c",
+      "symbol": "* Queue the next AI DMA buffer while preserving the VERSION_I hardware- * workaround ordering. * * Update the persistent workaround byte before the busy rejection in * VERSION_I. * * Subtract 0x2000 only from the effective DMA pointer when the prior * workaround flag is set. * * Set the next flag from the original buffer end masked by 0x1fff; preserve * all debug branches. * * RE_UNKNOWN: Original storage allocation extent is not proven; only the byte * address and u8 accesses are anchored. * * RE_UNKNOWN: The retained flag address is proven by original byte operands; * its historical allocation extent is not established here. The original * VERSION_I workaround updates its flag before checking whether the audio * device is busy.",
+      "lines": [
+        18
+      ],
+      "evidence": "* Queue the next AI DMA buffer while preserving the VERSION_I hardware- * workaround ordering. * * Update the persistent workaround byte before the busy rejection in * VERSION_I. * * Subtract 0x2000 only from the effective DMA pointer when the prior * workaround flag is set. * * Set the next flag from the original buffer end masked by 0x1fff; preserve * all debug branches. * * RE_UNKNOWN: Original storage allocation extent is not proven; only the byte * address and u8 accesses are anchored. * * RE_UNKNOWN: The retained flag address is proven by original byte operands; * its historical allocation extent is not established here. The original * VERSION_I workaround updates its flag before checking whether the audio * device is busy.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "osAiSetNextBuffer",
+          "declaration_line": 40,
+          "lines": [
+            18
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-4113b24c199c",
       "kind": "explicit_unknown",
       "path": "src/libultra/io/contquery.c",
@@ -116991,6 +117024,46 @@
           "declaration_line": 9,
           "lines": [
             9
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-dc44af896c68",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/io/pfsisplug.c",
+      "symbol": "* Build the fixed controller status request sequence in retained PIF RAM. * * Preserve command/status byte writes, eight-byte request copies, live count * loads, and terminator. * * RE_UNKNOWN: The PIF field view reaches the observed status word at base * plus 60; it does not prove the historical allocation size. All retained * storage remains assembly-owned.",
+      "lines": [
+        66
+      ],
+      "evidence": "* Build the fixed controller status request sequence in retained PIF RAM. * * Preserve command/status byte writes, eight-byte request copies, live count * loads, and terminator. * * RE_UNKNOWN: The PIF field view reaches the observed status word at base * plus 60; it does not prove the historical allocation size. All retained * storage remains assembly-owned.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__osPfsRequestData",
+          "declaration_line": 77,
+          "lines": [
+            66
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-ed34d8a46dea",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/io/pfsisplug.c",
+      "symbol": "* Serialize controller PIF status reads and return the detected controller- * pak presence mask. * * Keep three CRC retries, live controller-count loads, blocking message * order, and last DMA return value. * * Preserve channel-error/card-present conditions and SI release before the * final pattern write. * * RE_UNKNOWN: Retained PIF storage ownership must be proved during * integration; no new BSS allocation is authorized.",
+      "lines": [
+        8
+      ],
+      "evidence": "* Serialize controller PIF status reads and return the detected controller- * pak presence mask. * * Keep three CRC retries, live controller-count loads, blocking message * order, and last DMA return value. * * Preserve channel-error/card-present conditions and SI release before the * final pattern write. * * RE_UNKNOWN: Retained PIF storage ownership must be proved during * integration; no new BSS allocation is authorized.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "osPfsIsPlug",
+          "declaration_line": 22,
+          "lines": [
+            8
           ]
         }
       ]

@@ -17,7 +17,7 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 1701 |
+| Explicit RE_UNKNOWN notes | 1704 |
 | Preserved RE_ORIGINAL_QUIRK notes | 452 |
 | Older comments with uncertainty language | 87 |
 | Documented original-behavior audits | 30 |
@@ -29,7 +29,7 @@ For every future source wave, regenerate and check this index after code and str
 | Unresolved type names | 282 |
 | Explicit unused ABI, storage or local identifiers | 137 |
 | Decompiler parameter/local names | 619 |
-| Fake, unresolved or TODO draft markers | 37 |
+| Fake, unresolved or TODO draft markers | 38 |
 | Data-dependent conditional draft guards | 4 |
 
 ## docs/STRATEGY_V4.md
@@ -1282,11 +1282,25 @@ For every future source wave, regenerate and check this index after code and str
 | --- | --- | --- | --- |
 | draft_marker | `TODO` | — | [4](../src/libultra/io/ai.c#L4) |
 
+## src/libultra/io/aisetnextbuf.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| draft_marker | `TODO` | — | [6](../src/libultra/io/aisetnextbuf.c#L6) |
+| explicit_unknown | `* Queue the next AI DMA buffer while preserving the VERSION_I hardware- * workaround ordering. * * Update the persistent workaround byte before the busy rejection in * VERSION_I...` | function `osAiSetNextBuffer` | [18](../src/libultra/io/aisetnextbuf.c#L18) |
+
 ## src/libultra/io/contquery.c
 
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
 | explicit_unknown | `Request status under SI access; only a changed command writes and waits before the read DMA. RE_UNKNOWN: original shared-storage extents remain unproved; retained assembly keeps...` | function `osContStartQuery` | [9](../src/libultra/io/contquery.c#L9) |
+
+## src/libultra/io/pfsisplug.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| explicit_unknown | `* Build the fixed controller status request sequence in retained PIF RAM. * * Preserve command/status byte writes, eight-byte request copies, live count * loads, and terminator....` | function `__osPfsRequestData` | [66](../src/libultra/io/pfsisplug.c#L66) |
+| explicit_unknown | `* Serialize controller PIF status reads and return the detected controller- * pak presence mask. * * Keep three CRC retries, live controller-count loads, blocking message * orde...` | function `osPfsIsPlug` | [8](../src/libultra/io/pfsisplug.c#L8) |
 
 ## src/libultra/io/viblack.c
 
