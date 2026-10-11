@@ -3297,10 +3297,19 @@ Totals: 438 further recoveries after the 225 upstream ordinary imports, plus 179
 Frozen wave `5274-followon-lifecycle-native-contracts` and `accepted-followon-lifecycle-native-contracts-5274` verify real translation-unit instructions/full relocations, 11 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 440 further readable functions
+## Historical accepted checkpoint — 440 further readable functions
 
 Recover CAM/GLARE assembly functions888B and clarify43 existing initializer/spatial functions5244B across18sources. Preserve actual recovery translation units after exact comment-marker inverse and all prior executable bodies,2009 assessments including159 typed SDK intervals and83 historical attempts. Ordinary43 candidate/baseline/native/site/order proofs are actual and independently replayed. Recovery raw ordered ELF inequality remains explicit: CAM closes six UND ADDIU records, one UND LW pair and one original module-relative J26; GLARE closes twelve literal global records plus six original-packed-order local records and retained DATA/RO windows. No alias, ABI, readonly ownership or storage changes. Fresh entire original packed modules/ordered RELA, all133 module original proof, original ROM, source manifest, complete ledger and actual Git carry mandatory.
 
 Totals: 440 further recoveries after the 225 upstream ordinary imports, plus 1835 existing C semantic cleanups. Current ledger: 760 assembly references = 721 ordinary + 39 entrypoints; 699,908 known remaining instruction bytes; zero unknown sizes; 289 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `5704-initializer-spatial-glare-camera-contracts` and `accepted-initializer-spatial-glare-camera-contracts-5704` verify real translation-unit instructions/full relocations, 18 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 440 further readable functions
+
+Clarify40 existing Selection menu functions2896B with complete native-grounded contracts. Preserve exact literal function bodies, callback/export ordering, unchecked menu/array accesses, handle widths, resources and existing compiler scaffolding. Require actual40 candidate plus1 baseline trials, complete current ordered records and native reference-site associations, scoped warnings and logical-coordinate proof. Preserve every actual2054 prior identity,159 typed SDK rows and83 historical attempts. No new recovery, ABI, names, aliases or storage. Fresh full packed/native/original ROM/full ledger/current Git source proof mandatory.
+
+Totals: 440 further recoveries after the 225 upstream ordinary imports, plus 1875 existing C semantic cleanups. Current ledger: 760 assembly references = 721 ordinary + 39 entrypoints; 699,908 known remaining instruction bytes; zero unknown sizes; 289 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `5644-selection-menu-native-contracts` and `accepted-selection-menu-native-contracts-5644` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

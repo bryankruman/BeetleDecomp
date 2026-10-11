@@ -867,8 +867,13 @@ void selectionDrawCurrentMenuAndConditionalOverlay(void) {
 #line 648 "src/modules/selection.c"
 /* Register the selection callback at priority 5 when channel query 6 returns
  * a callback list. A missing list needs no registration. */
-void func_selection_004015D4(s32 channel);             /* extern */
-
+void func_selection_004015D4(s32 channel);             /* Query channel property 6 for its callback list, then register callback
+ * 15D4 with a NULL argument and priority 5 only when the returned list is
+ * non-NULL.
+ * RE_UNKNOWN: The property query must initialize the local list pointer;
+ * channel validity, callback ordering and list/provider lifetime belong to
+ * the channel and callback owners. */
+#line 652 "src/modules/selection.c"
 void selectionRegisterChannelCallback(s32 channel) {
     CallbackList *callbacks;
 
@@ -877,6 +882,7 @@ void selectionRegisterChannelCallback(s32 channel) {
         gUvCbckExports->uvAddCallback(callbacks, func_selection_004015D4, NULL, 5);
     }
 }
+#line 660 "src/modules/selection.c"
 #line 649 "src/modules/selection.c"
 
 /* Dispatch on the original unsigned halfword selector: 0 does no work,
@@ -1160,7 +1166,14 @@ void selectionRequestBattleStateWithMinimums(void) {
 }
 #line 742 "src/modules/selection.c"
 
-/* Initialize single-player selection state and wire up the active context node. */
+/* Call helper 15CA0 with 0, run the current menu exit path, set the
+ * transition word and player count to 1, and relink the 1FCF0 node to
+ * 1FBB4 before activating 1FBB4. The existing nested halfword stores at
+ * offsets 0x16 and 0x02 remain ordered around that relink.
+ * RE_UNKNOWN: Nested node pointers, callback indices and node ownership
+ * must already be valid. The transition-word and helper-argument meanings
+ * are not established here. */
+#line 744 "src/modules/selection.c"
 void func_selection_00402FE4(void) {
     func_selection_00415CA0(0);
     selectionRunCurrentMenuExitCallback();
@@ -1171,6 +1184,7 @@ void func_selection_00402FE4(void) {
     D_selection_0041FBB4.unk8->unk8->unk2 = 1;
     selectionActivateMenuNode(&D_selection_0041FBB4);
 }
+#line 754 "src/modules/selection.c"
 
 #line 755 "src/modules/selection.c"
 /* Enter the two-player setup only when controller index one is available.
@@ -1198,7 +1212,15 @@ void selectionStartTwoPlayerMode(void) {
 }
 #line 756 "src/modules/selection.c"
 
-/* Check controller presence, then either abort or initialize the selection screen. */
+/* Test controller provider slot 0x08 with argument 1. A zero result runs
+ * the transient-reset path and returns; otherwise call helper 15CA0 with
+ * 2, clear the eight retained words, run the exit path, set the transition
+ * word to 1 and D_8002CC64 to 4, then activate FF9C.
+ * RE_ORIGINAL_QUIRK: Preserve the early return and interleaved CD54/CD64
+ * through CD60/CD70 clear order.
+ * RE_UNKNOWN: Controller result domain, provider lifetime and the state-
+ * word meanings require their callers. */
+#line 758 "src/modules/selection.c"
 void func_selection_004030E4(void) {
     if (((UnkContExports_004030E4 *)gUvContExports)->unk8(1) == 0) {
         selectionResetTransientWords();
@@ -1218,6 +1240,7 @@ void func_selection_004030E4(void) {
     D_8002CC64 = 4;
     selectionActivateMenuNode(&D_selection_0041FF9C);
 }
+#line 777 "src/modules/selection.c"
 
 #line 778 "src/modules/selection.c"
 /* Prepare the multiplayer menu, raise player count to two only when
@@ -1236,39 +1259,79 @@ void selectionOpenMultiplayerMenuAtLeastTwo(void) {
 }
 #line 785 "src/modules/selection.c"
 
+/* Call helper 15CA0 with 3, clear the transition word, run the current
+ * menu exit path, then activate node 1F904.
+ * RE_UNKNOWN: Helper argument 3 and the transition word remain opaque; the
+ * current and destination nodes require valid callback-table indices and
+ * lifetimes. */
+#line 786 "src/modules/selection.c"
 void func_selection_004031E8(void) {
     func_selection_00415CA0(3);
     D_selection_00421CE0 = 0;
     selectionRunCurrentMenuExitCallback();
     selectionActivateMenuNode(&D_selection_0041F904);
 }
+#line 792 "src/modules/selection.c"
 
+/* Set the transition word to 1 before running the current menu exit path,
+ * then activate node 1FED0.
+ * RE_UNKNOWN: The flag meaning and destination screen identity are
+ * unproved. Current and destination nodes require valid callback-table
+ * indices and lifetimes. */
+#line 793 "src/modules/selection.c"
 void func_selection_00403220(void) {
     D_selection_00421CE0 = 1;
     selectionRunCurrentMenuExitCallback();
     selectionActivateMenuNode(&D_selection_0041FED0);
 }
+#line 798 "src/modules/selection.c"
 
+/* Clear the transition word before running the current menu exit path,
+ * then activate node 1F94C.
+ * RE_UNKNOWN: The flag meaning and destination screen identity are
+ * unproved. Current and destination nodes require valid callback-table
+ * indices and lifetimes. */
+#line 799 "src/modules/selection.c"
 void func_selection_00403254(void) {
     D_selection_00421CE0 = 0;
     selectionRunCurrentMenuExitCallback();
     selectionActivateMenuNode(&D_selection_0041F94C);
 }
+#line 804 "src/modules/selection.c"
 
+/* Apply the sound options first, clear the transition word, run the
+ * current menu exit path and activate node 1F994.
+ * RE_ORIGINAL_QUIRK: Sound updates precede the exit callback.
+ * RE_UNKNOWN: The transition-word meaning, option-provider state and node
+ * callback/lifetime preconditions remain external. */
+#line 805 "src/modules/selection.c"
 void func_selection_00403284(void) {
     selectionApplySoundOptions();
     D_selection_00421CE0 = 0;
     selectionRunCurrentMenuExitCallback();
     selectionActivateMenuNode(&D_selection_0041F994);
 }
+#line 811 "src/modules/selection.c"
 
+/* Clear the transition word before running the current menu exit path,
+ * then activate node 1FB58.
+ * RE_UNKNOWN: The flag meaning and destination screen identity are
+ * unproved. Current and destination nodes require valid callback-table
+ * indices and lifetimes. */
+#line 812 "src/modules/selection.c"
 void func_selection_004032BC(void) {
     D_selection_00421CE0 = 0;
     selectionRunCurrentMenuExitCallback();
     selectionActivateMenuNode(&D_selection_0041FB58);
 }
+#line 817 "src/modules/selection.c"
 
-/* Set up num AI cars + unk6F74, then transition to D_selection_0041FC38 screen. */
+/* Run the current menu exit path, store 7 AI cars and 2 in settings word
+ * 0x6F74, request race-mode voice option 1, then activate node 1FC38.
+ * RE_UNKNOWN: Settings validity, the word 0x6F74 domain, gated voice state
+ * and destination screen identity require their owners; no failure or
+ * lifetime checks are added. */
+#line 819 "src/modules/selection.c"
 void func_selection_004032EC(void) {
     selectionRunCurrentMenuExitCallback();
     gGameSettings[0].numAiCars = 7;
@@ -1276,6 +1339,7 @@ void func_selection_004032EC(void) {
     selectionPlayRaceModeVoice(1);
     selectionActivateMenuNode(&D_selection_0041FC38);
 }
+#line 826 "src/modules/selection.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00403338.s")
 
@@ -1343,15 +1407,31 @@ void selectionChooseTournament3(void) {
 }
 #line 868 "src/modules/selection.c"
 
+/* Run the current menu exit path, then activate static node 1FC80. The
+ * activation helper records the previous node and invokes the new node
+ * entry callback.
+ * RE_UNKNOWN: The destination screen identity remains opaque. Current and
+ * destination node pointers, signed callback-table indices and node
+ * lifetime must already be valid. */
+#line 869 "src/modules/selection.c"
 void func_selection_004038E0(void) {
     selectionRunCurrentMenuExitCallback();
     selectionActivateMenuNode(&D_selection_0041FC80);
 }
+#line 873 "src/modules/selection.c"
 
+/* Run the current menu exit path, then activate static node 1FF2C. The
+ * activation helper records the previous node and invokes the new node
+ * entry callback.
+ * RE_UNKNOWN: The destination screen identity remains opaque. Current and
+ * destination node pointers, signed callback-table indices and node
+ * lifetime must already be valid. */
+#line 874 "src/modules/selection.c"
 void func_selection_0040390C(void) {
     selectionRunCurrentMenuExitCallback();
     selectionActivateMenuNode(&D_selection_0041FF2C);
 }
+#line 878 "src/modules/selection.c"
 
 #line 879 "src/modules/selection.c"
 /* Reset transient menu resources, select shared mode one and play race-mode
@@ -1393,22 +1473,45 @@ void selectionOpenMenuPreservingOrigin(void) {
 }
 #line 882 "src/modules/selection.c"
 
+/* Run the current menu exit path, then activate static node 1FD74. The
+ * activation helper records the previous node and invokes the new node
+ * entry callback.
+ * RE_UNKNOWN: The destination screen identity remains opaque. Current and
+ * destination node pointers, signed callback-table indices and node
+ * lifetime must already be valid. */
+#line 883 "src/modules/selection.c"
 void func_selection_00403A38(void) {
     selectionRunCurrentMenuExitCallback();
     selectionActivateMenuNode(&D_selection_0041FD74);
 }
+#line 887 "src/modules/selection.c"
 
+/* Call helper 15CA0 with 4, clear the transition word, run the current
+ * menu exit path, then activate node 1FE04.
+ * RE_UNKNOWN: Helper argument 4 and the transition word remain opaque; the
+ * current and destination nodes require valid callback-table indices and
+ * lifetimes. */
+#line 888 "src/modules/selection.c"
 void func_selection_00403A64(void) {
     func_selection_00415CA0(4);
     D_selection_00421CE0 = 0;
     selectionRunCurrentMenuExitCallback();
     selectionActivateMenuNode(&D_selection_0041FE04);
 }
+#line 894 "src/modules/selection.c"
 
+/* Run the current menu exit path, then activate static node 1F770. The
+ * activation helper records the previous node and invokes the new node
+ * entry callback.
+ * RE_UNKNOWN: The destination screen identity remains opaque. Current and
+ * destination node pointers, signed callback-table indices and node
+ * lifetime must already be valid. */
+#line 895 "src/modules/selection.c"
 void func_selection_00403A9C(void) {
     selectionRunCurrentMenuExitCallback();
     selectionActivateMenuNode(&D_selection_0041F770);
 }
+#line 899 "src/modules/selection.c"
 
 #line 900 "src/modules/selection.c"
 /* Preserve the current return node only for the three original recognized
@@ -1428,10 +1531,18 @@ void selectionOpenMenuPreservingReturnNode(void) {
 }
 #line 901 "src/modules/selection.c"
 
+/* Run the current menu exit path, then activate static node 20104. The
+ * activation helper records the previous node and invokes the new node
+ * entry callback.
+ * RE_UNKNOWN: The destination screen identity remains opaque. Current and
+ * destination node pointers, signed callback-table indices and node
+ * lifetime must already be valid. */
+#line 902 "src/modules/selection.c"
 void func_selection_00403B40(void) {
     selectionRunCurrentMenuExitCallback();
     selectionActivateMenuNode(&D_selection_00420104);
 }
+#line 906 "src/modules/selection.c"
 
 #line 907 "src/modules/selection.c"
 /* Select 2 players, play the corresponding count voice and open the
@@ -1825,6 +1936,15 @@ typedef struct
 extern s32 D_selection_00420D94;
 extern s32 D_selection_00420D98;
 
+/* If the retained emitter word is not -1, pass its low byte to EMIT
+ * provider slot 0x08. Afterwards always reset the word to -1 and clear its
+ * companion word.
+ * RE_ORIGINAL_QUIRK: The full-word -1 sentinel test occurs before byte
+ * truncation; other values are not range-checked. Preserve the inherited
+ * do/while assignment scaffold.
+ * RE_UNKNOWN: Slot 0x08 semantics, handle validity and the companion-word
+ * meaning belong to the emitter owner. */
+#line 1042 "src/modules/selection.c"
 void func_selection_00404888(void)
 {
   s32 slot = D_selection_00420D94;
@@ -1835,6 +1955,7 @@ void func_selection_00404888(void)
  do { D_selection_00420D94 = -1; } while (0);
   D_selection_00420D98 = 0;
 }
+#line 1052 "src/modules/selection.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004048D8.s")
 
@@ -2741,7 +2862,13 @@ void selectionSetPlayerTransmissionZero(void) {
 #line 1349 "src/modules/selection.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040D280.s")
 
-/* Unload selection screen resources: flush gfx/texanim state, unload VB/VTX files, free sprite. */
+/* Call GMGR slot 0x74 and TXAN slot 0x08, unload UVBT file 29 and UVTX
+ * files 1462/1463 in that order, then pass the retained signed-halfword
+ * sprite handle to SPRT slot 0x08.
+ * RE_ORIGINAL_QUIRK: Stored handles are neither checked nor reset.
+ * RE_UNKNOWN: Provider slot effects, asset-reference ownership, repeat
+ * cleanup and handle validity require the menu and resource owners. */
+#line 1352 "src/modules/selection.c"
 void func_selection_0040D488(void) {
     gUvGfxMgrExports->unk74();
     gUvTexAnimExports->unk8();
@@ -2750,6 +2877,7 @@ void func_selection_0040D488(void) {
     uvUnloadFile(0x55565458, 0x5B7);
     gUvSprtExports->unk8(D_selection_00421E38);
 }
+#line 1360 "src/modules/selection.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040D514.s")
 
@@ -2803,7 +2931,14 @@ loop_7:
 }
 #line 1400 "src/modules/selection.c"
 
-/* Dispatch to enter or exit selection based on current menu item type (0xB7 = confirm). */
+/* Run helper 1FB0, then inspect the selected twenty-byte menu entry
+ * through the active node. If its signed-halfword field 4 equals 0xB7,
+ * call 48D8 and return; otherwise call 4888.
+ * RE_ORIGINAL_QUIRK: The signed-halfword selected index and both nested
+ * pointers are unchecked.
+ * RE_UNKNOWN: Entry-count bounds, the 0xB7 discriminator and the helper
+ * effects require the node and emitter owners. */
+#line 1402 "src/modules/selection.c"
 void func_selection_0040D98C(void) {
     Inner_0040D98C *temp_v0;
 
@@ -2815,6 +2950,7 @@ void func_selection_0040D98C(void) {
     }
     func_selection_00404888();
 }
+#line 1413 "src/modules/selection.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040D9F8.s")
 
@@ -2840,11 +2976,18 @@ void selectionCreateCenteredBitmapSprite(void) {
 #line 1431 "src/modules/selection.c"
 
 // Unloads the UVBT sprite file and resets the sprite manager, then tears down selection state.
+/* Unload UVBT file 99, pass the retained signed-halfword sprite handle to
+ * SPRT slot 0x08, then run the emitter-slot reset path 4888.
+ * RE_ORIGINAL_QUIRK: The sprite handle is neither checked nor reset.
+ * RE_UNKNOWN: Asset-reference ownership, provider slot effects and cleanup
+ * reentry are external lifecycle obligations. */
+#line 1433 "src/modules/selection.c"
 void func_selection_0040F248(void) {
     uvUnloadFile(0x55564254, 0x63);
     gUvSprtExports->unk8(D_selection_00420DF8);
     func_selection_00404888();
 }
+#line 1438 "src/modules/selection.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_0040F294.s")
 
@@ -2908,6 +3051,16 @@ loop_3:
 extern s32 D_8002CD98;
 extern s32 D_selection_00421C70;
 
+/* For the supplied row, map nine consecutive words through the thirteen-
+ * entry value lookup, storing each returned index in the parallel
+ * destination row. Source rows advance 0x24 bytes from D_8002CD98 + 0x284;
+ * destination rows advance 0x2C bytes from D_selection_00421C70.
+ * RE_ORIGINAL_QUIRK: Preserve the inherited integer/address reuse,
+ * do/while and dummy-label scaffold, and store missing-value -1 results
+ * unchanged.
+ * RE_UNKNOWN: Row bounds, table-value domain and backing-array capacities
+ * are caller obligations. */
+#line 1476 "src/modules/selection.c"
 void func_selection_0040F64C(s32 arg0)
 {
   s32 *var_s1;
@@ -2925,6 +3078,7 @@ void func_selection_0040F64C(s32 arg0)
   }
   while (var_s0 != 9);
 }
+#line 1493 "src/modules/selection.c"
 
 void func_selection_0040F6E0(void) {
     func_selection_0040F4BC(D_selection_00420DF0);
@@ -3188,87 +3342,231 @@ void selectionDrawHighlightedMenuLabel(s32 x, s32 y, s32 textAddress) {
 }
 #line 1595 "src/modules/selection.c"
 
+/* Draw the fixed menu decoration in this order: horizontal
+ * bar(0x74,0xA3,0xBD), then vertical bar(0x86,0xBD,0xA3), then measured
+ * label(0x74,0xBD,arg0). The label argument is forwarded unchanged.
+ * RE_ORIGINAL_QUIRK: Preserve the raw s32 label argument and inherited
+ * provider parameter representation.
+ * RE_UNKNOWN: Valid label storage, font/printing providers, and global
+ * layout offsets and thickness must be supplied by the active menu; this
+ * wrapper establishes none of their bounds. */
+#line 1596 "src/modules/selection.c"
 void func_selection_004111B8(s32 arg0) {
     selectionDrawHorizontalBeveledBar(0x74, 0xA3, 0xBD);
     selectionDrawVerticalBeveledBar(0x86, 0xBD, 0xA3);
     selectionDrawMeasuredMenuLabel(0x74, 0xBD, arg0);
 }
+#line 1601 "src/modules/selection.c"
 
+/* Draw the fixed menu decoration in this order: horizontal
+ * bar(0x74,0x8E,0xB1), then vertical bar(0x98,0xB1,0x8E), then measured
+ * label(0x74,0xB1,arg0). The label argument is forwarded unchanged.
+ * RE_ORIGINAL_QUIRK: Preserve the raw s32 label argument and inherited
+ * provider parameter representation.
+ * RE_UNKNOWN: Valid label storage, font/printing providers, and global
+ * layout offsets and thickness must be supplied by the active menu; this
+ * wrapper establishes none of their bounds. */
+#line 1602 "src/modules/selection.c"
 void func_selection_00411204(s32 arg0) {
     selectionDrawHorizontalBeveledBar(0x74, 0x8E, 0xB1);
     selectionDrawVerticalBeveledBar(0x98, 0xB1, 0x8E);
     selectionDrawMeasuredMenuLabel(0x74, 0xB1, arg0);
 }
+#line 1607 "src/modules/selection.c"
 
+/* Draw the fixed menu decoration in this order: horizontal
+ * bar(0x74,0x88,0x90), then vertical bar(0x8B,0x90,0x88), then measured
+ * label(0x74,0x90,arg0). The label argument is forwarded unchanged.
+ * RE_ORIGINAL_QUIRK: Preserve the raw s32 label argument and inherited
+ * provider parameter representation.
+ * RE_UNKNOWN: Valid label storage, font/printing providers, and global
+ * layout offsets and thickness must be supplied by the active menu; this
+ * wrapper establishes none of their bounds. */
+#line 1608 "src/modules/selection.c"
 void func_selection_00411250(s32 arg0) {
     selectionDrawHorizontalBeveledBar(0x74, 0x88, 0x90);
     selectionDrawVerticalBeveledBar(0x8B, 0x90, 0x88);
     selectionDrawMeasuredMenuLabel(0x74, 0x90, arg0);
 }
+#line 1613 "src/modules/selection.c"
 
+/* Draw the fixed menu decoration in this order: horizontal
+ * bar(0x74,0x80,0x81), then measured label(0x74,0x81,arg0). The label
+ * argument is forwarded unchanged.
+ * RE_ORIGINAL_QUIRK: Preserve the raw s32 label argument and inherited
+ * provider parameter representation.
+ * RE_UNKNOWN: Valid label storage, font/printing providers, and global
+ * layout offsets and thickness must be supplied by the active menu; this
+ * wrapper establishes none of their bounds. */
+#line 1614 "src/modules/selection.c"
 void func_selection_0041129C(s32 arg0) {
     selectionDrawHorizontalBeveledBar(0x74, 0x80, 0x81);
     selectionDrawMeasuredMenuLabel(0x74, 0x81, arg0);
 }
+#line 1618 "src/modules/selection.c"
 
+/* Draw the fixed menu decoration in this order: horizontal
+ * bar(0x74,0x88,0x72), then vertical bar(0x72,0x76,0x88), then measured
+ * label(0x74,0x72,arg0). The label argument is forwarded unchanged.
+ * RE_ORIGINAL_QUIRK: Preserve the raw s32 label argument and inherited
+ * provider parameter representation.
+ * RE_UNKNOWN: Valid label storage, font/printing providers, and global
+ * layout offsets and thickness must be supplied by the active menu; this
+ * wrapper establishes none of their bounds. */
+#line 1619 "src/modules/selection.c"
 void func_selection_004112D8(s32 arg0) {
     selectionDrawHorizontalBeveledBar(0x74, 0x88, 0x72);
     selectionDrawVerticalBeveledBar(0x72, 0x76, 0x88);
     selectionDrawMeasuredMenuLabel(0x74, 0x72, arg0);
 }
+#line 1624 "src/modules/selection.c"
 
+/* Draw the fixed menu decoration in this order: horizontal
+ * bar(0x74,0x91,0x63), then vertical bar(0x63,0x7D,0x91), then measured
+ * label(0x74,0x63,arg0). The label argument is forwarded unchanged.
+ * RE_ORIGINAL_QUIRK: Preserve the raw s32 label argument and inherited
+ * provider parameter representation.
+ * RE_UNKNOWN: Valid label storage, font/printing providers, and global
+ * layout offsets and thickness must be supplied by the active menu; this
+ * wrapper establishes none of their bounds. */
+#line 1625 "src/modules/selection.c"
 void func_selection_00411324(s32 arg0) {
     selectionDrawHorizontalBeveledBar(0x74, 0x91, 0x63);
     selectionDrawVerticalBeveledBar(0x63, 0x7D, 0x91);
     selectionDrawMeasuredMenuLabel(0x74, 0x63, arg0);
 }
+#line 1630 "src/modules/selection.c"
 
+/* Draw the fixed menu decoration in this order: vertical
+ * bar(0x57,0x5C,0x97), then horizontal bar(0x74,0x97,0x57), then measured
+ * label(0x74,0x57,arg0). The label argument is forwarded unchanged.
+ * RE_ORIGINAL_QUIRK: Preserve the raw s32 label argument and inherited
+ * provider parameter representation.
+ * RE_UNKNOWN: Valid label storage, font/printing providers, and global
+ * layout offsets and thickness must be supplied by the active menu; this
+ * wrapper establishes none of their bounds. */
+#line 1631 "src/modules/selection.c"
 void func_selection_00411370(s32 arg0) {
     selectionDrawVerticalBeveledBar(0x57, 0x5C, 0x97);
     selectionDrawHorizontalBeveledBar(0x74, 0x97, 0x57);
     selectionDrawMeasuredMenuLabel(0x74, 0x57, arg0);
 }
+#line 1636 "src/modules/selection.c"
 
+/* Draw the fixed menu decoration in this order: horizontal
+ * bar(0xB9,0xCD,0xAD), then vertical bar(0x89,0xAD,0xB9), then highlighted
+ * label(0xCD,0xAD,arg0). The label argument is forwarded unchanged.
+ * RE_ORIGINAL_QUIRK: Preserve the raw s32 label argument and inherited
+ * provider parameter representation.
+ * RE_UNKNOWN: Valid label storage, font/printing providers, and global
+ * layout offsets and thickness must be supplied by the active menu; this
+ * wrapper establishes none of their bounds. */
+#line 1637 "src/modules/selection.c"
 void func_selection_004113BC(s32 arg0) {
     selectionDrawHorizontalBeveledBar(0xB9, 0xCD, 0xAD);
     selectionDrawVerticalBeveledBar(0x89, 0xAD, 0xB9);
     selectionDrawHighlightedMenuLabel(0xCD, 0xAD, arg0);
 }
+#line 1642 "src/modules/selection.c"
 
+/* Draw the fixed menu decoration in this order: horizontal
+ * bar(0xBE,0xCD,0x9F), then vertical bar(0x96,0x9F,0xBE), then highlighted
+ * label(0xCD,0x9F,arg0). The label argument is forwarded unchanged.
+ * RE_ORIGINAL_QUIRK: Preserve the raw s32 label argument and inherited
+ * provider parameter representation.
+ * RE_UNKNOWN: Valid label storage, font/printing providers, and global
+ * layout offsets and thickness must be supplied by the active menu; this
+ * wrapper establishes none of their bounds. */
+#line 1643 "src/modules/selection.c"
 void func_selection_00411408(s32 arg0) {
     selectionDrawHorizontalBeveledBar(0xBE, 0xCD, 0x9F);
     selectionDrawVerticalBeveledBar(0x96, 0x9F, 0xBE);
     selectionDrawHighlightedMenuLabel(0xCD, 0x9F, arg0);
 }
+#line 1648 "src/modules/selection.c"
 
+/* Draw the fixed menu decoration in this order: vertical
+ * bar(0x8C,0x91,0xC0), then horizontal bar(0xC0,0xCD,0x91), then
+ * highlighted label(0xCD,0x91,arg0). The label argument is forwarded
+ * unchanged.
+ * RE_ORIGINAL_QUIRK: Preserve the raw s32 label argument and inherited
+ * provider parameter representation.
+ * RE_UNKNOWN: Valid label storage, font/printing providers, and global
+ * layout offsets and thickness must be supplied by the active menu; this
+ * wrapper establishes none of their bounds. */
+#line 1649 "src/modules/selection.c"
 void func_selection_00411454(s32 arg0) {
     selectionDrawVerticalBeveledBar(0x8C, 0x91, 0xC0);
     selectionDrawHorizontalBeveledBar(0xC0, 0xCD, 0x91);
     selectionDrawHighlightedMenuLabel(0xCD, 0x91, arg0);
 }
+#line 1654 "src/modules/selection.c"
 
+/* Draw the fixed menu decoration in this order: horizontal
+ * bar(0xCA,0xCD,0x82), then highlighted label(0xCD,0x82,arg0). The label
+ * argument is forwarded unchanged.
+ * RE_ORIGINAL_QUIRK: Preserve the raw s32 label argument and inherited
+ * provider parameter representation.
+ * RE_UNKNOWN: Valid label storage, font/printing providers, and global
+ * layout offsets and thickness must be supplied by the active menu; this
+ * wrapper establishes none of their bounds. */
+#line 1655 "src/modules/selection.c"
 void func_selection_004114A0(s32 arg0) {
     selectionDrawHorizontalBeveledBar(0xCA, 0xCD, 0x82);
     selectionDrawHighlightedMenuLabel(0xCD, 0x82, arg0);
 }
+#line 1659 "src/modules/selection.c"
 
+/* Draw the fixed menu decoration in this order: vertical
+ * bar(0x75,0x79,0xC0), then horizontal bar(0xC0,0xCD,0x75), then
+ * highlighted label(0xCD,0x75,arg0). The label argument is forwarded
+ * unchanged.
+ * RE_ORIGINAL_QUIRK: Preserve the raw s32 label argument and inherited
+ * provider parameter representation.
+ * RE_UNKNOWN: Valid label storage, font/printing providers, and global
+ * layout offsets and thickness must be supplied by the active menu; this
+ * wrapper establishes none of their bounds. */
+#line 1660 "src/modules/selection.c"
 void func_selection_004114DC(s32 arg0) {
     selectionDrawVerticalBeveledBar(0x75, 0x79, 0xC0);
     selectionDrawHorizontalBeveledBar(0xC0, 0xCD, 0x75);
     selectionDrawHighlightedMenuLabel(0xCD, 0x75, arg0);
 }
+#line 1665 "src/modules/selection.c"
 
+/* Draw the fixed menu decoration in this order: vertical
+ * bar(0x67,0x71,0xB9), then horizontal bar(0xB9,0xCD,0x67), then
+ * highlighted label(0xCD,0x67,arg0). The label argument is forwarded
+ * unchanged.
+ * RE_ORIGINAL_QUIRK: Preserve the raw s32 label argument and inherited
+ * provider parameter representation.
+ * RE_UNKNOWN: Valid label storage, font/printing providers, and global
+ * layout offsets and thickness must be supplied by the active menu; this
+ * wrapper establishes none of their bounds. */
+#line 1666 "src/modules/selection.c"
 void func_selection_00411528(s32 arg0) {
     selectionDrawVerticalBeveledBar(0x67, 0x71, 0xB9);
     selectionDrawHorizontalBeveledBar(0xB9, 0xCD, 0x67);
     selectionDrawHighlightedMenuLabel(0xCD, 0x67, arg0);
 }
+#line 1671 "src/modules/selection.c"
 
+/* Draw the fixed menu decoration in this order: vertical
+ * bar(0x59,0x77,0xB3), then horizontal bar(0xB3,0xCD,0x59), then
+ * highlighted label(0xCD,0x59,arg0). The label argument is forwarded
+ * unchanged.
+ * RE_ORIGINAL_QUIRK: Preserve the raw s32 label argument and inherited
+ * provider parameter representation.
+ * RE_UNKNOWN: Valid label storage, font/printing providers, and global
+ * layout offsets and thickness must be supplied by the active menu; this
+ * wrapper establishes none of their bounds. */
+#line 1672 "src/modules/selection.c"
 void func_selection_00411574(s32 arg0) {
     selectionDrawVerticalBeveledBar(0x59, 0x77, 0xB3);
     selectionDrawHorizontalBeveledBar(0xB3, 0xCD, 0x59);
     selectionDrawHighlightedMenuLabel(0xCD, 0x59, arg0);
 }
+#line 1677 "src/modules/selection.c"
 
 // Draw three UI elements using fixed coords, with the third element's text
 // pointer selected from a per-language table at D_selection_004217F0.
@@ -3373,10 +3671,18 @@ void selectionChoosePakMenuFromFileLookup(void) {
 }
 #line 1750 "src/modules/selection.c"
 
+/* Run the current menu exit path, then activate static node 20218. The
+ * activation helper records the previous node and invokes the new node
+ * entry callback.
+ * RE_UNKNOWN: The destination screen identity remains opaque. Current and
+ * destination node pointers, signed callback-table indices and node
+ * lifetime must already be valid. */
+#line 1751 "src/modules/selection.c"
 void func_selection_00413568(void) {
     selectionRunCurrentMenuExitCallback();
     selectionActivateMenuNode(&D_selection_00420218);
 }
+#line 1755 "src/modules/selection.c"
 
 /* Request a 0x400-byte Controller Pak file after selecting the stored identity.
  * A nonnegative shared file word is copied to the tracked word and deleted
@@ -3424,6 +3730,13 @@ void selectionLoadPakFileAndShowResult(void) {
 }
 #line 1759 "src/modules/selection.c"
 
+/* Store 2 in the retained state byte, clear the retained state halfword
+ * and D_8002CC84 halfword, run the current menu exit path, then activate
+ * static node 1F770.
+ * RE_ORIGINAL_QUIRK: Preserve byte/halfword widths and store order.
+ * RE_UNKNOWN: State-field meanings and the current/destination node
+ * callback bounds and lifetimes are external. */
+#line 1760 "src/modules/selection.c"
 void func_selection_0041378C(void) {
     D_selection_00420DE8 = 2;
     D_selection_00420DEC = 0;
@@ -3431,6 +3744,7 @@ void func_selection_0041378C(void) {
     selectionRunCurrentMenuExitCallback();
     selectionActivateMenuNode(&D_selection_0041F770);
 }
+#line 1767 "src/modules/selection.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_004137D0.s")
 
@@ -3445,10 +3759,18 @@ void selectionDeleteSharedSprite(void) {
 }
 #line 1776 "src/modules/selection.c"
 
+/* Run the current menu exit path, then activate static node 20074. The
+ * activation helper records the previous node and invokes the new node
+ * entry callback.
+ * RE_UNKNOWN: The destination screen identity remains opaque. Current and
+ * destination node pointers, signed callback-table indices and node
+ * lifetime must already be valid. */
+#line 1777 "src/modules/selection.c"
 void func_selection_00413E1C(void) {
     selectionRunCurrentMenuExitCallback();
     selectionActivateMenuNode(&D_selection_00420074);
 }
+#line 1781 "src/modules/selection.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00413E48.s")
 
@@ -3667,11 +3989,18 @@ void func_selection_004158DC(void) {
     gUvEnvExports->unk18((*D_selection_00421D18)->unk0, -1);
 }
 
+/* Run the current menu exit path, set the retained 0x20DFC halfword to 1,
+ * then activate static node 20074.
+ * RE_ORIGINAL_QUIRK: The halfword update occurs after the exit callback.
+ * RE_UNKNOWN: The field meaning and current/destination callback-table
+ * bounds and node lifetimes are external. */
+#line 1830 "src/modules/selection.c"
 void func_selection_004159FC(void) {
     selectionRunCurrentMenuExitCallback();
     D_selection_00420DFC = 1;
     selectionActivateMenuNode(&D_selection_00420074);
 }
+#line 1835 "src/modules/selection.c"
 
 #line 1836 "src/modules/selection.c"
 /* For mode one, reset intro progress and select track 27. Store the
@@ -3998,10 +4327,18 @@ void selectionRepairControllerPak(void) {
 }
 #line 1968 "src/modules/selection.c"
 
+/* Run the current menu exit path, then activate static node 1F728. The
+ * activation helper records the previous node and invokes the new node
+ * entry callback.
+ * RE_UNKNOWN: The destination screen identity remains opaque. Current and
+ * destination node pointers, signed callback-table indices and node
+ * lifetime must already be valid. */
+#line 1969 "src/modules/selection.c"
 void func_selection_00416F28(void) {
     selectionRunCurrentMenuExitCallback();
     selectionActivateMenuNode(&D_selection_0041F728);
 }
+#line 1973 "src/modules/selection.c"
 
 #line 1974 "src/modules/selection.c"
 /* Select the original Controller Pak identity, locate its file on controller
@@ -4431,11 +4768,18 @@ void func_selection_0041A208(void) {
 }
 #line 2087 "src/modules/selection.c"
 
+/* Request the gated B5 voice, run the current menu exit path, then
+ * activate static node 20260.
+ * RE_ORIGINAL_QUIRK: Voice gating precedes the exit callback.
+ * RE_UNKNOWN: Sound/emitter state and current/destination callback-table
+ * bounds and node lifetimes require their owners. */
+#line 2088 "src/modules/selection.c"
 void func_selection_0041A210(void) {
     selectionPlayGatedVoiceB5();
     selectionRunCurrentMenuExitCallback();
     selectionActivateMenuNode(&D_selection_00420260);
 }
+#line 2093 "src/modules/selection.c"
 
 /* Draw the original mode-dependent rows and update the shared scalar.
  * RE_ORIGINAL_QUIRK: a shared mode outside 0, 1, and 2 can bypass writes to
