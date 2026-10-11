@@ -851,57 +851,85 @@ u8 sndAllocateManagedSlot(UnkStruct_004005C8 *handle, s32 soundId, s32 priority,
 }
 #line 724 "src/modules/snd.c"
 
-s16 func_snd_00401800(UnkStruct_004005C8 *arg0, s16 arg1, s32 arg2, f32 arg3) {
-    f32 temp_fv1;
-    f32 var_fv0;
-    u8 temp_v0;
+/*
+ * Prepare the managed sound with flag zero and return 255 immediately on
+ * failure. Apply emitter property 1 as zero and property 2 as 2000, set handle
+ * volume, divide the sound sample rate by 22050, limit the pitch ratio using
+ * the original comparisons, request playback and return handle byte 4.
+ * RE_ORIGINAL_QUIRK: The inherited FAKE multiply reads an uninitialized
+ * float before overwriting it. Preserve that compiler scaffold, the s16
+ * return type and the casts; do not infer a native transport or safety effect.
+ * RE_ORIGINAL_QUIRK: Preparation returns zero for a NULL handle, but this
+ * wrapper tests only 255 and later reads handle byte 4. No NULL guard is added.
+ * RE_UNKNOWN: Valid handle state, sound-table index, preparation argument and
+ * property units/lifetime are caller and sound/emitter provider obligations.
+ */
+#line 725 "src/modules/snd.c"
+s16 func_snd_00401800(UnkStruct_004005C8 *handle, s16 soundId, s32 prepareArgument, f32 volume) {
+    f32 samplePitch;
+    f32 pitchRatio;
+    u8 emitterId;
 
-    temp_v0 = sndPrepareManagedSound(arg0, (s32) arg1, arg2, 0);
-    if (temp_v0 == 0xFF) {
-        return temp_v0;
+    emitterId = sndPrepareManagedSound(handle, (s32) soundId, prepareArgument, 0);
+    if (emitterId == 0xFF) {
+        return emitterId;
     }
 
-    gUvEmitterExports->uvEmitterProps((u8) temp_v0, 1, 0.0f, 2, 2000.0f, 0);
+    gUvEmitterExports->uvEmitterProps((u8) emitterId, 1, 0.0f, 2, 2000.0f, 0);
 
-    sndSetHandleVolume(arg0, arg3);
-    var_fv0 *= 0; // FAKE
-    temp_fv1 = sndGetSoundSampleRate(arg1) / 22050.0f;
-    var_fv0 = temp_fv1;
-    if (var_fv0 < 0.0001f) {
-        var_fv0 = 0.0001f;
-    } else if (var_fv0 > 2.0f) {
-        var_fv0 = 2.0f;
+    sndSetHandleVolume(handle, volume);
+    pitchRatio *= 0; // FAKE
+    samplePitch = sndGetSoundSampleRate(soundId) / 22050.0f;
+    pitchRatio = samplePitch;
+    if (pitchRatio < 0.0001f) {
+        pitchRatio = 0.0001f;
+    } else if (pitchRatio > 2.0f) {
+        pitchRatio = 2.0f;
     }
-    sndSetHandlePitch(arg0, var_fv0);
-    sndRequestHandlePlayback(arg0);
-    return arg0->unk4;
+    sndSetHandlePitch(handle, pitchRatio);
+    sndRequestHandlePlayback(handle);
+    return handle->unk4;
 }
 
-u8 func_snd_00401914(UnkStruct_004005C8 *arg0, s16 arg1, s32 arg2, f32 arg3, f32 arg4, f32 arg5,
-                     Vec3F* arg6) {
-    f32 temp_fv1;
-    f32 var_fv0;
-    u8 temp_v0;
+/*
+ * Prepare the managed sound with flag eight and return 255 on failure.
+ * Forward property 2 then property 1 with the supplied values, set position
+ * and volume, divide sample rate by 22050, apply the original pitch bounds,
+ * request playback and return handle byte 4 through the u8 return type.
+ * RE_ORIGINAL_QUIRK: Keep the uninitialized FAKE float multiply and test
+ * the sample ratio rather than the destination variable in both comparisons.
+ * Property order, promoted floating varargs and source casts remain literal.
+ * RE_ORIGINAL_QUIRK: Preparation returns zero for a NULL handle; this wrapper
+ * tests only 255 and later reads handle byte 4. Preserve that unchecked path.
+ * RE_UNKNOWN: Valid handle state and sound-table index, property units/domain,
+ * preparation argument and borrowed position/lifetime require the providers.
+ */
+#line 751 "src/modules/snd.c"
+u8 func_snd_00401914(UnkStruct_004005C8 *handle, s16 soundId, s32 prepareArgument, f32 volume, f32 property1Value, f32 property2Value,
+                     Vec3F* position) {
+    f32 samplePitch;
+    f32 pitchRatio;
+    u8 emitterId;
 
-    temp_v0 = sndPrepareManagedSound(arg0, (s32) arg1, arg2, 8);
-    if (temp_v0 == 0xFF) {
-        return temp_v0;
+    emitterId = sndPrepareManagedSound(handle, (s32) soundId, prepareArgument, 8);
+    if (emitterId == 0xFF) {
+        return emitterId;
     }
-    gUvEmitterExports->uvEmitterProps(temp_v0, 2, arg5, 1, arg4, 0);
-    sndSetHandlePosition(arg0, arg6);
-    sndSetHandleVolume(arg0, arg3);
+    gUvEmitterExports->uvEmitterProps(emitterId, 2, property2Value, 1, property1Value, 0);
+    sndSetHandlePosition(handle, position);
+    sndSetHandleVolume(handle, volume);
 
-    var_fv0 *= 0; // FAKE
-    temp_fv1 = sndGetSoundSampleRate(arg1) / 22050.0f;
-    var_fv0 = temp_fv1;
-    if (temp_fv1 < 0.0001f) {
-        var_fv0 = 0.0001f;
-    } else if (temp_fv1 > 2.0f) {
-        var_fv0 = 2.0f;
+    pitchRatio *= 0; // FAKE
+    samplePitch = sndGetSoundSampleRate(soundId) / 22050.0f;
+    pitchRatio = samplePitch;
+    if (samplePitch < 0.0001f) {
+        pitchRatio = 0.0001f;
+    } else if (samplePitch > 2.0f) {
+        pitchRatio = 2.0f;
     }
-    sndSetHandlePitch(arg0, var_fv0);
-    sndRequestHandlePlayback(arg0);
-    return arg0->unk4;
+    sndSetHandlePitch(handle, pitchRatio);
+    sndRequestHandlePlayback(handle);
+    return handle->unk4;
 }
 
 #line 778 "src/modules/snd.c"

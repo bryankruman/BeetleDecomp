@@ -26,6 +26,15 @@ s32 uvIntersectSegmentTriangleWithNormal(f32 arg0, f32 arg1, f32 arg2, f32 arg3,
 
 s32 D_uvintersect_rom_00402660[] = {0x00440000, __entrypoint_func_uvintersect_rom_400000, 0, 0};
 
+/*
+ * Install the seventeen intersection exports, including both winding tests
+ * and the unchanged address-named provider, then load MATH and FVEC.
+ * RE_ORIGINAL_QUIRK: Preserve the exact export layout/order and the indented
+ * conditional line directive. This body adds no geometry-state initialization.
+ * RE_UNKNOWN: Import failure, repeated initialization, export/provider lifetime
+ * and geometry preconditions belong to the individual routines and callers.
+ */
+#line 29 "src/modules/uvintersect_rom.c"
 void __entrypoint_func_uvintersect_rom_400000(UvIntersect_Exports* exports) {
     uvUpdateFileAllocPtr(exports);
     exports->uvIntersectModuleCleanup = uvIntersectModuleCleanup;

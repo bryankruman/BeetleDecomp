@@ -2258,8 +2258,20 @@ void selectionUnloadBitmapRangeAndForwardSpriteArguments(void)
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00409EA4.s")
 
+/*
+ * Apply the sound options and forward IDs 0xAB, 0x0E, 0x0C and 0xDB to the
+ * sound provider. Increment the shared signed halfword and run the existing
+ * helper. For step 3 or 4, prepare the transition and reload the step. Return
+ * below five; otherwise run the menu exit callback, gated voice, music-volume
+ * and MIDI operations, clear both sound settings and activate the fixed node.
+ * RE_ORIGINAL_QUIRK: Preserve halfword narrowing and both reloads after calls;
+ * provider callbacks can affect the shared value before later tests.
+ * RE_UNKNOWN: Step domain, callback side effects, sound slot semantics and
+ * menu-node lifetime require the selection and provider owners.
+ */
+#line 1173 "src/modules/selection.c"
 void func_selection_00409FC8(void) {
-    s16 temp_v0;
+    s16 menuStep;
 
     selectionApplySoundOptions();
     ((SndExp_409FC8 *)gSndExports)->unkE0(0xAB);
@@ -2268,12 +2280,12 @@ void func_selection_00409FC8(void) {
     ((SndExp_409FC8 *)gSndExports)->unkE0(0xDB);
     D_selection_00421E24 += 1;
     func_selection_004017E0();
-    temp_v0 = D_selection_00421E24;
-    if (temp_v0 == 4 || temp_v0 == 3) {
+    menuStep = D_selection_00421E24;
+    if (menuStep == 4 || menuStep == 3) {
         selectionPrepareTransitionAndOptionalIntroReset(1);
-        temp_v0 = D_selection_00421E24;
+        menuStep = D_selection_00421E24;
     }
-    if (temp_v0 < 5) {
+    if (menuStep < 5) {
         return;
     }
     selectionRunCurrentMenuExitCallback();

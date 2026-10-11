@@ -578,12 +578,23 @@ void uvBillProps(s32 billboardId, ...) {
     }
 }
 
+/*
+ * Claim the first unallocated billboard slot and return its index. Set the
+ * original flags, texture sentinels, white RGBA bytes, unit scales and zero
+ * fields; request sqrt(5), retain the 100000 scalar, clear the two pointers
+ * and initialize the transform. Return 0xFFFF when no free slot exists.
+ * RE_ORIGINAL_QUIRK: The allocated and active bytes are set before provider
+ * calls. Only listed fields are reset; no full-record clear or rollback occurs.
+ * RE_UNKNOWN: Pool/count validity, the meanings of private fields, provider
+ * failure and concurrent/repeated allocation require the billboard owner.
+ */
+#line 547 "src/modules/uvbill_rom.c"
 s32 uvBillInit(void) {
-    s32 i;
+    s32 slotIndex;
     BillBoard *billBoard;
 
-    for (i = 0; i < sBillBoardCount; i++) {
-        billBoard = &sBillBoardPool[i];
+    for (slotIndex = 0; slotIndex < sBillBoardCount; slotIndex++) {
+        billBoard = &sBillBoardPool[slotIndex];
         if (!billBoard->allocated) {
             billBoard->unk0 = 2;
             billBoard->allocated = TRUE;
@@ -609,7 +620,7 @@ s32 uvBillInit(void) {
             billBoard->unk74 = NULL;
             billBoard->unk70 = NULL;
             sUvFmtxExports->uvMat4SetIdentity(&billBoard->trans);
-            return i;
+            return slotIndex;
         }
     }
     return 0xFFFF;

@@ -41,20 +41,31 @@ void powerupSetDescriptorPrimitiveColor(UnkStruct_Powerup_00400368*);
 extern UnkStruct_Powerup_004004D4* D_powerup_004004D4;
 extern s32 D_powerup_004004E8;
 
-void __entrypoint_func_powerup_400000(Powerup_Exports* arg0) {
-    s32 i;
-    UnkStruct_Powerup_004004D4* var_v0;
+/*
+ * Install the release/create/descriptor exports, allocate thirty 36-byte
+ * powerup slots, clear the shared word, set each slot byte 0 to zero and its
+ * object ID to -1, then load model UVMD 52.
+ * RE_ORIGINAL_QUIRK: Only the active-prefix byte and object ID are reset;
+ * the remaining slot bytes retain allocation contents. Keep allocation,
+ * initialization and model-load order with no failure or rollback branch.
+ * RE_UNKNOWN: Slot layout beyond the used fields, allocation/import success,
+ * repeat initialization and model/pool ownership require creation and cleanup.
+ */
+#line 44 "src/modules/powerup.c"
+void __entrypoint_func_powerup_400000(Powerup_Exports* exports) {
+    s32 slotIndex;
+    UnkStruct_Powerup_004004D4* slot;
 
-    uvUpdateFileAllocPtr(arg0);
-    arg0->powerupReleaseObjectPoolAndModel = powerupReleaseObjectPoolAndModel;
-    arg0->powerupCreateObjectAtPosition = powerupCreateObjectAtPosition;
-    arg0->powerupGetDescriptorOrDefault = powerupGetDescriptorOrDefault;
+    uvUpdateFileAllocPtr(exports);
+    exports->powerupReleaseObjectPoolAndModel = powerupReleaseObjectPoolAndModel;
+    exports->powerupCreateObjectAtPosition = powerupCreateObjectAtPosition;
+    exports->powerupGetDescriptorOrDefault = powerupGetDescriptorOrDefault;
     D_powerup_004004D4 = _uvMemAllocAlign8(30 * sizeof(UnkStruct_Powerup_004004D4));
     D_powerup_004004E8 = 0;
-    for (i = 0; i < 30; i++) {
-        var_v0 = &D_powerup_004004D4[i];
-        var_v0->unk0 = 0;
-        var_v0->objId = -1;
+    for (slotIndex = 0; slotIndex < 30; slotIndex++) {
+        slot = &D_powerup_004004D4[slotIndex];
+        slot->unk0 = 0;
+        slot->objId = -1;
     }
 
     uvLoadFile('UVMD', 52);

@@ -72,6 +72,16 @@ s32 D_uvtexture_rom_00400D24;
 void *D_uvtexture_rom_00400D28;
 s32 sTextureFormFileId;
 
+/*
+ * Install ten texture function exports and the shared-word address export.
+ * Load GMGR, CBCK and TSEQ, obtain the UVTX form ID, then register
+ * uvTextureBeginBuffer on graphics callback list 1 with both user words zero.
+ * RE_ORIGINAL_QUIRK: Preserve export/import/callback order and the existing
+ * conditional line directive; this body does not reset the texture buffers.
+ * RE_UNKNOWN: Import/form lookup failure, duplicate registration, buffer
+ * ownership and callback lifetime require the texture and manager providers.
+ */
+#line 75 "src/modules/uvtexture_rom.c"
 void __entrypoint_func_uvtexture_rom_400000(UvTexture_Exports *exports) {
     uvUpdateFileAllocPtr(exports);
     exports->uvTextureModuleCleanup = uvTextureModuleCleanup;

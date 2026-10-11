@@ -6,12 +6,23 @@
 void mult6NoOpModuleCleanup(void);
 void func_mult6_00400124(void);
 
-void __entrypoint_func_mult6_400000(Mult6_Exports* arg0) {
+/*
+ * Install two exports, load the letter, powerup, weapon, battle, TDATA and
+ * volume-test modules, then pass volume-test query 0x27 to the environment
+ * provider with the second argument one. Outside TASK_EDITOR, call the
+ * TDATA reset provider. Unload TDATA and clear its shared export pointer.
+ * RE_ORIGINAL_QUIRK: Keep the unused pointer local and the no-op cleanup
+ * export. The other five loaded module references remain held by this body.
+ * RE_UNKNOWN: Import failure, repeat initialization, the environment operation
+ * and ownership of retained module references require the multiplayer owners.
+ */
+#line 9 "src/modules/mult6.c"
+void __entrypoint_func_mult6_400000(Mult6_Exports* exports) {
     void* temp_v0;
 
-    uvUpdateFileAllocPtr(arg0);
-    arg0->mult6NoOpModuleCleanup = &mult6NoOpModuleCleanup;
-    arg0->func_mult6_00400124 = &func_mult6_00400124;
+    uvUpdateFileAllocPtr(exports);
+    exports->mult6NoOpModuleCleanup = &mult6NoOpModuleCleanup;
+    exports->func_mult6_00400124 = &func_mult6_00400124;
     gLetterExports = uvLoadModule('lttr');
     gPowerupExports = uvLoadModule('pwup');
     gWeaponExports = uvLoadModule('wpon');

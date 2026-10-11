@@ -83,19 +83,30 @@ void func_logo_0040017C(void) {
 }
 #line 60 "src/modules/logo.c"
 
+/*
+ * While the shared counter is below 90, increment it and truncate the sine
+ * ramp times 255 to an integer; later calls use 255. Push graphics state,
+ * apply the original masks, set the logo sprite RGB to that intensity with
+ * alpha 255, render the sprite and pop graphics state.
+ * RE_ORIGINAL_QUIRK: Keep the unused stack local and the (0,255.0f) comma
+ * expression. The counter and intensity are neither clamped nor reset here.
+ * RE_UNKNOWN: Invocation despite the unused public name, initial counter
+ * range and borrowed sprite/provider lifetime require the logo caller.
+ */
+#line 61 "src/modules/logo.c"
 void unusedLogoRender(void) {
     s32 sp28;
-    s32 var_a2;
+    s32 grayIntensity;
 
     if (D_logo_004002E8[1] < 0x5A) {
-        var_a2 = (s32) ( gUvMathExports->uvSinF((++D_logo_004002E8[1] * 1.5707963f) / 90.0f) * (0,255.0f));
+        grayIntensity = (s32) ( gUvMathExports->uvSinF((++D_logo_004002E8[1] * 1.5707963f) / 90.0f) * (0,255.0f));
     } else {
-        var_a2 = 0xFF;
+        grayIntensity = 0xFF;
     }
     gUvGfxStateExports->uvGfxStatePush();
     gUvGfxStateExports->uvGfxStateSetFlags(0x04800000);
     gUvGfxStateExports->uvGfxClearCurrentStateBits(0x600000);
-    gUvSprtExports->uvSprtProps(D_logo_004002E8[0], 7, var_a2, var_a2, var_a2, 0xFF, 0);
+    gUvSprtExports->uvSprtProps(D_logo_004002E8[0], 7, grayIntensity, grayIntensity, grayIntensity, 0xFF, 0);
     gUvSprtExports->uvSpriteRender(D_logo_004002E8[0]);
     gUvGfxStateExports->uvGfxStatePop();
 }

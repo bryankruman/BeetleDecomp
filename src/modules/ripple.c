@@ -60,26 +60,36 @@ void drawRipple(Ripple *ripple) {
     gUvFmtxExports->uvGfxMtxFViewPop();
 }
 
+/*
+ * Find the first active ripple and return before changing graphics state if
+ * none exists. Otherwise push state, bind texture 0x7D, set flags 0x04E00000
+ * and draw every active ripple from that first index to the pool end, then pop.
+ * RE_ORIGINAL_QUIRK: Keep the unused callback argument and second loop local,
+ * the initial scan and all activity rechecks in the drawing pass.
+ * RE_UNKNOWN: Callback-driven changes to the pool, texture/provider lifetime
+ * and the individual draw preconditions require the ripple render owner.
+ */
+#line 52 "src/modules/ripple.c"
 void drawRipples(s32 arg0) {
-    s32 i;
+    s32 rippleIndex;
     s32 j;
 
-    for (i = 0; i < ARRAY_COUNT(sRipples); i++) {
-        if (sRipples[i].active) {
+    for (rippleIndex = 0; rippleIndex < ARRAY_COUNT(sRipples); rippleIndex++) {
+        if (sRipples[rippleIndex].active) {
             break;
         }
     }
 
-    if (i == ARRAY_COUNT(sRipples)) {
+    if (rippleIndex == ARRAY_COUNT(sRipples)) {
         return;
     }
 
     gUvGfxStateExports->uvGfxStatePush();
     gUvGfxStateExports->uvGfxStateBindTexture(0x7D);
     gUvGfxStateExports->uvGfxStateSetFlags(0x04E00000);
-    for (; i < ARRAY_COUNT(sRipples); i++) {
-        if (sRipples[i].active) {
-            drawRipple(&sRipples[i]);
+    for (; rippleIndex < ARRAY_COUNT(sRipples); rippleIndex++) {
+        if (sRipples[rippleIndex].active) {
+            drawRipple(&sRipples[rippleIndex]);
         }
     }
     gUvGfxStateExports->uvGfxStatePop();

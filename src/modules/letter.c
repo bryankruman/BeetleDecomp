@@ -49,6 +49,17 @@ void *letterGetDescriptorOrDefault(s32 index);
  * RE_UNKNOWN: asset roles, remaining entry fields, shared word 0x00400518 and
  * external ownership/lifetime of loaded assets and created objects.
  * RE_ORIGINAL_QUIRK: allocation is unchecked. */
+/*
+ * Install the three letter exports and load models 0x101, 0x102, 0x104 and
+ * 0x103, followed by textures 0x3E8, 0x3E9, 0x3FE and 0x3FC. Allocate the
+ * 720-byte object pool, clear the active byte and set the object handle to -1
+ * in each of twenty 36-byte entries, then clear the shared word.
+ * RE_ORIGINAL_QUIRK: Pool traversal adds a byte offset to a 32-bit base
+ * address. Only the two entry fields are initialized; keep the original order.
+ * RE_UNKNOWN: Allocation/import failure, repeated initialization, the remaining
+ * entry layout and resource/pool lifetime require the creators and cleanup.
+ */
+#line 51 "src/modules/letter.c"
 void __entrypoint_func_letterInitializeModuleAndObjectPool(LetterInitializerExports *exports) {
     s32 entryOffset;
     LetterInitializerEntryPrefix *entry;

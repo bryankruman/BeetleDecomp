@@ -195,6 +195,17 @@ s32 D_uvled_rom_00401670;
 UvFMtx_Rom_Exports *D_uvled_rom_00401674;
 UvGfxMgr_Exports *D_uvled_rom_00401678;
 
+/*
+ * Install nine text/number/format exports and load FMTX and GMGR. Reset the
+ * two floating cell coordinates, choose 12-by-16 cells, set the left position
+ * zero and the vertical position to screen height minus the cell height,
+ * then clear the shared formatting word.
+ * RE_ORIGINAL_QUIRK: The screen-derived position is stored as a halfword
+ * without clipping. Preserve the unconditional line directive and store order.
+ * RE_UNKNOWN: Screen-height stability/range, repeated initialization and
+ * provider/buffer lifetime require the text renderer and graphics owner.
+ */
+#line 198 "src/modules/uvled_rom.c"
 void __entrypoint_func_uvled_rom_400000(UvLed_Exports *exports) {
     uvUpdateFileAllocPtr(exports);
     exports->uvLedModuleCleanup = uvLedModuleCleanup;
