@@ -34,8 +34,8 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **760** assembly references:
-**721** ordinary functions and **39** entrypoints, with **699,908** known instruction bytes
+matching C are preserved with `#line`. The current ledger has **759** assembly references:
+**720** ordinary functions and **39** entrypoints, with **699,468** known instruction bytes
 and no unknown sizes. The broader name audit still finds **289** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
@@ -3511,10 +3511,19 @@ Totals: 440 further recoveries after the 225 upstream ordinary imports, plus 195
 Frozen wave `6442-lifecycle-ui-native-contracts` and `accepted-lifecycle-ui-native-contracts-6442` verify real translation-unit instructions/full relocations, 35 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 440 further readable functions
+## Historical accepted checkpoint — 440 further readable functions
 
 Clarify31 existing kernel file/module/resource functions5284B across exactly3 source paths. Preserve literal bodies, ABI/types, allocation ownership and known native quirks. Actual31 candidate/3 baseline trials and complete native/ordered-record/site/warning/whole-TU-coordinate observations required. Preserve2184 prior assessments,169 typed SDK records and83 historical attempts. All133 original packed modules, full original ROM and complete literal ledger remain mandatory.
 
 Totals: 440 further recoveries after the 225 upstream ordinary imports, plus 1986 existing C semantic cleanups. Current ledger: 760 assembly references = 721 ordinary + 39 entrypoints; 699,908 known remaining instruction bytes; zero unknown sizes; 289 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `6572-kernel-resource-native-contracts` and `accepted-kernel-resource-native-contracts-6572` verify real translation-unit instructions/full relocations, 133 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 441 further readable functions
+
+Recover the exact440-byte PIECE function as pieceCreateDynamicReplacementAndUpdateSourceModel. Preserve its original signed count branch, source scalar and matrix operations, provider ABI, explicit ownership/argument unknowns and existing source tokens. Bind the actual6160 compiler trial,6488/6548 complete native and seven ordered records with both logs empty. Add only the module-local legacy compatibility alias; the current Makefile already discovers it. Require fresh1178-source/full133/whole original PIECE/full ROM/exact ledger/Git proof and6596 canonical globalFUNC440 plus defined same-section legacy alias proof before landing. Preserve all2215 prior assessments,169 typed SDK rows and83 historical attempts.
+
+Totals: 441 further recoveries after the 225 upstream ordinary imports, plus 1986 existing C semantic cleanups. Current ledger: 759 assembly references = 720 ordinary + 39 entrypoints; 699,468 known remaining instruction bytes; zero unknown sizes; 289 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `6606-piece-named-recovery` and `accepted-piece-named-recovery-6606` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

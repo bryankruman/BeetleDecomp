@@ -17,14 +17,14 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 1699 |
-| Preserved RE_ORIGINAL_QUIRK notes | 451 |
+| Explicit RE_UNKNOWN notes | 1701 |
+| Preserved RE_ORIGINAL_QUIRK notes | 452 |
 | Older comments with uncertainty language | 87 |
 | Documented original-behavior audits | 30 |
-| Assembly-backed functions or data | 764 |
-| Address-based function identifiers | 909 |
+| Assembly-backed functions or data | 763 |
+| Address-based function identifiers | 910 |
 | Address-based global identifiers | 1477 |
-| Offset-based fields or neutral typed fields | 1662 |
+| Offset-based fields or neutral typed fields | 1673 |
 | Layout padding to preserve | 275 |
 | Unresolved type names | 282 |
 | Explicit unused ABI, storage or local identifiers | 137 |
@@ -3908,18 +3908,32 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
-| address_function | `func_piece_00400F48` | function `func_piece_00400F48` | [29](../src/modules/piece.c#L29) |
-| assembly | `__entrypoint_func_piece_400e90` | — | [22](../src/modules/piece.c#L22) |
-| assembly | `func_piece_00400000` | — | [2](../src/modules/piece.c#L2) |
-| assembly | `func_piece_004000CC` | — | [4](../src/modules/piece.c#L4) |
-| assembly | `func_piece_004001F4` | — | [6](../src/modules/piece.c#L6) |
-| assembly | `func_piece_00400670` | — | [15](../src/modules/piece.c#L15) |
-| assembly | `func_piece_004006E0` | — | [18](../src/modules/piece.c#L18) |
-| assembly | `func_piece_00400CD8` | — | [20](../src/modules/piece.c#L20) |
-| assembly | `func_piece_00400F50` | — | [33](../src/modules/piece.c#L33) |
-| assembly | `func_piece_00401104` | — | [35](../src/modules/piece.c#L35) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_piece_00400F48` | [25](../src/modules/piece.c#L25) |
-| explicit_unknown | `Original five-slot walk at stride0x20: re-read each byte0x10 and call * helper0x401F4 on that indexed record only when the byte is nonzero. * RE_UNKNOWN: byte meaning, complete ...` | assembly `func_piece_00400670` | [8](../src/modules/piece.c#L8) |
+| address_function | `func_piece_004006E0` | function `func_piece_004006E0`, function `pieceCreateDynamicReplacementAndUpdateSourceModel` | [28](../src/modules/piece.c#L28), [82](../src/modules/piece.c#L82) |
+| address_function | `func_piece_00400F48` | function `func_piece_00400F48` | [101](../src/modules/piece.c#L101) |
+| assembly | `__entrypoint_func_piece_400e90` | — | [94](../src/modules/piece.c#L94) |
+| assembly | `func_piece_00400000` | — | [30](../src/modules/piece.c#L30) |
+| assembly | `func_piece_004000CC` | — | [32](../src/modules/piece.c#L32) |
+| assembly | `func_piece_004001F4` | — | [34](../src/modules/piece.c#L34) |
+| assembly | `func_piece_00400670` | — | [43](../src/modules/piece.c#L43) |
+| assembly | `func_piece_004006E0` | — | [46](../src/modules/piece.c#L46) |
+| assembly | `func_piece_00400F50` | — | [105](../src/modules/piece.c#L105) |
+| assembly | `func_piece_00401104` | — | [107](../src/modules/piece.c#L107) |
+| explicit_unknown | `Consumed six-argument call interface: callers ignore any return value. * RE_UNKNOWN: The historical helper return type and complete API are unknown.` | function `func_piece_004006E0` | [26](../src/modules/piece.c#L26) |
+| explicit_unknown | `Optionally create a dynamic object with the requested model and transfer * matrices from the source object. Matching model IDs copy the reported node * count; other models copy ...` | function `pieceCreateDynamicReplacementAndUpdateSourceModel` | [48](../src/modules/piece.c#L48) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_piece_00400F48` | [97](../src/modules/piece.c#L97) |
+| explicit_unknown | `Original five-slot walk at stride0x20: re-read each byte0x10 and call * helper0x401F4 on that indexed record only when the byte is nonzero. * RE_UNKNOWN: byte meaning, complete ...` | assembly `func_piece_00400670` | [36](../src/modules/piece.c#L36) |
+| offset_field | `opaque00` | type `PieceTerrainConsumedExports` | [16](../src/modules/piece.c#L16) |
+| offset_field | `opaque02` | type `PieceTerrainConsumedPrefix` | [10](../src/modules/piece.c#L10) |
+| offset_field | `opaque18` | type `PieceTerrainConsumedPrefix` | [11](../src/modules/piece.c#L11) |
+| offset_field | `opaque20` | type `PieceTerrainConsumedPrefix` | [12](../src/modules/piece.c#L12) |
+| offset_field | `opaque84` | type `PieceTerrainConsumedExports` | [18](../src/modules/piece.c#L18) |
+| offset_field | `opaque8C` | type `PieceTerrainConsumedExports` | [20](../src/modules/piece.c#L20) |
+| offset_field | `scalar0` | function `pieceCreateDynamicReplacementAndUpdateSourceModel` | [58](../src/modules/piece.c#L58), [83](../src/modules/piece.c#L83) |
+| offset_field | `scalar1` | function `pieceCreateDynamicReplacementAndUpdateSourceModel` | [58](../src/modules/piece.c#L58), [83](../src/modules/piece.c#L83) |
+| offset_field | `scalar14` | type `PieceTerrainConsumedPrefix` | [11](../src/modules/piece.c#L11) |
+| offset_field | `word1C` | type `PieceTerrainConsumedPrefix` | [12](../src/modules/piece.c#L12) |
+| offset_field | `word40` | type `PieceTerrainConsumedPrefix` | [13](../src/modules/piece.c#L13) |
+| original_quirk | `Optionally create a dynamic object with the requested model and transfer * matrices from the source object. Matching model IDs copy the reported node * count; other models copy ...` | function `pieceCreateDynamicReplacementAndUpdateSourceModel` | [48](../src/modules/piece.c#L48) |
 
 ## src/modules/plyr.c
 

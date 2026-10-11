@@ -1,4 +1,32 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
+#include "common.h"
+#include "uvfvec_rom.h"
+#include "uvquat_rom.h"
+#include "uvasset_types.h"
+#include "uvdobj_rom.h"
+#include "uvmodel_rom.h"
+/* Consumed fields and export slots only; this is not a complete terrain ABI. */
+typedef struct {
+    u16 model; u8 opaque02[0x12];
+    f32 scalar14; u8 opaque18[4];
+    s32 word1C; u8 opaque20[0x20];
+    u32 word40;
+} PieceTerrainConsumedPrefix;
+typedef struct {
+    u8 opaque00[0x80];
+    void (*getMatrix)(s32, s32, Mtx4F *);
+    u8 opaque84[4];
+    void (*setModel)(s32, s32);
+    u8 opaque8C[0x18];
+    PieceTerrainConsumedPrefix *(*getObject)(s32);
+} PieceTerrainConsumedExports;
+extern UvDobj_Exports *gUvDobjExports;
+extern UvModel_Exports *gUvModelExports;
+extern PieceTerrainConsumedExports *gUvTerraExports;
+/* Consumed six-argument call interface: callers ignore any return value.
+ * RE_UNKNOWN: The historical helper return type and complete API are unknown. */
+void func_piece_004006E0(s32, s32, Vec3F *, f32, f32, f32);
+#line 2 "src/modules/piece.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/piece/func_piece_00400000.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/piece/func_piece_004000CC.s")
@@ -17,7 +45,51 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/piece/func_piece_004006E0.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/piece/func_piece_00400CD8.s")
+/* Optionally create a dynamic object with the requested model and transfer
+ * matrices from the source object. Matching model IDs copy the reported node
+ * count; other models copy one matrix. Pass the borrowed vector and three
+ * scalar arguments to the retained piece helper, then update the source model
+ * or clear its flags. Return the created ID, or -1 when creation is skipped.
+ * RE_ORIGINAL_QUIRK: Creation and property-query results are unchecked. The
+ * source update still runs when the requested replacement model is -1.
+ * RE_UNKNOWN: Property 7 scalar meaning, helper behavior, valid model/node
+ * domains, provider failure outputs and borrowed-vector lifetime need callers. */
+s32 pieceCreateDynamicReplacementAndUpdateSourceModel(s32 sourceId, s32 replacementModel, Vec3F *vector,
+    f32 scalar0, f32 scalar1, s32 finalSourceModel) {
+    s32 node;
+    s32 copyCount;
+    s32 modelNodeCount;
+    s32 sourceModel;
+    s32 newObjectId;
+    f32 sourceScalar;
+    Mtx4F nodeMatrix;
+
+    newObjectId = -1;
+    if (replacementModel != -1) {
+        gUvDobjExports->uvDobjGetProp(sourceId, 8, &sourceModel, 7, &sourceScalar, 0);
+        gUvModelExports->uvModelGetProps(replacementModel, 4, &modelNodeCount, 0);
+        newObjectId = gUvDobjExports->uvDobjCreate();
+        gUvDobjExports->uvDobjModel(newObjectId, replacementModel);
+        if (sourceModel == replacementModel) {
+            copyCount = modelNodeCount;
+        } else {
+            copyCount = 1;
+        }
+        for (node = 0; node < copyCount; node++) {
+            gUvDobjExports->uvDobjGetPosm(sourceId, node, &nodeMatrix);
+            gUvDobjExports->uvDobjPosm(newObjectId, node, &nodeMatrix);
+        }
+        func_piece_004006E0(newObjectId, replacementModel, vector,
+            scalar0, scalar1, sourceScalar);
+    }
+    if (finalSourceModel != -1) {
+        gUvDobjExports->uvDobjModel(sourceId, finalSourceModel);
+    } else {
+        gUvDobjExports->uvDobjSetFlags(sourceId, 0);
+    }
+    return newObjectId;
+}
+#line 13 "src/modules/piece.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/piece/__entrypoint_func_piece_400e90.s")
 

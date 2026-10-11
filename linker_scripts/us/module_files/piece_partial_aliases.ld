@@ -1,0 +1,1 @@
+func_piece_00400CD8 = pieceCreateDynamicReplacementAndUpdateSourceModel;
