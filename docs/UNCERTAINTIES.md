@@ -17,14 +17,14 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 1539 |
+| Explicit RE_UNKNOWN notes | 1541 |
 | Preserved RE_ORIGINAL_QUIRK notes | 399 |
 | Older comments with uncertainty language | 95 |
 | Documented original-behavior audits | 30 |
 | Assembly-backed functions or data | 766 |
 | Address-based function identifiers | 908 |
 | Address-based global identifiers | 1475 |
-| Offset-based fields or neutral typed fields | 1641 |
+| Offset-based fields or neutral typed fields | 1654 |
 | Layout padding to preserve | 275 |
 | Unresolved type names | 282 |
 | Explicit unused ABI, storage or local identifiers | 137 |
@@ -1050,6 +1050,12 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `byte2` | function `__alCSeqGetTrackEvent` | [154](../src/libultra/audio/cseq.c#L154), [230](../src/libultra/audio/cseq.c#L230), [235](../src/libultra/audio/cseq.c#L235), [241](../src/libultra/audio/cseq.c#L241) |
 | offset_field | `byte3` | function `__alCSeqGetTrackEvent` | [155](../src/libultra/audio/cseq.c#L155) |
 
+## src/libultra/audio/cspgettempo.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| explicit_unknown | `* Return zero when no sequence is selected; otherwise divide microseconds per * tick by the selected sequence's quarter-note factor. The inherited division * has no zero-divisor...` | function `alCSPGetTempo` | [23](../src/libultra/audio/cspgettempo.c#L23) |
+
 ## src/libultra/audio/csplayer.c
 
 | Kind | Identifier or note | Declaration context | Physical lines |
@@ -1062,6 +1068,50 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `byte1` | function `__CSPHandleMIDIMsg`, function `__CSPHandleMetaMsg` | [427](../src/libultra/audio/csplayer.c#L427), [440](../src/libultra/audio/csplayer.c#L440), [571](../src/libultra/audio/csplayer.c#L571), [627](../src/libultra/audio/csplayer.c#L627), [636](../src/libultra/audio/csplayer.c#L636), [749](../src/libultra/audio/csplayer.c#L749), [791](../src/libultra/audio/csplayer.c#L791) |
 | offset_field | `byte2` | function `__CSPHandleMIDIMsg`, function `__CSPHandleMetaMsg` | [428](../src/libultra/audio/csplayer.c#L428), [441](../src/libultra/audio/csplayer.c#L441), [572](../src/libultra/audio/csplayer.c#L572), [613](../src/libultra/audio/csplayer.c#L613), [639](../src/libultra/audio/csplayer.c#L639), [650](../src/libultra/audio/csplayer.c#L650), [663](../src/libultra/audio/csplayer.c#L663), [666](../src/libultra/audio/csplayer.c#L666) (+5 in JSON) |
 | offset_field | `byte3` | function `__CSPHandleMetaMsg` | [791](../src/libultra/audio/csplayer.c#L791) |
+
+## src/libultra/audio/cspsendmidi.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| explicit_unknown | `* Post the supplied MIDI bytes with delay ticks multiplied by the current * microseconds per tick. The event's tick and duration fields are zero; the * inherited multiplication ...` | function `alCSPSendMidi` | [23](../src/libultra/audio/cspsendmidi.c#L23) |
+| offset_field | `byte1` | function `alCSPSendMidi` | [31](../src/libultra/audio/cspsendmidi.c#L31), [40](../src/libultra/audio/cspsendmidi.c#L40) |
+| offset_field | `byte2` | function `alCSPSendMidi` | [32](../src/libultra/audio/cspsendmidi.c#L32), [41](../src/libultra/audio/cspsendmidi.c#L41) |
+
+## src/libultra/audio/cspsetchlvol.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| offset_field | `byte1` | function `alCSPSetChlVol` | [35](../src/libultra/audio/cspsetchlvol.c#L35) |
+| offset_field | `byte2` | function `alCSPSetChlVol` | [36](../src/libultra/audio/cspsetchlvol.c#L36) |
+
+## src/libultra/audio/cspsetfxmix.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| offset_field | `byte1` | function `alCSPSetChlFXMix` | [35](../src/libultra/audio/cspsetfxmix.c#L35) |
+| offset_field | `byte2` | function `alCSPSetChlFXMix` | [36](../src/libultra/audio/cspsetfxmix.c#L36) |
+
+## src/libultra/audio/cspsetpan.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| offset_field | `byte1` | function `alCSPSetChlPan` | [36](../src/libultra/audio/cspsetpan.c#L36) |
+| offset_field | `byte2` | function `alCSPSetChlPan` | [37](../src/libultra/audio/cspsetpan.c#L37) |
+
+## src/libultra/audio/cspsetprogram.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| offset_field | `byte1` | function `alCSPSetChlProgram` | [36](../src/libultra/audio/cspsetprogram.c#L36) |
+| offset_field | `byte2` | function `alCSPSetChlProgram` | [37](../src/libultra/audio/cspsetprogram.c#L37) |
+
+## src/libultra/audio/cspsettempo.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| offset_field | `byte1` | function `alCSPSetTempo` | [35](../src/libultra/audio/cspsettempo.c#L35) |
+| offset_field | `byte2` | function `alCSPSetTempo` | [36](../src/libultra/audio/cspsettempo.c#L36) |
+| offset_field | `byte3` | function `alCSPSetTempo` | [37](../src/libultra/audio/cspsettempo.c#L37) |
 
 ## src/libultra/audio/drvrnew.c
 

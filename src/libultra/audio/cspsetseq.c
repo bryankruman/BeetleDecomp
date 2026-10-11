@@ -1,0 +1,39 @@
+/*====================================================================
+ * cspsetseq.c
+ *
+ * Synopsis:
+ *
+ * Copyright 1995, Silicon Graphics, Inc.
+ * All Rights Reserved.
+ *
+ * This is UNPUBLISHED PROPRIETARY SOURCE CODE of Silicon Graphics,
+ * Inc.; the contents of this file may not be disclosed to third
+ * parties, copied or duplicated in any form, in whole or in part,
+ * without the prior written permission of Silicon Graphics, Inc.
+ *
+ * RESTRICTED RIGHTS LEGEND:
+ * Use, duplication or disclosure by the Government is subject to
+ * restrictions as set forth in subdivision (c)(1)(ii) of the Rights
+ * in Technical Data and Computer Software clause at DFARS
+ * 252.227-7013, and/or in similar or successor clauses in the FAR,
+ * DOD or NASA FAR Supplement. Unpublished - rights reserved under the
+ * Copyright Laws of the United States.
+ *====================================================================*/
+
+#include <libaudio.h>
+
+/*
+ * Post the supplied compact-sequence pointer in a zero-delay sequence event.
+ * This wrapper does not reset or decode the sequence directly.
+ */
+#line 25 "src/libultra/audio/cspsetseq.c"
+void alCSPSetSeq(ALCSPlayer *seqp, ALCSeq *seq)
+{
+    ALEvent evt;
+
+    evt.type = AL_SEQP_SEQ_EVT;
+    evt.msg.spseq.seq = seq;
+
+    alEvtqPostEvent(&seqp->evtq, &evt, 0);
+}
+

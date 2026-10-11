@@ -641,3 +641,11 @@ SDK_CONTROLLER_HEADERS := include/2.0I/PR/os_version.h include/libultra-sdk/PR/R
 $(SDK_CONTROLLER_OBJECTS): $(BUILD_DIR)/%.o: %.c $(SDK_CONTROLLER_HEADERS)
 	$(V)mkdir -p $(dir $@)
 	$(V)$(SDK_AUDIO_CC) $(subst -O3,-O1,$(SDK_AUDIO_FLAGS)) -o $@ $<
+
+# Original compact-sequence API units; exact VERSION_I/O3 native matches.
+SDK_COMPACT_SEQUENCE_SOURCES := src/libultra/audio/cspgetchlvol.c src/libultra/audio/cspgetfxmix.c src/libultra/audio/cspgetpan.c src/libultra/audio/cspgetpriority.c src/libultra/audio/cspgetprogram.c src/libultra/audio/cspgetstate.c src/libultra/audio/cspgettempo.c src/libultra/audio/cspplay.c src/libultra/audio/cspsendmidi.c src/libultra/audio/cspsetbank.c src/libultra/audio/cspsetchlvol.c src/libultra/audio/cspsetfxmix.c src/libultra/audio/cspsetpan.c src/libultra/audio/cspsetpriority.c src/libultra/audio/cspsetprogram.c src/libultra/audio/cspsetseq.c src/libultra/audio/cspsettempo.c src/libultra/audio/cspsetvol.c src/libultra/audio/cspstop.c
+SDK_COMPACT_SEQUENCE_OBJECTS := $(addprefix $(BUILD_DIR)/,$(SDK_COMPACT_SEQUENCE_SOURCES:.c=.o))
+SDK_COMPACT_SEQUENCE_HEADERS := include/2.0I/PR/gbi.h include/libultra-sdk/PR/abi.h include/libultra-sdk/PR/libaudio.h include/libultra-sdk/PR/mbi.h include/libultra-sdk/PR/ultratypes.h src/libultra/audio/cseqp.h
+$(SDK_COMPACT_SEQUENCE_OBJECTS): $(BUILD_DIR)/%.o: %.c $(SDK_COMPACT_SEQUENCE_HEADERS)
+	$(V)mkdir -p $(dir $@)
+	$(V)$(SDK_AUDIO_CC) $(SDK_AUDIO_FLAGS) -o $@ $<

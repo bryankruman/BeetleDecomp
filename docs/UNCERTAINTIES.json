@@ -231,7 +231,26 @@
     "src/libultra/audio/cseq.c": "bd4bfeaf1182c8ab8d4a13fcb5529c51539cd1720d97b441cf53c9b7b8ad8daf",
     "src/libultra/audio/cseq.h": "c10072d9bda4da8fb617657dd78ffc481e8086509078830110fa0acb7fcf6f07",
     "src/libultra/audio/cseqp.h": "b2f981075c1c7d9e271b621593cd5e8238888927ce33ade647eebba10b62f8ee",
+    "src/libultra/audio/cspgetchlvol.c": "3a16f5716c3a4eea6603ad9c5f1f4b7216455fbb0d0e01e7316f2363f8d9ae07",
+    "src/libultra/audio/cspgetfxmix.c": "59e1d59bfb703dee35d4115c2b463aa8031623355297a7e390ce7bc601e5478a",
+    "src/libultra/audio/cspgetpan.c": "711474af80a588d73feddabfe265717cf7f1f9e9b75d31216cb11b6aacce89b4",
+    "src/libultra/audio/cspgetpriority.c": "4c46358ad18fd199f9474377f9b87482767c99a9a208d83775a99490028b2360",
+    "src/libultra/audio/cspgetprogram.c": "4149a068ec149617d74962072ec22cdbab2aa436065671a98dd14bd623c3df0e",
+    "src/libultra/audio/cspgetstate.c": "852adb1de17d057b2984c62000d2a97a58fd55cadf2952cc3cc034e97b7ae50e",
+    "src/libultra/audio/cspgettempo.c": "af32c40719f7061a165f63dbe9db5b8ad5af6503c0bdf0ce96f851571b234390",
     "src/libultra/audio/csplayer.c": "a8ff47b92b7f09f64280f0abd99cebfac855b9cb6b44bb0502d4e640a0f5a169",
+    "src/libultra/audio/cspplay.c": "cf824e37be981d104a419bd737ad23c47cbc9676361eddd9bc0a8cc7470527b8",
+    "src/libultra/audio/cspsendmidi.c": "ee7691fdf483559e7b4c67b48c58d0cb69879562125aa443fc3ec4747a6efe0a",
+    "src/libultra/audio/cspsetbank.c": "4c8e830569638de0516d6e54c685ca70b01851737a1827be4b54a5613898ca33",
+    "src/libultra/audio/cspsetchlvol.c": "c03a3d61b83bb42dffd1efa06ecd39bf0dca2bbb4dbdf4eb689da84c077618a7",
+    "src/libultra/audio/cspsetfxmix.c": "94b37d68d851def5eb7027106a6ce75459a10905393c52fff4f54dca34c776c9",
+    "src/libultra/audio/cspsetpan.c": "1fccb9f2e4b702f6f31ea8da7ce9a63ef750da9dc0a94789bcaccfb97063b991",
+    "src/libultra/audio/cspsetpriority.c": "6bdb3c56a158794d64767c6ca4f2641ec232f007aa2ca129949d08ff86fffb92",
+    "src/libultra/audio/cspsetprogram.c": "99ff051c901e51d0caa32e85d89d99e83d919239ffd572aa58cdf4fe4b90bb33",
+    "src/libultra/audio/cspsetseq.c": "8bd3f25d821ab55634a4ee4ec8a78c551e6cae6ccf43b29a38b27967cfd0306e",
+    "src/libultra/audio/cspsettempo.c": "3d9cf8d8c35b429aea2d0df34ce1bf23ca17b249aefd57480f01cd7749e642c0",
+    "src/libultra/audio/cspsetvol.c": "4844b98ebc809c697d199265eccb097a5e3a3d6796253183b5d6e4203b3a85f4",
+    "src/libultra/audio/cspstop.c": "a6437cfca4ebd561d0ac1966ce3c0c088439b642ba98394544c2784459b0f18b",
     "src/libultra/audio/drvrnew.c": "3dd8d80cc7c591f9b4213956c92f0513aa928d4e2cb5a0f61f41b57c28ece723",
     "src/libultra/audio/env.c": "2b67b2b53d38d817617ec8f75a2baf418c1dd4a4e68a12bfef3f965f5dd396c7",
     "src/libultra/audio/event.c": "a3a2be6364d8a2411ef019cfb7d2de567beca1b73c6ee4f3be867d035ac74f38",
@@ -457,9 +476,9 @@
     "conditional_draft": 4,
     "decompiler_local": 619,
     "draft_marker": 37,
-    "explicit_unknown": 1539,
+    "explicit_unknown": 1541,
     "layout_padding": 275,
-    "offset_field": 1641,
+    "offset_field": 1654,
     "opaque_type": 282,
     "original_quirk": 399,
     "uncertainty_note": 95,
@@ -115529,6 +115548,26 @@
       ]
     },
     {
+      "id": "Q-a4ad4ad708c0",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/cspgettempo.c",
+      "symbol": "* Return zero when no sequence is selected; otherwise divide microseconds per * tick by the selected sequence's quarter-note factor. The inherited division * has no zero-divisor guard. * RE_UNKNOWN: Caller validity of the non-null sequence's quarter-note factor * is not established by this getter.",
+      "lines": [
+        23
+      ],
+      "evidence": "* Return zero when no sequence is selected; otherwise divide microseconds per * tick by the selected sequence's quarter-note factor. The inherited division * has no zero-divisor guard. * RE_UNKNOWN: Caller validity of the non-null sequence's quarter-note factor * is not established by this getter.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "alCSPGetTempo",
+          "declaration_line": 31,
+          "lines": [
+            23
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-457967d8621f",
       "kind": "explicit_unknown",
       "path": "src/libultra/audio/csplayer.c",
@@ -115604,6 +115643,26 @@
           "declaration_line": 775,
           "lines": [
             776
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-2afe9f16c84a",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/cspsendmidi.c",
+      "symbol": "* Post the supplied MIDI bytes with delay ticks multiplied by the current * microseconds per tick. The event's tick and duration fields are zero; the * inherited multiplication is not clamped. * RE_UNKNOWN: Caller constraints preventing signed delay multiplication * overflow are not established here.",
+      "lines": [
+        23
+      ],
+      "evidence": "* Post the supplied MIDI bytes with delay ticks multiplied by the current * microseconds per tick. The event's tick and duration fields are zero; the * inherited multiplication is not clamped. * RE_UNKNOWN: Caller constraints preventing signed delay multiplication * overflow are not established here.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "alCSPSendMidi",
+          "declaration_line": 31,
+          "lines": [
+            23
           ]
         }
       ]
@@ -161487,6 +161546,257 @@
           "declaration_line": 775,
           "lines": [
             791
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-91de613440cf",
+      "kind": "offset_field",
+      "path": "src/libultra/audio/cspsendmidi.c",
+      "symbol": "byte1",
+      "lines": [
+        31,
+        40
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "alCSPSendMidi",
+          "declaration_line": 31,
+          "lines": [
+            31,
+            40
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-bb3f3a02ba97",
+      "kind": "offset_field",
+      "path": "src/libultra/audio/cspsendmidi.c",
+      "symbol": "byte2",
+      "lines": [
+        32,
+        41
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "alCSPSendMidi",
+          "declaration_line": 31,
+          "lines": [
+            32,
+            41
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-15410a9424ab",
+      "kind": "offset_field",
+      "path": "src/libultra/audio/cspsetchlvol.c",
+      "symbol": "byte1",
+      "lines": [
+        35
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "alCSPSetChlVol",
+          "declaration_line": 28,
+          "lines": [
+            35
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-aacf1dec5465",
+      "kind": "offset_field",
+      "path": "src/libultra/audio/cspsetchlvol.c",
+      "symbol": "byte2",
+      "lines": [
+        36
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "alCSPSetChlVol",
+          "declaration_line": 28,
+          "lines": [
+            36
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-db94343502cf",
+      "kind": "offset_field",
+      "path": "src/libultra/audio/cspsetfxmix.c",
+      "symbol": "byte1",
+      "lines": [
+        35
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "alCSPSetChlFXMix",
+          "declaration_line": 28,
+          "lines": [
+            35
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-ac1a88ebbb52",
+      "kind": "offset_field",
+      "path": "src/libultra/audio/cspsetfxmix.c",
+      "symbol": "byte2",
+      "lines": [
+        36
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "alCSPSetChlFXMix",
+          "declaration_line": 28,
+          "lines": [
+            36
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-45d8885957e1",
+      "kind": "offset_field",
+      "path": "src/libultra/audio/cspsetpan.c",
+      "symbol": "byte1",
+      "lines": [
+        36
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "alCSPSetChlPan",
+          "declaration_line": 29,
+          "lines": [
+            36
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-1621cfcc3f64",
+      "kind": "offset_field",
+      "path": "src/libultra/audio/cspsetpan.c",
+      "symbol": "byte2",
+      "lines": [
+        37
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "alCSPSetChlPan",
+          "declaration_line": 29,
+          "lines": [
+            37
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-d7f0eb3e70db",
+      "kind": "offset_field",
+      "path": "src/libultra/audio/cspsetprogram.c",
+      "symbol": "byte1",
+      "lines": [
+        36
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "alCSPSetChlProgram",
+          "declaration_line": 29,
+          "lines": [
+            36
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-42cd0c3ac3e6",
+      "kind": "offset_field",
+      "path": "src/libultra/audio/cspsetprogram.c",
+      "symbol": "byte2",
+      "lines": [
+        37
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "alCSPSetChlProgram",
+          "declaration_line": 29,
+          "lines": [
+            37
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-04cef647e88b",
+      "kind": "offset_field",
+      "path": "src/libultra/audio/cspsettempo.c",
+      "symbol": "byte1",
+      "lines": [
+        35
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "alCSPSetTempo",
+          "declaration_line": 28,
+          "lines": [
+            35
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-2a917b82119f",
+      "kind": "offset_field",
+      "path": "src/libultra/audio/cspsettempo.c",
+      "symbol": "byte2",
+      "lines": [
+        36
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "alCSPSetTempo",
+          "declaration_line": 28,
+          "lines": [
+            36
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-0e90e982d1fb",
+      "kind": "offset_field",
+      "path": "src/libultra/audio/cspsettempo.c",
+      "symbol": "byte3",
+      "lines": [
+        37
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "alCSPSetTempo",
+          "declaration_line": 28,
+          "lines": [
+            37
           ]
         }
       ]

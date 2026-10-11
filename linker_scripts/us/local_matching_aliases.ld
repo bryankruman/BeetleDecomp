@@ -193,3 +193,24 @@ __osMaxControllers = 0x80032231;
 func_8000E520 = osContStartQuery;
 func_8000E5A4 = osContGetQuery;
 func_8000E7B0 = osContSetCh;
+
+/* Original compact-sequence public names; aliases allocate no storage.
+ * Their original FUNC type and declared extents require final ELF checks. */
+alSeqpGetChlFXMix = alCSPGetChlFXMix;
+alSeqpGetChlPan = alCSPGetChlPan;
+alSeqpGetChlPriority = alCSPGetChlPriority;
+alSeqpGetChlProgram = alCSPGetChlProgram;
+alSeqpGetChlVol = alCSPGetChlVol;
+alSeqpGetState = alCSPGetState;
+alSeqpPlay = alCSPPlay;
+alSeqpSendMidi = alCSPSendMidi;
+alSeqpSetBank = alCSPSetBank;
+alSeqpSetChlFXMix = alCSPSetChlFXMix;
+alSeqpSetChlPan = alCSPSetChlPan;
+alSeqpSetChlPriority = alCSPSetChlPriority;
+alSeqpSetChlProgram = alCSPSetChlProgram;
+alSeqpSetChlVol = alCSPSetChlVol;
+alSeqpSetSeq = alCSPSetSeq;
+alSeqpSetTempo = alCSPSetTempo;
+alSeqpSetVol = alCSPSetVol;
+alSeqpStop = alCSPStop;
