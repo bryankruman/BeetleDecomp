@@ -185,3 +185,11 @@ __ll_div = 0x8000582C;
 __ll_mul = 0x80005888;
 _Printf = 0x80016F80;
 func_8000FFD0 = 0x8000FFD0;
+
+/* Original controller references; retained assembly storage is not transferred. */
+__osContLastCmd = 0x80032230;
+__osContPifRam = 0x800321F0;
+__osMaxControllers = 0x80032231;
+func_8000E520 = osContStartQuery;
+func_8000E5A4 = osContGetQuery;
+func_8000E7B0 = osContSetCh;

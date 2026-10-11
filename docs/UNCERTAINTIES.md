@@ -17,7 +17,7 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 1476 |
+| Explicit RE_UNKNOWN notes | 1477 |
 | Preserved RE_ORIGINAL_QUIRK notes | 357 |
 | Older comments with uncertainty language | 95 |
 | Documented original-behavior audits | 30 |
@@ -27,7 +27,7 @@ For every future source wave, regenerate and check this index after code and str
 | Offset-based fields or neutral typed fields | 1630 |
 | Layout padding to preserve | 275 |
 | Unresolved type names | 282 |
-| Explicit unused ABI, storage or local identifiers | 135 |
+| Explicit unused ABI, storage or local identifiers | 136 |
 | Decompiler parameter/local names | 644 |
 | Fake, unresolved or TODO draft markers | 37 |
 | Data-dependent conditional draft guards | 4 |
@@ -207,6 +207,12 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `byte1` | — | [530](../include/libultra-sdk/PR/libaudio.h#L530), [540](../include/libultra-sdk/PR/libaudio.h#L540), [834](../include/libultra-sdk/PR/libaudio.h#L834), [876](../include/libultra-sdk/PR/libaudio.h#L876) |
 | offset_field | `byte2` | — | [531](../include/libultra-sdk/PR/libaudio.h#L531), [541](../include/libultra-sdk/PR/libaudio.h#L541), [834](../include/libultra-sdk/PR/libaudio.h#L834), [876](../include/libultra-sdk/PR/libaudio.h#L876) |
 | offset_field | `byte3` | — | [542](../include/libultra-sdk/PR/libaudio.h#L542) |
+
+## include/libultra-sdk/PRinternal/macros.h
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| unused_identifier | `unused` | — | [10](../include/libultra-sdk/PRinternal/macros.h#L10) |
 
 ## include/macros.h
 
@@ -1221,6 +1227,12 @@ For every future source wave, regenerate and check this index after code and str
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
 | draft_marker | `TODO` | — | [4](../src/libultra/io/ai.c#L4) |
+
+## src/libultra/io/contquery.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| explicit_unknown | `Request status under SI access; only a changed command writes and waits before the read DMA. RE_UNKNOWN: original shared-storage extents remain unproved; retained assembly keeps...` | function `osContStartQuery` | [9](../src/libultra/io/contquery.c#L9) |
 
 ## src/libultra/io/viblack.c
 
