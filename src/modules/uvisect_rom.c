@@ -321,6 +321,13 @@ s32 uvIsectGetPropertyWord08(void *record) {
 #line 89 "src/modules/uvisect_rom.c"
 /* Store shared record count and the record, record-word and filter-word addresses.
  * RE_UNKNOWN: bounds and lifetime; trace setters and query 0x404D74 before changing this four-s32 interface. */
+/*
+ * Publish the count and three address words to the four shared query globals
+ * in argument order. Preserve the four stores without allocation, validation
+ * or ownership changes. RE_UNKNOWN: address ownership and the full
+ * referenced record layouts remain unproved.
+ */
+#line 91 "src/modules/uvisect_rom.c"
 void uvIsectSetSharedQueryWords(s32 recordCount, s32 recordAddress, s32 recordWordAddress, s32 filterWordAddress) {
     D_uvisect_rom_004078E0 = recordCount;
     D_uvisect_rom_004078E4 = recordAddress;
@@ -438,6 +445,15 @@ s32 uvIsectQueuePendingRecord(void *owner, IsectOwnerResult *result, IsectPendin
  * helper 0x401558 before assigning ownership or adding validation/defaults.
  * The two prefix stores occur even when the delegated query fails; this
  * wrapper does not initialize the remaining output fields. */
+/*
+ * Store the input address and zero in the first two output words before the
+ * query. Pass the second input vector before the first, then the input word
+ * at byte 0x18 and the three incoming query words; return the query result
+ * unchanged. RE_UNKNOWN: the input word and query-word meanings, complete
+ * record layout and callee output writes remain unproved. This wrapper does
+ * not clear the rest of the output.
+ */
+#line 104 "src/modules/uvisect_rom.c"
 s32 uvIsectQueryInputVectorsIntoRecord(IsectQueryInputPrefix *input, s32 queryFlags,
     s32 contextWord, s32 queryWord, IsectCopyRecord88 *output) {
     output->unk00[0] = (u32)input;

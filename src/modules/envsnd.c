@@ -24,6 +24,15 @@ UnkStruct_004005C8 D_envsnd_00400480[94];
 u8 D_envsnd_00400770[96];
 
 
+/*
+ * Update the allocation pointer, then publish the empty cleanup, region-table
+ * binder, per-player region update and separate no-op callback at offsets
+ * 0x00, 0x04, 0x08 and 0x0C in that order.
+ * No region table, count, sound handles or presence bytes are initialized here.
+ * RE_UNKNOWN: Writable export extent/lifetime and binding-before-update order
+ * remain loader/caller obligations; publication alone grants no resource safety.
+ */
+#line 27 "src/modules/envsnd.c"
 void __entrypoint_func_envsnd_400000(EnvSnd_Exports* exports) {
     uvUpdateFileAllocPtr(exports);
     exports->envsndNoOpModuleCleanup = envsndNoOpModuleCleanup;

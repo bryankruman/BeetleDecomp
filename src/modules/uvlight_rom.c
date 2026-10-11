@@ -199,33 +199,55 @@ void uvLightSwapBuffers(s32 unusedContext) {
 }
 #line 92 "src/modules/uvlight_rom.c"
 
-void uvSetLightColor(s32 n, u32 packedColor) {
-    Gfx **gdl;
-    s32 lightN;
+/*
+ * Obtain the display-list head, emit a pipe synchronization, then write the
+ * packed color to both light-color words selected by lightIndex * 0x18.
+ * The two command offsets use the original low-16-bit encoding, four bytes apart.
+ * RE_ORIGINAL_QUIRK: No light-index or command-buffer-capacity check is made;
+ * the packed color is forwarded without channel conversion or clamping.
+ * RE_UNKNOWN: Valid light indices, display-list storage and graphics-provider
+ * lifetime are caller obligations; command submission is not a completion wait.
+ */
+#line 93 "src/modules/uvlight_rom.c"
+void uvSetLightColor(s32 lightIndex, u32 packedColor) {
+    Gfx **displayListHead;
+    s32 colorFieldOffset;
 
-    gdl = D_uvlight_rom_004017D0->uvGetDisplayListHead();
-    lightN = n * 0x18;
-    gDPPipeSync(gdl[0]++);
-    BAR_gSPLightColor(gdl[0]++, lightN, packedColor);
+    displayListHead = D_uvlight_rom_004017D0->uvGetDisplayListHead();
+    colorFieldOffset = lightIndex * 0x18;
+    gDPPipeSync(displayListHead[0]++);
+    BAR_gSPLightColor(displayListHead[0]++, colorFieldOffset, packedColor);
 }
 
+/*
+ * Obtain the display-list head, emit pipe synchronization and the current light
+ * count, then append each selected 16-byte light record using stride and buffer
+ * offset globals. Append the final entry at base + bufferOffset * 8 and count + 1.
+ * Finally store one to byte 0x1753 and zero to byte 0x1754.
+ * RE_ORIGINAL_QUIRK: Preserve count/stride/base rereads, integer-to-pointer
+ * address arithmetic, and macro command order. The final entry is emitted even
+ * when the light count is zero; no capacity or pointer validation is added.
+ * RE_UNKNOWN: Count/stride/buffer domains, storage lifetimes and the two state
+ * bytes complete protocol require original producers and graphics callers.
+ */
+#line 103 "src/modules/uvlight_rom.c"
 void uvLoadLights(void) {
-    Gfx **gdl;
-    Light *ptr;
-    Light *ptr2;
-    s32 i;
+    Gfx **displayListHead;
+    Light *lightRecord;
+    Light *finalLightRecord;
+    s32 lightIndex;
 
-    gdl = D_uvlight_rom_004017D0->uvGetDisplayListHead();
-    gDPPipeSync(gdl[0]++);
-    gSPNumLights(gdl[0]++, sNumLights);
+    displayListHead = D_uvlight_rom_004017D0->uvGetDisplayListHead();
+    gDPPipeSync(displayListHead[0]++);
+    gSPNumLights(displayListHead[0]++, sNumLights);
 
-    for (i = 0; i < sNumLights; i++) {
-        ptr = &D_uvlight_rom_00401740[(D_uvlight_rom_00401748 * i) + D_uvlight_rom_0040174C];
-        gSPLight(gdl[0]++, ptr, i + 1);
+    for (lightIndex = 0; lightIndex < sNumLights; lightIndex++) {
+        lightRecord = &D_uvlight_rom_00401740[(D_uvlight_rom_00401748 * lightIndex) + D_uvlight_rom_0040174C];
+        gSPLight(displayListHead[0]++, lightRecord, lightIndex + 1);
     }
 
-    ptr2 = (D_uvlight_rom_0040174C * 8) + (u32) D_uvlight_rom_00401738;
-    gSPLight(gdl[0]++, ptr2, sNumLights + 1);
+    finalLightRecord = (D_uvlight_rom_0040174C * 8) + (u32) D_uvlight_rom_00401738;
+    gSPLight(displayListHead[0]++, finalLightRecord, sNumLights + 1);
 
     D_uvlight_rom_00401753 = 1;
     D_uvlight_rom_00401754 = 0;

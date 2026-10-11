@@ -834,23 +834,31 @@ s16 uvModelAppendSegmentLodQueryResults(f32 startX, f32 startY, f32 startZ, f32 
  * and finite ordered asset bounds. The helper's strict rejection comparisons
  * do not prove containment for NaNs; trace callers and asset validation. */
 #line 800 "src/modules/uvmodel_rom.c"
+/*
+ * Reject the stored 1.0e10f sentinel or a failed affine inverse with -1.
+ * Otherwise transform the incoming point into the supplied matrix inverse
+ * and query the LOD bounds. Return 0 for a nonzero containment result and -1
+ * for zero. RE_UNKNOWN: the full LOD bounds layout and higher-level sentinel
+ * meaning remain unproved.
+ */
+#line 800 "src/modules/uvmodel_rom.c"
 s16 uvModelTestWorldPointInLodBounds(f32 x, f32 y, f32 z, Mtx4F *transform, uvModelLOD *lod) {
-    Mtx4F inverse;
-    Vec3F point;
+    Mtx4F worldToLocal;
+    Vec3F localPoint;
 
     if (lod->unk8.unk0 == 10000000000.0f) {
         return -1;
     }
 
-    point.x = x;
-    point.y = y;
-    point.z = z;
+    localPoint.x = x;
+    localPoint.y = y;
+    localPoint.z = z;
 
-    if (sUvFmtxExports->uvMat4InvertAffineByCofactors(&inverse, transform) == 0) {
+    if (sUvFmtxExports->uvMat4InvertAffineByCofactors(&worldToLocal, transform) == 0) {
         return -1;
     }
-    sUvFmtxExports->uvMat4TransformPoint(&inverse, &point, &point);
-    if (uvModelContainsLocalPoint(point.x, point.y, point.z, &lod->unk8) != 0) {
+    sUvFmtxExports->uvMat4TransformPoint(&worldToLocal, &localPoint, &localPoint);
+    if (uvModelContainsLocalPoint(localPoint.x, localPoint.y, localPoint.z, &lod->unk8) != 0) {
         return 0;
     }
     return -1;

@@ -52,6 +52,14 @@ s32 B_fileux_00400CF0[2]; // unreferenced padding
 u8 D_fileux_00400CF8[0x200];
 FileDescriptorState *sFileDescriptorsState[MAX_FILE_DESCRIPTORS];
 
+/*
+ * Initialize the module allocation pointer and publish five exports: the
+ * empty cleanup entry plus file write, read, open and close wrappers.
+ * RE_UNKNOWN: Export-object extent and lifetime are loader obligations.
+ * This initializer does not establish a working host transport or initialize
+ * the shared response storage and per-descriptor state array.
+ */
+#line 55 "src/modules/fileux.c"
 void __entrypoint_func_fileux_400000(FileUx_Exports *exports) {
     uvUpdateFileAllocPtr(exports);
     exports->fileuxNoOpModuleCleanup = fileuxNoOpModuleCleanup;
@@ -125,30 +133,46 @@ s32 func_fileux_00400144(void) {
     return 1;
 }
 
+/*
+ * Call GMGR slot 0x74, fill a 256-byte ascending probe, then scan the shared
+ * response for a descending probe. Serialize the mode word and mode-specific
+ * arguments: O appends path/NUL/flags and an optional word for flag 0x100;
+ * R copies response chunks of at most 256 bytes; W rounds payload length up
+ * to an 8-byte boundary; C sends a descriptor; L sends it and two opaque words.
+ * Return the first response word for O/W/C/L, requested bytes for R, or -1
+ * for unsupported modes. Preserve each hook/handshake call in its exact order.
+ * RE_ORIGINAL_QUIRK: The original buffer hook is empty and handshake returns
+ * 1. Keep the unused probe result and inherited empty/address-test compiler
+ * scaffolding; an inherited empty test reads an uninitialized response local.
+ * Preserve the varargs handling and signed rounding.
+ * RE_UNKNOWN: A functioning host transport, path/request bounds, varargs ABI,
+ * valid lengths/addresses and response storage freshness are not proved.
+ */
+#line 102 "src/modules/fileux.c"
 s32 fileuxHostRequest(s32 mode, ...) {
-    u8 sp60[0x100];
-    u8 *sp5C;
-    u8 *sp58;
-    s32 sp54;
-    s32 sp50;
+    u8 request[0x100];
+    u8 *writeCursor;
+    u8 *path;
+    s32 bufferAddress;
+    s32 descriptor;
     s32 i; // a3
-    s32 temp_v0;
-    s32 sp44;
-    s32 var_s0;
-    s32 sp3C;
-    s32 sp38;
-    s32 sp34;
-    s32 sp30;
+    s32 remainingBytes;
+    s32 openFlags;
+    s32 chunkBytes;
+    s32 requestedBytes;
+    s32 modeLWord0;
+    s32 modeLWord1;
+    s32 readOptionWord;
     va_list args;
-    s32 a0;
+    s32 responseWord;
 
     gUvGfxMgrExports->uvGfxWaitIfRequested();
-    sp5C = sp60;
+    writeCursor = request;
     for (i = 0; i < 0x100; i++) {
-        sp60[i] = i;
+        request[i] = i;
     }
 
-    fileuxNoOpHostBufferHook(sp5C, 0x100);
+    fileuxNoOpHostBufferHook(writeCursor, 0x100);
     if (func_fileux_00400144() == 0) {
         return -1;
     }
@@ -159,96 +183,96 @@ s32 fileuxHostRequest(s32 mode, ...) {
     if (i) {
     }
 
-    _uvMediaCopy(sp60, &mode, sizeof(int));
-    sp5C += 4;
+    _uvMediaCopy(request, &mode, sizeof(int));
+    writeCursor += 4;
     va_start(args, mode);
     switch (mode) {
         case 'O':
-            sp58 = va_arg(args, u8 *);
-            sp44 = va_arg(args, s32);
-            fileuxStrcpy(&sp5C, sp58, fileuxStrlen(sp58));
-            *sp5C = '\0';
-            sp5C += 1;
-            fileuxStrcpy(&sp5C, (u8*)&sp44, 4);
-            if (sp44 & 0x100) {
+            path = va_arg(args, u8 *);
+            openFlags = va_arg(args, s32);
+            fileuxStrcpy(&writeCursor, path, fileuxStrlen(path));
+            *writeCursor = '\0';
+            writeCursor += 1;
+            fileuxStrcpy(&writeCursor, (u8*)&openFlags, 4);
+            if (openFlags & 0x100) {
                 i = va_arg(args, s32);
-                fileuxStrcpy(&sp5C, (u8 *) &i, 4);
+                fileuxStrcpy(&writeCursor, (u8 *) &i, 4);
             } else {
                 i = 0;
             }
-            fileuxNoOpHostBufferHook(sp60, 0x100);
+            fileuxNoOpHostBufferHook(request, 0x100);
             func_fileux_00400144();
-            a0 = ((s32 *) D_fileux_00400CF8)[0];
-            return a0;
+            responseWord = ((s32 *) D_fileux_00400CF8)[0];
+            return responseWord;
         case 'R':
-            sp50 = va_arg(args, s32);
-            sp54 = va_arg(args, s32);
-            sp3C = va_arg(args, s32);
-            sp30 = va_arg(args, s32);
-            fileuxStrcpy(&sp5C, (u8*)&sp50, 4);
-            fileuxStrcpy(&sp5C, (u8*)&sp3C, 4);
-            fileuxNoOpHostBufferHook(sp60, 0x100);
+            descriptor = va_arg(args, s32);
+            bufferAddress = va_arg(args, s32);
+            requestedBytes = va_arg(args, s32);
+            readOptionWord = va_arg(args, s32);
+            fileuxStrcpy(&writeCursor, (u8*)&descriptor, 4);
+            fileuxStrcpy(&writeCursor, (u8*)&requestedBytes, 4);
+            fileuxNoOpHostBufferHook(request, 0x100);
             func_fileux_00400144();
 
-            if (sp30 != 0) {
+            if (readOptionWord != 0) {
                 // FAKE
-                if (&sp30) {
+                if (&readOptionWord) {
                 }
-                if (&sp30) {
+                if (&readOptionWord) {
                 }
             }
-            sp60[0] = 6;
-            fileuxNoOpHostBufferHook(sp60, 0x100);
-            for (i = 0; i < sp3C;) {
-                temp_v0 = sp3C - i;
-                if (temp_v0 < 0x100) {
-                    var_s0 = temp_v0;
+            request[0] = 6;
+            fileuxNoOpHostBufferHook(request, 0x100);
+            for (i = 0; i < requestedBytes;) {
+                remainingBytes = requestedBytes - i;
+                if (remainingBytes < 0x100) {
+                    chunkBytes = remainingBytes;
                 } else {
-                    var_s0 = 0x100;
+                    chunkBytes = 0x100;
                 }
                 func_fileux_00400144();
-                _uvMediaCopy(sp54 + i, D_fileux_00400CF8, var_s0);
-                i += var_s0;
+                _uvMediaCopy(bufferAddress + i, D_fileux_00400CF8, chunkBytes);
+                i += chunkBytes;
             }
 
             // FAKE
-            if ((a0 && a0) && a0) {
+            if ((responseWord && responseWord) && responseWord) {
             }
-            return sp3C;
+            return requestedBytes;
         case 'W':
-            sp50 = va_arg(args, s32);
-            sp54 = va_arg(args, s32);
-            sp3C = va_arg(args, s32);
-            fileuxStrcpy(&sp5C, (u8 *) &sp50, 4);
-            fileuxStrcpy(&sp5C, (u8 *) &sp3C, 4);
-            fileuxNoOpHostBufferHook(sp60, 0x100);
+            descriptor = va_arg(args, s32);
+            bufferAddress = va_arg(args, s32);
+            requestedBytes = va_arg(args, s32);
+            fileuxStrcpy(&writeCursor, (u8 *) &descriptor, 4);
+            fileuxStrcpy(&writeCursor, (u8 *) &requestedBytes, 4);
+            fileuxNoOpHostBufferHook(request, 0x100);
             func_fileux_00400144();
-            i = sp3C;
-            if (sp3C & 7) {
-                i = (sp3C - (sp3C % 8)) + 8;
+            i = requestedBytes;
+            if (requestedBytes & 7) {
+                i = (requestedBytes - (requestedBytes % 8)) + 8;
             }
-            fileuxNoOpHostBufferHook(sp54, i);
+            fileuxNoOpHostBufferHook(bufferAddress, i);
             func_fileux_00400144();
-            a0 = ((s32 *) D_fileux_00400CF8)[0];
-            return a0;
+            responseWord = ((s32 *) D_fileux_00400CF8)[0];
+            return responseWord;
         case 'C':
-            sp50 = va_arg(args, s32);
-            fileuxStrcpy(&sp5C, (u8 *) &sp50, 4);
-            fileuxNoOpHostBufferHook(sp60, 0x100);
+            descriptor = va_arg(args, s32);
+            fileuxStrcpy(&writeCursor, (u8 *) &descriptor, 4);
+            fileuxNoOpHostBufferHook(request, 0x100);
             func_fileux_00400144();
-            a0 = ((s32 *) D_fileux_00400CF8)[0];
-            return a0;
+            responseWord = ((s32 *) D_fileux_00400CF8)[0];
+            return responseWord;
         case 'L':
-            sp50 = va_arg(args, s32);
-            sp38 = va_arg(args, s32);
-            sp34 = va_arg(args, s32);
-            fileuxStrcpy(&sp5C, (u8*)&sp50, 4);
-            fileuxStrcpy(&sp5C, (u8*)&sp38, 4);
-            fileuxStrcpy(&sp5C, (u8*)&sp34, 4);
-            fileuxNoOpHostBufferHook(sp60, 0x100);
+            descriptor = va_arg(args, s32);
+            modeLWord0 = va_arg(args, s32);
+            modeLWord1 = va_arg(args, s32);
+            fileuxStrcpy(&writeCursor, (u8*)&descriptor, 4);
+            fileuxStrcpy(&writeCursor, (u8*)&modeLWord0, 4);
+            fileuxStrcpy(&writeCursor, (u8*)&modeLWord1, 4);
+            fileuxNoOpHostBufferHook(request, 0x100);
             func_fileux_00400144();
-            a0 = ((s32 *) D_fileux_00400CF8)[0];
-            return a0;
+            responseWord = ((s32 *) D_fileux_00400CF8)[0];
+            return responseWord;
         default:
             return -1;
     }
@@ -385,6 +409,16 @@ ret:
 }
 #line 355 "src/modules/fileux.c"
 
+/*
+ * Send an O request with path, flags and mode. Preserve any negative result.
+ * For a returned descriptor below 20, allocate 0x10C bytes of state and clear
+ * only its first word when allocation succeeds; return the descriptor anyway.
+ * RE_ORIGINAL_QUIRK: The declared 21-slot array uses a strict below-20 gate.
+ * Allocation failure and descriptors at or above 20 still return unchanged.
+ * RE_UNKNOWN: Descriptor range/uniqueness, replacement of existing state,
+ * remaining state-word initialization and real host availability need proof.
+ */
+#line 356 "src/modules/fileux.c"
 s32 fileuxOpen(char *path, s32 flags, s32 mode) {
     s32 fd;
 
@@ -400,6 +434,17 @@ s32 fileuxOpen(char *path, s32 flags, s32 mode) {
     return fd;
 }
 
+/*
+ * Reject negative descriptors. Below 20, inspect optional descriptor state;
+ * when its first word is nonzero and word 8 is zero, send a W request before
+ * freeing the state and clearing its slot. Then send C for every nonnegative
+ * descriptor, returning -1 for a negative response and zero otherwise.
+ * RE_ORIGINAL_QUIRK: Ignore the W response and free state before checking C;
+ * descriptors at or above 20 bypass the state array but still reach C.
+ * RE_UNKNOWN: State-field meanings, flush success, concurrent users and
+ * descriptor/host lifetime remain unproved; no error rollback is introduced.
+ */
+#line 371 "src/modules/fileux.c"
 s32 fileuxClose(s32 fd) {
     FileDescriptorState *fileDescriptorState;
 

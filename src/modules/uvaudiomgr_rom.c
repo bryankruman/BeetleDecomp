@@ -384,21 +384,35 @@ void uvAudioMgrConfigureFrameSampleCounts(void) {
 }
 #line 377 "src/modules/uvaudiomgr_rom.c"
 
+/*
+ * Wait for the initial gate message, register the scheduler client, then
+ * receive frame messages. When the shared disable word is zero, message 1
+ * builds the frame selected by unsigned frameCount % 3, invokes the first
+ * optional callback list, waits for a reply only when a task was submitted,
+ * retains that reply info word, and invokes the second optional callback list.
+ * Message 4 does nothing; message 10 ends the loop and calls alClose.
+ * RE_ORIGINAL_QUIRK: A nonzero disable word skips even message 10. Preserve
+ * the empty test and the inherited s32 local that carries a reply pointer;
+ * the done-message handler itself is empty in the original native body.
+ * RE_UNKNOWN: Queue/message lifetimes, callback reentrancy, disable/reset
+ * coordination and external shutdown/close guarantees require caller proof.
+ */
+#line 378 "src/modules/uvaudiomgr_rom.c"
 void uvAudioMgrThreadFunc(void *arg0) {
-    s32 temp_s0;
-    s32 var_s1;
+    s32 frameTaskSubmitted;
+    s32 previousReplyInfoWord;
     AudioMsg *msg;
 
     s32 done;
     done = FALSE;
     msg = NULL;
-    var_s1 = 0;
+    previousReplyInfoWord = 0;
     osRecvMesg(&D_uvaudiomgr_rom_004056F8, (OSMesg*)&msg, 1);
 
     _uvScAddClient(gScheduler, &sSchedulerClient, &D_uvaudiomgr_rom_004055F0);
 
     while (!done) {
-        if (var_s1) { }
+        if (previousReplyInfoWord) { }
         osRecvMesg(&D_uvaudiomgr_rom_004055F0, (OSMesg*)&msg, 1);
         if (D_uvaudiomgr_rom_00405780 == 0) {
             uvScRecordTraceEvent(0U, 0x29);
@@ -406,16 +420,16 @@ void uvAudioMgrThreadFunc(void *arg0) {
                 case 4:
                     break;
                 case 1:
-                    temp_s0 = uvAudioMgrHandleFrameMesg(
-                        D_uvaudiomgr_rom_00405430[(u32) sAudioFrameCount % 3U], var_s1);
+                    frameTaskSubmitted = uvAudioMgrHandleFrameMesg(
+                        D_uvaudiomgr_rom_00405430[(u32) sAudioFrameCount % 3U], previousReplyInfoWord);
                     if (D_uvaudiomgr_rom_00405784 != NULL) {
                         sUvCbackExports_audiomgr->uvExecuteCallbacks(
                             (CallbackList *) D_uvaudiomgr_rom_00405784, 0);
                     }
-                    if (temp_s0 != 0) {
+                    if (frameTaskSubmitted != 0) {
                         osRecvMesg(&D_uvaudiomgr_rom_00405628, (OSMesg*)&msg, 1);
                         uvAudioMgrHandleDoneMesg(msg->done.info);
-                        var_s1 = msg->done.info;
+                        previousReplyInfoWord = msg->done.info;
                     }
                     if (D_uvaudiomgr_rom_00405788 != NULL) {
                         sUvCbackExports_audiomgr->uvExecuteCallbacks(
@@ -432,9 +446,23 @@ void uvAudioMgrThreadFunc(void *arg0) {
     alClose(&sAudioGlobals);
 }
 
+/*
+ * Pause profiler accounting, poll/recycle DMA buffers, translate the output
+ * buffer address, and queue the previous buffer when supplied. Compute the
+ * new sample count from the target minus queued AI words plus 0x110, mask
+ * with 0xFFF0, and clamp through the original signed-halfword stores.
+ * Call func_8000D7F0 before and after alAudioFrame. For a nonempty command
+ * list, populate the audio task, record trace 0x2C, resume accounting, send
+ * the task to the scheduler with blocking flag 1, and toggle the command list.
+ * RE_ORIGINAL_QUIRK: cmdLen == 0 returns 0 before accounting is resumed;
+ * a zero physical output address reaches the inherited PANIC store.
+ * RE_UNKNOWN: Sample/count bounds, command-list capacity, task/reply lifetime,
+ * microcode storage and the effects of func_8000D7F0 are not proved here.
+ */
+#line 426 "src/modules/uvaudiomgr_rom.c"
 s32 uvAudioMgrHandleFrameMesg(AudioInfo *info, AudioInfo *previousInfo) {
     u32 audioPtr;
-    Acmd *sp38;
+    Acmd *commandListEnd;
     s32 cmdLen;
     s32 pad;
 
@@ -456,7 +484,7 @@ s32 uvAudioMgrHandleFrameMesg(AudioInfo *info, AudioInfo *previousInfo) {
     }
 
     func_8000D7F0(&D_uvaudiomgr_rom_00405748);
-    sp38 = alAudioFrame(sAudioMgrInfo.ACMDList[D_uvaudiomgr_rom_00401304], &cmdLen,
+    commandListEnd = alAudioFrame(sAudioMgrInfo.ACMDList[D_uvaudiomgr_rom_00401304], &cmdLen,
                         (s16 *) audioPtr, (s32) info->frameSamples);
     func_8000D7F0(&D_uvaudiomgr_rom_00405748);
     if (cmdLen == 0) {
@@ -468,7 +496,7 @@ s32 uvAudioMgrHandleFrameMesg(AudioInfo *info, AudioInfo *previousInfo) {
     info->task.flags = 1;
     info->task.list.t.data_ptr = (u64 *) sAudioMgrInfo.ACMDList[D_uvaudiomgr_rom_00401304];
     info->task.list.t.data_size =
-        (sp38 - sAudioMgrInfo.ACMDList[D_uvaudiomgr_rom_00401304]) * sizeof(Acmd);
+        (commandListEnd - sAudioMgrInfo.ACMDList[D_uvaudiomgr_rom_00401304]) * sizeof(Acmd);
     info->task.list.t.type = 2;
     info->task.list.t.ucode_boot = (u64 *) rspBootTextStart;
     info->task.list.t.ucode_boot_size =
@@ -492,60 +520,75 @@ s32 uvAudioMgrHandleFrameMesg(AudioInfo *info, AudioInfo *previousInfo) {
 void uvAudioMgrHandleDoneMesg(s32 arg0) {
 }
 
+/*
+ * Search the used-buffer list until its start exceeds the unsigned request
+ * address. Reuse a buffer whose signed end comparison covers the request,
+ * stamp the current frame, and return its physical interior address.
+ * Otherwise pop the free head, unlink it, insert after the last visited used
+ * buffer or at the used head, align the requested address down by its low bit,
+ * and start a fixed-size PI read into that buffer. Return physical base plus
+ * the low-bit delta; the caller state argument remains unused.
+ * RE_ORIGINAL_QUIRK: Free-head availability and message-array capacity are
+ * unchecked, the DMA message counter is postincremented, and PI status is
+ * ignored. Preserve mixed signed/unsigned tests and address-end arithmetic.
+ * RE_UNKNOWN: Valid ranges, sorted-list invariants, buffer size/alignment,
+ * completion before use and concurrency ownership require external proof.
+ */
+#line 486 "src/modules/uvaudiomgr_rom.c"
 s32 uvAudioMgrDma(s32 addr, s32 len, UNUSED void *state) {
-    void *foundBuffer;
-    AMDMABuffer *dmaPtr;
-    AMDMABuffer *lastDmaPtr;
+    void *bufferAddress;
+    AMDMABuffer *dmaBuffer;
+    AMDMABuffer *previousUsedBuffer;
     s32 delta;
-    s32 addrEnd;
-    s32 buffEnd;
+    s32 requestEnd;
+    s32 bufferEnd;
 
-    dmaPtr = sAudioDmaState.firstUsed;
-    lastDmaPtr = NULL;
+    dmaBuffer = sAudioDmaState.firstUsed;
+    previousUsedBuffer = NULL;
 
-    addrEnd = addr + len;
+    requestEnd = addr + len;
 
-    while (dmaPtr) {
-        buffEnd = dmaPtr->startAddr + sAudioDmaBufSize;
-        if ((u32) addr < dmaPtr->startAddr) {
+    while (dmaBuffer) {
+        bufferEnd = dmaBuffer->startAddr + sAudioDmaBufSize;
+        if ((u32) addr < dmaBuffer->startAddr) {
             break;
         }
 
-        if (buffEnd >= addrEnd) {
-            dmaPtr->lastFrame = sAudioFrameCount;
-            foundBuffer = dmaPtr->ptr + addr - dmaPtr->startAddr;
-            return osVirtualToPhysical(foundBuffer);
+        if (bufferEnd >= requestEnd) {
+            dmaBuffer->lastFrame = sAudioFrameCount;
+            bufferAddress = dmaBuffer->ptr + addr - dmaBuffer->startAddr;
+            return osVirtualToPhysical(bufferAddress);
         }
-        lastDmaPtr = dmaPtr;
-        dmaPtr = (AMDMABuffer *) dmaPtr->node.next;
+        previousUsedBuffer = dmaBuffer;
+        dmaBuffer = (AMDMABuffer *) dmaBuffer->node.next;
     }
 
-    dmaPtr = sAudioDmaState.firstFree;
+    dmaBuffer = sAudioDmaState.firstFree;
 
-    sAudioDmaState.firstFree = (AMDMABuffer *) dmaPtr->node.next;
-    alUnlink(&dmaPtr->node);
-    if (lastDmaPtr != NULL) {
-        alLink(&dmaPtr->node, &lastDmaPtr->node);
+    sAudioDmaState.firstFree = (AMDMABuffer *) dmaBuffer->node.next;
+    alUnlink(&dmaBuffer->node);
+    if (previousUsedBuffer != NULL) {
+        alLink(&dmaBuffer->node, &previousUsedBuffer->node);
     } else if (sAudioDmaState.firstUsed != NULL) {
-        lastDmaPtr = sAudioDmaState.firstUsed;
-        sAudioDmaState.firstUsed = dmaPtr;
-        dmaPtr->node.next = &lastDmaPtr->node;
-        dmaPtr->node.prev = NULL;
-        lastDmaPtr->node.prev = &dmaPtr->node;
+        previousUsedBuffer = sAudioDmaState.firstUsed;
+        sAudioDmaState.firstUsed = dmaBuffer;
+        dmaBuffer->node.next = &previousUsedBuffer->node;
+        dmaBuffer->node.prev = NULL;
+        previousUsedBuffer->node.prev = &dmaBuffer->node;
     } else {
-        sAudioDmaState.firstUsed = dmaPtr;
-        dmaPtr->node.next = NULL;
-        dmaPtr->node.prev = NULL;
+        sAudioDmaState.firstUsed = dmaBuffer;
+        dmaBuffer->node.next = NULL;
+        dmaBuffer->node.prev = NULL;
     }
 
-    foundBuffer = dmaPtr->ptr;
+    bufferAddress = dmaBuffer->ptr;
     delta = addr & 1;
     addr -= delta;
-    dmaPtr->startAddr = addr;
-    dmaPtr->lastFrame = sAudioFrameCount;
+    dmaBuffer->startAddr = addr;
+    dmaBuffer->lastFrame = sAudioFrameCount;
     osPiStartDma((OSIoMesg *) &D_uvaudiomgr_rom_004056D0[D_uvaudiomgr_rom_00401300++], OS_MESG_PRI_HIGH,
-                 OS_READ, addr, foundBuffer, sAudioDmaBufSize, &D_uvaudiomgr_rom_004056D8);
-    return osVirtualToPhysical(foundBuffer) + delta;
+                 OS_READ, addr, bufferAddress, sAudioDmaBufSize, &D_uvaudiomgr_rom_004056D8);
+    return osVirtualToPhysical(bufferAddress) + delta;
 }
 
 s32 (*uvAudioMgrDmaNew(AMDMAState **state))(s32, s32, void *) {
@@ -558,33 +601,46 @@ s32 (*uvAudioMgrDmaNew(AMDMAState **state))(s32, s32, void *) {
     return uvAudioMgrDma;
 }
 
+/*
+ * Attempt one nonblocking receive per current DMA message count, ignoring
+ * each status. Walk the used list with a saved next pointer; when the unsigned
+ * lastFrame + 2 value is strictly below the current frame, detach that buffer
+ * and link after the current free head, or initialize an empty free list.
+ * Finally reset the DMA message count and increment the frame counter.
+ * RE_ORIGINAL_QUIRK: Polling does not establish completion. Preserve the
+ * strict age test, unsigned wrap, repeated message-count reads, free-head
+ * placement and removal of the used head before alUnlink.
+ * RE_UNKNOWN: Safe recycling under delayed DMA, list ownership and frame
+ * wrap policy require the scheduler/PI callers; no such wait is added here.
+ */
+#line 552 "src/modules/uvaudiomgr_rom.c"
 void uvAudioMgrClearDma(void) {
-    AMDMABuffer *dmaPtr;
-    void *ioMesg;
-    AMDMABuffer *nextPtr;
+    AMDMABuffer *dmaBuffer;
+    void *completionMessage;
+    AMDMABuffer *nextUsedBuffer;
     s32 i;
 
-    ioMesg = NULL;
+    completionMessage = NULL;
     for (i = 0; i < D_uvaudiomgr_rom_00401300; i++) {
-        osRecvMesg(&D_uvaudiomgr_rom_004056D8, &ioMesg, 0);
+        osRecvMesg(&D_uvaudiomgr_rom_004056D8, &completionMessage, 0);
     }
-    dmaPtr = sAudioDmaState.firstUsed;
-    while (dmaPtr != NULL) {
-        nextPtr = (AMDMABuffer *)dmaPtr->node.next;
-        if (dmaPtr->lastFrame + 2 < sAudioFrameCount) {
-            if (dmaPtr == sAudioDmaState.firstUsed) {
-                sAudioDmaState.firstUsed = (AMDMABuffer *) dmaPtr->node.next;
+    dmaBuffer = sAudioDmaState.firstUsed;
+    while (dmaBuffer != NULL) {
+        nextUsedBuffer = (AMDMABuffer *)dmaBuffer->node.next;
+        if (dmaBuffer->lastFrame + 2 < sAudioFrameCount) {
+            if (dmaBuffer == sAudioDmaState.firstUsed) {
+                sAudioDmaState.firstUsed = (AMDMABuffer *) dmaBuffer->node.next;
             }
-            alUnlink(&dmaPtr->node);
+            alUnlink(&dmaBuffer->node);
             if (sAudioDmaState.firstFree != NULL) {
-                alLink(&dmaPtr->node, &sAudioDmaState.firstFree->node);
+                alLink(&dmaBuffer->node, &sAudioDmaState.firstFree->node);
             } else {
-                sAudioDmaState.firstFree = dmaPtr;
-                dmaPtr->node.next = NULL;
-                dmaPtr->node.prev = NULL;
+                sAudioDmaState.firstFree = dmaBuffer;
+                dmaBuffer->node.next = NULL;
+                dmaBuffer->node.prev = NULL;
             }
         }
-        dmaPtr = (AMDMABuffer *) nextPtr;
+        dmaBuffer = (AMDMABuffer *) nextUsedBuffer;
     }
     D_uvaudiomgr_rom_00401300 = 0;
     sAudioFrameCount += 1;

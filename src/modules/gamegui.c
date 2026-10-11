@@ -143,14 +143,16 @@ void func_gamegui_004000A8(void);
 void gameGuiCreateDebugRoot(void);
 
 #line 93 "src/modules/gamegui.c"
-/* Register the original ten game-GUI callback addresses and the shared
- * debug-byte address after updating the allocation pointer. Preserve slot
- * order and the empty callback's separate identity.
- * RE_UNKNOWN: the table is an explicit 32-bit initializer storage view, not
- * a callable API declaration. Slot0x14's consumed operations are established
- * by original assembly; its historical source declaration and slot 0x08's
- * complete callback contract remain unresolved.
- * The caller owns writable export storage of the original size. */
+/*
+ * Update the allocation pointer and publish ten original callback addresses
+ * at offsets 0x00 through 0x24, then the shared debug-byte address at 0x28.
+ * The table stores 32-bit addresses; publication does not invoke the callbacks
+ * or initialize the shared debug byte and widget state.
+ * RE_UNKNOWN: The full writable export extent/lifetime and callback 0x08 ABI
+ * remain loader/consumer obligations. Preserve the separate empty callback and
+ * all original slot bindings without assigning new callable signatures.
+ */
+#line 101 "src/modules/gamegui.c"
 void __entrypoint_func_gameGuiInitializeModuleExports(GameGuiExportAddresses *exports) {
     uvUpdateFileAllocPtr(exports);
     exports->emptyCallbackAddress = (u32) func_gamegui_004000A8;
@@ -622,12 +624,21 @@ void gameGuiApplyDitherAndVideoSettings(s32 unusedCallbackValue) {
 #line 254 "src/modules/gamegui.c"
 
 #line 255 "src/modules/gamegui.c"
-/* Read callback-list property six from the supplied channel identifier.
- * Register the original callback with no insert-before routine and priority 0x21. */
-void gameGuiRegisterChannelCallback(s32 context) {
-    CallbackList *channel;
-    gUvChanExports->uvChannelGetProperties(context, 6, &channel, 0);
-    gUvCbckExports->uvAddCallback(channel, gameGuiApplyDitherAndVideoSettings, 0, 0x21);
+/*
+ * Request property 6 from the supplied channel, using the local callback-list
+ * output and trailing zero, then register gameGuiApplyDitherAndVideoSettings
+ * with a zero insertion argument and priority 0x21.
+ * RE_ORIGINAL_QUIRK: The local output is not initialized here and no lookup
+ * status or NULL check precedes registration.
+ * RE_UNKNOWN: Property 6 must fill a live callback list for this channel;
+ * list capacity, registration failure, callback lifetime and teardown ordering
+ * require the channel/callback providers and all registration callers.
+ */
+#line 257 "src/modules/gamegui.c"
+void gameGuiRegisterChannelCallback(s32 channelId) {
+    CallbackList *callbackList;
+    gUvChanExports->uvChannelGetProperties(channelId, 6, &callbackList, 0);
+    gUvCbckExports->uvAddCallback(callbackList, gameGuiApplyDitherAndVideoSettings, 0, 0x21);
 }
 #line 256 "src/modules/gamegui.c"
 

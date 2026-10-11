@@ -202,25 +202,35 @@ s32 func_tdata_004009A8(void) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_00400DB4.s")
 
 #line 89 "src/modules/tdata.c"
-/* Sum the record counts of all track-data groups in their stored order. */
+/*
+ * Sum each group count in the shared bank and return zero when the unsigned
+ * group-count snapshot is zero. The bank pointer and group-count value are
+ * read once; group records advance by their original eight-byte stride.
+ * RE_ORIGINAL_QUIRK: The signed groupCount field is interpreted as u32.
+ * A negative field therefore requests a large traversal; the sum has no
+ * overflow guard. Preserve the existing addition and comparison types.
+ * RE_UNKNOWN: Bank/group lifetime, nonnegative counts, readable group extent
+ * and representable totals require the bank producer and all callers.
+ */
+#line 90 "src/modules/tdata.c"
 s32 tdataGetTotalRecordCount(void) {
-    s32 result;
-    u32 index;
+    s32 totalRecords;
+    u32 groupIndex;
     TdataBank *bank;
-    u32 count;
+    u32 numberOfGroups;
     TdataGroup *group;
-    index = result = 0;
+    groupIndex = totalRecords = 0;
     bank = (TdataBank *)D_tdata_004029DC;
-    count = bank->groupCount;
-    if (count != 0) {
+    numberOfGroups = bank->groupCount;
+    if (numberOfGroups != 0) {
         group = bank->groups;
         do {
-            result += group->count;
-            index++;
+            totalRecords += group->count;
+            groupIndex++;
             group++;
-        } while (index < count);
+        } while (groupIndex < numberOfGroups);
     }
-    return result;
+    return totalRecords;
 }
 #line 115 "src/modules/tdata.c"
 
@@ -318,9 +328,15 @@ TdataRecord *tdataBuildMatrixFromQuery(void *query, Mtx4F *matrix) {
 #line 148 "src/modules/tdata.c"
 
 #line 149 "src/modules/tdata.c"
-/* Convert the handle; read the float at index when index<count, else return zero.
- * RE_UNKNOWN: negative-index exclusion and readable array/count domains need
- * original handle converters, storage producers and every caller; no lower guard. */
+/*
+ * Convert the packed handle with helper 00401904. Return the indexed shared
+ * float when the signed result is below the shared count; otherwise return zero.
+ * RE_ORIGINAL_QUIRK: There is no lower-bound test, so a negative converter
+ * result still indexes the array when it is below the count.
+ * RE_UNKNOWN: The converter contract, valid count/array extent and lifetime
+ * must be proved from the original converter and record-storage producers.
+ */
+#line 152 "src/modules/tdata.c"
 f32 tdataGetLinearRecordValue(TdataHandle handle) {
     s32 index = func_tdata_00401904(handle);
     if (index < D_tdata_004029E0) {
@@ -331,8 +347,15 @@ f32 tdataGetLinearRecordValue(TdataHandle handle) {
 #line 150 "src/modules/tdata.c"
 
 #line 151 "src/modules/tdata.c"
-/* Pass the negated X and original Y components of the record vector to the
- * shared direction-angle helper. A missing record returns zero. */
+/*
+ * Resolve the handle and return zero only when the record lookup returns NULL.
+ * Otherwise pass the negated vector18 X component and unchanged Y component
+ * to MISC export 0x68, retaining the floating negation and callback ordering.
+ * RE_UNKNOWN: The lookup rejects only -1 components; other bounds, record
+ * lifetime, vector coordinate frame and the angle helper units remain external.
+ * No angle normalization or additional invalid-handle handling is introduced.
+ */
+#line 153 "src/modules/tdata.c"
 f32 tdataGetRecordDirectionAngle(TdataHandle handle) {
     TdataRecord *record = tdataGetRecordByHandle(handle);
     if (record == NULL) {
@@ -343,7 +366,13 @@ f32 tdataGetRecordDirectionAngle(TdataHandle handle) {
 #line 152 "src/modules/tdata.c"
 
 #line 151 "src/modules/tdata.c"
-/* Return the record vector's Z component, or zero for an invalid (-1) handle. */
+/*
+ * Resolve the handle and return vector18.z, or zero when the lookup returns NULL.
+ * RE_ORIGINAL_QUIRK: Preserve the local float copy and the packed-handle ABI.
+ * RE_UNKNOWN: The lookup accepts nonsentinel out-of-range components without
+ * a bound check; valid bank/record lifetime and index ranges remain caller-owned.
+ */
+#line 152 "src/modules/tdata.c"
 f32 tdataGetRecordVectorZ(TdataHandle handle) {
     TdataRecord *record;
     f32 value;
@@ -386,9 +415,17 @@ f32 tdataReturnZeroScalar(s32 unusedWord) {
 #line 158 "src/modules/tdata.c"
 
 #line 158 "src/modules/tdata.c"
-/* Convert a valid linear record index to its signed-halfword group/index handle.
- * The explicit output pointer preserves existing callers and the original ABI.
- * Group sizes and valid input indices remain the caller's responsibility. */
+/*
+ * Start at group zero, narrow the supplied linear index into the signed-halfword
+ * handle field, and subtract successive group counts until that narrowed index
+ * is below the current count. Copy the handle to output and return output.
+ * RE_ORIGINAL_QUIRK: Each subtraction and group increment narrows back to s16.
+ * There is no bank, group-limit, negative-input or output-pointer check; even
+ * an initially negative index still reads the first group count.
+ * RE_UNKNOWN: Representable indices, traversable group/count storage, output
+ * extent and aliasing require producers and the clamped-window/query callers.
+ */
+#line 161 "src/modules/tdata.c"
 TdataHandle *tdataHandleFromLinearIndex(TdataHandle *output, s32 index) {
     TdataHandle handle;
     TdataBank *bank = (TdataBank *)D_tdata_004029DC;
@@ -408,9 +445,16 @@ TdataHandle *tdataHandleFromLinearIndex(TdataHandle *output, s32 index) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/tdata/func_tdata_00401998.s")
 
 #line 164 "src/modules/tdata.c"
-/* Move backward within the group, crossing to the preceding group when needed.
- * Group -1 marks the beginning boundary. Preserve signed-halfword conversion
- * and the original aggregate return ABI; no extra bounds checks are introduced. */
+/*
+ * Decrement the signed-halfword record index. If the narrowed result is negative,
+ * decrement the group and, unless it becomes -1, select that group count minus one.
+ * Return the aggregate through the original ABI, preserving every s16 narrowing.
+ * RE_ORIGINAL_QUIRK: Group -1 is tested only after a crossing. Empty groups,
+ * other negative groups and halfword wrap receive no extra handling.
+ * RE_UNKNOWN: Valid initial handles, count ranges and bank/group lifetime must
+ * be established by callers; no clamp or multi-group skip is added.
+ */
+#line 167 "src/modules/tdata.c"
 TdataHandle tdataPreviousHandle(TdataHandle handle) {
     handle.index--;
     if (handle.index < 0) {
@@ -424,8 +468,15 @@ TdataHandle tdataPreviousHandle(TdataHandle handle) {
 #line 165 "src/modules/tdata.c"
 
 #line 166 "src/modules/tdata.c"
-/* Resolve the signed-halfword group/index handle to a 56-byte track-data
- * record. Either -1 component returns null; other bounds remain caller-owned. */
+/*
+ * Return NULL when either signed-halfword component is exactly -1. Otherwise
+ * add the selected group firstRecord to the record index and return the address
+ * in the original 56-byte record array; no record contents are copied.
+ * RE_ORIGINAL_QUIRK: Other negative values and upper bounds are unchecked.
+ * RE_UNKNOWN: Complete bank/group/record extents, addition range, returned-pointer
+ * lifetime and writable/aliased uses require the original bank producer/callers.
+ */
+#line 168 "src/modules/tdata.c"
 TdataRecord *tdataGetRecordByHandle(TdataHandle handle) {
     TdataBank *bank;
     if (handle.group == -1 || handle.index == -1) {

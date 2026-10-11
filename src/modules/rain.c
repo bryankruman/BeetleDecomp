@@ -26,8 +26,15 @@ void func_rain_00401200();
 void func_rain_00401304();
 void rainPrependFractionCommand(f32 fraction, f32 valueC, f32 value14, f32 value8, f32 value10);
 #line 26 "src/modules/rain.c"
-/* Clear the original rain state fields in their observed order and load
- * UVTX textures 0x40 and 0x45. Allocation/texture ownership remains unchanged. */
+/*
+ * Clear state byte 0x12D4, word 0x12C0 and floats 0x12C4/0x12CC/0x12C8/0x12D0
+ * in that original order. Then load UVTX resources 0x40 and 0x45, in that order.
+ * RE_ORIGINAL_QUIRK: Other state bytes are retained and both loader results are
+ * ignored. Preserve the nonascending float-store order and unconditional loads.
+ * RE_UNKNOWN: State extent/lifetime, texture ownership, repeated initialization
+ * and failure behavior require original allocation, loader and caller proof.
+ */
+#line 28 "src/modules/rain.c"
 void rainInitializeStateAndTextures(RainInitialState *state) {
     state->flag12D4 = 0;
     state->value12C0 = 0;

@@ -48,18 +48,26 @@ void voltestResetByteSlots(void) {
 /* Return signed-byte test results, refreshing -1 entries through the matching
  * test; null records and unknown kinds return zero. Cache reads are unchecked.
  * RE_UNKNOWN: index bounds/test meaning; inspect original callers and test target. */
-s32 voltestGetCachedResult(VoltestRecord *record, s32 kind, s32 index) {
+/*
+ * Select one of three signed-byte caches for kinds 0 through 2. Refresh only
+ * a byte equal to -1, then reread and return that byte with sign extension.
+ * A null record or unsupported kind returns zero. RE_UNKNOWN: the caller
+ * must supply a valid cache index; this wrapper performs no index-range
+ * check.
+ */
+#line 17 "src/modules/voltest.c"
+s32 voltestGetCachedResult(VoltestRecord *record, s32 cacheKind, s32 slotIndex) {
     if (record == NULL) return 0;
-    switch (kind) {
+    switch (cacheKind) {
     case 0:
-        if (record->first[index] == -1) { voltestRefreshFirstScreenSlot(record, index); }
-        return record->first[index];
+        if (record->first[slotIndex] == -1) { voltestRefreshFirstScreenSlot(record, slotIndex); }
+        return record->first[slotIndex];
     case 1:
-        if (record->second[index] == -1) { voltestRefreshSecondScreenSlot(record, index); }
-        return record->second[index];
+        if (record->second[slotIndex] == -1) { voltestRefreshSecondScreenSlot(record, slotIndex); }
+        return record->second[slotIndex];
     case 2:
-        if (record->third[index] == -1) { voltestRefreshObjectPositionSlot(record, index); }
-        return record->third[index];
+        if (record->third[slotIndex] == -1) { voltestRefreshObjectPositionSlot(record, slotIndex); }
+        return record->third[slotIndex];
     }
     return 0;
 }
@@ -82,27 +90,45 @@ void voltestRefreshFirstScreenSlot(VoltestRecord *record, s32 index) {
 /* Refresh the second screen cache using data at 0x184 and loaded testData.
  * Keep invalid-index writes. RE_UNKNOWN: index/count and loaded data extent/lifetime
  * need original assets, screen getter and callers; no complete data type inferred. */
-void voltestRefreshSecondScreenSlot(VoltestRecord *record, s32 index) {
+/*
+ * Obtain the live screen list and test the selected screen bytes at offset
+ * 0x184 against the stored test data. Write 1 for a nonzero helper result
+ * and 0 otherwise. A negative index or one outside the provider count still
+ * writes zero to the caller-selected cache slot. RE_UNKNOWN: the provider
+ * count is not clamped to the local four-pointer array here, and cache-index
+ * safety and the screen data shape remain caller/provider contracts.
+ */
+#line 21 "src/modules/voltest.c"
+void voltestRefreshSecondScreenSlot(VoltestRecord *record, s32 slotIndex) {
     void *screens[4];
-    s32 count = gScrnExports->getScreens(screens);
-    if (index < 0 || index >= count) record->second[index] = 0;
-    else if (func_voltest_0040044C(record->testData, (u8 *)screens[index] + 0x184) != 0) record->second[index] = 1;
-    else record->second[index] = 0;
+    s32 screenCount = gScrnExports->getScreens(screens);
+    if (slotIndex < 0 || slotIndex >= screenCount) record->second[slotIndex] = 0;
+    else if (func_voltest_0040044C(record->testData, (u8 *)screens[slotIndex] + 0x184) != 0) record->second[slotIndex] = 1;
+    else record->second[slotIndex] = 0;
 }
 #line 19 "src/modules/voltest.c"
 
 #line 20 "src/modules/voltest.c"
 /* Refresh the object-position cache; preserve the original invalid-index writes.
  * RE_UNKNOWN: index/count and testData extent/lifetime need original assets/getter/callers. */
-void voltestRefreshObjectPositionSlot(VoltestRecord *record, s32 index) {
+/*
+ * Obtain the live object list, then test the selected object translation
+ * against the stored test data. Write 1 for a nonzero helper result and 0
+ * otherwise. A negative index or one outside the provider count still writes
+ * zero to the caller-selected cache slot. RE_UNKNOWN: the provider count is
+ * not clamped to the local eight-pointer array here, and cache-index safety
+ * and test-data shape remain caller/provider contracts.
+ */
+#line 22 "src/modules/voltest.c"
+void voltestRefreshObjectPositionSlot(VoltestRecord *record, s32 slotIndex) {
     VoltestObject *objects[8];
-    Mtx4F matrix;
-    s32 count = ((VoltestObjectExports *)D_voltest_00400598)->get(objects);
-    if (index < 0 || index >= count) record->third[index] = 0;
+    Mtx4F objectTransform;
+    s32 objectCount = ((VoltestObjectExports *)D_voltest_00400598)->get(objects);
+    if (slotIndex < 0 || slotIndex >= objectCount) record->third[slotIndex] = 0;
     else {
-        ((VoltestDobjExports *)gUvDobjExports)->getPosm(objects[index]->objectId, 0, &matrix);
-        if (func_voltest_0040044C(record->testData, &matrix.m[3][0]) != 0) record->third[index] = 1;
-        else record->third[index] = 0;
+        ((VoltestDobjExports *)gUvDobjExports)->getPosm(objects[slotIndex]->objectId, 0, &objectTransform);
+        if (func_voltest_0040044C(record->testData, &objectTransform.m[3][0]) != 0) record->third[slotIndex] = 1;
+        else record->third[slotIndex] = 0;
     }
 }
 #line 21 "src/modules/voltest.c"

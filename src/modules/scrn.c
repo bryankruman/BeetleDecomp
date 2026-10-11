@@ -126,17 +126,26 @@ void scrnSubmitGeometryRectangles(ScrnGeomList *list) {
  * color with alpha one and append a full-screen viewport. Submit the base
  * geometry when selected halfword 0x4 is nonzero, then submit the selected
  * record. RE_UNKNOWN: selection/table/list-count bounds need original writers/callers. */
+/*
+ * Cache the geometry selected by the signed index and 0x46-byte stride
+ * before provider calls. Set the stored color triple with alpha 1, sample
+ * width before height, then append the viewport. Submit the base geometry
+ * first only when the cached selection has a nonzero signed halfword at byte 4;
+ * always submit the selection afterward. RE_UNKNOWN: selector bounds and the
+ * meaning of the byte-4 field remain unproved.
+ */
+#line 65 "src/modules/scrn.c"
 void scrnDrawSelectedGeometry(void) {
-    ScrnGeomList *selected;
-    s32 height;
-    s32 width;
-    selected = (ScrnGeomList *)((u8 *)&D_scrn_004004C0 + D_scrn_004006C8.selected * 0x46);
+    ScrnGeomList *selectedGeometry;
+    s32 screenHeight;
+    s32 screenWidth;
+    selectedGeometry = (ScrnGeomList *)((u8 *)&D_scrn_004004C0 + D_scrn_004006C8.selected * 0x46);
     gUvGeomExports->setColor(D_scrn_004006C8.first, D_scrn_004006C8.second, D_scrn_004006C8.third, 1.0f);
-    width = gUvGfxMgrExports->uvGetScreenWidth();
-    height = gUvGfxMgrExports->uvGetScreenHeight();
-    gUvGfxMgrExports->uvGfxAppendViewport(0, width, 0, height);
-    if (*(s16 *)((u8 *)selected + 4) != 0) scrnSubmitGeometryRectangles(&D_scrn_004004C0);
-    scrnSubmitGeometryRectangles(selected);
+    screenWidth = gUvGfxMgrExports->uvGetScreenWidth();
+    screenHeight = gUvGfxMgrExports->uvGetScreenHeight();
+    gUvGfxMgrExports->uvGfxAppendViewport(0, screenWidth, 0, screenHeight);
+    if (*(s16 *)((u8 *)selectedGeometry + 4) != 0) scrnSubmitGeometryRectangles(&D_scrn_004004C0);
+    scrnSubmitGeometryRectangles(selectedGeometry);
 }
 #line 62 "src/modules/scrn.c"
 

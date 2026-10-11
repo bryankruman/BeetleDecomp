@@ -63,6 +63,14 @@ void uvColorModuleCleanup(void) {
 /* Apply the stored three-channel values for selector one or the other
  * selector group, together with the supplied triple. The transformation
  * itself remains in the shared color helper. */
+/*
+ * Use the second stored triple only for selector 1; every other selector
+ * uses the first triple. Forward the selector and incoming three floats
+ * unchanged to the shared loaded-asset color helper. RE_UNKNOWN:
+ * unsupported-selector handling belongs to the callee; this wrapper neither
+ * validates nor clamps the selector.
+ */
+#line 62 "src/modules/uvcolor_rom.c"
 void uvColorApplyStoredChannelTriple(s32 selector, f32 x, f32 y, f32 z) {
     if (selector == 1) {
         uvColorBlendLoadedAssetColors(selector, D_uvcolor_rom_0040882C, D_uvcolor_rom_00408830,
@@ -175,6 +183,16 @@ void uvColorSetStoredChannelTriple(s32 selector, f32 x, f32 y, f32 z) {
 /* When the model is already loaded, wait for requested graphics work
  * and apply the original vertex-color transform using the repeated scalar
  * for its final three arguments. Missing models are ignored. */
+/*
+ * Look up the loaded UVMD asset. When present, wait through the graphics
+ * provider before reading its vertex table and unsigned vertex count, then
+ * blend vertex RGB with the supplied three floats and the same scale in all
+ * three scale positions. RE_UNKNOWN: the retained
+ * TransformLoadedModelVertices name does not specify the observed RGB
+ * operation. A validated public-name transition remains follow-up work;
+ * allocation and ownership are outside this wrapper.
+ */
+#line 157 "src/modules/uvcolor_rom.c"
 void uvColorTransformLoadedModelVertices(s32 modelId, f32 x, f32 y, f32 z, f32 scale) {
     ParsedUVMD *model;
 
