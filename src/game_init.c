@@ -20,6 +20,14 @@ extern UnkStruct_8002D1A4* gGameExports;
 // .data
 s32 D_8001F630 = 0x3000;
 
+/* Initialize the existing settings fields and player defaults in their
+ * original order, enter SELECTION, handle the missing-controller path, then
+ * drive the game update/state-change loop while controller I/O continues.
+ * RE_ORIGINAL_QUIRK: retain repeated field assignments and late overrides,
+ * including currentTrack and debug flags. RE_UNKNOWN: remaining unk fields,
+ * export-slot contracts and the two reset-flag words; preserve their names
+ * and live reads. */
+#line 23 "src/game_init.c"
 void uvGameInit(void) {
     s16 i;
 
@@ -143,6 +151,13 @@ void uvGameInit(void) {
     }
 }
 
+/* Tear down the current game's state when graphics exports exist, unloading
+ * each live MIDI, EMIT and AMGR instance before resetting controllers and
+ * scheduler clients. Preserve the original sec + 0.2f < current-time wait
+ * predicate. Set the requested state, reset subsystem exports, then load game
+ * and invoke its state initializer. RE_UNKNOWN: export-slot contracts, teardown
+ * ownership and the intended timing predicate remain unresolved. */
+#line 146 "src/game_init.c"
 void uvSetGameState(s32 gameStateId) {
     s32 timesLoaded;
     s32 i;
@@ -200,6 +215,11 @@ void uvSetGameState(s32 gameStateId) {
 char* gNoControllerStrings[] = {"NO CONTROLLER IN", "CONTROLLER SOCKET 1", "PLEASE POWER OFF AND", "ATTACH A CONTROLLER"};
 
 // Displays error message and loops forever when no controllers are connected
+/* Load the retained font resource, then repeatedly draw four centered warning
+ * strings on a black full-size viewport. This loop contains no controller poll
+ * or exit test. RE_UNKNOWN: warning string lifetime and any external escape
+ * mechanism require separate evidence; do not add an inferred return path. */
+#line 203 "src/game_init.c"
 void uvShowNoController(void) {
     s32 i;
     s32 line;

@@ -46,6 +46,12 @@
 // TODO: this comes from a header
 #ident "$Revision: 1.17 $"
 
+/* Store the next mode pointer, replace the context state with MODE_UPDATED,
+ * and copy that mode's control word while interrupts are disabled.
+ * RE_ORIGINAL_QUIRK: the state is assigned, not ORed with old pending
+ * flags. RE_UNKNOWN: mode lifetime and caller update ordering; NULL/manager
+ * checks remain _DEBUG-only. */
+#line 49 "src/libultra/io/visetmode.c"
 void osViSetMode(OSViMode* modep) {
     register u32 saveMask;
 

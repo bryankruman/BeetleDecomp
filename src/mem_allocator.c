@@ -27,6 +27,12 @@ extern s32 D_8002F7DC;
 extern u8 gAppThreadStack[];
 
 
+/* Initialize the free-list head, then run the existing free-payload and
+ * app-stack fills when either clear control is enabled. Preserve the
+ * separate byte-control reads before each fill. RE_UNKNOWN: control
+ * lifecycle, permitted stack-fill call frames and heap ownership; the
+ * wrapper establishes no portable clearing guarantee. */
+#line 30 "src/mem_allocator.c"
 void _uvMemAllocInitStartUp(void) {
     _uvMemAllocInit();
     if ((gClearAllocatedMemory) || (D_8001F7D0 != 0)) {
@@ -35,6 +41,13 @@ void _uvMemAllocInitStartUp(void) {
     }
 }
 
+/* Set gMemBlock as the only free-list node, clear its next link, derive its
+ * size by subtracting its raw address from 0x80400000, and set both
+ * existing accounting words to one. RE_ORIGINAL_QUIRK: the fixed endpoint
+ * and unchecked unsigned address subtraction are retained. RE_UNKNOWN:
+ * actual backing allocation, heap bounds and accounting-word meanings; the
+ * declared array extent is not independent storage evidence. */
+#line 38 "src/mem_allocator.c"
 void _uvMemAllocInit(void) {
     gMemBlockHead = gMemBlock;
     gMemBlockHead->next = NULL;
@@ -43,6 +56,12 @@ void _uvMemAllocInit(void) {
     D_8001F7A4 = 1;
 }
 
+/* Walk next links from the free-list head to NULL without returning a value
+ * or changing list storage. RE_UNKNOWN: intended debug effect, caller
+ * reachability, valid node bounds and whether cycles are excluded. Retain
+ * the existing name and traversal; an empty-looking result does not justify
+ * removing the reads. */
+#line 46 "src/mem_allocator.c"
 UNUSED void _uvMemUnusedDbgFunc(void) {
     MemBlock *block;
 
@@ -201,6 +220,11 @@ void uvResetAllocatorWithOptionalFill(s32 forceFill) {
 #line 149 "src/mem_allocator.c"
 
 
+/* Delegate the unchanged byte request to _uvMemAlloc with alignment 8 and
+ * return the provider result. RE_UNKNOWN: caller size domain, payload
+ * lifetime and failure handling are provider/caller contracts, not
+ * guarantees added by this wrapper. */
+#line 151 "src/mem_allocator.c"
 void *_uvMemAllocAlign8(u32 size) {
     return _uvMemAlloc(size, 8U);
 }
@@ -302,6 +326,13 @@ void* _uvMemAlloc(u32 size, u32 alignment) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/mem_allocator/_uvMemFree.s")
 
+/* Traverse the free list, accumulating node sizes and tracking
+ * minimum/maximum values in locals whose results are discarded.
+ * RE_ORIGINAL_QUIRK: preserve unsigned comparisons with the loaded signed
+ * size and the minimum initialized to all ones. RE_UNKNOWN: intended debug
+ * observation, list validity and size/overflow domains; retain the existing
+ * name and unused calculations. */
+#line 236 "src/mem_allocator.c"
 void _uvMemUnusedDbgFunc1(void) {
     MemBlock* block;
     s32 size;
@@ -322,6 +353,12 @@ void _uvMemUnusedDbgFunc1(void) {
     }
 }
 
+/* Sum each free-list node's stored size and return the existing signed
+ * accumulator. This counts the stored node extents, not an independently
+ * established usable-payload capacity. RE_UNKNOWN: list validity, cycles
+ * and overflow domain; preserve the original arithmetic and unrestricted
+ * traversal. */
+#line 256 "src/mem_allocator.c"
 s32 _uvMemGetBlocksSize(void) {
     MemBlock* block;
     s32 blocksSize;
@@ -337,10 +374,20 @@ s32 _uvMemGetBlocksSize(void) {
     return blocksSize;
 }
 
+/* Delegate the unchanged byte request to _uvMemAlloc with alignment 16 and
+ * return the provider result. RE_UNKNOWN: caller size domain, payload
+ * lifetime and failure handling remain with the original provider and
+ * callers. */
+#line 271 "src/mem_allocator.c"
 void* _uvMemAllocAlign16(u32 size) {
    return _uvMemAlloc(size, 0x10U);
 }
 
+/* Forward the pointer unchanged to the retained assembly _uvMemFree
+ * provider. RE_UNKNOWN: NULL handling, ownership, allocation-header
+ * decoding and double-free behavior require that provider and its callers;
+ * this wrapper adds no checks or guarantees. */
+#line 275 "src/mem_allocator.c"
 void uvMemFree(void *ptr) {
     _uvMemFree(ptr);
 }

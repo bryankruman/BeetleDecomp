@@ -76,6 +76,10 @@ void _uvMediaCopy(void* destination, void* sourceAddress, u32 byteCount) {
 }
 #line 62 "src/memory.c"
 
+/* Fill exactly nbytes successive destination bytes with the low eight bits
+ * of value; a zero count performs no store. RE_UNKNOWN: destination capacity,
+ * validity and overlap with externally accessed storage require callers. */
+#line 63 "src/memory.c"
 void uvMemSet(void* vAddr, u8 value, u32 nbytes) {
     u32 count;
     u8* dest;

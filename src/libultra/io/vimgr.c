@@ -17,6 +17,13 @@ static OSIoMesg viRetraceMsg ALIGNED(0x8);
 static OSIoMesg viCounterMsg ALIGNED(0x8);
 
 void viMgrMain(void* arg);
+/* Return if the video manager is active; otherwise initialize timer/event
+ * services, register retrace/counter messages, temporarily raise the caller
+ * priority if needed, and create, initialize and start the video thread
+ * under the saved interrupt mask. Restore the caller priority afterward.
+ * RE_UNKNOWN: external service initialization order and release-build
+ * priority domain; preserve version-specific scanline setup. */
+#line 20 "src/libultra/io/vimgr.c"
 void osCreateViManager(OSPri pri) {
     u32 savedMask;
     OSPri oldPri;
@@ -71,6 +78,15 @@ void osCreateViManager(OSPri pri) {
     }
 }
 
+/* Consume video-manager events indefinitely: swap contexts on retrace, send
+ * the configured periodic notification without blocking, update
+ * interrupt/time counters, and dispatch timer interrupts for counter
+ * events. RE_ORIGINAL_QUIRK: first is initialized to zero and never set in
+ * this body; only the initial zero retrace count is normalized to one.
+ * RE_UNKNOWN: externally configured retrace counts, wrap behavior and
+ * event/queue validity; retain the exact u16 countdown and nonblocking-send
+ * result handling. */
+#line 74 "src/libultra/io/vimgr.c"
 void viMgrMain(void* arg) {
     __OSViContext* vc;
     OSDevMgr* dm;

@@ -36,6 +36,12 @@ void uvProfilerSetPaused(s32, s32);                          /* extern */
 void uvProfilerResetEntry(s32);                               /* extern */
 void uvProfilerQueryStatistics(s32, ...);
 
+/* Claim the first entry whose existing active byte is zero, store the
+ * supplied label pointer without copying, and return its index; return -1
+ * if all forty entries are occupied. RE_UNKNOWN: label lifetime and
+ * external entry ownership. Preserve the original allocation order and
+ * active-byte meaning without inventing a release protocol. */
+#line 39 "src/profiler.c"
 s32 uvProfilerCreate(char* label) {
     ProfilerEntry* profilerEntry;
     s32 var_v1;
@@ -52,6 +58,10 @@ s32 uvProfilerCreate(char* label) {
     return -1;
 }
 
+/* Forward the entry index unchanged to uvProfilerResetEntry. RE_UNKNOWN:
+ * valid index range and caller synchronization; this wrapper performs no
+ * validation or independent reset work. */
+#line 55 "src/profiler.c"
 void uvProfilerReset(s32 id) {
     uvProfilerResetEntry(id);
 }
@@ -131,6 +141,11 @@ void uvProfilerAdjustSampleCount(s32 entryId, s32 countDelta) {
 }
 #line 113 "src/profiler.c"
 
+/* Clear the entry's count, pause/active bytes, label pointer and timing
+ * values, restoring the start-time sentinel to -1.0. RE_UNKNOWN: valid
+ * indices and required begin/end/reset ordering; retain every original
+ * store and sentinel. */
+#line 114 "src/profiler.c"
 void uvProfilerResetEntry(s32 id) {
     sProfilerEntries[id].unk24 = 0;
     sProfilerEntries[id].unk28 = 0;
@@ -186,6 +201,12 @@ void uvProfilerQueryStatistics(s32 entryId, ...) {
 }
 #line 160 "src/profiler.c"
 
+/* Restore a saved interrupt mask when the shared word differs from one,
+ * reset the associated nesting word on that path, clear all forty profiler
+ * entries, and reset clock 0x6B. RE_ORIGINAL_QUIRK: the nesting word is not
+ * cleared by the other path. RE_UNKNOWN: initialization call ordering and
+ * ownership of the saved-mask sentinel. */
+#line 161 "src/profiler.c"
 void uvProfilerInit(void) {
     s32 i;
 
@@ -200,6 +221,11 @@ void uvProfilerInit(void) {
     uvClkReset(0x6B);
 }
 
+/* Retain the original profiler hook with no application-state operation;
+ * native code returns while saving its argument in the incoming stack slot.
+ * RE_UNKNOWN: the hook's intended role is unestablished;
+ * keep its address name. */
+#line 175 "src/profiler.c"
 void func_80001038(s32 id) {
 
 }
@@ -229,6 +255,10 @@ void uvProfilerSetPaused(s32 entryId, s32 paused) {
 }
 #line 196 "src/profiler.c"
 
+/* Retain the original empty profiler hook: native code returns with a nop
+ * delay slot. RE_UNKNOWN: the intended hook role is unestablished; keep its
+ * address name rather than inventing a profiler action. */
+#line 197 "src/profiler.c"
 void func_80001104(void) {
 }
 

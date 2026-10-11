@@ -50,6 +50,12 @@
 // TODO: this comes from a header
 #ident "$Revision: 1.17 $"
 
+/* Store the requested framebuffer in the next video context and OR its
+ * buffer-updated flag while interrupts are disabled. Manager, NULL and
+ * alignment checks remain _DEBUG-only. RE_UNKNOWN: framebuffer extent,
+ * ownership and display-transfer lifetime; scheduling a next buffer is not
+ * a completed swap. */
+#line 53 "src/libultra/io/viswapbuf.c"
 void osViSwapBuffer(void* frameBufPtr) {
     u32 saveMask;
 

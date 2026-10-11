@@ -2,6 +2,12 @@
 #include "PR/ultraerror.h"
 #include "PRinternal/osint.h"
 
+/* Initialize both waiting-thread queues to the existing tail sentinel and
+ * attach the caller's message array and capacity to an empty ring. Capacity
+ * rejection exists only in the retained _DEBUG branch. RE_UNKNOWN:
+ * release-build caller capacity, storage extent and queue lifetime;
+ * preserve the build distinction. */
+#line 5 "src/libultra/os/createmesgqueue.c"
 void osCreateMesgQueue(OSMesgQueue* mq, OSMesg* msg, s32 msgCount) {
 
 #ifdef _DEBUG

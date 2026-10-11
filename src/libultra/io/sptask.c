@@ -15,6 +15,12 @@
 
 static OSTask tmp_task;
 
+/* Copy the task into the shared tmp_task, then use the existing macro to
+ * replace each non-NULL task pointer field with its physical address.
+ * Return the shared scratch task rather than the caller's task. RE_UNKNOWN:
+ * address validity, scratch-task reentrancy and caller synchronization;
+ * preserve the macro's in-place assignments and exact selected fields. */
+#line 18 "src/libultra/io/sptask.c"
 OSTask* _VirtualToPhysicalTask(OSTask* intp) {
     OSTask* tp;
     tp = &tmp_task;
@@ -30,6 +36,14 @@ OSTask* _VirtualToPhysicalTask(OSTask* intp) {
     return tp;
 }
 
+/* Prepare the shared physical task, retain the yielded/loadable-task
+ * rewrite, write back that task, then perform the original status, PC and
+ * DMA setup with busy retries in order. RE_ORIGINAL_QUIRK: the loadable
+ * resume path reads the ucode pointer from yield_data_ptr plus
+ * OS_YIELD_DATA_SIZE plus 0x2FC. RE_UNKNOWN: that retained custom layout,
+ * DMA buffer bounds and termination/lifetime guarantees; preserve
+ * _DEBUG-only checks and the caller flag update. */
+#line 33 "src/libultra/io/sptask.c"
 void osSpTaskLoad(OSTask* intp) {
     OSTask* tp;
 
@@ -76,6 +90,12 @@ void osSpTaskLoad(OSTask* intp) {
     while (__osSpRawStartDma(1, SP_IMEM_START, tp->t.ucode_boot, tp->t.ucode_boot_size) == -1) {}
 }
 
+/* Wait until the signal processor is not busy, then issue the existing
+ * status bits to leave halt/break/single-step and enable the break
+ * interrupt. The task pointer is unused here. RE_UNKNOWN: required prior
+ * load, execution ownership and whether the busy wait is guaranteed to
+ * terminate. */
+#line 79 "src/libultra/io/sptask.c"
 void osSpTaskStartGo(OSTask* tp) {
     while (__osSpDeviceBusy()) {}
 

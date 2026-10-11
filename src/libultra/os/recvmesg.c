@@ -2,6 +2,13 @@
 #include "PR/ultraerror.h"
 #include "PRinternal/osint.h"
 
+/* Receive from the ring under the saved interrupt mask, waiting on the
+ * empty queue unless the nonblocking flag requests failure. An optional
+ * NULL output discards the message; advance the ring and wake one waiting
+ * sender before restoring the mask. RE_UNKNOWN: caller queue
+ * validity/capacity and allowed release-build flags. Preserve the exact
+ * blocking predicate and modulo arithmetic. */
+#line 5 "src/libultra/os/recvmesg.c"
 s32 osRecvMesg(OSMesgQueue* mq, OSMesg* msg, s32 flags) {
     register u32 saveMask;
 

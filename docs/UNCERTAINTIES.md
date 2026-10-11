@@ -17,8 +17,8 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 1774 |
-| Preserved RE_ORIGINAL_QUIRK notes | 459 |
+| Explicit RE_UNKNOWN notes | 1818 |
+| Preserved RE_ORIGINAL_QUIRK notes | 469 |
 | Older comments with uncertainty language | 88 |
 | Documented original-behavior audits | 30 |
 | Assembly-backed functions or data | 763 |
@@ -952,10 +952,14 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
-| address_global | `D_80021030` | function `uvClkGetSec` | [13](../src/clocks.c#L13), [62](../src/clocks.c#L62) |
-| address_global | `D_8002D948` | function `uvGetClk`, global `D_8002D948` | [9](../src/clocks.c#L9), [23](../src/clocks.c#L23) |
-| address_global | `D_8002D960` | function `uvGetClk`, global `D_8002D960` | [10](../src/clocks.c#L10), [18](../src/clocks.c#L18) |
-| explicit_unknown | `* Look up the selected clock, update the shared counter and add the original * wrap-count and current-counter contributions using the unchanged constants. * A null clock still r...` | function `uvClkGetSec` | [39](../src/clocks.c#L39) |
+| address_global | `D_80021030` | function `uvClkGetSec` | [13](../src/clocks.c#L13), [76](../src/clocks.c#L76) |
+| address_global | `D_8002D948` | function `uvGetClk`, global `D_8002D948` | [9](../src/clocks.c#L9), [28](../src/clocks.c#L28) |
+| address_global | `D_8002D960` | function `uvGetClk`, global `D_8002D960` | [10](../src/clocks.c#L10), [23](../src/clocks.c#L23) |
+| explicit_unknown | `* Look up the selected clock, update the shared counter and add the original * wrap-count and current-counter contributions using the unchanged constants. * A null clock still r...` | function `uvClkGetSec` | [53](../src/clocks.c#L53) |
+| explicit_unknown | `Sample the CPU count once. Increment the wrap counter only when the prior * unsigned count is at least 0xF0000001 and the new count is below 0x10000000, * then store the new cou...` | function `uvClkUpdate` | [40](../src/clocks.c#L40) |
+| explicit_unknown | `Seed the last CPU count from osGetCount and clear the wrap counter. * RE_UNKNOWN: ordering against readers and the permitted initialization phase * remain caller responsibilitie...` | function `uvClkInit` | [31](../src/clocks.c#L31) |
+| explicit_unknown | `Select the secondary clock array for signed IDs at least 100; otherwise * reject IDs at least three and index the primary array. Preserve the absence * of a negative-ID guard an...` | function `uvGetClk` | [16](../src/clocks.c#L16) |
+| explicit_unknown | `Update the shared count sample, select the requested clock, and copy the * last-count and wrap snapshots when lookup succeeds. Preserve the source's * diagnostic-only failure br...` | function `uvClkReset` | [82](../src/clocks.c#L82) |
 
 ## src/file_manager.c
 
@@ -995,48 +999,52 @@ For every future source wave, regenerate and check this index after code and str
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
 | address_global | `D_8001F630` | global `D_8001F630` | [21](../src/game_init.c#L21) |
-| address_global | `D_8001F7D4` | function `uvGameInit`, global `D_8001F7D4` | [12](../src/game_init.c#L12), [135](../src/game_init.c#L135), [136](../src/game_init.c#L136) |
-| address_global | `D_8001F7D8` | function `uvGameInit`, global `D_8001F7D8` | [13](../src/game_init.c#L13), [137](../src/game_init.c#L137) |
+| address_global | `D_8001F7D4` | function `uvGameInit`, global `D_8001F7D4` | [12](../src/game_init.c#L12), [143](../src/game_init.c#L143), [144](../src/game_init.c#L144) |
+| address_global | `D_8001F7D8` | function `uvGameInit`, global `D_8001F7D8` | [13](../src/game_init.c#L13), [145](../src/game_init.c#L145) |
 | address_global | `D_80020F90` | global `D_80020F90` | [14](../src/game_init.c#L14) |
 | address_global | `D_80020FA0` | global `D_80020FA0` | [15](../src/game_init.c#L15) |
 | address_global | `D_80020FF8` | global `D_80020FF8` | [16](../src/game_init.c#L16) |
 | address_global | `D_80020FFC` | global `D_80020FFC` | [17](../src/game_init.c#L17) |
-| layout_padding | `pad` | function `uvSetGameState` | [149](../src/game_init.c#L149) |
-| offset_field | `unk10` | function `uvGameInit` | [95](../src/game_init.c#L95) |
-| offset_field | `unk17A` | function `uvGameInit` | [85](../src/game_init.c#L85) |
-| offset_field | `unk17E` | function `uvGameInit` | [88](../src/game_init.c#L88) |
-| offset_field | `unk17F` | function `uvGameInit` | [89](../src/game_init.c#L89) |
-| offset_field | `unk18C` | function `uvGameInit` | [34](../src/game_init.c#L34), [132](../src/game_init.c#L132) |
-| offset_field | `unk4` | function `uvGameInit` | [134](../src/game_init.c#L134) |
-| offset_field | `unk48` | function `uvGameInit` | [51](../src/game_init.c#L51) |
-| offset_field | `unk4C` | function `uvGameInit` | [50](../src/game_init.c#L50) |
-| offset_field | `unk50` | function `uvGameInit` | [62](../src/game_init.c#L62) |
-| offset_field | `unk6E9C` | function `uvGameInit` | [49](../src/game_init.c#L49) |
-| offset_field | `unk6EAA` | function `uvGameInit` | [26](../src/game_init.c#L26) |
-| offset_field | `unk6EAC` | function `uvGameInit` | [91](../src/game_init.c#L91) |
-| offset_field | `unk6EAE` | function `uvGameInit` | [92](../src/game_init.c#L92) |
-| offset_field | `unk6EB0` | function `uvGameInit` | [74](../src/game_init.c#L74), [78](../src/game_init.c#L78) |
-| offset_field | `unk6EC0` | function `uvGameInit` | [111](../src/game_init.c#L111) |
-| offset_field | `unk6F74` | function `uvGameInit` | [90](../src/game_init.c#L90) |
-| offset_field | `unk6F78` | function `uvGameInit` | [107](../src/game_init.c#L107) |
-| offset_field | `unk6FA0` | function `uvGameInit` | [29](../src/game_init.c#L29) |
-| offset_field | `unk6FB0` | function `uvGameInit` | [103](../src/game_init.c#L103) |
-| offset_field | `unk6FB4` | function `uvGameInit` | [104](../src/game_init.c#L104) |
-| offset_field | `unk6FB8` | function `uvGameInit` | [101](../src/game_init.c#L101) |
-| offset_field | `unk6FBC` | function `uvGameInit` | [102](../src/game_init.c#L102) |
-| offset_field | `unk704C` | function `uvGameInit` | [96](../src/game_init.c#L96), [97](../src/game_init.c#L97) |
-| offset_field | `unk7058` | function `uvGameInit` | [98](../src/game_init.c#L98) |
-| offset_field | `unk705C` | function `uvGameInit` | [99](../src/game_init.c#L99) |
-| offset_field | `unk7060` | function `uvGameInit` | [100](../src/game_init.c#L100) |
-| offset_field | `unk7064` | function `uvGameInit` | [126](../src/game_init.c#L126) |
-| offset_field | `unk7074` | function `uvGameInit` | [127](../src/game_init.c#L127) |
-| offset_field | `unk7084` | function `uvGameInit` | [122](../src/game_init.c#L122) |
-| offset_field | `unk7C` | function `uvGameInit` | [30](../src/game_init.c#L30) |
-| offset_field | `unk8` | function `uvSetGameState` | [197](../src/game_init.c#L197) |
-| offset_field | `unk80` | function `uvGameInit` | [37](../src/game_init.c#L37) |
-| offset_field | `unk94` | function `uvGameInit` | [47](../src/game_init.c#L47) |
-| offset_field | `unkC` | function `uvGameInit`, function `uvSetGameState` | [93](../src/game_init.c#L93), [155](../src/game_init.c#L155) |
+| explicit_unknown | `Initialize the existing settings fields and player defaults in their * original order, enter SELECTION, handle the missing-controller path, then * drive the game update/state-ch...` | function `uvGameInit` | [23](../src/game_init.c#L23) |
+| explicit_unknown | `Load the retained font resource, then repeatedly draw four centered warning * strings on a black full-size viewport. This loop contains no controller poll * or exit test. RE_UNK...` | function `uvShowNoController` | [218](../src/game_init.c#L218) |
+| explicit_unknown | `Tear down the current game's state when graphics exports exist, unloading * each live MIDI, EMIT and AMGR instance before resetting controllers and * scheduler clients. Preserve...` | function `uvSetGameState` | [154](../src/game_init.c#L154) |
+| layout_padding | `pad` | function `uvSetGameState` | [164](../src/game_init.c#L164) |
+| offset_field | `unk10` | function `uvGameInit` | [103](../src/game_init.c#L103) |
+| offset_field | `unk17A` | function `uvGameInit` | [93](../src/game_init.c#L93) |
+| offset_field | `unk17E` | function `uvGameInit` | [96](../src/game_init.c#L96) |
+| offset_field | `unk17F` | function `uvGameInit` | [97](../src/game_init.c#L97) |
+| offset_field | `unk18C` | function `uvGameInit` | [42](../src/game_init.c#L42), [140](../src/game_init.c#L140) |
+| offset_field | `unk4` | function `uvGameInit` | [142](../src/game_init.c#L142) |
+| offset_field | `unk48` | function `uvGameInit` | [59](../src/game_init.c#L59) |
+| offset_field | `unk4C` | function `uvGameInit` | [58](../src/game_init.c#L58) |
+| offset_field | `unk50` | function `uvGameInit` | [70](../src/game_init.c#L70) |
+| offset_field | `unk6E9C` | function `uvGameInit` | [57](../src/game_init.c#L57) |
+| offset_field | `unk6EAA` | function `uvGameInit` | [34](../src/game_init.c#L34) |
+| offset_field | `unk6EAC` | function `uvGameInit` | [99](../src/game_init.c#L99) |
+| offset_field | `unk6EAE` | function `uvGameInit` | [100](../src/game_init.c#L100) |
+| offset_field | `unk6EB0` | function `uvGameInit` | [82](../src/game_init.c#L82), [86](../src/game_init.c#L86) |
+| offset_field | `unk6EC0` | function `uvGameInit` | [119](../src/game_init.c#L119) |
+| offset_field | `unk6F74` | function `uvGameInit` | [98](../src/game_init.c#L98) |
+| offset_field | `unk6F78` | function `uvGameInit` | [115](../src/game_init.c#L115) |
+| offset_field | `unk6FA0` | function `uvGameInit` | [37](../src/game_init.c#L37) |
+| offset_field | `unk6FB0` | function `uvGameInit` | [111](../src/game_init.c#L111) |
+| offset_field | `unk6FB4` | function `uvGameInit` | [112](../src/game_init.c#L112) |
+| offset_field | `unk6FB8` | function `uvGameInit` | [109](../src/game_init.c#L109) |
+| offset_field | `unk6FBC` | function `uvGameInit` | [110](../src/game_init.c#L110) |
+| offset_field | `unk704C` | function `uvGameInit` | [104](../src/game_init.c#L104), [105](../src/game_init.c#L105) |
+| offset_field | `unk7058` | function `uvGameInit` | [106](../src/game_init.c#L106) |
+| offset_field | `unk705C` | function `uvGameInit` | [107](../src/game_init.c#L107) |
+| offset_field | `unk7060` | function `uvGameInit` | [108](../src/game_init.c#L108) |
+| offset_field | `unk7064` | function `uvGameInit` | [134](../src/game_init.c#L134) |
+| offset_field | `unk7074` | function `uvGameInit` | [135](../src/game_init.c#L135) |
+| offset_field | `unk7084` | function `uvGameInit` | [130](../src/game_init.c#L130) |
+| offset_field | `unk7C` | function `uvGameInit` | [38](../src/game_init.c#L38) |
+| offset_field | `unk8` | function `uvSetGameState` | [212](../src/game_init.c#L212) |
+| offset_field | `unk80` | function `uvGameInit` | [45](../src/game_init.c#L45) |
+| offset_field | `unk94` | function `uvGameInit` | [55](../src/game_init.c#L55) |
+| offset_field | `unkC` | function `uvGameInit`, function `uvSetGameState` | [101](../src/game_init.c#L101), [170](../src/game_init.c#L170) |
 | opaque_type | `UnkStruct_8002D1A4` | global `gGameExports` | [18](../src/game_init.c#L18) |
+| original_quirk | `Initialize the existing settings fields and player defaults in their * original order, enter SELECTION, handle the missing-controller path, then * drive the game update/state-ch...` | function `uvGameInit` | [23](../src/game_init.c#L23) |
 
 ## src/libultra/audio/cseq.c
 
@@ -1302,35 +1310,90 @@ For every future source wave, regenerate and check this index after code and str
 | explicit_unknown | `* Build the fixed controller status request sequence in retained PIF RAM. * * Preserve command/status byte writes, eight-byte request copies, live count * loads, and terminator....` | function `__osPfsRequestData` | [66](../src/libultra/io/pfsisplug.c#L66) |
 | explicit_unknown | `* Serialize controller PIF status reads and return the detected controller- * pak presence mask. * * Keep three CRC retries, live controller-count loads, blocking message * orde...` | function `osPfsIsPlug` | [8](../src/libultra/io/pfsisplug.c#L8) |
 
+## src/libultra/io/piread.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| explicit_unknown | `Acquire PI access, perform one raw IO read, release access and return the * raw operation's status. The source's misalignment check is _DEBUG-only and * absent from this 64-byte...` | function `osPiReadIo` | [5](../src/libultra/io/piread.c#L5) |
+
+## src/libultra/io/sptask.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| explicit_unknown | `Copy the task into the shared tmp_task, then use the existing macro to * replace each non-NULL task pointer field with its physical address. * Return the shared scratch task rat...` | function `_VirtualToPhysicalTask` | [18](../src/libultra/io/sptask.c#L18) |
+| explicit_unknown | `Prepare the shared physical task, retain the yielded/loadable-task * rewrite, write back that task, then perform the original status, PC and * DMA setup with busy retries in ord...` | function `osSpTaskLoad` | [39](../src/libultra/io/sptask.c#L39) |
+| explicit_unknown | `Wait until the signal processor is not busy, then issue the existing * status bits to leave halt/break/single-step and enable the break * interrupt. The task pointer is unused h...` | function `osSpTaskStartGo` | [93](../src/libultra/io/sptask.c#L93) |
+| original_quirk | `Prepare the shared physical task, retain the yielded/loadable-task * rewrite, write back that task, then perform the original status, PC and * DMA setup with busy retries in ord...` | function `osSpTaskLoad` | [39](../src/libultra/io/sptask.c#L39) |
+
+## src/libultra/io/sptaskyield.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| explicit_unknown | `Request signal-processor yield by writing the existing status bit. * RE_UNKNOWN: which running task observes the request and when completion * is acknowledged; this routine does...` | function `osSpTaskYield` | [4](../src/libultra/io/sptaskyield.c#L4) |
+
+## src/libultra/io/sptaskyielded.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| explicit_unknown | `Read processor status and return YIELDED only when that status bit is * set. When the yield-request bit is also present, OR the result into the * task flags and clear DP_WAIT. R...` | function `osSpTaskYielded` | [6](../src/libultra/io/sptaskyielded.c#L6) |
+| original_quirk | `Read processor status and return YIELDED only when that status bit is * set. When the yield-request bit is also present, OR the result into the * task flags and clear DP_WAIT. R...` | function `osSpTaskYielded` | [6](../src/libultra/io/sptaskyielded.c#L6) |
+
 ## src/libultra/io/viblack.c
 
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
 | draft_marker | `TODO` | — | [4](../src/libultra/io/viblack.c#L4) |
+| explicit_unknown | `Set or clear the next context's BLACK state bit according to the u8 * argument while interrupts are disabled, then restore the mask. * RE_UNKNOWN: when the pending state becomes...` | function `osViBlack` | [7](../src/libultra/io/viblack.c#L7) |
+
+## src/libultra/io/vigetcurrframebuf.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| explicit_unknown | `Read the current video context's framebuffer while interrupts are * disabled, then restore the saved mask and return the pointer. Manager * validation remains _DEBUG-only. RE_UN...` | function `osViGetCurrentFramebuffer` | [5](../src/libultra/io/vigetcurrframebuf.c#L5) |
+
+## src/libultra/io/vigetnextframebuf.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| explicit_unknown | `Read the next video context's framebuffer while interrupts are disabled, * then restore the saved mask and return the pointer. Manager validation * remains _DEBUG-only. RE_UNKNO...` | function `osViGetNextFramebuffer` | [5](../src/libultra/io/vigetnextframebuf.c#L5) |
+
+## src/libultra/io/vimgr.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| explicit_unknown | `Consume video-manager events indefinitely: swap contexts on retrace, send * the configured periodic notification without blocking, update * interrupt/time counters, and dispatch...` | function `viMgrMain` | [81](../src/libultra/io/vimgr.c#L81) |
+| explicit_unknown | `Return if the video manager is active; otherwise initialize timer/event * services, register retrace/counter messages, temporarily raise the caller * priority if needed, and cre...` | function `osCreateViManager` | [20](../src/libultra/io/vimgr.c#L20) |
+| original_quirk | `Consume video-manager events indefinitely: swap contexts on retrace, send * the configured periodic notification without blocking, update * interrupt/time counters, and dispatch...` | function `viMgrMain` | [81](../src/libultra/io/vimgr.c#L81) |
 
 ## src/libultra/io/visetevent.c
 
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
 | draft_marker | `TODO` | — | [49](../src/libultra/io/visetevent.c#L49) |
+| explicit_unknown | `Store the queue, message and retrace count in the next video context * while interrupts are disabled. Manager and NULL checks remain * _DEBUG-only. RE_UNKNOWN: queue lifetime an...` | function `osViSetEvent` | [52](../src/libultra/io/visetevent.c#L52) |
 
 ## src/libultra/io/visetmode.c
 
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
 | draft_marker | `TODO` | — | [46](../src/libultra/io/visetmode.c#L46) |
+| explicit_unknown | `Store the next mode pointer, replace the context state with MODE_UPDATED, * and copy that mode's control word while interrupts are disabled. * RE_ORIGINAL_QUIRK: the state is as...` | function `osViSetMode` | [49](../src/libultra/io/visetmode.c#L49) |
+| original_quirk | `Store the next mode pointer, replace the context state with MODE_UPDATED, * and copy that mode's control word while interrupts are disabled. * RE_ORIGINAL_QUIRK: the state is as...` | function `osViSetMode` | [49](../src/libultra/io/visetmode.c#L49) |
 
 ## src/libultra/io/visetspecial.c
 
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
 | draft_marker | `TODO` | — | [6](../src/libultra/io/visetspecial.c#L6) |
+| explicit_unknown | `Apply the requested gamma, dithering, divot and dither-filter controls to * the next video context in their original order, then mark control * updated. RE_ORIGINAL_QUIRK: on/of...` | function `osViSetSpecialFeatures` | [31](../src/libultra/io/visetspecial.c#L31) |
+| original_quirk | `Apply the requested gamma, dithering, divot and dither-filter controls to * the next video context in their original order, then mark control * updated. RE_ORIGINAL_QUIRK: on/of...` | function `osViSetSpecialFeatures` | [31](../src/libultra/io/visetspecial.c#L31) |
 
 ## src/libultra/io/viswapbuf.c
 
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
 | draft_marker | `TODO` | — | [50](../src/libultra/io/viswapbuf.c#L50) |
+| explicit_unknown | `Store the requested framebuffer in the next video context and OR its * buffer-updated flag while interrupts are disabled. Manager, NULL and * alignment checks remain _DEBUG-only...` | function `osViSwapBuffer` | [53](../src/libultra/io/viswapbuf.c#L53) |
 
 ## src/libultra/libc/ldiv.c
 
@@ -1355,6 +1418,49 @@ For every future source wave, regenerate and check this index after code and str
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
 | draft_marker | `TODO` | — | [4](../src/libultra/libc/string.c#L4) |
+
+## src/libultra/os/createmesgqueue.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| explicit_unknown | `Initialize both waiting-thread queues to the existing tail sentinel and * attach the caller's message array and capacity to an empty ring. Capacity * rejection exists only in th...` | function `osCreateMesgQueue` | [5](../src/libultra/os/createmesgqueue.c#L5) |
+
+## src/libultra/os/createthread.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| explicit_unknown | `Initialize the saved entry/argument/stack/cleanup context, interrupt/FPU * state and stopped-thread fields, then link the thread into the active * list under the saved interrupt...` | function `osCreateThread` | [9](../src/libultra/os/createthread.c#L9) |
+
+## src/libultra/os/initialize.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| explicit_unknown | `Enable the existing FPU state, perform the PIF read/write handshake, * install and flush exception vectors, set up the debug TLB mapping, derive * the clock rate, clear the NMI ...` | function `osInitialize` | [23](../src/libultra/os/initialize.c#L23) |
+| original_quirk | `Enable the existing FPU state, perform the PIF read/write handshake, * install and flush exception vectors, set up the debug TLB mapping, derive * the clock rate, clear the NMI ...` | function `osInitialize` | [23](../src/libultra/os/initialize.c#L23) |
+
+## src/libultra/os/recvmesg.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| explicit_unknown | `Receive from the ring under the saved interrupt mask, waiting on the * empty queue unless the nonblocking flag requests failure. An optional * NULL output discards the message; ...` | function `osRecvMesg` | [5](../src/libultra/os/recvmesg.c#L5) |
+
+## src/libultra/os/sendmesg.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| explicit_unknown | `Append a message under the saved interrupt mask, waiting on a full queue * only for the blocking flag; other flags take the original failure path. * Wake one waiting receiver af...` | function `osSendMesg` | [5](../src/libultra/os/sendmesg.c#L5) |
+
+## src/libultra/os/seteventmesg.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| explicit_unknown | `Associate the supplied queue and message with the indexed event while * interrupts are disabled, then restore the mask. The event-range check * remains _DEBUG-only. RE_UNKNOWN: ...` | function `osSetEventMesg` | [10](../src/libultra/os/seteventmesg.c#L10) |
+
+## src/libultra/os/startthread.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| explicit_unknown | `Make a waiting/stopped thread runnable using its existing queue * relationship, then dispatch if no thread is running or yield when the run * queue has higher priority. Restore ...` | function `osStartThread` | [5](../src/libultra/os/startthread.c#L5) |
 
 ## src/main.c
 
@@ -1409,39 +1515,50 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
-| address_global | `D_8001F7A0` | function `_uvMemAlloc`, function `_uvMemAllocInit`, function `uvInsertFreeBlockCoalesced`, function `uvResetAllocatorWithOptionalFill`, global `D_8001F7A0` | [13](../src/mem_allocator.c#L13), [42](../src/mem_allocator.c#L42), [97](../src/mem_allocator.c#L97), [114](../src/mem_allocator.c#L114), [143](../src/mem_allocator.c#L143), [144](../src/mem_allocator.c#L144), [145](../src/mem_allocator.c#L145), [187](../src/mem_allocator.c#L187) (+2 in JSON) |
-| address_global | `D_8001F7A4` | function `_uvMemAllocInit`, function `uvInsertFreeBlockCoalesced`, function `uvResetAllocatorWithOptionalFill`, global `D_8001F7A4` | [14](../src/mem_allocator.c#L14), [43](../src/mem_allocator.c#L43), [144](../src/mem_allocator.c#L144), [145](../src/mem_allocator.c#L145), [188](../src/mem_allocator.c#L188) |
-| address_global | `D_8001F7A8` | function `_uvMemAlloc`, function `uvResetAllocatorWithOptionalFill`, global `D_8001F7A8` | [15](../src/mem_allocator.c#L15), [189](../src/mem_allocator.c#L189), [295](../src/mem_allocator.c#L295) |
-| address_global | `D_8001F7AC` | function `uvResetAllocatorWithOptionalFill`, global `D_8001F7AC` | [16](../src/mem_allocator.c#L16), [190](../src/mem_allocator.c#L190) |
-| address_global | `D_8001F7B0` | function `_uvMemAlloc`, function `uvResetAllocatorWithOptionalFill`, global `D_8001F7B0` | [17](../src/mem_allocator.c#L17), [191](../src/mem_allocator.c#L191), [294](../src/mem_allocator.c#L294) |
-| address_global | `D_8001F7B4` | function `uvResetAllocatorWithOptionalFill`, global `D_8001F7B4` | [18](../src/mem_allocator.c#L18), [192](../src/mem_allocator.c#L192) |
-| address_global | `D_8001F7B8` | function `_uvMemAlloc`, function `uvResetAllocatorWithOptionalFill`, global `D_8001F7B8` | [19](../src/mem_allocator.c#L19), [193](../src/mem_allocator.c#L193), [245](../src/mem_allocator.c#L245), [263](../src/mem_allocator.c#L263), [265](../src/mem_allocator.c#L265) |
-| address_global | `D_8001F7BC` | function `_uvMemAlloc`, function `uvResetAllocatorWithOptionalFill`, global `D_8001F7BC` | [20](../src/mem_allocator.c#L20), [194](../src/mem_allocator.c#L194), [265](../src/mem_allocator.c#L265) |
+| address_global | `D_8001F7A0` | function `_uvMemAlloc`, function `_uvMemAllocInit`, function `uvInsertFreeBlockCoalesced`, function `uvResetAllocatorWithOptionalFill`, global `D_8001F7A0` | [13](../src/mem_allocator.c#L13), [55](../src/mem_allocator.c#L55), [116](../src/mem_allocator.c#L116), [133](../src/mem_allocator.c#L133), [162](../src/mem_allocator.c#L162), [163](../src/mem_allocator.c#L163), [164](../src/mem_allocator.c#L164), [206](../src/mem_allocator.c#L206) (+2 in JSON) |
+| address_global | `D_8001F7A4` | function `_uvMemAllocInit`, function `uvInsertFreeBlockCoalesced`, function `uvResetAllocatorWithOptionalFill`, global `D_8001F7A4` | [14](../src/mem_allocator.c#L14), [56](../src/mem_allocator.c#L56), [163](../src/mem_allocator.c#L163), [164](../src/mem_allocator.c#L164), [207](../src/mem_allocator.c#L207) |
+| address_global | `D_8001F7A8` | function `_uvMemAlloc`, function `uvResetAllocatorWithOptionalFill`, global `D_8001F7A8` | [15](../src/mem_allocator.c#L15), [208](../src/mem_allocator.c#L208), [319](../src/mem_allocator.c#L319) |
+| address_global | `D_8001F7AC` | function `uvResetAllocatorWithOptionalFill`, global `D_8001F7AC` | [16](../src/mem_allocator.c#L16), [209](../src/mem_allocator.c#L209) |
+| address_global | `D_8001F7B0` | function `_uvMemAlloc`, function `uvResetAllocatorWithOptionalFill`, global `D_8001F7B0` | [17](../src/mem_allocator.c#L17), [210](../src/mem_allocator.c#L210), [318](../src/mem_allocator.c#L318) |
+| address_global | `D_8001F7B4` | function `uvResetAllocatorWithOptionalFill`, global `D_8001F7B4` | [18](../src/mem_allocator.c#L18), [211](../src/mem_allocator.c#L211) |
+| address_global | `D_8001F7B8` | function `_uvMemAlloc`, function `uvResetAllocatorWithOptionalFill`, global `D_8001F7B8` | [19](../src/mem_allocator.c#L19), [212](../src/mem_allocator.c#L212), [269](../src/mem_allocator.c#L269), [287](../src/mem_allocator.c#L287), [289](../src/mem_allocator.c#L289) |
+| address_global | `D_8001F7BC` | function `_uvMemAlloc`, function `uvResetAllocatorWithOptionalFill`, global `D_8001F7BC` | [20](../src/mem_allocator.c#L20), [213](../src/mem_allocator.c#L213), [289](../src/mem_allocator.c#L289) |
 | address_global | `D_8001F7C0` | global `D_8001F7C0` | [21](../src/mem_allocator.c#L21) |
 | address_global | `D_8001F7C4` | global `D_8001F7C4` | [22](../src/mem_allocator.c#L22) |
-| address_global | `D_8001F7D0` | function `_uvMemAllocInitStartUp`, function `uvResetAllocatorWithOptionalFill`, global `D_8001F7D0` | [24](../src/mem_allocator.c#L24), [32](../src/mem_allocator.c#L32), [33](../src/mem_allocator.c#L33), [34](../src/mem_allocator.c#L34), [196](../src/mem_allocator.c#L196), [197](../src/mem_allocator.c#L197), [198](../src/mem_allocator.c#L198) |
-| address_global | `D_8002F7DC` | function `_uvMemAlloc`, global `D_8002F7DC` | [26](../src/mem_allocator.c#L26), [267](../src/mem_allocator.c#L267) |
-| assembly | `_uvMemFree` | — | [303](../src/mem_allocator.c#L303) |
-| assembly | `uvMemAllocAt` | — | [174](../src/mem_allocator.c#L174) |
-| decompiler_local | `var_a0` | function `_uvMemUnusedDbgFunc1` | [308](../src/mem_allocator.c#L308), [313](../src/mem_allocator.c#L313), [315](../src/mem_allocator.c#L315), [316](../src/mem_allocator.c#L316) |
-| decompiler_local | `var_v1` | function `_uvMemUnusedDbgFunc1` | [309](../src/mem_allocator.c#L309), [313](../src/mem_allocator.c#L313), [319](../src/mem_allocator.c#L319), [320](../src/mem_allocator.c#L320) |
-| draft_marker | `FAKE` | function `uvInsertFreeBlockCoalesced` | [86](../src/mem_allocator.c#L86), [128](../src/mem_allocator.c#L128) |
-| explicit_unknown | `* Allocate from the first free-list block passing the original strict size-plus- * alignment test. Retain the preceding node, unlink the chosen block, optionally * return its tr...` | function `_uvMemAlloc` | [208](../src/mem_allocator.c#L208) |
-| explicit_unknown | `* Reserve the incoming address interval in the allocator free list. Round the * size to four bytes, preserve original node/header/output store ordering, and * optionally clear t...` | assembly `uvMemAllocAt` | [149](../src/mem_allocator.c#L149) |
-| explicit_unknown | `Fill from gAppThreadStack to 0x30 bytes below this function's stack-local * address, preserving the original self-address calculation and frame margin. * RE_UNKNOWN: required ac...` | function `uvFillAppStackPrefix` | [56](../src/mem_allocator.c#L56) |
-| explicit_unknown | `Insert a released block into the address-ordered free list and merge * contiguous neighbors, preserving each original branch and counter update. * RE_UNKNOWN: original source fo...` | function `uvInsertFreeBlockCoalesced` | [83](../src/mem_allocator.c#L83) |
-| explicit_unknown | `Reset the allocator free list and the existing accounting counters. * If forced or either fill control is enabled, fill free payloads and * the app-stack prefix using the config...` | function `uvResetAllocatorWithOptionalFill` | [178](../src/mem_allocator.c#L178) |
-| original_quirk | `* Reserve the incoming address interval in the allocator free list. Round the * size to four bytes, preserve original node/header/output store ordering, and * optionally clear t...` | assembly `uvMemAllocAt` | [149](../src/mem_allocator.c#L149) |
+| address_global | `D_8001F7D0` | function `_uvMemAllocInitStartUp`, function `uvResetAllocatorWithOptionalFill`, global `D_8001F7D0` | [24](../src/mem_allocator.c#L24), [38](../src/mem_allocator.c#L38), [39](../src/mem_allocator.c#L39), [40](../src/mem_allocator.c#L40), [215](../src/mem_allocator.c#L215), [216](../src/mem_allocator.c#L216), [217](../src/mem_allocator.c#L217) |
+| address_global | `D_8002F7DC` | function `_uvMemAlloc`, global `D_8002F7DC` | [26](../src/mem_allocator.c#L26), [291](../src/mem_allocator.c#L291) |
+| assembly | `_uvMemFree` | — | [327](../src/mem_allocator.c#L327) |
+| assembly | `uvMemAllocAt` | — | [193](../src/mem_allocator.c#L193) |
+| decompiler_local | `var_a0` | function `_uvMemUnusedDbgFunc1` | [339](../src/mem_allocator.c#L339), [344](../src/mem_allocator.c#L344), [346](../src/mem_allocator.c#L346), [347](../src/mem_allocator.c#L347) |
+| decompiler_local | `var_v1` | function `_uvMemUnusedDbgFunc1` | [340](../src/mem_allocator.c#L340), [344](../src/mem_allocator.c#L344), [350](../src/mem_allocator.c#L350), [351](../src/mem_allocator.c#L351) |
+| draft_marker | `FAKE` | function `uvInsertFreeBlockCoalesced` | [105](../src/mem_allocator.c#L105), [147](../src/mem_allocator.c#L147) |
+| explicit_unknown | `* Allocate from the first free-list block passing the original strict size-plus- * alignment test. Retain the preceding node, unlink the chosen block, optionally * return its tr...` | function `_uvMemAlloc` | [232](../src/mem_allocator.c#L232) |
+| explicit_unknown | `* Reserve the incoming address interval in the allocator free list. Round the * size to four bytes, preserve original node/header/output store ordering, and * optionally clear t...` | assembly `uvMemAllocAt` | [168](../src/mem_allocator.c#L168) |
+| explicit_unknown | `Delegate the unchanged byte request to _uvMemAlloc with alignment 16 and * return the provider result. RE_UNKNOWN: caller size domain, payload * lifetime and failure handling re...` | function `_uvMemAllocAlign16` | [377](../src/mem_allocator.c#L377) |
+| explicit_unknown | `Delegate the unchanged byte request to _uvMemAlloc with alignment 8 and * return the provider result. RE_UNKNOWN: caller size domain, payload * lifetime and failure handling are...` | function `_uvMemAllocAlign8` | [223](../src/mem_allocator.c#L223) |
+| explicit_unknown | `Fill from gAppThreadStack to 0x30 bytes below this function's stack-local * address, preserving the original self-address calculation and frame margin. * RE_UNKNOWN: required ac...` | function `uvFillAppStackPrefix` | [75](../src/mem_allocator.c#L75) |
+| explicit_unknown | `Forward the pointer unchanged to the retained assembly _uvMemFree * provider. RE_UNKNOWN: NULL handling, ownership, allocation-header * decoding and double-free behavior require...` | function `uvMemFree` | [386](../src/mem_allocator.c#L386) |
+| explicit_unknown | `Initialize the free-list head, then run the existing free-payload and * app-stack fills when either clear control is enabled. Preserve the * separate byte-control reads before e...` | function `_uvMemAllocInitStartUp` | [30](../src/mem_allocator.c#L30) |
+| explicit_unknown | `Insert a released block into the address-ordered free list and merge * contiguous neighbors, preserving each original branch and counter update. * RE_UNKNOWN: original source fo...` | function `uvInsertFreeBlockCoalesced` | [102](../src/mem_allocator.c#L102) |
+| explicit_unknown | `Reset the allocator free list and the existing accounting counters. * If forced or either fill control is enabled, fill free payloads and * the app-stack prefix using the config...` | function `uvResetAllocatorWithOptionalFill` | [197](../src/mem_allocator.c#L197) |
+| explicit_unknown | `Set gMemBlock as the only free-list node, clear its next link, derive its * size by subtracting its raw address from 0x80400000, and set both * existing accounting words to one....` | function `_uvMemAllocInit` | [44](../src/mem_allocator.c#L44) |
+| explicit_unknown | `Sum each free-list node's stored size and return the existing signed * accumulator. This counts the stored node extents, not an independently * established usable-payload capaci...` | function `_uvMemGetBlocksSize` | [356](../src/mem_allocator.c#L356) |
+| explicit_unknown | `Traverse the free list, accumulating node sizes and tracking * minimum/maximum values in locals whose results are discarded. * RE_ORIGINAL_QUIRK: preserve unsigned comparisons w...` | function `_uvMemUnusedDbgFunc1` | [329](../src/mem_allocator.c#L329) |
+| explicit_unknown | `Walk next links from the free-list head to NULL without returning a value * or changing list storage. RE_UNKNOWN: intended debug effect, caller * reachability, valid node bounds...` | function `_uvMemUnusedDbgFunc` | [59](../src/mem_allocator.c#L59) |
+| original_quirk | `* Reserve the incoming address interval in the allocator free list. Round the * size to four bytes, preserve original node/header/output store ordering, and * optionally clear t...` | assembly `uvMemAllocAt` | [168](../src/mem_allocator.c#L168) |
+| original_quirk | `Set gMemBlock as the only free-list node, clear its next link, derive its * size by subtracting its raw address from 0x80400000, and set both * existing accounting words to one....` | function `_uvMemAllocInit` | [44](../src/mem_allocator.c#L44) |
+| original_quirk | `Traverse the free list, accumulating node sizes and tracking * minimum/maximum values in locals whose results are discarded. * RE_ORIGINAL_QUIRK: preserve unsigned comparisons w...` | function `_uvMemUnusedDbgFunc1` | [329](../src/mem_allocator.c#L329) |
 
 ## src/memory.c
 
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
 | explicit_unknown | `* Copy bytes directly when the source has address bit 31 set. Otherwise keep * the original 4,096-byte device-transfer chunks, alignment checks, leading-word * reads and DMA-bef...` | function `_uvMediaCopy` | [4](../src/memory.c#L4) |
-| explicit_unknown | `* Read 1, 2, 4 or 8 bytes in the original big-endian assembly order; unsupported * sizes return zero. Preserve all original shifts, promotions and byte reads. * The device-addre...` | function `uvMemRead` | [93](../src/memory.c#L93) |
+| explicit_unknown | `* Read 1, 2, 4 or 8 bytes in the original big-endian assembly order; unsupported * sizes return zero. Preserve all original shifts, promotions and byte reads. * The device-addre...` | function `uvMemRead` | [97](../src/memory.c#L97) |
+| explicit_unknown | `Fill exactly nbytes successive destination bytes with the low eight bits * of value; a zero count performs no store. RE_UNKNOWN: destination capacity, * validity and overlap wit...` | function `uvMemSet` | [79](../src/memory.c#L79) |
 | explicit_unknown | `RE_UNKNOWN: original fault intent and reachable callers need evidence.` | function `_uvMediaCopy` | [48](../src/memory.c#L48) |
 | original_quirk | `* Copy bytes directly when the source has address bit 31 set. Otherwise keep * the original 4,096-byte device-transfer chunks, alignment checks, leading-word * reads and DMA-bef...` | function `_uvMediaCopy` | [4](../src/memory.c#L4) |
-| original_quirk | `* Read 1, 2, 4 or 8 bytes in the original big-endian assembly order; unsupported * sizes return zero. Preserve all original shifts, promotions and byte reads. * The device-addre...` | function `uvMemRead` | [93](../src/memory.c#L93) |
+| original_quirk | `* Read 1, 2, 4 or 8 bytes in the original big-endian assembly order; unsupported * sizes return zero. Preserve all original shifts, promotions and byte reads. * The device-addre...` | function `uvMemRead` | [97](../src/memory.c#L97) |
 | original_quirk | `RE_ORIGINAL_QUIRK: odd device-transfer inputs zero addresses 1 and 2.` | function `_uvMediaCopy` | [47](../src/memory.c#L47) |
 
 ## src/module.c
@@ -9716,30 +9833,37 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
-| address_function | `func_80001038` | function `func_80001038` | [203](../src/profiler.c#L203) |
-| address_function | `func_80001104` | function `func_80001104` | [232](../src/profiler.c#L232) |
-| address_global | `D_8001F770` | function `uvProfilerBegin`, function `uvProfilerEnd`, function `uvProfilerInit`, global `D_8001F770` | [25](../src/profiler.c#L25), [74](../src/profiler.c#L74), [75](../src/profiler.c#L75), [105](../src/profiler.c#L105), [106](../src/profiler.c#L106), [107](../src/profiler.c#L107), [192](../src/profiler.c#L192), [193](../src/profiler.c#L193) (+1 in JSON) |
+| address_function | `func_80001038` | function `func_80001038` | [229](../src/profiler.c#L229) |
+| address_function | `func_80001104` | function `func_80001104` | [262](../src/profiler.c#L262) |
+| address_global | `D_8001F770` | function `uvProfilerBegin`, function `uvProfilerEnd`, function `uvProfilerInit`, global `D_8001F770` | [25](../src/profiler.c#L25), [84](../src/profiler.c#L84), [85](../src/profiler.c#L85), [115](../src/profiler.c#L115), [116](../src/profiler.c#L116), [117](../src/profiler.c#L117), [213](../src/profiler.c#L213), [214](../src/profiler.c#L214) (+1 in JSON) |
 | address_global | `D_8001F774` | global `D_8001F774` | [26](../src/profiler.c#L26) |
 | address_global | `D_8001F778` | global `D_8001F778` | [27](../src/profiler.c#L27) |
 | address_global | `D_8001F77C` | global `D_8001F77C` | [28](../src/profiler.c#L28) |
-| address_global | `D_8002D930` | function `uvProfilerBegin`, function `uvProfilerEnd`, function `uvProfilerInit`, global `D_8002D930` | [33](../src/profiler.c#L33), [76](../src/profiler.c#L76), [78](../src/profiler.c#L78), [103](../src/profiler.c#L103), [104](../src/profiler.c#L104), [195](../src/profiler.c#L195) |
-| decompiler_local | `var_v1` | function `uvProfilerCreate` | [41](../src/profiler.c#L41) |
-| explicit_unknown | `Add a signed adjustment to the profiler entry count used by the statistics * query as the accumulated-time divisor. Preserve the unrestricted adjustment. * RE_UNKNOWN: caller re...` | function `uvProfilerAdjustSampleCount` | [125](../src/profiler.c#L125) |
-| explicit_unknown | `Begin timing an unpaused profiler entry when profiling is enabled. * State 2 saves/disables interrupts on the outer begin and counts nested * begins; other enabled states only r...` | function `uvProfilerBegin` | [60](../src/profiler.c#L60) |
-| explicit_unknown | `End timing when enabled: unwind the shared interrupt-mask state first, * then record the elapsed value, count and accumulated time for an active * unpaused entry. Preserve the e...` | function `uvProfilerEnd` | [88](../src/profiler.c#L88) |
-| explicit_unknown | `Pause an active timing interval by saving its pause time; resume by * advancing the start time by the paused duration. Store the requested * pause state even when no interval is...` | function `uvProfilerSetPaused` | [208](../src/profiler.c#L208) |
-| explicit_unknown | `Read variadic property/output-pointer pairs: 1 returns accumulated time * divided by count (zero when count is zero), 2 accumulated time, 3 the * latest elapsed time, and 4 the ...` | function `uvProfilerQueryStatistics` | [146](../src/profiler.c#L146) |
-| layout_padding | `pad` | function `uvProfilerSetPaused` | [215](../src/profiler.c#L215) |
+| address_global | `D_8002D930` | function `uvProfilerBegin`, function `uvProfilerEnd`, function `uvProfilerInit`, global `D_8002D930` | [33](../src/profiler.c#L33), [86](../src/profiler.c#L86), [88](../src/profiler.c#L88), [113](../src/profiler.c#L113), [114](../src/profiler.c#L114), [216](../src/profiler.c#L216) |
+| decompiler_local | `var_v1` | function `uvProfilerCreate` | [47](../src/profiler.c#L47) |
+| explicit_unknown | `Add a signed adjustment to the profiler entry count used by the statistics * query as the accumulated-time divisor. Preserve the unrestricted adjustment. * RE_UNKNOWN: caller re...` | function `uvProfilerAdjustSampleCount` | [135](../src/profiler.c#L135) |
+| explicit_unknown | `Begin timing an unpaused profiler entry when profiling is enabled. * State 2 saves/disables interrupts on the outer begin and counts nested * begins; other enabled states only r...` | function `uvProfilerBegin` | [70](../src/profiler.c#L70) |
+| explicit_unknown | `Claim the first entry whose existing active byte is zero, store the * supplied label pointer without copying, and return its index; return -1 * if all forty entries are occupied...` | function `uvProfilerCreate` | [39](../src/profiler.c#L39) |
+| explicit_unknown | `Clear the entry's count, pause/active bytes, label pointer and timing * values, restoring the start-time sentinel to -1.0. RE_UNKNOWN: valid * indices and required begin/end/res...` | function `uvProfilerResetEntry` | [144](../src/profiler.c#L144) |
+| explicit_unknown | `End timing when enabled: unwind the shared interrupt-mask state first, * then record the elapsed value, count and accumulated time for an active * unpaused entry. Preserve the e...` | function `uvProfilerEnd` | [98](../src/profiler.c#L98) |
+| explicit_unknown | `Forward the entry index unchanged to uvProfilerResetEntry. RE_UNKNOWN: * valid index range and caller synchronization; this wrapper performs no * validation or independent reset...` | function `uvProfilerReset` | [61](../src/profiler.c#L61) |
+| explicit_unknown | `Pause an active timing interval by saving its pause time; resume by * advancing the start time by the paused duration. Store the requested * pause state even when no interval is...` | function `uvProfilerSetPaused` | [234](../src/profiler.c#L234) |
+| explicit_unknown | `Read variadic property/output-pointer pairs: 1 returns accumulated time * divided by count (zero when count is zero), 2 accumulated time, 3 the * latest elapsed time, and 4 the ...` | function `uvProfilerQueryStatistics` | [161](../src/profiler.c#L161) |
+| explicit_unknown | `Restore a saved interrupt mask when the shared word differs from one, * reset the associated nesting word on that path, clear all forty profiler * entries, and reset clock 0x6B....` | function `uvProfilerInit` | [204](../src/profiler.c#L204) |
+| explicit_unknown | `Retain the original empty profiler hook: native code returns with a nop * delay slot. RE_UNKNOWN: the intended hook role is unestablished; keep its * address name rather than in...` | function `func_80001104` | [258](../src/profiler.c#L258) |
+| explicit_unknown | `Retain the original profiler hook with no application-state operation; * native code returns while saving its argument in the incoming stack slot. * RE_UNKNOWN: the hook's inten...` | function `func_80001038` | [224](../src/profiler.c#L224) |
+| layout_padding | `pad` | function `uvProfilerSetPaused` | [241](../src/profiler.c#L241) |
 | layout_padding | `pad2A` | type `ProfilerEntry` | [21](../src/profiler.c#L21) |
-| offset_field | `unk0` | function `uvProfilerEnd`, function `uvProfilerQueryStatistics`, function `uvProfilerResetEntry`, type `ProfilerEntry` | [13](../src/profiler.c#L13), [116](../src/profiler.c#L116), [140](../src/profiler.c#L140), [178](../src/profiler.c#L178) |
-| offset_field | `unk10` | function `uvProfilerResetEntry`, function `uvProfilerSetPaused`, type `ProfilerEntry` | [15](../src/profiler.c#L15), [141](../src/profiler.c#L141), [220](../src/profiler.c#L220), [225](../src/profiler.c#L225) |
-| offset_field | `unk18` | function `uvProfilerEnd`, function `uvProfilerQueryStatistics`, function `uvProfilerResetEntry`, type `ProfilerEntry` | [16](../src/profiler.c#L16), [118](../src/profiler.c#L118), [139](../src/profiler.c#L139), [169](../src/profiler.c#L169), [175](../src/profiler.c#L175) |
-| offset_field | `unk24` | function `uvProfilerAdjustSampleCount`, function `uvProfilerEnd`, function `uvProfilerQueryStatistics`, function `uvProfilerResetEntry`, type `ProfilerEntry` | [18](../src/profiler.c#L18), [117](../src/profiler.c#L117), [130](../src/profiler.c#L130), [135](../src/profiler.c#L135), [168](../src/profiler.c#L168), [169](../src/profiler.c#L169), [181](../src/profiler.c#L181) |
-| offset_field | `unk28` | function `uvProfilerBegin`, function `uvProfilerEnd`, function `uvProfilerResetEntry`, function `uvProfilerSetPaused`, type `ProfilerEntry` | [19](../src/profiler.c#L19), [70](../src/profiler.c#L70), [109](../src/profiler.c#L109), [136](../src/profiler.c#L136), [218](../src/profiler.c#L218), [223](../src/profiler.c#L223), [228](../src/profiler.c#L228) |
-| offset_field | `unk29` | function `uvProfilerBegin`, function `uvProfilerCreate`, function `uvProfilerResetEntry`, type `ProfilerEntry` | [20](../src/profiler.c#L20), [46](../src/profiler.c#L46), [47](../src/profiler.c#L47), [71](../src/profiler.c#L71), [137](../src/profiler.c#L137) |
-| offset_field | `unk8` | function `uvProfilerBegin`, function `uvProfilerEnd`, function `uvProfilerResetEntry`, function `uvProfilerSetPaused`, type `ProfilerEntry` | [14](../src/profiler.c#L14), [81](../src/profiler.c#L81), [110](../src/profiler.c#L110), [114](../src/profiler.c#L114), [115](../src/profiler.c#L115), [142](../src/profiler.c#L142), [217](../src/profiler.c#L217), [225](../src/profiler.c#L225) |
-| unused_identifier | `unusedPointer` | function `uvProfilerQueryStatistics` | [156](../src/profiler.c#L156) |
-| unused_identifier | `unusedTemporary` | function `uvProfilerEnd` | [96](../src/profiler.c#L96) |
+| offset_field | `unk0` | function `uvProfilerEnd`, function `uvProfilerQueryStatistics`, function `uvProfilerResetEntry`, type `ProfilerEntry` | [13](../src/profiler.c#L13), [126](../src/profiler.c#L126), [155](../src/profiler.c#L155), [193](../src/profiler.c#L193) |
+| offset_field | `unk10` | function `uvProfilerResetEntry`, function `uvProfilerSetPaused`, type `ProfilerEntry` | [15](../src/profiler.c#L15), [156](../src/profiler.c#L156), [246](../src/profiler.c#L246), [251](../src/profiler.c#L251) |
+| offset_field | `unk18` | function `uvProfilerEnd`, function `uvProfilerQueryStatistics`, function `uvProfilerResetEntry`, type `ProfilerEntry` | [16](../src/profiler.c#L16), [128](../src/profiler.c#L128), [154](../src/profiler.c#L154), [184](../src/profiler.c#L184), [190](../src/profiler.c#L190) |
+| offset_field | `unk24` | function `uvProfilerAdjustSampleCount`, function `uvProfilerEnd`, function `uvProfilerQueryStatistics`, function `uvProfilerResetEntry`, type `ProfilerEntry` | [18](../src/profiler.c#L18), [127](../src/profiler.c#L127), [140](../src/profiler.c#L140), [150](../src/profiler.c#L150), [183](../src/profiler.c#L183), [184](../src/profiler.c#L184), [196](../src/profiler.c#L196) |
+| offset_field | `unk28` | function `uvProfilerBegin`, function `uvProfilerEnd`, function `uvProfilerResetEntry`, function `uvProfilerSetPaused`, type `ProfilerEntry` | [19](../src/profiler.c#L19), [80](../src/profiler.c#L80), [119](../src/profiler.c#L119), [151](../src/profiler.c#L151), [244](../src/profiler.c#L244), [249](../src/profiler.c#L249), [254](../src/profiler.c#L254) |
+| offset_field | `unk29` | function `uvProfilerBegin`, function `uvProfilerCreate`, function `uvProfilerResetEntry`, type `ProfilerEntry` | [20](../src/profiler.c#L20), [52](../src/profiler.c#L52), [53](../src/profiler.c#L53), [81](../src/profiler.c#L81), [152](../src/profiler.c#L152) |
+| offset_field | `unk8` | function `uvProfilerBegin`, function `uvProfilerEnd`, function `uvProfilerResetEntry`, function `uvProfilerSetPaused`, type `ProfilerEntry` | [14](../src/profiler.c#L14), [91](../src/profiler.c#L91), [120](../src/profiler.c#L120), [124](../src/profiler.c#L124), [125](../src/profiler.c#L125), [157](../src/profiler.c#L157), [243](../src/profiler.c#L243), [251](../src/profiler.c#L251) |
+| original_quirk | `Restore a saved interrupt mask when the shared word differs from one, * reset the associated nesting word on that path, clear all forty profiler * entries, and reset clock 0x6B....` | function `uvProfilerInit` | [204](../src/profiler.c#L204) |
+| unused_identifier | `unusedPointer` | function `uvProfilerQueryStatistics` | [171](../src/profiler.c#L171) |
+| unused_identifier | `unusedTemporary` | function `uvProfilerEnd` | [106](../src/profiler.c#L106) |
 
 ## src/sched.c
 

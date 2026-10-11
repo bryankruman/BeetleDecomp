@@ -7,6 +7,11 @@
 // Only eight events?
 __OSEventState __osEventStateTab[8] ALIGNED(0x8);
 
+/* Associate the supplied queue and message with the indexed event while
+ * interrupts are disabled, then restore the mask. The event-range check
+ * remains _DEBUG-only. RE_UNKNOWN: valid release-build event indices, queue
+ * lifetime and replacement ordering. */
+#line 10 "src/libultra/os/seteventmesg.c"
 void osSetEventMesg(OSEvent event, OSMesgQueue* mq, OSMesg msg) {
     register u32 saveMask;
     __OSEventState* es;

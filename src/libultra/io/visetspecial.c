@@ -28,6 +28,13 @@
  *
  * @param func OS_VI_*_ON / OS_VI_*_OFF bits to enable or disable a setting.
  */
+/* Apply the requested gamma, dithering, divot and dither-filter controls to
+ * the next video context in their original order, then mark control
+ * updated. RE_ORIGINAL_QUIRK: on/off bits are independent tests, so later
+ * off paths can override on paths; disabling the dither filter restores
+ * antialias bits from the selected mode. RE_UNKNOWN: release-build flag
+ * combinations and mode validity; preserve _DEBUG-only rejection. */
+#line 31 "src/libultra/io/visetspecial.c"
 void osViSetSpecialFeatures(u32 func) {
     register u32 saveMask;
 

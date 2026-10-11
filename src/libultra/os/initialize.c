@@ -20,6 +20,14 @@ u32 __OSGlobalIntMask = OS_IM_ALL;
 u32 __osFinalrom;
 
 
+/* Enable the existing FPU state, perform the PIF read/write handshake,
+ * install and flush exception vectors, set up the debug TLB mapping, derive
+ * the clock rate, clear the NMI buffer on cold reset, and select the TV
+ * clock. RE_ORIGINAL_QUIRK: preserve unchecked ROM-clock read status and
+ * indefinite SI retry loops. RE_UNKNOWN: handshake bit meaning,
+ * hardware/provider failure reachability and reset/environment
+ * prerequisites; retain the original masks and operation order. */
+#line 23 "src/libultra/os/initialize.c"
 void osInitialize() {
     u32 pifdata;
     u32 clock = 0;

@@ -6,6 +6,13 @@
 
 extern __OSThreadContext thprof[];
 
+/* Initialize the saved entry/argument/stack/cleanup context, interrupt/FPU
+ * state and stopped-thread fields, then link the thread into the active
+ * list under the saved interrupt mask. Preserve signed pointer-to-context
+ * conversions and the sixteen-byte stack adjustment. RE_UNKNOWN: stack
+ * extent/alignment and release-build priority/ID domains; retain all
+ * build-version profiling branches and _DEBUG-only checks. */
+#line 9 "src/libultra/os/createthread.c"
 void osCreateThread(OSThread* t, OSId id, void (*entry)(void*), void* arg, void* sp, OSPri p) {
     register u32 saveMask;
     OSIntMask mask;

@@ -3351,10 +3351,19 @@ Totals: 441 further recoveries after the 225 upstream ordinary imports, plus 201
 Frozen wave `7010-kernel-scheduler-native-contracts` and `accepted-kernel-scheduler-native-contracts-7010` verify real translation-unit instructions/full relocations, 133 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 441 further readable functions
+## Historical accepted checkpoint — 441 further readable functions
 
 Clarify62 existing ordinary module contracts2132B across24 sources; preserve literal bodies, ABI, logical coordinates,173 typed SDK rows and83 historical attempts. Require actual62 candidate/24 baseline trials, warning/native/ordered-record/site observations and fresh full133 packed modules/original ROM/full ledger/Git proof. Original12 tail bytes remain excluded; no recovery credit.
 
 Totals: 441 further recoveries after the 225 upstream ordinary imports, plus 2077 existing C semantic cleanups. Current ledger: 759 assembly references = 720 ordinary + 39 entrypoints; 699,468 known remaining instruction bytes; zero unknown sizes; 289 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `8300-remaining-module-native-contracts` and `accepted-remaining-module-native-contracts-8300` verify real translation-unit instructions/full relocations, 133 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 441 further readable functions
+
+Clarify44 existing kernel contracts7900B across24 sources; preserve complete literal bodies, ABI, logical coordinates,173 typed SDK rows and83 historical attempts. Require actual44 candidate/24 baseline trials, warning/native/complete ordered-record/site observations and fresh full133 original packed modules/original ROM/full ledger/Git proof. Preserve26 historical local-metadata holds separately from original positive global FUNC boundaries. No recovery credit.
+
+Totals: 441 further recoveries after the 225 upstream ordinary imports, plus 2121 existing C semantic cleanups. Current ledger: 759 assembly references = 720 ordinary + 39 entrypoints; 699,468 known remaining instruction bytes; zero unknown sizes; 289 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `8820-kernel-remaining44-native-contracts` and `accepted-kernel-remaining44-native-contracts-8820` verify real translation-unit instructions/full relocations, 133 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

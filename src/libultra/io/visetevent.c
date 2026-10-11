@@ -49,6 +49,12 @@
 // TODO: this comes from a header
 #ident "$Revision: 1.17 $"
 
+/* Store the queue, message and retrace count in the next video context
+ * while interrupts are disabled. Manager and NULL checks remain
+ * _DEBUG-only. RE_UNKNOWN: queue lifetime and zero/out-of-range
+ * retrace-count behavior; preserve the existing assignment and destination
+ * field width. */
+#line 52 "src/libultra/io/visetevent.c"
 void osViSetEvent(OSMesgQueue* mq, OSMesg m, u32 retraceCount) {
     register u32 saveMask;
 

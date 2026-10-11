@@ -2,6 +2,12 @@
 #include "PR/ultraerror.h"
 #include "PRinternal/osint.h"
 
+/* Append a message under the saved interrupt mask, waiting on a full queue
+ * only for the blocking flag; other flags take the original failure path.
+ * Wake one waiting receiver after insertion and restore the mask.
+ * RE_UNKNOWN: queue storage/capacity and release-build flag domain;
+ * preserve the distinct send/receive flag predicates. */
+#line 5 "src/libultra/os/sendmesg.c"
 s32 osSendMesg(OSMesgQueue* mq, OSMesg msg, s32 flags) {
     register u32 saveMask;
     register s32 last;

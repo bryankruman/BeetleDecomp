@@ -2,6 +2,12 @@
 #include "PR/ultraerror.h"
 #include "PRinternal/osint.h"
 
+/* Make a waiting/stopped thread runnable using its existing queue
+ * relationship, then dispatch if no thread is running or yield when the run
+ * queue has higher priority. Restore the saved interrupt mask on return.
+ * RE_UNKNOWN: allowed release-build input states and queue invariants;
+ * preserve the conditional debug error path and scheduler handoff order. */
+#line 5 "src/libultra/os/startthread.c"
 void osStartThread(OSThread* t) {
     register u32 saveMask = __osDisableInt();
 

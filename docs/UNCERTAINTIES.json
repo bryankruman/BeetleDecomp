@@ -220,11 +220,11 @@
     "include/uvvolumeld_rom.h": "f3f3d1ddfdaaac4ca4b60a63e01f367c9e9c5aad31fa38a6f4106ceecf2362d5",
     "include/variables.h": "6ae07089591c5fd25a080e149036420052d92c993e3b6397d01a97babbe3ede7",
     "include/weapon.h": "1144bab7321fe6c83d740bea9a102b2ab82c6b765dd4b4a1ba4c27de719845d0",
-    "src/clocks.c": "cef2d5b3063fa7eae317005e88a9de413a4475b340dbf83c2a6637b917f7b1d1",
+    "src/clocks.c": "19915966ca2510442c332c75fe897f5838e3000bba7ecc73222f8fdb40f4af6f",
     "src/crash_screen.c": "7e78df2fb86123fd4f921d55d25a459dd6bdd2e1dd9f7372ac91bc98294ab36e",
     "src/file_manager.c": "b99a84700b406cbd121dc0ee9fe1fd0ca961c1d976116215a623c2e0e667e7e4",
     "src/filesystem.c": "c85a1bbbe4cead20c69e04da5cb5ca0698943d3805a0dfcfbf3d546957be86ec",
-    "src/game_init.c": "6944f62f0433701411476dac29f9bc72d997309d6be0919a55c7e7a3b8b6e20b",
+    "src/game_init.c": "accd6a7fe1c87cb941f8d769f43b69561cc672436c765674eaa2bd43486a1994",
     "src/isprint.c": "0a772034f3731b8677ddd0d15e2977f08f7ef6882db5055abfbd6dd09a7df3ca",
     "src/libultra/audio/auxbus.c": "6df923275b93b794690cf9763d60112b49454f388c87314ea57836cceb043dc3",
     "src/libultra/audio/cents2ratio.c": "3ade16afa196e4f358697946a417ab23c3559f1c3401f715caf3b0f10e5851e7",
@@ -303,34 +303,34 @@
     "src/libultra/io/contquery.c": "a6c202027824498463298d5ccb6ebee06322e6a1cb18872d549dd57cbb9a7033",
     "src/libultra/io/contsetch.c": "0c5bc528e0c93168789d1e8a84ddb88d386d06948cfd760c6104b40e04a24caa",
     "src/libultra/io/pfsisplug.c": "c0c2eae5a8b136e9dbc156c18a291f4ca6fcfbb8c11f8fe0ef01a2ed037a2eca",
-    "src/libultra/io/piread.c": "0195f296a22084659c67f28b0a4d3866327f0cc94df518000309f0dc17b20f50",
-    "src/libultra/io/sptask.c": "695161e5c29ba9a20ea1cfdf89485b8d08123dd8a4c4064081b7e56ec7fa007b",
-    "src/libultra/io/sptaskyield.c": "76dcc4157883ef5ef6827696be014e58042528bdf4c711fc54566794b6ff4cca",
-    "src/libultra/io/sptaskyielded.c": "009f70316b5f35629275a728099d14e503a34f130b879b4b6588d3960dd0adbc",
-    "src/libultra/io/viblack.c": "8afdf1a80d26cb576e721b6a508a2a515bf27ec7e804ac5a5e30ab7f36800010",
-    "src/libultra/io/vigetcurrframebuf.c": "f4f061d11be141c45340e13074ce5e5f9cbf1e1e4dc8e3244890965ebd21b8f3",
-    "src/libultra/io/vigetnextframebuf.c": "dce48d87b49dc10b386f81040267af1417b889a4c0f6a1983a1bd3e60961aa33",
-    "src/libultra/io/vimgr.c": "b743c9f32ea0e92653847471fb63fd9546d785edbf9fe61684d481d4a08e241b",
-    "src/libultra/io/visetevent.c": "bf404f5f12e82994f2dd2ea5bff8e09ba84187a448fec60eaa31037e355d9383",
-    "src/libultra/io/visetmode.c": "2e537647514187dadae16f691afcbe9097c04b5f53e4f708b9f0d56bef0383af",
-    "src/libultra/io/visetspecial.c": "f7a809bbce88cff70f702b42564469dcb10524b9691d3fe396b57135dace17b7",
-    "src/libultra/io/viswapbuf.c": "b47f45e39e7bda4bc73600384b888b3e80bad41afa78993227a65ca18951dd6d",
+    "src/libultra/io/piread.c": "09832de2dac044125825578b33b1f208400b521260480441b3a7e869c3db417b",
+    "src/libultra/io/sptask.c": "fa27d75a5bc8f7acbba210cb8eb7a8942af8c92179bbc8af97b984e7dbe8755f",
+    "src/libultra/io/sptaskyield.c": "e50c85feef2a8c8f09600485081302126fc4fc180b05f37d2de075d7af437cf5",
+    "src/libultra/io/sptaskyielded.c": "f53662037720c322878f3acc3eee1a764f281e5bc4118b6f5cef497dddb83478",
+    "src/libultra/io/viblack.c": "bfc16e45f4c098bb7469e3ab45180673a9f0e57cbd4154b01f56a7929352536f",
+    "src/libultra/io/vigetcurrframebuf.c": "3706b35ff8b40872103a1aedeab5fa39fc3359814a0dbbfcbc7239750dc1abe3",
+    "src/libultra/io/vigetnextframebuf.c": "a81026548a17ebde16fac04a3db7037b733d9058ac9031b4b5ee0b7fc6269e78",
+    "src/libultra/io/vimgr.c": "86894f7f95a9ae42ac6ffdc2199a6f4e5b940370d85ea74e6215f74bc4d45d9e",
+    "src/libultra/io/visetevent.c": "df5e4f8b3a453eea274d30e80e2bd99b2121ecc4533ea33d3f0c5d0d60a28be8",
+    "src/libultra/io/visetmode.c": "e387313c4b412991dc67fd5aea3194c319ee0fdcd9c03c589a356eb231da44dd",
+    "src/libultra/io/visetspecial.c": "5ca011c0f4d2913cf5ea5fa8693446dce5c4c69c886305c4960112c5f1900a6b",
+    "src/libultra/io/viswapbuf.c": "5983f06e50929fc212082898f8506649a0e66a845ba478f553691c3d51ef250a",
     "src/libultra/libc/ldiv.c": "636e95d6b62a4724e61310fdf9dfe7d6e793b5a3f910ac25885af9ab7b0d6bf9",
     "src/libultra/libc/ll.c": "1da6e00d1364e19791a2b51074fe19eafac9a92f595d267d7cbdbe8379149142",
     "src/libultra/libc/sprintf.c": "f1584ae189f76359486b77a81853b0d136a6ffcc4570bd885d61f4072192fb8b",
     "src/libultra/libc/string.c": "a7be1ea68dbbd91bd78b5dffecc3c7dbe487a67e1571b5f15722f0743350a460",
     "src/libultra/libc/xstdio.h": "f12e01b05a22622e42efff0fa2f72533b1086fe8cbb0825a601f450d79a02d36",
-    "src/libultra/os/createmesgqueue.c": "a22ee9bd7b578ae677d9628ab42333751306d49f974cc9dbcb681973f4aaba9a",
-    "src/libultra/os/createthread.c": "580041ed889963b87f5e5d59ba56eb495a650f7c3237eb9aa60d27b1502fca44",
-    "src/libultra/os/initialize.c": "848d491370e6711a98675cd8968d6ef3022bf3459d23bb276296836ff36cb500",
-    "src/libultra/os/recvmesg.c": "6bf5e355f840ad618614fde66e780bd7ca3449eaa398c58445259d3196efec0c",
-    "src/libultra/os/sendmesg.c": "6ab22710804c92064d6f077ffc67e3ff41ba1096919bbeea2d1d3beba7c2327a",
-    "src/libultra/os/seteventmesg.c": "6d0e86a4052c45ad2bfc1cbab60e3df2aae8fbdedd6eae0fd146df36cbe9073a",
-    "src/libultra/os/startthread.c": "78735322769a1d5a6facd5fc443cfdd3f9e798562e0defee4a9a8de7f562ce57",
+    "src/libultra/os/createmesgqueue.c": "4af364856251878b32cd0a12eef3ae564ab5f336af2ccb38ff7e1395601036ab",
+    "src/libultra/os/createthread.c": "46fc95de0be7ba3c7be66f9ebb1f85857a2612ef95321ccd5f56cc15034754b9",
+    "src/libultra/os/initialize.c": "9bb0665967fd09267816e78394978a1fa3eaf2e35ea15548e0d78f7ad057d967",
+    "src/libultra/os/recvmesg.c": "7e4c526db104b88ef865075ac9d5784f560c9aab9bb8190db5cef1245599ca97",
+    "src/libultra/os/sendmesg.c": "6c5234821ba9bb9e5f72a532f33d7ee7e53089e0736a9ba047b1c03252c7c4fc",
+    "src/libultra/os/seteventmesg.c": "57b5fd381e9d7ffe93143fffdf97ae32e247f9a448d5414a24350994cc407782",
+    "src/libultra/os/startthread.c": "921b8c35f536c3aa2e80825f1869ef54f403ee38409fa0419fdc8b5eae94bbf6",
     "src/main.c": "fbc113b991199ac693b115d981208b182ceda0445b94d0014a19956646800bda",
-    "src/mem_allocator.c": "5554fdc8f5a8e9918a7058897493e46a1c41cd75ce268adf0edb61bf197a8b3c",
+    "src/mem_allocator.c": "653b447a10ae6e13bd462f9f8936eedf6ef78879874fc73afc412b691203311e",
     "src/mem_block.c": "b6e363010c6efbe986f1574e9bca20d849b80fbab803c44ce872ef258e3bdf7c",
-    "src/memory.c": "ba32d6e4f4bc044fc7233a90a017099c3d69a98ca9543f2896fa8778e98d1ae2",
+    "src/memory.c": "81c2b0b4711a762ccce05e206635fc7491b74775e2851ffe6fd8ddddebc7298b",
     "src/module.c": "12b66dab4fb25996959127f017b6a585395d9a4dd6933df839776e2b0e74cc3c",
     "src/modules/ai.c": "d9c685beae499950e225991b618448dc40fc6508d0bcabbb2806947639492270",
     "src/modules/aiedit.c": "d96bd5cec62df33dd0757616b78a91e042bc81768aa3eadd7ab5b34cea26425f",
@@ -465,12 +465,12 @@
     "src/modules/victory.c": "79c2bfa4dd795c9179a005217aff399c59b51fa075e2d3b535108cff81e89fb8",
     "src/modules/voltest.c": "064820993a3690a1af9ec67130b8c2107e1286fe57b6f787acfa78b103805506",
     "src/modules/weapon.c": "dc7ca2ec618cd658c5d3875e89e045379b1240e0537b96c47edc7cec0d24459d",
-    "src/profiler.c": "8fe9ef148de0aad3a8fb4b791a9acb652952176c3babd3d0cd5c5b59c9615b0d",
+    "src/profiler.c": "558155e90243135f7111f37296f5f4c86c6374b9687885b47fb72e9bce579cc5",
     "src/sched.c": "26791ca9f30fd5355b11ea03a64a457757d2029595be26428c2925798105d9b4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "05ede07a055cbdf022bb601fc195fdafb328c64c3434910443f2a03624e880d9",
-    "docs/VALIDATION_20261006.md": "39ddb5063fe28e3453540aa04f3d28433f45d34b09740165bd98629b99d06f3b"
+    "docs/STRATEGY_V4.md": "328e2e538d697df2a22fdbcb6d5de16e08373cda4c8a9eebd530a07c1c8177eb",
+    "docs/VALIDATION_20261006.md": "593118454e07ffff081306fb34867856c7d8b34f8f597346105fbb3626234b2c"
   },
   "counts": {
     "address_function": 910,
@@ -480,11 +480,11 @@
     "conditional_draft": 4,
     "decompiler_local": 619,
     "draft_marker": 38,
-    "explicit_unknown": 1774,
+    "explicit_unknown": 1818,
     "layout_padding": 275,
     "offset_field": 1673,
     "opaque_type": 282,
-    "original_quirk": 459,
+    "original_quirk": 469,
     "uncertainty_note": 88,
     "unused_identifier": 137
   },
@@ -22300,15 +22300,15 @@
       "path": "src/profiler.c",
       "symbol": "func_80001038",
       "lines": [
-        203
+        229
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_80001038",
-          "declaration_line": 203,
+          "declaration_line": 229,
           "lines": [
-            203
+            229
           ]
         }
       ]
@@ -22319,15 +22319,15 @@
       "path": "src/profiler.c",
       "symbol": "func_80001104",
       "lines": [
-        232
+        262
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_80001104",
-          "declaration_line": 232,
+          "declaration_line": 262,
           "lines": [
-            232
+            262
           ]
         }
       ]
@@ -22595,15 +22595,15 @@
       "symbol": "D_80021030",
       "lines": [
         13,
-        62
+        76
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvClkGetSec",
-          "declaration_line": 48,
+          "declaration_line": 62,
           "lines": [
-            62
+            76
           ]
         }
       ]
@@ -22615,15 +22615,15 @@
       "symbol": "D_8002D948",
       "lines": [
         9,
-        23
+        28
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGetClk",
-          "declaration_line": 16,
+          "declaration_line": 21,
           "lines": [
-            23
+            28
           ]
         },
         {
@@ -22643,15 +22643,15 @@
       "symbol": "D_8002D960",
       "lines": [
         10,
-        18
+        23
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGetClk",
-          "declaration_line": 16,
+          "declaration_line": 21,
           "lines": [
-            18
+            23
           ]
         },
         {
@@ -22761,17 +22761,17 @@
       "symbol": "D_8001F7D4",
       "lines": [
         12,
-        135,
-        136
+        143,
+        144
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGameInit",
-          "declaration_line": 23,
+          "declaration_line": 31,
           "lines": [
-            135,
-            136
+            143,
+            144
           ]
         },
         {
@@ -22791,15 +22791,15 @@
       "symbol": "D_8001F7D8",
       "lines": [
         13,
-        137
+        145
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGameInit",
-          "declaration_line": 23,
+          "declaration_line": 31,
           "lines": [
-            137
+            145
           ]
         },
         {
@@ -23160,52 +23160,52 @@
       "symbol": "D_8001F7A0",
       "lines": [
         13,
-        42,
-        97,
-        114,
-        143,
-        144,
-        145,
-        187,
-        285,
-        294
+        55,
+        116,
+        133,
+        162,
+        163,
+        164,
+        206,
+        309,
+        318
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvMemAlloc",
-          "declaration_line": 223,
+          "declaration_line": 247,
           "lines": [
-            285,
-            294
+            309,
+            318
           ]
         },
         {
           "kind": "function",
           "name": "_uvMemAllocInit",
-          "declaration_line": 38,
+          "declaration_line": 51,
           "lines": [
-            42
+            55
           ]
         },
         {
           "kind": "function",
           "name": "uvInsertFreeBlockCoalesced",
-          "declaration_line": 88,
+          "declaration_line": 107,
           "lines": [
-            97,
-            114,
-            143,
-            144,
-            145
+            116,
+            133,
+            162,
+            163,
+            164
           ]
         },
         {
           "kind": "function",
           "name": "uvResetAllocatorWithOptionalFill",
-          "declaration_line": 185,
+          "declaration_line": 204,
           "lines": [
-            187
+            206
           ]
         },
         {
@@ -23225,35 +23225,35 @@
       "symbol": "D_8001F7A4",
       "lines": [
         14,
-        43,
-        144,
-        145,
-        188
+        56,
+        163,
+        164,
+        207
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvMemAllocInit",
-          "declaration_line": 38,
+          "declaration_line": 51,
           "lines": [
-            43
+            56
           ]
         },
         {
           "kind": "function",
           "name": "uvInsertFreeBlockCoalesced",
-          "declaration_line": 88,
+          "declaration_line": 107,
           "lines": [
-            144,
-            145
+            163,
+            164
           ]
         },
         {
           "kind": "function",
           "name": "uvResetAllocatorWithOptionalFill",
-          "declaration_line": 185,
+          "declaration_line": 204,
           "lines": [
-            188
+            207
           ]
         },
         {
@@ -23273,24 +23273,24 @@
       "symbol": "D_8001F7A8",
       "lines": [
         15,
-        189,
-        295
+        208,
+        319
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvMemAlloc",
-          "declaration_line": 223,
+          "declaration_line": 247,
           "lines": [
-            295
+            319
           ]
         },
         {
           "kind": "function",
           "name": "uvResetAllocatorWithOptionalFill",
-          "declaration_line": 185,
+          "declaration_line": 204,
           "lines": [
-            189
+            208
           ]
         },
         {
@@ -23310,15 +23310,15 @@
       "symbol": "D_8001F7AC",
       "lines": [
         16,
-        190
+        209
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvResetAllocatorWithOptionalFill",
-          "declaration_line": 185,
+          "declaration_line": 204,
           "lines": [
-            190
+            209
           ]
         },
         {
@@ -23338,24 +23338,24 @@
       "symbol": "D_8001F7B0",
       "lines": [
         17,
-        191,
-        294
+        210,
+        318
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvMemAlloc",
-          "declaration_line": 223,
+          "declaration_line": 247,
           "lines": [
-            294
+            318
           ]
         },
         {
           "kind": "function",
           "name": "uvResetAllocatorWithOptionalFill",
-          "declaration_line": 185,
+          "declaration_line": 204,
           "lines": [
-            191
+            210
           ]
         },
         {
@@ -23375,15 +23375,15 @@
       "symbol": "D_8001F7B4",
       "lines": [
         18,
-        192
+        211
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvResetAllocatorWithOptionalFill",
-          "declaration_line": 185,
+          "declaration_line": 204,
           "lines": [
-            192
+            211
           ]
         },
         {
@@ -23403,28 +23403,28 @@
       "symbol": "D_8001F7B8",
       "lines": [
         19,
-        193,
-        245,
-        263,
-        265
+        212,
+        269,
+        287,
+        289
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvMemAlloc",
-          "declaration_line": 223,
+          "declaration_line": 247,
           "lines": [
-            245,
-            263,
-            265
+            269,
+            287,
+            289
           ]
         },
         {
           "kind": "function",
           "name": "uvResetAllocatorWithOptionalFill",
-          "declaration_line": 185,
+          "declaration_line": 204,
           "lines": [
-            193
+            212
           ]
         },
         {
@@ -23444,24 +23444,24 @@
       "symbol": "D_8001F7BC",
       "lines": [
         20,
-        194,
-        265
+        213,
+        289
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvMemAlloc",
-          "declaration_line": 223,
+          "declaration_line": 247,
           "lines": [
-            265
+            289
           ]
         },
         {
           "kind": "function",
           "name": "uvResetAllocatorWithOptionalFill",
-          "declaration_line": 185,
+          "declaration_line": 204,
           "lines": [
-            194
+            213
           ]
         },
         {
@@ -23519,32 +23519,32 @@
       "symbol": "D_8001F7D0",
       "lines": [
         24,
-        32,
-        33,
-        34,
-        196,
-        197,
-        198
+        38,
+        39,
+        40,
+        215,
+        216,
+        217
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvMemAllocInitStartUp",
-          "declaration_line": 30,
+          "declaration_line": 36,
           "lines": [
-            32,
-            33,
-            34
+            38,
+            39,
+            40
           ]
         },
         {
           "kind": "function",
           "name": "uvResetAllocatorWithOptionalFill",
-          "declaration_line": 185,
+          "declaration_line": 204,
           "lines": [
-            196,
-            197,
-            198
+            215,
+            216,
+            217
           ]
         },
         {
@@ -23564,15 +23564,15 @@
       "symbol": "D_8002F7DC",
       "lines": [
         26,
-        267
+        291
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvMemAlloc",
-          "declaration_line": 223,
+          "declaration_line": 247,
           "lines": [
-            267
+            291
           ]
         },
         {
@@ -75327,43 +75327,43 @@
       "symbol": "D_8001F770",
       "lines": [
         25,
-        74,
-        75,
-        105,
-        106,
-        107,
-        192,
-        193,
-        194
+        84,
+        85,
+        115,
+        116,
+        117,
+        213,
+        214,
+        215
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvProfilerBegin",
-          "declaration_line": 65,
+          "declaration_line": 75,
           "lines": [
-            74,
-            75
+            84,
+            85
           ]
         },
         {
           "kind": "function",
           "name": "uvProfilerEnd",
-          "declaration_line": 93,
+          "declaration_line": 103,
           "lines": [
-            105,
-            106,
-            107
+            115,
+            116,
+            117
           ]
         },
         {
           "kind": "function",
           "name": "uvProfilerInit",
-          "declaration_line": 189,
+          "declaration_line": 210,
           "lines": [
-            192,
-            193,
-            194
+            213,
+            214,
+            215
           ]
         },
         {
@@ -75440,37 +75440,37 @@
       "symbol": "D_8002D930",
       "lines": [
         33,
-        76,
-        78,
-        103,
-        104,
-        195
+        86,
+        88,
+        113,
+        114,
+        216
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvProfilerBegin",
-          "declaration_line": 65,
+          "declaration_line": 75,
           "lines": [
-            76,
-            78
+            86,
+            88
           ]
         },
         {
           "kind": "function",
           "name": "uvProfilerEnd",
-          "declaration_line": 93,
+          "declaration_line": 103,
           "lines": [
-            103,
-            104
+            113,
+            114
           ]
         },
         {
           "kind": "function",
           "name": "uvProfilerInit",
-          "declaration_line": 189,
+          "declaration_line": 210,
           "lines": [
-            195
+            216
           ]
         },
         {
@@ -76740,7 +76740,7 @@
       "path": "src/mem_allocator.c",
       "symbol": "_uvMemFree",
       "lines": [
-        303
+        327
       ],
       "evidence": "asm/us/nonmatchings/mem_allocator/_uvMemFree.s"
     },
@@ -76750,7 +76750,7 @@
       "path": "src/mem_allocator.c",
       "symbol": "uvMemAllocAt",
       "lines": [
-        174
+        193
       ],
       "evidence": "asm/us/nonmatchings/mem_allocator/uvMemAllocAt.s"
     },
@@ -85438,21 +85438,21 @@
       "path": "src/mem_allocator.c",
       "symbol": "var_a0",
       "lines": [
-        308,
-        313,
-        315,
-        316
+        339,
+        344,
+        346,
+        347
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvMemUnusedDbgFunc1",
-          "declaration_line": 305,
+          "declaration_line": 336,
           "lines": [
-            308,
-            313,
-            315,
-            316
+            339,
+            344,
+            346,
+            347
           ]
         }
       ]
@@ -85463,21 +85463,21 @@
       "path": "src/mem_allocator.c",
       "symbol": "var_v1",
       "lines": [
-        309,
-        313,
-        319,
-        320
+        340,
+        344,
+        350,
+        351
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvMemUnusedDbgFunc1",
-          "declaration_line": 305,
+          "declaration_line": 336,
           "lines": [
-            309,
-            313,
-            319,
-            320
+            340,
+            344,
+            350,
+            351
           ]
         }
       ]
@@ -114477,15 +114477,15 @@
       "path": "src/profiler.c",
       "symbol": "var_v1",
       "lines": [
-        41
+        47
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvProfilerCreate",
-          "declaration_line": 39,
+          "declaration_line": 45,
           "lines": [
-            41
+            47
           ]
         }
       ]
@@ -114966,18 +114966,18 @@
       "path": "src/mem_allocator.c",
       "symbol": "FAKE",
       "lines": [
-        86,
-        128
+        105,
+        147
       ],
       "evidence": "Insert a released block into the address-ordered free list and merge * contiguous neighbors, preserving each original branch and counter update. * RE_UNKNOWN: original source form of the next-neighbor size calculation; * retain its existing FAKE comma expression for binary matching until * an equivalent natural expression is independently proven.",
       "owners": [
         {
           "kind": "function",
           "name": "uvInsertFreeBlockCoalesced",
-          "declaration_line": 88,
+          "declaration_line": 107,
           "lines": [
-            86,
-            128
+            105,
+            147
           ]
         }
       ]
@@ -115334,16 +115334,96 @@
       "path": "src/clocks.c",
       "symbol": "* Look up the selected clock, update the shared counter and add the original * wrap-count and current-counter contributions using the unchanged constants. * A null clock still returns zero and keeps its optional debug-print branch. * RE_UNKNOWN: valid caller clock indices, update-frequency guarantees and the * historical calibration source. Trace clock allocation/reset/update callers and * original constant producers before changing bounds or elapsed-time semantics.",
       "lines": [
-        39
+        53
       ],
       "evidence": "* Look up the selected clock, update the shared counter and add the original * wrap-count and current-counter contributions using the unchanged constants. * A null clock still returns zero and keeps its optional debug-print branch. * RE_UNKNOWN: valid caller clock indices, update-frequency guarantees and the * historical calibration source. Trace clock allocation/reset/update callers and * original constant producers before changing bounds or elapsed-time semantics.",
       "owners": [
         {
           "kind": "function",
           "name": "uvClkGetSec",
-          "declaration_line": 48,
+          "declaration_line": 62,
           "lines": [
-            39
+            53
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-42297c55a2fd",
+      "kind": "explicit_unknown",
+      "path": "src/clocks.c",
+      "symbol": "Sample the CPU count once. Increment the wrap counter only when the prior * unsigned count is at least 0xF0000001 and the new count is below 0x10000000, * then store the new count. RE_UNKNOWN: this heuristic's sampling interval and * synchronization requirements are not established by the function.",
+      "lines": [
+        40
+      ],
+      "evidence": "Sample the CPU count once. Increment the wrap counter only when the prior * unsigned count is at least 0xF0000001 and the new count is below 0x10000000, * then store the new count. RE_UNKNOWN: this heuristic's sampling interval and * synchronization requirements are not established by the function.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvClkUpdate",
+          "declaration_line": 45,
+          "lines": [
+            40
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-4a434b097f8b",
+      "kind": "explicit_unknown",
+      "path": "src/clocks.c",
+      "symbol": "Seed the last CPU count from osGetCount and clear the wrap counter. * RE_UNKNOWN: ordering against readers and the permitted initialization phase * remain caller responsibilities; this function adds no synchronization.",
+      "lines": [
+        31
+      ],
+      "evidence": "Seed the last CPU count from osGetCount and clear the wrap counter. * RE_UNKNOWN: ordering against readers and the permitted initialization phase * remain caller responsibilities; this function adds no synchronization.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvClkInit",
+          "declaration_line": 35,
+          "lines": [
+            31
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-28e38f9f6167",
+      "kind": "explicit_unknown",
+      "path": "src/clocks.c",
+      "symbol": "Select the secondary clock array for signed IDs at least 100; otherwise * reject IDs at least three and index the primary array. Preserve the absence * of a negative-ID guard and secondary upper bound. RE_UNKNOWN: callers must * establish valid indices and clock storage ownership.",
+      "lines": [
+        16
+      ],
+      "evidence": "Select the secondary clock array for signed IDs at least 100; otherwise * reject IDs at least three and index the primary array. Preserve the absence * of a negative-ID guard and secondary upper bound. RE_UNKNOWN: callers must * establish valid indices and clock storage ownership.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvGetClk",
+          "declaration_line": 21,
+          "lines": [
+            16
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-7148868bf510",
+      "kind": "explicit_unknown",
+      "path": "src/clocks.c",
+      "symbol": "Update the shared count sample, select the requested clock, and copy the * last-count and wrap snapshots when lookup succeeds. Preserve the source's * diagnostic-only failure branch. RE_UNKNOWN: valid ID bounds and concurrent * readers require caller evidence.",
+      "lines": [
+        82
+      ],
+      "evidence": "Update the shared count sample, select the requested clock, and copy the * last-count and wrap snapshots when lookup succeeds. Preserve the source's * diagnostic-only failure branch. RE_UNKNOWN: valid ID bounds and concurrent * readers require caller evidence.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvClkReset",
+          "declaration_line": 87,
+          "lines": [
+            82
           ]
         }
       ]
@@ -115564,6 +115644,66 @@
           "declaration_line": 133,
           "lines": [
             122
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-42d83f7bff81",
+      "kind": "explicit_unknown",
+      "path": "src/game_init.c",
+      "symbol": "Initialize the existing settings fields and player defaults in their * original order, enter SELECTION, handle the missing-controller path, then * drive the game update/state-change loop while controller I/O continues. * RE_ORIGINAL_QUIRK: retain repeated field assignments and late overrides, * including currentTrack and debug flags. RE_UNKNOWN: remaining unk fields, * export-slot contracts and the two reset-flag words; preserve their names * and live reads.",
+      "lines": [
+        23
+      ],
+      "evidence": "Initialize the existing settings fields and player defaults in their * original order, enter SELECTION, handle the missing-controller path, then * drive the game update/state-change loop while controller I/O continues. * RE_ORIGINAL_QUIRK: retain repeated field assignments and late overrides, * including currentTrack and debug flags. RE_UNKNOWN: remaining unk fields, * export-slot contracts and the two reset-flag words; preserve their names * and live reads.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvGameInit",
+          "declaration_line": 31,
+          "lines": [
+            23
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-94f687fc80e1",
+      "kind": "explicit_unknown",
+      "path": "src/game_init.c",
+      "symbol": "Load the retained font resource, then repeatedly draw four centered warning * strings on a black full-size viewport. This loop contains no controller poll * or exit test. RE_UNKNOWN: warning string lifetime and any external escape * mechanism require separate evidence; do not add an inferred return path.",
+      "lines": [
+        218
+      ],
+      "evidence": "Load the retained font resource, then repeatedly draw four centered warning * strings on a black full-size viewport. This loop contains no controller poll * or exit test. RE_UNKNOWN: warning string lifetime and any external escape * mechanism require separate evidence; do not add an inferred return path.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvShowNoController",
+          "declaration_line": 223,
+          "lines": [
+            218
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-ea7708b009bc",
+      "kind": "explicit_unknown",
+      "path": "src/game_init.c",
+      "symbol": "Tear down the current game's state when graphics exports exist, unloading * each live MIDI, EMIT and AMGR instance before resetting controllers and * scheduler clients. Preserve the original sec + 0.2f < current-time wait * predicate. Set the requested state, reset subsystem exports, then load game * and invoke its state initializer. RE_UNKNOWN: export-slot contracts, teardown * ownership and the intended timing predicate remain unresolved.",
+      "lines": [
+        154
+      ],
+      "evidence": "Tear down the current game's state when graphics exports exist, unloading * each live MIDI, EMIT and AMGR instance before resetting controllers and * scheduler clients. Preserve the original sec + 0.2f < current-time wait * predicate. Set the requested state, reset subsystem exports, then load game * and invoke its state initializer. RE_UNKNOWN: export-slot contracts, teardown * ownership and the intended timing predicate remain unresolved.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvSetGameState",
+          "declaration_line": 161,
+          "lines": [
+            154
           ]
         }
       ]
@@ -117069,6 +117209,306 @@
       ]
     },
     {
+      "id": "Q-f4295a33eac5",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/io/piread.c",
+      "symbol": "Acquire PI access, perform one raw IO read, release access and return the * raw operation's status. The source's misalignment check is _DEBUG-only and * absent from this 64-byte release witness. RE_UNKNOWN: valid device addresses * and output-pointer ownership remain provider/caller contracts.",
+      "lines": [
+        5
+      ],
+      "evidence": "Acquire PI access, perform one raw IO read, release access and return the * raw operation's status. The source's misalignment check is _DEBUG-only and * absent from this 64-byte release witness. RE_UNKNOWN: valid device addresses * and output-pointer ownership remain provider/caller contracts.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "osPiReadIo",
+          "declaration_line": 10,
+          "lines": [
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-87bd4c899d23",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/io/sptask.c",
+      "symbol": "Copy the task into the shared tmp_task, then use the existing macro to * replace each non-NULL task pointer field with its physical address. * Return the shared scratch task rather than the caller's task. RE_UNKNOWN: * address validity, scratch-task reentrancy and caller synchronization; * preserve the macro's in-place assignments and exact selected fields.",
+      "lines": [
+        18
+      ],
+      "evidence": "Copy the task into the shared tmp_task, then use the existing macro to * replace each non-NULL task pointer field with its physical address. * Return the shared scratch task rather than the caller's task. RE_UNKNOWN: * address validity, scratch-task reentrancy and caller synchronization; * preserve the macro's in-place assignments and exact selected fields.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "_VirtualToPhysicalTask",
+          "declaration_line": 24,
+          "lines": [
+            18
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-ffd9754fbb4a",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/io/sptask.c",
+      "symbol": "Prepare the shared physical task, retain the yielded/loadable-task * rewrite, write back that task, then perform the original status, PC and * DMA setup with busy retries in order. RE_ORIGINAL_QUIRK: the loadable * resume path reads the ucode pointer from yield_data_ptr plus * OS_YIELD_DATA_SIZE plus 0x2FC. RE_UNKNOWN: that retained custom layout, * DMA buffer bounds and termination/lifetime guarantees; preserve * _DEBUG-only checks and the caller flag update.",
+      "lines": [
+        39
+      ],
+      "evidence": "Prepare the shared physical task, retain the yielded/loadable-task * rewrite, write back that task, then perform the original status, PC and * DMA setup with busy retries in order. RE_ORIGINAL_QUIRK: the loadable * resume path reads the ucode pointer from yield_data_ptr plus * OS_YIELD_DATA_SIZE plus 0x2FC. RE_UNKNOWN: that retained custom layout, * DMA buffer bounds and termination/lifetime guarantees; preserve * _DEBUG-only checks and the caller flag update.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "osSpTaskLoad",
+          "declaration_line": 47,
+          "lines": [
+            39
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-2f92e32c35b5",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/io/sptask.c",
+      "symbol": "Wait until the signal processor is not busy, then issue the existing * status bits to leave halt/break/single-step and enable the break * interrupt. The task pointer is unused here. RE_UNKNOWN: required prior * load, execution ownership and whether the busy wait is guaranteed to * terminate.",
+      "lines": [
+        93
+      ],
+      "evidence": "Wait until the signal processor is not busy, then issue the existing * status bits to leave halt/break/single-step and enable the break * interrupt. The task pointer is unused here. RE_UNKNOWN: required prior * load, execution ownership and whether the busy wait is guaranteed to * terminate.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "osSpTaskStartGo",
+          "declaration_line": 99,
+          "lines": [
+            93
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-e4703a39a7c4",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/io/sptaskyield.c",
+      "symbol": "Request signal-processor yield by writing the existing status bit. * RE_UNKNOWN: which running task observes the request and when completion * is acknowledged; this routine does not wait for or report a completed * yield.",
+      "lines": [
+        4
+      ],
+      "evidence": "Request signal-processor yield by writing the existing status bit. * RE_UNKNOWN: which running task observes the request and when completion * is acknowledged; this routine does not wait for or report a completed * yield.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "osSpTaskYield",
+          "declaration_line": 9,
+          "lines": [
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-1463c0acae79",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/io/sptaskyielded.c",
+      "symbol": "Read processor status and return YIELDED only when that status bit is * set. When the yield-request bit is also present, OR the result into the * task flags and clear DP_WAIT. RE_ORIGINAL_QUIRK: task flags are not * updated without the request bit, even if the returned status reports * yielded. RE_UNKNOWN: caller task ownership and status-sampling protocol.",
+      "lines": [
+        6
+      ],
+      "evidence": "Read processor status and return YIELDED only when that status bit is * set. When the yield-request bit is also present, OR the result into the * task flags and clear DP_WAIT. RE_ORIGINAL_QUIRK: task flags are not * updated without the request bit, even if the returned status reports * yielded. RE_UNKNOWN: caller task ownership and status-sampling protocol.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "osSpTaskYielded",
+          "declaration_line": 12,
+          "lines": [
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-217c8bff2fc7",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/io/viblack.c",
+      "symbol": "Set or clear the next context's BLACK state bit according to the u8 * argument while interrupts are disabled, then restore the mask. * RE_UNKNOWN: when the pending state becomes visible and required manager * lifecycle; preserve the argument's existing width and truth test.",
+      "lines": [
+        7
+      ],
+      "evidence": "Set or clear the next context's BLACK state bit according to the u8 * argument while interrupts are disabled, then restore the mask. * RE_UNKNOWN: when the pending state becomes visible and required manager * lifecycle; preserve the argument's existing width and truth test.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "osViBlack",
+          "declaration_line": 12,
+          "lines": [
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-aa77a3bc5cd2",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/io/vigetcurrframebuf.c",
+      "symbol": "Read the current video context's framebuffer while interrupts are * disabled, then restore the saved mask and return the pointer. Manager * validation remains _DEBUG-only. RE_UNKNOWN: pointed-to storage lifetime * and concurrent consumers; this reads the current context, not the pending * one.",
+      "lines": [
+        5
+      ],
+      "evidence": "Read the current video context's framebuffer while interrupts are * disabled, then restore the saved mask and return the pointer. Manager * validation remains _DEBUG-only. RE_UNKNOWN: pointed-to storage lifetime * and concurrent consumers; this reads the current context, not the pending * one.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "osViGetCurrentFramebuffer",
+          "declaration_line": 11,
+          "lines": [
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-bb0b84f68ab7",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/io/vigetnextframebuf.c",
+      "symbol": "Read the next video context's framebuffer while interrupts are disabled, * then restore the saved mask and return the pointer. Manager validation * remains _DEBUG-only. RE_UNKNOWN: pending-buffer lifetime and when the * context becomes current.",
+      "lines": [
+        5
+      ],
+      "evidence": "Read the next video context's framebuffer while interrupts are disabled, * then restore the saved mask and return the pointer. Manager validation * remains _DEBUG-only. RE_UNKNOWN: pending-buffer lifetime and when the * context becomes current.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "osViGetNextFramebuffer",
+          "declaration_line": 10,
+          "lines": [
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-9ca63a6c93b5",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/io/vimgr.c",
+      "symbol": "Consume video-manager events indefinitely: swap contexts on retrace, send * the configured periodic notification without blocking, update * interrupt/time counters, and dispatch timer interrupts for counter * events. RE_ORIGINAL_QUIRK: first is initialized to zero and never set in * this body; only the initial zero retrace count is normalized to one. * RE_UNKNOWN: externally configured retrace counts, wrap behavior and * event/queue validity; retain the exact u16 countdown and nonblocking-send * result handling.",
+      "lines": [
+        81
+      ],
+      "evidence": "Consume video-manager events indefinitely: swap contexts on retrace, send * the configured periodic notification without blocking, update * interrupt/time counters, and dispatch timer interrupts for counter * events. RE_ORIGINAL_QUIRK: first is initialized to zero and never set in * this body; only the initial zero retrace count is normalized to one. * RE_UNKNOWN: externally configured retrace counts, wrap behavior and * event/queue validity; retain the exact u16 countdown and nonblocking-send * result handling.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "viMgrMain",
+          "declaration_line": 90,
+          "lines": [
+            81
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-e5456ca37a5f",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/io/vimgr.c",
+      "symbol": "Return if the video manager is active; otherwise initialize timer/event * services, register retrace/counter messages, temporarily raise the caller * priority if needed, and create, initialize and start the video thread * under the saved interrupt mask. Restore the caller priority afterward. * RE_UNKNOWN: external service initialization order and release-build * priority domain; preserve version-specific scanline setup.",
+      "lines": [
+        20
+      ],
+      "evidence": "Return if the video manager is active; otherwise initialize timer/event * services, register retrace/counter messages, temporarily raise the caller * priority if needed, and create, initialize and start the video thread * under the saved interrupt mask. Restore the caller priority afterward. * RE_UNKNOWN: external service initialization order and release-build * priority domain; preserve version-specific scanline setup.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "osCreateViManager",
+          "declaration_line": 27,
+          "lines": [
+            20
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-78827db95e99",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/io/visetevent.c",
+      "symbol": "Store the queue, message and retrace count in the next video context * while interrupts are disabled. Manager and NULL checks remain * _DEBUG-only. RE_UNKNOWN: queue lifetime and zero/out-of-range * retrace-count behavior; preserve the existing assignment and destination * field width.",
+      "lines": [
+        52
+      ],
+      "evidence": "Store the queue, message and retrace count in the next video context * while interrupts are disabled. Manager and NULL checks remain * _DEBUG-only. RE_UNKNOWN: queue lifetime and zero/out-of-range * retrace-count behavior; preserve the existing assignment and destination * field width.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "osViSetEvent",
+          "declaration_line": 58,
+          "lines": [
+            52
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-2394a1cdae4c",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/io/visetmode.c",
+      "symbol": "Store the next mode pointer, replace the context state with MODE_UPDATED, * and copy that mode's control word while interrupts are disabled. * RE_ORIGINAL_QUIRK: the state is assigned, not ORed with old pending * flags. RE_UNKNOWN: mode lifetime and caller update ordering; NULL/manager * checks remain _DEBUG-only.",
+      "lines": [
+        49
+      ],
+      "evidence": "Store the next mode pointer, replace the context state with MODE_UPDATED, * and copy that mode's control word while interrupts are disabled. * RE_ORIGINAL_QUIRK: the state is assigned, not ORed with old pending * flags. RE_UNKNOWN: mode lifetime and caller update ordering; NULL/manager * checks remain _DEBUG-only.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "osViSetMode",
+          "declaration_line": 55,
+          "lines": [
+            49
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-247e07f0488c",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/io/visetspecial.c",
+      "symbol": "Apply the requested gamma, dithering, divot and dither-filter controls to * the next video context in their original order, then mark control * updated. RE_ORIGINAL_QUIRK: on/off bits are independent tests, so later * off paths can override on paths; disabling the dither filter restores * antialias bits from the selected mode. RE_UNKNOWN: release-build flag * combinations and mode validity; preserve _DEBUG-only rejection.",
+      "lines": [
+        31
+      ],
+      "evidence": "Apply the requested gamma, dithering, divot and dither-filter controls to * the next video context in their original order, then mark control * updated. RE_ORIGINAL_QUIRK: on/off bits are independent tests, so later * off paths can override on paths; disabling the dither filter restores * antialias bits from the selected mode. RE_UNKNOWN: release-build flag * combinations and mode validity; preserve _DEBUG-only rejection.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "osViSetSpecialFeatures",
+          "declaration_line": 38,
+          "lines": [
+            31
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-43153bb75614",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/io/viswapbuf.c",
+      "symbol": "Store the requested framebuffer in the next video context and OR its * buffer-updated flag while interrupts are disabled. Manager, NULL and * alignment checks remain _DEBUG-only. RE_UNKNOWN: framebuffer extent, * ownership and display-transfer lifetime; scheduling a next buffer is not * a completed swap.",
+      "lines": [
+        53
+      ],
+      "evidence": "Store the requested framebuffer in the next video context and OR its * buffer-updated flag while interrupts are disabled. Manager, NULL and * alignment checks remain _DEBUG-only. RE_UNKNOWN: framebuffer extent, * ownership and display-transfer lifetime; scheduling a next buffer is not * a completed swap.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "osViSwapBuffer",
+          "declaration_line": 59,
+          "lines": [
+            53
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-8ccc548f5f4b",
       "kind": "explicit_unknown",
       "path": "src/libultra/libc/ll.c",
@@ -117084,6 +117524,146 @@
           "declaration_line": 79,
           "lines": [
             68
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-31f19de526a6",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/os/createmesgqueue.c",
+      "symbol": "Initialize both waiting-thread queues to the existing tail sentinel and * attach the caller's message array and capacity to an empty ring. Capacity * rejection exists only in the retained _DEBUG branch. RE_UNKNOWN: * release-build caller capacity, storage extent and queue lifetime; * preserve the build distinction.",
+      "lines": [
+        5
+      ],
+      "evidence": "Initialize both waiting-thread queues to the existing tail sentinel and * attach the caller's message array and capacity to an empty ring. Capacity * rejection exists only in the retained _DEBUG branch. RE_UNKNOWN: * release-build caller capacity, storage extent and queue lifetime; * preserve the build distinction.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "osCreateMesgQueue",
+          "declaration_line": 11,
+          "lines": [
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-f99c1b97e0a9",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/os/createthread.c",
+      "symbol": "Initialize the saved entry/argument/stack/cleanup context, interrupt/FPU * state and stopped-thread fields, then link the thread into the active * list under the saved interrupt mask. Preserve signed pointer-to-context * conversions and the sixteen-byte stack adjustment. RE_UNKNOWN: stack * extent/alignment and release-build priority/ID domains; retain all * build-version profiling branches and _DEBUG-only checks.",
+      "lines": [
+        9
+      ],
+      "evidence": "Initialize the saved entry/argument/stack/cleanup context, interrupt/FPU * state and stopped-thread fields, then link the thread into the active * list under the saved interrupt mask. Preserve signed pointer-to-context * conversions and the sixteen-byte stack adjustment. RE_UNKNOWN: stack * extent/alignment and release-build priority/ID domains; retain all * build-version profiling branches and _DEBUG-only checks.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "osCreateThread",
+          "declaration_line": 16,
+          "lines": [
+            9
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-aeb89d5aadd7",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/os/initialize.c",
+      "symbol": "Enable the existing FPU state, perform the PIF read/write handshake, * install and flush exception vectors, set up the debug TLB mapping, derive * the clock rate, clear the NMI buffer on cold reset, and select the TV * clock. RE_ORIGINAL_QUIRK: preserve unchecked ROM-clock read status and * indefinite SI retry loops. RE_UNKNOWN: handshake bit meaning, * hardware/provider failure reachability and reset/environment * prerequisites; retain the original masks and operation order.",
+      "lines": [
+        23
+      ],
+      "evidence": "Enable the existing FPU state, perform the PIF read/write handshake, * install and flush exception vectors, set up the debug TLB mapping, derive * the clock rate, clear the NMI buffer on cold reset, and select the TV * clock. RE_ORIGINAL_QUIRK: preserve unchecked ROM-clock read status and * indefinite SI retry loops. RE_UNKNOWN: handshake bit meaning, * hardware/provider failure reachability and reset/environment * prerequisites; retain the original masks and operation order.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "osInitialize",
+          "declaration_line": 31,
+          "lines": [
+            23
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-dece6ae18332",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/os/recvmesg.c",
+      "symbol": "Receive from the ring under the saved interrupt mask, waiting on the * empty queue unless the nonblocking flag requests failure. An optional * NULL output discards the message; advance the ring and wake one waiting * sender before restoring the mask. RE_UNKNOWN: caller queue * validity/capacity and allowed release-build flags. Preserve the exact * blocking predicate and modulo arithmetic.",
+      "lines": [
+        5
+      ],
+      "evidence": "Receive from the ring under the saved interrupt mask, waiting on the * empty queue unless the nonblocking flag requests failure. An optional * NULL output discards the message; advance the ring and wake one waiting * sender before restoring the mask. RE_UNKNOWN: caller queue * validity/capacity and allowed release-build flags. Preserve the exact * blocking predicate and modulo arithmetic.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "osRecvMesg",
+          "declaration_line": 12,
+          "lines": [
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-13755cb5e275",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/os/sendmesg.c",
+      "symbol": "Append a message under the saved interrupt mask, waiting on a full queue * only for the blocking flag; other flags take the original failure path. * Wake one waiting receiver after insertion and restore the mask. * RE_UNKNOWN: queue storage/capacity and release-build flag domain; * preserve the distinct send/receive flag predicates.",
+      "lines": [
+        5
+      ],
+      "evidence": "Append a message under the saved interrupt mask, waiting on a full queue * only for the blocking flag; other flags take the original failure path. * Wake one waiting receiver after insertion and restore the mask. * RE_UNKNOWN: queue storage/capacity and release-build flag domain; * preserve the distinct send/receive flag predicates.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "osSendMesg",
+          "declaration_line": 11,
+          "lines": [
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-c50665185910",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/os/seteventmesg.c",
+      "symbol": "Associate the supplied queue and message with the indexed event while * interrupts are disabled, then restore the mask. The event-range check * remains _DEBUG-only. RE_UNKNOWN: valid release-build event indices, queue * lifetime and replacement ordering.",
+      "lines": [
+        10
+      ],
+      "evidence": "Associate the supplied queue and message with the indexed event while * interrupts are disabled, then restore the mask. The event-range check * remains _DEBUG-only. RE_UNKNOWN: valid release-build event indices, queue * lifetime and replacement ordering.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "osSetEventMesg",
+          "declaration_line": 15,
+          "lines": [
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-396baede99bf",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/os/startthread.c",
+      "symbol": "Make a waiting/stopped thread runnable using its existing queue * relationship, then dispatch if no thread is running or yield when the run * queue has higher priority. Restore the saved interrupt mask on return. * RE_UNKNOWN: allowed release-build input states and queue invariants; * preserve the conditional debug error path and scheduler handoff order.",
+      "lines": [
+        5
+      ],
+      "evidence": "Make a waiting/stopped thread runnable using its existing queue * relationship, then dispatch if no thread is running or yield when the run * queue has higher priority. Restore the saved interrupt mask on return. * RE_UNKNOWN: allowed release-build input states and queue invariants; * preserve the conditional debug error path and scheduler handoff order.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "osStartThread",
+          "declaration_line": 11,
+          "lines": [
+            5
           ]
         }
       ]
@@ -117294,16 +117874,16 @@
       "path": "src/mem_allocator.c",
       "symbol": "* Allocate from the first free-list block passing the original strict size-plus- * alignment test. Retain the preceding node, unlink the chosen block, optionally * return its trailing remainder to the coalescing list, and encode the original * allocation extent and alignment adjustment in the reused header word. Clear * only the unrounded requested payload size when the existing control is enabled. * Preserve every accounting update, signed size gate, mask, strict comparison, * raw address cast and packed-word expression. * RE_UNKNOWN: caller guarantees for alignment values and address arithmetic, * complete heap/list bounds and block lifecycle, packed-header consumers, and * accounting-counter meanings. Trace original allocator callers, free/decode * paths and heap initialization before adding validation, changing header types, * assigning further counter meanings or claiming portable allocation semantics.",
       "lines": [
-        208
+        232
       ],
       "evidence": "* Allocate from the first free-list block passing the original strict size-plus- * alignment test. Retain the preceding node, unlink the chosen block, optionally * return its trailing remainder to the coalescing list, and encode the original * allocation extent and alignment adjustment in the reused header word. Clear * only the unrounded requested payload size when the existing control is enabled. * Preserve every accounting update, signed size gate, mask, strict comparison, * raw address cast and packed-word expression. * RE_UNKNOWN: caller guarantees for alignment values and address arithmetic, * complete heap/list bounds and block lifecycle, packed-header consumers, and * accounting-counter meanings. Trace original allocator callers, free/decode * paths and heap initialization before adding validation, changing header types, * assigning further counter meanings or claiming portable allocation semantics.",
       "owners": [
         {
           "kind": "function",
           "name": "_uvMemAlloc",
-          "declaration_line": 223,
+          "declaration_line": 247,
           "lines": [
-            208
+            232
           ]
         }
       ]
@@ -117314,16 +117894,56 @@
       "path": "src/mem_allocator.c",
       "symbol": "* Reserve the incoming address interval in the allocator free list. Round the * size to four bytes, preserve original node/header/output store ordering, and * optionally clear the original unrounded byte count. The two word outputs * report leading/trailing bytes absorbed without retaining a free-list node; * return zero on success or -1 on the original interval-check failure paths. * RE_ORIGINAL_QUIRK: after an empty-list traversal the original still reads the * node size. Split tests distinguish gaps greater than eight and less than * eight; exactly eight reaches the fallback. Removing the head in that fallback * writes NULL instead of the removed node's next link. These are original * operations, not established reachable faults; preserve them pending evidence. * RE_UNKNOWN: allowed addresses, size/overflow/alignment limits, list ordering, * empty-list reachability, writable output extents and aliases, counter meaning, * and clear-control lifecycle. The observed graphics initializer calls ignore * both outputs and the return, so they do not establish these guarantees. * Resolve original heap setup, every caller, output consumers and reset/fill * lifecycles before changing the checks, split boundaries or removal behavior. * Readable C remains parked: 476 native bytes versus 484 draft bytes differ in * 93 instruction words and relocation offsets. The cached-next traversal now * matches, but eager arithmetic, register allocation and 64-byte versus 40-byte * frames remain different. Recover original storage/lifetime evidence and prove * exact instructions, relocation records and ROM; frame size alone does not * justify padding, extra locals, alignment or a historical array extent.",
       "lines": [
-        149
+        168
       ],
       "evidence": "* Reserve the incoming address interval in the allocator free list. Round the * size to four bytes, preserve original node/header/output store ordering, and * optionally clear the original unrounded byte count. The two word outputs * report leading/trailing bytes absorbed without retaining a free-list node; * return zero on success or -1 on the original interval-check failure paths. * RE_ORIGINAL_QUIRK: after an empty-list traversal the original still reads the * node size. Split tests distinguish gaps greater than eight and less than * eight; exactly eight reaches the fallback. Removing the head in that fallback * writes NULL instead of the removed node's next link. These are original * operations, not established reachable faults; preserve them pending evidence. * RE_UNKNOWN: allowed addresses, size/overflow/alignment limits, list ordering, * empty-list reachability, writable output extents and aliases, counter meaning, * and clear-control lifecycle. The observed graphics initializer calls ignore * both outputs and the return, so they do not establish these guarantees. * Resolve original heap setup, every caller, output consumers and reset/fill * lifecycles before changing the checks, split boundaries or removal behavior. * Readable C remains parked: 476 native bytes versus 484 draft bytes differ in * 93 instruction words and relocation offsets. The cached-next traversal now * matches, but eager arithmetic, register allocation and 64-byte versus 40-byte * frames remain different. Recover original storage/lifetime evidence and prove * exact instructions, relocation records and ROM; frame size alone does not * justify padding, extra locals, alignment or a historical array extent.",
       "owners": [
         {
           "kind": "assembly",
           "name": "uvMemAllocAt",
-          "declaration_line": 174,
+          "declaration_line": 193,
           "lines": [
-            149
+            168
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-64b7c2d6e37a",
+      "kind": "explicit_unknown",
+      "path": "src/mem_allocator.c",
+      "symbol": "Delegate the unchanged byte request to _uvMemAlloc with alignment 16 and * return the provider result. RE_UNKNOWN: caller size domain, payload * lifetime and failure handling remain with the original provider and * callers.",
+      "lines": [
+        377
+      ],
+      "evidence": "Delegate the unchanged byte request to _uvMemAlloc with alignment 16 and * return the provider result. RE_UNKNOWN: caller size domain, payload * lifetime and failure handling remain with the original provider and * callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "_uvMemAllocAlign16",
+          "declaration_line": 382,
+          "lines": [
+            377
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-c7e73973449e",
+      "kind": "explicit_unknown",
+      "path": "src/mem_allocator.c",
+      "symbol": "Delegate the unchanged byte request to _uvMemAlloc with alignment 8 and * return the provider result. RE_UNKNOWN: caller size domain, payload * lifetime and failure handling are provider/caller contracts, not * guarantees added by this wrapper.",
+      "lines": [
+        223
+      ],
+      "evidence": "Delegate the unchanged byte request to _uvMemAlloc with alignment 8 and * return the provider result. RE_UNKNOWN: caller size domain, payload * lifetime and failure handling are provider/caller contracts, not * guarantees added by this wrapper.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "_uvMemAllocAlign8",
+          "declaration_line": 228,
+          "lines": [
+            223
           ]
         }
       ]
@@ -117334,16 +117954,56 @@
       "path": "src/mem_allocator.c",
       "symbol": "Fill from gAppThreadStack to 0x30 bytes below this function's stack-local * address, preserving the original self-address calculation and frame margin. * RE_UNKNOWN: required active-thread/frame relationship and the margin's * contract; resolve from original thread setup and call frames before * changing the range or treating this as a portable stack-clearing routine.",
       "lines": [
-        56
+        75
       ],
       "evidence": "Fill from gAppThreadStack to 0x30 bytes below this function's stack-local * address, preserving the original self-address calculation and frame margin. * RE_UNKNOWN: required active-thread/frame relationship and the margin's * contract; resolve from original thread setup and call frames before * changing the range or treating this as a portable stack-clearing routine.",
       "owners": [
         {
           "kind": "function",
           "name": "uvFillAppStackPrefix",
-          "declaration_line": 61,
+          "declaration_line": 80,
           "lines": [
-            56
+            75
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-d3d715a8bd75",
+      "kind": "explicit_unknown",
+      "path": "src/mem_allocator.c",
+      "symbol": "Forward the pointer unchanged to the retained assembly _uvMemFree * provider. RE_UNKNOWN: NULL handling, ownership, allocation-header * decoding and double-free behavior require that provider and its callers; * this wrapper adds no checks or guarantees.",
+      "lines": [
+        386
+      ],
+      "evidence": "Forward the pointer unchanged to the retained assembly _uvMemFree * provider. RE_UNKNOWN: NULL handling, ownership, allocation-header * decoding and double-free behavior require that provider and its callers; * this wrapper adds no checks or guarantees.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvMemFree",
+          "declaration_line": 391,
+          "lines": [
+            386
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-1e019bcad1a8",
+      "kind": "explicit_unknown",
+      "path": "src/mem_allocator.c",
+      "symbol": "Initialize the free-list head, then run the existing free-payload and * app-stack fills when either clear control is enabled. Preserve the * separate byte-control reads before each fill. RE_UNKNOWN: control * lifecycle, permitted stack-fill call frames and heap ownership; the * wrapper establishes no portable clearing guarantee.",
+      "lines": [
+        30
+      ],
+      "evidence": "Initialize the free-list head, then run the existing free-payload and * app-stack fills when either clear control is enabled. Preserve the * separate byte-control reads before each fill. RE_UNKNOWN: control * lifecycle, permitted stack-fill call frames and heap ownership; the * wrapper establishes no portable clearing guarantee.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "_uvMemAllocInitStartUp",
+          "declaration_line": 36,
+          "lines": [
+            30
           ]
         }
       ]
@@ -117354,16 +118014,16 @@
       "path": "src/mem_allocator.c",
       "symbol": "Insert a released block into the address-ordered free list and merge * contiguous neighbors, preserving each original branch and counter update. * RE_UNKNOWN: original source form of the next-neighbor size calculation; * retain its existing FAKE comma expression for binary matching until * an equivalent natural expression is independently proven.",
       "lines": [
-        83
+        102
       ],
       "evidence": "Insert a released block into the address-ordered free list and merge * contiguous neighbors, preserving each original branch and counter update. * RE_UNKNOWN: original source form of the next-neighbor size calculation; * retain its existing FAKE comma expression for binary matching until * an equivalent natural expression is independently proven.",
       "owners": [
         {
           "kind": "function",
           "name": "uvInsertFreeBlockCoalesced",
-          "declaration_line": 88,
+          "declaration_line": 107,
           "lines": [
-            83
+            102
           ]
         }
       ]
@@ -117374,16 +118034,96 @@
       "path": "src/mem_allocator.c",
       "symbol": "Reset the allocator free list and the existing accounting counters. * If forced or either fill control is enabled, fill free payloads and * the app-stack prefix using the configured byte. uvSysInit calls this * before rebuilding the file and module tables during runtime reinitialization. * RE_UNKNOWN: exact semantics of all reset counters and the documented * graphics effects of the fill controls; resolve their original consumers * and runtime traces before assigning further meanings.",
       "lines": [
-        178
+        197
       ],
       "evidence": "Reset the allocator free list and the existing accounting counters. * If forced or either fill control is enabled, fill free payloads and * the app-stack prefix using the configured byte. uvSysInit calls this * before rebuilding the file and module tables during runtime reinitialization. * RE_UNKNOWN: exact semantics of all reset counters and the documented * graphics effects of the fill controls; resolve their original consumers * and runtime traces before assigning further meanings.",
       "owners": [
         {
           "kind": "function",
           "name": "uvResetAllocatorWithOptionalFill",
-          "declaration_line": 185,
+          "declaration_line": 204,
           "lines": [
-            178
+            197
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-cddc143394ba",
+      "kind": "explicit_unknown",
+      "path": "src/mem_allocator.c",
+      "symbol": "Set gMemBlock as the only free-list node, clear its next link, derive its * size by subtracting its raw address from 0x80400000, and set both * existing accounting words to one. RE_ORIGINAL_QUIRK: the fixed endpoint * and unchecked unsigned address subtraction are retained. RE_UNKNOWN: * actual backing allocation, heap bounds and accounting-word meanings; the * declared array extent is not independent storage evidence.",
+      "lines": [
+        44
+      ],
+      "evidence": "Set gMemBlock as the only free-list node, clear its next link, derive its * size by subtracting its raw address from 0x80400000, and set both * existing accounting words to one. RE_ORIGINAL_QUIRK: the fixed endpoint * and unchecked unsigned address subtraction are retained. RE_UNKNOWN: * actual backing allocation, heap bounds and accounting-word meanings; the * declared array extent is not independent storage evidence.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "_uvMemAllocInit",
+          "declaration_line": 51,
+          "lines": [
+            44
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-fb60db5498a2",
+      "kind": "explicit_unknown",
+      "path": "src/mem_allocator.c",
+      "symbol": "Sum each free-list node's stored size and return the existing signed * accumulator. This counts the stored node extents, not an independently * established usable-payload capacity. RE_UNKNOWN: list validity, cycles * and overflow domain; preserve the original arithmetic and unrestricted * traversal.",
+      "lines": [
+        356
+      ],
+      "evidence": "Sum each free-list node's stored size and return the existing signed * accumulator. This counts the stored node extents, not an independently * established usable-payload capacity. RE_UNKNOWN: list validity, cycles * and overflow domain; preserve the original arithmetic and unrestricted * traversal.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "_uvMemGetBlocksSize",
+          "declaration_line": 362,
+          "lines": [
+            356
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-9d354b5007ee",
+      "kind": "explicit_unknown",
+      "path": "src/mem_allocator.c",
+      "symbol": "Traverse the free list, accumulating node sizes and tracking * minimum/maximum values in locals whose results are discarded. * RE_ORIGINAL_QUIRK: preserve unsigned comparisons with the loaded signed * size and the minimum initialized to all ones. RE_UNKNOWN: intended debug * observation, list validity and size/overflow domains; retain the existing * name and unused calculations.",
+      "lines": [
+        329
+      ],
+      "evidence": "Traverse the free list, accumulating node sizes and tracking * minimum/maximum values in locals whose results are discarded. * RE_ORIGINAL_QUIRK: preserve unsigned comparisons with the loaded signed * size and the minimum initialized to all ones. RE_UNKNOWN: intended debug * observation, list validity and size/overflow domains; retain the existing * name and unused calculations.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "_uvMemUnusedDbgFunc1",
+          "declaration_line": 336,
+          "lines": [
+            329
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-60cbbf970e1b",
+      "kind": "explicit_unknown",
+      "path": "src/mem_allocator.c",
+      "symbol": "Walk next links from the free-list head to NULL without returning a value * or changing list storage. RE_UNKNOWN: intended debug effect, caller * reachability, valid node bounds and whether cycles are excluded. Retain * the existing name and traversal; an empty-looking result does not justify * removing the reads.",
+      "lines": [
+        59
+      ],
+      "evidence": "Walk next links from the free-list head to NULL without returning a value * or changing list storage. RE_UNKNOWN: intended debug effect, caller * reachability, valid node bounds and whether cycles are excluded. Retain * the existing name and traversal; an empty-looking result does not justify * removing the reads.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "_uvMemUnusedDbgFunc",
+          "declaration_line": 65,
+          "lines": [
+            59
           ]
         }
       ]
@@ -117414,16 +118154,36 @@
       "path": "src/memory.c",
       "symbol": "* Read 1, 2, 4 or 8 bytes in the original big-endian assembly order; unsupported * sizes return zero. Preserve all original shifts, promotions and byte reads. * The device-address path first calls the existing transfer helper into its * original signed 64-bit scratch, then recursively uses the direct-address path. * RE_ORIGINAL_QUIRK: the 8-byte case sign-extends the 32-bit contribution from * byte 4 shifted left by 24 before ORing it into the 64-bit value. Preserve that * actual native high-word effect rather than silently adding unsigned promotion. * RE_UNKNOWN: caller capacities/address domains, intended read/promotion contract, * device transfer initialization/failure and reachable odd-count paths. * Audit original callers and transfer/device consumers before changing widths, * signed arithmetic, scratch initialization, validation or failure handling.",
       "lines": [
-        93
+        97
       ],
       "evidence": "* Read 1, 2, 4 or 8 bytes in the original big-endian assembly order; unsupported * sizes return zero. Preserve all original shifts, promotions and byte reads. * The device-address path first calls the existing transfer helper into its * original signed 64-bit scratch, then recursively uses the direct-address path. * RE_ORIGINAL_QUIRK: the 8-byte case sign-extends the 32-bit contribution from * byte 4 shifted left by 24 before ORing it into the 64-bit value. Preserve that * actual native high-word effect rather than silently adding unsigned promotion. * RE_UNKNOWN: caller capacities/address domains, intended read/promotion contract, * device transfer initialization/failure and reachable odd-count paths. * Audit original callers and transfer/device consumers before changing widths, * signed arithmetic, scratch initialization, validation or failure handling.",
       "owners": [
         {
           "kind": "function",
           "name": "uvMemRead",
-          "declaration_line": 107,
+          "declaration_line": 111,
           "lines": [
-            93
+            97
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-0048456de357",
+      "kind": "explicit_unknown",
+      "path": "src/memory.c",
+      "symbol": "Fill exactly nbytes successive destination bytes with the low eight bits * of value; a zero count performs no store. RE_UNKNOWN: destination capacity, * validity and overlap with externally accessed storage require callers.",
+      "lines": [
+        79
+      ],
+      "evidence": "Fill exactly nbytes successive destination bytes with the low eight bits * of value; a zero count performs no store. RE_UNKNOWN: destination capacity, * validity and overlap with externally accessed storage require callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvMemSet",
+          "declaration_line": 83,
+          "lines": [
+            79
           ]
         }
       ]
@@ -149745,16 +150505,16 @@
       "path": "src/profiler.c",
       "symbol": "Add a signed adjustment to the profiler entry count used by the statistics * query as the accumulated-time divisor. Preserve the unrestricted adjustment. * RE_UNKNOWN: caller reasons for changing this count independently of timing; * trace original references before imposing sample-count constraints.",
       "lines": [
-        125
+        135
       ],
       "evidence": "Add a signed adjustment to the profiler entry count used by the statistics * query as the accumulated-time divisor. Preserve the unrestricted adjustment. * RE_UNKNOWN: caller reasons for changing this count independently of timing; * trace original references before imposing sample-count constraints.",
       "owners": [
         {
           "kind": "function",
           "name": "uvProfilerAdjustSampleCount",
-          "declaration_line": 129,
+          "declaration_line": 139,
           "lines": [
-            125
+            135
           ]
         }
       ]
@@ -149765,16 +150525,56 @@
       "path": "src/profiler.c",
       "symbol": "Begin timing an unpaused profiler entry when profiling is enabled. * State 2 saves/disables interrupts on the outer begin and counts nested * begins; other enabled states only record the clock reading. * RE_UNKNOWN: complete numeric profiling-state configuration and caller * begin/end balancing contract; trace original settings and nested callers.",
       "lines": [
-        60
+        70
       ],
       "evidence": "Begin timing an unpaused profiler entry when profiling is enabled. * State 2 saves/disables interrupts on the outer begin and counts nested * begins; other enabled states only record the clock reading. * RE_UNKNOWN: complete numeric profiling-state configuration and caller * begin/end balancing contract; trace original settings and nested callers.",
       "owners": [
         {
           "kind": "function",
           "name": "uvProfilerBegin",
-          "declaration_line": 65,
+          "declaration_line": 75,
           "lines": [
-            60
+            70
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-4df27d843454",
+      "kind": "explicit_unknown",
+      "path": "src/profiler.c",
+      "symbol": "Claim the first entry whose existing active byte is zero, store the * supplied label pointer without copying, and return its index; return -1 * if all forty entries are occupied. RE_UNKNOWN: label lifetime and * external entry ownership. Preserve the original allocation order and * active-byte meaning without inventing a release protocol.",
+      "lines": [
+        39
+      ],
+      "evidence": "Claim the first entry whose existing active byte is zero, store the * supplied label pointer without copying, and return its index; return -1 * if all forty entries are occupied. RE_UNKNOWN: label lifetime and * external entry ownership. Preserve the original allocation order and * active-byte meaning without inventing a release protocol.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvProfilerCreate",
+          "declaration_line": 45,
+          "lines": [
+            39
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-a01305542f23",
+      "kind": "explicit_unknown",
+      "path": "src/profiler.c",
+      "symbol": "Clear the entry's count, pause/active bytes, label pointer and timing * values, restoring the start-time sentinel to -1.0. RE_UNKNOWN: valid * indices and required begin/end/reset ordering; retain every original * store and sentinel.",
+      "lines": [
+        144
+      ],
+      "evidence": "Clear the entry's count, pause/active bytes, label pointer and timing * values, restoring the start-time sentinel to -1.0. RE_UNKNOWN: valid * indices and required begin/end/reset ordering; retain every original * store and sentinel.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvProfilerResetEntry",
+          "declaration_line": 149,
+          "lines": [
+            144
           ]
         }
       ]
@@ -149785,16 +150585,36 @@
       "path": "src/profiler.c",
       "symbol": "End timing when enabled: unwind the shared interrupt-mask state first, * then record the elapsed value, count and accumulated time for an active * unpaused entry. Preserve the existing empty missing-start diagnostic branch. * RE_UNKNOWN: required pairing across nested and paused entries; resolve * original call sequences before changing the shared interrupt bookkeeping.",
       "lines": [
-        88
+        98
       ],
       "evidence": "End timing when enabled: unwind the shared interrupt-mask state first, * then record the elapsed value, count and accumulated time for an active * unpaused entry. Preserve the existing empty missing-start diagnostic branch. * RE_UNKNOWN: required pairing across nested and paused entries; resolve * original call sequences before changing the shared interrupt bookkeeping.",
       "owners": [
         {
           "kind": "function",
           "name": "uvProfilerEnd",
-          "declaration_line": 93,
+          "declaration_line": 103,
           "lines": [
-            88
+            98
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-4c6a3c13a74d",
+      "kind": "explicit_unknown",
+      "path": "src/profiler.c",
+      "symbol": "Forward the entry index unchanged to uvProfilerResetEntry. RE_UNKNOWN: * valid index range and caller synchronization; this wrapper performs no * validation or independent reset work.",
+      "lines": [
+        61
+      ],
+      "evidence": "Forward the entry index unchanged to uvProfilerResetEntry. RE_UNKNOWN: * valid index range and caller synchronization; this wrapper performs no * validation or independent reset work.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvProfilerReset",
+          "declaration_line": 65,
+          "lines": [
+            61
           ]
         }
       ]
@@ -149805,16 +150625,16 @@
       "path": "src/profiler.c",
       "symbol": "Pause an active timing interval by saving its pause time; resume by * advancing the start time by the paused duration. Store the requested * pause state even when no interval is active. * RE_UNKNOWN: caller input range; comparisons use the full s32 argument * while the stored pause field is u8. Trace callers before normalizing it.",
       "lines": [
-        208
+        234
       ],
       "evidence": "Pause an active timing interval by saving its pause time; resume by * advancing the start time by the paused duration. Store the requested * pause state even when no interval is active. * RE_UNKNOWN: caller input range; comparisons use the full s32 argument * while the stored pause field is u8. Trace callers before normalizing it.",
       "owners": [
         {
           "kind": "function",
           "name": "uvProfilerSetPaused",
-          "declaration_line": 213,
+          "declaration_line": 239,
           "lines": [
-            208
+            234
           ]
         }
       ]
@@ -149825,16 +150645,76 @@
       "path": "src/profiler.c",
       "symbol": "Read variadic property/output-pointer pairs: 1 returns accumulated time * divided by count (zero when count is zero), 2 accumulated time, 3 the * latest elapsed time, and 4 the count as a u32. Property 0 or an unknown * code terminates the query. Preserve the existing argument types/order. * RE_UNKNOWN: complete external request protocol and valid entry IDs; * resolve original callers before changing termination or validation.",
       "lines": [
-        146
+        161
       ],
       "evidence": "Read variadic property/output-pointer pairs: 1 returns accumulated time * divided by count (zero when count is zero), 2 accumulated time, 3 the * latest elapsed time, and 4 the count as a u32. Property 0 or an unknown * code terminates the query. Preserve the existing argument types/order. * RE_UNKNOWN: complete external request protocol and valid entry IDs; * resolve original callers before changing termination or validation.",
       "owners": [
         {
           "kind": "function",
           "name": "uvProfilerQueryStatistics",
-          "declaration_line": 152,
+          "declaration_line": 167,
           "lines": [
-            146
+            161
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-5d27b7b40c78",
+      "kind": "explicit_unknown",
+      "path": "src/profiler.c",
+      "symbol": "Restore a saved interrupt mask when the shared word differs from one, * reset the associated nesting word on that path, clear all forty profiler * entries, and reset clock 0x6B. RE_ORIGINAL_QUIRK: the nesting word is not * cleared by the other path. RE_UNKNOWN: initialization call ordering and * ownership of the saved-mask sentinel.",
+      "lines": [
+        204
+      ],
+      "evidence": "Restore a saved interrupt mask when the shared word differs from one, * reset the associated nesting word on that path, clear all forty profiler * entries, and reset clock 0x6B. RE_ORIGINAL_QUIRK: the nesting word is not * cleared by the other path. RE_UNKNOWN: initialization call ordering and * ownership of the saved-mask sentinel.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvProfilerInit",
+          "declaration_line": 210,
+          "lines": [
+            204
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-07b1ab9c8f34",
+      "kind": "explicit_unknown",
+      "path": "src/profiler.c",
+      "symbol": "Retain the original empty profiler hook: native code returns with a nop * delay slot. RE_UNKNOWN: the intended hook role is unestablished; keep its * address name rather than inventing a profiler action.",
+      "lines": [
+        258
+      ],
+      "evidence": "Retain the original empty profiler hook: native code returns with a nop * delay slot. RE_UNKNOWN: the intended hook role is unestablished; keep its * address name rather than inventing a profiler action.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "func_80001104",
+          "declaration_line": 262,
+          "lines": [
+            258
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-2471ed6bd74f",
+      "kind": "explicit_unknown",
+      "path": "src/profiler.c",
+      "symbol": "Retain the original profiler hook with no application-state operation; * native code returns while saving its argument in the incoming stack slot. * RE_UNKNOWN: the hook's intended role is unestablished; * keep its address name.",
+      "lines": [
+        224
+      ],
+      "evidence": "Retain the original profiler hook with no application-state operation; * native code returns while saving its argument in the incoming stack slot. * RE_UNKNOWN: the hook's intended role is unestablished; * keep its address name.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "func_80001038",
+          "declaration_line": 229,
+          "lines": [
+            224
           ]
         }
       ]
@@ -152151,15 +153031,15 @@
       "path": "src/game_init.c",
       "symbol": "pad",
       "lines": [
-        149
+        164
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvSetGameState",
-          "declaration_line": 146,
+          "declaration_line": 161,
           "lines": [
-            149
+            164
           ]
         }
       ]
@@ -157547,15 +158427,15 @@
       "path": "src/profiler.c",
       "symbol": "pad",
       "lines": [
-        215
+        241
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvProfilerSetPaused",
-          "declaration_line": 213,
+          "declaration_line": 239,
           "lines": [
-            215
+            241
           ]
         }
       ]
@@ -165472,15 +166352,15 @@
       "path": "src/game_init.c",
       "symbol": "unk10",
       "lines": [
-        95
+        103
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGameInit",
-          "declaration_line": 23,
+          "declaration_line": 31,
           "lines": [
-            95
+            103
           ]
         }
       ]
@@ -165491,15 +166371,15 @@
       "path": "src/game_init.c",
       "symbol": "unk17A",
       "lines": [
-        85
+        93
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGameInit",
-          "declaration_line": 23,
+          "declaration_line": 31,
           "lines": [
-            85
+            93
           ]
         }
       ]
@@ -165510,15 +166390,15 @@
       "path": "src/game_init.c",
       "symbol": "unk17E",
       "lines": [
-        88
+        96
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGameInit",
-          "declaration_line": 23,
+          "declaration_line": 31,
           "lines": [
-            88
+            96
           ]
         }
       ]
@@ -165529,15 +166409,15 @@
       "path": "src/game_init.c",
       "symbol": "unk17F",
       "lines": [
-        89
+        97
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGameInit",
-          "declaration_line": 23,
+          "declaration_line": 31,
           "lines": [
-            89
+            97
           ]
         }
       ]
@@ -165548,17 +166428,17 @@
       "path": "src/game_init.c",
       "symbol": "unk18C",
       "lines": [
-        34,
-        132
+        42,
+        140
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGameInit",
-          "declaration_line": 23,
+          "declaration_line": 31,
           "lines": [
-            34,
-            132
+            42,
+            140
           ]
         }
       ]
@@ -165569,15 +166449,15 @@
       "path": "src/game_init.c",
       "symbol": "unk4",
       "lines": [
-        134
+        142
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGameInit",
-          "declaration_line": 23,
+          "declaration_line": 31,
           "lines": [
-            134
+            142
           ]
         }
       ]
@@ -165588,15 +166468,15 @@
       "path": "src/game_init.c",
       "symbol": "unk48",
       "lines": [
-        51
+        59
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGameInit",
-          "declaration_line": 23,
+          "declaration_line": 31,
           "lines": [
-            51
+            59
           ]
         }
       ]
@@ -165607,15 +166487,15 @@
       "path": "src/game_init.c",
       "symbol": "unk4C",
       "lines": [
-        50
+        58
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGameInit",
-          "declaration_line": 23,
+          "declaration_line": 31,
           "lines": [
-            50
+            58
           ]
         }
       ]
@@ -165626,15 +166506,15 @@
       "path": "src/game_init.c",
       "symbol": "unk50",
       "lines": [
-        62
+        70
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGameInit",
-          "declaration_line": 23,
+          "declaration_line": 31,
           "lines": [
-            62
+            70
           ]
         }
       ]
@@ -165645,15 +166525,15 @@
       "path": "src/game_init.c",
       "symbol": "unk6E9C",
       "lines": [
-        49
+        57
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGameInit",
-          "declaration_line": 23,
+          "declaration_line": 31,
           "lines": [
-            49
+            57
           ]
         }
       ]
@@ -165664,15 +166544,15 @@
       "path": "src/game_init.c",
       "symbol": "unk6EAA",
       "lines": [
-        26
+        34
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGameInit",
-          "declaration_line": 23,
+          "declaration_line": 31,
           "lines": [
-            26
+            34
           ]
         }
       ]
@@ -165683,15 +166563,15 @@
       "path": "src/game_init.c",
       "symbol": "unk6EAC",
       "lines": [
-        91
+        99
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGameInit",
-          "declaration_line": 23,
+          "declaration_line": 31,
           "lines": [
-            91
+            99
           ]
         }
       ]
@@ -165702,15 +166582,15 @@
       "path": "src/game_init.c",
       "symbol": "unk6EAE",
       "lines": [
-        92
+        100
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGameInit",
-          "declaration_line": 23,
+          "declaration_line": 31,
           "lines": [
-            92
+            100
           ]
         }
       ]
@@ -165721,17 +166601,17 @@
       "path": "src/game_init.c",
       "symbol": "unk6EB0",
       "lines": [
-        74,
-        78
+        82,
+        86
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGameInit",
-          "declaration_line": 23,
+          "declaration_line": 31,
           "lines": [
-            74,
-            78
+            82,
+            86
           ]
         }
       ]
@@ -165742,15 +166622,15 @@
       "path": "src/game_init.c",
       "symbol": "unk6EC0",
       "lines": [
-        111
+        119
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGameInit",
-          "declaration_line": 23,
+          "declaration_line": 31,
           "lines": [
-            111
+            119
           ]
         }
       ]
@@ -165761,15 +166641,15 @@
       "path": "src/game_init.c",
       "symbol": "unk6F74",
       "lines": [
-        90
+        98
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGameInit",
-          "declaration_line": 23,
+          "declaration_line": 31,
           "lines": [
-            90
+            98
           ]
         }
       ]
@@ -165780,15 +166660,15 @@
       "path": "src/game_init.c",
       "symbol": "unk6F78",
       "lines": [
-        107
+        115
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGameInit",
-          "declaration_line": 23,
+          "declaration_line": 31,
           "lines": [
-            107
+            115
           ]
         }
       ]
@@ -165799,15 +166679,15 @@
       "path": "src/game_init.c",
       "symbol": "unk6FA0",
       "lines": [
-        29
+        37
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGameInit",
-          "declaration_line": 23,
+          "declaration_line": 31,
           "lines": [
-            29
+            37
           ]
         }
       ]
@@ -165818,15 +166698,15 @@
       "path": "src/game_init.c",
       "symbol": "unk6FB0",
       "lines": [
-        103
+        111
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGameInit",
-          "declaration_line": 23,
+          "declaration_line": 31,
           "lines": [
-            103
+            111
           ]
         }
       ]
@@ -165837,15 +166717,15 @@
       "path": "src/game_init.c",
       "symbol": "unk6FB4",
       "lines": [
-        104
+        112
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGameInit",
-          "declaration_line": 23,
+          "declaration_line": 31,
           "lines": [
-            104
+            112
           ]
         }
       ]
@@ -165856,15 +166736,15 @@
       "path": "src/game_init.c",
       "symbol": "unk6FB8",
       "lines": [
-        101
+        109
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGameInit",
-          "declaration_line": 23,
+          "declaration_line": 31,
           "lines": [
-            101
+            109
           ]
         }
       ]
@@ -165875,15 +166755,15 @@
       "path": "src/game_init.c",
       "symbol": "unk6FBC",
       "lines": [
-        102
+        110
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGameInit",
-          "declaration_line": 23,
+          "declaration_line": 31,
           "lines": [
-            102
+            110
           ]
         }
       ]
@@ -165894,17 +166774,17 @@
       "path": "src/game_init.c",
       "symbol": "unk704C",
       "lines": [
-        96,
-        97
+        104,
+        105
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGameInit",
-          "declaration_line": 23,
+          "declaration_line": 31,
           "lines": [
-            96,
-            97
+            104,
+            105
           ]
         }
       ]
@@ -165915,15 +166795,15 @@
       "path": "src/game_init.c",
       "symbol": "unk7058",
       "lines": [
-        98
+        106
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGameInit",
-          "declaration_line": 23,
+          "declaration_line": 31,
           "lines": [
-            98
+            106
           ]
         }
       ]
@@ -165934,15 +166814,15 @@
       "path": "src/game_init.c",
       "symbol": "unk705C",
       "lines": [
-        99
+        107
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGameInit",
-          "declaration_line": 23,
+          "declaration_line": 31,
           "lines": [
-            99
+            107
           ]
         }
       ]
@@ -165953,15 +166833,15 @@
       "path": "src/game_init.c",
       "symbol": "unk7060",
       "lines": [
-        100
+        108
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGameInit",
-          "declaration_line": 23,
+          "declaration_line": 31,
           "lines": [
-            100
+            108
           ]
         }
       ]
@@ -165972,15 +166852,15 @@
       "path": "src/game_init.c",
       "symbol": "unk7064",
       "lines": [
-        126
+        134
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGameInit",
-          "declaration_line": 23,
+          "declaration_line": 31,
           "lines": [
-            126
+            134
           ]
         }
       ]
@@ -165991,15 +166871,15 @@
       "path": "src/game_init.c",
       "symbol": "unk7074",
       "lines": [
-        127
+        135
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGameInit",
-          "declaration_line": 23,
+          "declaration_line": 31,
           "lines": [
-            127
+            135
           ]
         }
       ]
@@ -166010,15 +166890,15 @@
       "path": "src/game_init.c",
       "symbol": "unk7084",
       "lines": [
-        122
+        130
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGameInit",
-          "declaration_line": 23,
+          "declaration_line": 31,
           "lines": [
-            122
+            130
           ]
         }
       ]
@@ -166029,15 +166909,15 @@
       "path": "src/game_init.c",
       "symbol": "unk7C",
       "lines": [
-        30
+        38
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGameInit",
-          "declaration_line": 23,
+          "declaration_line": 31,
           "lines": [
-            30
+            38
           ]
         }
       ]
@@ -166048,15 +166928,15 @@
       "path": "src/game_init.c",
       "symbol": "unk8",
       "lines": [
-        197
+        212
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvSetGameState",
-          "declaration_line": 146,
+          "declaration_line": 161,
           "lines": [
-            197
+            212
           ]
         }
       ]
@@ -166067,15 +166947,15 @@
       "path": "src/game_init.c",
       "symbol": "unk80",
       "lines": [
-        37
+        45
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGameInit",
-          "declaration_line": 23,
+          "declaration_line": 31,
           "lines": [
-            37
+            45
           ]
         }
       ]
@@ -166086,15 +166966,15 @@
       "path": "src/game_init.c",
       "symbol": "unk94",
       "lines": [
-        47
+        55
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGameInit",
-          "declaration_line": 23,
+          "declaration_line": 31,
           "lines": [
-            47
+            55
           ]
         }
       ]
@@ -166105,24 +166985,24 @@
       "path": "src/game_init.c",
       "symbol": "unkC",
       "lines": [
-        93,
-        155
+        101,
+        170
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGameInit",
-          "declaration_line": 23,
+          "declaration_line": 31,
           "lines": [
-            93
+            101
           ]
         },
         {
           "kind": "function",
           "name": "uvSetGameState",
-          "declaration_line": 146,
+          "declaration_line": 161,
           "lines": [
-            155
+            170
           ]
         }
       ]
@@ -216756,33 +217636,33 @@
       "symbol": "unk0",
       "lines": [
         13,
-        116,
-        140,
-        178
+        126,
+        155,
+        193
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvProfilerEnd",
-          "declaration_line": 93,
+          "declaration_line": 103,
           "lines": [
-            116
+            126
           ]
         },
         {
           "kind": "function",
           "name": "uvProfilerQueryStatistics",
-          "declaration_line": 152,
+          "declaration_line": 167,
           "lines": [
-            178
+            193
           ]
         },
         {
           "kind": "function",
           "name": "uvProfilerResetEntry",
-          "declaration_line": 134,
+          "declaration_line": 149,
           "lines": [
-            140
+            155
           ]
         },
         {
@@ -216802,26 +217682,26 @@
       "symbol": "unk10",
       "lines": [
         15,
-        141,
-        220,
-        225
+        156,
+        246,
+        251
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvProfilerResetEntry",
-          "declaration_line": 134,
+          "declaration_line": 149,
           "lines": [
-            141
+            156
           ]
         },
         {
           "kind": "function",
           "name": "uvProfilerSetPaused",
-          "declaration_line": 213,
+          "declaration_line": 239,
           "lines": [
-            220,
-            225
+            246,
+            251
           ]
         },
         {
@@ -216841,35 +217721,35 @@
       "symbol": "unk18",
       "lines": [
         16,
-        118,
-        139,
-        169,
-        175
+        128,
+        154,
+        184,
+        190
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvProfilerEnd",
-          "declaration_line": 93,
+          "declaration_line": 103,
           "lines": [
-            118
+            128
           ]
         },
         {
           "kind": "function",
           "name": "uvProfilerQueryStatistics",
-          "declaration_line": 152,
+          "declaration_line": 167,
           "lines": [
-            169,
-            175
+            184,
+            190
           ]
         },
         {
           "kind": "function",
           "name": "uvProfilerResetEntry",
-          "declaration_line": 134,
+          "declaration_line": 149,
           "lines": [
-            139
+            154
           ]
         },
         {
@@ -216889,46 +217769,46 @@
       "symbol": "unk24",
       "lines": [
         18,
-        117,
-        130,
-        135,
-        168,
-        169,
-        181
+        127,
+        140,
+        150,
+        183,
+        184,
+        196
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvProfilerAdjustSampleCount",
-          "declaration_line": 129,
+          "declaration_line": 139,
           "lines": [
-            130
+            140
           ]
         },
         {
           "kind": "function",
           "name": "uvProfilerEnd",
-          "declaration_line": 93,
+          "declaration_line": 103,
           "lines": [
-            117
+            127
           ]
         },
         {
           "kind": "function",
           "name": "uvProfilerQueryStatistics",
-          "declaration_line": 152,
+          "declaration_line": 167,
           "lines": [
-            168,
-            169,
-            181
+            183,
+            184,
+            196
           ]
         },
         {
           "kind": "function",
           "name": "uvProfilerResetEntry",
-          "declaration_line": 134,
+          "declaration_line": 149,
           "lines": [
-            135
+            150
           ]
         },
         {
@@ -216948,46 +217828,46 @@
       "symbol": "unk28",
       "lines": [
         19,
-        70,
-        109,
-        136,
-        218,
-        223,
-        228
+        80,
+        119,
+        151,
+        244,
+        249,
+        254
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvProfilerBegin",
-          "declaration_line": 65,
+          "declaration_line": 75,
           "lines": [
-            70
+            80
           ]
         },
         {
           "kind": "function",
           "name": "uvProfilerEnd",
-          "declaration_line": 93,
+          "declaration_line": 103,
           "lines": [
-            109
+            119
           ]
         },
         {
           "kind": "function",
           "name": "uvProfilerResetEntry",
-          "declaration_line": 134,
+          "declaration_line": 149,
           "lines": [
-            136
+            151
           ]
         },
         {
           "kind": "function",
           "name": "uvProfilerSetPaused",
-          "declaration_line": 213,
+          "declaration_line": 239,
           "lines": [
-            218,
-            223,
-            228
+            244,
+            249,
+            254
           ]
         },
         {
@@ -217007,35 +217887,35 @@
       "symbol": "unk29",
       "lines": [
         20,
-        46,
-        47,
-        71,
-        137
+        52,
+        53,
+        81,
+        152
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvProfilerBegin",
-          "declaration_line": 65,
+          "declaration_line": 75,
           "lines": [
-            71
+            81
           ]
         },
         {
           "kind": "function",
           "name": "uvProfilerCreate",
-          "declaration_line": 39,
+          "declaration_line": 45,
           "lines": [
-            46,
-            47
+            52,
+            53
           ]
         },
         {
           "kind": "function",
           "name": "uvProfilerResetEntry",
-          "declaration_line": 134,
+          "declaration_line": 149,
           "lines": [
-            137
+            152
           ]
         },
         {
@@ -217055,48 +217935,48 @@
       "symbol": "unk8",
       "lines": [
         14,
-        81,
-        110,
-        114,
-        115,
-        142,
-        217,
-        225
+        91,
+        120,
+        124,
+        125,
+        157,
+        243,
+        251
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvProfilerBegin",
-          "declaration_line": 65,
+          "declaration_line": 75,
           "lines": [
-            81
+            91
           ]
         },
         {
           "kind": "function",
           "name": "uvProfilerEnd",
-          "declaration_line": 93,
+          "declaration_line": 103,
           "lines": [
-            110,
-            114,
-            115
+            120,
+            124,
+            125
           ]
         },
         {
           "kind": "function",
           "name": "uvProfilerResetEntry",
-          "declaration_line": 134,
+          "declaration_line": 149,
           "lines": [
-            142
+            157
           ]
         },
         {
           "kind": "function",
           "name": "uvProfilerSetPaused",
-          "declaration_line": 213,
+          "declaration_line": 239,
           "lines": [
-            217,
-            225
+            243,
+            251
           ]
         },
         {
@@ -225827,6 +226707,146 @@
       ]
     },
     {
+      "id": "Q-2014ba2ea5d3",
+      "kind": "original_quirk",
+      "path": "src/game_init.c",
+      "symbol": "Initialize the existing settings fields and player defaults in their * original order, enter SELECTION, handle the missing-controller path, then * drive the game update/state-change loop while controller I/O continues. * RE_ORIGINAL_QUIRK: retain repeated field assignments and late overrides, * including currentTrack and debug flags. RE_UNKNOWN: remaining unk fields, * export-slot contracts and the two reset-flag words; preserve their names * and live reads.",
+      "lines": [
+        23
+      ],
+      "evidence": "Initialize the existing settings fields and player defaults in their * original order, enter SELECTION, handle the missing-controller path, then * drive the game update/state-change loop while controller I/O continues. * RE_ORIGINAL_QUIRK: retain repeated field assignments and late overrides, * including currentTrack and debug flags. RE_UNKNOWN: remaining unk fields, * export-slot contracts and the two reset-flag words; preserve their names * and live reads.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvGameInit",
+          "declaration_line": 31,
+          "lines": [
+            23
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-6f0f4aef7aa9",
+      "kind": "original_quirk",
+      "path": "src/libultra/io/sptask.c",
+      "symbol": "Prepare the shared physical task, retain the yielded/loadable-task * rewrite, write back that task, then perform the original status, PC and * DMA setup with busy retries in order. RE_ORIGINAL_QUIRK: the loadable * resume path reads the ucode pointer from yield_data_ptr plus * OS_YIELD_DATA_SIZE plus 0x2FC. RE_UNKNOWN: that retained custom layout, * DMA buffer bounds and termination/lifetime guarantees; preserve * _DEBUG-only checks and the caller flag update.",
+      "lines": [
+        39
+      ],
+      "evidence": "Prepare the shared physical task, retain the yielded/loadable-task * rewrite, write back that task, then perform the original status, PC and * DMA setup with busy retries in order. RE_ORIGINAL_QUIRK: the loadable * resume path reads the ucode pointer from yield_data_ptr plus * OS_YIELD_DATA_SIZE plus 0x2FC. RE_UNKNOWN: that retained custom layout, * DMA buffer bounds and termination/lifetime guarantees; preserve * _DEBUG-only checks and the caller flag update.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "osSpTaskLoad",
+          "declaration_line": 47,
+          "lines": [
+            39
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-febe7e00c330",
+      "kind": "original_quirk",
+      "path": "src/libultra/io/sptaskyielded.c",
+      "symbol": "Read processor status and return YIELDED only when that status bit is * set. When the yield-request bit is also present, OR the result into the * task flags and clear DP_WAIT. RE_ORIGINAL_QUIRK: task flags are not * updated without the request bit, even if the returned status reports * yielded. RE_UNKNOWN: caller task ownership and status-sampling protocol.",
+      "lines": [
+        6
+      ],
+      "evidence": "Read processor status and return YIELDED only when that status bit is * set. When the yield-request bit is also present, OR the result into the * task flags and clear DP_WAIT. RE_ORIGINAL_QUIRK: task flags are not * updated without the request bit, even if the returned status reports * yielded. RE_UNKNOWN: caller task ownership and status-sampling protocol.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "osSpTaskYielded",
+          "declaration_line": 12,
+          "lines": [
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-1daa22c2299c",
+      "kind": "original_quirk",
+      "path": "src/libultra/io/vimgr.c",
+      "symbol": "Consume video-manager events indefinitely: swap contexts on retrace, send * the configured periodic notification without blocking, update * interrupt/time counters, and dispatch timer interrupts for counter * events. RE_ORIGINAL_QUIRK: first is initialized to zero and never set in * this body; only the initial zero retrace count is normalized to one. * RE_UNKNOWN: externally configured retrace counts, wrap behavior and * event/queue validity; retain the exact u16 countdown and nonblocking-send * result handling.",
+      "lines": [
+        81
+      ],
+      "evidence": "Consume video-manager events indefinitely: swap contexts on retrace, send * the configured periodic notification without blocking, update * interrupt/time counters, and dispatch timer interrupts for counter * events. RE_ORIGINAL_QUIRK: first is initialized to zero and never set in * this body; only the initial zero retrace count is normalized to one. * RE_UNKNOWN: externally configured retrace counts, wrap behavior and * event/queue validity; retain the exact u16 countdown and nonblocking-send * result handling.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "viMgrMain",
+          "declaration_line": 90,
+          "lines": [
+            81
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-63a18c46a925",
+      "kind": "original_quirk",
+      "path": "src/libultra/io/visetmode.c",
+      "symbol": "Store the next mode pointer, replace the context state with MODE_UPDATED, * and copy that mode's control word while interrupts are disabled. * RE_ORIGINAL_QUIRK: the state is assigned, not ORed with old pending * flags. RE_UNKNOWN: mode lifetime and caller update ordering; NULL/manager * checks remain _DEBUG-only.",
+      "lines": [
+        49
+      ],
+      "evidence": "Store the next mode pointer, replace the context state with MODE_UPDATED, * and copy that mode's control word while interrupts are disabled. * RE_ORIGINAL_QUIRK: the state is assigned, not ORed with old pending * flags. RE_UNKNOWN: mode lifetime and caller update ordering; NULL/manager * checks remain _DEBUG-only.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "osViSetMode",
+          "declaration_line": 55,
+          "lines": [
+            49
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-3f5f5462049d",
+      "kind": "original_quirk",
+      "path": "src/libultra/io/visetspecial.c",
+      "symbol": "Apply the requested gamma, dithering, divot and dither-filter controls to * the next video context in their original order, then mark control * updated. RE_ORIGINAL_QUIRK: on/off bits are independent tests, so later * off paths can override on paths; disabling the dither filter restores * antialias bits from the selected mode. RE_UNKNOWN: release-build flag * combinations and mode validity; preserve _DEBUG-only rejection.",
+      "lines": [
+        31
+      ],
+      "evidence": "Apply the requested gamma, dithering, divot and dither-filter controls to * the next video context in their original order, then mark control * updated. RE_ORIGINAL_QUIRK: on/off bits are independent tests, so later * off paths can override on paths; disabling the dither filter restores * antialias bits from the selected mode. RE_UNKNOWN: release-build flag * combinations and mode validity; preserve _DEBUG-only rejection.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "osViSetSpecialFeatures",
+          "declaration_line": 38,
+          "lines": [
+            31
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-706297761471",
+      "kind": "original_quirk",
+      "path": "src/libultra/os/initialize.c",
+      "symbol": "Enable the existing FPU state, perform the PIF read/write handshake, * install and flush exception vectors, set up the debug TLB mapping, derive * the clock rate, clear the NMI buffer on cold reset, and select the TV * clock. RE_ORIGINAL_QUIRK: preserve unchecked ROM-clock read status and * indefinite SI retry loops. RE_UNKNOWN: handshake bit meaning, * hardware/provider failure reachability and reset/environment * prerequisites; retain the original masks and operation order.",
+      "lines": [
+        23
+      ],
+      "evidence": "Enable the existing FPU state, perform the PIF read/write handshake, * install and flush exception vectors, set up the debug TLB mapping, derive * the clock rate, clear the NMI buffer on cold reset, and select the TV * clock. RE_ORIGINAL_QUIRK: preserve unchecked ROM-clock read status and * indefinite SI retry loops. RE_UNKNOWN: handshake bit meaning, * hardware/provider failure reachability and reset/environment * prerequisites; retain the original masks and operation order.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "osInitialize",
+          "declaration_line": 31,
+          "lines": [
+            23
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-01a9fd7e35d9",
       "kind": "original_quirk",
       "path": "src/main.c",
@@ -225892,16 +226912,56 @@
       "path": "src/mem_allocator.c",
       "symbol": "* Reserve the incoming address interval in the allocator free list. Round the * size to four bytes, preserve original node/header/output store ordering, and * optionally clear the original unrounded byte count. The two word outputs * report leading/trailing bytes absorbed without retaining a free-list node; * return zero on success or -1 on the original interval-check failure paths. * RE_ORIGINAL_QUIRK: after an empty-list traversal the original still reads the * node size. Split tests distinguish gaps greater than eight and less than * eight; exactly eight reaches the fallback. Removing the head in that fallback * writes NULL instead of the removed node's next link. These are original * operations, not established reachable faults; preserve them pending evidence. * RE_UNKNOWN: allowed addresses, size/overflow/alignment limits, list ordering, * empty-list reachability, writable output extents and aliases, counter meaning, * and clear-control lifecycle. The observed graphics initializer calls ignore * both outputs and the return, so they do not establish these guarantees. * Resolve original heap setup, every caller, output consumers and reset/fill * lifecycles before changing the checks, split boundaries or removal behavior. * Readable C remains parked: 476 native bytes versus 484 draft bytes differ in * 93 instruction words and relocation offsets. The cached-next traversal now * matches, but eager arithmetic, register allocation and 64-byte versus 40-byte * frames remain different. Recover original storage/lifetime evidence and prove * exact instructions, relocation records and ROM; frame size alone does not * justify padding, extra locals, alignment or a historical array extent.",
       "lines": [
-        149
+        168
       ],
       "evidence": "* Reserve the incoming address interval in the allocator free list. Round the * size to four bytes, preserve original node/header/output store ordering, and * optionally clear the original unrounded byte count. The two word outputs * report leading/trailing bytes absorbed without retaining a free-list node; * return zero on success or -1 on the original interval-check failure paths. * RE_ORIGINAL_QUIRK: after an empty-list traversal the original still reads the * node size. Split tests distinguish gaps greater than eight and less than * eight; exactly eight reaches the fallback. Removing the head in that fallback * writes NULL instead of the removed node's next link. These are original * operations, not established reachable faults; preserve them pending evidence. * RE_UNKNOWN: allowed addresses, size/overflow/alignment limits, list ordering, * empty-list reachability, writable output extents and aliases, counter meaning, * and clear-control lifecycle. The observed graphics initializer calls ignore * both outputs and the return, so they do not establish these guarantees. * Resolve original heap setup, every caller, output consumers and reset/fill * lifecycles before changing the checks, split boundaries or removal behavior. * Readable C remains parked: 476 native bytes versus 484 draft bytes differ in * 93 instruction words and relocation offsets. The cached-next traversal now * matches, but eager arithmetic, register allocation and 64-byte versus 40-byte * frames remain different. Recover original storage/lifetime evidence and prove * exact instructions, relocation records and ROM; frame size alone does not * justify padding, extra locals, alignment or a historical array extent.",
       "owners": [
         {
           "kind": "assembly",
           "name": "uvMemAllocAt",
-          "declaration_line": 174,
+          "declaration_line": 193,
           "lines": [
-            149
+            168
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-7613a34d920d",
+      "kind": "original_quirk",
+      "path": "src/mem_allocator.c",
+      "symbol": "Set gMemBlock as the only free-list node, clear its next link, derive its * size by subtracting its raw address from 0x80400000, and set both * existing accounting words to one. RE_ORIGINAL_QUIRK: the fixed endpoint * and unchecked unsigned address subtraction are retained. RE_UNKNOWN: * actual backing allocation, heap bounds and accounting-word meanings; the * declared array extent is not independent storage evidence.",
+      "lines": [
+        44
+      ],
+      "evidence": "Set gMemBlock as the only free-list node, clear its next link, derive its * size by subtracting its raw address from 0x80400000, and set both * existing accounting words to one. RE_ORIGINAL_QUIRK: the fixed endpoint * and unchecked unsigned address subtraction are retained. RE_UNKNOWN: * actual backing allocation, heap bounds and accounting-word meanings; the * declared array extent is not independent storage evidence.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "_uvMemAllocInit",
+          "declaration_line": 51,
+          "lines": [
+            44
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-0a2612184996",
+      "kind": "original_quirk",
+      "path": "src/mem_allocator.c",
+      "symbol": "Traverse the free list, accumulating node sizes and tracking * minimum/maximum values in locals whose results are discarded. * RE_ORIGINAL_QUIRK: preserve unsigned comparisons with the loaded signed * size and the minimum initialized to all ones. RE_UNKNOWN: intended debug * observation, list validity and size/overflow domains; retain the existing * name and unused calculations.",
+      "lines": [
+        329
+      ],
+      "evidence": "Traverse the free list, accumulating node sizes and tracking * minimum/maximum values in locals whose results are discarded. * RE_ORIGINAL_QUIRK: preserve unsigned comparisons with the loaded signed * size and the minimum initialized to all ones. RE_UNKNOWN: intended debug * observation, list validity and size/overflow domains; retain the existing * name and unused calculations.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "_uvMemUnusedDbgFunc1",
+          "declaration_line": 336,
+          "lines": [
+            329
           ]
         }
       ]
@@ -225932,16 +226992,16 @@
       "path": "src/memory.c",
       "symbol": "* Read 1, 2, 4 or 8 bytes in the original big-endian assembly order; unsupported * sizes return zero. Preserve all original shifts, promotions and byte reads. * The device-address path first calls the existing transfer helper into its * original signed 64-bit scratch, then recursively uses the direct-address path. * RE_ORIGINAL_QUIRK: the 8-byte case sign-extends the 32-bit contribution from * byte 4 shifted left by 24 before ORing it into the 64-bit value. Preserve that * actual native high-word effect rather than silently adding unsigned promotion. * RE_UNKNOWN: caller capacities/address domains, intended read/promotion contract, * device transfer initialization/failure and reachable odd-count paths. * Audit original callers and transfer/device consumers before changing widths, * signed arithmetic, scratch initialization, validation or failure handling.",
       "lines": [
-        93
+        97
       ],
       "evidence": "* Read 1, 2, 4 or 8 bytes in the original big-endian assembly order; unsupported * sizes return zero. Preserve all original shifts, promotions and byte reads. * The device-address path first calls the existing transfer helper into its * original signed 64-bit scratch, then recursively uses the direct-address path. * RE_ORIGINAL_QUIRK: the 8-byte case sign-extends the 32-bit contribution from * byte 4 shifted left by 24 before ORing it into the 64-bit value. Preserve that * actual native high-word effect rather than silently adding unsigned promotion. * RE_UNKNOWN: caller capacities/address domains, intended read/promotion contract, * device transfer initialization/failure and reachable odd-count paths. * Audit original callers and transfer/device consumers before changing widths, * signed arithmetic, scratch initialization, validation or failure handling.",
       "owners": [
         {
           "kind": "function",
           "name": "uvMemRead",
-          "declaration_line": 107,
+          "declaration_line": 111,
           "lines": [
-            93
+            97
           ]
         }
       ]
@@ -234757,6 +235817,26 @@
       ]
     },
     {
+      "id": "Q-fd1e9a9bd823",
+      "kind": "original_quirk",
+      "path": "src/profiler.c",
+      "symbol": "Restore a saved interrupt mask when the shared word differs from one, * reset the associated nesting word on that path, clear all forty profiler * entries, and reset clock 0x6B. RE_ORIGINAL_QUIRK: the nesting word is not * cleared by the other path. RE_UNKNOWN: initialization call ordering and * ownership of the saved-mask sentinel.",
+      "lines": [
+        204
+      ],
+      "evidence": "Restore a saved interrupt mask when the shared word differs from one, * reset the associated nesting word on that path, clear all forty profiler * entries, and reset clock 0x6B. RE_ORIGINAL_QUIRK: the nesting word is not * cleared by the other path. RE_UNKNOWN: initialization call ordering and * ownership of the saved-mask sentinel.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvProfilerInit",
+          "declaration_line": 210,
+          "lines": [
+            204
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-ceea958c4760",
       "kind": "original_quirk",
       "path": "src/sched.c",
@@ -239741,15 +240821,15 @@
       "path": "src/profiler.c",
       "symbol": "unusedPointer",
       "lines": [
-        156
+        171
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvProfilerQueryStatistics",
-          "declaration_line": 152,
+          "declaration_line": 167,
           "lines": [
-            156
+            171
           ]
         }
       ]
@@ -239760,15 +240840,15 @@
       "path": "src/profiler.c",
       "symbol": "unusedTemporary",
       "lines": [
-        96
+        106
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvProfilerEnd",
-          "declaration_line": 93,
+          "declaration_line": 103,
           "lines": [
-            96
+            106
           ]
         }
       ]
