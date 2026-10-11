@@ -71,6 +71,12 @@ void _uvScHandleRSP(void);
 void _uvScHandleRDP(void);
 void _uvScHandleNMI(void);
 
+/*
+ * Create the auxiliary ten-message queue and choose the PAL, NTSC or MPAL LAN1
+ * mode from osTvType, falling back to PAL. Install the static scheduler and
+ * start it with priority 0x7F and one field per retrace event.
+ */
+#line 74 "src/sched.c"
 void uvSetVideoMode(void) {
     s32 viMode;
     OSSched *temp;
@@ -115,6 +121,14 @@ void uvScDrainInterruptsAndResetTaskState(void) {
 }
 #line 111 "src/sched.c"
 
+/*
+ * Complete the current graphics slot only outside NMI, after RSP graphics, RDP
+ * work and yielded-state handling have finished. Send the blocking completion
+ * message before setting the byte-sized display delay and retiring the slot.
+ * Preserve delay truncation and the separate immediate versus deferred
+ * framebuffer swaps, including swap suppression.
+ */
+#line 112 "src/sched.c"
 void _uvScDoneGfx(void) {
     OSScTask *temp_a3;
 
@@ -141,6 +155,13 @@ void _uvScDoneGfx(void) {
     }
 }
 
+/*
+ * For an outstanding audio task, record completion, send its blocking
+ * notification unless NMI is asserted, then clear the audio pointer. Attempt
+ * to resume the current graphics slot even during NMI; its own start gate
+ * decides whether a yielded task may continue.
+ */
+#line 138 "src/sched.c"
 void _uvScDoneAud(void) {
     if (D_8002EDF8 != NULL) {
         uvScRecordTraceEvent(TRUE, 0x2C);
@@ -154,6 +175,12 @@ void _uvScDoneAud(void) {
     }
 }
 
+/*
+ * Start a queued audio task only before NMI: set the RSP state to audio,
+ * record its start, write back the data cache, then load and start the task.
+ * Preserve that operation order and the live global task-pointer reads.
+ */
+#line 151 "src/sched.c"
 void _uvScRunAud(void) {
     if ((!gNmiAsserted) && (D_8002EDF8 != NULL)) {
         gSchedRspStatus = 0x61;
@@ -164,6 +191,14 @@ void _uvScRunAud(void) {
     }
 }
 
+/*
+ * Start or resume the current graphics slot only when the RSP is not already
+ * running graphics and current/next framebuffers agree. A yielded task may
+ * resume during NMI or existing RDP graphics work. Count a new task and mark
+ * RDP busy only on its first start; record the event before clearing both
+ * yield flags and loading the task.
+ */
+#line 161 "src/sched.c"
 void _uvScRunGfx(void) {
     OSScTask *scTask;
 
@@ -185,6 +220,13 @@ void _uvScRunGfx(void) {
     }
 }
 
+/*
+ * Write the original 0x2902 SP status control word, then enqueue nonblocking
+ * synthetic RSP/RDP completion messages for each nonzero tracked state. The
+ * handler does not itself clear those states and preserves ignored queue-send
+ * failures.
+ */
+#line 182 "src/sched.c"
 void _uvScDlistRecover(void) {
     // _uvDebugPrintf("Recovered from a bad display list\n");
 
@@ -197,6 +239,14 @@ void _uvScDlistRecover(void) {
     }
 }
 
+/*
+ * Reset the private task, pacing and trace state; initialize scheduler queues
+ * and task-list fields; configure VI and SP/DP/pre-NMI notifications; then
+ * start scheduler thread four at the supplied priority. Reset the trace clock
+ * after thread startup. Preserve the literal initial framebuffer pointer,
+ * list-tail addresses and inherited empty matching conditional.
+ */
+#line 194 "src/sched.c"
 void _uvScCreateScheduler(OSSched *sc, void *stack, s32 priority, u8 mode, u8 numFields) {
 
     gScheduler = sc;
@@ -252,16 +302,34 @@ void _uvScCreateScheduler(OSSched *sc, void *stack, s32 priority, u8 mode, u8 nu
     uvScAdvanceTraceRing();
 }
 
+/*
+ * Clear the global scheduler client-list head without notifying, unlinking or
+ * freeing the former clients.
+ */
+#line 249 "src/sched.c"
 void _uvScInitClientList(void) {
     gScheduler->clientList = NULL;
 }
 
+/*
+ * Prepend the caller-owned client to this scheduler and store its message
+ * queue. Preserve the unchecked insertion; no allocation, duplicate test or
+ * synchronization is performed here.
+ */
+#line 253 "src/sched.c"
 void _uvScAddClient(OSSched *sc, OSScClient *client, OSMesgQueue *mq) {
     client->msgQ = mq;
     client->next = sc->clientList;
     sc->clientList = (OSScClient *) client;
 }
 
+/*
+ * Search by client pointer and unlink a matching non-head client.
+ * RE_ORIGINAL_QUIRK: the initial predecessor link points to the local
+ * traversal variable, so removing the head leaves sc->clientList unchanged.
+ * Preserve that native behavior and the unused public entrypoint.
+ */
+#line 259 "src/sched.c"
 UNUSED void _uvScRemoveClient(OSSched *sc, OSScClient *c) {
     OSScClient *client;
     OSScClient **prevNext;
@@ -276,10 +344,22 @@ UNUSED void _uvScRemoveClient(OSSched *sc, OSScClient *c) {
     }
 }
 
+/*
+ * Return the address of the supplied scheduler command queue through the
+ * original s32 result type. Preserve the existing 32-bit pointer-return
+ * representation and ABI.
+ */
+#line 273 "src/sched.c"
 s32 _uvScGetCmdQ(OSSched *s) {
     return &s->cmdQ;
 }
 
+/*
+ * Block on the global scheduler interrupt queue and dispatch retrace, RSP-
+ * done, RDP-done and pre-NMI messages forever. The thread argument is unused;
+ * unrecognized messages are silently ignored.
+ */
+#line 277 "src/sched.c"
 void _uvScMain(void *arg0) {
     OSMesg msg;
     msg = NULL;
@@ -307,6 +387,16 @@ void _uvScMain(void *arg0) {
     }
 }
 
+/*
+ * Update clocks even after NMI. Otherwise advance byte-sized RSP/RDP
+ * watchdogs, recover at 51 RSP retraces or an RDP lead above 50, pace the two
+ * graphics slots and drain queued tasks. Prioritize audio by yielding
+ * graphics; active audio, recovery and a repeated yield request return before
+ * client notification. RE_ORIGINAL_QUIRK: command receipt can overwrite either
+ * graphics slot or the single audio slot without a fullness check; client
+ * notifications are nonblocking and their failures are ignored.
+ */
+#line 304 "src/sched.c"
 void _uvScHandleRetrace(void) {
     OSScTask *sp34;
     OSScClient *var_s0;
@@ -392,6 +482,14 @@ void _uvScHandleRetrace(void) {
     }
 }
 
+/*
+ * Ignore an already-idle RSP. Otherwise clear its watchdog and state, complete
+ * audio immediately, or resolve a pending graphics yield before starting
+ * queued audio. During NMI, discard queued audio and resume successfully
+ * yielded graphics. Finally test the live RSP/RDP states before completing
+ * graphics.
+ */
+#line 389 "src/sched.c"
 void _uvScHandleRSP(void) {
     if (gSchedRspStatus != 0) {
         D_8002F258 = 0;
@@ -427,6 +525,12 @@ void _uvScHandleRSP(void) {
     }
 }
 
+/*
+ * Clear the RDP state and watchdog, record completion, then attempt graphics
+ * completion only when RSP graphics is inactive and no yielded graphics state
+ * remains.
+ */
+#line 424 "src/sched.c"
 void _uvScHandleRDP(void) {
     gSchedRdpStatus = 0;
     D_8002F257 = 0;
@@ -436,6 +540,13 @@ void _uvScHandleRDP(void) {
     }
 }
 
+/*
+ * Latch NMI and black the display before looking up the already-loaded CONT
+ * module. If present, call its callback at header offset 0x68 without loading
+ * a new module. RE_UNKNOWN: the callback slot meaning and validity contract
+ * beyond this observed NMI call; no callback-NULL guard is added.
+ */
+#line 433 "src/sched.c"
 void _uvScHandleNMI(void) {
     UnkStruct_8002D1A4 *temp_v0;
 
@@ -455,9 +566,22 @@ void uvScSetTraceEnabled(s32 enabled) {
 }
 #line 447 "src/sched.c"
 
+/*
+ * Retain the original empty one-argument entrypoint, including the native
+ * argument-home store. RE_UNKNOWN: exported purpose and external callers; the
+ * empty body does not establish a more specific clean name.
+ */
+#line 448 "src/sched.c"
 void func_800048D4(s32 arg0) {
 }
 
+/*
+ * Retain the empty hook called for a missing graphics task and scheduler
+ * watchdog recovery. RE_UNKNOWN: intended diagnostic or recovery action and
+ * any callers outside this source; do not invent side effects or rename it
+ * from the observed calls alone.
+ */
+#line 451 "src/sched.c"
 void func_800048DC(void) {
 }
 
@@ -530,6 +654,12 @@ f64 uvScGetOldestTraceInterval(void) {
 }
 #line 496 "src/sched.c"
 
+/*
+ * Retain the empty three-argument entrypoint and all three native argument-
+ * home stores. RE_UNKNOWN: original purpose and external callers; preserve its
+ * existing identity and signature.
+ */
+#line 497 "src/sched.c"
 void func_80004B1C(s32 arg0, s32 arg1, s32 arg2) {
 }
 

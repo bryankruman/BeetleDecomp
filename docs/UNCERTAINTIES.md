@@ -17,9 +17,9 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 1704 |
-| Preserved RE_ORIGINAL_QUIRK notes | 452 |
-| Older comments with uncertainty language | 87 |
+| Explicit RE_UNKNOWN notes | 1713 |
+| Preserved RE_ORIGINAL_QUIRK notes | 457 |
+| Older comments with uncertainty language | 88 |
 | Documented original-behavior audits | 30 |
 | Assembly-backed functions or data | 763 |
 | Address-based function identifiers | 910 |
@@ -1363,38 +1363,47 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_800011A8` | function `func_800011A8` | [7](../src/main.c#L7) |
 | address_function | `func_800051B4` | function `func_800051B4` | [15](../src/main.c#L15) |
 | address_function | `func_80005284` | function `func_80005284` | [16](../src/main.c#L16) |
-| address_function | `func_80005570` | function `func_80005570` | [370](../src/main.c#L370) |
+| address_function | `func_80005570` | function `func_80005570` | [442](../src/main.c#L442) |
 | address_function | `func_80007190` | function `func_80007190` | [17](../src/main.c#L17) |
-| address_global | `D_8001F630` | function `Thread_Kernel`, global `D_8001F630` | [59](../src/main.c#L59), [322](../src/main.c#L322) |
+| address_global | `D_8001F630` | function `Thread_Kernel`, global `D_8001F630` | [59](../src/main.c#L59), [365](../src/main.c#L365) |
 | address_global | `D_8001F7D0` | — | [43](../src/main.c#L43) |
-| address_global | `D_8001F7D4` | function `Thread_Fault`, global `D_8001F7D4` | [45](../src/main.c#L45), [309](../src/main.c#L309) |
-| address_global | `D_8001F7D8` | function `Thread_Fault`, global `D_8001F7D8` | [46](../src/main.c#L46), [308](../src/main.c#L308) |
-| address_global | `D_8001F7E0` | function `uvDebugDrawHexDigit` | [49](../src/main.c#L49), [175](../src/main.c#L175) |
-| address_global | `D_8001F800` | function `uvDebugDrawFixedGlyphSequence` | [54](../src/main.c#L54), [192](../src/main.c#L192), [196](../src/main.c#L196) |
-| address_global | `D_8001F81C` | function `uvDebugDrawStackTrace` | [255](../src/main.c#L255), [258](../src/main.c#L258), [279](../src/main.c#L279), [288](../src/main.c#L288), [290](../src/main.c#L290) |
-| address_global | `D_8002F750` | function `uvDebugDrawStackTrace`, global `D_8002F750` | [26](../src/main.c#L26), [280](../src/main.c#L280) |
+| address_global | `D_8001F7D4` | function `Thread_Fault`, global `D_8001F7D4` | [45](../src/main.c#L45), [339](../src/main.c#L339) |
+| address_global | `D_8001F7D8` | function `Thread_Fault`, global `D_8001F7D8` | [46](../src/main.c#L46), [338](../src/main.c#L338) |
+| address_global | `D_8001F7E0` | function `uvDebugDrawHexDigit` | [49](../src/main.c#L49), [198](../src/main.c#L198) |
+| address_global | `D_8001F800` | function `uvDebugDrawFixedGlyphSequence` | [54](../src/main.c#L54), [215](../src/main.c#L215), [219](../src/main.c#L219) |
+| address_global | `D_8001F81C` | function `uvDebugDrawStackTrace` | [278](../src/main.c#L278), [281](../src/main.c#L281), [302](../src/main.c#L302), [311](../src/main.c#L311), [313](../src/main.c#L313) |
+| address_global | `D_8002F750` | function `uvDebugDrawStackTrace`, global `D_8002F750` | [26](../src/main.c#L26), [303](../src/main.c#L303) |
 | address_global | `D_8002F7DC` | global `D_8002F7DC` | [29](../src/main.c#L29) |
-| address_global | `D_8002F7E0` | function `_uvDMA`, global `D_8002F7E0` | [30](../src/main.c#L30), [344](../src/main.c#L344) |
-| address_global | `D_8002F8C8` | function `uvSysInit`, global `D_8002F8C8` | [37](../src/main.c#L37), [77](../src/main.c#L77) |
-| decompiler_local | `arg0` | function `Thread_App`, function `Thread_Fault`, function `bootproc`, function `uvDebugDrawScaledGlyph`, function `uvFindModuleTagBeforeAddress` | [14](../src/main.c#L14), [63](../src/main.c#L63), [99](../src/main.c#L99), [295](../src/main.c#L295), [313](../src/main.c#L313), [314](../src/main.c#L314) |
+| address_global | `D_8002F7E0` | function `_uvDMA`, global `D_8002F7E0` | [30](../src/main.c#L30), [403](../src/main.c#L403) |
+| address_global | `D_8002F8C8` | function `uvSysInit`, global `D_8002F8C8` | [37](../src/main.c#L37), [86](../src/main.c#L86) |
+| decompiler_local | `arg0` | function `Thread_App`, function `Thread_Fault`, function `bootproc`, function `uvDebugDrawScaledGlyph`, function `uvFindModuleTagBeforeAddress` | [14](../src/main.c#L14), [63](../src/main.c#L63), [122](../src/main.c#L122), [325](../src/main.c#L325), [348](../src/main.c#L348), [349](../src/main.c#L349) |
 | decompiler_local | `arg1` | function `uvDebugDrawScaledGlyph`, function `uvFindModuleTagBeforeAddress` | [14](../src/main.c#L14), [63](../src/main.c#L63) |
 | decompiler_local | `arg2` | function `uvDebugDrawScaledGlyph` | [63](../src/main.c#L63) |
 | decompiler_local | `arg3` | function `uvDebugDrawScaledGlyph` | [63](../src/main.c#L63) |
 | decompiler_local | `arg4` | function `uvDebugDrawScaledGlyph` | [63](../src/main.c#L63) |
 | draft_marker | `TODO` | global `gFaultThreadStack` | [21](../src/main.c#L21) |
-| explicit_unknown | `Draw a 5-by-7 bordered glyph as 2-by-2 pixel blocks into both original * 320-pixel-wide raw framebuffers. Interior bits are consumed from bit 15 * through bit 1; preserve signed...` | function `uvDebugDrawScaledGlyph` | [118](../src/main.c#L118) |
-| explicit_unknown | `Draw the current address, then scan instruction words forward below * 0x80400000 for saved-return-address restores and stack-pointer adjustments. * Stop at a negative stack adju...` | function `uvDebugDrawStackTrace` | [241](../src/main.c#L241) |
-| explicit_unknown | `Draw the indexed glyph from the original sixteen-entry hexadecimal glyph * table with caller colors. RE_UNKNOWN: callers must supply an index in * zero through fifteen; no bound...` | function `uvDebugDrawHexDigit` | [171](../src/main.c#L171) |
-| explicit_unknown | `Draw the nearest preceding loaded module's tag, when found, then draw * address minus its base minus its export-table size. Otherwise add the * original main-image display bias....` | function `uvDebugDrawResolvedAddress` | [217](../src/main.c#L217) |
-| explicit_unknown | `Render the first thirteen entries of the original fixed glyph sequence * using white foreground and background word one. A zero entry resets X and * advances Y by sixteen; prese...` | function `uvDebugDrawFixedGlyphSequence` | [180](../src/main.c#L180) |
-| layout_padding | `pad` | function `Thread_Fault` | [296](../src/main.c#L296) |
-| unused_identifier | `unusedByteCursor` | function `uvDebugDrawStackTrace` | [253](../src/main.c#L253) |
-| unused_identifier | `unusedFunction` | function `unusedFunction` | [90](../src/main.c#L90) |
-| unused_identifier | `unusedWord` | function `uvDebugDrawResolvedAddress`, function `uvDebugDrawStackTrace` | [228](../src/main.c#L228), [251](../src/main.c#L251) |
-| unused_identifier | `unusedWord0` | function `uvDebugDrawScaledGlyph` | [126](../src/main.c#L126) |
-| unused_identifier | `unusedWord1` | function `uvDebugDrawScaledGlyph` | [127](../src/main.c#L127) |
-| unused_identifier | `unusedWord2` | function `uvDebugDrawScaledGlyph` | [134](../src/main.c#L134) |
-| unused_identifier | `unusedWord3` | function `uvDebugDrawScaledGlyph` | [135](../src/main.c#L135) |
+| explicit_unknown | `* Create the PI manager and one-message DMA completion queue, then start fault * thread zero at priority 250 and application thread six at priority ten. * Forward the bootstrap ...` | function `Thread_Kernel` | [352](../src/main.c#L352) |
+| explicit_unknown | `* Initialize the OS, request 22050-Hz audio, read sixteen cartridge words * starting at 0xFFB000 and pass that local block to kernel thread one at * priority twelve. Preserve co...` | function `bootproc` | [114](../src/main.c#L114) |
+| explicit_unknown | `* Keep the optional ISPRINT forwarding branch unchanged. The captured original * native only saves the four argument registers and returns. RE_UNKNOWN: * debug-enabled variadic ...` | function `_uvDebugPrintf` | [372](../src/main.c#L372) |
+| explicit_unknown | `* Retain this empty return-only entrypoint. RE_UNKNOWN: original purpose and * callers; no more specific name or behavior is inferred.` | function `func_80005570` | [437](../src/main.c#L437) |
+| explicit_unknown | `* Start and wait for a PI read only with an eight-byte-aligned destination, * even device address and byte count at most four MiB. Round odd counts up to * an even count and pre...` | function `_uvDMA` | [388](../src/main.c#L388) |
+| explicit_unknown | `Draw a 5-by-7 bordered glyph as 2-by-2 pixel blocks into both original * 320-pixel-wide raw framebuffers. Interior bits are consumed from bit 15 * through bit 1; preserve signed...` | function `uvDebugDrawScaledGlyph` | [141](../src/main.c#L141) |
+| explicit_unknown | `Draw the current address, then scan instruction words forward below * 0x80400000 for saved-return-address restores and stack-pointer adjustments. * Stop at a negative stack adju...` | function `uvDebugDrawStackTrace` | [264](../src/main.c#L264) |
+| explicit_unknown | `Draw the indexed glyph from the original sixteen-entry hexadecimal glyph * table with caller colors. RE_UNKNOWN: callers must supply an index in * zero through fifteen; no bound...` | function `uvDebugDrawHexDigit` | [194](../src/main.c#L194) |
+| explicit_unknown | `Draw the nearest preceding loaded module's tag, when found, then draw * address minus its base minus its export-table size. Otherwise add the * original main-image display bias....` | function `uvDebugDrawResolvedAddress` | [240](../src/main.c#L240) |
+| explicit_unknown | `Render the first thirteen entries of the original fixed glyph sequence * using white foreground and background word one. A zero entry resets X and * advances Y by sixteen; prese...` | function `uvDebugDrawFixedGlyphSequence` | [203](../src/main.c#L203) |
+| layout_padding | `pad` | function `Thread_Fault` | [326](../src/main.c#L326) |
+| original_quirk | `* On first initialization, initialize allocator, video, clocks, profiler, form * files and modules in order, then clear the initial DMA flag. Later calls * clear scheduler clien...` | function `uvSysInit` | [65](../src/main.c#L65) |
+| original_quirk | `* Return the global status address and SI queue. While the saved controller * bitmask is zero, wait for the original 0x2710 timer, create the SI queue, * register its event and ...` | function `uvContMesgInit` | [410](../src/main.c#L410) |
+| original_quirk | `* Start and wait for a PI read only with an eight-byte-aligned destination, * even device address and byte count at most four MiB. Round odd counts up to * an even count and pre...` | function `_uvDMA` | [388](../src/main.c#L388) |
+| uncertainty_note | `Original guarded NULL store; trigger reachability is unresolved.` | function `uvSysInit` | [85](../src/main.c#L85) |
+| unused_identifier | `unusedByteCursor` | function `uvDebugDrawStackTrace` | [276](../src/main.c#L276) |
+| unused_identifier | `unusedFunction` | function `unusedFunction` | [99](../src/main.c#L99) |
+| unused_identifier | `unusedWord` | function `uvDebugDrawResolvedAddress`, function `uvDebugDrawStackTrace` | [251](../src/main.c#L251), [274](../src/main.c#L274) |
+| unused_identifier | `unusedWord0` | function `uvDebugDrawScaledGlyph` | [149](../src/main.c#L149) |
+| unused_identifier | `unusedWord1` | function `uvDebugDrawScaledGlyph` | [150](../src/main.c#L150) |
+| unused_identifier | `unusedWord2` | function `uvDebugDrawScaledGlyph` | [157](../src/main.c#L157) |
+| unused_identifier | `unusedWord3` | function `uvDebugDrawScaledGlyph` | [158](../src/main.c#L158) |
 
 ## src/mem_allocator.c
 
@@ -9673,62 +9682,68 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
-| address_function | `func_800048D4` | function `func_800048D4` | [458](../src/sched.c#L458) |
-| address_function | `func_800048DC` | function `_uvScDoneGfx`, function `_uvScHandleRetrace`, function `func_800048DC`, function `func_800048DC` | [64](../src/sched.c#L64), [124](../src/sched.c#L124), [330](../src/sched.c#L330), [336](../src/sched.c#L336), [461](../src/sched.c#L461) |
-| address_function | `func_80004B1C` | function `func_80004B1C` | [533](../src/sched.c#L533) |
-| address_global | `D_8001F7C0` | function `_uvScDoneGfx`, function `uvScSetFrameRetraceThreshold`, global `D_8001F7C0`, global `D_8001F7C0` | [46](../src/sched.c#L46), [56](../src/sched.c#L56), [130](../src/sched.c#L130), [131](../src/sched.c#L131), [514](../src/sched.c#L514) |
-| address_global | `D_8001F7C4` | function `_uvScDoneGfx`, function `_uvScHandleRetrace`, global `D_8001F7C4` | [47](../src/sched.c#L47), [130](../src/sched.c#L130), [131](../src/sched.c#L131), [340](../src/sched.c#L340), [356](../src/sched.c#L356) |
-| address_global | `D_8002DAE0` | function `uvScRecordTraceEvent`, global `D_8002DAE0` | [60](../src/sched.c#L60), [493](../src/sched.c#L493) |
-| address_global | `D_8002E440` | function `uvScRecordTraceEvent`, global `D_8002E440` | [61](../src/sched.c#L61), [496](../src/sched.c#L496) |
-| address_global | `D_8002EDA0` | function `uvScAdvanceTraceRing`, function `uvScRecordTraceEvent`, global `D_8002EDA0` | [57](../src/sched.c#L57), [474](../src/sched.c#L474), [491](../src/sched.c#L491), [494](../src/sched.c#L494) |
-| address_global | `D_8002EDB8` | function `uvScAdvanceTraceRing`, function `uvScRecordTraceEvent`, global `D_8002EDB8` | [58](../src/sched.c#L58), [473](../src/sched.c#L473), [491](../src/sched.c#L491), [497](../src/sched.c#L497) |
-| address_global | `D_8002EDD0` | function `uvScAdvanceTraceRing`, function `uvScGetOldestTraceInterval`, global `D_8002EDD0` | [55](../src/sched.c#L55), [472](../src/sched.c#L472), [529](../src/sched.c#L529) |
-| address_global | `D_8002EDF8` | function `_uvScCreateScheduler`, function `_uvScDoneAud`, function `_uvScHandleRSP`, function `_uvScHandleRetrace`, function `_uvScRunAud`, function `uvScDrainInterruptsAndResetTaskState`, global `D_8002EDF8` | [29](../src/sched.c#L29), [112](../src/sched.c#L112), [145](../src/sched.c#L145), [148](../src/sched.c#L148), [150](../src/sched.c#L150), [158](../src/sched.c#L158), [162](../src/sched.c#L162), [163](../src/sched.c#L163) (+5 in JSON) |
-| address_global | `D_8002EE00` | function `_uvScCreateScheduler`, function `_uvScDoneAud`, function `_uvScDoneGfx`, function `_uvScHandleRSP`, function `_uvScHandleRetrace`, function `_uvScRunGfx`, function `uvScDrainInterruptsAndResetTaskState`, global `D_8002EE00` | [28](../src/sched.c#L28), [112](../src/sched.c#L112), [113](../src/sched.c#L113), [121](../src/sched.c#L121), [138](../src/sched.c#L138), [139](../src/sched.c#L139), [151](../src/sched.c#L151), [170](../src/sched.c#L170) (+5 in JSON) |
-| address_global | `D_8002EE08` | function `_uvScDoneGfx`, function `_uvScHandleRetrace`, global `D_8002EE08` | [48](../src/sched.c#L48), [138](../src/sched.c#L138), [348](../src/sched.c#L348), [350](../src/sched.c#L350) |
-| address_global | `D_8002EE10` | function `uvSetVideoMode`, global `D_8002EE10` | [50](../src/sched.c#L50), [78](../src/sched.c#L78) |
-| address_global | `D_8002EE28` | function `uvSetVideoMode`, global `D_8002EE28` | [51](../src/sched.c#L51), [78](../src/sched.c#L78) |
-| address_global | `D_8002F250` | function `_uvScCreateScheduler`, function `_uvScDoneGfx`, function `_uvScHandleRetrace`, global `D_8002F250` | [30](../src/sched.c#L30), [131](../src/sched.c#L131), [133](../src/sched.c#L133), [206](../src/sched.c#L206), [345](../src/sched.c#L345), [346](../src/sched.c#L346), [353](../src/sched.c#L353) |
-| address_global | `D_8002F253` | function `_uvScCreateScheduler`, function `_uvScHandleRSP`, function `_uvScHandleRetrace`, function `_uvScRunGfx`, function `uvScDrainInterruptsAndResetTaskState`, function `uvScRecordTraceEvent`, global `D_8002F253` | [33](../src/sched.c#L33), [114](../src/sched.c#L114), [180](../src/sched.c#L180), [209](../src/sched.c#L209), [374](../src/sched.c#L374), [378](../src/sched.c#L378), [404](../src/sched.c#L404), [410](../src/sched.c#L410) (+2 in JSON) |
-| address_global | `D_8002F254` | function `_uvScCreateScheduler`, function `_uvScDoneGfx`, function `_uvScHandleRDP`, function `_uvScHandleRSP`, function `_uvScRunGfx`, function `uvScDrainInterruptsAndResetTaskState`, function `uvScRecordTraceEvent`, global `D_8002F254` | [34](../src/sched.c#L34), [114](../src/sched.c#L114), [127](../src/sched.c#L127), [171](../src/sched.c#L171), [172](../src/sched.c#L172), [175](../src/sched.c#L175), [180](../src/sched.c#L180), [210](../src/sched.c#L210) (+3 in JSON) |
-| address_global | `D_8002F255` | function `_uvScCreateScheduler`, function `_uvScHandleRetrace`, global `D_8002F255` | [35](../src/sched.c#L35), [211](../src/sched.c#L211), [366](../src/sched.c#L366), [367](../src/sched.c#L367) |
-| address_global | `D_8002F256` | function `_uvScCreateScheduler`, function `_uvScDoneAud`, function `_uvScDoneGfx`, function `_uvScHandleRSP`, function `_uvScHandleRetrace`, function `_uvScRunGfx`, global `D_8002F256` | [36](../src/sched.c#L36), [121](../src/sched.c#L121), [138](../src/sched.c#L138), [139](../src/sched.c#L139), [151](../src/sched.c#L151), [170](../src/sched.c#L170), [212](../src/sched.c#L212), [355](../src/sched.c#L355) (+2 in JSON) |
-| address_global | `D_8002F257` | function `_uvScCreateScheduler`, function `_uvScHandleRDP`, function `_uvScHandleRetrace`, function `uvScDrainInterruptsAndResetTaskState`, global `D_8002F257` | [37](../src/sched.c#L37), [110](../src/sched.c#L110), [213](../src/sched.c#L213), [325](../src/sched.c#L325), [327](../src/sched.c#L327), [334](../src/sched.c#L334), [335](../src/sched.c#L335), [432](../src/sched.c#L432) |
-| address_global | `D_8002F258` | function `_uvScCreateScheduler`, function `_uvScHandleRSP`, function `_uvScHandleRetrace`, function `uvScDrainInterruptsAndResetTaskState`, global `D_8002F258` | [38](../src/sched.c#L38), [111](../src/sched.c#L111), [214](../src/sched.c#L214), [320](../src/sched.c#L320), [322](../src/sched.c#L322), [329](../src/sched.c#L329), [334](../src/sched.c#L334), [397](../src/sched.c#L397) |
-| address_global | `D_8002F25C` | function `_uvScCreateScheduler`, function `_uvScRunGfx`, global `D_8002F25C` | [39](../src/sched.c#L39), [176](../src/sched.c#L176), [215](../src/sched.c#L215) |
-| address_global | `D_8002F260` | function `_uvScCreateScheduler`, global `D_8002F260` | [40](../src/sched.c#L40), [217](../src/sched.c#L217) |
-| address_global | `D_8002F264` | function `_uvScCreateScheduler`, function `_uvScHandleRetrace`, global `D_8002F264` | [41](../src/sched.c#L41), [219](../src/sched.c#L219), [318](../src/sched.c#L318) |
-| address_global | `D_8002F268` | function `_uvScCreateScheduler`, function `uvScRecordTraceEvent`, function `uvScSetTraceEnabled`, global `D_8002F268` | [42](../src/sched.c#L42), [220](../src/sched.c#L220), [454](../src/sched.c#L454), [489](../src/sched.c#L489) |
-| address_global | `D_8002F26C` | function `_uvScDoneGfx`, function `_uvScHandleRetrace`, function `uvScSetBufferSwapSuppressed`, global `D_8002F26C` | [49](../src/sched.c#L49), [134](../src/sched.c#L134), [347](../src/sched.c#L347), [542](../src/sched.c#L542) |
-| address_global | `D_8002F278` | function `uvSetVideoMode`, global `D_8002F278` | [53](../src/sched.c#L53), [95](../src/sched.c#L95) |
+| address_function | `func_800048D4` | function `func_800048D4` | [575](../src/sched.c#L575) |
+| address_function | `func_800048DC` | function `_uvScDoneGfx`, function `_uvScHandleRetrace`, function `func_800048DC`, function `func_800048DC` | [64](../src/sched.c#L64), [138](../src/sched.c#L138), [420](../src/sched.c#L420), [426](../src/sched.c#L426), [585](../src/sched.c#L585) |
+| address_function | `func_80004B1C` | function `func_80004B1C` | [663](../src/sched.c#L663) |
+| address_global | `D_8001F7C0` | function `_uvScDoneGfx`, function `uvScSetFrameRetraceThreshold`, global `D_8001F7C0`, global `D_8001F7C0` | [46](../src/sched.c#L46), [56](../src/sched.c#L56), [144](../src/sched.c#L144), [145](../src/sched.c#L145), [638](../src/sched.c#L638) |
+| address_global | `D_8001F7C4` | function `_uvScDoneGfx`, function `_uvScHandleRetrace`, global `D_8001F7C4` | [47](../src/sched.c#L47), [144](../src/sched.c#L144), [145](../src/sched.c#L145), [430](../src/sched.c#L430), [446](../src/sched.c#L446) |
+| address_global | `D_8002DAE0` | function `uvScRecordTraceEvent`, global `D_8002DAE0` | [60](../src/sched.c#L60), [617](../src/sched.c#L617) |
+| address_global | `D_8002E440` | function `uvScRecordTraceEvent`, global `D_8002E440` | [61](../src/sched.c#L61), [620](../src/sched.c#L620) |
+| address_global | `D_8002EDA0` | function `uvScAdvanceTraceRing`, function `uvScRecordTraceEvent`, global `D_8002EDA0` | [57](../src/sched.c#L57), [598](../src/sched.c#L598), [615](../src/sched.c#L615), [618](../src/sched.c#L618) |
+| address_global | `D_8002EDB8` | function `uvScAdvanceTraceRing`, function `uvScRecordTraceEvent`, global `D_8002EDB8` | [58](../src/sched.c#L58), [597](../src/sched.c#L597), [615](../src/sched.c#L615), [621](../src/sched.c#L621) |
+| address_global | `D_8002EDD0` | function `uvScAdvanceTraceRing`, function `uvScGetOldestTraceInterval`, global `D_8002EDD0` | [55](../src/sched.c#L55), [596](../src/sched.c#L596), [653](../src/sched.c#L653) |
+| address_global | `D_8002EDF8` | function `_uvScCreateScheduler`, function `_uvScDoneAud`, function `_uvScHandleRSP`, function `_uvScHandleRetrace`, function `_uvScRunAud`, function `uvScDrainInterruptsAndResetTaskState`, global `D_8002EDF8` | [29](../src/sched.c#L29), [118](../src/sched.c#L118), [166](../src/sched.c#L166), [169](../src/sched.c#L169), [171](../src/sched.c#L171), [185](../src/sched.c#L185), [189](../src/sched.c#L189), [190](../src/sched.c#L190) (+5 in JSON) |
+| address_global | `D_8002EE00` | function `_uvScCreateScheduler`, function `_uvScDoneAud`, function `_uvScDoneGfx`, function `_uvScHandleRSP`, function `_uvScHandleRetrace`, function `_uvScRunGfx`, function `uvScDrainInterruptsAndResetTaskState`, global `D_8002EE00` | [28](../src/sched.c#L28), [118](../src/sched.c#L118), [119](../src/sched.c#L119), [135](../src/sched.c#L135), [152](../src/sched.c#L152), [153](../src/sched.c#L153), [172](../src/sched.c#L172), [205](../src/sched.c#L205) (+5 in JSON) |
+| address_global | `D_8002EE08` | function `_uvScDoneGfx`, function `_uvScHandleRetrace`, global `D_8002EE08` | [48](../src/sched.c#L48), [152](../src/sched.c#L152), [438](../src/sched.c#L438), [440](../src/sched.c#L440) |
+| address_global | `D_8002EE10` | function `uvSetVideoMode`, global `D_8002EE10` | [50](../src/sched.c#L50), [84](../src/sched.c#L84) |
+| address_global | `D_8002EE28` | function `uvSetVideoMode`, global `D_8002EE28` | [51](../src/sched.c#L51), [84](../src/sched.c#L84) |
+| address_global | `D_8002F250` | function `_uvScCreateScheduler`, function `_uvScDoneGfx`, function `_uvScHandleRetrace`, global `D_8002F250` | [30](../src/sched.c#L30), [145](../src/sched.c#L145), [147](../src/sched.c#L147), [256](../src/sched.c#L256), [435](../src/sched.c#L435), [436](../src/sched.c#L436), [443](../src/sched.c#L443) |
+| address_global | `D_8002F253` | function `_uvScCreateScheduler`, function `_uvScHandleRSP`, function `_uvScHandleRetrace`, function `_uvScRunGfx`, function `uvScDrainInterruptsAndResetTaskState`, function `uvScRecordTraceEvent`, global `D_8002F253` | [33](../src/sched.c#L33), [120](../src/sched.c#L120), [215](../src/sched.c#L215), [259](../src/sched.c#L259), [464](../src/sched.c#L464), [468](../src/sched.c#L468), [502](../src/sched.c#L502), [508](../src/sched.c#L508) (+2 in JSON) |
+| address_global | `D_8002F254` | function `_uvScCreateScheduler`, function `_uvScDoneGfx`, function `_uvScHandleRDP`, function `_uvScHandleRSP`, function `_uvScRunGfx`, function `uvScDrainInterruptsAndResetTaskState`, function `uvScRecordTraceEvent`, global `D_8002F254` | [34](../src/sched.c#L34), [120](../src/sched.c#L120), [141](../src/sched.c#L141), [206](../src/sched.c#L206), [207](../src/sched.c#L207), [210](../src/sched.c#L210), [215](../src/sched.c#L215), [260](../src/sched.c#L260) (+3 in JSON) |
+| address_global | `D_8002F255` | function `_uvScCreateScheduler`, function `_uvScHandleRetrace`, global `D_8002F255` | [35](../src/sched.c#L35), [261](../src/sched.c#L261), [456](../src/sched.c#L456), [457](../src/sched.c#L457) |
+| address_global | `D_8002F256` | function `_uvScCreateScheduler`, function `_uvScDoneAud`, function `_uvScDoneGfx`, function `_uvScHandleRSP`, function `_uvScHandleRetrace`, function `_uvScRunGfx`, global `D_8002F256` | [36](../src/sched.c#L36), [135](../src/sched.c#L135), [152](../src/sched.c#L152), [153](../src/sched.c#L153), [172](../src/sched.c#L172), [205](../src/sched.c#L205), [262](../src/sched.c#L262), [445](../src/sched.c#L445) (+2 in JSON) |
+| address_global | `D_8002F257` | function `_uvScCreateScheduler`, function `_uvScHandleRDP`, function `_uvScHandleRetrace`, function `uvScDrainInterruptsAndResetTaskState`, global `D_8002F257` | [37](../src/sched.c#L37), [116](../src/sched.c#L116), [263](../src/sched.c#L263), [415](../src/sched.c#L415), [417](../src/sched.c#L417), [424](../src/sched.c#L424), [425](../src/sched.c#L425), [536](../src/sched.c#L536) |
+| address_global | `D_8002F258` | function `_uvScCreateScheduler`, function `_uvScHandleRSP`, function `_uvScHandleRetrace`, function `uvScDrainInterruptsAndResetTaskState`, global `D_8002F258` | [38](../src/sched.c#L38), [117](../src/sched.c#L117), [264](../src/sched.c#L264), [410](../src/sched.c#L410), [412](../src/sched.c#L412), [419](../src/sched.c#L419), [424](../src/sched.c#L424), [495](../src/sched.c#L495) |
+| address_global | `D_8002F25C` | function `_uvScCreateScheduler`, function `_uvScRunGfx`, global `D_8002F25C` | [39](../src/sched.c#L39), [211](../src/sched.c#L211), [265](../src/sched.c#L265) |
+| address_global | `D_8002F260` | function `_uvScCreateScheduler`, global `D_8002F260` | [40](../src/sched.c#L40), [267](../src/sched.c#L267) |
+| address_global | `D_8002F264` | function `_uvScCreateScheduler`, function `_uvScHandleRetrace`, global `D_8002F264` | [41](../src/sched.c#L41), [269](../src/sched.c#L269), [408](../src/sched.c#L408) |
+| address_global | `D_8002F268` | function `_uvScCreateScheduler`, function `uvScRecordTraceEvent`, function `uvScSetTraceEnabled`, global `D_8002F268` | [42](../src/sched.c#L42), [270](../src/sched.c#L270), [565](../src/sched.c#L565), [613](../src/sched.c#L613) |
+| address_global | `D_8002F26C` | function `_uvScDoneGfx`, function `_uvScHandleRetrace`, function `uvScSetBufferSwapSuppressed`, global `D_8002F26C` | [49](../src/sched.c#L49), [148](../src/sched.c#L148), [437](../src/sched.c#L437), [672](../src/sched.c#L672) |
+| address_global | `D_8002F278` | function `uvSetVideoMode`, global `D_8002F278` | [53](../src/sched.c#L53), [101](../src/sched.c#L101) |
 | address_global | `D_8024B7D0` | global `D_8024B7D0` | [26](../src/sched.c#L26) |
 | address_global | `D_802B9C58` | global `D_802B9C58` | [27](../src/sched.c#L27) |
-| decompiler_local | `arg0` | function `_uvScMain`, function `func_800048D4`, function `func_80004B1C` | [283](../src/sched.c#L283), [458](../src/sched.c#L458), [533](../src/sched.c#L533) |
-| decompiler_local | `arg1` | function `func_80004B1C` | [533](../src/sched.c#L533) |
-| decompiler_local | `arg2` | function `func_80004B1C` | [533](../src/sched.c#L533) |
-| decompiler_local | `sp34` | function `_uvScHandleRetrace` | [311](../src/sched.c#L311), [315](../src/sched.c#L315), [360](../src/sched.c#L360), [361](../src/sched.c#L361), [365](../src/sched.c#L365), [366](../src/sched.c#L366), [368](../src/sched.c#L368), [369](../src/sched.c#L369) |
-| decompiler_local | `temp_a3` | function `_uvScDoneGfx` | [119](../src/sched.c#L119), [121](../src/sched.c#L121), [123](../src/sched.c#L123), [129](../src/sched.c#L129), [135](../src/sched.c#L135) |
-| decompiler_local | `temp_v0` | function `_uvScHandleNMI` | [440](../src/sched.c#L440), [444](../src/sched.c#L444), [445](../src/sched.c#L445), [446](../src/sched.c#L446) |
-| decompiler_local | `var_s0` | function `_uvScHandleRetrace` | [312](../src/sched.c#L312), [387](../src/sched.c#L387), [388](../src/sched.c#L388), [389](../src/sched.c#L389), [390](../src/sched.c#L390) |
-| explicit_unknown | `Drain the scheduler interrupt queue without blocking, then clear the * tracked audio/graphics task pointers, RSP/RDP state and timeout counters. * RE_UNKNOWN: required scheduler...` | function `uvScDrainInterruptsAndResetTaskState` | [100](../src/sched.c#L100) |
-| explicit_unknown | `Return the recorded-time difference between ring slots one and two * positions after the current slot, modulo five. These are the oldest * consecutive slots after the ring has f...` | function `uvScGetOldestTraceInterval` | [519](../src/sched.c#L519) |
-| explicit_unknown | `Set the retrace-count threshold used by graphics completion to calculate * a remaining display delay relative to the current retrace counter. * RE_UNKNOWN: accepted range and hi...` | function `uvScSetFrameRetraceThreshold` | [509](../src/sched.c#L509) |
-| explicit_unknown | `Store the control that suppresses both scheduler framebuffer-swap paths * when nonzero. Preserve the original s32 control value. * RE_UNKNOWN: callers and lifecycle of suppressi...` | function `uvScSetBufferSwapSuppressed` | [537](../src/sched.c#L537) |
-| explicit_unknown | `When tracing is enabled and both stream counts are below thirty, append * to the selected stream in the current ring slot. Record clock-0x69 time, * event code and the packed RS...` | function `uvScRecordTraceEvent` | [479](../src/sched.c#L479) |
-| layout_padding | `pad` | function `_uvScHandleRetrace` | [313](../src/sched.c#L313) |
+| decompiler_local | `arg0` | function `_uvScMain`, function `func_800048D4`, function `func_80004B1C` | [363](../src/sched.c#L363), [575](../src/sched.c#L575), [663](../src/sched.c#L663) |
+| decompiler_local | `arg1` | function `func_80004B1C` | [663](../src/sched.c#L663) |
+| decompiler_local | `arg2` | function `func_80004B1C` | [663](../src/sched.c#L663) |
+| decompiler_local | `sp34` | function `_uvScHandleRetrace` | [401](../src/sched.c#L401), [405](../src/sched.c#L405), [450](../src/sched.c#L450), [451](../src/sched.c#L451), [455](../src/sched.c#L455), [456](../src/sched.c#L456), [458](../src/sched.c#L458), [459](../src/sched.c#L459) |
+| decompiler_local | `temp_a3` | function `_uvScDoneGfx` | [133](../src/sched.c#L133), [135](../src/sched.c#L135), [137](../src/sched.c#L137), [143](../src/sched.c#L143), [149](../src/sched.c#L149) |
+| decompiler_local | `temp_v0` | function `_uvScHandleNMI` | [551](../src/sched.c#L551), [555](../src/sched.c#L555), [556](../src/sched.c#L556), [557](../src/sched.c#L557) |
+| decompiler_local | `var_s0` | function `_uvScHandleRetrace` | [402](../src/sched.c#L402), [477](../src/sched.c#L477), [478](../src/sched.c#L478), [479](../src/sched.c#L479), [480](../src/sched.c#L480) |
+| explicit_unknown | `* Latch NMI and black the display before looking up the already-loaded CONT * module. If present, call its callback at header offset 0x68 without loading * a new module. RE_UNKN...` | function `_uvScHandleNMI` | [543](../src/sched.c#L543) |
+| explicit_unknown | `* Retain the empty hook called for a missing graphics task and scheduler * watchdog recovery. RE_UNKNOWN: intended diagnostic or recovery action and * any callers outside this s...` | function `func_800048DC` | [578](../src/sched.c#L578) |
+| explicit_unknown | `* Retain the empty three-argument entrypoint and all three native argument- * home stores. RE_UNKNOWN: original purpose and external callers; preserve its * existing identity an...` | function `func_80004B1C` | [657](../src/sched.c#L657) |
+| explicit_unknown | `* Retain the original empty one-argument entrypoint, including the native * argument-home store. RE_UNKNOWN: exported purpose and external callers; the * empty body does not est...` | function `func_800048D4` | [569](../src/sched.c#L569) |
+| explicit_unknown | `Drain the scheduler interrupt queue without blocking, then clear the * tracked audio/graphics task pointers, RSP/RDP state and timeout counters. * RE_UNKNOWN: required scheduler...` | function `uvScDrainInterruptsAndResetTaskState` | [106](../src/sched.c#L106) |
+| explicit_unknown | `Return the recorded-time difference between ring slots one and two * positions after the current slot, modulo five. These are the oldest * consecutive slots after the ring has f...` | function `uvScGetOldestTraceInterval` | [643](../src/sched.c#L643) |
+| explicit_unknown | `Set the retrace-count threshold used by graphics completion to calculate * a remaining display delay relative to the current retrace counter. * RE_UNKNOWN: accepted range and hi...` | function `uvScSetFrameRetraceThreshold` | [633](../src/sched.c#L633) |
+| explicit_unknown | `Store the control that suppresses both scheduler framebuffer-swap paths * when nonzero. Preserve the original s32 control value. * RE_UNKNOWN: callers and lifecycle of suppressi...` | function `uvScSetBufferSwapSuppressed` | [667](../src/sched.c#L667) |
+| explicit_unknown | `When tracing is enabled and both stream counts are below thirty, append * to the selected stream in the current ring slot. Record clock-0x69 time, * event code and the packed RS...` | function `uvScRecordTraceEvent` | [603](../src/sched.c#L603) |
+| layout_padding | `pad` | function `_uvScHandleRetrace` | [403](../src/sched.c#L403) |
 | offset_field | `unk0` | type `UnkStruct_8022B6CC_t` | [7](../src/sched.c#L7) |
 | offset_field | `unk4` | type `UnkStruct_8022B6CC_t` | [8](../src/sched.c#L8) |
-| offset_field | `unk68` | function `_uvScHandleNMI` | [446](../src/sched.c#L446) |
-| offset_field | `unk8` | function `uvScRecordTraceEvent`, type `UnkStruct_8002DAE0_inner` | [13](../src/sched.c#L13), [500](../src/sched.c#L500) |
-| offset_field | `unkC` | function `uvScRecordTraceEvent`, type `UnkStruct_8002DAE0_inner` | [14](../src/sched.c#L14), [501](../src/sched.c#L501) |
-| opaque_type | `UnkStruct_8002D1A4` | function `_uvScHandleNMI` | [440](../src/sched.c#L440) |
+| offset_field | `unk68` | function `_uvScHandleNMI` | [557](../src/sched.c#L557) |
+| offset_field | `unk8` | function `uvScRecordTraceEvent`, type `UnkStruct_8002DAE0_inner` | [13](../src/sched.c#L13), [624](../src/sched.c#L624) |
+| offset_field | `unkC` | function `uvScRecordTraceEvent`, type `UnkStruct_8002DAE0_inner` | [14](../src/sched.c#L14), [625](../src/sched.c#L625) |
+| opaque_type | `UnkStruct_8002D1A4` | function `_uvScHandleNMI` | [551](../src/sched.c#L551) |
 | opaque_type | `UnkStruct_8002DAE0` | global `D_8002DAE0`, global `D_8002E440`, type `UnkStruct_8002DAE0` | [19](../src/sched.c#L19), [60](../src/sched.c#L60), [61](../src/sched.c#L61) |
-| opaque_type | `UnkStruct_8002DAE0_inner` | function `uvScRecordTraceEvent`, type `UnkStruct_8002DAE0`, type `UnkStruct_8002DAE0_inner` | [15](../src/sched.c#L15), [18](../src/sched.c#L18), [486](../src/sched.c#L486) |
+| opaque_type | `UnkStruct_8002DAE0_inner` | function `uvScRecordTraceEvent`, type `UnkStruct_8002DAE0`, type `UnkStruct_8002DAE0_inner` | [15](../src/sched.c#L15), [18](../src/sched.c#L18), [610](../src/sched.c#L610) |
 | opaque_type | `UnkStruct_8002DAE0_inner_s` | type `UnkStruct_8002DAE0_inner` | [11](../src/sched.c#L11) |
 | opaque_type | `UnkStruct_8002DAE0_s` | type `UnkStruct_8002DAE0` | [17](../src/sched.c#L17) |
 | opaque_type | `UnkStruct_8022B6CC` | type `UnkStruct_8022B6CC_t` | [6](../src/sched.c#L6) |
 | opaque_type | `UnkStruct_8022B6CC_t` | type `UnkStruct_8022B6CC_t` | [9](../src/sched.c#L9) |
-| uncertainty_note | `_uvDebugPrintf("unknown sched interrupt mesg: 0x%x\n", msg);` | function `_uvScMain` | [304](../src/sched.c#L304) |
+| original_quirk | `* Search by client pointer and unlink a matching non-head client. * RE_ORIGINAL_QUIRK: the initial predecessor link points to the local * traversal variable, so removing the hea...` | function `_uvScRemoveClient` | [326](../src/sched.c#L326) |
+| original_quirk | `* Update clocks even after NMI. Otherwise advance byte-sized RSP/RDP * watchdogs, recover at 51 RSP retraces or an RDP lead above 50, pace the two * graphics slots and drain que...` | function `_uvScHandleRetrace` | [390](../src/sched.c#L390) |
+| uncertainty_note | `_uvDebugPrintf("unknown sched interrupt mesg: 0x%x\n", msg);` | function `_uvScMain` | [384](../src/sched.c#L384) |
 
 ## src/sys_props.c
 

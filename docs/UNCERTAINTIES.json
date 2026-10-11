@@ -327,7 +327,7 @@
     "src/libultra/os/sendmesg.c": "6ab22710804c92064d6f077ffc67e3ff41ba1096919bbeea2d1d3beba7c2327a",
     "src/libultra/os/seteventmesg.c": "6d0e86a4052c45ad2bfc1cbab60e3df2aae8fbdedd6eae0fd146df36cbe9073a",
     "src/libultra/os/startthread.c": "78735322769a1d5a6facd5fc443cfdd3f9e798562e0defee4a9a8de7f562ce57",
-    "src/main.c": "23a926632c5e27be13e6d4241b240b1e207ba86aee832ba0cf0b48ae5733875c",
+    "src/main.c": "fbc113b991199ac693b115d981208b182ceda0445b94d0014a19956646800bda",
     "src/mem_allocator.c": "5554fdc8f5a8e9918a7058897493e46a1c41cd75ce268adf0edb61bf197a8b3c",
     "src/mem_block.c": "b6e363010c6efbe986f1574e9bca20d849b80fbab803c44ce872ef258e3bdf7c",
     "src/memory.c": "ba32d6e4f4bc044fc7233a90a017099c3d69a98ca9543f2896fa8778e98d1ae2",
@@ -466,11 +466,11 @@
     "src/modules/voltest.c": "064820993a3690a1af9ec67130b8c2107e1286fe57b6f787acfa78b103805506",
     "src/modules/weapon.c": "dc7ca2ec618cd658c5d3875e89e045379b1240e0537b96c47edc7cec0d24459d",
     "src/profiler.c": "8fe9ef148de0aad3a8fb4b791a9acb652952176c3babd3d0cd5c5b59c9615b0d",
-    "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
+    "src/sched.c": "26791ca9f30fd5355b11ea03a64a457757d2029595be26428c2925798105d9b4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "7b89aabf837da40ccb63affeaba9bcae50635615f2adf1588a2823148c9796b0",
-    "docs/VALIDATION_20261006.md": "f5e2244ff7e88aca58d453a04db9012ff67577782307ded752e63108cf538d5e"
+    "docs/STRATEGY_V4.md": "df14419c1b9c640f0e18edaad7f9bd804d95a606ab1f123c0b289532a147e420",
+    "docs/VALIDATION_20261006.md": "ce013e9942d19b5e913b0c886658fd4e886d97fa8a9edfd1311d17fb7ada0f7a"
   },
   "counts": {
     "address_function": 910,
@@ -480,12 +480,12 @@
     "conditional_draft": 4,
     "decompiler_local": 619,
     "draft_marker": 38,
-    "explicit_unknown": 1704,
+    "explicit_unknown": 1713,
     "layout_padding": 275,
     "offset_field": 1673,
     "opaque_type": 282,
-    "original_quirk": 452,
-    "uncertainty_note": 87,
+    "original_quirk": 457,
+    "uncertainty_note": 88,
     "unused_identifier": 137
   },
   "items": [
@@ -1207,15 +1207,15 @@
       "path": "src/main.c",
       "symbol": "func_80005570",
       "lines": [
-        370
+        442
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_80005570",
-          "declaration_line": 370,
+          "declaration_line": 442,
           "lines": [
-            370
+            442
           ]
         }
       ]
@@ -22338,15 +22338,15 @@
       "path": "src/sched.c",
       "symbol": "func_800048D4",
       "lines": [
-        458
+        575
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_800048D4",
-          "declaration_line": 458,
+          "declaration_line": 575,
           "lines": [
-            458
+            575
           ]
         }
       ]
@@ -22358,27 +22358,27 @@
       "symbol": "func_800048DC",
       "lines": [
         64,
-        124,
-        330,
-        336,
-        461
+        138,
+        420,
+        426,
+        585
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvScDoneGfx",
-          "declaration_line": 118,
+          "declaration_line": 132,
           "lines": [
-            124
+            138
           ]
         },
         {
           "kind": "function",
           "name": "_uvScHandleRetrace",
-          "declaration_line": 310,
+          "declaration_line": 400,
           "lines": [
-            330,
-            336
+            420,
+            426
           ]
         },
         {
@@ -22392,9 +22392,9 @@
         {
           "kind": "function",
           "name": "func_800048DC",
-          "declaration_line": 461,
+          "declaration_line": 585,
           "lines": [
-            461
+            585
           ]
         }
       ]
@@ -22405,15 +22405,15 @@
       "path": "src/sched.c",
       "symbol": "func_80004B1C",
       "lines": [
-        533
+        663
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_80004B1C",
-          "declaration_line": 533,
+          "declaration_line": 663,
           "lines": [
-            533
+            663
           ]
         }
       ]
@@ -22895,15 +22895,15 @@
       "symbol": "D_8001F630",
       "lines": [
         59,
-        322
+        365
       ],
       "owners": [
         {
           "kind": "function",
           "name": "Thread_Kernel",
-          "declaration_line": 317,
+          "declaration_line": 360,
           "lines": [
-            322
+            365
           ]
         },
         {
@@ -22932,15 +22932,15 @@
       "symbol": "D_8001F7D4",
       "lines": [
         45,
-        309
+        339
       ],
       "owners": [
         {
           "kind": "function",
           "name": "Thread_Fault",
-          "declaration_line": 295,
+          "declaration_line": 325,
           "lines": [
-            309
+            339
           ]
         },
         {
@@ -22960,15 +22960,15 @@
       "symbol": "D_8001F7D8",
       "lines": [
         46,
-        308
+        338
       ],
       "owners": [
         {
           "kind": "function",
           "name": "Thread_Fault",
-          "declaration_line": 295,
+          "declaration_line": 325,
           "lines": [
-            308
+            338
           ]
         },
         {
@@ -22988,15 +22988,15 @@
       "symbol": "D_8001F7E0",
       "lines": [
         49,
-        175
+        198
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDebugDrawHexDigit",
-          "declaration_line": 174,
+          "declaration_line": 197,
           "lines": [
-            175
+            198
           ]
         }
       ]
@@ -23008,17 +23008,17 @@
       "symbol": "D_8001F800",
       "lines": [
         54,
-        192,
-        196
+        215,
+        219
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDebugDrawFixedGlyphSequence",
-          "declaration_line": 185,
+          "declaration_line": 208,
           "lines": [
-            192,
-            196
+            215,
+            219
           ]
         }
       ]
@@ -23029,23 +23029,23 @@
       "path": "src/main.c",
       "symbol": "D_8001F81C",
       "lines": [
-        255,
-        258,
-        279,
-        288,
-        290
+        278,
+        281,
+        302,
+        311,
+        313
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDebugDrawStackTrace",
-          "declaration_line": 249,
+          "declaration_line": 272,
           "lines": [
-            255,
-            258,
-            279,
-            288,
-            290
+            278,
+            281,
+            302,
+            311,
+            313
           ]
         }
       ]
@@ -23057,15 +23057,15 @@
       "symbol": "D_8002F750",
       "lines": [
         26,
-        280
+        303
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDebugDrawStackTrace",
-          "declaration_line": 249,
+          "declaration_line": 272,
           "lines": [
-            280
+            303
           ]
         },
         {
@@ -23104,15 +23104,15 @@
       "symbol": "D_8002F7E0",
       "lines": [
         30,
-        344
+        403
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvDMA",
-          "declaration_line": 338,
+          "declaration_line": 397,
           "lines": [
-            344
+            403
           ]
         },
         {
@@ -23132,15 +23132,15 @@
       "symbol": "D_8002F8C8",
       "lines": [
         37,
-        77
+        86
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvSysInit",
-          "declaration_line": 65,
+          "declaration_line": 74,
           "lines": [
-            77
+            86
           ]
         },
         {
@@ -75491,26 +75491,26 @@
       "lines": [
         46,
         56,
-        130,
-        131,
-        514
+        144,
+        145,
+        638
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvScDoneGfx",
-          "declaration_line": 118,
+          "declaration_line": 132,
           "lines": [
-            130,
-            131
+            144,
+            145
           ]
         },
         {
           "kind": "function",
           "name": "uvScSetFrameRetraceThreshold",
-          "declaration_line": 513,
+          "declaration_line": 637,
           "lines": [
-            514
+            638
           ]
         },
         {
@@ -75538,28 +75538,28 @@
       "symbol": "D_8001F7C4",
       "lines": [
         47,
-        130,
-        131,
-        340,
-        356
+        144,
+        145,
+        430,
+        446
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvScDoneGfx",
-          "declaration_line": 118,
+          "declaration_line": 132,
           "lines": [
-            130,
-            131
+            144,
+            145
           ]
         },
         {
           "kind": "function",
           "name": "_uvScHandleRetrace",
-          "declaration_line": 310,
+          "declaration_line": 400,
           "lines": [
-            340,
-            356
+            430,
+            446
           ]
         },
         {
@@ -75579,15 +75579,15 @@
       "symbol": "D_8002DAE0",
       "lines": [
         60,
-        493
+        617
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvScRecordTraceEvent",
-          "declaration_line": 485,
+          "declaration_line": 609,
           "lines": [
-            493
+            617
           ]
         },
         {
@@ -75607,15 +75607,15 @@
       "symbol": "D_8002E440",
       "lines": [
         61,
-        496
+        620
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvScRecordTraceEvent",
-          "declaration_line": 485,
+          "declaration_line": 609,
           "lines": [
-            496
+            620
           ]
         },
         {
@@ -75635,26 +75635,26 @@
       "symbol": "D_8002EDA0",
       "lines": [
         57,
-        474,
-        491,
-        494
+        598,
+        615,
+        618
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvScAdvanceTraceRing",
-          "declaration_line": 468,
+          "declaration_line": 592,
           "lines": [
-            474
+            598
           ]
         },
         {
           "kind": "function",
           "name": "uvScRecordTraceEvent",
-          "declaration_line": 485,
+          "declaration_line": 609,
           "lines": [
-            491,
-            494
+            615,
+            618
           ]
         },
         {
@@ -75674,26 +75674,26 @@
       "symbol": "D_8002EDB8",
       "lines": [
         58,
-        473,
-        491,
-        497
+        597,
+        615,
+        621
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvScAdvanceTraceRing",
-          "declaration_line": 468,
+          "declaration_line": 592,
           "lines": [
-            473
+            597
           ]
         },
         {
           "kind": "function",
           "name": "uvScRecordTraceEvent",
-          "declaration_line": 485,
+          "declaration_line": 609,
           "lines": [
-            491,
-            497
+            615,
+            621
           ]
         },
         {
@@ -75713,24 +75713,24 @@
       "symbol": "D_8002EDD0",
       "lines": [
         55,
-        472,
-        529
+        596,
+        653
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvScAdvanceTraceRing",
-          "declaration_line": 468,
+          "declaration_line": 592,
           "lines": [
-            472
+            596
           ]
         },
         {
           "kind": "function",
           "name": "uvScGetOldestTraceInterval",
-          "declaration_line": 524,
+          "declaration_line": 648,
           "lines": [
-            529
+            653
           ]
         },
         {
@@ -75750,72 +75750,72 @@
       "symbol": "D_8002EDF8",
       "lines": [
         29,
-        112,
-        145,
-        148,
-        150,
-        158,
-        162,
-        163,
-        205,
-        369,
-        372,
-        409,
-        418
+        118,
+        166,
+        169,
+        171,
+        185,
+        189,
+        190,
+        255,
+        459,
+        462,
+        507,
+        516
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvScCreateScheduler",
-          "declaration_line": 200,
+          "declaration_line": 250,
           "lines": [
-            205
+            255
           ]
         },
         {
           "kind": "function",
           "name": "_uvScDoneAud",
-          "declaration_line": 144,
+          "declaration_line": 165,
           "lines": [
-            145,
-            148,
-            150
+            166,
+            169,
+            171
           ]
         },
         {
           "kind": "function",
           "name": "_uvScHandleRSP",
-          "declaration_line": 395,
+          "declaration_line": 493,
           "lines": [
-            409,
-            418
+            507,
+            516
           ]
         },
         {
           "kind": "function",
           "name": "_uvScHandleRetrace",
-          "declaration_line": 310,
+          "declaration_line": 400,
           "lines": [
-            369,
-            372
+            459,
+            462
           ]
         },
         {
           "kind": "function",
           "name": "_uvScRunAud",
-          "declaration_line": 157,
+          "declaration_line": 184,
           "lines": [
-            158,
-            162,
-            163
+            185,
+            189,
+            190
           ]
         },
         {
           "kind": "function",
           "name": "uvScDrainInterruptsAndResetTaskState",
-          "declaration_line": 104,
+          "declaration_line": 110,
           "lines": [
-            112
+            118
           ]
         },
         {
@@ -75835,79 +75835,79 @@
       "symbol": "D_8002EE00",
       "lines": [
         28,
-        112,
-        113,
-        121,
-        138,
-        139,
-        151,
-        170,
-        203,
-        204,
-        366,
-        384,
-        405
+        118,
+        119,
+        135,
+        152,
+        153,
+        172,
+        205,
+        253,
+        254,
+        456,
+        474,
+        503
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvScCreateScheduler",
-          "declaration_line": 200,
+          "declaration_line": 250,
           "lines": [
-            203,
-            204
+            253,
+            254
           ]
         },
         {
           "kind": "function",
           "name": "_uvScDoneAud",
-          "declaration_line": 144,
+          "declaration_line": 165,
           "lines": [
-            151
+            172
           ]
         },
         {
           "kind": "function",
           "name": "_uvScDoneGfx",
-          "declaration_line": 118,
+          "declaration_line": 132,
           "lines": [
-            121,
-            138,
-            139
+            135,
+            152,
+            153
           ]
         },
         {
           "kind": "function",
           "name": "_uvScHandleRSP",
-          "declaration_line": 395,
+          "declaration_line": 493,
           "lines": [
-            405
+            503
           ]
         },
         {
           "kind": "function",
           "name": "_uvScHandleRetrace",
-          "declaration_line": 310,
+          "declaration_line": 400,
           "lines": [
-            366,
-            384
+            456,
+            474
           ]
         },
         {
           "kind": "function",
           "name": "_uvScRunGfx",
-          "declaration_line": 167,
+          "declaration_line": 202,
           "lines": [
-            170
+            205
           ]
         },
         {
           "kind": "function",
           "name": "uvScDrainInterruptsAndResetTaskState",
-          "declaration_line": 104,
+          "declaration_line": 110,
           "lines": [
-            112,
-            113
+            118,
+            119
           ]
         },
         {
@@ -75927,26 +75927,26 @@
       "symbol": "D_8002EE08",
       "lines": [
         48,
-        138,
-        348,
-        350
+        152,
+        438,
+        440
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvScDoneGfx",
-          "declaration_line": 118,
+          "declaration_line": 132,
           "lines": [
-            138
+            152
           ]
         },
         {
           "kind": "function",
           "name": "_uvScHandleRetrace",
-          "declaration_line": 310,
+          "declaration_line": 400,
           "lines": [
-            348,
-            350
+            438,
+            440
           ]
         },
         {
@@ -75966,15 +75966,15 @@
       "symbol": "D_8002EE10",
       "lines": [
         50,
-        78
+        84
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvSetVideoMode",
-          "declaration_line": 74,
+          "declaration_line": 80,
           "lines": [
-            78
+            84
           ]
         },
         {
@@ -75994,15 +75994,15 @@
       "symbol": "D_8002EE28",
       "lines": [
         51,
-        78
+        84
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvSetVideoMode",
-          "declaration_line": 74,
+          "declaration_line": 80,
           "lines": [
-            78
+            84
           ]
         },
         {
@@ -76022,39 +76022,39 @@
       "symbol": "D_8002F250",
       "lines": [
         30,
-        131,
-        133,
-        206,
-        345,
-        346,
-        353
+        145,
+        147,
+        256,
+        435,
+        436,
+        443
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvScCreateScheduler",
-          "declaration_line": 200,
+          "declaration_line": 250,
           "lines": [
-            206
+            256
           ]
         },
         {
           "kind": "function",
           "name": "_uvScDoneGfx",
-          "declaration_line": 118,
+          "declaration_line": 132,
           "lines": [
-            131,
-            133
+            145,
+            147
           ]
         },
         {
           "kind": "function",
           "name": "_uvScHandleRetrace",
-          "declaration_line": 310,
+          "declaration_line": 400,
           "lines": [
-            345,
-            346,
-            353
+            435,
+            436,
+            443
           ]
         },
         {
@@ -76074,66 +76074,66 @@
       "symbol": "D_8002F253",
       "lines": [
         33,
-        114,
-        180,
-        209,
-        374,
-        378,
-        404,
-        410,
-        417,
-        502
+        120,
+        215,
+        259,
+        464,
+        468,
+        502,
+        508,
+        515,
+        626
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvScCreateScheduler",
-          "declaration_line": 200,
+          "declaration_line": 250,
           "lines": [
-            209
+            259
           ]
         },
         {
           "kind": "function",
           "name": "_uvScHandleRSP",
-          "declaration_line": 395,
+          "declaration_line": 493,
           "lines": [
-            404,
-            410,
-            417
+            502,
+            508,
+            515
           ]
         },
         {
           "kind": "function",
           "name": "_uvScHandleRetrace",
-          "declaration_line": 310,
+          "declaration_line": 400,
           "lines": [
-            374,
-            378
+            464,
+            468
           ]
         },
         {
           "kind": "function",
           "name": "_uvScRunGfx",
-          "declaration_line": 167,
+          "declaration_line": 202,
           "lines": [
-            180
+            215
           ]
         },
         {
           "kind": "function",
           "name": "uvScDrainInterruptsAndResetTaskState",
-          "declaration_line": 104,
+          "declaration_line": 110,
           "lines": [
-            114
+            120
           ]
         },
         {
           "kind": "function",
           "name": "uvScRecordTraceEvent",
-          "declaration_line": 485,
+          "declaration_line": 609,
           "lines": [
-            502
+            626
           ]
         },
         {
@@ -76153,75 +76153,75 @@
       "symbol": "D_8002F254",
       "lines": [
         34,
-        114,
-        127,
-        171,
-        172,
-        175,
-        180,
+        120,
+        141,
+        206,
+        207,
         210,
-        406,
-        434,
-        502
+        215,
+        260,
+        504,
+        538,
+        626
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvScCreateScheduler",
-          "declaration_line": 200,
+          "declaration_line": 250,
           "lines": [
-            210
+            260
           ]
         },
         {
           "kind": "function",
           "name": "_uvScDoneGfx",
-          "declaration_line": 118,
+          "declaration_line": 132,
           "lines": [
-            127
+            141
           ]
         },
         {
           "kind": "function",
           "name": "_uvScHandleRDP",
-          "declaration_line": 430,
+          "declaration_line": 534,
           "lines": [
-            434
+            538
           ]
         },
         {
           "kind": "function",
           "name": "_uvScHandleRSP",
-          "declaration_line": 395,
+          "declaration_line": 493,
           "lines": [
-            406
+            504
           ]
         },
         {
           "kind": "function",
           "name": "_uvScRunGfx",
-          "declaration_line": 167,
+          "declaration_line": 202,
           "lines": [
-            171,
-            172,
-            175,
-            180
+            206,
+            207,
+            210,
+            215
           ]
         },
         {
           "kind": "function",
           "name": "uvScDrainInterruptsAndResetTaskState",
-          "declaration_line": 104,
+          "declaration_line": 110,
           "lines": [
-            114
+            120
           ]
         },
         {
           "kind": "function",
           "name": "uvScRecordTraceEvent",
-          "declaration_line": 485,
+          "declaration_line": 609,
           "lines": [
-            502
+            626
           ]
         },
         {
@@ -76241,26 +76241,26 @@
       "symbol": "D_8002F255",
       "lines": [
         35,
-        211,
-        366,
-        367
+        261,
+        456,
+        457
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvScCreateScheduler",
-          "declaration_line": 200,
+          "declaration_line": 250,
           "lines": [
-            211
+            261
           ]
         },
         {
           "kind": "function",
           "name": "_uvScHandleRetrace",
-          "declaration_line": 310,
+          "declaration_line": 400,
           "lines": [
-            366,
-            367
+            456,
+            457
           ]
         },
         {
@@ -76280,66 +76280,66 @@
       "symbol": "D_8002F256",
       "lines": [
         36,
-        121,
-        138,
-        139,
-        151,
-        170,
-        212,
-        355,
-        384,
-        405
+        135,
+        152,
+        153,
+        172,
+        205,
+        262,
+        445,
+        474,
+        503
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvScCreateScheduler",
-          "declaration_line": 200,
+          "declaration_line": 250,
           "lines": [
-            212
+            262
           ]
         },
         {
           "kind": "function",
           "name": "_uvScDoneAud",
-          "declaration_line": 144,
+          "declaration_line": 165,
           "lines": [
-            151
+            172
           ]
         },
         {
           "kind": "function",
           "name": "_uvScDoneGfx",
-          "declaration_line": 118,
+          "declaration_line": 132,
           "lines": [
-            121,
-            138,
-            139
+            135,
+            152,
+            153
           ]
         },
         {
           "kind": "function",
           "name": "_uvScHandleRSP",
-          "declaration_line": 395,
+          "declaration_line": 493,
           "lines": [
-            405
+            503
           ]
         },
         {
           "kind": "function",
           "name": "_uvScHandleRetrace",
-          "declaration_line": 310,
+          "declaration_line": 400,
           "lines": [
-            355,
-            384
+            445,
+            474
           ]
         },
         {
           "kind": "function",
           "name": "_uvScRunGfx",
-          "declaration_line": 167,
+          "declaration_line": 202,
           "lines": [
-            170
+            205
           ]
         },
         {
@@ -76359,48 +76359,48 @@
       "symbol": "D_8002F257",
       "lines": [
         37,
-        110,
-        213,
-        325,
-        327,
-        334,
-        335,
-        432
+        116,
+        263,
+        415,
+        417,
+        424,
+        425,
+        536
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvScCreateScheduler",
-          "declaration_line": 200,
+          "declaration_line": 250,
           "lines": [
-            213
+            263
           ]
         },
         {
           "kind": "function",
           "name": "_uvScHandleRDP",
-          "declaration_line": 430,
+          "declaration_line": 534,
           "lines": [
-            432
+            536
           ]
         },
         {
           "kind": "function",
           "name": "_uvScHandleRetrace",
-          "declaration_line": 310,
+          "declaration_line": 400,
           "lines": [
-            325,
-            327,
-            334,
-            335
+            415,
+            417,
+            424,
+            425
           ]
         },
         {
           "kind": "function",
           "name": "uvScDrainInterruptsAndResetTaskState",
-          "declaration_line": 104,
+          "declaration_line": 110,
           "lines": [
-            110
+            116
           ]
         },
         {
@@ -76420,48 +76420,48 @@
       "symbol": "D_8002F258",
       "lines": [
         38,
-        111,
-        214,
-        320,
-        322,
-        329,
-        334,
-        397
+        117,
+        264,
+        410,
+        412,
+        419,
+        424,
+        495
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvScCreateScheduler",
-          "declaration_line": 200,
+          "declaration_line": 250,
           "lines": [
-            214
+            264
           ]
         },
         {
           "kind": "function",
           "name": "_uvScHandleRSP",
-          "declaration_line": 395,
+          "declaration_line": 493,
           "lines": [
-            397
+            495
           ]
         },
         {
           "kind": "function",
           "name": "_uvScHandleRetrace",
-          "declaration_line": 310,
+          "declaration_line": 400,
           "lines": [
-            320,
-            322,
-            329,
-            334
+            410,
+            412,
+            419,
+            424
           ]
         },
         {
           "kind": "function",
           "name": "uvScDrainInterruptsAndResetTaskState",
-          "declaration_line": 104,
+          "declaration_line": 110,
           "lines": [
-            111
+            117
           ]
         },
         {
@@ -76481,24 +76481,24 @@
       "symbol": "D_8002F25C",
       "lines": [
         39,
-        176,
-        215
+        211,
+        265
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvScCreateScheduler",
-          "declaration_line": 200,
+          "declaration_line": 250,
           "lines": [
-            215
+            265
           ]
         },
         {
           "kind": "function",
           "name": "_uvScRunGfx",
-          "declaration_line": 167,
+          "declaration_line": 202,
           "lines": [
-            176
+            211
           ]
         },
         {
@@ -76518,15 +76518,15 @@
       "symbol": "D_8002F260",
       "lines": [
         40,
-        217
+        267
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvScCreateScheduler",
-          "declaration_line": 200,
+          "declaration_line": 250,
           "lines": [
-            217
+            267
           ]
         },
         {
@@ -76546,24 +76546,24 @@
       "symbol": "D_8002F264",
       "lines": [
         41,
-        219,
-        318
+        269,
+        408
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvScCreateScheduler",
-          "declaration_line": 200,
+          "declaration_line": 250,
           "lines": [
-            219
+            269
           ]
         },
         {
           "kind": "function",
           "name": "_uvScHandleRetrace",
-          "declaration_line": 310,
+          "declaration_line": 400,
           "lines": [
-            318
+            408
           ]
         },
         {
@@ -76583,33 +76583,33 @@
       "symbol": "D_8002F268",
       "lines": [
         42,
-        220,
-        454,
-        489
+        270,
+        565,
+        613
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvScCreateScheduler",
-          "declaration_line": 200,
+          "declaration_line": 250,
           "lines": [
-            220
+            270
           ]
         },
         {
           "kind": "function",
           "name": "uvScRecordTraceEvent",
-          "declaration_line": 485,
+          "declaration_line": 609,
           "lines": [
-            489
+            613
           ]
         },
         {
           "kind": "function",
           "name": "uvScSetTraceEnabled",
-          "declaration_line": 453,
+          "declaration_line": 564,
           "lines": [
-            454
+            565
           ]
         },
         {
@@ -76629,33 +76629,33 @@
       "symbol": "D_8002F26C",
       "lines": [
         49,
-        134,
-        347,
-        542
+        148,
+        437,
+        672
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvScDoneGfx",
-          "declaration_line": 118,
+          "declaration_line": 132,
           "lines": [
-            134
+            148
           ]
         },
         {
           "kind": "function",
           "name": "_uvScHandleRetrace",
-          "declaration_line": 310,
+          "declaration_line": 400,
           "lines": [
-            347
+            437
           ]
         },
         {
           "kind": "function",
           "name": "uvScSetBufferSwapSuppressed",
-          "declaration_line": 541,
+          "declaration_line": 671,
           "lines": [
-            542
+            672
           ]
         },
         {
@@ -76675,15 +76675,15 @@
       "symbol": "D_8002F278",
       "lines": [
         53,
-        95
+        101
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvSetVideoMode",
-          "declaration_line": 74,
+          "declaration_line": 80,
           "lines": [
-            95
+            101
           ]
         },
         {
@@ -85298,35 +85298,35 @@
       "lines": [
         14,
         63,
-        99,
-        295,
-        313,
-        314
+        122,
+        325,
+        348,
+        349
       ],
       "owners": [
         {
           "kind": "function",
           "name": "Thread_App",
-          "declaration_line": 313,
+          "declaration_line": 348,
           "lines": [
-            313,
-            314
+            348,
+            349
           ]
         },
         {
           "kind": "function",
           "name": "Thread_Fault",
-          "declaration_line": 295,
+          "declaration_line": 325,
           "lines": [
-            295
+            325
           ]
         },
         {
           "kind": "function",
           "name": "bootproc",
-          "declaration_line": 99,
+          "declaration_line": 122,
           "lines": [
-            99
+            122
           ]
         },
         {
@@ -114496,33 +114496,33 @@
       "path": "src/sched.c",
       "symbol": "arg0",
       "lines": [
-        283,
-        458,
-        533
+        363,
+        575,
+        663
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvScMain",
-          "declaration_line": 283,
+          "declaration_line": 363,
           "lines": [
-            283
+            363
           ]
         },
         {
           "kind": "function",
           "name": "func_800048D4",
-          "declaration_line": 458,
+          "declaration_line": 575,
           "lines": [
-            458
+            575
           ]
         },
         {
           "kind": "function",
           "name": "func_80004B1C",
-          "declaration_line": 533,
+          "declaration_line": 663,
           "lines": [
-            533
+            663
           ]
         }
       ]
@@ -114533,15 +114533,15 @@
       "path": "src/sched.c",
       "symbol": "arg1",
       "lines": [
-        533
+        663
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_80004B1C",
-          "declaration_line": 533,
+          "declaration_line": 663,
           "lines": [
-            533
+            663
           ]
         }
       ]
@@ -114552,15 +114552,15 @@
       "path": "src/sched.c",
       "symbol": "arg2",
       "lines": [
-        533
+        663
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_80004B1C",
-          "declaration_line": 533,
+          "declaration_line": 663,
           "lines": [
-            533
+            663
           ]
         }
       ]
@@ -114571,29 +114571,29 @@
       "path": "src/sched.c",
       "symbol": "sp34",
       "lines": [
-        311,
-        315,
-        360,
-        361,
-        365,
-        366,
-        368,
-        369
+        401,
+        405,
+        450,
+        451,
+        455,
+        456,
+        458,
+        459
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvScHandleRetrace",
-          "declaration_line": 310,
+          "declaration_line": 400,
           "lines": [
-            311,
-            315,
-            360,
-            361,
-            365,
-            366,
-            368,
-            369
+            401,
+            405,
+            450,
+            451,
+            455,
+            456,
+            458,
+            459
           ]
         }
       ]
@@ -114604,23 +114604,23 @@
       "path": "src/sched.c",
       "symbol": "temp_a3",
       "lines": [
-        119,
-        121,
-        123,
-        129,
-        135
+        133,
+        135,
+        137,
+        143,
+        149
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvScDoneGfx",
-          "declaration_line": 118,
+          "declaration_line": 132,
           "lines": [
-            119,
-            121,
-            123,
-            129,
-            135
+            133,
+            135,
+            137,
+            143,
+            149
           ]
         }
       ]
@@ -114631,21 +114631,21 @@
       "path": "src/sched.c",
       "symbol": "temp_v0",
       "lines": [
-        440,
-        444,
-        445,
-        446
+        551,
+        555,
+        556,
+        557
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvScHandleNMI",
-          "declaration_line": 439,
+          "declaration_line": 550,
           "lines": [
-            440,
-            444,
-            445,
-            446
+            551,
+            555,
+            556,
+            557
           ]
         }
       ]
@@ -114656,23 +114656,23 @@
       "path": "src/sched.c",
       "symbol": "var_s0",
       "lines": [
-        312,
-        387,
-        388,
-        389,
-        390
+        402,
+        477,
+        478,
+        479,
+        480
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvScHandleRetrace",
-          "declaration_line": 310,
+          "declaration_line": 400,
           "lines": [
-            312,
-            387,
-            388,
-            389,
-            390
+            402,
+            477,
+            478,
+            479,
+            480
           ]
         }
       ]
@@ -117089,21 +117089,121 @@
       ]
     },
     {
+      "id": "Q-8e0d80ec3c7e",
+      "kind": "explicit_unknown",
+      "path": "src/main.c",
+      "symbol": "* Create the PI manager and one-message DMA completion queue, then start fault * thread zero at priority 250 and application thread six at priority ten. * Forward the bootstrap block to the application, lower this thread to * priority zero and spin forever. RE_UNKNOWN: original stack-allocation * boundaries; retain the existing stack-pointer expressions.",
+      "lines": [
+        352
+      ],
+      "evidence": "* Create the PI manager and one-message DMA completion queue, then start fault * thread zero at priority 250 and application thread six at priority ten. * Forward the bootstrap block to the application, lower this thread to * priority zero and spin forever. RE_UNKNOWN: original stack-allocation * boundaries; retain the existing stack-pointer expressions.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "Thread_Kernel",
+          "declaration_line": 360,
+          "lines": [
+            352
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-cc3230e7a2ed",
+      "kind": "explicit_unknown",
+      "path": "src/main.c",
+      "symbol": "* Initialize the OS, request 22050-Hz audio, read sixteen cartridge words * starting at 0xFFB000 and pass that local block to kernel thread one at * priority twelve. Preserve conditional ISPRINT setup and the original stack- * pointer argument. RE_UNKNOWN: the sixteen-word descriptor meaning and its * bootstrap lifetime.",
+      "lines": [
+        114
+      ],
+      "evidence": "* Initialize the OS, request 22050-Hz audio, read sixteen cartridge words * starting at 0xFFB000 and pass that local block to kernel thread one at * priority twelve. Preserve conditional ISPRINT setup and the original stack- * pointer argument. RE_UNKNOWN: the sixteen-word descriptor meaning and its * bootstrap lifetime.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "bootproc",
+          "declaration_line": 122,
+          "lines": [
+            114
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-888a1556e021",
+      "kind": "explicit_unknown",
+      "path": "src/main.c",
+      "symbol": "* Keep the optional ISPRINT forwarding branch unchanged. The captured original * native only saves the four argument registers and returns. RE_UNKNOWN: * debug-enabled variadic forwarding semantics; active preprocessing and * warnings still require the actual compiler proof.",
+      "lines": [
+        372
+      ],
+      "evidence": "* Keep the optional ISPRINT forwarding branch unchanged. The captured original * native only saves the four argument registers and returns. RE_UNKNOWN: * debug-enabled variadic forwarding semantics; active preprocessing and * warnings still require the actual compiler proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "_uvDebugPrintf",
+          "declaration_line": 379,
+          "lines": [
+            372
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-e16aec869e94",
+      "kind": "explicit_unknown",
+      "path": "src/main.c",
+      "symbol": "* Retain this empty return-only entrypoint. RE_UNKNOWN: original purpose and * callers; no more specific name or behavior is inferred.",
+      "lines": [
+        437
+      ],
+      "evidence": "* Retain this empty return-only entrypoint. RE_UNKNOWN: original purpose and * callers; no more specific name or behavior is inferred.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "func_80005570",
+          "declaration_line": 442,
+          "lines": [
+            437
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-db051e8dd853",
+      "kind": "explicit_unknown",
+      "path": "src/main.c",
+      "symbol": "* Start and wait for a PI read only with an eight-byte-aligned destination, * even device address and byte count at most four MiB. Round odd counts up to * an even count and preserve writeback, DMA start, invalidation and blocking- * wait order. RE_ORIGINAL_QUIRK: zero length is allowed and the DMA-start * result is ignored before waiting. RE_UNKNOWN: caller capacity for the * rounded transfer.",
+      "lines": [
+        388
+      ],
+      "evidence": "* Start and wait for a PI read only with an eight-byte-aligned destination, * even device address and byte count at most four MiB. Round odd counts up to * an even count and preserve writeback, DMA start, invalidation and blocking- * wait order. RE_ORIGINAL_QUIRK: zero length is allowed and the DMA-start * result is ignored before waiting. RE_UNKNOWN: caller capacity for the * rounded transfer.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "_uvDMA",
+          "declaration_line": 397,
+          "lines": [
+            388
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-12cac7750c5d",
       "kind": "explicit_unknown",
       "path": "src/main.c",
       "symbol": "Draw a 5-by-7 bordered glyph as 2-by-2 pixel blocks into both original * 320-pixel-wide raw framebuffers. Interior bits are consumed from bit 15 * through bit 1; preserve signed pixel stores and literal buffer addresses. * RE_UNKNOWN: caller coordinate bounds and buffer ownership/selection require * display setup and caller evidence; this routine performs no clipping.",
       "lines": [
-        118
+        141
       ],
       "evidence": "Draw a 5-by-7 bordered glyph as 2-by-2 pixel blocks into both original * 320-pixel-wide raw framebuffers. Interior bits are consumed from bit 15 * through bit 1; preserve signed pixel stores and literal buffer addresses. * RE_UNKNOWN: caller coordinate bounds and buffer ownership/selection require * display setup and caller evidence; this routine performs no clipping.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDebugDrawScaledGlyph",
-          "declaration_line": 123,
+          "declaration_line": 146,
           "lines": [
-            118
+            141
           ]
         }
       ]
@@ -117114,16 +117214,16 @@
       "path": "src/main.c",
       "symbol": "Draw the current address, then scan instruction words forward below * 0x80400000 for saved-return-address restores and stack-pointer adjustments. * Stop at a negative stack adjustment, return-address save or exception * return; recursively draw a nonzero recovered return address minus four. * Preserve the thirteen-call depth limit and first-level saved-address * fallback. RE_UNKNOWN: code/stack validity, the saved fallback producer and * complete instruction coverage require caller/exception-path evidence; * this original opcode heuristic is not a complete stack unwinder.",
       "lines": [
-        241
+        264
       ],
       "evidence": "Draw the current address, then scan instruction words forward below * 0x80400000 for saved-return-address restores and stack-pointer adjustments. * Stop at a negative stack adjustment, return-address save or exception * return; recursively draw a nonzero recovered return address minus four. * Preserve the thirteen-call depth limit and first-level saved-address * fallback. RE_UNKNOWN: code/stack validity, the saved fallback producer and * complete instruction coverage require caller/exception-path evidence; * this original opcode heuristic is not a complete stack unwinder.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDebugDrawStackTrace",
-          "declaration_line": 249,
+          "declaration_line": 272,
           "lines": [
-            241
+            264
           ]
         }
       ]
@@ -117134,16 +117234,16 @@
       "path": "src/main.c",
       "symbol": "Draw the indexed glyph from the original sixteen-entry hexadecimal glyph * table with caller colors. RE_UNKNOWN: callers must supply an index in * zero through fifteen; no bounds check is added.",
       "lines": [
-        171
+        194
       ],
       "evidence": "Draw the indexed glyph from the original sixteen-entry hexadecimal glyph * table with caller colors. RE_UNKNOWN: callers must supply an index in * zero through fifteen; no bounds check is added.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDebugDrawHexDigit",
-          "declaration_line": 174,
+          "declaration_line": 197,
           "lines": [
-            171
+            194
           ]
         }
       ]
@@ -117154,16 +117254,16 @@
       "path": "src/main.c",
       "symbol": "Draw the nearest preceding loaded module's tag, when found, then draw * address minus its base minus its export-table size. Otherwise add the * original main-image display bias. Write back the data cache after drawing. * RE_UNKNOWN: the resolver checks no upper module extent; address ownership * and fallback-bias meaning need original layout/caller evidence.",
       "lines": [
-        217
+        240
       ],
       "evidence": "Draw the nearest preceding loaded module's tag, when found, then draw * address minus its base minus its export-table size. Otherwise add the * original main-image display bias. Write back the data cache after drawing. * RE_UNKNOWN: the resolver checks no upper module extent; address ownership * and fallback-bias meaning need original layout/caller evidence.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDebugDrawResolvedAddress",
-          "declaration_line": 222,
+          "declaration_line": 245,
           "lines": [
-            217
+            240
           ]
         }
       ]
@@ -117174,16 +117274,16 @@
       "path": "src/main.c",
       "symbol": "Render the first thirteen entries of the original fixed glyph sequence * using white foreground and background word one. A zero entry resets X and * advances Y by sixteen; preserve the ten-pixel pre-increment and signed * coordinate narrowing. RE_UNKNOWN: the sequence text and its display * trigger require caller/data interpretation; no fault-specific role assumed.",
       "lines": [
-        180
+        203
       ],
       "evidence": "Render the first thirteen entries of the original fixed glyph sequence * using white foreground and background word one. A zero entry resets X and * advances Y by sixteen; preserve the ten-pixel pre-increment and signed * coordinate narrowing. RE_UNKNOWN: the sequence text and its display * trigger require caller/data interpretation; no fault-specific role assumed.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDebugDrawFixedGlyphSequence",
-          "declaration_line": 185,
+          "declaration_line": 208,
           "lines": [
-            180
+            203
           ]
         }
       ]
@@ -148540,21 +148640,101 @@
       ]
     },
     {
+      "id": "Q-84c106ad89f0",
+      "kind": "explicit_unknown",
+      "path": "src/sched.c",
+      "symbol": "* Latch NMI and black the display before looking up the already-loaded CONT * module. If present, call its callback at header offset 0x68 without loading * a new module. RE_UNKNOWN: the callback slot meaning and validity contract * beyond this observed NMI call; no callback-NULL guard is added.",
+      "lines": [
+        543
+      ],
+      "evidence": "* Latch NMI and black the display before looking up the already-loaded CONT * module. If present, call its callback at header offset 0x68 without loading * a new module. RE_UNKNOWN: the callback slot meaning and validity contract * beyond this observed NMI call; no callback-NULL guard is added.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "_uvScHandleNMI",
+          "declaration_line": 550,
+          "lines": [
+            543
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-2323d53eb1bf",
+      "kind": "explicit_unknown",
+      "path": "src/sched.c",
+      "symbol": "* Retain the empty hook called for a missing graphics task and scheduler * watchdog recovery. RE_UNKNOWN: intended diagnostic or recovery action and * any callers outside this source; do not invent side effects or rename it * from the observed calls alone.",
+      "lines": [
+        578
+      ],
+      "evidence": "* Retain the empty hook called for a missing graphics task and scheduler * watchdog recovery. RE_UNKNOWN: intended diagnostic or recovery action and * any callers outside this source; do not invent side effects or rename it * from the observed calls alone.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "func_800048DC",
+          "declaration_line": 585,
+          "lines": [
+            578
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-00347b308120",
+      "kind": "explicit_unknown",
+      "path": "src/sched.c",
+      "symbol": "* Retain the empty three-argument entrypoint and all three native argument- * home stores. RE_UNKNOWN: original purpose and external callers; preserve its * existing identity and signature.",
+      "lines": [
+        657
+      ],
+      "evidence": "* Retain the empty three-argument entrypoint and all three native argument- * home stores. RE_UNKNOWN: original purpose and external callers; preserve its * existing identity and signature.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "func_80004B1C",
+          "declaration_line": 663,
+          "lines": [
+            657
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-c305ec9541aa",
+      "kind": "explicit_unknown",
+      "path": "src/sched.c",
+      "symbol": "* Retain the original empty one-argument entrypoint, including the native * argument-home store. RE_UNKNOWN: exported purpose and external callers; the * empty body does not establish a more specific clean name.",
+      "lines": [
+        569
+      ],
+      "evidence": "* Retain the original empty one-argument entrypoint, including the native * argument-home store. RE_UNKNOWN: exported purpose and external callers; the * empty body does not establish a more specific clean name.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "func_800048D4",
+          "declaration_line": 575,
+          "lines": [
+            569
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-4f641083081d",
       "kind": "explicit_unknown",
       "path": "src/sched.c",
       "symbol": "Drain the scheduler interrupt queue without blocking, then clear the * tracked audio/graphics task pointers, RSP/RDP state and timeout counters. * RE_UNKNOWN: required scheduler lifecycle or synchronization at entry; * trace original callers before using this reset while tasks are active.",
       "lines": [
-        100
+        106
       ],
       "evidence": "Drain the scheduler interrupt queue without blocking, then clear the * tracked audio/graphics task pointers, RSP/RDP state and timeout counters. * RE_UNKNOWN: required scheduler lifecycle or synchronization at entry; * trace original callers before using this reset while tasks are active.",
       "owners": [
         {
           "kind": "function",
           "name": "uvScDrainInterruptsAndResetTaskState",
-          "declaration_line": 104,
+          "declaration_line": 110,
           "lines": [
-            100
+            106
           ]
         }
       ]
@@ -148565,16 +148745,16 @@
       "path": "src/sched.c",
       "symbol": "Return the recorded-time difference between ring slots one and two * positions after the current slot, modulo five. These are the oldest * consecutive slots after the ring has filled. * RE_UNKNOWN: caller warm-up requirements before all timestamps exist; * resolve consumers before treating the result as a valid frame duration.",
       "lines": [
-        519
+        643
       ],
       "evidence": "Return the recorded-time difference between ring slots one and two * positions after the current slot, modulo five. These are the oldest * consecutive slots after the ring has filled. * RE_UNKNOWN: caller warm-up requirements before all timestamps exist; * resolve consumers before treating the result as a valid frame duration.",
       "owners": [
         {
           "kind": "function",
           "name": "uvScGetOldestTraceInterval",
-          "declaration_line": 524,
+          "declaration_line": 648,
           "lines": [
-            519
+            643
           ]
         }
       ]
@@ -148585,16 +148765,16 @@
       "path": "src/sched.c",
       "symbol": "Set the retrace-count threshold used by graphics completion to calculate * a remaining display delay relative to the current retrace counter. * RE_UNKNOWN: accepted range and higher-level frame-pacing policy; trace * original setters before clamping or reinterpreting the signed threshold.",
       "lines": [
-        509
+        633
       ],
       "evidence": "Set the retrace-count threshold used by graphics completion to calculate * a remaining display delay relative to the current retrace counter. * RE_UNKNOWN: accepted range and higher-level frame-pacing policy; trace * original setters before clamping or reinterpreting the signed threshold.",
       "owners": [
         {
           "kind": "function",
           "name": "uvScSetFrameRetraceThreshold",
-          "declaration_line": 513,
+          "declaration_line": 637,
           "lines": [
-            509
+            633
           ]
         }
       ]
@@ -148605,16 +148785,16 @@
       "path": "src/sched.c",
       "symbol": "Store the control that suppresses both scheduler framebuffer-swap paths * when nonzero. Preserve the original s32 control value. * RE_UNKNOWN: callers and lifecycle of suppression; trace original * references before changing the display policy.",
       "lines": [
-        537
+        667
       ],
       "evidence": "Store the control that suppresses both scheduler framebuffer-swap paths * when nonzero. Preserve the original s32 control value. * RE_UNKNOWN: callers and lifecycle of suppression; trace original * references before changing the display policy.",
       "owners": [
         {
           "kind": "function",
           "name": "uvScSetBufferSwapSuppressed",
-          "declaration_line": 541,
+          "declaration_line": 671,
           "lines": [
-            537
+            667
           ]
         }
       ]
@@ -148625,16 +148805,16 @@
       "path": "src/sched.c",
       "symbol": "When tracing is enabled and both stream counts are below thirty, append * to the selected stream in the current ring slot. Record clock-0x69 time, * event code and the packed RSP/RDP/yield state without altering its layout. * RE_UNKNOWN: complete event-code and two-stream consumer protocol; the * secondary stream includes both audio and graphics scheduler events. * Resolve trace-display readers before assigning stream-specific meanings.",
       "lines": [
-        479
+        603
       ],
       "evidence": "When tracing is enabled and both stream counts are below thirty, append * to the selected stream in the current ring slot. Record clock-0x69 time, * event code and the packed RSP/RDP/yield state without altering its layout. * RE_UNKNOWN: complete event-code and two-stream consumer protocol; the * secondary stream includes both audio and graphics scheduler events. * Resolve trace-display readers before assigning stream-specific meanings.",
       "owners": [
         {
           "kind": "function",
           "name": "uvScRecordTraceEvent",
-          "declaration_line": 485,
+          "declaration_line": 609,
           "lines": [
-            479
+            603
           ]
         }
       ]
@@ -150847,15 +151027,15 @@
       "path": "src/main.c",
       "symbol": "pad",
       "lines": [
-        296
+        326
       ],
       "owners": [
         {
           "kind": "function",
           "name": "Thread_Fault",
-          "declaration_line": 295,
+          "declaration_line": 325,
           "lines": [
-            296
+            326
           ]
         }
       ]
@@ -156205,15 +156385,15 @@
       "path": "src/sched.c",
       "symbol": "pad",
       "lines": [
-        313
+        403
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvScHandleRetrace",
-          "declaration_line": 310,
+          "declaration_line": 400,
           "lines": [
-            313
+            403
           ]
         }
       ]
@@ -215773,15 +215953,15 @@
       "path": "src/sched.c",
       "symbol": "unk68",
       "lines": [
-        446
+        557
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvScHandleNMI",
-          "declaration_line": 439,
+          "declaration_line": 550,
           "lines": [
-            446
+            557
           ]
         }
       ]
@@ -215793,15 +215973,15 @@
       "symbol": "unk8",
       "lines": [
         13,
-        500
+        624
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvScRecordTraceEvent",
-          "declaration_line": 485,
+          "declaration_line": 609,
           "lines": [
-            500
+            624
           ]
         },
         {
@@ -215821,15 +216001,15 @@
       "symbol": "unkC",
       "lines": [
         14,
-        501
+        625
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvScRecordTraceEvent",
-          "declaration_line": 485,
+          "declaration_line": 609,
           "lines": [
-            501
+            625
           ]
         },
         {
@@ -224243,15 +224423,15 @@
       "path": "src/sched.c",
       "symbol": "UnkStruct_8002D1A4",
       "lines": [
-        440
+        551
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvScHandleNMI",
-          "declaration_line": 439,
+          "declaration_line": 550,
           "lines": [
-            440
+            551
           ]
         }
       ]
@@ -224301,15 +224481,15 @@
       "lines": [
         15,
         18,
-        486
+        610
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvScRecordTraceEvent",
-          "declaration_line": 485,
+          "declaration_line": 609,
           "lines": [
-            486
+            610
           ]
         },
         {
@@ -224442,6 +224622,66 @@
           "declaration_line": 23,
           "lines": [
             12
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-01a9fd7e35d9",
+      "kind": "original_quirk",
+      "path": "src/main.c",
+      "symbol": "* On first initialization, initialize allocator, video, clocks, profiler, form * files and modules in order, then clear the initial DMA flag. Later calls * clear scheduler clients, reset allocation state and rebuild forms/modules * before resetting the profiler. RE_ORIGINAL_QUIRK: the first path retains a * guarded volatile store through address zero; its trigger is not proven * unreachable.",
+      "lines": [
+        65
+      ],
+      "evidence": "* On first initialization, initialize allocator, video, clocks, profiler, form * files and modules in order, then clear the initial DMA flag. Later calls * clear scheduler clients, reset allocation state and rebuild forms/modules * before resetting the profiler. RE_ORIGINAL_QUIRK: the first path retains a * guarded volatile store through address zero; its trigger is not proven * unreachable.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvSysInit",
+          "declaration_line": 74,
+          "lines": [
+            65
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-77bd49fafec0",
+      "kind": "original_quirk",
+      "path": "src/main.c",
+      "symbol": "* Return the global status address and SI queue. While the saved controller * bitmask is zero, wait for the original 0x2710 timer, create the SI queue, * register its event and initialize controllers. RE_ORIGINAL_QUIRK: zero * controllers causes this initialization to repeat on later calls; nonzero * bitmasks reuse the previous state.",
+      "lines": [
+        410
+      ],
+      "evidence": "* Return the global status address and SI queue. While the saved controller * bitmask is zero, wait for the original 0x2710 timer, create the SI queue, * register its event and initialize controllers. RE_ORIGINAL_QUIRK: zero * controllers causes this initialization to repeat on later calls; nonzero * bitmasks reuse the previous state.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvContMesgInit",
+          "declaration_line": 418,
+          "lines": [
+            410
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-2c7954542608",
+      "kind": "original_quirk",
+      "path": "src/main.c",
+      "symbol": "* Start and wait for a PI read only with an eight-byte-aligned destination, * even device address and byte count at most four MiB. Round odd counts up to * an even count and preserve writeback, DMA start, invalidation and blocking- * wait order. RE_ORIGINAL_QUIRK: zero length is allowed and the DMA-start * result is ignored before waiting. RE_UNKNOWN: caller capacity for the * rounded transfer.",
+      "lines": [
+        388
+      ],
+      "evidence": "* Start and wait for a PI read only with an eight-byte-aligned destination, * even device address and byte count at most four MiB. Round odd counts up to * an even count and preserve writeback, DMA start, invalidation and blocking- * wait order. RE_ORIGINAL_QUIRK: zero length is allowed and the DMA-start * result is ignored before waiting. RE_UNKNOWN: caller capacity for the * rounded transfer.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "_uvDMA",
+          "declaration_line": 397,
+          "lines": [
+            388
           ]
         }
       ]
@@ -233277,6 +233517,46 @@
       ]
     },
     {
+      "id": "Q-ceea958c4760",
+      "kind": "original_quirk",
+      "path": "src/sched.c",
+      "symbol": "* Search by client pointer and unlink a matching non-head client. * RE_ORIGINAL_QUIRK: the initial predecessor link points to the local * traversal variable, so removing the head leaves sc->clientList unchanged. * Preserve that native behavior and the unused public entrypoint.",
+      "lines": [
+        326
+      ],
+      "evidence": "* Search by client pointer and unlink a matching non-head client. * RE_ORIGINAL_QUIRK: the initial predecessor link points to the local * traversal variable, so removing the head leaves sc->clientList unchanged. * Preserve that native behavior and the unused public entrypoint.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "_uvScRemoveClient",
+          "declaration_line": 333,
+          "lines": [
+            326
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-20fec1970b2b",
+      "kind": "original_quirk",
+      "path": "src/sched.c",
+      "symbol": "* Update clocks even after NMI. Otherwise advance byte-sized RSP/RDP * watchdogs, recover at 51 RSP retraces or an RDP lead above 50, pace the two * graphics slots and drain queued tasks. Prioritize audio by yielding * graphics; active audio, recovery and a repeated yield request return before * client notification. RE_ORIGINAL_QUIRK: command receipt can overwrite either * graphics slot or the single audio slot without a fullness check; client * notifications are nonblocking and their failures are ignored.",
+      "lines": [
+        390
+      ],
+      "evidence": "* Update clocks even after NMI. Otherwise advance byte-sized RSP/RDP * watchdogs, recover at 51 RSP retraces or an RDP lead above 50, pace the two * graphics slots and drain queued tasks. Prioritize audio by yielding * graphics; active audio, recovery and a repeated yield request return before * client notification. RE_ORIGINAL_QUIRK: command receipt can overwrite either * graphics slot or the single audio slot without a fullness check; client * notifications are nonblocking and their failures are ignored.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "_uvScHandleRetrace",
+          "declaration_line": 400,
+          "lines": [
+            390
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-6d87de8ae03a",
       "kind": "uncertainty_note",
       "path": "include/macros.h",
@@ -233312,6 +233592,26 @@
           "declaration_line": 18,
           "lines": [
             33
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-e28c0b657779",
+      "kind": "uncertainty_note",
+      "path": "src/main.c",
+      "symbol": "Original guarded NULL store; trigger reachability is unresolved.",
+      "lines": [
+        85
+      ],
+      "evidence": "Original guarded NULL store; trigger reachability is unresolved.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvSysInit",
+          "declaration_line": 74,
+          "lines": [
+            85
           ]
         }
       ]
@@ -234953,16 +235253,16 @@
       "path": "src/sched.c",
       "symbol": "_uvDebugPrintf(\"unknown sched interrupt mesg: 0x%x\\n\", msg);",
       "lines": [
-        304
+        384
       ],
       "evidence": "_uvDebugPrintf(\"unknown sched interrupt mesg: 0x%x\\n\", msg);",
       "owners": [
         {
           "kind": "function",
           "name": "_uvScMain",
-          "declaration_line": 283,
+          "declaration_line": 363,
           "lines": [
-            304
+            384
           ]
         }
       ]
@@ -235067,15 +235367,15 @@
       "path": "src/main.c",
       "symbol": "unusedByteCursor",
       "lines": [
-        253
+        276
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDebugDrawStackTrace",
-          "declaration_line": 249,
+          "declaration_line": 272,
           "lines": [
-            253
+            276
           ]
         }
       ]
@@ -235086,15 +235386,15 @@
       "path": "src/main.c",
       "symbol": "unusedFunction",
       "lines": [
-        90
+        99
       ],
       "owners": [
         {
           "kind": "function",
           "name": "unusedFunction",
-          "declaration_line": 90,
+          "declaration_line": 99,
           "lines": [
-            90
+            99
           ]
         }
       ]
@@ -235105,24 +235405,24 @@
       "path": "src/main.c",
       "symbol": "unusedWord",
       "lines": [
-        228,
-        251
+        251,
+        274
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDebugDrawResolvedAddress",
-          "declaration_line": 222,
+          "declaration_line": 245,
           "lines": [
-            228
+            251
           ]
         },
         {
           "kind": "function",
           "name": "uvDebugDrawStackTrace",
-          "declaration_line": 249,
+          "declaration_line": 272,
           "lines": [
-            251
+            274
           ]
         }
       ]
@@ -235133,15 +235433,15 @@
       "path": "src/main.c",
       "symbol": "unusedWord0",
       "lines": [
-        126
+        149
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDebugDrawScaledGlyph",
-          "declaration_line": 123,
+          "declaration_line": 146,
           "lines": [
-            126
+            149
           ]
         }
       ]
@@ -235152,15 +235452,15 @@
       "path": "src/main.c",
       "symbol": "unusedWord1",
       "lines": [
-        127
+        150
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDebugDrawScaledGlyph",
-          "declaration_line": 123,
+          "declaration_line": 146,
           "lines": [
-            127
+            150
           ]
         }
       ]
@@ -235171,15 +235471,15 @@
       "path": "src/main.c",
       "symbol": "unusedWord2",
       "lines": [
-        134
+        157
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDebugDrawScaledGlyph",
-          "declaration_line": 123,
+          "declaration_line": 146,
           "lines": [
-            134
+            157
           ]
         }
       ]
@@ -235190,15 +235490,15 @@
       "path": "src/main.c",
       "symbol": "unusedWord3",
       "lines": [
-        135
+        158
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDebugDrawScaledGlyph",
-          "declaration_line": 123,
+          "declaration_line": 146,
           "lines": [
-            135
+            158
           ]
         }
       ]

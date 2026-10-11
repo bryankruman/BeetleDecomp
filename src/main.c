@@ -62,6 +62,15 @@ extern u8 gAppThreadStack[];
 
 void uvDebugDrawScaledGlyph(s32 arg0, s32 arg1, s32 arg2, u16 arg3, u16 arg4);
 
+/*
+ * On first initialization, initialize allocator, video, clocks, profiler, form
+ * files and modules in order, then clear the initial DMA flag. Later calls
+ * clear scheduler clients, reset allocation state and rebuild forms/modules
+ * before resetting the profiler. RE_ORIGINAL_QUIRK: the first path retains a
+ * guarded volatile store through address zero; its trigger is not proven
+ * unreachable.
+ */
+#line 65 "src/main.c"
 void uvSysInit(void) {
     // init for power up
     if (gCartDMATransferFlag != 0) {
@@ -73,7 +82,7 @@ void uvSysInit(void) {
         uvModuleInit();
         gCartDMATransferFlag = 0;
 
-        // Always false
+        // Original guarded NULL store; trigger reachability is unresolved.
         if (D_8002F8C8) {
             *(volatile s32 *) 0 = 0;
         }
@@ -90,12 +99,26 @@ void uvSysInit(void) {
 static void unusedFunction() {
 }
 
+/*
+ * Block for one PI DMA queue message only when the byte argument is zero,
+ * discarding the message value. Nonzero arguments return without receiving a
+ * message.
+ */
+#line 93 "src/main.c"
 void uvWaitForMesg(u8 msg) {
     if (!msg) {
         osRecvMesg(&gPiDmaQ, NULL, 1);
     }
 }
 
+/*
+ * Initialize the OS, request 22050-Hz audio, read sixteen cartridge words
+ * starting at 0xFFB000 and pass that local block to kernel thread one at
+ * priority twelve. Preserve conditional ISPRINT setup and the original stack-
+ * pointer argument. RE_UNKNOWN: the sixteen-word descriptor meaning and its
+ * bootstrap lifetime.
+ */
+#line 99 "src/main.c"
 void bootproc(void *arg0) {
     u32 devAddr;
     s32 i;
@@ -292,6 +315,13 @@ UNUSED void uvDebugDrawStackTrace(s32 address, u8 *stackCursor, s32 y) {
 }
 #line 253 "src/main.c"
 
+/*
+ * Wait for fault-event messages, stop the thread returned by
+ * __osGetActiveQueue unless already stopped, then publish its ID and latch the
+ * fault flag. Preserve the unchecked thread pointer; this loop does not draw
+ * the diagnostic screen.
+ */
+#line 254 "src/main.c"
 void Thread_Fault(void *arg0) {
     s32 pad;
     OSMesg mesg = NULL;
@@ -310,10 +340,23 @@ void Thread_Fault(void *arg0) {
     }
 }
 
+/*
+ * Forward the original thread argument directly to uvGameInit. This wrapper
+ * performs no initialization or argument conversion itself.
+ */
+#line 272 "src/main.c"
 void Thread_App(void *arg0) {
     uvGameInit(arg0);
 }
 
+/*
+ * Create the PI manager and one-message DMA completion queue, then start fault
+ * thread zero at priority 250 and application thread six at priority ten.
+ * Forward the bootstrap block to the application, lower this thread to
+ * priority zero and spin forever. RE_UNKNOWN: original stack-allocation
+ * boundaries; retain the existing stack-pointer expressions.
+ */
+#line 276 "src/main.c"
 void Thread_Kernel(void *entry) {
     osCreatePiManager(OS_PRIORITY_PIMGR, &gPiMgrCmdQ, gPiMgrCmdBuf, ARRAY_COUNT(gPiMgrCmdBuf));
     osCreateMesgQueue(&gPiDmaQ, gPiDmaBuf, 1);
@@ -326,6 +369,13 @@ void Thread_Kernel(void *entry) {
     }
 }
 
+/*
+ * Keep the optional ISPRINT forwarding branch unchanged. The captured original
+ * native only saves the four argument registers and returns. RE_UNKNOWN:
+ * debug-enabled variadic forwarding semantics; active preprocessing and
+ * warnings still require the actual compiler proof.
+ */
+#line 288 "src/main.c"
 void _uvDebugPrintf(char *fmt, ...) {
 #ifdef ISPRINT
     va_list arglist;
@@ -335,6 +385,15 @@ void _uvDebugPrintf(char *fmt, ...) {
 #endif
 }
 
+/*
+ * Start and wait for a PI read only with an eight-byte-aligned destination,
+ * even device address and byte count at most four MiB. Round odd counts up to
+ * an even count and preserve writeback, DMA start, invalidation and blocking-
+ * wait order. RE_ORIGINAL_QUIRK: zero length is allowed and the DMA-start
+ * result is ignored before waiting. RE_UNKNOWN: caller capacity for the
+ * rounded transfer.
+ */
+#line 297 "src/main.c"
 void _uvDMA(void *vAddr, u32 devAddr, u32 nbytes) {
     if ((!((s32) vAddr % 8)) && (!((s32) devAddr % 2)) && (nbytes < 0x400001U)) {
         if (nbytes & 1) {
@@ -348,6 +407,14 @@ void _uvDMA(void *vAddr, u32 devAddr, u32 nbytes) {
 }
 
 static u8 sContBitPattern = FALSE;
+/*
+ * Return the global status address and SI queue. While the saved controller
+ * bitmask is zero, wait for the original 0x2710 timer, create the SI queue,
+ * register its event and initialize controllers. RE_ORIGINAL_QUIRK: zero
+ * controllers causes this initialization to repeat on later calls; nonzero
+ * bitmasks reuse the previous state.
+ */
+#line 310 "src/main.c"
 u8 uvContMesgInit(OSMesgQueue **siContQ, OSContStatus **contStatus) {
     OSMesg mesgBuf[2];
     OSMesgQueue mq;
@@ -367,5 +434,10 @@ u8 uvContMesgInit(OSMesgQueue **siContQ, OSContStatus **contStatus) {
     return sContBitPattern;
 }
 
+/*
+ * Retain this empty return-only entrypoint. RE_UNKNOWN: original purpose and
+ * callers; no more specific name or behavior is inferred.
+ */
+#line 329 "src/main.c"
 void func_80005570(void) {
 }
