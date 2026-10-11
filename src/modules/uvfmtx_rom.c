@@ -84,59 +84,69 @@ static f32 sXAxis;
 static f32 sYAxis;
 static f32 sZAxis;
 
-void __entrypoint_func_uvfmtx_rom_400000(UvFMtx_Rom_Exports *exports) {
-    uvUpdateFileAllocPtr(exports);
-    exports->uvFmtxSetSharedAxes = uvFmtxSetSharedAxes;
-    exports->uvMat4ApplySharedInverseTranslation = uvMat4ApplySharedInverseTranslation;
-    exports->uvMat4FCopy = uvMat4FCopy;
-    exports->uvMat4CopyLinear3x3 = uvMat4CopyLinear3x3;
-    exports->uvMat4CopyL2F = uvMat4CopyL2F;
-    exports->uvMat4CopyF2L = uvMat4CopyF2L;
-    exports->uvMat4SetIdentity = uvMat4SetIdentity;
-    exports->uvMat4Mul = uvMat4Mul;
-    exports->func_uvfmtx_rom_00400FF8 = func_uvfmtx_rom_00400FF8;
-    exports->uvFmtxModuleCleanup = uvFmtxModuleCleanup;
-    exports->uvMat4BuildPerspectiveProjection = uvMat4BuildPerspectiveProjection;
-    exports->uvMat4BuildOrthographicProjection = uvMat4BuildOrthographicProjection;
-    exports->uvMat4GetYAxisAlias = uvMat4GetYAxisAlias;
-    exports->uvMat4SetOrtho = uvMat4SetOrtho;
-    exports->uvMat4GetTranslation = uvMat4GetTranslation;
-    exports->uvMat4BuildLookAtFromCoordinates = uvMat4BuildLookAtFromCoordinates;
-    exports->uvMat4GetDirectionAngles = uvMat4GetDirectionAngles;
-    exports->uvMat4SetNormalizedQuaternionRotation = uvMat4SetNormalizedQuaternionRotation;
-    exports->uvMat4GetTranslationAndDirectionAngles = uvMat4GetTranslationAndDirectionAngles;
-    exports->uvMat4SetNormalizedAxisRotationFromSinCos = uvMat4SetNormalizedAxisRotationFromSinCos;
-    exports->uvMat4TransformDirection = uvMat4TransformDirection;
-    exports->uvGfxMtxViewLoad = uvGfxMtxViewLoad;
-    exports->uvMat4TransformPointAndW = uvMat4TransformPointAndW;
-    exports->uvMat4PushFloatMatrix = uvMat4PushFloatMatrix;
-    exports->uvMat4TransformXY = uvMat4TransformXY;
-    exports->uvGfxMtxFViewPop = uvGfxMtxFViewPop;
-    exports->uvMat4MultiplyLinear3x3 = uvMat4MultiplyLinear3x3;
-    exports->uvGfxMtxProjPushF = uvGfxMtxProjPushF;
-    exports->uvMat4ApplyQuaternionRotationAboutPivot = uvMat4ApplyQuaternionRotationAboutPivot;
-    exports->uvMat4ApplyAxisRotationAboutPivot = uvMat4ApplyAxisRotationAboutPivot;
-    exports->uvMat4RotateAxis = uvMat4RotateAxis;
-    exports->uvMat4LocalTranslate = uvMat4LocalTranslate;
-    exports->uvMat4Scale = uvMat4Scale;
-    exports->uvGfxMtxCopySharedFloatMatrix = uvGfxMtxCopySharedFloatMatrix;
-    exports->uvMat4ComposeScaleRotateTranslate = uvMat4ComposeScaleRotateTranslate;
-    exports->uvGfxMtxLoadProjectionWithQuarterTurn = uvGfxMtxLoadProjectionWithQuarterTurn;
-    exports->uvFmtxCopyAlternateSharedMatrix = uvFmtxCopyAlternateSharedMatrix;
-    exports->uvMat4InvertTranslationRotation = uvMat4InvertTranslationRotation;
-    exports->uvMat4SetRotationFromThreeAngles = uvMat4SetRotationFromThreeAngles;
-    exports->uvMat4InvertAffineByCofactors = uvMat4InvertAffineByCofactors;
-    exports->uvMat4SetTranslation = uvMat4SetTranslation;
-    exports->uvMat4TransposeLinear3x3PreservingRest = uvMat4TransposeLinear3x3PreservingRest;
-    exports->uvFmtxCopyVector = uvFmtxCopyVector;
-    exports->uvMat4CopyWithReciprocalAndLinearScale = uvMat4CopyWithReciprocalAndLinearScale;
-    exports->uvFmtxCopyNegatedVector = uvFmtxCopyNegatedVector;
-    exports->uvMat4TransformPoint = uvMat4TransformPoint;
-    exports->uvMat4GetYAxis = uvMat4GetYAxis;
-    exports->uvMat4BuildFacingBasisBetweenTransforms = uvMat4BuildFacingBasisBetweenTransforms;
-    exports->uvMat4GetNegatedYAxis = uvMat4GetNegatedYAxis;
-    exports->uvMat4GetZAxis = uvMat4GetZAxis;
-    exports->uvMat4GetNegatedZAxis = uvMat4GetNegatedZAxis;
+/*
+ * Publish floating-point matrix/vector and graphics-stack operations, then
+ * import MATH, FVEC and IMTX. Initialize all three shared matrices to identity
+ * and clear the three shared axis scalars through the original chained stores.
+ * RE_ORIGINAL_QUIRK: The independent export slots, three identity calls and
+ * chained scalar assignments retain their original order and expressions.
+ * RE_UNKNOWN: Provider/export-table lifetime, repeated initialization and
+ * concurrent users of the shared matrices/axes require loader/frame callers.
+ */
+#line 87 "src/modules/uvfmtx_rom.c"
+void __entrypoint_func_uvfmtx_rom_400000(UvFMtx_Rom_Exports *moduleExports) {
+    uvUpdateFileAllocPtr(moduleExports);
+    moduleExports->uvFmtxSetSharedAxes = uvFmtxSetSharedAxes;
+    moduleExports->uvMat4ApplySharedInverseTranslation = uvMat4ApplySharedInverseTranslation;
+    moduleExports->uvMat4FCopy = uvMat4FCopy;
+    moduleExports->uvMat4CopyLinear3x3 = uvMat4CopyLinear3x3;
+    moduleExports->uvMat4CopyL2F = uvMat4CopyL2F;
+    moduleExports->uvMat4CopyF2L = uvMat4CopyF2L;
+    moduleExports->uvMat4SetIdentity = uvMat4SetIdentity;
+    moduleExports->uvMat4Mul = uvMat4Mul;
+    moduleExports->func_uvfmtx_rom_00400FF8 = func_uvfmtx_rom_00400FF8;
+    moduleExports->uvFmtxModuleCleanup = uvFmtxModuleCleanup;
+    moduleExports->uvMat4BuildPerspectiveProjection = uvMat4BuildPerspectiveProjection;
+    moduleExports->uvMat4BuildOrthographicProjection = uvMat4BuildOrthographicProjection;
+    moduleExports->uvMat4GetYAxisAlias = uvMat4GetYAxisAlias;
+    moduleExports->uvMat4SetOrtho = uvMat4SetOrtho;
+    moduleExports->uvMat4GetTranslation = uvMat4GetTranslation;
+    moduleExports->uvMat4BuildLookAtFromCoordinates = uvMat4BuildLookAtFromCoordinates;
+    moduleExports->uvMat4GetDirectionAngles = uvMat4GetDirectionAngles;
+    moduleExports->uvMat4SetNormalizedQuaternionRotation = uvMat4SetNormalizedQuaternionRotation;
+    moduleExports->uvMat4GetTranslationAndDirectionAngles = uvMat4GetTranslationAndDirectionAngles;
+    moduleExports->uvMat4SetNormalizedAxisRotationFromSinCos = uvMat4SetNormalizedAxisRotationFromSinCos;
+    moduleExports->uvMat4TransformDirection = uvMat4TransformDirection;
+    moduleExports->uvGfxMtxViewLoad = uvGfxMtxViewLoad;
+    moduleExports->uvMat4TransformPointAndW = uvMat4TransformPointAndW;
+    moduleExports->uvMat4PushFloatMatrix = uvMat4PushFloatMatrix;
+    moduleExports->uvMat4TransformXY = uvMat4TransformXY;
+    moduleExports->uvGfxMtxFViewPop = uvGfxMtxFViewPop;
+    moduleExports->uvMat4MultiplyLinear3x3 = uvMat4MultiplyLinear3x3;
+    moduleExports->uvGfxMtxProjPushF = uvGfxMtxProjPushF;
+    moduleExports->uvMat4ApplyQuaternionRotationAboutPivot = uvMat4ApplyQuaternionRotationAboutPivot;
+    moduleExports->uvMat4ApplyAxisRotationAboutPivot = uvMat4ApplyAxisRotationAboutPivot;
+    moduleExports->uvMat4RotateAxis = uvMat4RotateAxis;
+    moduleExports->uvMat4LocalTranslate = uvMat4LocalTranslate;
+    moduleExports->uvMat4Scale = uvMat4Scale;
+    moduleExports->uvGfxMtxCopySharedFloatMatrix = uvGfxMtxCopySharedFloatMatrix;
+    moduleExports->uvMat4ComposeScaleRotateTranslate = uvMat4ComposeScaleRotateTranslate;
+    moduleExports->uvGfxMtxLoadProjectionWithQuarterTurn = uvGfxMtxLoadProjectionWithQuarterTurn;
+    moduleExports->uvFmtxCopyAlternateSharedMatrix = uvFmtxCopyAlternateSharedMatrix;
+    moduleExports->uvMat4InvertTranslationRotation = uvMat4InvertTranslationRotation;
+    moduleExports->uvMat4SetRotationFromThreeAngles = uvMat4SetRotationFromThreeAngles;
+    moduleExports->uvMat4InvertAffineByCofactors = uvMat4InvertAffineByCofactors;
+    moduleExports->uvMat4SetTranslation = uvMat4SetTranslation;
+    moduleExports->uvMat4TransposeLinear3x3PreservingRest = uvMat4TransposeLinear3x3PreservingRest;
+    moduleExports->uvFmtxCopyVector = uvFmtxCopyVector;
+    moduleExports->uvMat4CopyWithReciprocalAndLinearScale = uvMat4CopyWithReciprocalAndLinearScale;
+    moduleExports->uvFmtxCopyNegatedVector = uvFmtxCopyNegatedVector;
+    moduleExports->uvMat4TransformPoint = uvMat4TransformPoint;
+    moduleExports->uvMat4GetYAxis = uvMat4GetYAxis;
+    moduleExports->uvMat4BuildFacingBasisBetweenTransforms = uvMat4BuildFacingBasisBetweenTransforms;
+    moduleExports->uvMat4GetNegatedYAxis = uvMat4GetNegatedYAxis;
+    moduleExports->uvMat4GetZAxis = uvMat4GetZAxis;
+    moduleExports->uvMat4GetNegatedZAxis = uvMat4GetNegatedZAxis;
 #ifdef __sgi
     #line 1
 #endif

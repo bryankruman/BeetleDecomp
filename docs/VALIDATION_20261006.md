@@ -3252,10 +3252,19 @@ Totals: 436 further recoveries after the 225 upstream ordinary imports, plus 171
 Frozen wave `4704-geometry-audio-utility-contracts` and `accepted-geometry-audio-utility-contracts-4704` verify real translation-unit instructions/full relocations, 12 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 436 further readable functions
+## Historical accepted checkpoint — 436 further readable functions
 
 Review27 complete existing-C functions/4268 native bytes across17 source owners. Preserve all executable operations, original quirks, native identity/extent bindings, full translation-unit tokens and logical coordinates. All27 actual scoped observations verify current reference records and native opcode/site associations. Keep23 equal and4 unequal original/current raw reference hashes explicit without inferred explanations. Preserve1915 prior assessments including140 typed SDK intervals, all83 historical attempts and the complete ordinary ledger. Fresh17module packed/native plus original full ROM/source/Git proofs remain required.
 
 Totals: 436 further recoveries after the 225 upstream ordinary imports, plus 1746 existing C semantic cleanups. Current ledger: 764 assembly references = 725 ordinary + 39 entrypoints; 701,284 known remaining instruction bytes; zero unknown sizes; 285 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `4904-remaining-historical-nearby-contracts` and `accepted-remaining-historical-nearby-contracts-4904` verify real translation-unit instructions/full relocations, 17 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 437 further readable functions
+
+Recover144-byte SPARKS four-slot reset and clarify eleven existing graphics functions3880B across eight source files. Preserve exact operations, live callback/base reads, function identities and genuine unknowns. All twelve actual native proofs bind1006 words and416 ordered records. SPARKS inherited991-byte warning is qualified by exact unchanged-source commands, diagnostics and outside-target coordinates; graphics source role/comment inverses use existing v3 proof. Nine graphics raw reference hashes equal originals and two differ explicitly with complete closed native/site association. Preserve1942 prior ordinary/typed assessments,140 SDK rows and83 historical attempts; require fresh full packed/native, original ROM, whole-ledger and Git/source proofs.
+
+Totals: 437 further recoveries after the 225 upstream ordinary imports, plus 1757 existing C semantic cleanups. Current ledger: 763 assembly references = 724 ordinary + 39 entrypoints; 701,140 known remaining instruction bytes; zero unknown sizes; 286 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `5002-sparks-graphics-native-contracts` and `accepted-sparks-graphics-native-contracts-5002` verify real translation-unit instructions/full relocations, 8 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

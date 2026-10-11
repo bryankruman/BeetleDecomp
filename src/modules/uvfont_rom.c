@@ -52,19 +52,27 @@ void uvFontGenDList(void);
 
 void __entrypoint_func_uvfont_rom_400000(UvFont_Exports *exports);
 
-void __entrypoint_func_uvfont_rom_400000(UvFont_Exports *exports) {
-    uvUpdateFileAllocPtr(exports);
-    exports->uvModuleCleanup = uvModuleCleanup;
-    exports->uvFontGenDList = uvFontGenDList;
-    exports->uvSetFont = uvSetFont;
-    exports->uvFontScale = uvFontScale;
-    exports->uvFontColor = uvFontColor;
-    exports->uvFontStrlLen = uvFontStrlLen;
-    exports->uvFontStr16WidthFont = uvFontStr16WidthFont;
-    exports->uvFontWidth = uvFontWidth;
-    exports->uvFontHeight = uvFontHeight;
-    exports->uvFontPrintStr16 = uvFontPrintStr16;
-    exports->uvFontPrintStr = uvFontPrintStr;
+/*
+ * Publish the font operations, import STRG, GMGR, CBCK, STAT and SPRT in that
+ * order, then register the reset-gate callback on graphics callback list 1
+ * with two zero arguments. The callback implementation is a separate owner.
+ * RE_UNKNOWN: Provider/export-table lifetime, callback scheduling and repeated
+ * initialization require the loader and frame callers; imports are unchecked.
+ */
+#line 55 "src/modules/uvfont_rom.c"
+void __entrypoint_func_uvfont_rom_400000(UvFont_Exports *moduleExports) {
+    uvUpdateFileAllocPtr(moduleExports);
+    moduleExports->uvModuleCleanup = uvModuleCleanup;
+    moduleExports->uvFontGenDList = uvFontGenDList;
+    moduleExports->uvSetFont = uvSetFont;
+    moduleExports->uvFontScale = uvFontScale;
+    moduleExports->uvFontColor = uvFontColor;
+    moduleExports->uvFontStrlLen = uvFontStrlLen;
+    moduleExports->uvFontStr16WidthFont = uvFontStr16WidthFont;
+    moduleExports->uvFontWidth = uvFontWidth;
+    moduleExports->uvFontHeight = uvFontHeight;
+    moduleExports->uvFontPrintStr16 = uvFontPrintStr16;
+    moduleExports->uvFontPrintStr = uvFontPrintStr;
 #line 59
     sUvStringExports = uvLoadModule('STRG');
     sUvGfxMgrExports_font = uvLoadModule('GMGR');
@@ -75,6 +83,15 @@ void __entrypoint_func_uvfont_rom_400000(UvFont_Exports *exports) {
                                                (s32) uvFontAdvanceResetGate, 0, 0);
 }
 
+/*
+ * Remove the font reset-gate callback from graphics callback list 1 before
+ * unloading STRG, GMGR, CBCK and STAT in that order.
+ * RE_ORIGINAL_QUIRK: SPRT is imported by the initializer but is not unloaded
+ * here. Preserve that asymmetry instead of inferring dependency ownership.
+ * RE_UNKNOWN: Shared reference counts, duplicate cleanup and outstanding
+ * queued font messages require the original loader/frame lifecycle.
+ */
+#line 68 "src/modules/uvfont_rom.c"
 void uvModuleCleanup(void) {
     sUvCbackExports_font->uvRemoveCallback(sUvGfxMgrExports_font->uvGfxGetCallbackList(1),
                                                (s32) uvFontAdvanceResetGate);
@@ -151,10 +168,24 @@ s32 _uvFontStrWidth(ParsedUVFT *font, const char *text) {
 }
 #line 131 "src/modules/uvfont_rom.c"
 
-s32 uvFontWidth(const char *str) {
-    return _uvFontStrWidth(sParsedFont, str);
+/*
+ * Pass the currently selected parsed font and caller text to the existing
+ * width helper, returning its result unchanged.
+ * RE_UNKNOWN: Selected-font lifetime, text termination and glyph-table
+ * coverage are inherited helper/caller preconditions, not checked here.
+ */
+#line 132 "src/modules/uvfont_rom.c"
+s32 uvFontWidth(const char *text) {
+    return _uvFontStrWidth(sParsedFont, text);
 }
 
+/*
+ * Read the selected bitmap signed height, multiply it by the shared vertical
+ * scale and convert the result to a signed word with the original truncation.
+ * RE_UNKNOWN: Font/bitmap lifetime and finite, representable scaled results
+ * require the font selector and scale-setting callers; no clamp is added.
+ */
+#line 136 "src/modules/uvfont_rom.c"
 s32 uvFontHeight(void) {
     return (s32) ((f32) sParsedFont->bitmap->actualHeight * sFontScaleY);
 }

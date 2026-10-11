@@ -71,36 +71,47 @@ static UvIntersect_Exports *sUvIntersectExports;
 static UvMath_Exports *sUvMathExports;
 static UvGfxState_Rom_Exports *sUvGfxStateExports;
 
-void __entrypoint_func_uvmodel_rom_400000(UvModel_Exports *exports) {
-    s32 *mtxCount;
+/*
+ * Publish model/query and matrix-stack operations. Use system property 9 as
+ * the signed matrix count, falling back to 5 only for an absent pointer or
+ * zero value. Allocate and clear count times sizeof(Mtx4F), then import FMTX,
+ * FVEC, QERY, ISCT, MATH and STAT before caching seven query-provider addresses.
+ * RE_ORIGINAL_QUIRK: Nonzero negative counts are not rejected, allocation is
+ * not checked before clearing, and the otherwise unused STAT import remains.
+ * RE_UNKNOWN: Valid count/size arithmetic, allocation outcomes, cached query
+ * storage extents and provider/stack lifetimes require original callers.
+ */
+#line 74 "src/modules/uvmodel_rom.c"
+void __entrypoint_func_uvmodel_rom_400000(UvModel_Exports *moduleExports) {
+    s32 *matrixCountSetting;
 
-    uvUpdateFileAllocPtr(exports);
-    exports->uvModelReservedCallback0 = uvModelReservedCallback0;
-    exports->uvModelReservedCallback1 = uvModelReservedCallback1;
-    exports->uvModelReservedCallback2 = uvModelReservedCallback2;
-    exports->uvModelGetFirstStateWordAddress = uvModelGetFirstStateWordAddress;
-    exports->uvModelGetPosm = uvModelGetPosm;
-    exports->uvModelGetProps = uvModelGetProps;
-    exports->uvModelFindThresholdBand = uvModelFindThresholdBand;
-    exports->uvModelAppendScalarExtentLodQueryResults = uvModelAppendScalarExtentLodQueryResults;
-    exports->uvModelAppendSegmentLodQueryResults = uvModelAppendSegmentLodQueryResults;
-    exports->uvModelCleanup = uvModelCleanup;
-    exports->uvModelTestWorldPointInLodBounds = uvModelTestWorldPointInLodBounds;
-    exports->uvModelContainsLocalPoint = uvModelContainsLocalPoint;
-    exports->uvModelIntersectSegmentWithBoundsFaces = uvModelIntersectSegmentWithBoundsFaces;
-    exports->uvModelResetMatrixStack = uvModelResetMatrixStack;
-    exports->uvModelGetCurrentMatrix = uvModelGetCurrentMatrix;
-    exports->uvModelPushMatrix = uvModelPushMatrix;
-    exports->uvModelPopMatrix = uvModelPopMatrix;
-    exports->uvModelReplaceTextureId = uvModelReplaceTextureId;
-    exports->uvModelCollectStatesByTextureId = uvModelCollectStatesByTextureId;
-    exports->uvModelSetCollisionMetadataWord38 = uvModelSetCollisionMetadataWord38;
-    mtxCount = uvGetSystemProp(SYSTEM_PROPID_MODEL_MTX_COUNT);
-    if (mtxCount == NULL) {
+    uvUpdateFileAllocPtr(moduleExports);
+    moduleExports->uvModelReservedCallback0 = uvModelReservedCallback0;
+    moduleExports->uvModelReservedCallback1 = uvModelReservedCallback1;
+    moduleExports->uvModelReservedCallback2 = uvModelReservedCallback2;
+    moduleExports->uvModelGetFirstStateWordAddress = uvModelGetFirstStateWordAddress;
+    moduleExports->uvModelGetPosm = uvModelGetPosm;
+    moduleExports->uvModelGetProps = uvModelGetProps;
+    moduleExports->uvModelFindThresholdBand = uvModelFindThresholdBand;
+    moduleExports->uvModelAppendScalarExtentLodQueryResults = uvModelAppendScalarExtentLodQueryResults;
+    moduleExports->uvModelAppendSegmentLodQueryResults = uvModelAppendSegmentLodQueryResults;
+    moduleExports->uvModelCleanup = uvModelCleanup;
+    moduleExports->uvModelTestWorldPointInLodBounds = uvModelTestWorldPointInLodBounds;
+    moduleExports->uvModelContainsLocalPoint = uvModelContainsLocalPoint;
+    moduleExports->uvModelIntersectSegmentWithBoundsFaces = uvModelIntersectSegmentWithBoundsFaces;
+    moduleExports->uvModelResetMatrixStack = uvModelResetMatrixStack;
+    moduleExports->uvModelGetCurrentMatrix = uvModelGetCurrentMatrix;
+    moduleExports->uvModelPushMatrix = uvModelPushMatrix;
+    moduleExports->uvModelPopMatrix = uvModelPopMatrix;
+    moduleExports->uvModelReplaceTextureId = uvModelReplaceTextureId;
+    moduleExports->uvModelCollectStatesByTextureId = uvModelCollectStatesByTextureId;
+    moduleExports->uvModelSetCollisionMetadataWord38 = uvModelSetCollisionMetadataWord38;
+    matrixCountSetting = uvGetSystemProp(SYSTEM_PROPID_MODEL_MTX_COUNT);
+    if (matrixCountSetting == NULL) {
         D_uvmodel_rom_00403140 = 5;
     } else {
-        if (*mtxCount != 0) {
-            D_uvmodel_rom_00403140 = *mtxCount;
+        if (*matrixCountSetting != 0) {
+            D_uvmodel_rom_00403140 = *matrixCountSetting;
         } else {
             D_uvmodel_rom_00403140 = 5;
         }

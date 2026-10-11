@@ -60,41 +60,49 @@ static UvMath_Exports* sUvMathRomExports;
 
 s32 D_uvfvec_rom_00400BB0[] = {0x00840000, __entrypoint_func_uvfvec_rom_400000, 0, 0};
 
-void __entrypoint_func_uvfvec_rom_400000(UvFVec_Rom_Exports* exports) {
-    uvUpdateFileAllocPtr(exports);
-    exports->uvVec3FSet = uvVec3FSet;
-    exports->uvVec3FNormalize = uvVec3FNormalize;
-    exports->uvVec3FLen = uvVec3FLen;
-    exports->uvVec3FLenSquared = uvVec3FLengthSquared;
-    exports->uvVec3FDistance = uvVec3FDistance;
-    exports->uvVec3FDot = uvVec3FDot;
-    exports->uvVec3FCopy = uvVec3FCopy;
-    exports->uvVec3FScalarProj = uvVec3FScalarProj;
-    exports->uvVec3FCross = uvVec3FCross;
-    exports->uvFvecModuleCleanup = uvFvecModuleCleanup;
-    exports->uvVec3FAdd = uvVec3FAdd;
-    exports->uvVec2FNormalize = uvVec2FNormalize;
-    exports->uvVec3FMult = uvVec3FMult;
-    exports->uvVec2FIsZero = uvVec2FIsZero;
-    exports->uvVec2FLen = uvVec2FLen;
-    exports->uvVec3FAddScaled = uvVec3FAddScaled;
-    exports->uvVec2FNegate = uvVec2FNegate;
-    exports->uvVec2FLenSquared = uvVec2FLengthSquared;
-    exports->uvVec3FSub = uvVec3FSub;
-    exports->uvVec2FReflect = uvVec2FReflect;
-    exports->uvVec2FDot = uvVec2FDot;
-    exports->uvVec3FScale = uvVec3FScale;
-    exports->uvVec2FCopy = uvVec2FCopy;
-    exports->uvVec3FSphereAngles = uvVec3FSphereAngles;
-    exports->uvVec2FScalarProj = uvVec2FScalarProj;
-    exports->uvVec3FFromSpherical = uvVec3fFromSpherical;
-    exports->uvVec2FAdd = uvVec2FAdd;
-    exports->uvVec3FIsZero = uvVec3FIsZero;
-    exports->uvVec2FAddScaled = uvVec2FAddScaled;
-    exports->uvVec3FNegate = uvVec3FNegate;
-    exports->uvVec2FSub = uvVec2FSub;
-    exports->uvVec2FSet = uvVec2FSet;
-    exports->uvVec2FScale = uvVec2FScale;
+/*
+ * Publish the existing two- and three-component vector operations and cleanup
+ * entry, preserving the separate length-squared export aliases. Import MATH
+ * after filling the export slots; no vector storage is allocated here.
+ * RE_UNKNOWN: Writable export-table extent, MATH lifetime and repeated module
+ * initialization require the loader; imported provider failure is unchecked.
+ */
+#line 63 "src/modules/uvfvec_rom.c"
+void __entrypoint_func_uvfvec_rom_400000(UvFVec_Rom_Exports* moduleExports) {
+    uvUpdateFileAllocPtr(moduleExports);
+    moduleExports->uvVec3FSet = uvVec3FSet;
+    moduleExports->uvVec3FNormalize = uvVec3FNormalize;
+    moduleExports->uvVec3FLen = uvVec3FLen;
+    moduleExports->uvVec3FLenSquared = uvVec3FLengthSquared;
+    moduleExports->uvVec3FDistance = uvVec3FDistance;
+    moduleExports->uvVec3FDot = uvVec3FDot;
+    moduleExports->uvVec3FCopy = uvVec3FCopy;
+    moduleExports->uvVec3FScalarProj = uvVec3FScalarProj;
+    moduleExports->uvVec3FCross = uvVec3FCross;
+    moduleExports->uvFvecModuleCleanup = uvFvecModuleCleanup;
+    moduleExports->uvVec3FAdd = uvVec3FAdd;
+    moduleExports->uvVec2FNormalize = uvVec2FNormalize;
+    moduleExports->uvVec3FMult = uvVec3FMult;
+    moduleExports->uvVec2FIsZero = uvVec2FIsZero;
+    moduleExports->uvVec2FLen = uvVec2FLen;
+    moduleExports->uvVec3FAddScaled = uvVec3FAddScaled;
+    moduleExports->uvVec2FNegate = uvVec2FNegate;
+    moduleExports->uvVec2FLenSquared = uvVec2FLengthSquared;
+    moduleExports->uvVec3FSub = uvVec3FSub;
+    moduleExports->uvVec2FReflect = uvVec2FReflect;
+    moduleExports->uvVec2FDot = uvVec2FDot;
+    moduleExports->uvVec3FScale = uvVec3FScale;
+    moduleExports->uvVec2FCopy = uvVec2FCopy;
+    moduleExports->uvVec3FSphereAngles = uvVec3FSphereAngles;
+    moduleExports->uvVec2FScalarProj = uvVec2FScalarProj;
+    moduleExports->uvVec3FFromSpherical = uvVec3fFromSpherical;
+    moduleExports->uvVec2FAdd = uvVec2FAdd;
+    moduleExports->uvVec3FIsZero = uvVec3FIsZero;
+    moduleExports->uvVec2FAddScaled = uvVec2FAddScaled;
+    moduleExports->uvVec3FNegate = uvVec3FNegate;
+    moduleExports->uvVec2FSub = uvVec2FSub;
+    moduleExports->uvVec2FSet = uvVec2FSet;
+    moduleExports->uvVec2FScale = uvVec2FScale;
     #line 2
     sUvMathRomExports = uvLoadModule('MATH');
 }

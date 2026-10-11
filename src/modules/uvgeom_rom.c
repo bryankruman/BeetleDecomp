@@ -338,21 +338,31 @@ void uvEndGrid(s32 dimension0, s32 dimension1, s32 dimension0ClosureWord, s32 di
 }
 #line 299 "src/modules/uvgeom_rom.c"
 
+/*
+ * Multiply each floating-point channel by 255 and narrow to a byte, then
+ * append pipe-sync, primitive-color and duplicated 16-bit fill-color words.
+ * RE_ORIGINAL_QUIRK: No input clamp is performed. RGBA5551 packing uses the
+ * low bit of the narrowed alpha byte, preserving the original macro rather
+ * than substituting a half-range alpha threshold.
+ * RE_UNKNOWN: Finite/range preconditions for float-to-byte conversion and
+ * available display-list storage require callers and the graphics provider.
+ */
+#line 300 "src/modules/uvgeom_rom.c"
 void uvSetFillColor(f32 red, f32 green, f32 blue, f32 alpha) {
-    Gfx **gdl;
-    u8 r;
-    u8 g;
-    u8 b;
-    u8 a;
+    Gfx **displayListHead;
+    u8 redByte;
+    u8 greenByte;
+    u8 blueByte;
+    u8 alphaByte;
 
-    r = red * 255.0f;
-    g = green * 255.0f;
-    b = blue * 255.0f;
-    a = alpha * 255.0f;
-    gdl = D_uvgeom_rom_00401758->uvGetDisplayListHead();
-    gDPPipeSync(gdl[0]++);
-    gDPSetPrimColor(gdl[0]++, 0, 0, r, g, b, a);
-    gDPSetFillColor(gdl[0]++, GPACK_RGBA5551(r, g, b, a) << 16 | GPACK_RGBA5551(r, g, b, a));
+    redByte = red * 255.0f;
+    greenByte = green * 255.0f;
+    blueByte = blue * 255.0f;
+    alphaByte = alpha * 255.0f;
+    displayListHead = D_uvgeom_rom_00401758->uvGetDisplayListHead();
+    gDPPipeSync(displayListHead[0]++);
+    gDPSetPrimColor(displayListHead[0]++, 0, 0, redByte, greenByte, blueByte, alphaByte);
+    gDPSetFillColor(displayListHead[0]++, GPACK_RGBA5551(redByte, greenByte, blueByte, alphaByte) << 16 | GPACK_RGBA5551(redByte, greenByte, blueByte, alphaByte));
 }
 
 /* Transform each Y input using height - Y - 1, then retain the independent

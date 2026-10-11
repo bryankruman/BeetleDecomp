@@ -903,6 +903,15 @@ void uvGfxSetCullFaces(s32 front, s32 back) {
 }
 #line 820 "src/modules/uvgfxstate_rom.c"
 
+/*
+ * Save the current shared state word in the stack slot selected by the byte
+ * counter, then increment that counter only while it is below 31.
+ * RE_ORIGINAL_QUIRK: A counter of 31 or greater silently leaves both the stack
+ * and counter unchanged; preserve this strict limit and byte-width update.
+ * RE_UNKNOWN: Stack storage extent, matching pop/reset order and reentrant
+ * users require the original frame/state callers; no overflow repair is added.
+ */
+#line 821 "src/modules/uvgfxstate_rom.c"
 void uvGfxStatePush(void) {
     if (D_uvgfxstate_rom_00402DE8 < 0x1F) {
         D_uvgfxstate_rom_00402D68[D_uvgfxstate_rom_00402DE8++] = D_uvgfxstate_rom_00402C48;
@@ -1079,12 +1088,22 @@ void uvGfxSetHiliteVector(s32 index, Vec3F vector) {
 }
 #line 970 "src/modules/uvgfxstate_rom.c"
 
+/*
+ * Fetch the display-list head from GMGR first. Unless the shared mode word is
+ * 2, increment the counter for the selected buffer and append a pipe-sync
+ * command, advancing the display-list head by one command.
+ * RE_ORIGINAL_QUIRK: The provider call still happens when mode 2 suppresses
+ * the counter update and command. Preserve the unchecked buffer index.
+ * RE_UNKNOWN: Provider lifetime, writable command capacity and buffer index
+ * domain require the frame scheduler and display-list consumers.
+ */
+#line 971 "src/modules/uvgfxstate_rom.c"
 void uvGfxSync(void) {
-    Gfx **gdl;
+    Gfx **displayListHead;
 
-    gdl = sUvGfxMgrExports->uvGetDisplayListHead();
+    displayListHead = sUvGfxMgrExports->uvGetDisplayListHead();
     if (D_uvgfxstate_rom_00402D00 != 2) {
         D_uvgfxstate_rom_00402D60[D_uvgfxstate_rom_00402D30]++;
-        gDPPipeSync(gdl[0]++);
+        gDPPipeSync(displayListHead[0]++);
     }
 }

@@ -46,27 +46,38 @@ void uvIMtxSubmitMatrix(Mtx *arg0, u16 arg1);
 void uvIMtxSubmitMatrix(Mtx *arg0, u16 arg1);
 s32 uvIMtxGetOtherBufferValue(s32 arg0);
 
-void __entrypoint_func_uvimtx_rom_400000(UvImtx_Rom_Exports* arg0) {
-    s16* stackSize;
+/*
+ * Publish packed-matrix operations and read system property 8 through its
+ * signed-halfword pointer, using 100 only when absent or zero. Import GMGR and
+ * CBCK, request two buffers of count times sizeof(Mtx) with allocator argument
+ * 16, then register stack initialization on callback list 1 with zero args.
+ * RE_ORIGINAL_QUIRK: Preserve the inherited s32 cast at allocation publication,
+ * nonzero negative counts and both unchecked allocation results.
+ * RE_UNKNOWN: Count domain, allocator argument semantics, buffer extents and
+ * callback/provider lifetime require property writers and frame consumers.
+ */
+#line 49 "src/modules/uvimtx_rom.c"
+void __entrypoint_func_uvimtx_rom_400000(UvImtx_Rom_Exports* moduleExports) {
+    s16* stackSizeSetting;
 
-    uvUpdateFileAllocPtr((s32) arg0);
-    arg0->uvIMtxModuleCleanup = uvIMtxModuleCleanup;
-    arg0->uvIMtxGetOtherBufferValue = uvIMtxGetOtherBufferValue;
-    arg0->uvIMtxCopy = uvIMtxCopy;
-    arg0->uvIMtxSetIdentity = uvIMtxSetIdentity;
-    arg0->uvImtxStub = uvImtxStub;
-    arg0->uvIMtxCopyTransposedOffDiagonal3x3 = uvIMtxCopyTransposedOffDiagonal3x3;
-    arg0->uvIMtxLoadModelview = uvIMtxLoadModelview;
-    arg0->uvGfxMtxViewPop = uvGfxMtxViewPop;
-    arg0->uvIMtxLoadProjection = uvIMtxLoadProjection;
-    arg0->uvIMtxPush = uvIMtxPush;
-    arg0->uvIMtxSubmitMatrix = uvIMtxSubmitMatrix;
-    stackSize = uvGetSystemProp(8);
-    if (stackSize == NULL) {
+    uvUpdateFileAllocPtr((s32) moduleExports);
+    moduleExports->uvIMtxModuleCleanup = uvIMtxModuleCleanup;
+    moduleExports->uvIMtxGetOtherBufferValue = uvIMtxGetOtherBufferValue;
+    moduleExports->uvIMtxCopy = uvIMtxCopy;
+    moduleExports->uvIMtxSetIdentity = uvIMtxSetIdentity;
+    moduleExports->uvImtxStub = uvImtxStub;
+    moduleExports->uvIMtxCopyTransposedOffDiagonal3x3 = uvIMtxCopyTransposedOffDiagonal3x3;
+    moduleExports->uvIMtxLoadModelview = uvIMtxLoadModelview;
+    moduleExports->uvGfxMtxViewPop = uvGfxMtxViewPop;
+    moduleExports->uvIMtxLoadProjection = uvIMtxLoadProjection;
+    moduleExports->uvIMtxPush = uvIMtxPush;
+    moduleExports->uvIMtxSubmitMatrix = uvIMtxSubmitMatrix;
+    stackSizeSetting = uvGetSystemProp(8);
+    if (stackSizeSetting == NULL) {
         sIMtxStackSize = IMTX_STACK_SIZE;
     } else {
-        if (*stackSize != 0) {
-            sIMtxStackSize = *stackSize;
+        if (*stackSizeSetting != 0) {
+            sIMtxStackSize = *stackSizeSetting;
         } else {
             sIMtxStackSize = IMTX_STACK_SIZE;
         }

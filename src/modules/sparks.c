@@ -37,7 +37,24 @@ void sparksRegisterChannelCallback(s32 channel) {
 }
 #line 28 "src/modules/sparks.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/sparks/func_sparks_004001EC.s")
+/* Reset all four 20-byte slots in the original 0x50-byte allocation.
+ * Set each countdown to -1, reread the shared base and clear DOBJ flag mask 2
+ * on that slot's handle. Preserve live base/provider reads across callbacks.
+ * RE_UNKNOWN: Allocation failure and teardown/reentrancy guarantees remain
+ * caller-owned. This uses the existing two-word prefix, not a full slot type. */
+void func_sparks_004001EC() {
+    s32 byteOffset;
+
+    for (byteOffset = 0; byteOffset != 0x50; byteOffset += 0x14) {
+        ((SparksStatePrefix *)((u8 *)D_sparks_00400454 + byteOffset))
+            ->transformCountdown = -1;
+        gUvDobjExports->uvDobjClearFlagBits(
+            ((SparksStatePrefix *)((u8 *)D_sparks_00400454 + byteOffset))
+                ->dobjHandle,
+            2);
+    }
+}
+#line 30 "src/modules/sparks.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/sparks/func_sparks_0040027C.s")
 
