@@ -97,6 +97,9 @@ Modules:
       - text
   - name: profgame
   - name: race
+    done_sections:
+      - rodata
+    readonly_layout: config/us/readonly_layout/race.json
   - name: rain
   - name: replay
   - name: results

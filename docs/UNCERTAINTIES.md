@@ -17,13 +17,13 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 1431 |
+| Explicit RE_UNKNOWN notes | 1433 |
 | Preserved RE_ORIGINAL_QUIRK notes | 333 |
 | Older comments with uncertainty language | 94 |
 | Documented original-behavior audits | 30 |
 | Assembly-backed functions or data | 769 |
-| Address-based function identifiers | 906 |
-| Address-based global identifiers | 1464 |
+| Address-based function identifiers | 904 |
+| Address-based global identifiers | 1472 |
 | Offset-based fields or neutral typed fields | 1620 |
 | Layout padding to preserve | 275 |
 | Unresolved type names | 282 |
@@ -3913,97 +3913,105 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
-| address_function | `func_race_00400AB4` | function `func_race_00400AB4` | [59](../src/modules/race.c#L59) |
-| address_function | `func_race_00400CC0` | function `func_race_00400CC0` | [60](../src/modules/race.c#L60) |
-| address_function | `func_race_00400EB0` | function `func_race_00400EB0` | [61](../src/modules/race.c#L61) |
-| address_function | `func_race_004011BC` | function `func_race_004011BC` | [62](../src/modules/race.c#L62) |
-| address_function | `func_race_00401B3C` | function `func_race_00401B3C` | [63](../src/modules/race.c#L63) |
-| address_function | `func_race_00401E04` | function `func_race_00401E04` | [64](../src/modules/race.c#L64) |
-| address_function | `func_race_004024D0` | function `func_race_004024D0` | [65](../src/modules/race.c#L65) |
-| address_function | `func_race_004026D0` | function `func_race_004026D0` | [66](../src/modules/race.c#L66) |
-| address_function | `func_race_00402864` | function `func_race_00402864` | [67](../src/modules/race.c#L67) |
-| address_function | `func_race_00402AAC` | function `func_race_00402AAC` | [68](../src/modules/race.c#L68) |
-| address_function | `func_race_00402CE0` | function `func_race_00402CE0` | [69](../src/modules/race.c#L69) |
-| address_function | `func_race_00402E98` | function `func_race_00402E98` | [70](../src/modules/race.c#L70) |
-| address_function | `func_race_004030D0` | function `func_race_004030D0` | [71](../src/modules/race.c#L71) |
-| address_function | `func_race_00403350` | function `func_race_00403350` | [191](../src/modules/race.c#L191) |
-| address_function | `func_race_00403358` | function `func_race_00403358` | [73](../src/modules/race.c#L73) |
-| address_function | `func_race_004035C8` | function `func_race_004035C8` | [76](../src/modules/race.c#L76) |
-| address_function | `func_race_00403734` | function `func_race_00403734` | [80](../src/modules/race.c#L80) |
-| address_function | `func_race_004037DC` | function `func_race_004037DC`, function `raceLoadModelAndRegisterCallback` | [81](../src/modules/race.c#L81), [242](../src/modules/race.c#L242) |
-| address_function | `func_race_004038B0` | function `func_race_004038B0` | [82](../src/modules/race.c#L82) |
-| address_function | `func_race_00403B6C` | function `func_race_00403B6C` | [83](../src/modules/race.c#L83) |
-| address_global | `D_80025D88` | function `raceReleaseManagedSoundsAndClearBytes` | [17](../src/modules/race.c#L17), [107](../src/modules/race.c#L107) |
-| address_global | `D_80025D89` | function `raceReleaseManagedSoundsAndClearBytes` | [17](../src/modules/race.c#L17), [108](../src/modules/race.c#L108) |
-| address_global | `D_80025D8A` | function `raceReleaseManagedSoundsAndClearBytes` | [17](../src/modules/race.c#L17), [109](../src/modules/race.c#L109) |
-| address_global | `D_80025D8B` | function `raceReleaseManagedSoundsAndClearBytes` | [17](../src/modules/race.c#L17), [110](../src/modules/race.c#L110) |
-| address_global | `D_race_00404710` | function `raceDrawStatusFields`, global `D_race_00404710` | [42](../src/modules/race.c#L42), [175](../src/modules/race.c#L175) |
-| address_global | `D_race_00404718` | function `raceDrawStatusFields`, global `D_race_00404718` | [43](../src/modules/race.c#L43), [176](../src/modules/race.c#L176) |
-| address_global | `D_race_00404724` | function `raceDrawStatusFields`, global `D_race_00404724` | [44](../src/modules/race.c#L44), [177](../src/modules/race.c#L177) |
-| address_global | `D_race_00404730` | function `raceDrawStatusFields`, global `D_race_00404730` | [45](../src/modules/race.c#L45), [178](../src/modules/race.c#L178) |
-| address_global | `D_race_00404740` | function `raceDrawStatusFields`, global `D_race_00404740` | [46](../src/modules/race.c#L46), [179](../src/modules/race.c#L179) |
-| address_global | `D_race_0040474C` | function `raceCreateModuleGui`, global `D_race_0040474C` | [36](../src/modules/race.c#L36), [226](../src/modules/race.c#L226) |
-| address_global | `D_race_00404888` | function `racePlayPendingSoundByKind`, global `D_race_00404888` | [20](../src/modules/race.c#L20), [287](../src/modules/race.c#L287), [289](../src/modules/race.c#L289), [293](../src/modules/race.c#L293), [295](../src/modules/race.c#L295), [299](../src/modules/race.c#L299), [301](../src/modules/race.c#L301) |
-| address_global | `D_race_004049C4` | function `raceMarkMatchingEntries`, global `D_race_004049C4` | [55](../src/modules/race.c#L55), [266](../src/modules/race.c#L266) |
-| address_global | `D_race_004049E4` | function `raceMarkMatchingEntries`, function `raceSetEntryTable`, global `D_race_004049E4` | [52](../src/modules/race.c#L52), [253](../src/modules/race.c#L253), [264](../src/modules/race.c#L264) |
-| address_global | `D_race_004049E8` | function `raceMarkMatchingEntries`, function `raceSetEntryTable`, global `D_race_004049E8` | [53](../src/modules/race.c#L53), [254](../src/modules/race.c#L254), [265](../src/modules/race.c#L265) |
-| address_global | `D_race_004049EC` | function `raceSetEntryTable`, global `D_race_004049EC` | [54](../src/modules/race.c#L54), [255](../src/modules/race.c#L255) |
-| address_global | `D_race_004049F0` | function `raceGetIndexedValue`, function `raceReleaseFirstPlayerSoundHandle`, global `D_race_004049F0` | [56](../src/modules/race.c#L56), [201](../src/modules/race.c#L201), [204](../src/modules/race.c#L204), [314](../src/modules/race.c#L314) |
-| address_global | `D_race_00404A04` | function `raceCreateModuleGui`, function `raceReleaseFirstPlayerSoundHandle`, global `D_race_00404A04` | [57](../src/modules/race.c#L57), [230](../src/modules/race.c#L230), [314](../src/modules/race.c#L314) |
-| address_global | `D_race_00404A30` | function `raceReleaseManagedSoundsAndClearBytes`, global `D_race_00404A30` | [4](../src/modules/race.c#L4), [93](../src/modules/race.c#L93) |
-| address_global | `D_race_00404A38` | function `raceReleaseManagedSoundsAndClearBytes`, global `D_race_00404A38` | [5](../src/modules/race.c#L5), [94](../src/modules/race.c#L94) |
-| address_global | `D_race_00404A40` | function `raceReleaseManagedSoundsAndClearBytes`, global `D_race_00404A40` | [6](../src/modules/race.c#L6), [95](../src/modules/race.c#L95) |
-| address_global | `D_race_00404A48` | function `raceReleaseManagedSoundsAndClearBytes`, global `D_race_00404A48` | [7](../src/modules/race.c#L7), [96](../src/modules/race.c#L96) |
-| address_global | `D_race_00404A50` | function `raceReleaseManagedSoundsAndClearBytes`, global `D_race_00404A50` | [8](../src/modules/race.c#L8), [97](../src/modules/race.c#L97) |
-| address_global | `D_race_00404A58` | function `raceReleaseManagedSoundsAndClearBytes`, global `D_race_00404A58` | [9](../src/modules/race.c#L9), [98](../src/modules/race.c#L98) |
-| address_global | `D_race_00404A60` | function `raceReleaseManagedSoundsAndClearBytes`, global `D_race_00404A60` | [10](../src/modules/race.c#L10), [99](../src/modules/race.c#L99) |
-| address_global | `D_race_00404A68` | function `raceReleaseManagedSoundsAndClearBytes`, global `D_race_00404A68` | [11](../src/modules/race.c#L11), [100](../src/modules/race.c#L100) |
-| address_global | `D_race_00404A70` | function `raceReleaseManagedSoundsAndClearBytes`, global `D_race_00404A70` | [12](../src/modules/race.c#L12), [101](../src/modules/race.c#L101) |
-| address_global | `D_race_00404A78` | function `raceReleaseManagedSoundsAndClearBytes`, global `D_race_00404A78` | [13](../src/modules/race.c#L13), [102](../src/modules/race.c#L102) |
-| address_global | `D_race_00404A80` | function `raceReleaseManagedSoundsAndClearBytes`, global `D_race_00404A80` | [14](../src/modules/race.c#L14), [103](../src/modules/race.c#L103) |
-| address_global | `D_race_00404A88` | function `raceReleaseManagedSoundsAndClearBytes`, global `D_race_00404A88` | [15](../src/modules/race.c#L15), [104](../src/modules/race.c#L104) |
-| address_global | `D_race_00404A90` | function `racePlayPendingSoundByKind`, function `raceReleaseManagedSoundsAndClearBytes`, global `D_race_00404A90` | [21](../src/modules/race.c#L21), [105](../src/modules/race.c#L105), [288](../src/modules/race.c#L288), [294](../src/modules/race.c#L294), [300](../src/modules/race.c#L300) |
-| address_global | `D_race_00404A98` | function `raceReleaseManagedSoundsAndClearBytes`, global `D_race_00404A98` | [16](../src/modules/race.c#L16), [106](../src/modules/race.c#L106) |
-| address_global | `D_race_00404AA0` | function `raceDrawStatusFields`, global `D_race_00404AA0` | [47](../src/modules/race.c#L47), [175](../src/modules/race.c#L175) |
-| address_global | `D_race_00404AA4` | function `raceDrawStatusFields`, global `D_race_00404AA4` | [48](../src/modules/race.c#L48), [176](../src/modules/race.c#L176) |
-| address_global | `D_race_00404AA8` | function `raceDrawStatusFields`, global `D_race_00404AA8` | [49](../src/modules/race.c#L49), [177](../src/modules/race.c#L177) |
-| address_global | `D_race_00404AAC` | function `raceDrawStatusFields`, global `D_race_00404AAC` | [50](../src/modules/race.c#L50), [178](../src/modules/race.c#L178) |
-| address_global | `D_race_00404AB0` | function `raceDrawStatusFields`, global `D_race_00404AB0` | [51](../src/modules/race.c#L51), [179](../src/modules/race.c#L179) |
-| assembly | `__entrypoint_func_race_400000` | — | [86](../src/modules/race.c#L86) |
-| assembly | `func_race_00400AB4` | — | [114](../src/modules/race.c#L114) |
-| assembly | `func_race_00400CC0` | — | [123](../src/modules/race.c#L123) |
-| assembly | `func_race_00400EB0` | — | [125](../src/modules/race.c#L125) |
-| assembly | `func_race_004011BC` | — | [127](../src/modules/race.c#L127) |
-| assembly | `func_race_00401B3C` | — | [129](../src/modules/race.c#L129) |
-| assembly | `func_race_00401E04` | — | [131](../src/modules/race.c#L131) |
-| assembly | `func_race_004024D0` | — | [142](../src/modules/race.c#L142) |
-| assembly | `func_race_004026D0` | — | [144](../src/modules/race.c#L144) |
-| assembly | `func_race_00402864` | — | [146](../src/modules/race.c#L146) |
-| assembly | `func_race_00402AAC` | — | [148](../src/modules/race.c#L148) |
-| assembly | `func_race_00402CE0` | — | [150](../src/modules/race.c#L150) |
-| assembly | `func_race_00402E98` | — | [167](../src/modules/race.c#L167) |
-| assembly | `func_race_004030D0` | — | [169](../src/modules/race.c#L169) |
-| assembly | `func_race_00403358` | — | [195](../src/modules/race.c#L195) |
-| assembly | `func_race_004035C8` | — | [235](../src/modules/race.c#L235) |
-| assembly | `func_race_00403734` | — | [272](../src/modules/race.c#L272) |
-| assembly | `func_race_004037DC` | — | [274](../src/modules/race.c#L274) |
-| assembly | `func_race_004038B0` | — | [276](../src/modules/race.c#L276) |
-| assembly | `func_race_00403B6C` | — | [278](../src/modules/race.c#L278) |
-| explicit_unknown | `Original GAMEGUI slot 0x14 configures the shared widget when settings word 0x18C * is nonzero; original GAMEGUI slot 0x28 exports the debug-byte address. The widget * used below...` | type `RaceGameGuiExports` | [22](../src/modules/race.c#L22) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_race_00403350` | [187](../src/modules/race.c#L187) |
-| explicit_unknown | `Original pause pass checks signed settings halfwords 0x9C/0x86/0x88 and * player gates 0x58/0x1D; REPLAY 0x0C stores a shared byte, not pauseFlag. * While paused, PAUS 0x08 disp...` | assembly `func_race_00400CC0` | [116](../src/modules/race.c#L116) |
-| explicit_unknown | `Pass the first stored player to PLYR 0x20, releasing its word-0x14 indexed sound handle. * RE_UNKNOWN: nonnull player, valid handle index and lifetime need original callers/PLYR...` | function `raceReleaseFirstPlayerSoundHandle` | [309](../src/modules/race.c#L309) |
-| explicit_unknown | `RE_UNKNOWN: Pending producer and sound-ID meaning; unsupported selectors leave pending unchanged.` | function `racePlayPendingSoundByKind` | [305](../src/modules/race.c#L305) |
-| explicit_unknown | `Select the shared GAMEGUI widget at debug-byte address+0x10 before the * original GAMEGUI14 initialization call, then allocate and label a child * group and attach it. Forward t...` | function `raceCreateModuleGui` | [211](../src/modules/race.c#L211) |
-| explicit_unknown | `Store the shared entry count, value-array address and opaque third * parameter used by the race module. * RE_UNKNOWN: ownership/lifetime of the retained value array. Trace origi...` | function `raceSetEntryTable` | [247](../src/modules/race.c#L247) |
-| explicit_unknown | `Update parallel player-gate bytes and count word-5C and byte-1D gates. * Word5C calls CARAUDIO34, PLYR20 and SND E4 before reloading player/count. * Byte1D uses a mode snapshot,...` | assembly `func_race_00402E98` | [152](../src/modules/race.c#L152) |
-| explicit_unknown | `Update shared scalars, then run CARANIM 0x08 on each entry's word-4 * pointer; reload entry, its word-0x0C state pointer and state word 0x140. * AI 0x28 consumes no arguments. R...` | assembly `func_race_004024D0` | [133](../src/modules/race.c#L133) |
-| layout_padding | `gap0C` | type `RaceGuiExports` | [29](../src/modules/race.c#L29) |
-| layout_padding | `gap18` | type `RaceGameGuiExports` | [28](../src/modules/race.c#L28) |
-| layout_padding | `prefix` | type `RaceAiGuiExports`, type `RaceCameraGuiExports`, type `RaceGameGuiExports`, type `RaceGuiExports`, type `RaceTrackGuiExports` | [28](../src/modules/race.c#L28), [29](../src/modules/race.c#L29), [30](../src/modules/race.c#L30), [31](../src/modules/race.c#L31), [32](../src/modules/race.c#L32) |
-| opaque_type | `UnkStruct_004005C8` | global `D_race_00404A30`, global `D_race_00404A38`, global `D_race_00404A40`, global `D_race_00404A48`, global `D_race_00404A50`, global `D_race_00404A58`, global `D_race_00404A60`, global `D_race_00404A68`, global `D_race_00404A70`, global `D_race_00404A78`, global `D_race_00404A80`, global `D_race_00404A88`, global `D_race_00404A90`, global `D_race_00404A98` | [4](../src/modules/race.c#L4), [5](../src/modules/race.c#L5), [6](../src/modules/race.c#L6), [7](../src/modules/race.c#L7), [8](../src/modules/race.c#L8), [9](../src/modules/race.c#L9), [10](../src/modules/race.c#L10), [11](../src/modules/race.c#L11) (+6 in JSON) |
-| original_quirk | `Update parallel player-gate bytes and count word-5C and byte-1D gates. * Word5C calls CARAUDIO34, PLYR20 and SND E4 before reloading player/count. * Byte1D uses a mode snapshot,...` | assembly `func_race_00402E98` | [152](../src/modules/race.c#L152) |
-| uncertainty_note | `Consume the pending race sound request for kinds 0, 1 and 2. * Select the original sound IDs and shared sound level; other kinds leave * the pending flag unchanged. The specific...` | function `racePlayPendingSoundByKind` | [281](../src/modules/race.c#L281) |
+| address_function | `func_race_00400AB4` | function `func_race_00400AB4` | [66](../src/modules/race.c#L66) |
+| address_function | `func_race_00400CC0` | function `func_race_00400CC0` | [67](../src/modules/race.c#L67) |
+| address_function | `func_race_00400EB0` | function `func_race_00400EB0` | [68](../src/modules/race.c#L68) |
+| address_function | `func_race_004011BC` | function `func_race_004011BC` | [69](../src/modules/race.c#L69) |
+| address_function | `func_race_00401B3C` | function `func_race_00401B3C` | [70](../src/modules/race.c#L70) |
+| address_function | `func_race_00401E04` | function `func_race_00401E04` | [71](../src/modules/race.c#L71) |
+| address_function | `func_race_004024D0` | function `func_race_004024D0` | [72](../src/modules/race.c#L72) |
+| address_function | `func_race_004026D0` | function `func_race_004026D0` | [73](../src/modules/race.c#L73) |
+| address_function | `func_race_00402864` | function `func_race_00402864` | [74](../src/modules/race.c#L74) |
+| address_function | `func_race_00402AAC` | function `func_race_00402AAC` | [75](../src/modules/race.c#L75) |
+| address_function | `func_race_00402CE0` | function `func_race_00402CE0` | [76](../src/modules/race.c#L76) |
+| address_function | `func_race_00402E98` | function `func_race_00402E98` | [77](../src/modules/race.c#L77) |
+| address_function | `func_race_004030D0` | function `func_race_004030D0` | [78](../src/modules/race.c#L78) |
+| address_function | `func_race_00403350` | function `func_race_00403350` | [198](../src/modules/race.c#L198) |
+| address_function | `func_race_00403358` | function `func_race_00403358` | [80](../src/modules/race.c#L80) |
+| address_function | `func_race_004035C8` | function `func_race_004035C8` | [83](../src/modules/race.c#L83) |
+| address_function | `func_race_00403734` | function `func_race_00403734` | [87](../src/modules/race.c#L87) |
+| address_function | `func_race_004037DC` | function `func_race_004037DC`, function `raceLoadModelAndRegisterCallback` | [88](../src/modules/race.c#L88), [249](../src/modules/race.c#L249) |
+| address_global | `D_80025D88` | function `raceReleaseManagedSoundsAndClearBytes` | [24](../src/modules/race.c#L24), [114](../src/modules/race.c#L114) |
+| address_global | `D_80025D89` | function `raceReleaseManagedSoundsAndClearBytes` | [24](../src/modules/race.c#L24), [115](../src/modules/race.c#L115) |
+| address_global | `D_80025D8A` | function `raceReleaseManagedSoundsAndClearBytes` | [24](../src/modules/race.c#L24), [116](../src/modules/race.c#L116) |
+| address_global | `D_80025D8B` | function `raceReleaseManagedSoundsAndClearBytes` | [24](../src/modules/race.c#L24), [117](../src/modules/race.c#L117) |
+| address_global | `D_race_00404710` | function `raceDrawStatusFields`, global `D_race_00404710` | [49](../src/modules/race.c#L49), [182](../src/modules/race.c#L182) |
+| address_global | `D_race_00404718` | function `raceDrawStatusFields`, global `D_race_00404718` | [50](../src/modules/race.c#L50), [183](../src/modules/race.c#L183) |
+| address_global | `D_race_00404724` | function `raceDrawStatusFields`, global `D_race_00404724` | [51](../src/modules/race.c#L51), [184](../src/modules/race.c#L184) |
+| address_global | `D_race_00404730` | function `raceDrawStatusFields`, global `D_race_00404730` | [52](../src/modules/race.c#L52), [185](../src/modules/race.c#L185) |
+| address_global | `D_race_00404740` | function `raceDrawStatusFields`, global `D_race_00404740` | [53](../src/modules/race.c#L53), [186](../src/modules/race.c#L186) |
+| address_global | `D_race_0040474C` | function `raceCreateModuleGui`, global `D_race_0040474C` | [43](../src/modules/race.c#L43), [233](../src/modules/race.c#L233) |
+| address_global | `D_race_004047C8` | function `racePlayPendingTrackSound` | [7](../src/modules/race.c#L7), [289](../src/modules/race.c#L289) |
+| address_global | `D_race_004047CC` | function `racePlayPendingTrackSound` | [7](../src/modules/race.c#L7), [295](../src/modules/race.c#L295) |
+| address_global | `D_race_004047D0` | function `racePlayPendingTrackSound` | [7](../src/modules/race.c#L7), [301](../src/modules/race.c#L301) |
+| address_global | `D_race_004047D4` | function `racePlayPendingTrackSound` | [8](../src/modules/race.c#L8), [307](../src/modules/race.c#L307) |
+| address_global | `D_race_004047D8` | function `racePlayPendingTrackSound` | [8](../src/modules/race.c#L8), [313](../src/modules/race.c#L313) |
+| address_global | `D_race_004047DC` | function `racePlayPendingTrackSound` | [8](../src/modules/race.c#L8), [319](../src/modules/race.c#L319) |
+| address_global | `D_race_00404864` | function `racePlayPendingTrackSound` | [6](../src/modules/race.c#L6), [288](../src/modules/race.c#L288), [290](../src/modules/race.c#L290), [294](../src/modules/race.c#L294), [296](../src/modules/race.c#L296), [300](../src/modules/race.c#L300), [302](../src/modules/race.c#L302), [306](../src/modules/race.c#L306) (+5 in JSON) |
+| address_global | `D_race_00404884` | function `racePlayPendingPlayerMessageSound` | [6](../src/modules/race.c#L6), [333](../src/modules/race.c#L333), [345](../src/modules/race.c#L345), [349](../src/modules/race.c#L349), [358](../src/modules/race.c#L358), [362](../src/modules/race.c#L362), [371](../src/modules/race.c#L371), [375](../src/modules/race.c#L375) (+5 in JSON) |
+| address_global | `D_race_00404888` | function `racePlayPendingSoundByKind`, global `D_race_00404888` | [27](../src/modules/race.c#L27), [412](../src/modules/race.c#L412), [414](../src/modules/race.c#L414), [418](../src/modules/race.c#L418), [420](../src/modules/race.c#L420), [424](../src/modules/race.c#L424), [426](../src/modules/race.c#L426) |
+| address_global | `D_race_004049C4` | function `raceMarkMatchingEntries`, global `D_race_004049C4` | [62](../src/modules/race.c#L62), [273](../src/modules/race.c#L273) |
+| address_global | `D_race_004049E4` | function `raceMarkMatchingEntries`, function `raceSetEntryTable`, global `D_race_004049E4` | [59](../src/modules/race.c#L59), [260](../src/modules/race.c#L260), [271](../src/modules/race.c#L271) |
+| address_global | `D_race_004049E8` | function `raceMarkMatchingEntries`, function `raceSetEntryTable`, global `D_race_004049E8` | [60](../src/modules/race.c#L60), [261](../src/modules/race.c#L261), [272](../src/modules/race.c#L272) |
+| address_global | `D_race_004049EC` | function `raceSetEntryTable`, global `D_race_004049EC` | [61](../src/modules/race.c#L61), [262](../src/modules/race.c#L262) |
+| address_global | `D_race_004049F0` | function `raceGetIndexedValue`, function `raceReleaseFirstPlayerSoundHandle`, global `D_race_004049F0` | [63](../src/modules/race.c#L63), [208](../src/modules/race.c#L208), [211](../src/modules/race.c#L211), [439](../src/modules/race.c#L439) |
+| address_global | `D_race_00404A04` | function `raceCreateModuleGui`, function `raceReleaseFirstPlayerSoundHandle`, global `D_race_00404A04` | [64](../src/modules/race.c#L64), [237](../src/modules/race.c#L237), [439](../src/modules/race.c#L439) |
+| address_global | `D_race_00404A30` | function `racePlayPendingTrackSound`, function `raceReleaseManagedSoundsAndClearBytes`, global `D_race_00404A30` | [11](../src/modules/race.c#L11), [100](../src/modules/race.c#L100), [289](../src/modules/race.c#L289) |
+| address_global | `D_race_00404A38` | function `racePlayPendingTrackSound`, function `raceReleaseManagedSoundsAndClearBytes`, global `D_race_00404A38` | [12](../src/modules/race.c#L12), [101](../src/modules/race.c#L101), [295](../src/modules/race.c#L295) |
+| address_global | `D_race_00404A40` | function `racePlayPendingTrackSound`, function `raceReleaseManagedSoundsAndClearBytes`, global `D_race_00404A40` | [13](../src/modules/race.c#L13), [102](../src/modules/race.c#L102), [301](../src/modules/race.c#L301) |
+| address_global | `D_race_00404A48` | function `racePlayPendingTrackSound`, function `raceReleaseManagedSoundsAndClearBytes`, global `D_race_00404A48` | [14](../src/modules/race.c#L14), [103](../src/modules/race.c#L103), [307](../src/modules/race.c#L307) |
+| address_global | `D_race_00404A50` | function `racePlayPendingTrackSound`, function `raceReleaseManagedSoundsAndClearBytes`, global `D_race_00404A50` | [15](../src/modules/race.c#L15), [104](../src/modules/race.c#L104), [313](../src/modules/race.c#L313) |
+| address_global | `D_race_00404A58` | function `racePlayPendingTrackSound`, function `raceReleaseManagedSoundsAndClearBytes`, global `D_race_00404A58` | [16](../src/modules/race.c#L16), [105](../src/modules/race.c#L105), [319](../src/modules/race.c#L319) |
+| address_global | `D_race_00404A60` | function `raceReleaseManagedSoundsAndClearBytes`, global `D_race_00404A60` | [17](../src/modules/race.c#L17), [106](../src/modules/race.c#L106) |
+| address_global | `D_race_00404A68` | function `raceReleaseManagedSoundsAndClearBytes`, global `D_race_00404A68` | [18](../src/modules/race.c#L18), [107](../src/modules/race.c#L107) |
+| address_global | `D_race_00404A70` | function `raceReleaseManagedSoundsAndClearBytes`, global `D_race_00404A70` | [19](../src/modules/race.c#L19), [108](../src/modules/race.c#L108) |
+| address_global | `D_race_00404A78` | function `raceReleaseManagedSoundsAndClearBytes`, global `D_race_00404A78` | [20](../src/modules/race.c#L20), [109](../src/modules/race.c#L109) |
+| address_global | `D_race_00404A80` | function `raceReleaseManagedSoundsAndClearBytes`, global `D_race_00404A80` | [21](../src/modules/race.c#L21), [110](../src/modules/race.c#L110) |
+| address_global | `D_race_00404A88` | function `racePlayPendingPlayerMessageSound`, function `raceReleaseManagedSoundsAndClearBytes`, global `D_race_00404A88` | [22](../src/modules/race.c#L22), [111](../src/modules/race.c#L111), [336](../src/modules/race.c#L336), [339](../src/modules/race.c#L339), [342](../src/modules/race.c#L342), [352](../src/modules/race.c#L352), [355](../src/modules/race.c#L355), [365](../src/modules/race.c#L365) (+4 in JSON) |
+| address_global | `D_race_00404A90` | function `racePlayPendingSoundByKind`, function `raceReleaseManagedSoundsAndClearBytes`, global `D_race_00404A90` | [28](../src/modules/race.c#L28), [112](../src/modules/race.c#L112), [413](../src/modules/race.c#L413), [419](../src/modules/race.c#L419), [425](../src/modules/race.c#L425) |
+| address_global | `D_race_00404A98` | function `raceReleaseManagedSoundsAndClearBytes`, global `D_race_00404A98` | [23](../src/modules/race.c#L23), [113](../src/modules/race.c#L113) |
+| address_global | `D_race_00404AA0` | function `raceDrawStatusFields`, global `D_race_00404AA0` | [54](../src/modules/race.c#L54), [182](../src/modules/race.c#L182) |
+| address_global | `D_race_00404AA4` | function `raceDrawStatusFields`, global `D_race_00404AA4` | [55](../src/modules/race.c#L55), [183](../src/modules/race.c#L183) |
+| address_global | `D_race_00404AA8` | function `raceDrawStatusFields`, global `D_race_00404AA8` | [56](../src/modules/race.c#L56), [184](../src/modules/race.c#L184) |
+| address_global | `D_race_00404AAC` | function `raceDrawStatusFields`, global `D_race_00404AAC` | [57](../src/modules/race.c#L57), [185](../src/modules/race.c#L185) |
+| address_global | `D_race_00404AB0` | function `raceDrawStatusFields`, global `D_race_00404AB0` | [58](../src/modules/race.c#L58), [186](../src/modules/race.c#L186) |
+| assembly | `__entrypoint_func_race_400000` | — | [93](../src/modules/race.c#L93) |
+| assembly | `func_race_00400AB4` | — | [121](../src/modules/race.c#L121) |
+| assembly | `func_race_00400CC0` | — | [130](../src/modules/race.c#L130) |
+| assembly | `func_race_00400EB0` | — | [132](../src/modules/race.c#L132) |
+| assembly | `func_race_004011BC` | — | [134](../src/modules/race.c#L134) |
+| assembly | `func_race_00401B3C` | — | [136](../src/modules/race.c#L136) |
+| assembly | `func_race_00401E04` | — | [138](../src/modules/race.c#L138) |
+| assembly | `func_race_004024D0` | — | [149](../src/modules/race.c#L149) |
+| assembly | `func_race_004026D0` | — | [151](../src/modules/race.c#L151) |
+| assembly | `func_race_00402864` | — | [153](../src/modules/race.c#L153) |
+| assembly | `func_race_00402AAC` | — | [155](../src/modules/race.c#L155) |
+| assembly | `func_race_00402CE0` | — | [157](../src/modules/race.c#L157) |
+| assembly | `func_race_00402E98` | — | [174](../src/modules/race.c#L174) |
+| assembly | `func_race_004030D0` | — | [176](../src/modules/race.c#L176) |
+| assembly | `func_race_00403358` | — | [202](../src/modules/race.c#L202) |
+| assembly | `func_race_004035C8` | — | [242](../src/modules/race.c#L242) |
+| assembly | `func_race_00403734` | — | [279](../src/modules/race.c#L279) |
+| assembly | `func_race_004037DC` | — | [281](../src/modules/race.c#L281) |
+| assembly | `race-floats.rodata-island` | — | [327](../src/modules/race.c#L327) |
+| assembly | `race.rodata-prefix` | — | [9](../src/modules/race.c#L9) |
+| explicit_unknown | `Original GAMEGUI slot 0x14 configures the shared widget when settings word 0x18C * is nonzero; original GAMEGUI slot 0x28 exports the debug-byte address. The widget * used below...` | type `RaceGameGuiExports` | [29](../src/modules/race.c#L29) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_race_00403350` | [194](../src/modules/race.c#L194) |
+| explicit_unknown | `Original pause pass checks signed settings halfwords 0x9C/0x86/0x88 and * player gates 0x58/0x1D; REPLAY 0x0C stores a shared byte, not pauseFlag. * While paused, PAUS 0x08 disp...` | assembly `func_race_00400CC0` | [123](../src/modules/race.c#L123) |
+| explicit_unknown | `Pass the first stored player to PLYR 0x20, releasing its word-0x14 indexed sound handle. * RE_UNKNOWN: nonnull player, valid handle index and lifetime need original callers/PLYR...` | function `raceReleaseFirstPlayerSoundHandle` | [434](../src/modules/race.c#L434) |
+| explicit_unknown | `Play the pending track sound using the original six case associations and clear pending only after playback. Unsupported track indices leave pending unchanged. RE_UNKNOWN: sound...` | function `racePlayPendingTrackSound` | [284](../src/modules/race.c#L284) |
+| explicit_unknown | `RE_UNKNOWN: Pending producer and sound-ID meaning; unsupported selectors leave pending unchanged.` | function `racePlayPendingSoundByKind` | [430](../src/modules/race.c#L430) |
+| explicit_unknown | `Select a pending player-message sound through the original one-based table. Preserve unscaled casts in cases 2..4; only cases 1 and 8 multiply by three. Unsupported inner result...` | function `racePlayPendingPlayerMessageSound` | [329](../src/modules/race.c#L329) |
+| explicit_unknown | `Select the shared GAMEGUI widget at debug-byte address+0x10 before the * original GAMEGUI14 initialization call, then allocate and label a child * group and attach it. Forward t...` | function `raceCreateModuleGui` | [218](../src/modules/race.c#L218) |
+| explicit_unknown | `Store the shared entry count, value-array address and opaque third * parameter used by the race module. * RE_UNKNOWN: ownership/lifetime of the retained value array. Trace origi...` | function `raceSetEntryTable` | [254](../src/modules/race.c#L254) |
+| explicit_unknown | `Update parallel player-gate bytes and count word-5C and byte-1D gates. * Word5C calls CARAUDIO34, PLYR20 and SND E4 before reloading player/count. * Byte1D uses a mode snapshot,...` | assembly `func_race_00402E98` | [159](../src/modules/race.c#L159) |
+| explicit_unknown | `Update shared scalars, then run CARANIM 0x08 on each entry's word-4 * pointer; reload entry, its word-0x0C state pointer and state word 0x140. * AI 0x28 consumes no arguments. R...` | assembly `func_race_004024D0` | [140](../src/modules/race.c#L140) |
+| layout_padding | `gap0C` | type `RaceGuiExports` | [36](../src/modules/race.c#L36) |
+| layout_padding | `gap18` | type `RaceGameGuiExports` | [35](../src/modules/race.c#L35) |
+| layout_padding | `prefix` | type `RaceAiGuiExports`, type `RaceCameraGuiExports`, type `RaceGameGuiExports`, type `RaceGuiExports`, type `RaceTrackGuiExports` | [35](../src/modules/race.c#L35), [36](../src/modules/race.c#L36), [37](../src/modules/race.c#L37), [38](../src/modules/race.c#L38), [39](../src/modules/race.c#L39) |
+| opaque_type | `UnkStruct_004005C8` | global `D_race_00404A30`, global `D_race_00404A38`, global `D_race_00404A40`, global `D_race_00404A48`, global `D_race_00404A50`, global `D_race_00404A58`, global `D_race_00404A60`, global `D_race_00404A68`, global `D_race_00404A70`, global `D_race_00404A78`, global `D_race_00404A80`, global `D_race_00404A88`, global `D_race_00404A90`, global `D_race_00404A98` | [11](../src/modules/race.c#L11), [12](../src/modules/race.c#L12), [13](../src/modules/race.c#L13), [14](../src/modules/race.c#L14), [15](../src/modules/race.c#L15), [16](../src/modules/race.c#L16), [17](../src/modules/race.c#L17), [18](../src/modules/race.c#L18) (+6 in JSON) |
+| original_quirk | `Update parallel player-gate bytes and count word-5C and byte-1D gates. * Word5C calls CARAUDIO34, PLYR20 and SND E4 before reloading player/count. * Byte1D uses a mode snapshot,...` | assembly `func_race_00402E98` | [159](../src/modules/race.c#L159) |
+| uncertainty_note | `Consume the pending race sound request for kinds 0, 1 and 2. * Select the original sound IDs and shared sound level; other kinds leave * the pending flag unchanged. The specific...` | function `racePlayPendingSoundByKind` | [406](../src/modules/race.c#L406) |
 
 ## src/modules/rain.c
 

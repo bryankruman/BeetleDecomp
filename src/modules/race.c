@@ -1,6 +1,13 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
 #include "module.h"
+#include "uvmath_rom.h"
+extern UvMath_Exports *gUvMathExports;
+extern s32 D_race_00404864, D_race_00404884;
+extern f32 D_race_004047C8, D_race_004047CC, D_race_004047D0;
+extern f32 D_race_004047D4, D_race_004047D8, D_race_004047DC;
+#pragma GLOBAL_ASM("asm/us/data/modules/race.rodata-prefix.s")
+#line 4 "src/modules/race.c"
 extern UnkStruct_004005C8 D_race_00404A30;
 extern UnkStruct_004005C8 D_race_00404A38;
 extern UnkStruct_004005C8 D_race_00404A40;
@@ -79,8 +86,8 @@ void raceSetEntryTable();
 void raceMarkMatchingEntries(s32 value);
 void func_race_00403734();
 void func_race_004037DC();
-void func_race_004038B0();
-void func_race_00403B6C();
+void racePlayPendingTrackSound(s32 trackIndex);
+void racePlayPendingPlayerMessageSound(s32 messageKind);
 void racePlayPendingSoundByKind(s32 kind);
 void raceReleaseFirstPlayerSoundHandle();
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/race/__entrypoint_func_race_400000.s")
@@ -273,9 +280,127 @@ void raceMarkMatchingEntries(s32 value) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/race/func_race_004037DC.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/race/func_race_004038B0.s")
+#line 125 "src/modules/race.c"
+/* Play the pending track sound using the original six case associations and clear pending only after playback. Unsupported track indices leave pending unchanged. RE_UNKNOWN: sound-resource meanings, pending producer and handle lifetimes. */
+void racePlayPendingTrackSound(s32 trackIndex) {
+    switch (trackIndex) {
+    case 0:
+        if (D_race_00404864 != 0) {
+            gSndExports->sndPlayManagedSound(&D_race_00404A30, 0x73, 0x7FFF, gSndExports->sndGetSpeechVolumeScale() * D_race_004047C8, 0.5f);
+            D_race_00404864 = 0;
+        }
+        break;
+    case 5:
+        if (D_race_00404864 != 0) {
+            gSndExports->sndPlayManagedSound(&D_race_00404A38, 0x74, 0x7FFF, gSndExports->sndGetSpeechVolumeScale() * D_race_004047CC, 0.5f);
+            D_race_00404864 = 0;
+        }
+        break;
+    case 1:
+        if (D_race_00404864 != 0) {
+            gSndExports->sndPlayManagedSound(&D_race_00404A40, 0x75, 0x7FFF, gSndExports->sndGetSpeechVolumeScale() * D_race_004047D0, 0.5f);
+            D_race_00404864 = 0;
+        }
+        break;
+    case 3:
+        if (D_race_00404864 != 0) {
+            gSndExports->sndPlayManagedSound(&D_race_00404A48, 0x76, 0x7FFF, gSndExports->sndGetSpeechVolumeScale() * D_race_004047D4, 0.5f);
+            D_race_00404864 = 0;
+        }
+        break;
+    case 2:
+        if (D_race_00404864 != 0) {
+            gSndExports->sndPlayManagedSound(&D_race_00404A50, 0x77, 0x7FFF, gSndExports->sndGetSpeechVolumeScale() * D_race_004047D8, 0.5f);
+            D_race_00404864 = 0;
+        }
+        break;
+    case 4:
+        if (D_race_00404864 != 0) {
+            gSndExports->sndPlayManagedSound(&D_race_00404A58, 0x78, 0x7FFF, gSndExports->sndGetSpeechVolumeScale() * D_race_004047DC, 0.5f);
+            D_race_00404864 = 0;
+        }
+        break;
+    }
+}
+#line 126 "src/modules/race.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/race/func_race_00403B6C.s")
+#pragma GLOBAL_ASM("asm/us/data/modules/race-floats.rodata-island.s")
+#line 127 "src/modules/race.c"
+/* Select a pending player-message sound through the original one-based table. Preserve unscaled casts in cases 2..4; only cases 1 and 8 multiply by three. Unsupported inner results consume pending, unsupported outer kinds do not. RE_UNKNOWN: random range, message meanings and lifetimes. */
+void racePlayPendingPlayerMessageSound(s32 messageKind) {
+    switch (messageKind) {
+    case 1:
+        if (D_race_00404884 != 0) {
+            switch ((s32)(gUvMathExports->uvRandFLcg() * 3.0f)) {
+            case 0:
+                gSndExports->sndPlayManagedSound(&D_race_00404A88, 0xC6, 0x7FFF, gSndExports->sndGetSpeechVolumeScale(), 0.5f);
+                break;
+            case 1:
+                gSndExports->sndPlayManagedSound(&D_race_00404A88, 0xD0, 0x7FFF, gSndExports->sndGetSpeechVolumeScale(), 0.5f);
+                break;
+            case 2:
+                gSndExports->sndPlayManagedSound(&D_race_00404A88, 0xD1, 0x7FFF, gSndExports->sndGetSpeechVolumeScale(), 0.5f);
+                break;
+            }
+            D_race_00404884 = 0;
+        }
+        break;
+    case 2:
+        if (D_race_00404884 != 0) {
+            switch ((s32)gUvMathExports->uvRandFLcg()) {
+            case 0:
+                gSndExports->sndPlayManagedSound(&D_race_00404A88, 0xC7, 0x7FFF, gSndExports->sndGetSpeechVolumeScale(), 0.5f);
+                break;
+            case 1:
+                gSndExports->sndPlayManagedSound(&D_race_00404A88, 0xD2, 0x7FFF, gSndExports->sndGetSpeechVolumeScale(), 0.5f);
+                break;
+            }
+            D_race_00404884 = 0;
+        }
+        break;
+    case 3:
+        if (D_race_00404884 != 0) {
+            switch ((s32)gUvMathExports->uvRandFLcg()) {
+            case 0:
+                gSndExports->sndPlayManagedSound(&D_race_00404A88, 0xC8, 0x7FFF, gSndExports->sndGetSpeechVolumeScale(), 0.5f);
+                break;
+            case 1:
+                gSndExports->sndPlayManagedSound(&D_race_00404A88, 0xD2, 0x7FFF, gSndExports->sndGetSpeechVolumeScale(), 0.5f);
+                break;
+            }
+            D_race_00404884 = 0;
+        }
+        break;
+    case 4:
+        if (D_race_00404884 != 0) {
+            switch ((s32)gUvMathExports->uvRandFLcg()) {
+            case 0:
+                gSndExports->sndPlayManagedSound(&D_race_00404A88, 0xC9, 0x7FFF, gSndExports->sndGetSpeechVolumeScale(), 0.5f);
+                break;
+            case 1:
+                gSndExports->sndPlayManagedSound(&D_race_00404A88, 0xD2, 0x7FFF, gSndExports->sndGetSpeechVolumeScale(), 0.5f);
+                break;
+            }
+            D_race_00404884 = 0;
+        }
+        break;
+    case 5:
+    case 6:
+    case 7:
+        if (D_race_00404884 != 0) {
+            gSndExports->sndPlayManagedSound(&D_race_00404A88, 0xD3, 0x7FFF, gSndExports->sndGetSpeechVolumeScale(), 0.5f);
+            D_race_00404884 = 0;
+        }
+        break;
+    case 8:
+        if (D_race_00404884 != 0) {
+            racePlayPendingSoundByKind((s32)(gUvMathExports->uvRandFLcg() * 3.0f));
+            D_race_00404884 = 0;
+        }
+        break;
+    }
+}
+#line 128 "src/modules/race.c"
 
 #line 129 "src/modules/race.c"
 /* Consume the pending race sound request for kinds 0, 1 and 2.

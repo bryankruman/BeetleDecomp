@@ -323,7 +323,7 @@ S_FILES       := $(foreach dir,$(ASM_DIRS) $(SRC_DIRS),$(wildcard $(dir)/*.s))
 # Native readonly data is included by its C GLOBAL_ASM, not a separate object.
 # Keep these exact paths aligned with their config/us/readonly_layout/*.json;
 # tools/tests/test_readonly_make_inputs.py checks that contract and normal ASM.
-S_FILES       := $(filter-out asm/us/data/modules/uvdyn_rom.rodata-prefix.s asm/us/data/modules/ted.rodata-prefix.s,$(S_FILES))
+S_FILES       := $(filter-out asm/us/data/modules/uvdyn_rom.rodata-prefix.s asm/us/data/modules/ted.rodata-prefix.s asm/us/data/modules/race.rodata-prefix.s asm/us/data/modules/race-floats.rodata-island.s,$(S_FILES))
 BIN_FILES     := $(foreach dir,$(BIN_DIRS),$(wildcard $(dir)/*.bin))
 O_FILES       := $(foreach f,$(C_FILES:.c=.o),$(BUILD_DIR)/$f) \
                  $(foreach f,$(S_FILES:.s=.o),$(BUILD_DIR)/$f) \
@@ -591,6 +591,10 @@ $(SDK_AUDIO_OBJECTS): $(BUILD_DIR)/%.o: %.c $(SDK_AUDIO_HEADERS)
 	$(V)mkdir -p $(@D)
 	$(V)$(SDK_AUDIO_CC) $(SDK_AUDIO_FLAGS) -o $@ $<
 
+# The declared RACE island is restored after IDO/asm-processor compilation.
+$(BUILD_DIR)/src/modules/race.o: RACE_READONLY_LAYOUT := config/us/readonly_layout/race.json
+$(BUILD_DIR)/src/modules/race.o: tools/reorderRaceReadonly.py tools/moduleReadonlyLayout.py config/us/readonly_layout/race.json
+
 # C
 $(BUILD_DIR)/%.o: %.c
 	$(call print,Compiling:,$<,$@)
@@ -599,6 +603,7 @@ $(BUILD_DIR)/%.o: %.c
 #	Remove gptab sections if present
 	-$(V)$(OBJCOPY) --remove-section .gptab.bss $@
 	-$(V)$(OBJCOPY) --remove-section .gptab.data $@
+	$(if $(RACE_READONLY_LAYOUT),$(V)$(PYTHON) tools/reorderRaceReadonly.py --root . --layout $(RACE_READONLY_LAYOUT) --object $@)
 	$(V)$(OBJDUMP_CMD)
 	$(V)$(RM_MDEBUG)
 

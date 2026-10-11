@@ -3198,10 +3198,19 @@ Totals: 433 further recoveries after the 225 upstream ordinary imports, plus 162
 Frozen wave `4396-misc-vector-contracts` and `accepted-misc-vector-contracts-4396` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 433 further readable functions
+## Historical accepted checkpoint — 433 further readable functions
 
 Reassess32 currently unassessed existing-C identities12536B through full original native, exact current compiler-reference instruction bytes, all ordered five-field relocation records and empty compiler logs. Correct three standalone purpose comments; retain every executable token and logical coordinate. Preserve all1815 prior assessments including137 typed SDK intervals, all83 historical unresolved records, assembly and readonly storage, export ABI, existing function names, all1147 sources and the complete remaining ledger. Two known misleading wrapper names remain explicitly queued for a validated alias transition; renaming is already authorized. Require fresh13-module packed/native and original fullROM acceptance before Git landing or new semantic credit.
 
 Totals: 433 further recoveries after the 225 upstream ordinary imports, plus 1657 existing C semantic cleanups. Current ledger: 767 assembly references = 728 ordinary + 39 entrypoints; 704,676 known remaining instruction bytes; zero unknown sizes; 285 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `4444-historical-contract-reassessments` and `accepted-historical-contract-reassessments-4444` verify real translation-unit instructions/full relocations, 3 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 435 further readable functions
+
+Recover the two pending track/player-message sound switches (1940 original instruction bytes). Preserve the full original 1584-byte readonly section as 1528 retained bytes and 56 compiler table bytes, all DATA/BSS and prior C definitions. A fresh normal packed-module and full-ROM proof remains mandatory; readonly storage receives no semantic credit.
+
+Totals: 435 further recoveries after the 225 upstream ordinary imports, plus 1657 existing C semantic cleanups. Current ledger: 765 assembly references = 726 ordinary + 39 entrypoints; 702,736 known remaining instruction bytes; zero unknown sizes; 285 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `4468-race-sound-switch-islands` and `accepted-race-sound-switch-islands-4468` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

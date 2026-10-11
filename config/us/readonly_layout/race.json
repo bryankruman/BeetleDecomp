@@ -1,0 +1,370 @@
+{
+  "version": 4,
+  "module": "race",
+  "source": "src/modules/race.c",
+  "witness": "tools/readonly_layout/race.original-rodata.s",
+  "witness_sha256": "7e2054b9c614fdeef42c0deed59d8c95ac68ee04357ed294e158ef505cd28125",
+  "readonly_sha256": "3ca209dfe79260a67b98e5eb5cc5ac6effd010e3ebdc0e07b5268ba847499a6c",
+  "begin": 4211152,
+  "end": 4212736,
+  "prefix_assembly": "asm/us/data/modules/race.rodata-prefix.s",
+  "monolithic_assembly": "asm/us/data/modules/race.rodata.s",
+  "tables": [
+    {
+      "table_begin": 4212656,
+      "table_end": 4212680,
+      "table_label": "D_race_004047B0",
+      "owner_original_symbol": "func_race_004038B0",
+      "owner_c_symbol": "racePlayPendingTrackSound",
+      "duplicate_assembly": "asm/us/nonmatchings/modules/race/D_race_004047B0.s",
+      "owner_address": 4208816,
+      "owner_bytes": 700,
+      "owner_instruction_sha256": "19b00edab9064b0a84783c95afbb9677218bb33cc27a351cab33e410ebc3622d",
+      "owner_asm_normalized_sha256": "f8fdf27aa5437f00a28268792d181707f549c09ef7c092078567fc7441a96950"
+    },
+    {
+      "table_begin": 4212704,
+      "table_end": 4212736,
+      "table_label": "D_race_004047E0",
+      "owner_original_symbol": "func_race_00403B6C",
+      "owner_c_symbol": "racePlayPendingPlayerMessageSound",
+      "duplicate_assembly": "asm/us/nonmatchings/modules/race/D_race_004047E0.s",
+      "owner_address": 4209516,
+      "owner_bytes": 1240,
+      "owner_instruction_sha256": "147077004592f4b0f7d814434cb71ff7b31dafe2ea433836ddc9895ad6e9c845",
+      "owner_asm_normalized_sha256": "7e3c7d68f555642c6cf8e133bee02eff6693149337a101ad4efc440e6bb93776"
+    }
+  ],
+  "retained_islands": [
+    {
+      "begin": 4212680,
+      "end": 4212704,
+      "assembly": "asm/us/data/modules/race-floats.rodata-island.s",
+      "readonly_sha256": "26821695b9281b4059533b8ac7466e32391d889f37dd7088cd1c04f7dd186ab5"
+    },
+    null
+  ],
+  "object_ordering": {
+    "helper": "tools/reorderRaceReadonly.py",
+    "helper_sha256": "065dc9791e42a964b19a5b43656953b4bef0597a1f464149b743aa6ce620e867",
+    "contract": {
+      "schema": 1,
+      "source_object": "build/src/modules/race.o",
+      "spans": [
+        [
+          1504,
+          1528,
+          1528
+        ],
+        [
+          1528,
+          1552,
+          1504
+        ]
+      ],
+      "floats": [
+        "D_race_004047C8",
+        "D_race_004047CC",
+        "D_race_004047D0",
+        "D_race_004047D4",
+        "D_race_004047D8",
+        "D_race_004047DC"
+      ],
+      "affected_references": [
+        {
+          "section": ".text",
+          "site": 14540,
+          "hi_site": 14532,
+          "kind": 6,
+          "symbol": "",
+          "old_target": 1528,
+          "new_target": 1504
+        },
+        {
+          "section": ".text",
+          "site": 14592,
+          "hi_site": 14588,
+          "kind": 6,
+          "symbol": "D_race_004047C8",
+          "old_target": 1504,
+          "new_target": 1528
+        },
+        {
+          "section": ".text",
+          "site": 14700,
+          "hi_site": 14696,
+          "kind": 6,
+          "symbol": "D_race_004047CC",
+          "old_target": 1508,
+          "new_target": 1532
+        },
+        {
+          "section": ".text",
+          "site": 14808,
+          "hi_site": 14804,
+          "kind": 6,
+          "symbol": "D_race_004047D0",
+          "old_target": 1512,
+          "new_target": 1536
+        },
+        {
+          "section": ".text",
+          "site": 14916,
+          "hi_site": 14912,
+          "kind": 6,
+          "symbol": "D_race_004047D4",
+          "old_target": 1516,
+          "new_target": 1540
+        },
+        {
+          "section": ".text",
+          "site": 15024,
+          "hi_site": 15020,
+          "kind": 6,
+          "symbol": "D_race_004047D8",
+          "old_target": 1520,
+          "new_target": 1544
+        },
+        {
+          "section": ".text",
+          "site": 15132,
+          "hi_site": 15128,
+          "kind": 6,
+          "symbol": "D_race_004047DC",
+          "old_target": 1524,
+          "new_target": 1548
+        }
+      ],
+      "readonly_prefix_sha256": "43f19e3b9534e8614dabbc483ce9b8248977175defa66d832091e2c1aa44bbaa",
+      "first_table_sha256": "bfd8530be1a1de26699ca96f78af0ba0042b8d74431483e27e2202ea38c8083d",
+      "retained_island_sha256": "26821695b9281b4059533b8ac7466e32391d889f37dd7088cd1c04f7dd186ab5",
+      "second_table_sha256": "9171f154fd3d02357c3e389ca30e09ea3bd031adc08b55ebc79e94784484ef73",
+      "native_readonly_sha256": "3ca209dfe79260a67b98e5eb5cc5ac6effd010e3ebdc0e07b5268ba847499a6c",
+      "table_native_target_pairs": [
+        [
+          1504,
+          4208856
+        ],
+        [
+          1508,
+          4209072
+        ],
+        [
+          1512,
+          4209288
+        ],
+        [
+          1516,
+          4209180
+        ],
+        [
+          1520,
+          4209396
+        ],
+        [
+          1524,
+          4208964
+        ],
+        [
+          1552,
+          4209560
+        ],
+        [
+          1556,
+          4209884
+        ],
+        [
+          1560,
+          4210112
+        ],
+        [
+          1564,
+          4210340
+        ],
+        [
+          1568,
+          4210568
+        ],
+        [
+          1572,
+          4210568
+        ],
+        [
+          1576,
+          4210568
+        ],
+        [
+          1580,
+          4210664
+        ]
+      ],
+      "original_non_table_RO_records": [
+        {
+          "relocation_section": ".rel.rodata",
+          "relocation_section_type": 9,
+          "section": ".rodata",
+          "offset": 1416,
+          "kind": 2,
+          "symbol": ".Lrace_00400518",
+          "symbol_section": ".text",
+          "symbol_value": 1304,
+          "explicit_addend": null
+        },
+        {
+          "relocation_section": ".rel.rodata",
+          "relocation_section_type": 9,
+          "section": ".rodata",
+          "offset": 1420,
+          "kind": 2,
+          "symbol": ".Lrace_004004F4",
+          "symbol_section": ".text",
+          "symbol_value": 1268,
+          "explicit_addend": null
+        },
+        {
+          "relocation_section": ".rel.rodata",
+          "relocation_section_type": 9,
+          "section": ".rodata",
+          "offset": 1424,
+          "kind": 2,
+          "symbol": ".Lrace_004004D0",
+          "symbol_section": ".text",
+          "symbol_value": 1232,
+          "explicit_addend": null
+        },
+        {
+          "relocation_section": ".rel.rodata",
+          "relocation_section_type": 9,
+          "section": ".rodata",
+          "offset": 1428,
+          "kind": 2,
+          "symbol": ".Lrace_004004AC",
+          "symbol_section": ".text",
+          "symbol_value": 1196,
+          "explicit_addend": null
+        },
+        {
+          "relocation_section": ".rel.rodata",
+          "relocation_section_type": 9,
+          "section": ".rodata",
+          "offset": 1432,
+          "kind": 2,
+          "symbol": ".Lrace_00400488",
+          "symbol_section": ".text",
+          "symbol_value": 1160,
+          "explicit_addend": null
+        },
+        {
+          "relocation_section": ".rel.rodata",
+          "relocation_section_type": 9,
+          "section": ".rodata",
+          "offset": 1464,
+          "kind": 2,
+          "symbol": ".Lrace_00403118",
+          "symbol_section": ".text",
+          "symbol_value": 12568,
+          "explicit_addend": null
+        },
+        {
+          "relocation_section": ".rel.rodata",
+          "relocation_section_type": 9,
+          "section": ".rodata",
+          "offset": 1468,
+          "kind": 2,
+          "symbol": ".Lrace_00403128",
+          "symbol_section": ".text",
+          "symbol_value": 12584,
+          "explicit_addend": null
+        },
+        {
+          "relocation_section": ".rel.rodata",
+          "relocation_section_type": 9,
+          "section": ".rodata",
+          "offset": 1472,
+          "kind": 2,
+          "symbol": ".Lrace_00403138",
+          "symbol_section": ".text",
+          "symbol_value": 12600,
+          "explicit_addend": null
+        },
+        {
+          "relocation_section": ".rel.rodata",
+          "relocation_section_type": 9,
+          "section": ".rodata",
+          "offset": 1476,
+          "kind": 2,
+          "symbol": ".Lrace_00403150",
+          "symbol_section": ".text",
+          "symbol_value": 12624,
+          "explicit_addend": null
+        },
+        {
+          "relocation_section": ".rel.rodata",
+          "relocation_section_type": 9,
+          "section": ".rodata",
+          "offset": 1480,
+          "kind": 2,
+          "symbol": ".Lrace_00403168",
+          "symbol_section": ".text",
+          "symbol_value": 12648,
+          "explicit_addend": null
+        },
+        {
+          "relocation_section": ".rel.rodata",
+          "relocation_section_type": 9,
+          "section": ".rodata",
+          "offset": 1484,
+          "kind": 2,
+          "symbol": ".Lrace_004033AC",
+          "symbol_section": ".text",
+          "symbol_value": 13228,
+          "explicit_addend": null
+        },
+        {
+          "relocation_section": ".rel.rodata",
+          "relocation_section_type": 9,
+          "section": ".rodata",
+          "offset": 1488,
+          "kind": 2,
+          "symbol": ".Lrace_004033F0",
+          "symbol_section": ".text",
+          "symbol_value": 13296,
+          "explicit_addend": null
+        },
+        {
+          "relocation_section": ".rel.rodata",
+          "relocation_section_type": 9,
+          "section": ".rodata",
+          "offset": 1492,
+          "kind": 2,
+          "symbol": ".Lrace_004033BC",
+          "symbol_section": ".text",
+          "symbol_value": 13244,
+          "explicit_addend": null
+        },
+        {
+          "relocation_section": ".rel.rodata",
+          "relocation_section_type": 9,
+          "section": ".rodata",
+          "offset": 1496,
+          "kind": 2,
+          "symbol": ".Lrace_00403400",
+          "symbol_section": ".text",
+          "symbol_value": 13312,
+          "explicit_addend": null
+        },
+        {
+          "relocation_section": ".rel.rodata",
+          "relocation_section_type": 9,
+          "section": ".rodata",
+          "offset": 1500,
+          "kind": 2,
+          "symbol": ".Lrace_00403434",
+          "symbol_section": ".text",
+          "symbol_value": 13364,
+          "explicit_addend": null
+        }
+      ]
+    }
+  }
+}

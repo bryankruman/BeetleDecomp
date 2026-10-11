@@ -348,7 +348,7 @@
     "src/modules/plyr.c": "e183b1f2e04706dfdd6315909a2d81b1ac11db7e5a2693b3d9af7cbe83619e6e",
     "src/modules/powerup.c": "b01918a9f9daf9ccb5e551c3920e16a76036dac54c07ef12712b4277dc7393f2",
     "src/modules/profgame.c": "86896bf5e286cd79b0c9dce0d64418674a94de658ef0682cecc8e8a461ede9ed",
-    "src/modules/race.c": "cc77ed421e2ae9892d424edb4d4c76ea42904696b828ed5c9a4dcdcb2c4e6bdb",
+    "src/modules/race.c": "b4409a98bc9097011d692bb4a77a4299a8c4978bfb83fa90fb31654d5169c02c",
     "src/modules/rain.c": "8a5c8ebebd3df2400a2c4cfcc8d0aab8a9f4bd5abb27bc3e3ceaf82d138639da",
     "src/modules/replay.c": "baf160c09aaa1cf61d130f4f2ef84ed21d8249f16f8386a0f5f54240907880dd",
     "src/modules/results.c": "8f9e9ae069b05eb8795188f1bcddc1cd5df6ccfeb9d4eacf58f08831853d2878",
@@ -441,18 +441,18 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "f5bbf61894e29f2556637115515a666467e9315ba55c7b8c490c0f4de4a11b6f",
-    "docs/VALIDATION_20261006.md": "e7c9338d17bed53983d8e191d85290fd16f2c4c9b2958c057ec869bc9f99c331"
+    "docs/STRATEGY_V4.md": "c039cd96e03b7244b5bb58c0dcdda01d7f23f17bffe59ec4c9fc59c6863f76ab",
+    "docs/VALIDATION_20261006.md": "eb3036d2cff76a5101b7148a7a06f18f82913f124c5333f0f652e943400c381b"
   },
   "counts": {
-    "address_function": 906,
-    "address_global": 1464,
+    "address_function": 904,
+    "address_global": 1472,
     "assembly": 769,
     "audit_debt": 30,
     "conditional_draft": 4,
     "decompiler_local": 659,
     "draft_marker": 37,
-    "explicit_unknown": 1431,
+    "explicit_unknown": 1433,
     "layout_padding": 275,
     "offset_field": 1620,
     "opaque_type": 282,
@@ -9965,15 +9965,15 @@
       "path": "src/modules/race.c",
       "symbol": "func_race_00400AB4",
       "lines": [
-        59
+        66
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_race_00400AB4",
-          "declaration_line": 59,
+          "declaration_line": 66,
           "lines": [
-            59
+            66
           ]
         }
       ]
@@ -9984,15 +9984,15 @@
       "path": "src/modules/race.c",
       "symbol": "func_race_00400CC0",
       "lines": [
-        60
+        67
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_race_00400CC0",
-          "declaration_line": 60,
+          "declaration_line": 67,
           "lines": [
-            60
+            67
           ]
         }
       ]
@@ -10003,15 +10003,15 @@
       "path": "src/modules/race.c",
       "symbol": "func_race_00400EB0",
       "lines": [
-        61
+        68
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_race_00400EB0",
-          "declaration_line": 61,
+          "declaration_line": 68,
           "lines": [
-            61
+            68
           ]
         }
       ]
@@ -10022,15 +10022,15 @@
       "path": "src/modules/race.c",
       "symbol": "func_race_004011BC",
       "lines": [
-        62
+        69
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_race_004011BC",
-          "declaration_line": 62,
+          "declaration_line": 69,
           "lines": [
-            62
+            69
           ]
         }
       ]
@@ -10041,15 +10041,15 @@
       "path": "src/modules/race.c",
       "symbol": "func_race_00401B3C",
       "lines": [
-        63
+        70
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_race_00401B3C",
-          "declaration_line": 63,
+          "declaration_line": 70,
           "lines": [
-            63
+            70
           ]
         }
       ]
@@ -10060,15 +10060,15 @@
       "path": "src/modules/race.c",
       "symbol": "func_race_00401E04",
       "lines": [
-        64
+        71
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_race_00401E04",
-          "declaration_line": 64,
+          "declaration_line": 71,
           "lines": [
-            64
+            71
           ]
         }
       ]
@@ -10079,15 +10079,15 @@
       "path": "src/modules/race.c",
       "symbol": "func_race_004024D0",
       "lines": [
-        65
+        72
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_race_004024D0",
-          "declaration_line": 65,
+          "declaration_line": 72,
           "lines": [
-            65
+            72
           ]
         }
       ]
@@ -10098,15 +10098,15 @@
       "path": "src/modules/race.c",
       "symbol": "func_race_004026D0",
       "lines": [
-        66
+        73
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_race_004026D0",
-          "declaration_line": 66,
+          "declaration_line": 73,
           "lines": [
-            66
+            73
           ]
         }
       ]
@@ -10117,15 +10117,15 @@
       "path": "src/modules/race.c",
       "symbol": "func_race_00402864",
       "lines": [
-        67
+        74
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_race_00402864",
-          "declaration_line": 67,
+          "declaration_line": 74,
           "lines": [
-            67
+            74
           ]
         }
       ]
@@ -10136,15 +10136,15 @@
       "path": "src/modules/race.c",
       "symbol": "func_race_00402AAC",
       "lines": [
-        68
+        75
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_race_00402AAC",
-          "declaration_line": 68,
+          "declaration_line": 75,
           "lines": [
-            68
+            75
           ]
         }
       ]
@@ -10155,15 +10155,15 @@
       "path": "src/modules/race.c",
       "symbol": "func_race_00402CE0",
       "lines": [
-        69
+        76
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_race_00402CE0",
-          "declaration_line": 69,
+          "declaration_line": 76,
           "lines": [
-            69
+            76
           ]
         }
       ]
@@ -10174,15 +10174,15 @@
       "path": "src/modules/race.c",
       "symbol": "func_race_00402E98",
       "lines": [
-        70
+        77
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_race_00402E98",
-          "declaration_line": 70,
+          "declaration_line": 77,
           "lines": [
-            70
+            77
           ]
         }
       ]
@@ -10193,15 +10193,15 @@
       "path": "src/modules/race.c",
       "symbol": "func_race_004030D0",
       "lines": [
-        71
+        78
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_race_004030D0",
-          "declaration_line": 71,
+          "declaration_line": 78,
           "lines": [
-            71
+            78
           ]
         }
       ]
@@ -10212,15 +10212,15 @@
       "path": "src/modules/race.c",
       "symbol": "func_race_00403350",
       "lines": [
-        191
+        198
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_race_00403350",
-          "declaration_line": 191,
+          "declaration_line": 198,
           "lines": [
-            191
+            198
           ]
         }
       ]
@@ -10231,15 +10231,15 @@
       "path": "src/modules/race.c",
       "symbol": "func_race_00403358",
       "lines": [
-        73
+        80
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_race_00403358",
-          "declaration_line": 73,
+          "declaration_line": 80,
           "lines": [
-            73
+            80
           ]
         }
       ]
@@ -10250,15 +10250,15 @@
       "path": "src/modules/race.c",
       "symbol": "func_race_004035C8",
       "lines": [
-        76
+        83
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_race_004035C8",
-          "declaration_line": 76,
+          "declaration_line": 83,
           "lines": [
-            76
+            83
           ]
         }
       ]
@@ -10269,15 +10269,15 @@
       "path": "src/modules/race.c",
       "symbol": "func_race_00403734",
       "lines": [
-        80
+        87
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_race_00403734",
-          "declaration_line": 80,
+          "declaration_line": 87,
           "lines": [
-            80
+            87
           ]
         }
       ]
@@ -10288,62 +10288,24 @@
       "path": "src/modules/race.c",
       "symbol": "func_race_004037DC",
       "lines": [
-        81,
-        242
+        88,
+        249
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_race_004037DC",
-          "declaration_line": 81,
+          "declaration_line": 88,
           "lines": [
-            81
+            88
           ]
         },
         {
           "kind": "function",
           "name": "raceLoadModelAndRegisterCallback",
-          "declaration_line": 240,
+          "declaration_line": 247,
           "lines": [
-            242
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-9ab042997901",
-      "kind": "address_function",
-      "path": "src/modules/race.c",
-      "symbol": "func_race_004038B0",
-      "lines": [
-        82
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_race_004038B0",
-          "declaration_line": 82,
-          "lines": [
-            82
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-85463e31806f",
-      "kind": "address_function",
-      "path": "src/modules/race.c",
-      "symbol": "func_race_00403B6C",
-      "lines": [
-        83
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_race_00403B6C",
-          "declaration_line": 83,
-          "lines": [
-            83
+            249
           ]
         }
       ]
@@ -36184,16 +36146,16 @@
       "path": "src/modules/race.c",
       "symbol": "D_80025D88",
       "lines": [
-        17,
-        107
+        24,
+        114
       ],
       "owners": [
         {
           "kind": "function",
           "name": "raceReleaseManagedSoundsAndClearBytes",
-          "declaration_line": 92,
+          "declaration_line": 99,
           "lines": [
-            107
+            114
           ]
         }
       ]
@@ -36204,16 +36166,16 @@
       "path": "src/modules/race.c",
       "symbol": "D_80025D89",
       "lines": [
-        17,
-        108
+        24,
+        115
       ],
       "owners": [
         {
           "kind": "function",
           "name": "raceReleaseManagedSoundsAndClearBytes",
-          "declaration_line": 92,
+          "declaration_line": 99,
           "lines": [
-            108
+            115
           ]
         }
       ]
@@ -36224,16 +36186,16 @@
       "path": "src/modules/race.c",
       "symbol": "D_80025D8A",
       "lines": [
-        17,
-        109
+        24,
+        116
       ],
       "owners": [
         {
           "kind": "function",
           "name": "raceReleaseManagedSoundsAndClearBytes",
-          "declaration_line": 92,
+          "declaration_line": 99,
           "lines": [
-            109
+            116
           ]
         }
       ]
@@ -36244,16 +36206,16 @@
       "path": "src/modules/race.c",
       "symbol": "D_80025D8B",
       "lines": [
-        17,
-        110
+        24,
+        117
       ],
       "owners": [
         {
           "kind": "function",
           "name": "raceReleaseManagedSoundsAndClearBytes",
-          "declaration_line": 92,
+          "declaration_line": 99,
           "lines": [
-            110
+            117
           ]
         }
       ]
@@ -36264,24 +36226,24 @@
       "path": "src/modules/race.c",
       "symbol": "D_race_00404710",
       "lines": [
-        42,
-        175
+        49,
+        182
       ],
       "owners": [
         {
           "kind": "function",
           "name": "raceDrawStatusFields",
-          "declaration_line": 174,
+          "declaration_line": 181,
           "lines": [
-            175
+            182
           ]
         },
         {
           "kind": "global",
           "name": "D_race_00404710",
-          "declaration_line": 42,
+          "declaration_line": 49,
           "lines": [
-            42
+            49
           ]
         }
       ]
@@ -36292,24 +36254,24 @@
       "path": "src/modules/race.c",
       "symbol": "D_race_00404718",
       "lines": [
-        43,
-        176
+        50,
+        183
       ],
       "owners": [
         {
           "kind": "function",
           "name": "raceDrawStatusFields",
-          "declaration_line": 174,
+          "declaration_line": 181,
           "lines": [
-            176
+            183
           ]
         },
         {
           "kind": "global",
           "name": "D_race_00404718",
-          "declaration_line": 43,
+          "declaration_line": 50,
           "lines": [
-            43
+            50
           ]
         }
       ]
@@ -36320,24 +36282,24 @@
       "path": "src/modules/race.c",
       "symbol": "D_race_00404724",
       "lines": [
-        44,
-        177
+        51,
+        184
       ],
       "owners": [
         {
           "kind": "function",
           "name": "raceDrawStatusFields",
-          "declaration_line": 174,
+          "declaration_line": 181,
           "lines": [
-            177
+            184
           ]
         },
         {
           "kind": "global",
           "name": "D_race_00404724",
-          "declaration_line": 44,
+          "declaration_line": 51,
           "lines": [
-            44
+            51
           ]
         }
       ]
@@ -36348,24 +36310,24 @@
       "path": "src/modules/race.c",
       "symbol": "D_race_00404730",
       "lines": [
-        45,
-        178
+        52,
+        185
       ],
       "owners": [
         {
           "kind": "function",
           "name": "raceDrawStatusFields",
-          "declaration_line": 174,
+          "declaration_line": 181,
           "lines": [
-            178
+            185
           ]
         },
         {
           "kind": "global",
           "name": "D_race_00404730",
-          "declaration_line": 45,
+          "declaration_line": 52,
           "lines": [
-            45
+            52
           ]
         }
       ]
@@ -36376,24 +36338,24 @@
       "path": "src/modules/race.c",
       "symbol": "D_race_00404740",
       "lines": [
-        46,
-        179
+        53,
+        186
       ],
       "owners": [
         {
           "kind": "function",
           "name": "raceDrawStatusFields",
-          "declaration_line": 174,
+          "declaration_line": 181,
           "lines": [
-            179
+            186
           ]
         },
         {
           "kind": "global",
           "name": "D_race_00404740",
-          "declaration_line": 46,
+          "declaration_line": 53,
           "lines": [
-            46
+            53
           ]
         }
       ]
@@ -36404,24 +36366,228 @@
       "path": "src/modules/race.c",
       "symbol": "D_race_0040474C",
       "lines": [
-        36,
-        226
+        43,
+        233
       ],
       "owners": [
         {
           "kind": "function",
           "name": "raceCreateModuleGui",
-          "declaration_line": 220,
+          "declaration_line": 227,
           "lines": [
-            226
+            233
           ]
         },
         {
           "kind": "global",
           "name": "D_race_0040474C",
-          "declaration_line": 36,
+          "declaration_line": 43,
           "lines": [
-            36
+            43
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-f2756b3fd86d",
+      "kind": "address_global",
+      "path": "src/modules/race.c",
+      "symbol": "D_race_004047C8",
+      "lines": [
+        7,
+        289
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "racePlayPendingTrackSound",
+          "declaration_line": 285,
+          "lines": [
+            289
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-6f15022dec30",
+      "kind": "address_global",
+      "path": "src/modules/race.c",
+      "symbol": "D_race_004047CC",
+      "lines": [
+        7,
+        295
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "racePlayPendingTrackSound",
+          "declaration_line": 285,
+          "lines": [
+            295
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-b7e814789238",
+      "kind": "address_global",
+      "path": "src/modules/race.c",
+      "symbol": "D_race_004047D0",
+      "lines": [
+        7,
+        301
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "racePlayPendingTrackSound",
+          "declaration_line": 285,
+          "lines": [
+            301
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-1b6660822de8",
+      "kind": "address_global",
+      "path": "src/modules/race.c",
+      "symbol": "D_race_004047D4",
+      "lines": [
+        8,
+        307
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "racePlayPendingTrackSound",
+          "declaration_line": 285,
+          "lines": [
+            307
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-fc99bf6ab0f4",
+      "kind": "address_global",
+      "path": "src/modules/race.c",
+      "symbol": "D_race_004047D8",
+      "lines": [
+        8,
+        313
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "racePlayPendingTrackSound",
+          "declaration_line": 285,
+          "lines": [
+            313
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-f7fbf12d69f1",
+      "kind": "address_global",
+      "path": "src/modules/race.c",
+      "symbol": "D_race_004047DC",
+      "lines": [
+        8,
+        319
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "racePlayPendingTrackSound",
+          "declaration_line": 285,
+          "lines": [
+            319
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-bbc31210d181",
+      "kind": "address_global",
+      "path": "src/modules/race.c",
+      "symbol": "D_race_00404864",
+      "lines": [
+        6,
+        288,
+        290,
+        294,
+        296,
+        300,
+        302,
+        306,
+        308,
+        312,
+        314,
+        318,
+        320
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "racePlayPendingTrackSound",
+          "declaration_line": 285,
+          "lines": [
+            288,
+            290,
+            294,
+            296,
+            300,
+            302,
+            306,
+            308,
+            312,
+            314,
+            318,
+            320
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-8f60daf2acfb",
+      "kind": "address_global",
+      "path": "src/modules/race.c",
+      "symbol": "D_race_00404884",
+      "lines": [
+        6,
+        333,
+        345,
+        349,
+        358,
+        362,
+        371,
+        375,
+        384,
+        390,
+        392,
+        396,
+        398
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "racePlayPendingPlayerMessageSound",
+          "declaration_line": 330,
+          "lines": [
+            333,
+            345,
+            349,
+            358,
+            362,
+            371,
+            375,
+            384,
+            390,
+            392,
+            396,
+            398
           ]
         }
       ]
@@ -36432,34 +36598,34 @@
       "path": "src/modules/race.c",
       "symbol": "D_race_00404888",
       "lines": [
-        20,
-        287,
-        289,
-        293,
-        295,
-        299,
-        301
+        27,
+        412,
+        414,
+        418,
+        420,
+        424,
+        426
       ],
       "owners": [
         {
           "kind": "function",
           "name": "racePlayPendingSoundByKind",
-          "declaration_line": 284,
+          "declaration_line": 409,
           "lines": [
-            287,
-            289,
-            293,
-            295,
-            299,
-            301
+            412,
+            414,
+            418,
+            420,
+            424,
+            426
           ]
         },
         {
           "kind": "global",
           "name": "D_race_00404888",
-          "declaration_line": 20,
+          "declaration_line": 27,
           "lines": [
-            20
+            27
           ]
         }
       ]
@@ -36470,24 +36636,24 @@
       "path": "src/modules/race.c",
       "symbol": "D_race_004049C4",
       "lines": [
-        55,
-        266
+        62,
+        273
       ],
       "owners": [
         {
           "kind": "function",
           "name": "raceMarkMatchingEntries",
-          "declaration_line": 262,
+          "declaration_line": 269,
           "lines": [
-            266
+            273
           ]
         },
         {
           "kind": "global",
           "name": "D_race_004049C4",
-          "declaration_line": 55,
+          "declaration_line": 62,
           "lines": [
-            55
+            62
           ]
         }
       ]
@@ -36498,33 +36664,33 @@
       "path": "src/modules/race.c",
       "symbol": "D_race_004049E4",
       "lines": [
-        52,
-        253,
-        264
+        59,
+        260,
+        271
       ],
       "owners": [
         {
           "kind": "function",
           "name": "raceMarkMatchingEntries",
-          "declaration_line": 262,
+          "declaration_line": 269,
           "lines": [
-            264
+            271
           ]
         },
         {
           "kind": "function",
           "name": "raceSetEntryTable",
-          "declaration_line": 252,
+          "declaration_line": 259,
           "lines": [
-            253
+            260
           ]
         },
         {
           "kind": "global",
           "name": "D_race_004049E4",
-          "declaration_line": 52,
+          "declaration_line": 59,
           "lines": [
-            52
+            59
           ]
         }
       ]
@@ -36535,33 +36701,33 @@
       "path": "src/modules/race.c",
       "symbol": "D_race_004049E8",
       "lines": [
-        53,
-        254,
-        265
+        60,
+        261,
+        272
       ],
       "owners": [
         {
           "kind": "function",
           "name": "raceMarkMatchingEntries",
-          "declaration_line": 262,
+          "declaration_line": 269,
           "lines": [
-            265
+            272
           ]
         },
         {
           "kind": "function",
           "name": "raceSetEntryTable",
-          "declaration_line": 252,
+          "declaration_line": 259,
           "lines": [
-            254
+            261
           ]
         },
         {
           "kind": "global",
           "name": "D_race_004049E8",
-          "declaration_line": 53,
+          "declaration_line": 60,
           "lines": [
-            53
+            60
           ]
         }
       ]
@@ -36572,24 +36738,24 @@
       "path": "src/modules/race.c",
       "symbol": "D_race_004049EC",
       "lines": [
-        54,
-        255
+        61,
+        262
       ],
       "owners": [
         {
           "kind": "function",
           "name": "raceSetEntryTable",
-          "declaration_line": 252,
+          "declaration_line": 259,
           "lines": [
-            255
+            262
           ]
         },
         {
           "kind": "global",
           "name": "D_race_004049EC",
-          "declaration_line": 54,
+          "declaration_line": 61,
           "lines": [
-            54
+            61
           ]
         }
       ]
@@ -36600,35 +36766,35 @@
       "path": "src/modules/race.c",
       "symbol": "D_race_004049F0",
       "lines": [
-        56,
-        201,
-        204,
-        314
+        63,
+        208,
+        211,
+        439
       ],
       "owners": [
         {
           "kind": "function",
           "name": "raceGetIndexedValue",
-          "declaration_line": 200,
+          "declaration_line": 207,
           "lines": [
-            201,
-            204
+            208,
+            211
           ]
         },
         {
           "kind": "function",
           "name": "raceReleaseFirstPlayerSoundHandle",
-          "declaration_line": 313,
+          "declaration_line": 438,
           "lines": [
-            314
+            439
           ]
         },
         {
           "kind": "global",
           "name": "D_race_004049F0",
-          "declaration_line": 56,
+          "declaration_line": 63,
           "lines": [
-            56
+            63
           ]
         }
       ]
@@ -36639,33 +36805,33 @@
       "path": "src/modules/race.c",
       "symbol": "D_race_00404A04",
       "lines": [
-        57,
-        230,
-        314
+        64,
+        237,
+        439
       ],
       "owners": [
         {
           "kind": "function",
           "name": "raceCreateModuleGui",
-          "declaration_line": 220,
+          "declaration_line": 227,
           "lines": [
-            230
+            237
           ]
         },
         {
           "kind": "function",
           "name": "raceReleaseFirstPlayerSoundHandle",
-          "declaration_line": 313,
+          "declaration_line": 438,
           "lines": [
-            314
+            439
           ]
         },
         {
           "kind": "global",
           "name": "D_race_00404A04",
-          "declaration_line": 57,
+          "declaration_line": 64,
           "lines": [
-            57
+            64
           ]
         }
       ]
@@ -36676,24 +36842,33 @@
       "path": "src/modules/race.c",
       "symbol": "D_race_00404A30",
       "lines": [
-        4,
-        93
+        11,
+        100,
+        289
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "raceReleaseManagedSoundsAndClearBytes",
-          "declaration_line": 92,
+          "name": "racePlayPendingTrackSound",
+          "declaration_line": 285,
           "lines": [
-            93
+            289
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "raceReleaseManagedSoundsAndClearBytes",
+          "declaration_line": 99,
+          "lines": [
+            100
           ]
         },
         {
           "kind": "global",
           "name": "D_race_00404A30",
-          "declaration_line": 4,
+          "declaration_line": 11,
           "lines": [
-            4
+            11
           ]
         }
       ]
@@ -36704,24 +36879,33 @@
       "path": "src/modules/race.c",
       "symbol": "D_race_00404A38",
       "lines": [
-        5,
-        94
+        12,
+        101,
+        295
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "raceReleaseManagedSoundsAndClearBytes",
-          "declaration_line": 92,
+          "name": "racePlayPendingTrackSound",
+          "declaration_line": 285,
           "lines": [
-            94
+            295
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "raceReleaseManagedSoundsAndClearBytes",
+          "declaration_line": 99,
+          "lines": [
+            101
           ]
         },
         {
           "kind": "global",
           "name": "D_race_00404A38",
-          "declaration_line": 5,
+          "declaration_line": 12,
           "lines": [
-            5
+            12
           ]
         }
       ]
@@ -36732,24 +36916,33 @@
       "path": "src/modules/race.c",
       "symbol": "D_race_00404A40",
       "lines": [
-        6,
-        95
+        13,
+        102,
+        301
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "raceReleaseManagedSoundsAndClearBytes",
-          "declaration_line": 92,
+          "name": "racePlayPendingTrackSound",
+          "declaration_line": 285,
           "lines": [
-            95
+            301
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "raceReleaseManagedSoundsAndClearBytes",
+          "declaration_line": 99,
+          "lines": [
+            102
           ]
         },
         {
           "kind": "global",
           "name": "D_race_00404A40",
-          "declaration_line": 6,
+          "declaration_line": 13,
           "lines": [
-            6
+            13
           ]
         }
       ]
@@ -36760,24 +36953,33 @@
       "path": "src/modules/race.c",
       "symbol": "D_race_00404A48",
       "lines": [
-        7,
-        96
+        14,
+        103,
+        307
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "raceReleaseManagedSoundsAndClearBytes",
-          "declaration_line": 92,
+          "name": "racePlayPendingTrackSound",
+          "declaration_line": 285,
           "lines": [
-            96
+            307
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "raceReleaseManagedSoundsAndClearBytes",
+          "declaration_line": 99,
+          "lines": [
+            103
           ]
         },
         {
           "kind": "global",
           "name": "D_race_00404A48",
-          "declaration_line": 7,
+          "declaration_line": 14,
           "lines": [
-            7
+            14
           ]
         }
       ]
@@ -36788,24 +36990,33 @@
       "path": "src/modules/race.c",
       "symbol": "D_race_00404A50",
       "lines": [
-        8,
-        97
+        15,
+        104,
+        313
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "raceReleaseManagedSoundsAndClearBytes",
-          "declaration_line": 92,
+          "name": "racePlayPendingTrackSound",
+          "declaration_line": 285,
           "lines": [
-            97
+            313
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "raceReleaseManagedSoundsAndClearBytes",
+          "declaration_line": 99,
+          "lines": [
+            104
           ]
         },
         {
           "kind": "global",
           "name": "D_race_00404A50",
-          "declaration_line": 8,
+          "declaration_line": 15,
           "lines": [
-            8
+            15
           ]
         }
       ]
@@ -36816,24 +37027,33 @@
       "path": "src/modules/race.c",
       "symbol": "D_race_00404A58",
       "lines": [
-        9,
-        98
+        16,
+        105,
+        319
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "raceReleaseManagedSoundsAndClearBytes",
-          "declaration_line": 92,
+          "name": "racePlayPendingTrackSound",
+          "declaration_line": 285,
           "lines": [
-            98
+            319
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "raceReleaseManagedSoundsAndClearBytes",
+          "declaration_line": 99,
+          "lines": [
+            105
           ]
         },
         {
           "kind": "global",
           "name": "D_race_00404A58",
-          "declaration_line": 9,
+          "declaration_line": 16,
           "lines": [
-            9
+            16
           ]
         }
       ]
@@ -36844,24 +37064,24 @@
       "path": "src/modules/race.c",
       "symbol": "D_race_00404A60",
       "lines": [
-        10,
-        99
+        17,
+        106
       ],
       "owners": [
         {
           "kind": "function",
           "name": "raceReleaseManagedSoundsAndClearBytes",
-          "declaration_line": 92,
+          "declaration_line": 99,
           "lines": [
-            99
+            106
           ]
         },
         {
           "kind": "global",
           "name": "D_race_00404A60",
-          "declaration_line": 10,
+          "declaration_line": 17,
           "lines": [
-            10
+            17
           ]
         }
       ]
@@ -36872,24 +37092,24 @@
       "path": "src/modules/race.c",
       "symbol": "D_race_00404A68",
       "lines": [
-        11,
-        100
+        18,
+        107
       ],
       "owners": [
         {
           "kind": "function",
           "name": "raceReleaseManagedSoundsAndClearBytes",
-          "declaration_line": 92,
+          "declaration_line": 99,
           "lines": [
-            100
+            107
           ]
         },
         {
           "kind": "global",
           "name": "D_race_00404A68",
-          "declaration_line": 11,
+          "declaration_line": 18,
           "lines": [
-            11
+            18
           ]
         }
       ]
@@ -36900,24 +37120,24 @@
       "path": "src/modules/race.c",
       "symbol": "D_race_00404A70",
       "lines": [
-        12,
-        101
+        19,
+        108
       ],
       "owners": [
         {
           "kind": "function",
           "name": "raceReleaseManagedSoundsAndClearBytes",
-          "declaration_line": 92,
+          "declaration_line": 99,
           "lines": [
-            101
+            108
           ]
         },
         {
           "kind": "global",
           "name": "D_race_00404A70",
-          "declaration_line": 12,
+          "declaration_line": 19,
           "lines": [
-            12
+            19
           ]
         }
       ]
@@ -36928,24 +37148,24 @@
       "path": "src/modules/race.c",
       "symbol": "D_race_00404A78",
       "lines": [
-        13,
-        102
+        20,
+        109
       ],
       "owners": [
         {
           "kind": "function",
           "name": "raceReleaseManagedSoundsAndClearBytes",
-          "declaration_line": 92,
+          "declaration_line": 99,
           "lines": [
-            102
+            109
           ]
         },
         {
           "kind": "global",
           "name": "D_race_00404A78",
-          "declaration_line": 13,
+          "declaration_line": 20,
           "lines": [
-            13
+            20
           ]
         }
       ]
@@ -36956,24 +37176,24 @@
       "path": "src/modules/race.c",
       "symbol": "D_race_00404A80",
       "lines": [
-        14,
-        103
+        21,
+        110
       ],
       "owners": [
         {
           "kind": "function",
           "name": "raceReleaseManagedSoundsAndClearBytes",
-          "declaration_line": 92,
+          "declaration_line": 99,
           "lines": [
-            103
+            110
           ]
         },
         {
           "kind": "global",
           "name": "D_race_00404A80",
-          "declaration_line": 14,
+          "declaration_line": 21,
           "lines": [
-            14
+            21
           ]
         }
       ]
@@ -36984,24 +37204,51 @@
       "path": "src/modules/race.c",
       "symbol": "D_race_00404A88",
       "lines": [
-        15,
-        104
+        22,
+        111,
+        336,
+        339,
+        342,
+        352,
+        355,
+        365,
+        368,
+        378,
+        381,
+        391
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "raceReleaseManagedSoundsAndClearBytes",
-          "declaration_line": 92,
+          "name": "racePlayPendingPlayerMessageSound",
+          "declaration_line": 330,
           "lines": [
-            104
+            336,
+            339,
+            342,
+            352,
+            355,
+            365,
+            368,
+            378,
+            381,
+            391
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "raceReleaseManagedSoundsAndClearBytes",
+          "declaration_line": 99,
+          "lines": [
+            111
           ]
         },
         {
           "kind": "global",
           "name": "D_race_00404A88",
-          "declaration_line": 15,
+          "declaration_line": 22,
           "lines": [
-            15
+            22
           ]
         }
       ]
@@ -37012,37 +37259,37 @@
       "path": "src/modules/race.c",
       "symbol": "D_race_00404A90",
       "lines": [
-        21,
-        105,
-        288,
-        294,
-        300
+        28,
+        112,
+        413,
+        419,
+        425
       ],
       "owners": [
         {
           "kind": "function",
           "name": "racePlayPendingSoundByKind",
-          "declaration_line": 284,
+          "declaration_line": 409,
           "lines": [
-            288,
-            294,
-            300
+            413,
+            419,
+            425
           ]
         },
         {
           "kind": "function",
           "name": "raceReleaseManagedSoundsAndClearBytes",
-          "declaration_line": 92,
+          "declaration_line": 99,
           "lines": [
-            105
+            112
           ]
         },
         {
           "kind": "global",
           "name": "D_race_00404A90",
-          "declaration_line": 21,
+          "declaration_line": 28,
           "lines": [
-            21
+            28
           ]
         }
       ]
@@ -37053,24 +37300,24 @@
       "path": "src/modules/race.c",
       "symbol": "D_race_00404A98",
       "lines": [
-        16,
-        106
+        23,
+        113
       ],
       "owners": [
         {
           "kind": "function",
           "name": "raceReleaseManagedSoundsAndClearBytes",
-          "declaration_line": 92,
+          "declaration_line": 99,
           "lines": [
-            106
+            113
           ]
         },
         {
           "kind": "global",
           "name": "D_race_00404A98",
-          "declaration_line": 16,
+          "declaration_line": 23,
           "lines": [
-            16
+            23
           ]
         }
       ]
@@ -37081,24 +37328,24 @@
       "path": "src/modules/race.c",
       "symbol": "D_race_00404AA0",
       "lines": [
-        47,
-        175
+        54,
+        182
       ],
       "owners": [
         {
           "kind": "function",
           "name": "raceDrawStatusFields",
-          "declaration_line": 174,
+          "declaration_line": 181,
           "lines": [
-            175
+            182
           ]
         },
         {
           "kind": "global",
           "name": "D_race_00404AA0",
-          "declaration_line": 47,
+          "declaration_line": 54,
           "lines": [
-            47
+            54
           ]
         }
       ]
@@ -37109,24 +37356,24 @@
       "path": "src/modules/race.c",
       "symbol": "D_race_00404AA4",
       "lines": [
-        48,
-        176
+        55,
+        183
       ],
       "owners": [
         {
           "kind": "function",
           "name": "raceDrawStatusFields",
-          "declaration_line": 174,
+          "declaration_line": 181,
           "lines": [
-            176
+            183
           ]
         },
         {
           "kind": "global",
           "name": "D_race_00404AA4",
-          "declaration_line": 48,
+          "declaration_line": 55,
           "lines": [
-            48
+            55
           ]
         }
       ]
@@ -37137,24 +37384,24 @@
       "path": "src/modules/race.c",
       "symbol": "D_race_00404AA8",
       "lines": [
-        49,
-        177
+        56,
+        184
       ],
       "owners": [
         {
           "kind": "function",
           "name": "raceDrawStatusFields",
-          "declaration_line": 174,
+          "declaration_line": 181,
           "lines": [
-            177
+            184
           ]
         },
         {
           "kind": "global",
           "name": "D_race_00404AA8",
-          "declaration_line": 49,
+          "declaration_line": 56,
           "lines": [
-            49
+            56
           ]
         }
       ]
@@ -37165,24 +37412,24 @@
       "path": "src/modules/race.c",
       "symbol": "D_race_00404AAC",
       "lines": [
-        50,
-        178
+        57,
+        185
       ],
       "owners": [
         {
           "kind": "function",
           "name": "raceDrawStatusFields",
-          "declaration_line": 174,
+          "declaration_line": 181,
           "lines": [
-            178
+            185
           ]
         },
         {
           "kind": "global",
           "name": "D_race_00404AAC",
-          "declaration_line": 50,
+          "declaration_line": 57,
           "lines": [
-            50
+            57
           ]
         }
       ]
@@ -37193,24 +37440,24 @@
       "path": "src/modules/race.c",
       "symbol": "D_race_00404AB0",
       "lines": [
-        51,
-        179
+        58,
+        186
       ],
       "owners": [
         {
           "kind": "function",
           "name": "raceDrawStatusFields",
-          "declaration_line": 174,
+          "declaration_line": 181,
           "lines": [
-            179
+            186
           ]
         },
         {
           "kind": "global",
           "name": "D_race_00404AB0",
-          "declaration_line": 51,
+          "declaration_line": 58,
           "lines": [
-            51
+            58
           ]
         }
       ]
@@ -79609,7 +79856,7 @@
       "path": "src/modules/race.c",
       "symbol": "__entrypoint_func_race_400000",
       "lines": [
-        86
+        93
       ],
       "evidence": "asm/us/nonmatchings/modules/race/__entrypoint_func_race_400000.s"
     },
@@ -79619,7 +79866,7 @@
       "path": "src/modules/race.c",
       "symbol": "func_race_00400AB4",
       "lines": [
-        114
+        121
       ],
       "evidence": "asm/us/nonmatchings/modules/race/func_race_00400AB4.s"
     },
@@ -79629,7 +79876,7 @@
       "path": "src/modules/race.c",
       "symbol": "func_race_00400CC0",
       "lines": [
-        123
+        130
       ],
       "evidence": "asm/us/nonmatchings/modules/race/func_race_00400CC0.s"
     },
@@ -79639,7 +79886,7 @@
       "path": "src/modules/race.c",
       "symbol": "func_race_00400EB0",
       "lines": [
-        125
+        132
       ],
       "evidence": "asm/us/nonmatchings/modules/race/func_race_00400EB0.s"
     },
@@ -79649,7 +79896,7 @@
       "path": "src/modules/race.c",
       "symbol": "func_race_004011BC",
       "lines": [
-        127
+        134
       ],
       "evidence": "asm/us/nonmatchings/modules/race/func_race_004011BC.s"
     },
@@ -79659,7 +79906,7 @@
       "path": "src/modules/race.c",
       "symbol": "func_race_00401B3C",
       "lines": [
-        129
+        136
       ],
       "evidence": "asm/us/nonmatchings/modules/race/func_race_00401B3C.s"
     },
@@ -79669,7 +79916,7 @@
       "path": "src/modules/race.c",
       "symbol": "func_race_00401E04",
       "lines": [
-        131
+        138
       ],
       "evidence": "asm/us/nonmatchings/modules/race/func_race_00401E04.s"
     },
@@ -79679,7 +79926,7 @@
       "path": "src/modules/race.c",
       "symbol": "func_race_004024D0",
       "lines": [
-        142
+        149
       ],
       "evidence": "asm/us/nonmatchings/modules/race/func_race_004024D0.s"
     },
@@ -79689,7 +79936,7 @@
       "path": "src/modules/race.c",
       "symbol": "func_race_004026D0",
       "lines": [
-        144
+        151
       ],
       "evidence": "asm/us/nonmatchings/modules/race/func_race_004026D0.s"
     },
@@ -79699,7 +79946,7 @@
       "path": "src/modules/race.c",
       "symbol": "func_race_00402864",
       "lines": [
-        146
+        153
       ],
       "evidence": "asm/us/nonmatchings/modules/race/func_race_00402864.s"
     },
@@ -79709,7 +79956,7 @@
       "path": "src/modules/race.c",
       "symbol": "func_race_00402AAC",
       "lines": [
-        148
+        155
       ],
       "evidence": "asm/us/nonmatchings/modules/race/func_race_00402AAC.s"
     },
@@ -79719,7 +79966,7 @@
       "path": "src/modules/race.c",
       "symbol": "func_race_00402CE0",
       "lines": [
-        150
+        157
       ],
       "evidence": "asm/us/nonmatchings/modules/race/func_race_00402CE0.s"
     },
@@ -79729,7 +79976,7 @@
       "path": "src/modules/race.c",
       "symbol": "func_race_00402E98",
       "lines": [
-        167
+        174
       ],
       "evidence": "asm/us/nonmatchings/modules/race/func_race_00402E98.s"
     },
@@ -79739,7 +79986,7 @@
       "path": "src/modules/race.c",
       "symbol": "func_race_004030D0",
       "lines": [
-        169
+        176
       ],
       "evidence": "asm/us/nonmatchings/modules/race/func_race_004030D0.s"
     },
@@ -79749,7 +79996,7 @@
       "path": "src/modules/race.c",
       "symbol": "func_race_00403358",
       "lines": [
-        195
+        202
       ],
       "evidence": "asm/us/nonmatchings/modules/race/func_race_00403358.s"
     },
@@ -79759,7 +80006,7 @@
       "path": "src/modules/race.c",
       "symbol": "func_race_004035C8",
       "lines": [
-        235
+        242
       ],
       "evidence": "asm/us/nonmatchings/modules/race/func_race_004035C8.s"
     },
@@ -79769,7 +80016,7 @@
       "path": "src/modules/race.c",
       "symbol": "func_race_00403734",
       "lines": [
-        272
+        279
       ],
       "evidence": "asm/us/nonmatchings/modules/race/func_race_00403734.s"
     },
@@ -79779,29 +80026,29 @@
       "path": "src/modules/race.c",
       "symbol": "func_race_004037DC",
       "lines": [
-        274
+        281
       ],
       "evidence": "asm/us/nonmatchings/modules/race/func_race_004037DC.s"
     },
     {
-      "id": "Q-1f2be3c1ba77",
+      "id": "Q-d12a57f8b661",
       "kind": "assembly",
       "path": "src/modules/race.c",
-      "symbol": "func_race_004038B0",
+      "symbol": "race-floats.rodata-island",
       "lines": [
-        276
+        327
       ],
-      "evidence": "asm/us/nonmatchings/modules/race/func_race_004038B0.s"
+      "evidence": "asm/us/data/modules/race-floats.rodata-island.s"
     },
     {
-      "id": "Q-d3802a235257",
+      "id": "Q-cb0a9db305c9",
       "kind": "assembly",
       "path": "src/modules/race.c",
-      "symbol": "func_race_00403B6C",
+      "symbol": "race.rodata-prefix",
       "lines": [
-        278
+        9
       ],
-      "evidence": "asm/us/nonmatchings/modules/race/func_race_00403B6C.s"
+      "evidence": "asm/us/data/modules/race.rodata-prefix.s"
     },
     {
       "id": "Q-162bb91dbed9",
@@ -126500,16 +126747,16 @@
       "path": "src/modules/race.c",
       "symbol": "Original GAMEGUI slot 0x14 configures the shared widget when settings word 0x18C * is nonzero; original GAMEGUI slot 0x28 exports the debug-byte address. The widget * used below begins 16 bytes after that address. This prefix models only * those original slots, not the complete shared-state allocation. * RE_UNKNOWN: the historical source typedef and meaning of settings word 0x18C. * Trace original settings writers and the widget initializer before rewrite.",
       "lines": [
-        22
+        29
       ],
       "evidence": "Original GAMEGUI slot 0x14 configures the shared widget when settings word 0x18C * is nonzero; original GAMEGUI slot 0x28 exports the debug-byte address. The widget * used below begins 16 bytes after that address. This prefix models only * those original slots, not the complete shared-state allocation. * RE_UNKNOWN: the historical source typedef and meaning of settings word 0x18C. * Trace original settings writers and the widget initializer before rewrite.",
       "owners": [
         {
           "kind": "type",
           "name": "RaceGameGuiExports",
-          "declaration_line": 28,
+          "declaration_line": 35,
           "lines": [
-            22
+            29
           ]
         }
       ]
@@ -126520,16 +126767,16 @@
       "path": "src/modules/race.c",
       "symbol": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "lines": [
-        187
+        194
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "owners": [
         {
           "kind": "function",
           "name": "func_race_00403350",
-          "declaration_line": 191,
+          "declaration_line": 198,
           "lines": [
-            187
+            194
           ]
         }
       ]
@@ -126540,16 +126787,16 @@
       "path": "src/modules/race.c",
       "symbol": "Original pause pass checks signed settings halfwords 0x9C/0x86/0x88 and * player gates 0x58/0x1D; REPLAY 0x0C stores a shared byte, not pauseFlag. * While paused, PAUS 0x08 dispatches state; CARAUDIO 0x0C processes each player * before PLYR 0x20 releases its word-0x14 indexed sound handle. Preserve reloads. * RE_UNKNOWN: gate/state domains, table capacity and player/handle lifetime * need original writers/callers. Clean C is unmatched; retain original ASM.",
       "lines": [
-        116
+        123
       ],
       "evidence": "Original pause pass checks signed settings halfwords 0x9C/0x86/0x88 and * player gates 0x58/0x1D; REPLAY 0x0C stores a shared byte, not pauseFlag. * While paused, PAUS 0x08 dispatches state; CARAUDIO 0x0C processes each player * before PLYR 0x20 releases its word-0x14 indexed sound handle. Preserve reloads. * RE_UNKNOWN: gate/state domains, table capacity and player/handle lifetime * need original writers/callers. Clean C is unmatched; retain original ASM.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_race_00400CC0",
-          "declaration_line": 123,
+          "declaration_line": 130,
           "lines": [
-            116
+            123
           ]
         }
       ]
@@ -126560,16 +126807,36 @@
       "path": "src/modules/race.c",
       "symbol": "Pass the first stored player to PLYR 0x20, releasing its word-0x14 indexed sound handle. * RE_UNKNOWN: nonnull player, valid handle index and lifetime need original callers/PLYR producers.",
       "lines": [
-        309
+        434
       ],
       "evidence": "Pass the first stored player to PLYR 0x20, releasing its word-0x14 indexed sound handle. * RE_UNKNOWN: nonnull player, valid handle index and lifetime need original callers/PLYR producers.",
       "owners": [
         {
           "kind": "function",
           "name": "raceReleaseFirstPlayerSoundHandle",
-          "declaration_line": 313,
+          "declaration_line": 438,
           "lines": [
-            309
+            434
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-4bd874849d93",
+      "kind": "explicit_unknown",
+      "path": "src/modules/race.c",
+      "symbol": "Play the pending track sound using the original six case associations and clear pending only after playback. Unsupported track indices leave pending unchanged. RE_UNKNOWN: sound-resource meanings, pending producer and handle lifetimes.",
+      "lines": [
+        284
+      ],
+      "evidence": "Play the pending track sound using the original six case associations and clear pending only after playback. Unsupported track indices leave pending unchanged. RE_UNKNOWN: sound-resource meanings, pending producer and handle lifetimes.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "racePlayPendingTrackSound",
+          "declaration_line": 285,
+          "lines": [
+            284
           ]
         }
       ]
@@ -126580,16 +126847,36 @@
       "path": "src/modules/race.c",
       "symbol": "RE_UNKNOWN: Pending producer and sound-ID meaning; unsupported selectors leave pending unchanged.",
       "lines": [
-        305
+        430
       ],
       "evidence": "RE_UNKNOWN: Pending producer and sound-ID meaning; unsupported selectors leave pending unchanged.",
       "owners": [
         {
           "kind": "function",
           "name": "racePlayPendingSoundByKind",
-          "declaration_line": 284,
+          "declaration_line": 409,
           "lines": [
-            305
+            430
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-ae84b04d8757",
+      "kind": "explicit_unknown",
+      "path": "src/modules/race.c",
+      "symbol": "Select a pending player-message sound through the original one-based table. Preserve unscaled casts in cases 2..4; only cases 1 and 8 multiply by three. Unsupported inner results consume pending, unsupported outer kinds do not. RE_UNKNOWN: random range, message meanings and lifetimes.",
+      "lines": [
+        329
+      ],
+      "evidence": "Select a pending player-message sound through the original one-based table. Preserve unscaled casts in cases 2..4; only cases 1 and 8 multiply by three. Unsupported inner results consume pending, unsupported outer kinds do not. RE_UNKNOWN: random range, message meanings and lifetimes.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "racePlayPendingPlayerMessageSound",
+          "declaration_line": 330,
+          "lines": [
+            329
           ]
         }
       ]
@@ -126600,16 +126887,16 @@
       "path": "src/modules/race.c",
       "symbol": "Select the shared GAMEGUI widget at debug-byte address+0x10 before the * original GAMEGUI14 initialization call, then allocate and label a child * group and attach it. Forward the child to camera, optional AI and track * callbacks in the original order. GAMEGUI14 conditionally loads/configures * shared GUI resources, selects palette/font3 and clears shared state; it * consumes no incoming argument in the original machine instructions. * RE_UNKNOWN: the complete shared-state/widget layout and settings word18C * gate meaning. Inspect original data spans and all flag writers; do not * reinterpret export28 as a separately allocated root-object pointer.",
       "lines": [
-        211
+        218
       ],
       "evidence": "Select the shared GAMEGUI widget at debug-byte address+0x10 before the * original GAMEGUI14 initialization call, then allocate and label a child * group and attach it. Forward the child to camera, optional AI and track * callbacks in the original order. GAMEGUI14 conditionally loads/configures * shared GUI resources, selects palette/font3 and clears shared state; it * consumes no incoming argument in the original machine instructions. * RE_UNKNOWN: the complete shared-state/widget layout and settings word18C * gate meaning. Inspect original data spans and all flag writers; do not * reinterpret export28 as a separately allocated root-object pointer.",
       "owners": [
         {
           "kind": "function",
           "name": "raceCreateModuleGui",
-          "declaration_line": 220,
+          "declaration_line": 227,
           "lines": [
-            211
+            218
           ]
         }
       ]
@@ -126620,16 +126907,16 @@
       "path": "src/modules/race.c",
       "symbol": "Store the shared entry count, value-array address and opaque third * parameter used by the race module. * RE_UNKNOWN: ownership/lifetime of the retained value array. Trace original * setters, table users and teardown paths around D_race_004049E8; storing * the supplied address alone does not establish caller ownership.",
       "lines": [
-        247
+        254
       ],
       "evidence": "Store the shared entry count, value-array address and opaque third * parameter used by the race module. * RE_UNKNOWN: ownership/lifetime of the retained value array. Trace original * setters, table users and teardown paths around D_race_004049E8; storing * the supplied address alone does not establish caller ownership.",
       "owners": [
         {
           "kind": "function",
           "name": "raceSetEntryTable",
-          "declaration_line": 252,
+          "declaration_line": 259,
           "lines": [
-            247
+            254
           ]
         }
       ]
@@ -126640,16 +126927,16 @@
       "path": "src/modules/race.c",
       "symbol": "Update parallel player-gate bytes and count word-5C and byte-1D gates. * Word5C calls CARAUDIO34, PLYR20 and SND E4 before reloading player/count. * Byte1D uses a mode snapshot, reloaded only after the mode3 byte write. * Actual resu loader binds RESULTS08, which dispatches shared result state; * REPLAY14 clears a shared byte and ignores the prepared count argument. * RE_ORIGINAL_QUIRK: zero count can satisfy both post-loop equality tests. * RE_UNKNOWN: gate/mode/state meanings, reachable count/index domains, list * extent, nullable inputs, aliases and callback lifetimes need original * producers/callers. No complete array or race-end policy is established. * A readable draft is 572 versus 568 native bytes, with 105 differing words. * Both frames are 64 bytes; retained settings/export bases become repeated * global-address materializations, constant3 is kept in a saved register, * and the state5 store/settings-read schedule differs. The complete 31- * versus 43-record relocation lists differ. Retain original assembly.",
       "lines": [
-        152
+        159
       ],
       "evidence": "Update parallel player-gate bytes and count word-5C and byte-1D gates. * Word5C calls CARAUDIO34, PLYR20 and SND E4 before reloading player/count. * Byte1D uses a mode snapshot, reloaded only after the mode3 byte write. * Actual resu loader binds RESULTS08, which dispatches shared result state; * REPLAY14 clears a shared byte and ignores the prepared count argument. * RE_ORIGINAL_QUIRK: zero count can satisfy both post-loop equality tests. * RE_UNKNOWN: gate/mode/state meanings, reachable count/index domains, list * extent, nullable inputs, aliases and callback lifetimes need original * producers/callers. No complete array or race-end policy is established. * A readable draft is 572 versus 568 native bytes, with 105 differing words. * Both frames are 64 bytes; retained settings/export bases become repeated * global-address materializations, constant3 is kept in a saved register, * and the state5 store/settings-read schedule differs. The complete 31- * versus 43-record relocation lists differ. Retain original assembly.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_race_00402E98",
-          "declaration_line": 167,
+          "declaration_line": 174,
           "lines": [
-            152
+            159
           ]
         }
       ]
@@ -126660,16 +126947,16 @@
       "path": "src/modules/race.c",
       "symbol": "Update shared scalars, then run CARANIM 0x08 on each entry's word-4 * pointer; reload entry, its word-0x0C state pointer and state word 0x140. * AI 0x28 consumes no arguments. REPLAY masks 0/0x9000 and 1/0x9000 flank * a saved-count/live-count comparison; success stores gate/state 3, calls * REPLAY 0x10, then writes scalar 5. Preserve those calls and reloads. * RE_UNKNOWN: scalar units, gate/state meanings, count domain/capacity and * state/table ownership/scheduling need original producers/callers. Clean C * remains unmatched; retain assembly pending full byte/relocation proof.",
       "lines": [
-        133
+        140
       ],
       "evidence": "Update shared scalars, then run CARANIM 0x08 on each entry's word-4 * pointer; reload entry, its word-0x0C state pointer and state word 0x140. * AI 0x28 consumes no arguments. REPLAY masks 0/0x9000 and 1/0x9000 flank * a saved-count/live-count comparison; success stores gate/state 3, calls * REPLAY 0x10, then writes scalar 5. Preserve those calls and reloads. * RE_UNKNOWN: scalar units, gate/state meanings, count domain/capacity and * state/table ownership/scheduling need original producers/callers. Clean C * remains unmatched; retain assembly pending full byte/relocation proof.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_race_004024D0",
-          "declaration_line": 142,
+          "declaration_line": 149,
           "lines": [
-            133
+            140
           ]
         }
       ]
@@ -148619,15 +148906,15 @@
       "path": "src/modules/race.c",
       "symbol": "gap0C",
       "lines": [
-        29
+        36
       ],
       "owners": [
         {
           "kind": "type",
           "name": "RaceGuiExports",
-          "declaration_line": 29,
+          "declaration_line": 36,
           "lines": [
-            29
+            36
           ]
         }
       ]
@@ -148638,15 +148925,15 @@
       "path": "src/modules/race.c",
       "symbol": "gap18",
       "lines": [
-        28
+        35
       ],
       "owners": [
         {
           "kind": "type",
           "name": "RaceGameGuiExports",
-          "declaration_line": 28,
+          "declaration_line": 35,
           "lines": [
-            28
+            35
           ]
         }
       ]
@@ -148657,51 +148944,51 @@
       "path": "src/modules/race.c",
       "symbol": "prefix",
       "lines": [
-        28,
-        29,
-        30,
-        31,
-        32
+        35,
+        36,
+        37,
+        38,
+        39
       ],
       "owners": [
         {
           "kind": "type",
           "name": "RaceAiGuiExports",
-          "declaration_line": 31,
+          "declaration_line": 38,
           "lines": [
-            31
+            38
           ]
         },
         {
           "kind": "type",
           "name": "RaceCameraGuiExports",
-          "declaration_line": 30,
+          "declaration_line": 37,
           "lines": [
-            30
+            37
           ]
         },
         {
           "kind": "type",
           "name": "RaceGameGuiExports",
-          "declaration_line": 28,
+          "declaration_line": 35,
           "lines": [
-            28
+            35
           ]
         },
         {
           "kind": "type",
           "name": "RaceGuiExports",
-          "declaration_line": 29,
+          "declaration_line": 36,
           "lines": [
-            29
+            36
           ]
         },
         {
           "kind": "type",
           "name": "RaceTrackGuiExports",
-          "declaration_line": 32,
+          "declaration_line": 39,
           "lines": [
-            32
+            39
           ]
         }
       ]
@@ -213851,81 +214138,25 @@
       "path": "src/modules/race.c",
       "symbol": "UnkStruct_004005C8",
       "lines": [
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
         11,
         12,
         13,
         14,
         15,
         16,
-        21
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        28
       ],
       "owners": [
         {
           "kind": "global",
           "name": "D_race_00404A30",
-          "declaration_line": 4,
-          "lines": [
-            4
-          ]
-        },
-        {
-          "kind": "global",
-          "name": "D_race_00404A38",
-          "declaration_line": 5,
-          "lines": [
-            5
-          ]
-        },
-        {
-          "kind": "global",
-          "name": "D_race_00404A40",
-          "declaration_line": 6,
-          "lines": [
-            6
-          ]
-        },
-        {
-          "kind": "global",
-          "name": "D_race_00404A48",
-          "declaration_line": 7,
-          "lines": [
-            7
-          ]
-        },
-        {
-          "kind": "global",
-          "name": "D_race_00404A50",
-          "declaration_line": 8,
-          "lines": [
-            8
-          ]
-        },
-        {
-          "kind": "global",
-          "name": "D_race_00404A58",
-          "declaration_line": 9,
-          "lines": [
-            9
-          ]
-        },
-        {
-          "kind": "global",
-          "name": "D_race_00404A60",
-          "declaration_line": 10,
-          "lines": [
-            10
-          ]
-        },
-        {
-          "kind": "global",
-          "name": "D_race_00404A68",
           "declaration_line": 11,
           "lines": [
             11
@@ -213933,7 +214164,7 @@
         },
         {
           "kind": "global",
-          "name": "D_race_00404A70",
+          "name": "D_race_00404A38",
           "declaration_line": 12,
           "lines": [
             12
@@ -213941,7 +214172,7 @@
         },
         {
           "kind": "global",
-          "name": "D_race_00404A78",
+          "name": "D_race_00404A40",
           "declaration_line": 13,
           "lines": [
             13
@@ -213949,7 +214180,7 @@
         },
         {
           "kind": "global",
-          "name": "D_race_00404A80",
+          "name": "D_race_00404A48",
           "declaration_line": 14,
           "lines": [
             14
@@ -213957,7 +214188,7 @@
         },
         {
           "kind": "global",
-          "name": "D_race_00404A88",
+          "name": "D_race_00404A50",
           "declaration_line": 15,
           "lines": [
             15
@@ -213965,7 +214196,47 @@
         },
         {
           "kind": "global",
-          "name": "D_race_00404A90",
+          "name": "D_race_00404A58",
+          "declaration_line": 16,
+          "lines": [
+            16
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_race_00404A60",
+          "declaration_line": 17,
+          "lines": [
+            17
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_race_00404A68",
+          "declaration_line": 18,
+          "lines": [
+            18
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_race_00404A70",
+          "declaration_line": 19,
+          "lines": [
+            19
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_race_00404A78",
+          "declaration_line": 20,
+          "lines": [
+            20
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_race_00404A80",
           "declaration_line": 21,
           "lines": [
             21
@@ -213973,10 +214244,26 @@
         },
         {
           "kind": "global",
-          "name": "D_race_00404A98",
-          "declaration_line": 16,
+          "name": "D_race_00404A88",
+          "declaration_line": 22,
           "lines": [
-            16
+            22
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_race_00404A90",
+          "declaration_line": 28,
+          "lines": [
+            28
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_race_00404A98",
+          "declaration_line": 23,
+          "lines": [
+            23
           ]
         }
       ]
@@ -220953,16 +221240,16 @@
       "path": "src/modules/race.c",
       "symbol": "Update parallel player-gate bytes and count word-5C and byte-1D gates. * Word5C calls CARAUDIO34, PLYR20 and SND E4 before reloading player/count. * Byte1D uses a mode snapshot, reloaded only after the mode3 byte write. * Actual resu loader binds RESULTS08, which dispatches shared result state; * REPLAY14 clears a shared byte and ignores the prepared count argument. * RE_ORIGINAL_QUIRK: zero count can satisfy both post-loop equality tests. * RE_UNKNOWN: gate/mode/state meanings, reachable count/index domains, list * extent, nullable inputs, aliases and callback lifetimes need original * producers/callers. No complete array or race-end policy is established. * A readable draft is 572 versus 568 native bytes, with 105 differing words. * Both frames are 64 bytes; retained settings/export bases become repeated * global-address materializations, constant3 is kept in a saved register, * and the state5 store/settings-read schedule differs. The complete 31- * versus 43-record relocation lists differ. Retain original assembly.",
       "lines": [
-        152
+        159
       ],
       "evidence": "Update parallel player-gate bytes and count word-5C and byte-1D gates. * Word5C calls CARAUDIO34, PLYR20 and SND E4 before reloading player/count. * Byte1D uses a mode snapshot, reloaded only after the mode3 byte write. * Actual resu loader binds RESULTS08, which dispatches shared result state; * REPLAY14 clears a shared byte and ignores the prepared count argument. * RE_ORIGINAL_QUIRK: zero count can satisfy both post-loop equality tests. * RE_UNKNOWN: gate/mode/state meanings, reachable count/index domains, list * extent, nullable inputs, aliases and callback lifetimes need original * producers/callers. No complete array or race-end policy is established. * A readable draft is 572 versus 568 native bytes, with 105 differing words. * Both frames are 64 bytes; retained settings/export bases become repeated * global-address materializations, constant3 is kept in a saved register, * and the state5 store/settings-read schedule differs. The complete 31- * versus 43-record relocation lists differ. Retain original assembly.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_race_00402E98",
-          "declaration_line": 167,
+          "declaration_line": 174,
           "lines": [
-            152
+            159
           ]
         }
       ]
@@ -225684,16 +225971,16 @@
       "path": "src/modules/race.c",
       "symbol": "Consume the pending race sound request for kinds 0, 1 and 2. * Select the original sound IDs and shared sound level; other kinds leave * the pending flag unchanged. The specific in-game cue meanings are unproven.",
       "lines": [
-        281
+        406
       ],
       "evidence": "Consume the pending race sound request for kinds 0, 1 and 2. * Select the original sound IDs and shared sound level; other kinds leave * the pending flag unchanged. The specific in-game cue meanings are unproven.",
       "owners": [
         {
           "kind": "function",
           "name": "racePlayPendingSoundByKind",
-          "declaration_line": 284,
+          "declaration_line": 409,
           "lines": [
-            281
+            406
           ]
         }
       ]

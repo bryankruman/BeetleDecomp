@@ -36,7 +36,7 @@ def declared_assembly_data(root):
             raise ValueError('Declared readonly prefix is missing or changed: ' + assembly)
         if assembly in declared:
             raise ValueError('Multiple owners declare the same readonly prefix: ' + assembly)
-        tables = layout['tables'] if layout['version'] in (2, 3) else [layout]
+        tables = layout['tables'] if layout['version'] in (2, 3, 4) else [layout]
         owned_bytes = sum(table['table_end'] - table['table_begin'] for table in tables)
         declared[assembly] = {
             'source': layout['source'], 'symbol': path.stem, 'assembly': assembly,
@@ -48,10 +48,33 @@ def declared_assembly_data(root):
             'compiler_owned_readonly_bytes': owned_bytes,
             'ownership': 'preserved-original-readonly-prefix',
         }
+        if layout['version'] == 4:
+            # One full-section ownership row; islands are exact subordinate
+            # data references, not functions or another copy of section totals.
+            islands = []
+            for island in layout['retained_islands']:
+                if island is None:
+                    continue
+                name = island['assembly']
+                data_path = inside(root, name)
+                if not data_path.is_file() or data_path.read_bytes() != suffix[name]:
+                    raise ValueError('Declared readonly island is missing or changed: ' + name)
+                islands.append({'assembly': name, 'bytes': island['end'] - island['begin'],
+                                'begin': island['begin'], 'end': island['end'],
+                                'assembly_sha256': sha(data_path.read_bytes()),
+                                'readonly_sha256': island['readonly_sha256']})
+            declared[assembly]['retained_islands'] = islands
     return declared
 
 def collect(root):
     declared_data = declared_assembly_data(root)
+    island_data = {}
+    for row in declared_data.values():
+        for island in row.get('retained_islands', []):
+            name = island['assembly']
+            if name in island_data or name in declared_data:
+                raise ValueError('Readonly island has multiple owners: ' + name)
+            island_data[name] = row['source']
     assembly_data = []
     unresolved = []
     address_names = []
@@ -66,7 +89,13 @@ def collect(root):
                     raise ValueError('Readonly prefix referenced by undeclared source: ' + match[1])
                 assembly_data.append(dict(row))
                 continue
-            if match[1].endswith('.rodata-prefix.s'):
+            if match[1] in island_data:
+                if island_data[match[1]] != source.relative_to(root).as_posix():
+                    raise ValueError('Readonly island referenced by undeclared source: ' + match[1])
+                # Its one full-section owner row already includes this exact
+                # island, so section storage/counters cannot be counted twice.
+                continue
+            if match[1].endswith(('.rodata-prefix.s', '.rodata-island.s')):
                 raise ValueError('Readonly prefix has no validated ownership metadata: ' + match[1])
             asm = root / match[1]
             name = asm.stem
@@ -102,7 +131,8 @@ def collect(root):
             'address_named_c': address_names,
             'limitations': ['Source pragmas include conditional assembly fallbacks; no completion percentage is inferred.',
                            'Validated retained readonly prefixes are reported separately; assembly_references and code bytes describe instruction functions only.',
-                           'Address-name scan includes recovered entrypoints and allows meaningful func_* names; it is not a full semantic/comment audit.']}
+                           'Address-name scan includes recovered entrypoints and allows meaningful func_* names; it is not a full semantic/comment audit.'] +
+                           (['Validated readonly island pragmas are included in their prefix ownership row; assembly_data_references counts section ownership rows.'] if island_data else [])}
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)

@@ -86,6 +86,8 @@ def render(layout, witness):
 def load(root, config, module):
     path = inside(root, config)
     layout = json.loads(path.read_text(encoding='utf-8'))
+    if layout.get('version') == 4:
+        return load_v4(root, layout, module)
     if layout.get('version') == 3:
         return load_v3(root, layout, module)
     if layout.get('version') == 2:
@@ -137,6 +139,8 @@ def host_text(layout, raw, suffix):
 
 
 def validate_source(root, layout):
+    if layout['version'] == 4:
+        return validate_source_v4(root, layout)
     if layout['version'] == 3:
         return validate_source_v3(root, layout)
     if layout['version'] == 2:
@@ -197,6 +201,8 @@ def validate_unused_owner_asm(layout, path, name):
 
 
 def check_users(root, layout, decoded, extra_original_data=()):
+    if layout['version'] == 4:
+        return check_users_v4(root, layout, decoded)
     if layout['version'] == 3:
         return check_users_v3(root, layout, decoded)
     if layout['version'] == 2:
@@ -247,6 +253,8 @@ def prepare(root, config, module, binary):
     """Read-only preflight before any module extraction output is written."""
     root = Path(root).resolve()
     layout, decoded, prefix, suffix = load(root, config, module)
+    if layout['version'] == 4:
+        return prepare_v4(root, config, module, binary, layout, decoded, prefix, suffix)
     if layout['version'] == 3:
         return prepare_v3(root, config, module, binary, layout, decoded, prefix, suffix)
     if layout['version'] == 2:
@@ -272,6 +280,8 @@ def prepare(root, config, module, binary):
 
 def apply(plan):
     """Use normal regenerated original ASM hosts and retained readonly spans."""
+    if plan['layout']['version'] == 4:
+        return apply_v4(plan)
     if plan['layout']['version'] == 3:
         return apply_v3(plan)
     if plan['layout']['version'] == 2:
@@ -753,6 +763,248 @@ def apply_v3(plan):
             path.parent.mkdir(parents=True, exist_ok=True)
             temporary = path.with_name(path.name + '.readonly-layout.tmp')
             require(not temporary.exists(), 'V3 temporary output already exists')
+            temporary.write_bytes(contents)
+            staged.append((temporary, path))
+        for temporary, path in staged:
+            os.replace(temporary, path)
+    finally:
+        for temporary, _ in staged:
+            if temporary.exists():
+                temporary.unlink()
+    monolithic = inside(root, layout['monolithic_assembly'])
+    if monolithic.exists():
+        monolithic.unlink()
+
+
+
+def v4_island(begin, end, text):
+    """Literal non-relocating words only: reserve data, never fabricate TEXT."""
+    fragment = '.section .rodata\n' + retained(text)
+    lines = re.sub(r'/\*.*?\*/', '', fragment, flags=re.S).splitlines()
+    labels = []
+    words = 0
+    for line in lines[1:]:
+        line = line.strip()
+        if not line:
+            continue
+        label = re.fullmatch(r'glabel ([A-Za-z_][A-Za-z0-9_]*)', line)
+        if label:
+            labels.append(label[1])
+            continue
+        require(re.fullmatch(r'\.word 0x[0-9A-Fa-f]{8}', line) is not None,
+                'V4 island must contain only literal non-relocating words and labels')
+        words += 1
+    require(labels and len(labels) == len(set(labels)) and words * 4 == end - begin,
+            'V4 island labels/word extent changed')
+    original_bytes(fragment, begin, end)
+    return fragment.encode('utf-8')
+
+
+def load_v4(root, layout, module):
+    common = {'version', 'module', 'source', 'witness', 'witness_sha256',
+              'readonly_sha256', 'begin', 'end', 'prefix_assembly',
+              'monolithic_assembly', 'tables', 'retained_islands'}
+    table_keys = {'table_begin', 'table_end', 'table_label', 'owner_original_symbol',
+                  'owner_c_symbol', 'duplicate_assembly', 'owner_address', 'owner_bytes',
+                  'owner_instruction_sha256', 'owner_asm_normalized_sha256'}
+    island_keys = {'begin', 'end', 'assembly', 'readonly_sha256'}
+    require(set(layout) in (common, common | {'object_ordering'}) and type(layout['version']) is int and
+            layout['version'] == 4 and layout['module'] == module,
+            'unsupported V4 metadata schema/module')
+    if 'object_ordering' in layout:
+        order=layout['object_ordering']
+        require(isinstance(order,dict) and set(order)=={'helper','helper_sha256','contract'}, 'invalid V4 object-order schema')
+        require(module=='race' and layout['source']=='src/modules/race.c' and order['helper']=='tools/reorderRaceReadonly.py', 'object-order scope is only the reviewed RACE source')
+        require(isinstance(order['helper_sha256'],str) and re.fullmatch(r'[0-9a-f]{64}',order['helper_sha256']), 'invalid object-order helper hash')
+        c=order['contract']
+        keys={'schema','source_object','spans','floats','affected_references','readonly_prefix_sha256','first_table_sha256','retained_island_sha256','second_table_sha256','native_readonly_sha256','table_native_target_pairs','original_non_table_RO_records'}
+        require(isinstance(c,dict) and set(c)==keys and c['schema']==1 and c['source_object']=='build/src/modules/race.o', 'invalid object-order contract')
+        require(c['spans']==[[1504,1528,1528],[1528,1552,1504]] and c['native_readonly_sha256']==layout['readonly_sha256'], 'object-order spans/native bytes changed')
+        require(c['floats']==['D_race_004047'+s for s in ('C8','CC','D0','D4','D8','DC')] and len(c['affected_references'])==7, 'object-order symbol/reference closure changed')
+        require(all(isinstance(c[k],str) and re.fullmatch(r'[0-9a-f]{64}',c[k]) for k in keys if k.endswith('_sha256')), 'invalid object-order storage hash')
+        require(len(c['table_native_target_pairs'])==14 and len(c['original_non_table_RO_records'])==15, 'object-order complete readonly records changed')
+    tables, islands = layout['tables'], layout['retained_islands']
+    require(isinstance(tables, list) and len(tables) > 0 and
+            isinstance(islands, list) and len(islands) == len(tables),
+            'each V4 table requires an explicit following-island entry')
+    paths = [layout[key] for key in ('source', 'witness', 'prefix_assembly', 'monolithic_assembly')]
+    numbers = [layout['begin'], layout['end']]
+    hashes = [layout['witness_sha256'], layout['readonly_sha256']]
+    symbols = []
+    require(isinstance(layout['prefix_assembly'], str) and
+            layout['prefix_assembly'].endswith('.rodata-prefix.s'),
+            'V4 prefix must not match monolithic *.rodata.s wildcard')
+    for table, island in zip(tables, islands):
+        require(isinstance(table, dict) and set(table) == table_keys and
+                (island is None or isinstance(island, dict) and set(island) == island_keys),
+                'unsupported V4 table/island schema')
+        numbers += [table[key] for key in ('table_begin', 'table_end', 'owner_address', 'owner_bytes')]
+        hashes += [table['owner_instruction_sha256'], table['owner_asm_normalized_sha256']]
+        paths.append(table['duplicate_assembly'])
+        symbols += [table['owner_original_symbol'], table['owner_c_symbol']]
+        encoded = re.fullmatch(r'func_' + re.escape(module) + r'_([0-9A-Fa-f]{8})', table['owner_original_symbol'])
+        require(encoded is not None and int(encoded[1], 16) == table['owner_address'],
+                'V4 original owner symbol and address disagree')
+        require(isinstance(table['table_label'], str) and
+                re.fullmatch(r'[A-Za-z_][A-Za-z0-9_]*', table['table_label']), 'invalid V4 table symbol')
+        if island is not None:
+            numbers += [island['begin'], island['end']]
+            hashes.append(island['readonly_sha256'])
+            paths.append(island['assembly'])
+            require(isinstance(island['assembly'], str) and island['assembly'].endswith('.rodata-island.s'),
+                    'V4 island must use a data-only .rodata-island.s path')
+    require(all(type(n) is int and 0 <= n < 2**32 and n % 4 == 0 for n in numbers),
+            'V4 addresses and lengths must be unsigned word-aligned integers')
+    require(all(isinstance(value, str) and re.fullmatch(r'[0-9a-f]{64}', value) for value in hashes),
+            'expected V4 SHA-256')
+    require(all(isinstance(value, str) and re.fullmatch(r'[A-Za-z_][A-Za-z0-9_]*', value)
+                for value in symbols) and len(set(symbols)) == len(symbols),
+            'V4 owner symbols must be valid and distinct')
+    require(len({t['table_label'] for t in tables}) == len(tables), 'duplicate V4 compiler table')
+    for path in paths:
+        inside(root, path)
+    require(len(set(paths)) == len(paths), 'overlapping V4 source/retained/owner paths')
+    require(layout['begin'] < tables[0]['table_begin'], 'V4 retained prefix must be nonempty')
+    for i, (table, island) in enumerate(zip(tables, islands)):
+        following = tables[i + 1]['table_begin'] if i + 1 < len(tables) else layout['end']
+        require(table['table_begin'] < table['table_end'] <= following and table['owner_bytes'] > 0,
+                'V4 tables must be nonempty and disjoint in physical order')
+        if i + 1 < len(tables):
+            require(table['owner_address'] + table['owner_bytes'] <= tables[i + 1]['owner_address'],
+                    'V4 C owners must follow nonoverlapping text order')
+        if island is None:
+            require(table['table_end'] == following, 'null V4 island conceals retained bytes')
+        else:
+            require(table['table_end'] == island['begin'] < island['end'] == following,
+                    'V4 island must cover the complete exact table gap')
+    raw = inside(root, layout['witness']).read_bytes()
+    require(sha(raw) == layout['witness_sha256'], 'V4 original ASM witness changed')
+    witness = raw.decode('utf-8')
+    decoded = original_bytes(witness, layout['begin'], layout['end'])
+    require(sha(decoded) == layout['readonly_sha256'], 'V4 original readonly bytes changed')
+    bounds = v3_witness_bounds(layout, witness)
+    for table, (start, stop) in zip(tables, bounds):
+        data = original_bytes(witness[start:stop], table['table_begin'], table['table_end'])
+        lo, hi = table['table_begin'] - layout['begin'], table['table_end'] - layout['begin']
+        require(data == decoded[lo:hi], 'V4 table differs from complete original section')
+        targets = struct.unpack('>' + 'I' * (len(data) // 4), data)
+        require(all(table['owner_address'] <= target < table['owner_address'] + table['owner_bytes']
+                    for target in targets), 'V4 table target leaves its original owner')
+        render(dict(layout, **table), witness)
+    prefix = ('.section .rodata\n' + retained(witness[:bounds[0][0]])).encode('utf-8')
+    require(original_bytes(prefix.decode(), layout['begin'], tables[0]['table_begin']) ==
+            decoded[:tables[0]['table_begin'] - layout['begin']], 'V4 prefix coverage mismatch')
+    fragments = {}
+    for i, island in enumerate(islands):
+        stop = bounds[i + 1][0] if i + 1 < len(bounds) else len(witness)
+        contents = witness[bounds[i][1]:stop]
+        if island is None:
+            require(not retained(contents).strip(), 'adjacent V4 tables conceal original contents')
+            continue
+        fragment = v4_island(island['begin'], island['end'], contents)
+        data = original_bytes(fragment.decode(), island['begin'], island['end'])
+        require(data == decoded[island['begin'] - layout['begin']:island['end'] - layout['begin']]
+                and sha(data) == island['readonly_sha256'], 'V4 island coverage/hash mismatch')
+        fragments[island['assembly']] = fragment
+    return layout, decoded, prefix, fragments
+
+
+def validate_source_v4(root, layout):
+    source = inside(root, layout['source']).read_text(encoding='utf-8')
+    tokens = re.compile(r'"(?:\\.|[^"\\])*"|\'(?:\\.|[^\'\\])*\'|/\*.*?\*/|//[^\n]*', re.S)
+    code = tokens.sub(lambda m: ''.join('\n' if c == '\n' else ' ' for c in m[0])
+                      if m[0].startswith(('/*', '//')) else m[0], source)
+    prefix = '#pragma GLOBAL_ASM("' + layout['prefix_assembly'] + '")'
+    require(code.count(prefix) == 1, 'V4 requires exactly one active retained prefix')
+    positions = [code.index(prefix)]
+    owner_offsets = []
+    pragmas = {prefix}
+    # Brace counting uses masked strings as well as comments; source positions stay exact.
+    braces = tokens.sub(lambda m: ''.join('\n' if c == '\n' else ' ' for c in m[0]), source)
+    for table, island in zip(layout['tables'], layout['retained_islands']):
+        owner = table['owner_c_symbol']
+        matches = list(re.finditer(r'^[ \t]*[A-Za-z_][^;{}\n]*\b' + re.escape(owner) +
+                                  r'\s*\([^;{}]*\)\s*\{', code, re.M))
+        require(len(matches) == 1, 'V4 requires exactly one complete C table owner')
+        match = matches[0]
+        owner_offsets.append(match.start())
+        positions.append(match.start())
+        depth, cursor = 1, match.end()
+        while depth and cursor < len(braces):
+            depth += (braces[cursor] == '{') - (braces[cursor] == '}')
+            cursor += 1
+        require(depth == 0, 'V4 unterminated C owner body')
+        positions.append(cursor)
+        for name in (table['owner_original_symbol'], owner):
+            require(not re.search(r'#pragma GLOBAL_ASM\("[^"\n]*/' + re.escape(name) + r'\.s"\)', code),
+                    'V4 owner still assembly-backed')
+        if island is not None:
+            pragma = '#pragma GLOBAL_ASM("' + island['assembly'] + '")'
+            require(code.count(pragma) == 1, 'V4 requires exactly one active data-only island')
+            pragmas.add(pragma)
+            positions.append(code.index(pragma))
+    depth = offset = 0
+    for line in code.splitlines(keepends=True):
+        directive = re.match(r'^\s*#\s*(if|ifdef|ifndef|endif)\b', line)
+        if directive:
+            depth += -1 if directive[1] == 'endif' else 1
+            require(depth >= 0, 'unbalanced V4 source conditionals')
+        for pragma in pragmas:
+            if pragma in line:
+                require(depth == 0 and line.strip() == pragma, 'V4 ownership pragma must be unconditional standalone source')
+        if any(offset <= position < offset + len(line) for position in owner_offsets):
+            require(depth == 0, 'V4 C table owner must be unconditional')
+        offset += len(line)
+    require(depth == 0, 'unbalanced V4 source conditionals')
+    definitions = list(re.finditer(r'^[ \t]*[A-Za-z_][^;{}\n]*\([^;{}]*\)\s*\{', code, re.M))
+    require(all(positions[0] < m.start() for m in definitions), 'V4 prefix must precede every function definition')
+    require(all(a < b for a, b in zip(positions, positions[1:])),
+            'V4 owners and data-only islands must follow complete body/readonly order')
+
+
+def check_users_v4(root, layout, decoded):
+    _, original, prefix, fragments = load_v4(root, layout, layout['module'])
+    require(original == decoded, 'V4 user scan original readonly disagreement')
+    allowed = []
+    for name, contents in [(layout['prefix_assembly'], prefix), *fragments.items()]:
+        path = inside(root, name)
+        if path.exists():
+            require(path.is_file() and path.read_bytes() == contents, 'V4 generated retained data changed')
+            allowed.append(name)
+    for table in layout['tables']:
+        check_users(root, dict(layout, **table, version=1), decoded, allowed)
+
+
+def prepare_v4(root, config, module, binary, layout, decoded, prefix, fragments):
+    raw = Path(binary).read_bytes()
+    require(len(raw) >= 0x50 and raw[:4] == b'FORM' and raw[8:12] == b'MODU' and
+            raw[0x18:0x1C] == b'COMM', 'invalid V4 original patched module header')
+    text_bytes, readonly_bytes = struct.unpack_from('>II', raw, 0x28)
+    require(0x400000 + text_bytes == layout['begin'] and readonly_bytes == len(decoded),
+            'V4 original module section boundaries changed')
+    require(raw[0x50 + text_bytes:0x50 + text_bytes + readonly_bytes] == decoded,
+            'V4 actual patched readonly differs from original witness')
+    validate_source_v4(root, layout)
+    check_users_v4(root, layout, decoded)
+    monolithic = inside(root, layout['monolithic_assembly'])
+    if monolithic.exists():
+        require(monolithic.read_bytes() == inside(root, layout['witness']).read_bytes(),
+                'unexpected V4 monolithic readonly source')
+    return {'root': root, 'config': config, 'module': module, 'binary': Path(binary),
+            'layout': layout, 'prefix': prefix, 'suffix': fragments}
+
+
+def apply_v4(plan):
+    plan = prepare(plan['root'], plan['config'], plan['module'], plan['binary'])
+    root, layout = plan['root'], plan['layout']
+    outputs = [(inside(root, layout['prefix_assembly']), plan['prefix'])]
+    outputs += [(inside(root, name), contents) for name, contents in plan['suffix'].items()]
+    staged = []
+    try:
+        for path, contents in outputs:
+            path.parent.mkdir(parents=True, exist_ok=True)
+            temporary = path.with_name(path.name + '.readonly-layout.tmp')
+            require(not temporary.exists() and not temporary.is_symlink(), 'V4 temporary output already exists')
             temporary.write_bytes(contents)
             staged.append((temporary, path))
         for temporary, path in staged:
