@@ -1176,6 +1176,12 @@ void func_selection_00402FE4(void) {
 /* Enter the two-player setup only when controller index one is available.
  * Otherwise reset transient selection state. Preserve the original state node,
  * AI count zero, player count two and opaque mode value three. */
+/*
+ * Reset transient state when controller test 1 is zero; otherwise perform
+ * the exit callback, set two-player and AI settings, select the origin node
+ * and open the next menu.
+ */
+#line 758 "src/modules/selection.c"
 void selectionStartTwoPlayerMode(void) {
     if (((SelectionControllerStatusExports *)gUvContExports)->test(1) == 0) {
         selectionResetTransientWords();
@@ -1216,6 +1222,11 @@ void func_selection_004030E4(void) {
 #line 778 "src/modules/selection.c"
 /* Prepare the multiplayer menu, raise player count to two only when
  * smaller, then open the original multiplayer node. */
+/*
+ * Exit the current menu, raise the stored player count to two only when
+ * smaller, then activate the multiplayer node.
+ */
+#line 780 "src/modules/selection.c"
 void selectionOpenMultiplayerMenuAtLeastTwo(void) {
     selectionRunCurrentMenuExitCallback();
     if (gGameSettings[0].numPlayers < 2) {
@@ -1345,6 +1356,12 @@ void func_selection_0040390C(void) {
 #line 879 "src/modules/selection.c"
 /* Reset transient menu resources, select shared mode one and play race-mode
  * voice zero. Copy the localized PLAYER 1 label, then enter the original node. */
+/*
+ * Exit the current menu, set the selection flag to one, request race-mode
+ * voice zero, format text indexed by the language word and activate the
+ * player-one menu.
+ */
+#line 881 "src/modules/selection.c"
 void selectionPreparePlayerOneMenu(void) {
     selectionRunCurrentMenuExitCallback();
     D_8002CC64 = 1;
@@ -1358,6 +1375,12 @@ void selectionPreparePlayerOneMenu(void) {
 /* Preserve the return link for three recognized origin nodes. The second
  * recognized origin also runs the original reset helper before menu entry.
  * Other origins leave the return link unchanged. */
+/*
+ * Remember only the three recognized origin nodes, issue the 0xBC voice for
+ * its specific origin, then exit and activate the destination; an
+ * unrecognized origin leaves the remembered node unchanged.
+ */
+#line 884 "src/modules/selection.c"
 void selectionOpenMenuPreservingOrigin(void) {
     if (D_selection_00421D1C == &D_selection_0041FCF0) D_selection_0041FDC0 = &D_selection_0041FCF0;
     else if (D_selection_00421D1C == &D_selection_0041FD74) {
@@ -1391,6 +1414,11 @@ void func_selection_00403A9C(void) {
 /* Preserve the current return node only for the three original recognized
  * menus, reset selection resources, then enter the shared destination menu.
  * Other origins keep the previously stored return pointer. */
+/*
+ * Save the return node only for the three recognized origins, then exit and
+ * activate the next menu; other origins retain the previous saved node.
+ */
+#line 903 "src/modules/selection.c"
 void selectionOpenMenuPreservingReturnNode(void) {
     if (D_selection_00421D1C == &D_selection_0041FC80) D_selection_0041FE64 = &D_selection_0041FC80;
     else if (D_selection_00421D1C == &D_selection_0041FDBC) D_selection_0041FE64 = &D_selection_0041FDBC;
@@ -1408,6 +1436,11 @@ void func_selection_00403B40(void) {
 #line 907 "src/modules/selection.c"
 /* Select 2 players, play the corresponding count voice and open the
  * original shared multiplayer menu node. */
+/*
+ * Store two players, request player-count voice index zero, then exit and
+ * activate the multiplayer node in that order.
+ */
+#line 909 "src/modules/selection.c"
 void selectionChoose2Players(void) {
     gNumPlayers = 2;
     selectionPlayPlayerCountVoiceIndex(0);
@@ -1419,6 +1452,11 @@ void selectionChoose2Players(void) {
 #line 914 "src/modules/selection.c"
 /* Select 3 players, play the corresponding count voice and open the
  * original shared multiplayer menu node. */
+/*
+ * Store three players, request player-count voice index one, then exit and
+ * activate the multiplayer node in that order.
+ */
+#line 916 "src/modules/selection.c"
 void selectionChoose3Players(void) {
     gNumPlayers = 3;
     selectionPlayPlayerCountVoiceIndex(1);
@@ -1430,6 +1468,11 @@ void selectionChoose3Players(void) {
 #line 921 "src/modules/selection.c"
 /* Select 4 players, play the corresponding count voice and open the
  * original shared multiplayer menu node. */
+/*
+ * Store four players, request player-count voice index two, then exit and
+ * activate the multiplayer node in that order.
+ */
+#line 923 "src/modules/selection.c"
 void selectionChoose4Players(void) {
     gNumPlayers = 4;
     selectionPlayPlayerCountVoiceIndex(2);
@@ -2312,6 +2355,14 @@ void func_selection_0040B13C(void) {
 /* Update the menu, mark a changed selection, and position its preview.
  * Update one object handle per configured player; handles are consecutive
  * four-byte words, and the player count is re-read after each callback. */
+/*
+ * Compare the nested signed menu-state field across the update callback, set
+ * the voice gate when it changes, rotate the view and update each player
+ * object while reloading the live player count. RE_UNKNOWN: the nested field
+ * and callback-driven transition have no established higher-level state
+ * meaning.
+ */
+#line 1218 "src/modules/selection.c"
 void selectionUpdateMenuAndPlayerObjects(void) {
     s16 previous;
     s32 *object;
@@ -3687,6 +3738,11 @@ void selectionPlayGatedVoice7B(void) {
 #line 1882 "src/modules/selection.c"
 /* Select race-mode voice E0/E1 for option 0/1 through the original speech
  * helper and shared gate. Unsupported options do nothing. */
+/*
+ * Request the race-mode voice through its gate for options 0 or 1;
+ * unsupported options issue no request.
+ */
+#line 1884 "src/modules/selection.c"
 void selectionPlayRaceModeVoice(s32 option) {
     switch (option) {
     case 0:
@@ -3716,6 +3772,11 @@ void selectionPlayGatedVoiceB6(void) {
 #line 1892 "src/modules/selection.c"
 /* Select the gated voice for tournament indices zero through three.
  * Unsupported indices do nothing; callers also set tournament race counts. */
+/*
+ * Request tournament voices through the shared gate only for options 0
+ * through 3; unsupported options issue no request.
+ */
+#line 1894 "src/modules/selection.c"
 void selectionPlayTournamentVoice(s32 option) {
     switch (option) {
     case 0: selectionPlayGatedVoice(0xBF, &D_selection_00420E7C); return;
@@ -3729,6 +3790,11 @@ void selectionPlayTournamentVoice(s32 option) {
 #line 1894 "src/modules/selection.c"
 /* Select the voice for the seven-AI, one-AI or no-AI race preset (options
  * 0/1/2 map to E2/B8/E3). Unsupported options leave the original gate alone. */
+/*
+ * Request the selected AI-race preset voice through its gate for options 0
+ * through 2; unsupported options issue no request.
+ */
+#line 1896 "src/modules/selection.c"
 void selectionPlayAiRacePresetVoice(s32 option) {
     switch (option) {
     case 0:
@@ -3761,6 +3827,11 @@ void selectionApplySoundOptions(void) {
 #line 1898 "src/modules/selection.c"
 /* Select two-, three- or four-player speech using zero-based option 0/1/2
  * and the original E5/EE/EF sounds. Unsupported options do nothing. */
+/*
+ * Request the player-count voice through its gate for indices 0 through 2;
+ * unsupported indices issue no request.
+ */
+#line 1900 "src/modules/selection.c"
 void selectionPlayPlayerCountVoiceIndex(s32 option) {
     switch (option) {
     case 0:
@@ -4593,6 +4664,11 @@ void selectionApplyChosenLanguageAndReloadTextures(void) {
 #line 2108 "src/modules/selection.c"
 /* Set language ID 1 and the speed option byte to one, then return
  * through the existing menu node. Language labels are not inferred here. */
+/*
+ * Store language value one and speed-option value one, then activate the
+ * node read from the current menu word at offset 4.
+ */
+#line 2110 "src/modules/selection.c"
 void selectionChooseLanguage1AndSpeedOption(void) {
     gGameSettings->currentLanguage = 1;
     gGameSettings->optionsSpeed = 1;
@@ -4603,6 +4679,11 @@ void selectionChooseLanguage1AndSpeedOption(void) {
 #line 2114 "src/modules/selection.c"
 /* Set language ID 2 and the speed option byte to one, then return
  * through the existing menu node. Language labels are not inferred here. */
+/*
+ * Store language value two and speed-option value one, then activate the
+ * node read from the current menu word at offset 4.
+ */
+#line 2116 "src/modules/selection.c"
 void selectionChooseLanguage2AndSpeedOption(void) {
     gGameSettings->currentLanguage = 2;
     gGameSettings->optionsSpeed = 1;

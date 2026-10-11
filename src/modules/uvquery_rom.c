@@ -43,6 +43,14 @@ s32 D_uvquery_rom_00400658;
 query_78 *D_uvquery_rom_0040065C;
 u16 D_uvquery_rom_00400660;
 
+/*
+ * Update the file allocation pointer, publish the eighteen query exports,
+ * then allocate five parallel/auxiliary arrays and clear four controls.
+ * Preserve allocation order and each reload of the shared capacity.
+ * RE_UNKNOWN: Capacity sign/overflow, allocation failure, array backing
+ * and provider lifetime are not validated by this initializer.
+ */
+#line 46 "src/modules/uvquery_rom.c"
 void __entrypoint_func_uvquery_rom_400000(UvQuery_Exports *exports) {
     uvUpdateFileAllocPtr(exports);
     exports->uvQueryCleanup = uvQueryCleanup;
@@ -137,6 +145,17 @@ s32 uvQueryGetAuxiliaryArrayAddress(void) {
  * RE_UNKNOWN: count bounds, array overlap and scalar domains need caller proof.
  * Existing source records the original name as _uvDbSortHits.
  */
+/*
+ * Swap parallel scalar, integer and vector entries on strict scalar less-
+ * comparison, preserving pointer reloads and component store order. Trim
+ * trailing 2.0f entries by decreasing the shared hit count.
+ * RE_ORIGINAL_QUIRK: count >= capacity returns, but negative counts are
+ * not rejected. Preserve the first scan and its UV_OLD-only near-equality
+ * marking branch; the current native build retains the empty inner scan.
+ * RE_UNKNOWN: Array extents/overlap, negative counts and nonfinite scalar
+ * domains need caller proof; no stable-order or finite-input claim is made.
+ */
+#line 122 "src/modules/uvquery_rom.c"
 void uvQueryDoSorting(void) {
     s32 firstIndex;
     s32 secondIndex;

@@ -114,9 +114,9 @@ static UvIntersect_Exports *sUvIntersectExports;
 static UnkTerra_Exports *sUvTerraExports;
 static UvLights_Exports *sUvLightExports;
 
-void __entrypoint_func_uvdobj_rom_400000(UvDobj_Exports *exports) {
-    DobjSettings *settings;
-    s32 i;
+void __entrypoint_func_uvdobj_rom_400000(UvDobj_Exports *exports) { /* Publish the object-module exports, load provider tables, initialize per-channel scalars and object storage, then bind the shared query arrays. */
+    DobjSettings *objectSettings;
+    s32 entryIndex;
 
     uvUpdateFileAllocPtr(exports);
     exports->uvDobjSetSharedQueryIndexPair = uvDobjSetSharedQueryIndexPair;
@@ -145,24 +145,24 @@ void __entrypoint_func_uvdobj_rom_400000(UvDobj_Exports *exports) {
     exports->uvDobjFindObjectContainingWorldPoint = uvDobjFindObjectContainingWorldPoint;
     exports->uvDobjCollectCapsuleOverlaps = uvDobjCollectCapsuleOverlaps;
     exports->D_uvdobj_rom_004039B0 = &D_uvdobj_rom_004039B0;
-    settings = uvGetSystemProp(SYSTEM_PROPID_DOBJ_SETTINGS);
-    if (settings == NULL) {
+    objectSettings = uvGetSystemProp(SYSTEM_PROPID_DOBJ_SETTINGS);
+    if (objectSettings == NULL) {
         sDObjsCount = 0x64;
         D_uvdobj_rom_004039C8 = 0x64;
         D_uvdobj_rom_004039CC = 0x12C;
     } else {
-        if (settings->dobjsCount != 0) {
-            sDObjsCount = settings->dobjsCount;
+        if (objectSettings->dobjsCount != 0) {
+            sDObjsCount = objectSettings->dobjsCount;
         } else {
             sDObjsCount = 0x64;
         }
-        if (settings->unk4 != 0) {
-            D_uvdobj_rom_004039C8 = settings->unk4;
+        if (objectSettings->unk4 != 0) {
+            D_uvdobj_rom_004039C8 = objectSettings->unk4;
         } else {
             D_uvdobj_rom_004039C8 = 0x64;
         }
-        if (settings->unk8 != 0) {
-            D_uvdobj_rom_004039CC = settings->unk8;
+        if (objectSettings->unk8 != 0) {
+            D_uvdobj_rom_004039CC = objectSettings->unk8;
         } else {
             D_uvdobj_rom_004039CC = 0x12C;
         }
@@ -183,16 +183,16 @@ void __entrypoint_func_uvdobj_rom_400000(UvDobj_Exports *exports) {
     sUvLightExports = uvLoadModule('LGHT');
     sUvChannel_Exports->uvChannelGetProperties(0, 0xD, &D_uvdobj_rom_004039F4, 0);
     D_uvdobj_rom_004039E8 = _uvMemAllocAlign8(D_uvdobj_rom_004039F4 * 4);
-    for (i = 0; i < D_uvdobj_rom_004039F4; i++) {
-        D_uvdobj_rom_004039E8[i] = 1.0f;
+    for (entryIndex = 0; entryIndex < D_uvdobj_rom_004039F4; entryIndex++) {
+        D_uvdobj_rom_004039E8[entryIndex] = 1.0f;
     }
 
     sDObjs = _uvMemAllocAlign8(sDObjsCount * sizeof(DObj));
     D_uvdobj_rom_004039B8 = _uvMemAllocAlign8(sDObjsCount * sizeof(s32));
     uvMemSet(sDObjs, 0, sDObjsCount * sizeof(DObj));
     uvMemSet(D_uvdobj_rom_004039B8, 0, sDObjsCount * sizeof(s32));
-    for (i = 0; i < sDObjsCount; i++) {
-        sDObjs[i].modelId = 0xFFFF;
+    for (entryIndex = 0; entryIndex < sDObjsCount; entryIndex++) {
+        sDObjs[entryIndex].modelId = 0xFFFF;
     }
 
     D_uvdobj_rom_004039BE = 0;
@@ -205,7 +205,7 @@ void __entrypoint_func_uvdobj_rom_400000(UvDobj_Exports *exports) {
     D_uvdobj_rom_004039F8 = sUvQueryExports->uvQueryGetSecondaryCountAddress();
     D_uvdobj_rom_004039EC = -1;
     D_uvdobj_rom_004039F0 = -1;
-}
+/* RE_UNKNOWN: Nonzero settings replace defaults 100, 100 and 300 without a positive-range check. Allocation success, repeated initialization and storage ownership remain unproved. */ }
 
 #line 210 "src/modules/uvdobj_rom.c"
 /* Store the original shared query index pair without adding range checks. */
@@ -284,7 +284,7 @@ void uvDobjSetLoadedModel(s32 objectId, s32 modelId) {
 }
 #line 269 "src/modules/uvdobj_rom.c"
 
-void uvDobjModel(s32 objId, s32 modelId) {
+void uvDobjModel(s32 objId, s32 modelId) { /* Replace or clear the selected model and update its matrix storage in native order. */
     f32 reciprocalScale;
     u8 newMatrixCount;
     u8 oldMatrixCount;
@@ -377,7 +377,7 @@ u16 uvDobjGetModel(s32 objId) {
     return sDObjs[objId].modelId;
 }
 
-void uvDobjProps(s32 objId, ...) {
+void uvDobjProps(s32 objId, ...) { /* Apply the zero-terminated property stream, retaining each selector-specific argument fetch and write. */
     va_list args;
     DObj *object; /* RE_UNKNOWN: object storage extent, aliases and lifetime need original allocators and export 0x1C callers. */
     f32 scalarMultiplier;
@@ -434,7 +434,7 @@ void uvDobjProps(s32 objId, ...) {
     va_end(args);
 }
 
-void uvDobjGetProp(s32 objectId, ...) {
+void uvDobjGetProp(s32 objectId, ...) { /* Read selected object fields into the output pointers consumed from the zero-terminated property stream. */
     DObj *object; /* RE_UNKNOWN: record/output extents, aliases and lifetime need original allocators and export 0x20 callers. */
     s16 propertySelector;
     va_list args;
@@ -610,7 +610,7 @@ void uvDobjClearFlagBits(s32 objectId, s32 mask) {
 }
 #line 559 "src/modules/uvdobj_rom.c"
 
-s32 uvDobjCreate(void) {
+s32 uvDobjCreate(void) { /* Claim the first record whose byte at offset 5 is zero, perform the partial reset and raise the object-ID limit when necessary. */
     s32 objectIndex; /* RE_UNKNOWN: count validity, record extents and allocation lifetime need original settings, allocators and export 0x3C callers. */
 
     for (objectIndex = 0; objectIndex < sDObjsCount; objectIndex++) { /* Native scans signed indices below the captured count; nonpositive counts return 0xFFFF. */

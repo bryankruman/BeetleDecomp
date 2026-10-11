@@ -220,6 +220,14 @@ void __entrypoint_func_uvsprt_rom_400298(UvSprt_Rom_Exports* exports) {
     }
 }
 
+/*
+ * Start drawing from the caller cursor, clear sprite attribute bit 0x20,
+ * and clear the next-list pointer before calling uvSpriteDraw. A nonzero
+ * return publishes the sprite next pointer minus one Gfx command.
+ * RE_UNKNOWN: Writable cursor capacity, sprite backing and aliases, and
+ * drawing-provider ownership and lifetime require caller/provider proof.
+ */
+#line 208 "src/modules/uvsprt_rom.c"
 void uvSpriteDisplayList(Gfx **displayListCursor, uvSprite_t *spriteRecord) {
     Sprite *spriteState = &spriteRecord->sprite;
     /* RE_UNKNOWN: cursor/sprite backing, writable capacity, aliases and lifetimes need original caller/producer proof. */
@@ -355,6 +363,16 @@ s16 uvGetSpriteHeight(s32 spriteId) {
     return sSprites[spriteId].sprite.height;
 }
 
+/*
+ * Consume sprite property codes through code zero. Set dimensions/scales,
+ * position, RGBA, record bytes and attribute bits; a texture selection
+ * looks up UVTX and runs both existing bitmap/initialization calls in order.
+ * RE_ORIGINAL_QUIRK: Only the upper sprite-index bound is checked. Unknown
+ * codes consume no payload; case 13 reads f32 directly from the va_list.
+ * RE_UNKNOWN: Negative indices, variadic caller packing/stream bounds,
+ * asset validity and old/new texture lifetimes are not proved here.
+ */
+#line 343 "src/modules/uvsprt_rom.c"
 void uvSprtProps(s32 spriteId, ...) {
     ParsedUVTX* textureConfig;
     Sprite* spriteState;
@@ -686,6 +704,14 @@ void uvDrawBitmap(Gfx **outDisplayList, Sprite *spriteState, Bitmap *bitmapState
 }
 #line 664 "src/modules/uvsprt_rom.c"
 
+/*
+ * Reset shared sprite attributes and the 320-by-240 scissor limits, then
+ * emit the existing sprite drawing setup commands and advance the caller
+ * cursor. Preserve command order and the exact texture/render-mode values.
+ * RE_UNKNOWN: Output capacity, cursor aliases and legal ordering with
+ * other drawing users require caller proof; no prior GPU state is saved.
+ */
+#line 665 "src/modules/uvsprt_rom.c"
 void uvSpriteDrawInit(Gfx **outDisplayList) {
     Gfx *displayListCursor;
 
@@ -1002,6 +1028,15 @@ Gfx* uvSpriteDraw(Sprite* inputSprite) {
 }
 #line 970 "src/modules/uvsprt_rom.c"
 
+/*
+ * Disable texturing and select shade combining. SP_TRANSPARENT selects
+ * opaque surface mode; SP_CUTOUT disables alpha comparison. Append the
+ * end command and publish the advanced cursor in this exact order.
+ * RE_UNKNOWN: Cursor capacity/aliases and shared drawing-state ordering
+ * require caller proof. This writes selected states without saving or
+ * restoring a complete earlier GPU state.
+ */
+#line 971 "src/modules/uvsprt_rom.c"
 void uvSpriteDrawFinish(Gfx **outDisplayList) {
     Gfx *displayListCursor;
 
