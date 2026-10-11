@@ -378,7 +378,7 @@
     "src/modules/ufo.c": "2165d432b44ec3455fea1108e6085e9a63349a706cc2d2a0eec1ef342231980d",
     "src/modules/ufogame.c": "607e9c04b757e9af7e22e26c02d46e554a04f5e7d37563c2c8a8f7f88c475fda",
     "src/modules/uvaudiomgr_rom.c": "cb40518b49e86ea9025f201cc76c808d3822a6d12242c8ee237f7a19799426ff",
-    "src/modules/uvbill_rom.c": "2116ae68bca893c71ac7116b9bf09b2c733b738a8c0e217fd75cb2e074fd18cc",
+    "src/modules/uvbill_rom.c": "3f05b1d5433aa4fd309fa71fcce000b581e8e7ff643cc4b91bcfbbb8c0733f55",
     "src/modules/uvblit_rom.c": "f437f580274c31de0cdcb94d429207f68e556600036f676a849b2958251cf5c0",
     "src/modules/uvcback_rom.c": "757b149d9e0e2b3226f23c884936b35583aa6b86186c5c3cc2863fbcbffac679",
     "src/modules/uvchannel_rom.c": "d1d84742ed487ab38a82ac3879558c9f847fab70797a031463f9c011a77cd811",
@@ -387,7 +387,7 @@
     "src/modules/uvcont_rom.c": "7e2bfec28bdb1921f0d141f3f9ae8d59a1a3640164b8345d2cc6f7d6b264103c",
     "src/modules/uvcontourld_rom.c": "213aadd783750bac46c8961530c2cb8553a56d154fab7bf36d097d7d585a15d5",
     "src/modules/uvdbg_rom.c": "2d38d31059a5011be9f4b572779a19755b25a5ba02358e9ab20086af8b787091",
-    "src/modules/uvdgeom_rom.c": "6fb52252f88afc60e053a4213e19fdebd44296f68d23ef8116e80f6460503ace",
+    "src/modules/uvdgeom_rom.c": "aec11cf015cca10fa8541ca45270cd193cf80969421017b96717c66d759a119f",
     "src/modules/uvdobj_rom.c": "61f9bd63bd7aa4bbdbf03fe046be0ed30d794753de401b3f5236a3ec4d2ad5a4",
     "src/modules/uvdsetld_rom.c": "274d09695ac5beb2913e83e67baba614f43b5f52001c6d62c18a22bee027edf4",
     "src/modules/uvdyn_rom.c": "ce2e0807e548ab44edf43f1351af7175db0613820a4cd68db9e3c332e97e97b8",
@@ -441,8 +441,8 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "5690cd3ef4c4ebc151d987329077aeff47dec6f609da70149d58429a015a71de",
-    "docs/VALIDATION_20261006.md": "0ff5be5826a1b7034d20bc2afb9b18e13ecbb6106fb8b2a8e2c2b121b024356b"
+    "docs/STRATEGY_V4.md": "2c39ef7f92a44a3548b2b5b44cf36eeb6e65e4755b95f6848aff06d51d93fa5a",
+    "docs/VALIDATION_20261006.md": "d613062647342d1ad847b9508ba3d12a74570462a8e4d0047fefe1804884376d"
   },
   "counts": {
     "address_function": 904,
@@ -452,11 +452,11 @@
     "conditional_draft": 4,
     "decompiler_local": 659,
     "draft_marker": 37,
-    "explicit_unknown": 1442,
+    "explicit_unknown": 1448,
     "layout_padding": 275,
     "offset_field": 1630,
     "opaque_type": 282,
-    "original_quirk": 335,
+    "original_quirk": 340,
     "uncertainty_note": 95,
     "unused_identifier": 135
   },
@@ -18043,7 +18043,7 @@
       "lines": [
         57,
         64,
-        79
+        91
       ],
       "owners": [
         {
@@ -18057,9 +18057,9 @@
         {
           "kind": "function",
           "name": "__entrypoint_func_uvbill_rom_400000",
-          "declaration_line": 79,
+          "declaration_line": 91,
           "lines": [
-            79
+            91
           ]
         }
       ]
@@ -18439,7 +18439,7 @@
       "symbol": "__entrypoint_func_uvdgeom_rom_400000",
       "lines": [
         40,
-        48
+        60
       ],
       "owners": [
         {
@@ -18453,9 +18453,9 @@
         {
           "kind": "function",
           "name": "__entrypoint_func_uvdgeom_rom_400000",
-          "declaration_line": 48,
+          "declaration_line": 60,
           "lines": [
-            48
+            60
           ]
         }
       ]
@@ -51475,48 +51475,48 @@
       "symbol": "D_uvbill_rom_00402004",
       "lines": [
         61,
-        107,
-        112,
-        141,
-        368,
-        399,
-        444,
-        448
+        119,
+        124,
+        153,
+        380,
+        411,
+        456,
+        460
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_uvbill_rom_400000",
-          "declaration_line": 79,
+          "declaration_line": 91,
           "lines": [
-            107,
-            112
+            119,
+            124
           ]
         },
         {
           "kind": "function",
           "name": "uvBillDestroy",
-          "declaration_line": 138,
+          "declaration_line": 150,
           "lines": [
-            141
+            153
           ]
         },
         {
           "kind": "function",
           "name": "uvBillboardCollectSegmentHits",
-          "declaration_line": 359,
+          "declaration_line": 371,
           "lines": [
-            368,
-            399
+            380,
+            411
           ]
         },
         {
           "kind": "function",
           "name": "uvBillboardQuerySphere",
-          "declaration_line": 432,
+          "declaration_line": 444,
           "lines": [
-            444,
-            448
+            456,
+            460
           ]
         },
         {
@@ -51536,45 +51536,45 @@
       "symbol": "D_uvbill_rom_00402008",
       "lines": [
         62,
-        108,
-        113,
-        140,
-        370,
-        378,
-        379,
-        380,
+        120,
+        125,
+        152,
         382,
-        398
+        390,
+        391,
+        392,
+        394,
+        410
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_uvbill_rom_400000",
-          "declaration_line": 79,
+          "declaration_line": 91,
           "lines": [
-            108,
-            113
+            120,
+            125
           ]
         },
         {
           "kind": "function",
           "name": "uvBillDestroy",
-          "declaration_line": 138,
+          "declaration_line": 150,
           "lines": [
-            140
+            152
           ]
         },
         {
           "kind": "function",
           "name": "uvBillboardCollectSegmentHits",
-          "declaration_line": 359,
+          "declaration_line": 371,
           "lines": [
-            370,
-            378,
-            379,
-            380,
             382,
-            398
+            390,
+            391,
+            392,
+            394,
+            410
           ]
         },
         {
@@ -51594,43 +51594,43 @@
       "symbol": "D_uvbill_rom_0040200C",
       "lines": [
         63,
-        109,
-        114,
-        139,
-        369,
-        376,
-        377,
+        121,
+        126,
+        151,
         381,
-        400
+        388,
+        389,
+        393,
+        412
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_uvbill_rom_400000",
-          "declaration_line": 79,
+          "declaration_line": 91,
           "lines": [
-            109,
-            114
+            121,
+            126
           ]
         },
         {
           "kind": "function",
           "name": "uvBillDestroy",
-          "declaration_line": 138,
+          "declaration_line": 150,
           "lines": [
-            139
+            151
           ]
         },
         {
           "kind": "function",
           "name": "uvBillboardCollectSegmentHits",
-          "declaration_line": 359,
+          "declaration_line": 371,
           "lines": [
-            369,
-            376,
-            377,
             381,
-            400
+            388,
+            389,
+            393,
+            412
           ]
         },
         {
@@ -55176,75 +55176,75 @@
       "symbol": "D_uvdgeom_rom_00400796",
       "lines": [
         18,
-        83,
-        125,
-        145,
-        173,
-        174,
-        200,
-        201,
-        227,
-        228,
-        257
+        95,
+        149,
+        179,
+        215,
+        216,
+        242,
+        243,
+        269,
+        270,
+        311
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_uvdgeom_rom_400000",
-          "declaration_line": 48,
+          "declaration_line": 60,
           "lines": [
-            83
+            95
           ]
         },
         {
           "kind": "function",
           "name": "uvDgeomEndGrid",
-          "declaration_line": 192,
+          "declaration_line": 234,
           "lines": [
-            200,
-            201
+            242,
+            243
           ]
         },
         {
           "kind": "function",
           "name": "uvDgeomEndTriangleMesh",
-          "declaration_line": 165,
+          "declaration_line": 207,
           "lines": [
-            173,
-            174
+            215,
+            216
           ]
         },
         {
           "kind": "function",
           "name": "uvDgeomSetVertexRange",
-          "declaration_line": 144,
+          "declaration_line": 178,
           "lines": [
-            145
+            179
           ]
         },
         {
           "kind": "function",
           "name": "uvVtx",
-          "declaration_line": 111,
+          "declaration_line": 135,
           "lines": [
-            125
+            149
           ]
         },
         {
           "kind": "function",
           "name": "uvVtxDup",
-          "declaration_line": 243,
+          "declaration_line": 297,
           "lines": [
-            257
+            311
           ]
         },
         {
           "kind": "function",
           "name": "uvVtxEndPoly",
-          "declaration_line": 219,
+          "declaration_line": 261,
           "lines": [
-            227,
-            228
+            269,
+            270
           ]
         },
         {
@@ -55264,53 +55264,53 @@
       "symbol": "D_uvdgeom_rom_00400798",
       "lines": [
         21,
-        82,
-        83,
-        146,
-        175,
-        202,
-        229
+        94,
+        95,
+        180,
+        217,
+        244,
+        271
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_uvdgeom_rom_400000",
-          "declaration_line": 48,
+          "declaration_line": 60,
           "lines": [
-            82,
-            83
+            94,
+            95
           ]
         },
         {
           "kind": "function",
           "name": "uvDgeomEndGrid",
-          "declaration_line": 192,
+          "declaration_line": 234,
           "lines": [
-            202
+            244
           ]
         },
         {
           "kind": "function",
           "name": "uvDgeomEndTriangleMesh",
-          "declaration_line": 165,
+          "declaration_line": 207,
           "lines": [
-            175
+            217
           ]
         },
         {
           "kind": "function",
           "name": "uvDgeomSetVertexRange",
-          "declaration_line": 144,
+          "declaration_line": 178,
           "lines": [
-            146
+            180
           ]
         },
         {
           "kind": "function",
           "name": "uvVtxEndPoly",
-          "declaration_line": 219,
+          "declaration_line": 261,
           "lines": [
-            229
+            271
           ]
         },
         {
@@ -55330,15 +55330,15 @@
       "symbol": "D_uvdgeom_rom_0040079C",
       "lines": [
         42,
-        84
+        96
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_uvdgeom_rom_400000",
-          "declaration_line": 48,
+          "declaration_line": 60,
           "lines": [
-            84
+            96
           ]
         },
         {
@@ -55358,15 +55358,15 @@
       "symbol": "D_uvdgeom_rom_004007A0",
       "lines": [
         43,
-        85
+        97
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_uvdgeom_rom_400000",
-          "declaration_line": 48,
+          "declaration_line": 60,
           "lines": [
-            85
+            97
           ]
         },
         {
@@ -55386,15 +55386,15 @@
       "symbol": "D_uvdgeom_rom_004007A4",
       "lines": [
         44,
-        86
+        98
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_uvdgeom_rom_400000",
-          "declaration_line": 48,
+          "declaration_line": 60,
           "lines": [
-            86
+            98
           ]
         },
         {
@@ -55414,17 +55414,17 @@
       "symbol": "D_uvdgeom_rom_004007AC",
       "lines": [
         45,
-        88,
-        90
+        100,
+        102
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_uvdgeom_rom_400000",
-          "declaration_line": 48,
+          "declaration_line": 60,
           "lines": [
-            88,
-            90
+            100,
+            102
           ]
         },
         {
@@ -55444,42 +55444,42 @@
       "symbol": "D_uvdgeom_rom_004007B0",
       "lines": [
         26,
-        87,
-        177,
-        204,
-        231
+        99,
+        219,
+        246,
+        273
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_uvdgeom_rom_400000",
-          "declaration_line": 48,
+          "declaration_line": 60,
           "lines": [
-            87
+            99
           ]
         },
         {
           "kind": "function",
           "name": "uvDgeomEndGrid",
-          "declaration_line": 192,
+          "declaration_line": 234,
           "lines": [
-            204
+            246
           ]
         },
         {
           "kind": "function",
           "name": "uvDgeomEndTriangleMesh",
-          "declaration_line": 165,
+          "declaration_line": 207,
           "lines": [
-            177
+            219
           ]
         },
         {
           "kind": "function",
           "name": "uvVtxEndPoly",
-          "declaration_line": 219,
+          "declaration_line": 261,
           "lines": [
-            231
+            273
           ]
         },
         {
@@ -93721,9 +93721,9 @@
         31,
         32,
         37,
-        137,
-        192,
-        204
+        171,
+        234,
+        246
       ],
       "owners": [
         {
@@ -93737,10 +93737,10 @@
         {
           "kind": "function",
           "name": "uvDgeomEndGrid",
-          "declaration_line": 192,
+          "declaration_line": 234,
           "lines": [
-            192,
-            204
+            234,
+            246
           ]
         },
         {
@@ -93762,9 +93762,9 @@
         {
           "kind": "function",
           "name": "uvFlipVtx",
-          "declaration_line": 137,
+          "declaration_line": 171,
           "lines": [
-            137
+            171
           ]
         }
       ]
@@ -93777,8 +93777,8 @@
       "lines": [
         32,
         37,
-        192,
-        204
+        234,
+        246
       ],
       "owners": [
         {
@@ -93792,10 +93792,10 @@
         {
           "kind": "function",
           "name": "uvDgeomEndGrid",
-          "declaration_line": 192,
+          "declaration_line": 234,
           "lines": [
-            192,
-            204
+            234,
+            246
           ]
         },
         {
@@ -93815,8 +93815,8 @@
       "symbol": "arg2",
       "lines": [
         37,
-        192,
-        204
+        234,
+        246
       ],
       "owners": [
         {
@@ -93830,10 +93830,10 @@
         {
           "kind": "function",
           "name": "uvDgeomEndGrid",
-          "declaration_line": 192,
+          "declaration_line": 234,
           "lines": [
-            192,
-            204
+            234,
+            246
           ]
         }
       ]
@@ -93845,8 +93845,8 @@
       "symbol": "arg3",
       "lines": [
         37,
-        192,
-        204
+        234,
+        246
       ],
       "owners": [
         {
@@ -93860,10 +93860,10 @@
         {
           "kind": "function",
           "name": "uvDgeomEndGrid",
-          "declaration_line": 192,
+          "declaration_line": 234,
           "lines": [
-            192,
-            204
+            234,
+            246
           ]
         }
       ]
@@ -116205,16 +116205,16 @@
       "path": "src/modules/uvbill_rom.c",
       "symbol": "FAKE",
       "lines": [
-        102
+        114
       ],
       "evidence": "FAKE",
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_uvbill_rom_400000",
-          "declaration_line": 79,
+          "declaration_line": 91,
           "lines": [
-            102
+            114
           ]
         }
       ]
@@ -131143,21 +131143,41 @@
       ]
     },
     {
+      "id": "Q-620285544a95",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvbill_rom.c",
+      "symbol": "* Publish nine billboard exports and choose the pool count from system * property 13, using 100 when the property is absent or its word is zero. * Allocate and zero, in order, 120-byte records and parallel 4-, 12- and * 4-byte-per-record arrays. Load STAT, CHAN, FMTX, MATH, TSEQ, DGEO, GMGR, * CBCK and TERR, then register the frame-mark reset callback on GMGR list 1. * RE_ORIGINAL_QUIRK: Retain any nonzero signed count, repeated count reads * across calls, original allocation order and the inherited empty do/while. * RE_UNKNOWN: Settings and export lifetime, count/multiplication bounds, * allocation success and dependency/callback teardown require loader proof.",
+      "lines": [
+        79
+      ],
+      "evidence": "* Publish nine billboard exports and choose the pool count from system * property 13, using 100 when the property is absent or its word is zero. * Allocate and zero, in order, 120-byte records and parallel 4-, 12- and * 4-byte-per-record arrays. Load STAT, CHAN, FMTX, MATH, TSEQ, DGEO, GMGR, * CBCK and TERR, then register the frame-mark reset callback on GMGR list 1. * RE_ORIGINAL_QUIRK: Retain any nonzero signed count, repeated count reads * across calls, original allocation order and the inherited empty do/while. * RE_UNKNOWN: Settings and export lifetime, count/multiplication bounds, * allocation success and dependency/callback teardown require loader proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_uvbill_rom_400000",
+          "declaration_line": 91,
+          "lines": [
+            79
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-1122a043ef2a",
       "kind": "explicit_unknown",
       "path": "src/modules/uvbill_rom.c",
       "symbol": "Exact zero selects reciprocal 1; RE_UNKNOWN: other FP domains and physical orientation need producer proof.",
       "lines": [
-        335
+        347
       ],
       "evidence": "Exact zero selects reciprocal 1; RE_UNKNOWN: other FP domains and physical orientation need producer proof.",
       "owners": [
         {
           "kind": "function",
           "name": "uvBillboardQueueVisibleForChannel",
-          "declaration_line": 300,
+          "declaration_line": 312,
           "lines": [
-            335
+            347
           ]
         }
       ]
@@ -131168,16 +131188,16 @@
       "path": "src/modules/uvbill_rom.c",
       "symbol": "Preserve f64-to-f32 and byte narrowing without clamps; RE_UNKNOWN: valid value/FP ranges need producer/caller proof.",
       "lines": [
-        536
+        548
       ],
       "evidence": "Preserve f64-to-f32 and byte narrowing without clamps; RE_UNKNOWN: valid value/FP ranges need producer/caller proof.",
       "owners": [
         {
           "kind": "function",
           "name": "uvBillProps",
-          "declaration_line": 462,
+          "declaration_line": 474,
           "lines": [
-            536
+            548
           ]
         }
       ]
@@ -131188,16 +131208,16 @@
       "path": "src/modules/uvbill_rom.c",
       "symbol": "Publish shared bases before endpoint tests; RE_UNKNOWN: output aliasing/capacity/reentry/lifetime need allocation/caller proof.",
       "lines": [
-        368
+        380
       ],
       "evidence": "Publish shared bases before endpoint tests; RE_UNKNOWN: output aliasing/capacity/reentry/lifetime need allocation/caller proof.",
       "owners": [
         {
           "kind": "function",
           "name": "uvBillboardCollectSegmentHits",
-          "declaration_line": 359,
+          "declaration_line": 371,
           "lines": [
-            368
+            380
           ]
         }
       ]
@@ -131208,16 +131228,16 @@
       "path": "src/modules/uvbill_rom.c",
       "symbol": "RE_ORIGINAL_QUIRK: absent texture skips coordinate initialization; RE_UNKNOWN: reachability of this uncached path needs resource/caller proof.",
       "lines": [
-        267
+        279
       ],
       "evidence": "RE_ORIGINAL_QUIRK: absent texture skips coordinate initialization; RE_UNKNOWN: reachability of this uncached path needs resource/caller proof.",
       "owners": [
         {
           "kind": "function",
           "name": "uvBillDraw",
-          "declaration_line": 154,
+          "declaration_line": 166,
           "lines": [
-            267
+            279
           ]
         }
       ]
@@ -131228,16 +131248,16 @@
       "path": "src/modules/uvbill_rom.c",
       "symbol": "RE_ORIGINAL_QUIRK: unordered distance comparisons bypass rejection; RE_UNKNOWN: FP and scalar conventions need producer/caller proof.",
       "lines": [
-        323
+        335
       ],
       "evidence": "RE_ORIGINAL_QUIRK: unordered distance comparisons bypass rejection; RE_UNKNOWN: FP and scalar conventions need producer/caller proof.",
       "owners": [
         {
           "kind": "function",
           "name": "uvBillboardQueueVisibleForChannel",
-          "declaration_line": 300,
+          "declaration_line": 312,
           "lines": [
-            323
+            335
           ]
         }
       ]
@@ -131248,16 +131268,16 @@
       "path": "src/modules/uvbill_rom.c",
       "symbol": "RE_UNKNOWN: BILL native initializer/current source show no ISCT import assignment; valid publication/caller paths are unproved.",
       "lines": [
-        389
+        401
       ],
       "evidence": "RE_UNKNOWN: BILL native initializer/current source show no ISCT import assignment; valid publication/caller paths are unproved.",
       "owners": [
         {
           "kind": "function",
           "name": "uvBillboardCollectSegmentHits",
-          "declaration_line": 359,
+          "declaration_line": 371,
           "lines": [
-            389
+            401
           ]
         }
       ]
@@ -131268,16 +131288,16 @@
       "path": "src/modules/uvbill_rom.c",
       "symbol": "RE_UNKNOWN: cached range lifetime and DGEO capacity need allocation/frame/caller proof; preserve signed halfword reads.",
       "lines": [
-        264
+        276
       ],
       "evidence": "RE_UNKNOWN: cached range lifetime and DGEO capacity need allocation/frame/caller proof; preserve signed halfword reads.",
       "owners": [
         {
           "kind": "function",
           "name": "uvBillDraw",
-          "declaration_line": 154,
+          "declaration_line": 166,
           "lines": [
-            264
+            276
           ]
         }
       ]
@@ -131288,16 +131308,16 @@
       "path": "src/modules/uvbill_rom.c",
       "symbol": "RE_UNKNOWN: callback targets, mutation/reentry and billboard lifetime need caller/provider proof; keep fresh member reads.",
       "lines": [
-        183
+        195
       ],
       "evidence": "RE_UNKNOWN: callback targets, mutation/reentry and billboard lifetime need caller/provider proof; keep fresh member reads.",
       "owners": [
         {
           "kind": "function",
           "name": "uvBillDraw",
-          "declaration_line": 154,
+          "declaration_line": 166,
           "lines": [
-            183
+            195
           ]
         }
       ]
@@ -131308,16 +131328,16 @@
       "path": "src/modules/uvbill_rom.c",
       "symbol": "RE_UNKNOWN: pool/count/channel validity and callback mutation/lifetimes need producer/caller proof; keep live reloads.",
       "lines": [
-        313
+        325
       ],
       "evidence": "RE_UNKNOWN: pool/count/channel validity and callback mutation/lifetimes need producer/caller proof; keep live reloads.",
       "owners": [
         {
           "kind": "function",
           "name": "uvBillboardQueueVisibleForChannel",
-          "declaration_line": 300,
+          "declaration_line": 312,
           "lines": [
-            313
+            325
           ]
         }
       ]
@@ -131328,16 +131348,16 @@
       "path": "src/modules/uvbill_rom.c",
       "symbol": "RE_UNKNOWN: retain five empty tests as the existing register-allocation scaffold; historical source form is unproved.",
       "lines": [
-        476
+        488
       ],
       "evidence": "RE_UNKNOWN: retain five empty tests as the existing register-allocation scaffold; historical source form is unproved.",
       "owners": [
         {
           "kind": "function",
           "name": "uvBillProps",
-          "declaration_line": 462,
+          "declaration_line": 474,
           "lines": [
-            476
+            488
           ]
         }
       ]
@@ -131348,16 +131368,16 @@
       "path": "src/modules/uvbill_rom.c",
       "symbol": "RE_UNKNOWN: retain unused argument/pad storage; historical declarations are unproved.",
       "lines": [
-        164
+        176
       ],
       "evidence": "RE_UNKNOWN: retain unused argument/pad storage; historical declarations are unproved.",
       "owners": [
         {
           "kind": "function",
           "name": "uvBillDraw",
-          "declaration_line": 154,
+          "declaration_line": 166,
           "lines": [
-            164
+            176
           ]
         }
       ]
@@ -131368,16 +131388,16 @@
       "path": "src/modules/uvbill_rom.c",
       "symbol": "RE_UNKNOWN: texture/sequence storage, ID domains and coordinate/FP conversion ranges need producer proof.",
       "lines": [
-        207
+        219
       ],
       "evidence": "RE_UNKNOWN: texture/sequence storage, ID domains and coordinate/FP conversion ranges need producer proof.",
       "owners": [
         {
           "kind": "function",
           "name": "uvBillDraw",
-          "declaration_line": 154,
+          "declaration_line": 166,
           "lines": [
-            207
+            219
           ]
         }
       ]
@@ -131388,16 +131408,16 @@
       "path": "src/modules/uvbill_rom.c",
       "symbol": "RE_UNKNOWN: unused local storage and historical declarations remain unproved.",
       "lines": [
-        363
+        375
       ],
       "evidence": "RE_UNKNOWN: unused local storage and historical declarations remain unproved.",
       "owners": [
         {
           "kind": "function",
           "name": "uvBillboardCollectSegmentHits",
-          "declaration_line": 359,
+          "declaration_line": 371,
           "lines": [
-            363
+            375
           ]
         }
       ]
@@ -131408,16 +131428,16 @@
       "path": "src/modules/uvbill_rom.c",
       "symbol": "RE_UNKNOWN: vararg types/termination, allocation lifetime and output alias/FP domains need producer/caller proof.",
       "lines": [
-        473
+        485
       ],
       "evidence": "RE_UNKNOWN: vararg types/termination, allocation lifetime and output alias/FP domains need producer/caller proof.",
       "owners": [
         {
           "kind": "function",
           "name": "uvBillProps",
-          "declaration_line": 462,
+          "declaration_line": 474,
           "lines": [
-            473
+            485
           ]
         }
       ]
@@ -131428,16 +131448,16 @@
       "path": "src/modules/uvbill_rom.c",
       "symbol": "TERR slot 0xAC selects a queue and forwards callback/data/distance; RE_UNKNOWN: queue capacity/ABI/lifetime need caller/provider proof.",
       "lines": [
-        352
+        364
       ],
       "evidence": "TERR slot 0xAC selects a queue and forwards callback/data/distance; RE_UNKNOWN: queue capacity/ABI/lifetime need caller/provider proof.",
       "owners": [
         {
           "kind": "function",
           "name": "uvBillboardQueueVisibleForChannel",
-          "declaration_line": 300,
+          "declaration_line": 312,
           "lines": [
-            352
+            364
           ]
         }
       ]
@@ -132921,6 +132941,106 @@
       ]
     },
     {
+      "id": "Q-c7efa70eefb0",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdgeom_rom.c",
+      "symbol": "* Append one vertex to the current buffer: narrow position and texture * coordinates to halfwords and RGBA components to bytes, then increment the * signed halfword count, clear the first-vertex override to -1 and return * the previous index through the original signed-halfword conversion. * RE_ORIGINAL_QUIRK: Reject only capacity < count and return that count; * equality and negative counts reach the stores. Preserve all base/count * reloads, narrowing and count-wrap behavior. * RE_UNKNOWN: Caller prevention of equal, negative or wrapped indices and * buffer lifetime remain unproved; initialization alone supplies no such gate.",
+      "lines": [
+        123
+      ],
+      "evidence": "* Append one vertex to the current buffer: narrow position and texture * coordinates to halfwords and RGBA components to bytes, then increment the * signed halfword count, clear the first-vertex override to -1 and return * the previous index through the original signed-halfword conversion. * RE_ORIGINAL_QUIRK: Reject only capacity < count and return that count; * equality and negative counts reach the stores. Preserve all base/count * reloads, narrowing and count-wrap behavior. * RE_UNKNOWN: Caller prevention of equal, negative or wrapped indices and * buffer lifetime remain unproved; initialization alone supplies no such gate.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvVtx",
+          "declaration_line": 135,
+          "lines": [
+            123
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-a9c1925a7779",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdgeom_rom.c",
+      "symbol": "* Append the supplied position, texture coordinates and RGBA components * using the same complete native instruction sequence as uvVtx. This entry * does not read or duplicate an existing vertex despite its inherited name. * Narrow coordinates to halfwords and colors to bytes, advance the signed * halfword count, clear the first-vertex override and return the prior index. * RE_ORIGINAL_QUIRK: The strict capacity < count rejection admits equality * and negative indices; retain repeated loads and halfword wrap/narrowing. * RE_UNKNOWN: Valid caller indices, capacity convention and buffer lifetime * need caller proof; the allocator does not establish those guarantees.",
+      "lines": [
+        285
+      ],
+      "evidence": "* Append the supplied position, texture coordinates and RGBA components * using the same complete native instruction sequence as uvVtx. This entry * does not read or duplicate an existing vertex despite its inherited name. * Narrow coordinates to halfwords and colors to bytes, advance the signed * halfword count, clear the first-vertex override and return the prior index. * RE_ORIGINAL_QUIRK: The strict capacity < count rejection admits equality * and negative indices; retain repeated loads and halfword wrap/narrowing. * RE_UNKNOWN: Valid caller indices, capacity convention and buffer lifetime * need caller proof; the allocator does not establish those guarantees.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvVtxDup",
+          "declaration_line": 297,
+          "lines": [
+            285
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-f4bdd9958116",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdgeom_rom.c",
+      "symbol": "* Publish ten dynamic-geometry exports and choose the vertex capacity from * system property 14, using 100 when the property is absent or its word is zero. * Allocate and zero two capacity-times-16-byte buffers, select buffer zero, * clear the count, set both range overrides to -1 and two shared floats to 1. * Load GEOM, CBCK and GMGR in that order, then register uvFlipVtx on list 1. * RE_ORIGINAL_QUIRK: Any nonzero signed capacity is retained; no allocation * failure or multiplication-range check is introduced. * RE_UNKNOWN: Settings lifetime, valid capacity domain, allocation success, * export storage extent and callback teardown ordering require loader proof.",
+      "lines": [
+        48
+      ],
+      "evidence": "* Publish ten dynamic-geometry exports and choose the vertex capacity from * system property 14, using 100 when the property is absent or its word is zero. * Allocate and zero two capacity-times-16-byte buffers, select buffer zero, * clear the count, set both range overrides to -1 and two shared floats to 1. * Load GEOM, CBCK and GMGR in that order, then register uvFlipVtx on list 1. * RE_ORIGINAL_QUIRK: Any nonzero signed capacity is retained; no allocation * failure or multiplication-range check is introduced. * RE_UNKNOWN: Settings lifetime, valid capacity domain, allocation success, * export storage extent and callback teardown ordering require loader proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_uvdgeom_rom_400000",
+          "declaration_line": 60,
+          "lines": [
+            48
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-6e6f609141d5",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdgeom_rom.c",
+      "symbol": "* Reset the signed-halfword vertex count on every call. When the incoming * byte is nonzero, XOR the buffer selector with one and reload the selected * buffer pointer; zero leaves the selector and pointer unchanged. * RE_ORIGINAL_QUIRK: This helper neither clears vertex memory nor resets * polygon/grid/mesh markers or range overrides. * RE_UNKNOWN: A selector outside the initialized 0/1 domain, buffer lifetime * and synchronization with outstanding drawing work require caller proof.",
+      "lines": [
+        153
+      ],
+      "evidence": "* Reset the signed-halfword vertex count on every call. When the incoming * byte is nonzero, XOR the buffer selector with one and reload the selected * buffer pointer; zero leaves the selector and pointer unchanged. * RE_ORIGINAL_QUIRK: This helper neither clears vertex memory nor resets * polygon/grid/mesh markers or range overrides. * RE_UNKNOWN: A selector outside the initialized 0/1 domain, buffer lifetime * and synchronization with outstanding drawing work require caller proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvVtxFlip",
+          "declaration_line": 163,
+          "lines": [
+            153
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-476b68b063de",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdgeom_rom.c",
+      "symbol": "* Snapshot the current signed-halfword vertex count as the polygon start. * The polygon-end wrapper later uses this marker unless a range override * replaces it; this call does not append, allocate or reset vertices. * RE_UNKNOWN: Begin/end ordering, valid count and buffer lifetime remain * caller obligations; no range validation is performed here.",
+      "lines": [
+        184
+      ],
+      "evidence": "* Snapshot the current signed-halfword vertex count as the polygon start. * The polygon-end wrapper later uses this marker unless a range override * replaces it; this call does not append, allocate or reset vertices. * RE_UNKNOWN: Begin/end ordering, valid count and buffer lifetime remain * caller obligations; no range validation is performed here.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvVtxBeginPoly",
+          "declaration_line": 192,
+          "lines": [
+            184
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-f96a824130ef",
       "kind": "explicit_unknown",
       "path": "src/modules/uvdgeom_rom.c",
@@ -132946,19 +133066,9 @@
       "path": "src/modules/uvdgeom_rom.c",
       "symbol": "Preserve the original signed limit < count rejection: equality reaches * the indexed stores, with repeated count/base reloads and 16-bit count update. * RE_ORIGINAL_QUIRK: there is no equality or negative-count rejection here. * RE_UNKNOWN: allocated extent and caller prevention of limit/negative/wrapped * counts require original allocation/settings and append/reset callers; * no reachable overrun or intended limit convention has been established.",
       "lines": [
-        104
+        116
       ],
-      "evidence": "Preserve the original signed limit < count rejection: equality reaches * the indexed stores, with repeated count/base reloads and 16-bit count update. * RE_ORIGINAL_QUIRK: there is no equality or negative-count rejection here. * RE_UNKNOWN: allocated extent and caller prevention of limit/negative/wrapped * counts require original allocation/settings and append/reset callers; * no reachable overrun or intended limit convention has been established.",
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvVtx",
-          "declaration_line": 111,
-          "lines": [
-            104
-          ]
-        }
-      ]
+      "evidence": "Preserve the original signed limit < count rejection: equality reaches * the indexed stores, with repeated count/base reloads and 16-bit count update. * RE_ORIGINAL_QUIRK: there is no equality or negative-count rejection here. * RE_UNKNOWN: allocated extent and caller prevention of limit/negative/wrapped * counts require original allocation/settings and append/reset callers; * no reachable overrun or intended limit convention has been established."
     },
     {
       "id": "Q-5d8784fa591c",
@@ -132966,25 +133076,25 @@
       "path": "src/modules/uvdgeom_rom.c",
       "symbol": "RE_UNKNOWN: inherited local storage role; retain until original layout is proved.",
       "lines": [
-        193,
-        220
+        235,
+        262
       ],
       "evidence": "RE_UNKNOWN: inherited local storage role; retain until original layout is proved.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDgeomEndGrid",
-          "declaration_line": 192,
+          "declaration_line": 234,
           "lines": [
-            193
+            235
           ]
         },
         {
           "kind": "function",
           "name": "uvVtxEndPoly",
-          "declaration_line": 219,
+          "declaration_line": 261,
           "lines": [
-            220
+            262
           ]
         }
       ]
@@ -132995,16 +133105,16 @@
       "path": "src/modules/uvdgeom_rom.c",
       "symbol": "Submit the current grid range and four supplied words, honoring the override. * Original GEOM slot 0x08 initializes the inner 20-byte descriptor before its * own reads, or returns at its minimum-dimension gate without reading it. * RE_UNKNOWN: the inherited outer prefix and pad roles, valid grid/range * domains, vertex extent and display-list capacity/alias/lifetime guarantees * need original local-storage evidence, range producers and drawing callers.",
       "lines": [
-        185
+        227
       ],
       "evidence": "Submit the current grid range and four supplied words, honoring the override. * Original GEOM slot 0x08 initializes the inner 20-byte descriptor before its * own reads, or returns at its minimum-dimension gate without reading it. * RE_UNKNOWN: the inherited outer prefix and pad roles, valid grid/range * domains, vertex extent and display-list capacity/alias/lifetime guarantees * need original local-storage evidence, range producers and drawing callers.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDgeomEndGrid",
-          "declaration_line": 192,
+          "declaration_line": 234,
           "lines": [
-            185
+            227
           ]
         }
       ]
@@ -133015,16 +133125,16 @@
       "path": "src/modules/uvdgeom_rom.c",
       "symbol": "Submit the current polygon range, honoring the stored range override. * Original GEOM slot 0x14 returns for count < 3 without reading the descriptor; * otherwise it initializes the inner 20 bytes before its descriptor read. * RE_UNKNOWN: the inherited outer prefix and pad roles, valid vertex ranges * and display-list capacity/alias/lifetime guarantees need original local * storage evidence, range producers and drawing callers.",
       "lines": [
-        212
+        254
       ],
       "evidence": "Submit the current polygon range, honoring the stored range override. * Original GEOM slot 0x14 returns for count < 3 without reading the descriptor; * otherwise it initializes the inner 20 bytes before its descriptor read. * RE_UNKNOWN: the inherited outer prefix and pad roles, valid vertex ranges * and display-list capacity/alias/lifetime guarantees need original local * storage evidence, range producers and drawing callers.",
       "owners": [
         {
           "kind": "function",
           "name": "uvVtxEndPoly",
-          "declaration_line": 219,
+          "declaration_line": 261,
           "lines": [
-            212
+            254
           ]
         }
       ]
@@ -133035,16 +133145,16 @@
       "path": "src/modules/uvdgeom_rom.c",
       "symbol": "Submit the current triangle-mesh vertex range, honoring the stored override. RE_UNKNOWN: * first/end indices, vertex/descriptor extent and cursor lifetime need original producers/callers.",
       "lines": [
-        163
+        205
       ],
       "evidence": "Submit the current triangle-mesh vertex range, honoring the stored override. RE_UNKNOWN: * first/end indices, vertex/descriptor extent and cursor lifetime need original producers/callers.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDgeomEndTriangleMesh",
-          "declaration_line": 165,
+          "declaration_line": 207,
           "lines": [
-            163
+            205
           ]
         }
       ]
@@ -133055,19 +133165,9 @@
       "path": "src/modules/uvdgeom_rom.c",
       "symbol": "The native instruction bytes match uvVtx. Preserve the original signed limit < count rejection: equality reaches * the indexed stores, with repeated count/base reloads and 16-bit count update. * RE_ORIGINAL_QUIRK: there is no equality or negative-count rejection here. * RE_UNKNOWN: allocated extent and caller prevention of limit/negative/wrapped * counts require original allocation/settings and append/reset callers; * no reachable overrun or intended limit convention has been established.",
       "lines": [
-        236
+        278
       ],
-      "evidence": "The native instruction bytes match uvVtx. Preserve the original signed limit < count rejection: equality reaches * the indexed stores, with repeated count/base reloads and 16-bit count update. * RE_ORIGINAL_QUIRK: there is no equality or negative-count rejection here. * RE_UNKNOWN: allocated extent and caller prevention of limit/negative/wrapped * counts require original allocation/settings and append/reset callers; * no reachable overrun or intended limit convention has been established.",
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvVtxDup",
-          "declaration_line": 243,
-          "lines": [
-            236
-          ]
-        }
-      ]
+      "evidence": "The native instruction bytes match uvVtx. Preserve the original signed limit < count rejection: equality reaches * the indexed stores, with repeated count/base reloads and 16-bit count update. * RE_ORIGINAL_QUIRK: there is no equality or negative-count rejection here. * RE_UNKNOWN: allocated extent and caller prevention of limit/negative/wrapped * counts require original allocation/settings and append/reset callers; * no reachable overrun or intended limit convention has been established."
     },
     {
       "id": "Q-6a8dde22c3ce",
@@ -150973,33 +151073,33 @@
       "path": "src/modules/uvdgeom_rom.c",
       "symbol": "pad",
       "lines": [
-        166,
-        193,
-        220
+        208,
+        235,
+        262
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDgeomEndGrid",
-          "declaration_line": 192,
+          "declaration_line": 234,
           "lines": [
-            193
+            235
           ]
         },
         {
           "kind": "function",
           "name": "uvDgeomEndTriangleMesh",
-          "declaration_line": 165,
+          "declaration_line": 207,
           "lines": [
-            166
+            208
           ]
         },
         {
           "kind": "function",
           "name": "uvVtxEndPoly",
-          "declaration_line": 219,
+          "declaration_line": 261,
           "lines": [
-            220
+            262
           ]
         }
       ]
@@ -182537,35 +182637,35 @@
       "symbol": "unk0",
       "lines": [
         16,
-        331,
-        333,
-        502,
-        576
+        343,
+        345,
+        514,
+        588
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvBillInit",
-          "declaration_line": 569,
+          "declaration_line": 581,
           "lines": [
-            576
+            588
           ]
         },
         {
           "kind": "function",
           "name": "uvBillProps",
-          "declaration_line": 462,
+          "declaration_line": 474,
           "lines": [
-            502
+            514
           ]
         },
         {
           "kind": "function",
           "name": "uvBillboardQueueVisibleForChannel",
-          "declaration_line": 300,
+          "declaration_line": 312,
           "lines": [
-            331,
-            333
+            343,
+            345
           ]
         },
         {
@@ -182585,33 +182685,33 @@
       "symbol": "unk2",
       "lines": [
         18,
-        186,
-        555,
-        595
+        198,
+        567,
+        607
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvBillDraw",
-          "declaration_line": 154,
+          "declaration_line": 166,
           "lines": [
-            186
+            198
           ]
         },
         {
           "kind": "function",
           "name": "uvBillInit",
-          "declaration_line": 569,
+          "declaration_line": 581,
           "lines": [
-            595
+            607
           ]
         },
         {
           "kind": "function",
           "name": "uvBillProps",
-          "declaration_line": 462,
+          "declaration_line": 474,
           "lines": [
-            555
+            567
           ]
         },
         {
@@ -182631,33 +182731,33 @@
       "symbol": "unk20",
       "lines": [
         31,
-        323,
-        545,
-        594
+        335,
+        557,
+        606
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvBillInit",
-          "declaration_line": 569,
+          "declaration_line": 581,
           "lines": [
-            594
+            606
           ]
         },
         {
           "kind": "function",
           "name": "uvBillProps",
-          "declaration_line": 462,
+          "declaration_line": 474,
           "lines": [
-            545
+            557
           ]
         },
         {
           "kind": "function",
           "name": "uvBillboardQueueVisibleForChannel",
-          "declaration_line": 300,
+          "declaration_line": 312,
           "lines": [
-            323
+            335
           ]
         },
         {
@@ -182677,42 +182777,42 @@
       "symbol": "unk28",
       "lines": [
         36,
-        388,
-        440,
-        532,
-        586
+        400,
+        452,
+        544,
+        598
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvBillInit",
-          "declaration_line": 569,
+          "declaration_line": 581,
           "lines": [
-            586
+            598
           ]
         },
         {
           "kind": "function",
           "name": "uvBillProps",
-          "declaration_line": 462,
+          "declaration_line": 474,
           "lines": [
-            532
+            544
           ]
         },
         {
           "kind": "function",
           "name": "uvBillboardCollectSegmentHits",
-          "declaration_line": 359,
+          "declaration_line": 371,
           "lines": [
-            388
+            400
           ]
         },
         {
           "kind": "function",
           "name": "uvBillboardQuerySphere",
-          "declaration_line": 432,
+          "declaration_line": 444,
           "lines": [
-            440
+            452
           ]
         },
         {
@@ -182732,37 +182832,37 @@
       "symbol": "unk2C",
       "lines": [
         37,
-        264,
-        265,
-        267,
-        293,
-        596
+        276,
+        277,
+        279,
+        305,
+        608
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvBillDraw",
-          "declaration_line": 154,
+          "declaration_line": 166,
           "lines": [
-            264,
-            265,
-            267
+            276,
+            277,
+            279
           ]
         },
         {
           "kind": "function",
           "name": "uvBillInit",
-          "declaration_line": 569,
+          "declaration_line": 581,
           "lines": [
-            596
+            608
           ]
         },
         {
           "kind": "function",
           "name": "uvBillboardClearFrameMarks",
-          "declaration_line": 288,
+          "declaration_line": 300,
           "lines": [
-            293
+            305
           ]
         },
         {
@@ -182782,37 +182882,37 @@
       "symbol": "unk4",
       "lines": [
         20,
-        257,
-        512,
-        513,
+        269,
         524,
-        585
+        525,
+        536,
+        597
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvBillDraw",
-          "declaration_line": 154,
+          "declaration_line": 166,
           "lines": [
-            257
+            269
           ]
         },
         {
           "kind": "function",
           "name": "uvBillInit",
-          "declaration_line": 569,
+          "declaration_line": 581,
           "lines": [
-            585
+            597
           ]
         },
         {
           "kind": "function",
           "name": "uvBillProps",
-          "declaration_line": 462,
+          "declaration_line": 474,
           "lines": [
-            512,
-            513,
-            524
+            524,
+            525,
+            536
           ]
         },
         {
@@ -182832,33 +182932,33 @@
       "symbol": "unk5",
       "lines": [
         21,
-        233,
-        558,
-        591
+        245,
+        570,
+        603
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvBillDraw",
-          "declaration_line": 154,
+          "declaration_line": 166,
           "lines": [
-            233
+            245
           ]
         },
         {
           "kind": "function",
           "name": "uvBillInit",
-          "declaration_line": 569,
+          "declaration_line": 581,
           "lines": [
-            591
+            603
           ]
         },
         {
           "kind": "function",
           "name": "uvBillProps",
-          "declaration_line": 462,
+          "declaration_line": 474,
           "lines": [
-            558
+            570
           ]
         },
         {
@@ -182878,33 +182978,33 @@
       "symbol": "unk6",
       "lines": [
         22,
-        241,
-        561,
-        592
+        253,
+        573,
+        604
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvBillDraw",
-          "declaration_line": 154,
+          "declaration_line": 166,
           "lines": [
-            241
+            253
           ]
         },
         {
           "kind": "function",
           "name": "uvBillInit",
-          "declaration_line": 569,
+          "declaration_line": 581,
           "lines": [
-            592
+            604
           ]
         },
         {
           "kind": "function",
           "name": "uvBillProps",
-          "declaration_line": 462,
+          "declaration_line": 474,
           "lines": [
-            561
+            573
           ]
         },
         {
@@ -182924,26 +183024,26 @@
       "symbol": "unk70",
       "lines": [
         40,
-        183,
-        184,
-        598
+        195,
+        196,
+        610
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvBillDraw",
-          "declaration_line": 154,
+          "declaration_line": 166,
           "lines": [
-            183,
-            184
+            195,
+            196
           ]
         },
         {
           "kind": "function",
           "name": "uvBillInit",
-          "declaration_line": 569,
+          "declaration_line": 581,
           "lines": [
-            598
+            610
           ]
         },
         {
@@ -182963,30 +183063,30 @@
       "symbol": "unk74",
       "lines": [
         41,
-        187,
-        188,
-        280,
-        281,
-        597
+        199,
+        200,
+        292,
+        293,
+        609
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvBillDraw",
-          "declaration_line": 154,
+          "declaration_line": 166,
           "lines": [
-            187,
-            188,
-            280,
-            281
+            199,
+            200,
+            292,
+            293
           ]
         },
         {
           "kind": "function",
           "name": "uvBillInit",
-          "declaration_line": 569,
+          "declaration_line": 581,
           "lines": [
-            597
+            609
           ]
         },
         {
@@ -183006,15 +183106,15 @@
       "symbol": "unkAC",
       "lines": [
         12,
-        352
+        364
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvBillboardQueueVisibleForChannel",
-          "declaration_line": 300,
+          "declaration_line": 312,
           "lines": [
-            352
+            364
           ]
         },
         {
@@ -183034,53 +183134,53 @@
       "symbol": "unkC",
       "lines": [
         26,
-        326,
-        392,
-        421,
-        518,
-        529,
-        590
+        338,
+        404,
+        433,
+        530,
+        541,
+        602
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvBillInit",
-          "declaration_line": 569,
+          "declaration_line": 581,
           "lines": [
-            590
+            602
           ]
         },
         {
           "kind": "function",
           "name": "uvBillProps",
-          "declaration_line": 462,
+          "declaration_line": 474,
           "lines": [
-            518,
-            529
+            530,
+            541
           ]
         },
         {
           "kind": "function",
           "name": "uvBillboardCollectSegmentHits",
-          "declaration_line": 359,
+          "declaration_line": 371,
           "lines": [
-            392
+            404
           ]
         },
         {
           "kind": "function",
           "name": "uvBillboardIntersectsSphere",
-          "declaration_line": 410,
+          "declaration_line": 422,
           "lines": [
-            421
+            433
           ]
         },
         {
           "kind": "function",
           "name": "uvBillboardQueueVisibleForChannel",
-          "declaration_line": 300,
+          "declaration_line": 312,
           "lines": [
-            326
+            338
           ]
         },
         {
@@ -185992,24 +186092,24 @@
       "symbol": "unk4",
       "lines": [
         10,
-        205,
-        232
+        247,
+        274
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDgeomEndGrid",
-          "declaration_line": 192,
+          "declaration_line": 234,
           "lines": [
-            205
+            247
           ]
         },
         {
           "kind": "function",
           "name": "uvVtxEndPoly",
-          "declaration_line": 219,
+          "declaration_line": 261,
           "lines": [
-            232
+            274
           ]
         },
         {
@@ -216696,24 +216796,24 @@
       "symbol": "UnkStruct_DGeom",
       "lines": [
         11,
-        194,
-        221
+        236,
+        263
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDgeomEndGrid",
-          "declaration_line": 192,
+          "declaration_line": 234,
           "lines": [
-            194
+            236
           ]
         },
         {
           "kind": "function",
           "name": "uvVtxEndPoly",
-          "declaration_line": 219,
+          "declaration_line": 261,
           "lines": [
-            221
+            263
           ]
         },
         {
@@ -222925,21 +223025,41 @@
       ]
     },
     {
+      "id": "Q-d398151c3778",
+      "kind": "original_quirk",
+      "path": "src/modules/uvbill_rom.c",
+      "symbol": "* Publish nine billboard exports and choose the pool count from system * property 13, using 100 when the property is absent or its word is zero. * Allocate and zero, in order, 120-byte records and parallel 4-, 12- and * 4-byte-per-record arrays. Load STAT, CHAN, FMTX, MATH, TSEQ, DGEO, GMGR, * CBCK and TERR, then register the frame-mark reset callback on GMGR list 1. * RE_ORIGINAL_QUIRK: Retain any nonzero signed count, repeated count reads * across calls, original allocation order and the inherited empty do/while. * RE_UNKNOWN: Settings and export lifetime, count/multiplication bounds, * allocation success and dependency/callback teardown require loader proof.",
+      "lines": [
+        79
+      ],
+      "evidence": "* Publish nine billboard exports and choose the pool count from system * property 13, using 100 when the property is absent or its word is zero. * Allocate and zero, in order, 120-byte records and parallel 4-, 12- and * 4-byte-per-record arrays. Load STAT, CHAN, FMTX, MATH, TSEQ, DGEO, GMGR, * CBCK and TERR, then register the frame-mark reset callback on GMGR list 1. * RE_ORIGINAL_QUIRK: Retain any nonzero signed count, repeated count reads * across calls, original allocation order and the inherited empty do/while. * RE_UNKNOWN: Settings and export lifetime, count/multiplication bounds, * allocation success and dependency/callback teardown require loader proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_uvbill_rom_400000",
+          "declaration_line": 91,
+          "lines": [
+            79
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-73f3722b4bc8",
       "kind": "original_quirk",
       "path": "src/modules/uvbill_rom.c",
       "symbol": "RE_ORIGINAL_QUIRK: absent texture skips coordinate initialization; RE_UNKNOWN: reachability of this uncached path needs resource/caller proof.",
       "lines": [
-        267
+        279
       ],
       "evidence": "RE_ORIGINAL_QUIRK: absent texture skips coordinate initialization; RE_UNKNOWN: reachability of this uncached path needs resource/caller proof.",
       "owners": [
         {
           "kind": "function",
           "name": "uvBillDraw",
-          "declaration_line": 154,
+          "declaration_line": 166,
           "lines": [
-            267
+            279
           ]
         }
       ]
@@ -222950,16 +223070,16 @@
       "path": "src/modules/uvbill_rom.c",
       "symbol": "RE_ORIGINAL_QUIRK: coincident endpoints zero only the first fraction/normal, then return the entire sphere-hit count.",
       "lines": [
-        375
+        387
       ],
       "evidence": "RE_ORIGINAL_QUIRK: coincident endpoints zero only the first fraction/normal, then return the entire sphere-hit count.",
       "owners": [
         {
           "kind": "function",
           "name": "uvBillboardCollectSegmentHits",
-          "declaration_line": 359,
+          "declaration_line": 371,
           "lines": [
-            375
+            387
           ]
         }
       ]
@@ -222970,16 +223090,16 @@
       "path": "src/modules/uvbill_rom.c",
       "symbol": "RE_ORIGINAL_QUIRK: radius uses X/Z and field 0x04, omitting Y; preserve grouped arithmetic.",
       "lines": [
-        518
+        530
       ],
       "evidence": "RE_ORIGINAL_QUIRK: radius uses X/Z and field 0x04, omitting Y; preserve grouped arithmetic.",
       "owners": [
         {
           "kind": "function",
           "name": "uvBillProps",
-          "declaration_line": 462,
+          "declaration_line": 474,
           "lines": [
-            518
+            530
           ]
         }
       ]
@@ -222990,16 +223110,16 @@
       "path": "src/modules/uvbill_rom.c",
       "symbol": "RE_ORIGINAL_QUIRK: unordered distance comparisons bypass rejection; RE_UNKNOWN: FP and scalar conventions need producer/caller proof.",
       "lines": [
-        323
+        335
       ],
       "evidence": "RE_ORIGINAL_QUIRK: unordered distance comparisons bypass rejection; RE_UNKNOWN: FP and scalar conventions need producer/caller proof.",
       "owners": [
         {
           "kind": "function",
           "name": "uvBillboardQueueVisibleForChannel",
-          "declaration_line": 300,
+          "declaration_line": 312,
           "lines": [
-            323
+            335
           ]
         }
       ]
@@ -223305,24 +223425,94 @@
       ]
     },
     {
+      "id": "Q-a30f80ae352e",
+      "kind": "original_quirk",
+      "path": "src/modules/uvdgeom_rom.c",
+      "symbol": "* Append one vertex to the current buffer: narrow position and texture * coordinates to halfwords and RGBA components to bytes, then increment the * signed halfword count, clear the first-vertex override to -1 and return * the previous index through the original signed-halfword conversion. * RE_ORIGINAL_QUIRK: Reject only capacity < count and return that count; * equality and negative counts reach the stores. Preserve all base/count * reloads, narrowing and count-wrap behavior. * RE_UNKNOWN: Caller prevention of equal, negative or wrapped indices and * buffer lifetime remain unproved; initialization alone supplies no such gate.",
+      "lines": [
+        123
+      ],
+      "evidence": "* Append one vertex to the current buffer: narrow position and texture * coordinates to halfwords and RGBA components to bytes, then increment the * signed halfword count, clear the first-vertex override to -1 and return * the previous index through the original signed-halfword conversion. * RE_ORIGINAL_QUIRK: Reject only capacity < count and return that count; * equality and negative counts reach the stores. Preserve all base/count * reloads, narrowing and count-wrap behavior. * RE_UNKNOWN: Caller prevention of equal, negative or wrapped indices and * buffer lifetime remain unproved; initialization alone supplies no such gate.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvVtx",
+          "declaration_line": 135,
+          "lines": [
+            123
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-a3428bbacc0c",
+      "kind": "original_quirk",
+      "path": "src/modules/uvdgeom_rom.c",
+      "symbol": "* Append the supplied position, texture coordinates and RGBA components * using the same complete native instruction sequence as uvVtx. This entry * does not read or duplicate an existing vertex despite its inherited name. * Narrow coordinates to halfwords and colors to bytes, advance the signed * halfword count, clear the first-vertex override and return the prior index. * RE_ORIGINAL_QUIRK: The strict capacity < count rejection admits equality * and negative indices; retain repeated loads and halfword wrap/narrowing. * RE_UNKNOWN: Valid caller indices, capacity convention and buffer lifetime * need caller proof; the allocator does not establish those guarantees.",
+      "lines": [
+        285
+      ],
+      "evidence": "* Append the supplied position, texture coordinates and RGBA components * using the same complete native instruction sequence as uvVtx. This entry * does not read or duplicate an existing vertex despite its inherited name. * Narrow coordinates to halfwords and colors to bytes, advance the signed * halfword count, clear the first-vertex override and return the prior index. * RE_ORIGINAL_QUIRK: The strict capacity < count rejection admits equality * and negative indices; retain repeated loads and halfword wrap/narrowing. * RE_UNKNOWN: Valid caller indices, capacity convention and buffer lifetime * need caller proof; the allocator does not establish those guarantees.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvVtxDup",
+          "declaration_line": 297,
+          "lines": [
+            285
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-daf49ad0accc",
+      "kind": "original_quirk",
+      "path": "src/modules/uvdgeom_rom.c",
+      "symbol": "* Publish ten dynamic-geometry exports and choose the vertex capacity from * system property 14, using 100 when the property is absent or its word is zero. * Allocate and zero two capacity-times-16-byte buffers, select buffer zero, * clear the count, set both range overrides to -1 and two shared floats to 1. * Load GEOM, CBCK and GMGR in that order, then register uvFlipVtx on list 1. * RE_ORIGINAL_QUIRK: Any nonzero signed capacity is retained; no allocation * failure or multiplication-range check is introduced. * RE_UNKNOWN: Settings lifetime, valid capacity domain, allocation success, * export storage extent and callback teardown ordering require loader proof.",
+      "lines": [
+        48
+      ],
+      "evidence": "* Publish ten dynamic-geometry exports and choose the vertex capacity from * system property 14, using 100 when the property is absent or its word is zero. * Allocate and zero two capacity-times-16-byte buffers, select buffer zero, * clear the count, set both range overrides to -1 and two shared floats to 1. * Load GEOM, CBCK and GMGR in that order, then register uvFlipVtx on list 1. * RE_ORIGINAL_QUIRK: Any nonzero signed capacity is retained; no allocation * failure or multiplication-range check is introduced. * RE_UNKNOWN: Settings lifetime, valid capacity domain, allocation success, * export storage extent and callback teardown ordering require loader proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_uvdgeom_rom_400000",
+          "declaration_line": 60,
+          "lines": [
+            48
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-5524581f138c",
+      "kind": "original_quirk",
+      "path": "src/modules/uvdgeom_rom.c",
+      "symbol": "* Reset the signed-halfword vertex count on every call. When the incoming * byte is nonzero, XOR the buffer selector with one and reload the selected * buffer pointer; zero leaves the selector and pointer unchanged. * RE_ORIGINAL_QUIRK: This helper neither clears vertex memory nor resets * polygon/grid/mesh markers or range overrides. * RE_UNKNOWN: A selector outside the initialized 0/1 domain, buffer lifetime * and synchronization with outstanding drawing work require caller proof.",
+      "lines": [
+        153
+      ],
+      "evidence": "* Reset the signed-halfword vertex count on every call. When the incoming * byte is nonzero, XOR the buffer selector with one and reload the selected * buffer pointer; zero leaves the selector and pointer unchanged. * RE_ORIGINAL_QUIRK: This helper neither clears vertex memory nor resets * polygon/grid/mesh markers or range overrides. * RE_UNKNOWN: A selector outside the initialized 0/1 domain, buffer lifetime * and synchronization with outstanding drawing work require caller proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvVtxFlip",
+          "declaration_line": 163,
+          "lines": [
+            153
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-d229ebc39b63",
       "kind": "original_quirk",
       "path": "src/modules/uvdgeom_rom.c",
       "symbol": "Preserve the original signed limit < count rejection: equality reaches * the indexed stores, with repeated count/base reloads and 16-bit count update. * RE_ORIGINAL_QUIRK: there is no equality or negative-count rejection here. * RE_UNKNOWN: allocated extent and caller prevention of limit/negative/wrapped * counts require original allocation/settings and append/reset callers; * no reachable overrun or intended limit convention has been established.",
       "lines": [
-        104
+        116
       ],
-      "evidence": "Preserve the original signed limit < count rejection: equality reaches * the indexed stores, with repeated count/base reloads and 16-bit count update. * RE_ORIGINAL_QUIRK: there is no equality or negative-count rejection here. * RE_UNKNOWN: allocated extent and caller prevention of limit/negative/wrapped * counts require original allocation/settings and append/reset callers; * no reachable overrun or intended limit convention has been established.",
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvVtx",
-          "declaration_line": 111,
-          "lines": [
-            104
-          ]
-        }
-      ]
+      "evidence": "Preserve the original signed limit < count rejection: equality reaches * the indexed stores, with repeated count/base reloads and 16-bit count update. * RE_ORIGINAL_QUIRK: there is no equality or negative-count rejection here. * RE_UNKNOWN: allocated extent and caller prevention of limit/negative/wrapped * counts require original allocation/settings and append/reset callers; * no reachable overrun or intended limit convention has been established."
     },
     {
       "id": "Q-6cf285d45817",
@@ -223330,19 +223520,9 @@
       "path": "src/modules/uvdgeom_rom.c",
       "symbol": "The native instruction bytes match uvVtx. Preserve the original signed limit < count rejection: equality reaches * the indexed stores, with repeated count/base reloads and 16-bit count update. * RE_ORIGINAL_QUIRK: there is no equality or negative-count rejection here. * RE_UNKNOWN: allocated extent and caller prevention of limit/negative/wrapped * counts require original allocation/settings and append/reset callers; * no reachable overrun or intended limit convention has been established.",
       "lines": [
-        236
+        278
       ],
-      "evidence": "The native instruction bytes match uvVtx. Preserve the original signed limit < count rejection: equality reaches * the indexed stores, with repeated count/base reloads and 16-bit count update. * RE_ORIGINAL_QUIRK: there is no equality or negative-count rejection here. * RE_UNKNOWN: allocated extent and caller prevention of limit/negative/wrapped * counts require original allocation/settings and append/reset callers; * no reachable overrun or intended limit convention has been established.",
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvVtxDup",
-          "declaration_line": 243,
-          "lines": [
-            236
-          ]
-        }
-      ]
+      "evidence": "The native instruction bytes match uvVtx. Preserve the original signed limit < count rejection: equality reaches * the indexed stores, with repeated count/base reloads and 16-bit count update. * RE_ORIGINAL_QUIRK: there is no equality or negative-count rejection here. * RE_UNKNOWN: allocated extent and caller prevention of limit/negative/wrapped * counts require original allocation/settings and append/reset callers; * no reachable overrun or intended limit convention has been established."
     },
     {
       "id": "Q-fa29417c2b88",
@@ -226852,16 +227032,16 @@
       "path": "src/modules/uvbill_rom.c",
       "symbol": "Unknown selectors terminate immediately; keep consumed arguments and partial earlier stores.",
       "lines": [
-        563
+        575
       ],
       "evidence": "Unknown selectors terminate immediately; keep consumed arguments and partial earlier stores.",
       "owners": [
         {
           "kind": "function",
           "name": "uvBillProps",
-          "declaration_line": 462,
+          "declaration_line": 474,
           "lines": [
-            563
+            575
           ]
         }
       ]
@@ -229857,15 +230037,15 @@
       "path": "src/modules/uvbill_rom.c",
       "symbol": "unused",
       "lines": [
-        288
+        300
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvBillboardClearFrameMarks",
-          "declaration_line": 288,
+          "declaration_line": 300,
           "lines": [
-            288
+            300
           ]
         }
       ]
@@ -229876,15 +230056,15 @@
       "path": "src/modules/uvbill_rom.c",
       "symbol": "unusedCallbackArgument",
       "lines": [
-        154
+        166
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvBillDraw",
-          "declaration_line": 154,
+          "declaration_line": 166,
           "lines": [
-            154
+            166
           ]
         }
       ]

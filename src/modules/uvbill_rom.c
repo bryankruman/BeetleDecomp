@@ -76,6 +76,18 @@ static UvCback_Exports *sUvCbackExports;
 static UvTSeq_Exports *sUvTSeqExports;
 static UnkTerraExports *sUvTerraExports; // terra exports
 
+/*
+ * Publish nine billboard exports and choose the pool count from system
+ * property 13, using 100 when the property is absent or its word is zero.
+ * Allocate and zero, in order, 120-byte records and parallel 4-, 12- and
+ * 4-byte-per-record arrays. Load STAT, CHAN, FMTX, MATH, TSEQ, DGEO, GMGR,
+ * CBCK and TERR, then register the frame-mark reset callback on GMGR list 1.
+ * RE_ORIGINAL_QUIRK: Retain any nonzero signed count, repeated count reads
+ * across calls, original allocation order and the inherited empty do/while.
+ * RE_UNKNOWN: Settings and export lifetime, count/multiplication bounds,
+ * allocation success and dependency/callback teardown require loader proof.
+ */
+#line 79 "src/modules/uvbill_rom.c"
 void __entrypoint_func_uvbill_rom_400000(UvBill_Exports *exports) {
     s32 *billBoardCount;
 

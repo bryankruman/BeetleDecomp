@@ -45,6 +45,18 @@ extern s8 D_uvdgeom_rom_004007A4;
 extern UvCback_Exports *D_uvdgeom_rom_004007AC;
 extern void *sVertexDataPtrs[2];
 
+/*
+ * Publish ten dynamic-geometry exports and choose the vertex capacity from
+ * system property 14, using 100 when the property is absent or its word is zero.
+ * Allocate and zero two capacity-times-16-byte buffers, select buffer zero,
+ * clear the count, set both range overrides to -1 and two shared floats to 1.
+ * Load GEOM, CBCK and GMGR in that order, then register uvFlipVtx on list 1.
+ * RE_ORIGINAL_QUIRK: Any nonzero signed capacity is retained; no allocation
+ * failure or multiplication-range check is introduced.
+ * RE_UNKNOWN: Settings lifetime, valid capacity domain, allocation success,
+ * export storage extent and callback teardown ordering require loader proof.
+ */
+#line 48 "src/modules/uvdgeom_rom.c"
 void __entrypoint_func_uvdgeom_rom_400000(UvDGeom_Rom_Exports *exports) {
     s32 vertexCount;
     s32 *vertexCountPtr;
@@ -108,6 +120,18 @@ void uvDgeomModuleCleanup(void) {
  * counts require original allocation/settings and append/reset callers;
  * no reachable overrun or intended limit convention has been established. */
 #line 101 "src/modules/uvdgeom_rom.c"
+/*
+ * Append one vertex to the current buffer: narrow position and texture
+ * coordinates to halfwords and RGBA components to bytes, then increment the
+ * signed halfword count, clear the first-vertex override to -1 and return
+ * the previous index through the original signed-halfword conversion.
+ * RE_ORIGINAL_QUIRK: Reject only capacity < count and return that count;
+ * equality and negative counts reach the stores. Preserve all base/count
+ * reloads, narrowing and count-wrap behavior.
+ * RE_UNKNOWN: Caller prevention of equal, negative or wrapped indices and
+ * buffer lifetime remain unproved; initialization alone supplies no such gate.
+ */
+#line 101 "src/modules/uvdgeom_rom.c"
 s16 uvVtx(s32 x, s32 y, s32 z, s32 s, s32 t, s32 r, s32 g, s32 b, s32 a) {
     if (sMaxVertexCount < sVertexCount) {
         return sVertexCount;
@@ -126,6 +150,16 @@ s16 uvVtx(s32 x, s32 y, s32 z, s32 s, s32 t, s32 r, s32 g, s32 b, s32 a) {
     return sVertexCount - 1;
 }
 
+/*
+ * Reset the signed-halfword vertex count on every call. When the incoming
+ * byte is nonzero, XOR the buffer selector with one and reload the selected
+ * buffer pointer; zero leaves the selector and pointer unchanged.
+ * RE_ORIGINAL_QUIRK: This helper neither clears vertex memory nor resets
+ * polygon/grid/mesh markers or range overrides.
+ * RE_UNKNOWN: A selector outside the initialized 0/1 domain, buffer lifetime
+ * and synchronization with outstanding drawing work require caller proof.
+ */
+#line 119 "src/modules/uvdgeom_rom.c"
 void uvVtxFlip(u8 flip) {
     sVertexCount = 0;
     if (flip) {
@@ -147,6 +181,14 @@ void uvDgeomSetVertexRange(s32 first, s32 count) {
 }
 #line 135 "src/modules/uvdgeom_rom.c"
 
+/*
+ * Snapshot the current signed-halfword vertex count as the polygon start.
+ * The polygon-end wrapper later uses this marker unless a range override
+ * replaces it; this call does not append, allocate or reset vertices.
+ * RE_UNKNOWN: Begin/end ordering, valid count and buffer lifetime remain
+ * caller obligations; no range validation is performed here.
+ */
+#line 136 "src/modules/uvdgeom_rom.c"
 void uvVtxBeginPoly(void) {
     sFirstPoly = sVertexCount;
 }
@@ -239,6 +281,18 @@ void uvVtxEndPoly(void) {
  * RE_UNKNOWN: allocated extent and caller prevention of limit/negative/wrapped
  * counts require original allocation/settings and append/reset callers;
  * no reachable overrun or intended limit convention has been established. */
+#line 198 "src/modules/uvdgeom_rom.c"
+/*
+ * Append the supplied position, texture coordinates and RGBA components
+ * using the same complete native instruction sequence as uvVtx. This entry
+ * does not read or duplicate an existing vertex despite its inherited name.
+ * Narrow coordinates to halfwords and colors to bytes, advance the signed
+ * halfword count, clear the first-vertex override and return the prior index.
+ * RE_ORIGINAL_QUIRK: The strict capacity < count rejection admits equality
+ * and negative indices; retain repeated loads and halfword wrap/narrowing.
+ * RE_UNKNOWN: Valid caller indices, capacity convention and buffer lifetime
+ * need caller proof; the allocator does not establish those guarantees.
+ */
 #line 198 "src/modules/uvdgeom_rom.c"
 s16 uvVtxDup(s32 x, s32 y, s32 z, s32 s, s32 t, s32 r, s32 g, s32 b, s32 a) {
     if (sMaxVertexCount < sVertexCount) {
