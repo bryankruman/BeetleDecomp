@@ -17,18 +17,18 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 1502 |
-| Preserved RE_ORIGINAL_QUIRK notes | 366 |
+| Explicit RE_UNKNOWN notes | 1517 |
+| Preserved RE_ORIGINAL_QUIRK notes | 377 |
 | Older comments with uncertainty language | 95 |
 | Documented original-behavior audits | 30 |
-| Assembly-backed functions or data | 767 |
-| Address-based function identifiers | 904 |
+| Assembly-backed functions or data | 766 |
+| Address-based function identifiers | 908 |
 | Address-based global identifiers | 1475 |
-| Offset-based fields or neutral typed fields | 1630 |
+| Offset-based fields or neutral typed fields | 1641 |
 | Layout padding to preserve | 275 |
 | Unresolved type names | 282 |
-| Explicit unused ABI, storage or local identifiers | 136 |
-| Decompiler parameter/local names | 644 |
+| Explicit unused ABI, storage or local identifiers | 137 |
+| Decompiler parameter/local names | 640 |
 | Fake, unresolved or TODO draft markers | 37 |
 | Data-dependent conditional draft guards | 4 |
 
@@ -5613,39 +5613,55 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
-| address_function | `func_triganim_00400090` | function `__entrypoint_func_triganimInitializeModuleExports`, function `func_triganim_00400090`, function `func_triganim_00400090` | [29](../src/modules/triganim.c#L29), [48](../src/modules/triganim.c#L48), [66](../src/modules/triganim.c#L66) |
-| address_function | `func_triganim_00400098` | function `__entrypoint_func_triganimInitializeModuleExports`, global `func_triganim_00400098` | [32](../src/modules/triganim.c#L32), [49](../src/modules/triganim.c#L49) |
-| address_function | `func_triganim_00400624` | function `__entrypoint_func_triganimInitializeModuleExports`, global `func_triganim_00400624` | [33](../src/modules/triganim.c#L33), [50](../src/modules/triganim.c#L50) |
-| address_function | `func_triganim_004007D4` | function `__entrypoint_func_triganimInitializeModuleExports`, global `func_triganim_004007D4` | [34](../src/modules/triganim.c#L34), [51](../src/modules/triganim.c#L51) |
-| address_function | `func_triganim_00400F7C` | function `__entrypoint_func_triganimInitializeModuleExports`, global `func_triganim_00400F7C` | [35](../src/modules/triganim.c#L35), [52](../src/modules/triganim.c#L52) |
-| address_function | `func_triganim_0040154C` | function `func_triganim_0040154C` | [128](../src/modules/triganim.c#L128) |
-| address_function | `func_triganim_004016D4` | function `__entrypoint_func_triganimInitializeModuleExports`, global `func_triganim_004016D4` | [36](../src/modules/triganim.c#L36), [55](../src/modules/triganim.c#L55) |
-| address_global | `D_triganim_00401874` | function `__entrypoint_func_triganimInitializeModuleExports`, global `D_triganim_00401874` | [28](../src/modules/triganim.c#L28), [56](../src/modules/triganim.c#L56) |
-| address_global | `D_triganim_00401878` | function `__entrypoint_func_triganimInitializeModuleExports`, function `triganimCreateTransformNode`, global `D_triganim_00401878` | [5](../src/modules/triganim.c#L5), [57](../src/modules/triganim.c#L57), [148](../src/modules/triganim.c#L148), [149](../src/modules/triganim.c#L149) |
-| assembly | `func_triganim_00400098` | — | [70](../src/modules/triganim.c#L70) |
-| assembly | `func_triganim_00400374` | — | [72](../src/modules/triganim.c#L72) |
-| assembly | `func_triganim_00400624` | — | [74](../src/modules/triganim.c#L74) |
-| assembly | `func_triganim_004007D4` | — | [76](../src/modules/triganim.c#L76) |
-| assembly | `func_triganim_00400A68` | — | [78](../src/modules/triganim.c#L78) |
-| assembly | `func_triganim_00400F7C` | — | [80](../src/modules/triganim.c#L80) |
-| assembly | `func_triganim_004010D4` | — | [82](../src/modules/triganim.c#L82) |
-| assembly | `func_triganim_00401274` | — | [102](../src/modules/triganim.c#L102) |
-| assembly | `func_triganim_004016D4` | — | [164](../src/modules/triganim.c#L164) |
-| explicit_unknown | `* Build a local identity matrix, read object transform slot 1, write that matrix * to slot 0, then replace slot 1 with the identity. Preserve the four callback * calls and both ...` | function `triganimPromoteSecondaryTransform` | [105](../src/modules/triganim.c#L105) |
-| explicit_unknown | `* Clear the dynamic object unconditionally, then read the sound pointer and * store -1 to the object ID. Release the sound only when non-NULL, and clear * the sound pointer afte...` | function `triganimReleaseObjectAndSound` | [85](../src/modules/triganim.c#L85) |
-| explicit_unknown | `Allocate/prepend the original 0x94-byte node, copy both matrices and attach * its model/object. Modes zero/two set object flags three; mode one clears them. * Scalar 0x80 and mo...` | function `triganimCreateTransformNode` | [133](../src/modules/triganim.c#L133) |
+| address_function | `func_triganim_00400090` | function `__entrypoint_func_triganimInitializeModuleExports`, function `func_triganim_00400090`, function `func_triganim_00400090` | [81](../src/modules/triganim.c#L81), [100](../src/modules/triganim.c#L100), [118](../src/modules/triganim.c#L118) |
+| address_function | `func_triganim_00400098` | function `__entrypoint_func_triganimInitializeModuleExports`, global `func_triganim_00400098` | [84](../src/modules/triganim.c#L84), [101](../src/modules/triganim.c#L101) |
+| address_function | `func_triganim_00400374` | function `func_triganim_00400374` | [77](../src/modules/triganim.c#L77) |
+| address_function | `func_triganim_00400624` | function `__entrypoint_func_triganimInitializeModuleExports`, function `func_triganim_00400624` | [85](../src/modules/triganim.c#L85), [102](../src/modules/triganim.c#L102) |
+| address_function | `func_triganim_004007D4` | function `__entrypoint_func_triganimInitializeModuleExports`, global `func_triganim_004007D4` | [86](../src/modules/triganim.c#L86), [103](../src/modules/triganim.c#L103) |
+| address_function | `func_triganim_00400A68` | function `func_triganim_00400A68` | [76](../src/modules/triganim.c#L76) |
+| address_function | `func_triganim_00400F7C` | function `__entrypoint_func_triganimInitializeModuleExports`, function `func_triganim_00400F7C`, function `func_triganim_00400F7C` | [87](../src/modules/triganim.c#L87), [104](../src/modules/triganim.c#L104), [141](../src/modules/triganim.c#L141) |
+| address_function | `func_triganim_004010D4` | function `func_triganim_004010D4` | [78](../src/modules/triganim.c#L78) |
+| address_function | `func_triganim_00401274` | function `func_triganim_00401274` | [75](../src/modules/triganim.c#L75) |
+| address_function | `func_triganim_0040154C` | function `func_triganim_0040154C`, function `func_triganim_0040154C` | [79](../src/modules/triganim.c#L79), [217](../src/modules/triganim.c#L217) |
+| address_function | `func_triganim_004016D4` | function `__entrypoint_func_triganimInitializeModuleExports`, global `func_triganim_004016D4` | [88](../src/modules/triganim.c#L88), [107](../src/modules/triganim.c#L107) |
+| address_global | `D_triganim_00401874` | function `__entrypoint_func_triganimInitializeModuleExports`, global `D_triganim_00401874` | [74](../src/modules/triganim.c#L74), [108](../src/modules/triganim.c#L108) |
+| address_global | `D_triganim_00401878` | function `__entrypoint_func_triganimInitializeModuleExports`, function `triganimCreateTransformNode`, global `D_triganim_00401878` | [5](../src/modules/triganim.c#L5), [109](../src/modules/triganim.c#L109), [237](../src/modules/triganim.c#L237), [238](../src/modules/triganim.c#L238) |
+| assembly | `func_triganim_00400098` | — | [122](../src/modules/triganim.c#L122) |
+| assembly | `func_triganim_00400374` | — | [124](../src/modules/triganim.c#L124) |
+| assembly | `func_triganim_00400624` | — | [126](../src/modules/triganim.c#L126) |
+| assembly | `func_triganim_004007D4` | — | [128](../src/modules/triganim.c#L128) |
+| assembly | `func_triganim_00400A68` | — | [130](../src/modules/triganim.c#L130) |
+| assembly | `func_triganim_004010D4` | — | [171](../src/modules/triganim.c#L171) |
+| assembly | `func_triganim_00401274` | — | [191](../src/modules/triganim.c#L191) |
+| assembly | `func_triganim_004016D4` | — | [253](../src/modules/triganim.c#L253) |
+| explicit_unknown | `* Build a local identity matrix, read object transform slot 1, write that matrix * to slot 0, then replace slot 1 with the identity. Preserve the four callback * calls and both ...` | function `triganimPromoteSecondaryTransform` | [194](../src/modules/triganim.c#L194) |
+| explicit_unknown | `* Clear the dynamic object unconditionally, then read the sound pointer and * store -1 to the object ID. Release the sound only when non-NULL, and clear * the sound pointer afte...` | function `triganimReleaseObjectAndSound` | [174](../src/modules/triganim.c#L174) |
+| explicit_unknown | `Access view only: opaque spans are not inferred member identities. * RE_UNKNOWN: historical node declarations, complete allocation/lifetime and * callback mutation contracts nee...` | type `TriganimUpdateNode` | [28](../src/modules/triganim.c#L28) |
+| explicit_unknown | `Allocate/prepend the original 0x94-byte node, copy both matrices and attach * its model/object. Modes zero/two set object flags three; mode one clears them. * Scalar 0x80 and mo...` | function `triganimCreateTransformNode` | [222](../src/modules/triganim.c#L222) |
+| explicit_unknown | `Fill up to five empty dynamic-state slots from signed16 variadic LOD IDs. * Each populated slot receives the owner object/model LOD, scalar property * nine equal to one, then th...` | function `func_triganim_00400F7C` | [132](../src/modules/triganim.c#L132) |
 | explicit_unknown | `Initializer-only storage view: each field is an original 32-bit address, * not an inferred callable export interface. Opaque assembly declarations * below identify linker code-l...` | type `TriganimExportAddresses` | [12](../src/modules/triganim.c#L12) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_triganim_00400090`, function `func_triganim_0040154C` | [62](../src/modules/triganim.c#L62), [124](../src/modules/triganim.c#L124) |
-| explicit_unknown | `Register the eight original trigger-animation callback addresses after * updating the allocation pointer; then clear word 0x1874 and the transform * list head in their original ...` | function `__entrypoint_func_triganimInitializeModuleExports` | [39](../src/modules/triganim.c#L39) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_triganim_00400090`, function `func_triganim_0040154C` | [114](../src/modules/triganim.c#L114), [213](../src/modules/triganim.c#L213) |
+| explicit_unknown | `Register the eight original trigger-animation callback addresses after * updating the allocation pointer; then clear word 0x1874 and the transform * list head in their original ...` | function `__entrypoint_func_triganimInitializeModuleExports` | [91](../src/modules/triganim.c#L91) |
+| offset_field | `opaque00` | type `TriganimDynamicExports`, type `TriganimMatrixExports` | [52](../src/modules/triganim.c#L52), [67](../src/modules/triganim.c#L67) |
+| offset_field | `opaque08` | type `TriganimUpdateNode` | [34](../src/modules/triganim.c#L34) |
+| offset_field | `opaque140` | type `TriganimDynamicExports` | [54](../src/modules/triganim.c#L54) |
+| offset_field | `opaque14C` | type `TriganimDynamicExports` | [57](../src/modules/triganim.c#L57) |
+| offset_field | `opaque160` | type `TriganimDynamicExports` | [59](../src/modules/triganim.c#L59) |
+| offset_field | `opaque16C` | type `TriganimDynamicExports` | [61](../src/modules/triganim.c#L61) |
+| offset_field | `opaque174` | type `TriganimDynamicExports` | [63](../src/modules/triganim.c#L63) |
+| offset_field | `opaque27` | type `TriganimUpdateNode` | [37](../src/modules/triganim.c#L37) |
+| offset_field | `opaque34` | type `TriganimUpdateNode` | [40](../src/modules/triganim.c#L40) |
+| offset_field | `opaque71` | type `TriganimUpdateNode` | [46](../src/modules/triganim.c#L46) |
 | offset_field | `unk04` | type `TriganimObjectSound` | [7](../src/modules/triganim.c#L7) |
-| offset_field | `unknownCallback04Address` | function `__entrypoint_func_triganimInitializeModuleExports`, type `TriganimExportAddresses` | [20](../src/modules/triganim.c#L20), [49](../src/modules/triganim.c#L49) |
-| offset_field | `unknownCallback08Address` | function `__entrypoint_func_triganimInitializeModuleExports`, type `TriganimExportAddresses` | [21](../src/modules/triganim.c#L21), [50](../src/modules/triganim.c#L50) |
-| offset_field | `unknownCallback0CAddress` | function `__entrypoint_func_triganimInitializeModuleExports`, type `TriganimExportAddresses` | [22](../src/modules/triganim.c#L22), [51](../src/modules/triganim.c#L51) |
-| offset_field | `unknownCallback10Address` | function `__entrypoint_func_triganimInitializeModuleExports`, type `TriganimExportAddresses` | [23](../src/modules/triganim.c#L23), [52](../src/modules/triganim.c#L52) |
-| offset_field | `unknownCallback1CAddress` | function `__entrypoint_func_triganimInitializeModuleExports`, type `TriganimExportAddresses` | [26](../src/modules/triganim.c#L26), [55](../src/modules/triganim.c#L55) |
-| offset_field | `value88` | function `triganimCreateTransformNode`, type `TriganimTransformNode` | [4](../src/modules/triganim.c#L4), [153](../src/modules/triganim.c#L153) |
-| opaque_type | `UnkStruct_004005C8` | function `triganimReleaseObjectAndSound`, type `TriganimObjectSound` | [7](../src/modules/triganim.c#L7), [93](../src/modules/triganim.c#L93) |
-| original_quirk | `Allocate/prepend the original 0x94-byte node, copy both matrices and attach * its model/object. Modes zero/two set object flags three; mode one clears them. * Scalar 0x80 and mo...` | function `triganimCreateTransformNode` | [133](../src/modules/triganim.c#L133) |
+| offset_field | `unkPtr90` | function `func_triganim_00400F7C` | [166](../src/modules/triganim.c#L166) |
+| offset_field | `unknownCallback04Address` | function `__entrypoint_func_triganimInitializeModuleExports`, type `TriganimExportAddresses` | [20](../src/modules/triganim.c#L20), [101](../src/modules/triganim.c#L101) |
+| offset_field | `unknownCallback08Address` | function `__entrypoint_func_triganimInitializeModuleExports`, type `TriganimExportAddresses` | [21](../src/modules/triganim.c#L21), [102](../src/modules/triganim.c#L102) |
+| offset_field | `unknownCallback0CAddress` | function `__entrypoint_func_triganimInitializeModuleExports`, type `TriganimExportAddresses` | [22](../src/modules/triganim.c#L22), [103](../src/modules/triganim.c#L103) |
+| offset_field | `unknownCallback10Address` | function `__entrypoint_func_triganimInitializeModuleExports`, type `TriganimExportAddresses` | [23](../src/modules/triganim.c#L23), [104](../src/modules/triganim.c#L104) |
+| offset_field | `unknownCallback1CAddress` | function `__entrypoint_func_triganimInitializeModuleExports`, type `TriganimExportAddresses` | [26](../src/modules/triganim.c#L26), [107](../src/modules/triganim.c#L107) |
+| offset_field | `value88` | function `triganimCreateTransformNode`, type `TriganimTransformNode` | [4](../src/modules/triganim.c#L4), [242](../src/modules/triganim.c#L242) |
+| opaque_type | `UnkStruct_004005C8` | function `triganimReleaseObjectAndSound`, type `TriganimObjectSound` | [7](../src/modules/triganim.c#L7), [182](../src/modules/triganim.c#L182) |
+| original_quirk | `Allocate/prepend the original 0x94-byte node, copy both matrices and attach * its model/object. Modes zero/two set object flags three; mode one clears them. * Scalar 0x80 and mo...` | function `triganimCreateTransformNode` | [222](../src/modules/triganim.c#L222) |
 
 ## src/modules/txtview.c
 
@@ -5857,9 +5873,12 @@ For every future source wave, regenerate and check this index after code and str
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
 | address_function | `__entrypoint_func_uvblit_rom_400000` | function `__entrypoint_func_uvblit_rom_400000` | [10](../src/modules/uvblit_rom.c#L10) |
-| explicit_unknown | `Offset 0x06: all 100 original assets store rounded tile-column width. RE_UNKNOWN: modified-input validation and historical format contract.` | function `_uvParseUVBT` | [56](../src/modules/uvblit_rom.c#L56) |
-| offset_field | `unkA` | function `_uvParseUVBT` | [106](../src/modules/uvblit_rom.c#L106) |
-| original_quirk | `Original assets have nonzero divisors; RE_ORIGINAL_QUIRK: these divisions have no local input checks.` | function `_uvParseUVBT` | [113](../src/modules/uvblit_rom.c#L113) |
+| explicit_unknown | `* Free the bitmap pixel buffer, bitmap-descriptor array and root record in * that order. No pointer, count or shared-buffer checks are performed. * RE_UNKNOWN: Complete construc...` | function `uvFreeBlit` | [165](../src/modules/uvblit_rom.c#L165) |
+| explicit_unknown | `* Visit bitmap-file blocks with decode flag 1. For each COMM block, call the * existing bitmap parser and free the block; release the file handle at end. * RE_ORIGINAL_QUIRK: Th...` | function `uvParseBlit` | [20](../src/modules/uvblit_rom.c#L20) |
+| explicit_unknown | `Offset 0x06: all 100 original assets store rounded tile-column width. RE_UNKNOWN: modified-input validation and historical format contract.` | function `_uvParseUVBT` | [66](../src/modules/uvblit_rom.c#L66) |
+| offset_field | `unkA` | function `_uvParseUVBT` | [116](../src/modules/uvblit_rom.c#L116) |
+| original_quirk | `* Visit bitmap-file blocks with decode flag 1. For each COMM block, call the * existing bitmap parser and free the block; release the file handle at end. * RE_ORIGINAL_QUIRK: Th...` | function `uvParseBlit` | [20](../src/modules/uvblit_rom.c#L20) |
+| original_quirk | `Original assets have nonzero divisors; RE_ORIGINAL_QUIRK: these divisions have no local input checks.` | function `_uvParseUVBT` | [123](../src/modules/uvblit_rom.c#L123) |
 
 ## src/modules/uvcback_rom.c
 
@@ -7066,18 +7085,22 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `__entrypoint_func_uvenvld_rom_400000` | function `__entrypoint_func_uvenvld_rom_400000`, function `__entrypoint_func_uvenvld_rom_400000` | [11](../src/modules/uvenvld_rom.c#L11), [18](../src/modules/uvenvld_rom.c#L18), [20](../src/modules/uvenvld_rom.c#L20) |
 | address_global | `D_uvenvld_rom_00400320` | — | [18](../src/modules/uvenvld_rom.c#L18) |
 | decompiler_local | `arg0` | function `_uvParseUVEN` | [14](../src/modules/uvenvld_rom.c#L14) |
-| decompiler_local | `temp_a1` | function `uvEnvLdCleanup` | [94](../src/modules/uvenvld_rom.c#L94), [99](../src/modules/uvenvld_rom.c#L99), [100](../src/modules/uvenvld_rom.c#L100), [101](../src/modules/uvenvld_rom.c#L101) |
-| decompiler_local | `var_s1` | function `uvEnvLdCleanup` | [96](../src/modules/uvenvld_rom.c#L96) |
+| explicit_unknown | `* Copy the 0x60-byte environment record, clear its two callback fields and * allocate a model table for the byte-sized model count. For each entry, read * the model ID, load UVM...` | function `_uvParseUVEN` | [72](../src/modules/uvenvld_rom.c#L72) |
+| explicit_unknown | `* Free the optional field-0x44 lookup, unload each referenced UVMD in table * order when the byte-sized model count is nonzero, then free the table and * environment record. A z...` | function `uvEnvLdCleanup` | [114](../src/modules/uvenvld_rom.c#L114) |
+| explicit_unknown | `* Open the environment file and visit blocks with decode flag 1. For each * COMM block, parse its bytes and free that block before continuing; release * the file handle at the e...` | function `uvParseUVEN` | [34](../src/modules/uvenvld_rom.c#L34) |
 | layout_padding | `pad0` | type `UnkUvEnvLd_Exports` | [7](../src/modules/uvenvld_rom.c#L7) |
-| offset_field | `unk1D` | function `_uvParseUVEN` | [81](../src/modules/uvenvld_rom.c#L81) |
-| offset_field | `unk38` | function `_uvParseUVEN` | [69](../src/modules/uvenvld_rom.c#L69) |
-| offset_field | `unk3C` | function `_uvParseUVEN` | [87](../src/modules/uvenvld_rom.c#L87) |
-| offset_field | `unk4` | function `_uvParseUVEN`, type `UnkUvEnvLd_Exports` | [8](../src/modules/uvenvld_rom.c#L8), [87](../src/modules/uvenvld_rom.c#L87) |
-| offset_field | `unk40` | function `_uvParseUVEN` | [87](../src/modules/uvenvld_rom.c#L87) |
-| offset_field | `unk44` | function `_uvParseUVEN`, function `uvEnvLdCleanup` | [82](../src/modules/uvenvld_rom.c#L82), [85](../src/modules/uvenvld_rom.c#L85), [87](../src/modules/uvenvld_rom.c#L87), [99](../src/modules/uvenvld_rom.c#L99) |
-| offset_field | `unk5C` | function `_uvParseUVEN` | [70](../src/modules/uvenvld_rom.c#L70) |
-| opaque_type | `UnkUvEnvLd_Exports` | function `_uvParseUVEN`, type `UnkUvEnvLd_Exports` | [9](../src/modules/uvenvld_rom.c#L9), [64](../src/modules/uvenvld_rom.c#L64) |
+| offset_field | `unk1D` | function `_uvParseUVEN` | [102](../src/modules/uvenvld_rom.c#L102) |
+| offset_field | `unk38` | function `_uvParseUVEN` | [90](../src/modules/uvenvld_rom.c#L90) |
+| offset_field | `unk3C` | function `_uvParseUVEN` | [108](../src/modules/uvenvld_rom.c#L108) |
+| offset_field | `unk4` | function `_uvParseUVEN`, type `UnkUvEnvLd_Exports` | [8](../src/modules/uvenvld_rom.c#L8), [108](../src/modules/uvenvld_rom.c#L108) |
+| offset_field | `unk40` | function `_uvParseUVEN` | [108](../src/modules/uvenvld_rom.c#L108) |
+| offset_field | `unk44` | function `_uvParseUVEN`, function `uvEnvLdCleanup` | [103](../src/modules/uvenvld_rom.c#L103), [106](../src/modules/uvenvld_rom.c#L106), [108](../src/modules/uvenvld_rom.c#L108), [129](../src/modules/uvenvld_rom.c#L129) |
+| offset_field | `unk5C` | function `_uvParseUVEN` | [91](../src/modules/uvenvld_rom.c#L91) |
+| opaque_type | `UnkUvEnvLd_Exports` | function `_uvParseUVEN`, type `UnkUvEnvLd_Exports` | [9](../src/modules/uvenvld_rom.c#L9), [85](../src/modules/uvenvld_rom.c#L85) |
 | opaque_type | `UnkUvEnvLd_Exports_s` | type `UnkUvEnvLd_Exports` | [6](../src/modules/uvenvld_rom.c#L6) |
+| original_quirk | `* Copy the 0x60-byte environment record, clear its two callback fields and * allocate a model table for the byte-sized model count. For each entry, read * the model ID, load UVM...` | function `_uvParseUVEN` | [72](../src/modules/uvenvld_rom.c#L72) |
+| original_quirk | `* Open the environment file and visit blocks with decode flag 1. For each * COMM block, parse its bytes and free that block before continuing; release * the file handle at the e...` | function `uvParseUVEN` | [34](../src/modules/uvenvld_rom.c#L34) |
+| unused_identifier | `unusedWord` | function `uvEnvLdCleanup` | [126](../src/modules/uvenvld_rom.c#L126) |
 
 ## src/modules/uvfmtx_rom.c
 
@@ -9037,52 +9060,54 @@ For every future source wave, regenerate and check this index after code and str
 | --- | --- | --- | --- |
 | address_function | `__entrypoint_func_uvtextureld_rom_400000` | function `__entrypoint_func_uvtextureld_rom_400000`, function `__entrypoint_func_uvtextureld_rom_400000` | [12](../src/modules/uvtextureld_rom.c#L12), [20](../src/modules/uvtextureld_rom.c#L20), [32](../src/modules/uvtextureld_rom.c#L32) |
 | address_global | `D_uvtextureld_rom_00400B50` | — | [20](../src/modules/uvtextureld_rom.c#L20) |
-| address_global | `D_uvtextureld_rom_00400B70` | function `__entrypoint_func_uvtextureld_rom_400000`, function `uvTextureFreeResource`, function `uvTextureLoadImageBytes`, global `D_uvtextureld_rom_00400B70` | [27](../src/modules/uvtextureld_rom.c#L27), [49](../src/modules/uvtextureld_rom.c#L49), [119](../src/modules/uvtextureld_rom.c#L119), [120](../src/modules/uvtextureld_rom.c#L120), [329](../src/modules/uvtextureld_rom.c#L329) |
-| address_global | `D_uvtextureld_rom_00400B72` | function `__entrypoint_func_uvtextureld_rom_400000`, function `uvTextureLoadImageBytes`, global `D_uvtextureld_rom_00400B72` | [28](../src/modules/uvtextureld_rom.c#L28), [41](../src/modules/uvtextureld_rom.c#L41), [43](../src/modules/uvtextureld_rom.c#L43), [119](../src/modules/uvtextureld_rom.c#L119) |
+| address_global | `D_uvtextureld_rom_00400B70` | function `__entrypoint_func_uvtextureld_rom_400000`, function `uvTextureFreeResource`, function `uvTextureLoadImageBytes`, global `D_uvtextureld_rom_00400B70` | [27](../src/modules/uvtextureld_rom.c#L27), [49](../src/modules/uvtextureld_rom.c#L49), [129](../src/modules/uvtextureld_rom.c#L129), [130](../src/modules/uvtextureld_rom.c#L130), [339](../src/modules/uvtextureld_rom.c#L339) |
+| address_global | `D_uvtextureld_rom_00400B72` | function `__entrypoint_func_uvtextureld_rom_400000`, function `uvTextureLoadImageBytes`, global `D_uvtextureld_rom_00400B72` | [28](../src/modules/uvtextureld_rom.c#L28), [41](../src/modules/uvtextureld_rom.c#L41), [43](../src/modules/uvtextureld_rom.c#L43), [129](../src/modules/uvtextureld_rom.c#L129) |
 | decompiler_local | `arg0` | function `uvTextureLoadImageBytes` | [15](../src/modules/uvtextureld_rom.c#L15) |
-| decompiler_local | `sp135` | function `_uvExpandTexture` | [154](../src/modules/uvtextureld_rom.c#L154), [217](../src/modules/uvtextureld_rom.c#L217), [218](../src/modules/uvtextureld_rom.c#L218), [219](../src/modules/uvtextureld_rom.c#L219), [220](../src/modules/uvtextureld_rom.c#L220) |
-| decompiler_local | `sp136` | function `_uvExpandTexture` | [153](../src/modules/uvtextureld_rom.c#L153), [214](../src/modules/uvtextureld_rom.c#L214), [215](../src/modules/uvtextureld_rom.c#L215) |
-| decompiler_local | `sp138` | function `_uvExpandTexture` | [152](../src/modules/uvtextureld_rom.c#L152), [221](../src/modules/uvtextureld_rom.c#L221) |
-| decompiler_local | `sp13C` | function `_uvExpandTexture` | [151](../src/modules/uvtextureld_rom.c#L151), [188](../src/modules/uvtextureld_rom.c#L188), [189](../src/modules/uvtextureld_rom.c#L189), [196](../src/modules/uvtextureld_rom.c#L196) |
-| decompiler_local | `sp140` | function `_uvExpandTexture` | [150](../src/modules/uvtextureld_rom.c#L150), [187](../src/modules/uvtextureld_rom.c#L187), [189](../src/modules/uvtextureld_rom.c#L189), [195](../src/modules/uvtextureld_rom.c#L195) |
-| decompiler_local | `sp14C` | function `_uvExpandTexture` | [147](../src/modules/uvtextureld_rom.c#L147), [170](../src/modules/uvtextureld_rom.c#L170), [171](../src/modules/uvtextureld_rom.c#L171), [176](../src/modules/uvtextureld_rom.c#L176), [186](../src/modules/uvtextureld_rom.c#L186), [189](../src/modules/uvtextureld_rom.c#L189), [194](../src/modules/uvtextureld_rom.c#L194) |
-| decompiler_local | `sp150` | function `_uvExpandTexture` | [146](../src/modules/uvtextureld_rom.c#L146), [169](../src/modules/uvtextureld_rom.c#L169), [171](../src/modules/uvtextureld_rom.c#L171), [175](../src/modules/uvtextureld_rom.c#L175), [185](../src/modules/uvtextureld_rom.c#L185), [189](../src/modules/uvtextureld_rom.c#L189), [193](../src/modules/uvtextureld_rom.c#L193) |
-| decompiler_local | `sp28` | function `uvTextureLoadImageBytes` | [106](../src/modules/uvtextureld_rom.c#L106), [118](../src/modules/uvtextureld_rom.c#L118) |
-| decompiler_local | `sp2C` | function `uvTextureLoadImageBytes` | [105](../src/modules/uvtextureld_rom.c#L105), [117](../src/modules/uvtextureld_rom.c#L117) |
-| decompiler_local | `sp30` | function `uvTextureLoadImageBytes` | [104](../src/modules/uvtextureld_rom.c#L104), [114](../src/modules/uvtextureld_rom.c#L114), [116](../src/modules/uvtextureld_rom.c#L116) |
-| decompiler_local | `sp34` | function `uvTextureLoadImageBytes` | [103](../src/modules/uvtextureld_rom.c#L103), [113](../src/modules/uvtextureld_rom.c#L113), [115](../src/modules/uvtextureld_rom.c#L115) |
-| decompiler_local | `sp54` | function `_uvExpandTexture` | [160](../src/modules/uvtextureld_rom.c#L160), [253](../src/modules/uvtextureld_rom.c#L253), [293](../src/modules/uvtextureld_rom.c#L293) |
-| decompiler_local | `var_a3` | function `_uvExpandTexture` | [138](../src/modules/uvtextureld_rom.c#L138) |
-| draft_marker | `TODO` | function `_uvExpandTexture` | [260](../src/modules/uvtextureld_rom.c#L260) |
-| explicit_unknown | `Clamp image bytes to 4096 and copy into a private eight-byte-aligned buffer below the allocation-count limit. * At the limit, call TEXT's lazy 4096-byte scratch allocator; that ...` | function `uvTextureLoadImageBytes` | [92](../src/modules/uvtextureld_rom.c#L92) |
-| explicit_unknown | `Original US COMM audit: at most four rows; six allocated. RE_UNKNOWN: modified/dynamic inputs, caller checks and parsed-row lifetime; docs/evidence/us-texture-row-contract.json.` | function `_uvExpandTexture` | [160](../src/modules/uvtextureld_rom.c#L160) |
-| layout_padding | `pad` | function `_uvExpandTexture`, function `uvTextureFreeResource` | [137](../src/modules/uvtextureld_rom.c#L137), [308](../src/modules/uvtextureld_rom.c#L308) |
+| decompiler_local | `sp135` | function `_uvExpandTexture` | [164](../src/modules/uvtextureld_rom.c#L164), [227](../src/modules/uvtextureld_rom.c#L227), [228](../src/modules/uvtextureld_rom.c#L228), [229](../src/modules/uvtextureld_rom.c#L229), [230](../src/modules/uvtextureld_rom.c#L230) |
+| decompiler_local | `sp136` | function `_uvExpandTexture` | [163](../src/modules/uvtextureld_rom.c#L163), [224](../src/modules/uvtextureld_rom.c#L224), [225](../src/modules/uvtextureld_rom.c#L225) |
+| decompiler_local | `sp138` | function `_uvExpandTexture` | [162](../src/modules/uvtextureld_rom.c#L162), [231](../src/modules/uvtextureld_rom.c#L231) |
+| decompiler_local | `sp13C` | function `_uvExpandTexture` | [161](../src/modules/uvtextureld_rom.c#L161), [198](../src/modules/uvtextureld_rom.c#L198), [199](../src/modules/uvtextureld_rom.c#L199), [206](../src/modules/uvtextureld_rom.c#L206) |
+| decompiler_local | `sp140` | function `_uvExpandTexture` | [160](../src/modules/uvtextureld_rom.c#L160), [197](../src/modules/uvtextureld_rom.c#L197), [199](../src/modules/uvtextureld_rom.c#L199), [205](../src/modules/uvtextureld_rom.c#L205) |
+| decompiler_local | `sp14C` | function `_uvExpandTexture` | [157](../src/modules/uvtextureld_rom.c#L157), [180](../src/modules/uvtextureld_rom.c#L180), [181](../src/modules/uvtextureld_rom.c#L181), [186](../src/modules/uvtextureld_rom.c#L186), [196](../src/modules/uvtextureld_rom.c#L196), [199](../src/modules/uvtextureld_rom.c#L199), [204](../src/modules/uvtextureld_rom.c#L204) |
+| decompiler_local | `sp150` | function `_uvExpandTexture` | [156](../src/modules/uvtextureld_rom.c#L156), [179](../src/modules/uvtextureld_rom.c#L179), [181](../src/modules/uvtextureld_rom.c#L181), [185](../src/modules/uvtextureld_rom.c#L185), [195](../src/modules/uvtextureld_rom.c#L195), [199](../src/modules/uvtextureld_rom.c#L199), [203](../src/modules/uvtextureld_rom.c#L203) |
+| decompiler_local | `sp28` | function `uvTextureLoadImageBytes` | [116](../src/modules/uvtextureld_rom.c#L116), [128](../src/modules/uvtextureld_rom.c#L128) |
+| decompiler_local | `sp2C` | function `uvTextureLoadImageBytes` | [115](../src/modules/uvtextureld_rom.c#L115), [127](../src/modules/uvtextureld_rom.c#L127) |
+| decompiler_local | `sp30` | function `uvTextureLoadImageBytes` | [114](../src/modules/uvtextureld_rom.c#L114), [124](../src/modules/uvtextureld_rom.c#L124), [126](../src/modules/uvtextureld_rom.c#L126) |
+| decompiler_local | `sp34` | function `uvTextureLoadImageBytes` | [113](../src/modules/uvtextureld_rom.c#L113), [123](../src/modules/uvtextureld_rom.c#L123), [125](../src/modules/uvtextureld_rom.c#L125) |
+| decompiler_local | `sp54` | function `_uvExpandTexture` | [170](../src/modules/uvtextureld_rom.c#L170), [263](../src/modules/uvtextureld_rom.c#L263), [303](../src/modules/uvtextureld_rom.c#L303) |
+| decompiler_local | `var_a3` | function `_uvExpandTexture` | [148](../src/modules/uvtextureld_rom.c#L148) |
+| draft_marker | `TODO` | function `_uvExpandTexture` | [270](../src/modules/uvtextureld_rom.c#L270) |
+| explicit_unknown | `* Visit texture-file blocks with decode flag 1, expand each COMM block and * free that block, then release the file handle. Return the last texture or * NULL when no COMM block ...` | function `uvParseUVTX` | [64](../src/modules/uvtextureld_rom.c#L64) |
+| explicit_unknown | `Clamp image bytes to 4096 and copy into a private eight-byte-aligned buffer below the allocation-count limit. * At the limit, call TEXT's lazy 4096-byte scratch allocator; that ...` | function `uvTextureLoadImageBytes` | [102](../src/modules/uvtextureld_rom.c#L102) |
+| explicit_unknown | `Original US COMM audit: at most four rows; six allocated. RE_UNKNOWN: modified/dynamic inputs, caller checks and parsed-row lifetime; docs/evidence/us-texture-row-contract.json.` | function `_uvExpandTexture` | [170](../src/modules/uvtextureld_rom.c#L170) |
+| layout_padding | `pad` | function `_uvExpandTexture`, function `uvTextureFreeResource` | [147](../src/modules/uvtextureld_rom.c#L147), [318](../src/modules/uvtextureld_rom.c#L318) |
 | layout_padding | `pad0` | type `UnkTexture_Exports` | [6](../src/modules/uvtextureld_rom.c#L6) |
-| layout_padding | `pad18` | function `_uvExpandTexture` | [213](../src/modules/uvtextureld_rom.c#L213), [273](../src/modules/uvtextureld_rom.c#L273), [276](../src/modules/uvtextureld_rom.c#L276) |
-| layout_padding | `pad2` | function `_uvExpandTexture` | [157](../src/modules/uvtextureld_rom.c#L157) |
+| layout_padding | `pad18` | function `_uvExpandTexture` | [223](../src/modules/uvtextureld_rom.c#L223), [283](../src/modules/uvtextureld_rom.c#L283), [286](../src/modules/uvtextureld_rom.c#L286) |
+| layout_padding | `pad2` | function `_uvExpandTexture` | [167](../src/modules/uvtextureld_rom.c#L167) |
 | layout_padding | `pad28` | type `UnkTexture_Exports` | [9](../src/modules/uvtextureld_rom.c#L9) |
-| layout_padding | `pad3` | function `_uvExpandTexture` | [159](../src/modules/uvtextureld_rom.c#L159) |
-| offset_field | `unk0` | function `_uvExpandTexture`, function `uvTextureFreeResource` | [173](../src/modules/uvtextureld_rom.c#L173), [191](../src/modules/uvtextureld_rom.c#L191), [258](../src/modules/uvtextureld_rom.c#L258), [324](../src/modules/uvtextureld_rom.c#L324), [325](../src/modules/uvtextureld_rom.c#L325) |
-| offset_field | `unk10` | function `_uvExpandTexture` | [180](../src/modules/uvtextureld_rom.c#L180), [195](../src/modules/uvtextureld_rom.c#L195), [287](../src/modules/uvtextureld_rom.c#L287), [290](../src/modules/uvtextureld_rom.c#L290), [291](../src/modules/uvtextureld_rom.c#L291), [292](../src/modules/uvtextureld_rom.c#L292), [293](../src/modules/uvtextureld_rom.c#L293), [297](../src/modules/uvtextureld_rom.c#L297) |
-| offset_field | `unk14` | function `_uvExpandTexture`, function `uvTextureFreeResource` | [181](../src/modules/uvtextureld_rom.c#L181), [196](../src/modules/uvtextureld_rom.c#L196), [212](../src/modules/uvtextureld_rom.c#L212), [225](../src/modules/uvtextureld_rom.c#L225), [231](../src/modules/uvtextureld_rom.c#L231), [244](../src/modules/uvtextureld_rom.c#L244), [273](../src/modules/uvtextureld_rom.c#L273), [312](../src/modules/uvtextureld_rom.c#L312) |
-| offset_field | `unk18` | function `_uvExpandTexture`, function `uvTextureFreeResource` | [177](../src/modules/uvtextureld_rom.c#L177), [197](../src/modules/uvtextureld_rom.c#L197), [312](../src/modules/uvtextureld_rom.c#L312), [313](../src/modules/uvtextureld_rom.c#L313) |
-| offset_field | `unk19` | function `_uvExpandTexture` | [178](../src/modules/uvtextureld_rom.c#L178), [198](../src/modules/uvtextureld_rom.c#L198) |
-| offset_field | `unk1A` | function `_uvExpandTexture` | [179](../src/modules/uvtextureld_rom.c#L179), [199](../src/modules/uvtextureld_rom.c#L199), [256](../src/modules/uvtextureld_rom.c#L256) |
-| offset_field | `unk20` | function `_uvExpandTexture`, function `uvTextureFreeResource`, function `uvTextureLoadImageBytes`, type `UnkTexture_Exports` | [7](../src/modules/uvtextureld_rom.c#L7), [124](../src/modules/uvtextureld_rom.c#L124), [224](../src/modules/uvtextureld_rom.c#L224), [227](../src/modules/uvtextureld_rom.c#L227), [228](../src/modules/uvtextureld_rom.c#L228), [234](../src/modules/uvtextureld_rom.c#L234), [235](../src/modules/uvtextureld_rom.c#L235), [237](../src/modules/uvtextureld_rom.c#L237) (+5 in JSON) |
-| offset_field | `unk21` | function `_uvExpandTexture` | [216](../src/modules/uvtextureld_rom.c#L216), [251](../src/modules/uvtextureld_rom.c#L251), [286](../src/modules/uvtextureld_rom.c#L286) |
-| offset_field | `unk22` | function `_uvExpandTexture` | [223](../src/modules/uvtextureld_rom.c#L223), [252](../src/modules/uvtextureld_rom.c#L252), [287](../src/modules/uvtextureld_rom.c#L287), [288](../src/modules/uvtextureld_rom.c#L288) |
-| offset_field | `unk23` | function `_uvExpandTexture` | [222](../src/modules/uvtextureld_rom.c#L222) |
-| offset_field | `unk24` | function `_uvExpandTexture`, function `uvTextureFreeResource`, type `UnkTexture_Exports` | [8](../src/modules/uvtextureld_rom.c#L8), [209](../src/modules/uvtextureld_rom.c#L209), [327](../src/modules/uvtextureld_rom.c#L327) |
-| offset_field | `unk25` | function `_uvExpandTexture` | [210](../src/modules/uvtextureld_rom.c#L210) |
-| offset_field | `unk26` | function `_uvExpandTexture` | [211](../src/modules/uvtextureld_rom.c#L211) |
-| offset_field | `unk27` | function `_uvExpandTexture` | [215](../src/modules/uvtextureld_rom.c#L215) |
-| offset_field | `unk4` | function `_uvExpandTexture`, function `uvTextureFreeResource` | [174](../src/modules/uvtextureld_rom.c#L174), [192](../src/modules/uvtextureld_rom.c#L192), [260](../src/modules/uvtextureld_rom.c#L260), [318](../src/modules/uvtextureld_rom.c#L318), [319](../src/modules/uvtextureld_rom.c#L319) |
-| offset_field | `unk8` | function `_uvExpandTexture`, function `uvTextureFreeResource` | [175](../src/modules/uvtextureld_rom.c#L175), [193](../src/modules/uvtextureld_rom.c#L193), [321](../src/modules/uvtextureld_rom.c#L321), [322](../src/modules/uvtextureld_rom.c#L322) |
-| offset_field | `unkC` | function `_uvExpandTexture`, function `uvTextureFreeResource` | [176](../src/modules/uvtextureld_rom.c#L176), [194](../src/modules/uvtextureld_rom.c#L194), [311](../src/modules/uvtextureld_rom.c#L311) |
-| opaque_type | `UnkStruct_uvtextureld_rom_00400A40` | function `uvTextureFreeResource`, function `uvTextureFreeResource` | [17](../src/modules/uvtextureld_rom.c#L17), [307](../src/modules/uvtextureld_rom.c#L307) |
+| layout_padding | `pad3` | function `_uvExpandTexture` | [169](../src/modules/uvtextureld_rom.c#L169) |
+| offset_field | `unk0` | function `_uvExpandTexture`, function `uvTextureFreeResource` | [183](../src/modules/uvtextureld_rom.c#L183), [201](../src/modules/uvtextureld_rom.c#L201), [268](../src/modules/uvtextureld_rom.c#L268), [334](../src/modules/uvtextureld_rom.c#L334), [335](../src/modules/uvtextureld_rom.c#L335) |
+| offset_field | `unk10` | function `_uvExpandTexture` | [190](../src/modules/uvtextureld_rom.c#L190), [205](../src/modules/uvtextureld_rom.c#L205), [297](../src/modules/uvtextureld_rom.c#L297), [300](../src/modules/uvtextureld_rom.c#L300), [301](../src/modules/uvtextureld_rom.c#L301), [302](../src/modules/uvtextureld_rom.c#L302), [303](../src/modules/uvtextureld_rom.c#L303), [307](../src/modules/uvtextureld_rom.c#L307) |
+| offset_field | `unk14` | function `_uvExpandTexture`, function `uvTextureFreeResource` | [191](../src/modules/uvtextureld_rom.c#L191), [206](../src/modules/uvtextureld_rom.c#L206), [222](../src/modules/uvtextureld_rom.c#L222), [235](../src/modules/uvtextureld_rom.c#L235), [241](../src/modules/uvtextureld_rom.c#L241), [254](../src/modules/uvtextureld_rom.c#L254), [283](../src/modules/uvtextureld_rom.c#L283), [322](../src/modules/uvtextureld_rom.c#L322) |
+| offset_field | `unk18` | function `_uvExpandTexture`, function `uvTextureFreeResource` | [187](../src/modules/uvtextureld_rom.c#L187), [207](../src/modules/uvtextureld_rom.c#L207), [322](../src/modules/uvtextureld_rom.c#L322), [323](../src/modules/uvtextureld_rom.c#L323) |
+| offset_field | `unk19` | function `_uvExpandTexture` | [188](../src/modules/uvtextureld_rom.c#L188), [208](../src/modules/uvtextureld_rom.c#L208) |
+| offset_field | `unk1A` | function `_uvExpandTexture` | [189](../src/modules/uvtextureld_rom.c#L189), [209](../src/modules/uvtextureld_rom.c#L209), [266](../src/modules/uvtextureld_rom.c#L266) |
+| offset_field | `unk20` | function `_uvExpandTexture`, function `uvTextureFreeResource`, function `uvTextureLoadImageBytes`, type `UnkTexture_Exports` | [7](../src/modules/uvtextureld_rom.c#L7), [134](../src/modules/uvtextureld_rom.c#L134), [234](../src/modules/uvtextureld_rom.c#L234), [237](../src/modules/uvtextureld_rom.c#L237), [238](../src/modules/uvtextureld_rom.c#L238), [244](../src/modules/uvtextureld_rom.c#L244), [245](../src/modules/uvtextureld_rom.c#L245), [247](../src/modules/uvtextureld_rom.c#L247) (+5 in JSON) |
+| offset_field | `unk21` | function `_uvExpandTexture` | [226](../src/modules/uvtextureld_rom.c#L226), [261](../src/modules/uvtextureld_rom.c#L261), [296](../src/modules/uvtextureld_rom.c#L296) |
+| offset_field | `unk22` | function `_uvExpandTexture` | [233](../src/modules/uvtextureld_rom.c#L233), [262](../src/modules/uvtextureld_rom.c#L262), [297](../src/modules/uvtextureld_rom.c#L297), [298](../src/modules/uvtextureld_rom.c#L298) |
+| offset_field | `unk23` | function `_uvExpandTexture` | [232](../src/modules/uvtextureld_rom.c#L232) |
+| offset_field | `unk24` | function `_uvExpandTexture`, function `uvTextureFreeResource`, type `UnkTexture_Exports` | [8](../src/modules/uvtextureld_rom.c#L8), [219](../src/modules/uvtextureld_rom.c#L219), [337](../src/modules/uvtextureld_rom.c#L337) |
+| offset_field | `unk25` | function `_uvExpandTexture` | [220](../src/modules/uvtextureld_rom.c#L220) |
+| offset_field | `unk26` | function `_uvExpandTexture` | [221](../src/modules/uvtextureld_rom.c#L221) |
+| offset_field | `unk27` | function `_uvExpandTexture` | [225](../src/modules/uvtextureld_rom.c#L225) |
+| offset_field | `unk4` | function `_uvExpandTexture`, function `uvTextureFreeResource` | [184](../src/modules/uvtextureld_rom.c#L184), [202](../src/modules/uvtextureld_rom.c#L202), [270](../src/modules/uvtextureld_rom.c#L270), [328](../src/modules/uvtextureld_rom.c#L328), [329](../src/modules/uvtextureld_rom.c#L329) |
+| offset_field | `unk8` | function `_uvExpandTexture`, function `uvTextureFreeResource` | [185](../src/modules/uvtextureld_rom.c#L185), [203](../src/modules/uvtextureld_rom.c#L203), [331](../src/modules/uvtextureld_rom.c#L331), [332](../src/modules/uvtextureld_rom.c#L332) |
+| offset_field | `unkC` | function `_uvExpandTexture`, function `uvTextureFreeResource` | [186](../src/modules/uvtextureld_rom.c#L186), [204](../src/modules/uvtextureld_rom.c#L204), [321](../src/modules/uvtextureld_rom.c#L321) |
+| opaque_type | `UnkStruct_uvtextureld_rom_00400A40` | function `uvTextureFreeResource`, function `uvTextureFreeResource` | [17](../src/modules/uvtextureld_rom.c#L17), [317](../src/modules/uvtextureld_rom.c#L317) |
 | opaque_type | `UnkTexture_Exports` | global `sUvTextureExports`, type `UnkTexture_Exports` | [10](../src/modules/uvtextureld_rom.c#L10), [24](../src/modules/uvtextureld_rom.c#L24) |
 | opaque_type | `UnkTexture_Exports_s` | type `UnkTexture_Exports` | [5](../src/modules/uvtextureld_rom.c#L5) |
-| opaque_type | `UnkUVTX_1C` | function `_uvExpandTexture` | [144](../src/modules/uvtextureld_rom.c#L144), [145](../src/modules/uvtextureld_rom.c#L145) |
+| opaque_type | `UnkUVTX_1C` | function `_uvExpandTexture` | [154](../src/modules/uvtextureld_rom.c#L154), [155](../src/modules/uvtextureld_rom.c#L155) |
+| original_quirk | `* Visit texture-file blocks with decode flag 1, expand each COMM block and * free that block, then release the file handle. Return the last texture or * NULL when no COMM block ...` | function `uvParseUVTX` | [64](../src/modules/uvtextureld_rom.c#L64) |
 
 ## src/modules/uvtexturexref_rom.c
 
@@ -9091,8 +9116,12 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `__entrypoint_func_uvtexturexref_rom_400000` | function `__entrypoint_func_uvtexturexref_rom_400000`, function `__entrypoint_func_uvtexturexref_rom_400000` | [6](../src/modules/uvtexturexref_rom.c#L6), [11](../src/modules/uvtexturexref_rom.c#L11), [13](../src/modules/uvtexturexref_rom.c#L13) |
 | address_global | `D_uvtexturexref_rom_00400200` | — | [11](../src/modules/uvtexturexref_rom.c#L11) |
 | decompiler_local | `arg0` | function `uvParseUVTP` | [8](../src/modules/uvtexturexref_rom.c#L8) |
-| offset_field | `unk4` | function `_uvParseUVTP` | [58](../src/modules/uvtexturexref_rom.c#L58), [61](../src/modules/uvtexturexref_rom.c#L61) |
-| offset_field | `unk8` | function `_uvParseUVTP` | [59](../src/modules/uvtexturexref_rom.c#L59), [62](../src/modules/uvtexturexref_rom.c#L62) |
+| explicit_unknown | `* Enumerate file entries and, for each COMM entry, copy its advertised bytes * to an aligned temporary block, parse that copy and free the temporary. * Release the file handle a...` | function `uvParseUVTP` | [22](../src/modules/uvtexturexref_rom.c#L22) |
+| explicit_unknown | `* Read an unsigned-halfword pair count, allocate the 0x0C-byte record and two * halfword arrays, then consume interleaved values into the two arrays. Store * the count only afte...` | function `_uvParseUVTP` | [60](../src/modules/uvtexturexref_rom.c#L60) |
+| offset_field | `unk4` | function `_uvParseUVTP` | [77](../src/modules/uvtexturexref_rom.c#L77), [80](../src/modules/uvtexturexref_rom.c#L80) |
+| offset_field | `unk8` | function `_uvParseUVTP` | [78](../src/modules/uvtexturexref_rom.c#L78), [81](../src/modules/uvtexturexref_rom.c#L81) |
+| original_quirk | `* Enumerate file entries and, for each COMM entry, copy its advertised bytes * to an aligned temporary block, parse that copy and free the temporary. * Release the file handle a...` | function `uvParseUVTP` | [22](../src/modules/uvtexturexref_rom.c#L22) |
+| original_quirk | `* Read an unsigned-halfword pair count, allocate the 0x0C-byte record and two * halfword arrays, then consume interleaved values into the two arrays. Store * the count only afte...` | function `_uvParseUVTP` | [60](../src/modules/uvtexturexref_rom.c#L60) |
 
 ## src/modules/uvtrackld_rom.c
 
@@ -9100,12 +9129,14 @@ For every future source wave, regenerate and check this index after code and str
 | --- | --- | --- | --- |
 | address_function | `__entrypoint_func_uvtrackld_rom_400000` | function `__entrypoint_func_uvtrackld_rom_400000`, function `__entrypoint_func_uvtrackld_rom_400000` | [9](../src/modules/uvtrackld_rom.c#L9), [11](../src/modules/uvtrackld_rom.c#L11), [13](../src/modules/uvtrackld_rom.c#L13) |
 | address_global | `D_uvtrackld_rom_00400220` | — | [11](../src/modules/uvtrackld_rom.c#L11) |
-| decompiler_local | `sp48` | function `uvParseUVTT` | [32](../src/modules/uvtrackld_rom.c#L32), [42](../src/modules/uvtrackld_rom.c#L42), [43](../src/modules/uvtrackld_rom.c#L43), [45](../src/modules/uvtrackld_rom.c#L45), [49](../src/modules/uvtrackld_rom.c#L49), [50](../src/modules/uvtrackld_rom.c#L50), [52](../src/modules/uvtrackld_rom.c#L52) |
-| decompiler_local | `var_s0` | function `uvParseUVTT` | [30](../src/modules/uvtrackld_rom.c#L30), [42](../src/modules/uvtrackld_rom.c#L42), [46](../src/modules/uvtrackld_rom.c#L46), [49](../src/modules/uvtrackld_rom.c#L49), [53](../src/modules/uvtrackld_rom.c#L53) |
-| offset_field | `unk0` | function `uvParseUVTT` | [36](../src/modules/uvtrackld_rom.c#L36), [43](../src/modules/uvtrackld_rom.c#L43), [44](../src/modules/uvtrackld_rom.c#L44), [45](../src/modules/uvtrackld_rom.c#L45) |
-| offset_field | `unk4` | function `uvParseUVTT` | [37](../src/modules/uvtrackld_rom.c#L37), [50](../src/modules/uvtrackld_rom.c#L50), [51](../src/modules/uvtrackld_rom.c#L51), [52](../src/modules/uvtrackld_rom.c#L52) |
-| offset_field | `unk8` | function `uvParseFreeUVTT`, function `uvParseUVTT` | [44](../src/modules/uvtrackld_rom.c#L44), [45](../src/modules/uvtrackld_rom.c#L45), [63](../src/modules/uvtrackld_rom.c#L63) |
-| offset_field | `unkC` | function `uvParseFreeUVTT`, function `uvParseUVTT` | [51](../src/modules/uvtrackld_rom.c#L51), [52](../src/modules/uvtrackld_rom.c#L52), [62](../src/modules/uvtrackld_rom.c#L62) |
+| explicit_unknown | `* Allocate a track record and clear its two counts. PNTS reads a signed word * count and copies count times 0x38 bytes into a new array; LNKS similarly * copies count times 8 by...` | function `uvParseUVTT` | [26](../src/modules/uvtrackld_rom.c#L26) |
+| explicit_unknown | `* Free the field-0x0C link array, field-0x08 point array and record in that * order, without pointer or count checks. * RE_ORIGINAL_QUIRK: The parser leaves an array pointer uni...` | function `uvParseFreeUVTT` | [71](../src/modules/uvtrackld_rom.c#L71) |
+| offset_field | `unk0` | function `uvParseUVTT` | [46](../src/modules/uvtrackld_rom.c#L46), [53](../src/modules/uvtrackld_rom.c#L53), [54](../src/modules/uvtrackld_rom.c#L54), [55](../src/modules/uvtrackld_rom.c#L55) |
+| offset_field | `unk4` | function `uvParseUVTT` | [47](../src/modules/uvtrackld_rom.c#L47), [60](../src/modules/uvtrackld_rom.c#L60), [61](../src/modules/uvtrackld_rom.c#L61), [62](../src/modules/uvtrackld_rom.c#L62) |
+| offset_field | `unk8` | function `uvParseFreeUVTT`, function `uvParseUVTT` | [54](../src/modules/uvtrackld_rom.c#L54), [55](../src/modules/uvtrackld_rom.c#L55), [82](../src/modules/uvtrackld_rom.c#L82) |
+| offset_field | `unkC` | function `uvParseFreeUVTT`, function `uvParseUVTT` | [61](../src/modules/uvtrackld_rom.c#L61), [62](../src/modules/uvtrackld_rom.c#L62), [81](../src/modules/uvtrackld_rom.c#L81) |
+| original_quirk | `* Allocate a track record and clear its two counts. PNTS reads a signed word * count and copies count times 0x38 bytes into a new array; LNKS similarly * copies count times 8 by...` | function `uvParseUVTT` | [26](../src/modules/uvtrackld_rom.c#L26) |
+| original_quirk | `* Free the field-0x0C link array, field-0x08 point array and record in that * order, without pointer or count checks. * RE_ORIGINAL_QUIRK: The parser leaves an array pointer uni...` | function `uvParseFreeUVTT` | [71](../src/modules/uvtrackld_rom.c#L71) |
 
 ## src/modules/uvtseq_rom.c
 
@@ -9153,7 +9184,13 @@ For every future source wave, regenerate and check this index after code and str
 | --- | --- | --- | --- |
 | address_function | `__entrypoint_func_uvufileld_rom_400000` | function `__entrypoint_func_uvufileld_rom_400000`, function `__entrypoint_func_uvufileld_rom_400000` | [5](../src/modules/uvufileld_rom.c#L5), [13](../src/modules/uvufileld_rom.c#L13) |
 | decompiler_local | `arg0` | function `uvFileCopy`, function `uvFreeFilePtr`, function `uvSetCopyFileDataFlag` | [7](../src/modules/uvufileld_rom.c#L7), [8](../src/modules/uvufileld_rom.c#L8), [9](../src/modules/uvufileld_rom.c#L9) |
-| explicit_unknown | `Header type, not FORM0 category. RE_UNKNOWN: runtime IDs reaching this COMM branch; docs/evidence/us-block-header-boundary.json.` | function `uvFileCopy` | [32](../src/modules/uvufileld_rom.c#L32) |
+| explicit_unknown | `* Open the file and obtain its size. For UVRW header type, search COMM entry * zero to replace the data pointer/size, preserving the ignored search result. * With the shared fla...` | function `uvFileCopy` | [25](../src/modules/uvufileld_rom.c#L25) |
+| explicit_unknown | `* Pass the supplied pointer directly to the existing allocator free routine. * RE_ORIGINAL_QUIRK: There is no ownership or shared-flag check even though * uvFileCopy can return ...` | function `uvFreeFilePtr` | [57](../src/modules/uvufileld_rom.c#L57) |
+| explicit_unknown | `* Store the caller word unchanged in the shared file-data mode flag. * RE_ORIGINAL_QUIRK: Zero selects allocation/copy in uvFileCopy; any nonzero * value selects its existing-po...` | function `uvSetCopyFileDataFlag` | [69](../src/modules/uvufileld_rom.c#L69) |
+| explicit_unknown | `Header type, not FORM0 category. RE_UNKNOWN: runtime IDs reaching this COMM branch; docs/evidence/us-block-header-boundary.json.` | function `uvFileCopy` | [43](../src/modules/uvufileld_rom.c#L43) |
+| original_quirk | `* Open the file and obtain its size. For UVRW header type, search COMM entry * zero to replace the data pointer/size, preserving the ignored search result. * With the shared fla...` | function `uvFileCopy` | [25](../src/modules/uvufileld_rom.c#L25) |
+| original_quirk | `* Pass the supplied pointer directly to the existing allocator free routine. * RE_ORIGINAL_QUIRK: There is no ownership or shared-flag check even though * uvFileCopy can return ...` | function `uvFreeFilePtr` | [57](../src/modules/uvufileld_rom.c#L57) |
+| original_quirk | `* Store the caller word unchanged in the shared file-data mode flag. * RE_ORIGINAL_QUIRK: Zero selects allocation/copy in uvFileCopy; any nonzero * value selects its existing-po...` | function `uvSetCopyFileDataFlag` | [69](../src/modules/uvufileld_rom.c#L69) |
 
 ## src/modules/uvvattr_rom.c
 

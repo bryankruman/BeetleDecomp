@@ -19,24 +19,33 @@ void __entrypoint_func_uvtexturexref_rom_400000(UvTexturexref_Exports *exports) 
 void uvParseFreeUVTP(void) {
 }
 
-ParsedUVTP *uvParseUVTP(u8 *data) {
+/*
+ * Enumerate file entries and, for each COMM entry, copy its advertised bytes
+ * to an aligned temporary block, parse that copy and free the temporary.
+ * Release the file handle and return the last parsed result, or NULL if none.
+ * RE_ORIGINAL_QUIRK: Repeated COMM entries replace the result without cleanup.
+ * RE_UNKNOWN: Entry extents, copy/allocation outcomes and result ownership are
+ * not checked here. The separately exported UVTP free callback remains empty.
+ */
+#line 22 "src/modules/uvtexturexref_rom.c"
+ParsedUVTP *uvParseUVTP(u8 *fileData) {
     s32 fileId;
-    ParsedUVTP *parsedUVTP;
+    ParsedUVTP *textureReferences;
     u32 blockSize;
     void *blockData;
     u32 tag;
-    void *uvtpData; // UVTP data
+    void *commCopy; // UVTP data
 
-    parsedUVTP = NULL;
-    fileId = uvFileReadHeader(data);
+    textureReferences = NULL;
+    fileId = uvFileReadHeader(fileData);
     tag = uvFileGetEntryTag(fileId, &blockSize, &blockData);
     while (tag != 0) {
         switch (tag) {
             case 'COMM':
-                uvtpData = malloc8(blockSize);
-                _uvMediaCopy(uvtpData, blockData, blockSize);
-                parsedUVTP = _uvParseUVTP(uvtpData);
-                _uvMemFree(uvtpData);
+                commCopy = malloc8(blockSize);
+                _uvMediaCopy(commCopy, blockData, blockSize);
+                textureReferences = _uvParseUVTP(commCopy);
+                _uvMemFree(commCopy);
                 break;
             default:
                 break;
@@ -45,22 +54,32 @@ ParsedUVTP *uvParseUVTP(u8 *data) {
         tag = uvFileGetEntryTag(fileId, &blockSize, &blockData);
     }
     uvFileFree(fileId);
-    return parsedUVTP;
+    return textureReferences;
 }
 
-ParsedUVTP *_uvParseUVTP(u8 *data) {
-    ParsedUVTP *parsedUVTP;
-    u16 i;
-    u16 count;
+/*
+ * Read an unsigned-halfword pair count, allocate the 0x0C-byte record and two
+ * halfword arrays, then consume interleaved values into the two arrays. Store
+ * the count only after the original halfword-indexed loop completes.
+ * RE_ORIGINAL_QUIRK: Record field 0x02 remains untouched, including when the
+ * pair count is zero; all three allocations retain their original order.
+ * RE_UNKNOWN: Input extent, allocation outcomes, meanings of the two indices
+ * and eventual array/record ownership require callers and asset-format proof.
+ */
+#line 51 "src/modules/uvtexturexref_rom.c"
+ParsedUVTP *_uvParseUVTP(u8 *inputCursor) {
+    ParsedUVTP *textureReferences;
+    u16 pairIndex;
+    u16 pairCount;
 
-    uvConsumeBytes(&count, &data, sizeof(u16));
-    parsedUVTP = _uvMemAllocAlign8(0xCU);
-    parsedUVTP->unk4 = _uvMemAllocAlign8(count * sizeof(u16));
-    parsedUVTP->unk8 = _uvMemAllocAlign8(count * sizeof(u16));
-    for (i = 0; i < count; i++) {
-        uvConsumeBytes(&parsedUVTP->unk4[i], (u8 **) &data, sizeof(u16));
-        uvConsumeBytes(&parsedUVTP->unk8[i], (u8 **) &data, sizeof(u16));
+    uvConsumeBytes(&pairCount, &inputCursor, sizeof(u16));
+    textureReferences = _uvMemAllocAlign8(0xCU);
+    textureReferences->unk4 = _uvMemAllocAlign8(pairCount * sizeof(u16));
+    textureReferences->unk8 = _uvMemAllocAlign8(pairCount * sizeof(u16));
+    for (pairIndex = 0; pairIndex < pairCount; pairIndex++) {
+        uvConsumeBytes(&textureReferences->unk4[pairIndex], (u8 **) &inputCursor, sizeof(u16));
+        uvConsumeBytes(&textureReferences->unk8[pairIndex], (u8 **) &inputCursor, sizeof(u16));
     }
-    parsedUVTP->count = count;
-    return parsedUVTP;
+    textureReferences->count = pairCount;
+    return textureReferences;
 }

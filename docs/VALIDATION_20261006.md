@@ -3261,10 +3261,19 @@ Totals: 436 further recoveries after the 225 upstream ordinary imports, plus 174
 Frozen wave `4904-remaining-historical-nearby-contracts` and `accepted-remaining-historical-nearby-contracts-4904` verify real translation-unit instructions/full relocations, 17 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 437 further readable functions
+## Historical accepted checkpoint — 437 further readable functions
 
 Recover144-byte SPARKS four-slot reset and clarify eleven existing graphics functions3880B across eight source files. Preserve exact operations, live callback/base reads, function identities and genuine unknowns. All twelve actual native proofs bind1006 words and416 ordered records. SPARKS inherited991-byte warning is qualified by exact unchanged-source commands, diagnostics and outside-target coordinates; graphics source role/comment inverses use existing v3 proof. Nine graphics raw reference hashes equal originals and two differ explicitly with complete closed native/site association. Preserve1942 prior ordinary/typed assessments,140 SDK rows and83 historical attempts; require fresh full packed/native, original ROM, whole-ledger and Git/source proofs.
 
 Totals: 437 further recoveries after the 225 upstream ordinary imports, plus 1757 existing C semantic cleanups. Current ledger: 763 assembly references = 724 ordinary + 39 entrypoints; 701,140 known remaining instruction bytes; zero unknown sizes; 286 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `5002-sparks-graphics-native-contracts` and `accepted-sparks-graphics-native-contracts-5002` verify real translation-unit instructions/full relocations, 8 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 438 further readable functions
+
+Recover344-byte TRIGANIM dynamic-attachment function and clarify13 existing resource-loader functions2244B. TRIGANIM final TU is literal retained actual compile; closed undefined HI/LO pairs replay native operands while raw ELF record identity remains explicitly false. Preserve actual source/header/caller context and all1954 prior assessments,140 SDK intervals and83 historical attempts. Loader561 native words/76 current ordered records and native/reference association are exact; all13 original/current raw hashes equal. No readonly, aliases, ABI or storage migration. Require fresh entire original packed modules including complete RELA, full original ROM, whole-ledger and current Git/source proofs.
+
+Totals: 438 further recoveries after the 225 upstream ordinary imports, plus 1770 existing C semantic cleanups. Current ledger: 762 assembly references = 723 ordinary + 39 entrypoints; 700,796 known remaining instruction bytes; zero unknown sizes; 287 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `5132-resource-loader-triganim-native-contracts` and `accepted-resource-loader-triganim-native-contracts-5132` verify real translation-unit instructions/full relocations, 7 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

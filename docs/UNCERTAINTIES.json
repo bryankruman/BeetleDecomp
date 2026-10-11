@@ -378,13 +378,13 @@
     "src/modules/track5.c": "83782cb3f6c8b1a6066e0a9f96f397b48f5034fc05b06ce8b6918b77241a7751",
     "src/modules/track6.c": "72566c34ce04d37b2ec1ba30b6eb3be5c096375bae76cbdd96a864a86db0d735",
     "src/modules/track7.c": "7472b0f86c66c63c2c6f400aa1eb338a21788612dc071be8c809153e9c64c50d",
-    "src/modules/triganim.c": "49ca1251625ffe44b39cfa2fffd8e70f7857dcba55289834f96ea0bb1b138532",
+    "src/modules/triganim.c": "43930076aedcb1762401b7b9e92c33f708749e70367c13bb66460ee00f557f1e",
     "src/modules/txtview.c": "f8d7c189aeb5545a6756a847cdb67e64075dacb13a911d9df7188c307bd10a82",
     "src/modules/ufo.c": "2165d432b44ec3455fea1108e6085e9a63349a706cc2d2a0eec1ef342231980d",
     "src/modules/ufogame.c": "607e9c04b757e9af7e22e26c02d46e554a04f5e7d37563c2c8a8f7f88c475fda",
     "src/modules/uvaudiomgr_rom.c": "45a8100e02529cf8605af71e2c7304adc18c2a174261aa6250e50df6f3d81c2c",
     "src/modules/uvbill_rom.c": "3f05b1d5433aa4fd309fa71fcce000b581e8e7ff643cc4b91bcfbbb8c0733f55",
-    "src/modules/uvblit_rom.c": "f437f580274c31de0cdcb94d429207f68e556600036f676a849b2958251cf5c0",
+    "src/modules/uvblit_rom.c": "8bdb80af0b2172d5c72d80941ad0946064c3b25494decb6cef9f8e1a4b50b6a3",
     "src/modules/uvcback_rom.c": "757b149d9e0e2b3226f23c884936b35583aa6b86186c5c3cc2863fbcbffac679",
     "src/modules/uvchannel_rom.c": "d1d84742ed487ab38a82ac3879558c9f847fab70797a031463f9c011a77cd811",
     "src/modules/uvcmidi_rom.c": "75a5dc6e8a2023d71f98ab07d6e2f9574b8fce65483bd9f6a280ec382df909bd",
@@ -399,7 +399,7 @@
     "src/modules/uvear_rom.c": "3470df1b3a03c05ea07d2a104331b39a95f4c50a2fdb4b258068c5c6bb660967",
     "src/modules/uvemitter_rom.c": "1df93039169812ad456bc6245954e4c32adf6bb4c433c03175f317945431bb59",
     "src/modules/uvenv_rom.c": "9ea1635553deee268116d31ef8acffabc13c541db719aa677ccb07fb38f4af3a",
-    "src/modules/uvenvld_rom.c": "ca96c6f0fc2296bc498d87dcb7372865f5ca95ca1559e83a10238bb25cce08b3",
+    "src/modules/uvenvld_rom.c": "e9150634923f141c0f53db313a717aa29612a5a8c880d5e8f65a1abb09505e88",
     "src/modules/uvfmtx_rom.c": "16619d18736afdd9d7c22ea25f67c2f887dc2361bb89ebaefc6b6102a24c1aa0",
     "src/modules/uvfont_rom.c": "68b639b364e413a4d5f8ae0df11a4bd8ec1d25a47aef8c2de96aedef8aa9b6ab",
     "src/modules/uvfontld_rom.c": "81262e86812be50e51fbe741f6e4b0475b58c71b4d822a50ae83c16602fd4733",
@@ -431,12 +431,12 @@
     "src/modules/uvterrald_rom.c": "4f51d82aed1fc59eefc7e9d161b1d29601c1af7be11b928c5265f14d489d2596",
     "src/modules/uvtexanim_rom.c": "050515d6a1536e1a1392b6d9d154dd4680dd117d7e8604d4a36a70e866ff60e1",
     "src/modules/uvtexture_rom.c": "e600dd22c777fdd2a08ef8c7e5c0ee1a76e244356c4e279f4ea1006b0868f2b8",
-    "src/modules/uvtextureld_rom.c": "331b3e88ab93dfb2b0b1a651e319e0b33c6baf43592b3f6fc0d78e478a75a5d4",
-    "src/modules/uvtexturexref_rom.c": "577aab3dd5d687ae34a45e8a597bbe52f7cb8865940f96c94bfb8215534d25d9",
-    "src/modules/uvtrackld_rom.c": "0f7419fee6956a5165b1f1a33316e9abaedfea222e489a0042a104b37159109b",
+    "src/modules/uvtextureld_rom.c": "40078f22008c059c8d52b2b336b34fe65f0616caf260c0c4e77fe2d44df78ef6",
+    "src/modules/uvtexturexref_rom.c": "9fb74d4ddd0da0582011c76ca1489b4b49b3c47fdf3357687c6d2873e592b3cd",
+    "src/modules/uvtrackld_rom.c": "9de6a27315cd5dde6f38f69e823dabf531f87c7a7f4c4752e03a8c4df64f2930",
     "src/modules/uvtseq_rom.c": "fe135c738feac9ab50f7cb326fe8dae821a7339655f0acaaed31808519f97a96",
     "src/modules/uvtseqld_rom.c": "09dab8b184a2b730228320f156217d5eb629b697213480228934af104fd751c0",
-    "src/modules/uvufileld_rom.c": "1182bdc9529006a8b15c12c92fb85ff91140eb6b74c6bedb19874cfc57a264cd",
+    "src/modules/uvufileld_rom.c": "6cf1a1f1c81b113782fc1c1b10552b780b07bb99b6935a99cdc1846ea06eca1b",
     "src/modules/uvvattr_rom.c": "b204a55d1dc5b39bf3e9d6a6f541d8847ea11d9dfbaac2f4778d12df586a3a32",
     "src/modules/uvvolumeld_rom.c": "252fbfd5cb1782c7b7b68bb969cc6b2bfcefac85aaf0bdeea39e67fbf8184d6b",
     "src/modules/victory.c": "4bb3ff42b6b1ad90d40c2f18e986a8fc842c89641daee93e0447e531a384a6b1",
@@ -446,24 +446,24 @@
     "src/sched.c": "ff1d663981f5254129af45fd518841c2ed8ec518a2212aca6731dfd4fc7d4ef4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "ec1a94efa25a3916d18f623088e4ba394ca65a279425022471f36584e7b360d5",
-    "docs/VALIDATION_20261006.md": "2446f63bee19941cd8dfef33e83b78b7da442c111abfb16a699b6439d4cb173b"
+    "docs/STRATEGY_V4.md": "143905318c1cad46c7cf8655c6a195c221243a8b9ee9754eb7c712819e95af20",
+    "docs/VALIDATION_20261006.md": "fa027b7bb23f02e9365fa61b1f1559dea18c077fb0123198ceaa5e6bbaa7f01a"
   },
   "counts": {
-    "address_function": 904,
+    "address_function": 908,
     "address_global": 1475,
-    "assembly": 767,
+    "assembly": 766,
     "audit_debt": 30,
     "conditional_draft": 4,
-    "decompiler_local": 644,
+    "decompiler_local": 640,
     "draft_marker": 37,
-    "explicit_unknown": 1502,
+    "explicit_unknown": 1517,
     "layout_padding": 275,
-    "offset_field": 1630,
+    "offset_field": 1641,
     "opaque_type": 282,
-    "original_quirk": 366,
+    "original_quirk": 377,
     "uncertainty_note": 95,
-    "unused_identifier": 136
+    "unused_identifier": 137
   },
   "items": [
     {
@@ -17641,33 +17641,33 @@
       "path": "src/modules/triganim.c",
       "symbol": "func_triganim_00400090",
       "lines": [
-        29,
-        48,
-        66
+        81,
+        100,
+        118
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_triganimInitializeModuleExports",
-          "declaration_line": 46,
+          "declaration_line": 98,
           "lines": [
-            48
+            100
           ]
         },
         {
           "kind": "function",
           "name": "func_triganim_00400090",
-          "declaration_line": 29,
+          "declaration_line": 81,
           "lines": [
-            29
+            81
           ]
         },
         {
           "kind": "function",
           "name": "func_triganim_00400090",
-          "declaration_line": 66,
+          "declaration_line": 118,
           "lines": [
-            66
+            118
           ]
         }
       ]
@@ -17678,24 +17678,43 @@
       "path": "src/modules/triganim.c",
       "symbol": "func_triganim_00400098",
       "lines": [
-        32,
-        49
+        84,
+        101
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_triganimInitializeModuleExports",
-          "declaration_line": 46,
+          "declaration_line": 98,
           "lines": [
-            49
+            101
           ]
         },
         {
           "kind": "global",
           "name": "func_triganim_00400098",
-          "declaration_line": 32,
+          "declaration_line": 84,
           "lines": [
-            32
+            84
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-7af77a115ffd",
+      "kind": "address_function",
+      "path": "src/modules/triganim.c",
+      "symbol": "func_triganim_00400374",
+      "lines": [
+        77
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "func_triganim_00400374",
+          "declaration_line": 77,
+          "lines": [
+            77
           ]
         }
       ]
@@ -17706,24 +17725,24 @@
       "path": "src/modules/triganim.c",
       "symbol": "func_triganim_00400624",
       "lines": [
-        33,
-        50
+        85,
+        102
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_triganimInitializeModuleExports",
-          "declaration_line": 46,
+          "declaration_line": 98,
           "lines": [
-            50
+            102
           ]
         },
         {
-          "kind": "global",
+          "kind": "function",
           "name": "func_triganim_00400624",
-          "declaration_line": 33,
+          "declaration_line": 85,
           "lines": [
-            33
+            85
           ]
         }
       ]
@@ -17734,24 +17753,43 @@
       "path": "src/modules/triganim.c",
       "symbol": "func_triganim_004007D4",
       "lines": [
-        34,
-        51
+        86,
+        103
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_triganimInitializeModuleExports",
-          "declaration_line": 46,
+          "declaration_line": 98,
           "lines": [
-            51
+            103
           ]
         },
         {
           "kind": "global",
           "name": "func_triganim_004007D4",
-          "declaration_line": 34,
+          "declaration_line": 86,
           "lines": [
-            34
+            86
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-c909d1fefbf8",
+      "kind": "address_function",
+      "path": "src/modules/triganim.c",
+      "symbol": "func_triganim_00400A68",
+      "lines": [
+        76
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "func_triganim_00400A68",
+          "declaration_line": 76,
+          "lines": [
+            76
           ]
         }
       ]
@@ -17762,24 +17800,71 @@
       "path": "src/modules/triganim.c",
       "symbol": "func_triganim_00400F7C",
       "lines": [
-        35,
-        52
+        87,
+        104,
+        141
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_triganimInitializeModuleExports",
-          "declaration_line": 46,
+          "declaration_line": 98,
           "lines": [
-            52
+            104
           ]
         },
         {
-          "kind": "global",
+          "kind": "function",
           "name": "func_triganim_00400F7C",
-          "declaration_line": 35,
+          "declaration_line": 87,
           "lines": [
-            35
+            87
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "func_triganim_00400F7C",
+          "declaration_line": 141,
+          "lines": [
+            141
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-0ccd6a64c867",
+      "kind": "address_function",
+      "path": "src/modules/triganim.c",
+      "symbol": "func_triganim_004010D4",
+      "lines": [
+        78
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "func_triganim_004010D4",
+          "declaration_line": 78,
+          "lines": [
+            78
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-34d5792a6668",
+      "kind": "address_function",
+      "path": "src/modules/triganim.c",
+      "symbol": "func_triganim_00401274",
+      "lines": [
+        75
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "func_triganim_00401274",
+          "declaration_line": 75,
+          "lines": [
+            75
           ]
         }
       ]
@@ -17790,15 +17875,24 @@
       "path": "src/modules/triganim.c",
       "symbol": "func_triganim_0040154C",
       "lines": [
-        128
+        79,
+        217
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_triganim_0040154C",
-          "declaration_line": 128,
+          "declaration_line": 79,
           "lines": [
-            128
+            79
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "func_triganim_0040154C",
+          "declaration_line": 217,
+          "lines": [
+            217
           ]
         }
       ]
@@ -17809,24 +17903,24 @@
       "path": "src/modules/triganim.c",
       "symbol": "func_triganim_004016D4",
       "lines": [
-        36,
-        55
+        88,
+        107
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_triganimInitializeModuleExports",
-          "declaration_line": 46,
+          "declaration_line": 98,
           "lines": [
-            55
+            107
           ]
         },
         {
           "kind": "global",
           "name": "func_triganim_004016D4",
-          "declaration_line": 36,
+          "declaration_line": 88,
           "lines": [
-            36
+            88
           ]
         }
       ]
@@ -49586,24 +49680,24 @@
       "path": "src/modules/triganim.c",
       "symbol": "D_triganim_00401874",
       "lines": [
-        28,
-        56
+        74,
+        108
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_triganimInitializeModuleExports",
-          "declaration_line": 46,
+          "declaration_line": 98,
           "lines": [
-            56
+            108
           ]
         },
         {
           "kind": "global",
           "name": "D_triganim_00401874",
-          "declaration_line": 28,
+          "declaration_line": 74,
           "lines": [
-            28
+            74
           ]
         }
       ]
@@ -49615,26 +49709,26 @@
       "symbol": "D_triganim_00401878",
       "lines": [
         5,
-        57,
-        148,
-        149
+        109,
+        237,
+        238
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_triganimInitializeModuleExports",
-          "declaration_line": 46,
+          "declaration_line": 98,
           "lines": [
-            57
+            109
           ]
         },
         {
           "kind": "function",
           "name": "triganimCreateTransformNode",
-          "declaration_line": 138,
+          "declaration_line": 227,
           "lines": [
-            148,
-            149
+            237,
+            238
           ]
         },
         {
@@ -74260,9 +74354,9 @@
       "lines": [
         27,
         49,
-        119,
-        120,
-        329
+        129,
+        130,
+        339
       ],
       "owners": [
         {
@@ -74276,18 +74370,18 @@
         {
           "kind": "function",
           "name": "uvTextureFreeResource",
-          "declaration_line": 307,
+          "declaration_line": 317,
           "lines": [
-            329
+            339
           ]
         },
         {
           "kind": "function",
           "name": "uvTextureLoadImageBytes",
-          "declaration_line": 99,
+          "declaration_line": 109,
           "lines": [
-            119,
-            120
+            129,
+            130
           ]
         },
         {
@@ -74309,7 +74403,7 @@
         28,
         41,
         43,
-        119
+        129
       ],
       "owners": [
         {
@@ -74324,9 +74418,9 @@
         {
           "kind": "function",
           "name": "uvTextureLoadImageBytes",
-          "declaration_line": 99,
+          "declaration_line": 109,
           "lines": [
-            119
+            129
           ]
         },
         {
@@ -82506,7 +82600,7 @@
       "path": "src/modules/triganim.c",
       "symbol": "func_triganim_00400098",
       "lines": [
-        70
+        122
       ],
       "evidence": "asm/us/nonmatchings/modules/triganim/func_triganim_00400098.s"
     },
@@ -82516,7 +82610,7 @@
       "path": "src/modules/triganim.c",
       "symbol": "func_triganim_00400374",
       "lines": [
-        72
+        124
       ],
       "evidence": "asm/us/nonmatchings/modules/triganim/func_triganim_00400374.s"
     },
@@ -82526,7 +82620,7 @@
       "path": "src/modules/triganim.c",
       "symbol": "func_triganim_00400624",
       "lines": [
-        74
+        126
       ],
       "evidence": "asm/us/nonmatchings/modules/triganim/func_triganim_00400624.s"
     },
@@ -82536,7 +82630,7 @@
       "path": "src/modules/triganim.c",
       "symbol": "func_triganim_004007D4",
       "lines": [
-        76
+        128
       ],
       "evidence": "asm/us/nonmatchings/modules/triganim/func_triganim_004007D4.s"
     },
@@ -82546,19 +82640,9 @@
       "path": "src/modules/triganim.c",
       "symbol": "func_triganim_00400A68",
       "lines": [
-        78
+        130
       ],
       "evidence": "asm/us/nonmatchings/modules/triganim/func_triganim_00400A68.s"
-    },
-    {
-      "id": "Q-2245ed21cca0",
-      "kind": "assembly",
-      "path": "src/modules/triganim.c",
-      "symbol": "func_triganim_00400F7C",
-      "lines": [
-        80
-      ],
-      "evidence": "asm/us/nonmatchings/modules/triganim/func_triganim_00400F7C.s"
     },
     {
       "id": "Q-8ca1ea8d79db",
@@ -82566,7 +82650,7 @@
       "path": "src/modules/triganim.c",
       "symbol": "func_triganim_004010D4",
       "lines": [
-        82
+        171
       ],
       "evidence": "asm/us/nonmatchings/modules/triganim/func_triganim_004010D4.s"
     },
@@ -82576,7 +82660,7 @@
       "path": "src/modules/triganim.c",
       "symbol": "func_triganim_00401274",
       "lines": [
-        102
+        191
       ],
       "evidence": "asm/us/nonmatchings/modules/triganim/func_triganim_00401274.s"
     },
@@ -82586,7 +82670,7 @@
       "path": "src/modules/triganim.c",
       "symbol": "func_triganim_004016D4",
       "lines": [
-        164
+        253
       ],
       "evidence": "asm/us/nonmatchings/modules/triganim/func_triganim_004016D4.s"
     },
@@ -95936,50 +96020,6 @@
           "declaration_line": 14,
           "lines": [
             14
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-10ec228ff3e6",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvenvld_rom.c",
-      "symbol": "temp_a1",
-      "lines": [
-        94,
-        99,
-        100,
-        101
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvEnvLdCleanup",
-          "declaration_line": 93,
-          "lines": [
-            94,
-            99,
-            100,
-            101
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-4c78a8ecdc5c",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvenvld_rom.c",
-      "symbol": "var_s1",
-      "lines": [
-        96
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvEnvLdCleanup",
-          "declaration_line": 93,
-          "lines": [
-            96
           ]
         }
       ]
@@ -113726,23 +113766,23 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "sp135",
       "lines": [
-        154,
-        217,
-        218,
-        219,
-        220
+        164,
+        227,
+        228,
+        229,
+        230
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvExpandTexture",
-          "declaration_line": 132,
+          "declaration_line": 142,
           "lines": [
-            154,
-            217,
-            218,
-            219,
-            220
+            164,
+            227,
+            228,
+            229,
+            230
           ]
         }
       ]
@@ -113753,19 +113793,19 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "sp136",
       "lines": [
-        153,
-        214,
-        215
+        163,
+        224,
+        225
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvExpandTexture",
-          "declaration_line": 132,
+          "declaration_line": 142,
           "lines": [
-            153,
-            214,
-            215
+            163,
+            224,
+            225
           ]
         }
       ]
@@ -113776,17 +113816,17 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "sp138",
       "lines": [
-        152,
-        221
+        162,
+        231
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvExpandTexture",
-          "declaration_line": 132,
+          "declaration_line": 142,
           "lines": [
-            152,
-            221
+            162,
+            231
           ]
         }
       ]
@@ -113797,21 +113837,21 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "sp13C",
       "lines": [
-        151,
-        188,
-        189,
-        196
+        161,
+        198,
+        199,
+        206
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvExpandTexture",
-          "declaration_line": 132,
+          "declaration_line": 142,
           "lines": [
-            151,
-            188,
-            189,
-            196
+            161,
+            198,
+            199,
+            206
           ]
         }
       ]
@@ -113822,21 +113862,21 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "sp140",
       "lines": [
-        150,
-        187,
-        189,
-        195
+        160,
+        197,
+        199,
+        205
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvExpandTexture",
-          "declaration_line": 132,
+          "declaration_line": 142,
           "lines": [
-            150,
-            187,
-            189,
-            195
+            160,
+            197,
+            199,
+            205
           ]
         }
       ]
@@ -113847,27 +113887,27 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "sp14C",
       "lines": [
-        147,
-        170,
-        171,
-        176,
+        157,
+        180,
+        181,
         186,
-        189,
-        194
+        196,
+        199,
+        204
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvExpandTexture",
-          "declaration_line": 132,
+          "declaration_line": 142,
           "lines": [
-            147,
-            170,
-            171,
-            176,
+            157,
+            180,
+            181,
             186,
-            189,
-            194
+            196,
+            199,
+            204
           ]
         }
       ]
@@ -113878,27 +113918,27 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "sp150",
       "lines": [
-        146,
-        169,
-        171,
-        175,
+        156,
+        179,
+        181,
         185,
-        189,
-        193
+        195,
+        199,
+        203
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvExpandTexture",
-          "declaration_line": 132,
+          "declaration_line": 142,
           "lines": [
-            146,
-            169,
-            171,
-            175,
+            156,
+            179,
+            181,
             185,
-            189,
-            193
+            195,
+            199,
+            203
           ]
         }
       ]
@@ -113909,17 +113949,17 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "sp28",
       "lines": [
-        106,
-        118
+        116,
+        128
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTextureLoadImageBytes",
-          "declaration_line": 99,
+          "declaration_line": 109,
           "lines": [
-            106,
-            118
+            116,
+            128
           ]
         }
       ]
@@ -113930,17 +113970,17 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "sp2C",
       "lines": [
-        105,
-        117
+        115,
+        127
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTextureLoadImageBytes",
-          "declaration_line": 99,
+          "declaration_line": 109,
           "lines": [
-            105,
-            117
+            115,
+            127
           ]
         }
       ]
@@ -113951,19 +113991,19 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "sp30",
       "lines": [
-        104,
         114,
-        116
+        124,
+        126
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTextureLoadImageBytes",
-          "declaration_line": 99,
+          "declaration_line": 109,
           "lines": [
-            104,
             114,
-            116
+            124,
+            126
           ]
         }
       ]
@@ -113974,19 +114014,19 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "sp34",
       "lines": [
-        103,
         113,
-        115
+        123,
+        125
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvTextureLoadImageBytes",
-          "declaration_line": 99,
+          "declaration_line": 109,
           "lines": [
-            103,
             113,
-            115
+            123,
+            125
           ]
         }
       ]
@@ -113997,19 +114037,19 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "sp54",
       "lines": [
-        160,
-        253,
-        293
+        170,
+        263,
+        303
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvExpandTexture",
-          "declaration_line": 132,
+          "declaration_line": 142,
           "lines": [
-            160,
-            253,
-            293
+            170,
+            263,
+            303
           ]
         }
       ]
@@ -114020,15 +114060,15 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "var_a3",
       "lines": [
-        138
+        148
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvExpandTexture",
-          "declaration_line": 132,
+          "declaration_line": 142,
           "lines": [
-            138
+            148
           ]
         }
       ]
@@ -114048,64 +114088,6 @@
           "declaration_line": 8,
           "lines": [
             8
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-c0812810749e",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvtrackld_rom.c",
-      "symbol": "sp48",
-      "lines": [
-        32,
-        42,
-        43,
-        45,
-        49,
-        50,
-        52
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvParseUVTT",
-          "declaration_line": 26,
-          "lines": [
-            32,
-            42,
-            43,
-            45,
-            49,
-            50,
-            52
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-7787862ab307",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvtrackld_rom.c",
-      "symbol": "var_s0",
-      "lines": [
-        30,
-        42,
-        46,
-        49,
-        53
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "uvParseUVTT",
-          "declaration_line": 26,
-          "lines": [
-            30,
-            42,
-            46,
-            49,
-            53
           ]
         }
       ]
@@ -115979,16 +115961,16 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "TODO",
       "lines": [
-        260
+        270
       ],
       "evidence": "TODO",
       "owners": [
         {
           "kind": "function",
           "name": "_uvExpandTexture",
-          "declaration_line": 132,
+          "declaration_line": 142,
           "lines": [
-            260
+            270
           ]
         }
       ]
@@ -130767,16 +130749,16 @@
       "path": "src/modules/triganim.c",
       "symbol": "* Build a local identity matrix, read object transform slot 1, write that matrix * to slot 0, then replace slot 1 with the identity. Preserve the four callback * calls and both distinct local matrix lifetimes; no matrix is combined here. * RE_UNKNOWN: Object validity and transform-slot ownership remain caller-owned.",
       "lines": [
-        105
+        194
       ],
       "evidence": "* Build a local identity matrix, read object transform slot 1, write that matrix * to slot 0, then replace slot 1 with the identity. Preserve the four callback * calls and both distinct local matrix lifetimes; no matrix is combined here. * RE_UNKNOWN: Object validity and transform-slot ownership remain caller-owned.",
       "owners": [
         {
           "kind": "function",
           "name": "triganimPromoteSecondaryTransform",
-          "declaration_line": 112,
+          "declaration_line": 201,
           "lines": [
-            105
+            194
           ]
         }
       ]
@@ -130787,16 +130769,36 @@
       "path": "src/modules/triganim.c",
       "symbol": "* Clear the dynamic object unconditionally, then read the sound pointer and * store -1 to the object ID. Release the sound only when non-NULL, and clear * the sound pointer afterward on both paths. Preserve this callback/store order. * RE_UNKNOWN: Whether invalid object IDs are accepted belongs to the provider.",
       "lines": [
-        85
+        174
       ],
       "evidence": "* Clear the dynamic object unconditionally, then read the sound pointer and * store -1 to the object ID. Release the sound only when non-NULL, and clear * the sound pointer afterward on both paths. Preserve this callback/store order. * RE_UNKNOWN: Whether invalid object IDs are accepted belongs to the provider.",
       "owners": [
         {
           "kind": "function",
           "name": "triganimReleaseObjectAndSound",
-          "declaration_line": 92,
+          "declaration_line": 181,
           "lines": [
-            85
+            174
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-ef6e36743bd3",
+      "kind": "explicit_unknown",
+      "path": "src/modules/triganim.c",
+      "symbol": "Access view only: opaque spans are not inferred member identities. * RE_UNKNOWN: historical node declarations, complete allocation/lifetime and * callback mutation contracts need original producers and consumers.",
+      "lines": [
+        28
+      ],
+      "evidence": "Access view only: opaque spans are not inferred member identities. * RE_UNKNOWN: historical node declarations, complete allocation/lifetime and * callback mutation contracts need original producers and consumers.",
+      "owners": [
+        {
+          "kind": "type",
+          "name": "TriganimUpdateNode",
+          "declaration_line": 31,
+          "lines": [
+            28
           ]
         }
       ]
@@ -130807,16 +130809,36 @@
       "path": "src/modules/triganim.c",
       "symbol": "Allocate/prepend the original 0x94-byte node, copy both matrices and attach * its model/object. Modes zero/two set object flags three; mode one clears them. * Scalar 0x80 and mode meanings remain unresolved. * RE_ORIGINAL_QUIRK: negative-only object failure test does not reject provider's 0xFFFF. * RE_UNKNOWN: exhaustion reachability, node allocation/lifetime need original callers/allocator.",
       "lines": [
-        133
+        222
       ],
       "evidence": "Allocate/prepend the original 0x94-byte node, copy both matrices and attach * its model/object. Modes zero/two set object flags three; mode one clears them. * Scalar 0x80 and mode meanings remain unresolved. * RE_ORIGINAL_QUIRK: negative-only object failure test does not reject provider's 0xFFFF. * RE_UNKNOWN: exhaustion reachability, node allocation/lifetime need original callers/allocator.",
       "owners": [
         {
           "kind": "function",
           "name": "triganimCreateTransformNode",
-          "declaration_line": 138,
+          "declaration_line": 227,
           "lines": [
-            133
+            222
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-041e9a024b83",
+      "kind": "explicit_unknown",
+      "path": "src/modules/triganim.c",
+      "symbol": "Fill up to five empty dynamic-state slots from signed16 variadic LOD IDs. * Each populated slot receives the owner object/model LOD, scalar property * nine equal to one, then the shared secondary collection in that order. * RE_QUIRK: an occupied slot or -1 ID stops the whole operation, preserving * earlier writes; allocation failure is not checked before provider calls. * RE_UNKNOWN: historical promoted argument declarations, valid model/LOD and * collection domains, allocation failure behavior and ownership/lifetime * require original callers/providers. Read each promoted four-byte argument * and narrow to its signed low halfword, as the native code does.",
+      "lines": [
+        132
+      ],
+      "evidence": "Fill up to five empty dynamic-state slots from signed16 variadic LOD IDs. * Each populated slot receives the owner object/model LOD, scalar property * nine equal to one, then the shared secondary collection in that order. * RE_QUIRK: an occupied slot or -1 ID stops the whole operation, preserving * earlier writes; allocation failure is not checked before provider calls. * RE_UNKNOWN: historical promoted argument declarations, valid model/LOD and * collection domains, allocation failure behavior and ownership/lifetime * require original callers/providers. Read each promoted four-byte argument * and narrow to its signed low halfword, as the native code does.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "func_triganim_00400F7C",
+          "declaration_line": 141,
+          "lines": [
+            132
           ]
         }
       ]
@@ -130847,25 +130869,25 @@
       "path": "src/modules/triganim.c",
       "symbol": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "lines": [
-        62,
-        124
+        114,
+        213
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "owners": [
         {
           "kind": "function",
           "name": "func_triganim_00400090",
-          "declaration_line": 66,
+          "declaration_line": 118,
           "lines": [
-            62
+            114
           ]
         },
         {
           "kind": "function",
           "name": "func_triganim_0040154C",
-          "declaration_line": 128,
+          "declaration_line": 217,
           "lines": [
-            124
+            213
           ]
         }
       ]
@@ -130876,16 +130898,16 @@
       "path": "src/modules/triganim.c",
       "symbol": "Register the eight original trigger-animation callback addresses after * updating the allocation pointer; then clear word 0x1874 and the transform * list head in their original order. Preserve the empty callback identity. * RE_UNKNOWN: callback contracts at slots 0x04/08/0C/10/1C and the role/type * of word 0x1874 require their original implementations and readers/writers. * Export storage capacity/lifetime and safe initialization of existing lists * remain loader/caller contracts. Audit those callers before changing resets.",
       "lines": [
-        39
+        91
       ],
       "evidence": "Register the eight original trigger-animation callback addresses after * updating the allocation pointer; then clear word 0x1874 and the transform * list head in their original order. Preserve the empty callback identity. * RE_UNKNOWN: callback contracts at slots 0x04/08/0C/10/1C and the role/type * of word 0x1874 require their original implementations and readers/writers. * Export storage capacity/lifetime and safe initialization of existing lists * remain loader/caller contracts. Audit those callers before changing resets.",
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_triganimInitializeModuleExports",
-          "declaration_line": 46,
+          "declaration_line": 98,
           "lines": [
-            39
+            91
           ]
         }
       ]
@@ -131568,21 +131590,61 @@
       ]
     },
     {
+      "id": "Q-bc5e082b0114",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvblit_rom.c",
+      "symbol": "* Free the bitmap pixel buffer, bitmap-descriptor array and root record in * that order. No pointer, count or shared-buffer checks are performed. * RE_UNKNOWN: Complete construction and exclusive ownership of all three * allocations require the parser and callers; repeated cleanup is unchecked.",
+      "lines": [
+        165
+      ],
+      "evidence": "* Free the bitmap pixel buffer, bitmap-descriptor array and root record in * that order. No pointer, count or shared-buffer checks are performed. * RE_UNKNOWN: Complete construction and exclusive ownership of all three * allocations require the parser and callers; repeated cleanup is unchecked.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvFreeBlit",
+          "declaration_line": 172,
+          "lines": [
+            165
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-c6fcbb62a253",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvblit_rom.c",
+      "symbol": "* Visit bitmap-file blocks with decode flag 1. For each COMM block, call the * existing bitmap parser and free the block; release the file handle at end. * RE_ORIGINAL_QUIRK: The result local is not initialized. A file without COMM * returns that uninitialized value; repeated COMM blocks replace prior results * without releasing them. Preserve this behavior rather than inserting NULL. * RE_UNKNOWN: Required chunk presence, input extents and ignored-block/result * ownership must be established by callers and the file provider.",
+      "lines": [
+        20
+      ],
+      "evidence": "* Visit bitmap-file blocks with decode flag 1. For each COMM block, call the * existing bitmap parser and free the block; release the file handle at end. * RE_ORIGINAL_QUIRK: The result local is not initialized. A file without COMM * returns that uninitialized value; repeated COMM blocks replace prior results * without releasing them. Preserve this behavior rather than inserting NULL. * RE_UNKNOWN: Required chunk presence, input extents and ignored-block/result * ownership must be established by callers and the file provider.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvParseBlit",
+          "declaration_line": 30,
+          "lines": [
+            20
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-c2193f21b0fb",
       "kind": "explicit_unknown",
       "path": "src/modules/uvblit_rom.c",
       "symbol": "Offset 0x06: all 100 original assets store rounded tile-column width. RE_UNKNOWN: modified-input validation and historical format contract.",
       "lines": [
-        56
+        66
       ],
       "evidence": "Offset 0x06: all 100 original assets store rounded tile-column width. RE_UNKNOWN: modified-input validation and historical format contract.",
       "owners": [
         {
           "kind": "function",
           "name": "_uvParseUVBT",
-          "declaration_line": 51,
+          "declaration_line": 61,
           "lines": [
-            56
+            66
           ]
         }
       ]
@@ -137082,6 +137144,66 @@
           "declaration_line": 460,
           "lines": [
             534
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-21d1dd9278ff",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvenvld_rom.c",
+      "symbol": "* Copy the 0x60-byte environment record, clear its two callback fields and * allocate a model table for the byte-sized model count. For each entry, read * the model ID, load UVMD, then read its flag. When field 0x1D is nonzero, * load UENV, allocate the 0x200-byte lookup, call export 0x04 and unload UENV. * RE_ORIGINAL_QUIRK: The inherited provider declaration passes the lookup and * environment pointers through s32 parameters; preserve that ABI expression. * RE_UNKNOWN: Input extent, allocation/import failure and model/lookup lifetime * are unchecked. The copied record fields retain their original layout.",
+      "lines": [
+        72
+      ],
+      "evidence": "* Copy the 0x60-byte environment record, clear its two callback fields and * allocate a model table for the byte-sized model count. For each entry, read * the model ID, load UVMD, then read its flag. When field 0x1D is nonzero, * load UENV, allocate the 0x200-byte lookup, call export 0x04 and unload UENV. * RE_ORIGINAL_QUIRK: The inherited provider declaration passes the lookup and * environment pointers through s32 parameters; preserve that ABI expression. * RE_UNKNOWN: Input extent, allocation/import failure and model/lookup lifetime * are unchecked. The copied record fields retain their original layout.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "_uvParseUVEN",
+          "declaration_line": 83,
+          "lines": [
+            72
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-9210a04ea7ca",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvenvld_rom.c",
+      "symbol": "* Free the optional field-0x44 lookup, unload each referenced UVMD in table * order when the byte-sized model count is nonzero, then free the table and * environment record. A zero count skips the table free entirely. * RE_UNKNOWN: The record must still own the lookup/table and loaded model * references. Partial initialization, aliases and repeated cleanup are not * checked here; preserve the unused local and original release order.",
+      "lines": [
+        114
+      ],
+      "evidence": "* Free the optional field-0x44 lookup, unload each referenced UVMD in table * order when the byte-sized model count is nonzero, then free the table and * environment record. A zero count skips the table free entirely. * RE_UNKNOWN: The record must still own the lookup/table and loaded model * references. Partial initialization, aliases and repeated cleanup are not * checked here; preserve the unused local and original release order.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvEnvLdCleanup",
+          "declaration_line": 123,
+          "lines": [
+            114
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-4252d22b940d",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvenvld_rom.c",
+      "symbol": "* Open the environment file and visit blocks with decode flag 1. For each * COMM block, parse its bytes and free that block before continuing; release * the file handle at the end and return the last parsed environment or NULL. * RE_ORIGINAL_QUIRK: Repeated COMM blocks replace the result without releasing * the previous environment. Other block tags have no local free here. * RE_UNKNOWN: Accepted block sequence, decoded extents and ownership of ignored * blocks require the file provider and asset callers; no validation is added.",
+      "lines": [
+        34
+      ],
+      "evidence": "* Open the environment file and visit blocks with decode flag 1. For each * COMM block, parse its bytes and free that block before continuing; release * the file handle at the end and return the last parsed environment or NULL. * RE_ORIGINAL_QUIRK: Repeated COMM blocks replace the result without releasing * the previous environment. Other block tags have no local free here. * RE_UNKNOWN: Accepted block sequence, decoded extents and ownership of ignored * blocks require the file provider and asset callers; no validation is added.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvParseUVEN",
+          "declaration_line": 44,
+          "lines": [
+            34
           ]
         }
       ]
@@ -144425,21 +144547,41 @@
       ]
     },
     {
+      "id": "Q-2f93971e3b1e",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvtextureld_rom.c",
+      "symbol": "* Visit texture-file blocks with decode flag 1, expand each COMM block and * free that block, then release the file handle. Return the last texture or * NULL when no COMM block was encountered; other tags are ignored locally. * RE_ORIGINAL_QUIRK: Keep the inherited s32 local holding the block pointer * and its argument conversions. Repeated COMM blocks replace the result. * RE_UNKNOWN: Block extent, pointer conversion assumptions, ignored-block * ownership and expanded-resource lifetime remain provider/caller contracts.",
+      "lines": [
+        64
+      ],
+      "evidence": "* Visit texture-file blocks with decode flag 1, expand each COMM block and * free that block, then release the file handle. Return the last texture or * NULL when no COMM block was encountered; other tags are ignored locally. * RE_ORIGINAL_QUIRK: Keep the inherited s32 local holding the block pointer * and its argument conversions. Repeated COMM blocks replace the result. * RE_UNKNOWN: Block extent, pointer conversion assumptions, ignored-block * ownership and expanded-resource lifetime remain provider/caller contracts.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvParseUVTX",
+          "declaration_line": 74,
+          "lines": [
+            64
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-00202fcd389c",
       "kind": "explicit_unknown",
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "Clamp image bytes to 4096 and copy into a private eight-byte-aligned buffer below the allocation-count limit. * At the limit, call TEXT's lazy 4096-byte scratch allocator; that path copies no asset pixels. * Its reset callback fills existing scratch with 0xFF when invoked through uvGfxBegin's list-one dispatch. * Texture destruction recognizes the current scratch pointer and skips its free/count decrement. * TEXT's module cleanup contains no scratch free. * RE_UNKNOWN: initial contents before a subsequent reset, other writers and intended reuse/teardown lifetime; * trace original fallback loads, shared-pointer aliases and module reload paths before stronger claims.",
       "lines": [
-        92
+        102
       ],
       "evidence": "Clamp image bytes to 4096 and copy into a private eight-byte-aligned buffer below the allocation-count limit. * At the limit, call TEXT's lazy 4096-byte scratch allocator; that path copies no asset pixels. * Its reset callback fills existing scratch with 0xFF when invoked through uvGfxBegin's list-one dispatch. * Texture destruction recognizes the current scratch pointer and skips its free/count decrement. * TEXT's module cleanup contains no scratch free. * RE_UNKNOWN: initial contents before a subsequent reset, other writers and intended reuse/teardown lifetime; * trace original fallback loads, shared-pointer aliases and module reload paths before stronger claims.",
       "owners": [
         {
           "kind": "function",
           "name": "uvTextureLoadImageBytes",
-          "declaration_line": 99,
+          "declaration_line": 109,
           "lines": [
-            92
+            102
           ]
         }
       ]
@@ -144450,16 +144592,96 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "Original US COMM audit: at most four rows; six allocated. RE_UNKNOWN: modified/dynamic inputs, caller checks and parsed-row lifetime; docs/evidence/us-texture-row-contract.json.",
       "lines": [
-        160
+        170
       ],
       "evidence": "Original US COMM audit: at most four rows; six allocated. RE_UNKNOWN: modified/dynamic inputs, caller checks and parsed-row lifetime; docs/evidence/us-texture-row-contract.json.",
       "owners": [
         {
           "kind": "function",
           "name": "_uvExpandTexture",
-          "declaration_line": 132,
+          "declaration_line": 142,
           "lines": [
-            160
+            170
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-ad0cd4776a53",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvtexturexref_rom.c",
+      "symbol": "* Enumerate file entries and, for each COMM entry, copy its advertised bytes * to an aligned temporary block, parse that copy and free the temporary. * Release the file handle and return the last parsed result, or NULL if none. * RE_ORIGINAL_QUIRK: Repeated COMM entries replace the result without cleanup. * RE_UNKNOWN: Entry extents, copy/allocation outcomes and result ownership are * not checked here. The separately exported UVTP free callback remains empty.",
+      "lines": [
+        22
+      ],
+      "evidence": "* Enumerate file entries and, for each COMM entry, copy its advertised bytes * to an aligned temporary block, parse that copy and free the temporary. * Release the file handle and return the last parsed result, or NULL if none. * RE_ORIGINAL_QUIRK: Repeated COMM entries replace the result without cleanup. * RE_UNKNOWN: Entry extents, copy/allocation outcomes and result ownership are * not checked here. The separately exported UVTP free callback remains empty.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvParseUVTP",
+          "declaration_line": 31,
+          "lines": [
+            22
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-5c816a35d858",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvtexturexref_rom.c",
+      "symbol": "* Read an unsigned-halfword pair count, allocate the 0x0C-byte record and two * halfword arrays, then consume interleaved values into the two arrays. Store * the count only after the original halfword-indexed loop completes. * RE_ORIGINAL_QUIRK: Record field 0x02 remains untouched, including when the * pair count is zero; all three allocations retain their original order. * RE_UNKNOWN: Input extent, allocation outcomes, meanings of the two indices * and eventual array/record ownership require callers and asset-format proof.",
+      "lines": [
+        60
+      ],
+      "evidence": "* Read an unsigned-halfword pair count, allocate the 0x0C-byte record and two * halfword arrays, then consume interleaved values into the two arrays. Store * the count only after the original halfword-indexed loop completes. * RE_ORIGINAL_QUIRK: Record field 0x02 remains untouched, including when the * pair count is zero; all three allocations retain their original order. * RE_UNKNOWN: Input extent, allocation outcomes, meanings of the two indices * and eventual array/record ownership require callers and asset-format proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "_uvParseUVTP",
+          "declaration_line": 70,
+          "lines": [
+            60
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-a46a5c37581d",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvtrackld_rom.c",
+      "symbol": "* Allocate a track record and clear its two counts. PNTS reads a signed word * count and copies count times 0x38 bytes into a new array; LNKS similarly * copies count times 8 bytes. Free each recognized block and the file handle. * RE_ORIGINAL_QUIRK: Pointer fields 0x08/0x0C remain uninitialized unless their * chunks occur. Repeated chunks overwrite arrays without freeing the old ones. * RE_UNKNOWN: Chunk presence/order, signed counts, size overflow, input extent * and allocation outcomes require asset/provider proof; no repair is added.",
+      "lines": [
+        26
+      ],
+      "evidence": "* Allocate a track record and clear its two counts. PNTS reads a signed word * count and copies count times 0x38 bytes into a new array; LNKS similarly * copies count times 8 bytes. Free each recognized block and the file handle. * RE_ORIGINAL_QUIRK: Pointer fields 0x08/0x0C remain uninitialized unless their * chunks occur. Repeated chunks overwrite arrays without freeing the old ones. * RE_UNKNOWN: Chunk presence/order, signed counts, size overflow, input extent * and allocation outcomes require asset/provider proof; no repair is added.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvParseUVTT",
+          "declaration_line": 36,
+          "lines": [
+            26
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-74df0d69181b",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvtrackld_rom.c",
+      "symbol": "* Free the field-0x0C link array, field-0x08 point array and record in that * order, without pointer or count checks. * RE_ORIGINAL_QUIRK: The parser leaves an array pointer uninitialized when its * chunk is absent. This destructor still passes both fields to the allocator. * RE_UNKNOWN: Complete initialization and exclusive ownership must be ensured * by callers; allocator behavior for absent or invalid pointers is not proved.",
+      "lines": [
+        71
+      ],
+      "evidence": "* Free the field-0x0C link array, field-0x08 point array and record in that * order, without pointer or count checks. * RE_ORIGINAL_QUIRK: The parser leaves an array pointer uninitialized when its * chunk is absent. This destructor still passes both fields to the allocator. * RE_UNKNOWN: Complete initialization and exclusive ownership must be ensured * by callers; allocator behavior for absent or invalid pointers is not proved.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvParseFreeUVTT",
+          "declaration_line": 80,
+          "lines": [
+            71
           ]
         }
       ]
@@ -144825,21 +145047,81 @@
       ]
     },
     {
+      "id": "Q-403e1ea32dc8",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvufileld_rom.c",
+      "symbol": "* Open the file and obtain its size. For UVRW header type, search COMM entry * zero to replace the data pointer/size, preserving the ignored search result. * With the shared flag zero, allocate with argument 8 and copy the bytes; * otherwise return the existing data pointer. Release the file handle first. * RE_ORIGINAL_QUIRK: A nonzero flag selects the borrowed-pointer path despite * the flag name. The separate free operation always calls the allocator. * RE_UNKNOWN: Failed search outputs, input extent, allocation success and * borrowed-pointer lifetime/free protocol require provider and caller proof.",
+      "lines": [
+        25
+      ],
+      "evidence": "* Open the file and obtain its size. For UVRW header type, search COMM entry * zero to replace the data pointer/size, preserving the ignored search result. * With the shared flag zero, allocate with argument 8 and copy the bytes; * otherwise return the existing data pointer. Release the file handle first. * RE_ORIGINAL_QUIRK: A nonzero flag selects the borrowed-pointer path despite * the flag name. The separate free operation always calls the allocator. * RE_UNKNOWN: Failed search outputs, input extent, allocation success and * borrowed-pointer lifetime/free protocol require provider and caller proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvFileCopy",
+          "declaration_line": 36,
+          "lines": [
+            25
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-08ccd2c0bac4",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvufileld_rom.c",
+      "symbol": "* Pass the supplied pointer directly to the existing allocator free routine. * RE_ORIGINAL_QUIRK: There is no ownership or shared-flag check even though * uvFileCopy can return an existing input/entry pointer instead of a new copy. * RE_UNKNOWN: Callers must establish which pointers may be released; NULL * handling and the borrowed-pointer protocol are not proved by this wrapper.",
+      "lines": [
+        57
+      ],
+      "evidence": "* Pass the supplied pointer directly to the existing allocator free routine. * RE_ORIGINAL_QUIRK: There is no ownership or shared-flag check even though * uvFileCopy can return an existing input/entry pointer instead of a new copy. * RE_UNKNOWN: Callers must establish which pointers may be released; NULL * handling and the borrowed-pointer protocol are not proved by this wrapper.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvFreeFilePtr",
+          "declaration_line": 65,
+          "lines": [
+            57
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-2b0e824b00d2",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvufileld_rom.c",
+      "symbol": "* Store the caller word unchanged in the shared file-data mode flag. * RE_ORIGINAL_QUIRK: Zero selects allocation/copy in uvFileCopy; any nonzero * value selects its existing-pointer path. The flag is not normalized here. * RE_UNKNOWN: Coordination with outstanding borrowed/copied results and * concurrent loaders requires the flag-setting and destruction callers.",
+      "lines": [
+        69
+      ],
+      "evidence": "* Store the caller word unchanged in the shared file-data mode flag. * RE_ORIGINAL_QUIRK: Zero selects allocation/copy in uvFileCopy; any nonzero * value selects its existing-pointer path. The flag is not normalized here. * RE_UNKNOWN: Coordination with outstanding borrowed/copied results and * concurrent loaders requires the flag-setting and destruction callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvSetCopyFileDataFlag",
+          "declaration_line": 77,
+          "lines": [
+            69
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-690f53d250d7",
       "kind": "explicit_unknown",
       "path": "src/modules/uvufileld_rom.c",
       "symbol": "Header type, not FORM0 category. RE_UNKNOWN: runtime IDs reaching this COMM branch; docs/evidence/us-block-header-boundary.json.",
       "lines": [
-        32
+        43
       ],
       "evidence": "Header type, not FORM0 category. RE_UNKNOWN: runtime IDs reaching this COMM branch; docs/evidence/us-block-header-boundary.json.",
       "owners": [
         {
           "kind": "function",
           "name": "uvFileCopy",
-          "declaration_line": 25,
+          "declaration_line": 36,
           "lines": [
-            32
+            43
           ]
         }
       ]
@@ -152716,24 +152998,24 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "pad",
       "lines": [
-        137,
-        308
+        147,
+        318
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvExpandTexture",
-          "declaration_line": 132,
+          "declaration_line": 142,
           "lines": [
-            137
+            147
           ]
         },
         {
           "kind": "function",
           "name": "uvTextureFreeResource",
-          "declaration_line": 307,
+          "declaration_line": 317,
           "lines": [
-            308
+            318
           ]
         }
       ]
@@ -152763,19 +153045,19 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "pad18",
       "lines": [
-        213,
-        273,
-        276
+        223,
+        283,
+        286
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvExpandTexture",
-          "declaration_line": 132,
+          "declaration_line": 142,
           "lines": [
-            213,
-            273,
-            276
+            223,
+            283,
+            286
           ]
         }
       ]
@@ -152786,15 +153068,15 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "pad2",
       "lines": [
-        157
+        167
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvExpandTexture",
-          "declaration_line": 132,
+          "declaration_line": 142,
           "lines": [
-            157
+            167
           ]
         }
       ]
@@ -152824,15 +153106,15 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "pad3",
       "lines": [
-        159
+        169
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvExpandTexture",
-          "declaration_line": 132,
+          "declaration_line": 142,
           "lines": [
-            159
+            169
           ]
         }
       ]
@@ -182637,6 +182919,205 @@
       ]
     },
     {
+      "id": "Q-7f48d3eb0d60",
+      "kind": "offset_field",
+      "path": "src/modules/triganim.c",
+      "symbol": "opaque00",
+      "lines": [
+        52,
+        67
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "TriganimDynamicExports",
+          "declaration_line": 51,
+          "lines": [
+            52
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "TriganimMatrixExports",
+          "declaration_line": 66,
+          "lines": [
+            67
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-89808ab2ebb3",
+      "kind": "offset_field",
+      "path": "src/modules/triganim.c",
+      "symbol": "opaque08",
+      "lines": [
+        34
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "TriganimUpdateNode",
+          "declaration_line": 31,
+          "lines": [
+            34
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-4feb9c078558",
+      "kind": "offset_field",
+      "path": "src/modules/triganim.c",
+      "symbol": "opaque140",
+      "lines": [
+        54
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "TriganimDynamicExports",
+          "declaration_line": 51,
+          "lines": [
+            54
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-945190645f71",
+      "kind": "offset_field",
+      "path": "src/modules/triganim.c",
+      "symbol": "opaque14C",
+      "lines": [
+        57
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "TriganimDynamicExports",
+          "declaration_line": 51,
+          "lines": [
+            57
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-761e84d64abf",
+      "kind": "offset_field",
+      "path": "src/modules/triganim.c",
+      "symbol": "opaque160",
+      "lines": [
+        59
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "TriganimDynamicExports",
+          "declaration_line": 51,
+          "lines": [
+            59
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-a20515e5c41c",
+      "kind": "offset_field",
+      "path": "src/modules/triganim.c",
+      "symbol": "opaque16C",
+      "lines": [
+        61
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "TriganimDynamicExports",
+          "declaration_line": 51,
+          "lines": [
+            61
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-348c84086fa6",
+      "kind": "offset_field",
+      "path": "src/modules/triganim.c",
+      "symbol": "opaque174",
+      "lines": [
+        63
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "TriganimDynamicExports",
+          "declaration_line": 51,
+          "lines": [
+            63
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-67f8cd2ead22",
+      "kind": "offset_field",
+      "path": "src/modules/triganim.c",
+      "symbol": "opaque27",
+      "lines": [
+        37
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "TriganimUpdateNode",
+          "declaration_line": 31,
+          "lines": [
+            37
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-66eb3c43818c",
+      "kind": "offset_field",
+      "path": "src/modules/triganim.c",
+      "symbol": "opaque34",
+      "lines": [
+        40
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "TriganimUpdateNode",
+          "declaration_line": 31,
+          "lines": [
+            40
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-5a9a279deaa5",
+      "kind": "offset_field",
+      "path": "src/modules/triganim.c",
+      "symbol": "opaque71",
+      "lines": [
+        46
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "TriganimUpdateNode",
+          "declaration_line": 31,
+          "lines": [
+            46
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-df8b5b5240b9",
       "kind": "offset_field",
       "path": "src/modules/triganim.c",
@@ -182656,21 +183137,40 @@
       ]
     },
     {
+      "id": "Q-17f1f75169a3",
+      "kind": "offset_field",
+      "path": "src/modules/triganim.c",
+      "symbol": "unkPtr90",
+      "lines": [
+        166
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "func_triganim_00400F7C",
+          "declaration_line": 141,
+          "lines": [
+            166
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-3e164d71ebdd",
       "kind": "offset_field",
       "path": "src/modules/triganim.c",
       "symbol": "unknownCallback04Address",
       "lines": [
         20,
-        49
+        101
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_triganimInitializeModuleExports",
-          "declaration_line": 46,
+          "declaration_line": 98,
           "lines": [
-            49
+            101
           ]
         },
         {
@@ -182690,15 +183190,15 @@
       "symbol": "unknownCallback08Address",
       "lines": [
         21,
-        50
+        102
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_triganimInitializeModuleExports",
-          "declaration_line": 46,
+          "declaration_line": 98,
           "lines": [
-            50
+            102
           ]
         },
         {
@@ -182718,15 +183218,15 @@
       "symbol": "unknownCallback0CAddress",
       "lines": [
         22,
-        51
+        103
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_triganimInitializeModuleExports",
-          "declaration_line": 46,
+          "declaration_line": 98,
           "lines": [
-            51
+            103
           ]
         },
         {
@@ -182746,15 +183246,15 @@
       "symbol": "unknownCallback10Address",
       "lines": [
         23,
-        52
+        104
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_triganimInitializeModuleExports",
-          "declaration_line": 46,
+          "declaration_line": 98,
           "lines": [
-            52
+            104
           ]
         },
         {
@@ -182774,15 +183274,15 @@
       "symbol": "unknownCallback1CAddress",
       "lines": [
         26,
-        55
+        107
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_triganimInitializeModuleExports",
-          "declaration_line": 46,
+          "declaration_line": 98,
           "lines": [
-            55
+            107
           ]
         },
         {
@@ -182802,15 +183302,15 @@
       "symbol": "value88",
       "lines": [
         4,
-        153
+        242
       ],
       "owners": [
         {
           "kind": "function",
           "name": "triganimCreateTransformNode",
-          "declaration_line": 138,
+          "declaration_line": 227,
           "lines": [
-            153
+            242
           ]
         },
         {
@@ -183744,15 +184244,15 @@
       "path": "src/modules/uvblit_rom.c",
       "symbol": "unkA",
       "lines": [
-        106
+        116
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvParseUVBT",
-          "declaration_line": 51,
+          "declaration_line": 61,
           "lines": [
-            106
+            116
           ]
         }
       ]
@@ -195579,15 +196079,15 @@
       "path": "src/modules/uvenvld_rom.c",
       "symbol": "unk1D",
       "lines": [
-        81
+        102
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvParseUVEN",
-          "declaration_line": 62,
+          "declaration_line": 83,
           "lines": [
-            81
+            102
           ]
         }
       ]
@@ -195598,15 +196098,15 @@
       "path": "src/modules/uvenvld_rom.c",
       "symbol": "unk38",
       "lines": [
-        69
+        90
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvParseUVEN",
-          "declaration_line": 62,
+          "declaration_line": 83,
           "lines": [
-            69
+            90
           ]
         }
       ]
@@ -195617,15 +196117,15 @@
       "path": "src/modules/uvenvld_rom.c",
       "symbol": "unk3C",
       "lines": [
-        87
+        108
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvParseUVEN",
-          "declaration_line": 62,
+          "declaration_line": 83,
           "lines": [
-            87
+            108
           ]
         }
       ]
@@ -195637,15 +196137,15 @@
       "symbol": "unk4",
       "lines": [
         8,
-        87
+        108
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvParseUVEN",
-          "declaration_line": 62,
+          "declaration_line": 83,
           "lines": [
-            87
+            108
           ]
         },
         {
@@ -195664,15 +196164,15 @@
       "path": "src/modules/uvenvld_rom.c",
       "symbol": "unk40",
       "lines": [
-        87
+        108
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvParseUVEN",
-          "declaration_line": 62,
+          "declaration_line": 83,
           "lines": [
-            87
+            108
           ]
         }
       ]
@@ -195683,28 +196183,28 @@
       "path": "src/modules/uvenvld_rom.c",
       "symbol": "unk44",
       "lines": [
-        82,
-        85,
-        87,
-        99
+        103,
+        106,
+        108,
+        129
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvParseUVEN",
-          "declaration_line": 62,
+          "declaration_line": 83,
           "lines": [
-            82,
-            85,
-            87
+            103,
+            106,
+            108
           ]
         },
         {
           "kind": "function",
           "name": "uvEnvLdCleanup",
-          "declaration_line": 93,
+          "declaration_line": 123,
           "lines": [
-            99
+            129
           ]
         }
       ]
@@ -195715,15 +196215,15 @@
       "path": "src/modules/uvenvld_rom.c",
       "symbol": "unk5C",
       "lines": [
-        70
+        91
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvParseUVEN",
-          "declaration_line": 62,
+          "declaration_line": 83,
           "lines": [
-            70
+            91
           ]
         }
       ]
@@ -210004,30 +210504,30 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "unk0",
       "lines": [
-        173,
-        191,
-        258,
-        324,
-        325
+        183,
+        201,
+        268,
+        334,
+        335
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvExpandTexture",
-          "declaration_line": 132,
+          "declaration_line": 142,
           "lines": [
-            173,
-            191,
-            258
+            183,
+            201,
+            268
           ]
         },
         {
           "kind": "function",
           "name": "uvTextureFreeResource",
-          "declaration_line": 307,
+          "declaration_line": 317,
           "lines": [
-            324,
-            325
+            334,
+            335
           ]
         }
       ]
@@ -210038,29 +210538,29 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "unk10",
       "lines": [
-        180,
-        195,
-        287,
-        290,
-        291,
-        292,
-        293,
-        297
+        190,
+        205,
+        297,
+        300,
+        301,
+        302,
+        303,
+        307
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvExpandTexture",
-          "declaration_line": 132,
+          "declaration_line": 142,
           "lines": [
-            180,
-            195,
-            287,
-            290,
-            291,
-            292,
-            293,
-            297
+            190,
+            205,
+            297,
+            300,
+            301,
+            302,
+            303,
+            307
           ]
         }
       ]
@@ -210071,36 +210571,36 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "unk14",
       "lines": [
-        181,
-        196,
-        212,
-        225,
-        231,
-        244,
-        273,
-        312
+        191,
+        206,
+        222,
+        235,
+        241,
+        254,
+        283,
+        322
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvExpandTexture",
-          "declaration_line": 132,
+          "declaration_line": 142,
           "lines": [
-            181,
-            196,
-            212,
-            225,
-            231,
-            244,
-            273
+            191,
+            206,
+            222,
+            235,
+            241,
+            254,
+            283
           ]
         },
         {
           "kind": "function",
           "name": "uvTextureFreeResource",
-          "declaration_line": 307,
+          "declaration_line": 317,
           "lines": [
-            312
+            322
           ]
         }
       ]
@@ -210111,28 +210611,28 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "unk18",
       "lines": [
-        177,
-        197,
-        312,
-        313
+        187,
+        207,
+        322,
+        323
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvExpandTexture",
-          "declaration_line": 132,
+          "declaration_line": 142,
           "lines": [
-            177,
-            197
+            187,
+            207
           ]
         },
         {
           "kind": "function",
           "name": "uvTextureFreeResource",
-          "declaration_line": 307,
+          "declaration_line": 317,
           "lines": [
-            312,
-            313
+            322,
+            323
           ]
         }
       ]
@@ -210143,17 +210643,17 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "unk19",
       "lines": [
-        178,
-        198
+        188,
+        208
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvExpandTexture",
-          "declaration_line": 132,
+          "declaration_line": 142,
           "lines": [
-            178,
-            198
+            188,
+            208
           ]
         }
       ]
@@ -210164,19 +210664,19 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "unk1A",
       "lines": [
-        179,
-        199,
-        256
+        189,
+        209,
+        266
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvExpandTexture",
-          "declaration_line": 132,
+          "declaration_line": 142,
           "lines": [
-            179,
-            199,
-            256
+            189,
+            209,
+            266
           ]
         }
       ]
@@ -210188,51 +210688,51 @@
       "symbol": "unk20",
       "lines": [
         7,
-        124,
-        224,
-        227,
-        228,
+        134,
         234,
-        235,
         237,
+        238,
+        244,
         245,
-        246,
-        248,
-        315,
-        316
+        247,
+        255,
+        256,
+        258,
+        325,
+        326
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvExpandTexture",
-          "declaration_line": 132,
+          "declaration_line": 142,
           "lines": [
-            224,
-            227,
-            228,
             234,
-            235,
             237,
+            238,
+            244,
             245,
-            246,
-            248
+            247,
+            255,
+            256,
+            258
           ]
         },
         {
           "kind": "function",
           "name": "uvTextureFreeResource",
-          "declaration_line": 307,
+          "declaration_line": 317,
           "lines": [
-            315,
-            316
+            325,
+            326
           ]
         },
         {
           "kind": "function",
           "name": "uvTextureLoadImageBytes",
-          "declaration_line": 99,
+          "declaration_line": 109,
           "lines": [
-            124
+            134
           ]
         },
         {
@@ -210251,19 +210751,19 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "unk21",
       "lines": [
-        216,
-        251,
-        286
+        226,
+        261,
+        296
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvExpandTexture",
-          "declaration_line": 132,
+          "declaration_line": 142,
           "lines": [
-            216,
-            251,
-            286
+            226,
+            261,
+            296
           ]
         }
       ]
@@ -210274,21 +210774,21 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "unk22",
       "lines": [
-        223,
-        252,
-        287,
-        288
+        233,
+        262,
+        297,
+        298
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvExpandTexture",
-          "declaration_line": 132,
+          "declaration_line": 142,
           "lines": [
-            223,
-            252,
-            287,
-            288
+            233,
+            262,
+            297,
+            298
           ]
         }
       ]
@@ -210299,15 +210799,15 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "unk23",
       "lines": [
-        222
+        232
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvExpandTexture",
-          "declaration_line": 132,
+          "declaration_line": 142,
           "lines": [
-            222
+            232
           ]
         }
       ]
@@ -210319,24 +210819,24 @@
       "symbol": "unk24",
       "lines": [
         8,
-        209,
-        327
+        219,
+        337
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvExpandTexture",
-          "declaration_line": 132,
+          "declaration_line": 142,
           "lines": [
-            209
+            219
           ]
         },
         {
           "kind": "function",
           "name": "uvTextureFreeResource",
-          "declaration_line": 307,
+          "declaration_line": 317,
           "lines": [
-            327
+            337
           ]
         },
         {
@@ -210355,15 +210855,15 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "unk25",
       "lines": [
-        210
+        220
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvExpandTexture",
-          "declaration_line": 132,
+          "declaration_line": 142,
           "lines": [
-            210
+            220
           ]
         }
       ]
@@ -210374,15 +210874,15 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "unk26",
       "lines": [
-        211
+        221
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvExpandTexture",
-          "declaration_line": 132,
+          "declaration_line": 142,
           "lines": [
-            211
+            221
           ]
         }
       ]
@@ -210393,15 +210893,15 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "unk27",
       "lines": [
-        215
+        225
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvExpandTexture",
-          "declaration_line": 132,
+          "declaration_line": 142,
           "lines": [
-            215
+            225
           ]
         }
       ]
@@ -210412,30 +210912,30 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "unk4",
       "lines": [
-        174,
-        192,
-        260,
-        318,
-        319
+        184,
+        202,
+        270,
+        328,
+        329
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvExpandTexture",
-          "declaration_line": 132,
+          "declaration_line": 142,
           "lines": [
-            174,
-            192,
-            260
+            184,
+            202,
+            270
           ]
         },
         {
           "kind": "function",
           "name": "uvTextureFreeResource",
-          "declaration_line": 307,
+          "declaration_line": 317,
           "lines": [
-            318,
-            319
+            328,
+            329
           ]
         }
       ]
@@ -210446,28 +210946,28 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "unk8",
       "lines": [
-        175,
-        193,
-        321,
-        322
+        185,
+        203,
+        331,
+        332
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvExpandTexture",
-          "declaration_line": 132,
+          "declaration_line": 142,
           "lines": [
-            175,
-            193
+            185,
+            203
           ]
         },
         {
           "kind": "function",
           "name": "uvTextureFreeResource",
-          "declaration_line": 307,
+          "declaration_line": 317,
           "lines": [
-            321,
-            322
+            331,
+            332
           ]
         }
       ]
@@ -210478,26 +210978,26 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "unkC",
       "lines": [
-        176,
-        194,
-        311
+        186,
+        204,
+        321
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvExpandTexture",
-          "declaration_line": 132,
+          "declaration_line": 142,
           "lines": [
-            176,
-            194
+            186,
+            204
           ]
         },
         {
           "kind": "function",
           "name": "uvTextureFreeResource",
-          "declaration_line": 307,
+          "declaration_line": 317,
           "lines": [
-            311
+            321
           ]
         }
       ]
@@ -210508,17 +211008,17 @@
       "path": "src/modules/uvtexturexref_rom.c",
       "symbol": "unk4",
       "lines": [
-        58,
-        61
+        77,
+        80
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvParseUVTP",
-          "declaration_line": 51,
+          "declaration_line": 70,
           "lines": [
-            58,
-            61
+            77,
+            80
           ]
         }
       ]
@@ -210529,17 +211029,17 @@
       "path": "src/modules/uvtexturexref_rom.c",
       "symbol": "unk8",
       "lines": [
-        59,
-        62
+        78,
+        81
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvParseUVTP",
-          "declaration_line": 51,
+          "declaration_line": 70,
           "lines": [
-            59,
-            62
+            78,
+            81
           ]
         }
       ]
@@ -210550,21 +211050,21 @@
       "path": "src/modules/uvtrackld_rom.c",
       "symbol": "unk0",
       "lines": [
-        36,
-        43,
-        44,
-        45
+        46,
+        53,
+        54,
+        55
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvParseUVTT",
-          "declaration_line": 26,
+          "declaration_line": 36,
           "lines": [
-            36,
-            43,
-            44,
-            45
+            46,
+            53,
+            54,
+            55
           ]
         }
       ]
@@ -210575,21 +211075,21 @@
       "path": "src/modules/uvtrackld_rom.c",
       "symbol": "unk4",
       "lines": [
-        37,
-        50,
-        51,
-        52
+        47,
+        60,
+        61,
+        62
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvParseUVTT",
-          "declaration_line": 26,
+          "declaration_line": 36,
           "lines": [
-            37,
-            50,
-            51,
-            52
+            47,
+            60,
+            61,
+            62
           ]
         }
       ]
@@ -210600,26 +211100,26 @@
       "path": "src/modules/uvtrackld_rom.c",
       "symbol": "unk8",
       "lines": [
-        44,
-        45,
-        63
+        54,
+        55,
+        82
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvParseFreeUVTT",
-          "declaration_line": 61,
+          "declaration_line": 80,
           "lines": [
-            63
+            82
           ]
         },
         {
           "kind": "function",
           "name": "uvParseUVTT",
-          "declaration_line": 26,
+          "declaration_line": 36,
           "lines": [
-            44,
-            45
+            54,
+            55
           ]
         }
       ]
@@ -210630,26 +211130,26 @@
       "path": "src/modules/uvtrackld_rom.c",
       "symbol": "unkC",
       "lines": [
-        51,
-        52,
-        62
+        61,
+        62,
+        81
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvParseFreeUVTT",
-          "declaration_line": 61,
+          "declaration_line": 80,
           "lines": [
-            62
+            81
           ]
         },
         {
           "kind": "function",
           "name": "uvParseUVTT",
-          "declaration_line": 26,
+          "declaration_line": 36,
           "lines": [
-            51,
-            52
+            61,
+            62
           ]
         }
       ]
@@ -216749,15 +217249,15 @@
       "symbol": "UnkStruct_004005C8",
       "lines": [
         7,
-        93
+        182
       ],
       "owners": [
         {
           "kind": "function",
           "name": "triganimReleaseObjectAndSound",
-          "declaration_line": 92,
+          "declaration_line": 181,
           "lines": [
-            93
+            182
           ]
         },
         {
@@ -217665,15 +218165,15 @@
       "symbol": "UnkUvEnvLd_Exports",
       "lines": [
         9,
-        64
+        85
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvParseUVEN",
-          "declaration_line": 62,
+          "declaration_line": 83,
           "lines": [
-            64
+            85
           ]
         },
         {
@@ -219812,7 +220312,7 @@
       "symbol": "UnkStruct_uvtextureld_rom_00400A40",
       "lines": [
         17,
-        307
+        317
       ],
       "owners": [
         {
@@ -219826,9 +220326,9 @@
         {
           "kind": "function",
           "name": "uvTextureFreeResource",
-          "declaration_line": 307,
+          "declaration_line": 317,
           "lines": [
-            307
+            317
           ]
         }
       ]
@@ -219886,17 +220386,17 @@
       "path": "src/modules/uvtextureld_rom.c",
       "symbol": "UnkUVTX_1C",
       "lines": [
-        144,
-        145
+        154,
+        155
       ],
       "owners": [
         {
           "kind": "function",
           "name": "_uvExpandTexture",
-          "declaration_line": 132,
+          "declaration_line": 142,
           "lines": [
-            144,
-            145
+            154,
+            155
           ]
         }
       ]
@@ -223795,16 +224295,16 @@
       "path": "src/modules/triganim.c",
       "symbol": "Allocate/prepend the original 0x94-byte node, copy both matrices and attach * its model/object. Modes zero/two set object flags three; mode one clears them. * Scalar 0x80 and mode meanings remain unresolved. * RE_ORIGINAL_QUIRK: negative-only object failure test does not reject provider's 0xFFFF. * RE_UNKNOWN: exhaustion reachability, node allocation/lifetime need original callers/allocator.",
       "lines": [
-        133
+        222
       ],
       "evidence": "Allocate/prepend the original 0x94-byte node, copy both matrices and attach * its model/object. Modes zero/two set object flags three; mode one clears them. * Scalar 0x80 and mode meanings remain unresolved. * RE_ORIGINAL_QUIRK: negative-only object failure test does not reject provider's 0xFFFF. * RE_UNKNOWN: exhaustion reachability, node allocation/lifetime need original callers/allocator.",
       "owners": [
         {
           "kind": "function",
           "name": "triganimCreateTransformNode",
-          "declaration_line": 138,
+          "declaration_line": 227,
           "lines": [
-            133
+            222
           ]
         }
       ]
@@ -224000,21 +224500,41 @@
       ]
     },
     {
+      "id": "Q-d38b928ee014",
+      "kind": "original_quirk",
+      "path": "src/modules/uvblit_rom.c",
+      "symbol": "* Visit bitmap-file blocks with decode flag 1. For each COMM block, call the * existing bitmap parser and free the block; release the file handle at end. * RE_ORIGINAL_QUIRK: The result local is not initialized. A file without COMM * returns that uninitialized value; repeated COMM blocks replace prior results * without releasing them. Preserve this behavior rather than inserting NULL. * RE_UNKNOWN: Required chunk presence, input extents and ignored-block/result * ownership must be established by callers and the file provider.",
+      "lines": [
+        20
+      ],
+      "evidence": "* Visit bitmap-file blocks with decode flag 1. For each COMM block, call the * existing bitmap parser and free the block; release the file handle at end. * RE_ORIGINAL_QUIRK: The result local is not initialized. A file without COMM * returns that uninitialized value; repeated COMM blocks replace prior results * without releasing them. Preserve this behavior rather than inserting NULL. * RE_UNKNOWN: Required chunk presence, input extents and ignored-block/result * ownership must be established by callers and the file provider.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvParseBlit",
+          "declaration_line": 30,
+          "lines": [
+            20
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-06ffe8fc1f75",
       "kind": "original_quirk",
       "path": "src/modules/uvblit_rom.c",
       "symbol": "Original assets have nonzero divisors; RE_ORIGINAL_QUIRK: these divisions have no local input checks.",
       "lines": [
-        113
+        123
       ],
       "evidence": "Original assets have nonzero divisors; RE_ORIGINAL_QUIRK: these divisions have no local input checks.",
       "owners": [
         {
           "kind": "function",
           "name": "_uvParseUVBT",
-          "declaration_line": 51,
+          "declaration_line": 61,
           "lines": [
-            113
+            123
           ]
         }
       ]
@@ -225247,6 +225767,46 @@
           "declaration_line": 788,
           "lines": [
             784
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-bb7e3b8ab869",
+      "kind": "original_quirk",
+      "path": "src/modules/uvenvld_rom.c",
+      "symbol": "* Copy the 0x60-byte environment record, clear its two callback fields and * allocate a model table for the byte-sized model count. For each entry, read * the model ID, load UVMD, then read its flag. When field 0x1D is nonzero, * load UENV, allocate the 0x200-byte lookup, call export 0x04 and unload UENV. * RE_ORIGINAL_QUIRK: The inherited provider declaration passes the lookup and * environment pointers through s32 parameters; preserve that ABI expression. * RE_UNKNOWN: Input extent, allocation/import failure and model/lookup lifetime * are unchecked. The copied record fields retain their original layout.",
+      "lines": [
+        72
+      ],
+      "evidence": "* Copy the 0x60-byte environment record, clear its two callback fields and * allocate a model table for the byte-sized model count. For each entry, read * the model ID, load UVMD, then read its flag. When field 0x1D is nonzero, * load UENV, allocate the 0x200-byte lookup, call export 0x04 and unload UENV. * RE_ORIGINAL_QUIRK: The inherited provider declaration passes the lookup and * environment pointers through s32 parameters; preserve that ABI expression. * RE_UNKNOWN: Input extent, allocation/import failure and model/lookup lifetime * are unchecked. The copied record fields retain their original layout.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "_uvParseUVEN",
+          "declaration_line": 83,
+          "lines": [
+            72
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-e3aeea2f3f27",
+      "kind": "original_quirk",
+      "path": "src/modules/uvenvld_rom.c",
+      "symbol": "* Open the environment file and visit blocks with decode flag 1. For each * COMM block, parse its bytes and free that block before continuing; release * the file handle at the end and return the last parsed environment or NULL. * RE_ORIGINAL_QUIRK: Repeated COMM blocks replace the result without releasing * the previous environment. Other block tags have no local free here. * RE_UNKNOWN: Accepted block sequence, decoded extents and ownership of ignored * blocks require the file provider and asset callers; no validation is added.",
+      "lines": [
+        34
+      ],
+      "evidence": "* Open the environment file and visit blocks with decode flag 1. For each * COMM block, parse its bytes and free that block before continuing; release * the file handle at the end and return the last parsed environment or NULL. * RE_ORIGINAL_QUIRK: Repeated COMM blocks replace the result without releasing * the previous environment. Other block tags have no local free here. * RE_UNKNOWN: Accepted block sequence, decoded extents and ownership of ignored * blocks require the file provider and asset callers; no validation is added.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvParseUVEN",
+          "declaration_line": 44,
+          "lines": [
+            34
           ]
         }
       ]
@@ -227366,6 +227926,166 @@
           "declaration_line": 219,
           "lines": [
             210
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-fc2512879ab9",
+      "kind": "original_quirk",
+      "path": "src/modules/uvtextureld_rom.c",
+      "symbol": "* Visit texture-file blocks with decode flag 1, expand each COMM block and * free that block, then release the file handle. Return the last texture or * NULL when no COMM block was encountered; other tags are ignored locally. * RE_ORIGINAL_QUIRK: Keep the inherited s32 local holding the block pointer * and its argument conversions. Repeated COMM blocks replace the result. * RE_UNKNOWN: Block extent, pointer conversion assumptions, ignored-block * ownership and expanded-resource lifetime remain provider/caller contracts.",
+      "lines": [
+        64
+      ],
+      "evidence": "* Visit texture-file blocks with decode flag 1, expand each COMM block and * free that block, then release the file handle. Return the last texture or * NULL when no COMM block was encountered; other tags are ignored locally. * RE_ORIGINAL_QUIRK: Keep the inherited s32 local holding the block pointer * and its argument conversions. Repeated COMM blocks replace the result. * RE_UNKNOWN: Block extent, pointer conversion assumptions, ignored-block * ownership and expanded-resource lifetime remain provider/caller contracts.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvParseUVTX",
+          "declaration_line": 74,
+          "lines": [
+            64
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-eb2ab53b858b",
+      "kind": "original_quirk",
+      "path": "src/modules/uvtexturexref_rom.c",
+      "symbol": "* Enumerate file entries and, for each COMM entry, copy its advertised bytes * to an aligned temporary block, parse that copy and free the temporary. * Release the file handle and return the last parsed result, or NULL if none. * RE_ORIGINAL_QUIRK: Repeated COMM entries replace the result without cleanup. * RE_UNKNOWN: Entry extents, copy/allocation outcomes and result ownership are * not checked here. The separately exported UVTP free callback remains empty.",
+      "lines": [
+        22
+      ],
+      "evidence": "* Enumerate file entries and, for each COMM entry, copy its advertised bytes * to an aligned temporary block, parse that copy and free the temporary. * Release the file handle and return the last parsed result, or NULL if none. * RE_ORIGINAL_QUIRK: Repeated COMM entries replace the result without cleanup. * RE_UNKNOWN: Entry extents, copy/allocation outcomes and result ownership are * not checked here. The separately exported UVTP free callback remains empty.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvParseUVTP",
+          "declaration_line": 31,
+          "lines": [
+            22
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-39c863dfd26f",
+      "kind": "original_quirk",
+      "path": "src/modules/uvtexturexref_rom.c",
+      "symbol": "* Read an unsigned-halfword pair count, allocate the 0x0C-byte record and two * halfword arrays, then consume interleaved values into the two arrays. Store * the count only after the original halfword-indexed loop completes. * RE_ORIGINAL_QUIRK: Record field 0x02 remains untouched, including when the * pair count is zero; all three allocations retain their original order. * RE_UNKNOWN: Input extent, allocation outcomes, meanings of the two indices * and eventual array/record ownership require callers and asset-format proof.",
+      "lines": [
+        60
+      ],
+      "evidence": "* Read an unsigned-halfword pair count, allocate the 0x0C-byte record and two * halfword arrays, then consume interleaved values into the two arrays. Store * the count only after the original halfword-indexed loop completes. * RE_ORIGINAL_QUIRK: Record field 0x02 remains untouched, including when the * pair count is zero; all three allocations retain their original order. * RE_UNKNOWN: Input extent, allocation outcomes, meanings of the two indices * and eventual array/record ownership require callers and asset-format proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "_uvParseUVTP",
+          "declaration_line": 70,
+          "lines": [
+            60
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-9bbe1793558a",
+      "kind": "original_quirk",
+      "path": "src/modules/uvtrackld_rom.c",
+      "symbol": "* Allocate a track record and clear its two counts. PNTS reads a signed word * count and copies count times 0x38 bytes into a new array; LNKS similarly * copies count times 8 bytes. Free each recognized block and the file handle. * RE_ORIGINAL_QUIRK: Pointer fields 0x08/0x0C remain uninitialized unless their * chunks occur. Repeated chunks overwrite arrays without freeing the old ones. * RE_UNKNOWN: Chunk presence/order, signed counts, size overflow, input extent * and allocation outcomes require asset/provider proof; no repair is added.",
+      "lines": [
+        26
+      ],
+      "evidence": "* Allocate a track record and clear its two counts. PNTS reads a signed word * count and copies count times 0x38 bytes into a new array; LNKS similarly * copies count times 8 bytes. Free each recognized block and the file handle. * RE_ORIGINAL_QUIRK: Pointer fields 0x08/0x0C remain uninitialized unless their * chunks occur. Repeated chunks overwrite arrays without freeing the old ones. * RE_UNKNOWN: Chunk presence/order, signed counts, size overflow, input extent * and allocation outcomes require asset/provider proof; no repair is added.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvParseUVTT",
+          "declaration_line": 36,
+          "lines": [
+            26
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-3134de5d4e60",
+      "kind": "original_quirk",
+      "path": "src/modules/uvtrackld_rom.c",
+      "symbol": "* Free the field-0x0C link array, field-0x08 point array and record in that * order, without pointer or count checks. * RE_ORIGINAL_QUIRK: The parser leaves an array pointer uninitialized when its * chunk is absent. This destructor still passes both fields to the allocator. * RE_UNKNOWN: Complete initialization and exclusive ownership must be ensured * by callers; allocator behavior for absent or invalid pointers is not proved.",
+      "lines": [
+        71
+      ],
+      "evidence": "* Free the field-0x0C link array, field-0x08 point array and record in that * order, without pointer or count checks. * RE_ORIGINAL_QUIRK: The parser leaves an array pointer uninitialized when its * chunk is absent. This destructor still passes both fields to the allocator. * RE_UNKNOWN: Complete initialization and exclusive ownership must be ensured * by callers; allocator behavior for absent or invalid pointers is not proved.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvParseFreeUVTT",
+          "declaration_line": 80,
+          "lines": [
+            71
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-1b14177774b5",
+      "kind": "original_quirk",
+      "path": "src/modules/uvufileld_rom.c",
+      "symbol": "* Open the file and obtain its size. For UVRW header type, search COMM entry * zero to replace the data pointer/size, preserving the ignored search result. * With the shared flag zero, allocate with argument 8 and copy the bytes; * otherwise return the existing data pointer. Release the file handle first. * RE_ORIGINAL_QUIRK: A nonzero flag selects the borrowed-pointer path despite * the flag name. The separate free operation always calls the allocator. * RE_UNKNOWN: Failed search outputs, input extent, allocation success and * borrowed-pointer lifetime/free protocol require provider and caller proof.",
+      "lines": [
+        25
+      ],
+      "evidence": "* Open the file and obtain its size. For UVRW header type, search COMM entry * zero to replace the data pointer/size, preserving the ignored search result. * With the shared flag zero, allocate with argument 8 and copy the bytes; * otherwise return the existing data pointer. Release the file handle first. * RE_ORIGINAL_QUIRK: A nonzero flag selects the borrowed-pointer path despite * the flag name. The separate free operation always calls the allocator. * RE_UNKNOWN: Failed search outputs, input extent, allocation success and * borrowed-pointer lifetime/free protocol require provider and caller proof.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvFileCopy",
+          "declaration_line": 36,
+          "lines": [
+            25
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-8eb810907002",
+      "kind": "original_quirk",
+      "path": "src/modules/uvufileld_rom.c",
+      "symbol": "* Pass the supplied pointer directly to the existing allocator free routine. * RE_ORIGINAL_QUIRK: There is no ownership or shared-flag check even though * uvFileCopy can return an existing input/entry pointer instead of a new copy. * RE_UNKNOWN: Callers must establish which pointers may be released; NULL * handling and the borrowed-pointer protocol are not proved by this wrapper.",
+      "lines": [
+        57
+      ],
+      "evidence": "* Pass the supplied pointer directly to the existing allocator free routine. * RE_ORIGINAL_QUIRK: There is no ownership or shared-flag check even though * uvFileCopy can return an existing input/entry pointer instead of a new copy. * RE_UNKNOWN: Callers must establish which pointers may be released; NULL * handling and the borrowed-pointer protocol are not proved by this wrapper.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvFreeFilePtr",
+          "declaration_line": 65,
+          "lines": [
+            57
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-332305d01d61",
+      "kind": "original_quirk",
+      "path": "src/modules/uvufileld_rom.c",
+      "symbol": "* Store the caller word unchanged in the shared file-data mode flag. * RE_ORIGINAL_QUIRK: Zero selects allocation/copy in uvFileCopy; any nonzero * value selects its existing-pointer path. The flag is not normalized here. * RE_UNKNOWN: Coordination with outstanding borrowed/copied results and * concurrent loaders requires the flag-setting and destruction callers.",
+      "lines": [
+        69
+      ],
+      "evidence": "* Store the caller word unchanged in the shared file-data mode flag. * RE_ORIGINAL_QUIRK: Zero selects allocation/copy in uvFileCopy; any nonzero * value selects its existing-pointer path. The flag is not normalized here. * RE_UNKNOWN: Coordination with outstanding borrowed/copied results and * concurrent loaders requires the flag-setting and destruction callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvSetCopyFileDataFlag",
+          "declaration_line": 77,
+          "lines": [
+            69
           ]
         }
       ]
@@ -231625,6 +232345,25 @@
           "lines": [
             478,
             612
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-065540480649",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvenvld_rom.c",
+      "symbol": "unusedWord",
+      "lines": [
+        126
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvEnvLdCleanup",
+          "declaration_line": 123,
+          "lines": [
+            126
           ]
         }
       ]

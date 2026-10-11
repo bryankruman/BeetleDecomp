@@ -25,14 +25,66 @@ typedef struct {
     /* 0x18 */ u32 createTransformNodeAddress;
     /* 0x1C */ u32 unknownCallback1CAddress;
 } TriganimExportAddresses;
+/* Access view only: opaque spans are not inferred member identities.
+ * RE_UNKNOWN: historical node declarations, complete allocation/lifetime and
+ * callback mutation contracts need original producers and consumers. */
+typedef struct TriganimUpdateNode {
+    /* 0x00 */ s32 objectId;
+    /* 0x04 */ s32 animationId;
+    /* 0x08 */ u8 opaque08[0x1C];
+    /* 0x24 */ s16 state;
+    /* 0x26 */ u8 promoteTransform;
+    /* 0x27 */ u8 opaque27[7];
+    /* 0x2E */ s16 triggerMode;
+    /* 0x30 */ f32 time;
+    /* 0x34 */ u8 opaque34[0xC];
+    /* 0x40 */ s32 effectId;
+    /* 0x44 */ f32 triggerTime;
+    /* 0x48 */ void *dynamicStates[5];
+    /* 0x5C */ s32 modelLods[5];
+    /* 0x70 */ u8 attachmentsUpdated;
+    /* 0x71 */ u8 opaque71[3];
+    /* 0x74 */ struct TriganimUpdateNode *next;
+} TriganimUpdateNode;
+/* Only called slots are typed, using the current provider definitions and
+ * native caller arguments. Gaps are unused export-address storage. */
+typedef struct {
+    u8 opaque00[0x13C];
+    void *(*createSecondaryState)(void);
+    u8 opaque140[4];
+    void (*copySecondaryCompanionFields)(void *);
+    void (*setSecondaryScalarProperty)(void *, s32, f32);
+    u8 opaque14C[0x10];
+    void (*setSecondaryMatrixProperty)(void *, s32, Mtx4F *);
+    u8 opaque160[8];
+    void (*setSecondaryCollection)(void *, void *);
+    u8 opaque16C[4];
+    void (*setSecondaryModelLod)(void *, s32, s32);
+    u8 opaque174[4];
+    void (*updateSecondaryStateOnce)(void *, f32);
+} TriganimDynamicExports;
+typedef struct {
+    u8 opaque00[0xEC];
+    s32 (*copyObjectHierarchyMatrices)(Mtx4F *, s32, s32, s32);
+} TriganimMatrixExports;
+extern TriganimDynamicExports *gUvDynExports;
+extern TriganimMatrixExports *gMiscExports;
+extern UvJanim_Exports *gUvJanimExports;
+extern UvPfx_Exports *gUvPfxExports;
 extern u32 D_triganim_00401874;
+s32 func_triganim_00401274(TriganimUpdateNode *);
+s32 func_triganim_00400A68(TriganimUpdateNode *);
+void func_triganim_00400374(TriganimUpdateNode *);
+void func_triganim_004010D4(TriganimUpdateNode *);
+void func_triganim_0040154C(u8);
+#include <stdarg.h>
 void func_triganim_00400090(void);
 void triganimPromoteSecondaryTransform(s32 objectId);
 TriganimTransformNode *triganimCreateTransformNode(Mtx4F *first, Mtx4F *second, f32 rate, s32 modelId, s32 mode);
 extern u8 func_triganim_00400098[];
-extern u8 func_triganim_00400624[];
+void func_triganim_00400624(void);
 extern u8 func_triganim_004007D4[];
-extern u8 func_triganim_00400F7C[];
+void func_triganim_00400F7C(TriganimUpdateNode *, ...);
 extern u8 func_triganim_004016D4[];
 
 #line 38 "src/modules/triganim.c"
@@ -77,7 +129,44 @@ void func_triganim_00400090(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/triganim/func_triganim_00400A68.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/triganim/func_triganim_00400F7C.s")
+/* Fill up to five empty dynamic-state slots from signed16 variadic LOD IDs.
+ * Each populated slot receives the owner object/model LOD, scalar property
+ * nine equal to one, then the shared secondary collection in that order.
+ * RE_QUIRK: an occupied slot or -1 ID stops the whole operation, preserving
+ * earlier writes; allocation failure is not checked before provider calls.
+ * RE_UNKNOWN: historical promoted argument declarations, valid model/LOD and
+ * collection domains, allocation failure behavior and ownership/lifetime
+ * require original callers/providers. Read each promoted four-byte argument
+ * and narrow to its signed low halfword, as the native code does. */
+void func_triganim_00400F7C(TriganimUpdateNode *node, ...) {
+    va_list arguments;
+    s32 index;
+    s16 modelLod;
+
+    if (node == NULL) {
+        return;
+    }
+    va_start(arguments, node);
+    node->attachmentsUpdated = 0;
+    for (index = 0; index < 5; index++) {
+        if (node->dynamicStates[index] != NULL) {
+            return;
+        }
+        modelLod = (s16)va_arg(arguments, s32);
+        if (modelLod == -1) {
+            return;
+        }
+        node->modelLods[index] = modelLod;
+        node->dynamicStates[index] = gUvDynExports->createSecondaryState();
+        gUvDynExports->setSecondaryModelLod(
+            node->dynamicStates[index], node->objectId, modelLod);
+        gUvDynExports->setSecondaryScalarProperty(
+            node->dynamicStates[index], 9, 1.0f);
+        gUvDynExports->setSecondaryCollection(
+            node->dynamicStates[index], (void *)gGameSettings->unkPtr90);
+    }
+    va_end(arguments);
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/triganim/func_triganim_004010D4.s")
 

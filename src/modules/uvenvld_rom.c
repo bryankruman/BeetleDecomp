@@ -31,80 +31,110 @@ void uvEnvironmentLoaderReservedCallback(void) {
 }
 #line 30 "src/modules/uvenvld_rom.c"
 
-ParsedUVEN *uvParseUVEN(u8 *data) {
+/*
+ * Open the environment file and visit blocks with decode flag 1. For each
+ * COMM block, parse its bytes and free that block before continuing; release
+ * the file handle at the end and return the last parsed environment or NULL.
+ * RE_ORIGINAL_QUIRK: Repeated COMM blocks replace the result without releasing
+ * the previous environment. Other block tags have no local free here.
+ * RE_UNKNOWN: Accepted block sequence, decoded extents and ownership of ignored
+ * blocks require the file provider and asset callers; no validation is added.
+ */
+#line 31 "src/modules/uvenvld_rom.c"
+ParsedUVEN *uvParseUVEN(u8 *fileData) {
     s32 fileId;
-    ParsedUVEN *parsedUvEnv;
-    u32 sizeOut;
+    ParsedUVEN *environment;
+    u32 blockSize;
     void *blockData;
     u32 tag;
-    void *dataPtr;
+    void *commBlock;
 
-    parsedUvEnv = NULL;
-    fileId = uvFileReadHeader(data);
-    tag = uvFileReadBlock(fileId, &sizeOut, &blockData, FILE_NOT_COMPRESSED);
+    environment = NULL;
+    fileId = uvFileReadHeader(fileData);
+    tag = uvFileReadBlock(fileId, &blockSize, &blockData, FILE_NOT_COMPRESSED);
     while (tag != 0) {
         switch (tag) {
             case 'COMM':
-                dataPtr = blockData;
-                parsedUvEnv = _uvParseUVEN(dataPtr);
-                _uvMemFree(dataPtr);
+                commBlock = blockData;
+                environment = _uvParseUVEN(commBlock);
+                _uvMemFree(commBlock);
                 break;
             default:
                 break;
         }
-        tag = uvFileReadBlock(fileId, &sizeOut, &blockData, FILE_NOT_COMPRESSED);
+        tag = uvFileReadBlock(fileId, &blockSize, &blockData, FILE_NOT_COMPRESSED);
     }
     uvFileFree(fileId);
-    return parsedUvEnv;
+    return environment;
 }
 
 // uvParseUVEN internal
-ParsedUVEN *_uvParseUVEN(void *data) {
-    s32 i;
-    UnkUvEnvLd_Exports *uvEnvLd;
-    ParsedUVEN *parsedUvEnv;
+/*
+ * Copy the 0x60-byte environment record, clear its two callback fields and
+ * allocate a model table for the byte-sized model count. For each entry, read
+ * the model ID, load UVMD, then read its flag. When field 0x1D is nonzero,
+ * load UENV, allocate the 0x200-byte lookup, call export 0x04 and unload UENV.
+ * RE_ORIGINAL_QUIRK: The inherited provider declaration passes the lookup and
+ * environment pointers through s32 parameters; preserve that ABI expression.
+ * RE_UNKNOWN: Input extent, allocation/import failure and model/lookup lifetime
+ * are unchecked. The copied record fields retain their original layout.
+ */
+#line 59 "src/modules/uvenvld_rom.c"
+ParsedUVEN *_uvParseUVEN(void *inputCursor) {
+    s32 modelIndex;
+    UnkUvEnvLd_Exports *environmentProvider;
+    ParsedUVEN *environmentRecord;
 
-    parsedUvEnv = malloc8(sizeof(ParsedUVEN));
-    uvConsumeBytes(parsedUvEnv, (u8 **) &data, sizeof(ParsedUVEN));
-    parsedUvEnv->unk38 = 0;
-    parsedUvEnv->unk5C = 0;
-    if (parsedUvEnv->modelCount > 0) {
-        parsedUvEnv->modelTable = malloc8(parsedUvEnv->modelCount * sizeof(uvEnvModel));
+    environmentRecord = malloc8(sizeof(ParsedUVEN));
+    uvConsumeBytes(environmentRecord, (u8 **) &inputCursor, sizeof(ParsedUVEN));
+    environmentRecord->unk38 = 0;
+    environmentRecord->unk5C = 0;
+    if (environmentRecord->modelCount > 0) {
+        environmentRecord->modelTable = malloc8(environmentRecord->modelCount * sizeof(uvEnvModel));
     } else {
-        parsedUvEnv->modelTable = NULL;
+        environmentRecord->modelTable = NULL;
     }
-    for (i = 0; i < parsedUvEnv->modelCount; i++) {
-        uvConsumeBytes(&parsedUvEnv->modelTable[i].modelId, (u8 **) &data, sizeof(u16));
-        uvLoadFile('UVMD', parsedUvEnv->modelTable[i].modelId);
-        uvConsumeBytes(&parsedUvEnv->modelTable[i].flag, (u8 **) &data, sizeof(u8));
+    for (modelIndex = 0; modelIndex < environmentRecord->modelCount; modelIndex++) {
+        uvConsumeBytes(&environmentRecord->modelTable[modelIndex].modelId, (u8 **) &inputCursor, sizeof(u16));
+        uvLoadFile('UVMD', environmentRecord->modelTable[modelIndex].modelId);
+        uvConsumeBytes(&environmentRecord->modelTable[modelIndex].flag, (u8 **) &inputCursor, sizeof(u8));
     }
-    if (parsedUvEnv->unk1D == 0) {
-        parsedUvEnv->unk44 = NULL;
+    if (environmentRecord->unk1D == 0) {
+        environmentRecord->unk44 = NULL;
     } else {
-        uvEnvLd = uvLoadModule('UENV');
-        parsedUvEnv->unk44 = _uvMemAlloc(0x200, 8);
+        environmentProvider = uvLoadModule('UENV');
+        environmentRecord->unk44 = _uvMemAlloc(0x200, 8);
         /* UENV export 0x04 builds this environment's 256-entry fog lookup. */
-        uvEnvLd->unk4(parsedUvEnv->unk3C, parsedUvEnv->unk40, parsedUvEnv->unk44, parsedUvEnv);
+        environmentProvider->unk4(environmentRecord->unk3C, environmentRecord->unk40, environmentRecord->unk44, environmentRecord);
         uvUnloadModule('UENV');
     }
-    return parsedUvEnv;
+    return environmentRecord;
 }
 
-void uvEnvLdCleanup(ParsedUVEN *parsedUvEnv) {
-    void *temp_a1;
-    s32 i;
-    s32 var_s1;
-    ParsedUVEN *uvEnv = parsedUvEnv;
+/*
+ * Free the optional field-0x44 lookup, unload each referenced UVMD in table
+ * order when the byte-sized model count is nonzero, then free the table and
+ * environment record. A zero count skips the table free entirely.
+ * RE_UNKNOWN: The record must still own the lookup/table and loaded model
+ * references. Partial initialization, aliases and repeated cleanup are not
+ * checked here; preserve the unused local and original release order.
+ */
+#line 90 "src/modules/uvenvld_rom.c"
+void uvEnvLdCleanup(ParsedUVEN *environmentRecord) {
+    void *lookupStorage;
+    s32 modelIndex;
+    s32 unusedWord;
+    ParsedUVEN *environment = environmentRecord;
 
-    temp_a1 = uvEnv->unk44;
-    if (temp_a1 != NULL) {
-        _uvMemFree(temp_a1);
+    lookupStorage = environment->unk44;
+    if (lookupStorage != NULL) {
+        _uvMemFree(lookupStorage);
     }
-    if (uvEnv->modelCount != 0) {
-        for (i = 0; i < uvEnv->modelCount; i++) {
-            uvUnloadFile('UVMD', uvEnv->modelTable[i].modelId);
+    if (environment->modelCount != 0) {
+        for (modelIndex = 0; modelIndex < environment->modelCount; modelIndex++) {
+            uvUnloadFile('UVMD', environment->modelTable[modelIndex].modelId);
         }
-        _uvMemFree(uvEnv->modelTable);
+        _uvMemFree(environment->modelTable);
     }
-    _uvMemFree(uvEnv);
+    _uvMemFree(environment);
 }

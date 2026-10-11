@@ -61,31 +61,41 @@ void uvTextureLoaderCleanup(void) {
 }
 #line 56 "src/modules/uvtextureld_rom.c"
 
-ParsedUVTX* uvParseUVTX(u8* data) {
+/*
+ * Visit texture-file blocks with decode flag 1, expand each COMM block and
+ * free that block, then release the file handle. Return the last texture or
+ * NULL when no COMM block was encountered; other tags are ignored locally.
+ * RE_ORIGINAL_QUIRK: Keep the inherited s32 local holding the block pointer
+ * and its argument conversions. Repeated COMM blocks replace the result.
+ * RE_UNKNOWN: Block extent, pointer conversion assumptions, ignored-block
+ * ownership and expanded-resource lifetime remain provider/caller contracts.
+ */
+#line 57 "src/modules/uvtextureld_rom.c"
+ParsedUVTX* uvParseUVTX(u8* fileData) {
     s32 fileId;
-    ParsedUVTX* parsedUvTexture;
-    u32 size;
+    ParsedUVTX* texture;
+    u32 blockSize;
     void* blockData;
-    s32 ptr;
+    s32 commAddress;
     u32 tag;
 
-    parsedUvTexture = NULL;
-    fileId = uvFileReadHeader(data);
-    tag = uvFileReadBlock(fileId, &size, &blockData, 1);
+    texture = NULL;
+    fileId = uvFileReadHeader(fileData);
+    tag = uvFileReadBlock(fileId, &blockSize, &blockData, 1);
     while (tag != 0) {
         switch (tag) {
             case 'COMM':
-                ptr = blockData;
-                parsedUvTexture = _uvExpandTexture(ptr);
-                _uvMemFree(ptr);
+                commAddress = blockData;
+                texture = _uvExpandTexture(commAddress);
+                _uvMemFree(commAddress);
                 break;
             default:
                 break;
         }
-        tag = uvFileReadBlock(fileId, &size, &blockData, 1);
+        tag = uvFileReadBlock(fileId, &blockSize, &blockData, 1);
     }
     uvFileFree(fileId);
-    return parsedUvTexture;
+    return texture;
 }
 
 #line 84 "src/modules/uvtextureld_rom.c"

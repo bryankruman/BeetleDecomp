@@ -17,31 +17,41 @@ void __entrypoint_func_uvblit_rom_400000(UvBlit_Rom_Exports *exports) {
 void uvBlitStub(void) {
 }
 
-ParsedUVBT* uvParseBlit(u8 *ptr) {
+/*
+ * Visit bitmap-file blocks with decode flag 1. For each COMM block, call the
+ * existing bitmap parser and free the block; release the file handle at end.
+ * RE_ORIGINAL_QUIRK: The result local is not initialized. A file without COMM
+ * returns that uninitialized value; repeated COMM blocks replace prior results
+ * without releasing them. Preserve this behavior rather than inserting NULL.
+ * RE_UNKNOWN: Required chunk presence, input extents and ignored-block/result
+ * ownership must be established by callers and the file provider.
+ */
+#line 20 "src/modules/uvblit_rom.c"
+ParsedUVBT* uvParseBlit(u8 *fileData) {
     s32 fileId;
     u32 tag;
-    u32 size;
-    void *data;
-    void* dataPtr;
-    ParsedUVBT* parsedBlit;
+    u32 blockSize;
+    void *blockData;
+    void* commBlock;
+    ParsedUVBT* bitmap;
 
-    fileId = uvFileReadHeader(ptr);
-    tag = uvFileReadBlock(fileId, &size, &data, 1);
+    fileId = uvFileReadHeader(fileData);
+    tag = uvFileReadBlock(fileId, &blockSize, &blockData, 1);
     while (tag != 0) {
         switch (tag) {
             case 'COMM':
-                dataPtr = data;
-                parsedBlit = _uvParseUVBT(dataPtr);
-                _uvMemFree(dataPtr);
+                commBlock = blockData;
+                bitmap = _uvParseUVBT(commBlock);
+                _uvMemFree(commBlock);
                 break;
             default:
                 break;
         }
 
-        tag = uvFileReadBlock(fileId, &size, &data, 1);
+        tag = uvFileReadBlock(fileId, &blockSize, &blockData, 1);
     }
     uvFileFree(fileId);
-    return parsedBlit;
+    return bitmap;
 }
 
 #line 47 "src/modules/uvblit_rom.c"
@@ -152,8 +162,15 @@ ParsedUVBT *_uvParseUVBT(u8 *inputCursor) {
 #line 149 "src/modules/uvblit_rom.c"
 #line 148 "src/modules/uvblit_rom.c"
 
-void uvFreeBlit(ParsedUVBT *uvbt) {
-    _uvMemFree(uvbt->buf);
-    _uvMemFree(uvbt->bitmap);
-    _uvMemFree(uvbt);
+/*
+ * Free the bitmap pixel buffer, bitmap-descriptor array and root record in
+ * that order. No pointer, count or shared-buffer checks are performed.
+ * RE_UNKNOWN: Complete construction and exclusive ownership of all three
+ * allocations require the parser and callers; repeated cleanup is unchecked.
+ */
+#line 149 "src/modules/uvblit_rom.c"
+void uvFreeBlit(ParsedUVBT *bitmapRecord) {
+    _uvMemFree(bitmapRecord->buf);
+    _uvMemFree(bitmapRecord->bitmap);
+    _uvMemFree(bitmapRecord);
 }
