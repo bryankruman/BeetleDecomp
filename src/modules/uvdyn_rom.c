@@ -452,7 +452,85 @@ void func_uvdyn_rom_0040E4E8();
 void func_uvdyn_rom_0040E8E8();
 void func_uvdyn_rom_0040F78C();
 void func_uvdyn_rom_0040FC88();
-void func_uvdyn_rom_00410250();
+/* Sphere-query views: fields used here are grounded in the retained 10250
+ * accesses; unused spans preserve the successful trial layout. Opaque spans and callback names do not establish gameplay units. */
+typedef struct {
+    s32 registryIndex;
+    s32 associationCount;
+    void *associations[2];
+    s32 querySelector;
+    u8 opaque14[0x14];
+    s32 dobjHandle;
+    u8 opaque2C[0x12B0];
+    DynSphere sphere12DC;
+    u8 opaque12EC[0x30];
+    Vec3F center131C;
+    u8 opaque1328[0x18C];
+    f32 radius14B4;
+} DynSphereQueryNode;
+typedef struct {
+    u8 opaque00[0x10];
+    s32 dobjHandle;
+    u8 opaque14[0x34];
+    Vec3F center48;
+    u8 opaque54[0xE4];
+    f32 radius138;
+    DynSphere sphere13C;
+} DynSphereQuerySecondary;
+typedef struct {
+    u8 opaque00[0x94];
+    s32 nodeCount;
+    DynSphereQueryNode *nodes[10];
+    u8 opaqueC0[0x7120];
+    u32 segmentObjectIds[50];
+    u16 segmentRangeEnds[50];
+    DynIntersectionQueryRecord segmentRecords[150];
+    void *segmentResultPointers[150];
+    u32 sphereObjectIds[30];
+    u16 sphereRangeEnds[30];
+    u16 sphereKinds[30];
+    void *sphereOwners[30];
+    DynIntersectionQueryRecord sphereRecords[120];
+    void *sphereResultPointers[120];
+    u8 opaqueF73C[4];
+    u16 segmentObjectCount;
+    u16 segmentResultCount;
+    u16 sphereObjectCount;
+    u16 sphereResultCount;
+    s32 secondaryCount;
+    DynSphereQuerySecondary *secondary[20];
+} DynSphereQueryCollection;
+/* These slot ABIs are observed directly at the original indirect calls.
+ * The DOBJ view casts the already declared import; it adds no storage. */
+typedef struct {
+    void *slot00;
+    void (*selectQueryObject)(s32, s32);
+    u8 opaque08[0x24];
+    void (*setObjectFlags)(s32, s32);
+    void *slot30;
+    s32 (*getObjectFlags)(s32);
+    u8 opaque38[0x14];
+    void *slot4C;
+    s32 (*querySphere)(f32, f32, f32, f32, void ***, void **, void **);
+} DynQueryDobjExports;
+typedef struct {
+    u8 opaque00[0xC];
+    s32 (*testSpheres)(f32, f32, f32, f32, f32, f32, f32, f32);
+} DynQuerySphereExports;
+typedef struct {
+    u8 opaque00[0x28];
+    void (*setQueryModes)(s32, s32, s32, s32);
+    void *slot2C;
+    void (*setQueryRecordBuffer)(void *, s32);
+} DynQueryRecordExports;
+extern DynQuerySphereExports *D_uvdyn_rom_00411F8C;
+extern DynQueryRecordExports *D_uvdyn_rom_00411F94;
+extern s32 D_uvdyn_rom_00411F9C;
+
+#line 450 "src/modules/uvdyn_rom.c"
+u16 func_uvdyn_rom_00410250(DynSphereQueryCollection *, s32, DynSphere *, u8, void *);
+u16 uvDynAppendSphereQueryCandidates(DynSphereQueryCollection *, s32, DynSphere *, u8, void *);
+#line 451 "src/modules/uvdyn_rom.c"
 void func_uvdyn_rom_004107FC();
 void uvDynSetIndexedQueryRecordBank(DynIntersectionQueryBanks *, u16, u16);
 void func_uvdyn_rom_00410AEC();
@@ -2619,7 +2697,125 @@ void uvDynBuildCollectionMemberSpheres(DynLinkedCollection *linkedCollection) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_0040FC88.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00410250.s")
+u16 uvDynAppendSphereQueryCandidates(DynSphereQueryCollection *collection, s32 excludedDobj, DynSphere *sphere, u8 transformedBounds, void *association) {
+    /* Append overlapping node/secondary candidates, then query their DOBJ data.
+     * RE_QUIRK: Candidate append stops only at count==30. Null associations
+     * never match an existing entry but can be appended; -1 disables that list.
+     * A result copy requires count+returned <120, rejecting an exact fill.
+     * The return is the added candidate count, not the copied-result count.
+     * RE_UNKNOWN: Valid counts, sphere units, provider scratch ownership and
+     * association lifetime/aliasing remain caller or provider constraints. */
+    u8 excludedFlags;
+    Vec3F *center;
+    void **resultPointers;
+    void *scratchSecond;
+    void *scratchFirst;
+    f32 radius;
+    s32 addedCandidates;
+    DynSphereQueryNode *node;
+    DynSphereQuerySecondary *secondary;
+    void **destination;
+    s32 returned;
+    u16 objectIndex;
+    u16 i;
+    u16 copiedResults;
+    u16 initialObjectCount;
+    u16 j;
+
+    if (excludedDobj != 0xFFFF) {
+        excludedFlags = ((DynQueryDobjExports *)D_uvdyn_rom_00411F84)->getObjectFlags(excludedDobj);
+        if (excludedFlags & 1) {
+            ((DynQueryDobjExports *)D_uvdyn_rom_00411F84)->setObjectFlags(excludedDobj, excludedFlags - 1);
+        }
+    }
+    initialObjectCount = collection->sphereObjectCount;
+    for (i = 0; i < collection->nodeCount; i++) {
+        if (collection->sphereObjectCount == 30) {
+            break;
+        }
+        node = collection->nodes[i];
+        if (node->dobjHandle == excludedDobj) {
+            continue;
+        }
+        if (transformedBounds) {
+            center = &node->center131C;
+            radius = node->radius14B4;
+        } else {
+            center = &node->sphere12DC.center;
+            radius = node->sphere12DC.radius;
+        }
+        if (D_uvdyn_rom_00411F8C->testSpheres(center->x, center->y, center->z, radius, sphere->center.x, sphere->center.y, sphere->center.z, sphere->radius)) {
+            collection->sphereObjectIds[collection->sphereObjectCount] = node->dobjHandle;
+            collection->sphereOwners[collection->sphereObjectCount] = node;
+            collection->sphereKinds[collection->sphereObjectCount] = 3;
+            collection->sphereObjectCount++;
+            if (node->associationCount != -1 && node->associationCount < 2) {
+                for (j = 0; j < node->associationCount; j++) {
+                    if (association != NULL && association == node->associations[j]) {
+                        break;
+                    }
+                }
+                if (j >= node->associationCount) {
+                    node->associations[node->associationCount] = association;
+                    node->associationCount++;
+                }
+            }
+        }
+    }
+    for (i = 0; i < collection->secondaryCount; i++) {
+        if (collection->sphereObjectCount == 30) {
+            break;
+        }
+        secondary = collection->secondary[i];
+        if (transformedBounds) {
+            center = &secondary->center48;
+            radius = secondary->radius138;
+        } else {
+            center = &secondary->sphere13C.center;
+            radius = secondary->sphere13C.radius;
+        }
+        if (D_uvdyn_rom_00411F8C->testSpheres(center->x, center->y, center->z, radius, sphere->center.x, sphere->center.y, sphere->center.z, sphere->radius)) {
+            collection->sphereObjectIds[collection->sphereObjectCount] = secondary->dobjHandle;
+            collection->sphereOwners[collection->sphereObjectCount] = secondary;
+            collection->sphereKinds[collection->sphereObjectCount] = 2;
+            collection->sphereObjectCount++;
+        }
+    }
+    addedCandidates = collection->sphereObjectCount - initialObjectCount;
+    D_uvdyn_rom_00411F94->setQueryModes(0, 1, 1, 0);
+    copiedResults = 0;
+    objectIndex = initialObjectCount - 1;
+    for (j = 0; j < addedCandidates; j++) {
+        objectIndex++;
+        if (collection->sphereKinds[objectIndex] == 3) {
+            ((DynQueryDobjExports *)D_uvdyn_rom_00411F84)->selectQueryObject(collection->sphereObjectIds[objectIndex], ((DynSphereQueryNode *)collection->sphereOwners[objectIndex])->querySelector);
+        } else {
+            ((DynQueryDobjExports *)D_uvdyn_rom_00411F84)->selectQueryObject(collection->sphereObjectIds[objectIndex], -1);
+        }
+        D_uvdyn_rom_00411F94->setQueryRecordBuffer(&collection->sphereRecords[collection->sphereResultCount], 120 - collection->sphereResultCount);
+        destination = &collection->sphereResultPointers[collection->sphereResultCount];
+        returned = ((DynQueryDobjExports *)D_uvdyn_rom_00411F84)->querySphere(sphere->center.x, sphere->center.y, sphere->center.z, sphere->radius, &resultPointers, &scratchFirst, &scratchSecond);
+        if (returned != 0) {
+            if (collection->sphereResultCount + returned < 120) {
+                _uvMediaCopy(destination, resultPointers, returned * 4);
+                copiedResults += returned;
+                collection->sphereResultCount += returned;
+            }
+            if (D_uvdyn_rom_00411F9C < collection->sphereResultCount) {
+                D_uvdyn_rom_00411F9C = collection->sphereResultCount;
+            }
+        }
+        collection->sphereRangeEnds[objectIndex] = collection->sphereResultCount;
+    }
+    D_uvdyn_rom_00411F94->setQueryRecordBuffer(NULL, 0);
+    D_uvdyn_rom_00411F94->setQueryModes(0, 1, 0, 0);
+    ((DynQueryDobjExports *)D_uvdyn_rom_00411F84)->selectQueryObject(-1, -1);
+    if (excludedDobj != 0xFFFF) {
+        ((DynQueryDobjExports *)D_uvdyn_rom_00411F84)->setObjectFlags(excludedDobj, excludedFlags);
+    }
+    return addedCandidates;
+}
+#line 575 "src/modules/uvdyn_rom.c"
 
 /* Original terrain sphere-query append wrapper. Record and secondary counts
  * are unsigned halfwords at 0xF73C/0xF73E. Install QERY overrides at the current

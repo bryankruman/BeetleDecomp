@@ -34,8 +34,8 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **765** assembly references:
-**726** ordinary functions and **39** entrypoints, with **702,736** known instruction bytes
+matching C are preserved with `#line`. The current ledger has **764** assembly references:
+**725** ordinary functions and **39** entrypoints, with **701,284** known instruction bytes
 and no unknown sizes. The broader name audit still finds **285** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
@@ -3394,10 +3394,19 @@ Totals: 433 further recoveries after the 225 upstream ordinary imports, plus 165
 Frozen wave `4444-historical-contract-reassessments` and `accepted-historical-contract-reassessments-4444` verify real translation-unit instructions/full relocations, 3 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 435 further readable functions
+## Historical accepted checkpoint — 435 further readable functions
 
 Recover the two pending track/player-message sound switches (1940 original instruction bytes). Preserve the full original 1584-byte readonly section as 1528 retained bytes and 56 compiler table bytes, all DATA/BSS and prior C definitions. A fresh normal packed-module and full-ROM proof remains mandatory; readonly storage receives no semantic credit.
 
 Totals: 435 further recoveries after the 225 upstream ordinary imports, plus 1657 existing C semantic cleanups. Current ledger: 765 assembly references = 726 ordinary + 39 entrypoints; 702,736 known remaining instruction bytes; zero unknown sizes; 285 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `4468-race-sound-switch-islands` and `accepted-race-sound-switch-islands-4468` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 436 further readable functions
+
+Recover the 1452-byte sphere candidate query with a descriptive name and explicit original count, association, exact-fill and scratch-ownership constraints. Preserve all 1849 assessed identities, 137 typed SDK intervals, 83 unresolved records, RACE retained-island ownership and all prior C caller tokens. Bind the actual 4436 exact instruction bytes and 31 ordered relocation records, with the sole unrelated inherited IDO835 warning recorded exactly. Require fresh whole original DYN/full ROM, full 1151-source manifest, exact whole-ledger removal and a defined same-section/same-address old-to-canonical ELF alias before landing.
+
+Totals: 436 further recoveries after the 225 upstream ordinary imports, plus 1657 existing C semantic cleanups. Current ledger: 764 assembly references = 725 ordinary + 39 entrypoints; 701,284 known remaining instruction bytes; zero unknown sizes; 285 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `4500-dynamics-sphere-native-recovery` and `accepted-dynamics-sphere-native-recovery-4500` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

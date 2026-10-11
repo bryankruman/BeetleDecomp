@@ -682,3 +682,5 @@ uvDynGetNodeMatrixProperty = 0x004043E0; // type:func
 uvDynGetNodeScalarProperty = 0x00403C38; // type:func
 uvDynGetNodeVectorProperty = 0x00404018; // type:func
 uvDynGetNodePropertyAddress = 0x00403F98; // type:func
+func_uvdyn_rom_00410250 = 0x00410250; // type:func
+uvDynAppendSphereQueryCandidates = 0x00410250; // type:func
