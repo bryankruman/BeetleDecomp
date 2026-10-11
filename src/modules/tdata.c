@@ -85,12 +85,15 @@ extern s32 D_tdata_004029D8;
 extern s32 D_tdata_004029F0;
 extern s32 D_tdata_004029F4;
 #line 68 "src/modules/tdata.c"
-/* Register all thirty original callback addresses in their original store
- * order after updating the file allocation pointer. This is address storage,
- * not a declaration of a callable export interface.
- * RE_UNKNOWN: historical full table type and remaining callback signatures
- * and purposes. Resolve consumers and original callback bodies before adding
- * callable slot types or changing any empty or constant-return export. */
+/*
+ * Update the allocation pointer and publish thirty original callback addresses
+ * at offsets 0x00 through 0x74. Preserve the nonascending publication order,
+ * including slot 0 after slots 1..9 and the interleaved later slot groups.
+ * Publishing addresses does not invoke callbacks or initialize shared banks.
+ * RE_UNKNOWN: Opaque callback signatures and writable export-storage lifetime
+ * remain loader/consumer obligations; no new callable types are inferred.
+ */
+#line 74 "src/modules/tdata.c"
 void __entrypoint_func_tdataInitializeModuleExports(TdataCallbackAddresses *exports) {
     uvUpdateFileAllocPtr(exports);
     exports->slots[1] = (u32)func_tdata_00400194; /* 0x04 */

@@ -466,8 +466,13 @@ void miscRebuildOrthonormalBasisFromDirection(Vec3F* direction, UnkStruct_misc_0
 #line 246 "src/modules/misc.c"
 
 #line 247 "src/modules/misc.c"
-/* Convert a three-component vector to radius, azimuth and elevation by
- * forwarding its components to the original Cartesian conversion helper. */
+/*
+ * Forward the by-value vector components and the three output pointers to the
+ * scalar Cartesian-to-spherical helper in their original argument order.
+ * RE_UNKNOWN: Radius/angle units, zero-vector behavior and writable output
+ * aliasing guarantees belong to the scalar helper and its callers.
+ */
+#line 249 "src/modules/misc.c"
 void miscVec3ToSpherical(Vec3F vector, f32* radius, f32* azimuth, f32* elevation) {
     miscCartesianToSpherical(vector.x, vector.y, vector.z, radius, azimuth, elevation);
 }

@@ -59,9 +59,14 @@ void sprayRegisterChannelCallback(s32 channel) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/spray/func_spray_00400138.s")
 
 #line 37 "src/modules/spray.c"
-/* A nonzero enabled byte and C0 >= 2 capture the shared clock; else clear D1.
- * Release the shared sound handle and request its next acquisition-time setup.
- * RE_UNKNOWN: C0/D1 policy and record/handle lifetimes need original producers. */
+/*
+ * When the low enabled byte is nonzero and the unsigned phase is at least 2,
+ * copy the shared time into state offset 0xCC; otherwise clear byte 0xD1.
+ * Always release the shared sound handle next and finally store 1 to the
+ * shared word. The successful branch retains byte 0xD1 rather than setting it.
+ * RE_UNKNOWN: The phase protocol and shared word/flag meanings remain opaque.
+ */
+#line 40 "src/modules/spray.c"
 void spraySetActivationState(SprayEffectState *state, u8 enabled) {
     if (enabled && state->phase >= 2U) {
         state->time = D_80025D6C;

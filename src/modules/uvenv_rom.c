@@ -40,8 +40,17 @@ static UvChannel_Exports* sUvChannel_Exports;
 static UvCback_Exports* sUvCbackExports;
 static UnkModel_Exports* sUvModelExports;
 
+/*
+ * Publish ten callbacks and two shared storage addresses, then load FMTX, STAT,
+ * GMGR, CHAN, CBCK and MODL in that order. Query channel 0 property 0x0D,
+ * allocate four bytes per returned count and fill each word with 0x0000FFFF.
+ * Preserve the signed loop test and live count/base rereads on each iteration.
+ * RE_UNKNOWN: Count bounds, allocation failure, reinitialization ownership and
+ * export-storage lifetime remain external; no checks or cleanup are added.
+ */
+#line 43 "src/modules/uvenv_rom.c"
 void __entrypoint_func_uvenv_rom_400000(UvEnv_Exports* exports) {
-    s32 i;
+    s32 channelIndex;
 
     uvUpdateFileAllocPtr(exports);
     exports->uvEnvModuleCleanup = uvEnvModuleCleanup;
@@ -67,8 +76,8 @@ void __entrypoint_func_uvenv_rom_400000(UvEnv_Exports* exports) {
     sUvModelExports = uvLoadModule('MODL');
     sUvChannel_Exports->uvChannelGetProperties(0, 0xD, &D_uvenv_rom_00403C0C, 0);
     D_uvenv_rom_00403C08 = _uvMemAllocAlign8(D_uvenv_rom_00403C0C * 4);
-    for (i = 0; i < D_uvenv_rom_00403C0C; i++) {
-        D_uvenv_rom_00403C08[i] = 0xFFFF;
+    for (channelIndex = 0; channelIndex < D_uvenv_rom_00403C0C; channelIndex++) {
+        D_uvenv_rom_00403C08[channelIndex] = 0xFFFF;
     }
 }
 
@@ -357,8 +366,14 @@ void uvEnvSetLoadedRecordProperty(s32 fileId, s32 property, s32 value) {
 #line 278 "src/modules/uvenv_rom.c"
 
 #line 279 "src/modules/uvenv_rom.c"
-/* Query channel property six and attach the environment draw callbacks
- * at priorities 20 and 87 in their observed order. */
+/*
+ * Read channel property 6 into the local host, then register environment draw
+ * at priority 0x14 followed by the depth/fog overlay at 0x57, each with zero
+ * insertion argument. Reuse the same host output; neither lookup nor callback
+ * registration result is checked. RE_UNKNOWN: Host lifetime, valid channel
+ * and callback teardown order remain provider/caller obligations.
+ */
+#line 281 "src/modules/uvenv_rom.c"
 void uvEnvAttachDrawCallbacksToChannel(s32 channel) {
     CallbackList* callbackHost;
 

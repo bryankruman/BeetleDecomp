@@ -56,12 +56,14 @@ typedef struct FilmrollExportAddresses {
     u32 callback10Address;
 } FilmrollExportAddresses;
 #line 33 "src/modules/filmroll.c"
-/* Set the file allocation pointer and publish the five original callback
- * addresses in their original order. The first callback is the separate
- * empty function; the remaining addresses retain their original identities.
- * RE_UNKNOWN: callback-facing roles, intended historical declarations and
- * loader-provided table lifetime. Trace loader/export consumers before
- * replacing this 20-byte address storage view with a callable interface. */
+/*
+ * Update the allocation pointer and publish the five original code addresses
+ * at offsets 0x00 through 0x10. Preserve the separate empty callback and both
+ * swap callbacks; publishing the table does not perform a buffer swap.
+ * RE_UNKNOWN: Export-storage lifetime and opaque callback signatures at 0x04
+ * and 0x10 require their original implementations and consumers.
+ */
+#line 39 "src/modules/filmroll.c"
 void __entrypoint_func_filmrollInitializeModuleExports(FilmrollExportAddresses *exports) {
     uvUpdateFileAllocPtr(exports);
     exports->emptyCallbackAddress = (u32)func_filmroll_00400060;

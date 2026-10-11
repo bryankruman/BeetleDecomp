@@ -66,9 +66,16 @@ void func_light_00400090(void) {
 #line 15 "src/modules/light.c"
 
 #line 14 "src/modules/light.c"
-/* Allocate the light handle and retain the original scalar defaults.
- * RE_ORIGINAL_QUIRK: signed-16 handle comparison with 65535 cannot reject -1.
- * RE_UNKNOWN: exhaustion/reachable handle values need original allocator/callers. */
+/*
+ * Store the allocated handle as s16 and preserve the comparison with 65535.
+ * Then narrow the parameter to s16 and write the nine zero-valued floats and
+ * the -1.0f field in the exact original nonascending store order.
+ * RE_ORIGINAL_QUIRK: A sign-extended s16 value cannot equal positive 65535;
+ * this comparison does not reject a stored -1 handle.
+ * RE_UNKNOWN: Allocator exhaustion and the meanings of the scalar fields
+ * require original callers. Do not repair signedness as a readability change.
+ */
+#line 17 "src/modules/light.c"
 void lightInitializeState(LightInitializationState *state, s32 parameter) {
     state->handle = gUvLightExports->uvLightAllocateDirectionalSet();
     if (state->handle != 0xFFFF) {

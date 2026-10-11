@@ -401,11 +401,21 @@ s32 sndPlaySharedHandleWithPlaybackValue(s16 soundId, s32 priority, f32 volume, 
 }
 #line 379 "src/modules/snd.c"
 
-void sndPlaySound(s16 soundId, s32 vol) {
+/*
+ * Allocate an emitter and narrow its ID to u8. Set its volume word before
+ * testing the 0xFF failure sentinel. For a valid ID, assign the sound, divide
+ * its sample rate by 22050.0f for pitch, apply property 5 with value 0x30,
+ * set normalized volume from the live SFX scale times 0.6f, then request play.
+ * RE_ORIGINAL_QUIRK: The first volume callback still receives invalid ID 0xFF;
+ * the sound-ID setter consumes its low byte while sample-rate lookup uses s16.
+ * RE_UNKNOWN: Provider failure handling and the volume-word domain are external.
+ */
+#line 380 "src/modules/snd.c"
+void sndPlaySound(s16 soundId, s32 emitterVolumeWord) {
     u8 emitterId;
 
     emitterId = gUvEmitterExports->uvGetEmitter();
-    gUvEmitterExports->uvEmitterSetVol(emitterId, vol);
+    gUvEmitterExports->uvEmitterSetVol(emitterId, emitterVolumeWord);
     if (emitterId != 0xFF) {
         gUvEmitterExports->uvEmitterSetSoundId(emitterId, soundId);
         gUvEmitterExports->uvEmitterSetPitch(emitterId,
@@ -649,6 +659,13 @@ void sndSetMusic(u16 musicId) {
     sCurrentMusicId = musicId;
 }
 
+/*
+ * States 0 and 3 apply routing table 0, stop an already-playing sequence,
+ * select the current music ID, play it and set the playing byte. States 1
+ * and 2 stop and clear that byte only when it was set. Other byte values do
+ * nothing. Preserve routing-before-stop and each live provider-table read.
+ */
+#line 592 "src/modules/snd.c"
 void sndSetMusicState(u8 state) {
     switch (state) {
         case 0:
@@ -671,6 +688,13 @@ void sndSetMusicState(u8 state) {
     }
 }
 
+/*
+ * Read one float from the unchecked volume-scale index and pass that same
+ * saved value first to the sequence player, then to the audio manager.
+ * RE_UNKNOWN: The caller must supply a valid table index; no clamp, range
+ * check or provider-lifetime check exists in this wrapper.
+ */
+#line 614 "src/modules/snd.c"
 void sndSetMusicVol(s32 volLevel) {
     f32 scaledVolume;
 
@@ -679,10 +703,22 @@ void sndSetMusicVol(s32 volLevel) {
     gUvAudiomgrExports->uvAudioMgrSetSequenceVolume(scaledVolume);
 }
 
+/*
+ * Pass emitter group 0 and the float at the unchecked volume-scale index to
+ * the group-volume callback. The wrapper does not clamp or validate the index.
+ * RE_UNKNOWN: Valid scale-table bounds and provider lifetime are caller-owned.
+ */
+#line 622 "src/modules/snd.c"
 void sndSetSfxVol(s32 volLevel) {
     gUvEmitterExports->uvEmitterSetGroupVolume(0U, sVolScale[volLevel]);
 }
 
+/*
+ * Pass emitter group 1 and the float at the unchecked volume-scale index to
+ * the group-volume callback. The wrapper does not clamp or validate the index.
+ * RE_UNKNOWN: Valid scale-table bounds and provider lifetime are caller-owned.
+ */
+#line 626 "src/modules/snd.c"
 void sndSetSpeechVol(s32 volLevel) {
     gUvEmitterExports->uvEmitterSetGroupVolume(1U, sVolScale[volLevel]);
 }
@@ -1415,7 +1451,12 @@ void sndRaiseSoundVolumeWithImmediateRamp(s32 soundId, f32 targetVolume) {
 #line 1184 "src/modules/snd.c"
 
 #line 1185 "src/modules/snd.c"
-/* Map nonzero input to audio-manager mode one and zero to mode two. */
+/*
+ * Narrow the input to its low byte. Pass mode 1 to the audio manager for any
+ * nonzero byte, or mode 2 for zero; each branch makes exactly one callback.
+ * RE_UNKNOWN: The provider defines the hardware meaning of those mode values.
+ */
+#line 1186 "src/modules/snd.c"
 void sndSetAudioOutputMode(u8 enabled) {
     if (enabled) {
         gUvAudiomgrExports->uvAudioMgrSetOutputMode(1);

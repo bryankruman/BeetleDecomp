@@ -81,15 +81,21 @@ extern f32 D_med_00407FF0;
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/med/__entrypoint_func_med_400000.s")
 
 #line 82 "src/modules/med.c"
-/* Release each non-0xFFFF dynamic-object handle in the original table
- * walk, then release the editor camera. Preserve the overlapping word walk. */
+/*
+ * Advance a word cursor through the original eight-word table range, testing
+ * the word two positions ahead at each step. Clear each object whose handle
+ * is not 65535, then release the stored camera channel.
+ * RE_ORIGINAL_QUIRK: This is an overlapping word walk, not an array-of-records
+ * stride. Preserve the inherited do/while scaffold and both exact endpoints.
+ */
+#line 84 "src/modules/med.c"
 void medReleaseObjectsAndCamera(void)
 {
-  s32 *entry;
-  s32 handle;
-  s32 sentinel;
-  sentinel = 0xFFFF;
- do { entry = D_med_00406BD8; do { handle = entry[2]; if (sentinel != handle) { gUvDobjExports->uvDobjClearModelAndStateByte(handle); } entry++; } while (entry != D_med_00406BF8); } while (0);
+  s32 *handleWordCursor;
+  s32 objectHandle;
+  s32 invalidHandle;
+  invalidHandle = 0xFFFF;
+ do { handleWordCursor = D_med_00406BD8; do { objectHandle = handleWordCursor[2]; if (invalidHandle != objectHandle) { gUvDobjExports->uvDobjClearModelAndStateByte(objectHandle); } handleWordCursor++; } while (handleWordCursor != D_med_00406BF8); } while (0);
   medReleaseStoredCameraChannel(&D_med_00406C08);
 }
 #line 91 "src/modules/med.c"

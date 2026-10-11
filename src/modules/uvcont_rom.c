@@ -499,8 +499,15 @@ s32 uvControllerReadPakFileMetadata(s32 controller, s32 fileNumber, UvPfsState *
 #line 325 "src/modules/uvcont_rom.c"
 
 #line 326 "src/modules/uvcont_rom.c"
-/* Encode the game/extension names and locate the matching Pak file using
- * the shared company/game identity. Return its file number or -1 on SDK error. */
+/*
+ * Encode the game name into the shared sixteen-byte buffer and extension into
+ * the shared four-byte buffer. Query the selected controller pak with the
+ * stored company/game identifiers; return its output file number on result 0
+ * or -1 for every nonzero result. No controller-range check is performed.
+ * RE_UNKNOWN: Input pointer extents and shared-buffer reentrancy are caller
+ * obligations; retain the existing integer-address parameter declarations.
+ */
+#line 328 "src/modules/uvcont_rom.c"
 s32 uvControllerFindPakFile(s32 controller, s32 gameName, s32 extensionName) {
     s32 fileNumber;
 
@@ -660,21 +667,28 @@ void uvControllerInitPak(s32 controllerIndex) {
 #line 442 "src/modules/uvcont_rom.c"
 
 #line 443 "src/modules/uvcont_rom.c"
-/* Encode the fixed-width Pak name and zero-fill output after the first input zero. RE_UNKNOWN:
- * full input/output extents need original buffers/callers; input[i] is still read after that zero. */
+/*
+ * For each byte in the signed positive length, read the input byte. After the
+ * first NUL, write zero for that position and every remaining output position;
+ * before it, call the character encoder and store its low byte. No extra
+ * terminator is appended, and input reads continue after the first NUL.
+ * Nonpositive lengths perform no reads or writes. RE_UNKNOWN: Both buffers
+ * must cover the requested length; overlap behavior remains caller-dependent.
+ */
+#line 445 "src/modules/uvcont_rom.c"
 void uvControllerEncodePakName(u8 *output, u8 *input, s32 length) {
-    s32 nullTerminate;
-    s32 i;
+    s32 sawTerminator;
+    s32 byteIndex;
 
-    nullTerminate = FALSE;
-    for (i = 0; i < length; i++) {
-        if (input[i] == 0) {
-            nullTerminate = TRUE;
+    sawTerminator = FALSE;
+    for (byteIndex = 0; byteIndex < length; byteIndex++) {
+        if (input[byteIndex] == 0) {
+            sawTerminator = TRUE;
         }
-        if (nullTerminate) {
-            output[i] = '\0';
+        if (sawTerminator) {
+            output[byteIndex] = '\0';
         } else {
-            output[i] = uvControllerEncodePakNameCharacter(input[i]);
+            output[byteIndex] = uvControllerEncodePakNameCharacter(input[byteIndex]);
         }
     }
 }

@@ -67,14 +67,15 @@ extern u8 func_cam_00403A20[];
 extern u8 func_cam_00403ACC[];
 
 #line 60 "src/modules/cam.c"
-/* Register twelve original camera callback addresses and two shared-data
- * addresses in their original interleaved order; slot0x28 copies the incoming
- * matrix into camera offset0x1A8. Set shared scalar1/count0, load font file3 and
- * cara, then create the two original profiler entries and retain their IDs.
- * RE_UNKNOWN: callbacks 0x04/0C/10/1C/20/24/2C, shared pointer/scalar roles,
- * dependency ownership and safe initialization/reload require original target
- * bodies, data consumers and loader callers. Preserve unchecked dependency
- * loads and profiler results; changing failure handling needs caller evidence. */
+/*
+ * Publish the fourteen original callback/storage addresses after updating the
+ * allocation pointer. Set the shared scalar to 1.0f and clear the shared word,
+ * then load UVFT file 3, the cara module and both profiler handles in order.
+ * The cara tag denotes CARANIM; it is distinct from CARAUDIO tag caud.
+ * RE_UNKNOWN: Remaining opaque callback signatures and repeated-initialization
+ * ownership remain loader/caller contracts. No load result is checked here.
+ */
+#line 68 "src/modules/cam.c"
 void __entrypoint_func_camInitializeModuleState(CameraExportAddresses *exports) {
     uvUpdateFileAllocPtr(exports);
     exports->emptyCallbackAddress = (u32) func_cam_00400128;

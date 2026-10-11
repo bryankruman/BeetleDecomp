@@ -187,8 +187,14 @@ void flagDrawVisibleRegisteredRecords(s32 channel) {
 #line 61 "src/modules/flag.c"
 
 #line 62 "src/modules/flag.c"
-/* Query channel property six and attach the original flag update
- * callback at priority 61, preserving the callback host contract. */
+/*
+ * Read channel property 6 into the local callback host, then register the flag
+ * draw callback with zero insertion argument and priority 0x3D. The host is
+ * not initialized beforehand and the property result is not checked here.
+ * RE_UNKNOWN: A valid channel must provide a live callback list; provider
+ * failure, list lifetime and teardown order remain external contracts.
+ */
+#line 64 "src/modules/flag.c"
 void flagAttachUpdateCallbackToChannel(s32 channel) {
     s32 callbackHost;
 

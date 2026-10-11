@@ -102,6 +102,14 @@ extern f32 D_txtview_00400CA8;
 extern f32 D_txtview_00400CAC;
 extern f32 D_txtview_00400CB0;
 
+/*
+ * Skip all draw calls for a negative texture ID. Otherwise set the shared fill
+ * color, fill rectangle (0,0)..(319,239), clear state bits 0x1A240000, bind
+ * the current texture and draw the original panel with its shared UV endpoints.
+ * Preserve the live global reads across callbacks and the exact render order.
+ * RE_UNKNOWN: Texture/provider lifetime and command capacity are external.
+ */
+#line 38 "src/modules/txtview.c"
 void txtviewDrawTexturePanel(void) {
     if (D_txtview_00400C94 >= 0) {
         gUvGeomExports->uvSetFillColor(D_txtview_00400CA4, D_txtview_00400CA8, D_txtview_00400CAC, D_txtview_00400CB0);
@@ -114,9 +122,12 @@ void txtviewDrawTexturePanel(void) {
 #line 30 "src/modules/txtview.c"
 
 #line 31 "src/modules/txtview.c"
-/* Bind the texture-viewer draw callback, enable the game GUI and
- * increment the shared activation count. Preserve the unused callback
- * parameter and original increment behavior. */
+/*
+ * Bind the texture-control-panel callback, enable the GUI with value 1, then
+ * increment the shared activation count. The parameter is homed but unused;
+ * there is no already-enabled or counter-overflow check in this function.
+ */
+#line 34 "src/modules/txtview.c"
 void txtviewBindDrawCallbackAndEnableGui(s32 callbackValue) {
     gGameGuiExports->unk1C((s32) txtviewBuildTextureControlPanel);
     gGameGuiExports->unk10(1);

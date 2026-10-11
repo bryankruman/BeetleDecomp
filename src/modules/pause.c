@@ -499,8 +499,12 @@ void pauseAdjustMusicVolume(void) {
 #line 290 "src/modules/pause.c"
 
 #line 291 "src/modules/pause.c"
-/* Adjust the stereo/mono setting through the pause helper and immediately
- * apply the resulting value to the sound module. */
+/*
+ * Run the edge-triggered option toggle, then pass the live option byte to the
+ * sound output-mode callback on every invocation, including when no toggle
+ * occurred. Preserve the callback order and the unsigned byte read.
+ */
+#line 293 "src/modules/pause.c"
 void pauseApplyStereoMonoOption(void) {
     pauseToggleByteOnNewMenuAction(&gOptionsStereoMono);
     gSndExports->unkF4(gOptionsStereoMono);
@@ -523,9 +527,13 @@ void func_pause_004023A4(void) {
 #line 303 "src/modules/pause.c"
 
 #line 304 "src/modules/pause.c"
-/* Adjust the map option across zero through two. With exactly two
- * players, skip mode one by continuing from zero to two or from two
- * to zero. Retain the previous-value test and the original helper call. */
+/*
+ * Snapshot the old map byte before cycling the option through 0..2. Only when
+ * the live player-count word is 2 and the resulting map byte is 1, skip to 2
+ * from old mode 0 or to 0 from old mode 2. Other old values leave mode 1 intact.
+ * Preserve the post-callback settings reads; do not replace them with snapshots.
+ */
+#line 307 "src/modules/pause.c"
 void pauseAdjustMapOptionSkippingTwoPlayerModeOne(void) {
     s32 previousMapMode = *(u8 *)((u8 *)gGameSettings + 0x17B);
     pauseCycleByteOnNewHorizontalAction(&gOptionsMap, 0, 2);

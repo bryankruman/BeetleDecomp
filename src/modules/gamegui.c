@@ -182,12 +182,15 @@ void func_gamegui_004000A8(void) {
 #line 79 "src/modules/gamegui.c"
 
 #line 80 "src/modules/gamegui.c"
-/* When debug mode is enabled, retain the existing setup call, allocate/get
- * a child-group pointer via GUI70/74, copy its text via78 and append via08.
- * Invoke the three GUI sections and scene section in their original order.
- * RE_UNKNOWN: those surrounding callbacks retain raw-word source prototypes;
- * their original targets must settle full argument contracts. The root label
- * extent is unresolved; inspect original data boundaries before assuming30bytes. */
+/*
+ * Do nothing when debugging is disabled. Otherwise mark the shared debug state,
+ * initialize the shared widget, narrow the allocated child-group handle to s16,
+ * resolve it, copy its text and append it to the shared list. Build the three
+ * control groups before passing the same root to the scene callback.
+ * RE_UNKNOWN: Allocation failure, root ownership and the opaque control/scene
+ * callback contracts remain with their providers; no validation is added.
+ */
+#line 86 "src/modules/gamegui.c"
 void gameGuiCreateDebugRoot(void) {
     void *rootNode;
 

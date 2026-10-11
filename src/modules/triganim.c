@@ -82,8 +82,13 @@ void func_triganim_00400090(void) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/triganim/func_triganim_004010D4.s")
 
 #line 28 "src/modules/triganim.c"
-/* Release the dynamic object, invalidate its ID, stop any attached sound
- * handle, then clear the handle pointer in the original order. */
+/*
+ * Clear the dynamic object unconditionally, then read the sound pointer and
+ * store -1 to the object ID. Release the sound only when non-NULL, and clear
+ * the sound pointer afterward on both paths. Preserve this callback/store order.
+ * RE_UNKNOWN: Whether invalid object IDs are accepted belongs to the provider.
+ */
+#line 30 "src/modules/triganim.c"
 void triganimReleaseObjectAndSound(TriganimObjectSound *state) {
     UnkStruct_004005C8 *sound;
     gUvDobjExports->uvDobjClearModelAndStateByte(state->objectId);
@@ -97,8 +102,13 @@ void triganimReleaseObjectAndSound(TriganimObjectSound *state) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/triganim/func_triganim_00401274.s")
 
 #line 29 "src/modules/triganim.c"
-/* Promote part 1 through getter/setter model-scale conversions, then reset part 1 using identity.
- * RE_UNKNOWN: caller/model proof must establish valid part-1 storage; the original providers copy before or without upper part-index checks. */
+/*
+ * Build a local identity matrix, read object transform slot 1, write that matrix
+ * to slot 0, then replace slot 1 with the identity. Preserve the four callback
+ * calls and both distinct local matrix lifetimes; no matrix is combined here.
+ * RE_UNKNOWN: Object validity and transform-slot ownership remain caller-owned.
+ */
+#line 31 "src/modules/triganim.c"
 void triganimPromoteSecondaryTransform(s32 objectId) {
     Mtx4F secondaryTransform;
     Mtx4F identity;
