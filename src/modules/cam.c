@@ -1,5 +1,22 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+/* Consumed prefix and slots only; remaining camera/provider fields unknown. */
+typedef struct {
+    s16 channel; u8 opaque02[2];
+    s16 left, right, top, bottom;
+    s32 mode0C, word10; u8 opaque14[4];
+    f32 angle18, angle1C; u8 opaque20[8];
+    f32 negativeTangent28, positiveTangent2C;
+    f32 negativeTangent30, positiveTangent34;
+    s32 word38;
+} CameraProjectionPrefix;
+typedef struct {
+    u8 opaque00[0x2C]; f32 (*tangent)(f32);
+    f32 (*angleHelper30)(f32);
+} CameraProjectionMathExports;
+typedef struct {
+    u8 opaque00[0x14]; void (*setViewport)(s32, s32, s32, s32, s32);
+} CameraProjectionChannelExports;
 typedef struct { u8 unk00[0x224]; u8 first[0x20]; u8 second[0x20]; u8 pending; } CameraSceneSyncState;
 typedef struct { u8 unk00[0x24]; void (*copy)(void *, void *); u8 unk28[4]; void *data; } CameraSceneSyncExports;
 extern void *gSceneExports;
@@ -62,8 +79,8 @@ void camCopyMatrixIntoRecordOffset1A8(char *camera, Mtx4F *sourceMatrix);
 extern u8 func_cam_00400190[];
 extern u8 func_cam_00400E80[];
 extern u8 func_cam_0040116C[];
-extern u8 func_cam_004031B4[];
-extern u8 func_cam_00403A20[];
+void func_cam_004031B4(CameraProjectionPrefix *);
+void func_cam_00403A20(void *, s32);
 extern u8 func_cam_00403ACC[];
 
 #line 60 "src/modules/cam.c"
@@ -304,7 +321,40 @@ void camRememberCameraAndRenderChannel(void *camera) {
 }
 #line 127 "src/modules/cam.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/cam/func_cam_004031B4.s")
+/* Divide signed viewport height by width, clear word10, and reconcile one
+ * angle from the other for mode0/1 through the original tangent/angle slots.
+ * Then store negative/positive half-angle tangents for both axes, update the
+ * signed-short channel viewport, and call the original frustum helper.
+ * RE_ORIGINAL_QUIRK: Other modes leave both angles unchanged but still update bounds
+ * and call both providers. Width zero and helper failures are not checked.
+ * RE_UNKNOWN: Historical angle-helper convention, angle units, mode meanings,
+ * complete camera layout, viewport domain and ownership require callers. */
+void func_cam_004031B4(CameraProjectionPrefix *camera) {
+    f32 aspect;
+    f32 convertedAngle;
+
+    aspect = (f32)(camera->bottom - camera->top) / (f32)(camera->right - camera->left);
+    camera->word10 = 0;
+    switch (camera->mode0C) {
+    case 0:
+        convertedAngle = ((CameraProjectionMathExports *)gMiscExports)->angleHelper30(
+            ((CameraProjectionMathExports *)gMiscExports)->tangent(camera->angle1C * 0.5f) / aspect);
+        camera->angle18 = convertedAngle + convertedAngle;
+        break;
+    case 1:
+        convertedAngle = ((CameraProjectionMathExports *)gMiscExports)->angleHelper30(
+            ((CameraProjectionMathExports *)gMiscExports)->tangent(camera->angle18 * 0.5f) * aspect);
+        camera->angle1C = convertedAngle + convertedAngle;
+        break;
+    }
+    camera->negativeTangent28 = -((CameraProjectionMathExports *)gMiscExports)->tangent(camera->angle18 * 0.5f);
+    camera->positiveTangent2C = ((CameraProjectionMathExports *)gMiscExports)->tangent(camera->angle18 * 0.5f);
+    camera->negativeTangent30 = -((CameraProjectionMathExports *)gMiscExports)->tangent(camera->angle1C * 0.5f);
+    camera->positiveTangent34 = ((CameraProjectionMathExports *)gMiscExports)->tangent(camera->angle1C * 0.5f);
+    ((CameraProjectionChannelExports *)gUvChanExports)->setViewport(camera->channel,
+        camera->left, camera->right, camera->top, camera->bottom);
+    func_cam_00403A20(camera, camera->word38);
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/cam/func_cam_00403394.s")
 

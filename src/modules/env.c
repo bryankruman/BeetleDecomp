@@ -128,6 +128,12 @@ typedef struct EnvRecord_00400190 {
     struct EnvRecord_00400190 *next;
 } EnvRecord_00400190;
 extern EnvRecord_00400190 *D_env_00400874;
+/* Allocate a twenty-byte record, fill the three raw words and flag byte,
+ * then prepend it to the environment list. The three padding bytes are not
+ * initialized; the list head is published after the next link is stored.
+ * RE_UNKNOWN: value/flag interpretation, allocation failure and record release
+ * or reload lifetime require the original consumers and callers. */
+#line 47 "src/modules/env.c"
 void envPrependRecord(s32 first, s32 second, s32 third, u8 flags) {
     EnvRecord_00400190 *record;
     record = _uvMemAllocAlign8(sizeof(EnvRecord_00400190));
@@ -138,6 +144,7 @@ void envPrependRecord(s32 first, s32 second, s32 third, u8 flags) {
     record->next = D_env_00400874;
     D_env_00400874 = record;
 }
+#line 57 "src/modules/env.c"
 #line 39 "src/modules/env.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/env/func_env_004001F4.s")
@@ -167,8 +174,12 @@ void func_env_00400378(void) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/env/func_env_00400380.s")
 
 #line 54 "src/modules/env.c"
-/* Allocate and prepend a volume/value record; preserve the original allocator
- * contract and opaque byte value rather than assigning an unproven gameplay name. */
+/* Prepend a twelve-byte volume/value record, preserving the native order:
+ * link the previous head and publish this record before storing volume/value.
+ * The three bytes after the value remain uninitialized.
+ * RE_UNKNOWN: allocation failure, concurrent/reentrant observation, volume/value
+ * meaning and list teardown are not checked or established here. */
+#line 56 "src/modules/env.c"
 void envPrependVolumeRecord(s32 volume, u8 value) {
     EnvVolumeRecord *record = _uvMemAllocAlign8(sizeof(EnvVolumeRecord));
     record->next = D_env_0040087C;
@@ -176,11 +187,16 @@ void envPrependVolumeRecord(s32 volume, u8 value) {
     record->volume = volume;
     record->value04 = value;
 }
+#line 63 "src/modules/env.c"
 #line 55 "src/modules/env.c"
 
 #line 56 "src/modules/env.c"
-/* Return the first record value whose volume test accepts the query, or zero.
- * A stored zero is intentionally indistinguishable from no matching record. */
+/* Walk the prepended list and return the first byte value whose volume
+ * passes VOLTEST slot 0x0C with mode 2 and the unchanged query address.
+ * RE_ORIGINAL_QUIRK: zero is both a possible stored value and the no-match result.
+ * RE_UNKNOWN: the mode-specific query layout, provider/list lifetime and record
+ * release contract require callers and the volume-test implementation. */
+#line 58 "src/modules/env.c"
 u8 envFindVolumeRecordValue(void *query) {
     EnvVolumeRecord *record = D_env_0040087C;
     while (record != NULL) {
@@ -191,5 +207,6 @@ u8 envFindVolumeRecordValue(void *query) {
     }
     return 0;
 }
+#line 68 "src/modules/env.c"
 #line 57 "src/modules/env.c"
 

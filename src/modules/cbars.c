@@ -12,6 +12,17 @@ void cbarsDrawColorBarsAndGrayscale(void);
 // .bss
 s32 B_cbars_00400580[4]; // unreferenced padding
 
+/*
+ * Install the no-op cleanup, separate no-op export and diagnostic-pattern
+ * renderer. Append a viewport from zero to the provider screen dimensions,
+ * then call GUI slot 0x10 with zero, GUI slot 0x1C with its slot-0x04 value,
+ * and SCRN slot 0x04 with two zeros, in that order.
+ * RE_ORIGINAL_QUIRK: Keep both distinct no-op exports and reload shared
+ * provider pointers after calls; this initializer draws no color bars itself.
+ * RE_UNKNOWN: GUI/SCRN slot semantics, callback effects, screen-range validity
+ * and provider lifetime require the diagnostic setup owners.
+ */
+#line 15 "src/modules/cbars.c"
 void __entrypoint_func_cbars_400000(Cbars_Exports* exports) {
     uvUpdateFileAllocPtr(exports);
     exports->cbarsNoOpModuleCleanup = &cbarsNoOpModuleCleanup;

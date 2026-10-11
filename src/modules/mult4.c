@@ -6,6 +6,18 @@
 void mult4ReleaseItemModules(void);
 void func_mult4_00400124(void);
 
+/*
+ * Install two MULT4 exports, including the item-module release hook.
+ * Load letter, powerup, weapon and battle, then load TDATA. Outside
+ * TASK_EDITOR call its slot-0x24 provider; unload TDATA and clear the
+ * shared TDATA export pointer on either branch.
+ * RE_ORIGINAL_QUIRK: Preserve the unconditional line directive and loading
+ * order. The other four shared export pointers remain stored by this body;
+ * no import-error or repeated-initialization branch is added.
+ * RE_UNKNOWN: The TDATA operation, import failure, shared reference ownership
+ * and provider lifetime require the multiplayer mode and loader owners.
+ */
+#line 9 "src/modules/mult4.c"
 void __entrypoint_func_mult4_400000(Mult4_Exports* arg0) {
     uvUpdateFileAllocPtr(arg0);
     arg0->mult4ReleaseItemModules = mult4ReleaseItemModules;

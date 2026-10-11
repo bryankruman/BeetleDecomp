@@ -94,17 +94,38 @@ void uvQueryCleanup(void) {
 }
 #line 84 "src/modules/uvquery_rom.c"
 
+/* Return the shared float-array pointer without copying or allocating.
+ * The QUERY initializer supplies this backing array; DOBJ/MODL callers retain
+ * its address. No capacity, initialization or lifetime check occurs here.
+ * RE_UNKNOWN: coordination with QUERY cleanup/reinitialization; callers must
+ * not infer ownership or a nonnull/live allocation from this getter alone. */
+#line 85 "src/modules/uvquery_rom.c"
 f32 *uvQueryGetFloatValues(void) {
     return sQueryFloatValues;
 }
+#line 88 "src/modules/uvquery_rom.c"
 
+/* Return the shared signed-word-array pointer without copying or allocating.
+ * The QUERY initializer supplies the array and DOBJ/MODL callers retain its
+ * address. Capacity and allocation state are not returned or checked here.
+ * RE_UNKNOWN: caller bounds and QUERY cleanup/reinitialization lifetime;
+ * returning this address does not transfer ownership. */
+#line 89 "src/modules/uvquery_rom.c"
 s32 *uvQueryGetIntValues(void) {
     return sQueryIntValues;
 }
+#line 92 "src/modules/uvquery_rom.c"
 
+/* Return the shared Vec3F-array pointer without copying or allocating.
+ * The QUERY initializer supplies the array; DOBJ/MODL callers retain its
+ * address. This getter checks neither capacity nor allocation state.
+ * RE_UNKNOWN: caller bounds and QUERY cleanup/reinitialization lifetime;
+ * returning this address does not transfer ownership. */
+#line 93 "src/modules/uvquery_rom.c"
 Vec3F *uvQueryGetFloatVectors(void) {
     return sQueryFloatVectors;
 }
+#line 96 "src/modules/uvquery_rom.c"
 
 #line 97 "src/modules/uvquery_rom.c"
 /* Return base capacity, limited by the supplied override count when
@@ -225,6 +246,12 @@ query_78 *uvQueryGetActiveRecordArray(void) {
 }
 #line 187 "src/modules/uvquery_rom.c"
 
+/* Ignore id and consume repeated property-1/signed-word pairs, replacing
+ * the same shared query control word each time. Zero or any other property
+ * ends the scan without consuming a value for that property.
+ * RE_ORIGINAL_QUIRK: the original body has no va_end or argument-count check.
+ * RE_UNKNOWN: control-word meaning and caller-supplied variadic termination/types. */
+#line 188 "src/modules/uvquery_rom.c"
 void uvQueryProps(s32 id, ...) {
     s32 prop;
     va_list args;
@@ -239,7 +266,14 @@ void uvQueryProps(s32 id, ...) {
         D_uvquery_rom_00400648 = va_arg(args, s32);
     }
 }
+#line 202 "src/modules/uvquery_rom.c"
 
+/* Ignore id and consume repeated property-1/output-address pairs, writing
+ * the same shared query control word to each unchecked signed-word output.
+ * Zero or any other property stops without consuming an output address.
+ * RE_ORIGINAL_QUIRK: the original body has no va_end or argument-count check.
+ * RE_UNKNOWN: control meaning and valid variadic types, termination and outputs. */
+#line 203 "src/modules/uvquery_rom.c"
 void uvQueryGetProps(s32 id, ...) {
     s32 prop;
     va_list args;
@@ -254,6 +288,7 @@ void uvQueryGetProps(s32 id, ...) {
         *va_arg(args, s32 *) = D_uvquery_rom_00400648;
     }
 }
+#line 217 "src/modules/uvquery_rom.c"
 
 #line 218 "src/modules/uvquery_rom.c"
 /* Store an external record-array address and its count. Preserve the

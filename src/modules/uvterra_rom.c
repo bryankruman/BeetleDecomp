@@ -889,12 +889,17 @@ void uvTerraSetStaticObjectFlags(s32 handle, ...) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00408614.s")
 
 #line 494 "src/modules/uvterra_rom.c"
-/* Return the static object model ID, or 0xFFFF when its contour is absent. */
+/* Resolve the packed handle and read the object's unsigned model halfword
+ * at offset 0x00, or return 0xFFFF when the resolver returns null.
+ * RE_UNKNOWN: object-index validity, model-ID domain and loaded-contour lifetime;
+ * this wrapper adds no bounds check or resource reference to the resolver. */
+#line 495 "src/modules/uvterra_rom.c"
 u16 uvTerraGetStaticObjectModelId(s32 handle) {
     UnkSobjDraw *record = uvTerraGetStaticObject(handle);
     if (record == NULL) return 0xFFFFU;
     return record->modelId;
 }
+#line 500 "src/modules/uvterra_rom.c"
 #line 502 "src/modules/uvterra_rom.c"
 
 #line 503 "src/modules/uvterra_rom.c"
@@ -1007,11 +1012,16 @@ void uvTerraGetStaticObjectProperties(s32 handle, ...) {
 #line 518 "src/modules/uvterra_rom.c"
 
 #line 519 "src/modules/uvterra_rom.c"
-/* Set the static object's opaque value at offset 0x40 when its contour exists. */
+/* Resolve the packed handle and write the signed raw word at object
+ * 0x40 when resolution succeeds; otherwise do nothing.
+ * RE_UNKNOWN: word meaning, object-index validity and loaded-contour lifetime.
+ * This wrapper validates no object bound and changes no resource ownership. */
+#line 520 "src/modules/uvterra_rom.c"
 void uvTerraSetStaticObjectValue(s32 handle, s32 value) {
     UnkSobjDraw *record = uvTerraGetStaticObject(handle);
     if (record != NULL) record->unk40 = value;
 }
+#line 524 "src/modules/uvterra_rom.c"
 #line 520 "src/modules/uvterra_rom.c"
 
 typedef struct {
@@ -1020,21 +1030,27 @@ typedef struct {
 } AutoS_0040ABE0_temp_v0;
 
 #line 527 "src/modules/uvterra_rom.c"
-/* Read the opaque value at offset 0x40, or zero when its contour is absent. */
+/* Resolve the packed handle and read signed raw word 0x40, or return
+ * zero when resolution fails. Zero is also a possible stored word.
+ * RE_UNKNOWN: word meaning, object-index validity and loaded-contour lifetime;
+ * this wrapper adds neither a bounds check nor a resource reference. */
+#line 528 "src/modules/uvterra_rom.c"
 s32 uvTerraGetStaticObjectValue(s32 handle) {
     UnkSobjDraw *record = uvTerraGetStaticObject(handle);
     if (record == NULL) return 0;
     return record->unk40;
 }
+#line 533 "src/modules/uvterra_rom.c"
 #line 535 "src/modules/uvterra_rom.c"
 
 #line 536 "src/modules/uvterra_rom.c"
-/* Resolve a packed contour/object handle: bits 12..23 select UVCT and
- * bits 0..11 select its static object; bits 24..31 are ignored. Return an address
- * inside the loaded UVCT object array, preserving the original null checks.
- * RE_UNKNOWN: object-index limits and coordination with resource unloading.
- * This helper allocates no object and acquires no visible resource reference;
- * trace UVCT loaders/releases and handle consumers before assigning ownership. */
+#line 539 "src/modules/uvterra_rom.c"
+/* Load UVCT selected by handle bits 12..23, then compute object-array
+ * base + (bits 0..11)*0x4C. Upper eight handle bits are ignored. Preserve
+ * both the absent-contour test and original computed-address null test.
+ * RE_ORIGINAL_QUIRK: no object-count or array-base validity check is present.
+ * RE_UNKNOWN: index validity and coordination with UVCT unload/reload; the
+ * returned interior address acquires no visible resource reference. */
 #line 539 "src/modules/uvterra_rom.c"
 UnkSobjDraw *uvTerraGetStaticObject(s32 handle) {
     ParsedUVCT *contour;
@@ -1045,6 +1061,7 @@ UnkSobjDraw *uvTerraGetStaticObject(s32 handle) {
     if (object == NULL) return NULL;
     return object;
 }
+#line 548 "src/modules/uvterra_rom.c"
 #line 537 "src/modules/uvterra_rom.c"
 
 #line 538 "src/modules/uvterra_rom.c"

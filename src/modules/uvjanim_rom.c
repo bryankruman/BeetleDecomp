@@ -40,6 +40,16 @@ void uvJanimMergeWeightedPoseChannels(UnkStruct_UvJanim_rom_00400144 *arg0,
 
 void __entrypoint_func_uvjanim_rom_400000(UvJanim_Exports *exports);
 
+/*
+ * Install the nine joint-animation exports, then load MATH, MODL, DOBJ,
+ * FMTX and QUAT into the five retained provider slots. No pose or animation
+ * record is created or reset here.
+ * RE_ORIGINAL_QUIRK: Preserve the export order, existing line directive and
+ * the original public function names and all nine export assignments.
+ * RE_UNKNOWN: Export-table validity, import failure, repeat initialization and
+ * provider reference lifetime require the loader and joint-animation callers.
+ */
+#line 43 "src/modules/uvjanim_rom.c"
 void __entrypoint_func_uvjanim_rom_400000(UvJanim_Exports *exports) {
     uvUpdateFileAllocPtr(exports);
     exports->uvJanimModuleCleanup = uvJanimModuleCleanup;

@@ -6,6 +6,18 @@
 void mult7NoOpModuleCleanup(void);
 void func_mult7_004000DC(void);
 
+/*
+ * Install two MULT7 exports, including the original no-op cleanup hook.
+ * Load letter, powerup, weapon and battle, then load TDATA. Outside
+ * TASK_EDITOR call its slot-0x24 provider; unload TDATA and clear the
+ * shared TDATA export pointer on either branch.
+ * RE_ORIGINAL_QUIRK: Preserve the unconditional line directive and loading
+ * order. The other four shared export pointers remain stored by this body;
+ * no import-error or repeated-initialization branch is added.
+ * RE_UNKNOWN: The TDATA operation, import failure, shared reference ownership
+ * and provider lifetime require the multiplayer mode and loader owners.
+ */
+#line 9 "src/modules/mult7.c"
 void __entrypoint_func_mult7_400000(Mult7_Exports* arg0) {
     uvUpdateFileAllocPtr(arg0);
     arg0->mult7NoOpModuleCleanup = mult7NoOpModuleCleanup;

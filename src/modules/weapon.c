@@ -9,6 +9,18 @@ extern UnkStruct_weapon_00400184* D_weapon_00400184;
 extern s32 D_weapon_00400198;
 extern void weaponReleaseObjectPoolAndModel(void);
 
+/*
+ * Install the weapon pool/model release export, allocate 432 bytes for
+ * twelve 36-byte entries and clear the shared word. Set each object handle
+ * to -1, its byte at offset 4 to zero, float at offset 8 to zero and word
+ * at offset 0x14 to zero, then load UVMD model 4.
+ * RE_ORIGINAL_QUIRK: Keep WEAPON_COUNT in the allocation and literal twelve
+ * in the loop. Only these fields are initialized; no full clear or failure
+ * rollback is added, and the original store order remains unchanged.
+ * RE_UNKNOWN: Remaining entry fields, allocation/model failure, repeated
+ * initialization and pool/model lifetime require creation and cleanup.
+ */
+#line 12 "src/modules/weapon.c"
 void __entrypoint_func_weapon_400000(Weapon_Exports *exports) {
     s32 i;
 

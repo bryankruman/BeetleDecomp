@@ -169,11 +169,13 @@ void uvIsectModuleCleanup(void) {
 #line 62 "src/modules/uvisect_rom.c"
 
 #line 58 "src/modules/uvisect_rom.c"
-/* Allocate and clear the original 0xF14-byte record, register its 16-bit
- * index, set property 0xFFFF and initialize the self/shared-data links. Forty
- * link slots have stride 0x58; their complete layout and meanings are unknown.
- * Preserve the original unchecked allocation/registry assumptions and the
- * explicit 16-bit iteration value, without adding artificial stack padding. */
+/* Allocate and clear 0xF14 bytes, publish the record at the current u16
+ * registry index, advance that index, and set property word 0x08 to 0xFFFF.
+ * Store the self link at 0xDE0 and forty links at 0x74 + index * 0x58 to
+ * record + 0x1C. Keep the native publication, helper and store order.
+ * RE_UNKNOWN: allocation failure, registry capacity/wrap, release ownership
+ * and the opaque linked regions require their original consumers. */
+#line 63 "src/modules/uvisect_rom.c"
 IsectLargeRecord *uvIsectCreateLargeRecord(void) {
     s32 index;
     IsectLargeRecord *record;
@@ -189,6 +191,7 @@ IsectLargeRecord *uvIsectCreateLargeRecord(void) {
     }
     return record;
 }
+#line 78 "src/modules/uvisect_rom.c"
 #line 59 "src/modules/uvisect_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004004F8.s")
@@ -196,9 +199,12 @@ IsectLargeRecord *uvIsectCreateLargeRecord(void) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_004005D0.s")
 
 #line 64 "src/modules/uvisect_rom.c"
-/* Convert property 3 (unsigned field 0x12), property 2 (unsigned field 0x14)
- * or property 5 (signed field 0x0C) to float. Return -1 for null records or
- * unsupported properties. RE_UNKNOWN: field roles; trace record constructors/callers. */
+/* Read property 3 from unsigned halfword 0x12, property 2 from unsigned
+ * halfword 0x14, or property 5 from signed word 0x0C, converting to float.
+ * A null record or another selector returns -1.0; no record is modified.
+ * RE_UNKNOWN: selector/field meaning and caller record validity. A legitimate
+ * signed field value of -1 is indistinguishable from the fallback. */
+#line 67 "src/modules/uvisect_rom.c"
 f32 uvIsectGetScalarProperty(IsectScalarPrefix *record, s32 property) {
     if (record == NULL) return -1.0f;
     switch (property) {
@@ -208,12 +214,16 @@ f32 uvIsectGetScalarProperty(IsectScalarPrefix *record, s32 property) {
         default: return -1.0f;
     }
 }
+#line 76 "src/modules/uvisect_rom.c"
 #line 65 "src/modules/uvisect_rom.c"
 
 #line 66 "src/modules/uvisect_rom.c"
-/* Property 3 replaces matrix translation and refreshes dependent state.
- * Property 4 replaces the vector at 0xEC4 without refresh. Pass the vector by
- * value to preserve the original aggregate ABI; unsupported properties do nothing. */
+/* For property 3, replace matrix translation at 0xEB4..0xEBC and call
+ * original helper 0xC8C. For property 4, copy the by-value vector to 0xEC4
+ * through FVEC slot 0x1C without that helper. Null/other selectors do nothing.
+ * RE_UNKNOWN: coordinate frame, helper side effects and provider/record lifetime;
+ * the original aggregate argument ABI and conditional refresh stay unchanged. */
+#line 69 "src/modules/uvisect_rom.c"
 void uvIsectSetVectorProperty(IsectTransformPrefix *record, s32 property, Vec3F value) {
     if (record == NULL) return;
     switch (property) {
@@ -228,6 +238,7 @@ void uvIsectSetVectorProperty(IsectTransformPrefix *record, s32 property, Vec3F 
             break;
     }
 }
+#line 83 "src/modules/uvisect_rom.c"
 #line 67 "src/modules/uvisect_rom.c"
 
 #line 68 "src/modules/uvisect_rom.c"
@@ -239,8 +250,12 @@ void uvIsectSetVectorProperty(IsectTransformPrefix *record, s32 property, Vec3F 
 #line 69 "src/modules/uvisect_rom.c"
 
 #line 70 "src/modules/uvisect_rom.c"
-/* Copy matrix translation for property 3 or the opaque 0xEC4 vector for
- * property 4. Null records and unsupported properties leave output unchanged. */
+/* Copy translation at 0xEB4..0xEBC for property 3, or copy the 0xEC4
+ * vector through FVEC slot 0x1C for property 4. Other selectors and null
+ * records leave the destination untouched; the destination is not checked.
+ * RE_UNKNOWN: coordinate frame and destination/provider/record validity and
+ * lifetime; no fresh storage or ownership is granted by this copy. */
+#line 72 "src/modules/uvisect_rom.c"
 void uvIsectGetVectorProperty(IsectTransformPrefix *record, s32 property, Vec3F *destination) {
     if (record == NULL) return;
     switch (property) {
@@ -254,17 +269,23 @@ void uvIsectGetVectorProperty(IsectTransformPrefix *record, s32 property, Vec3F 
             break;
     }
 }
+#line 85 "src/modules/uvisect_rom.c"
 #line 71 "src/modules/uvisect_rom.c"
 
 #line 65 "src/modules/uvisect_rom.c"
-/* Property 3 replaces the matrix at offset 0xE84, then invokes the original
- * dependent-state refresh helper. Other properties and null records do nothing. */
+/* For a nonnull record and selector 3, copy the input matrix to 0xE84
+ * through FMTX slot 0x0C, then call original helper 0xC8C. Preserve that order;
+ * other selectors do nothing, and the source matrix is not checked.
+ * RE_UNKNOWN: source/provider/record lifetime, aliasing and helper side effects
+ * require original callers and the retained helper implementation. */
+#line 67 "src/modules/uvisect_rom.c"
 void uvIsectSetTransformProperty(IsectTransformPrefix *record, s32 property, Mtx4F *source) {
     if (record != NULL && property == 3) {
         D_uvisect_rom_004081F0->uvMat4FCopy(&record->transform, source);
         func_uvisect_rom_00400C8C(record);
     }
 }
+#line 73 "src/modules/uvisect_rom.c"
 #line 66 "src/modules/uvisect_rom.c"
 
 #line 67 "src/modules/uvisect_rom.c"
@@ -276,13 +297,17 @@ void uvIsectSetTransformProperty(IsectTransformPrefix *record, s32 property, Mtx
 #line 68 "src/modules/uvisect_rom.c"
 
 #line 69 "src/modules/uvisect_rom.c"
-/* Property 3 copies the stored matrix at offset 0xE84 to the destination.
- * A null record or unsupported property leaves the destination unchanged. */
+/* For a nonnull record and selector 3, copy the 0xE84 matrix to the
+ * unchecked destination through FMTX slot 0x0C. A null record or other
+ * selector leaves output untouched; this function allocates no matrix.
+ * RE_UNKNOWN: provider/destination/record lifetime and supported overlap. */
+#line 71 "src/modules/uvisect_rom.c"
 void uvIsectGetTransformProperty(IsectTransformPrefix *record, s32 property, Mtx4F *destination) {
     if (record != NULL && property == 3) {
         D_uvisect_rom_004081F0->uvMat4FCopy(destination, &record->transform);
     }
 }
+#line 76 "src/modules/uvisect_rom.c"
 #line 70 "src/modules/uvisect_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00400A40.s")
@@ -337,9 +362,13 @@ void uvIsectSetSharedQueryWords(s32 recordCount, s32 recordAddress, s32 recordWo
 #line 95 "src/modules/uvisect_rom.c"
 
 #line 84 "src/modules/uvisect_rom.c"
-/* Set the active bank's unsigned first/end record indices and two address words.
- * Mode 2 toggles banks 1/2; mode 0 stores nothing; retain original 16/32-bit widths.
- * RE_UNKNOWN: bounds/ownership/lifetime; trace setters and query 0x404ED4 before tightening contracts. */
+/* Publish the requested bank mode, then store its two u16 bounds and
+ * two raw address words for bank 1 or 2. Mode 2 changes prior bank 1 to 2;
+ * any other prior mode becomes 1. Mode 0 and unsupported modes store no bounds.
+ * RE_ORIGINAL_QUIRK: unsupported modes still replace the shared mode word.
+ * RE_UNKNOWN: bound interpretation, address backing, capacity and lifetime;
+ * no pointed-to record is validated or copied by this setter. */
+#line 87 "src/modules/uvisect_rom.c"
 void uvIsectSetQueryParameterBank(s32 mode, u16 firstRecordIndex, u16 endRecordIndex, s32 recordAddress, s32 recordWordAddress) {
     if (mode == 2) {
         if (D_uvisect_rom_004077C0 == 1) D_uvisect_rom_004077C0 = mode;
@@ -360,6 +389,7 @@ void uvIsectSetQueryParameterBank(s32 mode, u16 firstRecordIndex, u16 endRecordI
     case 0: return;
     }
 }
+#line 107 "src/modules/uvisect_rom.c"
 #line 85 "src/modules/uvisect_rom.c"
 
 /* Refresh payload points using the stored matrix and original FMTX slot 0x48.
@@ -397,12 +427,13 @@ void uvIsectSetQueryParameterBank(s32 mode, u16 firstRecordIndex, u16 endRecordI
 #line 89 "src/modules/uvisect_rom.c"
 
 #line 90 "src/modules/uvisect_rom.c"
-/* Store the supplied pointer at result offset 0x00 and clear word 0x04,
- * then append the entry address when fewer than 40 are pending. Return one on
- * insertion and zero when full; the function performs no allocation or release.
- * RE_UNKNOWN: the relationship and lifetimes of the result pointer and entry.
- * The existing owner label does not prove ownership; trace original producers,
- * queue consumers and release paths before relying on that interpretation. */
+#line 93 "src/modules/uvisect_rom.c"
+/* Clear result word 0x04 and store the supplied owner address before
+ * testing the signed pending count. Append the entry and return one when
+ * count < 40; otherwise return zero, retaining those result writes.
+ * RE_ORIGINAL_QUIRK: negative counts pass the comparison; no pointer is checked.
+ * RE_UNKNOWN: producer-established count validity, ownership and entry lifetime;
+ * this helper allocates/releases nothing and the owner label proves no ownership. */
 #line 93 "src/modules/uvisect_rom.c"
 s32 uvIsectQueuePendingRecord(void *owner, IsectOwnerResult *result, IsectPendingRecords *pending, void *entry) {
     result->unk04 = 0;
@@ -414,6 +445,7 @@ s32 uvIsectQueuePendingRecord(void *owner, IsectOwnerResult *result, IsectPendin
     }
     return 0;
 }
+#line 103 "src/modules/uvisect_rom.c"
 #line 91 "src/modules/uvisect_rom.c"
 
 /* Merge shared query key/scalar pairs into record slots at 0xEE0/0xEF4,
@@ -749,8 +781,12 @@ void uvIsectSetSharedWordPair(s32 low16Word, s32 storedWord) {
 #line 129 "src/modules/uvisect_rom.c"
 
 #line 130 "src/modules/uvisect_rom.c"
-/* Append a value only if absent, preserving the original 16-bit scan index.
- * The original routine performs no capacity check; callers own the list limits. */
+/* Search the shared word list using the original wrapping u16 index.
+ * An equal word leaves the list/count unchanged; otherwise append at the
+ * signed count and increment it, without a capacity or negative-count check.
+ * RE_UNKNOWN: list capacity, valid count range, word meaning and reset/lifetime
+ * contract. Counts beyond the u16 scan domain are not guarded here. */
+#line 132 "src/modules/uvisect_rom.c"
 void uvIsectAppendUniqueValue(s32 value) {
     u16 index;
     for (index = 0; index < D_uvisect_rom_0040787C; index++) {
@@ -759,6 +795,7 @@ void uvIsectAppendUniqueValue(s32 value) {
     ((s32 *)&D_uvisect_rom_00407880)[D_uvisect_rom_0040787C] = value;
     D_uvisect_rom_0040787C++;
 }
+#line 140 "src/modules/uvisect_rom.c"
 #line 131 "src/modules/uvisect_rom.c"
 
 #line 132 "src/modules/uvisect_rom.c"
@@ -796,15 +833,19 @@ s32 uvIsectGetRegisteredValueCount(void) {
 #line 144 "src/modules/uvisect_rom.c"
 
 #line 145 "src/modules/uvisect_rom.c"
-/* Return the indexed integer/float query pair when the original inclusive
- * upper-bound check permits it. Outputs are unchanged on rejection. The query
- * parameter meaning and whether the bound is a count or last index are unknown. */
+/* Return the shared integer/float pair at a u16 index, storing integer
+ * first, then float, and returning one. Reject only when the stored u16
+ * limit is less than the index; rejection leaves both outputs unchanged.
+ * RE_ORIGINAL_QUIRK: index == limit is accepted. RE_UNKNOWN: whether the limit
+ * is a last index or count, backing extents and output-pointer validity. */
+#line 148 "src/modules/uvisect_rom.c"
 s32 uvIsectGetIndexedQueryPair(u16 index, s32 *value, f32 *parameter) {
     if (D_uvisect_rom_00407894 < index) return 0;
     *value = (&D_uvisect_rom_00407898)[index];
     *parameter = (&D_uvisect_rom_004078B0)[index];
     return 1;
 }
+#line 154 "src/modules/uvisect_rom.c"
 #line 146 "src/modules/uvisect_rom.c"
 
 #line 147 "src/modules/uvisect_rom.c"
@@ -939,11 +980,16 @@ s32 uvIsectFlipRecordVectorTowardPoint(IsectFacingRecordPrefix *record,
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00404100.s")
 
 #line 175 "src/modules/uvisect_rom.c"
-/* Copy the complete 88-byte intersection record, including opaque fields. */
-
+/* Copy all eighty-eight bytes of the record as original word loads and
+ * stores, including opaque words. This copies stored bits only and performs
+ * no allocation, pointer fixup, reference acquisition or field validation.
+ * RE_UNKNOWN: field ownership, source/destination validity and supported overlap;
+ * the forward copy must not be treated as a general overlapping move. */
+#line 177 "src/modules/uvisect_rom.c"
 void uvIsectCopyRecord(IsectCopyRecord88 *destination, IsectCopyRecord88 *source) {
     *destination = *source;
 }
+#line 180 "src/modules/uvisect_rom.c"
 #line 176 "src/modules/uvisect_rom.c"
 
 /* Copy the input point twice, subtract the supplied span from the first Z,
@@ -1034,9 +1080,12 @@ s32 uvIsectQueryMinimumValueRecord(IsectQueryInputPrefix *input, u32 queryFlags,
 #line 182 "src/modules/uvisect_rom.c"
 
 #line 183 "src/modules/uvisect_rom.c"
-/* Replace the 88-byte record only when its value at offset 0x2C is smaller
- * than the running minimum. The value meaning is unknown; equal values keep
- * the existing record and NaNs follow the original floating-point comparison. */
+/* Compare candidate float 0x2C with the running minimum. Only a strict
+ * less-than result stores the new minimum, copies all eighty-eight record
+ * bytes and returns one; otherwise return zero without those updates.
+ * RE_ORIGINAL_QUIRK: ties and unordered NaN comparisons keep the old record.
+ * RE_UNKNOWN: scalar units, pointer validity and aliasing among the three arguments. */
+#line 186 "src/modules/uvisect_rom.c"
 s32 uvIsectUpdateMinimumValueRecord(IsectCopyRecord88 *destination, f32 *minimumValue, IsectCopyRecord88 *candidate) {
     if (candidate->value2C < *minimumValue) {
         *minimumValue = candidate->value2C;
@@ -1045,6 +1094,7 @@ s32 uvIsectUpdateMinimumValueRecord(IsectCopyRecord88 *destination, f32 *minimum
     }
     return 0;
 }
+#line 194 "src/modules/uvisect_rom.c"
 #line 184 "src/modules/uvisect_rom.c"
 
 /* Filter against existing 0x58-stride owner records and compact selected
@@ -1228,9 +1278,12 @@ void uvIsectResetValueRecordRegistryCount(void) {
 #line 208 "src/modules/uvisect_rom.c"
 
 #line 209 "src/modules/uvisect_rom.c"
-/* Allocate and clear the original 0x348-byte value record, register it at
- * the current 16-bit index, store that index and advance the registry count.
- * Preserve the original lack of allocation-failure and registry-capacity checks. */
+/* Allocate and zero 0x348 bytes, store the record in the registry at its
+ * current u16 index, write that index into word 0x00, and advance the count.
+ * RE_ORIGINAL_QUIRK: allocation failure and registry capacity/wrap are unchecked.
+ * RE_UNKNOWN: complete record layout, registry lifetime and release ownership;
+ * zero-filled kind/count fields do not prove how callers may later repurpose them. */
+#line 212 "src/modules/uvisect_rom.c"
 IsectValueRecord *uvIsectCreateValueRecord(void) {
     IsectValueRecord *record;
     record = _uvMemAllocAlign8(0x348);
@@ -1240,23 +1293,31 @@ IsectValueRecord *uvIsectCreateValueRecord(void) {
     D_uvisect_rom_00407820++;
     return record;
 }
+#line 221 "src/modules/uvisect_rom.c"
 #line 210 "src/modules/uvisect_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00407250.s")
 
 #line 213 "src/modules/uvisect_rom.c"
-/* Convert the scalar to a signed word at record offset four only for
- * a nonnull record and property one. Leave other properties unchanged. */
+/* For a nonnull record and property 1, truncate the float to a signed
+ * word and store it at offset 0x04. Other selectors leave the record unchanged.
+ * RE_UNKNOWN: legal scalar range, nonfinite/out-of-range conversion behavior
+ * and this word's mode-specific role; preserve the original conversion/ABI. */
+#line 215 "src/modules/uvisect_rom.c"
 void uvIsectSetIntegerPropertyOneFromFloat(void *record, s32 property, f32 value) {
     if ((record != NULL) && (property == 1)) {
         (*(s32 *)((u8 *)record + 0x4)) = (s32) value;
     }
 }
+#line 220 "src/modules/uvisect_rom.c"
 #line 218 "src/modules/uvisect_rom.c"
 
 #line 219 "src/modules/uvisect_rom.c"
-/* Convert record word four to float only for property one; return -1
- * for a null record or other property. */
+/* For a nonnull record and property 1, convert signed word 0x04 to
+ * float. Return -1.0 for a null record or another property.
+ * RE_UNKNOWN: word interpretation and caller record validity. The fallback
+ * is indistinguishable from converting a legitimate stored -1. */
+#line 221 "src/modules/uvisect_rom.c"
 f32 uvIsectGetIntegerPropertyOneAsFloat(void *record, s32 property) {
     if (record == NULL) {
         return -1.0f;
@@ -1266,12 +1327,16 @@ f32 uvIsectGetIntegerPropertyOneAsFloat(void *record, s32 property) {
     }
     return -1.0f;
 }
+#line 230 "src/modules/uvisect_rom.c"
 #line 228 "src/modules/uvisect_rom.c"
 
 #line 229 "src/modules/uvisect_rom.c"
-/* Append an absent value and its attribute to a kind-zero record. Preserve
- * the original 16-bit scan and unchecked capacity; a duplicate leaves both
- * the existing attribute and count unchanged. Callers own storage limits. */
+/* For a nonnull kind-zero record, scan values at 0x0C using the original
+ * u16 index. A duplicate leaves its old attribute and count unchanged;
+ * otherwise append value and attribute at 0x28C, then increment signed count.
+ * RE_ORIGINAL_QUIRK: capacity and negative/oversized counts are unchecked.
+ * RE_UNKNOWN: value/attribute meaning, valid count domain and backing extents. */
+#line 232 "src/modules/uvisect_rom.c"
 void uvIsectAppendUniqueRecordValue(IsectValueRecord *record, s32 value, s32 attribute) {
     u16 index;
     if (record == NULL) return;
@@ -1283,6 +1348,7 @@ void uvIsectAppendUniqueRecordValue(IsectValueRecord *record, s32 value, s32 att
     ((s32 *) ((u8 *) record + 0x28C))[record->count] = attribute;
     record->count++;
 }
+#line 243 "src/modules/uvisect_rom.c"
 #line 230 "src/modules/uvisect_rom.c"
 
 #line 231 "src/modules/uvisect_rom.c"
@@ -1304,27 +1370,35 @@ void uvIsectScanRecordValues(IsectValueRecord *record, s32 value) {
 #line 232 "src/modules/uvisect_rom.c"
 
 #line 233 "src/modules/uvisect_rom.c"
-/* Store the attribute at offset 0x28C for a kind-zero record. Preserve the
- * original inclusive count check and lack of a negative-index check. The array
- * capacity is not established; callers must supply a valid index. */
+/* For a nonnull kind-zero record, store the attribute at 0x28C + index*4
+ * unless count < index. Preserve the signed comparison and raw word store.
+ * RE_ORIGINAL_QUIRK: index == count and negative indices are not rejected.
+ * RE_UNKNOWN: caller-established index validity, backing extent and attribute
+ * meaning; the inclusive test is not proof of a safe array bound. */
+#line 236 "src/modules/uvisect_rom.c"
 void uvIsectSetValueAttribute(IsectValueRecord *record, s32 index, s32 attribute) {
     if (record == NULL) return;
     if (record->kind != 0) return;
     if (record->count < index) return;
     ((s32 *) ((u8 *) record + 0x28C))[index] = attribute;
 }
+#line 242 "src/modules/uvisect_rom.c"
 #line 234 "src/modules/uvisect_rom.c"
 
 #line 235 "src/modules/uvisect_rom.c"
-/* Read the value at offset 0x0C for a kind-zero record, or return zero on the
- * original rejection paths. The inclusive count check and unchecked negative
- * index are original behavior; callers must supply a valid index. */
+/* For a nonnull kind-zero record, read the word at 0x0C + index*4 unless
+ * count < index. The rejection paths return zero without reading that word.
+ * RE_ORIGINAL_QUIRK: index == count and negative indices are not rejected;
+ * zero is also a possible stored value. RE_UNKNOWN: valid indices, backing
+ * extent and value interpretation require original callers/producers. */
+#line 238 "src/modules/uvisect_rom.c"
 s32 uvIsectGetIndexedValue(IsectValueRecord *record, s32 index) {
     if (record == NULL) return 0;
     if (record->kind != 0) return 0;
     if (record->count < index) return 0;
     return ((s32 *) ((u8 *) record + 0xC))[index];
 }
+#line 244 "src/modules/uvisect_rom.c"
 #line 236 "src/modules/uvisect_rom.c"
 
 #line 237 "src/modules/uvisect_rom.c"
@@ -1343,12 +1417,18 @@ s32 uvIsectGetZeroTypeRecordWord(void *record) {
 
 #line 247 "src/modules/uvisect_rom.c"
 typedef struct UvIntersectionPayload_s { s32 unk0; s32 kind; u8 payload[1]; } UvIntersectionPayload;
-/* Only kind-one intersection records expose their inline payload. */
+/* For a nonnull kind-one record, return its inline address at offset
+ * 0x08; return null for other kinds. This returns an interior address rather
+ * than loading a pointer stored in the record, and acquires no ownership.
+ * RE_UNKNOWN: payload extent/layout and record lifetime require producers and
+ * consumers; the one-byte source view establishes no allocation capacity. */
+#line 249 "src/modules/uvisect_rom.c"
 void *uvIsectGetKindOnePayload(UvIntersectionPayload *record) {
  if (record == NULL) return NULL;
  if (record->kind != 1) return NULL;
  return record->payload;
 }
+#line 254 "src/modules/uvisect_rom.c"
 #line 248 "src/modules/uvisect_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvisect_rom/func_uvisect_rom_00407554.s")

@@ -1,3 +1,17 @@
+#include "common.h"
+#include "uvfvec_rom.h"
+#include "uvfmtx_rom.h"
+typedef struct {
+    u8 opaque00[4]; void (*getProperties)(s32, ...);
+} GlareChannelMatrixExports;
+typedef struct {
+    Vec3F worldPoint; u8 opaque0C[0xC];
+    f32 screenX, screenY; s16 visible;
+} GlareProjectionSharedPrefix;
+extern UvFMtx_Rom_Exports *gUvFmtxExports;
+extern s32 gDebugOptsGlare;
+extern GlareProjectionSharedPrefix D_glare_00400DF0;
+extern const f32 D_glare_00400DC4;
 /*__SEEDEXTERNS__*/
 typedef struct { char pad[0x10]; int (*unk10)(int); } GfxMgrExp_004000D0;
 typedef struct { char pad[0x10]; int (*unk10)(int, void *, int, int); } CbckExp_004000D0;
@@ -35,7 +49,42 @@ void glareAttachGraphicsAndChannelCallbacks(int channel) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/glare/func_glare_00400170.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/glare/func_glare_00400518.s")
+/* Obtain both channel matrices, build the original quarter-turn adjustment,
+ * and transform the shared point. Mark points below the retained depth
+ * threshold invisible; otherwise store the original projected screen values.
+ * RE_ORIGINAL_QUIRK: Disabling glare leaves all shared fields unchanged. The ordered
+ * depth test permits NaNs to continue; division and output stores are not
+ * clamped. Preserve the in-place point transform and original arithmetic.
+ * RE_UNKNOWN: Coordinate frames, matrix/output initialization on provider
+ * failure, threshold role and valid finite/depth/alias domains need callers. */
+void func_glare_00400518(s32 channel) {
+    Vec3F projectedPoint;
+    Mtx4F secondChannelMatrix;
+    Mtx4F channelMatrix;
+    Mtx4F adjustment;
+
+    if (gDebugOptsGlare == 0) {
+        return;
+    }
+    ((GlareChannelMatrixExports *)gUvChanExports)->getProperties(channel, 1,
+        &channelMatrix, 2, &secondChannelMatrix, 0);
+    gUvFmtxExports->uvMat4SetIdentity(&adjustment);
+    gUvFmtxExports->uvMat4RotateAxis(&channelMatrix, -1.5707969665527344f, 'x');
+    gUvFmtxExports->uvMat4Mul(&adjustment, &channelMatrix, &secondChannelMatrix);
+    projectedPoint.x = D_glare_00400DF0.worldPoint.x;
+    projectedPoint.y = D_glare_00400DF0.worldPoint.y;
+    projectedPoint.z = D_glare_00400DF0.worldPoint.z;
+    gUvFmtxExports->uvMat4TransformPoint(&adjustment, &projectedPoint, &projectedPoint);
+    if (projectedPoint.z < D_glare_00400DC4) {
+        D_glare_00400DF0.visible = 0;
+        return;
+    }
+    D_glare_00400DF0.visible = 1;
+    D_glare_00400DF0.screenX = projectedPoint.x / projectedPoint.z;
+    D_glare_00400DF0.screenY = projectedPoint.y / projectedPoint.z;
+    D_glare_00400DF0.screenX = ((D_glare_00400DF0.screenX + 1.0f) * 276.0f) * 0.5f + 22.0f + 0.5f;
+    D_glare_00400DF0.screenY = ((D_glare_00400DF0.screenY + 1.0f) * 208.0f) * 0.5f + 16.0f + 0.5f;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/glare/func_glare_004006B0.s")
 

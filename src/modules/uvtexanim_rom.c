@@ -19,6 +19,17 @@ u8 D_uvtexanim_rom_00400994;
 
 s32 D_uvtexanim_rom_00400970[] = {0x00100000, __entrypoint_func_uvtexanim_rom_400000, 0, 0};
 
+/*
+ * Install four texture-animation exports, load GMGR, CBCK and TEXT, clear
+ * the shared array pointer/count, and register the animation-coordinate
+ * callback on graphics list 1 with both user words zero.
+ * RE_ORIGINAL_QUIRK: Preserve the conditional line directive, initialization
+ * order and integer cast of the callback address. This body does not remove
+ * an earlier registration or release an earlier shared array.
+ * RE_UNKNOWN: Import failure, duplicate registration, array ownership and
+ * callback/provider lifetime require the texture-animation lifecycle.
+ */
+#line 22 "src/modules/uvtexanim_rom.c"
 void __entrypoint_func_uvtexanim_rom_400000(UvTexAnim_Exports* exports) {
     uvUpdateFileAllocPtr(exports);
     exports->uvTexAnimModuleCleanup = uvTexAnimModuleCleanup;
