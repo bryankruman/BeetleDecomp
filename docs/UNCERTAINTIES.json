@@ -322,6 +322,8 @@
     "src/libultra/libc/xstdio.h": "f12e01b05a22622e42efff0fa2f72533b1086fe8cbb0825a601f450d79a02d36",
     "src/libultra/os/createmesgqueue.c": "4af364856251878b32cd0a12eef3ae564ab5f336af2ccb38ff7e1395601036ab",
     "src/libultra/os/createthread.c": "46fc95de0be7ba3c7be66f9ebb1f85857a2612ef95321ccd5f56cc15034754b9",
+    "src/libultra/os/getthreadpri.c": "4fa3b4c8c9eaee24fb2702c1c4c701b3675882357a7db0bf2178918042cab0e4",
+    "src/libultra/os/gettime.c": "990dfd119c73f03ba87f4cb0f0eb1b0f0e919e20a150a110452b36935c531e34",
     "src/libultra/os/initialize.c": "9bb0665967fd09267816e78394978a1fa3eaf2e35ea15548e0d78f7ad057d967",
     "src/libultra/os/osVirtualtoPhysical.c": "2c8148bfa2e199594c6c1b1bebf88153bd5a1dfdd37b77fd65f5604b90455d4d",
     "src/libultra/os/recvmesg.c": "7e4c526db104b88ef865075ac9d5784f560c9aab9bb8190db5cef1245599ca97",
@@ -329,6 +331,7 @@
     "src/libultra/os/seteventmesg.c": "57b5fd381e9d7ffe93143fffdf97ae32e247f9a448d5414a24350994cc407782",
     "src/libultra/os/startthread.c": "921b8c35f536c3aa2e80825f1869ef54f403ee38409fa0419fdc8b5eae94bbf6",
     "src/libultra/os/stopthread.c": "875f89c8c74a21e16b49ff6d50c7681ddab739db4e8d7df8e073729402c2ccd4",
+    "src/libultra/os/yieldthread.c": "7b345dc1e4469b1492cd4d0b8f7c061b16dd2532a0d3d7d83ec422d53cf3d0cc",
     "src/main.c": "fbc113b991199ac693b115d981208b182ceda0445b94d0014a19956646800bda",
     "src/mem_allocator.c": "653b447a10ae6e13bd462f9f8936eedf6ef78879874fc73afc412b691203311e",
     "src/mem_block.c": "b6e363010c6efbe986f1574e9bca20d849b80fbab803c44ce872ef258e3bdf7c",
@@ -482,11 +485,11 @@
     "conditional_draft": 4,
     "decompiler_local": 619,
     "draft_marker": 38,
-    "explicit_unknown": 1835,
+    "explicit_unknown": 1836,
     "layout_padding": 277,
     "offset_field": 1703,
     "opaque_type": 282,
-    "original_quirk": 479,
+    "original_quirk": 482,
     "uncertainty_note": 88,
     "unused_identifier": 137
   },
@@ -118419,6 +118422,16 @@
       ]
     },
     {
+      "id": "Q-800c9fb12442",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/os/gettime.c",
+      "symbol": "Snapshot the accumulated time and current counter with interrupts masked, * then add the unsigned counter delta after restoring the previous mask. * RE_ORIGINAL_QUIRK: subtraction wraps as u32; the return addition is u64. * RE_UNKNOWN: no new timing-unit or counter-wrap guarantees are inferred here.",
+      "lines": [
+        1
+      ],
+      "evidence": "Snapshot the accumulated time and current counter with interrupts masked, * then add the unsigned counter delta after restoring the previous mask. * RE_ORIGINAL_QUIRK: subtraction wraps as u32; the return addition is u64. * RE_UNKNOWN: no new timing-unit or counter-wrap guarantees are inferred here."
+    },
+    {
       "id": "Q-aeb89d5aadd7",
       "kind": "explicit_unknown",
       "path": "src/libultra/os/initialize.c",
@@ -228888,6 +228901,26 @@
       ]
     },
     {
+      "id": "Q-1084fede338d",
+      "kind": "original_quirk",
+      "path": "src/libultra/os/getthreadpri.c",
+      "symbol": "Return the supplied thread's priority; NULL selects the running thread. * RE_ORIGINAL_QUIRK: the non-NULL argument is dereferenced without validation.",
+      "lines": [
+        1
+      ],
+      "evidence": "Return the supplied thread's priority; NULL selects the running thread. * RE_ORIGINAL_QUIRK: the non-NULL argument is dereferenced without validation."
+    },
+    {
+      "id": "Q-a4f64bc2e47f",
+      "kind": "original_quirk",
+      "path": "src/libultra/os/gettime.c",
+      "symbol": "Snapshot the accumulated time and current counter with interrupts masked, * then add the unsigned counter delta after restoring the previous mask. * RE_ORIGINAL_QUIRK: subtraction wraps as u32; the return addition is u64. * RE_UNKNOWN: no new timing-unit or counter-wrap guarantees are inferred here.",
+      "lines": [
+        1
+      ],
+      "evidence": "Snapshot the accumulated time and current counter with interrupts masked, * then add the unsigned counter delta after restoring the previous mask. * RE_ORIGINAL_QUIRK: subtraction wraps as u32; the return addition is u64. * RE_UNKNOWN: no new timing-unit or counter-wrap guarantees are inferred here."
+    },
+    {
       "id": "Q-706297761471",
       "kind": "original_quirk",
       "path": "src/libultra/os/initialize.c",
@@ -228946,6 +228979,16 @@
           ]
         }
       ]
+    },
+    {
+      "id": "Q-9f4ebdcca17f",
+      "kind": "original_quirk",
+      "path": "src/libultra/os/yieldthread.c",
+      "symbol": "Mark the running thread runnable, yield through the existing run queue, * and restore the saved interrupt mask when this thread resumes. * RE_ORIGINAL_QUIRK: preserve the state write before enqueue-and-yield.",
+      "lines": [
+        1
+      ],
+      "evidence": "Mark the running thread runnable, yield through the existing run queue, * and restore the saved interrupt mask when this thread resumes. * RE_ORIGINAL_QUIRK: preserve the state write before enqueue-and-yield."
     },
     {
       "id": "Q-01a9fd7e35d9",

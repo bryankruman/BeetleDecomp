@@ -17,8 +17,8 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 1835 |
-| Preserved RE_ORIGINAL_QUIRK notes | 479 |
+| Explicit RE_UNKNOWN notes | 1836 |
+| Preserved RE_ORIGINAL_QUIRK notes | 482 |
 | Older comments with uncertainty language | 88 |
 | Documented original-behavior audits | 30 |
 | Assembly-backed functions or data | 755 |
@@ -1431,6 +1431,19 @@ For every future source wave, regenerate and check this index after code and str
 | --- | --- | --- | --- |
 | explicit_unknown | `Initialize the saved entry/argument/stack/cleanup context, interrupt/FPU * state and stopped-thread fields, then link the thread into the active * list under the saved interrupt...` | function `osCreateThread` | [9](../src/libultra/os/createthread.c#L9) |
 
+## src/libultra/os/getthreadpri.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| original_quirk | `Return the supplied thread's priority; NULL selects the running thread. * RE_ORIGINAL_QUIRK: the non-NULL argument is dereferenced without validation.` | — | [1](../src/libultra/os/getthreadpri.c#L1) |
+
+## src/libultra/os/gettime.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| explicit_unknown | `Snapshot the accumulated time and current counter with interrupts masked, * then add the unsigned counter delta after restoring the previous mask. * RE_ORIGINAL_QUIRK: subtracti...` | — | [1](../src/libultra/os/gettime.c#L1) |
+| original_quirk | `Snapshot the accumulated time and current counter with interrupts masked, * then add the unsigned counter delta after restoring the previous mask. * RE_ORIGINAL_QUIRK: subtracti...` | — | [1](../src/libultra/os/gettime.c#L1) |
+
 ## src/libultra/os/initialize.c
 
 | Kind | Identifier or note | Declaration context | Physical lines |
@@ -1477,6 +1490,12 @@ For every future source wave, regenerate and check this index after code and str
 | address_global | `D_80020A50` | function `osStopThread`, global `D_80020A50` | [10](../src/libultra/os/stopthread.c#L10), [30](../src/libultra/os/stopthread.c#L30) |
 | explicit_unknown | `Stop the selected thread while interrupts are disabled. A null argument * selects the running-thread case. Runnable or waiting threads are marked * stopped and removed from thei...` | function `osStopThread` | [12](../src/libultra/os/stopthread.c#L12) |
 | original_quirk | `Stop the selected thread while interrupts are disabled. A null argument * selects the running-thread case. Runnable or waiting threads are marked * stopped and removed from thei...` | function `osStopThread` | [12](../src/libultra/os/stopthread.c#L12) |
+
+## src/libultra/os/yieldthread.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| original_quirk | `Mark the running thread runnable, yield through the existing run queue, * and restore the saved interrupt mask when this thread resumes. * RE_ORIGINAL_QUIRK: preserve the state ...` | — | [1](../src/libultra/os/yieldthread.c#L1) |
 
 ## src/main.c
 
