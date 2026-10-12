@@ -3387,10 +3387,19 @@ Totals: 445 further recoveries after the 225 upstream ordinary imports, plus 212
 Frozen wave `9380-ai-weighted` and `accepted-ai-weighted-9380` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 447 further readable functions
+## Historical accepted checkpoint — 447 further readable functions
 
 Recover smackAdvanceObjectMotion436B and smackSetVelocityAndRandomizeSpin652B with exact original native instructions and47 complete unique five-field relocation sites. Preserve both explicit raw ordered-record inequalities and their fixed permutations, original storage records, empty compiler logs, exact matched-body definition-name inverses, provider/header ABI and original quirks. Add only two relative compatibility assignments in one absent module alias file; preserve every prior assessed body and source coordinate. Require fresh1183-source/full133/original packed RELA/ROM/full-ledger/Git and both canonical/legacy ELF boundaries before acceptance. Preserve173 typed SDK rows and83 historical attempts.
 
 Totals: 447 further recoveries after the 225 upstream ordinary imports, plus 2121 existing C semantic cleanups. Current ledger: 753 assembly references = 714 ordinary + 39 entrypoints; 696,856 known remaining instruction bytes; zero unknown sizes; 289 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `9488-smack-motion-pair` and `accepted-smack-motion-pair-9488` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 447 further readable functions
+
+Assess the existing108-byte UVSTRING entrypoint with its real typed MODULE_ENTRY_POINT invocation and literal executable body. Preserve all13 complete ordered relocation records and actual four empty compiler logs, provider ABI, callback stores and source coordinates. Clarify only the loader export-table registration and six callback publication contract; storage and callback lifetime remain caller unknowns. No recovered C, ABI, storage, alias, readonly or denominator change. Require normal all133 original packed/native/ROM,1183 complete sources, full ledger/current Git and carry checks; preserve173 SDK rows and83 historical attempts.
+
+Totals: 447 further recoveries after the 225 upstream ordinary imports, plus 2122 existing C semantic cleanups. Current ledger: 753 assembly references = 714 ordinary + 39 entrypoints; 696,856 known remaining instruction bytes; zero unknown sizes; 289 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `9660-uvstring-macro-entrypoint-contract` and `accepted-uvstring-entrypoint-native-contracts-9660` verify real translation-unit instructions/full relocations, 133 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

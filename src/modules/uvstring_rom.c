@@ -18,6 +18,11 @@ u8* uvStrcpy(u8* s1, u8* s2);
 void uvStrStub(void);
 void __entrypoint_func_uvStringEntryPoint(UvString_Exports* exports);
 
+/* Record the export table in the current loading file entry, then publish
+ * its six string callbacks.
+ * RE_UNKNOWN: loader sequencing, writable table storage, and callback
+ * lifetimes remain caller contracts; this entrypoint checks none of them. */
+#line 21 "src/modules/uvstring_rom.c"
 void MODULE_ENTRY_POINT(func_uvStringEntryPoint)(UvString_Exports *exports) {
     uvUpdateFileAllocPtr(exports);
     exports->uvStrcpy = uvStrcpy;
@@ -27,6 +32,7 @@ void MODULE_ENTRY_POINT(func_uvStringEntryPoint)(UvString_Exports *exports) {
     exports->uvStrcmp = uvStrcmp;
     exports->uvSprintf = uvSprintf;
 }
+#line 30 "src/modules/uvstring_rom.c"
 
 /* Return without performing a string operation.
  * RE_UNKNOWN: the historical callback purpose remains unresolved. */

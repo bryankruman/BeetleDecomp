@@ -17,7 +17,7 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 1828 |
+| Explicit RE_UNKNOWN notes | 1829 |
 | Preserved RE_ORIGINAL_QUIRK notes | 475 |
 | Older comments with uncertainty language | 88 |
 | Documented original-behavior audits | 30 |
@@ -9233,18 +9233,19 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
-| explicit_unknown | `Accumulate every character as a decimal position. Non-digits add * zero without stopping conversion; signs and whitespace have no * special handling. RE_UNKNOWN: overflow bounds...` | function `uvAtoi` | [400](../src/modules/uvstring_rom.c#L400) |
-| explicit_unknown | `Append a signed decimal value with exactly two fractional digits, * advancing the shared output cursor. Fractional digits are truncated * individually; no rounding is added. RE_...` | function `_uvStrFormatFloat` | [196](../src/modules/uvstring_rom.c#L196) |
-| explicit_unknown | `Copy bytes through the null terminator and return the destination. * RE_UNKNOWN: sufficient destination capacity and any overlap restrictions * remain caller contracts; preserve...` | function `uvStrcpy` | [420](../src/modules/uvstring_rom.c#L420) |
-| explicit_unknown | `Count bytes up to the first NUL, advancing the input pointer once per test. * RE_UNKNOWN: pointer validity, termination and counts beyond the signed local * range require caller...` | function `uvStrlen` | [54](../src/modules/uvstring_rom.c#L54) |
-| explicit_unknown | `Parse the original d/x/b/f/s/c conversions into an unbounded caller * buffer. RE_ORIGINAL_QUIRK: precision digits are consumed but ignored, * and float conversion always writes ...` | function `uvSprintf` | [278](../src/modules/uvstring_rom.c#L278) |
-| explicit_unknown | `Return without performing a string operation. * RE_UNKNOWN: the historical callback purpose remains unresolved.` | — | [31](../src/modules/uvstring_rom.c#L31) |
-| explicit_unknown | `Write integer digits backward into the chosen output field and * advance the shared output cursor. Positive padCount selects that * exact field width. RE_ORIGINAL_QUIRK: the lef...` | function `_uvStrFormatInt` | [105](../src/modules/uvstring_rom.c#L105) |
-| original_quirk | `Compare string lengths first; only equal-length strings are then * compared by character. RE_ORIGINAL_QUIRK: this is length-first order, * so unequal-length strings do not use l...` | function `uvStrcmp` | [70](../src/modules/uvstring_rom.c#L70) |
-| original_quirk | `Find the first matching character before the string terminator. * RE_ORIGINAL_QUIRK: searching for the null terminator returns null, * retaining this helper behavior rather than...` | — | [40](../src/modules/uvstring_rom.c#L40) |
-| original_quirk | `Parse the original d/x/b/f/s/c conversions into an unbounded caller * buffer. RE_ORIGINAL_QUIRK: precision digits are consumed but ignored, * and float conversion always writes ...` | function `uvSprintf` | [278](../src/modules/uvstring_rom.c#L278) |
-| original_quirk | `Write integer digits backward into the chosen output field and * advance the shared output cursor. Positive padCount selects that * exact field width. RE_ORIGINAL_QUIRK: the lef...` | function `_uvStrFormatInt` | [105](../src/modules/uvstring_rom.c#L105) |
-| unused_identifier | `unusedStackWord` | function `uvSprintf` | [298](../src/modules/uvstring_rom.c#L298) |
+| explicit_unknown | `Accumulate every character as a decimal position. Non-digits add * zero without stopping conversion; signs and whitespace have no * special handling. RE_UNKNOWN: overflow bounds...` | function `uvAtoi` | [406](../src/modules/uvstring_rom.c#L406) |
+| explicit_unknown | `Append a signed decimal value with exactly two fractional digits, * advancing the shared output cursor. Fractional digits are truncated * individually; no rounding is added. RE_...` | function `_uvStrFormatFloat` | [202](../src/modules/uvstring_rom.c#L202) |
+| explicit_unknown | `Copy bytes through the null terminator and return the destination. * RE_UNKNOWN: sufficient destination capacity and any overlap restrictions * remain caller contracts; preserve...` | function `uvStrcpy` | [426](../src/modules/uvstring_rom.c#L426) |
+| explicit_unknown | `Count bytes up to the first NUL, advancing the input pointer once per test. * RE_UNKNOWN: pointer validity, termination and counts beyond the signed local * range require caller...` | function `uvStrlen` | [60](../src/modules/uvstring_rom.c#L60) |
+| explicit_unknown | `Parse the original d/x/b/f/s/c conversions into an unbounded caller * buffer. RE_ORIGINAL_QUIRK: precision digits are consumed but ignored, * and float conversion always writes ...` | function `uvSprintf` | [284](../src/modules/uvstring_rom.c#L284) |
+| explicit_unknown | `Record the export table in the current loading file entry, then publish * its six string callbacks. * RE_UNKNOWN: loader sequencing, writable table storage, and callback * lifet...` | — | [21](../src/modules/uvstring_rom.c#L21) |
+| explicit_unknown | `Return without performing a string operation. * RE_UNKNOWN: the historical callback purpose remains unresolved.` | — | [37](../src/modules/uvstring_rom.c#L37) |
+| explicit_unknown | `Write integer digits backward into the chosen output field and * advance the shared output cursor. Positive padCount selects that * exact field width. RE_ORIGINAL_QUIRK: the lef...` | function `_uvStrFormatInt` | [111](../src/modules/uvstring_rom.c#L111) |
+| original_quirk | `Compare string lengths first; only equal-length strings are then * compared by character. RE_ORIGINAL_QUIRK: this is length-first order, * so unequal-length strings do not use l...` | function `uvStrcmp` | [76](../src/modules/uvstring_rom.c#L76) |
+| original_quirk | `Find the first matching character before the string terminator. * RE_ORIGINAL_QUIRK: searching for the null terminator returns null, * retaining this helper behavior rather than...` | — | [46](../src/modules/uvstring_rom.c#L46) |
+| original_quirk | `Parse the original d/x/b/f/s/c conversions into an unbounded caller * buffer. RE_ORIGINAL_QUIRK: precision digits are consumed but ignored, * and float conversion always writes ...` | function `uvSprintf` | [284](../src/modules/uvstring_rom.c#L284) |
+| original_quirk | `Write integer digits backward into the chosen output field and * advance the shared output cursor. Positive padCount selects that * exact field width. RE_ORIGINAL_QUIRK: the lef...` | function `_uvStrFormatInt` | [111](../src/modules/uvstring_rom.c#L111) |
+| unused_identifier | `unusedStackWord` | function `uvSprintf` | [304](../src/modules/uvstring_rom.c#L304) |
 
 ## src/modules/uvterra_rom.c
 

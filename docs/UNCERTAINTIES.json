@@ -449,7 +449,7 @@
     "src/modules/uvquery_rom.c": "96639fc8b9843fcbae569435ee73fb3889a73725b7fda22ca5f7623a7e14183f",
     "src/modules/uvsort_rom.c": "bb146bf878382c9939ff7cd9073bcc55ba8152f56c5eb76298a023162e156f34",
     "src/modules/uvsprt_rom.c": "171568155d69e72de6df5e28eb09a6f9927d1b9da8755d4066e3fa7d7412a6a0",
-    "src/modules/uvstring_rom.c": "8048cce547328d5a13ef595a5309a049dde12bf2097726d55b124e55e1c150b1",
+    "src/modules/uvstring_rom.c": "5a1eebe82a708fc4d70acd7fbad07e81dca95315f5cbd019f8883cef3885d294",
     "src/modules/uvterra_rom.c": "e2dfa550aba51b4a261ef59f1319da66b3d5d8b83d8bfc557fbdde9d0e5083dc",
     "src/modules/uvterrald_rom.c": "33d201b66def68cd4b1331855c680188565ceb733e8ab27d985e84484868b2c0",
     "src/modules/uvtexanim_rom.c": "0abef37207542717b58e02378141e946fefa775679ec9c7f353dc7f9cd3e8594",
@@ -469,8 +469,8 @@
     "src/sched.c": "26791ca9f30fd5355b11ea03a64a457757d2029595be26428c2925798105d9b4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "51ed8cce2d32deb64a10a47001c308d32aa881e95c216188357742e44a163f6c",
-    "docs/VALIDATION_20261006.md": "421b46f82b88ed3f0272c952e92b36f60c8c6da2626a8472ffe79e69ebfb1240"
+    "docs/STRATEGY_V4.md": "5795fd664d9d8f16f092b2da913ea8232897708f09102eb79ac6fc003e8894da",
+    "docs/VALIDATION_20261006.md": "97813aa35b5ea2be95520b0bdcee3e9a164cced0a5eb0b5418dac6d12cc6a6d0"
   },
   "counts": {
     "address_function": 907,
@@ -480,7 +480,7 @@
     "conditional_draft": 4,
     "decompiler_local": 619,
     "draft_marker": 38,
-    "explicit_unknown": 1828,
+    "explicit_unknown": 1829,
     "layout_padding": 275,
     "offset_field": 1701,
     "opaque_type": 282,
@@ -148810,16 +148810,16 @@
       "path": "src/modules/uvstring_rom.c",
       "symbol": "Accumulate every character as a decimal position. Non-digits add * zero without stopping conversion; signs and whitespace have no * special handling. RE_UNKNOWN: overflow bounds remain a caller contract.",
       "lines": [
-        400
+        406
       ],
       "evidence": "Accumulate every character as a decimal position. Non-digits add * zero without stopping conversion; signs and whitespace have no * special handling. RE_UNKNOWN: overflow bounds remain a caller contract.",
       "owners": [
         {
           "kind": "function",
           "name": "uvAtoi",
-          "declaration_line": 403,
+          "declaration_line": 409,
           "lines": [
-            400
+            406
           ]
         }
       ]
@@ -148830,16 +148830,16 @@
       "path": "src/modules/uvstring_rom.c",
       "symbol": "Append a signed decimal value with exactly two fractional digits, * advancing the shared output cursor. Fractional digits are truncated * individually; no rounding is added. RE_UNKNOWN: representable integer * magnitude and destination capacity remain caller contracts.",
       "lines": [
-        196
+        202
       ],
       "evidence": "Append a signed decimal value with exactly two fractional digits, * advancing the shared output cursor. Fractional digits are truncated * individually; no rounding is added. RE_UNKNOWN: representable integer * magnitude and destination capacity remain caller contracts.",
       "owners": [
         {
           "kind": "function",
           "name": "_uvStrFormatFloat",
-          "declaration_line": 200,
+          "declaration_line": 206,
           "lines": [
-            196
+            202
           ]
         }
       ]
@@ -148850,16 +148850,16 @@
       "path": "src/modules/uvstring_rom.c",
       "symbol": "Copy bytes through the null terminator and return the destination. * RE_UNKNOWN: sufficient destination capacity and any overlap restrictions * remain caller contracts; preserve the forward copy order.",
       "lines": [
-        420
+        426
       ],
       "evidence": "Copy bytes through the null terminator and return the destination. * RE_UNKNOWN: sufficient destination capacity and any overlap restrictions * remain caller contracts; preserve the forward copy order.",
       "owners": [
         {
           "kind": "function",
           "name": "uvStrcpy",
-          "declaration_line": 423,
+          "declaration_line": 429,
           "lines": [
-            420
+            426
           ]
         }
       ]
@@ -148870,16 +148870,16 @@
       "path": "src/modules/uvstring_rom.c",
       "symbol": "Count bytes up to the first NUL, advancing the input pointer once per test. * RE_UNKNOWN: pointer validity, termination and counts beyond the signed local * range require callers; no length limit is checked.",
       "lines": [
-        54
+        60
       ],
       "evidence": "Count bytes up to the first NUL, advancing the input pointer once per test. * RE_UNKNOWN: pointer validity, termination and counts beyond the signed local * range require callers; no length limit is checked.",
       "owners": [
         {
           "kind": "function",
           "name": "uvStrlen",
-          "declaration_line": 51,
+          "declaration_line": 57,
           "lines": [
-            54
+            60
           ]
         }
       ]
@@ -148890,19 +148890,29 @@
       "path": "src/modules/uvstring_rom.c",
       "symbol": "Parse the original d/x/b/f/s/c conversions into an unbounded caller * buffer. RE_ORIGINAL_QUIRK: precision digits are consumed but ignored, * and float conversion always writes two fractional digits. * RE_UNKNOWN: valid format syntax, argument types and buffer capacities * remain caller contracts; preserve the original varargs handling.",
       "lines": [
-        278
+        284
       ],
       "evidence": "Parse the original d/x/b/f/s/c conversions into an unbounded caller * buffer. RE_ORIGINAL_QUIRK: precision digits are consumed but ignored, * and float conversion always writes two fractional digits. * RE_UNKNOWN: valid format syntax, argument types and buffer capacities * remain caller contracts; preserve the original varargs handling.",
       "owners": [
         {
           "kind": "function",
           "name": "uvSprintf",
-          "declaration_line": 283,
+          "declaration_line": 289,
           "lines": [
-            278
+            284
           ]
         }
       ]
+    },
+    {
+      "id": "Q-63ba7a2b523a",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvstring_rom.c",
+      "symbol": "Record the export table in the current loading file entry, then publish * its six string callbacks. * RE_UNKNOWN: loader sequencing, writable table storage, and callback * lifetimes remain caller contracts; this entrypoint checks none of them.",
+      "lines": [
+        21
+      ],
+      "evidence": "Record the export table in the current loading file entry, then publish * its six string callbacks. * RE_UNKNOWN: loader sequencing, writable table storage, and callback * lifetimes remain caller contracts; this entrypoint checks none of them."
     },
     {
       "id": "Q-41ab75510647",
@@ -148910,7 +148920,7 @@
       "path": "src/modules/uvstring_rom.c",
       "symbol": "Return without performing a string operation. * RE_UNKNOWN: the historical callback purpose remains unresolved.",
       "lines": [
-        31
+        37
       ],
       "evidence": "Return without performing a string operation. * RE_UNKNOWN: the historical callback purpose remains unresolved."
     },
@@ -148920,16 +148930,16 @@
       "path": "src/modules/uvstring_rom.c",
       "symbol": "Write integer digits backward into the chosen output field and * advance the shared output cursor. Positive padCount selects that * exact field width. RE_ORIGINAL_QUIRK: the left-justified negative * branch writes a space where the sign would be. RE_UNKNOWN: valid * magnitude, radix, field width and destination capacity are caller contracts.",
       "lines": [
-        105
+        111
       ],
       "evidence": "Write integer digits backward into the chosen output field and * advance the shared output cursor. Positive padCount selects that * exact field width. RE_ORIGINAL_QUIRK: the left-justified negative * branch writes a space where the sign would be. RE_UNKNOWN: valid * magnitude, radix, field width and destination capacity are caller contracts.",
       "owners": [
         {
           "kind": "function",
           "name": "_uvStrFormatInt",
-          "declaration_line": 110,
+          "declaration_line": 116,
           "lines": [
-            105
+            111
           ]
         }
       ]
@@ -236534,16 +236544,16 @@
       "path": "src/modules/uvstring_rom.c",
       "symbol": "Compare string lengths first; only equal-length strings are then * compared by character. RE_ORIGINAL_QUIRK: this is length-first order, * so unequal-length strings do not use lexicographic ordering.",
       "lines": [
-        70
+        76
       ],
       "evidence": "Compare string lengths first; only equal-length strings are then * compared by character. RE_ORIGINAL_QUIRK: this is length-first order, * so unequal-length strings do not use lexicographic ordering.",
       "owners": [
         {
           "kind": "function",
           "name": "uvStrcmp",
-          "declaration_line": 73,
+          "declaration_line": 79,
           "lines": [
-            70
+            76
           ]
         }
       ]
@@ -236554,7 +236564,7 @@
       "path": "src/modules/uvstring_rom.c",
       "symbol": "Find the first matching character before the string terminator. * RE_ORIGINAL_QUIRK: searching for the null terminator returns null, * retaining this helper behavior rather than the C library contract.",
       "lines": [
-        40
+        46
       ],
       "evidence": "Find the first matching character before the string terminator. * RE_ORIGINAL_QUIRK: searching for the null terminator returns null, * retaining this helper behavior rather than the C library contract."
     },
@@ -236564,16 +236574,16 @@
       "path": "src/modules/uvstring_rom.c",
       "symbol": "Parse the original d/x/b/f/s/c conversions into an unbounded caller * buffer. RE_ORIGINAL_QUIRK: precision digits are consumed but ignored, * and float conversion always writes two fractional digits. * RE_UNKNOWN: valid format syntax, argument types and buffer capacities * remain caller contracts; preserve the original varargs handling.",
       "lines": [
-        278
+        284
       ],
       "evidence": "Parse the original d/x/b/f/s/c conversions into an unbounded caller * buffer. RE_ORIGINAL_QUIRK: precision digits are consumed but ignored, * and float conversion always writes two fractional digits. * RE_UNKNOWN: valid format syntax, argument types and buffer capacities * remain caller contracts; preserve the original varargs handling.",
       "owners": [
         {
           "kind": "function",
           "name": "uvSprintf",
-          "declaration_line": 283,
+          "declaration_line": 289,
           "lines": [
-            278
+            284
           ]
         }
       ]
@@ -236584,16 +236594,16 @@
       "path": "src/modules/uvstring_rom.c",
       "symbol": "Write integer digits backward into the chosen output field and * advance the shared output cursor. Positive padCount selects that * exact field width. RE_ORIGINAL_QUIRK: the left-justified negative * branch writes a space where the sign would be. RE_UNKNOWN: valid * magnitude, radix, field width and destination capacity are caller contracts.",
       "lines": [
-        105
+        111
       ],
       "evidence": "Write integer digits backward into the chosen output field and * advance the shared output cursor. Positive padCount selects that * exact field width. RE_ORIGINAL_QUIRK: the left-justified negative * branch writes a space where the sign would be. RE_UNKNOWN: valid * magnitude, radix, field width and destination capacity are caller contracts.",
       "owners": [
         {
           "kind": "function",
           "name": "_uvStrFormatInt",
-          "declaration_line": 110,
+          "declaration_line": 116,
           "lines": [
-            105
+            111
           ]
         }
       ]
@@ -242160,15 +242170,15 @@
       "path": "src/modules/uvstring_rom.c",
       "symbol": "unusedStackWord",
       "lines": [
-        298
+        304
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvSprintf",
-          "declaration_line": 283,
+          "declaration_line": 289,
           "lines": [
-            298
+            304
           ]
         }
       ]
