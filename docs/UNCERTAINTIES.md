@@ -17,18 +17,18 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 1845 |
+| Explicit RE_UNKNOWN notes | 1848 |
 | Preserved RE_ORIGINAL_QUIRK notes | 493 |
 | Older comments with uncertainty language | 88 |
 | Documented original-behavior audits | 30 |
-| Assembly-backed functions or data | 755 |
-| Address-based function identifiers | 907 |
-| Address-based global identifiers | 1521 |
-| Offset-based fields or neutral typed fields | 1703 |
-| Layout padding to preserve | 277 |
-| Unresolved type names | 282 |
+| Assembly-backed functions or data | 751 |
+| Address-based function identifiers | 904 |
+| Address-based global identifiers | 1530 |
+| Offset-based fields or neutral typed fields | 1743 |
+| Layout padding to preserve | 281 |
+| Unresolved type names | 283 |
 | Explicit unused ABI, storage or local identifiers | 137 |
-| Decompiler parameter/local names | 619 |
+| Decompiler parameter/local names | 622 |
 | Fake, unresolved or TODO draft markers | 48 |
 | Data-dependent conditional draft guards | 4 |
 
@@ -9048,13 +9048,17 @@ For every future source wave, regenerate and check this index after code and str
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
 | address_function | `func_uvmodelld_rom_00400258` | function `func_uvmodelld_rom_00400258`, function `uvModelLoaderParseCommonBlocks` | [7](../src/modules/uvmodelld_rom.c#L7), [42](../src/modules/uvmodelld_rom.c#L42) |
-| address_global | `D_uvmodelld_rom_00400EE0` | global `D_uvmodelld_rom_00400EE0` | [5](../src/modules/uvmodelld_rom.c#L5) |
+| address_global | `D_uvmodelld_rom_00400EE0` | function `uvModelLoaderReleaseRenderResources`, global `D_uvmodelld_rom_00400EE0` | [5](../src/modules/uvmodelld_rom.c#L5), [130](../src/modules/uvmodelld_rom.c#L130) |
 | address_global | `D_uvmodelld_rom_00400EE4` | global `D_uvmodelld_rom_00400EE4` | [6](../src/modules/uvmodelld_rom.c#L6) |
 | assembly | `__entrypoint_func_uvmodelld_rom_400000` | — | [9](../src/modules/uvmodelld_rom.c#L9) |
 | assembly | `func_uvmodelld_rom_00400258` | — | [101](../src/modules/uvmodelld_rom.c#L101) |
-| assembly | `func_uvmodelld_rom_00400D38` | — | [104](../src/modules/uvmodelld_rom.c#L104) |
 | explicit_unknown | `Original COMM parser: read model totals and an optional 60-byte record, * allocate the combined vertex/state/command/part/LOD/matrix storage, then parse * the nested records. Pr...` | assembly `func_uvmodelld_rom_00400258` | [78](../src/modules/uvmodelld_rom.c#L78) |
 | explicit_unknown | `Read a model FORM file, parse each COMM block and free its temporary * block storage. Return the most recently parsed model, or zero when * no common block was found, after rele...` | function `uvModelLoaderParseCommonBlocks` | [21](../src/modules/uvmodelld_rom.c#L21) |
+| explicit_unknown | `Unload each referenced UVTX and light state, then free the vertex allocation. * RE_UNKNOWN: ownership of optional/recursive model records is not established; * this routine does...` | function `uvModelLoaderReleaseRenderResources` | [104](../src/modules/uvmodelld_rom.c#L104) |
+| offset_field | `unk0` | function `uvModelLoaderReleaseRenderResources` | [120](../src/modules/uvmodelld_rom.c#L120), [122](../src/modules/uvmodelld_rom.c#L122) |
+| offset_field | `unk4` | function `uvModelLoaderReleaseRenderResources` | [119](../src/modules/uvmodelld_rom.c#L119), [123](../src/modules/uvmodelld_rom.c#L123) |
+| offset_field | `unk8` | function `uvModelLoaderReleaseRenderResources` | [121](../src/modules/uvmodelld_rom.c#L121) |
+| offset_field | `unkC` | function `uvModelLoaderReleaseRenderResources` | [129](../src/modules/uvmodelld_rom.c#L129), [130](../src/modules/uvmodelld_rom.c#L130) |
 | original_quirk | `Original COMM parser: read model totals and an optional 60-byte record, * allocate the combined vertex/state/command/part/LOD/matrix storage, then parse * the nested records. Pr...` | assembly `func_uvmodelld_rom_00400258` | [78](../src/modules/uvmodelld_rom.c#L78) |
 
 ## src/modules/uvpfx_rom.c
@@ -9193,43 +9197,92 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
-| address_function | `func_uvpfx_rom_004004D0` | function `uvPfxLoaderApplySharedResourceWord` | [171](../src/modules/uvpfxld_rom.c#L171), [174](../src/modules/uvpfxld_rom.c#L174) |
-| address_function | `func_uvpfxld_rom_004000DC` | function `func_uvpfxld_rom_004000DC` | [5](../src/modules/uvpfxld_rom.c#L5) |
-| address_function | `func_uvpfxld_rom_004002DC` | function `func_uvpfxld_rom_004002DC` | [6](../src/modules/uvpfxld_rom.c#L6) |
-| address_function | `func_uvpfxld_rom_00400CD0` | function `func_uvpfxld_rom_00400CD0` | [39](../src/modules/uvpfxld_rom.c#L39) |
-| address_global | `D_uvpfxld_rom_00400EB8` | function `uvPfxLoaderApplyHeaderConfiguration`, function `uvPfxLoaderApplySharedResourceWord`, global `D_uvpfxld_rom_00400EB8` | [29](../src/modules/uvpfxld_rom.c#L29), [123](../src/modules/uvpfxld_rom.c#L123), [129](../src/modules/uvpfxld_rom.c#L129), [132](../src/modules/uvpfxld_rom.c#L132), [172](../src/modules/uvpfxld_rom.c#L172), [175](../src/modules/uvpfxld_rom.c#L175) |
-| address_global | `D_uvpfxld_rom_00400EBC` | function `uvPfxLoaderApplyHeaderConfiguration`, global `D_uvpfxld_rom_00400EBC` | [30](../src/modules/uvpfxld_rom.c#L30), [123](../src/modules/uvpfxld_rom.c#L123) |
-| address_global | `D_uvpfxld_rom_00400EC0` | function `uvPfxLoaderApplyHeaderConfiguration`, function `uvPfxLoaderCopyIntoSharedWordBuffer`, global `D_uvpfxld_rom_00400EC0` | [3](../src/modules/uvpfxld_rom.c#L3), [113](../src/modules/uvpfxld_rom.c#L113), [148](../src/modules/uvpfxld_rom.c#L148) |
-| address_global | `D_uvpfxld_rom_00400EC4` | function `uvPfxLoaderApplyHeaderConfiguration`, global `D_uvpfxld_rom_00400EC4` | [31](../src/modules/uvpfxld_rom.c#L31), [114](../src/modules/uvpfxld_rom.c#L114) |
-| address_global | `D_uvpfxld_rom_00400EC8` | function `uvPfxLoaderApplySharedResourceWord`, global `D_uvpfxld_rom_00400EC8` | [36](../src/modules/uvpfxld_rom.c#L36), [170](../src/modules/uvpfxld_rom.c#L170) |
-| address_global | `D_uvpfxld_rom_00400EE0` | function `uvPfxLoaderApplyHeaderConfiguration`, global `D_uvpfxld_rom_00400EE0` | [32](../src/modules/uvpfxld_rom.c#L32), [129](../src/modules/uvpfxld_rom.c#L129), [132](../src/modules/uvpfxld_rom.c#L132) |
-| address_global | `D_uvpfxld_rom_00400EE4` | function `uvPfxLoaderApplyHeaderConfiguration`, function `uvPfxLoaderApplySharedResourceWord`, function `uvPfxLoaderCopyIntoSharedWordBuffer`, function `uvPfxLoaderSetConfigShortFromWord`, global `D_uvpfxld_rom_00400EE4` | [40](../src/modules/uvpfxld_rom.c#L40), [115](../src/modules/uvpfxld_rom.c#L115), [117](../src/modules/uvpfxld_rom.c#L117), [118](../src/modules/uvpfxld_rom.c#L118), [119](../src/modules/uvpfxld_rom.c#L119), [120](../src/modules/uvpfxld_rom.c#L120), [121](../src/modules/uvpfxld_rom.c#L121), [122](../src/modules/uvpfxld_rom.c#L122) (+4 in JSON) |
-| address_global | `D_uvpfxld_rom_00400EE8` | function `uvPfxLoaderApplyHeaderConfiguration`, global `D_uvpfxld_rom_00400EE8` | [33](../src/modules/uvpfxld_rom.c#L33), [124](../src/modules/uvpfxld_rom.c#L124) |
-| address_global | `D_uvpfxld_rom_004012F4` | function `uvPfxLoaderApplySharedResourceWord`, global `D_uvpfxld_rom_004012F4` | [37](../src/modules/uvpfxld_rom.c#L37), [171](../src/modules/uvpfxld_rom.c#L171), [174](../src/modules/uvpfxld_rom.c#L174) |
-| assembly | `__entrypoint_func_uvpfxld_rom_400000` | — | [41](../src/modules/uvpfxld_rom.c#L41) |
-| assembly | `func_uvpfxld_rom_004000DC` | — | [69](../src/modules/uvpfxld_rom.c#L69) |
-| assembly | `func_uvpfxld_rom_004002DC` | — | [94](../src/modules/uvpfxld_rom.c#L94) |
-| assembly | `func_uvpfxld_rom_00400CD0` | — | [189](../src/modules/uvpfxld_rom.c#L189) |
-| explicit_unknown | `Apply one caller-word snapshot to every configured particle. The original * shared selector chooses property 0x1008 (UVTX-ID path) or 0x1013 (TSEQ path). * Preserve the signed c...` | function `uvPfxLoaderApplySharedResourceWord` | [155](../src/modules/uvpfxld_rom.c#L155) |
-| explicit_unknown | `Apply the original PHDR block to shared loader configuration and each * configured particle. Allocate the two-byte item buffer, preserve short * narrowing and reciprocal arithme...` | function `uvPfxLoaderApplyHeaderConfiguration` | [99](../src/modules/uvpfxld_rom.c#L99) |
-| explicit_unknown | `Copy sharedCount*2 bytes to the address stored at shared configuration offset * 0x30. The reviewed header-configuration producer allocates the same count*2 * byte size; this wra...` | function `uvPfxLoaderCopyIntoSharedWordBuffer` | [140](../src/modules/uvpfxld_rom.c#L140) |
-| explicit_unknown | `Original COMMON block setup: allocate the shared record, narrow its particle * count to signed 16 bits, allocate/publish per-particle records, then initialize * shared and parti...` | assembly `func_uvpfxld_rom_004002DC` | [71](../src/modules/uvpfxld_rom.c#L71) |
-| explicit_unknown | `Read and dispatch original COMM/TEXT/PIID/PHDR/PDAT particle blocks. * UPFX export slots 0x40/0x44/0x48 provide the descriptor-array pointer, * capacity and active-count words. ...` | assembly `func_uvpfxld_rom_004000DC` | [53](../src/modules/uvpfxld_rom.c#L53) |
-| explicit_unknown | `Read the supplied word and narrow it into loader short+2. RE_UNKNOWN: source * and loader storage/lifetime need original configuration producers and callers.` | function `uvPfxLoaderSetConfigShortFromWord` | [182](../src/modules/uvpfxld_rom.c#L182) |
-| offset_field | `unk0` | function `uvPfxLoaderApplyHeaderConfiguration` | [118](../src/modules/uvpfxld_rom.c#L118) |
-| offset_field | `unk02` | type `PfxLoaderHeaderConfig` | [23](../src/modules/uvpfxld_rom.c#L23) |
-| offset_field | `unk10` | function `uvPfxLoaderApplyHeaderConfiguration` | [125](../src/modules/uvpfxld_rom.c#L125), [126](../src/modules/uvpfxld_rom.c#L126) |
-| offset_field | `unk12` | type `PfxLoaderHeaderConfig` | [25](../src/modules/uvpfxld_rom.c#L25) |
-| offset_field | `unk4` | function `uvPfxLoaderApplyHeaderConfiguration` | [121](../src/modules/uvpfxld_rom.c#L121) |
-| offset_field | `unk8` | function `uvPfxLoaderApplyHeaderConfiguration` | [119](../src/modules/uvpfxld_rom.c#L119), [129](../src/modules/uvpfxld_rom.c#L129), [132](../src/modules/uvpfxld_rom.c#L132) |
-| offset_field | `unkC` | function `uvPfxLoaderApplyHeaderConfiguration` | [120](../src/modules/uvpfxld_rom.c#L120) |
-| offset_field | `value08` | function `uvPfxLoaderApplyHeaderConfiguration`, type `PfxLoaderHeaderFields` | [14](../src/modules/uvpfxld_rom.c#L14), [119](../src/modules/uvpfxld_rom.c#L119) |
-| opaque_type | `UnkStruct_uvpfx_rom_00404FA0` | global `D_uvpfxld_rom_00400EE0` | [32](../src/modules/uvpfxld_rom.c#L32) |
-| opaque_type | `UnkStruct_uvpfx_rom_00404FA0_unk2C` | type `PfxLoaderHeaderConfig` | [26](../src/modules/uvpfxld_rom.c#L26) |
-| opaque_type | `UnkStruct_uvpfx_rom_00404FA0_unk4` | function `uvPfxLoaderApplyHeaderConfiguration`, global `D_uvpfxld_rom_00400EE8` | [33](../src/modules/uvpfxld_rom.c#L33), [111](../src/modules/uvpfxld_rom.c#L111) |
-| original_quirk | `Original COMMON block setup: allocate the shared record, narrow its particle * count to signed 16 bits, allocate/publish per-particle records, then initialize * shared and parti...` | assembly `func_uvpfxld_rom_004002DC` | [71](../src/modules/uvpfxld_rom.c#L71) |
-| original_quirk | `Read and dispatch original COMM/TEXT/PIID/PHDR/PDAT particle blocks. * UPFX export slots 0x40/0x44/0x48 provide the descriptor-array pointer, * capacity and active-count words. ...` | assembly `func_uvpfxld_rom_004000DC` | [53](../src/modules/uvpfxld_rom.c#L53) |
-| uncertainty_note | `Prefix view of the original 0x3C-byte COMMON allocation. The omitted * fields retain their unknown meanings; no allocation capacity is inferred.` | type `PfxLoaderHeaderConfig` | [19](../src/modules/uvpfxld_rom.c#L19) |
+| address_function | `func_uvpfx_rom_004004D0` | function `uvPfxLoaderApplySharedResourceWord`, function `uvPfxLoaderBuildCommonParticleRecords` | [251](../src/modules/uvpfxld_rom.c#L251), [256](../src/modules/uvpfxld_rom.c#L256), [281](../src/modules/uvpfxld_rom.c#L281), [288](../src/modules/uvpfxld_rom.c#L288), [373](../src/modules/uvpfxld_rom.c#L373), [376](../src/modules/uvpfxld_rom.c#L376) |
+| address_global | `D_uvpfx_rom_00404FA0` | function `uvPfxLoaderParseChunkStream`, function `uvPfxLoaderReleaseConfiguration` | [150](../src/modules/uvpfxld_rom.c#L150), [401](../src/modules/uvpfxld_rom.c#L401) |
+| address_global | `D_uvpfx_rom_00404FA4` | function `uvPfxLoaderParseChunkStream` | [149](../src/modules/uvpfxld_rom.c#L149) |
+| address_global | `D_uvpfx_rom_00404FA8` | function `uvPfxLoaderParseChunkStream`, function `uvPfxLoaderReleaseConfiguration` | [148](../src/modules/uvpfxld_rom.c#L148), [187](../src/modules/uvpfxld_rom.c#L187), [400](../src/modules/uvpfxld_rom.c#L400), [423](../src/modules/uvpfxld_rom.c#L423) |
+| address_global | `D_uvpfxld_rom_00400E90` | function `uvPfxLoaderBuildCommonParticleRecords`, global `D_uvpfxld_rom_00400E90` | [82](../src/modules/uvpfxld_rom.c#L82), [270](../src/modules/uvpfxld_rom.c#L270) |
+| address_global | `D_uvpfxld_rom_00400E94` | function `uvPfxLoaderBuildCommonParticleRecords`, global `D_uvpfxld_rom_00400E94` | [83](../src/modules/uvpfxld_rom.c#L83), [274](../src/modules/uvpfxld_rom.c#L274) |
+| address_global | `D_uvpfxld_rom_00400EA8` | function `uvPfxLoaderBuildCommonParticleRecords`, global `D_uvpfxld_rom_00400EA8` | [77](../src/modules/uvpfxld_rom.c#L77), [249](../src/modules/uvpfxld_rom.c#L249), [250](../src/modules/uvpfxld_rom.c#L250) |
+| address_global | `D_uvpfxld_rom_00400EB8` | function `uvPfxLoaderApplyHeaderConfiguration`, function `uvPfxLoaderApplySharedResourceWord`, function `uvPfxLoaderBuildCommonParticleRecords`, function `uvPfxLoaderParseChunkStream`, function `uvPfxLoaderReleaseConfiguration`, global `D_uvpfxld_rom_00400EB8` | [111](../src/modules/uvpfxld_rom.c#L111), [148](../src/modules/uvpfxld_rom.c#L148), [183](../src/modules/uvpfxld_rom.c#L183), [184](../src/modules/uvpfxld_rom.c#L184), [187](../src/modules/uvpfxld_rom.c#L187), [214](../src/modules/uvpfxld_rom.c#L214), [217](../src/modules/uvpfxld_rom.c#L217), [218](../src/modules/uvpfxld_rom.c#L218) (+18 in JSON) |
+| address_global | `D_uvpfxld_rom_00400EBC` | function `uvPfxLoaderApplyHeaderConfiguration`, function `uvPfxLoaderBuildCommonParticleRecords`, function `uvPfxLoaderParseChunkStream`, global `D_uvpfxld_rom_00400EBC` | [112](../src/modules/uvpfxld_rom.c#L112), [149](../src/modules/uvpfxld_rom.c#L149), [183](../src/modules/uvpfxld_rom.c#L183), [214](../src/modules/uvpfxld_rom.c#L214), [260](../src/modules/uvpfxld_rom.c#L260), [325](../src/modules/uvpfxld_rom.c#L325) |
+| address_global | `D_uvpfxld_rom_00400EC0` | function `uvPfxLoaderApplyHeaderConfiguration`, function `uvPfxLoaderCopyIntoSharedWordBuffer`, global `D_uvpfxld_rom_00400EC0` | [85](../src/modules/uvpfxld_rom.c#L85), [315](../src/modules/uvpfxld_rom.c#L315), [350](../src/modules/uvpfxld_rom.c#L350) |
+| address_global | `D_uvpfxld_rom_00400EC4` | function `uvPfxLoaderApplyHeaderConfiguration`, global `D_uvpfxld_rom_00400EC4` | [113](../src/modules/uvpfxld_rom.c#L113), [316](../src/modules/uvpfxld_rom.c#L316) |
+| address_global | `D_uvpfxld_rom_00400EC8` | function `uvPfxLoaderApplySharedResourceWord`, function `uvPfxLoaderBuildCommonParticleRecords`, global `D_uvpfxld_rom_00400EC8` | [118](../src/modules/uvpfxld_rom.c#L118), [209](../src/modules/uvpfxld_rom.c#L209), [262](../src/modules/uvpfxld_rom.c#L262), [372](../src/modules/uvpfxld_rom.c#L372) |
+| address_global | `D_uvpfxld_rom_00400EE0` | function `uvPfxLoaderApplyHeaderConfiguration`, function `uvPfxLoaderBuildCommonParticleRecords`, function `uvPfxLoaderParseChunkStream`, function `uvPfxLoaderReleaseConfiguration`, global `D_uvpfxld_rom_00400EE0` | [114](../src/modules/uvpfxld_rom.c#L114), [150](../src/modules/uvpfxld_rom.c#L150), [217](../src/modules/uvpfxld_rom.c#L217), [218](../src/modules/uvpfxld_rom.c#L218), [290](../src/modules/uvpfxld_rom.c#L290), [331](../src/modules/uvpfxld_rom.c#L331), [334](../src/modules/uvpfxld_rom.c#L334), [401](../src/modules/uvpfxld_rom.c#L401) (+7 in JSON) |
+| address_global | `D_uvpfxld_rom_00400EE4` | function `uvPfxLoaderApplyHeaderConfiguration`, function `uvPfxLoaderApplySharedResourceWord`, function `uvPfxLoaderBuildCommonParticleRecords`, function `uvPfxLoaderCopyIntoSharedWordBuffer`, function `uvPfxLoaderParseChunkStream`, function `uvPfxLoaderSetConfigShortFromWord`, global `D_uvpfxld_rom_00400EE4` | [122](../src/modules/uvpfxld_rom.c#L122), [182](../src/modules/uvpfxld_rom.c#L182), [189](../src/modules/uvpfxld_rom.c#L189), [210](../src/modules/uvpfxld_rom.c#L210), [211](../src/modules/uvpfxld_rom.c#L211), [213](../src/modules/uvpfxld_rom.c#L213), [219](../src/modules/uvpfxld_rom.c#L219), [222](../src/modules/uvpfxld_rom.c#L222) (+34 in JSON) |
+| address_global | `D_uvpfxld_rom_00400EE8` | function `uvPfxLoaderApplyHeaderConfiguration`, function `uvPfxLoaderBuildCommonParticleRecords`, global `D_uvpfxld_rom_00400EE8` | [115](../src/modules/uvpfxld_rom.c#L115), [216](../src/modules/uvpfxld_rom.c#L216), [217](../src/modules/uvpfxld_rom.c#L217), [261](../src/modules/uvpfxld_rom.c#L261), [263](../src/modules/uvpfxld_rom.c#L263), [265](../src/modules/uvpfxld_rom.c#L265), [267](../src/modules/uvpfxld_rom.c#L267), [268](../src/modules/uvpfxld_rom.c#L268) (+13 in JSON) |
+| address_global | `D_uvpfxld_rom_004012E8` | function `uvPfxLoaderBuildCommonParticleRecords`, global `D_uvpfxld_rom_004012E8` | [78](../src/modules/uvpfxld_rom.c#L78), [278](../src/modules/uvpfxld_rom.c#L278) |
+| address_global | `D_uvpfxld_rom_004012EC` | global `D_uvpfxld_rom_004012EC` | [79](../src/modules/uvpfxld_rom.c#L79) |
+| address_global | `D_uvpfxld_rom_004012F0` | function `uvPfxLoaderBuildCommonParticleRecords`, global `D_uvpfxld_rom_004012F0` | [80](../src/modules/uvpfxld_rom.c#L80), [279](../src/modules/uvpfxld_rom.c#L279), [280](../src/modules/uvpfxld_rom.c#L280) |
+| address_global | `D_uvpfxld_rom_004012F4` | function `uvPfxLoaderApplySharedResourceWord`, function `uvPfxLoaderBuildCommonParticleRecords`, function `uvPfxLoaderParseChunkStream`, function `uvPfxLoaderReleaseConfiguration`, global `D_uvpfxld_rom_004012F4` | [119](../src/modules/uvpfxld_rom.c#L119), [148](../src/modules/uvpfxld_rom.c#L148), [149](../src/modules/uvpfxld_rom.c#L149), [150](../src/modules/uvpfxld_rom.c#L150), [187](../src/modules/uvpfxld_rom.c#L187), [251](../src/modules/uvpfxld_rom.c#L251), [256](../src/modules/uvpfxld_rom.c#L256), [281](../src/modules/uvpfxld_rom.c#L281) (+6 in JSON) |
+| assembly | `__entrypoint_func_uvpfxld_rom_400000` | — | [123](../src/modules/uvpfxld_rom.c#L123) |
+| decompiler_local | `temp_a0` | function `uvPfxLoaderBuildCommonParticleRecords` | [204](../src/modules/uvpfxld_rom.c#L204) |
+| decompiler_local | `temp_v0` | function `uvPfxLoaderBuildCommonParticleRecords` | [205](../src/modules/uvpfxld_rom.c#L205) |
+| decompiler_local | `temp_v0_2` | function `uvPfxLoaderBuildCommonParticleRecords` | [203](../src/modules/uvpfxld_rom.c#L203) |
+| explicit_unknown | `Allocate and publish shared/per-particle records, then apply original UPFX * properties and FMTX/FVEC initialization with unchanged float promotions. * RE_ORIGINAL_QUIRK: capaci...` | function `uvPfxLoaderBuildCommonParticleRecords` | [193](../src/modules/uvpfxld_rom.c#L193) |
+| explicit_unknown | `Apply one caller-word snapshot to every configured particle. The original * shared selector chooses property 0x1008 (UVTX-ID path) or 0x1013 (TSEQ path). * Preserve the signed c...` | function `uvPfxLoaderApplySharedResourceWord` | [357](../src/modules/uvpfxld_rom.c#L357) |
+| explicit_unknown | `Apply the original PHDR block to shared loader configuration and each * configured particle. Allocate the two-byte item buffer, preserve short * narrowing and reciprocal arithme...` | function `uvPfxLoaderApplyHeaderConfiguration` | [301](../src/modules/uvpfxld_rom.c#L301) |
+| explicit_unknown | `Copy sharedCount*2 bytes to the address stored at shared configuration offset * 0x30. The reviewed header-configuration producer allocates the same count*2 * byte size; this wra...` | function `uvPfxLoaderCopyIntoSharedWordBuffer` | [342](../src/modules/uvpfxld_rom.c#L342) |
+| explicit_unknown | `Dispatch COMM/TEXT/PIID/PHDR/PDAT blocks through the existing loader helpers. * Publish the bounded active-count increments and reload the shared result * after reader release. ...` | function `uvPfxLoaderParseChunkStream` | [135](../src/modules/uvpfxld_rom.c#L135) |
+| explicit_unknown | `RE_UNKNOWN: observed widths/offsets only; unk field meanings unresolved. ASM owns storage.` | — | [3](../src/modules/uvpfxld_rom.c#L3) |
+| explicit_unknown | `Read the supplied word and narrow it into loader short+2. RE_UNKNOWN: source * and loader storage/lifetime need original configuration producers and callers.` | function `uvPfxLoaderSetConfigShortFromWord` | [384](../src/modules/uvpfxld_rom.c#L384) |
+| explicit_unknown | `Remove every descriptor belonging to the supplied configuration, shifting * the remaining descriptor words after each removal. Publish the final count, * then free the original ...` | function `uvPfxLoaderReleaseConfiguration` | [391](../src/modules/uvpfxld_rom.c#L391) |
+| layout_padding | `pad15` | type `PfxLoaderCommonView` | [32](../src/modules/uvpfxld_rom.c#L32) |
+| layout_padding | `pad16` | type `PfxLoaderSecondaryView` | [19](../src/modules/uvpfxld_rom.c#L19) |
+| layout_padding | `pad2` | type `PfxLoaderSecondaryView` | [10](../src/modules/uvpfxld_rom.c#L10) |
+| layout_padding | `pad26` | type `PfxLoaderCommonView` | [40](../src/modules/uvpfxld_rom.c#L40) |
+| offset_field | `unk0` | function `uvPfxLoaderApplyHeaderConfiguration`, function `uvPfxLoaderBuildCommonParticleRecords`, function `uvPfxLoaderParseChunkStream`, function `uvPfxLoaderReleaseConfiguration`, type `PfxLoaderCommonView`, type `PfxLoaderSecondaryView`, type `UVPXData` | [9](../src/modules/uvpfxld_rom.c#L9), [23](../src/modules/uvpfxld_rom.c#L23), [48](../src/modules/uvpfxld_rom.c#L48), [182](../src/modules/uvpfxld_rom.c#L182), [211](../src/modules/uvpfxld_rom.c#L211), [213](../src/modules/uvpfxld_rom.c#L213), [218](../src/modules/uvpfxld_rom.c#L218), [234](../src/modules/uvpfxld_rom.c#L234) (+8 in JSON) |
+| offset_field | `unk02` | type `PfxLoaderHeaderConfig` | [105](../src/modules/uvpfxld_rom.c#L105) |
+| offset_field | `unk10` | function `uvPfxLoaderApplyHeaderConfiguration`, function `uvPfxLoaderBuildCommonParticleRecords`, type `PfxLoaderCommonView`, type `PfxLoaderSecondaryView`, type `UVPXData` | [16](../src/modules/uvpfxld_rom.c#L16), [29](../src/modules/uvpfxld_rom.c#L29), [52](../src/modules/uvpfxld_rom.c#L52), [243](../src/modules/uvpfxld_rom.c#L243), [270](../src/modules/uvpfxld_rom.c#L270), [272](../src/modules/uvpfxld_rom.c#L272), [327](../src/modules/uvpfxld_rom.c#L327), [328](../src/modules/uvpfxld_rom.c#L328) |
+| offset_field | `unk12` | type `PfxLoaderCommonView`, type `PfxLoaderHeaderConfig`, type `PfxLoaderSecondaryView` | [17](../src/modules/uvpfxld_rom.c#L17), [30](../src/modules/uvpfxld_rom.c#L30), [107](../src/modules/uvpfxld_rom.c#L107) |
+| offset_field | `unk14` | function `uvPfxLoaderBuildCommonParticleRecords`, type `PfxLoaderCommonView`, type `PfxLoaderSecondaryView`, type `UVPXData` | [18](../src/modules/uvpfxld_rom.c#L18), [31](../src/modules/uvpfxld_rom.c#L31), [53](../src/modules/uvpfxld_rom.c#L53), [209](../src/modules/uvpfxld_rom.c#L209), [286](../src/modules/uvpfxld_rom.c#L286) |
+| offset_field | `unk16` | type `PfxLoaderCommonView` | [33](../src/modules/uvpfxld_rom.c#L33) |
+| offset_field | `unk18` | function `uvPfxLoaderBuildCommonParticleRecords`, type `PfxLoaderCommonView`, type `PfxLoaderSecondaryView`, type `UVPXData` | [20](../src/modules/uvpfxld_rom.c#L20), [34](../src/modules/uvpfxld_rom.c#L34), [54](../src/modules/uvpfxld_rom.c#L54), [227](../src/modules/uvpfxld_rom.c#L227), [245](../src/modules/uvpfxld_rom.c#L245), [287](../src/modules/uvpfxld_rom.c#L287) |
+| offset_field | `unk1A` | type `PfxLoaderCommonView` | [35](../src/modules/uvpfxld_rom.c#L35) |
+| offset_field | `unk1C` | function `uvPfxLoaderBuildCommonParticleRecords`, type `PfxLoaderCommonView`, type `UVPXData` | [36](../src/modules/uvpfxld_rom.c#L36), [55](../src/modules/uvpfxld_rom.c#L55), [253](../src/modules/uvpfxld_rom.c#L253), [283](../src/modules/uvpfxld_rom.c#L283) |
+| offset_field | `unk1E` | function `uvPfxLoaderBuildCommonParticleRecords`, type `PfxLoaderCommonView` | [37](../src/modules/uvpfxld_rom.c#L37), [225](../src/modules/uvpfxld_rom.c#L225) |
+| offset_field | `unk2` | type `PfxLoaderCommonView` | [24](../src/modules/uvpfxld_rom.c#L24) |
+| offset_field | `unk20` | function `uvPfxLoaderBuildCommonParticleRecords`, type `PfxLoaderCommonView`, type `UVPXData` | [38](../src/modules/uvpfxld_rom.c#L38), [56](../src/modules/uvpfxld_rom.c#L56), [253](../src/modules/uvpfxld_rom.c#L253), [283](../src/modules/uvpfxld_rom.c#L283) |
+| offset_field | `unk22` | function `uvPfxLoaderBuildCommonParticleRecords` | [285](../src/modules/uvpfxld_rom.c#L285) |
+| offset_field | `unk24` | function `uvPfxLoaderBuildCommonParticleRecords`, type `PfxLoaderCommonView`, type `UVPXData` | [39](../src/modules/uvpfxld_rom.c#L39), [57](../src/modules/uvpfxld_rom.c#L57), [227](../src/modules/uvpfxld_rom.c#L227), [229](../src/modules/uvpfxld_rom.c#L229), [254](../src/modules/uvpfxld_rom.c#L254), [275](../src/modules/uvpfxld_rom.c#L275), [283](../src/modules/uvpfxld_rom.c#L283) |
+| offset_field | `unk28` | function `uvPfxLoaderBuildCommonParticleRecords`, function `uvPfxLoaderReleaseConfiguration`, type `PfxLoaderCommonView`, type `UVPXData` | [41](../src/modules/uvpfxld_rom.c#L41), [58](../src/modules/uvpfxld_rom.c#L58), [237](../src/modules/uvpfxld_rom.c#L237), [242](../src/modules/uvpfxld_rom.c#L242), [244](../src/modules/uvpfxld_rom.c#L244), [245](../src/modules/uvpfxld_rom.c#L245), [246](../src/modules/uvpfxld_rom.c#L246), [247](../src/modules/uvpfxld_rom.c#L247) (+8 in JSON) |
+| offset_field | `unk2A` | function `uvPfxLoaderBuildCommonParticleRecords` | [263](../src/modules/uvpfxld_rom.c#L263), [265](../src/modules/uvpfxld_rom.c#L265) |
+| offset_field | `unk2C` | function `uvPfxLoaderBuildCommonParticleRecords`, function `uvPfxLoaderReleaseConfiguration`, type `PfxLoaderCommonView`, type `UVPXData` | [42](../src/modules/uvpfxld_rom.c#L42), [59](../src/modules/uvpfxld_rom.c#L59), [236](../src/modules/uvpfxld_rom.c#L236), [240](../src/modules/uvpfxld_rom.c#L240), [252](../src/modules/uvpfxld_rom.c#L252), [267](../src/modules/uvpfxld_rom.c#L267), [424](../src/modules/uvpfxld_rom.c#L424), [425](../src/modules/uvpfxld_rom.c#L425) |
+| offset_field | `unk30` | function `uvPfxLoaderBuildCommonParticleRecords`, function `uvPfxLoaderReleaseConfiguration`, type `PfxLoaderCommonView`, type `UVPXData` | [43](../src/modules/uvpfxld_rom.c#L43), [60](../src/modules/uvpfxld_rom.c#L60), [230](../src/modules/uvpfxld_rom.c#L230), [241](../src/modules/uvpfxld_rom.c#L241), [252](../src/modules/uvpfxld_rom.c#L252), [434](../src/modules/uvpfxld_rom.c#L434), [435](../src/modules/uvpfxld_rom.c#L435) |
+| offset_field | `unk34` | function `uvPfxLoaderBuildCommonParticleRecords`, type `PfxLoaderCommonView`, type `UVPXData` | [44](../src/modules/uvpfxld_rom.c#L44), [61](../src/modules/uvpfxld_rom.c#L61), [226](../src/modules/uvpfxld_rom.c#L226), [245](../src/modules/uvpfxld_rom.c#L245) |
+| offset_field | `unk38` | function `uvPfxLoaderBuildCommonParticleRecords`, type `PfxLoaderCommonView`, type `UVPXData` | [45](../src/modules/uvpfxld_rom.c#L45), [62](../src/modules/uvpfxld_rom.c#L62), [243](../src/modules/uvpfxld_rom.c#L243) |
+| offset_field | `unk3C` | function `uvPfxLoaderBuildCommonParticleRecords`, type `UVPXData` | [63](../src/modules/uvpfxld_rom.c#L63), [244](../src/modules/uvpfxld_rom.c#L244) |
+| offset_field | `unk4` | function `uvPfxLoaderApplyHeaderConfiguration`, function `uvPfxLoaderBuildCommonParticleRecords`, function `uvPfxLoaderReleaseConfiguration`, type `PfxLoaderCommonView`, type `PfxLoaderSecondaryView`, type `UVPXData` | [11](../src/modules/uvpfxld_rom.c#L11), [25](../src/modules/uvpfxld_rom.c#L25), [49](../src/modules/uvpfxld_rom.c#L49), [217](../src/modules/uvpfxld_rom.c#L217), [228](../src/modules/uvpfxld_rom.c#L228), [235](../src/modules/uvpfxld_rom.c#L235), [239](../src/modules/uvpfxld_rom.c#L239), [247](../src/modules/uvpfxld_rom.c#L247) (+6 in JSON) |
+| offset_field | `unk40` | function `uvPfxLoaderBuildCommonParticleRecords`, type `UVPXData` | [64](../src/modules/uvpfxld_rom.c#L64), [257](../src/modules/uvpfxld_rom.c#L257) |
+| offset_field | `unk44` | function `uvPfxLoaderBuildCommonParticleRecords`, type `UVPXData` | [65](../src/modules/uvpfxld_rom.c#L65), [257](../src/modules/uvpfxld_rom.c#L257) |
+| offset_field | `unk48` | function `uvPfxLoaderBuildCommonParticleRecords`, type `UVPXData` | [66](../src/modules/uvpfxld_rom.c#L66), [258](../src/modules/uvpfxld_rom.c#L258) |
+| offset_field | `unk4C` | function `uvPfxLoaderBuildCommonParticleRecords`, type `UVPXData` | [67](../src/modules/uvpfxld_rom.c#L67), [258](../src/modules/uvpfxld_rom.c#L258) |
+| offset_field | `unk50` | function `uvPfxLoaderBuildCommonParticleRecords`, type `UVPXData` | [68](../src/modules/uvpfxld_rom.c#L68), [252](../src/modules/uvpfxld_rom.c#L252) |
+| offset_field | `unk54` | function `uvPfxLoaderBuildCommonParticleRecords`, type `UVPXData` | [69](../src/modules/uvpfxld_rom.c#L69), [253](../src/modules/uvpfxld_rom.c#L253) |
+| offset_field | `unk58` | function `uvPfxLoaderBuildCommonParticleRecords`, type `UVPXData` | [70](../src/modules/uvpfxld_rom.c#L70), [253](../src/modules/uvpfxld_rom.c#L253) |
+| offset_field | `unk5C` | function `uvPfxLoaderBuildCommonParticleRecords`, type `UVPXData` | [71](../src/modules/uvpfxld_rom.c#L71), [253](../src/modules/uvpfxld_rom.c#L253) |
+| offset_field | `unk6` | function `uvPfxLoaderBuildCommonParticleRecords`, type `PfxLoaderCommonView` | [26](../src/modules/uvpfxld_rom.c#L26), [228](../src/modules/uvpfxld_rom.c#L228) |
+| offset_field | `unk60` | function `uvPfxLoaderBuildCommonParticleRecords`, type `UVPXData` | [72](../src/modules/uvpfxld_rom.c#L72), [289](../src/modules/uvpfxld_rom.c#L289) |
+| offset_field | `unk64` | function `uvPfxLoaderBuildCommonParticleRecords`, type `UVPXData` | [73](../src/modules/uvpfxld_rom.c#L73), [289](../src/modules/uvpfxld_rom.c#L289) |
+| offset_field | `unk68` | function `uvPfxLoaderBuildCommonParticleRecords`, type `UVPXData` | [74](../src/modules/uvpfxld_rom.c#L74), [289](../src/modules/uvpfxld_rom.c#L289) |
+| offset_field | `unk6E` | function `uvPfxLoaderBuildCommonParticleRecords` | [276](../src/modules/uvpfxld_rom.c#L276) |
+| offset_field | `unk8` | function `uvPfxLoaderApplyHeaderConfiguration`, function `uvPfxLoaderBuildCommonParticleRecords`, function `uvPfxLoaderReleaseConfiguration`, type `PfxLoaderCommonView`, type `PfxLoaderSecondaryView`, type `UVPXData` | [12](../src/modules/uvpfxld_rom.c#L12), [27](../src/modules/uvpfxld_rom.c#L27), [50](../src/modules/uvpfxld_rom.c#L50), [211](../src/modules/uvpfxld_rom.c#L211), [233](../src/modules/uvpfxld_rom.c#L233), [246](../src/modules/uvpfxld_rom.c#L246), [290](../src/modules/uvpfxld_rom.c#L290), [321](../src/modules/uvpfxld_rom.c#L321) (+5 in JSON) |
+| offset_field | `unk80` | function `uvPfxLoaderBuildCommonParticleRecords` | [278](../src/modules/uvpfxld_rom.c#L278) |
+| offset_field | `unkA` | type `PfxLoaderSecondaryView` | [13](../src/modules/uvpfxld_rom.c#L13) |
+| offset_field | `unkC` | function `uvPfxLoaderApplyHeaderConfiguration`, function `uvPfxLoaderBuildCommonParticleRecords`, type `PfxLoaderCommonView`, type `PfxLoaderSecondaryView`, type `UVPXData` | [14](../src/modules/uvpfxld_rom.c#L14), [28](../src/modules/uvpfxld_rom.c#L28), [51](../src/modules/uvpfxld_rom.c#L51), [232](../src/modules/uvpfxld_rom.c#L232), [269](../src/modules/uvpfxld_rom.c#L269), [274](../src/modules/uvpfxld_rom.c#L274), [322](../src/modules/uvpfxld_rom.c#L322) |
+| offset_field | `unkC0` | function `uvPfxLoaderBuildCommonParticleRecords` | [279](../src/modules/uvpfxld_rom.c#L279) |
+| offset_field | `unkCC` | function `uvPfxLoaderBuildCommonParticleRecords` | [280](../src/modules/uvpfxld_rom.c#L280) |
+| offset_field | `unkE` | type `PfxLoaderSecondaryView` | [15](../src/modules/uvpfxld_rom.c#L15) |
+| offset_field | `unkE4` | function `uvPfxLoaderBuildCommonParticleRecords` | [277](../src/modules/uvpfxld_rom.c#L277) |
+| offset_field | `value08` | function `uvPfxLoaderApplyHeaderConfiguration`, type `PfxLoaderHeaderFields` | [96](../src/modules/uvpfxld_rom.c#L96), [321](../src/modules/uvpfxld_rom.c#L321) |
+| opaque_type | `UnkStruct_uvpfx_rom_00404FA0` | global `D_uvpfxld_rom_00400EE0` | [114](../src/modules/uvpfxld_rom.c#L114) |
+| opaque_type | `UnkStruct_uvpfx_rom_00404FA0_unk0` | function `uvPfxLoaderBuildCommonParticleRecords`, function `uvPfxLoaderReleaseConfiguration`, function `uvPfxLoaderReleaseConfiguration` | [121](../src/modules/uvpfxld_rom.c#L121), [210](../src/modules/uvpfxld_rom.c#L210), [219](../src/modules/uvpfxld_rom.c#L219), [396](../src/modules/uvpfxld_rom.c#L396) |
+| opaque_type | `UnkStruct_uvpfx_rom_00404FA0_unk2C` | type `PfxLoaderCommonView`, type `PfxLoaderHeaderConfig` | [42](../src/modules/uvpfxld_rom.c#L42), [108](../src/modules/uvpfxld_rom.c#L108) |
+| opaque_type | `UnkStruct_uvpfx_rom_00404FA0_unk4` | function `uvPfxLoaderApplyHeaderConfiguration`, function `uvPfxLoaderBuildCommonParticleRecords`, global `D_uvpfxld_rom_00400EE8` | [115](../src/modules/uvpfxld_rom.c#L115), [203](../src/modules/uvpfxld_rom.c#L203), [216](../src/modules/uvpfxld_rom.c#L216), [313](../src/modules/uvpfxld_rom.c#L313) |
+| original_quirk | `Allocate and publish shared/per-particle records, then apply original UPFX * properties and FMTX/FVEC initialization with unchanged float promotions. * RE_ORIGINAL_QUIRK: capaci...` | function `uvPfxLoaderBuildCommonParticleRecords` | [193](../src/modules/uvpfxld_rom.c#L193) |
+| original_quirk | `Dispatch COMM/TEXT/PIID/PHDR/PDAT blocks through the existing loader helpers. * Publish the bounded active-count increments and reload the shared result * after reader release. ...` | function `uvPfxLoaderParseChunkStream` | [135](../src/modules/uvpfxld_rom.c#L135) |
+| uncertainty_note | `Prefix view of the original 0x3C-byte COMMON allocation. The omitted * fields retain their unknown meanings; no allocation capacity is inferred.` | type `PfxLoaderHeaderConfig` | [101](../src/modules/uvpfxld_rom.c#L101) |
 
 ## src/modules/uvquat_rom.c
 

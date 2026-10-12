@@ -101,4 +101,38 @@ void uvModelLoaderPackColorCommandWords(s32 *commandWords, u16 firstColor, u16 s
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvmodelld_rom/func_uvmodelld_rom_00400258.s")
 #line 63 "src/modules/uvmodelld_rom.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvmodelld_rom/func_uvmodelld_rom_00400D38.s")
+/* Unload each referenced UVTX and light state, then free the vertex allocation.
+ * RE_UNKNOWN: ownership of optional/recursive model records is not established;
+ * this routine does not prove that every model-owned allocation is released. */
+#line 64 "src/modules/uvmodelld_rom.c"
+void uvModelLoaderReleaseRenderResources(ParsedUVMD *modelArgument) {
+    ParsedUVMD *model;
+    ParsedUVMD_1 *part;
+    s32 lodIndex;
+    s32 stateIndex;
+    s32 partIndex;
+    uvGfxState *gfxState;
+    uvModelLOD *lod;
+    s32 textureIndex;
+
+    model = modelArgument;
+    for (partIndex = 0; partIndex < model->unk4; partIndex++) {
+        part = &model->unk0[partIndex];
+        for (lodIndex = 0; lodIndex < part->unk8; lodIndex++) {
+            lod = &part->unk0[lodIndex];
+            for (stateIndex = 0; stateIndex < lod->unk4; stateIndex++) {
+                gfxState = &lod->stateTable[stateIndex];
+                textureIndex = (gfxState->state & 0xFFF);
+                if (textureIndex != 0xFFF) {
+                    uvUnloadFile(0x55565458, textureIndex);
+                }
+                if (gfxState->unkC != -1) {
+                    D_uvmodelld_rom_00400EE0->uvLightReleaseRecord(gfxState->unkC);
+                }
+            }
+        }
+    }
+
+    _uvMemFree(model->vtxTable);
+}
+#line 65 "src/modules/uvmodelld_rom.c"

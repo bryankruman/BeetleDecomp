@@ -467,9 +467,9 @@
     "src/modules/uvlight_rom.c": "b113975b133d8d258ecd1cd8ecfe2364711ea43975bd2849d78949543f6f84fb",
     "src/modules/uvmath_rom.c": "bf028c8b69851dc8ff42ff91c90f4b05fd6bd0dcd6d55ef6d160d110d5acac0a",
     "src/modules/uvmodel_rom.c": "637e0ca79c1111af035251bda5b89d89118fad206ffea51742f0158cb38245e5",
-    "src/modules/uvmodelld_rom.c": "39667b44820e1aba5d5b6c7371d10d973e08ce44987262dd6e330d00e047ec89",
+    "src/modules/uvmodelld_rom.c": "38503d521b0986bbc37bf015047970d9e366acc0f96e2b535cd8eb5900a3d900",
     "src/modules/uvpfx_rom.c": "0b8e1ce562e82f53bba0d3b1d3cfdf02906429f3fb148b75afa3d29bd833dfd7",
-    "src/modules/uvpfxld_rom.c": "0f2bfcae57dca99ad91421d0b0a4e2bb54ce0a2ae28a75bfc16e06ff208a46bc",
+    "src/modules/uvpfxld_rom.c": "7f8193aa6ea4dac9d0a044cfda9151a7668293c5a0647b5fc7029c7dd5e063fd",
     "src/modules/uvquat_rom.c": "4138a3f8310d5aed569fe99183dc4e6eec7750373b394f581cdeb43aa1278237",
     "src/modules/uvquery_rom.c": "96639fc8b9843fcbae569435ee73fb3889a73725b7fda22ca5f7623a7e14183f",
     "src/modules/uvsort_rom.c": "bb146bf878382c9939ff7cd9073bcc55ba8152f56c5eb76298a023162e156f34",
@@ -494,21 +494,21 @@
     "src/sched.c": "26791ca9f30fd5355b11ea03a64a457757d2029595be26428c2925798105d9b4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "244c1f484e81b0be3ed18a455ac4c3e63e2e8f1d85f52373899d22711623f98d",
-    "docs/VALIDATION_20261006.md": "a0cd9968afe5546912011b4c478eeddafda478bd964d077d8ba4813e97295399"
+    "docs/STRATEGY_V4.md": "f00d89eeb620339febfa5790cb45fc347ec6d705d060596737901af78a8ffa57",
+    "docs/VALIDATION_20261006.md": "7124526e6d8925d3d6f731141d6cdbc0b44910cd25d86ead395e1dcc70ef78de"
   },
   "counts": {
-    "address_function": 907,
-    "address_global": 1521,
-    "assembly": 755,
+    "address_function": 904,
+    "address_global": 1530,
+    "assembly": 751,
     "audit_debt": 30,
     "conditional_draft": 4,
-    "decompiler_local": 619,
+    "decompiler_local": 622,
     "draft_marker": 48,
-    "explicit_unknown": 1845,
-    "layout_padding": 277,
-    "offset_field": 1703,
-    "opaque_type": 282,
+    "explicit_unknown": 1848,
+    "layout_padding": 281,
+    "offset_field": 1743,
+    "opaque_type": 283,
     "original_quirk": 493,
     "uncertainty_note": 88,
     "unused_identifier": 137
@@ -21352,74 +21352,32 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "func_uvpfx_rom_004004D0",
       "lines": [
-        171,
-        174
+        251,
+        256,
+        281,
+        288,
+        373,
+        376
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderApplySharedResourceWord",
-          "declaration_line": 164,
+          "declaration_line": 366,
           "lines": [
-            171,
-            174
+            373,
+            376
           ]
-        }
-      ]
-    },
-    {
-      "id": "Q-03e329f6a90a",
-      "kind": "address_function",
-      "path": "src/modules/uvpfxld_rom.c",
-      "symbol": "func_uvpfxld_rom_004000DC",
-      "lines": [
-        5
-      ],
-      "owners": [
+        },
         {
           "kind": "function",
-          "name": "func_uvpfxld_rom_004000DC",
-          "declaration_line": 5,
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
           "lines": [
-            5
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-c1545249fc35",
-      "kind": "address_function",
-      "path": "src/modules/uvpfxld_rom.c",
-      "symbol": "func_uvpfxld_rom_004002DC",
-      "lines": [
-        6
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvpfxld_rom_004002DC",
-          "declaration_line": 6,
-          "lines": [
-            6
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-a3b25e54caa8",
-      "kind": "address_function",
-      "path": "src/modules/uvpfxld_rom.c",
-      "symbol": "func_uvpfxld_rom_00400CD0",
-      "lines": [
-        39
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvpfxld_rom_00400CD0",
-          "declaration_line": 39,
-          "lines": [
-            39
+            251,
+            256,
+            281,
+            288
           ]
         }
       ]
@@ -71133,9 +71091,18 @@
       "path": "src/modules/uvmodelld_rom.c",
       "symbol": "D_uvmodelld_rom_00400EE0",
       "lines": [
-        5
+        5,
+        130
       ],
       "owners": [
+        {
+          "kind": "function",
+          "name": "uvModelLoaderReleaseRenderResources",
+          "declaration_line": 108,
+          "lines": [
+            130
+          ]
+        },
         {
           "kind": "global",
           "name": "D_uvmodelld_rom_00400EE0",
@@ -72127,44 +72094,270 @@
       ]
     },
     {
+      "id": "Q-b960d49e8158",
+      "kind": "address_global",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "D_uvpfx_rom_00404FA0",
+      "lines": [
+        150,
+        401
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderParseChunkStream",
+          "declaration_line": 140,
+          "lines": [
+            150
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderReleaseConfiguration",
+          "declaration_line": 396,
+          "lines": [
+            401
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-dae868516661",
+      "kind": "address_global",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "D_uvpfx_rom_00404FA4",
+      "lines": [
+        149
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderParseChunkStream",
+          "declaration_line": 140,
+          "lines": [
+            149
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-a234ea530e38",
+      "kind": "address_global",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "D_uvpfx_rom_00404FA8",
+      "lines": [
+        148,
+        187,
+        400,
+        423
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderParseChunkStream",
+          "declaration_line": 140,
+          "lines": [
+            148,
+            187
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderReleaseConfiguration",
+          "declaration_line": 396,
+          "lines": [
+            400,
+            423
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-22515172d434",
+      "kind": "address_global",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "D_uvpfxld_rom_00400E90",
+      "lines": [
+        82,
+        270
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
+          "lines": [
+            270
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_uvpfxld_rom_00400E90",
+          "declaration_line": 82,
+          "lines": [
+            82
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-c0379b62ffdb",
+      "kind": "address_global",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "D_uvpfxld_rom_00400E94",
+      "lines": [
+        83,
+        274
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
+          "lines": [
+            274
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_uvpfxld_rom_00400E94",
+          "declaration_line": 83,
+          "lines": [
+            83
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-b963cb3f1231",
+      "kind": "address_global",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "D_uvpfxld_rom_00400EA8",
+      "lines": [
+        77,
+        249,
+        250
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
+          "lines": [
+            249,
+            250
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_uvpfxld_rom_00400EA8",
+          "declaration_line": 77,
+          "lines": [
+            77
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-261afb7ccf49",
       "kind": "address_global",
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "D_uvpfxld_rom_00400EB8",
       "lines": [
-        29,
-        123,
-        129,
-        132,
-        172,
-        175
+        111,
+        148,
+        183,
+        184,
+        187,
+        214,
+        217,
+        218,
+        252,
+        257,
+        260,
+        281,
+        289,
+        290,
+        325,
+        331,
+        334,
+        374,
+        377,
+        400,
+        403,
+        409,
+        410,
+        411,
+        418,
+        423
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderApplyHeaderConfiguration",
-          "declaration_line": 109,
+          "declaration_line": 311,
           "lines": [
-            123,
-            129,
-            132
+            325,
+            331,
+            334
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxLoaderApplySharedResourceWord",
-          "declaration_line": 164,
+          "declaration_line": 366,
           "lines": [
-            172,
-            175
+            374,
+            377
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
+          "lines": [
+            214,
+            217,
+            218,
+            252,
+            257,
+            260,
+            281,
+            289,
+            290
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderParseChunkStream",
+          "declaration_line": 140,
+          "lines": [
+            148,
+            183,
+            184,
+            187
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderReleaseConfiguration",
+          "declaration_line": 396,
+          "lines": [
+            400,
+            403,
+            409,
+            410,
+            411,
+            418,
+            423
           ]
         },
         {
           "kind": "global",
           "name": "D_uvpfxld_rom_00400EB8",
-          "declaration_line": 29,
+          "declaration_line": 111,
           "lines": [
-            29
+            111
           ]
         }
       ]
@@ -72175,24 +72368,46 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "D_uvpfxld_rom_00400EBC",
       "lines": [
-        30,
-        123
+        112,
+        149,
+        183,
+        214,
+        260,
+        325
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderApplyHeaderConfiguration",
-          "declaration_line": 109,
+          "declaration_line": 311,
           "lines": [
-            123
+            325
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
+          "lines": [
+            214,
+            260
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderParseChunkStream",
+          "declaration_line": 140,
+          "lines": [
+            149,
+            183
           ]
         },
         {
           "kind": "global",
           "name": "D_uvpfxld_rom_00400EBC",
-          "declaration_line": 30,
+          "declaration_line": 112,
           "lines": [
-            30
+            112
           ]
         }
       ]
@@ -72203,33 +72418,33 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "D_uvpfxld_rom_00400EC0",
       "lines": [
-        3,
-        113,
-        148
+        85,
+        315,
+        350
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderApplyHeaderConfiguration",
-          "declaration_line": 109,
+          "declaration_line": 311,
           "lines": [
-            113
+            315
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxLoaderCopyIntoSharedWordBuffer",
-          "declaration_line": 147,
+          "declaration_line": 349,
           "lines": [
-            148
+            350
           ]
         },
         {
           "kind": "global",
           "name": "D_uvpfxld_rom_00400EC0",
-          "declaration_line": 3,
+          "declaration_line": 85,
           "lines": [
-            3
+            85
           ]
         }
       ]
@@ -72240,24 +72455,24 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "D_uvpfxld_rom_00400EC4",
       "lines": [
-        31,
-        114
+        113,
+        316
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderApplyHeaderConfiguration",
-          "declaration_line": 109,
+          "declaration_line": 311,
           "lines": [
-            114
+            316
           ]
         },
         {
           "kind": "global",
           "name": "D_uvpfxld_rom_00400EC4",
-          "declaration_line": 31,
+          "declaration_line": 113,
           "lines": [
-            31
+            113
           ]
         }
       ]
@@ -72268,24 +72483,35 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "D_uvpfxld_rom_00400EC8",
       "lines": [
-        36,
-        170
+        118,
+        209,
+        262,
+        372
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderApplySharedResourceWord",
-          "declaration_line": 164,
+          "declaration_line": 366,
           "lines": [
-            170
+            372
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
+          "lines": [
+            209,
+            262
           ]
         },
         {
           "kind": "global",
           "name": "D_uvpfxld_rom_00400EC8",
-          "declaration_line": 36,
+          "declaration_line": 118,
           "lines": [
-            36
+            118
           ]
         }
       ]
@@ -72296,26 +72522,71 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "D_uvpfxld_rom_00400EE0",
       "lines": [
-        32,
-        129,
-        132
+        114,
+        150,
+        217,
+        218,
+        290,
+        331,
+        334,
+        401,
+        404,
+        405,
+        406,
+        408,
+        412,
+        413,
+        414
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderApplyHeaderConfiguration",
-          "declaration_line": 109,
+          "declaration_line": 311,
           "lines": [
-            129,
-            132
+            331,
+            334
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
+          "lines": [
+            217,
+            218,
+            290
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderParseChunkStream",
+          "declaration_line": 140,
+          "lines": [
+            150
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderReleaseConfiguration",
+          "declaration_line": 396,
+          "lines": [
+            401,
+            404,
+            405,
+            406,
+            408,
+            412,
+            413,
+            414
           ]
         },
         {
           "kind": "global",
           "name": "D_uvpfxld_rom_00400EE0",
-          "declaration_line": 32,
+          "declaration_line": 114,
           "lines": [
-            32
+            114
           ]
         }
       ]
@@ -72326,65 +72597,139 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "D_uvpfxld_rom_00400EE4",
       "lines": [
-        40,
-        115,
-        117,
-        118,
-        119,
-        120,
-        121,
         122,
-        130,
-        148,
-        169,
-        185
+        182,
+        189,
+        210,
+        211,
+        213,
+        219,
+        222,
+        225,
+        226,
+        227,
+        228,
+        229,
+        232,
+        233,
+        235,
+        236,
+        237,
+        239,
+        240,
+        241,
+        242,
+        243,
+        244,
+        245,
+        246,
+        247,
+        248,
+        249,
+        259,
+        291,
+        317,
+        319,
+        320,
+        321,
+        322,
+        323,
+        324,
+        332,
+        350,
+        371,
+        387
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderApplyHeaderConfiguration",
-          "declaration_line": 109,
+          "declaration_line": 311,
           "lines": [
-            115,
-            117,
-            118,
-            119,
-            120,
-            121,
-            122,
-            130
+            317,
+            319,
+            320,
+            321,
+            322,
+            323,
+            324,
+            332
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxLoaderApplySharedResourceWord",
-          "declaration_line": 164,
+          "declaration_line": 366,
           "lines": [
-            169
+            371
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
+          "lines": [
+            210,
+            211,
+            213,
+            219,
+            222,
+            225,
+            226,
+            227,
+            228,
+            229,
+            232,
+            233,
+            235,
+            236,
+            237,
+            239,
+            240,
+            241,
+            242,
+            243,
+            244,
+            245,
+            246,
+            247,
+            248,
+            249,
+            259,
+            291
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxLoaderCopyIntoSharedWordBuffer",
-          "declaration_line": 147,
+          "declaration_line": 349,
           "lines": [
-            148
+            350
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderParseChunkStream",
+          "declaration_line": 140,
+          "lines": [
+            182,
+            189
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxLoaderSetConfigShortFromWord",
-          "declaration_line": 184,
+          "declaration_line": 386,
           "lines": [
-            185
+            387
           ]
         },
         {
           "kind": "global",
           "name": "D_uvpfxld_rom_00400EE4",
-          "declaration_line": 40,
+          "declaration_line": 122,
           "lines": [
-            40
+            122
           ]
         }
       ]
@@ -72395,24 +72740,146 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "D_uvpfxld_rom_00400EE8",
       "lines": [
-        33,
-        124
+        115,
+        216,
+        217,
+        261,
+        263,
+        265,
+        267,
+        268,
+        270,
+        272,
+        274,
+        275,
+        276,
+        277,
+        278,
+        279,
+        280,
+        285,
+        286,
+        287,
+        326
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderApplyHeaderConfiguration",
-          "declaration_line": 109,
+          "declaration_line": 311,
           "lines": [
-            124
+            326
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
+          "lines": [
+            216,
+            217,
+            261,
+            263,
+            265,
+            267,
+            268,
+            270,
+            272,
+            274,
+            275,
+            276,
+            277,
+            278,
+            279,
+            280,
+            285,
+            286,
+            287
           ]
         },
         {
           "kind": "global",
           "name": "D_uvpfxld_rom_00400EE8",
-          "declaration_line": 33,
+          "declaration_line": 115,
           "lines": [
-            33
+            115
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-688d0f843239",
+      "kind": "address_global",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "D_uvpfxld_rom_004012E8",
+      "lines": [
+        78,
+        278
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
+          "lines": [
+            278
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_uvpfxld_rom_004012E8",
+          "declaration_line": 78,
+          "lines": [
+            78
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-55507bc6ba92",
+      "kind": "address_global",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "D_uvpfxld_rom_004012EC",
+      "lines": [
+        79
+      ],
+      "owners": [
+        {
+          "kind": "global",
+          "name": "D_uvpfxld_rom_004012EC",
+          "declaration_line": 79,
+          "lines": [
+            79
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-034e9f62b5a5",
+      "kind": "address_global",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "D_uvpfxld_rom_004012F0",
+      "lines": [
+        80,
+        279,
+        280
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
+          "lines": [
+            279,
+            280
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_uvpfxld_rom_004012F0",
+          "declaration_line": 80,
+          "lines": [
+            80
           ]
         }
       ]
@@ -72423,26 +72890,69 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "D_uvpfxld_rom_004012F4",
       "lines": [
-        37,
-        171,
-        174
+        119,
+        148,
+        149,
+        150,
+        187,
+        251,
+        256,
+        281,
+        288,
+        373,
+        376,
+        400,
+        401,
+        423
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderApplySharedResourceWord",
-          "declaration_line": 164,
+          "declaration_line": 366,
           "lines": [
-            171,
-            174
+            373,
+            376
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
+          "lines": [
+            251,
+            256,
+            281,
+            288
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderParseChunkStream",
+          "declaration_line": 140,
+          "lines": [
+            148,
+            149,
+            150,
+            187
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderReleaseConfiguration",
+          "declaration_line": 396,
+          "lines": [
+            400,
+            401,
+            423
           ]
         },
         {
           "kind": "global",
           "name": "D_uvpfxld_rom_004012F4",
-          "declaration_line": 37,
+          "declaration_line": 119,
           "lines": [
-            37
+            119
           ]
         }
       ]
@@ -84588,16 +85098,6 @@
       "evidence": "asm/us/nonmatchings/modules/uvmodelld_rom/func_uvmodelld_rom_00400258.s"
     },
     {
-      "id": "Q-a35d39e10207",
-      "kind": "assembly",
-      "path": "src/modules/uvmodelld_rom.c",
-      "symbol": "func_uvmodelld_rom_00400D38",
-      "lines": [
-        104
-      ],
-      "evidence": "asm/us/nonmatchings/modules/uvmodelld_rom/func_uvmodelld_rom_00400D38.s"
-    },
-    {
       "id": "Q-0d648d15f6ff",
       "kind": "assembly",
       "path": "src/modules/uvpfx_rom.c",
@@ -84663,39 +85163,9 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "__entrypoint_func_uvpfxld_rom_400000",
       "lines": [
-        41
+        123
       ],
       "evidence": "asm/us/nonmatchings/modules/uvpfxld_rom/__entrypoint_func_uvpfxld_rom_400000.s"
-    },
-    {
-      "id": "Q-090828168021",
-      "kind": "assembly",
-      "path": "src/modules/uvpfxld_rom.c",
-      "symbol": "func_uvpfxld_rom_004000DC",
-      "lines": [
-        69
-      ],
-      "evidence": "asm/us/nonmatchings/modules/uvpfxld_rom/func_uvpfxld_rom_004000DC.s"
-    },
-    {
-      "id": "Q-73432ceeef82",
-      "kind": "assembly",
-      "path": "src/modules/uvpfxld_rom.c",
-      "symbol": "func_uvpfxld_rom_004002DC",
-      "lines": [
-        94
-      ],
-      "evidence": "asm/us/nonmatchings/modules/uvpfxld_rom/func_uvpfxld_rom_004002DC.s"
-    },
-    {
-      "id": "Q-7f4061598c39",
-      "kind": "assembly",
-      "path": "src/modules/uvpfxld_rom.c",
-      "symbol": "func_uvpfxld_rom_00400CD0",
-      "lines": [
-        189
-      ],
-      "evidence": "asm/us/nonmatchings/modules/uvpfxld_rom/func_uvpfxld_rom_00400CD0.s"
     },
     {
       "id": "Q-3bb2dd6a7232",
@@ -111460,6 +111930,63 @@
             279,
             280,
             281
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-12b5850bef3b",
+      "kind": "decompiler_local",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "temp_a0",
+      "lines": [
+        204
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
+          "lines": [
+            204
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-069399bac818",
+      "kind": "decompiler_local",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "temp_v0",
+      "lines": [
+        205
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
+          "lines": [
+            205
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-fb2f7955bb1a",
+      "kind": "decompiler_local",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "temp_v0_2",
+      "lines": [
+        203
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
+          "lines": [
+            203
           ]
         }
       ]
@@ -148415,6 +148942,26 @@
       ]
     },
     {
+      "id": "Q-a90885c79f24",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvmodelld_rom.c",
+      "symbol": "Unload each referenced UVTX and light state, then free the vertex allocation. * RE_UNKNOWN: ownership of optional/recursive model records is not established; * this routine does not prove that every model-owned allocation is released.",
+      "lines": [
+        104
+      ],
+      "evidence": "Unload each referenced UVTX and light state, then free the vertex allocation. * RE_UNKNOWN: ownership of optional/recursive model records is not established; * this routine does not prove that every model-owned allocation is released.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvModelLoaderReleaseRenderResources",
+          "declaration_line": 108,
+          "lines": [
+            104
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-4061e4004917",
       "kind": "explicit_unknown",
       "path": "src/modules/uvpfx_rom.c",
@@ -148495,21 +149042,41 @@
       ]
     },
     {
+      "id": "Q-ea17db52a12c",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "Allocate and publish shared/per-particle records, then apply original UPFX * properties and FMTX/FVEC initialization with unchanged float promotions. * RE_ORIGINAL_QUIRK: capacity failure frees only the shared record without * clearing its pointer or releasing earlier published particles. The kind-2 * path leaves shared+0x30 untouched; another path allocates count*4 bytes then * copies 16 bytes unconditionally. RE_UNKNOWN: asset domains and ownership. * Unused compiler declarations temp_v0_2, temp_a0, temp_v0 and temp are * preserved; their intended source roles remain unknown.",
+      "lines": [
+        193
+      ],
+      "evidence": "Allocate and publish shared/per-particle records, then apply original UPFX * properties and FMTX/FVEC initialization with unchanged float promotions. * RE_ORIGINAL_QUIRK: capacity failure frees only the shared record without * clearing its pointer or releasing earlier published particles. The kind-2 * path leaves shared+0x30 untouched; another path allocates count*4 bytes then * copies 16 bytes unconditionally. RE_UNKNOWN: asset domains and ownership. * Unused compiler declarations temp_v0_2, temp_a0, temp_v0 and temp are * preserved; their intended source roles remain unknown.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
+          "lines": [
+            193
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-ee6d9e47986a",
       "kind": "explicit_unknown",
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "Apply one caller-word snapshot to every configured particle. The original * shared selector chooses property 0x1008 (UVTX-ID path) or 0x1013 (TSEQ path). * Preserve the signed count and shared selector/base/export reloads across * each variadic setter, including any original callbacks/module calls. * RE_UNKNOWN: valid configured count/base IDs, meaning of the selector mode * and caller-word resource/lifetime guarantees. Trace loader configuration, * particle allocation and original callback callers before adding validation * or interpreting the mode. The complete historical pointer declaration is * unknown; this view describes the observed aligned 32-bit input-word read.",
       "lines": [
-        155
+        357
       ],
       "evidence": "Apply one caller-word snapshot to every configured particle. The original * shared selector chooses property 0x1008 (UVTX-ID path) or 0x1013 (TSEQ path). * Preserve the signed count and shared selector/base/export reloads across * each variadic setter, including any original callbacks/module calls. * RE_UNKNOWN: valid configured count/base IDs, meaning of the selector mode * and caller-word resource/lifetime guarantees. Trace loader configuration, * particle allocation and original callback callers before adding validation * or interpreting the mode. The complete historical pointer declaration is * unknown; this view describes the observed aligned 32-bit input-word read.",
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderApplySharedResourceWord",
-          "declaration_line": 164,
+          "declaration_line": 366,
           "lines": [
-            155
+            357
           ]
         }
       ]
@@ -148520,16 +149087,16 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "Apply the original PHDR block to shared loader configuration and each * configured particle. Allocate the two-byte item buffer, preserve short * narrowing and reciprocal arithmetic, and allocate Vec3F storage only for * secondary kind 9. A nonzero state scalar keeps its original value. * RE_UNKNOWN: physical scalar units, value08/secondary-kind meanings and * caller guarantees for reciprocalSource, counts and block ordering. Trace * original PHDR assets and the COMMON producer before changing arithmetic, * bounds or initialization. The COMMON allocation and particle-state table * must already exist on this path; their lifetime/aliasing contracts remain * unresolved. Preserve reloads across original allocations and mutations.",
       "lines": [
-        99
+        301
       ],
       "evidence": "Apply the original PHDR block to shared loader configuration and each * configured particle. Allocate the two-byte item buffer, preserve short * narrowing and reciprocal arithmetic, and allocate Vec3F storage only for * secondary kind 9. A nonzero state scalar keeps its original value. * RE_UNKNOWN: physical scalar units, value08/secondary-kind meanings and * caller guarantees for reciprocalSource, counts and block ordering. Trace * original PHDR assets and the COMMON producer before changing arithmetic, * bounds or initialization. The COMMON allocation and particle-state table * must already exist on this path; their lifetime/aliasing contracts remain * unresolved. Preserve reloads across original allocations and mutations.",
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderApplyHeaderConfiguration",
-          "declaration_line": 109,
+          "declaration_line": 311,
           "lines": [
-            99
+            301
           ]
         }
       ]
@@ -148540,59 +149107,49 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "Copy sharedCount*2 bytes to the address stored at shared configuration offset * 0x30. The reviewed header-configuration producer allocates the same count*2 * byte size; this wrapper independently reads the current shared count and pointer. * RE_UNKNOWN: valid signed counts, overflow, capacity, producer-before-copy order * and source/destination lifetime are unproved. Preserve the raw destination word * and arithmetic; the historical word-buffer name does not establish element type.",
       "lines": [
-        140
+        342
       ],
       "evidence": "Copy sharedCount*2 bytes to the address stored at shared configuration offset * 0x30. The reviewed header-configuration producer allocates the same count*2 * byte size; this wrapper independently reads the current shared count and pointer. * RE_UNKNOWN: valid signed counts, overflow, capacity, producer-before-copy order * and source/destination lifetime are unproved. Preserve the raw destination word * and arithmetic; the historical word-buffer name does not establish element type.",
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderCopyIntoSharedWordBuffer",
-          "declaration_line": 147,
+          "declaration_line": 349,
           "lines": [
-            140
+            342
           ]
         }
       ]
     },
     {
-      "id": "Q-560fd80292b3",
+      "id": "Q-5df35bfc8dab",
       "kind": "explicit_unknown",
       "path": "src/modules/uvpfxld_rom.c",
-      "symbol": "Original COMMON block setup: allocate the shared record, narrow its particle * count to signed 16 bits, allocate/publish per-particle records, then initialize * shared and particle fields through the original UPFX, FMTX and FVEC exports. * Preserve count/global-pointer reloads, publication order and float-to-double * promotions in the tagged UPFX calls. A zero shared short at offset 0x24 causes * the input float at offset 0x30 to be overwritten with 1.0f. * RE_ORIGINAL_QUIRK: capacity failure frees the shared allocation after earlier * particle records may have been published, without clearing the shared pointer * or freeing those particle allocations here. The kind-2 path leaves the shared * word-buffer field untouched; shared property calls still run for nonpositive * narrowed particle counts. No reachable asset/caller failure is established. * RE_UNKNOWN: historical COMMON layout/selector meanings, physical units, valid * signed counts/base IDs, allocation failures, block order and ownership/alias * lifetimes. The signed secondary count allocates count * 4 bytes before an * unconditional 16-byte defaults copy; the asset minimum-count guarantee and * buffer capacity remain unproved. Trace original readers, assets, allocator and * cleanup callers before changing initialization, bounds or failure handling. * Readable reconstruction is parked: native 1720 bytes versus draft 1716 after * correcting four float-literal promotions. Native publication-load timing and * the later fresh-zero transfer/register schedule still differ; full relocation * records also move with the missing instruction. Preserve native code until * actual source/lifetime evidence resolves the mismatch.",
+      "symbol": "Dispatch COMM/TEXT/PIID/PHDR/PDAT blocks through the existing loader helpers. * Publish the bounded active-count increments and reload the shared result * after reader release. RE_ORIGINAL_QUIRK: unknown nonzero blocks skip this * routine's consumer and free. RE_UNKNOWN: valid chunk order and ownership.",
       "lines": [
-        71
+        135
       ],
-      "evidence": "Original COMMON block setup: allocate the shared record, narrow its particle * count to signed 16 bits, allocate/publish per-particle records, then initialize * shared and particle fields through the original UPFX, FMTX and FVEC exports. * Preserve count/global-pointer reloads, publication order and float-to-double * promotions in the tagged UPFX calls. A zero shared short at offset 0x24 causes * the input float at offset 0x30 to be overwritten with 1.0f. * RE_ORIGINAL_QUIRK: capacity failure frees the shared allocation after earlier * particle records may have been published, without clearing the shared pointer * or freeing those particle allocations here. The kind-2 path leaves the shared * word-buffer field untouched; shared property calls still run for nonpositive * narrowed particle counts. No reachable asset/caller failure is established. * RE_UNKNOWN: historical COMMON layout/selector meanings, physical units, valid * signed counts/base IDs, allocation failures, block order and ownership/alias * lifetimes. The signed secondary count allocates count * 4 bytes before an * unconditional 16-byte defaults copy; the asset minimum-count guarantee and * buffer capacity remain unproved. Trace original readers, assets, allocator and * cleanup callers before changing initialization, bounds or failure handling. * Readable reconstruction is parked: native 1720 bytes versus draft 1716 after * correcting four float-literal promotions. Native publication-load timing and * the later fresh-zero transfer/register schedule still differ; full relocation * records also move with the missing instruction. Preserve native code until * actual source/lifetime evidence resolves the mismatch.",
+      "evidence": "Dispatch COMM/TEXT/PIID/PHDR/PDAT blocks through the existing loader helpers. * Publish the bounded active-count increments and reload the shared result * after reader release. RE_ORIGINAL_QUIRK: unknown nonzero blocks skip this * routine's consumer and free. RE_UNKNOWN: valid chunk order and ownership.",
       "owners": [
         {
-          "kind": "assembly",
-          "name": "func_uvpfxld_rom_004002DC",
-          "declaration_line": 94,
+          "kind": "function",
+          "name": "uvPfxLoaderParseChunkStream",
+          "declaration_line": 140,
           "lines": [
-            71
+            135
           ]
         }
       ]
     },
     {
-      "id": "Q-a4419e001d62",
+      "id": "Q-1899ff40a01b",
       "kind": "explicit_unknown",
       "path": "src/modules/uvpfxld_rom.c",
-      "symbol": "Read and dispatch original COMM/TEXT/PIID/PHDR/PDAT particle blocks. * UPFX export slots 0x40/0x44/0x48 provide the descriptor-array pointer, * capacity and active-count words. Advance the shared active count once per * signed configured count while below capacity, publish it, release the reader * and return the shared configuration pointer reloaded after that release. * RE_ORIGINAL_QUIRK: unrecognized nonzero tags skip this routine's block * consumer and free. The original-matching reader allocates nonzero blocks; * reader release only clears its file slot. Preserve the observed path. * RE_UNKNOWN: original particle asset chunk set/order and COMMON-before-use * guarantee, count/capacity domains and returned configuration ownership. * Trace original assets and loader callers/allocation lifetimes before adding * validation or claiming the unrecognized-tag allocation path is reachable. * RE_UNKNOWN: historical declaration/storage organization of actual reader * size/data locals. Readable C has identical operations and relocations but * different stack homes; retain original assembly without fabricated padding.",
+      "symbol": "RE_UNKNOWN: observed widths/offsets only; unk field meanings unresolved. ASM owns storage.",
       "lines": [
-        53
+        3
       ],
-      "evidence": "Read and dispatch original COMM/TEXT/PIID/PHDR/PDAT particle blocks. * UPFX export slots 0x40/0x44/0x48 provide the descriptor-array pointer, * capacity and active-count words. Advance the shared active count once per * signed configured count while below capacity, publish it, release the reader * and return the shared configuration pointer reloaded after that release. * RE_ORIGINAL_QUIRK: unrecognized nonzero tags skip this routine's block * consumer and free. The original-matching reader allocates nonzero blocks; * reader release only clears its file slot. Preserve the observed path. * RE_UNKNOWN: original particle asset chunk set/order and COMMON-before-use * guarantee, count/capacity domains and returned configuration ownership. * Trace original assets and loader callers/allocation lifetimes before adding * validation or claiming the unrecognized-tag allocation path is reachable. * RE_UNKNOWN: historical declaration/storage organization of actual reader * size/data locals. Readable C has identical operations and relocations but * different stack homes; retain original assembly without fabricated padding.",
-      "owners": [
-        {
-          "kind": "assembly",
-          "name": "func_uvpfxld_rom_004000DC",
-          "declaration_line": 69,
-          "lines": [
-            53
-          ]
-        }
-      ]
+      "evidence": "RE_UNKNOWN: observed widths/offsets only; unk field meanings unresolved. ASM owns storage."
     },
     {
       "id": "Q-e60b588f2c0a",
@@ -148600,16 +149157,36 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "Read the supplied word and narrow it into loader short+2. RE_UNKNOWN: source * and loader storage/lifetime need original configuration producers and callers.",
       "lines": [
-        182
+        384
       ],
       "evidence": "Read the supplied word and narrow it into loader short+2. RE_UNKNOWN: source * and loader storage/lifetime need original configuration producers and callers.",
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderSetConfigShortFromWord",
-          "declaration_line": 184,
+          "declaration_line": 386,
           "lines": [
-            182
+            384
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-1ded17be5367",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "Remove every descriptor belonging to the supplied configuration, shifting * the remaining descriptor words after each removal. Publish the final count, * then free the original nested buffers and shared configuration in order. * RE_UNKNOWN: alias lifetimes and allocation-failure guarantees remain held.",
+      "lines": [
+        391
+      ],
+      "evidence": "Remove every descriptor belonging to the supplied configuration, shifting * the remaining descriptor words after each removal. Publish the final count, * then free the original nested buffers and shared configuration in order. * RE_UNKNOWN: alias lifetimes and allocation-failure guarantees remain held.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderReleaseConfiguration",
+          "declaration_line": 396,
+          "lines": [
+            391
           ]
         }
       ]
@@ -159518,6 +160095,82 @@
           "declaration_line": 1181,
           "lines": [
             1187
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-bab2b7f2ddb8",
+      "kind": "layout_padding",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "pad15",
+      "lines": [
+        32
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "PfxLoaderCommonView",
+          "declaration_line": 22,
+          "lines": [
+            32
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-aa8a28dca015",
+      "kind": "layout_padding",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "pad16",
+      "lines": [
+        19
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "PfxLoaderSecondaryView",
+          "declaration_line": 8,
+          "lines": [
+            19
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-d34bf0459972",
+      "kind": "layout_padding",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "pad2",
+      "lines": [
+        10
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "PfxLoaderSecondaryView",
+          "declaration_line": 8,
+          "lines": [
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-d9ac9cacf2c6",
+      "kind": "layout_padding",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "pad26",
+      "lines": [
+        40
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "PfxLoaderCommonView",
+          "declaration_line": 22,
+          "lines": [
+            40
           ]
         }
       ]
@@ -213564,6 +214217,88 @@
       ]
     },
     {
+      "id": "Q-dc6522de750b",
+      "kind": "offset_field",
+      "path": "src/modules/uvmodelld_rom.c",
+      "symbol": "unk0",
+      "lines": [
+        120,
+        122
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvModelLoaderReleaseRenderResources",
+          "declaration_line": 108,
+          "lines": [
+            120,
+            122
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-cb5665456b5b",
+      "kind": "offset_field",
+      "path": "src/modules/uvmodelld_rom.c",
+      "symbol": "unk4",
+      "lines": [
+        119,
+        123
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvModelLoaderReleaseRenderResources",
+          "declaration_line": 108,
+          "lines": [
+            119,
+            123
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-b8e7adf78a35",
+      "kind": "offset_field",
+      "path": "src/modules/uvmodelld_rom.c",
+      "symbol": "unk8",
+      "lines": [
+        121
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvModelLoaderReleaseRenderResources",
+          "declaration_line": 108,
+          "lines": [
+            121
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-29acd40a7cd7",
+      "kind": "offset_field",
+      "path": "src/modules/uvmodelld_rom.c",
+      "symbol": "unkC",
+      "lines": [
+        129,
+        130
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvModelLoaderReleaseRenderResources",
+          "declaration_line": 108,
+          "lines": [
+            129,
+            130
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-59d82b36b71a",
       "kind": "offset_field",
       "path": "src/modules/uvpfx_rom.c",
@@ -215640,15 +216375,87 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "unk0",
       "lines": [
-        118
+        9,
+        23,
+        48,
+        182,
+        211,
+        213,
+        218,
+        234,
+        244,
+        248,
+        259,
+        284,
+        291,
+        320,
+        404,
+        412
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderApplyHeaderConfiguration",
-          "declaration_line": 109,
+          "declaration_line": 311,
           "lines": [
-            118
+            320
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
+          "lines": [
+            211,
+            213,
+            218,
+            234,
+            244,
+            248,
+            259,
+            284,
+            291
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderParseChunkStream",
+          "declaration_line": 140,
+          "lines": [
+            182
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderReleaseConfiguration",
+          "declaration_line": 396,
+          "lines": [
+            404,
+            412
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "PfxLoaderCommonView",
+          "declaration_line": 22,
+          "lines": [
+            23
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "PfxLoaderSecondaryView",
+          "declaration_line": 8,
+          "lines": [
+            9
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "UVPXData",
+          "declaration_line": 47,
+          "lines": [
+            48
           ]
         }
       ]
@@ -215659,15 +216466,15 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "unk02",
       "lines": [
-        23
+        105
       ],
       "owners": [
         {
           "kind": "type",
           "name": "PfxLoaderHeaderConfig",
-          "declaration_line": 21,
+          "declaration_line": 103,
           "lines": [
-            23
+            105
           ]
         }
       ]
@@ -215678,17 +216485,57 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "unk10",
       "lines": [
-        125,
-        126
+        16,
+        29,
+        52,
+        243,
+        270,
+        272,
+        327,
+        328
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderApplyHeaderConfiguration",
-          "declaration_line": 109,
+          "declaration_line": 311,
           "lines": [
-            125,
-            126
+            327,
+            328
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
+          "lines": [
+            243,
+            270,
+            272
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "PfxLoaderCommonView",
+          "declaration_line": 22,
+          "lines": [
+            29
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "PfxLoaderSecondaryView",
+          "declaration_line": 8,
+          "lines": [
+            16
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "UVPXData",
+          "declaration_line": 47,
+          "lines": [
+            52
           ]
         }
       ]
@@ -215699,15 +216546,659 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "unk12",
       "lines": [
-        25
+        17,
+        30,
+        107
       ],
       "owners": [
         {
           "kind": "type",
-          "name": "PfxLoaderHeaderConfig",
-          "declaration_line": 21,
+          "name": "PfxLoaderCommonView",
+          "declaration_line": 22,
           "lines": [
-            25
+            30
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "PfxLoaderHeaderConfig",
+          "declaration_line": 103,
+          "lines": [
+            107
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "PfxLoaderSecondaryView",
+          "declaration_line": 8,
+          "lines": [
+            17
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-e4cef627ec35",
+      "kind": "offset_field",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "unk14",
+      "lines": [
+        18,
+        31,
+        53,
+        209,
+        286
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
+          "lines": [
+            209,
+            286
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "PfxLoaderCommonView",
+          "declaration_line": 22,
+          "lines": [
+            31
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "PfxLoaderSecondaryView",
+          "declaration_line": 8,
+          "lines": [
+            18
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "UVPXData",
+          "declaration_line": 47,
+          "lines": [
+            53
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-859e9dd49cea",
+      "kind": "offset_field",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "unk16",
+      "lines": [
+        33
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "PfxLoaderCommonView",
+          "declaration_line": 22,
+          "lines": [
+            33
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-7abf1d9db5ef",
+      "kind": "offset_field",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "unk18",
+      "lines": [
+        20,
+        34,
+        54,
+        227,
+        245,
+        287
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
+          "lines": [
+            227,
+            245,
+            287
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "PfxLoaderCommonView",
+          "declaration_line": 22,
+          "lines": [
+            34
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "PfxLoaderSecondaryView",
+          "declaration_line": 8,
+          "lines": [
+            20
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "UVPXData",
+          "declaration_line": 47,
+          "lines": [
+            54
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-34e4f3d11864",
+      "kind": "offset_field",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "unk1A",
+      "lines": [
+        35
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "PfxLoaderCommonView",
+          "declaration_line": 22,
+          "lines": [
+            35
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-9d8479a5aac5",
+      "kind": "offset_field",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "unk1C",
+      "lines": [
+        36,
+        55,
+        253,
+        283
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
+          "lines": [
+            253,
+            283
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "PfxLoaderCommonView",
+          "declaration_line": 22,
+          "lines": [
+            36
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "UVPXData",
+          "declaration_line": 47,
+          "lines": [
+            55
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-d220056bbdf9",
+      "kind": "offset_field",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "unk1E",
+      "lines": [
+        37,
+        225
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
+          "lines": [
+            225
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "PfxLoaderCommonView",
+          "declaration_line": 22,
+          "lines": [
+            37
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-2d083f4af5f0",
+      "kind": "offset_field",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "unk2",
+      "lines": [
+        24
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "PfxLoaderCommonView",
+          "declaration_line": 22,
+          "lines": [
+            24
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-8d26ecc07dfe",
+      "kind": "offset_field",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "unk20",
+      "lines": [
+        38,
+        56,
+        253,
+        283
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
+          "lines": [
+            253,
+            283
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "PfxLoaderCommonView",
+          "declaration_line": 22,
+          "lines": [
+            38
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "UVPXData",
+          "declaration_line": 47,
+          "lines": [
+            56
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-7ba44125381f",
+      "kind": "offset_field",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "unk22",
+      "lines": [
+        285
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
+          "lines": [
+            285
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-a5c494bed0b2",
+      "kind": "offset_field",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "unk24",
+      "lines": [
+        39,
+        57,
+        227,
+        229,
+        254,
+        275,
+        283
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
+          "lines": [
+            227,
+            229,
+            254,
+            275,
+            283
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "PfxLoaderCommonView",
+          "declaration_line": 22,
+          "lines": [
+            39
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "UVPXData",
+          "declaration_line": 47,
+          "lines": [
+            57
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-324118a26d70",
+      "kind": "offset_field",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "unk28",
+      "lines": [
+        41,
+        58,
+        237,
+        242,
+        244,
+        245,
+        246,
+        247,
+        248,
+        249,
+        257,
+        261,
+        291,
+        427,
+        428,
+        432
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
+          "lines": [
+            237,
+            242,
+            244,
+            245,
+            246,
+            247,
+            248,
+            249,
+            257,
+            261,
+            291
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderReleaseConfiguration",
+          "declaration_line": 396,
+          "lines": [
+            427,
+            428,
+            432
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "PfxLoaderCommonView",
+          "declaration_line": 22,
+          "lines": [
+            41
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "UVPXData",
+          "declaration_line": 47,
+          "lines": [
+            58
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-4e476067d223",
+      "kind": "offset_field",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "unk2A",
+      "lines": [
+        263,
+        265
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
+          "lines": [
+            263,
+            265
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-5d2038b04991",
+      "kind": "offset_field",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "unk2C",
+      "lines": [
+        42,
+        59,
+        236,
+        240,
+        252,
+        267,
+        424,
+        425
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
+          "lines": [
+            236,
+            240,
+            252,
+            267
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderReleaseConfiguration",
+          "declaration_line": 396,
+          "lines": [
+            424,
+            425
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "PfxLoaderCommonView",
+          "declaration_line": 22,
+          "lines": [
+            42
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "UVPXData",
+          "declaration_line": 47,
+          "lines": [
+            59
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-02027da40eca",
+      "kind": "offset_field",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "unk30",
+      "lines": [
+        43,
+        60,
+        230,
+        241,
+        252,
+        434,
+        435
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
+          "lines": [
+            230,
+            241,
+            252
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderReleaseConfiguration",
+          "declaration_line": 396,
+          "lines": [
+            434,
+            435
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "PfxLoaderCommonView",
+          "declaration_line": 22,
+          "lines": [
+            43
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "UVPXData",
+          "declaration_line": 47,
+          "lines": [
+            60
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-feb7bfaf04e2",
+      "kind": "offset_field",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "unk34",
+      "lines": [
+        44,
+        61,
+        226,
+        245
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
+          "lines": [
+            226,
+            245
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "PfxLoaderCommonView",
+          "declaration_line": 22,
+          "lines": [
+            44
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "UVPXData",
+          "declaration_line": 47,
+          "lines": [
+            61
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-79ff57fa3f8c",
+      "kind": "offset_field",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "unk38",
+      "lines": [
+        45,
+        62,
+        243
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
+          "lines": [
+            243
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "PfxLoaderCommonView",
+          "declaration_line": 22,
+          "lines": [
+            45
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "UVPXData",
+          "declaration_line": 47,
+          "lines": [
+            62
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-ae420745e40d",
+      "kind": "offset_field",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "unk3C",
+      "lines": [
+        63,
+        244
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
+          "lines": [
+            244
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "UVPXData",
+          "declaration_line": 47,
+          "lines": [
+            63
           ]
         }
       ]
@@ -215718,15 +217209,431 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "unk4",
       "lines": [
-        121
+        11,
+        25,
+        49,
+        217,
+        228,
+        235,
+        239,
+        247,
+        249,
+        268,
+        323,
+        408,
+        413,
+        428
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderApplyHeaderConfiguration",
-          "declaration_line": 109,
+          "declaration_line": 311,
           "lines": [
-            121
+            323
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
+          "lines": [
+            217,
+            228,
+            235,
+            239,
+            247,
+            249,
+            268
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderReleaseConfiguration",
+          "declaration_line": 396,
+          "lines": [
+            408,
+            413,
+            428
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "PfxLoaderCommonView",
+          "declaration_line": 22,
+          "lines": [
+            25
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "PfxLoaderSecondaryView",
+          "declaration_line": 8,
+          "lines": [
+            11
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "UVPXData",
+          "declaration_line": 47,
+          "lines": [
+            49
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-b10f29828162",
+      "kind": "offset_field",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "unk40",
+      "lines": [
+        64,
+        257
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
+          "lines": [
+            257
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "UVPXData",
+          "declaration_line": 47,
+          "lines": [
+            64
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-09fb8e0ed168",
+      "kind": "offset_field",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "unk44",
+      "lines": [
+        65,
+        257
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
+          "lines": [
+            257
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "UVPXData",
+          "declaration_line": 47,
+          "lines": [
+            65
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-d0d09ffd6239",
+      "kind": "offset_field",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "unk48",
+      "lines": [
+        66,
+        258
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
+          "lines": [
+            258
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "UVPXData",
+          "declaration_line": 47,
+          "lines": [
+            66
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-7f15e06c55c2",
+      "kind": "offset_field",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "unk4C",
+      "lines": [
+        67,
+        258
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
+          "lines": [
+            258
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "UVPXData",
+          "declaration_line": 47,
+          "lines": [
+            67
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-3e7670bf286d",
+      "kind": "offset_field",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "unk50",
+      "lines": [
+        68,
+        252
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
+          "lines": [
+            252
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "UVPXData",
+          "declaration_line": 47,
+          "lines": [
+            68
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-016afee92556",
+      "kind": "offset_field",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "unk54",
+      "lines": [
+        69,
+        253
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
+          "lines": [
+            253
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "UVPXData",
+          "declaration_line": 47,
+          "lines": [
+            69
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-b8a6a6d434db",
+      "kind": "offset_field",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "unk58",
+      "lines": [
+        70,
+        253
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
+          "lines": [
+            253
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "UVPXData",
+          "declaration_line": 47,
+          "lines": [
+            70
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-c906bd08c94d",
+      "kind": "offset_field",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "unk5C",
+      "lines": [
+        71,
+        253
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
+          "lines": [
+            253
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "UVPXData",
+          "declaration_line": 47,
+          "lines": [
+            71
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-0303abc7f5ab",
+      "kind": "offset_field",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "unk6",
+      "lines": [
+        26,
+        228
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
+          "lines": [
+            228
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "PfxLoaderCommonView",
+          "declaration_line": 22,
+          "lines": [
+            26
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-683e996ccbfe",
+      "kind": "offset_field",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "unk60",
+      "lines": [
+        72,
+        289
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
+          "lines": [
+            289
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "UVPXData",
+          "declaration_line": 47,
+          "lines": [
+            72
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-7dc96433d5ae",
+      "kind": "offset_field",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "unk64",
+      "lines": [
+        73,
+        289
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
+          "lines": [
+            289
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "UVPXData",
+          "declaration_line": 47,
+          "lines": [
+            73
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-00472bb6f92a",
+      "kind": "offset_field",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "unk68",
+      "lines": [
+        74,
+        289
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
+          "lines": [
+            289
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "UVPXData",
+          "declaration_line": 47,
+          "lines": [
+            74
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-9ea13bcd9e2f",
+      "kind": "offset_field",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "unk6E",
+      "lines": [
+        276
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
+          "lines": [
+            276
           ]
         }
       ]
@@ -215737,19 +217644,112 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "unk8",
       "lines": [
-        119,
-        129,
-        132
+        12,
+        27,
+        50,
+        211,
+        233,
+        246,
+        290,
+        321,
+        331,
+        334,
+        405,
+        406,
+        414
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderApplyHeaderConfiguration",
-          "declaration_line": 109,
+          "declaration_line": 311,
           "lines": [
-            119,
-            129,
-            132
+            321,
+            331,
+            334
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
+          "lines": [
+            211,
+            233,
+            246,
+            290
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderReleaseConfiguration",
+          "declaration_line": 396,
+          "lines": [
+            405,
+            406,
+            414
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "PfxLoaderCommonView",
+          "declaration_line": 22,
+          "lines": [
+            27
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "PfxLoaderSecondaryView",
+          "declaration_line": 8,
+          "lines": [
+            12
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "UVPXData",
+          "declaration_line": 47,
+          "lines": [
+            50
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-20b188116f32",
+      "kind": "offset_field",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "unk80",
+      "lines": [
+        278
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
+          "lines": [
+            278
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-563d8000a0b7",
+      "kind": "offset_field",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "unkA",
+      "lines": [
+        13
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "PfxLoaderSecondaryView",
+          "declaration_line": 8,
+          "lines": [
+            13
           ]
         }
       ]
@@ -215760,15 +217760,131 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "unkC",
       "lines": [
-        120
+        14,
+        28,
+        51,
+        232,
+        269,
+        274,
+        322
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderApplyHeaderConfiguration",
-          "declaration_line": 109,
+          "declaration_line": 311,
           "lines": [
-            120
+            322
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
+          "lines": [
+            232,
+            269,
+            274
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "PfxLoaderCommonView",
+          "declaration_line": 22,
+          "lines": [
+            28
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "PfxLoaderSecondaryView",
+          "declaration_line": 8,
+          "lines": [
+            14
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "UVPXData",
+          "declaration_line": 47,
+          "lines": [
+            51
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-c14660bf9dc3",
+      "kind": "offset_field",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "unkC0",
+      "lines": [
+        279
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
+          "lines": [
+            279
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-90fec72367aa",
+      "kind": "offset_field",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "unkCC",
+      "lines": [
+        280
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
+          "lines": [
+            280
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-7a8ce80bb6f4",
+      "kind": "offset_field",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "unkE",
+      "lines": [
+        15
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "PfxLoaderSecondaryView",
+          "declaration_line": 8,
+          "lines": [
+            15
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-b78289b20553",
+      "kind": "offset_field",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "unkE4",
+      "lines": [
+        277
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
+          "lines": [
+            277
           ]
         }
       ]
@@ -215779,24 +217895,24 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "value08",
       "lines": [
-        14,
-        119
+        96,
+        321
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderApplyHeaderConfiguration",
-          "declaration_line": 109,
+          "declaration_line": 311,
           "lines": [
-            119
+            321
           ]
         },
         {
           "kind": "type",
           "name": "PfxLoaderHeaderFields",
-          "declaration_line": 11,
+          "declaration_line": 93,
           "lines": [
-            14
+            96
           ]
         }
       ]
@@ -227695,15 +229811,54 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "UnkStruct_uvpfx_rom_00404FA0",
       "lines": [
-        32
+        114
       ],
       "owners": [
         {
           "kind": "global",
           "name": "D_uvpfxld_rom_00400EE0",
-          "declaration_line": 32,
+          "declaration_line": 114,
           "lines": [
-            32
+            114
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-5e8949b136ec",
+      "kind": "opaque_type",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "UnkStruct_uvpfx_rom_00404FA0_unk0",
+      "lines": [
+        121,
+        210,
+        219,
+        396
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
+          "lines": [
+            210,
+            219
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderReleaseConfiguration",
+          "declaration_line": 121,
+          "lines": [
+            121
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderReleaseConfiguration",
+          "declaration_line": 396,
+          "lines": [
+            396
           ]
         }
       ]
@@ -227714,15 +229869,24 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "UnkStruct_uvpfx_rom_00404FA0_unk2C",
       "lines": [
-        26
+        42,
+        108
       ],
       "owners": [
         {
           "kind": "type",
-          "name": "PfxLoaderHeaderConfig",
-          "declaration_line": 21,
+          "name": "PfxLoaderCommonView",
+          "declaration_line": 22,
           "lines": [
-            26
+            42
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "PfxLoaderHeaderConfig",
+          "declaration_line": 103,
+          "lines": [
+            108
           ]
         }
       ]
@@ -227733,24 +229897,35 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "UnkStruct_uvpfx_rom_00404FA0_unk4",
       "lines": [
-        33,
-        111
+        115,
+        203,
+        216,
+        313
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderApplyHeaderConfiguration",
-          "declaration_line": 109,
+          "declaration_line": 311,
           "lines": [
-            111
+            313
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
+          "lines": [
+            203,
+            216
           ]
         },
         {
           "kind": "global",
           "name": "D_uvpfxld_rom_00400EE8",
-          "declaration_line": 33,
+          "declaration_line": 115,
           "lines": [
-            33
+            115
           ]
         }
       ]
@@ -237582,41 +239757,41 @@
       ]
     },
     {
-      "id": "Q-59aeca2d4c87",
+      "id": "Q-a23c06415620",
       "kind": "original_quirk",
       "path": "src/modules/uvpfxld_rom.c",
-      "symbol": "Original COMMON block setup: allocate the shared record, narrow its particle * count to signed 16 bits, allocate/publish per-particle records, then initialize * shared and particle fields through the original UPFX, FMTX and FVEC exports. * Preserve count/global-pointer reloads, publication order and float-to-double * promotions in the tagged UPFX calls. A zero shared short at offset 0x24 causes * the input float at offset 0x30 to be overwritten with 1.0f. * RE_ORIGINAL_QUIRK: capacity failure frees the shared allocation after earlier * particle records may have been published, without clearing the shared pointer * or freeing those particle allocations here. The kind-2 path leaves the shared * word-buffer field untouched; shared property calls still run for nonpositive * narrowed particle counts. No reachable asset/caller failure is established. * RE_UNKNOWN: historical COMMON layout/selector meanings, physical units, valid * signed counts/base IDs, allocation failures, block order and ownership/alias * lifetimes. The signed secondary count allocates count * 4 bytes before an * unconditional 16-byte defaults copy; the asset minimum-count guarantee and * buffer capacity remain unproved. Trace original readers, assets, allocator and * cleanup callers before changing initialization, bounds or failure handling. * Readable reconstruction is parked: native 1720 bytes versus draft 1716 after * correcting four float-literal promotions. Native publication-load timing and * the later fresh-zero transfer/register schedule still differ; full relocation * records also move with the missing instruction. Preserve native code until * actual source/lifetime evidence resolves the mismatch.",
+      "symbol": "Allocate and publish shared/per-particle records, then apply original UPFX * properties and FMTX/FVEC initialization with unchanged float promotions. * RE_ORIGINAL_QUIRK: capacity failure frees only the shared record without * clearing its pointer or releasing earlier published particles. The kind-2 * path leaves shared+0x30 untouched; another path allocates count*4 bytes then * copies 16 bytes unconditionally. RE_UNKNOWN: asset domains and ownership. * Unused compiler declarations temp_v0_2, temp_a0, temp_v0 and temp are * preserved; their intended source roles remain unknown.",
       "lines": [
-        71
+        193
       ],
-      "evidence": "Original COMMON block setup: allocate the shared record, narrow its particle * count to signed 16 bits, allocate/publish per-particle records, then initialize * shared and particle fields through the original UPFX, FMTX and FVEC exports. * Preserve count/global-pointer reloads, publication order and float-to-double * promotions in the tagged UPFX calls. A zero shared short at offset 0x24 causes * the input float at offset 0x30 to be overwritten with 1.0f. * RE_ORIGINAL_QUIRK: capacity failure frees the shared allocation after earlier * particle records may have been published, without clearing the shared pointer * or freeing those particle allocations here. The kind-2 path leaves the shared * word-buffer field untouched; shared property calls still run for nonpositive * narrowed particle counts. No reachable asset/caller failure is established. * RE_UNKNOWN: historical COMMON layout/selector meanings, physical units, valid * signed counts/base IDs, allocation failures, block order and ownership/alias * lifetimes. The signed secondary count allocates count * 4 bytes before an * unconditional 16-byte defaults copy; the asset minimum-count guarantee and * buffer capacity remain unproved. Trace original readers, assets, allocator and * cleanup callers before changing initialization, bounds or failure handling. * Readable reconstruction is parked: native 1720 bytes versus draft 1716 after * correcting four float-literal promotions. Native publication-load timing and * the later fresh-zero transfer/register schedule still differ; full relocation * records also move with the missing instruction. Preserve native code until * actual source/lifetime evidence resolves the mismatch.",
+      "evidence": "Allocate and publish shared/per-particle records, then apply original UPFX * properties and FMTX/FVEC initialization with unchanged float promotions. * RE_ORIGINAL_QUIRK: capacity failure frees only the shared record without * clearing its pointer or releasing earlier published particles. The kind-2 * path leaves shared+0x30 untouched; another path allocates count*4 bytes then * copies 16 bytes unconditionally. RE_UNKNOWN: asset domains and ownership. * Unused compiler declarations temp_v0_2, temp_a0, temp_v0 and temp are * preserved; their intended source roles remain unknown.",
       "owners": [
         {
-          "kind": "assembly",
-          "name": "func_uvpfxld_rom_004002DC",
-          "declaration_line": 94,
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 202,
           "lines": [
-            71
+            193
           ]
         }
       ]
     },
     {
-      "id": "Q-5191057d5293",
+      "id": "Q-3cfcb8fff24e",
       "kind": "original_quirk",
       "path": "src/modules/uvpfxld_rom.c",
-      "symbol": "Read and dispatch original COMM/TEXT/PIID/PHDR/PDAT particle blocks. * UPFX export slots 0x40/0x44/0x48 provide the descriptor-array pointer, * capacity and active-count words. Advance the shared active count once per * signed configured count while below capacity, publish it, release the reader * and return the shared configuration pointer reloaded after that release. * RE_ORIGINAL_QUIRK: unrecognized nonzero tags skip this routine's block * consumer and free. The original-matching reader allocates nonzero blocks; * reader release only clears its file slot. Preserve the observed path. * RE_UNKNOWN: original particle asset chunk set/order and COMMON-before-use * guarantee, count/capacity domains and returned configuration ownership. * Trace original assets and loader callers/allocation lifetimes before adding * validation or claiming the unrecognized-tag allocation path is reachable. * RE_UNKNOWN: historical declaration/storage organization of actual reader * size/data locals. Readable C has identical operations and relocations but * different stack homes; retain original assembly without fabricated padding.",
+      "symbol": "Dispatch COMM/TEXT/PIID/PHDR/PDAT blocks through the existing loader helpers. * Publish the bounded active-count increments and reload the shared result * after reader release. RE_ORIGINAL_QUIRK: unknown nonzero blocks skip this * routine's consumer and free. RE_UNKNOWN: valid chunk order and ownership.",
       "lines": [
-        53
+        135
       ],
-      "evidence": "Read and dispatch original COMM/TEXT/PIID/PHDR/PDAT particle blocks. * UPFX export slots 0x40/0x44/0x48 provide the descriptor-array pointer, * capacity and active-count words. Advance the shared active count once per * signed configured count while below capacity, publish it, release the reader * and return the shared configuration pointer reloaded after that release. * RE_ORIGINAL_QUIRK: unrecognized nonzero tags skip this routine's block * consumer and free. The original-matching reader allocates nonzero blocks; * reader release only clears its file slot. Preserve the observed path. * RE_UNKNOWN: original particle asset chunk set/order and COMMON-before-use * guarantee, count/capacity domains and returned configuration ownership. * Trace original assets and loader callers/allocation lifetimes before adding * validation or claiming the unrecognized-tag allocation path is reachable. * RE_UNKNOWN: historical declaration/storage organization of actual reader * size/data locals. Readable C has identical operations and relocations but * different stack homes; retain original assembly without fabricated padding.",
+      "evidence": "Dispatch COMM/TEXT/PIID/PHDR/PDAT blocks through the existing loader helpers. * Publish the bounded active-count increments and reload the shared result * after reader release. RE_ORIGINAL_QUIRK: unknown nonzero blocks skip this * routine's consumer and free. RE_UNKNOWN: valid chunk order and ownership.",
       "owners": [
         {
-          "kind": "assembly",
-          "name": "func_uvpfxld_rom_004000DC",
-          "declaration_line": 69,
+          "kind": "function",
+          "name": "uvPfxLoaderParseChunkStream",
+          "declaration_line": 140,
           "lines": [
-            53
+            135
           ]
         }
       ]
@@ -240228,16 +242403,16 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "Prefix view of the original 0x3C-byte COMMON allocation. The omitted * fields retain their unknown meanings; no allocation capacity is inferred.",
       "lines": [
-        19
+        101
       ],
       "evidence": "Prefix view of the original 0x3C-byte COMMON allocation. The omitted * fields retain their unknown meanings; no allocation capacity is inferred.",
       "owners": [
         {
           "kind": "type",
           "name": "PfxLoaderHeaderConfig",
-          "declaration_line": 21,
+          "declaration_line": 103,
           "lines": [
-            19
+            101
           ]
         }
       ]
