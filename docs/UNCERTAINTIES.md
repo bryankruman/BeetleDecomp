@@ -17,14 +17,14 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 1860 |
-| Preserved RE_ORIGINAL_QUIRK notes | 506 |
+| Explicit RE_UNKNOWN notes | 1862 |
+| Preserved RE_ORIGINAL_QUIRK notes | 507 |
 | Older comments with uncertainty language | 88 |
 | Documented original-behavior audits | 30 |
-| Assembly-backed functions or data | 751 |
-| Address-based function identifiers | 904 |
-| Address-based global identifiers | 1546 |
-| Offset-based fields or neutral typed fields | 1748 |
+| Assembly-backed functions or data | 750 |
+| Address-based function identifiers | 903 |
+| Address-based global identifiers | 1549 |
+| Offset-based fields or neutral typed fields | 1750 |
 | Layout padding to preserve | 281 |
 | Unresolved type names | 283 |
 | Explicit unused ABI, storage or local identifiers | 137 |
@@ -5866,33 +5866,39 @@ For every future source wave, regenerate and check this index after code and str
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
 | address_function | `func_spray_00400138` | function `func_spray_00400138` | [17](../src/modules/spray.c#L17) |
-| address_function | `func_spray_004002A8` | function `func_spray_004002A8` | [19](../src/modules/spray.c#L19) |
-| address_function | `func_spray_0040055C` | function `func_spray_0040055C`, function `func_spray_0040055C`, function `sprayRegisterChannelCallback` | [14](../src/modules/spray.c#L14), [20](../src/modules/spray.c#L20), [38](../src/modules/spray.c#L38) |
-| address_function | `func_spray_0040064C` | function `func_spray_0040064C` | [21](../src/modules/spray.c#L21) |
-| address_global | `D_80025D6C` | function `spraySetActivationState`, global `D_80025D6C` | [5](../src/modules/spray.c#L5), [72](../src/modules/spray.c#L72) |
-| address_global | `D_spray_004010B0` | function `spraySetActivationState`, global `D_spray_004010B0` | [8](../src/modules/spray.c#L8), [77](../src/modules/spray.c#L77) |
-| address_global | `D_spray_00401768` | function `spraySetActivationState`, global `D_spray_00401768` | [7](../src/modules/spray.c#L7), [76](../src/modules/spray.c#L76) |
-| assembly | `__entrypoint_func_spray_400000` | — | [22](../src/modules/spray.c#L22) |
-| assembly | `func_spray_00400138` | — | [59](../src/modules/spray.c#L59) |
-| assembly | `func_spray_004002A8` | — | [81](../src/modules/spray.c#L81) |
-| assembly | `func_spray_0040055C` | — | [83](../src/modules/spray.c#L83) |
-| assembly | `func_spray_0040064C` | — | [85](../src/modules/spray.c#L85) |
+| address_function | `func_spray_0040055C` | function `func_spray_0040055C`, function `func_spray_0040055C`, function `sprayRegisterChannelCallback` | [14](../src/modules/spray.c#L14), [50](../src/modules/spray.c#L50), [68](../src/modules/spray.c#L68) |
+| address_function | `func_spray_0040064C` | function `func_spray_0040064C` | [51](../src/modules/spray.c#L51) |
+| address_global | `D_80025D6C` | function `spraySetActivationState`, global `D_80025D6C` | [5](../src/modules/spray.c#L5), [102](../src/modules/spray.c#L102) |
+| address_global | `D_spray_00401054` | function `sprayAppendStripPoint`, global `D_spray_00401054` | [44](../src/modules/spray.c#L44), [157](../src/modules/spray.c#L157) |
+| address_global | `D_spray_00401058` | function `sprayAppendStripPoint`, global `D_spray_00401058` | [45](../src/modules/spray.c#L45), [166](../src/modules/spray.c#L166) |
+| address_global | `D_spray_0040105C` | function `sprayAppendStripPoint`, global `D_spray_0040105C` | [46](../src/modules/spray.c#L46), [171](../src/modules/spray.c#L171) |
+| address_global | `D_spray_004010B0` | function `spraySetActivationState`, global `D_spray_004010B0` | [8](../src/modules/spray.c#L8), [107](../src/modules/spray.c#L107) |
+| address_global | `D_spray_00401768` | function `spraySetActivationState`, global `D_spray_00401768` | [7](../src/modules/spray.c#L7), [106](../src/modules/spray.c#L106) |
+| assembly | `__entrypoint_func_spray_400000` | — | [52](../src/modules/spray.c#L52) |
+| assembly | `func_spray_00400138` | — | [89](../src/modules/spray.c#L89) |
+| assembly | `func_spray_0040055C` | — | [192](../src/modules/spray.c#L192) |
+| assembly | `func_spray_0040064C` | — | [194](../src/modules/spray.c#L194) |
 | decompiler_local | `arg0` | function `func_spray_0040055C` | [14](../src/modules/spray.c#L14) |
-| explicit_unknown | `* When the low enabled byte is nonzero and the unsigned phase is at least 2, * copy the shared time into state offset 0xCC; otherwise clear byte 0xD1. * Always release the share...` | function `spraySetActivationState` | [62](../src/modules/spray.c#L62) |
-| explicit_unknown | `Acquire the first zero-D1 record in the native eight-step, 0xD4-stride walk; * return null at the adjacent shared sound-state label. Reset the original * fields, store the selec...` | assembly `func_spray_00400138` | [42](../src/modules/spray.c#L42) |
-| explicit_unknown | `RE_UNKNOWN: complete spray record layout, byte D1/state C0 meaning, initialization, storage bounds, callback/resource lifetime and historical local storage. Original callback sa...` | assembly `func_spray_0040055C` | [82](../src/modules/spray.c#L82) |
+| explicit_unknown | `* When the low enabled byte is nonzero and the unsigned phase is at least 2, * copy the shared time into state offset 0xCC; otherwise clear byte 0xD1. * Always release the share...` | function `spraySetActivationState` | [92](../src/modules/spray.c#L92) |
+| explicit_unknown | `Acquire the first zero-D1 record in the native eight-step, 0xD4-stride walk; * return null at the adjacent shared sound-state label. Reset the original * fields, store the selec...` | assembly `func_spray_00400138` | [72](../src/modules/spray.c#L72) |
+| explicit_unknown | `Append a position and companion vector to the six-point spray strip. * Measure the new segment, advance the signed texture coordinate with the * original single direction revers...` | function `sprayAppendStripPoint` | [112](../src/modules/spray.c#L112) |
+| explicit_unknown | `RE_UNKNOWN: complete spray record layout, byte D1/state C0 meaning, initialization, storage bounds, callback/resource lifetime and historical local storage. Original callback sa...` | assembly `func_spray_0040055C` | [191](../src/modules/spray.c#L191) |
+| explicit_unknown | `RE_UNKNOWN: these are access views of observed offsets, not allocation or * lifetime declarations. The companion vector's physical meaning is unresolved.` | type `SprayStripPoint` | [23](../src/modules/spray.c#L23) |
 | layout_padding | `pad` | type `UnkCbckExports`, type `UnkChanExports` | [10](../src/modules/spray.c#L10), [11](../src/modules/spray.c#L11) |
-| offset_field | `flagD1` | function `spraySetActivationState`, type `SprayEffectState` | [4](../src/modules/spray.c#L4), [74](../src/modules/spray.c#L74) |
+| offset_field | `flagD1` | function `spraySetActivationState`, type `SprayEffectState` | [4](../src/modules/spray.c#L4), [104](../src/modules/spray.c#L104) |
 | offset_field | `unk00` | type `SprayEffectState` | [4](../src/modules/spray.c#L4) |
-| offset_field | `unk10` | function `sprayRegisterChannelCallback`, type `UnkCbckExports` | [10](../src/modules/spray.c#L10), [38](../src/modules/spray.c#L38) |
-| offset_field | `unk4` | function `sprayRegisterChannelCallback`, type `UnkChanExports` | [11](../src/modules/spray.c#L11), [37](../src/modules/spray.c#L37) |
+| offset_field | `unk10` | function `sprayRegisterChannelCallback`, type `UnkCbckExports` | [10](../src/modules/spray.c#L10), [68](../src/modules/spray.c#L68) |
+| offset_field | `unk4` | function `sprayRegisterChannelCallback`, type `UnkChanExports` | [11](../src/modules/spray.c#L11), [67](../src/modules/spray.c#L67) |
 | offset_field | `unkC4` | type `SprayEffectState` | [4](../src/modules/spray.c#L4) |
 | offset_field | `unkD0` | type `SprayEffectState` | [4](../src/modules/spray.c#L4) |
+| offset_field | `unknown1A` | type `SprayStripPoint` | [29](../src/modules/spray.c#L29) |
+| offset_field | `unknownCC` | type `SprayStripWriteView` | [38](../src/modules/spray.c#L38) |
 | opaque_type | `UnkCbckExports` | global `gUvCbckExports`, type `UnkCbckExports` | [10](../src/modules/spray.c#L10), [12](../src/modules/spray.c#L12) |
 | opaque_type | `UnkCbckExports_s` | type `UnkCbckExports` | [10](../src/modules/spray.c#L10) |
 | opaque_type | `UnkChanExports` | global `gUvChanExports`, type `UnkChanExports` | [11](../src/modules/spray.c#L11), [13](../src/modules/spray.c#L13) |
 | opaque_type | `UnkChanExports_s` | type `UnkChanExports` | [11](../src/modules/spray.c#L11) |
 | opaque_type | `UnkStruct_004005C8` | global `D_spray_00401768` | [7](../src/modules/spray.c#L7) |
+| original_quirk | `Append a position and companion vector to the six-point spray strip. * Measure the new segment, advance the signed texture coordinate with the * original single direction revers...` | function `sprayAppendStripPoint` | [112](../src/modules/spray.c#L112) |
 
 ## src/modules/tdata.c
 

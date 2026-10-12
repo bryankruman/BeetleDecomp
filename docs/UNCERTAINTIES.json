@@ -421,7 +421,7 @@
     "src/modules/snd.c": "8ee26503d649b59f81fe2e7b735e13d11b1863af188cabdf310ba7bc6588d9df",
     "src/modules/sparks.c": "ddeb51c69317d6a6c9f2b20df04fbbe2ccb29339acd76b01c0635f8a41bf9773",
     "src/modules/splash.c": "cb236edd1d5e78c972b7ec7e0f56d93a81544f089caa6419ca74fe5dd4881c22",
-    "src/modules/spray.c": "f2ca717362bdf548bccf8d9227106fbba7527bda8fa38a07eab339ab3f885314",
+    "src/modules/spray.c": "8db9e58ec679a342123bfd24c750b28dfa71d255eea18696e9ccf053b1c43d1b",
     "src/modules/tdata.c": "a780a10e5ef735a2d5483b5c43fe5ff54fe4d1dcf361e622d5d54b60ae23e977",
     "src/modules/ted.c": "666e93917219faaf49fffd750d3a899f4d736e7f47eca3e5c80c8459fb12aaa3",
     "src/modules/track1.c": "9f42d96faa7326620c3e65bb88db347e5203a3fab9e952c1f5ffb4e793a7097b",
@@ -499,22 +499,22 @@
     "src/sched.c": "26791ca9f30fd5355b11ea03a64a457757d2029595be26428c2925798105d9b4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "980406d10daeac5d9a2dd88507b33318c8e806f123d713ef48e6064679c94cd2",
-    "docs/VALIDATION_20261006.md": "ae7931ec87b99dbf1be491221242e60acb617d60fd2f8bad98c8939c1b260366"
+    "docs/STRATEGY_V4.md": "83fd542751c9685b97b20f00c52f28ae6e5e6f5ba84e07f162ad42a7f2f67b89",
+    "docs/VALIDATION_20261006.md": "36f7746c10f4b451115335e95c6cb202d936956ea5e90806570fe68de7e70620"
   },
   "counts": {
-    "address_function": 904,
-    "address_global": 1546,
-    "assembly": 751,
+    "address_function": 903,
+    "address_global": 1549,
+    "assembly": 750,
     "audit_debt": 30,
     "conditional_draft": 4,
     "decompiler_local": 622,
     "draft_marker": 51,
-    "explicit_unknown": 1860,
+    "explicit_unknown": 1862,
     "layout_padding": 281,
-    "offset_field": 1748,
+    "offset_field": 1750,
     "opaque_type": 283,
-    "original_quirk": 506,
+    "original_quirk": 507,
     "uncertainty_note": 88,
     "unused_identifier": 137
   },
@@ -16112,33 +16112,14 @@
       ]
     },
     {
-      "id": "Q-e0d0b71293a3",
-      "kind": "address_function",
-      "path": "src/modules/spray.c",
-      "symbol": "func_spray_004002A8",
-      "lines": [
-        19
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_spray_004002A8",
-          "declaration_line": 19,
-          "lines": [
-            19
-          ]
-        }
-      ]
-    },
-    {
       "id": "Q-ba8c3203f712",
       "kind": "address_function",
       "path": "src/modules/spray.c",
       "symbol": "func_spray_0040055C",
       "lines": [
         14,
-        20,
-        38
+        50,
+        68
       ],
       "owners": [
         {
@@ -16152,17 +16133,17 @@
         {
           "kind": "function",
           "name": "func_spray_0040055C",
-          "declaration_line": 20,
+          "declaration_line": 50,
           "lines": [
-            20
+            50
           ]
         },
         {
           "kind": "function",
           "name": "sprayRegisterChannelCallback",
-          "declaration_line": 35,
+          "declaration_line": 65,
           "lines": [
-            38
+            68
           ]
         }
       ]
@@ -16173,15 +16154,15 @@
       "path": "src/modules/spray.c",
       "symbol": "func_spray_0040064C",
       "lines": [
-        21
+        51
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_spray_0040064C",
-          "declaration_line": 21,
+          "declaration_line": 51,
           "lines": [
-            21
+            51
           ]
         }
       ]
@@ -48801,15 +48782,15 @@
       "symbol": "D_80025D6C",
       "lines": [
         5,
-        72
+        102
       ],
       "owners": [
         {
           "kind": "function",
           "name": "spraySetActivationState",
-          "declaration_line": 70,
+          "declaration_line": 100,
           "lines": [
-            72
+            102
           ]
         },
         {
@@ -48823,21 +48804,105 @@
       ]
     },
     {
+      "id": "Q-fe897aaca8ae",
+      "kind": "address_global",
+      "path": "src/modules/spray.c",
+      "symbol": "D_spray_00401054",
+      "lines": [
+        44,
+        157
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "sprayAppendStripPoint",
+          "declaration_line": 121,
+          "lines": [
+            157
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_spray_00401054",
+          "declaration_line": 44,
+          "lines": [
+            44
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-1c044f40c7a4",
+      "kind": "address_global",
+      "path": "src/modules/spray.c",
+      "symbol": "D_spray_00401058",
+      "lines": [
+        45,
+        166
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "sprayAppendStripPoint",
+          "declaration_line": 121,
+          "lines": [
+            166
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_spray_00401058",
+          "declaration_line": 45,
+          "lines": [
+            45
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-8bfae947eaf8",
+      "kind": "address_global",
+      "path": "src/modules/spray.c",
+      "symbol": "D_spray_0040105C",
+      "lines": [
+        46,
+        171
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "sprayAppendStripPoint",
+          "declaration_line": 121,
+          "lines": [
+            171
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_spray_0040105C",
+          "declaration_line": 46,
+          "lines": [
+            46
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-b7db3e7c71b9",
       "kind": "address_global",
       "path": "src/modules/spray.c",
       "symbol": "D_spray_004010B0",
       "lines": [
         8,
-        77
+        107
       ],
       "owners": [
         {
           "kind": "function",
           "name": "spraySetActivationState",
-          "declaration_line": 70,
+          "declaration_line": 100,
           "lines": [
-            77
+            107
           ]
         },
         {
@@ -48857,15 +48922,15 @@
       "symbol": "D_spray_00401768",
       "lines": [
         7,
-        76
+        106
       ],
       "owners": [
         {
           "kind": "function",
           "name": "spraySetActivationState",
-          "declaration_line": 70,
+          "declaration_line": 100,
           "lines": [
-            76
+            106
           ]
         },
         {
@@ -83825,7 +83890,7 @@
       "path": "src/modules/spray.c",
       "symbol": "__entrypoint_func_spray_400000",
       "lines": [
-        22
+        52
       ],
       "evidence": "asm/us/nonmatchings/modules/spray/__entrypoint_func_spray_400000.s"
     },
@@ -83835,19 +83900,9 @@
       "path": "src/modules/spray.c",
       "symbol": "func_spray_00400138",
       "lines": [
-        59
+        89
       ],
       "evidence": "asm/us/nonmatchings/modules/spray/func_spray_00400138.s"
-    },
-    {
-      "id": "Q-d59fe4424381",
-      "kind": "assembly",
-      "path": "src/modules/spray.c",
-      "symbol": "func_spray_004002A8",
-      "lines": [
-        81
-      ],
-      "evidence": "asm/us/nonmatchings/modules/spray/func_spray_004002A8.s"
     },
     {
       "id": "Q-df1126c539dd",
@@ -83855,7 +83910,7 @@
       "path": "src/modules/spray.c",
       "symbol": "func_spray_0040055C",
       "lines": [
-        83
+        192
       ],
       "evidence": "asm/us/nonmatchings/modules/spray/func_spray_0040055C.s"
     },
@@ -83865,7 +83920,7 @@
       "path": "src/modules/spray.c",
       "symbol": "func_spray_0040064C",
       "lines": [
-        85
+        194
       ],
       "evidence": "asm/us/nonmatchings/modules/spray/func_spray_0040064C.s"
     },
@@ -134842,16 +134897,16 @@
       "path": "src/modules/spray.c",
       "symbol": "* When the low enabled byte is nonzero and the unsigned phase is at least 2, * copy the shared time into state offset 0xCC; otherwise clear byte 0xD1. * Always release the shared sound handle next and finally store 1 to the * shared word. The successful branch retains byte 0xD1 rather than setting it. * RE_UNKNOWN: The phase protocol and shared word/flag meanings remain opaque.",
       "lines": [
-        62
+        92
       ],
       "evidence": "* When the low enabled byte is nonzero and the unsigned phase is at least 2, * copy the shared time into state offset 0xCC; otherwise clear byte 0xD1. * Always release the shared sound handle next and finally store 1 to the * shared word. The successful branch retains byte 0xD1 rather than setting it. * RE_UNKNOWN: The phase protocol and shared word/flag meanings remain opaque.",
       "owners": [
         {
           "kind": "function",
           "name": "spraySetActivationState",
-          "declaration_line": 70,
+          "declaration_line": 100,
           "lines": [
-            62
+            92
           ]
         }
       ]
@@ -134862,16 +134917,36 @@
       "path": "src/modules/spray.c",
       "symbol": "Acquire the first zero-D1 record in the native eight-step, 0xD4-stride walk; * return null at the adjacent shared sound-state label. Reset the original * fields, store the selector low byte, then optionally initialize that sound * handle, read SND48's scalar and call SND08 with sound44, priority7FFF, * the returned scalar times D1050 and pitch0.5. Clear the setup request after * that callback returns, regardless of its result; retain record identity. * RE_UNKNOWN: selector/field policies, record/shared-handle reuse, ownership, * callback mutation and lifetime guarantees need original writers, consumers * and teardown. The fixed native walk does not establish all caller domains. * A readable draft is 252 versus 264 native bytes, with 65 differing words. * Frame 48 becomes 40 and the preserved record home moves 32 to 36; the compiler * reuses the endpoint address for the first handle call instead of reloading * its original label. All observed field resets, call inputs/order and flag * store remain represented, but 22/18 complete relocation records differ. * Historical source declarations/local organization remain unknown; keep * original assembly until every instruction and relocation matches.",
       "lines": [
-        42
+        72
       ],
       "evidence": "Acquire the first zero-D1 record in the native eight-step, 0xD4-stride walk; * return null at the adjacent shared sound-state label. Reset the original * fields, store the selector low byte, then optionally initialize that sound * handle, read SND48's scalar and call SND08 with sound44, priority7FFF, * the returned scalar times D1050 and pitch0.5. Clear the setup request after * that callback returns, regardless of its result; retain record identity. * RE_UNKNOWN: selector/field policies, record/shared-handle reuse, ownership, * callback mutation and lifetime guarantees need original writers, consumers * and teardown. The fixed native walk does not establish all caller domains. * A readable draft is 252 versus 264 native bytes, with 65 differing words. * Frame 48 becomes 40 and the preserved record home moves 32 to 36; the compiler * reuses the endpoint address for the first handle call instead of reloading * its original label. All observed field resets, call inputs/order and flag * store remain represented, but 22/18 complete relocation records differ. * Historical source declarations/local organization remain unknown; keep * original assembly until every instruction and relocation matches.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_spray_00400138",
-          "declaration_line": 59,
+          "declaration_line": 89,
           "lines": [
-            42
+            72
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-2ca0dc9d50b7",
+      "kind": "explicit_unknown",
+      "path": "src/modules/spray.c",
+      "symbol": "Append a position and companion vector to the six-point spray strip. * Measure the new segment, advance the signed texture coordinate with the * original single direction reversal, and retire the overwritten length. * RE_ORIGINAL_QUIRK: a segment below the stored threshold returns zero after * copying both vectors and writing its length; the count is not advanced. * Texture property one can return without writing outputs; retain that caller * assumption, the signed conversion, and the original floating comparisons. * RE_UNKNOWN: companion-vector meaning, texture-field units, count wrap, * ownership and provider/caller alias guarantees remain unresolved.",
+      "lines": [
+        112
+      ],
+      "evidence": "Append a position and companion vector to the six-point spray strip. * Measure the new segment, advance the signed texture coordinate with the * original single direction reversal, and retire the overwritten length. * RE_ORIGINAL_QUIRK: a segment below the stored threshold returns zero after * copying both vectors and writing its length; the count is not advanced. * Texture property one can return without writing outputs; retain that caller * assumption, the signed conversion, and the original floating comparisons. * RE_UNKNOWN: companion-vector meaning, texture-field units, count wrap, * ownership and provider/caller alias guarantees remain unresolved.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "sprayAppendStripPoint",
+          "declaration_line": 121,
+          "lines": [
+            112
           ]
         }
       ]
@@ -134882,16 +134957,36 @@
       "path": "src/modules/spray.c",
       "symbol": "RE_UNKNOWN: complete spray record layout, byte D1/state C0 meaning, initialization, storage bounds, callback/resource lifetime and historical local storage. Original callback saves/restores fog around a fixed-stride pointer walk ending at the adjacent sound-state label; trace original initializer, record writers, registration and drawing helper before strengthening semantic names, bounds or safety guarantees.",
       "lines": [
-        82
+        191
       ],
       "evidence": "RE_UNKNOWN: complete spray record layout, byte D1/state C0 meaning, initialization, storage bounds, callback/resource lifetime and historical local storage. Original callback saves/restores fog around a fixed-stride pointer walk ending at the adjacent sound-state label; trace original initializer, record writers, registration and drawing helper before strengthening semantic names, bounds or safety guarantees.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_spray_0040055C",
-          "declaration_line": 83,
+          "declaration_line": 192,
           "lines": [
-            82
+            191
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-639c19beed07",
+      "kind": "explicit_unknown",
+      "path": "src/modules/spray.c",
+      "symbol": "RE_UNKNOWN: these are access views of observed offsets, not allocation or * lifetime declarations. The companion vector's physical meaning is unresolved.",
+      "lines": [
+        23
+      ],
+      "evidence": "RE_UNKNOWN: these are access views of observed offsets, not allocation or * lifetime declarations. The companion vector's physical meaning is unresolved.",
+      "owners": [
+        {
+          "kind": "type",
+          "name": "SprayStripPoint",
+          "declaration_line": 25,
+          "lines": [
+            23
           ]
         }
       ]
@@ -190900,15 +190995,15 @@
       "symbol": "flagD1",
       "lines": [
         4,
-        74
+        104
       ],
       "owners": [
         {
           "kind": "function",
           "name": "spraySetActivationState",
-          "declaration_line": 70,
+          "declaration_line": 100,
           "lines": [
-            74
+            104
           ]
         },
         {
@@ -190947,15 +191042,15 @@
       "symbol": "unk10",
       "lines": [
         10,
-        38
+        68
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sprayRegisterChannelCallback",
-          "declaration_line": 35,
+          "declaration_line": 65,
           "lines": [
-            38
+            68
           ]
         },
         {
@@ -190975,15 +191070,15 @@
       "symbol": "unk4",
       "lines": [
         11,
-        37
+        67
       ],
       "owners": [
         {
           "kind": "function",
           "name": "sprayRegisterChannelCallback",
-          "declaration_line": 35,
+          "declaration_line": 65,
           "lines": [
-            37
+            67
           ]
         },
         {
@@ -191030,6 +191125,44 @@
           "declaration_line": 4,
           "lines": [
             4
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-079aca730a66",
+      "kind": "offset_field",
+      "path": "src/modules/spray.c",
+      "symbol": "unknown1A",
+      "lines": [
+        29
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "SprayStripPoint",
+          "declaration_line": 25,
+          "lines": [
+            29
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-866739942bd5",
+      "kind": "offset_field",
+      "path": "src/modules/spray.c",
+      "symbol": "unknownCC",
+      "lines": [
+        38
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "SprayStripWriteView",
+          "declaration_line": 33,
+          "lines": [
+            38
           ]
         }
       ]
@@ -236869,6 +237002,26 @@
           "declaration_line": 38,
           "lines": [
             32
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-166f46e32c46",
+      "kind": "original_quirk",
+      "path": "src/modules/spray.c",
+      "symbol": "Append a position and companion vector to the six-point spray strip. * Measure the new segment, advance the signed texture coordinate with the * original single direction reversal, and retire the overwritten length. * RE_ORIGINAL_QUIRK: a segment below the stored threshold returns zero after * copying both vectors and writing its length; the count is not advanced. * Texture property one can return without writing outputs; retain that caller * assumption, the signed conversion, and the original floating comparisons. * RE_UNKNOWN: companion-vector meaning, texture-field units, count wrap, * ownership and provider/caller alias guarantees remain unresolved.",
+      "lines": [
+        112
+      ],
+      "evidence": "Append a position and companion vector to the six-point spray strip. * Measure the new segment, advance the signed texture coordinate with the * original single direction reversal, and retire the overwritten length. * RE_ORIGINAL_QUIRK: a segment below the stored threshold returns zero after * copying both vectors and writing its length; the count is not advanced. * Texture property one can return without writing outputs; retain that caller * assumption, the signed conversion, and the original floating comparisons. * RE_UNKNOWN: companion-vector meaning, texture-field units, count wrap, * ownership and provider/caller alias guarantees remain unresolved.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "sprayAppendStripPoint",
+          "declaration_line": 121,
+          "lines": [
+            112
           ]
         }
       ]

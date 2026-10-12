@@ -16,7 +16,37 @@ void sprayModuleCleanup();
 void sprayRegisterChannelCallback();
 void func_spray_00400138();
 void spraySetActivationState(SprayEffectState *state, u8 enabled);
-void func_spray_004002A8();
+#include "uvfvec_rom.h"
+#include "uvmath_rom.h"
+#include "uvtexture_rom.h"
+
+/* RE_UNKNOWN: these are access views of observed offsets, not allocation or
+ * lifetime declarations. The companion vector's physical meaning is unresolved. */
+typedef struct {
+    Vec3F position;
+    Vec3F companion;
+    s16 textureCoordinate;
+    u8 unknown1A[2];
+    f32 segmentLength;
+} SprayStripPoint;
+
+typedef struct {
+    SprayStripPoint points[6];
+    u32 pointCount;
+    u32 retiredPointIndex;
+    f32 accumulatedLength;
+    u8 unknownCC[4];
+    u8 reverseTextureCoordinate;
+} SprayStripWriteView;
+
+extern UvMath_Exports *gUvMathExports;
+extern UvTexture_Exports *gUvTextureExports;
+extern f32 D_spray_00401054;
+extern f32 D_spray_00401058;
+extern f32 D_spray_0040105C;
+
+#line 19 "src/modules/spray.c"
+s32 sprayAppendStripPoint(SprayStripWriteView *, Vec3F *, Vec3F *);
 void func_spray_0040055C();
 void func_spray_0040064C();
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/spray/__entrypoint_func_spray_400000.s")
@@ -78,7 +108,86 @@ void spraySetActivationState(SprayEffectState *state, u8 enabled) {
 }
 #line 38 "src/modules/spray.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/spray/func_spray_004002A8.s")
+#line 39 "src/modules/spray.c"
+/* Append a position and companion vector to the six-point spray strip.
+ * Measure the new segment, advance the signed texture coordinate with the
+ * original single direction reversal, and retire the overwritten length.
+ * RE_ORIGINAL_QUIRK: a segment below the stored threshold returns zero after
+ * copying both vectors and writing its length; the count is not advanced.
+ * Texture property one can return without writing outputs; retain that caller
+ * assumption, the signed conversion, and the original floating comparisons.
+ * RE_UNKNOWN: companion-vector meaning, texture-field units, count wrap,
+ * ownership and provider/caller alias guarantees remain unresolved. */
+s32 sprayAppendStripPoint(SprayStripWriteView *strip, Vec3F *position,
+                       Vec3F *companion) {
+    s32 textureFirstValue;
+    s32 textureSecondValue;
+    SprayStripPoint *retired;
+    f32 dx;
+    f32 dy;
+    f32 dz;
+    SprayStripPoint *point;
+    SprayStripPoint *previous;
+    f32 coordinateStep;
+    f32 textureCoordinate;
+
+    if (strip == NULL) {
+        return 0;
+    }
+
+    point = &strip->points[strip->pointCount % 6U];
+    point->position.x = position->x;
+    point->position.y = position->y;
+    point->position.z = position->z;
+    point->companion.x = companion->x;
+    point->companion.y = companion->y;
+    point->companion.z = companion->z;
+    if (strip->pointCount == 0U) {
+        point->textureCoordinate = 0;
+        point->segmentLength = 0.0f;
+        strip->pointCount++;
+        return 1;
+    }
+
+    previous = &strip->points[(strip->pointCount - 1U) % 6U];
+    dx = position->x - previous->position.x;
+    dy = position->y - previous->position.y;
+    dz = position->z - previous->position.z;
+    point->segmentLength = gUvMathExports->uvSqrtf((dx * dx + dy * dy) + dz * dz);
+    if (point->segmentLength < D_spray_00401054) {
+        return 0;
+    }
+
+    gUvTextureExports->uvTextureGetProps(0x7C, 1, &textureFirstValue,
+                                       &textureSecondValue, 0);
+    coordinateStep = (point->segmentLength / 2.5f) * (f32)textureSecondValue;
+    if (strip->reverseTextureCoordinate == 0) {
+        textureCoordinate = (f32)previous->textureCoordinate + coordinateStep;
+        if (D_spray_00401058 < textureCoordinate) {
+            strip->reverseTextureCoordinate = 1;
+            coordinateStep = -coordinateStep;
+            textureCoordinate = (f32)previous->textureCoordinate + coordinateStep;
+        }
+    } else if ((f32)previous->textureCoordinate - coordinateStep < D_spray_0040105C) {
+        strip->reverseTextureCoordinate = 0;
+        textureCoordinate = (f32)previous->textureCoordinate + coordinateStep;
+    } else {
+        coordinateStep = -coordinateStep;
+        textureCoordinate = (f32)previous->textureCoordinate + coordinateStep;
+    }
+    point->textureCoordinate = (s16)(s32)textureCoordinate;
+
+    strip->pointCount++;
+    strip->accumulatedLength += point->segmentLength;
+    if (strip->pointCount >= 7U) {
+        strip->retiredPointIndex++;
+        retired = &strip->points[strip->retiredPointIndex % 6U];
+        strip->accumulatedLength -= retired->segmentLength;
+        retired->segmentLength = 0.0f;
+    }
+    return 1;
+}
+#line 40 "src/modules/spray.c"
 /* RE_UNKNOWN: complete spray record layout, byte D1/state C0 meaning, initialization, storage bounds, callback/resource lifetime and historical local storage. Original callback saves/restores fog around a fixed-stride pointer walk ending at the adjacent sound-state label; trace original initializer, record writers, registration and drawing helper before strengthening semantic names, bounds or safety guarantees. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/spray/func_spray_0040055C.s")
 
