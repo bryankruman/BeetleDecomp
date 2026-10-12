@@ -17,15 +17,15 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 1833 |
-| Preserved RE_ORIGINAL_QUIRK notes | 478 |
+| Explicit RE_UNKNOWN notes | 1835 |
+| Preserved RE_ORIGINAL_QUIRK notes | 479 |
 | Older comments with uncertainty language | 88 |
 | Documented original-behavior audits | 30 |
-| Assembly-backed functions or data | 756 |
+| Assembly-backed functions or data | 755 |
 | Address-based function identifiers | 907 |
-| Address-based global identifiers | 1518 |
-| Offset-based fields or neutral typed fields | 1701 |
-| Layout padding to preserve | 275 |
+| Address-based global identifiers | 1521 |
+| Offset-based fields or neutral typed fields | 1703 |
+| Layout padding to preserve | 277 |
 | Unresolved type names | 282 |
 | Explicit unused ABI, storage or local identifiers | 137 |
 | Decompiler parameter/local names | 619 |
@@ -4156,70 +4156,79 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
-| address_function | `func_plyr_00400678` | function `func_plyr_00400678` | [44](../src/modules/plyr.c#L44) |
-| address_function | `func_plyr_00400C3C` | function `func_plyr_00400C3C` | [45](../src/modules/plyr.c#L45) |
-| address_function | `func_plyr_00401484` | function `func_plyr_00401484` | [46](../src/modules/plyr.c#L46) |
-| address_function | `func_plyr_00401DC4` | function `func_plyr_00401DC4` | [47](../src/modules/plyr.c#L47) |
-| address_function | `func_plyr_004022E0` | function `func_plyr_004022E0`, function `func_plyr_004022E0` | [50](../src/modules/plyr.c#L50), [130](../src/modules/plyr.c#L130) |
-| address_function | `func_plyr_00402338` | function `func_plyr_00402338` | [149](../src/modules/plyr.c#L149) |
-| address_function | `func_plyr_00402340` | function `func_plyr_00402340`, function `plyrUpdateMotionAndConditionallyDispatch` | [51](../src/modules/plyr.c#L51), [117](../src/modules/plyr.c#L117) |
-| address_function | `func_plyr_00402B90` | function `func_plyr_00402B90` | [52](../src/modules/plyr.c#L52) |
-| address_function | `func_plyr_00402F14` | function `func_plyr_00402F14` | [53](../src/modules/plyr.c#L53) |
-| address_function | `func_plyr_0040397C` | function `func_plyr_0040397C` | [54](../src/modules/plyr.c#L54) |
-| address_function | `func_plyr_00403B40` | function `func_plyr_00403B40` | [55](../src/modules/plyr.c#L55) |
-| address_function | `func_plyr_00404088` | function `func_plyr_00404088` | [56](../src/modules/plyr.c#L56) |
-| address_function | `func_plyr_004047C8` | function `func_plyr_004047C8` | [58](../src/modules/plyr.c#L58) |
-| address_function | `func_plyr_00404CE0` | function `func_plyr_00404CE0` | [59](../src/modules/plyr.c#L59) |
-| address_function | `func_plyr_004050AC` | function `func_plyr_004050AC` | [60](../src/modules/plyr.c#L60) |
-| address_function | `func_plyr_00405688` | function `func_plyr_00405688`, function `plyrDispatchDebugHudPasses` | [62](../src/modules/plyr.c#L62), [208](../src/modules/plyr.c#L208) |
-| address_function | `func_plyr_00405C1C` | function `func_plyr_00405C1C`, function `plyrDispatchDebugHudPasses` | [63](../src/modules/plyr.c#L63), [212](../src/modules/plyr.c#L212) |
-| address_global | `D_80025D78` | function `plyrUpdateMotionAndConditionallyDispatch`, global `D_80025D78` | [14](../src/modules/plyr.c#L14), [116](../src/modules/plyr.c#L116) |
-| address_global | `D_plyr_0040690C` | function `func_plyr_004022E0`, function `plyrUpdateMotionAndConditionallyDispatch`, global `D_plyr_0040690C` | [23](../src/modules/plyr.c#L23), [115](../src/modules/plyr.c#L115), [133](../src/modules/plyr.c#L133), [138](../src/modules/plyr.c#L138) |
-| address_global | `D_plyr_00406B1C` | function `plyrInvokeMotionNoopAndCarAudioCallback`, function `plyrUpdateMotionAndConditionallyDispatch`, global `D_plyr_00406B1C` | [39](../src/modules/plyr.c#L39), [101](../src/modules/plyr.c#L101), [114](../src/modules/plyr.c#L114) |
-| address_global | `D_plyr_00406B20` | function `plyrInvokeMotionNoopAndCarAudioCallback`, global `D_plyr_00406B20` | [40](../src/modules/plyr.c#L40), [102](../src/modules/plyr.c#L102) |
-| address_global | `D_plyr_00406B28` | function `func_plyr_004022E0`, function `plyrGetIndexedEntryWord`, global `D_plyr_00406B28` | [65](../src/modules/plyr.c#L65), [126](../src/modules/plyr.c#L126), [133](../src/modules/plyr.c#L133) |
-| address_global | `D_plyr_00406B48` | function `plyrReleaseIndexedSoundHandle`, global `D_plyr_00406B48` | [42](../src/modules/plyr.c#L42), [230](../src/modules/plyr.c#L230) |
-| address_global | `D_plyr_00406B68` | function `plyrReleaseSharedSoundHandles`, global `D_plyr_00406B68` | [15](../src/modules/plyr.c#L15), [74](../src/modules/plyr.c#L74) |
-| address_global | `D_plyr_00406B70` | function `plyrReleaseSharedSoundHandles`, global `D_plyr_00406B70` | [16](../src/modules/plyr.c#L16), [72](../src/modules/plyr.c#L72) |
-| address_global | `D_plyr_00406B78` | function `plyrReleaseSharedSoundHandles`, global `D_plyr_00406B78` | [17](../src/modules/plyr.c#L17), [73](../src/modules/plyr.c#L73) |
-| address_global | `D_plyr_00406B80` | function `plyrReleaseSharedSoundHandles`, global `D_plyr_00406B80` | [18](../src/modules/plyr.c#L18), [75](../src/modules/plyr.c#L75) |
-| address_global | `D_plyr_00406B88` | function `plyrReleaseSharedSoundHandles`, global `D_plyr_00406B88` | [19](../src/modules/plyr.c#L19), [76](../src/modules/plyr.c#L76) |
-| address_global | `D_plyr_00406B90` | function `plyrReleaseSharedSoundHandles`, global `D_plyr_00406B90` | [20](../src/modules/plyr.c#L20), [77](../src/modules/plyr.c#L77) |
-| address_global | `D_plyr_00406B98` | function `plyrReleaseSharedSoundHandles`, global `D_plyr_00406B98` | [21](../src/modules/plyr.c#L21), [78](../src/modules/plyr.c#L78) |
-| address_global | `D_plyr_00406BA0` | function `plyrReleaseSharedSoundHandles`, global `D_plyr_00406BA0` | [22](../src/modules/plyr.c#L22), [79](../src/modules/plyr.c#L79) |
-| assembly | `__entrypoint_func_plyr_400000` | — | [66](../src/modules/plyr.c#L66) |
-| assembly | `func_plyr_00400678` | — | [83](../src/modules/plyr.c#L83) |
-| assembly | `func_plyr_00400C3C` | — | [85](../src/modules/plyr.c#L85) |
-| assembly | `func_plyr_00401484` | — | [87](../src/modules/plyr.c#L87) |
-| assembly | `func_plyr_00401DC4` | — | [89](../src/modules/plyr.c#L89) |
-| assembly | `func_plyr_00402340` | — | [153](../src/modules/plyr.c#L153) |
-| assembly | `func_plyr_00402B90` | — | [155](../src/modules/plyr.c#L155) |
-| assembly | `func_plyr_00402F14` | — | [157](../src/modules/plyr.c#L157) |
-| assembly | `func_plyr_0040397C` | — | [159](../src/modules/plyr.c#L159) |
-| assembly | `func_plyr_00403B40` | — | [161](../src/modules/plyr.c#L161) |
-| assembly | `func_plyr_00404088` | — | [163](../src/modules/plyr.c#L163) |
-| assembly | `func_plyr_004047C8` | — | [194](../src/modules/plyr.c#L194) |
-| assembly | `func_plyr_00404CE0` | — | [196](../src/modules/plyr.c#L196) |
-| assembly | `func_plyr_004050AC` | — | [198](../src/modules/plyr.c#L198) |
-| assembly | `func_plyr_00405688` | — | [217](../src/modules/plyr.c#L217) |
-| assembly | `func_plyr_00405C1C` | — | [219](../src/modules/plyr.c#L219) |
-| decompiler_local | `arg0` | function `func_plyr_004022E0` | [50](../src/modules/plyr.c#L50) |
-| explicit_unknown | `Draw the red arrow and translucent black shadow using current screen dimensions. * Apply local-Y displacement -14 directly to the caller's matrix; popping graphics state does no...` | function `plyrDrawRedArrowWithShadow` | [166](../src/modules/plyr.c#L166) |
-| explicit_unknown | `Invoke motion export 0x30, then pass the supplied * word to car-audio export 0x24. Original player initialization binds these * dependencies to tags 'motn' and 'cara', respectiv...` | function `plyrInvokeMotionNoopAndCarAudioCallback` | [92](../src/modules/plyr.c#L92) |
-| explicit_unknown | `Invoke motionUpdateSharedState through proven motion export 0x34, * then run the original player helper when shared word 0x0040690C is below * three and the shared halfword is z...` | function `plyrUpdateMotionAndConditionallyDispatch` | [107](../src/modules/plyr.c#L107) |
-| explicit_unknown | `Original MOTN slots: 0x30 -> func_motion_00405E5C; * 0x34 -> motionUpdateSharedState(void). * Slot 0x30 returns immediately, storing incoming a0 in its argument home * at 0(sp) ...` | type `PlyrMotionExports` | [24](../src/modules/plyr.c#L24) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_plyr_00402338` | [145](../src/modules/plyr.c#L145) |
-| explicit_unknown | `RE_UNKNOWN: Registry bounds, record layout and key meaning. Inherited nested casts and self-assignment remain; historical types are unproved.` | function `func_plyr_004022E0` | [142](../src/modules/plyr.c#L142) |
-| explicit_unknown | `RE_UNKNOWN: Screen-size domain and caller matrix ownership; input translation persists and bit 0x400000 ends cleared.` | function `plyrDrawRedArrowWithShadow` | [191](../src/modules/plyr.c#L191) |
-| explicit_unknown | `Release eight shared player sound handles in their original order. * RE_UNKNOWN: storage ownership and safe handle lifetime require original initialization, users and release pa...` | function `plyrReleaseSharedSoundHandles` | [69](../src/modules/plyr.c#L69) |
-| explicit_unknown | `Release the sound handle selected by the caller record word at 0x14 * from shared storage D_plyr_00406B48, using the original eight-byte stride. * RE_UNKNOWN: shared handle-arra...` | function `plyrReleaseIndexedSoundHandle` | [222](../src/modules/plyr.c#L222) |
-| explicit_unknown | `Return the caller-indexed word from D_plyr_00406B28. RE_UNKNOWN: entry meaning and valid index domain require original table producers and callers; preserve its s32 result ABI.` | function `plyrGetIndexedEntryWord` | [125](../src/modules/plyr.c#L125) |
-| layout_padding | `pad00` | type `UnkStruct_80025C78`, type `UnkStruct_D_plyr_00406B20` | [37](../src/modules/plyr.c#L37), [38](../src/modules/plyr.c#L38) |
-| layout_padding | `prefix` | type `PlyrMotionExports` | [33](../src/modules/plyr.c#L33) |
-| offset_field | `unk24` | function `plyrInvokeMotionNoopAndCarAudioCallback`, type `UnkStruct_D_plyr_00406B20` | [37](../src/modules/plyr.c#L37), [102](../src/modules/plyr.c#L102) |
-| offset_field | `unk70` | function `plyrReleaseIndexedSoundHandle`, type `UnkStruct_80025C78` | [38](../src/modules/plyr.c#L38), [230](../src/modules/plyr.c#L230) |
-| opaque_type | `UnkStruct_80025C78` | global `gSndExports`, type `UnkStruct_80025C78` | [38](../src/modules/plyr.c#L38), [41](../src/modules/plyr.c#L41) |
-| opaque_type | `UnkStruct_D_plyr_00406B20` | global `D_plyr_00406B20`, type `UnkStruct_D_plyr_00406B20` | [37](../src/modules/plyr.c#L37), [40](../src/modules/plyr.c#L40) |
+| address_function | `func_plyr_00400678` | function `func_plyr_00400678` | [66](../src/modules/plyr.c#L66) |
+| address_function | `func_plyr_00400C3C` | function `func_plyr_00400C3C` | [67](../src/modules/plyr.c#L67) |
+| address_function | `func_plyr_00401484` | function `func_plyr_00401484` | [68](../src/modules/plyr.c#L68) |
+| address_function | `func_plyr_00401DC4` | function `func_plyr_00401DC4` | [69](../src/modules/plyr.c#L69) |
+| address_function | `func_plyr_004022E0` | function `func_plyr_004022E0`, function `func_plyr_004022E0` | [72](../src/modules/plyr.c#L72), [152](../src/modules/plyr.c#L152) |
+| address_function | `func_plyr_00402338` | function `func_plyr_00402338` | [171](../src/modules/plyr.c#L171) |
+| address_function | `func_plyr_00402340` | function `func_plyr_00402340`, function `plyrUpdateMotionAndConditionallyDispatch` | [73](../src/modules/plyr.c#L73), [139](../src/modules/plyr.c#L139) |
+| address_function | `func_plyr_00402B90` | function `func_plyr_00402B90` | [74](../src/modules/plyr.c#L74) |
+| address_function | `func_plyr_00402F14` | function `func_plyr_00402F14` | [75](../src/modules/plyr.c#L75) |
+| address_function | `func_plyr_0040397C` | function `func_plyr_0040397C` | [76](../src/modules/plyr.c#L76) |
+| address_function | `func_plyr_00403B40` | function `func_plyr_00403B40` | [77](../src/modules/plyr.c#L77) |
+| address_function | `func_plyr_00404088` | function `func_plyr_00404088` | [78](../src/modules/plyr.c#L78) |
+| address_function | `func_plyr_004047C8` | function `func_plyr_004047C8` | [80](../src/modules/plyr.c#L80) |
+| address_function | `func_plyr_00404CE0` | function `func_plyr_00404CE0` | [81](../src/modules/plyr.c#L81) |
+| address_function | `func_plyr_004050AC` | function `func_plyr_004050AC` | [82](../src/modules/plyr.c#L82) |
+| address_function | `func_plyr_00405688` | function `func_plyr_00405688`, function `plyrDispatchDebugHudPasses` | [84](../src/modules/plyr.c#L84), [268](../src/modules/plyr.c#L268) |
+| address_function | `func_plyr_00405C1C` | function `func_plyr_00405C1C`, function `plyrDispatchDebugHudPasses` | [85](../src/modules/plyr.c#L85), [272](../src/modules/plyr.c#L272) |
+| address_global | `D_80025D70` | function `plyrUpdateTimedAudioAndObjectState`, global `D_80025D70` | [28](../src/modules/plyr.c#L28), [208](../src/modules/plyr.c#L208) |
+| address_global | `D_80025D78` | function `plyrUpdateMotionAndConditionallyDispatch`, global `D_80025D78` | [36](../src/modules/plyr.c#L36), [138](../src/modules/plyr.c#L138) |
+| address_global | `D_plyr_004067BC` | function `plyrUpdateTimedAudioAndObjectState`, global `D_plyr_004067BC` | [27](../src/modules/plyr.c#L27), [200](../src/modules/plyr.c#L200) |
+| address_global | `D_plyr_0040690C` | function `func_plyr_004022E0`, function `plyrUpdateMotionAndConditionallyDispatch`, function `plyrUpdateTimedAudioAndObjectState`, global `D_plyr_0040690C` | [45](../src/modules/plyr.c#L45), [137](../src/modules/plyr.c#L137), [155](../src/modules/plyr.c#L155), [160](../src/modules/plyr.c#L160), [209](../src/modules/plyr.c#L209) |
+| address_global | `D_plyr_00406940` | function `plyrUpdateTimedAudioAndObjectState`, global `D_plyr_00406940` | [26](../src/modules/plyr.c#L26), [195](../src/modules/plyr.c#L195), [202](../src/modules/plyr.c#L202) |
+| address_global | `D_plyr_00406B1C` | function `plyrInvokeMotionNoopAndCarAudioCallback`, function `plyrUpdateMotionAndConditionallyDispatch`, global `D_plyr_00406B1C` | [61](../src/modules/plyr.c#L61), [123](../src/modules/plyr.c#L123), [136](../src/modules/plyr.c#L136) |
+| address_global | `D_plyr_00406B20` | function `plyrInvokeMotionNoopAndCarAudioCallback`, function `plyrUpdateTimedAudioAndObjectState`, global `D_plyr_00406B20` | [62](../src/modules/plyr.c#L62), [124](../src/modules/plyr.c#L124), [214](../src/modules/plyr.c#L214) |
+| address_global | `D_plyr_00406B28` | function `func_plyr_004022E0`, function `plyrGetIndexedEntryWord`, global `D_plyr_00406B28` | [87](../src/modules/plyr.c#L87), [148](../src/modules/plyr.c#L148), [155](../src/modules/plyr.c#L155) |
+| address_global | `D_plyr_00406B48` | function `plyrReleaseIndexedSoundHandle`, global `D_plyr_00406B48` | [64](../src/modules/plyr.c#L64), [290](../src/modules/plyr.c#L290) |
+| address_global | `D_plyr_00406B68` | function `plyrReleaseSharedSoundHandles`, global `D_plyr_00406B68` | [37](../src/modules/plyr.c#L37), [96](../src/modules/plyr.c#L96) |
+| address_global | `D_plyr_00406B70` | function `plyrReleaseSharedSoundHandles`, global `D_plyr_00406B70` | [38](../src/modules/plyr.c#L38), [94](../src/modules/plyr.c#L94) |
+| address_global | `D_plyr_00406B78` | function `plyrReleaseSharedSoundHandles`, global `D_plyr_00406B78` | [39](../src/modules/plyr.c#L39), [95](../src/modules/plyr.c#L95) |
+| address_global | `D_plyr_00406B80` | function `plyrReleaseSharedSoundHandles`, global `D_plyr_00406B80` | [40](../src/modules/plyr.c#L40), [97](../src/modules/plyr.c#L97) |
+| address_global | `D_plyr_00406B88` | function `plyrReleaseSharedSoundHandles`, global `D_plyr_00406B88` | [41](../src/modules/plyr.c#L41), [98](../src/modules/plyr.c#L98) |
+| address_global | `D_plyr_00406B90` | function `plyrReleaseSharedSoundHandles`, function `plyrUpdateTimedAudioAndObjectState`, global `D_plyr_00406B90` | [42](../src/modules/plyr.c#L42), [99](../src/modules/plyr.c#L99), [196](../src/modules/plyr.c#L196), [197](../src/modules/plyr.c#L197), [199](../src/modules/plyr.c#L199) |
+| address_global | `D_plyr_00406B98` | function `plyrReleaseSharedSoundHandles`, global `D_plyr_00406B98` | [43](../src/modules/plyr.c#L43), [100](../src/modules/plyr.c#L100) |
+| address_global | `D_plyr_00406BA0` | function `plyrReleaseSharedSoundHandles`, global `D_plyr_00406BA0` | [44](../src/modules/plyr.c#L44), [101](../src/modules/plyr.c#L101) |
+| assembly | `__entrypoint_func_plyr_400000` | — | [88](../src/modules/plyr.c#L88) |
+| assembly | `func_plyr_00400678` | — | [105](../src/modules/plyr.c#L105) |
+| assembly | `func_plyr_00400C3C` | — | [107](../src/modules/plyr.c#L107) |
+| assembly | `func_plyr_00401484` | — | [109](../src/modules/plyr.c#L109) |
+| assembly | `func_plyr_00401DC4` | — | [111](../src/modules/plyr.c#L111) |
+| assembly | `func_plyr_00402340` | — | [175](../src/modules/plyr.c#L175) |
+| assembly | `func_plyr_00402B90` | — | [177](../src/modules/plyr.c#L177) |
+| assembly | `func_plyr_00402F14` | — | [179](../src/modules/plyr.c#L179) |
+| assembly | `func_plyr_00403B40` | — | [221](../src/modules/plyr.c#L221) |
+| assembly | `func_plyr_00404088` | — | [223](../src/modules/plyr.c#L223) |
+| assembly | `func_plyr_004047C8` | — | [254](../src/modules/plyr.c#L254) |
+| assembly | `func_plyr_00404CE0` | — | [256](../src/modules/plyr.c#L256) |
+| assembly | `func_plyr_004050AC` | — | [258](../src/modules/plyr.c#L258) |
+| assembly | `func_plyr_00405688` | — | [277](../src/modules/plyr.c#L277) |
+| assembly | `func_plyr_00405C1C` | — | [279](../src/modules/plyr.c#L279) |
+| decompiler_local | `arg0` | function `func_plyr_004022E0` | [72](../src/modules/plyr.c#L72) |
+| explicit_unknown | `Caller-scoped offsets from the complete original PLYR 397C instructions. * RE_UNKNOWN: historical typedef, complete allocation, pointer ownership and * meanings of word04/word08...` | type `PlyrTimedAudioEntry` | [13](../src/modules/plyr.c#L13) |
+| explicit_unknown | `Draw the red arrow and translucent black shadow using current screen dimensions. * Apply local-Y displacement -14 directly to the caller's matrix; popping graphics state does no...` | function `plyrDrawRedArrowWithShadow` | [226](../src/modules/plyr.c#L226) |
+| explicit_unknown | `Initialize the sound transform, consume the shared pending-sound byte, then * run the car-audio and indexed-handle callbacks before advancing this entry's * timer. A timer cross...` | function `plyrUpdateTimedAudioAndObjectState` | [181](../src/modules/plyr.c#L181) |
+| explicit_unknown | `Invoke motion export 0x30, then pass the supplied * word to car-audio export 0x24. Original player initialization binds these * dependencies to tags 'motn' and 'cara', respectiv...` | function `plyrInvokeMotionNoopAndCarAudioCallback` | [114](../src/modules/plyr.c#L114) |
+| explicit_unknown | `Invoke motionUpdateSharedState through proven motion export 0x34, * then run the original player helper when shared word 0x0040690C is below * three and the shared halfword is z...` | function `plyrUpdateMotionAndConditionallyDispatch` | [129](../src/modules/plyr.c#L129) |
+| explicit_unknown | `Original MOTN slots: 0x30 -> func_motion_00405E5C; * 0x34 -> motionUpdateSharedState(void). * Slot 0x30 returns immediately, storing incoming a0 in its argument home * at 0(sp) ...` | type `PlyrMotionExports` | [46](../src/modules/plyr.c#L46) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_plyr_00402338` | [167](../src/modules/plyr.c#L167) |
+| explicit_unknown | `RE_UNKNOWN: Registry bounds, record layout and key meaning. Inherited nested casts and self-assignment remain; historical types are unproved.` | function `func_plyr_004022E0` | [164](../src/modules/plyr.c#L164) |
+| explicit_unknown | `RE_UNKNOWN: Screen-size domain and caller matrix ownership; input translation persists and bit 0x400000 ends cleared.` | function `plyrDrawRedArrowWithShadow` | [251](../src/modules/plyr.c#L251) |
+| explicit_unknown | `Release eight shared player sound handles in their original order. * RE_UNKNOWN: storage ownership and safe handle lifetime require original initialization, users and release pa...` | function `plyrReleaseSharedSoundHandles` | [91](../src/modules/plyr.c#L91) |
+| explicit_unknown | `Release the sound handle selected by the caller record word at 0x14 * from shared storage D_plyr_00406B48, using the original eight-byte stride. * RE_UNKNOWN: shared handle-arra...` | function `plyrReleaseIndexedSoundHandle` | [282](../src/modules/plyr.c#L282) |
+| explicit_unknown | `Return the caller-indexed word from D_plyr_00406B28. RE_UNKNOWN: entry meaning and valid index domain require original table producers and callers; preserve its s32 result ABI.` | function `plyrGetIndexedEntryWord` | [147](../src/modules/plyr.c#L147) |
+| layout_padding | `gap0C` | type `PlyrTimedAudioEntry` | [20](../src/modules/plyr.c#L20) |
+| layout_padding | `gap1C` | type `PlyrTimedAudioEntry` | [23](../src/modules/plyr.c#L23) |
+| layout_padding | `pad00` | type `UnkStruct_80025C78`, type `UnkStruct_D_plyr_00406B20` | [59](../src/modules/plyr.c#L59), [60](../src/modules/plyr.c#L60) |
+| layout_padding | `prefix` | type `PlyrMotionExports` | [55](../src/modules/plyr.c#L55) |
+| offset_field | `unk24` | function `plyrInvokeMotionNoopAndCarAudioCallback`, type `UnkStruct_D_plyr_00406B20` | [59](../src/modules/plyr.c#L59), [124](../src/modules/plyr.c#L124) |
+| offset_field | `unk70` | function `plyrReleaseIndexedSoundHandle`, type `UnkStruct_80025C78` | [60](../src/modules/plyr.c#L60), [290](../src/modules/plyr.c#L290) |
+| offset_field | `word04` | function `plyrUpdateTimedAudioAndObjectState`, type `PlyrTimedAudioEntry` | [18](../src/modules/plyr.c#L18), [215](../src/modules/plyr.c#L215) |
+| offset_field | `word08` | function `plyrUpdateTimedAudioAndObjectState`, type `PlyrTimedAudioEntry` | [19](../src/modules/plyr.c#L19), [205](../src/modules/plyr.c#L205) |
+| opaque_type | `UnkStruct_80025C78` | global `gSndExports`, type `UnkStruct_80025C78` | [60](../src/modules/plyr.c#L60), [63](../src/modules/plyr.c#L63) |
+| opaque_type | `UnkStruct_D_plyr_00406B20` | global `D_plyr_00406B20`, type `UnkStruct_D_plyr_00406B20` | [59](../src/modules/plyr.c#L59), [62](../src/modules/plyr.c#L62) |
+| original_quirk | `Initialize the sound transform, consume the shared pending-sound byte, then * run the car-audio and indexed-handle callbacks before advancing this entry's * timer. A timer cross...` | function `plyrUpdateTimedAudioAndObjectState` | [181](../src/modules/plyr.c#L181) |
 
 ## src/modules/powerup.c
 

@@ -10,6 +10,28 @@ extern UvGfxMgr_Exports *gUvGfxMgrExports;
 extern UvGfxState_Rom_Exports *gUvGfxStateExports;
 extern UvDGeom_Rom_Exports *gUvDGeomExports;
 /*__SEEDEXTERNS__*/
+/* Caller-scoped offsets from the complete original PLYR 397C instructions.
+ * RE_UNKNOWN: historical typedef, complete allocation, pointer ownership and
+ * meanings of word04/word08/index14/drawable18/timer20 beyond this call site. */
+typedef struct {
+    void *object;
+    s32 word04;
+    s32 word08;
+    u8 gap0C[8];
+    s32 index14;
+    s32 drawable18;
+    u8 gap1C[4];
+    f32 timer20;
+} PlyrTimedAudioEntry;
+extern u8 D_plyr_00406940;
+extern f32 D_plyr_004067BC;
+extern f32 D_80025D70;
+extern void *gCarAudioExports;
+extern void *gUvDynExports;
+extern void *gUvDobjExports;
+void plyrReleaseIndexedSoundHandle(void *record);
+
+#line 13 "src/modules/plyr.c"
 extern s32 gDebugHudState;
 extern s16 D_80025D78;
 extern u8 D_plyr_00406B68;
@@ -156,7 +178,45 @@ void func_plyr_00402338(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/plyr/func_plyr_00402F14.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/plyr/func_plyr_0040397C.s")
+/* Initialize the sound transform, consume the shared pending-sound byte, then
+ * run the car-audio and indexed-handle callbacks before advancing this entry's
+ * timer. A timer crossing below zero may clear object flags and dispatch the
+ * original four-word callback. Keep provider and state reloads across calls.
+ * RE_UNKNOWN: timer units, shared-word domains, sound-8E meaning, state/object
+ * lifetime and the complete callback contracts require original producers.
+ * The local views describe this caller's accesses, not full allocations.
+ * RE_ORIGINAL_QUIRK: a negative or NaN timer is left unchanged. The pending
+ * byte clears after all four sound calls; the timer-crossing branch does not
+ * clamp the timer and requires the signed shared word to be at least two. */
+void plyrUpdateTimedAudioAndObjectState(PlyrTimedAudioEntry *entry) {
+    Mtx4F soundTransform;
+
+    gUvFmtxExports->uvMat4SetIdentity(&soundTransform);
+    if (D_plyr_00406940 != 0) {
+        (*(void (**)(void *))((u8 *)gSndExports + 0x70))(&D_plyr_00406B90);
+        (*(void (**)(void *))((u8 *)gSndExports + 0xCC))(&D_plyr_00406B90);
+        (*(void (**)(void *, s16, s32, f32, f32, f32, Mtx4F *))
+            ((u8 *)gSndExports + 4))(&D_plyr_00406B90, 0x8E, 0x7FFF,
+                (*(f32 (**)(void))((u8 *)gSndExports + 0x4C))() * D_plyr_004067BC,
+                0.5f, 0.0f, &soundTransform);
+        D_plyr_00406940 = 0;
+    }
+    (*(void (**)(s32, s32))((u8 *)gCarAudioExports + 0x34))(
+        entry->word08, entry->index14);
+    plyrReleaseIndexedSoundHandle(entry);
+    if (entry->timer20 >= 0.0f) {
+        entry->timer20 -= D_80025D70;
+        if (entry->timer20 < 0.0f && D_plyr_0040690C >= 2) {
+            (*(void (**)(s32, s32))((u8 *)gUvDynExports + 0x70))(
+                *(s32 *)((u8 *)entry->object + 0x918), 0);
+            (*(void (**)(s32, s32))((u8 *)gUvDobjExports + 0x38))(
+                entry->drawable18, 1);
+            (*(void (**)(s32, s32, s32, s32))((u8 *)D_plyr_00406B20 + 0x14))(
+                entry->word04, 0x1B, 0, 0);
+        }
+    }
+}
+#line 117 "src/modules/plyr.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/plyr/func_plyr_00403B40.s")
 

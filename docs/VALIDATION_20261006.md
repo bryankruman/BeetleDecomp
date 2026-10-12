@@ -3405,10 +3405,19 @@ Totals: 447 further recoveries after the 225 upstream ordinary imports, plus 212
 Frozen wave `9660-uvstring-macro-entrypoint-contract` and `accepted-uvstring-entrypoint-native-contracts-9660` verify real translation-unit instructions/full relocations, 133 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 448 further readable functions
+## Historical accepted checkpoint — 448 further readable functions
 
 Recover raceUpdateCountdownVoicesAndLabel564B with all native words and61 closed unique relocation sites; retain explicit unequal raw ELF relocation order and41 ordered original packed sites. Add one absent relative compatibility alias. Apply only the proved zero-credit PLYR typedef/comment correction to raceCreateModuleGui, with exact whole-source/body inverse and actual canonical body/token hashes. All other prior code tokens stay literal. Require fresh1184-source/full133/original790RELA/ROM/full-ledger/Git and both canonical/legacy ELF boundaries; preserve173 typed SDK rows and83 historical attempts.
 
 Totals: 448 further recoveries after the 225 upstream ordinary imports, plus 2122 existing C semantic cleanups. Current ledger: 752 assembly references = 713 ordinary + 39 entrypoints; 696,292 known remaining instruction bytes; zero unknown sizes; 289 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `9892-race-countdown-named` and `accepted-race-countdown-named-9892` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 449 further readable functions
+
+Recover plyrUpdateTimedAudioAndObjectState452B with all113 native words,35 closed unique relocation sites and17 literal ordered packed sites. Retain explicit unequal raw ELF order and all three inherited835 warnings qualified against the actual accepted baseline. Add one absent relative compatibility alias. All prior source tokens and logical coordinates remain literal. Require fresh1187-source/full133/original552RELA/ROM/full-ledger/Git and both canonical/legacy ELF boundaries; preserve175 typed SDK rows and83 historical attempts.
+
+Totals: 449 further recoveries after the 225 upstream ordinary imports, plus 2122 existing C semantic cleanups. Current ledger: 751 assembly references = 712 ordinary + 39 entrypoints; 695,840 known remaining instruction bytes; zero unknown sizes; 289 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `10424-plyr-timed-audio-named` and `accepted-plyr-timed-audio-named-10424` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

@@ -375,7 +375,7 @@
     "src/modules/mult9.c": "b1ff3094ce39c8eccabe63699e28366b1f7a9cae2fdd50300c6520bc9076f41f",
     "src/modules/pause.c": "e1f04c587969c8726874c7c120340d3bcb3359055f5ac8931db5fb2780ffb5a0",
     "src/modules/piece.c": "1ccacee2585e3594b8eb8f4caa45575c2bff138ad0e8abe13988fa96dc8c0d18",
-    "src/modules/plyr.c": "e183b1f2e04706dfdd6315909a2d81b1ac11db7e5a2693b3d9af7cbe83619e6e",
+    "src/modules/plyr.c": "fe83c8c36b9663e2928cd605a34d1f2716eaa82bab77a600867093a1d2533350",
     "src/modules/powerup.c": "085e09f204f7310138743839479fe583d96be541652935de119e1ad8e8546c7c",
     "src/modules/profgame.c": "86896bf5e286cd79b0c9dce0d64418674a94de658ef0682cecc8e8a461ede9ed",
     "src/modules/race.c": "e884454e7272cb6e1fc7e40579ab614db1d76851e1b64e92ef722a741edbb411",
@@ -471,22 +471,22 @@
     "src/sched.c": "26791ca9f30fd5355b11ea03a64a457757d2029595be26428c2925798105d9b4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "fc01c7db41e86d2bde9355c90098a09cab8f6eac4eb8e51739034ffb00fe9998",
-    "docs/VALIDATION_20261006.md": "62cf52d9d2b9add452ccd848017e989cf9181a5730e2aa0ceff8df6634313b83"
+    "docs/STRATEGY_V4.md": "244c1f484e81b0be3ed18a455ac4c3e63e2e8f1d85f52373899d22711623f98d",
+    "docs/VALIDATION_20261006.md": "a0cd9968afe5546912011b4c478eeddafda478bd964d077d8ba4813e97295399"
   },
   "counts": {
     "address_function": 907,
-    "address_global": 1518,
-    "assembly": 756,
+    "address_global": 1521,
+    "assembly": 755,
     "audit_debt": 30,
     "conditional_draft": 4,
     "decompiler_local": 619,
     "draft_marker": 38,
-    "explicit_unknown": 1833,
-    "layout_padding": 275,
-    "offset_field": 1701,
+    "explicit_unknown": 1835,
+    "layout_padding": 277,
+    "offset_field": 1703,
     "opaque_type": 282,
-    "original_quirk": 478,
+    "original_quirk": 479,
     "uncertainty_note": 88,
     "unused_identifier": 137
   },
@@ -9542,15 +9542,15 @@
       "path": "src/modules/plyr.c",
       "symbol": "func_plyr_00400678",
       "lines": [
-        44
+        66
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_plyr_00400678",
-          "declaration_line": 44,
+          "declaration_line": 66,
           "lines": [
-            44
+            66
           ]
         }
       ]
@@ -9561,15 +9561,15 @@
       "path": "src/modules/plyr.c",
       "symbol": "func_plyr_00400C3C",
       "lines": [
-        45
+        67
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_plyr_00400C3C",
-          "declaration_line": 45,
+          "declaration_line": 67,
           "lines": [
-            45
+            67
           ]
         }
       ]
@@ -9580,15 +9580,15 @@
       "path": "src/modules/plyr.c",
       "symbol": "func_plyr_00401484",
       "lines": [
-        46
+        68
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_plyr_00401484",
-          "declaration_line": 46,
+          "declaration_line": 68,
           "lines": [
-            46
+            68
           ]
         }
       ]
@@ -9599,15 +9599,15 @@
       "path": "src/modules/plyr.c",
       "symbol": "func_plyr_00401DC4",
       "lines": [
-        47
+        69
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_plyr_00401DC4",
-          "declaration_line": 47,
+          "declaration_line": 69,
           "lines": [
-            47
+            69
           ]
         }
       ]
@@ -9618,24 +9618,24 @@
       "path": "src/modules/plyr.c",
       "symbol": "func_plyr_004022E0",
       "lines": [
-        50,
-        130
+        72,
+        152
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_plyr_004022E0",
-          "declaration_line": 50,
+          "declaration_line": 72,
           "lines": [
-            50
+            72
           ]
         },
         {
           "kind": "function",
           "name": "func_plyr_004022E0",
-          "declaration_line": 130,
+          "declaration_line": 152,
           "lines": [
-            130
+            152
           ]
         }
       ]
@@ -9646,15 +9646,15 @@
       "path": "src/modules/plyr.c",
       "symbol": "func_plyr_00402338",
       "lines": [
-        149
+        171
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_plyr_00402338",
-          "declaration_line": 149,
+          "declaration_line": 171,
           "lines": [
-            149
+            171
           ]
         }
       ]
@@ -9665,24 +9665,24 @@
       "path": "src/modules/plyr.c",
       "symbol": "func_plyr_00402340",
       "lines": [
-        51,
-        117
+        73,
+        139
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_plyr_00402340",
-          "declaration_line": 51,
+          "declaration_line": 73,
           "lines": [
-            51
+            73
           ]
         },
         {
           "kind": "function",
           "name": "plyrUpdateMotionAndConditionallyDispatch",
-          "declaration_line": 113,
+          "declaration_line": 135,
           "lines": [
-            117
+            139
           ]
         }
       ]
@@ -9693,15 +9693,15 @@
       "path": "src/modules/plyr.c",
       "symbol": "func_plyr_00402B90",
       "lines": [
-        52
+        74
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_plyr_00402B90",
-          "declaration_line": 52,
+          "declaration_line": 74,
           "lines": [
-            52
+            74
           ]
         }
       ]
@@ -9712,15 +9712,15 @@
       "path": "src/modules/plyr.c",
       "symbol": "func_plyr_00402F14",
       "lines": [
-        53
+        75
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_plyr_00402F14",
-          "declaration_line": 53,
+          "declaration_line": 75,
           "lines": [
-            53
+            75
           ]
         }
       ]
@@ -9731,15 +9731,15 @@
       "path": "src/modules/plyr.c",
       "symbol": "func_plyr_0040397C",
       "lines": [
-        54
+        76
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_plyr_0040397C",
-          "declaration_line": 54,
+          "declaration_line": 76,
           "lines": [
-            54
+            76
           ]
         }
       ]
@@ -9750,15 +9750,15 @@
       "path": "src/modules/plyr.c",
       "symbol": "func_plyr_00403B40",
       "lines": [
-        55
+        77
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_plyr_00403B40",
-          "declaration_line": 55,
+          "declaration_line": 77,
           "lines": [
-            55
+            77
           ]
         }
       ]
@@ -9769,15 +9769,15 @@
       "path": "src/modules/plyr.c",
       "symbol": "func_plyr_00404088",
       "lines": [
-        56
+        78
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_plyr_00404088",
-          "declaration_line": 56,
+          "declaration_line": 78,
           "lines": [
-            56
+            78
           ]
         }
       ]
@@ -9788,15 +9788,15 @@
       "path": "src/modules/plyr.c",
       "symbol": "func_plyr_004047C8",
       "lines": [
-        58
+        80
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_plyr_004047C8",
-          "declaration_line": 58,
+          "declaration_line": 80,
           "lines": [
-            58
+            80
           ]
         }
       ]
@@ -9807,15 +9807,15 @@
       "path": "src/modules/plyr.c",
       "symbol": "func_plyr_00404CE0",
       "lines": [
-        59
+        81
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_plyr_00404CE0",
-          "declaration_line": 59,
+          "declaration_line": 81,
           "lines": [
-            59
+            81
           ]
         }
       ]
@@ -9826,15 +9826,15 @@
       "path": "src/modules/plyr.c",
       "symbol": "func_plyr_004050AC",
       "lines": [
-        60
+        82
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_plyr_004050AC",
-          "declaration_line": 60,
+          "declaration_line": 82,
           "lines": [
-            60
+            82
           ]
         }
       ]
@@ -9845,24 +9845,24 @@
       "path": "src/modules/plyr.c",
       "symbol": "func_plyr_00405688",
       "lines": [
-        62,
-        208
+        84,
+        268
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_plyr_00405688",
-          "declaration_line": 62,
+          "declaration_line": 84,
           "lines": [
-            62
+            84
           ]
         },
         {
           "kind": "function",
           "name": "plyrDispatchDebugHudPasses",
-          "declaration_line": 203,
+          "declaration_line": 263,
           "lines": [
-            208
+            268
           ]
         }
       ]
@@ -9873,24 +9873,24 @@
       "path": "src/modules/plyr.c",
       "symbol": "func_plyr_00405C1C",
       "lines": [
-        63,
-        212
+        85,
+        272
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_plyr_00405C1C",
-          "declaration_line": 63,
+          "declaration_line": 85,
           "lines": [
-            63
+            85
           ]
         },
         {
           "kind": "function",
           "name": "plyrDispatchDebugHudPasses",
-          "declaration_line": 203,
+          "declaration_line": 263,
           "lines": [
-            212
+            272
           ]
         }
       ]
@@ -35951,29 +35951,85 @@
       ]
     },
     {
+      "id": "Q-afda7c2afc2b",
+      "kind": "address_global",
+      "path": "src/modules/plyr.c",
+      "symbol": "D_80025D70",
+      "lines": [
+        28,
+        208
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "plyrUpdateTimedAudioAndObjectState",
+          "declaration_line": 191,
+          "lines": [
+            208
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_80025D70",
+          "declaration_line": 28,
+          "lines": [
+            28
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-d72af7ac8aa2",
       "kind": "address_global",
       "path": "src/modules/plyr.c",
       "symbol": "D_80025D78",
       "lines": [
-        14,
-        116
+        36,
+        138
       ],
       "owners": [
         {
           "kind": "function",
           "name": "plyrUpdateMotionAndConditionallyDispatch",
-          "declaration_line": 113,
+          "declaration_line": 135,
           "lines": [
-            116
+            138
           ]
         },
         {
           "kind": "global",
           "name": "D_80025D78",
-          "declaration_line": 14,
+          "declaration_line": 36,
           "lines": [
-            14
+            36
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-8ffe3cb697c4",
+      "kind": "address_global",
+      "path": "src/modules/plyr.c",
+      "symbol": "D_plyr_004067BC",
+      "lines": [
+        27,
+        200
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "plyrUpdateTimedAudioAndObjectState",
+          "declaration_line": 191,
+          "lines": [
+            200
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_plyr_004067BC",
+          "declaration_line": 27,
+          "lines": [
+            27
           ]
         }
       ]
@@ -35984,35 +36040,74 @@
       "path": "src/modules/plyr.c",
       "symbol": "D_plyr_0040690C",
       "lines": [
-        23,
-        115,
-        133,
-        138
+        45,
+        137,
+        155,
+        160,
+        209
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_plyr_004022E0",
-          "declaration_line": 130,
+          "declaration_line": 152,
           "lines": [
-            133,
-            138
+            155,
+            160
           ]
         },
         {
           "kind": "function",
           "name": "plyrUpdateMotionAndConditionallyDispatch",
-          "declaration_line": 113,
+          "declaration_line": 135,
           "lines": [
-            115
+            137
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "plyrUpdateTimedAudioAndObjectState",
+          "declaration_line": 191,
+          "lines": [
+            209
           ]
         },
         {
           "kind": "global",
           "name": "D_plyr_0040690C",
-          "declaration_line": 23,
+          "declaration_line": 45,
           "lines": [
-            23
+            45
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-984a5faa7064",
+      "kind": "address_global",
+      "path": "src/modules/plyr.c",
+      "symbol": "D_plyr_00406940",
+      "lines": [
+        26,
+        195,
+        202
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "plyrUpdateTimedAudioAndObjectState",
+          "declaration_line": 191,
+          "lines": [
+            195,
+            202
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_plyr_00406940",
+          "declaration_line": 26,
+          "lines": [
+            26
           ]
         }
       ]
@@ -36023,33 +36118,33 @@
       "path": "src/modules/plyr.c",
       "symbol": "D_plyr_00406B1C",
       "lines": [
-        39,
-        101,
-        114
+        61,
+        123,
+        136
       ],
       "owners": [
         {
           "kind": "function",
           "name": "plyrInvokeMotionNoopAndCarAudioCallback",
-          "declaration_line": 100,
+          "declaration_line": 122,
           "lines": [
-            101
+            123
           ]
         },
         {
           "kind": "function",
           "name": "plyrUpdateMotionAndConditionallyDispatch",
-          "declaration_line": 113,
+          "declaration_line": 135,
           "lines": [
-            114
+            136
           ]
         },
         {
           "kind": "global",
           "name": "D_plyr_00406B1C",
-          "declaration_line": 39,
+          "declaration_line": 61,
           "lines": [
-            39
+            61
           ]
         }
       ]
@@ -36060,24 +36155,33 @@
       "path": "src/modules/plyr.c",
       "symbol": "D_plyr_00406B20",
       "lines": [
-        40,
-        102
+        62,
+        124,
+        214
       ],
       "owners": [
         {
           "kind": "function",
           "name": "plyrInvokeMotionNoopAndCarAudioCallback",
-          "declaration_line": 100,
+          "declaration_line": 122,
           "lines": [
-            102
+            124
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "plyrUpdateTimedAudioAndObjectState",
+          "declaration_line": 191,
+          "lines": [
+            214
           ]
         },
         {
           "kind": "global",
           "name": "D_plyr_00406B20",
-          "declaration_line": 40,
+          "declaration_line": 62,
           "lines": [
-            40
+            62
           ]
         }
       ]
@@ -36088,33 +36192,33 @@
       "path": "src/modules/plyr.c",
       "symbol": "D_plyr_00406B28",
       "lines": [
-        65,
-        126,
-        133
+        87,
+        148,
+        155
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_plyr_004022E0",
-          "declaration_line": 130,
+          "declaration_line": 152,
           "lines": [
-            133
+            155
           ]
         },
         {
           "kind": "function",
           "name": "plyrGetIndexedEntryWord",
-          "declaration_line": 125,
+          "declaration_line": 147,
           "lines": [
-            126
+            148
           ]
         },
         {
           "kind": "global",
           "name": "D_plyr_00406B28",
-          "declaration_line": 65,
+          "declaration_line": 87,
           "lines": [
-            65
+            87
           ]
         }
       ]
@@ -36125,24 +36229,24 @@
       "path": "src/modules/plyr.c",
       "symbol": "D_plyr_00406B48",
       "lines": [
-        42,
-        230
+        64,
+        290
       ],
       "owners": [
         {
           "kind": "function",
           "name": "plyrReleaseIndexedSoundHandle",
-          "declaration_line": 229,
+          "declaration_line": 289,
           "lines": [
-            230
+            290
           ]
         },
         {
           "kind": "global",
           "name": "D_plyr_00406B48",
-          "declaration_line": 42,
+          "declaration_line": 64,
           "lines": [
-            42
+            64
           ]
         }
       ]
@@ -36153,24 +36257,24 @@
       "path": "src/modules/plyr.c",
       "symbol": "D_plyr_00406B68",
       "lines": [
-        15,
-        74
+        37,
+        96
       ],
       "owners": [
         {
           "kind": "function",
           "name": "plyrReleaseSharedSoundHandles",
-          "declaration_line": 71,
+          "declaration_line": 93,
           "lines": [
-            74
+            96
           ]
         },
         {
           "kind": "global",
           "name": "D_plyr_00406B68",
-          "declaration_line": 15,
+          "declaration_line": 37,
           "lines": [
-            15
+            37
           ]
         }
       ]
@@ -36181,24 +36285,24 @@
       "path": "src/modules/plyr.c",
       "symbol": "D_plyr_00406B70",
       "lines": [
-        16,
-        72
+        38,
+        94
       ],
       "owners": [
         {
           "kind": "function",
           "name": "plyrReleaseSharedSoundHandles",
-          "declaration_line": 71,
+          "declaration_line": 93,
           "lines": [
-            72
+            94
           ]
         },
         {
           "kind": "global",
           "name": "D_plyr_00406B70",
-          "declaration_line": 16,
+          "declaration_line": 38,
           "lines": [
-            16
+            38
           ]
         }
       ]
@@ -36209,24 +36313,24 @@
       "path": "src/modules/plyr.c",
       "symbol": "D_plyr_00406B78",
       "lines": [
-        17,
-        73
+        39,
+        95
       ],
       "owners": [
         {
           "kind": "function",
           "name": "plyrReleaseSharedSoundHandles",
-          "declaration_line": 71,
+          "declaration_line": 93,
           "lines": [
-            73
+            95
           ]
         },
         {
           "kind": "global",
           "name": "D_plyr_00406B78",
-          "declaration_line": 17,
+          "declaration_line": 39,
           "lines": [
-            17
+            39
           ]
         }
       ]
@@ -36237,24 +36341,24 @@
       "path": "src/modules/plyr.c",
       "symbol": "D_plyr_00406B80",
       "lines": [
-        18,
-        75
+        40,
+        97
       ],
       "owners": [
         {
           "kind": "function",
           "name": "plyrReleaseSharedSoundHandles",
-          "declaration_line": 71,
+          "declaration_line": 93,
           "lines": [
-            75
+            97
           ]
         },
         {
           "kind": "global",
           "name": "D_plyr_00406B80",
-          "declaration_line": 18,
+          "declaration_line": 40,
           "lines": [
-            18
+            40
           ]
         }
       ]
@@ -36265,24 +36369,24 @@
       "path": "src/modules/plyr.c",
       "symbol": "D_plyr_00406B88",
       "lines": [
-        19,
-        76
+        41,
+        98
       ],
       "owners": [
         {
           "kind": "function",
           "name": "plyrReleaseSharedSoundHandles",
-          "declaration_line": 71,
+          "declaration_line": 93,
           "lines": [
-            76
+            98
           ]
         },
         {
           "kind": "global",
           "name": "D_plyr_00406B88",
-          "declaration_line": 19,
+          "declaration_line": 41,
           "lines": [
-            19
+            41
           ]
         }
       ]
@@ -36293,24 +36397,37 @@
       "path": "src/modules/plyr.c",
       "symbol": "D_plyr_00406B90",
       "lines": [
-        20,
-        77
+        42,
+        99,
+        196,
+        197,
+        199
       ],
       "owners": [
         {
           "kind": "function",
           "name": "plyrReleaseSharedSoundHandles",
-          "declaration_line": 71,
+          "declaration_line": 93,
           "lines": [
-            77
+            99
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "plyrUpdateTimedAudioAndObjectState",
+          "declaration_line": 191,
+          "lines": [
+            196,
+            197,
+            199
           ]
         },
         {
           "kind": "global",
           "name": "D_plyr_00406B90",
-          "declaration_line": 20,
+          "declaration_line": 42,
           "lines": [
-            20
+            42
           ]
         }
       ]
@@ -36321,24 +36438,24 @@
       "path": "src/modules/plyr.c",
       "symbol": "D_plyr_00406B98",
       "lines": [
-        21,
-        78
+        43,
+        100
       ],
       "owners": [
         {
           "kind": "function",
           "name": "plyrReleaseSharedSoundHandles",
-          "declaration_line": 71,
+          "declaration_line": 93,
           "lines": [
-            78
+            100
           ]
         },
         {
           "kind": "global",
           "name": "D_plyr_00406B98",
-          "declaration_line": 21,
+          "declaration_line": 43,
           "lines": [
-            21
+            43
           ]
         }
       ]
@@ -36349,24 +36466,24 @@
       "path": "src/modules/plyr.c",
       "symbol": "D_plyr_00406BA0",
       "lines": [
-        22,
-        79
+        44,
+        101
       ],
       "owners": [
         {
           "kind": "function",
           "name": "plyrReleaseSharedSoundHandles",
-          "declaration_line": 71,
+          "declaration_line": 93,
           "lines": [
-            79
+            101
           ]
         },
         {
           "kind": "global",
           "name": "D_plyr_00406BA0",
-          "declaration_line": 22,
+          "declaration_line": 44,
           "lines": [
-            22
+            44
           ]
         }
       ]
@@ -80823,7 +80940,7 @@
       "path": "src/modules/plyr.c",
       "symbol": "__entrypoint_func_plyr_400000",
       "lines": [
-        66
+        88
       ],
       "evidence": "asm/us/nonmatchings/modules/plyr/__entrypoint_func_plyr_400000.s"
     },
@@ -80833,7 +80950,7 @@
       "path": "src/modules/plyr.c",
       "symbol": "func_plyr_00400678",
       "lines": [
-        83
+        105
       ],
       "evidence": "asm/us/nonmatchings/modules/plyr/func_plyr_00400678.s"
     },
@@ -80843,7 +80960,7 @@
       "path": "src/modules/plyr.c",
       "symbol": "func_plyr_00400C3C",
       "lines": [
-        85
+        107
       ],
       "evidence": "asm/us/nonmatchings/modules/plyr/func_plyr_00400C3C.s"
     },
@@ -80853,7 +80970,7 @@
       "path": "src/modules/plyr.c",
       "symbol": "func_plyr_00401484",
       "lines": [
-        87
+        109
       ],
       "evidence": "asm/us/nonmatchings/modules/plyr/func_plyr_00401484.s"
     },
@@ -80863,7 +80980,7 @@
       "path": "src/modules/plyr.c",
       "symbol": "func_plyr_00401DC4",
       "lines": [
-        89
+        111
       ],
       "evidence": "asm/us/nonmatchings/modules/plyr/func_plyr_00401DC4.s"
     },
@@ -80873,7 +80990,7 @@
       "path": "src/modules/plyr.c",
       "symbol": "func_plyr_00402340",
       "lines": [
-        153
+        175
       ],
       "evidence": "asm/us/nonmatchings/modules/plyr/func_plyr_00402340.s"
     },
@@ -80883,7 +81000,7 @@
       "path": "src/modules/plyr.c",
       "symbol": "func_plyr_00402B90",
       "lines": [
-        155
+        177
       ],
       "evidence": "asm/us/nonmatchings/modules/plyr/func_plyr_00402B90.s"
     },
@@ -80893,19 +81010,9 @@
       "path": "src/modules/plyr.c",
       "symbol": "func_plyr_00402F14",
       "lines": [
-        157
+        179
       ],
       "evidence": "asm/us/nonmatchings/modules/plyr/func_plyr_00402F14.s"
-    },
-    {
-      "id": "Q-23524fc6b7ea",
-      "kind": "assembly",
-      "path": "src/modules/plyr.c",
-      "symbol": "func_plyr_0040397C",
-      "lines": [
-        159
-      ],
-      "evidence": "asm/us/nonmatchings/modules/plyr/func_plyr_0040397C.s"
     },
     {
       "id": "Q-99d63fbfe13c",
@@ -80913,7 +81020,7 @@
       "path": "src/modules/plyr.c",
       "symbol": "func_plyr_00403B40",
       "lines": [
-        161
+        221
       ],
       "evidence": "asm/us/nonmatchings/modules/plyr/func_plyr_00403B40.s"
     },
@@ -80923,7 +81030,7 @@
       "path": "src/modules/plyr.c",
       "symbol": "func_plyr_00404088",
       "lines": [
-        163
+        223
       ],
       "evidence": "asm/us/nonmatchings/modules/plyr/func_plyr_00404088.s"
     },
@@ -80933,7 +81040,7 @@
       "path": "src/modules/plyr.c",
       "symbol": "func_plyr_004047C8",
       "lines": [
-        194
+        254
       ],
       "evidence": "asm/us/nonmatchings/modules/plyr/func_plyr_004047C8.s"
     },
@@ -80943,7 +81050,7 @@
       "path": "src/modules/plyr.c",
       "symbol": "func_plyr_00404CE0",
       "lines": [
-        196
+        256
       ],
       "evidence": "asm/us/nonmatchings/modules/plyr/func_plyr_00404CE0.s"
     },
@@ -80953,7 +81060,7 @@
       "path": "src/modules/plyr.c",
       "symbol": "func_plyr_004050AC",
       "lines": [
-        198
+        258
       ],
       "evidence": "asm/us/nonmatchings/modules/plyr/func_plyr_004050AC.s"
     },
@@ -80963,7 +81070,7 @@
       "path": "src/modules/plyr.c",
       "symbol": "func_plyr_00405688",
       "lines": [
-        217
+        277
       ],
       "evidence": "asm/us/nonmatchings/modules/plyr/func_plyr_00405688.s"
     },
@@ -80973,7 +81080,7 @@
       "path": "src/modules/plyr.c",
       "symbol": "func_plyr_00405C1C",
       "lines": [
-        219
+        279
       ],
       "evidence": "asm/us/nonmatchings/modules/plyr/func_plyr_00405C1C.s"
     },
@@ -88483,15 +88590,15 @@
       "path": "src/modules/plyr.c",
       "symbol": "arg0",
       "lines": [
-        50
+        72
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_plyr_004022E0",
-          "declaration_line": 50,
+          "declaration_line": 72,
           "lines": [
-            50
+            72
           ]
         }
       ]
@@ -128511,21 +128618,61 @@
       ]
     },
     {
+      "id": "Q-4cc7f493386a",
+      "kind": "explicit_unknown",
+      "path": "src/modules/plyr.c",
+      "symbol": "Caller-scoped offsets from the complete original PLYR 397C instructions. * RE_UNKNOWN: historical typedef, complete allocation, pointer ownership and * meanings of word04/word08/index14/drawable18/timer20 beyond this call site.",
+      "lines": [
+        13
+      ],
+      "evidence": "Caller-scoped offsets from the complete original PLYR 397C instructions. * RE_UNKNOWN: historical typedef, complete allocation, pointer ownership and * meanings of word04/word08/index14/drawable18/timer20 beyond this call site.",
+      "owners": [
+        {
+          "kind": "type",
+          "name": "PlyrTimedAudioEntry",
+          "declaration_line": 16,
+          "lines": [
+            13
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-69de1c54f055",
       "kind": "explicit_unknown",
       "path": "src/modules/plyr.c",
       "symbol": "Draw the red arrow and translucent black shadow using current screen dimensions. * Apply local-Y displacement -14 directly to the caller's matrix; popping graphics state does not restore its translation row. * RE_UNKNOWN: caller matrix reuse and coordinate units require original callsites and input-matrix construction; preserve the original stack operations.",
       "lines": [
-        166
+        226
       ],
       "evidence": "Draw the red arrow and translucent black shadow using current screen dimensions. * Apply local-Y displacement -14 directly to the caller's matrix; popping graphics state does not restore its translation row. * RE_UNKNOWN: caller matrix reuse and coordinate units require original callsites and input-matrix construction; preserve the original stack operations.",
       "owners": [
         {
           "kind": "function",
           "name": "plyrDrawRedArrowWithShadow",
-          "declaration_line": 169,
+          "declaration_line": 229,
           "lines": [
-            166
+            226
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-6922fcc48f68",
+      "kind": "explicit_unknown",
+      "path": "src/modules/plyr.c",
+      "symbol": "Initialize the sound transform, consume the shared pending-sound byte, then * run the car-audio and indexed-handle callbacks before advancing this entry's * timer. A timer crossing below zero may clear object flags and dispatch the * original four-word callback. Keep provider and state reloads across calls. * RE_UNKNOWN: timer units, shared-word domains, sound-8E meaning, state/object * lifetime and the complete callback contracts require original producers. * The local views describe this caller's accesses, not full allocations. * RE_ORIGINAL_QUIRK: a negative or NaN timer is left unchanged. The pending * byte clears after all four sound calls; the timer-crossing branch does not * clamp the timer and requires the signed shared word to be at least two.",
+      "lines": [
+        181
+      ],
+      "evidence": "Initialize the sound transform, consume the shared pending-sound byte, then * run the car-audio and indexed-handle callbacks before advancing this entry's * timer. A timer crossing below zero may clear object flags and dispatch the * original four-word callback. Keep provider and state reloads across calls. * RE_UNKNOWN: timer units, shared-word domains, sound-8E meaning, state/object * lifetime and the complete callback contracts require original producers. * The local views describe this caller's accesses, not full allocations. * RE_ORIGINAL_QUIRK: a negative or NaN timer is left unchanged. The pending * byte clears after all four sound calls; the timer-crossing branch does not * clamp the timer and requires the signed shared word to be at least two.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "plyrUpdateTimedAudioAndObjectState",
+          "declaration_line": 191,
+          "lines": [
+            181
           ]
         }
       ]
@@ -128536,16 +128683,16 @@
       "path": "src/modules/plyr.c",
       "symbol": "Invoke motion export 0x30, then pass the supplied * word to car-audio export 0x24. Original player initialization binds these * dependencies to tags 'motn' and 'cara', respectively. * Original motion slot 0x30 returns immediately after storing incoming a0 * into its argument home at 0(sp); retain that original machine input. * RE_UNKNOWN: empty motion callback's intended argument/result prototype and * the car-audio callback's word meaning. Preserve existing call forms; resolve * original callers and car-audio slot 0x24 before assigning parameter roles.",
       "lines": [
-        92
+        114
       ],
       "evidence": "Invoke motion export 0x30, then pass the supplied * word to car-audio export 0x24. Original player initialization binds these * dependencies to tags 'motn' and 'cara', respectively. * Original motion slot 0x30 returns immediately after storing incoming a0 * into its argument home at 0(sp); retain that original machine input. * RE_UNKNOWN: empty motion callback's intended argument/result prototype and * the car-audio callback's word meaning. Preserve existing call forms; resolve * original callers and car-audio slot 0x24 before assigning parameter roles.",
       "owners": [
         {
           "kind": "function",
           "name": "plyrInvokeMotionNoopAndCarAudioCallback",
-          "declaration_line": 100,
+          "declaration_line": 122,
           "lines": [
-            92
+            114
           ]
         }
       ]
@@ -128556,16 +128703,16 @@
       "path": "src/modules/plyr.c",
       "symbol": "Invoke motionUpdateSharedState through proven motion export 0x34, * then run the original player helper when shared word 0x0040690C is below * three and the shared halfword is zero or three. * RE_UNKNOWN: broader roles of these shared values and the conditional helper. * Trace their original writers and helper callers before interpreting the * conditions as a particular gameplay mode or player-count rule.",
       "lines": [
-        107
+        129
       ],
       "evidence": "Invoke motionUpdateSharedState through proven motion export 0x34, * then run the original player helper when shared word 0x0040690C is below * three and the shared halfword is zero or three. * RE_UNKNOWN: broader roles of these shared values and the conditional helper. * Trace their original writers and helper callers before interpreting the * conditions as a particular gameplay mode or player-count rule.",
       "owners": [
         {
           "kind": "function",
           "name": "plyrUpdateMotionAndConditionallyDispatch",
-          "declaration_line": 113,
+          "declaration_line": 135,
           "lines": [
-            107
+            129
           ]
         }
       ]
@@ -128576,16 +128723,16 @@
       "path": "src/modules/plyr.c",
       "symbol": "Original MOTN slots: 0x30 -> func_motion_00405E5C; * 0x34 -> motionUpdateSharedState(void). * Slot 0x30 returns immediately, storing incoming a0 in its argument home * at 0(sp) in the return delay slot; preserve this original machine input. * RE_UNKNOWN: intended original argument/result contract of empty slot 0x30. * Its current target C declares one s32; retain this caller's no-argument view * until original callers establish the prototype. An empty body is insufficient.",
       "lines": [
-        24
+        46
       ],
       "evidence": "Original MOTN slots: 0x30 -> func_motion_00405E5C; * 0x34 -> motionUpdateSharedState(void). * Slot 0x30 returns immediately, storing incoming a0 in its argument home * at 0(sp) in the return delay slot; preserve this original machine input. * RE_UNKNOWN: intended original argument/result contract of empty slot 0x30. * Its current target C declares one s32; retain this caller's no-argument view * until original callers establish the prototype. An empty body is insufficient.",
       "owners": [
         {
           "kind": "type",
           "name": "PlyrMotionExports",
-          "declaration_line": 32,
+          "declaration_line": 54,
           "lines": [
-            24
+            46
           ]
         }
       ]
@@ -128596,16 +128743,16 @@
       "path": "src/modules/plyr.c",
       "symbol": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "lines": [
-        145
+        167
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "owners": [
         {
           "kind": "function",
           "name": "func_plyr_00402338",
-          "declaration_line": 149,
+          "declaration_line": 171,
           "lines": [
-            145
+            167
           ]
         }
       ]
@@ -128616,16 +128763,16 @@
       "path": "src/modules/plyr.c",
       "symbol": "RE_UNKNOWN: Registry bounds, record layout and key meaning. Inherited nested casts and self-assignment remain; historical types are unproved.",
       "lines": [
-        142
+        164
       ],
       "evidence": "RE_UNKNOWN: Registry bounds, record layout and key meaning. Inherited nested casts and self-assignment remain; historical types are unproved.",
       "owners": [
         {
           "kind": "function",
           "name": "func_plyr_004022E0",
-          "declaration_line": 130,
+          "declaration_line": 152,
           "lines": [
-            142
+            164
           ]
         }
       ]
@@ -128636,16 +128783,16 @@
       "path": "src/modules/plyr.c",
       "symbol": "RE_UNKNOWN: Screen-size domain and caller matrix ownership; input translation persists and bit 0x400000 ends cleared.",
       "lines": [
-        191
+        251
       ],
       "evidence": "RE_UNKNOWN: Screen-size domain and caller matrix ownership; input translation persists and bit 0x400000 ends cleared.",
       "owners": [
         {
           "kind": "function",
           "name": "plyrDrawRedArrowWithShadow",
-          "declaration_line": 169,
+          "declaration_line": 229,
           "lines": [
-            191
+            251
           ]
         }
       ]
@@ -128656,16 +128803,16 @@
       "path": "src/modules/plyr.c",
       "symbol": "Release eight shared player sound handles in their original order. * RE_UNKNOWN: storage ownership and safe handle lifetime require original initialization, users and release paths; global addresses alone establish neither.",
       "lines": [
-        69
+        91
       ],
       "evidence": "Release eight shared player sound handles in their original order. * RE_UNKNOWN: storage ownership and safe handle lifetime require original initialization, users and release paths; global addresses alone establish neither.",
       "owners": [
         {
           "kind": "function",
           "name": "plyrReleaseSharedSoundHandles",
-          "declaration_line": 71,
+          "declaration_line": 93,
           "lines": [
-            69
+            91
           ]
         }
       ]
@@ -128676,16 +128823,16 @@
       "path": "src/modules/plyr.c",
       "symbol": "Release the sound handle selected by the caller record word at 0x14 * from shared storage D_plyr_00406B48, using the original eight-byte stride. * RE_UNKNOWN: shared handle-array extent, index validity and handle lifetime. * The wrapper does not establish caller ownership of that global array. * Trace original array initialization, index writers and release paths before * assigning an ownership contract or proving the unchecked index bound.",
       "lines": [
-        222
+        282
       ],
       "evidence": "Release the sound handle selected by the caller record word at 0x14 * from shared storage D_plyr_00406B48, using the original eight-byte stride. * RE_UNKNOWN: shared handle-array extent, index validity and handle lifetime. * The wrapper does not establish caller ownership of that global array. * Trace original array initialization, index writers and release paths before * assigning an ownership contract or proving the unchecked index bound.",
       "owners": [
         {
           "kind": "function",
           "name": "plyrReleaseIndexedSoundHandle",
-          "declaration_line": 229,
+          "declaration_line": 289,
           "lines": [
-            222
+            282
           ]
         }
       ]
@@ -128696,16 +128843,16 @@
       "path": "src/modules/plyr.c",
       "symbol": "Return the caller-indexed word from D_plyr_00406B28. RE_UNKNOWN: entry meaning and valid index domain require original table producers and callers; preserve its s32 result ABI.",
       "lines": [
-        125
+        147
       ],
       "evidence": "Return the caller-indexed word from D_plyr_00406B28. RE_UNKNOWN: entry meaning and valid index domain require original table producers and callers; preserve its s32 result ABI.",
       "owners": [
         {
           "kind": "function",
           "name": "plyrGetIndexedEntryWord",
-          "declaration_line": 125,
+          "declaration_line": 147,
           "lines": [
-            125
+            147
           ]
         }
       ]
@@ -156353,29 +156500,67 @@
       ]
     },
     {
+      "id": "Q-0b03c4defde0",
+      "kind": "layout_padding",
+      "path": "src/modules/plyr.c",
+      "symbol": "gap0C",
+      "lines": [
+        20
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "PlyrTimedAudioEntry",
+          "declaration_line": 16,
+          "lines": [
+            20
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-fe5388982df6",
+      "kind": "layout_padding",
+      "path": "src/modules/plyr.c",
+      "symbol": "gap1C",
+      "lines": [
+        23
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "PlyrTimedAudioEntry",
+          "declaration_line": 16,
+          "lines": [
+            23
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-2c273313e7ff",
       "kind": "layout_padding",
       "path": "src/modules/plyr.c",
       "symbol": "pad00",
       "lines": [
-        37,
-        38
+        59,
+        60
       ],
       "owners": [
         {
           "kind": "type",
           "name": "UnkStruct_80025C78",
-          "declaration_line": 38,
+          "declaration_line": 60,
           "lines": [
-            38
+            60
           ]
         },
         {
           "kind": "type",
           "name": "UnkStruct_D_plyr_00406B20",
-          "declaration_line": 37,
+          "declaration_line": 59,
           "lines": [
-            37
+            59
           ]
         }
       ]
@@ -156386,15 +156571,15 @@
       "path": "src/modules/plyr.c",
       "symbol": "prefix",
       "lines": [
-        33
+        55
       ],
       "owners": [
         {
           "kind": "type",
           "name": "PlyrMotionExports",
-          "declaration_line": 32,
+          "declaration_line": 54,
           "lines": [
-            33
+            55
           ]
         }
       ]
@@ -181336,24 +181521,24 @@
       "path": "src/modules/plyr.c",
       "symbol": "unk24",
       "lines": [
-        37,
-        102
+        59,
+        124
       ],
       "owners": [
         {
           "kind": "function",
           "name": "plyrInvokeMotionNoopAndCarAudioCallback",
-          "declaration_line": 100,
+          "declaration_line": 122,
           "lines": [
-            102
+            124
           ]
         },
         {
           "kind": "type",
           "name": "UnkStruct_D_plyr_00406B20",
-          "declaration_line": 37,
+          "declaration_line": 59,
           "lines": [
-            37
+            59
           ]
         }
       ]
@@ -181364,24 +181549,80 @@
       "path": "src/modules/plyr.c",
       "symbol": "unk70",
       "lines": [
-        38,
-        230
+        60,
+        290
       ],
       "owners": [
         {
           "kind": "function",
           "name": "plyrReleaseIndexedSoundHandle",
-          "declaration_line": 229,
+          "declaration_line": 289,
           "lines": [
-            230
+            290
           ]
         },
         {
           "kind": "type",
           "name": "UnkStruct_80025C78",
-          "declaration_line": 38,
+          "declaration_line": 60,
           "lines": [
-            38
+            60
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-bf05514cbc38",
+      "kind": "offset_field",
+      "path": "src/modules/plyr.c",
+      "symbol": "word04",
+      "lines": [
+        18,
+        215
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "plyrUpdateTimedAudioAndObjectState",
+          "declaration_line": 191,
+          "lines": [
+            215
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "PlyrTimedAudioEntry",
+          "declaration_line": 16,
+          "lines": [
+            18
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-59b6191de17d",
+      "kind": "offset_field",
+      "path": "src/modules/plyr.c",
+      "symbol": "word08",
+      "lines": [
+        19,
+        205
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "plyrUpdateTimedAudioAndObjectState",
+          "declaration_line": 191,
+          "lines": [
+            205
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "PlyrTimedAudioEntry",
+          "declaration_line": 16,
+          "lines": [
+            19
           ]
         }
       ]
@@ -223305,24 +223546,24 @@
       "path": "src/modules/plyr.c",
       "symbol": "UnkStruct_80025C78",
       "lines": [
-        38,
-        41
+        60,
+        63
       ],
       "owners": [
         {
           "kind": "global",
           "name": "gSndExports",
-          "declaration_line": 41,
+          "declaration_line": 63,
           "lines": [
-            41
+            63
           ]
         },
         {
           "kind": "type",
           "name": "UnkStruct_80025C78",
-          "declaration_line": 38,
+          "declaration_line": 60,
           "lines": [
-            38
+            60
           ]
         }
       ]
@@ -223333,24 +223574,24 @@
       "path": "src/modules/plyr.c",
       "symbol": "UnkStruct_D_plyr_00406B20",
       "lines": [
-        37,
-        40
+        59,
+        62
       ],
       "owners": [
         {
           "kind": "global",
           "name": "D_plyr_00406B20",
-          "declaration_line": 40,
+          "declaration_line": 62,
           "lines": [
-            40
+            62
           ]
         },
         {
           "kind": "type",
           "name": "UnkStruct_D_plyr_00406B20",
-          "declaration_line": 37,
+          "declaration_line": 59,
           "lines": [
-            37
+            59
           ]
         }
       ]
@@ -231432,6 +231673,26 @@
           "declaration_line": 57,
           "lines": [
             48
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-28d596e70ed9",
+      "kind": "original_quirk",
+      "path": "src/modules/plyr.c",
+      "symbol": "Initialize the sound transform, consume the shared pending-sound byte, then * run the car-audio and indexed-handle callbacks before advancing this entry's * timer. A timer crossing below zero may clear object flags and dispatch the * original four-word callback. Keep provider and state reloads across calls. * RE_UNKNOWN: timer units, shared-word domains, sound-8E meaning, state/object * lifetime and the complete callback contracts require original producers. * The local views describe this caller's accesses, not full allocations. * RE_ORIGINAL_QUIRK: a negative or NaN timer is left unchanged. The pending * byte clears after all four sound calls; the timer-crossing branch does not * clamp the timer and requires the signed shared word to be at least two.",
+      "lines": [
+        181
+      ],
+      "evidence": "Initialize the sound transform, consume the shared pending-sound byte, then * run the car-audio and indexed-handle callbacks before advancing this entry's * timer. A timer crossing below zero may clear object flags and dispatch the * original four-word callback. Keep provider and state reloads across calls. * RE_UNKNOWN: timer units, shared-word domains, sound-8E meaning, state/object * lifetime and the complete callback contracts require original producers. * The local views describe this caller's accesses, not full allocations. * RE_ORIGINAL_QUIRK: a negative or NaN timer is left unchanged. The pending * byte clears after all four sound calls; the timer-crossing branch does not * clamp the timer and requires the signed shared word to be at least two.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "plyrUpdateTimedAudioAndObjectState",
+          "declaration_line": 191,
+          "lines": [
+            181
           ]
         }
       ]
