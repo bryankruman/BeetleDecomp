@@ -324,6 +324,7 @@
     "src/libultra/io/sptask.c": "fa27d75a5bc8f7acbba210cb8eb7a8942af8c92179bbc8af97b984e7dbe8755f",
     "src/libultra/io/sptaskyield.c": "e50c85feef2a8c8f09600485081302126fc4fc180b05f37d2de075d7af437cf5",
     "src/libultra/io/sptaskyielded.c": "f53662037720c322878f3acc3eee1a764f281e5bc4118b6f5cef497dddb83478",
+    "src/libultra/io/vi.c": "b97678ce693cfda0fb235e37881a496a2e4442c87c8a5e6789d896c7d82b762c",
     "src/libultra/io/viblack.c": "bfc16e45f4c098bb7469e3ab45180673a9f0e57cbd4154b01f56a7929352536f",
     "src/libultra/io/vigetcurrcontext.c": "3bb44bb8e5c003ca44933074adfbc5c615824d0f3d90192b1c206d697ae755c2",
     "src/libultra/io/vigetcurrframebuf.c": "3706b35ff8b40872103a1aedeab5fa39fc3359814a0dbbfcbc7239750dc1abe3",
@@ -333,6 +334,7 @@
     "src/libultra/io/visetmode.c": "e387313c4b412991dc67fd5aea3194c319ee0fdcd9c03c589a356eb231da44dd",
     "src/libultra/io/visetspecial.c": "5ca011c0f4d2913cf5ea5fa8693446dce5c4c69c886305c4960112c5f1900a6b",
     "src/libultra/io/viswapbuf.c": "5983f06e50929fc212082898f8506649a0e66a845ba478f553691c3d51ef250a",
+    "src/libultra/io/viswapcontext.c": "cbb720d70b038e621bf0d5d96ebd6795cbc9831f6ef1cb8f68c567f7cbff54cd",
     "src/libultra/libc/ldiv.c": "636e95d6b62a4724e61310fdf9dfe7d6e793b5a3f910ac25885af9ab7b0d6bf9",
     "src/libultra/libc/ll.c": "1da6e00d1364e19791a2b51074fe19eafac9a92f595d267d7cbdbe8379149142",
     "src/libultra/libc/sprintf.c": "f1584ae189f76359486b77a81853b0d136a6ffcc4570bd885d61f4072192fb8b",
@@ -509,12 +511,12 @@
     "audit_debt": 30,
     "conditional_draft": 4,
     "decompiler_local": 622,
-    "draft_marker": 51,
-    "explicit_unknown": 1862,
+    "draft_marker": 53,
+    "explicit_unknown": 1865,
     "layout_padding": 281,
     "offset_field": 1750,
     "opaque_type": 283,
-    "original_quirk": 507,
+    "original_quirk": 509,
     "uncertainty_note": 88,
     "unused_identifier": 137
   },
@@ -116901,6 +116903,16 @@
       "evidence": "TODO: this comes from a header"
     },
     {
+      "id": "Q-8b4420e60133",
+      "kind": "draft_marker",
+      "path": "src/libultra/io/vi.c",
+      "symbol": "TODO",
+      "lines": [
+        14
+      ],
+      "evidence": "TODO: this comes from a header"
+    },
+    {
       "id": "Q-a35a5d7dd6ae",
       "kind": "draft_marker",
       "path": "src/libultra/io/viblack.c",
@@ -116957,6 +116969,16 @@
       "symbol": "TODO",
       "lines": [
         50
+      ],
+      "evidence": "TODO: this comes from a header"
+    },
+    {
+      "id": "Q-c67c0dc22d84",
+      "kind": "draft_marker",
+      "path": "src/libultra/io/viswapcontext.c",
+      "symbol": "TODO",
+      "lines": [
+        11
       ],
       "evidence": "TODO: this comes from a header"
     },
@@ -119619,6 +119641,36 @@
       ]
     },
     {
+      "id": "Q-3fd24b536ecf",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/io/vi.c",
+      "symbol": "RE_UNKNOWN: exact line-counter wait phase.",
+      "lines": [
+        41
+      ],
+      "evidence": "RE_UNKNOWN: exact line-counter wait phase.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__osViInit",
+          "declaration_line": 21,
+          "lines": [
+            41
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-1103fc0ef781",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/io/vi.c",
+      "symbol": "Reset the existing VI contexts, select the TV mode, and apply the first field. * RE_ORIGINAL_QUIRK: the VI line-counter wait has no timeout. * RE_UNKNOWN: exact SDK release and original header provenance are unproved; * #ident below is retained stock provenance. * RE_UNKNOWN: vi[2] is an observed 96-byte access view, not a proved allocation extent.",
+      "lines": [
+        1
+      ],
+      "evidence": "Reset the existing VI contexts, select the TV mode, and apply the first field. * RE_ORIGINAL_QUIRK: the VI line-counter wait has no timeout. * RE_UNKNOWN: exact SDK release and original header provenance are unproved; * #ident below is retained stock provenance. * RE_UNKNOWN: vi[2] is an observed 96-byte access view, not a proved allocation extent."
+    },
+    {
       "id": "Q-217c8bff2fc7",
       "kind": "explicit_unknown",
       "path": "src/libultra/io/viblack.c",
@@ -119797,6 +119849,16 @@
           ]
         }
       ]
+    },
+    {
+      "id": "Q-cfd2b879d6de",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/io/viswapcontext.c",
+      "symbol": "Program the selected VI field registers, then copy its context into the next slot. * RE_ORIGINAL_QUIRK: retain the unsigned scale conversion and live context reads. * RE_UNKNOWN: exact SDK release and original header provenance are unproved; * #ident below is retained stock provenance.",
+      "lines": [
+        1
+      ],
+      "evidence": "Program the selected VI field registers, then copy its context into the next slot. * RE_ORIGINAL_QUIRK: retain the unsigned scale conversion and live context reads. * RE_UNKNOWN: exact SDK release and original header provenance are unproved; * #ident below is retained stock provenance."
     },
     {
       "id": "Q-8ccc548f5f4b",
@@ -232467,6 +232529,16 @@
       ]
     },
     {
+      "id": "Q-12442e4a8e1f",
+      "kind": "original_quirk",
+      "path": "src/libultra/io/vi.c",
+      "symbol": "Reset the existing VI contexts, select the TV mode, and apply the first field. * RE_ORIGINAL_QUIRK: the VI line-counter wait has no timeout. * RE_UNKNOWN: exact SDK release and original header provenance are unproved; * #ident below is retained stock provenance. * RE_UNKNOWN: vi[2] is an observed 96-byte access view, not a proved allocation extent.",
+      "lines": [
+        1
+      ],
+      "evidence": "Reset the existing VI contexts, select the TV mode, and apply the first field. * RE_ORIGINAL_QUIRK: the VI line-counter wait has no timeout. * RE_UNKNOWN: exact SDK release and original header provenance are unproved; * #ident below is retained stock provenance. * RE_UNKNOWN: vi[2] is an observed 96-byte access view, not a proved allocation extent."
+    },
+    {
       "id": "Q-1daa22c2299c",
       "kind": "original_quirk",
       "path": "src/libultra/io/vimgr.c",
@@ -232525,6 +232597,16 @@
           ]
         }
       ]
+    },
+    {
+      "id": "Q-f956bc4b433e",
+      "kind": "original_quirk",
+      "path": "src/libultra/io/viswapcontext.c",
+      "symbol": "Program the selected VI field registers, then copy its context into the next slot. * RE_ORIGINAL_QUIRK: retain the unsigned scale conversion and live context reads. * RE_UNKNOWN: exact SDK release and original header provenance are unproved; * #ident below is retained stock provenance.",
+      "lines": [
+        1
+      ],
+      "evidence": "Program the selected VI field registers, then copy its context into the next slot. * RE_ORIGINAL_QUIRK: retain the unsigned scale conversion and live context reads. * RE_UNKNOWN: exact SDK release and original header provenance are unproved; * #ident below is retained stock provenance."
     },
     {
       "id": "Q-067a348d3774",

@@ -17,8 +17,8 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 1862 |
-| Preserved RE_ORIGINAL_QUIRK notes | 507 |
+| Explicit RE_UNKNOWN notes | 1865 |
+| Preserved RE_ORIGINAL_QUIRK notes | 509 |
 | Older comments with uncertainty language | 88 |
 | Documented original-behavior audits | 30 |
 | Assembly-backed functions or data | 750 |
@@ -29,7 +29,7 @@ For every future source wave, regenerate and check this index after code and str
 | Unresolved type names | 283 |
 | Explicit unused ABI, storage or local identifiers | 137 |
 | Decompiler parameter/local names | 622 |
-| Fake, unresolved or TODO draft markers | 51 |
+| Fake, unresolved or TODO draft markers | 53 |
 | Data-dependent conditional draft guards | 4 |
 
 ## docs/STRATEGY_V4.md
@@ -1462,6 +1462,15 @@ For every future source wave, regenerate and check this index after code and str
 | explicit_unknown | `Read processor status and return YIELDED only when that status bit is * set. When the yield-request bit is also present, OR the result into the * task flags and clear DP_WAIT. R...` | function `osSpTaskYielded` | [6](../src/libultra/io/sptaskyielded.c#L6) |
 | original_quirk | `Read processor status and return YIELDED only when that status bit is * set. When the yield-request bit is also present, OR the result into the * task flags and clear DP_WAIT. R...` | function `osSpTaskYielded` | [6](../src/libultra/io/sptaskyielded.c#L6) |
 
+## src/libultra/io/vi.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| draft_marker | `TODO` | — | [14](../src/libultra/io/vi.c#L14) |
+| explicit_unknown | `RE_UNKNOWN: exact line-counter wait phase.` | function `__osViInit` | [41](../src/libultra/io/vi.c#L41) |
+| explicit_unknown | `Reset the existing VI contexts, select the TV mode, and apply the first field. * RE_ORIGINAL_QUIRK: the VI line-counter wait has no timeout. * RE_UNKNOWN: exact SDK release and ...` | — | [1](../src/libultra/io/vi.c#L1) |
+| original_quirk | `Reset the existing VI contexts, select the TV mode, and apply the first field. * RE_ORIGINAL_QUIRK: the VI line-counter wait has no timeout. * RE_UNKNOWN: exact SDK release and ...` | — | [1](../src/libultra/io/vi.c#L1) |
+
 ## src/libultra/io/viblack.c
 
 | Kind | Identifier or note | Declaration context | Physical lines |
@@ -1524,6 +1533,14 @@ For every future source wave, regenerate and check this index after code and str
 | --- | --- | --- | --- |
 | draft_marker | `TODO` | — | [50](../src/libultra/io/viswapbuf.c#L50) |
 | explicit_unknown | `Store the requested framebuffer in the next video context and OR its * buffer-updated flag while interrupts are disabled. Manager, NULL and * alignment checks remain _DEBUG-only...` | function `osViSwapBuffer` | [53](../src/libultra/io/viswapbuf.c#L53) |
+
+## src/libultra/io/viswapcontext.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| draft_marker | `TODO` | — | [11](../src/libultra/io/viswapcontext.c#L11) |
+| explicit_unknown | `Program the selected VI field registers, then copy its context into the next slot. * RE_ORIGINAL_QUIRK: retain the unsigned scale conversion and live context reads. * RE_UNKNOWN...` | — | [1](../src/libultra/io/viswapcontext.c#L1) |
+| original_quirk | `Program the selected VI field registers, then copy its context into the next slot. * RE_ORIGINAL_QUIRK: retain the unsigned scale conversion and live context reads. * RE_UNKNOWN...` | — | [1](../src/libultra/io/viswapcontext.c#L1) |
 
 ## src/libultra/libc/ldiv.c
 

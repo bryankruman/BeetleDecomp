@@ -239,3 +239,9 @@ __osCurrentHandle = D_80020A10;
 
 /* Preserve the original address-named controller packet formatter. */
 func_8000E6E0 = __osPackReadData;
+
+/* Native-proven VI context access view and complete mode-table aliases; allocate no storage. */
+vi = D_80020A80;
+osViModePalLan1 = D_80020B10;
+osViModeMpalLan1 = D_80020B60;
+osViModeNtscLan1 = D_80020BB0;

@@ -709,3 +709,13 @@ $(BUILD_DIR)/src/libultra/io/epirawio.o: src/libultra/io/epirawio.c $(SDK_AUDIO_
 $(BUILD_DIR)/src/libultra/io/contreaddata.o: src/libultra/io/contreaddata.c $(SDK_AUDIO_HEADERS) $(SDK_CONTROLLER_HEADERS) tools/asm-processor/build.py tools/asm-processor/asm_processor.py tools/asm-processor/prelude.inc
 	$(V)mkdir -p $(dir $@)
 	$(V)$(ASM_PROC) $(ASM_PROC_FLAGS) $(SDK_AUDIO_CC) -- $(AS) $(ASFLAGS) -- $(subst -O3,-O2,$(SDK_AUDIO_FLAGS)) -o $@ $<
+
+# Native-matched VI routines use the J-or-later branch with explicit per-unit optimization.
+# Existing VI context and mode storage remains owned by the original assembly/data.
+SDK_VI_J_FLAGS := $(subst -DBUILD_VERSION_STRING=\"2.0I\",-DBUILD_VERSION_STRING=\"2.0J\",$(subst -DBUILD_VERSION=VERSION_I,-DBUILD_VERSION=VERSION_J,$(SDK_AUDIO_FLAGS)))
+$(BUILD_DIR)/src/libultra/io/vi.o: src/libultra/io/vi.c $(SDK_AUDIO_HEADERS) $(SDK_CONTROLLER_HEADERS) include/2.0I/PRinternal/viint.h tools/asm-processor/build.py tools/asm-processor/asm_processor.py tools/asm-processor/prelude.inc
+	$(V)mkdir -p $(dir $@)
+	$(V)$(ASM_PROC) $(ASM_PROC_FLAGS) $(SDK_AUDIO_CC) -- $(AS) $(ASFLAGS) -- $(subst -O3,-O1,$(SDK_VI_J_FLAGS)) -o $@ $<
+$(BUILD_DIR)/src/libultra/io/viswapcontext.o: src/libultra/io/viswapcontext.c $(SDK_AUDIO_HEADERS) $(SDK_CONTROLLER_HEADERS) include/2.0I/PRinternal/viint.h tools/asm-processor/build.py tools/asm-processor/asm_processor.py tools/asm-processor/prelude.inc
+	$(V)mkdir -p $(dir $@)
+	$(V)$(ASM_PROC) $(ASM_PROC_FLAGS) $(SDK_AUDIO_CC) -- $(AS) $(ASFLAGS) -- $(subst -O3,-O2,$(SDK_VI_J_FLAGS)) -o $@ $<
