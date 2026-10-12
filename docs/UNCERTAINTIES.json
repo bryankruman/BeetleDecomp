@@ -302,6 +302,7 @@
     "src/libultra/io/aisetfreq.c": "e0d9998c3391129ce9b5198498d779cef764ae2d7cab9acac158b669bab802f3",
     "src/libultra/io/aisetnextbuf.c": "a56af1027e3d9c8fac23d75361e9a8d92cc4578d83a3bb4d3b9c4dc1cf288a78",
     "src/libultra/io/contquery.c": "a6c202027824498463298d5ccb6ebee06322e6a1cb18872d549dd57cbb9a7033",
+    "src/libultra/io/contreaddata.c": "22b3759982a727d22f8e4b9541dabd6d34572a4da662a9d4890e2cd5feb05cf3",
     "src/libultra/io/contsetch.c": "0c5bc528e0c93168789d1e8a84ddb88d386d06948cfd760c6104b40e04a24caa",
     "src/libultra/io/epirawio.c": "a332fc3652771cf8c00233bc463586486fc7400c8cfd53c322ed85685d9bbf8b",
     "src/libultra/io/pfsisplug.c": "c0c2eae5a8b136e9dbc156c18a291f4ca6fcfbb8c11f8fe0ef01a2ed037a2eca",
@@ -509,11 +510,11 @@
     "conditional_draft": 4,
     "decompiler_local": 622,
     "draft_marker": 51,
-    "explicit_unknown": 1858,
+    "explicit_unknown": 1860,
     "layout_padding": 281,
     "offset_field": 1748,
     "opaque_type": 283,
-    "original_quirk": 503,
+    "original_quirk": 506,
     "uncertainty_note": 88,
     "unused_identifier": 137
   },
@@ -119163,6 +119164,46 @@
       ]
     },
     {
+      "id": "Q-9e0b5e0af184",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/io/contreaddata.c",
+      "symbol": "Decode each configured controller response into the caller's pad records. * RE_ORIGINAL_QUIRK: a channel error updates errno but preserves prior input fields. * RE_UNKNOWN: callers must provide the output capacity; this routine checks none.",
+      "lines": [
+        32
+      ],
+      "evidence": "Decode each configured controller response into the caller's pad records. * RE_ORIGINAL_QUIRK: a channel error updates errno but preserves prior input fields. * RE_UNKNOWN: callers must provide the output capacity; this routine checks none.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "osContGetReadData",
+          "declaration_line": 36,
+          "lines": [
+            32
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-7d83fafeda7f",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/io/contreaddata.c",
+      "symbol": "Format button/stick commands in the existing shared PIF packet. * RE_ORIGINAL_QUIRK: the controller-count byte is reread at each loop condition; * packet storage also has existing player-input aliases. No new storage is added. * RE_UNKNOWN: the routine does not validate the controller count against capacity.",
+      "lines": [
+        55
+      ],
+      "evidence": "Format button/stick commands in the existing shared PIF packet. * RE_ORIGINAL_QUIRK: the controller-count byte is reread at each loop condition; * packet storage also has existing player-input aliases. No new storage is added. * RE_UNKNOWN: the routine does not validate the controller count against capacity.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__osPackReadData",
+          "declaration_line": 60,
+          "lines": [
+            55
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-5e8460390642",
       "kind": "explicit_unknown",
       "path": "src/libultra/io/epirawio.c",
@@ -232011,6 +232052,66 @@
         1
       ],
       "evidence": "Derive DAC and bit periods from the existing video clock, reject an unusably short DAC period, and program the audio registers. * RE_ORIGINAL_QUIRK: Preserve floating-point rounding, byte-sized bit rate, clamp, and the original audio-control write."
+    },
+    {
+      "id": "Q-3b3f0caabd32",
+      "kind": "original_quirk",
+      "path": "src/libultra/io/contreaddata.c",
+      "symbol": "Decode each configured controller response into the caller's pad records. * RE_ORIGINAL_QUIRK: a channel error updates errno but preserves prior input fields. * RE_UNKNOWN: callers must provide the output capacity; this routine checks none.",
+      "lines": [
+        32
+      ],
+      "evidence": "Decode each configured controller response into the caller's pad records. * RE_ORIGINAL_QUIRK: a channel error updates errno but preserves prior input fields. * RE_UNKNOWN: callers must provide the output capacity; this routine checks none.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "osContGetReadData",
+          "declaration_line": 36,
+          "lines": [
+            32
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-51c66d42a3de",
+      "kind": "original_quirk",
+      "path": "src/libultra/io/contreaddata.c",
+      "symbol": "Format button/stick commands in the existing shared PIF packet. * RE_ORIGINAL_QUIRK: the controller-count byte is reread at each loop condition; * packet storage also has existing player-input aliases. No new storage is added. * RE_UNKNOWN: the routine does not validate the controller count against capacity.",
+      "lines": [
+        55
+      ],
+      "evidence": "Format button/stick commands in the existing shared PIF packet. * RE_ORIGINAL_QUIRK: the controller-count byte is reread at each loop condition; * packet storage also has existing player-input aliases. No new storage is added. * RE_UNKNOWN: the routine does not validate the controller count against capacity.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__osPackReadData",
+          "declaration_line": 60,
+          "lines": [
+            55
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-99d9809516fd",
+      "kind": "original_quirk",
+      "path": "src/libultra/io/contreaddata.c",
+      "symbol": "Start a button/stick read under the existing SI access lock. * RE_ORIGINAL_QUIRK: the write-DMA status is superseded by the read-DMA status; * the request is rebuilt only when the shared last-command byte differs.",
+      "lines": [
+        10
+      ],
+      "evidence": "Start a button/stick read under the existing SI access lock. * RE_ORIGINAL_QUIRK: the write-DMA status is superseded by the read-DMA status; * the request is rebuilt only when the shared last-command byte differs.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "osContStartReadData",
+          "declaration_line": 14,
+          "lines": [
+            10
+          ]
+        }
+      ]
     },
     {
       "id": "Q-18807fb7cf0e",

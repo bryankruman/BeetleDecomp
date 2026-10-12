@@ -17,8 +17,8 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 1858 |
-| Preserved RE_ORIGINAL_QUIRK notes | 503 |
+| Explicit RE_UNKNOWN notes | 1860 |
+| Preserved RE_ORIGINAL_QUIRK notes | 506 |
 | Older comments with uncertainty language | 88 |
 | Documented original-behavior audits | 30 |
 | Assembly-backed functions or data | 751 |
@@ -1309,6 +1309,16 @@ For every future source wave, regenerate and check this index after code and str
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
 | explicit_unknown | `Request status under SI access; only a changed command writes and waits before the read DMA. RE_UNKNOWN: original shared-storage extents remain unproved; retained assembly keeps...` | function `osContStartQuery` | [9](../src/libultra/io/contquery.c#L9) |
+
+## src/libultra/io/contreaddata.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| explicit_unknown | `Decode each configured controller response into the caller's pad records. * RE_ORIGINAL_QUIRK: a channel error updates errno but preserves prior input fields. * RE_UNKNOWN: call...` | function `osContGetReadData` | [32](../src/libultra/io/contreaddata.c#L32) |
+| explicit_unknown | `Format button/stick commands in the existing shared PIF packet. * RE_ORIGINAL_QUIRK: the controller-count byte is reread at each loop condition; * packet storage also has existi...` | function `__osPackReadData` | [55](../src/libultra/io/contreaddata.c#L55) |
+| original_quirk | `Decode each configured controller response into the caller's pad records. * RE_ORIGINAL_QUIRK: a channel error updates errno but preserves prior input fields. * RE_UNKNOWN: call...` | function `osContGetReadData` | [32](../src/libultra/io/contreaddata.c#L32) |
+| original_quirk | `Format button/stick commands in the existing shared PIF packet. * RE_ORIGINAL_QUIRK: the controller-count byte is reread at each loop condition; * packet storage also has existi...` | function `__osPackReadData` | [55](../src/libultra/io/contreaddata.c#L55) |
+| original_quirk | `Start a button/stick read under the existing SI access lock. * RE_ORIGINAL_QUIRK: the write-DMA status is superseded by the read-DMA status; * the request is rebuilt only when t...` | function `osContStartReadData` | [10](../src/libultra/io/contreaddata.c#L10) |
 
 ## src/libultra/io/epirawio.c
 

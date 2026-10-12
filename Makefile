@@ -704,3 +704,8 @@ $(BUILD_DIR)/src/libultra/io/pirawdma_pair.o: src/libultra/io/pirawdma_pair.c $(
 $(BUILD_DIR)/src/libultra/io/epirawio.o: src/libultra/io/epirawio.c $(SDK_AUDIO_HEADERS) $(SDK_RETAINED_STORAGE_HEADERS) tools/asm-processor/build.py tools/asm-processor/asm_processor.py tools/asm-processor/prelude.inc
 	$(V)mkdir -p $(dir $@)
 	$(V)$(ASM_PROC) $(ASM_PROC_FLAGS) $(SDK_AUDIO_CC) -- $(AS) $(ASFLAGS) -- $(subst -O3,-O1,$(SDK_AUDIO_FLAGS)) -o $@ $<
+
+# Controller-read group uses fixed IDO5.3 O2 with the original shared packet storage.
+$(BUILD_DIR)/src/libultra/io/contreaddata.o: src/libultra/io/contreaddata.c $(SDK_AUDIO_HEADERS) $(SDK_CONTROLLER_HEADERS) tools/asm-processor/build.py tools/asm-processor/asm_processor.py tools/asm-processor/prelude.inc
+	$(V)mkdir -p $(dir $@)
+	$(V)$(ASM_PROC) $(ASM_PROC_FLAGS) $(SDK_AUDIO_CC) -- $(AS) $(ASFLAGS) -- $(subst -O3,-O2,$(SDK_AUDIO_FLAGS)) -o $@ $<

@@ -236,3 +236,6 @@ func_80007990 = __osPiCreateAccessQueue;
 __osTimerCounter = D_800322D0;
 osRomBase = 0x80000308;
 __osCurrentHandle = D_80020A10;
+
+/* Preserve the original address-named controller packet formatter. */
+func_8000E6E0 = __osPackReadData;
