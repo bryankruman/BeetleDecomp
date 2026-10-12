@@ -323,10 +323,12 @@
     "src/libultra/os/createmesgqueue.c": "4af364856251878b32cd0a12eef3ae564ab5f336af2ccb38ff7e1395601036ab",
     "src/libultra/os/createthread.c": "46fc95de0be7ba3c7be66f9ebb1f85857a2612ef95321ccd5f56cc15034754b9",
     "src/libultra/os/initialize.c": "9bb0665967fd09267816e78394978a1fa3eaf2e35ea15548e0d78f7ad057d967",
+    "src/libultra/os/osVirtualtoPhysical.c": "2c8148bfa2e199594c6c1b1bebf88153bd5a1dfdd37b77fd65f5604b90455d4d",
     "src/libultra/os/recvmesg.c": "7e4c526db104b88ef865075ac9d5784f560c9aab9bb8190db5cef1245599ca97",
     "src/libultra/os/sendmesg.c": "6c5234821ba9bb9e5f72a532f33d7ee7e53089e0736a9ba047b1c03252c7c4fc",
     "src/libultra/os/seteventmesg.c": "57b5fd381e9d7ffe93143fffdf97ae32e247f9a448d5414a24350994cc407782",
     "src/libultra/os/startthread.c": "921b8c35f536c3aa2e80825f1869ef54f403ee38409fa0419fdc8b5eae94bbf6",
+    "src/libultra/os/stopthread.c": "875f89c8c74a21e16b49ff6d50c7681ddab739db4e8d7df8e073729402c2ccd4",
     "src/main.c": "fbc113b991199ac693b115d981208b182ceda0445b94d0014a19956646800bda",
     "src/mem_allocator.c": "653b447a10ae6e13bd462f9f8936eedf6ef78879874fc73afc412b691203311e",
     "src/mem_block.c": "b6e363010c6efbe986f1574e9bca20d849b80fbab803c44ce872ef258e3bdf7c",
@@ -474,17 +476,17 @@
   },
   "counts": {
     "address_function": 907,
-    "address_global": 1516,
+    "address_global": 1518,
     "assembly": 756,
     "audit_debt": 30,
     "conditional_draft": 4,
     "decompiler_local": 619,
     "draft_marker": 38,
-    "explicit_unknown": 1831,
+    "explicit_unknown": 1833,
     "layout_padding": 275,
     "offset_field": 1701,
     "opaque_type": 282,
-    "original_quirk": 476,
+    "original_quirk": 478,
     "uncertainty_note": 88,
     "unused_identifier": 137
   },
@@ -22854,6 +22856,53 @@
           "declaration_line": 17,
           "lines": [
             17
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-e024af58f7c7",
+      "kind": "address_global",
+      "path": "src/libultra/os/osVirtualtoPhysical.c",
+      "symbol": "D_80020A50",
+      "lines": [
+        10
+      ],
+      "owners": [
+        {
+          "kind": "global",
+          "name": "D_80020A50",
+          "declaration_line": 10,
+          "lines": [
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-77bc1b16b728",
+      "kind": "address_global",
+      "path": "src/libultra/os/stopthread.c",
+      "symbol": "D_80020A50",
+      "lines": [
+        10,
+        30
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "osStopThread",
+          "declaration_line": 22,
+          "lines": [
+            30
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_80020A50",
+          "declaration_line": 10,
+          "lines": [
+            10
           ]
         }
       ]
@@ -118283,6 +118332,26 @@
       ]
     },
     {
+      "id": "Q-a0254e25fd65",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/os/osVirtualtoPhysical.c",
+      "symbol": "Translate either unsigned direct-map segment by clearing its upper three * address bits; send every other address to the existing TLB probe. * RE_ORIGINAL_QUIRK: retain the separate [0x80000000,0xA0000000) and * [0xA0000000,0xC0000000) tests and return the probe's result unchanged. * RE_UNKNOWN: this wrapper does not establish TLB mapping lifetime or define * the probe's failure result. Callers must interpret that result themselves.",
+      "lines": [
+        12
+      ],
+      "evidence": "Translate either unsigned direct-map segment by clearing its upper three * address bits; send every other address to the existing TLB probe. * RE_ORIGINAL_QUIRK: retain the separate [0x80000000,0xA0000000) and * [0xA0000000,0xC0000000) tests and return the probe's result unchanged. * RE_UNKNOWN: this wrapper does not establish TLB mapping lifetime or define * the probe's failure result. Callers must interpret that result themselves.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "osVirtualToPhysical",
+          "declaration_line": 19,
+          "lines": [
+            12
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-dece6ae18332",
       "kind": "explicit_unknown",
       "path": "src/libultra/os/recvmesg.c",
@@ -118358,6 +118427,26 @@
           "declaration_line": 11,
           "lines": [
             5
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-321c8942f295",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/os/stopthread.c",
+      "symbol": "Stop the selected thread while interrupts are disabled. A null argument * selects the running-thread case. Runnable or waiting threads are marked * stopped and removed from their recorded queue; the running case marks the * retained running-thread slot stopped and yields without enqueueing it. * RE_ORIGINAL_QUIRK: other state values perform no state or queue operation; * the saved interrupt mask is restored after every returning case. * RE_UNKNOWN: callers must establish thread lifetime, queue membership, and * the running-thread slot's validity. The historical SDK revision and its * debug-only argument checks are not established by this native body.",
+      "lines": [
+        12
+      ],
+      "evidence": "Stop the selected thread while interrupts are disabled. A null argument * selects the running-thread case. Runnable or waiting threads are marked * stopped and removed from their recorded queue; the running case marks the * retained running-thread slot stopped and yields without enqueueing it. * RE_ORIGINAL_QUIRK: other state values perform no state or queue operation; * the saved interrupt mask is restored after every returning case. * RE_UNKNOWN: callers must establish thread lifetime, queue membership, and * the running-thread slot's validity. The historical SDK revision and its * debug-only argument checks are not established by this native body.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "osStopThread",
+          "declaration_line": 22,
+          "lines": [
+            12
           ]
         }
       ]
@@ -228573,6 +228662,46 @@
           "declaration_line": 31,
           "lines": [
             23
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-90c6027c6b7f",
+      "kind": "original_quirk",
+      "path": "src/libultra/os/osVirtualtoPhysical.c",
+      "symbol": "Translate either unsigned direct-map segment by clearing its upper three * address bits; send every other address to the existing TLB probe. * RE_ORIGINAL_QUIRK: retain the separate [0x80000000,0xA0000000) and * [0xA0000000,0xC0000000) tests and return the probe's result unchanged. * RE_UNKNOWN: this wrapper does not establish TLB mapping lifetime or define * the probe's failure result. Callers must interpret that result themselves.",
+      "lines": [
+        12
+      ],
+      "evidence": "Translate either unsigned direct-map segment by clearing its upper three * address bits; send every other address to the existing TLB probe. * RE_ORIGINAL_QUIRK: retain the separate [0x80000000,0xA0000000) and * [0xA0000000,0xC0000000) tests and return the probe's result unchanged. * RE_UNKNOWN: this wrapper does not establish TLB mapping lifetime or define * the probe's failure result. Callers must interpret that result themselves.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "osVirtualToPhysical",
+          "declaration_line": 19,
+          "lines": [
+            12
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-7aa6d9a2c2c5",
+      "kind": "original_quirk",
+      "path": "src/libultra/os/stopthread.c",
+      "symbol": "Stop the selected thread while interrupts are disabled. A null argument * selects the running-thread case. Runnable or waiting threads are marked * stopped and removed from their recorded queue; the running case marks the * retained running-thread slot stopped and yields without enqueueing it. * RE_ORIGINAL_QUIRK: other state values perform no state or queue operation; * the saved interrupt mask is restored after every returning case. * RE_UNKNOWN: callers must establish thread lifetime, queue membership, and * the running-thread slot's validity. The historical SDK revision and its * debug-only argument checks are not established by this native body.",
+      "lines": [
+        12
+      ],
+      "evidence": "Stop the selected thread while interrupts are disabled. A null argument * selects the running-thread case. Runnable or waiting threads are marked * stopped and removed from their recorded queue; the running case marks the * retained running-thread slot stopped and yields without enqueueing it. * RE_ORIGINAL_QUIRK: other state values perform no state or queue operation; * the saved interrupt mask is restored after every returning case. * RE_UNKNOWN: callers must establish thread lifetime, queue membership, and * the running-thread slot's validity. The historical SDK revision and its * debug-only argument checks are not established by this native body.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "osStopThread",
+          "declaration_line": 22,
+          "lines": [
+            12
           ]
         }
       ]

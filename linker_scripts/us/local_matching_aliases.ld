@@ -216,3 +216,6 @@ alSeqpStop = alCSPStop;
 /* Native-proven extern views; retained original storage is not migrated. */
 hdwrBugFlag = D_80020C10;
 __osPfsPifRam = D_80033730;
+
+/* Exact running-thread slot referenced by the two proven HI/LO sites; no storage. */
+D_80020A50 = __osRunningThread;

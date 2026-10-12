@@ -17,13 +17,13 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 1831 |
-| Preserved RE_ORIGINAL_QUIRK notes | 476 |
+| Explicit RE_UNKNOWN notes | 1833 |
+| Preserved RE_ORIGINAL_QUIRK notes | 478 |
 | Older comments with uncertainty language | 88 |
 | Documented original-behavior audits | 30 |
 | Assembly-backed functions or data | 756 |
 | Address-based function identifiers | 907 |
-| Address-based global identifiers | 1516 |
+| Address-based global identifiers | 1518 |
 | Offset-based fields or neutral typed fields | 1701 |
 | Layout padding to preserve | 275 |
 | Unresolved type names | 282 |
@@ -1438,6 +1438,14 @@ For every future source wave, regenerate and check this index after code and str
 | explicit_unknown | `Enable the existing FPU state, perform the PIF read/write handshake, * install and flush exception vectors, set up the debug TLB mapping, derive * the clock rate, clear the NMI ...` | function `osInitialize` | [23](../src/libultra/os/initialize.c#L23) |
 | original_quirk | `Enable the existing FPU state, perform the PIF read/write handshake, * install and flush exception vectors, set up the debug TLB mapping, derive * the clock rate, clear the NMI ...` | function `osInitialize` | [23](../src/libultra/os/initialize.c#L23) |
 
+## src/libultra/os/osVirtualtoPhysical.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| address_global | `D_80020A50` | global `D_80020A50` | [10](../src/libultra/os/osVirtualtoPhysical.c#L10) |
+| explicit_unknown | `Translate either unsigned direct-map segment by clearing its upper three * address bits; send every other address to the existing TLB probe. * RE_ORIGINAL_QUIRK: retain the sepa...` | function `osVirtualToPhysical` | [12](../src/libultra/os/osVirtualtoPhysical.c#L12) |
+| original_quirk | `Translate either unsigned direct-map segment by clearing its upper three * address bits; send every other address to the existing TLB probe. * RE_ORIGINAL_QUIRK: retain the sepa...` | function `osVirtualToPhysical` | [12](../src/libultra/os/osVirtualtoPhysical.c#L12) |
+
 ## src/libultra/os/recvmesg.c
 
 | Kind | Identifier or note | Declaration context | Physical lines |
@@ -1461,6 +1469,14 @@ For every future source wave, regenerate and check this index after code and str
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
 | explicit_unknown | `Make a waiting/stopped thread runnable using its existing queue * relationship, then dispatch if no thread is running or yield when the run * queue has higher priority. Restore ...` | function `osStartThread` | [5](../src/libultra/os/startthread.c#L5) |
+
+## src/libultra/os/stopthread.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| address_global | `D_80020A50` | function `osStopThread`, global `D_80020A50` | [10](../src/libultra/os/stopthread.c#L10), [30](../src/libultra/os/stopthread.c#L30) |
+| explicit_unknown | `Stop the selected thread while interrupts are disabled. A null argument * selects the running-thread case. Runnable or waiting threads are marked * stopped and removed from thei...` | function `osStopThread` | [12](../src/libultra/os/stopthread.c#L12) |
+| original_quirk | `Stop the selected thread while interrupts are disabled. A null argument * selects the running-thread case. Runnable or waiting threads are marked * stopped and removed from thei...` | function `osStopThread` | [12](../src/libultra/os/stopthread.c#L12) |
 
 ## src/main.c
 

@@ -660,3 +660,10 @@ SDK_RETAINED_STORAGE_HEADERS := include/2.0I/PR/os_version.h include/libultra-sd
 $(SDK_RETAINED_STORAGE_OBJECTS): $(BUILD_DIR)/%.o: %.c $(SDK_RETAINED_STORAGE_HEADERS)
 	$(V)mkdir -p $(dir $@)
 	$(V)$(SDK_AUDIO_CC) $(subst -O3,-O1,$(SDK_AUDIO_FLAGS)) -o $@ $<
+
+# Two native-matched SDK kernel units; the tested VERSION_I/IDO5.3/O1 recipe.
+SDK_THREAD_VTOP_SOURCES := src/libultra/os/stopthread.c src/libultra/os/osVirtualtoPhysical.c
+SDK_THREAD_VTOP_OBJECTS := $(addprefix $(BUILD_DIR)/,$(SDK_THREAD_VTOP_SOURCES:.c=.o))
+$(SDK_THREAD_VTOP_OBJECTS): $(BUILD_DIR)/%.o: %.c $(SDK_AUDIO_HEADERS) $(SDK_RETAINED_STORAGE_HEADERS)
+	$(V)mkdir -p $(dir $@)
+	$(V)$(SDK_AUDIO_CC) $(subst -O3,-O1,$(SDK_AUDIO_FLAGS)) -o $@ $<
