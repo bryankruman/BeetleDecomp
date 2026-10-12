@@ -233,3 +233,4 @@ siAccessBuf = D_800322E0;
 __osSiAccessQueue = D_800322E8;
 /* Preserve the existing address-named PI initializer call sites. */
 func_80007990 = __osPiCreateAccessQueue;
+__osTimerCounter = D_800322D0;

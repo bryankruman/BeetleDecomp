@@ -133,7 +133,7 @@ segments:
       - [0x94C0, c, libultra/io/spsetpc]
       - [0x9500, c, libultra/io/sprawdma]
       - [0x9590, c, libultra/io/sp]
-      - [0x95C0, asm]
+      - [0x95C0, c, libultra/os/timerintr]
       - [0x99C0, c, libultra/os/getthreadpri]
       - [0x99E0, c, libultra/io/vigetcurrcontext]
       - [0x99F0, asm]

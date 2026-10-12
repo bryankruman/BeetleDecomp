@@ -688,3 +688,8 @@ SDK_ACCESS_OBJECTS := $(addprefix $(BUILD_DIR)/,$(SDK_ACCESS_SOURCES:.c=.o))
 $(SDK_ACCESS_OBJECTS): $(BUILD_DIR)/%.o: %.c $(SDK_AUDIO_HEADERS) $(SDK_RETAINED_STORAGE_HEADERS)
 	$(V)mkdir -p $(dir $@)
 	$(V)$(SDK_AUDIO_CC) $(subst -O3,-O1,$(SDK_AUDIO_FLAGS)) -o $@ $<
+
+# Mixed timer unit: retain 140 bytes of initializer assembly before three matched C routines.
+$(BUILD_DIR)/src/libultra/os/timerintr.o: src/libultra/os/timerintr.c $(SDK_AUDIO_HEADERS) $(SDK_RETAINED_STORAGE_HEADERS) tools/asm-processor/build.py tools/asm-processor/asm_processor.py asm/nonmatchings/libultra/os/timerintr/__osTimerServicesInit.s tools/asm-processor/prelude.inc
+	$(V)mkdir -p $(dir $@)
+	$(V)$(ASM_PROC) $(ASM_PROC_FLAGS) $(SDK_AUDIO_CC) -- $(AS) $(ASFLAGS) -- $(subst -O3,-O1,$(SDK_AUDIO_FLAGS)) -o $@ $<

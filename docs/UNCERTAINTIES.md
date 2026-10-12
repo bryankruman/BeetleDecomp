@@ -17,11 +17,11 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 1848 |
-| Preserved RE_ORIGINAL_QUIRK notes | 493 |
+| Explicit RE_UNKNOWN notes | 1852 |
+| Preserved RE_ORIGINAL_QUIRK notes | 497 |
 | Older comments with uncertainty language | 88 |
 | Documented original-behavior audits | 30 |
-| Assembly-backed functions or data | 751 |
+| Assembly-backed functions or data | 752 |
 | Address-based function identifiers | 904 |
 | Address-based global identifiers | 1530 |
 | Offset-based fields or neutral typed fields | 1743 |
@@ -1600,6 +1600,20 @@ For every future source wave, regenerate and check this index after code and str
 | address_global | `D_80020A50` | function `osStopThread`, global `D_80020A50` | [10](../src/libultra/os/stopthread.c#L10), [30](../src/libultra/os/stopthread.c#L30) |
 | explicit_unknown | `Stop the selected thread while interrupts are disabled. A null argument * selects the running-thread case. Runnable or waiting threads are marked * stopped and removed from thei...` | function `osStopThread` | [12](../src/libultra/os/stopthread.c#L12) |
 | original_quirk | `Stop the selected thread while interrupts are disabled. A null argument * selects the running-thread case. Runnable or waiting threads are marked * stopped and removed from thei...` | function `osStopThread` | [12](../src/libultra/os/stopthread.c#L12) |
+
+## src/libultra/os/timerintr.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| assembly | `__osTimerServicesInit` | — | [24](../src/libultra/os/timerintr.c#L24) |
+| explicit_unknown | `Account unsigned elapsed counter ticks, remove expired timers, send optional messages, and reinsert periodic timers. * RE_ORIGINAL_QUIRK: Subtract counters as u32 before the u64...` | function `__osTimerInterrupt` | [26](../src/libultra/os/timerintr.c#L26) |
+| explicit_unknown | `Insert into the relative-delay timer list with interrupts masked; equal delays insert before the existing node. * RE_ORIGINAL_QUIRK: Use strict greater-than for traversal; equal...` | function `__osInsertTimer` | [125](../src/libultra/os/timerintr.c#L125) |
+| explicit_unknown | `Mask interrupts, snapshot the counter, program compare from the low32 bits of the u64 sum, then restore the mask. * RE_ORIGINAL_QUIRK: VERSION_I has no later 468 minimum; compar...` | function `__osSetTimerIntr` | [103](../src/libultra/os/timerintr.c#L103) |
+| explicit_unknown | `Retain the original initializer as assembly; only the following three routines are C. * RE_ORIGINAL_QUIRK: Preserve shared-HI stores and the explicit __osCurrentTime+4 operand. ...` | assembly `__osTimerServicesInit` | [20](../src/libultra/os/timerintr.c#L20) |
+| original_quirk | `Account unsigned elapsed counter ticks, remove expired timers, send optional messages, and reinsert periodic timers. * RE_ORIGINAL_QUIRK: Subtract counters as u32 before the u64...` | function `__osTimerInterrupt` | [26](../src/libultra/os/timerintr.c#L26) |
+| original_quirk | `Insert into the relative-delay timer list with interrupts masked; equal delays insert before the existing node. * RE_ORIGINAL_QUIRK: Use strict greater-than for traversal; equal...` | function `__osInsertTimer` | [125](../src/libultra/os/timerintr.c#L125) |
+| original_quirk | `Mask interrupts, snapshot the counter, program compare from the low32 bits of the u64 sum, then restore the mask. * RE_ORIGINAL_QUIRK: VERSION_I has no later 468 minimum; compar...` | function `__osSetTimerIntr` | [103](../src/libultra/os/timerintr.c#L103) |
+| original_quirk | `Retain the original initializer as assembly; only the following three routines are C. * RE_ORIGINAL_QUIRK: Preserve shared-HI stores and the explicit __osCurrentTime+4 operand. ...` | assembly `__osTimerServicesInit` | [20](../src/libultra/os/timerintr.c#L20) |
 
 ## src/libultra/os/yieldthread.c
 

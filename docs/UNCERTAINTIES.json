@@ -351,6 +351,7 @@
     "src/libultra/os/settimer.c": "0dd655e77c3b8c2691c603e5b920cc30efbe3c26812e9ee1886f4e095d52b170",
     "src/libultra/os/startthread.c": "921b8c35f536c3aa2e80825f1869ef54f403ee38409fa0419fdc8b5eae94bbf6",
     "src/libultra/os/stopthread.c": "875f89c8c74a21e16b49ff6d50c7681ddab739db4e8d7df8e073729402c2ccd4",
+    "src/libultra/os/timerintr.c": "28e6f584d508065ec121cd50a906eddc3c35599a2b00a51c499cf615de6ebfee",
     "src/libultra/os/yieldthread.c": "7b345dc1e4469b1492cd4d0b8f7c061b16dd2532a0d3d7d83ec422d53cf3d0cc",
     "src/main.c": "fbc113b991199ac693b115d981208b182ceda0445b94d0014a19956646800bda",
     "src/mem_allocator.c": "653b447a10ae6e13bd462f9f8936eedf6ef78879874fc73afc412b691203311e",
@@ -500,16 +501,16 @@
   "counts": {
     "address_function": 904,
     "address_global": 1530,
-    "assembly": 751,
+    "assembly": 752,
     "audit_debt": 30,
     "conditional_draft": 4,
     "decompiler_local": 622,
     "draft_marker": 48,
-    "explicit_unknown": 1848,
+    "explicit_unknown": 1852,
     "layout_padding": 281,
     "offset_field": 1743,
     "opaque_type": 283,
-    "original_quirk": 493,
+    "original_quirk": 497,
     "uncertainty_note": 88,
     "unused_identifier": 137
   },
@@ -78198,6 +78199,16 @@
       ]
     },
     {
+      "id": "Q-bbd47165460b",
+      "kind": "assembly",
+      "path": "src/libultra/os/timerintr.c",
+      "symbol": "__osTimerServicesInit",
+      "lines": [
+        24
+      ],
+      "evidence": "asm/nonmatchings/libultra/os/timerintr/__osTimerServicesInit.s"
+    },
+    {
       "id": "Q-c02db96d0b4c",
       "kind": "assembly",
       "path": "src/mem_allocator.c",
@@ -119375,6 +119386,86 @@
           "declaration_line": 22,
           "lines": [
             12
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-f2c3682aac95",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/os/timerintr.c",
+      "symbol": "Account unsigned elapsed counter ticks, remove expired timers, send optional messages, and reinsert periodic timers. * RE_ORIGINAL_QUIRK: Subtract counters as u32 before the u64 comparison; retain unlink/send/reinsert order. * RE_UNKNOWN: Retained storage bounds and extra ownership or reentrancy guarantees are not inferred.",
+      "lines": [
+        26
+      ],
+      "evidence": "Account unsigned elapsed counter ticks, remove expired timers, send optional messages, and reinsert periodic timers. * RE_ORIGINAL_QUIRK: Subtract counters as u32 before the u64 comparison; retain unlink/send/reinsert order. * RE_UNKNOWN: Retained storage bounds and extra ownership or reentrancy guarantees are not inferred.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__osTimerInterrupt",
+          "declaration_line": 31,
+          "lines": [
+            26
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-5b03f1f6e7db",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/os/timerintr.c",
+      "symbol": "Insert into the relative-delay timer list with interrupts masked; equal delays insert before the existing node. * RE_ORIGINAL_QUIRK: Use strict greater-than for traversal; equal delays precede the existing node. * RE_UNKNOWN: Retained storage bounds and extra ownership or reentrancy guarantees are not inferred.",
+      "lines": [
+        125
+      ],
+      "evidence": "Insert into the relative-delay timer list with interrupts masked; equal delays insert before the existing node. * RE_ORIGINAL_QUIRK: Use strict greater-than for traversal; equal delays precede the existing node. * RE_UNKNOWN: Retained storage bounds and extra ownership or reentrancy guarantees are not inferred.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__osInsertTimer",
+          "declaration_line": 130,
+          "lines": [
+            125
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-cfd3e8869097",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/os/timerintr.c",
+      "symbol": "Mask interrupts, snapshot the counter, program compare from the low32 bits of the u64 sum, then restore the mask. * RE_ORIGINAL_QUIRK: VERSION_I has no later 468 minimum; compare receives the low32 bits of the sum. * RE_UNKNOWN: Retained storage bounds and extra ownership or reentrancy guarantees are not inferred.",
+      "lines": [
+        103
+      ],
+      "evidence": "Mask interrupts, snapshot the counter, program compare from the low32 bits of the u64 sum, then restore the mask. * RE_ORIGINAL_QUIRK: VERSION_I has no later 468 minimum; compare receives the low32 bits of the sum. * RE_UNKNOWN: Retained storage bounds and extra ownership or reentrancy guarantees are not inferred.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__osSetTimerIntr",
+          "declaration_line": 101,
+          "lines": [
+            103
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-b166c9564832",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/os/timerintr.c",
+      "symbol": "Retain the original initializer as assembly; only the following three routines are C. * RE_ORIGINAL_QUIRK: Preserve shared-HI stores and the explicit __osCurrentTime+4 operand. * RE_UNKNOWN: No additional storage extent or lifetime guarantee is inferred.",
+      "lines": [
+        20
+      ],
+      "evidence": "Retain the original initializer as assembly; only the following three routines are C. * RE_ORIGINAL_QUIRK: Preserve shared-HI stores and the explicit __osCurrentTime+4 operand. * RE_UNKNOWN: No additional storage extent or lifetime guarantee is inferred.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "__osTimerServicesInit",
+          "declaration_line": 24,
+          "lines": [
+            20
           ]
         }
       ]
@@ -231602,6 +231693,86 @@
           "declaration_line": 22,
           "lines": [
             12
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-5d6c938f6cc7",
+      "kind": "original_quirk",
+      "path": "src/libultra/os/timerintr.c",
+      "symbol": "Account unsigned elapsed counter ticks, remove expired timers, send optional messages, and reinsert periodic timers. * RE_ORIGINAL_QUIRK: Subtract counters as u32 before the u64 comparison; retain unlink/send/reinsert order. * RE_UNKNOWN: Retained storage bounds and extra ownership or reentrancy guarantees are not inferred.",
+      "lines": [
+        26
+      ],
+      "evidence": "Account unsigned elapsed counter ticks, remove expired timers, send optional messages, and reinsert periodic timers. * RE_ORIGINAL_QUIRK: Subtract counters as u32 before the u64 comparison; retain unlink/send/reinsert order. * RE_UNKNOWN: Retained storage bounds and extra ownership or reentrancy guarantees are not inferred.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__osTimerInterrupt",
+          "declaration_line": 31,
+          "lines": [
+            26
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-b1f4e708c93d",
+      "kind": "original_quirk",
+      "path": "src/libultra/os/timerintr.c",
+      "symbol": "Insert into the relative-delay timer list with interrupts masked; equal delays insert before the existing node. * RE_ORIGINAL_QUIRK: Use strict greater-than for traversal; equal delays precede the existing node. * RE_UNKNOWN: Retained storage bounds and extra ownership or reentrancy guarantees are not inferred.",
+      "lines": [
+        125
+      ],
+      "evidence": "Insert into the relative-delay timer list with interrupts masked; equal delays insert before the existing node. * RE_ORIGINAL_QUIRK: Use strict greater-than for traversal; equal delays precede the existing node. * RE_UNKNOWN: Retained storage bounds and extra ownership or reentrancy guarantees are not inferred.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__osInsertTimer",
+          "declaration_line": 130,
+          "lines": [
+            125
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-1351780fa688",
+      "kind": "original_quirk",
+      "path": "src/libultra/os/timerintr.c",
+      "symbol": "Mask interrupts, snapshot the counter, program compare from the low32 bits of the u64 sum, then restore the mask. * RE_ORIGINAL_QUIRK: VERSION_I has no later 468 minimum; compare receives the low32 bits of the sum. * RE_UNKNOWN: Retained storage bounds and extra ownership or reentrancy guarantees are not inferred.",
+      "lines": [
+        103
+      ],
+      "evidence": "Mask interrupts, snapshot the counter, program compare from the low32 bits of the u64 sum, then restore the mask. * RE_ORIGINAL_QUIRK: VERSION_I has no later 468 minimum; compare receives the low32 bits of the sum. * RE_UNKNOWN: Retained storage bounds and extra ownership or reentrancy guarantees are not inferred.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__osSetTimerIntr",
+          "declaration_line": 101,
+          "lines": [
+            103
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-4920127ccbf2",
+      "kind": "original_quirk",
+      "path": "src/libultra/os/timerintr.c",
+      "symbol": "Retain the original initializer as assembly; only the following three routines are C. * RE_ORIGINAL_QUIRK: Preserve shared-HI stores and the explicit __osCurrentTime+4 operand. * RE_UNKNOWN: No additional storage extent or lifetime guarantee is inferred.",
+      "lines": [
+        20
+      ],
+      "evidence": "Retain the original initializer as assembly; only the following three routines are C. * RE_ORIGINAL_QUIRK: Preserve shared-HI stores and the explicit __osCurrentTime+4 operand. * RE_UNKNOWN: No additional storage extent or lifetime guarantee is inferred.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "__osTimerServicesInit",
+          "declaration_line": 24,
+          "lines": [
+            20
           ]
         }
       ]
