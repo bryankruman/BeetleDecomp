@@ -186,8 +186,75 @@ void func_ai_00400F18();
 void func_ai_00400FF0();
 void func_ai_004017A4();
 void func_ai_004019EC();
-void func_ai_00401C84();
-void func_ai_00401EF0();
+/* AI caller views name only the offsets used by the four originals. The
+ * 0x1E8 stride is the original record-array stride, not an allocation claim.
+ * RE_UNKNOWN: complete types, ownership, scalar units and callback contracts. */
+typedef struct { s16 first, second; } AiFreshShortPair;
+typedef struct AiFreshStepState {
+    Mtx4F basis;
+    u8 unknown40[0x44];
+    f32 bound84;
+    u8 unknown88[8];
+    f32 scale90;
+    u8 unknown94[0x10];
+    f32 rankValueA4;
+    s16 indexA8;
+    u8 unknownAA[0xA];
+    s16 activeB4;
+    u8 unknownB6[2];
+    s16 modeB8, modeBA, modeBC, modeBE, gateC0;
+    u8 unknownC2[2];
+    u8 byteC4, byteC5;
+    u8 unknownC6[2];
+    AiFreshShortPair pairC8;
+    u8 unknownCC[0xC];
+    f32 remainingD8;
+    u8 unknownDC[4];
+    f32 valueE0, valueE4;
+    Vec3F vectorE8;
+    u8 unknownF4[0xC];
+    Vec3F vector100;
+    u8 unknown10C[0xC];
+    Vec3F vector118;
+    u8 unknown124[0x28];
+    f32 rate14C;
+    u8 unknown150[0x14];
+    f32 remaining164;
+    u8 unknown168[0x74];
+    void *animationState;
+    u8 unknown1E0[4];
+    f32 *weights;
+} AiFreshStepState;
+typedef struct { u8 unknown00[8]; AiFreshStepState *state; } AiFreshWeightOwner;
+typedef f32 (*AiFreshWeightedCallback)(AiFreshWeightOwner *, void *, u32, u32, f32, f32 *);
+typedef struct { f32 value00; } AiFreshScaleHead;
+typedef struct { u8 unknown00[0xEC]; f32 normalizerEC; } AiFreshSettingsView;
+typedef struct { f32 unknown00, value04; } AiFreshSelectedValue;
+typedef struct { u8 unknown00[4]; AiFreshSelectedValue *value; } AiFreshSelectedLink;
+/* CARANIM slot 0x1C receives the existing animation-state pointer and a
+ * tested integer. RE_UNKNOWN: original declaration and policy behind it. */
+typedef struct { u8 unknown00[0x1C]; void (*setPositiveState)(void *, s32); } AiFreshCarCalls;
+extern u8 D_ai_00407984[];
+extern f32 D_ai_00407820, D_ai_00407824, D_ai_00407828;
+extern f32 D_ai_00407850, D_ai_00407854, D_ai_00407E50;
+extern f32 D_ai_00408E68[];
+extern f32 D_ai_00407BC8[];
+extern s32 D_ai_00407F10;
+extern f32 D_ai_00408EA8;
+extern f32 D_ai_00407EB8, D_ai_00407EBC, D_ai_00407EC0, D_ai_00407EC4;
+extern f32 D_ai_00407E90, D_ai_00407FF0;
+extern s32 D_ai_00407FE8;
+extern AiFreshStepState *D_ai_00407E84;
+extern AiFreshStepState D_ai_004081F0;
+extern s32 D_ai_00408E7C, D_ai_00408E80;
+/* Existing kernel profiler definitions consume one signed entry ID. */
+void func_80000CA4(s32 entryId);
+void func_80000D58(s32 entryId);
+s32 aiSelectFirstUnmarkedPreviousRecord(void);
+void func_ai_00401C84(AiFreshStepState *state);
+#line 150 "src/modules/ai.c"
+void func_ai_00401EF0(AiFreshWeightedCallback, s32, AiFreshWeightOwner *, void *, u32, u32, f32, f32 *, f32 *);
+#line 151 "src/modules/ai.c"
 void func_ai_00402028();
 void func_ai_004021E0();
 void func_ai_004022A4();
@@ -201,8 +268,10 @@ void aiUpdateExplosionEffectAndRestoreDelay(AiEffectDelayState *state);
 void aiSnapshotAndUpdateDecisionState(AiDecisionUpdateState *state);
 void func_ai_00403448();
 void func_ai_004037B4();
-void func_ai_00403994();
-void func_ai_00403C80();
+void func_ai_00403994(AiFreshStepState *state);
+#line 165 "src/modules/ai.c"
+void func_ai_00403C80(void);
+#line 166 "src/modules/ai.c"
 void func_ai_00403F4C(s32 arg0);
 void func_ai_00403F54();
 void func_ai_00404064();
@@ -408,7 +477,40 @@ void func_ai_0040179C(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00401C84.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00401EF0.s")
+/* Call the supplied contribution callback, scale its output weight by the
+ * indexed state weight and accumulate the value and weight separately.
+ * The selected signed record index also exposes the final weight globally.
+ * RE_ORIGINAL_QUIRK: a nonzero override or positive D8 value forces weight
+ * ten for index one and zero for every other index; no new bounds checks.
+ * RE_UNKNOWN: callback semantics, index domain, accumulator aliasing,
+ * historical argument types and owner/target lifetimes. */
+void aiAccumulateWeightedCallbackResult(AiFreshWeightedCallback callback, s32 index,
+    AiFreshWeightOwner *owner, void *target, u32 word4, u32 word5,
+    f32 input, f32 *weightedSum, f32 *weightSum) {
+    f32 value;
+    f32 weight;
+
+    weight = 0.0f;
+    if (target != NULL) {
+        value = callback(owner, target, word4, word5, input, &weight);
+        if (weight != 0.0f) {
+            weight *= owner->state->weights[index];
+            if (D_ai_00408000 || (owner->state->remainingD8 > 0.0f)) {
+                if (index == 1) {
+                    weight = 10.0f;
+                } else {
+                    weight = 0.0f;
+                }
+            }
+            if (D_ai_00407EA0 == owner->state->indexA8) {
+                D_ai_00408E68[index] = weight;
+            }
+            *weightedSum += value * weight;
+            *weightSum += weight;
+        }
+    }
+}
+#line 104 "src/modules/ai.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00402028.s")
 

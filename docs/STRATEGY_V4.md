@@ -34,8 +34,8 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **756** assembly references:
-**717** ordinary functions and **39** entrypoints, with **698,256** known instruction bytes
+matching C are preserved with `#line`. The current ledger has **755** assembly references:
+**716** ordinary functions and **39** entrypoints, with **697,944** known instruction bytes
 and no unknown sizes. The broader name audit still finds **289** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
@@ -3556,10 +3556,19 @@ Totals: 441 further recoveries after the 225 upstream ordinary imports, plus 212
 Frozen wave `8820-kernel-remaining44-native-contracts` and `accepted-kernel-remaining44-native-contracts-8820` verify real translation-unit instructions/full relocations, 133 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 444 further readable functions
+## Historical accepted checkpoint — 444 further readable functions
 
 Recover three original AI functions1212B as aiCheckBasisUnitLengthsAndHandedness, aiPublishDynamicMatrixAndVectorProperties and aiAdjustAndPublishDynamicVectorPair. Preserve original FP/call order, zero-address failure, selective coordinate restoration, caller-scoped provider views and explicit ownership/domain unknowns. Bind actual matched trials with34 ordered records, five literal inherited835 warnings and exact definition-name/source inverses. Add only three relative compatibility assignments in one module alias file; existing Makefile discovers it. Require fresh1182-source/full133/all-original-packed-RELA/ROM/full-ledger/native and canonical/legacy ELF boundary proofs before landing. Preserve every actual prior assessment,173 typed SDK rows and83 historical attempts.
 
 Totals: 444 further recoveries after the 225 upstream ordinary imports, plus 2121 existing C semantic cleanups. Current ledger: 756 assembly references = 717 ordinary + 39 entrypoints; 698,256 known remaining instruction bytes; zero unknown sizes; 289 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `9262-ai-three-named` and `accepted-ai-three-named-9262` verify real translation-unit instructions/full relocations, 133 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 445 further readable functions
+
+Recover aiAccumulateWeightedCallbackResult312B with exact native instructions and six complete unique relocation sites. Preserve the explicit raw record-order inequality and fixed permutation [0,1,2,3,5,4], original DATA/BSS records and five literal inherited835 warnings. Append one relative compatibility assignment to the existing AI alias file; preserve the three accepted AI bodies and aliases. Require fresh1182-source/full133/original packed RELA/ROM/full-ledger/Git and canonical/legacy ELF native boundaries before acceptance.
+
+Totals: 445 further recoveries after the 225 upstream ordinary imports, plus 2121 existing C semantic cleanups. Current ledger: 755 assembly references = 716 ordinary + 39 entrypoints; 697,944 known remaining instruction bytes; zero unknown sizes; 289 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `9380-ai-weighted` and `accepted-ai-weighted-9380` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
