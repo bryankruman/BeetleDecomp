@@ -491,29 +491,29 @@
     "src/modules/uvufileld_rom.c": "812a00c1a8a5e2384e4defe92655720ebcedd7f5f097569ba9931b945bf4e8c8",
     "src/modules/uvvattr_rom.c": "3b4f5a67b66bfc29cb07234ad08dfee4e8b27a88c7ef7a8e96ab50b0efbbca5d",
     "src/modules/uvvolumeld_rom.c": "07d3cb7a7853f64b663d9576962499e9e45f11dcfab188917b2463062182fe91",
-    "src/modules/victory.c": "79c2bfa4dd795c9179a005217aff399c59b51fa075e2d3b535108cff81e89fb8",
+    "src/modules/victory.c": "21b9687a55e3393aee473125e26921141adcb588c5daa41ea85a5f84a80bd40c",
     "src/modules/voltest.c": "064820993a3690a1af9ec67130b8c2107e1286fe57b6f787acfa78b103805506",
     "src/modules/weapon.c": "dc7ca2ec618cd658c5d3875e89e045379b1240e0537b96c47edc7cec0d24459d",
     "src/profiler.c": "558155e90243135f7111f37296f5f4c86c6374b9687885b47fb72e9bce579cc5",
     "src/sched.c": "26791ca9f30fd5355b11ea03a64a457757d2029595be26428c2925798105d9b4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "f00d89eeb620339febfa5790cb45fc347ec6d705d060596737901af78a8ffa57",
-    "docs/VALIDATION_20261006.md": "7124526e6d8925d3d6f731141d6cdbc0b44910cd25d86ead395e1dcc70ef78de"
+    "docs/STRATEGY_V4.md": "980406d10daeac5d9a2dd88507b33318c8e806f123d713ef48e6064679c94cd2",
+    "docs/VALIDATION_20261006.md": "ae7931ec87b99dbf1be491221242e60acb617d60fd2f8bad98c8939c1b260366"
   },
   "counts": {
     "address_function": 904,
-    "address_global": 1530,
-    "assembly": 752,
+    "address_global": 1546,
+    "assembly": 751,
     "audit_debt": 30,
     "conditional_draft": 4,
     "decompiler_local": 622,
     "draft_marker": 51,
-    "explicit_unknown": 1857,
+    "explicit_unknown": 1858,
     "layout_padding": 281,
-    "offset_field": 1743,
+    "offset_field": 1748,
     "opaque_type": 283,
-    "original_quirk": 502,
+    "original_quirk": 503,
     "uncertainty_note": 88,
     "unused_identifier": 137
   },
@@ -22148,21 +22148,21 @@
       "path": "src/modules/victory.c",
       "symbol": "func_snd_00401800",
       "lines": [
-        67,
-        77,
-        87,
-        97
+        156,
+        166,
+        176,
+        186
       ],
       "owners": [
         {
           "kind": "function",
           "name": "victoryPlayPendingSoundsByKind",
-          "declaration_line": 63,
+          "declaration_line": 152,
           "lines": [
-            67,
-            77,
-            87,
-            97
+            156,
+            166,
+            176,
+            186
           ]
         }
       ]
@@ -76258,24 +76258,420 @@
       "path": "src/modules/victory.c",
       "symbol": "D_80025D70",
       "lines": [
-        7,
-        49
+        44,
+        86
       ],
       "owners": [
         {
           "kind": "function",
           "name": "victoryAdvanceJointAnimation",
-          "declaration_line": 48,
+          "declaration_line": 85,
           "lines": [
-            49
+            86
           ]
         },
         {
           "kind": "global",
           "name": "D_80025D70",
-          "declaration_line": 7,
+          "declaration_line": 44,
           "lines": [
-            7
+            44
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-5a1c62d7a019",
+      "kind": "address_global",
+      "path": "src/modules/victory.c",
+      "symbol": "D_victory_004010A0",
+      "lines": [
+        33,
+        109
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "victoryCreateCameraAnimationDebugControls",
+          "declaration_line": 100,
+          "lines": [
+            109
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_victory_004010A0",
+          "declaration_line": 33,
+          "lines": [
+            33
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-43eb8bb562f5",
+      "kind": "address_global",
+      "path": "src/modules/victory.c",
+      "symbol": "D_victory_004010A8",
+      "lines": [
+        33,
+        113
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "victoryCreateCameraAnimationDebugControls",
+          "declaration_line": 100,
+          "lines": [
+            113
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_victory_004010A0",
+          "declaration_line": 33,
+          "lines": [
+            33
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-c6ffc1b7f0f9",
+      "kind": "address_global",
+      "path": "src/modules/victory.c",
+      "symbol": "D_victory_004010AC",
+      "lines": [
+        33,
+        115
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "victoryCreateCameraAnimationDebugControls",
+          "declaration_line": 100,
+          "lines": [
+            115
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_victory_004010A0",
+          "declaration_line": 33,
+          "lines": [
+            33
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-b9e367ee1f15",
+      "kind": "address_global",
+      "path": "src/modules/victory.c",
+      "symbol": "D_victory_004010B4",
+      "lines": [
+        34,
+        118
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "victoryCreateCameraAnimationDebugControls",
+          "declaration_line": 100,
+          "lines": [
+            118
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_victory_004010B4",
+          "declaration_line": 34,
+          "lines": [
+            34
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-c6904200c3e4",
+      "kind": "address_global",
+      "path": "src/modules/victory.c",
+      "symbol": "D_victory_004010BC",
+      "lines": [
+        34,
+        121
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "victoryCreateCameraAnimationDebugControls",
+          "declaration_line": 100,
+          "lines": [
+            121
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_victory_004010B4",
+          "declaration_line": 34,
+          "lines": [
+            34
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-d2f1cf1e659c",
+      "kind": "address_global",
+      "path": "src/modules/victory.c",
+      "symbol": "D_victory_004010C4",
+      "lines": [
+        34,
+        124
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "victoryCreateCameraAnimationDebugControls",
+          "declaration_line": 100,
+          "lines": [
+            124
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_victory_004010B4",
+          "declaration_line": 34,
+          "lines": [
+            34
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-19f3101297ce",
+      "kind": "address_global",
+      "path": "src/modules/victory.c",
+      "symbol": "D_victory_004010CC",
+      "lines": [
+        35,
+        127
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "victoryCreateCameraAnimationDebugControls",
+          "declaration_line": 100,
+          "lines": [
+            127
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_victory_004010CC",
+          "declaration_line": 35,
+          "lines": [
+            35
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-fd6ac1283e02",
+      "kind": "address_global",
+      "path": "src/modules/victory.c",
+      "symbol": "D_victory_004010D4",
+      "lines": [
+        35,
+        130
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "victoryCreateCameraAnimationDebugControls",
+          "declaration_line": 100,
+          "lines": [
+            130
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_victory_004010CC",
+          "declaration_line": 35,
+          "lines": [
+            35
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-b8c93092c484",
+      "kind": "address_global",
+      "path": "src/modules/victory.c",
+      "symbol": "D_victory_004010DC",
+      "lines": [
+        35,
+        133
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "victoryCreateCameraAnimationDebugControls",
+          "declaration_line": 100,
+          "lines": [
+            133
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_victory_004010CC",
+          "declaration_line": 35,
+          "lines": [
+            35
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-ca24d32c9cdb",
+      "kind": "address_global",
+      "path": "src/modules/victory.c",
+      "symbol": "D_victory_004010E4",
+      "lines": [
+        36,
+        138
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "victoryCreateCameraAnimationDebugControls",
+          "declaration_line": 100,
+          "lines": [
+            138
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_victory_004010E4",
+          "declaration_line": 36,
+          "lines": [
+            36
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-1686491c9129",
+      "kind": "address_global",
+      "path": "src/modules/victory.c",
+      "symbol": "D_victory_004010EC",
+      "lines": [
+        36,
+        140
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "victoryCreateCameraAnimationDebugControls",
+          "declaration_line": 100,
+          "lines": [
+            140
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_victory_004010E4",
+          "declaration_line": 36,
+          "lines": [
+            36
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-6f963e028be5",
+      "kind": "address_global",
+      "path": "src/modules/victory.c",
+      "symbol": "D_victory_004010F4",
+      "lines": [
+        36,
+        142
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "victoryCreateCameraAnimationDebugControls",
+          "declaration_line": 100,
+          "lines": [
+            142
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_victory_004010E4",
+          "declaration_line": 36,
+          "lines": [
+            36
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-ceb0e05635ec",
+      "kind": "address_global",
+      "path": "src/modules/victory.c",
+      "symbol": "D_victory_0040111C",
+      "lines": [
+        37,
+        116
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "victoryCreateCameraAnimationDebugControls",
+          "declaration_line": 100,
+          "lines": [
+            116
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-c9b14bbe24b1",
+      "kind": "address_global",
+      "path": "src/modules/victory.c",
+      "symbol": "D_victory_00401120",
+      "lines": [
+        37,
+        119
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "victoryCreateCameraAnimationDebugControls",
+          "declaration_line": 100,
+          "lines": [
+            119
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-1935db61aad8",
+      "kind": "address_global",
+      "path": "src/modules/victory.c",
+      "symbol": "D_victory_00401124",
+      "lines": [
+        37,
+        122
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "victoryCreateCameraAnimationDebugControls",
+          "declaration_line": 100,
+          "lines": [
+            122
           ]
         }
       ]
@@ -76286,16 +76682,16 @@
       "path": "src/modules/victory.c",
       "symbol": "D_victory_00401128",
       "lines": [
-        3,
-        67
+        40,
+        156
       ],
       "owners": [
         {
           "kind": "function",
           "name": "victoryPlayPendingSoundsByKind",
-          "declaration_line": 63,
+          "declaration_line": 152,
           "lines": [
-            67
+            156
           ]
         }
       ]
@@ -76306,16 +76702,16 @@
       "path": "src/modules/victory.c",
       "symbol": "D_victory_0040112C",
       "lines": [
-        3,
-        77
+        40,
+        166
       ],
       "owners": [
         {
           "kind": "function",
           "name": "victoryPlayPendingSoundsByKind",
-          "declaration_line": 63,
+          "declaration_line": 152,
           "lines": [
-            77
+            166
           ]
         }
       ]
@@ -76326,16 +76722,16 @@
       "path": "src/modules/victory.c",
       "symbol": "D_victory_00401130",
       "lines": [
-        3,
-        87
+        40,
+        176
       ],
       "owners": [
         {
           "kind": "function",
           "name": "victoryPlayPendingSoundsByKind",
-          "declaration_line": 63,
+          "declaration_line": 152,
           "lines": [
-            87
+            176
           ]
         }
       ]
@@ -76346,16 +76742,44 @@
       "path": "src/modules/victory.c",
       "symbol": "D_victory_00401134",
       "lines": [
-        3,
-        97
+        40,
+        186
       ],
       "owners": [
         {
           "kind": "function",
           "name": "victoryPlayPendingSoundsByKind",
-          "declaration_line": 63,
+          "declaration_line": 152,
           "lines": [
-            97
+            186
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-f00239664a18",
+      "kind": "address_global",
+      "path": "src/modules/victory.c",
+      "symbol": "D_victory_004011DC",
+      "lines": [
+        38,
+        141
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "victoryCreateCameraAnimationDebugControls",
+          "declaration_line": 100,
+          "lines": [
+            141
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_victory_004011DC",
+          "declaration_line": 38,
+          "lines": [
+            38
           ]
         }
       ]
@@ -76366,18 +76790,18 @@
       "path": "src/modules/victory.c",
       "symbol": "D_victory_004011E4",
       "lines": [
-        4,
-        66,
-        71
+        41,
+        155,
+        160
       ],
       "owners": [
         {
           "kind": "function",
           "name": "victoryPlayPendingSoundsByKind",
-          "declaration_line": 63,
+          "declaration_line": 152,
           "lines": [
-            66,
-            71
+            155,
+            160
           ]
         }
       ]
@@ -76388,18 +76812,18 @@
       "path": "src/modules/victory.c",
       "symbol": "D_victory_004011E8",
       "lines": [
-        4,
-        76,
-        81
+        41,
+        165,
+        170
       ],
       "owners": [
         {
           "kind": "function",
           "name": "victoryPlayPendingSoundsByKind",
-          "declaration_line": 63,
+          "declaration_line": 152,
           "lines": [
-            76,
-            81
+            165,
+            170
           ]
         }
       ]
@@ -76410,18 +76834,18 @@
       "path": "src/modules/victory.c",
       "symbol": "D_victory_004011EC",
       "lines": [
-        4,
-        86,
-        91
+        41,
+        175,
+        180
       ],
       "owners": [
         {
           "kind": "function",
           "name": "victoryPlayPendingSoundsByKind",
-          "declaration_line": 63,
+          "declaration_line": 152,
           "lines": [
-            86,
-            91
+            175,
+            180
           ]
         }
       ]
@@ -76432,18 +76856,18 @@
       "path": "src/modules/victory.c",
       "symbol": "D_victory_004011F0",
       "lines": [
-        4,
-        96,
-        101
+        41,
+        185,
+        190
       ],
       "owners": [
         {
           "kind": "function",
           "name": "victoryPlayPendingSoundsByKind",
-          "declaration_line": 63,
+          "declaration_line": 152,
           "lines": [
-            96,
-            101
+            185,
+            190
           ]
         }
       ]
@@ -76454,28 +76878,28 @@
       "path": "src/modules/victory.c",
       "symbol": "D_victory_00401218",
       "lines": [
-        11,
-        49,
-        50,
-        51
+        48,
+        86,
+        87,
+        88
       ],
       "owners": [
         {
           "kind": "function",
           "name": "victoryAdvanceJointAnimation",
-          "declaration_line": 48,
+          "declaration_line": 85,
           "lines": [
-            49,
-            50,
-            51
+            86,
+            87,
+            88
           ]
         },
         {
           "kind": "global",
           "name": "D_victory_00401218",
-          "declaration_line": 11,
+          "declaration_line": 48,
           "lines": [
-            11
+            48
           ]
         }
       ]
@@ -76486,26 +76910,49 @@
       "path": "src/modules/victory.c",
       "symbol": "D_victory_00401238",
       "lines": [
-        10,
-        49,
-        51
+        47,
+        86,
+        88,
+        117,
+        120,
+        123,
+        126,
+        129,
+        132,
+        135,
+        144
       ],
       "owners": [
         {
           "kind": "function",
           "name": "victoryAdvanceJointAnimation",
-          "declaration_line": 48,
+          "declaration_line": 85,
           "lines": [
-            49,
-            51
+            86,
+            88
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "victoryCreateCameraAnimationDebugControls",
+          "declaration_line": 100,
+          "lines": [
+            117,
+            120,
+            123,
+            126,
+            129,
+            132,
+            135,
+            144
           ]
         },
         {
           "kind": "global",
           "name": "D_victory_00401238",
-          "declaration_line": 10,
+          "declaration_line": 47,
           "lines": [
-            10
+            47
           ]
         }
       ]
@@ -76516,39 +76963,39 @@
       "path": "src/modules/victory.c",
       "symbol": "D_victory_00401240",
       "lines": [
-        19,
-        31,
-        69,
-        79,
-        89,
-        98
+        56,
+        68,
+        158,
+        168,
+        178,
+        187
       ],
       "owners": [
         {
           "kind": "function",
           "name": "victoryPlayPendingSoundsByKind",
-          "declaration_line": 63,
+          "declaration_line": 152,
           "lines": [
-            69,
-            79,
-            89,
-            98
+            158,
+            168,
+            178,
+            187
           ]
         },
         {
           "kind": "function",
           "name": "victoryStopSoundsAndEmitters",
-          "declaration_line": 30,
+          "declaration_line": 67,
           "lines": [
-            31
+            68
           ]
         },
         {
           "kind": "global",
           "name": "D_victory_00401240",
-          "declaration_line": 19,
+          "declaration_line": 56,
           "lines": [
-            19
+            56
           ]
         }
       ]
@@ -76559,39 +77006,39 @@
       "path": "src/modules/victory.c",
       "symbol": "D_victory_00401248",
       "lines": [
-        20,
-        32,
-        67,
-        77,
-        87,
-        97
+        57,
+        69,
+        156,
+        166,
+        176,
+        186
       ],
       "owners": [
         {
           "kind": "function",
           "name": "victoryPlayPendingSoundsByKind",
-          "declaration_line": 63,
+          "declaration_line": 152,
           "lines": [
-            67,
-            77,
-            87,
-            97
+            156,
+            166,
+            176,
+            186
           ]
         },
         {
           "kind": "function",
           "name": "victoryStopSoundsAndEmitters",
-          "declaration_line": 30,
+          "declaration_line": 67,
           "lines": [
-            32
+            69
           ]
         },
         {
           "kind": "global",
           "name": "D_victory_00401248",
-          "declaration_line": 20,
+          "declaration_line": 57,
           "lines": [
-            20
+            57
           ]
         }
       ]
@@ -76602,33 +77049,33 @@
       "path": "src/modules/victory.c",
       "symbol": "D_victory_00401250",
       "lines": [
-        21,
-        33,
-        99
+        58,
+        70,
+        188
       ],
       "owners": [
         {
           "kind": "function",
           "name": "victoryPlayPendingSoundsByKind",
-          "declaration_line": 63,
+          "declaration_line": 152,
           "lines": [
-            99
+            188
           ]
         },
         {
           "kind": "function",
           "name": "victoryStopSoundsAndEmitters",
-          "declaration_line": 30,
+          "declaration_line": 67,
           "lines": [
-            33
+            70
           ]
         },
         {
           "kind": "global",
           "name": "D_victory_00401250",
-          "declaration_line": 21,
+          "declaration_line": 58,
           "lines": [
-            21
+            58
           ]
         }
       ]
@@ -76639,33 +77086,33 @@
       "path": "src/modules/victory.c",
       "symbol": "D_victory_00401251",
       "lines": [
-        22,
-        34,
-        100
+        59,
+        71,
+        189
       ],
       "owners": [
         {
           "kind": "function",
           "name": "victoryPlayPendingSoundsByKind",
-          "declaration_line": 63,
+          "declaration_line": 152,
           "lines": [
-            100
+            189
           ]
         },
         {
           "kind": "function",
           "name": "victoryStopSoundsAndEmitters",
-          "declaration_line": 30,
+          "declaration_line": 67,
           "lines": [
-            34
+            71
           ]
         },
         {
           "kind": "global",
           "name": "D_victory_00401251",
-          "declaration_line": 22,
+          "declaration_line": 59,
           "lines": [
-            22
+            59
           ]
         }
       ]
@@ -85637,7 +86084,7 @@
       "path": "src/modules/victory.c",
       "symbol": "__entrypoint_func_victory_400000",
       "lines": [
-        15
+        52
       ],
       "evidence": "asm/us/nonmatchings/modules/victory/__entrypoint_func_victory_400000.s"
     },
@@ -85647,7 +86094,7 @@
       "path": "src/modules/victory.c",
       "symbol": "func_victory_004003B8",
       "lines": [
-        39
+        76
       ],
       "evidence": "asm/us/nonmatchings/modules/victory/func_victory_004003B8.s"
     },
@@ -85657,7 +86104,7 @@
       "path": "src/modules/victory.c",
       "symbol": "func_victory_00400494",
       "lines": [
-        41
+        78
       ],
       "evidence": "asm/us/nonmatchings/modules/victory/func_victory_00400494.s"
     },
@@ -85667,7 +86114,7 @@
       "path": "src/modules/victory.c",
       "symbol": "func_victory_004005F8",
       "lines": [
-        43
+        80
       ],
       "evidence": "asm/us/nonmatchings/modules/victory/func_victory_004005F8.s"
     },
@@ -85677,19 +86124,9 @@
       "path": "src/modules/victory.c",
       "symbol": "func_victory_0040084C",
       "lines": [
-        55
+        92
       ],
       "evidence": "asm/us/nonmatchings/modules/victory/func_victory_0040084C.s"
-    },
-    {
-      "id": "Q-0bc9f809fbcd",
-      "kind": "assembly",
-      "path": "src/modules/victory.c",
-      "symbol": "func_victory_00400970",
-      "lines": [
-        57
-      ],
-      "evidence": "asm/us/nonmatchings/modules/victory/func_victory_00400970.s"
     },
     {
       "id": "Q-daa40b3c5851",
@@ -152557,21 +152994,41 @@
       ]
     },
     {
+      "id": "Q-35a511b41468",
+      "kind": "explicit_unknown",
+      "path": "src/modules/victory.c",
+      "symbol": "Build the victory debug panel with camera and animation control groups. * Bind the original nine scalar controls in their original order. * RE_ORIGINAL_QUIRK: capture the host before initialization; keep unchecked * allocations and reload the current value-record pointer for each binding. * RE_UNKNOWN: the complete value-record type, selector 0x11 semantics and * widget ownership. Raw word addresses retain the provider's storage view.",
+      "lines": [
+        94
+      ],
+      "evidence": "Build the victory debug panel with camera and animation control groups. * Bind the original nine scalar controls in their original order. * RE_ORIGINAL_QUIRK: capture the host before initialization; keep unchecked * allocations and reload the current value-record pointer for each binding. * RE_UNKNOWN: the complete value-record type, selector 0x11 semantics and * widget ownership. Raw word addresses retain the provider's storage view.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "victoryCreateCameraAnimationDebugControls",
+          "declaration_line": 100,
+          "lines": [
+            94
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-70aa160e1870",
       "kind": "explicit_unknown",
       "path": "src/modules/victory.c",
       "symbol": "Release the two sound handles first, then stop the two byte-sized emitter IDs, * retaining the original sound/emitter call and field-load order. * RE_ORIGINAL_QUIRK: no validity or sentinel checks and no local resets occur. * RE_UNKNOWN: provider ownership, repeated-stop behavior and ID lifetime require * caller and sound/emitter contracts before changing cleanup behavior.",
       "lines": [
-        24
+        61
       ],
       "evidence": "Release the two sound handles first, then stop the two byte-sized emitter IDs, * retaining the original sound/emitter call and field-load order. * RE_ORIGINAL_QUIRK: no validity or sentinel checks and no local resets occur. * RE_UNKNOWN: provider ownership, repeated-stop behavior and ID lifetime require * caller and sound/emitter contracts before changing cleanup behavior.",
       "owners": [
         {
           "kind": "function",
           "name": "victoryStopSoundsAndEmitters",
-          "declaration_line": 30,
+          "declaration_line": 67,
           "lines": [
-            24
+            61
           ]
         }
       ]
@@ -222106,20 +222563,133 @@
       ]
     },
     {
-      "id": "Q-df309dd5155f",
+      "id": "Q-9a1bba6864a1",
       "kind": "offset_field",
       "path": "src/modules/victory.c",
-      "symbol": "unk00",
+      "symbol": "opaque00",
+      "lines": [
+        7,
+        21,
+        27
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "VictoryGameGuiMenuExports",
+          "declaration_line": 20,
+          "lines": [
+            21
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "VictoryGuiMenuExports",
+          "declaration_line": 6,
+          "lines": [
+            7
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "VictoryMiscMenuExports",
+          "declaration_line": 26,
+          "lines": [
+            27
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-a8791a2e2a20",
+      "kind": "offset_field",
+      "path": "src/modules/victory.c",
+      "symbol": "opaque0C",
       "lines": [
         9
       ],
       "owners": [
         {
           "kind": "type",
-          "name": "VictoryAnimationState",
-          "declaration_line": 9,
+          "name": "VictoryGuiMenuExports",
+          "declaration_line": 6,
           "lines": [
             9
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-041bc01bd0cb",
+      "kind": "offset_field",
+      "path": "src/modules/victory.c",
+      "symbol": "opaque18",
+      "lines": [
+        23
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "VictoryGameGuiMenuExports",
+          "declaration_line": 20,
+          "lines": [
+            23
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-79b214babf22",
+      "kind": "offset_field",
+      "path": "src/modules/victory.c",
+      "symbol": "opaque7C",
+      "lines": [
+        13
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "VictoryGuiMenuExports",
+          "declaration_line": 6,
+          "lines": [
+            13
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-de40f39a1846",
+      "kind": "offset_field",
+      "path": "src/modules/victory.c",
+      "symbol": "opaque88",
+      "lines": [
+        15
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "VictoryGuiMenuExports",
+          "declaration_line": 6,
+          "lines": [
+            15
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-df309dd5155f",
+      "kind": "offset_field",
+      "path": "src/modules/victory.c",
+      "symbol": "unk00",
+      "lines": [
+        46
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "VictoryAnimationState",
+          "declaration_line": 46,
+          "lines": [
+            46
           ]
         }
       ]
@@ -222130,15 +222700,15 @@
       "path": "src/modules/victory.c",
       "symbol": "unk14",
       "lines": [
-        9
+        46
       ],
       "owners": [
         {
           "kind": "type",
           "name": "VictoryAnimationState",
-          "declaration_line": 9,
+          "declaration_line": 46,
           "lines": [
-            9
+            46
           ]
         }
       ]
@@ -231142,24 +231712,24 @@
       "path": "src/modules/victory.c",
       "symbol": "UnkStruct_004005C8",
       "lines": [
-        19,
-        20
+        56,
+        57
       ],
       "owners": [
         {
           "kind": "global",
           "name": "D_victory_00401240",
-          "declaration_line": 19,
+          "declaration_line": 56,
           "lines": [
-            19
+            56
           ]
         },
         {
           "kind": "global",
           "name": "D_victory_00401248",
-          "declaration_line": 20,
+          "declaration_line": 57,
           "lines": [
-            20
+            57
           ]
         }
       ]
@@ -241013,21 +241583,41 @@
       ]
     },
     {
+      "id": "Q-d3795dee6839",
+      "kind": "original_quirk",
+      "path": "src/modules/victory.c",
+      "symbol": "Build the victory debug panel with camera and animation control groups. * Bind the original nine scalar controls in their original order. * RE_ORIGINAL_QUIRK: capture the host before initialization; keep unchecked * allocations and reload the current value-record pointer for each binding. * RE_UNKNOWN: the complete value-record type, selector 0x11 semantics and * widget ownership. Raw word addresses retain the provider's storage view.",
+      "lines": [
+        94
+      ],
+      "evidence": "Build the victory debug panel with camera and animation control groups. * Bind the original nine scalar controls in their original order. * RE_ORIGINAL_QUIRK: capture the host before initialization; keep unchecked * allocations and reload the current value-record pointer for each binding. * RE_UNKNOWN: the complete value-record type, selector 0x11 semantics and * widget ownership. Raw word addresses retain the provider's storage view.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "victoryCreateCameraAnimationDebugControls",
+          "declaration_line": 100,
+          "lines": [
+            94
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-5364c713d443",
       "kind": "original_quirk",
       "path": "src/modules/victory.c",
       "symbol": "Release the two sound handles first, then stop the two byte-sized emitter IDs, * retaining the original sound/emitter call and field-load order. * RE_ORIGINAL_QUIRK: no validity or sentinel checks and no local resets occur. * RE_UNKNOWN: provider ownership, repeated-stop behavior and ID lifetime require * caller and sound/emitter contracts before changing cleanup behavior.",
       "lines": [
-        24
+        61
       ],
       "evidence": "Release the two sound handles first, then stop the two byte-sized emitter IDs, * retaining the original sound/emitter call and field-load order. * RE_ORIGINAL_QUIRK: no validity or sentinel checks and no local resets occur. * RE_UNKNOWN: provider ownership, repeated-stop behavior and ID lifetime require * caller and sound/emitter contracts before changing cleanup behavior.",
       "owners": [
         {
           "kind": "function",
           "name": "victoryStopSoundsAndEmitters",
-          "declaration_line": 30,
+          "declaration_line": 67,
           "lines": [
-            24
+            61
           ]
         }
       ]

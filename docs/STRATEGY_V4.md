@@ -35,7 +35,7 @@ packed-module checks and original full ROM check after symbol extraction:
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
 matching C are preserved with `#line`. The current ledger has **747** assembly references:
-**708** ordinary functions and **39** entrypoints, with **692,776** known instruction bytes
+**708** ordinary functions and **39** entrypoints, with **691,964** known instruction bytes
 and no unknown sizes. The broader name audit still finds **289** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
@@ -3610,10 +3610,19 @@ Totals: 449 further recoveries after the 225 upstream ordinary imports, plus 212
 Frozen wave `10424-plyr-timed-audio-named` and `accepted-plyr-timed-audio-named-10424` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 453 further readable functions
+## Historical accepted checkpoint — 453 further readable functions
 
 Recover four MODEL/PFX functions:3064 readable native bytes across91 fixed relocation sites. Preserve unequal raw order, original DATA/BSS/RO storage, all eight existing C definitions and202 typed SDK rows/83 historical attempts. Two four-byte original positive-FUNC tails remain uncredited; full3072 positive bytes, complete CODE/RELA, canonical/legacy ELF boundaries, all133 modules/1212 sources and ROM must independently match after normal build.
 
 Totals: 453 further recoveries after the 225 upstream ordinary imports, plus 2122 existing C semantic cleanups. Current ledger: 747 assembly references = 708 ordinary + 39 entrypoints; 692,776 known remaining instruction bytes; zero unknown sizes; 289 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `11774-upstream-loader-four` and `accepted-upstream-loader-four-11774` verify real translation-unit instructions/full relocations, 2 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 454 further readable functions
+
+Recover victoryCreateCameraAnimationDebugControls:952 native bytes and40 exact fixed relocation sites. Preserve original raw order inequality, original RO/DATA/BSS ownership and210 typed SDK rows/83 failed histories. Require fresh complete952/CODE/RELA/aliases/all133/1218-source/ROM/Git proof.
+
+Totals: 454 further recoveries after the 225 upstream ordinary imports, plus 2122 existing C semantic cleanups. Current ledger: 747 assembly references = 708 ordinary + 39 entrypoints; 691,964 known remaining instruction bytes; zero unknown sizes; 289 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `12856-victory-debug-controls` and `accepted-victory-debug-controls-12856` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

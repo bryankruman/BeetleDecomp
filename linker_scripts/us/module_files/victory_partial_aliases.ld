@@ -1,0 +1,1 @@
+func_victory_00400970 = victoryCreateCameraAnimationDebugControls;

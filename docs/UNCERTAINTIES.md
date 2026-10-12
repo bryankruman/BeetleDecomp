@@ -17,14 +17,14 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 1857 |
-| Preserved RE_ORIGINAL_QUIRK notes | 502 |
+| Explicit RE_UNKNOWN notes | 1858 |
+| Preserved RE_ORIGINAL_QUIRK notes | 503 |
 | Older comments with uncertainty language | 88 |
 | Documented original-behavior audits | 30 |
-| Assembly-backed functions or data | 752 |
+| Assembly-backed functions or data | 751 |
 | Address-based function identifiers | 904 |
-| Address-based global identifiers | 1530 |
-| Offset-based fields or neutral typed fields | 1743 |
+| Address-based global identifiers | 1546 |
+| Offset-based fields or neutral typed fields | 1748 |
 | Layout padding to preserve | 281 |
 | Unresolved type names | 283 |
 | Explicit unused ABI, storage or local identifiers | 137 |
@@ -10091,33 +10091,55 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
-| address_function | `func_snd_00401800` | function `victoryPlayPendingSoundsByKind` | [67](../src/modules/victory.c#L67), [77](../src/modules/victory.c#L77), [87](../src/modules/victory.c#L87), [97](../src/modules/victory.c#L97) |
-| address_global | `D_80025D70` | function `victoryAdvanceJointAnimation`, global `D_80025D70` | [7](../src/modules/victory.c#L7), [49](../src/modules/victory.c#L49) |
-| address_global | `D_victory_00401128` | function `victoryPlayPendingSoundsByKind` | [3](../src/modules/victory.c#L3), [67](../src/modules/victory.c#L67) |
-| address_global | `D_victory_0040112C` | function `victoryPlayPendingSoundsByKind` | [3](../src/modules/victory.c#L3), [77](../src/modules/victory.c#L77) |
-| address_global | `D_victory_00401130` | function `victoryPlayPendingSoundsByKind` | [3](../src/modules/victory.c#L3), [87](../src/modules/victory.c#L87) |
-| address_global | `D_victory_00401134` | function `victoryPlayPendingSoundsByKind` | [3](../src/modules/victory.c#L3), [97](../src/modules/victory.c#L97) |
-| address_global | `D_victory_004011E4` | function `victoryPlayPendingSoundsByKind` | [4](../src/modules/victory.c#L4), [66](../src/modules/victory.c#L66), [71](../src/modules/victory.c#L71) |
-| address_global | `D_victory_004011E8` | function `victoryPlayPendingSoundsByKind` | [4](../src/modules/victory.c#L4), [76](../src/modules/victory.c#L76), [81](../src/modules/victory.c#L81) |
-| address_global | `D_victory_004011EC` | function `victoryPlayPendingSoundsByKind` | [4](../src/modules/victory.c#L4), [86](../src/modules/victory.c#L86), [91](../src/modules/victory.c#L91) |
-| address_global | `D_victory_004011F0` | function `victoryPlayPendingSoundsByKind` | [4](../src/modules/victory.c#L4), [96](../src/modules/victory.c#L96), [101](../src/modules/victory.c#L101) |
-| address_global | `D_victory_00401218` | function `victoryAdvanceJointAnimation`, global `D_victory_00401218` | [11](../src/modules/victory.c#L11), [49](../src/modules/victory.c#L49), [50](../src/modules/victory.c#L50), [51](../src/modules/victory.c#L51) |
-| address_global | `D_victory_00401238` | function `victoryAdvanceJointAnimation`, global `D_victory_00401238` | [10](../src/modules/victory.c#L10), [49](../src/modules/victory.c#L49), [51](../src/modules/victory.c#L51) |
-| address_global | `D_victory_00401240` | function `victoryPlayPendingSoundsByKind`, function `victoryStopSoundsAndEmitters`, global `D_victory_00401240` | [19](../src/modules/victory.c#L19), [31](../src/modules/victory.c#L31), [69](../src/modules/victory.c#L69), [79](../src/modules/victory.c#L79), [89](../src/modules/victory.c#L89), [98](../src/modules/victory.c#L98) |
-| address_global | `D_victory_00401248` | function `victoryPlayPendingSoundsByKind`, function `victoryStopSoundsAndEmitters`, global `D_victory_00401248` | [20](../src/modules/victory.c#L20), [32](../src/modules/victory.c#L32), [67](../src/modules/victory.c#L67), [77](../src/modules/victory.c#L77), [87](../src/modules/victory.c#L87), [97](../src/modules/victory.c#L97) |
-| address_global | `D_victory_00401250` | function `victoryPlayPendingSoundsByKind`, function `victoryStopSoundsAndEmitters`, global `D_victory_00401250` | [21](../src/modules/victory.c#L21), [33](../src/modules/victory.c#L33), [99](../src/modules/victory.c#L99) |
-| address_global | `D_victory_00401251` | function `victoryPlayPendingSoundsByKind`, function `victoryStopSoundsAndEmitters`, global `D_victory_00401251` | [22](../src/modules/victory.c#L22), [34](../src/modules/victory.c#L34), [100](../src/modules/victory.c#L100) |
-| assembly | `__entrypoint_func_victory_400000` | — | [15](../src/modules/victory.c#L15) |
-| assembly | `func_victory_004003B8` | — | [39](../src/modules/victory.c#L39) |
-| assembly | `func_victory_00400494` | — | [41](../src/modules/victory.c#L41) |
-| assembly | `func_victory_004005F8` | — | [43](../src/modules/victory.c#L43) |
-| assembly | `func_victory_0040084C` | — | [55](../src/modules/victory.c#L55) |
-| assembly | `func_victory_00400970` | — | [57](../src/modules/victory.c#L57) |
-| explicit_unknown | `Release the two sound handles first, then stop the two byte-sized emitter IDs, * retaining the original sound/emitter call and field-load order. * RE_ORIGINAL_QUIRK: no validity...` | function `victoryStopSoundsAndEmitters` | [24](../src/modules/victory.c#L24) |
-| offset_field | `unk00` | type `VictoryAnimationState` | [9](../src/modules/victory.c#L9) |
-| offset_field | `unk14` | type `VictoryAnimationState` | [9](../src/modules/victory.c#L9) |
-| opaque_type | `UnkStruct_004005C8` | global `D_victory_00401240`, global `D_victory_00401248` | [19](../src/modules/victory.c#L19), [20](../src/modules/victory.c#L20) |
-| original_quirk | `Release the two sound handles first, then stop the two byte-sized emitter IDs, * retaining the original sound/emitter call and field-load order. * RE_ORIGINAL_QUIRK: no validity...` | function `victoryStopSoundsAndEmitters` | [24](../src/modules/victory.c#L24) |
+| address_function | `func_snd_00401800` | function `victoryPlayPendingSoundsByKind` | [156](../src/modules/victory.c#L156), [166](../src/modules/victory.c#L166), [176](../src/modules/victory.c#L176), [186](../src/modules/victory.c#L186) |
+| address_global | `D_80025D70` | function `victoryAdvanceJointAnimation`, global `D_80025D70` | [44](../src/modules/victory.c#L44), [86](../src/modules/victory.c#L86) |
+| address_global | `D_victory_004010A0` | function `victoryCreateCameraAnimationDebugControls`, global `D_victory_004010A0` | [33](../src/modules/victory.c#L33), [109](../src/modules/victory.c#L109) |
+| address_global | `D_victory_004010A8` | function `victoryCreateCameraAnimationDebugControls`, global `D_victory_004010A0` | [33](../src/modules/victory.c#L33), [113](../src/modules/victory.c#L113) |
+| address_global | `D_victory_004010AC` | function `victoryCreateCameraAnimationDebugControls`, global `D_victory_004010A0` | [33](../src/modules/victory.c#L33), [115](../src/modules/victory.c#L115) |
+| address_global | `D_victory_004010B4` | function `victoryCreateCameraAnimationDebugControls`, global `D_victory_004010B4` | [34](../src/modules/victory.c#L34), [118](../src/modules/victory.c#L118) |
+| address_global | `D_victory_004010BC` | function `victoryCreateCameraAnimationDebugControls`, global `D_victory_004010B4` | [34](../src/modules/victory.c#L34), [121](../src/modules/victory.c#L121) |
+| address_global | `D_victory_004010C4` | function `victoryCreateCameraAnimationDebugControls`, global `D_victory_004010B4` | [34](../src/modules/victory.c#L34), [124](../src/modules/victory.c#L124) |
+| address_global | `D_victory_004010CC` | function `victoryCreateCameraAnimationDebugControls`, global `D_victory_004010CC` | [35](../src/modules/victory.c#L35), [127](../src/modules/victory.c#L127) |
+| address_global | `D_victory_004010D4` | function `victoryCreateCameraAnimationDebugControls`, global `D_victory_004010CC` | [35](../src/modules/victory.c#L35), [130](../src/modules/victory.c#L130) |
+| address_global | `D_victory_004010DC` | function `victoryCreateCameraAnimationDebugControls`, global `D_victory_004010CC` | [35](../src/modules/victory.c#L35), [133](../src/modules/victory.c#L133) |
+| address_global | `D_victory_004010E4` | function `victoryCreateCameraAnimationDebugControls`, global `D_victory_004010E4` | [36](../src/modules/victory.c#L36), [138](../src/modules/victory.c#L138) |
+| address_global | `D_victory_004010EC` | function `victoryCreateCameraAnimationDebugControls`, global `D_victory_004010E4` | [36](../src/modules/victory.c#L36), [140](../src/modules/victory.c#L140) |
+| address_global | `D_victory_004010F4` | function `victoryCreateCameraAnimationDebugControls`, global `D_victory_004010E4` | [36](../src/modules/victory.c#L36), [142](../src/modules/victory.c#L142) |
+| address_global | `D_victory_0040111C` | function `victoryCreateCameraAnimationDebugControls` | [37](../src/modules/victory.c#L37), [116](../src/modules/victory.c#L116) |
+| address_global | `D_victory_00401120` | function `victoryCreateCameraAnimationDebugControls` | [37](../src/modules/victory.c#L37), [119](../src/modules/victory.c#L119) |
+| address_global | `D_victory_00401124` | function `victoryCreateCameraAnimationDebugControls` | [37](../src/modules/victory.c#L37), [122](../src/modules/victory.c#L122) |
+| address_global | `D_victory_00401128` | function `victoryPlayPendingSoundsByKind` | [40](../src/modules/victory.c#L40), [156](../src/modules/victory.c#L156) |
+| address_global | `D_victory_0040112C` | function `victoryPlayPendingSoundsByKind` | [40](../src/modules/victory.c#L40), [166](../src/modules/victory.c#L166) |
+| address_global | `D_victory_00401130` | function `victoryPlayPendingSoundsByKind` | [40](../src/modules/victory.c#L40), [176](../src/modules/victory.c#L176) |
+| address_global | `D_victory_00401134` | function `victoryPlayPendingSoundsByKind` | [40](../src/modules/victory.c#L40), [186](../src/modules/victory.c#L186) |
+| address_global | `D_victory_004011DC` | function `victoryCreateCameraAnimationDebugControls`, global `D_victory_004011DC` | [38](../src/modules/victory.c#L38), [141](../src/modules/victory.c#L141) |
+| address_global | `D_victory_004011E4` | function `victoryPlayPendingSoundsByKind` | [41](../src/modules/victory.c#L41), [155](../src/modules/victory.c#L155), [160](../src/modules/victory.c#L160) |
+| address_global | `D_victory_004011E8` | function `victoryPlayPendingSoundsByKind` | [41](../src/modules/victory.c#L41), [165](../src/modules/victory.c#L165), [170](../src/modules/victory.c#L170) |
+| address_global | `D_victory_004011EC` | function `victoryPlayPendingSoundsByKind` | [41](../src/modules/victory.c#L41), [175](../src/modules/victory.c#L175), [180](../src/modules/victory.c#L180) |
+| address_global | `D_victory_004011F0` | function `victoryPlayPendingSoundsByKind` | [41](../src/modules/victory.c#L41), [185](../src/modules/victory.c#L185), [190](../src/modules/victory.c#L190) |
+| address_global | `D_victory_00401218` | function `victoryAdvanceJointAnimation`, global `D_victory_00401218` | [48](../src/modules/victory.c#L48), [86](../src/modules/victory.c#L86), [87](../src/modules/victory.c#L87), [88](../src/modules/victory.c#L88) |
+| address_global | `D_victory_00401238` | function `victoryAdvanceJointAnimation`, function `victoryCreateCameraAnimationDebugControls`, global `D_victory_00401238` | [47](../src/modules/victory.c#L47), [86](../src/modules/victory.c#L86), [88](../src/modules/victory.c#L88), [117](../src/modules/victory.c#L117), [120](../src/modules/victory.c#L120), [123](../src/modules/victory.c#L123), [126](../src/modules/victory.c#L126), [129](../src/modules/victory.c#L129) (+3 in JSON) |
+| address_global | `D_victory_00401240` | function `victoryPlayPendingSoundsByKind`, function `victoryStopSoundsAndEmitters`, global `D_victory_00401240` | [56](../src/modules/victory.c#L56), [68](../src/modules/victory.c#L68), [158](../src/modules/victory.c#L158), [168](../src/modules/victory.c#L168), [178](../src/modules/victory.c#L178), [187](../src/modules/victory.c#L187) |
+| address_global | `D_victory_00401248` | function `victoryPlayPendingSoundsByKind`, function `victoryStopSoundsAndEmitters`, global `D_victory_00401248` | [57](../src/modules/victory.c#L57), [69](../src/modules/victory.c#L69), [156](../src/modules/victory.c#L156), [166](../src/modules/victory.c#L166), [176](../src/modules/victory.c#L176), [186](../src/modules/victory.c#L186) |
+| address_global | `D_victory_00401250` | function `victoryPlayPendingSoundsByKind`, function `victoryStopSoundsAndEmitters`, global `D_victory_00401250` | [58](../src/modules/victory.c#L58), [70](../src/modules/victory.c#L70), [188](../src/modules/victory.c#L188) |
+| address_global | `D_victory_00401251` | function `victoryPlayPendingSoundsByKind`, function `victoryStopSoundsAndEmitters`, global `D_victory_00401251` | [59](../src/modules/victory.c#L59), [71](../src/modules/victory.c#L71), [189](../src/modules/victory.c#L189) |
+| assembly | `__entrypoint_func_victory_400000` | — | [52](../src/modules/victory.c#L52) |
+| assembly | `func_victory_004003B8` | — | [76](../src/modules/victory.c#L76) |
+| assembly | `func_victory_00400494` | — | [78](../src/modules/victory.c#L78) |
+| assembly | `func_victory_004005F8` | — | [80](../src/modules/victory.c#L80) |
+| assembly | `func_victory_0040084C` | — | [92](../src/modules/victory.c#L92) |
+| explicit_unknown | `Build the victory debug panel with camera and animation control groups. * Bind the original nine scalar controls in their original order. * RE_ORIGINAL_QUIRK: capture the host b...` | function `victoryCreateCameraAnimationDebugControls` | [94](../src/modules/victory.c#L94) |
+| explicit_unknown | `Release the two sound handles first, then stop the two byte-sized emitter IDs, * retaining the original sound/emitter call and field-load order. * RE_ORIGINAL_QUIRK: no validity...` | function `victoryStopSoundsAndEmitters` | [61](../src/modules/victory.c#L61) |
+| offset_field | `opaque00` | type `VictoryGameGuiMenuExports`, type `VictoryGuiMenuExports`, type `VictoryMiscMenuExports` | [7](../src/modules/victory.c#L7), [21](../src/modules/victory.c#L21), [27](../src/modules/victory.c#L27) |
+| offset_field | `opaque0C` | type `VictoryGuiMenuExports` | [9](../src/modules/victory.c#L9) |
+| offset_field | `opaque18` | type `VictoryGameGuiMenuExports` | [23](../src/modules/victory.c#L23) |
+| offset_field | `opaque7C` | type `VictoryGuiMenuExports` | [13](../src/modules/victory.c#L13) |
+| offset_field | `opaque88` | type `VictoryGuiMenuExports` | [15](../src/modules/victory.c#L15) |
+| offset_field | `unk00` | type `VictoryAnimationState` | [46](../src/modules/victory.c#L46) |
+| offset_field | `unk14` | type `VictoryAnimationState` | [46](../src/modules/victory.c#L46) |
+| opaque_type | `UnkStruct_004005C8` | global `D_victory_00401240`, global `D_victory_00401248` | [56](../src/modules/victory.c#L56), [57](../src/modules/victory.c#L57) |
+| original_quirk | `Build the victory debug panel with camera and animation control groups. * Bind the original nine scalar controls in their original order. * RE_ORIGINAL_QUIRK: capture the host b...` | function `victoryCreateCameraAnimationDebugControls` | [94](../src/modules/victory.c#L94) |
+| original_quirk | `Release the two sound handles first, then stop the two byte-sized emitter IDs, * retaining the original sound/emitter call and field-load order. * RE_ORIGINAL_QUIRK: no validity...` | function `victoryStopSoundsAndEmitters` | [61](../src/modules/victory.c#L61) |
 
 ## src/modules/voltest.c
 
