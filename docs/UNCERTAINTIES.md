@@ -17,8 +17,8 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 1852 |
-| Preserved RE_ORIGINAL_QUIRK notes | 497 |
+| Explicit RE_UNKNOWN notes | 1857 |
+| Preserved RE_ORIGINAL_QUIRK notes | 502 |
 | Older comments with uncertainty language | 88 |
 | Documented original-behavior audits | 30 |
 | Assembly-backed functions or data | 752 |
@@ -29,7 +29,7 @@ For every future source wave, regenerate and check this index after code and str
 | Unresolved type names | 283 |
 | Explicit unused ABI, storage or local identifiers | 137 |
 | Decompiler parameter/local names | 622 |
-| Fake, unresolved or TODO draft markers | 48 |
+| Fake, unresolved or TODO draft markers | 51 |
 | Data-dependent conditional draft guards | 4 |
 
 ## docs/STRATEGY_V4.md
@@ -1310,6 +1310,16 @@ For every future source wave, regenerate and check this index after code and str
 | --- | --- | --- | --- |
 | explicit_unknown | `Request status under SI access; only a changed command writes and waits before the read DMA. RE_UNKNOWN: original shared-storage extents remain unproved; retained assembly keeps...` | function `osContStartQuery` | [9](../src/libultra/io/contquery.c#L9) |
 
+## src/libultra/io/epirawio.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| draft_marker | `TODO` | — | [14](../src/libultra/io/epirawio.c#L14), [72](../src/libultra/io/epirawio.c#L72) |
+| explicit_unknown | `* Synchronize handle-selected PI timing when necessary, then read one word * through the handle base address combined with the device address. * RE_ORIGINAL_QUIRK: Repeated vola...` | — | [34](../src/libultra/io/epirawio.c#L34) |
+| explicit_unknown | `* Synchronize handle-selected PI timing when necessary, then write one word * through the handle base address combined with the device address. * RE_ORIGINAL_QUIRK: Repeated vol...` | — | [1](../src/libultra/io/epirawio.c#L1) |
+| original_quirk | `* Synchronize handle-selected PI timing when necessary, then read one word * through the handle base address combined with the device address. * RE_ORIGINAL_QUIRK: Repeated vola...` | — | [34](../src/libultra/io/epirawio.c#L34) |
+| original_quirk | `* Synchronize handle-selected PI timing when necessary, then write one word * through the handle base address combined with the device address. * RE_ORIGINAL_QUIRK: Repeated vol...` | — | [1](../src/libultra/io/epirawio.c#L1) |
+
 ## src/libultra/io/pfsisplug.c
 
 | Kind | Identifier or note | Declaration context | Physical lines |
@@ -1333,6 +1343,24 @@ For every future source wave, regenerate and check this index after code and str
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
 | explicit_unknown | `Fill the caller I/O message and submit it to the active PI manager using priority-dependent jam/send queueing. * RE_UNKNOWN: Transfer completion and caller buffer lifetime are g...` | — | [1](../src/libultra/io/pidma.c#L1) |
+
+## src/libultra/io/pirawdma_pair.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| draft_marker | `TODO` | — | [13](../src/libultra/io/pirawdma_pair.c#L13), [80](../src/libultra/io/pirawdma_pair.c#L80) |
+| explicit_unknown | `* Wait for PI to become idle, program DRAM and cartridge addresses, then * start the selected transfer by writing its length register. * RE_ORIGINAL_QUIRK: Repeated volatile sta...` | — | [1](../src/libultra/io/pirawdma_pair.c#L1) |
+| explicit_unknown | `* Wait for PI to become idle, synchronize handle-selected timing registers * when its pointer differs from the retained current handle, then program and * start the transfer. * ...` | — | [64](../src/libultra/io/pirawdma_pair.c#L64) |
+| original_quirk | `* Wait for PI to become idle, program DRAM and cartridge addresses, then * start the selected transfer by writing its length register. * RE_ORIGINAL_QUIRK: Repeated volatile sta...` | — | [1](../src/libultra/io/pirawdma_pair.c#L1) |
+| original_quirk | `* Wait for PI to become idle, synchronize handle-selected timing registers * when its pointer differs from the retained current handle, then program and * start the transfer. * ...` | — | [64](../src/libultra/io/pirawdma_pair.c#L64) |
+
+## src/libultra/io/pirawread.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| draft_marker | `TODO` | — | [54](../src/libultra/io/pirawread.c#L54) |
+| explicit_unknown | `* Wait for PI to become idle, read one word from the retained ROM-base value * combined with the device address, and return zero. * RE_ORIGINAL_QUIRK: Repeated volatile status r...` | — | [1](../src/libultra/io/pirawread.c#L1) |
+| original_quirk | `* Wait for PI to become idle, read one word from the retained ROM-base value * combined with the device address, and return zero. * RE_ORIGINAL_QUIRK: Repeated volatile status r...` | — | [1](../src/libultra/io/pirawread.c#L1) |
 
 ## src/libultra/io/piread.c
 

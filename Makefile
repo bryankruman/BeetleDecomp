@@ -693,3 +693,14 @@ $(SDK_ACCESS_OBJECTS): $(BUILD_DIR)/%.o: %.c $(SDK_AUDIO_HEADERS) $(SDK_RETAINED
 $(BUILD_DIR)/src/libultra/os/timerintr.o: src/libultra/os/timerintr.c $(SDK_AUDIO_HEADERS) $(SDK_RETAINED_STORAGE_HEADERS) tools/asm-processor/build.py tools/asm-processor/asm_processor.py asm/nonmatchings/libultra/os/timerintr/__osTimerServicesInit.s tools/asm-processor/prelude.inc
 	$(V)mkdir -p $(dir $@)
 	$(V)$(ASM_PROC) $(ASM_PROC_FLAGS) $(SDK_AUDIO_CC) -- $(AS) $(ASFLAGS) -- $(subst -O3,-O1,$(SDK_AUDIO_FLAGS)) -o $@ $<
+
+# Native-matched PI raw I/O: fixed IDO O1 recipe, retained stock source coordinates.
+$(BUILD_DIR)/src/libultra/io/pirawread.o: src/libultra/io/pirawread.c $(SDK_AUDIO_HEADERS) $(SDK_RETAINED_STORAGE_HEADERS) tools/asm-processor/build.py tools/asm-processor/asm_processor.py tools/asm-processor/prelude.inc
+	$(V)mkdir -p $(dir $@)
+	$(V)$(ASM_PROC) $(ASM_PROC_FLAGS) $(SDK_AUDIO_CC) -- $(AS) $(ASFLAGS) -- $(subst -O3,-O1,$(SDK_AUDIO_FLAGS)) -o $@ $<
+$(BUILD_DIR)/src/libultra/io/pirawdma_pair.o: src/libultra/io/pirawdma_pair.c $(SDK_AUDIO_HEADERS) $(SDK_RETAINED_STORAGE_HEADERS) tools/asm-processor/build.py tools/asm-processor/asm_processor.py tools/asm-processor/prelude.inc
+	$(V)mkdir -p $(dir $@)
+	$(V)$(ASM_PROC) $(ASM_PROC_FLAGS) $(SDK_AUDIO_CC) -- $(AS) $(ASFLAGS) -- $(subst -O3,-O1,$(SDK_AUDIO_FLAGS)) -o $@ $<
+$(BUILD_DIR)/src/libultra/io/epirawio.o: src/libultra/io/epirawio.c $(SDK_AUDIO_HEADERS) $(SDK_RETAINED_STORAGE_HEADERS) tools/asm-processor/build.py tools/asm-processor/asm_processor.py tools/asm-processor/prelude.inc
+	$(V)mkdir -p $(dir $@)
+	$(V)$(ASM_PROC) $(ASM_PROC_FLAGS) $(SDK_AUDIO_CC) -- $(AS) $(ASFLAGS) -- $(subst -O3,-O1,$(SDK_AUDIO_FLAGS)) -o $@ $<

@@ -303,10 +303,13 @@
     "src/libultra/io/aisetnextbuf.c": "a56af1027e3d9c8fac23d75361e9a8d92cc4578d83a3bb4d3b9c4dc1cf288a78",
     "src/libultra/io/contquery.c": "a6c202027824498463298d5ccb6ebee06322e6a1cb18872d549dd57cbb9a7033",
     "src/libultra/io/contsetch.c": "0c5bc528e0c93168789d1e8a84ddb88d386d06948cfd760c6104b40e04a24caa",
+    "src/libultra/io/epirawio.c": "a332fc3652771cf8c00233bc463586486fc7400c8cfd53c322ed85685d9bbf8b",
     "src/libultra/io/pfsisplug.c": "c0c2eae5a8b136e9dbc156c18a291f4ca6fcfbb8c11f8fe0ef01a2ed037a2eca",
     "src/libultra/io/piacs.c": "1e1868dbf136a88ff9f6d089b0205f0d130e3669d93f36e70d87375dd8f589f6",
     "src/libultra/io/pidma.c": "37ac5ed678f14547e528a618c5e3bde2ba07e426236e53a567ee3bf6552e401b",
     "src/libultra/io/pigetcmdq.c": "efec4cabcf71ed7cb1c561b0669260b2858084da5a86a5772b6f7a6e2ee26796",
+    "src/libultra/io/pirawdma_pair.c": "504600b07e8d6dbb01b9757254878dbcaf804e98f05cdaf3924ce9f819240420",
+    "src/libultra/io/pirawread.c": "e657f6189e1007c51abc7cb50196d3f835290a11ab2ec7ebc01e0f661f111cdf",
     "src/libultra/io/piread.c": "09832de2dac044125825578b33b1f208400b521260480441b3a7e869c3db417b",
     "src/libultra/io/si.c": "ab0ba466c10db4d227556b6ebbab755b25a285af384618148e51ac4a7bae07b4",
     "src/libultra/io/siacs.c": "4cccb0f44e06c0f798fe890377bc6f4b57a4f881a5670a5161e38c7aaf14c5a9",
@@ -505,12 +508,12 @@
     "audit_debt": 30,
     "conditional_draft": 4,
     "decompiler_local": 622,
-    "draft_marker": 48,
-    "explicit_unknown": 1852,
+    "draft_marker": 51,
+    "explicit_unknown": 1857,
     "layout_padding": 281,
     "offset_field": 1743,
     "opaque_type": 283,
-    "original_quirk": 497,
+    "original_quirk": 502,
     "uncertainty_note": 88,
     "unused_identifier": 137
   },
@@ -116293,6 +116296,38 @@
       "evidence": "TODO: this comes from a header"
     },
     {
+      "id": "Q-972d1abf6601",
+      "kind": "draft_marker",
+      "path": "src/libultra/io/epirawio.c",
+      "symbol": "TODO",
+      "lines": [
+        14,
+        72
+      ],
+      "evidence": "TODO: this comes from a header"
+    },
+    {
+      "id": "Q-c4b41dd648a9",
+      "kind": "draft_marker",
+      "path": "src/libultra/io/pirawdma_pair.c",
+      "symbol": "TODO",
+      "lines": [
+        13,
+        80
+      ],
+      "evidence": "TODO: this comes from a header"
+    },
+    {
+      "id": "Q-7b673665e57c",
+      "kind": "draft_marker",
+      "path": "src/libultra/io/pirawread.c",
+      "symbol": "TODO",
+      "lines": [
+        54
+      ],
+      "evidence": "TODO: this comes from a header"
+    },
+    {
       "id": "Q-ac5db1d0838a",
       "kind": "draft_marker",
       "path": "src/libultra/io/si.c",
@@ -118691,6 +118726,26 @@
       ]
     },
     {
+      "id": "Q-5e8460390642",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/io/epirawio.c",
+      "symbol": "* Synchronize handle-selected PI timing when necessary, then read one word * through the handle base address combined with the device address. * RE_ORIGINAL_QUIRK: Repeated volatile status reads have no timeout. * RE_ORIGINAL_QUIRK: Keep pointer comparison, live field reloads, timing * write order, and the final retained current-handle update. * RE_UNKNOWN: Caller guarantees for handle domain and lifetime are unproved. * RE_UNKNOWN: Caller address, alignment, and pointer guarantees are unproved.",
+      "lines": [
+        34
+      ],
+      "evidence": "* Synchronize handle-selected PI timing when necessary, then read one word * through the handle base address combined with the device address. * RE_ORIGINAL_QUIRK: Repeated volatile status reads have no timeout. * RE_ORIGINAL_QUIRK: Keep pointer comparison, live field reloads, timing * write order, and the final retained current-handle update. * RE_UNKNOWN: Caller guarantees for handle domain and lifetime are unproved. * RE_UNKNOWN: Caller address, alignment, and pointer guarantees are unproved."
+    },
+    {
+      "id": "Q-e9b3d87b82b9",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/io/epirawio.c",
+      "symbol": "* Synchronize handle-selected PI timing when necessary, then write one word * through the handle base address combined with the device address. * RE_ORIGINAL_QUIRK: Repeated volatile status reads have no timeout. * RE_ORIGINAL_QUIRK: Keep pointer comparison, live field reloads, timing * write order, and the final retained current-handle update. * RE_UNKNOWN: Caller guarantees for handle domain and lifetime are unproved. * RE_UNKNOWN: Caller address, alignment, and pointer guarantees are unproved.",
+      "lines": [
+        1
+      ],
+      "evidence": "* Synchronize handle-selected PI timing when necessary, then write one word * through the handle base address combined with the device address. * RE_ORIGINAL_QUIRK: Repeated volatile status reads have no timeout. * RE_ORIGINAL_QUIRK: Keep pointer comparison, live field reloads, timing * write order, and the final retained current-handle update. * RE_UNKNOWN: Caller guarantees for handle domain and lifetime are unproved. * RE_UNKNOWN: Caller address, alignment, and pointer guarantees are unproved."
+    },
+    {
       "id": "Q-dc44af896c68",
       "kind": "explicit_unknown",
       "path": "src/libultra/io/pfsisplug.c",
@@ -118799,6 +118854,36 @@
         1
       ],
       "evidence": "Fill the caller I/O message and submit it to the active PI manager using priority-dependent jam/send queueing. * RE_UNKNOWN: Transfer completion and caller buffer lifetime are governed by the existing PI manager and return queue."
+    },
+    {
+      "id": "Q-bebc72870601",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/io/pirawdma_pair.c",
+      "symbol": "* Wait for PI to become idle, program DRAM and cartridge addresses, then * start the selected transfer by writing its length register. * RE_ORIGINAL_QUIRK: Repeated volatile status reads have no timeout. * RE_ORIGINAL_QUIRK: Address writes precede invalid-direction rejection; * size minus one remains unchecked in the FINALROM path. * RE_UNKNOWN: Caller address, alignment, and pointer guarantees are unproved.",
+      "lines": [
+        1
+      ],
+      "evidence": "* Wait for PI to become idle, program DRAM and cartridge addresses, then * start the selected transfer by writing its length register. * RE_ORIGINAL_QUIRK: Repeated volatile status reads have no timeout. * RE_ORIGINAL_QUIRK: Address writes precede invalid-direction rejection; * size minus one remains unchecked in the FINALROM path. * RE_UNKNOWN: Caller address, alignment, and pointer guarantees are unproved."
+    },
+    {
+      "id": "Q-602418630d5a",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/io/pirawdma_pair.c",
+      "symbol": "* Wait for PI to become idle, synchronize handle-selected timing registers * when its pointer differs from the retained current handle, then program and * start the transfer. * RE_ORIGINAL_QUIRK: Repeated volatile status reads have no timeout. * RE_ORIGINAL_QUIRK: Address writes precede invalid-direction rejection; * size minus one remains unchecked in the FINALROM path. * RE_ORIGINAL_QUIRK: Keep pointer comparison, live field reloads, timing * write order, and the final retained current-handle update. * RE_UNKNOWN: Caller guarantees for handle domain and lifetime are unproved. * RE_UNKNOWN: Caller address, alignment, and pointer guarantees are unproved.",
+      "lines": [
+        64
+      ],
+      "evidence": "* Wait for PI to become idle, synchronize handle-selected timing registers * when its pointer differs from the retained current handle, then program and * start the transfer. * RE_ORIGINAL_QUIRK: Repeated volatile status reads have no timeout. * RE_ORIGINAL_QUIRK: Address writes precede invalid-direction rejection; * size minus one remains unchecked in the FINALROM path. * RE_ORIGINAL_QUIRK: Keep pointer comparison, live field reloads, timing * write order, and the final retained current-handle update. * RE_UNKNOWN: Caller guarantees for handle domain and lifetime are unproved. * RE_UNKNOWN: Caller address, alignment, and pointer guarantees are unproved."
+    },
+    {
+      "id": "Q-0d1634edeb99",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/io/pirawread.c",
+      "symbol": "* Wait for PI to become idle, read one word from the retained ROM-base value * combined with the device address, and return zero. * RE_ORIGINAL_QUIRK: Repeated volatile status reads have no timeout. * RE_UNKNOWN: Caller address, alignment, and pointer guarantees are unproved.",
+      "lines": [
+        1
+      ],
+      "evidence": "* Wait for PI to become idle, read one word from the retained ROM-base value * combined with the device address, and return zero. * RE_ORIGINAL_QUIRK: Repeated volatile status reads have no timeout. * RE_UNKNOWN: Caller address, alignment, and pointer guarantees are unproved."
     },
     {
       "id": "Q-f4295a33eac5",
@@ -231358,6 +231443,26 @@
       "evidence": "Derive DAC and bit periods from the existing video clock, reject an unusably short DAC period, and program the audio registers. * RE_ORIGINAL_QUIRK: Preserve floating-point rounding, byte-sized bit rate, clamp, and the original audio-control write."
     },
     {
+      "id": "Q-18807fb7cf0e",
+      "kind": "original_quirk",
+      "path": "src/libultra/io/epirawio.c",
+      "symbol": "* Synchronize handle-selected PI timing when necessary, then read one word * through the handle base address combined with the device address. * RE_ORIGINAL_QUIRK: Repeated volatile status reads have no timeout. * RE_ORIGINAL_QUIRK: Keep pointer comparison, live field reloads, timing * write order, and the final retained current-handle update. * RE_UNKNOWN: Caller guarantees for handle domain and lifetime are unproved. * RE_UNKNOWN: Caller address, alignment, and pointer guarantees are unproved.",
+      "lines": [
+        34
+      ],
+      "evidence": "* Synchronize handle-selected PI timing when necessary, then read one word * through the handle base address combined with the device address. * RE_ORIGINAL_QUIRK: Repeated volatile status reads have no timeout. * RE_ORIGINAL_QUIRK: Keep pointer comparison, live field reloads, timing * write order, and the final retained current-handle update. * RE_UNKNOWN: Caller guarantees for handle domain and lifetime are unproved. * RE_UNKNOWN: Caller address, alignment, and pointer guarantees are unproved."
+    },
+    {
+      "id": "Q-9429b3eb9aa0",
+      "kind": "original_quirk",
+      "path": "src/libultra/io/epirawio.c",
+      "symbol": "* Synchronize handle-selected PI timing when necessary, then write one word * through the handle base address combined with the device address. * RE_ORIGINAL_QUIRK: Repeated volatile status reads have no timeout. * RE_ORIGINAL_QUIRK: Keep pointer comparison, live field reloads, timing * write order, and the final retained current-handle update. * RE_UNKNOWN: Caller guarantees for handle domain and lifetime are unproved. * RE_UNKNOWN: Caller address, alignment, and pointer guarantees are unproved.",
+      "lines": [
+        1
+      ],
+      "evidence": "* Synchronize handle-selected PI timing when necessary, then write one word * through the handle base address combined with the device address. * RE_ORIGINAL_QUIRK: Repeated volatile status reads have no timeout. * RE_ORIGINAL_QUIRK: Keep pointer comparison, live field reloads, timing * write order, and the final retained current-handle update. * RE_UNKNOWN: Caller guarantees for handle domain and lifetime are unproved. * RE_UNKNOWN: Caller address, alignment, and pointer guarantees are unproved."
+    },
+    {
       "id": "Q-1c854e3a5859",
       "kind": "original_quirk",
       "path": "src/libultra/io/piacs.c",
@@ -231416,6 +231521,36 @@
           ]
         }
       ]
+    },
+    {
+      "id": "Q-630476a5bb97",
+      "kind": "original_quirk",
+      "path": "src/libultra/io/pirawdma_pair.c",
+      "symbol": "* Wait for PI to become idle, program DRAM and cartridge addresses, then * start the selected transfer by writing its length register. * RE_ORIGINAL_QUIRK: Repeated volatile status reads have no timeout. * RE_ORIGINAL_QUIRK: Address writes precede invalid-direction rejection; * size minus one remains unchecked in the FINALROM path. * RE_UNKNOWN: Caller address, alignment, and pointer guarantees are unproved.",
+      "lines": [
+        1
+      ],
+      "evidence": "* Wait for PI to become idle, program DRAM and cartridge addresses, then * start the selected transfer by writing its length register. * RE_ORIGINAL_QUIRK: Repeated volatile status reads have no timeout. * RE_ORIGINAL_QUIRK: Address writes precede invalid-direction rejection; * size minus one remains unchecked in the FINALROM path. * RE_UNKNOWN: Caller address, alignment, and pointer guarantees are unproved."
+    },
+    {
+      "id": "Q-7f2702dc00cf",
+      "kind": "original_quirk",
+      "path": "src/libultra/io/pirawdma_pair.c",
+      "symbol": "* Wait for PI to become idle, synchronize handle-selected timing registers * when its pointer differs from the retained current handle, then program and * start the transfer. * RE_ORIGINAL_QUIRK: Repeated volatile status reads have no timeout. * RE_ORIGINAL_QUIRK: Address writes precede invalid-direction rejection; * size minus one remains unchecked in the FINALROM path. * RE_ORIGINAL_QUIRK: Keep pointer comparison, live field reloads, timing * write order, and the final retained current-handle update. * RE_UNKNOWN: Caller guarantees for handle domain and lifetime are unproved. * RE_UNKNOWN: Caller address, alignment, and pointer guarantees are unproved.",
+      "lines": [
+        64
+      ],
+      "evidence": "* Wait for PI to become idle, synchronize handle-selected timing registers * when its pointer differs from the retained current handle, then program and * start the transfer. * RE_ORIGINAL_QUIRK: Repeated volatile status reads have no timeout. * RE_ORIGINAL_QUIRK: Address writes precede invalid-direction rejection; * size minus one remains unchecked in the FINALROM path. * RE_ORIGINAL_QUIRK: Keep pointer comparison, live field reloads, timing * write order, and the final retained current-handle update. * RE_UNKNOWN: Caller guarantees for handle domain and lifetime are unproved. * RE_UNKNOWN: Caller address, alignment, and pointer guarantees are unproved."
+    },
+    {
+      "id": "Q-30e53a9f1d8e",
+      "kind": "original_quirk",
+      "path": "src/libultra/io/pirawread.c",
+      "symbol": "* Wait for PI to become idle, read one word from the retained ROM-base value * combined with the device address, and return zero. * RE_ORIGINAL_QUIRK: Repeated volatile status reads have no timeout. * RE_UNKNOWN: Caller address, alignment, and pointer guarantees are unproved.",
+      "lines": [
+        1
+      ],
+      "evidence": "* Wait for PI to become idle, read one word from the retained ROM-base value * combined with the device address, and return zero. * RE_ORIGINAL_QUIRK: Repeated volatile status reads have no timeout. * RE_UNKNOWN: Caller address, alignment, and pointer guarantees are unproved."
     },
     {
       "id": "Q-4ecec1be618f",

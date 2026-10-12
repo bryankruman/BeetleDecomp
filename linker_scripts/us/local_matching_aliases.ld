@@ -234,3 +234,5 @@ __osSiAccessQueue = D_800322E8;
 /* Preserve the existing address-named PI initializer call sites. */
 func_80007990 = __osPiCreateAccessQueue;
 __osTimerCounter = D_800322D0;
+osRomBase = 0x80000308;
+__osCurrentHandle = D_80020A10;
