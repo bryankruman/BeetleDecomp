@@ -1,0 +1,2 @@
+func_smack_00400E00 = smackAdvanceObjectMotion;
+func_smack_00400FB4 = smackSetVelocityAndRandomizeSpin;

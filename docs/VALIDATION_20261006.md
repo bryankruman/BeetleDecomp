@@ -3378,10 +3378,19 @@ Totals: 444 further recoveries after the 225 upstream ordinary imports, plus 212
 Frozen wave `9262-ai-three-named` and `accepted-ai-three-named-9262` verify real translation-unit instructions/full relocations, 133 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 445 further readable functions
+## Historical accepted checkpoint — 445 further readable functions
 
 Recover aiAccumulateWeightedCallbackResult312B with exact native instructions and six complete unique relocation sites. Preserve the explicit raw record-order inequality and fixed permutation [0,1,2,3,5,4], original DATA/BSS records and five literal inherited835 warnings. Append one relative compatibility assignment to the existing AI alias file; preserve the three accepted AI bodies and aliases. Require fresh1182-source/full133/original packed RELA/ROM/full-ledger/Git and canonical/legacy ELF native boundaries before acceptance.
 
 Totals: 445 further recoveries after the 225 upstream ordinary imports, plus 2121 existing C semantic cleanups. Current ledger: 755 assembly references = 716 ordinary + 39 entrypoints; 697,944 known remaining instruction bytes; zero unknown sizes; 289 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `9380-ai-weighted` and `accepted-ai-weighted-9380` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 447 further readable functions
+
+Recover smackAdvanceObjectMotion436B and smackSetVelocityAndRandomizeSpin652B with exact original native instructions and47 complete unique five-field relocation sites. Preserve both explicit raw ordered-record inequalities and their fixed permutations, original storage records, empty compiler logs, exact matched-body definition-name inverses, provider/header ABI and original quirks. Add only two relative compatibility assignments in one absent module alias file; preserve every prior assessed body and source coordinate. Require fresh1183-source/full133/original packed RELA/ROM/full-ledger/Git and both canonical/legacy ELF boundaries before acceptance. Preserve173 typed SDK rows and83 historical attempts.
+
+Totals: 447 further recoveries after the 225 upstream ordinary imports, plus 2121 existing C semantic cleanups. Current ledger: 753 assembly references = 714 ordinary + 39 entrypoints; 696,856 known remaining instruction bytes; zero unknown sizes; 289 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `9488-smack-motion-pair` and `accepted-smack-motion-pair-9488` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

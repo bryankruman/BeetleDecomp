@@ -387,7 +387,7 @@
     "src/modules/selection.c": "e7ccff7cd818403e152a9bc74d18ecdd8d8ae0c794a46ac9ace89beafea5982a",
     "src/modules/shadow.c": "0fca8809ea94a13d3892888077ec3fb12d6c0936d47bf754408687de9495d3d7",
     "src/modules/skid.c": "981393e4b967d8c5a37b9a02f5a33eec049981cda90ea9821e7870fe17f8e211",
-    "src/modules/smack.c": "9bf6c97e759d079dcd5a126a14aab47f56a351bfecb65a6328882079ae1b81ca",
+    "src/modules/smack.c": "7e2c06b48290d4aad693051a0fa5e918a7c97ee0cdd55c9c0cb0c21e37ab9a9f",
     "src/modules/snd.c": "8ee26503d649b59f81fe2e7b735e13d11b1863af188cabdf310ba7bc6588d9df",
     "src/modules/sparks.c": "ddeb51c69317d6a6c9f2b20df04fbbe2ccb29339acd76b01c0635f8a41bf9773",
     "src/modules/splash.c": "cb236edd1d5e78c972b7ec7e0f56d93a81544f089caa6419ca74fe5dd4881c22",
@@ -469,22 +469,22 @@
     "src/sched.c": "26791ca9f30fd5355b11ea03a64a457757d2029595be26428c2925798105d9b4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "506d6ae5bcb32e430e59d11347fb849dfec69f622a9f6e6ac5f1c568f1e43493",
-    "docs/VALIDATION_20261006.md": "fcaab164aefaff80338fff3447cf2aa913599b89320e7fd696f4fd276edba51a"
+    "docs/STRATEGY_V4.md": "51ed8cce2d32deb64a10a47001c308d32aa881e95c216188357742e44a163f6c",
+    "docs/VALIDATION_20261006.md": "421b46f82b88ed3f0272c952e92b36f60c8c6da2626a8472ffe79e69ebfb1240"
   },
   "counts": {
-    "address_function": 909,
-    "address_global": 1501,
-    "assembly": 759,
+    "address_function": 907,
+    "address_global": 1504,
+    "assembly": 757,
     "audit_debt": 30,
     "conditional_draft": 4,
     "decompiler_local": 619,
     "draft_marker": 38,
-    "explicit_unknown": 1826,
+    "explicit_unknown": 1828,
     "layout_padding": 275,
-    "offset_field": 1700,
+    "offset_field": 1701,
     "opaque_type": 282,
-    "original_quirk": 473,
+    "original_quirk": 475,
     "uncertainty_note": 88,
     "unused_identifier": 137
   },
@@ -15673,15 +15673,15 @@
       "path": "src/modules/smack.c",
       "symbol": "func_smack_004000E0",
       "lines": [
-        27
+        43
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_smack_004000E0",
-          "declaration_line": 27,
+          "declaration_line": 43,
           "lines": [
-            27
+            43
           ]
         }
       ]
@@ -15692,15 +15692,15 @@
       "path": "src/modules/smack.c",
       "symbol": "func_smack_004000E8",
       "lines": [
-        8
+        11
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_smack_004000E8",
-          "declaration_line": 8,
+          "declaration_line": 11,
           "lines": [
-            8
+            11
           ]
         }
       ]
@@ -15711,15 +15711,15 @@
       "path": "src/modules/smack.c",
       "symbol": "func_smack_00400290",
       "lines": [
-        9
+        12
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_smack_00400290",
-          "declaration_line": 9,
+          "declaration_line": 12,
           "lines": [
-            9
+            12
           ]
         }
       ]
@@ -15730,15 +15730,15 @@
       "path": "src/modules/smack.c",
       "symbol": "func_smack_0040038C",
       "lines": [
-        10
+        13
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_smack_0040038C",
-          "declaration_line": 10,
+          "declaration_line": 13,
           "lines": [
-            10
+            13
           ]
         }
       ]
@@ -15749,24 +15749,24 @@
       "path": "src/modules/smack.c",
       "symbol": "func_smack_0040062C",
       "lines": [
-        11,
-        46
+        14,
+        62
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_smack_0040062C",
-          "declaration_line": 11,
+          "declaration_line": 14,
           "lines": [
-            11
+            14
           ]
         },
         {
           "kind": "function",
           "name": "smackAttachObjectRecord",
-          "declaration_line": 43,
+          "declaration_line": 59,
           "lines": [
-            46
+            62
           ]
         }
       ]
@@ -15777,15 +15777,15 @@
       "path": "src/modules/smack.c",
       "symbol": "func_smack_00400824",
       "lines": [
-        13
+        16
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_smack_00400824",
-          "declaration_line": 13,
+          "declaration_line": 16,
           "lines": [
-            13
+            16
           ]
         }
       ]
@@ -15796,53 +15796,24 @@
       "path": "src/modules/smack.c",
       "symbol": "func_smack_0040097C",
       "lines": [
-        15
+        18,
+        107
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_smack_0040097C",
-          "declaration_line": 15,
+          "declaration_line": 18,
           "lines": [
-            15
+            18
           ]
-        }
-      ]
-    },
-    {
-      "id": "Q-196d3d9cd61e",
-      "kind": "address_function",
-      "path": "src/modules/smack.c",
-      "symbol": "func_smack_00400E00",
-      "lines": [
-        16
-      ],
-      "owners": [
+        },
         {
           "kind": "function",
-          "name": "func_smack_00400E00",
-          "declaration_line": 16,
+          "name": "smackAdvanceObjectMotion",
+          "declaration_line": 94,
           "lines": [
-            16
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-669879510738",
-      "kind": "address_function",
-      "path": "src/modules/smack.c",
-      "symbol": "func_smack_00400FB4",
-      "lines": [
-        17
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_smack_00400FB4",
-          "declaration_line": 17,
-          "lines": [
-            17
+            107
           ]
         }
       ]
@@ -15853,15 +15824,15 @@
       "path": "src/modules/smack.c",
       "symbol": "func_smack_00401240",
       "lines": [
-        18
+        34
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_smack_00401240",
-          "declaration_line": 18,
+          "declaration_line": 34,
           "lines": [
-            18
+            34
           ]
         }
       ]
@@ -47334,29 +47305,113 @@
       ]
     },
     {
+      "id": "Q-4573d6bca220",
+      "kind": "address_global",
+      "path": "src/modules/smack.c",
+      "symbol": "D_80025D70",
+      "lines": [
+        27,
+        100
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "smackAdvanceObjectMotion",
+          "declaration_line": 94,
+          "lines": [
+            100
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_80025D70",
+          "declaration_line": 27,
+          "lines": [
+            27
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-9ef2c7be07ab",
+      "kind": "address_global",
+      "path": "src/modules/smack.c",
+      "symbol": "D_smack_0040161C",
+      "lines": [
+        28,
+        113
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "smackAdvanceObjectMotion",
+          "declaration_line": 94,
+          "lines": [
+            113
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_smack_0040161C",
+          "declaration_line": 28,
+          "lines": [
+            28
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-5086647a90e9",
+      "kind": "address_global",
+      "path": "src/modules/smack.c",
+      "symbol": "D_smack_00401620",
+      "lines": [
+        31,
+        140
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "smackSetVelocityAndRandomizeSpin",
+          "declaration_line": 126,
+          "lines": [
+            140
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_smack_00401620",
+          "declaration_line": 31,
+          "lines": [
+            31
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-9ddb3210f287",
       "kind": "address_global",
       "path": "src/modules/smack.c",
       "symbol": "D_smack_00401630",
       "lines": [
-        79,
-        86
+        164,
+        171
       ],
       "owners": [
         {
           "kind": "function",
           "name": "smackGetPlayerValue",
-          "declaration_line": 84,
+          "declaration_line": 169,
           "lines": [
-            86
+            171
           ]
         },
         {
           "kind": "global",
           "name": "D_smack_00401630",
-          "declaration_line": 79,
+          "declaration_line": 164,
           "lines": [
-            79
+            164
           ]
         }
       ]
@@ -82140,7 +82195,7 @@
       "path": "src/modules/smack.c",
       "symbol": "__entrypoint_func_smack_400000",
       "lines": [
-        20
+        36
       ],
       "evidence": "asm/us/nonmatchings/modules/smack/__entrypoint_func_smack_400000.s"
     },
@@ -82150,7 +82205,7 @@
       "path": "src/modules/smack.c",
       "symbol": "func_smack_004000E8",
       "lines": [
-        31
+        47
       ],
       "evidence": "asm/us/nonmatchings/modules/smack/func_smack_004000E8.s"
     },
@@ -82160,7 +82215,7 @@
       "path": "src/modules/smack.c",
       "symbol": "func_smack_00400290",
       "lines": [
-        33
+        49
       ],
       "evidence": "asm/us/nonmatchings/modules/smack/func_smack_00400290.s"
     },
@@ -82170,7 +82225,7 @@
       "path": "src/modules/smack.c",
       "symbol": "func_smack_0040038C",
       "lines": [
-        35
+        51
       ],
       "evidence": "asm/us/nonmatchings/modules/smack/func_smack_0040038C.s"
     },
@@ -82180,7 +82235,7 @@
       "path": "src/modules/smack.c",
       "symbol": "func_smack_0040062C",
       "lines": [
-        37
+        53
       ],
       "evidence": "asm/us/nonmatchings/modules/smack/func_smack_0040062C.s"
     },
@@ -82190,7 +82245,7 @@
       "path": "src/modules/smack.c",
       "symbol": "func_smack_00400824",
       "lines": [
-        57
+        73
       ],
       "evidence": "asm/us/nonmatchings/modules/smack/func_smack_00400824.s"
     },
@@ -82200,29 +82255,9 @@
       "path": "src/modules/smack.c",
       "symbol": "func_smack_0040097C",
       "lines": [
-        70
+        86
       ],
       "evidence": "asm/us/nonmatchings/modules/smack/func_smack_0040097C.s"
-    },
-    {
-      "id": "Q-294ade794191",
-      "kind": "assembly",
-      "path": "src/modules/smack.c",
-      "symbol": "func_smack_00400E00",
-      "lines": [
-        72
-      ],
-      "evidence": "asm/us/nonmatchings/modules/smack/func_smack_00400E00.s"
-    },
-    {
-      "id": "Q-1eeac82a2285",
-      "kind": "assembly",
-      "path": "src/modules/smack.c",
-      "symbol": "func_smack_00400FB4",
-      "lines": [
-        74
-      ],
-      "evidence": "asm/us/nonmatchings/modules/smack/func_smack_00400FB4.s"
     },
     {
       "id": "Q-0c10a14bd83c",
@@ -82230,7 +82265,7 @@
       "path": "src/modules/smack.c",
       "symbol": "func_smack_00401240",
       "lines": [
-        76
+        161
       ],
       "evidence": "asm/us/nonmatchings/modules/smack/func_smack_00401240.s"
     },
@@ -132372,21 +132407,41 @@
       ]
     },
     {
+      "id": "Q-91dd3b971677",
+      "kind": "explicit_unknown",
+      "path": "src/modules/smack.c",
+      "symbol": "Advance the object's translation by velocity times the shared scalar. * The existing step helper decides whether rotations and matrix publication * run; gravity-like Z acceleration and the position copy run on either path. * RE_ORIGINAL_QUIRK: retain the scalar snapshot across provider callbacks, * live record reloads and the pre-step translation copied into position. * RE_UNKNOWN: time units, the step helper's full policy and record lifetime.",
+      "lines": [
+        88
+      ],
+      "evidence": "Advance the object's translation by velocity times the shared scalar. * The existing step helper decides whether rotations and matrix publication * run; gravity-like Z acceleration and the position copy run on either path. * RE_ORIGINAL_QUIRK: retain the scalar snapshot across provider callbacks, * live record reloads and the pre-step translation copied into position. * RE_UNKNOWN: time units, the step helper's full policy and record lifetime.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "smackAdvanceObjectMotion",
+          "declaration_line": 94,
+          "lines": [
+            88
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-bc14273112a1",
       "kind": "explicit_unknown",
       "path": "src/modules/smack.c",
       "symbol": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "lines": [
-        23
+        39
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "owners": [
         {
           "kind": "function",
           "name": "func_smack_004000E0",
-          "declaration_line": 27,
+          "declaration_line": 43,
           "lines": [
-            23
+            39
           ]
         }
       ]
@@ -132397,16 +132452,36 @@
       "path": "src/modules/smack.c",
       "symbol": "Return zero for player indices at least four; otherwise return the selected * signed halfword from the shared four-entry table. * RE_UNKNOWN: table meaning and refresh lifetime require consumers.",
       "lines": [
-        80
+        165
       ],
       "evidence": "Return zero for player indices at least four; otherwise return the selected * signed halfword from the shared four-entry table. * RE_UNKNOWN: table meaning and refresh lifetime require consumers.",
       "owners": [
         {
           "kind": "function",
           "name": "smackGetPlayerValue",
-          "declaration_line": 84,
+          "declaration_line": 169,
           "lines": [
-            80
+            165
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-6236c1bfe103",
+      "kind": "explicit_unknown",
+      "path": "src/modules/smack.c",
+      "symbol": "Scale the supplied vector into velocity, add a magnitude-scaled Z term, * and generate angular components using separate sign/value random draws. * X/Y angular fields change only for strength > 8 or matrix[2][2] < 0.5; * Z always changes. Preserve ordered calls and left-associated float products. * RE_ORIGINAL_QUIRK: the sign draw and value draw are independent; this is * not an absolute-value random sampler. Nonpositive strength is negated, * retaining the original signed-zero/unordered comparison behavior. * RE_UNKNOWN: strength units, random distribution contract and record aliasing.",
+      "lines": [
+        118
+      ],
+      "evidence": "Scale the supplied vector into velocity, add a magnitude-scaled Z term, * and generate angular components using separate sign/value random draws. * X/Y angular fields change only for strength > 8 or matrix[2][2] < 0.5; * Z always changes. Preserve ordered calls and left-associated float products. * RE_ORIGINAL_QUIRK: the sign draw and value draw are independent; this is * not an absolute-value random sampler. Nonpositive strength is negated, * retaining the original signed-zero/unordered comparison behavior. * RE_UNKNOWN: strength units, random distribution contract and record aliasing.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "smackSetVelocityAndRandomizeSpin",
+          "declaration_line": 126,
+          "lines": [
+            118
           ]
         }
       ]
@@ -187397,15 +187472,15 @@
       "path": "src/modules/smack.c",
       "symbol": "unk00",
       "lines": [
-        7
+        10
       ],
       "owners": [
         {
           "kind": "type",
           "name": "SmackObjectRecord",
-          "declaration_line": 7,
+          "declaration_line": 10,
           "lines": [
-            7
+            10
           ]
         }
       ]
@@ -187416,15 +187491,15 @@
       "path": "src/modules/smack.c",
       "symbol": "unk24",
       "lines": [
-        7
+        10
       ],
       "owners": [
         {
           "kind": "type",
           "name": "SmackObjectRecord",
-          "declaration_line": 7,
+          "declaration_line": 10,
           "lines": [
-            7
+            10
           ]
         }
       ]
@@ -187435,15 +187510,15 @@
       "path": "src/modules/smack.c",
       "symbol": "unk30",
       "lines": [
-        7
+        10
       ],
       "owners": [
         {
           "kind": "type",
           "name": "SmackObjectRecord",
-          "declaration_line": 7,
+          "declaration_line": 10,
           "lines": [
-            7
+            10
           ]
         }
       ]
@@ -187454,15 +187529,34 @@
       "path": "src/modules/smack.c",
       "symbol": "unk39",
       "lines": [
-        7
+        10
       ],
       "owners": [
         {
           "kind": "type",
           "name": "SmackObjectRecord",
-          "declaration_line": 7,
+          "declaration_line": 10,
           "lines": [
-            7
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-d4da5f674fd7",
+      "kind": "offset_field",
+      "path": "src/modules/smack.c",
+      "symbol": "unknown24",
+      "lines": [
+        24
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "SmackMotionState",
+          "declaration_line": 20,
+          "lines": [
+            24
           ]
         }
       ]
@@ -232190,6 +232284,46 @@
           "declaration_line": 2991,
           "lines": [
             2985
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-d1ad5795901c",
+      "kind": "original_quirk",
+      "path": "src/modules/smack.c",
+      "symbol": "Advance the object's translation by velocity times the shared scalar. * The existing step helper decides whether rotations and matrix publication * run; gravity-like Z acceleration and the position copy run on either path. * RE_ORIGINAL_QUIRK: retain the scalar snapshot across provider callbacks, * live record reloads and the pre-step translation copied into position. * RE_UNKNOWN: time units, the step helper's full policy and record lifetime.",
+      "lines": [
+        88
+      ],
+      "evidence": "Advance the object's translation by velocity times the shared scalar. * The existing step helper decides whether rotations and matrix publication * run; gravity-like Z acceleration and the position copy run on either path. * RE_ORIGINAL_QUIRK: retain the scalar snapshot across provider callbacks, * live record reloads and the pre-step translation copied into position. * RE_UNKNOWN: time units, the step helper's full policy and record lifetime.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "smackAdvanceObjectMotion",
+          "declaration_line": 94,
+          "lines": [
+            88
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-16e759bcbe36",
+      "kind": "original_quirk",
+      "path": "src/modules/smack.c",
+      "symbol": "Scale the supplied vector into velocity, add a magnitude-scaled Z term, * and generate angular components using separate sign/value random draws. * X/Y angular fields change only for strength > 8 or matrix[2][2] < 0.5; * Z always changes. Preserve ordered calls and left-associated float products. * RE_ORIGINAL_QUIRK: the sign draw and value draw are independent; this is * not an absolute-value random sampler. Nonpositive strength is negated, * retaining the original signed-zero/unordered comparison behavior. * RE_UNKNOWN: strength units, random distribution contract and record aliasing.",
+      "lines": [
+        118
+      ],
+      "evidence": "Scale the supplied vector into velocity, add a magnitude-scaled Z term, * and generate angular components using separate sign/value random draws. * X/Y angular fields change only for strength > 8 or matrix[2][2] < 0.5; * Z always changes. Preserve ordered calls and left-associated float products. * RE_ORIGINAL_QUIRK: the sign draw and value draw are independent; this is * not an absolute-value random sampler. Nonpositive strength is negated, * retaining the original signed-zero/unordered comparison behavior. * RE_UNKNOWN: strength units, random distribution contract and record aliasing.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "smackSetVelocityAndRandomizeSpin",
+          "declaration_line": 126,
+          "lines": [
+            118
           ]
         }
       ]

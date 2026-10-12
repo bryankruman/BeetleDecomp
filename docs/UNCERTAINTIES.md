@@ -17,14 +17,14 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 1826 |
-| Preserved RE_ORIGINAL_QUIRK notes | 473 |
+| Explicit RE_UNKNOWN notes | 1828 |
+| Preserved RE_ORIGINAL_QUIRK notes | 475 |
 | Older comments with uncertainty language | 88 |
 | Documented original-behavior audits | 30 |
-| Assembly-backed functions or data | 759 |
-| Address-based function identifiers | 909 |
-| Address-based global identifiers | 1501 |
-| Offset-based fields or neutral typed fields | 1700 |
+| Assembly-backed functions or data | 757 |
+| Address-based function identifiers | 907 |
+| Address-based global identifiers | 1504 |
+| Offset-based fields or neutral typed fields | 1701 |
 | Layout padding to preserve | 275 |
 | Unresolved type names | 282 |
 | Explicit unused ABI, storage or local identifiers | 137 |
@@ -5505,33 +5505,37 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
-| address_function | `func_smack_004000E0` | function `func_smack_004000E0` | [27](../src/modules/smack.c#L27) |
-| address_function | `func_smack_004000E8` | function `func_smack_004000E8` | [8](../src/modules/smack.c#L8) |
-| address_function | `func_smack_00400290` | function `func_smack_00400290` | [9](../src/modules/smack.c#L9) |
-| address_function | `func_smack_0040038C` | function `func_smack_0040038C` | [10](../src/modules/smack.c#L10) |
-| address_function | `func_smack_0040062C` | function `func_smack_0040062C`, function `smackAttachObjectRecord` | [11](../src/modules/smack.c#L11), [46](../src/modules/smack.c#L46) |
-| address_function | `func_smack_00400824` | function `func_smack_00400824` | [13](../src/modules/smack.c#L13) |
-| address_function | `func_smack_0040097C` | function `func_smack_0040097C` | [15](../src/modules/smack.c#L15) |
-| address_function | `func_smack_00400E00` | function `func_smack_00400E00` | [16](../src/modules/smack.c#L16) |
-| address_function | `func_smack_00400FB4` | function `func_smack_00400FB4` | [17](../src/modules/smack.c#L17) |
-| address_function | `func_smack_00401240` | function `func_smack_00401240` | [18](../src/modules/smack.c#L18) |
-| address_global | `D_smack_00401630` | function `smackGetPlayerValue`, global `D_smack_00401630` | [79](../src/modules/smack.c#L79), [86](../src/modules/smack.c#L86) |
-| assembly | `__entrypoint_func_smack_400000` | — | [20](../src/modules/smack.c#L20) |
-| assembly | `func_smack_004000E8` | — | [31](../src/modules/smack.c#L31) |
-| assembly | `func_smack_00400290` | — | [33](../src/modules/smack.c#L33) |
-| assembly | `func_smack_0040038C` | — | [35](../src/modules/smack.c#L35) |
-| assembly | `func_smack_0040062C` | — | [37](../src/modules/smack.c#L37) |
-| assembly | `func_smack_00400824` | — | [57](../src/modules/smack.c#L57) |
-| assembly | `func_smack_0040097C` | — | [70](../src/modules/smack.c#L70) |
-| assembly | `func_smack_00400E00` | — | [72](../src/modules/smack.c#L72) |
-| assembly | `func_smack_00400FB4` | — | [74](../src/modules/smack.c#L74) |
-| assembly | `func_smack_00401240` | — | [76](../src/modules/smack.c#L76) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_smack_004000E0` | [23](../src/modules/smack.c#L23) |
-| explicit_unknown | `Return zero for player indices at least four; otherwise return the selected * signed halfword from the shared four-entry table. * RE_UNKNOWN: table meaning and refresh lifetime ...` | function `smackGetPlayerValue` | [80](../src/modules/smack.c#L80) |
-| offset_field | `unk00` | type `SmackObjectRecord` | [7](../src/modules/smack.c#L7) |
-| offset_field | `unk24` | type `SmackObjectRecord` | [7](../src/modules/smack.c#L7) |
-| offset_field | `unk30` | type `SmackObjectRecord` | [7](../src/modules/smack.c#L7) |
-| offset_field | `unk39` | type `SmackObjectRecord` | [7](../src/modules/smack.c#L7) |
+| address_function | `func_smack_004000E0` | function `func_smack_004000E0` | [43](../src/modules/smack.c#L43) |
+| address_function | `func_smack_004000E8` | function `func_smack_004000E8` | [11](../src/modules/smack.c#L11) |
+| address_function | `func_smack_00400290` | function `func_smack_00400290` | [12](../src/modules/smack.c#L12) |
+| address_function | `func_smack_0040038C` | function `func_smack_0040038C` | [13](../src/modules/smack.c#L13) |
+| address_function | `func_smack_0040062C` | function `func_smack_0040062C`, function `smackAttachObjectRecord` | [14](../src/modules/smack.c#L14), [62](../src/modules/smack.c#L62) |
+| address_function | `func_smack_00400824` | function `func_smack_00400824` | [16](../src/modules/smack.c#L16) |
+| address_function | `func_smack_0040097C` | function `func_smack_0040097C`, function `smackAdvanceObjectMotion` | [18](../src/modules/smack.c#L18), [107](../src/modules/smack.c#L107) |
+| address_function | `func_smack_00401240` | function `func_smack_00401240` | [34](../src/modules/smack.c#L34) |
+| address_global | `D_80025D70` | function `smackAdvanceObjectMotion`, global `D_80025D70` | [27](../src/modules/smack.c#L27), [100](../src/modules/smack.c#L100) |
+| address_global | `D_smack_0040161C` | function `smackAdvanceObjectMotion`, global `D_smack_0040161C` | [28](../src/modules/smack.c#L28), [113](../src/modules/smack.c#L113) |
+| address_global | `D_smack_00401620` | function `smackSetVelocityAndRandomizeSpin`, global `D_smack_00401620` | [31](../src/modules/smack.c#L31), [140](../src/modules/smack.c#L140) |
+| address_global | `D_smack_00401630` | function `smackGetPlayerValue`, global `D_smack_00401630` | [164](../src/modules/smack.c#L164), [171](../src/modules/smack.c#L171) |
+| assembly | `__entrypoint_func_smack_400000` | — | [36](../src/modules/smack.c#L36) |
+| assembly | `func_smack_004000E8` | — | [47](../src/modules/smack.c#L47) |
+| assembly | `func_smack_00400290` | — | [49](../src/modules/smack.c#L49) |
+| assembly | `func_smack_0040038C` | — | [51](../src/modules/smack.c#L51) |
+| assembly | `func_smack_0040062C` | — | [53](../src/modules/smack.c#L53) |
+| assembly | `func_smack_00400824` | — | [73](../src/modules/smack.c#L73) |
+| assembly | `func_smack_0040097C` | — | [86](../src/modules/smack.c#L86) |
+| assembly | `func_smack_00401240` | — | [161](../src/modules/smack.c#L161) |
+| explicit_unknown | `Advance the object's translation by velocity times the shared scalar. * The existing step helper decides whether rotations and matrix publication * run; gravity-like Z accelerat...` | function `smackAdvanceObjectMotion` | [88](../src/modules/smack.c#L88) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_smack_004000E0` | [39](../src/modules/smack.c#L39) |
+| explicit_unknown | `Return zero for player indices at least four; otherwise return the selected * signed halfword from the shared four-entry table. * RE_UNKNOWN: table meaning and refresh lifetime ...` | function `smackGetPlayerValue` | [165](../src/modules/smack.c#L165) |
+| explicit_unknown | `Scale the supplied vector into velocity, add a magnitude-scaled Z term, * and generate angular components using separate sign/value random draws. * X/Y angular fields change onl...` | function `smackSetVelocityAndRandomizeSpin` | [118](../src/modules/smack.c#L118) |
+| offset_field | `unk00` | type `SmackObjectRecord` | [10](../src/modules/smack.c#L10) |
+| offset_field | `unk24` | type `SmackObjectRecord` | [10](../src/modules/smack.c#L10) |
+| offset_field | `unk30` | type `SmackObjectRecord` | [10](../src/modules/smack.c#L10) |
+| offset_field | `unk39` | type `SmackObjectRecord` | [10](../src/modules/smack.c#L10) |
+| offset_field | `unknown24` | type `SmackMotionState` | [24](../src/modules/smack.c#L24) |
+| original_quirk | `Advance the object's translation by velocity times the shared scalar. * The existing step helper decides whether rotations and matrix publication * run; gravity-like Z accelerat...` | function `smackAdvanceObjectMotion` | [88](../src/modules/smack.c#L88) |
+| original_quirk | `Scale the supplied vector into velocity, add a magnitude-scaled Z term, * and generate angular components using separate sign/value random draws. * X/Y angular fields change onl...` | function `smackSetVelocityAndRandomizeSpin` | [118](../src/modules/smack.c#L118) |
 
 ## src/modules/snd.c
 
