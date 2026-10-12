@@ -17,8 +17,8 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 1836 |
-| Preserved RE_ORIGINAL_QUIRK notes | 482 |
+| Explicit RE_UNKNOWN notes | 1839 |
+| Preserved RE_ORIGINAL_QUIRK notes | 487 |
 | Older comments with uncertainty language | 88 |
 | Documented original-behavior audits | 30 |
 | Assembly-backed functions or data | 755 |
@@ -29,7 +29,7 @@ For every future source wave, regenerate and check this index after code and str
 | Unresolved type names | 282 |
 | Explicit unused ABI, storage or local identifiers | 137 |
 | Decompiler parameter/local names | 619 |
-| Fake, unresolved or TODO draft markers | 38 |
+| Fake, unresolved or TODO draft markers | 48 |
 | Data-dependent conditional draft guards | 4 |
 
 ## docs/STRATEGY_V4.md
@@ -1290,6 +1290,13 @@ For every future source wave, regenerate and check this index after code and str
 | --- | --- | --- | --- |
 | draft_marker | `TODO` | — | [4](../src/libultra/io/ai.c#L4) |
 
+## src/libultra/io/aisetfreq.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| draft_marker | `TODO` | global `osViClock` | [7](../src/libultra/io/aisetfreq.c#L7), [10](../src/libultra/io/aisetfreq.c#L10) |
+| original_quirk | `Derive DAC and bit periods from the existing video clock, reject an unusably short DAC period, and program the audio registers. * RE_ORIGINAL_QUIRK: Preserve floating-point roun...` | — | [1](../src/libultra/io/aisetfreq.c#L1) |
+
 ## src/libultra/io/aisetnextbuf.c
 
 | Kind | Identifier or note | Declaration context | Physical lines |
@@ -1310,11 +1317,68 @@ For every future source wave, regenerate and check this index after code and str
 | explicit_unknown | `* Build the fixed controller status request sequence in retained PIF RAM. * * Preserve command/status byte writes, eight-byte request copies, live count * loads, and terminator....` | function `__osPfsRequestData` | [66](../src/libultra/io/pfsisplug.c#L66) |
 | explicit_unknown | `* Serialize controller PIF status reads and return the detected controller- * pak presence mask. * * Keep three CRC retries, live controller-count loads, blocking message * orde...` | function `osPfsIsPlug` | [8](../src/libultra/io/pfsisplug.c#L8) |
 
+## src/libultra/io/pidma.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| explicit_unknown | `Fill the caller I/O message and submit it to the active PI manager using priority-dependent jam/send queueing. * RE_UNKNOWN: Transfer completion and caller buffer lifetime are g...` | — | [1](../src/libultra/io/pidma.c#L1) |
+
 ## src/libultra/io/piread.c
 
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
 | explicit_unknown | `Acquire PI access, perform one raw IO read, release access and return the * raw operation's status. The source's misalignment check is _DEBUG-only and * absent from this 64-byte...` | function `osPiReadIo` | [5](../src/libultra/io/piread.c#L5) |
+
+## src/libultra/io/si.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| draft_marker | `TODO` | — | [6](../src/libultra/io/si.c#L6) |
+
+## src/libultra/io/sirawread.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| draft_marker | `TODO` | — | [52](../src/libultra/io/sirawread.c#L52) |
+| explicit_unknown | `Reject a busy serial interface, then read one caller-selected device word. * RE_UNKNOWN: Device-address validity and output storage lifetime remain caller responsibilities.` | — | [1](../src/libultra/io/sirawread.c#L1) |
+
+## src/libultra/io/sirawwrite.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| draft_marker | `TODO` | — | [52](../src/libultra/io/sirawwrite.c#L52) |
+| explicit_unknown | `Reject a busy serial interface, then write one caller-selected device word. * RE_UNKNOWN: Device-address validity remains a caller responsibility.` | — | [1](../src/libultra/io/sirawwrite.c#L1) |
+
+## src/libultra/io/sp.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| draft_marker | `TODO` | — | [8](../src/libultra/io/sp.c#L8) |
+
+## src/libultra/io/spgetstat.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| draft_marker | `TODO` | — | [6](../src/libultra/io/spgetstat.c#L6) |
+
+## src/libultra/io/sprawdma.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| draft_marker | `TODO` | — | [58](../src/libultra/io/sprawdma.c#L58) |
+| original_quirk | `Reject a busy RSP, program the local and DRAM addresses, and start the selected DMA direction. * RE_ORIGINAL_QUIRK: Keep size-minus-one arithmetic and the non-read direction fal...` | — | [1](../src/libultra/io/sprawdma.c#L1) |
+
+## src/libultra/io/spsetpc.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| draft_marker | `TODO` | — | [5](../src/libultra/io/spsetpc.c#L5) |
+
+## src/libultra/io/spsetstat.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| draft_marker | `TODO` | — | [6](../src/libultra/io/spsetstat.c#L6) |
 
 ## src/libultra/io/sptask.c
 
@@ -1344,6 +1408,12 @@ For every future source wave, regenerate and check this index after code and str
 | --- | --- | --- | --- |
 | draft_marker | `TODO` | — | [4](../src/libultra/io/viblack.c#L4) |
 | explicit_unknown | `Set or clear the next context's BLACK state bit according to the u8 * argument while interrupts are disabled, then restore the mask. * RE_UNKNOWN: when the pending state becomes...` | function `osViBlack` | [7](../src/libultra/io/viblack.c#L7) |
+
+## src/libultra/io/vigetcurrcontext.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| draft_marker | `TODO` | — | [6](../src/libultra/io/vigetcurrcontext.c#L6) |
 
 ## src/libultra/io/vigetcurrframebuf.c
 
@@ -1431,6 +1501,12 @@ For every future source wave, regenerate and check this index after code and str
 | --- | --- | --- | --- |
 | explicit_unknown | `Initialize the saved entry/argument/stack/cleanup context, interrupt/FPU * state and stopped-thread fields, then link the thread into the active * list under the saved interrupt...` | function `osCreateThread` | [9](../src/libultra/os/createthread.c#L9) |
 
+## src/libultra/os/destroythread.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| original_quirk | `Remove the selected or running thread from scheduling and the active list, dispatching when the running thread is destroyed. * RE_ORIGINAL_QUIRK: Retain the priority-minus-one l...` | — | [1](../src/libultra/os/destroythread.c#L1) |
+
 ## src/libultra/os/getthreadpri.c
 
 | Kind | Identifier or note | Declaration context | Physical lines |
@@ -1450,6 +1526,12 @@ For every future source wave, regenerate and check this index after code and str
 | --- | --- | --- | --- |
 | explicit_unknown | `Enable the existing FPU state, perform the PIF read/write handshake, * install and flush exception vectors, set up the debug TLB mapping, derive * the clock rate, clear the NMI ...` | function `osInitialize` | [23](../src/libultra/os/initialize.c#L23) |
 | original_quirk | `Enable the existing FPU state, perform the PIF read/write handshake, * install and flush exception vectors, set up the debug TLB mapping, derive * the clock rate, clear the NMI ...` | function `osInitialize` | [23](../src/libultra/os/initialize.c#L23) |
+
+## src/libultra/os/jammesg.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| original_quirk | `Insert a message before the current queue head, waiting only for the blocking mode and waking a queued receiver. * RE_ORIGINAL_QUIRK: Keep the count-dependent modulo arithmetic ...` | — | [1](../src/libultra/os/jammesg.c#L1) |
 
 ## src/libultra/os/osVirtualtoPhysical.c
 
@@ -1476,6 +1558,12 @@ For every future source wave, regenerate and check this index after code and str
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
 | explicit_unknown | `Associate the supplied queue and message with the indexed event while * interrupts are disabled, then restore the mask. The event-range check * remains _DEBUG-only. RE_UNKNOWN: ...` | function `osSetEventMesg` | [10](../src/libultra/os/seteventmesg.c#L10) |
+
+## src/libultra/os/settimer.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| original_quirk | `Initialize the caller timer, insert its countdown, and program the timer interrupt when it becomes the first timer. * RE_ORIGINAL_QUIRK: A zero countdown selects the supplied in...` | — | [1](../src/libultra/os/settimer.c#L1) |
 
 ## src/libultra/os/startthread.c
 

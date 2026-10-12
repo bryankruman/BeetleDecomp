@@ -299,15 +299,27 @@
     "src/libultra/audio/synstopvoice.c": "ae57c91896402afa8b6929dd0e06b7cc341f6bc8c21e07192988c84b1eed0b04",
     "src/libultra/audio/synthInternals.h": "797c65321f3ae4ebfa83b3babdacd70495c7a80cee2a708a0b8095043f1a309b",
     "src/libultra/io/ai.c": "e2757d2319d2b9eca70284cc98501741565a27bc9216f7bcb58d691da85fc40a",
+    "src/libultra/io/aisetfreq.c": "e0d9998c3391129ce9b5198498d779cef764ae2d7cab9acac158b669bab802f3",
     "src/libultra/io/aisetnextbuf.c": "a56af1027e3d9c8fac23d75361e9a8d92cc4578d83a3bb4d3b9c4dc1cf288a78",
     "src/libultra/io/contquery.c": "a6c202027824498463298d5ccb6ebee06322e6a1cb18872d549dd57cbb9a7033",
     "src/libultra/io/contsetch.c": "0c5bc528e0c93168789d1e8a84ddb88d386d06948cfd760c6104b40e04a24caa",
     "src/libultra/io/pfsisplug.c": "c0c2eae5a8b136e9dbc156c18a291f4ca6fcfbb8c11f8fe0ef01a2ed037a2eca",
+    "src/libultra/io/pidma.c": "37ac5ed678f14547e528a618c5e3bde2ba07e426236e53a567ee3bf6552e401b",
+    "src/libultra/io/pigetcmdq.c": "efec4cabcf71ed7cb1c561b0669260b2858084da5a86a5772b6f7a6e2ee26796",
     "src/libultra/io/piread.c": "09832de2dac044125825578b33b1f208400b521260480441b3a7e869c3db417b",
+    "src/libultra/io/si.c": "ab0ba466c10db4d227556b6ebbab755b25a285af384618148e51ac4a7bae07b4",
+    "src/libultra/io/sirawread.c": "d4a6522ca9bc6ae7cc57e51e2fb3a44b91c43742e549ae07d80d8982a776eb48",
+    "src/libultra/io/sirawwrite.c": "caac57a34a2ea655583f1055cfe535f6d8fe6662093e4d1ac07b17b9b807c148",
+    "src/libultra/io/sp.c": "a6b17de9120716f869779e5a342ae89fff5d1dac968dd770608a9eac714c90cc",
+    "src/libultra/io/spgetstat.c": "2924a6817fccbd8528061fc45dd16698bd9efe993793d8c38082ce6b3ae22835",
+    "src/libultra/io/sprawdma.c": "8ba70c35f746478ce8dd28097c53deb7853ceaf9f755ad548ee73faca4d4325b",
+    "src/libultra/io/spsetpc.c": "964c9ee51f0a0a2118233944a5268b2f98a8ae280b74ff77cd226e152711a372",
+    "src/libultra/io/spsetstat.c": "826a3e83f701b96a4c216db9e72aaf49aeedeca6b29d3c159dd9cc62868cb964",
     "src/libultra/io/sptask.c": "fa27d75a5bc8f7acbba210cb8eb7a8942af8c92179bbc8af97b984e7dbe8755f",
     "src/libultra/io/sptaskyield.c": "e50c85feef2a8c8f09600485081302126fc4fc180b05f37d2de075d7af437cf5",
     "src/libultra/io/sptaskyielded.c": "f53662037720c322878f3acc3eee1a764f281e5bc4118b6f5cef497dddb83478",
     "src/libultra/io/viblack.c": "bfc16e45f4c098bb7469e3ab45180673a9f0e57cbd4154b01f56a7929352536f",
+    "src/libultra/io/vigetcurrcontext.c": "3bb44bb8e5c003ca44933074adfbc5c615824d0f3d90192b1c206d697ae755c2",
     "src/libultra/io/vigetcurrframebuf.c": "3706b35ff8b40872103a1aedeab5fa39fc3359814a0dbbfcbc7239750dc1abe3",
     "src/libultra/io/vigetnextframebuf.c": "a81026548a17ebde16fac04a3db7037b733d9058ac9031b4b5ee0b7fc6269e78",
     "src/libultra/io/vimgr.c": "86894f7f95a9ae42ac6ffdc2199a6f4e5b940370d85ea74e6215f74bc4d45d9e",
@@ -322,13 +334,19 @@
     "src/libultra/libc/xstdio.h": "f12e01b05a22622e42efff0fa2f72533b1086fe8cbb0825a601f450d79a02d36",
     "src/libultra/os/createmesgqueue.c": "4af364856251878b32cd0a12eef3ae564ab5f336af2ccb38ff7e1395601036ab",
     "src/libultra/os/createthread.c": "46fc95de0be7ba3c7be66f9ebb1f85857a2612ef95321ccd5f56cc15034754b9",
+    "src/libultra/os/destroythread.c": "ba92dc6ff6e96a7e75a89649cf69d50198e92b05a96f87ab9fc3b9afa51148d7",
     "src/libultra/os/getthreadpri.c": "4fa3b4c8c9eaee24fb2702c1c4c701b3675882357a7db0bf2178918042cab0e4",
     "src/libultra/os/gettime.c": "990dfd119c73f03ba87f4cb0f0eb1b0f0e919e20a150a110452b36935c531e34",
     "src/libultra/os/initialize.c": "9bb0665967fd09267816e78394978a1fa3eaf2e35ea15548e0d78f7ad057d967",
+    "src/libultra/os/jammesg.c": "b4825c51ed752301b470cc13f6442e336c9a879fe919b87289aac364f45cf249",
     "src/libultra/os/osVirtualtoPhysical.c": "2c8148bfa2e199594c6c1b1bebf88153bd5a1dfdd37b77fd65f5604b90455d4d",
     "src/libultra/os/recvmesg.c": "7e4c526db104b88ef865075ac9d5784f560c9aab9bb8190db5cef1245599ca97",
+    "src/libultra/os/resetglobalintmask.c": "bc09187c02c3ce36113688ca30f1828dea8528a8c2fa6408b3133fe8c35e589c",
     "src/libultra/os/sendmesg.c": "6c5234821ba9bb9e5f72a532f33d7ee7e53089e0736a9ba047b1c03252c7c4fc",
     "src/libultra/os/seteventmesg.c": "57b5fd381e9d7ffe93143fffdf97ae32e247f9a448d5414a24350994cc407782",
+    "src/libultra/os/setglobalintmask.c": "30b32f7aa5f380bf20343d00069d13bc8dd3c30a3f4e9293f6419eba7de30fdc",
+    "src/libultra/os/setthreadpri.c": "0d77ea7576928d4ec87cd3a7c1096234209f3f989cb722ef3e90854823f937b9",
+    "src/libultra/os/settimer.c": "0dd655e77c3b8c2691c603e5b920cc30efbe3c26812e9ee1886f4e095d52b170",
     "src/libultra/os/startthread.c": "921b8c35f536c3aa2e80825f1869ef54f403ee38409fa0419fdc8b5eae94bbf6",
     "src/libultra/os/stopthread.c": "875f89c8c74a21e16b49ff6d50c7681ddab739db4e8d7df8e073729402c2ccd4",
     "src/libultra/os/yieldthread.c": "7b345dc1e4469b1492cd4d0b8f7c061b16dd2532a0d3d7d83ec422d53cf3d0cc",
@@ -484,12 +502,12 @@
     "audit_debt": 30,
     "conditional_draft": 4,
     "decompiler_local": 619,
-    "draft_marker": 38,
-    "explicit_unknown": 1836,
+    "draft_marker": 48,
+    "explicit_unknown": 1839,
     "layout_padding": 277,
     "offset_field": 1703,
     "opaque_type": 282,
-    "original_quirk": 482,
+    "original_quirk": 487,
     "uncertainty_note": 88,
     "unused_identifier": 137
   },
@@ -115704,9 +115722,110 @@
       "evidence": "TODO: this comes from a header"
     },
     {
+      "id": "Q-2bae44d593d4",
+      "kind": "draft_marker",
+      "path": "src/libultra/io/aisetfreq.c",
+      "symbol": "TODO",
+      "lines": [
+        7,
+        10
+      ],
+      "evidence": "TODO: not sure if this should be here",
+      "owners": [
+        {
+          "kind": "global",
+          "name": "osViClock",
+          "declaration_line": 8,
+          "lines": [
+            7
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-ba8c8a9c1e1d",
       "kind": "draft_marker",
       "path": "src/libultra/io/aisetnextbuf.c",
+      "symbol": "TODO",
+      "lines": [
+        6
+      ],
+      "evidence": "TODO: this comes from a header"
+    },
+    {
+      "id": "Q-ac5db1d0838a",
+      "kind": "draft_marker",
+      "path": "src/libultra/io/si.c",
+      "symbol": "TODO",
+      "lines": [
+        6
+      ],
+      "evidence": "TODO: this comes from a header"
+    },
+    {
+      "id": "Q-bdb07525685b",
+      "kind": "draft_marker",
+      "path": "src/libultra/io/sirawread.c",
+      "symbol": "TODO",
+      "lines": [
+        52
+      ],
+      "evidence": "TODO: this comes from a header"
+    },
+    {
+      "id": "Q-54f1ecf44824",
+      "kind": "draft_marker",
+      "path": "src/libultra/io/sirawwrite.c",
+      "symbol": "TODO",
+      "lines": [
+        52
+      ],
+      "evidence": "TODO: this comes from a header"
+    },
+    {
+      "id": "Q-b1457f4bbb62",
+      "kind": "draft_marker",
+      "path": "src/libultra/io/sp.c",
+      "symbol": "TODO",
+      "lines": [
+        8
+      ],
+      "evidence": "TODO: this comes from a header"
+    },
+    {
+      "id": "Q-57632dd0272c",
+      "kind": "draft_marker",
+      "path": "src/libultra/io/spgetstat.c",
+      "symbol": "TODO",
+      "lines": [
+        6
+      ],
+      "evidence": "TODO: this comes from a header"
+    },
+    {
+      "id": "Q-d9fe3bac2596",
+      "kind": "draft_marker",
+      "path": "src/libultra/io/sprawdma.c",
+      "symbol": "TODO",
+      "lines": [
+        58
+      ],
+      "evidence": "TODO: this comes from a header"
+    },
+    {
+      "id": "Q-39595ce61824",
+      "kind": "draft_marker",
+      "path": "src/libultra/io/spsetpc.c",
+      "symbol": "TODO",
+      "lines": [
+        5
+      ],
+      "evidence": "TODO: this comes from a header"
+    },
+    {
+      "id": "Q-2993cd8d5c5a",
+      "kind": "draft_marker",
+      "path": "src/libultra/io/spsetstat.c",
       "symbol": "TODO",
       "lines": [
         6
@@ -115720,6 +115839,16 @@
       "symbol": "TODO",
       "lines": [
         4
+      ],
+      "evidence": "TODO: this comes from a header"
+    },
+    {
+      "id": "Q-d2e6883ddfc7",
+      "kind": "draft_marker",
+      "path": "src/libultra/io/vigetcurrcontext.c",
+      "symbol": "TODO",
+      "lines": [
+        6
       ],
       "evidence": "TODO: this comes from a header"
     },
@@ -118062,6 +118191,16 @@
       ]
     },
     {
+      "id": "Q-2b2e934d4abe",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/io/pidma.c",
+      "symbol": "Fill the caller I/O message and submit it to the active PI manager using priority-dependent jam/send queueing. * RE_UNKNOWN: Transfer completion and caller buffer lifetime are governed by the existing PI manager and return queue.",
+      "lines": [
+        1
+      ],
+      "evidence": "Fill the caller I/O message and submit it to the active PI manager using priority-dependent jam/send queueing. * RE_UNKNOWN: Transfer completion and caller buffer lifetime are governed by the existing PI manager and return queue."
+    },
+    {
       "id": "Q-f4295a33eac5",
       "kind": "explicit_unknown",
       "path": "src/libultra/io/piread.c",
@@ -118080,6 +118219,26 @@
           ]
         }
       ]
+    },
+    {
+      "id": "Q-017e57a6260a",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/io/sirawread.c",
+      "symbol": "Reject a busy serial interface, then read one caller-selected device word. * RE_UNKNOWN: Device-address validity and output storage lifetime remain caller responsibilities.",
+      "lines": [
+        1
+      ],
+      "evidence": "Reject a busy serial interface, then read one caller-selected device word. * RE_UNKNOWN: Device-address validity and output storage lifetime remain caller responsibilities."
+    },
+    {
+      "id": "Q-28c2b60b913a",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/io/sirawwrite.c",
+      "symbol": "Reject a busy serial interface, then write one caller-selected device word. * RE_UNKNOWN: Device-address validity remains a caller responsibility.",
+      "lines": [
+        1
+      ],
+      "evidence": "Reject a busy serial interface, then write one caller-selected device word. * RE_UNKNOWN: Device-address validity remains a caller responsibility."
     },
     {
       "id": "Q-87bd4c899d23",
@@ -228801,6 +228960,26 @@
       ]
     },
     {
+      "id": "Q-22cb203896b0",
+      "kind": "original_quirk",
+      "path": "src/libultra/io/aisetfreq.c",
+      "symbol": "Derive DAC and bit periods from the existing video clock, reject an unusably short DAC period, and program the audio registers. * RE_ORIGINAL_QUIRK: Preserve floating-point rounding, byte-sized bit rate, clamp, and the original audio-control write.",
+      "lines": [
+        1
+      ],
+      "evidence": "Derive DAC and bit periods from the existing video clock, reject an unusably short DAC period, and program the audio registers. * RE_ORIGINAL_QUIRK: Preserve floating-point rounding, byte-sized bit rate, clamp, and the original audio-control write."
+    },
+    {
+      "id": "Q-521ef0ed635b",
+      "kind": "original_quirk",
+      "path": "src/libultra/io/sprawdma.c",
+      "symbol": "Reject a busy RSP, program the local and DRAM addresses, and start the selected DMA direction. * RE_ORIGINAL_QUIRK: Keep size-minus-one arithmetic and the non-read direction fallback; no new argument guards.",
+      "lines": [
+        1
+      ],
+      "evidence": "Reject a busy RSP, program the local and DRAM addresses, and start the selected DMA direction. * RE_ORIGINAL_QUIRK: Keep size-minus-one arithmetic and the non-read direction fallback; no new argument guards."
+    },
+    {
       "id": "Q-6f0f4aef7aa9",
       "kind": "original_quirk",
       "path": "src/libultra/io/sptask.c",
@@ -228901,6 +229080,16 @@
       ]
     },
     {
+      "id": "Q-067a348d3774",
+      "kind": "original_quirk",
+      "path": "src/libultra/os/destroythread.c",
+      "symbol": "Remove the selected or running thread from scheduling and the active list, dispatching when the running thread is destroyed. * RE_ORIGINAL_QUIRK: Retain the priority-minus-one list terminator and the original dispatch/restore order.",
+      "lines": [
+        1
+      ],
+      "evidence": "Remove the selected or running thread from scheduling and the active list, dispatching when the running thread is destroyed. * RE_ORIGINAL_QUIRK: Retain the priority-minus-one list terminator and the original dispatch/restore order."
+    },
+    {
       "id": "Q-1084fede338d",
       "kind": "original_quirk",
       "path": "src/libultra/os/getthreadpri.c",
@@ -228941,6 +229130,16 @@
       ]
     },
     {
+      "id": "Q-309811b2d368",
+      "kind": "original_quirk",
+      "path": "src/libultra/os/jammesg.c",
+      "symbol": "Insert a message before the current queue head, waiting only for the blocking mode and waking a queued receiver. * RE_ORIGINAL_QUIRK: Keep the count-dependent modulo arithmetic and existing queue/list assumptions.",
+      "lines": [
+        1
+      ],
+      "evidence": "Insert a message before the current queue head, waiting only for the blocking mode and waking a queued receiver. * RE_ORIGINAL_QUIRK: Keep the count-dependent modulo arithmetic and existing queue/list assumptions."
+    },
+    {
       "id": "Q-90c6027c6b7f",
       "kind": "original_quirk",
       "path": "src/libultra/os/osVirtualtoPhysical.c",
@@ -228959,6 +229158,16 @@
           ]
         }
       ]
+    },
+    {
+      "id": "Q-541d8000bd78",
+      "kind": "original_quirk",
+      "path": "src/libultra/os/settimer.c",
+      "symbol": "Initialize the caller timer, insert its countdown, and program the timer interrupt when it becomes the first timer. * RE_ORIGINAL_QUIRK: A zero countdown selects the supplied interval; no new ownership or duration guards.",
+      "lines": [
+        1
+      ],
+      "evidence": "Initialize the caller timer, insert its countdown, and program the timer interrupt when it becomes the first timer. * RE_ORIGINAL_QUIRK: A zero countdown selects the supplied interval; no new ownership or duration guards."
     },
     {
       "id": "Q-7aa6d9a2c2c5",

@@ -219,3 +219,7 @@ __osPfsPifRam = D_80033730;
 
 /* Exact running-thread slot referenced by the two proven HI/LO sites; no storage. */
 D_80020A50 = __osRunningThread;
+
+/* Native-proven typed views of retained PI manager and timer-list storage; no allocation. */
+__osPiDevMgr = D_800209F0;
+__osTimerList = D_80020AF0;

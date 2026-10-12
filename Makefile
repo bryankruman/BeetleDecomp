@@ -674,3 +674,10 @@ SDK_PRIORITY_TIME_YIELD_OBJECTS := $(addprefix $(BUILD_DIR)/,$(SDK_PRIORITY_TIME
 $(SDK_PRIORITY_TIME_YIELD_OBJECTS): $(BUILD_DIR)/%.o: %.c $(SDK_AUDIO_HEADERS) $(SDK_RETAINED_STORAGE_HEADERS)
 	$(V)mkdir -p $(dir $@)
 	$(V)$(SDK_AUDIO_CC) $(subst -O3,-O1,$(SDK_AUDIO_FLAGS)) -o $@ $<
+
+# Eighteen native-matched SDK I/O and thread units; retain the fixed IDO5.3/O1 recipe.
+SDK_IO_THREAD_SOURCES := src/libultra/io/spsetstat.c src/libultra/io/spsetpc.c src/libultra/io/sprawdma.c src/libultra/io/sp.c src/libultra/io/spgetstat.c src/libultra/io/sirawread.c src/libultra/io/sirawwrite.c src/libultra/io/vigetcurrcontext.c src/libultra/io/pigetcmdq.c src/libultra/os/resetglobalintmask.c src/libultra/os/setglobalintmask.c src/libultra/os/destroythread.c src/libultra/os/setthreadpri.c src/libultra/os/jammesg.c src/libultra/os/settimer.c src/libultra/io/aisetfreq.c src/libultra/io/pidma.c src/libultra/io/si.c
+SDK_IO_THREAD_OBJECTS := $(addprefix $(BUILD_DIR)/,$(SDK_IO_THREAD_SOURCES:.c=.o))
+$(SDK_IO_THREAD_OBJECTS): $(BUILD_DIR)/%.o: %.c $(SDK_AUDIO_HEADERS) $(SDK_RETAINED_STORAGE_HEADERS)
+	$(V)mkdir -p $(dir $@)
+	$(V)$(SDK_AUDIO_CC) $(subst -O3,-O1,$(SDK_AUDIO_FLAGS)) -o $@ $<
