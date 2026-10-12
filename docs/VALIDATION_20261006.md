@@ -3360,10 +3360,19 @@ Totals: 441 further recoveries after the 225 upstream ordinary imports, plus 207
 Frozen wave `8300-remaining-module-native-contracts` and `accepted-remaining-module-native-contracts-8300` verify real translation-unit instructions/full relocations, 133 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 441 further readable functions
+## Historical accepted checkpoint — 441 further readable functions
 
 Clarify44 existing kernel contracts7900B across24 sources; preserve complete literal bodies, ABI, logical coordinates,173 typed SDK rows and83 historical attempts. Require actual44 candidate/24 baseline trials, warning/native/complete ordered-record/site observations and fresh full133 original packed modules/original ROM/full ledger/Git proof. Preserve26 historical local-metadata holds separately from original positive global FUNC boundaries. No recovery credit.
 
 Totals: 441 further recoveries after the 225 upstream ordinary imports, plus 2121 existing C semantic cleanups. Current ledger: 759 assembly references = 720 ordinary + 39 entrypoints; 699,468 known remaining instruction bytes; zero unknown sizes; 289 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `8820-kernel-remaining44-native-contracts` and `accepted-kernel-remaining44-native-contracts-8820` verify real translation-unit instructions/full relocations, 133 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 444 further readable functions
+
+Recover three original AI functions1212B as aiCheckBasisUnitLengthsAndHandedness, aiPublishDynamicMatrixAndVectorProperties and aiAdjustAndPublishDynamicVectorPair. Preserve original FP/call order, zero-address failure, selective coordinate restoration, caller-scoped provider views and explicit ownership/domain unknowns. Bind actual matched trials with34 ordered records, five literal inherited835 warnings and exact definition-name/source inverses. Add only three relative compatibility assignments in one module alias file; existing Makefile discovers it. Require fresh1182-source/full133/all-original-packed-RELA/ROM/full-ledger/native and canonical/legacy ELF boundary proofs before landing. Preserve every actual prior assessment,173 typed SDK rows and83 historical attempts.
+
+Totals: 444 further recoveries after the 225 upstream ordinary imports, plus 2121 existing C semantic cleanups. Current ledger: 756 assembly references = 717 ordinary + 39 entrypoints; 698,256 known remaining instruction bytes; zero unknown sizes; 289 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `9262-ai-three-named` and `accepted-ai-three-named-9262` verify real translation-unit instructions/full relocations, 133 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.

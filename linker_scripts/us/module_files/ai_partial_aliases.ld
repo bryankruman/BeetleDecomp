@@ -1,0 +1,3 @@
+func_ai_00400000 = aiCheckBasisUnitLengthsAndHandedness;
+func_ai_0040089C = aiPublishDynamicMatrixAndVectorProperties;
+func_ai_00400A24 = aiAdjustAndPublishDynamicVectorPair;

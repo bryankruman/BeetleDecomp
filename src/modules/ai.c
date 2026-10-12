@@ -137,10 +137,50 @@ extern void *D_ai_00407FF4;
 extern s32 D_ai_00408E48;
 extern s32 D_ai_00408E4C;
 extern s32 D_ai_00408008;
-void func_ai_00400000();
+/* Retained module readonly scalar; no new constant storage. */
+extern f32 D_ai_004077EC;
+void aiCheckBasisUnitLengthsAndHandedness(Mtx4F *basis);
+#line 141 "src/modules/ai.c"
 void func_ai_0040019C();
-void func_ai_0040089C();
-void func_ai_00400A24();
+/* AI caller-scoped views: only original accessed offsets are named.
+ * DYN's retained initializer binds slots50/5C/B0 to vector-set, matrix-set
+ * and correction-vector setup. RE_UNKNOWN: complete allocations, ownership,
+ * historical declarations, property meanings and physical units. */
+typedef struct {
+    Mtx4F matrix;
+    u8 unknown40[0xA0];
+    f32 valueE0;
+    f32 valueE4;
+    u8 unknownE8[0x18];
+    Vec3F vector100;
+    Vec3F vector10C;
+    Vec3F vector118;
+    Vec3F vector124;
+    u8 unknown130[0xA8];
+    void *dynamicNode;
+} AiDynamicVectorState;
+typedef struct {
+    u8 unknown00[0x50];
+    void (*setVectorProperty)(void *, s32, Vec3F);
+    u8 unknown54[4];
+    void (*getVectorProperty)(void *, s32, Vec3F *);
+    void (*setMatrixProperty)(void *, s32, Mtx4F *);
+    u8 unknown60[0x50];
+    void (*setCorrectionVector)(void *, Vec3F *, f32, f32);
+} AiDynamicVectorCalls;
+extern void *gUvDynExports;
+void aiPublishDynamicMatrixAndVectorProperties(AiDynamicVectorState *state);
+#line 143 "src/modules/ai.c"
+/* The original AI initializer loads MOTN into this pointer. Slot38's
+ * argument words and tested integer result are caller-proven.
+ * RE_UNKNOWN: historical declarations and exact displacement policy. */
+typedef struct {
+    u8 unknown00[0x38];
+    s32 (*adjustDelta)(Vec3F *, Vec3F *, f32, f32);
+} AiMotionDeltaCalls;
+extern AiMotionDeltaCalls *D_ai_00408E5C;
+void aiAdjustAndPublishDynamicVectorPair(void *dynamicNode, AiDynamicVectorState *state);
+#line 144 "src/modules/ai.c"
 void aiBuildOrthonormalBasisFromX(Mtx4F *basis, Vec3F *direction);
 void func_ai_00400F18();
 void func_ai_00400FF0();
@@ -213,13 +253,93 @@ s32 aiGetActiveRecordValue9C(u16 index);
 extern s32 D_ai_00408E44;
 extern s32 D_ai_00407FFC;
 extern s32 D_ai_00408000;
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00400000.s")
+/* Check the three 16-byte basis rows for unit length and handedness.
+ * RE_ORIGINAL_QUIRK: both length branches call the provider again; a failed
+ * tolerance test writes zero to address zero. Preserve both side effects.
+ * RE_UNKNOWN: caller domain, row convention and intended failure handling. */
+void aiCheckBasisUnitLengthsAndHandedness(Mtx4F *basis) {
+    f32 tolerance;
+    Mtx4F crossProducts;
+    s32 row;
+    f32 error;
+    f32 dot;
+
+    tolerance = D_ai_004077EC;
+    for (row = 0; row < 3; row++) {
+        if (gUvFvecExports->uvVec3FLen((Vec3F *)basis->m[row]) > 1.0f) {
+            error = gUvFvecExports->uvVec3FLen((Vec3F *)basis->m[row]) - 1.0f;
+        } else {
+            error = -(gUvFvecExports->uvVec3FLen((Vec3F *)basis->m[row]) - 1.0f);
+        }
+        if (error > tolerance) {
+            *(s32 *)0 = 0;
+        }
+    }
+    gUvFvecExports->uvVec3FCross((Vec3F *)crossProducts.m[0], (Vec3F *)basis->m[1], (Vec3F *)basis->m[2]);
+    gUvFvecExports->uvVec3FCross((Vec3F *)crossProducts.m[2], (Vec3F *)basis->m[0], (Vec3F *)basis->m[1]);
+    gUvFvecExports->uvVec3FCross((Vec3F *)crossProducts.m[1], (Vec3F *)basis->m[2], (Vec3F *)basis->m[0]);
+    for (row = 0; row < 3; row++) {
+        dot = gUvFvecExports->uvVec3FDot((Vec3F *)crossProducts.m[row], (Vec3F *)basis->m[row]);
+        if (dot > 1.0f) {
+            error = dot - 1.0f;
+        } else {
+            error = -(dot - 1.0f);
+        }
+        if (error > tolerance) {
+            *(s32 *)0 = 0;
+        }
+    }
+}
+#line 203 "src/modules/ai.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_0040019C.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_0040089C.s")
+/* Publish the AI matrix and four vector properties to the dynamic node.
+ * RE_ORIGINAL_QUIRK: either low scalar triggers correction setup; vector
+ * properties are sent in the original 0x14,0x11,0x15,0x12 order by value.
+ * RE_UNKNOWN: physical units, property semantics and valid node lifetime. */
+void aiPublishDynamicMatrixAndVectorProperties(AiDynamicVectorState *state) {
+    f32 threshold;
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/func_ai_00400A24.s")
+    threshold = 3.0f * D_80025D70;
+    if (state->valueE4 < threshold || state->valueE0 < threshold) {
+        ((AiDynamicVectorCalls *)gUvDynExports)->setCorrectionVector(state->dynamicNode, (Vec3F *)state->matrix.m[2], 1.0f, 1.0f);
+    }
+    ((AiDynamicVectorCalls *)gUvDynExports)->setMatrixProperty(state->dynamicNode, 6, &state->matrix);
+    ((AiDynamicVectorCalls *)gUvDynExports)->setVectorProperty(state->dynamicNode, 0x14, state->vector10C);
+    ((AiDynamicVectorCalls *)gUvDynExports)->setVectorProperty(state->dynamicNode, 0x11, state->vector100);
+    ((AiDynamicVectorCalls *)gUvDynExports)->setVectorProperty(state->dynamicNode, 0x15, state->vector124);
+    ((AiDynamicVectorCalls *)gUvDynExports)->setVectorProperty(state->dynamicNode, 0x12, state->vector118);
+}
+#line 207 "src/modules/ai.c"
+
+/* Read two dynamic vectors, ask MOTN to adjust their displacement, and
+ * publish the resulting pair while preserving the low-scalar coordinate rule.
+ * RE_ORIGINAL_QUIRK: the low-scalar branch restores only primary.z and
+ * secondary.x/y; secondary.z retains the earlier result.
+ * RE_UNKNOWN: MOTN slot38's limiting policy, vector units and node ownership. */
+void aiAdjustAndPublishDynamicVectorPair(void *dynamicNode, AiDynamicVectorState *state) {
+    f32 threshold;
+    Vec3F primary;
+    Vec3F secondary;
+    Vec3F delta;
+
+    ((AiDynamicVectorCalls *)gUvDynExports)->getVectorProperty(dynamicNode, 0x11, &primary);
+    ((AiDynamicVectorCalls *)gUvDynExports)->getVectorProperty(dynamicNode, 0x12, &secondary);
+    gUvFvecExports->uvVec3FSub(&delta, &secondary, &state->vector118);
+    if (D_ai_00408E5C->adjustDelta(&delta, &state->vector118, 1.0f, 4.0f)) {
+        gUvFvecExports->uvVec3FAdd(&secondary, &state->vector118, &delta);
+    }
+    threshold = 3.0f * D_80025D70;
+    if (state->valueE4 < threshold || state->valueE0 < threshold) {
+        primary.z = state->vector100.z;
+        secondary.x = state->vector118.x;
+        secondary.y = state->vector118.y;
+    }
+    ((AiDynamicVectorCalls *)gUvDynExports)->setVectorProperty(dynamicNode, 0x11, primary);
+    ((AiDynamicVectorCalls *)gUvDynExports)->setVectorProperty(dynamicNode, 0x12, secondary);
+}
+#line 209 "src/modules/ai.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ai/__entrypoint_func_ai_400bbc.s")
 
