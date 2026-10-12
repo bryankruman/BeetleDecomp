@@ -223,3 +223,13 @@ D_80020A50 = __osRunningThread;
 /* Native-proven typed views of retained PI manager and timer-list storage; no allocation. */
 __osPiDevMgr = D_800209F0;
 __osTimerList = D_80020AF0;
+
+/* Native-proven PI/SI access queue views; original storage remains assembly-owned. */
+__osPiAccessQueueEnabled = D_80020A30;
+piAccessBuf = D_80032280;
+__osPiAccessQueue = D_80032288;
+__osSiAccessQueueEnabled = D_80020B00;
+siAccessBuf = D_800322E0;
+__osSiAccessQueue = D_800322E8;
+/* Preserve the existing address-named PI initializer call sites. */
+func_80007990 = __osPiCreateAccessQueue;

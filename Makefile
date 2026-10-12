@@ -681,3 +681,10 @@ SDK_IO_THREAD_OBJECTS := $(addprefix $(BUILD_DIR)/,$(SDK_IO_THREAD_SOURCES:.c=.o
 $(SDK_IO_THREAD_OBJECTS): $(BUILD_DIR)/%.o: %.c $(SDK_AUDIO_HEADERS) $(SDK_RETAINED_STORAGE_HEADERS)
 	$(V)mkdir -p $(dir $@)
 	$(V)$(SDK_AUDIO_CC) $(subst -O3,-O1,$(SDK_AUDIO_FLAGS)) -o $@ $<
+
+# Native-matched PI/SI access units; retain stock grouping, storage and fixed IDO5.3/O1.
+SDK_ACCESS_SOURCES := src/libultra/io/piacs.c src/libultra/io/siacs.c
+SDK_ACCESS_OBJECTS := $(addprefix $(BUILD_DIR)/,$(SDK_ACCESS_SOURCES:.c=.o))
+$(SDK_ACCESS_OBJECTS): $(BUILD_DIR)/%.o: %.c $(SDK_AUDIO_HEADERS) $(SDK_RETAINED_STORAGE_HEADERS)
+	$(V)mkdir -p $(dir $@)
+	$(V)$(SDK_AUDIO_CC) $(subst -O3,-O1,$(SDK_AUDIO_FLAGS)) -o $@ $<

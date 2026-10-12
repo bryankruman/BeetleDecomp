@@ -304,10 +304,12 @@
     "src/libultra/io/contquery.c": "a6c202027824498463298d5ccb6ebee06322e6a1cb18872d549dd57cbb9a7033",
     "src/libultra/io/contsetch.c": "0c5bc528e0c93168789d1e8a84ddb88d386d06948cfd760c6104b40e04a24caa",
     "src/libultra/io/pfsisplug.c": "c0c2eae5a8b136e9dbc156c18a291f4ca6fcfbb8c11f8fe0ef01a2ed037a2eca",
+    "src/libultra/io/piacs.c": "1e1868dbf136a88ff9f6d089b0205f0d130e3669d93f36e70d87375dd8f589f6",
     "src/libultra/io/pidma.c": "37ac5ed678f14547e528a618c5e3bde2ba07e426236e53a567ee3bf6552e401b",
     "src/libultra/io/pigetcmdq.c": "efec4cabcf71ed7cb1c561b0669260b2858084da5a86a5772b6f7a6e2ee26796",
     "src/libultra/io/piread.c": "09832de2dac044125825578b33b1f208400b521260480441b3a7e869c3db417b",
     "src/libultra/io/si.c": "ab0ba466c10db4d227556b6ebbab755b25a285af384618148e51ac4a7bae07b4",
+    "src/libultra/io/siacs.c": "4cccb0f44e06c0f798fe890377bc6f4b57a4f881a5670a5161e38c7aaf14c5a9",
     "src/libultra/io/sirawread.c": "d4a6522ca9bc6ae7cc57e51e2fb3a44b91c43742e549ae07d80d8982a776eb48",
     "src/libultra/io/sirawwrite.c": "caac57a34a2ea655583f1055cfe535f6d8fe6662093e4d1ac07b17b9b807c148",
     "src/libultra/io/sp.c": "a6b17de9120716f869779e5a342ae89fff5d1dac968dd770608a9eac714c90cc",
@@ -503,11 +505,11 @@
     "conditional_draft": 4,
     "decompiler_local": 619,
     "draft_marker": 48,
-    "explicit_unknown": 1839,
+    "explicit_unknown": 1845,
     "layout_padding": 277,
     "offset_field": 1703,
     "opaque_type": 282,
-    "original_quirk": 487,
+    "original_quirk": 493,
     "uncertainty_note": 88,
     "unused_identifier": 137
   },
@@ -118191,6 +118193,66 @@
       ]
     },
     {
+      "id": "Q-13d51aad145c",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/io/piacs.c",
+      "symbol": "Initialize PI access queue on first use, then receive its token with blocking mode. * RE_ORIGINAL_QUIRK: Keep the original lazy initialization and blocking receive order. * RE_UNKNOWN: Retained storage bounds and extra ownership or reentrancy guarantees are not inferred.",
+      "lines": [
+        22
+      ],
+      "evidence": "Initialize PI access queue on first use, then receive its token with blocking mode. * RE_ORIGINAL_QUIRK: Keep the original lazy initialization and blocking receive order. * RE_UNKNOWN: Retained storage bounds and extra ownership or reentrancy guarantees are not inferred.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__osPiGetAccess",
+          "declaration_line": 27,
+          "lines": [
+            22
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-e452a1a5b861",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/io/piacs.c",
+      "symbol": "Initialize and seed the retained PI access message queue. * RE_ORIGINAL_QUIRK: Set enabled before creating the queue; seed with a nonblocking send. * RE_UNKNOWN: Retained storage bounds and extra ownership or reentrancy guarantees are not inferred.",
+      "lines": [
+        11
+      ],
+      "evidence": "Initialize and seed the retained PI access message queue. * RE_ORIGINAL_QUIRK: Set enabled before creating the queue; seed with a nonblocking send. * RE_UNKNOWN: Retained storage bounds and extra ownership or reentrancy guarantees are not inferred.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__osPiCreateAccessQueue",
+          "declaration_line": 16,
+          "lines": [
+            11
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-526ea95c9a3d",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/io/piacs.c",
+      "symbol": "Return the PI access token with nonblocking send. * RE_ORIGINAL_QUIRK: Ignore the nonblocking send return value as in the original. * RE_UNKNOWN: Retained storage bounds and extra ownership or reentrancy guarantees are not inferred.",
+      "lines": [
+        35
+      ],
+      "evidence": "Return the PI access token with nonblocking send. * RE_ORIGINAL_QUIRK: Ignore the nonblocking send return value as in the original. * RE_UNKNOWN: Retained storage bounds and extra ownership or reentrancy guarantees are not inferred.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__osPiRelAccess",
+          "declaration_line": 40,
+          "lines": [
+            35
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-2b2e934d4abe",
       "kind": "explicit_unknown",
       "path": "src/libultra/io/pidma.c",
@@ -118216,6 +118278,66 @@
           "declaration_line": 10,
           "lines": [
             5
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-153025473711",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/io/siacs.c",
+      "symbol": "Initialize SI access queue on first use, then receive its token with blocking mode. * RE_ORIGINAL_QUIRK: Keep the original lazy initialization and blocking receive order. * RE_UNKNOWN: Retained storage bounds and extra ownership or reentrancy guarantees are not inferred.",
+      "lines": [
+        22
+      ],
+      "evidence": "Initialize SI access queue on first use, then receive its token with blocking mode. * RE_ORIGINAL_QUIRK: Keep the original lazy initialization and blocking receive order. * RE_UNKNOWN: Retained storage bounds and extra ownership or reentrancy guarantees are not inferred.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__osSiGetAccess",
+          "declaration_line": 27,
+          "lines": [
+            22
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-4966923122ca",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/io/siacs.c",
+      "symbol": "Initialize and seed the retained SI access message queue. * RE_ORIGINAL_QUIRK: Set enabled before creating the queue; seed with a nonblocking send. * RE_UNKNOWN: Retained storage bounds and extra ownership or reentrancy guarantees are not inferred.",
+      "lines": [
+        11
+      ],
+      "evidence": "Initialize and seed the retained SI access message queue. * RE_ORIGINAL_QUIRK: Set enabled before creating the queue; seed with a nonblocking send. * RE_UNKNOWN: Retained storage bounds and extra ownership or reentrancy guarantees are not inferred.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__osSiCreateAccessQueue",
+          "declaration_line": 16,
+          "lines": [
+            11
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-36a6aec0a65a",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/io/siacs.c",
+      "symbol": "Return the SI access token with nonblocking send. * RE_ORIGINAL_QUIRK: Ignore the nonblocking send return value as in the original. * RE_UNKNOWN: Retained storage bounds and extra ownership or reentrancy guarantees are not inferred.",
+      "lines": [
+        35
+      ],
+      "evidence": "Return the SI access token with nonblocking send. * RE_ORIGINAL_QUIRK: Ignore the nonblocking send return value as in the original. * RE_UNKNOWN: Retained storage bounds and extra ownership or reentrancy guarantees are not inferred.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__osSiRelAccess",
+          "declaration_line": 40,
+          "lines": [
+            35
           ]
         }
       ]
@@ -228968,6 +229090,126 @@
         1
       ],
       "evidence": "Derive DAC and bit periods from the existing video clock, reject an unusably short DAC period, and program the audio registers. * RE_ORIGINAL_QUIRK: Preserve floating-point rounding, byte-sized bit rate, clamp, and the original audio-control write."
+    },
+    {
+      "id": "Q-1c854e3a5859",
+      "kind": "original_quirk",
+      "path": "src/libultra/io/piacs.c",
+      "symbol": "Initialize PI access queue on first use, then receive its token with blocking mode. * RE_ORIGINAL_QUIRK: Keep the original lazy initialization and blocking receive order. * RE_UNKNOWN: Retained storage bounds and extra ownership or reentrancy guarantees are not inferred.",
+      "lines": [
+        22
+      ],
+      "evidence": "Initialize PI access queue on first use, then receive its token with blocking mode. * RE_ORIGINAL_QUIRK: Keep the original lazy initialization and blocking receive order. * RE_UNKNOWN: Retained storage bounds and extra ownership or reentrancy guarantees are not inferred.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__osPiGetAccess",
+          "declaration_line": 27,
+          "lines": [
+            22
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-4f7fef469a8a",
+      "kind": "original_quirk",
+      "path": "src/libultra/io/piacs.c",
+      "symbol": "Initialize and seed the retained PI access message queue. * RE_ORIGINAL_QUIRK: Set enabled before creating the queue; seed with a nonblocking send. * RE_UNKNOWN: Retained storage bounds and extra ownership or reentrancy guarantees are not inferred.",
+      "lines": [
+        11
+      ],
+      "evidence": "Initialize and seed the retained PI access message queue. * RE_ORIGINAL_QUIRK: Set enabled before creating the queue; seed with a nonblocking send. * RE_UNKNOWN: Retained storage bounds and extra ownership or reentrancy guarantees are not inferred.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__osPiCreateAccessQueue",
+          "declaration_line": 16,
+          "lines": [
+            11
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-0c51b51032ba",
+      "kind": "original_quirk",
+      "path": "src/libultra/io/piacs.c",
+      "symbol": "Return the PI access token with nonblocking send. * RE_ORIGINAL_QUIRK: Ignore the nonblocking send return value as in the original. * RE_UNKNOWN: Retained storage bounds and extra ownership or reentrancy guarantees are not inferred.",
+      "lines": [
+        35
+      ],
+      "evidence": "Return the PI access token with nonblocking send. * RE_ORIGINAL_QUIRK: Ignore the nonblocking send return value as in the original. * RE_UNKNOWN: Retained storage bounds and extra ownership or reentrancy guarantees are not inferred.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__osPiRelAccess",
+          "declaration_line": 40,
+          "lines": [
+            35
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-4ecec1be618f",
+      "kind": "original_quirk",
+      "path": "src/libultra/io/siacs.c",
+      "symbol": "Initialize SI access queue on first use, then receive its token with blocking mode. * RE_ORIGINAL_QUIRK: Keep the original lazy initialization and blocking receive order. * RE_UNKNOWN: Retained storage bounds and extra ownership or reentrancy guarantees are not inferred.",
+      "lines": [
+        22
+      ],
+      "evidence": "Initialize SI access queue on first use, then receive its token with blocking mode. * RE_ORIGINAL_QUIRK: Keep the original lazy initialization and blocking receive order. * RE_UNKNOWN: Retained storage bounds and extra ownership or reentrancy guarantees are not inferred.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__osSiGetAccess",
+          "declaration_line": 27,
+          "lines": [
+            22
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-d04a1e67e890",
+      "kind": "original_quirk",
+      "path": "src/libultra/io/siacs.c",
+      "symbol": "Initialize and seed the retained SI access message queue. * RE_ORIGINAL_QUIRK: Set enabled before creating the queue; seed with a nonblocking send. * RE_UNKNOWN: Retained storage bounds and extra ownership or reentrancy guarantees are not inferred.",
+      "lines": [
+        11
+      ],
+      "evidence": "Initialize and seed the retained SI access message queue. * RE_ORIGINAL_QUIRK: Set enabled before creating the queue; seed with a nonblocking send. * RE_UNKNOWN: Retained storage bounds and extra ownership or reentrancy guarantees are not inferred.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__osSiCreateAccessQueue",
+          "declaration_line": 16,
+          "lines": [
+            11
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-bc8253082a74",
+      "kind": "original_quirk",
+      "path": "src/libultra/io/siacs.c",
+      "symbol": "Return the SI access token with nonblocking send. * RE_ORIGINAL_QUIRK: Ignore the nonblocking send return value as in the original. * RE_UNKNOWN: Retained storage bounds and extra ownership or reentrancy guarantees are not inferred.",
+      "lines": [
+        35
+      ],
+      "evidence": "Return the SI access token with nonblocking send. * RE_ORIGINAL_QUIRK: Ignore the nonblocking send return value as in the original. * RE_UNKNOWN: Retained storage bounds and extra ownership or reentrancy guarantees are not inferred.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__osSiRelAccess",
+          "declaration_line": 40,
+          "lines": [
+            35
+          ]
+        }
+      ]
     },
     {
       "id": "Q-521ef0ed635b",

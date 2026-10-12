@@ -17,8 +17,8 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 1839 |
-| Preserved RE_ORIGINAL_QUIRK notes | 487 |
+| Explicit RE_UNKNOWN notes | 1845 |
+| Preserved RE_ORIGINAL_QUIRK notes | 493 |
 | Older comments with uncertainty language | 88 |
 | Documented original-behavior audits | 30 |
 | Assembly-backed functions or data | 755 |
@@ -1317,6 +1317,17 @@ For every future source wave, regenerate and check this index after code and str
 | explicit_unknown | `* Build the fixed controller status request sequence in retained PIF RAM. * * Preserve command/status byte writes, eight-byte request copies, live count * loads, and terminator....` | function `__osPfsRequestData` | [66](../src/libultra/io/pfsisplug.c#L66) |
 | explicit_unknown | `* Serialize controller PIF status reads and return the detected controller- * pak presence mask. * * Keep three CRC retries, live controller-count loads, blocking message * orde...` | function `osPfsIsPlug` | [8](../src/libultra/io/pfsisplug.c#L8) |
 
+## src/libultra/io/piacs.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| explicit_unknown | `Initialize PI access queue on first use, then receive its token with blocking mode. * RE_ORIGINAL_QUIRK: Keep the original lazy initialization and blocking receive order. * RE_U...` | function `__osPiGetAccess` | [22](../src/libultra/io/piacs.c#L22) |
+| explicit_unknown | `Initialize and seed the retained PI access message queue. * RE_ORIGINAL_QUIRK: Set enabled before creating the queue; seed with a nonblocking send. * RE_UNKNOWN: Retained storag...` | function `__osPiCreateAccessQueue` | [11](../src/libultra/io/piacs.c#L11) |
+| explicit_unknown | `Return the PI access token with nonblocking send. * RE_ORIGINAL_QUIRK: Ignore the nonblocking send return value as in the original. * RE_UNKNOWN: Retained storage bounds and ext...` | function `__osPiRelAccess` | [35](../src/libultra/io/piacs.c#L35) |
+| original_quirk | `Initialize PI access queue on first use, then receive its token with blocking mode. * RE_ORIGINAL_QUIRK: Keep the original lazy initialization and blocking receive order. * RE_U...` | function `__osPiGetAccess` | [22](../src/libultra/io/piacs.c#L22) |
+| original_quirk | `Initialize and seed the retained PI access message queue. * RE_ORIGINAL_QUIRK: Set enabled before creating the queue; seed with a nonblocking send. * RE_UNKNOWN: Retained storag...` | function `__osPiCreateAccessQueue` | [11](../src/libultra/io/piacs.c#L11) |
+| original_quirk | `Return the PI access token with nonblocking send. * RE_ORIGINAL_QUIRK: Ignore the nonblocking send return value as in the original. * RE_UNKNOWN: Retained storage bounds and ext...` | function `__osPiRelAccess` | [35](../src/libultra/io/piacs.c#L35) |
+
 ## src/libultra/io/pidma.c
 
 | Kind | Identifier or note | Declaration context | Physical lines |
@@ -1334,6 +1345,17 @@ For every future source wave, regenerate and check this index after code and str
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
 | draft_marker | `TODO` | — | [6](../src/libultra/io/si.c#L6) |
+
+## src/libultra/io/siacs.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| explicit_unknown | `Initialize SI access queue on first use, then receive its token with blocking mode. * RE_ORIGINAL_QUIRK: Keep the original lazy initialization and blocking receive order. * RE_U...` | function `__osSiGetAccess` | [22](../src/libultra/io/siacs.c#L22) |
+| explicit_unknown | `Initialize and seed the retained SI access message queue. * RE_ORIGINAL_QUIRK: Set enabled before creating the queue; seed with a nonblocking send. * RE_UNKNOWN: Retained storag...` | function `__osSiCreateAccessQueue` | [11](../src/libultra/io/siacs.c#L11) |
+| explicit_unknown | `Return the SI access token with nonblocking send. * RE_ORIGINAL_QUIRK: Ignore the nonblocking send return value as in the original. * RE_UNKNOWN: Retained storage bounds and ext...` | function `__osSiRelAccess` | [35](../src/libultra/io/siacs.c#L35) |
+| original_quirk | `Initialize SI access queue on first use, then receive its token with blocking mode. * RE_ORIGINAL_QUIRK: Keep the original lazy initialization and blocking receive order. * RE_U...` | function `__osSiGetAccess` | [22](../src/libultra/io/siacs.c#L22) |
+| original_quirk | `Initialize and seed the retained SI access message queue. * RE_ORIGINAL_QUIRK: Set enabled before creating the queue; seed with a nonblocking send. * RE_UNKNOWN: Retained storag...` | function `__osSiCreateAccessQueue` | [11](../src/libultra/io/siacs.c#L11) |
+| original_quirk | `Return the SI access token with nonblocking send. * RE_ORIGINAL_QUIRK: Ignore the nonblocking send return value as in the original. * RE_UNKNOWN: Retained storage bounds and ext...` | function `__osSiRelAccess` | [35](../src/libultra/io/siacs.c#L35) |
 
 ## src/libultra/io/sirawread.c
 
