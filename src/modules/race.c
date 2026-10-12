@@ -36,13 +36,25 @@ typedef struct { u8 prefix[0x14]; void (*initializeSharedGui)(void); u8 gap18[0x
 typedef struct { u8 prefix[8]; void (*attach)(void *, void *); u8 gap0C[0x64]; s16 (*allocatePoolSlot)(void); void *(*getPoolSlot)(s16); void (*setLabelBytes)(void *, u8 *); } RaceGuiExports;
 typedef struct { u8 prefix[0x2C]; void (*attach)(void *); } RaceCameraGuiExports;
 typedef struct { u8 prefix[0x14]; void (*attach)(void *); } RaceAiGuiExports;
-typedef struct { u8 prefix[0x10]; void (*attach)(void *); } RaceTrackGuiExports;
+typedef struct { u8 prefix[0x10]; void (*attach)(void *); } RacePlayerGuiExports;
 extern RaceGameGuiExports *gGameGuiExports;
 extern RaceGuiExports *gUvGuiExports;
 extern RaceCameraGuiExports *gCamExports;
 extern u8 D_race_0040474C[0x1E];
 
 /*__SEEDEXTERNS__*/
+/* Countdown-only declarations from the original loads, stores and calls.
+ * RE_UNKNOWN: scalar units/domain, label lifetime and pending-word ownership
+ * remain unproved; the existing sound-handle type is retained literally. */
+extern f32 D_race_00404860;
+extern f32 D_race_0040477C, D_race_00404780, D_race_00404784;
+extern s32 D_race_00404874, D_race_00404878, D_race_0040487C;
+extern u8 D_race_00404700[], D_race_00404704[];
+extern u8 D_race_00404708[], D_race_0040470C[];
+extern s16 D_80025D76;
+void raceUpdateCountdownVoicesAndLabel(void);
+void func_race_00402CE0(u8 *label);
+#line 39 "src/modules/race.c"
 extern void *gUvModelExports;
 extern void *gMiscExports;
 extern void *gAiExports;
@@ -152,7 +164,49 @@ void raceReleaseManagedSoundsAndClearBytes(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/race/func_race_00402864.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/race/func_race_00402AAC.s")
+/* Select the original countdown label and release/play its managed speech
+ * handles at scalar thresholds two, three and four. Clear each pending word
+ * only after its corresponding sound call; retain all three existing gains.
+ * RE_UNKNOWN: scalar units, label contents/lifetime, pending-word producers and
+ * the complete label-helper contract require original data and callers.
+ * RE_ORIGINAL_QUIRK: the signed shared halfword skips all work when nonzero;
+ * negative scalar values select the first branch and NaN selects the last. */
+void raceUpdateCountdownVoicesAndLabel(void) {
+    u8 *label;
+
+    if (D_80025D76 != 0) {
+        return;
+    }
+    if (D_race_00404860 < 2.0f) {
+        label = D_race_00404700;
+        gSndExports->sndReleaseHandle(&D_race_00404A78);
+        if (D_race_00404874 != 0) {
+            gSndExports->sndPlayManagedSound(&D_race_00404A70, 0x6E, 0x7FFF,
+                gSndExports->sndGetSpeechVolumeScale() * D_race_0040477C, 0.5f);
+            D_race_00404874 = 0;
+        }
+    } else if (D_race_00404860 < 3.0f) {
+        label = D_race_00404704;
+        gSndExports->sndReleaseHandle(&D_race_00404A80);
+        if (D_race_00404878 != 0) {
+            gSndExports->sndPlayManagedSound(&D_race_00404A78, 0x70, 0x7FFF,
+                gSndExports->sndGetSpeechVolumeScale() * D_race_00404780, 0.5f);
+            D_race_00404878 = 0;
+        }
+    } else if (D_race_00404860 < 4.0f) {
+        label = D_race_00404708;
+        if (D_race_0040487C != 0) {
+            gSndExports->sndPlayManagedSound(&D_race_00404A80, 0x6F, 0x7FFF,
+                gSndExports->sndGetSpeechVolumeScale() * D_race_00404784, 0.5f);
+            D_race_0040487C = 0;
+        }
+    } else {
+        label = D_race_0040470C;
+        gSndExports->sndReleaseHandle(&D_race_00404A70);
+    }
+    func_race_00402CE0(label);
+}
+#line 103 "src/modules/race.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/race/func_race_00402CE0.s")
 
@@ -217,7 +271,7 @@ s32 raceGetIndexedValue(s32 index) {
 #line 115 "src/modules/race.c"
 /* Select the shared GAMEGUI widget at debug-byte address+0x10 before the
  * original GAMEGUI14 initialization call, then allocate and label a child
- * group and attach it. Forward the child to camera, optional AI and track
+ * group and attach it. Forward the child to camera, optional AI and player
  * callbacks in the original order. GAMEGUI14 conditionally loads/configures
  * shared GUI resources, selects palette/font3 and clears shared state; it
  * consumes no incoming argument in the original machine instructions.
@@ -234,7 +288,7 @@ void raceCreateModuleGui(void) {
     gUvGuiExports->attach(parent, node);
     gCamExports->attach(node);
     if (gAiExports != NULL) ((RaceAiGuiExports *)gAiExports)->attach(node);
-    ((RaceTrackGuiExports *)D_race_00404A04)->attach(node);
+    ((RacePlayerGuiExports *)D_race_00404A04)->attach(node);
 }
 #line 127 "src/modules/race.c"
 #line 115 "src/modules/race.c"

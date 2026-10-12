@@ -1,0 +1,1 @@
+func_race_00402AAC = raceUpdateCountdownVoicesAndLabel;

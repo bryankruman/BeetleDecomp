@@ -3396,10 +3396,19 @@ Totals: 447 further recoveries after the 225 upstream ordinary imports, plus 212
 Frozen wave `9488-smack-motion-pair` and `accepted-smack-motion-pair-9488` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 447 further readable functions
+## Historical accepted checkpoint — 447 further readable functions
 
 Assess the existing108-byte UVSTRING entrypoint with its real typed MODULE_ENTRY_POINT invocation and literal executable body. Preserve all13 complete ordered relocation records and actual four empty compiler logs, provider ABI, callback stores and source coordinates. Clarify only the loader export-table registration and six callback publication contract; storage and callback lifetime remain caller unknowns. No recovered C, ABI, storage, alias, readonly or denominator change. Require normal all133 original packed/native/ROM,1183 complete sources, full ledger/current Git and carry checks; preserve173 SDK rows and83 historical attempts.
 
 Totals: 447 further recoveries after the 225 upstream ordinary imports, plus 2122 existing C semantic cleanups. Current ledger: 753 assembly references = 714 ordinary + 39 entrypoints; 696,856 known remaining instruction bytes; zero unknown sizes; 289 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `9660-uvstring-macro-entrypoint-contract` and `accepted-uvstring-entrypoint-native-contracts-9660` verify real translation-unit instructions/full relocations, 133 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 448 further readable functions
+
+Recover raceUpdateCountdownVoicesAndLabel564B with all native words and61 closed unique relocation sites; retain explicit unequal raw ELF relocation order and41 ordered original packed sites. Add one absent relative compatibility alias. Apply only the proved zero-credit PLYR typedef/comment correction to raceCreateModuleGui, with exact whole-source/body inverse and actual canonical body/token hashes. All other prior code tokens stay literal. Require fresh1184-source/full133/original790RELA/ROM/full-ledger/Git and both canonical/legacy ELF boundaries; preserve173 typed SDK rows and83 historical attempts.
+
+Totals: 448 further recoveries after the 225 upstream ordinary imports, plus 2122 existing C semantic cleanups. Current ledger: 752 assembly references = 713 ordinary + 39 entrypoints; 696,292 known remaining instruction bytes; zero unknown sizes; 289 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `9892-race-countdown-named` and `accepted-race-countdown-named-9892` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
