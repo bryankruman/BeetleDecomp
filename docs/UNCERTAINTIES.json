@@ -267,6 +267,7 @@
     "src/libultra/audio/seq.c": "b839885ae33155d41598259a34a0a8ed567269e0480964c6a53169cac329551d",
     "src/libultra/audio/seq.h": "5eb8402a34676e4427ec47b5318250fd71bd9f115fd0cd6a9b5e95d8d849c68a",
     "src/libultra/audio/seqp.h": "cf58498fb69b10873be6b079a20eefc175365ab649ddbf306299f054ed02dd1a",
+    "src/libultra/audio/seqpdelete.c": "4ad832f0c8c1167571e2d51778c58328c916557a3031608b6d8414a584d7f662",
     "src/libultra/audio/seqplayer.c": "6b92c7ebf5a8966e7e965c050ada2a522b913ab641718def2690ac99f39c17b3",
     "src/libultra/audio/sl.c": "b530957134adbbeac0512e8b0d50e0286eec6cad8a7d71a3444771d0630618ef",
     "src/libultra/audio/sndp.h": "06be89608e7efe62cb84ec5135bd1d8af52c3eb1ea58099e980fdf0640db671c",
@@ -511,12 +512,12 @@
     "audit_debt": 30,
     "conditional_draft": 4,
     "decompiler_local": 622,
-    "draft_marker": 53,
-    "explicit_unknown": 1865,
+    "draft_marker": 54,
+    "explicit_unknown": 1866,
     "layout_padding": 281,
     "offset_field": 1750,
     "opaque_type": 283,
-    "original_quirk": 509,
+    "original_quirk": 510,
     "uncertainty_note": 88,
     "unused_identifier": 137
   },
@@ -116730,6 +116731,16 @@
       "evidence": "TODO: this comes from a header"
     },
     {
+      "id": "Q-317d7a4cfebd",
+      "kind": "draft_marker",
+      "path": "src/libultra/audio/seqpdelete.c",
+      "symbol": "TODO",
+      "lines": [
+        23
+      ],
+      "evidence": "TODO: this comes from a header"
+    },
+    {
       "id": "Q-41f2b8b80270",
       "kind": "draft_marker",
       "path": "src/libultra/audio/seqplayer.c",
@@ -118619,6 +118630,16 @@
           ]
         }
       ]
+    },
+    {
+      "id": "Q-953acd83a441",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/seqpdelete.c",
+      "symbol": "RE_UNKNOWN: Exact game SDK release is unproved; retained stock provenance. ==== * seqpdelete.c * * Copyright 1995, Silicon Graphics, Inc. * All Rights Reserved. * * This is UNPUBLISHED PROPRIETARY SOURCE CODE of Silicon Graphics, * Inc.; the contents of this file may not be disclosed to third * parties, copied or duplicated in any form, in whole or in part, * without the prior written permission of Silicon Graphics, Inc. * * RESTRICTED RIGHTS LEGEND: * Use, duplication or disclosure by the Government is subject to * restrictions as set forth in subdivision (c)(1)(ii) of the Rights * in Technical Data and Computer Software clause at DFARS * 252.227-7013, and/or in similar or successor clauses in the FAR, * DOD or NASA FAR Supplement. Unpublished - rights reserved under the * Copyright Laws of the United States. *====================================================================",
+      "lines": [
+        1
+      ],
+      "evidence": "RE_UNKNOWN: Exact game SDK release is unproved; retained stock provenance. ==== * seqpdelete.c * * Copyright 1995, Silicon Graphics, Inc. * All Rights Reserved. * * This is UNPUBLISHED PROPRIETARY SOURCE CODE of Silicon Graphics, * Inc.; the contents of this file may not be disclosed to third * parties, copied or duplicated in any form, in whole or in part, * without the prior written permission of Silicon Graphics, Inc. * * RESTRICTED RIGHTS LEGEND: * Use, duplication or disclosure by the Government is subject to * restrictions as set forth in subdivision (c)(1)(ii) of the Rights * in Technical Data and Computer Software clause at DFARS * 252.227-7013, and/or in similar or successor clauses in the FAR, * DOD or NASA FAR Supplement. Unpublished - rights reserved under the * Copyright Laws of the United States. *===================================================================="
     },
     {
       "id": "Q-1f22dc9ac974",
@@ -232234,6 +232255,26 @@
           "declaration_line": 31,
           "lines": [
             23
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-29e2e6a6d357",
+      "kind": "original_quirk",
+      "path": "src/libultra/audio/seqpdelete.c",
+      "symbol": "RE_CONTRACT: Remove the sequence player node from its synthesizer. RE_ORIGINAL_QUIRK: Release NDEBUG builds omit the stopped-state assertion below.",
+      "lines": [
+        27
+      ],
+      "evidence": "RE_CONTRACT: Remove the sequence player node from its synthesizer. RE_ORIGINAL_QUIRK: Release NDEBUG builds omit the stopped-state assertion below.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "alSeqpDelete",
+          "declaration_line": 26,
+          "lines": [
+            27
           ]
         }
       ]

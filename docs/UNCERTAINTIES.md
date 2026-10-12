@@ -17,8 +17,8 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 1865 |
-| Preserved RE_ORIGINAL_QUIRK notes | 509 |
+| Explicit RE_UNKNOWN notes | 1866 |
+| Preserved RE_ORIGINAL_QUIRK notes | 510 |
 | Older comments with uncertainty language | 88 |
 | Documented original-behavior audits | 30 |
 | Assembly-backed functions or data | 750 |
@@ -29,7 +29,7 @@ For every future source wave, regenerate and check this index after code and str
 | Unresolved type names | 283 |
 | Explicit unused ABI, storage or local identifiers | 137 |
 | Decompiler parameter/local names | 622 |
-| Fake, unresolved or TODO draft markers | 53 |
+| Fake, unresolved or TODO draft markers | 54 |
 | Data-dependent conditional draft guards | 4 |
 
 ## docs/STRATEGY_V4.md
@@ -1201,6 +1201,14 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `byte1` | function `alSeqNextEvent` | [136](../src/libultra/audio/seq.c#L136), [164](../src/libultra/audio/seq.c#L164), [169](../src/libultra/audio/seq.c#L169) |
 | offset_field | `byte2` | function `alSeqNextEvent` | [137](../src/libultra/audio/seq.c#L137), [174](../src/libultra/audio/seq.c#L174), [176](../src/libultra/audio/seq.c#L176) |
 | offset_field | `byte3` | function `alSeqNextEvent` | [138](../src/libultra/audio/seq.c#L138) |
+
+## src/libultra/audio/seqpdelete.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| draft_marker | `TODO` | — | [23](../src/libultra/audio/seqpdelete.c#L23) |
+| explicit_unknown | `RE_UNKNOWN: Exact game SDK release is unproved; retained stock provenance. ==== * seqpdelete.c * * Copyright 1995, Silicon Graphics, Inc. * All Rights Reserved. * * This is UNPU...` | — | [1](../src/libultra/audio/seqpdelete.c#L1) |
+| original_quirk | `RE_CONTRACT: Remove the sequence player node from its synthesizer. RE_ORIGINAL_QUIRK: Release NDEBUG builds omit the stopped-state assertion below.` | function `alSeqpDelete` | [27](../src/libultra/audio/seqpdelete.c#L27) |
 
 ## src/libultra/audio/seqplayer.c
 

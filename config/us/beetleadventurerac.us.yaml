@@ -161,6 +161,7 @@ segments:
       - [0xB680, c, libultra/os/setglobalintmask]
       - [0xB6D0, c, libultra/os/yieldthread]
       - [0xB720, asm]
+      - [0xC0F0, c, libultra/audio/seqpdelete]
       - [0xC120, c, libultra/audio/cspgetfxmix]
       - [0xC140, c, libultra/audio/cspgetpan]
       - [0xC160, c, libultra/audio/cspgetpriority]
