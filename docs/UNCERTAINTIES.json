@@ -438,7 +438,7 @@
     "src/modules/triganim.c": "43930076aedcb1762401b7b9e92c33f708749e70367c13bb66460ee00f557f1e",
     "src/modules/txtview.c": "f8d7c189aeb5545a6756a847cdb67e64075dacb13a911d9df7188c307bd10a82",
     "src/modules/ufo.c": "2165d432b44ec3455fea1108e6085e9a63349a706cc2d2a0eec1ef342231980d",
-    "src/modules/ufogame.c": "607e9c04b757e9af7e22e26c02d46e554a04f5e7d37563c2c8a8f7f88c475fda",
+    "src/modules/ufogame.c": "996eeabab8791cf82379d7177f3745d0f7261b5797b228dc70e9a38a607bafcc",
     "src/modules/uvaudiomgr_rom.c": "091eb9501c55eea84418e8680a1a9e27727600c0042248c5c98caa450104e49d",
     "src/modules/uvbill_rom.c": "57c6145349646651e88c01b6d198839f604838f4c560c1c484f0f19569e4b5ae",
     "src/modules/uvblit_rom.c": "595c74110c5caa739c3ca4080271fb6f8badb587332041bd1bbb04a00cbc1be2",
@@ -503,24 +503,24 @@
     "src/sched.c": "26791ca9f30fd5355b11ea03a64a457757d2029595be26428c2925798105d9b4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "83fd542751c9685b97b20f00c52f28ae6e5e6f5ba84e07f162ad42a7f2f67b89",
-    "docs/VALIDATION_20261006.md": "36f7746c10f4b451115335e95c6cb202d936956ea5e90806570fe68de7e70620"
+    "docs/STRATEGY_V4.md": "271e5826c269a47ea0c570e7e45c639403d0c89d1f82ca353540722ee40a8558",
+    "docs/VALIDATION_20261006.md": "a46820c10aba34e3c1901bd9bdc4260f684530f44fcf7f61d9c7bb33e0c91031"
   },
   "counts": {
     "address_function": 903,
-    "address_global": 1549,
-    "assembly": 750,
+    "address_global": 1553,
+    "assembly": 749,
     "audit_debt": 30,
     "conditional_draft": 4,
     "decompiler_local": 622,
     "draft_marker": 54,
-    "explicit_unknown": 1868,
+    "explicit_unknown": 1870,
     "layout_padding": 281,
-    "offset_field": 1750,
+    "offset_field": 1751,
     "opaque_type": 283,
-    "original_quirk": 512,
+    "original_quirk": 513,
     "uncertainty_note": 88,
-    "unused_identifier": 137
+    "unused_identifier": 148
   },
   "items": [
     {
@@ -51465,6 +51465,118 @@
       ]
     },
     {
+      "id": "Q-d8de02b46971",
+      "kind": "address_global",
+      "path": "src/modules/ufogame.c",
+      "symbol": "D_ufogame_00400550",
+      "lines": [
+        71,
+        96
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "ufogameBuildCameraDebugPanel",
+          "declaration_line": 84,
+          "lines": [
+            96
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_ufogame_00400550",
+          "declaration_line": 71,
+          "lines": [
+            71
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-556e9e9fd237",
+      "kind": "address_global",
+      "path": "src/modules/ufogame.c",
+      "symbol": "D_ufogame_00400554",
+      "lines": [
+        71,
+        100
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "ufogameBuildCameraDebugPanel",
+          "declaration_line": 84,
+          "lines": [
+            100
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_ufogame_00400550",
+          "declaration_line": 71,
+          "lines": [
+            71
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-4a2a5ecbc777",
+      "kind": "address_global",
+      "path": "src/modules/ufogame.c",
+      "symbol": "D_ufogame_0040055C",
+      "lines": [
+        72,
+        104
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "ufogameBuildCameraDebugPanel",
+          "declaration_line": 84,
+          "lines": [
+            104
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_ufogame_0040055C",
+          "declaration_line": 72,
+          "lines": [
+            72
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-9d61f6f8bb5a",
+      "kind": "address_global",
+      "path": "src/modules/ufogame.c",
+      "symbol": "D_ufogame_00400564",
+      "lines": [
+        72,
+        109
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "ufogameBuildCameraDebugPanel",
+          "declaration_line": 84,
+          "lines": [
+            109
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_ufogame_0040055C",
+          "declaration_line": 72,
+          "lines": [
+            72
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-0476f38ad5e8",
       "kind": "address_global",
       "path": "src/modules/uvaudiomgr_rom.c",
@@ -84757,16 +84869,6 @@
         13
       ],
       "evidence": "asm/us/nonmatchings/modules/ufogame/func_ufogame_00400204.s"
-    },
-    {
-      "id": "Q-f5750d273fe0",
-      "kind": "assembly",
-      "path": "src/modules/ufogame.c",
-      "symbol": "func_ufogame_0040031C",
-      "lines": [
-        24
-      ],
-      "evidence": "asm/us/nonmatchings/modules/ufogame/func_ufogame_0040031C.s"
     },
     {
       "id": "Q-aa5027713893",
@@ -136823,6 +136925,46 @@
           "declaration_line": 30,
           "lines": [
             26
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-6ad0a65d6302",
+      "kind": "explicit_unknown",
+      "path": "src/modules/ufogame.c",
+      "symbol": "Append the original UFO/camera/test rows and the unbound \"test slider\" to the * shared GAMEGUI child list, then pass the same panel to optional AI slot14. * RE_ORIGINAL_QUIRK: every pool result is narrowed to signed16 and used without * an exhaustion check; the scalar widget receives a null bound-word pointer. * RE_UNKNOWN: full shared-state/pool extents, fixed-width label-read domains, * widget lifetime and the optional AI callback's wider role remain unresolved. * Its proven AI slot14 provider accepts one s32 and is currently empty; preserve * the original call and raw N64 panel address rather than omit it.",
+      "lines": [
+        76
+      ],
+      "evidence": "Append the original UFO/camera/test rows and the unbound \"test slider\" to the * shared GAMEGUI child list, then pass the same panel to optional AI slot14. * RE_ORIGINAL_QUIRK: every pool result is narrowed to signed16 and used without * an exhaustion check; the scalar widget receives a null bound-word pointer. * RE_UNKNOWN: full shared-state/pool extents, fixed-width label-read domains, * widget lifetime and the optional AI callback's wider role remain unresolved. * Its proven AI slot14 provider accepts one s32 and is currently empty; preserve * the original call and raw N64 panel address rather than omit it.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "ufogameBuildCameraDebugPanel",
+          "declaration_line": 84,
+          "lines": [
+            76
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-4fbee41ab3bc",
+      "kind": "explicit_unknown",
+      "path": "src/modules/ufogame.c",
+      "symbol": "Consumed N64 export prefixes only; no allocated storage or full extent claim. * RE_UNKNOWN: unnamed slots/shared-state extents and provider lifetimes remain * unresolved. Opaque widget pointer views retain the proven o32 pointer ABI.",
+      "lines": [
+        27
+      ],
+      "evidence": "Consumed N64 export prefixes only; no allocated storage or full extent claim. * RE_UNKNOWN: unnamed slots/shared-state extents and provider lifetimes remain * unresolved. Opaque widget pointer views retain the proven o32 pointer ABI.",
+      "owners": [
+        {
+          "kind": "type",
+          "name": "UfoGameGuiExports",
+          "declaration_line": 30,
+          "lines": [
+            27
           ]
         }
       ]
@@ -193413,6 +193555,34 @@
       ]
     },
     {
+      "id": "Q-67fa216ae8cf",
+      "kind": "offset_field",
+      "path": "src/modules/ufogame.c",
+      "symbol": "callback14",
+      "lines": [
+        68,
+        113
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "ufogameBuildCameraDebugPanel",
+          "declaration_line": 84,
+          "lines": [
+            113
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "UfoGameAiExports",
+          "declaration_line": 66,
+          "lines": [
+            68
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-d990de252663",
       "kind": "offset_field",
       "path": "src/modules/uvaudiomgr_rom.c",
@@ -237810,6 +237980,26 @@
       ]
     },
     {
+      "id": "Q-07afd0755cc7",
+      "kind": "original_quirk",
+      "path": "src/modules/ufogame.c",
+      "symbol": "Append the original UFO/camera/test rows and the unbound \"test slider\" to the * shared GAMEGUI child list, then pass the same panel to optional AI slot14. * RE_ORIGINAL_QUIRK: every pool result is narrowed to signed16 and used without * an exhaustion check; the scalar widget receives a null bound-word pointer. * RE_UNKNOWN: full shared-state/pool extents, fixed-width label-read domains, * widget lifetime and the optional AI callback's wider role remain unresolved. * Its proven AI slot14 provider accepts one s32 and is currently empty; preserve * the original call and raw N64 panel address rather than omit it.",
+      "lines": [
+        76
+      ],
+      "evidence": "Append the original UFO/camera/test rows and the unbound \"test slider\" to the * shared GAMEGUI child list, then pass the same panel to optional AI slot14. * RE_ORIGINAL_QUIRK: every pool result is narrowed to signed16 and used without * an exhaustion check; the scalar widget receives a null bound-word pointer. * RE_UNKNOWN: full shared-state/pool extents, fixed-width label-read domains, * widget lifetime and the optional AI callback's wider role remain unresolved. * Its proven AI slot14 provider accepts one s32 and is currently empty; preserve * the original call and raw N64 panel address rather than omit it.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "ufogameBuildCameraDebugPanel",
+          "declaration_line": 84,
+          "lines": [
+            76
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-44c72b610b57",
       "kind": "original_quirk",
       "path": "src/modules/uvaudiomgr_rom.c",
@@ -245682,6 +245872,233 @@
           "declaration_line": 9,
           "lines": [
             35
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-5e6ed9c3fb73",
+      "kind": "unused_identifier",
+      "path": "src/modules/ufogame.c",
+      "symbol": "unused00",
+      "lines": [
+        31,
+        37,
+        67
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "UfoGameAiExports",
+          "declaration_line": 66,
+          "lines": [
+            67
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "UfoGameGuiExports",
+          "declaration_line": 30,
+          "lines": [
+            31
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "UfoGameWidgetExports",
+          "declaration_line": 36,
+          "lines": [
+            37
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-71ed5e1bdbce",
+      "kind": "unused_identifier",
+      "path": "src/modules/ufogame.c",
+      "symbol": "unused0C",
+      "lines": [
+        39
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "UfoGameWidgetExports",
+          "declaration_line": 36,
+          "lines": [
+            39
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-57ee93961517",
+      "kind": "unused_identifier",
+      "path": "src/modules/ufogame.c",
+      "symbol": "unused18",
+      "lines": [
+        33
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "UfoGameGuiExports",
+          "declaration_line": 30,
+          "lines": [
+            33
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-8efafcf1ba7a",
+      "kind": "unused_identifier",
+      "path": "src/modules/ufogame.c",
+      "symbol": "unused4C",
+      "lines": [
+        43
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "UfoGameWidgetExports",
+          "declaration_line": 36,
+          "lines": [
+            43
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-f75f33494da7",
+      "kind": "unused_identifier",
+      "path": "src/modules/ufogame.c",
+      "symbol": "unused64",
+      "lines": [
+        45
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "UfoGameWidgetExports",
+          "declaration_line": 36,
+          "lines": [
+            45
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-31800c5453bc",
+      "kind": "unused_identifier",
+      "path": "src/modules/ufogame.c",
+      "symbol": "unused7C",
+      "lines": [
+        49
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "UfoGameWidgetExports",
+          "declaration_line": 36,
+          "lines": [
+            49
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-ff5c5f6319f0",
+      "kind": "unused_identifier",
+      "path": "src/modules/ufogame.c",
+      "symbol": "unused88",
+      "lines": [
+        51
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "UfoGameWidgetExports",
+          "declaration_line": 36,
+          "lines": [
+            51
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-01b0eb02389f",
+      "kind": "unused_identifier",
+      "path": "src/modules/ufogame.c",
+      "symbol": "unusedA0",
+      "lines": [
+        55
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "UfoGameWidgetExports",
+          "declaration_line": 36,
+          "lines": [
+            55
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-3486f7aaa645",
+      "kind": "unused_identifier",
+      "path": "src/modules/ufogame.c",
+      "symbol": "unusedAC",
+      "lines": [
+        57
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "UfoGameWidgetExports",
+          "declaration_line": 36,
+          "lines": [
+            57
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-60e7fe6d1a89",
+      "kind": "unused_identifier",
+      "path": "src/modules/ufogame.c",
+      "symbol": "unusedBC",
+      "lines": [
+        59
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "UfoGameWidgetExports",
+          "declaration_line": 36,
+          "lines": [
+            59
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-48769feb1bb1",
+      "kind": "unused_identifier",
+      "path": "src/modules/ufogame.c",
+      "symbol": "unusedC8",
+      "lines": [
+        62
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "UfoGameWidgetExports",
+          "declaration_line": 36,
+          "lines": [
+            62
           ]
         }
       ]

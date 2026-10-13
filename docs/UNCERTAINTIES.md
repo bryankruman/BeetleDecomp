@@ -17,17 +17,17 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 1868 |
-| Preserved RE_ORIGINAL_QUIRK notes | 512 |
+| Explicit RE_UNKNOWN notes | 1870 |
+| Preserved RE_ORIGINAL_QUIRK notes | 513 |
 | Older comments with uncertainty language | 88 |
 | Documented original-behavior audits | 30 |
-| Assembly-backed functions or data | 750 |
+| Assembly-backed functions or data | 749 |
 | Address-based function identifiers | 903 |
-| Address-based global identifiers | 1549 |
-| Offset-based fields or neutral typed fields | 1750 |
+| Address-based global identifiers | 1553 |
+| Offset-based fields or neutral typed fields | 1751 |
 | Layout padding to preserve | 281 |
 | Unresolved type names | 283 |
-| Explicit unused ABI, storage or local identifiers | 137 |
+| Explicit unused ABI, storage or local identifiers | 148 |
 | Decompiler parameter/local names | 622 |
 | Fake, unresolved or TODO draft markers | 54 |
 | Data-dependent conditional draft guards | 4 |
@@ -6451,10 +6451,28 @@ For every future source wave, regenerate and check this index after code and str
 | --- | --- | --- | --- |
 | address_function | `func_ufogame_004001FC` | function `func_ufogame_004001FC` | [9](../src/modules/ufogame.c#L9) |
 | address_function | `func_ufogame_00400314` | function `func_ufogame_00400314` | [20](../src/modules/ufogame.c#L20) |
+| address_global | `D_ufogame_00400550` | function `ufogameBuildCameraDebugPanel`, global `D_ufogame_00400550` | [71](../src/modules/ufogame.c#L71), [96](../src/modules/ufogame.c#L96) |
+| address_global | `D_ufogame_00400554` | function `ufogameBuildCameraDebugPanel`, global `D_ufogame_00400550` | [71](../src/modules/ufogame.c#L71), [100](../src/modules/ufogame.c#L100) |
+| address_global | `D_ufogame_0040055C` | function `ufogameBuildCameraDebugPanel`, global `D_ufogame_0040055C` | [72](../src/modules/ufogame.c#L72), [104](../src/modules/ufogame.c#L104) |
+| address_global | `D_ufogame_00400564` | function `ufogameBuildCameraDebugPanel`, global `D_ufogame_0040055C` | [72](../src/modules/ufogame.c#L72), [109](../src/modules/ufogame.c#L109) |
 | assembly | `__entrypoint_func_ufogame_400000` | — | [2](../src/modules/ufogame.c#L2) |
 | assembly | `func_ufogame_00400204` | — | [13](../src/modules/ufogame.c#L13) |
-| assembly | `func_ufogame_0040031C` | — | [24](../src/modules/ufogame.c#L24) |
+| explicit_unknown | `Append the original UFO/camera/test rows and the unbound "test slider" to the * shared GAMEGUI child list, then pass the same panel to optional AI slot14. * RE_ORIGINAL_QUIRK: e...` | function `ufogameBuildCameraDebugPanel` | [76](../src/modules/ufogame.c#L76) |
+| explicit_unknown | `Consumed N64 export prefixes only; no allocated storage or full extent claim. * RE_UNKNOWN: unnamed slots/shared-state extents and provider lifetimes remain * unresolved. Opaque...` | type `UfoGameGuiExports` | [27](../src/modules/ufogame.c#L27) |
 | explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_ufogame_004001FC`, function `func_ufogame_00400314` | [5](../src/modules/ufogame.c#L5), [16](../src/modules/ufogame.c#L16) |
+| offset_field | `callback14` | function `ufogameBuildCameraDebugPanel`, type `UfoGameAiExports` | [68](../src/modules/ufogame.c#L68), [113](../src/modules/ufogame.c#L113) |
+| original_quirk | `Append the original UFO/camera/test rows and the unbound "test slider" to the * shared GAMEGUI child list, then pass the same panel to optional AI slot14. * RE_ORIGINAL_QUIRK: e...` | function `ufogameBuildCameraDebugPanel` | [76](../src/modules/ufogame.c#L76) |
+| unused_identifier | `unused00` | type `UfoGameAiExports`, type `UfoGameGuiExports`, type `UfoGameWidgetExports` | [31](../src/modules/ufogame.c#L31), [37](../src/modules/ufogame.c#L37), [67](../src/modules/ufogame.c#L67) |
+| unused_identifier | `unused0C` | type `UfoGameWidgetExports` | [39](../src/modules/ufogame.c#L39) |
+| unused_identifier | `unused18` | type `UfoGameGuiExports` | [33](../src/modules/ufogame.c#L33) |
+| unused_identifier | `unused4C` | type `UfoGameWidgetExports` | [43](../src/modules/ufogame.c#L43) |
+| unused_identifier | `unused64` | type `UfoGameWidgetExports` | [45](../src/modules/ufogame.c#L45) |
+| unused_identifier | `unused7C` | type `UfoGameWidgetExports` | [49](../src/modules/ufogame.c#L49) |
+| unused_identifier | `unused88` | type `UfoGameWidgetExports` | [51](../src/modules/ufogame.c#L51) |
+| unused_identifier | `unusedA0` | type `UfoGameWidgetExports` | [55](../src/modules/ufogame.c#L55) |
+| unused_identifier | `unusedAC` | type `UfoGameWidgetExports` | [57](../src/modules/ufogame.c#L57) |
+| unused_identifier | `unusedBC` | type `UfoGameWidgetExports` | [59](../src/modules/ufogame.c#L59) |
+| unused_identifier | `unusedC8` | type `UfoGameWidgetExports` | [62](../src/modules/ufogame.c#L62) |
 
 ## src/modules/uvaudiomgr_rom.c
 

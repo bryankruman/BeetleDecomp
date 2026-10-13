@@ -3441,10 +3441,19 @@ Totals: 454 further recoveries after the 225 upstream ordinary imports, plus 212
 Frozen wave `12856-victory-debug-controls` and `accepted-victory-debug-controls-12856` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
 
 
-## Current accepted checkpoint — 455 further readable functions
+## Historical accepted checkpoint — 455 further readable functions
 
 Recover sprayAppendStripPoint:692 positive native bytes and10 exact ordered relocation sites. Preserve original RO/DATA/BSS ownership and213 typed SDK rows/2196 ordinary rows/83 failed histories. Require fresh complete692/CODE/RELA/aliases/all133/1220-source/ROM/Git proof.
 
 Totals: 455 further recoveries after the 225 upstream ordinary imports, plus 2122 existing C semantic cleanups. Current ledger: 746 assembly references = 707 ordinary + 39 entrypoints; 691,272 known remaining instruction bytes; zero unknown sizes; 289 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `spray-strip-13756` and `accepted-spray-strip-13756` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+
+## Current accepted checkpoint — 456 further readable functions
+
+Recover ufogameBuildCameraDebugPanel:560 readable bytes,564 positive native bytes and14 exact ordered relocation sites. Preserve original RO/DATA/BSS ownership and219 typed SDK rows/2197 ordinary rows/83 failed histories. Require fresh complete564/CODE/RELA/aliases/all133/1225-source/ROM/Git proof;4 trailing zero bytes remain uncredited.
+
+Totals: 456 further recoveries after the 225 upstream ordinary imports, plus 2122 existing C semantic cleanups. Current ledger: 745 assembly references = 706 ordinary + 39 entrypoints; 690,712 known remaining instruction bytes; zero unknown sizes; 289 address-named C definitions remain. Full readable decompilation is incomplete.
+
+Frozen wave `ufogame-camera-panel-14856` and `accepted-ufogame-camera-panel-14856` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
