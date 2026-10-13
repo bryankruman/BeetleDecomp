@@ -17,8 +17,8 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 1879 |
-| Preserved RE_ORIGINAL_QUIRK notes | 516 |
+| Explicit RE_UNKNOWN notes | 1883 |
+| Preserved RE_ORIGINAL_QUIRK notes | 520 |
 | Older comments with uncertainty language | 88 |
 | Documented original-behavior audits | 30 |
 | Assembly-backed functions or data | 749 |
@@ -1334,6 +1334,22 @@ For every future source wave, regenerate and check this index after code and str
 | draft_marker | `TODO` | — | [6](../src/libultra/io/aisetnextbuf.c#L6) |
 | explicit_unknown | `* Queue the next AI DMA buffer while preserving the VERSION_I hardware- * workaround ordering. * * Update the persistent workaround byte before the busy rejection in * VERSION_I...` | function `osAiSetNextBuffer` | [18](../src/libultra/io/aisetnextbuf.c#L18) |
 
+## src/libultra/io/contpfs.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| explicit_unknown | `Validate Controller Pak identification and read or write cached inode tables. * RE_UNKNOWN: Exact game SDK release is unproved. * Extern views retain the original cache allocati...` | — | [1](../src/libultra/io/contpfs.c#L1) |
+| original_quirk | `RE_ORIGINAL_QUIRK: Repair-write errors are ignored; the function still updates the cache and returns zero.` | function `__osPfsRWInode` | [216](../src/libultra/io/contpfs.c#L216) |
+| original_quirk | `RE_ORIGINAL_QUIRK: Retry reads ignore their return codes; the checksum below decides consistency.` | function `__osPfsRWInode` | [202](../src/libultra/io/contpfs.c#L202) |
+| original_quirk | `RE_ORIGINAL_QUIRK: The next mirror write overwrites this result; only the mirror result is checked.` | function `__osPfsRWInode` | [186](../src/libultra/io/contpfs.c#L186) |
+| original_quirk | `RE_ORIGINAL_QUIRK: This pre-J mirror-refresh path also ignores write errors before returning zero.` | function `__osPfsRWInode` | [225](../src/libultra/io/contpfs.c#L225) |
+
+## src/libultra/io/contpfschecksums.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| explicit_unknown | `Compute Controller Pak inode and identification checksums. * RE_UNKNOWN: Exact game SDK release is unproved.` | — | [1](../src/libultra/io/contpfschecksums.c#L1) |
+
 ## src/libultra/io/contquery.c
 
 | Kind | Identifier or note | Declaration context | Physical lines |
@@ -1359,6 +1375,12 @@ For every future source wave, regenerate and check this index after code and str
 | original_quirk | `RE_CONTRACT: Decode successful channel type/status and output the responding-channel mask. RE_ORIGINAL_QUIRK: Error channels retain their previous type/status.` | function `__osContGetInitData` | [54](../src/libultra/io/controller.c#L54) |
 | original_quirk | `RE_CONTRACT: Once after the startup delay, query controller status and initialize access/message queues. RE_ORIGINAL_QUIRK: Set initialized before blocking calls and return only...` | function `osContInit` | [16](../src/libultra/io/controller.c#L16) |
 
+## src/libultra/io/crc.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| explicit_unknown | `Compute Controller Pak address and data checksums. * RE_UNKNOWN: Exact game SDK release is unproved.` | — | [1](../src/libultra/io/crc.c#L1) |
+
 ## src/libultra/io/epirawio.c
 
 | Kind | Identifier or note | Declaration context | Physical lines |
@@ -1375,6 +1397,12 @@ For every future source wave, regenerate and check this index after code and str
 | --- | --- | --- | --- |
 | explicit_unknown | `* Build the fixed controller status request sequence in retained PIF RAM. * * Preserve command/status byte writes, eight-byte request copies, live count * loads, and terminator....` | function `__osPfsRequestData` | [66](../src/libultra/io/pfsisplug.c#L66) |
 | explicit_unknown | `* Serialize controller PIF status reads and return the detected controller- * pak presence mask. * * Keep three CRC retries, live controller-count loads, blocking message * orde...` | function `osPfsIsPlug` | [8](../src/libultra/io/pfsisplug.c#L8) |
+
+## src/libultra/io/pfsselectbank.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| explicit_unknown | `Select the Controller Pak bank used by subsequent block operations. * RE_UNKNOWN: Exact game SDK release is unproved.` | — | [1](../src/libultra/io/pfsselectbank.c#L1) |
 
 ## src/libultra/io/piacs.c
 

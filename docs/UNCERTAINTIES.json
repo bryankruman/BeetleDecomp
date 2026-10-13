@@ -304,12 +304,16 @@
     "src/libultra/io/ai.c": "e2757d2319d2b9eca70284cc98501741565a27bc9216f7bcb58d691da85fc40a",
     "src/libultra/io/aisetfreq.c": "e0d9998c3391129ce9b5198498d779cef764ae2d7cab9acac158b669bab802f3",
     "src/libultra/io/aisetnextbuf.c": "a56af1027e3d9c8fac23d75361e9a8d92cc4578d83a3bb4d3b9c4dc1cf288a78",
+    "src/libultra/io/contpfs.c": "952bed8b0fcd39746894d698eefec5ad6a69ef5a0fb9c840fd35a94f5ae7afcd",
+    "src/libultra/io/contpfschecksums.c": "541b71cab751ae6abfe0a6d2445bf8f74ab8b85d8ff63237497dbbedec6257a0",
     "src/libultra/io/contquery.c": "a6c202027824498463298d5ccb6ebee06322e6a1cb18872d549dd57cbb9a7033",
     "src/libultra/io/contreaddata.c": "22b3759982a727d22f8e4b9541dabd6d34572a4da662a9d4890e2cd5feb05cf3",
     "src/libultra/io/controller.c": "c4c0f9d8b0c836e4ee72047c4cab29afcbbb4192496e90020f4fdd69010701dd",
     "src/libultra/io/contsetch.c": "0c5bc528e0c93168789d1e8a84ddb88d386d06948cfd760c6104b40e04a24caa",
+    "src/libultra/io/crc.c": "8235ce349186092b1afd424bdf4e9acd9d4a0d571e6ab7e5e5db608387f7abc3",
     "src/libultra/io/epirawio.c": "a332fc3652771cf8c00233bc463586486fc7400c8cfd53c322ed85685d9bbf8b",
     "src/libultra/io/pfsisplug.c": "c0c2eae5a8b136e9dbc156c18a291f4ca6fcfbb8c11f8fe0ef01a2ed037a2eca",
+    "src/libultra/io/pfsselectbank.c": "220e29cc932c5187eda4e55c6279d22a57fd4635c3429afba4578febdae37391",
     "src/libultra/io/piacs.c": "1e1868dbf136a88ff9f6d089b0205f0d130e3669d93f36e70d87375dd8f589f6",
     "src/libultra/io/pidma.c": "37ac5ed678f14547e528a618c5e3bde2ba07e426236e53a567ee3bf6552e401b",
     "src/libultra/io/pigetcmdq.c": "efec4cabcf71ed7cb1c561b0669260b2858084da5a86a5772b6f7a6e2ee26796",
@@ -516,11 +520,11 @@
     "conditional_draft": 4,
     "decompiler_local": 622,
     "draft_marker": 54,
-    "explicit_unknown": 1879,
+    "explicit_unknown": 1883,
     "layout_padding": 281,
     "offset_field": 1751,
     "opaque_type": 283,
-    "original_quirk": 516,
+    "original_quirk": 520,
     "uncertainty_note": 88,
     "unused_identifier": 148
   },
@@ -119507,6 +119511,26 @@
       ]
     },
     {
+      "id": "Q-5a59547c11f9",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/io/contpfs.c",
+      "symbol": "Validate Controller Pak identification and read or write cached inode tables. * RE_UNKNOWN: Exact game SDK release is unproved. * Extern views retain the original cache allocation in its assembly-owned .rodata and BSS sections.",
+      "lines": [
+        1
+      ],
+      "evidence": "Validate Controller Pak identification and read or write cached inode tables. * RE_UNKNOWN: Exact game SDK release is unproved. * Extern views retain the original cache allocation in its assembly-owned .rodata and BSS sections."
+    },
+    {
+      "id": "Q-3793ffce32a3",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/io/contpfschecksums.c",
+      "symbol": "Compute Controller Pak inode and identification checksums. * RE_UNKNOWN: Exact game SDK release is unproved.",
+      "lines": [
+        1
+      ],
+      "evidence": "Compute Controller Pak inode and identification checksums. * RE_UNKNOWN: Exact game SDK release is unproved."
+    },
+    {
       "id": "Q-4113b24c199c",
       "kind": "explicit_unknown",
       "path": "src/libultra/io/contquery.c",
@@ -119597,6 +119621,16 @@
       "evidence": "RE_UNKNOWN: Exact game SDK release and private backing extents are unproved; retain existing storage."
     },
     {
+      "id": "Q-da7eec0f2045",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/io/crc.c",
+      "symbol": "Compute Controller Pak address and data checksums. * RE_UNKNOWN: Exact game SDK release is unproved.",
+      "lines": [
+        1
+      ],
+      "evidence": "Compute Controller Pak address and data checksums. * RE_UNKNOWN: Exact game SDK release is unproved."
+    },
+    {
       "id": "Q-5e8460390642",
       "kind": "explicit_unknown",
       "path": "src/libultra/io/epirawio.c",
@@ -119655,6 +119689,16 @@
           ]
         }
       ]
+    },
+    {
+      "id": "Q-f69b22f48524",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/io/pfsselectbank.c",
+      "symbol": "Select the Controller Pak bank used by subsequent block operations. * RE_UNKNOWN: Exact game SDK release is unproved.",
+      "lines": [
+        1
+      ],
+      "evidence": "Select the Controller Pak bank used by subsequent block operations. * RE_UNKNOWN: Exact game SDK release is unproved."
     },
     {
       "id": "Q-13d51aad145c",
@@ -232711,6 +232755,86 @@
         1
       ],
       "evidence": "Derive DAC and bit periods from the existing video clock, reject an unusably short DAC period, and program the audio registers. * RE_ORIGINAL_QUIRK: Preserve floating-point rounding, byte-sized bit rate, clamp, and the original audio-control write."
+    },
+    {
+      "id": "Q-a875ce869500",
+      "kind": "original_quirk",
+      "path": "src/libultra/io/contpfs.c",
+      "symbol": "RE_ORIGINAL_QUIRK: Repair-write errors are ignored; the function still updates the cache and returns zero.",
+      "lines": [
+        216
+      ],
+      "evidence": "RE_ORIGINAL_QUIRK: Repair-write errors are ignored; the function still updates the cache and returns zero.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__osPfsRWInode",
+          "declaration_line": 159,
+          "lines": [
+            216
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-93366fc62f3d",
+      "kind": "original_quirk",
+      "path": "src/libultra/io/contpfs.c",
+      "symbol": "RE_ORIGINAL_QUIRK: Retry reads ignore their return codes; the checksum below decides consistency.",
+      "lines": [
+        202
+      ],
+      "evidence": "RE_ORIGINAL_QUIRK: Retry reads ignore their return codes; the checksum below decides consistency.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__osPfsRWInode",
+          "declaration_line": 159,
+          "lines": [
+            202
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-502f80fdc973",
+      "kind": "original_quirk",
+      "path": "src/libultra/io/contpfs.c",
+      "symbol": "RE_ORIGINAL_QUIRK: The next mirror write overwrites this result; only the mirror result is checked.",
+      "lines": [
+        186
+      ],
+      "evidence": "RE_ORIGINAL_QUIRK: The next mirror write overwrites this result; only the mirror result is checked.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__osPfsRWInode",
+          "declaration_line": 159,
+          "lines": [
+            186
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-cd1fba49e8c6",
+      "kind": "original_quirk",
+      "path": "src/libultra/io/contpfs.c",
+      "symbol": "RE_ORIGINAL_QUIRK: This pre-J mirror-refresh path also ignores write errors before returning zero.",
+      "lines": [
+        225
+      ],
+      "evidence": "RE_ORIGINAL_QUIRK: This pre-J mirror-refresh path also ignores write errors before returning zero.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__osPfsRWInode",
+          "declaration_line": 159,
+          "lines": [
+            225
+          ]
+        }
+      ]
     },
     {
       "id": "Q-3b3f0caabd32",

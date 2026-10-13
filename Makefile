@@ -730,3 +730,10 @@ $(BUILD_DIR)/src/libultra/io/viswapcontext.o: src/libultra/io/viswapcontext.c $(
 $(BUILD_DIR)/src/libultra/io/controller.o: src/libultra/io/controller.c $(SDK_AUDIO_HEADERS) $(SDK_CONTROLLER_HEADERS) tools/asm-processor/build.py tools/asm-processor/asm_processor.py tools/asm-processor/prelude.inc
 	$(V)mkdir -p $(dir $@)
 	$(V)$(ASM_PROC) $(ASM_PROC_FLAGS) $(SDK_AUDIO_CC) -- $(AS) $(ASFLAGS) -- $(subst -O3,-O1,$(SDK_AUDIO_FLAGS)) -o $@ $<
+
+# Stock J-or-later PFS routines; retain RepairPackId ASM and original cache storage.
+SDK_PFS_SOURCES := src/libultra/io/crc.c src/libultra/io/pfsselectbank.c src/libultra/io/contpfschecksums.c src/libultra/io/contpfs.c
+SDK_PFS_OBJECTS := $(addprefix $(BUILD_DIR)/,$(SDK_PFS_SOURCES:.c=.o))
+$(SDK_PFS_OBJECTS): $(BUILD_DIR)/%.o: %.c $(SDK_AUDIO_HEADERS) $(SDK_CONTROLLER_HEADERS)
+	$(V)mkdir -p $(dir $@)
+	$(V)$(SDK_AUDIO_CC) $(subst -O3,-O2,$(SDK_VI_J_FLAGS)) -o $@ $<

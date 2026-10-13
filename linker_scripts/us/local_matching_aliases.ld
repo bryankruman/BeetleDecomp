@@ -264,3 +264,12 @@ func_8000B2A0 = 0x8000B2A0;
 func_8000B2A8 = 0x8000B2A8;
 func_8000B2B0 = 0x8000B2B0;
 func_8000B39C = 0x8000B39C;
+
+/* PFS cache views retain original storage; address-named calls retain native targets. */
+func_80014BB0 = __osContAddressCrc;
+func_80014C80 = __osContDataCrc;
+func_80014FA0 = __osSumcalc;
+func_80015014 = __osIdCheckSum;
+__osPfsInodeCacheChannel = D_80020F00;
+__osPfsInodeCacheBank = D_80020F04;
+__osPfsInodeCache = D_80033630;
