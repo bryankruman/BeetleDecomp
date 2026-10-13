@@ -295,6 +295,7 @@
     "src/libultra/audio/synsetfxparam.c": "63d553515a7ff16d8c1634eee0f4e6d4498fd9408359ce332d2215f334ea7ce9",
     "src/libultra/audio/synsetpan.c": "86dd4757ba89d7835a3c96b871b0372c747a559a9c0c3489cf1b770398395c0f",
     "src/libultra/audio/synsetpitch.c": "aebc2460561f33c503701e977179aabf6efc66b30a193aabbde34b722026d172",
+    "src/libultra/audio/synsetpriority.c": "2274094777996c21e02314fcd5a3df795efa01d16a831f795ab7c0c42d7d5076",
     "src/libultra/audio/synsetvol.c": "3798535e2a6c598d317f1fc014a98a93d1233e9b87a152b87aa76fd85f540180",
     "src/libultra/audio/synstartvoice.c": "cb637d3152dc0ffa863b93bc6628b84ba2c1703b0f172889cc7180b3fdd47a31",
     "src/libultra/audio/synstartvoiceparam.c": "9ae472b3aa6ca721c471896e38ac82a9a4053440792a1a54cc7eef22cd72a267",
@@ -521,11 +522,11 @@
     "conditional_draft": 4,
     "decompiler_local": 622,
     "draft_marker": 54,
-    "explicit_unknown": 1885,
+    "explicit_unknown": 1886,
     "layout_padding": 281,
     "offset_field": 1751,
     "opaque_type": 283,
-    "original_quirk": 524,
+    "original_quirk": 525,
     "uncertainty_note": 88,
     "unused_identifier": 148
   },
@@ -119342,6 +119343,16 @@
       ]
     },
     {
+      "id": "Q-aac853da173e",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/synsetpriority.c",
+      "symbol": "Set a virtual voice scheduling priority. * RE_ORIGINAL_QUIRK: Keep the unused synth-driver argument in the public API. * RE_UNKNOWN: The exact SDK release used by the game is not established.",
+      "lines": [
+        1
+      ],
+      "evidence": "Set a virtual voice scheduling priority. * RE_ORIGINAL_QUIRK: Keep the unused synth-driver argument in the public API. * RE_UNKNOWN: The exact SDK release used by the game is not established."
+    },
+    {
       "id": "Q-c3eabaa28292",
       "kind": "explicit_unknown",
       "path": "src/libultra/audio/synthesizer.c",
@@ -232736,6 +232747,16 @@
           ]
         }
       ]
+    },
+    {
+      "id": "Q-fdfbd05acd48",
+      "kind": "original_quirk",
+      "path": "src/libultra/audio/synsetpriority.c",
+      "symbol": "Set a virtual voice scheduling priority. * RE_ORIGINAL_QUIRK: Keep the unused synth-driver argument in the public API. * RE_UNKNOWN: The exact SDK release used by the game is not established.",
+      "lines": [
+        1
+      ],
+      "evidence": "Set a virtual voice scheduling priority. * RE_ORIGINAL_QUIRK: Keep the unused synth-driver argument in the public API. * RE_UNKNOWN: The exact SDK release used by the game is not established."
     },
     {
       "id": "Q-cdf3e7d18b9c",

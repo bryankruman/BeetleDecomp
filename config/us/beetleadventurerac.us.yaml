@@ -250,7 +250,7 @@ segments:
       - [0x18290, c, libultra/audio/reverb]
       - [0x18EE0, c, libultra/audio/copy]
       - [0x18F60, c, libultra/audio/seq]
-      - [0x19580, asm, sl_audio_retained_19580]
+      - [0x19580, c, libultra/audio/synsetpriority]
       - [0x19590, c, libultra/io/pfsisplug]
       - [0x198D0, asm, sl_audio_retained_198D0]
       - [0x1A750, c, libultra/libc/ldiv]

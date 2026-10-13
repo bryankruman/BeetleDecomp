@@ -17,8 +17,8 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 1885 |
-| Preserved RE_ORIGINAL_QUIRK notes | 524 |
+| Explicit RE_UNKNOWN notes | 1886 |
+| Preserved RE_ORIGINAL_QUIRK notes | 525 |
 | Older comments with uncertainty language | 88 |
 | Documented original-behavior audits | 30 |
 | Assembly-backed functions or data | 749 |
@@ -1290,6 +1290,13 @@ For every future source wave, regenerate and check this index after code and str
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
 | explicit_unknown | `RE_CONTRACT: Pass the sign-extended parameter ID and payload to the effect parameter callback. RE_UNKNOWN: payload type and validity depend on the selected effect.` | function `alSynSetFXParam` | [24](../src/libultra/audio/synsetfxparam.c#L24) |
+
+## src/libultra/audio/synsetpriority.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| explicit_unknown | `Set a virtual voice scheduling priority. * RE_ORIGINAL_QUIRK: Keep the unused synth-driver argument in the public API. * RE_UNKNOWN: The exact SDK release used by the game is no...` | — | [1](../src/libultra/audio/synsetpriority.c#L1) |
+| original_quirk | `Set a virtual voice scheduling priority. * RE_ORIGINAL_QUIRK: Keep the unused synth-driver argument in the public API. * RE_UNKNOWN: The exact SDK release used by the game is no...` | — | [1](../src/libultra/audio/synsetpriority.c#L1) |
 
 ## src/libultra/audio/synthInternals.h
 
