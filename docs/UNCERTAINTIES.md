@@ -17,8 +17,8 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 1870 |
-| Preserved RE_ORIGINAL_QUIRK notes | 513 |
+| Explicit RE_UNKNOWN notes | 1878 |
+| Preserved RE_ORIGINAL_QUIRK notes | 515 |
 | Older comments with uncertainty language | 88 |
 | Documented original-behavior audits | 30 |
 | Assembly-backed functions or data | 749 |
@@ -1291,6 +1291,21 @@ For every future source wave, regenerate and check this index after code and str
 | layout_padding | `pad0` | type `HeapInfo` | [304](../src/libultra/audio/synthInternals.h#L304) |
 | layout_padding | `pad1` | type `HeapInfo` | [305](../src/libultra/audio/synthInternals.h#L305) |
 | layout_padding | `pad2` | type `HeapInfo` | [306](../src/libultra/audio/synthInternals.h#L306) |
+
+## src/libultra/audio/synthesizer.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| explicit_unknown | `Convert the supplied time using the current output rate, then clear the low four sample bits. RE_ORIGINAL_QUIRK: preserve the existing add-0.5/truncate arithmetic and mask order...` | function `_timeToSamples` | [297](../src/libultra/audio/synthesizer.c#L297) |
+| explicit_unknown | `Detach the first available parameter update, clearing its next link; return NULL when the list is empty. RE_UNKNOWN: caller ownership and synchronization contract.` | function `__allocParam` | [241](../src/libultra/audio/synthesizer.c#L241) |
+| explicit_unknown | `Initialize synthesis filters, physical-voice lists and the parameter pool from the supplied configuration. RE_UNKNOWN: heap capacity and caller configuration bounds. RE_ORIGINAL...` | function `alSynNew` | [41](../src/libultra/audio/synthesizer.c#L41) |
+| explicit_unknown | `Move every voice on the pending-release list back to the free list using the existing link helpers. RE_UNKNOWN: list ownership and synchronization; retain repeated live head reads.` | function `_collectPVoices` | [261](../src/libultra/audio/synthesizer.c#L261) |
+| explicit_unknown | `Move the supplied physical voice from its current list to the pending-release list. RE_UNKNOWN: caller membership and lifetime contract.` | function `_freePVoice` | [276](../src/libultra/audio/synthesizer.c#L276) |
+| explicit_unknown | `Prepend the supplied parameter update to the existing free list. RE_UNKNOWN: caller ownership and duplicate-free prevention.` | function `__freeParam` | [254](../src/libultra/audio/synthesizer.c#L254) |
+| explicit_unknown | `RE_UNKNOWN: retained stock header/revision provenance; exact original SDK release is unproved.` | — | [21](../src/libultra/audio/synthesizer.c#L21) |
+| explicit_unknown | `Run due player callbacks, align parameter time, and emit bounded-size synthesis command chunks before collecting released voices. RE_UNKNOWN: caller output-command capacity and ...` | function `alAudioFrame` | [144](../src/libultra/audio/synthesizer.c#L144) |
+| original_quirk | `Convert the supplied time using the current output rate, then clear the low four sample bits. RE_ORIGINAL_QUIRK: preserve the existing add-0.5/truncate arithmetic and mask order...` | function `_timeToSamples` | [297](../src/libultra/audio/synthesizer.c#L297) |
+| original_quirk | `Initialize synthesis filters, physical-voice lists and the parameter pool from the supplied configuration. RE_UNKNOWN: heap capacity and caller configuration bounds. RE_ORIGINAL...` | function `alSynNew` | [41](../src/libultra/audio/synthesizer.c#L41) |
 
 ## src/libultra/io/ai.c
 

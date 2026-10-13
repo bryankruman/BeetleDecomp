@@ -299,6 +299,7 @@
     "src/libultra/audio/synstartvoiceparam.c": "9ae472b3aa6ca721c471896e38ac82a9a4053440792a1a54cc7eef22cd72a267",
     "src/libultra/audio/synstopvoice.c": "ae57c91896402afa8b6929dd0e06b7cc341f6bc8c21e07192988c84b1eed0b04",
     "src/libultra/audio/synthInternals.h": "797c65321f3ae4ebfa83b3babdacd70495c7a80cee2a708a0b8095043f1a309b",
+    "src/libultra/audio/synthesizer.c": "855a78e5c3a987336f6c6d96e4fc77f7208f2354f9542a2ff46659588996244b",
     "src/libultra/io/ai.c": "e2757d2319d2b9eca70284cc98501741565a27bc9216f7bcb58d691da85fc40a",
     "src/libultra/io/aisetfreq.c": "e0d9998c3391129ce9b5198498d779cef764ae2d7cab9acac158b669bab802f3",
     "src/libultra/io/aisetnextbuf.c": "a56af1027e3d9c8fac23d75361e9a8d92cc4578d83a3bb4d3b9c4dc1cf288a78",
@@ -514,11 +515,11 @@
     "conditional_draft": 4,
     "decompiler_local": 622,
     "draft_marker": 54,
-    "explicit_unknown": 1870,
+    "explicit_unknown": 1878,
     "layout_padding": 281,
     "offset_field": 1751,
     "opaque_type": 283,
-    "original_quirk": 513,
+    "original_quirk": 515,
     "uncertainty_note": 88,
     "unused_identifier": 148
   },
@@ -119325,6 +119326,156 @@
       ]
     },
     {
+      "id": "Q-c3eabaa28292",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/synthesizer.c",
+      "symbol": "Convert the supplied time using the current output rate, then clear the low four sample bits. RE_ORIGINAL_QUIRK: preserve the existing add-0.5/truncate arithmetic and mask order; RE_UNKNOWN: caller time range.",
+      "lines": [
+        297
+      ],
+      "evidence": "Convert the supplied time using the current output rate, then clear the low four sample bits. RE_ORIGINAL_QUIRK: preserve the existing add-0.5/truncate arithmetic and mask order; RE_UNKNOWN: caller time range.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "_timeToSamples",
+          "declaration_line": 296,
+          "lines": [
+            297
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-e7f9e0bcda16",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/synthesizer.c",
+      "symbol": "Detach the first available parameter update, clearing its next link; return NULL when the list is empty. RE_UNKNOWN: caller ownership and synchronization contract.",
+      "lines": [
+        241
+      ],
+      "evidence": "Detach the first available parameter update, clearing its next link; return NULL when the list is empty. RE_UNKNOWN: caller ownership and synchronization contract.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__allocParam",
+          "declaration_line": 240,
+          "lines": [
+            241
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-63b54c534b07",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/synthesizer.c",
+      "symbol": "Initialize synthesis filters, physical-voice lists and the parameter pool from the supplied configuration. RE_UNKNOWN: heap capacity and caller configuration bounds. RE_ORIGINAL_QUIRK: preserve direct use of allocation results and initialization order.",
+      "lines": [
+        41
+      ],
+      "evidence": "Initialize synthesis filters, physical-voice lists and the parameter pool from the supplied configuration. RE_UNKNOWN: heap capacity and caller configuration bounds. RE_ORIGINAL_QUIRK: preserve direct use of allocation results and initialization order.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "alSynNew",
+          "declaration_line": 40,
+          "lines": [
+            41
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-b5e22087b7c8",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/synthesizer.c",
+      "symbol": "Move every voice on the pending-release list back to the free list using the existing link helpers. RE_UNKNOWN: list ownership and synchronization; retain repeated live head reads.",
+      "lines": [
+        261
+      ],
+      "evidence": "Move every voice on the pending-release list back to the free list using the existing link helpers. RE_UNKNOWN: list ownership and synchronization; retain repeated live head reads.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "_collectPVoices",
+          "declaration_line": 260,
+          "lines": [
+            261
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-ccc8d7aa806f",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/synthesizer.c",
+      "symbol": "Move the supplied physical voice from its current list to the pending-release list. RE_UNKNOWN: caller membership and lifetime contract.",
+      "lines": [
+        276
+      ],
+      "evidence": "Move the supplied physical voice from its current list to the pending-release list. RE_UNKNOWN: caller membership and lifetime contract.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "_freePVoice",
+          "declaration_line": 275,
+          "lines": [
+            276
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-6deba497d28b",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/synthesizer.c",
+      "symbol": "Prepend the supplied parameter update to the existing free list. RE_UNKNOWN: caller ownership and duplicate-free prevention.",
+      "lines": [
+        254
+      ],
+      "evidence": "Prepend the supplied parameter update to the existing free list. RE_UNKNOWN: caller ownership and duplicate-free prevention.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__freeParam",
+          "declaration_line": 253,
+          "lines": [
+            254
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-328c5886c046",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/synthesizer.c",
+      "symbol": "RE_UNKNOWN: retained stock header/revision provenance; exact original SDK release is unproved.",
+      "lines": [
+        21
+      ],
+      "evidence": "RE_UNKNOWN: retained stock header/revision provenance; exact original SDK release is unproved."
+    },
+    {
+      "id": "Q-f70ccaa7e50d",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/synthesizer.c",
+      "symbol": "Run due player callbacks, align parameter time, and emit bounded-size synthesis command chunks before collecting released voices. RE_UNKNOWN: caller output-command capacity and callback invariants; retain callback/store order.",
+      "lines": [
+        144
+      ],
+      "evidence": "Run due player callbacks, align parameter time, and emit bounded-size synthesis command chunks before collecting released voices. RE_UNKNOWN: caller output-command capacity and callback invariants; retain callback/store order.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "alAudioFrame",
+          "declaration_line": 143,
+          "lines": [
+            144
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-d87be017dd9f",
       "kind": "explicit_unknown",
       "path": "src/libultra/io/aisetnextbuf.c",
@@ -232476,6 +232627,46 @@
           "declaration_line": 26,
           "lines": [
             27
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-cdf3e7d18b9c",
+      "kind": "original_quirk",
+      "path": "src/libultra/audio/synthesizer.c",
+      "symbol": "Convert the supplied time using the current output rate, then clear the low four sample bits. RE_ORIGINAL_QUIRK: preserve the existing add-0.5/truncate arithmetic and mask order; RE_UNKNOWN: caller time range.",
+      "lines": [
+        297
+      ],
+      "evidence": "Convert the supplied time using the current output rate, then clear the low four sample bits. RE_ORIGINAL_QUIRK: preserve the existing add-0.5/truncate arithmetic and mask order; RE_UNKNOWN: caller time range.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "_timeToSamples",
+          "declaration_line": 296,
+          "lines": [
+            297
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-f5f8a50cd358",
+      "kind": "original_quirk",
+      "path": "src/libultra/audio/synthesizer.c",
+      "symbol": "Initialize synthesis filters, physical-voice lists and the parameter pool from the supplied configuration. RE_UNKNOWN: heap capacity and caller configuration bounds. RE_ORIGINAL_QUIRK: preserve direct use of allocation results and initialization order.",
+      "lines": [
+        41
+      ],
+      "evidence": "Initialize synthesis filters, physical-voice lists and the parameter pool from the supplied configuration. RE_UNKNOWN: heap capacity and caller configuration bounds. RE_ORIGINAL_QUIRK: preserve direct use of allocation results and initialization order.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "alSynNew",
+          "declaration_line": 40,
+          "lines": [
+            41
           ]
         }
       ]

@@ -250,3 +250,10 @@ osViModeNtscLan1 = D_80020BB0;
 __osContinitialized = D_80020A20;
 __osEepromTimerQ = D_80032258;
 __osEepromTimerMsg = D_80032270;
+
+/* Preserve original return-stub and constant-slot addresses without allocating storage. */
+/* RE_UNKNOWN: return-stub roles; these two eight-byte windows receive no recovery credit. */
+func_8000ABC0 = 0x8000ABC0;
+func_8000AD00 = 0x8000AD00;
+D_80021160 = 0x80021160;
+D_80021168 = 0x80021168;
