@@ -243,6 +243,8 @@ segments:
       - [0x15D10, asm, sl_PFS_RepairPackId_retained_15D10]
       - [0x16060, c, libultra/io/contpfs]
       - [0x16720, asm, sl_PFS_retained_16720]
+      - [0x16B70, c, libultra/io/pfschecker]
+      - [0x17510, asm, sl_PFS_retained_17510]
       - [0x181D0, c, libultra/libc/string]
       - [0x18270, c, libultra/audio/filter]
       - [0x18290, c, libultra/audio/reverb]

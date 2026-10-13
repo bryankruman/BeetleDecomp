@@ -273,3 +273,8 @@ func_80015014 = __osIdCheckSum;
 __osPfsInodeCacheChannel = D_80020F00;
 __osPfsInodeCacheBank = D_80020F04;
 __osPfsInodeCache = D_80033630;
+
+/* Preserve native checker entry addresses without allocating storage. */
+func_80015F70 = osPfsChecker;
+func_800164A8 = corrupted_init;
+func_80016774 = corrupted;

@@ -312,6 +312,7 @@
     "src/libultra/io/contsetch.c": "0c5bc528e0c93168789d1e8a84ddb88d386d06948cfd760c6104b40e04a24caa",
     "src/libultra/io/crc.c": "8235ce349186092b1afd424bdf4e9acd9d4a0d571e6ab7e5e5db608387f7abc3",
     "src/libultra/io/epirawio.c": "a332fc3652771cf8c00233bc463586486fc7400c8cfd53c322ed85685d9bbf8b",
+    "src/libultra/io/pfschecker.c": "392bd73a5e90a464cb76b7101075193c6a1fc08b4a83f18d76ff0ad7a066c73f",
     "src/libultra/io/pfsisplug.c": "c0c2eae5a8b136e9dbc156c18a291f4ca6fcfbb8c11f8fe0ef01a2ed037a2eca",
     "src/libultra/io/pfsselectbank.c": "220e29cc932c5187eda4e55c6279d22a57fd4635c3429afba4578febdae37391",
     "src/libultra/io/piacs.c": "1e1868dbf136a88ff9f6d089b0205f0d130e3669d93f36e70d87375dd8f589f6",
@@ -520,11 +521,11 @@
     "conditional_draft": 4,
     "decompiler_local": 622,
     "draft_marker": 54,
-    "explicit_unknown": 1883,
+    "explicit_unknown": 1885,
     "layout_padding": 281,
     "offset_field": 1751,
     "opaque_type": 283,
-    "original_quirk": 520,
+    "original_quirk": 524,
     "uncertainty_note": 88,
     "unused_identifier": 148
   },
@@ -119651,6 +119652,36 @@
       "evidence": "* Synchronize handle-selected PI timing when necessary, then write one word * through the handle base address combined with the device address. * RE_ORIGINAL_QUIRK: Repeated volatile status reads have no timeout. * RE_ORIGINAL_QUIRK: Keep pointer comparison, live field reloads, timing * write order, and the final retained current-handle update. * RE_UNKNOWN: Caller guarantees for handle domain and lifetime are unproved. * RE_UNKNOWN: Caller address, alignment, and pointer guarantees are unproved."
     },
     {
+      "id": "Q-1431907ac596",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/io/pfschecker.c",
+      "symbol": "Controller Pak directory-chain and inode consistency checks. * RE_UNKNOWN: Exact game SDK release, mixed helper revision and live directory/page bounds are unproved. * Preserve the stock treatment of PFS_ERR_INCONSISTENT and early I/O error returns.",
+      "lines": [
+        1
+      ],
+      "evidence": "Controller Pak directory-chain and inode consistency checks. * RE_UNKNOWN: Exact game SDK release, mixed helper revision and live directory/page bounds are unproved. * Preserve the stock treatment of PFS_ERR_INCONSISTENT and early I/O error returns."
+    },
+    {
+      "id": "Q-e1688922bcb3",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/io/pfschecker.c",
+      "symbol": "RE_UNKNOWN: caller guarantees for dir_size fitting these16 slots are unproved.",
+      "lines": [
+        24
+      ],
+      "evidence": "RE_UNKNOWN: caller guarantees for dir_size fitting these16 slots are unproved.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "osPfsChecker",
+          "declaration_line": 17,
+          "lines": [
+            24
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-dc44af896c68",
       "kind": "explicit_unknown",
       "path": "src/libultra/io/pfsisplug.c",
@@ -232955,6 +232986,88 @@
         1
       ],
       "evidence": "* Synchronize handle-selected PI timing when necessary, then write one word * through the handle base address combined with the device address. * RE_ORIGINAL_QUIRK: Repeated volatile status reads have no timeout. * RE_ORIGINAL_QUIRK: Keep pointer comparison, live field reloads, timing * write order, and the final retained current-handle update. * RE_UNKNOWN: Caller guarantees for handle domain and lifetime are unproved. * RE_UNKNOWN: Caller address, alignment, and pointer guarantees are unproved."
+    },
+    {
+      "id": "Q-1bbcc40ab627",
+      "kind": "original_quirk",
+      "path": "src/libultra/io/pfschecker.c",
+      "symbol": "RE_ORIGINAL_QUIRK: preserve the original chain walk without a cycle or iteration limit.",
+      "lines": [
+        59,
+        96
+      ],
+      "evidence": "RE_ORIGINAL_QUIRK: preserve the original chain walk without a cycle or iteration limit.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "osPfsChecker",
+          "declaration_line": 17,
+          "lines": [
+            59,
+            96
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-b9663208b6b4",
+      "kind": "original_quirk",
+      "path": "src/libultra/io/pfschecker.c",
+      "symbol": "RE_ORIGINAL_QUIRK: return the stock PFS_ERR_NEW_PACK constant at this reference threshold.",
+      "lines": [
+        258
+      ],
+      "evidence": "RE_ORIGINAL_QUIRK: return the stock PFS_ERR_NEW_PACK constant at this reference threshold.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "corrupted",
+          "declaration_line": 226,
+          "lines": [
+            258
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-9ed94a48d518",
+      "kind": "original_quirk",
+      "path": "src/libultra/io/pfschecker.c",
+      "symbol": "RE_ORIGINAL_QUIRK: this flag follows cleared directory entries, not every rewritten inode block.",
+      "lines": [
+        176
+      ],
+      "evidence": "RE_ORIGINAL_QUIRK: this flag follows cleared directory entries, not every rewritten inode block.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "osPfsChecker",
+          "declaration_line": 17,
+          "lines": [
+            176
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-c59acd240037",
+      "kind": "original_quirk",
+      "path": "src/libultra/io/pfschecker.c",
+      "symbol": "RE_ORIGINAL_QUIRK: use the full page byte without the later 0x7F mask.",
+      "lines": [
+        213
+      ],
+      "evidence": "RE_ORIGINAL_QUIRK: use the full page byte without the later 0x7F mask.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "corrupted_init",
+          "declaration_line": 185,
+          "lines": [
+            213
+          ]
+        }
+      ]
     },
     {
       "id": "Q-1c854e3a5859",

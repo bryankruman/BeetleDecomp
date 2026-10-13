@@ -17,8 +17,8 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 1883 |
-| Preserved RE_ORIGINAL_QUIRK notes | 520 |
+| Explicit RE_UNKNOWN notes | 1885 |
+| Preserved RE_ORIGINAL_QUIRK notes | 524 |
 | Older comments with uncertainty language | 88 |
 | Documented original-behavior audits | 30 |
 | Assembly-backed functions or data | 749 |
@@ -1390,6 +1390,17 @@ For every future source wave, regenerate and check this index after code and str
 | explicit_unknown | `* Synchronize handle-selected PI timing when necessary, then write one word * through the handle base address combined with the device address. * RE_ORIGINAL_QUIRK: Repeated vol...` | — | [1](../src/libultra/io/epirawio.c#L1) |
 | original_quirk | `* Synchronize handle-selected PI timing when necessary, then read one word * through the handle base address combined with the device address. * RE_ORIGINAL_QUIRK: Repeated vola...` | — | [34](../src/libultra/io/epirawio.c#L34) |
 | original_quirk | `* Synchronize handle-selected PI timing when necessary, then write one word * through the handle base address combined with the device address. * RE_ORIGINAL_QUIRK: Repeated vol...` | — | [1](../src/libultra/io/epirawio.c#L1) |
+
+## src/libultra/io/pfschecker.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| explicit_unknown | `Controller Pak directory-chain and inode consistency checks. * RE_UNKNOWN: Exact game SDK release, mixed helper revision and live directory/page bounds are unproved. * Preserve ...` | — | [1](../src/libultra/io/pfschecker.c#L1) |
+| explicit_unknown | `RE_UNKNOWN: caller guarantees for dir_size fitting these16 slots are unproved.` | function `osPfsChecker` | [24](../src/libultra/io/pfschecker.c#L24) |
+| original_quirk | `RE_ORIGINAL_QUIRK: preserve the original chain walk without a cycle or iteration limit.` | function `osPfsChecker` | [59](../src/libultra/io/pfschecker.c#L59), [96](../src/libultra/io/pfschecker.c#L96) |
+| original_quirk | `RE_ORIGINAL_QUIRK: return the stock PFS_ERR_NEW_PACK constant at this reference threshold.` | function `corrupted` | [258](../src/libultra/io/pfschecker.c#L258) |
+| original_quirk | `RE_ORIGINAL_QUIRK: this flag follows cleared directory entries, not every rewritten inode block.` | function `osPfsChecker` | [176](../src/libultra/io/pfschecker.c#L176) |
+| original_quirk | `RE_ORIGINAL_QUIRK: use the full page byte without the later 0x7F mask.` | function `corrupted_init` | [213](../src/libultra/io/pfschecker.c#L213) |
 
 ## src/libultra/io/pfsisplug.c
 
