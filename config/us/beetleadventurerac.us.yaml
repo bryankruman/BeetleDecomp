@@ -162,7 +162,7 @@ segments:
       - [0xB6D0, c, libultra/os/yieldthread]
       - [0xB720, asm]
       - [0xB7C0, c, libultra/audio/synthesizer]
-      - [0xBEA0, asm]
+      - [0xBEA0, c, libultra/audio/bnkf]
       - [0xC0F0, c, libultra/audio/seqpdelete]
       - [0xC120, c, libultra/audio/cspgetfxmix]
       - [0xC140, c, libultra/audio/cspgetpan]

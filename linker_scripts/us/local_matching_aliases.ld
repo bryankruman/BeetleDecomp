@@ -257,3 +257,10 @@ func_8000ABC0 = 0x8000ABC0;
 func_8000AD00 = 0x8000AD00;
 D_80021160 = 0x80021160;
 D_80021168 = 0x80021168;
+
+/* Preserve exact private bank-file body and return-stub addresses; allocate no storage. */
+/* RE_UNKNOWN: the three return stubs remain unassessed and receive no recovery credit. */
+func_8000B2A0 = 0x8000B2A0;
+func_8000B2A8 = 0x8000B2A8;
+func_8000B2B0 = 0x8000B2B0;
+func_8000B39C = 0x8000B39C;

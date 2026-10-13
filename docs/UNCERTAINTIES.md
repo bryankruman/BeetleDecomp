@@ -17,8 +17,8 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 1878 |
-| Preserved RE_ORIGINAL_QUIRK notes | 515 |
+| Explicit RE_UNKNOWN notes | 1879 |
+| Preserved RE_ORIGINAL_QUIRK notes | 516 |
 | Older comments with uncertainty language | 88 |
 | Documented original-behavior audits | 30 |
 | Assembly-backed functions or data | 749 |
@@ -1045,6 +1045,13 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unkC` | function `uvGameInit`, function `uvSetGameState` | [101](../src/game_init.c#L101), [170](../src/game_init.c#L170) |
 | opaque_type | `UnkStruct_8002D1A4` | global `gGameExports` | [18](../src/game_init.c#L18) |
 | original_quirk | `Initialize the existing settings fields and player defaults in their * original order, enter SELECTION, handle the missing-controller path, then * drive the game update/state-ch...` | function `uvGameInit` | [23](../src/game_init.c#L23) |
+
+## src/libultra/audio/bnkf.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| explicit_unknown | `==================================================================== * bnkf.c - RE_UNKNOWN: exact game SDK release is unproved. * * Copyright 1993, Silicon Graphics, Inc. * All ...` | — | [1](../src/libultra/audio/bnkf.c#L1) |
+| original_quirk | `* RE_ORIGINAL_QUIRK: Patch flags guard repeated in-place conversion; array bounds remain caller-owned. * Keep related patch helpers together for original whole-unit optimization.` | function `_bnkfPatchBank` | [25](../src/libultra/audio/bnkf.c#L25) |
 
 ## src/libultra/audio/cseq.c
 

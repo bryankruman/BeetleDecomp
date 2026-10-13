@@ -227,6 +227,7 @@
     "src/game_init.c": "accd6a7fe1c87cb941f8d769f43b69561cc672436c765674eaa2bd43486a1994",
     "src/isprint.c": "0a772034f3731b8677ddd0d15e2977f08f7ef6882db5055abfbd6dd09a7df3ca",
     "src/libultra/audio/auxbus.c": "6df923275b93b794690cf9763d60112b49454f388c87314ea57836cceb043dc3",
+    "src/libultra/audio/bnkf.c": "a406e3488c81c2b59b7820a29f9801c221938dd1359db628726bae33b1cb6800",
     "src/libultra/audio/cents2ratio.c": "3ade16afa196e4f358697946a417ab23c3559f1c3401f715caf3b0f10e5851e7",
     "src/libultra/audio/copy.c": "0ea46e63cd45590eca6cd360293abb458823843d8afd9266d0d53128b4827b2d",
     "src/libultra/audio/cseq.c": "bd4bfeaf1182c8ab8d4a13fcb5529c51539cd1720d97b441cf53c9b7b8ad8daf",
@@ -515,11 +516,11 @@
     "conditional_draft": 4,
     "decompiler_local": 622,
     "draft_marker": 54,
-    "explicit_unknown": 1878,
+    "explicit_unknown": 1879,
     "layout_padding": 281,
     "offset_field": 1751,
     "opaque_type": 283,
-    "original_quirk": 515,
+    "original_quirk": 516,
     "uncertainty_note": 88,
     "unused_identifier": 148
   },
@@ -117896,6 +117897,16 @@
       ]
     },
     {
+      "id": "Q-0003ae124a97",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/bnkf.c",
+      "symbol": "==================================================================== * bnkf.c - RE_UNKNOWN: exact game SDK release is unproved. * * Copyright 1993, Silicon Graphics, Inc. * All Rights Reserved. * * This is UNPUBLISHED PROPRIETARY SOURCE CODE of Silicon Graphics, * Inc.; the contents of this file may not be disclosed to third * parties, copied or duplicated in any form, in whole or in part, * without the prior written permission of Silicon Graphics, Inc. * * RESTRICTED RIGHTS LEGEND: * Use, duplication or disclosure by the Government is subject to * restrictions as set forth in subdivision (c)(1)(ii) of the Rights * in Technical Data and Computer Software clause at DFARS * 252.227-7013, and/or in similar or successor clauses in the FAR, * DOD or NASA FAR Supplement. Unpublished - rights reserved under the * Copyright Laws of the United States. *====================================================================",
+      "lines": [
+        1
+      ],
+      "evidence": "==================================================================== * bnkf.c - RE_UNKNOWN: exact game SDK release is unproved. * * Copyright 1993, Silicon Graphics, Inc. * All Rights Reserved. * * This is UNPUBLISHED PROPRIETARY SOURCE CODE of Silicon Graphics, * Inc.; the contents of this file may not be disclosed to third * parties, copied or duplicated in any form, in whole or in part, * without the prior written permission of Silicon Graphics, Inc. * * RESTRICTED RIGHTS LEGEND: * Use, duplication or disclosure by the Government is subject to * restrictions as set forth in subdivision (c)(1)(ii) of the Rights * in Technical Data and Computer Software clause at DFARS * 252.227-7013, and/or in similar or successor clauses in the FAR, * DOD or NASA FAR Supplement. Unpublished - rights reserved under the * Copyright Laws of the United States. *===================================================================="
+    },
+    {
       "id": "Q-1d92f78c49aa",
       "kind": "explicit_unknown",
       "path": "src/libultra/audio/cseq.c",
@@ -232607,6 +232618,26 @@
           "declaration_line": 31,
           "lines": [
             23
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-11b0be3beede",
+      "kind": "original_quirk",
+      "path": "src/libultra/audio/bnkf.c",
+      "symbol": "* RE_ORIGINAL_QUIRK: Patch flags guard repeated in-place conversion; array bounds remain caller-owned. * Keep related patch helpers together for original whole-unit optimization.",
+      "lines": [
+        25
+      ],
+      "evidence": "* RE_ORIGINAL_QUIRK: Patch flags guard repeated in-place conversion; array bounds remain caller-owned. * Keep related patch helpers together for original whole-unit optimization.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "_bnkfPatchBank",
+          "declaration_line": 29,
+          "lines": [
+            25
           ]
         }
       ]
