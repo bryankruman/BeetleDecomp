@@ -126,7 +126,7 @@ segments:
       - [0x7F80, c, libultra/os/setthreadpri]
       - [0x8060, c, libultra/io/pidma]
       - [0x8170, c, libultra/os/settimer]
-      - [0x8250, asm]
+      - [0x8250, c, libultra/io/controller]
       - [0x8590, c, libultra/io/piacs]
       - [0x8650, asm]
       - [0x8FE0, c, libultra/io/vi]

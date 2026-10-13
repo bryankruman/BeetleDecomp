@@ -304,6 +304,7 @@
     "src/libultra/io/aisetnextbuf.c": "a56af1027e3d9c8fac23d75361e9a8d92cc4578d83a3bb4d3b9c4dc1cf288a78",
     "src/libultra/io/contquery.c": "a6c202027824498463298d5ccb6ebee06322e6a1cb18872d549dd57cbb9a7033",
     "src/libultra/io/contreaddata.c": "22b3759982a727d22f8e4b9541dabd6d34572a4da662a9d4890e2cd5feb05cf3",
+    "src/libultra/io/controller.c": "c4c0f9d8b0c836e4ee72047c4cab29afcbbb4192496e90020f4fdd69010701dd",
     "src/libultra/io/contsetch.c": "0c5bc528e0c93168789d1e8a84ddb88d386d06948cfd760c6104b40e04a24caa",
     "src/libultra/io/epirawio.c": "a332fc3652771cf8c00233bc463586486fc7400c8cfd53c322ed85685d9bbf8b",
     "src/libultra/io/pfsisplug.c": "c0c2eae5a8b136e9dbc156c18a291f4ca6fcfbb8c11f8fe0ef01a2ed037a2eca",
@@ -513,11 +514,11 @@
     "conditional_draft": 4,
     "decompiler_local": 622,
     "draft_marker": 54,
-    "explicit_unknown": 1866,
+    "explicit_unknown": 1868,
     "layout_padding": 281,
     "offset_field": 1750,
     "opaque_type": 283,
-    "original_quirk": 510,
+    "original_quirk": 512,
     "uncertainty_note": 88,
     "unused_identifier": 137
   },
@@ -119302,6 +119303,36 @@
       ]
     },
     {
+      "id": "Q-d9d352bcf0b4",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/io/controller.c",
+      "symbol": "RE_CONTRACT: Clear fifteen packet words, mark execution, repeat the eight-byte request for the shared count, and append the terminator. RE_UNKNOWN: The private backing allocation extent is not established.",
+      "lines": [
+        76
+      ],
+      "evidence": "RE_CONTRACT: Clear fifteen packet words, mark execution, repeat the eight-byte request for the shared count, and append the terminator. RE_UNKNOWN: The private backing allocation extent is not established.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__osPackRequestData",
+          "declaration_line": 76,
+          "lines": [
+            76
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-2152320553aa",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/io/controller.c",
+      "symbol": "RE_UNKNOWN: Exact game SDK release and private backing extents are unproved; retain existing storage.",
+      "lines": [
+        14
+      ],
+      "evidence": "RE_UNKNOWN: Exact game SDK release and private backing extents are unproved; retain existing storage."
+    },
+    {
       "id": "Q-5e8460390642",
       "kind": "explicit_unknown",
       "path": "src/libultra/io/epirawio.c",
@@ -232345,6 +232376,46 @@
           "declaration_line": 14,
           "lines": [
             10
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-4f08a98385b5",
+      "kind": "original_quirk",
+      "path": "src/libultra/io/controller.c",
+      "symbol": "RE_CONTRACT: Decode successful channel type/status and output the responding-channel mask. RE_ORIGINAL_QUIRK: Error channels retain their previous type/status.",
+      "lines": [
+        54
+      ],
+      "evidence": "RE_CONTRACT: Decode successful channel type/status and output the responding-channel mask. RE_ORIGINAL_QUIRK: Error channels retain their previous type/status.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__osContGetInitData",
+          "declaration_line": 54,
+          "lines": [
+            54
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-8c7b5347c372",
+      "kind": "original_quirk",
+      "path": "src/libultra/io/controller.c",
+      "symbol": "RE_CONTRACT: Once after the startup delay, query controller status and initialize access/message queues. RE_ORIGINAL_QUIRK: Set initialized before blocking calls and return only the second DMA result.",
+      "lines": [
+        16
+      ],
+      "evidence": "RE_CONTRACT: Once after the startup delay, query controller status and initialize access/message queues. RE_ORIGINAL_QUIRK: Set initialized before blocking calls and return only the second DMA result.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "osContInit",
+          "declaration_line": 16,
+          "lines": [
+            16
           ]
         }
       ]

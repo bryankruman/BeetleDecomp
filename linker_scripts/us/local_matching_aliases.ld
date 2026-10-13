@@ -245,3 +245,8 @@ vi = D_80020A80;
 osViModePalLan1 = D_80020B10;
 osViModeMpalLan1 = D_80020B60;
 osViModeNtscLan1 = D_80020BB0;
+
+/* Native-proven controller initialization and EEPROM-message views; allocate no storage. */
+__osContinitialized = D_80020A20;
+__osEepromTimerQ = D_80032258;
+__osEepromTimerMsg = D_80032270;

@@ -721,3 +721,8 @@ $(BUILD_DIR)/src/libultra/io/vi.o: src/libultra/io/vi.c $(SDK_AUDIO_HEADERS) $(S
 $(BUILD_DIR)/src/libultra/io/viswapcontext.o: src/libultra/io/viswapcontext.c $(SDK_AUDIO_HEADERS) $(SDK_CONTROLLER_HEADERS) include/2.0I/PRinternal/viint.h tools/asm-processor/build.py tools/asm-processor/asm_processor.py tools/asm-processor/prelude.inc
 	$(V)mkdir -p $(dir $@)
 	$(V)$(ASM_PROC) $(ASM_PROC_FLAGS) $(SDK_AUDIO_CC) -- $(AS) $(ASFLAGS) -- $(subst -O3,-O2,$(SDK_VI_J_FLAGS)) -o $@ $<
+
+# Native-matched controller initialization and status-packet helpers; keep existing storage.
+$(BUILD_DIR)/src/libultra/io/controller.o: src/libultra/io/controller.c $(SDK_AUDIO_HEADERS) $(SDK_CONTROLLER_HEADERS) tools/asm-processor/build.py tools/asm-processor/asm_processor.py tools/asm-processor/prelude.inc
+	$(V)mkdir -p $(dir $@)
+	$(V)$(ASM_PROC) $(ASM_PROC_FLAGS) $(SDK_AUDIO_CC) -- $(AS) $(ASFLAGS) -- $(subst -O3,-O1,$(SDK_AUDIO_FLAGS)) -o $@ $<

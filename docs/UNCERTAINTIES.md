@@ -17,8 +17,8 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 1866 |
-| Preserved RE_ORIGINAL_QUIRK notes | 510 |
+| Explicit RE_UNKNOWN notes | 1868 |
+| Preserved RE_ORIGINAL_QUIRK notes | 512 |
 | Older comments with uncertainty language | 88 |
 | Documented original-behavior audits | 30 |
 | Assembly-backed functions or data | 750 |
@@ -1327,6 +1327,15 @@ For every future source wave, regenerate and check this index after code and str
 | original_quirk | `Decode each configured controller response into the caller's pad records. * RE_ORIGINAL_QUIRK: a channel error updates errno but preserves prior input fields. * RE_UNKNOWN: call...` | function `osContGetReadData` | [32](../src/libultra/io/contreaddata.c#L32) |
 | original_quirk | `Format button/stick commands in the existing shared PIF packet. * RE_ORIGINAL_QUIRK: the controller-count byte is reread at each loop condition; * packet storage also has existi...` | function `__osPackReadData` | [55](../src/libultra/io/contreaddata.c#L55) |
 | original_quirk | `Start a button/stick read under the existing SI access lock. * RE_ORIGINAL_QUIRK: the write-DMA status is superseded by the read-DMA status; * the request is rebuilt only when t...` | function `osContStartReadData` | [10](../src/libultra/io/contreaddata.c#L10) |
+
+## src/libultra/io/controller.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| explicit_unknown | `RE_CONTRACT: Clear fifteen packet words, mark execution, repeat the eight-byte request for the shared count, and append the terminator. RE_UNKNOWN: The private backing allocatio...` | function `__osPackRequestData` | [76](../src/libultra/io/controller.c#L76) |
+| explicit_unknown | `RE_UNKNOWN: Exact game SDK release and private backing extents are unproved; retain existing storage.` | — | [14](../src/libultra/io/controller.c#L14) |
+| original_quirk | `RE_CONTRACT: Decode successful channel type/status and output the responding-channel mask. RE_ORIGINAL_QUIRK: Error channels retain their previous type/status.` | function `__osContGetInitData` | [54](../src/libultra/io/controller.c#L54) |
+| original_quirk | `RE_CONTRACT: Once after the startup delay, query controller status and initialize access/message queues. RE_ORIGINAL_QUIRK: Set initialized before blocking calls and return only...` | function `osContInit` | [16](../src/libultra/io/controller.c#L16) |
 
 ## src/libultra/io/epirawio.c
 
