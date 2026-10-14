@@ -83,7 +83,120 @@ f32 uvSqrtF(f32 arg0) {
 #line 67 "src/modules/uvmath_rom.c"
 
 // Already matched but needs rodata migration
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvmath_rom/uvSinF.s")
+#line 69 "src/modules/uvmath_rom.c"
+/**************************************************************************
+ *									  *
+ *		 Copyright (C) 1994, Silicon Graphics, Inc.		  *
+ *									  *
+ *  These coded instructions, statements, and computer programs  contain  *
+ *  unpublished  proprietary  information of Silicon Graphics, Inc., and  *
+ *  are protected by Federal copyright law.  They  may  not be disclosed  *
+ *  to  third  parties  or copied or duplicated in any form, in whole or  *
+ *  in part, without the prior written consent of Silicon Graphics, Inc.  *
+ *									  *
+ **************************************************************************/
+
+/* Approximate sine of radians using the existing split-pi reduction and
+ * double-precision polynomial. Tiny inputs return unchanged, preserving their
+ * signed zero; the bit-defined magnitude gates and arithmetic order are kept.
+ * RE_ORIGINAL_QUIRK: inputs outside the reduction domain return zero, except
+ * NaN inputs return the existing finite scalar (0x4eff2000), not a quiet NaN.
+ * RE_UNKNOWN: approximation error, unusual rounding modes, caller dependence
+ * on exceptional inputs, and portability of the SDK float/int bit view.
+ * Existing rodata owns these consumed views; no replacement storage is added.
+ */
+extern double D_uvmath_rom_00400A60[5];
+extern double D_uvmath_rom_00400A88;
+extern double D_uvmath_rom_00400A90;
+extern double D_uvmath_rom_00400A98; /* first eight bytes only */
+extern float D_uvmath_rom_00400AA4;
+
+float uvSinF(float radians)
+
+{
+    double reducedRadians, squaredRadians, correctionPolynomial;
+    double reductionMultiple;
+    int halfTurnIndex;
+    double approximateSine;
+    int floatBits, magnitudeBits;
+
+
+    floatBits = *(int *)&radians;
+    magnitudeBits = (floatBits >> 22);
+    magnitudeBits &= 0x1ff;
+
+    /* magnitudeBits is exponent(radians) + 1 bit of mantissa */
+
+    if ( magnitudeBits < 0xff )
+    {
+        /* |radians| < 1.5 */
+
+        reducedRadians = radians;
+
+        if ( magnitudeBits >= 0xe6 )
+        {
+            /* |radians| >= 2^(-12) */
+
+            /* compute sin(radians) with a standard polynomial approximation */
+
+            squaredRadians = reducedRadians*reducedRadians;
+
+            correctionPolynomial = ((D_uvmath_rom_00400A60[4]*squaredRadians + D_uvmath_rom_00400A60[3])*squaredRadians + D_uvmath_rom_00400A60[2])*squaredRadians + D_uvmath_rom_00400A60[1];
+
+            approximateSine = reducedRadians + (reducedRadians*squaredRadians)*correctionPolynomial;
+
+            return ( (float)approximateSine );
+        }
+
+        return ( radians );
+    }
+
+    if ( magnitudeBits < 0x136 )
+    {
+        /* |radians| < 2^28 */
+
+        reducedRadians = radians;
+
+        /* reduce argument to +/- pi/2 */
+
+        reductionMultiple = reducedRadians*D_uvmath_rom_00400A88;
+
+        halfTurnIndex = (int)(((reductionMultiple) >= 0.0) ? ((reductionMultiple) + 0.5) : ((reductionMultiple) - 0.5));
+        reductionMultiple = halfTurnIndex;
+
+        reducedRadians = reducedRadians - reductionMultiple*D_uvmath_rom_00400A90;
+        reducedRadians = reducedRadians - reductionMultiple*D_uvmath_rom_00400A98; /* reducedRadians = radians - halfTurnIndex*pi */
+
+        /* compute sin(reducedRadians) as before, negating approximateSine if halfTurnIndex is odd
+        */
+
+        squaredRadians = reducedRadians*reducedRadians;
+
+        correctionPolynomial = ((D_uvmath_rom_00400A60[4]*squaredRadians + D_uvmath_rom_00400A60[3])*squaredRadians + D_uvmath_rom_00400A60[2])*squaredRadians + D_uvmath_rom_00400A60[1];
+
+        approximateSine = reducedRadians + (reducedRadians*squaredRadians)*correctionPolynomial;
+
+
+        if ( (halfTurnIndex & 1) == 0 )
+            return ( (float)approximateSine );
+
+        return ( -(float)approximateSine );
+    }
+
+    if ( radians != radians )
+    {
+        /* Preserve the original finite scalar returned for a NaN input. */
+
+        /* Original module has no errno-call path. */
+
+        return ( D_uvmath_rom_00400AA4 );
+    }
+
+    /* just give up and return 0.0 */
+
+    return ( 0.0f );
+}
+#line 70 "src/modules/uvmath_rom.c"
 
 // Already matched but needs rodata migration
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvmath_rom/uvCosF.s")

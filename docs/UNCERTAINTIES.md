@@ -17,13 +17,13 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 1899 |
-| Preserved RE_ORIGINAL_QUIRK notes | 530 |
+| Explicit RE_UNKNOWN notes | 1900 |
+| Preserved RE_ORIGINAL_QUIRK notes | 531 |
 | Older comments with uncertainty language | 88 |
 | Documented original-behavior audits | 30 |
-| Assembly-backed functions or data | 745 |
+| Assembly-backed functions or data | 744 |
 | Address-based function identifiers | 905 |
-| Address-based global identifiers | 1643 |
+| Address-based global identifiers | 1648 |
 | Offset-based fields or neutral typed fields | 1770 |
 | Layout padding to preserve | 281 |
 | Unresolved type names | 285 |
@@ -9237,33 +9237,39 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
-| address_function | `func_uvmath_rom_004006F8` | function `__entrypoint_func_uvmathInitializeExports`, function `func_uvmath_rom_004006F8`, function `func_uvmath_rom_004006F8`, function `uvArcCosWithEndpointToleranceF`, function `uvArcSinClampedF` | [18](../src/modules/uvmath_rom.c#L18), [61](../src/modules/uvmath_rom.c#L61), [135](../src/modules/uvmath_rom.c#L135), [138](../src/modules/uvmath_rom.c#L138), [170](../src/modules/uvmath_rom.c#L170), [176](../src/modules/uvmath_rom.c#L176) |
-| address_global | `D_uvmath_rom_00400AAC` | function `uvArcCosWithEndpointToleranceF`, global `D_uvmath_rom_00400AAC` | [142](../src/modules/uvmath_rom.c#L142), [159](../src/modules/uvmath_rom.c#L159), [167](../src/modules/uvmath_rom.c#L167) |
-| address_global | `D_uvmath_rom_00400AB0` | function `uvArcCosWithEndpointToleranceF`, global `D_uvmath_rom_00400AB0` | [143](../src/modules/uvmath_rom.c#L143), [160](../src/modules/uvmath_rom.c#L160) |
-| address_global | `D_uvmath_rom_00400AC8` | function `uvMathGetCounterFraction`, global `D_uvmath_rom_00400AC8` | [259](../src/modules/uvmath_rom.c#L259), [265](../src/modules/uvmath_rom.c#L265) |
-| address_global | `D_uvmath_rom_00400ACC` | function `uvWrapAngleRadians`, global `D_uvmath_rom_00400ACC` | [294](../src/modules/uvmath_rom.c#L294), [309](../src/modules/uvmath_rom.c#L309), [312](../src/modules/uvmath_rom.c#L312) |
-| address_global | `D_uvmath_rom_00400AD0` | function `uvWrapAngleRadians`, global `D_uvmath_rom_00400AD0` | [295](../src/modules/uvmath_rom.c#L295), [311](../src/modules/uvmath_rom.c#L311) |
-| address_global | `D_uvmath_rom_00400AD4` | function `uvWrapAngleRadians`, global `D_uvmath_rom_00400AD4` | [296](../src/modules/uvmath_rom.c#L296), [314](../src/modules/uvmath_rom.c#L314) |
-| address_global | `D_uvmath_rom_00400AD8` | function `uvWrapAngleRadians`, global `D_uvmath_rom_00400AD8` | [297](../src/modules/uvmath_rom.c#L297), [315](../src/modules/uvmath_rom.c#L315) |
-| address_global | `D_uvmath_rom_00400ADC` | function `uvFoldAngleRadians`, global `D_uvmath_rom_00400ADC` | [331](../src/modules/uvmath_rom.c#L331), [346](../src/modules/uvmath_rom.c#L346) |
-| address_global | `D_uvmath_rom_00400AE0` | function `uvFoldAngleRadians`, global `D_uvmath_rom_00400AE0` | [332](../src/modules/uvmath_rom.c#L332), [347](../src/modules/uvmath_rom.c#L347) |
-| address_global | `D_uvmath_rom_00400AE4` | function `uvFoldAngleRadians`, global `D_uvmath_rom_00400AE4` | [333](../src/modules/uvmath_rom.c#L333), [349](../src/modules/uvmath_rom.c#L349) |
-| address_global | `D_uvmath_rom_00400AE8` | function `uvFoldAngleRadians`, global `D_uvmath_rom_00400AE8` | [334](../src/modules/uvmath_rom.c#L334), [350](../src/modules/uvmath_rom.c#L350) |
-| address_global | `D_uvmath_rom_00400AF0` | function `uvGetRandomState`, function `uvRandFLcg`, function `uvSrand`, global `D_uvmath_rom_00400AF0` | [7](../src/modules/uvmath_rom.c#L7), [243](../src/modules/uvmath_rom.c#L243), [253](../src/modules/uvmath_rom.c#L253), [254](../src/modules/uvmath_rom.c#L254), [272](../src/modules/uvmath_rom.c#L272) |
-| assembly | `func_uvmath_rom_004006F8` | — | [218](../src/modules/uvmath_rom.c#L218) |
-| assembly | `uvCosF` | — | [89](../src/modules/uvmath_rom.c#L89) |
-| assembly | `uvSinF` | — | [86](../src/modules/uvmath_rom.c#L86) |
-| conditional_draft | `NEEDS_RODATA` | — | [175](../src/modules/uvmath_rom.c#L175) |
+| address_function | `func_uvmath_rom_004006F8` | function `__entrypoint_func_uvmathInitializeExports`, function `func_uvmath_rom_004006F8`, function `func_uvmath_rom_004006F8`, function `uvArcCosWithEndpointToleranceF`, function `uvArcSinClampedF` | [18](../src/modules/uvmath_rom.c#L18), [61](../src/modules/uvmath_rom.c#L61), [248](../src/modules/uvmath_rom.c#L248), [251](../src/modules/uvmath_rom.c#L251), [283](../src/modules/uvmath_rom.c#L283), [289](../src/modules/uvmath_rom.c#L289) |
+| address_global | `D_uvmath_rom_00400A60` | function `uvSinF`, global `D_uvmath_rom_00400A60` | [108](../src/modules/uvmath_rom.c#L108), [144](../src/modules/uvmath_rom.c#L144), [175](../src/modules/uvmath_rom.c#L175) |
+| address_global | `D_uvmath_rom_00400A88` | function `uvSinF`, global `D_uvmath_rom_00400A88` | [109](../src/modules/uvmath_rom.c#L109), [162](../src/modules/uvmath_rom.c#L162) |
+| address_global | `D_uvmath_rom_00400A90` | function `uvSinF`, global `D_uvmath_rom_00400A90` | [110](../src/modules/uvmath_rom.c#L110), [167](../src/modules/uvmath_rom.c#L167) |
+| address_global | `D_uvmath_rom_00400A98` | function `uvSinF`, global `D_uvmath_rom_00400A98` | [111](../src/modules/uvmath_rom.c#L111), [168](../src/modules/uvmath_rom.c#L168) |
+| address_global | `D_uvmath_rom_00400AA4` | function `uvSinF`, global `D_uvmath_rom_00400AA4` | [112](../src/modules/uvmath_rom.c#L112), [192](../src/modules/uvmath_rom.c#L192) |
+| address_global | `D_uvmath_rom_00400AAC` | function `uvArcCosWithEndpointToleranceF`, global `D_uvmath_rom_00400AAC` | [255](../src/modules/uvmath_rom.c#L255), [272](../src/modules/uvmath_rom.c#L272), [280](../src/modules/uvmath_rom.c#L280) |
+| address_global | `D_uvmath_rom_00400AB0` | function `uvArcCosWithEndpointToleranceF`, global `D_uvmath_rom_00400AB0` | [256](../src/modules/uvmath_rom.c#L256), [273](../src/modules/uvmath_rom.c#L273) |
+| address_global | `D_uvmath_rom_00400AC8` | function `uvMathGetCounterFraction`, global `D_uvmath_rom_00400AC8` | [372](../src/modules/uvmath_rom.c#L372), [378](../src/modules/uvmath_rom.c#L378) |
+| address_global | `D_uvmath_rom_00400ACC` | function `uvWrapAngleRadians`, global `D_uvmath_rom_00400ACC` | [407](../src/modules/uvmath_rom.c#L407), [422](../src/modules/uvmath_rom.c#L422), [425](../src/modules/uvmath_rom.c#L425) |
+| address_global | `D_uvmath_rom_00400AD0` | function `uvWrapAngleRadians`, global `D_uvmath_rom_00400AD0` | [408](../src/modules/uvmath_rom.c#L408), [424](../src/modules/uvmath_rom.c#L424) |
+| address_global | `D_uvmath_rom_00400AD4` | function `uvWrapAngleRadians`, global `D_uvmath_rom_00400AD4` | [409](../src/modules/uvmath_rom.c#L409), [427](../src/modules/uvmath_rom.c#L427) |
+| address_global | `D_uvmath_rom_00400AD8` | function `uvWrapAngleRadians`, global `D_uvmath_rom_00400AD8` | [410](../src/modules/uvmath_rom.c#L410), [428](../src/modules/uvmath_rom.c#L428) |
+| address_global | `D_uvmath_rom_00400ADC` | function `uvFoldAngleRadians`, global `D_uvmath_rom_00400ADC` | [444](../src/modules/uvmath_rom.c#L444), [459](../src/modules/uvmath_rom.c#L459) |
+| address_global | `D_uvmath_rom_00400AE0` | function `uvFoldAngleRadians`, global `D_uvmath_rom_00400AE0` | [445](../src/modules/uvmath_rom.c#L445), [460](../src/modules/uvmath_rom.c#L460) |
+| address_global | `D_uvmath_rom_00400AE4` | function `uvFoldAngleRadians`, global `D_uvmath_rom_00400AE4` | [446](../src/modules/uvmath_rom.c#L446), [462](../src/modules/uvmath_rom.c#L462) |
+| address_global | `D_uvmath_rom_00400AE8` | function `uvFoldAngleRadians`, global `D_uvmath_rom_00400AE8` | [447](../src/modules/uvmath_rom.c#L447), [463](../src/modules/uvmath_rom.c#L463) |
+| address_global | `D_uvmath_rom_00400AF0` | function `uvGetRandomState`, function `uvRandFLcg`, function `uvSrand`, global `D_uvmath_rom_00400AF0` | [7](../src/modules/uvmath_rom.c#L7), [356](../src/modules/uvmath_rom.c#L356), [366](../src/modules/uvmath_rom.c#L366), [367](../src/modules/uvmath_rom.c#L367), [385](../src/modules/uvmath_rom.c#L385) |
+| assembly | `func_uvmath_rom_004006F8` | — | [331](../src/modules/uvmath_rom.c#L331) |
+| assembly | `uvCosF` | — | [202](../src/modules/uvmath_rom.c#L202) |
+| conditional_draft | `NEEDS_RODATA` | — | [288](../src/modules/uvmath_rom.c#L288) |
 | decompiler_local | `arg0` | function `uvSqrtF`, function `uvSqrtF` | [12](../src/modules/uvmath_rom.c#L12), [80](../src/modules/uvmath_rom.c#L80), [81](../src/modules/uvmath_rom.c#L81) |
+| explicit_unknown | `Approximate sine of radians using the existing split-pi reduction and * double-precision polynomial. Tiny inputs return unchanged, preserving their * signed zero; the bit-define...` | global `D_uvmath_rom_00400A60` | [99](../src/modules/uvmath_rom.c#L99) |
 | explicit_unknown | `Original no-op cleanup hook in module export slot zero. The generic * UVMO unload path invokes this hook before freeing the module exports; this * function releases no additiona...` | function `uvMathNoOpModuleCleanup` | [66](../src/modules/uvmath_rom.c#L66) |
 | explicit_unknown | `Publish all nineteen math exports in the original assignment order, * preserving the reserved module-entrypoint prefix in this function's name. * Use active recovered function c...` | function `__entrypoint_func_uvmathInitializeExports` | [33](../src/modules/uvmath_rom.c#L33) |
 | explicit_unknown | `Return zero for a negative input; otherwise forward the input to sqrtf, * including values for which the negative comparison is unordered. RE_UNKNOWN: * library exceptional-valu...` | function `uvSqrtF` | [75](../src/modules/uvmath_rom.c#L75) |
-| explicit_unknown | `Run the original subtraction and addition loops with the stored pi/full-turn * float words and inclusive endpoints. RE_UNKNOWN: caller values must permit * float progress; no no...` | function `uvWrapAngleRadians` | [299](../src/modules/uvmath_rom.c#L299) |
-| explicit_unknown | `Wrap through uvWrapAngleRadians, then reflect values beyond the stored * positive or negative half-pi thresholds using the original pi words. * Preserve the exact threshold bits...` | function `uvFoldAngleRadians` | [336](../src/modules/uvmath_rom.c#L336) |
+| explicit_unknown | `Run the original subtraction and addition loops with the stored pi/full-turn * float words and inclusive endpoints. RE_UNKNOWN: caller values must permit * float progress; no no...` | function `uvWrapAngleRadians` | [412](../src/modules/uvmath_rom.c#L412) |
+| explicit_unknown | `Wrap through uvWrapAngleRadians, then reflect values beyond the stored * positive or negative half-pi thresholds using the original pi words. * Preserve the exact threshold bits...` | function `uvFoldAngleRadians` | [449](../src/modules/uvmath_rom.c#L449) |
 | offset_field | `unk0` | function `__entrypoint_func_uvmathInitializeExports` | [43](../src/modules/uvmath_rom.c#L43) |
 | offset_field | `unk38` | function `__entrypoint_func_uvmathInitializeExports` | [52](../src/modules/uvmath_rom.c#L52) |
 | offset_field | `unk48` | function `__entrypoint_func_uvmathInitializeExports` | [60](../src/modules/uvmath_rom.c#L60) |
-| original_quirk | `Return the original endpoint values within the shared tolerance; * otherwise compute arccosine through the half-angle identity. * RE_ORIGINAL_QUIRK: retain the unguarded domain ...` | function `uvArcCosWithEndpointToleranceF` | [146](../src/modules/uvmath_rom.c#L146) |
+| original_quirk | `Approximate sine of radians using the existing split-pi reduction and * double-precision polynomial. Tiny inputs return unchanged, preserving their * signed zero; the bit-define...` | global `D_uvmath_rom_00400A60` | [99](../src/modules/uvmath_rom.c#L99) |
+| original_quirk | `Return the original endpoint values within the shared tolerance; * otherwise compute arccosine through the half-angle identity. * RE_ORIGINAL_QUIRK: retain the unguarded domain ...` | function `uvArcCosWithEndpointToleranceF` | [259](../src/modules/uvmath_rom.c#L259) |
 
 ## src/modules/uvmodel_rom.c
 

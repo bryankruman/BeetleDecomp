@@ -488,7 +488,7 @@
     "src/modules/uvjanimld_rom.c": "3f0275d8c092036ab2564b298fb0741b062371a4ecfc2a6d070f0f7dad7d2430",
     "src/modules/uvled_rom.c": "970408f3a836822612ad6419ae9de344443fb20ddc0c82fff77e5c734b876207",
     "src/modules/uvlight_rom.c": "b113975b133d8d258ecd1cd8ecfe2364711ea43975bd2849d78949543f6f84fb",
-    "src/modules/uvmath_rom.c": "bf028c8b69851dc8ff42ff91c90f4b05fd6bd0dcd6d55ef6d160d110d5acac0a",
+    "src/modules/uvmath_rom.c": "a4f1c992032ba447cd65daa4bfc988bb07bc0f870cc5f6d111b5cb0e1daafbe8",
     "src/modules/uvmodel_rom.c": "637e0ca79c1111af035251bda5b89d89118fad206ffea51742f0158cb38245e5",
     "src/modules/uvmodelld_rom.c": "2d205857badc4de9b9f7f0dd46d930a627d369ad278c1a9e4c5f5e837a0e2b51",
     "src/modules/uvpfx_rom.c": "0b8e1ce562e82f53bba0d3b1d3cfdf02906429f3fb148b75afa3d29bd833dfd7",
@@ -517,22 +517,22 @@
     "src/sched.c": "26791ca9f30fd5355b11ea03a64a457757d2029595be26428c2925798105d9b4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "e5c72e5add21c551bfb9e2ed3ac237187b9b7bd27c1a5c21641cd34d1d0f5dcb",
+    "docs/STRATEGY_V4.md": "0856af452fb92d4b6f5e1670b4d96c3544ee487774352deac49d09646e7b073c",
     "docs/VALIDATION_20261006.md": "a46820c10aba34e3c1901bd9bdc4260f684530f44fcf7f61d9c7bb33e0c91031"
   },
   "counts": {
     "address_function": 905,
-    "address_global": 1643,
-    "assembly": 745,
+    "address_global": 1648,
+    "assembly": 744,
     "audit_debt": 30,
     "conditional_draft": 4,
     "decompiler_local": 622,
     "draft_marker": 54,
-    "explicit_unknown": 1899,
+    "explicit_unknown": 1900,
     "layout_padding": 281,
     "offset_field": 1770,
     "opaque_type": 285,
-    "original_quirk": 530,
+    "original_quirk": 531,
     "uncertainty_note": 88,
     "unused_identifier": 151
   },
@@ -20989,10 +20989,10 @@
       "lines": [
         18,
         61,
-        135,
-        138,
-        170,
-        176
+        248,
+        251,
+        283,
+        289
       ],
       "owners": [
         {
@@ -21014,26 +21014,26 @@
         {
           "kind": "function",
           "name": "func_uvmath_rom_004006F8",
-          "declaration_line": 176,
+          "declaration_line": 289,
           "lines": [
-            176
+            289
           ]
         },
         {
           "kind": "function",
           "name": "uvArcCosWithEndpointToleranceF",
-          "declaration_line": 149,
+          "declaration_line": 262,
           "lines": [
-            170
+            283
           ]
         },
         {
           "kind": "function",
           "name": "uvArcSinClampedF",
-          "declaration_line": 119,
+          "declaration_line": 232,
           "lines": [
-            135,
-            138
+            248,
+            251
           ]
         }
       ]
@@ -72785,31 +72785,173 @@
       ]
     },
     {
-      "id": "Q-5cbf8d5bffff",
+      "id": "Q-3c71d10231e2",
       "kind": "address_global",
       "path": "src/modules/uvmath_rom.c",
-      "symbol": "D_uvmath_rom_00400AAC",
+      "symbol": "D_uvmath_rom_00400A60",
       "lines": [
-        142,
-        159,
+        108,
+        144,
+        175
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvSinF",
+          "declaration_line": 114,
+          "lines": [
+            144,
+            175
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_uvmath_rom_00400A60",
+          "declaration_line": 108,
+          "lines": [
+            108
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-f2783fd8e0ef",
+      "kind": "address_global",
+      "path": "src/modules/uvmath_rom.c",
+      "symbol": "D_uvmath_rom_00400A88",
+      "lines": [
+        109,
+        162
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvSinF",
+          "declaration_line": 114,
+          "lines": [
+            162
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_uvmath_rom_00400A88",
+          "declaration_line": 109,
+          "lines": [
+            109
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-da8d5a48a7f4",
+      "kind": "address_global",
+      "path": "src/modules/uvmath_rom.c",
+      "symbol": "D_uvmath_rom_00400A90",
+      "lines": [
+        110,
         167
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "uvArcCosWithEndpointToleranceF",
-          "declaration_line": 149,
+          "name": "uvSinF",
+          "declaration_line": 114,
           "lines": [
-            159,
             167
           ]
         },
         {
           "kind": "global",
-          "name": "D_uvmath_rom_00400AAC",
-          "declaration_line": 142,
+          "name": "D_uvmath_rom_00400A90",
+          "declaration_line": 110,
           "lines": [
-            142
+            110
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-6bb235fb5ff6",
+      "kind": "address_global",
+      "path": "src/modules/uvmath_rom.c",
+      "symbol": "D_uvmath_rom_00400A98",
+      "lines": [
+        111,
+        168
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvSinF",
+          "declaration_line": 114,
+          "lines": [
+            168
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_uvmath_rom_00400A98",
+          "declaration_line": 111,
+          "lines": [
+            111
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-a5ce6f01714d",
+      "kind": "address_global",
+      "path": "src/modules/uvmath_rom.c",
+      "symbol": "D_uvmath_rom_00400AA4",
+      "lines": [
+        112,
+        192
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvSinF",
+          "declaration_line": 114,
+          "lines": [
+            192
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_uvmath_rom_00400AA4",
+          "declaration_line": 112,
+          "lines": [
+            112
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-5cbf8d5bffff",
+      "kind": "address_global",
+      "path": "src/modules/uvmath_rom.c",
+      "symbol": "D_uvmath_rom_00400AAC",
+      "lines": [
+        255,
+        272,
+        280
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvArcCosWithEndpointToleranceF",
+          "declaration_line": 262,
+          "lines": [
+            272,
+            280
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_uvmath_rom_00400AAC",
+          "declaration_line": 255,
+          "lines": [
+            255
           ]
         }
       ]
@@ -72820,24 +72962,24 @@
       "path": "src/modules/uvmath_rom.c",
       "symbol": "D_uvmath_rom_00400AB0",
       "lines": [
-        143,
-        160
+        256,
+        273
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvArcCosWithEndpointToleranceF",
-          "declaration_line": 149,
+          "declaration_line": 262,
           "lines": [
-            160
+            273
           ]
         },
         {
           "kind": "global",
           "name": "D_uvmath_rom_00400AB0",
-          "declaration_line": 143,
+          "declaration_line": 256,
           "lines": [
-            143
+            256
           ]
         }
       ]
@@ -72848,24 +72990,24 @@
       "path": "src/modules/uvmath_rom.c",
       "symbol": "D_uvmath_rom_00400AC8",
       "lines": [
-        259,
-        265
+        372,
+        378
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvMathGetCounterFraction",
-          "declaration_line": 264,
+          "declaration_line": 377,
           "lines": [
-            265
+            378
           ]
         },
         {
           "kind": "global",
           "name": "D_uvmath_rom_00400AC8",
-          "declaration_line": 259,
+          "declaration_line": 372,
           "lines": [
-            259
+            372
           ]
         }
       ]
@@ -72876,26 +73018,26 @@
       "path": "src/modules/uvmath_rom.c",
       "symbol": "D_uvmath_rom_00400ACC",
       "lines": [
-        294,
-        309,
-        312
+        407,
+        422,
+        425
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvWrapAngleRadians",
-          "declaration_line": 303,
+          "declaration_line": 416,
           "lines": [
-            309,
-            312
+            422,
+            425
           ]
         },
         {
           "kind": "global",
           "name": "D_uvmath_rom_00400ACC",
-          "declaration_line": 294,
+          "declaration_line": 407,
           "lines": [
-            294
+            407
           ]
         }
       ]
@@ -72906,24 +73048,24 @@
       "path": "src/modules/uvmath_rom.c",
       "symbol": "D_uvmath_rom_00400AD0",
       "lines": [
-        295,
-        311
+        408,
+        424
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvWrapAngleRadians",
-          "declaration_line": 303,
+          "declaration_line": 416,
           "lines": [
-            311
+            424
           ]
         },
         {
           "kind": "global",
           "name": "D_uvmath_rom_00400AD0",
-          "declaration_line": 295,
+          "declaration_line": 408,
           "lines": [
-            295
+            408
           ]
         }
       ]
@@ -72934,24 +73076,24 @@
       "path": "src/modules/uvmath_rom.c",
       "symbol": "D_uvmath_rom_00400AD4",
       "lines": [
-        296,
-        314
+        409,
+        427
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvWrapAngleRadians",
-          "declaration_line": 303,
+          "declaration_line": 416,
           "lines": [
-            314
+            427
           ]
         },
         {
           "kind": "global",
           "name": "D_uvmath_rom_00400AD4",
-          "declaration_line": 296,
+          "declaration_line": 409,
           "lines": [
-            296
+            409
           ]
         }
       ]
@@ -72962,24 +73104,24 @@
       "path": "src/modules/uvmath_rom.c",
       "symbol": "D_uvmath_rom_00400AD8",
       "lines": [
-        297,
-        315
+        410,
+        428
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvWrapAngleRadians",
-          "declaration_line": 303,
+          "declaration_line": 416,
           "lines": [
-            315
+            428
           ]
         },
         {
           "kind": "global",
           "name": "D_uvmath_rom_00400AD8",
-          "declaration_line": 297,
+          "declaration_line": 410,
           "lines": [
-            297
+            410
           ]
         }
       ]
@@ -72990,24 +73132,24 @@
       "path": "src/modules/uvmath_rom.c",
       "symbol": "D_uvmath_rom_00400ADC",
       "lines": [
-        331,
-        346
+        444,
+        459
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvFoldAngleRadians",
-          "declaration_line": 342,
+          "declaration_line": 455,
           "lines": [
-            346
+            459
           ]
         },
         {
           "kind": "global",
           "name": "D_uvmath_rom_00400ADC",
-          "declaration_line": 331,
+          "declaration_line": 444,
           "lines": [
-            331
+            444
           ]
         }
       ]
@@ -73018,24 +73160,24 @@
       "path": "src/modules/uvmath_rom.c",
       "symbol": "D_uvmath_rom_00400AE0",
       "lines": [
-        332,
-        347
+        445,
+        460
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvFoldAngleRadians",
-          "declaration_line": 342,
+          "declaration_line": 455,
           "lines": [
-            347
+            460
           ]
         },
         {
           "kind": "global",
           "name": "D_uvmath_rom_00400AE0",
-          "declaration_line": 332,
+          "declaration_line": 445,
           "lines": [
-            332
+            445
           ]
         }
       ]
@@ -73046,24 +73188,24 @@
       "path": "src/modules/uvmath_rom.c",
       "symbol": "D_uvmath_rom_00400AE4",
       "lines": [
-        333,
-        349
+        446,
+        462
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvFoldAngleRadians",
-          "declaration_line": 342,
+          "declaration_line": 455,
           "lines": [
-            349
+            462
           ]
         },
         {
           "kind": "global",
           "name": "D_uvmath_rom_00400AE4",
-          "declaration_line": 333,
+          "declaration_line": 446,
           "lines": [
-            333
+            446
           ]
         }
       ]
@@ -73074,24 +73216,24 @@
       "path": "src/modules/uvmath_rom.c",
       "symbol": "D_uvmath_rom_00400AE8",
       "lines": [
-        334,
-        350
+        447,
+        463
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvFoldAngleRadians",
-          "declaration_line": 342,
+          "declaration_line": 455,
           "lines": [
-            350
+            463
           ]
         },
         {
           "kind": "global",
           "name": "D_uvmath_rom_00400AE8",
-          "declaration_line": 334,
+          "declaration_line": 447,
           "lines": [
-            334
+            447
           ]
         }
       ]
@@ -73103,35 +73245,35 @@
       "symbol": "D_uvmath_rom_00400AF0",
       "lines": [
         7,
-        243,
-        253,
-        254,
-        272
+        356,
+        366,
+        367,
+        385
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvGetRandomState",
-          "declaration_line": 271,
+          "declaration_line": 384,
           "lines": [
-            272
+            385
           ]
         },
         {
           "kind": "function",
           "name": "uvRandFLcg",
-          "declaration_line": 251,
+          "declaration_line": 364,
           "lines": [
-            253,
-            254
+            366,
+            367
           ]
         },
         {
           "kind": "function",
           "name": "uvSrand",
-          "declaration_line": 242,
+          "declaration_line": 355,
           "lines": [
-            243
+            356
           ]
         },
         {
@@ -88252,7 +88394,7 @@
       "path": "src/modules/uvmath_rom.c",
       "symbol": "func_uvmath_rom_004006F8",
       "lines": [
-        218
+        331
       ],
       "evidence": "asm/us/nonmatchings/modules/uvmath_rom/func_uvmath_rom_004006F8.s"
     },
@@ -88262,19 +88404,9 @@
       "path": "src/modules/uvmath_rom.c",
       "symbol": "uvCosF",
       "lines": [
-        89
+        202
       ],
       "evidence": "asm/us/nonmatchings/modules/uvmath_rom/uvCosF.s"
-    },
-    {
-      "id": "Q-4a440b789b6b",
-      "kind": "assembly",
-      "path": "src/modules/uvmath_rom.c",
-      "symbol": "uvSinF",
-      "lines": [
-        86
-      ],
-      "evidence": "asm/us/nonmatchings/modules/uvmath_rom/uvSinF.s"
     },
     {
       "id": "Q-0d648d15f6ff",
@@ -89195,7 +89327,7 @@
       "path": "src/modules/uvmath_rom.c",
       "symbol": "NEEDS_RODATA",
       "lines": [
-        175
+        288
       ]
     },
     {
@@ -152223,6 +152355,26 @@
       ]
     },
     {
+      "id": "Q-6f4abd4a9700",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvmath_rom.c",
+      "symbol": "Approximate sine of radians using the existing split-pi reduction and * double-precision polynomial. Tiny inputs return unchanged, preserving their * signed zero; the bit-defined magnitude gates and arithmetic order are kept. * RE_ORIGINAL_QUIRK: inputs outside the reduction domain return zero, except * NaN inputs return the existing finite scalar (0x4eff2000), not a quiet NaN. * RE_UNKNOWN: approximation error, unusual rounding modes, caller dependence * on exceptional inputs, and portability of the SDK float/int bit view. * Existing rodata owns these consumed views; no replacement storage is added.",
+      "lines": [
+        99
+      ],
+      "evidence": "Approximate sine of radians using the existing split-pi reduction and * double-precision polynomial. Tiny inputs return unchanged, preserving their * signed zero; the bit-defined magnitude gates and arithmetic order are kept. * RE_ORIGINAL_QUIRK: inputs outside the reduction domain return zero, except * NaN inputs return the existing finite scalar (0x4eff2000), not a quiet NaN. * RE_UNKNOWN: approximation error, unusual rounding modes, caller dependence * on exceptional inputs, and portability of the SDK float/int bit view. * Existing rodata owns these consumed views; no replacement storage is added.",
+      "owners": [
+        {
+          "kind": "global",
+          "name": "D_uvmath_rom_00400A60",
+          "declaration_line": 108,
+          "lines": [
+            99
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-c689cb4e5efc",
       "kind": "explicit_unknown",
       "path": "src/modules/uvmath_rom.c",
@@ -152288,16 +152440,16 @@
       "path": "src/modules/uvmath_rom.c",
       "symbol": "Run the original subtraction and addition loops with the stored pi/full-turn * float words and inclusive endpoints. RE_UNKNOWN: caller values must permit * float progress; no nonfinite or excessive-magnitude guard exists.",
       "lines": [
-        299
+        412
       ],
       "evidence": "Run the original subtraction and addition loops with the stored pi/full-turn * float words and inclusive endpoints. RE_UNKNOWN: caller values must permit * float progress; no nonfinite or excessive-magnitude guard exists.",
       "owners": [
         {
           "kind": "function",
           "name": "uvWrapAngleRadians",
-          "declaration_line": 303,
+          "declaration_line": 416,
           "lines": [
-            299
+            412
           ]
         }
       ]
@@ -152308,16 +152460,16 @@
       "path": "src/modules/uvmath_rom.c",
       "symbol": "Wrap through uvWrapAngleRadians, then reflect values beyond the stored * positive or negative half-pi thresholds using the original pi words. * Preserve the exact threshold bits, which are not recomputed from pi. * RE_UNKNOWN: angle-domain/progress assumptions follow the wrapper; the * four-byte original tail remains excluded.",
       "lines": [
-        336
+        449
       ],
       "evidence": "Wrap through uvWrapAngleRadians, then reflect values beyond the stored * positive or negative half-pi thresholds using the original pi words. * Preserve the exact threshold bits, which are not recomputed from pi. * RE_UNKNOWN: angle-domain/progress assumptions follow the wrapper; the * four-byte original tail remains excluded.",
       "owners": [
         {
           "kind": "function",
           "name": "uvFoldAngleRadians",
-          "declaration_line": 342,
+          "declaration_line": 455,
           "lines": [
-            336
+            449
           ]
         }
       ]
@@ -245074,21 +245226,41 @@
       ]
     },
     {
+      "id": "Q-3ccb79ccba52",
+      "kind": "original_quirk",
+      "path": "src/modules/uvmath_rom.c",
+      "symbol": "Approximate sine of radians using the existing split-pi reduction and * double-precision polynomial. Tiny inputs return unchanged, preserving their * signed zero; the bit-defined magnitude gates and arithmetic order are kept. * RE_ORIGINAL_QUIRK: inputs outside the reduction domain return zero, except * NaN inputs return the existing finite scalar (0x4eff2000), not a quiet NaN. * RE_UNKNOWN: approximation error, unusual rounding modes, caller dependence * on exceptional inputs, and portability of the SDK float/int bit view. * Existing rodata owns these consumed views; no replacement storage is added.",
+      "lines": [
+        99
+      ],
+      "evidence": "Approximate sine of radians using the existing split-pi reduction and * double-precision polynomial. Tiny inputs return unchanged, preserving their * signed zero; the bit-defined magnitude gates and arithmetic order are kept. * RE_ORIGINAL_QUIRK: inputs outside the reduction domain return zero, except * NaN inputs return the existing finite scalar (0x4eff2000), not a quiet NaN. * RE_UNKNOWN: approximation error, unusual rounding modes, caller dependence * on exceptional inputs, and portability of the SDK float/int bit view. * Existing rodata owns these consumed views; no replacement storage is added.",
+      "owners": [
+        {
+          "kind": "global",
+          "name": "D_uvmath_rom_00400A60",
+          "declaration_line": 108,
+          "lines": [
+            99
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-08047ae93580",
       "kind": "original_quirk",
       "path": "src/modules/uvmath_rom.c",
       "symbol": "Return the original endpoint values within the shared tolerance; * otherwise compute arccosine through the half-angle identity. * RE_ORIGINAL_QUIRK: retain the unguarded domain outside those endpoint tests.",
       "lines": [
-        146
+        259
       ],
       "evidence": "Return the original endpoint values within the shared tolerance; * otherwise compute arccosine through the half-angle identity. * RE_ORIGINAL_QUIRK: retain the unguarded domain outside those endpoint tests.",
       "owners": [
         {
           "kind": "function",
           "name": "uvArcCosWithEndpointToleranceF",
-          "declaration_line": 149,
+          "declaration_line": 262,
           "lines": [
-            146
+            259
           ]
         }
       ]
