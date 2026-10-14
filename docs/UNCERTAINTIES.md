@@ -17,8 +17,8 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 1900 |
-| Preserved RE_ORIGINAL_QUIRK notes | 531 |
+| Explicit RE_UNKNOWN notes | 1902 |
+| Preserved RE_ORIGINAL_QUIRK notes | 533 |
 | Older comments with uncertainty language | 88 |
 | Documented original-behavior audits | 30 |
 | Assembly-backed functions or data | 744 |
@@ -29,7 +29,7 @@ For every future source wave, regenerate and check this index after code and str
 | Unresolved type names | 285 |
 | Explicit unused ABI, storage or local identifiers | 151 |
 | Decompiler parameter/local names | 622 |
-| Fake, unresolved or TODO draft markers | 54 |
+| Fake, unresolved or TODO draft markers | 55 |
 | Data-dependent conditional draft guards | 4 |
 
 ## docs/STRATEGY_V4.md
@@ -1339,6 +1339,12 @@ For every future source wave, regenerate and check this index after code and str
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
 | draft_marker | `TODO` | — | [4](../src/libultra/io/ai.c#L4) |
+
+## src/libultra/io/aigetlen.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| draft_marker | `TODO` | — | [3](../src/libultra/io/aigetlen.c#L3) |
 
 ## src/libultra/io/aisetfreq.c
 
@@ -3069,18 +3075,22 @@ For every future source wave, regenerate and check this index after code and str
 | draft_marker | `FAKE` | function `fileuxHostRequest` | [222](../src/modules/fileux.c#L222), [242](../src/modules/fileux.c#L242) |
 | explicit_unknown | `* Call GMGR slot 0x74, fill a 256-byte ascending probe, then scan the shared * response for a descending probe. Serialize the mode word and mode-specific * arguments: O appends ...` | function `fileuxHostRequest` | [140](../src/modules/fileux.c#L140) |
 | explicit_unknown | `* Initialize the module allocation pointer and publish five exports: the * empty cleanup entry plus file write, read, open and close wrappers. * RE_UNKNOWN: Export-object extent...` | function `__entrypoint_func_fileux_400000` | [55](../src/modules/fileux.c#L55) |
-| explicit_unknown | `* Reject negative descriptors. Below 20, inspect optional descriptor state; * when its first word is nonzero and word 8 is zero, send a W request before * freeing the state and ...` | function `fileuxClose` | [441](../src/modules/fileux.c#L441) |
-| explicit_unknown | `* Send an O request with path, flags and mode. Preserve any negative result. * For a returned descriptor below 20, allocate 0x10C bytes of state and clear * only its first word ...` | function `fileuxOpen` | [416](../src/modules/fileux.c#L416) |
+| explicit_unknown | `* Reject negative descriptors. Below 20, inspect optional descriptor state; * when its first word is nonzero and word 8 is zero, send a W request before * freeing the state and ...` | function `fileuxClose` | [455](../src/modules/fileux.c#L455) |
+| explicit_unknown | `* Send an O request with path, flags and mode. Preserve any negative result. * For a returned descriptor below 20, allocate 0x10C bytes of state and clear * only its first word ...` | function `fileuxOpen` | [430](../src/modules/fileux.c#L430) |
+| explicit_unknown | `Consume retained descriptor bytes or issue R requests of at most 256 * bytes. A buffered refill requests 256 bytes, copies the requested remainder * and tracks any surplus with ...` | — | [354](../src/modules/fileux.c#L354) |
 | explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_fileux_00400068` | [83](../src/modules/fileux.c#L83) |
 | explicit_unknown | `Original no-op cleanup hook in module export slot zero. The generic * UVMO unload path invokes this hook before freeing the module exports; this * function releases no additiona...` | function `fileuxNoOpModuleCleanup` | [73](../src/modules/fileux.c#L73) |
 | explicit_unknown | `Original no-op hook used by fileuxHostRequest with request, handshake, * acknowledgement or write-data buffers and their byte counts. This body never * accesses the buffer; pres...` | function `fileuxNoOpHostBufferHook` | [123](../src/modules/fileux.c#L123) |
-| explicit_unknown | `Return the constant one. * RE_UNKNOWN: the caller's interpretation of this status value remains unresolved.` | function `func_fileux_00400144` | [132](../src/modules/fileux.c#L132) |
-| offset_field | `unk0` | function `fileuxClose`, function `fileuxOpen`, function `fileuxRead`, function `fileuxWrite`, type `FileDescriptorState` | [10](../src/modules/fileux.c#L10), [299](../src/modules/fileux.c#L299), [301](../src/modules/fileux.c#L301), [302](../src/modules/fileux.c#L302), [303](../src/modules/fileux.c#L303), [307](../src/modules/fileux.c#L307), [308](../src/modules/fileux.c#L308), [309](../src/modules/fileux.c#L309) (+13 in JSON) |
-| offset_field | `unk4` | function `fileuxRead`, type `FileDescriptorState` | [11](../src/modules/fileux.c#L11), [367](../src/modules/fileux.c#L367), [370](../src/modules/fileux.c#L370), [372](../src/modules/fileux.c#L372), [374](../src/modules/fileux.c#L374), [380](../src/modules/fileux.c#L380), [390](../src/modules/fileux.c#L390), [394](../src/modules/fileux.c#L394) (+1 in JSON) |
-| offset_field | `unk8` | function `fileuxClose`, function `fileuxRead`, function `fileuxWrite`, type `FileDescriptorState` | [12](../src/modules/fileux.c#L12), [299](../src/modules/fileux.c#L299), [300](../src/modules/fileux.c#L300), [364](../src/modules/fileux.c#L364), [365](../src/modules/fileux.c#L365), [461](../src/modules/fileux.c#L461) |
+| explicit_unknown | `Return one: fileuxHostRequest bypasses its zero-result branch and ignores * seven later results. RE_UNKNOWN: intended protocol/status meaning.` | function `func_fileux_00400144` | [132](../src/modules/fileux.c#L132) |
+| explicit_unknown | `Write through descriptor state when its buffered mode permits; otherwise * send W requests in chunks of at most 256 bytes. A final buffered chunk of * at most 256 bytes is retai...` | — | [285](../src/modules/fileux.c#L285) |
+| offset_field | `unk0` | function `fileuxClose`, function `fileuxOpen`, function `fileuxRead`, function `fileuxWrite`, type `FileDescriptorState` | [10](../src/modules/fileux.c#L10), [306](../src/modules/fileux.c#L306), [308](../src/modules/fileux.c#L308), [309](../src/modules/fileux.c#L309), [310](../src/modules/fileux.c#L310), [314](../src/modules/fileux.c#L314), [315](../src/modules/fileux.c#L315), [316](../src/modules/fileux.c#L316) (+13 in JSON) |
+| offset_field | `unk4` | function `fileuxRead`, type `FileDescriptorState` | [11](../src/modules/fileux.c#L11), [381](../src/modules/fileux.c#L381), [384](../src/modules/fileux.c#L384), [386](../src/modules/fileux.c#L386), [388](../src/modules/fileux.c#L388), [394](../src/modules/fileux.c#L394), [404](../src/modules/fileux.c#L404), [408](../src/modules/fileux.c#L408) (+1 in JSON) |
+| offset_field | `unk8` | function `fileuxClose`, function `fileuxRead`, function `fileuxWrite`, type `FileDescriptorState` | [12](../src/modules/fileux.c#L12), [306](../src/modules/fileux.c#L306), [307](../src/modules/fileux.c#L307), [378](../src/modules/fileux.c#L378), [379](../src/modules/fileux.c#L379), [475](../src/modules/fileux.c#L475) |
 | original_quirk | `* Call GMGR slot 0x74, fill a 256-byte ascending probe, then scan the shared * response for a descending probe. Serialize the mode word and mode-specific * arguments: O appends ...` | function `fileuxHostRequest` | [140](../src/modules/fileux.c#L140) |
-| original_quirk | `* Reject negative descriptors. Below 20, inspect optional descriptor state; * when its first word is nonzero and word 8 is zero, send a W request before * freeing the state and ...` | function `fileuxClose` | [441](../src/modules/fileux.c#L441) |
-| original_quirk | `* Send an O request with path, flags and mode. Preserve any negative result. * For a returned descriptor below 20, allocate 0x10C bytes of state and clear * only its first word ...` | function `fileuxOpen` | [416](../src/modules/fileux.c#L416) |
+| original_quirk | `* Reject negative descriptors. Below 20, inspect optional descriptor state; * when its first word is nonzero and word 8 is zero, send a W request before * freeing the state and ...` | function `fileuxClose` | [455](../src/modules/fileux.c#L455) |
+| original_quirk | `* Send an O request with path, flags and mode. Preserve any negative result. * For a returned descriptor below 20, allocate 0x10C bytes of state and clear * only its first word ...` | function `fileuxOpen` | [430](../src/modules/fileux.c#L430) |
+| original_quirk | `Consume retained descriptor bytes or issue R requests of at most 256 * bytes. A buffered refill requests 256 bytes, copies the requested remainder * and tracks any surplus with ...` | — | [354](../src/modules/fileux.c#L354) |
+| original_quirk | `Write through descriptor state when its buffered mode permits; otherwise * send W requests in chunks of at most 256 bytes. A final buffered chunk of * at most 256 bytes is retai...` | — | [285](../src/modules/fileux.c#L285) |
 | unused_identifier | `unusedBuffer` | function `fileuxNoOpHostBufferHook` | [128](../src/modules/fileux.c#L128) |
 | unused_identifier | `unusedByteCount` | function `fileuxNoOpHostBufferHook` | [128](../src/modules/fileux.c#L128) |
 

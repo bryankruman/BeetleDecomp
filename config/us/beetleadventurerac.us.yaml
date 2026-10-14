@@ -204,7 +204,7 @@ segments:
       - [0xEF50, c, libultra/audio/sndpstop]
       - [0xEFA0, c, libultra/audio/syngetfxref]
       - [0xF020, c, libultra/audio/synsetfxparam]
-      - [0xF060, asm, sl_audio_retained_F060]
+      - [0xF060, c, libultra/io/aigetlen]
       - [0xF070, c, libultra/io/aisetnextbuf]
       - [0xF120, c, libultra/io/contquery]
       - [0xF1D0, c, libultra/io/contreaddata]

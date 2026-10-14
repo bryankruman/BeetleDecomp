@@ -306,6 +306,7 @@
     "src/libultra/audio/synthInternals.h": "797c65321f3ae4ebfa83b3babdacd70495c7a80cee2a708a0b8095043f1a309b",
     "src/libultra/audio/synthesizer.c": "855a78e5c3a987336f6c6d96e4fc77f7208f2354f9542a2ff46659588996244b",
     "src/libultra/io/ai.c": "e2757d2319d2b9eca70284cc98501741565a27bc9216f7bcb58d691da85fc40a",
+    "src/libultra/io/aigetlen.c": "31043f773920302d5cdd00f21e9a668898306c3b48e1ca81ab77cdb3f004de51",
     "src/libultra/io/aisetfreq.c": "e0d9998c3391129ce9b5198498d779cef764ae2d7cab9acac158b669bab802f3",
     "src/libultra/io/aisetnextbuf.c": "a56af1027e3d9c8fac23d75361e9a8d92cc4578d83a3bb4d3b9c4dc1cf288a78",
     "src/libultra/io/contpfs.c": "952bed8b0fcd39746894d698eefec5ad6a69ef5a0fb9c840fd35a94f5ae7afcd",
@@ -395,7 +396,7 @@
     "src/modules/envsnd.c": "4dfaf2136d282f41747a868de8174827a42854f9d03ec6d41fe04c75cbb739d1",
     "src/modules/expl.c": "9b11f3874d110926a320effee990c4a6429439f1fa618065bb3a90f46700394d",
     "src/modules/filerom.c": "ef2c987ccc2ad6279af1079961d07c08896406c768e051407e30989ae09107c9",
-    "src/modules/fileux.c": "9b76dd0d2fc798ac29e1b68be8b47075447ff980acba659e05d4223692ef3d5c",
+    "src/modules/fileux.c": "4d83e3ae22a491231618f321e7dd6069fc6b4d2f4892713f5f0789c7db8d2b40",
     "src/modules/filmroll.c": "83ed38a685d67e8489ffe33a9d955b1f742731478f3fb89ad577c877e3e8d1ce",
     "src/modules/flag.c": "e5e3b255e417dac68a9d179ef336bf168d0d1b4e8b9f566626b9c5f12ea33d4e",
     "src/modules/game.c": "592a7761af4ae96e100ef8935ed7fa5896c27717687c8377ed0e3b2ad8aa155b",
@@ -488,7 +489,7 @@
     "src/modules/uvjanimld_rom.c": "3f0275d8c092036ab2564b298fb0741b062371a4ecfc2a6d070f0f7dad7d2430",
     "src/modules/uvled_rom.c": "970408f3a836822612ad6419ae9de344443fb20ddc0c82fff77e5c734b876207",
     "src/modules/uvlight_rom.c": "b113975b133d8d258ecd1cd8ecfe2364711ea43975bd2849d78949543f6f84fb",
-    "src/modules/uvmath_rom.c": "a4f1c992032ba447cd65daa4bfc988bb07bc0f870cc5f6d111b5cb0e1daafbe8",
+    "src/modules/uvmath_rom.c": "570836cfeb8f0c4ffcd93a125e1a769728e881f3410b4c415fb903778a0cad38",
     "src/modules/uvmodel_rom.c": "637e0ca79c1111af035251bda5b89d89118fad206ffea51742f0158cb38245e5",
     "src/modules/uvmodelld_rom.c": "2d205857badc4de9b9f7f0dd46d930a627d369ad278c1a9e4c5f5e837a0e2b51",
     "src/modules/uvpfx_rom.c": "0b8e1ce562e82f53bba0d3b1d3cfdf02906429f3fb148b75afa3d29bd833dfd7",
@@ -517,7 +518,7 @@
     "src/sched.c": "26791ca9f30fd5355b11ea03a64a457757d2029595be26428c2925798105d9b4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "0856af452fb92d4b6f5e1670b4d96c3544ee487774352deac49d09646e7b073c",
+    "docs/STRATEGY_V4.md": "b8723386aa44aa3feab83f4ba2030d9df7eddadfbc6c76826f7219dc27f464fc",
     "docs/VALIDATION_20261006.md": "a46820c10aba34e3c1901bd9bdc4260f684530f44fcf7f61d9c7bb33e0c91031"
   },
   "counts": {
@@ -527,12 +528,12 @@
     "audit_debt": 30,
     "conditional_draft": 4,
     "decompiler_local": 622,
-    "draft_marker": 54,
-    "explicit_unknown": 1900,
+    "draft_marker": 55,
+    "explicit_unknown": 1902,
     "layout_padding": 281,
     "offset_field": 1770,
     "opaque_type": 285,
-    "original_quirk": 531,
+    "original_quirk": 533,
     "uncertainty_note": 88,
     "unused_identifier": 151
   },
@@ -119552,6 +119553,16 @@
       "evidence": "TODO: this comes from a header"
     },
     {
+      "id": "Q-06a42f8b23a0",
+      "kind": "draft_marker",
+      "path": "src/libultra/io/aigetlen.c",
+      "symbol": "TODO",
+      "lines": [
+        3
+      ],
+      "evidence": "TODO: this comes from a header"
+    },
+    {
       "id": "Q-2bae44d593d4",
       "kind": "draft_marker",
       "path": "src/libultra/io/aisetfreq.c",
@@ -128009,16 +128020,16 @@
       "path": "src/modules/fileux.c",
       "symbol": "* Reject negative descriptors. Below 20, inspect optional descriptor state; * when its first word is nonzero and word 8 is zero, send a W request before * freeing the state and clearing its slot. Then send C for every nonnegative * descriptor, returning -1 for a negative response and zero otherwise. * RE_ORIGINAL_QUIRK: Ignore the W response and free state before checking C; * descriptors at or above 20 bypass the state array but still reach C. * RE_UNKNOWN: State-field meanings, flush success, concurrent users and * descriptor/host lifetime remain unproved; no error rollback is introduced.",
       "lines": [
-        441
+        455
       ],
       "evidence": "* Reject negative descriptors. Below 20, inspect optional descriptor state; * when its first word is nonzero and word 8 is zero, send a W request before * freeing the state and clearing its slot. Then send C for every nonnegative * descriptor, returning -1 for a negative response and zero otherwise. * RE_ORIGINAL_QUIRK: Ignore the W response and free state before checking C; * descriptors at or above 20 bypass the state array but still reach C. * RE_UNKNOWN: State-field meanings, flush success, concurrent users and * descriptor/host lifetime remain unproved; no error rollback is introduced.",
       "owners": [
         {
           "kind": "function",
           "name": "fileuxClose",
-          "declaration_line": 452,
+          "declaration_line": 466,
           "lines": [
-            441
+            455
           ]
         }
       ]
@@ -128029,19 +128040,29 @@
       "path": "src/modules/fileux.c",
       "symbol": "* Send an O request with path, flags and mode. Preserve any negative result. * For a returned descriptor below 20, allocate 0x10C bytes of state and clear * only its first word when allocation succeeds; return the descriptor anyway. * RE_ORIGINAL_QUIRK: The declared 21-slot array uses a strict below-20 gate. * Allocation failure and descriptors at or above 20 still return unchanged. * RE_UNKNOWN: Descriptor range/uniqueness, replacement of existing state, * remaining state-word initialization and real host availability need proof.",
       "lines": [
-        416
+        430
       ],
       "evidence": "* Send an O request with path, flags and mode. Preserve any negative result. * For a returned descriptor below 20, allocate 0x10C bytes of state and clear * only its first word when allocation succeeds; return the descriptor anyway. * RE_ORIGINAL_QUIRK: The declared 21-slot array uses a strict below-20 gate. * Allocation failure and descriptors at or above 20 still return unchanged. * RE_UNKNOWN: Descriptor range/uniqueness, replacement of existing state, * remaining state-word initialization and real host availability need proof.",
       "owners": [
         {
           "kind": "function",
           "name": "fileuxOpen",
-          "declaration_line": 426,
+          "declaration_line": 440,
           "lines": [
-            416
+            430
           ]
         }
       ]
+    },
+    {
+      "id": "Q-6465a092cf4d",
+      "kind": "explicit_unknown",
+      "path": "src/modules/fileux.c",
+      "symbol": "Consume retained descriptor bytes or issue R requests of at most 256 * bytes. A buffered refill requests 256 bytes, copies the requested remainder * and tracks any surplus with the existing count and read cursor. * RE_ORIGINAL_QUIRK: retain 0/1 status returns; the refill count and requested * cursor are stored before the short-refill test. Preserve this state on error. * RE_UNKNOWN: valid counts, state ownership, host status and progress on * short/failed requests; no positive-progress guard is added.",
+      "lines": [
+        354
+      ],
+      "evidence": "Consume retained descriptor bytes or issue R requests of at most 256 * bytes. A buffered refill requests 256 bytes, copies the requested remainder * and tracks any surplus with the existing count and read cursor. * RE_ORIGINAL_QUIRK: retain 0/1 status returns; the refill count and requested * cursor are stored before the short-refill test. Preserve this state on error. * RE_UNKNOWN: valid counts, state ownership, host status and progress on * short/failed requests; no positive-progress guard is added."
     },
     {
       "id": "Q-4e4c753ea139",
@@ -128104,14 +128125,14 @@
       ]
     },
     {
-      "id": "Q-5916a4f1a3b6",
+      "id": "Q-a7aac59b9660",
       "kind": "explicit_unknown",
       "path": "src/modules/fileux.c",
-      "symbol": "Return the constant one. * RE_UNKNOWN: the caller's interpretation of this status value remains unresolved.",
+      "symbol": "Return one: fileuxHostRequest bypasses its zero-result branch and ignores * seven later results. RE_UNKNOWN: intended protocol/status meaning.",
       "lines": [
         132
       ],
-      "evidence": "Return the constant one. * RE_UNKNOWN: the caller's interpretation of this status value remains unresolved.",
+      "evidence": "Return one: fileuxHostRequest bypasses its zero-result branch and ignores * seven later results. RE_UNKNOWN: intended protocol/status meaning.",
       "owners": [
         {
           "kind": "function",
@@ -128122,6 +128143,16 @@
           ]
         }
       ]
+    },
+    {
+      "id": "Q-0cb8c8d52e01",
+      "kind": "explicit_unknown",
+      "path": "src/modules/fileux.c",
+      "symbol": "Write through descriptor state when its buffered mode permits; otherwise * send W requests in chunks of at most 256 bytes. A final buffered chunk of * at most 256 bytes is retained rather than sent immediately. * RE_ORIGINAL_QUIRK: retain 0/1 status returns and discard the full-buffer * flush response before clearing its pending count. * RE_UNKNOWN: valid counts, state ownership, host status and progress on * short/failed requests; this wrapper proves no completed host transfer.",
+      "lines": [
+        285
+      ],
+      "evidence": "Write through descriptor state when its buffered mode permits; otherwise * send W requests in chunks of at most 256 bytes. A final buffered chunk of * at most 256 bytes is retained rather than sent immediately. * RE_ORIGINAL_QUIRK: retain 0/1 status returns and discard the full-buffer * flush response before clearing its pending count. * RE_UNKNOWN: valid counts, state ownership, host status and progress on * short/failed requests; this wrapper proves no completed host transfer."
     },
     {
       "id": "Q-6ac54cd0692b",
@@ -180660,74 +180691,74 @@
       "symbol": "unk0",
       "lines": [
         10,
-        299,
-        301,
-        302,
-        303,
-        307,
+        306,
         308,
         309,
-        311,
-        317,
-        325,
-        364,
-        366,
-        367,
-        370,
-        379,
+        310,
+        314,
+        315,
+        316,
+        318,
+        324,
+        332,
+        378,
         380,
-        389,
-        435,
-        461,
-        462
+        381,
+        384,
+        393,
+        394,
+        403,
+        449,
+        475,
+        476
       ],
       "owners": [
         {
           "kind": "function",
           "name": "fileuxClose",
-          "declaration_line": 452,
+          "declaration_line": 466,
           "lines": [
-            461,
-            462
+            475,
+            476
           ]
         },
         {
           "kind": "function",
           "name": "fileuxOpen",
-          "declaration_line": 426,
+          "declaration_line": 440,
           "lines": [
-            435
+            449
           ]
         },
         {
           "kind": "function",
           "name": "fileuxRead",
-          "declaration_line": 351,
+          "declaration_line": 365,
           "lines": [
-            364,
-            366,
-            367,
-            370,
-            379,
+            378,
             380,
-            389
+            381,
+            384,
+            393,
+            394,
+            403
           ]
         },
         {
           "kind": "function",
           "name": "fileuxWrite",
-          "declaration_line": 287,
+          "declaration_line": 294,
           "lines": [
-            299,
-            301,
-            302,
-            303,
-            307,
+            306,
             308,
             309,
-            311,
-            317,
-            325
+            310,
+            314,
+            315,
+            316,
+            318,
+            324,
+            332
           ]
         },
         {
@@ -180747,29 +180778,29 @@
       "symbol": "unk4",
       "lines": [
         11,
-        367,
-        370,
-        372,
-        374,
-        380,
-        390,
+        381,
+        384,
+        386,
+        388,
         394,
-        395
+        404,
+        408,
+        409
       ],
       "owners": [
         {
           "kind": "function",
           "name": "fileuxRead",
-          "declaration_line": 351,
+          "declaration_line": 365,
           "lines": [
-            367,
-            370,
-            372,
-            374,
-            380,
-            390,
+            381,
+            384,
+            386,
+            388,
             394,
-            395
+            404,
+            408,
+            409
           ]
         },
         {
@@ -180789,37 +180820,37 @@
       "symbol": "unk8",
       "lines": [
         12,
-        299,
-        300,
-        364,
-        365,
-        461
+        306,
+        307,
+        378,
+        379,
+        475
       ],
       "owners": [
         {
           "kind": "function",
           "name": "fileuxClose",
-          "declaration_line": 452,
+          "declaration_line": 466,
           "lines": [
-            461
+            475
           ]
         },
         {
           "kind": "function",
           "name": "fileuxRead",
-          "declaration_line": 351,
+          "declaration_line": 365,
           "lines": [
-            364,
-            365
+            378,
+            379
           ]
         },
         {
           "kind": "function",
           "name": "fileuxWrite",
-          "declaration_line": 287,
+          "declaration_line": 294,
           "lines": [
-            299,
-            300
+            306,
+            307
           ]
         },
         {
@@ -238821,16 +238852,16 @@
       "path": "src/modules/fileux.c",
       "symbol": "* Reject negative descriptors. Below 20, inspect optional descriptor state; * when its first word is nonzero and word 8 is zero, send a W request before * freeing the state and clearing its slot. Then send C for every nonnegative * descriptor, returning -1 for a negative response and zero otherwise. * RE_ORIGINAL_QUIRK: Ignore the W response and free state before checking C; * descriptors at or above 20 bypass the state array but still reach C. * RE_UNKNOWN: State-field meanings, flush success, concurrent users and * descriptor/host lifetime remain unproved; no error rollback is introduced.",
       "lines": [
-        441
+        455
       ],
       "evidence": "* Reject negative descriptors. Below 20, inspect optional descriptor state; * when its first word is nonzero and word 8 is zero, send a W request before * freeing the state and clearing its slot. Then send C for every nonnegative * descriptor, returning -1 for a negative response and zero otherwise. * RE_ORIGINAL_QUIRK: Ignore the W response and free state before checking C; * descriptors at or above 20 bypass the state array but still reach C. * RE_UNKNOWN: State-field meanings, flush success, concurrent users and * descriptor/host lifetime remain unproved; no error rollback is introduced.",
       "owners": [
         {
           "kind": "function",
           "name": "fileuxClose",
-          "declaration_line": 452,
+          "declaration_line": 466,
           "lines": [
-            441
+            455
           ]
         }
       ]
@@ -238841,19 +238872,39 @@
       "path": "src/modules/fileux.c",
       "symbol": "* Send an O request with path, flags and mode. Preserve any negative result. * For a returned descriptor below 20, allocate 0x10C bytes of state and clear * only its first word when allocation succeeds; return the descriptor anyway. * RE_ORIGINAL_QUIRK: The declared 21-slot array uses a strict below-20 gate. * Allocation failure and descriptors at or above 20 still return unchanged. * RE_UNKNOWN: Descriptor range/uniqueness, replacement of existing state, * remaining state-word initialization and real host availability need proof.",
       "lines": [
-        416
+        430
       ],
       "evidence": "* Send an O request with path, flags and mode. Preserve any negative result. * For a returned descriptor below 20, allocate 0x10C bytes of state and clear * only its first word when allocation succeeds; return the descriptor anyway. * RE_ORIGINAL_QUIRK: The declared 21-slot array uses a strict below-20 gate. * Allocation failure and descriptors at or above 20 still return unchanged. * RE_UNKNOWN: Descriptor range/uniqueness, replacement of existing state, * remaining state-word initialization and real host availability need proof.",
       "owners": [
         {
           "kind": "function",
           "name": "fileuxOpen",
-          "declaration_line": 426,
+          "declaration_line": 440,
           "lines": [
-            416
+            430
           ]
         }
       ]
+    },
+    {
+      "id": "Q-aaed7a761b7a",
+      "kind": "original_quirk",
+      "path": "src/modules/fileux.c",
+      "symbol": "Consume retained descriptor bytes or issue R requests of at most 256 * bytes. A buffered refill requests 256 bytes, copies the requested remainder * and tracks any surplus with the existing count and read cursor. * RE_ORIGINAL_QUIRK: retain 0/1 status returns; the refill count and requested * cursor are stored before the short-refill test. Preserve this state on error. * RE_UNKNOWN: valid counts, state ownership, host status and progress on * short/failed requests; no positive-progress guard is added.",
+      "lines": [
+        354
+      ],
+      "evidence": "Consume retained descriptor bytes or issue R requests of at most 256 * bytes. A buffered refill requests 256 bytes, copies the requested remainder * and tracks any surplus with the existing count and read cursor. * RE_ORIGINAL_QUIRK: retain 0/1 status returns; the refill count and requested * cursor are stored before the short-refill test. Preserve this state on error. * RE_UNKNOWN: valid counts, state ownership, host status and progress on * short/failed requests; no positive-progress guard is added."
+    },
+    {
+      "id": "Q-71e61ce0faff",
+      "kind": "original_quirk",
+      "path": "src/modules/fileux.c",
+      "symbol": "Write through descriptor state when its buffered mode permits; otherwise * send W requests in chunks of at most 256 bytes. A final buffered chunk of * at most 256 bytes is retained rather than sent immediately. * RE_ORIGINAL_QUIRK: retain 0/1 status returns and discard the full-buffer * flush response before clearing its pending count. * RE_UNKNOWN: valid counts, state ownership, host status and progress on * short/failed requests; this wrapper proves no completed host transfer.",
+      "lines": [
+        285
+      ],
+      "evidence": "Write through descriptor state when its buffered mode permits; otherwise * send W requests in chunks of at most 256 bytes. A final buffered chunk of * at most 256 bytes is retained rather than sent immediately. * RE_ORIGINAL_QUIRK: retain 0/1 status returns and discard the full-buffer * flush response before clearing its pending count. * RE_UNKNOWN: valid counts, state ownership, host status and progress on * short/failed requests; this wrapper proves no completed host transfer."
     },
     {
       "id": "Q-b5772ecba67b",

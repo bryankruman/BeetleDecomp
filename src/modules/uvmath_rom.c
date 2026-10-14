@@ -82,7 +82,7 @@ f32 uvSqrtF(f32 arg0) {
 }
 #line 67 "src/modules/uvmath_rom.c"
 
-// Already matched but needs rodata migration
+
 #line 69 "src/modules/uvmath_rom.c"
 /**************************************************************************
  *									  *

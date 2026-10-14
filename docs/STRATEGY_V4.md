@@ -3644,3 +3644,8 @@ Recover ufogameBuildCameraDebugPanel:560 readable bytes,564 positive native byte
 Totals: 456 further recoveries after the 225 upstream ordinary imports, plus 2122 existing C semantic cleanups. Current ledger: 745 assembly references = 706 ordinary + 39 entrypoints; 690,712 known remaining instruction bytes; zero unknown sizes; 289 address-named C definitions remain. Full readable decompilation is incomplete.
 
 Frozen wave `ufogame-camera-panel-14856` and `accepted-ufogame-camera-panel-14856` verify real translation-unit instructions/full relocations, 1 original packed modules, a fresh successful four-job build, original full USA ROM SHA-1 `e5ab4d226c08d22f68a2edcc48870203e67454b8`, and all source hashes in the frozen manifest. The mandatory receipt/source/ledger gate precedes staging and commit.
+
+The recovered `osAiGetLength` source reads the raw 32-bit AI length register.
+Its original positive function covers 12 bytes; the remaining four bytes of
+the 16-byte source interval are unclassified and uncredited. The existing
+recompiled runtime audio substitution remains unchanged.

@@ -129,8 +129,8 @@ void fileuxNoOpHostBufferHook(void *unusedBuffer, s32 unusedByteCount) {
 }
 #line 97 "src/modules/fileux.c"
 
-/* Return the constant one.
- * RE_UNKNOWN: the caller's interpretation of this status value remains unresolved. */
+/* Return one: fileuxHostRequest bypasses its zero-result branch and ignores
+ * seven later results. RE_UNKNOWN: intended protocol/status meaning. */
 #line 98 "src/modules/fileux.c"
 s32 func_fileux_00400144(void) {
     return 1;
@@ -282,6 +282,13 @@ s32 fileuxHostRequest(s32 mode, ...) {
     }
 }
 
+/* Write through descriptor state when its buffered mode permits; otherwise
+ * send W requests in chunks of at most 256 bytes. A final buffered chunk of
+ * at most 256 bytes is retained rather than sent immediately.
+ * RE_ORIGINAL_QUIRK: retain 0/1 status returns and discard the full-buffer
+ * flush response before clearing its pending count.
+ * RE_UNKNOWN: valid counts, state ownership, host status and progress on
+ * short/failed requests; this wrapper proves no completed host transfer. */
 #line 231 "src/modules/fileux.c"
 
 s32 fileuxWrite(s32 fd, u8 *sourceBuffer, s32 byteCount) {
@@ -344,6 +351,13 @@ s32 fileuxWrite(s32 fd, u8 *sourceBuffer, s32 byteCount) {
 ret:
     return 0;
 }
+/* Consume retained descriptor bytes or issue R requests of at most 256
+ * bytes. A buffered refill requests 256 bytes, copies the requested remainder
+ * and tracks any surplus with the existing count and read cursor.
+ * RE_ORIGINAL_QUIRK: retain 0/1 status returns; the refill count and requested
+ * cursor are stored before the short-refill test. Preserve this state on error.
+ * RE_UNKNOWN: valid counts, state ownership, host status and progress on
+ * short/failed requests; no positive-progress guard is added. */
 #line 291 "src/modules/fileux.c"
 
 #line 292 "src/modules/fileux.c"
