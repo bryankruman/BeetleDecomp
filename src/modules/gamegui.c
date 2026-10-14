@@ -35,6 +35,151 @@ extern UvChannel_Exports *gUvChanExports;
 extern UvCback_Exports *gUvCbckExports;
 #include "module.h"
 #include "global_exports.h"
+/* Selective gamegui00370 consumed slots; not complete export allocations.
+ * Raw optional-module slot words are passed as value-source addresses.
+ * RE_UNKNOWN: historical full types, storage extents and provider lifetimes. */
+typedef struct GameGuiDebugOptionGuiExports {
+    u8 unused00[0x5C];
+    void (*setPropertyWord)(void *, s16, s32);
+    u8 unused60[0x24];
+    void (*appendTextList)(void *, void *);
+    u8 unused88[0xC];
+    s16 (*allocateTextList)(void);
+    void *(*getTextList)(s16);
+    void (*copyTextListText)(void *, u8 *);
+    u8 unusedA0[0x30];
+    void (*setCallbackWord)(void *, s32);
+    u8 unusedD4[0x10];
+    void (*setTextTableWord)(void *, s32);
+} GameGuiDebugOptionGuiExports;
+typedef struct { u8 unused00[0x24]; u32 valueSourceAddress24, valueSourceAddress28; } GameGuiDebugPlayerSlots;
+typedef struct { u8 unused00[0xB0]; u32 valueSourceAddressB0, valueSourceAddressB4; } GameGuiDebugTerrainSlots;
+typedef struct { u8 unused00[0x14]; u32 valueSourceAddress14; } GameGuiDebugSkidSlots;
+typedef struct { u8 unused00[0x24]; u32 valueSourceAddress24; } GameGuiDebugRainSlots;
+typedef struct { u8 unused00[0x18]; u32 valueSourceAddress18; } GameGuiDebugFlagSlots;
+typedef struct { u8 unused00[0x1C]; u32 valueSourceAddress1C; } GameGuiDebugScrnSlots;
+extern UvEnv_Exports *gUvEnvExports;
+extern GameGuiDebugTerrainSlots *gUvTerraExports;
+extern s32 gNumOpenCars, gNumOpenTracks, gNumOpenMtracks, gNumOpenTourns;
+extern s32 gDebugProfilingState, gDebugOptsMinDt, gDebugOptsCarSelect;
+extern s32 gOptionsMusicVol, gOptionsSfxVol;
+extern s32 D_gamegui_00402D10, D_gamegui_00402D14;
+extern void *D_gamegui_00402D18, *D_gamegui_00402D1C, *D_gamegui_00402D20;
+extern u8 D_gamegui_00402580[];
+extern u8 D_gamegui_00402584[];
+extern u8 D_gamegui_00402590[];
+extern u8 D_gamegui_0040259C[];
+extern u8 D_gamegui_004025AC[];
+extern u8 D_gamegui_004025B8[];
+extern u8 D_gamegui_004025C4[];
+extern u8 D_gamegui_004025D0[];
+extern u8 D_gamegui_00402694[];
+extern u8 D_gamegui_004026AC[];
+extern u8 D_gamegui_004026B8[];
+extern u8 D_gamegui_004026C8[];
+extern u8 D_gamegui_004026D4[];
+extern u8 D_gamegui_004026E0[];
+extern u8 D_gamegui_004026F0[];
+extern u8 D_gamegui_00402710[];
+extern u8 D_gamegui_0040272C[];
+extern u8 D_gamegui_00402738[];
+extern u8 D_gamegui_00402740[];
+extern u8 D_gamegui_0040274C[];
+extern u8 D_gamegui_00402754[];
+extern u8 D_gamegui_00402760[];
+extern u8 D_gamegui_0040276C[];
+extern u8 D_gamegui_00402774[];
+extern u8 D_gamegui_00402778[];
+extern u8 D_gamegui_004027A0[];
+extern u8 D_gamegui_004027AC[];
+extern u8 D_gamegui_004027D0[];
+extern u8 D_gamegui_00402898[];
+extern u8 D_gamegui_0040289C[];
+extern u8 D_gamegui_004028A4[];
+extern u8 D_gamegui_004028B0[];
+extern u8 D_gamegui_004028B8[];
+extern u8 D_gamegui_004028C4[];
+extern u8 D_gamegui_004028CC[];
+extern u8 D_gamegui_004028D8[];
+extern u8 D_gamegui_004028E0[];
+extern u8 D_gamegui_004028E8[];
+extern u8 D_gamegui_004028F4[];
+extern u8 D_gamegui_00402900[];
+extern u8 D_gamegui_0040290C[];
+extern u8 D_gamegui_00402918[];
+extern u8 D_gamegui_00402924[];
+extern u8 D_gamegui_00402930[];
+extern u8 D_gamegui_0040293C[];
+extern u8 D_gamegui_00402948[];
+extern u8 D_gamegui_00402950[];
+extern u8 D_gamegui_00402958[];
+extern u8 D_gamegui_00402960[];
+extern u8 D_gamegui_0040296C[];
+extern u8 D_gamegui_00402974[];
+extern u8 D_gamegui_00402984[];
+extern u8 D_gamegui_0040298C[];
+extern u8 D_gamegui_00402994[];
+extern u8 D_gamegui_0040299C[];
+extern u8 D_gamegui_004029AC[];
+extern u8 D_gamegui_004029B8[];
+extern u8 D_gamegui_004029C0[];
+extern u8 D_gamegui_004029CC[];
+extern u8 D_gamegui_004029D8[];
+extern u8 D_gamegui_004029E4[];
+extern u8 D_gamegui_004029F0[];
+extern u8 D_gamegui_004029F8[];
+extern u8 D_gamegui_00402A00[];
+extern u8 D_gamegui_00402A08[];
+extern u8 D_gamegui_00402A10[];
+extern s32 D_gamegui_00402AB0;
+extern s32 D_gamegui_00402AB4;
+extern f32 D_gamegui_00402ABC;
+extern u8 D_gamegui_00402AC0[];
+extern u8 D_gamegui_00402AD0[];
+extern u8 D_gamegui_00402ADC[];
+extern u8 D_gamegui_00402AEC[];
+extern u8 D_gamegui_00402AFC[];
+extern u8 D_gamegui_00402B10[];
+extern u8 D_gamegui_00402B20[];
+extern u8 D_gamegui_00402B60[];
+extern u8 D_gamegui_00402B6C[];
+extern u8 D_gamegui_00402B78[];
+extern u8 D_gamegui_00402B84[];
+extern u8 D_gamegui_00402B90[];
+extern u8 D_gamegui_00402B98[];
+
+/* Original address aliases and readonly bound; declarations allocate no storage. */
+extern s32 gDebugAbortMode;
+extern s32 gDebugAiDbgState;
+extern s32 gDebugDefaultMaterial;
+extern s32 gDebugDisableGoodFramera;
+extern s32 gDebugDispAntialias;
+extern s32 gDebugDispMasks;
+extern s32 gDebugDispMipmap;
+extern s32 gDebugDispTxtDetail;
+extern s32 gDebugDispTxtFilter;
+extern s32 gDebugDispTxtPersp;
+extern s32 gDebugDispViDither;
+extern s32 gDebugDispViDivot;
+extern s32 gDebugDispViGamDith;
+extern s32 gDebugDispViGamma;
+extern s32 gDebugFrateDisp;
+extern s32 gDebugHudState;
+extern s32 gDebugInfLapsFlag;
+extern f32 gDebugMxSpeed;
+extern s32 gDebugNumMaxTxts;
+extern s32 gDebugOptsCarShadow;
+extern s32 gDebugOptsDrawingOff;
+extern s32 gDebugOptsFrameRate;
+extern s32 gDebugOptsGlare;
+extern s32 gDebugOptsLosCheckOff;
+extern s32 gDebugRecordIntro;
+extern s32 gDebugOptsVelCam;
+extern f32 gDebugPlyrLead;
+extern s32 gDebugSuspensionFlag;
+extern s32 gDebugTileSort;
+extern const f32 D_gamegui_00402A9C;
+#line 10 "src/modules/gamegui.c"
 /*__SEEDEXTERNS__*/
 u16 uvGetFileInstanceCount(s32 tag, s32 fileId);
 s32 uvGetFilesCount(s32 tag);
@@ -244,7 +389,199 @@ void gameGuiAddRaceAndBattleControls(s32 parentWord) {
 }
 #line 96 "src/modules/gamegui.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/gamegui/func_gamegui_00400370.s")
+/* Build the dbg, opts, disp and dsbl text-list panels in their original order,
+ * bind shared setting addresses to scalar widgets, and attach action/address
+ * properties. Optional module flags are added only when their exports exist.
+ * The accepted MISC provider selects integer sources when kind & 0x2; other
+ * kinds read the same source address as f32. Preserve all bounds and call order.
+ * RE_ORIGINAL_QUIRK: row/widget allocation is unchecked; accepted providers
+ * retain fixed-width label reads, including bytes beyond a label's first NUL.
+ * RE_UNKNOWN: remaining kind bits, complete label/table extents, allocation
+ * capacity, callback dispatch contracts, optional flag meanings, and bound
+ * storage/module lifetime remain provider and caller obligations. Export-word
+ * casts describe addresses passed here, not inferred allocations or ownership.
+ * The scoped linker alias preserves the original caller/export name. */
+#line 355 "src/modules/gamegui.c"
+void gameGuiBuildDebugOptionsPanels(s32 parentWord) {
+    void *menuOption;
+    void *slider;
+    char stackLayoutPad[0x4];
+    GameGuiDebugPlayerSlots *player;
+
+    player = uvGetLoadedModule('plyr');
+    menuOption = ((GameGuiDebugOptionGuiExports *)gUvGuiExports)->getTextList(((GameGuiDebugOptionGuiExports *)gUvGuiExports)->allocateTextList());
+    ((GameGuiDebugOptionGuiExports *)gUvGuiExports)->copyTextListText(menuOption, D_gamegui_00402580);
+    ((GameGuiDebugOptionGuiExports *)gUvGuiExports)->appendTextList((void *)parentWord, menuOption);
+    gMiscExports->createBoundScalarRow(menuOption, D_gamegui_00402584, 0x12, 1.0f, 12.0f, &gNumOpenCars,
+                                     &slider);
+    gMiscExports->createBoundScalarRow(menuOption, D_gamegui_00402590, 0x12, 1.0f, 7.0f, &gNumOpenTracks,
+                                     &slider);
+    gMiscExports->createBoundScalarRow(menuOption, D_gamegui_0040259C, 0x12, 1.0f, 9.0f, &gNumOpenMtracks,
+                                     &slider);
+    gMiscExports->createBoundScalarRow(menuOption, D_gamegui_004025AC, 0x12, 1.0f, 4.0f, &gNumOpenTourns,
+                                     &slider);
+    D_gamegui_00402D20 = gMiscExports->createBoundScalarRow(
+        menuOption, D_gamegui_004025B8, 0x12, 0.0f,
+        (f32) (gUvEmitterExports->uvEmitterGetBankInstrumentCount() - 1), &D_gamegui_00402D10, &slider);
+    ((GameGuiDebugOptionGuiExports *)gUvGuiExports)->setCallbackWord(slider, (s32) &func_gamegui_00401AF8);
+    ((GameGuiDebugOptionGuiExports *)gUvGuiExports)->setPropertyWord(
+        gMiscExports->createBoundScalarRow(menuOption, D_gamegui_004025C4, 0x12, 0.0f,
+                                         (f32) (gUvCmidiExports->uvaGetSeqCount() - 1),
+                                         &D_gamegui_00402D14, &slider),
+        3, (s32)gameGuiRestoreMusicUnlessModeOne);
+    gMiscExports->createTextRowWithPropertyWord(menuOption, D_gamegui_004025D0, (s32)gameGuiAccumulateLoadedTextureField1A);
+    gMiscExports->createBoundScalarRow(menuOption, D_gamegui_00402694, 2, 0, 15.0f,
+                                     &gGameSettings[0].debugState, &slider);
+    ((GameGuiDebugOptionGuiExports *)gUvGuiExports)->setTextTableWord(slider, (s32) &D_gamegui_00402B20);
+    gMiscExports->createBoundScalarRow(menuOption, D_gamegui_004026AC, 0x12, 0.0f, 2.0f,
+                                     &gDebugFrateDisp, &slider);
+    ((GameGuiDebugOptionGuiExports *)gUvGuiExports)->setTextTableWord(slider, (s32) &D_gamegui_00402B60);
+    gMiscExports->createBoundScalarRow(menuOption, D_gamegui_004026B8, 0x12, 0.0f, 1.0f,
+                                     &gDebugDefaultMaterial, &slider);
+    gMiscExports->createBoundScalarRow(menuOption, D_gamegui_004026C8, 0x12, 0.0f, 1.0f,
+                                     &gDebugAbortMode, &slider);
+    gMiscExports->createBoundScalarRow(menuOption, D_gamegui_004026D4, 0x11, 0.0f, D_gamegui_00402A9C,
+                                     (s32 *)&gDebugPlyrLead, &slider);
+    gMiscExports->createBoundScalarRow(menuOption, D_gamegui_004026E0, 0x11, 0.1f, 300.0f,
+                                     (s32 *)&gDebugMxSpeed, &slider);
+    gMiscExports->createBoundScalarRow(menuOption, D_gamegui_004026F0, 0x12, 0.0f, 3.0f,
+                                     &gDebugHudState, &slider);
+    ((GameGuiDebugOptionGuiExports *)gUvGuiExports)->setTextTableWord(slider, (s32) &D_gamegui_00402B10);
+    gMiscExports->createBoundScalarRow(menuOption, D_gamegui_00402710, 0x12, 0.0f, 2.0f,
+                                     &gDebugAiDbgState, &slider);
+    ((GameGuiDebugOptionGuiExports *)gUvGuiExports)->setTextTableWord(slider, (s32) &D_gamegui_00402B6C);
+    gMiscExports->createBoundScalarRow(menuOption, D_gamegui_0040272C, 0x12, 0.0f, 2.0f,
+                                     &gDebugProfilingState, &slider);
+    ((GameGuiDebugOptionGuiExports *)gUvGuiExports)->setTextTableWord(slider, (s32) &D_gamegui_00402B78);
+    menuOption = ((GameGuiDebugOptionGuiExports *)gUvGuiExports)->getTextList(((GameGuiDebugOptionGuiExports *)gUvGuiExports)->allocateTextList());
+    ((GameGuiDebugOptionGuiExports *)gUvGuiExports)->copyTextListText(menuOption, D_gamegui_00402738);
+    ((GameGuiDebugOptionGuiExports *)gUvGuiExports)->appendTextList((void *)parentWord, menuOption);
+    if (player != NULL) {
+        gMiscExports->createBoundScalarRow(menuOption, D_gamegui_00402740, 0x11, 0.0f, 1.0f,
+                                         (s32 *)player->valueSourceAddress28, &slider);
+    }
+    gMiscExports->createBoundScalarRow(menuOption, D_gamegui_0040274C, 0x11, 0.01f, 1.0f,
+                                     &gDebugOptsMinDt, &slider);
+    gMiscExports->createBoundScalarRow(menuOption, D_gamegui_00402754, 0x12, 0.0f, 1.0f,
+                                     &gDebugInfLapsFlag, &slider);
+    gMiscExports->createBoundScalarRow(menuOption, D_gamegui_00402760, 0x12, 1.0f, 500.0f,
+                                     &gDebugNumMaxTxts, &slider);
+    gMiscExports->createBoundScalarRow(menuOption, D_gamegui_0040276C, 2, 0, 8.0f, &gOptionsMusicVol,
+                                     &slider);
+    gMiscExports->createBoundScalarRow(menuOption, D_gamegui_00402774, 2, 0, 8.0f, &gOptionsSfxVol,
+                                     &slider);
+    gMiscExports->createBoundScalarRow(menuOption, D_gamegui_00402778, 0x12, 0.0f, 1.0f,
+                                     &gDebugSuspensionFlag, &slider);
+    gMiscExports->createBoundScalarRow(menuOption, D_gamegui_004027A0, 0x12, 0.0f, 2.0f,
+                                     &gDebugTileSort, &slider);
+    ((GameGuiDebugOptionGuiExports *)gUvGuiExports)->setTextTableWord(slider, (s32) &D_gamegui_00402B84);
+    gMiscExports->createTextRowWithPropertyWord(menuOption, D_gamegui_004027AC, (s32)gameGuiToggleReplayAndRestartCurrentState);
+    gMiscExports->createBoundScalarRow(menuOption, D_gamegui_004027D0, 0x12, 0.0f, 1.0f,
+                                     &gDebugRecordIntro, &slider);
+    ((GameGuiDebugOptionGuiExports *)gUvGuiExports)->setTextTableWord(slider, (s32) &D_gamegui_00402B90);
+    gMiscExports->createBoundScalarRow(menuOption, D_gamegui_00402898, 0x12, 0.0f, 11.0f,
+                                     &gDebugOptsCarSelect, &slider);
+    ((GameGuiDebugOptionGuiExports *)gUvGuiExports)->setTextTableWord(slider, (s32) &D_gamegui_00402B98);
+    gMiscExports->createBoundScalarRow(menuOption, D_gamegui_0040289C, 0x12, 0.0f, 1.0f,
+                                     &gDebugOptsCarShadow, &slider);
+    gMiscExports->createBoundScalarRow(menuOption, D_gamegui_004028A4, 0x12, 0.0f, 1.0f,
+                                     &gDebugOptsLosCheckOff, &slider);
+    gMiscExports->createBoundScalarRow(menuOption, D_gamegui_004028B0, 0x12, 0.0f, 1.0f,
+                                     &gDebugOptsVelCam, &slider);
+    gMiscExports->createBoundScalarRow(menuOption, D_gamegui_004028B8, 0x12, 0.0f, 1.0f,
+                                     &gDebugOptsDrawingOff, &slider);
+    gMiscExports->createBoundScalarRow(menuOption, D_gamegui_004028C4, 0x12, 0.0f, 1.0f,
+                                     &gDebugOptsGlare, &slider);
+    gMiscExports->createBoundScalarRow(menuOption, D_gamegui_004028CC, 0x12, 0.0f, 4.0f,
+                                     &gDebugOptsFrameRate, &slider);
+    ((GameGuiDebugOptionGuiExports *)gUvGuiExports)->setTextTableWord(slider, (s32) &D_gamegui_00402AFC);
+    menuOption = ((GameGuiDebugOptionGuiExports *)gUvGuiExports)->getTextList(((GameGuiDebugOptionGuiExports *)gUvGuiExports)->allocateTextList());
+    ((GameGuiDebugOptionGuiExports *)gUvGuiExports)->copyTextListText(menuOption, D_gamegui_004028D8);
+    ((GameGuiDebugOptionGuiExports *)gUvGuiExports)->appendTextList((void *)parentWord, menuOption);
+    gMiscExports->createBoundScalarRow(menuOption, D_gamegui_004028E0, 0x12, 0, 1,
+                                     &gDebugDispMasks, &slider);
+    gMiscExports->createBoundScalarRow(menuOption, D_gamegui_004028E8, 0x12, 0.0f, 1.0f,
+                                     &gDebugDispViGamma, &slider);
+    gMiscExports->createBoundScalarRow(menuOption, D_gamegui_004028F4, 0x12, 0.0f, 1.0f,
+                                     &gDebugDispViGamDith, &slider);
+    gMiscExports->createBoundScalarRow(menuOption, D_gamegui_00402900, 0x12, 0.0f, 1.0f,
+                                     &gDebugDispViDivot, &slider);
+    gMiscExports->createBoundScalarRow(menuOption, D_gamegui_0040290C, 0x12, 0.0f, 1.0f,
+                                     &gDebugDispViDither, &slider);
+    gMiscExports->createBoundScalarRow(menuOption, D_gamegui_00402918, 0x12, 0.0f, 1.0f,
+                                     &gDebugDispAntialias, &slider);
+    gMiscExports->createBoundScalarRow(menuOption, D_gamegui_00402924, 0x12, 0.0f, 3.0f,
+                                     &gDebugDispTxtFilter, &slider);
+    ((GameGuiDebugOptionGuiExports *)gUvGuiExports)->setTextTableWord(slider, (s32) &D_gamegui_00402AC0);
+    gMiscExports->createBoundScalarRow(menuOption, D_gamegui_00402930, 0x12, 0.0f, 2.0f,
+                                     &gDebugDispTxtPersp, &slider);
+    ((GameGuiDebugOptionGuiExports *)gUvGuiExports)->setTextTableWord(slider, (s32) &D_gamegui_00402AD0);
+    gMiscExports->createBoundScalarRow(menuOption, D_gamegui_0040293C, 0x12, 0.0f, 3.0f,
+                                     &gDebugDispTxtDetail, &slider);
+    ((GameGuiDebugOptionGuiExports *)gUvGuiExports)->setTextTableWord(slider, (s32) &D_gamegui_00402ADC);
+    gMiscExports->createBoundScalarRow(menuOption, D_gamegui_00402948, 0x12, 0.0f, 3.0f,
+                                     &gDebugDispMipmap, &slider);
+    ((GameGuiDebugOptionGuiExports *)gUvGuiExports)->setTextTableWord(slider, (s32) &D_gamegui_00402AEC);
+    D_gamegui_00402D18 = gMiscExports->createBoundScalarRow(menuOption, D_gamegui_00402950, 2, 0.0f, 2.0f,
+                                                          &D_gamegui_00402AB0, &slider);
+    D_gamegui_00402D1C = gMiscExports->createBoundScalarRow(menuOption, D_gamegui_00402958, 2, 0.0f, 2.0f,
+                                                          &D_gamegui_00402AB4, &slider);
+    gMiscExports->createBoundScalarRow(menuOption, D_gamegui_00402960, 0x11, -1.0f, 1.0f,
+                                     (s32 *)&D_gamegui_00402ABC, &slider);
+    menuOption = ((GameGuiDebugOptionGuiExports *)gUvGuiExports)->getTextList(((GameGuiDebugOptionGuiExports *)gUvGuiExports)->allocateTextList());
+    ((GameGuiDebugOptionGuiExports *)gUvGuiExports)->copyTextListText(menuOption, D_gamegui_0040296C);
+    ((GameGuiDebugOptionGuiExports *)gUvGuiExports)->appendTextList((void *)parentWord, menuOption);
+    gMiscExports->createBoundScalarRow(menuOption, D_gamegui_00402974, 0x12, 0.0f, 1.0f,
+                                     &gDebugDisableGoodFramera, &slider);
+    gMiscExports->createTextRowWithPropertyWord(menuOption, D_gamegui_00402984, (s32)gameGuiStopMidiSequence);
+    gMiscExports->createTextRowWithPropertyWord(menuOption, D_gamegui_0040298C, (s32)gameGuiStopAndDisableEmitters);
+    gMiscExports->createTextRowWithPropertyWord(menuOption, D_gamegui_00402994, (s32)gameGuiLatchAudioShutdown);
+    if (gUvPfxExports != NULL) {
+        gMiscExports->createBoundScalarRow(menuOption, D_gamegui_0040299C, 0x12, 0.0f, 1.0f,
+                                         gUvPfxExports->D_uvpfx_rom_00404FAC, &slider);
+    }
+    if (gUvDobjExports != NULL) {
+        gMiscExports->createBoundScalarRow(menuOption, D_gamegui_004029AC, 0x12, 0.0f, 1.0f,
+                                         gUvDobjExports->D_uvdobj_rom_004039B0, &slider);
+    }
+    if (gUvEnvExports != NULL) {
+        gMiscExports->createBoundScalarRow(menuOption, D_gamegui_004029B8, 0x12, 0.0f, 1.0f,
+                                         gUvEnvExports->unk28, &slider);
+        gMiscExports->createBoundScalarRow(menuOption, D_gamegui_004029C0, 0x12, 0.0f, 1.0f,
+                                         gUvEnvExports->unk2C, &slider);
+    }
+    if (gUvTerraExports != NULL) {
+        gMiscExports->createBoundScalarRow(menuOption, D_gamegui_004029CC, 0x12, 0.0f, 1.0f,
+                                         (s32 *)gUvTerraExports->valueSourceAddressB0, &slider);
+        gMiscExports->createBoundScalarRow(menuOption, D_gamegui_004029D8, 0x12, 0.0f, 1.0f,
+                                         (s32 *)gUvTerraExports->valueSourceAddressB4, &slider);
+    }
+    if (gUvGfxStateExports != NULL) {
+        gMiscExports->createBoundScalarRow(menuOption, D_gamegui_004029E4, 0x12, 0.0f, 1.0f,
+                                         gUvGfxStateExports->unk78, &slider);
+    }
+    if (gSkidExports != NULL) {
+        gMiscExports->createBoundScalarRow(menuOption, D_gamegui_004029F0, 0x12, 0.0f, 1.0f,
+                                         (s32 *)((GameGuiDebugSkidSlots *)gSkidExports)->valueSourceAddress14, &slider);
+    }
+    if (gRainExports != NULL) {
+        gMiscExports->createBoundScalarRow(menuOption, D_gamegui_004029F8, 0x12, 0.0f, 1.0f,
+                                         (s32 *)((GameGuiDebugRainSlots *)gRainExports)->valueSourceAddress24, &slider);
+    }
+    if (gScrnExports != NULL) {
+        gMiscExports->createBoundScalarRow(menuOption, D_gamegui_00402A00, 0x12, 0.0f, 1.0f,
+                                         (s32 *)((GameGuiDebugScrnSlots *)gScrnExports)->valueSourceAddress1C, &slider);
+    }
+    if (player != NULL) {
+        gMiscExports->createBoundScalarRow(menuOption, D_gamegui_00402A08, 0x12, 0.0f, 1.0f,
+                                         (s32 *)player->valueSourceAddress24, &slider);
+    }
+    if (gFlagExports != NULL) {
+        gMiscExports->createBoundScalarRow(menuOption, D_gamegui_00402A10, 0x12, 0.0f, 1.0f,
+                                         (s32 *)((GameGuiDebugFlagSlots *)gFlagExports)->valueSourceAddress18, &slider);
+    }
+}
+#line 98 "src/modules/gamegui.c"
 /*
  * Append a text-list panel and its thirteen state-action rows in original order.
  * Reuse the first two rows' code-address property word and retain their returned

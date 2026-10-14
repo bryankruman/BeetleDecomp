@@ -17,17 +17,17 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 1897 |
-| Preserved RE_ORIGINAL_QUIRK notes | 528 |
+| Explicit RE_UNKNOWN notes | 1899 |
+| Preserved RE_ORIGINAL_QUIRK notes | 530 |
 | Older comments with uncertainty language | 88 |
 | Documented original-behavior audits | 30 |
-| Assembly-backed functions or data | 746 |
+| Assembly-backed functions or data | 745 |
 | Address-based function identifiers | 905 |
-| Address-based global identifiers | 1553 |
-| Offset-based fields or neutral typed fields | 1768 |
+| Address-based global identifiers | 1643 |
+| Offset-based fields or neutral typed fields | 1770 |
 | Layout padding to preserve | 281 |
 | Unresolved type names | 285 |
-| Explicit unused ABI, storage or local identifiers | 148 |
+| Explicit unused ABI, storage or local identifiers | 151 |
 | Decompiler parameter/local names | 622 |
 | Fake, unresolved or TODO draft markers | 54 |
 | Data-dependent conditional draft guards | 4 |
@@ -3230,77 +3230,174 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
-| address_function | `func_gamegui_004000A8` | function `__entrypoint_func_gameGuiInitializeModuleExports`, function `func_gamegui_004000A8`, function `func_gamegui_004000A8` | [142](../src/modules/gamegui.c#L142), [158](../src/modules/gamegui.c#L158), [177](../src/modules/gamegui.c#L177) |
-| address_function | `func_gamegui_00400370` | function `func_gamegui_00400370`, function `func_gamegui_00400370`, function `gameGuiCreateDebugRoot` | [44](../src/modules/gamegui.c#L44), [93](../src/modules/gamegui.c#L93), [204](../src/modules/gamegui.c#L204) |
-| address_function | `func_gamegui_004014F8` | function `func_gamegui_004014F8`, function `func_gamegui_004014F8`, function `gameGuiCreateDebugRoot` | [45](../src/modules/gamegui.c#L45), [94](../src/modules/gamegui.c#L94), [205](../src/modules/gamegui.c#L205) |
-| address_function | `func_gamegui_00401748` | function `__entrypoint_func_gameGuiInitializeModuleExports`, function `func_gamegui_00401748` | [95](../src/modules/gamegui.c#L95), [160](../src/modules/gamegui.c#L160) |
-| address_function | `func_gamegui_00401AF8` | function `func_gamegui_00401AF8` | [98](../src/modules/gamegui.c#L98) |
-| address_function | `func_gamegui_00402194` | function `func_gamegui_00402194` | [563](../src/modules/gamegui.c#L563) |
-| address_function | `func_gamegui_004021D4` | function `func_gamegui_004021D4` | [585](../src/modules/gamegui.c#L585) |
-| address_global | `D_gamegui_00402450` | function `gameGuiCreateDebugRoot`, global `D_gamegui_00402450` | [47](../src/modules/gamegui.c#L47), [201](../src/modules/gamegui.c#L201) |
-| address_global | `D_gamegui_0040246C` | function `gameGuiAddRaceAndBattleControls`, global `D_gamegui_0040246C` | [27](../src/modules/gamegui.c#L27), [230](../src/modules/gamegui.c#L230) |
-| address_global | `D_gamegui_00402474` | function `gameGuiAddRaceAndBattleControls`, global `D_gamegui_0040246C` | [27](../src/modules/gamegui.c#L27), [232](../src/modules/gamegui.c#L232) |
-| address_global | `D_gamegui_00402480` | function `gameGuiAddRaceAndBattleControls`, global `D_gamegui_0040246C` | [27](../src/modules/gamegui.c#L27), [234](../src/modules/gamegui.c#L234) |
-| address_global | `D_gamegui_00402484` | function `gameGuiAddRaceAndBattleControls`, global `D_gamegui_00402484` | [28](../src/modules/gamegui.c#L28), [236](../src/modules/gamegui.c#L236) |
-| address_global | `D_gamegui_00402490` | function `gameGuiAddRaceAndBattleControls`, global `D_gamegui_00402484` | [28](../src/modules/gamegui.c#L28), [238](../src/modules/gamegui.c#L238) |
-| address_global | `D_gamegui_004024A0` | function `gameGuiAddRaceAndBattleControls`, global `D_gamegui_00402484` | [28](../src/modules/gamegui.c#L28), [240](../src/modules/gamegui.c#L240) |
-| address_global | `D_gamegui_004024AC` | function `gameGuiAddRaceAndBattleControls`, global `D_gamegui_004024AC` | [29](../src/modules/gamegui.c#L29), [242](../src/modules/gamegui.c#L242) |
-| address_global | `D_gamegui_00402BD0` | function `gameGuiApplyDitherAndVideoSettings`, global `D_gamegui_00402BD0` | [31](../src/modules/gamegui.c#L31), [602](../src/modules/gamegui.c#L602) |
-| address_global | `D_gamegui_00402BE0` | function `gameGuiApplyDitherAndVideoSettings`, global `D_gamegui_00402BD0` | [31](../src/modules/gamegui.c#L31), [603](../src/modules/gamegui.c#L603) |
-| address_global | `D_gamegui_00402C68` | function `__entrypoint_func_gameGuiInitializeModuleExports`, function `gameGuiGetDebugByte`, function `gameGuiInitializeSharedWidgetWhenEnabled`, function `gameGuiRenderMenuOrFontList`, function `gameGuiSetDebugByteWhenEnabled`, global `D_gamegui_00402C68` | [87](../src/modules/gamegui.c#L87), [168](../src/modules/gamegui.c#L168), [305](../src/modules/gamegui.c#L305), [317](../src/modules/gamegui.c#L317), [429](../src/modules/gamegui.c#L429), [653](../src/modules/gamegui.c#L653) |
-| address_global | `D_gamegui_00402C74` | function `gameGuiCreateDebugRoot`, global `D_gamegui_00402C74` | [48](../src/modules/gamegui.c#L48), [198](../src/modules/gamegui.c#L198) |
-| address_global | `D_gamegui_00402C78` | function `gameGuiCreateDebugRoot`, function `gameGuiInitializeSharedWidgetWhenEnabled`, function `gameGuiLoadPaletteThreeAndSelectDebugFont`, function `gameGuiRenderMenuOrFontList`, global `D_gamegui_00402C78` | [88](../src/modules/gamegui.c#L88), [202](../src/modules/gamegui.c#L202), [306](../src/modules/gamegui.c#L306), [420](../src/modules/gamegui.c#L420), [445](../src/modules/gamegui.c#L445) |
-| address_global | `D_gamegui_00402D04` | function `gameGuiSetSharedWord`, global `D_gamegui_00402D04` | [89](../src/modules/gamegui.c#L89), [454](../src/modules/gamegui.c#L454) |
-| address_global | `D_gamegui_00402D0C` | function `gameGuiInitializeSharedWidgetWhenEnabled`, global `D_gamegui_00402D0C` | [49](../src/modules/gamegui.c#L49), [417](../src/modules/gamegui.c#L417) |
-| address_global | `D_gamegui_00402D16` | function `gameGuiRestoreMusicUnlessModeOne`, global `D_gamegui_00402D16` | [90](../src/modules/gamegui.c#L90), [347](../src/modules/gamegui.c#L347) |
-| address_global | `D_gamegui_00402D28` | function `gameGuiRequestStateNineWithChoiceFlag`, global `D_gamegui_00402D28` | [91](../src/modules/gamegui.c#L91), [463](../src/modules/gamegui.c#L463) |
-| assembly | `func_gamegui_00400370` | — | [247](../src/modules/gamegui.c#L247) |
-| assembly | `func_gamegui_004014F8` | — | [268](../src/modules/gamegui.c#L268) |
-| assembly | `func_gamegui_00401748` | — | [299](../src/modules/gamegui.c#L299) |
-| assembly | `func_gamegui_00401AF8` | — | [322](../src/modules/gamegui.c#L322) |
-| explicit_unknown | `* Append a text-list panel and its thirteen state-action rows in original order. * Reuse the first two rows' code-address property word and retain their returned * addresses in ...` | assembly `func_gamegui_004014F8` | [248](../src/modules/gamegui.c#L248) |
-| explicit_unknown | `* Do nothing when debugging is disabled. Otherwise mark the shared debug state, * initialize the shared widget, narrow the allocated child-group handle to s16, * resolve it, cop...` | function `gameGuiCreateDebugRoot` | [185](../src/modules/gamegui.c#L185) |
-| explicit_unknown | `* Request property 6 from the supplied channel, using the local callback-list * output and trailing zero, then register gameGuiApplyDitherAndVideoSettings * with a zero insertio...` | function `gameGuiRegisterChannelCallback` | [630](../src/modules/gamegui.c#L630) |
-| explicit_unknown | `* Scan four controllers for both masks 0x20 and 0x10; on the first match, * load the GUI, display-list editor and font resources when needed, then set * GUI property 16 and the ...` | assembly `func_gamegui_00401748` | [269](../src/modules/gamegui.c#L269) |
-| explicit_unknown | `* Update the allocation pointer and publish ten original callback addresses * at offsets 0x00 through 0x24, then the shared debug-byte address at 0x28. * The table stores 32-bit...` | function `__entrypoint_func_gameGuiInitializeModuleExports` | [146](../src/modules/gamegui.c#L146) |
-| explicit_unknown | `Append the original race text-list panel, bind player/AI counts and the AI-record/ * steering-assist words, then append the play and battle rows with their original * code-addre...` | function `gameGuiAddRaceAndBattleControls` | [212](../src/modules/gamegui.c#L212) |
-| explicit_unknown | `Call original GUI0x28 with display-data ID-1 and palette ID3, then select * debug font3. Its target stores those IDs, skips the display-data load for-1, * loads palette3 and mar...` | function `gameGuiLoadPaletteThreeAndSelectDebugFont` | [439](../src/modules/gamegui.c#L439) |
-| explicit_unknown | `Emit pipe sync plus color/alpha-dither commands, reset the two shared graphics words, * then apply the original video-interface feature choices. RE_UNKNOWN: dither selector * do...` | function `gameGuiApplyDitherAndVideoSettings` | [590](../src/modules/gamegui.c#L590) |
-| explicit_unknown | `GUI28 consumes the signed low16 display-data and palette IDs. * RE_UNKNOWN: historical caller declaration widths. GUI0C and unused slots * retain the existing caller view. Exact...` | type `GameguiGuiExports` | [81](../src/modules/gamegui.c#L81) |
-| explicit_unknown | `Initializer storage view: these are original 32-bit addresses, not * invented callable declarations. Original slot 0x14 initializes the shared * widget conditionally and consume...` | type `GameGuiExportAddresses` | [124](../src/modules/gamegui.c#L124) |
-| explicit_unknown | `Original GUI04 initializes container fields after six helper calls; GUI1C * sets child-container bounds; GUI24 consumes a signed low16 selector and * stores its payload in an or...` | type `GameGuiInitializerExports` | [50](../src/modules/gamegui.c#L50) |
-| explicit_unknown | `Original GUI08/70/74/78 are append, signed-index allocation/access * and fixed-width text copy. Getter consumes low16; allocator returns a signed * index. RE_UNKNOWN: historical...` | type `LocalGuiExp_4000B0` | [64](../src/modules/gamegui.c#L64) |
+| address_function | `func_gamegui_004000A8` | function `__entrypoint_func_gameGuiInitializeModuleExports`, function `func_gamegui_004000A8`, function `func_gamegui_004000A8` | [287](../src/modules/gamegui.c#L287), [303](../src/modules/gamegui.c#L303), [322](../src/modules/gamegui.c#L322) |
+| address_function | `func_gamegui_00400370` | function `func_gamegui_00400370`, function `func_gamegui_00400370`, function `gameGuiCreateDebugRoot` | [189](../src/modules/gamegui.c#L189), [238](../src/modules/gamegui.c#L238), [349](../src/modules/gamegui.c#L349) |
+| address_function | `func_gamegui_004014F8` | function `func_gamegui_004014F8`, function `func_gamegui_004014F8`, function `gameGuiCreateDebugRoot` | [190](../src/modules/gamegui.c#L190), [239](../src/modules/gamegui.c#L239), [350](../src/modules/gamegui.c#L350) |
+| address_function | `func_gamegui_00401748` | function `__entrypoint_func_gameGuiInitializeModuleExports`, function `func_gamegui_00401748` | [240](../src/modules/gamegui.c#L240), [305](../src/modules/gamegui.c#L305) |
+| address_function | `func_gamegui_00401AF8` | function `func_gamegui_00401AF8`, function `gameGuiBuildDebugOptionsPanels` | [243](../src/modules/gamegui.c#L243), [426](../src/modules/gamegui.c#L426) |
+| address_function | `func_gamegui_00402194` | function `func_gamegui_00402194` | [900](../src/modules/gamegui.c#L900) |
+| address_function | `func_gamegui_004021D4` | function `func_gamegui_004021D4` | [922](../src/modules/gamegui.c#L922) |
+| address_global | `D_gamegui_00402450` | function `gameGuiCreateDebugRoot`, global `D_gamegui_00402450` | [192](../src/modules/gamegui.c#L192), [346](../src/modules/gamegui.c#L346) |
+| address_global | `D_gamegui_0040246C` | function `gameGuiAddRaceAndBattleControls`, global `D_gamegui_0040246C` | [27](../src/modules/gamegui.c#L27), [375](../src/modules/gamegui.c#L375) |
+| address_global | `D_gamegui_00402474` | function `gameGuiAddRaceAndBattleControls`, global `D_gamegui_0040246C` | [27](../src/modules/gamegui.c#L27), [377](../src/modules/gamegui.c#L377) |
+| address_global | `D_gamegui_00402480` | function `gameGuiAddRaceAndBattleControls`, global `D_gamegui_0040246C` | [27](../src/modules/gamegui.c#L27), [379](../src/modules/gamegui.c#L379) |
+| address_global | `D_gamegui_00402484` | function `gameGuiAddRaceAndBattleControls`, global `D_gamegui_00402484` | [28](../src/modules/gamegui.c#L28), [381](../src/modules/gamegui.c#L381) |
+| address_global | `D_gamegui_00402490` | function `gameGuiAddRaceAndBattleControls`, global `D_gamegui_00402484` | [28](../src/modules/gamegui.c#L28), [383](../src/modules/gamegui.c#L383) |
+| address_global | `D_gamegui_004024A0` | function `gameGuiAddRaceAndBattleControls`, global `D_gamegui_00402484` | [28](../src/modules/gamegui.c#L28), [385](../src/modules/gamegui.c#L385) |
+| address_global | `D_gamegui_004024AC` | function `gameGuiAddRaceAndBattleControls`, global `D_gamegui_004024AC` | [29](../src/modules/gamegui.c#L29), [387](../src/modules/gamegui.c#L387) |
+| address_global | `D_gamegui_00402580` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_00402580` | [68](../src/modules/gamegui.c#L68), [413](../src/modules/gamegui.c#L413) |
+| address_global | `D_gamegui_00402584` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_00402584` | [69](../src/modules/gamegui.c#L69), [415](../src/modules/gamegui.c#L415) |
+| address_global | `D_gamegui_00402590` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_00402590` | [70](../src/modules/gamegui.c#L70), [417](../src/modules/gamegui.c#L417) |
+| address_global | `D_gamegui_0040259C` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_0040259C` | [71](../src/modules/gamegui.c#L71), [419](../src/modules/gamegui.c#L419) |
+| address_global | `D_gamegui_004025AC` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_004025AC` | [72](../src/modules/gamegui.c#L72), [421](../src/modules/gamegui.c#L421) |
+| address_global | `D_gamegui_004025B8` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_004025B8` | [73](../src/modules/gamegui.c#L73), [424](../src/modules/gamegui.c#L424) |
+| address_global | `D_gamegui_004025C4` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_004025C4` | [74](../src/modules/gamegui.c#L74), [428](../src/modules/gamegui.c#L428) |
+| address_global | `D_gamegui_004025D0` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_004025D0` | [75](../src/modules/gamegui.c#L75), [432](../src/modules/gamegui.c#L432) |
+| address_global | `D_gamegui_00402694` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_00402694` | [76](../src/modules/gamegui.c#L76), [433](../src/modules/gamegui.c#L433) |
+| address_global | `D_gamegui_004026AC` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_004026AC` | [77](../src/modules/gamegui.c#L77), [436](../src/modules/gamegui.c#L436) |
+| address_global | `D_gamegui_004026B8` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_004026B8` | [78](../src/modules/gamegui.c#L78), [439](../src/modules/gamegui.c#L439) |
+| address_global | `D_gamegui_004026C8` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_004026C8` | [79](../src/modules/gamegui.c#L79), [441](../src/modules/gamegui.c#L441) |
+| address_global | `D_gamegui_004026D4` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_004026D4` | [80](../src/modules/gamegui.c#L80), [443](../src/modules/gamegui.c#L443) |
+| address_global | `D_gamegui_004026E0` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_004026E0` | [81](../src/modules/gamegui.c#L81), [445](../src/modules/gamegui.c#L445) |
+| address_global | `D_gamegui_004026F0` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_004026F0` | [82](../src/modules/gamegui.c#L82), [447](../src/modules/gamegui.c#L447) |
+| address_global | `D_gamegui_00402710` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_00402710` | [83](../src/modules/gamegui.c#L83), [450](../src/modules/gamegui.c#L450) |
+| address_global | `D_gamegui_0040272C` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_0040272C` | [84](../src/modules/gamegui.c#L84), [453](../src/modules/gamegui.c#L453) |
+| address_global | `D_gamegui_00402738` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_00402738` | [85](../src/modules/gamegui.c#L85), [457](../src/modules/gamegui.c#L457) |
+| address_global | `D_gamegui_00402740` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_00402740` | [86](../src/modules/gamegui.c#L86), [460](../src/modules/gamegui.c#L460) |
+| address_global | `D_gamegui_0040274C` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_0040274C` | [87](../src/modules/gamegui.c#L87), [463](../src/modules/gamegui.c#L463) |
+| address_global | `D_gamegui_00402754` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_00402754` | [88](../src/modules/gamegui.c#L88), [465](../src/modules/gamegui.c#L465) |
+| address_global | `D_gamegui_00402760` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_00402760` | [89](../src/modules/gamegui.c#L89), [467](../src/modules/gamegui.c#L467) |
+| address_global | `D_gamegui_0040276C` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_0040276C` | [90](../src/modules/gamegui.c#L90), [469](../src/modules/gamegui.c#L469) |
+| address_global | `D_gamegui_00402774` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_00402774` | [91](../src/modules/gamegui.c#L91), [471](../src/modules/gamegui.c#L471) |
+| address_global | `D_gamegui_00402778` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_00402778` | [92](../src/modules/gamegui.c#L92), [473](../src/modules/gamegui.c#L473) |
+| address_global | `D_gamegui_004027A0` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_004027A0` | [93](../src/modules/gamegui.c#L93), [475](../src/modules/gamegui.c#L475) |
+| address_global | `D_gamegui_004027AC` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_004027AC` | [94](../src/modules/gamegui.c#L94), [478](../src/modules/gamegui.c#L478) |
+| address_global | `D_gamegui_004027D0` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_004027D0` | [95](../src/modules/gamegui.c#L95), [479](../src/modules/gamegui.c#L479) |
+| address_global | `D_gamegui_00402898` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_00402898` | [96](../src/modules/gamegui.c#L96), [482](../src/modules/gamegui.c#L482) |
+| address_global | `D_gamegui_0040289C` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_0040289C` | [97](../src/modules/gamegui.c#L97), [485](../src/modules/gamegui.c#L485) |
+| address_global | `D_gamegui_004028A4` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_004028A4` | [98](../src/modules/gamegui.c#L98), [487](../src/modules/gamegui.c#L487) |
+| address_global | `D_gamegui_004028B0` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_004028B0` | [99](../src/modules/gamegui.c#L99), [489](../src/modules/gamegui.c#L489) |
+| address_global | `D_gamegui_004028B8` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_004028B8` | [100](../src/modules/gamegui.c#L100), [491](../src/modules/gamegui.c#L491) |
+| address_global | `D_gamegui_004028C4` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_004028C4` | [101](../src/modules/gamegui.c#L101), [493](../src/modules/gamegui.c#L493) |
+| address_global | `D_gamegui_004028CC` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_004028CC` | [102](../src/modules/gamegui.c#L102), [495](../src/modules/gamegui.c#L495) |
+| address_global | `D_gamegui_004028D8` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_004028D8` | [103](../src/modules/gamegui.c#L103), [499](../src/modules/gamegui.c#L499) |
+| address_global | `D_gamegui_004028E0` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_004028E0` | [104](../src/modules/gamegui.c#L104), [501](../src/modules/gamegui.c#L501) |
+| address_global | `D_gamegui_004028E8` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_004028E8` | [105](../src/modules/gamegui.c#L105), [503](../src/modules/gamegui.c#L503) |
+| address_global | `D_gamegui_004028F4` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_004028F4` | [106](../src/modules/gamegui.c#L106), [505](../src/modules/gamegui.c#L505) |
+| address_global | `D_gamegui_00402900` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_00402900` | [107](../src/modules/gamegui.c#L107), [507](../src/modules/gamegui.c#L507) |
+| address_global | `D_gamegui_0040290C` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_0040290C` | [108](../src/modules/gamegui.c#L108), [509](../src/modules/gamegui.c#L509) |
+| address_global | `D_gamegui_00402918` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_00402918` | [109](../src/modules/gamegui.c#L109), [511](../src/modules/gamegui.c#L511) |
+| address_global | `D_gamegui_00402924` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_00402924` | [110](../src/modules/gamegui.c#L110), [513](../src/modules/gamegui.c#L513) |
+| address_global | `D_gamegui_00402930` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_00402930` | [111](../src/modules/gamegui.c#L111), [516](../src/modules/gamegui.c#L516) |
+| address_global | `D_gamegui_0040293C` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_0040293C` | [112](../src/modules/gamegui.c#L112), [519](../src/modules/gamegui.c#L519) |
+| address_global | `D_gamegui_00402948` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_00402948` | [113](../src/modules/gamegui.c#L113), [522](../src/modules/gamegui.c#L522) |
+| address_global | `D_gamegui_00402950` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_00402950` | [114](../src/modules/gamegui.c#L114), [525](../src/modules/gamegui.c#L525) |
+| address_global | `D_gamegui_00402958` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_00402958` | [115](../src/modules/gamegui.c#L115), [527](../src/modules/gamegui.c#L527) |
+| address_global | `D_gamegui_00402960` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_00402960` | [116](../src/modules/gamegui.c#L116), [529](../src/modules/gamegui.c#L529) |
+| address_global | `D_gamegui_0040296C` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_0040296C` | [117](../src/modules/gamegui.c#L117), [532](../src/modules/gamegui.c#L532) |
+| address_global | `D_gamegui_00402974` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_00402974` | [118](../src/modules/gamegui.c#L118), [534](../src/modules/gamegui.c#L534) |
+| address_global | `D_gamegui_00402984` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_00402984` | [119](../src/modules/gamegui.c#L119), [536](../src/modules/gamegui.c#L536) |
+| address_global | `D_gamegui_0040298C` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_0040298C` | [120](../src/modules/gamegui.c#L120), [537](../src/modules/gamegui.c#L537) |
+| address_global | `D_gamegui_00402994` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_00402994` | [121](../src/modules/gamegui.c#L121), [538](../src/modules/gamegui.c#L538) |
+| address_global | `D_gamegui_0040299C` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_0040299C` | [122](../src/modules/gamegui.c#L122), [540](../src/modules/gamegui.c#L540) |
+| address_global | `D_gamegui_004029AC` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_004029AC` | [123](../src/modules/gamegui.c#L123), [544](../src/modules/gamegui.c#L544) |
+| address_global | `D_gamegui_004029B8` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_004029B8` | [124](../src/modules/gamegui.c#L124), [548](../src/modules/gamegui.c#L548) |
+| address_global | `D_gamegui_004029C0` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_004029C0` | [125](../src/modules/gamegui.c#L125), [550](../src/modules/gamegui.c#L550) |
+| address_global | `D_gamegui_004029CC` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_004029CC` | [126](../src/modules/gamegui.c#L126), [554](../src/modules/gamegui.c#L554) |
+| address_global | `D_gamegui_004029D8` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_004029D8` | [127](../src/modules/gamegui.c#L127), [556](../src/modules/gamegui.c#L556) |
+| address_global | `D_gamegui_004029E4` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_004029E4` | [128](../src/modules/gamegui.c#L128), [560](../src/modules/gamegui.c#L560) |
+| address_global | `D_gamegui_004029F0` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_004029F0` | [129](../src/modules/gamegui.c#L129), [564](../src/modules/gamegui.c#L564) |
+| address_global | `D_gamegui_004029F8` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_004029F8` | [130](../src/modules/gamegui.c#L130), [568](../src/modules/gamegui.c#L568) |
+| address_global | `D_gamegui_00402A00` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_00402A00` | [131](../src/modules/gamegui.c#L131), [572](../src/modules/gamegui.c#L572) |
+| address_global | `D_gamegui_00402A08` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_00402A08` | [132](../src/modules/gamegui.c#L132), [576](../src/modules/gamegui.c#L576) |
+| address_global | `D_gamegui_00402A10` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_00402A10` | [133](../src/modules/gamegui.c#L133), [580](../src/modules/gamegui.c#L580) |
+| address_global | `D_gamegui_00402A9C` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_00402A9C` | [181](../src/modules/gamegui.c#L181), [443](../src/modules/gamegui.c#L443) |
+| address_global | `D_gamegui_00402AB0` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_00402AB0` | [134](../src/modules/gamegui.c#L134), [526](../src/modules/gamegui.c#L526) |
+| address_global | `D_gamegui_00402AB4` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_00402AB4` | [135](../src/modules/gamegui.c#L135), [528](../src/modules/gamegui.c#L528) |
+| address_global | `D_gamegui_00402ABC` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_00402ABC` | [136](../src/modules/gamegui.c#L136), [530](../src/modules/gamegui.c#L530) |
+| address_global | `D_gamegui_00402AC0` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_00402AC0` | [137](../src/modules/gamegui.c#L137), [515](../src/modules/gamegui.c#L515) |
+| address_global | `D_gamegui_00402AD0` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_00402AD0` | [138](../src/modules/gamegui.c#L138), [518](../src/modules/gamegui.c#L518) |
+| address_global | `D_gamegui_00402ADC` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_00402ADC` | [139](../src/modules/gamegui.c#L139), [521](../src/modules/gamegui.c#L521) |
+| address_global | `D_gamegui_00402AEC` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_00402AEC` | [140](../src/modules/gamegui.c#L140), [524](../src/modules/gamegui.c#L524) |
+| address_global | `D_gamegui_00402AFC` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_00402AFC` | [141](../src/modules/gamegui.c#L141), [497](../src/modules/gamegui.c#L497) |
+| address_global | `D_gamegui_00402B10` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_00402B10` | [142](../src/modules/gamegui.c#L142), [449](../src/modules/gamegui.c#L449) |
+| address_global | `D_gamegui_00402B20` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_00402B20` | [143](../src/modules/gamegui.c#L143), [435](../src/modules/gamegui.c#L435) |
+| address_global | `D_gamegui_00402B60` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_00402B60` | [144](../src/modules/gamegui.c#L144), [438](../src/modules/gamegui.c#L438) |
+| address_global | `D_gamegui_00402B6C` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_00402B6C` | [145](../src/modules/gamegui.c#L145), [452](../src/modules/gamegui.c#L452) |
+| address_global | `D_gamegui_00402B78` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_00402B78` | [146](../src/modules/gamegui.c#L146), [455](../src/modules/gamegui.c#L455) |
+| address_global | `D_gamegui_00402B84` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_00402B84` | [147](../src/modules/gamegui.c#L147), [477](../src/modules/gamegui.c#L477) |
+| address_global | `D_gamegui_00402B90` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_00402B90` | [148](../src/modules/gamegui.c#L148), [481](../src/modules/gamegui.c#L481) |
+| address_global | `D_gamegui_00402B98` | function `gameGuiBuildDebugOptionsPanels`, global `D_gamegui_00402B98` | [149](../src/modules/gamegui.c#L149), [484](../src/modules/gamegui.c#L484) |
+| address_global | `D_gamegui_00402BD0` | function `gameGuiApplyDitherAndVideoSettings`, global `D_gamegui_00402BD0` | [31](../src/modules/gamegui.c#L31), [939](../src/modules/gamegui.c#L939) |
+| address_global | `D_gamegui_00402BE0` | function `gameGuiApplyDitherAndVideoSettings`, global `D_gamegui_00402BD0` | [31](../src/modules/gamegui.c#L31), [940](../src/modules/gamegui.c#L940) |
+| address_global | `D_gamegui_00402C68` | function `__entrypoint_func_gameGuiInitializeModuleExports`, function `gameGuiGetDebugByte`, function `gameGuiInitializeSharedWidgetWhenEnabled`, function `gameGuiRenderMenuOrFontList`, function `gameGuiSetDebugByteWhenEnabled`, global `D_gamegui_00402C68` | [232](../src/modules/gamegui.c#L232), [313](../src/modules/gamegui.c#L313), [642](../src/modules/gamegui.c#L642), [654](../src/modules/gamegui.c#L654), [766](../src/modules/gamegui.c#L766), [990](../src/modules/gamegui.c#L990) |
+| address_global | `D_gamegui_00402C74` | function `gameGuiCreateDebugRoot`, global `D_gamegui_00402C74` | [193](../src/modules/gamegui.c#L193), [343](../src/modules/gamegui.c#L343) |
+| address_global | `D_gamegui_00402C78` | function `gameGuiCreateDebugRoot`, function `gameGuiInitializeSharedWidgetWhenEnabled`, function `gameGuiLoadPaletteThreeAndSelectDebugFont`, function `gameGuiRenderMenuOrFontList`, global `D_gamegui_00402C78` | [233](../src/modules/gamegui.c#L233), [347](../src/modules/gamegui.c#L347), [643](../src/modules/gamegui.c#L643), [757](../src/modules/gamegui.c#L757), [782](../src/modules/gamegui.c#L782) |
+| address_global | `D_gamegui_00402D04` | function `gameGuiSetSharedWord`, global `D_gamegui_00402D04` | [234](../src/modules/gamegui.c#L234), [791](../src/modules/gamegui.c#L791) |
+| address_global | `D_gamegui_00402D0C` | function `gameGuiInitializeSharedWidgetWhenEnabled`, global `D_gamegui_00402D0C` | [194](../src/modules/gamegui.c#L194), [754](../src/modules/gamegui.c#L754) |
+| address_global | `D_gamegui_00402D10` | function `gameGuiBuildDebugOptionsPanels` | [66](../src/modules/gamegui.c#L66), [425](../src/modules/gamegui.c#L425) |
+| address_global | `D_gamegui_00402D14` | function `gameGuiBuildDebugOptionsPanels` | [66](../src/modules/gamegui.c#L66), [430](../src/modules/gamegui.c#L430) |
+| address_global | `D_gamegui_00402D16` | function `gameGuiRestoreMusicUnlessModeOne`, global `D_gamegui_00402D16` | [235](../src/modules/gamegui.c#L235), [684](../src/modules/gamegui.c#L684) |
+| address_global | `D_gamegui_00402D18` | function `gameGuiBuildDebugOptionsPanels` | [67](../src/modules/gamegui.c#L67), [525](../src/modules/gamegui.c#L525) |
+| address_global | `D_gamegui_00402D1C` | function `gameGuiBuildDebugOptionsPanels` | [67](../src/modules/gamegui.c#L67), [527](../src/modules/gamegui.c#L527) |
+| address_global | `D_gamegui_00402D20` | function `gameGuiBuildDebugOptionsPanels` | [67](../src/modules/gamegui.c#L67), [423](../src/modules/gamegui.c#L423) |
+| address_global | `D_gamegui_00402D28` | function `gameGuiRequestStateNineWithChoiceFlag`, global `D_gamegui_00402D28` | [236](../src/modules/gamegui.c#L236), [800](../src/modules/gamegui.c#L800) |
+| address_global | `D_uvdobj_rom_004039B0` | function `gameGuiBuildDebugOptionsPanels` | [545](../src/modules/gamegui.c#L545) |
+| address_global | `D_uvpfx_rom_00404FAC` | function `gameGuiBuildDebugOptionsPanels` | [541](../src/modules/gamegui.c#L541) |
+| assembly | `func_gamegui_004014F8` | — | [605](../src/modules/gamegui.c#L605) |
+| assembly | `func_gamegui_00401748` | — | [636](../src/modules/gamegui.c#L636) |
+| assembly | `func_gamegui_00401AF8` | — | [659](../src/modules/gamegui.c#L659) |
+| explicit_unknown | `* Append a text-list panel and its thirteen state-action rows in original order. * Reuse the first two rows' code-address property word and retain their returned * addresses in ...` | assembly `func_gamegui_004014F8` | [585](../src/modules/gamegui.c#L585) |
+| explicit_unknown | `* Do nothing when debugging is disabled. Otherwise mark the shared debug state, * initialize the shared widget, narrow the allocated child-group handle to s16, * resolve it, cop...` | function `gameGuiCreateDebugRoot` | [330](../src/modules/gamegui.c#L330) |
+| explicit_unknown | `* Request property 6 from the supplied channel, using the local callback-list * output and trailing zero, then register gameGuiApplyDitherAndVideoSettings * with a zero insertio...` | function `gameGuiRegisterChannelCallback` | [967](../src/modules/gamegui.c#L967) |
+| explicit_unknown | `* Scan four controllers for both masks 0x20 and 0x10; on the first match, * load the GUI, display-list editor and font resources when needed, then set * GUI property 16 and the ...` | assembly `func_gamegui_00401748` | [606](../src/modules/gamegui.c#L606) |
+| explicit_unknown | `* Update the allocation pointer and publish ten original callback addresses * at offsets 0x00 through 0x24, then the shared debug-byte address at 0x28. * The table stores 32-bit...` | function `__entrypoint_func_gameGuiInitializeModuleExports` | [291](../src/modules/gamegui.c#L291) |
+| explicit_unknown | `Append the original race text-list panel, bind player/AI counts and the AI-record/ * steering-assist words, then append the play and battle rows with their original * code-addre...` | function `gameGuiAddRaceAndBattleControls` | [357](../src/modules/gamegui.c#L357) |
+| explicit_unknown | `Build the dbg, opts, disp and dsbl text-list panels in their original order, * bind shared setting addresses to scalar widgets, and attach action/address * properties. Optional ...` | function `gameGuiBuildDebugOptionsPanels` | [392](../src/modules/gamegui.c#L392) |
+| explicit_unknown | `Call original GUI0x28 with display-data ID-1 and palette ID3, then select * debug font3. Its target stores those IDs, skips the display-data load for-1, * loads palette3 and mar...` | function `gameGuiLoadPaletteThreeAndSelectDebugFont` | [776](../src/modules/gamegui.c#L776) |
+| explicit_unknown | `Emit pipe sync plus color/alpha-dither commands, reset the two shared graphics words, * then apply the original video-interface feature choices. RE_UNKNOWN: dither selector * do...` | function `gameGuiApplyDitherAndVideoSettings` | [927](../src/modules/gamegui.c#L927) |
+| explicit_unknown | `GUI28 consumes the signed low16 display-data and palette IDs. * RE_UNKNOWN: historical caller declaration widths. GUI0C and unused slots * retain the existing caller view. Exact...` | type `GameguiGuiExports` | [226](../src/modules/gamegui.c#L226) |
+| explicit_unknown | `Initializer storage view: these are original 32-bit addresses, not * invented callable declarations. Original slot 0x14 initializes the shared * widget conditionally and consume...` | type `GameGuiExportAddresses` | [269](../src/modules/gamegui.c#L269) |
+| explicit_unknown | `Original GUI04 initializes container fields after six helper calls; GUI1C * sets child-container bounds; GUI24 consumes a signed low16 selector and * stores its payload in an or...` | type `GameGuiInitializerExports` | [195](../src/modules/gamegui.c#L195) |
+| explicit_unknown | `Original GUI08/70/74/78 are append, signed-index allocation/access * and fixed-width text copy. Getter consumes low16; allocator returns a signed * index. RE_UNKNOWN: historical...` | type `LocalGuiExp_4000B0` | [209](../src/modules/gamegui.c#L209) |
 | explicit_unknown | `Original GUI84 appends to the first free one of 12 child slots; GUI94/98 * allocate/access the 0x170-stride pool, and GUI9C copies exactly 30 input bytes. * RE_UNKNOWN: historic...` | type `GameGuiRacePanelGuiExports` | [3](../src/modules/gamegui.c#L3) |
 | explicit_unknown | `Original MISC104 accepts a bound word address and an optional widget output; * MISC10C forwards its third word to GUI property3. RE_UNKNOWN: property3's * complete dispatch ABI ...` | type `GameGuiRacePanelMiscExports` | [16](../src/modules/gamegui.c#L16) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_gamegui_004000A8`, function `func_gamegui_00402194`, function `func_gamegui_004021D4` | [173](../src/modules/gamegui.c#L173), [559](../src/modules/gamegui.c#L559), [581](../src/modules/gamegui.c#L581) |
-| explicit_unknown | `Restore the stored music ID and music state zero unless the linked * record short at 0x1E equals one. * RE_UNKNOWN: the short's broader role and ownership/lifetime of node->unk2...` | function `gameGuiRestoreMusicUnlessModeOne` | [336](../src/modules/gamegui.c#L336) |
-| explicit_unknown | `Store the raw word later invoked as a code address by GAMEGUI export 0x08. RE_UNKNOWN: historical callback formals/return, registration validity and lifetime; inspect all origin...` | function `gameGuiSetSharedWord` | [453](../src/modules/gamegui.c#L453) |
-| explicit_unknown | `Visit loaded UVTX files and accumulate their unsigned field at offset * 0x1A. The original homes the incoming word but does not use it in the * scan. The local aggregate is neit...` | function `gameGuiAccumulateLoadedTextureField1A` | [659](../src/modules/gamegui.c#L659) |
-| explicit_unknown | `When settings word 0x18C is nonzero, initialize the shared GUI widget. * Snapshot settings word 0x8C before all callbacks. If GUI is absent, load * original modules ugui/dled an...` | function `gameGuiInitializeSharedWidgetWhenEnabled` | [398](../src/modules/gamegui.c#L398) |
-| layout_padding | `pad0` | type `Inner_00401D34`, type `Outer_00401D34`, type `SceneExp_4000B0` | [77](../src/modules/gamegui.c#L77), [326](../src/modules/gamegui.c#L326), [331](../src/modules/gamegui.c#L331) |
-| layout_padding | `padE0` | function `gameGuiRequestStateNineWithChoiceFlag` | [464](../src/modules/gamegui.c#L464), [466](../src/modules/gamegui.c#L466) |
-| offset_field | `unk18C` | function `gameGuiInitializeSharedWidgetWhenEnabled` | [414](../src/modules/gamegui.c#L414) |
-| offset_field | `unk1E` | function `gameGuiRestoreMusicUnlessModeOne`, type `Inner_00401D34` | [327](../src/modules/gamegui.c#L327), [345](../src/modules/gamegui.c#L345) |
-| offset_field | `unk20` | function `gameGuiCreateDebugRoot`, type `SceneExp_4000B0` | [78](../src/modules/gamegui.c#L78), [206](../src/modules/gamegui.c#L206) |
-| offset_field | `unk28` | function `gameGuiRestoreMusicUnlessModeOne`, type `Outer_00401D34` | [332](../src/modules/gamegui.c#L332), [344](../src/modules/gamegui.c#L344) |
-| offset_field | `unk48` | function `gameGuiApplyDitherAndVideoSettings` | [603](../src/modules/gamegui.c#L603) |
-| offset_field | `unk4C` | function `gameGuiApplyDitherAndVideoSettings` | [602](../src/modules/gamegui.c#L602) |
-| offset_field | `unk8C` | function `gameGuiInitializeSharedWidgetWhenEnabled` | [413](../src/modules/gamegui.c#L413) |
-| offset_field | `unkC` | function `gameGuiRenderMenuOrFontList`, function `gameGuiRequestInitialIntroTrack`, function `gameGuiRequestStateFour`, function `gameGuiRequestStateThree`, type `GameguiGuiExports` | [84](../src/modules/gamegui.c#L84), [306](../src/modules/gamegui.c#L306), [490](../src/modules/gamegui.c#L490), [498](../src/modules/gamegui.c#L498), [510](../src/modules/gamegui.c#L510) |
-| offset_field | `unknownCallback08Address` | function `__entrypoint_func_gameGuiInitializeModuleExports`, type `GameGuiExportAddresses` | [131](../src/modules/gamegui.c#L131), [160](../src/modules/gamegui.c#L160) |
-| original_quirk | `* Append a text-list panel and its thirteen state-action rows in original order. * Reuse the first two rows' code-address property word and retain their returned * addresses in ...` | assembly `func_gamegui_004014F8` | [248](../src/modules/gamegui.c#L248) |
-| original_quirk | `* Request property 6 from the supplied channel, using the local callback-list * output and trailing zero, then register gameGuiApplyDitherAndVideoSettings * with a zero insertio...` | function `gameGuiRegisterChannelCallback` | [630](../src/modules/gamegui.c#L630) |
-| original_quirk | `* Scan four controllers for both masks 0x20 and 0x10; on the first match, * load the GUI, display-list editor and font resources when needed, then set * GUI property 16 and the ...` | assembly `func_gamegui_00401748` | [269](../src/modules/gamegui.c#L269) |
-| original_quirk | `Append the original race text-list panel, bind player/AI counts and the AI-record/ * steering-assist words, then append the play and battle rows with their original * code-addre...` | function `gameGuiAddRaceAndBattleControls` | [212](../src/modules/gamegui.c#L212) |
-| unused_identifier | `unused00` | type `GameGuiInitializerExports`, type `GameGuiRacePanelGuiExports`, type `GameGuiRacePanelMiscExports`, type `GameguiGuiExports`, type `LocalGuiExp_4000B0` | [9](../src/modules/gamegui.c#L9), [20](../src/modules/gamegui.c#L20), [57](../src/modules/gamegui.c#L57), [69](../src/modules/gamegui.c#L69), [84](../src/modules/gamegui.c#L84) |
-| unused_identifier | `unused08` | type `GameGuiInitializerExports` | [59](../src/modules/gamegui.c#L59) |
-| unused_identifier | `unused0C` | type `LocalGuiExp_4000B0` | [71](../src/modules/gamegui.c#L71) |
-| unused_identifier | `unused10` | type `GameguiGuiExports` | [84](../src/modules/gamegui.c#L84) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_gamegui_004000A8`, function `func_gamegui_00402194`, function `func_gamegui_004021D4` | [318](../src/modules/gamegui.c#L318), [896](../src/modules/gamegui.c#L896), [918](../src/modules/gamegui.c#L918) |
+| explicit_unknown | `Restore the stored music ID and music state zero unless the linked * record short at 0x1E equals one. * RE_UNKNOWN: the short's broader role and ownership/lifetime of node->unk2...` | function `gameGuiRestoreMusicUnlessModeOne` | [673](../src/modules/gamegui.c#L673) |
+| explicit_unknown | `Selective gamegui00370 consumed slots; not complete export allocations. * Raw optional-module slot words are passed as value-source addresses. * RE_UNKNOWN: historical full type...` | type `GameGuiDebugOptionGuiExports` | [38](../src/modules/gamegui.c#L38) |
+| explicit_unknown | `Store the raw word later invoked as a code address by GAMEGUI export 0x08. RE_UNKNOWN: historical callback formals/return, registration validity and lifetime; inspect all origin...` | function `gameGuiSetSharedWord` | [790](../src/modules/gamegui.c#L790) |
+| explicit_unknown | `Visit loaded UVTX files and accumulate their unsigned field at offset * 0x1A. The original homes the incoming word but does not use it in the * scan. The local aggregate is neit...` | function `gameGuiAccumulateLoadedTextureField1A` | [996](../src/modules/gamegui.c#L996) |
+| explicit_unknown | `When settings word 0x18C is nonzero, initialize the shared GUI widget. * Snapshot settings word 0x8C before all callbacks. If GUI is absent, load * original modules ugui/dled an...` | function `gameGuiInitializeSharedWidgetWhenEnabled` | [735](../src/modules/gamegui.c#L735) |
+| layout_padding | `pad0` | type `Inner_00401D34`, type `Outer_00401D34`, type `SceneExp_4000B0` | [222](../src/modules/gamegui.c#L222), [663](../src/modules/gamegui.c#L663), [668](../src/modules/gamegui.c#L668) |
+| layout_padding | `padE0` | function `gameGuiRequestStateNineWithChoiceFlag` | [801](../src/modules/gamegui.c#L801), [803](../src/modules/gamegui.c#L803) |
+| offset_field | `unk18C` | function `gameGuiInitializeSharedWidgetWhenEnabled` | [751](../src/modules/gamegui.c#L751) |
+| offset_field | `unk1E` | function `gameGuiRestoreMusicUnlessModeOne`, type `Inner_00401D34` | [664](../src/modules/gamegui.c#L664), [682](../src/modules/gamegui.c#L682) |
+| offset_field | `unk20` | function `gameGuiCreateDebugRoot`, type `SceneExp_4000B0` | [223](../src/modules/gamegui.c#L223), [351](../src/modules/gamegui.c#L351) |
+| offset_field | `unk28` | function `gameGuiBuildDebugOptionsPanels`, function `gameGuiRestoreMusicUnlessModeOne`, type `Outer_00401D34` | [549](../src/modules/gamegui.c#L549), [669](../src/modules/gamegui.c#L669), [681](../src/modules/gamegui.c#L681) |
+| offset_field | `unk2C` | function `gameGuiBuildDebugOptionsPanels` | [551](../src/modules/gamegui.c#L551) |
+| offset_field | `unk48` | function `gameGuiApplyDitherAndVideoSettings` | [940](../src/modules/gamegui.c#L940) |
+| offset_field | `unk4C` | function `gameGuiApplyDitherAndVideoSettings` | [939](../src/modules/gamegui.c#L939) |
+| offset_field | `unk78` | function `gameGuiBuildDebugOptionsPanels` | [561](../src/modules/gamegui.c#L561) |
+| offset_field | `unk8C` | function `gameGuiInitializeSharedWidgetWhenEnabled` | [750](../src/modules/gamegui.c#L750) |
+| offset_field | `unkC` | function `gameGuiRenderMenuOrFontList`, function `gameGuiRequestInitialIntroTrack`, function `gameGuiRequestStateFour`, function `gameGuiRequestStateThree`, type `GameguiGuiExports` | [229](../src/modules/gamegui.c#L229), [643](../src/modules/gamegui.c#L643), [827](../src/modules/gamegui.c#L827), [835](../src/modules/gamegui.c#L835), [847](../src/modules/gamegui.c#L847) |
+| offset_field | `unknownCallback08Address` | function `__entrypoint_func_gameGuiInitializeModuleExports`, type `GameGuiExportAddresses` | [276](../src/modules/gamegui.c#L276), [305](../src/modules/gamegui.c#L305) |
+| original_quirk | `* Append a text-list panel and its thirteen state-action rows in original order. * Reuse the first two rows' code-address property word and retain their returned * addresses in ...` | assembly `func_gamegui_004014F8` | [585](../src/modules/gamegui.c#L585) |
+| original_quirk | `* Request property 6 from the supplied channel, using the local callback-list * output and trailing zero, then register gameGuiApplyDitherAndVideoSettings * with a zero insertio...` | function `gameGuiRegisterChannelCallback` | [967](../src/modules/gamegui.c#L967) |
+| original_quirk | `* Scan four controllers for both masks 0x20 and 0x10; on the first match, * load the GUI, display-list editor and font resources when needed, then set * GUI property 16 and the ...` | assembly `func_gamegui_00401748` | [606](../src/modules/gamegui.c#L606) |
+| original_quirk | `Append the original race text-list panel, bind player/AI counts and the AI-record/ * steering-assist words, then append the play and battle rows with their original * code-addre...` | function `gameGuiAddRaceAndBattleControls` | [357](../src/modules/gamegui.c#L357) |
+| original_quirk | `Build the dbg, opts, disp and dsbl text-list panels in their original order, * bind shared setting addresses to scalar widgets, and attach action/address * properties. Optional ...` | function `gameGuiBuildDebugOptionsPanels` | [392](../src/modules/gamegui.c#L392) |
+| unused_identifier | `unused00` | type `GameGuiDebugFlagSlots`, type `GameGuiDebugOptionGuiExports`, type `GameGuiDebugPlayerSlots`, type `GameGuiDebugRainSlots`, type `GameGuiDebugScrnSlots`, type `GameGuiDebugSkidSlots`, type `GameGuiDebugTerrainSlots`, type `GameGuiInitializerExports`, type `GameGuiRacePanelGuiExports`, type `GameGuiRacePanelMiscExports`, type `GameguiGuiExports`, type `LocalGuiExp_4000B0` | [9](../src/modules/gamegui.c#L9), [20](../src/modules/gamegui.c#L20), [42](../src/modules/gamegui.c#L42), [55](../src/modules/gamegui.c#L55), [56](../src/modules/gamegui.c#L56), [57](../src/modules/gamegui.c#L57), [58](../src/modules/gamegui.c#L58), [59](../src/modules/gamegui.c#L59) (+4 in JSON) |
+| unused_identifier | `unused08` | type `GameGuiInitializerExports` | [204](../src/modules/gamegui.c#L204) |
+| unused_identifier | `unused0C` | type `LocalGuiExp_4000B0` | [216](../src/modules/gamegui.c#L216) |
+| unused_identifier | `unused10` | type `GameguiGuiExports` | [229](../src/modules/gamegui.c#L229) |
 | unused_identifier | `unused108` | type `GameGuiRacePanelMiscExports` | [22](../src/modules/gamegui.c#L22) |
-| unused_identifier | `unused20` | type `GameGuiInitializerExports` | [61](../src/modules/gamegui.c#L61) |
-| unused_identifier | `unused88` | type `GameGuiRacePanelGuiExports` | [11](../src/modules/gamegui.c#L11) |
-| unused_identifier | `unusedCallbackValue` | function `gameGuiApplyDitherAndVideoSettings`, function `gameGuiApplyDitherAndVideoSettings` | [121](../src/modules/gamegui.c#L121), [596](../src/modules/gamegui.c#L596) |
-| unused_identifier | `unusedWord` | function `gameGuiAccumulateLoadedTextureField1A` | [666](../src/modules/gamegui.c#L666) |
+| unused_identifier | `unused20` | type `GameGuiInitializerExports` | [206](../src/modules/gamegui.c#L206) |
+| unused_identifier | `unused60` | type `GameGuiDebugOptionGuiExports` | [44](../src/modules/gamegui.c#L44) |
+| unused_identifier | `unused88` | type `GameGuiDebugOptionGuiExports`, type `GameGuiRacePanelGuiExports` | [11](../src/modules/gamegui.c#L11), [46](../src/modules/gamegui.c#L46) |
+| unused_identifier | `unusedA0` | type `GameGuiDebugOptionGuiExports` | [50](../src/modules/gamegui.c#L50) |
+| unused_identifier | `unusedCallbackValue` | function `gameGuiApplyDitherAndVideoSettings`, function `gameGuiApplyDitherAndVideoSettings` | [266](../src/modules/gamegui.c#L266), [933](../src/modules/gamegui.c#L933) |
+| unused_identifier | `unusedD4` | type `GameGuiDebugOptionGuiExports` | [52](../src/modules/gamegui.c#L52) |
+| unused_identifier | `unusedWord` | function `gameGuiAccumulateLoadedTextureField1A` | [1003](../src/modules/gamegui.c#L1003) |
 
 ## src/modules/glare.c
 
@@ -3435,20 +3532,21 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
-| address_function | `func_letter_00400230` | function `__entrypoint_func_letterInitializeModuleAndObjectPool`, function `func_letter_00400230` | [43](../src/modules/letter.c#L43), [69](../src/modules/letter.c#L69) |
-| address_global | `D_letter_00400480` | function `letterGetDescriptorOrDefault`, function `letterSetDescriptorPrimitiveColor`, global `D_letter_00400480` | [42](../src/modules/letter.c#L42), [131](../src/modules/letter.c#L131), [133](../src/modules/letter.c#L133), [147](../src/modules/letter.c#L147) |
-| address_global | `D_letter_00400504` | function `__entrypoint_func_letterInitializeModuleAndObjectPool`, function `letterReleaseObjectsAndMedia`, global `D_letter_00400504` | [23](../src/modules/letter.c#L23), [79](../src/modules/letter.c#L79), [83](../src/modules/letter.c#L83), [103](../src/modules/letter.c#L103), [107](../src/modules/letter.c#L107), [109](../src/modules/letter.c#L109) |
-| address_global | `D_letter_00400518` | function `__entrypoint_func_letterInitializeModuleAndObjectPool`, global `D_letter_00400518` | [16](../src/modules/letter.c#L16), [88](../src/modules/letter.c#L88) |
-| assembly | `func_letter_00400230` | — | [124](../src/modules/letter.c#L124) |
-| explicit_unknown | `* Install the three letter exports and load models 0x101, 0x102, 0x104 and * 0x103, followed by textures 0x3E8, 0x3E9, 0x3FE and 0x3FC. Allocate the * 720-byte object pool, clea...` | function `__entrypoint_func_letterInitializeModuleAndObjectPool` | [52](../src/modules/letter.c#L52) |
-| explicit_unknown | `Install the three letter exports, load four models and four textures in * their original order, then allocate twenty 36-byte entries. Initialize only * each entry active byte an...` | — | [46](../src/modules/letter.c#L46) |
-| explicit_unknown | `Select the twenty-byte descriptor using the object byte index and * set its RGB components with the object alpha through graphics export 0x3C. * RE_UNKNOWN: index bound; trace o...` | function `letterSetDescriptorPrimitiveColor` | [141](../src/modules/letter.c#L141) |
+| address_function | `func_letter_00400230` | function `__entrypoint_func_letterInitializeModuleAndObjectPool`, function `func_letter_00400230` | [43](../src/modules/letter.c#L43), [61](../src/modules/letter.c#L61) |
+| address_global | `D_letter_00400480` | function `letterGetDescriptorOrDefault`, function `letterSetDescriptorPrimitiveColor`, global `D_letter_00400480` | [42](../src/modules/letter.c#L42), [128](../src/modules/letter.c#L128), [130](../src/modules/letter.c#L130), [144](../src/modules/letter.c#L144) |
+| address_global | `D_letter_00400504` | function `__entrypoint_func_letterInitializeModuleAndObjectPool`, function `letterReleaseObjectsAndMedia`, global `D_letter_00400504` | [23](../src/modules/letter.c#L23), [71](../src/modules/letter.c#L71), [75](../src/modules/letter.c#L75), [98](../src/modules/letter.c#L98), [102](../src/modules/letter.c#L102), [104](../src/modules/letter.c#L104) |
+| address_global | `D_letter_00400518` | function `__entrypoint_func_letterInitializeModuleAndObjectPool`, global `D_letter_00400518` | [16](../src/modules/letter.c#L16), [80](../src/modules/letter.c#L80) |
+| assembly | `func_letter_00400230` | — | [119](../src/modules/letter.c#L119) |
+| explicit_unknown | `Publish three exports; load models 0x101/0x102/0x104/0x103, then textures * 0x3E8/0x3E9/0x3FE/0x3FC. Allocate twenty 36-byte entries (720 bytes), set * only each handle to -1 an...` | function `__entrypoint_func_letterInitializeModuleAndObjectPool` | [46](../src/modules/letter.c#L46) |
+| explicit_unknown | `Release nonnegative handles in all twenty 36-byte entries, free the final * reloaded pool pointer, then unload models and textures in their original order. * RE_ORIGINAL_QUIRK: ...` | function `letterReleaseObjectsAndMedia` | [85](../src/modules/letter.c#L85) |
+| explicit_unknown | `Select a 20-byte descriptor with the object's unsigned index byte and pass * its RGB plus the object's alpha through graphics export 0x3C. * RE_ORIGINAL_QUIRK: indexing is direc...` | function `letterSetDescriptorPrimitiveColor` | [134](../src/modules/letter.c#L134) |
 | layout_padding | `pad` | type `LetterPrimitiveColorExports` | [25](../src/modules/letter.c#L25) |
 | offset_field | `unk0` | type `LetterPrimitiveColorDescriptor`, type `LetterPrimitiveColorObjectView` | [30](../src/modules/letter.c#L30), [37](../src/modules/letter.c#L37) |
 | offset_field | `unk9` | type `LetterPrimitiveColorObjectView` | [39](../src/modules/letter.c#L39) |
 | offset_field | `unknown01` | type `LetterInitializerEntryPrefix` | [13](../src/modules/letter.c#L13) |
-| original_quirk | `* Install the three letter exports and load models 0x101, 0x102, 0x104 and * 0x103, followed by textures 0x3E8, 0x3E9, 0x3FE and 0x3FC. Allocate the * 720-byte object pool, clea...` | function `__entrypoint_func_letterInitializeModuleAndObjectPool` | [52](../src/modules/letter.c#L52) |
-| original_quirk | `Install the three letter exports, load four models and four textures in * their original order, then allocate twenty 36-byte entries. Initialize only * each entry active byte an...` | — | [46](../src/modules/letter.c#L46) |
+| original_quirk | `Publish three exports; load models 0x101/0x102/0x104/0x103, then textures * 0x3E8/0x3E9/0x3FE/0x3FC. Allocate twenty 36-byte entries (720 bytes), set * only each handle to -1 an...` | function `__entrypoint_func_letterInitializeModuleAndObjectPool` | [46](../src/modules/letter.c#L46) |
+| original_quirk | `Release nonnegative handles in all twenty 36-byte entries, free the final * reloaded pool pointer, then unload models and textures in their original order. * RE_ORIGINAL_QUIRK: ...` | function `letterReleaseObjectsAndMedia` | [85](../src/modules/letter.c#L85) |
+| original_quirk | `Select a 20-byte descriptor with the object's unsigned index byte and pass * its RGB plus the object's alpha through graphics export 0x3C. * RE_ORIGINAL_QUIRK: indexing is direc...` | function `letterSetDescriptorPrimitiveColor` | [134](../src/modules/letter.c#L134) |
 
 ## src/modules/level1.c
 

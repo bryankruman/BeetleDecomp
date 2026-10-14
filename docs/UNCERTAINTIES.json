@@ -399,10 +399,10 @@
     "src/modules/filmroll.c": "83ed38a685d67e8489ffe33a9d955b1f742731478f3fb89ad577c877e3e8d1ce",
     "src/modules/flag.c": "e5e3b255e417dac68a9d179ef336bf168d0d1b4e8b9f566626b9c5f12ea33d4e",
     "src/modules/game.c": "592a7761af4ae96e100ef8935ed7fa5896c27717687c8377ed0e3b2ad8aa155b",
-    "src/modules/gamegui.c": "1c02b61623bb33203ebc91c4957375419ece0db55175a3a3c5c90621a82960d8",
+    "src/modules/gamegui.c": "6ae738fcda8bcaeac0ee8c05ee47a6044aa7765ca130b4b7d3317edfcc442585",
     "src/modules/glare.c": "fe20c59454d2855b94efb2fd22f155f8d622f1950c2ee38ef6a8542024821b7a",
     "src/modules/intro.c": "3d6364b3f62dca565458be89db8b590a95b599f736eaff97e1f5f26422e753e5",
-    "src/modules/letter.c": "9623dbf48df5b20a7088e4113b7db7b7b29740980013686190e204ca2a22804e",
+    "src/modules/letter.c": "dcf60db17a9b424af09d6b274a064cb274d2e4c7e30dc7fa38206a5edc20f03f",
     "src/modules/level1.c": "6b614ca159c59738e697e001decc24d049b75b96e5c7b72b8cf79d090132791b",
     "src/modules/light.c": "76b3902abd54bf863fbedc765b0ea0d7179f380118e6f76e1dd4fd97ed49263d",
     "src/modules/logo.c": "6d89c5f4f5568106050e8b1dd97cff2116268ec82d610824da1f42e5b18f0120",
@@ -517,24 +517,24 @@
     "src/sched.c": "26791ca9f30fd5355b11ea03a64a457757d2029595be26428c2925798105d9b4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "271e5826c269a47ea0c570e7e45c639403d0c89d1f82ca353540722ee40a8558",
+    "docs/STRATEGY_V4.md": "e5c72e5add21c551bfb9e2ed3ac237187b9b7bd27c1a5c21641cd34d1d0f5dcb",
     "docs/VALIDATION_20261006.md": "a46820c10aba34e3c1901bd9bdc4260f684530f44fcf7f61d9c7bb33e0c91031"
   },
   "counts": {
     "address_function": 905,
-    "address_global": 1553,
-    "assembly": 746,
+    "address_global": 1643,
+    "assembly": 745,
     "audit_debt": 30,
     "conditional_draft": 4,
     "decompiler_local": 622,
     "draft_marker": 54,
-    "explicit_unknown": 1897,
+    "explicit_unknown": 1899,
     "layout_padding": 281,
-    "offset_field": 1768,
+    "offset_field": 1770,
     "opaque_type": 285,
-    "original_quirk": 528,
+    "original_quirk": 530,
     "uncertainty_note": 88,
-    "unused_identifier": 148
+    "unused_identifier": 151
   },
   "items": [
     {
@@ -5336,33 +5336,33 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_004000A8",
       "lines": [
-        142,
-        158,
-        177
+        287,
+        303,
+        322
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_gameGuiInitializeModuleExports",
-          "declaration_line": 156,
+          "declaration_line": 301,
           "lines": [
-            158
+            303
           ]
         },
         {
           "kind": "function",
           "name": "func_gamegui_004000A8",
-          "declaration_line": 142,
+          "declaration_line": 287,
           "lines": [
-            142
+            287
           ]
         },
         {
           "kind": "function",
           "name": "func_gamegui_004000A8",
-          "declaration_line": 177,
+          "declaration_line": 322,
           "lines": [
-            177
+            322
           ]
         }
       ]
@@ -5373,33 +5373,33 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_00400370",
       "lines": [
-        44,
-        93,
-        204
+        189,
+        238,
+        349
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_gamegui_00400370",
-          "declaration_line": 44,
+          "declaration_line": 189,
           "lines": [
-            44
+            189
           ]
         },
         {
           "kind": "function",
           "name": "func_gamegui_00400370",
-          "declaration_line": 93,
+          "declaration_line": 238,
           "lines": [
-            93
+            238
           ]
         },
         {
           "kind": "function",
           "name": "gameGuiCreateDebugRoot",
-          "declaration_line": 194,
+          "declaration_line": 339,
           "lines": [
-            204
+            349
           ]
         }
       ]
@@ -5410,33 +5410,33 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_004014F8",
       "lines": [
-        45,
-        94,
-        205
+        190,
+        239,
+        350
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_gamegui_004014F8",
-          "declaration_line": 45,
+          "declaration_line": 190,
           "lines": [
-            45
+            190
           ]
         },
         {
           "kind": "function",
           "name": "func_gamegui_004014F8",
-          "declaration_line": 94,
+          "declaration_line": 239,
           "lines": [
-            94
+            239
           ]
         },
         {
           "kind": "function",
           "name": "gameGuiCreateDebugRoot",
-          "declaration_line": 194,
+          "declaration_line": 339,
           "lines": [
-            205
+            350
           ]
         }
       ]
@@ -5447,24 +5447,24 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_00401748",
       "lines": [
-        95,
-        160
+        240,
+        305
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_gameGuiInitializeModuleExports",
-          "declaration_line": 156,
+          "declaration_line": 301,
           "lines": [
-            160
+            305
           ]
         },
         {
           "kind": "function",
           "name": "func_gamegui_00401748",
-          "declaration_line": 95,
+          "declaration_line": 240,
           "lines": [
-            95
+            240
           ]
         }
       ]
@@ -5475,15 +5475,24 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_00401AF8",
       "lines": [
-        98
+        243,
+        426
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_gamegui_00401AF8",
-          "declaration_line": 98,
+          "declaration_line": 243,
           "lines": [
-            98
+            243
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            426
           ]
         }
       ]
@@ -5494,15 +5503,15 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_00402194",
       "lines": [
-        563
+        900
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_gamegui_00402194",
-          "declaration_line": 563,
+          "declaration_line": 900,
           "lines": [
-            563
+            900
           ]
         }
       ]
@@ -5513,15 +5522,15 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_004021D4",
       "lines": [
-        585
+        922
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_gamegui_004021D4",
-          "declaration_line": 585,
+          "declaration_line": 922,
           "lines": [
-            585
+            922
           ]
         }
       ]
@@ -5655,15 +5664,15 @@
       "symbol": "func_letter_00400230",
       "lines": [
         43,
-        69
+        61
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_letterInitializeModuleAndObjectPool",
-          "declaration_line": 63,
+          "declaration_line": 55,
           "lines": [
-            69
+            61
           ]
         },
         {
@@ -30731,24 +30740,24 @@
       "path": "src/modules/gamegui.c",
       "symbol": "D_gamegui_00402450",
       "lines": [
-        47,
-        201
+        192,
+        346
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiCreateDebugRoot",
-          "declaration_line": 194,
+          "declaration_line": 339,
           "lines": [
-            201
+            346
           ]
         },
         {
           "kind": "global",
           "name": "D_gamegui_00402450",
-          "declaration_line": 47,
+          "declaration_line": 192,
           "lines": [
-            47
+            192
           ]
         }
       ]
@@ -30760,15 +30769,15 @@
       "symbol": "D_gamegui_0040246C",
       "lines": [
         27,
-        230
+        375
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiAddRaceAndBattleControls",
-          "declaration_line": 224,
+          "declaration_line": 369,
           "lines": [
-            230
+            375
           ]
         },
         {
@@ -30788,15 +30797,15 @@
       "symbol": "D_gamegui_00402474",
       "lines": [
         27,
-        232
+        377
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiAddRaceAndBattleControls",
-          "declaration_line": 224,
+          "declaration_line": 369,
           "lines": [
-            232
+            377
           ]
         },
         {
@@ -30816,15 +30825,15 @@
       "symbol": "D_gamegui_00402480",
       "lines": [
         27,
-        234
+        379
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiAddRaceAndBattleControls",
-          "declaration_line": 224,
+          "declaration_line": 369,
           "lines": [
-            234
+            379
           ]
         },
         {
@@ -30844,15 +30853,15 @@
       "symbol": "D_gamegui_00402484",
       "lines": [
         28,
-        236
+        381
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiAddRaceAndBattleControls",
-          "declaration_line": 224,
+          "declaration_line": 369,
           "lines": [
-            236
+            381
           ]
         },
         {
@@ -30872,15 +30881,15 @@
       "symbol": "D_gamegui_00402490",
       "lines": [
         28,
-        238
+        383
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiAddRaceAndBattleControls",
-          "declaration_line": 224,
+          "declaration_line": 369,
           "lines": [
-            238
+            383
           ]
         },
         {
@@ -30900,15 +30909,15 @@
       "symbol": "D_gamegui_004024A0",
       "lines": [
         28,
-        240
+        385
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiAddRaceAndBattleControls",
-          "declaration_line": 224,
+          "declaration_line": 369,
           "lines": [
-            240
+            385
           ]
         },
         {
@@ -30928,15 +30937,15 @@
       "symbol": "D_gamegui_004024AC",
       "lines": [
         29,
-        242
+        387
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiAddRaceAndBattleControls",
-          "declaration_line": 224,
+          "declaration_line": 369,
           "lines": [
-            242
+            387
           ]
         },
         {
@@ -30950,21 +30959,2345 @@
       ]
     },
     {
+      "id": "Q-2c1539d53744",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_00402580",
+      "lines": [
+        68,
+        413
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            413
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_00402580",
+          "declaration_line": 68,
+          "lines": [
+            68
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-0e38672981e7",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_00402584",
+      "lines": [
+        69,
+        415
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            415
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_00402584",
+          "declaration_line": 69,
+          "lines": [
+            69
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-7e0027a8cf4d",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_00402590",
+      "lines": [
+        70,
+        417
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            417
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_00402590",
+          "declaration_line": 70,
+          "lines": [
+            70
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-595bb5e52158",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_0040259C",
+      "lines": [
+        71,
+        419
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            419
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_0040259C",
+          "declaration_line": 71,
+          "lines": [
+            71
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-d8051dcd3ea4",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_004025AC",
+      "lines": [
+        72,
+        421
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            421
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_004025AC",
+          "declaration_line": 72,
+          "lines": [
+            72
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-651e300fffad",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_004025B8",
+      "lines": [
+        73,
+        424
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            424
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_004025B8",
+          "declaration_line": 73,
+          "lines": [
+            73
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-e75da18458a5",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_004025C4",
+      "lines": [
+        74,
+        428
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            428
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_004025C4",
+          "declaration_line": 74,
+          "lines": [
+            74
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-1c41c19198ea",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_004025D0",
+      "lines": [
+        75,
+        432
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            432
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_004025D0",
+          "declaration_line": 75,
+          "lines": [
+            75
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-e3a171e7ddbe",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_00402694",
+      "lines": [
+        76,
+        433
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            433
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_00402694",
+          "declaration_line": 76,
+          "lines": [
+            76
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-75f15457ffcf",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_004026AC",
+      "lines": [
+        77,
+        436
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            436
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_004026AC",
+          "declaration_line": 77,
+          "lines": [
+            77
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-28ed89eb47dc",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_004026B8",
+      "lines": [
+        78,
+        439
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            439
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_004026B8",
+          "declaration_line": 78,
+          "lines": [
+            78
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-f8a20a283e02",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_004026C8",
+      "lines": [
+        79,
+        441
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            441
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_004026C8",
+          "declaration_line": 79,
+          "lines": [
+            79
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-c52739484422",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_004026D4",
+      "lines": [
+        80,
+        443
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            443
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_004026D4",
+          "declaration_line": 80,
+          "lines": [
+            80
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-3246f29ad712",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_004026E0",
+      "lines": [
+        81,
+        445
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            445
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_004026E0",
+          "declaration_line": 81,
+          "lines": [
+            81
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-b4e43ac9b5f0",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_004026F0",
+      "lines": [
+        82,
+        447
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            447
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_004026F0",
+          "declaration_line": 82,
+          "lines": [
+            82
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-b35d11611395",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_00402710",
+      "lines": [
+        83,
+        450
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            450
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_00402710",
+          "declaration_line": 83,
+          "lines": [
+            83
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-0adfd90bc3af",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_0040272C",
+      "lines": [
+        84,
+        453
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            453
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_0040272C",
+          "declaration_line": 84,
+          "lines": [
+            84
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-4370fa59d2f9",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_00402738",
+      "lines": [
+        85,
+        457
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            457
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_00402738",
+          "declaration_line": 85,
+          "lines": [
+            85
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-8a4078cf05fb",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_00402740",
+      "lines": [
+        86,
+        460
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            460
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_00402740",
+          "declaration_line": 86,
+          "lines": [
+            86
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-80f1d82ce76e",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_0040274C",
+      "lines": [
+        87,
+        463
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            463
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_0040274C",
+          "declaration_line": 87,
+          "lines": [
+            87
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-c5fc7a158bc9",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_00402754",
+      "lines": [
+        88,
+        465
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            465
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_00402754",
+          "declaration_line": 88,
+          "lines": [
+            88
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-d78e578338d0",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_00402760",
+      "lines": [
+        89,
+        467
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            467
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_00402760",
+          "declaration_line": 89,
+          "lines": [
+            89
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-f6a1e45d8ab5",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_0040276C",
+      "lines": [
+        90,
+        469
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            469
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_0040276C",
+          "declaration_line": 90,
+          "lines": [
+            90
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-212c8fc31868",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_00402774",
+      "lines": [
+        91,
+        471
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            471
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_00402774",
+          "declaration_line": 91,
+          "lines": [
+            91
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-f93f3451c1fe",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_00402778",
+      "lines": [
+        92,
+        473
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            473
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_00402778",
+          "declaration_line": 92,
+          "lines": [
+            92
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-2668faefd722",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_004027A0",
+      "lines": [
+        93,
+        475
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            475
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_004027A0",
+          "declaration_line": 93,
+          "lines": [
+            93
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-81d4c9b159f2",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_004027AC",
+      "lines": [
+        94,
+        478
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            478
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_004027AC",
+          "declaration_line": 94,
+          "lines": [
+            94
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-aface4a7ce4f",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_004027D0",
+      "lines": [
+        95,
+        479
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            479
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_004027D0",
+          "declaration_line": 95,
+          "lines": [
+            95
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-3751bbaa7038",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_00402898",
+      "lines": [
+        96,
+        482
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            482
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_00402898",
+          "declaration_line": 96,
+          "lines": [
+            96
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-dfdbc8cba70e",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_0040289C",
+      "lines": [
+        97,
+        485
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            485
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_0040289C",
+          "declaration_line": 97,
+          "lines": [
+            97
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-65299eb099a3",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_004028A4",
+      "lines": [
+        98,
+        487
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            487
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_004028A4",
+          "declaration_line": 98,
+          "lines": [
+            98
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-d1365b5a3a07",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_004028B0",
+      "lines": [
+        99,
+        489
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            489
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_004028B0",
+          "declaration_line": 99,
+          "lines": [
+            99
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-820b1cda530a",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_004028B8",
+      "lines": [
+        100,
+        491
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            491
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_004028B8",
+          "declaration_line": 100,
+          "lines": [
+            100
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-b779dbe459d3",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_004028C4",
+      "lines": [
+        101,
+        493
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            493
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_004028C4",
+          "declaration_line": 101,
+          "lines": [
+            101
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-324b21c789b6",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_004028CC",
+      "lines": [
+        102,
+        495
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            495
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_004028CC",
+          "declaration_line": 102,
+          "lines": [
+            102
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-8f713a7d16c8",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_004028D8",
+      "lines": [
+        103,
+        499
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            499
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_004028D8",
+          "declaration_line": 103,
+          "lines": [
+            103
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-8c08d3a0f1a2",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_004028E0",
+      "lines": [
+        104,
+        501
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            501
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_004028E0",
+          "declaration_line": 104,
+          "lines": [
+            104
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-05d05c8d4325",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_004028E8",
+      "lines": [
+        105,
+        503
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            503
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_004028E8",
+          "declaration_line": 105,
+          "lines": [
+            105
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-17bb371ea4ca",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_004028F4",
+      "lines": [
+        106,
+        505
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            505
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_004028F4",
+          "declaration_line": 106,
+          "lines": [
+            106
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-0d841bb8936b",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_00402900",
+      "lines": [
+        107,
+        507
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            507
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_00402900",
+          "declaration_line": 107,
+          "lines": [
+            107
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-1aedd474331e",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_0040290C",
+      "lines": [
+        108,
+        509
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            509
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_0040290C",
+          "declaration_line": 108,
+          "lines": [
+            108
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-2908b84dc5dc",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_00402918",
+      "lines": [
+        109,
+        511
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            511
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_00402918",
+          "declaration_line": 109,
+          "lines": [
+            109
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-284305543879",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_00402924",
+      "lines": [
+        110,
+        513
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            513
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_00402924",
+          "declaration_line": 110,
+          "lines": [
+            110
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-d95d5f04f1bb",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_00402930",
+      "lines": [
+        111,
+        516
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            516
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_00402930",
+          "declaration_line": 111,
+          "lines": [
+            111
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-0490e3f58a3c",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_0040293C",
+      "lines": [
+        112,
+        519
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            519
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_0040293C",
+          "declaration_line": 112,
+          "lines": [
+            112
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-ccd495595e8d",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_00402948",
+      "lines": [
+        113,
+        522
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            522
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_00402948",
+          "declaration_line": 113,
+          "lines": [
+            113
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-f5bba603c7bf",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_00402950",
+      "lines": [
+        114,
+        525
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            525
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_00402950",
+          "declaration_line": 114,
+          "lines": [
+            114
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-52ec85bfae12",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_00402958",
+      "lines": [
+        115,
+        527
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            527
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_00402958",
+          "declaration_line": 115,
+          "lines": [
+            115
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-4bc8263055f3",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_00402960",
+      "lines": [
+        116,
+        529
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            529
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_00402960",
+          "declaration_line": 116,
+          "lines": [
+            116
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-e2db30b18d36",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_0040296C",
+      "lines": [
+        117,
+        532
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            532
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_0040296C",
+          "declaration_line": 117,
+          "lines": [
+            117
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-e4d89d5c48d2",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_00402974",
+      "lines": [
+        118,
+        534
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            534
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_00402974",
+          "declaration_line": 118,
+          "lines": [
+            118
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-cb24a290c894",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_00402984",
+      "lines": [
+        119,
+        536
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            536
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_00402984",
+          "declaration_line": 119,
+          "lines": [
+            119
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-31e523833db7",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_0040298C",
+      "lines": [
+        120,
+        537
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            537
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_0040298C",
+          "declaration_line": 120,
+          "lines": [
+            120
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-640d7165995b",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_00402994",
+      "lines": [
+        121,
+        538
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            538
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_00402994",
+          "declaration_line": 121,
+          "lines": [
+            121
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-95e902430fa3",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_0040299C",
+      "lines": [
+        122,
+        540
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            540
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_0040299C",
+          "declaration_line": 122,
+          "lines": [
+            122
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-7e9442f4c9c5",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_004029AC",
+      "lines": [
+        123,
+        544
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            544
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_004029AC",
+          "declaration_line": 123,
+          "lines": [
+            123
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-308a2fad707b",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_004029B8",
+      "lines": [
+        124,
+        548
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            548
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_004029B8",
+          "declaration_line": 124,
+          "lines": [
+            124
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-fb7d53c41585",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_004029C0",
+      "lines": [
+        125,
+        550
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            550
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_004029C0",
+          "declaration_line": 125,
+          "lines": [
+            125
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-f938228a7a6a",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_004029CC",
+      "lines": [
+        126,
+        554
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            554
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_004029CC",
+          "declaration_line": 126,
+          "lines": [
+            126
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-727aea12b5f7",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_004029D8",
+      "lines": [
+        127,
+        556
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            556
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_004029D8",
+          "declaration_line": 127,
+          "lines": [
+            127
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-279db3bd0577",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_004029E4",
+      "lines": [
+        128,
+        560
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            560
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_004029E4",
+          "declaration_line": 128,
+          "lines": [
+            128
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-cb291f2f767e",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_004029F0",
+      "lines": [
+        129,
+        564
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            564
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_004029F0",
+          "declaration_line": 129,
+          "lines": [
+            129
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-0c9d131c8efa",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_004029F8",
+      "lines": [
+        130,
+        568
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            568
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_004029F8",
+          "declaration_line": 130,
+          "lines": [
+            130
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-dff45907b5d4",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_00402A00",
+      "lines": [
+        131,
+        572
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            572
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_00402A00",
+          "declaration_line": 131,
+          "lines": [
+            131
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-e19b6371722f",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_00402A08",
+      "lines": [
+        132,
+        576
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            576
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_00402A08",
+          "declaration_line": 132,
+          "lines": [
+            132
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-8096e5f87c1f",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_00402A10",
+      "lines": [
+        133,
+        580
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            580
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_00402A10",
+          "declaration_line": 133,
+          "lines": [
+            133
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-94ee20cbe2b8",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_00402A9C",
+      "lines": [
+        181,
+        443
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            443
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_00402A9C",
+          "declaration_line": 181,
+          "lines": [
+            181
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-e04691b3808c",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_00402AB0",
+      "lines": [
+        134,
+        526
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            526
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_00402AB0",
+          "declaration_line": 134,
+          "lines": [
+            134
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-4527bd0546e4",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_00402AB4",
+      "lines": [
+        135,
+        528
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            528
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_00402AB4",
+          "declaration_line": 135,
+          "lines": [
+            135
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-1aa0cac2674d",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_00402ABC",
+      "lines": [
+        136,
+        530
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            530
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_00402ABC",
+          "declaration_line": 136,
+          "lines": [
+            136
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-fbfd667b67d8",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_00402AC0",
+      "lines": [
+        137,
+        515
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            515
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_00402AC0",
+          "declaration_line": 137,
+          "lines": [
+            137
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-66b64bd065dc",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_00402AD0",
+      "lines": [
+        138,
+        518
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            518
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_00402AD0",
+          "declaration_line": 138,
+          "lines": [
+            138
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-456375995761",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_00402ADC",
+      "lines": [
+        139,
+        521
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            521
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_00402ADC",
+          "declaration_line": 139,
+          "lines": [
+            139
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-dde809e83793",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_00402AEC",
+      "lines": [
+        140,
+        524
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            524
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_00402AEC",
+          "declaration_line": 140,
+          "lines": [
+            140
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-83a3cc1d278b",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_00402AFC",
+      "lines": [
+        141,
+        497
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            497
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_00402AFC",
+          "declaration_line": 141,
+          "lines": [
+            141
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-ae5f5623f4e3",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_00402B10",
+      "lines": [
+        142,
+        449
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            449
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_00402B10",
+          "declaration_line": 142,
+          "lines": [
+            142
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-10f40f2c64a1",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_00402B20",
+      "lines": [
+        143,
+        435
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            435
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_00402B20",
+          "declaration_line": 143,
+          "lines": [
+            143
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-f68d47135122",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_00402B60",
+      "lines": [
+        144,
+        438
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            438
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_00402B60",
+          "declaration_line": 144,
+          "lines": [
+            144
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-0013564edf87",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_00402B6C",
+      "lines": [
+        145,
+        452
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            452
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_00402B6C",
+          "declaration_line": 145,
+          "lines": [
+            145
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-dca56ec53d27",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_00402B78",
+      "lines": [
+        146,
+        455
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            455
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_00402B78",
+          "declaration_line": 146,
+          "lines": [
+            146
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-63abba44996a",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_00402B84",
+      "lines": [
+        147,
+        477
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            477
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_00402B84",
+          "declaration_line": 147,
+          "lines": [
+            147
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-e50405f15730",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_00402B90",
+      "lines": [
+        148,
+        481
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            481
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_00402B90",
+          "declaration_line": 148,
+          "lines": [
+            148
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-6989730df87f",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_00402B98",
+      "lines": [
+        149,
+        484
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            484
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_gamegui_00402B98",
+          "declaration_line": 149,
+          "lines": [
+            149
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-a3636f5e67f7",
       "kind": "address_global",
       "path": "src/modules/gamegui.c",
       "symbol": "D_gamegui_00402BD0",
       "lines": [
         31,
-        602
+        939
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiApplyDitherAndVideoSettings",
-          "declaration_line": 596,
+          "declaration_line": 933,
           "lines": [
-            602
+            939
           ]
         },
         {
@@ -30984,15 +33317,15 @@
       "symbol": "D_gamegui_00402BE0",
       "lines": [
         31,
-        603
+        940
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiApplyDitherAndVideoSettings",
-          "declaration_line": 596,
+          "declaration_line": 933,
           "lines": [
-            603
+            940
           ]
         },
         {
@@ -31011,60 +33344,60 @@
       "path": "src/modules/gamegui.c",
       "symbol": "D_gamegui_00402C68",
       "lines": [
-        87,
-        168,
-        305,
-        317,
-        429,
-        653
+        232,
+        313,
+        642,
+        654,
+        766,
+        990
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_gameGuiInitializeModuleExports",
-          "declaration_line": 156,
+          "declaration_line": 301,
           "lines": [
-            168
+            313
           ]
         },
         {
           "kind": "function",
           "name": "gameGuiGetDebugByte",
-          "declaration_line": 652,
+          "declaration_line": 989,
           "lines": [
-            653
+            990
           ]
         },
         {
           "kind": "function",
           "name": "gameGuiInitializeSharedWidgetWhenEnabled",
-          "declaration_line": 408,
+          "declaration_line": 745,
           "lines": [
-            429
+            766
           ]
         },
         {
           "kind": "function",
           "name": "gameGuiRenderMenuOrFontList",
-          "declaration_line": 304,
+          "declaration_line": 641,
           "lines": [
-            305
+            642
           ]
         },
         {
           "kind": "function",
           "name": "gameGuiSetDebugByteWhenEnabled",
-          "declaration_line": 315,
+          "declaration_line": 652,
           "lines": [
-            317
+            654
           ]
         },
         {
           "kind": "global",
           "name": "D_gamegui_00402C68",
-          "declaration_line": 87,
+          "declaration_line": 232,
           "lines": [
-            87
+            232
           ]
         }
       ]
@@ -31075,24 +33408,24 @@
       "path": "src/modules/gamegui.c",
       "symbol": "D_gamegui_00402C74",
       "lines": [
-        48,
-        198
+        193,
+        343
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiCreateDebugRoot",
-          "declaration_line": 194,
+          "declaration_line": 339,
           "lines": [
-            198
+            343
           ]
         },
         {
           "kind": "global",
           "name": "D_gamegui_00402C74",
-          "declaration_line": 48,
+          "declaration_line": 193,
           "lines": [
-            48
+            193
           ]
         }
       ]
@@ -31103,51 +33436,51 @@
       "path": "src/modules/gamegui.c",
       "symbol": "D_gamegui_00402C78",
       "lines": [
-        88,
-        202,
-        306,
-        420,
-        445
+        233,
+        347,
+        643,
+        757,
+        782
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiCreateDebugRoot",
-          "declaration_line": 194,
+          "declaration_line": 339,
           "lines": [
-            202
+            347
           ]
         },
         {
           "kind": "function",
           "name": "gameGuiInitializeSharedWidgetWhenEnabled",
-          "declaration_line": 408,
+          "declaration_line": 745,
           "lines": [
-            420
+            757
           ]
         },
         {
           "kind": "function",
           "name": "gameGuiLoadPaletteThreeAndSelectDebugFont",
-          "declaration_line": 444,
+          "declaration_line": 781,
           "lines": [
-            445
+            782
           ]
         },
         {
           "kind": "function",
           "name": "gameGuiRenderMenuOrFontList",
-          "declaration_line": 304,
+          "declaration_line": 641,
           "lines": [
-            306
+            643
           ]
         },
         {
           "kind": "global",
           "name": "D_gamegui_00402C78",
-          "declaration_line": 88,
+          "declaration_line": 233,
           "lines": [
-            88
+            233
           ]
         }
       ]
@@ -31158,24 +33491,24 @@
       "path": "src/modules/gamegui.c",
       "symbol": "D_gamegui_00402D04",
       "lines": [
-        89,
-        454
+        234,
+        791
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiSetSharedWord",
-          "declaration_line": 453,
+          "declaration_line": 790,
           "lines": [
-            454
+            791
           ]
         },
         {
           "kind": "global",
           "name": "D_gamegui_00402D04",
-          "declaration_line": 89,
+          "declaration_line": 234,
           "lines": [
-            89
+            234
           ]
         }
       ]
@@ -31186,24 +33519,64 @@
       "path": "src/modules/gamegui.c",
       "symbol": "D_gamegui_00402D0C",
       "lines": [
-        49,
-        417
+        194,
+        754
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiInitializeSharedWidgetWhenEnabled",
-          "declaration_line": 408,
+          "declaration_line": 745,
           "lines": [
-            417
+            754
           ]
         },
         {
           "kind": "global",
           "name": "D_gamegui_00402D0C",
-          "declaration_line": 49,
+          "declaration_line": 194,
           "lines": [
-            49
+            194
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-f3ebfff7646e",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_00402D10",
+      "lines": [
+        66,
+        425
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            425
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-c643cae92213",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_00402D14",
+      "lines": [
+        66,
+        430
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            430
           ]
         }
       ]
@@ -31214,24 +33587,84 @@
       "path": "src/modules/gamegui.c",
       "symbol": "D_gamegui_00402D16",
       "lines": [
-        90,
-        347
+        235,
+        684
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiRestoreMusicUnlessModeOne",
-          "declaration_line": 341,
+          "declaration_line": 678,
           "lines": [
-            347
+            684
           ]
         },
         {
           "kind": "global",
           "name": "D_gamegui_00402D16",
-          "declaration_line": 90,
+          "declaration_line": 235,
           "lines": [
-            90
+            235
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-fcead558803e",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_00402D18",
+      "lines": [
+        67,
+        525
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            525
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-8af4d39b4ce7",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_00402D1C",
+      "lines": [
+        67,
+        527
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            527
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-d5697aeea7d5",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_gamegui_00402D20",
+      "lines": [
+        67,
+        423
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            423
           ]
         }
       ]
@@ -31242,24 +33675,62 @@
       "path": "src/modules/gamegui.c",
       "symbol": "D_gamegui_00402D28",
       "lines": [
-        91,
-        463
+        236,
+        800
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiRequestStateNineWithChoiceFlag",
-          "declaration_line": 462,
+          "declaration_line": 799,
           "lines": [
-            463
+            800
           ]
         },
         {
           "kind": "global",
           "name": "D_gamegui_00402D28",
-          "declaration_line": 91,
+          "declaration_line": 236,
           "lines": [
-            91
+            236
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-d5346afe25e6",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_uvdobj_rom_004039B0",
+      "lines": [
+        545
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            545
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-fce1399a801f",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_uvpfx_rom_00404FAC",
+      "lines": [
+        541
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            541
           ]
         }
       ]
@@ -32030,26 +34501,26 @@
       "symbol": "D_letter_00400480",
       "lines": [
         42,
-        131,
-        133,
-        147
+        128,
+        130,
+        144
       ],
       "owners": [
         {
           "kind": "function",
           "name": "letterGetDescriptorOrDefault",
-          "declaration_line": 129,
+          "declaration_line": 126,
           "lines": [
-            131,
-            133
+            128,
+            130
           ]
         },
         {
           "kind": "function",
           "name": "letterSetDescriptorPrimitiveColor",
-          "declaration_line": 144,
+          "declaration_line": 141,
           "lines": [
-            147
+            144
           ]
         },
         {
@@ -32069,30 +34540,30 @@
       "symbol": "D_letter_00400504",
       "lines": [
         23,
-        79,
-        83,
-        103,
-        107,
-        109
+        71,
+        75,
+        98,
+        102,
+        104
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_letterInitializeModuleAndObjectPool",
-          "declaration_line": 63,
+          "declaration_line": 55,
           "lines": [
-            79,
-            83
+            71,
+            75
           ]
         },
         {
           "kind": "function",
           "name": "letterReleaseObjectsAndMedia",
-          "declaration_line": 98,
+          "declaration_line": 93,
           "lines": [
-            103,
-            107,
-            109
+            98,
+            102,
+            104
           ]
         },
         {
@@ -32112,15 +34583,15 @@
       "symbol": "D_letter_00400518",
       "lines": [
         16,
-        88
+        80
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_letterInitializeModuleAndObjectPool",
-          "declaration_line": 63,
+          "declaration_line": 55,
           "lines": [
-            88
+            80
           ]
         },
         {
@@ -80906,22 +83377,12 @@
       "evidence": "asm/us/nonmatchings/modules/game/func_game_00401CC0.s"
     },
     {
-      "id": "Q-92a668a29282",
-      "kind": "assembly",
-      "path": "src/modules/gamegui.c",
-      "symbol": "func_gamegui_00400370",
-      "lines": [
-        247
-      ],
-      "evidence": "asm/us/nonmatchings/modules/gamegui/func_gamegui_00400370.s"
-    },
-    {
       "id": "Q-c4b8b0992cd0",
       "kind": "assembly",
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_004014F8",
       "lines": [
-        268
+        605
       ],
       "evidence": "asm/us/nonmatchings/modules/gamegui/func_gamegui_004014F8.s"
     },
@@ -80931,7 +83392,7 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_00401748",
       "lines": [
-        299
+        636
       ],
       "evidence": "asm/us/nonmatchings/modules/gamegui/func_gamegui_00401748.s"
     },
@@ -80941,7 +83402,7 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_00401AF8",
       "lines": [
-        322
+        659
       ],
       "evidence": "asm/us/nonmatchings/modules/gamegui/func_gamegui_00401AF8.s"
     },
@@ -81001,7 +83462,7 @@
       "path": "src/modules/letter.c",
       "symbol": "func_letter_00400230",
       "lines": [
-        124
+        119
       ],
       "evidence": "asm/us/nonmatchings/modules/letter/func_letter_00400230.s"
     },
@@ -125984,16 +128445,16 @@
       "path": "src/modules/gamegui.c",
       "symbol": "* Append a text-list panel and its thirteen state-action rows in original order. * Reuse the first two rows' code-address property word and retain their returned * addresses in the original shared words. Reload provider tables after calls. * Original GUI exports 0x84, 0x94, 0x98 and 0x9C establish append, signed-index * allocation/access, and an exact 30-byte copy that continues after NUL. * MISC export 0x10C forwards the unchanged third word to GUI property 3. * RE_ORIGINAL_QUIRK: the allocator uses index 50 after scanning 50 active * entries; this caller does not check exhaustion. Reachability is unresolved. * RE_UNKNOWN: historical parent/shared-word types, complete label and pool * extents, occupancy/alias/lifetime guarantees, and property 3's action-dispatch * ABI. Resolve original allocations, label boundaries, teardown and all property * readers before changing bounds, ownership or code-address declarations. * Readable C is parked: all 592 native/draft bytes have only two stack-offset * differences for the reused action local (36 versus 32); all 60 complete * relocation records match as a multiset, with only serialization order changed. * Recover original storage/lifetime evidence and prove packed modules and ROM; * a local's stack offset alone does not justify extra storage or padding.",
       "lines": [
-        248
+        585
       ],
       "evidence": "* Append a text-list panel and its thirteen state-action rows in original order. * Reuse the first two rows' code-address property word and retain their returned * addresses in the original shared words. Reload provider tables after calls. * Original GUI exports 0x84, 0x94, 0x98 and 0x9C establish append, signed-index * allocation/access, and an exact 30-byte copy that continues after NUL. * MISC export 0x10C forwards the unchanged third word to GUI property 3. * RE_ORIGINAL_QUIRK: the allocator uses index 50 after scanning 50 active * entries; this caller does not check exhaustion. Reachability is unresolved. * RE_UNKNOWN: historical parent/shared-word types, complete label and pool * extents, occupancy/alias/lifetime guarantees, and property 3's action-dispatch * ABI. Resolve original allocations, label boundaries, teardown and all property * readers before changing bounds, ownership or code-address declarations. * Readable C is parked: all 592 native/draft bytes have only two stack-offset * differences for the reused action local (36 versus 32); all 60 complete * relocation records match as a multiset, with only serialization order changed. * Recover original storage/lifetime evidence and prove packed modules and ROM; * a local's stack offset alone does not justify extra storage or padding.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_gamegui_004014F8",
-          "declaration_line": 268,
+          "declaration_line": 605,
           "lines": [
-            248
+            585
           ]
         }
       ]
@@ -126004,16 +128465,16 @@
       "path": "src/modules/gamegui.c",
       "symbol": "* Do nothing when debugging is disabled. Otherwise mark the shared debug state, * initialize the shared widget, narrow the allocated child-group handle to s16, * resolve it, copy its text and append it to the shared list. Build the three * control groups before passing the same root to the scene callback. * RE_UNKNOWN: Allocation failure, root ownership and the opaque control/scene * callback contracts remain with their providers; no validation is added.",
       "lines": [
-        185
+        330
       ],
       "evidence": "* Do nothing when debugging is disabled. Otherwise mark the shared debug state, * initialize the shared widget, narrow the allocated child-group handle to s16, * resolve it, copy its text and append it to the shared list. Build the three * control groups before passing the same root to the scene callback. * RE_UNKNOWN: Allocation failure, root ownership and the opaque control/scene * callback contracts remain with their providers; no validation is added.",
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiCreateDebugRoot",
-          "declaration_line": 194,
+          "declaration_line": 339,
           "lines": [
-            185
+            330
           ]
         }
       ]
@@ -126024,16 +128485,16 @@
       "path": "src/modules/gamegui.c",
       "symbol": "* Request property 6 from the supplied channel, using the local callback-list * output and trailing zero, then register gameGuiApplyDitherAndVideoSettings * with a zero insertion argument and priority 0x21. * RE_ORIGINAL_QUIRK: The local output is not initialized here and no lookup * status or NULL check precedes registration. * RE_UNKNOWN: Property 6 must fill a live callback list for this channel; * list capacity, registration failure, callback lifetime and teardown ordering * require the channel/callback providers and all registration callers.",
       "lines": [
-        630
+        967
       ],
       "evidence": "* Request property 6 from the supplied channel, using the local callback-list * output and trailing zero, then register gameGuiApplyDitherAndVideoSettings * with a zero insertion argument and priority 0x21. * RE_ORIGINAL_QUIRK: The local output is not initialized here and no lookup * status or NULL check precedes registration. * RE_UNKNOWN: Property 6 must fill a live callback list for this channel; * list capacity, registration failure, callback lifetime and teardown ordering * require the channel/callback providers and all registration callers.",
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiRegisterChannelCallback",
-          "declaration_line": 641,
+          "declaration_line": 978,
           "lines": [
-            630
+            967
           ]
         }
       ]
@@ -126044,16 +128505,16 @@
       "path": "src/modules/gamegui.c",
       "symbol": "* Scan four controllers for both masks 0x20 and 0x10; on the first match, * load the GUI, display-list editor and font resources when needed, then set * GUI property 16 and the shared controller word if the GUI load succeeded. * Preserve the scan break on that first match even when the load failed. * Independently process press masks 0x800 then 0x400 using the current mode: * update the enabled byte, initialize the shared widget, invoke the stored * raw code address or create the debug root, and clear the shared GUI short. * The second action sees the first action's changes. When enabled, store * byte 1 at the root container's offset 0x8A and run its input/child traversal. * Preserve provider and callback reloads, unexpected-mode behavior and the * original unsigned comparison of the memory-query result against 150000. * RE_ORIGINAL_QUIRK: GUI availability gates the initial property call, but * later enabled paths add no load-result check. Original failure-domain and * callback-validity guarantees remain unresolved; no reachable fault is proven. * RE_UNKNOWN: historical state/container extents and formals, input-controller * validity, module/resource occupancy and lifetime, callback registrations, * formals/return and inherited-register expectations, complete mode/property * meanings and aliases. Resolve original allocations, producers, registered * targets, all mode/property readers and failure paths before changing bounds, * validation, ownership, callback ABI or initialization. * Readable C is parked: 820 native versus 888 draft bytes, 152 differing words, * and 43 versus 87 complete relocation records. The draft rematerializes the * shared-state address instead of retaining the native base pointer; switch * lowering and scheduling also differ. All observed operations remain present. * Recover original natural storage/lifetime evidence and require complete * instruction/relocation, packed-module and ROM proof; do not invent padding * or a complete historical state layout from compiler allocation alone.",
       "lines": [
-        269
+        606
       ],
       "evidence": "* Scan four controllers for both masks 0x20 and 0x10; on the first match, * load the GUI, display-list editor and font resources when needed, then set * GUI property 16 and the shared controller word if the GUI load succeeded. * Preserve the scan break on that first match even when the load failed. * Independently process press masks 0x800 then 0x400 using the current mode: * update the enabled byte, initialize the shared widget, invoke the stored * raw code address or create the debug root, and clear the shared GUI short. * The second action sees the first action's changes. When enabled, store * byte 1 at the root container's offset 0x8A and run its input/child traversal. * Preserve provider and callback reloads, unexpected-mode behavior and the * original unsigned comparison of the memory-query result against 150000. * RE_ORIGINAL_QUIRK: GUI availability gates the initial property call, but * later enabled paths add no load-result check. Original failure-domain and * callback-validity guarantees remain unresolved; no reachable fault is proven. * RE_UNKNOWN: historical state/container extents and formals, input-controller * validity, module/resource occupancy and lifetime, callback registrations, * formals/return and inherited-register expectations, complete mode/property * meanings and aliases. Resolve original allocations, producers, registered * targets, all mode/property readers and failure paths before changing bounds, * validation, ownership, callback ABI or initialization. * Readable C is parked: 820 native versus 888 draft bytes, 152 differing words, * and 43 versus 87 complete relocation records. The draft rematerializes the * shared-state address instead of retaining the native base pointer; switch * lowering and scheduling also differ. All observed operations remain present. * Recover original natural storage/lifetime evidence and require complete * instruction/relocation, packed-module and ROM proof; do not invent padding * or a complete historical state layout from compiler allocation alone.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_gamegui_00401748",
-          "declaration_line": 299,
+          "declaration_line": 636,
           "lines": [
-            269
+            606
           ]
         }
       ]
@@ -126064,16 +128525,16 @@
       "path": "src/modules/gamegui.c",
       "symbol": "* Update the allocation pointer and publish ten original callback addresses * at offsets 0x00 through 0x24, then the shared debug-byte address at 0x28. * The table stores 32-bit addresses; publication does not invoke the callbacks * or initialize the shared debug byte and widget state. * RE_UNKNOWN: The full writable export extent/lifetime and callback 0x08 ABI * remain loader/consumer obligations. Preserve the separate empty callback and * all original slot bindings without assigning new callable signatures.",
       "lines": [
-        146
+        291
       ],
       "evidence": "* Update the allocation pointer and publish ten original callback addresses * at offsets 0x00 through 0x24, then the shared debug-byte address at 0x28. * The table stores 32-bit addresses; publication does not invoke the callbacks * or initialize the shared debug byte and widget state. * RE_UNKNOWN: The full writable export extent/lifetime and callback 0x08 ABI * remain loader/consumer obligations. Preserve the separate empty callback and * all original slot bindings without assigning new callable signatures.",
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_gameGuiInitializeModuleExports",
-          "declaration_line": 156,
+          "declaration_line": 301,
           "lines": [
-            146
+            291
           ]
         }
       ]
@@ -126084,16 +128545,36 @@
       "path": "src/modules/gamegui.c",
       "symbol": "Append the original race text-list panel, bind player/AI counts and the AI-record/ * steering-assist words, then append the play and battle rows with their original * code-address property words. Preserve export reloads and the reused widget-output * address; the returned widget itself is not read here. GUI9C reads exactly 30 bytes * starting at the original race-label address, including bytes after its NUL. * RE_ORIGINAL_QUIRK: the allocator continues with index50 after scanning50 entries, * and this caller does not check the returned index; exhaustion reachability is unknown. * RE_UNKNOWN: historical parent/label/record extents and declaration widths, pool * occupancy guarantees, bound-storage/row lifetimes and property3's callback dispatch * contract. Trace original allocation/teardown, label boundaries and GUI property3 * readers before changing validation, ownership or the raw-word action declarations.",
       "lines": [
-        212
+        357
       ],
       "evidence": "Append the original race text-list panel, bind player/AI counts and the AI-record/ * steering-assist words, then append the play and battle rows with their original * code-address property words. Preserve export reloads and the reused widget-output * address; the returned widget itself is not read here. GUI9C reads exactly 30 bytes * starting at the original race-label address, including bytes after its NUL. * RE_ORIGINAL_QUIRK: the allocator continues with index50 after scanning50 entries, * and this caller does not check the returned index; exhaustion reachability is unknown. * RE_UNKNOWN: historical parent/label/record extents and declaration widths, pool * occupancy guarantees, bound-storage/row lifetimes and property3's callback dispatch * contract. Trace original allocation/teardown, label boundaries and GUI property3 * readers before changing validation, ownership or the raw-word action declarations.",
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiAddRaceAndBattleControls",
-          "declaration_line": 224,
+          "declaration_line": 369,
           "lines": [
-            212
+            357
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-0a30918d5a77",
+      "kind": "explicit_unknown",
+      "path": "src/modules/gamegui.c",
+      "symbol": "Build the dbg, opts, disp and dsbl text-list panels in their original order, * bind shared setting addresses to scalar widgets, and attach action/address * properties. Optional module flags are added only when their exports exist. * The accepted MISC provider selects integer sources when kind & 0x2; other * kinds read the same source address as f32. Preserve all bounds and call order. * RE_ORIGINAL_QUIRK: row/widget allocation is unchecked; accepted providers * retain fixed-width label reads, including bytes beyond a label's first NUL. * RE_UNKNOWN: remaining kind bits, complete label/table extents, allocation * capacity, callback dispatch contracts, optional flag meanings, and bound * storage/module lifetime remain provider and caller obligations. Export-word * casts describe addresses passed here, not inferred allocations or ownership. * The scoped linker alias preserves the original caller/export name.",
+      "lines": [
+        392
+      ],
+      "evidence": "Build the dbg, opts, disp and dsbl text-list panels in their original order, * bind shared setting addresses to scalar widgets, and attach action/address * properties. Optional module flags are added only when their exports exist. * The accepted MISC provider selects integer sources when kind & 0x2; other * kinds read the same source address as f32. Preserve all bounds and call order. * RE_ORIGINAL_QUIRK: row/widget allocation is unchecked; accepted providers * retain fixed-width label reads, including bytes beyond a label's first NUL. * RE_UNKNOWN: remaining kind bits, complete label/table extents, allocation * capacity, callback dispatch contracts, optional flag meanings, and bound * storage/module lifetime remain provider and caller obligations. Export-word * casts describe addresses passed here, not inferred allocations or ownership. * The scoped linker alias preserves the original caller/export name.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            392
           ]
         }
       ]
@@ -126104,16 +128585,16 @@
       "path": "src/modules/gamegui.c",
       "symbol": "Call original GUI0x28 with display-data ID-1 and palette ID3, then select * debug font3. Its target stores those IDs, skips the display-data load for-1, * loads palette3 and marks the GUI record ready; no selection reset is shown. * RE_UNKNOWN: palette3's asset meaning and the complete GUI lifecycle. Resolve * through the original palette loader/data and callers before stronger naming.",
       "lines": [
-        439
+        776
       ],
       "evidence": "Call original GUI0x28 with display-data ID-1 and palette ID3, then select * debug font3. Its target stores those IDs, skips the display-data load for-1, * loads palette3 and marks the GUI record ready; no selection reset is shown. * RE_UNKNOWN: palette3's asset meaning and the complete GUI lifecycle. Resolve * through the original palette loader/data and callers before stronger naming.",
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiLoadPaletteThreeAndSelectDebugFont",
-          "declaration_line": 444,
+          "declaration_line": 781,
           "lines": [
-            439
+            776
           ]
         }
       ]
@@ -126124,16 +128605,16 @@
       "path": "src/modules/gamegui.c",
       "symbol": "Emit pipe sync plus color/alpha-dither commands, reset the two shared graphics words, * then apply the original video-interface feature choices. RE_UNKNOWN: dither selector * domains, display-list capacity/lifetime and the rendering meaning of shared word50's * 0x400000 bit need original settings producers, graphics consumers and frame callers. * The original callback homes but does not read its incoming word; its historical * source declaration remains unresolved. Preserve settings reloads across callbacks.",
       "lines": [
-        590
+        927
       ],
       "evidence": "Emit pipe sync plus color/alpha-dither commands, reset the two shared graphics words, * then apply the original video-interface feature choices. RE_UNKNOWN: dither selector * domains, display-list capacity/lifetime and the rendering meaning of shared word50's * 0x400000 bit need original settings producers, graphics consumers and frame callers. * The original callback homes but does not read its incoming word; its historical * source declaration remains unresolved. Preserve settings reloads across callbacks.",
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiApplyDitherAndVideoSettings",
-          "declaration_line": 596,
+          "declaration_line": 933,
           "lines": [
-            590
+            927
           ]
         }
       ]
@@ -126144,16 +128625,16 @@
       "path": "src/modules/gamegui.c",
       "symbol": "GUI28 consumes the signed low16 display-data and palette IDs. * RE_UNKNOWN: historical caller declaration widths. GUI0C and unused slots * retain the existing caller view. Exact caller proof gates this correction.",
       "lines": [
-        81
+        226
       ],
       "evidence": "GUI28 consumes the signed low16 display-data and palette IDs. * RE_UNKNOWN: historical caller declaration widths. GUI0C and unused slots * retain the existing caller view. Exact caller proof gates this correction.",
       "owners": [
         {
           "kind": "type",
           "name": "GameguiGuiExports",
-          "declaration_line": 84,
+          "declaration_line": 229,
           "lines": [
-            81
+            226
           ]
         }
       ]
@@ -126164,16 +128645,16 @@
       "path": "src/modules/gamegui.c",
       "symbol": "Initializer storage view: these are original 32-bit addresses, not * invented callable declarations. Original slot 0x14 initializes the shared * widget conditionally and consumes no incoming machine argument. * RE_UNKNOWN: historical source declarations and callback 0x08's contract.",
       "lines": [
-        124
+        269
       ],
       "evidence": "Initializer storage view: these are original 32-bit addresses, not * invented callable declarations. Original slot 0x14 initializes the shared * widget conditionally and consumes no incoming machine argument. * RE_UNKNOWN: historical source declarations and callback 0x08's contract.",
       "owners": [
         {
           "kind": "type",
           "name": "GameGuiExportAddresses",
-          "declaration_line": 128,
+          "declaration_line": 273,
           "lines": [
-            124
+            269
           ]
         }
       ]
@@ -126184,16 +128665,16 @@
       "path": "src/modules/gamegui.c",
       "symbol": "Original GUI04 initializes container fields after six helper calls; GUI1C * sets child-container bounds; GUI24 consumes a signed low16 selector and * stores its payload in an original word/byte field. * RE_UNKNOWN: historical source prototypes and complete property meanings. * Inspect original property tables and all field readers before expanding * this minimal target-consumption view into a complete export table.",
       "lines": [
-        50
+        195
       ],
       "evidence": "Original GUI04 initializes container fields after six helper calls; GUI1C * sets child-container bounds; GUI24 consumes a signed low16 selector and * stores its payload in an original word/byte field. * RE_UNKNOWN: historical source prototypes and complete property meanings. * Inspect original property tables and all field readers before expanding * this minimal target-consumption view into a complete export table.",
       "owners": [
         {
           "kind": "type",
           "name": "GameGuiInitializerExports",
-          "declaration_line": 56,
+          "declaration_line": 201,
           "lines": [
-            50
+            195
           ]
         }
       ]
@@ -126204,16 +128685,16 @@
       "path": "src/modules/gamegui.c",
       "symbol": "Original GUI08/70/74/78 are append, signed-index allocation/access * and fixed-width text copy. Getter consumes low16; allocator returns a signed * index. RE_UNKNOWN: historical caller declaration widths, unused slots and * full root lifecycle. This view records verified target consumption.",
       "lines": [
-        64
+        209
       ],
       "evidence": "Original GUI08/70/74/78 are append, signed-index allocation/access * and fixed-width text copy. Getter consumes low16; allocator returns a signed * index. RE_UNKNOWN: historical caller declaration widths, unused slots and * full root lifecycle. This view records verified target consumption.",
       "owners": [
         {
           "kind": "type",
           "name": "LocalGuiExp_4000B0",
-          "declaration_line": 68,
+          "declaration_line": 213,
           "lines": [
-            64
+            209
           ]
         }
       ]
@@ -126264,34 +128745,34 @@
       "path": "src/modules/gamegui.c",
       "symbol": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "lines": [
-        173,
-        559,
-        581
+        318,
+        896,
+        918
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "owners": [
         {
           "kind": "function",
           "name": "func_gamegui_004000A8",
-          "declaration_line": 177,
+          "declaration_line": 322,
           "lines": [
-            173
+            318
           ]
         },
         {
           "kind": "function",
           "name": "func_gamegui_00402194",
-          "declaration_line": 563,
+          "declaration_line": 900,
           "lines": [
-            559
+            896
           ]
         },
         {
           "kind": "function",
           "name": "func_gamegui_004021D4",
-          "declaration_line": 585,
+          "declaration_line": 922,
           "lines": [
-            581
+            918
           ]
         }
       ]
@@ -126302,16 +128783,36 @@
       "path": "src/modules/gamegui.c",
       "symbol": "Restore the stored music ID and music state zero unless the linked * record short at 0x1E equals one. * RE_UNKNOWN: the short's broader role and ownership/lifetime of node->unk28. * This wrapper only reads the pointer; trace original record creation, * replacement and release paths before assigning an ownership contract.",
       "lines": [
-        336
+        673
       ],
       "evidence": "Restore the stored music ID and music state zero unless the linked * record short at 0x1E equals one. * RE_UNKNOWN: the short's broader role and ownership/lifetime of node->unk28. * This wrapper only reads the pointer; trace original record creation, * replacement and release paths before assigning an ownership contract.",
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiRestoreMusicUnlessModeOne",
-          "declaration_line": 341,
+          "declaration_line": 678,
           "lines": [
-            336
+            673
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-386984b9b5d9",
+      "kind": "explicit_unknown",
+      "path": "src/modules/gamegui.c",
+      "symbol": "Selective gamegui00370 consumed slots; not complete export allocations. * Raw optional-module slot words are passed as value-source addresses. * RE_UNKNOWN: historical full types, storage extents and provider lifetimes.",
+      "lines": [
+        38
+      ],
+      "evidence": "Selective gamegui00370 consumed slots; not complete export allocations. * Raw optional-module slot words are passed as value-source addresses. * RE_UNKNOWN: historical full types, storage extents and provider lifetimes.",
+      "owners": [
+        {
+          "kind": "type",
+          "name": "GameGuiDebugOptionGuiExports",
+          "declaration_line": 41,
+          "lines": [
+            38
           ]
         }
       ]
@@ -126322,16 +128823,16 @@
       "path": "src/modules/gamegui.c",
       "symbol": "Store the raw word later invoked as a code address by GAMEGUI export 0x08. RE_UNKNOWN: historical callback formals/return, registration validity and lifetime; inspect all original registrations and targets before declaring a typed callback API.",
       "lines": [
-        453
+        790
       ],
       "evidence": "Store the raw word later invoked as a code address by GAMEGUI export 0x08. RE_UNKNOWN: historical callback formals/return, registration validity and lifetime; inspect all original registrations and targets before declaring a typed callback API.",
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiSetSharedWord",
-          "declaration_line": 453,
+          "declaration_line": 790,
           "lines": [
-            453
+            790
           ]
         }
       ]
@@ -126342,16 +128843,16 @@
       "path": "src/modules/gamegui.c",
       "symbol": "Visit loaded UVTX files and accumulate their unsigned field at offset * 0x1A. The original homes the incoming word but does not use it in the * scan. The local aggregate is neither returned nor stored here; preserve * the file-manager calls and original loop. RE_UNKNOWN: field 0x1A meaning, * valid asset extent and the discarded total's intended role. Trace original * UVTX producers and callers before treating this as a size/resource * statistic or adding an observable result.",
       "lines": [
-        659
+        996
       ],
       "evidence": "Visit loaded UVTX files and accumulate their unsigned field at offset * 0x1A. The original homes the incoming word but does not use it in the * scan. The local aggregate is neither returned nor stored here; preserve * the file-manager calls and original loop. RE_UNKNOWN: field 0x1A meaning, * valid asset extent and the discarded total's intended role. Trace original * UVTX producers and callers before treating this as a size/resource * statistic or adding an observable result.",
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiAccumulateLoadedTextureField1A",
-          "declaration_line": 666,
+          "declaration_line": 1003,
           "lines": [
-            659
+            996
           ]
         }
       ]
@@ -126362,16 +128863,16 @@
       "path": "src/modules/gamegui.c",
       "symbol": "When settings word 0x18C is nonzero, initialize the shared GUI widget. * Snapshot settings word 0x8C before all callbacks. If GUI is absent, load * original modules ugui/dled and font asset 3 in order; retain the existing * GUI table when already loaded. Initialize widget D_gamegui_00402C78, set its rectangle * and five original property pairs, select palette/font 3, then clear the * shared debug byte and word+0xC. Reload exports for every original callback. * RE_UNKNOWN: settings words 0x18C/0x8C meanings, property payload semantics, * complete shared-state/widget allocation and resource ownership/lifetime. * Trace original writers, GUI property tables and loader/teardown paths before * replacing the neutral field views or inferring additional validation.",
       "lines": [
-        398
+        735
       ],
       "evidence": "When settings word 0x18C is nonzero, initialize the shared GUI widget. * Snapshot settings word 0x8C before all callbacks. If GUI is absent, load * original modules ugui/dled and font asset 3 in order; retain the existing * GUI table when already loaded. Initialize widget D_gamegui_00402C78, set its rectangle * and five original property pairs, select palette/font 3, then clear the * shared debug byte and word+0xC. Reload exports for every original callback. * RE_UNKNOWN: settings words 0x18C/0x8C meanings, property payload semantics, * complete shared-state/widget allocation and resource ownership/lifetime. * Trace original writers, GUI property tables and loader/teardown paths before * replacing the neutral field views or inferring additional validation.",
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiInitializeSharedWidgetWhenEnabled",
-          "declaration_line": 408,
+          "declaration_line": 745,
           "lines": [
-            398
+            735
           ]
         }
       ]
@@ -126437,51 +128938,61 @@
       ]
     },
     {
-      "id": "Q-d6a6fbfabf0d",
+      "id": "Q-880f046f3234",
       "kind": "explicit_unknown",
       "path": "src/modules/letter.c",
-      "symbol": "* Install the three letter exports and load models 0x101, 0x102, 0x104 and * 0x103, followed by textures 0x3E8, 0x3E9, 0x3FE and 0x3FC. Allocate the * 720-byte object pool, clear the active byte and set the object handle to -1 * in each of twenty 36-byte entries, then clear the shared word. * RE_ORIGINAL_QUIRK: Pool traversal adds a byte offset to a 32-bit base * address. Only the two entry fields are initialized; keep the original order. * RE_UNKNOWN: Allocation/import failure, repeated initialization, the remaining * entry layout and resource/pool lifetime require the creators and cleanup.",
+      "symbol": "Publish three exports; load models 0x101/0x102/0x104/0x103, then textures * 0x3E8/0x3E9/0x3FE/0x3FC. Allocate twenty 36-byte entries (720 bytes), set * only each handle to -1 and active byte to zero, then clear shared word * 0x00400518. RE_ORIGINAL_QUIRK: allocation is unchecked; traversal adds byte * offsets to a 32-bit base address. Preserve the initialization order. * RE_UNKNOWN: asset/shared-word roles, remaining entry fields, allocation or * import failure, repeated initialization, and resource/pool/object ownership * and lifetime require creator, cleanup and provider evidence.",
       "lines": [
-        52
+        46
       ],
-      "evidence": "* Install the three letter exports and load models 0x101, 0x102, 0x104 and * 0x103, followed by textures 0x3E8, 0x3E9, 0x3FE and 0x3FC. Allocate the * 720-byte object pool, clear the active byte and set the object handle to -1 * in each of twenty 36-byte entries, then clear the shared word. * RE_ORIGINAL_QUIRK: Pool traversal adds a byte offset to a 32-bit base * address. Only the two entry fields are initialized; keep the original order. * RE_UNKNOWN: Allocation/import failure, repeated initialization, the remaining * entry layout and resource/pool lifetime require the creators and cleanup.",
+      "evidence": "Publish three exports; load models 0x101/0x102/0x104/0x103, then textures * 0x3E8/0x3E9/0x3FE/0x3FC. Allocate twenty 36-byte entries (720 bytes), set * only each handle to -1 and active byte to zero, then clear shared word * 0x00400518. RE_ORIGINAL_QUIRK: allocation is unchecked; traversal adds byte * offsets to a 32-bit base address. Preserve the initialization order. * RE_UNKNOWN: asset/shared-word roles, remaining entry fields, allocation or * import failure, repeated initialization, and resource/pool/object ownership * and lifetime require creator, cleanup and provider evidence.",
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_letterInitializeModuleAndObjectPool",
-          "declaration_line": 63,
+          "declaration_line": 55,
           "lines": [
-            52
+            46
           ]
         }
       ]
     },
     {
-      "id": "Q-ad3b147a900e",
+      "id": "Q-3500d795edca",
       "kind": "explicit_unknown",
       "path": "src/modules/letter.c",
-      "symbol": "Install the three letter exports, load four models and four textures in * their original order, then allocate twenty 36-byte entries. Initialize only * each entry active byte and object handle; leave all other bytes untouched. * RE_UNKNOWN: asset roles, remaining entry fields, shared word 0x00400518 and * external ownership/lifetime of loaded assets and created objects. * RE_ORIGINAL_QUIRK: allocation is unchecked.",
+      "symbol": "Release nonnegative handles in all twenty 36-byte entries, free the final * reloaded pool pointer, then unload models and textures in their original order. * RE_ORIGINAL_QUIRK: active bytes are ignored; handles and the shared pool * pointer are not cleared here. Preserve pointer reloads and the grouped setup/ * loop opening: splitting those lines changes the original IDO scheduling. * RE_UNKNOWN: callback effects on the pool, partial-initialization entry and * repeated-cleanup safety require loader/caller and provider evidence.",
       "lines": [
-        46
+        85
       ],
-      "evidence": "Install the three letter exports, load four models and four textures in * their original order, then allocate twenty 36-byte entries. Initialize only * each entry active byte and object handle; leave all other bytes untouched. * RE_UNKNOWN: asset roles, remaining entry fields, shared word 0x00400518 and * external ownership/lifetime of loaded assets and created objects. * RE_ORIGINAL_QUIRK: allocation is unchecked."
+      "evidence": "Release nonnegative handles in all twenty 36-byte entries, free the final * reloaded pool pointer, then unload models and textures in their original order. * RE_ORIGINAL_QUIRK: active bytes are ignored; handles and the shared pool * pointer are not cleared here. Preserve pointer reloads and the grouped setup/ * loop opening: splitting those lines changes the original IDO scheduling. * RE_UNKNOWN: callback effects on the pool, partial-initialization entry and * repeated-cleanup safety require loader/caller and provider evidence.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "letterReleaseObjectsAndMedia",
+          "declaration_line": 93,
+          "lines": [
+            85
+          ]
+        }
+      ]
     },
     {
-      "id": "Q-222784488b2a",
+      "id": "Q-c237e9feeebb",
       "kind": "explicit_unknown",
       "path": "src/modules/letter.c",
-      "symbol": "Select the twenty-byte descriptor using the object byte index and * set its RGB components with the object alpha through graphics export 0x3C. * RE_UNKNOWN: index bound; trace original index producers and descriptor extent.",
+      "symbol": "Select a 20-byte descriptor with the object's unsigned index byte and pass * its RGB plus the object's alpha through graphics export 0x3C. * RE_ORIGINAL_QUIRK: indexing is direct, without the getter's fallback. * RE_UNKNOWN: producer index bounds and full descriptor storage extent; the * getter's 0..5 check proves neither a six-entry allocation nor a reachable * invalid access here. Trace index writers and descriptor storage producers.",
       "lines": [
-        141
+        134
       ],
-      "evidence": "Select the twenty-byte descriptor using the object byte index and * set its RGB components with the object alpha through graphics export 0x3C. * RE_UNKNOWN: index bound; trace original index producers and descriptor extent.",
+      "evidence": "Select a 20-byte descriptor with the object's unsigned index byte and pass * its RGB plus the object's alpha through graphics export 0x3C. * RE_ORIGINAL_QUIRK: indexing is direct, without the getter's fallback. * RE_UNKNOWN: producer index bounds and full descriptor storage extent; the * getter's 0..5 check proves neither a six-entry allocation nor a reachable * invalid access here. Trace index writers and descriptor storage producers.",
       "owners": [
         {
           "kind": "function",
           "name": "letterSetDescriptorPrimitiveColor",
-          "declaration_line": 144,
+          "declaration_line": 141,
           "lines": [
-            141
+            134
           ]
         }
       ]
@@ -157732,33 +160243,33 @@
       "path": "src/modules/gamegui.c",
       "symbol": "pad0",
       "lines": [
-        77,
-        326,
-        331
+        222,
+        663,
+        668
       ],
       "owners": [
         {
           "kind": "type",
           "name": "Inner_00401D34",
-          "declaration_line": 324,
+          "declaration_line": 661,
           "lines": [
-            326
+            663
           ]
         },
         {
           "kind": "type",
           "name": "Outer_00401D34",
-          "declaration_line": 329,
+          "declaration_line": 666,
           "lines": [
-            331
+            668
           ]
         },
         {
           "kind": "type",
           "name": "SceneExp_4000B0",
-          "declaration_line": 76,
+          "declaration_line": 221,
           "lines": [
-            77
+            222
           ]
         }
       ]
@@ -157769,17 +160280,17 @@
       "path": "src/modules/gamegui.c",
       "symbol": "padE0",
       "lines": [
-        464,
-        466
+        801,
+        803
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiRequestStateNineWithChoiceFlag",
-          "declaration_line": 462,
+          "declaration_line": 799,
           "lines": [
-            464,
-            466
+            801,
+            803
           ]
         }
       ]
@@ -178438,15 +180949,15 @@
       "path": "src/modules/gamegui.c",
       "symbol": "unk18C",
       "lines": [
-        414
+        751
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiInitializeSharedWidgetWhenEnabled",
-          "declaration_line": 408,
+          "declaration_line": 745,
           "lines": [
-            414
+            751
           ]
         }
       ]
@@ -178457,24 +180968,24 @@
       "path": "src/modules/gamegui.c",
       "symbol": "unk1E",
       "lines": [
-        327,
-        345
+        664,
+        682
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiRestoreMusicUnlessModeOne",
-          "declaration_line": 341,
+          "declaration_line": 678,
           "lines": [
-            345
+            682
           ]
         },
         {
           "kind": "type",
           "name": "Inner_00401D34",
-          "declaration_line": 324,
+          "declaration_line": 661,
           "lines": [
-            327
+            664
           ]
         }
       ]
@@ -178485,24 +180996,24 @@
       "path": "src/modules/gamegui.c",
       "symbol": "unk20",
       "lines": [
-        78,
-        206
+        223,
+        351
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiCreateDebugRoot",
-          "declaration_line": 194,
+          "declaration_line": 339,
           "lines": [
-            206
+            351
           ]
         },
         {
           "kind": "type",
           "name": "SceneExp_4000B0",
-          "declaration_line": 76,
+          "declaration_line": 221,
           "lines": [
-            78
+            223
           ]
         }
       ]
@@ -178513,24 +181024,52 @@
       "path": "src/modules/gamegui.c",
       "symbol": "unk28",
       "lines": [
-        332,
-        344
+        549,
+        669,
+        681
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "gameGuiRestoreMusicUnlessModeOne",
-          "declaration_line": 341,
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
           "lines": [
-            344
+            549
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "gameGuiRestoreMusicUnlessModeOne",
+          "declaration_line": 678,
+          "lines": [
+            681
           ]
         },
         {
           "kind": "type",
           "name": "Outer_00401D34",
-          "declaration_line": 329,
+          "declaration_line": 666,
           "lines": [
-            332
+            669
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-765de563e83a",
+      "kind": "offset_field",
+      "path": "src/modules/gamegui.c",
+      "symbol": "unk2C",
+      "lines": [
+        551
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            551
           ]
         }
       ]
@@ -178541,15 +181080,15 @@
       "path": "src/modules/gamegui.c",
       "symbol": "unk48",
       "lines": [
-        603
+        940
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiApplyDitherAndVideoSettings",
-          "declaration_line": 596,
+          "declaration_line": 933,
           "lines": [
-            603
+            940
           ]
         }
       ]
@@ -178560,15 +181099,34 @@
       "path": "src/modules/gamegui.c",
       "symbol": "unk4C",
       "lines": [
-        602
+        939
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiApplyDitherAndVideoSettings",
-          "declaration_line": 596,
+          "declaration_line": 933,
           "lines": [
-            602
+            939
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-d5aaadb3c299",
+      "kind": "offset_field",
+      "path": "src/modules/gamegui.c",
+      "symbol": "unk78",
+      "lines": [
+        561
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            561
           ]
         }
       ]
@@ -178579,15 +181137,15 @@
       "path": "src/modules/gamegui.c",
       "symbol": "unk8C",
       "lines": [
-        413
+        750
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiInitializeSharedWidgetWhenEnabled",
-          "declaration_line": 408,
+          "declaration_line": 745,
           "lines": [
-            413
+            750
           ]
         }
       ]
@@ -178598,51 +181156,51 @@
       "path": "src/modules/gamegui.c",
       "symbol": "unkC",
       "lines": [
-        84,
-        306,
-        490,
-        498,
-        510
+        229,
+        643,
+        827,
+        835,
+        847
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiRenderMenuOrFontList",
-          "declaration_line": 304,
+          "declaration_line": 641,
           "lines": [
-            306
+            643
           ]
         },
         {
           "kind": "function",
           "name": "gameGuiRequestInitialIntroTrack",
-          "declaration_line": 506,
+          "declaration_line": 843,
           "lines": [
-            510
+            847
           ]
         },
         {
           "kind": "function",
           "name": "gameGuiRequestStateFour",
-          "declaration_line": 496,
+          "declaration_line": 833,
           "lines": [
-            498
+            835
           ]
         },
         {
           "kind": "function",
           "name": "gameGuiRequestStateThree",
-          "declaration_line": 488,
+          "declaration_line": 825,
           "lines": [
-            490
+            827
           ]
         },
         {
           "kind": "type",
           "name": "GameguiGuiExports",
-          "declaration_line": 84,
+          "declaration_line": 229,
           "lines": [
-            84
+            229
           ]
         }
       ]
@@ -178653,24 +181211,24 @@
       "path": "src/modules/gamegui.c",
       "symbol": "unknownCallback08Address",
       "lines": [
-        131,
-        160
+        276,
+        305
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_gameGuiInitializeModuleExports",
-          "declaration_line": 156,
+          "declaration_line": 301,
           "lines": [
-            160
+            305
           ]
         },
         {
           "kind": "type",
           "name": "GameGuiExportAddresses",
-          "declaration_line": 128,
+          "declaration_line": 273,
           "lines": [
-            131
+            276
           ]
         }
       ]
@@ -236211,16 +238769,16 @@
       "path": "src/modules/gamegui.c",
       "symbol": "* Append a text-list panel and its thirteen state-action rows in original order. * Reuse the first two rows' code-address property word and retain their returned * addresses in the original shared words. Reload provider tables after calls. * Original GUI exports 0x84, 0x94, 0x98 and 0x9C establish append, signed-index * allocation/access, and an exact 30-byte copy that continues after NUL. * MISC export 0x10C forwards the unchanged third word to GUI property 3. * RE_ORIGINAL_QUIRK: the allocator uses index 50 after scanning 50 active * entries; this caller does not check exhaustion. Reachability is unresolved. * RE_UNKNOWN: historical parent/shared-word types, complete label and pool * extents, occupancy/alias/lifetime guarantees, and property 3's action-dispatch * ABI. Resolve original allocations, label boundaries, teardown and all property * readers before changing bounds, ownership or code-address declarations. * Readable C is parked: all 592 native/draft bytes have only two stack-offset * differences for the reused action local (36 versus 32); all 60 complete * relocation records match as a multiset, with only serialization order changed. * Recover original storage/lifetime evidence and prove packed modules and ROM; * a local's stack offset alone does not justify extra storage or padding.",
       "lines": [
-        248
+        585
       ],
       "evidence": "* Append a text-list panel and its thirteen state-action rows in original order. * Reuse the first two rows' code-address property word and retain their returned * addresses in the original shared words. Reload provider tables after calls. * Original GUI exports 0x84, 0x94, 0x98 and 0x9C establish append, signed-index * allocation/access, and an exact 30-byte copy that continues after NUL. * MISC export 0x10C forwards the unchanged third word to GUI property 3. * RE_ORIGINAL_QUIRK: the allocator uses index 50 after scanning 50 active * entries; this caller does not check exhaustion. Reachability is unresolved. * RE_UNKNOWN: historical parent/shared-word types, complete label and pool * extents, occupancy/alias/lifetime guarantees, and property 3's action-dispatch * ABI. Resolve original allocations, label boundaries, teardown and all property * readers before changing bounds, ownership or code-address declarations. * Readable C is parked: all 592 native/draft bytes have only two stack-offset * differences for the reused action local (36 versus 32); all 60 complete * relocation records match as a multiset, with only serialization order changed. * Recover original storage/lifetime evidence and prove packed modules and ROM; * a local's stack offset alone does not justify extra storage or padding.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_gamegui_004014F8",
-          "declaration_line": 268,
+          "declaration_line": 605,
           "lines": [
-            248
+            585
           ]
         }
       ]
@@ -236231,16 +238789,16 @@
       "path": "src/modules/gamegui.c",
       "symbol": "* Request property 6 from the supplied channel, using the local callback-list * output and trailing zero, then register gameGuiApplyDitherAndVideoSettings * with a zero insertion argument and priority 0x21. * RE_ORIGINAL_QUIRK: The local output is not initialized here and no lookup * status or NULL check precedes registration. * RE_UNKNOWN: Property 6 must fill a live callback list for this channel; * list capacity, registration failure, callback lifetime and teardown ordering * require the channel/callback providers and all registration callers.",
       "lines": [
-        630
+        967
       ],
       "evidence": "* Request property 6 from the supplied channel, using the local callback-list * output and trailing zero, then register gameGuiApplyDitherAndVideoSettings * with a zero insertion argument and priority 0x21. * RE_ORIGINAL_QUIRK: The local output is not initialized here and no lookup * status or NULL check precedes registration. * RE_UNKNOWN: Property 6 must fill a live callback list for this channel; * list capacity, registration failure, callback lifetime and teardown ordering * require the channel/callback providers and all registration callers.",
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiRegisterChannelCallback",
-          "declaration_line": 641,
+          "declaration_line": 978,
           "lines": [
-            630
+            967
           ]
         }
       ]
@@ -236251,16 +238809,16 @@
       "path": "src/modules/gamegui.c",
       "symbol": "* Scan four controllers for both masks 0x20 and 0x10; on the first match, * load the GUI, display-list editor and font resources when needed, then set * GUI property 16 and the shared controller word if the GUI load succeeded. * Preserve the scan break on that first match even when the load failed. * Independently process press masks 0x800 then 0x400 using the current mode: * update the enabled byte, initialize the shared widget, invoke the stored * raw code address or create the debug root, and clear the shared GUI short. * The second action sees the first action's changes. When enabled, store * byte 1 at the root container's offset 0x8A and run its input/child traversal. * Preserve provider and callback reloads, unexpected-mode behavior and the * original unsigned comparison of the memory-query result against 150000. * RE_ORIGINAL_QUIRK: GUI availability gates the initial property call, but * later enabled paths add no load-result check. Original failure-domain and * callback-validity guarantees remain unresolved; no reachable fault is proven. * RE_UNKNOWN: historical state/container extents and formals, input-controller * validity, module/resource occupancy and lifetime, callback registrations, * formals/return and inherited-register expectations, complete mode/property * meanings and aliases. Resolve original allocations, producers, registered * targets, all mode/property readers and failure paths before changing bounds, * validation, ownership, callback ABI or initialization. * Readable C is parked: 820 native versus 888 draft bytes, 152 differing words, * and 43 versus 87 complete relocation records. The draft rematerializes the * shared-state address instead of retaining the native base pointer; switch * lowering and scheduling also differ. All observed operations remain present. * Recover original natural storage/lifetime evidence and require complete * instruction/relocation, packed-module and ROM proof; do not invent padding * or a complete historical state layout from compiler allocation alone.",
       "lines": [
-        269
+        606
       ],
       "evidence": "* Scan four controllers for both masks 0x20 and 0x10; on the first match, * load the GUI, display-list editor and font resources when needed, then set * GUI property 16 and the shared controller word if the GUI load succeeded. * Preserve the scan break on that first match even when the load failed. * Independently process press masks 0x800 then 0x400 using the current mode: * update the enabled byte, initialize the shared widget, invoke the stored * raw code address or create the debug root, and clear the shared GUI short. * The second action sees the first action's changes. When enabled, store * byte 1 at the root container's offset 0x8A and run its input/child traversal. * Preserve provider and callback reloads, unexpected-mode behavior and the * original unsigned comparison of the memory-query result against 150000. * RE_ORIGINAL_QUIRK: GUI availability gates the initial property call, but * later enabled paths add no load-result check. Original failure-domain and * callback-validity guarantees remain unresolved; no reachable fault is proven. * RE_UNKNOWN: historical state/container extents and formals, input-controller * validity, module/resource occupancy and lifetime, callback registrations, * formals/return and inherited-register expectations, complete mode/property * meanings and aliases. Resolve original allocations, producers, registered * targets, all mode/property readers and failure paths before changing bounds, * validation, ownership, callback ABI or initialization. * Readable C is parked: 820 native versus 888 draft bytes, 152 differing words, * and 43 versus 87 complete relocation records. The draft rematerializes the * shared-state address instead of retaining the native base pointer; switch * lowering and scheduling also differ. All observed operations remain present. * Recover original natural storage/lifetime evidence and require complete * instruction/relocation, packed-module and ROM proof; do not invent padding * or a complete historical state layout from compiler allocation alone.",
       "owners": [
         {
           "kind": "assembly",
           "name": "func_gamegui_00401748",
-          "declaration_line": 299,
+          "declaration_line": 636,
           "lines": [
-            269
+            606
           ]
         }
       ]
@@ -236271,16 +238829,36 @@
       "path": "src/modules/gamegui.c",
       "symbol": "Append the original race text-list panel, bind player/AI counts and the AI-record/ * steering-assist words, then append the play and battle rows with their original * code-address property words. Preserve export reloads and the reused widget-output * address; the returned widget itself is not read here. GUI9C reads exactly 30 bytes * starting at the original race-label address, including bytes after its NUL. * RE_ORIGINAL_QUIRK: the allocator continues with index50 after scanning50 entries, * and this caller does not check the returned index; exhaustion reachability is unknown. * RE_UNKNOWN: historical parent/label/record extents and declaration widths, pool * occupancy guarantees, bound-storage/row lifetimes and property3's callback dispatch * contract. Trace original allocation/teardown, label boundaries and GUI property3 * readers before changing validation, ownership or the raw-word action declarations.",
       "lines": [
-        212
+        357
       ],
       "evidence": "Append the original race text-list panel, bind player/AI counts and the AI-record/ * steering-assist words, then append the play and battle rows with their original * code-address property words. Preserve export reloads and the reused widget-output * address; the returned widget itself is not read here. GUI9C reads exactly 30 bytes * starting at the original race-label address, including bytes after its NUL. * RE_ORIGINAL_QUIRK: the allocator continues with index50 after scanning50 entries, * and this caller does not check the returned index; exhaustion reachability is unknown. * RE_UNKNOWN: historical parent/label/record extents and declaration widths, pool * occupancy guarantees, bound-storage/row lifetimes and property3's callback dispatch * contract. Trace original allocation/teardown, label boundaries and GUI property3 * readers before changing validation, ownership or the raw-word action declarations.",
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiAddRaceAndBattleControls",
-          "declaration_line": 224,
+          "declaration_line": 369,
           "lines": [
-            212
+            357
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-d9577fe4356d",
+      "kind": "original_quirk",
+      "path": "src/modules/gamegui.c",
+      "symbol": "Build the dbg, opts, disp and dsbl text-list panels in their original order, * bind shared setting addresses to scalar widgets, and attach action/address * properties. Optional module flags are added only when their exports exist. * The accepted MISC provider selects integer sources when kind & 0x2; other * kinds read the same source address as f32. Preserve all bounds and call order. * RE_ORIGINAL_QUIRK: row/widget allocation is unchecked; accepted providers * retain fixed-width label reads, including bytes beyond a label's first NUL. * RE_UNKNOWN: remaining kind bits, complete label/table extents, allocation * capacity, callback dispatch contracts, optional flag meanings, and bound * storage/module lifetime remain provider and caller obligations. Export-word * casts describe addresses passed here, not inferred allocations or ownership. * The scoped linker alias preserves the original caller/export name.",
+      "lines": [
+        392
+      ],
+      "evidence": "Build the dbg, opts, disp and dsbl text-list panels in their original order, * bind shared setting addresses to scalar widgets, and attach action/address * properties. Optional module flags are added only when their exports exist. * The accepted MISC provider selects integer sources when kind & 0x2; other * kinds read the same source address as f32. Preserve all bounds and call order. * RE_ORIGINAL_QUIRK: row/widget allocation is unchecked; accepted providers * retain fixed-width label reads, including bytes beyond a label's first NUL. * RE_UNKNOWN: remaining kind bits, complete label/table extents, allocation * capacity, callback dispatch contracts, optional flag meanings, and bound * storage/module lifetime remain provider and caller obligations. Export-word * casts describe addresses passed here, not inferred allocations or ownership. * The scoped linker alias preserves the original caller/export name.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiBuildDebugOptionsPanels",
+          "declaration_line": 405,
+          "lines": [
+            392
           ]
         }
       ]
@@ -236326,34 +238904,64 @@
       ]
     },
     {
-      "id": "Q-f0c30fe62dd7",
+      "id": "Q-a582276c77ae",
       "kind": "original_quirk",
       "path": "src/modules/letter.c",
-      "symbol": "* Install the three letter exports and load models 0x101, 0x102, 0x104 and * 0x103, followed by textures 0x3E8, 0x3E9, 0x3FE and 0x3FC. Allocate the * 720-byte object pool, clear the active byte and set the object handle to -1 * in each of twenty 36-byte entries, then clear the shared word. * RE_ORIGINAL_QUIRK: Pool traversal adds a byte offset to a 32-bit base * address. Only the two entry fields are initialized; keep the original order. * RE_UNKNOWN: Allocation/import failure, repeated initialization, the remaining * entry layout and resource/pool lifetime require the creators and cleanup.",
+      "symbol": "Publish three exports; load models 0x101/0x102/0x104/0x103, then textures * 0x3E8/0x3E9/0x3FE/0x3FC. Allocate twenty 36-byte entries (720 bytes), set * only each handle to -1 and active byte to zero, then clear shared word * 0x00400518. RE_ORIGINAL_QUIRK: allocation is unchecked; traversal adds byte * offsets to a 32-bit base address. Preserve the initialization order. * RE_UNKNOWN: asset/shared-word roles, remaining entry fields, allocation or * import failure, repeated initialization, and resource/pool/object ownership * and lifetime require creator, cleanup and provider evidence.",
       "lines": [
-        52
+        46
       ],
-      "evidence": "* Install the three letter exports and load models 0x101, 0x102, 0x104 and * 0x103, followed by textures 0x3E8, 0x3E9, 0x3FE and 0x3FC. Allocate the * 720-byte object pool, clear the active byte and set the object handle to -1 * in each of twenty 36-byte entries, then clear the shared word. * RE_ORIGINAL_QUIRK: Pool traversal adds a byte offset to a 32-bit base * address. Only the two entry fields are initialized; keep the original order. * RE_UNKNOWN: Allocation/import failure, repeated initialization, the remaining * entry layout and resource/pool lifetime require the creators and cleanup.",
+      "evidence": "Publish three exports; load models 0x101/0x102/0x104/0x103, then textures * 0x3E8/0x3E9/0x3FE/0x3FC. Allocate twenty 36-byte entries (720 bytes), set * only each handle to -1 and active byte to zero, then clear shared word * 0x00400518. RE_ORIGINAL_QUIRK: allocation is unchecked; traversal adds byte * offsets to a 32-bit base address. Preserve the initialization order. * RE_UNKNOWN: asset/shared-word roles, remaining entry fields, allocation or * import failure, repeated initialization, and resource/pool/object ownership * and lifetime require creator, cleanup and provider evidence.",
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_letterInitializeModuleAndObjectPool",
-          "declaration_line": 63,
+          "declaration_line": 55,
           "lines": [
-            52
+            46
           ]
         }
       ]
     },
     {
-      "id": "Q-80d8263ec20a",
+      "id": "Q-52b483109bd4",
       "kind": "original_quirk",
       "path": "src/modules/letter.c",
-      "symbol": "Install the three letter exports, load four models and four textures in * their original order, then allocate twenty 36-byte entries. Initialize only * each entry active byte and object handle; leave all other bytes untouched. * RE_UNKNOWN: asset roles, remaining entry fields, shared word 0x00400518 and * external ownership/lifetime of loaded assets and created objects. * RE_ORIGINAL_QUIRK: allocation is unchecked.",
+      "symbol": "Release nonnegative handles in all twenty 36-byte entries, free the final * reloaded pool pointer, then unload models and textures in their original order. * RE_ORIGINAL_QUIRK: active bytes are ignored; handles and the shared pool * pointer are not cleared here. Preserve pointer reloads and the grouped setup/ * loop opening: splitting those lines changes the original IDO scheduling. * RE_UNKNOWN: callback effects on the pool, partial-initialization entry and * repeated-cleanup safety require loader/caller and provider evidence.",
       "lines": [
-        46
+        85
       ],
-      "evidence": "Install the three letter exports, load four models and four textures in * their original order, then allocate twenty 36-byte entries. Initialize only * each entry active byte and object handle; leave all other bytes untouched. * RE_UNKNOWN: asset roles, remaining entry fields, shared word 0x00400518 and * external ownership/lifetime of loaded assets and created objects. * RE_ORIGINAL_QUIRK: allocation is unchecked."
+      "evidence": "Release nonnegative handles in all twenty 36-byte entries, free the final * reloaded pool pointer, then unload models and textures in their original order. * RE_ORIGINAL_QUIRK: active bytes are ignored; handles and the shared pool * pointer are not cleared here. Preserve pointer reloads and the grouped setup/ * loop opening: splitting those lines changes the original IDO scheduling. * RE_UNKNOWN: callback effects on the pool, partial-initialization entry and * repeated-cleanup safety require loader/caller and provider evidence.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "letterReleaseObjectsAndMedia",
+          "declaration_line": 93,
+          "lines": [
+            85
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-c910f234a3a4",
+      "kind": "original_quirk",
+      "path": "src/modules/letter.c",
+      "symbol": "Select a 20-byte descriptor with the object's unsigned index byte and pass * its RGB plus the object's alpha through graphics export 0x3C. * RE_ORIGINAL_QUIRK: indexing is direct, without the getter's fallback. * RE_UNKNOWN: producer index bounds and full descriptor storage extent; the * getter's 0..5 check proves neither a six-entry allocation nor a reachable * invalid access here. Trace index writers and descriptor storage producers.",
+      "lines": [
+        134
+      ],
+      "evidence": "Select a 20-byte descriptor with the object's unsigned index byte and pass * its RGB plus the object's alpha through graphics export 0x3C. * RE_ORIGINAL_QUIRK: indexing is direct, without the getter's fallback. * RE_UNKNOWN: producer index bounds and full descriptor storage extent; the * getter's 0..5 check proves neither a six-entry allocation nor a reachable * invalid access here. Trace index writers and descriptor storage producers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "letterSetDescriptorPrimitiveColor",
+          "declaration_line": 141,
+          "lines": [
+            134
+          ]
+        }
+      ]
     },
     {
       "id": "Q-0a2a37f267ef",
@@ -245989,17 +248597,80 @@
       "lines": [
         9,
         20,
+        42,
+        55,
+        56,
         57,
-        69,
-        84
+        58,
+        59,
+        60,
+        202,
+        214,
+        229
       ],
       "owners": [
         {
           "kind": "type",
-          "name": "GameGuiInitializerExports",
-          "declaration_line": 56,
+          "name": "GameGuiDebugFlagSlots",
+          "declaration_line": 59,
+          "lines": [
+            59
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "GameGuiDebugOptionGuiExports",
+          "declaration_line": 41,
+          "lines": [
+            42
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "GameGuiDebugPlayerSlots",
+          "declaration_line": 55,
+          "lines": [
+            55
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "GameGuiDebugRainSlots",
+          "declaration_line": 58,
+          "lines": [
+            58
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "GameGuiDebugScrnSlots",
+          "declaration_line": 60,
+          "lines": [
+            60
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "GameGuiDebugSkidSlots",
+          "declaration_line": 57,
           "lines": [
             57
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "GameGuiDebugTerrainSlots",
+          "declaration_line": 56,
+          "lines": [
+            56
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "GameGuiInitializerExports",
+          "declaration_line": 201,
+          "lines": [
+            202
           ]
         },
         {
@@ -246021,17 +248692,17 @@
         {
           "kind": "type",
           "name": "GameguiGuiExports",
-          "declaration_line": 84,
+          "declaration_line": 229,
           "lines": [
-            84
+            229
           ]
         },
         {
           "kind": "type",
           "name": "LocalGuiExp_4000B0",
-          "declaration_line": 68,
+          "declaration_line": 213,
           "lines": [
-            69
+            214
           ]
         }
       ]
@@ -246042,15 +248713,15 @@
       "path": "src/modules/gamegui.c",
       "symbol": "unused08",
       "lines": [
-        59
+        204
       ],
       "owners": [
         {
           "kind": "type",
           "name": "GameGuiInitializerExports",
-          "declaration_line": 56,
+          "declaration_line": 201,
           "lines": [
-            59
+            204
           ]
         }
       ]
@@ -246061,15 +248732,15 @@
       "path": "src/modules/gamegui.c",
       "symbol": "unused0C",
       "lines": [
-        71
+        216
       ],
       "owners": [
         {
           "kind": "type",
           "name": "LocalGuiExp_4000B0",
-          "declaration_line": 68,
+          "declaration_line": 213,
           "lines": [
-            71
+            216
           ]
         }
       ]
@@ -246080,15 +248751,15 @@
       "path": "src/modules/gamegui.c",
       "symbol": "unused10",
       "lines": [
-        84
+        229
       ],
       "owners": [
         {
           "kind": "type",
           "name": "GameguiGuiExports",
-          "declaration_line": 84,
+          "declaration_line": 229,
           "lines": [
-            84
+            229
           ]
         }
       ]
@@ -246118,15 +248789,34 @@
       "path": "src/modules/gamegui.c",
       "symbol": "unused20",
       "lines": [
-        61
+        206
       ],
       "owners": [
         {
           "kind": "type",
           "name": "GameGuiInitializerExports",
-          "declaration_line": 56,
+          "declaration_line": 201,
           "lines": [
-            61
+            206
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-dceef3d3508c",
+      "kind": "unused_identifier",
+      "path": "src/modules/gamegui.c",
+      "symbol": "unused60",
+      "lines": [
+        44
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "GameGuiDebugOptionGuiExports",
+          "declaration_line": 41,
+          "lines": [
+            44
           ]
         }
       ]
@@ -246137,9 +248827,18 @@
       "path": "src/modules/gamegui.c",
       "symbol": "unused88",
       "lines": [
-        11
+        11,
+        46
       ],
       "owners": [
+        {
+          "kind": "type",
+          "name": "GameGuiDebugOptionGuiExports",
+          "declaration_line": 41,
+          "lines": [
+            46
+          ]
+        },
         {
           "kind": "type",
           "name": "GameGuiRacePanelGuiExports",
@@ -246151,29 +248850,67 @@
       ]
     },
     {
+      "id": "Q-8f6e930970dd",
+      "kind": "unused_identifier",
+      "path": "src/modules/gamegui.c",
+      "symbol": "unusedA0",
+      "lines": [
+        50
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "GameGuiDebugOptionGuiExports",
+          "declaration_line": 41,
+          "lines": [
+            50
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-e72d75208ae3",
       "kind": "unused_identifier",
       "path": "src/modules/gamegui.c",
       "symbol": "unusedCallbackValue",
       "lines": [
-        121,
-        596
+        266,
+        933
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiApplyDitherAndVideoSettings",
-          "declaration_line": 121,
+          "declaration_line": 266,
           "lines": [
-            121
+            266
           ]
         },
         {
           "kind": "function",
           "name": "gameGuiApplyDitherAndVideoSettings",
-          "declaration_line": 596,
+          "declaration_line": 933,
           "lines": [
-            596
+            933
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-886b082add22",
+      "kind": "unused_identifier",
+      "path": "src/modules/gamegui.c",
+      "symbol": "unusedD4",
+      "lines": [
+        52
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "GameGuiDebugOptionGuiExports",
+          "declaration_line": 41,
+          "lines": [
+            52
           ]
         }
       ]
@@ -246184,15 +248921,15 @@
       "path": "src/modules/gamegui.c",
       "symbol": "unusedWord",
       "lines": [
-        666
+        1003
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiAccumulateLoadedTextureField1A",
-          "declaration_line": 666,
+          "declaration_line": 1003,
           "lines": [
-            666
+            1003
           ]
         }
       ]

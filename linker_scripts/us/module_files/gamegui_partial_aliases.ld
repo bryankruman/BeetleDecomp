@@ -1,0 +1,1 @@
+func_gamegui_00400370 = gameGuiBuildDebugOptionsPanels;

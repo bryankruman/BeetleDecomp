@@ -43,22 +43,14 @@ extern char D_letter_00400480[];
 void func_letter_00400230(s32 descriptorIndex, Vec3F *position);
 void *letterGetDescriptorOrDefault(s32 index);
 #line 45 "src/modules/letter.c"
-/* Install the three letter exports, load four models and four textures in
- * their original order, then allocate twenty 36-byte entries. Initialize only
- * each entry active byte and object handle; leave all other bytes untouched.
- * RE_UNKNOWN: asset roles, remaining entry fields, shared word 0x00400518 and
- * external ownership/lifetime of loaded assets and created objects.
- * RE_ORIGINAL_QUIRK: allocation is unchecked. */
-/*
- * Install the three letter exports and load models 0x101, 0x102, 0x104 and
- * 0x103, followed by textures 0x3E8, 0x3E9, 0x3FE and 0x3FC. Allocate the
- * 720-byte object pool, clear the active byte and set the object handle to -1
- * in each of twenty 36-byte entries, then clear the shared word.
- * RE_ORIGINAL_QUIRK: Pool traversal adds a byte offset to a 32-bit base
- * address. Only the two entry fields are initialized; keep the original order.
- * RE_UNKNOWN: Allocation/import failure, repeated initialization, the remaining
- * entry layout and resource/pool lifetime require the creators and cleanup.
- */
+/* Publish three exports; load models 0x101/0x102/0x104/0x103, then textures
+ * 0x3E8/0x3E9/0x3FE/0x3FC. Allocate twenty 36-byte entries (720 bytes), set
+ * only each handle to -1 and active byte to zero, then clear shared word
+ * 0x00400518. RE_ORIGINAL_QUIRK: allocation is unchecked; traversal adds byte
+ * offsets to a 32-bit base address. Preserve the initialization order.
+ * RE_UNKNOWN: asset/shared-word roles, remaining entry fields, allocation or
+ * import failure, repeated initialization, and resource/pool/object ownership
+ * and lifetime require creator, cleanup and provider evidence. */
 #line 51 "src/modules/letter.c"
 void __entrypoint_func_letterInitializeModuleAndObjectPool(LetterInitializerExports *exports) {
     s32 entryOffset;
@@ -90,11 +82,14 @@ void __entrypoint_func_letterInitializeModuleAndObjectPool(LetterInitializerExpo
 #line 46 "src/modules/letter.c"
 
 #line 32 "src/modules/letter.c"
-/* Release nonnegative object handles from all twenty 36-byte entries,
- * free the shared entry array, then unload the four models and four textures
- * in their original order. Preserve shared-pointer reloads around releases. */
-/* Keep the setup and loop opening grouped: the original IDO compiler
- * schedules the shared-pointer loads differently when these lines split. */
+/* Release nonnegative handles in all twenty 36-byte entries, free the final
+ * reloaded pool pointer, then unload models and textures in their original order.
+ * RE_ORIGINAL_QUIRK: active bytes are ignored; handles and the shared pool
+ * pointer are not cleared here. Preserve pointer reloads and the grouped setup/
+ * loop opening: splitting those lines changes the original IDO scheduling.
+ * RE_UNKNOWN: callback effects on the pool, partial-initialization entry and
+ * repeated-cleanup safety require loader/caller and provider evidence. */
+#line 37 "src/modules/letter.c"
 void letterReleaseObjectsAndMedia(void) {
     void *entries;
     s32 objectHandle;
@@ -124,8 +119,10 @@ void letterReleaseObjectsAndMedia(void) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/letter/func_letter_00400230.s")
 
 #line 57 "src/modules/letter.c"
-/* Return descriptor zero for an index outside zero through five;
- * otherwise return the original twenty-byte descriptor at that index. */
+/* Return the 20-byte descriptor for index 0..5, or descriptor zero otherwise.
+ * This selects a return pointer without validating or rewriting an object's
+ * stored index; see letterSetDescriptorPrimitiveColor's separate contract. */
+#line 59 "src/modules/letter.c"
 void *letterGetDescriptorOrDefault(s32 index) {
     if (index < 0 || index >= 6) {
         return D_letter_00400480;
@@ -134,13 +131,13 @@ void *letterGetDescriptorOrDefault(s32 index) {
 }
 #line 63 "src/modules/letter.c"
 
-/* Forward the indexed descriptor scalars and object alpha through graphics slot 0x3C. */
-#line 65 "src/modules/letter.c"
-#line 65 "src/modules/letter.c"
-
-/* Select the twenty-byte descriptor using the object byte index and
- * set its RGB components with the object alpha through graphics export 0x3C.
- * RE_UNKNOWN: index bound; trace original index producers and descriptor extent. */
+/* Select a 20-byte descriptor with the object's unsigned index byte and pass
+ * its RGB plus the object's alpha through graphics export 0x3C.
+ * RE_ORIGINAL_QUIRK: indexing is direct, without the getter's fallback.
+ * RE_UNKNOWN: producer index bounds and full descriptor storage extent; the
+ * getter's 0..5 check proves neither a six-entry allocation nor a reachable
+ * invalid access here. Trace index writers and descriptor storage producers. */
+#line 69 "src/modules/letter.c"
 void letterSetDescriptorPrimitiveColor(LetterPrimitiveColorObjectView *object) {
     LetterPrimitiveColorDescriptor *descriptor;
 
