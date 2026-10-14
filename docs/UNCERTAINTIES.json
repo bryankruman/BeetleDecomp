@@ -288,6 +288,7 @@
     "src/libultra/audio/synaddplayer.c": "826cc49ffb3aacf382d3798b6804a52960f539f4d78ccb91bf72a7a350a5376d",
     "src/libultra/audio/synallocfx.c": "22f4f50cf3514d73111f047e5273181f175f26b2a9b735e2cb0677dab10acb08",
     "src/libultra/audio/synallocvoice.c": "0a67af177ef930c3d9ae99ac442603280ff156432473d328872fe1d2b54fb8b5",
+    "src/libultra/audio/syndelete.c": "a3685722cc5eb1121dcf020fab69d5d662be2ecdfe90efe4a4008e5d647f329d",
     "src/libultra/audio/synfreevoice.c": "b4e7ea21f49ed2ea2e7d0b2f316ad1a5bbbfb1d73bbfda8cd21f313c963f364f",
     "src/libultra/audio/syngetfxref.c": "68d91a37b42d8c120ba84e2cee617a8e05d7c249041fe4236fcf9a94adc88fc7",
     "src/libultra/audio/synremoveplayer.c": "8676b6cc9ddebc14a79af9fa4cce2ae1891da987a5cbfbe8a806e11a48ba67e2",
@@ -522,7 +523,7 @@
     "conditional_draft": 4,
     "decompiler_local": 622,
     "draft_marker": 54,
-    "explicit_unknown": 1886,
+    "explicit_unknown": 1887,
     "layout_padding": 281,
     "offset_field": 1751,
     "opaque_type": 283,
@@ -119321,6 +119322,16 @@
           ]
         }
       ]
+    },
+    {
+      "id": "Q-87357dced805",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/audio/syndelete.c",
+      "symbol": "RE_UNKNOWN: Exact game SDK release remains unproved.",
+      "lines": [
+        2
+      ],
+      "evidence": "RE_UNKNOWN: Exact game SDK release remains unproved."
     },
     {
       "id": "Q-c689f1802ca5",

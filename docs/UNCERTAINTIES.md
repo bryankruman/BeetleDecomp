@@ -17,7 +17,7 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 1886 |
+| Explicit RE_UNKNOWN notes | 1887 |
 | Preserved RE_ORIGINAL_QUIRK notes | 525 |
 | Older comments with uncertainty language | 88 |
 | Documented original-behavior audits | 30 |
@@ -1284,6 +1284,12 @@ For every future source wave, regenerate and check this index after code and str
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
 | explicit_unknown | `RE_CONTRACT: Initialize effect zero on the selected auxiliary bus, connect that bus as its source, append the effect to the main bus and return its reference. RE_UNKNOWN: bus bo...` | function `alSynAllocFX` | [24](../src/libultra/audio/synallocfx.c#L24) |
+
+## src/libultra/audio/syndelete.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| explicit_unknown | `RE_UNKNOWN: Exact game SDK release remains unproved.` | — | [2](../src/libultra/audio/syndelete.c#L2) |
 
 ## src/libultra/audio/synsetfxparam.c
 

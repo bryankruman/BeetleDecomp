@@ -233,7 +233,7 @@ segments:
       - [0x154C0, c, libultra/audio/synstartvoiceparam]
       - [0x155B0, c, libultra/audio/synsetpan]
       - [0x15640, c, libultra/audio/synsetfxmix]
-      - [0x156E0, asm, sl_audio_retained_156E0]
+      - [0x156E0, c, libultra/audio/syndelete]
       - [0x156F0, c, libultra/audio/synstartvoice]
       - [0x15780, c, libultra/io/ai]
       - [0x157B0, c, libultra/io/crc]

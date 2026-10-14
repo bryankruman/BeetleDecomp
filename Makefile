@@ -590,6 +590,7 @@ SDK_AUDIO_SOURCES += src/libultra/audio/synthesizer.c
 # Native-matched bank-file patching; retain the complete shared O3 translation unit.
 SDK_AUDIO_SOURCES += src/libultra/audio/bnkf.c
 SDK_AUDIO_SOURCES += src/libultra/audio/synsetpriority.c
+SDK_AUDIO_SOURCES += src/libultra/audio/syndelete.c
 SDK_AUDIO_OBJECTS := $(addprefix $(BUILD_DIR)/,$(SDK_AUDIO_SOURCES:.c=.o))
 SDK_AUDIO_CC := $(TOOLS)/ido-static-recomp/build/5.3/out/cc
 SDK_AUDIO_FLAGS := -c -Wab,-r4300_mul -G 0 -nostdinc -Xcpluscomm -fullwarn -woff 516,649,838,712 -non_shared -mips2 -o32 -EB -O3 -D_MIPS_SZLONG=32 -DF3DEX_GBI -DBUILD_VERSION=VERSION_I -DBUILD_VERSION_STRING=\"2.0I\" -D_FINALROM -DNDEBUG -Iinclude/libultra-sdk -Iinclude/libultra-sdk/compiler/ido -Iinclude/libultra-sdk/PR -Iinclude/2.0I -Iinclude/2.0I/PR
