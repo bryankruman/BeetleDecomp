@@ -306,8 +306,13 @@ Modules:
       - data
       - bss
   - name: uvmodelld_rom
+    done_sections:
+      - text
+      - rodata
   - name: uvpfx_rom
   - name: uvpfxld_rom
+    done_sections:
+      - text
   - name: uvquat_rom
     done_sections:
       - text

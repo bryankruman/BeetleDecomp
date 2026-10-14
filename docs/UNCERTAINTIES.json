@@ -166,7 +166,7 @@
     "include/uv_memory.h": "28048e899684a72e2c171c6c13e99822f1571589b84fa2435d99a6a04b15d05b",
     "include/uv_module.h": "1410ecb97640ede94c7f96a1657de6cb56d6bcbd109458afc1888903e2f03188",
     "include/uv_scheduler.h": "11e2ad1f69dd0ef78855572f279489f5326a3f70d7d2e2328eb56278bedfd31c",
-    "include/uvasset_types.h": "1a3efef938f046bf451b33671d0c1b57343af9b7b703c50be3ff27178cea40eb",
+    "include/uvasset_types.h": "a2aa45d1adf14a8731c248398afee4d1b4aaad63b303bcbabcefb176a7a6d250",
     "include/uvaudiomgr_rom.h": "b803c3b9558ea22ba37231639192e2cbfe9466f640845911bf59b3e8d69c4735",
     "include/uvbill_rom.h": "5d371d364590e6a42195b9b98f7246bafd31f4a820fcc822e72dc245f2a8533a",
     "include/uvblit_rom.h": "242d1cc03a79ec5e3671c96dd77f635befb134db967cf1bdcbc540e8faee9b5e",
@@ -202,7 +202,9 @@
     "include/uvlight_rom.h": "6019b67ce4bfe560ddc13bd8d15563173a76e7d7c1ff7813cf07b6e5604fed82",
     "include/uvmath_rom.h": "5c806282272ac3a8e615b49203cf8232642e689c5346e8b5c658040daaca80df",
     "include/uvmodel_rom.h": "39b53d6143d87e09901fe4e31b9443c32d42be4c56a0eea97634c42f4f87e1e5",
+    "include/uvmodelld_rom.h": "7532e77c98c6552e92c5bd3bddceb44fb5d5e01b16270bddc4c166ff3dc62160",
     "include/uvpfx_rom.h": "cb6622cdc9185ccd5794a62fb8ef405371eada8ceec9de284478f68963e34605",
+    "include/uvpfxld_rom.h": "752a628be525e40856f94f40c78ed09a103714ab9108f82aeaf030488b6be0e5",
     "include/uvquat_rom.h": "07cd4812764f8ad6a72b262534093b4fff51aa22bbb0ccc5f798e0e89c6c93ac",
     "include/uvquery_rom.h": "232821ac5ea6beabdc1059fbfc57f86bb3ede2721142412d6be762a0c6b27ba9",
     "include/uvsort_rom.h": "4d16d601b989706077b05b3e8f77c32c5fe561c353eb172531f2fa9723ac4ce8",
@@ -488,9 +490,9 @@
     "src/modules/uvlight_rom.c": "b113975b133d8d258ecd1cd8ecfe2364711ea43975bd2849d78949543f6f84fb",
     "src/modules/uvmath_rom.c": "bf028c8b69851dc8ff42ff91c90f4b05fd6bd0dcd6d55ef6d160d110d5acac0a",
     "src/modules/uvmodel_rom.c": "637e0ca79c1111af035251bda5b89d89118fad206ffea51742f0158cb38245e5",
-    "src/modules/uvmodelld_rom.c": "38503d521b0986bbc37bf015047970d9e366acc0f96e2b535cd8eb5900a3d900",
+    "src/modules/uvmodelld_rom.c": "2d205857badc4de9b9f7f0dd46d930a627d369ad278c1a9e4c5f5e837a0e2b51",
     "src/modules/uvpfx_rom.c": "0b8e1ce562e82f53bba0d3b1d3cfdf02906429f3fb148b75afa3d29bd833dfd7",
-    "src/modules/uvpfxld_rom.c": "7f8193aa6ea4dac9d0a044cfda9151a7668293c5a0647b5fc7029c7dd5e063fd",
+    "src/modules/uvpfxld_rom.c": "def46200b5448e1bbc691b9581da8b66114689d85d1693af38808ea4e3b1061d",
     "src/modules/uvquat_rom.c": "4138a3f8310d5aed569fe99183dc4e6eec7750373b394f581cdeb43aa1278237",
     "src/modules/uvquery_rom.c": "96639fc8b9843fcbae569435ee73fb3889a73725b7fda22ca5f7623a7e14183f",
     "src/modules/uvsort_rom.c": "bb146bf878382c9939ff7cd9073bcc55ba8152f56c5eb76298a023162e156f34",
@@ -519,18 +521,18 @@
     "docs/VALIDATION_20261006.md": "a46820c10aba34e3c1901bd9bdc4260f684530f44fcf7f61d9c7bb33e0c91031"
   },
   "counts": {
-    "address_function": 903,
+    "address_function": 905,
     "address_global": 1553,
-    "assembly": 749,
+    "assembly": 746,
     "audit_debt": 30,
     "conditional_draft": 4,
     "decompiler_local": 622,
     "draft_marker": 54,
-    "explicit_unknown": 1891,
+    "explicit_unknown": 1897,
     "layout_padding": 281,
-    "offset_field": 1751,
-    "opaque_type": 283,
-    "original_quirk": 527,
+    "offset_field": 1768,
+    "opaque_type": 285,
+    "original_quirk": 528,
     "uncertainty_note": 88,
     "unused_identifier": 148
   },
@@ -21057,29 +21059,48 @@
       ]
     },
     {
+      "id": "Q-783feb565f04",
+      "kind": "address_function",
+      "path": "src/modules/uvmodelld_rom.c",
+      "symbol": "__entrypoint_func_uvmodelld_rom_400000",
+      "lines": [
+        22
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_uvmodelld_rom_400000",
+          "declaration_line": 22,
+          "lines": [
+            22
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-79bd2a333696",
       "kind": "address_function",
       "path": "src/modules/uvmodelld_rom.c",
       "symbol": "func_uvmodelld_rom_00400258",
       "lines": [
-        7,
-        42
+        13,
+        66
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvmodelld_rom_00400258",
-          "declaration_line": 7,
+          "declaration_line": 13,
           "lines": [
-            7
+            13
           ]
         },
         {
           "kind": "function",
           "name": "uvModelLoaderParseCommonBlocks",
-          "declaration_line": 27,
+          "declaration_line": 51,
           "lines": [
-            42
+            66
           ]
         }
       ]
@@ -21349,37 +21370,56 @@
       ]
     },
     {
+      "id": "Q-570f3b8646e2",
+      "kind": "address_function",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "__entrypoint_func_uvpfxld_rom_400000",
+      "lines": [
+        132
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_uvpfxld_rom_400000",
+          "declaration_line": 132,
+          "lines": [
+            132
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-3269c8a4ddbb",
       "kind": "address_function",
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "func_uvpfx_rom_004004D0",
       "lines": [
-        251,
-        256,
-        281,
-        288,
-        373,
-        376
+        272,
+        277,
+        302,
+        309,
+        394,
+        397
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderApplySharedResourceWord",
-          "declaration_line": 366,
+          "declaration_line": 387,
           "lines": [
-            373,
-            376
+            394,
+            397
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
+          "declaration_line": 223,
           "lines": [
-            251,
-            256,
-            281,
-            288
+            272,
+            277,
+            302,
+            309
           ]
         }
       ]
@@ -71289,24 +71329,42 @@
       "path": "src/modules/uvmodelld_rom.c",
       "symbol": "D_uvmodelld_rom_00400EE0",
       "lines": [
-        5,
-        130
+        11,
+        30,
+        320,
+        411
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "uvModelLoaderReleaseRenderResources",
-          "declaration_line": 108,
+          "name": "__entrypoint_func_uvmodelld_rom_400000",
+          "declaration_line": 22,
           "lines": [
-            130
+            30
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvModelLoaderParsePackedModel",
+          "declaration_line": 130,
+          "lines": [
+            320
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvModelLoaderReleaseRenderResources",
+          "declaration_line": 389,
+          "lines": [
+            411
           ]
         },
         {
           "kind": "global",
           "name": "D_uvmodelld_rom_00400EE0",
-          "declaration_line": 5,
+          "declaration_line": 11,
           "lines": [
-            5
+            11
           ]
         }
       ]
@@ -71317,15 +71375,24 @@
       "path": "src/modules/uvmodelld_rom.c",
       "symbol": "D_uvmodelld_rom_00400EE4",
       "lines": [
-        6
+        12,
+        32
       ],
       "owners": [
         {
+          "kind": "function",
+          "name": "__entrypoint_func_uvmodelld_rom_400000",
+          "declaration_line": 22,
+          "lines": [
+            32
+          ]
+        },
+        {
           "kind": "global",
           "name": "D_uvmodelld_rom_00400EE4",
-          "declaration_line": 6,
+          "declaration_line": 12,
           "lines": [
-            6
+            12
           ]
         }
       ]
@@ -72297,24 +72364,24 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "D_uvpfx_rom_00404FA0",
       "lines": [
-        150,
-        401
+        171,
+        422
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderParseChunkStream",
-          "declaration_line": 140,
+          "declaration_line": 161,
           "lines": [
-            150
+            171
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxLoaderReleaseConfiguration",
-          "declaration_line": 396,
+          "declaration_line": 417,
           "lines": [
-            401
+            422
           ]
         }
       ]
@@ -72325,15 +72392,15 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "D_uvpfx_rom_00404FA4",
       "lines": [
-        149
+        170
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderParseChunkStream",
-          "declaration_line": 140,
+          "declaration_line": 161,
           "lines": [
-            149
+            170
           ]
         }
       ]
@@ -72344,28 +72411,28 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "D_uvpfx_rom_00404FA8",
       "lines": [
-        148,
-        187,
-        400,
-        423
+        169,
+        208,
+        421,
+        444
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderParseChunkStream",
-          "declaration_line": 140,
+          "declaration_line": 161,
           "lines": [
-            148,
-            187
+            169,
+            208
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxLoaderReleaseConfiguration",
-          "declaration_line": 396,
+          "declaration_line": 417,
           "lines": [
-            400,
-            423
+            421,
+            444
           ]
         }
       ]
@@ -72376,24 +72443,24 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "D_uvpfxld_rom_00400E90",
       "lines": [
-        82,
-        270
+        83,
+        291
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
+          "declaration_line": 223,
           "lines": [
-            270
+            291
           ]
         },
         {
           "kind": "global",
           "name": "D_uvpfxld_rom_00400E90",
-          "declaration_line": 82,
+          "declaration_line": 83,
           "lines": [
-            82
+            83
           ]
         }
       ]
@@ -72404,24 +72471,24 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "D_uvpfxld_rom_00400E94",
       "lines": [
-        83,
-        274
+        84,
+        295
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
+          "declaration_line": 223,
           "lines": [
-            274
+            295
           ]
         },
         {
           "kind": "global",
           "name": "D_uvpfxld_rom_00400E94",
-          "declaration_line": 83,
+          "declaration_line": 84,
           "lines": [
-            83
+            84
           ]
         }
       ]
@@ -72432,26 +72499,26 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "D_uvpfxld_rom_00400EA8",
       "lines": [
-        77,
-        249,
-        250
+        78,
+        270,
+        271
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
+          "declaration_line": 223,
           "lines": [
-            249,
-            250
+            270,
+            271
           ]
         },
         {
           "kind": "global",
           "name": "D_uvpfxld_rom_00400EA8",
-          "declaration_line": 77,
+          "declaration_line": 78,
           "lines": [
-            77
+            78
           ]
         }
       ]
@@ -72462,100 +72529,100 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "D_uvpfxld_rom_00400EB8",
       "lines": [
-        111,
-        148,
-        183,
-        184,
-        187,
-        214,
-        217,
-        218,
-        252,
-        257,
-        260,
+        112,
+        169,
+        204,
+        205,
+        208,
+        235,
+        238,
+        239,
+        273,
+        278,
         281,
-        289,
-        290,
-        325,
-        331,
-        334,
-        374,
-        377,
-        400,
-        403,
-        409,
-        410,
-        411,
-        418,
-        423
+        302,
+        310,
+        311,
+        346,
+        352,
+        355,
+        395,
+        398,
+        421,
+        424,
+        430,
+        431,
+        432,
+        439,
+        444
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderApplyHeaderConfiguration",
-          "declaration_line": 311,
+          "declaration_line": 332,
           "lines": [
-            325,
-            331,
-            334
+            346,
+            352,
+            355
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxLoaderApplySharedResourceWord",
-          "declaration_line": 366,
+          "declaration_line": 387,
           "lines": [
-            374,
-            377
+            395,
+            398
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
+          "declaration_line": 223,
           "lines": [
-            214,
-            217,
-            218,
-            252,
-            257,
-            260,
+            235,
+            238,
+            239,
+            273,
+            278,
             281,
-            289,
-            290
+            302,
+            310,
+            311
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxLoaderParseChunkStream",
-          "declaration_line": 140,
+          "declaration_line": 161,
           "lines": [
-            148,
-            183,
-            184,
-            187
+            169,
+            204,
+            205,
+            208
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxLoaderReleaseConfiguration",
-          "declaration_line": 396,
+          "declaration_line": 417,
           "lines": [
-            400,
-            403,
-            409,
-            410,
-            411,
-            418,
-            423
+            421,
+            424,
+            430,
+            431,
+            432,
+            439,
+            444
           ]
         },
         {
           "kind": "global",
           "name": "D_uvpfxld_rom_00400EB8",
-          "declaration_line": 111,
+          "declaration_line": 112,
           "lines": [
-            111
+            112
           ]
         }
       ]
@@ -72566,46 +72633,46 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "D_uvpfxld_rom_00400EBC",
       "lines": [
-        112,
-        149,
-        183,
-        214,
-        260,
-        325
+        113,
+        170,
+        204,
+        235,
+        281,
+        346
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderApplyHeaderConfiguration",
-          "declaration_line": 311,
+          "declaration_line": 332,
           "lines": [
-            325
+            346
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
+          "declaration_line": 223,
           "lines": [
-            214,
-            260
+            235,
+            281
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxLoaderParseChunkStream",
-          "declaration_line": 140,
+          "declaration_line": 161,
           "lines": [
-            149,
-            183
+            170,
+            204
           ]
         },
         {
           "kind": "global",
           "name": "D_uvpfxld_rom_00400EBC",
-          "declaration_line": 112,
+          "declaration_line": 113,
           "lines": [
-            112
+            113
           ]
         }
       ]
@@ -72616,33 +72683,33 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "D_uvpfxld_rom_00400EC0",
       "lines": [
-        85,
-        315,
-        350
+        86,
+        336,
+        371
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderApplyHeaderConfiguration",
-          "declaration_line": 311,
+          "declaration_line": 332,
           "lines": [
-            315
+            336
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxLoaderCopyIntoSharedWordBuffer",
-          "declaration_line": 349,
+          "declaration_line": 370,
           "lines": [
-            350
+            371
           ]
         },
         {
           "kind": "global",
           "name": "D_uvpfxld_rom_00400EC0",
-          "declaration_line": 85,
+          "declaration_line": 86,
           "lines": [
-            85
+            86
           ]
         }
       ]
@@ -72653,24 +72720,24 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "D_uvpfxld_rom_00400EC4",
       "lines": [
-        113,
-        316
+        114,
+        337
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderApplyHeaderConfiguration",
-          "declaration_line": 311,
+          "declaration_line": 332,
           "lines": [
-            316
+            337
           ]
         },
         {
           "kind": "global",
           "name": "D_uvpfxld_rom_00400EC4",
-          "declaration_line": 113,
+          "declaration_line": 114,
           "lines": [
-            113
+            114
           ]
         }
       ]
@@ -72681,35 +72748,35 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "D_uvpfxld_rom_00400EC8",
       "lines": [
-        118,
-        209,
-        262,
-        372
+        119,
+        230,
+        283,
+        393
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderApplySharedResourceWord",
-          "declaration_line": 366,
+          "declaration_line": 387,
           "lines": [
-            372
+            393
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
+          "declaration_line": 223,
           "lines": [
-            209,
-            262
+            230,
+            283
           ]
         },
         {
           "kind": "global",
           "name": "D_uvpfxld_rom_00400EC8",
-          "declaration_line": 118,
+          "declaration_line": 119,
           "lines": [
-            118
+            119
           ]
         }
       ]
@@ -72720,71 +72787,71 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "D_uvpfxld_rom_00400EE0",
       "lines": [
-        114,
-        150,
-        217,
-        218,
-        290,
-        331,
-        334,
-        401,
-        404,
-        405,
-        406,
-        408,
-        412,
-        413,
-        414
+        115,
+        171,
+        238,
+        239,
+        311,
+        352,
+        355,
+        422,
+        425,
+        426,
+        427,
+        429,
+        433,
+        434,
+        435
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderApplyHeaderConfiguration",
-          "declaration_line": 311,
+          "declaration_line": 332,
           "lines": [
-            331,
-            334
+            352,
+            355
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
+          "declaration_line": 223,
           "lines": [
-            217,
-            218,
-            290
+            238,
+            239,
+            311
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxLoaderParseChunkStream",
-          "declaration_line": 140,
+          "declaration_line": 161,
           "lines": [
-            150
+            171
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxLoaderReleaseConfiguration",
-          "declaration_line": 396,
+          "declaration_line": 417,
           "lines": [
-            401,
-            404,
-            405,
-            406,
-            408,
-            412,
-            413,
-            414
+            422,
+            425,
+            426,
+            427,
+            429,
+            433,
+            434,
+            435
           ]
         },
         {
           "kind": "global",
           "name": "D_uvpfxld_rom_00400EE0",
-          "declaration_line": 114,
+          "declaration_line": 115,
           "lines": [
-            114
+            115
           ]
         }
       ]
@@ -72795,139 +72862,139 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "D_uvpfxld_rom_00400EE4",
       "lines": [
-        122,
-        182,
-        189,
+        123,
+        203,
         210,
-        211,
-        213,
-        219,
-        222,
-        225,
-        226,
-        227,
-        228,
-        229,
+        231,
         232,
-        233,
-        235,
-        236,
-        237,
-        239,
+        234,
         240,
-        241,
-        242,
         243,
-        244,
-        245,
         246,
         247,
         248,
         249,
-        259,
-        291,
-        317,
-        319,
-        320,
-        321,
-        322,
-        323,
-        324,
-        332,
-        350,
+        250,
+        253,
+        254,
+        256,
+        257,
+        258,
+        260,
+        261,
+        262,
+        263,
+        264,
+        265,
+        266,
+        267,
+        268,
+        269,
+        270,
+        280,
+        312,
+        338,
+        340,
+        341,
+        342,
+        343,
+        344,
+        345,
+        353,
         371,
-        387
+        392,
+        408
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderApplyHeaderConfiguration",
-          "declaration_line": 311,
+          "declaration_line": 332,
           "lines": [
-            317,
-            319,
-            320,
-            321,
-            322,
-            323,
-            324,
-            332
+            338,
+            340,
+            341,
+            342,
+            343,
+            344,
+            345,
+            353
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxLoaderApplySharedResourceWord",
-          "declaration_line": 366,
+          "declaration_line": 387,
+          "lines": [
+            392
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 223,
+          "lines": [
+            231,
+            232,
+            234,
+            240,
+            243,
+            246,
+            247,
+            248,
+            249,
+            250,
+            253,
+            254,
+            256,
+            257,
+            258,
+            260,
+            261,
+            262,
+            263,
+            264,
+            265,
+            266,
+            267,
+            268,
+            269,
+            270,
+            280,
+            312
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderCopyIntoSharedWordBuffer",
+          "declaration_line": 370,
           "lines": [
             371
           ]
         },
         {
           "kind": "function",
-          "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
-          "lines": [
-            210,
-            211,
-            213,
-            219,
-            222,
-            225,
-            226,
-            227,
-            228,
-            229,
-            232,
-            233,
-            235,
-            236,
-            237,
-            239,
-            240,
-            241,
-            242,
-            243,
-            244,
-            245,
-            246,
-            247,
-            248,
-            249,
-            259,
-            291
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvPfxLoaderCopyIntoSharedWordBuffer",
-          "declaration_line": 349,
-          "lines": [
-            350
-          ]
-        },
-        {
-          "kind": "function",
           "name": "uvPfxLoaderParseChunkStream",
-          "declaration_line": 140,
+          "declaration_line": 161,
           "lines": [
-            182,
-            189
+            203,
+            210
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxLoaderSetConfigShortFromWord",
-          "declaration_line": 386,
+          "declaration_line": 407,
           "lines": [
-            387
+            408
           ]
         },
         {
           "kind": "global",
           "name": "D_uvpfxld_rom_00400EE4",
-          "declaration_line": 122,
+          "declaration_line": 123,
           "lines": [
-            122
+            123
           ]
         }
       ]
@@ -72938,69 +73005,69 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "D_uvpfxld_rom_00400EE8",
       "lines": [
-        115,
-        216,
-        217,
-        261,
-        263,
-        265,
-        267,
-        268,
-        270,
-        272,
-        274,
-        275,
-        276,
-        277,
-        278,
-        279,
-        280,
-        285,
+        116,
+        237,
+        238,
+        282,
+        284,
         286,
-        287,
-        326
+        288,
+        289,
+        291,
+        293,
+        295,
+        296,
+        297,
+        298,
+        299,
+        300,
+        301,
+        306,
+        307,
+        308,
+        347
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderApplyHeaderConfiguration",
-          "declaration_line": 311,
+          "declaration_line": 332,
           "lines": [
-            326
+            347
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
+          "declaration_line": 223,
           "lines": [
-            216,
-            217,
-            261,
-            263,
-            265,
-            267,
-            268,
-            270,
-            272,
-            274,
-            275,
-            276,
-            277,
-            278,
-            279,
-            280,
-            285,
+            237,
+            238,
+            282,
+            284,
             286,
-            287
+            288,
+            289,
+            291,
+            293,
+            295,
+            296,
+            297,
+            298,
+            299,
+            300,
+            301,
+            306,
+            307,
+            308
           ]
         },
         {
           "kind": "global",
           "name": "D_uvpfxld_rom_00400EE8",
-          "declaration_line": 115,
+          "declaration_line": 116,
           "lines": [
-            115
+            116
           ]
         }
       ]
@@ -73011,24 +73078,33 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "D_uvpfxld_rom_004012E8",
       "lines": [
-        78,
-        278
+        79,
+        141,
+        299
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
+          "name": "__entrypoint_func_uvpfxld_rom_400000",
+          "declaration_line": 132,
           "lines": [
-            278
+            141
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 223,
+          "lines": [
+            299
           ]
         },
         {
           "kind": "global",
           "name": "D_uvpfxld_rom_004012E8",
-          "declaration_line": 78,
+          "declaration_line": 79,
           "lines": [
-            78
+            79
           ]
         }
       ]
@@ -73039,15 +73115,24 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "D_uvpfxld_rom_004012EC",
       "lines": [
-        79
+        80,
+        140
       ],
       "owners": [
         {
+          "kind": "function",
+          "name": "__entrypoint_func_uvpfxld_rom_400000",
+          "declaration_line": 132,
+          "lines": [
+            140
+          ]
+        },
+        {
           "kind": "global",
           "name": "D_uvpfxld_rom_004012EC",
-          "declaration_line": 79,
+          "declaration_line": 80,
           "lines": [
-            79
+            80
           ]
         }
       ]
@@ -73058,26 +73143,35 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "D_uvpfxld_rom_004012F0",
       "lines": [
-        80,
-        279,
-        280
+        81,
+        142,
+        300,
+        301
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
+          "name": "__entrypoint_func_uvpfxld_rom_400000",
+          "declaration_line": 132,
           "lines": [
-            279,
-            280
+            142
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderBuildCommonParticleRecords",
+          "declaration_line": 223,
+          "lines": [
+            300,
+            301
           ]
         },
         {
           "kind": "global",
           "name": "D_uvpfxld_rom_004012F0",
-          "declaration_line": 80,
+          "declaration_line": 81,
           "lines": [
-            80
+            81
           ]
         }
       ]
@@ -73088,69 +73182,78 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "D_uvpfxld_rom_004012F4",
       "lines": [
-        119,
-        148,
-        149,
-        150,
-        187,
-        251,
-        256,
-        281,
-        288,
-        373,
-        376,
-        400,
-        401,
-        423
+        120,
+        143,
+        169,
+        170,
+        171,
+        208,
+        272,
+        277,
+        302,
+        309,
+        394,
+        397,
+        421,
+        422,
+        444
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "uvPfxLoaderApplySharedResourceWord",
-          "declaration_line": 366,
+          "name": "__entrypoint_func_uvpfxld_rom_400000",
+          "declaration_line": 132,
           "lines": [
-            373,
-            376
+            143
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxLoaderApplySharedResourceWord",
+          "declaration_line": 387,
+          "lines": [
+            394,
+            397
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
+          "declaration_line": 223,
           "lines": [
-            251,
-            256,
-            281,
-            288
+            272,
+            277,
+            302,
+            309
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxLoaderParseChunkStream",
-          "declaration_line": 140,
+          "declaration_line": 161,
           "lines": [
-            148,
-            149,
-            150,
-            187
+            169,
+            170,
+            171,
+            208
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxLoaderReleaseConfiguration",
-          "declaration_line": 396,
+          "declaration_line": 417,
           "lines": [
-            400,
-            401,
-            423
+            421,
+            422,
+            444
           ]
         },
         {
           "kind": "global",
           "name": "D_uvpfxld_rom_004012F4",
-          "declaration_line": 119,
+          "declaration_line": 120,
           "lines": [
-            119
+            120
           ]
         }
       ]
@@ -85713,26 +85816,6 @@
       "evidence": "asm/us/nonmatchings/modules/uvmath_rom/uvSinF.s"
     },
     {
-      "id": "Q-68266c44b058",
-      "kind": "assembly",
-      "path": "src/modules/uvmodelld_rom.c",
-      "symbol": "__entrypoint_func_uvmodelld_rom_400000",
-      "lines": [
-        9
-      ],
-      "evidence": "asm/us/nonmatchings/modules/uvmodelld_rom/__entrypoint_func_uvmodelld_rom_400000.s"
-    },
-    {
-      "id": "Q-56aa3d373608",
-      "kind": "assembly",
-      "path": "src/modules/uvmodelld_rom.c",
-      "symbol": "func_uvmodelld_rom_00400258",
-      "lines": [
-        101
-      ],
-      "evidence": "asm/us/nonmatchings/modules/uvmodelld_rom/func_uvmodelld_rom_00400258.s"
-    },
-    {
       "id": "Q-0d648d15f6ff",
       "kind": "assembly",
       "path": "src/modules/uvpfx_rom.c",
@@ -85791,16 +85874,6 @@
         985
       ],
       "evidence": "asm/us/nonmatchings/modules/uvpfx_rom/func_uvpfx_rom_00404A60.s"
-    },
-    {
-      "id": "Q-9b06fad862b2",
-      "kind": "assembly",
-      "path": "src/modules/uvpfxld_rom.c",
-      "symbol": "__entrypoint_func_uvpfxld_rom_400000",
-      "lines": [
-        123
-      ],
-      "evidence": "asm/us/nonmatchings/modules/uvpfxld_rom/__entrypoint_func_uvpfxld_rom_400000.s"
     },
     {
       "id": "Q-3bb2dd6a7232",
@@ -112565,15 +112638,15 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "temp_a0",
       "lines": [
-        204
+        225
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
+          "declaration_line": 223,
           "lines": [
-            204
+            225
           ]
         }
       ]
@@ -112584,15 +112657,15 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "temp_v0",
       "lines": [
-        205
+        226
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
+          "declaration_line": 223,
           "lines": [
-            205
+            226
           ]
         }
       ]
@@ -112603,15 +112676,15 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "temp_v0_2",
       "lines": [
-        203
+        224
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
+          "declaration_line": 223,
           "lines": [
-            203
+            224
           ]
         }
       ]
@@ -117482,6 +117555,26 @@
           "declaration_line": 142,
           "lines": [
             270
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-b3eb81aa27af",
+      "kind": "explicit_unknown",
+      "path": "include/uvasset_types.h",
+      "symbol": "Original optional model record: retain the existing public name, size * and offset-0x38 consumer. RE_UNKNOWN: property meanings and units.",
+      "lines": [
+        182
+      ],
+      "evidence": "Original optional model record: retain the existing public name, size * and offset-0x38 consumer. RE_UNKNOWN: property meanings and units.",
+      "owners": [
+        {
+          "kind": "type",
+          "name": "ParsedUVMD_20",
+          "declaration_line": 184,
+          "lines": [
+            182
           ]
         }
       ]
@@ -150209,21 +150302,103 @@
       ]
     },
     {
-      "id": "Q-f0bc91a12f4b",
+      "id": "Q-5ac4d05eb1c2",
       "kind": "explicit_unknown",
       "path": "src/modules/uvmodelld_rom.c",
-      "symbol": "Original COMM parser: read model totals and an optional 60-byte record, * allocate the combined vertex/state/command/part/LOD/matrix storage, then parse * the nested records. Preserve signed per-state vertex counts, pointer/count * reloads, paired color tokens and the final display-list terminators. The * original LGHT slot 0x28 consumes only the three supplied color words. * RE_ORIGINAL_QUIRK: the complete 36-byte stack header is copied before its * runtime table pointers are assigned. Some copied words and alignment bytes * have no preceding assignment here; the optional record also receives only * a byte at offset 0x28 before its next word at 0x2C. No zero-filled storage or * reachable use of the untouched bytes is established. * RE_UNKNOWN: valid header/per-part/per-LOD count relationships, command and * vertex capacities, block length and allocation-failure guarantees. Establish * the UVMD asset format and original caller domain before changing bounds or * allocation arithmetic. Optional-field meanings/units and recursive * UVMD/UVPX/UVTX/light ownership and cleanup remain unresolved; trace original * consumers and resource-release paths. * RE_UNKNOWN: exact source pointer lifetimes and permitted aliasing needed to * recover native field-pointer walks and floating load/store timing. The draft * is parked at 2592 bytes versus native 2784, with different full relocation * offsets. Preserve the original assembly until those contracts and complete * instruction/relocation identity are proved; matching helper counts alone * do not establish equivalent effects.",
+      "symbol": "* Parse packed model metadata into combined vertex, part, LOD, state, command and matrix * storage; acquire optional model/PFX references, textures and lights. RE_ORIGINAL_QUIRK: * retain unchecked allocations, partial header/optional-record initialization and three-word * light input, signed count arithmetic, empty branches and the final u64 pointer cast. * RE_UNKNOWN: input extent, count/capacity relationships, optional property units, failure * handling and recursive asset/light ownership. * * Encoded tokens and reserved Gfx slots are different counts. Pair color tokens; flush a * pending color before a vertex command or at loop end, then append the end command. * RE_UNKNOWN: the asset invariant ensuring all emitted commands fit the reserved slots; byte- * balance decrements do not enforce capacity. * * Fill only the three packed-color words at 0x24, 0x28 and 0x2C: the accepted * uvLightAcquireMatchingColorRecord provider reads only those caller fields, copies the * values into owned records and retains no caller pointer. Its -2 sentinel and -1 capacity * result are stored unchanged; valid capacity/result use remains a caller contract.",
       "lines": [
-        78
+        111
       ],
-      "evidence": "Original COMM parser: read model totals and an optional 60-byte record, * allocate the combined vertex/state/command/part/LOD/matrix storage, then parse * the nested records. Preserve signed per-state vertex counts, pointer/count * reloads, paired color tokens and the final display-list terminators. The * original LGHT slot 0x28 consumes only the three supplied color words. * RE_ORIGINAL_QUIRK: the complete 36-byte stack header is copied before its * runtime table pointers are assigned. Some copied words and alignment bytes * have no preceding assignment here; the optional record also receives only * a byte at offset 0x28 before its next word at 0x2C. No zero-filled storage or * reachable use of the untouched bytes is established. * RE_UNKNOWN: valid header/per-part/per-LOD count relationships, command and * vertex capacities, block length and allocation-failure guarantees. Establish * the UVMD asset format and original caller domain before changing bounds or * allocation arithmetic. Optional-field meanings/units and recursive * UVMD/UVPX/UVTX/light ownership and cleanup remain unresolved; trace original * consumers and resource-release paths. * RE_UNKNOWN: exact source pointer lifetimes and permitted aliasing needed to * recover native field-pointer walks and floating load/store timing. The draft * is parked at 2592 bytes versus native 2784, with different full relocation * offsets. Preserve the original assembly until those contracts and complete * instruction/relocation identity are proved; matching helper counts alone * do not establish equivalent effects.",
+      "evidence": "* Parse packed model metadata into combined vertex, part, LOD, state, command and matrix * storage; acquire optional model/PFX references, textures and lights. RE_ORIGINAL_QUIRK: * retain unchecked allocations, partial header/optional-record initialization and three-word * light input, signed count arithmetic, empty branches and the final u64 pointer cast. * RE_UNKNOWN: input extent, count/capacity relationships, optional property units, failure * handling and recursive asset/light ownership. * * Encoded tokens and reserved Gfx slots are different counts. Pair color tokens; flush a * pending color before a vertex command or at loop end, then append the end command. * RE_UNKNOWN: the asset invariant ensuring all emitted commands fit the reserved slots; byte- * balance decrements do not enforce capacity. * * Fill only the three packed-color words at 0x24, 0x28 and 0x2C: the accepted * uvLightAcquireMatchingColorRecord provider reads only those caller fields, copies the * values into owned records and retains no caller pointer. Its -2 sentinel and -1 capacity * result are stored unchanged; valid capacity/result use remains a caller contract.",
       "owners": [
         {
-          "kind": "assembly",
-          "name": "func_uvmodelld_rom_00400258",
-          "declaration_line": 101,
+          "kind": "function",
+          "name": "uvModelLoaderParsePackedModel",
+          "declaration_line": 130,
           "lines": [
-            78
+            111
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-40e64e23d47c",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvmodelld_rom.c",
+      "symbol": "* Publish parse, cleanup and render-resource release exports, then load LGHT followed by * FMTX. RE_UNKNOWN: dependency-load failure, repeated initialization and lifetime contracts.",
+      "lines": [
+        17
+      ],
+      "evidence": "* Publish parse, cleanup and render-resource release exports, then load LGHT followed by * FMTX. RE_UNKNOWN: dependency-load failure, repeated initialization and lifetime contracts.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_uvmodelld_rom_400000",
+          "declaration_line": 22,
+          "lines": [
+            17
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-0b8b6476f884",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvmodelld_rom.c",
+      "symbol": "ASSET PACKAGE STRUCTURE assetsStart - asset block start vertexCursor (Vtx table) uvGfxState + Gfx (RE_UNKNOWN: exact state/command layout) ParsedUVMD ParsedUVMD_1s uvModelLODs Mtx4Fs",
+      "lines": [
+        216
+      ],
+      "evidence": "ASSET PACKAGE STRUCTURE assetsStart - asset block start vertexCursor (Vtx table) uvGfxState + Gfx (RE_UNKNOWN: exact state/command layout) ParsedUVMD ParsedUVMD_1s uvModelLODs Mtx4Fs",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvModelLoaderParsePackedModel",
+          "declaration_line": 130,
+          "lines": [
+            216
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-444fd703158e",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvmodelld_rom.c",
+      "symbol": "RE_UNKNOWN: consumed unused byte; asset meaning and original source intent unproved.",
+      "lines": [
+        160,
+        161
+      ],
+      "evidence": "RE_UNKNOWN: consumed unused byte; asset meaning and original source intent unproved.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvModelLoaderParsePackedModel",
+          "declaration_line": 130,
+          "lines": [
+            160,
+            161
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-4faa046ec961",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvmodelld_rom.c",
+      "symbol": "RE_UNKNOWN: matching-source stack-layout padding; historical source intent unproved.",
+      "lines": [
+        141
+      ],
+      "evidence": "RE_UNKNOWN: matching-source stack-layout padding; historical source intent unproved.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvModelLoaderParsePackedModel",
+          "declaration_line": 130,
+          "lines": [
+            141
           ]
         }
       ]
@@ -150234,16 +150409,16 @@
       "path": "src/modules/uvmodelld_rom.c",
       "symbol": "Read a model FORM file, parse each COMM block and free its temporary * block storage. Return the most recently parsed model, or zero when * no common block was found, after releasing the file reader. * RE_UNKNOWN: whether valid UVMD files permit multiple COMM blocks. Each * result replaces the local return value without releasing the prior result * here; establish the file-format and parser ownership contract first.",
       "lines": [
-        21
+        45
       ],
       "evidence": "Read a model FORM file, parse each COMM block and free its temporary * block storage. Return the most recently parsed model, or zero when * no common block was found, after releasing the file reader. * RE_UNKNOWN: whether valid UVMD files permit multiple COMM blocks. Each * result replaces the local return value without releasing the prior result * here; establish the file-format and parser ownership contract first.",
       "owners": [
         {
           "kind": "function",
           "name": "uvModelLoaderParseCommonBlocks",
-          "declaration_line": 27,
+          "declaration_line": 51,
           "lines": [
-            21
+            45
           ]
         }
       ]
@@ -150254,16 +150429,16 @@
       "path": "src/modules/uvmodelld_rom.c",
       "symbol": "Unload each referenced UVTX and light state, then free the vertex allocation. * RE_UNKNOWN: ownership of optional/recursive model records is not established; * this routine does not prove that every model-owned allocation is released.",
       "lines": [
-        104
+        385
       ],
       "evidence": "Unload each referenced UVTX and light state, then free the vertex allocation. * RE_UNKNOWN: ownership of optional/recursive model records is not established; * this routine does not prove that every model-owned allocation is released.",
       "owners": [
         {
           "kind": "function",
           "name": "uvModelLoaderReleaseRenderResources",
-          "declaration_line": 108,
+          "declaration_line": 389,
           "lines": [
-            104
+            385
           ]
         }
       ]
@@ -150349,21 +150524,41 @@
       ]
     },
     {
+      "id": "Q-48a44b627c00",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvpfxld_rom.c",
+      "symbol": "* Publish parse, cleanup and configuration-release exports, then load TSEQ, FMTX, FVEC and * UPFX in that order. RE_UNKNOWN: dependency-load failure, repeated initialization and * lifetime contracts.",
+      "lines": [
+        126
+      ],
+      "evidence": "* Publish parse, cleanup and configuration-release exports, then load TSEQ, FMTX, FVEC and * UPFX in that order. RE_UNKNOWN: dependency-load failure, repeated initialization and * lifetime contracts.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__entrypoint_func_uvpfxld_rom_400000",
+          "declaration_line": 132,
+          "lines": [
+            126
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-ea17db52a12c",
       "kind": "explicit_unknown",
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "Allocate and publish shared/per-particle records, then apply original UPFX * properties and FMTX/FVEC initialization with unchanged float promotions. * RE_ORIGINAL_QUIRK: capacity failure frees only the shared record without * clearing its pointer or releasing earlier published particles. The kind-2 * path leaves shared+0x30 untouched; another path allocates count*4 bytes then * copies 16 bytes unconditionally. RE_UNKNOWN: asset domains and ownership. * Unused compiler declarations temp_v0_2, temp_a0, temp_v0 and temp are * preserved; their intended source roles remain unknown.",
       "lines": [
-        193
+        214
       ],
       "evidence": "Allocate and publish shared/per-particle records, then apply original UPFX * properties and FMTX/FVEC initialization with unchanged float promotions. * RE_ORIGINAL_QUIRK: capacity failure frees only the shared record without * clearing its pointer or releasing earlier published particles. The kind-2 * path leaves shared+0x30 untouched; another path allocates count*4 bytes then * copies 16 bytes unconditionally. RE_UNKNOWN: asset domains and ownership. * Unused compiler declarations temp_v0_2, temp_a0, temp_v0 and temp are * preserved; their intended source roles remain unknown.",
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
+          "declaration_line": 223,
           "lines": [
-            193
+            214
           ]
         }
       ]
@@ -150374,16 +150569,16 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "Apply one caller-word snapshot to every configured particle. The original * shared selector chooses property 0x1008 (UVTX-ID path) or 0x1013 (TSEQ path). * Preserve the signed count and shared selector/base/export reloads across * each variadic setter, including any original callbacks/module calls. * RE_UNKNOWN: valid configured count/base IDs, meaning of the selector mode * and caller-word resource/lifetime guarantees. Trace loader configuration, * particle allocation and original callback callers before adding validation * or interpreting the mode. The complete historical pointer declaration is * unknown; this view describes the observed aligned 32-bit input-word read.",
       "lines": [
-        357
+        378
       ],
       "evidence": "Apply one caller-word snapshot to every configured particle. The original * shared selector chooses property 0x1008 (UVTX-ID path) or 0x1013 (TSEQ path). * Preserve the signed count and shared selector/base/export reloads across * each variadic setter, including any original callbacks/module calls. * RE_UNKNOWN: valid configured count/base IDs, meaning of the selector mode * and caller-word resource/lifetime guarantees. Trace loader configuration, * particle allocation and original callback callers before adding validation * or interpreting the mode. The complete historical pointer declaration is * unknown; this view describes the observed aligned 32-bit input-word read.",
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderApplySharedResourceWord",
-          "declaration_line": 366,
+          "declaration_line": 387,
           "lines": [
-            357
+            378
           ]
         }
       ]
@@ -150394,16 +150589,16 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "Apply the original PHDR block to shared loader configuration and each * configured particle. Allocate the two-byte item buffer, preserve short * narrowing and reciprocal arithmetic, and allocate Vec3F storage only for * secondary kind 9. A nonzero state scalar keeps its original value. * RE_UNKNOWN: physical scalar units, value08/secondary-kind meanings and * caller guarantees for reciprocalSource, counts and block ordering. Trace * original PHDR assets and the COMMON producer before changing arithmetic, * bounds or initialization. The COMMON allocation and particle-state table * must already exist on this path; their lifetime/aliasing contracts remain * unresolved. Preserve reloads across original allocations and mutations.",
       "lines": [
-        301
+        322
       ],
       "evidence": "Apply the original PHDR block to shared loader configuration and each * configured particle. Allocate the two-byte item buffer, preserve short * narrowing and reciprocal arithmetic, and allocate Vec3F storage only for * secondary kind 9. A nonzero state scalar keeps its original value. * RE_UNKNOWN: physical scalar units, value08/secondary-kind meanings and * caller guarantees for reciprocalSource, counts and block ordering. Trace * original PHDR assets and the COMMON producer before changing arithmetic, * bounds or initialization. The COMMON allocation and particle-state table * must already exist on this path; their lifetime/aliasing contracts remain * unresolved. Preserve reloads across original allocations and mutations.",
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderApplyHeaderConfiguration",
-          "declaration_line": 311,
+          "declaration_line": 332,
           "lines": [
-            301
+            322
           ]
         }
       ]
@@ -150414,16 +150609,16 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "Copy sharedCount*2 bytes to the address stored at shared configuration offset * 0x30. The reviewed header-configuration producer allocates the same count*2 * byte size; this wrapper independently reads the current shared count and pointer. * RE_UNKNOWN: valid signed counts, overflow, capacity, producer-before-copy order * and source/destination lifetime are unproved. Preserve the raw destination word * and arithmetic; the historical word-buffer name does not establish element type.",
       "lines": [
-        342
+        363
       ],
       "evidence": "Copy sharedCount*2 bytes to the address stored at shared configuration offset * 0x30. The reviewed header-configuration producer allocates the same count*2 * byte size; this wrapper independently reads the current shared count and pointer. * RE_UNKNOWN: valid signed counts, overflow, capacity, producer-before-copy order * and source/destination lifetime are unproved. Preserve the raw destination word * and arithmetic; the historical word-buffer name does not establish element type.",
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderCopyIntoSharedWordBuffer",
-          "declaration_line": 349,
+          "declaration_line": 370,
           "lines": [
-            342
+            363
           ]
         }
       ]
@@ -150434,16 +150629,16 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "Dispatch COMM/TEXT/PIID/PHDR/PDAT blocks through the existing loader helpers. * Publish the bounded active-count increments and reload the shared result * after reader release. RE_ORIGINAL_QUIRK: unknown nonzero blocks skip this * routine's consumer and free. RE_UNKNOWN: valid chunk order and ownership.",
       "lines": [
-        135
+        156
       ],
       "evidence": "Dispatch COMM/TEXT/PIID/PHDR/PDAT blocks through the existing loader helpers. * Publish the bounded active-count increments and reload the shared result * after reader release. RE_ORIGINAL_QUIRK: unknown nonzero blocks skip this * routine's consumer and free. RE_UNKNOWN: valid chunk order and ownership.",
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderParseChunkStream",
-          "declaration_line": 140,
+          "declaration_line": 161,
           "lines": [
-            135
+            156
           ]
         }
       ]
@@ -150454,7 +150649,7 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "RE_UNKNOWN: observed widths/offsets only; unk field meanings unresolved. ASM owns storage.",
       "lines": [
-        3
+        4
       ],
       "evidence": "RE_UNKNOWN: observed widths/offsets only; unk field meanings unresolved. ASM owns storage."
     },
@@ -150464,16 +150659,16 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "Read the supplied word and narrow it into loader short+2. RE_UNKNOWN: source * and loader storage/lifetime need original configuration producers and callers.",
       "lines": [
-        384
+        405
       ],
       "evidence": "Read the supplied word and narrow it into loader short+2. RE_UNKNOWN: source * and loader storage/lifetime need original configuration producers and callers.",
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderSetConfigShortFromWord",
-          "declaration_line": 386,
+          "declaration_line": 407,
           "lines": [
-            384
+            405
           ]
         }
       ]
@@ -150484,16 +150679,16 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "Remove every descriptor belonging to the supplied configuration, shifting * the remaining descriptor words after each removal. Publish the final count, * then free the original nested buffers and shared configuration in order. * RE_UNKNOWN: alias lifetimes and allocation-failure guarantees remain held.",
       "lines": [
-        391
+        412
       ],
       "evidence": "Remove every descriptor belonging to the supplied configuration, shifting * the remaining descriptor words after each removal. Publish the final count, * then free the original nested buffers and shared configuration in order. * RE_UNKNOWN: alias lifetimes and allocation-failure guarantees remain held.",
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderReleaseConfiguration",
-          "declaration_line": 396,
+          "declaration_line": 417,
           "lines": [
-            391
+            412
           ]
         }
       ]
@@ -155454,8 +155649,7 @@
       "symbol": "pad",
       "lines": [
         142,
-        151,
-        183
+        151
       ],
       "owners": [
         {
@@ -155464,14 +155658,6 @@
           "declaration_line": 148,
           "lines": [
             151
-          ]
-        },
-        {
-          "kind": "type",
-          "name": "ParsedUVMD_20",
-          "declaration_line": 182,
-          "lines": [
-            183
           ]
         },
         {
@@ -155490,15 +155676,15 @@
       "path": "include/uvasset_types.h",
       "symbol": "pad0",
       "lines": [
-        330
+        346
       ],
       "owners": [
         {
           "kind": "type",
           "name": "ParsedUVBT",
-          "declaration_line": 329,
+          "declaration_line": 345,
           "lines": [
-            330
+            346
           ]
         }
       ]
@@ -155509,15 +155695,15 @@
       "path": "include/uvasset_types.h",
       "symbol": "pad1",
       "lines": [
-        260
+        276
       ],
       "owners": [
         {
           "kind": "type",
           "name": "ParsedUVTS",
-          "declaration_line": 258,
+          "declaration_line": 274,
           "lines": [
-            260
+            276
           ]
         }
       ]
@@ -155528,15 +155714,15 @@
       "path": "include/uvasset_types.h",
       "symbol": "pad14",
       "lines": [
-        306
+        322
       ],
       "owners": [
         {
           "kind": "type",
           "name": "ParsedUVEN",
-          "declaration_line": 287,
+          "declaration_line": 303,
           "lines": [
-            306
+            322
           ]
         }
       ]
@@ -155547,15 +155733,15 @@
       "path": "include/uvasset_types.h",
       "symbol": "pad14_0",
       "lines": [
-        233
+        249
       ],
       "owners": [
         {
           "kind": "type",
           "name": "ParsedUVTX",
-          "declaration_line": 215,
+          "declaration_line": 231,
           "lines": [
-            233
+            249
           ]
         }
       ]
@@ -155585,15 +155771,15 @@
       "path": "include/uvasset_types.h",
       "symbol": "pad18",
       "lines": [
-        236
+        252
       ],
       "owners": [
         {
           "kind": "type",
           "name": "ParsedUVTX",
-          "declaration_line": 215,
+          "declaration_line": 231,
           "lines": [
-            236
+            252
           ]
         }
       ]
@@ -155604,24 +155790,24 @@
       "path": "include/uvasset_types.h",
       "symbol": "pad1E",
       "lines": [
-        199,
-        309
+        215,
+        325
       ],
       "owners": [
         {
           "kind": "type",
           "name": "ParsedUVEN",
-          "declaration_line": 287,
+          "declaration_line": 303,
           "lines": [
-            309
+            325
           ]
         },
         {
           "kind": "type",
           "name": "ParsedUVMD",
-          "declaration_line": 187,
+          "declaration_line": 203,
           "lines": [
-            199
+            215
           ]
         }
       ]
@@ -155660,15 +155846,15 @@
       "path": "include/uvasset_types.h",
       "symbol": "pad2F",
       "lines": [
-        311
+        327
       ],
       "owners": [
         {
           "kind": "type",
           "name": "ParsedUVEN",
-          "declaration_line": 287,
+          "declaration_line": 303,
           "lines": [
-            311
+            327
           ]
         }
       ]
@@ -155698,15 +155884,15 @@
       "path": "include/uvasset_types.h",
       "symbol": "pad35",
       "lines": [
-        314
+        330
       ],
       "owners": [
         {
           "kind": "type",
           "name": "ParsedUVEN",
-          "declaration_line": 287,
+          "declaration_line": 303,
           "lines": [
-            314
+            330
           ]
         }
       ]
@@ -155736,15 +155922,15 @@
       "path": "include/uvasset_types.h",
       "symbol": "pad59",
       "lines": [
-        324
+        340
       ],
       "owners": [
         {
           "kind": "type",
           "name": "ParsedUVEN",
-          "declaration_line": 287,
+          "declaration_line": 303,
           "lines": [
-            324
+            340
           ]
         }
       ]
@@ -161432,15 +161618,15 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "pad15",
       "lines": [
-        32
+        33
       ],
       "owners": [
         {
           "kind": "type",
           "name": "PfxLoaderCommonView",
-          "declaration_line": 22,
+          "declaration_line": 23,
           "lines": [
-            32
+            33
           ]
         }
       ]
@@ -161451,15 +161637,15 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "pad16",
       "lines": [
-        19
+        20
       ],
       "owners": [
         {
           "kind": "type",
           "name": "PfxLoaderSecondaryView",
-          "declaration_line": 8,
+          "declaration_line": 9,
           "lines": [
-            19
+            20
           ]
         }
       ]
@@ -161470,15 +161656,15 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "pad2",
       "lines": [
-        10
+        11
       ],
       "owners": [
         {
           "kind": "type",
           "name": "PfxLoaderSecondaryView",
-          "declaration_line": 8,
+          "declaration_line": 9,
           "lines": [
-            10
+            11
           ]
         }
       ]
@@ -161489,15 +161675,15 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "pad26",
       "lines": [
-        40
+        41
       ],
       "owners": [
         {
           "kind": "type",
           "name": "PfxLoaderCommonView",
-          "declaration_line": 22,
+          "declaration_line": 23,
           "lines": [
-            40
+            41
           ]
         }
       ]
@@ -163396,27 +163582,28 @@
         149,
         155,
         175,
-        188,
+        185,
         204,
-        216,
-        269,
-        288
+        220,
+        232,
+        285,
+        304
       ],
       "owners": [
         {
           "kind": "type",
           "name": "ParsedUVEN",
-          "declaration_line": 287,
+          "declaration_line": 303,
           "lines": [
-            288
+            304
           ]
         },
         {
           "kind": "type",
           "name": "ParsedUVMD",
-          "declaration_line": 187,
+          "declaration_line": 203,
           "lines": [
-            188
+            204
           ]
         },
         {
@@ -163437,6 +163624,14 @@
         },
         {
           "kind": "type",
+          "name": "ParsedUVMD_20",
+          "declaration_line": 184,
+          "lines": [
+            185
+          ]
+        },
+        {
+          "kind": "type",
           "name": "ParsedUVTR",
           "declaration_line": 90,
           "lines": [
@@ -163446,17 +163641,17 @@
         {
           "kind": "type",
           "name": "ParsedUVTT",
-          "declaration_line": 268,
+          "declaration_line": 284,
           "lines": [
-            269
+            285
           ]
         },
         {
           "kind": "type",
           "name": "ParsedUVTX",
-          "declaration_line": 215,
+          "declaration_line": 231,
           "lines": [
-            216
+            232
           ]
         },
         {
@@ -163502,9 +163697,9 @@
         {
           "kind": "type",
           "name": "UnkUVTX_1C",
-          "declaration_line": 203,
+          "declaration_line": 219,
           "lines": [
-            204
+            220
           ]
         },
         {
@@ -163540,15 +163735,15 @@
       "symbol": "unk1",
       "lines": [
         120,
-        289
+        305
       ],
       "owners": [
         {
           "kind": "type",
           "name": "ParsedUVEN",
-          "declaration_line": 287,
+          "declaration_line": 303,
           "lines": [
-            289
+            305
           ]
         },
         {
@@ -163573,10 +163768,11 @@
         86,
         114,
         159,
-        195,
-        208,
-        226,
-        304
+        189,
+        211,
+        224,
+        242,
+        320
       ],
       "owners": [
         {
@@ -163590,25 +163786,33 @@
         {
           "kind": "type",
           "name": "ParsedUVEN",
-          "declaration_line": 287,
+          "declaration_line": 303,
           "lines": [
-            304
+            320
           ]
         },
         {
           "kind": "type",
           "name": "ParsedUVMD",
-          "declaration_line": 187,
+          "declaration_line": 203,
           "lines": [
-            195
+            211
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "ParsedUVMD_20",
+          "declaration_line": 184,
+          "lines": [
+            189
           ]
         },
         {
           "kind": "type",
           "name": "ParsedUVTX",
-          "declaration_line": 215,
+          "declaration_line": 231,
           "lines": [
-            226
+            242
           ]
         },
         {
@@ -163638,9 +163842,9 @@
         {
           "kind": "type",
           "name": "UnkUVTX_1C",
-          "declaration_line": 203,
+          "declaration_line": 219,
           "lines": [
-            208
+            224
           ]
         },
         {
@@ -163667,15 +163871,15 @@
       "path": "include/uvasset_types.h",
       "symbol": "unk11",
       "lines": [
-        305
+        321
       ],
       "owners": [
         {
           "kind": "type",
           "name": "ParsedUVEN",
-          "declaration_line": 287,
+          "declaration_line": 303,
           "lines": [
-            305
+            321
           ]
         }
       ]
@@ -163711,9 +163915,10 @@
         87,
         115,
         160,
-        196,
-        209,
-        228
+        190,
+        212,
+        225,
+        244
       ],
       "owners": [
         {
@@ -163727,17 +163932,25 @@
         {
           "kind": "type",
           "name": "ParsedUVMD",
-          "declaration_line": 187,
+          "declaration_line": 203,
           "lines": [
-            196
+            212
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "ParsedUVMD_20",
+          "declaration_line": 184,
+          "lines": [
+            190
           ]
         },
         {
           "kind": "type",
           "name": "ParsedUVTX",
-          "declaration_line": 215,
+          "declaration_line": 231,
           "lines": [
-            228
+            244
           ]
         },
         {
@@ -163767,9 +163980,9 @@
         {
           "kind": "type",
           "name": "UnkUVTX_1C",
-          "declaration_line": 203,
+          "declaration_line": 219,
           "lines": [
-            209
+            225
           ]
         },
         {
@@ -163796,15 +164009,15 @@
       "path": "include/uvasset_types.h",
       "symbol": "unk14_19",
       "lines": [
-        232
+        248
       ],
       "owners": [
         {
           "kind": "type",
           "name": "ParsedUVTX",
-          "declaration_line": 215,
+          "declaration_line": 231,
           "lines": [
-            232
+            248
           ]
         }
       ]
@@ -163815,15 +164028,15 @@
       "path": "include/uvasset_types.h",
       "symbol": "unk14_20",
       "lines": [
-        231
+        247
       ],
       "owners": [
         {
           "kind": "type",
           "name": "ParsedUVTX",
-          "declaration_line": 215,
+          "declaration_line": 231,
           "lines": [
-            231
+            247
           ]
         }
       ]
@@ -163857,7 +164070,8 @@
         43,
         65,
         92,
-        210
+        191,
+        226
       ],
       "owners": [
         {
@@ -163866,6 +164080,14 @@
           "declaration_line": 55,
           "lines": [
             65
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "ParsedUVMD_20",
+          "declaration_line": 184,
+          "lines": [
+            191
           ]
         },
         {
@@ -163895,9 +164117,9 @@
         {
           "kind": "type",
           "name": "UnkUVTX_1C",
-          "declaration_line": 203,
+          "declaration_line": 219,
           "lines": [
-            210
+            226
           ]
         }
       ]
@@ -163909,7 +164131,7 @@
       "symbol": "unk19",
       "lines": [
         93,
-        211
+        227
       ],
       "owners": [
         {
@@ -163923,9 +164145,9 @@
         {
           "kind": "type",
           "name": "UnkUVTX_1C",
-          "declaration_line": 203,
+          "declaration_line": 219,
           "lines": [
-            211
+            227
           ]
         }
       ]
@@ -163937,16 +164159,16 @@
       "symbol": "unk1A",
       "lines": [
         15,
-        212,
-        237
+        228,
+        253
       ],
       "owners": [
         {
           "kind": "type",
           "name": "ParsedUVTX",
-          "declaration_line": 215,
+          "declaration_line": 231,
           "lines": [
-            237
+            253
           ]
         },
         {
@@ -163960,9 +164182,9 @@
         {
           "kind": "type",
           "name": "UnkUVTX_1C",
-          "declaration_line": 203,
+          "declaration_line": 219,
           "lines": [
-            212
+            228
           ]
         }
       ]
@@ -163978,7 +164200,8 @@
         66,
         94,
         124,
-        307
+        192,
+        323
       ],
       "owners": [
         {
@@ -163992,9 +164215,17 @@
         {
           "kind": "type",
           "name": "ParsedUVEN",
-          "declaration_line": 287,
+          "declaration_line": 303,
           "lines": [
-            307
+            323
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "ParsedUVMD_20",
+          "declaration_line": 184,
+          "lines": [
+            192
           ]
         },
         {
@@ -164037,15 +164268,15 @@
       "path": "include/uvasset_types.h",
       "symbol": "unk1D",
       "lines": [
-        308
+        324
       ],
       "owners": [
         {
           "kind": "type",
           "name": "ParsedUVEN",
-          "declaration_line": 287,
+          "declaration_line": 303,
           "lines": [
-            308
+            324
           ]
         }
       ]
@@ -164079,34 +164310,34 @@
         29,
         105,
         121,
-        254,
-        261,
+        270,
         277,
-        290
+        293,
+        306
       ],
       "owners": [
         {
           "kind": "type",
           "name": "ParsedUVEN",
-          "declaration_line": 287,
+          "declaration_line": 303,
           "lines": [
-            290
+            306
           ]
         },
         {
           "kind": "type",
           "name": "ParsedUVTP",
-          "declaration_line": 275,
+          "declaration_line": 291,
           "lines": [
-            277
+            293
           ]
         },
         {
           "kind": "type",
           "name": "ParsedUVTS",
-          "declaration_line": 258,
+          "declaration_line": 274,
           "lines": [
-            261
+            277
           ]
         },
         {
@@ -164144,9 +164375,9 @@
         {
           "kind": "type",
           "name": "uvSeqFrame",
-          "declaration_line": 252,
+          "declaration_line": 268,
           "lines": [
-            254
+            270
           ]
         }
       ]
@@ -164162,8 +164393,9 @@
         95,
         125,
         170,
-        200,
-        240
+        193,
+        216,
+        256
       ],
       "owners": [
         {
@@ -164177,9 +164409,17 @@
         {
           "kind": "type",
           "name": "ParsedUVMD",
-          "declaration_line": 187,
+          "declaration_line": 203,
           "lines": [
-            200
+            216
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "ParsedUVMD_20",
+          "declaration_line": 184,
+          "lines": [
+            193
           ]
         },
         {
@@ -164193,9 +164433,9 @@
         {
           "kind": "type",
           "name": "ParsedUVTX",
-          "declaration_line": 215,
+          "declaration_line": 231,
           "lines": [
-            240
+            256
           ]
         },
         {
@@ -164230,15 +164470,15 @@
       "path": "include/uvasset_types.h",
       "symbol": "unk21",
       "lines": [
-        241
+        257
       ],
       "owners": [
         {
           "kind": "type",
           "name": "ParsedUVTX",
-          "declaration_line": 215,
+          "declaration_line": 231,
           "lines": [
-            241
+            257
           ]
         }
       ]
@@ -164249,15 +164489,15 @@
       "path": "include/uvasset_types.h",
       "symbol": "unk22",
       "lines": [
-        242
+        258
       ],
       "owners": [
         {
           "kind": "type",
           "name": "ParsedUVTX",
-          "declaration_line": 215,
+          "declaration_line": 231,
           "lines": [
-            242
+            258
           ]
         }
       ]
@@ -164268,15 +164508,15 @@
       "path": "include/uvasset_types.h",
       "symbol": "unk23",
       "lines": [
-        243
+        259
       ],
       "owners": [
         {
           "kind": "type",
           "name": "ParsedUVTX",
-          "declaration_line": 215,
+          "declaration_line": 231,
           "lines": [
-            243
+            259
           ]
         }
       ]
@@ -164290,7 +164530,8 @@
         47,
         68,
         96,
-        244
+        194,
+        260
       ],
       "owners": [
         {
@@ -164299,6 +164540,14 @@
           "declaration_line": 55,
           "lines": [
             68
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "ParsedUVMD_20",
+          "declaration_line": 184,
+          "lines": [
+            194
           ]
         },
         {
@@ -164312,9 +164561,9 @@
         {
           "kind": "type",
           "name": "ParsedUVTX",
-          "declaration_line": 215,
+          "declaration_line": 231,
           "lines": [
-            244
+            260
           ]
         },
         {
@@ -164333,15 +164582,15 @@
       "path": "include/uvasset_types.h",
       "symbol": "unk25",
       "lines": [
-        245
+        261
       ],
       "owners": [
         {
           "kind": "type",
           "name": "ParsedUVTX",
-          "declaration_line": 215,
+          "declaration_line": 231,
           "lines": [
-            245
+            261
           ]
         }
       ]
@@ -164352,15 +164601,15 @@
       "path": "include/uvasset_types.h",
       "symbol": "unk26",
       "lines": [
-        246
+        262
       ],
       "owners": [
         {
           "kind": "type",
           "name": "ParsedUVTX",
-          "declaration_line": 215,
+          "declaration_line": 231,
           "lines": [
-            246
+            262
           ]
         }
       ]
@@ -164371,15 +164620,15 @@
       "path": "include/uvasset_types.h",
       "symbol": "unk27",
       "lines": [
-        247
+        263
       ],
       "owners": [
         {
           "kind": "type",
           "name": "ParsedUVTX",
-          "declaration_line": 215,
+          "declaration_line": 231,
           "lines": [
-            247
+            263
           ]
         }
       ]
@@ -164393,7 +164642,8 @@
         48,
         69,
         97,
-        248
+        195,
+        264
       ],
       "owners": [
         {
@@ -164402,6 +164652,14 @@
           "declaration_line": 55,
           "lines": [
             69
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "ParsedUVMD_20",
+          "declaration_line": 184,
+          "lines": [
+            195
           ]
         },
         {
@@ -164415,9 +164673,9 @@
         {
           "kind": "type",
           "name": "ParsedUVTX",
-          "declaration_line": 215,
+          "declaration_line": 231,
           "lines": [
-            248
+            264
           ]
         },
         {
@@ -164439,7 +164697,8 @@
         49,
         70,
         98,
-        249
+        196,
+        265
       ],
       "owners": [
         {
@@ -164448,6 +164707,14 @@
           "declaration_line": 55,
           "lines": [
             70
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "ParsedUVMD_20",
+          "declaration_line": 184,
+          "lines": [
+            196
           ]
         },
         {
@@ -164461,9 +164728,9 @@
         {
           "kind": "type",
           "name": "ParsedUVTX",
-          "declaration_line": 215,
+          "declaration_line": 231,
           "lines": [
-            249
+            265
           ]
         },
         {
@@ -164483,15 +164750,15 @@
       "symbol": "unk2E",
       "lines": [
         99,
-        310
+        326
       ],
       "owners": [
         {
           "kind": "type",
           "name": "ParsedUVEN",
-          "declaration_line": 287,
+          "declaration_line": 303,
           "lines": [
-            310
+            326
           ]
         },
         {
@@ -164510,15 +164777,15 @@
       "path": "include/uvasset_types.h",
       "symbol": "unk3",
       "lines": [
-        291
+        307
       ],
       "owners": [
         {
           "kind": "type",
           "name": "ParsedUVEN",
-          "declaration_line": 287,
+          "declaration_line": 303,
           "lines": [
-            291
+            307
           ]
         }
       ]
@@ -164532,7 +164799,8 @@
         18,
         50,
         71,
-        100
+        100,
+        197
       ],
       "owners": [
         {
@@ -164541,6 +164809,14 @@
           "declaration_line": 55,
           "lines": [
             71
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "ParsedUVMD_20",
+          "declaration_line": 184,
+          "lines": [
+            197
           ]
         },
         {
@@ -164576,9 +164852,18 @@
       "symbol": "unk34",
       "lines": [
         19,
-        51
+        51,
+        198
       ],
       "owners": [
+        {
+          "kind": "type",
+          "name": "ParsedUVMD_20",
+          "declaration_line": 184,
+          "lines": [
+            198
+          ]
+        },
         {
           "kind": "type",
           "name": "Unk80225FBC_0x28",
@@ -164605,24 +164890,24 @@
       "lines": [
         20,
         52,
-        184,
-        315
+        199,
+        331
       ],
       "owners": [
         {
           "kind": "type",
           "name": "ParsedUVEN",
-          "declaration_line": 287,
+          "declaration_line": 303,
           "lines": [
-            315
+            331
           ]
         },
         {
           "kind": "type",
           "name": "ParsedUVMD_20",
-          "declaration_line": 182,
+          "declaration_line": 184,
           "lines": [
-            184
+            199
           ]
         },
         {
@@ -164650,15 +164935,15 @@
       "symbol": "unk3C",
       "lines": [
         21,
-        316
+        332
       ],
       "owners": [
         {
           "kind": "type",
           "name": "ParsedUVEN",
-          "declaration_line": 287,
+          "declaration_line": 303,
           "lines": [
-            316
+            332
           ]
         },
         {
@@ -164688,28 +164973,29 @@
         156,
         165,
         176,
-        189,
+        186,
         205,
-        217,
-        270,
-        278,
-        292
+        221,
+        233,
+        286,
+        294,
+        308
       ],
       "owners": [
         {
           "kind": "type",
           "name": "ParsedUVEN",
-          "declaration_line": 287,
+          "declaration_line": 303,
           "lines": [
-            292
+            308
           ]
         },
         {
           "kind": "type",
           "name": "ParsedUVMD",
-          "declaration_line": 187,
+          "declaration_line": 203,
           "lines": [
-            189
+            205
           ]
         },
         {
@@ -164730,6 +165016,14 @@
         },
         {
           "kind": "type",
+          "name": "ParsedUVMD_20",
+          "declaration_line": 184,
+          "lines": [
+            186
+          ]
+        },
+        {
+          "kind": "type",
           "name": "ParsedUVMD_3",
           "declaration_line": 141,
           "lines": [
@@ -164739,25 +165033,25 @@
         {
           "kind": "type",
           "name": "ParsedUVTP",
-          "declaration_line": 275,
+          "declaration_line": 291,
           "lines": [
-            278
+            294
           ]
         },
         {
           "kind": "type",
           "name": "ParsedUVTT",
-          "declaration_line": 268,
+          "declaration_line": 284,
           "lines": [
-            270
+            286
           ]
         },
         {
           "kind": "type",
           "name": "ParsedUVTX",
-          "declaration_line": 215,
+          "declaration_line": 231,
           "lines": [
-            217
+            233
           ]
         },
         {
@@ -164803,9 +165097,9 @@
         {
           "kind": "type",
           "name": "UnkUVTX_1C",
-          "declaration_line": 203,
+          "declaration_line": 219,
           "lines": [
-            205
+            221
           ]
         },
         {
@@ -164842,15 +165136,15 @@
       "lines": [
         22,
         76,
-        317
+        333
       ],
       "owners": [
         {
           "kind": "type",
           "name": "ParsedUVEN",
-          "declaration_line": 287,
+          "declaration_line": 303,
           "lines": [
-            317
+            333
           ]
         },
         {
@@ -164879,15 +165173,15 @@
       "lines": [
         23,
         77,
-        318
+        334
       ],
       "owners": [
         {
           "kind": "type",
           "name": "ParsedUVEN",
-          "declaration_line": 287,
+          "declaration_line": 303,
           "lines": [
-            318
+            334
           ]
         },
         {
@@ -164915,15 +165209,15 @@
       "symbol": "unk48",
       "lines": [
         24,
-        319
+        335
       ],
       "owners": [
         {
           "kind": "type",
           "name": "ParsedUVEN",
-          "declaration_line": 287,
+          "declaration_line": 303,
           "lines": [
-            319
+            335
           ]
         },
         {
@@ -164942,15 +165236,15 @@
       "path": "include/uvasset_types.h",
       "symbol": "unk4C",
       "lines": [
-        320
+        336
       ],
       "owners": [
         {
           "kind": "type",
           "name": "ParsedUVEN",
-          "declaration_line": 287,
+          "declaration_line": 303,
           "lines": [
-            320
+            336
           ]
         }
       ]
@@ -164963,24 +165257,24 @@
       "lines": [
         131,
         166,
-        190,
-        293
+        206,
+        309
       ],
       "owners": [
         {
           "kind": "type",
           "name": "ParsedUVEN",
-          "declaration_line": 287,
+          "declaration_line": 303,
           "lines": [
-            293
+            309
           ]
         },
         {
           "kind": "type",
           "name": "ParsedUVMD",
-          "declaration_line": 187,
+          "declaration_line": 203,
           "lines": [
-            190
+            206
           ]
         },
         {
@@ -165007,15 +165301,15 @@
       "path": "include/uvasset_types.h",
       "symbol": "unk50",
       "lines": [
-        321
+        337
       ],
       "owners": [
         {
           "kind": "type",
           "name": "ParsedUVEN",
-          "declaration_line": 287,
+          "declaration_line": 303,
           "lines": [
-            321
+            337
           ]
         }
       ]
@@ -165026,15 +165320,15 @@
       "path": "include/uvasset_types.h",
       "symbol": "unk54",
       "lines": [
-        322
+        338
       ],
       "owners": [
         {
           "kind": "type",
           "name": "ParsedUVEN",
-          "declaration_line": 287,
+          "declaration_line": 303,
           "lines": [
-            322
+            338
           ]
         }
       ]
@@ -165045,15 +165339,15 @@
       "path": "include/uvasset_types.h",
       "symbol": "unk58",
       "lines": [
-        323
+        339
       ],
       "owners": [
         {
           "kind": "type",
           "name": "ParsedUVEN",
-          "declaration_line": 287,
+          "declaration_line": 303,
           "lines": [
-            323
+            339
           ]
         }
       ]
@@ -165064,15 +165358,15 @@
       "path": "include/uvasset_types.h",
       "symbol": "unk5C",
       "lines": [
-        325
+        341
       ],
       "owners": [
         {
           "kind": "type",
           "name": "ParsedUVEN",
-          "declaration_line": 287,
+          "declaration_line": 303,
           "lines": [
-            325
+            341
           ]
         }
       ]
@@ -165086,24 +165380,24 @@
         31,
         132,
         167,
-        191,
-        294
+        207,
+        310
       ],
       "owners": [
         {
           "kind": "type",
           "name": "ParsedUVEN",
-          "declaration_line": 287,
+          "declaration_line": 303,
           "lines": [
-            294
+            310
           ]
         },
         {
           "kind": "type",
           "name": "ParsedUVMD",
-          "declaration_line": 187,
+          "declaration_line": 203,
           "lines": [
-            191
+            207
           ]
         },
         {
@@ -165139,24 +165433,24 @@
       "symbol": "unk7",
       "lines": [
         168,
-        192,
-        295
+        208,
+        311
       ],
       "owners": [
         {
           "kind": "type",
           "name": "ParsedUVEN",
-          "declaration_line": 287,
+          "declaration_line": 303,
           "lines": [
-            295
+            311
           ]
         },
         {
           "kind": "type",
           "name": "ParsedUVMD",
-          "declaration_line": 187,
+          "declaration_line": 203,
           "lines": [
-            192
+            208
           ]
         },
         {
@@ -165185,11 +165479,12 @@
         157,
         169,
         177,
-        193,
-        206,
-        271,
-        279,
-        296
+        187,
+        209,
+        222,
+        287,
+        295,
+        312
       ],
       "owners": [
         {
@@ -165203,17 +165498,17 @@
         {
           "kind": "type",
           "name": "ParsedUVEN",
-          "declaration_line": 287,
+          "declaration_line": 303,
           "lines": [
-            296
+            312
           ]
         },
         {
           "kind": "type",
           "name": "ParsedUVMD",
-          "declaration_line": 187,
+          "declaration_line": 203,
           "lines": [
-            193
+            209
           ]
         },
         {
@@ -165222,6 +165517,14 @@
           "declaration_line": 174,
           "lines": [
             177
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "ParsedUVMD_20",
+          "declaration_line": 184,
+          "lines": [
+            187
           ]
         },
         {
@@ -165235,17 +165538,17 @@
         {
           "kind": "type",
           "name": "ParsedUVTP",
-          "declaration_line": 275,
+          "declaration_line": 291,
           "lines": [
-            279
+            295
           ]
         },
         {
           "kind": "type",
           "name": "ParsedUVTT",
-          "declaration_line": 268,
+          "declaration_line": 284,
           "lines": [
-            271
+            287
           ]
         },
         {
@@ -165275,9 +165578,9 @@
         {
           "kind": "type",
           "name": "UnkUVTX_1C",
-          "declaration_line": 203,
+          "declaration_line": 219,
           "lines": [
-            206
+            222
           ]
         },
         {
@@ -165321,15 +165624,15 @@
       "symbol": "unk9",
       "lines": [
         178,
-        297
+        313
       ],
       "owners": [
         {
           "kind": "type",
           "name": "ParsedUVEN",
-          "declaration_line": 287,
+          "declaration_line": 303,
           "lines": [
-            297
+            313
           ]
         },
         {
@@ -165348,24 +165651,24 @@
       "path": "include/uvasset_types.h",
       "symbol": "unkA",
       "lines": [
-        298,
-        335
+        314,
+        351
       ],
       "owners": [
         {
           "kind": "type",
           "name": "ParsedUVBT",
-          "declaration_line": 329,
+          "declaration_line": 345,
           "lines": [
-            335
+            351
           ]
         },
         {
           "kind": "type",
           "name": "ParsedUVEN",
-          "declaration_line": 287,
+          "declaration_line": 303,
           "lines": [
-            298
+            314
           ]
         }
       ]
@@ -165376,15 +165679,15 @@
       "path": "include/uvasset_types.h",
       "symbol": "unkB",
       "lines": [
-        299
+        315
       ],
       "owners": [
         {
           "kind": "type",
           "name": "ParsedUVEN",
-          "declaration_line": 287,
+          "declaration_line": 303,
           "lines": [
-            299
+            315
           ]
         }
       ]
@@ -165402,10 +165705,11 @@
         113,
         134,
         158,
-        194,
-        207,
-        272,
-        300
+        188,
+        210,
+        223,
+        288,
+        316
       ],
       "owners": [
         {
@@ -165419,25 +165723,33 @@
         {
           "kind": "type",
           "name": "ParsedUVEN",
-          "declaration_line": 287,
+          "declaration_line": 303,
           "lines": [
-            300
+            316
           ]
         },
         {
           "kind": "type",
           "name": "ParsedUVMD",
-          "declaration_line": 187,
+          "declaration_line": 203,
           "lines": [
-            194
+            210
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "ParsedUVMD_20",
+          "declaration_line": 184,
+          "lines": [
+            188
           ]
         },
         {
           "kind": "type",
           "name": "ParsedUVTT",
-          "declaration_line": 268,
+          "declaration_line": 284,
           "lines": [
-            272
+            288
           ]
         },
         {
@@ -165467,9 +165779,9 @@
         {
           "kind": "type",
           "name": "UnkUVTX_1C",
-          "declaration_line": 203,
+          "declaration_line": 219,
           "lines": [
-            207
+            223
           ]
         },
         {
@@ -165504,15 +165816,15 @@
       "path": "include/uvasset_types.h",
       "symbol": "unkD",
       "lines": [
-        301
+        317
       ],
       "owners": [
         {
           "kind": "type",
           "name": "ParsedUVEN",
-          "declaration_line": 287,
+          "declaration_line": 303,
           "lines": [
-            301
+            317
           ]
         }
       ]
@@ -165524,15 +165836,15 @@
       "symbol": "unkE",
       "lines": [
         39,
-        302
+        318
       ],
       "owners": [
         {
           "kind": "type",
           "name": "ParsedUVEN",
-          "declaration_line": 287,
+          "declaration_line": 303,
           "lines": [
-            302
+            318
           ]
         },
         {
@@ -165551,15 +165863,15 @@
       "path": "include/uvasset_types.h",
       "symbol": "unkF",
       "lines": [
-        303
+        319
       ],
       "owners": [
         {
           "kind": "type",
           "name": "ParsedUVEN",
-          "declaration_line": 287,
+          "declaration_line": 303,
           "lines": [
-            303
+            319
           ]
         }
       ]
@@ -215615,17 +215927,378 @@
       "path": "src/modules/uvmodelld_rom.c",
       "symbol": "unk0",
       "lines": [
-        120,
-        122
+        173,
+        193,
+        264,
+        275,
+        282,
+        327,
+        401,
+        403
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "uvModelLoaderReleaseRenderResources",
-          "declaration_line": 108,
+          "name": "uvModelLoaderParsePackedModel",
+          "declaration_line": 130,
           "lines": [
-            120,
-            122
+            173,
+            193,
+            264,
+            275,
+            282,
+            327
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvModelLoaderReleaseRenderResources",
+          "declaration_line": 389,
+          "lines": [
+            401,
+            403
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-970a8f0dbea3",
+      "kind": "offset_field",
+      "path": "src/modules/uvmodelld_rom.c",
+      "symbol": "unk10",
+      "lines": [
+        177,
+        196,
+        213,
+        282,
+        283,
+        284,
+        285,
+        286,
+        287,
+        310
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvModelLoaderParsePackedModel",
+          "declaration_line": 130,
+          "lines": [
+            177,
+            196,
+            213,
+            282,
+            283,
+            284,
+            285,
+            286,
+            287,
+            310
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-b8eb464c442f",
+      "kind": "offset_field",
+      "path": "src/modules/uvmodelld_rom.c",
+      "symbol": "unk12",
+      "lines": [
+        309
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvModelLoaderParsePackedModel",
+          "declaration_line": 130,
+          "lines": [
+            309
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-daf0652defad",
+      "kind": "offset_field",
+      "path": "src/modules/uvmodelld_rom.c",
+      "symbol": "unk14",
+      "lines": [
+        178,
+        214,
+        287,
+        311
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvModelLoaderParsePackedModel",
+          "declaration_line": 130,
+          "lines": [
+            178,
+            214,
+            287,
+            311
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-9f0e66218b82",
+      "kind": "offset_field",
+      "path": "src/modules/uvmodelld_rom.c",
+      "symbol": "unk18",
+      "lines": [
+        179,
+        197
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvModelLoaderParsePackedModel",
+          "declaration_line": 130,
+          "lines": [
+            179,
+            197
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-f36ea6408c4a",
+      "kind": "offset_field",
+      "path": "src/modules/uvmodelld_rom.c",
+      "symbol": "unk1C",
+      "lines": [
+        180,
+        198
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvModelLoaderParsePackedModel",
+          "declaration_line": 130,
+          "lines": [
+            180,
+            198
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-1df4065e1d42",
+      "kind": "offset_field",
+      "path": "src/modules/uvmodelld_rom.c",
+      "symbol": "unk20",
+      "lines": [
+        172,
+        173,
+        174,
+        175,
+        176,
+        177,
+        178,
+        179,
+        180,
+        181,
+        182,
+        184,
+        186,
+        188,
+        189,
+        190,
+        191,
+        193,
+        194,
+        195,
+        196,
+        197,
+        198,
+        199,
+        200,
+        201,
+        203,
+        204,
+        206,
+        207,
+        210,
+        372
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvModelLoaderParsePackedModel",
+          "declaration_line": 130,
+          "lines": [
+            172,
+            173,
+            174,
+            175,
+            176,
+            177,
+            178,
+            179,
+            180,
+            181,
+            182,
+            184,
+            186,
+            188,
+            189,
+            190,
+            191,
+            193,
+            194,
+            195,
+            196,
+            197,
+            198,
+            199,
+            200,
+            201,
+            203,
+            204,
+            206,
+            207,
+            210,
+            372
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-7c479ab46618",
+      "kind": "offset_field",
+      "path": "src/modules/uvmodelld_rom.c",
+      "symbol": "unk24",
+      "lines": [
+        182,
+        307
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvModelLoaderParsePackedModel",
+          "declaration_line": 130,
+          "lines": [
+            182,
+            307
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-4df33cda61b1",
+      "kind": "offset_field",
+      "path": "src/modules/uvmodelld_rom.c",
+      "symbol": "unk28",
+      "lines": [
+        189,
+        306
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvModelLoaderParsePackedModel",
+          "declaration_line": 130,
+          "lines": [
+            189,
+            306
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-a89899519c3b",
+      "kind": "offset_field",
+      "path": "src/modules/uvmodelld_rom.c",
+      "symbol": "unk2C",
+      "lines": [
+        184,
+        190,
+        200,
+        201,
+        305
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvModelLoaderParsePackedModel",
+          "declaration_line": 130,
+          "lines": [
+            184,
+            190,
+            200,
+            201,
+            305
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-83b11ffa7b47",
+      "kind": "offset_field",
+      "path": "src/modules/uvmodelld_rom.c",
+      "symbol": "unk30",
+      "lines": [
+        186,
+        190,
+        203,
+        204
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvModelLoaderParsePackedModel",
+          "declaration_line": 130,
+          "lines": [
+            186,
+            190,
+            203,
+            204
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-c0b58b1b2150",
+      "kind": "offset_field",
+      "path": "src/modules/uvmodelld_rom.c",
+      "symbol": "unk34",
+      "lines": [
+        188,
+        190,
+        206,
+        207
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvModelLoaderParsePackedModel",
+          "declaration_line": 130,
+          "lines": [
+            188,
+            190,
+            206,
+            207
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-7d37794ef280",
+      "kind": "offset_field",
+      "path": "src/modules/uvmodelld_rom.c",
+      "symbol": "unk38",
+      "lines": [
+        199
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvModelLoaderParsePackedModel",
+          "declaration_line": 130,
+          "lines": [
+            199
           ]
         }
       ]
@@ -215636,17 +216309,129 @@
       "path": "src/modules/uvmodelld_rom.c",
       "symbol": "unk4",
       "lines": [
-        119,
-        123
+        164,
+        174,
+        191,
+        194,
+        229,
+        232,
+        265,
+        268,
+        269,
+        284,
+        290,
+        292,
+        294,
+        295,
+        298,
+        303,
+        400,
+        404
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "uvModelLoaderReleaseRenderResources",
-          "declaration_line": 108,
+          "name": "uvModelLoaderParsePackedModel",
+          "declaration_line": 130,
           "lines": [
-            119,
-            123
+            164,
+            174,
+            191,
+            194,
+            229,
+            232,
+            265,
+            268,
+            269,
+            284,
+            290,
+            292,
+            294,
+            295,
+            298,
+            303
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvModelLoaderReleaseRenderResources",
+          "declaration_line": 389,
+          "lines": [
+            400,
+            404
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-0d9f43d466d1",
+      "kind": "offset_field",
+      "path": "src/modules/uvmodelld_rom.c",
+      "symbol": "unk5",
+      "lines": [
+        166,
+        171,
+        278
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvModelLoaderParsePackedModel",
+          "declaration_line": 130,
+          "lines": [
+            166,
+            171,
+            278
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-6f2f7c7f028c",
+      "kind": "offset_field",
+      "path": "src/modules/uvmodelld_rom.c",
+      "symbol": "unk6",
+      "lines": [
+        165,
+        230,
+        232,
+        245,
+        279,
+        376
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvModelLoaderParsePackedModel",
+          "declaration_line": 130,
+          "lines": [
+            165,
+            230,
+            232,
+            245,
+            279,
+            376
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-400c09627e00",
+      "kind": "offset_field",
+      "path": "src/modules/uvmodelld_rom.c",
+      "symbol": "unk7",
+      "lines": [
+        167,
+        280
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvModelLoaderParsePackedModel",
+          "declaration_line": 130,
+          "lines": [
+            167,
+            280
           ]
         }
       ]
@@ -215657,15 +216442,69 @@
       "path": "src/modules/uvmodelld_rom.c",
       "symbol": "unk8",
       "lines": [
-        121
+        175,
+        266,
+        272,
+        273,
+        276,
+        281,
+        282,
+        283,
+        284,
+        285,
+        286,
+        287,
+        375,
+        378,
+        402
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "uvModelLoaderReleaseRenderResources",
-          "declaration_line": 108,
+          "name": "uvModelLoaderParsePackedModel",
+          "declaration_line": 130,
           "lines": [
-            121
+            175,
+            266,
+            272,
+            273,
+            276,
+            281,
+            282,
+            283,
+            284,
+            285,
+            286,
+            287,
+            375,
+            378
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvModelLoaderReleaseRenderResources",
+          "declaration_line": 389,
+          "lines": [
+            402
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-ec6212f0c1a1",
+      "kind": "offset_field",
+      "path": "src/modules/uvmodelld_rom.c",
+      "symbol": "unk9",
+      "lines": [
+        267
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvModelLoaderParsePackedModel",
+          "declaration_line": 130,
+          "lines": [
+            267
           ]
         }
       ]
@@ -215676,17 +216515,61 @@
       "path": "src/modules/uvmodelld_rom.c",
       "symbol": "unkC",
       "lines": [
-        129,
-        130
+        176,
+        195,
+        212,
+        283,
+        320,
+        322,
+        410,
+        411
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "uvModelLoaderReleaseRenderResources",
-          "declaration_line": 108,
+          "name": "uvModelLoaderParsePackedModel",
+          "declaration_line": 130,
           "lines": [
-            129,
-            130
+            176,
+            195,
+            212,
+            283,
+            320,
+            322
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvModelLoaderReleaseRenderResources",
+          "declaration_line": 389,
+          "lines": [
+            410,
+            411
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-65d66dadb8d1",
+      "kind": "offset_field",
+      "path": "src/modules/uvmodelld_rom.c",
+      "symbol": "unkE",
+      "lines": [
+        308,
+        328,
+        329,
+        330
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvModelLoaderParsePackedModel",
+          "declaration_line": 130,
+          "lines": [
+            308,
+            328,
+            329,
+            330
           ]
         }
       ]
@@ -217768,87 +218651,87 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "unk0",
       "lines": [
-        9,
-        23,
-        48,
-        182,
-        211,
-        213,
-        218,
+        10,
+        24,
+        49,
+        203,
+        232,
         234,
-        244,
-        248,
-        259,
-        284,
-        291,
-        320,
-        404,
-        412
+        239,
+        255,
+        265,
+        269,
+        280,
+        305,
+        312,
+        341,
+        425,
+        433
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderApplyHeaderConfiguration",
-          "declaration_line": 311,
+          "declaration_line": 332,
           "lines": [
-            320
+            341
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
+          "declaration_line": 223,
           "lines": [
-            211,
-            213,
-            218,
+            232,
             234,
-            244,
-            248,
-            259,
-            284,
-            291
+            239,
+            255,
+            265,
+            269,
+            280,
+            305,
+            312
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxLoaderParseChunkStream",
-          "declaration_line": 140,
+          "declaration_line": 161,
           "lines": [
-            182
+            203
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxLoaderReleaseConfiguration",
-          "declaration_line": 396,
+          "declaration_line": 417,
           "lines": [
-            404,
-            412
+            425,
+            433
           ]
         },
         {
           "kind": "type",
           "name": "PfxLoaderCommonView",
-          "declaration_line": 22,
+          "declaration_line": 23,
           "lines": [
-            23
+            24
           ]
         },
         {
           "kind": "type",
           "name": "PfxLoaderSecondaryView",
-          "declaration_line": 8,
+          "declaration_line": 9,
           "lines": [
-            9
+            10
           ]
         },
         {
           "kind": "type",
           "name": "UVPXData",
-          "declaration_line": 47,
+          "declaration_line": 48,
           "lines": [
-            48
+            49
           ]
         }
       ]
@@ -217859,15 +218742,15 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "unk02",
       "lines": [
-        105
+        106
       ],
       "owners": [
         {
           "kind": "type",
           "name": "PfxLoaderHeaderConfig",
-          "declaration_line": 103,
+          "declaration_line": 104,
           "lines": [
-            105
+            106
           ]
         }
       ]
@@ -217878,57 +218761,57 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "unk10",
       "lines": [
-        16,
-        29,
-        52,
-        243,
-        270,
-        272,
-        327,
-        328
+        17,
+        30,
+        53,
+        264,
+        291,
+        293,
+        348,
+        349
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderApplyHeaderConfiguration",
-          "declaration_line": 311,
+          "declaration_line": 332,
           "lines": [
-            327,
-            328
+            348,
+            349
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
+          "declaration_line": 223,
           "lines": [
-            243,
-            270,
-            272
+            264,
+            291,
+            293
           ]
         },
         {
           "kind": "type",
           "name": "PfxLoaderCommonView",
-          "declaration_line": 22,
+          "declaration_line": 23,
           "lines": [
-            29
+            30
           ]
         },
         {
           "kind": "type",
           "name": "PfxLoaderSecondaryView",
-          "declaration_line": 8,
+          "declaration_line": 9,
           "lines": [
-            16
+            17
           ]
         },
         {
           "kind": "type",
           "name": "UVPXData",
-          "declaration_line": 47,
+          "declaration_line": 48,
           "lines": [
-            52
+            53
           ]
         }
       ]
@@ -217939,33 +218822,33 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "unk12",
       "lines": [
-        17,
-        30,
-        107
+        18,
+        31,
+        108
       ],
       "owners": [
         {
           "kind": "type",
           "name": "PfxLoaderCommonView",
-          "declaration_line": 22,
+          "declaration_line": 23,
           "lines": [
-            30
+            31
           ]
         },
         {
           "kind": "type",
           "name": "PfxLoaderHeaderConfig",
-          "declaration_line": 103,
+          "declaration_line": 104,
           "lines": [
-            107
+            108
           ]
         },
         {
           "kind": "type",
           "name": "PfxLoaderSecondaryView",
-          "declaration_line": 8,
+          "declaration_line": 9,
           "lines": [
-            17
+            18
           ]
         }
       ]
@@ -217976,44 +218859,44 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "unk14",
       "lines": [
-        18,
-        31,
-        53,
-        209,
-        286
+        19,
+        32,
+        54,
+        230,
+        307
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
+          "declaration_line": 223,
           "lines": [
-            209,
-            286
+            230,
+            307
           ]
         },
         {
           "kind": "type",
           "name": "PfxLoaderCommonView",
-          "declaration_line": 22,
+          "declaration_line": 23,
           "lines": [
-            31
+            32
           ]
         },
         {
           "kind": "type",
           "name": "PfxLoaderSecondaryView",
-          "declaration_line": 8,
+          "declaration_line": 9,
           "lines": [
-            18
+            19
           ]
         },
         {
           "kind": "type",
           "name": "UVPXData",
-          "declaration_line": 47,
+          "declaration_line": 48,
           "lines": [
-            53
+            54
           ]
         }
       ]
@@ -218024,15 +218907,15 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "unk16",
       "lines": [
-        33
+        34
       ],
       "owners": [
         {
           "kind": "type",
           "name": "PfxLoaderCommonView",
-          "declaration_line": 22,
+          "declaration_line": 23,
           "lines": [
-            33
+            34
           ]
         }
       ]
@@ -218043,46 +218926,46 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "unk18",
       "lines": [
-        20,
-        34,
-        54,
-        227,
-        245,
-        287
+        21,
+        35,
+        55,
+        248,
+        266,
+        308
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
+          "declaration_line": 223,
           "lines": [
-            227,
-            245,
-            287
+            248,
+            266,
+            308
           ]
         },
         {
           "kind": "type",
           "name": "PfxLoaderCommonView",
-          "declaration_line": 22,
+          "declaration_line": 23,
           "lines": [
-            34
+            35
           ]
         },
         {
           "kind": "type",
           "name": "PfxLoaderSecondaryView",
-          "declaration_line": 8,
+          "declaration_line": 9,
           "lines": [
-            20
+            21
           ]
         },
         {
           "kind": "type",
           "name": "UVPXData",
-          "declaration_line": 47,
+          "declaration_line": 48,
           "lines": [
-            54
+            55
           ]
         }
       ]
@@ -218093,15 +218976,15 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "unk1A",
       "lines": [
-        35
+        36
       ],
       "owners": [
         {
           "kind": "type",
           "name": "PfxLoaderCommonView",
-          "declaration_line": 22,
+          "declaration_line": 23,
           "lines": [
-            35
+            36
           ]
         }
       ]
@@ -218112,35 +218995,35 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "unk1C",
       "lines": [
-        36,
-        55,
-        253,
-        283
+        37,
+        56,
+        274,
+        304
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
+          "declaration_line": 223,
           "lines": [
-            253,
-            283
+            274,
+            304
           ]
         },
         {
           "kind": "type",
           "name": "PfxLoaderCommonView",
-          "declaration_line": 22,
+          "declaration_line": 23,
           "lines": [
-            36
+            37
           ]
         },
         {
           "kind": "type",
           "name": "UVPXData",
-          "declaration_line": 47,
+          "declaration_line": 48,
           "lines": [
-            55
+            56
           ]
         }
       ]
@@ -218151,24 +219034,24 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "unk1E",
       "lines": [
-        37,
-        225
+        38,
+        246
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
+          "declaration_line": 223,
           "lines": [
-            225
+            246
           ]
         },
         {
           "kind": "type",
           "name": "PfxLoaderCommonView",
-          "declaration_line": 22,
+          "declaration_line": 23,
           "lines": [
-            37
+            38
           ]
         }
       ]
@@ -218179,15 +219062,15 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "unk2",
       "lines": [
-        24
+        25
       ],
       "owners": [
         {
           "kind": "type",
           "name": "PfxLoaderCommonView",
-          "declaration_line": 22,
+          "declaration_line": 23,
           "lines": [
-            24
+            25
           ]
         }
       ]
@@ -218198,35 +219081,35 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "unk20",
       "lines": [
-        38,
-        56,
-        253,
-        283
+        39,
+        57,
+        274,
+        304
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
+          "declaration_line": 223,
           "lines": [
-            253,
-            283
+            274,
+            304
           ]
         },
         {
           "kind": "type",
           "name": "PfxLoaderCommonView",
-          "declaration_line": 22,
+          "declaration_line": 23,
           "lines": [
-            38
+            39
           ]
         },
         {
           "kind": "type",
           "name": "UVPXData",
-          "declaration_line": 47,
+          "declaration_line": 48,
           "lines": [
-            56
+            57
           ]
         }
       ]
@@ -218237,15 +219120,15 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "unk22",
       "lines": [
-        285
+        306
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
+          "declaration_line": 223,
           "lines": [
-            285
+            306
           ]
         }
       ]
@@ -218256,41 +219139,41 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "unk24",
       "lines": [
-        39,
-        57,
-        227,
-        229,
-        254,
+        40,
+        58,
+        248,
+        250,
         275,
-        283
+        296,
+        304
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
+          "declaration_line": 223,
           "lines": [
-            227,
-            229,
-            254,
+            248,
+            250,
             275,
-            283
+            296,
+            304
           ]
         },
         {
           "kind": "type",
           "name": "PfxLoaderCommonView",
-          "declaration_line": 22,
+          "declaration_line": 23,
           "lines": [
-            39
+            40
           ]
         },
         {
           "kind": "type",
           "name": "UVPXData",
-          "declaration_line": 47,
+          "declaration_line": 48,
           "lines": [
-            57
+            58
           ]
         }
       ]
@@ -218301,66 +219184,66 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "unk28",
       "lines": [
-        41,
-        58,
-        237,
-        242,
-        244,
-        245,
-        246,
-        247,
-        248,
-        249,
-        257,
-        261,
-        291,
-        427,
-        428,
-        432
+        42,
+        59,
+        258,
+        263,
+        265,
+        266,
+        267,
+        268,
+        269,
+        270,
+        278,
+        282,
+        312,
+        448,
+        449,
+        453
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
+          "declaration_line": 223,
           "lines": [
-            237,
-            242,
-            244,
-            245,
-            246,
-            247,
-            248,
-            249,
-            257,
-            261,
-            291
+            258,
+            263,
+            265,
+            266,
+            267,
+            268,
+            269,
+            270,
+            278,
+            282,
+            312
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxLoaderReleaseConfiguration",
-          "declaration_line": 396,
+          "declaration_line": 417,
           "lines": [
-            427,
-            428,
-            432
+            448,
+            449,
+            453
           ]
         },
         {
           "kind": "type",
           "name": "PfxLoaderCommonView",
-          "declaration_line": 22,
+          "declaration_line": 23,
           "lines": [
-            41
+            42
           ]
         },
         {
           "kind": "type",
           "name": "UVPXData",
-          "declaration_line": 47,
+          "declaration_line": 48,
           "lines": [
-            58
+            59
           ]
         }
       ]
@@ -218371,17 +219254,17 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "unk2A",
       "lines": [
-        263,
-        265
+        284,
+        286
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
+          "declaration_line": 223,
           "lines": [
-            263,
-            265
+            284,
+            286
           ]
         }
       ]
@@ -218392,50 +219275,50 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "unk2C",
       "lines": [
-        42,
-        59,
-        236,
-        240,
-        252,
-        267,
-        424,
-        425
+        43,
+        60,
+        257,
+        261,
+        273,
+        288,
+        445,
+        446
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
+          "declaration_line": 223,
           "lines": [
-            236,
-            240,
-            252,
-            267
+            257,
+            261,
+            273,
+            288
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxLoaderReleaseConfiguration",
-          "declaration_line": 396,
+          "declaration_line": 417,
           "lines": [
-            424,
-            425
+            445,
+            446
           ]
         },
         {
           "kind": "type",
           "name": "PfxLoaderCommonView",
-          "declaration_line": 22,
+          "declaration_line": 23,
           "lines": [
-            42
+            43
           ]
         },
         {
           "kind": "type",
           "name": "UVPXData",
-          "declaration_line": 47,
+          "declaration_line": 48,
           "lines": [
-            59
+            60
           ]
         }
       ]
@@ -218446,48 +219329,48 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "unk30",
       "lines": [
-        43,
-        60,
-        230,
-        241,
-        252,
-        434,
-        435
+        44,
+        61,
+        251,
+        262,
+        273,
+        455,
+        456
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
+          "declaration_line": 223,
           "lines": [
-            230,
-            241,
-            252
+            251,
+            262,
+            273
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxLoaderReleaseConfiguration",
-          "declaration_line": 396,
+          "declaration_line": 417,
           "lines": [
-            434,
-            435
+            455,
+            456
           ]
         },
         {
           "kind": "type",
           "name": "PfxLoaderCommonView",
-          "declaration_line": 22,
+          "declaration_line": 23,
           "lines": [
-            43
+            44
           ]
         },
         {
           "kind": "type",
           "name": "UVPXData",
-          "declaration_line": 47,
+          "declaration_line": 48,
           "lines": [
-            60
+            61
           ]
         }
       ]
@@ -218498,35 +219381,35 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "unk34",
       "lines": [
-        44,
-        61,
-        226,
-        245
+        45,
+        62,
+        247,
+        266
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
+          "declaration_line": 223,
           "lines": [
-            226,
-            245
+            247,
+            266
           ]
         },
         {
           "kind": "type",
           "name": "PfxLoaderCommonView",
-          "declaration_line": 22,
+          "declaration_line": 23,
           "lines": [
-            44
+            45
           ]
         },
         {
           "kind": "type",
           "name": "UVPXData",
-          "declaration_line": 47,
+          "declaration_line": 48,
           "lines": [
-            61
+            62
           ]
         }
       ]
@@ -218537,33 +219420,33 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "unk38",
       "lines": [
-        45,
-        62,
-        243
+        46,
+        63,
+        264
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
+          "declaration_line": 223,
           "lines": [
-            243
+            264
           ]
         },
         {
           "kind": "type",
           "name": "PfxLoaderCommonView",
-          "declaration_line": 22,
+          "declaration_line": 23,
           "lines": [
-            45
+            46
           ]
         },
         {
           "kind": "type",
           "name": "UVPXData",
-          "declaration_line": 47,
+          "declaration_line": 48,
           "lines": [
-            62
+            63
           ]
         }
       ]
@@ -218574,24 +219457,24 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "unk3C",
       "lines": [
-        63,
-        244
+        64,
+        265
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
+          "declaration_line": 223,
           "lines": [
-            244
+            265
           ]
         },
         {
           "kind": "type",
           "name": "UVPXData",
-          "declaration_line": 47,
+          "declaration_line": 48,
           "lines": [
-            63
+            64
           ]
         }
       ]
@@ -218602,76 +219485,76 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "unk4",
       "lines": [
-        11,
-        25,
-        49,
-        217,
-        228,
-        235,
-        239,
-        247,
+        12,
+        26,
+        50,
+        238,
         249,
+        256,
+        260,
         268,
-        323,
-        408,
-        413,
-        428
+        270,
+        289,
+        344,
+        429,
+        434,
+        449
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderApplyHeaderConfiguration",
-          "declaration_line": 311,
+          "declaration_line": 332,
           "lines": [
-            323
+            344
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
+          "declaration_line": 223,
           "lines": [
-            217,
-            228,
-            235,
-            239,
-            247,
+            238,
             249,
-            268
+            256,
+            260,
+            268,
+            270,
+            289
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxLoaderReleaseConfiguration",
-          "declaration_line": 396,
+          "declaration_line": 417,
           "lines": [
-            408,
-            413,
-            428
+            429,
+            434,
+            449
           ]
         },
         {
           "kind": "type",
           "name": "PfxLoaderCommonView",
-          "declaration_line": 22,
+          "declaration_line": 23,
           "lines": [
-            25
+            26
           ]
         },
         {
           "kind": "type",
           "name": "PfxLoaderSecondaryView",
-          "declaration_line": 8,
+          "declaration_line": 9,
           "lines": [
-            11
+            12
           ]
         },
         {
           "kind": "type",
           "name": "UVPXData",
-          "declaration_line": 47,
+          "declaration_line": 48,
           "lines": [
-            49
+            50
           ]
         }
       ]
@@ -218682,24 +219565,24 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "unk40",
       "lines": [
-        64,
-        257
+        65,
+        278
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
+          "declaration_line": 223,
           "lines": [
-            257
+            278
           ]
         },
         {
           "kind": "type",
           "name": "UVPXData",
-          "declaration_line": 47,
+          "declaration_line": 48,
           "lines": [
-            64
+            65
           ]
         }
       ]
@@ -218710,24 +219593,24 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "unk44",
       "lines": [
-        65,
-        257
+        66,
+        278
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
+          "declaration_line": 223,
           "lines": [
-            257
+            278
           ]
         },
         {
           "kind": "type",
           "name": "UVPXData",
-          "declaration_line": 47,
+          "declaration_line": 48,
           "lines": [
-            65
+            66
           ]
         }
       ]
@@ -218738,24 +219621,24 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "unk48",
       "lines": [
-        66,
-        258
+        67,
+        279
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
+          "declaration_line": 223,
           "lines": [
-            258
+            279
           ]
         },
         {
           "kind": "type",
           "name": "UVPXData",
-          "declaration_line": 47,
+          "declaration_line": 48,
           "lines": [
-            66
+            67
           ]
         }
       ]
@@ -218766,24 +219649,24 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "unk4C",
       "lines": [
-        67,
-        258
+        68,
+        279
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
+          "declaration_line": 223,
           "lines": [
-            258
+            279
           ]
         },
         {
           "kind": "type",
           "name": "UVPXData",
-          "declaration_line": 47,
+          "declaration_line": 48,
           "lines": [
-            67
+            68
           ]
         }
       ]
@@ -218794,24 +219677,24 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "unk50",
       "lines": [
-        68,
-        252
+        69,
+        273
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
+          "declaration_line": 223,
           "lines": [
-            252
+            273
           ]
         },
         {
           "kind": "type",
           "name": "UVPXData",
-          "declaration_line": 47,
+          "declaration_line": 48,
           "lines": [
-            68
+            69
           ]
         }
       ]
@@ -218822,24 +219705,24 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "unk54",
       "lines": [
-        69,
-        253
+        70,
+        274
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
+          "declaration_line": 223,
           "lines": [
-            253
+            274
           ]
         },
         {
           "kind": "type",
           "name": "UVPXData",
-          "declaration_line": 47,
+          "declaration_line": 48,
           "lines": [
-            69
+            70
           ]
         }
       ]
@@ -218850,24 +219733,24 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "unk58",
       "lines": [
-        70,
-        253
+        71,
+        274
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
+          "declaration_line": 223,
           "lines": [
-            253
+            274
           ]
         },
         {
           "kind": "type",
           "name": "UVPXData",
-          "declaration_line": 47,
+          "declaration_line": 48,
           "lines": [
-            70
+            71
           ]
         }
       ]
@@ -218878,24 +219761,24 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "unk5C",
       "lines": [
-        71,
-        253
+        72,
+        274
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
+          "declaration_line": 223,
           "lines": [
-            253
+            274
           ]
         },
         {
           "kind": "type",
           "name": "UVPXData",
-          "declaration_line": 47,
+          "declaration_line": 48,
           "lines": [
-            71
+            72
           ]
         }
       ]
@@ -218906,24 +219789,24 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "unk6",
       "lines": [
-        26,
-        228
+        27,
+        249
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
+          "declaration_line": 223,
           "lines": [
-            228
+            249
           ]
         },
         {
           "kind": "type",
           "name": "PfxLoaderCommonView",
-          "declaration_line": 22,
+          "declaration_line": 23,
           "lines": [
-            26
+            27
           ]
         }
       ]
@@ -218934,24 +219817,24 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "unk60",
       "lines": [
-        72,
-        289
+        73,
+        310
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
+          "declaration_line": 223,
           "lines": [
-            289
+            310
           ]
         },
         {
           "kind": "type",
           "name": "UVPXData",
-          "declaration_line": 47,
+          "declaration_line": 48,
           "lines": [
-            72
+            73
           ]
         }
       ]
@@ -218962,24 +219845,24 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "unk64",
       "lines": [
-        73,
-        289
+        74,
+        310
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
+          "declaration_line": 223,
           "lines": [
-            289
+            310
           ]
         },
         {
           "kind": "type",
           "name": "UVPXData",
-          "declaration_line": 47,
+          "declaration_line": 48,
           "lines": [
-            73
+            74
           ]
         }
       ]
@@ -218990,24 +219873,24 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "unk68",
       "lines": [
-        74,
-        289
+        75,
+        310
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
+          "declaration_line": 223,
           "lines": [
-            289
+            310
           ]
         },
         {
           "kind": "type",
           "name": "UVPXData",
-          "declaration_line": 47,
+          "declaration_line": 48,
           "lines": [
-            74
+            75
           ]
         }
       ]
@@ -219018,15 +219901,15 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "unk6E",
       "lines": [
-        276
+        297
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
+          "declaration_line": 223,
           "lines": [
-            276
+            297
           ]
         }
       ]
@@ -219037,74 +219920,74 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "unk8",
       "lines": [
-        12,
-        27,
-        50,
-        211,
-        233,
-        246,
-        290,
-        321,
-        331,
-        334,
-        405,
-        406,
-        414
+        13,
+        28,
+        51,
+        232,
+        254,
+        267,
+        311,
+        342,
+        352,
+        355,
+        426,
+        427,
+        435
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderApplyHeaderConfiguration",
-          "declaration_line": 311,
+          "declaration_line": 332,
           "lines": [
-            321,
-            331,
-            334
+            342,
+            352,
+            355
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
+          "declaration_line": 223,
           "lines": [
-            211,
-            233,
-            246,
-            290
+            232,
+            254,
+            267,
+            311
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxLoaderReleaseConfiguration",
-          "declaration_line": 396,
+          "declaration_line": 417,
           "lines": [
-            405,
-            406,
-            414
+            426,
+            427,
+            435
           ]
         },
         {
           "kind": "type",
           "name": "PfxLoaderCommonView",
-          "declaration_line": 22,
+          "declaration_line": 23,
           "lines": [
-            27
+            28
           ]
         },
         {
           "kind": "type",
           "name": "PfxLoaderSecondaryView",
-          "declaration_line": 8,
+          "declaration_line": 9,
           "lines": [
-            12
+            13
           ]
         },
         {
           "kind": "type",
           "name": "UVPXData",
-          "declaration_line": 47,
+          "declaration_line": 48,
           "lines": [
-            50
+            51
           ]
         }
       ]
@@ -219115,15 +219998,15 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "unk80",
       "lines": [
-        278
+        299
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
+          "declaration_line": 223,
           "lines": [
-            278
+            299
           ]
         }
       ]
@@ -219134,15 +220017,15 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "unkA",
       "lines": [
-        13
+        14
       ],
       "owners": [
         {
           "kind": "type",
           "name": "PfxLoaderSecondaryView",
-          "declaration_line": 8,
+          "declaration_line": 9,
           "lines": [
-            13
+            14
           ]
         }
       ]
@@ -219153,55 +220036,55 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "unkC",
       "lines": [
-        14,
-        28,
-        51,
-        232,
-        269,
-        274,
-        322
+        15,
+        29,
+        52,
+        253,
+        290,
+        295,
+        343
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderApplyHeaderConfiguration",
-          "declaration_line": 311,
+          "declaration_line": 332,
           "lines": [
-            322
+            343
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
+          "declaration_line": 223,
           "lines": [
-            232,
-            269,
-            274
+            253,
+            290,
+            295
           ]
         },
         {
           "kind": "type",
           "name": "PfxLoaderCommonView",
-          "declaration_line": 22,
+          "declaration_line": 23,
           "lines": [
-            28
+            29
           ]
         },
         {
           "kind": "type",
           "name": "PfxLoaderSecondaryView",
-          "declaration_line": 8,
+          "declaration_line": 9,
           "lines": [
-            14
+            15
           ]
         },
         {
           "kind": "type",
           "name": "UVPXData",
-          "declaration_line": 47,
+          "declaration_line": 48,
           "lines": [
-            51
+            52
           ]
         }
       ]
@@ -219212,15 +220095,15 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "unkC0",
       "lines": [
-        279
+        300
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
+          "declaration_line": 223,
           "lines": [
-            279
+            300
           ]
         }
       ]
@@ -219231,15 +220114,15 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "unkCC",
       "lines": [
-        280
+        301
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
+          "declaration_line": 223,
           "lines": [
-            280
+            301
           ]
         }
       ]
@@ -219250,15 +220133,15 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "unkE",
       "lines": [
-        15
+        16
       ],
       "owners": [
         {
           "kind": "type",
           "name": "PfxLoaderSecondaryView",
-          "declaration_line": 8,
+          "declaration_line": 9,
           "lines": [
-            15
+            16
           ]
         }
       ]
@@ -219269,15 +220152,15 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "unkE4",
       "lines": [
-        277
+        298
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
+          "declaration_line": 223,
           "lines": [
-            277
+            298
           ]
         }
       ]
@@ -219288,24 +220171,24 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "value08",
       "lines": [
-        96,
-        321
+        97,
+        342
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderApplyHeaderConfiguration",
-          "declaration_line": 311,
+          "declaration_line": 332,
           "lines": [
-            321
+            342
           ]
         },
         {
           "kind": "type",
           "name": "PfxLoaderHeaderFields",
-          "declaration_line": 93,
+          "declaration_line": 94,
           "lines": [
-            96
+            97
           ]
         }
       ]
@@ -225060,17 +225943,17 @@
       "path": "include/uvasset_types.h",
       "symbol": "UnkUVTX_1C",
       "lines": [
-        203,
-        213
+        219,
+        229
       ],
       "owners": [
         {
           "kind": "type",
           "name": "UnkUVTX_1C",
-          "declaration_line": 203,
+          "declaration_line": 219,
           "lines": [
-            203,
-            213
+            219,
+            229
           ]
         }
       ]
@@ -225652,6 +226535,25 @@
           "declaration_line": 57,
           "lines": [
             57
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-f9e46e623001",
+      "kind": "opaque_type",
+      "path": "include/uvpfxld_rom.h",
+      "symbol": "UnkStruct_uvpfx_rom_00404FA0_unk0",
+      "lines": [
+        9
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "UvPfxLd_Exports",
+          "declaration_line": 6,
+          "lines": [
+            9
           ]
         }
       ]
@@ -230875,6 +231777,25 @@
       ]
     },
     {
+      "id": "Q-2bf15ec42c0b",
+      "kind": "opaque_type",
+      "path": "src/modules/uvmodelld_rom.c",
+      "symbol": "UnkStruct_uvlight_rom_00401758",
+      "lines": [
+        142
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvModelLoaderParsePackedModel",
+          "declaration_line": 130,
+          "lines": [
+            142
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-b821cf515828",
       "kind": "opaque_type",
       "path": "src/modules/uvpfx_rom.c",
@@ -231317,15 +232238,15 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "UnkStruct_uvpfx_rom_00404FA0",
       "lines": [
-        114
+        115
       ],
       "owners": [
         {
           "kind": "global",
           "name": "D_uvpfxld_rom_00400EE0",
-          "declaration_line": 114,
+          "declaration_line": 115,
           "lines": [
-            114
+            115
           ]
         }
       ]
@@ -231336,35 +232257,35 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "UnkStruct_uvpfx_rom_00404FA0_unk0",
       "lines": [
-        121,
-        210,
-        219,
-        396
+        122,
+        231,
+        240,
+        417
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
+          "declaration_line": 223,
           "lines": [
-            210,
-            219
+            231,
+            240
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxLoaderReleaseConfiguration",
-          "declaration_line": 121,
+          "declaration_line": 122,
           "lines": [
-            121
+            122
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxLoaderReleaseConfiguration",
-          "declaration_line": 396,
+          "declaration_line": 417,
           "lines": [
-            396
+            417
           ]
         }
       ]
@@ -231375,24 +232296,24 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "UnkStruct_uvpfx_rom_00404FA0_unk2C",
       "lines": [
-        42,
-        108
+        43,
+        109
       ],
       "owners": [
         {
           "kind": "type",
           "name": "PfxLoaderCommonView",
-          "declaration_line": 22,
+          "declaration_line": 23,
           "lines": [
-            42
+            43
           ]
         },
         {
           "kind": "type",
           "name": "PfxLoaderHeaderConfig",
-          "declaration_line": 103,
+          "declaration_line": 104,
           "lines": [
-            108
+            109
           ]
         }
       ]
@@ -231403,35 +232324,35 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "UnkStruct_uvpfx_rom_00404FA0_unk4",
       "lines": [
-        115,
-        203,
-        216,
-        313
+        116,
+        224,
+        237,
+        334
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderApplyHeaderConfiguration",
-          "declaration_line": 311,
+          "declaration_line": 332,
           "lines": [
-            313
+            334
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
+          "declaration_line": 223,
           "lines": [
-            203,
-            216
+            224,
+            237
           ]
         },
         {
           "kind": "global",
           "name": "D_uvpfxld_rom_00400EE8",
-          "declaration_line": 115,
+          "declaration_line": 116,
           "lines": [
-            115
+            116
           ]
         }
       ]
@@ -241805,21 +242726,41 @@
       ]
     },
     {
-      "id": "Q-28cca329f683",
+      "id": "Q-0671958dc327",
       "kind": "original_quirk",
       "path": "src/modules/uvmodelld_rom.c",
-      "symbol": "Original COMM parser: read model totals and an optional 60-byte record, * allocate the combined vertex/state/command/part/LOD/matrix storage, then parse * the nested records. Preserve signed per-state vertex counts, pointer/count * reloads, paired color tokens and the final display-list terminators. The * original LGHT slot 0x28 consumes only the three supplied color words. * RE_ORIGINAL_QUIRK: the complete 36-byte stack header is copied before its * runtime table pointers are assigned. Some copied words and alignment bytes * have no preceding assignment here; the optional record also receives only * a byte at offset 0x28 before its next word at 0x2C. No zero-filled storage or * reachable use of the untouched bytes is established. * RE_UNKNOWN: valid header/per-part/per-LOD count relationships, command and * vertex capacities, block length and allocation-failure guarantees. Establish * the UVMD asset format and original caller domain before changing bounds or * allocation arithmetic. Optional-field meanings/units and recursive * UVMD/UVPX/UVTX/light ownership and cleanup remain unresolved; trace original * consumers and resource-release paths. * RE_UNKNOWN: exact source pointer lifetimes and permitted aliasing needed to * recover native field-pointer walks and floating load/store timing. The draft * is parked at 2592 bytes versus native 2784, with different full relocation * offsets. Preserve the original assembly until those contracts and complete * instruction/relocation identity are proved; matching helper counts alone * do not establish equivalent effects.",
+      "symbol": "* Parse packed model metadata into combined vertex, part, LOD, state, command and matrix * storage; acquire optional model/PFX references, textures and lights. RE_ORIGINAL_QUIRK: * retain unchecked allocations, partial header/optional-record initialization and three-word * light input, signed count arithmetic, empty branches and the final u64 pointer cast. * RE_UNKNOWN: input extent, count/capacity relationships, optional property units, failure * handling and recursive asset/light ownership. * * Encoded tokens and reserved Gfx slots are different counts. Pair color tokens; flush a * pending color before a vertex command or at loop end, then append the end command. * RE_UNKNOWN: the asset invariant ensuring all emitted commands fit the reserved slots; byte- * balance decrements do not enforce capacity. * * Fill only the three packed-color words at 0x24, 0x28 and 0x2C: the accepted * uvLightAcquireMatchingColorRecord provider reads only those caller fields, copies the * values into owned records and retains no caller pointer. Its -2 sentinel and -1 capacity * result are stored unchanged; valid capacity/result use remains a caller contract.",
       "lines": [
-        78
+        111
       ],
-      "evidence": "Original COMM parser: read model totals and an optional 60-byte record, * allocate the combined vertex/state/command/part/LOD/matrix storage, then parse * the nested records. Preserve signed per-state vertex counts, pointer/count * reloads, paired color tokens and the final display-list terminators. The * original LGHT slot 0x28 consumes only the three supplied color words. * RE_ORIGINAL_QUIRK: the complete 36-byte stack header is copied before its * runtime table pointers are assigned. Some copied words and alignment bytes * have no preceding assignment here; the optional record also receives only * a byte at offset 0x28 before its next word at 0x2C. No zero-filled storage or * reachable use of the untouched bytes is established. * RE_UNKNOWN: valid header/per-part/per-LOD count relationships, command and * vertex capacities, block length and allocation-failure guarantees. Establish * the UVMD asset format and original caller domain before changing bounds or * allocation arithmetic. Optional-field meanings/units and recursive * UVMD/UVPX/UVTX/light ownership and cleanup remain unresolved; trace original * consumers and resource-release paths. * RE_UNKNOWN: exact source pointer lifetimes and permitted aliasing needed to * recover native field-pointer walks and floating load/store timing. The draft * is parked at 2592 bytes versus native 2784, with different full relocation * offsets. Preserve the original assembly until those contracts and complete * instruction/relocation identity are proved; matching helper counts alone * do not establish equivalent effects.",
+      "evidence": "* Parse packed model metadata into combined vertex, part, LOD, state, command and matrix * storage; acquire optional model/PFX references, textures and lights. RE_ORIGINAL_QUIRK: * retain unchecked allocations, partial header/optional-record initialization and three-word * light input, signed count arithmetic, empty branches and the final u64 pointer cast. * RE_UNKNOWN: input extent, count/capacity relationships, optional property units, failure * handling and recursive asset/light ownership. * * Encoded tokens and reserved Gfx slots are different counts. Pair color tokens; flush a * pending color before a vertex command or at loop end, then append the end command. * RE_UNKNOWN: the asset invariant ensuring all emitted commands fit the reserved slots; byte- * balance decrements do not enforce capacity. * * Fill only the three packed-color words at 0x24, 0x28 and 0x2C: the accepted * uvLightAcquireMatchingColorRecord provider reads only those caller fields, copies the * values into owned records and retains no caller pointer. Its -2 sentinel and -1 capacity * result are stored unchanged; valid capacity/result use remains a caller contract.",
       "owners": [
         {
-          "kind": "assembly",
-          "name": "func_uvmodelld_rom_00400258",
-          "declaration_line": 101,
+          "kind": "function",
+          "name": "uvModelLoaderParsePackedModel",
+          "declaration_line": 130,
           "lines": [
-            78
+            111
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-cee3468ed671",
+      "kind": "original_quirk",
+      "path": "src/modules/uvmodelld_rom.c",
+      "symbol": "RE_ORIGINAL_QUIRK: matching-source u64 cast; historical source intent unknown.",
+      "lines": [
+        377
+      ],
+      "evidence": "RE_ORIGINAL_QUIRK: matching-source u64 cast; historical source intent unknown.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvModelLoaderParsePackedModel",
+          "declaration_line": 130,
+          "lines": [
+            377
           ]
         }
       ]
@@ -241830,16 +242771,16 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "Allocate and publish shared/per-particle records, then apply original UPFX * properties and FMTX/FVEC initialization with unchanged float promotions. * RE_ORIGINAL_QUIRK: capacity failure frees only the shared record without * clearing its pointer or releasing earlier published particles. The kind-2 * path leaves shared+0x30 untouched; another path allocates count*4 bytes then * copies 16 bytes unconditionally. RE_UNKNOWN: asset domains and ownership. * Unused compiler declarations temp_v0_2, temp_a0, temp_v0 and temp are * preserved; their intended source roles remain unknown.",
       "lines": [
-        193
+        214
       ],
       "evidence": "Allocate and publish shared/per-particle records, then apply original UPFX * properties and FMTX/FVEC initialization with unchanged float promotions. * RE_ORIGINAL_QUIRK: capacity failure frees only the shared record without * clearing its pointer or releasing earlier published particles. The kind-2 * path leaves shared+0x30 untouched; another path allocates count*4 bytes then * copies 16 bytes unconditionally. RE_UNKNOWN: asset domains and ownership. * Unused compiler declarations temp_v0_2, temp_a0, temp_v0 and temp are * preserved; their intended source roles remain unknown.",
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderBuildCommonParticleRecords",
-          "declaration_line": 202,
+          "declaration_line": 223,
           "lines": [
-            193
+            214
           ]
         }
       ]
@@ -241850,16 +242791,16 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "Dispatch COMM/TEXT/PIID/PHDR/PDAT blocks through the existing loader helpers. * Publish the bounded active-count increments and reload the shared result * after reader release. RE_ORIGINAL_QUIRK: unknown nonzero blocks skip this * routine's consumer and free. RE_UNKNOWN: valid chunk order and ownership.",
       "lines": [
-        135
+        156
       ],
       "evidence": "Dispatch COMM/TEXT/PIID/PHDR/PDAT blocks through the existing loader helpers. * Publish the bounded active-count increments and reload the shared result * after reader release. RE_ORIGINAL_QUIRK: unknown nonzero blocks skip this * routine's consumer and free. RE_UNKNOWN: valid chunk order and ownership.",
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxLoaderParseChunkStream",
-          "declaration_line": 140,
+          "declaration_line": 161,
           "lines": [
-            135
+            156
           ]
         }
       ]
@@ -244491,16 +245432,16 @@
       "path": "src/modules/uvpfxld_rom.c",
       "symbol": "Prefix view of the original 0x3C-byte COMMON allocation. The omitted * fields retain their unknown meanings; no allocation capacity is inferred.",
       "lines": [
-        101
+        102
       ],
       "evidence": "Prefix view of the original 0x3C-byte COMMON allocation. The omitted * fields retain their unknown meanings; no allocation capacity is inferred.",
       "owners": [
         {
           "kind": "type",
           "name": "PfxLoaderHeaderConfig",
-          "declaration_line": 103,
+          "declaration_line": 104,
           "lines": [
-            101
+            102
           ]
         }
       ]

@@ -1,9 +1,10 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+
 /* RE_UNKNOWN: observed widths/offsets only; unk field meanings unresolved. ASM owns storage. */
 #include "uvfvec_rom.h"
 #include "uvfmtx_rom.h"
-#include "uvpfx_rom.h"
+#include "uvpfxld_rom.h"
 #include "uvtseq_rom.h"
 typedef struct PfxLoaderSecondaryView_s {
     /* 0x00 */ s16 unk0;
@@ -120,7 +121,27 @@ extern UvPfx_Exports *D_uvpfxld_rom_004012F4;
 void uvPfxLoaderApplySharedResourceWord(s32 *sourceWord);
 void uvPfxLoaderReleaseConfiguration(UnkStruct_uvpfx_rom_00404FA0_unk0 *);
 extern void *D_uvpfxld_rom_00400EE4;
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvpfxld_rom/__entrypoint_func_uvpfxld_rom_400000.s")
+
+#line 77 "src/modules/uvpfxld_rom.c"
+/*
+ * Publish parse, cleanup and configuration-release exports, then load TSEQ, FMTX, FVEC and
+ * UPFX in that order. RE_UNKNOWN: dependency-load failure, repeated initialization and
+ * lifetime contracts.
+ */
+#line 77 "src/modules/uvpfxld_rom.c"
+void __entrypoint_func_uvpfxld_rom_400000(UvPfxLd_Exports *exports) {
+    uvUpdateFileAllocPtr(exports);
+    exports->uvPfxLoaderParseChunkStream = uvPfxLoaderParseChunkStream;
+    exports->uvPfxLoaderCleanup = uvPfxLoaderCleanup;
+    exports->uvPfxLoaderReleaseConfiguration = uvPfxLoaderReleaseConfiguration;
+#ifdef __sgi
+#line 78
+#endif
+    D_uvpfxld_rom_004012EC = uvLoadModule('TSEQ');
+    D_uvpfxld_rom_004012E8 = uvLoadModule('FMTX');
+    D_uvpfxld_rom_004012F0 = uvLoadModule('FVEC');
+    D_uvpfxld_rom_004012F4 = uvLoadModule('UPFX');
+}
 
 #line 14 "src/modules/uvpfxld_rom.c"
 /* Unload TSEQ, FMTX, FVEC and UPFX dependencies in their original order. */

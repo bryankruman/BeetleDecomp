@@ -179,10 +179,26 @@ typedef struct ParsedUVMD_1_s {
     /* 0xA */ char padA[2];                         /* maybe part of unk9[3]? */
 } ParsedUVMD_1;                                     /* size = 0xC */
 
+/* Original optional model record: retain the existing public name, size
+ * and offset-0x38 consumer. RE_UNKNOWN: property meanings and units. */
 typedef struct ParsedUVMD_20_s {
-    /* 0x0 */ char pad[0x38];
-    /* 0x38 */ s32 unk38;
+    f32 unk0;
+    f32 unk4;
+    f32 unk8;
+    f32 unkC;
+    f32 unk10;
+    f32 unk14;
+    f32 unk18;
+    f32 unk1C;
+    s32 unk20;
+    s32 unk24;
+    u8 unk28;
+    s32 unk2C;
+    s32 unk30;
+    s32 unk34;
+    s32 unk38;
 } ParsedUVMD_20;
+typedef ParsedUVMD_20 ParsedUVMD_3C;
 
 typedef struct ParsedUVMD {
     /* 0x00 */ ParsedUVMD_1* unk0;
