@@ -17,8 +17,8 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 1887 |
-| Preserved RE_ORIGINAL_QUIRK notes | 525 |
+| Explicit RE_UNKNOWN notes | 1889 |
+| Preserved RE_ORIGINAL_QUIRK notes | 526 |
 | Older comments with uncertainty language | 88 |
 | Documented original-behavior audits | 30 |
 | Assembly-backed functions or data | 749 |
@@ -1656,6 +1656,14 @@ For every future source wave, regenerate and check this index after code and str
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
 | draft_marker | `TODO` | — | [4](../src/libultra/libc/string.c#L4) |
+
+## src/libultra/libc/xprintf.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| explicit_unknown | `RE_UNKNOWN: Exact SDK release. Retained native intervals and static-storage associations are proved separately; linked placement and acceptance remain gated.` | — | [2](../src/libultra/libc/xprintf.c#L2) |
+| explicit_unknown | `RE_UNKNOWN: Original header provenance for these retained stock macros is unproved.` | — | [9](../src/libultra/libc/xprintf.c#L9) |
+| original_quirk | `RE_ORIGINAL_QUIRK: If the output callback returns NULL, stop and return the count written before this chunk.` | — | [41](../src/libultra/libc/xprintf.c#L41) |
 
 ## src/libultra/os/createmesgqueue.c
 

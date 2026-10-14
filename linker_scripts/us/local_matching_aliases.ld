@@ -181,7 +181,6 @@ D_800213F0 = 0x800213F0;
 D_800213F8 = 0x800213F8;
 
 /* Original native bindings for four stock AI/libc units; no storage allocation. */
-_Printf = 0x80016F80;
 func_8000FFD0 = 0x8000FFD0;
 
 /* Original controller references; retained assembly storage is not transferred. */

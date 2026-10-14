@@ -244,7 +244,7 @@ segments:
       - [0x16060, c, libultra/io/contpfs]
       - [0x16720, asm, sl_PFS_retained_16720]
       - [0x16B70, c, libultra/io/pfschecker]
-      - [0x17510, asm, sl_PFS_retained_17510]
+      - [0x17510, c, libultra/libc/xprintf] # Original TEXT3264; 8 trailing bytes carry no readable credit.
       - [0x181D0, c, libultra/libc/string]
       - [0x18270, c, libultra/audio/filter]
       - [0x18290, c, libultra/audio/reverb]
@@ -272,7 +272,9 @@ segments:
       - [0x21820, .data, libultra/audio/drvrnew]
       - [0x219B0, .data, libultra/audio/env]
       - [0x21AF0, data]
-      - [0x21B00, rodata] # Maybe?
+      - [0x21B00, rodata] # Retain original 16-byte storage prefix.
+      - { start: 0x21B10, type: .data, name: libultra/libc/xprintf, linker_section_order: .rodata } # Original formatter DATA80 in readonly order.
+      - [0x21B60, rodata] # Retain original 48-byte storage suffix through 0x21B90.
       - [0x21B90, .rodata, game_init]
       - [0x21C10, .rodata, profiler]
       - [0x21C30, .rodata, clocks]
@@ -287,7 +289,7 @@ segments:
       - [0x22060, .rodata, libultra/audio/env]
       - [0x220C0, .rodata, libultra/audio/seqplayer]
       - [0x22300, .rodata, libultra/audio/cents2ratio]
-      - [0x22310, rodata]
+      - [0x22310, .rodata, libultra/libc/xprintf] # Original formatter RODATA256 through 0x22410.
       - [0x22410, .rodata, libultra/audio/reverb]
       - [0x22440, .rodata, libultra/audio/seq]
       - [0x22450, rodata]
