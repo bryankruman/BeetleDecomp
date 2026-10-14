@@ -320,6 +320,7 @@
     "src/libultra/io/pfschecker.c": "392bd73a5e90a464cb76b7101075193c6a1fc08b4a83f18d76ff0ad7a066c73f",
     "src/libultra/io/pfsisplug.c": "c0c2eae5a8b136e9dbc156c18a291f4ca6fcfbb8c11f8fe0ef01a2ed037a2eca",
     "src/libultra/io/pfsselectbank.c": "220e29cc932c5187eda4e55c6279d22a57fd4635c3429afba4578febdae37391",
+    "src/libultra/io/pi_domain_timing.c": "f6b54b145cbccface7152588122fd63a9b713aec73be0f59b518d7af630cbc62",
     "src/libultra/io/piacs.c": "1e1868dbf136a88ff9f6d089b0205f0d130e3669d93f36e70d87375dd8f589f6",
     "src/libultra/io/pidma.c": "37ac5ed678f14547e528a618c5e3bde2ba07e426236e53a567ee3bf6552e401b",
     "src/libultra/io/pigetcmdq.c": "efec4cabcf71ed7cb1c561b0669260b2858084da5a86a5772b6f7a6e2ee26796",
@@ -458,7 +459,7 @@
     "src/modules/uvaudiomgr_rom.c": "091eb9501c55eea84418e8680a1a9e27727600c0042248c5c98caa450104e49d",
     "src/modules/uvbill_rom.c": "57c6145349646651e88c01b6d198839f604838f4c560c1c484f0f19569e4b5ae",
     "src/modules/uvblit_rom.c": "595c74110c5caa739c3ca4080271fb6f8badb587332041bd1bbb04a00cbc1be2",
-    "src/modules/uvcback_rom.c": "5a5a64b6af753f4f41875006a88a6ec1359a06e5660e70703e7e5b920a20f26b",
+    "src/modules/uvcback_rom.c": "3088d31495776755e330f6904c819279cf3b637c7d040618a4cca69d5e0bef1c",
     "src/modules/uvchannel_rom.c": "4ae39599b71421561f2c513b089ce8d718ac366aebebb927191b21f61fed562f",
     "src/modules/uvcmidi_rom.c": "75a5dc6e8a2023d71f98ab07d6e2f9574b8fce65483bd9f6a280ec382df909bd",
     "src/modules/uvcolor_rom.c": "22f694795c8e890364261a80fe545f801a0e0a3e9e0a002cfc609e76358eafbe",
@@ -502,9 +503,9 @@
     "src/modules/uvstring_rom.c": "5a1eebe82a708fc4d70acd7fbad07e81dca95315f5cbd019f8883cef3885d294",
     "src/modules/uvterra_rom.c": "e2dfa550aba51b4a261ef59f1319da66b3d5d8b83d8bfc557fbdde9d0e5083dc",
     "src/modules/uvterrald_rom.c": "33d201b66def68cd4b1331855c680188565ceb733e8ab27d985e84484868b2c0",
-    "src/modules/uvtexanim_rom.c": "0abef37207542717b58e02378141e946fefa775679ec9c7f353dc7f9cd3e8594",
+    "src/modules/uvtexanim_rom.c": "29b3c0fa52b848ed8ea75cc9bc445cde6aa8699d1f517bac5a3983e8eebb9f78",
     "src/modules/uvtexture_rom.c": "2a8601658513024913699c6eba65d0e34bc1c0584a27faf586cb92f373495f12",
-    "src/modules/uvtextureld_rom.c": "40078f22008c059c8d52b2b336b34fe65f0616caf260c0c4e77fe2d44df78ef6",
+    "src/modules/uvtextureld_rom.c": "2d19803220256cbac4616f9748679be71f2f98947fe795ec117b6775e946d78b",
     "src/modules/uvtexturexref_rom.c": "e9902ae4d69cdd80ff0a249ec5e1302e7572777e821ab0dd206b82c56eb5e715",
     "src/modules/uvtrackld_rom.c": "6a29991abcd9a4ed52730331c57ab1aecd17f65bbbe85ddd05e71a83cdf96eae",
     "src/modules/uvtseq_rom.c": "fe135c738feac9ab50f7cb326fe8dae821a7339655f0acaaed31808519f97a96",
@@ -519,22 +520,22 @@
     "src/sched.c": "26791ca9f30fd5355b11ea03a64a457757d2029595be26428c2925798105d9b4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "b8672b819a82772dbdf3faf975a9620be94bbec7ef62b552bf764ad43bd8c456",
+    "docs/STRATEGY_V4.md": "8586f5b153247f8f6d99c656d0c4ab9abc96dda682c8242d482d3ad1d40479b0",
     "docs/VALIDATION_20261006.md": "a46820c10aba34e3c1901bd9bdc4260f684530f44fcf7f61d9c7bb33e0c91031"
   },
   "counts": {
     "address_function": 905,
-    "address_global": 1649,
+    "address_global": 1651,
     "assembly": 744,
     "audit_debt": 30,
     "conditional_draft": 4,
     "decompiler_local": 622,
     "draft_marker": 55,
-    "explicit_unknown": 1904,
+    "explicit_unknown": 1909,
     "layout_padding": 281,
-    "offset_field": 1770,
+    "offset_field": 1772,
     "opaque_type": 285,
-    "original_quirk": 536,
+    "original_quirk": 539,
     "uncertainty_note": 88,
     "unused_identifier": 151
   },
@@ -22890,6 +22891,62 @@
           "declaration_line": 17,
           "lines": [
             17
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-c1a9507e0959",
+      "kind": "address_global",
+      "path": "src/libultra/io/pi_domain_timing.c",
+      "symbol": "D_80030F30",
+      "lines": [
+        17,
+        31
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "snapshotPiDomainTiming",
+          "declaration_line": 23,
+          "lines": [
+            31
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_80030F30",
+          "declaration_line": 17,
+          "lines": [
+            17
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-733597f8bfde",
+      "kind": "address_global",
+      "path": "src/libultra/io/pi_domain_timing.c",
+      "symbol": "D_80030FA8",
+      "lines": [
+        18,
+        37
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "snapshotPiDomainTiming",
+          "declaration_line": 23,
+          "lines": [
+            37
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_80030FA8",
+          "declaration_line": 18,
+          "lines": [
+            18
           ]
         }
       ]
@@ -122483,6 +122540,26 @@
       "evidence": "Select the Controller Pak bank used by subsequent block operations. * RE_UNKNOWN: Exact game SDK release is unproved."
     },
     {
+      "id": "Q-4ca2032398ae",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/io/pi_domain_timing.c",
+      "symbol": "RE_UNKNOWN: only timing/domain bytes5..9 are interpreted. The other115 * bytes of each raw120-byte owner and its nominal SDK identity remain unknown.",
+      "lines": [
+        5
+      ],
+      "evidence": "RE_UNKNOWN: only timing/domain bytes5..9 are interpreted. The other115 * bytes of each raw120-byte owner and its nominal SDK identity remain unknown.",
+      "owners": [
+        {
+          "kind": "type",
+          "name": "PiTimingSnapshotStorage",
+          "declaration_line": 7,
+          "lines": [
+            5
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-13d51aad145c",
       "kind": "explicit_unknown",
       "path": "src/libultra/io/piacs.c",
@@ -140807,6 +140884,26 @@
       ]
     },
     {
+      "id": "Q-1315d2e41632",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvcback_rom.c",
+      "symbol": "Dispatch non-NULL slots in array order, passing the same routineArg to each. * A NULL list is ignored; the scan uses capacity, not the number of callbacks. * RE_ORIGINAL_QUIRK: callbacks run against the live array. Removing the current * slot shifts later entries left, so a callback moved there is skipped this pass. * RE_UNKNOWN: same-list mutation during dispatch is not established at callers.",
+      "lines": [
+        68
+      ],
+      "evidence": "Dispatch non-NULL slots in array order, passing the same routineArg to each. * A NULL list is ignored; the scan uses capacity, not the number of callbacks. * RE_ORIGINAL_QUIRK: callbacks run against the live array. Removing the current * slot shifts later entries left, so a callback moved there is skipped this pass. * RE_UNKNOWN: same-list mutation during dispatch is not established at callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvExecuteCallbacks",
+          "declaration_line": 74,
+          "lines": [
+            68
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-360875343834",
       "kind": "explicit_unknown",
       "path": "src/modules/uvcback_rom.c",
@@ -155636,6 +155733,26 @@
       ]
     },
     {
+      "id": "Q-db67166a5b34",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvtexanim_rom.c",
+      "symbol": "Collect both borrowed animation pointers in two passes; preserve allocation/pause reset. * Existing collections and zero counts return; RE_ORIGINAL_QUIRK: no pointer deduplication. * RE_UNKNOWN: loaded-set stability, allocation success and borrowed-record lifetime.",
+      "lines": [
+        60
+      ],
+      "evidence": "Collect both borrowed animation pointers in two passes; preserve allocation/pause reset. * Existing collections and zero counts return; RE_ORIGINAL_QUIRK: no pointer deduplication. * RE_UNKNOWN: loaded-set stability, allocation success and borrowed-record lifetime.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvTexAnimCollectLoadedAnimationRecords",
+          "declaration_line": 65,
+          "lines": [
+            60
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-770c6dc27237",
       "kind": "explicit_unknown",
       "path": "src/modules/uvtexture_rom.c",
@@ -155811,6 +155928,46 @@
           "declaration_line": 142,
           "lines": [
             170
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-ac3a06704fcc",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvtextureld_rom.c",
+      "symbol": "Release secondary texture/sequence, animations, display list, private pixels, then resource. * Shared TEXT scratch is not freed/count-decremented; cached TEXT/TSEQ exports have no local guards. * RE_UNKNOWN: provider lifetime and coordination with uvtexanim's borrowed records before destruction.",
+      "lines": [
+        314
+      ],
+      "evidence": "Release secondary texture/sequence, animations, display list, private pixels, then resource. * Shared TEXT scratch is not freed/count-decremented; cached TEXT/TSEQ exports have no local guards. * RE_UNKNOWN: provider lifetime and coordination with uvtexanim's borrowed records before destruction.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvTextureFreeResource",
+          "declaration_line": 317,
+          "lines": [
+            314
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-a85b247364ba",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvtextureld_rom.c",
+      "symbol": "Unload GMGR/TEXT/TSEQ/UVTS in order; cached export pointers are not locally cleared. * RE_UNKNOWN: texture/animation teardown order and provider lifetime across unload/reload.",
+      "lines": [
+        54
+      ],
+      "evidence": "Unload GMGR/TEXT/TSEQ/UVTS in order; cached export pointers are not locally cleared. * RE_UNKNOWN: texture/animation teardown order and provider lifetime across unload/reload.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvTextureLoaderCleanup",
+          "declaration_line": 56,
+          "lines": [
+            54
           ]
         }
       ]
@@ -174157,6 +174314,44 @@
           "declaration_line": 785,
           "lines": [
             798
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-a246ae9e3c7b",
+      "kind": "offset_field",
+      "path": "src/libultra/io/pi_domain_timing.c",
+      "symbol": "unknownPrefix",
+      "lines": [
+        8
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "PiTimingSnapshotStorage",
+          "declaration_line": 7,
+          "lines": [
+            8
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-34b9f0726d63",
+      "kind": "offset_field",
+      "path": "src/libultra/io/pi_domain_timing.c",
+      "symbol": "unknownTail",
+      "lines": [
+        14
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "PiTimingSnapshotStorage",
+          "declaration_line": 7,
+          "lines": [
+            14
           ]
         }
       ]
@@ -242605,6 +242800,26 @@
       ]
     },
     {
+      "id": "Q-5a05fe544ad3",
+      "kind": "original_quirk",
+      "path": "src/modules/uvcback_rom.c",
+      "symbol": "Dispatch non-NULL slots in array order, passing the same routineArg to each. * A NULL list is ignored; the scan uses capacity, not the number of callbacks. * RE_ORIGINAL_QUIRK: callbacks run against the live array. Removing the current * slot shifts later entries left, so a callback moved there is skipped this pass. * RE_UNKNOWN: same-list mutation during dispatch is not established at callers.",
+      "lines": [
+        68
+      ],
+      "evidence": "Dispatch non-NULL slots in array order, passing the same routineArg to each. * A NULL list is ignored; the scan uses capacity, not the number of callbacks. * RE_ORIGINAL_QUIRK: callbacks run against the live array. Removing the current * slot shifts later entries left, so a callback moved there is skipped this pass. * RE_UNKNOWN: same-list mutation during dispatch is not established at callers.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvExecuteCallbacks",
+          "declaration_line": 74,
+          "lines": [
+            68
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-7461fad685e6",
       "kind": "original_quirk",
       "path": "src/modules/uvcback_rom.c",
@@ -246411,6 +246626,46 @@
           "declaration_line": 33,
           "lines": [
             22
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-3b9412019d32",
+      "kind": "original_quirk",
+      "path": "src/modules/uvtexanim_rom.c",
+      "symbol": "Collect both borrowed animation pointers in two passes; preserve allocation/pause reset. * Existing collections and zero counts return; RE_ORIGINAL_QUIRK: no pointer deduplication. * RE_UNKNOWN: loaded-set stability, allocation success and borrowed-record lifetime.",
+      "lines": [
+        60
+      ],
+      "evidence": "Collect both borrowed animation pointers in two passes; preserve allocation/pause reset. * Existing collections and zero counts return; RE_ORIGINAL_QUIRK: no pointer deduplication. * RE_UNKNOWN: loaded-set stability, allocation success and borrowed-record lifetime.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvTexAnimCollectLoadedAnimationRecords",
+          "declaration_line": 65,
+          "lines": [
+            60
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-d5260185054b",
+      "kind": "original_quirk",
+      "path": "src/modules/uvtexanim_rom.c",
+      "symbol": "Visit every collected pointer, advancing enabled records by the shared graphics scalar. * RE_ORIGINAL_QUIRK: aliases are revisited; a stop-mode endpoint clears the shared enable flag. * Preserve each coordinate's original wrap, stop, bounce or hold mode.",
+      "lines": [
+        130
+      ],
+      "evidence": "Visit every collected pointer, advancing enabled records by the shared graphics scalar. * RE_ORIGINAL_QUIRK: aliases are revisited; a stop-mode endpoint clears the shared enable flag. * Preserve each coordinate's original wrap, stop, bounce or hold mode.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvTexAnimAdvanceLoadedAnimationCoordinates",
+          "declaration_line": 135,
+          "lines": [
+            130
           ]
         }
       ]

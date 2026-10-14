@@ -57,9 +57,9 @@ void uvTexAnimModuleCleanup(void) {
 #line 44 "src/modules/uvtexanim_rom.c"
 
 #line 45 "src/modules/uvtexanim_rom.c"
-/* Count and collect both animation-record pointers exposed by loaded
- * textures. An existing collection or zero records returns immediately;
- * preserve the original allocation and shared pause reset behavior. */
+/* Collect both borrowed animation pointers in two passes; preserve allocation/pause reset.
+ * Existing collections and zero counts return; RE_ORIGINAL_QUIRK: no pointer deduplication.
+ * RE_UNKNOWN: loaded-set stability, allocation success and borrowed-record lifetime. */
 #line 48 "src/modules/uvtexanim_rom.c"
 
 void uvTexAnimCollectLoadedAnimationRecords(void) {
@@ -115,8 +115,8 @@ void uvTexAnimCollectLoadedAnimationRecords(void) {
 #line 94 "src/modules/uvtexanim_rom.c"
 
 #line 95 "src/modules/uvtexanim_rom.c"
-/* Free the shared animation array when present, then clear its pointer
- * and associated count in the original order. */
+/* Free only the pointer array, then clear its pointer/count in original order;
+ * no animation record is freed here; texture destruction frees those records. */
 void uvTexAnimReleaseSharedArray(void) {
     if (D_uvtexanim_rom_0040098C != NULL) {
         _uvMemFree(D_uvtexanim_rom_0040098C);
@@ -127,9 +127,9 @@ void uvTexAnimReleaseSharedArray(void) {
 #line 102 "src/modules/uvtexanim_rom.c"
 
 #line 103 "src/modules/uvtexanim_rom.c"
-/* Advance each enabled record by the shared graphics scalar. Each
- * coordinate retains its original wrap, stop, bounce or hold mode;
- * either stop-mode endpoint clears the shared record enable flag. */
+/* Visit every collected pointer, advancing enabled records by the shared graphics scalar.
+ * RE_ORIGINAL_QUIRK: aliases are revisited; a stop-mode endpoint clears the shared enable flag.
+ * Preserve each coordinate's original wrap, stop, bounce or hold mode. */
 #line 106 "src/modules/uvtexanim_rom.c"
 
 void uvTexAnimAdvanceLoadedAnimationCoordinates(s32 unusedUpdateValue) {

@@ -277,3 +277,4 @@ __osPfsInodeCache = D_80033630;
 func_80015F70 = osPfsChecker;
 func_800164A8 = corrupted_init;
 func_80016774 = corrupted;
+func_8000730C = snapshotPiDomainTiming;

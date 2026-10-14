@@ -65,11 +65,11 @@ void uvCallbackFree(void *ptr) {
 }
 #line 56 "src/modules/uvcback_rom.c"
 
-/*
- * Walk callback slots in order, skipping null routines.
- *
- * @param callbackList List whose capacity is reloaded after callback calls.
- * @param routineArg Unchanged 32-bit word forwarded to each called routine.
+/* Dispatch non-NULL slots in array order, passing the same routineArg to each.
+ * A NULL list is ignored; the scan uses capacity, not the number of callbacks.
+ * RE_ORIGINAL_QUIRK: callbacks run against the live array. Removing the current
+ * slot shifts later entries left, so a callback moved there is skipped this pass.
+ * RE_UNKNOWN: same-list mutation during dispatch is not established at callers.
  */
 void uvExecuteCallbacks(CallbackList *callbackList, s32 routineArg) {
     s32 entryIndex; /* RE_UNKNOWN: capacity/storage validity, mutation, reentrancy and list lifetime need actual callbacks and lifecycle callers. */

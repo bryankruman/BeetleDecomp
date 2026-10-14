@@ -122,7 +122,7 @@ segments:
       - [0x7C60, c, libultra/io/pirawread]
       - [0x7CC0, c, libultra/os/getactivequeue]
       - [0x7CD0, c, libultra/os/stopthread]
-      - [0x7D90, asm]
+      - [0x7D90, c, libultra/io/pi_domain_timing] # Retain manager380 ASM before timing snapshot116 C.
       - [0x7F80, c, libultra/os/setthreadpri]
       - [0x8060, c, libultra/io/pidma]
       - [0x8170, c, libultra/os/settimer]

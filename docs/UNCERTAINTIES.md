@@ -17,14 +17,14 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 1904 |
-| Preserved RE_ORIGINAL_QUIRK notes | 536 |
+| Explicit RE_UNKNOWN notes | 1909 |
+| Preserved RE_ORIGINAL_QUIRK notes | 539 |
 | Older comments with uncertainty language | 88 |
 | Documented original-behavior audits | 30 |
 | Assembly-backed functions or data | 744 |
 | Address-based function identifiers | 905 |
-| Address-based global identifiers | 1649 |
-| Offset-based fields or neutral typed fields | 1770 |
+| Address-based global identifiers | 1651 |
+| Offset-based fields or neutral typed fields | 1772 |
 | Layout padding to preserve | 281 |
 | Unresolved type names | 285 |
 | Explicit unused ABI, storage or local identifiers | 151 |
@@ -1440,6 +1440,16 @@ For every future source wave, regenerate and check this index after code and str
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
 | explicit_unknown | `Select the Controller Pak bank used by subsequent block operations. * RE_UNKNOWN: Exact game SDK release is unproved.` | — | [1](../src/libultra/io/pfsselectbank.c#L1) |
+
+## src/libultra/io/pi_domain_timing.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| address_global | `D_80030F30` | function `snapshotPiDomainTiming`, global `D_80030F30` | [17](../src/libultra/io/pi_domain_timing.c#L17), [31](../src/libultra/io/pi_domain_timing.c#L31) |
+| address_global | `D_80030FA8` | function `snapshotPiDomainTiming`, global `D_80030FA8` | [18](../src/libultra/io/pi_domain_timing.c#L18), [37](../src/libultra/io/pi_domain_timing.c#L37) |
+| explicit_unknown | `RE_UNKNOWN: only timing/domain bytes5..9 are interpreted. The other115 * bytes of each raw120-byte owner and its nominal SDK identity remain unknown.` | type `PiTimingSnapshotStorage` | [5](../src/libultra/io/pi_domain_timing.c#L5) |
+| offset_field | `unknownPrefix` | type `PiTimingSnapshotStorage` | [8](../src/libultra/io/pi_domain_timing.c#L8) |
+| offset_field | `unknownTail` | type `PiTimingSnapshotStorage` | [14](../src/libultra/io/pi_domain_timing.c#L14) |
 
 ## src/libultra/io/piacs.c
 
@@ -6851,11 +6861,13 @@ For every future source wave, regenerate and check this index after code and str
 | decompiler_local | `arg2` | function `uvAddCallback`, function `uvContainsCallback` | [10](../src/modules/uvcback_rom.c#L10), [12](../src/modules/uvcback_rom.c#L12) |
 | decompiler_local | `arg3` | function `uvAddCallback` | [10](../src/modules/uvcback_rom.c#L10) |
 | explicit_unknown | `* Allocate and clear a four-byte header plus capacity eight-byte entries. * * @param capacity Signed entry count; the original stores it unchanged. * RE_UNKNOWN: valid count/ran...` | function `uvCreateCallbackList` | [41](../src/modules/uvcback_rom.c#L41) |
+| explicit_unknown | `Dispatch non-NULL slots in array order, passing the same routineArg to each. * A NULL list is ignored; the scan uses capacity, not the number of callbacks. * RE_ORIGINAL_QUIRK: ...` | function `uvExecuteCallbacks` | [68](../src/modules/uvcback_rom.c#L68) |
 | explicit_unknown | `Forward the supplied pointer directly to the original memory-free service. * This body does not unlink callbacks, traverse a list or clear the caller's pointer. * RE_UNKNOWN: al...` | function `uvCallbackFree` | [58](../src/modules/uvcback_rom.c#L58) |
 | explicit_unknown | `Publish the seven original callback-list operations after the allocation hook, * retaining their store order. This entrypoint creates no callback list itself. * RE_UNKNOWN: expo...` | function `__entrypoint_func_uvcback_rom_400000` | [17](../src/modules/uvcback_rom.c#L17) |
 | explicit_unknown | `RE_UNKNOWN: capacity/storage validity, mutation, reentrancy and list lifetime need actual callbacks and lifecycle callers.` | function `uvExecuteCallbacks` | [75](../src/modules/uvcback_rom.c#L75) |
 | explicit_unknown | `RE_UNKNOWN: signed capacity/size domains, allocation success and list ownership/lifetime need original callers and allocator failure paths.` | function `uvCreateCallbackList` | [49](../src/modules/uvcback_rom.c#L49) |
 | explicit_unknown | `Return without performing a callback operation. * RE_UNKNOWN: the historical callback purpose remains unresolved.` | function `uvCallbackUnused` | [34](../src/modules/uvcback_rom.c#L34) |
+| original_quirk | `Dispatch non-NULL slots in array order, passing the same routineArg to each. * A NULL list is ignored; the scan uses capacity, not the number of callbacks. * RE_ORIGINAL_QUIRK: ...` | function `uvExecuteCallbacks` | [68](../src/modules/uvcback_rom.c#L68) |
 | original_quirk | `Insert a callback before a requested callback, in ascending priority * order, or at the first free slot for priority zero. Return -1 for a * null/full list. RE_ORIGINAL_QUIRK: t...` | function `uvAddCallback` | [89](../src/modules/uvcback_rom.c#L89) |
 | original_quirk | `Remove matching callback entries by shifting later entries left and * clearing the final callback pointer. RE_ORIGINAL_QUIRK: retain the * continuing forward scan, final priorit...` | function `uvRemoveCallback` | [155](../src/modules/uvcback_rom.c#L155) |
 
@@ -10128,6 +10140,7 @@ For every future source wave, regenerate and check this index after code and str
 | draft_marker | `TODO` | function `uvTexAnimCollectLoadedAnimationRecords` | [101](../src/modules/uvtexanim_rom.c#L101) |
 | explicit_unknown | `* Install four texture-animation exports, load GMGR, CBCK and TEXT, clear * the shared array pointer/count, and register the animation-coordinate * callback on graphics list 1 w...` | function `__entrypoint_func_uvtexanim_rom_400000` | [22](../src/modules/uvtexanim_rom.c#L22) |
 | explicit_unknown | `Apply a variadic sequence of texture-animation property tags. Tags update * the shared pause byte or record float/byte fields; tag 5 clamps both stored * coordinates with the or...` | function `uvTexAnimSetTaggedProperties` | [221](../src/modules/uvtexanim_rom.c#L221) |
+| explicit_unknown | `Collect both borrowed animation pointers in two passes; preserve allocation/pause reset. * Existing collections and zero counts return; RE_ORIGINAL_QUIRK: no pointer deduplicati...` | function `uvTexAnimCollectLoadedAnimationRecords` | [60](../src/modules/uvtexanim_rom.c#L60) |
 | offset_field | `unk0` | function `uvTexAnimSetTaggedProperties` | [247](../src/modules/uvtexanim_rom.c#L247) |
 | offset_field | `unk10` | function `uvTexAnimAdvanceLoadedAnimationCoordinates`, function `uvTexAnimSetTaggedProperties` | [151](../src/modules/uvtexanim_rom.c#L151), [155](../src/modules/uvtexanim_rom.c#L155), [156](../src/modules/uvtexanim_rom.c#L156), [160](../src/modules/uvtexanim_rom.c#L160), [161](../src/modules/uvtexanim_rom.c#L161), [165](../src/modules/uvtexanim_rom.c#L165), [166](../src/modules/uvtexanim_rom.c#L166), [168](../src/modules/uvtexanim_rom.c#L168) (+10 in JSON) |
 | offset_field | `unk14` | function `uvTexAnimAdvanceLoadedAnimationCoordinates`, function `uvTexAnimSetTaggedProperties` | [183](../src/modules/uvtexanim_rom.c#L183), [187](../src/modules/uvtexanim_rom.c#L187), [188](../src/modules/uvtexanim_rom.c#L188), [192](../src/modules/uvtexanim_rom.c#L192), [193](../src/modules/uvtexanim_rom.c#L193), [197](../src/modules/uvtexanim_rom.c#L197), [198](../src/modules/uvtexanim_rom.c#L198), [200](../src/modules/uvtexanim_rom.c#L200) (+10 in JSON) |
@@ -10139,6 +10152,8 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unkC` | function `uvTexAnimAdvanceLoadedAnimationCoordinates`, function `uvTexAnimSetTaggedProperties` | [183](../src/modules/uvtexanim_rom.c#L183), [186](../src/modules/uvtexanim_rom.c#L186), [191](../src/modules/uvtexanim_rom.c#L191), [199](../src/modules/uvtexanim_rom.c#L199), [202](../src/modules/uvtexanim_rom.c#L202), [205](../src/modules/uvtexanim_rom.c#L205), [209](../src/modules/uvtexanim_rom.c#L209), [252](../src/modules/uvtexanim_rom.c#L252) |
 | opaque_type | `UnkUVTX_1C` | function `uvTexAnimAdvanceLoadedAnimationCoordinates`, function `uvTexAnimSetTaggedProperties`, function `uvTexAnimSetTaggedProperties`, global `D_uvtexanim_rom_0040098C` | [11](../src/modules/uvtexanim_rom.c#L11), [16](../src/modules/uvtexanim_rom.c#L16), [138](../src/modules/uvtexanim_rom.c#L138), [229](../src/modules/uvtexanim_rom.c#L229), [233](../src/modules/uvtexanim_rom.c#L233) |
 | original_quirk | `* Install four texture-animation exports, load GMGR, CBCK and TEXT, clear * the shared array pointer/count, and register the animation-coordinate * callback on graphics list 1 w...` | function `__entrypoint_func_uvtexanim_rom_400000` | [22](../src/modules/uvtexanim_rom.c#L22) |
+| original_quirk | `Collect both borrowed animation pointers in two passes; preserve allocation/pause reset. * Existing collections and zero counts return; RE_ORIGINAL_QUIRK: no pointer deduplicati...` | function `uvTexAnimCollectLoadedAnimationRecords` | [60](../src/modules/uvtexanim_rom.c#L60) |
+| original_quirk | `Visit every collected pointer, advancing enabled records by the shared graphics scalar. * RE_ORIGINAL_QUIRK: aliases are revisited; a stop-mode endpoint clears the shared enable...` | function `uvTexAnimAdvanceLoadedAnimationCoordinates` | [130](../src/modules/uvtexanim_rom.c#L130) |
 | unused_identifier | `unusedUpdateValue` | function `uvTexAnimAdvanceLoadedAnimationCoordinates` | [135](../src/modules/uvtexanim_rom.c#L135) |
 
 ## src/modules/uvtexture_rom.c
@@ -10219,6 +10234,8 @@ For every future source wave, regenerate and check this index after code and str
 | explicit_unknown | `* Visit texture-file blocks with decode flag 1, expand each COMM block and * free that block, then release the file handle. Return the last texture or * NULL when no COMM block ...` | function `uvParseUVTX` | [64](../src/modules/uvtextureld_rom.c#L64) |
 | explicit_unknown | `Clamp image bytes to 4096 and copy into a private eight-byte-aligned buffer below the allocation-count limit. * At the limit, call TEXT's lazy 4096-byte scratch allocator; that ...` | function `uvTextureLoadImageBytes` | [102](../src/modules/uvtextureld_rom.c#L102) |
 | explicit_unknown | `Original US COMM audit: at most four rows; six allocated. RE_UNKNOWN: modified/dynamic inputs, caller checks and parsed-row lifetime; docs/evidence/us-texture-row-contract.json.` | function `_uvExpandTexture` | [170](../src/modules/uvtextureld_rom.c#L170) |
+| explicit_unknown | `Release secondary texture/sequence, animations, display list, private pixels, then resource. * Shared TEXT scratch is not freed/count-decremented; cached TEXT/TSEQ exports have ...` | function `uvTextureFreeResource` | [314](../src/modules/uvtextureld_rom.c#L314) |
+| explicit_unknown | `Unload GMGR/TEXT/TSEQ/UVTS in order; cached export pointers are not locally cleared. * RE_UNKNOWN: texture/animation teardown order and provider lifetime across unload/reload.` | function `uvTextureLoaderCleanup` | [54](../src/modules/uvtextureld_rom.c#L54) |
 | layout_padding | `pad` | function `_uvExpandTexture`, function `uvTextureFreeResource` | [147](../src/modules/uvtextureld_rom.c#L147), [318](../src/modules/uvtextureld_rom.c#L318) |
 | layout_padding | `pad0` | type `UnkTexture_Exports` | [6](../src/modules/uvtextureld_rom.c#L6) |
 | layout_padding | `pad18` | function `_uvExpandTexture` | [223](../src/modules/uvtextureld_rom.c#L223), [283](../src/modules/uvtextureld_rom.c#L283), [286](../src/modules/uvtextureld_rom.c#L286) |

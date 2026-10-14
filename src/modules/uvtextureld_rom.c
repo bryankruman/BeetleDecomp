@@ -51,8 +51,8 @@ void __entrypoint_func_uvtextureld_rom_400000(UvTextureLd_Exports* exports) {
 #line 49 "src/modules/uvtextureld_rom.c"
 
 #line 50 "src/modules/uvtextureld_rom.c"
-/* Unload graphics, texture, sequence and sequence-loader dependencies
- * in original order. Individual texture resources use their own destructor. */
+/* Unload GMGR/TEXT/TSEQ/UVTS in order; cached export pointers are not locally cleared.
+ * RE_UNKNOWN: texture/animation teardown order and provider lifetime across unload/reload. */
 void uvTextureLoaderCleanup(void) {
     uvUnloadModule('GMGR');
     uvUnloadModule('TEXT');
@@ -311,9 +311,9 @@ void* _uvExpandTexture(u8* inputCursor) {
 #line 283 "src/modules/uvtextureld_rom.c"
 
 #line 284 "src/modules/uvtextureld_rom.c"
-/* Release the secondary texture and sequence handle, optional animation
- * records, display list and privately allocated image bytes, then the resource.
- * Shared texture scratch is not freed or charged against the allocation count. */
+/* Release secondary texture/sequence, animations, display list, private pixels, then resource.
+ * Shared TEXT scratch is not freed/count-decremented; cached TEXT/TSEQ exports have no local guards.
+ * RE_UNKNOWN: provider lifetime and coordination with uvtexanim's borrowed records before destruction. */
 void uvTextureFreeResource(UnkStruct_uvtextureld_rom_00400A40* texture) {
     s32 pad;
     s32* image;

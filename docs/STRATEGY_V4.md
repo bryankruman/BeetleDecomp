@@ -3656,3 +3656,14 @@ Only the original positive 12-byte function contributes semantic credit.
 The candidate has four zero bytes outside its function; those bytes remain
 uncredited, and the original outside-function extent is unmeasured. The
 existing 12-byte data owner and its trailing eight bytes remain intact.
+
+The PI domain timing snapshot is recovered as `snapshotPiDomainTiming`, with
+the original `func_8000730C` identity retained by an exact linker alias.
+The mixed unit keeps the 380-byte PI manager in assembly before the
+116-byte C helper; the complete normal object must remain 496 bytes.
+Only the helper contributes new semantic credit. Its eight volatile
+hardware reads update five bytes in each existing 120-byte raw owner;
+the remaining 115 bytes and nominal SDK type provenance remain unknown.
+The isolated candidate's twelve extra alignment bytes do not enter
+the mixed owner or receive credit. Three approved older comment files
+preserve all twenty executable bodies and logical coordinates.
