@@ -17,8 +17,8 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 1889 |
-| Preserved RE_ORIGINAL_QUIRK notes | 526 |
+| Explicit RE_UNKNOWN notes | 1891 |
+| Preserved RE_ORIGINAL_QUIRK notes | 527 |
 | Older comments with uncertainty language | 88 |
 | Documented original-behavior audits | 30 |
 | Assembly-backed functions or data | 749 |
@@ -1656,6 +1656,19 @@ For every future source wave, regenerate and check this index after code and str
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
 | draft_marker | `TODO` | — | [4](../src/libultra/libc/string.c#L4) |
+
+## src/libultra/libc/xldtob.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| explicit_unknown | `RE_UNKNOWN: Exact SDK release.` | — | [2](../src/libultra/libc/xldtob.c#L2) |
+| original_quirk | `RE_ORIGINAL_QUIRK: The retained standalone _Ldunscale procedure only returns without assigning a result. Preserve its 8 native bytes with zero readable credit.` | — | [3](../src/libultra/libc/xldtob.c#L3) |
+
+## src/libultra/libc/xlitob.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| explicit_unknown | `RE_UNKNOWN: Exact SDK release; the retained O3 native association is proved separately.` | — | [2](../src/libultra/libc/xlitob.c#L2) |
 
 ## src/libultra/libc/xprintf.c
 

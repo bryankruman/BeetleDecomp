@@ -252,7 +252,9 @@ segments:
       - [0x18F60, c, libultra/audio/seq]
       - [0x19580, c, libultra/audio/synsetpriority]
       - [0x19590, c, libultra/io/pfsisplug]
-      - [0x198D0, asm, sl_audio_retained_198D0]
+      - [0x198D0, asm, sl_audio_retained_198D0] # Preserve original 288-byte ASM prefix; bcmp FUNC remains284.
+      - [0x199F0, c, libultra/libc/xlitob] # TEXT672; assessed664, alignment8 uncredited.
+      - [0x19C90, c, libultra/libc/xldtob] # TEXT2752; assessed2740, return-only procedure8 and alignment4 uncredited.
       - [0x1A750, c, libultra/libc/ldiv]
       - [0x1A8E0, databin, rspBootTextStart]
       - [0x1A9B0, databin, gspF3DEX2_fifoTextStart]
@@ -274,7 +276,7 @@ segments:
       - [0x21AF0, data]
       - [0x21B00, rodata] # Retain original 16-byte storage prefix.
       - { start: 0x21B10, type: .data, name: libultra/libc/xprintf, linker_section_order: .rodata } # Original formatter DATA80 in readonly order.
-      - [0x21B60, rodata] # Retain original 48-byte storage suffix through 0x21B90.
+      - { start: 0x21B60, type: .data, name: libultra/libc/xlitob, linker_section_order: .rodata } # Reassociate the original 48-byte suffix; allocate no new storage.
       - [0x21B90, .rodata, game_init]
       - [0x21C10, .rodata, profiler]
       - [0x21C30, .rodata, clocks]
@@ -292,7 +294,8 @@ segments:
       - [0x22310, .rodata, libultra/libc/xprintf] # Original formatter RODATA256 through 0x22410.
       - [0x22410, .rodata, libultra/audio/reverb]
       - [0x22440, .rodata, libultra/audio/seq]
-      - [0x22450, rodata]
+      - [0x22450, .rodata, libultra/libc/xldtob] # Original 96-byte constant prefix.
+      - [0x224B0, rodata] # Retain original 4896-byte suffix and its two relocation associations.
       - { start: 0x237D0, type: bss, vram: 0x80022BD0, name: bss_1 }
       - { start: 0x237D0, type: .bss, vram: 0x8002D1B0, name: profiler }
       - { start: 0x237D0, type: .bss, vram: 0x8002D940, name: clocks }
