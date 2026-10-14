@@ -17,13 +17,13 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 1902 |
-| Preserved RE_ORIGINAL_QUIRK notes | 533 |
+| Explicit RE_UNKNOWN notes | 1904 |
+| Preserved RE_ORIGINAL_QUIRK notes | 536 |
 | Older comments with uncertainty language | 88 |
 | Documented original-behavior audits | 30 |
 | Assembly-backed functions or data | 744 |
 | Address-based function identifiers | 905 |
-| Address-based global identifiers | 1648 |
+| Address-based global identifiers | 1649 |
 | Offset-based fields or neutral typed fields | 1770 |
 | Layout padding to preserve | 281 |
 | Unresolved type names | 285 |
@@ -1708,6 +1708,14 @@ For every future source wave, regenerate and check this index after code and str
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
 | original_quirk | `Remove the selected or running thread from scheduling and the active list, dispatching when the running thread is destroyed. * RE_ORIGINAL_QUIRK: Retain the priority-minus-one l...` | — | [1](../src/libultra/os/destroythread.c#L1) |
+
+## src/libultra/os/getactivequeue.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| address_global | `D_80020A54` | function `__osGetActiveQueue`, global `D_80020A54` | [12](../src/libultra/os/getactivequeue.c#L12), [15](../src/libultra/os/getactivequeue.c#L15) |
+| explicit_unknown | `Return the first pointer-sized word of retained D_80020A54 storage for * the existing OSThread-pointer consumers. This access-only declaration does * not allocate storage or cha...` | — | [1](../src/libultra/os/getactivequeue.c#L1) |
+| original_quirk | `Return the first pointer-sized word of retained D_80020A54 storage for * the existing OSThread-pointer consumers. This access-only declaration does * not allocate storage or cha...` | — | [1](../src/libultra/os/getactivequeue.c#L1) |
 
 ## src/libultra/os/getthreadpri.c
 
@@ -8143,17 +8151,18 @@ For every future source wave, regenerate and check this index after code and str
 | explicit_unknown | `* Publish the font operations, import STRG, GMGR, CBCK, STAT and SPRT in that * order, then register the reset-gate callback on graphics callback list 1 * with two zero argument...` | function `__entrypoint_func_uvfont_rom_400000` | [55](../src/modules/uvfont_rom.c#L55) |
 | explicit_unknown | `* Read the selected bitmap signed height, multiply it by the shared vertical * scale and convert the result to a signed word with the original truncation. * RE_UNKNOWN: Font/bit...` | function `uvFontHeight` | [198](../src/modules/uvfont_rom.c#L198) |
 | explicit_unknown | `* Remove the font reset-gate callback from graphics callback list 1 before * unloading STRG, GMGR, CBCK and STAT in that order. * RE_ORIGINAL_QUIRK: SPRT is imported by the init...` | function `uvModuleCleanup` | [86](../src/modules/uvfont_rom.c#L86) |
-| explicit_unknown | `Copy up to fifty glyph bitmaps into the sprite and return their * unscaled total width. The -1 terminator ends the sequence; -2 and -3 * reserve the first glyph width with a nul...` | function `_uvFontSpriteWidth` | [273](../src/modules/uvfont_rom.c#L273) |
-| explicit_unknown | `Queue a message using the original 124-byte stride and font word at +120. * RE_ORIGINAL_QUIRK: when the source length exceeds 50, write source[49] = 0 * but retain a glyph count...` | assembly `uvFontPrintStr` | [259](../src/modules/uvfont_rom.c#L259) |
+| explicit_unknown | `Fill sprite glyph entries and sum unscaled widths for up to 50 glyphs; -1 stops. * -2/-3 reserve first-glyph width with a null image. RE_ORIGINAL_QUIRK: * after 50 nonterminatin...` | function `_uvFontSpriteWidth` | [273](../src/modules/uvfont_rom.c#L273) |
 | explicit_unknown | `Return zero without reading any of the four arguments. * RE_UNKNOWN: the intended print operation and historical argument meanings remain unresolved.` | function `uvFontPrintStr16` | [209](../src/modules/uvfont_rom.c#L209) |
 | explicit_unknown | `Return zero without reading the supplied argument. * RE_UNKNOWN: the unimplemented string operation and historical argument domain remain unresolved.` | function `uvFontStrlLen` | [137](../src/modules/uvfont_rom.c#L137) |
 | explicit_unknown | `Return zero without reading the supplied argument. * RE_UNKNOWN: the unimplemented width operation and historical argument domain remain unresolved.` | function `uvFontStr16WidthFont` | [145](../src/modules/uvfont_rom.c#L145) |
 | explicit_unknown | `Store the four supplied color bytes in red, green, blue, alpha order. * RE_UNKNOWN: rendering interpretation and shared font-state lifetime need consumers.` | function `uvFontColor` | [126](../src/modules/uvfont_rom.c#L126) |
 | explicit_unknown | `Store the two supplied double-precision font scales in x-then-y order. * RE_UNKNOWN: scale units, valid values and shared font-state lifetime need consumers.` | function `uvFontScale` | [117](../src/modules/uvfont_rom.c#L117) |
+| explicit_unknown | `uvFontPrintStr writes the current 124-byte slot before incrementing only below * count 49. At count 49, later calls overwrite slot 49; see the draw/reset path. * RE_ORIGINAL_QUI...` | assembly `uvFontPrintStr` | [259](../src/modules/uvfont_rom.c#L259) |
 | original_quirk | `* Remove the font reset-gate callback from graphics callback list 1 before * unloading STRG, GMGR, CBCK and STAT in that order. * RE_ORIGINAL_QUIRK: SPRT is imported by the init...` | function `uvModuleCleanup` | [86](../src/modules/uvfont_rom.c#L86) |
-| original_quirk | `Queue a message using the original 124-byte stride and font word at +120. * RE_ORIGINAL_QUIRK: when the source length exceeds 50, write source[49] = 0 * but retain a glyph count...` | assembly `uvFontPrintStr` | [259](../src/modules/uvfont_rom.c#L259) |
+| original_quirk | `Fill sprite glyph entries and sum unscaled widths for up to 50 glyphs; -1 stops. * -2/-3 reserve first-glyph width with a null image. RE_ORIGINAL_QUIRK: * after 50 nonterminatin...` | function `_uvFontSpriteWidth` | [273](../src/modules/uvfont_rom.c#L273) |
 | original_quirk | `Select an already loaded font or load the requested UVFT resource, * then take its first bitmap width as the fallback glyph width. * RE_ORIGINAL_QUIRK: failed loading leaves the...` | function `uvSetFont` | [105](../src/modules/uvfont_rom.c#L105) |
 | original_quirk | `Sum mapped glyph widths, using the current fallback for missing * glyphs, and apply the horizontal scale on the normal return path. * RE_ORIGINAL_QUIRK: newlines neither add wid...` | function `_uvFontStrWidth` | [154](../src/modules/uvfont_rom.c#L154) |
+| original_quirk | `uvFontPrintStr writes the current 124-byte slot before incrementing only below * count 49. At count 49, later calls overwrite slot 49; see the draw/reset path. * RE_ORIGINAL_QUI...` | assembly `uvFontPrintStr` | [259](../src/modules/uvfont_rom.c#L259) |
 | unused_identifier | `unused` | function `uvFontAdvanceResetGate` | [335](../src/modules/uvfont_rom.c#L335) |
 
 ## src/modules/uvfontld_rom.c
@@ -9714,6 +9723,7 @@ For every future source wave, regenerate and check this index after code and str
 | explicit_unknown | `Allocate using the captured count, then traverse the reloaded global count. RE_UNKNOWN: failure, capacity and reinitialization ownership need original allocator/lifecycle callers.` | function `__entrypoint_func_uvsort_rom_400000` | [104](../src/modules/uvsort_rom.c#L104) |
 | explicit_unknown | `Append callback/context/key when count!=configured capacity and clear * cached-order bit. RE_UNKNOWN: group index, count/capacity/backing * correspondence need original setup/re...` | function `uvSortAppendCallback` | [273](../src/modules/uvsort_rom.c#L273) |
 | explicit_unknown | `CHAN property 13 writes its count only for valid channel 0. RE_UNKNOWN: startup/channel validity and prior +0x1C state need original callers/setup.` | function `__entrypoint_func_uvsort_rom_400000` | [111](../src/modules/uvsort_rom.c#L111) |
+| explicit_unknown | `Cache insertion order (flag one) or descending-key indices (flag two marks cached). * RE_ORIGINAL_QUIRK: zero negates to zero; two zero keys can repeat one callback index. * Res...` | function `uvSortBuildCallbackOrder` | [293](../src/modules/uvsort_rom.c#L293) |
 | explicit_unknown | `Consume zero-terminated option/value pairs; option 1 sets * insertion-order mode and unknown tags consume no value. RE_UNKNOWN: group * index and promoted-word stream extent/ter...` | function `uvSortSetGroupOptions` | [342](../src/modules/uvsort_rom.c#L342) |
 | explicit_unknown | `Defaults are 4 groups and 50 callbacks; nonzero settings words are copied literally. RE_UNKNOWN: two-word extent and signed size/count domains need original settings producers.` | function `__entrypoint_func_uvsort_rom_400000` | [83](../src/modules/uvsort_rom.c#L83) |
 | explicit_unknown | `FAKE. RE_UNKNOWN: historical empty conditional/compiler purpose needs original source evidence; preserve it.` | function `__entrypoint_func_uvsort_rom_400000` | [101](../src/modules/uvsort_rom.c#L101) |
@@ -9745,6 +9755,7 @@ For every future source wave, regenerate and check this index after code and str
 | opaque_type | `UnkStruct_00400C14_1_s` | type `UnkStruct_00400C14_1` | [6](../src/modules/uvsort_rom.c#L6) |
 | opaque_type | `UnkStruct_00400C14_s` | type `UnkStruct_00400C14` | [13](../src/modules/uvsort_rom.c#L13) |
 | original_quirk | `Allocate the first unused SORT group, record its byte tag, insert its * index into tag order and attach original callbacks for tracked channels. * Return -1 on an encountered ex...` | function `uvSortAllocateGroupForTag` | [145](../src/modules/uvsort_rom.c#L145) |
+| original_quirk | `Cache insertion order (flag one) or descending-key indices (flag two marks cached). * RE_ORIGINAL_QUIRK: zero negates to zero; two zero keys can repeat one callback index. * Res...` | function `uvSortBuildCallbackOrder` | [293](../src/modules/uvsort_rom.c#L293) |
 
 ## src/modules/uvsprt_rom.c
 

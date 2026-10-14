@@ -120,7 +120,7 @@ segments:
       - [0x7870, c, libultra/os/initialize]
       - [0x7B00, c, libultra/io/aisetfreq]
       - [0x7C60, c, libultra/io/pirawread]
-      - [0x7CC0, asm]
+      - [0x7CC0, c, libultra/os/getactivequeue]
       - [0x7CD0, c, libultra/os/stopthread]
       - [0x7D90, asm]
       - [0x7F80, c, libultra/os/setthreadpri]

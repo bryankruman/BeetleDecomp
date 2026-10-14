@@ -256,24 +256,24 @@ void uvFontPrintStr(s32 x, s32 y, char *str) {
     }
 }
 #else
-/* Queue a message using the original 124-byte stride and font word at +120.
- * RE_ORIGINAL_QUIRK: when the source length exceeds 50, write source[49] = 0
- * but retain a glyph count of 50. The terminator halfword then writes offset
- * +120, and the following font-pointer store overwrites that same offset.
- * Preserve this original order; this note changes no text or queue behavior.
- * RE_UNKNOWN: mutable-input and caller-length guarantees, actual queue
- * capacity and the glyph consumer's termination contract. Resolve through
- * all print callers, queue allocation/reset writers and glyph consumers;
- * the observed writes alone establish no reachable overflow or player fault. */
+/* uvFontPrintStr writes the current 124-byte slot before incrementing only below
+ * count 49. At count 49, later calls overwrite slot 49; see the draw/reset path.
+ * RE_ORIGINAL_QUIRK: length above 50 writes input[49] = 0 but keeps 50 glyphs;
+ * length exactly 50 also fills all 50 entries. The terminator at +120 is then
+ * overwritten by the font-pointer store, leaving no separate terminator there.
+ * See _uvFontSpriteWidth for the consumer's read-before-limit order.
+ * RE_UNKNOWN: input mutability/length guarantees, glyph coverage, queue capacity,
+ * external count writers and callback reentrancy require callers/layout proof.
+ * These observations alone establish no reachable overflow or player fault. */
 #line 186 "src/modules/uvfont_rom.c"
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvfont_rom/uvFontPrintStr.s")
 #endif
 
 #line 189 "src/modules/uvfont_rom.c"
-/* Copy up to fifty glyph bitmaps into the sprite and return their
- * unscaled total width. The -1 terminator ends the sequence; -2 and -3
- * reserve the first glyph width with a null image pointer.
- * RE_UNKNOWN: other glyph indices require a valid font bitmap range. */
+/* Fill sprite glyph entries and sum unscaled widths for up to 50 glyphs; -1 stops.
+ * -2/-3 reserve first-glyph width with a null image. RE_ORIGINAL_QUIRK:
+ * after 50 nonterminating entries, read index 50 before the limit break (message font word +120).
+ * RE_UNKNOWN: other glyph indices and readable termination extent need font/caller proof. */
 s32 _uvFontSpriteWidth(Sprite *sprite, s16 *glyphIndices, ParsedUVFT *font) {
     s32 totalWidth;
     s32 glyphIndex;
@@ -347,9 +347,9 @@ void uvFontAdvanceResetGate(s32 unused) {
 #endif
 
 #line 250 "src/modules/uvfont_rom.c"
-/* Emit the queued font messages inside one sprite drawing scope and
- * clear the queue after advancing the submitted-message total. Preserve
- * the final display-list adjustment and optional shade/combine reset. */
+/* Draw indices below the current message count, then advance the submitted total
+ * and clear the count. At unchanged count 49, draw 0..48, not the producer's slot 49.
+ * Preserve the final display-list adjustment and optional shade/combine reset. */
 void uvFontGenDList(void) {
     Gfx **displayList;
     s32 messageIndex;

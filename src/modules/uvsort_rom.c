@@ -290,10 +290,10 @@ void uvSortAppendCallback(s32 groupIndex, void *(*callback)(s32, s32), s32 conte
 #line 249 "src/modules/uvsort_rom.c"
 
 #line 250 "src/modules/uvsort_rom.c"
-/* Build insertion order when flag one is set; otherwise repeatedly
- * select the largest key, negate selected keys, then restore negative keys.
- * Flag two caches the resulting indices. Original key-range assumptions
- * are preserved; this is not a general stable signed-key sort. */
+/* Cache insertion order (flag one) or descending-key indices (flag two marks cached).
+ * RE_ORIGINAL_QUIRK: zero negates to zero; two zero keys can repeat one callback index.
+ * Restore all negative keys to positive, including inputs; the runner invokes every recorded index.
+ * RE_UNKNOWN: caller key-domain/finite guarantees and safety of the -1000000 selection floor. */
 void uvSortBuildCallbackOrder(UnkStruct_00400C14 *group) {
     s32 i;
     s32 j;

@@ -3649,3 +3649,10 @@ The recovered `osAiGetLength` source reads the raw 32-bit AI length register.
 Its original positive function covers 12 bytes; the remaining four bytes of
 the 16-byte source interval are unclassified and uncredited. The existing
 recompiled runtime audio substitution remains unchanged.
+
+The recovered legacy `__osGetActiveQueue` source returns the existing pointer
+word at `D_80020A54`; it does not substitute the standard active-queue global.
+Only the original positive 12-byte function contributes semantic credit.
+The candidate has four zero bytes outside its function; those bytes remain
+uncredited, and the original outside-function extent is unmeasured. The
+existing 12-byte data owner and its trailing eight bytes remain intact.

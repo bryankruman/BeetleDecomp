@@ -360,6 +360,7 @@
     "src/libultra/os/createmesgqueue.c": "4af364856251878b32cd0a12eef3ae564ab5f336af2ccb38ff7e1395601036ab",
     "src/libultra/os/createthread.c": "46fc95de0be7ba3c7be66f9ebb1f85857a2612ef95321ccd5f56cc15034754b9",
     "src/libultra/os/destroythread.c": "ba92dc6ff6e96a7e75a89649cf69d50198e92b05a96f87ab9fc3b9afa51148d7",
+    "src/libultra/os/getactivequeue.c": "f6725b6452c95a63d96454a91a0717b4545bf68dd8e360eff49edbffab4fa4aa",
     "src/libultra/os/getthreadpri.c": "4fa3b4c8c9eaee24fb2702c1c4c701b3675882357a7db0bf2178918042cab0e4",
     "src/libultra/os/gettime.c": "990dfd119c73f03ba87f4cb0f0eb1b0f0e919e20a150a110452b36935c531e34",
     "src/libultra/os/initialize.c": "9bb0665967fd09267816e78394978a1fa3eaf2e35ea15548e0d78f7ad057d967",
@@ -473,7 +474,7 @@
     "src/modules/uvenv_rom.c": "9ea1635553deee268116d31ef8acffabc13c541db719aa677ccb07fb38f4af3a",
     "src/modules/uvenvld_rom.c": "9a50f9ed8b969d03da706c9ab66357f3261b5d4fb0c3058560d66ae747c0a81a",
     "src/modules/uvfmtx_rom.c": "fda71ffec9f52a123e6df98cc0db580958fe5168c2dfd73f00d6766c295031b1",
-    "src/modules/uvfont_rom.c": "06b8914a67e61157365c8bedb840ac5994c24caae99d8c67089582c140cb6a37",
+    "src/modules/uvfont_rom.c": "e2f6d8d52bed675032dd35253fca6522d7d6b55c5e17286d807c41895b81ae33",
     "src/modules/uvfontld_rom.c": "793ae0ca927245738e5a11253be950dfa1d71936fecd3abe6c8aa0dc8461270f",
     "src/modules/uvfvec_rom.c": "63364224f8694fad80f18cd794d70ad7dace03b6281e8c44ece7429fd903bc0f",
     "src/modules/uvfx_rom.c": "192289df25b72810fa5fd4bd217223253c4f63955199b964cc87a1c29d4a5b8d",
@@ -496,7 +497,7 @@
     "src/modules/uvpfxld_rom.c": "def46200b5448e1bbc691b9581da8b66114689d85d1693af38808ea4e3b1061d",
     "src/modules/uvquat_rom.c": "4138a3f8310d5aed569fe99183dc4e6eec7750373b394f581cdeb43aa1278237",
     "src/modules/uvquery_rom.c": "96639fc8b9843fcbae569435ee73fb3889a73725b7fda22ca5f7623a7e14183f",
-    "src/modules/uvsort_rom.c": "bb146bf878382c9939ff7cd9073bcc55ba8152f56c5eb76298a023162e156f34",
+    "src/modules/uvsort_rom.c": "7fffa63a09be62a4445170c8783773e34f41e8694157e73f51984c0e1bef0498",
     "src/modules/uvsprt_rom.c": "171568155d69e72de6df5e28eb09a6f9927d1b9da8755d4066e3fa7d7412a6a0",
     "src/modules/uvstring_rom.c": "5a1eebe82a708fc4d70acd7fbad07e81dca95315f5cbd019f8883cef3885d294",
     "src/modules/uvterra_rom.c": "e2dfa550aba51b4a261ef59f1319da66b3d5d8b83d8bfc557fbdde9d0e5083dc",
@@ -518,22 +519,22 @@
     "src/sched.c": "26791ca9f30fd5355b11ea03a64a457757d2029595be26428c2925798105d9b4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "b8723386aa44aa3feab83f4ba2030d9df7eddadfbc6c76826f7219dc27f464fc",
+    "docs/STRATEGY_V4.md": "b8672b819a82772dbdf3faf975a9620be94bbec7ef62b552bf764ad43bd8c456",
     "docs/VALIDATION_20261006.md": "a46820c10aba34e3c1901bd9bdc4260f684530f44fcf7f61d9c7bb33e0c91031"
   },
   "counts": {
     "address_function": 905,
-    "address_global": 1648,
+    "address_global": 1649,
     "assembly": 744,
     "audit_debt": 30,
     "conditional_draft": 4,
     "decompiler_local": 622,
     "draft_marker": 55,
-    "explicit_unknown": 1902,
+    "explicit_unknown": 1904,
     "layout_padding": 281,
     "offset_field": 1770,
     "opaque_type": 285,
-    "original_quirk": 533,
+    "original_quirk": 536,
     "uncertainty_note": 88,
     "unused_identifier": 151
   },
@@ -22889,6 +22890,34 @@
           "declaration_line": 17,
           "lines": [
             17
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-4d0726466c85",
+      "kind": "address_global",
+      "path": "src/libultra/os/getactivequeue.c",
+      "symbol": "D_80020A54",
+      "lines": [
+        12,
+        15
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__osGetActiveQueue",
+          "declaration_line": 14,
+          "lines": [
+            15
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_80020A54",
+          "declaration_line": 12,
+          "lines": [
+            12
           ]
         }
       ]
@@ -123074,6 +123103,16 @@
       ]
     },
     {
+      "id": "Q-951ed808f883",
+      "kind": "explicit_unknown",
+      "path": "src/libultra/os/getactivequeue.c",
+      "symbol": "Return the first pointer-sized word of retained D_80020A54 storage for * the existing OSThread-pointer consumers. This access-only declaration does * not allocate storage or change the remaining eight owned bytes. * RE_ORIGINAL_QUIRK: retain the legacy exported name; the accessed word is * distinct from __osActiveQueue at the accepted 0x80020A4C alias. * RE_UNKNOWN: exception-publication condition and intended pointer role, * lifetime/null behavior, and the remaining eight bytes of this data owner.",
+      "lines": [
+        1
+      ],
+      "evidence": "Return the first pointer-sized word of retained D_80020A54 storage for * the existing OSThread-pointer consumers. This access-only declaration does * not allocate storage or change the remaining eight owned bytes. * RE_ORIGINAL_QUIRK: retain the legacy exported name; the accessed word is * distinct from __osActiveQueue at the accepted 0x80020A4C alias. * RE_UNKNOWN: exception-publication condition and intended pointer role, * lifetime/null behavior, and the remaining eight bytes of this data owner."
+    },
+    {
       "id": "Q-800c9fb12442",
       "kind": "explicit_unknown",
       "path": "src/libultra/os/gettime.c",
@@ -147067,14 +147106,14 @@
       ]
     },
     {
-      "id": "Q-ad9cedd5beb6",
+      "id": "Q-bcf723459025",
       "kind": "explicit_unknown",
       "path": "src/modules/uvfont_rom.c",
-      "symbol": "Copy up to fifty glyph bitmaps into the sprite and return their * unscaled total width. The -1 terminator ends the sequence; -2 and -3 * reserve the first glyph width with a null image pointer. * RE_UNKNOWN: other glyph indices require a valid font bitmap range.",
+      "symbol": "Fill sprite glyph entries and sum unscaled widths for up to 50 glyphs; -1 stops. * -2/-3 reserve first-glyph width with a null image. RE_ORIGINAL_QUIRK: * after 50 nonterminating entries, read index 50 before the limit break (message font word +120). * RE_UNKNOWN: other glyph indices and readable termination extent need font/caller proof.",
       "lines": [
         273
       ],
-      "evidence": "Copy up to fifty glyph bitmaps into the sprite and return their * unscaled total width. The -1 terminator ends the sequence; -2 and -3 * reserve the first glyph width with a null image pointer. * RE_UNKNOWN: other glyph indices require a valid font bitmap range.",
+      "evidence": "Fill sprite glyph entries and sum unscaled widths for up to 50 glyphs; -1 stops. * -2/-3 reserve first-glyph width with a null image. RE_ORIGINAL_QUIRK: * after 50 nonterminating entries, read index 50 before the limit break (message font word +120). * RE_UNKNOWN: other glyph indices and readable termination extent need font/caller proof.",
       "owners": [
         {
           "kind": "function",
@@ -147082,26 +147121,6 @@
           "declaration_line": 277,
           "lines": [
             273
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-5f3c73ca2b3e",
-      "kind": "explicit_unknown",
-      "path": "src/modules/uvfont_rom.c",
-      "symbol": "Queue a message using the original 124-byte stride and font word at +120. * RE_ORIGINAL_QUIRK: when the source length exceeds 50, write source[49] = 0 * but retain a glyph count of 50. The terminator halfword then writes offset * +120, and the following font-pointer store overwrites that same offset. * Preserve this original order; this note changes no text or queue behavior. * RE_UNKNOWN: mutable-input and caller-length guarantees, actual queue * capacity and the glyph consumer's termination contract. Resolve through * all print callers, queue allocation/reset writers and glyph consumers; * the observed writes alone establish no reachable overflow or player fault.",
-      "lines": [
-        259
-      ],
-      "evidence": "Queue a message using the original 124-byte stride and font word at +120. * RE_ORIGINAL_QUIRK: when the source length exceeds 50, write source[49] = 0 * but retain a glyph count of 50. The terminator halfword then writes offset * +120, and the following font-pointer store overwrites that same offset. * Preserve this original order; this note changes no text or queue behavior. * RE_UNKNOWN: mutable-input and caller-length guarantees, actual queue * capacity and the glyph consumer's termination contract. Resolve through * all print callers, queue allocation/reset writers and glyph consumers; * the observed writes alone establish no reachable overflow or player fault.",
-      "owners": [
-        {
-          "kind": "assembly",
-          "name": "uvFontPrintStr",
-          "declaration_line": 269,
-          "lines": [
-            259
           ]
         }
       ]
@@ -147202,6 +147221,26 @@
           "declaration_line": 120,
           "lines": [
             117
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-26c9a160694f",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvfont_rom.c",
+      "symbol": "uvFontPrintStr writes the current 124-byte slot before incrementing only below * count 49. At count 49, later calls overwrite slot 49; see the draw/reset path. * RE_ORIGINAL_QUIRK: length above 50 writes input[49] = 0 but keeps 50 glyphs; * length exactly 50 also fills all 50 entries. The terminator at +120 is then * overwritten by the font-pointer store, leaving no separate terminator there. * See _uvFontSpriteWidth for the consumer's read-before-limit order. * RE_UNKNOWN: input mutability/length guarantees, glyph coverage, queue capacity, * external count writers and callback reentrancy require callers/layout proof. * These observations alone establish no reachable overflow or player fault.",
+      "lines": [
+        259
+      ],
+      "evidence": "uvFontPrintStr writes the current 124-byte slot before incrementing only below * count 49. At count 49, later calls overwrite slot 49; see the draw/reset path. * RE_ORIGINAL_QUIRK: length above 50 writes input[49] = 0 but keeps 50 glyphs; * length exactly 50 also fills all 50 entries. The terminator at +120 is then * overwritten by the font-pointer store, leaving no separate terminator there. * See _uvFontSpriteWidth for the consumer's read-before-limit order. * RE_UNKNOWN: input mutability/length guarantees, glyph coverage, queue capacity, * external count writers and callback reentrancy require callers/layout proof. * These observations alone establish no reachable overflow or player fault.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "uvFontPrintStr",
+          "declaration_line": 269,
+          "lines": [
+            259
           ]
         }
       ]
@@ -153793,6 +153832,26 @@
           "declaration_line": 67,
           "lines": [
             111
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-2a351f6d72bd",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvsort_rom.c",
+      "symbol": "Cache insertion order (flag one) or descending-key indices (flag two marks cached). * RE_ORIGINAL_QUIRK: zero negates to zero; two zero keys can repeat one callback index. * Restore all negative keys to positive, including inputs; the runner invokes every recorded index. * RE_UNKNOWN: caller key-domain/finite guarantees and safety of the -1000000 selection floor.",
+      "lines": [
+        293
+      ],
+      "evidence": "Cache insertion order (flag one) or descending-key indices (flag two marks cached). * RE_ORIGINAL_QUIRK: zero negates to zero; two zero keys can repeat one callback index. * Restore all negative keys to positive, including inputs; the runner invokes every recorded index. * RE_UNKNOWN: caller key-domain/finite guarantees and safety of the -1000000 selection floor.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvSortBuildCallbackOrder",
+          "declaration_line": 297,
+          "lines": [
+            293
           ]
         }
       ]
@@ -237117,6 +237176,16 @@
       "evidence": "Remove the selected or running thread from scheduling and the active list, dispatching when the running thread is destroyed. * RE_ORIGINAL_QUIRK: Retain the priority-minus-one list terminator and the original dispatch/restore order."
     },
     {
+      "id": "Q-d75f061e6600",
+      "kind": "original_quirk",
+      "path": "src/libultra/os/getactivequeue.c",
+      "symbol": "Return the first pointer-sized word of retained D_80020A54 storage for * the existing OSThread-pointer consumers. This access-only declaration does * not allocate storage or change the remaining eight owned bytes. * RE_ORIGINAL_QUIRK: retain the legacy exported name; the accessed word is * distinct from __osActiveQueue at the accepted 0x80020A4C alias. * RE_UNKNOWN: exception-publication condition and intended pointer role, * lifetime/null behavior, and the remaining eight bytes of this data owner.",
+      "lines": [
+        1
+      ],
+      "evidence": "Return the first pointer-sized word of retained D_80020A54 storage for * the existing OSThread-pointer consumers. This access-only declaration does * not allocate storage or change the remaining eight owned bytes. * RE_ORIGINAL_QUIRK: retain the legacy exported name; the accessed word is * distinct from __osActiveQueue at the accepted 0x80020A4C alias. * RE_UNKNOWN: exception-publication condition and intended pointer role, * lifetime/null behavior, and the remaining eight bytes of this data owner."
+    },
+    {
       "id": "Q-1084fede338d",
       "kind": "original_quirk",
       "path": "src/libultra/os/getthreadpri.c",
@@ -243948,21 +244017,21 @@
       ]
     },
     {
-      "id": "Q-1d8b73d9ca4c",
+      "id": "Q-36ca047ecd31",
       "kind": "original_quirk",
       "path": "src/modules/uvfont_rom.c",
-      "symbol": "Queue a message using the original 124-byte stride and font word at +120. * RE_ORIGINAL_QUIRK: when the source length exceeds 50, write source[49] = 0 * but retain a glyph count of 50. The terminator halfword then writes offset * +120, and the following font-pointer store overwrites that same offset. * Preserve this original order; this note changes no text or queue behavior. * RE_UNKNOWN: mutable-input and caller-length guarantees, actual queue * capacity and the glyph consumer's termination contract. Resolve through * all print callers, queue allocation/reset writers and glyph consumers; * the observed writes alone establish no reachable overflow or player fault.",
+      "symbol": "Fill sprite glyph entries and sum unscaled widths for up to 50 glyphs; -1 stops. * -2/-3 reserve first-glyph width with a null image. RE_ORIGINAL_QUIRK: * after 50 nonterminating entries, read index 50 before the limit break (message font word +120). * RE_UNKNOWN: other glyph indices and readable termination extent need font/caller proof.",
       "lines": [
-        259
+        273
       ],
-      "evidence": "Queue a message using the original 124-byte stride and font word at +120. * RE_ORIGINAL_QUIRK: when the source length exceeds 50, write source[49] = 0 * but retain a glyph count of 50. The terminator halfword then writes offset * +120, and the following font-pointer store overwrites that same offset. * Preserve this original order; this note changes no text or queue behavior. * RE_UNKNOWN: mutable-input and caller-length guarantees, actual queue * capacity and the glyph consumer's termination contract. Resolve through * all print callers, queue allocation/reset writers and glyph consumers; * the observed writes alone establish no reachable overflow or player fault.",
+      "evidence": "Fill sprite glyph entries and sum unscaled widths for up to 50 glyphs; -1 stops. * -2/-3 reserve first-glyph width with a null image. RE_ORIGINAL_QUIRK: * after 50 nonterminating entries, read index 50 before the limit break (message font word +120). * RE_UNKNOWN: other glyph indices and readable termination extent need font/caller proof.",
       "owners": [
         {
-          "kind": "assembly",
-          "name": "uvFontPrintStr",
-          "declaration_line": 269,
+          "kind": "function",
+          "name": "_uvFontSpriteWidth",
+          "declaration_line": 277,
           "lines": [
-            259
+            273
           ]
         }
       ]
@@ -244003,6 +244072,26 @@
           "declaration_line": 158,
           "lines": [
             154
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-17c1ca3dc2a2",
+      "kind": "original_quirk",
+      "path": "src/modules/uvfont_rom.c",
+      "symbol": "uvFontPrintStr writes the current 124-byte slot before incrementing only below * count 49. At count 49, later calls overwrite slot 49; see the draw/reset path. * RE_ORIGINAL_QUIRK: length above 50 writes input[49] = 0 but keeps 50 glyphs; * length exactly 50 also fills all 50 entries. The terminator at +120 is then * overwritten by the font-pointer store, leaving no separate terminator there. * See _uvFontSpriteWidth for the consumer's read-before-limit order. * RE_UNKNOWN: input mutability/length guarantees, glyph coverage, queue capacity, * external count writers and callback reentrancy require callers/layout proof. * These observations alone establish no reachable overflow or player fault.",
+      "lines": [
+        259
+      ],
+      "evidence": "uvFontPrintStr writes the current 124-byte slot before incrementing only below * count 49. At count 49, later calls overwrite slot 49; see the draw/reset path. * RE_ORIGINAL_QUIRK: length above 50 writes input[49] = 0 but keeps 50 glyphs; * length exactly 50 also fills all 50 entries. The terminator at +120 is then * overwritten by the font-pointer store, leaving no separate terminator there. * See _uvFontSpriteWidth for the consumer's read-before-limit order. * RE_UNKNOWN: input mutability/length guarantees, glyph coverage, queue capacity, * external count writers and callback reentrancy require callers/layout proof. * These observations alone establish no reachable overflow or player fault.",
+      "owners": [
+        {
+          "kind": "assembly",
+          "name": "uvFontPrintStr",
+          "declaration_line": 269,
+          "lines": [
+            259
           ]
         }
       ]
@@ -245732,6 +245821,26 @@
           "declaration_line": 153,
           "lines": [
             145
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-411910bef4cd",
+      "kind": "original_quirk",
+      "path": "src/modules/uvsort_rom.c",
+      "symbol": "Cache insertion order (flag one) or descending-key indices (flag two marks cached). * RE_ORIGINAL_QUIRK: zero negates to zero; two zero keys can repeat one callback index. * Restore all negative keys to positive, including inputs; the runner invokes every recorded index. * RE_UNKNOWN: caller key-domain/finite guarantees and safety of the -1000000 selection floor.",
+      "lines": [
+        293
+      ],
+      "evidence": "Cache insertion order (flag one) or descending-key indices (flag two marks cached). * RE_ORIGINAL_QUIRK: zero negates to zero; two zero keys can repeat one callback index. * Restore all negative keys to positive, including inputs; the runner invokes every recorded index. * RE_UNKNOWN: caller key-domain/finite guarantees and safety of the -1000000 selection floor.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvSortBuildCallbackOrder",
+          "declaration_line": 297,
+          "lines": [
+            293
           ]
         }
       ]
