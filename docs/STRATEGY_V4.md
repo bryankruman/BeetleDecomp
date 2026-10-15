@@ -3679,3 +3679,18 @@ function bodies and logical coordinates. Normal compilation uses existing
 2.0I fallback headers only for this unit; no shared SDK ABI or include order
 changes. The 1,776-byte object, all 47 relocations, native instructions,
 all 133 packed modules and the full original ROM remain acceptance gates.
+
+Three display-list editor routines (704 instruction bytes) now have explicit
+RGBA/combiner purpose names and selector fields. Seven earlier routines keep
+their literal bodies and logical source coordinates. Original truncation,
+aliasing/evaluation-order quirks and unresolved caller/value domains remain
+searchable in comments. The complete original module and its three storage
+owners remain mandatory normal/native equality gates.
+
+The motor controller unit recovers three original routines (976 instruction bytes)
+with the verified J packet layout and a per-file IDO5.3/O2 rule. The reusable
+four-controller packet array remains in its existing 256-byte assembly owner.
+The motor helper has a genuine compiler function boundary; raw aliases retain
+the original identities. The unchanged 5,088-byte assembly suffix is preserved
+separately and earns no new C coverage. Full native relocations, all packed
+modules and original-ROM equality remain required before accepting this source.

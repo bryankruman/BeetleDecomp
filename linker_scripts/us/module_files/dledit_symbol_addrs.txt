@@ -31,3 +31,6 @@ dleditUnpackRgba = 0x0040030C; // type:func
 dleditFindOpcodeWithOriginalEndTest = 0x00400098; // type:func
 dleditPatchTextureImageAddress = 0x004000C8; // type:func
 dleditFindCommandWordWithOriginalEndTest = 0x004004FC; // type:func
+dleditWriteRgbaCommand = 0x00400174; // type:func
+dleditPackCombineSelectors = 0x004001F8; // type:func
+dleditReadAndClampCombineSelectors = 0x004003D4; // type:func

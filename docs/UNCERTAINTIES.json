@@ -318,6 +318,7 @@
     "src/libultra/io/crc.c": "8235ce349186092b1afd424bdf4e9acd9d4a0d571e6ab7e5e5db608387f7abc3",
     "src/libultra/io/disk_interrupt_helpers.c": "d39002492fef69ad41741cc8fe7594d26f8cf432c8384512a044c34636f24cc4",
     "src/libultra/io/epirawio.c": "a332fc3652771cf8c00233bc463586486fc7400c8cfd53c322ed85685d9bbf8b",
+    "src/libultra/io/motor.c": "ca4fa1d1e494c88f54f563ff727f3172ab0b1859f83558b43f586661072ce28c",
     "src/libultra/io/pfschecker.c": "392bd73a5e90a464cb76b7101075193c6a1fc08b4a83f18d76ff0ad7a066c73f",
     "src/libultra/io/pfsisplug.c": "c0c2eae5a8b136e9dbc156c18a291f4ca6fcfbb8c11f8fe0ef01a2ed037a2eca",
     "src/libultra/io/pfsselectbank.c": "220e29cc932c5187eda4e55c6279d22a57fd4635c3429afba4578febdae37391",
@@ -394,7 +395,7 @@
     "src/modules/caraudio.c": "0b5c00cb4a97a368aaa7e010b96ee80e8895f4f1f705d4d944f8f3f630bf5480",
     "src/modules/cbars.c": "4aca0aa326da893fd4cc663f76c0537e29d4db2d4018a46eeb50104d5f7a34b6",
     "src/modules/demo.c": "8e19de1cafc6a5ebde83a3020c92b2b17b3de91fc4abe245a5c53d96de69065f",
-    "src/modules/dledit.c": "a2a3807d331e3196eb00bbc5dbfca4a4161a989e8eadbfa7678a2cb49ff51490",
+    "src/modules/dledit.c": "ac4af3dde928bc943d41c82f3b110ca10488dbbdf9b05ea6bedd66de1c77d587",
     "src/modules/env.c": "6a2ff15deb1729ae7e5494302082406bd43d2012282e42d500b3196e8ab857b4",
     "src/modules/envsnd.c": "4dfaf2136d282f41747a868de8174827a42854f9d03ec6d41fe04c75cbb739d1",
     "src/modules/expl.c": "9b11f3874d110926a320effee990c4a6429439f1fa618065bb3a90f46700394d",
@@ -521,22 +522,22 @@
     "src/sched.c": "26791ca9f30fd5355b11ea03a64a457757d2029595be26428c2925798105d9b4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "2fe050ce2ec2b8ceabc662bff48dcbcde6189ceef2a11f47a64fcbed616092d5",
+    "docs/STRATEGY_V4.md": "7b3f2d0d106cb1c8993b7bf81c95bfc594a62ca5efdb2d16a8e69ff5648a4116",
     "docs/VALIDATION_20261006.md": "a46820c10aba34e3c1901bd9bdc4260f684530f44fcf7f61d9c7bb33e0c91031"
   },
   "counts": {
     "address_function": 904,
-    "address_global": 1661,
-    "assembly": 743,
+    "address_global": 1662,
+    "assembly": 740,
     "audit_debt": 30,
     "conditional_draft": 4,
-    "decompiler_local": 622,
+    "decompiler_local": 625,
     "draft_marker": 55,
-    "explicit_unknown": 1915,
+    "explicit_unknown": 1919,
     "layout_padding": 281,
     "offset_field": 1773,
     "opaque_type": 285,
-    "original_quirk": 542,
+    "original_quirk": 546,
     "uncertainty_note": 88,
     "unused_identifier": 151
   },
@@ -4370,33 +4371,33 @@
       "path": "src/modules/dledit.c",
       "symbol": "func_dledit_00400090",
       "lines": [
-        6,
-        26,
-        43
+        37,
+        60,
+        77
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_dleditInitializeModuleExports",
-          "declaration_line": 24,
+          "declaration_line": 58,
           "lines": [
-            26
+            60
           ]
         },
         {
           "kind": "function",
           "name": "func_dledit_00400090",
-          "declaration_line": 6,
+          "declaration_line": 37,
           "lines": [
-            6
+            37
           ]
         },
         {
           "kind": "function",
           "name": "func_dledit_00400090",
-          "declaration_line": 43,
+          "declaration_line": 77,
           "lines": [
-            43
+            77
           ]
         }
       ]
@@ -4407,24 +4408,24 @@
       "path": "src/modules/dledit.c",
       "symbol": "func_dledit_00400174",
       "lines": [
-        13,
-        30
+        44,
+        64
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_dleditInitializeModuleExports",
-          "declaration_line": 24,
+          "declaration_line": 58,
           "lines": [
-            30
+            64
           ]
         },
         {
           "kind": "function",
           "name": "func_dledit_00400174",
-          "declaration_line": 13,
+          "declaration_line": 44,
           "lines": [
-            13
+            44
           ]
         }
       ]
@@ -4435,24 +4436,24 @@
       "path": "src/modules/dledit.c",
       "symbol": "func_dledit_004001F8",
       "lines": [
-        14,
-        31
+        45,
+        65
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_dleditInitializeModuleExports",
-          "declaration_line": 24,
+          "declaration_line": 58,
           "lines": [
-            31
+            65
           ]
         },
         {
           "kind": "function",
           "name": "func_dledit_004001F8",
-          "declaration_line": 14,
+          "declaration_line": 45,
           "lines": [
-            14
+            45
           ]
         }
       ]
@@ -4463,24 +4464,24 @@
       "path": "src/modules/dledit.c",
       "symbol": "func_dledit_004003D4",
       "lines": [
-        16,
-        33
+        47,
+        67
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_dleditInitializeModuleExports",
-          "declaration_line": 24,
+          "declaration_line": 58,
           "lines": [
-            33
+            67
           ]
         },
         {
           "kind": "function",
           "name": "func_dledit_004003D4",
-          "declaration_line": 16,
+          "declaration_line": 47,
           "lines": [
-            16
+            47
           ]
         }
       ]
@@ -23073,6 +23074,26 @@
       ]
     },
     {
+      "id": "Q-32f0d3bfb95f",
+      "kind": "address_global",
+      "path": "src/libultra/io/motor.c",
+      "symbol": "D_80033530",
+      "lines": [
+        12,
+        13
+      ],
+      "owners": [
+        {
+          "kind": "global",
+          "name": "D_80033530",
+          "declaration_line": 12,
+          "lines": [
+            12
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-c1a9507e0959",
       "kind": "address_global",
       "path": "src/libultra/io/pi_domain_timing.c",
@@ -28746,16 +28767,16 @@
       "path": "src/modules/dledit.c",
       "symbol": "D_dledit_00400600",
       "lines": [
-        9,
-        89
+        40,
+        123
       ],
       "owners": [
         {
           "kind": "function",
           "name": "dleditLookupMappedWord",
-          "declaration_line": 84,
+          "declaration_line": 118,
           "lines": [
-            89
+            123
           ]
         }
       ]
@@ -28766,16 +28787,16 @@
       "path": "src/modules/dledit.c",
       "symbol": "D_dledit_00400658",
       "lines": [
-        9,
-        88
+        40,
+        122
       ],
       "owners": [
         {
           "kind": "function",
           "name": "dleditLookupMappedWord",
-          "declaration_line": 84,
+          "declaration_line": 118,
           "lines": [
-            88
+            122
           ]
         }
       ]
@@ -28786,16 +28807,16 @@
       "path": "src/modules/dledit.c",
       "symbol": "D_dledit_004006C4",
       "lines": [
-        9,
-        86
+        40,
+        120
       ],
       "owners": [
         {
           "kind": "function",
           "name": "dleditLookupMappedWord",
-          "declaration_line": 84,
+          "declaration_line": 118,
           "lines": [
-            86
+            120
           ]
         }
       ]
@@ -28806,16 +28827,16 @@
       "path": "src/modules/dledit.c",
       "symbol": "D_dledit_00400708",
       "lines": [
-        9,
-        87
+        40,
+        121
       ],
       "owners": [
         {
           "kind": "function",
           "name": "dleditLookupMappedWord",
-          "declaration_line": 84,
+          "declaration_line": 118,
           "lines": [
-            87
+            121
           ]
         }
       ]
@@ -83697,36 +83718,6 @@
       "evidence": "asm/us/nonmatchings/modules/demo/func_demo_00400BC4.s"
     },
     {
-      "id": "Q-67de97511193",
-      "kind": "assembly",
-      "path": "src/modules/dledit.c",
-      "symbol": "func_dledit_00400174",
-      "lines": [
-        93
-      ],
-      "evidence": "asm/us/nonmatchings/modules/dledit/func_dledit_00400174.s"
-    },
-    {
-      "id": "Q-e9a39a73c0d0",
-      "kind": "assembly",
-      "path": "src/modules/dledit.c",
-      "symbol": "func_dledit_004001F8",
-      "lines": [
-        95
-      ],
-      "evidence": "asm/us/nonmatchings/modules/dledit/func_dledit_004001F8.s"
-    },
-    {
-      "id": "Q-63cc2a5c631c",
-      "kind": "assembly",
-      "path": "src/modules/dledit.c",
-      "symbol": "func_dledit_004003D4",
-      "lines": [
-        112
-      ],
-      "evidence": "asm/us/nonmatchings/modules/dledit/func_dledit_004003D4.s"
-    },
-    {
       "id": "Q-6471e85d9a72",
       "kind": "assembly",
       "path": "src/modules/env.c",
@@ -90632,6 +90623,63 @@
           "declaration_line": 69,
           "lines": [
             78
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-30273b41849d",
+      "kind": "decompiler_local",
+      "path": "src/modules/dledit.c",
+      "symbol": "arg0",
+      "lines": [
+        47
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "func_dledit_004003D4",
+          "declaration_line": 47,
+          "lines": [
+            47
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-1eea02c982d8",
+      "kind": "decompiler_local",
+      "path": "src/modules/dledit.c",
+      "symbol": "arg1",
+      "lines": [
+        45
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "func_dledit_004001F8",
+          "declaration_line": 45,
+          "lines": [
+            45
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-fb7c0f09cc73",
+      "kind": "decompiler_local",
+      "path": "src/modules/dledit.c",
+      "symbol": "arg2",
+      "lines": [
+        44
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "func_dledit_00400174",
+          "declaration_line": 44,
+          "lines": [
+            44
           ]
         }
       ]
@@ -127773,21 +127821,41 @@
       ]
     },
     {
+      "id": "Q-d2fa60368f64",
+      "kind": "explicit_unknown",
+      "path": "src/modules/dledit.c",
+      "symbol": "Consumed views for RGBA commands and two combiner cycles. * RE_UNKNOWN: nominal original type names, allocation ownership, aliasing and * caller value domains remain unproved; these declarations allocate no storage. * Each cycle supplies color A/B/C/D followed by alpha A/B/C/D selectors to * the existing GBI masks. No global export/header migration is implied.",
+      "lines": [
+        6
+      ],
+      "evidence": "Consumed views for RGBA commands and two combiner cycles. * RE_UNKNOWN: nominal original type names, allocation ownership, aliasing and * caller value domains remain unproved; these declarations allocate no storage. * Each cycle supplies color A/B/C/D followed by alpha A/B/C/D selectors to * the existing GBI masks. No global export/header migration is implied.",
+      "owners": [
+        {
+          "kind": "type",
+          "name": "RGBAF",
+          "declaration_line": 11,
+          "lines": [
+            6
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-08cece496bac",
       "kind": "explicit_unknown",
       "path": "src/modules/dledit.c",
       "symbol": "Find command 0xFD and replace its address word with the supplied value plus 0x80000000, preserving unsigned wrap. * RE_ORIGINAL_QUIRK: the scanner cannot stop at positive 0xDF. RE_UNKNOWN: required FD presence, address representation and command backing extent/lifetime require original UVTX producers and callers.",
       "lines": [
-        68
+        102
       ],
       "evidence": "Find command 0xFD and replace its address word with the supplied value plus 0x80000000, preserving unsigned wrap. * RE_ORIGINAL_QUIRK: the scanner cannot stop at positive 0xDF. RE_UNKNOWN: required FD presence, address representation and command backing extent/lifetime require original UVTX producers and callers.",
       "owners": [
         {
           "kind": "function",
           "name": "dleditPatchTextureImageAddress",
-          "declaration_line": 70,
+          "declaration_line": 104,
           "lines": [
-            68
+            102
           ]
         }
       ]
@@ -127798,16 +127866,16 @@
       "path": "src/modules/dledit.c",
       "symbol": "Normalize display-list word one's four bytes to RGBA floats in byte order; a null command leaves output untouched. * RE_UNKNOWN: complete command/output backing extent, alias and lifetime guarantees require original command and color-window producers/callers; four observed float stores do not establish ownership.",
       "lines": [
-        98
+        159
       ],
       "evidence": "Normalize display-list word one's four bytes to RGBA floats in byte order; a null command leaves output untouched. * RE_UNKNOWN: complete command/output backing extent, alias and lifetime guarantees require original command and color-window producers/callers; four observed float stores do not establish ownership.",
       "owners": [
         {
           "kind": "function",
           "name": "dleditUnpackRgba",
-          "declaration_line": 100,
+          "declaration_line": 161,
           "lines": [
-            98
+            159
           ]
         }
       ]
@@ -127818,16 +127886,36 @@
       "path": "src/modules/dledit.c",
       "symbol": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "lines": [
-        39
+        73
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "owners": [
         {
           "kind": "function",
           "name": "func_dledit_00400090",
-          "declaration_line": 43,
+          "declaration_line": 77,
           "lines": [
-            39
+            73
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-61faf1a74360",
+      "kind": "explicit_unknown",
+      "path": "src/modules/dledit.c",
+      "symbol": "Pack two cycles of color and alpha selectors into a combiner command. * RE_ORIGINAL_QUIRK: store word0 before reading selector expressions for word1. * RE_UNKNOWN: selector domains, source/destination aliasing and caller return use.",
+      "lines": [
+        142
+      ],
+      "evidence": "Pack two cycles of color and alpha selectors into a combiner command. * RE_ORIGINAL_QUIRK: store word0 before reading selector expressions for word1. * RE_UNKNOWN: selector domains, source/destination aliasing and caller return use.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "dleditPackCombineSelectors",
+          "declaration_line": 146,
+          "lines": [
+            142
           ]
         }
       ]
@@ -127838,19 +127926,9 @@
       "path": "src/modules/dledit.c",
       "symbol": "RE_UNKNOWN: original FC packing reads a 16-word selection window, preserves masks/shifts, and stores word0 before second-stage source reads; selector domains, complete source/command backing layout, alias/lifetime and historical declarations require original selection writers, command consumers and callers. Preserve that store boundary and null-command behavior.",
       "lines": [
-        94
+        141
       ],
-      "evidence": "RE_UNKNOWN: original FC packing reads a 16-word selection window, preserves masks/shifts, and stores word0 before second-stage source reads; selector domains, complete source/command backing layout, alias/lifetime and historical declarations require original selection writers, command consumers and callers. Preserve that store boundary and null-command behavior.",
-      "owners": [
-        {
-          "kind": "assembly",
-          "name": "func_dledit_004001F8",
-          "declaration_line": 95,
-          "lines": [
-            94
-          ]
-        }
-      ]
+      "evidence": "RE_UNKNOWN: original FC packing reads a 16-word selection window, preserves masks/shifts, and stores word0 before second-stage source reads; selector domains, complete source/command backing layout, alias/lifetime and historical declarations require original selection writers, command consumers and callers. Preserve that store boundary and null-command behavior."
     },
     {
       "id": "Q-2b1e1b460fea",
@@ -127858,19 +127936,9 @@
       "path": "src/modules/dledit.c",
       "symbol": "RE_UNKNOWN: original RGBA packing truncates channel*255 with byte wrapping, no clamps, and stores opcode word before reading channels; historical channel domains (including nonfinite/out-of-range inputs), command/color backing extent and alias/lifetime guarantees require original color producers, UVTX assets and callers. Preserve operand order and null-command behavior.",
       "lines": [
-        92
+        126
       ],
-      "evidence": "RE_UNKNOWN: original RGBA packing truncates channel*255 with byte wrapping, no clamps, and stores opcode word before reading channels; historical channel domains (including nonfinite/out-of-range inputs), command/color backing extent and alias/lifetime guarantees require original color producers, UVTX assets and callers. Preserve operand order and null-command behavior.",
-      "owners": [
-        {
-          "kind": "assembly",
-          "name": "func_dledit_00400174",
-          "declaration_line": 93,
-          "lines": [
-            92
-          ]
-        }
-      ]
+      "evidence": "RE_UNKNOWN: original RGBA packing truncates channel*255 with byte wrapping, no clamps, and stores opcode word before reading channels; historical channel domains (including nonfinite/out-of-range inputs), command/color backing extent and alias/lifetime guarantees require original color producers, UVTX assets and callers. Preserve operand order and null-command behavior."
     },
     {
       "id": "Q-4b095264e8bf",
@@ -127878,16 +127946,26 @@
       "path": "src/modules/dledit.c",
       "symbol": "RE_UNKNOWN: original combiner decoding snapshots both command words before 16 output stores, then caps only selectors0/1/2 and8/9/10 at8/8/16 even for null input, preserving negative existing values; output capacity, alias/lifetime and UI selector meanings require original shared-window writers/readers and callers. Preserve snapshot/store/clamp order.",
       "lines": [
-        111
+        172
       ],
-      "evidence": "RE_UNKNOWN: original combiner decoding snapshots both command words before 16 output stores, then caps only selectors0/1/2 and8/9/10 at8/8/16 even for null input, preserving negative existing values; output capacity, alias/lifetime and UI selector meanings require original shared-window writers/readers and callers. Preserve snapshot/store/clamp order.",
+      "evidence": "RE_UNKNOWN: original combiner decoding snapshots both command words before 16 output stores, then caps only selectors0/1/2 and8/9/10 at8/8/16 even for null input, preserving negative existing values; output capacity, alias/lifetime and UI selector meanings require original shared-window writers/readers and callers. Preserve snapshot/store/clamp order."
+    },
+    {
+      "id": "Q-0c07adddd858",
+      "kind": "explicit_unknown",
+      "path": "src/modules/dledit.c",
+      "symbol": "Read sixteen combiner selectors, then clamp color A/B to8 and color C to16. * RE_ORIGINAL_QUIRK: a null command still clamps the existing selector rows; * negative signed selectors survive these upper-bound tests unchanged. * RE_UNKNOWN: nominal ownership, valid command opcode and caller return use.",
+      "lines": [
+        173
+      ],
+      "evidence": "Read sixteen combiner selectors, then clamp color A/B to8 and color C to16. * RE_ORIGINAL_QUIRK: a null command still clamps the existing selector rows; * negative signed selectors survive these upper-bound tests unchanged. * RE_UNKNOWN: nominal ownership, valid command opcode and caller return use.",
       "owners": [
         {
-          "kind": "assembly",
-          "name": "func_dledit_004003D4",
-          "declaration_line": 112,
+          "kind": "function",
+          "name": "dleditReadAndClampCombineSelectors",
+          "declaration_line": 178,
           "lines": [
-            111
+            173
           ]
         }
       ]
@@ -127898,16 +127976,16 @@
       "path": "src/modules/dledit.c",
       "symbol": "Register the original dledit module addresses in their observed store order * after updating the file allocation pointer. Preserve separate empty exports. * RE_UNKNOWN: historical full export type and remaining callback signatures, * purposes and consumer contracts. Trace slot consumers and original target * bodies before assigning callable types or changing empty callbacks.",
       "lines": [
-        19
+        53
       ],
       "evidence": "Register the original dledit module addresses in their observed store order * after updating the file allocation pointer. Preserve separate empty exports. * RE_UNKNOWN: historical full export type and remaining callback signatures, * purposes and consumer contracts. Trace slot consumers and original target * bodies before assigning callable types or changing empty callbacks.",
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_dleditInitializeModuleExports",
-          "declaration_line": 24,
+          "declaration_line": 58,
           "lines": [
-            19
+            53
           ]
         }
       ]
@@ -127918,16 +127996,16 @@
       "path": "src/modules/dledit.c",
       "symbol": "Return an original combiner-source label address through the direct, eight-column or nine-column index table. * Preserve the unused context word and unchecked signed alternate/row/column selectors. * RE_UNKNOWN: valid selector domains, historical source prototype and each label's readable extent require original selection writers, table consumers and callers; a mapped label does not prove GUI C4's full 30-byte source window.",
       "lines": [
-        81
+        115
       ],
       "evidence": "Return an original combiner-source label address through the direct, eight-column or nine-column index table. * Preserve the unused context word and unchecked signed alternate/row/column selectors. * RE_UNKNOWN: valid selector domains, historical source prototype and each label's readable extent require original selection writers, table consumers and callers; a mapped label does not prove GUI C4's full 30-byte source window.",
       "owners": [
         {
           "kind": "function",
           "name": "dleditLookupMappedWord",
-          "declaration_line": 84,
+          "declaration_line": 118,
           "lines": [
-            81
+            115
           ]
         }
       ]
@@ -127938,16 +128016,16 @@
       "path": "src/modules/dledit.c",
       "symbol": "Scan eight-byte display-list commands for the requested first word. * RE_ORIGINAL_QUIRK: the sign-extended opcode cannot equal positive 0xDF; * target absence does not terminate at that opcode. * RE_UNKNOWN: target presence, readable command span and reachable failure require original command streams and callers; the nominal terminator does not establish a bound.",
       "lines": [
-        115
+        217
       ],
       "evidence": "Scan eight-byte display-list commands for the requested first word. * RE_ORIGINAL_QUIRK: the sign-extended opcode cannot equal positive 0xDF; * target absence does not terminate at that opcode. * RE_UNKNOWN: target presence, readable command span and reachable failure require original command streams and callers; the nominal terminator does not establish a bound.",
       "owners": [
         {
           "kind": "function",
           "name": "dleditFindCommandWordWithOriginalEndTest",
-          "declaration_line": 119,
+          "declaration_line": 221,
           "lines": [
-            115
+            217
           ]
         }
       ]
@@ -127958,16 +128036,36 @@
       "path": "src/modules/dledit.c",
       "symbol": "Scan eight-byte display-list commands for the requested opcode. * RE_ORIGINAL_QUIRK: the sign-extended command byte cannot equal positive 0xDF. * RE_UNKNOWN: target presence, readable command span and reachable failure require original UVTX streams and callers; the nominal terminator does not establish a bound.",
       "lines": [
-        48
+        82
       ],
       "evidence": "Scan eight-byte display-list commands for the requested opcode. * RE_ORIGINAL_QUIRK: the sign-extended command byte cannot equal positive 0xDF. * RE_UNKNOWN: target presence, readable command span and reachable failure require original UVTX streams and callers; the nominal terminator does not establish a bound.",
       "owners": [
         {
           "kind": "function",
           "name": "dleditFindOpcodeWithOriginalEndTest",
-          "declaration_line": 51,
+          "declaration_line": 85,
           "lines": [
-            48
+            82
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-d167ac018f93",
+      "kind": "explicit_unknown",
+      "path": "src/modules/dledit.c",
+      "symbol": "Write the opcode and packed RGBA channels into one display-list command. * RE_ORIGINAL_QUIRK: scale by255, truncate and retain the original masks/shifts; no clamp. * RE_UNKNOWN: finite channel range, aliasing, allocation bounds and caller return use.",
+      "lines": [
+        127
+      ],
+      "evidence": "Write the opcode and packed RGBA channels into one display-list command. * RE_ORIGINAL_QUIRK: scale by255, truncate and retain the original masks/shifts; no clamp. * RE_UNKNOWN: finite channel range, aliasing, allocation bounds and caller return use.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "dleditWriteRgbaCommand",
+          "declaration_line": 131,
+          "lines": [
+            127
           ]
         }
       ]
@@ -180705,15 +180803,15 @@
       "path": "src/modules/dledit.c",
       "symbol": "word0",
       "lines": [
-        7
+        38
       ],
       "owners": [
         {
           "kind": "type",
           "name": "DleditCommand",
-          "declaration_line": 7,
+          "declaration_line": 38,
           "lines": [
-            7
+            38
           ]
         }
       ]
@@ -180724,24 +180822,24 @@
       "path": "src/modules/dledit.c",
       "symbol": "word1",
       "lines": [
-        7,
-        103
+        38,
+        164
       ],
       "owners": [
         {
           "kind": "function",
           "name": "dleditUnpackRgba",
-          "declaration_line": 100,
+          "declaration_line": 161,
           "lines": [
-            103
+            164
           ]
         },
         {
           "kind": "type",
           "name": "DleditCommand",
-          "declaration_line": 7,
+          "declaration_line": 38,
           "lines": [
-            7
+            38
           ]
         }
       ]
@@ -237436,6 +237534,26 @@
       "evidence": "* Synchronize handle-selected PI timing when necessary, then write one word * through the handle base address combined with the device address. * RE_ORIGINAL_QUIRK: Repeated volatile status reads have no timeout. * RE_ORIGINAL_QUIRK: Keep pointer comparison, live field reloads, timing * write order, and the final retained current-handle update. * RE_UNKNOWN: Caller guarantees for handle domain and lifetime are unproved. * RE_UNKNOWN: Caller address, alignment, and pointer guarantees are unproved."
     },
     {
+      "id": "Q-e0168e56e139",
+      "kind": "original_quirk",
+      "path": "src/libultra/io/motor.c",
+      "symbol": "Send the selected controller's rumble packet and check the reply CRC. * RE_ORIGINAL_QUIRK: reply error bits retain their 0xC0 mask positions; * the original routine does not shift those bits into an error number.",
+      "lines": [
+        17
+      ],
+      "evidence": "Send the selected controller's rumble packet and check the reply CRC. * RE_ORIGINAL_QUIRK: reply error bits retain their 0xC0 mask positions; * the original routine does not shift those bits into an error number.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "__osMotorAccess",
+          "declaration_line": 21,
+          "lines": [
+            17
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-1bbcc40ab627",
       "kind": "original_quirk",
       "path": "src/libultra/io/pfschecker.c",
@@ -239453,16 +239571,56 @@
       "path": "src/modules/dledit.c",
       "symbol": "Find command 0xFD and replace its address word with the supplied value plus 0x80000000, preserving unsigned wrap. * RE_ORIGINAL_QUIRK: the scanner cannot stop at positive 0xDF. RE_UNKNOWN: required FD presence, address representation and command backing extent/lifetime require original UVTX producers and callers.",
       "lines": [
-        68
+        102
       ],
       "evidence": "Find command 0xFD and replace its address word with the supplied value plus 0x80000000, preserving unsigned wrap. * RE_ORIGINAL_QUIRK: the scanner cannot stop at positive 0xDF. RE_UNKNOWN: required FD presence, address representation and command backing extent/lifetime require original UVTX producers and callers.",
       "owners": [
         {
           "kind": "function",
           "name": "dleditPatchTextureImageAddress",
-          "declaration_line": 70,
+          "declaration_line": 104,
           "lines": [
-            68
+            102
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-bf3052af8ae7",
+      "kind": "original_quirk",
+      "path": "src/modules/dledit.c",
+      "symbol": "Pack two cycles of color and alpha selectors into a combiner command. * RE_ORIGINAL_QUIRK: store word0 before reading selector expressions for word1. * RE_UNKNOWN: selector domains, source/destination aliasing and caller return use.",
+      "lines": [
+        142
+      ],
+      "evidence": "Pack two cycles of color and alpha selectors into a combiner command. * RE_ORIGINAL_QUIRK: store word0 before reading selector expressions for word1. * RE_UNKNOWN: selector domains, source/destination aliasing and caller return use.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "dleditPackCombineSelectors",
+          "declaration_line": 146,
+          "lines": [
+            142
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-e5caebfe1ff9",
+      "kind": "original_quirk",
+      "path": "src/modules/dledit.c",
+      "symbol": "Read sixteen combiner selectors, then clamp color A/B to8 and color C to16. * RE_ORIGINAL_QUIRK: a null command still clamps the existing selector rows; * negative signed selectors survive these upper-bound tests unchanged. * RE_UNKNOWN: nominal ownership, valid command opcode and caller return use.",
+      "lines": [
+        173
+      ],
+      "evidence": "Read sixteen combiner selectors, then clamp color A/B to8 and color C to16. * RE_ORIGINAL_QUIRK: a null command still clamps the existing selector rows; * negative signed selectors survive these upper-bound tests unchanged. * RE_UNKNOWN: nominal ownership, valid command opcode and caller return use.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "dleditReadAndClampCombineSelectors",
+          "declaration_line": 178,
+          "lines": [
+            173
           ]
         }
       ]
@@ -239473,16 +239631,16 @@
       "path": "src/modules/dledit.c",
       "symbol": "Scan eight-byte display-list commands for the requested first word. * RE_ORIGINAL_QUIRK: the sign-extended opcode cannot equal positive 0xDF; * target absence does not terminate at that opcode. * RE_UNKNOWN: target presence, readable command span and reachable failure require original command streams and callers; the nominal terminator does not establish a bound.",
       "lines": [
-        115
+        217
       ],
       "evidence": "Scan eight-byte display-list commands for the requested first word. * RE_ORIGINAL_QUIRK: the sign-extended opcode cannot equal positive 0xDF; * target absence does not terminate at that opcode. * RE_UNKNOWN: target presence, readable command span and reachable failure require original command streams and callers; the nominal terminator does not establish a bound.",
       "owners": [
         {
           "kind": "function",
           "name": "dleditFindCommandWordWithOriginalEndTest",
-          "declaration_line": 119,
+          "declaration_line": 221,
           "lines": [
-            115
+            217
           ]
         }
       ]
@@ -239493,16 +239651,36 @@
       "path": "src/modules/dledit.c",
       "symbol": "Scan eight-byte display-list commands for the requested opcode. * RE_ORIGINAL_QUIRK: the sign-extended command byte cannot equal positive 0xDF. * RE_UNKNOWN: target presence, readable command span and reachable failure require original UVTX streams and callers; the nominal terminator does not establish a bound.",
       "lines": [
-        48
+        82
       ],
       "evidence": "Scan eight-byte display-list commands for the requested opcode. * RE_ORIGINAL_QUIRK: the sign-extended command byte cannot equal positive 0xDF. * RE_UNKNOWN: target presence, readable command span and reachable failure require original UVTX streams and callers; the nominal terminator does not establish a bound.",
       "owners": [
         {
           "kind": "function",
           "name": "dleditFindOpcodeWithOriginalEndTest",
-          "declaration_line": 51,
+          "declaration_line": 85,
           "lines": [
-            48
+            82
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-df22ef86b064",
+      "kind": "original_quirk",
+      "path": "src/modules/dledit.c",
+      "symbol": "Write the opcode and packed RGBA channels into one display-list command. * RE_ORIGINAL_QUIRK: scale by255, truncate and retain the original masks/shifts; no clamp. * RE_UNKNOWN: finite channel range, aliasing, allocation bounds and caller return use.",
+      "lines": [
+        127
+      ],
+      "evidence": "Write the opcode and packed RGBA channels into one display-list command. * RE_ORIGINAL_QUIRK: scale by255, truncate and retain the original masks/shifts; no clamp. * RE_UNKNOWN: finite channel range, aliasing, allocation bounds and caller return use.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "dleditWriteRgbaCommand",
+          "declaration_line": 131,
+          "lines": [
+            127
           ]
         }
       ]

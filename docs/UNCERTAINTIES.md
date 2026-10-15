@@ -17,18 +17,18 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 1915 |
-| Preserved RE_ORIGINAL_QUIRK notes | 542 |
+| Explicit RE_UNKNOWN notes | 1919 |
+| Preserved RE_ORIGINAL_QUIRK notes | 546 |
 | Older comments with uncertainty language | 88 |
 | Documented original-behavior audits | 30 |
-| Assembly-backed functions or data | 743 |
+| Assembly-backed functions or data | 740 |
 | Address-based function identifiers | 904 |
-| Address-based global identifiers | 1661 |
+| Address-based global identifiers | 1662 |
 | Offset-based fields or neutral typed fields | 1773 |
 | Layout padding to preserve | 281 |
 | Unresolved type names | 285 |
 | Explicit unused ABI, storage or local identifiers | 151 |
-| Decompiler parameter/local names | 622 |
+| Decompiler parameter/local names | 625 |
 | Fake, unresolved or TODO draft markers | 55 |
 | Data-dependent conditional draft guards | 4 |
 
@@ -1428,6 +1428,13 @@ For every future source wave, regenerate and check this index after code and str
 | explicit_unknown | `* Synchronize handle-selected PI timing when necessary, then write one word * through the handle base address combined with the device address. * RE_ORIGINAL_QUIRK: Repeated vol...` | — | [1](../src/libultra/io/epirawio.c#L1) |
 | original_quirk | `* Synchronize handle-selected PI timing when necessary, then read one word * through the handle base address combined with the device address. * RE_ORIGINAL_QUIRK: Repeated vola...` | — | [34](../src/libultra/io/epirawio.c#L34) |
 | original_quirk | `* Synchronize handle-selected PI timing when necessary, then write one word * through the handle base address combined with the device address. * RE_ORIGINAL_QUIRK: Repeated vol...` | — | [1](../src/libultra/io/epirawio.c#L1) |
+
+## src/libultra/io/motor.c
+
+| Kind | Identifier or note | Declaration context | Physical lines |
+| --- | --- | --- | --- |
+| address_global | `D_80033530` | global `D_80033530` | [12](../src/libultra/io/motor.c#L12), [13](../src/libultra/io/motor.c#L13) |
+| original_quirk | `Send the selected controller's rumble packet and check the reply CRC. * RE_ORIGINAL_QUIRK: reply error bits retain their 0xC0 mask positions; * the original routine does not shi...` | function `__osMotorAccess` | [17](../src/libultra/io/motor.c#L17) |
 
 ## src/libultra/io/pfschecker.c
 
@@ -2949,32 +2956,39 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
-| address_function | `func_dledit_00400090` | function `__entrypoint_func_dleditInitializeModuleExports`, function `func_dledit_00400090`, function `func_dledit_00400090` | [6](../src/modules/dledit.c#L6), [26](../src/modules/dledit.c#L26), [43](../src/modules/dledit.c#L43) |
-| address_function | `func_dledit_00400174` | function `__entrypoint_func_dleditInitializeModuleExports`, function `func_dledit_00400174` | [13](../src/modules/dledit.c#L13), [30](../src/modules/dledit.c#L30) |
-| address_function | `func_dledit_004001F8` | function `__entrypoint_func_dleditInitializeModuleExports`, function `func_dledit_004001F8` | [14](../src/modules/dledit.c#L14), [31](../src/modules/dledit.c#L31) |
-| address_function | `func_dledit_004003D4` | function `__entrypoint_func_dleditInitializeModuleExports`, function `func_dledit_004003D4` | [16](../src/modules/dledit.c#L16), [33](../src/modules/dledit.c#L33) |
-| address_global | `D_dledit_00400600` | function `dleditLookupMappedWord` | [9](../src/modules/dledit.c#L9), [89](../src/modules/dledit.c#L89) |
-| address_global | `D_dledit_00400658` | function `dleditLookupMappedWord` | [9](../src/modules/dledit.c#L9), [88](../src/modules/dledit.c#L88) |
-| address_global | `D_dledit_004006C4` | function `dleditLookupMappedWord` | [9](../src/modules/dledit.c#L9), [86](../src/modules/dledit.c#L86) |
-| address_global | `D_dledit_00400708` | function `dleditLookupMappedWord` | [9](../src/modules/dledit.c#L9), [87](../src/modules/dledit.c#L87) |
-| assembly | `func_dledit_00400174` | — | [93](../src/modules/dledit.c#L93) |
-| assembly | `func_dledit_004001F8` | — | [95](../src/modules/dledit.c#L95) |
-| assembly | `func_dledit_004003D4` | — | [112](../src/modules/dledit.c#L112) |
-| explicit_unknown | `Find command 0xFD and replace its address word with the supplied value plus 0x80000000, preserving unsigned wrap. * RE_ORIGINAL_QUIRK: the scanner cannot stop at positive 0xDF. ...` | function `dleditPatchTextureImageAddress` | [68](../src/modules/dledit.c#L68) |
-| explicit_unknown | `Normalize display-list word one's four bytes to RGBA floats in byte order; a null command leaves output untouched. * RE_UNKNOWN: complete command/output backing extent, alias an...` | function `dleditUnpackRgba` | [98](../src/modules/dledit.c#L98) |
-| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_dledit_00400090` | [39](../src/modules/dledit.c#L39) |
-| explicit_unknown | `RE_UNKNOWN: original FC packing reads a 16-word selection window, preserves masks/shifts, and stores word0 before second-stage source reads; selector domains, complete source/co...` | assembly `func_dledit_004001F8` | [94](../src/modules/dledit.c#L94) |
-| explicit_unknown | `RE_UNKNOWN: original RGBA packing truncates channel*255 with byte wrapping, no clamps, and stores opcode word before reading channels; historical channel domains (including nonf...` | assembly `func_dledit_00400174` | [92](../src/modules/dledit.c#L92) |
-| explicit_unknown | `RE_UNKNOWN: original combiner decoding snapshots both command words before 16 output stores, then caps only selectors0/1/2 and8/9/10 at8/8/16 even for null input, preserving neg...` | assembly `func_dledit_004003D4` | [111](../src/modules/dledit.c#L111) |
-| explicit_unknown | `Register the original dledit module addresses in their observed store order * after updating the file allocation pointer. Preserve separate empty exports. * RE_UNKNOWN: historic...` | function `__entrypoint_func_dleditInitializeModuleExports` | [19](../src/modules/dledit.c#L19) |
-| explicit_unknown | `Return an original combiner-source label address through the direct, eight-column or nine-column index table. * Preserve the unused context word and unchecked signed alternate/r...` | function `dleditLookupMappedWord` | [81](../src/modules/dledit.c#L81) |
-| explicit_unknown | `Scan eight-byte display-list commands for the requested first word. * RE_ORIGINAL_QUIRK: the sign-extended opcode cannot equal positive 0xDF; * target absence does not terminate...` | function `dleditFindCommandWordWithOriginalEndTest` | [115](../src/modules/dledit.c#L115) |
-| explicit_unknown | `Scan eight-byte display-list commands for the requested opcode. * RE_ORIGINAL_QUIRK: the sign-extended command byte cannot equal positive 0xDF. * RE_UNKNOWN: target presence, re...` | function `dleditFindOpcodeWithOriginalEndTest` | [48](../src/modules/dledit.c#L48) |
-| offset_field | `word0` | type `DleditCommand` | [7](../src/modules/dledit.c#L7) |
-| offset_field | `word1` | function `dleditUnpackRgba`, type `DleditCommand` | [7](../src/modules/dledit.c#L7), [103](../src/modules/dledit.c#L103) |
-| original_quirk | `Find command 0xFD and replace its address word with the supplied value plus 0x80000000, preserving unsigned wrap. * RE_ORIGINAL_QUIRK: the scanner cannot stop at positive 0xDF. ...` | function `dleditPatchTextureImageAddress` | [68](../src/modules/dledit.c#L68) |
-| original_quirk | `Scan eight-byte display-list commands for the requested first word. * RE_ORIGINAL_QUIRK: the sign-extended opcode cannot equal positive 0xDF; * target absence does not terminate...` | function `dleditFindCommandWordWithOriginalEndTest` | [115](../src/modules/dledit.c#L115) |
-| original_quirk | `Scan eight-byte display-list commands for the requested opcode. * RE_ORIGINAL_QUIRK: the sign-extended command byte cannot equal positive 0xDF. * RE_UNKNOWN: target presence, re...` | function `dleditFindOpcodeWithOriginalEndTest` | [48](../src/modules/dledit.c#L48) |
+| address_function | `func_dledit_00400090` | function `__entrypoint_func_dleditInitializeModuleExports`, function `func_dledit_00400090`, function `func_dledit_00400090` | [37](../src/modules/dledit.c#L37), [60](../src/modules/dledit.c#L60), [77](../src/modules/dledit.c#L77) |
+| address_function | `func_dledit_00400174` | function `__entrypoint_func_dleditInitializeModuleExports`, function `func_dledit_00400174` | [44](../src/modules/dledit.c#L44), [64](../src/modules/dledit.c#L64) |
+| address_function | `func_dledit_004001F8` | function `__entrypoint_func_dleditInitializeModuleExports`, function `func_dledit_004001F8` | [45](../src/modules/dledit.c#L45), [65](../src/modules/dledit.c#L65) |
+| address_function | `func_dledit_004003D4` | function `__entrypoint_func_dleditInitializeModuleExports`, function `func_dledit_004003D4` | [47](../src/modules/dledit.c#L47), [67](../src/modules/dledit.c#L67) |
+| address_global | `D_dledit_00400600` | function `dleditLookupMappedWord` | [40](../src/modules/dledit.c#L40), [123](../src/modules/dledit.c#L123) |
+| address_global | `D_dledit_00400658` | function `dleditLookupMappedWord` | [40](../src/modules/dledit.c#L40), [122](../src/modules/dledit.c#L122) |
+| address_global | `D_dledit_004006C4` | function `dleditLookupMappedWord` | [40](../src/modules/dledit.c#L40), [120](../src/modules/dledit.c#L120) |
+| address_global | `D_dledit_00400708` | function `dleditLookupMappedWord` | [40](../src/modules/dledit.c#L40), [121](../src/modules/dledit.c#L121) |
+| decompiler_local | `arg0` | function `func_dledit_004003D4` | [47](../src/modules/dledit.c#L47) |
+| decompiler_local | `arg1` | function `func_dledit_004001F8` | [45](../src/modules/dledit.c#L45) |
+| decompiler_local | `arg2` | function `func_dledit_00400174` | [44](../src/modules/dledit.c#L44) |
+| explicit_unknown | `Consumed views for RGBA commands and two combiner cycles. * RE_UNKNOWN: nominal original type names, allocation ownership, aliasing and * caller value domains remain unproved; t...` | type `RGBAF` | [6](../src/modules/dledit.c#L6) |
+| explicit_unknown | `Find command 0xFD and replace its address word with the supplied value plus 0x80000000, preserving unsigned wrap. * RE_ORIGINAL_QUIRK: the scanner cannot stop at positive 0xDF. ...` | function `dleditPatchTextureImageAddress` | [102](../src/modules/dledit.c#L102) |
+| explicit_unknown | `Normalize display-list word one's four bytes to RGBA floats in byte order; a null command leaves output untouched. * RE_UNKNOWN: complete command/output backing extent, alias an...` | function `dleditUnpackRgba` | [159](../src/modules/dledit.c#L159) |
+| explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_dledit_00400090` | [73](../src/modules/dledit.c#L73) |
+| explicit_unknown | `Pack two cycles of color and alpha selectors into a combiner command. * RE_ORIGINAL_QUIRK: store word0 before reading selector expressions for word1. * RE_UNKNOWN: selector doma...` | function `dleditPackCombineSelectors` | [142](../src/modules/dledit.c#L142) |
+| explicit_unknown | `RE_UNKNOWN: original FC packing reads a 16-word selection window, preserves masks/shifts, and stores word0 before second-stage source reads; selector domains, complete source/co...` | — | [141](../src/modules/dledit.c#L141) |
+| explicit_unknown | `RE_UNKNOWN: original RGBA packing truncates channel*255 with byte wrapping, no clamps, and stores opcode word before reading channels; historical channel domains (including nonf...` | — | [126](../src/modules/dledit.c#L126) |
+| explicit_unknown | `RE_UNKNOWN: original combiner decoding snapshots both command words before 16 output stores, then caps only selectors0/1/2 and8/9/10 at8/8/16 even for null input, preserving neg...` | — | [172](../src/modules/dledit.c#L172) |
+| explicit_unknown | `Read sixteen combiner selectors, then clamp color A/B to8 and color C to16. * RE_ORIGINAL_QUIRK: a null command still clamps the existing selector rows; * negative signed select...` | function `dleditReadAndClampCombineSelectors` | [173](../src/modules/dledit.c#L173) |
+| explicit_unknown | `Register the original dledit module addresses in their observed store order * after updating the file allocation pointer. Preserve separate empty exports. * RE_UNKNOWN: historic...` | function `__entrypoint_func_dleditInitializeModuleExports` | [53](../src/modules/dledit.c#L53) |
+| explicit_unknown | `Return an original combiner-source label address through the direct, eight-column or nine-column index table. * Preserve the unused context word and unchecked signed alternate/r...` | function `dleditLookupMappedWord` | [115](../src/modules/dledit.c#L115) |
+| explicit_unknown | `Scan eight-byte display-list commands for the requested first word. * RE_ORIGINAL_QUIRK: the sign-extended opcode cannot equal positive 0xDF; * target absence does not terminate...` | function `dleditFindCommandWordWithOriginalEndTest` | [217](../src/modules/dledit.c#L217) |
+| explicit_unknown | `Scan eight-byte display-list commands for the requested opcode. * RE_ORIGINAL_QUIRK: the sign-extended command byte cannot equal positive 0xDF. * RE_UNKNOWN: target presence, re...` | function `dleditFindOpcodeWithOriginalEndTest` | [82](../src/modules/dledit.c#L82) |
+| explicit_unknown | `Write the opcode and packed RGBA channels into one display-list command. * RE_ORIGINAL_QUIRK: scale by255, truncate and retain the original masks/shifts; no clamp. * RE_UNKNOWN:...` | function `dleditWriteRgbaCommand` | [127](../src/modules/dledit.c#L127) |
+| offset_field | `word0` | type `DleditCommand` | [38](../src/modules/dledit.c#L38) |
+| offset_field | `word1` | function `dleditUnpackRgba`, type `DleditCommand` | [38](../src/modules/dledit.c#L38), [164](../src/modules/dledit.c#L164) |
+| original_quirk | `Find command 0xFD and replace its address word with the supplied value plus 0x80000000, preserving unsigned wrap. * RE_ORIGINAL_QUIRK: the scanner cannot stop at positive 0xDF. ...` | function `dleditPatchTextureImageAddress` | [102](../src/modules/dledit.c#L102) |
+| original_quirk | `Pack two cycles of color and alpha selectors into a combiner command. * RE_ORIGINAL_QUIRK: store word0 before reading selector expressions for word1. * RE_UNKNOWN: selector doma...` | function `dleditPackCombineSelectors` | [142](../src/modules/dledit.c#L142) |
+| original_quirk | `Read sixteen combiner selectors, then clamp color A/B to8 and color C to16. * RE_ORIGINAL_QUIRK: a null command still clamps the existing selector rows; * negative signed select...` | function `dleditReadAndClampCombineSelectors` | [173](../src/modules/dledit.c#L173) |
+| original_quirk | `Scan eight-byte display-list commands for the requested first word. * RE_ORIGINAL_QUIRK: the sign-extended opcode cannot equal positive 0xDF; * target absence does not terminate...` | function `dleditFindCommandWordWithOriginalEndTest` | [217](../src/modules/dledit.c#L217) |
+| original_quirk | `Scan eight-byte display-list commands for the requested opcode. * RE_ORIGINAL_QUIRK: the sign-extended command byte cannot equal positive 0xDF. * RE_UNKNOWN: target presence, re...` | function `dleditFindOpcodeWithOriginalEndTest` | [82](../src/modules/dledit.c#L82) |
+| original_quirk | `Write the opcode and packed RGBA channels into one display-list command. * RE_ORIGINAL_QUIRK: scale by255, truncate and retain the original masks/shifts; no clamp. * RE_UNKNOWN:...` | function `dleditWriteRgbaCommand` | [127](../src/modules/dledit.c#L127) |
 
 ## src/modules/env.c
 

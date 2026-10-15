@@ -284,3 +284,6 @@ D_800209E0 = __OSGlobalIntMask;
 D_80020A48 = __osRunQueue;
 __osLeoAbnormalResume = kernelDiskResetBufferManagerAndNotify;
 __osLeoResume = kernelDiskPostPiEvent;
+func_8000E820 = __osMotorAccess;
+func_8000E988 = __osMakeMotorData;
+func_8000EA94 = osMotorInit;

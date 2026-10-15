@@ -1,0 +1,3 @@
+func_dledit_00400174 = dleditWriteRgbaCommand;
+func_dledit_004001F8 = dleditPackCombineSelectors;
+func_dledit_004003D4 = dleditReadAndClampCombineSelectors;

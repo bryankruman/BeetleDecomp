@@ -3,6 +3,37 @@
 #include "file_manager.h"
 /* Original address storage; slot signatures remain separate contracts. */
 typedef struct { u32 slots[9]; } DleditModuleAddressStorage;
+/* Consumed views for RGBA commands and two combiner cycles.
+ * RE_UNKNOWN: nominal original type names, allocation ownership, aliasing and
+ * caller value domains remain unproved; these declarations allocate no storage.
+ * Each cycle supplies color A/B/C/D followed by alpha A/B/C/D selectors to
+ * the existing GBI masks. No global export/header migration is implied. */
+typedef struct RGBAF_s {
+    f32 red;
+    f32 green;
+    f32 blue;
+    f32 alpha;
+} RGBAF;
+
+typedef struct CombineMode_inner_s {
+    s32 colorA;
+    s32 colorB;
+    s32 colorC;
+    s32 colorD;
+    s32 alphaA;
+    s32 alphaB;
+    s32 alphaC;
+    s32 alphaD;
+} CombineMode_inner;
+
+typedef struct CombineMode_s {
+    union {
+        CombineMode_inner cycles[2];
+    };
+} CombineMode;
+
+#define BAR_gDPSetCombineLERP2(pkt,a0,b0,c0,d0,Aa0,Ab0,Ac0,Ad0,a1,b1,c1,d1,Aa1,Ab1,Ac1,Ad1) { Gfx *_g = (Gfx *)(pkt); _g->words.w0 = _SHIFTL(G_SETCOMBINE, 24, 8) | _SHIFTL(GCCc0w0(a0, c0, Aa0, Ac0) | GCCc1w0(a1, c1), 0, 24); _g->words.w1 = (unsigned int)(GCCc0w1(b0, d0, Ab0, Ad0) | GCCc1w1(b1, Aa1, Ac1, d1, Ab1, Ad1)); }
+
 void func_dledit_00400090(void);
 typedef struct { u32 word0, word1; } DleditCommand;
 typedef struct { f32 r, g, b, a; } DleditRgba;
@@ -10,11 +41,14 @@ extern s32 D_dledit_00400600, D_dledit_00400658, D_dledit_004006C4, D_dledit_004
 u8 * dleditFindOpcodeWithOriginalEndTest();
 void dleditPatchTextureImageAddress();
 s32 dleditLookupMappedWord(s32 context, s32 alternate, s32 row, s32 column);
-void func_dledit_00400174();
-void func_dledit_004001F8();
+void func_dledit_00400174(Gfx *gdl, RGBAF *color, s32 arg2);
+void func_dledit_004001F8(CombineMode *mode, Gfx *arg1);
 void dleditUnpackRgba(DleditCommand *command, DleditRgba *rgba);
-void func_dledit_004003D4();
+void func_dledit_004003D4(CombineMode* arg0, Gfx* gdl);
 s32 * dleditFindCommandWordWithOriginalEndTest();
+typedef char DleditRgbaViewIs16Bytes[(sizeof(RGBAF) == 16) ? 1 : -1];
+typedef char DleditCombineCycleIs32Bytes[(sizeof(CombineMode_inner) == 32) ? 1 : -1];
+typedef char DleditCombineViewIs64Bytes[(sizeof(CombineMode) == 64) ? 1 : -1];
 #line 18 "src/modules/dledit.c"
 /* Register the original dledit module addresses in their observed store order
  * after updating the file allocation pointer. Preserve separate empty exports.
@@ -90,9 +124,36 @@ s32 dleditLookupMappedWord(s32 context, s32 alternate, s32 row, s32 column) {
 }
 #line 42 "src/modules/dledit.c"
 /* RE_UNKNOWN: original RGBA packing truncates channel*255 with byte wrapping, no clamps, and stores opcode word before reading channels; historical channel domains (including nonfinite/out-of-range inputs), command/color backing extent and alias/lifetime guarantees require original color producers, UVTX assets and callers. Preserve operand order and null-command behavior. */
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/dledit/func_dledit_00400174.s")
+/* Write the opcode and packed RGBA channels into one display-list command.
+ * RE_ORIGINAL_QUIRK: scale by255, truncate and retain the original masks/shifts; no clamp.
+ * RE_UNKNOWN: finite channel range, aliasing, allocation bounds and caller return use. */
+#line 137 "src/modules/dledit.c"
+void dleditWriteRgbaCommand(Gfx *command, RGBAF *color, s32 opcode) {
+    if (command == NULL) {
+        return;
+    }
+    command->words.w0 = (opcode << 8) << 16;
+    command->words.w1 =
+        (((((s32) (color->alpha * 255.0f)) & 0xFF) | ((((s32) (255.0f * color->red)) << 19) << 5))
+         | ((((s32) (255.0f * color->green)) & 0xFF) << 0x10))
+        | ((((s32) (255.0f * color->blue)) & 0xFF) << 8);
+}
 /* RE_UNKNOWN: original FC packing reads a 16-word selection window, preserves masks/shifts, and stores word0 before second-stage source reads; selector domains, complete source/command backing layout, alias/lifetime and historical declarations require original selection writers, command consumers and callers. Preserve that store boundary and null-command behavior. */
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/dledit/func_dledit_004001F8.s")
+/* Pack two cycles of color and alpha selectors into a combiner command.
+ * RE_ORIGINAL_QUIRK: store word0 before reading selector expressions for word1.
+ * RE_UNKNOWN: selector domains, source/destination aliasing and caller return use. */
+#line 148 "src/modules/dledit.c"
+void dleditPackCombineSelectors(CombineMode *selectors, Gfx *command) {
+    if (command == NULL) {
+        return;
+    }
+
+    BAR_gDPSetCombineLERP2(command, selectors->cycles[0].colorA, selectors->cycles[0].colorB, selectors->cycles[0].colorC,
+                           selectors->cycles[0].colorD, selectors->cycles[0].alphaA, selectors->cycles[0].alphaB,
+                           selectors->cycles[0].alphaC, selectors->cycles[0].alphaD, selectors->cycles[1].colorA, selectors->cycles[1].colorB,
+                           selectors->cycles[1].colorC, selectors->cycles[1].colorD, selectors->cycles[1].alphaA, selectors->cycles[1].alphaB,
+                           selectors->cycles[1].alphaC, selectors->cycles[1].alphaD);
+}
 
 #line 47 "src/modules/dledit.c"
 /* Normalize display-list word one's four bytes to RGBA floats in byte order; a null command leaves output untouched.
@@ -109,7 +170,48 @@ void dleditUnpackRgba(DleditCommand *command, DleditRgba *rgba) {
 }
 #line 48 "src/modules/dledit.c"
 /* RE_UNKNOWN: original combiner decoding snapshots both command words before 16 output stores, then caps only selectors0/1/2 and8/9/10 at8/8/16 even for null input, preserving negative existing values; output capacity, alias/lifetime and UI selector meanings require original shared-window writers/readers and callers. Preserve snapshot/store/clamp order. */
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/dledit/func_dledit_004003D4.s")
+/* Read sixteen combiner selectors, then clamp color A/B to8 and color C to16.
+ * RE_ORIGINAL_QUIRK: a null command still clamps the existing selector rows;
+ * negative signed selectors survive these upper-bound tests unchanged.
+ * RE_UNKNOWN: nominal ownership, valid command opcode and caller return use. */
+#line 175 "src/modules/dledit.c"
+void dleditReadAndClampCombineSelectors(CombineMode* selectors, Gfx* command) {
+    s32 cycleIndex;
+    u32 commandWord0;
+    u32 commandWord1;
+
+    if (command != NULL) {
+        commandWord0 = command->words.w0;
+        commandWord1 = command->words.w1;
+        selectors->cycles[0].colorA = (s32) ((commandWord0 >> 0x14) & 0xF);
+        selectors->cycles[0].colorB = (s32) ((commandWord1 >> 0x1C) & 0xF);
+        selectors->cycles[0].colorC = (s32) ((commandWord0 >> 0xF) & 0x1F);
+        selectors->cycles[0].colorD = (s32) ((commandWord1 >> 0xF) & 7);
+        selectors->cycles[0].alphaA = (s32) ((commandWord0 >> 0xC) & 7);
+        selectors->cycles[0].alphaB = (s32) ((commandWord1 >> 0xC) & 7);
+        selectors->cycles[0].alphaC = (s32) ((commandWord0 >> 9) & 7);
+        selectors->cycles[0].alphaD = (s32) ((commandWord1 >> 9) & 7);
+        selectors->cycles[1].colorA = (s32) ((commandWord0 >> 5) & 0xF);
+        selectors->cycles[1].colorB = (s32) ((commandWord1 >> 0x18) & 0xF);
+        selectors->cycles[1].colorC = (s32) (commandWord0 & 0x1F);
+        selectors->cycles[1].colorD = (s32) ((commandWord1 >> 6) & 7);
+        selectors->cycles[1].alphaA = (s32) ((commandWord1 >> 0x15) & 7);
+        selectors->cycles[1].alphaB = (s32) ((commandWord1 >> 3) & 7);
+        selectors->cycles[1].alphaC = (s32) ((commandWord1 >> 0x12) & 7);
+        selectors->cycles[1].alphaD = (s32) (commandWord1 & 7);
+    }
+    for (cycleIndex = 0; cycleIndex < 2; cycleIndex++) {
+        if (selectors->cycles[cycleIndex].colorA >= 9) {
+            selectors->cycles[cycleIndex].colorA = 8;
+        }
+        if (selectors->cycles[cycleIndex].colorB >= 9) {
+            selectors->cycles[cycleIndex].colorB = 8;
+        }
+        if (selectors->cycles[cycleIndex].colorC >= 0x11) {
+            selectors->cycles[cycleIndex].colorC = 0x10;
+        }
+    }
+}
 
 #line 51 "src/modules/dledit.c"
 /* Scan eight-byte display-list commands for the requested first word.
