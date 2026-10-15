@@ -3667,3 +3667,15 @@ the remaining 115 bytes and nominal SDK type provenance remain unknown.
 The isolated candidate's twelve extra alignment bytes do not enter
 the mixed owner or receive credit. Three approved older comment files
 preserve all twenty executable bodies and logical coordinates.
+
+The disk interrupt unit retains its 1,408-byte interrupt routine in assembly
+and recovers two C helpers, `kernelDiskResetBufferManagerAndNotify` (180 bytes)
+and `kernelDiskPostPiEvent` (188 bytes). The helpers use project-internal
+external names for real assembly callers; original C linkage and private
+storage ownership remain marked RE_UNKNOWN. Exact linker aliases preserve
+the original function identities. The separate disk initializer remains
+assembly. Four older-code purpose-comment updates preserve all 47 existing
+function bodies and logical coordinates. Normal compilation uses existing
+2.0I fallback headers only for this unit; no shared SDK ABI or include order
+changes. The 1,776-byte object, all 47 relocations, native instructions,
+all 133 packed modules and the full original ROM remain acceptance gates.

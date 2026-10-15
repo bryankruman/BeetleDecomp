@@ -109,10 +109,10 @@ int uvStrcmp(const char* first, const char* second) {
 
 #line 85 "src/modules/uvstring_rom.c"
 /* Write integer digits backward into the chosen output field and
- * advance the shared output cursor. Positive padCount selects that
- * exact field width. RE_ORIGINAL_QUIRK: the left-justified negative
- * branch writes a space where the sign would be. RE_UNKNOWN: valid
- * magnitude, radix, field width and destination capacity are caller contracts. */
+ * advance the output cursor. Positive padCount fixes the field width,
+ * discarding leading digits or the sign when too narrow. RE_ORIGINAL_QUIRK:
+ * left-justified negatives write a space for the sign. RE_UNKNOWN: radix,
+ * signed negation/digit-count power bounds and destination capacity require callers. */
 void _uvStrFormatInt(s32 number, u16 base, s32* outputCursor, char* output, s32 padCount, s32 leftJustify, s32 hasZeroPadding) {
     u16 digit;
     u16 digitCount;
@@ -199,10 +199,10 @@ void _uvStrFormatInt(s32 number, u16 base, s32* outputCursor, char* output, s32 
 #line 168 "src/modules/uvstring_rom.c"
 
 #line 169 "src/modules/uvstring_rom.c"
-/* Append a signed decimal value with exactly two fractional digits,
- * advancing the shared output cursor. Fractional digits are truncated
- * individually; no rounding is added. RE_UNKNOWN: representable integer
- * magnitude and destination capacity remain caller contracts. */
+/* Append a signed decimal value with exactly two fractional digits and
+ * advance the output cursor; truncate fractional digits without rounding.
+ * RE_UNKNOWN: finite inputs, representable integer casts and signed digit-count
+ * powers, and destination capacity remain caller contracts. */
 void _uvStrFormatFloat(f32 number, s32* outputCursor, char* output) {
     f32 fraction;
     u16 digit;
@@ -282,10 +282,10 @@ s32 _uvStrCharToDigit(char character) {
 
 #line 237 "src/modules/uvstring_rom.c"
 /* Parse the original d/x/b/f/s/c conversions into an unbounded caller
- * buffer. RE_ORIGINAL_QUIRK: precision digits are consumed but ignored,
- * and float conversion always writes two fractional digits.
- * RE_UNKNOWN: valid format syntax, argument types and buffer capacities
- * remain caller contracts; preserve the original varargs handling. */
+ * buffer. RE_ORIGINAL_QUIRK: precision is ignored; floats write two decimals.
+ * Unsupported conversions, including %%, leave specifier parsing active.
+ * RE_UNKNOWN: format syntax, argument types, field-digit scratch bounds and
+ * destination capacity remain caller contracts; preserve varargs handling. */
 void uvSprintf(char* destination, const char* format, ...) {
     s32 formatIndex;
     s32 fieldDigitIndex;

@@ -30,6 +30,12 @@ u16 D_uvgeom_rom_00401760;
 // .data
 s32 D_uvgeom_rom_00401740[] = { 0x00180000, __entrypoint_func_uvgeom_rom_400000, 0, 0 };
 
+/* Publish six geometry callbacks and initialize their workspace from optional
+ * geometry settings. With no supplied buffer, request 16-byte-aligned storage
+ * using the selected size word times eight. RE_UNKNOWN: size-word meaning/range,
+ * supplied-buffer capacity/lifetime and allocation/module-load failure contracts
+ * remain unproven. */
+#line 33 "src/modules/uvgeom_rom.c"
 void __entrypoint_func_uvgeom_rom_400000(UvGeom_Exports *exports) {
     GeometrySettings *settings;
 

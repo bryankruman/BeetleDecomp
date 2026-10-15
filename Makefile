@@ -700,6 +700,11 @@ $(SDK_ACCESS_OBJECTS): $(BUILD_DIR)/%.o: %.c $(SDK_AUDIO_HEADERS) $(SDK_RETAINED
 	$(V)mkdir -p $(dir $@)
 	$(V)$(SDK_AUDIO_CC) $(subst -O3,-O1,$(SDK_AUDIO_FLAGS)) -o $@ $<
 
+# Disk interrupt helpers: retain interrupt1408 ASM before helpers180+188 with fixed IDO5.3/O2.
+$(BUILD_DIR)/src/libultra/io/disk_interrupt_helpers.o: src/libultra/io/disk_interrupt_helpers.c $(SDK_AUDIO_HEADERS) $(SDK_RETAINED_STORAGE_HEADERS) include/2.0I/PRinternal/piint.h tools/asm-processor/build.py tools/asm-processor/asm_processor.py asm/nonmatchings/libultra/io/disk_interrupt_helpers/func_80009DF0.s tools/asm-processor/prelude.inc
+	$(V)mkdir -p $(dir $@)
+	$(V)$(ASM_PROC) $(ASM_PROC_FLAGS) $(SDK_AUDIO_CC) -- $(AS) $(ASFLAGS) -- $(subst -O3,-O2,$(SDK_AUDIO_FLAGS)) -o $@ $<
+
 # PI timing snapshot: retain manager380 ASM before helper116 with fixed IDO5.3/O2.
 $(BUILD_DIR)/src/libultra/io/pi_domain_timing.o: src/libultra/io/pi_domain_timing.c $(SDK_AUDIO_HEADERS) $(SDK_RETAINED_STORAGE_HEADERS) include/2.0I/PRinternal/piint.h tools/asm-processor/build.py tools/asm-processor/asm_processor.py asm/nonmatchings/libultra/io/pi_domain_timing/osCreatePiManager.s tools/asm-processor/prelude.inc
 	$(V)mkdir -p $(dir $@)

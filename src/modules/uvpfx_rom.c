@@ -60,6 +60,12 @@ void func_uvpfx_rom_00403AC8(s32 arg0, s32 arg1);
 
 #line 61 "src/modules/uvpfx_rom.c"
 
+/* Publish particle controls, allocate the record table, and load dependencies.
+ * RE_ORIGINAL_QUIRK: missing/zero capacity selects 256; only definition pointers
+ * are cleared. GMGR is loaded here but omitted by uvPfxModuleCleanup.
+ * RE_UNKNOWN: valid capacities, initialization of the remaining record fields,
+ * and GMGR teardown ownership are not established by this entrypoint. */
+#line 62 "src/modules/uvpfx_rom.c"
 void __entrypoint_func_uvpfx_rom_400000(UvPfx_Exports* exports) {
     s32 recordIndex;
     s32* capacityProperty;

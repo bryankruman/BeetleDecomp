@@ -29,6 +29,12 @@ u16 D_uvtextureld_rom_00400B72;
 
 #line 30 "src/modules/uvtextureld_rom.c"
 
+/* Install texture-loader exports/dependencies and reset the private-image count.
+ * RE_ORIGINAL_QUIRK: only a missing limit selects 10000; a supplied zero is kept
+ * and selects shared-image fallback from the first load.
+ * RE_UNKNOWN: property validity and reinitialization with live resources; see
+ * the image loader and destructor for shared-storage/lifetime constraints. */
+#line 31 "src/modules/uvtextureld_rom.c"
 void __entrypoint_func_uvtextureld_rom_400000(UvTextureLd_Exports* exports) {
     u16* imageCountLimitProperty;
 

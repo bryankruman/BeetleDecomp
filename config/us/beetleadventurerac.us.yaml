@@ -152,7 +152,7 @@ segments:
       - [0xA7F0, c, libultra/os/gettime]
       - [0xA880, asm]
       - [0xA930, c, libultra/io/siacs]
-      - [0xA9F0, asm]
+      - [0xA9F0, c, libultra/io/disk_interrupt_helpers] # Retain interrupt1408 ASM before disk helpers180+188 C.
       - [0xB0E0, c, libultra/os/destroythread]
       - [0xB1F0, asm]
       - [0xB2C0, c, libultra/io/si]
