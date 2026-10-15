@@ -108,6 +108,9 @@ void uvQuatFromRotationMatrix(Quat* quat, Mtx4F* matrix) {
 }
 #line 63 "src/modules/uvquat_rom.c"
 
+/* Apply the original x/z offsets and negated y before halving, then combine
+ * their sine/cosine terms into a quaternion. RE_UNKNOWN: caller angle units,
+ * axis order and coordinate-frame conventions require consumer evidence. */
 #line 64 "src/modules/uvquat_rom.c"
 
 void uvQuatFromEuler(Quat *quat, f32 x, f32 y, f32 z) {

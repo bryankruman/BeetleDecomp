@@ -529,11 +529,111 @@ void *uvTerraGetLoadedTerrain(s32 terrainId) {
  * loaded terrain and asset/index guarantees, mask meanings, and shared-buffer
  * capacity, lifetime and maximum hits across groups. Trace UVTR/UVCT producers,
  * QERY allocation/overrides and actual TERR export 0x28 callers before changing
- * limits or assigning ownership. Draft1849 preserves observed effects but
- * differs in frame/local homes, register lifetimes and the post-test branch;
- * recover original source dataflow before replacing this assembly. */
+ * limits or assigning ownership.
+ *
+ */
 #line 414 "src/modules/uvterra_rom.c"
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00401E64.s")
+extern s32 *D_uvterra_rom_0040F784;
+/* Collect packed triangle handles whose masked triangles contain the query point.
+ * RE_ORIGINAL_QUIRK: append before checking capacity; reaching the limit breaks
+ * only the current group loop. Later groups can still be visited.
+ * RE_UNKNOWN: valid terrain/indices, mask meaning and buffer capacity/lifetime.
+ * Strict bounds and unordered comparisons retain the original query behavior. */
+#line 414 "src/modules/uvterra_rom.c"
+u32 uvTerraCollectTriangleHandlesAtPoint(s32 terrainId, f32 worldX, f32 worldY, s32 **outTriangleHandles) {
+    f32 localX;
+    f32 localY;
+    f32 localZ;
+    ParsedUVCT *geometry;
+    ParsedUVTR *terrain;
+    Unk80225FBC_0x28 *group;
+    Unk80225FBC_0x28_UnkC *triangle;
+    Vtx *firstVertex;
+    u16 cellMask;
+    Vtx *secondVertex;
+    u16 tileIndex;
+    Vtx *thirdVertex;
+    f32 secondX;
+    f32 thirdX;
+    f32 thirdY;
+    f32 firstX;
+    f32 firstY;
+    f32 secondY;
+    uvUnkTileStruct* tile;
+    u16 triangleIndex;
+    u16 groupIndex;
+    u32 hitCount;
+
+    hitCount = 0;
+    terrain = uvGetLoadedFile('UVTR', terrainId);
+    if (func_uvterra_rom_0040B8C0(terrain, worldX, worldY, 0.0f, &localX, &localY, &localZ, (s16 *) &tileIndex, (s16 *) &cellMask,
+                                  0)
+        == 0) {
+        *outTriangleHandles = NULL;
+        return 0U;
+    }
+    tile = &terrain->unk28[tileIndex];
+    geometry = tile->unk40;
+    if (geometry == NULL) {
+        *outTriangleHandles = NULL;
+        return 0U;
+    }
+    localX *= geometry->unk2C;
+    localY *= geometry->unk2C;
+    localZ *= geometry->unk30;
+    for (groupIndex = 0; groupIndex < geometry->unkC; groupIndex++) {
+        group = &geometry->unk8[groupIndex];
+        if (!(group->unk1E & cellMask)) {
+            continue;
+        }
+
+        for (triangleIndex = 0; triangleIndex < group->unk1C; triangleIndex++) {
+            triangle = &group->unk18[triangleIndex];
+            if (!(triangle->unk6 & cellMask)) {
+                continue;
+            }
+            firstVertex = (Vtx*)geometry->vtxTable + triangle->unk0;
+            firstX = firstVertex->v.ob[0];
+            secondVertex = (Vtx*)geometry->vtxTable + triangle->unk2;
+            secondX = secondVertex->v.ob[0];
+            thirdVertex = (Vtx*)geometry->vtxTable + triangle->unk4;
+            thirdX = thirdVertex->v.ob[0];
+
+            if (((firstX < localX)) && (secondX < localX) && (thirdX < localX)) {
+                continue;
+            }
+
+            if (((localX < firstX) && (localX < secondX) && (localX < thirdX))) {
+                continue;
+            }
+
+            firstY = firstVertex->v.ob[1];
+            secondY = secondVertex->v.ob[1];
+            thirdY = thirdVertex->v.ob[1];
+
+            if (((firstY < localY)) && (secondY < localY) && (thirdY < localY)) {
+                continue;
+            }
+
+            if (((localY < firstY) && (localY < secondY) && (localY < thirdY))) {
+                continue;
+            }
+
+            if (D_uvterra_rom_0040F768->uvIntersectPointInPositiveWindingTriangle2D(
+                    localX, localY, firstX, firstY, secondX, secondY, thirdX, thirdY, 1.0f)
+                == 0) {
+                continue;
+            }
+            D_uvterra_rom_0040F784[hitCount++] = (tileIndex << 12 << 10) + ((groupIndex & 0x3FF) << 0xC) + (triangleIndex & 0xFFF);
+            if (hitCount >= D_uvterra_rom_0040F76C->uvQueryGetRecordCapacity()) {
+                break;
+            }
+        }
+    }
+    *outTriangleHandles = D_uvterra_rom_0040F784;
+    return hitCount;
+}
+#line 415 "src/modules/uvterra_rom.c"
 #line 415 "src/modules/uvterra_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00402244.s")

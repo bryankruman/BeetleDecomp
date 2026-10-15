@@ -595,14 +595,57 @@ void gameGuiBuildDebugOptionsPanels(s32 parentWord) {
  * extents, occupancy/alias/lifetime guarantees, and property 3's action-dispatch
  * ABI. Resolve original allocations, label boundaries, teardown and all property
  * readers before changing bounds, ownership or code-address declarations.
- * Readable C is parked: all 592 native/draft bytes have only two stack-offset
- * differences for the reused action local (36 versus 32); all 60 complete
- * relocation records match as a multiset, with only serialization order changed.
- * Recover original storage/lifetime evidence and prove packed modules and ROM;
- * a local's stack offset alone does not justify extra storage or padding.
+ *
+ *
+ *
+ *
+ *
  */
 #line 99 "src/modules/gamegui.c"
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/gamegui/func_gamegui_004014F8.s")
+extern u8 D_gamegui_00402A18[];
+extern u8 D_gamegui_00402A20[];
+extern u8 D_gamegui_00402A28[];
+extern u8 D_gamegui_00402A30[];
+extern u8 D_gamegui_00402A34[];
+extern u8 D_gamegui_00402A3C[];
+extern u8 D_gamegui_00402A44[];
+extern u8 D_gamegui_00402A4C[];
+extern u8 D_gamegui_00402A54[];
+extern u8 D_gamegui_00402A60[];
+extern u8 D_gamegui_00402A68[];
+extern u8 D_gamegui_00402A78[];
+extern u8 D_gamegui_00402A84[];
+extern u8 D_gamegui_00402A90[];
+extern s32 D_gamegui_00402D24;
+/* Add 13 labelled state-action rows and retain the two choice-row handles.
+ * The accepted MISC helper stores each callback word as text-row property 3.
+ * RE_UNKNOWN: row capacity, allocation failure and callback lifetime are unproved.
+ * Preserve direct callback expressions and the original row/call order. */
+#line 99 "src/modules/gamegui.c"
+void gameGuiAddStateActionRows(s32 parentWord) {
+    void *actionPanel;
+
+    actionPanel = ((GameGuiRacePanelGuiExports *)gUvGuiExports)->getTextList(
+        (s16)((GameGuiRacePanelGuiExports *)gUvGuiExports)->allocateTextList());
+    ((GameGuiRacePanelGuiExports *)gUvGuiExports)->copyTextListText(actionPanel, D_gamegui_00402A18);
+    ((GameGuiRacePanelGuiExports *)gUvGuiExports)->appendTextList((void *)parentWord, actionPanel);
+    D_gamegui_00402D24 =
+        (s32)gMiscExports->createTextRowWithPropertyWord(actionPanel, D_gamegui_00402A20, (s32)gameGuiRequestStateNineWithChoiceFlag);
+    D_gamegui_00402D28 =
+        (s32)gMiscExports->createTextRowWithPropertyWord(actionPanel, D_gamegui_00402A28, (s32)gameGuiRequestStateNineWithChoiceFlag);
+    gMiscExports->createTextRowWithPropertyWord(actionPanel, D_gamegui_00402A30, (s32)gameGuiRequestStateEight);
+    gMiscExports->createTextRowWithPropertyWord(actionPanel, D_gamegui_00402A34, (s32)gameGuiRequestInitialIntroTrack);
+    gMiscExports->createTextRowWithPropertyWord(actionPanel, D_gamegui_00402A3C, (s32)gameGuiRequestStateThree);
+    gMiscExports->createTextRowWithPropertyWord(actionPanel, D_gamegui_00402A44, (s32)gameGuiRequestStateFour);
+    gMiscExports->createTextRowWithPropertyWord(actionPanel, D_gamegui_00402A4C, (s32)gameGuiRequestStateSevenTrack33);
+    gMiscExports->createTextRowWithPropertyWord(actionPanel, D_gamegui_00402A54, (s32)gameGuiRequestStateTen);
+    gMiscExports->createTextRowWithPropertyWord(actionPanel, D_gamegui_00402A60, (s32)gameGuiRequestStateEleven);
+    gMiscExports->createTextRowWithPropertyWord(actionPanel, D_gamegui_00402A68, (s32)gameGuiRequestStateTwelve);
+    gMiscExports->createTextRowWithPropertyWord(actionPanel, D_gamegui_00402A78, (s32)gameGuiRequestStateThirteen);
+    gMiscExports->createTextRowWithPropertyWord(actionPanel, D_gamegui_00402A84, (s32)gameGuiRequestStateFourteen);
+    gMiscExports->createTextRowWithPropertyWord(actionPanel, D_gamegui_00402A90, (s32)gameGuiRequestStateFifteen);
+}
+#line 100 "src/modules/gamegui.c"
 /*
  * Scan four controllers for both masks 0x20 and 0x10; on the first match,
  * load the GUI, display-list editor and font resources when needed, then set

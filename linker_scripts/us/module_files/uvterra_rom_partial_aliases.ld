@@ -1,0 +1,1 @@
+func_uvterra_rom_00401E64 = uvTerraCollectTriangleHandlesAtPoint;

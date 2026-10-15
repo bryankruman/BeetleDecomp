@@ -32,7 +32,7 @@ typedef struct UnkStruct_80001724_s {
     /* 0x18 */ char pad18[4];
     /* 0x1C */ u16 unk1C;                           /* inferred */
     /* 0x1E */ u16 unk1E;                            /* inferred */
-} UnkStruct_80001724;                               /* size = 0x1F */
+} UnkStruct_80001724;                               /* Last declared field ends at offset 0x20; RE_UNKNOWN: full allocation size. */
 
 extern s32 D_uvgfxstate_rom_00402C48;
 

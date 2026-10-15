@@ -379,3 +379,4 @@ uvTerraLookupAdjustedWrappedIndexPair = 0x0040B0C4; // type:func
 uvTerraInitializeSortGroups = 0x0040D050; // type:func
 uvTerraTestPackedAngularLevelThreshold = 0x0040CEA8; // type:func
 uvTerraRefreshProjectionAndDrawQueuedTiles = 0x0040AE4C; // type:func
+uvTerraCollectTriangleHandlesAtPoint = 0x00401E64; // type:func

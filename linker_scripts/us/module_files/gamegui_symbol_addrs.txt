@@ -249,3 +249,4 @@ gameGuiSetSharedWord = 0x00402030; // type:func
 gameGuiAccumulateLoadedTextureField1A = 0x004023BC; // type:func
 gameGuiApplyDitherAndVideoSettings = 0x004021DC; // type:func
 gameGuiAddRaceAndBattleControls = 0x00400194; // type:func
+gameGuiAddStateActionRows = 0x004014F8; // type:func
