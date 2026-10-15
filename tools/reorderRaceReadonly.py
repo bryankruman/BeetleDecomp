@@ -175,7 +175,7 @@ def transform(raw, spans):
                             changed_bytes=len(changed), edits=edits,
                             output_sha256=hashlib.sha256(out).hexdigest())
 
-def state(raw,c):
+def _state_two_owner_legacy(raw,c):
     e = parsed(raw); ro = e['sections']['.rodata']['data']
     assert len(ro)==1584 and sha(ro[:1504])==c['readonly_prefix_sha256'] and sha(ro[1552:])==c['second_table_sha256']
     symbols = [s for s in e['symbols'] if s['section']=='.rodata' and 1504 <= s['value'] < 1552]
@@ -193,7 +193,7 @@ def state(raw,c):
     assert raw_state != final_state
     return 'raw' if raw_state else 'laid-out'
 
-def restore(raw,c):
+def _restore_two_owner_legacy(raw,c):
     before_state = state(raw,c)
     if before_state=='laid-out':
         inverse, _ = transform(raw,c['spans'])
@@ -217,6 +217,63 @@ def restore(raw,c):
     assert sorted((r['offset'],struct.unpack_from('>I',replay,r['offset'])[0])for r in rr if r['offset'] in dict(expected))==expected
     assert [r for r in rr if r['offset'] not in dict(expected)]==c['original_non_table_RO_records']
     return out,dict(state='raw',rewritten=True,audit=audit)
+
+def state_three_owners(raw,c):
+    assert c['schema']==2 and c['coordinate_scope']=='ORIGINAL_ASM_ADDRESS_WITNESS_NOT_PACKED_RUNTIME'
+    assert c['spans']==[[1484,1508,1528],[1508,1528,1484],[1528,1552,1504]]
+    assert c['inverse_spans']==[[1528,1552,1484],[1484,1504,1508],[1504,1528,1528]]
+    e=parsed(raw);ro=e['sections']['.rodata']['data']
+    assert len(ro)==1584 and sha(ro[:1484])==c['readonly_prefix_sha256'] and sha(ro[1552:])==c['second_table_sha256']
+    for name,value,size in(('raceDispatchStateAndUpdateOverlays',13144,308),('racePlayPendingTrackSound',14512,700),('racePlayPendingPlayerMessageSound',15212,1240)):
+        symbol,=[q for q in e['symbols']if q['name']==name and q['section']=='.text']
+        assert(symbol['binding'],symbol['type'],symbol['value'],symbol['bytes'])==(1,2,value,size)
+    symbols=[q for q in e['symbols']if q['section']=='.rodata'and 1484<=q['value']<1552]
+    assert len(symbols)==6 and {q['name']for q in symbols}==set(c['floats'])
+    assert all(q['type']==0 and q['bytes']==0 for q in symbols)
+    positions={q['name']:q['value']for q in symbols}
+    records=[q for q in e['relocations']if q['section']=='.rodata']
+    assert len(records)==29 and len({q['offset']for q in records})==29
+    sites={q['offset']for q in records};assert all(0<=site<1584 and site%4==0 for site in sites)
+    raw_state=(sha(ro[1484:1508])==c['retained_island_sha256']and sha(ro[1508:1528])==c['dispatch_table_sha256']and sha(ro[1528:1552])==c['first_table_sha256']and positions==dict(zip(c['floats'],range(1484,1508,4)))and sites.intersection(range(1484,1552,4))==set(range(1508,1552,4)))
+    final_state=(sha(ro[1484:1504])==c['dispatch_table_sha256']and sha(ro[1504:1528])==c['first_table_sha256']and sha(ro[1528:1552])==c['retained_island_sha256']and positions==dict(zip(c['floats'],range(1528,1552,4)))and sites.intersection(range(1484,1552,4))==set(range(1484,1528,4)))
+    assert raw_state!=final_state
+    return 'raw'if raw_state else'laid-out'
+
+def restore_three_owners(raw,c):
+    before_state=state_three_owners(raw,c)
+    if before_state=='laid-out':
+        inverse,_=transform(raw,c['inverse_spans'])
+        restored,audit=restore_three_owners(inverse,c)
+        assert restored==raw
+        return raw,dict(state='already-laid-out',rewritten=False,audit=audit)
+    out,audit=transform(raw,c['spans']);assert state_three_owners(out,c)=='laid-out'
+    canonical=lambda x:json.dumps(x,sort_keys=True,separators=(',',':')).encode()
+    assert sha(canonical(audit['affected_references']))==c['affected_references_sha256']and len(audit['affected_references'])==8
+    operands=[dict(section=q['section'],site=q['site'],kind=q['kind'],before_sha256=sha(struct.pack('>I',q['old'])),after_sha256=sha(struct.pack('>I',q['new'])))for q in audit['operand_changes']]
+    operands=sorted(operands,key=lambda q:(q['section'],q['site'],q['kind']))
+    assert operands==c['operand_change_word_hashes']and len(operands)==2
+    assert len(audit['symbol_changes'])==6 and len(audit['relocation_site_changes'])==11
+    inverse,_=transform(out,c['inverse_spans']);assert inverse==raw
+    e=parsed(out);ro=e['sections']['.rodata']['data'];records=[q for q in e['relocations']if q['section']=='.rodata']
+    # These bases reproduce the existing original ASM witness's analysis labels.
+    # They are not packed module runtime addresses and carry no native credit.
+    replay=bytearray(ro);bases={'.text':0x400000,'.rodata':0x4041D0,'.data':0x404800,'.bss':0x4049E0,'ABS':0}
+    for q in records:
+        assert q['kind']==2 and q['explicit_addend']is None and q['symbol_section']in bases
+        value=bases[q['symbol_section']]+q['symbol_value']+struct.unpack_from('>I',ro,q['offset'])[0]
+        struct.pack_into('>I',replay,q['offset'],value)
+    assert sha(replay)==c['original_readonly_witness_sha256']
+    expected=[tuple(row)for row in c['original_witness_table_target_pairs']];assert len(expected)==19
+    assert sorted((q['offset'],struct.unpack_from('>I',replay,q['offset'])[0])for q in records if q['offset']in dict(expected))==expected
+    assert[q for q in records if q['offset']not in dict(expected)]==c['original_non_table_RO_records']and len(c['original_non_table_RO_records'])==10
+    return out,dict(state='raw',rewritten=True,audit=audit)
+
+
+def state(raw,c):
+    return state_three_owners(raw,c)if c.get('schema')==2 else _state_two_owner_legacy(raw,c)
+
+def restore(raw,c):
+    return restore_three_owners(raw,c)if c.get('schema')==2 else _restore_two_owner_legacy(raw,c)
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('--root',required=True);p.add_argument('--layout',required=True);p.add_argument('--object',required=True);a=p.parse_args()

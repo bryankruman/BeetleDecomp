@@ -11,6 +11,18 @@
   "monolithic_assembly": "asm/us/data/modules/race.rodata.s",
   "tables": [
     {
+      "table_begin": 4212636,
+      "table_end": 4212656,
+      "table_label": "D_race_0040479C",
+      "owner_original_symbol": "func_race_00403358",
+      "owner_c_symbol": "raceDispatchStateAndUpdateOverlays",
+      "duplicate_assembly": "asm/us/nonmatchings/modules/race/D_race_0040479C.s",
+      "owner_address": 4207448,
+      "owner_bytes": 308,
+      "owner_instruction_sha256": "38af741f39b9ae087c5c5e3c1deec7e111f359c0a4bdc2b3e424d78cae4f42a1",
+      "owner_asm_normalized_sha256": "c1d92b15a5a0c4cc0dc2a535aeabfa99ec963795410e50743d5ef96b478c7841"
+    },
+    {
       "table_begin": 4212656,
       "table_end": 4212680,
       "table_label": "D_race_004047B0",
@@ -36,6 +48,7 @@
     }
   ],
   "retained_islands": [
+    null,
     {
       "begin": 4212680,
       "end": 4212704,
@@ -46,20 +59,42 @@
   ],
   "object_ordering": {
     "helper": "tools/reorderRaceReadonly.py",
-    "helper_sha256": "065dc9791e42a964b19a5b43656953b4bef0597a1f464149b743aa6ce620e867",
+    "helper_sha256": "abdf10392f6bd9ab956355509799a401851945daba0ae879570c5566404badba",
     "contract": {
-      "schema": 1,
+      "schema": 2,
       "source_object": "build/src/modules/race.o",
       "spans": [
         [
-          1504,
-          1528,
+          1484,
+          1508,
           1528
+        ],
+        [
+          1508,
+          1528,
+          1484
         ],
         [
           1528,
           1552,
           1504
+        ]
+      ],
+      "inverse_spans": [
+        [
+          1528,
+          1552,
+          1484
+        ],
+        [
+          1484,
+          1504,
+          1508
+        ],
+        [
+          1504,
+          1528,
+          1528
         ]
       ],
       "floats": [
@@ -70,77 +105,50 @@
         "D_race_004047D8",
         "D_race_004047DC"
       ],
-      "affected_references": [
+      "affected_references_sha256": "00292d15e8a6bec6dbc0a0c01c6dc748a69499d6bbcbdef5b23e71d4190c552e",
+      "operand_change_word_hashes": [
+        {
+          "section": ".text",
+          "site": 13216,
+          "kind": 6,
+          "before_sha256": "0a3dc8b910afbafb3de25802c154802a06190556af1abef50607a741e290c33d",
+          "after_sha256": "99a53a1f0a6dae2c131846cf8f01735bcfed786feb30f3c1bd468551cb2a3fe8"
+        },
         {
           "section": ".text",
           "site": 14540,
-          "hi_site": 14532,
           "kind": 6,
-          "symbol": "",
-          "old_target": 1528,
-          "new_target": 1504
-        },
-        {
-          "section": ".text",
-          "site": 14592,
-          "hi_site": 14588,
-          "kind": 6,
-          "symbol": "D_race_004047C8",
-          "old_target": 1504,
-          "new_target": 1528
-        },
-        {
-          "section": ".text",
-          "site": 14700,
-          "hi_site": 14696,
-          "kind": 6,
-          "symbol": "D_race_004047CC",
-          "old_target": 1508,
-          "new_target": 1532
-        },
-        {
-          "section": ".text",
-          "site": 14808,
-          "hi_site": 14804,
-          "kind": 6,
-          "symbol": "D_race_004047D0",
-          "old_target": 1512,
-          "new_target": 1536
-        },
-        {
-          "section": ".text",
-          "site": 14916,
-          "hi_site": 14912,
-          "kind": 6,
-          "symbol": "D_race_004047D4",
-          "old_target": 1516,
-          "new_target": 1540
-        },
-        {
-          "section": ".text",
-          "site": 15024,
-          "hi_site": 15020,
-          "kind": 6,
-          "symbol": "D_race_004047D8",
-          "old_target": 1520,
-          "new_target": 1544
-        },
-        {
-          "section": ".text",
-          "site": 15132,
-          "hi_site": 15128,
-          "kind": 6,
-          "symbol": "D_race_004047DC",
-          "old_target": 1524,
-          "new_target": 1548
+          "before_sha256": "5607c4a983f915e169bf7694a154628c21f9190a4b3ff927eea69863395209b4",
+          "after_sha256": "2c92b72d2aa6d24b567cb820e4a2c0fa6b506b0c954511f5bea4d14a3840076f"
         }
       ],
-      "readonly_prefix_sha256": "43f19e3b9534e8614dabbc483ce9b8248977175defa66d832091e2c1aa44bbaa",
+      "readonly_prefix_sha256": "9076ba77268a349110c726e88380f1e2438e1069081424bd6526c2339cfcd3c1",
+      "dispatch_table_sha256": "1cfcfe9a39476f669a26120aacd3c974f9a6874d64c95fd836c6d7ec27cc6516",
       "first_table_sha256": "bfd8530be1a1de26699ca96f78af0ba0042b8d74431483e27e2202ea38c8083d",
       "retained_island_sha256": "26821695b9281b4059533b8ac7466e32391d889f37dd7088cd1c04f7dd186ab5",
       "second_table_sha256": "9171f154fd3d02357c3e389ca30e09ea3bd031adc08b55ebc79e94784484ef73",
-      "native_readonly_sha256": "3ca209dfe79260a67b98e5eb5cc5ac6effd010e3ebdc0e07b5268ba847499a6c",
-      "table_native_target_pairs": [
+      "original_readonly_witness_sha256": "3ca209dfe79260a67b98e5eb5cc5ac6effd010e3ebdc0e07b5268ba847499a6c",
+      "original_witness_table_target_pairs": [
+        [
+          1484,
+          4207532
+        ],
+        [
+          1488,
+          4207600
+        ],
+        [
+          1492,
+          4207548
+        ],
+        [
+          1496,
+          4207616
+        ],
+        [
+          1500,
+          4207668
+        ],
         [
           1504,
           4208856
@@ -308,63 +316,9 @@
           "symbol_section": ".text",
           "symbol_value": 12648,
           "explicit_addend": null
-        },
-        {
-          "relocation_section": ".rel.rodata",
-          "relocation_section_type": 9,
-          "section": ".rodata",
-          "offset": 1484,
-          "kind": 2,
-          "symbol": ".Lrace_004033AC",
-          "symbol_section": ".text",
-          "symbol_value": 13228,
-          "explicit_addend": null
-        },
-        {
-          "relocation_section": ".rel.rodata",
-          "relocation_section_type": 9,
-          "section": ".rodata",
-          "offset": 1488,
-          "kind": 2,
-          "symbol": ".Lrace_004033F0",
-          "symbol_section": ".text",
-          "symbol_value": 13296,
-          "explicit_addend": null
-        },
-        {
-          "relocation_section": ".rel.rodata",
-          "relocation_section_type": 9,
-          "section": ".rodata",
-          "offset": 1492,
-          "kind": 2,
-          "symbol": ".Lrace_004033BC",
-          "symbol_section": ".text",
-          "symbol_value": 13244,
-          "explicit_addend": null
-        },
-        {
-          "relocation_section": ".rel.rodata",
-          "relocation_section_type": 9,
-          "section": ".rodata",
-          "offset": 1496,
-          "kind": 2,
-          "symbol": ".Lrace_00403400",
-          "symbol_section": ".text",
-          "symbol_value": 13312,
-          "explicit_addend": null
-        },
-        {
-          "relocation_section": ".rel.rodata",
-          "relocation_section_type": 9,
-          "section": ".rodata",
-          "offset": 1500,
-          "kind": 2,
-          "symbol": ".Lrace_00403434",
-          "symbol_section": ".text",
-          "symbol_value": 13364,
-          "explicit_addend": null
         }
-      ]
+      ],
+      "coordinate_scope": "ORIGINAL_ASM_ADDRESS_WITNESS_NOT_PACKED_RUNTIME"
     }
   }
 }

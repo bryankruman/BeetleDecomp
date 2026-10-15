@@ -7,6 +7,18 @@ extern s32 D_race_00404864, D_race_00404884;
 extern f32 D_race_004047C8, D_race_004047CC, D_race_004047D0;
 extern f32 D_race_004047D4, D_race_004047D8, D_race_004047DC;
 #pragma GLOBAL_ASM("asm/us/data/modules/race.rodata-prefix.s")
+/* Consumed player/results slot20 and pause slot12 views only.
+ * RE_UNKNOWN: full table layouts and callback return/argument contracts.
+ * void(void) expresses no supplied C arguments and discarded results,
+ * not proof that the historical callees return void. */
+typedef struct { u8 prefix[0x14]; void (*step)(void); } RacePlayerDispatchExports;
+typedef struct { u8 prefix[0x0C]; void (*step)(void); } RacePauseDispatchExports;
+typedef struct { u8 prefix[0x14]; void (*step)(void); } RaceResultsDispatchExports;
+extern RacePauseDispatchExports *D_race_00404A10;
+extern RaceResultsDispatchExports *D_race_00404A20;
+extern s32 D_race_00404A28;
+extern s16 D_80025D8C;
+
 #line 4 "src/modules/race.c"
 extern UnkStruct_004005C8 D_race_00404A30;
 extern UnkStruct_004005C8 D_race_00404A38;
@@ -89,7 +101,7 @@ void func_race_00402CE0();
 void func_race_00402E98();
 void func_race_004030D0();
 void raceDrawStatusFields();
-void func_race_00403358();
+void raceDispatchStateAndUpdateOverlays(void);
 s32 raceGetIndexedValue();
 void raceCreateModuleGui(void);
 void func_race_004035C8();
@@ -253,7 +265,47 @@ void func_race_00403350(void) {
 }
 #line 104 "src/modules/race.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/race/func_race_00403358.s")
+/* Step the player and dispatch states1..5 when the shared halfword is zero.
+ * States3/4 also step PAUS when the second shared halfword is nonzero.
+ * Always step RESU, then draw status fields under the original settings gate.
+ * RE_ORIGINAL_QUIRK: the outer gate skips only player/state work, not RESU
+ * or the status gate. Preserve the original absence of pointer null checks.
+ * RE_UNKNOWN: state/flag meanings and full handler/callback ABI, including
+ * historical return type; void(void) describes this consumed call form. */
+#line 105 "src/modules/race.c"
+void raceDispatchStateAndUpdateOverlays(void) {
+    if (D_80025D8C == 0) {
+        ((RacePlayerDispatchExports *)D_race_00404A04)->step();
+        switch (D_race_00404A28) {
+        case 1:
+            func_race_00401E04();
+            break;
+        case 3:
+            raceUpdateCountdownVoicesAndLabel();
+            if (D_80025D76 != 0) {
+                D_race_00404A10->step();
+            }
+            break;
+        case 2:
+            func_race_004026D0();
+            break;
+        case 4:
+            func_race_004011BC();
+            if (D_80025D76 != 0) {
+                D_race_00404A10->step();
+            }
+            break;
+        case 5:
+            func_race_00403350();
+            break;
+        }
+    }
+    D_race_00404A20->step();
+    if ((gGameSettings[0].unk18C != 0) && (gGameSettings[0].dbgFrateDisp == 2)) {
+        raceDrawStatusFields();
+    }
+}
+#line 106 "src/modules/race.c"
 
 #line 107 "src/modules/race.c"
 /* Return the indexed shared word when the signed index is nonnegative

@@ -800,6 +800,29 @@ def v4_island(begin, end, text):
     return fragment.encode('utf-8')
 
 
+def validate_three_owner_order_contract(c,layout):
+    keys={'schema','source_object','spans','inverse_spans','floats','affected_references_sha256','operand_change_word_hashes','readonly_prefix_sha256','dispatch_table_sha256','first_table_sha256','retained_island_sha256','second_table_sha256','original_readonly_witness_sha256','original_witness_table_target_pairs','original_non_table_RO_records','coordinate_scope'}
+    require(isinstance(c,dict)and set(c)==keys and c['schema']==2 and c['source_object']=='build/src/modules/race.o','invalid three-owner object-order contract')
+    require(c['coordinate_scope']=='ORIGINAL_ASM_ADDRESS_WITNESS_NOT_PACKED_RUNTIME','three-owner readonly coordinate scope changed')
+    require(c['spans']==[[1484,1508,1528],[1508,1528,1484],[1528,1552,1504]]and c['inverse_spans']==[[1528,1552,1484],[1484,1504,1508],[1504,1528,1528]],'three-owner spans/inverse changed')
+    require(c['floats']==['D_race_004047'+s for s in('C8','CC','D0','D4','D8','DC')],'three-owner float identities changed')
+    require(all(isinstance(c[k],str)and re.fullmatch(r'[0-9a-f]{64}',c[k])for k in keys if k.endswith('_sha256')),'invalid three-owner digest')
+    require(c['original_readonly_witness_sha256']==layout['readonly_sha256'],'three-owner original ASM witness changed')
+    table_shape=[(q['table_begin'],q['table_end'],q['owner_original_symbol'],q['owner_c_symbol'],q['owner_address'],q['owner_bytes'])for q in layout['tables']]
+    require(table_shape==[(0x40479C,0x4047B0,'func_race_00403358','raceDispatchStateAndUpdateOverlays',0x403358,308),(0x4047B0,0x4047C8,'func_race_004038B0','racePlayPendingTrackSound',0x4038B0,700),(0x4047E0,0x404800,'func_race_00403B6C','racePlayPendingPlayerMessageSound',0x403B6C,1240)],'three-owner table/positive extent association changed')
+    require(len(layout['retained_islands'])==3 and layout['retained_islands'][0]is None and layout['retained_islands'][2]is None,'three-owner explicit island count changed')
+    island=layout['retained_islands'][1];require(isinstance(island,dict)and(island['begin'],island['end'])==(0x4047C8,0x4047E0),'three-owner exact retained island changed')
+    expected_sites=list(range(1484,1528,4))+list(range(1552,1584,4))
+    pairs=c['original_witness_table_target_pairs'];require(isinstance(pairs,list)and len(pairs)==19 and all(isinstance(q,list)and len(q)==2 and all(type(v)is int for v in q)for q in pairs),'invalid three-owner witness table records')
+    require([q[0]for q in pairs]==expected_sites,'three-owner exact table site inventory changed')
+    for site,target in pairs:
+        owners=[q for q in layout['tables']if q['table_begin']-layout['begin']<=site<q['table_end']-layout['begin']]
+        require(len(owners)==1 and owners[0]['owner_address']<=target<owners[0]['owner_address']+owners[0]['owner_bytes']and target%4==0,'three-owner table target leaves exact owner')
+    other=c['original_non_table_RO_records'];require(isinstance(other,list)and len(other)==10 and len({q['offset']for q in other})==10 and all(q['section']=='.rodata'and q['offset']not in expected_sites and 0<=q['offset']<1484 and q['kind']==2 and q['explicit_addend']is None for q in other),'three-owner exact other readonly records changed')
+    operands=c['operand_change_word_hashes'];require(isinstance(operands,list)and len(operands)==2,'three-owner full-word change closure changed')
+    require(all(set(q)=={'section','site','kind','before_sha256','after_sha256'}and q['section']=='.text'and type(q['site'])is int and q['site']%4==0 and 0<=q['site']<16848 and q['kind']==6 and all(isinstance(q[k],str)and re.fullmatch(r'[0-9a-f]{64}',q[k])for k in('before_sha256','after_sha256'))for q in operands),'invalid three-owner exact word hash records')
+    require(len({q['site']for q in operands})==2,'duplicate three-owner changed word')
+
 def load_v4(root, layout, module):
     common = {'version', 'module', 'source', 'witness', 'witness_sha256',
               'readonly_sha256', 'begin', 'end', 'prefix_assembly',
@@ -817,12 +840,15 @@ def load_v4(root, layout, module):
         require(module=='race' and layout['source']=='src/modules/race.c' and order['helper']=='tools/reorderRaceReadonly.py', 'object-order scope is only the reviewed RACE source')
         require(isinstance(order['helper_sha256'],str) and re.fullmatch(r'[0-9a-f]{64}',order['helper_sha256']), 'invalid object-order helper hash')
         c=order['contract']
-        keys={'schema','source_object','spans','floats','affected_references','readonly_prefix_sha256','first_table_sha256','retained_island_sha256','second_table_sha256','native_readonly_sha256','table_native_target_pairs','original_non_table_RO_records'}
-        require(isinstance(c,dict) and set(c)==keys and c['schema']==1 and c['source_object']=='build/src/modules/race.o', 'invalid object-order contract')
-        require(c['spans']==[[1504,1528,1528],[1528,1552,1504]] and c['native_readonly_sha256']==layout['readonly_sha256'], 'object-order spans/native bytes changed')
-        require(c['floats']==['D_race_004047'+s for s in ('C8','CC','D0','D4','D8','DC')] and len(c['affected_references'])==7, 'object-order symbol/reference closure changed')
-        require(all(isinstance(c[k],str) and re.fullmatch(r'[0-9a-f]{64}',c[k]) for k in keys if k.endswith('_sha256')), 'invalid object-order storage hash')
-        require(len(c['table_native_target_pairs'])==14 and len(c['original_non_table_RO_records'])==15, 'object-order complete readonly records changed')
+        if isinstance(c,dict)and c.get('schema')==2:
+            validate_three_owner_order_contract(c,layout)
+        else:
+            keys={'schema','source_object','spans','floats','affected_references','readonly_prefix_sha256','first_table_sha256','retained_island_sha256','second_table_sha256','native_readonly_sha256','table_native_target_pairs','original_non_table_RO_records'}
+            require(isinstance(c,dict) and set(c)==keys and c['schema']==1 and c['source_object']=='build/src/modules/race.o', 'invalid object-order contract')
+            require(c['spans']==[[1504,1528,1528],[1528,1552,1504]] and c['native_readonly_sha256']==layout['readonly_sha256'], 'object-order spans/native bytes changed')
+            require(c['floats']==['D_race_004047'+s for s in ('C8','CC','D0','D4','D8','DC')] and len(c['affected_references'])==7, 'object-order symbol/reference closure changed')
+            require(all(isinstance(c[k],str) and re.fullmatch(r'[0-9a-f]{64}',c[k]) for k in keys if k.endswith('_sha256')), 'invalid object-order storage hash')
+            require(len(c['table_native_target_pairs'])==14 and len(c['original_non_table_RO_records'])==15, 'object-order complete readonly records changed')
     tables, islands = layout['tables'], layout['retained_islands']
     require(isinstance(tables, list) and len(tables) > 0 and
             isinstance(islands, list) and len(islands) == len(tables),

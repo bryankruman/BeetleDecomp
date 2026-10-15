@@ -1,1 +1,3 @@
 func_race_00402AAC = raceUpdateCountdownVoicesAndLabel;
+
+func_race_00403358 = raceDispatchStateAndUpdateOverlays;

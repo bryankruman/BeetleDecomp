@@ -601,7 +601,7 @@ $(SDK_AUDIO_OBJECTS): $(BUILD_DIR)/%.o: %.c $(SDK_AUDIO_HEADERS)
 	$(V)mkdir -p $(@D)
 	$(V)$(SDK_AUDIO_CC) $(SDK_AUDIO_FLAGS) -o $@ $<
 
-# The declared RACE island is restored after IDO/asm-processor compilation.
+# The three C-owned RACE tables and retained float island are restored after compilation.
 $(BUILD_DIR)/src/modules/race.o: RACE_READONLY_LAYOUT := config/us/readonly_layout/race.json
 $(BUILD_DIR)/src/modules/race.o: tools/reorderRaceReadonly.py tools/moduleReadonlyLayout.py config/us/readonly_layout/race.json
 
