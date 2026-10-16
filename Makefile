@@ -320,10 +320,10 @@ BIN_DIRS      := $(shell find bin -type d)
 C_FILES       := $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.c))
 C_FILES       := $(filter-out %.inc.c,$(C_FILES))
 S_FILES       := $(foreach dir,$(ASM_DIRS) $(SRC_DIRS),$(wildcard $(dir)/*.s))
-# Native readonly data is included by its C GLOBAL_ASM, not a separate object.
+# Retained readonly fragments enter their owning C or module partial object.
 # Keep these exact paths aligned with their config/us/readonly_layout/*.json;
 # tools/tests/test_readonly_make_inputs.py checks that contract and normal ASM.
-S_FILES       := $(filter-out asm/us/data/modules/uvdyn_rom.rodata-prefix.s asm/us/data/modules/ted.rodata-prefix.s asm/us/data/modules/race.rodata-prefix.s asm/us/data/modules/race-floats.rodata-island.s,$(S_FILES))
+S_FILES       := $(filter-out asm/us/data/modules/uvdyn_rom.rodata-prefix.s asm/us/data/modules/ted.rodata-prefix.s asm/us/data/modules/race.rodata-prefix.s asm/us/data/modules/race-floats.rodata-island.s asm/us/data/modules/misc.rodata-prefix.s asm/us/data/modules/misc.rodata-suffix.s asm/us/data/modules/misc.rodata-aliases.s,$(S_FILES))
 BIN_FILES     := $(foreach dir,$(BIN_DIRS),$(wildcard $(dir)/*.bin))
 O_FILES       := $(foreach f,$(C_FILES:.c=.o),$(BUILD_DIR)/$f) \
                  $(foreach f,$(S_FILES:.s=.o),$(BUILD_DIR)/$f) \
@@ -548,6 +548,9 @@ pre-partial-link: $(O_FILES) $(PARTIAL_MODULE_OBJS) $(LD_SCRIPT)
 		-Map $(BUILD_DIR)/kernel.map -o $(BUILD_DIR)/kernel.elf
 	$(V)$(PYTHON) tools/createKernelLinkSyms.py $(BUILD_DIR)/kernel.map  linker_scripts/$(VERSION)/kernel_link_scripts_syms.txt $(if $(wildcard linker_scripts/$(VERSION)/local_matching_aliases.ld),--aliases linker_scripts/$(VERSION)/local_matching_aliases.ld)
 	$(V)$(PYTHON) tools/kernelMapJson.py $(BUILD_DIR)/kernel.map $(BUILD_DIR)/kernel.map.json
+
+# MISC preserves128 original bytes,16 C-owned bytes and96 original bytes.
+$(BUILD_DIR)/partial_misc.o: $(BUILD_DIR)/asm/us/data/modules/misc.rodata-prefix.o $(BUILD_DIR)/asm/us/data/modules/misc.rodata-suffix.o $(BUILD_DIR)/asm/us/data/modules/misc.rodata-aliases.o config/us/readonly_layout/misc.json tools/miscReadonlyLayout.py
 
 # Discover section inputs from current sources. Stale generated objects must not
 # reintroduce sections whose ownership has moved into the C translation unit.

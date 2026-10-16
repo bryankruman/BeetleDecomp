@@ -128,3 +128,5 @@ func_misc_00402874 = 0x00402874; // type:func
 miscUpdateTerrainHeightLimits = 0x00402874; // type:func
 func_misc_00403650 = 0x00403650; // type:func
 miscDrawProfilerMilliseconds = 0x00403650; // type:func
+miscFindPlanarCrossingAndNormal = 0x004019FC; // type:func
+miscBuildQuaternionFromThreeAngles = 0x00401FA0; // type:func

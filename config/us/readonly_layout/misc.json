@@ -1,0 +1,26 @@
+{
+  "alias_script": "linker_scripts/us/module_files/misc_partial_aliases.ld",
+  "alias_script_sha256": "eb03a5653699f2798eb9843d88cf734af765896b185a3d1fd45f46bf0c1e45a1",
+  "begin": 4211216,
+  "bridge_assembly": "asm/us/data/modules/misc.rodata-aliases.s",
+  "end": 4211456,
+  "extraction_readonly_sha256": "31e02a10d34f205cb27fdc1d75fb51d47073195d2bfc3193211a7d2268675afa",
+  "helper_sha256": "5aef3128873cac61cb6cee3af067719ea06f5ab9f888bdd1c8fb1b4e8ed604be",
+  "labels_sha256": "89ab486b99cb339b4b48918475a44df01bd0fd795c29c456861726d93168170d",
+  "module": "misc",
+  "monolithic_assembly": "asm/us/data/modules/misc.rodata.s",
+  "original_packed_module_sha256": "5860afcbb240b66074f15fa58e11822aba8e36fa8d3b541e8194349014aef0ec",
+  "original_packed_readonly_sha256": "09f7586f33f305a4c13be00ed068167dfd05c566f1cc101f995363bf9ba260e4",
+  "original_source_sha256": "e3e388b59ebfa6ae96c9f43ca90e0ba759bf83cb00c7d8e43a2e7292f122d120",
+  "patched_module_sha256": "b9f8247b12918bfce6b70393a06e2b9385c8abbfea687501d18ee6a315f1eb84",
+  "prefix_assembly": "asm/us/data/modules/misc.rodata-prefix.s",
+  "product_sha256": {
+    "bridge": "3a471455395c26d31c38fe28256bde9a35586b902c8c433c92028a0919d011ad",
+    "prefix": "f8fb5332dfd7ee83dd5b445b1138ffb42548a0e6a7f566d512ba1f5ec21fc527",
+    "suffix": "b39f9afab3369eb1357f69e0b743eeccd9ecb0e16be096afe1bfff96193409fc"
+  },
+  "source": "src/modules/misc.c",
+  "source_sha256": "54314bac1199b8ede7174ed1a6baa59c987157e1e631cae52db32e006b642a7d",
+  "suffix_assembly": "asm/us/data/modules/misc.rodata-suffix.s",
+  "version": 5
+}

@@ -94,7 +94,10 @@ def main():
         if "bss" in m.done_sections:
             disassembler.addArgs("--dont-split-bss")
 
-        if "rodata" in m.done_sections:
+        # Scalar-pool layout5 needs the original monolithic readonly output
+        # before it can retain the prefix/suffix around compiler-owned constants.
+        # done_sections still declares module ownership; older layouts keep their flags.
+        if "rodata" in m.done_sections and (readonly_plan is None or readonly_plan["layout"]["version"] != 5):
             disassembler.addArgs("--dont-split-rodata")
 
 #        disassembler.addArgs("--asm-nm-label")

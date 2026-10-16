@@ -252,6 +252,10 @@ def check_users(root, layout, decoded, extra_original_data=()):
 def prepare(root, config, module, binary):
     """Read-only preflight before any module extraction output is written."""
     root = Path(root).resolve()
+    # MISC scalar constants are not switch-table owners.
+    if json.loads(inside(root, config).read_bytes()).get('version') == 5:
+        from miscReadonlyLayout import prepare as prepare_misc_scalar_pool
+        return prepare_misc_scalar_pool(root, config, module, binary)
     layout, decoded, prefix, suffix = load(root, config, module)
     if layout['version'] == 4:
         return prepare_v4(root, config, module, binary, layout, decoded, prefix, suffix)
@@ -280,6 +284,9 @@ def prepare(root, config, module, binary):
 
 def apply(plan):
     """Use normal regenerated original ASM hosts and retained readonly spans."""
+    if plan['layout']['version'] == 5:
+        from miscReadonlyLayout import apply as apply_misc_scalar_pool
+        return apply_misc_scalar_pool(plan)
     if plan['layout']['version'] == 4:
         return apply_v4(plan)
     if plan['layout']['version'] == 3:

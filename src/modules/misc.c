@@ -965,7 +965,112 @@ void miscVec2ReflectScaled(f32 *output, f32 *normal, f32 *input, f32 coefficient
 }
 #line 468 "src/modules/misc.c"
 /* RE_ORIGINAL_QUIRK: original overlapping vertical-segment path reads an unwritten intercept stack word. RE_UNKNOWN: caller reachability/input limits; trace original export callers before changing collinear behavior. */
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_004019FC.s")
+/* Reject separated endpoint bounds, solve the planar crossing, orient a normal
+ * against the first start point, and return a clamped fraction along the first line.
+ * RE_UNKNOWN: caller restrictions for parallel/degenerate lines and whether the
+ * coarse bounds test is intended to establish membership in both segments.
+ * The working coordinate and vertical sentinel are reused in successive phases. */
+s32 miscFindPlanarCrossingAndNormal(f32 startX, f32 startY, f32 endX, f32 endY, f32 otherStartX, f32 otherStartY, f32 otherEndX, f32 otherEndY,
+                       f32 *fractionOut, Vec3F *normalOut) {
+    f32 firstMinX;
+    f32 firstMinY;
+    f32 firstMaxX;
+    f32 firstMaxY;
+    f32 firstDeltaY;
+    f32 firstDeltaX;
+    f32 otherDeltaY;
+    f32 otherDeltaX;
+    f32 firstSlope;
+    f32 secondSlopeOrProjection;
+    f32 firstIntercept;
+    f32 otherIntercept;
+    f32 otherLength;
+    f32 unusedTemporary0;
+    f32 projectedCrossingDistance;
+    f32 workingCoordinate;
+    f32 verticalSentinelOrCrossingY;
+    f32 unusedTemporary1;
+    f32 crossingFraction;
+    s32 unusedPadding;
+
+    // RE_UNKNOWN: Degenerate/parallel-path caller reachability remains unproved.
+    firstDeltaY = endY - startY;
+    firstMinX = firstMaxX = startX;
+    firstMaxY = startY;
+    firstMinY = startY;
+    if (endX < startX) {
+        firstMinX = endX;
+    } else {
+        firstMaxX = endX;
+    }
+    if (endY < startY) {
+        firstMinY = endY;
+    } else {
+        firstMaxY = endY;
+    }
+    workingCoordinate = otherEndY;
+    if (((((otherStartY < firstMinY) && (otherEndY < firstMinY)) || ((firstMaxY < otherStartY) && (firstMaxY < workingCoordinate)))
+         || ((otherStartX < firstMinX) && (otherEndX < firstMinX)))
+        || ((firstMaxX < otherStartX) && (firstMaxX < otherEndX))) {
+        return 0;
+    }
+    firstDeltaX = endX - startX;
+    firstDeltaY = endY - startY;
+    if (firstDeltaX == 0.0) {
+        verticalSentinelOrCrossingY = 2140143600.0f;
+        firstSlope = verticalSentinelOrCrossingY;
+    } else {
+        verticalSentinelOrCrossingY = 2140143600.0f;
+        firstSlope = firstDeltaY / firstDeltaX;
+        firstIntercept = endY - (firstSlope * endX);
+    }
+    otherDeltaY = otherEndY - otherStartY;
+    otherDeltaX = otherEndX - otherStartX;
+    if (otherDeltaX == 0.0) {
+        secondSlopeOrProjection = verticalSentinelOrCrossingY;
+    } else {
+        secondSlopeOrProjection = otherDeltaY / otherDeltaX;
+        otherIntercept = otherEndY - (secondSlopeOrProjection * otherEndX);
+    }
+    if (firstSlope == verticalSentinelOrCrossingY) {
+        workingCoordinate = startX;
+        verticalSentinelOrCrossingY = (secondSlopeOrProjection * workingCoordinate) + otherIntercept;
+    } else if (secondSlopeOrProjection == verticalSentinelOrCrossingY) {
+        workingCoordinate = otherStartX;
+        verticalSentinelOrCrossingY = (firstSlope * workingCoordinate) + firstIntercept;
+    } else {
+        workingCoordinate = (firstIntercept - otherIntercept) / (secondSlopeOrProjection - firstSlope);
+        verticalSentinelOrCrossingY = (firstSlope * workingCoordinate) + firstIntercept;
+    }
+    if ((((verticalSentinelOrCrossingY < firstMinY) || (firstMaxY < verticalSentinelOrCrossingY)) || (workingCoordinate < firstMinX)) || (firstMaxX < workingCoordinate)) {
+        return 0;
+    }
+    otherLength = gUvMathExports->uvSqrtf(SQ(otherDeltaY) + SQ(otherDeltaX));
+    if (((startY - otherStartY) * otherDeltaX) < ((startX - otherStartX) * otherDeltaY)) {
+        normalOut->x = otherDeltaY / otherLength;
+        normalOut->y = (-otherDeltaX) / otherLength;
+        normalOut->z = 0.0f;
+    } else {
+        normalOut->x = (-otherDeltaY) / otherLength;
+        normalOut->y = otherDeltaX / otherLength;
+        normalOut->z = 0.0f;
+    }
+    projectedCrossingDistance = ((workingCoordinate - startX) * normalOut->x) + ((verticalSentinelOrCrossingY - startY) * normalOut->y);
+    secondSlopeOrProjection = ((endX - startX) * normalOut->x) + ((endY - startY) * normalOut->y);
+    if (secondSlopeOrProjection != 0.0) {
+        crossingFraction = projectedCrossingDistance / secondSlopeOrProjection;
+    } else {
+        return 0;
+    }
+    if (crossingFraction < 0) {
+        crossingFraction = 0;
+    } else if (crossingFraction > 1.0f) {
+        crossingFraction = 1.0f;
+    }
+    *fractionOut = crossingFraction;
+    return 1;
+}
+#line 470 "src/modules/misc.c"
 
 #line 471 "src/modules/misc.c"
 /* Add two three-component vectors in X/Y/Z order. */
@@ -1027,7 +1132,42 @@ void miscVec4AddScaled(f32 *output, f32 *base, f32 scale, f32 *delta) { /* Write
 }
 #line 498 "src/modules/misc.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/misc/func_misc_00401FA0.s")
+/* Offset the first/third angles, negate the second, and combine half-angle
+ * sine/cosine products into the quaternion's four components.
+ * RE_UNKNOWN: caller axis order, angle convention and required input range. */
+void miscBuildQuaternionFromThreeAngles(f32 x, f32 y, f32 z, Quat *quat) {
+    f32 secondCosThirdSin;
+    f32 secondCos;
+    f32 secondCosThirdCos;
+    f32 firstHalfAngleOrCosine;
+    f32 secondSin;
+    f32 thirdSin;
+    f32 firstSin;
+    f32 thirdCos;
+    f32 secondSinThirdSin;
+    f32 unusedPadding;
+    f32 secondHalfAngleOrProduct;
+
+    firstHalfAngleOrCosine = (x + 1.5707963f) * 0.5f;
+    firstSin = gUvMathExports->uvSinF(firstHalfAngleOrCosine);
+    firstHalfAngleOrCosine = gUvMathExports->uvCosF(firstHalfAngleOrCosine);
+    secondHalfAngleOrProduct = -y * 0.5f;
+    secondSin = gUvMathExports->uvSinF(secondHalfAngleOrProduct);
+    secondCos = gUvMathExports->uvCosF(secondHalfAngleOrProduct);
+
+    thirdSin = gUvMathExports->uvSinF(((z - 3.1415927f) * 0.5f));
+    thirdCos = gUvMathExports->uvCosF(((z - 3.1415927f) * 0.5f));
+    secondSinThirdSin = secondSin * thirdSin;
+    secondHalfAngleOrProduct = secondSin * thirdCos;
+    secondCosThirdCos = secondCos * thirdCos;
+    secondCosThirdSin = secondCos * thirdSin;
+
+    quat->x = (firstHalfAngleOrCosine * secondCosThirdCos) + (firstSin * secondSinThirdSin);
+    quat->y = (firstHalfAngleOrCosine * secondCosThirdSin) - (firstSin * secondHalfAngleOrProduct);
+    quat->z = (firstHalfAngleOrCosine * secondHalfAngleOrProduct) + (firstSin * secondCosThirdSin);
+    quat->w = (-firstHalfAngleOrCosine * secondSinThirdSin) + (firstSin * secondCosThirdCos);
+}
+#line 500 "src/modules/misc.c"
 
 /* Build the three-angle matrix while preserving exact-zero shortcuts and interleaved stores.
  * RE_UNKNOWN: Angle convention, matrix overlap and retained one-iteration scaffold require original callers/compiler evidence. */

@@ -14,3 +14,20 @@ func_misc_00402BFC = miscAdjustDirectionAlongNormalPreservingScaledLength;
 func_misc_00402EFC = miscApproachWithScaledDistanceCap;
 func_misc_00402874 = miscUpdateTerrainHeightLimits;
 func_misc_00403650 = miscDrawProfilerMilliseconds;
+func_misc_004019FC = miscFindPlanarCrossingAndNormal;
+func_misc_00401FA0 = miscBuildQuaternionFromThreeAngles;
+
+/* Exact order; no artificial padding or ELF patching. */
+SECTIONS
+{
+ .rodata 0 :
+ {
+  build/asm/us/data/modules/misc.rodata-prefix.o(.rodata)
+  D_misc_00404290 = .;
+  D_misc_00404294 = . + 4;
+  D_misc_00404298 = . + 8;
+  D_misc_0040429C = . + 12;
+  build/src/modules/misc.o(.rodata)
+  build/asm/us/data/modules/misc.rodata-suffix.o(.rodata)
+ }
+}

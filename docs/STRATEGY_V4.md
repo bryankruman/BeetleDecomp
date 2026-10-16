@@ -34,8 +34,8 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **734** assembly references:
-**697** ordinary functions and **37** entrypoints, with **680,140** known instruction bytes
+matching C are preserved with `#line`. The current ledger has **732** assembly references:
+**695** ordinary functions and **37** entrypoints, with **678,680** known instruction bytes
 and no unknown sizes. The broader name audit still finds **291** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 

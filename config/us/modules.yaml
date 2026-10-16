@@ -61,6 +61,9 @@ Modules:
   - name: med
   - name: menuslct
   - name: misc
+    done_sections:
+      - rodata
+    readonly_layout: config/us/readonly_layout/misc.json
   - name: motion
   - name: mult1
     done_sections:

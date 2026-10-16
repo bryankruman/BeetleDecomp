@@ -15,7 +15,7 @@ class MakeReadonlyInputsTests(unittest.TestCase):
         lines = (ROOT / 'Makefile').read_text(encoding='utf-8').splitlines()
         matches = [line for line in lines if line.startswith('S_FILES') and 'filter-out' in line and PREFIX in line]
         self.assertEqual(len(matches), 1)
-        expected = 'S_FILES       := $(filter-out ' + PREFIX + ' ' + TED_PREFIX + ',$(S_FILES))'
+        expected = 'S_FILES       := $(filter-out asm/us/data/modules/uvdyn_rom.rodata-prefix.s asm/us/data/modules/ted.rodata-prefix.s asm/us/data/modules/race.rodata-prefix.s asm/us/data/modules/race-floats.rodata-island.s asm/us/data/modules/misc.rodata-prefix.s asm/us/data/modules/misc.rodata-suffix.s asm/us/data/modules/misc.rodata-aliases.s,$(S_FILES))'
         self.assertEqual(matches[0], expected)
         return matches[0]
 
@@ -41,6 +41,8 @@ class MakeReadonlyInputsTests(unittest.TestCase):
         ted = json.loads((ROOT / 'config/us/readonly_layout/ted.json').read_text(encoding='utf-8'))
         self.assertEqual(ted['prefix_assembly'], TED_PREFIX)
         self.assertEqual(ted['source'], 'src/modules/ted.c')
+        misc = json.loads((ROOT / 'config/us/readonly_layout/misc.json').read_text(encoding='utf-8'))
+        self.assertEqual([misc[key] for key in ('prefix_assembly', 'suffix_assembly', 'bridge_assembly')], ['asm/us/data/modules/misc.rodata-prefix.s', 'asm/us/data/modules/misc.rodata-suffix.s', 'asm/us/data/modules/misc.rodata-aliases.s'])
         self.filter_line()
 
     def test_only_declared_prefix_and_its_standalone_object_are_removed(self):
@@ -49,7 +51,7 @@ class MakeReadonlyInputsTests(unittest.TestCase):
                 'asm/us/data/modules/uvdyn_rom.data.s', 'asm/us/data/ordinary.s',
                 'src/normal.s', 'asm/jp/data/modules/uvdyn_rom.rodata-prefix.s',
                 'asm/jp/data/modules/ted.rodata-prefix.s']
-        sources, objects = self.evaluate([PREFIX, TED_PREFIX] + keep)
+        sources, objects = self.evaluate([PREFIX, TED_PREFIX, 'asm/us/data/modules/race.rodata-prefix.s', 'asm/us/data/modules/race-floats.rodata-island.s'] + ['asm/us/data/modules/misc.rodata-prefix.s', 'asm/us/data/modules/misc.rodata-suffix.s', 'asm/us/data/modules/misc.rodata-aliases.s'] + keep)
         self.assertEqual(sources, keep)
         self.assertEqual(objects, ['build/' + name[:-2] + '.o' for name in keep])
         self.assertNotIn('build/' + PREFIX[:-2] + '.o', objects)

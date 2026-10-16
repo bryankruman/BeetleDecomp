@@ -27,6 +27,17 @@ def declared_assembly_data(root):
         if 'rodata' not in module.get('done_sections', []):
             raise ValueError('readonly_layout lacks whole-object rodata ownership')
         from moduleReadonlyLayout import load, validate_source, check_users, inside, sha
+        header = json.loads(inside(root, metadata).read_bytes())
+        if header.get('version') == 5:
+            from miscReadonlyLayout import configuration, inside as misc_inside
+            layout = configuration(root, metadata, module['name'])
+            for role in ('prefix', 'suffix', 'bridge'):
+                fragment = misc_inside(root, layout[role + '_assembly'])
+                if not fragment.is_file() or sha(fragment.read_bytes()) != layout['product_sha256'][role]:
+                    raise ValueError('Declared MISC readonly fragment is missing or changed: ' + str(fragment))
+            # MISC scalar-pool fragments are Makefile composition inputs.
+            # They exempt no GLOBAL_ASM pragma and add no instruction/data row.
+            continue
         layout, original, prefix, suffix = load(root, metadata, module['name'])
         validate_source(root, layout)
         check_users(root, layout, original)
