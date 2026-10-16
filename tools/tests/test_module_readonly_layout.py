@@ -36,6 +36,16 @@ def v2_fixture(layout):
         layout['late_spans'][0]['end'] = layout['tables'][1]['table_begin']
     return layout
 
+def v3_fixture(layout):
+    """Keep three-owner adjacency tests independent of later readonly recoveries."""
+    layout = copy.deepcopy(layout)
+    assert layout['version'] == 3 and len(layout['tables']) == len(layout['late_spans']) in (3, 4)
+    if len(layout['tables']) == 4:
+        layout['tables'] = [layout['tables'][0], layout['tables'][-2], layout['tables'][-1]]
+        layout['late_spans'] = [layout['late_spans'][0], layout['late_spans'][-2], layout['late_spans'][-1]]
+        layout['late_spans'][0]['end'] = layout['tables'][1]['table_begin']
+    return layout
+
 class LayoutTests(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory(prefix='readonly-layout-test-')
@@ -405,7 +415,7 @@ class AdjacentLayoutTests(unittest.TestCase):
     rejected_unchanged = LayoutTests.rejected_unchanged
 
     def setUp(self):
-        layout = json.loads((PROJECT / CONFIG).read_text(encoding='utf-8'))
+        layout = v3_fixture(json.loads((PROJECT / CONFIG).read_text(encoding='utf-8')))
         self.assertEqual(layout['version'], 3)
         MultiLayoutTests.setUp(self)
         old = self.layout

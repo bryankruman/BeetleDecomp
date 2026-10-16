@@ -1,2 +1,3 @@
 func_gamegui_00400370 = gameGuiBuildDebugOptionsPanels;
 func_gamegui_004014F8 = gameGuiAddStateActionRows;
+func_gamegui_00401748 = gameGuiHandleDebugControllerInput;

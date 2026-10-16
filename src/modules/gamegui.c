@@ -667,16 +667,120 @@ void gameGuiAddStateActionRows(s32 parentWord) {
  * meanings and aliases. Resolve original allocations, producers, registered
  * targets, all mode/property readers and failure paths before changing bounds,
  * validation, ownership, callback ABI or initialization.
- * Readable C is parked: 820 native versus 888 draft bytes, 152 differing words,
- * and 43 versus 87 complete relocation records. The draft rematerializes the
- * shared-state address instead of retaining the native base pointer; switch
- * lowering and scheduling also differ. All observed operations remain present.
- * Recover original natural storage/lifetime evidence and require complete
- * instruction/relocation, packed-module and ROM proof; do not invent padding
- * or a complete historical state layout from compiler allocation alone.
  */
 #line 101 "src/modules/gamegui.c"
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/gamegui/func_gamegui_00401748.s")
+/* Consumed fields of the existing shared state; no allocation is declared.
+ * RE_UNKNOWN: full object extent, controller validity and callback lifetime. */
+typedef struct GameGuiDebugStatePrefix {
+    u8 enabled;
+    u8 opaque01[0xB];
+    s32 mode;
+    u8 opaque10[0x84];
+    u8 inputController;
+    u8 opaque95[7];
+    u32 sharedCallbackAddress;
+} GameGuiDebugStatePrefix;
+/* Caller views of the accepted GUI input/byte/shared-short slots. */
+typedef struct GameGuiControllerGuiExports {
+    u8 opaque00[0x20];
+    s32 (*updateContainerInput)(void *);
+    u8 opaque24[8];
+    void (*setElementByte8A)(void *, u8);
+    u8 opaque30[4];
+    void (*setSharedShort)(s16);
+} GameGuiControllerGuiExports;
+extern s32 D_80025D7C;
+/* Select the first controller holding both masks, then process the two
+ * debug-menu actions and update the active shared GUI container.
+ * RE_ORIGINAL_QUIRK: both action tests run in order; the second observes changes
+ * made by the first. The low-memory paths return before later input handling.
+ * RE_UNKNOWN: modes outside 0..2, module/allocation failure and the registered
+ * callback's full ABI. Its code word is called without supplied arguments. */
+#line 101 "src/modules/gamegui.c"
+void gameGuiHandleDebugControllerInput(void) {
+    s32 controllerIndex;
+
+    if (D_debugEnable == 0) {
+        return;
+    }
+
+    for (controllerIndex = 0; controllerIndex < 4; controllerIndex++) {
+        if ((gUvContExports->uvControllerHasButtons(controllerIndex, 0x20) != 0)
+            && (gUvContExports->uvControllerHasButtons(controllerIndex, 0x10) != 0)) {
+            if (gUvGuiExports == NULL) {
+                if ((u32) _uvMemGetBlocksSize() < 150000) {
+                    return;
+                }
+                gUvGuiExports = uvLoadModule('ugui');
+                D_gamegui_00402D0C = uvLoadModule('dled');
+                uvLoadFile('UVFT', 3);
+            }
+            if (gUvGuiExports != NULL) {
+                ((GameGuiInitializerExports *)gUvGuiExports)->setContainerProperty(&D_gamegui_00402C78, 0x10, controllerIndex);
+                D_80025D7C = controllerIndex;
+            }
+            break;
+        }
+    }
+    if ((gUvContExports->uvControllerButtonPress((u8) ((GameGuiDebugStatePrefix *)&D_gamegui_00402C68)->inputController, 0x800) != 0)
+        && (((GameGuiDebugStatePrefix *)&D_gamegui_00402C68)->sharedCallbackAddress != 0)) {
+        switch (((GameGuiDebugStatePrefix *)&D_gamegui_00402C68)->mode) {
+            case 0:
+                ((GameGuiDebugStatePrefix *)&D_gamegui_00402C68)->enabled = 1;
+                break;
+            case 1:
+                ((GameGuiDebugStatePrefix *)&D_gamegui_00402C68)->enabled = 1;
+                break;
+            case 2:
+                ((GameGuiDebugStatePrefix *)&D_gamegui_00402C68)->enabled = 0;
+                break;
+        }
+        if (((GameGuiDebugStatePrefix *)&D_gamegui_00402C68)->enabled != 0) {
+            if ((gUvGuiExports == NULL) && ((u32) _uvMemGetBlocksSize() < 0x249F0)) {
+                ((GameGuiDebugStatePrefix *)&D_gamegui_00402C68)->enabled = 0;
+                return;
+            }
+            gameGuiInitializeSharedWidgetWhenEnabled();
+            ((void (*)())((GameGuiDebugStatePrefix *)&D_gamegui_00402C68)->sharedCallbackAddress)();
+            ((GameGuiDebugStatePrefix *)&D_gamegui_00402C68)->enabled = 1;
+            ((GameGuiControllerGuiExports *)gUvGuiExports)->setSharedShort(0);
+            ((GameGuiDebugStatePrefix *)&D_gamegui_00402C68)->mode = 2;
+        } else {
+            ((GameGuiDebugStatePrefix *)&D_gamegui_00402C68)->mode = 0;
+        }
+    }
+    if (gUvContExports->uvControllerButtonPress((u8) ((GameGuiDebugStatePrefix *)&D_gamegui_00402C68)->inputController, 0x400) != 0) {
+        switch (((GameGuiDebugStatePrefix *)&D_gamegui_00402C68)->mode) {
+            case 0:
+                ((GameGuiDebugStatePrefix *)&D_gamegui_00402C68)->enabled = 1;
+                break;
+            case 1:
+                ((GameGuiDebugStatePrefix *)&D_gamegui_00402C68)->enabled = 0;
+                break;
+            case 2:
+                ((GameGuiDebugStatePrefix *)&D_gamegui_00402C68)->enabled = 1;
+                break;
+        }
+        if (((GameGuiDebugStatePrefix *)&D_gamegui_00402C68)->enabled != 0) {
+            if ((gUvGuiExports == NULL) && ((u32) _uvMemGetBlocksSize() < 0x249F0)) {
+                ((GameGuiDebugStatePrefix *)&D_gamegui_00402C68)->enabled = 0;
+                return;
+            }
+            gameGuiInitializeSharedWidgetWhenEnabled();
+            gameGuiCreateDebugRoot();
+            ((GameGuiControllerGuiExports *)gUvGuiExports)->setSharedShort(0);
+            ((GameGuiDebugStatePrefix *)&D_gamegui_00402C68)->mode = 1;
+            ((GameGuiDebugStatePrefix *)&D_gamegui_00402C68)->enabled = 1;
+        } else {
+            ((GameGuiDebugStatePrefix *)&D_gamegui_00402C68)->mode = 0;
+        }
+    }
+    if (((GameGuiDebugStatePrefix *)&D_gamegui_00402C68)->enabled != 0) {
+            ((GameGuiControllerGuiExports *)gUvGuiExports)->setElementByte8A(&D_gamegui_00402C78, 1);
+            ((GameGuiControllerGuiExports *)gUvGuiExports)->updateContainerInput(&D_gamegui_00402C78);
+    }
+}
+#line 102 "src/modules/gamegui.c"
 
 #line 103 "src/modules/gamegui.c"
 /* Render the shared GUI menu when enabled; otherwise generate the

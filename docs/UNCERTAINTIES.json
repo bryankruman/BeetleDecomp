@@ -404,7 +404,7 @@
     "src/modules/filmroll.c": "83ed38a685d67e8489ffe33a9d955b1f742731478f3fb89ad577c877e3e8d1ce",
     "src/modules/flag.c": "e5e3b255e417dac68a9d179ef336bf168d0d1b4e8b9f566626b9c5f12ea33d4e",
     "src/modules/game.c": "592a7761af4ae96e100ef8935ed7fa5896c27717687c8377ed0e3b2ad8aa155b",
-    "src/modules/gamegui.c": "3f6516ae81fec9b894b2655b424e8ef51c00b50f8436497d0960b33d1862c1ea",
+    "src/modules/gamegui.c": "080ceb8d9d47f8f179e0b291820913898c4c2a0300e7afcd67b4d16779943668",
     "src/modules/glare.c": "fe20c59454d2855b94efb2fd22f155f8d622f1950c2ee38ef6a8542024821b7a",
     "src/modules/intro.c": "3d6364b3f62dca565458be89db8b590a95b599f736eaff97e1f5f26422e753e5",
     "src/modules/letter.c": "dcf60db17a9b424af09d6b274a064cb274d2e4c7e30dc7fa38206a5edc20f03f",
@@ -522,22 +522,22 @@
     "src/sched.c": "26791ca9f30fd5355b11ea03a64a457757d2029595be26428c2925798105d9b4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "6d463701ed48a580bd194401d88c5804835e305a7d3073b87372f12f27ff89bc",
+    "docs/STRATEGY_V4.md": "1739c2eaa51f46be9285f839dd4afd3c139c7c4578475b4abd6fe153bd606f75",
     "docs/VALIDATION_20261006.md": "a46820c10aba34e3c1901bd9bdc4260f684530f44fcf7f61d9c7bb33e0c91031"
   },
   "counts": {
     "address_function": 904,
-    "address_global": 1678,
-    "assembly": 736,
+    "address_global": 1679,
+    "assembly": 735,
     "audit_debt": 30,
     "conditional_draft": 4,
     "decompiler_local": 625,
     "draft_marker": 55,
-    "explicit_unknown": 1926,
+    "explicit_unknown": 1928,
     "layout_padding": 281,
-    "offset_field": 1774,
+    "offset_field": 1780,
     "opaque_type": 285,
-    "original_quirk": 547,
+    "original_quirk": 548,
     "uncertainty_note": 88,
     "unused_identifier": 154
   },
@@ -5508,15 +5508,15 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_00402194",
       "lines": [
-        943
+        1047
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_gamegui_00402194",
-          "declaration_line": 943,
+          "declaration_line": 1047,
           "lines": [
-            943
+            1047
           ]
         }
       ]
@@ -5527,15 +5527,15 @@
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_004021D4",
       "lines": [
-        965
+        1069
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_gamegui_004021D4",
-          "declaration_line": 965,
+          "declaration_line": 1069,
           "lines": [
-            965
+            1069
           ]
         }
       ]
@@ -31029,6 +31029,34 @@
       ]
     },
     {
+      "id": "Q-b1cec64b267d",
+      "kind": "address_global",
+      "path": "src/modules/gamegui.c",
+      "symbol": "D_80025D7C",
+      "lines": [
+        692,
+        720
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiHandleDebugControllerInput",
+          "declaration_line": 700,
+          "lines": [
+            720
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_80025D7C",
+          "declaration_line": 692,
+          "lines": [
+            692
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-531aabc2595c",
       "kind": "address_global",
       "path": "src/modules/gamegui.c",
@@ -33975,15 +34003,15 @@
       "symbol": "D_gamegui_00402BD0",
       "lines": [
         31,
-        982
+        1086
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiApplyDitherAndVideoSettings",
-          "declaration_line": 976,
+          "declaration_line": 1080,
           "lines": [
-            982
+            1086
           ]
         },
         {
@@ -34003,15 +34031,15 @@
       "symbol": "D_gamegui_00402BE0",
       "lines": [
         31,
-        983
+        1087
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiApplyDitherAndVideoSettings",
-          "declaration_line": 976,
+          "declaration_line": 1080,
           "lines": [
-            983
+            1087
           ]
         },
         {
@@ -34032,10 +34060,33 @@
       "lines": [
         232,
         313,
-        685,
-        697,
-        809,
-        1033
+        725,
+        726,
+        727,
+        729,
+        732,
+        735,
+        738,
+        740,
+        744,
+        745,
+        747,
+        749,
+        752,
+        753,
+        755,
+        758,
+        761,
+        764,
+        766,
+        772,
+        773,
+        775,
+        778,
+        789,
+        801,
+        913,
+        1137
       ],
       "owners": [
         {
@@ -34049,33 +34100,63 @@
         {
           "kind": "function",
           "name": "gameGuiGetDebugByte",
-          "declaration_line": 1032,
+          "declaration_line": 1136,
           "lines": [
-            1033
+            1137
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "gameGuiHandleDebugControllerInput",
+          "declaration_line": 700,
+          "lines": [
+            725,
+            726,
+            727,
+            729,
+            732,
+            735,
+            738,
+            740,
+            744,
+            745,
+            747,
+            749,
+            752,
+            753,
+            755,
+            758,
+            761,
+            764,
+            766,
+            772,
+            773,
+            775,
+            778
           ]
         },
         {
           "kind": "function",
           "name": "gameGuiInitializeSharedWidgetWhenEnabled",
-          "declaration_line": 788,
+          "declaration_line": 892,
           "lines": [
-            809
+            913
           ]
         },
         {
           "kind": "function",
           "name": "gameGuiRenderMenuOrFontList",
-          "declaration_line": 684,
+          "declaration_line": 788,
           "lines": [
-            685
+            789
           ]
         },
         {
           "kind": "function",
           "name": "gameGuiSetDebugByteWhenEnabled",
-          "declaration_line": 695,
+          "declaration_line": 799,
           "lines": [
-            697
+            801
           ]
         },
         {
@@ -34124,9 +34205,12 @@
       "lines": [
         233,
         347,
-        686,
-        800,
-        825
+        719,
+        779,
+        780,
+        790,
+        904,
+        929
       ],
       "owners": [
         {
@@ -34139,26 +34223,36 @@
         },
         {
           "kind": "function",
-          "name": "gameGuiInitializeSharedWidgetWhenEnabled",
-          "declaration_line": 788,
+          "name": "gameGuiHandleDebugControllerInput",
+          "declaration_line": 700,
           "lines": [
-            800
+            719,
+            779,
+            780
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "gameGuiInitializeSharedWidgetWhenEnabled",
+          "declaration_line": 892,
+          "lines": [
+            904
           ]
         },
         {
           "kind": "function",
           "name": "gameGuiLoadPaletteThreeAndSelectDebugFont",
-          "declaration_line": 824,
+          "declaration_line": 928,
           "lines": [
-            825
+            929
           ]
         },
         {
           "kind": "function",
           "name": "gameGuiRenderMenuOrFontList",
-          "declaration_line": 684,
+          "declaration_line": 788,
           "lines": [
-            686
+            790
           ]
         },
         {
@@ -34178,15 +34272,15 @@
       "symbol": "D_gamegui_00402D04",
       "lines": [
         234,
-        834
+        938
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiSetSharedWord",
-          "declaration_line": 833,
+          "declaration_line": 937,
           "lines": [
-            834
+            938
           ]
         },
         {
@@ -34206,15 +34300,24 @@
       "symbol": "D_gamegui_00402D0C",
       "lines": [
         194,
-        797
+        715,
+        901
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "gameGuiInitializeSharedWidgetWhenEnabled",
-          "declaration_line": 788,
+          "name": "gameGuiHandleDebugControllerInput",
+          "declaration_line": 700,
           "lines": [
-            797
+            715
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "gameGuiInitializeSharedWidgetWhenEnabled",
+          "declaration_line": 892,
+          "lines": [
+            901
           ]
         },
         {
@@ -34274,15 +34377,15 @@
       "symbol": "D_gamegui_00402D16",
       "lines": [
         235,
-        727
+        831
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiRestoreMusicUnlessModeOne",
-          "declaration_line": 721,
+          "declaration_line": 825,
           "lines": [
-            727
+            831
           ]
         },
         {
@@ -34391,7 +34494,7 @@
       "lines": [
         236,
         634,
-        843
+        947
       ],
       "owners": [
         {
@@ -34405,9 +34508,9 @@
         {
           "kind": "function",
           "name": "gameGuiRequestStateNineWithChoiceFlag",
-          "declaration_line": 842,
+          "declaration_line": 946,
           "lines": [
-            843
+            947
           ]
         },
         {
@@ -84394,22 +84497,12 @@
       "evidence": "asm/us/nonmatchings/modules/game/func_game_00401CC0.s"
     },
     {
-      "id": "Q-1f80d3e5d52c",
-      "kind": "assembly",
-      "path": "src/modules/gamegui.c",
-      "symbol": "func_gamegui_00401748",
-      "lines": [
-        679
-      ],
-      "evidence": "asm/us/nonmatchings/modules/gamegui/func_gamegui_00401748.s"
-    },
-    {
       "id": "Q-ba0ea844eded",
       "kind": "assembly",
       "path": "src/modules/gamegui.c",
       "symbol": "func_gamegui_00401AF8",
       "lines": [
-        702
+        806
       ],
       "evidence": "asm/us/nonmatchings/modules/gamegui/func_gamegui_00401AF8.s"
     },
@@ -129619,39 +129712,29 @@
       "path": "src/modules/gamegui.c",
       "symbol": "* Request property 6 from the supplied channel, using the local callback-list * output and trailing zero, then register gameGuiApplyDitherAndVideoSettings * with a zero insertion argument and priority 0x21. * RE_ORIGINAL_QUIRK: The local output is not initialized here and no lookup * status or NULL check precedes registration. * RE_UNKNOWN: Property 6 must fill a live callback list for this channel; * list capacity, registration failure, callback lifetime and teardown ordering * require the channel/callback providers and all registration callers.",
       "lines": [
-        1010
+        1114
       ],
       "evidence": "* Request property 6 from the supplied channel, using the local callback-list * output and trailing zero, then register gameGuiApplyDitherAndVideoSettings * with a zero insertion argument and priority 0x21. * RE_ORIGINAL_QUIRK: The local output is not initialized here and no lookup * status or NULL check precedes registration. * RE_UNKNOWN: Property 6 must fill a live callback list for this channel; * list capacity, registration failure, callback lifetime and teardown ordering * require the channel/callback providers and all registration callers.",
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiRegisterChannelCallback",
-          "declaration_line": 1021,
+          "declaration_line": 1125,
           "lines": [
-            1010
+            1114
           ]
         }
       ]
     },
     {
-      "id": "Q-8efe45857311",
+      "id": "Q-149a6a038f03",
       "kind": "explicit_unknown",
       "path": "src/modules/gamegui.c",
-      "symbol": "* Scan four controllers for both masks 0x20 and 0x10; on the first match, * load the GUI, display-list editor and font resources when needed, then set * GUI property 16 and the shared controller word if the GUI load succeeded. * Preserve the scan break on that first match even when the load failed. * Independently process press masks 0x800 then 0x400 using the current mode: * update the enabled byte, initialize the shared widget, invoke the stored * raw code address or create the debug root, and clear the shared GUI short. * The second action sees the first action's changes. When enabled, store * byte 1 at the root container's offset 0x8A and run its input/child traversal. * Preserve provider and callback reloads, unexpected-mode behavior and the * original unsigned comparison of the memory-query result against 150000. * RE_ORIGINAL_QUIRK: GUI availability gates the initial property call, but * later enabled paths add no load-result check. Original failure-domain and * callback-validity guarantees remain unresolved; no reachable fault is proven. * RE_UNKNOWN: historical state/container extents and formals, input-controller * validity, module/resource occupancy and lifetime, callback registrations, * formals/return and inherited-register expectations, complete mode/property * meanings and aliases. Resolve original allocations, producers, registered * targets, all mode/property readers and failure paths before changing bounds, * validation, ownership, callback ABI or initialization. * Readable C is parked: 820 native versus 888 draft bytes, 152 differing words, * and 43 versus 87 complete relocation records. The draft rematerializes the * shared-state address instead of retaining the native base pointer; switch * lowering and scheduling also differ. All observed operations remain present. * Recover original natural storage/lifetime evidence and require complete * instruction/relocation, packed-module and ROM proof; do not invent padding * or a complete historical state layout from compiler allocation alone.",
+      "symbol": "* Scan four controllers for both masks 0x20 and 0x10; on the first match, * load the GUI, display-list editor and font resources when needed, then set * GUI property 16 and the shared controller word if the GUI load succeeded. * Preserve the scan break on that first match even when the load failed. * Independently process press masks 0x800 then 0x400 using the current mode: * update the enabled byte, initialize the shared widget, invoke the stored * raw code address or create the debug root, and clear the shared GUI short. * The second action sees the first action's changes. When enabled, store * byte 1 at the root container's offset 0x8A and run its input/child traversal. * Preserve provider and callback reloads, unexpected-mode behavior and the * original unsigned comparison of the memory-query result against 150000. * RE_ORIGINAL_QUIRK: GUI availability gates the initial property call, but * later enabled paths add no load-result check. Original failure-domain and * callback-validity guarantees remain unresolved; no reachable fault is proven. * RE_UNKNOWN: historical state/container extents and formals, input-controller * validity, module/resource occupancy and lifetime, callback registrations, * formals/return and inherited-register expectations, complete mode/property * meanings and aliases. Resolve original allocations, producers, registered * targets, all mode/property readers and failure paths before changing bounds, * validation, ownership, callback ABI or initialization.",
       "lines": [
         649
       ],
-      "evidence": "* Scan four controllers for both masks 0x20 and 0x10; on the first match, * load the GUI, display-list editor and font resources when needed, then set * GUI property 16 and the shared controller word if the GUI load succeeded. * Preserve the scan break on that first match even when the load failed. * Independently process press masks 0x800 then 0x400 using the current mode: * update the enabled byte, initialize the shared widget, invoke the stored * raw code address or create the debug root, and clear the shared GUI short. * The second action sees the first action's changes. When enabled, store * byte 1 at the root container's offset 0x8A and run its input/child traversal. * Preserve provider and callback reloads, unexpected-mode behavior and the * original unsigned comparison of the memory-query result against 150000. * RE_ORIGINAL_QUIRK: GUI availability gates the initial property call, but * later enabled paths add no load-result check. Original failure-domain and * callback-validity guarantees remain unresolved; no reachable fault is proven. * RE_UNKNOWN: historical state/container extents and formals, input-controller * validity, module/resource occupancy and lifetime, callback registrations, * formals/return and inherited-register expectations, complete mode/property * meanings and aliases. Resolve original allocations, producers, registered * targets, all mode/property readers and failure paths before changing bounds, * validation, ownership, callback ABI or initialization. * Readable C is parked: 820 native versus 888 draft bytes, 152 differing words, * and 43 versus 87 complete relocation records. The draft rematerializes the * shared-state address instead of retaining the native base pointer; switch * lowering and scheduling also differ. All observed operations remain present. * Recover original natural storage/lifetime evidence and require complete * instruction/relocation, packed-module and ROM proof; do not invent padding * or a complete historical state layout from compiler allocation alone.",
-      "owners": [
-        {
-          "kind": "assembly",
-          "name": "func_gamegui_00401748",
-          "declaration_line": 679,
-          "lines": [
-            649
-          ]
-        }
-      ]
+      "evidence": "* Scan four controllers for both masks 0x20 and 0x10; on the first match, * load the GUI, display-list editor and font resources when needed, then set * GUI property 16 and the shared controller word if the GUI load succeeded. * Preserve the scan break on that first match even when the load failed. * Independently process press masks 0x800 then 0x400 using the current mode: * update the enabled byte, initialize the shared widget, invoke the stored * raw code address or create the debug root, and clear the shared GUI short. * The second action sees the first action's changes. When enabled, store * byte 1 at the root container's offset 0x8A and run its input/child traversal. * Preserve provider and callback reloads, unexpected-mode behavior and the * original unsigned comparison of the memory-query result against 150000. * RE_ORIGINAL_QUIRK: GUI availability gates the initial property call, but * later enabled paths add no load-result check. Original failure-domain and * callback-validity guarantees remain unresolved; no reachable fault is proven. * RE_UNKNOWN: historical state/container extents and formals, input-controller * validity, module/resource occupancy and lifetime, callback registrations, * formals/return and inherited-register expectations, complete mode/property * meanings and aliases. Resolve original allocations, producers, registered * targets, all mode/property readers and failure paths before changing bounds, * validation, ownership, callback ABI or initialization."
     },
     {
       "id": "Q-bc7215e03e1f",
@@ -129739,16 +129822,36 @@
       "path": "src/modules/gamegui.c",
       "symbol": "Call original GUI0x28 with display-data ID-1 and palette ID3, then select * debug font3. Its target stores those IDs, skips the display-data load for-1, * loads palette3 and marks the GUI record ready; no selection reset is shown. * RE_UNKNOWN: palette3's asset meaning and the complete GUI lifecycle. Resolve * through the original palette loader/data and callers before stronger naming.",
       "lines": [
-        819
+        923
       ],
       "evidence": "Call original GUI0x28 with display-data ID-1 and palette ID3, then select * debug font3. Its target stores those IDs, skips the display-data load for-1, * loads palette3 and marks the GUI record ready; no selection reset is shown. * RE_UNKNOWN: palette3's asset meaning and the complete GUI lifecycle. Resolve * through the original palette loader/data and callers before stronger naming.",
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiLoadPaletteThreeAndSelectDebugFont",
-          "declaration_line": 824,
+          "declaration_line": 928,
           "lines": [
-            819
+            923
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-d1dab2b58fcf",
+      "kind": "explicit_unknown",
+      "path": "src/modules/gamegui.c",
+      "symbol": "Consumed fields of the existing shared state; no allocation is declared. * RE_UNKNOWN: full object extent, controller validity and callback lifetime.",
+      "lines": [
+        672
+      ],
+      "evidence": "Consumed fields of the existing shared state; no allocation is declared. * RE_UNKNOWN: full object extent, controller validity and callback lifetime.",
+      "owners": [
+        {
+          "kind": "type",
+          "name": "GameGuiDebugStatePrefix",
+          "declaration_line": 674,
+          "lines": [
+            672
           ]
         }
       ]
@@ -129759,16 +129862,16 @@
       "path": "src/modules/gamegui.c",
       "symbol": "Emit pipe sync plus color/alpha-dither commands, reset the two shared graphics words, * then apply the original video-interface feature choices. RE_UNKNOWN: dither selector * domains, display-list capacity/lifetime and the rendering meaning of shared word50's * 0x400000 bit need original settings producers, graphics consumers and frame callers. * The original callback homes but does not read its incoming word; its historical * source declaration remains unresolved. Preserve settings reloads across callbacks.",
       "lines": [
-        970
+        1074
       ],
       "evidence": "Emit pipe sync plus color/alpha-dither commands, reset the two shared graphics words, * then apply the original video-interface feature choices. RE_UNKNOWN: dither selector * domains, display-list capacity/lifetime and the rendering meaning of shared word50's * 0x400000 bit need original settings producers, graphics consumers and frame callers. * The original callback homes but does not read its incoming word; its historical * source declaration remains unresolved. Preserve settings reloads across callbacks.",
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiApplyDitherAndVideoSettings",
-          "declaration_line": 976,
+          "declaration_line": 1080,
           "lines": [
-            970
+            1074
           ]
         }
       ]
@@ -129900,8 +130003,8 @@
       "symbol": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "lines": [
         318,
-        939,
-        961
+        1043,
+        1065
       ],
       "evidence": "Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empty body alone does not establish that callers can * safely omit this function or that it represents missing implementation.",
       "owners": [
@@ -129916,17 +130019,17 @@
         {
           "kind": "function",
           "name": "func_gamegui_00402194",
-          "declaration_line": 943,
+          "declaration_line": 1047,
           "lines": [
-            939
+            1043
           ]
         },
         {
           "kind": "function",
           "name": "func_gamegui_004021D4",
-          "declaration_line": 965,
+          "declaration_line": 1069,
           "lines": [
-            961
+            1065
           ]
         }
       ]
@@ -129937,16 +130040,36 @@
       "path": "src/modules/gamegui.c",
       "symbol": "Restore the stored music ID and music state zero unless the linked * record short at 0x1E equals one. * RE_UNKNOWN: the short's broader role and ownership/lifetime of node->unk28. * This wrapper only reads the pointer; trace original record creation, * replacement and release paths before assigning an ownership contract.",
       "lines": [
-        716
+        820
       ],
       "evidence": "Restore the stored music ID and music state zero unless the linked * record short at 0x1E equals one. * RE_UNKNOWN: the short's broader role and ownership/lifetime of node->unk28. * This wrapper only reads the pointer; trace original record creation, * replacement and release paths before assigning an ownership contract.",
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiRestoreMusicUnlessModeOne",
-          "declaration_line": 721,
+          "declaration_line": 825,
           "lines": [
-            716
+            820
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-db9a332adbb0",
+      "kind": "explicit_unknown",
+      "path": "src/modules/gamegui.c",
+      "symbol": "Select the first controller holding both masks, then process the two * debug-menu actions and update the active shared GUI container. * RE_ORIGINAL_QUIRK: both action tests run in order; the second observes changes * made by the first. The low-memory paths return before later input handling. * RE_UNKNOWN: modes outside 0..2, module/allocation failure and the registered * callback's full ABI. Its code word is called without supplied arguments.",
+      "lines": [
+        693
+      ],
+      "evidence": "Select the first controller holding both masks, then process the two * debug-menu actions and update the active shared GUI container. * RE_ORIGINAL_QUIRK: both action tests run in order; the second observes changes * made by the first. The low-memory paths return before later input handling. * RE_UNKNOWN: modes outside 0..2, module/allocation failure and the registered * callback's full ABI. Its code word is called without supplied arguments.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiHandleDebugControllerInput",
+          "declaration_line": 700,
+          "lines": [
+            693
           ]
         }
       ]
@@ -129977,16 +130100,16 @@
       "path": "src/modules/gamegui.c",
       "symbol": "Store the raw word later invoked as a code address by GAMEGUI export 0x08. RE_UNKNOWN: historical callback formals/return, registration validity and lifetime; inspect all original registrations and targets before declaring a typed callback API.",
       "lines": [
-        833
+        937
       ],
       "evidence": "Store the raw word later invoked as a code address by GAMEGUI export 0x08. RE_UNKNOWN: historical callback formals/return, registration validity and lifetime; inspect all original registrations and targets before declaring a typed callback API.",
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiSetSharedWord",
-          "declaration_line": 833,
+          "declaration_line": 937,
           "lines": [
-            833
+            937
           ]
         }
       ]
@@ -129997,16 +130120,16 @@
       "path": "src/modules/gamegui.c",
       "symbol": "Visit loaded UVTX files and accumulate their unsigned field at offset * 0x1A. The original homes the incoming word but does not use it in the * scan. The local aggregate is neither returned nor stored here; preserve * the file-manager calls and original loop. RE_UNKNOWN: field 0x1A meaning, * valid asset extent and the discarded total's intended role. Trace original * UVTX producers and callers before treating this as a size/resource * statistic or adding an observable result.",
       "lines": [
-        1039
+        1143
       ],
       "evidence": "Visit loaded UVTX files and accumulate their unsigned field at offset * 0x1A. The original homes the incoming word but does not use it in the * scan. The local aggregate is neither returned nor stored here; preserve * the file-manager calls and original loop. RE_UNKNOWN: field 0x1A meaning, * valid asset extent and the discarded total's intended role. Trace original * UVTX producers and callers before treating this as a size/resource * statistic or adding an observable result.",
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiAccumulateLoadedTextureField1A",
-          "declaration_line": 1046,
+          "declaration_line": 1150,
           "lines": [
-            1039
+            1143
           ]
         }
       ]
@@ -130017,16 +130140,16 @@
       "path": "src/modules/gamegui.c",
       "symbol": "When settings word 0x18C is nonzero, initialize the shared GUI widget. * Snapshot settings word 0x8C before all callbacks. If GUI is absent, load * original modules ugui/dled and font asset 3 in order; retain the existing * GUI table when already loaded. Initialize widget D_gamegui_00402C78, set its rectangle * and five original property pairs, select palette/font 3, then clear the * shared debug byte and word+0xC. Reload exports for every original callback. * RE_UNKNOWN: settings words 0x18C/0x8C meanings, property payload semantics, * complete shared-state/widget allocation and resource ownership/lifetime. * Trace original writers, GUI property tables and loader/teardown paths before * replacing the neutral field views or inferring additional validation.",
       "lines": [
-        778
+        882
       ],
       "evidence": "When settings word 0x18C is nonzero, initialize the shared GUI widget. * Snapshot settings word 0x8C before all callbacks. If GUI is absent, load * original modules ugui/dled and font asset 3 in order; retain the existing * GUI table when already loaded. Initialize widget D_gamegui_00402C78, set its rectangle * and five original property pairs, select palette/font 3, then clear the * shared debug byte and word+0xC. Reload exports for every original callback. * RE_UNKNOWN: settings words 0x18C/0x8C meanings, property payload semantics, * complete shared-state/widget allocation and resource ownership/lifetime. * Trace original writers, GUI property tables and loader/teardown paths before * replacing the neutral field views or inferring additional validation.",
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiInitializeSharedWidgetWhenEnabled",
-          "declaration_line": 788,
+          "declaration_line": 892,
           "lines": [
-            778
+            882
           ]
         }
       ]
@@ -161718,24 +161841,24 @@
       "symbol": "pad0",
       "lines": [
         222,
-        706,
-        711
+        810,
+        815
       ],
       "owners": [
         {
           "kind": "type",
           "name": "Inner_00401D34",
-          "declaration_line": 704,
+          "declaration_line": 808,
           "lines": [
-            706
+            810
           ]
         },
         {
           "kind": "type",
           "name": "Outer_00401D34",
-          "declaration_line": 709,
+          "declaration_line": 813,
           "lines": [
-            711
+            815
           ]
         },
         {
@@ -161754,17 +161877,17 @@
       "path": "src/modules/gamegui.c",
       "symbol": "padE0",
       "lines": [
-        844,
-        846
+        948,
+        950
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiRequestStateNineWithChoiceFlag",
-          "declaration_line": 842,
+          "declaration_line": 946,
           "lines": [
-            844,
-            846
+            948,
+            950
           ]
         }
       ]
@@ -182483,20 +182606,134 @@
       ]
     },
     {
+      "id": "Q-44820ed6647b",
+      "kind": "offset_field",
+      "path": "src/modules/gamegui.c",
+      "symbol": "opaque00",
+      "lines": [
+        685
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "GameGuiControllerGuiExports",
+          "declaration_line": 684,
+          "lines": [
+            685
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-fa64ec37f470",
+      "kind": "offset_field",
+      "path": "src/modules/gamegui.c",
+      "symbol": "opaque01",
+      "lines": [
+        676
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "GameGuiDebugStatePrefix",
+          "declaration_line": 674,
+          "lines": [
+            676
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-4c71a2c2b725",
+      "kind": "offset_field",
+      "path": "src/modules/gamegui.c",
+      "symbol": "opaque10",
+      "lines": [
+        678
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "GameGuiDebugStatePrefix",
+          "declaration_line": 674,
+          "lines": [
+            678
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-ed1d1e070c7a",
+      "kind": "offset_field",
+      "path": "src/modules/gamegui.c",
+      "symbol": "opaque24",
+      "lines": [
+        687
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "GameGuiControllerGuiExports",
+          "declaration_line": 684,
+          "lines": [
+            687
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-3854fbdd3f05",
+      "kind": "offset_field",
+      "path": "src/modules/gamegui.c",
+      "symbol": "opaque30",
+      "lines": [
+        689
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "GameGuiControllerGuiExports",
+          "declaration_line": 684,
+          "lines": [
+            689
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-66dddf224546",
+      "kind": "offset_field",
+      "path": "src/modules/gamegui.c",
+      "symbol": "opaque95",
+      "lines": [
+        680
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "GameGuiDebugStatePrefix",
+          "declaration_line": 674,
+          "lines": [
+            680
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-3757505868c5",
       "kind": "offset_field",
       "path": "src/modules/gamegui.c",
       "symbol": "unk18C",
       "lines": [
-        794
+        898
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiInitializeSharedWidgetWhenEnabled",
-          "declaration_line": 788,
+          "declaration_line": 892,
           "lines": [
-            794
+            898
           ]
         }
       ]
@@ -182507,24 +182744,24 @@
       "path": "src/modules/gamegui.c",
       "symbol": "unk1E",
       "lines": [
-        707,
-        725
+        811,
+        829
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiRestoreMusicUnlessModeOne",
-          "declaration_line": 721,
+          "declaration_line": 825,
           "lines": [
-            725
+            829
           ]
         },
         {
           "kind": "type",
           "name": "Inner_00401D34",
-          "declaration_line": 704,
+          "declaration_line": 808,
           "lines": [
-            707
+            811
           ]
         }
       ]
@@ -182564,8 +182801,8 @@
       "symbol": "unk28",
       "lines": [
         549,
-        712,
-        724
+        816,
+        828
       ],
       "owners": [
         {
@@ -182579,17 +182816,17 @@
         {
           "kind": "function",
           "name": "gameGuiRestoreMusicUnlessModeOne",
-          "declaration_line": 721,
+          "declaration_line": 825,
           "lines": [
-            724
+            828
           ]
         },
         {
           "kind": "type",
           "name": "Outer_00401D34",
-          "declaration_line": 709,
+          "declaration_line": 813,
           "lines": [
-            712
+            816
           ]
         }
       ]
@@ -182619,15 +182856,15 @@
       "path": "src/modules/gamegui.c",
       "symbol": "unk48",
       "lines": [
-        983
+        1087
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiApplyDitherAndVideoSettings",
-          "declaration_line": 976,
+          "declaration_line": 1080,
           "lines": [
-            983
+            1087
           ]
         }
       ]
@@ -182638,15 +182875,15 @@
       "path": "src/modules/gamegui.c",
       "symbol": "unk4C",
       "lines": [
-        982
+        1086
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiApplyDitherAndVideoSettings",
-          "declaration_line": 976,
+          "declaration_line": 1080,
           "lines": [
-            982
+            1086
           ]
         }
       ]
@@ -182676,15 +182913,15 @@
       "path": "src/modules/gamegui.c",
       "symbol": "unk8C",
       "lines": [
-        793
+        897
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiInitializeSharedWidgetWhenEnabled",
-          "declaration_line": 788,
+          "declaration_line": 892,
           "lines": [
-            793
+            897
           ]
         }
       ]
@@ -182696,42 +182933,42 @@
       "symbol": "unkC",
       "lines": [
         229,
-        686,
-        870,
-        878,
-        890
+        790,
+        974,
+        982,
+        994
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiRenderMenuOrFontList",
-          "declaration_line": 684,
+          "declaration_line": 788,
           "lines": [
-            686
+            790
           ]
         },
         {
           "kind": "function",
           "name": "gameGuiRequestInitialIntroTrack",
-          "declaration_line": 886,
+          "declaration_line": 990,
           "lines": [
-            890
+            994
           ]
         },
         {
           "kind": "function",
           "name": "gameGuiRequestStateFour",
-          "declaration_line": 876,
+          "declaration_line": 980,
           "lines": [
-            878
+            982
           ]
         },
         {
           "kind": "function",
           "name": "gameGuiRequestStateThree",
-          "declaration_line": 868,
+          "declaration_line": 972,
           "lines": [
-            870
+            974
           ]
         },
         {
@@ -240604,39 +240841,29 @@
       "path": "src/modules/gamegui.c",
       "symbol": "* Request property 6 from the supplied channel, using the local callback-list * output and trailing zero, then register gameGuiApplyDitherAndVideoSettings * with a zero insertion argument and priority 0x21. * RE_ORIGINAL_QUIRK: The local output is not initialized here and no lookup * status or NULL check precedes registration. * RE_UNKNOWN: Property 6 must fill a live callback list for this channel; * list capacity, registration failure, callback lifetime and teardown ordering * require the channel/callback providers and all registration callers.",
       "lines": [
-        1010
+        1114
       ],
       "evidence": "* Request property 6 from the supplied channel, using the local callback-list * output and trailing zero, then register gameGuiApplyDitherAndVideoSettings * with a zero insertion argument and priority 0x21. * RE_ORIGINAL_QUIRK: The local output is not initialized here and no lookup * status or NULL check precedes registration. * RE_UNKNOWN: Property 6 must fill a live callback list for this channel; * list capacity, registration failure, callback lifetime and teardown ordering * require the channel/callback providers and all registration callers.",
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiRegisterChannelCallback",
-          "declaration_line": 1021,
+          "declaration_line": 1125,
           "lines": [
-            1010
+            1114
           ]
         }
       ]
     },
     {
-      "id": "Q-6799169de7a1",
+      "id": "Q-500e42297073",
       "kind": "original_quirk",
       "path": "src/modules/gamegui.c",
-      "symbol": "* Scan four controllers for both masks 0x20 and 0x10; on the first match, * load the GUI, display-list editor and font resources when needed, then set * GUI property 16 and the shared controller word if the GUI load succeeded. * Preserve the scan break on that first match even when the load failed. * Independently process press masks 0x800 then 0x400 using the current mode: * update the enabled byte, initialize the shared widget, invoke the stored * raw code address or create the debug root, and clear the shared GUI short. * The second action sees the first action's changes. When enabled, store * byte 1 at the root container's offset 0x8A and run its input/child traversal. * Preserve provider and callback reloads, unexpected-mode behavior and the * original unsigned comparison of the memory-query result against 150000. * RE_ORIGINAL_QUIRK: GUI availability gates the initial property call, but * later enabled paths add no load-result check. Original failure-domain and * callback-validity guarantees remain unresolved; no reachable fault is proven. * RE_UNKNOWN: historical state/container extents and formals, input-controller * validity, module/resource occupancy and lifetime, callback registrations, * formals/return and inherited-register expectations, complete mode/property * meanings and aliases. Resolve original allocations, producers, registered * targets, all mode/property readers and failure paths before changing bounds, * validation, ownership, callback ABI or initialization. * Readable C is parked: 820 native versus 888 draft bytes, 152 differing words, * and 43 versus 87 complete relocation records. The draft rematerializes the * shared-state address instead of retaining the native base pointer; switch * lowering and scheduling also differ. All observed operations remain present. * Recover original natural storage/lifetime evidence and require complete * instruction/relocation, packed-module and ROM proof; do not invent padding * or a complete historical state layout from compiler allocation alone.",
+      "symbol": "* Scan four controllers for both masks 0x20 and 0x10; on the first match, * load the GUI, display-list editor and font resources when needed, then set * GUI property 16 and the shared controller word if the GUI load succeeded. * Preserve the scan break on that first match even when the load failed. * Independently process press masks 0x800 then 0x400 using the current mode: * update the enabled byte, initialize the shared widget, invoke the stored * raw code address or create the debug root, and clear the shared GUI short. * The second action sees the first action's changes. When enabled, store * byte 1 at the root container's offset 0x8A and run its input/child traversal. * Preserve provider and callback reloads, unexpected-mode behavior and the * original unsigned comparison of the memory-query result against 150000. * RE_ORIGINAL_QUIRK: GUI availability gates the initial property call, but * later enabled paths add no load-result check. Original failure-domain and * callback-validity guarantees remain unresolved; no reachable fault is proven. * RE_UNKNOWN: historical state/container extents and formals, input-controller * validity, module/resource occupancy and lifetime, callback registrations, * formals/return and inherited-register expectations, complete mode/property * meanings and aliases. Resolve original allocations, producers, registered * targets, all mode/property readers and failure paths before changing bounds, * validation, ownership, callback ABI or initialization.",
       "lines": [
         649
       ],
-      "evidence": "* Scan four controllers for both masks 0x20 and 0x10; on the first match, * load the GUI, display-list editor and font resources when needed, then set * GUI property 16 and the shared controller word if the GUI load succeeded. * Preserve the scan break on that first match even when the load failed. * Independently process press masks 0x800 then 0x400 using the current mode: * update the enabled byte, initialize the shared widget, invoke the stored * raw code address or create the debug root, and clear the shared GUI short. * The second action sees the first action's changes. When enabled, store * byte 1 at the root container's offset 0x8A and run its input/child traversal. * Preserve provider and callback reloads, unexpected-mode behavior and the * original unsigned comparison of the memory-query result against 150000. * RE_ORIGINAL_QUIRK: GUI availability gates the initial property call, but * later enabled paths add no load-result check. Original failure-domain and * callback-validity guarantees remain unresolved; no reachable fault is proven. * RE_UNKNOWN: historical state/container extents and formals, input-controller * validity, module/resource occupancy and lifetime, callback registrations, * formals/return and inherited-register expectations, complete mode/property * meanings and aliases. Resolve original allocations, producers, registered * targets, all mode/property readers and failure paths before changing bounds, * validation, ownership, callback ABI or initialization. * Readable C is parked: 820 native versus 888 draft bytes, 152 differing words, * and 43 versus 87 complete relocation records. The draft rematerializes the * shared-state address instead of retaining the native base pointer; switch * lowering and scheduling also differ. All observed operations remain present. * Recover original natural storage/lifetime evidence and require complete * instruction/relocation, packed-module and ROM proof; do not invent padding * or a complete historical state layout from compiler allocation alone.",
-      "owners": [
-        {
-          "kind": "assembly",
-          "name": "func_gamegui_00401748",
-          "declaration_line": 679,
-          "lines": [
-            649
-          ]
-        }
-      ]
+      "evidence": "* Scan four controllers for both masks 0x20 and 0x10; on the first match, * load the GUI, display-list editor and font resources when needed, then set * GUI property 16 and the shared controller word if the GUI load succeeded. * Preserve the scan break on that first match even when the load failed. * Independently process press masks 0x800 then 0x400 using the current mode: * update the enabled byte, initialize the shared widget, invoke the stored * raw code address or create the debug root, and clear the shared GUI short. * The second action sees the first action's changes. When enabled, store * byte 1 at the root container's offset 0x8A and run its input/child traversal. * Preserve provider and callback reloads, unexpected-mode behavior and the * original unsigned comparison of the memory-query result against 150000. * RE_ORIGINAL_QUIRK: GUI availability gates the initial property call, but * later enabled paths add no load-result check. Original failure-domain and * callback-validity guarantees remain unresolved; no reachable fault is proven. * RE_UNKNOWN: historical state/container extents and formals, input-controller * validity, module/resource occupancy and lifetime, callback registrations, * formals/return and inherited-register expectations, complete mode/property * meanings and aliases. Resolve original allocations, producers, registered * targets, all mode/property readers and failure paths before changing bounds, * validation, ownership, callback ABI or initialization."
     },
     {
       "id": "Q-cdd6dd05545a",
@@ -240674,6 +240901,26 @@
           "declaration_line": 405,
           "lines": [
             392
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-f899a85c4f19",
+      "kind": "original_quirk",
+      "path": "src/modules/gamegui.c",
+      "symbol": "Select the first controller holding both masks, then process the two * debug-menu actions and update the active shared GUI container. * RE_ORIGINAL_QUIRK: both action tests run in order; the second observes changes * made by the first. The low-memory paths return before later input handling. * RE_UNKNOWN: modes outside 0..2, module/allocation failure and the registered * callback's full ABI. Its code word is called without supplied arguments.",
+      "lines": [
+        693
+      ],
+      "evidence": "Select the first controller holding both masks, then process the two * debug-menu actions and update the active shared GUI container. * RE_ORIGINAL_QUIRK: both action tests run in order; the second observes changes * made by the first. The low-memory paths return before later input handling. * RE_UNKNOWN: modes outside 0..2, module/allocation failure and the registered * callback's full ABI. Its code word is called without supplied arguments.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "gameGuiHandleDebugControllerInput",
+          "declaration_line": 700,
+          "lines": [
+            693
           ]
         }
       ]
@@ -250880,7 +251127,7 @@
       "symbol": "unusedCallbackValue",
       "lines": [
         266,
-        976
+        1080
       ],
       "owners": [
         {
@@ -250894,9 +251141,9 @@
         {
           "kind": "function",
           "name": "gameGuiApplyDitherAndVideoSettings",
-          "declaration_line": 976,
+          "declaration_line": 1080,
           "lines": [
-            976
+            1080
           ]
         }
       ]
@@ -250926,15 +251173,15 @@
       "path": "src/modules/gamegui.c",
       "symbol": "unusedWord",
       "lines": [
-        1046
+        1150
       ],
       "owners": [
         {
           "kind": "function",
           "name": "gameGuiAccumulateLoadedTextureField1A",
-          "declaration_line": 1046,
+          "declaration_line": 1150,
           "lines": [
-            1046
+            1150
           ]
         }
       ]
