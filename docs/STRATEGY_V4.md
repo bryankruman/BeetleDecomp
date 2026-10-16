@@ -34,8 +34,8 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **731** assembly references:
-**694** ordinary functions and **37** entrypoints, with **677,860** known instruction bytes
+matching C are preserved with `#line`. The current ledger has **730** assembly references:
+**693** ordinary functions and **37** entrypoints, with **677,132** known instruction bytes
 and no unknown sizes. The broader name audit still finds **291** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
@@ -218,7 +218,7 @@ copy API credentials to fleet machines merely to start the compiler campaign.
 ## Compute and state protection
 
 pve's approved isolated CT 105 is `beetle-worker`, 10.0.10.70, unprivileged, capped at four
-CPU threads, 8 GiB RAM, 32 GiB disk and no autostart. Existing guests and hypervisor packages
+CPU threads, 8 GiB RAM, 48 GiB disk and no autostart. Existing guests and hypervisor packages
 are outside the campaign. All substantial builds and searches belong there. Skytech handles
 source review and small single-file diagnostics. The private payload contains the user's
 ROM solely for local fleet matching; do not commit it, generated assets, raw code snapshots

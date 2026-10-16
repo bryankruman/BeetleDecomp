@@ -1,5 +1,29 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
+/* Consumed export slots only; these views define no backing storage.
+ * RE_UNKNOWN: the full historical export types, texture ownership and exact
+ * visual role of the two sprite handles need original callers/assets. */
+typedef struct {
+    u8 opaque00[0x0C];
+    void (*setFlags)(s32);
+    void (*clearBits)(s32);
+    void (*bindTexture)(s32);
+    u8 opaque18[0x38];
+    void (*push)(void);
+    void (*pop)(void);
+    u8 opaque58[4];
+    void (*drawTextureRectangle)(s32, s32, s32, s32, f32, f32, f32, f32);
+} SelectionBorderGraphicsExports;
+typedef struct {
+    u8 opaque00[0x10];
+    void (*render)(s32);
+} SelectionBorderSpriteExports;
+extern s32 D_selection_00420E2C;
+extern s32 D_selection_00420E30;
+/* Reload each provider pointer at every call, as the original code does. */
+#define SELECTION_BORDER_GFX ((SelectionBorderGraphicsExports *)gUvGfxStateExports)
+#define SELECTION_BORDER_SPRITE ((SelectionBorderSpriteExports *)gUvSprtExports)
+#line 3 "src/modules/selection.c"
 /* Consumed SND word slots only; no backing storage is defined.
  * RE_UNKNOWN: historical full export types and flag purpose require
  * original declarations, callers and sound-flag consumers. */
@@ -4306,7 +4330,45 @@ void selectionRotateViewMatrixAroundPivot(f32 pivotX, f32 pivotZ, f32 rotationIn
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00416A50.s")
 #line 1953 "src/modules/selection.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/selection/func_selection_00416ABC.s")
+/* Draw the fixed menu frame from eight textured rectangles, then two sprites.
+ * Keep each texture binding, UV orientation and the two graphics-state scopes
+ * in their original order. RE_UNKNOWN: asset names and the two sprites' visual
+ * roles are unresolved. RE_ORIGINAL_QUIRK: keep the asymmetric left/right
+ * edge bounds and UV orientations exactly as observed. */
+void selectionDrawTexturedMenuBorderAndSprites(void) {
+    SELECTION_BORDER_GFX->push();
+    SELECTION_BORDER_GFX->setFlags(0x800000);
+    SELECTION_BORDER_GFX->clearBits(0x1E600000);
+    SELECTION_BORDER_GFX->bindTexture(0x1E);
+    SELECTION_BORDER_GFX->drawTextureRectangle(0, 0x38, 0xBC, 0xF0,
+        0.0f, 1.0f, 0.0f, 1.0f);
+    SELECTION_BORDER_GFX->drawTextureRectangle(0x108, 0x140, 0xBC, 0xF0,
+        1.0f, 0.0f, 0.0f, 1.0f);
+    SELECTION_BORDER_GFX->drawTextureRectangle(0, 0x38, 0, 0x34,
+        0.0f, 1.0f, 1.0f, 0.0f);
+    SELECTION_BORDER_GFX->drawTextureRectangle(0x108, 0x140, 0, 0x34,
+        1.0f, 0.0f, 1.0f, 0.0f);
+    SELECTION_BORDER_GFX->clearBits(0x1EE00000);
+    SELECTION_BORDER_GFX->bindTexture(0x21);
+    SELECTION_BORDER_GFX->drawTextureRectangle(0, 0x2A, 0x34, 0xBC,
+        0.0f, 1.0f, 0.0f, 2.0f);
+    SELECTION_BORDER_GFX->drawTextureRectangle(0x116, 0x13F, 0x34, 0xBC,
+        1.0f, 0.0f, 0.0f, 2.0f);
+    SELECTION_BORDER_GFX->bindTexture(0x22);
+    SELECTION_BORDER_GFX->drawTextureRectangle(0x38, 0x108, 0xCA, 0xF0,
+        0.0f, 13.0f, 0.0f, 1.0f);
+    SELECTION_BORDER_GFX->drawTextureRectangle(0x38, 0x108, 0, 0x25,
+        0.0f, 13.0f, 0.0f, 1.0f);
+    SELECTION_BORDER_GFX->pop();
+
+    SELECTION_BORDER_GFX->push();
+    SELECTION_BORDER_GFX->setFlags(0x800000);
+    SELECTION_BORDER_GFX->clearBits(0x1E600000);
+    SELECTION_BORDER_SPRITE->render(D_selection_00420E2C);
+    SELECTION_BORDER_SPRITE->render(D_selection_00420E30);
+    SELECTION_BORDER_GFX->pop();
+}
+#line 1955 "src/modules/selection.c"
 
 /* Set sprite props then render two sprites with gfx state push/pop */
 #line 1957 "src/modules/selection.c"

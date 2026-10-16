@@ -3223,3 +3223,4 @@ selectionApplyEightObjectPropertyFlagsForChoice = 0x0040B608; // type:func
 selectionPrepareBitmapAndSharedText = 0x0040A5E0; // type:func
 selectionDrawMeasuredMenuLabel = 0x00410E78; // type:func
 selectionPrepareLocalizedCenteredBitmapMenu = 0x00419D54; // type:func
+selectionDrawTexturedMenuBorderAndSprites = 0x00416ABC; // type:func
