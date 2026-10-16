@@ -380,3 +380,7 @@ uvTerraInitializeSortGroups = 0x0040D050; // type:func
 uvTerraTestPackedAngularLevelThreshold = 0x0040CEA8; // type:func
 uvTerraRefreshProjectionAndDrawQueuedTiles = 0x0040AE4C; // type:func
 uvTerraCollectTriangleHandlesAtPoint = 0x00401E64; // type:func
+uvTerraGetTriangleLocalVertices = 0x00403464; // type:func
+uvTerraGetTriangleTextureId = 0x004060A4; // type:func
+uvTerraCollectTriangleHandlesByTexture = 0x00406160; // type:func
+uvTerraAppendStaticObjectSegmentQueryResults = 0x0040A79C; // type:func

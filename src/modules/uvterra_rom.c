@@ -15,6 +15,9 @@ void func_uvterra_rom_0040078C(s32);
 void func_uvterra_rom_0040AC9C(s32);
 void uvTerraRefreshProjectionAndDrawQueuedTiles(s32);
 #include "module.h"
+extern UvModel_Exports *D_uvterra_rom_0040F758;
+extern s32 *D_uvterra_rom_0040F78C;
+#line 18 "src/modules/uvterra_rom.c"
 extern UvFMtx_Rom_Exports *D_uvterra_rom_0040F744;
 extern s32 D_uvterra_rom_0040FBD8, D_uvterra_rom_0040FBDC;
 void func_uvterra_rom_004072EC(s32, u16, uvUnkTileStruct *, void *, u16);
@@ -687,7 +690,45 @@ void uvTerraGetPackedTriangleMeanVertexChannels(s32 terrainId, u32 handle,
 }
 #line 419 "src/modules/uvterra_rom.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00403464.s")
+/* Decode a packed tile/mesh/triangle handle and copy its three local vertices.
+ * Invalid handles or missing terrain leave the caller outputs untouched.
+ * RE_UNKNOWN: handle bounds and asset lifetimes; subordinate pointers and vertex
+ * indices remain unchecked, and no tile/world transform is applied here. */
+void uvTerraGetTriangleLocalVertices(s32 terrainId, u32 triangleHandle, Vec3F *vertex0, Vec3F *vertex1, Vec3F *vertex2) {
+    ParsedUVCT *chunk;
+    ParsedUVTR *terrain;
+    Unk80225FBC_0x28_UnkC *triangle;
+    uvUnkTileStruct *tile;
+    Unk80225FBC_0x28 *mesh;
+    Vtx *vertices;
+    Unk80225FBC_0x28_UnkC *selectedTriangle;
+
+    if (triangleHandle == -1U) {
+        return;
+    }
+
+    terrain = uvGetLoadedFile('UVTR', terrainId);
+    if (terrain == NULL) {
+        return;
+    }
+
+    tile = &terrain->unk28[(triangleHandle >> 0x16) & 0x3FF];
+    chunk = tile->unk40;
+    mesh = &chunk->unk8[(triangleHandle >> 0xC) & 0x3FF];
+    triangle = &mesh->unk18[triangleHandle & 0xFFF];
+    vertices = chunk->vtxTable;
+    vertex0->x = vertices[triangle->unk0].v.ob[0];
+    vertex0->y = vertices[triangle->unk0].v.ob[1];
+    selectedTriangle = triangle;
+    vertex0->z = vertices[selectedTriangle->unk0].v.ob[2];
+    vertex1->x = vertices[selectedTriangle->unk2].v.ob[0];
+    vertex1->y = vertices[selectedTriangle->unk2].v.ob[1];
+    vertex1->z = vertices[selectedTriangle->unk2].v.ob[2];
+    vertex2->x = vertices[selectedTriangle->unk4].v.ob[0];
+    vertex2->y = vertices[selectedTriangle->unk4].v.ob[1];
+    vertex2->z = vertices[selectedTriangle->unk4].v.ob[2];
+}
+#line 421 "src/modules/uvterra_rom.c"
 
 #line 422 "src/modules/uvterra_rom.c"
 
@@ -756,9 +797,100 @@ s32 uvTerraGetPackedTileTranslationXY(s32 terrainId, u32 handle, f32 *outX, f32 
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00404E14.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_004060A4.s")
+/* Return the selected mesh texture's low 12 bits, or 0xFFF on the original
+ * invalid-handle/missing-terrain/tile/chunk paths. Preserve the tile null test.
+ * RE_UNKNOWN: tile/mesh bounds and loaded asset lifetime are caller contracts;
+ * the triangle subindex is deliberately unused by this texture query. */
+s32 uvTerraGetTriangleTextureId(s32 terrainId, u32 triangleHandle) {
+    ParsedUVCT* chunk;
+    ParsedUVTR* terrain;
+    uvUnkTileStruct* tile;
+    Unk80225FBC_0x28* mesh;
+    s32 textureId;
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00406160.s")
+    if (triangleHandle == -1U) {
+        return 0xFFF;
+    }
+    terrain = uvGetLoadedFile('UVTR', terrainId);
+    if (terrain == NULL) {
+        return 0xFFF;
+    }
+    tile = &terrain->unk28[(triangleHandle >> 0x16) & 0x3FF];
+    if (tile == NULL) {
+        return 0xFFF;
+    }
+    chunk = tile->unk40;
+    if (chunk == NULL) {
+        return 0xFFF;
+    }
+    mesh = &chunk->unk8[(triangleHandle >> 0xC) & 0x3FF];
+    textureId = mesh->texture & 0xFFF;
+    return textureId;
+}
+#line 431 "src/modules/uvterra_rom.c"
+
+/* Collect packed handles for every triangle in meshes with the requested
+ * low 12-bit texture ID, using the existing shared scratch buffer.
+ * Missing terrain returns 0 and a null output; otherwise return the scratch base
+ * even when no mesh matches. RE_UNKNOWN: scratch capacity, asset bounds and
+ * reentrancy. Preserve the original 16-bit tile encoding and masked indices. */
+s32 uvTerraCollectTriangleHandlesByTexture(s32 terrainId, s32 texture, s32 **outTriangleHandles) {
+    ParsedUVTR *uvtr;
+    s32 tileCount;
+    s32 triangleIndex;
+    s32 tileIndex;
+    s32 meshIndex;
+    s32 packedValue;
+    s32 *handles;
+    s32 triangleCount;
+    u16 meshCount;
+    ParsedUVCT *chunk;
+    Unk80225FBC_0x28 *mesh;
+    s32 handleCount;
+    uvUnkTileStruct *tile;
+    
+    handles = D_uvterra_rom_0040F784;
+    handleCount = 0;
+    uvtr = uvGetLoadedFile('UVTR', terrainId);
+    if (uvtr == NULL) {
+        *outTriangleHandles = NULL;
+        return 0;
+    }
+    tileCount = uvtr->unk18 * uvtr->unk19;
+    for (tileIndex = 0; tileIndex < tileCount; tileIndex++) {
+        tile = &uvtr->unk28[tileIndex];
+        if (tile == NULL) {
+            continue;
+        }
+        chunk = tile->unk40;
+        if (chunk == NULL) {
+            continue;
+        }
+
+        meshIndex = 0;
+        meshCount = chunk->unkC;
+        if (meshCount > 0) {
+            do {
+                mesh = &tile->unk40->unk8[meshIndex];
+                triangleCount = mesh->unk1C;
+                if (triangleCount == 0) {
+                    continue;
+                }
+                packedValue = (mesh->texture & 0xFFF);
+                if (packedValue != texture) {
+                    continue;
+                }
+                packedValue = ((u16)tileIndex << 22);
+                for (triangleIndex = 0; triangleIndex < triangleCount; triangleIndex++) {
+                    handles[handleCount++] = (u32)packedValue + ((meshIndex & 0x3FF) << 0xC) + (triangleIndex & 0xFFF);
+                }
+            } while (++meshIndex != meshCount);
+        }
+    }
+    *outTriangleHandles = handles;
+    return handleCount;
+}
+#line 433 "src/modules/uvterra_rom.c"
 
 /* Compute three weights from signed-16 vertex X/Y coordinates and a point,
  * preserving strict Y partition, integer differences before float conversion,
@@ -1086,7 +1218,79 @@ u16 uvTerraGetStaticObjectModelId(s32 handle) {
  * low-five-bit shift normalization and branch/counter allocation differ.
  * Recover original source dataflow before replacing this retained assembly. */
 #line 515 "src/modules/uvterra_rom.c"
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040A79C.s")
+/* Walk model LODs, convert each stored matrix by value and query enabled
+ * segments through the model provider. Undo the object's scale for the first
+ * LOD, publish the LOD in the shared handle's high byte, then balance the stack.
+ * RE_ORIGINAL_QUIRK: the return is always -1; no model-null or zero-scale guard.
+ * RE_UNKNOWN: LOD flags/depth validity, shared output capacity and matrix/model
+ * ownership. Preserve callback reloads, floating operation order and pop loops. */
+s32 uvTerraAppendStaticObjectSegmentQueryResults(f32 startX, f32 startY, f32 startZ, f32 endX, f32 endY, f32 endZ,
+                              UnkSobjDraw *object) {
+    s16 modelLodCount;
+    ParsedUVMD_1 *modelHeader;
+    f32 inverseZScale;
+    f32 inverseXYScale;
+    ParsedUVMD *model;
+    s16 parentPopDifference;
+    s16 popIndex;
+    Mtx4F transform;
+    s16 stackDepth;
+    s16 lodIndex;
+    s32 shouldQuery;
+    uvModelLOD *modelLod;
+
+    model = uvGetLoadedFile('UVMD', (s32) object->modelId);
+    modelHeader = model->unk0;
+    modelLodCount = modelHeader->unk8;
+    D_uvterra_rom_0040F758->uvModelResetMatrixStack();
+    stackDepth = 0;
+    for (lodIndex = 0; lodIndex < modelLodCount; lodIndex++) {
+        modelLod = &modelHeader->unk0[lodIndex];
+        if ((object->unk1C & (1 << lodIndex)) || (((modelLod->unk7 & 1)))) {
+            shouldQuery = FALSE;
+        } else {
+            shouldQuery = TRUE;
+        }
+
+        if ((!shouldQuery) && (modelLod->unk7 & 2)) {
+            continue;
+        }
+
+        D_uvterra_rom_0040F744->uvMat4CopyL2F(&transform, object->unk4[lodIndex]);
+        if (lodIndex == 0) {
+            inverseXYScale = 1.0f / object->unk30;
+            inverseZScale = 1.0f / object->unk34;
+            D_uvterra_rom_0040F744->uvMat4Scale(&transform, inverseXYScale, inverseXYScale, inverseZScale);
+            transform.m[3][0] *= inverseXYScale;
+            transform.m[3][1] *= inverseXYScale;
+            transform.m[3][2] *= inverseZScale;
+        }
+        D_uvterra_rom_0040F758->uvModelPushMatrix(&transform);
+        stackDepth++;
+        if (shouldQuery != 0) {
+            *D_uvterra_rom_0040F78C = (*D_uvterra_rom_0040F78C & 0xFFFFFF) | (lodIndex << 0x18);
+            D_uvterra_rom_0040F758->uvModelAppendSegmentLodQueryResults(startX, startY, startZ, endX, endY, endZ,
+                                                  D_uvterra_rom_0040F758->uvModelGetCurrentMatrix(),
+                                                  &modelHeader->unk0[lodIndex], model);
+        }
+        if (lodIndex == (modelLodCount - 1)) {
+            break;
+        }
+        parentPopDifference = modelHeader->unk0[lodIndex].unk6 - modelHeader->unk0[lodIndex + 1].unk6;
+        // clang-format off
+        for (popIndex = 0; popIndex <= parentPopDifference; popIndex++) { \
+            D_uvterra_rom_0040F758->uvModelPopMatrix();  \
+            stackDepth--; \
+        }
+        // clang-format on
+    }
+
+    for (lodIndex = 0; lodIndex < stackDepth; lodIndex++) {
+        D_uvterra_rom_0040F758->uvModelPopMatrix();
+    }
+    return -1;
+}
+#line 516 "src/modules/uvterra_rom.c"
 #line 516 "src/modules/uvterra_rom.c"
 
 #line 517 "src/modules/uvterra_rom.c"
