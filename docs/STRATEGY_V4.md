@@ -34,9 +34,9 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **726** assembly references:
-**689** ordinary functions and **37** entrypoints, with **675,144** known instruction bytes
-and no unknown sizes. The broader name audit still finds **291** address-named C definitions.
+matching C are preserved with `#line`. The current ledger has **724** assembly references:
+**687** ordinary functions and **37** entrypoints, with **669,044** known instruction bytes
+and no unknown sizes. The broader name audit still finds **290** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
 Two further accepted waves recover nine functions. Commit `06bf51c` implements
@@ -3694,3 +3694,48 @@ The motor helper has a genuine compiler function boundary; raw aliases retain
 the original identities. The unchanged 5,088-byte assembly suffix is preserved
 separately and earns no new C coverage. Full native relocations, all packed
 modules and original-ROM equality remain required before accepting this source.
+
+
+## October 17 strategy: reuse verified recoveries and measured evidence
+
+Prioritize evidenced public recoveries and independent dependency clusters.
+The selective terrain sphere-query recovery comes from
+[c3e54b43f9fcec4b875c60f01f3befb8613615a9](https://github.com/synamaxmusic/bar-decomp/commit/c3e54b43f9fcec4b875c60f01f3befb8613615a9),
+reviewed at upstream
+[f5d130b6064cd8ed98b0178bc7617969875f7bc5](https://github.com/synamaxmusic/bar-decomp/commit/f5d130b6064cd8ed98b0178bc7617969875f7bc5).
+Retain LLONSIT-glitch's commit authorship and PR141's inspectredc attribution.
+Use narrow consumed layout views instead of replacing shared headers, preserving
+the 37 older terrain bodies and every backing storage owner. The imported
+public expression needed one original-assembly-grounded correction: compare
+the left-associated squared-distance sum directly with squared radius rather
+than subtracting and comparing with zero. The original ordered comparison and
+arithmetic grouping are preserved; the finite-input contract remains unknown.
+
+Read actual instruction, caller, callee and layout evidence before changing a
+parked draft. An equivalent branch, declaration or register guess is not a
+reason for another compiler trial. Keep independent recoveries moving while
+retaining unsuccessful attempts and their precise holds. Use meaningful names,
+concise purpose comments and local RE_UNKNOWN/RE_ORIGINAL_QUIRK notes without
+inventing capacities, ownership or callback guarantees.
+
+Reuse the shared data-driven fixed-O2 worker, bounded compressed binding and
+strict validation algorithms. In terrain trial67942 the compiler command took
+0.414 seconds within a 14.131-second guarded worker command. These measurements
+do not establish a CPU speedup or completion ETA; source reasoning, evidence
+reuse and avoiding repeated setup deserve priority over more compiler trials.
+Root serializes validation and guarded commits while independent source work
+and review proceed in parallel.
+
+Borrow focused caller/callee queries, dependency clustering, authenticated
+evidence reuse and complete-task measurement from
+[Reverse Engineer Anything](https://github.com/morluto/rea).
+Its documented MIPS32r2 and limited legacy MIPS32 admission does not establish
+support for BAR's MIPS III image (ELF flags0x20001101) or exact IDO matching.
+No package installation, paid API or private binary upload is implied.
+
+Exact raw instructions alone earn no acceptance. Preserve every relocation
+record and provider association, including natural emission-order differences;
+require the normal partial link and packing, all 133 original module hashes,
+full original-ROM equality, full native Recomp validation, refreshed readability
+and uncertainty indexes, and guarded Git landing before credit. Runtime input
+and gameplay qualification remain a separate campaign gate.

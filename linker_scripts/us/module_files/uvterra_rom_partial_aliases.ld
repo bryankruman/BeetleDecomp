@@ -3,3 +3,4 @@ func_uvterra_rom_00403464 = uvTerraGetTriangleLocalVertices;
 func_uvterra_rom_004060A4 = uvTerraGetTriangleTextureId;
 func_uvterra_rom_00406160 = uvTerraCollectTriangleHandlesByTexture;
 func_uvterra_rom_0040A79C = uvTerraAppendStaticObjectSegmentQueryResults;
+func_uvterra_rom_00404E14 = uvTerraCollectSphereContacts;

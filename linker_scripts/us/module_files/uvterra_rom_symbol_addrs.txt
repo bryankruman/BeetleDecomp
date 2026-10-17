@@ -384,3 +384,4 @@ uvTerraGetTriangleLocalVertices = 0x00403464; // type:func
 uvTerraGetTriangleTextureId = 0x004060A4; // type:func
 uvTerraCollectTriangleHandlesByTexture = 0x00406160; // type:func
 uvTerraAppendStaticObjectSegmentQueryResults = 0x0040A79C; // type:func
+uvTerraCollectSphereContacts = 0x00404E14; // type:func
