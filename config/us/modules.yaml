@@ -40,6 +40,11 @@ Modules:
       - rodata
       - bss
   - name: filmroll
+    done_sections:
+      - text
+      - data
+      - bss
+      - rodata
   - name: flag
   - name: game
   - name: gamegui

@@ -10,6 +10,7 @@ PREFIX = 'asm/us/data/modules/uvdyn_rom.rodata-prefix.s'
 TED_PREFIX = 'asm/us/data/modules/ted.rodata-prefix.s'
 PFX_PREFIX = 'asm/us/data/modules/uvpfx_rom.rodata-prefix.s'
 LIGHT_RODATA = 'asm/us/data/modules/light.rodata.s'
+FILM_OWNERS = ['asm/us/data/modules/filmroll.rodata.s', 'asm/us/data/modules/filmroll.data.s', 'asm/us/data/modules/filmroll.bss.s']
 
 
 class MakeReadonlyInputsTests(unittest.TestCase):
@@ -17,7 +18,7 @@ class MakeReadonlyInputsTests(unittest.TestCase):
         lines = (ROOT / 'Makefile').read_text(encoding='utf-8').splitlines()
         matches = [line for line in lines if line.startswith('S_FILES') and 'filter-out' in line and PREFIX in line]
         self.assertEqual(len(matches), 1)
-        expected = 'S_FILES       := $(filter-out asm/us/data/modules/uvdyn_rom.rodata-prefix.s asm/us/data/modules/ted.rodata-prefix.s asm/us/data/modules/race.rodata-prefix.s asm/us/data/modules/race-floats.rodata-island.s asm/us/data/modules/misc.rodata-prefix.s asm/us/data/modules/misc.rodata-suffix.s asm/us/data/modules/misc.rodata-aliases.s asm/us/data/modules/uvpfx_rom.rodata-prefix.s asm/us/data/modules/light.rodata.s,$(S_FILES))'
+        expected = 'S_FILES       := $(filter-out asm/us/data/modules/uvdyn_rom.rodata-prefix.s asm/us/data/modules/ted.rodata-prefix.s asm/us/data/modules/race.rodata-prefix.s asm/us/data/modules/race-floats.rodata-island.s asm/us/data/modules/misc.rodata-prefix.s asm/us/data/modules/misc.rodata-suffix.s asm/us/data/modules/misc.rodata-aliases.s asm/us/data/modules/uvpfx_rom.rodata-prefix.s asm/us/data/modules/light.rodata.s asm/us/data/modules/filmroll.rodata.s asm/us/data/modules/filmroll.data.s asm/us/data/modules/filmroll.bss.s,$(S_FILES))'
         self.assertEqual(matches[0], expected)
         return matches[0]
 
@@ -56,6 +57,8 @@ class MakeReadonlyInputsTests(unittest.TestCase):
         self.assertEqual(modules.count(marker), 1)
         light = modules.split(marker, 1)[1].split('  - name:', 1)[0]
         self.assertEqual(light, '    done_sections:\n      - rodata\n')
+        film = modules.split('  - name: filmroll\n', 1)[1].split('  - name:', 1)[0]
+        self.assertEqual(film, '    done_sections:\n      - text\n      - data\n      - bss\n      - rodata\n')
         self.filter_line()
 
     def test_only_declared_prefix_and_its_standalone_object_are_removed(self):
@@ -64,7 +67,7 @@ class MakeReadonlyInputsTests(unittest.TestCase):
                 'asm/us/data/modules/uvdyn_rom.data.s', 'asm/us/data/ordinary.s',
                 'src/normal.s', 'asm/jp/data/modules/light.rodata.s', 'asm/jp/data/modules/uvdyn_rom.rodata-prefix.s',
                 'asm/jp/data/modules/ted.rodata-prefix.s']
-        sources, objects = self.evaluate([PREFIX, TED_PREFIX, 'asm/us/data/modules/race.rodata-prefix.s', 'asm/us/data/modules/race-floats.rodata-island.s'] + ['asm/us/data/modules/misc.rodata-prefix.s', 'asm/us/data/modules/misc.rodata-suffix.s', 'asm/us/data/modules/misc.rodata-aliases.s', PFX_PREFIX, LIGHT_RODATA] + keep)
+        sources, objects = self.evaluate([PREFIX, TED_PREFIX, 'asm/us/data/modules/race.rodata-prefix.s', 'asm/us/data/modules/race-floats.rodata-island.s'] + ['asm/us/data/modules/misc.rodata-prefix.s', 'asm/us/data/modules/misc.rodata-suffix.s', 'asm/us/data/modules/misc.rodata-aliases.s', PFX_PREFIX, LIGHT_RODATA] + FILM_OWNERS + keep)
         self.assertEqual(sources, keep)
         self.assertEqual(objects, ['build/' + name[:-2] + '.o' for name in keep])
         self.assertNotIn('build/' + PREFIX[:-2] + '.o', objects)
@@ -75,9 +78,9 @@ class MakeReadonlyInputsTests(unittest.TestCase):
 
     def test_complete_light_rodata_excludes_only_its_stale_partial_object(self):
         lines = (ROOT / 'Makefile').read_text(encoding='utf-8').splitlines()
-        matches = [line for line in lines if line.startswith('    $$(filter-out $(BUILD_DIR)/asm/us/data/modules/light.rodata.o,')]
+        matches = [line for line in lines if line.startswith('    $$(filter-out $(BUILD_DIR)/asm/us/data/modules/light.rodata.o $(BUILD_DIR)/asm/us/data/modules/filmroll.rodata.o,')]
         self.assertEqual(len(matches), 1)
-        expected = '    $$(filter-out $(BUILD_DIR)/asm/us/data/modules/light.rodata.o,$$(addprefix $(BUILD_DIR)/,$$(addsuffix .o,$$(basename $$(wildcard $(MODULE_DATA_DIR)/$$*.rodata.s))))) \\'
+        expected = '    $$(filter-out $(BUILD_DIR)/asm/us/data/modules/light.rodata.o $(BUILD_DIR)/asm/us/data/modules/filmroll.rodata.o,$$(addprefix $(BUILD_DIR)/,$$(addsuffix .o,$$(basename $$(wildcard $(MODULE_DATA_DIR)/$$*.rodata.s))))) \\'
         self.assertEqual(matches[0], expected)
         # Evaluate the actual secondary-expansion expression with both a stale
         # LIGHT object and another module's legitimate readonly object present.
@@ -101,6 +104,31 @@ class MakeReadonlyInputsTests(unittest.TestCase):
                 rows = [line[len('OBJECTS='):] for line in output.splitlines() if line.startswith('OBJECTS=')]
                 self.assertEqual(len(rows), 1)
                 self.assertEqual(rows[0].split(), expected_objects)
+
+    def test_whole_film_owners_exclude_only_their_stale_partial_objects(self):
+        lines = (ROOT / 'Makefile').read_text(encoding='utf-8').splitlines()
+        expected = {'rodata': '    $$(filter-out $(BUILD_DIR)/asm/us/data/modules/light.rodata.o $(BUILD_DIR)/asm/us/data/modules/filmroll.rodata.o,$$(addprefix $(BUILD_DIR)/,$$(addsuffix .o,$$(basename $$(wildcard $(MODULE_DATA_DIR)/$$*.rodata.s)))))', 'data': '    $$(filter-out $(BUILD_DIR)/asm/us/data/modules/filmroll.data.o,$$(addprefix $(BUILD_DIR)/,$$(addsuffix .o,$$(basename $$(wildcard $(MODULE_DATA_DIR)/$$*.data.s)))))', 'bss': '    $$(filter-out $(BUILD_DIR)/asm/us/data/modules/filmroll.bss.o,$$(addprefix $(BUILD_DIR)/,$$(addsuffix .o,$$(basename $$(wildcard $(MODULE_DATA_DIR)/$$*.bss.s)))))'}
+        for section, line in expected.items():
+            self.assertEqual(lines.count(line + ' ' + chr(92)), 1)
+            with tempfile.TemporaryDirectory(prefix='film-owner-partial-') as tmp:
+                root = Path(tmp)
+                for module in ('filmroll', 'other'):
+                    source = root / ('asm/us/data/modules/' + module + '.' + section + '.s')
+                    obj = root / ('build/asm/us/data/modules/' + module + '.' + section + '.o')
+                    source.parent.mkdir(parents=True, exist_ok=True)
+                    obj.parent.mkdir(parents=True, exist_ok=True)
+                    source.write_bytes(b'')
+                    obj.write_bytes(b'')
+                fixture = ('BUILD_DIR := build\nMODULE_DATA_DIR := asm/us/data/modules\n'
+                           + '.SECONDEXPANSION:\nbuild/partial_%.o: ' + chr(92) + '\n'
+                           + line + '\n\t@$(info OBJECTS=$^)\n\t@:\n')
+                path = root / 'fixture.mk'
+                path.write_text(fixture, encoding='utf-8')
+                for module in ('filmroll', 'other'):
+                    output = subprocess.check_output(['make', '--no-print-directory', '-f', str(path), 'build/partial_' + module + '.o'], cwd=root, text=True)
+                    rows = [s[len('OBJECTS='):] for s in output.splitlines() if s.startswith('OBJECTS=')]
+                    self.assertEqual(len(rows), 1)
+                    self.assertEqual(rows[0].split(), [] if module == 'filmroll' else ['build/asm/us/data/modules/other.' + section + '.o'])
 
     def test_normal_sources_unchanged_when_prefix_absent(self):
         sources = ['asm/us/data/ordinary.s', 'src/normal.s']

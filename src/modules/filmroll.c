@@ -1,6 +1,6 @@
 /*__SEEDEXTERNS__*/
 extern int D_filmroll_00400A78;
-extern float D_filmroll_004009A4;
+extern const float D_filmroll_004009A4[1];
 typedef struct {
     /* 0x00 */ int stateWord;
     /* 0x04 */ int firstSampleInteger;
@@ -39,7 +39,7 @@ extern FilmrollSoundExports *gSndExports;
  * RE_UNKNOWN: original range producers, bounds, alignment and lifetime. */
 extern u32 D_filmroll_004009C8[];
 extern u8 D_filmroll_004009D0[];
-extern f32 D_filmroll_004009A0;
+extern const f32 D_filmroll_004009A0[1];
 void func_filmroll_00400060(void);
 void func_filmroll_00400068(s32);
 void filmrollSwapBufferRangeAndClearSwapSuppression(void);
@@ -55,6 +55,44 @@ typedef struct FilmrollExportAddresses {
     u32 callback0CAddress;
     u32 callback10Address;
 } FilmrollExportAddresses;
+/* These definitions move the three measured FILM sections into this C owner.
+ * RE_UNKNOWN: framebuffer bounds/lifetime and the unused BSS bytes' purposes
+ * remain unknown. The original offsets, extents and readonly words are gates,
+ * not assumptions about the compiler's future allocation or constant pool. */
+typedef struct {
+    f32 unknown00;
+    u8 unknown04;
+} FilmrollOwnedSoundHandle;
+
+u32 B_filmroll_004009C0[2];
+u32 D_filmroll_004009C8[2];
+u8 D_filmroll_004009D0[8];
+FilmrollRandomizedEntry D_filmroll_004009D8[10];
+int D_filmroll_00400A78;
+FilmrollOwnedSoundHandle D_filmroll_00400A80;
+
+const f32 D_filmroll_004009A0[1] = {0.8f};
+const float D_filmroll_004009A4[1] = {319.0f};
+/* The second word is actually zero in the original eight-byte owner.
+ * It is retained as observed storage, without inferring its purpose. */
+const f32 D_filmroll_004009A8[2] = {0.8f, 0.0f};
+
+void __entrypoint_func_filmrollInitializeModuleExports(FilmrollExportAddresses *);
+void filmrollPrepareBufferPairForTransition(s32 mode);
+void filmrollRunExpandingDiskTransition(void);
+
+/* Original module descriptor: one address relocation at byte four. */
+u32 D_filmroll_004009B0[4] = {
+    0x00140000, (u32)__entrypoint_func_filmrollInitializeModuleExports, 0, 0
+};
+
+/* These original four-byte owners are arrays for readonly placement.
+ * Each old scalar use still consumes element zero with its original type.
+ * RE_UNKNOWN: IDO placement/order and all linked provider metadata require
+ * actual measurement; these views do not establish a passing layout. */
+#define D_filmroll_004009A0 (D_filmroll_004009A0[0])
+#define D_filmroll_004009A4 (D_filmroll_004009A4[0])
+
 #line 33 "src/modules/filmroll.c"
 /*
  * Update the allocation pointer and publish the five original code addresses
@@ -83,7 +121,34 @@ void func_filmroll_00400060(void) {
 }
 #line 20 "src/modules/filmroll.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/filmroll/func_filmroll_00400068.s")
+#line 21 "src/modules/filmroll.c"
+/* Capture the two framebuffer words, copy direction zero, and exchange
+ * the words only for the original mode/address-order condition.
+ * RE_UNKNOWN: valid modes, buffer ownership and the intended visual effect.
+ * The upstream unused local is retained; no stack layout is inferred from it. */
+void filmrollPrepareBufferPairForTransition(s32 mode)
+{
+    s32 unusedSwapWord;
+    s32 savedSourceWord;
+
+    gUvGfxMgrExports->uvGfxWaitIfRequested();
+    D_filmroll_004009C8[0] = gUvGfxMgrExports->uvGfxGetAlternateFramebuffer();
+    D_filmroll_004009C8[1] = gUvGfxMgrExports->uvGfxGetCurrentFramebuffer();
+    gUvGfxMgrExports->uvCopyFrameBuf(0);
+    if (mode != 2) {
+        if (((D_filmroll_004009C8[0] < D_filmroll_004009C8[1]) != (mode == 1)) != 0) {
+            gSndExports->updateManagedSounds();
+            gUvGfxMgrExports->uvGfxBegin();
+            gUvGfxMgrExports->uvGfxEnd();
+            gUvGfxMgrExports->uvGfxWaitIfRequested();
+            savedSourceWord = D_filmroll_004009C8[0];
+            D_filmroll_004009C8[0] = D_filmroll_004009C8[1];
+            D_filmroll_004009C8[1] = savedSourceWord;
+        }
+    }
+    uvScSetBufferSwapSuppressed(1);
+}
+#line 21 "src/modules/filmroll.c"
 
 #line 23 "src/modules/filmroll.c"
 /* Advance the original unsigned buffer-address cursor toward the shared
@@ -155,7 +220,7 @@ void filmrollSwapBufferRangeWithAlternatingBlack(void) {
     s32 step;
     s32 direction;
     s32 phase;
-    f32 volumeScale;
+
 
     cursor = D_filmroll_004009C8[0];
     phase = 0;
@@ -167,9 +232,9 @@ void filmrollSwapBufferRangeWithAlternatingBlack(void) {
         direction = -1;
     }
     gSndExports->initializeHandle(D_filmroll_004009D0);
-    volumeScale = gSndExports->getSfxVolumeScale();
+
     gSndExports->startHandleSound(D_filmroll_004009D0, 0x59, 0x1F40,
-                                volumeScale * D_filmroll_004009A0);
+                                D_filmroll_004009A0 * gSndExports->getSfxVolumeScale());
     while ((direction == -1 && D_filmroll_004009C8[1] < cursor)
            || (direction == 1 && cursor < D_filmroll_004009C8[1])) {
         step = direction * 4480;
@@ -206,7 +271,7 @@ void filmrollInitializeRandomizedEntry(FilmrollRandomizedEntry *entry) {
 
     D_filmroll_00400A78 += 1;
     entry->stateWord = 1;
-    entry->firstSampleInteger = (int) (gUvMathExports->randomUnitFloat() * D_filmroll_004009A4);
+    entry->firstSampleInteger = (int) (D_filmroll_004009A4 * gUvMathExports->randomUnitFloat());
     secondSample = gUvMathExports->randomUnitFloat() * 239.0f;
     entry->trailingWord = 0;
     entry->secondSampleInteger = (int) secondSample;
@@ -252,5 +317,54 @@ void filmrollCopyRecordDiskPixels(FilmrollRandomizedEntry *entry) {
 }
 #line 43 "src/modules/filmroll.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/filmroll/func_filmroll_00400720.s")
+#line 44 "src/modules/filmroll.c"
+/* Run 180 passes over the ten measured records, growing active disk copies
+ * and replacing inactive entries while preserving sound/graphics call order.
+ * RE_UNKNOWN: record roles, lifetime, randomized ranges and visual meaning.
+ * RE_ORIGINAL_QUIRK: reload the shared active count after the disk callback;
+ * preserve the radius update, deactivation and count-decrement order. */
+void filmrollRunExpandingDiskTransition(void)
+{
+    s32 recordIndex;
+    s32 passIndex;
+
+    uvScSetBufferSwapSuppressed(1);
+    gUvGfxMgrExports->uvGfxEnd();
+    gUvGfxMgrExports->uvGfxWaitIfRequested();
+    gSndExports->initializeHandle(&D_filmroll_00400A80);
+    gSndExports->startHandleSound(&D_filmroll_00400A80, 0x4F, 0x1F40,
+                                D_filmroll_004009A8[0] * gSndExports->getSfxVolumeScale());
+    D_filmroll_004009C8[0] = gUvGfxMgrExports->uvGfxGetAlternateFramebuffer();
+    D_filmroll_004009C8[1] = gUvGfxMgrExports->uvGfxGetCurrentFramebuffer();
+    D_filmroll_00400A78 = 0;
+    for (recordIndex = 0; recordIndex < 10; recordIndex++) {
+        D_filmroll_004009D8[recordIndex].stateWord = 0;
+    }
+    for (recordIndex = 0; recordIndex < 10; recordIndex++) {
+        filmrollInitializeRandomizedEntry(D_filmroll_004009D8 + recordIndex);
+    }
+    for (passIndex = 0; passIndex < 180; passIndex++) {
+        for (recordIndex = 0; recordIndex < 10; recordIndex++) {
+            if (D_filmroll_004009D8[recordIndex].stateWord != 0) {
+                D_filmroll_004009D8[recordIndex].trailingWord += 1;
+                filmrollCopyRecordDiskPixels(&D_filmroll_004009D8[recordIndex]);
+                if (D_filmroll_004009D8[recordIndex].trailingWord >= 0xB) {
+                    D_filmroll_004009D8[recordIndex].stateWord = 0;
+                    D_filmroll_00400A78 -= 1;
+                }
+            } else if (D_filmroll_00400A78 < 0xA) {
+                filmrollInitializeRandomizedEntry(D_filmroll_004009D8 + recordIndex);
+            }
+        }
+        gSndExports->updateManagedSounds();
+        gUvGfxMgrExports->uvGfxBegin();
+        gUvGfxMgrExports->uvGfxEnd();
+        gUvGfxMgrExports->uvGfxWaitIfRequested();
+    }
+    gSndExports->releaseHandle(&D_filmroll_00400A80);
+    gUvGfxMgrExports->uvCopyFrameBuf(0);
+    uvScSetBufferSwapSuppressed(0);
+    gUvGfxMgrExports->uvGfxBegin();
+}
+#line 44 "src/modules/filmroll.c"
 

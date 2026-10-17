@@ -1,1 +1,3 @@
 func_filmroll_00400634 = filmrollCopyRecordDiskPixels;
+func_filmroll_00400068 = filmrollPrepareBufferPairForTransition;
+func_filmroll_00400720 = filmrollRunExpandingDiskTransition;

@@ -34,8 +34,8 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **721** assembly references:
-**684** ordinary functions and **37** entrypoints, with **667,728** known instruction bytes
+matching C are preserved with `#line`. The current ledger has **719** assembly references:
+**682** ordinary functions and **37** entrypoints, with **666,824** known instruction bytes
 and no unknown sizes. The broader name audit still finds **290** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
@@ -3833,3 +3833,35 @@ Require complete original module equality, all 133 original modules, full ROM,
 native geometry/content/carry/SDK checks and guarded Git landing before adding
 1,004 bytes. Registry bounds, property meaning, non-finite conversion behavior
 and callback lifetimes remain explicit source uncertainties.
+
+
+## FILMROLL904: complete transition source and section ownership
+
+Prepare the original 264-byte buffer-pair setup and 640-byte disk-transition
+loop as readable C, preserving the public source attribution already recorded
+in this file. The complete FILM translation unit owns its original 16 readonly
+bytes, 16 data bytes and 208-byte uninitialized storage extent. Raw linker
+aliases for the two recovered functions add no instruction-byte credit.
+
+Preserve the original floating multiplication order in the two older functions.
+The alternating-black transition evaluates its volume-scale callback directly
+at the observed call site. These two explicit older body/token changes require
+their exact native-window proofs; do not claim all seven older bodies literal.
+All seven older native identities remain mandatory. Callback order, live count
+reloads, framebuffer address comparisons and the 180-by-ten traversal remain
+visible in the source. Buffer ownership, live count range, record lifetime,
+overflow/nonfinite domains and the unused storage meanings remain RE_UNKNOWN.
+
+Whole-section ownership suppresses FILM assembly generation after make extract
+clears asm/us. Preserve all fifteen former assembly consumers in immutable
+pre-extract backups, including the three migrated scalar fragments and seven
+older function witnesses. Exclude all three stale storage objects from the
+normal partial link. Derive physical consumer membership and backup totals from
+the exact inventories; a source ownership setting alone proves neither count.
+
+The detached all-nine-function native replay is evidence for normal integration,
+not acceptance. Keep its strict diagnostic false flags and complete relocation
+association/order evidence. Require genuine current provider rows, raw alias
+metadata, normal four-ELF/storage checks, all 133 original modules and full ROM,
+FULL/native/carry/SDK validation and guarded Git before adding 904 bytes.
+Runtime/gameplay qualification remains separate and pending.

@@ -61,6 +61,10 @@ MODULE_VRAM_BASE = 0x80800000
 MODULE_VRAM_STRIDE = 0x00100000              # fallback stride, used only if the size tool is unavailable
 MODULE_PAD = 0x100                           # slack added to each measured module (covers SUBALIGN(16) gaps)
 MODULE_MIN_WINDOW = 0x400                    # floor so even a tiny module gets a comfortable window
+# Preserve FILM's accepted next-module boundary after its GNU storage objects
+# (including allocated ABI metadata) are replaced by whole-module C ownership.
+# This reserves nominal address space without adding module data or instructions.
+MODULE_MIN_WINDOWS = {"filmroll": 0xBC0}
 SIZE_TOOL = os.environ.get("SIZE", "mips-linux-gnu-size")   # `<cross>size`; override via $SIZE if needed
 
 
@@ -144,7 +148,7 @@ def module_window(name):
               f"falling back to {MODULE_VRAM_STRIDE:#x} stride", file=sys.stderr)
         return MODULE_VRAM_STRIDE
     span = ((text + data + bss + MODULE_PAD + 15) // 16) * 16
-    return max(span, MODULE_MIN_WINDOW)
+    return max(span, MODULE_MIN_WINDOW, MODULE_MIN_WINDOWS.get(name, 0))
 
 
 def main():
