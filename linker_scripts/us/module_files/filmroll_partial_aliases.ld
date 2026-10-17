@@ -1,0 +1,1 @@
+func_filmroll_00400634 = filmrollCopyRecordDiskPixels;

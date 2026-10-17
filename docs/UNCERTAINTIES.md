@@ -17,11 +17,11 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 1940 |
+| Explicit RE_UNKNOWN notes | 1941 |
 | Preserved RE_ORIGINAL_QUIRK notes | 559 |
 | Older comments with uncertainty language | 88 |
 | Documented original-behavior audits | 30 |
-| Assembly-backed functions or data | 729 |
+| Assembly-backed functions or data | 728 |
 | Address-based function identifiers | 906 |
 | Address-based global identifiers | 1691 |
 | Offset-based fields or neutral typed fields | 1800 |
@@ -3148,16 +3148,16 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_filmroll_00400720` | function `__entrypoint_func_filmrollInitializeModuleExports`, function `func_filmroll_00400720` | [47](../src/modules/filmroll.c#L47), [73](../src/modules/filmroll.c#L73) |
 | address_global | `D_filmroll_004009A0` | function `filmrollSwapBufferRangeWithAlternatingBlack`, global `D_filmroll_004009A0` | [42](../src/modules/filmroll.c#L42), [172](../src/modules/filmroll.c#L172) |
 | address_global | `D_filmroll_004009A4` | function `filmrollInitializeRandomizedEntry`, global `D_filmroll_004009A4` | [3](../src/modules/filmroll.c#L3), [209](../src/modules/filmroll.c#L209) |
-| address_global | `D_filmroll_004009C8` | function `filmrollSwapBufferRangeAndClearSwapSuppression`, function `filmrollSwapBufferRangeWithAlternatingBlack`, global `D_filmroll_004009C8` | [40](../src/modules/filmroll.c#L40), [106](../src/modules/filmroll.c#L106), [110](../src/modules/filmroll.c#L110), [115](../src/modules/filmroll.c#L115), [116](../src/modules/filmroll.c#L116), [132](../src/modules/filmroll.c#L132), [160](../src/modules/filmroll.c#L160), [164](../src/modules/filmroll.c#L164) (+2 in JSON) |
+| address_global | `D_filmroll_004009C8` | function `filmrollCopyRecordDiskPixels`, function `filmrollSwapBufferRangeAndClearSwapSuppression`, function `filmrollSwapBufferRangeWithAlternatingBlack`, global `D_filmroll_004009C8` | [40](../src/modules/filmroll.c#L40), [106](../src/modules/filmroll.c#L106), [110](../src/modules/filmroll.c#L110), [115](../src/modules/filmroll.c#L115), [116](../src/modules/filmroll.c#L116), [132](../src/modules/filmroll.c#L132), [160](../src/modules/filmroll.c#L160), [164](../src/modules/filmroll.c#L164) (+4 in JSON) |
 | address_global | `D_filmroll_004009D0` | function `filmrollSwapBufferRangeWithAlternatingBlack`, global `D_filmroll_004009D0` | [41](../src/modules/filmroll.c#L41), [169](../src/modules/filmroll.c#L169), [171](../src/modules/filmroll.c#L171), [190](../src/modules/filmroll.c#L190) |
 | address_global | `D_filmroll_00400A78` | function `filmrollInitializeRandomizedEntry`, global `D_filmroll_00400A78` | [2](../src/modules/filmroll.c#L2), [207](../src/modules/filmroll.c#L207) |
 | assembly | `func_filmroll_00400068` | — | [86](../src/modules/filmroll.c#L86) |
-| assembly | `func_filmroll_00400634` | — | [226](../src/modules/filmroll.c#L226) |
-| assembly | `func_filmroll_00400720` | — | [228](../src/modules/filmroll.c#L228) |
+| assembly | `func_filmroll_00400720` | — | [255](../src/modules/filmroll.c#L255) |
 | explicit_unknown | `* Update the allocation pointer and publish the five original code addresses * at offsets 0x00 through 0x10. Preserve the separate empty callback and both * swap callbacks; publ...` | function `__entrypoint_func_filmrollInitializeModuleExports` | [59](../src/modules/filmroll.c#L59) |
 | explicit_unknown | `Access-only sound export prefix, verified against original bindings and * target input consumption. The sound-handle object remains opaque here. * RE_UNKNOWN: complete handle al...` | type `FilmrollSoundExports` | [21](../src/modules/filmroll.c#L21) |
 | explicit_unknown | `Advance the original unsigned buffer-address cursor toward the shared * target in signed 3,840-byte steps, preserving the sound update, graphics * begin/end, video-interface swa...` | function `filmrollSwapBufferRangeAndClearSwapSuppression` | [89](../src/modules/filmroll.c#L89) |
 | explicit_unknown | `Advance the original unsigned buffer-address cursor toward the shared * target in signed 4,480-byte steps. Preserve each sound update, graphics * begin/end, video-interface swap...` | function `filmrollSwapBufferRangeWithAlternatingBlack` | [142](../src/modules/filmroll.c#L142) |
+| explicit_unknown | `Copy signed halfword pixels inside the record's integer disk, clipping * the two coordinates to 2..317 and 2..237. Keep the original first*320+second * indexing and cache both b...` | function `filmrollCopyRecordDiskPixels` | [226](../src/modules/filmroll.c#L226) |
 | explicit_unknown | `Initializer storage view: original 32-bit callback addresses only. * RE_UNKNOWN: callback-facing roles and intended historical declarations; * trace export consumers before intr...` | type `FilmrollExportAddresses` | [48](../src/modules/filmroll.c#L48) |
 | explicit_unknown | `Only the first two address words are accessed; this declaration supplies * no total allocation extent or inferred framebuffer ownership. * RE_UNKNOWN: original range producers, ...` | global `D_filmroll_004009C8` | [37](../src/modules/filmroll.c#L37) |
 | explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_filmroll_00400060`, function `func_filmroll_0040062C` | [78](../src/modules/filmroll.c#L78), [218](../src/modules/filmroll.c#L218) |

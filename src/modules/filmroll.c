@@ -223,7 +223,34 @@ void func_filmroll_0040062C(void) {
 }
 #line 41 "src/modules/filmroll.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/filmroll/func_filmroll_00400634.s")
+/* Copy signed halfword pixels inside the record's integer disk, clipping
+ * the two coordinates to 2..317 and 2..237. Keep the original first*320+second
+ * indexing and cache both buffer addresses before walking the offsets.
+ * RE_UNKNOWN: coordinate convention, valid radius/overflow domain, complete
+ * buffer bounds/ownership, and overlap with the record. Read the trailing
+ * word in loop tests; the original reloads it after a pixel store. */
+void filmrollCopyRecordDiskPixels(FilmrollRandomizedEntry *entry) {
+    s32 firstCoordinate;
+    s32 secondCoordinate;
+    s32 firstOffset;
+    s32 secondOffset;
+    s16* source;
+    s16* destination;
+
+    source = (s16*) D_filmroll_004009C8[0];
+    destination = (s16*) D_filmroll_004009C8[1];
+
+    for (firstOffset = -entry->trailingWord; firstOffset <= entry->trailingWord; firstOffset++) {
+        for (secondOffset = -entry->trailingWord; secondOffset <= entry->trailingWord; secondOffset++) {
+            firstCoordinate = entry->firstSampleInteger + firstOffset;
+            secondCoordinate = entry->secondSampleInteger + secondOffset;
+            if ((firstCoordinate >= 2) && (firstCoordinate < 0x13E) && (secondCoordinate >= 2) && (secondCoordinate < 0xEE) && ((entry->trailingWord * entry->trailingWord) >= ((firstOffset * firstOffset) + (secondOffset * secondOffset)))) {
+                destination[((firstCoordinate * 0x140) + secondCoordinate)] = source[((firstCoordinate * 0x140) + secondCoordinate)];
+            }
+        }
+    }
+}
+#line 43 "src/modules/filmroll.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/filmroll/func_filmroll_00400720.s")
 

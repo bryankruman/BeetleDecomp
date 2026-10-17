@@ -34,8 +34,8 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **724** assembly references:
-**687** ordinary functions and **37** entrypoints, with **669,044** known instruction bytes
+matching C are preserved with `#line`. The current ledger has **723** assembly references:
+**686** ordinary functions and **37** entrypoints, with **668,808** known instruction bytes
 and no unknown sizes. The broader name audit still finds **290** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
@@ -3739,3 +3739,34 @@ require the normal partial link and packing, all 133 original module hashes,
 full original-ROM equality, full native Recomp validation, refreshed readability
 and uncertainty indexes, and guarded Git landing before credit. Runtime input
 and gameplay qualification remain a separate campaign gate.
+
+
+## FILMROLL disk copy: source recovery pending full validation
+
+The 236-byte disk-copy function is a selective derivative of
+[synamaxmusic/bar-decomp PR 138](https://github.com/synamaxmusic/bar-decomp/pull/138),
+reviewed at public revision
+[0b45277b8e4608b93561a150e331e182fc1a0224](https://github.com/synamaxmusic/bar-decomp/commit/0b45277b8e4608b93561a150e331e182fc1a0224).
+Retain that public provenance and the existing AGPL-3.0-or-later notice.
+The natural pair of for-loops uses six local variables. This is a meaningful
+source-form change from the older drafts that cached the radius, used byte
+offsets and used guarded do-loops. Keep the established signed-halfword
+copies, first-coordinate-times-320 indexing, clipping tests and live
+trailing-word reloads. Coordinate meaning, valid radius and overflow domains,
+complete buffer ownership and capacity, and possible record overlap remain
+explicit unknowns. The six older FILMROLL bodies and all backing storage
+owners stay literal.
+
+One bounded compilation with fixed O2 optimization matched all 236 raw
+instruction bytes and the complete target native/provider replay. The whole
+2464-byte object TEXT is literal. The measured emission order of the two-record
+relocation block, section and string indexes, REGINFO descriptor and raw-export
+association require their separate original evidence. Preserve those records
+and all strict diagnostic flags; do not sort relocations or repair ELF metadata
+to make them appear equal. The new raw-to-canonical linker alias receives zero
+extra credit. Require its genuine zero-size FUNC association at 0x634, the normal
+partial link, every original packed module and the full original ROM, complete
+current native/SDK/carry validation and guarded Git landing before accepting
+the 236 bytes. The alias adds one tracked path: the manifest grows from 1256 to
+1257 files only after guarded absence and preimage checks. Runtime and gameplay
+qualification remain an independent, unfinished campaign requirement.
