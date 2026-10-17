@@ -28,6 +28,15 @@ def declared_assembly_data(root):
             raise ValueError('readonly_layout lacks whole-object rodata ownership')
         from moduleReadonlyLayout import load, validate_source, check_users, inside, sha
         header = json.loads(inside(root, metadata).read_bytes())
+        if header.get('version') == 6:
+            from pfxReadonlyLayout import declared_prefix
+            row = declared_prefix(root, metadata, module['name'])
+            assembly = row['assembly']
+            if assembly in declared:
+                raise ValueError('Multiple owners declare the same readonly prefix: ' + assembly)
+            # One validated data pragma only; the real suffix host stays ASM.
+            declared[assembly] = row
+            continue
         if header.get('version') == 5:
             from miscReadonlyLayout import configuration, inside as misc_inside
             layout = configuration(root, metadata, module['name'])

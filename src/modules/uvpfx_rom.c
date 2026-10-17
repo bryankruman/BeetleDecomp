@@ -58,6 +58,8 @@ void uvPfxSetTriangleTextureOrientation(s32, f32, s32);           /* extern */
 void uvPfxAttachChannelCallback(s32 arg0);
 void func_uvpfx_rom_00403AC8(s32 arg0, s32 arg1);
 
+#pragma GLOBAL_ASM("asm/us/data/modules/uvpfx_rom.rodata-prefix.s")
+
 #line 61 "src/modules/uvpfx_rom.c"
 
 /* Publish particle controls, allocate the record table, and load dependencies.
@@ -399,120 +401,126 @@ void func_uvpfx_rom_004004D0(s32 arg0, ...) {
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvpfx_rom/func_uvpfx_rom_004004D0.s")
 #endif
 
-#ifdef NEEDS_RODATA
-void func_uvpfx_rom_004012CC(s32 arg0, ...) {
-    va_list args;
-    UnkStruct_uvpfx_rom_00404FA0 *temp_v1;
-    UnkStruct_uvpfx_rom_00404FA0_unk0 *temp_v0;
-    UnkStruct_uvpfx_rom_00404FA0_unk28 *temp_a1;
-    UnkStruct_uvpfx_rom_00404FA0_unk2C *temp_a2;
-    UnkStruct_uvpfx_rom_00404FA0_unk4 *temp_a0;
-    s16 prop;
+/* Read effect properties into the caller's typed output pointers. Each tag is
+ * followed by its output pointer(s); zero or an unknown tag ends the request.
+ * RE_UNKNOWN: Valid effect indices, non-null definition/state/type records,
+ * output-pointer lifetimes and symbolic property names require caller evidence. */
+void uvPfxGetProps(s32 effectId, ...) {
+    va_list outputs;
+    UnkStruct_uvpfx_rom_00404FA0 *unusedRecord;
+    /* RE_UNKNOWN: Preserve this unused public declaration until native layout is measured. */
+    UnkStruct_uvpfx_rom_00404FA0_unk0 *definition;
+    UnkStruct_uvpfx_rom_00404FA0_unk28 *typeOneParameters;
+    UnkStruct_uvpfx_rom_00404FA0_unk2C *typeTwoParameters;
+    UnkStruct_uvpfx_rom_00404FA0_unk4 *state;
+    s16 property;
 
-    temp_v0 = D_uvpfx_rom_00404FA0[arg0].unk0;
-    temp_a0 = D_uvpfx_rom_00404FA0[arg0].unk4;
-    temp_a1 = temp_v0->unk28;
-    temp_a2 = temp_v0->unk2C;
-    va_start(args, arg0);
+    definition = D_uvpfx_rom_00404FA0[effectId].unk0;
+    state = D_uvpfx_rom_00404FA0[effectId].unk4;
+    typeOneParameters = definition->unk28;
+    typeTwoParameters = definition->unk2C;
+    va_start(outputs, effectId);
 
     while (TRUE) {
-        prop = (s32) va_arg(args, s32);
-        switch (prop) { /* irregular */
+        property = (s32) va_arg(outputs, s32);
+        switch (property) {
             case 0x1001:
-                *va_arg(args, f32 *) = temp_a0->unk10;
+                *va_arg(outputs, f32 *) = state->unk10;
                 break;
             case 0x1019:
-                *va_arg(args, f32 *) = temp_a0->unk7C;
+                *va_arg(outputs, f32 *) = state->unk7C;
                 break;
             case 0x1002:
-                *va_arg(args, f32 *) = temp_a0->unk4;
+                *va_arg(outputs, f32 *) = state->unk4;
                 break;
             case 0x1013:
-                *va_arg(args, s32 *) = temp_a0->unk28;
+                *va_arg(outputs, s32 *) = state->unk28;
                 break;
             case 0x1014:
-                *va_arg(args, s32 *) = temp_a0->unk2A;
+                *va_arg(outputs, s32 *) = state->unk2A;
                 break;
             case 0x1007:
-                *va_arg(args, f32 *) = temp_a0->unk1C;
+                *va_arg(outputs, f32 *) = state->unk1C;
                 break;
             case 0x1008:
-                *va_arg(args, s32 *) = (s32) temp_a0->unk2C;
+                *va_arg(outputs, s32 *) = (s32) state->unk2C;
                 break;
             case 0x1003:
-                *va_arg(args, f32 *) = temp_a0->unk70.x;
-                *va_arg(args, f32 *) = temp_a0->unk70.y;
-                *va_arg(args, f32 *) = temp_a0->unk70.z;
+                *va_arg(outputs, f32 *) = state->unk70.x;
+                *va_arg(outputs, f32 *) = state->unk70.y;
+                *va_arg(outputs, f32 *) = state->unk70.z;
                 break;
             case 0x2004:
-                *va_arg(args, s16 *) = temp_v0->unk1E;
+                *va_arg(outputs, s16 *) = definition->unk1E;
                 break;
             case 0x1005:
-                *va_arg(args, f32 *) = (f32) temp_v0->unk16 / 255.0f;
-                *va_arg(args, f32 *) = (f32) temp_v0->unk18 / 255.0f;
-                *va_arg(args, f32 *) = (f32) temp_v0->unk1A / 255.0f;
-                *va_arg(args, f32 *) = (f32) temp_v0->unk1C / 255.0f;
+                *va_arg(outputs, f32 *) = (f32) definition->unk16 / 255.0f;
+                *va_arg(outputs, f32 *) = (f32) definition->unk18 / 255.0f;
+                *va_arg(outputs, f32 *) = (f32) definition->unk1A / 255.0f;
+                *va_arg(outputs, f32 *) = (f32) definition->unk1C / 255.0f;
                 break;
             case 0x4026:
-                if (temp_v0->unk4 == 1) {
-                    *va_arg(args, f32 *) = (f32) temp_a1->unkE / 255.0f;
-                    *va_arg(args, f32 *) = (f32) temp_a1->unk10 / 255.0f;
-                    *va_arg(args, f32 *) = (f32) temp_a1->unk12 / 255.0f;
-                    *va_arg(args, f32 *) = (f32) temp_a1->unk14 / 255.0f;
+                if (definition->unk4 == 1) {
+                    *va_arg(outputs, f32 *) = (f32) typeOneParameters->unkE / 255.0f;
+                    *va_arg(outputs, f32 *) = (f32) typeOneParameters->unk10 / 255.0f;
+                    *va_arg(outputs, f32 *) = (f32) typeOneParameters->unk12 / 255.0f;
+                    *va_arg(outputs, f32 *) = (f32) typeOneParameters->unk14 / 255.0f;
                 } else {
-                    *va_arg(args, f32 *) = 1.0f;
-                    *va_arg(args, f32 *) = 1.0f;
-                    *va_arg(args, f32 *) = 1.0f;
-                    *va_arg(args, f32 *) = 1.0f;
+                    *va_arg(outputs, f32 *) = 1.0f;
+                    *va_arg(outputs, f32 *) = 1.0f;
+                    *va_arg(outputs, f32 *) = 1.0f;
+                    *va_arg(outputs, f32 *) = 1.0f;
                 }
                 break;
             case 0x1010:
-                *va_arg(args, f32 *) = temp_a0->unk80.m[3][0];
-                *va_arg(args, f32 *) = temp_a0->unk80.m[3][1];
-                *va_arg(args, f32 *) = temp_a0->unk80.m[3][2];
+                *va_arg(outputs, f32 *) = state->unk80.m[3][0];
+                *va_arg(outputs, f32 *) = state->unk80.m[3][1];
+                *va_arg(outputs, f32 *) = state->unk80.m[3][2];
                 break;
             case 0x1011:
-                *va_arg(args, s32 *) = temp_a0->unk24 > 0;
+                *va_arg(outputs, s32 *) = state->unk24 > 0;
                 break;
             case 0x1012:
-                *va_arg(args, f32*)  = temp_a2->unkC;
+                *va_arg(outputs, f32*)  = typeTwoParameters->unkC;
                 break;
             case 0x1022:
-                *va_arg(args, f32 *) = temp_v0->unk12;
+                *va_arg(outputs, f32 *) = definition->unk12;
                 break;
             case 0x1023:
-                *va_arg(args, s8 *) = temp_v0->unk14;
+                *va_arg(outputs, s8 *) = definition->unk14;
                 break;
+            /* RE_ORIGINAL_QUIRK: Both high-bit masks below are stored in
+             * 16 bits, so these two getters write zero. Preserve the widths. */
             case 0x1024:
-                *va_arg(args, s16 *) = temp_v0->unk8 & 0x400000;
+                *va_arg(outputs, s16 *) = definition->unk8 & 0x400000;
                 break;
             case 0x1026:
-                *va_arg(args, s16 *) = temp_v0->unk8 & 0x200000;
+                *va_arg(outputs, s16 *) = definition->unk8 & 0x200000;
                 break;
             case 0x4027:
-                *va_arg(args, f32 *) = (f32) temp_a1->unkA * 0.01f;
+                *va_arg(outputs, f32 *) = (f32) typeOneParameters->unkA * 0.01f;
                 break;
             case 0x4029:
-                *va_arg(args, f32 *) = temp_a1->unkC * 0.01f;
+                *va_arg(outputs, f32 *) = typeOneParameters->unkC * 0.01f;
                 break;
+            /* RE_ORIGINAL_QUIRK: The original converts the float at state
+             * offset 0x18 to an integer, then stores its low 16 bits. */
             case 0x4030:
-                *va_arg(args, s16 *) = temp_a0->unk18;
+                *va_arg(outputs, s16 *) = state->unk18;
                 break;
             case 0x4033:
-                *va_arg(args, f32 *) = temp_a0->unkD8;
-                *va_arg(args, f32 *) = temp_a0->unkDC;
-                *va_arg(args, f32 *) = temp_a0->unkE0;
+                *va_arg(outputs, f32 *) = state->unkD8;
+                *va_arg(outputs, f32 *) = state->unkDC;
+                *va_arg(outputs, f32 *) = state->unkE0;
                 break;
             case 0:
                 return;
+            /* RE_ORIGINAL_QUIRK: An unknown tag ends the entire request. */
             default:
                 return;
         }
     }
 }
-#else
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvpfx_rom/func_uvpfx_rom_004012CC.s")
-#endif
 
 #line 494 "src/modules/uvpfx_rom.c"
 /* Unload the eight original particle-module dependencies in order. */

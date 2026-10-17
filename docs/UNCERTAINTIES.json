@@ -496,7 +496,7 @@
     "src/modules/uvmath_rom.c": "570836cfeb8f0c4ffcd93a125e1a769728e881f3410b4c415fb903778a0cad38",
     "src/modules/uvmodel_rom.c": "637e0ca79c1111af035251bda5b89d89118fad206ffea51742f0158cb38245e5",
     "src/modules/uvmodelld_rom.c": "2d205857badc4de9b9f7f0dd46d930a627d369ad278c1a9e4c5f5e837a0e2b51",
-    "src/modules/uvpfx_rom.c": "2f67226eab289a1087ddd03f0f471a75b8aee338b04b71b84eafcc9c1f398cdb",
+    "src/modules/uvpfx_rom.c": "5d2751a196af9fa053527488ae828fd46329a7598b6168cefc347a988f337235",
     "src/modules/uvpfxld_rom.c": "def46200b5448e1bbc691b9581da8b66114689d85d1693af38808ea4e3b1061d",
     "src/modules/uvquat_rom.c": "69666a8c225e69102fa7411ca18dabc9465a8adef958f2274a19472533166c4d",
     "src/modules/uvquery_rom.c": "96639fc8b9843fcbae569435ee73fb3889a73725b7fda22ca5f7623a7e14183f",
@@ -531,15 +531,15 @@
     "assembly": 730,
     "audit_debt": 30,
     "conditional_draft": 4,
-    "decompiler_local": 625,
+    "decompiler_local": 623,
     "draft_marker": 55,
-    "explicit_unknown": 1934,
+    "explicit_unknown": 1936,
     "layout_padding": 281,
     "offset_field": 1782,
     "opaque_type": 285,
-    "original_quirk": 550,
+    "original_quirk": 553,
     "uncertainty_note": 88,
-    "unused_identifier": 154
+    "unused_identifier": 155
   },
   "items": [
     {
@@ -21143,7 +21143,7 @@
       "symbol": "__entrypoint_func_uvpfx_rom_400000",
       "lines": [
         56,
-        69
+        71
       ],
       "owners": [
         {
@@ -21157,9 +21157,9 @@
         {
           "kind": "function",
           "name": "__entrypoint_func_uvpfx_rom_400000",
-          "declaration_line": 69,
+          "declaration_line": 71,
           "lines": [
-            69
+            71
           ]
         }
       ]
@@ -21171,16 +21171,16 @@
       "symbol": "func_uvpfx_rom_00400398",
       "lines": [
         35,
-        80,
-        169
+        82,
+        171
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_uvpfx_rom_400000",
-          "declaration_line": 69,
+          "declaration_line": 71,
           "lines": [
-            80
+            82
           ]
         },
         {
@@ -21194,9 +21194,9 @@
         {
           "kind": "function",
           "name": "func_uvpfx_rom_00400398",
-          "declaration_line": 169,
+          "declaration_line": 171,
           "lines": [
-            169
+            171
           ]
         }
       ]
@@ -21208,16 +21208,16 @@
       "symbol": "func_uvpfx_rom_004004D0",
       "lines": [
         37,
-        84,
-        217
+        86,
+        219
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_uvpfx_rom_400000",
-          "declaration_line": 69,
+          "declaration_line": 71,
           "lines": [
-            84
+            86
           ]
         },
         {
@@ -21231,9 +21231,9 @@
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            217
+            219
           ]
         }
       ]
@@ -21245,16 +21245,15 @@
       "symbol": "func_uvpfx_rom_004012CC",
       "lines": [
         38,
-        86,
-        403
+        88
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_uvpfx_rom_400000",
-          "declaration_line": 69,
+          "declaration_line": 71,
           "lines": [
-            86
+            88
           ]
         },
         {
@@ -21263,14 +21262,6 @@
           "declaration_line": 38,
           "lines": [
             38
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvpfx_rom_004012CC",
-          "declaration_line": 403,
-          "lines": [
-            403
           ]
         }
       ]
@@ -21282,20 +21273,20 @@
       "symbol": "func_uvpfx_rom_00401888",
       "lines": [
         40,
-        272,
-        288,
-        294,
-        534
+        274,
+        290,
+        296,
+        542
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            272,
-            288,
-            294
+            274,
+            290,
+            296
           ]
         },
         {
@@ -21309,9 +21300,9 @@
         {
           "kind": "function",
           "name": "func_uvpfx_rom_00401888",
-          "declaration_line": 534,
+          "declaration_line": 542,
           "lines": [
-            534
+            542
           ]
         }
       ]
@@ -21323,7 +21314,7 @@
       "symbol": "func_uvpfx_rom_0040242C",
       "lines": [
         55,
-        697
+        705
       ],
       "owners": [
         {
@@ -21337,9 +21328,9 @@
         {
           "kind": "function",
           "name": "uvPfxDrawActiveEffects",
-          "declaration_line": 671,
+          "declaration_line": 679,
           "lines": [
-            697
+            705
           ]
         }
       ]
@@ -21351,7 +21342,7 @@
       "symbol": "func_uvpfx_rom_00403AC8",
       "lines": [
         59,
-        695
+        703
       ],
       "owners": [
         {
@@ -21365,9 +21356,9 @@
         {
           "kind": "function",
           "name": "uvPfxDrawActiveEffects",
-          "declaration_line": 671,
+          "declaration_line": 679,
           "lines": [
-            695
+            703
           ]
         }
       ]
@@ -21379,7 +21370,7 @@
       "symbol": "func_uvpfx_rom_00404A60",
       "lines": [
         53,
-        954
+        962
       ],
       "owners": [
         {
@@ -21393,9 +21384,9 @@
         {
           "kind": "function",
           "name": "func_uvpfx_rom_00404A60",
-          "declaration_line": 954,
+          "declaration_line": 962,
           "lines": [
-            954
+            962
           ]
         }
       ]
@@ -75032,24 +75023,24 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "D_uvpfx_rom_00404D40",
       "lines": [
-        129,
-        148
+        131,
+        150
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxAcquireInactiveByKind",
-          "declaration_line": 135,
+          "declaration_line": 137,
           "lines": [
-            148
+            150
           ]
         },
         {
           "kind": "global",
           "name": "D_uvpfx_rom_00404D40",
-          "declaration_line": 129,
+          "declaration_line": 131,
           "lines": [
-            129
+            131
           ]
         }
       ]
@@ -75060,24 +75051,24 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "D_uvpfx_rom_00404D44",
       "lines": [
-        168,
-        178
+        170,
+        180
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_00400398",
-          "declaration_line": 169,
+          "declaration_line": 171,
           "lines": [
-            178
+            180
           ]
         },
         {
           "kind": "global",
           "name": "D_uvpfx_rom_00404D44",
-          "declaration_line": 168,
+          "declaration_line": 170,
           "lines": [
-            168
+            170
           ]
         }
       ]
@@ -75088,60 +75079,60 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "D_uvpfx_rom_00404F40",
       "lines": [
-        592,
-        608,
-        639,
-        648,
-        719,
-        735
+        600,
+        616,
+        647,
+        656,
+        727,
+        743
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxAdvanceTimeAndUpdate",
-          "declaration_line": 644,
+          "declaration_line": 652,
           "lines": [
-            648
+            656
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxBeginFinalInterval",
-          "declaration_line": 731,
+          "declaration_line": 739,
           "lines": [
-            735
+            743
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxRestart",
-          "declaration_line": 710,
+          "declaration_line": 718,
           "lines": [
-            719
+            727
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxUpdateLifetimeState",
-          "declaration_line": 596,
+          "declaration_line": 604,
           "lines": [
-            608
+            616
           ]
         },
         {
           "kind": "global",
           "name": "D_uvpfx_rom_00404F40",
-          "declaration_line": 592,
+          "declaration_line": 600,
           "lines": [
-            592
+            600
           ]
         },
         {
           "kind": "global",
           "name": "D_uvpfx_rom_00404F40",
-          "declaration_line": 639,
+          "declaration_line": 647,
           "lines": [
-            639
+            647
           ]
         }
       ]
@@ -75153,206 +75144,206 @@
       "symbol": "D_uvpfx_rom_00404FA0",
       "lines": [
         31,
-        90,
-        103,
+        92,
         105,
-        144,
-        145,
-        157,
-        181,
-        182,
-        197,
-        210,
-        231,
-        232,
-        412,
-        413,
-        568,
-        606,
-        607,
-        650,
-        687,
-        692,
-        714,
-        715,
-        734,
-        748,
-        749,
+        107,
+        146,
+        147,
+        159,
+        183,
+        184,
+        199,
+        212,
+        233,
+        234,
+        418,
+        419,
+        576,
+        614,
+        615,
+        658,
+        695,
+        700,
+        722,
+        723,
+        742,
+        756,
         757,
-        784,
-        785,
-        786,
-        852,
-        853,
-        854,
-        870,
-        888,
-        916,
-        917,
-        918
+        765,
+        792,
+        793,
+        794,
+        860,
+        861,
+        862,
+        878,
+        896,
+        924,
+        925,
+        926
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_uvpfx_rom_400000",
-          "declaration_line": 69,
+          "declaration_line": 71,
           "lines": [
-            90,
-            103,
-            105
+            92,
+            105,
+            107
           ]
         },
         {
           "kind": "function",
           "name": "func_uvpfx_rom_00400398",
-          "declaration_line": 169,
+          "declaration_line": 171,
           "lines": [
-            181,
-            182,
-            197
+            183,
+            184,
+            199
           ]
         },
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            231,
-            232
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvpfx_rom_004012CC",
-          "declaration_line": 403,
-          "lines": [
-            412,
-            413
+            233,
+            234
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxAcquireInactiveByKind",
-          "declaration_line": 135,
+          "declaration_line": 137,
           "lines": [
-            144,
-            145,
-            157
+            146,
+            147,
+            159
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxAdvanceDiscreteStepState",
-          "declaration_line": 772,
+          "declaration_line": 780,
           "lines": [
-            784,
-            785,
-            786
+            792,
+            793,
+            794
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxAdvancePositionTrail",
-          "declaration_line": 906,
+          "declaration_line": 914,
           "lines": [
-            916,
-            917,
-            918
+            924,
+            925,
+            926
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxAdvanceTimeAndUpdate",
-          "declaration_line": 644,
+          "declaration_line": 652,
           "lines": [
-            650
+            658
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxBeginFinalInterval",
-          "declaration_line": 731,
+          "declaration_line": 739,
           "lines": [
-            734
+            742
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxDrawActiveEffects",
-          "declaration_line": 671,
+          "declaration_line": 679,
           "lines": [
-            687,
-            692
+            695,
+            700
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxGetProps",
+          "declaration_line": 408,
+          "lines": [
+            418,
+            419
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxResetTypeOneState",
-          "declaration_line": 845,
+          "declaration_line": 853,
           "lines": [
-            852,
-            853,
-            854
+            860,
+            861,
+            862
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxResetTypeTwoState",
-          "declaration_line": 742,
+          "declaration_line": 750,
           "lines": [
-            748,
-            749,
-            757
+            756,
+            757,
+            765
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxRestart",
-          "declaration_line": 710,
+          "declaration_line": 718,
           "lines": [
-            714,
-            715
+            722,
+            723
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxSetMatrix",
-          "declaration_line": 209,
+          "declaration_line": 211,
           "lines": [
-            210
+            212
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxSetTriangleTextureOrientation",
-          "declaration_line": 560,
+          "declaration_line": 568,
           "lines": [
-            568
+            576
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxSetTypeOneCountAndValue",
-          "declaration_line": 883,
+          "declaration_line": 891,
           "lines": [
-            888
+            896
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxSetTypeOneScalar18",
-          "declaration_line": 866,
+          "declaration_line": 874,
           "lines": [
-            870
+            878
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxUpdateLifetimeState",
-          "declaration_line": 596,
+          "declaration_line": 604,
           "lines": [
-            606,
-            607
+            614,
+            615
           ]
         },
         {
@@ -75372,23 +75363,23 @@
       "symbol": "D_uvpfx_rom_00404FA4",
       "lines": [
         29,
-        91,
-        97,
-        100,
-        103,
-        104
+        93,
+        99,
+        102,
+        105,
+        106
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_uvpfx_rom_400000",
-          "declaration_line": 69,
+          "declaration_line": 71,
           "lines": [
-            91,
-            97,
-            100,
-            103,
-            104
+            93,
+            99,
+            102,
+            105,
+            106
           ]
         },
         {
@@ -75408,53 +75399,53 @@
       "symbol": "D_uvpfx_rom_00404FA8",
       "lines": [
         32,
-        92,
         94,
-        143,
-        180,
-        649,
-        686
+        96,
+        145,
+        182,
+        657,
+        694
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_uvpfx_rom_400000",
-          "declaration_line": 69,
+          "declaration_line": 71,
           "lines": [
-            92,
-            94
+            94,
+            96
           ]
         },
         {
           "kind": "function",
           "name": "func_uvpfx_rom_00400398",
-          "declaration_line": 169,
+          "declaration_line": 171,
           "lines": [
-            180
+            182
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxAcquireInactiveByKind",
-          "declaration_line": 135,
+          "declaration_line": 137,
           "lines": [
-            143
+            145
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxAdvanceTimeAndUpdate",
-          "declaration_line": 644,
+          "declaration_line": 652,
           "lines": [
-            649
+            657
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxDrawActiveEffects",
-          "declaration_line": 671,
+          "declaration_line": 679,
           "lines": [
-            686
+            694
           ]
         },
         {
@@ -75474,24 +75465,24 @@
       "symbol": "D_uvpfx_rom_00404FAC",
       "lines": [
         28,
-        93,
-        678
+        95,
+        686
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_uvpfx_rom_400000",
-          "declaration_line": 69,
+          "declaration_line": 71,
           "lines": [
-            93
+            95
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxDrawActiveEffects",
-          "declaration_line": 671,
+          "declaration_line": 679,
           "lines": [
-            678
+            686
           ]
         },
         {
@@ -75511,19 +75502,19 @@
       "symbol": "D_uvpfx_rom_00404FB0",
       "lines": [
         30,
-        548,
-        549,
-        550
+        556,
+        557,
+        558
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_00401888",
-          "declaration_line": 534,
+          "declaration_line": 542,
           "lines": [
-            548,
-            549,
-            550
+            556,
+            557,
+            558
           ]
         },
         {
@@ -75543,41 +75534,41 @@
       "symbol": "D_uvpfx_rom_00405BB0",
       "lines": [
         17,
-        107,
-        211,
-        569,
-        570,
-        572,
-        576,
-        580
+        109,
+        213,
+        577,
+        578,
+        580,
+        584,
+        588
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_uvpfx_rom_400000",
-          "declaration_line": 69,
+          "declaration_line": 71,
           "lines": [
-            107
+            109
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxSetMatrix",
-          "declaration_line": 209,
+          "declaration_line": 211,
           "lines": [
-            211
+            213
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxSetTriangleTextureOrientation",
-          "declaration_line": 560,
+          "declaration_line": 568,
           "lines": [
-            569,
-            570,
-            572,
-            576,
-            580
+            577,
+            578,
+            580,
+            584,
+            588
           ]
         },
         {
@@ -75597,79 +75588,79 @@
       "symbol": "D_uvpfx_rom_00405BB4",
       "lines": [
         18,
-        108,
-        297,
-        312,
-        571,
-        575,
+        110,
+        299,
+        314,
         579,
-        759,
-        828,
-        859,
-        935,
-        936,
-        938
+        583,
+        587,
+        767,
+        836,
+        867,
+        943,
+        944,
+        946
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_uvpfx_rom_400000",
-          "declaration_line": 69,
+          "declaration_line": 71,
           "lines": [
-            108
+            110
           ]
         },
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            297,
-            312
+            299,
+            314
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxAdvanceDiscreteStepState",
-          "declaration_line": 772,
+          "declaration_line": 780,
           "lines": [
-            828
+            836
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxAdvancePositionTrail",
-          "declaration_line": 906,
+          "declaration_line": 914,
           "lines": [
-            935,
-            936,
-            938
+            943,
+            944,
+            946
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxResetTypeOneState",
-          "declaration_line": 845,
+          "declaration_line": 853,
           "lines": [
-            859
+            867
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxResetTypeTwoState",
-          "declaration_line": 742,
+          "declaration_line": 750,
           "lines": [
-            759
+            767
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxSetTriangleTextureOrientation",
-          "declaration_line": 560,
+          "declaration_line": 568,
           "lines": [
-            571,
-            575,
-            579
+            579,
+            583,
+            587
           ]
         },
         {
@@ -75689,34 +75680,34 @@
       "symbol": "D_uvpfx_rom_00405BB8",
       "lines": [
         21,
-        111,
-        682,
-        683,
-        684,
-        685,
-        701,
-        702
+        113,
+        690,
+        691,
+        692,
+        693,
+        709,
+        710
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_uvpfx_rom_400000",
-          "declaration_line": 69,
+          "declaration_line": 71,
           "lines": [
-            111
+            113
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxDrawActiveEffects",
-          "declaration_line": 671,
+          "declaration_line": 679,
           "lines": [
-            682,
-            683,
-            684,
-            685,
-            701,
-            702
+            690,
+            691,
+            692,
+            693,
+            709,
+            710
           ]
         },
         {
@@ -75736,33 +75727,33 @@
       "symbol": "D_uvpfx_rom_00405BBC",
       "lines": [
         22,
-        112,
-        915,
-        983
+        114,
+        923,
+        991
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_uvpfx_rom_400000",
-          "declaration_line": 69,
+          "declaration_line": 71,
           "lines": [
-            112
+            114
           ]
         },
         {
           "kind": "function",
           "name": "func_uvpfx_rom_00404A60",
-          "declaration_line": 954,
+          "declaration_line": 962,
           "lines": [
-            983
+            991
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxAdvancePositionTrail",
-          "declaration_line": 906,
+          "declaration_line": 914,
           "lines": [
-            915
+            923
           ]
         },
         {
@@ -75782,30 +75773,30 @@
       "symbol": "D_uvpfx_rom_00405BC0",
       "lines": [
         19,
-        109,
-        543,
-        548,
-        549,
-        550
+        111,
+        551,
+        556,
+        557,
+        558
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_uvpfx_rom_400000",
-          "declaration_line": 69,
+          "declaration_line": 71,
           "lines": [
-            109
+            111
           ]
         },
         {
           "kind": "function",
           "name": "func_uvpfx_rom_00401888",
-          "declaration_line": 534,
+          "declaration_line": 542,
           "lines": [
-            543,
-            548,
-            549,
-            550
+            551,
+            556,
+            557,
+            558
           ]
         },
         {
@@ -75825,24 +75816,24 @@
       "symbol": "D_uvpfx_rom_00405BC4",
       "lines": [
         23,
-        113,
-        124
+        115,
+        126
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_uvpfx_rom_400000",
-          "declaration_line": 69,
+          "declaration_line": 71,
           "lines": [
-            113
+            115
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxAttachChannelCallback",
-          "declaration_line": 121,
+          "declaration_line": 123,
           "lines": [
-            124
+            126
           ]
         },
         {
@@ -75862,24 +75853,24 @@
       "symbol": "D_uvpfx_rom_00405BC8",
       "lines": [
         24,
-        114,
-        125
+        116,
+        127
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_uvpfx_rom_400000",
-          "declaration_line": 69,
+          "declaration_line": 71,
           "lines": [
-            114
+            116
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxAttachChannelCallback",
-          "declaration_line": 121,
+          "declaration_line": 123,
           "lines": [
-            125
+            127
           ]
         },
         {
@@ -75899,32 +75890,32 @@
       "symbol": "D_uvpfx_rom_00405BCC",
       "lines": [
         20,
-        110,
-        984,
-        985,
-        986,
-        987,
-        988
+        112,
+        992,
+        993,
+        994,
+        995,
+        996
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_uvpfx_rom_400000",
-          "declaration_line": 69,
+          "declaration_line": 71,
           "lines": [
-            110
+            112
           ]
         },
         {
           "kind": "function",
           "name": "func_uvpfx_rom_00404A60",
-          "declaration_line": 954,
+          "declaration_line": 962,
           "lines": [
-            984,
-            985,
-            986,
-            987,
-            988
+            992,
+            993,
+            994,
+            995,
+            996
           ]
         },
         {
@@ -75944,37 +75935,37 @@
       "symbol": "D_uvpfx_rom_00405BD0",
       "lines": [
         25,
-        115,
-        260,
+        117,
         262,
-        263,
-        717
+        264,
+        265,
+        725
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_uvpfx_rom_400000",
-          "declaration_line": 69,
+          "declaration_line": 71,
           "lines": [
-            115
+            117
           ]
         },
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            260,
             262,
-            263
+            264,
+            265
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxRestart",
-          "declaration_line": 710,
+          "declaration_line": 718,
           "lines": [
-            717
+            725
           ]
         },
         {
@@ -89474,19 +89465,9 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "func_uvpfx_rom_004004D0",
       "lines": [
-        399
+        401
       ],
       "evidence": "asm/us/nonmatchings/modules/uvpfx_rom/func_uvpfx_rom_004004D0.s"
-    },
-    {
-      "id": "Q-8bee47d5574c",
-      "kind": "assembly",
-      "path": "src/modules/uvpfx_rom.c",
-      "symbol": "func_uvpfx_rom_004012CC",
-      "lines": [
-        514
-      ],
-      "evidence": "asm/us/nonmatchings/modules/uvpfx_rom/func_uvpfx_rom_004012CC.s"
     },
     {
       "id": "Q-7ef0ca00d4fe",
@@ -89494,7 +89475,7 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "func_uvpfx_rom_00401888",
       "lines": [
-        554
+        562
       ],
       "evidence": "asm/us/nonmatchings/modules/uvpfx_rom/func_uvpfx_rom_00401888.s"
     },
@@ -89504,7 +89485,7 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "func_uvpfx_rom_0040242C",
       "lines": [
-        841
+        849
       ],
       "evidence": "asm/us/nonmatchings/modules/uvpfx_rom/func_uvpfx_rom_0040242C.s"
     },
@@ -89514,7 +89495,7 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "func_uvpfx_rom_00403AC8",
       "lines": [
-        951
+        959
       ],
       "evidence": "asm/us/nonmatchings/modules/uvpfx_rom/func_uvpfx_rom_00403AC8.s"
     },
@@ -89524,9 +89505,19 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "func_uvpfx_rom_00404A60",
       "lines": [
-        991
+        999
       ],
       "evidence": "asm/us/nonmatchings/modules/uvpfx_rom/func_uvpfx_rom_00404A60.s"
+    },
+    {
+      "id": "Q-5f82abf8230e",
+      "kind": "assembly",
+      "path": "src/modules/uvpfx_rom.c",
+      "symbol": "uvpfx_rom.rodata-prefix",
+      "lines": [
+        61
+      ],
+      "evidence": "asm/us/data/modules/uvpfx_rom.rodata-prefix.s"
     },
     {
       "id": "Q-3bb2dd6a7232",
@@ -90346,9 +90337,8 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "NEEDS_RODATA",
       "lines": [
-        402,
-        533,
-        953
+        541,
+        961
       ]
     },
     {
@@ -114770,29 +114760,25 @@
         55,
         58,
         59,
-        217,
-        231,
-        232,
+        219,
+        233,
         234,
-        272,
-        288,
-        294,
-        403,
-        412,
-        413,
-        416,
-        534,
-        545,
-        954,
-        973,
-        974,
-        975,
-        976,
-        977,
-        978,
-        979,
-        980,
-        981
+        236,
+        274,
+        290,
+        296,
+        542,
+        553,
+        962,
+        981,
+        982,
+        983,
+        984,
+        985,
+        986,
+        987,
+        988,
+        989
       ],
       "owners": [
         {
@@ -114814,15 +114800,15 @@
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            217,
-            231,
-            232,
+            219,
+            233,
             234,
-            272,
-            288,
-            294
+            236,
+            274,
+            290,
+            296
           ]
         },
         {
@@ -114831,17 +114817,6 @@
           "declaration_line": 38,
           "lines": [
             38
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvpfx_rom_004012CC",
-          "declaration_line": 403,
-          "lines": [
-            403,
-            412,
-            413,
-            416
           ]
         },
         {
@@ -114855,10 +114830,10 @@
         {
           "kind": "function",
           "name": "func_uvpfx_rom_00401888",
-          "declaration_line": 534,
+          "declaration_line": 542,
           "lines": [
-            534,
-            545
+            542,
+            553
           ]
         },
         {
@@ -114888,18 +114863,18 @@
         {
           "kind": "function",
           "name": "func_uvpfx_rom_00404A60",
-          "declaration_line": 954,
+          "declaration_line": 962,
           "lines": [
-            954,
-            973,
-            974,
-            975,
-            976,
-            977,
-            978,
-            979,
-            980,
-            981
+            962,
+            981,
+            982,
+            983,
+            984,
+            985,
+            986,
+            987,
+            988,
+            989
           ]
         },
         {
@@ -115006,15 +114981,15 @@
         53,
         55,
         59,
-        534,
         542,
-        954,
-        966,
-        967,
-        969,
-        973,
+        550,
+        962,
         974,
-        975
+        975,
+        977,
+        981,
+        982,
+        983
       ],
       "owners": [
         {
@@ -115028,10 +115003,10 @@
         {
           "kind": "function",
           "name": "func_uvpfx_rom_00401888",
-          "declaration_line": 534,
+          "declaration_line": 542,
           "lines": [
-            534,
-            542
+            542,
+            550
           ]
         },
         {
@@ -115061,15 +115036,15 @@
         {
           "kind": "function",
           "name": "func_uvpfx_rom_00404A60",
-          "declaration_line": 954,
+          "declaration_line": 962,
           "lines": [
-            954,
-            966,
-            967,
-            969,
-            973,
+            962,
             974,
-            975
+            975,
+            977,
+            981,
+            982,
+            983
           ]
         },
         {
@@ -115115,10 +115090,10 @@
         41,
         51,
         53,
-        954,
-        970,
-        971,
-        972
+        962,
+        978,
+        979,
+        980
       ],
       "owners": [
         {
@@ -115132,12 +115107,12 @@
         {
           "kind": "function",
           "name": "func_uvpfx_rom_00404A60",
-          "declaration_line": 954,
+          "declaration_line": 962,
           "lines": [
-            954,
-            970,
-            971,
-            972
+            962,
+            978,
+            979,
+            980
           ]
         },
         {
@@ -115165,13 +115140,13 @@
       "symbol": "arg3",
       "lines": [
         53,
-        954,
-        966,
-        967,
-        969,
-        973,
+        962,
         974,
-        975
+        975,
+        977,
+        981,
+        982,
+        983
       ],
       "owners": [
         {
@@ -115185,15 +115160,15 @@
         {
           "kind": "function",
           "name": "func_uvpfx_rom_00404A60",
-          "declaration_line": 954,
+          "declaration_line": 962,
           "lines": [
-            954,
-            966,
-            967,
-            969,
-            973,
+            962,
             974,
-            975
+            975,
+            977,
+            981,
+            982,
+            983
           ]
         }
       ]
@@ -115205,8 +115180,8 @@
       "symbol": "arg4",
       "lines": [
         53,
-        954,
-        968
+        962,
+        976
       ],
       "owners": [
         {
@@ -115220,10 +115195,10 @@
         {
           "kind": "function",
           "name": "func_uvpfx_rom_00404A60",
-          "declaration_line": 954,
+          "declaration_line": 962,
           "lines": [
-            954,
-            968
+            962,
+            976
           ]
         }
       ]
@@ -115235,10 +115210,10 @@
       "symbol": "arg5",
       "lines": [
         53,
-        954,
-        985,
-        986,
-        987
+        962,
+        993,
+        994,
+        995
       ],
       "owners": [
         {
@@ -115252,12 +115227,12 @@
         {
           "kind": "function",
           "name": "func_uvpfx_rom_00404A60",
-          "declaration_line": 954,
+          "declaration_line": 962,
           "lines": [
-            954,
-            985,
-            986,
-            987
+            962,
+            993,
+            994,
+            995
           ]
         }
       ]
@@ -115269,11 +115244,11 @@
       "symbol": "arg6",
       "lines": [
         53,
-        954,
-        983,
-        985,
-        986,
-        987
+        962,
+        991,
+        993,
+        994,
+        995
       ],
       "owners": [
         {
@@ -115287,13 +115262,13 @@
         {
           "kind": "function",
           "name": "func_uvpfx_rom_00404A60",
-          "declaration_line": 954,
+          "declaration_line": 962,
           "lines": [
-            954,
-            983,
-            985,
-            986,
-            987
+            962,
+            991,
+            993,
+            994,
+            995
           ]
         }
       ]
@@ -115304,21 +115279,21 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "sp3C",
       "lines": [
-        228,
-        263,
+        230,
         265,
-        266
+        267,
+        268
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            228,
-            263,
+            230,
             265,
-            266
+            267,
+            268
           ]
         }
       ]
@@ -115329,21 +115304,21 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "sp44",
       "lines": [
-        963,
-        972,
-        978,
-        981
+        971,
+        980,
+        986,
+        989
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_00404A60",
-          "declaration_line": 954,
+          "declaration_line": 962,
           "lines": [
-            963,
-            972,
-            978,
-            981
+            971,
+            980,
+            986,
+            989
           ]
         }
       ]
@@ -115354,21 +115329,21 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "sp48",
       "lines": [
-        962,
-        971,
-        977,
-        980
+        970,
+        979,
+        985,
+        988
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_00404A60",
-          "declaration_line": 954,
+          "declaration_line": 962,
           "lines": [
-            962,
-            971,
-            977,
-            980
+            970,
+            979,
+            985,
+            988
           ]
         }
       ]
@@ -115379,21 +115354,21 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "sp4C",
       "lines": [
-        961,
-        970,
-        976,
-        979
+        969,
+        978,
+        984,
+        987
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_00404A60",
-          "declaration_line": 954,
+          "declaration_line": 962,
           "lines": [
-            961,
-            970,
-            976,
-            979
+            969,
+            978,
+            984,
+            987
           ]
         }
       ]
@@ -115404,78 +115379,21 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "sp50",
       "lines": [
-        960,
-        969,
-        978,
-        981
+        968,
+        977,
+        986,
+        989
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_00404A60",
-          "declaration_line": 954,
+          "declaration_line": 962,
           "lines": [
-            960,
-            969,
-            978,
-            981
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-5b5e8015d7fe",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvpfx_rom.c",
-      "symbol": "temp_a0",
-      "lines": [
-        409,
-        413,
-        422,
-        425,
-        428,
-        431,
-        434,
-        437,
-        440,
-        443,
-        444,
-        445,
-        470,
-        471,
-        472,
-        475,
-        499,
-        502,
-        503,
-        504
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvpfx_rom_004012CC",
-          "declaration_line": 403,
-          "lines": [
-            409,
-            413,
-            422,
-            425,
-            428,
-            431,
-            434,
-            437,
-            440,
-            443,
-            444,
-            445,
-            470,
-            471,
-            472,
-            475,
-            499,
-            502,
-            503,
-            504
+            968,
+            977,
+            986,
+            989
           ]
         }
       ]
@@ -115486,67 +115404,21 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "temp_a1",
       "lines": [
-        226,
-        257,
-        258,
-        262,
-        407,
-        414,
-        458,
-        459,
-        460,
-        461,
-        493,
-        496
+        228,
+        259,
+        260,
+        264
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            226,
-            257,
-            258,
-            262
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvpfx_rom_004012CC",
-          "declaration_line": 403,
-          "lines": [
-            407,
-            414,
-            458,
-            459,
-            460,
-            461,
-            493,
-            496
-          ]
-        }
-      ]
-    },
-    {
-      "id": "Q-c2dceb1516a4",
-      "kind": "decompiler_local",
-      "path": "src/modules/uvpfx_rom.c",
-      "symbol": "temp_a2",
-      "lines": [
-        408,
-        415,
-        478
-      ],
-      "owners": [
-        {
-          "kind": "function",
-          "name": "func_uvpfx_rom_004012CC",
-          "declaration_line": 403,
-          "lines": [
-            408,
-            415,
-            478
+            228,
+            259,
+            260,
+            264
           ]
         }
       ]
@@ -115557,15 +115429,15 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "temp_a3",
       "lines": [
-        886
+        894
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxSetTypeOneCountAndValue",
-          "declaration_line": 883,
+          "declaration_line": 891,
           "lines": [
-            886
+            894
           ]
         }
       ]
@@ -115576,15 +115448,15 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "temp_fa0",
       "lines": [
-        778
+        786
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxAdvanceDiscreteStepState",
-          "declaration_line": 772,
+          "declaration_line": 780,
           "lines": [
-            778
+            786
           ]
         }
       ]
@@ -115595,15 +115467,15 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "temp_fa1",
       "lines": [
-        959
+        967
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_00404A60",
-          "declaration_line": 954,
+          "declaration_line": 962,
           "lines": [
-            959
+            967
           ]
         }
       ]
@@ -115614,15 +115486,15 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "temp_fs1",
       "lines": [
-        536
+        544
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_00401888",
-          "declaration_line": 534,
+          "declaration_line": 542,
           "lines": [
-            536
+            544
           ]
         }
       ]
@@ -115633,15 +115505,15 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "temp_ft2",
       "lines": [
-        958
+        966
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_00404A60",
-          "declaration_line": 954,
+          "declaration_line": 962,
           "lines": [
-            958
+            966
           ]
         }
       ]
@@ -115652,21 +115524,21 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "temp_ft4",
       "lines": [
-        957,
-        966,
-        976,
-        979
+        965,
+        974,
+        984,
+        987
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_00404A60",
-          "declaration_line": 954,
+          "declaration_line": 962,
           "lines": [
-            957,
-            966,
-            976,
-            979
+            965,
+            974,
+            984,
+            987
           ]
         }
       ]
@@ -115677,21 +115549,21 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "temp_ft5",
       "lines": [
-        956,
-        967,
-        977,
-        980
+        964,
+        975,
+        985,
+        988
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_00404A60",
-          "declaration_line": 954,
+          "declaration_line": 962,
           "lines": [
-            956,
-            967,
-            977,
-            980
+            964,
+            975,
+            985,
+            988
           ]
         }
       ]
@@ -115702,24 +115574,24 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "temp_fv0",
       "lines": [
-        601,
-        779
+        609,
+        787
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxAdvanceDiscreteStepState",
-          "declaration_line": 772,
+          "declaration_line": 780,
           "lines": [
-            779
+            787
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxUpdateLifetimeState",
-          "declaration_line": 596,
+          "declaration_line": 604,
           "lines": [
-            601
+            609
           ]
         }
       ]
@@ -115730,32 +115602,32 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "temp_fv1",
       "lines": [
-        602,
-        964,
-        968,
-        970,
-        971,
-        972
+        610,
+        972,
+        976,
+        978,
+        979,
+        980
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_00404A60",
-          "declaration_line": 954,
+          "declaration_line": 962,
           "lines": [
-            964,
-            968,
-            970,
-            971,
-            972
+            972,
+            976,
+            978,
+            979,
+            980
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxUpdateLifetimeState",
-          "declaration_line": 596,
+          "declaration_line": 604,
           "lines": [
-            602
+            610
           ]
         }
       ]
@@ -115766,15 +115638,15 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "temp_s0",
       "lines": [
-        225
+        227
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            225
+            227
           ]
         }
       ]
@@ -115785,91 +115657,91 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "temp_s1",
       "lines": [
-        221,
-        232,
-        245,
-        248,
-        251,
-        254,
-        260,
-        261,
+        223,
+        234,
+        247,
+        250,
+        253,
+        256,
         262,
         263,
-        269,
-        270,
+        264,
+        265,
         271,
-        275,
-        279,
-        282,
-        283,
+        272,
+        273,
+        277,
+        281,
         284,
+        285,
         286,
-        287,
-        290,
-        297,
+        288,
+        289,
+        292,
         299,
-        300,
+        301,
         302,
         304,
-        305,
-        312,
-        337,
-        338,
+        306,
+        307,
+        314,
         339,
-        342,
-        373,
-        376,
-        377,
-        384,
-        387,
-        388,
-        389
+        340,
+        341,
+        344,
+        375,
+        378,
+        379,
+        386,
+        389,
+        390,
+        391
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            221,
-            232,
-            245,
-            248,
-            251,
-            254,
-            260,
-            261,
+            223,
+            234,
+            247,
+            250,
+            253,
+            256,
             262,
             263,
-            269,
-            270,
+            264,
+            265,
             271,
-            275,
-            279,
-            282,
-            283,
+            272,
+            273,
+            277,
+            281,
             284,
+            285,
             286,
-            287,
-            290,
-            297,
+            288,
+            289,
+            292,
             299,
-            300,
+            301,
             302,
             304,
-            305,
-            312,
-            337,
-            338,
+            306,
+            307,
+            314,
             339,
-            342,
-            373,
-            376,
-            377,
-            384,
-            387,
-            388,
-            389
+            340,
+            341,
+            344,
+            375,
+            378,
+            379,
+            386,
+            389,
+            390,
+            391
           ]
         }
       ]
@@ -115880,57 +115752,57 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "temp_s3",
       "lines": [
-        220,
-        231,
+        222,
         233,
-        238,
-        239,
-        309,
-        315,
-        318,
-        319,
+        235,
+        240,
+        241,
+        311,
+        317,
         320,
         321,
-        324,
-        345,
-        348,
-        352,
-        353,
+        322,
+        323,
+        326,
+        347,
+        350,
+        354,
         355,
-        356,
-        361,
-        362,
+        357,
+        358,
+        363,
         364,
-        365
+        366,
+        367
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            220,
-            231,
+            222,
             233,
-            238,
-            239,
-            309,
-            315,
-            318,
-            319,
+            235,
+            240,
+            241,
+            311,
+            317,
             320,
             321,
-            324,
-            345,
-            348,
-            352,
-            353,
+            322,
+            323,
+            326,
+            347,
+            350,
+            354,
             355,
-            356,
-            361,
-            362,
+            357,
+            358,
+            363,
             364,
-            365
+            366,
+            367
           ]
         }
       ]
@@ -115941,29 +115813,29 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "temp_s5",
       "lines": [
-        229,
-        233,
-        325,
-        326,
+        231,
+        235,
         327,
         328,
-        370,
-        381
+        329,
+        330,
+        372,
+        383
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            229,
-            233,
-            325,
-            326,
+            231,
+            235,
             327,
             328,
-            370,
-            381
+            329,
+            330,
+            372,
+            383
           ]
         }
       ]
@@ -115974,15 +115846,15 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "temp_t0",
       "lines": [
-        908
+        916
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxAdvancePositionTrail",
-          "declaration_line": 906,
+          "declaration_line": 914,
           "lines": [
-            908
+            916
           ]
         }
       ]
@@ -115993,77 +115865,42 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "temp_v0",
       "lines": [
-        219,
-        406,
-        412,
-        414,
-        415,
-        448,
-        451,
-        452,
-        453,
-        454,
-        457,
-        481,
-        484,
-        487,
-        490,
-        773,
-        846,
-        907
+        221,
+        781,
+        854,
+        915
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            219
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvpfx_rom_004012CC",
-          "declaration_line": 403,
-          "lines": [
-            406,
-            412,
-            414,
-            415,
-            448,
-            451,
-            452,
-            453,
-            454,
-            457,
-            481,
-            484,
-            487,
-            490
+            221
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxAdvanceDiscreteStepState",
-          "declaration_line": 772,
+          "declaration_line": 780,
           "lines": [
-            773
+            781
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxAdvancePositionTrail",
-          "declaration_line": 906,
+          "declaration_line": 914,
           "lines": [
-            907
+            915
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxResetTypeOneState",
-          "declaration_line": 845,
+          "declaration_line": 853,
           "lines": [
-            846
+            854
           ]
         }
       ]
@@ -116074,23 +115911,23 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "temp_v0_2",
       "lines": [
-        224,
-        237,
-        238,
+        226,
         239,
-        243
+        240,
+        241,
+        245
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            224,
-            237,
-            238,
+            226,
             239,
-            243
+            240,
+            241,
+            245
           ]
         }
       ]
@@ -116101,33 +115938,24 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "temp_v1",
       "lines": [
-        405,
-        597,
-        780
+        605,
+        788
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvpfx_rom_004012CC",
-          "declaration_line": 403,
-          "lines": [
-            405
-          ]
-        },
-        {
-          "kind": "function",
           "name": "uvPfxAdvanceDiscreteStepState",
-          "declaration_line": 772,
+          "declaration_line": 780,
           "lines": [
-            780
+            788
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxUpdateLifetimeState",
-          "declaration_line": 596,
+          "declaration_line": 604,
           "lines": [
-            597
+            605
           ]
         }
       ]
@@ -116138,15 +115966,15 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "temp_v1_2",
       "lines": [
-        603
+        611
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxUpdateLifetimeState",
-          "declaration_line": 596,
+          "declaration_line": 604,
           "lines": [
-            603
+            611
           ]
         }
       ]
@@ -116157,21 +115985,21 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "var_fa0",
       "lines": [
-        222,
-        305,
+        224,
         307,
-        309
+        309,
+        311
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            222,
-            305,
+            224,
             307,
-            309
+            309,
+            311
           ]
         }
       ]
@@ -116182,21 +116010,21 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "var_fs0",
       "lines": [
-        537,
-        540,
-        543,
-        545
+        545,
+        548,
+        551,
+        553
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_00401888",
-          "declaration_line": 534,
+          "declaration_line": 542,
           "lines": [
-            537,
-            540,
-            543,
-            545
+            545,
+            548,
+            551,
+            553
           ]
         }
       ]
@@ -116207,31 +116035,31 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "var_fv0",
       "lines": [
-        223,
-        300,
+        225,
         302,
         304,
-        307,
-        369,
-        370,
-        380,
-        381
+        306,
+        309,
+        371,
+        372,
+        382,
+        383
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            223,
-            300,
+            225,
             302,
             304,
-            307,
-            369,
-            370,
-            380,
-            381
+            306,
+            309,
+            371,
+            372,
+            382,
+            383
           ]
         }
       ]
@@ -116242,15 +116070,15 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "var_s0",
       "lines": [
-        535
+        543
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_00401888",
-          "declaration_line": 534,
+          "declaration_line": 542,
           "lines": [
-            535
+            543
           ]
         }
       ]
@@ -116261,33 +116089,33 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "var_v1_3",
       "lines": [
-        227,
-        259,
-        266,
+        229,
+        261,
         268,
         270,
-        271,
-        284,
-        285,
+        272,
+        273,
         286,
-        287
+        287,
+        288,
+        289
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            227,
-            259,
-            266,
+            229,
+            261,
             268,
             270,
-            271,
-            284,
-            285,
+            272,
+            273,
             286,
-            287
+            287,
+            288,
+            289
           ]
         }
       ]
@@ -121135,16 +120963,16 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "TODO",
       "lines": [
-        257
+        259
       ],
       "evidence": "TODO: This is wrong...",
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            257
+            259
           ]
         }
       ]
@@ -154529,16 +154357,16 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "Clear simulation counters/delay; subtype 9 also clears definition-count vectors. RE_UNKNOWN: * effect/definition/state validity and vector count/allocation correspondence need original assets/producers/callers.",
       "lines": [
-        740
+        748
       ],
       "evidence": "Clear simulation counters/delay; subtype 9 also clears definition-count vectors. RE_UNKNOWN: * effect/definition/state validity and vector count/allocation correspondence need original assets/producers/callers.",
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxResetTypeTwoState",
-          "declaration_line": 742,
+          "declaration_line": 750,
           "lines": [
-            740
+            748
           ]
         }
       ]
@@ -154549,16 +154377,16 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "Copy the supplied matrix into the selected effect state. RE_UNKNOWN: effect index, * live state and matrix/alias domains need original allocation/index producers and callers.",
       "lines": [
-        207
+        209
       ],
       "evidence": "Copy the supplied matrix into the selected effect state. RE_UNKNOWN: effect index, * live state and matrix/alias domains need original allocation/index producers and callers.",
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxSetMatrix",
-          "declaration_line": 209,
+          "declaration_line": 211,
           "lines": [
-            207
+            209
           ]
         }
       ]
@@ -154569,16 +154397,16 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "Publish particle controls, allocate the record table, and load dependencies. * RE_ORIGINAL_QUIRK: missing/zero capacity selects 256; only definition pointers * are cleared. GMGR is loaded here but omitted by uvPfxModuleCleanup. * RE_UNKNOWN: valid capacities, initialization of the remaining record fields, * and GMGR teardown ownership are not established by this entrypoint.",
       "lines": [
-        63
+        65
       ],
       "evidence": "Publish particle controls, allocate the record table, and load dependencies. * RE_ORIGINAL_QUIRK: missing/zero capacity selects 256; only definition pointers * are cleared. GMGR is loaded here but omitted by uvPfxModuleCleanup. * RE_UNKNOWN: valid capacities, initialization of the remaining record fields, * and GMGR teardown ownership are not established by this entrypoint.",
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_uvpfx_rom_400000",
-          "declaration_line": 69,
+          "declaration_line": 71,
           "lines": [
-            63
+            65
           ]
         }
       ]
@@ -154589,16 +154417,56 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "RE_UNKNOWN: A valid matching definition and a written fallback index are assumed by the native body. Empty scans, null definitions, values not exceeding the sentinel and NaNs can leave the fallback index unwritten; allocation and field meaning remain unproved.",
       "lines": [
-        204
+        206
       ],
       "evidence": "RE_UNKNOWN: A valid matching definition and a written fallback index are assumed by the native body. Empty scans, null definitions, values not exceeding the sentinel and NaNs can leave the fallback index unwritten; allocation and field meaning remain unproved.",
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_00400398",
-          "declaration_line": 169,
+          "declaration_line": 171,
           "lines": [
-            204
+            206
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-ec7a825874fc",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvpfx_rom.c",
+      "symbol": "RE_UNKNOWN: Preserve this unused public declaration until native layout is measured.",
+      "lines": [
+        411
+      ],
+      "evidence": "RE_UNKNOWN: Preserve this unused public declaration until native layout is measured.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxGetProps",
+          "declaration_line": 408,
+          "lines": [
+            411
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-ea3b6293ae27",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvpfx_rom.c",
+      "symbol": "Read effect properties into the caller's typed output pointers. Each tag is * followed by its output pointer(s); zero or an unknown tag ends the request. * RE_UNKNOWN: Valid effect indices, non-null definition/state/type records, * output-pointer lifetimes and symbolic property names require caller evidence.",
+      "lines": [
+        404
+      ],
+      "evidence": "Read effect properties into the caller's typed output pointers. Each tag is * followed by its output pointer(s); zero or an unknown tag ends the request. * RE_UNKNOWN: Valid effect indices, non-null definition/state/type records, * output-pointer lifetimes and symbolic property names require caller evidence.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxGetProps",
+          "declaration_line": 408,
+          "lines": [
+            404
           ]
         }
       ]
@@ -154609,16 +154477,16 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "Store the supplied word at type-one payload offset four and clamp the * signed count to its original upper limit. Negative counts retain behavior. * RE_UNKNOWN: the supplied word's ownership and address/value contract. The * original loader initially stores an allocated pointer at this offset and * the release routine frees its current contents. Trace exported setter * callers before interpreting the word as an ordinary scalar.",
       "lines": [
-        877
+        885
       ],
       "evidence": "Store the supplied word at type-one payload offset four and clamp the * signed count to its original upper limit. Negative counts retain behavior. * RE_UNKNOWN: the supplied word's ownership and address/value contract. The * original loader initially stores an allocated pointer at this offset and * the release routine frees its current contents. Trace exported setter * callers before interpreting the word as an ordinary scalar.",
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxSetTypeOneCountAndValue",
-          "declaration_line": 883,
+          "declaration_line": 891,
           "lines": [
-            877
+            885
           ]
         }
       ]
@@ -221182,180 +221050,180 @@
       "symbol": "unk0",
       "lines": [
         7,
-        105,
-        144,
-        157,
-        181,
-        197,
-        231,
-        342,
-        412,
-        606,
-        650,
-        687,
-        693,
-        715,
-        748,
-        753,
-        784,
-        826,
-        852,
-        858,
-        870,
-        888,
-        890,
-        893,
-        918,
-        927,
-        943,
-        944,
-        983,
-        985,
-        986,
-        987
+        107,
+        146,
+        159,
+        183,
+        199,
+        233,
+        344,
+        418,
+        614,
+        658,
+        695,
+        701,
+        723,
+        756,
+        761,
+        792,
+        834,
+        860,
+        866,
+        878,
+        896,
+        898,
+        901,
+        926,
+        935,
+        951,
+        952,
+        991,
+        993,
+        994,
+        995
       ],
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_uvpfx_rom_400000",
-          "declaration_line": 69,
+          "declaration_line": 71,
           "lines": [
-            105
+            107
           ]
         },
         {
           "kind": "function",
           "name": "func_uvpfx_rom_00400398",
-          "declaration_line": 169,
+          "declaration_line": 171,
           "lines": [
-            181,
-            197
+            183,
+            199
           ]
         },
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            231,
-            342
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvpfx_rom_004012CC",
-          "declaration_line": 403,
-          "lines": [
-            412
+            233,
+            344
           ]
         },
         {
           "kind": "function",
           "name": "func_uvpfx_rom_00404A60",
-          "declaration_line": 954,
+          "declaration_line": 962,
           "lines": [
-            983,
-            985,
-            986,
-            987
+            991,
+            993,
+            994,
+            995
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxAcquireInactiveByKind",
-          "declaration_line": 135,
+          "declaration_line": 137,
           "lines": [
-            144,
-            157
+            146,
+            159
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxAdvanceDiscreteStepState",
-          "declaration_line": 772,
+          "declaration_line": 780,
           "lines": [
-            784,
-            826
+            792,
+            834
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxAdvancePositionTrail",
-          "declaration_line": 906,
+          "declaration_line": 914,
           "lines": [
-            918,
-            927,
-            943,
-            944
+            926,
+            935,
+            951,
+            952
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxAdvanceTimeAndUpdate",
-          "declaration_line": 644,
+          "declaration_line": 652,
           "lines": [
-            650
+            658
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxDrawActiveEffects",
-          "declaration_line": 671,
+          "declaration_line": 679,
           "lines": [
-            687,
-            693
+            695,
+            701
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxGetProps",
+          "declaration_line": 408,
+          "lines": [
+            418
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxResetTypeOneState",
-          "declaration_line": 845,
+          "declaration_line": 853,
           "lines": [
-            852,
-            858
+            860,
+            866
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxResetTypeTwoState",
-          "declaration_line": 742,
+          "declaration_line": 750,
           "lines": [
-            748,
-            753
+            756,
+            761
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxRestart",
-          "declaration_line": 710,
+          "declaration_line": 718,
           "lines": [
-            715
+            723
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxSetTypeOneCountAndValue",
-          "declaration_line": 883,
+          "declaration_line": 891,
           "lines": [
-            888,
-            890,
-            893
+            896,
+            898,
+            901
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxSetTypeOneScalar18",
-          "declaration_line": 866,
+          "declaration_line": 874,
           "lines": [
-            870
+            878
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxUpdateLifetimeState",
-          "declaration_line": 596,
+          "declaration_line": 604,
           "lines": [
-            606
+            614
           ]
         },
         {
@@ -221374,78 +221242,78 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "unk10",
       "lines": [
-        245,
-        326,
-        422,
-        459,
-        613,
-        618,
-        735,
-        758,
-        792,
-        793,
-        797,
-        798,
-        802,
+        247,
+        328,
+        428,
+        465,
+        621,
+        626,
+        743,
+        766,
+        800,
+        801,
+        805,
         806,
-        827
+        810,
+        814,
+        835
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            245,
-            326
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvpfx_rom_004012CC",
-          "declaration_line": 403,
-          "lines": [
-            422,
-            459
+            247,
+            328
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxAdvanceDiscreteStepState",
-          "declaration_line": 772,
+          "declaration_line": 780,
           "lines": [
-            792,
-            793,
-            797,
-            798,
-            802,
+            800,
+            801,
+            805,
             806,
-            827
+            810,
+            814,
+            835
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxBeginFinalInterval",
-          "declaration_line": 731,
+          "declaration_line": 739,
           "lines": [
-            735
+            743
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxGetProps",
+          "declaration_line": 408,
+          "lines": [
+            428,
+            465
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxResetTypeTwoState",
-          "declaration_line": 742,
+          "declaration_line": 750,
           "lines": [
-            758
+            766
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxUpdateLifetimeState",
-          "declaration_line": 596,
+          "declaration_line": 604,
           "lines": [
-            613,
-            618
+            621,
+            626
           ]
         }
       ]
@@ -221456,28 +221324,28 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "unk12",
       "lines": [
-        327,
-        345,
-        460,
-        481
+        329,
+        347,
+        466,
+        487
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            327,
-            345
+            329,
+            347
           ]
         },
         {
           "kind": "function",
-          "name": "func_uvpfx_rom_004012CC",
-          "declaration_line": 403,
+          "name": "uvPfxGetProps",
+          "declaration_line": 408,
           "lines": [
-            460,
-            481
+            466,
+            487
           ]
         }
       ]
@@ -221488,85 +221356,85 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "unk14",
       "lines": [
-        328,
-        348,
-        461,
-        484,
-        619,
-        751,
-        813,
-        819,
+        330,
+        350,
+        467,
+        490,
+        627,
+        759,
         821,
-        832,
-        834,
-        856,
-        942,
-        943,
-        944
+        827,
+        829,
+        840,
+        842,
+        864,
+        950,
+        951,
+        952
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            328,
-            348
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvpfx_rom_004012CC",
-          "declaration_line": 403,
-          "lines": [
-            461,
-            484
+            330,
+            350
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxAdvanceDiscreteStepState",
-          "declaration_line": 772,
+          "declaration_line": 780,
           "lines": [
-            813,
-            819,
             821,
-            832,
-            834
+            827,
+            829,
+            840,
+            842
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxAdvancePositionTrail",
-          "declaration_line": 906,
+          "declaration_line": 914,
           "lines": [
-            942,
-            943,
-            944
+            950,
+            951,
+            952
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxGetProps",
+          "declaration_line": 408,
+          "lines": [
+            467,
+            490
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxResetTypeOneState",
-          "declaration_line": 845,
+          "declaration_line": 853,
           "lines": [
-            856
+            864
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxResetTypeTwoState",
-          "declaration_line": 742,
+          "declaration_line": 750,
           "lines": [
-            751
+            759
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxUpdateLifetimeState",
-          "declaration_line": 596,
+          "declaration_line": 604,
           "lines": [
-            619
+            627
           ]
         }
       ]
@@ -221577,24 +221445,24 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "unk16",
       "lines": [
-        318,
-        451
+        320,
+        457
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            318
+            320
           ]
         },
         {
           "kind": "function",
-          "name": "func_uvpfx_rom_004012CC",
-          "declaration_line": 403,
+          "name": "uvPfxGetProps",
+          "declaration_line": 408,
           "lines": [
-            451
+            457
           ]
         }
       ]
@@ -221605,46 +221473,46 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "unk18",
       "lines": [
-        319,
-        384,
-        452,
-        499,
-        872,
-        942
+        321,
+        386,
+        458,
+        509,
+        880,
+        950
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            319,
-            384
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvpfx_rom_004012CC",
-          "declaration_line": 403,
-          "lines": [
-            452,
-            499
+            321,
+            386
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxAdvancePositionTrail",
-          "declaration_line": 906,
+          "declaration_line": 914,
           "lines": [
-            942
+            950
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxGetProps",
+          "declaration_line": 408,
+          "lines": [
+            458,
+            509
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxSetTypeOneScalar18",
-          "declaration_line": 866,
+          "declaration_line": 874,
           "lines": [
-            872
+            880
           ]
         }
       ]
@@ -221655,24 +221523,24 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "unk1A",
       "lines": [
-        320,
-        453
+        322,
+        459
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            320
+            322
           ]
         },
         {
           "kind": "function",
-          "name": "func_uvpfx_rom_004012CC",
-          "declaration_line": 403,
+          "name": "uvPfxGetProps",
+          "declaration_line": 408,
           "lines": [
-            453
+            459
           ]
         }
       ]
@@ -221683,28 +221551,28 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "unk1C",
       "lines": [
-        279,
-        321,
-        437,
-        454
+        281,
+        323,
+        443,
+        460
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            279,
-            321
+            281,
+            323
           ]
         },
         {
           "kind": "function",
-          "name": "func_uvpfx_rom_004012CC",
-          "declaration_line": 403,
+          "name": "uvPfxGetProps",
+          "declaration_line": 408,
           "lines": [
-            437,
-            454
+            443,
+            460
           ]
         }
       ]
@@ -221715,24 +221583,24 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "unk1E",
       "lines": [
-        315,
-        448
+        317,
+        454
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            315
+            317
           ]
         },
         {
           "kind": "function",
-          "name": "func_uvpfx_rom_004012CC",
-          "declaration_line": 403,
+          "name": "uvPfxGetProps",
+          "declaration_line": 408,
           "lines": [
-            448
+            454
           ]
         }
       ]
@@ -221744,61 +221612,61 @@
       "symbol": "unk2",
       "lines": [
         8,
-        146,
-        183,
-        693,
-        815,
+        148,
+        185,
+        701,
         823,
-        825,
-        983,
-        985,
-        986,
-        987
+        831,
+        833,
+        991,
+        993,
+        994,
+        995
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_00400398",
-          "declaration_line": 169,
+          "declaration_line": 171,
           "lines": [
-            183
+            185
           ]
         },
         {
           "kind": "function",
           "name": "func_uvpfx_rom_00404A60",
-          "declaration_line": 954,
+          "declaration_line": 962,
           "lines": [
-            983,
-            985,
-            986,
-            987
+            991,
+            993,
+            994,
+            995
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxAcquireInactiveByKind",
-          "declaration_line": 135,
+          "declaration_line": 137,
           "lines": [
-            146
+            148
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxAdvanceDiscreteStepState",
-          "declaration_line": 772,
+          "declaration_line": 780,
           "lines": [
-            815,
             823,
-            825
+            831,
+            833
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxDrawActiveEffects",
-          "declaration_line": 671,
+          "declaration_line": 679,
           "lines": [
-            693
+            701
           ]
         },
         {
@@ -221817,39 +221685,39 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "unk20",
       "lines": [
-        750,
-        808,
-        820,
-        824,
-        921,
-        927
+        758,
+        816,
+        828,
+        832,
+        929,
+        935
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxAdvanceDiscreteStepState",
-          "declaration_line": 772,
+          "declaration_line": 780,
           "lines": [
-            808,
-            820,
-            824
+            816,
+            828,
+            832
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxAdvancePositionTrail",
-          "declaration_line": 906,
+          "declaration_line": 914,
           "lines": [
-            921,
-            927
+            929,
+            935
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxResetTypeTwoState",
-          "declaration_line": 742,
+          "declaration_line": 750,
           "lines": [
-            750
+            758
           ]
         }
       ]
@@ -221860,43 +221728,43 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "unk22",
       "lines": [
-        809,
-        811,
-        855,
-        919,
-        920,
+        817,
+        819,
+        863,
         927,
         928,
-        934
+        935,
+        936,
+        942
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxAdvanceDiscreteStepState",
-          "declaration_line": 772,
+          "declaration_line": 780,
           "lines": [
-            809,
-            811
+            817,
+            819
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxAdvancePositionTrail",
-          "declaration_line": 906,
+          "declaration_line": 914,
           "lines": [
-            919,
-            920,
             927,
             928,
-            934
+            935,
+            936,
+            942
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxResetTypeOneState",
-          "declaration_line": 845,
+          "declaration_line": 853,
           "lines": [
-            855
+            863
           ]
         }
       ]
@@ -221907,81 +221775,81 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "unk24",
       "lines": [
-        146,
-        147,
-        188,
-        475,
-        610,
-        614,
-        617,
+        148,
+        149,
+        190,
+        481,
+        618,
+        622,
         625,
-        626,
-        629,
-        693,
-        725,
-        807
+        633,
+        634,
+        637,
+        701,
+        733,
+        815
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_00400398",
-          "declaration_line": 169,
+          "declaration_line": 171,
           "lines": [
-            188
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvpfx_rom_004012CC",
-          "declaration_line": 403,
-          "lines": [
-            475
+            190
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxAcquireInactiveByKind",
-          "declaration_line": 135,
+          "declaration_line": 137,
           "lines": [
-            146,
-            147
+            148,
+            149
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxAdvanceDiscreteStepState",
-          "declaration_line": 772,
+          "declaration_line": 780,
           "lines": [
-            807
+            815
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxDrawActiveEffects",
-          "declaration_line": 671,
+          "declaration_line": 679,
           "lines": [
-            693
+            701
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxGetProps",
+          "declaration_line": 408,
+          "lines": [
+            481
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxRestart",
-          "declaration_line": 710,
+          "declaration_line": 718,
           "lines": [
-            725
+            733
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxUpdateLifetimeState",
-          "declaration_line": 596,
+          "declaration_line": 604,
           "lines": [
-            610,
-            614,
-            617,
+            618,
+            622,
             625,
-            626,
-            629
+            633,
+            634,
+            637
           ]
         }
       ]
@@ -221992,17 +221860,17 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "unk26",
       "lines": [
-        620,
-        622
+        628,
+        630
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxUpdateLifetimeState",
-          "declaration_line": 596,
+          "declaration_line": 604,
           "lines": [
-            620,
-            622
+            628,
+            630
           ]
         }
       ]
@@ -222013,85 +221881,85 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "unk28",
       "lines": [
-        233,
-        260,
-        261,
+        235,
         262,
         263,
-        275,
-        290,
-        414,
-        431,
-        716,
-        717,
-        858,
-        871,
-        889,
-        918
+        264,
+        265,
+        277,
+        292,
+        420,
+        437,
+        724,
+        725,
+        866,
+        879,
+        897,
+        926
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            233,
-            260,
-            261,
+            235,
             262,
             263,
-            275,
-            290
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvpfx_rom_004012CC",
-          "declaration_line": 403,
-          "lines": [
-            414,
-            431
+            264,
+            265,
+            277,
+            292
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxAdvancePositionTrail",
-          "declaration_line": 906,
+          "declaration_line": 914,
           "lines": [
-            918
+            926
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxGetProps",
+          "declaration_line": 408,
+          "lines": [
+            420,
+            437
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxResetTypeOneState",
-          "declaration_line": 845,
+          "declaration_line": 853,
           "lines": [
-            858
+            866
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxRestart",
-          "declaration_line": 710,
+          "declaration_line": 718,
           "lines": [
-            716,
-            717
+            724,
+            725
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxSetTypeOneCountAndValue",
-          "declaration_line": 883,
+          "declaration_line": 891,
           "lines": [
-            889
+            897
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxSetTypeOneScalar18",
-          "declaration_line": 866,
+          "declaration_line": 874,
           "lines": [
-            871
+            879
           ]
         }
       ]
@@ -222102,24 +221970,24 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "unk2A",
       "lines": [
-        254,
-        434
+        256,
+        440
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            254
+            256
           ]
         },
         {
           "kind": "function",
-          "name": "func_uvpfx_rom_004012CC",
-          "declaration_line": 403,
+          "name": "uvPfxGetProps",
+          "declaration_line": 408,
           "lines": [
-            434
+            440
           ]
         }
       ]
@@ -222130,50 +221998,50 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "unk2C",
       "lines": [
-        269,
-        282,
-        283,
+        271,
         284,
-        415,
-        440,
-        753,
-        787
+        285,
+        286,
+        421,
+        446,
+        761,
+        795
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            269,
-            282,
-            283,
-            284
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvpfx_rom_004012CC",
-          "declaration_line": 403,
-          "lines": [
-            415,
-            440
+            271,
+            284,
+            285,
+            286
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxAdvanceDiscreteStepState",
-          "declaration_line": 772,
+          "declaration_line": 780,
           "lines": [
-            787
+            795
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxGetProps",
+          "declaration_line": 408,
+          "lines": [
+            421,
+            446
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxResetTypeTwoState",
-          "declaration_line": 742,
+          "declaration_line": 750,
           "lines": [
-            753
+            761
           ]
         }
       ]
@@ -222184,36 +222052,36 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "unk2E",
       "lines": [
-        270,
-        286,
-        583,
-        584,
-        585,
-        586,
-        587,
-        588
+        272,
+        288,
+        591,
+        592,
+        593,
+        594,
+        595,
+        596
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            270,
-            286
+            272,
+            288
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxSetTriangleTextureOrientation",
-          "declaration_line": 560,
+          "declaration_line": 568,
           "lines": [
-            583,
-            584,
-            585,
-            586,
-            587,
-            588
+            591,
+            592,
+            593,
+            594,
+            595,
+            596
           ]
         }
       ]
@@ -222224,17 +222092,17 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "unk30",
       "lines": [
-        271,
-        287
+        273,
+        289
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            271,
-            287
+            273,
+            289
           ]
         }
       ]
@@ -222245,25 +222113,25 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "unk32",
       "lines": [
-        583,
-        584,
-        585,
-        586,
-        587,
-        588
+        591,
+        592,
+        593,
+        594,
+        595,
+        596
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxSetTriangleTextureOrientation",
-          "declaration_line": 560,
+          "declaration_line": 568,
           "lines": [
-            583,
-            584,
-            585,
-            586,
-            587,
-            588
+            591,
+            592,
+            593,
+            594,
+            595,
+            596
           ]
         }
       ]
@@ -222274,15 +222142,15 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "unk34",
       "lines": [
-        309
+        311
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            309
+            311
           ]
         }
       ]
@@ -222293,15 +222161,15 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "unk38",
       "lines": [
-        309
+        311
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            309
+            311
           ]
         }
       ]
@@ -222313,193 +222181,193 @@
       "symbol": "unk4",
       "lines": [
         9,
-        145,
-        158,
-        182,
-        198,
-        210,
-        232,
-        238,
-        239,
-        251,
-        324,
-        413,
-        428,
-        457,
-        568,
-        607,
-        608,
-        656,
-        658,
-        692,
-        694,
-        714,
-        720,
-        734,
-        735,
-        749,
-        752,
-        785,
-        853,
-        895,
-        916,
-        983,
-        985,
-        986,
-        987
+        147,
+        160,
+        184,
+        200,
+        212,
+        234,
+        240,
+        241,
+        253,
+        326,
+        419,
+        434,
+        463,
+        576,
+        615,
+        616,
+        664,
+        666,
+        700,
+        702,
+        722,
+        728,
+        742,
+        743,
+        757,
+        760,
+        793,
+        861,
+        903,
+        924,
+        991,
+        993,
+        994,
+        995
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_00400398",
-          "declaration_line": 169,
+          "declaration_line": 171,
           "lines": [
-            182,
-            198
+            184,
+            200
           ]
         },
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            232,
-            238,
-            239,
-            251,
-            324
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvpfx_rom_004012CC",
-          "declaration_line": 403,
-          "lines": [
-            413,
-            428,
-            457
+            234,
+            240,
+            241,
+            253,
+            326
           ]
         },
         {
           "kind": "function",
           "name": "func_uvpfx_rom_00404A60",
-          "declaration_line": 954,
+          "declaration_line": 962,
           "lines": [
-            983,
-            985,
-            986,
-            987
+            991,
+            993,
+            994,
+            995
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxAcquireInactiveByKind",
-          "declaration_line": 135,
+          "declaration_line": 137,
           "lines": [
-            145,
-            158
+            147,
+            160
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxAdvanceDiscreteStepState",
-          "declaration_line": 772,
+          "declaration_line": 780,
           "lines": [
-            785
+            793
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxAdvancePositionTrail",
-          "declaration_line": 906,
+          "declaration_line": 914,
           "lines": [
-            916
+            924
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxAdvanceTimeAndUpdate",
-          "declaration_line": 644,
+          "declaration_line": 652,
           "lines": [
-            656,
-            658
+            664,
+            666
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxBeginFinalInterval",
-          "declaration_line": 731,
+          "declaration_line": 739,
           "lines": [
-            734,
-            735
+            742,
+            743
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxDrawActiveEffects",
-          "declaration_line": 671,
+          "declaration_line": 679,
           "lines": [
-            692,
-            694
+            700,
+            702
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxGetProps",
+          "declaration_line": 408,
+          "lines": [
+            419,
+            434,
+            463
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxResetTypeOneState",
-          "declaration_line": 845,
+          "declaration_line": 853,
           "lines": [
-            853
+            861
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxResetTypeTwoState",
-          "declaration_line": 742,
+          "declaration_line": 750,
           "lines": [
-            749,
-            752
+            757,
+            760
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxRestart",
-          "declaration_line": 710,
+          "declaration_line": 718,
           "lines": [
-            714,
-            720
+            722,
+            728
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxSetMatrix",
-          "declaration_line": 209,
+          "declaration_line": 211,
           "lines": [
-            210
+            212
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxSetTriangleTextureOrientation",
-          "declaration_line": 560,
+          "declaration_line": 568,
           "lines": [
-            568
+            576
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxSetTypeOneCountAndValue",
-          "declaration_line": 883,
+          "declaration_line": 891,
           "lines": [
-            895
+            903
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxUpdateLifetimeState",
-          "declaration_line": 596,
+          "declaration_line": 604,
           "lines": [
-            607,
-            608
+            615,
+            616
           ]
         },
         {
@@ -222519,21 +222387,21 @@
       "symbol": "unk6",
       "lines": [
         10,
-        983,
-        985,
-        986,
-        987
+        991,
+        993,
+        994,
+        995
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_00404A60",
-          "declaration_line": 954,
+          "declaration_line": 962,
           "lines": [
-            983,
-            985,
-            986,
-            987
+            991,
+            993,
+            994,
+            995
           ]
         },
         {
@@ -222552,15 +222420,15 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "unk6E",
       "lines": [
-        373
+        375
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            373
+            375
           ]
         }
       ]
@@ -222571,38 +222439,38 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "unk70",
       "lines": [
-        297,
         299,
-        300,
+        301,
         302,
         304,
-        305,
-        443,
-        444,
-        445
+        306,
+        307,
+        449,
+        450,
+        451
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            297,
             299,
-            300,
+            301,
             302,
             304,
-            305
+            306,
+            307
           ]
         },
         {
           "kind": "function",
-          "name": "func_uvpfx_rom_004012CC",
-          "declaration_line": 403,
+          "name": "uvPfxGetProps",
+          "declaration_line": 408,
           "lines": [
-            443,
-            444,
-            445
+            449,
+            450,
+            451
           ]
         }
       ]
@@ -222613,24 +222481,24 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "unk7C",
       "lines": [
-        248,
-        425
+        250,
+        431
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            248
+            250
           ]
         },
         {
           "kind": "function",
-          "name": "func_uvpfx_rom_004012CC",
-          "declaration_line": 403,
+          "name": "uvPfxGetProps",
+          "declaration_line": 408,
           "lines": [
-            425
+            431
           ]
         }
       ]
@@ -222642,118 +222510,118 @@
       "symbol": "unk8",
       "lines": [
         11,
-        184,
-        185,
-        352,
-        356,
-        361,
-        365,
-        487,
-        490,
-        608,
-        609,
-        613,
-        618,
-        757,
-        786,
-        789,
-        831,
-        854,
-        891,
-        893,
-        917,
-        987
+        186,
+        187,
+        354,
+        358,
+        363,
+        367,
+        495,
+        498,
+        616,
+        617,
+        621,
+        626,
+        765,
+        794,
+        797,
+        839,
+        862,
+        899,
+        901,
+        925,
+        995
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_00400398",
-          "declaration_line": 169,
+          "declaration_line": 171,
           "lines": [
-            184,
-            185
+            186,
+            187
           ]
         },
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            352,
-            356,
-            361,
-            365
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvpfx_rom_004012CC",
-          "declaration_line": 403,
-          "lines": [
-            487,
-            490
+            354,
+            358,
+            363,
+            367
           ]
         },
         {
           "kind": "function",
           "name": "func_uvpfx_rom_00404A60",
-          "declaration_line": 954,
+          "declaration_line": 962,
           "lines": [
-            987
+            995
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxAdvanceDiscreteStepState",
-          "declaration_line": 772,
+          "declaration_line": 780,
           "lines": [
-            786,
-            789,
-            831
+            794,
+            797,
+            839
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxAdvancePositionTrail",
-          "declaration_line": 906,
+          "declaration_line": 914,
           "lines": [
-            917
+            925
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxGetProps",
+          "declaration_line": 408,
+          "lines": [
+            495,
+            498
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxResetTypeOneState",
-          "declaration_line": 845,
+          "declaration_line": 853,
           "lines": [
-            854
+            862
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxResetTypeTwoState",
-          "declaration_line": 742,
+          "declaration_line": 750,
           "lines": [
-            757
+            765
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxSetTypeOneCountAndValue",
-          "declaration_line": 883,
+          "declaration_line": 891,
           "lines": [
-            891,
-            893
+            899,
+            901
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxUpdateLifetimeState",
-          "declaration_line": 596,
+          "declaration_line": 604,
           "lines": [
-            608,
-            609,
-            613,
-            618
+            616,
+            617,
+            621,
+            626
           ]
         },
         {
@@ -222772,66 +222640,66 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "unk80",
       "lines": [
-        211,
-        337,
-        338,
+        213,
         339,
-        470,
-        471,
-        472,
-        922,
-        923,
-        924,
+        340,
+        341,
+        476,
+        477,
+        478,
         930,
         931,
         932,
+        938,
         939,
         940,
-        941
+        947,
+        948,
+        949
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            337,
-            338,
-            339
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvpfx_rom_004012CC",
-          "declaration_line": 403,
-          "lines": [
-            470,
-            471,
-            472
+            339,
+            340,
+            341
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxAdvancePositionTrail",
-          "declaration_line": 906,
+          "declaration_line": 914,
           "lines": [
-            922,
-            923,
-            924,
             930,
             931,
             932,
+            938,
             939,
             940,
-            941
+            947,
+            948,
+            949
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxGetProps",
+          "declaration_line": 408,
+          "lines": [
+            476,
+            477,
+            478
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxSetMatrix",
-          "declaration_line": 209,
+          "declaration_line": 211,
           "lines": [
-            211
+            213
           ]
         }
       ]
@@ -222843,33 +222711,33 @@
       "symbol": "unkA",
       "lines": [
         12,
-        370,
-        493,
-        987
+        372,
+        501,
+        995
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            370
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvpfx_rom_004012CC",
-          "declaration_line": 403,
-          "lines": [
-            493
+            372
           ]
         },
         {
           "kind": "function",
           "name": "func_uvpfx_rom_00404A60",
-          "declaration_line": 954,
+          "declaration_line": 962,
           "lines": [
-            987
+            995
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxGetProps",
+          "declaration_line": 408,
+          "lines": [
+            501
           ]
         },
         {
@@ -222888,93 +222756,93 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "unkC",
       "lines": [
-        148,
-        353,
+        150,
         355,
-        362,
+        357,
         364,
-        381,
-        478,
-        496,
-        608,
-        719,
-        735,
-        792,
-        793,
-        797,
-        798,
-        802,
+        366,
+        383,
+        484,
+        504,
+        616,
+        727,
+        743,
+        800,
+        801,
+        805,
         806,
-        819,
-        832
+        810,
+        814,
+        827,
+        840
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            353,
             355,
-            362,
+            357,
             364,
-            381
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvpfx_rom_004012CC",
-          "declaration_line": 403,
-          "lines": [
-            478,
-            496
+            366,
+            383
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxAcquireInactiveByKind",
-          "declaration_line": 135,
+          "declaration_line": 137,
           "lines": [
-            148
+            150
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxAdvanceDiscreteStepState",
-          "declaration_line": 772,
+          "declaration_line": 780,
           "lines": [
-            792,
-            793,
-            797,
-            798,
-            802,
+            800,
+            801,
+            805,
             806,
-            819,
-            832
+            810,
+            814,
+            827,
+            840
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxBeginFinalInterval",
-          "declaration_line": 731,
+          "declaration_line": 739,
           "lines": [
-            735
+            743
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxGetProps",
+          "declaration_line": 408,
+          "lines": [
+            484,
+            504
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxRestart",
-          "declaration_line": 710,
+          "declaration_line": 718,
           "lines": [
-            719
+            727
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxUpdateLifetimeState",
-          "declaration_line": 596,
+          "declaration_line": 604,
           "lines": [
-            608
+            616
           ]
         }
       ]
@@ -222985,15 +222853,15 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "unkC0",
       "lines": [
-        312
+        314
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            312
+            314
           ]
         }
       ]
@@ -223004,21 +222872,21 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "unkCC",
       "lines": [
-        922,
         930,
-        936,
-        939
+        938,
+        944,
+        947
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxAdvancePositionTrail",
-          "declaration_line": 906,
+          "declaration_line": 914,
           "lines": [
-            922,
             930,
-            936,
-            939
+            938,
+            944,
+            947
           ]
         }
       ]
@@ -223029,19 +222897,19 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "unkD0",
       "lines": [
-        923,
         931,
-        940
+        939,
+        948
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxAdvancePositionTrail",
-          "declaration_line": 906,
+          "declaration_line": 914,
           "lines": [
-            923,
             931,
-            940
+            939,
+            948
           ]
         }
       ]
@@ -223052,19 +222920,19 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "unkD4",
       "lines": [
-        924,
         932,
-        941
+        940,
+        949
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxAdvancePositionTrail",
-          "declaration_line": 906,
+          "declaration_line": 914,
           "lines": [
-            924,
             932,
-            941
+            940,
+            949
           ]
         }
       ]
@@ -223075,33 +222943,33 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "unkD8",
       "lines": [
-        387,
-        502,
-        930
+        389,
+        512,
+        938
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            387
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvpfx_rom_004012CC",
-          "declaration_line": 403,
-          "lines": [
-            502
+            389
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxAdvancePositionTrail",
-          "declaration_line": 906,
+          "declaration_line": 914,
           "lines": [
-            930
+            938
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxGetProps",
+          "declaration_line": 408,
+          "lines": [
+            512
           ]
         }
       ]
@@ -223112,33 +222980,33 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "unkDC",
       "lines": [
-        388,
-        503,
-        931
+        390,
+        513,
+        939
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            388
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvpfx_rom_004012CC",
-          "declaration_line": 403,
-          "lines": [
-            503
+            390
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxAdvancePositionTrail",
-          "declaration_line": 906,
+          "declaration_line": 914,
           "lines": [
-            931
+            939
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxGetProps",
+          "declaration_line": 408,
+          "lines": [
+            513
           ]
         }
       ]
@@ -223149,24 +223017,24 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "unkE",
       "lines": [
-        325,
-        458
+        327,
+        464
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            325
+            327
           ]
         },
         {
           "kind": "function",
-          "name": "func_uvpfx_rom_004012CC",
-          "declaration_line": 403,
+          "name": "uvPfxGetProps",
+          "declaration_line": 408,
           "lines": [
-            458
+            464
           ]
         }
       ]
@@ -223177,33 +223045,33 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "unkE0",
       "lines": [
-        389,
-        504,
-        932
+        391,
+        514,
+        940
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            389
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvpfx_rom_004012CC",
-          "declaration_line": 403,
-          "lines": [
-            504
+            391
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxAdvancePositionTrail",
-          "declaration_line": 906,
+          "declaration_line": 914,
           "lines": [
-            932
+            940
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxGetProps",
+          "declaration_line": 408,
+          "lines": [
+            514
           ]
         }
       ]
@@ -223214,15 +223082,15 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "unkE4",
       "lines": [
-        376
+        378
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            376
+            378
           ]
         }
       ]
@@ -223233,15 +223101,15 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "unkE8",
       "lines": [
-        377
+        379
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            377
+            379
           ]
         }
       ]
@@ -236789,69 +236657,69 @@
       "symbol": "UnkStruct_uvpfx_rom_00404FA0",
       "lines": [
         31,
-        138,
-        219,
-        405,
-        597,
-        773,
-        846,
-        907
+        140,
+        221,
+        410,
+        605,
+        781,
+        854,
+        915
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            219
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvpfx_rom_004012CC",
-          "declaration_line": 403,
-          "lines": [
-            405
+            221
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxAcquireInactiveByKind",
-          "declaration_line": 135,
+          "declaration_line": 137,
           "lines": [
-            138
+            140
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxAdvanceDiscreteStepState",
-          "declaration_line": 772,
+          "declaration_line": 780,
           "lines": [
-            773
+            781
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxAdvancePositionTrail",
-          "declaration_line": 906,
+          "declaration_line": 914,
           "lines": [
-            907
+            915
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxGetProps",
+          "declaration_line": 408,
+          "lines": [
+            410
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxResetTypeOneState",
-          "declaration_line": 845,
+          "declaration_line": 853,
           "lines": [
-            846
+            854
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxUpdateLifetimeState",
-          "declaration_line": 596,
+          "declaration_line": 604,
           "lines": [
-            597
+            605
           ]
         },
         {
@@ -236870,132 +236738,132 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "UnkStruct_uvpfx_rom_00404FA0_unk0",
       "lines": [
-        139,
-        170,
-        220,
-        406,
-        598,
-        646,
-        674,
-        711,
-        743,
-        774,
-        847,
-        867,
-        884,
-        908
+        141,
+        172,
+        222,
+        412,
+        606,
+        654,
+        682,
+        719,
+        751,
+        782,
+        855,
+        875,
+        892,
+        916
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_00400398",
-          "declaration_line": 169,
+          "declaration_line": 171,
           "lines": [
-            170
+            172
           ]
         },
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            220
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvpfx_rom_004012CC",
-          "declaration_line": 403,
-          "lines": [
-            406
+            222
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxAcquireInactiveByKind",
-          "declaration_line": 135,
+          "declaration_line": 137,
           "lines": [
-            139
+            141
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxAdvanceDiscreteStepState",
-          "declaration_line": 772,
+          "declaration_line": 780,
           "lines": [
-            774
+            782
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxAdvancePositionTrail",
-          "declaration_line": 906,
+          "declaration_line": 914,
           "lines": [
-            908
+            916
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxAdvanceTimeAndUpdate",
-          "declaration_line": 644,
+          "declaration_line": 652,
           "lines": [
-            646
+            654
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxDrawActiveEffects",
-          "declaration_line": 671,
+          "declaration_line": 679,
           "lines": [
-            674
+            682
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxGetProps",
+          "declaration_line": 408,
+          "lines": [
+            412
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxResetTypeOneState",
-          "declaration_line": 845,
+          "declaration_line": 853,
           "lines": [
-            847
+            855
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxResetTypeTwoState",
-          "declaration_line": 742,
+          "declaration_line": 750,
           "lines": [
-            743
+            751
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxRestart",
-          "declaration_line": 710,
+          "declaration_line": 718,
           "lines": [
-            711
+            719
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxSetTypeOneCountAndValue",
-          "declaration_line": 883,
+          "declaration_line": 891,
           "lines": [
-            884
+            892
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxSetTypeOneScalar18",
-          "declaration_line": 866,
+          "declaration_line": 874,
           "lines": [
-            867
+            875
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxUpdateLifetimeState",
-          "declaration_line": 596,
+          "declaration_line": 604,
           "lines": [
-            598
+            606
           ]
         }
       ]
@@ -237006,51 +236874,51 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "UnkStruct_uvpfx_rom_00404FA0_unk28",
       "lines": [
-        229,
-        407,
-        868,
-        885,
-        910
+        231,
+        413,
+        876,
+        893,
+        918
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            229
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvpfx_rom_004012CC",
-          "declaration_line": 403,
-          "lines": [
-            407
+            231
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxAdvancePositionTrail",
-          "declaration_line": 906,
+          "declaration_line": 914,
           "lines": [
-            910
+            918
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxGetProps",
+          "declaration_line": 408,
+          "lines": [
+            413
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxSetTypeOneCountAndValue",
-          "declaration_line": 883,
+          "declaration_line": 891,
           "lines": [
-            885
+            893
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxSetTypeOneScalar18",
-          "declaration_line": 866,
+          "declaration_line": 874,
           "lines": [
-            868
+            876
           ]
         }
       ]
@@ -237061,24 +236929,24 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "UnkStruct_uvpfx_rom_00404FA0_unk2C",
       "lines": [
-        408,
-        775
+        414,
+        783
       ],
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvpfx_rom_004012CC",
-          "declaration_line": 403,
+          "name": "uvPfxAdvanceDiscreteStepState",
+          "declaration_line": 780,
           "lines": [
-            408
+            783
           ]
         },
         {
           "kind": "function",
-          "name": "uvPfxAdvanceDiscreteStepState",
-          "declaration_line": 772,
+          "name": "uvPfxGetProps",
+          "declaration_line": 408,
           "lines": [
-            775
+            414
           ]
         }
       ]
@@ -237089,132 +236957,132 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "UnkStruct_uvpfx_rom_00404FA0_unk4",
       "lines": [
-        140,
-        173,
-        210,
-        221,
-        409,
-        566,
-        599,
-        673,
-        712,
-        732,
-        744,
-        776,
-        848,
-        909
+        142,
+        175,
+        212,
+        223,
+        415,
+        574,
+        607,
+        681,
+        720,
+        740,
+        752,
+        784,
+        856,
+        917
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_00400398",
-          "declaration_line": 169,
+          "declaration_line": 171,
           "lines": [
-            173
+            175
           ]
         },
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            221
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "func_uvpfx_rom_004012CC",
-          "declaration_line": 403,
-          "lines": [
-            409
+            223
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxAcquireInactiveByKind",
-          "declaration_line": 135,
+          "declaration_line": 137,
           "lines": [
-            140
+            142
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxAdvanceDiscreteStepState",
-          "declaration_line": 772,
+          "declaration_line": 780,
           "lines": [
-            776
+            784
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxAdvancePositionTrail",
-          "declaration_line": 906,
+          "declaration_line": 914,
           "lines": [
-            909
+            917
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxBeginFinalInterval",
-          "declaration_line": 731,
+          "declaration_line": 739,
           "lines": [
-            732
+            740
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxDrawActiveEffects",
-          "declaration_line": 671,
+          "declaration_line": 679,
           "lines": [
-            673
+            681
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvPfxGetProps",
+          "declaration_line": 408,
+          "lines": [
+            415
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxResetTypeOneState",
-          "declaration_line": 845,
+          "declaration_line": 853,
           "lines": [
-            848
+            856
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxResetTypeTwoState",
-          "declaration_line": 742,
+          "declaration_line": 750,
           "lines": [
-            744
+            752
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxRestart",
-          "declaration_line": 710,
+          "declaration_line": 718,
           "lines": [
-            712
+            720
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxSetMatrix",
-          "declaration_line": 209,
+          "declaration_line": 211,
           "lines": [
-            210
+            212
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxSetTriangleTextureOrientation",
-          "declaration_line": 560,
+          "declaration_line": 568,
           "lines": [
-            566
+            574
           ]
         },
         {
           "kind": "function",
           "name": "uvPfxUpdateLifetimeState",
-          "declaration_line": 596,
+          "declaration_line": 604,
           "lines": [
-            599
+            607
           ]
         }
       ]
@@ -248083,16 +247951,76 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "Publish particle controls, allocate the record table, and load dependencies. * RE_ORIGINAL_QUIRK: missing/zero capacity selects 256; only definition pointers * are cleared. GMGR is loaded here but omitted by uvPfxModuleCleanup. * RE_UNKNOWN: valid capacities, initialization of the remaining record fields, * and GMGR teardown ownership are not established by this entrypoint.",
       "lines": [
-        63
+        65
       ],
       "evidence": "Publish particle controls, allocate the record table, and load dependencies. * RE_ORIGINAL_QUIRK: missing/zero capacity selects 256; only definition pointers * are cleared. GMGR is loaded here but omitted by uvPfxModuleCleanup. * RE_UNKNOWN: valid capacities, initialization of the remaining record fields, * and GMGR teardown ownership are not established by this entrypoint.",
       "owners": [
         {
           "kind": "function",
           "name": "__entrypoint_func_uvpfx_rom_400000",
-          "declaration_line": 69,
+          "declaration_line": 71,
           "lines": [
-            63
+            65
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-87b97747f0fc",
+      "kind": "original_quirk",
+      "path": "src/modules/uvpfx_rom.c",
+      "symbol": "RE_ORIGINAL_QUIRK: An unknown tag ends the entire request.",
+      "lines": [
+        518
+      ],
+      "evidence": "RE_ORIGINAL_QUIRK: An unknown tag ends the entire request.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxGetProps",
+          "declaration_line": 408,
+          "lines": [
+            518
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-e1dc41f41346",
+      "kind": "original_quirk",
+      "path": "src/modules/uvpfx_rom.c",
+      "symbol": "RE_ORIGINAL_QUIRK: Both high-bit masks below are stored in * 16 bits, so these two getters write zero. Preserve the widths.",
+      "lines": [
+        492
+      ],
+      "evidence": "RE_ORIGINAL_QUIRK: Both high-bit masks below are stored in * 16 bits, so these two getters write zero. Preserve the widths.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxGetProps",
+          "declaration_line": 408,
+          "lines": [
+            492
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-e016ded0bc97",
+      "kind": "original_quirk",
+      "path": "src/modules/uvpfx_rom.c",
+      "symbol": "RE_ORIGINAL_QUIRK: The original converts the float at state * offset 0x18 to an integer, then stores its low 16 bits.",
+      "lines": [
+        506
+      ],
+      "evidence": "RE_ORIGINAL_QUIRK: The original converts the float at state * offset 0x18 to an integer, then stores its low 16 bits.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxGetProps",
+          "declaration_line": 408,
+          "lines": [
+            506
           ]
         }
       ]
@@ -250854,16 +250782,16 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "Store the type-one definition scalar at offset 0x18; its role is unproven.",
       "lines": [
-        865
+        873
       ],
       "evidence": "Store the type-one definition scalar at offset 0x18; its role is unproven.",
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxSetTypeOneScalar18",
-          "declaration_line": 866,
+          "declaration_line": 874,
           "lines": [
-            865
+            873
           ]
         }
       ]
@@ -254379,15 +254307,15 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "unused",
       "lines": [
-        138
+        140
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvPfxAcquireInactiveByKind",
-          "declaration_line": 135,
+          "declaration_line": 137,
           "lines": [
-            138
+            140
           ]
         }
       ]
@@ -254398,15 +254326,15 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "unused1",
       "lines": [
-        330
+        332
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            330
+            332
           ]
         }
       ]
@@ -254417,15 +254345,15 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "unused2",
       "lines": [
-        331
+        333
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            331
+            333
           ]
         }
       ]
@@ -254436,15 +254364,15 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "unused3",
       "lines": [
-        332
+        334
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            332
+            334
           ]
         }
       ]
@@ -254455,15 +254383,34 @@
       "path": "src/modules/uvpfx_rom.c",
       "symbol": "unused4",
       "lines": [
-        333
+        335
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_uvpfx_rom_004004D0",
-          "declaration_line": 217,
+          "declaration_line": 219,
           "lines": [
-            333
+            335
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-d691488efbf8",
+      "kind": "unused_identifier",
+      "path": "src/modules/uvpfx_rom.c",
+      "symbol": "unusedRecord",
+      "lines": [
+        410
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvPfxGetProps",
+          "declaration_line": 408,
+          "lines": [
+            410
           ]
         }
       ]

@@ -313,6 +313,9 @@ Modules:
       - text
       - rodata
   - name: uvpfx_rom
+    done_sections:
+      - rodata
+    readonly_layout: config/us/readonly_layout/uvpfx_rom.json
   - name: uvpfxld_rom
     done_sections:
       - text

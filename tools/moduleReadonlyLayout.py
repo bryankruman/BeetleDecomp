@@ -252,6 +252,10 @@ def check_users(root, layout, decoded, extra_original_data=()):
 def prepare(root, config, module, binary):
     """Read-only preflight before any module extraction output is written."""
     root = Path(root).resolve()
+    # Version6 is one measured PFX scalar/two-table owner group.
+    if json.loads(inside(root, config).read_bytes()).get('version') == 6:
+        from pfxReadonlyLayout import prepare as prepare_pfx_group
+        return prepare_pfx_group(root, config, module, binary)
     # MISC scalar constants are not switch-table owners.
     if json.loads(inside(root, config).read_bytes()).get('version') == 5:
         from miscReadonlyLayout import prepare as prepare_misc_scalar_pool
@@ -284,6 +288,9 @@ def prepare(root, config, module, binary):
 
 def apply(plan):
     """Use normal regenerated original ASM hosts and retained readonly spans."""
+    if plan['layout']['version'] == 6:
+        from pfxReadonlyLayout import apply as apply_pfx_group
+        return apply_pfx_group(plan)
     if plan['layout']['version'] == 5:
         from miscReadonlyLayout import apply as apply_misc_scalar_pool
         return apply_misc_scalar_pool(plan)
