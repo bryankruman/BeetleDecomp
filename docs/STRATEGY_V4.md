@@ -34,8 +34,8 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **723** assembly references:
-**686** ordinary functions and **37** entrypoints, with **668,808** known instruction bytes
+matching C are preserved with `#line`. The current ledger has **722** assembly references:
+**685** ordinary functions and **37** entrypoints, with **668,732** known instruction bytes
 and no unknown sizes. The broader name audit still finds **290** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
@@ -3770,3 +3770,37 @@ current native/SDK/carry validation and guarded Git landing before accepting
 the 236 bytes. The alias adds one tracked path: the manifest grows from 1256 to
 1257 files only after guarded absence and preimage checks. Runtime and gameplay
 qualification remain an independent, unfinished campaign requirement.
+
+
+## CARANIM COPY76: inline registry-copy recovery pending full validation
+
+Recover only the 76-byte registry-copy function. The first two-body diagnostic
+matched its own words and four ordered relocations but appended the function
+after the old module body, moving its position. Isolating COPY at its original
+source slot restored the exact 24724 position: all 76 raw bytes, all four ordered
+relocations and the strict native/provider replay matched. Keep the separate
+CLEAR callback as its original 56-byte assembly function; its 52-byte C attempt
+remains an unaccepted retained diagnostic, not another shape-search candidate.
+All 19 previously accepted CARANIM source bodies and their logical coordinates
+remain literal.
+
+The copy loop reloads the live count after each destination store and returns
+the final live value. Do not snapshot that count or invent a destination bound.
+The constructor can increment the count when all eight registry slots are full;
+retain this original quirk and the explicit unknown destination capacity,
+aliasing, state ownership, lifetime and callback-mutation domains.
+
+The inline diagnostic also has an identical 25,040-byte whole TEXT section.
+Its 881 relocation records retain a measured four-record COPY block move and
+two entrypoint raw-export HI16/LO16 provider-role transitions. Preserve every
+record, multiplicity and actual emission order, together with all false strict
+metadata flags. Section/string/table indexes and the REGINFO descriptor remain
+explicit measured differences; do not sort records or repair the object.
+
+The canonical symbol-map append and a new raw-to-canonical linker alias are
+reversible source changes and add no bytes of credit. Require fresh alias-path
+absence/preimage checks, a genuine zero-size raw FUNC at the canonical 0x6094
+address, the named normal compile/partial link, all 133 original packed modules
+and full original-ROM equality, complete native/SDK/carry checks and guarded
+Git landing before accepting 76 bytes. Preserve every earlier failed attempt
+and its retained artifacts. Runtime/gameplay qualification remains separate.

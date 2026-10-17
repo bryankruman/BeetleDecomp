@@ -761,7 +761,21 @@ s32 caranimFindRegisteredStateByObjectHandle(s32 objectHandle) {
 #line 220 "src/modules/caranim.c"
 #line 210 "src/modules/caranim.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00406094.s")
+#line 1 "caranim-copy-only-body-92012.c"
+/* Copy the registered-state pointer prefix and return the live registry
+ * count. Recheck that count after each destination store; do not snapshot it.
+ * RE_ORIGINAL_QUIRK: the constructor can increment the count when eight slots
+ * are full. RE_UNKNOWN: destination capacity/aliasing and registry lifetime. */
+s32 caranimCopyRegisteredStates(CarAnimRegisteredState **destination) {
+    s32 index;
+
+    for (index = 0; index < D_caranim_00407368; index++) {
+        destination[index] = D_caranim_00407348[index];
+    }
+    return D_caranim_00407368;
+}
+
+#line 212 "src/modules/caranim.c"
 
 #line 213 "src/modules/caranim.c"
 /* Return the constructor-maintained registry counter; no recount or slot validation. */

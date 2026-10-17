@@ -1,0 +1,1 @@
+func_caranim_00406094 = caranimCopyRegisteredStates;

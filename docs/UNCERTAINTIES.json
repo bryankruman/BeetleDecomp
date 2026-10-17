@@ -391,7 +391,7 @@
     "src/modules/battle.c": "53c2276cff1805ba17567a40a2c43a561ef5f6cc89c510e459302398341730cc",
     "src/modules/bubble.c": "41670aab90435d4efce72911e896aa8e40b6a83b79cb07972d6f03435f86c5a6",
     "src/modules/cam.c": "945f2db0006e10d0ce085e7ab58980d96597d9b28f3d8863c6159c63177b3d9c",
-    "src/modules/caranim.c": "2dd26cb778eacb267c3cf783ab7cec14c5b0934b3cdd93336aa93bb6f23d30b2",
+    "src/modules/caranim.c": "fcae433b1321c3bc1d1fc27a384573b36ec6ab849f9915b681d90af6ad2e1f96",
     "src/modules/caraudio.c": "0b5c00cb4a97a368aaa7e010b96ee80e8895f4f1f705d4d944f8f3f630bf5480",
     "src/modules/cbars.c": "4aca0aa326da893fd4cc663f76c0537e29d4db2d4018a46eeb50104d5f7a34b6",
     "src/modules/demo.c": "8e19de1cafc6a5ebde83a3020c92b2b17b3de91fc4abe245a5c53d96de69065f",
@@ -522,22 +522,22 @@
     "src/sched.c": "26791ca9f30fd5355b11ea03a64a457757d2029595be26428c2925798105d9b4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "fd36f9fb441c3f86d98fe225d11b20d0634db64bee1d427e0706cf432bdd1f99",
+    "docs/STRATEGY_V4.md": "96f9e08a062319d97486726379b2d3242d40cfd468515b78f419f610f0dc6613",
     "docs/VALIDATION_20261006.md": "a46820c10aba34e3c1901bd9bdc4260f684530f44fcf7f61d9c7bb33e0c91031"
   },
   "counts": {
     "address_function": 906,
     "address_global": 1691,
-    "assembly": 728,
+    "assembly": 727,
     "audit_debt": 30,
     "conditional_draft": 4,
     "decompiler_local": 623,
     "draft_marker": 55,
-    "explicit_unknown": 1941,
+    "explicit_unknown": 1942,
     "layout_padding": 281,
     "offset_field": 1800,
     "opaque_type": 285,
-    "original_quirk": 559,
+    "original_quirk": 560,
     "uncertainty_note": 88,
     "unused_identifier": 156
   },
@@ -27771,15 +27771,15 @@
       "symbol": "D_caranim_00407178",
       "lines": [
         48,
-        802
+        816
       ],
       "owners": [
         {
           "kind": "function",
           "name": "caranimApplyColorAndCallback",
-          "declaration_line": 800,
+          "declaration_line": 814,
           "lines": [
-            802
+            816
           ]
         },
         {
@@ -27889,9 +27889,18 @@
       "symbol": "D_caranim_00407348",
       "lines": [
         46,
-        755
+        755,
+        773
       ],
       "owners": [
+        {
+          "kind": "function",
+          "name": "caranimCopyRegisteredStates",
+          "declaration_line": 769,
+          "lines": [
+            773
+          ]
+        },
         {
           "kind": "function",
           "name": "caranimFindRegisteredStateByObjectHandle",
@@ -27919,7 +27928,9 @@
         89,
         140,
         754,
-        769
+        772,
+        775,
+        783
       ],
       "owners": [
         {
@@ -27928,6 +27939,15 @@
           "declaration_line": 119,
           "lines": [
             140
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "caranimCopyRegisteredStates",
+          "declaration_line": 769,
+          "lines": [
+            772,
+            775
           ]
         },
         {
@@ -27941,9 +27961,9 @@
         {
           "kind": "function",
           "name": "caranimGetRegisteredStateCount",
-          "declaration_line": 768,
+          "declaration_line": 782,
           "lines": [
-            769
+            783
           ]
         },
         {
@@ -84572,16 +84592,6 @@
       "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00405DE4.s"
     },
     {
-      "id": "Q-c43c171be19b",
-      "kind": "assembly",
-      "path": "src/modules/caranim.c",
-      "symbol": "func_caranim_00406094",
-      "lines": [
-        764
-      ],
-      "evidence": "asm/us/nonmatchings/modules/caranim/func_caranim_00406094.s"
-    },
-    {
       "id": "Q-1004168bd43c",
       "kind": "assembly",
       "path": "src/modules/caraudio.c",
@@ -127557,16 +127567,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "Apply color and register property-four callback; the object retains state. * RE_UNKNOWN: color-index bounds and retained-state lifetime need producers/teardown.",
       "lines": [
-        798
+        812
       ],
       "evidence": "Apply color and register property-four callback; the object retains state. * RE_UNKNOWN: color-index bounds and retained-state lifetime need producers/teardown.",
       "owners": [
         {
           "kind": "function",
           "name": "caranimApplyColorAndCallback",
-          "declaration_line": 800,
+          "declaration_line": 814,
           "lines": [
-            798
+            812
           ]
         }
       ]
@@ -127667,6 +127677,26 @@
           "declaration_line": 301,
           "lines": [
             287
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-40baea471c87",
+      "kind": "explicit_unknown",
+      "path": "src/modules/caranim.c",
+      "symbol": "Copy the registered-state pointer prefix and return the live registry * count. Recheck that count after each destination store; do not snapshot it. * RE_ORIGINAL_QUIRK: the constructor can increment the count when eight slots * are full. RE_UNKNOWN: destination capacity/aliasing and registry lifetime.",
+      "lines": [
+        765
+      ],
+      "evidence": "Copy the registered-state pointer prefix and return the live registry * count. Recheck that count after each destination store; do not snapshot it. * RE_ORIGINAL_QUIRK: the constructor can increment the count when eight slots * are full. RE_UNKNOWN: destination capacity/aliasing and registry lifetime.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "caranimCopyRegisteredStates",
+          "declaration_line": 769,
+          "lines": [
+            765
           ]
         }
       ]
@@ -127807,16 +127837,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "RE_UNKNOWN: Color-word packing, table bounds and callback context lifetime.",
       "lines": [
-        805
+        819
       ],
       "evidence": "RE_UNKNOWN: Color-word packing, table bounds and callback context lifetime.",
       "owners": [
         {
           "kind": "function",
           "name": "caranimApplyColorAndCallback",
-          "declaration_line": 800,
+          "declaration_line": 814,
           "lines": [
-            805
+            819
           ]
         }
       ]
@@ -127847,16 +127877,16 @@
       "path": "src/modules/caranim.c",
       "symbol": "Read camera pointer cell CAM0x30; its signed word0x220 selects state light slot0x248 * when nonnegative, otherwise -1. RE_UNKNOWN: camera/state pointer lifetime, slot bounds * and camera-word policy need original producers/callers. No pointer guard is added.",
       "lines": [
-        777
+        791
       ],
       "evidence": "Read camera pointer cell CAM0x30; its signed word0x220 selects state light slot0x248 * when nonnegative, otherwise -1. RE_UNKNOWN: camera/state pointer lifetime, slot bounds * and camera-word policy need original producers/callers. No pointer guard is added.",
       "owners": [
         {
           "kind": "function",
           "name": "caranimSelectCameraLightBufferSlot",
-          "declaration_line": 782,
+          "declaration_line": 796,
           "lines": [
-            777
+            791
           ]
         }
       ]
@@ -241919,6 +241949,26 @@
           "declaration_line": 301,
           "lines": [
             287
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-4cca15122515",
+      "kind": "original_quirk",
+      "path": "src/modules/caranim.c",
+      "symbol": "Copy the registered-state pointer prefix and return the live registry * count. Recheck that count after each destination store; do not snapshot it. * RE_ORIGINAL_QUIRK: the constructor can increment the count when eight slots * are full. RE_UNKNOWN: destination capacity/aliasing and registry lifetime.",
+      "lines": [
+        765
+      ],
+      "evidence": "Copy the registered-state pointer prefix and return the live registry * count. Recheck that count after each destination store; do not snapshot it. * RE_ORIGINAL_QUIRK: the constructor can increment the count when eight slots * are full. RE_UNKNOWN: destination capacity/aliasing and registry lifetime.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "caranimCopyRegisteredStates",
+          "declaration_line": 769,
+          "lines": [
+            765
           ]
         }
       ]
