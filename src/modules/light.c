@@ -94,7 +94,58 @@ void lightInitializeState(LightInitializationState *state, s32 parameter) {
 }
 #line 15 "src/modules/light.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/light/func_light_00400120.s")
+#include <stdarg.h>
+#line 16 "src/modules/light.c"
+/* Apply a terminated stream of LIGHT properties to the consumed state view.
+ * Each numeric value is read as a promoted double and narrowed at its store.
+ * RE_ORIGINAL_QUIRK: property 4 consumes no triple when parameter is nonzero;
+ * the next property is then read at the current argument cursor. Preserve this.
+ * RE_UNKNOWN: physical meanings, valid property streams and state/provider
+ * lifetimes remain caller contracts. No extra range or handle check is added.
+ * Property words are consumed as promoted s32 values, then narrowed to s16,
+ * matching the original low-halfword load on the big-endian target. */
+void lightApplyStateProperties(LightInitializationState *state, s32 channel, ...) {
+    va_list properties;
+    s16 property;
+
+    if (state == NULL || channel < 0) {
+        return;
+    }
+    va_start(properties, channel);
+    while (1) {
+        property = (s16) va_arg(properties, s32);
+        switch (property) {
+        case 1:
+            state->value04 = (f32) va_arg(properties, f64);
+            state->value08 = (f32) va_arg(properties, f64);
+            state->value0C = (f32) va_arg(properties, f64);
+            gUvLightExports->uvLightSetChannelDirection(state->handle, channel, (Vec3F *) &state->value04);
+            break;
+        case 2:
+            state->value1C = (f32) va_arg(properties, f64);
+            state->value20 = (f32) va_arg(properties, f64);
+            state->value24 = (f32) va_arg(properties, f64);
+            gUvLightExports->uvLightUpdateSetChannelDiffuse(state->handle, channel, state->value1C, state->value20, state->value24);
+            break;
+        case 3:
+            state->value28 = (f32) va_arg(properties, f64);
+            break;
+        case 4:
+            if (state->parameter == 0) {
+                state->value10 = (f32) va_arg(properties, f64);
+                state->value14 = (f32) va_arg(properties, f64);
+                state->value18 = (f32) va_arg(properties, f64);
+                gUvLightExports->uvLightUpdateChannelAmbient(channel, state->value10, state->value14, state->value18);
+            }
+            break;
+        case 0:
+        default:
+            va_end(properties);
+            return;
+        }
+    }
+}
+#line 17 "src/modules/light.c"
 
 #line 18 "src/modules/light.c"
 /* Prepend the original 48-byte spatial light record. Store position, both

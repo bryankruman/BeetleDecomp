@@ -1,0 +1,1 @@
+func_light_00400120 = lightApplyStateProperties;

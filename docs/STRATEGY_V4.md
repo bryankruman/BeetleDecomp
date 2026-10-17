@@ -34,8 +34,8 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **722** assembly references:
-**685** ordinary functions and **37** entrypoints, with **668,732** known instruction bytes
+matching C are preserved with `#line`. The current ledger has **721** assembly references:
+**684** ordinary functions and **37** entrypoints, with **667,728** known instruction bytes
 and no unknown sizes. The broader name audit still finds **290** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
@@ -3804,3 +3804,32 @@ address, the named normal compile/partial link, all 133 original packed modules
 and full original-ROM equality, complete native/SDK/carry checks and guarded
 Git landing before accepting 76 bytes. Preserve every earlier failed attempt
 and its retained artifacts. Runtime/gameplay qualification remains separate.
+
+
+## LIGHT1004: complete property dispatch and whole readonly ownership
+
+Recover the original property dispatcher at 0x120 with the reviewed natural
+tagged-argument loop. Explicit case zero shares the existing default return;
+the five-entry original dispatch table establishes this source constraint.
+Keep the unchanged 944 C body. Its 1,004-byte function retains three resolved
+PC16 branch words in place of the original relocation records. Offline proof
+945 replays every instruction against the original native window using the
+four actual candidate relocations; none of the old strict diagnostic flags
+is relabelled as a normal or runtime acceptance result.
+
+The C switch owns the complete original 32-byte readonly section: five words
+of table entries followed by twelve literal zero bytes. Those zero bytes have
+no recovered historical padding purpose and add no instruction-byte credit.
+Use standard whole-rodata ownership. Retain the old assembly as an unused
+witness, exclude it from S_FILES, and exclude its stale object from the partial
+link's independent wildcard input. The fixture covers both input paths.
+
+Preserve all five older LIGHT bodies and their logical coordinates. Leave the
+original raw code-address declaration and initializer untouched. The actual
+standalone raw symbol is GLOBAL OBJECT, undefined and size zero. The new
+raw-to-canonical linker assignment must be measured in the genuine partial;
+do not invent a FUNC type, a table-label alias or a metadata exemption.
+Require complete original module equality, all 133 original modules, full ROM,
+native geometry/content/carry/SDK checks and guarded Git landing before adding
+1,004 bytes. Registry bounds, property meaning, non-finite conversion behavior
+and callback lifetimes remain explicit source uncertainties.

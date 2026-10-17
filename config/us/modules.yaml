@@ -52,6 +52,8 @@ Modules:
     done_sections:
       - text
   - name: light
+    done_sections:
+      - rodata
   - name: logo
     done_sections:
       - text

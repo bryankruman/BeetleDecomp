@@ -17,11 +17,11 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 1942 |
-| Preserved RE_ORIGINAL_QUIRK notes | 560 |
+| Explicit RE_UNKNOWN notes | 1943 |
+| Preserved RE_ORIGINAL_QUIRK notes | 561 |
 | Older comments with uncertainty language | 88 |
 | Documented original-behavior audits | 30 |
-| Assembly-backed functions or data | 727 |
+| Assembly-backed functions or data | 726 |
 | Address-based function identifiers | 906 |
 | Address-based global identifiers | 1691 |
 | Offset-based fields or neutral typed fields | 1800 |
@@ -3647,38 +3647,39 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_light_004005AC` | function `__entrypoint_func_lightInitializeModuleExports`, global `func_light_004005AC` | [32](../src/modules/light.c#L32), [50](../src/modules/light.c#L50) |
 | address_function | `func_light_00400950` | function `__entrypoint_func_lightInitializeModuleExports`, global `func_light_00400950` | [33](../src/modules/light.c#L33), [52](../src/modules/light.c#L52) |
 | address_function | `func_light_00400BA8` | function `__entrypoint_func_lightInitializeModuleExports`, global `func_light_00400BA8` | [34](../src/modules/light.c#L34), [53](../src/modules/light.c#L53) |
-| address_global | `D_light_00400DC4` | function `__entrypoint_func_lightInitializeModuleExports`, function `lightPrependSpatialRecord`, global `D_light_00400DC4` | [4](../src/modules/light.c#L4), [54](../src/modules/light.c#L54), [116](../src/modules/light.c#L116), [117](../src/modules/light.c#L117) |
-| address_global | `D_light_00400DC8` | function `__entrypoint_func_lightInitializeModuleExports`, function `lightPrependParameterRecord`, global `D_light_00400DC8` | [10](../src/modules/light.c#L10), [55](../src/modules/light.c#L55), [168](../src/modules/light.c#L168), [169](../src/modules/light.c#L169) |
-| assembly | `func_light_00400120` | — | [97](../src/modules/light.c#L97) |
-| assembly | `func_light_004005AC` | — | [151](../src/modules/light.c#L151) |
-| assembly | `func_light_00400950` | — | [197](../src/modules/light.c#L197) |
-| assembly | `func_light_00400BA8` | — | [222](../src/modules/light.c#L222) |
-| explicit_unknown | `* Get float triples from ENV properties 6, 8, and 9, then pass promoted * doubles through the LIGHT property parser to the scene record at offset * 0x28. Set three 44-byte recor...` | assembly `func_light_00400BA8` | [198](../src/modules/light.c#L198) |
+| address_global | `D_light_00400DC4` | function `__entrypoint_func_lightInitializeModuleExports`, function `lightPrependSpatialRecord`, global `D_light_00400DC4` | [4](../src/modules/light.c#L4), [54](../src/modules/light.c#L54), [167](../src/modules/light.c#L167), [168](../src/modules/light.c#L168) |
+| address_global | `D_light_00400DC8` | function `__entrypoint_func_lightInitializeModuleExports`, function `lightPrependParameterRecord`, global `D_light_00400DC8` | [10](../src/modules/light.c#L10), [55](../src/modules/light.c#L55), [219](../src/modules/light.c#L219), [220](../src/modules/light.c#L220) |
+| assembly | `func_light_004005AC` | — | [202](../src/modules/light.c#L202) |
+| assembly | `func_light_00400950` | — | [248](../src/modules/light.c#L248) |
+| assembly | `func_light_00400BA8` | — | [273](../src/modules/light.c#L273) |
+| explicit_unknown | `* Get float triples from ENV properties 6, 8, and 9, then pass promoted * doubles through the LIGHT property parser to the scene record at offset * 0x28. Set three 44-byte recor...` | assembly `func_light_00400BA8` | [249](../src/modules/light.c#L249) |
 | explicit_unknown | `* Store the allocated handle as s16 and preserve the comparison with 65535. * Then narrow the parameter to s16 and write the nine zero-valued floats and * the -1.0f field in the...` | function `lightInitializeState` | [69](../src/modules/light.c#L69) |
-| explicit_unknown | `* Walk the 44-byte parameter-record list and apply the first nonzero kind-2 * VOLTEST cache result for the incoming object index. Otherwise obtain ENV * properties 6, 8, and 9. ...` | assembly `func_light_00400950` | [172](../src/modules/light.c#L172) |
+| explicit_unknown | `* Walk the 44-byte parameter-record list and apply the first nonzero kind-2 * VOLTEST cache result for the incoming object index. Otherwise obtain ENV * properties 6, 8, and 9. ...` | assembly `func_light_00400950` | [223](../src/modules/light.c#L223) |
+| explicit_unknown | `Apply a terminated stream of LIGHT properties to the consumed state view. * Each numeric value is read as a promoted double and narrowed at its store. * RE_ORIGINAL_QUIRK: prope...` | function `lightApplyStateProperties` | [99](../src/modules/light.c#L99) |
 | explicit_unknown | `Initializer-only storage view: each field is an original 32-bit address, * not an inferred callable export interface. Opaque assembly declarations * below identify linker code-l...` | type `LightExportAddresses` | [11](../src/modules/light.c#L11) |
 | explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_light_00400090` | [60](../src/modules/light.c#L60) |
 | explicit_unknown | `Register the eight original light callback addresses after updating the * allocation pointer; then clear the spatial and parameter list heads in * their original order. Preserve...` | function `__entrypoint_func_lightInitializeModuleExports` | [37](../src/modules/light.c#L37) |
-| explicit_unknown | `Select up to three linked spatial records admitted by the original squared- * radius test. Replace only a strictly farther selected record with a closer * one; retain ties and s...` | assembly `func_light_004005AC` | [121](../src/modules/light.c#L121) |
+| explicit_unknown | `Select up to three linked spatial records admitted by the original squared- * radius test. Replace only a strictly farther selected record with a closer * one; retain ties and s...` | assembly `func_light_004005AC` | [172](../src/modules/light.c#L172) |
 | offset_field | `unk29` | type `LightSpatialRecord` | [3](../src/modules/light.c#L3) |
 | offset_field | `unknownCallback08Address` | function `__entrypoint_func_lightInitializeModuleExports`, type `LightExportAddresses` | [20](../src/modules/light.c#L20), [48](../src/modules/light.c#L48) |
 | offset_field | `unknownCallback10Address` | function `__entrypoint_func_lightInitializeModuleExports`, type `LightExportAddresses` | [22](../src/modules/light.c#L22), [50](../src/modules/light.c#L50) |
 | offset_field | `unknownCallback18Address` | function `__entrypoint_func_lightInitializeModuleExports`, type `LightExportAddresses` | [24](../src/modules/light.c#L24), [52](../src/modules/light.c#L52) |
 | offset_field | `unknownCallback1CAddress` | function `__entrypoint_func_lightInitializeModuleExports`, type `LightExportAddresses` | [25](../src/modules/light.c#L25), [53](../src/modules/light.c#L53) |
-| offset_field | `value04` | function `lightInitializeState`, type `LightInitializationState` | [7](../src/modules/light.c#L7), [83](../src/modules/light.c#L83) |
-| offset_field | `value08` | function `lightInitializeState`, type `LightInitializationState` | [7](../src/modules/light.c#L7), [84](../src/modules/light.c#L84) |
-| offset_field | `value0C` | function `lightInitializeState`, type `LightInitializationState` | [7](../src/modules/light.c#L7), [92](../src/modules/light.c#L92) |
-| offset_field | `value10` | function `lightInitializeState`, type `LightInitializationState` | [7](../src/modules/light.c#L7), [85](../src/modules/light.c#L85) |
-| offset_field | `value14` | function `lightInitializeState`, type `LightInitializationState` | [7](../src/modules/light.c#L7), [86](../src/modules/light.c#L86) |
-| offset_field | `value18` | function `lightInitializeState`, type `LightInitializationState` | [7](../src/modules/light.c#L7), [88](../src/modules/light.c#L88) |
-| offset_field | `value1C` | function `lightInitializeState`, type `LightInitializationState` | [7](../src/modules/light.c#L7), [89](../src/modules/light.c#L89) |
-| offset_field | `value20` | function `lightInitializeState`, type `LightInitializationState` | [7](../src/modules/light.c#L7), [90](../src/modules/light.c#L90) |
-| offset_field | `value24` | function `lightInitializeState`, type `LightInitializationState` | [7](../src/modules/light.c#L7), [87](../src/modules/light.c#L87) |
-| offset_field | `value28` | function `lightInitializeState`, type `LightInitializationState` | [7](../src/modules/light.c#L7), [91](../src/modules/light.c#L91) |
-| original_quirk | `* Get float triples from ENV properties 6, 8, and 9, then pass promoted * doubles through the LIGHT property parser to the scene record at offset * 0x28. Set three 44-byte recor...` | assembly `func_light_00400BA8` | [198](../src/modules/light.c#L198) |
+| offset_field | `value04` | function `lightApplyStateProperties`, function `lightInitializeState`, type `LightInitializationState` | [7](../src/modules/light.c#L7), [83](../src/modules/light.c#L83), [119](../src/modules/light.c#L119), [122](../src/modules/light.c#L122) |
+| offset_field | `value08` | function `lightApplyStateProperties`, function `lightInitializeState`, type `LightInitializationState` | [7](../src/modules/light.c#L7), [84](../src/modules/light.c#L84), [120](../src/modules/light.c#L120) |
+| offset_field | `value0C` | function `lightApplyStateProperties`, function `lightInitializeState`, type `LightInitializationState` | [7](../src/modules/light.c#L7), [92](../src/modules/light.c#L92), [121](../src/modules/light.c#L121) |
+| offset_field | `value10` | function `lightApplyStateProperties`, function `lightInitializeState`, type `LightInitializationState` | [7](../src/modules/light.c#L7), [85](../src/modules/light.c#L85), [135](../src/modules/light.c#L135), [138](../src/modules/light.c#L138) |
+| offset_field | `value14` | function `lightApplyStateProperties`, function `lightInitializeState`, type `LightInitializationState` | [7](../src/modules/light.c#L7), [86](../src/modules/light.c#L86), [136](../src/modules/light.c#L136), [138](../src/modules/light.c#L138) |
+| offset_field | `value18` | function `lightApplyStateProperties`, function `lightInitializeState`, type `LightInitializationState` | [7](../src/modules/light.c#L7), [88](../src/modules/light.c#L88), [137](../src/modules/light.c#L137), [138](../src/modules/light.c#L138) |
+| offset_field | `value1C` | function `lightApplyStateProperties`, function `lightInitializeState`, type `LightInitializationState` | [7](../src/modules/light.c#L7), [89](../src/modules/light.c#L89), [125](../src/modules/light.c#L125), [128](../src/modules/light.c#L128) |
+| offset_field | `value20` | function `lightApplyStateProperties`, function `lightInitializeState`, type `LightInitializationState` | [7](../src/modules/light.c#L7), [90](../src/modules/light.c#L90), [126](../src/modules/light.c#L126), [128](../src/modules/light.c#L128) |
+| offset_field | `value24` | function `lightApplyStateProperties`, function `lightInitializeState`, type `LightInitializationState` | [7](../src/modules/light.c#L7), [87](../src/modules/light.c#L87), [127](../src/modules/light.c#L127), [128](../src/modules/light.c#L128) |
+| offset_field | `value28` | function `lightApplyStateProperties`, function `lightInitializeState`, type `LightInitializationState` | [7](../src/modules/light.c#L7), [91](../src/modules/light.c#L91), [131](../src/modules/light.c#L131) |
+| original_quirk | `* Get float triples from ENV properties 6, 8, and 9, then pass promoted * doubles through the LIGHT property parser to the scene record at offset * 0x28. Set three 44-byte recor...` | assembly `func_light_00400BA8` | [249](../src/modules/light.c#L249) |
 | original_quirk | `* Store the allocated handle as s16 and preserve the comparison with 65535. * Then narrow the parameter to s16 and write the nine zero-valued floats and * the -1.0f field in the...` | function `lightInitializeState` | [69](../src/modules/light.c#L69) |
-| original_quirk | `* Walk the 44-byte parameter-record list and apply the first nonzero kind-2 * VOLTEST cache result for the incoming object index. Otherwise obtain ENV * properties 6, 8, and 9. ...` | assembly `func_light_00400950` | [172](../src/modules/light.c#L172) |
-| original_quirk | `Select up to three linked spatial records admitted by the original squared- * radius test. Replace only a strictly farther selected record with a closer * one; retain ties and s...` | assembly `func_light_004005AC` | [121](../src/modules/light.c#L121) |
+| original_quirk | `* Walk the 44-byte parameter-record list and apply the first nonzero kind-2 * VOLTEST cache result for the incoming object index. Otherwise obtain ENV * properties 6, 8, and 9. ...` | assembly `func_light_00400950` | [223](../src/modules/light.c#L223) |
+| original_quirk | `Apply a terminated stream of LIGHT properties to the consumed state view. * Each numeric value is read as a promoted double and narrowed at its store. * RE_ORIGINAL_QUIRK: prope...` | function `lightApplyStateProperties` | [99](../src/modules/light.c#L99) |
+| original_quirk | `Select up to three linked spatial records admitted by the original squared- * radius test. Replace only a strictly farther selected record with a closer * one; retain ties and s...` | assembly `func_light_004005AC` | [172](../src/modules/light.c#L172) |
 
 ## src/modules/logo.c
 
