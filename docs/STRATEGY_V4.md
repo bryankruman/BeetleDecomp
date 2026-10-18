@@ -34,8 +34,8 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **717** assembly references:
-**680** ordinary functions and **37** entrypoints, with **666,156** known instruction bytes
+matching C are preserved with `#line`. The current ledger has **716** assembly references:
+**679** ordinary functions and **37** entrypoints, with **665,484** known instruction bytes
 and no unknown sizes. The broader name audit still finds **290** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
@@ -3886,3 +3886,24 @@ all133 original packed modules, complete original ROM, FULL/whole allocated
 Recomp and prior native intervals, carry qualification and guarded Git landing.
 Unknown field meanings, callback lifetimes, aliasing and non-finite comparison
 domains stay explicit in the source and generated uncertainty index.
+
+
+## SMACK impact672 source proposal
+
+This detached proposal recovers the model-impact dispatch at CODE0x38C.
+The six accepted SMACK bodies, tokens and logical coordinates remain literal;
+the 0x1240 helper declaration states its captured float/vector consumed ABI.
+The pool updater252 and static attachment312 remain assembly. The existing
+0xE00 and0xFB4 aliases are preserved and the impact raw/canonical alias is
+added separately. No owner-storage or Makefile change is proposed.
+
+The current14-row original reference is qualified independently. Matching of
+this exact672-only source is not qualified by this source bank. Its672 bytes
+remain proposed with zero accepted credit until actual named normal TU/partial
+facts, all168 native words, all six prior intervals, complete allocated storage,
+all133 packed modules, the full original ROM, FULL/native carry and guarded Git
+landing qualify. Retained older diagnostic false flags are not normalized.
+
+Descriptor/controller domains, callback mutation and alias/lifetime guarantees,
+float/gate units and return-code meanings stay explicit RE_UNKNOWN obligations.
+Original ordered comparisons, reloads and unchecked behaviors remain intact.

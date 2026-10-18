@@ -28,3 +28,4 @@ B_smack_00401650 = 0x00401650;
 smackGetPlayerValue = 0x00401540; // type:func
 smackAttachObjectRecord = 0x00400780; // type:func
 smackDetachActiveRecord = 0x0040095C; // type:func
+smackProcessObjectImpact = 0x0040038C; // type:func

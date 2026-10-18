@@ -31,7 +31,7 @@ void smackAdvanceObjectMotion(SmackMotionState *);
 extern f32 D_smack_00401620;
 void smackSetVelocityAndRandomizeSpin(SmackMotionState *, f32, Vec3F *);
 #line 18 "src/modules/smack.c"
-void func_smack_00401240();
+void func_smack_00401240(void *, f32, Vec3F *);
 s32 smackGetPlayerValue(u8 player);
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/smack/__entrypoint_func_smack_400000.s")
 
@@ -48,7 +48,125 @@ void func_smack_004000E0(void) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/smack/func_smack_00400290.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/smack/func_smack_0040038C.s")
+/* Consumed views only. RE_UNKNOWN: authored full types, backing extents and
+ * callback/provider mutation and lifetime guarantees; no storage is added. */
+#include "uvasset_types.h"
+typedef struct {
+    u8 unknown00[0x18];
+    Vec3F position18;
+    u8 unknown24[8];
+    s32 objectId2C;
+    u8 unknown30[4];
+    s32 modelId34;
+    u8 dynamicObject38;
+    u8 occupied39;
+    u8 blocked3A;
+    u8 detachRequested3B;
+} SmackImpactRecordView;
+typedef struct { u8 unknown00[0x14]; s32 controllerIndex14; } SmackImpactSourceView;
+typedef struct {
+    f32 minimumMagnitude00;
+    f32 replacementThreshold04;
+    u8 unknown08[0x18];
+    f32 gateReset20;
+    u8 unknown24[0xC];
+    s32 returnFlag30;
+    u8 unknown34[4];
+    s32 (*callback38)(SmackImpactRecordView *, f32, Vec3F *, SmackImpactSourceView *);
+} SmackImpactConfigurationView;
+typedef struct {
+    u8 unknown00[0x18];
+    void (*impact18)(s32, f32, Vec3F *);
+} SmackImpactAudioExportsView;
+extern void *gCarAudioExports;
+extern f32 D_smack_00401638;
+extern f32 D_smack_0040163C;
+extern f32 D_smack_00401610;
+extern f32 D_smack_00401614;
+s32 smackProcessObjectImpact(SmackImpactRecordView *, Vec3F *, SmackImpactSourceView *);
+/* The func_smack_00401240 prototype is completed near its original declaration
+ * using the actual 192-instruction provider: A0 is the record; A1 is homed then
+ * read as f32 at 0x00401490; A2 is the vector passed to scaling at 0x00401428.
+ * RE_UNKNOWN: the helper's authored record type and callback 0x38's authored
+ * type. The callback view describes only arguments consumed at this callsite. */
+
+/* Apply the loaded model's impact thresholds, optional hook and effects.
+ * A weak hit requests detachment and returns zero. Models 0x80/0xF6 also use
+ * their shared gate before audio. Audio may set blocked; the later hook may
+ * end processing before rumble and motion/replacement dispatch.
+ * RE_ORIGINAL_QUIRK: reload blocked after audio, preserve ordered float tests,
+ * retain the configuration pointer across callbacks, and finally store 1 to
+ * blocked even if audio already changed it. No callback rollback is added.
+ * RE_UNKNOWN: source/controller bounds, magnitude/gate units, descriptor and
+ * callback lifetimes/aliasing, return-code meanings and authored full types.
+ */
+s32 smackProcessObjectImpact(SmackImpactRecordView *record, Vec3F *impactVector,
+                             SmackImpactSourceView *source) {
+    f32 magnitude;
+    ParsedUVMD *model;
+    SmackImpactConfigurationView *configuration;
+    s32 (*callback)(SmackImpactRecordView *, f32, Vec3F *, SmackImpactSourceView *);
+
+    if (record == NULL) {
+        return 0;
+    }
+    if (record->occupied39 == 0) {
+        return 0;
+    }
+    if (record->blocked3A != 0) {
+        return 1;
+    }
+    model = uvGetLoadedFile('UVMD', record->modelId34);
+    if (model == NULL || model->unk20 == NULL) {
+        return 0;
+    }
+    configuration = (SmackImpactConfigurationView *)model->unk20;
+    magnitude = gUvFvecExports->uvVec3FLen(impactVector);
+    if (magnitude < configuration->minimumMagnitude00) {
+        record->detachRequested3B = 1;
+        return 0;
+    }
+    if (record->modelId34 == 0x80) {
+        if (D_smack_00401638 > 0.0f || magnitude < D_smack_00401610) {
+            return 1;
+        }
+        D_smack_00401638 = configuration->gateReset20;
+    }
+    if (record->modelId34 == 0xF6) {
+        if (D_smack_0040163C > 0.0f || magnitude < D_smack_00401614) {
+            return 1;
+        }
+        D_smack_0040163C = configuration->gateReset20;
+    }
+    ((SmackImpactAudioExportsView *)gCarAudioExports)->impact18(
+        record->modelId34, magnitude, &record->position18);
+    if (record->blocked3A == 0) {
+        callback = configuration->callback38;
+        if (callback != NULL && callback(record, magnitude, impactVector, source) != 0) {
+            record->detachRequested3B = 1;
+            return 1;
+        }
+        if (source != NULL) {
+            ((Rumble_Exports *)gRumbleExports)->rumbleMergeQuantizedPatternValues(
+                source->controllerIndex14, 0.5f, 0.3f, 0.0f);
+        }
+        if (configuration->replacementThreshold04 < magnitude) {
+            func_smack_00401240(record, magnitude, impactVector);
+        } else {
+            smackSetVelocityAndRandomizeSpin((SmackMotionState *)record,
+                                            magnitude, impactVector);
+        }
+    }
+    record->blocked3A = 1;
+    if (configuration->returnFlag30 != 0) {
+        if (record->dynamicObject38 != 0) {
+            return 2;
+        }
+        return 3;
+    }
+    return 1;
+}
+
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/smack/func_smack_0040062C.s")
 

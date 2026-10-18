@@ -440,7 +440,7 @@
     "src/modules/selection.c": "2604331eee24a7aaa146909183ebb315b3ccd68faf16abfa4284e15b70023814",
     "src/modules/shadow.c": "0fca8809ea94a13d3892888077ec3fb12d6c0936d47bf754408687de9495d3d7",
     "src/modules/skid.c": "981393e4b967d8c5a37b9a02f5a33eec049981cda90ea9821e7870fe17f8e211",
-    "src/modules/smack.c": "7e2c06b48290d4aad693051a0fa5e918a7c97ee0cdd55c9c0cb0c21e37ab9a9f",
+    "src/modules/smack.c": "00a4c7b7ff7724045beff604527aa61f83820768a20aea530cc61963131e0a8c",
     "src/modules/snd.c": "8ee26503d649b59f81fe2e7b735e13d11b1863af188cabdf310ba7bc6588d9df",
     "src/modules/sparks.c": "ddeb51c69317d6a6c9f2b20df04fbbe2ccb29339acd76b01c0635f8a41bf9773",
     "src/modules/splash.c": "cb236edd1d5e78c972b7ec7e0f56d93a81544f089caa6419ca74fe5dd4881c22",
@@ -522,22 +522,22 @@
     "src/sched.c": "26791ca9f30fd5355b11ea03a64a457757d2029595be26428c2925798105d9b4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "43a3b9c1e3887847f02c1415e7523445a0d91dd619208e3ff3c1fe7ad4325b79",
+    "docs/STRATEGY_V4.md": "612833ccfffd57f5435e2fd487f0ff4984d0a932bde8734bb13c741c88e1ac30",
     "docs/VALIDATION_20261006.md": "a46820c10aba34e3c1901bd9bdc4260f684530f44fcf7f61d9c7bb33e0c91031"
   },
   "counts": {
     "address_function": 910,
-    "address_global": 1694,
-    "assembly": 722,
+    "address_global": 1698,
+    "assembly": 721,
     "audit_debt": 30,
     "conditional_draft": 4,
     "decompiler_local": 623,
     "draft_marker": 55,
-    "explicit_unknown": 1950,
+    "explicit_unknown": 1953,
     "layout_padding": 281,
-    "offset_field": 1809,
+    "offset_field": 1815,
     "opaque_type": 285,
-    "original_quirk": 563,
+    "original_quirk": 564,
     "uncertainty_note": 88,
     "unused_identifier": 165
   },
@@ -15959,7 +15959,7 @@
       "symbol": "func_smack_0040062C",
       "lines": [
         14,
-        62
+        180
       ],
       "owners": [
         {
@@ -15973,9 +15973,9 @@
         {
           "kind": "function",
           "name": "smackAttachObjectRecord",
-          "declaration_line": 59,
+          "declaration_line": 177,
           "lines": [
-            62
+            180
           ]
         }
       ]
@@ -16006,7 +16006,7 @@
       "symbol": "func_smack_0040097C",
       "lines": [
         18,
-        107
+        225
       ],
       "owners": [
         {
@@ -16020,9 +16020,9 @@
         {
           "kind": "function",
           "name": "smackAdvanceObjectMotion",
-          "declaration_line": 94,
+          "declaration_line": 212,
           "lines": [
-            107
+            225
           ]
         }
       ]
@@ -16033,7 +16033,8 @@
       "path": "src/modules/smack.c",
       "symbol": "func_smack_00401240",
       "lines": [
-        34
+        34,
+        154
       ],
       "owners": [
         {
@@ -16042,6 +16043,14 @@
           "declaration_line": 34,
           "lines": [
             34
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "smackProcessObjectImpact",
+          "declaration_line": 103,
+          "lines": [
+            154
           ]
         }
       ]
@@ -51714,15 +51723,15 @@
       "symbol": "D_80025D70",
       "lines": [
         27,
-        100
+        218
       ],
       "owners": [
         {
           "kind": "function",
           "name": "smackAdvanceObjectMotion",
-          "declaration_line": 94,
+          "declaration_line": 212,
           "lines": [
-            100
+            218
           ]
         },
         {
@@ -51736,21 +51745,77 @@
       ]
     },
     {
+      "id": "Q-2e562b2527b6",
+      "kind": "address_global",
+      "path": "src/modules/smack.c",
+      "symbol": "D_smack_00401610",
+      "lines": [
+        84,
+        130
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "smackProcessObjectImpact",
+          "declaration_line": 103,
+          "lines": [
+            130
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_smack_00401610",
+          "declaration_line": 84,
+          "lines": [
+            84
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-19115a419db1",
+      "kind": "address_global",
+      "path": "src/modules/smack.c",
+      "symbol": "D_smack_00401614",
+      "lines": [
+        85,
+        136
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "smackProcessObjectImpact",
+          "declaration_line": 103,
+          "lines": [
+            136
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_smack_00401614",
+          "declaration_line": 85,
+          "lines": [
+            85
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-9ef2c7be07ab",
       "kind": "address_global",
       "path": "src/modules/smack.c",
       "symbol": "D_smack_0040161C",
       "lines": [
         28,
-        113
+        231
       ],
       "owners": [
         {
           "kind": "function",
           "name": "smackAdvanceObjectMotion",
-          "declaration_line": 94,
+          "declaration_line": 212,
           "lines": [
-            113
+            231
           ]
         },
         {
@@ -51770,15 +51835,15 @@
       "symbol": "D_smack_00401620",
       "lines": [
         31,
-        140
+        258
       ],
       "owners": [
         {
           "kind": "function",
           "name": "smackSetVelocityAndRandomizeSpin",
-          "declaration_line": 126,
+          "declaration_line": 244,
           "lines": [
-            140
+            258
           ]
         },
         {
@@ -51797,24 +51862,84 @@
       "path": "src/modules/smack.c",
       "symbol": "D_smack_00401630",
       "lines": [
-        164,
-        171
+        282,
+        289
       ],
       "owners": [
         {
           "kind": "function",
           "name": "smackGetPlayerValue",
-          "declaration_line": 169,
+          "declaration_line": 287,
           "lines": [
-            171
+            289
           ]
         },
         {
           "kind": "global",
           "name": "D_smack_00401630",
-          "declaration_line": 164,
+          "declaration_line": 282,
           "lines": [
-            164
+            282
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-0dd38c7f1472",
+      "kind": "address_global",
+      "path": "src/modules/smack.c",
+      "symbol": "D_smack_00401638",
+      "lines": [
+        82,
+        130,
+        133
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "smackProcessObjectImpact",
+          "declaration_line": 103,
+          "lines": [
+            130,
+            133
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_smack_00401638",
+          "declaration_line": 82,
+          "lines": [
+            82
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-b0d144d559f4",
+      "kind": "address_global",
+      "path": "src/modules/smack.c",
+      "symbol": "D_smack_0040163C",
+      "lines": [
+        83,
+        136,
+        139
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "smackProcessObjectImpact",
+          "declaration_line": 103,
+          "lines": [
+            136,
+            139
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_smack_0040163C",
+          "declaration_line": 83,
+          "lines": [
+            83
           ]
         }
       ]
@@ -88287,22 +88412,12 @@
       "evidence": "asm/us/nonmatchings/modules/smack/func_smack_00400290.s"
     },
     {
-      "id": "Q-307a18a726bf",
-      "kind": "assembly",
-      "path": "src/modules/smack.c",
-      "symbol": "func_smack_0040038C",
-      "lines": [
-        51
-      ],
-      "evidence": "asm/us/nonmatchings/modules/smack/func_smack_0040038C.s"
-    },
-    {
       "id": "Q-98c30c7a2e5d",
       "kind": "assembly",
       "path": "src/modules/smack.c",
       "symbol": "func_smack_0040062C",
       "lines": [
-        53
+        171
       ],
       "evidence": "asm/us/nonmatchings/modules/smack/func_smack_0040062C.s"
     },
@@ -88312,7 +88427,7 @@
       "path": "src/modules/smack.c",
       "symbol": "func_smack_00400824",
       "lines": [
-        73
+        191
       ],
       "evidence": "asm/us/nonmatchings/modules/smack/func_smack_00400824.s"
     },
@@ -88322,7 +88437,7 @@
       "path": "src/modules/smack.c",
       "symbol": "func_smack_0040097C",
       "lines": [
-        86
+        204
       ],
       "evidence": "asm/us/nonmatchings/modules/smack/func_smack_0040097C.s"
     },
@@ -88332,7 +88447,7 @@
       "path": "src/modules/smack.c",
       "symbol": "func_smack_00401240",
       "lines": [
-        161
+        279
       ],
       "evidence": "asm/us/nonmatchings/modules/smack/func_smack_00401240.s"
     },
@@ -139803,19 +139918,49 @@
       "path": "src/modules/smack.c",
       "symbol": "Advance the object's translation by velocity times the shared scalar. * The existing step helper decides whether rotations and matrix publication * run; gravity-like Z acceleration and the position copy run on either path. * RE_ORIGINAL_QUIRK: retain the scalar snapshot across provider callbacks, * live record reloads and the pre-step translation copied into position. * RE_UNKNOWN: time units, the step helper's full policy and record lifetime.",
       "lines": [
-        88
+        206
       ],
       "evidence": "Advance the object's translation by velocity times the shared scalar. * The existing step helper decides whether rotations and matrix publication * run; gravity-like Z acceleration and the position copy run on either path. * RE_ORIGINAL_QUIRK: retain the scalar snapshot across provider callbacks, * live record reloads and the pre-step translation copied into position. * RE_UNKNOWN: time units, the step helper's full policy and record lifetime.",
       "owners": [
         {
           "kind": "function",
           "name": "smackAdvanceObjectMotion",
-          "declaration_line": 94,
+          "declaration_line": 212,
           "lines": [
-            88
+            206
           ]
         }
       ]
+    },
+    {
+      "id": "Q-a84a208887e3",
+      "kind": "explicit_unknown",
+      "path": "src/modules/smack.c",
+      "symbol": "Apply the loaded model's impact thresholds, optional hook and effects. * A weak hit requests detachment and returns zero. Models 0x80/0xF6 also use * their shared gate before audio. Audio may set blocked; the later hook may * end processing before rumble and motion/replacement dispatch. * RE_ORIGINAL_QUIRK: reload blocked after audio, preserve ordered float tests, * retain the configuration pointer across callbacks, and finally store 1 to * blocked even if audio already changed it. No callback rollback is added. * RE_UNKNOWN: source/controller bounds, magnitude/gate units, descriptor and * callback lifetimes/aliasing, return-code meanings and authored full types.",
+      "lines": [
+        93
+      ],
+      "evidence": "Apply the loaded model's impact thresholds, optional hook and effects. * A weak hit requests detachment and returns zero. Models 0x80/0xF6 also use * their shared gate before audio. Audio may set blocked; the later hook may * end processing before rumble and motion/replacement dispatch. * RE_ORIGINAL_QUIRK: reload blocked after audio, preserve ordered float tests, * retain the configuration pointer across callbacks, and finally store 1 to * blocked even if audio already changed it. No callback rollback is added. * RE_UNKNOWN: source/controller bounds, magnitude/gate units, descriptor and * callback lifetimes/aliasing, return-code meanings and authored full types.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "smackProcessObjectImpact",
+          "declaration_line": 103,
+          "lines": [
+            93
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-1d3523dc29f6",
+      "kind": "explicit_unknown",
+      "path": "src/modules/smack.c",
+      "symbol": "Consumed views only. RE_UNKNOWN: authored full types, backing extents and * callback/provider mutation and lifetime guarantees; no storage is added.",
+      "lines": [
+        51
+      ],
+      "evidence": "Consumed views only. RE_UNKNOWN: authored full types, backing extents and * callback/provider mutation and lifetime guarantees; no storage is added."
     },
     {
       "id": "Q-bc14273112a1",
@@ -139843,16 +139988,16 @@
       "path": "src/modules/smack.c",
       "symbol": "Return zero for player indices at least four; otherwise return the selected * signed halfword from the shared four-entry table. * RE_UNKNOWN: table meaning and refresh lifetime require consumers.",
       "lines": [
-        165
+        283
       ],
       "evidence": "Return zero for player indices at least four; otherwise return the selected * signed halfword from the shared four-entry table. * RE_UNKNOWN: table meaning and refresh lifetime require consumers.",
       "owners": [
         {
           "kind": "function",
           "name": "smackGetPlayerValue",
-          "declaration_line": 169,
+          "declaration_line": 287,
           "lines": [
-            165
+            283
           ]
         }
       ]
@@ -139863,19 +140008,29 @@
       "path": "src/modules/smack.c",
       "symbol": "Scale the supplied vector into velocity, add a magnitude-scaled Z term, * and generate angular components using separate sign/value random draws. * X/Y angular fields change only for strength > 8 or matrix[2][2] < 0.5; * Z always changes. Preserve ordered calls and left-associated float products. * RE_ORIGINAL_QUIRK: the sign draw and value draw are independent; this is * not an absolute-value random sampler. Nonpositive strength is negated, * retaining the original signed-zero/unordered comparison behavior. * RE_UNKNOWN: strength units, random distribution contract and record aliasing.",
       "lines": [
-        118
+        236
       ],
       "evidence": "Scale the supplied vector into velocity, add a magnitude-scaled Z term, * and generate angular components using separate sign/value random draws. * X/Y angular fields change only for strength > 8 or matrix[2][2] < 0.5; * Z always changes. Preserve ordered calls and left-associated float products. * RE_ORIGINAL_QUIRK: the sign draw and value draw are independent; this is * not an absolute-value random sampler. Nonpositive strength is negated, * retaining the original signed-zero/unordered comparison behavior. * RE_UNKNOWN: strength units, random distribution contract and record aliasing.",
       "owners": [
         {
           "kind": "function",
           "name": "smackSetVelocityAndRandomizeSpin",
-          "declaration_line": 126,
+          "declaration_line": 244,
           "lines": [
-            118
+            236
           ]
         }
       ]
+    },
+    {
+      "id": "Q-2710f831c0e8",
+      "kind": "explicit_unknown",
+      "path": "src/modules/smack.c",
+      "symbol": "The func_smack_00401240 prototype is completed near its original declaration * using the actual 192-instruction provider: A0 is the record; A1 is homed then * read as f32 at 0x00401490; A2 is the vector passed to scaling at 0x00401428. * RE_UNKNOWN: the helper's authored record type and callback 0x38's authored * type. The callback view describes only arguments consumed at this callsite.",
+      "lines": [
+        87
+      ],
+      "evidence": "The func_smack_00401240 prototype is completed near its original declaration * using the actual 192-instruction provider: A0 is the record; A1 is homed then * read as f32 at 0x00401490; A2 is the vector passed to scaling at 0x00401428. * RE_UNKNOWN: the helper's authored record type and callback 0x38's authored * type. The callback view describes only arguments consumed at this callsite."
     },
     {
       "id": "Q-e7cefea7c587",
@@ -196482,6 +196637,34 @@
       ]
     },
     {
+      "id": "Q-12773af2dc20",
+      "kind": "offset_field",
+      "path": "src/modules/smack.c",
+      "symbol": "callback38",
+      "lines": [
+        75,
+        144
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "smackProcessObjectImpact",
+          "declaration_line": 103,
+          "lines": [
+            144
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "SmackImpactConfigurationView",
+          "declaration_line": 67,
+          "lines": [
+            75
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-cad79258560a",
       "kind": "offset_field",
       "path": "src/modules/smack.c",
@@ -196496,6 +196679,27 @@
           "declaration_line": 10,
           "lines": [
             10
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-55924f8a8d46",
+      "kind": "offset_field",
+      "path": "src/modules/smack.c",
+      "symbol": "unk20",
+      "lines": [
+        120,
+        123
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "smackProcessObjectImpact",
+          "declaration_line": 103,
+          "lines": [
+            120,
+            123
           ]
         }
       ]
@@ -196558,20 +196762,132 @@
       ]
     },
     {
+      "id": "Q-db4986c7809b",
+      "kind": "offset_field",
+      "path": "src/modules/smack.c",
+      "symbol": "unknown00",
+      "lines": [
+        55,
+        66,
+        78
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "SmackImpactAudioExportsView",
+          "declaration_line": 77,
+          "lines": [
+            78
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "SmackImpactRecordView",
+          "declaration_line": 54,
+          "lines": [
+            55
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "SmackImpactSourceView",
+          "declaration_line": 66,
+          "lines": [
+            66
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-108eafe46bab",
+      "kind": "offset_field",
+      "path": "src/modules/smack.c",
+      "symbol": "unknown08",
+      "lines": [
+        70
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "SmackImpactConfigurationView",
+          "declaration_line": 67,
+          "lines": [
+            70
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-d4da5f674fd7",
       "kind": "offset_field",
       "path": "src/modules/smack.c",
       "symbol": "unknown24",
       "lines": [
-        24
+        24,
+        57,
+        72
       ],
       "owners": [
+        {
+          "kind": "type",
+          "name": "SmackImpactConfigurationView",
+          "declaration_line": 67,
+          "lines": [
+            72
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "SmackImpactRecordView",
+          "declaration_line": 54,
+          "lines": [
+            57
+          ]
+        },
         {
           "kind": "type",
           "name": "SmackMotionState",
           "declaration_line": 20,
           "lines": [
             24
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-ccee9ab78887",
+      "kind": "offset_field",
+      "path": "src/modules/smack.c",
+      "symbol": "unknown30",
+      "lines": [
+        59
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "SmackImpactRecordView",
+          "declaration_line": 54,
+          "lines": [
+            59
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-623ac3486874",
+      "kind": "offset_field",
+      "path": "src/modules/smack.c",
+      "symbol": "unknown34",
+      "lines": [
+        74
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "SmackImpactConfigurationView",
+          "declaration_line": 67,
+          "lines": [
+            74
           ]
         }
       ]
@@ -246145,16 +246461,36 @@
       "path": "src/modules/smack.c",
       "symbol": "Advance the object's translation by velocity times the shared scalar. * The existing step helper decides whether rotations and matrix publication * run; gravity-like Z acceleration and the position copy run on either path. * RE_ORIGINAL_QUIRK: retain the scalar snapshot across provider callbacks, * live record reloads and the pre-step translation copied into position. * RE_UNKNOWN: time units, the step helper's full policy and record lifetime.",
       "lines": [
-        88
+        206
       ],
       "evidence": "Advance the object's translation by velocity times the shared scalar. * The existing step helper decides whether rotations and matrix publication * run; gravity-like Z acceleration and the position copy run on either path. * RE_ORIGINAL_QUIRK: retain the scalar snapshot across provider callbacks, * live record reloads and the pre-step translation copied into position. * RE_UNKNOWN: time units, the step helper's full policy and record lifetime.",
       "owners": [
         {
           "kind": "function",
           "name": "smackAdvanceObjectMotion",
-          "declaration_line": 94,
+          "declaration_line": 212,
           "lines": [
-            88
+            206
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-37babb4e8a4b",
+      "kind": "original_quirk",
+      "path": "src/modules/smack.c",
+      "symbol": "Apply the loaded model's impact thresholds, optional hook and effects. * A weak hit requests detachment and returns zero. Models 0x80/0xF6 also use * their shared gate before audio. Audio may set blocked; the later hook may * end processing before rumble and motion/replacement dispatch. * RE_ORIGINAL_QUIRK: reload blocked after audio, preserve ordered float tests, * retain the configuration pointer across callbacks, and finally store 1 to * blocked even if audio already changed it. No callback rollback is added. * RE_UNKNOWN: source/controller bounds, magnitude/gate units, descriptor and * callback lifetimes/aliasing, return-code meanings and authored full types.",
+      "lines": [
+        93
+      ],
+      "evidence": "Apply the loaded model's impact thresholds, optional hook and effects. * A weak hit requests detachment and returns zero. Models 0x80/0xF6 also use * their shared gate before audio. Audio may set blocked; the later hook may * end processing before rumble and motion/replacement dispatch. * RE_ORIGINAL_QUIRK: reload blocked after audio, preserve ordered float tests, * retain the configuration pointer across callbacks, and finally store 1 to * blocked even if audio already changed it. No callback rollback is added. * RE_UNKNOWN: source/controller bounds, magnitude/gate units, descriptor and * callback lifetimes/aliasing, return-code meanings and authored full types.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "smackProcessObjectImpact",
+          "declaration_line": 103,
+          "lines": [
+            93
           ]
         }
       ]
@@ -246165,16 +246501,16 @@
       "path": "src/modules/smack.c",
       "symbol": "Scale the supplied vector into velocity, add a magnitude-scaled Z term, * and generate angular components using separate sign/value random draws. * X/Y angular fields change only for strength > 8 or matrix[2][2] < 0.5; * Z always changes. Preserve ordered calls and left-associated float products. * RE_ORIGINAL_QUIRK: the sign draw and value draw are independent; this is * not an absolute-value random sampler. Nonpositive strength is negated, * retaining the original signed-zero/unordered comparison behavior. * RE_UNKNOWN: strength units, random distribution contract and record aliasing.",
       "lines": [
-        118
+        236
       ],
       "evidence": "Scale the supplied vector into velocity, add a magnitude-scaled Z term, * and generate angular components using separate sign/value random draws. * X/Y angular fields change only for strength > 8 or matrix[2][2] < 0.5; * Z always changes. Preserve ordered calls and left-associated float products. * RE_ORIGINAL_QUIRK: the sign draw and value draw are independent; this is * not an absolute-value random sampler. Nonpositive strength is negated, * retaining the original signed-zero/unordered comparison behavior. * RE_UNKNOWN: strength units, random distribution contract and record aliasing.",
       "owners": [
         {
           "kind": "function",
           "name": "smackSetVelocityAndRandomizeSpin",
-          "declaration_line": 126,
+          "declaration_line": 244,
           "lines": [
-            118
+            236
           ]
         }
       ]
