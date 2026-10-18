@@ -181,5 +181,64 @@ class AdjacentLedgerTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             ledger.collect(self.root)
 
+
+
+class TerminalLiteralLedgerTests(unittest.TestCase):
+    """Synthetic guard/classification fixture; no recovered code is compiled."""
+    def setUp(self):
+        import tempfile
+        self.temp = tempfile.TemporaryDirectory(prefix='terminal-ledger-test-')
+        self.addCleanup(self.temp.cleanup)
+        self.root = Path(self.temp.name)
+        self.layout = fixtures.natural_terminal_fixture113300(json.loads((PROJECT / CONFIG).read_text(encoding='utf-8')))
+        self.assertIn('terminal_literal_tail', self.layout)
+        def write(name, raw):
+            path = self.root / name
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_bytes(raw)
+            return path
+        self.write = write
+        write(CONFIG, (json.dumps(self.layout, sort_keys=True, indent=2) + '\n').encode())
+        for name in [self.layout['witness'], 'tools/readonly_layout/uvdyn_rom.original-rodata.s', 'Makefile']:
+            write(name, (PROJECT / name).read_bytes())
+        write('config/us/modules.yaml', json.dumps({'Modules': [{'name': 'uvdyn_rom', 'done_sections': ['rodata'], 'readonly_layout': CONFIG}]}).encode())
+        _, decoded, prefix, suffix = tool.load(self.root, CONFIG, 'uvdyn_rom')
+        write(self.layout['prefix_assembly'], prefix)
+        tail = self.layout['terminal_literal_tail']
+        write(tail['assembly'], suffix[tail['assembly']])
+        # Existing real host declarations remain instruction debt. The fixture
+        # deliberately has no host bodies, so their unknown sizes remain visible.
+        source = '#pragma GLOBAL_ASM("' + self.layout['prefix_assembly'] + '")\n'
+        for table, span in zip(self.layout['tables'], self.layout['late_spans']):
+            source += 'void ' + table['owner_c_symbol'] + '(void) {}\n'
+            if span is not None:
+                source += '#pragma GLOBAL_ASM("' + span['host_assembly'] + '")\n'
+        source += '#pragma GLOBAL_ASM("' + tail['assembly'] + '")\n'
+        write(self.layout['source'], source.encode())
+        write('beetleadventurerac.us.sha1', ('0' * 40 + '\n').encode())
+
+    def test_terminal44_is_only_subordinate_data_and_hosts_remain_debt(self):
+        report = ledger.collect(self.root)
+        self.assertEqual(report['ordinary_assembly_references'], 2)
+        self.assertEqual(report['remaining_sizes_unknown'], 2)
+        self.assertEqual(report['known_remaining_code_bytes'], 0)
+        self.assertEqual(report['assembly_data_references'], 1)
+        row, = report['assembly_data']
+        self.assertEqual((row['original_readonly_bytes'], row['compiler_owned_readonly_bytes'], row['retained_readonly_bytes']), (880, 364, 516))
+        island, = row['retained_islands']
+        self.assertEqual(island['bytes'], 44)
+        self.assertEqual(island['assembly'], self.layout['terminal_literal_tail']['assembly'])
+
+    def test_changed_terminal_data_cannot_be_reclassified(self):
+        path = self.root / self.layout['terminal_literal_tail']['assembly']
+        path.write_bytes(path.read_bytes() + b'.section .text\nnop\n')
+        with self.assertRaises(ValueError):
+            ledger.collect(self.root)
+
+    def test_undeclared_or_shared_tail_cannot_hide_a_function(self):
+        self.write('src/modules/other.c', ('#pragma GLOBAL_ASM("' + self.layout['terminal_literal_tail']['assembly'] + '")\n').encode())
+        with self.assertRaises(ValueError):
+            ledger.collect(self.root)
+
 if __name__ == '__main__':
     unittest.main()

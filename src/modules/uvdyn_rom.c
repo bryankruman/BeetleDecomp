@@ -337,7 +337,7 @@ typedef struct {
 } DynCallbackPrefix;
 
 
-extern s32 D_uvdyn_rom_00411D48[];
+
 
 extern f32 *D_uvdyn_rom_00411DB8;
 extern u16 D_uvdyn_rom_00411DE8;
@@ -3048,22 +3048,49 @@ void uvDynSetSecondaryVectorProperty(DynSecondaryState *state, s32 selector, Vec
 }
 #line 613 "src/modules/uvdyn_rom.c"
 
-/* Original selector dispatch over the input address. Null input and selector
- * 2 explicitly return zero; selectors 3 and 6 return input offsets 0x48 and
- * 0x164. Selectors 7 and 8 return offsets 0x14C and 0x17C only when the input
- * halfword at offset 0x04 is zero.
- * RE_ORIGINAL_QUIRK: selectors 4 and 5, out-of-range selectors, and selectors
- * 7/8 with a nonzero halfword at 0x04 load the word at SP + 4 without any
- * preceding store to that word in this function. Preserve the original read;
- * no initialized return value or null default has been established.
- * RE_UNKNOWN: that stack word's provenance, the historical return convention,
- * input object ownership/extent, selector meanings and valid caller domains.
- * The original seven-word table at 0x411D48 proves the branch mapping; trace
- * original direct and indirect callers and object/kind producers before
- * assigning a pointer-return contract, claiming reachable impact or fixing
- * the unassigned-word paths. Keep native instructions while this is unresolved. */
-#line 614 "src/modules/uvdyn_rom.c"
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00411300.s")
+#line 1 "dyn-secondary-address-body-109804.c"
+/* Return the selected address within the existing secondary-state view.
+ * Only the input address, selector and unsigned kind halfword are consumed;
+ * selector 3 returns the byte address +0x48 without asserting its object type.
+ * RE_ORIGINAL_QUIRK: result is deliberately uninitialized. Selectors 4/5,
+ * selectors outside 2..8, and selectors 7/8 with nonzero kind reach the
+ * original load of an unwritten SP+4 word. Null input and selector 2 instead
+ * return null explicitly. Do not initialize or sanitize those other paths.
+ * RE_UNKNOWN: valid caller selectors/kinds, that stack word's provenance,
+ * allocation/ownership/lifetime and the historical complete export prototype.
+ * This C draft does not establish defined behavior for the unwritten-result
+ * paths. Every native word and relocation still requires exact qualification. */
+void *uvDynGetSecondaryPropertyAddress(DynSecondaryState *state, s32 selector) {
+    void *result;
+
+    if (state == NULL) {
+        return NULL;
+    }
+    switch (selector) {
+    case 2:
+        return NULL;
+    case 3:
+        result = (u8 *)state + 0x48;
+        break;
+    case 6:
+        result = &state->vector164;
+        break;
+    case 7:
+        if (state->kind == 0) {
+            result = &state->vector14C;
+        }
+        break;
+    case 8:
+        if (state->kind == 0) {
+            result = &state->vector17C;
+        }
+        break;
+    default:
+        break;
+    }
+    return result;
+}
+
 #line 615 "src/modules/uvdyn_rom.c"
 
 /* RE_ORIGINAL_QUIRK: Unlike the setter, selectors 7/8 have no kind-zero gate.
@@ -3113,7 +3140,7 @@ void uvDynSetSecondaryMatrixProperty(DynSecondaryState *state, s32 selector, Mtx
     switch (selector) {
         case 3:
             D_uvdyn_rom_00411F70->uvMat4FCopy(&state->matrix18, inputMatrix);
-            if (!(state->value134 < D_uvdyn_rom_00411D68 && D_uvdyn_rom_00411D70 < state->value134)) {
+            if (!(state->value134 < 1e-5 && -1e-5 < state->value134)) {
                 D_uvdyn_rom_00411F70->uvMat4TransformPoint(&state->matrix18, &state->vector118, &state->vector194);
             } else {
                 state->vector118.x = state->matrix18.xw;
@@ -3127,7 +3154,7 @@ void uvDynSetSecondaryMatrixProperty(DynSecondaryState *state, s32 selector, Mtx
             D_uvdyn_rom_00411F70->uvMat4CopyLinear3x3(&state->matrixD8, inputMatrix);
             D_uvdyn_rom_00411F70->uvMat4TransposeLinear3x3PreservingRest(&linearTranspose, &state->matrixD8);
             D_uvdyn_rom_00411F70->uvMat4CopyLinear3x3(&state->matrix18, &linearTranspose);
-            if (!(state->value134 < D_uvdyn_rom_00411D78 && D_uvdyn_rom_00411D80 < state->value134)) {
+            if (!(state->value134 < 1e-5 && -1e-5 < state->value134)) {
                 D_uvdyn_rom_00411F70->uvMat4TransformPoint(&state->matrix18, &state->vector118, &state->vector194);
             } else {
                 state->vector118.x = state->matrix18.xw;

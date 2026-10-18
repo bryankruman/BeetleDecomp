@@ -58,6 +58,8 @@ def declared_assembly_data(root):
             raise ValueError('Multiple owners declare the same readonly prefix: ' + assembly)
         tables = layout['tables'] if layout['version'] in (2, 3, 4) else [layout]
         owned_bytes = sum(table['table_end'] - table['table_begin'] for table in tables)
+        if 'terminal_c_literals' in layout:
+            owned_bytes += layout['terminal_c_literals']['end'] - layout['terminal_c_literals']['begin']
         declared[assembly] = {
             'source': layout['source'], 'symbol': path.stem, 'assembly': assembly,
             'bytes': tables[0]['table_begin'] - layout['begin'], 'module': module['name'],
@@ -68,11 +70,13 @@ def declared_assembly_data(root):
             'compiler_owned_readonly_bytes': owned_bytes,
             'ownership': 'preserved-original-readonly-prefix',
         }
-        if layout['version'] == 4:
+        if layout['version'] == 4 or 'terminal_literal_tail' in layout:
             # One full-section ownership row; islands are exact subordinate
             # data references, not functions or another copy of section totals.
             islands = []
-            for island in layout['retained_islands']:
+            # load/validate_source/check_users above already bind the sole DYN tail.
+            retained_islands = ([layout['terminal_literal_tail']] if 'terminal_literal_tail' in layout else layout['retained_islands'])
+            for island in retained_islands:
                 if island is None:
                     continue
                 name = island['assembly']

@@ -15,7 +15,26 @@ spec.loader.exec_module(tool)
 CONFIG = 'config/us/readonly_layout/uvdyn_rom.json'
 
 
+def natural_terminal_fixture113300(layout):
+    """Project only exact measured current metadata to the unchanged old fixtures.
+
+    This test-only adapter never changes production extraction or ledger input.
+    """
+    if 'terminal_c_literals' not in layout:
+        return layout
+    encoded = (json.dumps(layout, sort_keys=True, indent=2) + '\n').encode()
+    assert hashlib.sha256(encoded).hexdigest() == '89e08270df9d55e7bb99e94d92d03f598bd3ff3a2e535b0eb642adc001918853'
+    old = copy.deepcopy(layout)
+    old.pop('terminal_c_literals')
+    old['terminal_literal_tail'] = {'assembly': 'asm/us/data/modules/uvdyn_rom-secondary.rodata-island.s', 'begin': 4267364, 'end': 4267408, 'readonly_sha256': '485b6ea86b8159929e6e77cf65fbf64fec31657b2b6615e0614201bf8ff713a6'}
+    encoded = (json.dumps(old, sort_keys=True, indent=2) + '\n').encode()
+    assert hashlib.sha256(encoded).hexdigest() == '50e5ef7f297ac938e71bcd14db229fa6df5f2def61f3be25e782352c2e2e78c3'
+    return old
+
+
+
 def v1_fixture(layout):
+    layout = legacy_v3_fixture111700(layout)
     """Keep the original one-table tests independent of the project's V2 config."""
     if layout['version'] == 1:
         return layout
@@ -27,6 +46,7 @@ def v1_fixture(layout):
 
 
 def v2_fixture(layout):
+    layout = legacy_v3_fixture111700(layout)
     """Keep accepted two-table regression cases independent of the V3 config."""
     layout = copy.deepcopy(layout)
     if layout['version'] == 3:
@@ -37,6 +57,7 @@ def v2_fixture(layout):
     return layout
 
 def v3_fixture(layout):
+    layout = legacy_v3_fixture111700(layout)
     """Keep three-owner adjacency tests independent of later readonly recoveries."""
     layout = copy.deepcopy(layout)
     assert layout['version'] == 3 and len(layout['tables']) == len(layout['late_spans']) in (3, 4)
@@ -656,6 +677,25 @@ class TerminalLayoutTests(unittest.TestCase):
         self.save_config()
         self.rejected_unchanged(self.prepare)
 
+
+
+
+def legacy_v3_fixture111700(layout):
+    layout = natural_terminal_fixture113300(layout)
+    """Keep old synthetic tests on their exact historical four-owner input."""
+    if 'terminal_literal_tail' not in layout:
+        return layout
+    encoded = (json.dumps(layout, sort_keys=True, indent=2) + '\n').encode()
+    assert hashlib.sha256(encoded).hexdigest() == '50e5ef7f297ac938e71bcd14db229fa6df5f2def61f3be25e782352c2e2e78c3'
+    old = copy.deepcopy(layout)
+    old.pop('terminal_literal_tail')
+    old['tables'] = old['tables'][:4]
+    old['late_spans'] = old['late_spans'][:4]
+    old['late_spans'][-1]['end'] = old['end']
+    old['witness'] = 'tools/readonly_layout/uvdyn_rom.original-rodata.s'
+    old['witness_sha256'] = '37498ed9124fc0b3d7dd80888c25e8002c039f1b0abaab8a8cc8595e186dcce8'
+    assert old == {'module': 'uvdyn_rom', 'source': 'src/modules/uvdyn_rom.c', 'witness': 'tools/readonly_layout/uvdyn_rom.original-rodata.s', 'witness_sha256': '37498ed9124fc0b3d7dd80888c25e8002c039f1b0abaab8a8cc8595e186dcce8', 'readonly_sha256': 'ebf5750d6c6c5efc21f1a2632733dda77295f10ff90974f400a1fc591c821c7e', 'begin': 4266528, 'end': 4267408, 'prefix_assembly': 'asm/us/data/modules/uvdyn_rom.rodata-prefix.s', 'monolithic_assembly': 'asm/us/data/modules/uvdyn_rom.rodata.s', 'version': 3, 'tables': [{'table_begin': 4266780, 'table_end': 4266892, 'table_label': 'D_uvdyn_rom_00411B1C', 'owner_original_symbol': 'func_uvdyn_rom_00403C38', 'owner_c_symbol': 'uvDynGetNodeScalarProperty', 'duplicate_assembly': 'asm/us/nonmatchings/modules/uvdyn_rom/D_uvdyn_rom_00411B1C.s', 'owner_address': 4209720, 'owner_bytes': 344, 'owner_instruction_sha256': 'b31ab1d8d4d7d1f80b9efdbb0b42ef3d5e5ccc6ef22422c88a9be410dd4b9b9d', 'owner_asm_normalized_sha256': 'ee8600d051787c7823bbaf8a555b32861db4dbdb006501ecd261ac79674990a3'}, {'table_begin': 4266972, 'table_end': 4267040, 'table_label': 'D_uvdyn_rom_00411BDC', 'owner_original_symbol': 'func_uvdyn_rom_00403F98', 'owner_c_symbol': 'uvDynGetNodePropertyAddress', 'duplicate_assembly': 'asm/us/nonmatchings/modules/uvdyn_rom/D_uvdyn_rom_00411BDC.s', 'owner_address': 4210584, 'owner_bytes': 128, 'owner_instruction_sha256': 'bd81a6f9db80d17ceaf60df43f820732e1111afccfda2a8a50f9f68b24769e56', 'owner_asm_normalized_sha256': '8d1d17dd5230e43336c0154e6ede7250dc6375c36162c657052b34906e775146'}, {'table_begin': 4267040, 'table_end': 4267116, 'table_label': 'D_uvdyn_rom_00411C20', 'owner_original_symbol': 'func_uvdyn_rom_00404018', 'owner_c_symbol': 'uvDynGetNodeVectorProperty', 'duplicate_assembly': 'asm/us/nonmatchings/modules/uvdyn_rom/D_uvdyn_rom_00411C20.s', 'owner_address': 4210712, 'owner_bytes': 436, 'owner_instruction_sha256': '7f5e1965abb2b6d056ad435f5efcd4bb4dd3d2f21a011abfcd3843db7a9c5251', 'owner_asm_normalized_sha256': '7a5b2db5d261f6da3037ca1c85d92de0126efe98ae44a63caaff12659977a5eb'}, {'table_begin': 4267116, 'table_end': 4267196, 'table_label': 'D_uvdyn_rom_00411C6C', 'owner_original_symbol': 'func_uvdyn_rom_004043E0', 'owner_c_symbol': 'uvDynGetNodeMatrixProperty', 'duplicate_assembly': 'asm/us/nonmatchings/modules/uvdyn_rom/D_uvdyn_rom_00411C6C.s', 'owner_address': 4211680, 'owner_bytes': 240, 'owner_instruction_sha256': 'f4ea07a78f4863d9c4dfe3c36dee1653e88f391079c0c2ea08bafa6e5a1118bd', 'owner_asm_normalized_sha256': '09a35a67918a289f3fe679f7911941efff7312073a39294337d0be022a679df5'}], 'late_spans': [{'begin': 4266892, 'end': 4266972, 'host_symbol': 'func_uvdyn_rom_00403D90', 'host_address': 4210064, 'host_assembly': 'asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00403D90.s', 'host_sha256': 'fc3f9018478887d888ef15718e683d3a4aaeb58561a8ba44deb236fdb36a5390', 'host_bytes': 520}, None, None, {'begin': 4267196, 'end': 4267408, 'host_address': 4215020, 'host_symbol': 'func_uvdyn_rom_004050EC', 'host_assembly': 'asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_004050EC.s', 'host_sha256': '5bd49fc0194d2fc896cfd0bf11335fcd14808411437745f93aa2ef684108f3b9', 'host_bytes': 9384}]}
+    return old
 
 if __name__ == '__main__':
     unittest.main()

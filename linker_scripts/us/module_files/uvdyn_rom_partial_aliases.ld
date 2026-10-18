@@ -1,1 +1,2 @@
 func_uvdyn_rom_00410250 = uvDynAppendSphereQueryCandidates;
+func_uvdyn_rom_00411300 = uvDynGetSecondaryPropertyAddress;

@@ -471,7 +471,7 @@
     "src/modules/uvdgeom_rom.c": "3ab1a24c4e83b42827412534cd2ec38b82c326b45f7948da843a4c3837c71647",
     "src/modules/uvdobj_rom.c": "e131bb1e09067b29f350fbc25f741d125d6cd0192a44bbe2453f432ca5a2ca22",
     "src/modules/uvdsetld_rom.c": "77566357ad845d40555073dcf6af8120ac72cdba9138e7858c7ac245e3225e76",
-    "src/modules/uvdyn_rom.c": "ce2e0807e548ab44edf43f1351af7175db0613820a4cd68db9e3c332e97e97b8",
+    "src/modules/uvdyn_rom.c": "1cf8da25e4099b171c83dcdb8cf03801f095b1066ec74db4a12a5c6b3ec87077",
     "src/modules/uvear_rom.c": "3470df1b3a03c05ea07d2a104331b39a95f4c50a2fdb4b258068c5c6bb660967",
     "src/modules/uvemitter_rom.c": "1df93039169812ad456bc6245954e4c32adf6bb4c433c03175f317945431bb59",
     "src/modules/uvenv_rom.c": "9ea1635553deee268116d31ef8acffabc13c541db719aa677ccb07fb38f4af3a",
@@ -522,13 +522,13 @@
     "src/sched.c": "26791ca9f30fd5355b11ea03a64a457757d2029595be26428c2925798105d9b4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "134670194e5c58eeb6fe2b35a094233610b4861b2aa1c8e8e31e43a96e4389fd",
+    "docs/STRATEGY_V4.md": "08c1f13724e5a700188997b6cf22ecb55ab9aa3be3c13170f817cc3f551c1ed2",
     "docs/VALIDATION_20261006.md": "a46820c10aba34e3c1901bd9bdc4260f684530f44fcf7f61d9c7bb33e0c91031"
   },
   "counts": {
     "address_function": 906,
-    "address_global": 1695,
-    "assembly": 724,
+    "address_global": 1694,
+    "assembly": 723,
     "audit_debt": 30,
     "conditional_draft": 4,
     "decompiler_local": 623,
@@ -18853,7 +18853,7 @@
       "symbol": "func_uvdyn_rom_00400A14",
       "lines": [
         357,
-        3283
+        3310
       ],
       "owners": [
         {
@@ -18867,9 +18867,9 @@
         {
           "kind": "function",
           "name": "uvDynUpdateSecondaryStateOnce",
-          "declaration_line": 3279,
+          "declaration_line": 3306,
           "lines": [
-            3283
+            3310
           ]
         }
       ]
@@ -19825,7 +19825,7 @@
       "symbol": "func_uvdyn_rom_00411644",
       "lines": [
         549,
-        3148
+        3175
       ],
       "owners": [
         {
@@ -19839,9 +19839,9 @@
         {
           "kind": "function",
           "name": "func_uvdyn_rom_00411644",
-          "declaration_line": 3148,
+          "declaration_line": 3175,
           "lines": [
-            3148
+            3175
           ]
         }
       ]
@@ -61754,42 +61754,14 @@
       ]
     },
     {
-      "id": "Q-53219b18e65b",
-      "kind": "address_global",
-      "path": "src/modules/uvdyn_rom.c",
-      "symbol": "D_uvdyn_rom_00411D48",
-      "lines": [
-        340
-      ],
-      "owners": [
-        {
-          "kind": "global",
-          "name": "D_uvdyn_rom_00411D48",
-          "declaration_line": 340,
-          "lines": [
-            340
-          ]
-        }
-      ]
-    },
-    {
       "id": "Q-ce88d944f14c",
       "kind": "address_global",
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "D_uvdyn_rom_00411D68",
       "lines": [
-        224,
-        3116
+        224
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "uvDynSetSecondaryMatrixProperty",
-          "declaration_line": 3108,
-          "lines": [
-            3116
-          ]
-        },
         {
           "kind": "global",
           "name": "D_uvdyn_rom_00411D68",
@@ -61806,18 +61778,9 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "D_uvdyn_rom_00411D70",
       "lines": [
-        225,
-        3116
+        225
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "uvDynSetSecondaryMatrixProperty",
-          "declaration_line": 3108,
-          "lines": [
-            3116
-          ]
-        },
         {
           "kind": "global",
           "name": "D_uvdyn_rom_00411D70",
@@ -61834,18 +61797,9 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "D_uvdyn_rom_00411D78",
       "lines": [
-        226,
-        3130
+        226
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "uvDynSetSecondaryMatrixProperty",
-          "declaration_line": 3108,
-          "lines": [
-            3130
-          ]
-        },
         {
           "kind": "global",
           "name": "D_uvdyn_rom_00411D78",
@@ -61862,18 +61816,9 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "D_uvdyn_rom_00411D80",
       "lines": [
-        227,
-        3130
+        227
       ],
       "owners": [
-        {
-          "kind": "function",
-          "name": "uvDynSetSecondaryMatrixProperty",
-          "declaration_line": 3108,
-          "lines": [
-            3130
-          ]
-        },
         {
           "kind": "global",
           "name": "D_uvdyn_rom_00411D80",
@@ -62549,17 +62494,17 @@
         2956,
         3024,
         3031,
-        3115,
-        3117,
-        3123,
-        3127,
-        3128,
-        3129,
-        3131,
-        3179,
-        3182,
-        3185,
-        3307
+        3142,
+        3144,
+        3150,
+        3154,
+        3155,
+        3156,
+        3158,
+        3206,
+        3209,
+        3212,
+        3334
       ],
       "owners": [
         {
@@ -62630,11 +62575,11 @@
         {
           "kind": "function",
           "name": "uvDynGetSecondaryMatrixProperty",
-          "declaration_line": 3175,
+          "declaration_line": 3202,
           "lines": [
-            3179,
-            3182,
-            3185
+            3206,
+            3209,
+            3212
           ]
         },
         {
@@ -62656,9 +62601,9 @@
         {
           "kind": "function",
           "name": "uvDynResetSecondaryState",
-          "declaration_line": 3302,
+          "declaration_line": 3329,
           "lines": [
-            3307
+            3334
           ]
         },
         {
@@ -62680,15 +62625,15 @@
         {
           "kind": "function",
           "name": "uvDynSetSecondaryMatrixProperty",
-          "declaration_line": 3108,
+          "declaration_line": 3135,
           "lines": [
-            3115,
-            3117,
-            3123,
-            3127,
-            3128,
-            3129,
-            3131
+            3142,
+            3144,
+            3150,
+            3154,
+            3155,
+            3156,
+            3158
           ]
         },
         {
@@ -62765,13 +62710,13 @@
         3033,
         3039,
         3044,
-        3082,
-        3090,
-        3093,
-        3304,
-        3305,
-        3306,
-        3308
+        3109,
+        3117,
+        3120,
+        3331,
+        3332,
+        3333,
+        3335
       ],
       "owners": [
         {
@@ -62831,11 +62776,11 @@
         {
           "kind": "function",
           "name": "uvDynGetSecondaryVectorProperty",
-          "declaration_line": 3076,
+          "declaration_line": 3103,
           "lines": [
-            3082,
-            3090,
-            3093
+            3109,
+            3117,
+            3120
           ]
         },
         {
@@ -62887,12 +62832,12 @@
         {
           "kind": "function",
           "name": "uvDynResetSecondaryState",
-          "declaration_line": 3302,
+          "declaration_line": 3329,
           "lines": [
-            3304,
-            3305,
-            3306,
-            3308
+            3331,
+            3332,
+            3333,
+            3335
           ]
         },
         {
@@ -63052,17 +62997,17 @@
       "symbol": "D_uvdyn_rom_00411F80",
       "lines": [
         70,
-        3251,
-        3252
+        3278,
+        3279
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynSetSecondaryModelLod",
-          "declaration_line": 3241,
+          "declaration_line": 3268,
           "lines": [
-            3251,
-            3252
+            3278,
+            3279
           ]
         },
         {
@@ -63091,7 +63036,7 @@
         2797,
         2812,
         2814,
-        3248
+        3275
       ],
       "owners": [
         {
@@ -63127,9 +63072,9 @@
         {
           "kind": "function",
           "name": "uvDynSetSecondaryModelLod",
-          "declaration_line": 3241,
+          "declaration_line": 3268,
           "lines": [
-            3248
+            3275
           ]
         },
         {
@@ -89627,16 +89572,6 @@
         2871
       ],
       "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00410C40.s"
-    },
-    {
-      "id": "Q-85defaf3f5c7",
-      "kind": "assembly",
-      "path": "src/modules/uvdyn_rom.c",
-      "symbol": "func_uvdyn_rom_00411300",
-      "lines": [
-        3066
-      ],
-      "evidence": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00411300.s"
     },
     {
       "id": "Q-a9a09712cd35",
@@ -146185,7 +146120,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "A zero base returns0. Selectors3,4 and5 return base plus0x18,0xD8 and0x98 * respectively through the existing signed-word interface. RE_UNKNOWN: * Unsupported nonzero-base selectors read an unassigned stack word in the * original; callers, historical pointer type and return contract are unproved. * Preserve the original default path.",
       "lines": [
-        3141
+        3168
       ],
       "evidence": "A zero base returns0. Selectors3,4 and5 return base plus0x18,0xD8 and0x98 * respectively through the existing signed-word interface. RE_UNKNOWN: * Unsupported nonzero-base selectors read an unassigned stack word in the * original; callers, historical pointer type and return contract are unproved. * Preserve the original default path."
     },
@@ -146650,26 +146585,6 @@
       ]
     },
     {
-      "id": "Q-7d034921818d",
-      "kind": "explicit_unknown",
-      "path": "src/modules/uvdyn_rom.c",
-      "symbol": "Original selector dispatch over the input address. Null input and selector * 2 explicitly return zero; selectors 3 and 6 return input offsets 0x48 and * 0x164. Selectors 7 and 8 return offsets 0x14C and 0x17C only when the input * halfword at offset 0x04 is zero. * RE_ORIGINAL_QUIRK: selectors 4 and 5, out-of-range selectors, and selectors * 7/8 with a nonzero halfword at 0x04 load the word at SP + 4 without any * preceding store to that word in this function. Preserve the original read; * no initialized return value or null default has been established. * RE_UNKNOWN: that stack word's provenance, the historical return convention, * input object ownership/extent, selector meanings and valid caller domains. * The original seven-word table at 0x411D48 proves the branch mapping; trace * original direct and indirect callers and object/kind producers before * assigning a pointer-return contract, claiming reachable impact or fixing * the unassigned-word paths. Keep native instructions while this is unresolved.",
-      "lines": [
-        3051
-      ],
-      "evidence": "Original selector dispatch over the input address. Null input and selector * 2 explicitly return zero; selectors 3 and 6 return input offsets 0x48 and * 0x164. Selectors 7 and 8 return offsets 0x14C and 0x17C only when the input * halfword at offset 0x04 is zero. * RE_ORIGINAL_QUIRK: selectors 4 and 5, out-of-range selectors, and selectors * 7/8 with a nonzero halfword at 0x04 load the word at SP + 4 without any * preceding store to that word in this function. Preserve the original read; * no initialized return value or null default has been established. * RE_UNKNOWN: that stack word's provenance, the historical return convention, * input object ownership/extent, selector meanings and valid caller domains. * The original seven-word table at 0x411D48 proves the branch mapping; trace * original direct and indirect callers and object/kind producers before * assigning a pointer-return contract, claiming reachable impact or fixing * the unassigned-word paths. Keep native instructions while this is unresolved.",
-      "owners": [
-        {
-          "kind": "assembly",
-          "name": "func_uvdyn_rom_00411300",
-          "declaration_line": 3066,
-          "lines": [
-            3051
-          ]
-        }
-      ]
-    },
-    {
       "id": "Q-fb48d128f36e",
       "kind": "explicit_unknown",
       "path": "src/modules/uvdyn_rom.c",
@@ -146845,7 +146760,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "RE_ORIGINAL_QUIRK: Unlike the setter, selectors 7/8 have no kind-zero gate. * RE_UNKNOWN: Null/unsupported selectors leave output untouched; output * validity, allowed overlap and vector frames/units remain caller contracts.",
       "lines": [
-        3069
+        3096
       ],
       "evidence": "RE_ORIGINAL_QUIRK: Unlike the setter, selectors 7/8 have no kind-zero gate. * RE_UNKNOWN: Null/unsupported selectors leave output untouched; output * validity, allowed overlap and vector frames/units remain caller contracts."
     },
@@ -146975,7 +146890,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "RE_UNKNOWN: Null/unsupported selectors leave output untouched. The three * source matrices' coordinate frames and lifecycle roles are unproved; valid * output storage and overlap remain caller contracts for the copy helper.",
       "lines": [
-        3168
+        3195
       ],
       "evidence": "RE_UNKNOWN: Null/unsupported selectors leave output untouched. The three * source matrices' coordinate frames and lifecycle roles are unproved; valid * output storage and overlap remain caller contracts for the copy helper."
     },
@@ -147005,7 +146920,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "RE_UNKNOWN: Selector 4 consumes only the temporary's linear components; * no whole-matrix initialization or general inverse is established. Preserve * partial copies, distinct double thresholds, NaN paths and callback order. * Matrix domains, coordinate frames and caller overlap remain unresolved.",
       "lines": [
-        3099
+        3126
       ],
       "evidence": "RE_UNKNOWN: Selector 4 consumes only the temporary's linear components; * no whole-matrix initialization or general inverse is established. Preserve * partial copies, distinct double thresholds, NaN paths and callback order. * Matrix domains, coordinate frames and caller overlap remain unresolved."
     },
@@ -147135,7 +147050,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Reject a nonnull destination with count exactly20 before checking whether it * already matches. Otherwise remove the old membership, store the new * collection and append to a nonnull destination. RE_UNKNOWN: Counts above20 * and storage/ownership domains remain unchecked. Removal and append effects * retain their original order; no allocation or free is performed here.",
       "lines": [
-        3192
+        3219
       ],
       "evidence": "Reject a nonnull destination with count exactly20 before checking whether it * already matches. Otherwise remove the old membership, store the new * collection and append to a nonnull destination. RE_UNKNOWN: Counts above20 * and storage/ownership domains remain unchecked. Removal and append effects * retain their original order; no allocation or free is performed here."
     },
@@ -147215,7 +147130,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Return the DOBJ handle word from the secondary state without a null-state * gate. RE_UNKNOWN: The accessor does not validate handle registration or * lifetime.",
       "lines": [
-        3259
+        3286
       ],
       "evidence": "Return the DOBJ handle word from the secondary state without a null-state * gate. RE_UNKNOWN: The accessor does not validate handle registration or * lifetime."
     },
@@ -147245,7 +147160,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Return the collection pointer from the secondary state without a null-state * gate. RE_UNKNOWN: The accessor does not establish collection ownership or * lifetime.",
       "lines": [
-        3218
+        3245
       ],
       "evidence": "Return the collection pointer from the secondary state without a null-state * gate. RE_UNKNOWN: The accessor does not establish collection ownership or * lifetime."
     },
@@ -147275,6 +147190,26 @@
           "declaration_line": 1027,
           "lines": [
             1022
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-293208e24f46",
+      "kind": "explicit_unknown",
+      "path": "src/modules/uvdyn_rom.c",
+      "symbol": "Return the selected address within the existing secondary-state view. * Only the input address, selector and unsigned kind halfword are consumed; * selector 3 returns the byte address +0x48 without asserting its object type. * RE_ORIGINAL_QUIRK: result is deliberately uninitialized. Selectors 4/5, * selectors outside 2..8, and selectors 7/8 with nonzero kind reach the * original load of an unwritten SP+4 word. Null input and selector 2 instead * return null explicitly. Do not initialize or sanitize those other paths. * RE_UNKNOWN: valid caller selectors/kinds, that stack word's provenance, * allocation/ownership/lifetime and the historical complete export prototype. * This C draft does not establish defined behavior for the unwritten-result * paths. Every native word and relocation still requires exact qualification.",
+      "lines": [
+        3052
+      ],
+      "evidence": "Return the selected address within the existing secondary-state view. * Only the input address, selector and unsigned kind halfword are consumed; * selector 3 returns the byte address +0x48 without asserting its object type. * RE_ORIGINAL_QUIRK: result is deliberately uninitialized. Selectors 4/5, * selectors outside 2..8, and selectors 7/8 with nonzero kind reach the * original load of an unwritten SP+4 word. Null input and selector 2 instead * return null explicitly. Do not initialize or sanitize those other paths. * RE_UNKNOWN: valid caller selectors/kinds, that stack word's provenance, * allocation/ownership/lifetime and the historical complete export prototype. * This C draft does not establish defined behavior for the unwritten-result * paths. Every native word and relocation still requires exact qualification.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDynGetSecondaryPropertyAddress",
+          "declaration_line": 3063,
+          "lines": [
+            3052
           ]
         }
       ]
@@ -147425,7 +147360,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Skip an already-set updateFlag. Otherwise call the direct helper only when * copyFlag is nonzero and kind is1, then set updateFlag to1 even when no * helper ran. RE_UNKNOWN: The supplied scalar units, helper side effects and * reset timing are unproved; the existing flags do not establish a frame * boundary.",
       "lines": [
-        3269
+        3296
       ],
       "evidence": "Skip an already-set updateFlag. Otherwise call the direct helper only when * copyFlag is nonzero and kind is1, then set updateFlag to1 even when no * helper ran. RE_UNKNOWN: The supplied scalar units, helper side effects and * reset timing are unproved; the existing flags do not establish a frame * boundary."
     },
@@ -147495,7 +147430,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Store the DOBJ handle and LOD index before model lookup. Use the * selected44-byte entry to evaluate two ordered three-component squared sums, * storing the first provider result and replacing it only when strictly below * the second. RE_UNKNOWN: Model availability and LOD bounds are unchecked; * corner interpretation and units are unproved. Preserve both calls, * arithmetic grouping, fresh provider reads and NaN-sensitive strict * comparison.",
       "lines": [
-        3229
+        3256
       ],
       "evidence": "Store the DOBJ handle and LOD index before model lookup. Use the * selected44-byte entry to evaluate two ordered three-component squared sums, * storing the first provider result and replacing it only when strictly below * the second. RE_UNKNOWN: Model availability and LOD bounds are unchecked; * corner interpretation and units are unproved. Preserve both calls, * arithmetic grouping, fresh provider reads and NaN-sensitive strict * comparison."
     },
@@ -147625,7 +147560,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "When copyFlag is nonzero, copy vectors17C to188,14C to158,164 to170, * matrix18 to58 and vector118 to124 in that order. After the calls, always * clear copyFlag and updateFlag; flag1A0 is untouched. RE_UNKNOWN: Pair * naming, units and lifecycle are unproved. Provider callbacks may mutate * state; preserve the ordered five calls and final two halfword stores.",
       "lines": [
-        3293
+        3320
       ],
       "evidence": "When copyFlag is nonzero, copy vectors17C to188,14C to158,164 to170, * matrix18 to58 and vector118 to124 in that order. After the calls, always * clear copyFlag and updateFlag; flag1A0 is untouched. RE_UNKNOWN: Pair * naming, units and lifecycle are unproved. Provider callbacks may mutate * state; preserve the ordered five calls and final two halfword stores."
     },
@@ -205589,23 +205524,23 @@
         3028,
         3029,
         3031,
-        3085,
-        3086,
-        3087,
-        3115,
-        3117,
-        3119,
-        3120,
-        3121,
-        3123,
-        3129,
-        3131,
-        3133,
-        3134,
-        3135,
-        3179,
-        3283,
-        3307
+        3112,
+        3113,
+        3114,
+        3142,
+        3144,
+        3146,
+        3147,
+        3148,
+        3150,
+        3156,
+        3158,
+        3160,
+        3161,
+        3162,
+        3206,
+        3310,
+        3334
       ],
       "owners": [
         {
@@ -205635,45 +205570,45 @@
         {
           "kind": "function",
           "name": "uvDynGetSecondaryMatrixProperty",
-          "declaration_line": 3175,
+          "declaration_line": 3202,
           "lines": [
-            3179
+            3206
           ]
         },
         {
           "kind": "function",
           "name": "uvDynGetSecondaryVectorProperty",
-          "declaration_line": 3076,
+          "declaration_line": 3103,
           "lines": [
-            3085,
-            3086,
-            3087
+            3112,
+            3113,
+            3114
           ]
         },
         {
           "kind": "function",
           "name": "uvDynResetSecondaryState",
-          "declaration_line": 3302,
+          "declaration_line": 3329,
           "lines": [
-            3307
+            3334
           ]
         },
         {
           "kind": "function",
           "name": "uvDynSetSecondaryMatrixProperty",
-          "declaration_line": 3108,
+          "declaration_line": 3135,
           "lines": [
-            3115,
-            3117,
-            3119,
-            3120,
-            3121,
-            3123,
-            3129,
-            3131,
-            3133,
-            3134,
-            3135
+            3142,
+            3144,
+            3146,
+            3147,
+            3148,
+            3150,
+            3156,
+            3158,
+            3160,
+            3161,
+            3162
           ]
         },
         {
@@ -205699,9 +205634,9 @@
         {
           "kind": "function",
           "name": "uvDynUpdateSecondaryStateOnce",
-          "declaration_line": 3279,
+          "declaration_line": 3306,
           "lines": [
-            3283
+            3310
           ]
         },
         {
@@ -205724,8 +205659,8 @@
         2631,
         2685,
         2956,
-        3283,
-        3307
+        3310,
+        3334
       ],
       "owners": [
         {
@@ -205747,9 +205682,9 @@
         {
           "kind": "function",
           "name": "uvDynResetSecondaryState",
-          "declaration_line": 3302,
+          "declaration_line": 3329,
           "lines": [
-            3307
+            3334
           ]
         },
         {
@@ -205763,9 +205698,9 @@
         {
           "kind": "function",
           "name": "uvDynUpdateSecondaryStateOnce",
-          "declaration_line": 3279,
+          "declaration_line": 3306,
           "lines": [
-            3283
+            3310
           ]
         },
         {
@@ -205786,15 +205721,15 @@
       "lines": [
         241,
         2631,
-        3185
+        3212
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynGetSecondaryMatrixProperty",
-          "declaration_line": 3175,
+          "declaration_line": 3202,
           "lines": [
-            3185
+            3212
           ]
         },
         {
@@ -205823,10 +205758,10 @@
       "lines": [
         242,
         2896,
-        3123,
-        3127,
-        3128,
-        3182
+        3150,
+        3154,
+        3155,
+        3209
       ],
       "owners": [
         {
@@ -205840,19 +205775,19 @@
         {
           "kind": "function",
           "name": "uvDynGetSecondaryMatrixProperty",
-          "declaration_line": 3175,
+          "declaration_line": 3202,
           "lines": [
-            3182
+            3209
           ]
         },
         {
           "kind": "function",
           "name": "uvDynSetSecondaryMatrixProperty",
-          "declaration_line": 3108,
+          "declaration_line": 3135,
           "lines": [
-            3123,
-            3127,
-            3128
+            3150,
+            3154,
+            3155
           ]
         },
         {
@@ -206139,17 +206074,17 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unk0",
       "lines": [
-        3250,
-        3251
+        3277,
+        3278
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynSetSecondaryModelLod",
-          "declaration_line": 3241,
+          "declaration_line": 3268,
           "lines": [
-            3250,
-            3251
+            3277,
+            3278
           ]
         }
       ]
@@ -206491,15 +206426,15 @@
         179,
         289,
         313,
-        3252
+        3279
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynSetSecondaryModelLod",
-          "declaration_line": 3241,
+          "declaration_line": 3268,
           "lines": [
-            3252
+            3279
           ]
         },
         {
@@ -206686,15 +206621,15 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unk14",
       "lines": [
-        3252
+        3279
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynSetSecondaryModelLod",
-          "declaration_line": 3241,
+          "declaration_line": 3268,
           "lines": [
-            3252
+            3279
           ]
         }
       ]
@@ -207132,15 +207067,15 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unk4",
       "lines": [
-        3251
+        3278
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynSetSecondaryModelLod",
-          "declaration_line": 3241,
+          "declaration_line": 3268,
           "lines": [
-            3251
+            3278
           ]
         }
       ]
@@ -207170,17 +207105,17 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unk8",
       "lines": [
-        3250,
-        3251
+        3277,
+        3278
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynSetSecondaryModelLod",
-          "declaration_line": 3241,
+          "declaration_line": 3268,
           "lines": [
-            3250,
-            3251
+            3277,
+            3278
           ]
         }
       ]
@@ -207191,15 +207126,15 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "unkC",
       "lines": [
-        3252
+        3279
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynSetSecondaryModelLod",
-          "declaration_line": 3241,
+          "declaration_line": 3268,
           "lines": [
-            3252
+            3279
           ]
         }
       ]
@@ -207571,8 +207506,8 @@
         2897,
         3023,
         3030,
-        3116,
-        3130
+        3143,
+        3157
       ],
       "owners": [
         {
@@ -207586,10 +207521,10 @@
         {
           "kind": "function",
           "name": "uvDynSetSecondaryMatrixProperty",
-          "declaration_line": 3108,
+          "declaration_line": 3135,
           "lines": [
-            3116,
-            3130
+            3143,
+            3157
           ]
         },
         {
@@ -208007,15 +207942,15 @@
         3024,
         3031,
         3033,
-        3117,
-        3119,
-        3120,
-        3121,
-        3131,
-        3133,
-        3134,
-        3135,
-        3308
+        3144,
+        3146,
+        3147,
+        3148,
+        3158,
+        3160,
+        3161,
+        3162,
+        3335
       ],
       "owners": [
         {
@@ -208029,24 +207964,24 @@
         {
           "kind": "function",
           "name": "uvDynResetSecondaryState",
-          "declaration_line": 3302,
+          "declaration_line": 3329,
           "lines": [
-            3308
+            3335
           ]
         },
         {
           "kind": "function",
           "name": "uvDynSetSecondaryMatrixProperty",
-          "declaration_line": 3108,
+          "declaration_line": 3135,
           "lines": [
-            3117,
-            3119,
-            3120,
-            3121,
-            3131,
-            3133,
-            3134,
-            3135
+            3144,
+            3146,
+            3147,
+            3148,
+            3158,
+            3160,
+            3161,
+            3162
           ]
         },
         {
@@ -208077,7 +208012,7 @@
       "lines": [
         244,
         2955,
-        3308
+        3335
       ],
       "owners": [
         {
@@ -208091,9 +208026,9 @@
         {
           "kind": "function",
           "name": "uvDynResetSecondaryState",
-          "declaration_line": 3302,
+          "declaration_line": 3329,
           "lines": [
-            3308
+            3335
           ]
         },
         {
@@ -208341,9 +208276,10 @@
         249,
         2957,
         3039,
-        3090,
-        3284,
-        3305
+        3080,
+        3117,
+        3311,
+        3332
       ],
       "owners": [
         {
@@ -208356,18 +208292,26 @@
         },
         {
           "kind": "function",
-          "name": "uvDynGetSecondaryVectorProperty",
-          "declaration_line": 3076,
+          "name": "uvDynGetSecondaryPropertyAddress",
+          "declaration_line": 3063,
           "lines": [
-            3090
+            3080
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvDynGetSecondaryVectorProperty",
+          "declaration_line": 3103,
+          "lines": [
+            3117
           ]
         },
         {
           "kind": "function",
           "name": "uvDynResetSecondaryState",
-          "declaration_line": 3302,
+          "declaration_line": 3329,
           "lines": [
-            3305
+            3332
           ]
         },
         {
@@ -208381,9 +208325,9 @@
         {
           "kind": "function",
           "name": "uvDynUpdateSecondaryStateOnce",
-          "declaration_line": 3279,
+          "declaration_line": 3306,
           "lines": [
-            3284
+            3311
           ]
         },
         {
@@ -208607,7 +208551,7 @@
       "lines": [
         250,
         2957,
-        3305
+        3332
       ],
       "owners": [
         {
@@ -208621,9 +208565,9 @@
         {
           "kind": "function",
           "name": "uvDynResetSecondaryState",
-          "declaration_line": 3302,
+          "declaration_line": 3329,
           "lines": [
-            3305
+            3332
           ]
         },
         {
@@ -208644,8 +208588,9 @@
       "lines": [
         251,
         2958,
-        3284,
-        3306
+        3076,
+        3311,
+        3333
       ],
       "owners": [
         {
@@ -208658,18 +208603,26 @@
         },
         {
           "kind": "function",
-          "name": "uvDynResetSecondaryState",
-          "declaration_line": 3302,
+          "name": "uvDynGetSecondaryPropertyAddress",
+          "declaration_line": 3063,
           "lines": [
-            3306
+            3076
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvDynResetSecondaryState",
+          "declaration_line": 3329,
+          "lines": [
+            3333
           ]
         },
         {
           "kind": "function",
           "name": "uvDynUpdateSecondaryStateOnce",
-          "declaration_line": 3279,
+          "declaration_line": 3306,
           "lines": [
-            3284
+            3311
           ]
         },
         {
@@ -208690,8 +208643,8 @@
       "lines": [
         252,
         2958,
-        3285,
-        3306
+        3312,
+        3333
       ],
       "owners": [
         {
@@ -208705,17 +208658,17 @@
         {
           "kind": "function",
           "name": "uvDynResetSecondaryState",
-          "declaration_line": 3302,
+          "declaration_line": 3329,
           "lines": [
-            3306
+            3333
           ]
         },
         {
           "kind": "function",
           "name": "uvDynUpdateSecondaryStateOnce",
-          "declaration_line": 3279,
+          "declaration_line": 3306,
           "lines": [
-            3285
+            3312
           ]
         },
         {
@@ -208737,9 +208690,10 @@
         253,
         2959,
         3044,
-        3093,
-        3284,
-        3304
+        3085,
+        3120,
+        3311,
+        3331
       ],
       "owners": [
         {
@@ -208752,18 +208706,26 @@
         },
         {
           "kind": "function",
-          "name": "uvDynGetSecondaryVectorProperty",
-          "declaration_line": 3076,
+          "name": "uvDynGetSecondaryPropertyAddress",
+          "declaration_line": 3063,
           "lines": [
-            3093
+            3085
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvDynGetSecondaryVectorProperty",
+          "declaration_line": 3103,
+          "lines": [
+            3120
           ]
         },
         {
           "kind": "function",
           "name": "uvDynResetSecondaryState",
-          "declaration_line": 3302,
+          "declaration_line": 3329,
           "lines": [
-            3304
+            3331
           ]
         },
         {
@@ -208777,9 +208739,9 @@
         {
           "kind": "function",
           "name": "uvDynUpdateSecondaryStateOnce",
-          "declaration_line": 3279,
+          "declaration_line": 3306,
           "lines": [
-            3284
+            3311
           ]
         },
         {
@@ -208837,8 +208799,8 @@
       "lines": [
         254,
         2959,
-        3285,
-        3304
+        3312,
+        3331
       ],
       "owners": [
         {
@@ -208852,17 +208814,17 @@
         {
           "kind": "function",
           "name": "uvDynResetSecondaryState",
-          "declaration_line": 3302,
+          "declaration_line": 3329,
           "lines": [
-            3304
+            3331
           ]
         },
         {
           "kind": "function",
           "name": "uvDynUpdateSecondaryStateOnce",
-          "declaration_line": 3279,
+          "declaration_line": 3306,
           "lines": [
-            3285
+            3312
           ]
         },
         {
@@ -208886,26 +208848,26 @@
         3023,
         3024,
         3031,
-        3082,
-        3117,
-        3131
+        3109,
+        3144,
+        3158
       ],
       "owners": [
         {
           "kind": "function",
           "name": "uvDynGetSecondaryVectorProperty",
-          "declaration_line": 3076,
+          "declaration_line": 3103,
           "lines": [
-            3082
+            3109
           ]
         },
         {
           "kind": "function",
           "name": "uvDynSetSecondaryMatrixProperty",
-          "declaration_line": 3108,
+          "declaration_line": 3135,
           "lines": [
-            3117,
-            3131
+            3144,
+            3158
           ]
         },
         {
@@ -247702,26 +247664,6 @@
       ]
     },
     {
-      "id": "Q-5d7034ef3779",
-      "kind": "original_quirk",
-      "path": "src/modules/uvdyn_rom.c",
-      "symbol": "Original selector dispatch over the input address. Null input and selector * 2 explicitly return zero; selectors 3 and 6 return input offsets 0x48 and * 0x164. Selectors 7 and 8 return offsets 0x14C and 0x17C only when the input * halfword at offset 0x04 is zero. * RE_ORIGINAL_QUIRK: selectors 4 and 5, out-of-range selectors, and selectors * 7/8 with a nonzero halfword at 0x04 load the word at SP + 4 without any * preceding store to that word in this function. Preserve the original read; * no initialized return value or null default has been established. * RE_UNKNOWN: that stack word's provenance, the historical return convention, * input object ownership/extent, selector meanings and valid caller domains. * The original seven-word table at 0x411D48 proves the branch mapping; trace * original direct and indirect callers and object/kind producers before * assigning a pointer-return contract, claiming reachable impact or fixing * the unassigned-word paths. Keep native instructions while this is unresolved.",
-      "lines": [
-        3051
-      ],
-      "evidence": "Original selector dispatch over the input address. Null input and selector * 2 explicitly return zero; selectors 3 and 6 return input offsets 0x48 and * 0x164. Selectors 7 and 8 return offsets 0x14C and 0x17C only when the input * halfword at offset 0x04 is zero. * RE_ORIGINAL_QUIRK: selectors 4 and 5, out-of-range selectors, and selectors * 7/8 with a nonzero halfword at 0x04 load the word at SP + 4 without any * preceding store to that word in this function. Preserve the original read; * no initialized return value or null default has been established. * RE_UNKNOWN: that stack word's provenance, the historical return convention, * input object ownership/extent, selector meanings and valid caller domains. * The original seven-word table at 0x411D48 proves the branch mapping; trace * original direct and indirect callers and object/kind producers before * assigning a pointer-return contract, claiming reachable impact or fixing * the unassigned-word paths. Keep native instructions while this is unresolved.",
-      "owners": [
-        {
-          "kind": "assembly",
-          "name": "func_uvdyn_rom_00411300",
-          "declaration_line": 3066,
-          "lines": [
-            3051
-          ]
-        }
-      ]
-    },
-    {
       "id": "Q-081c1a3e2571",
       "kind": "original_quirk",
       "path": "src/modules/uvdyn_rom.c",
@@ -247857,7 +247799,7 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "RE_ORIGINAL_QUIRK: Unlike the setter, selectors 7/8 have no kind-zero gate. * RE_UNKNOWN: Null/unsupported selectors leave output untouched; output * validity, allowed overlap and vector frames/units remain caller contracts.",
       "lines": [
-        3069
+        3096
       ],
       "evidence": "RE_ORIGINAL_QUIRK: Unlike the setter, selectors 7/8 have no kind-zero gate. * RE_UNKNOWN: Null/unsupported selectors leave output untouched; output * validity, allowed overlap and vector frames/units remain caller contracts."
     },
@@ -247897,6 +247839,26 @@
           "declaration_line": 1027,
           "lines": [
             1022
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-5ff6d2020bb6",
+      "kind": "original_quirk",
+      "path": "src/modules/uvdyn_rom.c",
+      "symbol": "Return the selected address within the existing secondary-state view. * Only the input address, selector and unsigned kind halfword are consumed; * selector 3 returns the byte address +0x48 without asserting its object type. * RE_ORIGINAL_QUIRK: result is deliberately uninitialized. Selectors 4/5, * selectors outside 2..8, and selectors 7/8 with nonzero kind reach the * original load of an unwritten SP+4 word. Null input and selector 2 instead * return null explicitly. Do not initialize or sanitize those other paths. * RE_UNKNOWN: valid caller selectors/kinds, that stack word's provenance, * allocation/ownership/lifetime and the historical complete export prototype. * This C draft does not establish defined behavior for the unwritten-result * paths. Every native word and relocation still requires exact qualification.",
+      "lines": [
+        3052
+      ],
+      "evidence": "Return the selected address within the existing secondary-state view. * Only the input address, selector and unsigned kind halfword are consumed; * selector 3 returns the byte address +0x48 without asserting its object type. * RE_ORIGINAL_QUIRK: result is deliberately uninitialized. Selectors 4/5, * selectors outside 2..8, and selectors 7/8 with nonzero kind reach the * original load of an unwritten SP+4 word. Null input and selector 2 instead * return null explicitly. Do not initialize or sanitize those other paths. * RE_UNKNOWN: valid caller selectors/kinds, that stack word's provenance, * allocation/ownership/lifetime and the historical complete export prototype. * This C draft does not establish defined behavior for the unwritten-result * paths. Every native word and relocation still requires exact qualification.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "uvDynGetSecondaryPropertyAddress",
+          "declaration_line": 3063,
+          "lines": [
+            3052
           ]
         }
       ]
@@ -252491,16 +252453,16 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "Skip an already updated state. When the copy flag is set and kind is one, * run the original matrix/vector update with the supplied scalar. Mark the * state updated even when that call is skipped; reset clears the flag. * The kind and update scalar's broader gameplay meanings remain unresolved.",
       "lines": [
-        3275
+        3302
       ],
       "evidence": "Skip an already updated state. When the copy flag is set and kind is one, * run the original matrix/vector update with the supplied scalar. Mark the * state updated even when that call is skipped; reset clears the flag. * The kind and update scalar's broader gameplay meanings remain unresolved.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDynUpdateSecondaryStateOnce",
-          "declaration_line": 3279,
+          "declaration_line": 3306,
           "lines": [
-            3275
+            3302
           ]
         }
       ]
@@ -252611,16 +252573,16 @@
       "path": "src/modules/uvdyn_rom.c",
       "symbol": "When the copy flag is set, copy the original four vector pairs and matrix * into their companion fields in the observed order. Clear both 16-bit flags * afterward. More specific gameplay meanings are not yet established.",
       "lines": [
-        3299
+        3326
       ],
       "evidence": "When the copy flag is set, copy the original four vector pairs and matrix * into their companion fields in the observed order. Clear both 16-bit flags * afterward. More specific gameplay meanings are not yet established.",
       "owners": [
         {
           "kind": "function",
           "name": "uvDynResetSecondaryState",
-          "declaration_line": 3302,
+          "declaration_line": 3329,
           "lines": [
-            3299
+            3326
           ]
         }
       ]

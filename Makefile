@@ -325,7 +325,7 @@ S_FILES       := $(foreach dir,$(ASM_DIRS) $(SRC_DIRS),$(wildcard $(dir)/*.s))
 # tools/tests/test_readonly_make_inputs.py checks that contract and normal ASM.
 # LIGHT C emits the complete original 32-byte readonly section. Keep its
 # old assembly as an unused witness; exclude the stale object below as well.
-S_FILES       := $(filter-out asm/us/data/modules/uvdyn_rom.rodata-prefix.s asm/us/data/modules/ted.rodata-prefix.s asm/us/data/modules/race.rodata-prefix.s asm/us/data/modules/race-floats.rodata-island.s asm/us/data/modules/misc.rodata-prefix.s asm/us/data/modules/misc.rodata-suffix.s asm/us/data/modules/misc.rodata-aliases.s asm/us/data/modules/uvpfx_rom.rodata-prefix.s asm/us/data/modules/light.rodata.s asm/us/data/modules/filmroll.rodata.s asm/us/data/modules/filmroll.data.s asm/us/data/modules/filmroll.bss.s,$(S_FILES))
+S_FILES       := $(filter-out asm/us/data/modules/uvdyn_rom.rodata-prefix.s asm/us/data/modules/uvdyn_rom-secondary.rodata-island.s asm/us/data/modules/ted.rodata-prefix.s asm/us/data/modules/race.rodata-prefix.s asm/us/data/modules/race-floats.rodata-island.s asm/us/data/modules/misc.rodata-prefix.s asm/us/data/modules/misc.rodata-suffix.s asm/us/data/modules/misc.rodata-aliases.s asm/us/data/modules/uvpfx_rom.rodata-prefix.s asm/us/data/modules/light.rodata.s asm/us/data/modules/filmroll.rodata.s asm/us/data/modules/filmroll.data.s asm/us/data/modules/filmroll.bss.s,$(S_FILES))
 BIN_FILES     := $(foreach dir,$(BIN_DIRS),$(wildcard $(dir)/*.bin))
 O_FILES       := $(foreach f,$(C_FILES:.c=.o),$(BUILD_DIR)/$f) \
                  $(foreach f,$(S_FILES:.s=.o),$(BUILD_DIR)/$f) \

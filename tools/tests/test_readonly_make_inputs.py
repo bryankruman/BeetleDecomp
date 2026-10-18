@@ -11,6 +11,7 @@ TED_PREFIX = 'asm/us/data/modules/ted.rodata-prefix.s'
 PFX_PREFIX = 'asm/us/data/modules/uvpfx_rom.rodata-prefix.s'
 LIGHT_RODATA = 'asm/us/data/modules/light.rodata.s'
 FILM_OWNERS = ['asm/us/data/modules/filmroll.rodata.s', 'asm/us/data/modules/filmroll.data.s', 'asm/us/data/modules/filmroll.bss.s']
+DYN_TERMINAL = 'asm/us/data/modules/uvdyn_rom-secondary.rodata-island.s'
 
 
 class MakeReadonlyInputsTests(unittest.TestCase):
@@ -18,7 +19,7 @@ class MakeReadonlyInputsTests(unittest.TestCase):
         lines = (ROOT / 'Makefile').read_text(encoding='utf-8').splitlines()
         matches = [line for line in lines if line.startswith('S_FILES') and 'filter-out' in line and PREFIX in line]
         self.assertEqual(len(matches), 1)
-        expected = 'S_FILES       := $(filter-out asm/us/data/modules/uvdyn_rom.rodata-prefix.s asm/us/data/modules/ted.rodata-prefix.s asm/us/data/modules/race.rodata-prefix.s asm/us/data/modules/race-floats.rodata-island.s asm/us/data/modules/misc.rodata-prefix.s asm/us/data/modules/misc.rodata-suffix.s asm/us/data/modules/misc.rodata-aliases.s asm/us/data/modules/uvpfx_rom.rodata-prefix.s asm/us/data/modules/light.rodata.s asm/us/data/modules/filmroll.rodata.s asm/us/data/modules/filmroll.data.s asm/us/data/modules/filmroll.bss.s,$(S_FILES))'
+        expected = 'S_FILES       := $(filter-out asm/us/data/modules/uvdyn_rom.rodata-prefix.s asm/us/data/modules/uvdyn_rom-secondary.rodata-island.s asm/us/data/modules/ted.rodata-prefix.s asm/us/data/modules/race.rodata-prefix.s asm/us/data/modules/race-floats.rodata-island.s asm/us/data/modules/misc.rodata-prefix.s asm/us/data/modules/misc.rodata-suffix.s asm/us/data/modules/misc.rodata-aliases.s asm/us/data/modules/uvpfx_rom.rodata-prefix.s asm/us/data/modules/light.rodata.s asm/us/data/modules/filmroll.rodata.s asm/us/data/modules/filmroll.data.s asm/us/data/modules/filmroll.bss.s,$(S_FILES))'
         self.assertEqual(matches[0], expected)
         return matches[0]
 
@@ -41,6 +42,9 @@ class MakeReadonlyInputsTests(unittest.TestCase):
         layout = json.loads((ROOT / 'config/us/readonly_layout/uvdyn_rom.json').read_text(encoding='utf-8'))
         self.assertEqual(layout['prefix_assembly'], PREFIX)
         self.assertEqual(layout['source'], 'src/modules/uvdyn_rom.c')
+        self.assertEqual(layout['version'], 3)
+        self.assertEqual(layout['terminal_c_literals']['obsolete_assembly'], DYN_TERMINAL)
+        self.assertEqual(layout['terminal_c_literals']['end'] - layout['terminal_c_literals']['begin'], 44)
         ted = json.loads((ROOT / 'config/us/readonly_layout/ted.json').read_text(encoding='utf-8'))
         self.assertEqual(ted['prefix_assembly'], TED_PREFIX)
         self.assertEqual(ted['source'], 'src/modules/ted.c')
@@ -67,7 +71,7 @@ class MakeReadonlyInputsTests(unittest.TestCase):
                 'asm/us/data/modules/uvdyn_rom.data.s', 'asm/us/data/ordinary.s',
                 'src/normal.s', 'asm/jp/data/modules/light.rodata.s', 'asm/jp/data/modules/uvdyn_rom.rodata-prefix.s',
                 'asm/jp/data/modules/ted.rodata-prefix.s']
-        sources, objects = self.evaluate([PREFIX, TED_PREFIX, 'asm/us/data/modules/race.rodata-prefix.s', 'asm/us/data/modules/race-floats.rodata-island.s'] + ['asm/us/data/modules/misc.rodata-prefix.s', 'asm/us/data/modules/misc.rodata-suffix.s', 'asm/us/data/modules/misc.rodata-aliases.s', PFX_PREFIX, LIGHT_RODATA] + FILM_OWNERS + keep)
+        sources, objects = self.evaluate([PREFIX, TED_PREFIX, 'asm/us/data/modules/race.rodata-prefix.s', 'asm/us/data/modules/race-floats.rodata-island.s'] + ['asm/us/data/modules/misc.rodata-prefix.s', 'asm/us/data/modules/misc.rodata-suffix.s', 'asm/us/data/modules/misc.rodata-aliases.s', PFX_PREFIX, LIGHT_RODATA] + FILM_OWNERS + [DYN_TERMINAL] + keep)
         self.assertEqual(sources, keep)
         self.assertEqual(objects, ['build/' + name[:-2] + '.o' for name in keep])
         self.assertNotIn('build/' + PREFIX[:-2] + '.o', objects)

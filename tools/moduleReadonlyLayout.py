@@ -228,7 +228,10 @@ def check_users(root, layout, decoded, extra_original_data=()):
             validate_unused_owner_asm(layout, path, name)
             allowed.add(relative)
     duplicate = inside(root, layout['duplicate_assembly'])
-    if duplicate.exists():
+    terminal_duplicate = duplicate.exists() and dyn_terminal_duplicate111100(root, layout, decoded, duplicate)
+    if terminal_duplicate:
+        allowed.add(layout['duplicate_assembly'])
+    if duplicate.exists() and not terminal_duplicate:
         clean = re.sub(r'/\*.*?\*/', '', duplicate.read_text(encoding='utf-8'), flags=re.S)
         lines = [line.strip() for line in clean.splitlines() if line.strip()]
         table = layout['table_label']
@@ -545,14 +548,17 @@ def load_v3(root, layout, module):
                   'owner_instruction_sha256', 'owner_asm_normalized_sha256'}
     span_keys = {'begin', 'end', 'host_symbol', 'host_address', 'host_assembly',
                  'host_sha256', 'host_bytes'}
-    require(set(layout) == common and type(layout['version']) is int and
+    require(set(layout) in (common, common | {'terminal_literal_tail'}, common | {'terminal_c_literals'}) and type(layout['version']) is int and
             layout['version'] == 3 and layout['module'] == module,
             'unsupported V3 metadata schema/module')
+    tail = dyn_terminal_tail111100(root, layout)
     tables, spans = layout['tables'], layout['late_spans']
     require(isinstance(tables, list) and len(tables) > 0 and
             isinstance(spans, list) and len(spans) == len(tables),
             'each V3 compiler table requires one explicit following-span entry')
     paths = [layout[key] for key in ('witness', 'prefix_assembly', 'monolithic_assembly')]
+    if tail is not None:
+        paths.append(tail['assembly'])
     numbers = [layout['begin'], layout['end']]
     hashes = [layout['witness_sha256'], layout['readonly_sha256']]
     symbols = []
@@ -595,7 +601,9 @@ def load_v3(root, layout, module):
         require(table['table_begin'] < table['table_end'] <= following and table['owner_bytes'] > 0,
                 'V3 tables must be nonempty and disjoint in physical order')
         if span is None:
-            require(table['table_end'] == following,
+            require(table['table_end'] == following or
+                    (tail is not None and i == len(tables) - 1 and
+                     table['table_end'] == tail['begin'] and following == tail['end']),
                     'null V3 span requires an adjacent table or the exact section end')
             if i + 1 < len(tables):
                 require(table['owner_address'] + table['owner_bytes'] <= tables[i + 1]['owner_address'],
@@ -632,7 +640,15 @@ def load_v3(root, layout, module):
         stop = bounds[i + 1][0] if i + 1 < len(bounds) else len(witness)
         contents = witness[bounds[i][1]:stop]
         if span is None:
-            require(not retained(contents).strip(), 'adjacent V3 tables conceal retained contents')
+            if tail is not None and i == len(spans) - 1:
+                fragment = v4_island(tail['begin'], tail['end'], contents)
+                data = original_bytes(fragment.decode(), tail['begin'], tail['end'])
+                require(data == decoded[tail['begin'] - layout['begin']:tail['end'] - layout['begin']]
+                        and sha(data) == tail['readonly_sha256'], 'DYN terminal literal coverage/hash changed')
+                if not tail.get('c_owned'):
+                    fragments[tail['assembly']] = fragment
+            else:
+                require(not retained(contents).strip(), 'adjacent V3 tables conceal retained contents')
             continue
         fragment = v3_fragment(span['begin'], contents)
         require(original_bytes(fragment.decode(), span['begin'], span['end']) ==
@@ -644,6 +660,7 @@ def load_v3(root, layout, module):
 
 def validate_source_v3(root, layout):
     source = inside(root, layout['source']).read_text(encoding='utf-8')
+    tail = dyn_terminal_tail111100(root, layout)
     tokens = re.compile(r'"(?:\\.|[^"\\])*"|\'(?:\\.|[^\'\\])*\'|/\*.*?\*/|//[^\n]*', re.S)
     code = tokens.sub(lambda m: ''.join('\n' if c == '\n' else ' ' for c in m[0])
                       if m[0].startswith(('/*', '//')) else m[0], source)
@@ -667,6 +684,26 @@ def validate_source_v3(root, layout):
             require(code.count(host) == 1, 'V3 active original host missing; host migration needs a new proved layout')
             pragmas.add(host)
             positions.append(code.index(host))
+    if tail is not None and not tail.get('c_owned'):
+        pragma = '#pragma GLOBAL_ASM("' + tail['assembly'] + '")'
+        require(code.count(pragma) == 1, 'DYN terminal tail requires one active data-only pragma')
+        # Complete-body brace accounting is the existing V4 spelling, with
+        # strings/comments masked while preserving exact source positions.
+        braces = tokens.sub(lambda m: ''.join('\n' if c == '\n' else ' ' for c in m[0]), source)
+        depth, cursor = 1, matches[0].end()
+        while depth and cursor < len(braces):
+            depth += (braces[cursor] == '{') - (braces[cursor] == '}')
+            cursor += 1
+        require(depth == 0, 'DYN terminal owner body is incomplete')
+        position = code.index(pragma)
+        require(cursor <= position and not code[cursor:position].strip(),
+                'DYN terminal tail must immediately follow the complete final owner body')
+        positions.extend([cursor, position])
+        pragmas.add(pragma)
+    if tail is not None and tail.get('c_owned'):
+        natural_owner = dyn_natural_source113100(root, layout, source, code)
+        owner_offsets.append(natural_owner)
+        positions.append(natural_owner)
     depth = offset = 0
     for line in code.splitlines(keepends=True):
         directive = re.match(r'^\s*#\s*(if|ifdef|ifndef|endif)\b', line)
@@ -734,6 +771,16 @@ def check_users_v3(root, layout, decoded):
         if path.exists():
             v3_original_host(root, layout, i, path.read_bytes(), fragments[span['host_assembly']])
             allowed.append(span['host_assembly'])
+    tail = dyn_terminal_tail111100(root, layout)
+    if tail is not None:
+        path = inside(root, tail['assembly'])
+        if path.exists():
+            if tail.get('c_owned'):
+                dyn_natural_obsolete113100(root, layout, path)
+            else:
+                require(path.is_file() and path.read_bytes() == fragments[tail['assembly']],
+                        'DYN terminal generated literal data changed')
+            allowed.append(tail['assembly'])
     for table in layout['tables']:
         # Existing exact duplicate/unused-owner and real-reference guards are
         # reused unchanged. There is no fictitious host for adjacent tables.
@@ -771,6 +818,9 @@ def apply_v3(plan):
         fragment = plan['suffix'][span['host_assembly']]
         original = v3_original_host(root, layout, i, host.read_bytes(), fragment)
         outputs.append((host, original + SUFFIX_MARKER + fragment))
+    tail = dyn_terminal_tail111100(root, layout)
+    if tail is not None and not tail.get('c_owned'):
+        outputs.append((inside(root, tail['assembly']), plan['suffix'][tail['assembly']]))
     staged = []
     try:
         for path, contents in outputs:
@@ -785,6 +835,11 @@ def apply_v3(plan):
         for temporary, _ in staged:
             if temporary.exists():
                 temporary.unlink()
+    if tail is not None and tail.get('c_owned'):
+        obsolete = inside(root, tail['assembly'])
+        if obsolete.exists():
+            dyn_natural_obsolete113100(root, layout, obsolete)
+            obsolete.unlink()
     monolithic = inside(root, layout['monolithic_assembly'])
     if monolithic.exists():
         monolithic.unlink()
@@ -1056,3 +1111,87 @@ def apply_v4(plan):
     monolithic = inside(root, layout['monolithic_assembly'])
     if monolithic.exists():
         monolithic.unlink()
+
+
+# One audited ownership closure, not a general allowance for terminal gaps.
+DYN_TERMINAL_LAYOUT111100 = {'begin': 4266528, 'end': 4267408, 'late_spans': [{'begin': 4266892, 'end': 4266972, 'host_address': 4210064, 'host_assembly': 'asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00403D90.s', 'host_bytes': 520, 'host_sha256': 'fc3f9018478887d888ef15718e683d3a4aaeb58561a8ba44deb236fdb36a5390', 'host_symbol': 'func_uvdyn_rom_00403D90'}, None, None, {'begin': 4267196, 'end': 4267336, 'host_address': 4215020, 'host_assembly': 'asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_004050EC.s', 'host_bytes': 9384, 'host_sha256': '5bd49fc0194d2fc896cfd0bf11335fcd14808411437745f93aa2ef684108f3b9', 'host_symbol': 'func_uvdyn_rom_004050EC'}, None], 'module': 'uvdyn_rom', 'monolithic_assembly': 'asm/us/data/modules/uvdyn_rom.rodata.s', 'prefix_assembly': 'asm/us/data/modules/uvdyn_rom.rodata-prefix.s', 'readonly_sha256': 'ebf5750d6c6c5efc21f1a2632733dda77295f10ff90974f400a1fc591c821c7e', 'source': 'src/modules/uvdyn_rom.c', 'tables': [{'duplicate_assembly': 'asm/us/nonmatchings/modules/uvdyn_rom/D_uvdyn_rom_00411B1C.s', 'owner_address': 4209720, 'owner_asm_normalized_sha256': 'ee8600d051787c7823bbaf8a555b32861db4dbdb006501ecd261ac79674990a3', 'owner_bytes': 344, 'owner_c_symbol': 'uvDynGetNodeScalarProperty', 'owner_instruction_sha256': 'b31ab1d8d4d7d1f80b9efdbb0b42ef3d5e5ccc6ef22422c88a9be410dd4b9b9d', 'owner_original_symbol': 'func_uvdyn_rom_00403C38', 'table_begin': 4266780, 'table_end': 4266892, 'table_label': 'D_uvdyn_rom_00411B1C'}, {'duplicate_assembly': 'asm/us/nonmatchings/modules/uvdyn_rom/D_uvdyn_rom_00411BDC.s', 'owner_address': 4210584, 'owner_asm_normalized_sha256': '8d1d17dd5230e43336c0154e6ede7250dc6375c36162c657052b34906e775146', 'owner_bytes': 128, 'owner_c_symbol': 'uvDynGetNodePropertyAddress', 'owner_instruction_sha256': 'bd81a6f9db80d17ceaf60df43f820732e1111afccfda2a8a50f9f68b24769e56', 'owner_original_symbol': 'func_uvdyn_rom_00403F98', 'table_begin': 4266972, 'table_end': 4267040, 'table_label': 'D_uvdyn_rom_00411BDC'}, {'duplicate_assembly': 'asm/us/nonmatchings/modules/uvdyn_rom/D_uvdyn_rom_00411C20.s', 'owner_address': 4210712, 'owner_asm_normalized_sha256': '7a5b2db5d261f6da3037ca1c85d92de0126efe98ae44a63caaff12659977a5eb', 'owner_bytes': 436, 'owner_c_symbol': 'uvDynGetNodeVectorProperty', 'owner_instruction_sha256': '7f5e1965abb2b6d056ad435f5efcd4bb4dd3d2f21a011abfcd3843db7a9c5251', 'owner_original_symbol': 'func_uvdyn_rom_00404018', 'table_begin': 4267040, 'table_end': 4267116, 'table_label': 'D_uvdyn_rom_00411C20'}, {'duplicate_assembly': 'asm/us/nonmatchings/modules/uvdyn_rom/D_uvdyn_rom_00411C6C.s', 'owner_address': 4211680, 'owner_asm_normalized_sha256': '09a35a67918a289f3fe679f7911941efff7312073a39294337d0be022a679df5', 'owner_bytes': 240, 'owner_c_symbol': 'uvDynGetNodeMatrixProperty', 'owner_instruction_sha256': 'f4ea07a78f4863d9c4dfe3c36dee1653e88f391079c0c2ea08bafa6e5a1118bd', 'owner_original_symbol': 'func_uvdyn_rom_004043E0', 'table_begin': 4267116, 'table_end': 4267196, 'table_label': 'D_uvdyn_rom_00411C6C'}, {'duplicate_assembly': 'asm/us/nonmatchings/modules/uvdyn_rom/D_uvdyn_rom_00411D48.s', 'owner_address': 4264704, 'owner_asm_normalized_sha256': 'd32b6813d2f88fc58b45b64fac1d846f7355b7656b6764df64fc33d928342dbe', 'owner_bytes': 140, 'owner_c_symbol': 'uvDynGetSecondaryPropertyAddress', 'owner_instruction_sha256': '8ae3b00fc0c56c58babb50d96a4b3a21d4a6b31486e4ad7d0aa19310642e2449', 'owner_original_symbol': 'func_uvdyn_rom_00411300', 'table_begin': 4267336, 'table_end': 4267364, 'table_label': 'D_uvdyn_rom_00411D48'}], 'terminal_literal_tail': {'assembly': 'asm/us/data/modules/uvdyn_rom-secondary.rodata-island.s', 'begin': 4267364, 'end': 4267408, 'readonly_sha256': '485b6ea86b8159929e6e77cf65fbf64fec31657b2b6615e0614201bf8ff713a6'}, 'version': 3, 'witness': 'tools/readonly_layout/uvdyn_rom.five-table-rodata.s', 'witness_sha256': '4ac8728a5cdbe08b158f61a1a06fad8acaa29cd98c5a252808ae0ed4a2025268'}
+DYN_ORIGINAL_WITNESS111100 = ('tools/readonly_layout/uvdyn_rom.original-rodata.s', '37498ed9124fc0b3d7dd80888c25e8002c039f1b0abaab8a8cc8595e186dcce8')
+DYN_TERMINAL_MAKE_SHA111100 = 'ff4c2203e389d115208a7d2c6000b45540b5254b7758d69106f2462e37b9dab1'
+DYN_UNUSED_DUPLICATE_SHA111100 = '587905d952414132dc714062021b05931c5ec18fd060b5b8eeabb68aff98bc31'
+
+def dyn_terminal_tail111100(root, layout):
+    if 'terminal_c_literals' in layout:
+        return dyn_natural_tail113100(root, layout)
+    if 'terminal_literal_tail' not in layout:
+        return None
+    require(layout == DYN_TERMINAL_LAYOUT111100,
+            'terminal literal tail is only the fixed five-owner DYN closure')
+    name, expected = DYN_ORIGINAL_WITNESS111100
+    require(sha(inside(root, name).read_bytes()) == expected,
+            'immutable original DYN witness changed')
+    make = inside(root, 'Makefile').read_bytes()
+    require(sha(make) == DYN_TERMINAL_MAKE_SHA111100 and
+            b'ASM_DIRS      := $(shell find asm/$(VERSION) -type d -not -path "asm/$(VERSION)/nonmatchings/*")' in make,
+            'DYN terminal Makefile/excluded unused-witness membership changed')
+    return layout['terminal_literal_tail']
+
+def dyn_terminal_duplicate111100(root, layout, decoded, duplicate):
+    if 'terminal_c_literals' in layout:
+        table = DYN_NATURAL_LAYOUT113100['tables'][-1]
+        if layout != dict(DYN_NATURAL_LAYOUT113100, **table, version=1):
+            return False
+        dyn_natural_tail113100(root, DYN_NATURAL_LAYOUT113100)
+        return dyn_terminal_duplicate111100(root, dict(DYN_TERMINAL_LAYOUT111100, **table, version=1), decoded, duplicate)
+    if 'terminal_literal_tail' not in layout:
+        return False
+    table = DYN_TERMINAL_LAYOUT111100['tables'][-1]
+    expected = dict(DYN_TERMINAL_LAYOUT111100, **table, version=1)
+    # A table-view consult only; no other duplicate or original guard is waived.
+    if layout != expected:
+        return False
+    dyn_terminal_tail111100(root, DYN_TERMINAL_LAYOUT111100)
+    raw = duplicate.read_bytes()
+    require(len(raw) == 596 and sha(raw) == DYN_UNUSED_DUPLICATE_SHA111100,
+            'DYN original unused seven-target-plus-zero witness changed')
+    original = original_bytes(raw.decode(), 0x411D48, 0x411D68)
+    require(len(decoded) == 880 and sha(decoded) == DYN_TERMINAL_LAYOUT111100['readonly_sha256'] and
+            original == decoded[808:840], 'DYN unused32 witness differs from original decoded bytes')
+    # This path lies under nonmatchings, excluded by the exact Makefile above.
+    # The caller still scans every source/ASM/header for actual table users.
+    return True
+
+DYN_NATURAL_LAYOUT113100={'begin': 4266528, 'end': 4267408, 'late_spans': [{'begin': 4266892, 'end': 4266972, 'host_address': 4210064, 'host_assembly': 'asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00403D90.s', 'host_bytes': 520, 'host_sha256': 'fc3f9018478887d888ef15718e683d3a4aaeb58561a8ba44deb236fdb36a5390', 'host_symbol': 'func_uvdyn_rom_00403D90'}, None, None, {'begin': 4267196, 'end': 4267336, 'host_address': 4215020, 'host_assembly': 'asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_004050EC.s', 'host_bytes': 9384, 'host_sha256': '5bd49fc0194d2fc896cfd0bf11335fcd14808411437745f93aa2ef684108f3b9', 'host_symbol': 'func_uvdyn_rom_004050EC'}, None], 'module': 'uvdyn_rom', 'monolithic_assembly': 'asm/us/data/modules/uvdyn_rom.rodata.s', 'prefix_assembly': 'asm/us/data/modules/uvdyn_rom.rodata-prefix.s', 'readonly_sha256': 'ebf5750d6c6c5efc21f1a2632733dda77295f10ff90974f400a1fc591c821c7e', 'source': 'src/modules/uvdyn_rom.c', 'tables': [{'duplicate_assembly': 'asm/us/nonmatchings/modules/uvdyn_rom/D_uvdyn_rom_00411B1C.s', 'owner_address': 4209720, 'owner_asm_normalized_sha256': 'ee8600d051787c7823bbaf8a555b32861db4dbdb006501ecd261ac79674990a3', 'owner_bytes': 344, 'owner_c_symbol': 'uvDynGetNodeScalarProperty', 'owner_instruction_sha256': 'b31ab1d8d4d7d1f80b9efdbb0b42ef3d5e5ccc6ef22422c88a9be410dd4b9b9d', 'owner_original_symbol': 'func_uvdyn_rom_00403C38', 'table_begin': 4266780, 'table_end': 4266892, 'table_label': 'D_uvdyn_rom_00411B1C'}, {'duplicate_assembly': 'asm/us/nonmatchings/modules/uvdyn_rom/D_uvdyn_rom_00411BDC.s', 'owner_address': 4210584, 'owner_asm_normalized_sha256': '8d1d17dd5230e43336c0154e6ede7250dc6375c36162c657052b34906e775146', 'owner_bytes': 128, 'owner_c_symbol': 'uvDynGetNodePropertyAddress', 'owner_instruction_sha256': 'bd81a6f9db80d17ceaf60df43f820732e1111afccfda2a8a50f9f68b24769e56', 'owner_original_symbol': 'func_uvdyn_rom_00403F98', 'table_begin': 4266972, 'table_end': 4267040, 'table_label': 'D_uvdyn_rom_00411BDC'}, {'duplicate_assembly': 'asm/us/nonmatchings/modules/uvdyn_rom/D_uvdyn_rom_00411C20.s', 'owner_address': 4210712, 'owner_asm_normalized_sha256': '7a5b2db5d261f6da3037ca1c85d92de0126efe98ae44a63caaff12659977a5eb', 'owner_bytes': 436, 'owner_c_symbol': 'uvDynGetNodeVectorProperty', 'owner_instruction_sha256': '7f5e1965abb2b6d056ad435f5efcd4bb4dd3d2f21a011abfcd3843db7a9c5251', 'owner_original_symbol': 'func_uvdyn_rom_00404018', 'table_begin': 4267040, 'table_end': 4267116, 'table_label': 'D_uvdyn_rom_00411C20'}, {'duplicate_assembly': 'asm/us/nonmatchings/modules/uvdyn_rom/D_uvdyn_rom_00411C6C.s', 'owner_address': 4211680, 'owner_asm_normalized_sha256': '09a35a67918a289f3fe679f7911941efff7312073a39294337d0be022a679df5', 'owner_bytes': 240, 'owner_c_symbol': 'uvDynGetNodeMatrixProperty', 'owner_instruction_sha256': 'f4ea07a78f4863d9c4dfe3c36dee1653e88f391079c0c2ea08bafa6e5a1118bd', 'owner_original_symbol': 'func_uvdyn_rom_004043E0', 'table_begin': 4267116, 'table_end': 4267196, 'table_label': 'D_uvdyn_rom_00411C6C'}, {'duplicate_assembly': 'asm/us/nonmatchings/modules/uvdyn_rom/D_uvdyn_rom_00411D48.s', 'owner_address': 4264704, 'owner_asm_normalized_sha256': 'd32b6813d2f88fc58b45b64fac1d846f7355b7656b6764df64fc33d928342dbe', 'owner_bytes': 140, 'owner_c_symbol': 'uvDynGetSecondaryPropertyAddress', 'owner_instruction_sha256': '8ae3b00fc0c56c58babb50d96a4b3a21d4a6b31486e4ad7d0aa19310642e2449', 'owner_original_symbol': 'func_uvdyn_rom_00411300', 'table_begin': 4267336, 'table_end': 4267364, 'table_label': 'D_uvdyn_rom_00411D48'}], 'version': 3, 'witness': 'tools/readonly_layout/uvdyn_rom.five-table-rodata.s', 'witness_sha256': '4ac8728a5cdbe08b158f61a1a06fad8acaa29cd98c5a252808ae0ed4a2025268', 'terminal_c_literals': {'begin': 4267364, 'end': 4267408, 'readonly_sha256': '485b6ea86b8159929e6e77cf65fbf64fec31657b2b6615e0614201bf8ff713a6', 'owner_c_symbol': 'uvDynSetSecondaryMatrixProperty', 'owner_address': 70740, 'owner_bytes': 496, 'owner_native_sha256': 'c36b7cf7fe88af4e7d27e9d8299506386920d8a677d9753d507d0204d478bbb2', 'compiler_source_sha256': '1cf8da25e4099b171c83dcdb8cf03801f095b1066ec74db4a12a5c6b3ec87077', 'literal_binary64': ['3ee4f8b588e368f1', 'bee4f8b588e368f1', '3ee4f8b588e368f1', 'bee4f8b588e368f1'], 'obsolete_assembly': 'asm/us/data/modules/uvdyn_rom-secondary.rodata-island.s', 'obsolete_assembly_sha256': '82260626a61617c31d8f765b4b3ec49384bdcd5bb74f7027c9ef84d2761a8704', 'obsolete_assembly_bytes': 705}}
+
+def dyn_natural_tail113100(root, layout):
+    require(layout == DYN_NATURAL_LAYOUT113100, 'natural terminal literals require the fixed measured DYN closure')
+    name, expected = DYN_ORIGINAL_WITNESS111100
+    require(sha(inside(root, name).read_bytes()) == expected, 'immutable original DYN witness changed')
+    make = inside(root, 'Makefile').read_bytes()
+    require(sha(make) == DYN_TERMINAL_MAKE_SHA111100 and
+            b'ASM_DIRS      := $(shell find asm/$(VERSION) -type d -not -path "asm/$(VERSION)/nonmatchings/*")' in make,
+            'natural DYN Makefile/excluded unused-witness membership changed')
+    tail = layout['terminal_c_literals']
+    exclusion = [line for line in make.decode().splitlines() if line.startswith('S_FILES') and 'filter-out' in line]
+    require(len(exclusion) == 1 and tail['obsolete_assembly'] in exclusion[0].split(), 'obsolete tail is not excluded from standalone compilation')
+    return dict(begin=tail['begin'], end=tail['end'], readonly_sha256=tail['readonly_sha256'],
+                assembly=tail['obsolete_assembly'], c_owned=True)
+
+def dyn_natural_source113100(root, layout, source, code):
+    tail = layout['terminal_c_literals']
+    require(sha(source.encode()) == tail['compiler_source_sha256'], 'natural DYN C source changed from measured TU')
+    pragma = '#pragma GLOBAL_ASM("' + tail['obsolete_assembly'] + '")'
+    require(pragma not in code and code.count('state->value134 < 1e-5 && -1e-5 < state->value134') == 2,
+            'natural terminal literals/obsolete pragma changed')
+    for name in ('D_uvdyn_rom_00411D68', 'D_uvdyn_rom_00411D70', 'D_uvdyn_rom_00411D78', 'D_uvdyn_rom_00411D80'):
+        require(source.count(name) == 1 and 'extern f64 ' + name + ';' in source, 'retained unused extern declaration changed')
+    header = 'void uvDynSetSecondaryMatrixProperty(DynSecondaryState *state, s32 selector, Mtx4F *inputMatrix) {'
+    require(code.count(header) == 1, 'natural literal owner is not one complete definition')
+    return code.index(header)
+
+def dyn_natural_obsolete113100(root, layout, path):
+    tail = layout['terminal_c_literals'];raw = path.read_bytes()
+    require(path.is_file() and len(raw) == tail['obsolete_assembly_bytes'] and sha(raw) == tail['obsolete_assembly_sha256'],
+            'obsolete terminal ASM preimage changed')
+    decoded = original_bytes(raw.decode(), tail['begin'], tail['end'])
+    require(len(decoded) == 44 and sha(decoded) == tail['readonly_sha256'], 'obsolete terminal ASM native data changed')
+    return True

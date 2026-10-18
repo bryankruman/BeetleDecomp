@@ -34,8 +34,8 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **719** assembly references:
-**682** ordinary functions and **37** entrypoints, with **666,824** known instruction bytes
+matching C are preserved with `#line`. The current ledger has **718** assembly references:
+**681** ordinary functions and **37** entrypoints, with **666,684** known instruction bytes
 and no unknown sizes. The broader name audit still finds **290** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
@@ -3865,3 +3865,5 @@ association/order evidence. Require genuine current provider rows, raw alias
 metadata, normal four-ELF/storage checks, all 133 original modules and full ROM,
 FULL/native/carry/SDK validation and guarded Git before adding 904 bytes.
 Runtime/gameplay qualification remains separate and pending.
+
+The DYN secondary-address source preserves the original unwritten-result paths. The terminal 44-byte readonly tail is naturally C-owned by the secondary matrix setter, with no instruction credit. Isolated linking and packing reproduced all 79,840 original module bytes exactly; normal, FULL, native and full-ROM validation remain required.

@@ -1,84 +1,116 @@
 {
-  "module": "uvdyn_rom",
-  "source": "src/modules/uvdyn_rom.c",
-  "witness": "tools/readonly_layout/uvdyn_rom.original-rodata.s",
-  "witness_sha256": "37498ed9124fc0b3d7dd80888c25e8002c039f1b0abaab8a8cc8595e186dcce8",
-  "readonly_sha256": "ebf5750d6c6c5efc21f1a2632733dda77295f10ff90974f400a1fc591c821c7e",
   "begin": 4266528,
   "end": 4267408,
-  "prefix_assembly": "asm/us/data/modules/uvdyn_rom.rodata-prefix.s",
-  "monolithic_assembly": "asm/us/data/modules/uvdyn_rom.rodata.s",
-  "version": 3,
-  "tables": [
-    {
-      "table_begin": 4266780,
-      "table_end": 4266892,
-      "table_label": "D_uvdyn_rom_00411B1C",
-      "owner_original_symbol": "func_uvdyn_rom_00403C38",
-      "owner_c_symbol": "uvDynGetNodeScalarProperty",
-      "duplicate_assembly": "asm/us/nonmatchings/modules/uvdyn_rom/D_uvdyn_rom_00411B1C.s",
-      "owner_address": 4209720,
-      "owner_bytes": 344,
-      "owner_instruction_sha256": "b31ab1d8d4d7d1f80b9efdbb0b42ef3d5e5ccc6ef22422c88a9be410dd4b9b9d",
-      "owner_asm_normalized_sha256": "ee8600d051787c7823bbaf8a555b32861db4dbdb006501ecd261ac79674990a3"
-    },
-    {
-      "table_begin": 4266972,
-      "table_end": 4267040,
-      "table_label": "D_uvdyn_rom_00411BDC",
-      "owner_original_symbol": "func_uvdyn_rom_00403F98",
-      "owner_c_symbol": "uvDynGetNodePropertyAddress",
-      "duplicate_assembly": "asm/us/nonmatchings/modules/uvdyn_rom/D_uvdyn_rom_00411BDC.s",
-      "owner_address": 4210584,
-      "owner_bytes": 128,
-      "owner_instruction_sha256": "bd81a6f9db80d17ceaf60df43f820732e1111afccfda2a8a50f9f68b24769e56",
-      "owner_asm_normalized_sha256": "8d1d17dd5230e43336c0154e6ede7250dc6375c36162c657052b34906e775146"
-    },
-    {
-      "table_begin": 4267040,
-      "table_end": 4267116,
-      "table_label": "D_uvdyn_rom_00411C20",
-      "owner_original_symbol": "func_uvdyn_rom_00404018",
-      "owner_c_symbol": "uvDynGetNodeVectorProperty",
-      "duplicate_assembly": "asm/us/nonmatchings/modules/uvdyn_rom/D_uvdyn_rom_00411C20.s",
-      "owner_address": 4210712,
-      "owner_bytes": 436,
-      "owner_instruction_sha256": "7f5e1965abb2b6d056ad435f5efcd4bb4dd3d2f21a011abfcd3843db7a9c5251",
-      "owner_asm_normalized_sha256": "7a5b2db5d261f6da3037ca1c85d92de0126efe98ae44a63caaff12659977a5eb"
-    },
-    {
-      "table_begin": 4267116,
-      "table_end": 4267196,
-      "table_label": "D_uvdyn_rom_00411C6C",
-      "owner_original_symbol": "func_uvdyn_rom_004043E0",
-      "owner_c_symbol": "uvDynGetNodeMatrixProperty",
-      "duplicate_assembly": "asm/us/nonmatchings/modules/uvdyn_rom/D_uvdyn_rom_00411C6C.s",
-      "owner_address": 4211680,
-      "owner_bytes": 240,
-      "owner_instruction_sha256": "f4ea07a78f4863d9c4dfe3c36dee1653e88f391079c0c2ea08bafa6e5a1118bd",
-      "owner_asm_normalized_sha256": "09a35a67918a289f3fe679f7911941efff7312073a39294337d0be022a679df5"
-    }
-  ],
   "late_spans": [
     {
       "begin": 4266892,
       "end": 4266972,
-      "host_symbol": "func_uvdyn_rom_00403D90",
       "host_address": 4210064,
       "host_assembly": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00403D90.s",
+      "host_bytes": 520,
       "host_sha256": "fc3f9018478887d888ef15718e683d3a4aaeb58561a8ba44deb236fdb36a5390",
-      "host_bytes": 520
+      "host_symbol": "func_uvdyn_rom_00403D90"
     },
     null,
     null,
     {
       "begin": 4267196,
-      "end": 4267408,
+      "end": 4267336,
       "host_address": 4215020,
-      "host_symbol": "func_uvdyn_rom_004050EC",
       "host_assembly": "asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_004050EC.s",
+      "host_bytes": 9384,
       "host_sha256": "5bd49fc0194d2fc896cfd0bf11335fcd14808411437745f93aa2ef684108f3b9",
-      "host_bytes": 9384
+      "host_symbol": "func_uvdyn_rom_004050EC"
+    },
+    null
+  ],
+  "module": "uvdyn_rom",
+  "monolithic_assembly": "asm/us/data/modules/uvdyn_rom.rodata.s",
+  "prefix_assembly": "asm/us/data/modules/uvdyn_rom.rodata-prefix.s",
+  "readonly_sha256": "ebf5750d6c6c5efc21f1a2632733dda77295f10ff90974f400a1fc591c821c7e",
+  "source": "src/modules/uvdyn_rom.c",
+  "tables": [
+    {
+      "duplicate_assembly": "asm/us/nonmatchings/modules/uvdyn_rom/D_uvdyn_rom_00411B1C.s",
+      "owner_address": 4209720,
+      "owner_asm_normalized_sha256": "ee8600d051787c7823bbaf8a555b32861db4dbdb006501ecd261ac79674990a3",
+      "owner_bytes": 344,
+      "owner_c_symbol": "uvDynGetNodeScalarProperty",
+      "owner_instruction_sha256": "b31ab1d8d4d7d1f80b9efdbb0b42ef3d5e5ccc6ef22422c88a9be410dd4b9b9d",
+      "owner_original_symbol": "func_uvdyn_rom_00403C38",
+      "table_begin": 4266780,
+      "table_end": 4266892,
+      "table_label": "D_uvdyn_rom_00411B1C"
+    },
+    {
+      "duplicate_assembly": "asm/us/nonmatchings/modules/uvdyn_rom/D_uvdyn_rom_00411BDC.s",
+      "owner_address": 4210584,
+      "owner_asm_normalized_sha256": "8d1d17dd5230e43336c0154e6ede7250dc6375c36162c657052b34906e775146",
+      "owner_bytes": 128,
+      "owner_c_symbol": "uvDynGetNodePropertyAddress",
+      "owner_instruction_sha256": "bd81a6f9db80d17ceaf60df43f820732e1111afccfda2a8a50f9f68b24769e56",
+      "owner_original_symbol": "func_uvdyn_rom_00403F98",
+      "table_begin": 4266972,
+      "table_end": 4267040,
+      "table_label": "D_uvdyn_rom_00411BDC"
+    },
+    {
+      "duplicate_assembly": "asm/us/nonmatchings/modules/uvdyn_rom/D_uvdyn_rom_00411C20.s",
+      "owner_address": 4210712,
+      "owner_asm_normalized_sha256": "7a5b2db5d261f6da3037ca1c85d92de0126efe98ae44a63caaff12659977a5eb",
+      "owner_bytes": 436,
+      "owner_c_symbol": "uvDynGetNodeVectorProperty",
+      "owner_instruction_sha256": "7f5e1965abb2b6d056ad435f5efcd4bb4dd3d2f21a011abfcd3843db7a9c5251",
+      "owner_original_symbol": "func_uvdyn_rom_00404018",
+      "table_begin": 4267040,
+      "table_end": 4267116,
+      "table_label": "D_uvdyn_rom_00411C20"
+    },
+    {
+      "duplicate_assembly": "asm/us/nonmatchings/modules/uvdyn_rom/D_uvdyn_rom_00411C6C.s",
+      "owner_address": 4211680,
+      "owner_asm_normalized_sha256": "09a35a67918a289f3fe679f7911941efff7312073a39294337d0be022a679df5",
+      "owner_bytes": 240,
+      "owner_c_symbol": "uvDynGetNodeMatrixProperty",
+      "owner_instruction_sha256": "f4ea07a78f4863d9c4dfe3c36dee1653e88f391079c0c2ea08bafa6e5a1118bd",
+      "owner_original_symbol": "func_uvdyn_rom_004043E0",
+      "table_begin": 4267116,
+      "table_end": 4267196,
+      "table_label": "D_uvdyn_rom_00411C6C"
+    },
+    {
+      "duplicate_assembly": "asm/us/nonmatchings/modules/uvdyn_rom/D_uvdyn_rom_00411D48.s",
+      "owner_address": 4264704,
+      "owner_asm_normalized_sha256": "d32b6813d2f88fc58b45b64fac1d846f7355b7656b6764df64fc33d928342dbe",
+      "owner_bytes": 140,
+      "owner_c_symbol": "uvDynGetSecondaryPropertyAddress",
+      "owner_instruction_sha256": "8ae3b00fc0c56c58babb50d96a4b3a21d4a6b31486e4ad7d0aa19310642e2449",
+      "owner_original_symbol": "func_uvdyn_rom_00411300",
+      "table_begin": 4267336,
+      "table_end": 4267364,
+      "table_label": "D_uvdyn_rom_00411D48"
     }
-  ]
+  ],
+  "terminal_c_literals": {
+    "begin": 4267364,
+    "compiler_source_sha256": "1cf8da25e4099b171c83dcdb8cf03801f095b1066ec74db4a12a5c6b3ec87077",
+    "end": 4267408,
+    "literal_binary64": [
+      "3ee4f8b588e368f1",
+      "bee4f8b588e368f1",
+      "3ee4f8b588e368f1",
+      "bee4f8b588e368f1"
+    ],
+    "obsolete_assembly": "asm/us/data/modules/uvdyn_rom-secondary.rodata-island.s",
+    "obsolete_assembly_bytes": 705,
+    "obsolete_assembly_sha256": "82260626a61617c31d8f765b4b3ec49384bdcd5bb74f7027c9ef84d2761a8704",
+    "owner_address": 70740,
+    "owner_bytes": 496,
+    "owner_c_symbol": "uvDynSetSecondaryMatrixProperty",
+    "owner_native_sha256": "c36b7cf7fe88af4e7d27e9d8299506386920d8a677d9753d507d0204d478bbb2",
+    "readonly_sha256": "485b6ea86b8159929e6e77cf65fbf64fec31657b2b6615e0614201bf8ff713a6"
+  },
+  "version": 3,
+  "witness": "tools/readonly_layout/uvdyn_rom.five-table-rodata.s",
+  "witness_sha256": "4ac8728a5cdbe08b158f61a1a06fad8acaa29cd98c5a252808ae0ed4a2025268"
 }
