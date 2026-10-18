@@ -17,17 +17,17 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 1947 |
-| Preserved RE_ORIGINAL_QUIRK notes | 562 |
+| Explicit RE_UNKNOWN notes | 1950 |
+| Preserved RE_ORIGINAL_QUIRK notes | 563 |
 | Older comments with uncertainty language | 88 |
 | Documented original-behavior audits | 30 |
-| Assembly-backed functions or data | 723 |
-| Address-based function identifiers | 906 |
+| Assembly-backed functions or data | 722 |
+| Address-based function identifiers | 910 |
 | Address-based global identifiers | 1694 |
-| Offset-based fields or neutral typed fields | 1801 |
+| Offset-based fields or neutral typed fields | 1809 |
 | Layout padding to preserve | 281 |
 | Unresolved type names | 285 |
-| Explicit unused ABI, storage or local identifiers | 157 |
+| Explicit unused ABI, storage or local identifiers | 165 |
 | Decompiler parameter/local names | 623 |
 | Fake, unresolved or TODO draft markers | 55 |
 | Data-dependent conditional draft guards | 4 |
@@ -2570,23 +2570,27 @@ For every future source wave, regenerate and check this index after code and str
 | address_function | `func_cam_00400190` | function `__entrypoint_func_camInitializeModuleState`, global `func_cam_00400190` | [79](../src/modules/cam.c#L79), [100](../src/modules/cam.c#L100) |
 | address_function | `func_cam_00400E80` | function `__entrypoint_func_camInitializeModuleState`, global `func_cam_00400E80` | [80](../src/modules/cam.c#L80), [103](../src/modules/cam.c#L103) |
 | address_function | `func_cam_0040116C` | function `__entrypoint_func_camInitializeModuleState`, global `func_cam_0040116C` | [81](../src/modules/cam.c#L81), [104](../src/modules/cam.c#L104) |
-| address_function | `func_cam_004031B4` | function `__entrypoint_func_camInitializeModuleState`, function `func_cam_004031B4`, function `func_cam_004031B4` | [82](../src/modules/cam.c#L82), [107](../src/modules/cam.c#L107), [332](../src/modules/cam.c#L332) |
-| address_function | `func_cam_00403394` | function `__entrypoint_func_camInitializeModuleState`, function `camAccumulateScalarAndQueryProperty`, function `func_cam_00403394`, function `func_cam_00403394` | [73](../src/modules/cam.c#L73), [108](../src/modules/cam.c#L108), [191](../src/modules/cam.c#L191), [251](../src/modules/cam.c#L251) |
-| address_function | `func_cam_00403A20` | function `__entrypoint_func_camInitializeModuleState`, function `func_cam_004031B4`, function `func_cam_00403A20` | [83](../src/modules/cam.c#L83), [109](../src/modules/cam.c#L109), [356](../src/modules/cam.c#L356) |
+| address_function | `func_cam_00401D3C` | function `camUpdateSubjectFollowState`, function `func_cam_00401D3C` | [247](../src/modules/cam.c#L247), [281](../src/modules/cam.c#L281) |
+| address_function | `func_cam_004022E0` | function `camUpdateSubjectFollowState`, function `func_cam_004022E0` | [248](../src/modules/cam.c#L248), [290](../src/modules/cam.c#L290) |
+| address_function | `func_cam_0040263C` | function `camUpdateSubjectFollowState`, function `func_cam_0040263C` | [249](../src/modules/cam.c#L249), [293](../src/modules/cam.c#L293) |
+| address_function | `func_cam_00402934` | function `camUpdateSubjectFollowState`, function `func_cam_00402934` | [250](../src/modules/cam.c#L250), [305](../src/modules/cam.c#L305) |
+| address_function | `func_cam_004031B4` | function `__entrypoint_func_camInitializeModuleState`, function `func_cam_004031B4`, function `func_cam_004031B4` | [82](../src/modules/cam.c#L82), [107](../src/modules/cam.c#L107), [452](../src/modules/cam.c#L452) |
+| address_function | `func_cam_00403394` | function `__entrypoint_func_camInitializeModuleState`, function `camAccumulateScalarAndQueryProperty`, function `func_cam_00403394`, function `func_cam_00403394` | [73](../src/modules/cam.c#L73), [108](../src/modules/cam.c#L108), [311](../src/modules/cam.c#L311), [371](../src/modules/cam.c#L371) |
+| address_function | `func_cam_00403A20` | function `__entrypoint_func_camInitializeModuleState`, function `func_cam_004031B4`, function `func_cam_00403A20` | [83](../src/modules/cam.c#L83), [109](../src/modules/cam.c#L109), [476](../src/modules/cam.c#L476) |
 | address_function | `func_cam_00403ACC` | function `__entrypoint_func_camInitializeModuleState`, global `func_cam_00403ACC` | [84](../src/modules/cam.c#L84), [101](../src/modules/cam.c#L101) |
 | address_global | `D_cam_00404810` | function `__entrypoint_func_camInitializeModuleState`, global `D_cam_00404810` | [68](../src/modules/cam.c#L68), [116](../src/modules/cam.c#L116) |
 | address_global | `D_cam_0040481C` | function `__entrypoint_func_camInitializeModuleState`, global `D_cam_00404810` | [68](../src/modules/cam.c#L68), [117](../src/modules/cam.c#L117) |
-| address_global | `D_cam_004048D0` | function `camAccumulateScalarAndQueryProperty`, global `D_cam_004048D0` | [192](../src/modules/cam.c#L192), [247](../src/modules/cam.c#L247) |
-| address_global | `D_cam_004048D4` | function `camUpdateAlternatingOffset` | [24](../src/modules/cam.c#L24), [262](../src/modules/cam.c#L262) |
-| address_global | `D_cam_004048D8` | function `camUpdateAlternatingOffset` | [24](../src/modules/cam.c#L24), [263](../src/modules/cam.c#L263) |
-| address_global | `D_cam_00404958` | function `camArmSharedScaledValue`, global `D_cam_00404958` | [38](../src/modules/cam.c#L38), [396](../src/modules/cam.c#L396) |
-| address_global | `D_cam_00404DF4` | function `__entrypoint_func_camInitializeModuleState`, function `camRememberCameraAndRenderChannel`, global `D_cam_00404DF4` | [39](../src/modules/cam.c#L39), [110](../src/modules/cam.c#L110), [319](../src/modules/cam.c#L319) |
+| address_global | `D_cam_004048D0` | function `camAccumulateScalarAndQueryProperty`, global `D_cam_004048D0` | [312](../src/modules/cam.c#L312), [367](../src/modules/cam.c#L367) |
+| address_global | `D_cam_004048D4` | function `camUpdateAlternatingOffset` | [24](../src/modules/cam.c#L24), [382](../src/modules/cam.c#L382) |
+| address_global | `D_cam_004048D8` | function `camUpdateAlternatingOffset` | [24](../src/modules/cam.c#L24), [383](../src/modules/cam.c#L383) |
+| address_global | `D_cam_00404958` | function `camArmSharedScaledValue`, global `D_cam_00404958` | [38](../src/modules/cam.c#L38), [516](../src/modules/cam.c#L516) |
+| address_global | `D_cam_00404DF4` | function `__entrypoint_func_camInitializeModuleState`, function `camRememberCameraAndRenderChannel`, global `D_cam_00404DF4` | [39](../src/modules/cam.c#L39), [110](../src/modules/cam.c#L110), [439](../src/modules/cam.c#L439) |
 | address_global | `D_cam_00404DF8` | function `__entrypoint_func_camInitializeModuleState`, global `D_cam_00404DF8` | [65](../src/modules/cam.c#L65), [111](../src/modules/cam.c#L111), [112](../src/modules/cam.c#L112) |
 | address_global | `D_cam_00404DFC` | function `__entrypoint_func_camInitializeModuleState`, global `D_cam_00404DFC` | [66](../src/modules/cam.c#L66), [115](../src/modules/cam.c#L115) |
-| address_global | `D_cam_00404E00` | function `__entrypoint_func_camInitializeModuleState` | [67](../src/modules/cam.c#L67), [116](../src/modules/cam.c#L116) |
+| address_global | `D_cam_00404E00` | function `__entrypoint_func_camInitializeModuleState`, function `camUpdateSubjectFollowState` | [67](../src/modules/cam.c#L67), [116](../src/modules/cam.c#L116), [287](../src/modules/cam.c#L287), [301](../src/modules/cam.c#L301) |
 | address_global | `D_cam_00404E04` | function `__entrypoint_func_camInitializeModuleState` | [67](../src/modules/cam.c#L67), [117](../src/modules/cam.c#L117) |
-| address_global | `D_cam_00404E08` | function `camClearSharedRecordWord1EC`, global `D_cam_00404E08` | [43](../src/modules/cam.c#L43), [385](../src/modules/cam.c#L385) |
-| address_global | `D_cam_00404E28` | function `camArmSharedScaledValue`, global `D_cam_00404E28` | [37](../src/modules/cam.c#L37), [396](../src/modules/cam.c#L396), [397](../src/modules/cam.c#L397), [398](../src/modules/cam.c#L398) |
+| address_global | `D_cam_00404E08` | function `camClearSharedRecordWord1EC`, global `D_cam_00404E08` | [43](../src/modules/cam.c#L43), [505](../src/modules/cam.c#L505) |
+| address_global | `D_cam_00404E28` | function `camArmSharedScaledValue`, global `D_cam_00404E28` | [37](../src/modules/cam.c#L37), [516](../src/modules/cam.c#L516), [517](../src/modules/cam.c#L517), [518](../src/modules/cam.c#L518) |
 | address_global | `D_cam_00404E2C` | function `__entrypoint_func_camInitializeModuleState`, function `camReleaseChannelHandle`, global `D_cam_00404E2C` | [40](../src/modules/cam.c#L40), [113](../src/modules/cam.c#L113), [157](../src/modules/cam.c#L157) |
 | assembly | `func_cam_00400190` | — | [151](../src/modules/cam.c#L151) |
 | assembly | `func_cam_004007C0` | — | [163](../src/modules/cam.c#L163) |
@@ -2595,30 +2599,32 @@ For every future source wave, regenerate and check this index after code and str
 | assembly | `func_cam_0040116C` | — | [169](../src/modules/cam.c#L169) |
 | assembly | `func_cam_004015C0` | — | [183](../src/modules/cam.c#L183) |
 | assembly | `func_cam_004018E0` | — | [185](../src/modules/cam.c#L185) |
-| assembly | `func_cam_00401B2C` | — | [187](../src/modules/cam.c#L187) |
-| assembly | `func_cam_00401D3C` | — | [189](../src/modules/cam.c#L189) |
-| assembly | `func_cam_004022E0` | — | [276](../src/modules/cam.c#L276) |
-| assembly | `func_cam_0040263C` | — | [278](../src/modules/cam.c#L278) |
-| assembly | `func_cam_00402934` | — | [280](../src/modules/cam.c#L280) |
-| assembly | `func_cam_00402E08` | — | [282](../src/modules/cam.c#L282) |
-| assembly | `func_cam_00403394` | — | [359](../src/modules/cam.c#L359) |
-| assembly | `func_cam_00403A20` | — | [361](../src/modules/cam.c#L361) |
-| assembly | `func_cam_00403ACC` | — | [377](../src/modules/cam.c#L377) |
-| assembly | `func_cam_004040D0` | — | [402](../src/modules/cam.c#L402) |
-| assembly | `func_cam_004042FC` | — | [404](../src/modules/cam.c#L404) |
-| assembly | `func_cam_00404558` | — | [406](../src/modules/cam.c#L406) |
+| assembly | `func_cam_00401D3C` | — | [309](../src/modules/cam.c#L309) |
+| assembly | `func_cam_004022E0` | — | [396](../src/modules/cam.c#L396) |
+| assembly | `func_cam_0040263C` | — | [398](../src/modules/cam.c#L398) |
+| assembly | `func_cam_00402934` | — | [400](../src/modules/cam.c#L400) |
+| assembly | `func_cam_00402E08` | — | [402](../src/modules/cam.c#L402) |
+| assembly | `func_cam_00403394` | — | [479](../src/modules/cam.c#L479) |
+| assembly | `func_cam_00403A20` | — | [481](../src/modules/cam.c#L481) |
+| assembly | `func_cam_00403ACC` | — | [497](../src/modules/cam.c#L497) |
+| assembly | `func_cam_004040D0` | — | [522](../src/modules/cam.c#L522) |
+| assembly | `func_cam_004042FC` | — | [524](../src/modules/cam.c#L524) |
+| assembly | `func_cam_00404558` | — | [526](../src/modules/cam.c#L526) |
 | explicit_unknown | `* Publish the fourteen original callback/storage addresses after updating the * allocation pointer. Set the shared scalar to 1.0f and clear the shared word, * then load UVFT fil...` | function `__entrypoint_func_camInitializeModuleState` | [87](../src/modules/cam.c#L87) |
-| explicit_unknown | `Accumulate camera scalar 0x15C, build/offset a point and forward a successful * query value to camera property selector0x12/index3 as a promoted double. * RE_ORIGINAL_QUIRK: the...` | function `camAccumulateScalarAndQueryProperty` | [219](../src/modules/cam.c#L219) |
-| explicit_unknown | `Blend the third three-component row, then rebuild and normalize the first * and third rows using FVEC slots24 and08. The row's fourth components and the * matrix translation rem...` | function `camBlendAndRebuildBasisRows` | [285](../src/modules/cam.c#L285) |
-| explicit_unknown | `Clear the shared camera record word at offset 0x1EC; the argument is unused. * RE_UNKNOWN: word purpose, callback role and shared record layout.` | function `camClearSharedRecordWord1EC` | [380](../src/modules/cam.c#L380) |
-| explicit_unknown | `Copy sixteen floats from the incoming source into camera offset 0x1A8. * Original wrapper forwards A1 unchanged; actual FMTX slot0C consumes that * source pointer. RE_UNKNOWN: m...` | function `camCopyMatrixIntoRecordOffset1A8` | [365](../src/modules/cam.c#L365) |
-| explicit_unknown | `Divide signed viewport height by width, clear word10, and reconcile one * angle from the other for mode0/1 through the original tangent/angle slots. * Then store negative/positi...` | function `func_cam_004031B4` | [324](../src/modules/cam.c#L324) |
+| explicit_unknown | `Accumulate camera scalar 0x15C, build/offset a point and forward a successful * query value to camera property selector0x12/index3 as a promoted double. * RE_ORIGINAL_QUIRK: the...` | function `camAccumulateScalarAndQueryProperty` | [339](../src/modules/cam.c#L339) |
+| explicit_unknown | `Blend the third three-component row, then rebuild and normalize the first * and third rows using FVEC slots24 and08. The row's fourth components and the * matrix translation rem...` | function `camBlendAndRebuildBasisRows` | [405](../src/modules/cam.c#L405) |
+| explicit_unknown | `Clear the shared camera record word at offset 0x1EC; the argument is unused. * RE_UNKNOWN: word purpose, callback role and shared record layout.` | function `camClearSharedRecordWord1EC` | [500](../src/modules/cam.c#L500) |
+| explicit_unknown | `Copy sixteen floats from the incoming source into camera offset 0x1A8. * Original wrapper forwards A1 unchanged; actual FMTX slot0C consumes that * source pointer. RE_UNKNOWN: m...` | function `camCopyMatrixIntoRecordOffset1A8` | [485](../src/modules/cam.c#L485) |
+| explicit_unknown | `Derive the follow-camera state from the subject matrix and supplied preset, * then run the original gated queries, minimum check and final transform update. * Preserve helper or...` | function `camUpdateSubjectFollowState` | [253](../src/modules/cam.c#L253) |
+| explicit_unknown | `Divide signed viewport height by width, clear word10, and reconcile one * angle from the other for mode0/1 through the original tangent/angle slots. * Then store negative/positi...` | function `func_cam_004031B4` | [444](../src/modules/cam.c#L444) |
 | explicit_unknown | `Initializer-only original address registry, not a callable API. * Existing unresolved prototypes remain unchanged; opaque linker code labels * below are only addresses and are n...` | type `CameraExportAddresses` | [44](../src/modules/cam.c#L44) |
-| explicit_unknown | `Multiply the shared record scalar at 0x14 by the original constant * into field 0x18, then set its flags at 0x10 and 0xC. Preserve the * unused callback parameter. RE_UNKNOWN: t...` | function `camArmSharedScaledValue` | [391](../src/modules/cam.c#L391) |
+| explicit_unknown | `Minimum consumed prefixes, not complete object or allocation declarations. * RE_UNKNOWN: field units, flag meanings, aliasing and callback lifetimes. * The subject matrix and su...` | type `CameraFollowUpdate` | [188](../src/modules/cam.c#L188) |
+| explicit_unknown | `Multiply the shared record scalar at 0x14 by the original constant * into field 0x18, then set its flags at 0x10 and 0xC. Preserve the * unused callback parameter. RE_UNKNOWN: t...` | function `camArmSharedScaledValue` | [511](../src/modules/cam.c#L511) |
 | explicit_unknown | `Original empty function; preserve its separate identity and argument ABI. * RE_UNKNOWN: purpose, caller-facing role and indirect/export reachability * remain unresolved. An empt...` | function `func_cam_00400128` | [122](../src/modules/cam.c#L122) |
-| explicit_unknown | `Store the selected camera and render its signed-short channel * through the channel export. * RE_UNKNOWN: ownership/lifetime of the retained camera pointer. Trace * camera creat...` | function `camRememberCameraAndRenderChannel` | [313](../src/modules/cam.c#L313) |
+| explicit_unknown | `Retained helpers: supplied address arguments only. RE_UNKNOWN: complete * authored declarations and internal side effects; their ASM stays retained.` | function `func_cam_00401D3C` | [245](../src/modules/cam.c#L245) |
+| explicit_unknown | `Store the selected camera and render its signed-short channel * through the channel export. * RE_UNKNOWN: ownership/lifetime of the retained camera pointer. Trace * camera creat...` | function `camRememberCameraAndRenderChannel` | [433](../src/modules/cam.c#L433) |
 | explicit_unknown | `Unless sourceFileId is -1, copy that loaded UVEN record into the file ID * at camera+0x220. Then assign that destination file to the signed-short slot * at camera+0, reloading b...` | function `camAssignEnvironmentFileWithOptionalCopy` | [131](../src/modules/cam.c#L131) |
-| layout_padding | `pad` | type `ExplExp_00402158`, type `MiscExp_00402158`, type `UvFMtxExp_00403A9C`, type `UvFVecExp_00402158` | [35](../src/modules/cam.c#L35), [195](../src/modules/cam.c#L195), [201](../src/modules/cam.c#L201), [213](../src/modules/cam.c#L213) |
+| layout_padding | `pad` | type `ExplExp_00402158`, type `MiscExp_00402158`, type `UvFMtxExp_00403A9C`, type `UvFVecExp_00402158` | [35](../src/modules/cam.c#L35), [234](../src/modules/cam.c#L234), [315](../src/modules/cam.c#L315), [333](../src/modules/cam.c#L333) |
 | offset_field | `opaque00` | type `CameraProjectionChannelExports`, type `CameraProjectionMathExports` | [14](../src/modules/cam.c#L14), [18](../src/modules/cam.c#L18) |
 | offset_field | `opaque02` | type `CameraProjectionPrefix` | [5](../src/modules/cam.c#L5) |
 | offset_field | `opaque14` | type `CameraProjectionPrefix` | [7](../src/modules/cam.c#L7) |
@@ -2626,9 +2632,9 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unk00` | type `CameraSceneSyncExports`, type `CameraSceneSyncState`, type `CameraShakeState` | [20](../src/modules/cam.c#L20), [21](../src/modules/cam.c#L21), [23](../src/modules/cam.c#L23) |
 | offset_field | `unk15C` | type `CameraShakeState` | [23](../src/modules/cam.c#L23) |
 | offset_field | `unk196` | type `CameraShakeState` | [23](../src/modules/cam.c#L23) |
-| offset_field | `unk20` | function `camAccumulateScalarAndQueryProperty`, type `MiscExp_00402158` | [202](../src/modules/cam.c#L202), [247](../src/modules/cam.c#L247) |
-| offset_field | `unk28` | function `camAccumulateScalarAndQueryProperty`, type `CameraSceneSyncExports`, type `UvFVecExp_00402158` | [21](../src/modules/cam.c#L21), [214](../src/modules/cam.c#L214), [248](../src/modules/cam.c#L248) |
-| offset_field | `unkC` | function `camAccumulateScalarAndQueryProperty`, type `ExplExp_00402158` | [196](../src/modules/cam.c#L196), [249](../src/modules/cam.c#L249) |
+| offset_field | `unk20` | function `camAccumulateScalarAndQueryProperty`, type `MiscExp_00402158` | [235](../src/modules/cam.c#L235), [367](../src/modules/cam.c#L367) |
+| offset_field | `unk28` | function `camAccumulateScalarAndQueryProperty`, type `CameraSceneSyncExports`, type `UvFVecExp_00402158` | [21](../src/modules/cam.c#L21), [334](../src/modules/cam.c#L334), [368](../src/modules/cam.c#L368) |
+| offset_field | `unkC` | function `camAccumulateScalarAndQueryProperty`, type `ExplExp_00402158` | [316](../src/modules/cam.c#L316), [369](../src/modules/cam.c#L369) |
 | offset_field | `unknown00` | type `CameraBasisVectorExports` | [29](../src/modules/cam.c#L29) |
 | offset_field | `unknown0C` | type `CameraBasisVectorExports` | [31](../src/modules/cam.c#L31) |
 | offset_field | `unknownCallback04Address` | function `__entrypoint_func_camInitializeModuleState`, type `CameraExportAddresses` | [51](../src/modules/cam.c#L51), [100](../src/modules/cam.c#L100) |
@@ -2638,13 +2644,30 @@ For every future source wave, regenerate and check this index after code and str
 | offset_field | `unknownCallback20Address` | function `__entrypoint_func_camInitializeModuleState`, type `CameraExportAddresses` | [58](../src/modules/cam.c#L58), [108](../src/modules/cam.c#L108) |
 | offset_field | `unknownCallback24Address` | function `__entrypoint_func_camInitializeModuleState`, type `CameraExportAddresses` | [59](../src/modules/cam.c#L59), [109](../src/modules/cam.c#L109) |
 | offset_field | `unknownCallback2CAddress` | function `__entrypoint_func_camInitializeModuleState`, type `CameraExportAddresses` | [61](../src/modules/cam.c#L61), [101](../src/modules/cam.c#L101) |
-| offset_field | `word10` | function `func_cam_004031B4`, type `CameraProjectionPrefix` | [7](../src/modules/cam.c#L7), [337](../src/modules/cam.c#L337) |
-| offset_field | `word38` | function `func_cam_004031B4`, type `CameraProjectionPrefix` | [11](../src/modules/cam.c#L11), [356](../src/modules/cam.c#L356) |
-| original_quirk | `Accumulate camera scalar 0x15C, build/offset a point and forward a successful * query value to camera property selector0x12/index3 as a promoted double. * RE_ORIGINAL_QUIRK: the...` | function `camAccumulateScalarAndQueryProperty` | [219](../src/modules/cam.c#L219) |
-| original_quirk | `Blend the third three-component row, then rebuild and normalize the first * and third rows using FVEC slots24 and08. The row's fourth components and the * matrix translation rem...` | function `camBlendAndRebuildBasisRows` | [285](../src/modules/cam.c#L285) |
-| original_quirk | `Divide signed viewport height by width, clear word10, and reconcile one * angle from the other for mode0/1 through the original tangent/angle slots. * Then store negative/positi...` | function `func_cam_004031B4` | [324](../src/modules/cam.c#L324) |
+| offset_field | `value14` | function `camUpdateSubjectFollowState`, type `CameraFollowPreset` | [212](../src/modules/cam.c#L212), [279](../src/modules/cam.c#L279) |
+| offset_field | `value150` | function `camUpdateSubjectFollowState`, type `CameraFollowUpdate` | [193](../src/modules/cam.c#L193), [278](../src/modules/cam.c#L278) |
+| offset_field | `value154` | function `camUpdateSubjectFollowState`, type `CameraFollowUpdate` | [193](../src/modules/cam.c#L193), [277](../src/modules/cam.c#L277), [282](../src/modules/cam.c#L282), [297](../src/modules/cam.c#L297) |
+| offset_field | `value158` | function `camUpdateSubjectFollowState`, type `CameraFollowUpdate` | [193](../src/modules/cam.c#L193), [280](../src/modules/cam.c#L280) |
+| offset_field | `value15C` | function `camUpdateSubjectFollowState`, type `CameraFollowUpdate` | [193](../src/modules/cam.c#L193), [279](../src/modules/cam.c#L279), [295](../src/modules/cam.c#L295), [296](../src/modules/cam.c#L296) |
+| offset_field | `value18` | function `camUpdateSubjectFollowState`, type `CameraFollowPreset` | [212](../src/modules/cam.c#L212), [283](../src/modules/cam.c#L283) |
+| offset_field | `value1C` | function `camUpdateSubjectFollowState`, type `CameraFollowPreset` | [212](../src/modules/cam.c#L212), [298](../src/modules/cam.c#L298) |
+| offset_field | `value20` | function `camUpdateSubjectFollowState`, type `CameraFollowPreset` | [212](../src/modules/cam.c#L212), [278](../src/modules/cam.c#L278) |
+| offset_field | `word10` | function `func_cam_004031B4`, type `CameraProjectionPrefix` | [7](../src/modules/cam.c#L7), [457](../src/modules/cam.c#L457) |
+| offset_field | `word38` | function `func_cam_004031B4`, type `CameraProjectionPrefix` | [11](../src/modules/cam.c#L11), [476](../src/modules/cam.c#L476) |
+| original_quirk | `Accumulate camera scalar 0x15C, build/offset a point and forward a successful * query value to camera property selector0x12/index3 as a promoted double. * RE_ORIGINAL_QUIRK: the...` | function `camAccumulateScalarAndQueryProperty` | [339](../src/modules/cam.c#L339) |
+| original_quirk | `Blend the third three-component row, then rebuild and normalize the first * and third rows using FVEC slots24 and08. The row's fourth components and the * matrix translation rem...` | function `camBlendAndRebuildBasisRows` | [405](../src/modules/cam.c#L405) |
+| original_quirk | `Derive the follow-camera state from the subject matrix and supplied preset, * then run the original gated queries, minimum check and final transform update. * Preserve helper or...` | function `camUpdateSubjectFollowState` | [253](../src/modules/cam.c#L253) |
+| original_quirk | `Divide signed viewport height by width, clear word10, and reconcile one * angle from the other for mode0/1 through the original tangent/angle slots. * Then store negative/positi...` | function `func_cam_004031B4` | [444](../src/modules/cam.c#L444) |
 | uncertainty_note | `Consumed prefix and slots only; remaining camera/provider fields unknown.` | type `CameraProjectionPrefix` | [3](../src/modules/cam.c#L3) |
 | uncertainty_note | `Copy the existing unresolved declaration here so the original * code-label address is visible before the initializer.` | function `func_cam_00403394` | [71](../src/modules/cam.c#L71) |
+| unused_identifier | `unused00` | type `CameraFollowMatrixExports`, type `CameraFollowMiscExports`, type `CameraFollowPreset`, type `CameraFollowSubject`, type `CameraFollowUpdate` | [192](../src/modules/cam.c#L192), [206](../src/modules/cam.c#L206), [211](../src/modules/cam.c#L211), [218](../src/modules/cam.c#L218), [225](../src/modules/cam.c#L225) |
+| unused_identifier | `unused0C` | type `CameraFollowPreset` | [211](../src/modules/cam.c#L211) |
+| unused_identifier | `unused10` | type `CameraFollowMatrixExports` | [220](../src/modules/cam.c#L220) |
+| unused_identifier | `unused160` | type `CameraFollowUpdate` | [194](../src/modules/cam.c#L194) |
+| unused_identifier | `unused194` | type `CameraFollowUpdate` | [196](../src/modules/cam.c#L196) |
+| unused_identifier | `unused196` | type `CameraFollowUpdate` | [197](../src/modules/cam.c#L197) |
+| unused_identifier | `unused1A8` | type `CameraFollowUpdate` | [199](../src/modules/cam.c#L199) |
+| unused_identifier | `unused24` | type `CameraFollowPreset` | [213](../src/modules/cam.c#L213) |
 
 ## src/modules/caranim.c
 

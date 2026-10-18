@@ -143,3 +143,4 @@ camAssignEnvironmentFileWithOptionalCopy = 0x00400130; // type:func
 camAccumulateScalarAndQueryProperty = 0x00402158; // type:func
 camClearSharedRecordWord1EC = 0x00404080; // type:func
 camBlendAndRebuildBasisRows = 0x00402FEC; // type:func
+camUpdateSubjectFollowState = 0x00401B2C; // type:func

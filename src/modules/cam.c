@@ -184,7 +184,127 @@ void camSyncPendingSceneRecords(CameraSceneSyncState *state) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/cam/func_cam_004018E0.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/cam/func_cam_00401B2C.s")
+#line 1 "camera-follow-preset-context-117602.h"
+/* Minimum consumed prefixes, not complete object or allocation declarations.
+ * RE_UNKNOWN: field units, flag meanings, aliasing and callback lifetimes.
+ * The subject matrix and supplied preset pointer follow existing CAM callers. */
+typedef struct {
+    u8 unused00[0x150];
+    f32 value150, value154, value158, value15C;
+    u8 unused160[0x30];
+    f32 blend190;
+    u8 unused194, alternate195;
+    u8 unused196[0x0F];
+    u8 query1A5, query1A6, query1A7;
+    u8 unused1A8[0x48];
+    f32 translation1F0, translation1F4, translation1F8;
+    f32 offset1FC, offset200, offset204;
+    f32 firstAngle208, middleAngle20C, lastAngle210;
+} CameraFollowUpdate;
+
+typedef struct {
+    u8 unused00[0x358];
+    Mtx4F transform358;
+} CameraFollowSubject;
+
+typedef struct {
+    f32 unused00, scale04, scale08, unused0C;
+    f32 minimum10, value14, value18, value1C, value20;
+    u8 unused24[0x14];
+    s32 checkGate38, queryGate3C;
+} CameraFollowPreset;
+
+typedef struct {
+    u8 unused00[0x0C];
+    void (*copyMatrix)(Mtx4F *, Mtx4F *);
+    u8 unused10[0x1C];
+    void (*localTranslate)(Mtx4F *, f32, f32, f32);
+} CameraFollowMatrixExports;
+
+typedef struct {
+    u8 unused00[0x3C];
+    void (*extractTranslationAndDirectionAngles)(void *, f32 *, f32 *, f32 *,
+                                                f32 *, f32 *, f32 *);
+} CameraFollowMiscExports;
+
+/* Preserve the existing type of gMiscExports for its accepted consumers.
+ * Its declaration is moved here unchanged, before this additional consumer. */
+typedef struct
+{
+  char pad[0x20];
+  void (*unk20)(f32, f32, s32, void *);
+} MiscExp_00402158;
+extern MiscExp_00402158 *gMiscExports;
+
+extern s32 gDebugOptsLosCheckOff;
+void uvProfilerBegin(s32);
+void uvProfilerEnd(s32);
+void camAccumulateScalarAndQueryProperty(void *, void *, void *);
+void camUpdateAlternatingOffset(CameraShakeState *);
+
+/* Retained helpers: supplied address arguments only. RE_UNKNOWN: complete
+ * authored declarations and internal side effects; their ASM stays retained. */
+void func_cam_00401D3C(void *, void *, void *);
+void func_cam_004022E0(void *, void *);
+void func_cam_0040263C(void *);
+void func_cam_00402934(void *, void *, void *);
+
+#line 55 "src/modules/cam.c"
+/* Derive the follow-camera state from the subject matrix and supplied preset,
+ * then run the original gated queries, minimum check and final transform update.
+ * Preserve helper order, live reads after helpers and the profiling interval.
+ * RE_ORIGINAL_QUIRK: the minimum check is gated with the queries; it is skipped
+ * when either outer gate disables that block. Its strict comparison leaves NaN
+ * unchanged. Negate the angle before multiplying, as the original does.
+ * RE_UNKNOWN: physical scalar units, precise flags/modes, valid presets,
+ * complete object sizes, alias/lifetime domains and historical helper APIs.
+ * No null checks, clamping helper, cached callback results or zeroed matrix
+ * are added; original callback reloads and strict comparisons are preserved. */
+void camUpdateSubjectFollowState(CameraFollowUpdate *camera,
+                                 CameraFollowSubject *subject,
+                                 CameraFollowPreset *preset) {
+    Mtx4F translated;
+
+    ((CameraFollowMatrixExports *)gUvFmtxExports)->copyMatrix(
+        &translated, &subject->transform358);
+    ((CameraFollowMatrixExports *)gUvFmtxExports)->localTranslate(
+        &translated, camera->offset1FC, camera->offset200, 0.0f);
+    ((CameraFollowMiscExports *)gMiscExports)->extractTranslationAndDirectionAngles(
+        &translated, &camera->translation1F0, &camera->translation1F4,
+        &camera->translation1F8, &camera->firstAngle208,
+        &camera->middleAngle20C, &camera->lastAngle210);
+    camera->translation1F8 = camera->translation1F8 + camera->offset204;
+    camera->value154 = -camera->middleAngle20C * preset->scale08;
+    camera->value150 = camera->firstAngle208 + preset->value20;
+    camera->value15C = preset->value14;
+    camera->value158 = camera->lastAngle210 * preset->scale04;
+    func_cam_00401D3C(camera, subject, preset);
+    camera->value154 = camera->value154 +
+        preset->value18 * (1.0f - camera->blend190);
+    if (camera->query1A5 != 0) {
+        camAccumulateScalarAndQueryProperty(camera, subject, preset);
+    }
+    uvProfilerBegin(D_cam_00404E00);
+    if (preset->checkGate38 != 0 && gDebugOptsLosCheckOff == 0) {
+        if (camera->query1A6 != 0 && preset->queryGate3C != 0) {
+            func_cam_004022E0(camera, subject);
+        }
+        if (camera->query1A7 != 0 && preset->queryGate3C != 0) {
+            func_cam_0040263C(camera);
+        }
+        if (camera->value15C < preset->minimum10) {
+            camera->value15C = preset->minimum10;
+            camera->value154 = -camera->middleAngle20C * preset->scale08 +
+                preset->value1C;
+        }
+    }
+    uvProfilerEnd(D_cam_00404E00);
+    if (camera->alternate195 != 0) {
+        camUpdateAlternatingOffset((CameraShakeState *)camera);
+    }
+    func_cam_00402934(camera, subject, preset);
+}
+#line 56 "src/modules/cam.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/cam/func_cam_00401D3C.s")
 
@@ -196,12 +316,12 @@ typedef struct
   s32 (*unkC)(void *, f32 *);
 } ExplExp_00402158;
 extern ExplExp_00402158 *gExplExports;
-typedef struct
-{
-  char pad[0x20];
-  void (*unk20)(f32, f32, s32, void *);
-} MiscExp_00402158;
-extern MiscExp_00402158 *gMiscExports;
+
+
+
+
+
+
 typedef struct
 {
   f32 x;

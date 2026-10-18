@@ -34,8 +34,8 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **718** assembly references:
-**681** ordinary functions and **37** entrypoints, with **666,684** known instruction bytes
+matching C are preserved with `#line`. The current ledger has **717** assembly references:
+**680** ordinary functions and **37** entrypoints, with **666,156** known instruction bytes
 and no unknown sizes. The broader name audit still finds **290** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
@@ -3867,3 +3867,22 @@ FULL/native/carry/SDK validation and guarded Git before adding 904 bytes.
 Runtime/gameplay qualification remains separate and pending.
 
 The DYN secondary-address source preserves the original unwritten-result paths. The terminal 44-byte readonly tail is naturally C-owned by the secondary matrix setter, with no instruction credit. Isolated linking and packing reproduced all 79,840 original module bytes exactly; normal, FULL, native and full-ROM validation remain required.
+
+
+## CAM528 follow-state source proposal
+
+The natural follow-state source reproduces all132 raw target instructions at
+0x1B2C and the complete18448-byte CAM TEXT section in the isolated diagnostic.
+All13 accepted CAM bodies, code tokens and logical coordinates remain literal.
+The legacy target ordered-REL flag remains false: two independent profiler
+triples have a different record emission order. Whole-object record ordering
+also moves the20-record target block and leaves one raw caller unresolved
+until the explicit raw-to-canonical partial-link assignment is observed.
+No record sorting, object rewrite, compiler forcing or diagnostic retag is used.
+
+This source-stage proposal adds zero accepted instruction bytes. Its528-byte
+identity remains conditional on genuine named normal TU/partial/native facts,
+all133 original packed modules, complete original ROM, FULL/whole allocated
+Recomp and prior native intervals, carry qualification and guarded Git landing.
+Unknown field meanings, callback lifetimes, aliasing and non-finite comparison
+domains stay explicit in the source and generated uncertainty index.

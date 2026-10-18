@@ -390,7 +390,7 @@
     "src/modules/airec.c": "000f44bc9ca274b7527a788fb030f00d35842a920b106fdb28bf46415fee71e2",
     "src/modules/battle.c": "53c2276cff1805ba17567a40a2c43a561ef5f6cc89c510e459302398341730cc",
     "src/modules/bubble.c": "41670aab90435d4efce72911e896aa8e40b6a83b79cb07972d6f03435f86c5a6",
-    "src/modules/cam.c": "945f2db0006e10d0ce085e7ab58980d96597d9b28f3d8863c6159c63177b3d9c",
+    "src/modules/cam.c": "2e08d3dff6077ea95eb801035f6583a3b394508efaf0e756f717face30738a5c",
     "src/modules/caranim.c": "fcae433b1321c3bc1d1fc27a384573b36ec6ab849f9915b681d90af6ad2e1f96",
     "src/modules/caraudio.c": "0b5c00cb4a97a368aaa7e010b96ee80e8895f4f1f705d4d944f8f3f630bf5480",
     "src/modules/cbars.c": "4aca0aa326da893fd4cc663f76c0537e29d4db2d4018a46eeb50104d5f7a34b6",
@@ -522,24 +522,24 @@
     "src/sched.c": "26791ca9f30fd5355b11ea03a64a457757d2029595be26428c2925798105d9b4",
     "src/sys_props.c": "52cf6eb1430170598bb47b1378a324e8ee973ecbf1f560a5f5b51242561d7c61",
     "src/unused.c": "ab513eff7163b4b1e7b02d46b429b9d9538a5994c153890367c9282f975591af",
-    "docs/STRATEGY_V4.md": "08c1f13724e5a700188997b6cf22ecb55ab9aa3be3c13170f817cc3f551c1ed2",
+    "docs/STRATEGY_V4.md": "43a3b9c1e3887847f02c1415e7523445a0d91dd619208e3ff3c1fe7ad4325b79",
     "docs/VALIDATION_20261006.md": "a46820c10aba34e3c1901bd9bdc4260f684530f44fcf7f61d9c7bb33e0c91031"
   },
   "counts": {
-    "address_function": 906,
+    "address_function": 910,
     "address_global": 1694,
-    "assembly": 723,
+    "assembly": 722,
     "audit_debt": 30,
     "conditional_draft": 4,
     "decompiler_local": 623,
     "draft_marker": 55,
-    "explicit_unknown": 1947,
+    "explicit_unknown": 1950,
     "layout_padding": 281,
-    "offset_field": 1801,
+    "offset_field": 1809,
     "opaque_type": 285,
-    "original_quirk": 562,
+    "original_quirk": 563,
     "uncertainty_note": 88,
-    "unused_identifier": 157
+    "unused_identifier": 165
   },
   "items": [
     {
@@ -2865,6 +2865,118 @@
       ]
     },
     {
+      "id": "Q-8d9358d44ad6",
+      "kind": "address_function",
+      "path": "src/modules/cam.c",
+      "symbol": "func_cam_00401D3C",
+      "lines": [
+        247,
+        281
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "camUpdateSubjectFollowState",
+          "declaration_line": 263,
+          "lines": [
+            281
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "func_cam_00401D3C",
+          "declaration_line": 247,
+          "lines": [
+            247
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-6cec1f2d1592",
+      "kind": "address_function",
+      "path": "src/modules/cam.c",
+      "symbol": "func_cam_004022E0",
+      "lines": [
+        248,
+        290
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "camUpdateSubjectFollowState",
+          "declaration_line": 263,
+          "lines": [
+            290
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "func_cam_004022E0",
+          "declaration_line": 248,
+          "lines": [
+            248
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-4018bd928143",
+      "kind": "address_function",
+      "path": "src/modules/cam.c",
+      "symbol": "func_cam_0040263C",
+      "lines": [
+        249,
+        293
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "camUpdateSubjectFollowState",
+          "declaration_line": 263,
+          "lines": [
+            293
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "func_cam_0040263C",
+          "declaration_line": 249,
+          "lines": [
+            249
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-fd44ad7c987b",
+      "kind": "address_function",
+      "path": "src/modules/cam.c",
+      "symbol": "func_cam_00402934",
+      "lines": [
+        250,
+        305
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "camUpdateSubjectFollowState",
+          "declaration_line": 263,
+          "lines": [
+            305
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "func_cam_00402934",
+          "declaration_line": 250,
+          "lines": [
+            250
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-36ff1f33125a",
       "kind": "address_function",
       "path": "src/modules/cam.c",
@@ -2872,7 +2984,7 @@
       "lines": [
         82,
         107,
-        332
+        452
       ],
       "owners": [
         {
@@ -2894,9 +3006,9 @@
         {
           "kind": "function",
           "name": "func_cam_004031B4",
-          "declaration_line": 332,
+          "declaration_line": 452,
           "lines": [
-            332
+            452
           ]
         }
       ]
@@ -2909,8 +3021,8 @@
       "lines": [
         73,
         108,
-        191,
-        251
+        311,
+        371
       ],
       "owners": [
         {
@@ -2924,9 +3036,9 @@
         {
           "kind": "function",
           "name": "camAccumulateScalarAndQueryProperty",
-          "declaration_line": 227,
+          "declaration_line": 347,
           "lines": [
-            251
+            371
           ]
         },
         {
@@ -2940,9 +3052,9 @@
         {
           "kind": "function",
           "name": "func_cam_00403394",
-          "declaration_line": 191,
+          "declaration_line": 311,
           "lines": [
-            191
+            311
           ]
         }
       ]
@@ -2955,7 +3067,7 @@
       "lines": [
         83,
         109,
-        356
+        476
       ],
       "owners": [
         {
@@ -2969,9 +3081,9 @@
         {
           "kind": "function",
           "name": "func_cam_004031B4",
-          "declaration_line": 332,
+          "declaration_line": 452,
           "lines": [
-            356
+            476
           ]
         },
         {
@@ -27176,24 +27288,24 @@
       "path": "src/modules/cam.c",
       "symbol": "D_cam_004048D0",
       "lines": [
-        192,
-        247
+        312,
+        367
       ],
       "owners": [
         {
           "kind": "function",
           "name": "camAccumulateScalarAndQueryProperty",
-          "declaration_line": 227,
+          "declaration_line": 347,
           "lines": [
-            247
+            367
           ]
         },
         {
           "kind": "global",
           "name": "D_cam_004048D0",
-          "declaration_line": 192,
+          "declaration_line": 312,
           "lines": [
-            192
+            312
           ]
         }
       ]
@@ -27205,15 +27317,15 @@
       "symbol": "D_cam_004048D4",
       "lines": [
         24,
-        262
+        382
       ],
       "owners": [
         {
           "kind": "function",
           "name": "camUpdateAlternatingOffset",
-          "declaration_line": 261,
+          "declaration_line": 381,
           "lines": [
-            262
+            382
           ]
         }
       ]
@@ -27225,15 +27337,15 @@
       "symbol": "D_cam_004048D8",
       "lines": [
         24,
-        263
+        383
       ],
       "owners": [
         {
           "kind": "function",
           "name": "camUpdateAlternatingOffset",
-          "declaration_line": 261,
+          "declaration_line": 381,
           "lines": [
-            263
+            383
           ]
         }
       ]
@@ -27245,15 +27357,15 @@
       "symbol": "D_cam_00404958",
       "lines": [
         38,
-        396
+        516
       ],
       "owners": [
         {
           "kind": "function",
           "name": "camArmSharedScaledValue",
-          "declaration_line": 395,
+          "declaration_line": 515,
           "lines": [
-            396
+            516
           ]
         },
         {
@@ -27274,7 +27386,7 @@
       "lines": [
         39,
         110,
-        319
+        439
       ],
       "owners": [
         {
@@ -27288,9 +27400,9 @@
         {
           "kind": "function",
           "name": "camRememberCameraAndRenderChannel",
-          "declaration_line": 318,
+          "declaration_line": 438,
           "lines": [
-            319
+            439
           ]
         },
         {
@@ -27368,7 +27480,9 @@
       "symbol": "D_cam_00404E00",
       "lines": [
         67,
-        116
+        116,
+        287,
+        301
       ],
       "owners": [
         {
@@ -27377,6 +27491,15 @@
           "declaration_line": 96,
           "lines": [
             116
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "camUpdateSubjectFollowState",
+          "declaration_line": 263,
+          "lines": [
+            287,
+            301
           ]
         }
       ]
@@ -27408,15 +27531,15 @@
       "symbol": "D_cam_00404E08",
       "lines": [
         43,
-        385
+        505
       ],
       "owners": [
         {
           "kind": "function",
           "name": "camClearSharedRecordWord1EC",
-          "declaration_line": 384,
+          "declaration_line": 504,
           "lines": [
-            385
+            505
           ]
         },
         {
@@ -27436,19 +27559,19 @@
       "symbol": "D_cam_00404E28",
       "lines": [
         37,
-        396,
-        397,
-        398
+        516,
+        517,
+        518
       ],
       "owners": [
         {
           "kind": "function",
           "name": "camArmSharedScaledValue",
-          "declaration_line": 395,
+          "declaration_line": 515,
           "lines": [
-            396,
-            397,
-            398
+            516,
+            517,
+            518
           ]
         },
         {
@@ -84334,22 +84457,12 @@
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_004018E0.s"
     },
     {
-      "id": "Q-bf01d89e3401",
-      "kind": "assembly",
-      "path": "src/modules/cam.c",
-      "symbol": "func_cam_00401B2C",
-      "lines": [
-        187
-      ],
-      "evidence": "asm/us/nonmatchings/modules/cam/func_cam_00401B2C.s"
-    },
-    {
       "id": "Q-876bc282d23e",
       "kind": "assembly",
       "path": "src/modules/cam.c",
       "symbol": "func_cam_00401D3C",
       "lines": [
-        189
+        309
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_00401D3C.s"
     },
@@ -84359,7 +84472,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_004022E0",
       "lines": [
-        276
+        396
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_004022E0.s"
     },
@@ -84369,7 +84482,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_0040263C",
       "lines": [
-        278
+        398
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_0040263C.s"
     },
@@ -84379,7 +84492,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_00402934",
       "lines": [
-        280
+        400
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_00402934.s"
     },
@@ -84389,7 +84502,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_00402E08",
       "lines": [
-        282
+        402
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_00402E08.s"
     },
@@ -84399,7 +84512,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_00403394",
       "lines": [
-        359
+        479
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_00403394.s"
     },
@@ -84409,7 +84522,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_00403A20",
       "lines": [
-        361
+        481
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_00403A20.s"
     },
@@ -84419,7 +84532,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_00403ACC",
       "lines": [
-        377
+        497
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_00403ACC.s"
     },
@@ -84429,7 +84542,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_004040D0",
       "lines": [
-        402
+        522
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_004040D0.s"
     },
@@ -84439,7 +84552,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_004042FC",
       "lines": [
-        404
+        524
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_004042FC.s"
     },
@@ -84449,7 +84562,7 @@
       "path": "src/modules/cam.c",
       "symbol": "func_cam_00404558",
       "lines": [
-        406
+        526
       ],
       "evidence": "asm/us/nonmatchings/modules/cam/func_cam_00404558.s"
     },
@@ -127369,16 +127482,16 @@
       "path": "src/modules/cam.c",
       "symbol": "Accumulate camera scalar 0x15C, build/offset a point and forward a successful * query value to camera property selector0x12/index3 as a promoted double. * RE_ORIGINAL_QUIRK: the ordered >0 test negates nonpositive values and NaNs; * preserve this operation rather than substituting an absolute-value helper. * RE_UNKNOWN: scalar units, query role, export types and camera effect need * original providers/callers; offset-based local names imply no physical role.",
       "lines": [
-        219
+        339
       ],
       "evidence": "Accumulate camera scalar 0x15C, build/offset a point and forward a successful * query value to camera property selector0x12/index3 as a promoted double. * RE_ORIGINAL_QUIRK: the ordered >0 test negates nonpositive values and NaNs; * preserve this operation rather than substituting an absolute-value helper. * RE_UNKNOWN: scalar units, query role, export types and camera effect need * original providers/callers; offset-based local names imply no physical role.",
       "owners": [
         {
           "kind": "function",
           "name": "camAccumulateScalarAndQueryProperty",
-          "declaration_line": 227,
+          "declaration_line": 347,
           "lines": [
-            219
+            339
           ]
         }
       ]
@@ -127389,16 +127502,16 @@
       "path": "src/modules/cam.c",
       "symbol": "Blend the third three-component row, then rebuild and normalize the first * and third rows using FVEC slots24 and08. The row's fourth components and the * matrix translation remain untouched; normalization return values are ignored. * RE_ORIGINAL_QUIRK: third.z uses the already-scaled third.y, not old third.z. * RE_UNKNOWN: blend domain, matrix frame, degenerate-vector policy and caller * ownership remain unresolved. Preserve the original arithmetic and call order.",
       "lines": [
-        285
+        405
       ],
       "evidence": "Blend the third three-component row, then rebuild and normalize the first * and third rows using FVEC slots24 and08. The row's fourth components and the * matrix translation remain untouched; normalization return values are ignored. * RE_ORIGINAL_QUIRK: third.z uses the already-scaled third.y, not old third.z. * RE_UNKNOWN: blend domain, matrix frame, degenerate-vector policy and caller * ownership remain unresolved. Preserve the original arithmetic and call order.",
       "owners": [
         {
           "kind": "function",
           "name": "camBlendAndRebuildBasisRows",
-          "declaration_line": 291,
+          "declaration_line": 411,
           "lines": [
-            285
+            405
           ]
         }
       ]
@@ -127409,16 +127522,16 @@
       "path": "src/modules/cam.c",
       "symbol": "Clear the shared camera record word at offset 0x1EC; the argument is unused. * RE_UNKNOWN: word purpose, callback role and shared record layout.",
       "lines": [
-        380
+        500
       ],
       "evidence": "Clear the shared camera record word at offset 0x1EC; the argument is unused. * RE_UNKNOWN: word purpose, callback role and shared record layout.",
       "owners": [
         {
           "kind": "function",
           "name": "camClearSharedRecordWord1EC",
-          "declaration_line": 384,
+          "declaration_line": 504,
           "lines": [
-            380
+            500
           ]
         }
       ]
@@ -127429,16 +127542,36 @@
       "path": "src/modules/cam.c",
       "symbol": "Copy sixteen floats from the incoming source into camera offset 0x1A8. * Original wrapper forwards A1 unchanged; actual FMTX slot0C consumes that * source pointer. RE_UNKNOWN: matrix frame/role, camera layout and valid source * lifetime/aliasing; trace original callback callers before generalizing.",
       "lines": [
-        365
+        485
       ],
       "evidence": "Copy sixteen floats from the incoming source into camera offset 0x1A8. * Original wrapper forwards A1 unchanged; actual FMTX slot0C consumes that * source pointer. RE_UNKNOWN: matrix frame/role, camera layout and valid source * lifetime/aliasing; trace original callback callers before generalizing.",
       "owners": [
         {
           "kind": "function",
           "name": "camCopyMatrixIntoRecordOffset1A8",
-          "declaration_line": 371,
+          "declaration_line": 491,
           "lines": [
-            365
+            485
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-3cbe32f57cb3",
+      "kind": "explicit_unknown",
+      "path": "src/modules/cam.c",
+      "symbol": "Derive the follow-camera state from the subject matrix and supplied preset, * then run the original gated queries, minimum check and final transform update. * Preserve helper order, live reads after helpers and the profiling interval. * RE_ORIGINAL_QUIRK: the minimum check is gated with the queries; it is skipped * when either outer gate disables that block. Its strict comparison leaves NaN * unchanged. Negate the angle before multiplying, as the original does. * RE_UNKNOWN: physical scalar units, precise flags/modes, valid presets, * complete object sizes, alias/lifetime domains and historical helper APIs. * No null checks, clamping helper, cached callback results or zeroed matrix * are added; original callback reloads and strict comparisons are preserved.",
+      "lines": [
+        253
+      ],
+      "evidence": "Derive the follow-camera state from the subject matrix and supplied preset, * then run the original gated queries, minimum check and final transform update. * Preserve helper order, live reads after helpers and the profiling interval. * RE_ORIGINAL_QUIRK: the minimum check is gated with the queries; it is skipped * when either outer gate disables that block. Its strict comparison leaves NaN * unchanged. Negate the angle before multiplying, as the original does. * RE_UNKNOWN: physical scalar units, precise flags/modes, valid presets, * complete object sizes, alias/lifetime domains and historical helper APIs. * No null checks, clamping helper, cached callback results or zeroed matrix * are added; original callback reloads and strict comparisons are preserved.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "camUpdateSubjectFollowState",
+          "declaration_line": 263,
+          "lines": [
+            253
           ]
         }
       ]
@@ -127449,16 +127582,16 @@
       "path": "src/modules/cam.c",
       "symbol": "Divide signed viewport height by width, clear word10, and reconcile one * angle from the other for mode0/1 through the original tangent/angle slots. * Then store negative/positive half-angle tangents for both axes, update the * signed-short channel viewport, and call the original frustum helper. * RE_ORIGINAL_QUIRK: Other modes leave both angles unchanged but still update bounds * and call both providers. Width zero and helper failures are not checked. * RE_UNKNOWN: Historical angle-helper convention, angle units, mode meanings, * complete camera layout, viewport domain and ownership require callers.",
       "lines": [
-        324
+        444
       ],
       "evidence": "Divide signed viewport height by width, clear word10, and reconcile one * angle from the other for mode0/1 through the original tangent/angle slots. * Then store negative/positive half-angle tangents for both axes, update the * signed-short channel viewport, and call the original frustum helper. * RE_ORIGINAL_QUIRK: Other modes leave both angles unchanged but still update bounds * and call both providers. Width zero and helper failures are not checked. * RE_UNKNOWN: Historical angle-helper convention, angle units, mode meanings, * complete camera layout, viewport domain and ownership require callers.",
       "owners": [
         {
           "kind": "function",
           "name": "func_cam_004031B4",
-          "declaration_line": 332,
+          "declaration_line": 452,
           "lines": [
-            324
+            444
           ]
         }
       ]
@@ -127484,21 +127617,41 @@
       ]
     },
     {
+      "id": "Q-bad561a5e319",
+      "kind": "explicit_unknown",
+      "path": "src/modules/cam.c",
+      "symbol": "Minimum consumed prefixes, not complete object or allocation declarations. * RE_UNKNOWN: field units, flag meanings, aliasing and callback lifetimes. * The subject matrix and supplied preset pointer follow existing CAM callers.",
+      "lines": [
+        188
+      ],
+      "evidence": "Minimum consumed prefixes, not complete object or allocation declarations. * RE_UNKNOWN: field units, flag meanings, aliasing and callback lifetimes. * The subject matrix and supplied preset pointer follow existing CAM callers.",
+      "owners": [
+        {
+          "kind": "type",
+          "name": "CameraFollowUpdate",
+          "declaration_line": 191,
+          "lines": [
+            188
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-767df1e95964",
       "kind": "explicit_unknown",
       "path": "src/modules/cam.c",
       "symbol": "Multiply the shared record scalar at 0x14 by the original constant * into field 0x18, then set its flags at 0x10 and 0xC. Preserve the * unused callback parameter. RE_UNKNOWN: the scalar unit and effect role * have not been established, so no physical camera-effect name is inferred.",
       "lines": [
-        391
+        511
       ],
       "evidence": "Multiply the shared record scalar at 0x14 by the original constant * into field 0x18, then set its flags at 0x10 and 0xC. Preserve the * unused callback parameter. RE_UNKNOWN: the scalar unit and effect role * have not been established, so no physical camera-effect name is inferred.",
       "owners": [
         {
           "kind": "function",
           "name": "camArmSharedScaledValue",
-          "declaration_line": 395,
+          "declaration_line": 515,
           "lines": [
-            391
+            511
           ]
         }
       ]
@@ -127524,21 +127677,41 @@
       ]
     },
     {
+      "id": "Q-39e4197a757c",
+      "kind": "explicit_unknown",
+      "path": "src/modules/cam.c",
+      "symbol": "Retained helpers: supplied address arguments only. RE_UNKNOWN: complete * authored declarations and internal side effects; their ASM stays retained.",
+      "lines": [
+        245
+      ],
+      "evidence": "Retained helpers: supplied address arguments only. RE_UNKNOWN: complete * authored declarations and internal side effects; their ASM stays retained.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "func_cam_00401D3C",
+          "declaration_line": 247,
+          "lines": [
+            245
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-d3860b5a656c",
       "kind": "explicit_unknown",
       "path": "src/modules/cam.c",
       "symbol": "Store the selected camera and render its signed-short channel * through the channel export. * RE_UNKNOWN: ownership/lifetime of the retained camera pointer. Trace * camera creators/releases and readers of D_cam_00404DF4 to establish when * the pointer can be released; retaining it does not prove caller ownership.",
       "lines": [
-        313
+        433
       ],
       "evidence": "Store the selected camera and render its signed-short channel * through the channel export. * RE_UNKNOWN: ownership/lifetime of the retained camera pointer. Trace * camera creators/releases and readers of D_cam_00404DF4 to establish when * the pointer can be released; retaining it does not prove caller ownership.",
       "owners": [
         {
           "kind": "function",
           "name": "camRememberCameraAndRenderChannel",
-          "declaration_line": 318,
+          "declaration_line": 438,
           "lines": [
-            313
+            433
           ]
         }
       ]
@@ -162285,25 +162458,25 @@
       "symbol": "pad",
       "lines": [
         35,
-        195,
-        201,
-        213
+        234,
+        315,
+        333
       ],
       "owners": [
         {
           "kind": "type",
           "name": "ExplExp_00402158",
-          "declaration_line": 193,
+          "declaration_line": 313,
           "lines": [
-            195
+            315
           ]
         },
         {
           "kind": "type",
           "name": "MiscExp_00402158",
-          "declaration_line": 199,
+          "declaration_line": 232,
           "lines": [
-            201
+            234
           ]
         },
         {
@@ -162317,9 +162490,9 @@
         {
           "kind": "type",
           "name": "UvFVecExp_00402158",
-          "declaration_line": 211,
+          "declaration_line": 331,
           "lines": [
-            213
+            333
           ]
         }
       ]
@@ -181294,24 +181467,24 @@
       "path": "src/modules/cam.c",
       "symbol": "unk20",
       "lines": [
-        202,
-        247
+        235,
+        367
       ],
       "owners": [
         {
           "kind": "function",
           "name": "camAccumulateScalarAndQueryProperty",
-          "declaration_line": 227,
+          "declaration_line": 347,
           "lines": [
-            247
+            367
           ]
         },
         {
           "kind": "type",
           "name": "MiscExp_00402158",
-          "declaration_line": 199,
+          "declaration_line": 232,
           "lines": [
-            202
+            235
           ]
         }
       ]
@@ -181323,16 +181496,16 @@
       "symbol": "unk28",
       "lines": [
         21,
-        214,
-        248
+        334,
+        368
       ],
       "owners": [
         {
           "kind": "function",
           "name": "camAccumulateScalarAndQueryProperty",
-          "declaration_line": 227,
+          "declaration_line": 347,
           "lines": [
-            248
+            368
           ]
         },
         {
@@ -181346,9 +181519,9 @@
         {
           "kind": "type",
           "name": "UvFVecExp_00402158",
-          "declaration_line": 211,
+          "declaration_line": 331,
           "lines": [
-            214
+            334
           ]
         }
       ]
@@ -181359,24 +181532,24 @@
       "path": "src/modules/cam.c",
       "symbol": "unkC",
       "lines": [
-        196,
-        249
+        316,
+        369
       ],
       "owners": [
         {
           "kind": "function",
           "name": "camAccumulateScalarAndQueryProperty",
-          "declaration_line": 227,
+          "declaration_line": 347,
           "lines": [
-            249
+            369
           ]
         },
         {
           "kind": "type",
           "name": "ExplExp_00402158",
-          "declaration_line": 193,
+          "declaration_line": 313,
           "lines": [
-            196
+            316
           ]
         }
       ]
@@ -181616,21 +181789,253 @@
       ]
     },
     {
+      "id": "Q-f5abcc6d4fe8",
+      "kind": "offset_field",
+      "path": "src/modules/cam.c",
+      "symbol": "value14",
+      "lines": [
+        212,
+        279
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "camUpdateSubjectFollowState",
+          "declaration_line": 263,
+          "lines": [
+            279
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "CameraFollowPreset",
+          "declaration_line": 210,
+          "lines": [
+            212
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-a36c80997cd1",
+      "kind": "offset_field",
+      "path": "src/modules/cam.c",
+      "symbol": "value150",
+      "lines": [
+        193,
+        278
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "camUpdateSubjectFollowState",
+          "declaration_line": 263,
+          "lines": [
+            278
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "CameraFollowUpdate",
+          "declaration_line": 191,
+          "lines": [
+            193
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-d229a1c0d0cb",
+      "kind": "offset_field",
+      "path": "src/modules/cam.c",
+      "symbol": "value154",
+      "lines": [
+        193,
+        277,
+        282,
+        297
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "camUpdateSubjectFollowState",
+          "declaration_line": 263,
+          "lines": [
+            277,
+            282,
+            297
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "CameraFollowUpdate",
+          "declaration_line": 191,
+          "lines": [
+            193
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-a9ac5c3f9f2e",
+      "kind": "offset_field",
+      "path": "src/modules/cam.c",
+      "symbol": "value158",
+      "lines": [
+        193,
+        280
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "camUpdateSubjectFollowState",
+          "declaration_line": 263,
+          "lines": [
+            280
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "CameraFollowUpdate",
+          "declaration_line": 191,
+          "lines": [
+            193
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-8b2e176c3408",
+      "kind": "offset_field",
+      "path": "src/modules/cam.c",
+      "symbol": "value15C",
+      "lines": [
+        193,
+        279,
+        295,
+        296
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "camUpdateSubjectFollowState",
+          "declaration_line": 263,
+          "lines": [
+            279,
+            295,
+            296
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "CameraFollowUpdate",
+          "declaration_line": 191,
+          "lines": [
+            193
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-636bd36ffb97",
+      "kind": "offset_field",
+      "path": "src/modules/cam.c",
+      "symbol": "value18",
+      "lines": [
+        212,
+        283
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "camUpdateSubjectFollowState",
+          "declaration_line": 263,
+          "lines": [
+            283
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "CameraFollowPreset",
+          "declaration_line": 210,
+          "lines": [
+            212
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-da3cf788027d",
+      "kind": "offset_field",
+      "path": "src/modules/cam.c",
+      "symbol": "value1C",
+      "lines": [
+        212,
+        298
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "camUpdateSubjectFollowState",
+          "declaration_line": 263,
+          "lines": [
+            298
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "CameraFollowPreset",
+          "declaration_line": 210,
+          "lines": [
+            212
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-46b1ee76af4f",
+      "kind": "offset_field",
+      "path": "src/modules/cam.c",
+      "symbol": "value20",
+      "lines": [
+        212,
+        278
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "camUpdateSubjectFollowState",
+          "declaration_line": 263,
+          "lines": [
+            278
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "CameraFollowPreset",
+          "declaration_line": 210,
+          "lines": [
+            212
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-b8e0db725cb7",
       "kind": "offset_field",
       "path": "src/modules/cam.c",
       "symbol": "word10",
       "lines": [
         7,
-        337
+        457
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_cam_004031B4",
-          "declaration_line": 332,
+          "declaration_line": 452,
           "lines": [
-            337
+            457
           ]
         },
         {
@@ -181650,15 +182055,15 @@
       "symbol": "word38",
       "lines": [
         11,
-        356
+        476
       ],
       "owners": [
         {
           "kind": "function",
           "name": "func_cam_004031B4",
-          "declaration_line": 332,
+          "declaration_line": 452,
           "lines": [
-            356
+            476
           ]
         },
         {
@@ -242110,16 +242515,16 @@
       "path": "src/modules/cam.c",
       "symbol": "Accumulate camera scalar 0x15C, build/offset a point and forward a successful * query value to camera property selector0x12/index3 as a promoted double. * RE_ORIGINAL_QUIRK: the ordered >0 test negates nonpositive values and NaNs; * preserve this operation rather than substituting an absolute-value helper. * RE_UNKNOWN: scalar units, query role, export types and camera effect need * original providers/callers; offset-based local names imply no physical role.",
       "lines": [
-        219
+        339
       ],
       "evidence": "Accumulate camera scalar 0x15C, build/offset a point and forward a successful * query value to camera property selector0x12/index3 as a promoted double. * RE_ORIGINAL_QUIRK: the ordered >0 test negates nonpositive values and NaNs; * preserve this operation rather than substituting an absolute-value helper. * RE_UNKNOWN: scalar units, query role, export types and camera effect need * original providers/callers; offset-based local names imply no physical role.",
       "owners": [
         {
           "kind": "function",
           "name": "camAccumulateScalarAndQueryProperty",
-          "declaration_line": 227,
+          "declaration_line": 347,
           "lines": [
-            219
+            339
           ]
         }
       ]
@@ -242130,16 +242535,36 @@
       "path": "src/modules/cam.c",
       "symbol": "Blend the third three-component row, then rebuild and normalize the first * and third rows using FVEC slots24 and08. The row's fourth components and the * matrix translation remain untouched; normalization return values are ignored. * RE_ORIGINAL_QUIRK: third.z uses the already-scaled third.y, not old third.z. * RE_UNKNOWN: blend domain, matrix frame, degenerate-vector policy and caller * ownership remain unresolved. Preserve the original arithmetic and call order.",
       "lines": [
-        285
+        405
       ],
       "evidence": "Blend the third three-component row, then rebuild and normalize the first * and third rows using FVEC slots24 and08. The row's fourth components and the * matrix translation remain untouched; normalization return values are ignored. * RE_ORIGINAL_QUIRK: third.z uses the already-scaled third.y, not old third.z. * RE_UNKNOWN: blend domain, matrix frame, degenerate-vector policy and caller * ownership remain unresolved. Preserve the original arithmetic and call order.",
       "owners": [
         {
           "kind": "function",
           "name": "camBlendAndRebuildBasisRows",
-          "declaration_line": 291,
+          "declaration_line": 411,
           "lines": [
-            285
+            405
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-fe73f534bdb9",
+      "kind": "original_quirk",
+      "path": "src/modules/cam.c",
+      "symbol": "Derive the follow-camera state from the subject matrix and supplied preset, * then run the original gated queries, minimum check and final transform update. * Preserve helper order, live reads after helpers and the profiling interval. * RE_ORIGINAL_QUIRK: the minimum check is gated with the queries; it is skipped * when either outer gate disables that block. Its strict comparison leaves NaN * unchanged. Negate the angle before multiplying, as the original does. * RE_UNKNOWN: physical scalar units, precise flags/modes, valid presets, * complete object sizes, alias/lifetime domains and historical helper APIs. * No null checks, clamping helper, cached callback results or zeroed matrix * are added; original callback reloads and strict comparisons are preserved.",
+      "lines": [
+        253
+      ],
+      "evidence": "Derive the follow-camera state from the subject matrix and supplied preset, * then run the original gated queries, minimum check and final transform update. * Preserve helper order, live reads after helpers and the profiling interval. * RE_ORIGINAL_QUIRK: the minimum check is gated with the queries; it is skipped * when either outer gate disables that block. Its strict comparison leaves NaN * unchanged. Negate the angle before multiplying, as the original does. * RE_UNKNOWN: physical scalar units, precise flags/modes, valid presets, * complete object sizes, alias/lifetime domains and historical helper APIs. * No null checks, clamping helper, cached callback results or zeroed matrix * are added; original callback reloads and strict comparisons are preserved.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "camUpdateSubjectFollowState",
+          "declaration_line": 263,
+          "lines": [
+            253
           ]
         }
       ]
@@ -242150,16 +242575,16 @@
       "path": "src/modules/cam.c",
       "symbol": "Divide signed viewport height by width, clear word10, and reconcile one * angle from the other for mode0/1 through the original tangent/angle slots. * Then store negative/positive half-angle tangents for both axes, update the * signed-short channel viewport, and call the original frustum helper. * RE_ORIGINAL_QUIRK: Other modes leave both angles unchanged but still update bounds * and call both providers. Width zero and helper failures are not checked. * RE_UNKNOWN: Historical angle-helper convention, angle units, mode meanings, * complete camera layout, viewport domain and ownership require callers.",
       "lines": [
-        324
+        444
       ],
       "evidence": "Divide signed viewport height by width, clear word10, and reconcile one * angle from the other for mode0/1 through the original tangent/angle slots. * Then store negative/positive half-angle tangents for both axes, update the * signed-short channel viewport, and call the original frustum helper. * RE_ORIGINAL_QUIRK: Other modes leave both angles unchanged but still update bounds * and call both providers. Width zero and helper failures are not checked. * RE_UNKNOWN: Historical angle-helper convention, angle units, mode meanings, * complete camera layout, viewport domain and ownership require callers.",
       "owners": [
         {
           "kind": "function",
           "name": "func_cam_004031B4",
-          "declaration_line": 332,
+          "declaration_line": 452,
           "lines": [
-            324
+            444
           ]
         }
       ]
@@ -253178,6 +253603,194 @@
           "declaration_line": 817,
           "lines": [
             817
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-4ad57b5b3a85",
+      "kind": "unused_identifier",
+      "path": "src/modules/cam.c",
+      "symbol": "unused00",
+      "lines": [
+        192,
+        206,
+        211,
+        218,
+        225
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "CameraFollowMatrixExports",
+          "declaration_line": 217,
+          "lines": [
+            218
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "CameraFollowMiscExports",
+          "declaration_line": 224,
+          "lines": [
+            225
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "CameraFollowPreset",
+          "declaration_line": 210,
+          "lines": [
+            211
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "CameraFollowSubject",
+          "declaration_line": 205,
+          "lines": [
+            206
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "CameraFollowUpdate",
+          "declaration_line": 191,
+          "lines": [
+            192
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-cc091aacbed6",
+      "kind": "unused_identifier",
+      "path": "src/modules/cam.c",
+      "symbol": "unused0C",
+      "lines": [
+        211
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "CameraFollowPreset",
+          "declaration_line": 210,
+          "lines": [
+            211
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-620afd7b92f5",
+      "kind": "unused_identifier",
+      "path": "src/modules/cam.c",
+      "symbol": "unused10",
+      "lines": [
+        220
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "CameraFollowMatrixExports",
+          "declaration_line": 217,
+          "lines": [
+            220
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-6dd3be98645c",
+      "kind": "unused_identifier",
+      "path": "src/modules/cam.c",
+      "symbol": "unused160",
+      "lines": [
+        194
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "CameraFollowUpdate",
+          "declaration_line": 191,
+          "lines": [
+            194
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-baff6b95c260",
+      "kind": "unused_identifier",
+      "path": "src/modules/cam.c",
+      "symbol": "unused194",
+      "lines": [
+        196
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "CameraFollowUpdate",
+          "declaration_line": 191,
+          "lines": [
+            196
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-04a6dbc0eb8d",
+      "kind": "unused_identifier",
+      "path": "src/modules/cam.c",
+      "symbol": "unused196",
+      "lines": [
+        197
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "CameraFollowUpdate",
+          "declaration_line": 191,
+          "lines": [
+            197
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-94106f12f624",
+      "kind": "unused_identifier",
+      "path": "src/modules/cam.c",
+      "symbol": "unused1A8",
+      "lines": [
+        199
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "CameraFollowUpdate",
+          "declaration_line": 191,
+          "lines": [
+            199
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-689c196b3bcf",
+      "kind": "unused_identifier",
+      "path": "src/modules/cam.c",
+      "symbol": "unused24",
+      "lines": [
+        213
+      ],
+      "owners": [
+        {
+          "kind": "type",
+          "name": "CameraFollowPreset",
+          "declaration_line": 210,
+          "lines": [
+            213
           ]
         }
       ]
