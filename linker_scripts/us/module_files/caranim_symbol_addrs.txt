@@ -330,3 +330,4 @@ caranimSelectCameraLightBufferSlot = 0x004060EC; // type:func
 caranimScaleObjectAxisForCheat = 0x00401C54; // type:func
 caranimAcquireConfiguredParticleEffect = 0x0040358C; // type:func
 caranimCopyRegisteredStates = 0x00406094; // type:func
+caranimReadPackedColorBytes = 0x00401C04; // type:func

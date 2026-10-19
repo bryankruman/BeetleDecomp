@@ -34,9 +34,9 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **714** assembly references:
-**677** ordinary functions and **37** entrypoints, with **664,628** known instruction bytes
-and no unknown sizes. The broader name audit still finds **290** address-named C definitions.
+matching C are preserved with `#line`. The current ledger has **713** assembly references:
+**676** ordinary functions and **37** entrypoints, with **664,548** known instruction bytes
+and no unknown sizes. The broader name audit still finds **289** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
 Two further accepted waves recover nine functions. Commit `06bf51c` implements
@@ -3943,3 +3943,24 @@ actual normal TU/partial/provider/native qualification, all20 prior native
 windows, complete allocated storage, all133 packed modules and original ROM,
 FULL/native/carry and guarded Git before acceptance. RE_UNKNOWN and
 RE_ORIGINAL_QUIRK contracts remain searchable in the regenerated source index.
+
+
+## CARANIM packed-color byte reader source proposal
+
+The 80-byte reader snapshots one packed word and publishes its high three bytes.
+The signed 0..20 gate, ordered FF fallback, ignored low byte and unchecked
+output pointers remain explicit. Channel meanings, authored signed types, full
+table bounds and alias domains remain searchable RE_UNKNOWN contracts.
+The measured masked source is unchanged; its raw prototype and export0x30
+spelling remain literal and the existing partial-alias file supplies resolution.
+
+The isolated target has exact80-byte native words and two ordered records,
+with whole25040-byte TEXT and allocated storage exact. All20 prior body/token
+and logical-coordinate proofs remain literal; legacy prior positive-FUNC false
+flags are not promoted. Current normal object/partial metadata, raw alias,
+all20 prior native intervals, full133 packed modules and original ROM, FULL,
+native proof, carry and guarded Git remain required before acceptance.
+This prospective ledger includes the queued290-to-289 address-name correction
+from the genuine accepted PFX completion. Accepted audited bytes remain587676;
+587756 is conditional on accepting this80-byte identity. This bank grants zero
+accepted or additional older-code readability credit.

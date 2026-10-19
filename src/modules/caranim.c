@@ -339,7 +339,30 @@ void *caranimGetMaterialRecord(s32 materialId) {
 }
 #line 118 "src/modules/caranim.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/caranim/func_caranim_00401C04.s")
+#line 1 "caranim_packed_color_bytes.c"
+/* Read the high three bytes of one packed color-table word.
+ * RE_ORIGINAL_QUIRK: a signed index outside 0..20 writes FF to all three
+ * outputs in order. A valid word is loaded once before any output store;
+ * the low byte is ignored, and there are no output-pointer checks.
+ * RE_UNKNOWN: channel meanings, authored signed types, complete table bounds
+ * beyond this consumed prefix, and valid output/alias domains. The s32 shifts
+ * retain the original target's arithmetic-right-shift view. */
+void caranimReadPackedColorBytes(s32 colorIndex, u8 *firstByte,
+                               u8 *secondByte, u8 *thirdByte) {
+    s32 packedColor;
+
+    if (colorIndex < 0 || colorIndex >= 21) {
+        *firstByte = 0xFF;
+        *secondByte = 0xFF;
+        *thirdByte = 0xFF;
+        return;
+    }
+    packedColor = ((s32 *)&D_caranim_00407178)[colorIndex];
+    *firstByte = (packedColor >> 24) & 0xFF;
+    *secondByte = (packedColor >> 16) & 0xFF;
+    *thirdByte = (packedColor >> 8) & 0xFF;
+}
+
 
 #line 121 "src/modules/caranim.c"
 /* For cheat four/five/six, scale all four components of matrix row X/Y/Z

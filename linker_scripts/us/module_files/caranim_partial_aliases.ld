@@ -1,1 +1,2 @@
 func_caranim_00406094 = caranimCopyRegisteredStates;
+func_caranim_00401C04 = caranimReadPackedColorBytes;
