@@ -1,1 +1,2 @@
 func_uvpfx_rom_004012CC = uvPfxGetProps;
+func_uvpfx_rom_00401888 = uvPfxResetTextureOrientationsAndRandomVectors;

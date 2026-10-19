@@ -34,8 +34,8 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **715** assembly references:
-**678** ordinary functions and **37** entrypoints, with **664,912** known instruction bytes
+matching C are preserved with `#line`. The current ledger has **714** assembly references:
+**677** ordinary functions and **37** entrypoints, with **664,628** known instruction bytes
 and no unknown sizes. The broader name audit still finds **290** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
@@ -3924,3 +3924,22 @@ replay, all133 packed modules, original ROM equality, FULL validation, semantic
 carry qualification and guarded Git landing. B26C remains assembly. Unknown
 field meanings and original out-of-range/grid callback quirks remain searchable
 in source comments and the generated uncertainty index.
+
+
+## PFX284 PI and readonly-owner source-stage proposal
+
+The indexed initializer retains the measured PI literal at readonly offset436.
+A detached replay of all71 native words passes using genuine original providers;
+the legacy isolated raw/ordered-REL/storage flags remain false and native status
+UNMEASURED. The real remaining0242C ASM host retains the authentic72-byte tail
+at offset440 with phase8. The unchanged getter owns212 bytes, C PI owns4, and
+the retained prefix224 plus tail72 completes512 bytes with106 readonly records.
+
+The ledger above is the prospective source-bank projection, not accepted credit.
+Accepted audited instruction/readable bytes remain587392 of1270016;
+587676 is conditional on accepting this284-byte identity. This bank adds zero
+accepted instruction bytes. The identity requires
+actual normal TU/partial/provider/native qualification, all20 prior native
+windows, complete allocated storage, all133 packed modules and original ROM,
+FULL/native/carry and guarded Git before acceptance. RE_UNKNOWN and
+RE_ORIGINAL_QUIRK contracts remain searchable in the regenerated source index.

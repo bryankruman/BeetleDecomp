@@ -192,3 +192,4 @@ uvPfxSetTypeOneCountAndValue = 0x00403848; // type:func
 uvPfxReservedCallback = 0x00404D2C; // type:func
 uvPfxAdvanceDiscreteStepState = 0x004021FC; // type:func
 uvPfxAdvancePositionTrail = 0x00403898; // type:func
+uvPfxResetTextureOrientationsAndRandomVectors = 0x00401888; // type:func

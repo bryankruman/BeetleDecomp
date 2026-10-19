@@ -37,7 +37,7 @@ void uvPfxSetMatrix(s32 arg0, Mtx4F *arg1);
 void func_uvpfx_rom_004004D0(s32 arg0, ...);
 void func_uvpfx_rom_004012CC(s32 arg0, ...);
 void uvPfxModuleCleanup(void);
-void func_uvpfx_rom_00401888(s32 arg0, s32 arg1);
+void uvPfxResetTextureOrientationsAndRandomVectors(s32 effectId, s32 randomize);
 void uvPfxSetTriangleTextureOrientation(s32 arg0, f32 arg1, s32 arg2);
 s32 uvPfxUpdateLifetimeState(s32 arg0);
 void uvPfxAdvanceTimeAndUpdate(f32 arg0);
@@ -271,7 +271,7 @@ void func_uvpfx_rom_004004D0(s32 arg0, ...) {
                         temp_s1->unk2C = 0xFFF;
                         temp_s1->unk2E = (u16) var_v1_3->width;
                         temp_s1->unk30 = (u16) var_v1_3->height;
-                        func_uvpfx_rom_00401888(arg0, 0);
+                        uvPfxResetTextureOrientationsAndRandomVectors(arg0, 0);
                     }
                 } else {
                     temp_s1->unk28 = 0xFF;
@@ -287,13 +287,13 @@ void func_uvpfx_rom_004004D0(s32 arg0, ...) {
                     if (var_v1_3 != NULL) {
                         temp_s1->unk2E = (u16) var_v1_3->width;
                         temp_s1->unk30 = (u16) var_v1_3->height;
-                        func_uvpfx_rom_00401888(arg0, 0);
+                        uvPfxResetTextureOrientationsAndRandomVectors(arg0, 0);
                     }
                     temp_s1->unk28 = 0xFF;
                 }
                 break;
             case 0x1015:
-                func_uvpfx_rom_00401888(arg0, va_arg(args, s32));
+                uvPfxResetTextureOrientationsAndRandomVectors(arg0, va_arg(args, s32));
                 break;
             case 0x1003:
                 D_uvpfx_rom_00405BB4->uvVec3FSet(&temp_s1->unk70, va_arg(args, f64),
@@ -538,29 +538,35 @@ void uvPfxModuleCleanup(void) {
 
 #define PI 3.1415927f
 
-#ifdef NEEDS_RODATA
-void func_uvpfx_rom_00401888(s32 arg0, s32 arg1) {
-    Vec3F* var_s0;
-    f32 temp_fs1;
-    f32 var_fs0;
-    s32 i;
+void uvPfxResetTextureOrientationsAndRandomVectors(s32, s32);
+#line 1 "uvpfx-indexed-random-initializer-body-129902.c"
+/* Initialize five triangle texture orientations, then refill 256 random vectors.
+ * The indexed walk visits the existing table in x/y/z order, with a fresh RNG
+ * callback for every component. Cache the compiler-owned PI literal before callbacks.
+ * RE_ORIGINAL_QUIRK: vectors are regenerated even when randomize is zero;
+ * the RNG export table is reloaded for each call and no result is clamped.
+ * RE_UNKNOWN: effect bounds, shared RNG/table ownership, concurrent mutation
+ * and provider lifetime remain caller contracts. */
+void uvPfxResetTextureOrientationsAndRandomVectors(s32 effectId, s32 randomize) {
+    f32 orientationPi;
+    f32 angle;
+    s32 slot;
 
-    var_fs0 = 0.0f;
-    for (i = 0; i < 5; i++) {
-        if (arg1 != 0) {
-            var_fs0 = 2.0f * D_uvpfx_rom_00405BC0->uvRandFLcg() * PI;
+    angle = 0.0f;
+    orientationPi = PI;
+    for (slot = 0; slot < 5; slot++) {
+        if (randomize != 0) {
+            angle = 2.0f * D_uvpfx_rom_00405BC0->uvRandFLcg() * orientationPi;
         }
-        uvPfxSetTriangleTextureOrientation(i, var_fs0, arg0);
+        uvPfxSetTriangleTextureOrientation(slot, angle, effectId);
     }
-    for (i = 0; i < 256; i++) {
-        D_uvpfx_rom_00404FB0[i].x = 2.0f * (D_uvpfx_rom_00405BC0->uvRandFLcg() - 0.5f);
-        D_uvpfx_rom_00404FB0[i].y = 2.0f * (D_uvpfx_rom_00405BC0->uvRandFLcg() - 0.5f);
-        D_uvpfx_rom_00404FB0[i].z = (f32) (2.0f * (D_uvpfx_rom_00405BC0->uvRandFLcg() - 0.5f));
-    } 
+    for (slot = 0; slot < 256; slot++) {
+        D_uvpfx_rom_00404FB0[slot].x = 2.0f * (D_uvpfx_rom_00405BC0->uvRandFLcg() - 0.5f);
+        D_uvpfx_rom_00404FB0[slot].y = 2.0f * (D_uvpfx_rom_00405BC0->uvRandFLcg() - 0.5f);
+        D_uvpfx_rom_00404FB0[slot].z = 2.0f * (D_uvpfx_rom_00405BC0->uvRandFLcg() - 0.5f);
+    }
 }
-#else
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvpfx_rom/func_uvpfx_rom_00401888.s")
-#endif
+#line 530 "src/modules/uvpfx_rom.c"
 
 #line 531 "src/modules/uvpfx_rom.c"
 /* Rotate the original triangle about Z, offset its coordinates by 0.5,

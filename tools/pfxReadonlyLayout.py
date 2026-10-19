@@ -1,6 +1,6 @@
-"""Version6: one measured PFX getter owns one scalar and two adjacent tables.
+"""Version6 PI successor: one unchanged getter and a C-owned PI precede the retained tail.
 
-The retained suffix uses the existing asm-processor late-rodata host mechanism.
+The retained72-byte suffix uses the existing real ASM-host mechanism; C emits PI4.
 This helper never trims or rewrites an ELF object. Normal packed/native gates
 must still prove the final512-byte section,106 relocations and original ROM.
 """
@@ -12,7 +12,9 @@ MODULE='uvpfx_rom'
 SOURCE='src/modules/uvpfx_rom.c'
 OWNER='uvPfxGetProps'
 RAW_OWNER='func_uvpfx_rom_004012CC'
-HOST='func_uvpfx_rom_00401888'
+HOST='func_uvpfx_rom_0040242C'
+TARGET='uvPfxResetTextureOrientationsAndRandomVectors'
+TARGET_BODY_SHA='6750402669e48ab4ae06f46808c62d433979460a29893b4e6b815867036a3829'
 PREFIX='asm/us/data/modules/uvpfx_rom.rodata-prefix.s'
 WITNESS='tools/readonly_layout/uvpfx_rom.original-rodata.s'
 HOST_ASM='asm/us/nonmatchings/modules/uvpfx_rom/'+HOST+'.s'
@@ -36,14 +38,14 @@ def validate_layout(layout,module):
     require(layout['source']==SOURCE and layout['witness']==WITNESS and layout['prefix_assembly']==PREFIX and layout['monolithic_assembly']==MONOLITH,'finite storage paths')
     require(layout['group']==GROUP and(layout['begin'],layout['end'])==(0x404D40,0x404F40),'finite grouped ranges')
     require((layout['owner_original_symbol'],layout['owner_c_symbol'],layout['owner_address'],layout['owner_bytes'])==(RAW_OWNER,OWNER,0x4012CC,1348),'finite owner')
-    require((layout['host_symbol'],layout['host_address'],layout['host_bytes'],layout['host_assembly'])==(HOST,0x401888,284,HOST_ASM),'finite real assembly host')
+    require((layout['host_symbol'],layout['host_address'],layout['host_bytes'],layout['host_assembly'])==(HOST,0x40242C,4896,HOST_ASM),'finite real assembly host')
     require(layout['partial_alias']=='linker_scripts/us/module_files/uvpfx_rom_partial_aliases.ld','finite alias path')
-    require((layout['expected_normal_rodata_bytes'],layout['expected_normal_REL_records'],layout['expected_normal_suffix_offset'])==(512,106,436),'required future normal gates')
+    require((layout['expected_normal_rodata_bytes'],layout['expected_normal_REL_records'],layout['expected_normal_suffix_offset'])==(512,106,440),'required future normal gates')
     for key in keys:
         if key.endswith('_sha256'):require(isinstance(layout[key],str)and re.fullmatch('[0-9a-f]{64}',layout[key]),'invalid digest: '+key)
     require(layout['witness_sha256']=='c0bec1e9f3d2f0eb246f646021faea4ed0a59b52075b54f0fc1be084b95fe69c','original readonly witness')
     require(layout['readonly_sha256']=='9a7c004f2b26fb6bcc89ede98e51a7bd4c45a32d48034133f74477e3c5879f13','complete original readonly annotations')
-    require(layout['host_sha256']=='72eaf35adc25032d5786eb6b8838b6cbf8f11cce6f0886aeca43f18a894dcf07','original assembly host')
+    require(layout['host_sha256']=='601001bbcddfbcf4b8875fb60c9019a46e312ef47344aad78e1bca1596a564ad','original assembly host')
 
 def fragments(layout,witness):
     validate_layout(layout,MODULE)
@@ -64,10 +66,14 @@ def fragments(layout,witness):
         bounds.append((lo,hi))
     require(all(bounds[i][1]<bounds[i+1][0]for i in (0,1)),'component physical order')
     prefix=('.section .rodata\n'+common.retained(witness[:bounds[0][0]])).encode()
-    suffix=common.v3_fragment(0x404EF4,witness[bounds[-1][1]:])
+    pi_start='nonmatching D_uvpfx_rom_00404EF4\n';pi_stop='enddlabel D_uvpfx_rom_00404EF4'
+    require(witness.count(pi_start)==witness.count(pi_stop)==1,'single original PI witness')
+    pi_lo=witness.index(pi_start);pi_hi=witness.index(pi_stop,pi_lo)+len(pi_stop)
+    require(pi_lo>bounds[-1][1]and common.original_bytes(witness[pi_lo:pi_hi],0x404EF4,0x404EF8)==bytes.fromhex('40490fdb'),'original C-owned PI4')
+    suffix=common.v3_fragment(0x404EF8,witness[pi_hi:])
     require(common.original_bytes(prefix.decode(),0x404D40,0x404E20)==decoded[:224],'prefix exact224')
-    require(common.original_bytes(suffix.decode(),0x404EF4,0x404F40)==decoded[436:],'suffix exact76')
-    require(suffix.startswith(b'.section .late_rodata\n.late_rodata_alignment 4\n'),'suffix phase4')
+    require(common.original_bytes(suffix.decode(),0x404EF8,0x404F40)==decoded[440:],'suffix exact72')
+    require(suffix.startswith(b'.section .late_rodata\n.late_rodata_alignment 8\n'),'suffix phase8')
     return decoded,prefix,suffix
 
 def validate_source(root,layout):
@@ -90,22 +96,28 @@ def validate_source(root,layout):
             else:require(stack,'unbalanced conditional');stack.pop()
         if prefix in line:require(not stack and line.strip()==prefix,'prefix must be unconditional standalone source')
         if host in line:
-            # Only this exact, source-hash-bound existing parked draft is
-            # supported. Historical validators and all other arms stay strict.
-            require(stack==[['ifdef','NEEDS_RODATA','else']]and line.strip()==host,'host is not the measured undefined-macro else arm')
+            require(not stack and line.strip()==host,'new real suffix host must be unconditional')
     require(not stack,'unterminated source conditional')
     match=re.search(r'^void uvPfxGetProps\([^;{}]*\)\s*\{',masked,re.M)
     require(match is not None,'getter body absent')
     definitions=list(re.finditer(r'^[ \t]*[A-Za-z_][^;{}\n]*\([^;{}]*\)\s*\{',masked,re.M))
     require(all(masked.index(prefix)<match.start()for match in definitions),'prefix must precede every C definition')
-    require(masked.index(prefix)<match.start()<masked.index(host),'grouped owner/host source order')
+    target=re.search(r'^void '+TARGET+r'\([^;{}]*\)\s*\{',masked,re.M)
+    require(target is not None and masked.index(prefix)<match.start()<target.start()<masked.index(host),'grouped getter, C PI, real suffix host order')
+    require(re.findall(r'^\s*#\s*define\s+PI\s+([^\n]+)',masked,re.M)==['3.1415927f'],'exact original binary32 PI literal')
+    require(not re.search(r'^\s*#\s*undef\s+PI\b',masked,re.M),'PI macro must not be undefined')
+    require(not re.search(r'#pragma GLOBAL_ASM\("[^"\n]*/(?:func_uvpfx_rom_00401888|'+TARGET+r')\.s"\)',masked),'recovered PI owner remains ASM-backed')
+    pi_definition=re.search(r'^void '+TARGET+r'\([^;{}]*\)\s*\{',text,re.M)
+    pi_start=text.index('{',pi_definition.start());pi_depth=1;pi_end=pi_start+1
+    while pi_depth and pi_end<len(text):pi_depth+=(text[pi_end]=='{')-(text[pi_end]=='}');pi_end+=1
+    require(pi_depth==0 and common.sha(text[pi_start:pi_end].encode())==TARGET_BODY_SHA,'measured C PI body changed')
     require(not re.search(r'#pragma GLOBAL_ASM\("[^"\n]*/(?:'+RAW_OWNER+'|'+OWNER+r')\.s"\)',masked),'owner remains assembly-backed')
     start=text.index('void uvPfxGetProps(');brace=text.index('{',start);depth=1;at=brace+1
     while depth and at<len(text):
         depth+=(text[at]=='{')-(text[at]=='}');at+=1
     require(depth==0 and common.sha(text[brace:at].encode())==layout['owner_body_sha256'],'frozen getter body changed')
     alias=common.inside(root,layout['partial_alias']).read_bytes()
-    require(common.sha(alias)==layout['partial_alias_sha256']and alias==b'func_uvpfx_rom_004012CC = uvPfxGetProps;\n','genuine raw-to-canonical alias expression')
+    require(common.sha(alias)==layout['partial_alias_sha256']and alias==b'func_uvpfx_rom_004012CC = uvPfxGetProps;\nfunc_uvpfx_rom_00401888 = uvPfxResetTextureOrientationsAndRandomVectors;\n','genuine raw-to-canonical alias expression')
 
 def validate_users(root,layout,prefix):
     allowed={WITNESS,MONOLITH,PREFIX}
@@ -173,7 +185,7 @@ def declared_prefix(root,config,module):
     require(host.read_bytes()==original+common.SUFFIX_MARKER+plan['suffix'],'declared suffix missing or changed')
     return dict(source=SOURCE,symbol=prefix.stem,assembly=PREFIX,bytes=224,module=MODULE,metadata=config,
                 witness=WITNESS,witness_sha256=layout['witness_sha256'],assembly_sha256=common.sha(plan['prefix']),
-                original_readonly_bytes=512,retained_readonly_bytes=300,compiler_owned_readonly_bytes=212,
+                original_readonly_bytes=512,retained_readonly_bytes=296,compiler_owned_readonly_bytes=216,
                 ownership='preserved-original-readonly-prefix')
 
 def apply(plan):

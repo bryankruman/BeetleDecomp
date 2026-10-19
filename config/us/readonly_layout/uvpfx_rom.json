@@ -3,7 +3,7 @@
   "end": 4214592,
   "expected_normal_REL_records": 106,
   "expected_normal_rodata_bytes": 512,
-  "expected_normal_suffix_offset": 436,
+  "expected_normal_suffix_offset": 440,
   "group": [
     [
       "D_uvpfx_rom_00404E20",
@@ -24,11 +24,11 @@
       "table"
     ]
   ],
-  "host_address": 4200584,
-  "host_assembly": "asm/us/nonmatchings/modules/uvpfx_rom/func_uvpfx_rom_00401888.s",
-  "host_bytes": 284,
-  "host_sha256": "72eaf35adc25032d5786eb6b8838b6cbf8f11cce6f0886aeca43f18a894dcf07",
-  "host_symbol": "func_uvpfx_rom_00401888",
+  "host_address": 4203564,
+  "host_assembly": "asm/us/nonmatchings/modules/uvpfx_rom/func_uvpfx_rom_0040242C.s",
+  "host_bytes": 4896,
+  "host_sha256": "601001bbcddfbcf4b8875fb60c9019a46e312ef47344aad78e1bca1596a564ad",
+  "host_symbol": "func_uvpfx_rom_0040242C",
   "module": "uvpfx_rom",
   "monolithic_assembly": "asm/us/data/modules/uvpfx_rom.rodata.s",
   "owner_address": 4199116,
@@ -39,11 +39,11 @@
   "owner_instruction_sha256": "1304df0c970015605a72d80ea21c381594872f1f5f887a6cf24ec8cc9bf702c6",
   "owner_original_symbol": "func_uvpfx_rom_004012CC",
   "partial_alias": "linker_scripts/us/module_files/uvpfx_rom_partial_aliases.ld",
-  "partial_alias_sha256": "b7e34bf5b54663bb6e9c023bc35d30c3bb93da04cd2598e2972b925c8bfe5470",
+  "partial_alias_sha256": "8071efa35fe96711c0a4f7d6c7dbbb9ee30c0639d5dfda296f295d5d23213022",
   "prefix_assembly": "asm/us/data/modules/uvpfx_rom.rodata-prefix.s",
   "readonly_sha256": "9a7c004f2b26fb6bcc89ede98e51a7bd4c45a32d48034133f74477e3c5879f13",
   "source": "src/modules/uvpfx_rom.c",
-  "source_sha256": "5d2751a196af9fa053527488ae828fd46329a7598b6168cefc347a988f337235",
+  "source_sha256": "d1a97a611607817f0cfc05fc46f7b7de77d5aac6741748aaf3c6e6fbe8e2e3ae",
   "version": 6,
   "witness": "tools/readonly_layout/uvpfx_rom.original-rodata.s",
   "witness_sha256": "c0bec1e9f3d2f0eb246f646021faea4ed0a59b52075b54f0fc1be084b95fe69c"
