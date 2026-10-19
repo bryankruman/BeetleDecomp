@@ -34,8 +34,8 @@ packed-module checks and original full ROM check after symbol extraction:
 `airecRunLegacyCountLoop`, `smackGetPlayerValue`, `miscVec2LengthSquared`, and
 `uvIsectGetKindOnePayload`. Their names describe observed behavior without inventing an
 unknown gameplay meaning. Commit `76a2c9b` records this wave. Source locations of existing
-matching C are preserved with `#line`. The current ledger has **716** assembly references:
-**679** ordinary functions and **37** entrypoints, with **665,484** known instruction bytes
+matching C are preserved with `#line`. The current ledger has **715** assembly references:
+**678** ordinary functions and **37** entrypoints, with **664,912** known instruction bytes
 and no unknown sizes. The broader name audit still finds **290** address-named C definitions.
 This is not a completed decompilation or completed readability audit.
 
@@ -3907,3 +3907,20 @@ landing qualify. Retained older diagnostic false flags are not normalized.
 Descriptor/controller domains, callback mutation and alias/lifetime guarantees,
 float/gate units and return-code meanings stay explicit RE_UNKNOWN obligations.
 Original ordered comparisons, reloads and unchecked behaviors remain intact.
+
+
+## Terrain grid-mask source proposal
+
+The readable segment-and-bounds mask helper at CODE 0xBD38 reproduces all
+143 original instructions, its three ordered relocations, and the complete
+54096-byte terrain TEXT section in the isolated diagnostic. All38 accepted
+terrain bodies, code tokens and logical coordinates remain literal. The five
+original raw-name callers still require genuine partial-link alias and native
+qualification. Legacy native and prior metadata flags remain unchanged.
+
+This source-stage proposal adds zero accepted instruction bytes. The572-byte
+identity requires genuine normal TU/partial/provider metadata, complete native
+replay, all133 packed modules, original ROM equality, FULL validation, semantic
+carry qualification and guarded Git landing. B26C remains assembly. Unknown
+field meanings and original out-of-range/grid callback quirks remain searchable
+in source comments and the generated uncertainty index.

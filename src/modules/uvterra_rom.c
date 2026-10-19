@@ -1992,7 +1992,102 @@ u16 uvTerraLookupAdjustedWrappedIndexPair(s16 firstIndex, s16 secondIndex, u8 mo
  * scalar convention and complete center owner (BF74 reads floats0x30/0x34).
  * Resolve through original callers and BF74/B26C consumers before normalizing
  * zero/negative spans, unordered inputs or changing the native scalar. */
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040BD38.s")
+#line 1 "uvterra-grid-mask-context-130506.h"
+/* Consumed o32 contract: two leading f32 arguments, center in A2, slope in A3,
+ * intercept in the caller stack. BF74 returns an unsigned16 mask.
+ * RE_UNKNOWN: full authored center record; native reads only floats+30/+34. */
+extern f32 D_uvterra_rom_0040D6E8;
+u16 func_uvterra_rom_0040BF74(f32, f32, void *, f32, f32);
+#line 1 "uvterra-grid-mask-body-130504.c"
+// SPDX-License-Identifier: AGPL-3.0-or-later
+/* Intersect two four-by-four bounds masks with a segment-derived tile mask.
+ * Each axis scans at most four quarter-span positions. The helper consumes
+ * only center+0x30/+0x34 as floats; its complete record type remains unnamed.
+ * RE_ORIGINAL_QUIRK: preserve the ordered comparisons, increment order and
+ * unsigned16 mask narrowing on every union; no span normalization or clamp.
+ * Equal segment X uses the original shared slope sentinel, then secondX.
+ * RE_UNKNOWN: coordinate units, allowed zero/negative spans, nonfinite inputs,
+ * center lifetime and authored API. Reused scan scalars below follow the public
+ * source hypothesis; declaration/lifetime matching remains unmeasured.
+ * Adapted from synamaxmusic/bar-decomp PR141, main cee90d9784eae4c19cfa260ecac88cf01562481d.
+ * Public body is NEEDS_RODATA conditional. Earlier1211/1213 shapes failed. */
+u16 uvTerraIntersectSegmentAndBoundsMasks(f32 firstX, f32 firstY, f32 secondX, f32 secondY, f32 xBoundA, f32 yBoundA, f32 xBoundB,
+                              f32 yBoundB, f32 spanStartX, f32 spanEndX, f32 spanEndY, f32 spanStartY, void *center) {
+    f32 horizontalSpan;
+    f32 verticalSpan;
+    f32 scanYOrSlope;
+    f32 scanX;
+    f32 stepX;
+    f32 stepY;
+    f32 upperYLimit;
+    f32 maximumX;
+    f32 minimumY;
+    f32 maximumY;
+    f32 horizontalLimitOrIntercept;
+    f32 minimumX;
+    s32 index;
+    u16 rowMask;
+    u16 columnMask;
+    u16 helperMask;
+    u16 boundsMask;
+
+    rowMask = 0;
+    columnMask = 0;
+    horizontalSpan = spanEndX - spanStartX;
+    verticalSpan = spanEndY - spanStartY;
+
+    if (xBoundA < xBoundB) {
+        minimumX = xBoundA;
+        maximumX = xBoundB;
+    } else {
+        minimumX = xBoundB;
+        maximumX = xBoundA;
+    }
+
+    if (yBoundA < yBoundB) {
+        minimumY = yBoundA;
+        maximumY = yBoundB;
+    } else {
+        minimumY = yBoundB;
+        maximumY = yBoundA;
+    }
+
+    stepX = 0.25f * horizontalSpan;
+    horizontalLimitOrIntercept = 2.0f * stepX;
+    scanX = -stepX;
+
+    stepY = 0.25f * verticalSpan;
+    scanYOrSlope = -stepY;
+
+    for (index = 0; (scanX <= horizontalLimitOrIntercept) && (index < 4); index++) {
+        if ((minimumX <= scanX) && ((scanX - stepX) <= maximumX)) {
+            columnMask |= 0x8888 >> index;
+        }
+        scanX += stepX;
+    }
+    upperYLimit = 2.0f * stepY;
+
+    for (index = 0; (scanYOrSlope <= upperYLimit) && (index < 4); index++) {
+        if ((minimumY <= scanYOrSlope) && ((scanYOrSlope - stepY) <= maximumY)) {
+            rowMask |= 0xF000 >> (index * 4);
+        }
+        scanYOrSlope += stepY;
+    }
+    /* The completed scan values are reused for the line slope/intercept. */
+    if (secondX != firstX) {
+        scanYOrSlope = (secondY - firstY) / (secondX - firstX);
+        horizontalLimitOrIntercept = secondY - (scanYOrSlope * secondX);
+    } else {
+        scanYOrSlope = D_uvterra_rom_0040D6E8;
+        horizontalLimitOrIntercept = secondX;
+    }
+
+    boundsMask = rowMask & columnMask;
+    helperMask = func_uvterra_rom_0040BF74(horizontalSpan, verticalSpan, center, scanYOrSlope, horizontalLimitOrIntercept);
+
+    return boundsMask & helperMask;
+}
+#line 564 "src/modules/uvterra_rom.c"
 #line 557 "src/modules/uvterra_rom.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040BF74.s")
