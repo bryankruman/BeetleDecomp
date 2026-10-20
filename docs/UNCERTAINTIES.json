@@ -424,7 +424,7 @@
     "src/modules/mult7.c": "5db6c5a63d09aaa99a615f41d0994f0b9f41e2c985291c6b13042d861cabdf93",
     "src/modules/mult8.c": "8a81ce514c20f4346a36a428e86e4ef07e6727dd9ead5eb6ea9e43e698a9cad7",
     "src/modules/mult9.c": "b1ff3094ce39c8eccabe63699e28366b1f7a9cae2fdd50300c6520bc9076f41f",
-    "src/modules/pause.c": "e1f04c587969c8726874c7c120340d3bcb3359055f5ac8931db5fb2780ffb5a0",
+    "src/modules/pause.c": "d9b3a2234469deadc419e79e2776295ad872d0e9c84fb48c488e0ebc4606a22a",
     "src/modules/piece.c": "1ccacee2585e3594b8eb8f4caa45575c2bff138ad0e8abe13988fa96dc8c0d18",
     "src/modules/plyr.c": "fe83c8c36b9663e2928cd605a34d1f2716eaa82bab77a600867093a1d2533350",
     "src/modules/powerup.c": "085e09f204f7310138743839479fe583d96be541652935de119e1ad8e8546c7c",
