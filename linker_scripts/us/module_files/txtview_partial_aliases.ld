@@ -1,0 +1,1 @@
+func_txtview_00400298 = txtviewLoadSelectedTextureAndUpdateControl;

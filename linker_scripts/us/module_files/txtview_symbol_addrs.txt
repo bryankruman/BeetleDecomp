@@ -50,3 +50,4 @@ txtviewUnloadCurrentTexture = 0x004000EC; // type:func
 txtviewEnableWhenInactive = 0x00400118; // type:func
 txtviewBindDrawCallbackAndEnableGui = 0x00400238; // type:func
 txtviewBuildTextureControlPanel = 0x00400420; // type:func
+txtviewLoadSelectedTextureAndUpdateControl = 0x00400298; // type:func

@@ -135,7 +135,60 @@ void txtviewBindDrawCallbackAndEnableGui(s32 callbackValue) {
 }
 #line 36 "src/modules/txtview.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/txtview/func_txtview_00400298.s")
+#line 1 "txtview-texture-selection-callback-body-1988642.c"
+/* Consumed-access views only; no complete allocation or authored type claim.
+ * The control word at +0x24 is loaded as f32 and converted by trunc.w.s.
+ * The four signed history words are the measured CB8 OBJECT16 provider.
+ * RE_UNKNOWN: complete control type and storage ownership/allocation contracts.
+ */
+typedef struct { s32 oldest, second, third, newest; } TxtviewTextureHistory;
+typedef struct { u8 unused00[0x24]; f32 value; } TxtviewSliderValueView;
+extern TxtviewTextureHistory D_txtview_00400CB8;
+extern char D_txtview_00400C10[];
+
+/* Load the requested texture in the selected direction, advance the four-ID
+ * history when a current texture exists, and refresh the slider label/range.
+ * RE_ORIGINAL_QUIRK: history ID zero is not unloaded; the load scan has no
+ * bounds or failure exit. Keep the four-byte sprintf label and fixed GUI copy.
+ * RE_UNKNOWN: resource bounds, format expansion, label-copy backing extent,
+ * callback ownership/lifetime and the complete authored callback ABI.
+ * RE_UNKNOWN: unusedHistoryWord is retained from the historically measured
+ * 392-byte draft. No native use or proof of an authored C local is claimed.
+ * The raw callback reference remains external pending the partial-link alias.
+ */
+void txtviewLoadSelectedTextureAndUpdateControl(TxtviewSliderValueView *slider) {
+    s32 unusedHistoryWord;
+    s32 fileId;
+    char label[4];
+
+    fileId = slider->value;
+    if (D_txtview_00400C94 >= 0) {
+        if (D_txtview_00400CB8.oldest > 0) {
+            uvUnloadFile('UVTX', D_txtview_00400CB8.oldest);
+        }
+        D_txtview_00400CB8.oldest = D_txtview_00400CB8.second;
+        D_txtview_00400CB8.second = D_txtview_00400CB8.third;
+        D_txtview_00400CB8.third = D_txtview_00400CB8.newest;
+        D_txtview_00400CB8.newest = D_txtview_00400C94;
+    }
+    if (D_txtview_00400C94 < fileId) {
+        while (uvLoadFile('UVTX', fileId) == NULL) {
+            fileId++;
+        }
+    } else {
+        while (uvLoadFile('UVTX', fileId) == NULL) {
+            fileId--;
+        }
+    }
+
+    D_txtview_00400C94 = fileId;
+    sprintf(label, D_txtview_00400C10, D_txtview_00400C94);
+
+    gUvGuiExports->configureBoundScalar(slider, 0.0f, (uvGetFilesCount('UVTX') - 1),
+                                           D_txtview_00400C94, NULL);
+    gUvGuiExports->copyUpperText30(slider, (u8 *)label);
+}
+#line 38 "src/modules/txtview.c"
 
 #line 39 "src/modules/txtview.c"
 /* Build the texture-viewer GUI group and seven controls for texture ID,

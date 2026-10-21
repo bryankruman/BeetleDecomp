@@ -455,7 +455,7 @@
     "src/modules/track6.c": "72566c34ce04d37b2ec1ba30b6eb3be5c096375bae76cbdd96a864a86db0d735",
     "src/modules/track7.c": "8ade25006afb8a8c33ee1bbc4e39ac6ddd9ecb4030653893c712666cbfd710ae",
     "src/modules/triganim.c": "43930076aedcb1762401b7b9e92c33f708749e70367c13bb66460ee00f557f1e",
-    "src/modules/txtview.c": "f8d7c189aeb5545a6756a847cdb67e64075dacb13a911d9df7188c307bd10a82",
+    "src/modules/txtview.c": "409efe8de5bc2dc657a009ef85c302894397c8fd701026bdf1cc5c367eddc1c7",
     "src/modules/ufo.c": "2165d432b44ec3455fea1108e6085e9a63349a706cc2d2a0eec1ef342231980d",
     "src/modules/ufogame.c": "996eeabab8791cf82379d7177f3745d0f7261b5797b228dc70e9a38a607bafcc",
     "src/modules/uvaudiomgr_rom.c": "091eb9501c55eea84418e8680a1a9e27727600c0042248c5c98caa450104e49d",
@@ -527,19 +527,19 @@
   },
   "counts": {
     "address_function": 910,
-    "address_global": 1699,
-    "assembly": 718,
+    "address_global": 1701,
+    "assembly": 717,
     "audit_debt": 30,
     "conditional_draft": 4,
     "decompiler_local": 620,
     "draft_marker": 55,
-    "explicit_unknown": 1957,
+    "explicit_unknown": 1959,
     "layout_padding": 281,
     "offset_field": 1815,
     "opaque_type": 285,
-    "original_quirk": 567,
+    "original_quirk": 568,
     "uncertainty_note": 88,
-    "unused_identifier": 165
+    "unused_identifier": 166
   },
   "items": [
     {
@@ -18171,7 +18171,7 @@
       "symbol": "func_txtview_00400298",
       "lines": [
         73,
-        180
+        233
       ],
       "owners": [
         {
@@ -18185,9 +18185,9 @@
         {
           "kind": "function",
           "name": "txtviewBuildTextureControlPanel",
-          "declaration_line": 152,
+          "declaration_line": 205,
           "lines": [
-            180
+            233
           ]
         }
       ]
@@ -54925,21 +54925,49 @@
       ]
     },
     {
+      "id": "Q-d9da322047a0",
+      "kind": "address_global",
+      "path": "src/modules/txtview.c",
+      "symbol": "D_txtview_00400C10",
+      "lines": [
+        147,
+        185
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "txtviewLoadSelectedTextureAndUpdateControl",
+          "declaration_line": 159,
+          "lines": [
+            185
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_txtview_00400C10",
+          "declaration_line": 147,
+          "lines": [
+            147
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-e20cce290aec",
       "kind": "address_global",
       "path": "src/modules/txtview.c",
       "symbol": "D_txtview_00400C14",
       "lines": [
         51,
-        163
+        216
       ],
       "owners": [
         {
           "kind": "function",
           "name": "txtviewBuildTextureControlPanel",
-          "declaration_line": 152,
+          "declaration_line": 205,
           "lines": [
-            163
+            216
           ]
         },
         {
@@ -54959,15 +54987,15 @@
       "symbol": "D_txtview_00400C24",
       "lines": [
         52,
-        166
+        219
       ],
       "owners": [
         {
           "kind": "function",
           "name": "txtviewBuildTextureControlPanel",
-          "declaration_line": 152,
+          "declaration_line": 205,
           "lines": [
-            166
+            219
           ]
         },
         {
@@ -54987,15 +55015,15 @@
       "symbol": "D_txtview_00400C34",
       "lines": [
         53,
-        171
+        224
       ],
       "owners": [
         {
           "kind": "function",
           "name": "txtviewBuildTextureControlPanel",
-          "declaration_line": 152,
+          "declaration_line": 205,
           "lines": [
-            171
+            224
           ]
         },
         {
@@ -55015,15 +55043,15 @@
       "symbol": "D_txtview_00400C40",
       "lines": [
         54,
-        181
+        234
       ],
       "owners": [
         {
           "kind": "function",
           "name": "txtviewBuildTextureControlPanel",
-          "declaration_line": 152,
+          "declaration_line": 205,
           "lines": [
-            181
+            234
           ]
         },
         {
@@ -55043,15 +55071,15 @@
       "symbol": "D_txtview_00400C44",
       "lines": [
         55,
-        186
+        239
       ],
       "owners": [
         {
           "kind": "function",
           "name": "txtviewBuildTextureControlPanel",
-          "declaration_line": 152,
+          "declaration_line": 205,
           "lines": [
-            186
+            239
           ]
         },
         {
@@ -55071,15 +55099,15 @@
       "symbol": "D_txtview_00400C54",
       "lines": [
         56,
-        195
+        248
       ],
       "owners": [
         {
           "kind": "function",
           "name": "txtviewBuildTextureControlPanel",
-          "declaration_line": 152,
+          "declaration_line": 205,
           "lines": [
-            195
+            248
           ]
         },
         {
@@ -55099,15 +55127,15 @@
       "symbol": "D_txtview_00400C64",
       "lines": [
         57,
-        204
+        257
       ],
       "owners": [
         {
           "kind": "function",
           "name": "txtviewBuildTextureControlPanel",
-          "declaration_line": 152,
+          "declaration_line": 205,
           "lines": [
-            204
+            257
           ]
         },
         {
@@ -55127,15 +55155,15 @@
       "symbol": "D_txtview_00400C68",
       "lines": [
         58,
-        213
+        266
       ],
       "owners": [
         {
           "kind": "function",
           "name": "txtviewBuildTextureControlPanel",
-          "declaration_line": 152,
+          "declaration_line": 205,
           "lines": [
-            213
+            266
           ]
         },
         {
@@ -55155,15 +55183,15 @@
       "symbol": "D_txtview_00400C70",
       "lines": [
         59,
-        222
+        275
       ],
       "owners": [
         {
           "kind": "function",
           "name": "txtviewBuildTextureControlPanel",
-          "declaration_line": 152,
+          "declaration_line": 205,
           "lines": [
-            222
+            275
           ]
         },
         {
@@ -55183,15 +55211,15 @@
       "symbol": "D_txtview_00400C78",
       "lines": [
         60,
-        231
+        284
       ],
       "owners": [
         {
           "kind": "function",
           "name": "txtviewBuildTextureControlPanel",
-          "declaration_line": 152,
+          "declaration_line": 205,
           "lines": [
-            231
+            284
           ]
         },
         {
@@ -55213,7 +55241,13 @@
         64,
         81,
         114,
-        118
+        118,
+        165,
+        172,
+        174,
+        184,
+        185,
+        188
       ],
       "owners": [
         {
@@ -55223,6 +55257,19 @@
           "lines": [
             114,
             118
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "txtviewLoadSelectedTextureAndUpdateControl",
+          "declaration_line": 159,
+          "lines": [
+            165,
+            172,
+            174,
+            184,
+            185,
+            188
           ]
         },
         {
@@ -55288,15 +55335,15 @@
       "lines": [
         98,
         119,
-        190
+        243
       ],
       "owners": [
         {
           "kind": "function",
           "name": "txtviewBuildTextureControlPanel",
-          "declaration_line": 152,
+          "declaration_line": 205,
           "lines": [
-            190
+            243
           ]
         },
         {
@@ -55325,15 +55372,15 @@
       "lines": [
         99,
         119,
-        199
+        252
       ],
       "owners": [
         {
           "kind": "function",
           "name": "txtviewBuildTextureControlPanel",
-          "declaration_line": 152,
+          "declaration_line": 205,
           "lines": [
-            199
+            252
           ]
         },
         {
@@ -55362,15 +55409,15 @@
       "lines": [
         100,
         115,
-        208
+        261
       ],
       "owners": [
         {
           "kind": "function",
           "name": "txtviewBuildTextureControlPanel",
-          "declaration_line": 152,
+          "declaration_line": 205,
           "lines": [
-            208
+            261
           ]
         },
         {
@@ -55399,15 +55446,15 @@
       "lines": [
         101,
         115,
-        217
+        270
       ],
       "owners": [
         {
           "kind": "function",
           "name": "txtviewBuildTextureControlPanel",
-          "declaration_line": 152,
+          "declaration_line": 205,
           "lines": [
-            217
+            270
           ]
         },
         {
@@ -55436,15 +55483,15 @@
       "lines": [
         102,
         115,
-        226
+        279
       ],
       "owners": [
         {
           "kind": "function",
           "name": "txtviewBuildTextureControlPanel",
-          "declaration_line": 152,
+          "declaration_line": 205,
           "lines": [
-            226
+            279
           ]
         },
         {
@@ -55473,15 +55520,15 @@
       "lines": [
         103,
         115,
-        235
+        288
       ],
       "owners": [
         {
           "kind": "function",
           "name": "txtviewBuildTextureControlPanel",
-          "declaration_line": 152,
+          "declaration_line": 205,
           "lines": [
-            235
+            288
           ]
         },
         {
@@ -55498,6 +55545,44 @@
           "declaration_line": 103,
           "lines": [
             103
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-eb95ce82f5ca",
+      "kind": "address_global",
+      "path": "src/modules/txtview.c",
+      "symbol": "D_txtview_00400CB8",
+      "lines": [
+        146,
+        166,
+        167,
+        169,
+        170,
+        171,
+        172
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "txtviewLoadSelectedTextureAndUpdateControl",
+          "declaration_line": 159,
+          "lines": [
+            166,
+            167,
+            169,
+            170,
+            171,
+            172
+          ]
+        },
+        {
+          "kind": "global",
+          "name": "D_txtview_00400CB8",
+          "declaration_line": 146,
+          "lines": [
+            146
           ]
         }
       ]
@@ -89354,16 +89439,6 @@
         75
       ],
       "evidence": "asm/us/nonmatchings/modules/txtview/__entrypoint_func_txtview_400000.s"
-    },
-    {
-      "id": "Q-102c985356c0",
-      "kind": "assembly",
-      "path": "src/modules/txtview.c",
-      "symbol": "func_txtview_00400298",
-      "lines": [
-        138
-      ],
-      "evidence": "asm/us/nonmatchings/modules/txtview/func_txtview_00400298.s"
     },
     {
       "id": "Q-0c1a42c69390",
@@ -141872,16 +141947,56 @@
       "path": "src/modules/txtview.c",
       "symbol": "Build the texture-viewer GUI group and seven controls for texture ID, * U/V coordinates and RGBA components. Preserve the shared-root snapshot, * GUI export reloads, allocation/get conversions and original attachment order. * Bind each coordinate/color control directly to its existing persistent float; * texture-ID selection retains the original callback and zero initial value. * RE_UNKNOWN: complete root and GUI-pool capacity/lifetime, label-object extents * and texture-selection callback ABI. Original text helpers read fixed12/30 * bytes rather than stopping at NUL; inspect original data and callers before * assuming each short label has that much individual storage. No caller-side * allocation-failure or empty-file-list checks are added; reachability of those * original conditions requires pool and resource inventory evidence.",
       "lines": [
-        141
+        194
       ],
       "evidence": "Build the texture-viewer GUI group and seven controls for texture ID, * U/V coordinates and RGBA components. Preserve the shared-root snapshot, * GUI export reloads, allocation/get conversions and original attachment order. * Bind each coordinate/color control directly to its existing persistent float; * texture-ID selection retains the original callback and zero initial value. * RE_UNKNOWN: complete root and GUI-pool capacity/lifetime, label-object extents * and texture-selection callback ABI. Original text helpers read fixed12/30 * bytes rather than stopping at NUL; inspect original data and callers before * assuming each short label has that much individual storage. No caller-side * allocation-failure or empty-file-list checks are added; reachability of those * original conditions requires pool and resource inventory evidence.",
       "owners": [
         {
           "kind": "function",
           "name": "txtviewBuildTextureControlPanel",
-          "declaration_line": 152,
+          "declaration_line": 205,
           "lines": [
-            141
+            194
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-b62bfbd44255",
+      "kind": "explicit_unknown",
+      "path": "src/modules/txtview.c",
+      "symbol": "Consumed-access views only; no complete allocation or authored type claim. * The control word at +0x24 is loaded as f32 and converted by trunc.w.s. * The four signed history words are the measured CB8 OBJECT16 provider. * RE_UNKNOWN: complete control type and storage ownership/allocation contracts.",
+      "lines": [
+        139
+      ],
+      "evidence": "Consumed-access views only; no complete allocation or authored type claim. * The control word at +0x24 is loaded as f32 and converted by trunc.w.s. * The four signed history words are the measured CB8 OBJECT16 provider. * RE_UNKNOWN: complete control type and storage ownership/allocation contracts.",
+      "owners": [
+        {
+          "kind": "type",
+          "name": "TxtviewTextureHistory",
+          "declaration_line": 144,
+          "lines": [
+            139
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-2ab22567003d",
+      "kind": "explicit_unknown",
+      "path": "src/modules/txtview.c",
+      "symbol": "Load the requested texture in the selected direction, advance the four-ID * history when a current texture exists, and refresh the slider label/range. * RE_ORIGINAL_QUIRK: history ID zero is not unloaded; the load scan has no * bounds or failure exit. Keep the four-byte sprintf label and fixed GUI copy. * RE_UNKNOWN: resource bounds, format expansion, label-copy backing extent, * callback ownership/lifetime and the complete authored callback ABI. * RE_UNKNOWN: unusedHistoryWord is retained from the historically measured * 392-byte draft. No native use or proof of an authored C local is claimed. * The raw callback reference remains external pending the partial-link alias.",
+      "lines": [
+        149
+      ],
+      "evidence": "Load the requested texture in the selected direction, advance the four-ID * history when a current texture exists, and refresh the slider label/range. * RE_ORIGINAL_QUIRK: history ID zero is not unloaded; the load scan has no * bounds or failure exit. Keep the four-byte sprintf label and fixed GUI copy. * RE_UNKNOWN: resource bounds, format expansion, label-copy backing extent, * callback ownership/lifetime and the complete authored callback ABI. * RE_UNKNOWN: unusedHistoryWord is retained from the historically measured * 392-byte draft. No native use or proof of an authored C local is claimed. * The raw callback reference remains external pending the partial-link alias.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "txtviewLoadSelectedTextureAndUpdateControl",
+          "declaration_line": 159,
+          "lines": [
+            149
           ]
         }
       ]
@@ -141932,16 +142047,16 @@
       "path": "src/modules/txtview.c",
       "symbol": "RE_UNKNOWN: callback source prototype/argument contract. SlotD0 stores * this original raw32 address; inspect the original invocation path before * turning the stored word into a typed function-pointer declaration.",
       "lines": [
-        177
+        230
       ],
       "evidence": "RE_UNKNOWN: callback source prototype/argument contract. SlotD0 stores * this original raw32 address; inspect the original invocation path before * turning the stored word into a typed function-pointer declaration.",
       "owners": [
         {
           "kind": "function",
           "name": "txtviewBuildTextureControlPanel",
-          "declaration_line": 152,
+          "declaration_line": 205,
           "lines": [
-            177
+            230
           ]
         }
       ]
@@ -247185,6 +247300,26 @@
       ]
     },
     {
+      "id": "Q-5debdaa196a0",
+      "kind": "original_quirk",
+      "path": "src/modules/txtview.c",
+      "symbol": "Load the requested texture in the selected direction, advance the four-ID * history when a current texture exists, and refresh the slider label/range. * RE_ORIGINAL_QUIRK: history ID zero is not unloaded; the load scan has no * bounds or failure exit. Keep the four-byte sprintf label and fixed GUI copy. * RE_UNKNOWN: resource bounds, format expansion, label-copy backing extent, * callback ownership/lifetime and the complete authored callback ABI. * RE_UNKNOWN: unusedHistoryWord is retained from the historically measured * 392-byte draft. No native use or proof of an authored C local is claimed. * The raw callback reference remains external pending the partial-link alias.",
+      "lines": [
+        149
+      ],
+      "evidence": "Load the requested texture in the selected direction, advance the four-ID * history when a current texture exists, and refresh the slider label/range. * RE_ORIGINAL_QUIRK: history ID zero is not unloaded; the load scan has no * bounds or failure exit. Keep the four-byte sprintf label and fixed GUI copy. * RE_UNKNOWN: resource bounds, format expansion, label-copy backing extent, * callback ownership/lifetime and the complete authored callback ABI. * RE_UNKNOWN: unusedHistoryWord is retained from the historically measured * 392-byte draft. No native use or proof of an authored C local is claimed. * The raw callback reference remains external pending the partial-link alias.",
+      "owners": [
+        {
+          "kind": "function",
+          "name": "txtviewLoadSelectedTextureAndUpdateControl",
+          "declaration_line": 159,
+          "lines": [
+            149
+          ]
+        }
+      ]
+    },
+    {
       "id": "Q-6a186645e492",
       "kind": "original_quirk",
       "path": "src/modules/ufo.c",
@@ -255724,7 +255859,8 @@
       "symbol": "unused00",
       "lines": [
         10,
-        46
+        46,
+        145
       ],
       "owners": [
         {
@@ -255741,6 +255877,14 @@
           "declaration_line": 9,
           "lines": [
             10
+          ]
+        },
+        {
+          "kind": "type",
+          "name": "TxtviewSliderValueView",
+          "declaration_line": 145,
+          "lines": [
+            145
           ]
         }
       ]
@@ -255931,6 +256075,25 @@
           "declaration_line": 9,
           "lines": [
             35
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-cd8693499ba9",
+      "kind": "unused_identifier",
+      "path": "src/modules/txtview.c",
+      "symbol": "unusedHistoryWord",
+      "lines": [
+        160
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "txtviewLoadSelectedTextureAndUpdateControl",
+          "declaration_line": 159,
+          "lines": [
+            160
           ]
         }
       ]

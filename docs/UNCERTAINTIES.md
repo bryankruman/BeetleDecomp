@@ -17,17 +17,17 @@ For every future source wave, regenerate and check this index after code and str
 
 | Category | Search groups |
 | --- | ---: |
-| Explicit RE_UNKNOWN notes | 1957 |
-| Preserved RE_ORIGINAL_QUIRK notes | 567 |
+| Explicit RE_UNKNOWN notes | 1959 |
+| Preserved RE_ORIGINAL_QUIRK notes | 568 |
 | Older comments with uncertainty language | 88 |
 | Documented original-behavior audits | 30 |
-| Assembly-backed functions or data | 718 |
+| Assembly-backed functions or data | 717 |
 | Address-based function identifiers | 910 |
-| Address-based global identifiers | 1699 |
+| Address-based global identifiers | 1701 |
 | Offset-based fields or neutral typed fields | 1815 |
 | Layout padding to preserve | 281 |
 | Unresolved type names | 285 |
-| Explicit unused ABI, storage or local identifiers | 165 |
+| Explicit unused ABI, storage or local identifiers | 166 |
 | Decompiler parameter/local names | 620 |
 | Fake, unresolved or TODO draft markers | 55 |
 | Data-dependent conditional draft guards | 4 |
@@ -6723,36 +6723,40 @@ For every future source wave, regenerate and check this index after code and str
 
 | Kind | Identifier or note | Declaration context | Physical lines |
 | --- | --- | --- | --- |
-| address_function | `func_txtview_00400298` | function `func_txtview_00400298`, function `txtviewBuildTextureControlPanel` | [73](../src/modules/txtview.c#L73), [180](../src/modules/txtview.c#L180) |
-| address_global | `D_txtview_00400C14` | function `txtviewBuildTextureControlPanel`, global `D_txtview_00400C14` | [51](../src/modules/txtview.c#L51), [163](../src/modules/txtview.c#L163) |
-| address_global | `D_txtview_00400C24` | function `txtviewBuildTextureControlPanel`, global `D_txtview_00400C24` | [52](../src/modules/txtview.c#L52), [166](../src/modules/txtview.c#L166) |
-| address_global | `D_txtview_00400C34` | function `txtviewBuildTextureControlPanel`, global `D_txtview_00400C34` | [53](../src/modules/txtview.c#L53), [171](../src/modules/txtview.c#L171) |
-| address_global | `D_txtview_00400C40` | function `txtviewBuildTextureControlPanel`, global `D_txtview_00400C40` | [54](../src/modules/txtview.c#L54), [181](../src/modules/txtview.c#L181) |
-| address_global | `D_txtview_00400C44` | function `txtviewBuildTextureControlPanel`, global `D_txtview_00400C44` | [55](../src/modules/txtview.c#L55), [186](../src/modules/txtview.c#L186) |
-| address_global | `D_txtview_00400C54` | function `txtviewBuildTextureControlPanel`, global `D_txtview_00400C54` | [56](../src/modules/txtview.c#L56), [195](../src/modules/txtview.c#L195) |
-| address_global | `D_txtview_00400C64` | function `txtviewBuildTextureControlPanel`, global `D_txtview_00400C64` | [57](../src/modules/txtview.c#L57), [204](../src/modules/txtview.c#L204) |
-| address_global | `D_txtview_00400C68` | function `txtviewBuildTextureControlPanel`, global `D_txtview_00400C68` | [58](../src/modules/txtview.c#L58), [213](../src/modules/txtview.c#L213) |
-| address_global | `D_txtview_00400C70` | function `txtviewBuildTextureControlPanel`, global `D_txtview_00400C70` | [59](../src/modules/txtview.c#L59), [222](../src/modules/txtview.c#L222) |
-| address_global | `D_txtview_00400C78` | function `txtviewBuildTextureControlPanel`, global `D_txtview_00400C78` | [60](../src/modules/txtview.c#L60), [231](../src/modules/txtview.c#L231) |
-| address_global | `D_txtview_00400C94` | function `txtviewDrawTexturePanel`, function `txtviewUnloadCurrentTexture`, global `D_txtview_00400C94` | [64](../src/modules/txtview.c#L64), [81](../src/modules/txtview.c#L81), [114](../src/modules/txtview.c#L114), [118](../src/modules/txtview.c#L118) |
+| address_function | `func_txtview_00400298` | function `func_txtview_00400298`, function `txtviewBuildTextureControlPanel` | [73](../src/modules/txtview.c#L73), [233](../src/modules/txtview.c#L233) |
+| address_global | `D_txtview_00400C10` | function `txtviewLoadSelectedTextureAndUpdateControl`, global `D_txtview_00400C10` | [147](../src/modules/txtview.c#L147), [185](../src/modules/txtview.c#L185) |
+| address_global | `D_txtview_00400C14` | function `txtviewBuildTextureControlPanel`, global `D_txtview_00400C14` | [51](../src/modules/txtview.c#L51), [216](../src/modules/txtview.c#L216) |
+| address_global | `D_txtview_00400C24` | function `txtviewBuildTextureControlPanel`, global `D_txtview_00400C24` | [52](../src/modules/txtview.c#L52), [219](../src/modules/txtview.c#L219) |
+| address_global | `D_txtview_00400C34` | function `txtviewBuildTextureControlPanel`, global `D_txtview_00400C34` | [53](../src/modules/txtview.c#L53), [224](../src/modules/txtview.c#L224) |
+| address_global | `D_txtview_00400C40` | function `txtviewBuildTextureControlPanel`, global `D_txtview_00400C40` | [54](../src/modules/txtview.c#L54), [234](../src/modules/txtview.c#L234) |
+| address_global | `D_txtview_00400C44` | function `txtviewBuildTextureControlPanel`, global `D_txtview_00400C44` | [55](../src/modules/txtview.c#L55), [239](../src/modules/txtview.c#L239) |
+| address_global | `D_txtview_00400C54` | function `txtviewBuildTextureControlPanel`, global `D_txtview_00400C54` | [56](../src/modules/txtview.c#L56), [248](../src/modules/txtview.c#L248) |
+| address_global | `D_txtview_00400C64` | function `txtviewBuildTextureControlPanel`, global `D_txtview_00400C64` | [57](../src/modules/txtview.c#L57), [257](../src/modules/txtview.c#L257) |
+| address_global | `D_txtview_00400C68` | function `txtviewBuildTextureControlPanel`, global `D_txtview_00400C68` | [58](../src/modules/txtview.c#L58), [266](../src/modules/txtview.c#L266) |
+| address_global | `D_txtview_00400C70` | function `txtviewBuildTextureControlPanel`, global `D_txtview_00400C70` | [59](../src/modules/txtview.c#L59), [275](../src/modules/txtview.c#L275) |
+| address_global | `D_txtview_00400C78` | function `txtviewBuildTextureControlPanel`, global `D_txtview_00400C78` | [60](../src/modules/txtview.c#L60), [284](../src/modules/txtview.c#L284) |
+| address_global | `D_txtview_00400C94` | function `txtviewDrawTexturePanel`, function `txtviewLoadSelectedTextureAndUpdateControl`, function `txtviewUnloadCurrentTexture`, global `D_txtview_00400C94` | [64](../src/modules/txtview.c#L64), [81](../src/modules/txtview.c#L81), [114](../src/modules/txtview.c#L114), [118](../src/modules/txtview.c#L118), [165](../src/modules/txtview.c#L165), [172](../src/modules/txtview.c#L172), [174](../src/modules/txtview.c#L174), [184](../src/modules/txtview.c#L184) (+2 in JSON) |
 | address_global | `D_txtview_00400C98` | function `txtviewBindDrawCallbackAndEnableGui`, function `txtviewEnableWhenInactive`, global `D_txtview_00400C98` | [65](../src/modules/txtview.c#L65), [89](../src/modules/txtview.c#L89), [134](../src/modules/txtview.c#L134) |
-| address_global | `D_txtview_00400C9C` | function `txtviewBuildTextureControlPanel`, function `txtviewDrawTexturePanel`, global `D_txtview_00400C9C` | [98](../src/modules/txtview.c#L98), [119](../src/modules/txtview.c#L119), [190](../src/modules/txtview.c#L190) |
-| address_global | `D_txtview_00400CA0` | function `txtviewBuildTextureControlPanel`, function `txtviewDrawTexturePanel`, global `D_txtview_00400CA0` | [99](../src/modules/txtview.c#L99), [119](../src/modules/txtview.c#L119), [199](../src/modules/txtview.c#L199) |
-| address_global | `D_txtview_00400CA4` | function `txtviewBuildTextureControlPanel`, function `txtviewDrawTexturePanel`, global `D_txtview_00400CA4` | [100](../src/modules/txtview.c#L100), [115](../src/modules/txtview.c#L115), [208](../src/modules/txtview.c#L208) |
-| address_global | `D_txtview_00400CA8` | function `txtviewBuildTextureControlPanel`, function `txtviewDrawTexturePanel`, global `D_txtview_00400CA8` | [101](../src/modules/txtview.c#L101), [115](../src/modules/txtview.c#L115), [217](../src/modules/txtview.c#L217) |
-| address_global | `D_txtview_00400CAC` | function `txtviewBuildTextureControlPanel`, function `txtviewDrawTexturePanel`, global `D_txtview_00400CAC` | [102](../src/modules/txtview.c#L102), [115](../src/modules/txtview.c#L115), [226](../src/modules/txtview.c#L226) |
-| address_global | `D_txtview_00400CB0` | function `txtviewBuildTextureControlPanel`, function `txtviewDrawTexturePanel`, global `D_txtview_00400CB0` | [103](../src/modules/txtview.c#L103), [115](../src/modules/txtview.c#L115), [235](../src/modules/txtview.c#L235) |
+| address_global | `D_txtview_00400C9C` | function `txtviewBuildTextureControlPanel`, function `txtviewDrawTexturePanel`, global `D_txtview_00400C9C` | [98](../src/modules/txtview.c#L98), [119](../src/modules/txtview.c#L119), [243](../src/modules/txtview.c#L243) |
+| address_global | `D_txtview_00400CA0` | function `txtviewBuildTextureControlPanel`, function `txtviewDrawTexturePanel`, global `D_txtview_00400CA0` | [99](../src/modules/txtview.c#L99), [119](../src/modules/txtview.c#L119), [252](../src/modules/txtview.c#L252) |
+| address_global | `D_txtview_00400CA4` | function `txtviewBuildTextureControlPanel`, function `txtviewDrawTexturePanel`, global `D_txtview_00400CA4` | [100](../src/modules/txtview.c#L100), [115](../src/modules/txtview.c#L115), [261](../src/modules/txtview.c#L261) |
+| address_global | `D_txtview_00400CA8` | function `txtviewBuildTextureControlPanel`, function `txtviewDrawTexturePanel`, global `D_txtview_00400CA8` | [101](../src/modules/txtview.c#L101), [115](../src/modules/txtview.c#L115), [270](../src/modules/txtview.c#L270) |
+| address_global | `D_txtview_00400CAC` | function `txtviewBuildTextureControlPanel`, function `txtviewDrawTexturePanel`, global `D_txtview_00400CAC` | [102](../src/modules/txtview.c#L102), [115](../src/modules/txtview.c#L115), [279](../src/modules/txtview.c#L279) |
+| address_global | `D_txtview_00400CB0` | function `txtviewBuildTextureControlPanel`, function `txtviewDrawTexturePanel`, global `D_txtview_00400CB0` | [103](../src/modules/txtview.c#L103), [115](../src/modules/txtview.c#L115), [288](../src/modules/txtview.c#L288) |
+| address_global | `D_txtview_00400CB8` | function `txtviewLoadSelectedTextureAndUpdateControl`, global `D_txtview_00400CB8` | [146](../src/modules/txtview.c#L146), [166](../src/modules/txtview.c#L166), [167](../src/modules/txtview.c#L167), [169](../src/modules/txtview.c#L169), [170](../src/modules/txtview.c#L170), [171](../src/modules/txtview.c#L171), [172](../src/modules/txtview.c#L172) |
 | assembly | `__entrypoint_func_txtview_400000` | — | [75](../src/modules/txtview.c#L75) |
-| assembly | `func_txtview_00400298` | — | [138](../src/modules/txtview.c#L138) |
 | explicit_unknown | `* Skip all draw calls for a negative texture ID. Otherwise set the shared fill * color, fill rectangle (0,0)..(319,239), clear state bits 0x1A240000, bind * the current texture ...` | function `txtviewDrawTexturePanel` | [105](../src/modules/txtview.c#L105) |
-| explicit_unknown | `Build the texture-viewer GUI group and seven controls for texture ID, * U/V coordinates and RGBA components. Preserve the shared-root snapshot, * GUI export reloads, allocation/...` | function `txtviewBuildTextureControlPanel` | [141](../src/modules/txtview.c#L141) |
+| explicit_unknown | `Build the texture-viewer GUI group and seven controls for texture ID, * U/V coordinates and RGBA components. Preserve the shared-root snapshot, * GUI export reloads, allocation/...` | function `txtviewBuildTextureControlPanel` | [194](../src/modules/txtview.c#L194) |
+| explicit_unknown | `Consumed-access views only; no complete allocation or authored type claim. * The control word at +0x24 is loaded as f32 and converted by trunc.w.s. * The four signed history wor...` | type `TxtviewTextureHistory` | [139](../src/modules/txtview.c#L139) |
+| explicit_unknown | `Load the requested texture in the selected direction, advance the four-ID * history when a current texture exists, and refresh the slider label/range. * RE_ORIGINAL_QUIRK: histo...` | function `txtviewLoadSelectedTextureAndUpdateControl` | [149](../src/modules/txtview.c#L149) |
 | explicit_unknown | `Original GAMEGUI slot28 is a shared byte-storage address; this caller takes * its+0x10 before invoking slot14. Preserve that snapshot across the callback. * RE_UNKNOWN: complete...` | type `TxtviewGameGuiConstructionExports` | [41](../src/modules/txtview.c#L41) |
 | explicit_unknown | `Original GUI initializer binds these exact slots. Return words are narrowed * explicitly as in the caller; unused slots are not callable declarations. * RE_UNKNOWN: historical a...` | type `TxtviewGuiConstructionExports` | [5](../src/modules/txtview.c#L5) |
-| explicit_unknown | `RE_UNKNOWN: callback source prototype/argument contract. SlotD0 stores * this original raw32 address; inspect the original invocation path before * turning the stored word into ...` | function `txtviewBuildTextureControlPanel` | [177](../src/modules/txtview.c#L177) |
+| explicit_unknown | `RE_UNKNOWN: callback source prototype/argument contract. SlotD0 stores * this original raw32 address; inspect the original invocation path before * turning the stored word into ...` | function `txtviewBuildTextureControlPanel` | [230](../src/modules/txtview.c#L230) |
 | offset_field | `unk10` | function `txtviewBindDrawCallbackAndEnableGui` | [133](../src/modules/txtview.c#L133) |
 | offset_field | `unk1C` | function `txtviewBindDrawCallbackAndEnableGui` | [132](../src/modules/txtview.c#L132) |
 | opaque_type | `UnkGameGuiExports` | global `gGameGuiExports` | [66](../src/modules/txtview.c#L66) |
-| unused_identifier | `unused00` | type `TxtviewGameGuiConstructionExports`, type `TxtviewGuiConstructionExports` | [10](../src/modules/txtview.c#L10), [46](../src/modules/txtview.c#L46) |
+| original_quirk | `Load the requested texture in the selected direction, advance the four-ID * history when a current texture exists, and refresh the slider label/range. * RE_ORIGINAL_QUIRK: histo...` | function `txtviewLoadSelectedTextureAndUpdateControl` | [149](../src/modules/txtview.c#L149) |
+| unused_identifier | `unused00` | type `TxtviewGameGuiConstructionExports`, type `TxtviewGuiConstructionExports`, type `TxtviewSliderValueView` | [10](../src/modules/txtview.c#L10), [46](../src/modules/txtview.c#L46), [145](../src/modules/txtview.c#L145) |
 | unused_identifier | `unused0C` | type `TxtviewGuiConstructionExports` | [12](../src/modules/txtview.c#L12) |
 | unused_identifier | `unused18` | type `TxtviewGameGuiConstructionExports` | [48](../src/modules/txtview.c#L48) |
 | unused_identifier | `unused4C` | type `TxtviewGuiConstructionExports` | [16](../src/modules/txtview.c#L16) |
@@ -6763,6 +6767,7 @@ For every future source wave, regenerate and check this index after code and str
 | unused_identifier | `unusedAC` | type `TxtviewGuiConstructionExports` | [30](../src/modules/txtview.c#L30) |
 | unused_identifier | `unusedBC` | type `TxtviewGuiConstructionExports` | [32](../src/modules/txtview.c#L32) |
 | unused_identifier | `unusedC8` | type `TxtviewGuiConstructionExports` | [35](../src/modules/txtview.c#L35) |
+| unused_identifier | `unusedHistoryWord` | function `txtviewLoadSelectedTextureAndUpdateControl` | [160](../src/modules/txtview.c#L160) |
 
 ## src/modules/ufo.c
 
