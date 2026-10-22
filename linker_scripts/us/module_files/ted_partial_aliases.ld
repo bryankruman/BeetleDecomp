@@ -1,0 +1,2 @@
+func_ted_00405804 = tedUpdatePowerupPreviewObject;
+func_ted_00406178 = tedUpdateLetterPreviewObject;

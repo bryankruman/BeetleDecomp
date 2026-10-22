@@ -520,3 +520,5 @@ tedReadVersionThreeFile = 0x00403E90; // type:func
 tedCreateTaskEditorGroupsAndDispatchSelector = 0x00401A8C; // type:func
 tedUpdateSelectedItemLabel = 0x40607C;
 tedUpdateSelectedColoredLetterLabel = 0x4069F0;
+tedUpdatePowerupPreviewObject = 0x00405804; // type:func
+tedUpdateLetterPreviewObject = 0x00406178; // type:func

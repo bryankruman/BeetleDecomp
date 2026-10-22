@@ -734,7 +734,45 @@ void tedStoreSelectedRecordByte(s32 unused) {
 }
 #line 212 "src/modules/ted.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00405804.s")
+#line 1 "ted-powerup-preview-body-1988742.c"
+/* The accepted selector-record declaration keeps +4..+0xF opaque. This is a
+ * separate consumed-access view: this routine reads f32 position at +4/+8/+C.
+ * RE_UNKNOWN: complete/effective record type, allocation and valid index range.
+ * The accepted global declaration and shared provider types remain unchanged.
+ */
+typedef struct { s32 selector; Vec3F position; } TedPowerupPreviewRecordView;
+extern s32 *D_ted_0040729C;
+extern Powerup_Exports *gPowerupExports;
+extern UvDobj_Exports *gUvDobjExports;
+extern UvFMtx_Rom_Exports *gUvFmtxExports;
+
+/* Refresh the indexed task-editor powerup preview: translate its identity
+ * matrix, choose the descriptor's model, and publish the descriptor's RGB.
+ * Keep the selected-record pointer across matrix initialization. Reload the
+ * object-ID array for each object callback, then read RGB after both callbacks.
+ * RE_ORIGINAL_QUIRK: there is no index/NULL check or color clamp here; preserve
+ * the unchecked record/object access and the getter's own fallback behavior.
+ * RE_UNKNOWN: full authored formals/callback role, record effective type and
+ * storage lifetimes. The consumed index word and existing raw ABI name remain
+ * provisional; no extra argument-register residue is promoted to a formal.
+ */
+void tedUpdatePowerupPreviewObject(s32 index) {
+    Mtx4F matrix;
+    TedPowerupPreviewRecordView *selectedRecord;
+    UnkStruct_Powerup_004003C0 *descriptor;
+
+    selectedRecord = (TedPowerupPreviewRecordView *)&D_ted_00407298[index];
+    gUvFmtxExports->uvMat4SetIdentity(&matrix);
+    matrix.m[3][0] = selectedRecord->position.x;
+    matrix.m[3][1] = selectedRecord->position.y;
+    matrix.m[3][2] = selectedRecord->position.z;
+
+    descriptor = gPowerupExports->powerupGetDescriptorOrDefault(selectedRecord->selector);
+    gUvDobjExports->uvDobjModel(D_ted_0040729C[index], descriptor->unk0);
+    gUvDobjExports->uvDobjPosm(D_ted_0040729C[index], 0, &matrix);
+    gUvGfxMgrExports->uvGfxSetPrimColorF(descriptor->red, descriptor->green, descriptor->blue, 1.0f);
+}
+#line 214 "src/modules/ted.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_0040590C.s")
 /*
@@ -842,7 +880,57 @@ void tedUpdateSelectedItemLabel(void *widget)
 }
 #line 226 "src/modules/ted.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00406178.s")
+#line 1 "ted-letter-preview-body-1988782.c"
+/* Preserve the accepted opaque export pointer and selector-record declaration.
+ * These export members match the accepted Letter initializer's three slots.
+ * The descriptor/access records are private consumed views, not owner types.
+ * RE_UNKNOWN: complete/effective record types, allocation, valid editor indices
+ * and storage lifetime; the getter's fallback does not validate editor arrays.
+ */
+typedef struct {
+    void (*cleanup)(void);
+    void (*createObject)(s32, Vec3F *);
+    void *(*getDescriptor)(s32);
+} TedLetterPreviewExports;
+typedef struct { s32 selector; Vec3F position; } TedLetterPreviewRecordView;
+typedef struct {
+    s32 model;
+    u8 unknown04[4];
+    f32 red;
+    f32 green;
+    f32 blue;
+} TedLetterPreviewDescriptorView;
+extern void *gLetterExports;
+extern s32 *D_ted_004072A4;
+
+/* Refresh the indexed task-editor letter preview: translate its identity
+ * matrix, choose the descriptor's model, and publish the descriptor's RGB.
+ * Keep the selected-record pointer across matrix initialization. Reload the
+ * object-ID array for each object callback, then read RGB after both callbacks.
+ * RE_ORIGINAL_QUIRK: there is no editor-index/NULL check or color clamp here;
+ * preserve unchecked array access and the letter getter's fallback behavior.
+ * RE_UNKNOWN: full authored formals/callback role, record effective types and
+ * storage lifetimes. The consumed index word and existing raw ABI name remain
+ * provisional; unconsumed argument-register residue is not a new formal.
+ */
+void tedUpdateLetterPreviewObject(s32 index) {
+    Mtx4F matrix;
+    TedLetterPreviewRecordView *selectedRecord;
+    TedLetterPreviewDescriptorView *descriptor;
+
+    selectedRecord = (TedLetterPreviewRecordView *)&D_ted_004072A0[index];
+    gUvFmtxExports->uvMat4SetIdentity(&matrix);
+    matrix.m[3][0] = selectedRecord->position.x;
+    matrix.m[3][1] = selectedRecord->position.y;
+    matrix.m[3][2] = selectedRecord->position.z;
+
+    descriptor = (TedLetterPreviewDescriptorView *)
+        ((TedLetterPreviewExports *)gLetterExports)->getDescriptor(selectedRecord->selector);
+    gUvDobjExports->uvDobjModel(D_ted_004072A4[index], descriptor->model);
+    gUvDobjExports->uvDobjPosm(D_ted_004072A4[index], 0, &matrix);
+    gUvGfxMgrExports->uvGfxSetPrimColorF(descriptor->red, descriptor->green, descriptor->blue, 1.0f);
+}
+#line 228 "src/modules/ted.c"
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/ted/func_ted_00406280.s")
 /*
