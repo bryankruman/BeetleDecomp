@@ -108,7 +108,240 @@ extern s32 D_uvterra_rom_0040F740;
 extern s32 D_uvterra_rom_0040FBEC;
 extern UvIntersect_Exports* D_uvterra_rom_0040F768;
 
+#line 1 "uvterra-draft-extra-declarations"
+s32 func_uvterra_rom_00406324(Vtx *, Vtx *, Vtx *, f32 *, f32 *, f32 *, f32, f32);
+UnkSobjDraw *func_uvterra_rom_0040AC14(s32);
+extern s32 D_uvterra_rom_0040D714;
+#line 1 "uvterra-full-module-draft-context"
+#include "uvimtx_rom.h"
+#include "uvquery_rom.h"
+#include "uvfmtx_rom.h"
+#include "uvmodel_rom.h"
+/* Private consumed offsets only. RE_UNKNOWN: canonical asset declarations and
+ * complete storage owners. Existing shared declarations and bodies stay literal. */
+typedef struct DraftTerrainObjectView DraftTerrainObjectView;
+typedef struct DraftTerrainGroupView DraftTerrainGroupView;
+typedef struct DraftTerrainCellView DraftTerrainCellView;
+typedef struct DraftTerrainTileView DraftTerrainTileView;
+typedef struct DraftTerrainExports DraftTerrainExports;
+struct DraftTerrainObjectView {
+    u16 modelId; s16 unk2; Mtx *unk4;
+    f32 unk8, unkC, unk10, unk14; u16 unk18, unk1A; s32 unk1C;
+    /* Current ASM: float+20/+24, pointer word+28, byte+2C. */
+    f32 unk20, unk24; Mtx4F *unk28; u8 unk2C; u8 opaque2D[3];
+    f32 unk30, unk34; s32 unk38; f32 unk3C; s32 unk40;
+    DraftTerrainTileView *unk44; s32 unk48;
+}; /* stride0x4C */
+struct DraftTerrainGroupView {
+    void *unk0; s32 texture; void *unk8; s16 unkC, unkE;
+    u16 unk10, unk12; s32 unk14; Unk80225FBC_0x28_UnkC *unk18;
+    u16 unk1C, unk1E; f32 unk20, unk24, unk28, unk2C, unk30, unk34; s32 unk38;
+}; /* stride0x3C; STAT state starts at this same base */
+struct DraftTerrainCellView {
+    Vtx *vtxTable; u16 vtxCount, pad6; DraftTerrainGroupView *unk8;
+    u16 unkC, padE; DraftTerrainObjectView *unk10; u16 unk14, pad16;
+    f32 unk18, unk1C, unk20, unk24, unk28, unk2C, unk30;
+}; /* stride0x34 */
+struct DraftTerrainTileView {
+    Mtx4F unk0; DraftTerrainCellView *unk40; u16 unk44; u8 opaque46[2];
+    /* Original scalar-query float+48; accepted second matrix already at+4C. */
+    f32 unk48; Mtx4F unk4C;
+}; /* stride0x8C */
+typedef struct {
+    uvUnkTeraStruct unk0; u8 unk18, unk19; u8 opaque1A[2];
+    f32 unk1C, unk20, unk24; DraftTerrainTileView *unk28;
+    u16 unk2C, unk2E; s32 unk30;
+} DraftTerrainView; /* stride0x34 */
+typedef struct {
+    DraftTerrainTileView *unk0; u8 unk4, opaque5; u16 unk6;
+    f32 unk8; u8 unkC; u8 opaqueD[3];
+} DraftTerrainDrawRecord; /* producer byte+0C, stride0x10 */
+typedef struct { f32 unk0, unk4, unk8, unkC, unk10, unk14; } DraftTerrainProjectionBounds;
+typedef struct {
+    Vec3F unk0[6]; u8 unk48; u8 opaque49[3]; DraftTerrainProjectionBounds unk4C;
+} DraftTerrainProjectionCache; /* pending UV8 consumed shape0x64 */
+typedef struct { s32 unk0, unk4; } DraftTerrainSettings;
+extern UvImtx_Rom_Exports *D_uvterra_rom_0040F74C;
+extern s32 D_uvterra_rom_0040FBE0, D_uvterra_rom_0040FBE4;
+extern s32 D_uvterra_rom_0040FC04, D_uvterra_rom_0040FC08[130];
+extern UnkSobjDraw *D_8002D1A0;
+extern Unk80225FBC_0x28 *D_8002D198;
+extern s32 D_8002D19C;
+/* RE_UNKNOWN: canonical FBA4 pointer type. Existing integer-typed storage stays;
+ * initializer/readers explicitly use its original32-bit pointer-word ABI. */
+#define UVTERRA_DRAFT_ROUND_HALF_AWAY(x) ((x) >= 0.0f ? (s32)((x) + 0.5f) : (s32)((x) - 0.5f))
+#define UV_COMPUTE_LINE_MACRO(cond, arg2, arg0)                                                        \
+    if ((cond)) {                                                                                      \
+        *(arg2) = 0;                                                                                   \
+    }                                                                                                  \
+    *(arg0) = -1;
+
+/* Canonical declarations; all raw legacy declarations remain unchanged. */
+void __entrypoint_func_uvterra_rom_400000(DraftTerrainExports* exports);
+s32 func_uvterra_rom_00407A80(s32 arg0, s32 arg1, s32 arg2);
+void uvTerraAdjustProjectionEndpointsToBounds(ParsedUVTR* terrain, Vec3F* origin, Vec3F* first, Vec3F* second, Vec3F* third, Vec3F* fourth);
+void uvTerraAllocateRecordBuffer(void);
+s16 uvTerraAppendStaticObjectScalarQueryResults(f32 arg0, f32 arg1, f32 arg2, f32 arg3, UnkSobjDraw* sobj);
+s32 uvTerraAppendStaticObjectSegmentQueryResults(f32 startX, f32 startY, f32 startZ, f32 endX, f32 endY, f32 endZ,
+                              UnkSobjDraw *object);
+void uvTerraCleanup(void);
+void uvTerraClipLineToCellPerimeter(s16 *arg0, s16 *arg1, u16 *arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6,
+                               f32 arg7, f32 arg8, f32 arg9, u8 arg10, f32 arg11, f32 arg12);
+s32 uvTerraCollectHeightsMeetingNormalZThreshold(s32 terrainId, f32 worldX, f32 worldY, f32 *outHeights);
+s32 uvTerraCollectSegmentContacts(s32 terraId, s32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6,
+                              f32 arg7, s32 **arg8, f32 **arg9, Vec3F **arg10, s32 **arg11);
+s32 uvTerraCollectSphereContacts(s32 terrainId, s32 queryFlags, f32 centerX, f32 centerY, f32 centerZ, f32 queryRadius, s32 **outHandles,
+                              f32 **outFractions, Vec3F **outContactVectors, s32 **outFlags);
+s32 uvTerraCollectStaticObjectHandlesByModel(s32 arg0, s32 modelId, s32 **arg2);
+s32 uvTerraCollectStaticObjectScalarContacts(s32 terraId, f32 arg1, f32 arg2, f32 arg3, f32 arg4, s32 **arg5,
+                              f32 **arg6, Vec3F **arg7);
+s32 uvTerraCollectStaticObjectSegmentContacts(s32 terraId, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6,
+                              s32 **arg7, f32 **arg8, Vec3F **arg9);
+u32 uvTerraCollectTriangleHandlesAtPoint(s32 terrainId, f32 worldX, f32 worldY, s32 **outTriangleHandles);
+s32 uvTerraCollectTriangleHandlesByTexture(s32 terrainId, s32 texture, s32 **outTriangleHandles);
+s32 uvTerraCollectTriangleScalarContacts(s32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, s32** arg5, f32** arg6, Vec3F** arg7);
+s32 uvTerraCollectTriangleSegmentContacts(s32 terraId, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6,
+                              s32 **arg7, f32 **arg8);
+u16 uvTerraComputeRectangleGridMask(f32 width, f32 height, uvUnkTileStruct *tile, f32 xScale, f32 yScale);
+u16 uvTerraComputeScalarExtentGridMask(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6);
+s32 uvTerraComputeTriangleSliceWeights(Vtx *arg0, Vtx *arg1, Vtx *arg2, f32 *arg3, f32 *arg4, f32 *arg5,
+                              f32 arg6, f32 arg7);
+void uvTerraCopyAdjustedStaticObjectMatrix(s32 contour, s32 arg1, Mtx4F *arg2);
+void uvTerraDrawBillboardStaticObjectLods(s32 arg0, DraftTerrainObjectView *arg1);
+void uvTerraDrawBillboardStaticObjectWithView(s32 arg0, DraftTerrainObjectView *sobj);
+void uvTerraDrawProjectedTerrain(s32 arg0);
+void uvTerraDrawQueuedTerrainTiles(s32 arg0);
+void uvTerraDrawStaticObjectLods(UNUSED s32 arg0, DraftTerrainObjectView *sobj);
+void uvTerraDrawStaticObjectWithView(s32 arg0, DraftTerrainObjectView *sobj);
+void uvTerraDrawStaticObjects(s32 arg0, Mtx4F *arg1, u16 arg2, u16 arg3, DraftTerrainObjectView *arg4, u16 arg5);
+void uvTerraDrawTerrainObjectGroups(s32 arg0, u16 arg1, Mtx4F *arg2, DraftTerrainGroupView *arg3, u16 arg4);
+void uvTerraDrawTileGeometry(s32 channel, uvUnkTileStruct *tile, u16 firstMask, u16 secondMask);
+s32 uvTerraFindStaticObjectContainingPoint(s32 terraId, f32 arg1, f32 arg2, f32 arg3);
+s32 uvTerraGetChannelTerrain(s32 channel);
+void uvTerraGetColor(s32 terraId, u32 surfaceId, f32 arg2, f32 arg3, u8 *r, u8 *g, u8 *b,
+                               u8 *a);
+void uvTerraGetHeightAndNormalAtPackedTriangle(s32 terrainId, u32 packedTriangle, f32 worldX, f32 worldY, f32* outHeight, Vec3F* outNormal);
+u8 uvTerraGetIndexedDrawByte(s32 index);
+void *uvTerraGetLoadedTerrain(s32 terrainId);
+s32 uvTerraGetPackedTileTranslationXY(s32 terrainId, u32 handle, f32 *outX, f32 *outY);
+void uvTerraGetPackedTriangleMeanVertexChannels(s32 terrainId, u32 handle,
+    u8 *channel0, u8 *channel1, u8 *channel2);
+void uvTerraGetPackedTriangleNormal(s32 terrainId, u32 handle, Vec3F* vector);
+s32 uvTerraGetPackedTriangleTexture(s32 terrainId, u32 handle);
+s32 uvTerraGetSharedWordBF0(void);
+s32 uvTerraGetSharedWordBF4(void);
+UnkSobjDraw *uvTerraGetStaticObject(s32 handle);
+u16 uvTerraGetStaticObjectModelId(s32 handle);
+void uvTerraGetStaticObjectProperties(s32 handle, ...);
+s32 uvTerraGetStaticObjectValue(s32 handle);
+s32 uvTerraGetTileTranslationXYAtWorldPosition(s32 terrainId, f32 worldX, f32 worldY,
+                              f32 *outX, f32 *outY);
+void uvTerraGetTriangleLocalVertices(s32 terrainId, u32 triangleHandle, Vec3F *vertex0, Vec3F *vertex1, Vec3F *vertex2);
+s32 uvTerraGetTriangleTextureId(s32 terrainId, u32 triangleHandle);
+void uvTerraInitializeSortGroups(void);
+u16 uvTerraIntersectSegmentAndBoundsMasks(f32 firstX, f32 firstY, f32 secondX, f32 secondY, f32 xBoundA, f32 yBoundA, f32 xBoundB,
+                              f32 yBoundB, f32 spanStartX, f32 spanEndX, f32 spanEndY, f32 spanStartY, void *center);
+s32 uvTerraLocateTileAndSubcellMask(ParsedUVTR* arg0, f32 arg1, f32 arg2, f32 arg3, f32* arg4, f32* arg5, f32* arg6, u16* arg7, u16* arg8, u8 arg9);
+u16 uvTerraLookupAdjustedWrappedIndexPair(s16 firstIndex, s16 secondIndex, u8 mode);
+void uvTerraOrderProjectionPointPointers(Vec3F **points, u8 *count);
+void uvTerraProjectEndpointToZPlane(Vec3F *origin, f32 planeZ, Vec3F *endpoint);
+void uvTerraQueueDrawCallbackForTerrainCell(s32 arg0, s32 arg1, f32 arg2, f32 arg3, void (*arg4 )(s32, DraftTerrainObjectView* ),
+                               s32 arg5, f32 arg6);
+s32 uvTerraReadPackedFiveBitLevel(const u8 *packedLevels, s32 index);
+void uvTerraRefreshProjectionAndDrawQueuedTiles(s32 channel);
+void uvTerraRefreshProjectionPointCache(s32 channel);
+void uvTerraRegisterChannelCallbacks(s32 channel);
+void uvTerraSampleTextureColorAtSurface(s32 arg0, u32 arg1, f32 arg2, f32 arg3, u8 *r, u8 *g, u8 *b, u8 *a);
+s32 uvTerraSelectLowestZCandidate(Vec3F *first, Vec3F *second, Vec3F *third, Vec3F *fourth);
+void uvTerraSetChannelTerrain(s32 channel, s32 terrainId);
+void uvTerraSetReciprocalByIndex(s32 index, f32 value);
+void uvTerraSetSharedWordBF0(s32 value);
+void uvTerraSetSharedWordBF4(s32 value);
+void uvTerraSetStaticObjectFlags(s32 handle, ...);
+void uvTerraSetStaticObjectModel(s32 handle, s32 modelId);
+void uvTerraSetStaticObjectValue(s32 handle, s32 value);
+void uvTerraStoreComposedStaticObjectMatrix(s32 contour, s32 arg1, Mtx4F *arg2);
+s32 uvTerraTestPackedAngularLevelThreshold(const u8 *packedLevels, f32 sampleX, f32 sampleY, f32 levelInput);
+s16 uvTerraTestPointAgainstStaticObjectLods(f32 arg0, f32 arg1, f32 arg2, UnkSobjDraw *sobj);
+void *uvTerraUpdateProjectionRecordBounds(s32 recordIndex);
+
+/* Original pointer-slot export view; RE_UNKNOWN: canonical full declaration. */
+struct DraftTerrainExports {
+    /* 0x00 */ void (*uvTerraCleanup)(void);
+    /* 0x04 */ void (*uvTerraRegisterChannelCallbacks)(s32 channel);
+    /* 0x08 */ void (*uvTerraSetChannelTerrain)(s32 channel, s32 terrainId);
+    /* 0x0C */ s32 (*uvTerraGetChannelTerrain)(s32 channel);
+    /* 0x10 */ void (*uvTerraDrawProjectedTerrain)(s32 arg0);
+    /* 0x14 */ void (*uvTerraGetHeightAndNormalAtPackedTriangle)(s32 terrainId, u32 packedTriangle, f32 worldX, f32 worldY, f32* outHeight, Vec3F* outNormal);
+    /* 0x18 */ void (*uvTerraGetPackedTriangleNormal)(s32 terrainId, u32 handle, Vec3F* vector);
+    /* 0x1C */ s32 (*uvTerraGetPackedTriangleTexture)(s32 terrainId, u32 handle);
+    /* 0x20 */ s32 (*uvTerraCollectTriangleScalarContacts)(s32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, s32** arg5, f32** arg6, Vec3F** arg7);
+    /* 0x24 */ void * (*uvTerraGetLoadedTerrain)(s32 terrainId);
+    /* 0x28 */ u32 (*uvTerraCollectTriangleHandlesAtPoint)(s32 terrainId, f32 worldX, f32 worldY, s32 **outTriangleHandles);
+    /* 0x2C */ s32 (*uvTerraCollectTriangleSegmentContacts)(s32 terraId, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6,
+                              s32 **arg7, f32 **arg8);
+    /* 0x30 */ void (*uvTerraGetPackedTriangleMeanVertexChannels)(s32 terrainId, u32 handle,
+    u8 *channel0, u8 *channel1, u8 *channel2);
+    /* 0x34 */ void (*uvTerraGetTriangleLocalVertices)(s32 terrainId, u32 triangleHandle, Vec3F *vertex0, Vec3F *vertex1, Vec3F *vertex2);
+    /* 0x38 */ s32 (*uvTerraGetTileTranslationXYAtWorldPosition)(s32 terrainId, f32 worldX, f32 worldY,
+                              f32 *outX, f32 *outY);
+    /* 0x3C */ s32 (*uvTerraGetPackedTileTranslationXY)(s32 terrainId, u32 handle, f32 *outX, f32 *outY);
+    /* 0x40 */ s32 (*uvTerraCollectSegmentContacts)(s32 terraId, s32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6,
+                              f32 arg7, s32 **arg8, f32 **arg9, Vec3F **arg10, s32 **arg11);
+    /* 0x44 */ s32 (*uvTerraCollectSphereContacts)(s32 terrainId, s32 queryFlags, f32 centerX, f32 centerY, f32 centerZ, f32 queryRadius, s32 **outHandles,
+                              f32 **outFractions, Vec3F **outContactVectors, s32 **outFlags);
+    /* 0x48 */ s32 (*uvTerraGetTriangleTextureId)(s32 terrainId, u32 triangleHandle);
+    /* 0x4C */ s32 (*uvTerraCollectTriangleHandlesByTexture)(s32 terrainId, s32 texture, s32 **outTriangleHandles);
+    /* 0x50 */ void (*uvTerraGetColor)(s32 terraId, u32 surfaceId, f32 arg2, f32 arg3, u8 *r, u8 *g, u8 *b,
+                               u8 *a);
+    /* 0x54 */ void (*uvTerraSampleTextureColorAtSurface)(s32 arg0, u32 arg1, f32 arg2, f32 arg3, u8 *r, u8 *g, u8 *b, u8 *a);
+    /* 0x58 */ s32 (*uvTerraCollectHeightsMeetingNormalZThreshold)(s32 terrainId, f32 worldX, f32 worldY, f32 *outHeights);
+    /* 0x5C */ void (*uvTerraSetSharedWordBF0)(s32 value);
+    /* 0x60 */ s32 (*uvTerraGetSharedWordBF0)(void);
+    /* 0x64 */ void (*uvTerraSetSharedWordBF4)(s32 value);
+    /* 0x68 */ s32 (*uvTerraGetSharedWordBF4)(void);
+    /* 0x6C */ s32 (*uvTerraCollectStaticObjectHandlesByModel)(s32 arg0, s32 modelId, s32 **arg2);
+    /* 0x70 */ void (*uvTerraSetReciprocalByIndex)(s32 index, f32 value);
+    /* 0x74 */ s32 (*func_uvterra_rom_00407A80)(s32 arg0, s32 arg1, s32 arg2);
+    /* 0x78 */ void (*uvTerraStoreComposedStaticObjectMatrix)(s32 contour, s32 arg1, Mtx4F *arg2);
+    /* 0x7C */ void (*uvTerraSetStaticObjectFlags)(s32 handle, ...);
+    /* 0x80 */ void (*uvTerraCopyAdjustedStaticObjectMatrix)(s32 contour, s32 arg1, Mtx4F *arg2);
+    /* 0x84 */ u16 (*uvTerraGetStaticObjectModelId)(s32 handle);
+    /* 0x88 */ void (*uvTerraSetStaticObjectModel)(s32 handle, s32 modelId);
+    /* 0x8C */ s32 (*uvTerraFindStaticObjectContainingPoint)(s32 terraId, f32 arg1, f32 arg2, f32 arg3);
+    /* 0x90 */ s32 (*uvTerraCollectStaticObjectScalarContacts)(s32 terraId, f32 arg1, f32 arg2, f32 arg3, f32 arg4, s32 **arg5,
+                              f32 **arg6, Vec3F **arg7);
+    /* 0x94 */ s32 (*uvTerraCollectStaticObjectSegmentContacts)(s32 terraId, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6,
+                              s32 **arg7, f32 **arg8, Vec3F **arg9);
+    /* 0x98 */ void (*uvTerraGetStaticObjectProperties)(s32 handle, ...);
+    /* 0x9C */ void (*uvTerraSetStaticObjectValue)(s32 handle, s32 value);
+    /* 0xA0 */ s32 (*uvTerraGetStaticObjectValue)(s32 handle);
+    /* 0xA4 */ UnkSobjDraw * (*uvTerraGetStaticObject)(s32 handle);
+    /* 0xA8 */ u8 (*uvTerraGetIndexedDrawByte)(s32 index);
+    /* 0xAC */ void (*uvTerraQueueDrawCallbackForTerrainCell)(s32 arg0, s32 arg1, f32 arg2, f32 arg3, void (*arg4 )(s32, DraftTerrainObjectView* ),
+                               s32 arg5, f32 arg6);
+    /* 0xB0 */ s32 *D_uvterra_rom_0040FBD8;
+    /* 0xB4 */ s32 *D_uvterra_rom_0040FBDC;
+    /* 0xB8 */ s32 *D_uvterra_rom_0040FBE0;
+};
+
+#line 55 "src/modules/uvterra_rom.c"
+#line 55 "src/modules/uvterra_rom.c"
+#line 1 "uvterra-full-module-existing-storage-declarations"
+/* Existing globals are declared again before the original initializer.
+ * Types are literal to the later declarations; src/profiler.c supplies the
+ * exact create prototype. No storage, initialization or body is added here. */
+extern s32 D_uvterra_rom_0040FBF8, D_uvterra_rom_0040FBFC, D_uvterra_rom_0040FC00;
+extern f32 *D_uvterra_rom_0040F780;
+extern s32 *D_uvterra_rom_0040F784;
+extern Vec3F *D_uvterra_rom_0040F788;
+extern s32 *D_uvterra_rom_0040F790, *D_uvterra_rom_0040F794, *D_uvterra_rom_0040F798;
+s32 uvProfilerCreate(char* label);
+#line 1 "uvterra-full-module-draft-0000"
+/* Initialize export slots, imports, original tables and shared query arrays. RE_UNKNOWN: property limits, allocation-failure behavior and global storage owners; preserve initialization order. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/__entrypoint_func_uvterra_rom_400000.s")
+#line 54 "uvterra-full-module-draft-0000"
+#line 56 "src/modules/uvterra_rom.c"
 
 #line 58 "src/modules/uvterra_rom.c"
 /* Unload the eleven terrain-module dependencies in original order. */
@@ -367,7 +600,11 @@ void func_uvterra_rom_0040078C(s32 arg0) {
     }
 }
 #else
+#line 1 "uvterra-full-module-draft-078C"
+/* Project the cached terrain polygon into grid cells and append draw records. RE_ORIGINAL_QUIRK: sentinel slopes, ordered boundaries and unchecked append paths. RE_UNKNOWN: cache capacity and finite-input contract. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040078C.s")
+#line 182 "uvterra-full-module-draft-078C"
+#line 288 "src/modules/uvterra_rom.c"
 #endif
 
 // uvTerraGetPlane
@@ -507,7 +744,223 @@ s32 uvTerraGetPackedTriangleTexture(s32 terrainId, u32 handle) {
 }
 #line 401 "src/modules/uvterra_rom.c"
 
+#line 1 "uvterra-full-module-draft-1284"
+/* Collect triangle scalar-extent contacts into shared query arrays. RE_ORIGINAL_QUIRK: conditional record advancement, live capacity calls and original coordinate increments. RE_UNKNOWN: radius domain and output ownership. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00401284.s")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 403 "src/modules/uvterra_rom.c"
 
 #line 404 "src/modules/uvterra_rom.c"
 /* Return an already loaded terrain pointer, or null for an absent terrain. */
@@ -639,7 +1092,11 @@ u32 uvTerraCollectTriangleHandlesAtPoint(s32 terrainId, f32 worldX, f32 worldY, 
 #line 415 "src/modules/uvterra_rom.c"
 #line 415 "src/modules/uvterra_rom.c"
 
+#line 1 "uvterra-full-module-draft-2244"
+/* Clip a segment to terrain cells and collect triangle fractions. RE_ORIGINAL_QUIRK: partial early outputs, byte counter and uninitialized/stale traversal-slot paths. RE_UNKNOWN: valid caller paths and buffer limits; do not invent an initializer. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00402244.s")
+#line 322 "uvterra-full-module-draft-2244"
+#line 417 "src/modules/uvterra_rom.c"
 
 #line 418 "src/modules/uvterra_rom.c"
 
@@ -793,7 +1250,11 @@ s32 uvTerraGetPackedTileTranslationXY(s32 terrainId, u32 handle, f32 *outX, f32 
 }
 #line 425 "src/modules/uvterra_rom.c"
 
+#line 1 "uvterra-full-module-draft-385C"
+/* Collect static-object and terrain-triangle segment contacts by query flags. RE_ORIGINAL_QUIRK: zero-length perturbation, partial outputs, live counters and uninitialized/stale traversal slots. RE_UNKNOWN: caller contract and complete buffer ownership. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040385C.s")
+#line 426 "uvterra-full-module-draft-385C"
+#line 427 "src/modules/uvterra_rom.c"
 
 /* Consumed local views only. Keep the shared asset/header declarations and
  * every older body literal; these spans do not prove full allocation ownership. */
@@ -1347,12 +1808,192 @@ s32 uvTerraCollectTriangleHandlesByTexture(s32 terrainId, s32 texture, s32 **out
  * the fallback value. Trace original UVCT vertex assets and coordinate
  * producers at 0x406648/0x406C60 before changing these contracts or the ASM. */
 #line 434 "src/modules/uvterra_rom.c"
+/* Compute vertex weights by intersecting a triangle with a Y slice, then locating X.
+ * RE_ORIGINAL_QUIRK: initialize outputs to exactly 0.333f; rejected inputs may leave
+ * defaults or partial updates. Preserve strict comparisons, pointer swaps,
+ * store order, float grouping, and the separate zero-span branches.
+ * RE_UNKNOWN: caller output aliasing and degenerate/nonfinite input contracts. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00406324.s")
+#line 514 "src/modules/uvterra_rom.c"
+#line 435 "src/modules/uvterra_rom.c"
 #line 435 "src/modules/uvterra_rom.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00406648.s")
+/* Interpolate four vertex channels at a packed terrain surface and query position.
+ * RE_ORIGINAL_QUIRK: sentinel/missing terrain leaves outputs untouched; helper
+ * return values are ignored. Do not add bounds checks or fallback outputs.
+ * The raw helper call uses the unchanged legacy declaration, so signed-halfword
+ * locals retain the original call interface; the callee stores the same 16 bits.
+ * RE_UNKNOWN: color space, nonfinite/out-of-range byte conversion, output
+ * aliasing and packed-handle validity. */
+void uvTerraGetColor(s32 terraId, u32 surfaceId, f32 arg2, f32 arg3, u8 *r, u8 *g, u8 *b,
+                               u8 *a) {
+    Unk80225FBC_0x28 *temp_t2;
+    uvUnkTileStruct *sp60;
+    ParsedUVTR *uvtr;
+    Vtx *vtx;
+    Unk80225FBC_0x28_UnkC *sp54;
+    f32 sp50;
+    f32 sp4C;
+    f32 sp48;
+    f32 sp44;
+    f32 sp40;
+    f32 sp3C;
+    s16 sp3A;
+    s16 sp38;
+    ParsedUVCT *uvct;
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00406C60.s")
+    if (surfaceId == -1U) {
+        return;
+    }
+
+    uvtr = uvGetLoadedFile('UVTR', terraId);
+    if (uvtr == NULL) {
+        return;
+    }
+
+    sp60 = &uvtr->unk28[(surfaceId >> 0x16) & 0x3FF];
+    if (sp60 == NULL) {
+        return;
+    }
+
+    uvct = sp60->unk40;
+    if (uvct == NULL) {
+        return;
+    }
+
+    temp_t2 = &uvct->unk8[(surfaceId >> 0xC) & 0x3FF];
+    sp54 = &temp_t2->unk18[surfaceId & 0xFFF];
+    vtx = uvct->vtxTable;
+    func_uvterra_rom_0040B8C0(uvtr, arg2, arg3, 0.0f, &sp50, &sp4C, &sp3C, &sp3A, &sp38, 0U);
+    sp50 *= sp60->unk40->unk2C;
+    sp4C *= sp60->unk40->unk2C;
+    func_uvterra_rom_00406324(&vtx[sp54->unk0], &vtx[sp54->unk2], &vtx[sp54->unk4], &sp48, &sp44, &sp40,
+                              sp50, sp4C);
+
+    *r = ((vtx[sp54->unk0].v.cn[0] * sp48) + (vtx[sp54->unk2].v.cn[0] * sp44))
+         + (vtx[sp54->unk4].v.cn[0] * sp40);
+    *g = ((vtx[sp54->unk0].v.cn[1] * sp48) + (vtx[sp54->unk2].v.cn[1] * sp44))
+         + (vtx[sp54->unk4].v.cn[1] * sp40);
+    *b = ((vtx[sp54->unk0].v.cn[2] * sp48) + (vtx[sp54->unk2].v.cn[2] * sp44))
+         + (vtx[sp54->unk4].v.cn[2] * sp40);
+    *a = ((vtx[sp54->unk0].v.cn[3] * sp48) + (vtx[sp54->unk2].v.cn[3] * sp44))
+         + (vtx[sp54->unk4].v.cn[3] * sp40);
+}
+#line 437 "src/modules/uvterra_rom.c"
+
+/* Sample packed-surface texture channels at interpolated texture coordinates.
+ * RE_ORIGINAL_QUIRK: first initialize all outputs to 255; retain coordinate
+ * reflection/wrap comparisons, format branches, signed loads and narrowing.
+ * The current header names group word +0x04 texture; original ASM loads that word
+ * then masks 0xFFF. Only the upstream field spelling unk0.state is adapted.
+ * RE_UNKNOWN: nonzero dimensions, loaded texture lifetime, authored format names,
+ * output aliasing and full DATA ownership/native equivalence.
+ * RE_ORIGINAL_QUIRK: format 4 uses signed 16-bit loads and shifts, with byte truncation;
+ * alpha can be 128 rather than 255. Format 2 returns raw four-bit channel values.
+ * Do not replace these target-compiler operations with portable color expansion. */
+void uvTerraSampleTextureColorAtSurface(s32 arg0, u32 arg1, f32 arg2, f32 arg3, u8 *r, u8 *g, u8 *b, u8 *a) {
+    ParsedUVTR *sp84;
+    uvUnkTileStruct *sp80;
+    f32 var_fv0;
+    ParsedUVTX *sp78;
+    Vtx *sp74;
+    Unk80225FBC_0x28_UnkC *sp70;
+    f32 var_fv1;
+    f32 sp68;
+    f32 sp64;
+    s32 temp_t8;
+    s32 temp_v0_6;
+    f32 sp58;
+    f32 sp54;
+    f32 sp50;
+    s32 pad_sp4C;
+    f32 sp48;
+    s16 sp46;
+    s16 sp44;
+
+    *r = 0xFF;
+    *g = 0xFF;
+    *b = 0xFF;
+    *a = 0xFF;
+
+    if (arg1 == -1) {
+        return;
+    }
+
+    sp84 = uvGetLoadedFile('UVTR', arg0);
+    if (sp84 == NULL) {
+        return;
+    }
+
+    sp80 = &sp84->unk28[(arg1 >> 22) & 0x3FF];
+    if (sp80 == NULL || sp80->unk40 == NULL) {
+        return;
+    }
+
+    sp70 = &sp80->unk40->unk8[(arg1 >> 12) & 0x3FF].unk18[arg1 & 0xFFF];
+    temp_t8 = sp80->unk40->unk8[(arg1 >> 12) & 0x3FF].texture & 0xFFF;
+    if (temp_t8 == 0xFFF) {
+        return;
+    }
+
+    sp78 = uvGetLoadedFile('UVTX', temp_t8);
+    sp74 = sp80->unk40->vtxTable;
+    func_uvterra_rom_0040B8C0(sp84, arg2, arg3, 0.0f, &sp68, &sp64, &sp48, &sp46, &sp44, 0U);
+    sp68 *= sp80->unk40->unk2C;
+    sp64 *= sp80->unk40->unk2C;
+    func_uvterra_rom_00406324(&sp74[sp70->unk0], &sp74[sp70->unk2], &sp74[sp70->unk4], &sp58, &sp54,
+                              &sp50, sp68, sp64);
+    var_fv0 = ((sp74[sp70->unk0].v.tc[0] * sp58) + (sp74[sp70->unk2].v.tc[0] * sp54)
+               + (sp74[sp70->unk4].v.tc[0] * sp50));
+    var_fv1 = ((sp74[sp70->unk0].v.tc[1] * sp58) + (sp74[sp70->unk2].v.tc[1] * sp54)
+               + (sp74[sp70->unk4].v.tc[1] * sp50));
+    var_fv0 *= 0.03125f;
+    var_fv1 *= 0.03125f;
+    if (sp78->width < var_fv0) {
+        var_fv0 -= 2.0f * sp78->width * (f32) (s32) (var_fv0 / sp78->width);
+    }
+    if (var_fv0 < -sp78->width) {
+        var_fv0 += 2.0f * sp78->width * (f32) (s32) (-var_fv0 / sp78->width);
+    }
+    if (sp78->height < var_fv1) {
+        var_fv1 -= 2.0f * sp78->height * (f32) (s32) (var_fv1 / sp78->height);
+    }
+    if (var_fv1 < -sp78->height) {
+        var_fv1 += 2.0f * sp78->height * (f32) (s32) (-var_fv1 / sp78->height);
+    }
+    if (sp78->unk25 == 2) {
+        if (!(var_fv0 > 0.0f)) {
+            var_fv0 = -var_fv0;
+        }
+    } else if (var_fv0 < 0.0f) {
+        var_fv0 += sp78->width;
+    }
+    if (sp78->unk26 == 2) {
+        if (!(var_fv1 > 0.0f)) {
+            var_fv1 = -var_fv1;
+        }
+    } else if (var_fv1 < 0.0f) {
+        var_fv1 += sp78->height;
+    }
+
+    switch (sp78->unk21) {
+        case 4:
+            temp_v0_6 = (&((s16 *) sp78->data.pointer)[((s32) var_fv0)])[(s32) var_fv1 * sp78->width];
+            *r = (temp_v0_6 >> 0xB) << 1 << 2;
+            *g = (temp_v0_6 >> 6) << 1 << 2;
+            *b = (temp_v0_6 >> 1) << 1 << 2;
+            *a = temp_v0_6 << 1 << 6;
+            break;
+        case 2:
+            temp_v0_6 = (&((u8 *) sp78->data.pointer)[(s32) var_fv0])[(s32) var_fv1 * sp78->width];
+            *r = ((s32) temp_v0_6 >> 4) & 0xF;
+            *g = ((s32) temp_v0_6 >> 4) & 0xF;
+            *b = ((s32) temp_v0_6 >> 4) & 0xF;
+            *a = temp_v0_6 & 0xF;
+            break;
+    }
+}
+#line 439 "src/modules/uvterra_rom.c"
 
 #line 440 "src/modules/uvterra_rom.c"
 
@@ -1364,7 +2005,14 @@ s32 uvTerraCollectTriangleHandlesByTexture(s32 terrainId, s32 texture, s32 **out
  * RE_UNKNOWN: threshold/frame/units, caller capacity, and whether queried handles
  * always satisfy the provider's output-writing paths. Trace original callers,
  * list construction and asset lifetimes before changing validation or outputs. */
+#line 449 "src/modules/uvterra_rom.c"
+/* Collect up to ten heights with sampled normal.z >= the fixed 0.34f threshold.
+ * Preserve the signed-low-half candidate count, list-pointer reread after each
+ * sample, and NaN-rejecting comparison. RE_UNKNOWN: caller output capacity and
+ * lifetime of the provider's handle list; no new bounds or fallback is added. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_004071A4.s")
+#line 473 "src/modules/uvterra_rom.c"
+#line 450 "src/modules/uvterra_rom.c"
 #line 441 "src/modules/uvterra_rom.c"
 
 #line 442 "src/modules/uvterra_rom.c"
@@ -1407,10 +2055,58 @@ s32 uvTerraGetSharedWordBF4(void) {
  * shared-status meanings. Trace original callers, UVCT/UVTR producers and
  * writers of 0x8002D198/0x8002D19C before changing these contracts or the ASM. */
 #line 458 "src/modules/uvterra_rom.c"
+#line 1 "uvterra-full-module-draft-72EC"
+/* Draw terrain groups passing mask, channel and angular tests. RE_UNKNOWN: authored visibility semantics; consume captured STAT and channel interfaces only. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_004072EC.s")
+#line 49 "uvterra-full-module-draft-72EC"
+#line 459 "src/modules/uvterra_rom.c"
 #line 459 "src/modules/uvterra_rom.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_004074EC.s")
+#line 1 "uvterra-full-module-draft-74EC"
+/* Collect packed static-object handles for one model, stopping at128. RE_ORIGINAL_QUIRK: untouched output on absent terrain and redundant cell reload. RE_UNKNOWN: output lifetime. */
+s32 uvTerraCollectStaticObjectHandlesByModel(s32 arg0, s32 modelId, s32 **arg2) {
+    DraftTerrainView *uvtr;
+    s32 i;
+    s32 j;
+    DraftTerrainObjectView *sobj;
+    DraftTerrainCellView *uvct;
+    s32 idx;
+    DraftTerrainTileView *temp_a3;
+
+    /* RE_ORIGINAL_QUIRK: Disabled diagnostic string remains in the original rodata owner. */
+    idx = 0;
+    uvtr = uvGetLoadedFile('UVTR', arg0);
+    if (uvtr == NULL) {
+        return 0;
+    }
+
+    *arg2 = D_uvterra_rom_0040FC08;
+    for (i = 0; i < (uvtr->unk18 * uvtr->unk19); i++) {
+        temp_a3 = &uvtr->unk28[i];
+        if (temp_a3 == NULL) {
+            continue;
+        }
+        uvct = temp_a3->unk40;
+        if (uvct == NULL) {
+            continue;
+        }
+
+        for (j = 0; j < uvct->unk14; j++) {
+            sobj = &uvct->unk10[j];
+            if (modelId != sobj->modelId) {
+                continue;
+            }
+            D_uvterra_rom_0040FC08[idx++] = ((temp_a3->unk44 & 0xFFF) << 0xC) | (j & 0xFFF);
+            if (idx >= 0x80) {
+                return 0x80;
+            }
+            // redundant assignment
+            uvct = temp_a3->unk40;
+        }
+    }
+    return idx;
+}
+#line 461 "src/modules/uvterra_rom.c"
 
 #line 462 "src/modules/uvterra_rom.c"
 /* Store 1.0f / value in the indexed terrain array without input checks.
@@ -1439,7 +2135,11 @@ void uvTerraSetReciprocalByIndex(s32 index, f32 value)
  * local homes/registers and shifted relocation records. Recover original
  * source dataflow before replacing assembly; no runtime fault is established. */
 #line 468 "src/modules/uvterra_rom.c"
+#line 1 "uvterra-full-module-draft-76A8"
+/* Select static-object LODs and draw or queue callbacks. RE_ORIGINAL_QUIRK: preserve the Z snapshot and model-dependent paths. RE_UNKNOWN: LOD policy and scratch-field ownership; offsets20/24/28/2C are measured views. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_004076A8.s")
+#line 94 "uvterra-full-module-draft-76A8"
+#line 469 "src/modules/uvterra_rom.c"
 #line 469 "src/modules/uvterra_rom.c"
 
 /* Copy the three arguments into the retained local words, then return zero.
@@ -1468,7 +2168,18 @@ s32 func_uvterra_rom_00407A80(s32 arg0, s32 arg1, s32 arg2) {
  * helper callers before giving that word channel or ownership semantics.
  * The byte28 pointer is an observed access within an existing opaque region;
  * do not infer a complete historical object declaration from this wrapper. */
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00407A94.s")
+#line 1 "uvterra-full-module-draft-7A94"
+/* Load the stored view, draw static-object LODs, then pop it. RE_UNKNOWN: callback lifetime. This is the original target, not an added wrapper. */
+void uvTerraDrawStaticObjectWithView(s32 arg0, DraftTerrainObjectView *sobj) {
+    s32 pad[2];
+    Mtx4F mtx;
+
+    D_uvterra_rom_0040F744->uvMat4ApplySharedInverseTranslation(&mtx, sobj->unk28);
+    D_uvterra_rom_0040F744->uvGfxMtxViewLoad(&mtx, G_MTX_PUSH | G_MTX_LOAD);
+    uvTerraDrawStaticObjectLods(arg0, sobj);
+    D_uvterra_rom_0040F744->uvGfxMtxFViewPop();
+}
+#line 492 "src/modules/uvterra_rom.c"
 #line 481 "src/modules/uvterra_rom.c"
 
 /* Native 848-byte model-node renderer: submit the record's fixed matrices,
@@ -1488,7 +2199,89 @@ s32 func_uvterra_rom_00407A80(s32 arg0, s32 arg1, s32 arg2) {
  * local/register lifetimes and branch forms differ. Recover original source
  * dataflow before replacing this assembly; no runtime correction is implied. */
 #line 482 "src/modules/uvterra_rom.c"
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00407B0C.s")
+#line 1 "uvterra-full-module-draft-7B0C"
+/* Submit reference integer matrices and draw enabled object LOD states. RE_ORIGINAL_QUIRK: path-specific strict/inclusive pop loops and depth accounting. RE_UNKNOWN: successor/depth contract. */
+void uvTerraDrawStaticObjectLods(UNUSED s32 arg0, DraftTerrainObjectView *sobj) {
+    ParsedUVMD *uvmd;
+    ParsedUVMD_1 *temp_fp;
+    s32 temp_s2;
+    s32 var_s0;
+    s32 j;
+    s32 var_s3;
+    s32 i;
+    s32 temp_s1;
+    s32 v1;
+    Mtx4F spDC;
+    s32 padD4;
+    uvModelLOD *modelLod;
+    s32 padD0;
+    Mtx4F *spCC;
+    Mtx4F sp8C;
+
+    uvmd = uvGetLoadedFile('UVMD', sobj->modelId);
+    v1 = sobj->unk2C;
+    spCC = sobj->unk28;
+    if (sobj == ((DraftTerrainObjectView *)D_8002D1A0)) {
+        D_8002D19C = 1;
+    } else {
+        D_8002D19C = 2;
+    }
+    var_s3 = 0;
+    temp_fp = &uvmd->unk0[v1];
+    for (i = 0; i < temp_fp->unk8; i++) {
+        modelLod = &temp_fp->unk0[i];
+        if ((sobj->unk1C & (1 << i)) || (((modelLod->unk7 & 1) != 0))) {
+            var_s0 = 0;
+        } else {
+            var_s0 = 1;
+        }
+
+        if (var_s0 == 0) {
+            if (modelLod->unk7 & 2) {
+                temp_s2 = temp_fp->unk0[i].unk6 - temp_fp->unk0[i + 1].unk6;
+                for (j = 0; j < temp_s2; j++) {
+                    D_uvterra_rom_0040F744->uvGfxMtxFViewPop();
+                    var_s3--;
+                }
+                continue;
+            }
+        }
+        var_s3 += 1;
+        D_uvterra_rom_0040F74C->uvIMtxSubmitMatrix(&sobj->unk4[i], 1U);
+        if (var_s0 != 0) {
+            if (modelLod->unk20 != 0) {
+                D_uvterra_rom_0040F744->uvMat4CopyL2F(&spDC, *sobj->unk4);
+                spDC.m[3][0] += spCC->m[3][0];
+                spDC.m[3][1] += spCC->m[3][1];
+                spDC.m[3][2] += spCC->m[3][2];
+                D_uvterra_rom_0040F744->uvMat4ApplySharedInverseTranslation(&sp8C, &spDC);
+                D_uvterra_rom_0040F750->uvGfxEmitLookAtAndOptionalHilites(&sp8C, 1);
+            }
+            temp_s1 = modelLod->unk4;
+            j = 0;
+            if (temp_s1 > 0) {
+                do {
+                    D_uvterra_rom_0040F750->uvGfxStateDraw(&modelLod->stateTable[j]);
+                    j++;
+                } while (j != temp_s1);
+            }
+            if ((i + 1) == temp_fp->unk8) {
+                break;
+            }
+
+            temp_s2 = temp_fp->unk0[i].unk6 - temp_fp->unk0[i + 1].unk6;
+            for (j = 0; j <= temp_s2; j++) {
+                var_s3--;
+                D_uvterra_rom_0040F744->uvGfxMtxFViewPop();
+            }
+        }
+    }
+
+    for (i = 0; i < var_s3; i++) {
+        D_uvterra_rom_0040F744->uvGfxMtxFViewPop();
+    }
+}
+#line 483 "src/modules/uvterra_rom.c"
 #line 483 "src/modules/uvterra_rom.c"
 
 #line 484 "src/modules/uvterra_rom.c"
@@ -1504,7 +2297,18 @@ s32 func_uvterra_rom_00407A80(s32 arg0, s32 arg1, s32 arg2) {
  * helper callers before giving that word channel or ownership semantics.
  * The byte28 pointer is an observed access within an existing opaque region;
  * do not infer a complete historical object declaration from this wrapper. */
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00407E5C.s")
+#line 1 "uvterra-full-module-draft-7E5C"
+/* Load the stored view, draw billboard LODs, then pop it. RE_UNKNOWN: callback lifetime and authored mode; no extra thunk. */
+void uvTerraDrawBillboardStaticObjectWithView(s32 arg0, DraftTerrainObjectView *sobj) {
+    s32 pad[1];
+    Mtx4F sp1C;
+
+    D_uvterra_rom_0040F744->uvMat4ApplySharedInverseTranslation(&sp1C, sobj->unk28);
+    D_uvterra_rom_0040F744->uvGfxMtxViewLoad(&sp1C, 3U);
+    uvTerraDrawBillboardStaticObjectLods(arg0, sobj);
+    D_uvterra_rom_0040F744->uvGfxMtxFViewPop();
+}
+#line 497 "src/modules/uvterra_rom.c"
 #line 485 "src/modules/uvterra_rom.c"
 
 /* Native 1068-byte hierarchy draw: derive temporary fixed-matrix terms from
@@ -1523,7 +2327,113 @@ s32 func_uvterra_rom_00407A80(s32 arg0, s32 arg1, s32 arg2) {
  * normalization, positive-count loop lowering and cleanup counter reuse differ.
  * Recover original source dataflow before replacing this retained assembly. */
 #line 486 "src/modules/uvterra_rom.c"
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00407ED4.s")
+#line 1 "uvterra-full-module-draft-7ED4"
+/* Temporarily rotate the fixed matrix toward the view and draw billboard LODs. RE_ORIGINAL_QUIRK: save/restore four words, sign-sensitive fixed conversion and original depth loops. RE_UNKNOWN: scale/nonfinite domain. */
+void uvTerraDrawBillboardStaticObjectLods(s32 arg0, DraftTerrainObjectView *arg1) {
+    uvModelLOD *temp_s4;
+    ParsedUVMD_1 *spF8;
+    s32 temp_s1;
+    uvMtx *spF0;
+    Mtx spB0;
+    ParsedUVMD *temp_a0;
+    f32 temp_fv0;
+    s32 temp_s2;
+    s32 var_fp;
+    s32 var_s0;
+    s32 j;
+    s32 i;
+    u8 a1;
+    s32 temp;
+    f32 sp88;
+    s32 var_s3;
+    f32 sp80;
+    f32 sp7C;
+
+    temp_a0 = uvGetLoadedFile('UVMD', arg1->modelId);
+    a1 = arg1->unk2C;
+    sp88 = temp_a0->unk10;
+    sp80 = arg1->unk20;
+    sp7C = arg1->unk24;
+    if (arg1 == ((DraftTerrainObjectView *)D_8002D1A0)) {
+        D_8002D19C = 1;
+    } else {
+        D_8002D19C = 2;
+    }
+    spF8 = &temp_a0->unk0[a1];
+    spF0 = (uvMtx*)arg1->unk4;
+    spB0.m[0][0] = spF0->m[0][0];
+    spB0.m[0][2] = spF0->m[0][2];
+    spB0.m[2][0] = spF0->m[2][0];
+    spB0.m[2][2] = spF0->m[2][2];
+    temp_fv0 = D_uvterra_rom_0040F75C->uvSqrtf(SQ(sp80) + SQ(sp7C));
+    if (temp_fv0 != 0.0f) {
+        sp80 /= temp_fv0;
+        sp7C /= temp_fv0;
+    }
+    temp_fv0 = arg1->unk30;
+
+    temp = ((((-sp7C * temp_fv0) / sp88) * 65536.0f) + 0.5f);
+    spF0->u.i[0][0] = temp >> 0x10;
+    spF0->u.i[1][1] = temp >> 0x10;
+    spF0->u.f[0][0] = temp & 0xFFFF;
+    spF0->u.f[1][1] = temp & 0xFFFF;
+    temp = ((((sp80 * temp_fv0) / sp88) * 65536.0f) + 0.5f);
+    spF0->u.i[0][1] = temp >> 0x10;
+    spF0->u.f[0][1] = (temp & 0xFFFF);
+    temp = ((((-sp80 * temp_fv0) / sp88) * 65536.0f) + 0.5f);
+    spF0->u.i[1][0] = temp >> 0x10;
+    spF0->u.f[1][0] = (temp & 0xFFFF);
+
+    var_s3 = 0;
+    for (i = 0; i < spF8->unk8; i++) {
+        temp_s4 = &spF8->unk0[i];
+        if ((arg1->unk1C & (1 << i)) || (((temp_s4->unk7 & 1) != 0))) {
+            var_s0 = 0;
+        } else {
+            var_s0 = 1;
+        }
+
+        if (var_s0 == 0) {
+            if (temp_s4->unk7 & 2) {
+                temp_s2 = spF8->unk0[i].unk6 - spF8->unk0[i + 1].unk6;
+                for (j = 0; j < temp_s2; j++) {
+                    D_uvterra_rom_0040F744->uvGfxMtxFViewPop();
+                    var_s3 -= 1;
+                }
+                continue;
+            }
+        }
+        var_s3++;
+        D_uvterra_rom_0040F74C->uvIMtxPush(arg1->unk4[i], 1U);
+        if (var_s0 != 0) {
+            temp_s1 = temp_s4->unk4;
+            j = 0;
+            if (temp_s1 > 0) {
+                do {
+                    D_uvterra_rom_0040F750->uvGfxStateDraw(temp_s4->stateTable + j);
+                    j++;
+                } while (j != temp_s1);
+            }
+        }
+        if ((i + 1) == spF8->unk8) {
+            break;
+        }
+
+        temp_s2 = spF8->unk0[i].unk6 - spF8->unk0[i + 1].unk6;
+        for (j = 0; j <= temp_s2; j++) {
+            D_uvterra_rom_0040F744->uvGfxMtxFViewPop();
+            var_s3--;
+        }
+    }
+    for (i = 0; i < var_s3; i++) {
+        D_uvterra_rom_0040F744->uvGfxMtxFViewPop();
+    }
+    spF0->m[0][0] = spB0.m[0][0];
+    spF0->m[0][2] = spB0.m[0][2];
+    spF0->m[2][0] = spB0.m[2][0];
+    spF0->m[2][2] = spB0.m[2][2];
+}
+#line 487 "src/modules/uvterra_rom.c"
 #line 487 "src/modules/uvterra_rom.c"
 
 #line 488 "src/modules/uvterra_rom.c"
@@ -1535,7 +2445,10 @@ s32 func_uvterra_rom_00407A80(s32 arg0, s32 arg1, s32 arg2) {
  * RE_UNKNOWN: matrix capacity, tile-tail matrix/frame provenance, scale/divisor
  * domains and threshold/marker meaning. Trace original UVCT/UVTR loaders,
  * callers and marker consumers before naming frames or altering original guards. */
+/* Compose the tile-tail transform with the input and store one fixed object matrix. RE_ORIGINAL_QUIRK: scale only when BOTH ratios differ from one; existing DATA marker only changes zero to one. RE_UNKNOWN: matrix capacity, tile-tail frame, marker meaning and divisor domains. Reuse the accepted consumed tile view; it does not prove full ownership. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00408300.s")
+#line 544 "src/modules/uvterra_rom.c"
+#line 497 "src/modules/uvterra_rom.c"
 #line 489 "src/modules/uvterra_rom.c"
 
 #line 490 "src/modules/uvterra_rom.c"
@@ -1564,7 +2477,51 @@ void uvTerraSetStaticObjectFlags(s32 handle, ...) {
 }
 #line 491 "src/modules/uvterra_rom.c"
 
+/* Copy and adjust one static-object matrix, then add the tile translation. RE_ORIGINAL_QUIRK: compare the X ratio to one twice, never substitute the Z ratio. A missing model returns after the first by-value Mtx copy. RE_UNKNOWN: frame/scale units, matrix-index and nonzero-divisor contracts. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00408614.s")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 493 "src/modules/uvterra_rom.c"
 
 #line 494 "src/modules/uvterra_rom.c"
 /* Resolve the packed handle and read the object's unsigned model halfword
@@ -1590,7 +2547,14 @@ u16 uvTerraGetStaticObjectModelId(s32 handle) {
  * RE_UNKNOWN: purpose of the second lookup and caller guarantees for model
  * IDs/lifetimes. Trace original callers and the asset lookup provider before
  * changing this preserved sequence or inferring missing-model player impact. */
+#line 512 "src/modules/uvterra_rom.c"
+/* Set the static object's model only when the requested asset is loaded.
+ * RE_ORIGINAL_QUIRK: keep the old-model lookup and the repeated new-model
+ * null test; the native routine ignores the old lookup's return value.
+ * RE_UNKNOWN: intended asset bookkeeping and object/asset lifetime. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040880C.s")
+#line 538 "src/modules/uvterra_rom.c"
+#line 513 "src/modules/uvterra_rom.c"
 #line 504 "src/modules/uvterra_rom.c"
 
 #line 505 "src/modules/uvterra_rom.c"
@@ -1603,12 +2567,303 @@ u16 uvTerraGetStaticObjectModelId(s32 handle) {
  * Position frame/units, locator input domain, flag/detail-result convention,
  * list/resource lifetime and query-handle consumers also require original
  * caller/loader/provider tracing before collision or ownership claims. */
+#line 1 "uvterra-full-module-draft-888C"
+/* Return the first packed static-object handle containing the point. RE_ORIGINAL_QUIRK: live reloads and model-dependent traversal. RE_UNKNOWN: ordering policy and stale-slot contracts of the LOD helper. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040888C.s")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 515 "src/modules/uvterra_rom.c"
 #line 506 "src/modules/uvterra_rom.c"
 
+#line 1 "uvterra-full-module-draft-8AD8"
+/* Collect static-object scalar-extent contacts through model-LOD queries or a direct sphere fallback. RE_ORIGINAL_QUIRK: swapped record translations, conditional record cursor and coordinate increment. RE_UNKNOWN: capacities and scalar semantics. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00408AD8.s")
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 508 "src/modules/uvterra_rom.c"
+
+#line 1 "uvterra-full-module-draft-9394"
+/* Collect and sort segment contacts against static-object LODs. RE_ORIGINAL_QUIRK: zero-length perturbation, partial outputs and degenerate clipped branch continuing after a write. RE_UNKNOWN: alias/capacity contract. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00409394.s")
+#line 318 "uvterra-full-module-draft-9394"
+#line 510 "src/modules/uvterra_rom.c"
 
 /* Native 944-byte point/scalar node query: cache the first model band's node
  * count, convert fixed matrices by value, apply first-node reciprocal scales,
@@ -1626,7 +2881,10 @@ u16 uvTerraGetStaticObjectModelId(s32 handle) {
  * counter allocation differ. Recover the original source dataflow before
  * replacing this retained assembly. */
 #line 511 "src/modules/uvterra_rom.c"
+/* Append MODEL scalar/extent query results for the first model band. RE_ORIGINAL_QUIRK: result starts at -1; preserve signed-halfword wrapping, inclusive depth pops and live provider reloads. Capacity exhaustion calls capacity again and returns its signed low halfword without cleanup. RE_UNKNOWN: scalar units, mask/depth validity, node/matrix extents and stack lifetime. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040A08C.s")
+#line 576 "src/modules/uvterra_rom.c"
+#line 512 "src/modules/uvterra_rom.c"
 #line 512 "src/modules/uvterra_rom.c"
 
 /* RE_ORIGINAL_QUIRK: native 0x40A680 stores the tested-node result to
@@ -1643,7 +2901,10 @@ u16 uvTerraGetStaticObjectModelId(s32 handle) {
  * assets, mask-setter imports and query callers before assigning a default.
  * These producer/setter observations do not prove or exclude reachability. */
 #line 513 "src/modules/uvterra_rom.c"
+/* Test a point against selected first-band static-object LODs. RE_ORIGINAL_QUIRK: result is not initialized; a disabled matrix-preserving LOD reads the stale/indeterminate halfword. A nonnegative result returns without stack cleanup. RE_UNKNOWN: authored data contract avoiding the first indeterminate read; no claim of total defined ISO C semantics. Do not initialize or repair that machine path. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040A43C.s")
+#line 579 "src/modules/uvterra_rom.c"
+#line 514 "src/modules/uvterra_rom.c"
 #line 514 "src/modules/uvterra_rom.c"
 
 /* Native 888-byte two-point node query: cache the first model band's node
@@ -1838,7 +3099,11 @@ u8 uvTerraGetIndexedDrawByte(s32 index) {
  * traced: the original loaded-terrain result is used without a null guard.
  * Resolve through original 0x40078C queue construction, shared-threshold writers,
  * TERR export0xA8 consumers and channel callback registration/teardown. */
+#line 1 "uvterra-full-module-draft-AC9C"
+/* Draw queued terrain tiles and update comparison flags and threshold. RE_ORIGINAL_QUIRK: ordered threshold comparisons. RE_UNKNOWN: units and queue lifetime. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040AC9C.s")
+#line 26 "uvterra-full-module-draft-AC9C"
+#line 552 "src/modules/uvterra_rom.c"
 #line 543 "src/modules/uvterra_rom.c"
 
 #line 544 "src/modules/uvterra_rom.c"
@@ -1961,7 +3226,11 @@ u16 uvTerraLookupAdjustedWrappedIndexPair(s16 firstIndex, s16 secondIndex, u8 mo
 }
 #line 549 "src/modules/uvterra_rom.c"
 
+#line 1 "uvterra-full-module-draft-B26C"
+/* Map clipped line endpoints to perimeter indices and mask. RE_ORIGINAL_QUIRK: sentinel slope, sign-conditional rounding and partial writes. RE_UNKNOWN: arithmetic domain; no extra guard or shift mask. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040B26C.s")
+#line 66 "uvterra-full-module-draft-B26C"
+#line 551 "src/modules/uvterra_rom.c"
 
 /* Native 768-byte grid locator: write the supplied X/Y/Z outputs before
  * reading terrain origins/cell sizes, then publish the wrapped cell index and
@@ -1979,10 +3248,127 @@ u16 uvTerraLookupAdjustedWrappedIndexPair(s16 firstIndex, s16 secondIndex, u8 mo
  * and instruction scheduling differ. Retain assembly until original dataflow is
  * recovered; no valid-domain or caller-alias guarantee is inferred. */
 #line 552 "src/modules/uvterra_rom.c"
+/* Copy a query position, locate its terrain tile, and form a 4x4 subcell mask.
+ * RE_ORIGINAL_QUIRK: signed integer truncation/division feeds u16 indices;
+ * mode bits decrement before bounds checks. Keep wrap, output-store order,
+ * pointed output reloads and the upstream shift without extra masking.
+ * Compatibility: retain the accepted raw void-pointer/signed-halfword-pointer
+ * declaration and all raw callers. The clean definition keeps the original u16
+ * stores; a reviewed same-address linker alias must bind raw name to clean name.
+ * RE_UNKNOWN: authored tile/mode contracts and arbitrary pointer aliasing.
+ * This is not the prior u32-index/masked-shift candidate. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040B8C0.s")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 553 "src/modules/uvterra_rom.c"
 #line 553 "src/modules/uvterra_rom.c"
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040BBC0.s")
+#line 1 "uvterra-full-module-draft-BBC0"
+/* Build the four-by-four mask overlapped by a scalar extent. RE_ORIGINAL_QUIRK: inclusive float limits and original loop arithmetic. RE_UNKNOWN: negative/nonfinite extent contract. */
+u16 uvTerraComputeScalarExtentGridMask(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6) {
+    f32 temp_fa0;
+    f32 temp_fs1;
+    f32 temp_ft4;
+    f32 temp_ft5;
+    u16 var_a0;
+    s32 i;
+    u16 var_v1;
+    f32 var_fv1;
+    f32 var_fv0;
+    
+    var_v1 = 0;
+    var_a0 = 0;
+    temp_ft4 = (arg4 - arg3) * 0.25f;
+    temp_fs1 = 2.0f * temp_ft4;
+    temp_ft5 = (arg6 - arg5) * 0.25f;
+    var_fv0 = -temp_ft4;
+    var_fv1 = -temp_ft5;
+    for (i = 0; (var_fv0 <= temp_fs1) && (i < 4); i++) {
+        if (((arg0 - arg2) <= var_fv0) && ((var_fv0 - temp_ft4) <= (arg0 + arg2))) {
+            var_a0 |= 0x8888 >> i;
+        }
+        var_fv0 += temp_ft4;
+    }
+
+    temp_fa0 = 2.0f * temp_ft5;
+    for (i = 0; (var_fv1 <= temp_fa0) && (i < 4); i++) {
+        if (((arg1 - arg2) <= var_fv1) && ((var_fv1 - temp_ft5) <= (arg1 + arg2))) {
+            var_v1 |= 0xF000 >> (i * 4);
+        }
+        var_fv1 += temp_ft5;
+    }
+
+    var_fv0 = -temp_ft4;
+    return var_v1 & var_a0;
+}
+#line 555 "src/modules/uvterra_rom.c"
 
 #line 556 "src/modules/uvterra_rom.c"
 /* Compose two four-sample bound masks with the BF74 centered-span mask.
@@ -1997,7 +3383,7 @@ u16 uvTerraLookupAdjustedWrappedIndexPair(s16 firstIndex, s16 secondIndex, u8 mo
  * intercept in the caller stack. BF74 returns an unsigned16 mask.
  * RE_UNKNOWN: full authored center record; native reads only floats+30/+34. */
 extern f32 D_uvterra_rom_0040D6E8;
-u16 func_uvterra_rom_0040BF74(f32, f32, void *, f32, f32);
+u16 func_uvterra_rom_0040BF74(f32, f32, uvUnkTileStruct *, f32, f32);
 #line 1 "uvterra-grid-mask-body-130504.c"
 // SPDX-License-Identifier: AGPL-3.0-or-later
 /* Intersect two four-by-four bounds masks with a segment-derived tile mask.
@@ -2090,7 +3476,15 @@ u16 uvTerraIntersectSegmentAndBoundsMasks(f32 firstX, f32 firstY, f32 secondX, f
 #line 564 "src/modules/uvterra_rom.c"
 #line 557 "src/modules/uvterra_rom.c"
 
+#line 558 "src/modules/uvterra_rom.c"
+/* Intersect the two wrapped-index masks at the rectangle's computed grid cell.
+ * Retain the native reciprocal expressions and the grid-X-only rejection.
+ * RE_UNKNOWN: nonzero dimensions/scales and caller coordinate domain. The
+ * accepted line helper exposes its third 16-bit result through signed storage;
+ * the corresponding unsigned view preserves the mask's native bit pattern. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040BF74.s")
+#line 585 "src/modules/uvterra_rom.c"
+#line 559 "src/modules/uvterra_rom.c"
 
 #line 560 "src/modules/uvterra_rom.c"
 /* Allocate and zero the shared array of 100-byte terrain records using the
@@ -2101,7 +3495,33 @@ void uvTerraAllocateRecordBuffer(void) {
 }
 #line 561 "src/modules/uvterra_rom.c"
 
+s32 uvTerraSelectLowestZCandidate(Vec3F *first, Vec3F *second, Vec3F *third, Vec3F *fourth);
+void uvTerraProjectEndpointToZPlane(Vec3F *origin, f32 planeZ, Vec3F *endpoint);
+#line 1 "uvterra-upstream-projection-context-210560.h"
+/* Private consumed view of the existing 100-byte channel projection records.
+ * The allocator's stride, point slots, count byte and bounds prefix are observed.
+ * RE_UNKNOWN: effective ownership, valid channel/count range and coordinate frame.
+ * No canonical header or original DATA/RODATA owner is replaced here. */
+typedef struct {
+    f32 minimumX, minimumY, minimumZ;
+    f32 maximumX, maximumY, maximumZ;
+} TerrainProjectionBoundsView;
+typedef struct {
+    Vec3F points[6];
+    u8 pointCount;
+    u8 unknown49[3];
+    TerrainProjectionBoundsView bounds;
+} TerrainProjectionCacheView;
+void func_uvterra_rom_0040C50C(ParsedUVTR *, Vec3F *, Vec3F *, Vec3F *, Vec3F *, Vec3F *);
+void func_uvterra_rom_0040CA64(Vec3F **, u8 *);
+#line 4 "uvterra-upstream-projection-bodies-210562.c"
+/* Refresh the six cached bounds from the record's live point-count snapshot.
+ * Canonical name: uvTerraUpdateProjectionRecordBounds.
+ * RE_ORIGINAL_QUIRK: retain ordered comparisons and the six initial sentinel stores;
+ * an empty record keeps those sentinels. RE_UNKNOWN: point capacity and finite-value guarantees. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040C0F8.s")
+#line 53 "uvterra-upstream-projection-bodies-210562.c"
+#line 563 "src/modules/uvterra_rom.c"
 
 #line 564 "src/modules/uvterra_rom.c"
 /* Build channel record X/Y slots at 12-byte strides and count byte0x48
@@ -2114,7 +3534,14 @@ void uvTerraAllocateRecordBuffer(void) {
  * valid channel/resource lifetimes and caller guarantees for C50C's unchecked
  * projection arithmetic. Resolve through CHAN producers, C50C/C998/CA64,
  * record-buffer allocation and original record consumers. */
+#line 54 "uvterra-upstream-projection-bodies-210562.c"
+/* Refresh a channel's projection point list and copy only X/Y into its cache.
+ * Canonical name: uvTerraRefreshProjectionPointCache.
+ * Preserve the signed absolute-value expression, three/five-point paths, shared
+ * endpoint mutations and untouched cached Z fields. No new validity checks. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040C218.s")
+#line 130 "uvterra-upstream-projection-bodies-210562.c"
+#line 575 "src/modules/uvterra_rom.c"
 #line 565 "src/modules/uvterra_rom.c"
 
 #line 566 "src/modules/uvterra_rom.c"
@@ -2147,7 +3574,103 @@ s32 uvTerraSelectLowestZCandidate(Vec3F *first, Vec3F *second, Vec3F *third, Vec
  * origin/endpoint domain for the callee's unchecked normalization/division.
  * Resolve through original C218/CHAN point producers and terrain assets before
  * assigning physical clipping semantics or adding degenerate-point handling. */
+#line 131 "uvterra-upstream-projection-bodies-210562.c"
+/* Classify four endpoints against the terrain Z-bound snapshots, then adjust
+ * selected endpoints through the existing accepted Z-plane helper.
+ * Canonical name: uvTerraAdjustProjectionEndpointsToBounds.
+ * RE_ORIGINAL_QUIRK: retain every ordered/negated comparison, all-four counts,
+ * RE_UNKNOWN: aliasing and nonfinite inputs; retain endpoint reloads after earlier calls. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040C50C.s")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 579 "src/modules/uvterra_rom.c"
 #line 569 "src/modules/uvterra_rom.c"
 
 #line 570 "src/modules/uvterra_rom.c"
@@ -2187,7 +3710,17 @@ void uvTerraProjectEndpointToZPlane(Vec3F *origin, f32 planeZ, Vec3F *endpoint) 
  * preserve their storage and resolve object boundaries before migrating DATA.
  * FVEC's original import/export bindings establish normalization at slot 08
  * and the two-coordinate dot product at slot 5C. */
+#line 227 "uvterra-upstream-projection-bodies-210562.c"
+/* Order the pointer list from its minimum-X seed using normalized XY turns.
+ * Canonical name: uvTerraOrderProjectionPointPointers.
+ * Preserve the prior best index when no candidate improves, callback order and
+ * byte output count. Count zero still seeds points[0] and returns one pointer.
+ * RE_UNKNOWN: general geometry/domain guarantees and five-entry scratch capacity.
+ * Local aggregate initializers mirror the original 20-byte pointer and 12-byte
+ * vector template copies; their complete DATA owner boundaries are not claimed. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040CA64.s")
+#line 312 "uvterra-upstream-projection-bodies-210562.c"
+#line 588 "src/modules/uvterra_rom.c"
 #line 573 "src/modules/uvterra_rom.c"
 
 #line 574 "src/modules/uvterra_rom.c"
@@ -2234,7 +3767,15 @@ s32 uvTerraTestPackedAngularLevelThreshold(const u8 *packedLevels, f32 sampleX, 
  * RE_UNKNOWN: table extent, valid nonnegative index range and guarantees for
  * second-byte reads. Trace original allocators/writers and uvTerraTestPackedAngularLevelThreshold and other callers
  * before changing signed arithmetic, wrapping indices or adding validation. */
+#line 583 "src/modules/uvterra_rom.c"
+/* Read one five-bit field from the packed terrain levels, high bits first.
+ * Preserve signed quotient/remainder and the two-byte crossing case. The
+ * single-byte shift is the native variable shift reduced to its defined
+ * mathematical count, not an out-of-range C shift. RE_UNKNOWN: valid index,
+ * multiplication-overflow domain and backing span; callers add no guard here. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040CF98.s")
+#line 608 "src/modules/uvterra_rom.c"
+#line 584 "src/modules/uvterra_rom.c"
 #line 577 "src/modules/uvterra_rom.c"
 
 #line 578 "src/modules/uvterra_rom.c"
@@ -2273,5 +3814,9 @@ void uvTerraInitializeSortGroups(void) {
  * terrain asset builders and AC9C/AE4C queue/threshold writers. Callback words
  * use the existing SORT API type; complete historical callback contracts
  * require their producers and eventual invocation paths. */
+#line 1 "uvterra-full-module-draft-D128"
+/* Choose one of four draw queues from cell visibility and append the callback. RE_ORIGINAL_QUIRK: exclusive boundaries and negative-one sentinel. RE_UNKNOWN: callback ownership/capacity; preserve SORT pointer bits. */
 #pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040D128.s")
+#line 54 "uvterra-full-module-draft-D128"
+#line 593 "src/modules/uvterra_rom.c"
 #line 581 "src/modules/uvterra_rom.c"
