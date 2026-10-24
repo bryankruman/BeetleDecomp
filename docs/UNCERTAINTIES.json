@@ -503,7 +503,7 @@
     "src/modules/uvsort_rom.c": "7fffa63a09be62a4445170c8783773e34f41e8694157e73f51984c0e1bef0498",
     "src/modules/uvsprt_rom.c": "171568155d69e72de6df5e28eb09a6f9927d1b9da8755d4066e3fa7d7412a6a0",
     "src/modules/uvstring_rom.c": "061389fdc7d938d5df8c69487a4ad379b445e644783651781f2d06483a8d465a",
-    "src/modules/uvterra_rom.c": "ae36e4775fbacfd391b1db34146803eeaaf2e669cc9e813ec7de69e6ff878974",
+    "src/modules/uvterra_rom.c": "8628c20c64d8204b633b5fde9fee43595190b486125d69a73b38fe3672bd5c9c",
     "src/modules/uvterrald_rom.c": "33d201b66def68cd4b1331855c680188565ceb733e8ab27d985e84484868b2c0",
     "src/modules/uvtexanim_rom.c": "29b3c0fa52b848ed8ea75cc9bc445cde6aa8699d1f517bac5a3983e8eebb9f78",
     "src/modules/uvtexture_rom.c": "2a8601658513024913699c6eba65d0e34bc1c0584a27faf586cb92f373495f12",
@@ -526,9 +526,9 @@
     "docs/VALIDATION_20261006.md": "a46820c10aba34e3c1901bd9bdc4260f684530f44fcf7f61d9c7bb33e0c91031"
   },
   "counts": {
-    "address_function": 915,
+    "address_function": 916,
     "address_global": 1712,
-    "assembly": 707,
+    "assembly": 701,
     "audit_debt": 30,
     "conditional_draft": 4,
     "decompiler_local": 661,
@@ -21834,7 +21834,8 @@
       "symbol": "func_uvterra_rom_0040A08C",
       "lines": [
         1306,
-        1499
+        1499,
+        2796
       ],
       "owners": [
         {
@@ -21851,6 +21852,42 @@
           "declaration_line": 1321,
           "lines": [
             1499
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraCollectStaticObjectScalarContacts",
+          "declaration_line": 2641,
+          "lines": [
+            2796
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q-9a832439bd81",
+      "kind": "address_function",
+      "path": "src/modules/uvterra_rom.c",
+      "symbol": "func_uvterra_rom_0040A43C",
+      "lines": [
+        265,
+        2624
+      ],
+      "owners": [
+        {
+          "kind": "function",
+          "name": "func_uvterra_rom_0040A43C",
+          "declaration_line": 265,
+          "lines": [
+            265
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraFindStaticObjectContainingPoint",
+          "declaration_line": 2572,
+          "lines": [
+            2624
           ]
         }
       ]
@@ -21940,7 +21977,8 @@
         645,
         1025,
         1867,
-        1941
+        1941,
+        2590
       ],
       "owners": [
         {
@@ -21957,6 +21995,14 @@
           "declaration_line": 999,
           "lines": [
             1025
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraFindStaticObjectContainingPoint",
+          "declaration_line": 2572,
+          "lines": [
+            2590
           ]
         },
         {
@@ -79080,6 +79126,8 @@
         2400,
         2424,
         2429,
+        2499,
+        2511,
         2962,
         2966,
         3135,
@@ -79104,6 +79152,15 @@
           "lines": [
             1515,
             1517
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraCopyAdjustedStaticObjectMatrix",
+          "declaration_line": 2481,
+          "lines": [
+            2499,
+            2511
           ]
         },
         {
@@ -79186,6 +79243,7 @@
         1530,
         1533,
         1564,
+        2836,
         3689
       ],
       "owners": [
@@ -79197,6 +79255,14 @@
             1530,
             1533,
             1564
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraCollectStaticObjectScalarContacts",
+          "declaration_line": 2641,
+          "lines": [
+            2836
           ]
         },
         {
@@ -79380,6 +79446,7 @@
         596,
         1553,
         2368,
+        2826,
         3747
       ],
       "owners": [
@@ -79397,6 +79464,14 @@
           "declaration_line": 1321,
           "lines": [
             1553
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraCollectStaticObjectScalarContacts",
+          "declaration_line": 2641,
+          "lines": [
+            2826
           ]
         },
         {
@@ -79518,9 +79593,12 @@
         109,
         650,
         700,
+        903,
         1078,
         1486,
-        1639
+        1639,
+        2613,
+        2781
       ],
       "owners": [
         {
@@ -79534,10 +79612,34 @@
         },
         {
           "kind": "function",
+          "name": "uvTerraCollectStaticObjectScalarContacts",
+          "declaration_line": 2641,
+          "lines": [
+            2781
+          ]
+        },
+        {
+          "kind": "function",
           "name": "uvTerraCollectTriangleHandlesAtPoint",
           "declaration_line": 999,
           "lines": [
             1078
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraCollectTriangleScalarContacts",
+          "declaration_line": 749,
+          "lines": [
+            903
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraFindStaticObjectContainingPoint",
+          "declaration_line": 2572,
+          "lines": [
+            2613
           ]
         },
         {
@@ -79573,6 +79675,9 @@
       "symbol": "D_uvterra_rom_0040F76C",
       "lines": [
         105,
+        899,
+        918,
+        923,
         1084,
         1415,
         1500,
@@ -79582,7 +79687,11 @@
         1568,
         1580,
         1635,
-        1659
+        1659,
+        2792,
+        2797,
+        2814,
+        2838
       ],
       "owners": [
         {
@@ -79603,10 +79712,31 @@
         },
         {
           "kind": "function",
+          "name": "uvTerraCollectStaticObjectScalarContacts",
+          "declaration_line": 2641,
+          "lines": [
+            2792,
+            2797,
+            2814,
+            2838
+          ]
+        },
+        {
+          "kind": "function",
           "name": "uvTerraCollectTriangleHandlesAtPoint",
           "declaration_line": 999,
           "lines": [
             1084
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraCollectTriangleScalarContacts",
+          "declaration_line": 749,
+          "lines": [
+            899,
+            918,
+            923
           ]
         },
         {
@@ -79785,12 +79915,18 @@
       "symbol": "D_uvterra_rom_0040F780",
       "lines": [
         335,
+        908,
+        937,
+        959,
         1299,
         1559,
         1561,
         1644,
         1674,
-        1694
+        1694,
+        2831,
+        2833,
+        2856
       ],
       "owners": [
         {
@@ -79803,6 +79939,26 @@
             1644,
             1674,
             1694
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraCollectStaticObjectScalarContacts",
+          "declaration_line": 2641,
+          "lines": [
+            2831,
+            2833,
+            2856
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraCollectTriangleScalarContacts",
+          "declaration_line": 749,
+          "lines": [
+            908,
+            937,
+            959
           ]
         },
         {
@@ -79830,13 +79986,17 @@
       "symbol": "D_uvterra_rom_0040F784",
       "lines": [
         336,
+        940,
+        958,
         992,
         1083,
         1089,
         1547,
         1675,
         1693,
-        1755
+        1755,
+        2820,
+        2855
       ],
       "owners": [
         {
@@ -79847,6 +80007,15 @@
             1547,
             1675,
             1693
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraCollectStaticObjectScalarContacts",
+          "declaration_line": 2641,
+          "lines": [
+            2820,
+            2855
           ]
         },
         {
@@ -79864,6 +80033,15 @@
           "declaration_line": 1740,
           "lines": [
             1755
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraCollectTriangleScalarContacts",
+          "declaration_line": 749,
+          "lines": [
+            940,
+            958
           ]
         },
         {
@@ -79891,11 +80069,16 @@
       "symbol": "D_uvterra_rom_0040F788",
       "lines": [
         337,
+        908,
+        933,
+        960,
         1300,
         1548,
         1643,
         1670,
-        1695
+        1695,
+        2821,
+        2857
       ],
       "owners": [
         {
@@ -79907,6 +80090,25 @@
             1643,
             1670,
             1695
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraCollectStaticObjectScalarContacts",
+          "declaration_line": 2641,
+          "lines": [
+            2821,
+            2857
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraCollectTriangleScalarContacts",
+          "declaration_line": 749,
+          "lines": [
+            908,
+            933,
+            960
           ]
         },
         {
@@ -79936,6 +80138,9 @@
         19,
         1495,
         1547,
+        2622,
+        2790,
+        2820,
         2974
       ],
       "owners": [
@@ -79954,6 +80159,23 @@
           "lines": [
             1495,
             1547
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraCollectStaticObjectScalarContacts",
+          "declaration_line": 2641,
+          "lines": [
+            2790,
+            2820
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraFindStaticObjectContainingPoint",
+          "declaration_line": 2572,
+          "lines": [
+            2622
           ]
         },
         {
@@ -79998,7 +80220,18 @@
         1674,
         1675,
         1677,
-        1698
+        1698,
+        2707,
+        2795,
+        2798,
+        2813,
+        2820,
+        2821,
+        2831,
+        2833,
+        2835,
+        2837,
+        2858
       ],
       "owners": [
         {
@@ -80032,6 +80265,24 @@
             1677,
             1698
           ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraCollectStaticObjectScalarContacts",
+          "declaration_line": 2641,
+          "lines": [
+            2707,
+            2795,
+            2798,
+            2813,
+            2820,
+            2821,
+            2831,
+            2833,
+            2835,
+            2837,
+            2858
+          ]
         }
       ]
     },
@@ -80042,6 +80293,8 @@
       "symbol": "D_uvterra_rom_0040F794",
       "lines": [
         338,
+        913,
+        915,
         1298,
         1521,
         1522,
@@ -80050,7 +80303,8 @@
         1652,
         1654,
         1655,
-        1696
+        1696,
+        2835
       ],
       "owners": [
         {
@@ -80066,6 +80320,23 @@
             1654,
             1655,
             1696
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraCollectStaticObjectScalarContacts",
+          "declaration_line": 2641,
+          "lines": [
+            2835
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraCollectTriangleScalarContacts",
+          "declaration_line": 749,
+          "lines": [
+            913,
+            915
           ]
         }
       ]
@@ -90907,16 +91178,6 @@
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040078C.s"
     },
     {
-      "id": "Q-340034cea519",
-      "kind": "assembly",
-      "path": "src/modules/uvterra_rom.c",
-      "symbol": "func_uvterra_rom_00401284",
-      "lines": [
-        749
-      ],
-      "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00401284.s"
-    },
-    {
       "id": "Q-99db78027507",
       "kind": "assembly",
       "path": "src/modules/uvterra_rom.c",
@@ -90987,16 +91248,6 @@
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00408300.s"
     },
     {
-      "id": "Q-f74a70526ada",
-      "kind": "assembly",
-      "path": "src/modules/uvterra_rom.c",
-      "symbol": "func_uvterra_rom_00408614",
-      "lines": [
-        2481
-      ],
-      "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00408614.s"
-    },
-    {
       "id": "Q-1e7779ab1bc4",
       "kind": "assembly",
       "path": "src/modules/uvterra_rom.c",
@@ -91005,26 +91256,6 @@
         2555
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040880C.s"
-    },
-    {
-      "id": "Q-472a485d6897",
-      "kind": "assembly",
-      "path": "src/modules/uvterra_rom.c",
-      "symbol": "func_uvterra_rom_0040888C",
-      "lines": [
-        2572
-      ],
-      "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040888C.s"
-    },
-    {
-      "id": "Q-f10c24ac36fe",
-      "kind": "assembly",
-      "path": "src/modules/uvterra_rom.c",
-      "symbol": "func_uvterra_rom_00408AD8",
-      "lines": [
-        2641
-      ],
-      "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00408AD8.s"
     },
     {
       "id": "Q-a610b59cecb1",
@@ -91077,16 +91308,6 @@
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040B26C.s"
     },
     {
-      "id": "Q-8fcc7ba7d63e",
-      "kind": "assembly",
-      "path": "src/modules/uvterra_rom.c",
-      "symbol": "func_uvterra_rom_0040B8C0",
-      "lines": [
-        3260
-      ],
-      "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040B8C0.s"
-    },
-    {
       "id": "Q-3051b963a0a0",
       "kind": "assembly",
       "path": "src/modules/uvterra_rom.c",
@@ -91115,16 +91336,6 @@
         3542
       ],
       "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040C218.s"
-    },
-    {
-      "id": "Q-e189b179fed2",
-      "kind": "assembly",
-      "path": "src/modules/uvterra_rom.c",
-      "symbol": "func_uvterra_rom_0040C50C",
-      "lines": [
-        3583
-      ],
-      "evidence": "asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040C50C.s"
     },
     {
       "id": "Q-43d0eadc8723",
@@ -117937,7 +118148,6 @@
         173,
         177,
         181,
-        184,
         188,
         195,
         202,
@@ -118021,6 +118231,14 @@
         },
         {
           "kind": "function",
+          "name": "func_uvterra_rom_0040A43C",
+          "declaration_line": 265,
+          "lines": [
+            265
+          ]
+        },
+        {
+          "kind": "function",
           "name": "func_uvterra_rom_0040B26C",
           "declaration_line": 96,
           "lines": [
@@ -118033,14 +118251,6 @@
           "declaration_line": 100,
           "lines": [
             100
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvTerraAppendStaticObjectScalarQueryResults",
-          "declaration_line": 184,
-          "lines": [
-            184
           ]
         },
         {
@@ -118241,14 +118451,6 @@
           ]
         },
         {
-          "kind": "function",
-          "name": "uvTerraTestPointAgainstStaticObjectLods",
-          "declaration_line": 265,
-          "lines": [
-            265
-          ]
-        },
-        {
           "kind": "type",
           "name": "DraftTerrainExports",
           "declaration_line": 269,
@@ -118282,7 +118484,6 @@
         96,
         100,
         181,
-        184,
         188,
         191,
         196,
@@ -118352,6 +118553,14 @@
         },
         {
           "kind": "function",
+          "name": "func_uvterra_rom_0040A43C",
+          "declaration_line": 265,
+          "lines": [
+            265
+          ]
+        },
+        {
+          "kind": "function",
           "name": "func_uvterra_rom_0040B26C",
           "declaration_line": 96,
           "lines": [
@@ -118364,14 +118573,6 @@
           "declaration_line": 100,
           "lines": [
             100
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvTerraAppendStaticObjectScalarQueryResults",
-          "declaration_line": 184,
-          "lines": [
-            184
           ]
         },
         {
@@ -118557,14 +118758,6 @@
           ]
         },
         {
-          "kind": "function",
-          "name": "uvTerraTestPointAgainstStaticObjectLods",
-          "declaration_line": 265,
-          "lines": [
-            265
-          ]
-        },
-        {
           "kind": "type",
           "name": "DraftTerrainExports",
           "declaration_line": 269,
@@ -118725,7 +118918,6 @@
         173,
         175,
         181,
-        184,
         188,
         191,
         195,
@@ -118790,6 +118982,14 @@
         },
         {
           "kind": "function",
+          "name": "func_uvterra_rom_0040A43C",
+          "declaration_line": 265,
+          "lines": [
+            265
+          ]
+        },
+        {
+          "kind": "function",
           "name": "func_uvterra_rom_0040B26C",
           "declaration_line": 96,
           "lines": [
@@ -118802,14 +119002,6 @@
           "declaration_line": 100,
           "lines": [
             100
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvTerraAppendStaticObjectScalarQueryResults",
-          "declaration_line": 184,
-          "lines": [
-            184
           ]
         },
         {
@@ -119002,14 +119194,6 @@
           ]
         },
         {
-          "kind": "function",
-          "name": "uvTerraTestPointAgainstStaticObjectLods",
-          "declaration_line": 265,
-          "lines": [
-            265
-          ]
-        },
-        {
           "kind": "type",
           "name": "DraftTerrainExports",
           "declaration_line": 269,
@@ -119048,7 +119232,6 @@
         72,
         96,
         100,
-        184,
         188,
         191,
         196,
@@ -119095,14 +119278,6 @@
           "declaration_line": 100,
           "lines": [
             100
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvTerraAppendStaticObjectScalarQueryResults",
-          "declaration_line": 184,
-          "lines": [
-            184
           ]
         },
         {
@@ -160841,8 +161016,8 @@
       "evidence": "Classify four endpoints against the terrain Z-bound snapshots, then adjust * selected endpoints through the existing accepted Z-plane helper. * Canonical name: uvTerraAdjustProjectionEndpointsToBounds. * RE_ORIGINAL_QUIRK: retain every ordered/negated comparison, all-four counts, * RE_UNKNOWN: aliasing and nonfinite inputs; retain endpoint reloads after earlier calls.",
       "owners": [
         {
-          "kind": "assembly",
-          "name": "func_uvterra_rom_0040C50C",
+          "kind": "function",
+          "name": "uvTerraAdjustProjectionEndpointsToBounds",
           "declaration_line": 3583,
           "lines": [
             3578
@@ -161021,8 +161196,8 @@
       "evidence": "Collect static-object scalar-extent contacts through model-LOD queries or a direct sphere fallback. RE_ORIGINAL_QUIRK: swapped record translations, conditional record cursor and coordinate increment. RE_UNKNOWN: capacities and scalar semantics.",
       "owners": [
         {
-          "kind": "assembly",
-          "name": "func_uvterra_rom_00408AD8",
+          "kind": "function",
+          "name": "uvTerraCollectStaticObjectScalarContacts",
           "declaration_line": 2641,
           "lines": [
             2640
@@ -161041,8 +161216,8 @@
       "evidence": "Collect triangle scalar-extent contacts into shared query arrays. RE_ORIGINAL_QUIRK: conditional record advancement, live capacity calls and original coordinate increments. RE_UNKNOWN: radius domain and output ownership.",
       "owners": [
         {
-          "kind": "assembly",
-          "name": "func_uvterra_rom_00401284",
+          "kind": "function",
+          "name": "uvTerraCollectTriangleScalarContacts",
           "declaration_line": 749,
           "lines": [
             748
@@ -161171,8 +161346,8 @@
       "evidence": "Copy a query position, locate its terrain tile, and form a 4x4 subcell mask. * RE_ORIGINAL_QUIRK: signed integer truncation/division feeds u16 indices; * mode bits decrement before bounds checks. Keep wrap, output-store order, * pointed output reloads and the upstream shift without extra masking. * Compatibility: retain the accepted raw void-pointer/signed-halfword-pointer * declaration and all raw callers. The clean definition keeps the original u16 * stores; a reviewed same-address linker alias must bind raw name to clean name. * RE_UNKNOWN: authored tile/mode contracts and arbitrary pointer aliasing. * This is not the prior u32-index/masked-shift candidate.",
       "owners": [
         {
-          "kind": "assembly",
-          "name": "func_uvterra_rom_0040B8C0",
+          "kind": "function",
+          "name": "uvTerraLocateTileAndSubcellMask",
           "declaration_line": 3260,
           "lines": [
             3251
@@ -161191,8 +161366,8 @@
       "evidence": "Copy and adjust one static-object matrix, then add the tile translation. RE_ORIGINAL_QUIRK: compare the X ratio to one twice, never substitute the Z ratio. A missing model returns after the first by-value Mtx copy. RE_UNKNOWN: frame/scale units, matrix-index and nonzero-divisor contracts.",
       "owners": [
         {
-          "kind": "assembly",
-          "name": "func_uvterra_rom_00408614",
+          "kind": "function",
+          "name": "uvTerraCopyAdjustedStaticObjectMatrix",
           "declaration_line": 2481,
           "lines": [
             2480
@@ -161511,14 +161686,14 @@
       "evidence": "Native 1068-byte hierarchy draw: derive temporary fixed-matrix terms from * record words 0x20/0x24/0x30 and model word 0x10. Preserve the four original * matrix-word snapshots, halfword store order, live node/state/count reloads, * matrix submissions, pop accounting and final four-word restoration. * RE_ORIGINAL_QUIRK: matrix-push failure is ignored while the local outstanding * count still increases. An unselected flag-0x02 node reads following-node depth * before the last-node test; historical terminal-record capacity is unresolved. * RE_UNKNOWN: record-component frame/units, model divisor meaning/nonzero domain, * finite fixed-conversion inputs, loaded asset/band/node/state/matrix extents, * flags/depths, push-failure reachability and callback/global/matrix aliases and * lifetime. Trace original UVMD/UVCT producers and actual caller paths. * Draft 1886 fails exact instructions despite represented observed effects: * frame/local homes, cached band and byte-offset lifetimes, explicit shift * normalization, positive-count loop lowering and cleanup counter reuse differ. * Recover original source dataflow before replacing this retained assembly."
     },
     {
-      "id": "Q-013e4dd92375",
+      "id": "Q-e6a21b7a3a31",
       "kind": "explicit_unknown",
       "path": "src/modules/uvterra_rom.c",
-      "symbol": "Native 768-byte grid locator: write the supplied X/Y/Z outputs before * reading terrain origins/cell sizes, then publish the wrapped cell index and * centered coordinates. Reload output X after writing output Y; preserve aliases. * RE_ORIGINAL_QUIRK: truncate coordinates and divisors before signed integer * division, wrap cell coordinates to 16 bits, and decrement axes via mode bits * 0/1. Coarse-grid failure returns 0 with both indices unwritten; centered bounds * failure writes mask 0 and returns 1. Native bounds use signed comparisons while * centered calculations use unsigned-to-float conversions; retain ordered FP tests. * RE_UNKNOWN: coordinate units, valid finite/truncatable inputs, nonzero truncated * divisors, signed-division overflow reachability and output/terrain aliases. * Trace original UVTR producers and actual callers before adding validation. * Draft1878 preserves observed effects and signed bounds but fails exact source * recovery: frame/origin/half-size homes, boolean materialization, shift lowering * and instruction scheduling differ. Retain assembly until original dataflow is * recovered; no valid-domain or caller-alias guarantee is inferred.",
+      "symbol": "Native 768-byte grid locator: write the supplied X/Y/Z outputs before * reading terrain origins/cell sizes, then publish the wrapped cell index and * centered coordinates. Reload output X after writing output Y; preserve aliases. * RE_ORIGINAL_QUIRK: truncate coordinates and divisors before signed integer * division, wrap cell coordinates to 16 bits, and decrement axes via mode bits * 0/1. Coarse-grid failure returns 0 with both indices unwritten; centered bounds * failure writes mask 0 and returns 1. Native bounds use signed comparisons while * centered calculations use unsigned-to-float conversions; retain ordered FP tests. * RE_UNKNOWN: coordinate units, valid finite/truncatable inputs, nonzero truncated * divisors, signed-division overflow reachability and output/terrain aliases. * Trace original UVTR producers and actual callers before adding validation. * Historical draft1878 failed exact recovery; that assessment belongs to the * older draft, not this retained stable53 body. The new six-function view still * requires a genuine current compile and linked/native proof. No historical * result is promoted; valid-domain and caller-alias contracts remain unknown.",
       "lines": [
         3235
       ],
-      "evidence": "Native 768-byte grid locator: write the supplied X/Y/Z outputs before * reading terrain origins/cell sizes, then publish the wrapped cell index and * centered coordinates. Reload output X after writing output Y; preserve aliases. * RE_ORIGINAL_QUIRK: truncate coordinates and divisors before signed integer * division, wrap cell coordinates to 16 bits, and decrement axes via mode bits * 0/1. Coarse-grid failure returns 0 with both indices unwritten; centered bounds * failure writes mask 0 and returns 1. Native bounds use signed comparisons while * centered calculations use unsigned-to-float conversions; retain ordered FP tests. * RE_UNKNOWN: coordinate units, valid finite/truncatable inputs, nonzero truncated * divisors, signed-division overflow reachability and output/terrain aliases. * Trace original UVTR producers and actual callers before adding validation. * Draft1878 preserves observed effects and signed bounds but fails exact source * recovery: frame/origin/half-size homes, boolean materialization, shift lowering * and instruction scheduling differ. Retain assembly until original dataflow is * recovered; no valid-domain or caller-alias guarantee is inferred."
+      "evidence": "Native 768-byte grid locator: write the supplied X/Y/Z outputs before * reading terrain origins/cell sizes, then publish the wrapped cell index and * centered coordinates. Reload output X after writing output Y; preserve aliases. * RE_ORIGINAL_QUIRK: truncate coordinates and divisors before signed integer * division, wrap cell coordinates to 16 bits, and decrement axes via mode bits * 0/1. Coarse-grid failure returns 0 with both indices unwritten; centered bounds * failure writes mask 0 and returns 1. Native bounds use signed comparisons while * centered calculations use unsigned-to-float conversions; retain ordered FP tests. * RE_UNKNOWN: coordinate units, valid finite/truncatable inputs, nonzero truncated * divisors, signed-division overflow reachability and output/terrain aliases. * Trace original UVTR producers and actual callers before adding validation. * Historical draft1878 failed exact recovery; that assessment belongs to the * older draft, not this retained stable53 body. The new six-function view still * requires a genuine current compile and linked/native proof. No historical * result is promoted; valid-domain and caller-alias contracts remain unknown."
     },
     {
       "id": "Q-8bf469dc32a5",
@@ -161961,8 +162136,8 @@
       "evidence": "Return the first packed static-object handle containing the point. RE_ORIGINAL_QUIRK: live reloads and model-dependent traversal. RE_UNKNOWN: ordering policy and stale-slot contracts of the LOD helper.",
       "owners": [
         {
-          "kind": "assembly",
-          "name": "func_uvterra_rom_0040888C",
+          "kind": "function",
+          "name": "uvTerraFindStaticObjectContainingPoint",
           "declaration_line": 2572,
           "lines": [
             2571
@@ -171393,9 +171568,18 @@
       "symbol": "pad",
       "lines": [
         2174,
-        2303
+        2303,
+        2672
       ],
       "owners": [
+        {
+          "kind": "function",
+          "name": "uvTerraCollectStaticObjectScalarContacts",
+          "declaration_line": 2641,
+          "lines": [
+            2672
+          ]
+        },
         {
           "kind": "function",
           "name": "uvTerraDrawBillboardStaticObjectWithView",
@@ -231948,6 +232132,30 @@
         658,
         663,
         700,
+        795,
+        798,
+        801,
+        804,
+        807,
+        808,
+        809,
+        810,
+        827,
+        830,
+        848,
+        849,
+        850,
+        858,
+        865,
+        924,
+        925,
+        926,
+        927,
+        928,
+        929,
+        930,
+        931,
+        932,
         1051,
         1141,
         1143,
@@ -232013,11 +232221,40 @@
         2389,
         2398,
         2422,
+        2520,
+        2521,
+        2522,
+        2679,
+        2682,
+        2685,
+        2688,
+        2691,
+        2692,
+        2693,
+        2694,
+        2708,
+        2711,
+        2729,
+        2730,
+        2731,
+        2800,
+        2801,
+        2802,
+        2803,
+        2804,
+        2805,
+        2806,
+        2807,
+        2808,
         2946,
         2951,
         2977,
         2982,
-        3162
+        3162,
+        3280,
+        3286,
+        3589,
+        3590
       ],
       "owners": [
         {
@@ -232036,6 +232273,15 @@
             497,
             498,
             590
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraAdjustProjectionEndpointsToBounds",
+          "declaration_line": 3583,
+          "lines": [
+            3589,
+            3590
           ]
         },
         {
@@ -232092,10 +232338,80 @@
         },
         {
           "kind": "function",
+          "name": "uvTerraCollectStaticObjectScalarContacts",
+          "declaration_line": 2641,
+          "lines": [
+            2679,
+            2682,
+            2685,
+            2688,
+            2691,
+            2692,
+            2693,
+            2694,
+            2708,
+            2711,
+            2729,
+            2730,
+            2731,
+            2800,
+            2801,
+            2802,
+            2803,
+            2804,
+            2805,
+            2806,
+            2807,
+            2808
+          ]
+        },
+        {
+          "kind": "function",
           "name": "uvTerraCollectTriangleHandlesAtPoint",
           "declaration_line": 999,
           "lines": [
             1051
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraCollectTriangleScalarContacts",
+          "declaration_line": 749,
+          "lines": [
+            795,
+            798,
+            801,
+            804,
+            807,
+            808,
+            809,
+            810,
+            827,
+            830,
+            848,
+            849,
+            850,
+            858,
+            865,
+            924,
+            925,
+            926,
+            927,
+            928,
+            929,
+            930,
+            931,
+            932
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraCopyAdjustedStaticObjectMatrix",
+          "declaration_line": 2481,
+          "lines": [
+            2520,
+            2521,
+            2522
           ]
         },
         {
@@ -232202,6 +232518,15 @@
         },
         {
           "kind": "function",
+          "name": "uvTerraLocateTileAndSubcellMask",
+          "declaration_line": 3260,
+          "lines": [
+            3280,
+            3286
+          ]
+        },
+        {
+          "kind": "function",
           "name": "uvTerraSampleTextureColorAtSurface",
           "declaration_line": 1894,
           "lines": [
@@ -232295,6 +232620,7 @@
         142,
         159,
         473,
+        804,
         1265,
         1281,
         1390,
@@ -232302,6 +232628,15 @@
         1460,
         2095,
         2354,
+        2506,
+        2507,
+        2514,
+        2515,
+        2600,
+        2614,
+        2688,
+        2735,
+        2755,
         3071,
         3168
       ],
@@ -232334,6 +232669,35 @@
         },
         {
           "kind": "function",
+          "name": "uvTerraCollectStaticObjectScalarContacts",
+          "declaration_line": 2641,
+          "lines": [
+            2688,
+            2735,
+            2755
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraCollectTriangleScalarContacts",
+          "declaration_line": 749,
+          "lines": [
+            804
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraCopyAdjustedStaticObjectMatrix",
+          "declaration_line": 2481,
+          "lines": [
+            2506,
+            2507,
+            2514,
+            2515
+          ]
+        },
+        {
+          "kind": "function",
           "name": "uvTerraDrawBillboardStaticObjectLods",
           "declaration_line": 2332,
           "lines": [
@@ -232346,6 +232710,15 @@
           "declaration_line": 3159,
           "lines": [
             3168
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraFindStaticObjectContainingPoint",
+          "declaration_line": 2572,
+          "lines": [
+            2600,
+            2614
           ]
         },
         {
@@ -232441,9 +232814,22 @@
         1457,
         1530,
         2094,
-        3168
+        2599,
+        2614,
+        2734,
+        2752,
+        3168,
+        3589
       ],
       "owners": [
+        {
+          "kind": "function",
+          "name": "uvTerraAdjustProjectionEndpointsToBounds",
+          "declaration_line": 3583,
+          "lines": [
+            3589
+          ]
+        },
         {
           "kind": "function",
           "name": "uvTerraCollectSphereContacts",
@@ -232464,10 +232850,28 @@
         },
         {
           "kind": "function",
+          "name": "uvTerraCollectStaticObjectScalarContacts",
+          "declaration_line": 2641,
+          "lines": [
+            2734,
+            2752
+          ]
+        },
+        {
+          "kind": "function",
           "name": "uvTerraDrawTileGeometry",
           "declaration_line": 3159,
           "lines": [
             3168
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraFindStaticObjectContainingPoint",
+          "declaration_line": 2572,
+          "lines": [
+            2599,
+            2614
           ]
         },
         {
@@ -232537,6 +232941,13 @@
         642,
         698,
         731,
+        814,
+        815,
+        833,
+        863,
+        930,
+        931,
+        932,
         1047,
         1139,
         1175,
@@ -232559,7 +232970,17 @@
         1762,
         1865,
         1933,
-        2084
+        2084,
+        2609,
+        2698,
+        2699,
+        2714,
+        2745,
+        2806,
+        2807,
+        2808,
+        3292,
+        3296
       ],
       "owners": [
         {
@@ -232601,6 +233022,20 @@
         },
         {
           "kind": "function",
+          "name": "uvTerraCollectStaticObjectScalarContacts",
+          "declaration_line": 2641,
+          "lines": [
+            2698,
+            2699,
+            2714,
+            2745,
+            2806,
+            2807,
+            2808
+          ]
+        },
+        {
+          "kind": "function",
           "name": "uvTerraCollectTriangleHandlesAtPoint",
           "declaration_line": 999,
           "lines": [
@@ -232613,6 +233048,28 @@
           "declaration_line": 1740,
           "lines": [
             1762
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraCollectTriangleScalarContacts",
+          "declaration_line": 749,
+          "lines": [
+            814,
+            815,
+            833,
+            863,
+            930,
+            931,
+            932
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraFindStaticObjectContainingPoint",
+          "declaration_line": 2572,
+          "lines": [
+            2609
           ]
         },
         {
@@ -232670,6 +233127,15 @@
           "declaration_line": 1154,
           "lines": [
             1175
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraLocateTileAndSubcellMask",
+          "declaration_line": 3260,
+          "lines": [
+            3292,
+            3296
           ]
         },
         {
@@ -232748,12 +233214,17 @@
         486,
         487,
         731,
+        822,
+        823,
         1215,
         1293,
         1407,
         1408,
         1762,
-        2084
+        2084,
+        2704,
+        2705,
+        3292
       ],
       "owners": [
         {
@@ -232784,10 +233255,28 @@
         },
         {
           "kind": "function",
+          "name": "uvTerraCollectStaticObjectScalarContacts",
+          "declaration_line": 2641,
+          "lines": [
+            2704,
+            2705
+          ]
+        },
+        {
+          "kind": "function",
           "name": "uvTerraCollectTriangleHandlesByTexture",
           "declaration_line": 1740,
           "lines": [
             1762
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraCollectTriangleScalarContacts",
+          "declaration_line": 749,
+          "lines": [
+            822,
+            823
           ]
         },
         {
@@ -232804,6 +233293,14 @@
           "declaration_line": 1199,
           "lines": [
             1215
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraLocateTileAndSubcellMask",
+          "declaration_line": 3260,
+          "lines": [
+            3292
           ]
         },
         {
@@ -232855,6 +233352,11 @@
         152,
         468,
         552,
+        807,
+        808,
+        828,
+        862,
+        954,
         1046,
         1212,
         1274,
@@ -232870,8 +233372,13 @@
         2469,
         2470,
         2471,
+        2691,
+        2692,
+        2709,
+        2851,
         2952,
-        3015
+        3015,
+        3276
       ],
       "owners": [
         {
@@ -232905,6 +233412,17 @@
         },
         {
           "kind": "function",
+          "name": "uvTerraCollectStaticObjectScalarContacts",
+          "declaration_line": 2641,
+          "lines": [
+            2691,
+            2692,
+            2709,
+            2851
+          ]
+        },
+        {
+          "kind": "function",
           "name": "uvTerraCollectTriangleHandlesAtPoint",
           "declaration_line": 999,
           "lines": [
@@ -232917,6 +233435,18 @@
           "declaration_line": 1740,
           "lines": [
             1778
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraCollectTriangleScalarContacts",
+          "declaration_line": 749,
+          "lines": [
+            807,
+            808,
+            828,
+            862,
+            954
           ]
         },
         {
@@ -232949,6 +233479,14 @@
           "declaration_line": 1199,
           "lines": [
             1212
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraLocateTileAndSubcellMask",
+          "declaration_line": 3260,
+          "lines": [
+            3276
           ]
         },
         {
@@ -233018,6 +233556,7 @@
       "symbol": "unk1E",
       "lines": [
         138,
+        858,
         1042,
         1274,
         1583
@@ -233037,6 +233576,14 @@
           "declaration_line": 999,
           "lines": [
             1042
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraCollectTriangleScalarContacts",
+          "declaration_line": 749,
+          "lines": [
+            858
           ]
         },
         {
@@ -233066,6 +233613,7 @@
         128,
         650,
         700,
+        866,
         1053,
         1142,
         1144,
@@ -233098,6 +233646,14 @@
           "declaration_line": 999,
           "lines": [
             1053
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraCollectTriangleScalarContacts",
+          "declaration_line": 749,
+          "lines": [
+            866
           ]
         },
         {
@@ -233180,6 +233736,12 @@
         152,
         469,
         553,
+        809,
+        810,
+        831,
+        948,
+        949,
+        955,
         1213,
         1295,
         1396,
@@ -233189,7 +233751,14 @@
         1684,
         1690,
         2252,
-        2355
+        2355,
+        2693,
+        2694,
+        2712,
+        2846,
+        2847,
+        2852,
+        3277
       ],
       "owners": [
         {
@@ -233216,6 +233785,32 @@
         },
         {
           "kind": "function",
+          "name": "uvTerraCollectStaticObjectScalarContacts",
+          "declaration_line": 2641,
+          "lines": [
+            2693,
+            2694,
+            2712,
+            2846,
+            2847,
+            2852
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraCollectTriangleScalarContacts",
+          "declaration_line": 749,
+          "lines": [
+            809,
+            810,
+            831,
+            948,
+            949,
+            955
+          ]
+        },
+        {
+          "kind": "function",
           "name": "uvTerraDrawBillboardStaticObjectLods",
           "declaration_line": 2332,
           "lines": [
@@ -233236,6 +233831,14 @@
           "declaration_line": 1199,
           "lines": [
             1213
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraLocateTileAndSubcellMask",
+          "declaration_line": 3260,
+          "lines": [
+            3277
           ]
         },
         {
@@ -233310,6 +233913,8 @@
         143,
         152,
         554,
+        858,
+        933,
         1276,
         1588,
         1670,
@@ -233331,6 +233936,15 @@
           "lines": [
             1588,
             1670
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraCollectTriangleScalarContacts",
+          "declaration_line": 749,
+          "lines": [
+            858,
+            933
           ]
         },
         {
@@ -233435,6 +234049,8 @@
         640,
         695,
         734,
+        834,
+        858,
         1031,
         1129,
         1172,
@@ -233453,7 +234069,9 @@
         2085,
         2177,
         2223,
-        2306
+        2306,
+        2593,
+        2715
       ],
       "owners": [
         {
@@ -233483,6 +234101,14 @@
         },
         {
           "kind": "function",
+          "name": "uvTerraCollectStaticObjectScalarContacts",
+          "declaration_line": 2641,
+          "lines": [
+            2715
+          ]
+        },
+        {
+          "kind": "function",
           "name": "uvTerraCollectTriangleHandlesAtPoint",
           "declaration_line": 999,
           "lines": [
@@ -233495,6 +234121,15 @@
           "declaration_line": 1740,
           "lines": [
             1764
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraCollectTriangleScalarContacts",
+          "declaration_line": 749,
+          "lines": [
+            834,
+            858
           ]
         },
         {
@@ -233519,6 +234154,14 @@
           "declaration_line": 2173,
           "lines": [
             2177
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraFindStaticObjectContainingPoint",
+          "declaration_line": 2572,
+          "lines": [
+            2593
           ]
         },
         {
@@ -233669,6 +234312,13 @@
         647,
         649,
         700,
+        846,
+        852,
+        853,
+        855,
+        858,
+        921,
+        937,
         1037,
         1038,
         1276,
@@ -233717,6 +234367,20 @@
           "lines": [
             1037,
             1038
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraCollectTriangleScalarContacts",
+          "declaration_line": 749,
+          "lines": [
+            846,
+            852,
+            853,
+            855,
+            858,
+            921,
+            937
           ]
         },
         {
@@ -233866,6 +234530,11 @@
         649,
         662,
         700,
+        847,
+        854,
+        855,
+        858,
+        922,
         1039,
         1276,
         1283,
@@ -233877,6 +234546,8 @@
         1590,
         1658,
         2373,
+        2506,
+        2508,
         2964
       ],
       "owners": [
@@ -233919,6 +234590,27 @@
           "declaration_line": 999,
           "lines": [
             1039
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraCollectTriangleScalarContacts",
+          "declaration_line": 749,
+          "lines": [
+            847,
+            854,
+            855,
+            858,
+            922
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraCopyAdjustedStaticObjectMatrix",
+          "declaration_line": 2481,
+          "lines": [
+            2506,
+            2508
           ]
         },
         {
@@ -234009,6 +234701,9 @@
         562,
         563,
         596,
+        858,
+        2507,
+        2509,
         2965
       ],
       "owners": [
@@ -234029,6 +234724,23 @@
           "declaration_line": 2930,
           "lines": [
             2965
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraCollectTriangleScalarContacts",
+          "declaration_line": 749,
+          "lines": [
+            858
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraCopyAdjustedStaticObjectMatrix",
+          "declaration_line": 2481,
+          "lines": [
+            2507,
+            2509
           ]
         },
         {
@@ -234094,9 +234806,18 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "unk3C",
       "lines": [
-        132
+        132,
+        2749
       ],
       "owners": [
+        {
+          "kind": "function",
+          "name": "uvTerraCollectStaticObjectScalarContacts",
+          "declaration_line": 2641,
+          "lines": [
+            2749
+          ]
+        },
         {
           "kind": "type",
           "name": "DraftTerrainObjectView",
@@ -234125,6 +234846,11 @@
         592,
         650,
         700,
+        801,
+        809,
+        810,
+        830,
+        867,
         1055,
         1142,
         1144,
@@ -234152,7 +234878,13 @@
         2363,
         2407,
         2409,
-        2962
+        2499,
+        2685,
+        2693,
+        2694,
+        2711,
+        2962,
+        3286
       ],
       "owners": [
         {
@@ -234189,10 +234921,41 @@
         },
         {
           "kind": "function",
+          "name": "uvTerraCollectStaticObjectScalarContacts",
+          "declaration_line": 2641,
+          "lines": [
+            2685,
+            2693,
+            2694,
+            2711
+          ]
+        },
+        {
+          "kind": "function",
           "name": "uvTerraCollectTriangleHandlesAtPoint",
           "declaration_line": 999,
           "lines": [
             1055
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraCollectTriangleScalarContacts",
+          "declaration_line": 749,
+          "lines": [
+            801,
+            809,
+            810,
+            830,
+            867
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraCopyAdjustedStaticObjectMatrix",
+          "declaration_line": 2481,
+          "lines": [
+            2499
           ]
         },
         {
@@ -234273,6 +235036,14 @@
         },
         {
           "kind": "function",
+          "name": "uvTerraLocateTileAndSubcellMask",
+          "declaration_line": 3260,
+          "lines": [
+            3286
+          ]
+        },
+        {
+          "kind": "function",
           "name": "uvTerraSampleTextureColorAtSurface",
           "declaration_line": 1894,
           "lines": [
@@ -234345,6 +235116,7 @@
         662,
         696,
         738,
+        838,
         1032,
         1133,
         1173,
@@ -234366,6 +235138,12 @@
         1943,
         2089,
         2104,
+        2594,
+        2601,
+        2619,
+        2632,
+        2720,
+        2737,
         3033,
         3040,
         3052,
@@ -234406,6 +235184,15 @@
         },
         {
           "kind": "function",
+          "name": "uvTerraCollectStaticObjectScalarContacts",
+          "declaration_line": 2641,
+          "lines": [
+            2720,
+            2737
+          ]
+        },
+        {
+          "kind": "function",
           "name": "uvTerraCollectTriangleHandlesAtPoint",
           "declaration_line": 999,
           "lines": [
@@ -234423,12 +235210,31 @@
         },
         {
           "kind": "function",
+          "name": "uvTerraCollectTriangleScalarContacts",
+          "declaration_line": 749,
+          "lines": [
+            838
+          ]
+        },
+        {
+          "kind": "function",
           "name": "uvTerraDrawTileGeometry",
           "declaration_line": 3159,
           "lines": [
             3161,
             3165,
             3168
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraFindStaticObjectContainingPoint",
+          "declaration_line": 2572,
+          "lines": [
+            2594,
+            2601,
+            2619,
+            2632
           ]
         },
         {
@@ -234576,7 +235382,12 @@
         146,
         1287,
         1495,
-        2099
+        2099,
+        2498,
+        2622,
+        2625,
+        2628,
+        2790
       ],
       "owners": [
         {
@@ -234593,6 +235404,32 @@
           "declaration_line": 2067,
           "lines": [
             2099
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraCollectStaticObjectScalarContacts",
+          "declaration_line": 2641,
+          "lines": [
+            2790
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraCopyAdjustedStaticObjectMatrix",
+          "declaration_line": 2481,
+          "lines": [
+            2498
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraFindStaticObjectContainingPoint",
+          "declaration_line": 2572,
+          "lines": [
+            2622,
+            2625,
+            2628
           ]
         },
         {
@@ -234632,7 +235469,9 @@
         161,
         490,
         493,
-        567
+        567,
+        843,
+        2725
       ],
       "owners": [
         {
@@ -234643,6 +235482,22 @@
             490,
             493,
             567
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraCollectStaticObjectScalarContacts",
+          "declaration_line": 2641,
+          "lines": [
+            2725
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraCollectTriangleScalarContacts",
+          "declaration_line": 749,
+          "lines": [
+            843
           ]
         },
         {
@@ -234723,7 +235578,9 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "unk5",
       "lines": [
-        1496
+        1496,
+        2623,
+        2794
       ],
       "owners": [
         {
@@ -234732,6 +235589,22 @@
           "declaration_line": 1321,
           "lines": [
             1496
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraCollectStaticObjectScalarContacts",
+          "declaration_line": 2641,
+          "lines": [
+            2794
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraFindStaticObjectContainingPoint",
+          "declaration_line": 2572,
+          "lines": [
+            2623
           ]
         }
       ]
@@ -234744,6 +235617,7 @@
       "lines": [
         156,
         591,
+        864,
         1048,
         1597,
         2241,
@@ -234783,6 +235657,14 @@
           "declaration_line": 999,
           "lines": [
             1048
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraCollectTriangleScalarContacts",
+          "declaration_line": 749,
+          "lines": [
+            864
           ]
         },
         {
@@ -234862,6 +235744,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "unk70",
       "lines": [
+        934,
         1504,
         1671
       ],
@@ -234874,6 +235757,14 @@
             1504,
             1671
           ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraCollectTriangleScalarContacts",
+          "declaration_line": 749,
+          "lines": [
+            934
+          ]
         }
       ]
     },
@@ -234883,6 +235774,7 @@
       "path": "src/modules/uvterra_rom.c",
       "symbol": "unk74",
       "lines": [
+        935,
         1672
       ],
       "owners": [
@@ -234892,6 +235784,14 @@
           "declaration_line": 1321,
           "lines": [
             1672
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraCollectTriangleScalarContacts",
+          "declaration_line": 749,
+          "lines": [
+            935
           ]
         }
       ]
@@ -234911,6 +235811,7 @@
         641,
         697,
         742,
+        857,
         1041,
         1138,
         1174,
@@ -234928,8 +235829,11 @@
         2268,
         2388,
         2418,
+        2613,
+        2753,
         2947,
-        3165
+        3165,
+        3590
       ],
       "owners": [
         {
@@ -234938,6 +235842,14 @@
           "declaration_line": 406,
           "lines": [
             595
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraAdjustProjectionEndpointsToBounds",
+          "declaration_line": 3583,
+          "lines": [
+            3590
           ]
         },
         {
@@ -234960,6 +235872,14 @@
         },
         {
           "kind": "function",
+          "name": "uvTerraCollectStaticObjectScalarContacts",
+          "declaration_line": 2641,
+          "lines": [
+            2753
+          ]
+        },
+        {
+          "kind": "function",
           "name": "uvTerraCollectTriangleHandlesAtPoint",
           "declaration_line": 999,
           "lines": [
@@ -234972,6 +235892,14 @@
           "declaration_line": 1740,
           "lines": [
             1777
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraCollectTriangleScalarContacts",
+          "declaration_line": 749,
+          "lines": [
+            857
           ]
         },
         {
@@ -234998,6 +235926,14 @@
           "declaration_line": 3159,
           "lines": [
             3165
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraFindStaticObjectContainingPoint",
+          "declaration_line": 2572,
+          "lines": [
+            2613
           ]
         },
         {
@@ -235136,6 +236072,11 @@
         159,
         471,
         593,
+        798,
+        856,
+        927,
+        928,
+        929,
         1040,
         1265,
         1281,
@@ -235149,6 +236090,12 @@
         1665,
         1666,
         1774,
+        2614,
+        2682,
+        2754,
+        2803,
+        2804,
+        2805,
         3165
       ],
       "owners": [
@@ -235179,6 +236126,18 @@
         },
         {
           "kind": "function",
+          "name": "uvTerraCollectStaticObjectScalarContacts",
+          "declaration_line": 2641,
+          "lines": [
+            2682,
+            2754,
+            2803,
+            2804,
+            2805
+          ]
+        },
+        {
+          "kind": "function",
           "name": "uvTerraCollectTriangleHandlesAtPoint",
           "declaration_line": 999,
           "lines": [
@@ -235195,10 +236154,30 @@
         },
         {
           "kind": "function",
+          "name": "uvTerraCollectTriangleScalarContacts",
+          "declaration_line": 749,
+          "lines": [
+            798,
+            856,
+            927,
+            928,
+            929
+          ]
+        },
+        {
+          "kind": "function",
           "name": "uvTerraDrawTileGeometry",
           "declaration_line": 3159,
           "lines": [
             3165
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraFindStaticObjectContainingPoint",
+          "declaration_line": 2572,
+          "lines": [
+            2614
           ]
         },
         {
@@ -246136,6 +247115,7 @@
         137,
         619,
         684,
+        770,
         1006,
         1118,
         1157,
@@ -246160,6 +247140,14 @@
           "declaration_line": 999,
           "lines": [
             1006
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraCollectTriangleScalarContacts",
+          "declaration_line": 749,
+          "lines": [
+            770
           ]
         },
         {
@@ -246238,13 +247226,14 @@
         62,
         113,
         167,
-        184,
         186,
         233,
         265,
         319,
         2461,
+        2487,
         2533,
+        2624,
         2931,
         3006,
         3032,
@@ -246255,18 +247244,18 @@
       "owners": [
         {
           "kind": "function",
-          "name": "func_uvterra_rom_0040AC14",
-          "declaration_line": 113,
+          "name": "func_uvterra_rom_0040A43C",
+          "declaration_line": 265,
           "lines": [
-            113
+            265
           ]
         },
         {
           "kind": "function",
-          "name": "uvTerraAppendStaticObjectScalarQueryResults",
-          "declaration_line": 184,
+          "name": "func_uvterra_rom_0040AC14",
+          "declaration_line": 113,
           "lines": [
-            184
+            113
           ]
         },
         {
@@ -246283,6 +247272,22 @@
           "declaration_line": 2930,
           "lines": [
             2931
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraCopyAdjustedStaticObjectMatrix",
+          "declaration_line": 2481,
+          "lines": [
+            2487
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "uvTerraFindStaticObjectContainingPoint",
+          "declaration_line": 2572,
+          "lines": [
+            2624
           ]
         },
         {
@@ -246348,14 +247353,6 @@
           "declaration_line": 3031,
           "lines": [
             3032
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "uvTerraTestPointAgainstStaticObjectLods",
-          "declaration_line": 265,
-          "lines": [
-            265
           ]
         },
         {
@@ -257228,8 +258225,8 @@
       "evidence": "Classify four endpoints against the terrain Z-bound snapshots, then adjust * selected endpoints through the existing accepted Z-plane helper. * Canonical name: uvTerraAdjustProjectionEndpointsToBounds. * RE_ORIGINAL_QUIRK: retain every ordered/negated comparison, all-four counts, * RE_UNKNOWN: aliasing and nonfinite inputs; retain endpoint reloads after earlier calls.",
       "owners": [
         {
-          "kind": "assembly",
-          "name": "func_uvterra_rom_0040C50C",
+          "kind": "function",
+          "name": "uvTerraAdjustProjectionEndpointsToBounds",
           "declaration_line": 3583,
           "lines": [
             3578
@@ -257368,8 +258365,8 @@
       "evidence": "Collect static-object scalar-extent contacts through model-LOD queries or a direct sphere fallback. RE_ORIGINAL_QUIRK: swapped record translations, conditional record cursor and coordinate increment. RE_UNKNOWN: capacities and scalar semantics.",
       "owners": [
         {
-          "kind": "assembly",
-          "name": "func_uvterra_rom_00408AD8",
+          "kind": "function",
+          "name": "uvTerraCollectStaticObjectScalarContacts",
           "declaration_line": 2641,
           "lines": [
             2640
@@ -257388,8 +258385,8 @@
       "evidence": "Collect triangle scalar-extent contacts into shared query arrays. RE_ORIGINAL_QUIRK: conditional record advancement, live capacity calls and original coordinate increments. RE_UNKNOWN: radius domain and output ownership.",
       "owners": [
         {
-          "kind": "assembly",
-          "name": "func_uvterra_rom_00401284",
+          "kind": "function",
+          "name": "uvTerraCollectTriangleScalarContacts",
           "declaration_line": 749,
           "lines": [
             748
@@ -257468,8 +258465,8 @@
       "evidence": "Copy a query position, locate its terrain tile, and form a 4x4 subcell mask. * RE_ORIGINAL_QUIRK: signed integer truncation/division feeds u16 indices; * mode bits decrement before bounds checks. Keep wrap, output-store order, * pointed output reloads and the upstream shift without extra masking. * Compatibility: retain the accepted raw void-pointer/signed-halfword-pointer * declaration and all raw callers. The clean definition keeps the original u16 * stores; a reviewed same-address linker alias must bind raw name to clean name. * RE_UNKNOWN: authored tile/mode contracts and arbitrary pointer aliasing. * This is not the prior u32-index/masked-shift candidate.",
       "owners": [
         {
-          "kind": "assembly",
-          "name": "func_uvterra_rom_0040B8C0",
+          "kind": "function",
+          "name": "uvTerraLocateTileAndSubcellMask",
           "declaration_line": 3260,
           "lines": [
             3251
@@ -257488,8 +258485,8 @@
       "evidence": "Copy and adjust one static-object matrix, then add the tile translation. RE_ORIGINAL_QUIRK: compare the X ratio to one twice, never substitute the Z ratio. A missing model returns after the first by-value Mtx copy. RE_UNKNOWN: frame/scale units, matrix-index and nonzero-divisor contracts.",
       "owners": [
         {
-          "kind": "assembly",
-          "name": "func_uvterra_rom_00408614",
+          "kind": "function",
+          "name": "uvTerraCopyAdjustedStaticObjectMatrix",
           "declaration_line": 2481,
           "lines": [
             2480
@@ -257638,14 +258635,14 @@
       "evidence": "Native 1068-byte hierarchy draw: derive temporary fixed-matrix terms from * record words 0x20/0x24/0x30 and model word 0x10. Preserve the four original * matrix-word snapshots, halfword store order, live node/state/count reloads, * matrix submissions, pop accounting and final four-word restoration. * RE_ORIGINAL_QUIRK: matrix-push failure is ignored while the local outstanding * count still increases. An unselected flag-0x02 node reads following-node depth * before the last-node test; historical terminal-record capacity is unresolved. * RE_UNKNOWN: record-component frame/units, model divisor meaning/nonzero domain, * finite fixed-conversion inputs, loaded asset/band/node/state/matrix extents, * flags/depths, push-failure reachability and callback/global/matrix aliases and * lifetime. Trace original UVMD/UVCT producers and actual caller paths. * Draft 1886 fails exact instructions despite represented observed effects: * frame/local homes, cached band and byte-offset lifetimes, explicit shift * normalization, positive-count loop lowering and cleanup counter reuse differ. * Recover original source dataflow before replacing this retained assembly."
     },
     {
-      "id": "Q-a7e2afcbbf0d",
+      "id": "Q-f98455518a5d",
       "kind": "original_quirk",
       "path": "src/modules/uvterra_rom.c",
-      "symbol": "Native 768-byte grid locator: write the supplied X/Y/Z outputs before * reading terrain origins/cell sizes, then publish the wrapped cell index and * centered coordinates. Reload output X after writing output Y; preserve aliases. * RE_ORIGINAL_QUIRK: truncate coordinates and divisors before signed integer * division, wrap cell coordinates to 16 bits, and decrement axes via mode bits * 0/1. Coarse-grid failure returns 0 with both indices unwritten; centered bounds * failure writes mask 0 and returns 1. Native bounds use signed comparisons while * centered calculations use unsigned-to-float conversions; retain ordered FP tests. * RE_UNKNOWN: coordinate units, valid finite/truncatable inputs, nonzero truncated * divisors, signed-division overflow reachability and output/terrain aliases. * Trace original UVTR producers and actual callers before adding validation. * Draft1878 preserves observed effects and signed bounds but fails exact source * recovery: frame/origin/half-size homes, boolean materialization, shift lowering * and instruction scheduling differ. Retain assembly until original dataflow is * recovered; no valid-domain or caller-alias guarantee is inferred.",
+      "symbol": "Native 768-byte grid locator: write the supplied X/Y/Z outputs before * reading terrain origins/cell sizes, then publish the wrapped cell index and * centered coordinates. Reload output X after writing output Y; preserve aliases. * RE_ORIGINAL_QUIRK: truncate coordinates and divisors before signed integer * division, wrap cell coordinates to 16 bits, and decrement axes via mode bits * 0/1. Coarse-grid failure returns 0 with both indices unwritten; centered bounds * failure writes mask 0 and returns 1. Native bounds use signed comparisons while * centered calculations use unsigned-to-float conversions; retain ordered FP tests. * RE_UNKNOWN: coordinate units, valid finite/truncatable inputs, nonzero truncated * divisors, signed-division overflow reachability and output/terrain aliases. * Trace original UVTR producers and actual callers before adding validation. * Historical draft1878 failed exact recovery; that assessment belongs to the * older draft, not this retained stable53 body. The new six-function view still * requires a genuine current compile and linked/native proof. No historical * result is promoted; valid-domain and caller-alias contracts remain unknown.",
       "lines": [
         3235
       ],
-      "evidence": "Native 768-byte grid locator: write the supplied X/Y/Z outputs before * reading terrain origins/cell sizes, then publish the wrapped cell index and * centered coordinates. Reload output X after writing output Y; preserve aliases. * RE_ORIGINAL_QUIRK: truncate coordinates and divisors before signed integer * division, wrap cell coordinates to 16 bits, and decrement axes via mode bits * 0/1. Coarse-grid failure returns 0 with both indices unwritten; centered bounds * failure writes mask 0 and returns 1. Native bounds use signed comparisons while * centered calculations use unsigned-to-float conversions; retain ordered FP tests. * RE_UNKNOWN: coordinate units, valid finite/truncatable inputs, nonzero truncated * divisors, signed-division overflow reachability and output/terrain aliases. * Trace original UVTR producers and actual callers before adding validation. * Draft1878 preserves observed effects and signed bounds but fails exact source * recovery: frame/origin/half-size homes, boolean materialization, shift lowering * and instruction scheduling differ. Retain assembly until original dataflow is * recovered; no valid-domain or caller-alias guarantee is inferred."
+      "evidence": "Native 768-byte grid locator: write the supplied X/Y/Z outputs before * reading terrain origins/cell sizes, then publish the wrapped cell index and * centered coordinates. Reload output X after writing output Y; preserve aliases. * RE_ORIGINAL_QUIRK: truncate coordinates and divisors before signed integer * division, wrap cell coordinates to 16 bits, and decrement axes via mode bits * 0/1. Coarse-grid failure returns 0 with both indices unwritten; centered bounds * failure writes mask 0 and returns 1. Native bounds use signed comparisons while * centered calculations use unsigned-to-float conversions; retain ordered FP tests. * RE_UNKNOWN: coordinate units, valid finite/truncatable inputs, nonzero truncated * divisors, signed-division overflow reachability and output/terrain aliases. * Trace original UVTR producers and actual callers before adding validation. * Historical draft1878 failed exact recovery; that assessment belongs to the * older draft, not this retained stable53 body. The new six-function view still * requires a genuine current compile and linked/native proof. No historical * result is promoted; valid-domain and caller-alias contracts remain unknown."
     },
     {
       "id": "Q-b43cd01c740a",
@@ -257920,8 +258917,8 @@
       "evidence": "Return the first packed static-object handle containing the point. RE_ORIGINAL_QUIRK: live reloads and model-dependent traversal. RE_UNKNOWN: ordering policy and stale-slot contracts of the LOD helper.",
       "owners": [
         {
-          "kind": "assembly",
-          "name": "func_uvterra_rom_0040888C",
+          "kind": "function",
+          "name": "uvTerraFindStaticObjectContainingPoint",
           "declaration_line": 2572,
           "lines": [
             2571

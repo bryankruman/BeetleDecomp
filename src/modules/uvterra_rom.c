@@ -181,7 +181,7 @@ void __entrypoint_func_uvterra_rom_400000(DraftTerrainExports* exports);
 s32 func_uvterra_rom_00407A80(s32 arg0, s32 arg1, s32 arg2);
 void uvTerraAdjustProjectionEndpointsToBounds(ParsedUVTR* terrain, Vec3F* origin, Vec3F* first, Vec3F* second, Vec3F* third, Vec3F* fourth);
 void uvTerraAllocateRecordBuffer(void);
-s16 uvTerraAppendStaticObjectScalarQueryResults(f32 arg0, f32 arg1, f32 arg2, f32 arg3, UnkSobjDraw* sobj);
+
 s32 uvTerraAppendStaticObjectSegmentQueryResults(f32 startX, f32 startY, f32 startZ, f32 endX, f32 endY, f32 endZ,
                               UnkSobjDraw *object);
 void uvTerraCleanup(void);
@@ -262,7 +262,7 @@ void uvTerraSetStaticObjectModel(s32 handle, s32 modelId);
 void uvTerraSetStaticObjectValue(s32 handle, s32 value);
 void uvTerraStoreComposedStaticObjectMatrix(s32 contour, s32 arg1, Mtx4F *arg2);
 s32 uvTerraTestPackedAngularLevelThreshold(const u8 *packedLevels, f32 sampleX, f32 sampleY, f32 levelInput);
-s16 uvTerraTestPointAgainstStaticObjectLods(f32 arg0, f32 arg1, f32 arg2, UnkSobjDraw *sobj);
+s16 func_uvterra_rom_0040A43C(f32 arg0, f32 arg1, f32 arg2, UnkSobjDraw *sobj);
 void *uvTerraUpdateProjectionRecordBounds(s32 recordIndex);
 
 /* Original pointer-slot export view; RE_UNKNOWN: canonical full declaration. */
@@ -746,220 +746,220 @@ s32 uvTerraGetPackedTriangleTexture(s32 terrainId, u32 handle) {
 
 #line 1 "uvterra-full-module-draft-1284"
 /* Collect triangle scalar-extent contacts into shared query arrays. RE_ORIGINAL_QUIRK: conditional record advancement, live capacity calls and original coordinate increments. RE_UNKNOWN: radius domain and output ownership. */
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00401284.s")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+s32 uvTerraCollectTriangleScalarContacts(s32 terrainId, f32 centerX, f32 centerY, f32 centerZ, f32 radius, s32** packedHandlesOut, f32** scalarsOut, Vec3F** vectorsOut) {
+    s32 tileX;
+    s32 tileY;
+    s32 groupIndex;
+    s32 triangleIndex;
+    f32 inverseXYScale;
+    s32 minTileX;
+    s32 maxTileX;
+    s32 minTileY;
+    s32 maxTileY;
+    s32 tileIndex;
+    f32 inverseZScale;
+    s32 queryRecordFlag;
+    f32 scaledRadiusXY;
+    DraftTerrainView* terrain;
+    f32 scaledCenterX;
+    DraftTerrainCellView* cell;
+    DraftTerrainGroupView* group;
+    s32 vertexBound;
+    s32 contactClass;
+    DraftTerrainTileView* tile;
+    Unk80225FBC_0x28_UnkC* triangle;
+    query_78* queryRecords;
+    f32 gridLowerX;
+    f32 gridUpperX;
+    f32 gridUpperY;
+    f32 gridLowerY;
+    s32 resultCount;
+    f32 tileLocalX;
+    f32 tileLocalY;
+    f32 tileLocalZ;
+    f32 scaledCenterY;
+    f32 scaledRadiusZ;
+    Vtx* vertex0;
+    Vtx* vertex1;
+    f32 scaledCenterZ;
+    f32 axisScaleRatio;
+    Vtx* vertex2;
+    f32 queryLowerZ;
+    u16 queryGridMask;
+
+    queryRecordFlag = 0;
+    terrain = uvGetLoadedFile('UVTR', terrainId);
+    if (terrain == NULL) {
+        return 0;
+    }
+    if ((centerX + radius) < terrain->unk0.unk0) {
+        return 0;
+    }
+    if (terrain->unk0.unkC < (centerX - radius)) {
+        return 0;
+    }
+    if ((centerY + radius) < terrain->unk0.unk4) {
+        return 0;
+    }
+    if (terrain->unk0.unk10 < (centerY - radius)) {
+        return 0;
+    }
+    minTileX = ((centerX - radius) - terrain->unk0.unk0) / terrain->unk1C;
+    maxTileX = ((centerX + radius) - terrain->unk0.unk0) / terrain->unk1C;
+    minTileY = ((centerY - radius) - terrain->unk0.unk4) / terrain->unk20;
+    maxTileY = ((centerY + radius) - terrain->unk0.unk4) / terrain->unk20;
+    if (minTileX < 0) {
+        minTileX = 0;
+    }
+    if ((terrain->unk18 - 1) < maxTileX) {
+        maxTileX = terrain->unk18 - 1;
+    }
+
+    if (minTileY < 0) {
+        minTileY = 0;
+    }
+
+    if ((terrain->unk19 - 1) < maxTileY) {
+        maxTileY = terrain->unk19 - 1;
+    }
+
+    resultCount = 0;
+    gridLowerX = terrain->unk0.unk0;
+    gridUpperX = terrain->unk1C + gridLowerX;
+    for (tileX = minTileX; maxTileX >= tileX; tileX++) {
+        gridLowerY = terrain->unk0.unk4;
+        gridUpperY = terrain->unk20 + gridLowerY;
+        for (tileY = minTileY; maxTileY >= tileY; tileY++) {
+            tileIndex = (terrain->unk18 * tileY) + tileX;
+            tile = &terrain->unk28[tileIndex];
+            if (tile == NULL) {
+                continue;
+            }
+            cell = tile->unk40;
+            if (cell == NULL) {
+                continue;
+            }
+            queryLowerZ = centerZ - radius;
+            if ((tile->unk48 < queryLowerZ)) {
+                continue;
+            }
+            scaledRadiusXY = cell->unk2C * radius;
+            scaledRadiusZ = cell->unk30 * radius;
+            tileLocalX = centerX - tile->unk0.m[3][0];
+            tileLocalY = centerY - tile->unk0.m[3][1];
+            tileLocalZ = centerZ - tile->unk0.m[3][2];
+            queryGridMask = uvTerraComputeScalarExtentGridMask(tileLocalX, tileLocalY, radius, gridLowerX, gridUpperX, gridLowerY, gridUpperY);
+            scaledCenterX = cell->unk2C * tileLocalX;
+            scaledCenterY = cell->unk2C * tileLocalY;
+            scaledCenterZ = cell->unk30 * tileLocalZ;
+            axisScaleRatio = cell->unk2C / cell->unk30;
+            for (groupIndex = 0; groupIndex < cell->unkC; groupIndex++) {
+                group = cell->unk8 + groupIndex;
+                if (!(group->unk1E & queryGridMask) || ((tile->unk0.m[3][2] + group->unk34) < queryLowerZ) || !((SQ(group->unk30 + radius) >= SQ(tileLocalX - group->unk24) + SQ(tileLocalY - group->unk28) + SQ(tileLocalZ - group->unk2C)))) {
+                    continue;
+                }
+
+                for (triangleIndex = 0; triangleIndex < group->unk1C; triangleIndex++) {
+                    triangle = &group->unk18[triangleIndex];
+                    if (triangle->unk6 & queryGridMask) {
+                        vertex0 = &cell->vtxTable[triangle->unk0];
+                        vertex1 = &cell->vtxTable[triangle->unk2];
+                        vertex2 = &cell->vtxTable[triangle->unk4];
+
+                        vertexBound = MIN(MIN(vertex0->v.ob[0], vertex1->v.ob[0]), vertex2->v.ob[0]);
+                        if (scaledRadiusXY < (vertexBound - scaledCenterX)) {
+                            continue;
+                        }
+
+                        vertexBound = MAX(MAX(vertex0->v.ob[0], vertex1->v.ob[0]), vertex2->v.ob[0]);
+                        if (scaledRadiusXY < (scaledCenterX - vertexBound)) {
+                            continue;
+                        }
+
+                        vertexBound = MIN(MIN(vertex0->v.ob[1], vertex1->v.ob[1]), vertex2->v.ob[1]);
+                        if (scaledRadiusXY < (vertexBound - scaledCenterY)) {
+                            continue;
+                        }
+
+                        vertexBound = MAX(MAX(vertex0->v.ob[1], vertex1->v.ob[1]), vertex2->v.ob[1]);
+                        if (scaledRadiusXY < (scaledCenterY - vertexBound)) {
+                            continue;
+                        }
+
+                        vertexBound = MIN(MIN(vertex0->v.ob[2], vertex1->v.ob[2]), vertex2->v.ob[2]);
+                        if (scaledRadiusZ < (vertexBound - scaledCenterZ)) {
+                            continue;
+                        }
+
+                        vertexBound = MAX(MAX(vertex0->v.ob[2], vertex1->v.ob[2]), vertex2->v.ob[2]);
+                        if (scaledRadiusZ < (scaledCenterZ - vertexBound)) {
+                            continue;
+                        }
+
+                        if (resultCount >= D_uvterra_rom_0040F76C->uvQueryGetRecordCapacity()) {
+                            break;
+                        }
+
+                        contactClass = D_uvterra_rom_0040F768->uvIntersectClassifySphereTriangleContact(
+                            scaledCenterX, scaledCenterY, scaledCenterZ, scaledRadiusXY, axisScaleRatio,
+                            vertex0->v.ob[0], vertex0->v.ob[1], vertex0->v.ob[2],
+                            vertex1->v.ob[0], vertex1->v.ob[1], vertex1->v.ob[2],
+                            vertex2->v.ob[0], vertex2->v.ob[1], vertex2->v.ob[2],
+                            &D_uvterra_rom_0040F788[resultCount], &D_uvterra_rom_0040F780[resultCount]
+                        );
+                        if (contactClass == 0) {
+                        } else {
+                            if (contactClass == 1) {
+                                D_uvterra_rom_0040F794[resultCount] |= 1;
+                            } else {
+                                D_uvterra_rom_0040F794[resultCount] &= ~1;
+                            }
+                            if (queryRecordFlag == 0) {
+                                D_uvterra_rom_0040F76C->uvQueryGetProps(0, 1, &queryRecordFlag, 0);
+                            }
+                            if (queryRecordFlag != 0) {
+                                inverseXYScale = 1.0f / cell->unk2C;
+                                inverseZScale = 1.0f / cell->unk30;
+                                queryRecords = D_uvterra_rom_0040F76C->uvQueryGetActiveRecordArray();
+                                queryRecords[resultCount].unk0.x = (inverseXYScale * vertex0->v.ob[0]) + tile->unk0.m[3][0];
+                                queryRecords[resultCount].unk0.y = (inverseXYScale * vertex0->v.ob[1]) + tile->unk0.m[3][1];
+                                queryRecords[resultCount].unk0.z = (inverseZScale * vertex0->v.ob[2]) + tile->unk0.m[3][2];
+                                queryRecords[resultCount].unkC.x = (inverseXYScale * vertex1->v.ob[0]) + tile->unk0.m[3][0];
+                                queryRecords[resultCount].unkC.y = (inverseXYScale * vertex1->v.ob[1]) + tile->unk0.m[3][1];
+                                queryRecords[resultCount].unkC.z = (inverseZScale * vertex1->v.ob[2]) + tile->unk0.m[3][2];
+                                queryRecords[resultCount].unk18.x = (inverseXYScale * vertex2->v.ob[0]) + tile->unk0.m[3][0];
+                                queryRecords[resultCount].unk18.y = (inverseXYScale * vertex2->v.ob[1]) + tile->unk0.m[3][1];
+                                queryRecords[resultCount].unk18.z = (inverseZScale * vertex2->v.ob[2]) + tile->unk0.m[3][2];
+                                queryRecords[resultCount].unk24 = D_uvterra_rom_0040F788[resultCount];
+                                queryRecords[resultCount].unk70 |= 1;
+                                queryRecords[resultCount].unk74 = group->texture;
+                            }
+                            D_uvterra_rom_0040F780[resultCount] /= -radius * cell->unk2C;
+
+                            // 10 bits of tileIndex, 10 bits of groupIndex and 12 bits of triangleIndex = 32 bits total
+                            D_uvterra_rom_0040F784[resultCount] = ((tileIndex & 0x3FF) << 0x16) + ((groupIndex & 0x3FF) << 0xC) + (triangleIndex & 0xFFF);
+                            resultCount++;
+                        }
+                    }
+                }
+            }
+
+            if (maxTileY >= tileY) {
+                gridLowerY += terrain->unk20;
+                gridUpperY += terrain->unk20;
+            }
+        }
+
+        if (maxTileX >= tileX) {
+            gridLowerX += terrain->unk1C;
+            gridUpperX += terrain->unk20;
+        }
+    }
+    *packedHandlesOut = D_uvterra_rom_0040F784;
+    *scalarsOut = D_uvterra_rom_0040F780;
+    *vectorsOut = D_uvterra_rom_0040F788;
+    return resultCount;
+}
 #line 403 "src/modules/uvterra_rom.c"
 
 #line 404 "src/modules/uvterra_rom.c"
@@ -2478,49 +2478,49 @@ void uvTerraSetStaticObjectFlags(s32 handle, ...) {
 #line 491 "src/modules/uvterra_rom.c"
 
 /* Copy and adjust one static-object matrix, then add the tile translation. RE_ORIGINAL_QUIRK: compare the X ratio to one twice, never substitute the Z ratio. A missing model returns after the first by-value Mtx copy. RE_UNKNOWN: frame/scale units, matrix-index and nonzero-divisor contracts. */
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00408614.s")
+void uvTerraCopyAdjustedStaticObjectMatrix(s32 objectHandle, s32 matrixIndex, Mtx4F *destination) {
+    f32 translationXYScale;
+    f32 xyScaleRatio;
+    f32 translationZScale;
+    f32 zScaleRatio;
+    ParsedUVMD *model;
+    UnkSobjDraw *object;
+    uvUnkTileStruct *tile;
 
+    object = uvTerraGetStaticObject(objectHandle);
+    if (object == NULL) {
+        return;
+    }
+    if (object->modelId == 0xFFFF) {
+        return;
+    }
 
+    tile = object->unk44;
+    D_uvterra_rom_0040F744->uvMat4CopyL2F(destination, object->unk4[matrixIndex]);
+    model = uvGetLoadedFile('UVMD', object->modelId);
+    if (model == NULL) {
+        return;
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    if (matrixIndex == 0) {
+        xyScaleRatio = model->unk10 / object->unk30;
+        zScaleRatio = (model->unk10 / object->unk34);
+        translationXYScale = 1.0f / object->unk30;
+        translationZScale = 1.0f / object->unk34;
+        if ((xyScaleRatio != 1.0f) || (xyScaleRatio != 1.0f)) {
+            D_uvterra_rom_0040F744->uvMat4Scale(destination, xyScaleRatio, xyScaleRatio, zScaleRatio);
+        }
+    } else {
+        translationXYScale = 1.0f / model->unk10;
+        translationZScale = 1.0f / model->unk10;
+    }
+    destination->m[3][0] *= translationXYScale;
+    destination->m[3][1] *= translationXYScale;
+    destination->m[3][2] *= translationZScale;
+    destination->m[3][0] += tile->unk0.m[3][0];
+    destination->m[3][1] += tile->unk0.m[3][1];
+    destination->m[3][2] += tile->unk0.m[3][2];
+}
 #line 493 "src/modules/uvterra_rom.c"
 
 #line 494 "src/modules/uvterra_rom.c"
@@ -2569,294 +2569,294 @@ u16 uvTerraGetStaticObjectModelId(s32 handle) {
  * caller/loader/provider tracing before collision or ownership claims. */
 #line 1 "uvterra-full-module-draft-888C"
 /* Return the first packed static-object handle containing the point. RE_ORIGINAL_QUIRK: live reloads and model-dependent traversal. RE_UNKNOWN: ordering policy and stale-slot contracts of the LOD helper. */
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040888C.s")
+s32 uvTerraFindStaticObjectContainingPoint(s32 terraId, f32 pointX, f32 pointY, f32 pointZ) {
+    s16 subcellMask;
+    s16 tileIndex;
+    f32 tileLocalX;
+    f32 tileLocalY;
+    f32 tileLocalZ;
+    u32 objectIndex;
+    DraftTerrainObjectView *object;
+    DraftTerrainTileView *tile;
+    DraftTerrainView *terrain;
+    DraftTerrainCellView *cell;
+    ParsedUVMD *model;
+    s32 v0;
 
+    terrain = uvGetLoadedFile('UVTR', terraId);
+    if (terrain == NULL) {
+        return -1;
+    }
+    if (func_uvterra_rom_0040B8C0((void *)terrain, pointX, pointY, pointZ, &tileLocalX, &tileLocalY, &tileLocalZ, &tileIndex, &subcellMask, 0U) == 0) {
+        return -1;
+    }
+    tile = &terrain->unk28[(u16) tileIndex];
+    cell = tile->unk40;
+    if (cell == NULL) {
+        return -1;
+    }
 
+    for (objectIndex = 0; objectIndex < cell->unk14; objectIndex++) {
+        object = &cell->unk10[objectIndex];
+        if (!(object->unk40 & 1)) {
+            continue;
+        }
 
+        if ((object->modelId == 0xFFFF)) {
+            continue;
+        }
 
+        if (!((u16) subcellMask & object->unk18)) {
+            continue;
+        }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        if (D_uvterra_rom_0040F768->uvIntersectPointInsideSphere(tileLocalX, tileLocalY, tileLocalZ, object->unk8,
+                                                                  object->unkC, object->unk10, object->unk14)
+            != 0) {
+            model = uvGetLoadedFile('UVMD', (s32) object->modelId);
+            if (model == NULL) {
+                // redundant statement
+                cell = tile->unk40;
+                continue;
+            }
+            *D_uvterra_rom_0040F78C = (tile->unk44 << 0xC) | objectIndex;
+            if (model->unk5 & 2) {
+                if (func_uvterra_rom_0040A43C(tileLocalX, tileLocalY, tileLocalZ, (UnkSobjDraw *)object) >= 0) {
+                    return ((tile->unk44 & 0xFFF) << 0xC) | (objectIndex & 0xFFF);
+                }
+            } else {
+                return ((tile->unk44 & 0xFFF) << 0xC) | (objectIndex & 0xFFF);
+            }
+        }
+        // redundant statement
+        cell = tile->unk40;
+    }
+    return -1;
+}
 #line 515 "src/modules/uvterra_rom.c"
 #line 506 "src/modules/uvterra_rom.c"
 
 #line 1 "uvterra-full-module-draft-8AD8"
 /* Collect static-object scalar-extent contacts through model-LOD queries or a direct sphere fallback. RE_ORIGINAL_QUIRK: swapped record translations, conditional record cursor and coordinate increment. RE_UNKNOWN: capacities and scalar semantics. */
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00408AD8.s")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+s32 uvTerraCollectStaticObjectScalarContacts(s32 terraId, f32 centerX, f32 centerY, f32 centerZ, f32 radius, s32 **packedHandlesOut,
+                              f32 **scalarsOut, Vec3F **vectorsOut) {
+    s32 tileX;
+    s32 tileY;
+    s32 minTileX;
+    s32 appendedResultIndex;
+    s32 maxTileX;
+    s32 minTileY;
+    s32 maxTileY;
+    DraftTerrainTileView *tile;
+    query_78 *queryRecord;
+    s32 queryRecordFlag;
+    f32 tileLocalX;
+    f32 tileLocalY;
+    DraftTerrainObjectView *object;
+    ParsedUVMD *model;
+    f32 gridUpperX;
+    f32 gridLowerX;
+    f32 gridUpperY;
+    f32 gridLowerY;
+    u16 queryGridMask;
+    DraftTerrainView *terrain;
+    DraftTerrainCellView *cell;
+    f32 objectY;
+    f32 queryScalar;
+    f32 objectZ;
+    Vec3F *resultVector;
+    f32 objectRadius;
+    f32 objectX;
+    f32 tileLocalZ;
+    s32 objectIndex;
+    s32 pad;
+
+    queryRecordFlag = 0;
+    terrain = uvGetLoadedFile('UVTR', terraId);
+    if (terrain == NULL) {
+        return 0;
+    }
+    if ((centerX + radius) < terrain->unk0.unk0) {
+        return 0;
+    }
+    if (terrain->unk0.unkC < (centerX - radius)) {
+        return 0;
+    }
+    if ((centerY + radius) < terrain->unk0.unk4) {
+        return 0;
+    }
+    if (terrain->unk0.unk10 < (centerY - radius)) {
+        return 0;
+    }
+    minTileX = (s32) (((centerX - radius) - terrain->unk0.unk0) / terrain->unk1C);
+    maxTileX = (s32) (((centerX + radius) - terrain->unk0.unk0) / terrain->unk1C);
+    minTileY = (s32) (((centerY - radius) - terrain->unk0.unk4) / terrain->unk20);
+    maxTileY = (s32) (((centerY + radius) - terrain->unk0.unk4) / terrain->unk20);
+    if (minTileX < 0) {
+        minTileX = 0;
+    }
+    if ((terrain->unk18 - 1) < maxTileX) {
+        maxTileX = terrain->unk18 - 1;
+    }
+    if (minTileY < 0) {
+        minTileY = 0;
+    }
+    if ((terrain->unk19 - 1) < maxTileY) {
+        maxTileY = terrain->unk19 - 1;
+    }
+    *D_uvterra_rom_0040F790 = 0;
+    gridLowerX = terrain->unk0.unk0;
+    gridUpperX = terrain->unk1C + gridLowerX;
+    for (tileX = minTileX; tileX <= maxTileX; tileX++) {
+        gridLowerY = terrain->unk0.unk4;
+        gridUpperY = terrain->unk20 + gridLowerY;
+        for (tileY = minTileY; tileY <= maxTileY; tileY++) {
+            s32 tileIndex = (terrain->unk18 * tileY) + tileX;
+            tile = &terrain->unk28[tileIndex];
+            if (tile == NULL) {
+                continue;
+            }
+
+            cell = tile->unk40;
+            if (cell == NULL) {
+                continue;
+            }
+
+            if ((tile->unk48 < (centerZ - radius))) {
+                continue;
+            }
+
+            tileLocalX = centerX - tile->unk0.m[3][0];
+            tileLocalY = centerY - tile->unk0.m[3][1];
+            tileLocalZ = centerZ - tile->unk0.m[3][2];
+            queryGridMask = uvTerraComputeScalarExtentGridMask(tileLocalX, tileLocalY, radius, gridLowerX, gridUpperX, gridLowerY, gridUpperY);
+
+            for (objectIndex = 0; objectIndex < cell->unk14; objectIndex++) {
+                object = &cell->unk10[objectIndex];
+
+                if (!(object->unk40 & 1)) {
+                    continue;
+                }
+
+                if (object->modelId == 0xFFFF) {
+                    continue;
+                }
+
+                if (!(object->unk18 & queryGridMask)) {
+                    continue;
+                }
+
+                if (object->unk3C < (tileLocalZ - radius)) {
+                    continue;
+                }
+                objectRadius = object->unk14;
+                objectX = object->unk8;
+                objectY = object->unkC;
+                objectZ = object->unk10;
+
+                if (((centerX + radius) + objectRadius) < objectX) {
+                    continue;
+                }
+
+                if (objectX < ((centerX - radius) - objectRadius)) {
+                    continue;
+                }
+
+                if (((centerY + radius) + objectRadius) < objectY) {
+                    continue;
+                }
+
+                if (objectY < ((centerY - radius) - objectRadius)) {
+                    continue;
+                }
+
+                if ((centerZ + radius + objectRadius) < objectZ) {
+                    continue;
+                }
+
+                if (objectZ < ((centerZ - radius) - objectRadius)) {
+                    continue;
+                }
+
+                if (D_uvterra_rom_0040F768->uvIntersectSpheresOverlap(
+                        tileLocalX, tileLocalY, tileLocalZ, radius, objectX, objectY, objectZ, objectRadius)
+                    == 0) {
+                    continue;
+                }
+                model = uvGetLoadedFile('UVMD', object->modelId);
+                if (model == NULL) {
+                    continue;
+                }
+                *D_uvterra_rom_0040F78C = objectIndex | (tile->unk44 << 0xC);
+                if (queryRecordFlag == 0) {
+                    D_uvterra_rom_0040F76C->uvQueryGetProps(0, 1, &queryRecordFlag, 0);
+                }
+                if (model->unk5 & 6) {
+                    appendedResultIndex = *D_uvterra_rom_0040F790;
+                    func_uvterra_rom_0040A08C(tileLocalX, tileLocalY, tileLocalZ, radius, (TerrainContactObjectView *)object);
+                    queryRecord = D_uvterra_rom_0040F76C->uvQueryGetActiveRecordArray() + appendedResultIndex;
+                    while (appendedResultIndex < *D_uvterra_rom_0040F790) {
+                        if (queryRecordFlag != 0) {
+                            queryRecord->unk0.x += tile->unk0.m[3][0];
+                            queryRecord->unk0.y += tile->unk0.m[3][1];
+                            queryRecord->unk0.z += tile->unk0.m[3][2];
+                            queryRecord->unkC.y += tile->unk0.m[3][0];
+                            queryRecord->unkC.x += tile->unk0.m[3][1];
+                            queryRecord->unkC.z += tile->unk0.m[3][2];
+                            queryRecord->unk18.x += tile->unk0.m[3][0];
+                            queryRecord->unk18.y += tile->unk0.m[3][1];
+                            queryRecord->unk18.z += tile->unk0.m[3][2];
+                            queryRecord++;
+                        }
+                        appendedResultIndex++;
+                    }
+                    if (*D_uvterra_rom_0040F790
+                        >= D_uvterra_rom_0040F76C->uvQueryGetRecordCapacity()) {
+                        tileY = maxTileY + 1;
+                        tileX = maxTileX + 1;
+                        break;
+                    }
+                } else {
+                    D_uvterra_rom_0040F784[*D_uvterra_rom_0040F790] = *D_uvterra_rom_0040F78C;
+                    resultVector = &D_uvterra_rom_0040F788[*D_uvterra_rom_0040F790];
+                    resultVector->x = tileLocalX - objectX;
+                    resultVector->y = tileLocalY - objectY;
+                    resultVector->z = tileLocalZ - objectZ;
+                    queryScalar = (radius
+                                - (D_uvterra_rom_0040F75C->uvSqrtf(SQ(resultVector->x) + SQ(resultVector->y)
+                                                                   + SQ(resultVector->z))
+                                   - objectRadius))
+                               / radius;
+                    if (queryScalar < 0.0f) {
+                        D_uvterra_rom_0040F780[*D_uvterra_rom_0040F790] = queryScalar;
+                    } else {
+                        D_uvterra_rom_0040F780[*D_uvterra_rom_0040F790] = 0.0f;
+                    }
+                    D_uvterra_rom_0040F794[*D_uvterra_rom_0040F790] |= 1;
+                    D_uvterra_rom_0040F748->uvVec3FNormalize(resultVector, resultVector);
+                    if (++*D_uvterra_rom_0040F790
+                        >= D_uvterra_rom_0040F76C->uvQueryGetRecordCapacity()) {
+                        tileY = maxTileY + 1;
+                        tileX = maxTileX + 1;
+                        break;
+                    }
+                }
+            }
+            if (maxTileY >= tileY) {
+                gridLowerY += terrain->unk20;
+                gridUpperY += terrain->unk20;
+            }
+        }
+        if (maxTileX >= tileX) {
+            gridLowerX += terrain->unk1C;
+            gridUpperX += terrain->unk20;
+        }
+    }
+    *packedHandlesOut = D_uvterra_rom_0040F784;
+    *scalarsOut = D_uvterra_rom_0040F780;
+    *vectorsOut = D_uvterra_rom_0040F788;
+    return *D_uvterra_rom_0040F790;
+}
 #line 508 "src/modules/uvterra_rom.c"
 
 #line 1 "uvterra-full-module-draft-9394"
@@ -3243,10 +3243,10 @@ u16 uvTerraLookupAdjustedWrappedIndexPair(s16 firstIndex, s16 secondIndex, u8 mo
  * RE_UNKNOWN: coordinate units, valid finite/truncatable inputs, nonzero truncated
  * divisors, signed-division overflow reachability and output/terrain aliases.
  * Trace original UVTR producers and actual callers before adding validation.
- * Draft1878 preserves observed effects and signed bounds but fails exact source
- * recovery: frame/origin/half-size homes, boolean materialization, shift lowering
- * and instruction scheduling differ. Retain assembly until original dataflow is
- * recovered; no valid-domain or caller-alias guarantee is inferred. */
+ * Historical draft1878 failed exact recovery; that assessment belongs to the
+ * older draft, not this retained stable53 body. The new six-function view still
+ * requires a genuine current compile and linked/native proof. No historical
+ * result is promoted; valid-domain and caller-alias contracts remain unknown. */
 #line 552 "src/modules/uvterra_rom.c"
 /* Copy a query position, locate its terrain tile, and form a 4x4 subcell mask.
  * RE_ORIGINAL_QUIRK: signed integer truncation/division feeds u16 indices;
@@ -3257,76 +3257,76 @@ u16 uvTerraLookupAdjustedWrappedIndexPair(s16 firstIndex, s16 secondIndex, u8 mo
  * stores; a reviewed same-address linker alias must bind raw name to clean name.
  * RE_UNKNOWN: authored tile/mode contracts and arbitrary pointer aliasing.
  * This is not the prior u32-index/masked-shift candidate. */
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040B8C0.s")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+s32 uvTerraLocateTileAndSubcellMask(ParsedUVTR* terrain, f32 pointX, f32 pointY, f32 pointZ, f32* queryXOut, f32* queryYOut, f32* queryZOut, u16* tileIndexOut, u16* subcellMaskOut, u8 boundaryFlags) {
+    f32 tileWidth;
+    f32 tileHeight;
+    f32 halfTileWidth;
+    f32 halfTileHeight;
+    f32 terrainMinX;
+    f32 terrainMinY;
+    u16 tileX;
+    u16 tileY;
+    u16 subcellX;
+    u16 subcellY;
+    u8 outsideCenteredTile;
+
+    *queryXOut = pointX;
+    *queryYOut = pointY;
+    *queryZOut = pointZ;
+    tileWidth = terrain->unk1C;
+    tileHeight = terrain->unk20;
+    halfTileWidth = tileWidth * 0.5f;
+    halfTileHeight = tileHeight * 0.5f;
+    terrainMinX = terrain->unk0.unk0;
+    tileX = (s32) (pointX - terrainMinX) / (s32) tileWidth;
+
+    if (boundaryFlags & 1) {
+        tileX -= 1;
+    }
+    terrainMinY = terrain->unk0.unk4;
+    tileY = (s32) (pointY - terrainMinY) / (s32) tileHeight;
+    if (boundaryFlags & 2) {
+        tileY -= 1;
+    }
+
+    if ((tileX >= terrain->unk18) || (tileY >= terrain->unk19)) {
+        return 0;
+    }
+
+    *tileIndexOut = tileX + (tileY * terrain->unk18);
+
+    *queryXOut = ((pointX - (tileX * tileWidth)) - terrainMinX) - halfTileWidth;
+
+    *queryYOut = ((pointY - (tileY * tileHeight)) - terrainMinY) - halfTileHeight;
+
+    if (*queryXOut < -halfTileWidth) {
+        outsideCenteredTile = 1;
+    } else if (halfTileWidth <= *queryXOut) {
+        outsideCenteredTile = 1;
+    } else if (*queryYOut < -halfTileHeight) {
+        outsideCenteredTile = 1;
+    } else if (halfTileHeight <= *queryYOut) {
+        outsideCenteredTile = 1;
+    } else {
+        outsideCenteredTile = 0;
+    }
+
+    if (outsideCenteredTile) {
+        *subcellMaskOut = 0;
+    } else {
+        subcellX = (s32) (((*queryXOut + halfTileWidth) * 4.0f) / tileWidth);
+        subcellY = (s32) (((*queryYOut + halfTileHeight) * 4.0f) / tileHeight);
+        if (subcellX == 4) {
+            subcellX = 3;
+        }
+
+        if (subcellY == 4) {
+            subcellY = 3;
+        }
+        *subcellMaskOut = 0x8000 >> ((subcellY * 4) + (subcellX % 4));
+    }
+    return 1;
+}
 #line 553 "src/modules/uvterra_rom.c"
 #line 553 "src/modules/uvterra_rom.c"
 
@@ -3580,96 +3580,96 @@ s32 uvTerraSelectLowestZCandidate(Vec3F *first, Vec3F *second, Vec3F *third, Vec
  * Canonical name: uvTerraAdjustProjectionEndpointsToBounds.
  * RE_ORIGINAL_QUIRK: retain every ordered/negated comparison, all-four counts,
  * RE_UNKNOWN: aliasing and nonfinite inputs; retain endpoint reloads after earlier calls. */
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_0040C50C.s")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+void uvTerraAdjustProjectionEndpointsToBounds(ParsedUVTR* terrain, Vec3F* origin, Vec3F* first, Vec3F* second, Vec3F* third, Vec3F* fourth) {
+    s32 belowCount;
+    s32 aboveCount;
+    f32 upper;
+    f32 lower;
+
+    upper = terrain->unk0.unk14;
+    lower = terrain->unk0.unk8;
+    belowCount = 0;
+    aboveCount = 0;
+    if (upper <= first->z) {
+        aboveCount = 1;
+    } else if (first->z <= lower) {
+        belowCount = 1;
+    }
+    if (upper <= second->z) {
+        aboveCount += 1;
+    } else if (second->z <= lower) {
+        belowCount += 1;
+    }
+    if (upper <= third->z) {
+        aboveCount += 1;
+    } else if (third->z <= lower) {
+        belowCount += 1;
+    }
+    if (upper <= fourth->z) {
+        aboveCount += 1;
+    } else if (fourth->z <= lower) {
+        belowCount += 1;
+    }
+    if (upper < origin->z) {
+        if ((!(upper <= first->z) || !(upper <= second->z) || !(upper <= third->z) || !(upper <= fourth->z)) && (belowCount == 4)) {
+            if (first->z <= lower) {
+                uvTerraProjectEndpointToZPlane(origin, lower, first);
+            }
+            if (second->z <= lower) {
+                uvTerraProjectEndpointToZPlane(origin, lower, second);
+            }
+            if (third->z <= lower) {
+                uvTerraProjectEndpointToZPlane(origin, lower, third);
+            }
+            if (fourth->z <= lower) {
+                uvTerraProjectEndpointToZPlane(origin, lower, fourth);
+            }
+        }
+    } else if (origin->z < lower) {
+        if ((!(first->z <= lower) || !(second->z <= lower) || !(third->z <= lower) || !(fourth->z <= lower)) && (aboveCount == 4)) {
+            if (upper <= first->z) {
+                uvTerraProjectEndpointToZPlane(origin, upper, first);
+            }
+            if (upper <= second->z) {
+                uvTerraProjectEndpointToZPlane(origin, upper, second);
+            }
+            if (upper <= third->z) {
+                uvTerraProjectEndpointToZPlane(origin, upper, third);
+            }
+            if (upper <= fourth->z) {
+                uvTerraProjectEndpointToZPlane(origin, upper, fourth);
+            }
+        }
+    } else if ((aboveCount == 0) || (belowCount == 0)) {
+        if (aboveCount == 4) {
+            if (upper <= first->z) {
+                uvTerraProjectEndpointToZPlane(origin, upper, first);
+            }
+            if (upper <= second->z) {
+                uvTerraProjectEndpointToZPlane(origin, upper, second);
+            }
+            if (upper <= third->z) {
+                uvTerraProjectEndpointToZPlane(origin, upper, third);
+            }
+            if (upper <= fourth->z) {
+                uvTerraProjectEndpointToZPlane(origin, upper, fourth);
+            }
+        } else if (belowCount == 4) {
+            if (first->z <= lower) {
+                uvTerraProjectEndpointToZPlane(origin, lower, first);
+            }
+            if (second->z <= lower) {
+                uvTerraProjectEndpointToZPlane(origin, lower, second);
+            }
+            if (third->z <= lower) {
+                uvTerraProjectEndpointToZPlane(origin, lower, third);
+            }
+            if (fourth->z <= lower) {
+                uvTerraProjectEndpointToZPlane(origin, lower, fourth);
+            }
+        }
+    }
+}
 #line 579 "src/modules/uvterra_rom.c"
 #line 569 "src/modules/uvterra_rom.c"
 
