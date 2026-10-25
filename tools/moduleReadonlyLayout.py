@@ -1113,10 +1113,348 @@ def apply_v4(plan):
         monolithic.unlink()
 
 
+
+
+def uvterra_duplicate_scalar_transform(raw_compiler_elf, readonly_source):
+    """Module-scoped bridge; transformed output still requires NORMAL/native gates."""
+    import hashlib
+    import json
+    import re
+    import struct
+
+    CONTRACT_SHA = '411220cd41a59c9affae995f23367ecb1efddb506a5c4f4d7469ffbe6499b879'
+    OWNER_SHA = '36796a86b164c8e0bf7283b0569bf9db27da681c3453ff0b2dbd47da9828f0b8'
+    TEXT_SHA = '3e128c671f8de2b2566517dc793b50a3a2f3d5e51852325695b62602fec02937'
+    OWNER_DATA_SHA = '33c316ff34e2d830efbfdc2bfa73990a567434e4eb9fda67763b7224d24fa6ad'
+    NAME = 'D_uvterra_rom_0040D6CC'
+    POOL = bytes.fromhex('3eaa7efa') + bytes(12)
+    SITES = ((25384, 5), (25388, 6))
+    LIMIT = 262144
+
+
+    class BridgeError(ValueError):
+        pass
+
+
+    def require(ok, why):
+        if not ok:
+            raise BridgeError(why)
+
+
+    def sha(data):
+        return hashlib.sha256(data).hexdigest()
+
+
+    def unique_json_pairs(pairs):
+        result = {}
+        for key, value in pairs:
+            require(key not in result, 'duplicate JSON key')
+            result[key] = value
+        return result
+
+
+    def owner_proof(source, contract_bytes):
+        """Authenticate and decode this one repository readonly witness, not an ELF."""
+        require(type(contract_bytes) is bytes and len(contract_bytes) <= 4096 and
+                sha(contract_bytes) == CONTRACT_SHA, 'exact bounded public contract')
+        contract = json.loads(contract_bytes, object_pairs_hook=unique_json_pairs)
+        require(type(source) is bytes and len(source) == 9769 and sha(source) == OWNER_SHA,
+                'unchanged repository readonly source')
+        text = source.decode('utf-8')
+        require(text.encode('utf-8') == source, 'literal UTF8 owner source')
+        begin, end = contract['owner_begin'], contract['owner_end']
+        require(end - begin == 960 and begin + 892 == 0x40D6CC, 'owner coordinates')
+        decoded = [None] * 960
+        lines = text.splitlines()
+        for index, line in enumerate(lines):
+            match = re.search(r'/\* [0-9A-F]+ ([0-9A-F]+) ([0-9A-F]{8}) \*/\s*\.word\s+(\S+)', line)
+            if match:
+                address = int(match[1], 16)
+                raw = bytes.fromhex(match[2])
+                operand = match[3]
+                try:
+                    value = int(operand, 16) if operand.startswith('0x') else int(operand.rsplit('_', 1)[1], 16)
+                except (ValueError, IndexError) as exc:
+                    raise BridgeError('unsupported readonly word operand') from exc
+                require(int.from_bytes(raw, 'big') == value, 'word annotation/operand disagree')
+            else:
+                match = re.search(r'/\* [0-9A-F]+ ([0-9A-F]+) \*/\s*\.asciz', line)
+                if not match:
+                    continue
+                require(index + 1 < len(lines), 'missing string byte annotation')
+                tail = re.fullmatch(r'\s*/\* ([0-9A-F]+) \*/\s*', lines[index + 1])
+                require(tail is not None and len(tail[1]) % 2 == 0,
+                        'bounded literal original string bytes')
+                address, raw = int(match[1], 16), bytes.fromhex(tail[1])
+            for delta, value in enumerate(raw):
+                at = address - begin + delta
+                require(0 <= at < 960 and decoded[at] is None,
+                        'readonly annotation gap/overlap/range')
+                decoded[at] = value
+        require(None not in decoded, 'full960-byte owner annotation coverage')
+        data = bytes(decoded)
+        require(sha(data) == OWNER_DATA_SHA and data[892:896] == POOL[:4],
+                'full original owner and scalar contents')
+        labels = list(re.finditer(r'(?m)^dlabel ' + re.escape(NAME) + r'\s*$', text))
+        require(len(labels) == 1, 'unique named scalar label')
+        stop = text.find('enddlabel ' + NAME, labels[0].end())
+        require(stop >= 0, 'named scalar closing label')
+        block = text[labels[0].end():stop]
+        words = re.findall(r'/\* [0-9A-F]+ ([0-9A-F]+) ([0-9A-F]{8}) \*/\s*\.word\s+(\S+)', block)
+        require(words == [('0040D6CC', '3EAA7EFA', '0x3EAA7EFA')] and
+                not any(x in block for x in ('.space', '.asciz', '.ascii', '.align')),
+                'exact named4-byte scalar extent, not an owning array')
+        return contract, dict(source_sha256=OWNER_SHA, section_sha256=OWNER_DATA_SHA,
+                              owner_offset=892, owner_bytes=4, allocated_owner_bytes=960,
+                              proof='repository readonly annotations/operands and bounded contract')
+
+
+    def elf_tables(raw):
+        """Bounded structural reader, used only by this recipe and later controls."""
+        require(type(raw) is bytes and 52 <= len(raw) <= LIMIT, 'ELF byte bound')
+        h = struct.unpack_from('>16sHHIIIIIHHHHHH', raw)
+        ident, etype, machine, version, entry, phoff, shoff, flags, ehsize, phsize, phnum, shsize, shnum, shstr = h
+        require(ident[:7] == b'\x7fELF\x01\x02\x01' and ident[7] in (0, 3),
+                'ELF32 big endian version1')
+        require(etype == 1 and machine == 8 and version == 1 and entry == 0,
+                'MIPS relocatable object only')
+        # Exact IDO -32 recipe: MIPS2+noreorder, with no ELF O32 ABI tag.
+        # The compiler -32 contract supplies O32 context; flags alone do not.
+        require(flags == 0x10000001, 'exact pinned IDO recipe flags')
+        require(phoff == 0 and phnum == 0 and phsize == 0 and ehsize == 52 and
+                shsize == 40 and 1 < shnum <= 32 and 0 < shstr < shnum and
+                shoff >= 52 and shoff + 40 * shnum <= len(raw), 'bounded section table')
+        sections = [list(struct.unpack_from('>10I', raw, shoff + 40 * i))
+                    for i in range(shnum)]
+        require(sections[0] == [0] * 10, 'no extended section numbering')
+
+        def payload(index):
+            s = sections[index]
+            require(s[3] == 0 and s[8] in (0, 1, 2, 4, 8, 16, 32), 'section address/alignment')
+            require(not (s[2] & 0x80), 'no SHF_LINK_ORDER')
+            if s[1] in (0, 8):
+                return b''
+            require(s[4] >= 52 and s[4] <= len(raw) and s[5] <= len(raw) - s[4],
+                    'section payload bound')
+            require(not s[9] or s[5] % s[9] == 0, 'section entry extent')
+            return raw[s[4]:s[4] + s[5]]
+
+        data = [payload(i) for i in range(shnum)]
+        occupied = sorted((s[4], s[4] + s[5]) for s in sections
+                          if s[1] not in (0, 8) and s[5])
+        occupied += [(0, 52), (shoff, shoff + 40 * shnum)]
+        occupied.sort()
+        require(all(a[1] <= b[0] for a, b in zip(occupied, occupied[1:])),
+                'overlapping payload/header regions')
+
+        def string(blob, offset):
+            require(0 <= offset < len(blob), 'string index')
+            end = blob.find(b'\0', offset)
+            require(end >= offset and end - offset <= 4096, 'bounded NUL string')
+            try:
+                return blob[offset:end].decode('ascii')
+            except UnicodeError as exc:
+                raise BridgeError('non-ASCII ELF name') from exc
+
+        require(sections[shstr][1] == 3, 'section-name string table')
+        names = [string(data[shstr], s[0]) for s in sections]
+        require(len(names) == len(set(names)), 'unique section names')
+        st = [i for i, s in enumerate(sections) if s[1] == 2]
+        require(len(st) == 1, 'one symtab')
+        si = st[0]
+        ss = sections[si]
+        require(ss[9] == 16 and ss[5] % 16 == 0 and 1 <= ss[5] // 16 <= 512 and
+                0 < ss[6] < shnum and sections[ss[6]][1] == 3 and ss[6] != shstr,
+                'bounded separate symbol strings')
+        symbols = [struct.unpack_from('>IIIBBH', data[si], i)
+                   for i in range(0, len(data[si]), 16)]
+        require(symbols[0] == (0, 0, 0, 0, 0, 0), 'mandatory null symbol')
+        # Only ordinary section indices, SHN_UNDEF(0), ABS and COMMON are supported.
+        # SHN_XINDEX and every other reserved section index are deliberately rejected.
+        require(all(s[5] < shnum or s[5] in (0xFFF1, 0xFFF2) for s in symbols),
+                'unsupported symbol section index')
+        require(0 < ss[7] <= len(symbols), 'local/global boundary')
+        require(all((x[3] >> 4 == 0) == (i < ss[7]) for i, x in enumerate(symbols)),
+                'literal local/global symbol order')
+        symbol_names = [string(data[ss[6]], s[0]) for s in symbols]
+        rels = []
+        for ri, s in enumerate(sections):
+            require(s[1] != 4, 'RELA unsupported for this REL-only recipe')
+            if s[1] != 9:
+                continue
+            require(s[6] == si and 0 < s[7] < shnum and s[9] == 8,
+                    'REL table symbol/target links')
+            for off in range(0, len(data[ri]), 8):
+                site, info = struct.unpack_from('>II', data[ri], off)
+                require(info >> 8 < len(symbols) and site % 4 == 0 and
+                        site + 4 <= sections[s[7]][5], 'REL symbol/site range')
+                rels.append((ri, off, site, info >> 8, info & 255))
+        require(len(rels) <= 2048, 'REL row cap')
+        return dict(header=h, sections=sections, data=data, names=names, symtab=si,
+                    strtab=ss[6], symbols=symbols, symbol_names=symbol_names, rels=rels)
+
+
+    def transform(raw_compiler_elf, readonly_source, contract_bytes):
+        """Return bytes/report only. Calling code owns any separately admitted write."""
+        raw = raw_compiler_elf
+        require(type(raw) is bytes and 52 <= len(raw) <= LIMIT,
+                'bounded literal NORMAL/compiler object required')
+        contract, owner = owner_proof(readonly_source, contract_bytes)
+        e = elf_tables(raw)
+        sec, data, names = e['sections'], e['data'], e['names']
+        require('.text' in names and '.rodata' in names and '.rel.text' in names,
+                'required recipe sections')
+        ti, pi, ri = (names.index(n) for n in ('.text', '.rodata', '.rel.text'))
+        require(sec[ti][1:3] == [1, 6] and len(data[ti]) == 54096 and
+                sha(data[ti]) == TEXT_SHA, 'entire literal compiler TEXT')
+        require(sec[pi][1:3] == [1, 2] and data[pi] == POOL,
+                'exact scalar plus twelve alignment zero bytes')
+        require(len(e['rels']) == 988 and NAME not in e['symbol_names'],
+                'complete988REL and absent owner import')
+        targets = [x for x, name in zip(e['symbols'], e['symbol_names'])
+                   if name == contract['target_name']]
+        require(len(targets) == 1 and targets[0][1:] == (25380, 804, 0x12, 0, ti) and
+                sha(data[ti][25380:25380 + 804]) == contract['target_TEXT_sha256'],
+                'exact positive target FUNC804 and complete target bytes')
+        require(all(struct.unpack_from('>I', data[ti], site)[0] & 0xFFFF == 0
+                    for site, _ in SITES), 'literal zero HI16/LO16 implicit addends')
+        pool_symbols = [(i, s) for i, s in enumerate(e['symbols']) if s[5] == pi]
+        require(len(pool_symbols) == 1, 'only local section symbol owns duplicate pool')
+        pool_index, ps = pool_symbols[0]
+        require(e['symbol_names'][pool_index] == '.rodata' and
+                ps[1:] == (0, 16, 3, 0, pi), 'exact unused-after-bridge SECTION symbol')
+        uses = [r for r in e['rels'] if r[3] == pool_index]
+        require([(r[2], r[4]) for r in uses] == list(SITES) and
+                all(r[0] == ri and sec[ri][7] == ti for r in uses),
+                'exact two pool references only')
+        si, sti = e['symtab'], e['strtab']
+        new_index = len(e['symbols'])
+        strings = data[sti] + NAME.encode('ascii') + b'\0'
+        symbols = data[si] + struct.pack('>IIIBBH', len(data[sti]), 0, 0, 0x10, 0, 0)
+        out = bytearray(raw)
+        changed_ranges = []
+
+        def patch(offset, value):
+            require(0 <= offset <= len(raw) - len(value), 'patch stays in old file')
+            out[offset:offset + len(value)] = value
+            changed_ranges.append((offset, offset + len(value)))
+
+        for _, relative, site, _, kind in uses:
+            patch(sec[ri][4] + relative + 4, struct.pack('>I', new_index << 8 | kind))
+        shoff = e['header'][6]
+        patch(shoff + 40 * pi + 8, struct.pack('>I', sec[pi][2] & ~2))
+        patch(shoff + 40 * pi + 20, struct.pack('>I', 0))
+        for index, blob in ((sti, strings), (si, symbols)):
+            alignment = max(1, sec[index][8])
+            out.extend(bytes((-len(out)) % alignment))
+            start = len(out)
+            out.extend(blob)
+            patch(shoff + 40 * index + 16, struct.pack('>II', start, len(blob)))
+        require(len(out) <= LIMIT, 'transformed size cap')
+        permitted = {j for a, b in changed_ranges for j in range(a, b)}
+        require(all(out[i] == raw[i] for i in range(len(raw)) if i not in permitted),
+                'all other literal compiler bytes unchanged')
+        after = elf_tables(bytes(out))
+        require(after['header'] == e['header'] and after['names'] == names,
+                'header/section indices and names literal')
+        require(after['data'][ti] == data[ti] and after['data'][si] == symbols and
+                after['data'][sti] == strings and after['symbols'][:-1] == e['symbols'],
+                'whole TEXT and old symbol/string prefix identity')
+        expected_rels = [(a, b, c, new_index if d == pool_index else d, k)
+                         for a, b, c, d, k in e['rels']]
+        require(after['rels'] == expected_rels and
+                after['sections'][si][7] == sec[si][7] and
+                after['sections'][pi][2] == 0 and after['sections'][pi][5] == 0,
+                'only two REL identities and duplicate allocation changed')
+        result = bytes(out)
+        return result, dict(
+            status='TRANSFORMED_UVTERRA_DUPLICATE_POOL_NOT_LITERAL_COMPILER_OUTPUT',
+            raw_compiler_sha256=sha(raw), raw_compiler_bytes=len(raw),
+            transformed_sha256=sha(result), transformed_bytes=len(result),
+            owner=owner, appended_global_UND_NOTYPE0=NAME,
+            old_symbol_indices_and_sh_info_preserved=True,
+            retargeted_sites=[list(x) for x in SITES],
+            compiler_pool_native_allocation_bytes_before=16,
+            compiler_pool_native_allocation_bytes_after=0,
+            compiler_pool_physical_payload_retained=True,
+            old_unused_local_SECTION_symbol_metadata_retained=True,
+            all_TEXT_and_all_other_old_file_bytes_outside_declared_ranges_literal=True,
+            historical_raw_caller_J26_alias_holds_unchanged=True,
+            raw_implicit_HI16_LO16=[0, 0],
+            expected_native_owner_offset=892,
+            normal_object_compatibility='UNMEASURED_NOT_EXECUTION_ADMISSION',
+            native_REL_addend_replay='REQUIRED_NOT_QUALIFIED',
+            all133_ROM_Git_acceptance='REQUIRED_NOT_QUALIFIED',
+            accepted=False, operations=0, coverage_credit=0)
+
+    return transform(raw_compiler_elf, readonly_source, b'{\n  "version": 1,\n  "module": "uvterra_rom",\n  "source": "src/modules/uvterra_rom.c",\n  "owner_source": "asm/us/data/modules/uvterra_rom.rodata.s",\n  "owner_source_bytes": 9769,\n  "owner_source_sha256": "36796a86b164c8e0bf7283b0569bf9db27da681c3453ff0b2dbd47da9828f0b8",\n  "owner_begin": 4248400,\n  "owner_end": 4249360,\n  "owner_allocated_bytes": 960,\n  "owner_payload_sha256": "33c316ff34e2d830efbfdc2bfa73990a567434e4eb9fda67763b7224d24fa6ad",\n  "owner_name": "D_uvterra_rom_0040D6CC",\n  "owner_offset": 892,\n  "owner_object_bytes": 4,\n  "scalar_word_hex": "3EAA7EFA",\n  "compiler_pool_bytes": 16,\n  "compiler_alignment_zero_bytes": 12,\n  "whole_TEXT_bytes": 54096,\n  "whole_TEXT_sha256": "3e128c671f8de2b2566517dc793b50a3a2f3d5e51852325695b62602fec02937",\n  "target_name": "uvTerraComputeTriangleSliceWeights",\n  "target_start": 25380,\n  "target_bytes": 804,\n  "target_TEXT_sha256": "1bce558cbc59a82e68054774e1351c9a6af9e2254b177963c08942d83c8c04b5",\n  "complete_REL_count": 988,\n  "pool_REL_sites": [\n    [\n      25384,\n      5\n    ],\n    [\n      25388,\n      6\n    ]\n  ],\n  "supported_observed_flags": [\n    268435457\n  ],\n  "raw_HI16_immediate": 0,\n  "raw_LO16_immediate": 0,\n  "normal_object_compatibility": "UNMEASURED_REQUIRED_BEFORE_ADOPTION",\n  "undefined_import": {\n    "binding": 1,\n    "type": 0,\n    "bytes": 0,\n    "value": 0,\n    "other_raw": 0,\n    "section_index": 0\n  },\n  "consumed_load_bytes": 4,\n  "import_extent_note": "Exact original untyped assembler import GLOBAL/UND/NOTYPE0/st_size0. This is not a recovered C extern type and not an allocation claim; independent positive readonly owner remains GLOBAL OBJECT4@892."\n}\n')
+
+
+def uvterra_duplicate_scalar_main():
+    """The single US source-object hook; no private receipt or arbitrary decoder."""
+    import argparse
+    import stat
+    p = argparse.ArgumentParser()
+    p.add_argument('--uvterra-duplicate-scalar', action='store_true', required=True)
+    p.add_argument('--root', required=True)
+    p.add_argument('--object', required=True)
+    args = p.parse_args()
+    root = Path(args.root).resolve()
+    require(root.is_dir(), 'UVTERRA project root missing')
+    require(args.object == 'build/src/modules/uvterra_rom.o', 'UVTERRA object path changed')
+    target = root / args.object
+    owner = root / 'asm/us/data/modules/uvterra_rom.rodata.s'
+
+    def read_regular(path, limit):
+        # The build namespace remains externally guarded; this is not a sandbox.
+        require(path.is_relative_to(root), 'UVTERRA input leaves project')
+        require(not path.is_symlink() and all(not q.is_symlink() for q in path.parents), 'UVTERRA symlink path')
+        fd = os.open(path, os.O_RDONLY | os.O_NOFOLLOW | os.O_NONBLOCK)
+        try:
+            before = os.fstat(fd)
+            require(stat.S_ISREG(before.st_mode) and 0 < before.st_size <= limit, 'UVTERRA bounded regular input required')
+            with os.fdopen(fd, 'rb', closefd=False) as stream:
+                raw = stream.read(limit + 1)
+            after = os.fstat(fd)
+            current = path.lstat()
+            identity = lambda s: (s.st_dev, s.st_ino, s.st_mode, s.st_size, s.st_mtime_ns, s.st_ctime_ns)
+            require(len(raw) == before.st_size and identity(before) == identity(after) == identity(current), 'UVTERRA input changed during read')
+            return raw, before.st_mode
+        finally:
+            os.close(fd)
+
+    raw, mode = read_regular(target, 262144)
+    source, _ = read_regular(owner, 16384)
+    transformed, report = uvterra_duplicate_scalar_transform(raw, source)
+    temporary = target.with_name(target.name + '.uvterra-scalar.tmp')
+    require(not temporary.exists() and not temporary.is_symlink(), 'UVTERRA temporary already exists')
+    created = False
+    try:
+        with temporary.open('xb') as stream:
+            created = True
+            require(stream.write(transformed) == len(transformed), 'UVTERRA short staged write')
+        os.chmod(temporary, stat.S_IMODE(mode))
+        require(read_regular(temporary, 262144)[0] == transformed, 'UVTERRA staged readback differs')
+        require(read_regular(target, 262144)[0] == raw, 'UVTERRA compiler object changed before replace')
+        require(read_regular(owner, 16384)[0] == source, 'UVTERRA owner source changed before replace')
+        os.replace(temporary, target)
+        require(read_regular(target, 262144)[0] == transformed, 'UVTERRA transformed readback differs')
+        require(read_regular(owner, 16384)[0] == source, 'UVTERRA owner source changed after replace')
+    finally:
+        if created and temporary.exists():
+            temporary.unlink()
+    print(json.dumps(report, sort_keys=True))
+
+
+# This accepted helper previously had no CLI. Imports continue to define DYN below.
+if __name__ == '__main__':
+    uvterra_duplicate_scalar_main()
+
+
 # One audited ownership closure, not a general allowance for terminal gaps.
 DYN_TERMINAL_LAYOUT111100 = {'begin': 4266528, 'end': 4267408, 'late_spans': [{'begin': 4266892, 'end': 4266972, 'host_address': 4210064, 'host_assembly': 'asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_00403D90.s', 'host_bytes': 520, 'host_sha256': 'fc3f9018478887d888ef15718e683d3a4aaeb58561a8ba44deb236fdb36a5390', 'host_symbol': 'func_uvdyn_rom_00403D90'}, None, None, {'begin': 4267196, 'end': 4267336, 'host_address': 4215020, 'host_assembly': 'asm/us/nonmatchings/modules/uvdyn_rom/func_uvdyn_rom_004050EC.s', 'host_bytes': 9384, 'host_sha256': '5bd49fc0194d2fc896cfd0bf11335fcd14808411437745f93aa2ef684108f3b9', 'host_symbol': 'func_uvdyn_rom_004050EC'}, None], 'module': 'uvdyn_rom', 'monolithic_assembly': 'asm/us/data/modules/uvdyn_rom.rodata.s', 'prefix_assembly': 'asm/us/data/modules/uvdyn_rom.rodata-prefix.s', 'readonly_sha256': 'ebf5750d6c6c5efc21f1a2632733dda77295f10ff90974f400a1fc591c821c7e', 'source': 'src/modules/uvdyn_rom.c', 'tables': [{'duplicate_assembly': 'asm/us/nonmatchings/modules/uvdyn_rom/D_uvdyn_rom_00411B1C.s', 'owner_address': 4209720, 'owner_asm_normalized_sha256': 'ee8600d051787c7823bbaf8a555b32861db4dbdb006501ecd261ac79674990a3', 'owner_bytes': 344, 'owner_c_symbol': 'uvDynGetNodeScalarProperty', 'owner_instruction_sha256': 'b31ab1d8d4d7d1f80b9efdbb0b42ef3d5e5ccc6ef22422c88a9be410dd4b9b9d', 'owner_original_symbol': 'func_uvdyn_rom_00403C38', 'table_begin': 4266780, 'table_end': 4266892, 'table_label': 'D_uvdyn_rom_00411B1C'}, {'duplicate_assembly': 'asm/us/nonmatchings/modules/uvdyn_rom/D_uvdyn_rom_00411BDC.s', 'owner_address': 4210584, 'owner_asm_normalized_sha256': '8d1d17dd5230e43336c0154e6ede7250dc6375c36162c657052b34906e775146', 'owner_bytes': 128, 'owner_c_symbol': 'uvDynGetNodePropertyAddress', 'owner_instruction_sha256': 'bd81a6f9db80d17ceaf60df43f820732e1111afccfda2a8a50f9f68b24769e56', 'owner_original_symbol': 'func_uvdyn_rom_00403F98', 'table_begin': 4266972, 'table_end': 4267040, 'table_label': 'D_uvdyn_rom_00411BDC'}, {'duplicate_assembly': 'asm/us/nonmatchings/modules/uvdyn_rom/D_uvdyn_rom_00411C20.s', 'owner_address': 4210712, 'owner_asm_normalized_sha256': '7a5b2db5d261f6da3037ca1c85d92de0126efe98ae44a63caaff12659977a5eb', 'owner_bytes': 436, 'owner_c_symbol': 'uvDynGetNodeVectorProperty', 'owner_instruction_sha256': '7f5e1965abb2b6d056ad435f5efcd4bb4dd3d2f21a011abfcd3843db7a9c5251', 'owner_original_symbol': 'func_uvdyn_rom_00404018', 'table_begin': 4267040, 'table_end': 4267116, 'table_label': 'D_uvdyn_rom_00411C20'}, {'duplicate_assembly': 'asm/us/nonmatchings/modules/uvdyn_rom/D_uvdyn_rom_00411C6C.s', 'owner_address': 4211680, 'owner_asm_normalized_sha256': '09a35a67918a289f3fe679f7911941efff7312073a39294337d0be022a679df5', 'owner_bytes': 240, 'owner_c_symbol': 'uvDynGetNodeMatrixProperty', 'owner_instruction_sha256': 'f4ea07a78f4863d9c4dfe3c36dee1653e88f391079c0c2ea08bafa6e5a1118bd', 'owner_original_symbol': 'func_uvdyn_rom_004043E0', 'table_begin': 4267116, 'table_end': 4267196, 'table_label': 'D_uvdyn_rom_00411C6C'}, {'duplicate_assembly': 'asm/us/nonmatchings/modules/uvdyn_rom/D_uvdyn_rom_00411D48.s', 'owner_address': 4264704, 'owner_asm_normalized_sha256': 'd32b6813d2f88fc58b45b64fac1d846f7355b7656b6764df64fc33d928342dbe', 'owner_bytes': 140, 'owner_c_symbol': 'uvDynGetSecondaryPropertyAddress', 'owner_instruction_sha256': '8ae3b00fc0c56c58babb50d96a4b3a21d4a6b31486e4ad7d0aa19310642e2449', 'owner_original_symbol': 'func_uvdyn_rom_00411300', 'table_begin': 4267336, 'table_end': 4267364, 'table_label': 'D_uvdyn_rom_00411D48'}], 'terminal_literal_tail': {'assembly': 'asm/us/data/modules/uvdyn_rom-secondary.rodata-island.s', 'begin': 4267364, 'end': 4267408, 'readonly_sha256': '485b6ea86b8159929e6e77cf65fbf64fec31657b2b6615e0614201bf8ff713a6'}, 'version': 3, 'witness': 'tools/readonly_layout/uvdyn_rom.five-table-rodata.s', 'witness_sha256': '4ac8728a5cdbe08b158f61a1a06fad8acaa29cd98c5a252808ae0ed4a2025268'}
 DYN_ORIGINAL_WITNESS111100 = ('tools/readonly_layout/uvdyn_rom.original-rodata.s', '37498ed9124fc0b3d7dd80888c25e8002c039f1b0abaab8a8cc8595e186dcce8')
-DYN_TERMINAL_MAKE_SHA111100 = 'ff4c2203e389d115208a7d2c6000b45540b5254b7758d69106f2462e37b9dab1'
+DYN_TERMINAL_MAKE_SHA111100 = 'b2a6ae895d26d0eb0b25f117a8c61df6b198c32db3ea5e963dd38ab99a37f5c0'
 DYN_UNUSED_DUPLICATE_SHA111100 = '587905d952414132dc714062021b05931c5ec18fd060b5b8eeabb68aff98bc31'
 
 def dyn_terminal_tail111100(root, layout):

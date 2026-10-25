@@ -126,7 +126,7 @@ def validate_users(root,layout,prefix):
     # Bind all standalone-assembly rules; accepting definitions must never
     # admit another compiled owner or a source reference to these components.
     require(common.sha(common.inside(root,'Makefile').read_bytes())==
-            'ff4c2203e389d115208a7d2c6000b45540b5254b7758d69106f2462e37b9dab1',
+            'b2a6ae895d26d0eb0b25f117a8c61df6b198c32db3ea5e963dd38ab99a37f5c0',
             'finite grouped-witness Makefile changed')
     witness=common.inside(root,WITNESS).read_text(encoding='utf-8')
     require(common.sha(witness.encode())==layout['witness_sha256'],'group witness changed')

@@ -400,3 +400,4 @@ uvTerraFindStaticObjectContainingPoint = 0x40888c; // type:func
 uvTerraCollectStaticObjectScalarContacts = 0x408ad8; // type:func
 uvTerraLocateTileAndSubcellMask = 0x40b8c0; // type:func
 uvTerraAdjustProjectionEndpointsToBounds = 0x40c50c; // type:func
+uvTerraComputeTriangleSliceWeights = 0x406324; // type:func

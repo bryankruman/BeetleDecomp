@@ -19,3 +19,4 @@ func_uvterra_rom_0040888C = uvTerraFindStaticObjectContainingPoint;
 func_uvterra_rom_00408AD8 = uvTerraCollectStaticObjectScalarContacts;
 func_uvterra_rom_0040B8C0 = uvTerraLocateTileAndSubcellMask;
 func_uvterra_rom_0040C50C = uvTerraAdjustProjectionEndpointsToBounds;
+func_uvterra_rom_00406324 = uvTerraComputeTriangleSliceWeights;

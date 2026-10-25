@@ -613,11 +613,17 @@ $(SDK_AUDIO_OBJECTS): $(BUILD_DIR)/%.o: %.c $(SDK_AUDIO_HEADERS)
 $(BUILD_DIR)/src/modules/race.o: RACE_READONLY_LAYOUT := config/us/readonly_layout/race.json
 $(BUILD_DIR)/src/modules/race.o: tools/reorderRaceReadonly.py tools/moduleReadonlyLayout.py config/us/readonly_layout/race.json
 
+# UVTERRA coalesces only its qualified duplicate scalar pool after compilation.
+$(BUILD_DIR)/src/modules/uvterra_rom.o: UVTERRA_DUPLICATE_SCALAR := 1
+$(BUILD_DIR)/src/modules/uvterra_rom.o: tools/moduleReadonlyLayout.py asm/us/data/modules/uvterra_rom.rodata.s
+
 # C
 $(BUILD_DIR)/%.o: %.c
 	$(call print,Compiling:,$<,$@)
 	$(V)$(CC_CHECK) $(CC_CHECK_FLAGS) $(IINC) -I $(dir $*) $(CHECK_WARNINGS) $(BUILD_DEFINES) $(COMMON_DEFINES) $(RELEASE_DEFINES) $(GBI_DEFINES) $(C_DEFINES) $(MIPS_BUILTIN_DEFS) -o $@ $<
 	$(V)$(CC) -c $(CFLAGS) $(BUILD_DEFINES) $(IINC) $(WARNINGS) $(MIPS_VERSION) $(ENDIAN) $(COMMON_DEFINES) $(RELEASE_DEFINES) $(GBI_DEFINES) $(C_DEFINES) $(OPTFLAGS) -o $@ $<
+	$(if $(UVTERRA_DUPLICATE_SCALAR),$(V)$(PYTHON) tools/moduleReadonlyLayout.py --uvterra-duplicate-scalar --root . --object $@)
+	$(if $(UVTERRA_DUPLICATE_SCALAR),$(V)$(OBJCOPY) --remove-section .rodata $@)
 #	Remove gptab sections if present
 	-$(V)$(OBJCOPY) --remove-section .gptab.bss $@
 	-$(V)$(OBJCOPY) --remove-section .gptab.data $@

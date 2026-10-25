@@ -1813,7 +1813,90 @@ s32 uvTerraCollectTriangleHandlesByTexture(s32 terrainId, s32 texture, s32 **out
  * defaults or partial updates. Preserve strict comparisons, pointer swaps,
  * store order, float grouping, and the separate zero-span branches.
  * RE_UNKNOWN: caller output aliasing and degenerate/nonfinite input contracts. */
-#pragma GLOBAL_ASM("asm/us/nonmatchings/modules/uvterra_rom/func_uvterra_rom_00406324.s")
+#line 1 "uvterra-triangle-slice-readable-recovery"
+/* Compute triangle interpolation weights by intersecting its XY projection with
+ * the horizontal sample slice, then blending between the two edge crossings.
+ * Returns zero for a rejected slice; output stores made before rejection remain.
+ * RE_ORIGINAL_QUIRK: initialize to literal 0.333f, not an exact one-third;
+ * preserve strict Y comparisons, zero-span checks and the coincident-X fallback.
+ * RE_UNKNOWN: caller guarantees for aliased output pointers and nonfinite sample
+ * coordinates. Preserve store order and floating arithmetic without reassociation. */
+s32 uvTerraComputeTriangleSliceWeights(Vtx *firstVertex, Vtx *secondVertex, Vtx *thirdVertex, f32 *firstWeight, f32 *secondWeight, f32 *thirdWeight,
+                              f32 sampleX, f32 sampleY) {
+    Vtx *swappedVertex;
+    f32 *swappedWeight;
+    Vtx *vertices[3];
+    s32 vertexIndex;
+    f32 *weights[3];
+    s32 belowSliceCount;
+    f32 firstIntersectionX;
+    f32 secondIntersectionX;
+    f32 sliceBlend;
+
+    *firstWeight = *secondWeight = *thirdWeight = 0.333f;
+    vertices[0] = firstVertex;
+    vertices[1] = secondVertex;
+    vertices[2] = thirdVertex;
+    weights[0] = firstWeight;
+    weights[1] = secondWeight;
+    weights[2] = thirdWeight;
+    belowSliceCount = 0;
+    for (vertexIndex = 0; vertexIndex < 3; vertexIndex++) {
+        if (vertices[vertexIndex]->v.ob[1] < sampleY) {
+            belowSliceCount++;
+        }
+    }
+    if ((belowSliceCount == 3) || (belowSliceCount == 0)) {
+        return 0;
+    }
+    if (belowSliceCount == 1) {
+        for (vertexIndex = 1; vertexIndex < 3; vertexIndex++) {
+            if (vertices[vertexIndex]->v.ob[1] < sampleY) {
+                swappedVertex = vertices[vertexIndex];
+                swappedWeight = weights[vertexIndex];
+                vertices[vertexIndex] = firstVertex;
+                weights[vertexIndex] = firstWeight;
+                vertices[0] = swappedVertex;
+                weights[0] = swappedWeight;
+                break;
+            }
+        }
+    } else {
+        for (vertexIndex = 1; vertexIndex < 3; vertexIndex++) {
+            if (vertices[vertexIndex]->v.ob[1] > sampleY) {
+                swappedVertex = vertices[vertexIndex];
+                swappedWeight = weights[vertexIndex];
+                vertices[vertexIndex] = firstVertex;
+                weights[vertexIndex] = firstWeight;
+                vertices[0] = swappedVertex;
+                weights[0] = swappedWeight;
+                break;
+            }
+        }
+    }
+
+    if (((vertices[1]->v.ob[1] - vertices[0]->v.ob[1]) == 0.0f)
+        || ((f32) (vertices[2]->v.ob[1] - vertices[0]->v.ob[1]) == 0.0f)) {
+        return 0;
+    }
+    *weights[1] = (sampleY - vertices[0]->v.ob[1]) / (vertices[1]->v.ob[1] - vertices[0]->v.ob[1]);
+    *weights[2] = (sampleY - vertices[0]->v.ob[1]) / (vertices[2]->v.ob[1] - vertices[0]->v.ob[1]);
+    firstIntersectionX = (*weights[1] * (vertices[1]->v.ob[0] - vertices[0]->v.ob[0])) + vertices[0]->v.ob[0];
+    secondIntersectionX = (*weights[2] * (vertices[2]->v.ob[0] - vertices[0]->v.ob[0])) + vertices[0]->v.ob[0];
+    if (secondIntersectionX != firstIntersectionX) {
+        sliceBlend = (sampleX - firstIntersectionX) / (secondIntersectionX - firstIntersectionX);
+    } else {
+        sliceBlend = 0.0f;
+    }
+    if ((sliceBlend < 0.0f) || (sliceBlend > 1.0f)) {
+        return 0;
+    }
+    *weights[1] *= (1.0f - sliceBlend);
+    *weights[2] *= sliceBlend;
+    *weights[0] = (1.0f - *weights[1]) - *weights[2];
+    return 1;
+}
+
 #line 514 "src/modules/uvterra_rom.c"
 #line 435 "src/modules/uvterra_rom.c"
 #line 435 "src/modules/uvterra_rom.c"
